@@ -2,7 +2,6 @@ import type { ReactNode, Ref } from 'react';
 import { Suspense, forwardRef, lazy, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useUser } from '@proton/account/user/hooks';
 import { DrawerApp, FeatureTour, PrivateAppContainer, SmartBanner, TopBanners } from '@proton/components';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -19,17 +18,7 @@ import { layoutActions } from '../../store/layout/layoutSlice';
 import MailQuickSettings from '../drawer/MailQuickSettings';
 import MailSidebar from '../sidebar/MailSidebar';
 
-const LazyInboxDesktopOutdatedAppTopBanner = lazy(
-    () => import('@proton/components/containers/desktop/InboxDesktopOutdatedAppTopBanner')
-);
-
-const LazyInboxDesktopDefaultAppTopBanner = lazy(
-    () => import('@proton/components/containers/desktop/defaultApp/InboxDesktopDefaultAppTopBanner')
-);
-
-const LazyInboxDesktopFreeTrialTopBanner = lazy(
-    () => import('@proton/components/containers/desktop/freeTrial/InboxDesktopFreeTrialTopBanner')
-);
+const LazyInboxDesktopMailTop = lazy(() => import('@proton/components/containers/desktop/InboxDesktopMailTop'));
 
 interface Props {
     children: ReactNode;
@@ -41,10 +30,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     const dispatch = useMailDispatch();
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
-
     const isSidebarExpanded = useMailSelector(selectLayoutIsExpanded);
-
-    const [user] = useUser();
 
     const handleContactsCompose = async (emails: Recipient[], attachments: File[]) => {
         await onCompose({
@@ -64,9 +50,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
         <>
             {isElectronMail && (
                 <Suspense fallback="">
-                    <LazyInboxDesktopOutdatedAppTopBanner />
-                    <LazyInboxDesktopDefaultAppTopBanner />
-                    {!user.hasPaidMail && <LazyInboxDesktopFreeTrialTopBanner />}
+                    <LazyInboxDesktopMailTop />
                 </Suspense>
             )}
             <TopBanners app={APPS.PROTONMAIL}>

@@ -18,11 +18,8 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
-import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
-import { handleInboxDesktopIPCPostMessages } from '@proton/shared/lib/desktop/ipcHelpers';
-import { getIsIframe, isChromiumBased } from '@proton/shared/lib/helpers/browser';
+import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
@@ -46,7 +43,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
     setupGuestCrossStorage({ appMode, appName });
-    initElectronClassnames();
     initLogicalProperties();
     initSafariFontFixClassnames();
     startLogoutListener();
@@ -56,11 +52,13 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     }
 
     if (isElectronMail) {
-        listenFreeTrialSessionExpiration(appName, authentication, api);
-
-        if (!getIsIframe()) {
-            handleInboxDesktopIPCPostMessages();
-        }
+        void import('@proton/shared/lib/desktop/bootstrapMailInboxDesktop').then((module) => {
+            module.bootstrapMailInboxDesktop({
+                config,
+                authentication,
+                api,
+            });
+        });
     }
 
     const run = async () => {

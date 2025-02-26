@@ -32,6 +32,7 @@ import {
 import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 import metrics from "../utils/metrics";
 import telemetry from "../utils/telemetry";
+import { toggleAppCache } from "../utils/appCache";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -208,6 +209,9 @@ export const handleIPCCalls = () => {
                 break;
             case "setDefaultMailtoBannerDismissed":
                 setDefaultMailtoBannerDismissed(payload);
+                break;
+            case "toggleAppCache":
+                toggleAppCache({ enabled: payload });
                 break;
             default:
                 ipcLogger.error(`unknown message type: ${type}`);
