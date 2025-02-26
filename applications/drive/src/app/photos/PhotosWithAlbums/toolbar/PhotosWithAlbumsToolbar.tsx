@@ -11,6 +11,7 @@ import {
     Icon,
     type ModalStateReturnObj,
     Toolbar,
+    ToolbarButton,
     usePopperAnchor,
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -207,36 +208,40 @@ const ToolbarRightActionsAlbumGallery = ({
     return (
         <>
             {!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />}
-            <Button
-                shape="ghost"
-                icon={true}
+            {data.length > 0 && (
+                <ToolbarButton
+                    onClick={() => {
+                        // TODO: avoid the data loop and just execute callback
+                        const linkIds: string[] = data
+                            .map((d) => {
+                                if (!isPhotoGroup(d)) {
+                                    return d.linkId;
+                                }
+                                return '';
+                            })
+                            .filter(Boolean);
+                        void requestDownload(linkIds);
+                    }}
+                    data-testid="toolbar-download-album"
+                    title={c('Action').t`Download`}
+                    className="inline-flex flex-nowrap flex-row items-center"
+                >
+                    <Icon name="arrow-down-line" className="mr-2" alt={c('Action').t`Download`} />
+                    {c('Action').t`Download`}
+                </ToolbarButton>
+            )}
+            <ToolbarButton
                 onClick={() => {
-                    const linkIds: string[] = data
-                        .map((d) => {
-                            if (!isPhotoGroup(d)) {
-                                return d.linkId;
-                            }
-                            return '';
-                        })
-                        .filter(Boolean);
-                    void requestDownload(linkIds);
+                    // TODO: avoid the data loop and just execute callback
+                    showLinkSharingModal({ shareId: album.rootShareId, linkId: album.linkId });
                 }}
+                data-testid="toolbar-share-album"
+                title={c('Action').t`Share`}
+                className="inline-flex flex-nowrap flex-row items-center"
             >
-                <Icon name="arrow-down-line" alt={'Download'} />
-            </Button>
-            <Button
-                shape="ghost"
-                icon={true}
-                onClick={() => {
-                    if (album.rootShareId) {
-                        showLinkSharingModal({ shareId: album.rootShareId, linkId: album.linkId });
-                    } else {
-                        // TODO: Display error notification
-                    }
-                }}
-            >
-                <Icon name="user-plus" alt={'Share'} />
-            </Button>
+                <Icon name="user-plus" className="mr-2" alt={c('Action').t`Share`} />
+                {c('Action').t`Share`}
+            </ToolbarButton>
             <AlbumGalleryDropdownButton />
             {linkSharingModal}
         </>
