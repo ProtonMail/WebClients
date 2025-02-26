@@ -66,7 +66,7 @@ button {
 		position: absolute !important;
 		inset: 0 !important;
 		margin: auto !important;
-		inline-size: 100% !important;
+		inline-size: var(--control-lineheight) !important;
 		color: white !important;
 		text-align: center !important;
 		font-family: system-ui, sans-serif !important;
@@ -75,6 +75,8 @@ button {
 		display: block !important;
 		font-weight: bold !important;
 		text-shadow: 0 0.5px 3px #320dc5 !important;
+		opacity: 0;
+		animation: counter-fade-in 0.15s ease-in-out 0.15s both !important;
 	}
 
 	&:hover {
@@ -91,5 +93,15 @@ button {
 	to {
 		opacity: 0.9;
 		max-inline-size: em(35);
+	}
+}
+
+@keyframes counter-fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
 	}
 }

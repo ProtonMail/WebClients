@@ -23,7 +23,7 @@ import type { NotificationActions } from './notification';
 
 export type IFramePosition = Partial<Rect>;
 export type IFrameEndpoint = 'notification' | 'dropdown';
-export type IFrameCloseOptions = { discard?: boolean; event?: Event; refocus?: boolean };
+export type IFrameCloseOptions = { discard?: boolean; refocus?: boolean };
 
 export type IFrameInitPayload = {
     domain: string;
