@@ -41,12 +41,6 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
     const [filter, setFilterState] = useMountedState<string>(startsWith);
     const loading = useMemo(() => state === null, [state]);
 
-    const filteredItems = useMemo(() => {
-        if (!state?.items) return [];
-        if (!filter) return state.items;
-        return state.items.filter((item) => partOf(item.name, item.userIdentifier)(filter));
-    }, [state?.items, filter]);
-
     const resolveCandidates = useCallback(
         () =>
             sendMessage
@@ -94,7 +88,10 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
                               autogrow
                           />
                       ),
-                      ...filteredItems.map(({ shareId, itemId, userIdentifier, name, url }) => {
+                      ...(filter
+                          ? state.items.filter((item) => partOf(item.name, item.userIdentifier)(filter))
+                          : state.items
+                      ).map(({ shareId, itemId, userIdentifier, name, url }) => {
                           const nameChunks = matchChunks(name, filter);
                           const userChunks = matchChunks(userIdentifier, filter);
 
