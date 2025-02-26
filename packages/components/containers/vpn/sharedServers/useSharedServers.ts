@@ -37,6 +37,7 @@ interface ApiResponse {
     Groups: SharedServerGroup[];
     Locations: SharedServerLocation[];
     Users: SharedServerUser[];
+    EmailsOfUsersNotInAnyPolicy: string[];
 }
 
 export const useSharedServers = (maxAge: number) => {
@@ -62,6 +63,7 @@ export const useSharedServers = (maxAge: number) => {
         users: result?.Users || [],
         groups: result?.Groups || [],
         refresh,
+        countUsersNotInAnyPolicy: result?.EmailsOfUsersNotInAnyPolicy?.length ?? 0,
     };
 };
 
