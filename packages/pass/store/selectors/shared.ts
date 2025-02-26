@@ -1,5 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import { isActive } from '@proton/pass/lib/items/item.predicates';
 import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { searchItems } from '@proton/pass/lib/search/match-items';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
@@ -17,6 +18,11 @@ const selectSharedWithMe = createSelector([selectItemShares, selectItems], (item
 });
 
 export const selectSharedWithMeCount = createSelector(selectSharedWithMe, (items) => items.length);
+
+export const selectActiveSharedWithMeCount = createSelector(
+    selectSharedWithMe,
+    (items) => items.filter(isActive).length
+);
 
 /** "Sort before search" strategy */
 export const selectSharedWithMeSearchResult = createSelector(
