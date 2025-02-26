@@ -26,7 +26,7 @@ export interface SharedServerUser {
     Name: string;
 }
 
-interface SharedServerGroup {
+export interface SharedServerGroup {
     GroupID: number;
     Name: string;
 }

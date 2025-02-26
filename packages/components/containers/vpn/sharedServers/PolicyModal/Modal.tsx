@@ -23,7 +23,7 @@ import noop from '@proton/utils/noop';
 import type { CreateLocationFilterPayload, FilterPolicyRequest } from '../api';
 import { createLocationFilter } from '../api';
 import { useSharedServers } from '../useSharedServers';
-import type { SharedServerUser, VpnLocationFilterPolicy } from '../useSharedServers';
+import type { SharedServerGroup, SharedServerUser, VpnLocationFilterPolicy } from '../useSharedServers';
 import CountriesStep from './CountriesStep';
 import MembersStep from './MembersStep';
 import NameStep from './NameStep';
@@ -43,13 +43,14 @@ interface SharedServersModalProps extends ModalProps {
 const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: SharedServersModalProps) => {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const { locations, policies, users } = useSharedServers(10 * MINUTE);
+    const { locations, policies, users, groups } = useSharedServers(10 * MINUTE);
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
 
     const [step, setStep] = useState<STEP>(STEP.NAME);
     const [policyName, setPolicyName] = useState('');
     const [selectedUsers, setSelectedUsers] = useState<SharedServerUser[]>([]);
+    const [selectedGroups, setSelectedGroups] = useState<SharedServerGroup[]>([]);
     const [applyPolicyTo, setApplyPolicyTo] = useState<'users' | 'groups'>('users');
     const [expandedCountries, setExpandedCountries] = useState<Record<string, boolean>>({});
     const [selectedCities, setSelectedCities] = useState<Record<string, string[]>>({});
@@ -60,6 +61,11 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
         }
         setPolicyName(policy.Name ?? '');
         setSelectedUsers(policy.Users || []);
+        setSelectedGroups(policy.Groups || []);
+        const hasUsers = Boolean(policy.Users?.length);
+        const hasGroups = Boolean(policy.Groups?.length);
+
+        setApplyPolicyTo((hasGroups && !hasUsers) ? 'groups' : 'users');
 
         const map = buildSelectedCitiesFromLocations(policy.Locations || []);
         setSelectedCities(map);
@@ -133,7 +139,8 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
                     cityList.map((city) => ({ Country: country, City: city }))
                 ),
                 UserIds: applyPolicyTo === 'users' && selectedUsers.length ? selectedUsers.map((u) => u.UserID) : null,
-                GroupIds: applyPolicyTo === 'groups' ? null : null, // TODO add groups
+                GroupIds:
+                    applyPolicyTo === 'groups' && selectedGroups.length ? selectedGroups.map((u) => u.GroupID) : null,
             };
 
             const FilterPoliciesInput: FilterPolicyRequest[] = mapPoliciesToFilterRequest(
@@ -182,11 +189,49 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
     ]);
 
     const handleNext = useCallback(() => {
-        if (step === STEP.COUNTRIES) {
-            handleSubmit().catch(noop);
-        } else {
-            setStep((currentStep) => currentStep + 1);
+        if (step === STEP.NAME) {
+            if (policyName.length < 3 || policyName.length > 40) {
+                createNotification({
+                    text: c('Error').t`The policy name must be between 3 and 40 characters.`,
+                    type: 'error',
+                });
+
+                return;
+            }
         }
+
+        if (step === STEP.MEMBERS) {
+            const noUserSelected = applyPolicyTo === 'users' && selectedUsers.length === 0;
+            const noGroupSelected = applyPolicyTo === 'groups' && selectedGroups.length === 0;
+
+            if (noUserSelected || noGroupSelected) {
+                createNotification({
+                    text: c('Error').t`Please select at least one user or group before continuing.`,
+                    type: 'error',
+                });
+
+                return;
+            }
+        }
+
+        if (step === STEP.COUNTRIES) {
+            const totalSelectedCities = Object.values(selectedCities).flat().length;
+
+            if (totalSelectedCities === 0) {
+                createNotification({
+                    text: c('Error').t`Please select at least one location before continuing.`,
+                    type: 'error',
+                });
+
+                return;
+            }
+
+            // Submit in this step
+            handleSubmit().catch(noop);
+            return;
+        }
+
+        setStep((currentStep) => currentStep + 1);
     }, [step, handleSubmit]);
 
     const modalTitle = () => {
@@ -222,14 +267,26 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
 
                 {step === STEP.MEMBERS && (
                     <MembersStep
-                        isEditing={isEditing}
+                        isEditing={isEditing as boolean}
                         policyName={policyName}
                         users={users}
                         selectedUsers={selectedUsers}
+                        groups={groups}
+                        selectedGroups={selectedGroups}
                         onSelectUser={(user) => {
-                            setSelectedUsers((prev) => {
-                                const exists = prev.some((u) => u.UserID === user.UserID);
-                                return exists ? prev.filter((u) => u.UserID !== user.UserID) : [...prev, user];
+                            setSelectedUsers((previouslySelectedUsers) => {
+                                const exists = previouslySelectedUsers.some((u) => u.UserID === user.UserID);
+                                return exists
+                                    ? previouslySelectedUsers.filter((u) => u.UserID !== user.UserID)
+                                    : [...previouslySelectedUsers, user];
+                            });
+                        }}
+                        onSelectGroup={(group) => {
+                            setSelectedGroups((previouslySelectedGroups) => {
+                                const exists = previouslySelectedGroups.some((g) => g.GroupID === group.GroupID);
+                                return exists
+                                    ? previouslySelectedGroups.filter((g) => g.GroupID !== group.GroupID)
+                                    : [...previouslySelectedGroups, group];
                             });
                         }}
                         applyPolicyTo={applyPolicyTo}
@@ -239,7 +296,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
 
                 {step === STEP.COUNTRIES && (
                     <CountriesStep
-                        isEditing={isEditing}
+                        isEditing={isEditing as boolean}
                         policyName={policyName}
                         groupedLocations={groupedLocations}
                         expandedCountries={expandedCountries}
