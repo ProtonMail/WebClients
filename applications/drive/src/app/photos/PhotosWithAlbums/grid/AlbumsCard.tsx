@@ -5,7 +5,15 @@ import { formatDuration } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { FileIcon, Icon } from '@proton/components';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
+    FileIcon,
+    Icon,
+    usePopperAnchor,
+} from '@proton/components';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
@@ -29,6 +37,45 @@ type Props = {
 
 const getAltText = ({ mimeType, name }: DecryptedLink) =>
     `${c('Label').t`Album`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
+
+export const AlbumDropdownButton = () => {
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
+    return (
+        <>
+            <DropdownButton
+                shape="ghost"
+                color="weak"
+                ref={anchorRef}
+                isOpen={isOpen}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    toggle();
+                }}
+                icon
+                className="inline-flex flex-nowrap flex-row items-center relative z-up border-none"
+            >
+                <Icon name="three-dots-vertical" alt={c('Action').t`More`} />
+            </DropdownButton>
+            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                <DropdownMenu>
+                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                        <Icon className="mr-2" name="pencil" />
+                        {c('Action').t`Rename album`}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                        <Icon className="mr-2" name="user-plus" />
+                        {c('Action').t`Share album`}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                        <Icon className="mr-2" name="trash" />
+                        {c('Action').t`Delete album`}
+                    </DropdownMenuButton>
+                </DropdownMenu>
+            </Dropdown>
+        </>
+    );
+};
 
 export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, album, onClick }) => {
     const [imageReady, setImageReady] = useState(false);
@@ -144,19 +191,26 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
                             </div>
                         )}
                     </div>
-                    <div
-                        className="text-left mt-2 text-lg text-semibold text-ellipsis"
-                        title={album.name ? album.name : c('Info').t`Untitled`}
-                    >
-                        {album.name ? album.name : c('Info').t`Untitled`}
-                    </div>
-                    <div className="text-left mb-2 text color-weak text-semibold">
-                        {c('Info').ngettext(
-                            msgid`${album.photoCount} item`,
-                            `${album.photoCount} items`,
-                            album.photoCount
-                        )}
-                        {album.isShared && <span className="ml-1">⋅ {c('Info').t`Shared`}</span>}
+                    <div className="flex flex-row flex-nowrap mt-2 items-center">
+                        <div className="flex-1">
+                            <div
+                                className="text-left text-lg text-semibold text-ellipsis"
+                                title={album.name ? album.name : c('Info').t`Untitled`}
+                            >
+                                {album.name ? album.name : c('Info').t`Untitled`}
+                            </div>
+                            <div className="text-left mb-2 text color-weak text-semibold">
+                                {c('Info').ngettext(
+                                    msgid`${album.photoCount} item`,
+                                    `${album.photoCount} items`,
+                                    album.photoCount
+                                )}
+                                {album.isShared && <span className="ml-1">⋅ {c('Info').t`Shared`}</span>}
+                            </div>
+                        </div>
+                        <div className="shrink-0 mb-2">
+                            <AlbumDropdownButton />
+                        </div>
                     </div>
                 </>
             ) : null}
