@@ -30,7 +30,8 @@ export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks
             data-testid="toolbar-download"
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="arrow-down-line" className="mr-2" /> {c('Action').t`Download photos`}
+            <Icon name="arrow-down-line" className="mr-2" />
+            {c('Action').t`Download photos`}
         </ToolbarButton>
     );
 };
