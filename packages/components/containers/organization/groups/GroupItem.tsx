@@ -8,36 +8,36 @@ import type { Group } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import GroupItemMoreOptionsDropdown from './GroupItemMoreOptionsDropdown';
+import type { GroupsManagementReturn } from './types';
 
 interface Props {
     active: boolean;
-    groupData: Group;
+    group?: Group;
     onClick?: () => void;
     isNew?: boolean;
     onDeleteGroup?: () => void;
     canOnlyDelete: boolean;
+    name?: string;
+    serializedGroup?: ReturnType<GroupsManagementReturn['getSerializedGroup']>;
 }
 
-const GroupItem = ({
-    active,
-    groupData: { ID, MemberCount, Address: address, Name },
-    groupData: group,
-    onClick,
-    isNew,
-    onDeleteGroup,
-    canOnlyDelete,
-}: Props) => {
+const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGroup, canOnlyDelete }: Props) => {
     const api = useApi();
 
-    const memberCount = Number.isInteger(MemberCount) ? MemberCount : undefined;
+    const memberCount = group && Number.isInteger(group.MemberCount) ? group.MemberCount : undefined;
 
     const handleDeleteGroup = async () => {
         onDeleteGroup?.();
     };
 
-    const handleDeleteAllGroupMembers = async () => {
-        await api(deleteAllGroupMembers(ID));
-    };
+    const handleDeleteAllGroupMembers = group
+        ? async () => {
+              await api(deleteAllGroupMembers(group.ID));
+          }
+        : undefined;
+
+    const name = (serializedGroup?.payload.name ?? group?.Name) || c('Empty group name').t`Unnamed`;
+    const email = serializedGroup?.payload.email || group?.Address?.Email || '';
 
     return (
         <div className="relative">
@@ -58,12 +58,12 @@ const GroupItem = ({
                         <Icon className="m-auto color-primary shrink-0" size={4} name="users-filled" />
                     </div>
                     <div className="text-left flex flex-column flex-1">
-                        <span className="block max-w-full text-bold text-lg text-ellipsis" title={Name}>
-                            {Name}
+                        <span className="block max-w-full text-bold text-lg text-ellipsis" title={name}>
+                            {name}
                         </span>
-                        {address.Email && (
-                            <span className="block max-w-full text-ellipsis" title={address.Email}>
-                                {address.Email}
+                        {email && (
+                            <span className="block max-w-full text-ellipsis" title={email}>
+                                {email}
                             </span>
                         )}
                         {memberCount !== undefined && (
@@ -76,7 +76,7 @@ const GroupItem = ({
                             </p>
                         )}
                     </div>
-                    {!isNew && (
+                    {group && !isNew && handleDeleteAllGroupMembers && (
                         <div className="shrink-0">
                             <GroupItemMoreOptionsDropdown
                                 group={group}

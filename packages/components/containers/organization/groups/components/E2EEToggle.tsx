@@ -4,7 +4,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import useLoading from '@proton/hooks/useLoading';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Address, Group } from '@proton/shared/lib/interfaces';
+import type { Group } from '@proton/shared/lib/interfaces';
 
 import type { GroupsManagementReturn } from '../types';
 import useGroupCrypto from '../useGroupCrypto';
@@ -16,20 +16,22 @@ interface Props {
 
 const E2EEToggle = ({ group, groupsManagement }: Props) => {
     const groupAddressID = group.Address.ID;
-    const address = groupsManagement.groups.find(({ Address: { ID } }) => ID === groupAddressID)?.Address as Address;
-    const [groupAddressKey] = address.Keys;
-    const isE2EEEnabled = !hasBit(groupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
+    const address = groupsManagement.groups.find(({ Address: { ID } }) => ID === groupAddressID)?.Address;
+
+    const primaryGroupAddressKey = address?.Keys[0];
+    const isE2EEEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
 
     const { disableEncryption, enableEncryption } = useGroupCrypto();
     const [toggleLoading, withToggleLoading] = useLoading();
 
     const handleE2EEToggle = async () => {
+        if (!address) {
+            throw new Error('Missing group address');
+        }
         try {
             const toggleAction = isE2EEEnabled ? disableEncryption : enableEncryption;
             await withToggleLoading(toggleAction(address));
-        } catch (error) {
-            console.error(error);
-        }
+        } catch (error) {}
     };
 
     return (

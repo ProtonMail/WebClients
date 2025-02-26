@@ -8,17 +8,19 @@ interface Props {
 }
 
 const GroupForm = ({ groupsManagement, groupsManagement: { uiState, selectedGroup }, canOnlyDelete }: Props) => {
-    if (uiState === 'empty' || selectedGroup === undefined) {
-        return;
-    }
-
-    if (uiState === 'view') {
+    if (uiState === 'view' && selectedGroup) {
         return (
             <ViewGroup groupsManagement={groupsManagement} groupData={selectedGroup} canOnlyDelete={canOnlyDelete} />
         );
     }
 
-    return <EditGroup groupsManagement={groupsManagement} groupData={selectedGroup} />;
+    if (uiState === 'edit' && selectedGroup) {
+        return <EditGroup groupsManagement={groupsManagement} groupData={selectedGroup} />;
+    }
+
+    if (uiState === 'new') {
+        return <EditGroup groupsManagement={groupsManagement} />;
+    }
 };
 
 export default GroupForm;

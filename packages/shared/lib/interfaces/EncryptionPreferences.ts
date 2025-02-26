@@ -12,6 +12,32 @@ import type {
 import type { Address } from './Address';
 import type { KeyTransparencyVerificationResult } from './KeyTransparency';
 import type { MailSettings } from './MailSettings';
+import type { FetchedSignedKeyList } from './SignedKeyList';
+
+export interface ApiAddressKey {
+    PublicKey: string;
+    Flags: number;
+    Source: API_KEY_SOURCE;
+    Primary: 1 | 0;
+}
+
+export interface GetAllPublicKeysResponse {
+    Address: {
+        Keys: ApiAddressKey[];
+        SignedKeyList: FetchedSignedKeyList | null;
+    };
+    CatchAll:
+        | {
+              Keys: ApiAddressKey[];
+              SignedKeyList: FetchedSignedKeyList | null;
+          }
+        | undefined;
+    Unverified: {
+        Keys: ApiAddressKey[];
+    };
+    ProtonMX: boolean;
+    Warnings: string[];
+}
 
 export interface PublicKeyWithPref {
     publicKey: PublicKeyReference;

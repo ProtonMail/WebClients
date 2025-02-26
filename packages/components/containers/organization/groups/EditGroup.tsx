@@ -15,7 +15,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { ADDRESS_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Address, EnhancedMember, Group } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, Group } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
@@ -34,7 +34,7 @@ import type { GroupsManagementReturn } from './types';
 
 interface Props {
     groupsManagement: GroupsManagementReturn;
-    groupData: Group;
+    groupData?: Group;
 }
 
 export interface NewGroupMember {
@@ -65,23 +65,22 @@ const getEmailIsExternalMap = (members: EnhancedMember[]): Record<string, boolea
 const EditGroup = ({ groupsManagement, groupData }: Props) => {
     const {
         uiState,
-        setUiState,
-        handleSaveGroup,
+        actions,
         form,
         groupMembers,
         loadingGroupMembers,
-        groups,
         domainData,
         suggestedAddressDomainName,
         suggestedAddressDomainPart,
         selectedGroup,
         members,
+        addressToMemberMap,
     } = groupsManagement;
     // Since we're editing a group (EditGroup component), it's implied that deletion isn't the only option
     // Thus, canOnlyDelete is always false in this context
     const canOnlyDelete = false;
 
-    const { resetForm, dirty, values: formValues, setFieldValue, isValid, errors } = form;
+    const { dirty, values: formValues, setFieldValue, isValid, errors } = form;
     const { loadingCustomDomains, selectedDomain, setSelectedDomain, customDomains } = domainData;
 
     const [willDisableE2eeModalProps, setWillDisableE2eeModal, renderWillDisableE2eeModal] = useModalState();
@@ -122,28 +121,14 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         }
     }, [uiState]);
 
-    const updatedGroupAddress = groupsManagement.groups.find(({ Address: { ID } }) => ID === groupData.Address.ID)
-        ?.Address as Address;
-    const updatedGroupAddressKey = updatedGroupAddress?.Keys[0];
+    const updatedGroup = groupsManagement.groups.find((group) => group.Address.ID === groupData?.Address.ID);
+    const updatedGroupAddressKey = updatedGroup?.Address.Keys[0];
     const updatedGroupAddressFlags = updatedGroupAddressKey?.Flags ?? 0;
 
     useEffect(() => {
         const initialIsE2EEEnabled = !hasBit(updatedGroupAddressFlags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
         setE2eeWillBeDisabled(!initialIsE2EEEnabled);
     }, [updatedGroupAddressFlags]);
-
-    const onDiscardChanges = () => {
-        setUiState(groups.length === 0 ? 'empty' : 'view');
-        resetForm({
-            values: {
-                name: groupData.Name,
-                description: groupData.Description,
-                address: groupData.Address.Email,
-                permissions: groupData.Permissions ?? GroupPermissions.EveryoneCanSend,
-                members: '',
-            },
-        });
-    };
 
     const handleAddNewMembers = async (newMembers: NewGroupMember[]) => {
         const willDisableE2ee = newMembers.some((member) => member.GroupMemberType !== GROUP_MEMBER_TYPE.INTERNAL);
@@ -215,7 +200,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                         if (changeDetected) {
                                             setDiscardChangesModal(true);
                                         } else {
-                                            onDiscardChanges();
+                                            actions.onDiscardChanges();
                                         }
                                     }}
                                 >
@@ -228,7 +213,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     loading={loading}
                                     onClick={() => {
                                         if (isValid) {
-                                            void withLoading(handleSaveGroup(newEmailsToAdd));
+                                            void withLoading(actions.onSaveGroup(newEmailsToAdd));
                                         }
                                     }}
                                 >
@@ -348,7 +333,9 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                         </InputFieldStackedGroup>
                     </Form>
                 </FormikProvider>
-                {uiState === 'edit' && <E2EEToggle group={groupData} groupsManagement={groupsManagement} />}
+                {uiState === 'edit' && groupData && (
+                    <E2EEToggle group={groupData} groupsManagement={groupsManagement} />
+                )}
                 <NewGroupMemberInput
                     newGroupMembers={newGroupMembers}
                     onAddNewGroupMembers={handleAddNewMembers}
@@ -369,6 +356,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                         })}
                     </div>
                     <GroupMemberList
+                        addressToMemberMap={addressToMemberMap}
                         groupMembers={groupMembers}
                         loading={loadingGroupMembers}
                         group={selectedGroup}
@@ -378,7 +366,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                 </div>
             </Panel>
             {renderDiscardChangesModal && (
-                <DiscardGroupChangesPrompt onConfirm={onDiscardChanges} {...discardChangesModalProps} />
+                <DiscardGroupChangesPrompt onConfirm={actions.onDiscardChanges} {...discardChangesModalProps} />
             )}
             {renderWillDisableE2eeModal && (
                 <WillDisableE2eePrompt
