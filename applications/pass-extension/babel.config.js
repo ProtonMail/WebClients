@@ -7,15 +7,7 @@ const PRODUCTION = ENV === 'production';
 
 const presetEnvOpts = {
     bugfixes: true,
-    corejs: '3.29',
-    exclude: [
-        'es.array.push',
-        'esnext.array-buffer.detached',
-        'esnext.array-buffer.transfer-to-fixed-length',
-        'esnext.array-buffer.transfer',
-        'transform-typeof-symbol',
-        'web.dom-exception.stack',
-    ],
+    corejs: '3.40',
     useBuiltIns: 'usage',
     debug: false,
 };
