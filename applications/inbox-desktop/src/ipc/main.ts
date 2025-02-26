@@ -26,6 +26,8 @@ import {
     setDefaultMailtoApp,
     setDefaultMailtoTelemetryReported,
     setShouldCheckDefaultMailtoApp,
+    setDefaultMailtoBannerDismissed,
+    getDefaultMailtoBannerDismissed,
 } from "../utils/protocol/default";
 import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 import metrics from "../utils/metrics";
@@ -78,6 +80,9 @@ export const handleIPCCalls = () => {
                 break;
             case "getAllAppVersions":
                 event.returnValue = getAllAppVersions();
+                break;
+            case "defaultMailtoBannerDismissed":
+                event.returnValue = getDefaultMailtoBannerDismissed();
                 break;
             default:
                 ipcLogger.error(`Invalid getInfo message: ${message}`);
@@ -195,6 +200,9 @@ export const handleIPCCalls = () => {
                 if (payload === "removed") {
                     metrics.listenerRemoved();
                 }
+                break;
+            case "setDefaultMailtoBannerDismissed":
+                setDefaultMailtoBannerDismissed(payload);
                 break;
             default:
                 ipcLogger.error(`unknown message type: ${type}`);
