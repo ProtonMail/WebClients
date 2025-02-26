@@ -18,13 +18,22 @@ interface Props {
     isOpen: boolean;
     once: boolean;
     when?: any;
+    isCreateEventPopover?: boolean;
 }
-const Popover = ({ targetEl, containerEl, children, isOpen, once = false, when }: Props) => {
+const Popover = ({
+    targetEl,
+    containerEl,
+    children,
+    isOpen,
+    once = false,
+    when,
+    isCreateEventPopover = false,
+}: Props) => {
     const [popoverEl, setPopoverEl] = useState<HTMLElement | null>(null);
     const { viewportWidth } = useActiveBreakpoint();
 
     const isSmallViewport = viewportWidth['<=small'];
-    const MIN_VIEWPORT_MARGIN = isSmallViewport ? 0 : 100;
+    const MIN_VIEWPORT_MARGIN = isSmallViewport || isCreateEventPopover ? 0 : 100;
 
     const containerRect = useRect(containerEl, isOpen);
     const targetRect = useRect(
@@ -84,7 +93,7 @@ const Popover = ({ targetEl, containerEl, children, isOpen, once = false, when }
             // Calculate overflow including the desired margin
             const diffOverflowY = targetTop + popoverHeight + MIN_VIEWPORT_MARGIN - containerHeight;
 
-            const top = diffOverflowY >= 0 ? targetTop - diffOverflowY : Math.max(targetTop, 0);
+            const top = Math.max(0, diffOverflowY >= 0 ? targetTop - diffOverflowY : targetTop);
 
             const left = (() => {
                 // First move it to the left of the element
