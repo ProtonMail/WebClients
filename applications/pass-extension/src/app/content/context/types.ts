@@ -34,7 +34,7 @@ export interface ContentScriptContext {
     };
     scriptId: string;
     destroy: (options: { reason: string; recycle?: boolean }) => void;
-    getExtensionContext: () => ExtensionContextType;
+    getExtensionContext: () => Maybe<ExtensionContextType>;
     getFeatureFlags: () => FeatureFlagState;
     getFeatures: () => Record<CSFeatures, boolean>;
     getSettings: () => ProxiedSettings;
