@@ -118,7 +118,7 @@ function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) 
                         key={tag}
                         className={clsx(
                             'inline-flex gap-2 items-center flex-nowrap text-semibold',
-                            selected && 'is-active'
+                            selected ? 'is-active' : 'color-weak'
                         )}
                         onClick={() => onTagSelect([tag])}
                     >
