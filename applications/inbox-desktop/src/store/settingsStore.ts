@@ -14,6 +14,7 @@ export interface SettingsStore {
     theme?: Partial<ThemeSetting>;
     releaseCategory?: RELEASE_CATEGORIES;
     rolloutProportion?: number;
+    appCacheEnabled?: boolean;
 }
 
 const defaultSettings = {
@@ -21,6 +22,7 @@ const defaultSettings = {
     overrideError: false,
     releaseCategory: RELEASE_CATEGORIES.STABLE,
     rolloutProportion: 1 - Math.random(),
+    appCacheEnabled: true,
 } as const satisfies SettingsStore;
 
 export const updateSettings = (settings: Partial<SettingsStore>) => {

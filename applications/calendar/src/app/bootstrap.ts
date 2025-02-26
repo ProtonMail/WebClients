@@ -23,11 +23,9 @@ import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
-import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { createDrawerApi } from '@proton/shared/lib/drawer/createDrawerApi';
 import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -58,13 +56,18 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     bootstrap.init({ config, authentication, locales });
 
     setupGuestCrossStorage({ appMode, appName });
-    initElectronClassnames();
     initLogicalProperties();
     initSafariFontFixClassnames();
     startLogoutListener();
 
     if (isElectronMail) {
-        listenFreeTrialSessionExpiration(appName, authentication, api);
+        void import('@proton/shared/lib/desktop/bootstrapCalendarInboxDesktop').then((module) => {
+            module.bootstrapCalendarInboxDesktop({
+                config,
+                authentication,
+                api,
+            });
+        });
     }
 
     // Temporary log for debugging
