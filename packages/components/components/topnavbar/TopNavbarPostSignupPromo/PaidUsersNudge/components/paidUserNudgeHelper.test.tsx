@@ -1,7 +1,13 @@
-import { subDays, subHours } from 'date-fns';
+import { addDays, startOfDay, subDays, subHours } from 'date-fns';
 
 import { HIDE_OFFER, OfferDuration, ReminderDates } from '../components/interface';
-import { isInWindow, isLastDayOfWindow, roundToUpper, shouldOpenReminder } from './paidUserNudgeHelper';
+import {
+    getWindowEndDate,
+    isInWindow,
+    isLastDayOfWindow,
+    roundToUpper,
+    shouldOpenReminder,
+} from './paidUserNudgeHelper';
 
 const today = new Date();
 
@@ -60,6 +66,47 @@ describe('Mail Paid user nudge', () => {
     describe('Number ceiling', () => {
         it.each(roundingTest)('testing last offer day window for %s', (obj) => {
             expect(roundToUpper(obj.value)).toBe(obj.expected);
+        });
+    });
+
+    describe('Window end date', () => {
+        const mockDate = new Date('2025-02-26T12:00:00Z');
+
+        beforeEach(() => {
+            jest.spyOn(global.Date, 'now').mockImplementation(() => mockDate.getTime());
+        });
+
+        afterEach(() => {
+            jest.restoreAllMocks();
+        });
+
+        it('returns null when not in a window', () => {
+            expect(getWindowEndDate(15)).toBeNull();
+        });
+
+        it('returns correct date for first day of window', () => {
+            // ReminderDates.day20 (20) + OfferDuration (7) - 20 = 7 days remaining
+            const expected = startOfDay(addDays(mockDate, 7));
+            expect(getWindowEndDate(20)).toEqual(expected);
+        });
+
+        it('returns correct date for middle of window', () => {
+            // ReminderDates.day20 (20) + OfferDuration (7) - 23 = 4 days remaining
+            const expected = startOfDay(addDays(mockDate, 4));
+            expect(getWindowEndDate(23)).toEqual(expected);
+        });
+
+        it('returns correct date for last day of window', () => {
+            // ReminderDates.day20 (20) + OfferDuration (7) - 26 = 1 day remaining
+            const expected = startOfDay(addDays(mockDate, 1));
+            expect(getWindowEndDate(26)).toEqual(expected);
+        });
+
+        it('returns correct date in different window periods', () => {
+            // Test window at day 80
+            // ReminderDates.day80 (80) + OfferDuration (7) - 83 = 4 days remaining
+            const expected = startOfDay(addDays(mockDate, 4));
+            expect(getWindowEndDate(83)).toEqual(expected);
         });
     });
 });
