@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
 import {
     Loader,
     NavigationControl,
@@ -387,27 +386,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 {isAlbumPhotosEmpty ? (
                     <div className="flex flex-column flex-nowrap mx-2 w-full h-full">
                         <AlbumCoverHeader album={album} />
-
-                        <div className="flex-1 flex">
-                            <div
-                                className="bg-weak border rounded p-4 flex my-auto min-h-custom w-full relative max-w-custom mx-auto"
-                                style={{
-                                    '--min-h-custom': '15rem',
-                                    '--max-w-custom': '30rem',
-                                }}
-                            >
-                                <div className="m-auto text-center">
-                                    <p className="mt-0">{c('Info').t`Album is empty`}</p>
-                                    <Button
-                                        color="norm"
-                                        className="expand-click-area"
-                                        title={c('Action').t`Add photos`}
-                                    >
-                                        {c('Action').t`Add photos`}
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 ) : (
                     <div
