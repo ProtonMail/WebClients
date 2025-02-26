@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 
-import type { IEditor, PluginEvent } from 'roosterjs-editor-types';
+import type { IEditor, InsertOption, PluginEvent } from 'roosterjs-editor-types';
 
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
@@ -21,6 +21,7 @@ export interface EditorMetadata {
 export interface EditorActions {
     focus: () => void;
     setContent: (content: string, triggerAutoSave?: boolean) => void;
+    insertContent: (content: string, options?: InsertOption) => void;
     getContent: IEditor['getContent'];
     getSelectionContent: () => string | undefined;
     setSelectionContent: (selection: string) => void;
