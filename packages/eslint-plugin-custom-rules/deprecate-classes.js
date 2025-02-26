@@ -246,6 +246,10 @@ const deprecatedClassNames = [
         deprecatedClassName: 'increase-click-surface',
         suggestedClassName: 'expand-click-area',
     },
+    {
+        deprecatedClassName: 'no-border',
+        suggestedClassName: 'border-none',
+    },
 ];
 
 module.exports = {
