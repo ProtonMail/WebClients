@@ -316,7 +316,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                                 <PhotosMakeCoverButton onSelectCover={onSelectCover} />
                             )}
                         {!hasMultipleSelected && <PhotosShareLinkButton selectedLinks={selectedItems} />}
-                        {!hasMultipleSelected && <PhotosDetailsButton selectedLinks={selectedItems} />}
+                        <PhotosDetailsButton selectedLinks={selectedItems} />
                         {addAlbumPhotosModal && (
                             <PhotosAddAlbumPhotosButton onClick={() => addAlbumPhotosModal.openModal(true)} />
                         )}
