@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Loader, NavigationControl, TopBanner, useAppTitle, useModalStateObject } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
+import clsx from '@proton/utils/clsx';
 
 import PortalPreview from '../../components/PortalPreview';
 import { useDetailsModal } from '../../components/modals/DetailsModal';
@@ -194,6 +195,7 @@ export const PhotosWithAlbumsView: FC = () => {
                 className="flex flex-column flex-nowrap flex-1"
             >
                 <ToolbarRow
+                    className={clsx('m-2 rounded', selectedCount > 0 && 'bg-weak')}
                     withBorder={false}
                     withPadding={false}
                     titleArea={
