@@ -20,7 +20,13 @@ export const getSSOVPNOnlyAccountApps = (): APP_NAMES[] => {
     return [APPS.PROTONVPN_SETTINGS];
 };
 
-export const getAvailableAppsByUserType = (options: { user?: User; context: AppContext; isLumoAvailable: boolean }) => {
+export interface GetAvailableAppsByUserTypeArguments {
+    user?: User;
+    context: AppContext;
+    isLumoAvailable: boolean;
+}
+
+export const getAvailableAppsByUserType = (options: GetAvailableAppsByUserTypeArguments) => {
     if (getIsSSOVPNOnlyAccount(options.user)) {
         return getSSOVPNOnlyAccountApps();
     }
@@ -47,41 +53,41 @@ export const getAvailableAppsByUserType = (options: { user?: User; context: AppC
     return apps;
 };
 
-const getOrganizationAllowedProducts = (options: {
-    user?: User;
-    organization?: OrganizationWithSettings;
-}): Set<OrganizationSettingsAllowedProduct> => {
-    // Admins can always access all
-    if (!options.user || !options.organization || (options.user && options.user.Role === USER_ROLES.ADMIN_ROLE)) {
-        return new Set(['All']);
-    }
-    // If allowed products does not exist it falls back to all
-    return new Set(options.organization.Settings?.AllowedProducts || ['All']);
-};
+const all: Set<'All'> = new Set(['All']);
 
-const getAvailableAppsByOrganization = (options: {
-    apps: APP_NAMES[];
+interface GetOrganizationAllowedProductsArguments {
     user?: User;
     organization?: OrganizationWithSettings;
-}) => {
-    const organizationAllowedProducts = getOrganizationAllowedProducts({
-        user: options.user,
-        organization: options.organization,
-    });
-    if (organizationAllowedProducts.has('All')) {
-        return options.apps;
+    isAccessControlEnabled: boolean;
+}
+
+const getAvailableAppsByOrganization = ({
+    user,
+    organization,
+    isAccessControlEnabled,
+}: GetOrganizationAllowedProductsArguments): Set<OrganizationSettingsAllowedProduct> => {
+    // Admins can always access all
+    if (!isAccessControlEnabled || !user || !organization || (user && user.Role === USER_ROLES.ADMIN_ROLE)) {
+        return all;
     }
-    return options.apps.filter((app) => {
-        const product = APPS_CONFIGURATION[app].product;
-        return organizationAllowedProducts.has(product as OrganizationSettingsAllowedProduct);
-    });
+    const allowedProducts = organization.Settings?.AllowedProducts;
+    // Backwards compatibility, the API might not be ready, if it doesn't exist, fall back to all
+    if (allowedProducts) {
+        return new Set(allowedProducts);
+    }
+    return all;
 };
 
 export const getAvailableApps = (
-    options: Parameters<typeof getAvailableAppsByUserType>[0] & {
-        organization?: OrganizationWithSettings;
-    }
+    options: GetAvailableAppsByUserTypeArguments & GetOrganizationAllowedProductsArguments
 ) => {
-    const apps = getAvailableAppsByUserType(options);
-    return getAvailableAppsByOrganization({ apps, user: options.user, organization: options.organization });
+    const availableAppsByUserType = getAvailableAppsByUserType(options);
+    const availableAppsByOrganization = getAvailableAppsByOrganization(options);
+    if (availableAppsByOrganization.has('All')) {
+        return availableAppsByUserType;
+    }
+    return availableAppsByUserType.filter((app) => {
+        const product = APPS_CONFIGURATION[app].product;
+        return availableAppsByOrganization.has(product as OrganizationSettingsAllowedProduct);
+    });
 };
