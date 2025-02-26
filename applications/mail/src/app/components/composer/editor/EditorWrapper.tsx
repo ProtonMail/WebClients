@@ -1,6 +1,7 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import type { GetContentMode } from 'roosterjs-editor-types';
+import { ContentPosition } from 'roosterjs-editor-types';
 
 import type { EditorActions, EditorMetadata } from '@proton/components';
 import { Editor, useHandler } from '@proton/components';
@@ -269,9 +270,11 @@ const EditorWrapper = ({
         editorMetadata.setBlockquoteExpanded?.(true);
 
         skipNextInputRef.current = true;
-        if (editorActionsRef.current) {
-            const content = editorActionsRef.current.getContent();
-            editorActionsRef.current.setContent(content + blockquoteSaved);
+        if (editorActionsRef.current && blockquoteSaved) {
+            editorActionsRef.current.insertContent(blockquoteSaved, {
+                position: ContentPosition.End,
+                updateCursor: false,
+            });
         }
     }, [blockquoteSaved]);
 
