@@ -18,8 +18,6 @@ import {
     ErrorBoundary,
     FloatingButton,
     Icon,
-    InboxDesktopFreeTrialTopBanner,
-    InboxDesktopOutdatedAppTopBanner,
     LocalizedMiniCalendar,
     PrivateAppContainer,
     PrivateHeader,
@@ -72,6 +70,8 @@ import { useCalendarSearch } from './search/CalendarSearchProvider';
 const LazyCalendarShortcutsAndCommander = lazy(
     () => import(/* webpackChunkName: "CalendarShortcutsAndCommander" */ './CalendarShortcutsAndCommander')
 );
+
+const LazyInboxDesktopCalendarTop = lazy(() => import('@proton/components/containers/desktop/InboxDesktopCalendarTop'));
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -384,8 +384,11 @@ const CalendarContainerView = ({
 
     const top = !isDrawerApp && (
         <>
-            {isElectronMail && <InboxDesktopOutdatedAppTopBanner />}
-            {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
+            {isElectronMail && (
+                <Suspense fallback="">
+                    <LazyInboxDesktopCalendarTop />
+                </Suspense>
+            )}
             <TopBanners app={APPS.PROTONCALENDAR}>
                 <SmartBanner app={APPS.PROTONCALENDAR} />
             </TopBanners>
