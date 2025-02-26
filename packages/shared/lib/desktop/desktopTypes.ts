@@ -41,6 +41,7 @@ export type IPCInboxGetInfoMessage =
     | { type: 'latestVersion'; result: DesktopVersion | null }
     | { type: 'installSource'; result: string | null }
     | { type: 'defaultMailto'; result: DefaultProtocol }
+    | { type: 'defaultMailtoBannerDismissed'; result: boolean }
     | { type: 'colorScheme'; result: ColorScheme }
     | { type: 'getAllAppVersions'; result: string }
     | { type: 'dailyStats'; result: DailyStatsStored };
@@ -63,6 +64,7 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'setDefaultMailto'; payload?: undefined }
     | { type: 'setShouldCheckDefaultMailto'; payload: boolean }
     | { type: 'checkDailyStatsAndSignal'; payload?: undefined }
+    | { type: 'setDefaultMailtoBannerDismissed'; payload: boolean }
     | { type: 'defaultMailtoTelemetryReported'; payload: number }
     | { type: 'dailyStatsReported'; payload: number }
     | { type: 'setESUserChoice'; payload: { userID: string; userChoice: boolean } }
