@@ -1,6 +1,6 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
@@ -36,9 +36,6 @@ export const getIsElligibleForNudge = ({ flag, config, subscription, hideOffer }
 
     const subscriptionAge = differenceInDays(Date.now(), fromUnixTime(subscription.PeriodStart));
 
-    // Users with the one dollar promo are not eligible
-    const hasOneDollar = subscription?.CouponCode === COUPON_CODES.TRYMAILPLUS0724;
-
     const isSubscriptionInEligibilityWindow = isInWindow(subscriptionAge);
     const isMobile = isManagedExternally(subscription);
 
@@ -48,7 +45,6 @@ export const getIsElligibleForNudge = ({ flag, config, subscription, hideOffer }
         isMailPlus &&
         isSubscriptionInEligibilityWindow &&
         !isMobile &&
-        !hasOneDollar &&
         !isNextSubscriptionYearly
     );
 };

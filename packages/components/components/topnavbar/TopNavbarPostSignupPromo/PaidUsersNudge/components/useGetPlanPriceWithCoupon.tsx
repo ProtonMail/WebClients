@@ -29,7 +29,7 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
     });
 
     useEffect(() => {
-        if (!currency) {
+        if (!currency || !plans) {
             return;
         }
 
@@ -41,7 +41,7 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
                 CouponCode: COUPON_CODES.ANNUALOFFER25,
             });
 
-            const plansMap = getPlansMap(plans?.plans ?? [], currency, false);
+            const plansMap = getPlansMap(plans.plans, currency, false);
 
             const checkout = getCheckout({
                 planIDs: { [plan]: 1 },
@@ -61,7 +61,7 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
         };
 
         void withLoading(getPrices);
-    }, [currency]);
+    }, [currency, plans]);
 
     return {
         loading,
