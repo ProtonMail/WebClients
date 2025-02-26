@@ -63,11 +63,11 @@ export const createContentScriptContext = (options: {
         },
 
         destroy: options.destroy,
-        getExtensionContext: () => ExtensionContext.get(),
+        getExtensionContext: () => ExtensionContext.read(),
         getFeatureFlags: () => featureFlags,
         getFeatures: () => {
             const disallowed = settings.disallowedDomains ?? {};
-            const url = context.getExtensionContext().url;
+            const url = context.getExtensionContext()?.url;
 
             /* merge domain and subdomain masks if we have both in the pause-list */
             const domainMask = url?.domain ? disallowed[url.domain] : 0;

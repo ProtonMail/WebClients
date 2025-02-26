@@ -45,7 +45,7 @@ export const createAutosaveService = () => {
             if (!submission) return false;
 
             const { status, type, data, formId, submittedAt } = submission;
-            const currentURL = ctx?.getExtensionContext().url;
+            const currentURL = ctx?.getExtensionContext()?.url;
             const domainmatch = currentURL && urlEq(currentURL, submission);
 
             /** Check if any of the currently tracked forms match the
