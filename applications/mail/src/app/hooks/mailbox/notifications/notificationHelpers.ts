@@ -5,6 +5,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import generateUID from '@proton/utils/generateUID';
 
 import notificationIcon from '../../../assets/notification.png';
 import { isConversationMode } from '../../../helpers/mailSettings';
@@ -59,7 +60,7 @@ export const displayGrouppedNotification = ({
     history: History<unknown>;
     onOpenElement: () => void;
 }) => {
-    const ID = crypto.randomUUID();
+    const ID = generateUID('groupped-notification');
     const title = c('Desktop notification title').t`New email received`;
 
     if (isElectronMail) {
