@@ -17,9 +17,16 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
     const [organization] = useOrganization();
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
+    const isAccessControlEnabled = useFlag('AccessControl');
 
     if (viewportWidth['<=small']) {
-        const availableApps = getAvailableApps({ user, context: 'dropdown', organization, isLumoAvailable });
+        const availableApps = getAvailableApps({
+            user,
+            context: 'dropdown',
+            organization,
+            isLumoAvailable,
+            isAccessControlEnabled,
+        });
         if (availableApps.length <= 1) {
             return null;
         }
