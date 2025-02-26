@@ -27,6 +27,7 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
     const { APP_NAME } = useConfig();
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
+    const isAccessControlEnabled = useFlag('AccessControl');
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -43,7 +44,7 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
             <Content>
                 <ExploreAppsList
                     subscription={{ subscribed, plan }}
-                    apps={getExploreApps({ subscribed, user, organization, isLumoAvailable })}
+                    apps={getExploreApps({ subscribed, user, organization, isLumoAvailable, isAccessControlEnabled })}
                     onExplore={onExplore}
                 />
             </Content>

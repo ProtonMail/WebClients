@@ -160,6 +160,7 @@ const MainContainer = () => {
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const canDisplayPassReports = useFlag('PassB2BReports');
+    const isAccessControlEnabled = useFlag('AccessControl');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -212,6 +213,7 @@ const MainContainer = () => {
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
         isCalendarHotkeysEnabled,
+        isAccessControlEnabled,
     });
 
     useEffect(() => {

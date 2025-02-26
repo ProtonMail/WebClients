@@ -36,8 +36,15 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ) => {
         const { APP_NAME } = useConfig();
         const isLumoAvailable = useFlag('LumoInProductSwitcher');
+        const isAccessControlEnabled = useFlag('AccessControl');
 
-        const availableApps = getAvailableApps({ user, organization, context: 'dropdown', isLumoAvailable });
+        const availableApps = getAvailableApps({
+            context: 'dropdown',
+            user,
+            organization,
+            isLumoAvailable,
+            isAccessControlEnabled,
+        });
 
         if (availableApps.length <= 1) {
             return null;
