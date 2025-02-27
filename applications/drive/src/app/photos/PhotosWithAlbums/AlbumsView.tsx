@@ -3,7 +3,9 @@ import React, { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Loader, useAppTitle, useModalStateObject } from '@proton/components';
+import { Button } from '@proton/atoms/index';
+import { Icon, Loader, useAppTitle, useModalStateObject } from '@proton/components';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
@@ -19,6 +21,8 @@ import { AlbumsGrid } from './AlbumsGrid';
 import { EmptyAlbums } from './EmptyAlbums';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
+
+import './BannerInvite.scss';
 
 // TODO: Move in separate file once it's completed
 const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[] => {
@@ -65,6 +69,15 @@ export const AlbumsView: FC = () => {
             thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
         }
     };
+
+    const showBannerInvite = false; // TO DO
+    const peopleInvite = 'Doc Brown'; // To replace
+    const emailInvite = 'doc.brown@proton.me'; // To replace
+    const albumName = 'Back to Hill Valley'; // To replace
+    // translator: please keep **${albumName}** so album name is properly put in bold. Full sentence example is: Doc Brown (doc.brown@proton.me) invited you to join **Back to Hill Valley**)
+    const inviteText = getBoldFormattedText(
+        c('Info').t`${peopleInvite} (${emailInvite}) invited you to join **${albumName}**`
+    );
 
     const onCreateAlbum = useCallback(
         async (name: string) => {
@@ -126,6 +139,30 @@ export const AlbumsView: FC = () => {
                     tags={[AlbumTag.All, AlbumTag.MyAlbums, AlbumTag.Shared, AlbumTag.SharedWithMe]}
                     onTagSelect={setSelectedTags}
                 />
+            )}
+
+            {showBannerInvite && (
+                <div className="banner-invite">
+                    <div className="banner-invite-inner border border-info rounded m-2 py-1 px-2 flex flex-row flex-nowrap items-center *:min-size-auto">
+                        <div className="flex-1 flex flex-nowrap flex-row items-start py-0.5">
+                            <span
+                                className="rounded-full custom-bg shrink-0 mr-2 p-1 ratio-square flex"
+                                style={{ '--custom-bg': 'var(--signal-info-minor-1)' }}
+                            >
+                                <Icon name="album" className="m-auto" />
+                            </span>
+                            <span className="mt-0.5">{inviteText}</span>
+                        </div>
+                        <span className="shrink-0 flex gap-2 py-0.5">
+                            <Button shape="ghost" color="norm">
+                                {c('Action').t`Decline`}
+                            </Button>
+                            <Button shape="solid" color="norm" loading={true}>
+                                {c('Action').t`Join album`}
+                            </Button>
+                        </span>
+                    </div>
+                </div>
             )}
 
             {isAlbumsEmpty ? (
