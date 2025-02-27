@@ -196,6 +196,14 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         disabled={readOnly}
                                     />
 
+                                    {canLeave && (
+                                        <DropdownMenuButton
+                                            onClick={handleLeaveItemClick}
+                                            label={c('Action').t`Leave`}
+                                            icon="arrow-out-from-rectangle"
+                                        />
+                                    )}
+
                                     {monitorActions}
                                 </QuickActionsDropdown>,
                             ];
