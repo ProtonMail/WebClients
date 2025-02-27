@@ -19,8 +19,8 @@ export const getHasUpdatedAttendees = (
             };
         }
         return {
-            attendees: newEventData.Attendees,
-            hasUpdatedAttendees: !!newEventData.Attendees.length,
+            attendees: newEventData.AttendeesInfo.Attendees,
+            hasUpdatedAttendees: !!newEventData.AttendeesInfo.Attendees.length,
         };
     }
 
@@ -30,13 +30,14 @@ export const getHasUpdatedAttendees = (
         };
     }
 
-    let hasUpdatedAttendees = oldEventData.Attendees.length !== newEventData.Attendees.length;
-    const attendeeMap = oldEventData.Attendees.reduce<SimpleMap<Attendee>>((acc, attendee) => {
+    let hasUpdatedAttendees =
+        oldEventData.AttendeesInfo.Attendees.length !== newEventData.AttendeesInfo.Attendees.length;
+    const attendeeMap = oldEventData.AttendeesInfo.Attendees.reduce<SimpleMap<Attendee>>((acc, attendee) => {
         acc[attendee.Token] = attendee;
         return acc;
     }, {});
 
-    const attendees = newEventData.Attendees.map((attendee) => {
+    const attendees = newEventData.AttendeesInfo.Attendees.map((attendee) => {
         const oldAttendee = attendeeMap[attendee.Token];
         const oldUpdateTime = oldAttendee?.UpdateTime || 0;
         if (!oldUpdateTime) {
