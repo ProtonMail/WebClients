@@ -1,0 +1,15 @@
+.banner-invite {
+	container-type: inline-size;
+
+	&-inner {
+		background-color: color-mix(
+			in srgb,
+			var(--signal-info-minor-2) 40%,
+			transparent
+		); // had to do this to have enough contrast with taxonomy ^^
+
+		@container (max-width: 30rem) {
+			flex-direction: column;
+		}
+	}
+}
