@@ -5,15 +5,7 @@ import { formatDuration } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    FileIcon,
-    Icon,
-    usePopperAnchor,
-} from '@proton/components';
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
@@ -153,7 +145,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
                             />
                         ) : (
                             <div className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
-                                <FileIcon mimeType={album.mimeType || ''} size={12} />
+                                <Icon name="album" size={6} />
                             </div>
                         )}
                         {(album.signatureIssues || album.isShared) && (
