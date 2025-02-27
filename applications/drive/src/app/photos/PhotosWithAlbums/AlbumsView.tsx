@@ -47,8 +47,7 @@ export const AlbumsView: FC = () => {
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const createAlbumModal = useModalStateObject();
-    // TODO: [linkSharingModal, showLinkSharingModal] enable link sharing modal for albums
-    const [linkSharingModal] = useLinkSharingModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const createAlbum = useCreateAlbum();
 
     const thumbnails = useThumbnailsDownload();
@@ -177,6 +176,9 @@ export const AlbumsView: FC = () => {
                     isLoading={false} // TODO: Get Albums loading status
                     onItemClick={(linkId) => {
                         navigateToAlbum(linkId);
+                    }}
+                    onItemShare={(linkId) => {
+                        showLinkSharingModal({ shareId, linkId });
                     }}
                 />
             )}
