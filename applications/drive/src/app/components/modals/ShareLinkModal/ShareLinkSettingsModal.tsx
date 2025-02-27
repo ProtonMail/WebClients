@@ -122,6 +122,7 @@ const SharingSettingsModal = ({
                 {...modalProps}
                 onClose={handleClose}
                 fullscreenOnMobile
+                data-protonpass-autosave-ignore="true"
             >
                 <ModalTwoHeader title={c('Title').t`Settings`} />
                 <ModalTwoContent>
