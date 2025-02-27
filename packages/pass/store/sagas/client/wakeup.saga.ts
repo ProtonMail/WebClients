@@ -26,10 +26,10 @@ function* wakeupWorker(
     const loggedIn = getAuth().hasSession();
     const userId = getAuth().getUserID();
 
-    /* synchronise the target client app state */
-    yield put(stateHydrate((yield select()) as State, { endpoint, tabId }));
-
     if (loggedIn && userId && clientBooted(status)) {
+        const state: State = yield select();
+        yield put(stateHydrate(state, { endpoint, tabId }));
+
         const maybeRevalidate = endpoint === 'popup' ? withRevalidate : identity;
         yield put(maybeRevalidate(getUserAccessIntent(userId)));
 

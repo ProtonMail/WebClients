@@ -29,7 +29,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
     if (!user) return;
 
     try {
-        yield wait(1500);
+        yield wait(1_500);
 
         yield put(withRevalidate(getUserAccessIntent(user.ID)));
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));

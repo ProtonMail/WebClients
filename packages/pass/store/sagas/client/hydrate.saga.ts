@@ -101,16 +101,18 @@ export function* hydrate(
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();
 
-        const state: State = cachedState
-            ? config.merge(currentState, partialMerge(cachedState, incoming))
-            : partialMerge(currentState, incoming);
+        const state: State = (onBeforeHydrate ?? identity)(
+            cachedState
+                ? config.merge(currentState, partialMerge(cachedState, incoming))
+                : partialMerge(currentState, incoming)
+        );
 
         /** If `keyPassword` is not defined then we may be dealing with an offline
          * state hydration in which case hydrating PassCrypto would throw. In such
          * cases, wait for network online in order to resume session */
         if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, clear: true });
 
-        yield put(stateHydrate((onBeforeHydrate ?? identity)(state)));
+        yield put(stateHydrate(state));
 
         return {
             fromCache: cache?.state !== undefined && cache?.snapshot !== undefined,
