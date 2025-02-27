@@ -5,7 +5,7 @@ import { formatDuration } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Checkbox, FileIcon, Icon } from '@proton/components';
+import { Checkbox, FileIcon, Icon, Tooltip } from '@proton/components';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
@@ -93,6 +93,8 @@ export const PhotosCard: FC<Props> = ({
 
     const showCheckbox = hasSelection;
 
+    const [isFavorite, setisFavorite] = useState(false);
+
     return (
         /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <ButtonLike
@@ -114,7 +116,7 @@ export const PhotosCard: FC<Props> = ({
             aria-busy={!isLoaded}
         >
             <Checkbox
-                className="absolute top-0 left-0 ml-2 mt-2"
+                className="absolute top-0 left-0 ml-2 mt-2 scale-fade-in"
                 data-testid="photos-card-checkbox"
                 checked={selected}
                 onClick={stopPropagation}
@@ -134,6 +136,25 @@ export const PhotosCard: FC<Props> = ({
                     c('Info').t`Select item`
                 }
             ></Checkbox>
+
+            <Tooltip title={isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`}>
+                <button
+                    type="button"
+                    className="absolute top-0 right-0 mr-2 mt-2 scale-fade-in photos-card-favorite-button"
+                    aria-pressed={isFavorite}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setisFavorite(!isFavorite); // TO DO, really put it in favorite
+                    }}
+                >
+                    <Icon
+                        name="heart-filled"
+                        className="shadow-liftedfdsqfdqsfdsq"
+                        size={5}
+                        alt={c('Action').t`Mark as favorite`}
+                    />
+                </button>
+            </Tooltip>
 
             {isLoaded ? (
                 <div className="w-full h-full relative">
