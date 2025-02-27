@@ -77,7 +77,7 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
             </SettingsParagraph>
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="two-fa-admin" className="text-semibold">
+                    <label htmlFor="two-fa-admin" className="text-semibold flex items-center">
                         <span className="mr-0.5">{c('Label').t`Require 2FA for administrators`}</span>
                         <Info
                             url={
@@ -104,7 +104,7 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="two-fa-member" className="text-semibold">
+                    <label htmlFor="two-fa-member" className="text-semibold flex items-center">
                         <span className="mr-0.5">{c('Label').t`Require 2FA for everyone`}</span>
                         <Info
                             url={
