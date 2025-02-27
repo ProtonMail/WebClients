@@ -72,8 +72,11 @@ export const DrivePostSignupOneDollar = () => {
         offerProduct: 'drive',
     });
 
-    const upgradeText = c('specialoffer: Link').jt`Upgrade for ${pricingTitle}`;
-    const upgradeIcon = upgradeText.length > 15 && viewportWidth['>=large'] ? undefined : 'upgrade';
+    // translators: do no go above 30 characters for this string
+    const originalUpgradeText = c('specialoffer: Link').jt`Upgrade for ${pricingTitle}`;
+    // translators: keep the "Special offer" text as short as possible since this is a fallback if the offer text is too long
+    const upgradeText = originalUpgradeText[0].length > 30 ? c('Offer').t`Special offer` : originalUpgradeText;
+    const upgradeIcon = upgradeText[0].length > 15 && viewportWidth['>=large'] ? undefined : 'upgrade';
 
     const handleClose = () => {
         setSpotlightState(false);
