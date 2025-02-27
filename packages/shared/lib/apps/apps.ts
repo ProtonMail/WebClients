@@ -1,7 +1,7 @@
 import { APPS, APPS_CONFIGURATION, type APP_NAMES, USER_ROLES } from '../constants';
 import { isElectronApp } from '../helpers/desktop';
 import type { OrganizationSettingsAllowedProduct, OrganizationWithSettings, User } from '../interfaces';
-import { getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
+import { getIsGlobalSSOAccount, getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
 
 type AppContext = 'dropdown' | 'app';
 
@@ -31,6 +31,10 @@ export const getAvailableAppsByUserType = (options: GetAvailableAppsByUserTypeAr
         return getSSOVPNOnlyAccountApps();
     }
     if (getIsPublicUserWithoutProtonAddress(options.user)) {
+        if (getIsGlobalSSOAccount(options.user)) {
+            // Drive is blocked for Global SSO users as of 22.02.2025
+            return [APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS];
+        }
         return getPublicUserProtonAddressApps(options.context);
     }
     if (isElectronApp) {
