@@ -333,9 +333,6 @@
       "Download logs": [
         "ჟურნალის გადმოწერა"
       ],
-      "Download photos": [
-        "სურათების გადმოწერა"
-      ],
       "Download without scanning": [
         "გამოწერა სკანირების გარეშე"
       ],
@@ -1366,12 +1363,6 @@
       ],
       "Take a tour": [
         "გასაცნობი ტური"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "${ photos.length } სურათის დამატება",
-        "${ photos.length } სურათის დამატება"
       ]
     },
     "Cancellation reminder": {
@@ -2453,6 +2444,11 @@
         "ინვოისი გადაცილებულია"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2534,11 +2530,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4230,9 +4221,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
       ],
-      "Album is empty": [
-        "ალბომი ცარიელია"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "ყველა (${ totalFoldersCount } საქაღალდე)",
         "ყველა (${ totalFoldersCount } საქაღალდე)"
@@ -4240,9 +4228,6 @@
       "All (${ totalFoldersCount } label)": [
         "ყველა (${ totalFoldersCount } ჭდე)",
         "ყველა (${ totalFoldersCount } ჭდე)"
-      ],
-      "All albums": [
-        "ყველა ალბომი"
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
@@ -4310,6 +4295,9 @@
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "ავტომატური აღდგენა ${ formattedDate }"
       ],
       "Available": [
         "ხელმისაწვდომია"
@@ -5060,9 +5048,6 @@
       "Ready to add some photos?": [
         "მზად ბრძანდებით, სურათები დაამატოთ?"
       ],
-      "Recent": [
-        "უახლესი"
-      ],
       "recommended browser": [
         "რეკომენდებული ბრაუზერი"
       ],
@@ -5480,6 +5465,9 @@
       "We need to authenticate your payment with your bank.": [
         "ჩვენ თქვენი გადახდის ავთენტიკაცია გვჭირდება თქვენს ბანკში."
       ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "გულით ვწუხვართ გაუგებრობისთვის, რომელიც ამას შეეძლო, გაემოეწვია."
+      ],
       "We use 3-D Secure to protect your payments": [
         "თქვენი გადახდების დასაცავად ჩვენ ვიყენებთ 3-D Secure-ს"
       ],
@@ -5707,6 +5695,14 @@
     "info": {
       "Selected color:": [
         "არჩეული ფერი:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "როგორ გავაგზავნო გადასახდელი თანხა?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "ინსტრუქციებს იპოვით სტატიაში: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -6421,6 +6417,9 @@
     "Link": {
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
+      ],
+      "Albums": [
+        "ალბომები"
       ],
       "All mail": [
         "ყველა ელფოსტა"
@@ -10079,6 +10078,9 @@
       "Auto-deletion is active": [
         "ავტოამოცნობა ჩართულია"
       ],
+      "Automatic Recovery in Progress": [
+        "მიმდინარეობს ავტომატური აღდგენა"
+      ],
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
@@ -10674,6 +10676,11 @@
         "დღეს"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "დაამატეთ ეს გაზიარებული ფაილი თქვენს ${ DRIVE_APP_NAME }-ზე მოგვიანებით იოლი წვდომისთვის."
@@ -10755,11 +10762,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "ჩვენ მათ მოწვევა გავუგზავნეთ ელემენტთან წვდომისთვის."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ]
     },
     "Validation": {

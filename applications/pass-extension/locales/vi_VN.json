@@ -869,19 +869,6 @@
         "Terabytes"
       ]
     },
-    "Font face option": {
-      "System default": [
-        "Mặc định hệ thống"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Lớn"
-      ],
-      "Small": [
-        "Nhỏ"
-      ]
-    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
@@ -1104,6 +1091,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Bật tự động khóa bằng mã PIN"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Nhập mã xác minh. Số ${ digit }."
       ],
       "Enter your extra password": [
         "Nhập mật khẩu phụ"

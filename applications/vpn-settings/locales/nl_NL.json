@@ -2695,6 +2695,12 @@
       "Please select a state": [
         "Selecteer een staat"
       ],
+      "Please select at least one location before continuing.": [
+        "Selecteer ten minste één locatie voordat u verder gaat."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Selecteer ten minste één gebruiker of groep voordat u verdergaat."
+      ],
       "Please set a recovery email first": [
         "Stel eerst een herstel-e-mailadres in"
       ],
@@ -2754,6 +2760,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "De minimale betaling die we accepteren is ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "De naam van de policy moet tussen 3 en 40 tekens lang zijn."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
@@ -4519,6 +4528,9 @@
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
       ],
+      "Organization --> Groups": [
+        "Organisatie --> Groepen"
+      ],
       "Organization size": [
         "Grootte van de organisatie"
       ],
@@ -4964,6 +4976,9 @@
       ],
       "to continue to ${ product }": [
         "om door te gaan naar ${ product }"
+      ],
+      "To create your first user group, go to": [
+        "Om uw eerste gebruikersgroep aan te maken, ga naar"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -7719,6 +7734,12 @@
       "Maybe later": [
         "Misschien later"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Aanbieding vervalt op ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Betaal jaarlijks om te genieten van ons beste aanbod"
+      ],
       "Save": [
         "Opslaan"
       ],
@@ -7739,6 +7760,9 @@
       ],
       "You currently pay": [
         "U betaalt momenteel"
+      ],
+      "Your subscription renews soon": [
+        "Uw abonnement verloopt binnenkort"
       ]
     },
     "Offer feature": {
@@ -9641,6 +9665,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -9929,47 +9994,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {

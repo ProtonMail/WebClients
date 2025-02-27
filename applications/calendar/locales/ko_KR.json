@@ -5422,6 +5422,14 @@
         "검색 쿼리를 갱신하거나 캘린더 보기로 돌아가기 위해서 검색을 닫을 수 있습니다"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "결제 수단 전송 방법"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "이 문서의 설명을 따라주세요: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info message": {
       "No results found": [
         "결과를 찾을 수 없음"
@@ -7591,6 +7599,12 @@
       "Maybe later": [
         "나중에"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "이 혜택은 ${ formattedDate }에 만료됩니다."
+      ],
+      "Pay annually, secure our best offer": [
+        "매년 결제로 구독하여 최고의 할인 혜택을 받아가세요"
+      ],
       "Save": [
         "절약되는 가격:"
       ],
@@ -7611,6 +7625,9 @@
       ],
       "You currently pay": [
         "현재 결제:"
+      ],
+      "Your subscription renews soon": [
+        "구독이 곧 끝나게 됩니다"
       ]
     },
     "Offer feature": {

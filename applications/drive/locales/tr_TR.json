@@ -45,6 +45,10 @@
       "Add": [
         "Ekle"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "${ photos.length } fotoğrafı yeni bir albüme ekle",
+        "${ photos.length } fotoğrafı yeni bir albüme ekle"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -86,6 +90,10 @@
       ],
       "Add to group": [
         "Gruba ekle"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "\"${ album.name }\" albümüne ekle (${ album.photoCount } fotoğraf)",
+        "\"${ album.name }\" albümüne ekle (${ album.photoCount } fotoğraf)"
       ],
       "Album name": [
         "Albüm adı"
@@ -333,7 +341,8 @@
       "Download logs": [
         "Günlüğü indir"
       ],
-      "Download photos": [
+      "Download photo": [
+        "Fotoğraf indir",
         "Fotoğrafları indir"
       ],
       "Download without scanning": [
@@ -672,6 +681,9 @@
       "Remove device": [
         "Aygıtı kaldır"
       ],
+      "Remove from album": [
+        "Albümden sil"
+      ],
       "Remove from this list": [
         "Bu listeden kaldır"
       ],
@@ -681,8 +693,14 @@
       "Remove me": [
         "Beni çıkar"
       ],
+      "Remove Without Saving": [
+        "Kaydetmeden sil"
+      ],
       "Rename": [
         "Yeniden adlandır"
+      ],
+      "Rename album": [
+        "Albümü yeniden adlandır"
       ],
       "Replace file": [
         "Dosyayı değiştir"
@@ -750,6 +768,9 @@
       "Save": [
         "Kaydet"
       ],
+      "Save and Remove": [
+        "Kaydet ve Sil"
+      ],
       "Save changes": [
         "Değişiklikleri kaydet"
       ],
@@ -800,6 +821,9 @@
       ],
       "Share": [
         "Paylaş"
+      ],
+      "Share album": [
+        "Albümü paylaş"
       ],
       "Share file": [
         "Dosya paylaş"
@@ -1373,12 +1397,6 @@
       ],
       "Take a tour": [
         "Keşfedin"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "${ photos.length } fotoğrafı şuraya ekle",
-        "${ photos.length } fotoğrafı şuraya ekle"
       ]
     },
     "Cancellation reminder": {
@@ -2460,6 +2478,11 @@
         "Süresi geçmiş fatura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2541,11 +2564,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3699,6 +3717,18 @@
         "Güvenlik merkezi"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "${ photos.length } fotoğrafı şuraya ekle",
+        "${ photos.length } fotoğrafı şuraya ekle"
+      ],
+      "All albums": [
+        "Tüm albümler"
+      ],
+      "Recent": [
+        "Son kullanılan"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } öneri bulundu, gezinmek için klavyeyi kullanın.",
@@ -4246,9 +4276,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ],
-      "Album is empty": [
-        "Albüm boş"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tümü (${ totalFoldersCount } klasör)",
         "Tümü (${ totalFoldersCount } klasör)"
@@ -4256,9 +4283,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
-      ],
-      "All albums": [
-        "Tüm albümler"
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
@@ -4328,7 +4352,7 @@
         "İlgilenmeniz gerekiyor"
       ],
       "Automated Recovery ${ formattedDate }": [
-        "Otomatik Kurtarma ${ formattedDate }"
+        "Otomatik kurtarma ${ formattedDate }"
       ],
       "Available": [
         "Kullanılabilir"
@@ -4919,7 +4943,7 @@
         "/"
       ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
-        "Bu işlem tamamlandığında geri yüklenen verilerinizin bir kopyasını “Otomatik Kurtarma (bugünün tarihi)” adlı yeni bir klasörde bulacaksınız. Verilerinizin bu kopyaları depolama alanı kotanızdan sayılmayacaktır."
+        "Bu işlem tamamlandığında geri yüklenen verilerinizin bir kopyasını “Otomatik kurtarma (bugünün tarihi)” adlı yeni bir klasörde bulacaksınız. Verilerinizin bu kopyaları depolama alanı kotanızı etkilemeyecek."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Şifrelenmiş sürücülerinizden biri kilitli. Bu durum genellikle bir parola sıfırlama işleminde kaynaklanır."
@@ -4946,7 +4970,7 @@
         "Uyarılarımız güvenliğe öncelik verir. Ele geçirilen bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
       ],
       "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
-        "Sistemlerimiz önceki kurtarma işleminizin başarıyla tamamlanmadığını tespit etti ve bazı dosyalar tam olarak geri yüklenmemiş olabilir. Her şeyin tam olarak geri yüklendiğinden emin olmak için kurtarma işlemini otomatik olarak yeniden başlattık."
+        "Önceki kurtarma işleminizin tamamlanmadığı algılandı. Bazı dosyalar tam olarak geri yüklenmemiş olabilir. Her şeyin tam olarak geri yüklendiğinden emin olmak için kurtarma işlemi otomatik olarak yeniden başlatıldı."
       ],
       "Owner": [
         "Sahibi"
@@ -5084,9 +5108,6 @@
       ],
       "Ready to add some photos?": [
         "Fotoğraflarınızı eklemeye hazır mısınız?"
-      ],
-      "Recent": [
-        "Son kullanılan"
       ],
       "recommended browser": [
         "önerilen tarayıcı"
@@ -5307,6 +5328,9 @@
       "This item already exists in your library": [
         "Bu öge kitaplığınızda zaten var"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Bu öge fotoğraf kütüphanenize kaydedilemiş. Eğer silerseniz, erişime sonsuza dek kaybedeceksiniz. Silmeden önce kaydetmek ister misiniz ?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
       ],
@@ -5515,7 +5539,7 @@
         "Ödemenizi bankanızla doğrulamamız gerekiyor."
       ],
       "We sincerely apologize for the inconvenience this may have caused you.": [
-        "Bu durumun size vermiş olabileceği rahatsızlıktan dolayı içtenlikle özür dileriz."
+        "Vermiş olabileceğimiz rahatsızlıktan dolayı özür dileriz."
       ],
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
@@ -5728,6 +5752,10 @@
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
+      "Your photo has been removed from the album": [
+        "Fotoğrafınız albümden silindi",
+        "Fotoğraflarınız albümden silindi"
+      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tarifeniz 10 sürüm ve 7 gün ile sınırlıdır"
       ],
@@ -5751,10 +5779,10 @@
     },
     "Info for cash payment method": {
       "How to send a cash payment?": [
-        "Nakit ödeme nasıl gönderilir?"
+        "Nakit ödeme nasıl yapılır?"
       ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
+        "Lütfen yönerge için şu yazıya bakın: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -6469,6 +6497,9 @@
     "Link": {
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
+      ],
+      "Albums": [
+        "Albümler"
       ],
       "All mail": [
         "Tüm e-postalar"
@@ -8159,6 +8190,12 @@
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
+      ],
+      "Pay annually, secure our best offer": [
+        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+      ],
       "Save": [
         "İndirim"
       ],
@@ -8179,6 +8216,9 @@
       ],
       "You currently pay": [
         "Şu anda ödediğiniz"
+      ],
+      "Your subscription renews soon": [
+        "Aboneliğiniz yakında yenilenecek"
       ]
     },
     "Offer feature": {
@@ -10137,7 +10177,7 @@
         "Otomatik silme özelliği açık"
       ],
       "Automatic Recovery in Progress": [
-        "Otomatik Kurtarma İşlemi Devam Ediyor"
+        "Otomatik kurtarma işlemi sürüyor"
       ],
       "Billing cycle": [
         "Fatura dönemi"
@@ -10524,6 +10564,9 @@
       "Remove device?": [
         "Aygıt kaldırılsın mı?"
       ],
+      "Remove items": [
+        "Ögeleri sil"
+      ],
       "Rename a file": [
         "Bir dosyayı yeniden adlandır"
       ],
@@ -10734,6 +10777,11 @@
         "Bugün"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Bu paylaşılan dosyayı daha sonra kolayca erişebilmek için ${ DRIVE_APP_NAME } depolama alanınıza ekleyin"
@@ -10815,11 +10863,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Valentine_2025": {
