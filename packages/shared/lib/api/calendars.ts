@@ -245,7 +245,7 @@ export const updateAttendeePartstat = (
     calendarID: string,
     eventID: string,
     attendeeID: string,
-    data: Pick<Attendee, 'Status' | 'UpdateTime'>
+    data: Pick<Attendee, 'Status' | 'UpdateTime' | 'Comment'>
 ) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}/attendees/${attendeeID}`,
     method: 'put',
