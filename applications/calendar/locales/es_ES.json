@@ -2637,7 +2637,7 @@
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
-        "La autenticación de dos factores añade una capa de seguridad adicional, evitando el acceso no autorizado."
+        "La autenticación de dos factores añade una capa de seguridad adicional, evitando accesos no autorizados."
       ],
       "Also included": [
         "También incluido"
@@ -2661,7 +2661,7 @@
         "Borrando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
       "Designed for users seeking heightened protection for their accounts.": [
-        "Diseñado para usuarios que buscan una protección más intensificada para sus cuentas."
+        "Diseñado para usuarios que buscan una mayor protección para sus cuentas."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
@@ -2703,7 +2703,7 @@
         "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Actualiza tu cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de última generación impulsada por inteligencia artificial con soporte dedicado de expertos las 24 horas, los 7 días de la semana."
+        "Mejora tu cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de última generación impulsada por inteligencia artificial con soporte dedicado de expertos las 24 horas, los 7 días de la semana."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
@@ -2718,10 +2718,10 @@
         "Puedes marcar los contactos que no quieres ni combinar ni mantener para eliminarlos. Se eliminarán solo después de que pulses el botón."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Los métodos de recuperación de cuenta y datos están configurados y la opción de 2FA está habilitada."
+        "Tu cuenta y los métodos de recuperación de datos están configurados y la 2FA está activada."
       ],
       "Your account and data recovery methods are set.": [
-        "Se han establecido los métodos de recuperación de cuenta y datos."
+        "Se han establecido los métodos de recuperación de cuenta y de datos."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
@@ -7364,7 +7364,7 @@
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Herramienta de gestión de la organización que permite a los administradores agregar y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
+        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrás acceder a tu cuenta cuando lo necesites."
@@ -7748,6 +7748,12 @@
       "Maybe later": [
         "Quizás más tarde"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "La oferta expira el ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Paga anualmente y asegúrate nuestra mejor oferta."
+      ],
       "Save": [
         "Ahorra"
       ],
@@ -7768,6 +7774,9 @@
       ],
       "You currently pay": [
         "Actualmente pagas"
+      ],
+      "Your subscription renews soon": [
+        "Tu suscripción se renueva pronto."
       ]
     },
     "Offer feature": {
@@ -10957,7 +10966,7 @@
         "Añadir una reunión de Zoom"
       ],
       "Adding conferencing details": [
-        "Agregando los detalles de la conferencia"
+        "Añadiendo los detalles de la conferencia"
       ],
       "Loading Zoom configuration": [
         "Cargando la configuración de Zoom"
