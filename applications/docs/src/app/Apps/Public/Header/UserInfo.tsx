@@ -25,7 +25,7 @@ export const UserInfo = ({ user }: Props) => {
       }}
       className="user-info user-info interactive-pseudo-protrude interactive--no-background relative ml-0 flex flex-nowrap items-center rounded border-none p-0"
     >
-      <span className="user-initials relative my-auto inline-block flex shrink-0 rounded border p-1" aria-hidden="true">
+      <span className="user-initials relative my-auto flex shrink-0 rounded border p-1" aria-hidden="true">
         <span className="m-auto">{initials}</span>
       </span>
     </Button>
