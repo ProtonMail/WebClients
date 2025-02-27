@@ -45,6 +45,11 @@
       "Add": [
         "Adăugare"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Adăugare ${ photos.length } fotografie în album nou",
+        "Adăugare ${ photos.length } fotografii în album nou",
+        "Adăugare ${ photos.length } de fotografii în album nou"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -86,6 +91,11 @@
       ],
       "Add to group": [
         "Adăugare la grup"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Adăugare în „${ album.name }” (${ album.photoCount } fotografie)",
+        "Adăugare în „${ album.name }” (${ album.photoCount } fotografii)",
+        "Adăugare în „${ album.name }” (${ album.photoCount } de fotografii)"
       ],
       "Album name": [
         "Nume album"
@@ -335,9 +345,6 @@
       ],
       "Download logs": [
         "Jurnal descărcare"
-      ],
-      "Download photos": [
-        "Descărcare fotografii"
       ],
       "Download without scanning": [
         "Descărcare fără scanare"
@@ -675,6 +682,9 @@
       "Remove device": [
         "Eliminare dispozitiv"
       ],
+      "Remove from album": [
+        "Eliminare din album"
+      ],
       "Remove from this list": [
         "Eliminare din listă"
       ],
@@ -683,6 +693,9 @@
       ],
       "Remove me": [
         "Elimină-mă"
+      ],
+      "Remove Without Saving": [
+        "Eliminare fără salvare"
       ],
       "Rename": [
         "Redenumire"
@@ -752,6 +765,9 @@
       ],
       "Save": [
         "Salvare"
+      ],
+      "Save and Remove": [
+        "Salvare și eliminare"
       ],
       "Save changes": [
         "Salvare modificări"
@@ -1383,13 +1399,6 @@
       ],
       "Take a tour": [
         "Faceți un tur"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Adăugare ${ photos.length } fotografie în",
-        "Adăugare ${ photos.length } fotografii în",
-        "Adăugare ${ photos.length } de fotografii în"
       ]
     },
     "Cancellation reminder": {
@@ -2473,6 +2482,11 @@
         "Factură restantă"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "folosiți asistentul de importare Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul printr-o monitorizare dedicată 24/7 a activităților suspecte, inclusiv intervenția specialiștilor în securitate."
@@ -2554,11 +2568,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "folosiți asistentul de importare Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3728,6 +3737,19 @@
         "Centru de securitate"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Adăugare ${ photos.length } fotografie în",
+        "Adăugare ${ photos.length } fotografii în",
+        "Adăugare ${ photos.length } de fotografii în"
+      ],
+      "All albums": [
+        "Toate albumele"
+      ],
+      "Recent": [
+        "Recente"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga.",
@@ -4314,9 +4336,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
       ],
-      "Album is empty": [
-        "Albumul este gol"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Toate (Un folder)",
         "Toate (${ totalFoldersCount } foldere)",
@@ -4326,9 +4345,6 @@
         "Toate (o etichetă)",
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
-      ],
-      "All albums": [
-        "Toate albumele"
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
@@ -4397,6 +4413,9 @@
       ],
       "Attention required": [
         "Necesită atenție"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Recuperare automată ${ formattedDate }"
       ],
       "Available": [
         "Disponibil"
@@ -4992,6 +5011,9 @@
       "of": [
         "din"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "După ce acest proces este încheiat, veți găsi o copie a datelor restaurate într-un folder nou numit „Recuperare automată (data de astăzi)”. Această copie a datelor nu va fi luată în considerare pentru cota spațiului de stocare."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una din unitățile criptate este blocată. Aceasta se datorează probabil unei resetări recente a parolei."
       ],
@@ -5015,6 +5037,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Alertele noastre au ca prioritate siguranța. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Sistemele noastre au detectat că recuperarea anterioară nu s-a finalizat corespunzător și este posibil ca unele fișiere să nu fi fost complet restaurate. S-a repornit automat procesul de recuperare pentru a vă asigura că totul este complet restaurat."
       ],
       "Owner": [
         "Proprietar"
@@ -5154,9 +5179,6 @@
       ],
       "Ready to add some photos?": [
         "Sunteți gata să adăugați fotografii?"
-      ],
-      "Recent": [
-        "Recente"
       ],
       "recommended browser": [
         "navigator recomandat"
@@ -5377,6 +5399,9 @@
       "This item already exists in your library": [
         "Articolul există deja în librăria proprie."
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Această fotografie nu este salvată în librăria de fotografii. Dacă o eliminați din acest album, veți pierde accesul la ea definitiv. Doriți să o salvați înainte de eliminare?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
@@ -5583,6 +5608,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Trebuie să autentificăm plata cu banca dvs."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Ne cerem scuze pentru neplăcerile pe care vi le-ar fi putut cauza."
       ],
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
@@ -5799,6 +5827,11 @@
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
       ],
+      "Your photo has been removed from the album": [
+        "Fotografiile au fost eliminate din album.",
+        "Fotografiile au fost eliminate din album.",
+        "Fotografiile au fost eliminate din album."
+      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Planul este limitat la 10 versiuni pentru maxim 7 zile."
       ],
@@ -5818,6 +5851,14 @@
     "info": {
       "Selected color:": [
         "Culoare selectată:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Cum se trimite o plată în numerar?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Găsiți instrucțiunile în articolul: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -6538,6 +6579,9 @@
     "Link": {
       "Add a gift code": [
         "Adăugare cod cadou"
+      ],
+      "Albums": [
+        "Albume"
       ],
       "All mail": [
         "Toate mesajele"
@@ -10305,6 +10349,9 @@
       "Auto-deletion is active": [
         "Ștergerea automată este activă"
       ],
+      "Automatic Recovery in Progress": [
+        "Recuperare automată în desfășurare"
+      ],
       "Billing cycle": [
         "Ciclu de facturare"
       ],
@@ -10694,6 +10741,9 @@
       "Remove device?": [
         "Eliminați dispozitivul?"
       ],
+      "Remove items": [
+        "Eliminare articole"
+      ],
       "Rename a file": [
         "Redenumire fișier"
       ],
@@ -10904,6 +10954,11 @@
         "Astăzi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adăugați acest fișier partajat în ${ DRIVE_APP_NAME } pentru a-l accesa mai ușor mai târziu."
@@ -10985,11 +11040,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Validation": {

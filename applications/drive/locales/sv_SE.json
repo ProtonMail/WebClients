@@ -45,6 +45,10 @@
       "Add": [
         "Lägg till"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Lägg till ${ photos.length } foto till ett nytt album",
+        "Lägg till ${ photos.length } foton till ett nytt album"
+      ],
       "Add account": [
         "Lägg till konto"
       ],
@@ -333,7 +337,8 @@
       "Download logs": [
         "Ladda ner loggar"
       ],
-      "Download photos": [
+      "Download photo": [
+        "Ladda ner foto",
         "Ladda ner foton"
       ],
       "Download without scanning": [
@@ -672,6 +677,9 @@
       "Remove device": [
         "Ta bort enhet"
       ],
+      "Remove from album": [
+        "Ta bort från album"
+      ],
       "Remove from this list": [
         "Ta bort från denna lista"
       ],
@@ -681,8 +689,14 @@
       "Remove me": [
         "Ta bort mig"
       ],
+      "Remove Without Saving": [
+        "Ta bort utan att spara"
+      ],
       "Rename": [
         "Ändra namn"
+      ],
+      "Rename album": [
+        "Byt namn på album"
       ],
       "Replace file": [
         "Ersätt fil"
@@ -750,6 +764,9 @@
       "Save": [
         "Spara"
       ],
+      "Save and Remove": [
+        "Spara och ta bort"
+      ],
       "Save changes": [
         "Spara ändringar"
       ],
@@ -800,6 +817,9 @@
       ],
       "Share": [
         "Dela"
+      ],
+      "Share album": [
+        "Dela album"
       ],
       "Share file": [
         "Dela fil"
@@ -1373,12 +1393,6 @@
       ],
       "Take a tour": [
         "Ta en rundtur"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Lägg till ${ photos.length } foto till",
-        "Lägg till ${ photos.length } foton till"
       ]
     },
     "Cancellation reminder": {
@@ -2460,6 +2474,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2541,11 +2560,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3699,6 +3713,18 @@
         "Säkerhetscenter"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Lägg till ${ photos.length } foto till",
+        "Lägg till ${ photos.length } foton till"
+      ],
+      "All albums": [
+        "Alla album"
+      ],
+      "Recent": [
+        "Senaste"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Hittade ${ itemsCount } förslag, använd tangentbord för att navigera.",
@@ -4246,9 +4272,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ],
-      "Album is empty": [
-        "Album är tomt"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alla (${ totalFoldersCount } mapp)",
         "Alla (${ totalFoldersCount } mappar)"
@@ -4256,9 +4279,6 @@
       "All (${ totalFoldersCount } label)": [
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
-      ],
-      "All albums": [
-        "Alla album"
       ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
@@ -5085,9 +5105,6 @@
       "Ready to add some photos?": [
         "Redo att lägga till några foton?"
       ],
-      "Recent": [
-        "Senaste"
-      ],
       "recommended browser": [
         "rekommenderad webbläsare"
       ],
@@ -5306,6 +5323,9 @@
       ],
       "This item already exists in your library": [
         "Detta objekt finns redan i ditt bibliotek"
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Detta objekt är inte sparat i ditt fotobibliotek. Om du tar bort det från detta album förlorar du åtkomst till det permanent. Vill du spara det före borttagning?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denna länk leder till en webbplats som kanske försöker stjäla din information, såsom lösenord och kreditkortsuppgifter."
@@ -5727,6 +5747,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your photo has been removed from the album": [
+        "Ditt foto har tagits bort från albumet",
+        "Dina foton har tagits bort från albumet"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Ditt paket är begränsat till 10 versioner i upp till 7 dagar"
@@ -6472,6 +6496,9 @@
     "Link": {
       "Add a gift code": [
         "Lägg till en presentkod"
+      ],
+      "Albums": [
+        "Album"
       ],
       "All mail": [
         "All e-post"
@@ -8224,6 +8251,12 @@
       "Maybe later": [
         "Kanske senare"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Erbjudande löper ut ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Betala årsvis, säkra vårt bästa erbjudande"
+      ],
       "Save": [
         "Spara"
       ],
@@ -8244,6 +8277,9 @@
       ],
       "You currently pay": [
         "Du betalar för närvarande"
+      ],
+      "Your subscription renews soon": [
+        "Din prenumeration förnyas snart"
       ]
     },
     "Offer feature": {
@@ -10595,6 +10631,9 @@
       "Remove device?": [
         "Ta bort enhet?"
       ],
+      "Remove items": [
+        "Ta bort objekt"
+      ],
       "Rename a file": [
         "Byt namn på en fil"
       ],
@@ -10805,6 +10844,11 @@
         "Idag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Lägg till denna delade fil på din ${ DRIVE_APP_NAME } för enkel åtkomst senare."
@@ -10886,11 +10930,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]
     },
     "Validation": {

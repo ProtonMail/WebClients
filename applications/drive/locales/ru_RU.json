@@ -45,6 +45,12 @@
       "Add": [
         "Добавить"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Добавить фото ${ photos.length } в новый альбом",
+        "Добавить фото ${ photos.length } в новый альбом",
+        "Добавить фото ${ photos.length } в новый альбом",
+        "Добавить фото ${ photos.length } в новый альбом"
+      ],
       "Add account": [
         "Добавить аккаунт"
       ],
@@ -86,6 +92,12 @@
       ],
       "Add to group": [
         "Добавить в группу"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
+        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
+        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
+        "Добавить в “${ album.name }” (${ album.photoCount } фото)"
       ],
       "Album name": [
         "Название альбома"
@@ -338,9 +350,6 @@
       ],
       "Download logs": [
         "Скачать журналы"
-      ],
-      "Download photos": [
-        "Скачанные фото"
       ],
       "Download without scanning": [
         "Скачать без сканирования"
@@ -1384,14 +1393,6 @@
       ],
       "Take a tour": [
         "Ознакомительный тур"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Добавить ${ photos.length } фотографию в",
-        "Добавить ${ photos.length } фотографии в",
-        "Добавить ${ photos.length } фотографий в",
-        "Добавить ${ photos.length } фото в"
       ]
     },
     "Cancellation reminder": {
@@ -2477,6 +2478,11 @@
         "Просроченный счёт"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2555,11 +2561,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3742,6 +3743,20 @@
         "Центр безопасности"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Добавить фото ${ photos.length } в",
+        "Добавить фото ${ photos.length } в",
+        "Добавить фото ${ photos.length } в",
+        "Добавить фото ${ photos.length } в"
+      ],
+      "All albums": [
+        "Все альбомы"
+      ],
+      "Recent": [
+        "Недавние"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Найдено ${ itemsCount } предложение, используйте клавиатуру для навигации.",
@@ -4358,9 +4373,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
       ],
-      "Album is empty": [
-        "Альбом пуст."
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Всё (${ totalFoldersCount } папка)",
         "Всё (${ totalFoldersCount } папки)",
@@ -4372,9 +4384,6 @@
         "Всё (${ totalFoldersCount } ярлыка)",
         "Все (${ totalFoldersCount } ярлыков)",
         "Всё (${ totalFoldersCount } ярлыков)"
-      ],
-      "All albums": [
-        "Все альбомы"
       ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
@@ -5215,9 +5224,6 @@
       ],
       "Ready to add some photos?": [
         "Готовы добавить фотографии?"
-      ],
-      "Recent": [
-        "Недавние"
       ],
       "recommended browser": [
         "рекомендуемый браузер"
@@ -6599,6 +6605,9 @@
     "Link": {
       "Add a gift code": [
         "Добавить подарочный код"
+      ],
+      "Albums": [
+        "Альбомы"
       ],
       "All mail": [
         "Вся почта"
@@ -11055,6 +11064,11 @@
         "Сегодня"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Добавьте этот общий файл к вашему ${ DRIVE_APP_NAME } для легкого доступа к нему в дальнейшем."
@@ -11133,11 +11147,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы отправили им приглашение получить доступ к этому элементу."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Valentine_2025": {

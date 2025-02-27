@@ -45,6 +45,10 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Προσθήκη ${ photos.length } φωτογραφίας σε νέο άλμπουμ",
+        "Προσθήκη ${ photos.length } φωτογραφιών σε νέο άλμπουμ"
+      ],
       "Add account": [
         "Προσθήκη λογαριασμού"
       ],
@@ -86,6 +90,10 @@
       ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Προσθήκη στο \"${ album.name }\" (${ album.photoCount } φωτογραφία)",
+        "Προσθήκη στο \"${ album.name }\" (${ album.photoCount } φωτογραφίες)"
       ],
       "Album name": [
         "Όνομα άλμπουμ"
@@ -333,7 +341,8 @@
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
       ],
-      "Download photos": [
+      "Download photo": [
+        "Λήψη άλμπουμ",
         "Λήψη φωτογραφιών"
       ],
       "Download without scanning": [
@@ -672,6 +681,9 @@
       "Remove device": [
         "Αφαίρεση συσκευής"
       ],
+      "Remove from album": [
+        "Αφαίρεση από το άλμπουμ"
+      ],
       "Remove from this list": [
         "Κατάργηση από αυτή τη λίστα"
       ],
@@ -681,8 +693,14 @@
       "Remove me": [
         "Αφαιρέστε με"
       ],
+      "Remove Without Saving": [
+        "Αφαίρεση χωρίς αποθήκευση"
+      ],
       "Rename": [
         "Μετονομασία"
+      ],
+      "Rename album": [
+        "Μετονομασία άλμπουμ"
       ],
       "Replace file": [
         "Αντικατάσταση αρχείου"
@@ -750,6 +768,9 @@
       "Save": [
         "Αποθήκευση"
       ],
+      "Save and Remove": [
+        "Αποθήκευση και αφαίρεση"
+      ],
       "Save changes": [
         "Αποθήκευση αλλαγών"
       ],
@@ -800,6 +821,9 @@
       ],
       "Share": [
         "Κοινοποίηση"
+      ],
+      "Share album": [
+        "Κοινοποίηση άλμπουμ"
       ],
       "Share file": [
         "Κοινοποίηση αρχείου"
@@ -1373,12 +1397,6 @@
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Προσθήκη ${ photos.length } φωτογραφίας στο",
-        "Προσθήκη ${ photos.length } φωτογραφιών στο"
       ]
     },
     "Cancellation reminder": {
@@ -2460,6 +2478,11 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
@@ -2541,11 +2564,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3699,6 +3717,18 @@
         "Κέντρο Ασφαλείας"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Προσθήκη ${ photos.length } φωτογραφίας στο",
+        "Προσθήκη ${ photos.length } φωτογραφιών στο"
+      ],
+      "All albums": [
+        "Όλα τα άλμπουμ"
+      ],
+      "Recent": [
+        "Πρόσφατα"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Βρέθηκε ${ itemsCount } υπόδειξη, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
@@ -4246,9 +4276,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
       ],
-      "Album is empty": [
-        "Το άλμπουμ είναι άδειο"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Όλοι (${ totalFoldersCount } φάκελος)",
         "Όλοι (${ totalFoldersCount } φάκελοι)"
@@ -4256,9 +4283,6 @@
       "All (${ totalFoldersCount } label)": [
         "Όλες (${ totalFoldersCount } ετικέτα)",
         "Όλες (${ totalFoldersCount } ετικέτες)"
-      ],
-      "All albums": [
-        "Όλα τα άλμπουμ"
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
@@ -5085,9 +5109,6 @@
       "Ready to add some photos?": [
         "Είστε έτοιμοι να προσθέσετε φωτογραφίες;"
       ],
-      "Recent": [
-        "Πρόσφατα"
-      ],
       "recommended browser": [
         "συνιστώμενο πρόγραμμα περιήγησης"
       ],
@@ -5306,6 +5327,9 @@
       ],
       "This item already exists in your library": [
         "Αυτό το στοιχείο υπάρχει ήδη στη βιβλιοθήκη σας"
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Αυτό το στοιχείο δεν είναι αποθηκευμένο στη βιβλιοθήκη Φωτογραφιών σας. Αν το αφαιρέσετε από αυτό το άλμπουμ, θα χάσετε δια παντός την πρόσβαση σε αυτό. Θα θέλατε να το αποθηκεύσετε πριν από την αφαίρεση;"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
@@ -5727,6 +5751,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
+      ],
+      "Your photo has been removed from the album": [
+        "Η φωτογραφία σας έχει αφαιρεθεί από το άλμπουμ.",
+        "Οι φωτογραφίες σας έχουν αφαιρεθεί από το άλμπουμ"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Το πλάνο σας περιορίζεται σε 10 εκδόσεις για έως και 7 ημέρες"
@@ -6469,6 +6497,9 @@
     "Link": {
       "Add a gift code": [
         "Προσθήκη κωδικού δώρου"
+      ],
+      "Albums": [
+        "Άλμπουμ"
       ],
       "All mail": [
         "Όλα τα μηνύματα"
@@ -8159,6 +8190,12 @@
       "Maybe later": [
         "Ίσως αργότερα"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Η προσφορά λήγει στις ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Πληρώστε ετησίως, εξασφαλίστε την καλύτερη προσφορά μας"
+      ],
       "Save": [
         "Εξοικονομήστε"
       ],
@@ -8179,6 +8216,9 @@
       ],
       "You currently pay": [
         "Αυτή τη στιγμή πληρώνετε"
+      ],
+      "Your subscription renews soon": [
+        "Η συνδρομή σας ανανεωθεί σύντομα"
       ]
     },
     "Offer feature": {
@@ -10524,6 +10564,9 @@
       "Remove device?": [
         "Διαγραφή συσκευής;"
       ],
+      "Remove items": [
+        "Αφαίρεση στοιχείων"
+      ],
       "Rename a file": [
         "Μετονομασία αρχείου"
       ],
@@ -10734,6 +10777,11 @@
         "Σήμερα"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Προσθέστε αυτό το κοινόχρηστο αρχείο στο ${ DRIVE_APP_NAME } για εύκολη πρόσβαση αργότερα."
@@ -10815,11 +10863,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
     "Validation": {
