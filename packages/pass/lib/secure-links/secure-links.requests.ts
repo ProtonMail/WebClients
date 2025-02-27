@@ -21,15 +21,19 @@ export const createSecureLink = async (
     options: SecureLinkOptions
 ): Promise<SecureLink> => {
     const itemKey = await resolveItemKey(shareId, itemId);
-    const linkData = await PassCrypto.createSecureLink({ shareId, itemKey });
-    const { encryptedItemKey, encryptedLinkKey, secureLinkKey } = linkData;
+    const linkData = await PassCrypto.createSecureLink({
+        shareId: options.linkKeyEncryptedWithItemKey ? undefined : shareId,
+        itemKey,
+    });
+    const { encryptedItemKey, encryptedLinkKey, secureLinkKey, keyRotation, linkKeyEncryptedWithItemKey } = linkData;
 
     const data: PublicLinkCreateRequest = {
         Revision: revision,
         EncryptedItemKey: uint8ArrayToBase64String(encryptedItemKey),
         EncryptedLinkKey: uint8ArrayToBase64String(encryptedLinkKey),
         ExpirationTime: options.expirationTime,
-        LinkKeyShareKeyRotation: itemKey.rotation,
+        LinkKeyShareKeyRotation: keyRotation,
+        LinkKeyEncryptedWithItemKey: linkKeyEncryptedWithItemKey,
     };
 
     if (options.maxReadCount !== null) data.MaxReadCount = options.maxReadCount;
@@ -79,6 +83,8 @@ export const getSecureLinks = async (): Promise<SecureLink[]> => {
                 encryptedLinkKey: secureLink.EncryptedLinkKey!,
                 linkKeyShareKeyRotation: secureLink.LinkKeyShareKeyRotation!,
                 shareId: secureLink.ShareID!,
+                itemId: secureLink.ItemID,
+                linkKeyEncryptedWithItemKey: Boolean(secureLink.LinkKeyEncryptedWithItemKey),
             });
 
             return {
