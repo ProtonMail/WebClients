@@ -41,12 +41,41 @@
 	&--hide-checkbox {
 		& > .checkbox-container {
 			display: none;
+			animation-delay: 0.1s;
+			animation-fill-mode: both;
 		}
 
 		&:hover > .checkbox-container,
 		&:focus-within > .checkbox-container {
 			display: block;
 		}
+	}
+
+	.photos-card-favorite-button {
+		color: white;
+		animation-delay: 0.1s;
+		animation-fill-mode: both;
+
+		> svg {
+			filter: drop-shadow(
+				var(--shadow-norm-offset) rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-norm-opacity))
+			);
+
+			// so shadow follows the shape instead of being square
+		}
+
+		&[aria-pressed='true'] {
+			color: var(--signal-info);
+		}
+	}
+
+	& > .photos-card-favorite-button:not([aria-pressed='true']) {
+		display: none;
+	}
+
+	&:hover > .photos-card-favorite-button,
+	&:focus-within > .photos-card-favorite-button {
+		display: block;
 	}
 
 	&--selected {
