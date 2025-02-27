@@ -1,3 +1,26 @@
+### Version 1.29.4
+
+- Improve in-app messaging triggers
+- Enforce B2B item sharing policy
+- Fine-tune invite recommendations
+- Update alias prefix validation error messages
+- Preserve history when moving items
+- Allow autofilling pass web with extension
+- Allow users to edit mailbox addresses from settings
+- Block concurrent vault move/delete actions
+- Use popover API for autofill and autosave injections
+- Fine-tune detection triggers on mutation/transitions
+- Improve extension build size
+- Fine-tune injected pass icon animation on autofillable fields
+- Fix shared counter for vault owners
+- Fix all items counter accounting for trashed shared-with-me items
+- Fix invite recommendations UX breaking on small screens
+- Fix wrong error message on extra password request connectivity error
+- Fix optimistic items being draggable in bulk mode
+- Fix double-click issue on autofillable fields
+- Fix account message regression on extension auth failure
+- Fix pass icon not clickable on autofillable fields due to `isolation` css on host page
+
 ### Version 1.29.3
 
 - Re-enable exporting capabilities for SSO users
