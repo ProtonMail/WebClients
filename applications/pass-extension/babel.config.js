@@ -7,7 +7,7 @@ const PRODUCTION = ENV === 'production';
 
 const presetEnvOpts = {
     bugfixes: true,
-    corejs: '3.40',
+    corejs: require('core-js/package.json').version,
     useBuiltIns: 'usage',
     debug: false,
 };
