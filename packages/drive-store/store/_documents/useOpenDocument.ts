@@ -48,7 +48,7 @@ export type DocumentAction =
     | {
           mode: 'open-url-download';
           action?: RedirectAction;
-          linkId: string;
+          linkId?: string;
           token: string;
           urlPassword: string;
       }
@@ -61,7 +61,7 @@ export type DocumentAction =
            */
           mode: 'open-url-reauth';
           action?: RedirectAction;
-          linkId: string;
+          linkId?: string;
           token: string;
       }
     | {

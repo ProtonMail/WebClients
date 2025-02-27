@@ -24,7 +24,7 @@ export const parseOpenAction = (searchParams: URLSearchParams): DocumentAction |
     return null
   }
 
-  if (mode === 'open-url-reauth' && hasValidPublicLink && hasLinkId) {
+  if (mode === 'open-url-reauth' && hasValidPublicLink) {
     return {
       mode,
       token,
