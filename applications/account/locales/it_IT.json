@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -4761,6 +4761,12 @@
       "Please select a state": [
         "Per favore seleziona uno stato"
       ],
+      "Please select at least one location before continuing.": [
+        "Seleziona almeno una posizione prima di continuare."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Seleziona almeno un utente o un gruppo prima di continuare."
+      ],
       "Please set a recovery email first": [
         "Imposta prima un indirizzo email di recupero"
       ],
@@ -4884,6 +4890,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Il pagamento minimo che accettiamo è di ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Il nome della policy deve essere compreso tra 3 e 40 caratteri."
       ],
       "The sending key is not valid": [
         "La chiave di invio non è valida"
@@ -6994,11 +7003,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Attiva almeno un metodo di recupero dei dati per essere sicuro di poter continuare ad accedere ai contenuti del tuo account ${ BRAND_NAME } se dovessi perdere la tua password."
       ],
-      "active": [
-        "attivo"
-      ],
       "Active": [
         "Attivo"
+      ],
+      "active": [
+        "attivo"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Aggiungi un indirizzo email @pm.me al tuo account. Questo dominio semplice e più breve significa \"${ MAIL_APP_NAME } me\" o \"Private Message me.\""
@@ -8309,6 +8318,9 @@
       "Or select a particular server:": [
         "O seleziona un server specifico:"
       ],
+      "Organization --> Groups": [
+        "Organizzazione --> Gruppi"
+      ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "I membri dell'organizzazione dovranno sbloccare ${ PASS_APP_NAME } con la loro password o PIN ecc."
       ],
@@ -9049,6 +9061,9 @@
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Per migliorare continuamente i nostri servizi, a volte raccogliamo dati per monitorare il corretto funzionamento delle nostre applicazioni. Queste informazioni non sono condivise con servizi di terze parti."
+      ],
+      "To create your first user group, go to": [
+        "Per creare il tuo primo gruppo di utenti, vai a"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per decrittografare e visualizzare i dati bloccati dopo la reimpostazione della password, seleziona un metodo di ripristino."
@@ -13598,6 +13613,12 @@
       "Maybe later": [
         "Forse più tardi"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "L'offerta scade il ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Paga annualmente, assicurati la nostra migliore offerta"
+      ],
       "Save": [
         "Salva"
       ],
@@ -13618,6 +13639,9 @@
       ],
       "You currently pay": [
         "Attualmente paghi"
+      ],
+      "Your subscription renews soon": [
+        "Il tuo abbonamento si rinnoverà presto"
       ]
     },
     "Offer feature": {
@@ -16844,6 +16868,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } con funzionalità premium"
@@ -17132,47 +17197,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
