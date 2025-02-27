@@ -2184,11 +2184,6 @@
         "Fatura vencida"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
@@ -2267,6 +2262,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -8377,25 +8377,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de armazenamento por usuário"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domínio de e-mail personalizado",
-        "${ planNumberOfDomains } domínios de e-mail personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } endereço de e-mail",
-        "${ planNumberOfEmails } endereços de e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Pastas, marcadores e filtros personalizados"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "Armazenamento de 15 GB"
@@ -8435,6 +8416,25 @@
       ],
       "Your privacy is our mission": [
         "Sua privacidade é a nossa missão"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por usuário"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } oferece todos os aplicativos, recursos, acesso antecipado a novos lançamentos, e tudo que você precisa para controlar seus dados e segurança."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domínio de e-mail personalizado",
+        "${ planNumberOfDomains } domínios de e-mail personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } endereço de e-mail",
+        "${ planNumberOfEmails } endereços de e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Pastas, marcadores e filtros personalizados"
       ]
     },
     "Subscription renewal state": {

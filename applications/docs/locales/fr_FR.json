@@ -2184,11 +2184,6 @@
         "Facture impayée"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2267,6 +2262,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6049,7 +6049,7 @@
         "Commencez pour ${ priceCoupon }"
       ],
       "Plans starting from ${ priceDrivePlus }": [
-        "Abonnement à partir de ${ priceDrivePlus }"
+        "Abonnements à partir de ${ priceDrivePlus }"
       ],
       "Starting from ${ pricing }": [
         "À partir de ${ pricing }"
@@ -7237,6 +7237,12 @@
       "Maybe later": [
         "Peut-être plus tard"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "L'offre arrive à expiration le ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Payez à l'année et assurez-vous de bénéficier de notre meilleure offre."
+      ],
       "Save": [
         "Économisez"
       ],
@@ -7257,6 +7263,9 @@
       ],
       "You currently pay": [
         "Vous payez actuellement"
+      ],
+      "Your subscription renews soon": [
+        "Votre abonnement se renouvelle bientôt."
       ]
     },
     "Offer feature": {
@@ -8374,25 +8383,6 @@
         "Pour ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'espace de stockage par utilisateur"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domaine de messagerie personnalisé",
-        "${ planNumberOfDomains } domaines de messagerie personnalisés"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adresse e-mail",
-        "${ planNumberOfEmails } adresses e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Dossiers, labels et filtres personnalisés"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 Go d'espace de stockage"
@@ -8432,6 +8422,25 @@
       ],
       "Your privacy is our mission": [
         "La protection de votre vie privée est notre priorité."
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'espace de stockage par utilisateur"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domaine de messagerie personnalisé",
+        "${ planNumberOfDomains } domaines de messagerie personnalisés"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresse e-mail",
+        "${ planNumberOfEmails } adresses e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Dossiers, labels et filtres personnalisés"
       ]
     },
     "Subscription renewal state": {
