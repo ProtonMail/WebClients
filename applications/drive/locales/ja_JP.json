@@ -330,9 +330,6 @@
       "Download logs": [
         "ログをダウンロードする"
       ],
-      "Download photos": [
-        "写真をダウンロード"
-      ],
       "Download without scanning": [
         "スキャンせずにダウンロード"
       ],
@@ -669,6 +666,9 @@
       "Remove device": [
         "デバイスを削除"
       ],
+      "Remove from album": [
+        "アルバムから削除"
+      ],
       "Remove from this list": [
         "この一覧から削除"
       ],
@@ -677,6 +677,9 @@
       ],
       "Remove me": [
         "削除"
+      ],
+      "Remove Without Saving": [
+        "保存せずに削除"
       ],
       "Rename": [
         "名前を変更"
@@ -746,6 +749,9 @@
       ],
       "Save": [
         "保存"
+      ],
+      "Save and Remove": [
+        "保存して削除"
       ],
       "Save changes": [
         "変更を保存"
@@ -1363,11 +1369,6 @@
       ],
       "Take a tour": [
         "ツアーを開始"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "${ photos.length } 枚の写真を追加"
       ]
     },
     "Cancellation reminder": {
@@ -2447,6 +2448,11 @@
         "未払いの請求"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
@@ -2528,11 +2534,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3670,6 +3671,14 @@
         "セキュリティセンター"
       ]
     },
+    "Heading": {
+      "All albums": [
+        "すべてのアルバム"
+      ],
+      "Recent": [
+        "最近のもの"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } 件の提案が見つかりました。キーボードを使用してナビゲートしてください。"
@@ -4178,17 +4187,11 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
       ],
-      "Album is empty": [
-        "アルバムは空です"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "すべて (${ totalFoldersCount } フォルダー)"
       ],
       "All (${ totalFoldersCount } label)": [
         "すべて (${ totalFoldersCount } 件のラベル)"
-      ],
-      "All albums": [
-        "すべてのアルバム"
       ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
@@ -4255,6 +4258,9 @@
       ],
       "Attention required": [
         "注意が必要です"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "自動復元 ${ formattedDate }"
       ],
       "Available": [
         "利用可能"
@@ -4838,6 +4844,9 @@
       "of": [
         " / "
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "このプロセスが完了すると、「自動復元(今日の日付)」という新しいフォルダに復元されたデータのコピーが見つかります。 このデータのコピーは、ストレージの割り当てにカウントされません。"
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "暗号化されたドライブの1つがロックされています。これは最近のパスワードリセットによるものです。"
       ],
@@ -4861,6 +4870,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "当社のアラートは安全性を優先しています。侵害された情報を認識できない場合は、このレポートを無視してください。"
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "私たちのシステムは、以前のリカバリが正常に完了しなかったことを検出し、いくつかのファイルが完全に復元されていない可能性があります。 すべてが完全に復元されるように、リカバリプロセスを自動的に再開しました。"
       ],
       "Owner": [
         "所有者"
@@ -4996,9 +5008,6 @@
       ],
       "Ready to add some photos?": [
         "写真を追加する準備はできましたか?"
-      ],
-      "Recent": [
-        "最近"
       ],
       "recommended browser": [
         "推奨ブラウザ"
@@ -5219,6 +5228,9 @@
       "This item already exists in your library": [
         "このアイテムはすでにライブラリに存在します"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "このアイテムは写真ライブラリに保存されていません。 このアルバムから削除すると、二度と見れなくなります。削除前に保存しますか？"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
@@ -5425,6 +5437,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "お客様のお支払いを銀行で認証する必要があります。"
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "ご迷惑をおかけいたしましたことを心よりお詫び申し上げます。"
       ],
       "We use 3-D Secure to protect your payments": [
         "支払いを保護するために3Dセキュアを使用しています"
@@ -5652,6 +5667,14 @@
     "info": {
       "Selected color:": [
         "選択した色:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "現金支払いを送る方法は?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "記事の手順を見つけてください： ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -6360,6 +6383,9 @@
     "Link": {
       "Add a gift code": [
         "ギフトコードを追加"
+      ],
+      "Albums": [
+        "アルバム"
       ],
       "All mail": [
         "すべてのメール"
@@ -9927,6 +9953,9 @@
       "Auto-deletion is active": [
         "自動削除が有効です"
       ],
+      "Automatic Recovery in Progress": [
+        "自動復元が進行中"
+      ],
       "Billing cycle": [
         "支払い間隔"
       ],
@@ -10308,6 +10337,9 @@
       "Remove device?": [
         "デバイスを削除しますか？"
       ],
+      "Remove items": [
+        "アイテムを削除"
+      ],
       "Rename a file": [
         "ファイル名の変更"
       ],
@@ -10518,6 +10550,11 @@
         "今日"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "この共有ファイルを${ DRIVE_APP_NAME }に追加して、後で簡単にアクセスできるようにしましょう。"
@@ -10599,11 +10636,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {
