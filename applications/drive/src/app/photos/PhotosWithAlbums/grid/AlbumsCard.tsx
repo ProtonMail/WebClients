@@ -25,12 +25,21 @@ type Props = {
     onRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     style: CSSProperties;
     onClick: () => void;
+    onRename: () => void;
+    onShare: () => void;
+    onDelete: () => void;
 };
 
 const getAltText = ({ mimeType, name }: DecryptedLink) =>
     `${c('Label').t`Album`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
 
-export const AlbumDropdownButton = () => {
+interface AlbumDropdownButtonprops {
+    onRename: () => void;
+    onShare: () => void;
+    onDelete: () => void;
+}
+
+export const AlbumDropdownButton = ({ onShare }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -51,15 +60,31 @@ export const AlbumDropdownButton = () => {
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
-                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                    <DropdownMenuButton
+                        onClick={() => {
+                            // TODO: console.log("Rename modal")
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
                         <Icon className="mr-2" name="pencil" />
                         {c('Action').t`Rename album`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                    <DropdownMenuButton
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onShare();
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
                         <Icon className="mr-2" name="user-plus" />
                         {c('Action').t`Share album`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                    <DropdownMenuButton
+                        onClick={() => {
+                            // TODO: console.log("Delete album modal/flow")
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
                         <Icon className="mr-2" name="trash" />
                         {c('Action').t`Delete album`}
                     </DropdownMenuButton>
@@ -69,7 +94,16 @@ export const AlbumDropdownButton = () => {
     );
 };
 
-export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, album, onClick }) => {
+export const AlbumsCard: FC<Props> = ({
+    style,
+    onRender,
+    onRenderLoadedLink,
+    album,
+    onClick,
+    onShare,
+    onRename,
+    onDelete,
+}) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
@@ -201,7 +235,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
                             </div>
                         </div>
                         <div className="shrink-0 mb-2">
-                            <AlbumDropdownButton />
+                            <AlbumDropdownButton onShare={onShare} onDelete={onDelete} onRename={onRename} />
                         </div>
                     </div>
                 </>
