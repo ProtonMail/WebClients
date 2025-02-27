@@ -61,7 +61,7 @@ export type DocumentAction =
            */
           mode: 'open-url-reauth';
           action?: RedirectAction;
-          linkId: string;
+          linkId?: string;
           token: string;
       }
     | {
