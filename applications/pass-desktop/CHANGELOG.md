@@ -1,3 +1,21 @@
+### Version 1.29.4
+
+- Improve in-app messaging triggers
+- Send B2B Pass Monitor reports
+- Enforce B2B item sharing policy
+- Fine-tune invite recommendations
+- Update alias prefix validation error messages
+- Preserve history when moving items
+- Allow users to edit mailbox addresses from settings
+- Block concurrent vault move/delete actions
+- Fine-tune PassMonitor UX
+- Fix shared counter for vault owners
+- Fix all items counter accounting for trashed shared-with-me items
+- Fix invite recommendations UX breaking on small screens
+- Fix Dark Web Monitoring not suggesting login items with username & email
+- Fix wrong error message on extra password request connectivity error
+- Fix optimistic items being draggable in bulk mode
+
 ### Version 1.29.3
 
 - Re-enable offline support for SSO users
