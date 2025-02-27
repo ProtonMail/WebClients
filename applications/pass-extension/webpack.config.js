@@ -72,6 +72,11 @@ const disableBrowserTrap = (entry) => [entry, './src/lib/utils/disable-browser-t
 const safariPatch = (entry) => (BUILD_TARGET === 'safari' ? [entry, './src/lib/utils/safari-patch.ts'] : entry);
 const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manifestPath, 'utf8')).version);
 
+const JS_EXCLUDES = createRegex(
+    excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
+    excludeFiles([...BABEL_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
+);
+
 module.exports = {
     ...(production
         ? { mode: 'production', devtool: 'source-map' }
@@ -89,32 +94,76 @@ module.exports = {
              * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10  */
             chunkLoading: importScripts ? 'import-scripts' : 'jsonp',
         },
-        client: './src/app/content/client.ts',
+        client: {
+            import: './src/app/content/client.ts',
+            layer: 'injection',
+        },
         dropdown: nonAccessibleWebResource('./src/app/content/injections/apps/dropdown/index.tsx'),
-        elements: './src/app/content/elements.ts',
+        elements: {
+            import: './src/app/content/elements.ts',
+            layer: 'injection',
+        },
         notification: nonAccessibleWebResource('./src/app/content/injections/apps/notification/index.tsx'),
         onboarding: './src/app/pages/onboarding/index.tsx',
-        orchestrator: disableBrowserTrap('./src/app/content/orchestrator.ts'),
+        orchestrator: {
+            import: disableBrowserTrap('./src/app/content/orchestrator.ts'),
+            layer: 'injection',
+        },
         popup: safariPatch('./src/app/popup/index.tsx'),
         settings: './src/app/pages/settings/index.tsx',
-        /* Passkey handling not available in Safari */
-        ...(BUILD_TARGET !== 'safari' ? { webauthn: './src/app/content/webauthn.ts' } : {}),
-        /* FF account communication fallback */
-        ...(BUILD_TARGET === 'firefox' ? { external: disableBrowserTrap('./src/app/content/firefox/index.ts') } : {}),
-        /* Safari fork fallback */
-        ...(BUILD_TARGET === 'safari' ? { fork: disableBrowserTrap('./src/app/content/safari/index.ts') } : {}),
+
+        ...(BUILD_TARGET !== 'safari'
+            ? {
+                  webauthn: {
+                      /* Passkey handling not available in Safari */
+                      import: './src/app/content/webauthn.ts',
+                      layer: 'injection',
+                  },
+              }
+            : {}),
+
+        ...(BUILD_TARGET === 'firefox'
+            ? {
+                  external: {
+                      /* FF account communication fallback */
+                      import: disableBrowserTrap('./src/app/content/firefox/index.ts'),
+                      layer: 'injection',
+                  },
+              }
+            : {}),
+
+        ...(BUILD_TARGET === 'safari'
+            ? {
+                  fork: {
+                      /* Safari fork fallback */
+                      import: disableBrowserTrap('./src/app/content/safari/index.ts'),
+                      layer: 'injection',
+                  },
+              }
+            : {}),
     },
     module: {
         strictExportPresence: true,
         rules: [
             {
-                test: /\.js$|\.tsx?$/,
-                exclude: createRegex(
-                    excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
-                    excludeFiles([...BABEL_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
-                ),
-                use: require.resolve('babel-loader'),
+                oneOf: [
+                    {
+                        test: /\.js$|\.tsx?$/,
+                        issuerLayer: 'injection',
+                        exclude: JS_EXCLUDES,
+                        use: {
+                            loader: require.resolve('babel-loader'),
+                            options: { configFile: path.resolve(__dirname, 'babel.config.injection.js') },
+                        },
+                    },
+                    {
+                        test: /\.js$|\.tsx?$/,
+                        exclude: JS_EXCLUDES,
+                        use: require.resolve('babel-loader'),
+                    },
+                ],
             },
+
             ...getCssLoaders({ browserslist: undefined, logical: false }),
             ...getAssetsLoaders({ inlineIcons: true }),
         ],
@@ -275,5 +324,6 @@ module.exports = {
     ],
     experiments: {
         asyncWebAssembly: true,
+        layers: true,
     },
 };
