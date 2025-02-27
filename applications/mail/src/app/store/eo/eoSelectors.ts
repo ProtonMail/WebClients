@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect';
+import { createSelector } from '@reduxjs/toolkit';
 
 import type { EOStoreState } from 'proton-mail/store/eo/eoStore';
 

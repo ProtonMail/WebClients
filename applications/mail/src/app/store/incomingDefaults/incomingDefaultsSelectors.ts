@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect';
+import { createSelector } from '@reduxjs/toolkit';
 
 import type { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 
