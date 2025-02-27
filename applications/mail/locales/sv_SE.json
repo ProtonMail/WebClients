@@ -5800,6 +5800,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "${ BRAND_NAME }s lösenordshanterare kan du skapa, lagra och autofylla lösenord, så att du aldrig behöver återställa dem."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nya kalendrar"
@@ -7400,6 +7403,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Avsändarens publika nyckal har inte blivit betrodd ännu."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Detta visades för dig eftersom ämnesraden i ditt e-postmeddelande innehåller nyckelord för återställning av lösenord."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
@@ -10400,6 +10406,12 @@
       "Maybe later": [
         "Kanske senare"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Erbjudande löper ut ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Betala årsvis, säkra vårt bästa erbjudande"
+      ],
       "Save": [
         "Spara"
       ],
@@ -10420,6 +10432,9 @@
       ],
       "You currently pay": [
         "Du betalar för närvarande"
+      ],
+      "Your subscription renews soon": [
+        "Din prenumeration förnyas snart"
       ]
     },
     "Offer feature": {
@@ -12100,6 +12115,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -12358,47 +12414,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -13440,6 +13455,9 @@
       "Notes": [
         "Anteckningar"
       ],
+      "On-device suggestions": [
+        "På-enhet förslag"
+      ],
       "One email, many recipients": [
         "En e-post, flera mottagare"
       ],
@@ -13730,11 +13748,6 @@
         "Idag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
@@ -13816,6 +13829,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]
     },
     "Tor out of date": {

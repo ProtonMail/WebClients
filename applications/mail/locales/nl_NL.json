@@ -10401,6 +10401,12 @@
       "Maybe later": [
         "Misschien later"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Aanbieding vervalt op ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Betaal jaarlijks om te genieten van ons beste aanbod"
+      ],
       "Save": [
         "Opslaan"
       ],
@@ -10421,6 +10427,9 @@
       ],
       "You currently pay": [
         "U betaalt momenteel"
+      ],
+      "Your subscription renews soon": [
+        "Uw abonnement verloopt binnenkort"
       ]
     },
     "Offer feature": {
@@ -12095,6 +12104,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -12353,47 +12403,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -13728,11 +13737,6 @@
         "Vandaag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisch betekent dat tekst met rijke opmaak gebruikt wordt, zoals in het opstelvenster. Platte tekst geeft aan dat het bericht altijd wordt omgezet naar tekst zonder opmaak voordat het wordt verzonden."
@@ -13814,6 +13818,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ]
     },
     "Tor out of date": {
