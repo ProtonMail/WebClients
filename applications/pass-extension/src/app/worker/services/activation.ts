@@ -205,7 +205,7 @@ export const createActivationService = () => {
              * tracking the wakeup's request metadata can be consumed
              * in the UI to infer wakeup result - see `wakeup.saga.ts`
              * no need for any redux operations on content-script wakeup
-             * as it doesn't hold any store. */
+             * as it doesn't hold any state. */
             if (message.sender === 'popup' || message.sender === 'page') {
                 ctx.service.store.dispatch(wakeupIntent({ status }, { endpoint, tabId }));
             }
