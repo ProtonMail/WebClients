@@ -1,6 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["config:base", "group:allNonMajor", ":semanticCommitsDisabled"],
+    "extends": ["config:recommended", "group:allNonMajor", ":semanticCommitsDisabled"],
     "postUpdateOptions": ["yarnDedupeHighest"],
     "rangeStrategy": "bump",
     "rebaseWhen": "conflicted",
@@ -23,11 +23,11 @@
     "packageRules": [
         {
             "groupName": "Playwright",
-            "matchPackagePatterns": ["playwright"]
+            "matchPackageNames": ["/playwright/"]
         },
         {
             "groupName": "lexical",
-            "matchPackagePatterns": ["@lexical/*", "lexical", "yjs", "y-protocols"]
+            "matchPackageNames": ["@lexical/*", "lexical", "yjs", "y-protocols"]
         },
         {
             "groupName": "Unleash",
@@ -35,16 +35,16 @@
         },
         {
             "groupName": "pdfme",
-            "matchPackagePatterns": ["@pdfme/*"]
+            "matchPackageNames": ["@pdfme/*"]
         },
         {
             "groupName": "redux",
-            "matchPackagePatterns": ["redux"]
+            "matchPackageNames": ["/redux/"]
         },
         {
             "groupName": "pass-desktop and inbox-desktop exclusions",
-            "matchPackagePatterns": ["@electron-forge/*", "@electron/fuses", "@vercel/webpack-asset-relocator-loader"],
-            "enabled": false
+            "enabled": false,
+            "matchPackageNames": ["@electron-forge/*", "@electron/fuses", "@vercel/webpack-asset-relocator-loader"]
         }
     ]
 }
