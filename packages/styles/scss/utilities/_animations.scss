@@ -13,7 +13,7 @@
 .fade-in-up {
 	animation: fadeInUp 0.4s ease-out;
 	opacity: 0;
-	animation-fill-mode: forwards; /* Reste visible après l'animation */
+	animation-fill-mode: forwards; /* stays visible after animation */
 }
 
 @keyframes scaleFadeIn {
