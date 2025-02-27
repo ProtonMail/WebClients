@@ -973,7 +973,7 @@
     },
     "Badge": {
       "New!": [
-        "Nouă!"
+        "Nou!"
       ]
     },
     "bf2023: Deal details": {
@@ -2542,6 +2542,22 @@
         "Pe baza fusului orar"
       ]
     },
+    "Custom frequency option": {
+      "Don't end": [
+        "Nu se termină"
+      ],
+      "End after": [
+        "Se termină după"
+      ],
+      "End on": [
+        "Se termină"
+      ],
+      "event": [
+        "eveniment",
+        "evenimente",
+        "evenimente"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/lună"
@@ -4025,6 +4041,9 @@
       ],
       "Name": [
         "Nume"
+      ],
+      "Repeat event": [
+        "Repetare eveniment"
       ],
       "Search": [
         "Căutare"
@@ -5563,6 +5582,14 @@
         "Puteți modifica textul căutat sau să închideți căutarea și să reveniți la afișarea calendarului."
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Cum se trimite o plată în numerar?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Găsiți instrucțiunile în articolul: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info message": {
       "No results found": [
         "Nu s-au găsit rezultate."
@@ -5889,6 +5916,9 @@
       "Event title": [
         "Titlu eveniment"
       ],
+      "Every": [
+        "La fiecare"
+      ],
       "Expiration (${ patternExpiration })": [
         "Expirare (${ patternExpiration })"
       ],
@@ -5990,6 +6020,9 @@
       ],
       "Notifications": [
         "Notificări"
+      ],
+      "On": [
+        "Activat"
       ],
       "Operating system": [
         "Sistem de operare"
@@ -6525,6 +6558,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }"
+      ],
       "on the first Friday": [
         "în prima vineri"
       ],
@@ -7952,6 +7988,9 @@
       "Custom": [
         "Personal"
       ],
+      "Custom...": [
+        "Personal..."
+      ],
       "Day": [
         "zi",
         "zile",
@@ -7962,6 +8001,15 @@
       ],
       "Every day": [
         "Zilnic"
+      ],
+      "Every month ${ description }": [
+        "Lunar ${ description }"
+      ],
+      "Every week ${ everyWeekDescription }": [
+        "Săptămânal ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "În fiecare zi a săptămânii ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Anual"
@@ -10047,6 +10095,9 @@
       "Details": [
         "Detalii"
       ],
+      "Does not repeat": [
+        "Nu se repetă"
+      ],
       "Downgrade account": [
         "Retrogradare cont"
       ],
@@ -10097,6 +10148,21 @@
       ],
       "Event is happening on defined time slot": [
         "Evenimentul are loc pe un interval de timp definit"
+      ],
+      "Every day": [
+        "Zilnic"
+      ],
+      "Every month ${ option.text }": [
+        "Lunar ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Săptămânal ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "În fiecare zi a săptămânii ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Anual"
       ],
       "Exporting contacts": [
         "Exportare contacte"
