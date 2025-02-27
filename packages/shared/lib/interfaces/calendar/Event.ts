@@ -41,10 +41,14 @@ export interface Attendee {
     Token: string;
     Status: ATTENDEE_STATUS_API;
     UpdateTime: Nullable<number>;
+<<<<<<< HEAD
     Comment: Nullable<{
         Message: string;
         Type: ATTENDEE_COMMENT_TYPE;
     }>;
+=======
+    Comment?: string;
+>>>>>>> 78c9f02dc2 (CALWEB-5617-answering-with-a-not)
 }
 
 export interface AttendeesInfo {
