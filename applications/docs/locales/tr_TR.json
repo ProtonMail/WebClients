@@ -2181,11 +2181,6 @@
         "Süresi geçmiş fatura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2264,6 +2259,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5008,10 +5008,10 @@
     },
     "Info for cash payment method": {
       "How to send a cash payment?": [
-        "Nakit ödeme nasıl gönderilir?"
+        "Nakit ödeme nasıl yapılır?"
       ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
+        "Lütfen yönerge için şu yazıya bakın: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -7174,6 +7174,12 @@
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
+      ],
+      "Pay annually, secure our best offer": [
+        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+      ],
       "Save": [
         "İndirim"
       ],
@@ -7194,6 +7200,9 @@
       ],
       "You currently pay": [
         "Şu anda ödediğiniz"
+      ],
+      "Your subscription renews soon": [
+        "Aboneliğiniz yakında yenilenecek"
       ]
     },
     "Offer feature": {
@@ -8311,25 +8320,6 @@
         "${ totalPrice } için"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "Folders, labels, and custom filters": [
-        "Klasörler, etiketler ve özel süzgeçler"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -8369,6 +8359,25 @@
       ],
       "Your privacy is our mission": [
         "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
       ]
     },
     "Subscription renewal state": {
