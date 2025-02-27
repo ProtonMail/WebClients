@@ -6,6 +6,8 @@ import Loader from '@proton/components/components/loader/Loader';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
+import { getTwoFAMemberStatistics } from './organizationTwoFAHelper';
+
 interface Props {
     organization?: Organization;
 }
@@ -18,23 +20,33 @@ const OrganizationTwoFAHeader = ({ organization }: Props) => {
         return <Loader />;
     }
 
-    const twoFAMembers = members.filter((member) => member['2faStatus'] !== 0) || [];
+    const { canHaveTwoFAMembersLength, hasTwoFAMembersLength, hasSSOMembers } = getTwoFAMemberStatistics(members);
 
-    // translator: the variables here are numbers, e.g. "2/4 of your organization members use two-factor authentication."
-    const cardContentB2B = c('Loading info').ngettext(
-        msgid`${twoFAMembers.length}/${members.length} of your organization member use two-factor authentication.`,
-        `${twoFAMembers.length}/${members.length} of your organization members use two-factor authentication.`,
-        members.length
-    );
+    const cardContent = (() => {
+        if (hasSSOMembers) {
+            return c('Info').ngettext(
+                msgid`${hasTwoFAMembersLength}/${canHaveTwoFAMembersLength} of your non-SSO members use two-factor authentication to sign in to your organization.`,
+                `${hasTwoFAMembersLength}/${canHaveTwoFAMembersLength} of your non-SSO members use two-factor authentication to sign in to your organization.`,
+                canHaveTwoFAMembersLength
+            );
+        }
 
-    // translator: the variables here are numbers, e.g. "2/4 of your family members use two-factor authentication."
-    const cardContentFamily = c('Loading info').ngettext(
-        msgid`${twoFAMembers.length}/${members.length} of your organization member use two-factor authentication.`,
-        `${twoFAMembers.length}/${members.length} of your family members use two-factor authentication.`,
-        members.length
-    );
+        if (hasFamilyOrg) {
+            // translator: the variables here are numbers, e.g. "2/4 of your family members use two-factor authentication."
+            return c('Info').ngettext(
+                msgid`${hasTwoFAMembersLength}/${canHaveTwoFAMembersLength} of your family members use two-factor authentication.`,
+                `${hasTwoFAMembersLength}/${canHaveTwoFAMembersLength} of your family members use two-factor authentication.`,
+                canHaveTwoFAMembersLength
+            );
+        }
 
-    const cardContent = hasFamilyOrg ? cardContentFamily : cardContentB2B;
+        // translator: the variables here are numbers, e.g. "2/4 of your members use two-factor authentication to sign in to your organization."
+        return c('Info').ngettext(
+            msgid`${hasTwoFAMembersLength}/${canHaveTwoFAMembersLength} of your members use two-factor authentication to sign in to your organization.`,
+            `${hasTwoFAMembersLength}/${canHaveTwoFAMembersLength} of your members use two-factor authentication to sign in to your organization.`,
+            canHaveTwoFAMembersLength
+        );
+    })();
 
     return (
         <Card rounded background bordered={false} className="max-w-custom" style={{ '--max-w-custom': '43em' }}>
