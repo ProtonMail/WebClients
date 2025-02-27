@@ -933,10 +933,10 @@
         "Le blocage du contact n'a pas abouti."
       ],
       "Failed to cancel mailbox change": [
-        "L'annulation du changement de messagerie a échoué."
+        "L'annulation du changement de messagerie n'a pas abouti."
       ],
       "Failed to change mailbox": [
-        "Le changement de messagerie a échoué."
+        "Le changement de messagerie n'a pas abouti."
       ],
       "Failed to create domain": [
         "La création du domaine n'a pas abouti."
@@ -3623,7 +3623,7 @@
         "Les éléments ne peuvent pas compter plus de ${ share.targetMaxMembers } utilisateurs."
       ],
       "Mailbox change successfully cancelled": [
-        "Le changement de messagerie a été annulé avec succès."
+        "Le changement de messagerie a été annulé."
       ],
       "Mailbox successfully deleted": [
         "La messagerie a été supprimée."

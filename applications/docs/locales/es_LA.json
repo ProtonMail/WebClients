@@ -43,43 +43,43 @@
         "Activar recuperación"
       ],
       "Add": [
-        "Añadir"
+        "Agregar"
       ],
       "Add account": [
-        "Añadir una cuenta"
+        "Agregar una cuenta"
       ],
       "Add address": [
-        "Añadir dirección"
+        "Agregar dirección"
       ],
       "Add birthday": [
-        "Añadir cumpleaños"
+        "Agregar cumpleaños"
       ],
       "Add contact": [
-        "Añadir contacto"
+        "Agregar contacto"
       ],
       "Add credit / debit card": [
-        "Añadir tarjeta de crédito/débito"
+        "Agregar tarjeta de crédito/débito"
       ],
       "Add email": [
-        "Añadir correo"
+        "Agregar correo"
       ],
       "Add group": [
-        "Añadir grupo"
+        "Agregar grupo"
       ],
       "Add new group": [
-        "Añadir grupo nuevo"
+        "Agregar grupo nuevo"
       ],
       "Add note": [
-        "Añadir nota"
+        "Agregar nota"
       ],
       "Add people or groups to share": [
-        "Añadir personas o grupos para compartir"
+        "Agregar personas o grupos para compartir"
       ],
       "Add phone number": [
-        "Añadir número telefónico"
+        "Agregar número telefónico"
       ],
       "Add to group": [
-        "Añadir al grupo"
+        "Agregar al grupo"
       ],
       "Apply": [
         "Aplicar"
@@ -637,7 +637,7 @@
         "Cambiar de cuenta"
       ],
       "Switch or add account": [
-        "Cambiar o añadir cuenta"
+        "Cambiar o agregar cuenta"
       ],
       "Take a tour": [
         "Explore ahora"
@@ -901,7 +901,7 @@
         "Protección de cuentas avanzada"
       ],
       "Easily add or remove users": [
-        "Añadir o eliminar usuarios fácilmente"
+        "Agregar o eliminar usuarios fácilmente"
       ],
       "High speed streaming": [
         "Streaming de alta velocidad"
@@ -2184,17 +2184,12 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
-        "2FA añade una capa de seguridad adicional, evitando acceso no autorizado."
+        "2FA agrega una capa de seguridad adicional, evitando acceso no autorizado."
       ],
       "Also included": [
         "También incluido"
@@ -2260,13 +2255,18 @@
         "Puede marcar para eliminar los contactos que no quiere ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
-        "Se establecieron los métodos de recuperación de datos y cuenta y 2FA está activado."
+        "Su cuenta y los métodos de recuperación de datos están configurados y la 2FA está activada."
       ],
       "Your account and data recovery methods are set.": [
-        "Se establecieron los métodos de recuperación de datos y cuenta."
+        "Se han establecido los métodos de recuperación de cuenta y de datos."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2811,7 +2811,7 @@
         "La última actualización realizada al documento es demasiado grande o excede el tamaño límite del documento. Se desactivó temporalmente la edición. Sus cambios no se guardarán. Exporte una copia de su documento y recargue la página."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
-        "La cantidad mínima de crédito que se puede añadir es de ${ price }"
+        "La cantidad mínima de crédito que se puede agregar es de ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "El pago mínimo que aceptamos es de ${ price }"
@@ -3089,7 +3089,7 @@
         "Respuesta inválida"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "No se pudo añadir el evento a el calendario. No se envió ninguna respuesta"
+        "No se pudo agregar el evento a el calendario. No se envió ninguna respuesta"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "No se pudo actualizar el evento en el calendario. No se envió ninguna respuesta"
@@ -3110,7 +3110,7 @@
         "No pudimos actualizar el evento en el calendario"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "La respuesta fue enviada, pero el evento no pudo ser añadido a el calendario"
+        "La respuesta fue enviada, pero el evento no pudo ser agregado a el calendario"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "La respuesta se envió, pero no se pudo actualizar el evento en el calendario"
@@ -3438,24 +3438,24 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } evento cifrado y añadido a el calendario",
-        "${ totalImported }/${ totalToImport } eventos cifrados y añadidos a el calendario"
+        "${ totalImported }/${ totalToImport } evento cifrado y agregado a el calendario",
+        "${ totalImported }/${ totalToImport } eventos cifrados y agregados a el calendario"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Ocurrió un error al cifrar y añadir su evento. ${ totalImported } de ${ totalToImport } evento fue importado.",
-        "Ocurrió un error al cifrar y añadir los eventos. ${ totalImported } de ${ totalToImport } eventos fueron importados."
+        "Ocurrió un error al cifrar y agregar su evento. ${ totalImported } de ${ totalToImport } evento fue importado.",
+        "Ocurrió un error al cifrar y agregar los eventos. ${ totalImported } de ${ totalToImport } eventos fueron importados."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Se ha producido un error al cifrar y añadir el evento. No se ha podido importar ningún evento."
+        "Se ha producido un error al cifrar y agregar el evento. No se ha podido importar ningún evento."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Ocurrió un error al cifrar y añadir los eventos. Ningún evento fue importado."
+        "Ocurrió un error al cifrar y agregar los eventos. Ningún evento fue importado."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Cifrando y añadiendo contactos: ${ totalImported }/${ totalToImport }"
+        "Cifrando y agregando contactos: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Cifrando y añadiendo eventos a el calendario: ${ totalImported }/${ totalToImport }"
+        "Cifrando y agregando eventos a el calendario: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "Evento importado. El evento importado aparecerá ahora en el calendario."
@@ -3493,17 +3493,17 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contacto cifrado y añadido a la lista de contactos",
-        "${ totalImported }/${ totalToImport } contactos cifrados y añadidos a la lista de contactos"
+        "${ totalImported }/${ totalToImport } contacto cifrado y agregado a la lista de contactos",
+        "${ totalImported }/${ totalToImport } contactos cifrados y agregados a la lista de contactos"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ocurrió un error al cifrar y añadir el contacto. No se pudo importar ningún contacto."
+        "Ocurrió un error al cifrar y agregar el contacto. No se pudo importar ningún contacto."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Ocurrió un error al cifrar y añadir los contactos. ${ totalImported } de ${ totalToImport } contactos importados."
+        "Ocurrió un error al cifrar y agregar los contactos. ${ totalImported } de ${ totalToImport } contactos importados."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Ocurrió un error al cifrar y añadir los contactos. No se pudo importar ningún contacto."
+        "Ocurrió un error al cifrar y agregar los contactos. No se pudo importar ningún contacto."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Contacto importado. El contacto importado aparecerá ahora en la lista de contactos."
@@ -3832,10 +3832,10 @@
         "30 días de garantía de devolución del dinero."
       ],
       "A number will be added to the filename": [
-        "Se añadirá un número al nombre del archivo"
+        "Se agregará un número al nombre del archivo"
       ],
       "A number will be added to the folder name": [
-        "Se añadirá un número al nombre de la carpeta"
+        "Se agregará un número al nombre de la carpeta"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
@@ -4185,7 +4185,7 @@
         "5 GB de almacenamiento cifrado gratuito para comenzar"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Reciba actualizaciones por correo electrónico sobre comentarios y sugerencias añadidos a sus documentos."
+        "Reciba actualizaciones por correo electrónico sobre comentarios y sugerencias agregados a sus documentos."
       ],
       "Get Notified About Comments": [
         "Recibir notificaciones sobre los comentarios"
@@ -4361,7 +4361,7 @@
         "Nuevo"
       ],
       "No contacts added yet": [
-        "Ningún contacto añadido aún"
+        "Ningún contacto agregado aún"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
         "No se proporcionó ningún documento en la URL. Regrese a ${ DRIVE_APP_NAME } y seleccione un documento."
@@ -4473,11 +4473,11 @@
         "Seleccione las carpetas que quiere importar:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Seleccione qué dirección o direcciones de correo añadir al grupo ${ groupCount }.",
-        "Seleccione qué dirección o direcciones de correo añadir a los grupos ${ groupCount }."
+        "Seleccione qué dirección o direcciones de correo agregar al grupo ${ groupCount }.",
+        "Seleccione qué dirección o direcciones de correo agregar a los grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Seleccione qué dirección o direcciones de correo añadir a ${ groupName }."
+        "Seleccione qué dirección o direcciones de correo agregar a ${ groupName }."
       ],
       "Please try again in a few moments": [
         "Vuelva a intentarlo en un momento"
@@ -4899,7 +4899,7 @@
         "Reciba notificaciones si su contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Tiene una suscripción de prueba ${ planTitle }. Si desea continuar la suscripción después del periodo de prueba, añada un método de pago."
+        "Tiene una suscripción de prueba ${ planTitle }. Si desea continuar la suscripción después del periodo de prueba, agregue un método de pago."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. La suscripción será renovada automáticamente al finalizar el periodo de prueba."
@@ -4935,7 +4935,7 @@
         "La cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en el buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando la cuenta, pague cualquier factura pendiente."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Su suscripción de${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de su suscripción se añadirá a su cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+        "Su suscripción de${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de su suscripción se agregará a su cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "La cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
@@ -5104,13 +5104,13 @@
         "Titular de la cuenta"
       ],
       "Add email address": [
-        "Añadir correo electrónico"
+        "Agregar correo electrónico"
       ],
       "Add image URL": [
-        "Añadir URL de imagen"
+        "Agregar URL de imagen"
       ],
       "Add to group": [
-        "Añadir al grupo"
+        "Agregar al grupo"
       ],
       "Address": [
         "Dirección"
@@ -5577,10 +5577,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para añadir un calendario, elimine uno existente."
+        "Para agregar un calendario, elimine uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario, elimine otro o mejore el plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+        "Para agregar un calendario, elimine otro o mejore el plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Ha alcanzado el número máximo de calendarios disponibles en el plan."
@@ -5588,7 +5588,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "Añadir código de regalo"
+        "Agregar código de regalo"
       ],
       "clearing your browser cache": [
         "vaciar la caché del navegador"
@@ -5704,7 +5704,7 @@
     },
     "mail_signup_2024: Info": {
       "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Añadir el asistente de escritura ${ BRAND_NAME } Scribe"
+        "Agregar el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -6742,8 +6742,8 @@
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Cree ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones.",
-        "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones."
+        "Cree ${ n } calendario o agregue calendarios de amistades, familiares, colegas y organizaciones.",
+        "Cree hasta ${ n } calendarios o agregue calendarios de amistades, familiares, colegas y organizaciones."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Cree hasta ${ n } direcciones de correo/alias que puede asignar a sus familiares. Úselas para las identidades en línea, p.ej., JuanCompras@${ domain } para cuentas de compras."
@@ -6752,7 +6752,7 @@
         "Dominios personalizados para los alias, buzones adicionales, posibilidad de enviar correos desde alias y más"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
+        "Se pueden agregar servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores"
@@ -6785,7 +6785,7 @@
         "Le protege bloqueando todas las conexiones de red si se produce una desconexión inesperada de nuestro servidor VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Las etiquetas son muy fáciles de añadir a los mensajes y le permiten encontrarlos fácilmente o aplicarles filtros"
+        "Las etiquetas son muy fáciles de agregar a los mensajes y le permiten encontrarlos fácilmente o aplicarles filtros"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
         "Acceso de por vida a las funciones premium de ${ PASS_APP_NAME } y SimpleLogin."
@@ -6809,7 +6809,7 @@
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
+        "Herramienta de gestión de la organización que permite a los administradores agregar y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrá acceder a la cuenta cuando la necesite"
@@ -6914,7 +6914,7 @@
         "Los correos que envía a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no usa ${ MAIL_APP_NAME_TWO }, tendrá que establecer una contraseña antes de enviar el mensaje."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Puede tener varios administradores. Todos tienen permiso para añadir y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
+        "Puede tener varios administradores. Todos tienen permiso para agregar y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -6925,7 +6925,7 @@
         "Acceso a funciones VPN avanzadas"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Añada más personalización con 15 direcciones de correo y soporte para 3 dominios de correo personalizados"
+        "Agregue más personalización con 15 direcciones de correo y soporte para 3 dominios de correo personalizados"
       ],
       "AES 256-bit VPN encryption": [
         "Cifrado VPN AES 256-bit"
@@ -7237,6 +7237,12 @@
       "Maybe later": [
         "Quizás más tarde"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "La oferta expira el ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Pague anualmente y asegúrese nuestra mejor oferta."
+      ],
       "Save": [
         "Ahorre"
       ],
@@ -7257,6 +7263,9 @@
       ],
       "You currently pay": [
         "Actualmente paga"
+      ],
+      "Your subscription renews soon": [
+        "Su suscripción se renueva pronto."
       ]
     },
     "Offer feature": {
@@ -7287,7 +7296,7 @@
     },
     "Option": {
       "Add to existing group": [
-        "Añadir al grupo existente"
+        "Agregar al grupo existente"
       ],
       "Automatic (${ value })": [
         "Automático (${ value })"
@@ -8251,7 +8260,7 @@
         "mejore para obtener más almacenamiento"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Añadiremos los créditos restantes a la cuenta de ${ BRAND_NAME }."
+        "Agregaremos los créditos restantes a la cuenta de ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Aún le queda **${ daysRemaining }** día en el plan de **${ currentPlanName }**.",
@@ -8374,25 +8383,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } de almacenamiento por usuario"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } dominio de correo personalizado",
-        "${ planNumberOfDomains } dominios de correo personalizados"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } dirección de correo",
-        "${ planNumberOfEmails } direcciones de correo"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetas, etiquetas y filtros personalizados"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
@@ -8432,6 +8422,25 @@
       ],
       "Your privacy is our mission": [
         "Su privacidad es nuestra misión"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de almacenamiento por usuario"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } le ofrece todas las aplicaciones, funciones, acceso anticipado a lanzamientos y todo lo que necesita para tener control de sus datos y seguridad."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo personalizado",
+        "${ planNumberOfDomains } dominios de correo personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo",
+        "${ planNumberOfEmails } direcciones de correo"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetas, etiquetas y filtros personalizados"
       ]
     },
     "Subscription renewal state": {
@@ -8518,7 +8527,7 @@
         "Los últimos alias modificados están guardados en su bóveda más antigua"
       ],
       "Payment method added": [
-        "Método de pago añadido"
+        "Método de pago agregado"
       ],
       "Payment method updated": [
         "Método de pago actualizado"
@@ -8693,17 +8702,17 @@
         "Seguridad de la cuenta"
       ],
       "Add contact group name": [
-        "Añadir nombre al grupo de contactos"
+        "Agregar nombre al grupo de contactos"
       ],
       "Add credit/debit card": [
-        "Añadir tarjeta de crédito/débito"
+        "Agregar tarjeta de crédito/débito"
       ],
       "Add to ${ groupCount } group": [
-        "Añadir a ${ groupCount } grupo",
-        "Añadir a ${ groupCount } grupos"
+        "Agregar a ${ groupCount } grupo",
+        "Agregar a ${ groupCount } grupos"
       ],
       "Add to ${ groupName }": [
-        "Añadir a ${ groupName }"
+        "Agregar a ${ groupName }"
       ],
       "Addresses": [
         "Direcciones"
@@ -8739,7 +8748,7 @@
         "¿Cancelar suscripción?"
       ],
       "Cannot add more addresses": [
-        "No se pueden añadir más direcciones"
+        "No se pueden agregar más direcciones"
       ],
       "Cannot load link": [
         "Error al cargar el enlace"
@@ -9175,7 +9184,7 @@
     },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
-        "Añada este archivo compartido a su ${ DRIVE_APP_NAME } para un acceso fácil después."
+        "Agregue este archivo compartido a su ${ DRIVE_APP_NAME } para un acceso fácil después."
       ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que el formato en el editor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."

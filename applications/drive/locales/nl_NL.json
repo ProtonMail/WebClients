@@ -45,6 +45,10 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Voeg ${ photos.length } foto toe aan een nieuw album",
+        "Voeg ${ photos.length } foto's toe aan een nieuw album"
+      ],
       "Add account": [
         "Account toevoegen"
       ],
@@ -86,6 +90,10 @@
       ],
       "Add to group": [
         "Aan groep toevoegen"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Toevoegen aan \"${ album.name }\" (${ album.photoCount } foto)",
+        "Toevoegen aan \"${ album.name }\" (${ album.photoCount } foto's)"
       ],
       "Album name": [
         "Albumnaam"
@@ -333,8 +341,9 @@
       "Download logs": [
         "Logboeken downloaden"
       ],
-      "Download photos": [
-        "Foto's uploaden"
+      "Download photo": [
+        "Foto downloaden",
+        "Foto's downloaden"
       ],
       "Download without scanning": [
         "Downloaden zonder scannen"
@@ -672,6 +681,9 @@
       "Remove device": [
         "Verwijder apparaat"
       ],
+      "Remove from album": [
+        "Uit album verwijderen"
+      ],
       "Remove from this list": [
         "Van deze lijst verwijderen"
       ],
@@ -681,8 +693,14 @@
       "Remove me": [
         "Verwijder mij"
       ],
+      "Remove Without Saving": [
+        "Verwijderen zonder opslaan"
+      ],
       "Rename": [
         "Hernoem"
+      ],
+      "Rename album": [
+        "Album hernoemen"
       ],
       "Replace file": [
         "Bestand vervangen"
@@ -750,6 +768,9 @@
       "Save": [
         "Opslaan"
       ],
+      "Save and Remove": [
+        "Opslaan en verwijderen"
+      ],
       "Save changes": [
         "Wijzigingen opslaan"
       ],
@@ -800,6 +821,9 @@
       ],
       "Share": [
         "Delen"
+      ],
+      "Share album": [
+        "Album delen"
       ],
       "Share file": [
         "Deel Bestand"
@@ -1373,12 +1397,6 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Voeg ${ photos.length } foto toe aan",
-        "Voeg ${ photos.length } foto's toe aan"
       ]
     },
     "Cancellation reminder": {
@@ -2460,6 +2478,11 @@
         "Onbetaalde factuur"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2541,11 +2564,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3699,6 +3717,18 @@
         "Beveiligingscentrum"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Voeg ${ photos.length } foto toe aan",
+        "Voeg ${ photos.length } foto's toe aan"
+      ],
+      "All albums": [
+        "Alle albums"
+      ],
+      "Recent": [
+        "Recent"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
@@ -4246,9 +4276,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
       ],
-      "Album is empty": [
-        "Album is leeg"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alles (${ totalFoldersCount } map)",
         "Alle (${ totalFoldersCount } mappen)"
@@ -4256,9 +4283,6 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } label)",
         "Alle (${ totalFoldersCount } labels)"
-      ],
-      "All albums": [
-        "Alle albums"
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
@@ -5085,9 +5109,6 @@
       "Ready to add some photos?": [
         "Klaar om foto's toe te voegen?"
       ],
-      "Recent": [
-        "Recent"
-      ],
       "recommended browser": [
         "aanbevolen browser"
       ],
@@ -5306,6 +5327,9 @@
       ],
       "This item already exists in your library": [
         "Dit item bestaat al in uw bibliotheek"
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Dit item is niet opgeslagen in uw Foto's bibliotheek. Als u het verwijdert uit dit album, verliest u de toegang voorgoed. Wilt u het opslaan voordat u het verwijdert?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
@@ -5727,6 +5751,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your photo has been removed from the album": [
+        "Uw foto is verwijderd uit het album",
+        "Uw foto's zijn verwijderd uit het album"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Uw abonnement is beperkt tot 10 versies tot 7 dagen."
@@ -6469,6 +6497,9 @@
     "Link": {
       "Add a gift code": [
         "Voeg een geschenkcode toe"
+      ],
+      "Albums": [
+        "Albums"
       ],
       "All mail": [
         "Alle e-mail"
@@ -8159,6 +8190,12 @@
       "Maybe later": [
         "Misschien later"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Aanbieding vervalt op ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Betaal jaarlijks om te genieten van ons beste aanbod"
+      ],
       "Save": [
         "Opslaan"
       ],
@@ -8179,6 +8216,9 @@
       ],
       "You currently pay": [
         "U betaalt momenteel"
+      ],
+      "Your subscription renews soon": [
+        "Uw abonnement verloopt binnenkort"
       ]
     },
     "Offer feature": {
@@ -10524,6 +10564,9 @@
       "Remove device?": [
         "Apparaat verwijderen?"
       ],
+      "Remove items": [
+        "Verwijder items"
+      ],
       "Rename a file": [
         "Hernoem een bestand"
       ],
@@ -10734,6 +10777,11 @@
         "Vandaag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Voeg dit gedeelde bestand toe aan uw ${ DRIVE_APP_NAME } voor eenvoudige toegang op een later tijdstip."
@@ -10815,11 +10863,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "We hebben ze een uitnodiging gestuurd om het item te bekijken."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ]
     },
     "Valentine_2025": {

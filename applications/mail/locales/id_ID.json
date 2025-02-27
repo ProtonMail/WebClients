@@ -5746,6 +5746,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "Pengelola kata sandi ${ BRAND_NAME } memungkinkan Anda untuk menghasilkan, menyimpan, dan mengisi kata sandi secara otomatis sehingga Anda tidak akan perlu untuk mengatur ulang kata sandi Anda lagi."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } kalender baru"
       ],
@@ -6691,6 +6694,9 @@
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
       ],
+      "More infos": [
+        "Informasi lebih lanjut"
+      ],
       "More refine actions": [
         "Tindakan perbaikan lainnya"
       ],
@@ -7275,6 +7281,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Kunci publik pengirim belum dipercaya."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Informasi ini ditampilkan kepada Anda karena baris subjek email Anda mengandung kata kunci untuk pengaturan ulang kata sandi."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
@@ -11853,6 +11862,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -12105,47 +12155,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -13434,11 +13443,6 @@
         "Hari ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
@@ -13520,6 +13524,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Tor out of date": {

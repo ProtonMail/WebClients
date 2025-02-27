@@ -45,6 +45,10 @@
       "Add": [
         "Adicionar"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Adicionar ${ photos.length } foto a um novo álbum",
+        "Adicionar ${ photos.length } fotos a um novo álbum"
+      ],
       "Add account": [
         "Adicionar uma conta"
       ],
@@ -86,6 +90,10 @@
       ],
       "Add to group": [
         "Adicionar ao grupo"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Adicionar a «${ album.name }» ( ${ album.photoCount } foto)",
+        "Adicionar a «${ album.name }» ( ${ album.photoCount } fotos)"
       ],
       "Album name": [
         "Nome do álbum"
@@ -333,7 +341,8 @@
       "Download logs": [
         "Transferir os registos"
       ],
-      "Download photos": [
+      "Download photo": [
+        "Transferir a foto",
         "Transferir as fotos"
       ],
       "Download without scanning": [
@@ -672,6 +681,9 @@
       "Remove device": [
         "Remover o dispositivo"
       ],
+      "Remove from album": [
+        "Remover do álbum"
+      ],
       "Remove from this list": [
         "Remover desta lista"
       ],
@@ -681,8 +693,14 @@
       "Remove me": [
         "Remover-me"
       ],
+      "Remove Without Saving": [
+        "Remover sem guardar"
+      ],
       "Rename": [
         "Renomear"
+      ],
+      "Rename album": [
+        "Alterar o nome de l'álbum"
       ],
       "Replace file": [
         "Substituir ficheiro"
@@ -750,6 +768,9 @@
       "Save": [
         "Guardar"
       ],
+      "Save and Remove": [
+        "Guardar e remover"
+      ],
       "Save changes": [
         "Guardar as alterações"
       ],
@@ -800,6 +821,9 @@
       ],
       "Share": [
         "Partilhar"
+      ],
+      "Share album": [
+        "Partilhar o álbum"
       ],
       "Share file": [
         "Partilhar ficheiro"
@@ -1373,12 +1397,6 @@
       ],
       "Take a tour": [
         "Visita guiada"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Adicionar ${ photos.length } foto a",
-        "Adicionar ${ photos.length } fotos a"
       ]
     },
     "Cancellation reminder": {
@@ -2460,6 +2478,11 @@
         "Fatura em dívida"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilize o assistente de importação Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege a sua conta com monitorização dedicada 24/7 de atividades suspeitas — incluindo a intervenção de especialistas em segurança."
@@ -2541,11 +2564,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com o ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilize o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3699,6 +3717,18 @@
         "Centro de segurança"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Adicionar ${ photos.length } foto a",
+        "Adicionar ${ photos.length } fotos a"
+      ],
+      "All albums": [
+        "Todos os álbuns"
+      ],
+      "Recent": [
+        "Recentes"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } sugestão foi encontrada. Utilize o teclado para navegar.",
@@ -4246,9 +4276,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente com tecnologia de IA para ajudá-lo a criar e-mails melhores, de forma rápida e sem esforço."
       ],
-      "Album is empty": [
-        "O álbum está vazio."
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
         "Tudo (${ totalFoldersCount } pastas)"
@@ -4256,9 +4283,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tudo (${ totalFoldersCount } etiqueta)",
         "Tudo (${ totalFoldersCount } etiquetas)"
-      ],
-      "All albums": [
-        "Todos os álbuns"
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
@@ -5085,9 +5109,6 @@
       "Ready to add some photos?": [
         "Pronto para adicionar algumas fotos?"
       ],
-      "Recent": [
-        "Recentes"
-      ],
       "recommended browser": [
         "navegador recomendado"
       ],
@@ -5306,6 +5327,9 @@
       ],
       "This item already exists in your library": [
         "Este item já existe na sua biblioteca."
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Este item não está guardado na sua biblioteca de fotos. Se o remover deste álbum, perderá permanentemente o acesso a ele. Gostaria de guardá-lo antes de removê-lo?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esta hiperligação leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
@@ -5727,6 +5751,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será utilizado para esta verificação única."
+      ],
+      "Your photo has been removed from the album": [
+        "A sua foto foi removida do álbum.",
+        "As suas fotos foram removidas do álbum."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "O seu plano é limitado a 10 versões por até 7 dias."
@@ -6469,6 +6497,9 @@
     "Link": {
       "Add a gift code": [
         "Adicionar código de oferta"
+      ],
+      "Albums": [
+        "Álbuns"
       ],
       "All mail": [
         "Todo o correio"
@@ -8159,6 +8190,12 @@
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "A oferta expira a ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Paga anualmente e garante a nossa melhor oferta"
+      ],
       "Save": [
         "Poupe"
       ],
@@ -8179,6 +8216,9 @@
       ],
       "You currently pay": [
         "Atualmente paga"
+      ],
+      "Your subscription renews soon": [
+        "A sua subscrição renova em breve."
       ]
     },
     "Offer feature": {
@@ -10524,6 +10564,9 @@
       "Remove device?": [
         "Remover o dispositivo?"
       ],
+      "Remove items": [
+        "Remover os itens"
+      ],
       "Rename a file": [
         "Renomear um ficheiro"
       ],
@@ -10734,6 +10777,11 @@
         "Hoje"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adicione este ficheiro partilhado ao seu ${ DRIVE_APP_NAME } para acesso fácil mais tarde."
@@ -10815,11 +10863,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviámos-lhes um convite para aceder ao item."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
     },
     "Validation": {

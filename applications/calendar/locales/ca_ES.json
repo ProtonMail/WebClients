@@ -2529,13 +2529,13 @@
     },
     "Custom frequency option": {
       "Don't end": [
-        "No s'acaba"
+        "No finalitza"
       ],
       "End after": [
-        "Acaba després de"
+        "Finalitza després de"
       ],
       "End on": [
-        "Acaba el"
+        "Finalitza el"
       ],
       "event": [
         "esdeveniment",
@@ -5507,7 +5507,7 @@
         "Com enviar un pagament en efectiu?"
       ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Trobeu les instruccions a l'article: ${ howToSendCashArticleUrl }"
+        "Veieu les instruccions a l'article: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -7748,6 +7748,12 @@
       "Maybe later": [
         "Potser després"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "L'oferta caduca el ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Pagueu anualment i assegureu-vos la nostra millor oferta"
+      ],
       "Save": [
         "Estalvieu"
       ],
@@ -7768,6 +7774,9 @@
       ],
       "You currently pay": [
         "Actualment pagueu"
+      ],
+      "Your subscription renews soon": [
+        "La subscripció es renovarà aviat."
       ]
     },
     "Offer feature": {

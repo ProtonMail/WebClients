@@ -45,6 +45,10 @@
       "Add": [
         "Afegeix"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Afegeix ${ photos.length } foto a un àlbum nou.",
+        "Afegeix ${ photos.length } fotos a un àlbum nou."
+      ],
       "Add account": [
         "Afegeix un compte"
       ],
@@ -86,6 +90,10 @@
       ],
       "Add to group": [
         "Afegeix al grup"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Afegeix a «${ album.name }» (${ album.photoCount } foto)",
+        "Afegeix a «${ album.name }» (${ album.photoCount } fotos)"
       ],
       "Album name": [
         "Nom de l'àlbum"
@@ -333,8 +341,9 @@
       "Download logs": [
         "Descarrega els registres"
       ],
-      "Download photos": [
-        "Descarrega les fotos"
+      "Download photo": [
+        "Baixa la foto",
+        "Baixa les fotos"
       ],
       "Download without scanning": [
         "Descarrega sense escanejar"
@@ -672,6 +681,9 @@
       "Remove device": [
         "Esborra el dispositiu"
       ],
+      "Remove from album": [
+        "Esborra de l'àlbum"
+      ],
       "Remove from this list": [
         "Esborra de la llista"
       ],
@@ -681,8 +693,14 @@
       "Remove me": [
         "Esborra'm"
       ],
+      "Remove Without Saving": [
+        "Esborra sense desar"
+      ],
       "Rename": [
         "Canvia el nom"
+      ],
+      "Rename album": [
+        "Canvia el nom de l'àlbum"
       ],
       "Replace file": [
         "Substitueix el fitxer"
@@ -750,6 +768,9 @@
       "Save": [
         "Desa"
       ],
+      "Save and Remove": [
+        "Desa i esborra"
+      ],
       "Save changes": [
         "Desa els canvis"
       ],
@@ -800,6 +821,9 @@
       ],
       "Share": [
         "Compartir"
+      ],
+      "Share album": [
+        "Comparteix l'àlbum"
       ],
       "Share file": [
         "Comparteix el fitxer"
@@ -1373,12 +1397,6 @@
       ],
       "Take a tour": [
         "Feu una visita guiada"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Afegeix ${ photos.length } foto a",
-        "Afegeix ${ photos.length } fotos a"
       ]
     },
     "Cancellation reminder": {
@@ -2460,6 +2478,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2541,11 +2564,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3699,6 +3717,18 @@
         "Centre de seguretat"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Afegeix ${ photos.length } foto a",
+        "Afegeix ${ photos.length } fotos a"
+      ],
+      "All albums": [
+        "Tots els àlbums"
+      ],
+      "Recent": [
+        "Recents"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "S'ha trobat ${ itemsCount } suggeriment. Utilitzeu el teclat per navegar.",
@@ -4246,9 +4276,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
       ],
-      "Album is empty": [
-        "L'àlbum és buit"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tot (${ totalFoldersCount } carpeta)",
         "Tot (${ totalFoldersCount } carpetes)"
@@ -4256,9 +4283,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tot (${ totalFoldersCount } etiqueta)",
         "Tot (${ totalFoldersCount } etiquetes)"
-      ],
-      "All albums": [
-        "Tots els àlbums"
       ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
@@ -4946,7 +4970,7 @@
         "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
       ],
       "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
-        "Els nostres sistemes han detectat que la vostra recuperació anterior no s'ha completat correctament i és possible que alguns fitxers no s'hagin restaurat completament. Hem reiniciat automàticament el procés de recuperació per assegurar-nos que tot es restauri completament."
+        "Els nostres sistemes han detectat que la vostra recuperació anterior no s'ha completat correctament i és possible que alguns fitxers no s'hagin restaurat completament. Hem reiniciat automàticament el procés de recuperació per a assegurar-nos que tot es restauri completament."
       ],
       "Owner": [
         "Propietari"
@@ -5084,9 +5108,6 @@
       ],
       "Ready to add some photos?": [
         "Preparat per a afegir algunes fotos?"
-      ],
-      "Recent": [
-        "Recents"
       ],
       "recommended browser": [
         "navegador recomanat"
@@ -5306,6 +5327,9 @@
       ],
       "This item already exists in your library": [
         "Aquest element ja existeix a la biblioteca"
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Aquest element no està desat a la vostra biblioteca de fotos. Si l'elimineu d'aquest àlbum, hi perdreu l'accés permanentment. Voleu desar-lo abans de suprimir-lo?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
@@ -5728,6 +5752,10 @@
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your photo has been removed from the album": [
+        "S'ha eliminat la vostra foto de l'àlbum.",
+        "S'han suprimit les vostres fotos de l'àlbum."
+      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "El vostre pla està limitat a 10 versions durant un màxim de 7 dies"
       ],
@@ -5754,7 +5782,7 @@
         "Com enviar un pagament en efectiu?"
       ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Trobeu les instruccions a l'article: ${ howToSendCashArticleUrl }"
+        "Veieu les instruccions a l'article: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -6475,6 +6503,9 @@
     "Link": {
       "Add a gift code": [
         "Afegir un codi regal"
+      ],
+      "Albums": [
+        "Àlbums"
       ],
       "All mail": [
         "Tot el correu"
@@ -8222,6 +8253,12 @@
       "Maybe later": [
         "Potser després"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "L'oferta caduca el ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Pagueu anualment i assegureu-vos la nostra millor oferta"
+      ],
       "Save": [
         "Estalvieu"
       ],
@@ -8242,6 +8279,9 @@
       ],
       "You currently pay": [
         "Actualment pagueu"
+      ],
+      "Your subscription renews soon": [
+        "La subscripció es renovarà aviat."
       ]
     },
     "Offer feature": {
@@ -10587,6 +10627,9 @@
       "Remove device?": [
         "Voleu esborrar el dispositiu?"
       ],
+      "Remove items": [
+        "Esborra els elements"
+      ],
       "Rename a file": [
         "Canvia el nom"
       ],
@@ -10797,6 +10840,11 @@
         "Avui"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Afegiu aquest fitxer compartit al vostre ${ DRIVE_APP_NAME } per accedir-hi fàcilment més endavant."
@@ -10878,11 +10926,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
     "Validation": {
