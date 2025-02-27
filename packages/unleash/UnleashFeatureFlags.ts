@@ -86,6 +86,7 @@ enum CalendarFeatureFlag {
     ZoomIntegration = 'ZoomIntegration',
     CalendarMetrics = 'CalendarMetrics',
     CalendarCommander = 'CalendarCommander',
+    RsvpCommentWeb = 'RsvpCommentWeb',
 }
 
 enum DriveFeatureFlag {

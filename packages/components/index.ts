@@ -937,3 +937,4 @@ export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendar
 export { default as useToggle } from './hooks/useToggle';
 export { default as useVPNServersCount } from './hooks/useVPNServersCount';
 export { default as useWindowSize } from './hooks/useWindowSize';
+export { default as RsvpModal } from './containers/calendar/RsvpModal/RsvpModal';
