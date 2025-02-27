@@ -2,6 +2,7 @@ import type { Store } from 'redux';
 
 import { ITEM_COUNT_RATING_PROMPT } from '@proton/pass/constants';
 import {
+    selectAliasItems,
     selectCreatedItemsCount,
     selectHasPendingShareAccess,
     selectLockEnabled,
@@ -16,7 +17,7 @@ import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
-import { createSpotlightRule } from './service';
+import { type SpotlightRule, createSpotlightRule } from './service';
 
 export const createPendingShareAccessRule = (store: Store<State>) =>
     createSpotlightRule({
@@ -160,26 +161,18 @@ export const createItemSharingRule = () =>
         when: (previous) => !previous,
     });
 
-export const createAliasDiscoveryCustomizeRule = () =>
-    createSpotlightRule({
-        message: SpotlightMessage.ALIAS_DISCOVERY_CUSTOMIZE,
-        when: (previous) => !previous,
-    });
-
-export const createAliasDiscoveryMailboxRule = () =>
-    createSpotlightRule({
-        message: SpotlightMessage.ALIAS_DISCOVERY_MAILBOX,
-        when: (previous) => !previous,
-    });
-
-export const createAliasDiscoveryDomainRule = () =>
-    createSpotlightRule({
-        message: SpotlightMessage.ALIAS_DISCOVERY_DOMAIN,
-        when: (previous) => !previous,
-    });
-
-export const createAliasDiscoveryContactRule = () =>
-    createSpotlightRule({
-        message: SpotlightMessage.ALIAS_DISCOVERY_CONTACT,
-        when: (previous) => !previous,
-    });
+export const createAliasDiscoveryRules = (store: Store<State>): SpotlightRule[] =>
+    [
+        SpotlightMessage.ALIAS_DISCOVERY_CUSTOMIZE,
+        SpotlightMessage.ALIAS_DISCOVERY_MAILBOX,
+        SpotlightMessage.ALIAS_DISCOVERY_DOMAIN,
+        SpotlightMessage.ALIAS_DISCOVERY_CONTACT,
+    ].map((message) =>
+        createSpotlightRule({
+            message,
+            when: (previous) => {
+                const aliasCount = selectAliasItems(store.getState()).length;
+                return !previous && aliasCount > 2;
+            },
+        })
+    );
