@@ -226,6 +226,18 @@ module.exports = {
         'custom-rules/date-formatting-locale': 'warn',
         '@typescript-eslint/consistent-type-imports': 'error',
         'lodash/import-scope': [2, 'method'],
+        'no-restricted-imports': [
+            'error',
+            {
+                paths: [
+                    {
+                        name: 'reselect',
+                        importNames: ['createSelector'],
+                        message: 'Please use createSelector from @redux/toolkit instead.',
+                    },
+                ],
+            },
+        ],
     },
     settings: {
         'import/resolver': {

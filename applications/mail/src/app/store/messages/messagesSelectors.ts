@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect';
+import { createSelector } from '@reduxjs/toolkit';
 
 import { DRAFT_ID_PREFIX } from '@proton/shared/lib/mail/messages';
 
