@@ -765,7 +765,7 @@ export const getResetPartstatActions = (
                 // no need to reset the partsat as it should have been done already
                 return;
             }
-            const selfAttendee = event.Attendees.find(({ Token }) => Token === token);
+            const selfAttendee = event.AttendeesInfo.Attendees.find(({ Token }) => Token === token);
             if (!selfAttendee) {
                 return;
             }
@@ -804,7 +804,7 @@ export const getMustResetPartstat = (singleEdits: CalendarEvent[], token?: strin
         if (getIsEventCancelled(event)) {
             return false;
         }
-        const selfAttendee = event.Attendees.find(({ Token }) => Token === token);
+        const selfAttendee = event.AttendeesInfo.Attendees.find(({ Token }) => Token === token);
         if (!selfAttendee) {
             return false;
         }

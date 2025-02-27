@@ -61,8 +61,7 @@ export interface CalendarEventBlobData {
     SharedEvents: CalendarEventData[];
     Notifications?: Nullable<CalendarNotificationSettings[]>;
     AttendeesEvents: CalendarEventData[];
-    Attendees: Attendee[];
-    AttendeesInfo: AttendeesInfo[];
+    AttendeesInfo: AttendeesInfo;
 }
 
 export type CalendarEventBlobDataWithNotifications = Required<CalendarEventBlobData>;
