@@ -45,6 +45,10 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "${ photos.length } Foto zu einem neuen Album hinzufügen",
+        "${ photos.length } Fotos zu einem neuen Album hinzufügen"
+      ],
       "Add account": [
         "Konto hinzufügen"
       ],
@@ -86,6 +90,10 @@
       ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Hinzufügen zu „${ album.name }“ (${ album.photoCount } Foto)",
+        "Hinzufügen zu „${ album.name }“ (${ album.photoCount } Fotos)"
       ],
       "Album name": [
         "Albumname"
@@ -333,7 +341,8 @@
       "Download logs": [
         "Protokolle herunterladen"
       ],
-      "Download photos": [
+      "Download photo": [
+        "Foto herunterladen",
         "Fotos herunterladen"
       ],
       "Download without scanning": [
@@ -672,6 +681,9 @@
       "Remove device": [
         "Gerät entfernen"
       ],
+      "Remove from album": [
+        "Aus dem Album entfernen"
+      ],
       "Remove from this list": [
         "Aus dieser Liste entfernen"
       ],
@@ -681,8 +693,14 @@
       "Remove me": [
         "Mich entfernen"
       ],
+      "Remove Without Saving": [
+        "Entfernen ohne zu speichern"
+      ],
       "Rename": [
         "Umbenennen"
+      ],
+      "Rename album": [
+        "Album umbenennen"
       ],
       "Replace file": [
         "Datei ersetzen"
@@ -750,6 +768,9 @@
       "Save": [
         "Speichern"
       ],
+      "Save and Remove": [
+        "Speichern und entfernen"
+      ],
       "Save changes": [
         "Änderungen speichern"
       ],
@@ -800,6 +821,9 @@
       ],
       "Share": [
         "Teilen"
+      ],
+      "Share album": [
+        "Album teilen"
       ],
       "Share file": [
         "Datei teilen"
@@ -1373,12 +1397,6 @@
       ],
       "Take a tour": [
         "Rundgang"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "${ photos.length } Foto hinzufügen zu",
-        "${ photos.length } Fotos hinzufügen zu"
       ]
     },
     "Cancellation reminder": {
@@ -2460,6 +2478,11 @@
         "Überfällige Rechnung"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2541,11 +2564,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3699,6 +3717,18 @@
         "Sicherheitszentrum"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "${ photos.length } Foto hinzufügen zu",
+        "${ photos.length } Fotos hinzufügen zu"
+      ],
+      "All albums": [
+        "Alle Alben"
+      ],
+      "Recent": [
+        "Kürzlich"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
@@ -4246,9 +4276,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
       ],
-      "Album is empty": [
-        "Album ist leer"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
@@ -4256,9 +4283,6 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
-      ],
-      "All albums": [
-        "Alle Alben"
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
@@ -5085,9 +5109,6 @@
       "Ready to add some photos?": [
         "Bereit ein paar Fotos hinzuzufügen?"
       ],
-      "Recent": [
-        "Kürzlich"
-      ],
       "recommended browser": [
         "empfohlenen Browsers"
       ],
@@ -5306,6 +5327,9 @@
       ],
       "This item already exists in your library": [
         "Dieses Element existiert bereits in deiner Bibliothek."
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Dieser Eintrag ist nicht in deiner Fotobibliothek gespeichert. Wenn du ihn aus diesem Album entfernst, verlierst du dauerhaft den Zugriff darauf. Möchtest du ihn vor dem Entfernen speichern?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
@@ -5727,6 +5751,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your photo has been removed from the album": [
+        "Dein Foto wurde aus dem Album entfernt",
+        "Deine Fotos wurden aus dem Album entfernt"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Dein Abonnement ist auf 10 Versionen für bis zu 7 Tage begrenzt."
@@ -6469,6 +6497,9 @@
     "Link": {
       "Add a gift code": [
         "Gutscheincode hinzufügen"
+      ],
+      "Albums": [
+        "Alben"
       ],
       "All mail": [
         "Alle E-Mails"
@@ -8216,6 +8247,12 @@
       "Maybe later": [
         "Vielleicht später"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Angebot läuft am ${ formattedDate } ab."
+      ],
+      "Pay annually, secure our best offer": [
+        "Jährlich zahlen, unser bestes Angebot sichern"
+      ],
       "Save": [
         "Sparen"
       ],
@@ -8236,6 +8273,9 @@
       ],
       "You currently pay": [
         "Du bezahlst derzeit"
+      ],
+      "Your subscription renews soon": [
+        "Dein Abonnement verlängert sich bald"
       ]
     },
     "Offer feature": {
@@ -10581,6 +10621,9 @@
       "Remove device?": [
         "Gerät entfernen?"
       ],
+      "Remove items": [
+        "Einträge entfernen"
+      ],
       "Rename a file": [
         "Datei umbenennen"
       ],
@@ -10791,6 +10834,11 @@
         "Heute"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Füge diese gemeinsame Datei zu deinem ${ DRIVE_APP_NAME } hinzu, damit du später leicht darauf zugreifen kannst."
@@ -10872,11 +10920,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wir haben der Person eine Einladung zum Zugreifen auf den Eintrag gesendet."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Valentine_2025": {

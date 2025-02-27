@@ -339,9 +339,6 @@
       "Download logs": [
         "Záznamy sťahovania"
       ],
-      "Download photos": [
-        "Stiahnuť fotografie"
-      ],
       "Download without scanning": [
         "Stiahnuť bez skenovania"
       ],
@@ -1393,14 +1390,6 @@
       ],
       "Take a tour": [
         "Absolvujte prehliadku"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Pridať ${ photos.length } fotografiu do",
-        "Pridať ${ photos.length } fotografie do",
-        "Pridať ${ photos.length } fotografií do",
-        "Pridať ${ photos.length } fotografií do"
       ]
     },
     "Cancellation reminder": {
@@ -2486,6 +2475,11 @@
         "Faktúra po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2567,11 +2561,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4382,9 +4371,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ],
-      "Album is empty": [
-        "Album je prázdny"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Všetky (${ totalFoldersCount } zložka)",
         "Všetky (${ totalFoldersCount } zložky)",
@@ -4396,9 +4382,6 @@
         "Všetky (${ totalFoldersCount } štítky)",
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
-      ],
-      "All albums": [
-        "Všetky albumy"
       ],
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
@@ -5233,9 +5216,6 @@
       ],
       "Ready to add some photos?": [
         "Chcete pridať nejaké fotografie?"
-      ],
-      "Recent": [
-        "Nedávne"
       ],
       "recommended browser": [
         "odporúčaný prehliadač"
@@ -11097,6 +11077,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tento zdieľaný súbor pridajte do svojho ${ DRIVE_APP_NAME } pre neskorší jednoduchý prístup."
@@ -11178,11 +11163,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Validation": {

@@ -45,6 +45,10 @@
       "Add": [
         "Tilføj"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Tilføj ${ photos.length } foto til et nyt album",
+        "Tilføj ${ photos.length } fotos til et nyt album"
+      ],
       "Add account": [
         "Tilføj konto"
       ],
@@ -87,6 +91,10 @@
       "Add to group": [
         "Føj til gruppe"
       ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Tilføj til “${ album.name }” (${ album.photoCount } foto)",
+        "Tilføj til “${ album.name }” (${ album.photoCount } fotos)"
+      ],
       "Album name": [
         "Albumnavn"
       ],
@@ -116,7 +124,7 @@
         "Annullér"
       ],
       "Cancel all": [
-        "Stop alle"
+        "Annullér alle"
       ],
       "Cancel all downloads": [
         "Afbryd alle downloads"
@@ -333,7 +341,8 @@
       "Download logs": [
         "Download-logfiler"
       ],
-      "Download photos": [
+      "Download photo": [
+        "Download foto",
         "Download fotos"
       ],
       "Download without scanning": [
@@ -666,6 +675,9 @@
       "Remove device": [
         "Fjern enhed"
       ],
+      "Remove from album": [
+        "Fjern fra album"
+      ],
       "Remove from this list": [
         "Fjern fra denne liste"
       ],
@@ -675,8 +687,14 @@
       "Remove me": [
         "Fjern mig"
       ],
+      "Remove Without Saving": [
+        "Fjern uden at gemme"
+      ],
       "Rename": [
         "Omdøb"
+      ],
+      "Rename album": [
+        "Omdøb album"
       ],
       "Replace file": [
         "Erstat fil"
@@ -744,6 +762,9 @@
       "Save": [
         "Gem"
       ],
+      "Save and Remove": [
+        "Gem og fjern"
+      ],
       "Save changes": [
         "Gem ændringer"
       ],
@@ -791,6 +812,9 @@
       ],
       "Share": [
         "Del"
+      ],
+      "Share album": [
+        "Del album"
       ],
       "Share file": [
         "Del fil"
@@ -1346,12 +1370,6 @@
       ],
       "Set up other features": [
         "Konfigurer andre funktioner"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Tilføj ${ photos.length } foto til",
-        "Tilføj ${ photos.length } fotos til"
       ]
     },
     "Cancellation reminder": {
@@ -2430,6 +2448,11 @@
         "Forfalden faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2511,11 +2534,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3664,6 +3682,18 @@
         "Sikkerhedscenter"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Tilføj ${ photos.length } foto til",
+        "Tilføj ${ photos.length } fotos til"
+      ],
+      "All albums": [
+        "Alle albummer"
+      ],
+      "Recent": [
+        "Seneste"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Fandt ${ itemsCount } forslag, brug tastaturet til at navigere.",
@@ -4190,9 +4220,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ],
-      "Album is empty": [
-        "Album er tomt"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } mappe)",
         "Alle (${ totalFoldersCount } mapper)"
@@ -4200,9 +4227,6 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } etiket)",
         "Alle (${ totalFoldersCount } etiketter)"
-      ],
-      "All albums": [
-        "Alle albummer"
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
@@ -4270,6 +4294,9 @@
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Automatiseret gendannelse ${ formattedDate }"
       ],
       "Available": [
         "Tilgængelig"
@@ -4859,6 +4886,9 @@
       "of": [
         "af"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Når denne proces er færdig, finder du en kopi af dine gendannede data i en ny mappe med navnet \"Automatiseret gendannelse (dags dato)\". Denne kopi af dine data vil ikke tælle med i din lagerkvote."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Et af dine krypterede drev er låst. Det skyldes sandsynligvis, at adgangskoden for nylig er blevet nulstillet."
       ],
@@ -4882,6 +4912,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Vores systemer har opdaget, at din tidligere gendannelse ikke lykkedes, og nogle filer er måske ikke blevet gendannet fuldt ud. Vi har automatisk genstartet gendannelsesprocessen for at sikre, at alt er fuldt ud gendannet."
       ],
       "Owner": [
         "Ejer"
@@ -5019,9 +5052,6 @@
       ],
       "Ready to add some photos?": [
         "Klar til at tilføje nogle fotos?"
-      ],
-      "Recent": [
-        "Seneste"
       ],
       "recommended browser": [
         "anbefalet browser"
@@ -5242,6 +5272,9 @@
       "This item already exists in your library": [
         "Dette element findes allerede i dit bibliotek"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Dette element er ikke gemt i dit Fotos-bibliotek. Hvis du fjerner det fra dette album, mister du adgangen til det permanent. Vil du gerne gemme det, før du fjerner det?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
       ],
@@ -5448,6 +5481,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Vi skal have bekræftet din betaling hos din bank."
+      ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Vi undskylder oprigtigt for den ulejlighed, det måtte have givet dig."
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at beskytte dine betalinger"
@@ -5659,6 +5695,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
+      ],
+      "Your photo has been removed from the album": [
+        "Dit foto er blevet fjernet fra albummet",
+        "Dine fotos er blevet fjernet fra albummet"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Dit abonnement er begrænset til 10 versioner i op til 7 dage"
@@ -6387,6 +6427,9 @@
     "Link": {
       "Add a gift code": [
         "Tilføj en gavekode"
+      ],
+      "Albums": [
+        "Albummer"
       ],
       "All mail": [
         "Alle e-mails"
@@ -7813,7 +7856,7 @@
         "En invitation er blevet sendt"
       ],
       "Cannot load link": [
-        "Link kunne ikke indlæses"
+        "Link kan ikke indlæses"
       ],
       "Cannot load next page": [
         "Næste side kunne ikke indlæses"
@@ -9857,6 +9900,9 @@
       "Are you sure?": [
         "Er du sikker?"
       ],
+      "Automatic Recovery in Progress": [
+        "Automatisk gendannelse i gang"
+      ],
       "Billing cycle": [
         "Faktureringscyklus"
       ],
@@ -10004,10 +10050,10 @@
         "Download ${ date }"
       ],
       "Download unverified file?": [
-        "Hent ubekræftet fil?"
+        "Download ubekræftet fil?"
       ],
       "Download unverified folder?": [
-        "Hent ubekræftet mappe?"
+        "Download ubekræftet mappe?"
       ],
       "Drive": [
         "Drive"
@@ -10239,6 +10285,9 @@
       "Remove device?": [
         "Fjern enhed?"
       ],
+      "Remove items": [
+        "Fjern elementer"
+      ],
       "Rename a file": [
         "Omdøb en fil"
       ],
@@ -10446,6 +10495,11 @@
         "I dag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tilføj denne delte fil på din ${ DRIVE_APP_NAME } til nem adgang senere."
@@ -10527,11 +10581,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
     },
     "Validation": {
