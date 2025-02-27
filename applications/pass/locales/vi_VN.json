@@ -814,19 +814,6 @@
         "Terabytes"
       ]
     },
-    "Font face option": {
-      "System default": [
-        "Mặc định hệ thống"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Lớn"
-      ],
-      "Small": [
-        "Nhỏ"
-      ]
-    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
@@ -1016,6 +1003,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Bật tự động khóa bằng mã PIN"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Nhập mã xác minh. Số ${ digit }."
       ],
       "Enter your extra password": [
         "Nhập mật khẩu phụ"
@@ -1355,6 +1345,9 @@
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Để chuyển dữ liệu từ trình quản lý mật khẩu khác, vào trình quản lý mật khẩu đó, xuất dữ liệu của bạn và tải nó lên ${ PASS_APP_NAME }. Khi dữ liệu của bạn đã được nhập vào, xóa tệp đã xuất ban đầu."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Thử các tính năng, bản cập nhật và sản phẩm ${ BRAND_NAME } mới trước khi chúng được phát hành ra công chúng. Thao tác này sẽ tải lại ứng dụng"
       ],
       "Unable to copy to clipboard": [
         "Không thể sao chép vào bộ nhớ tạm"
