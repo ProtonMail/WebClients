@@ -4,13 +4,15 @@ import { type ItemKey, PassEncryptionTag } from '@proton/pass/types';
 
 type CreateSecureLinkProcessParams = {
     itemKey: ItemKey;
-    shareKey: ShareKey;
+    shareKey: ShareKey | ItemKey;
 };
 
 export type CreateSecureLinkData = {
     encryptedItemKey: Uint8Array;
     encryptedLinkKey: Uint8Array;
     secureLinkKey: Uint8Array;
+    keyRotation: number;
+    linkKeyEncryptedWithItemKey: boolean;
 };
 
 /** Note: for secure-links created from shared items,
@@ -31,5 +33,11 @@ export const createSecureLink = async ({
 
     const encryptedLinkKey = await encryptData(shareKey.key, secureLinkKey, PassEncryptionTag.LinkKey);
 
-    return { encryptedItemKey, encryptedLinkKey, secureLinkKey };
+    return {
+        encryptedItemKey,
+        encryptedLinkKey,
+        secureLinkKey,
+        keyRotation: shareKey.rotation,
+        linkKeyEncryptedWithItemKey: itemKey == shareKey,
+    };
 };

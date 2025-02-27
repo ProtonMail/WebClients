@@ -99,11 +99,13 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const canTogglePinned = !(pinInFlight || unpinInFlight);
 
     const itemSharingEnabled = useFeatureFlag(PassFeature.PassItemSharingV1);
+    const itemShareLinkSharingEnabled = useFeatureFlag(PassFeature.PassSecureLinkCryptoChangeV1);
+
     const accessCount = targetMembers + (revision.shareCount ?? 0);
 
     const canManage = isShareManageable(share);
     const canShare = canManage && type !== 'alias';
-    const canLinkShare = isVault && canShare;
+    const canLinkShare = (isVault || itemShareLinkSharingEnabled) && canShare;
     const canItemShare = itemSharingEnabled && canShare && !orgItemSharingDisabled;
     const canManageAccess = itemSharingEnabled && shared && !readOnly;
     const canLeave = !isVault && !owner;
@@ -261,9 +263,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         />
                                     )}
 
-                                    {/** NOTE: disabling secure links for non-vault shares
-                                     * until we start using the `itemKey` to encrypt the
-                                     * `secureLinkKey` with */}
                                     {canLinkShare && (
                                         <DropdownMenuButton
                                             onClick={onSecureLink}
