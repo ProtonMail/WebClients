@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activa"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -4761,6 +4761,12 @@
       "Please select a state": [
         "Seleccioneu un estat"
       ],
+      "Please select at least one location before continuing.": [
+        "Seleccioneu almenys una ubicació abans de continuar."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Seleccioneu almenys un usuari o grup abans de continuar."
+      ],
       "Please set a recovery email first": [
         "Establiu primer un número de telèfon de recuperació."
       ],
@@ -4884,6 +4890,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "El pagament mínim que acceptem és ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "El nom de la política ha de tenir entre 3 i 40 caràcters."
       ],
       "The sending key is not valid": [
         "La clau enviada no es vàlida"
@@ -6994,11 +7003,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeu almenys un mètode de recuperació de dades per assegurar-vos que podeu continuar accedint al contingut del vostre compte ${ BRAND_NAME } si perdeu la contrasenya."
       ],
-      "active": [
-        "activa"
-      ],
       "Active": [
         "Actiu"
+      ],
+      "active": [
+        "activa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
@@ -8309,6 +8318,9 @@
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
       ],
+      "Organization --> Groups": [
+        "Organització --> Grups"
+      ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Els membres de l'organització necessitaran desbloquejar ${ PASS_APP_NAME } amb la seva contrasenya, PIN, etc."
       ],
@@ -9047,6 +9059,9 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Per tal de millorar contínuament els nostres serveis, de vegades recopilem dades per controlar el bon funcionament de les nostres aplicacions. Aquesta informació no es comparteix amb serveis de tercers."
       ],
+      "To create your first user group, go to": [
+        "Per crear el vostre primer grup d'usuaris, aneu a"
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per a desxifrar i veure les dades bloquejades després d'un restabliment de contrasenya, seleccioneu un mètode de recuperació."
       ],
@@ -9763,7 +9778,7 @@
         "Com enviar un pagament en efectiu?"
       ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Trobeu les instruccions a l'article: ${ howToSendCashArticleUrl }"
+        "Veieu les instruccions a l'article: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -13589,6 +13604,12 @@
       "Maybe later": [
         "Potser després"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "L'oferta caduca el ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Pagueu anualment i assegureu-vos la nostra millor oferta"
+      ],
       "Save": [
         "Estalvieu"
       ],
@@ -13609,6 +13630,9 @@
       ],
       "You currently pay": [
         "Actualment pagueu"
+      ],
+      "Your subscription renews soon": [
+        "La subscripció es renovarà aviat."
       ]
     },
     "Offer feature": {
@@ -16817,6 +16841,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -17105,47 +17170,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
