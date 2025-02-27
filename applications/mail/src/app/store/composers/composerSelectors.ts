@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect';
+import { createSelector } from '@reduxjs/toolkit';
 
 import type { MailState } from '../store';
 import type { ComposerID } from './composerTypes';
