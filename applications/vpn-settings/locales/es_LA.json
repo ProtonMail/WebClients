@@ -38,37 +38,37 @@
         "Activar clave de la organización"
       ],
       "Add": [
-        "Añadir"
+        "Agregar"
       ],
       "Add account": [
-        "Añadir una cuenta"
+        "Agregar una cuenta"
       ],
       "Add address": [
-        "Añadir dirección"
+        "Agregar dirección"
       ],
       "Add address or domain": [
-        "Añadir un dominio o una dirección"
+        "Agregar un dominio o una dirección"
       ],
       "Add credit / debit card": [
-        "Añadir tarjeta de crédito/débito"
+        "Agregar tarjeta de crédito/débito"
       ],
       "Add credits": [
-        "Añadir créditos"
+        "Agregar créditos"
       ],
       "Add domain": [
-        "Añadir dominio"
+        "Agregar dominio"
       ],
       "Add external address": [
-        "Añadir una dirección externa"
+        "Agregar una dirección externa"
       ],
       "Add more ${ BRAND_NAME } Scribe seats": [
-        "Añadir más asientos para ${ BRAND_NAME } Scribe"
+        "Agregar más asientos para ${ BRAND_NAME } Scribe"
       ],
       "Add PayPal": [
-        "Añadir PayPal"
+        "Agregar PayPal"
       ],
       "Add user": [
-        "Añadir usuario"
+        "Agregar usuario"
       ],
       "Allow": [
         "Permitir"
@@ -689,7 +689,7 @@
         "Cambiar cuenta"
       ],
       "Switch or add account": [
-        "Cambiar o añadir cuenta"
+        "Cambiar o agregar cuenta"
       ],
       "Take a tour": [
         "Explore ahora"
@@ -1043,7 +1043,7 @@
         "Protección de cuentas avanzada"
       ],
       "Easily add or remove users": [
-        "Añadir o eliminar usuarios fácilmente"
+        "Agregar o eliminar usuarios fácilmente"
       ],
       "High speed streaming": [
         "Streaming de alta velocidad"
@@ -2372,7 +2372,7 @@
     },
     "Domain spam notification": {
       "${ name } added": [
-        "${ name } añadido"
+        "${ name } agregado"
       ],
       "${ name } deletion failed": [
         "Error al eliminar ${ name }"
@@ -2477,7 +2477,7 @@
     },
     "Email spam notification": {
       "${ name } added": [
-        "${ name } añadido"
+        "${ name } agregado"
       ],
       "${ name } deletion failed": [
         "Error al eliminar ${ name }"
@@ -2678,10 +2678,10 @@
         "Configure un dominio personalizado antes de agregar direcciones."
       ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Configure un dominio personalizado antes de añadir usuarios a la organización."
+        "Configure un dominio personalizado antes de agregar usuarios a la organización."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Active el soporte multi usuario antes de añadir usuarios a la organización."
+        "Active el soporte multi usuario antes de agregar usuarios a la organización."
       ],
       "Please enter a valid Entity ID URL": [
         "Ingrese una URL de identificación de entidad válida."
@@ -2694,6 +2694,12 @@
       ],
       "Please select a state": [
         "Seleccione un estado"
+      ],
+      "Please select at least one location before continuing.": [
+        "Seleccione al menos una ubicación antes de continuar."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Seleccione al menos un usuario o grupo antes de continuar."
       ],
       "Please set a recovery email first": [
         "Defina primero un correo de recuperación"
@@ -2750,10 +2756,13 @@
         "El archivo es muy pequeño, el tamaño mínimo es ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
-        "La cantidad mínima de crédito que se puede añadir es de ${ price }"
+        "La cantidad mínima de crédito que se puede agregar es de ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "El pago mínimo que aceptamos es de ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "El nombre de la política debe tener entre 3 y 40 caracteres"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
@@ -2801,10 +2810,10 @@
         "Código de verificación incorrecto. Asegúrese de haber copiado el código de verificación correctamente y vuelva a intentarlo. Puede tomar hasta 24 horas para que los cambios tengan efecto."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Ha utilizado todas las direcciones del plan. Mejore el plan para añadir una dirección nueva."
+        "Ha utilizado todas las direcciones del plan. Mejore el plan para agregar una dirección nueva."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Ha utilizado todos los usuarios en el plan. Mejore el plan para añadir un usuario nuevo."
+        "Ha utilizado todos los usuarios en el plan. Mejore el plan para agregar un usuario nuevo."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "La cuenta u organización tiene una factura vencida. Pague todas las facturas pendientes."
@@ -3107,7 +3116,7 @@
     },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
-        "Añadir un usuario a la cuenta de ${ PLAN_NAMES.visionary2022 }"
+        "Agregar un usuario a la cuenta de ${ PLAN_NAMES.visionary2022 }"
       ],
       "Change family name": [
         "Cambiar nombre de la familia"
@@ -3154,11 +3163,11 @@
         "Acceso a todos los países"
       ],
       "Add": [
-        "Añadir"
+        "Agregar"
       ],
       "Add (${ totalAddedCount })": [
-        "Añadir (${ totalAddedCount })",
-        "Añadir (${ totalAddedCount })"
+        "Agregar (${ totalAddedCount })",
+        "Agregar (${ totalAddedCount })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Conexión hasta para ${ plusVpnConnections } dispositivo",
@@ -3207,7 +3216,7 @@
         "2FA con llave de seguridad desactivada"
       ],
       "Add a name to identify your security key with.": [
-        "Añada un nombre para identificar la llave de seguridad."
+        "Agregue un nombre para identificar la llave de seguridad."
       ],
       "Allow platform keys": [
         "Permitir las claves de plataforma"
@@ -3544,7 +3553,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Añada este registro en el panel de control del dominio en su registrador de nombre de dominio"
+        "Agregue este registro en el panel de control del dominio en su registrador de nombre de dominio"
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Se encontró ${ itemsCount } sugerencia. Use el teclado para navegar.",
@@ -3721,30 +3730,30 @@
         "activa"
       ],
       "add a recovery method": [
-        "añadir un método de recuperación"
+        "agregar un método de recuperación"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Añada una capa adicional de seguridad a la cuenta. Necesitará verificarse con una autenticación de dos factores cada vez que inicia sesión."
+        "Agregue una capa adicional de seguridad a la cuenta. Necesitará verificarse con una autenticación de dos factores cada vez que inicia sesión."
       ],
       "Add domain": [
-        "Añadir dominio"
+        "Agregar dominio"
       ],
       "Add multiple users to your organization at once.": [
-        "Añada múltiples usuarios a la organización de una vez."
+        "Agregue múltiples usuarios a la organización de una vez."
       ],
       "Add server (${ availableAddedCount } available)": [
-        "Añadir servidor (${ availableAddedCount } disponible)",
-        "Añadir servidor (${ availableAddedCount } disponibles)"
+        "Agregar servidor (${ availableAddedCount } disponible)",
+        "Agregar servidor (${ availableAddedCount } disponibles)"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
-        "Añada el nombre y logo para crear una experiencia más personalizada para la organización."
+        "Agregue el nombre y logo para crear una experiencia más personalizada para la organización."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "Añadiendo ${ addedServerCount } servidor de puerta de enlace",
         "Añadiendo ${ addedServerCount } servidores de puerta de enlace"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
-        "Al añadir una dirección de correo electrónico externa, se desactivará el cifrado de extremo a extremo para todas las comunicaciones por correo electrónico dentro de este grupo. ¿Desea continuar?"
+        "Al agregar una dirección de correo electrónico externa, se desactivará el cifrado de extremo a extremo para todas las comunicaciones por correo electrónico dentro de este grupo. ¿Desea continuar?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Añadiendo servidor de puerta de enlace: ${ serverNumber } / ${ total }",
@@ -3767,7 +3776,7 @@
         "Se eliminaron todos los miembros inactivos"
       ],
       "All members have been added.": [
-        "Se han añadido todos los miembros."
+        "Se han agregado todos los miembros."
       ],
       "All users": [
         "Todos los usuarios"
@@ -3848,7 +3857,7 @@
         "Antes de solicitar un código de verificación nuevo, revise la carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Antes de poder recibir correos para sus direcciones de dominio personalizadas en ${ MAIL_APP_NAME }, debe añadir los siguientes dos registros MX en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado). Puede encontrar un ejemplo y algunos consejos útiles ${ kbLink }."
+        "Antes de poder recibir correos para sus direcciones de dominio personalizadas en ${ MAIL_APP_NAME }, debe agregar los siguientes dos registros MX en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado). Puede encontrar un ejemplo y algunos consejos útiles ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de que pueda enviar y recibir mensajes desde sus direcciones nuevas, necesita crear las claves de cifrado para ellas."
@@ -3933,7 +3942,7 @@
         "Cree y administre subcuentas y asígneles direcciones de correo en el dominio personalizado."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Cree direcciones de correo electrónico para otras personas, administre ${ MAIL_APP_NAME } para una empresa, escuela o grupo. Comience añadiendo el nombre de la organización y el dominio personalizado (por ejemplo, @suempresa.com). "
+        "Cree direcciones de correo electrónico para otras personas, administre ${ MAIL_APP_NAME } para una empresa, escuela o grupo. Comience agregando el nombre de la organización y el dominio personalizado (por ejemplo, @suempresa.com). "
       ],
       "Create your first Gateway": [
         "Cree la primera puerta de enlace"
@@ -3973,7 +3982,7 @@
         "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
-        "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
+        "Se pueden agregar servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
       ],
       "default email address": [
         "dirección de correo por defecto"
@@ -4001,10 +4010,10 @@
         "Logo de Discover ProtectBuy"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DKIM permite a ${ BRAND_NAME } firmar criptográficamente los correos y evitar que los atacantes los manipulen. Asegúrese de añadir los siguientes tres registros CNAME en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado)."
+        "DKIM permite a ${ BRAND_NAME } firmar criptográficamente los correos y evitar que los atacantes los manipulen. Asegúrese de agregar los siguientes tres registros CNAME en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DMARC comprueba si los registros SPF y DKIM del remitente se originan en el dominio. Esto puede evitar que los atacantes usen el SPF y DKIM de otro dominio para hacerse pasar por el dominio. La \"p=\" (política) en este registro indica cómo desea que las plataformas del destinatario manejen los correos no autorizados. Recomendamos usar la política \"p=quarantine\" para la mayoría de los dominios. Asegúrese de añadir el siguiente registro TXT en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado)."
+        "DMARC comprueba si los registros SPF y DKIM del remitente se originan en el dominio. Esto puede evitar que los atacantes usen el SPF y DKIM de otro dominio para hacerse pasar por el dominio. La \"p=\" (política) en este registro indica cómo desea que las plataformas del destinatario manejen los correos no autorizados. Recomendamos usar la política \"p=quarantine\" para la mayoría de los dominios. Asegúrese de agregar el siguiente registro TXT en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado)."
       ],
       "DNS TXT record": [
         "Registro TXT de DNS"
@@ -4056,7 +4065,7 @@
         "Cada código solo puede usarse una vez"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
-        "Cada dominio sólo puede tener un registro SPF (TXT). Si desea conservar el registro SPF (TXT) existente, puede añadir ${ spf } a su registro actual (póngalo después de ${ spfValue })."
+        "Cada dominio sólo puede tener un registro SPF (TXT). Si desea conservar el registro SPF (TXT) existente, puede agregar ${ spf } a su registro actual (póngalo después de ${ spfValue })."
       ],
       "Edit email address": [
         "Editar dirección de correo"
@@ -4164,7 +4173,7 @@
         "por elegir ${ product }"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, seleccione la pestaña ${ boldAddresses } y añada todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
+        "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, seleccione la pestaña ${ boldAddresses } y agregue todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
       ],
       "Free forever": [
         "Gratis para siempre"
@@ -4519,6 +4528,9 @@
       "Or select a particular server:": [
         "O seleccione un servidor en particular:"
       ],
+      "Organization --> Groups": [
+        "Organización --> Grupos"
+      ],
       "Organization size": [
         "Tamaño de la organización"
       ],
@@ -4565,12 +4577,12 @@
         "al mes con facturación cada 24 meses"
       ],
       "Please add a password for the user on row": [
-        "Añada una contraseña para el usuario en la fila.",
-        "Añada contraseñas para los usuarios en las filas."
+        "Agregue una contraseña para el usuario en la fila.",
+        "Agregue contraseñas para los usuarios en las filas."
       ],
       "Please add an email address for the user on row": [
-        "Añada una dirección de correo para el usuario en la fila.",
-        "Añada direcciones de correo para los usuarios en las filas."
+        "Agregue una dirección de correo para el usuario en la fila.",
+        "Agregue direcciones de correo para los usuarios en las filas."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Pregunte al propietario que le invite directamente al documento."
@@ -4776,7 +4788,7 @@
         "Especifique el dominio que puede autenticarse con SAML SSO."
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "SPF aclara quién puede enviar correos al dominio. Asegúrese de añadir el siguiente registro TXT en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado)."
+        "SPF aclara quién puede enviar correos al dominio. Asegúrese de agregar el siguiente registro TXT en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado)."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comience a compartirla con sus contactos y úsela para servicios en línea."
@@ -4951,7 +4963,7 @@
         "a ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Para permitir que el dominio **${ domainName }** use SAML SSO, debe verificar la propiedad del mismo añadiendo el siguiente registro TXT de DNS al dominio en el proveedor de DNS."
+        "Para permitir que el dominio **${ domainName }** use SAML SSO, debe verificar la propiedad del mismo agregando el siguiente registro TXT de DNS al dominio en el proveedor de DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Contáctenos para cancelar la suscripción."
@@ -4964,6 +4976,9 @@
       ],
       "to continue to ${ product }": [
         "para continuar a ${ product }"
+      ],
+      "To create your first user group, go to": [
+        "Para crear su primer grupo de usuario, diríjase a"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
@@ -5212,7 +5227,7 @@
         "Con los grupos podrá enviar correos a todos los miembros de un grupo específico de manera rápida y sencilla."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Sin activación, no podrá crear usuarios nuevos, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
+        "Sin activación, no podrá crear usuarios nuevos, agregar direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -5292,7 +5307,7 @@
         "Tiene ${ unassignedAvailableCount } servidores disponibles que has usado recientemente. Para asignar estos servidores a otro país, tendrá que esperar hasta que se complete la desactivación."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Tiene una suscripción de prueba ${ planTitle }. Si desea continuar la suscripción después del periodo de prueba, añada un método de pago."
+        "Tiene una suscripción de prueba ${ planTitle }. Si desea continuar la suscripción después del periodo de prueba, agregue un método de pago."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. La suscripción será renovada automáticamente al finalizar el periodo de prueba."
@@ -5316,7 +5331,7 @@
         "Debe desactivar o eliminar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada con la cuenta de PayPal para añadirla como método de pago."
+        "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada con la cuenta de PayPal para agregarla como método de pago."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada a la cuenta de PayPal. Si la cuenta de PayPal no lo tiene, haga clic en el botón de abajo."
@@ -5355,7 +5370,7 @@
         "La contraseña de ${ BRAND_NAME }"
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Su suscripción de${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de su suscripción se añadirá a su cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+        "Su suscripción de${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de su suscripción se agregará a su cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Las cuentas de ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminar ambas, inicie sesión en ${ loginLink } y elimine la cuenta allí."
@@ -5427,23 +5442,23 @@
     },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
-        "Añada una dirección nueva para los usuarios existentes de la organización."
+        "Agregue una dirección nueva para los usuarios existentes de la organización."
       ],
       "Add a new user to your organization and create an address for it.": [
-        "Añada un usuario nuevo a la organización y cree una dirección para él."
+        "Agregue un usuario nuevo a la organización y cree una dirección para él."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Por razones de seguridad, debemos verificar que usted es el propietario de ${ domainName }. Añada el siguiente registro TXT en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado). Puede encontrar un ejemplo y algunos consejos útiles ${ kbLink }."
+        "Por razones de seguridad, debemos verificar que usted es el propietario de ${ domainName }. Agregue el siguiente registro TXT en su panel de DNS (ubicado en la plataforma donde compró el dominio personalizado). Puede encontrar un ejemplo y algunos consejos útiles ${ kbLink }."
       ]
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "Puede añadir un método de pago para que la suscripción se renueve automáticamente. También están disponibles otros métodos de pago."
+        "Puede agregar un método de pago para que la suscripción se renueve automáticamente. También están disponibles otros métodos de pago."
       ]
     },
     "Info message for custom invoice modal": {
       "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
-        "Ingrese una nota para las facturas. Estos detalles se añadirán tanto a las facturas personales como a las organizacionales. Aparecerán únicamente en las facturas emitidas en el futuro."
+        "Ingrese una nota para las facturas. Estos detalles se agregarán tanto a las facturas personales como a las organizacionales. Aparecerán únicamente en las facturas emitidas en el futuro."
       ]
     },
     "Info subscription": {
@@ -5567,10 +5582,10 @@
         "Almacenamiento de la cuenta"
       ],
       "Add all organization members": [
-        "Añadir todos los miembros de la organización"
+        "Agregar todos los miembros de la organización"
       ],
       "Add group member": [
-        "Añadir un miembro al grupo"
+        "Agregar un miembro al grupo"
       ],
       "Address": [
         "Dirección"
@@ -5597,7 +5612,7 @@
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite fácilmente a todos en su organización añadir enlaces a videoconferencias a sus invitaciones de calendario."
+        "Permite fácilmente a todos en su organización agregar enlaces a videoconferencias a sus invitaciones de calendario."
       ],
       "Amount": [
         "Monto"
@@ -5945,13 +5960,13 @@
         "La frase consiste de 12 palabras únicas en un orden específico"
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
-        "Añada los siguientes tres registros CNAME. Tome en cuenta que los registros DNS pueden tardar varias horas en actualizarse."
+        "Agregue los siguientes tres registros CNAME. Tome en cuenta que los registros DNS pueden tardar varias horas en actualizarse."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
-        "Añada los siguientes dos registros MX. Tome en cuenta que los registros DNS pueden tomar varias horas para actualizarse."
+        "Agregue los siguientes dos registros MX. Tome en cuenta que los registros DNS pueden tomar varias horas para actualizarse."
       ],
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
-        "Añada el siguiente registro TXT. Tome en cuenta que los registros DNS pueden tomar varias horas para actualizarse."
+        "Agregue el siguiente registro TXT. Tome en cuenta que los registros DNS pueden tomar varias horas para actualizarse."
       ],
       "Please share any feedback to help us improve.": [
         "Compártanos cualquier comentario para ayudarnos a mejorar."
@@ -6146,12 +6161,12 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        "Añada un dominio que posea a la cuenta de ${ MAIL_APP_NAME }."
+        "Agregue un dominio que posea a la cuenta de ${ MAIL_APP_NAME }."
       ]
     },
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
-        "Añada el siguiente registro TXT. Tome en cuenta que los registros DNS pueden tomar varias horas para actualizarse."
+        "Agregue el siguiente registro TXT. Tome en cuenta que los registros DNS pueden tomar varias horas para actualizarse."
       ]
     },
     "Label for new member": {
@@ -6212,13 +6227,13 @@
     },
     "Link": {
       "Add a gift code": [
-        "Añadir código de regalo"
+        "Agregar código de regalo"
       ],
       "Add gift code": [
-        "Añadir código de regalo"
+        "Agregar código de regalo"
       ],
       "Add to your subscription": [
-        "Añadir a la suscripción"
+        "Agregar a la suscripción"
       ],
       "clearing your browser cache": [
         "vaciar la caché del navegador"
@@ -6367,7 +6382,7 @@
     },
     "mail_signup_2024: Info": {
       "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Añadir el asistente de escritura ${ BRAND_NAME } Scribe"
+        "Agregar el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -6407,7 +6422,7 @@
         "Activar el usuario"
       ],
       "Add address": [
-        "Añadir dirección"
+        "Agregar dirección"
       ],
       "Change password": [
         "Cambiar contraseña"
@@ -7316,8 +7331,8 @@
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Cree ${ n } calendario o añada calendarios de amistades, familiares, colegas y organizaciones.",
-        "Cree hasta ${ n } calendarios o añada calendarios de amistades, familiares, colegas y organizaciones."
+        "Cree ${ n } calendario o agregue calendarios de amistades, familiares, colegas y organizaciones.",
+        "Cree hasta ${ n } calendarios o agregue calendarios de amistades, familiares, colegas y organizaciones."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Cree hasta ${ n } direcciones de correo/alias que puede asignar a sus familiares. Úselas para las identidades en línea, p.ej., JuanCompras@${ domain } para cuentas de compras."
@@ -7326,7 +7341,7 @@
         "Dominios personalizados para los alias, buzones adicionales, posibilidad de enviar correos desde alias y más"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
+        "Se pueden agregar servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores"
@@ -7359,7 +7374,7 @@
         "Le protege bloqueando todas las conexiones de red si se produce una desconexión inesperada de nuestro servidor VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Las etiquetas son muy fáciles de añadir a los mensajes y le permiten encontrarlos fácilmente o aplicarles filtros"
+        "Las etiquetas son muy fáciles de agregar a los mensajes y le permiten encontrarlos fácilmente o aplicarles filtros"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
         "Acceso de por vida a las funciones premium de ${ PASS_APP_NAME } y SimpleLogin."
@@ -7383,7 +7398,7 @@
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
+        "Herramienta de gestión de la organización que permite a los administradores agregar y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrá acceder a la cuenta cuando la necesite"
@@ -7488,7 +7503,7 @@
         "Los correos que envía a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no usa ${ MAIL_APP_NAME_TWO }, tendrá que establecer una contraseña antes de enviar el mensaje."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        "Puede tener varios administradores. Todos tienen permiso para añadir y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
+        "Puede tener varios administradores. Todos tienen permiso para agregar y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
       ]
     },
     "new_plans: upgrade": {
@@ -7507,7 +7522,7 @@
         "Acceso a funciones VPN avanzadas"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Añada más personalización con 15 direcciones de correo y soporte para 3 dominios de correo personalizados"
+        "Agregue más personalización con 15 direcciones de correo y soporte para 3 dominios de correo personalizados"
       ],
       "AES 256-bit VPN encryption": [
         "Cifrado VPN AES 256-bit"
@@ -7719,6 +7734,12 @@
       "Maybe later": [
         "Quizás más tarde"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "La oferta expira el ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Pague anualmente y asegúrese nuestra mejor oferta."
+      ],
       "Save": [
         "Ahorre"
       ],
@@ -7739,6 +7760,9 @@
       ],
       "You currently pay": [
         "Actualmente paga"
+      ],
+      "Your subscription renews soon": [
+        "Su suscripción se renueva pronto."
       ]
     },
     "Offer feature": {
@@ -7841,7 +7865,7 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink } para añadir más usuarios o eliminar algunas cuentas de usuario para liberar espacio."
+        "${ upgradeLink } para agregar más usuarios o eliminar algunas cuentas de usuario para liberar espacio."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
         "${ upgradeLink } para obtener más cuentas o elimine el acceso VPN de algunos usuarios."
@@ -7933,7 +7957,7 @@
         "Configure la organización"
       ],
       "Start adding users to give them access to ${ PASS_APP_NAME }.": [
-        "Comience añadiendo usuarios para darles acceso a ${ PASS_APP_NAME }."
+        "Comience agregando usuarios para darles acceso a ${ PASS_APP_NAME }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Comience a usar ${ PASS_APP_NAME }"
@@ -8140,7 +8164,7 @@
         "Procesando el pago"
       ],
       "Please add a payment method in the dashboard to continue.": [
-        "Añada un método de pago en el panel de control para continuar."
+        "Agregue un método de pago en el panel de control para continuar."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
@@ -8179,7 +8203,7 @@
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } cada mes. Puede cancelarla en cualquier momento."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "La transacción se detectó. Los créditos se añadirán a la cuenta una vez que se confirme la transacción por completo."
+        "La transacción se detectó. Los créditos se agregarán a la cuenta una vez que se confirme la transacción por completo."
       ],
       "Timeout exceeded": [
         "Tiempo de espera agotado"
@@ -8246,7 +8270,7 @@
         "Una forma de contactarle"
       ],
       "Add gift code": [
-        "Añadir código de regalo"
+        "Agregar código de regalo"
       ],
       "Address": [
         "Dirección"
@@ -8356,7 +8380,7 @@
     },
     "placeholder": {
       "Add a group name": [
-        "Añadir un nombre al grupo"
+        "Agregar un nombre al grupo"
       ],
       "e.g. distribution list for marketing team": [
         "p. ej., lista de distribución para equipo de mercadeo"
@@ -8584,7 +8608,7 @@
         "Una vez que SCIM esté desactivado para la organización, **todos los usuarios SCIM proporcionados automáticamente por el proveedor de identidad serán convertidos a usuarios SSO** y podrá gestionarlos directamente en los ajustes de ${ BRAND_NAME }."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
-        "Simplifica la administración de usuarios a través de diferentes servicios. Añada, edite y elimine usuarios en el proveedor de identidad y los cambios serán aplicados automáticamente en la organización ${ appName }."
+        "Simplifica la administración de usuarios a través de diferentes servicios. Agregue, edite y elimine usuarios en el proveedor de identidad y los cambios serán aplicados automáticamente en la organización ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "El aprovisionamiento automático SCIM será desactivado hasta que ingrese el nuevo token SCIM en la configuración del proveedor de identidad."
@@ -9210,7 +9234,7 @@
         "${ n } usuarios están solicitando su ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único."
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
-        "**Los usuarios con SSO (proporcionados por su proveedor de identidades) serán eliminados** y tendrá que crearlos manualmente para añadirlos de nuevo a su organización."
+        "**Los usuarios con SSO (proporcionados por su proveedor de identidades) serán eliminados** y tendrá que crearlos manualmente para agregarlos de nuevo a su organización."
       ],
       "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
         "**Los usuarios de SSO se desconectarán de su proveedor de identidad** y pasarán a ser usuarios sin SSO."
@@ -9222,7 +9246,7 @@
         "Acceso ortogado"
       ],
       "added you to their ${ BRAND_NAME } organization": [
-        "le añadieron a su organización de ${ BRAND_NAME }"
+        "le agregaron a su organización de ${ BRAND_NAME }"
       ],
       "Approve or deny it now": [
         "Aprobar o negar ahora"
@@ -9326,7 +9350,7 @@
         "¿Eliminar el inicio de sesión único de la organización?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
-        "Establezca una contraseña de respaldo para añadir una capa adicional de protección. Le permitirá iniciar sesión si se bloquea la cuenta, así que asegúrese de guardarla en un lugar seguro."
+        "Establezca una contraseña de respaldo para agregar una capa adicional de protección. Le permitirá iniciar sesión si se bloquea la cuenta, así que asegúrese de guardarla en un lugar seguro."
       ],
       "Set your backup password": [
         "Establezca su contraseña de respaldo"
@@ -9380,7 +9404,7 @@
         "Le damos la bienvenida"
       ],
       "You will have to create new users manually to add them to your organization.": [
-        "Tendrá que crear los nuevos usuarios manualmente para añadirlos a su organización."
+        "Tendrá que crear los nuevos usuarios manualmente para agregarlos a su organización."
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Se le redirigirá a su proveedor de SSO de terceros."
@@ -9467,7 +9491,7 @@
         "mejore para obtener más almacenamiento"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Añadiremos los créditos restantes a la cuenta de ${ BRAND_NAME }."
+        "Agregaremos los créditos restantes a la cuenta de ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Aún le queda **${ daysRemaining }** día en el plan de **${ currentPlanName }**.",
@@ -9641,6 +9665,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoye nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
@@ -9721,7 +9786,7 @@
         "2 usuarios"
       ],
       "Add any new files": [
-        "Añadir archivos nuevos"
+        "Agregar archivos nuevos"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Después de que expire la suscripción a ${ planName }, se le pasará a ${ BRAND_NAME } Free el cual ofrece hasta 1 GB de almacenamiento en Mail y hasta 5 GB en Drive. También perderá cualquier bonificación de almacenamiento recibida anteriormente."
@@ -9922,54 +9987,13 @@
         "Puede continuar disfrutando todos los beneficios del plan actual hasta el ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Aún tiene ${ expiryDate } en la suscripción de ${ planName }. Añadiremos los créditos por el tiempo restante a la cuenta de ${ BRAND_NAME }. Asegúrese de no exceder los límites del plan gratuito antes de cancelar. ${ learnMoreLink }"
+        "Aún tiene ${ expiryDate } en la suscripción de ${ planName }. Agregaremos los créditos por el tiempo restante a la cuenta de ${ BRAND_NAME }. Asegúrese de no exceder los límites del plan gratuito antes de cancelar. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Su plan ${ planName } no solo mantiene seguro los datos y comunicaciones de su negocio. Respalda sus objetivos de cumplimiento, hace que su negocio se destaque y mantiene a su equipo conectado."
       ],
       "Your own short @pm.me email alias": [
         "Su alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoye nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejore su productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos sus datos."
-      ],
-      "Your privacy is our mission": [
-        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription renewal state": {
@@ -10021,7 +10045,7 @@
         "Cuenta eliminada. Cerrando sesión..."
       ],
       "Address added": [
-        "Dirección añadida"
+        "Dirección agregada"
       ],
       "Administrator privileges restored": [
         "Privilegios de administrador restaurados"
@@ -10042,7 +10066,7 @@
         "Copiado al portapapeles"
       ],
       "Credits added": [
-        "Créditos añadidos"
+        "Créditos agregados"
       ],
       "Display name updated": [
         "Nombre a mostrar actualizado"
@@ -10105,7 +10129,7 @@
         "Contraseña actualizada"
       ],
       "Payment method added": [
-        "Método de pago añadido"
+        "Método de pago agregado"
       ],
       "Payment method deleted": [
         "Método de pago eliminado"
@@ -10377,53 +10401,53 @@
         "Activar el usuario"
       ],
       "Add ${ totalServerCount } server?": [
-        "¿Añadir ${ totalServerCount } servidor?",
-        "¿Añadir ${ totalServerCount } servidores?"
+        "¿Agregar ${ totalServerCount } servidor?",
+        "¿Agregar ${ totalServerCount } servidores?"
       ],
       "Add address": [
-        "Añadir dirección"
+        "Agregar dirección"
       ],
       "Add countries to \"${ policyName }\"": [
-        "Añadir países a «${ policyName }»"
+        "Agregar países a «${ policyName }»"
       ],
       "Add credit/debit card": [
-        "Añadir tarjeta de crédito/débito"
+        "Agregar tarjeta de crédito/débito"
       ],
       "Add credits": [
-        "Añadir créditos"
+        "Agregar créditos"
       ],
       "Add dedicated servers": [
-        "Añadir servidores dedicados"
+        "Agregar servidores dedicados"
       ],
       "Add domain": [
-        "Añadir dominio"
+        "Agregar dominio"
       ],
       "Add external address?": [
-        "¿Desea añadir una dirección externa?"
+        "¿Desea agregar una dirección externa?"
       ],
       "Add PayPal payment method": [
-        "Añadir PayPal como método de pago"
+        "Agregar PayPal como método de pago"
       ],
       "Add pm.me subdomain": [
-        "Añadir subdominio pm.me"
+        "Agregar subdominio pm.me"
       ],
       "Add to allow list": [
-        "Añadir a la lista de direcciones permitidas"
+        "Agregar a la lista de direcciones permitidas"
       ],
       "Add to block list": [
-        "Añadir a la lista de direcciones bloqueadas"
+        "Agregar a la lista de direcciones bloqueadas"
       ],
       "Add to spam list": [
-        "Añadir a la lista de spam"
+        "Agregar a la lista de spam"
       ],
       "Add user accounts": [
-        "Añadir cuentas de usuario"
+        "Agregar cuentas de usuario"
       ],
       "Add users": [
-        "Añadir usuarios"
+        "Agregar usuarios"
       ],
       "Add users to \"${ policyName }\"": [
-        "Añadir usuarios a «${ policyName }»"
+        "Agregar usuarios a «${ policyName }»"
       ],
       "Allocate storage": [
         "Asignar almacenamiento"
@@ -11122,7 +11146,7 @@
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
       ],
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Permite fácilmente añadir enlaces a videoconferencias a sus invitaciones del calendario."
+        "Permite fácilmente agregar enlaces a videoconferencias a sus invitaciones del calendario."
       ],
       "An approximate location of the IP address": [
         "Una ubicación aproximada de la dirección IP"
@@ -11397,10 +11421,10 @@
     },
     "user_modal": {
       "Add multiple users": [
-        "Añadir varios usuarios"
+        "Agregar varios usuarios"
       ],
       "Add new user": [
-        "Añadir usuario nuevo"
+        "Agregar usuario nuevo"
       ],
       "Admin": [
         "Admin"
@@ -11824,7 +11848,7 @@
         "Detectamos un problema con la configuración DNS. Asegúrese de que sus registros coinciden con las instrucciones de abajo. Si el problema persiste, tendremos que cerrar la sesión de DKIM."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "Debe ${ activateLink } la clave de la organización antes de añadir una dirección de correo a un miembro no privado."
+        "Debe ${ activateLink } la clave de la organización antes de agregar una dirección de correo a un miembro no privado."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prueba gratuita termina en ${ textDate }. ${ action }"
