@@ -33,7 +33,7 @@ export const getUpdatePartstatOperation = ({
     timestamp: number;
     silence: boolean;
 }): UpdatePartstatOperation | undefined => {
-    const { partstat, selfAttendeeIndex } = inviteActions;
+    const { partstat, selfAttendeeIndex, comment } = inviteActions;
     if (selfAttendeeIndex === undefined || !partstat || !getHasAttendees(eventComponent)) {
         return;
     }
@@ -48,6 +48,7 @@ export const getUpdatePartstatOperation = ({
             eventID: event.ID,
             attendeeID,
             partstat,
+            comment,
             updateTime: getUnixTime(timestamp),
         },
         silence,

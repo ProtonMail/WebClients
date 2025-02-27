@@ -4,7 +4,14 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader, useActiveBreakpoint } from '@proton/components';
+import {
+    Badge,
+    CalendarEventDateHeader,
+    CalendarInviteButtons,
+    Loader,
+    RsvpModal,
+    useActiveBreakpoint,
+} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import {
     getIsCalendarDisabled,
@@ -21,6 +28,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import type {
@@ -114,6 +122,7 @@ const EventPopover = ({
     const isCalendarWritable = getIsCalendarWritable(calendarData);
 
     const { viewportWidth } = useActiveBreakpoint();
+    const rsvpCommentEnabled = useFlag('RsvpCommentWeb');
 
     const isSearchView = view === VIEWS.SEARCH;
     const model = useReadEvent(targetEventData, tzid, calendarBootstrap?.CalendarSettings);
@@ -168,11 +177,12 @@ const EventPopover = ({
         );
     };
 
-    const handleChangePartstat = (partstat: ICAL_ATTENDEE_STATUS) => {
+    const handleChangePartstat = (partstat: ICAL_ATTENDEE_STATUS, comment?: string) => {
         return onChangePartstat({
             isProtonProtonInvite: model.isProtonProtonInvite,
             type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
             partstat,
+            comment: comment,
             selfAddress: model.selfAddress,
             selfAttendeeIndex: model.selfAttendeeIndex,
         });
@@ -254,6 +264,13 @@ const EventPopover = ({
         );
     }
 
+    const canReplyToEvent = getCanReplyToEvent({
+        isOwnedCalendar,
+        isCalendarWritable,
+        isAttendee: model.isAttendee,
+        isCancelled,
+    });
+
     return (
         <PopoverContainer {...commonContainerProps} className="eventpopover flex flex-column flex-nowrap">
             <PopoverHeader
@@ -329,7 +346,7 @@ const EventPopover = ({
                     popoverEventContentRef={popoverEventContentRef}
                 />
             </div>
-            {getCanReplyToEvent({ isOwnedCalendar, isCalendarWritable, isAttendee: model.isAttendee, isCancelled }) && (
+            {canReplyToEvent && !rsvpCommentEnabled && (
                 <PopoverFooter
                     className="shrink-0 items-start md:items-center justify-space-between gap-4 flex-column md:flex-row"
                     key={targetEvent.uniqueId}
@@ -347,6 +364,17 @@ const EventPopover = ({
                                 retryUpdateEvent: () => wait(0),
                             }}
                             partstat={userPartstat}
+                            disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
+                        />
+                    </div>
+                </PopoverFooter>
+            )}
+            {canReplyToEvent && rsvpCommentEnabled && (
+                <PopoverFooter className="shrink-0" key={targetEvent.uniqueId}>
+                    <div className="ml-0 md:ml-auto">
+                        <RsvpModal
+                            handleChangePartstat={handleChangePartstat}
+                            userPartstat={userPartstat}
                             disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
                         />
                     </div>

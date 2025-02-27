@@ -8,6 +8,7 @@ import type { AugmentedSendPreferences } from '../containers/calendar/interface'
 export enum INVITE_ACTION_TYPES {
     NONE,
     CHANGE_PARTSTAT,
+    // CHANGE_COMMENT,
     DECLINE_INVITATION,
     DECLINE_DISABLED,
     SEND_INVITATION, // organizer creates new invitation, or just adds/removes attendees
@@ -22,6 +23,7 @@ export interface InviteActions {
     sharedSessionKey?: string;
     isProtonProtonInvite?: boolean;
     partstat?: ICAL_ATTENDEE_STATUS;
+    comment?: string;
     sendCancellationNotice?: boolean;
     resetSingleEditsPartstat?: boolean;
     deleteSingleEdits?: boolean;
@@ -88,6 +90,7 @@ export interface UpdatePartstatOperation {
         eventID: string;
         attendeeID: string;
         partstat: ICAL_ATTENDEE_STATUS;
+        comment?: string;
         updateTime: number;
     };
     silence: boolean;

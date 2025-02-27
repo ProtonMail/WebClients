@@ -1375,12 +1375,13 @@ const InteractiveCalendarView = ({
             return [];
         }
         const getRequest =
-            ({ data: { eventID, calendarID, attendeeID, updateTime, partstat } }: UpdatePartstatOperation) =>
+            ({ data: { eventID, calendarID, attendeeID, updateTime, partstat, comment } }: UpdatePartstatOperation) =>
             () =>
                 api<UpdateEventPartApiResponse>({
                     ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
                         Status: toApiPartstat(partstat),
                         UpdateTime: updateTime,
+                        Comment: comment,
                     }),
                     silence: true,
                 });
