@@ -38,7 +38,7 @@ export const getUpdatePartstatOperation = ({
         return;
     }
     const token = eventComponent.attendee[selfAttendeeIndex]?.parameters?.['x-pm-token'];
-    const attendeeID = event.Attendees.find(({ Token }) => Token === token)?.ID;
+    const attendeeID = event.AttendeesInfo?.Attendees?.find(({ Token }) => Token === token)?.ID;
     if (!attendeeID) {
         return;
     }
@@ -74,7 +74,7 @@ const getAutoUpdatePersonalPartOperation = ({
         return;
     }
     const token = getAttendeeToken(eventComponent.attendee[selfAttendeeIndex]);
-    const oldAttendee = event.Attendees.find(({ Token }) => Token === token);
+    const oldAttendee = event.AttendeesInfo.Attendees.find(({ Token }) => Token === token);
     if (!oldAttendee) {
         return;
     }

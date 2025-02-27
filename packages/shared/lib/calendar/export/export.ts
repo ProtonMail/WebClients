@@ -139,17 +139,8 @@ const decryptEvent = async ({
             privateKeys: eventDecryptionKeys,
         });
 
-        const {
-            CalendarID,
-            ID,
-            SharedEvents,
-            CalendarEvents,
-            AttendeesEvents,
-            Attendees,
-            Notifications,
-            FullDay,
-            AttendeesInfo,
-        } = event;
+        const { CalendarID, ID, SharedEvents, CalendarEvents, AttendeesEvents, Notifications, FullDay, AttendeesInfo } =
+            event;
 
         const { veventComponent } = await readCalendarEvent({
             event: {
@@ -157,7 +148,6 @@ const decryptEvent = async ({
                 CalendarEvents: withNormalizedAuthors(CalendarEvents),
                 AttendeesEvents: withNormalizedAuthors(AttendeesEvents),
                 AttendeesInfo,
-                Attendees,
                 Notifications,
                 FullDay,
                 CalendarID,

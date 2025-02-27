@@ -222,7 +222,6 @@ interface ReadCalendarEventArguments {
         | 'SharedEvents'
         | 'CalendarEvents'
         | 'AttendeesEvents'
-        | 'Attendees'
         | 'AttendeesInfo'
         | 'Notifications'
         | 'FullDay'
@@ -243,8 +242,7 @@ export const readCalendarEvent = async ({
         SharedEvents = [],
         CalendarEvents = [],
         AttendeesEvents = [],
-        Attendees = [],
-        AttendeesInfo = [],
+        AttendeesInfo,
         Notifications,
         FullDay,
         CalendarID: calendarID,
@@ -295,7 +293,7 @@ export const readCalendarEvent = async ({
         if (!getIsEventComponent(parsedComponent)) {
             return acc;
         }
-        return acc.concat(toInternalAttendee(parsedComponent, Attendees));
+        return acc.concat(toInternalAttendee(parsedComponent, AttendeesInfo.Attendees));
     }, []);
 
     if (valarmComponents.length) {
@@ -310,7 +308,7 @@ export const readCalendarEvent = async ({
         vevent.color = { value: Color };
     }
 
-    if (AttendeesInfo.length) {
+    if (AttendeesInfo.Attendees.length) {
         // TODO handle decription there ?
         // decryptAndVerifyAttendeesInfo...
     }

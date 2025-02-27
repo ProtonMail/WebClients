@@ -6,6 +6,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import {
+    ATTENDEE_MORE_ATTENDEES,
     ATTENDEE_STATUS_API,
     CALENDAR_SHARE_BUSY_TIME_SLOTS,
     EVENT_VERIFICATION_STATUS,
@@ -123,8 +124,6 @@ const transformToExternal = (
             CalendarEvents: withAuthor(data.CalendarEventContent, 'me'),
             AttendeesEvents: withAuthor(data.AttendeesEventContent, 'me'),
             Attendees: withFullAttendee(data.Attendees),
-            // TODO: Should we add attendees info here?
-            AttendeesInfo: [],
             Notifications: data.Notifications,
             FullDay: +isAllDay,
             CalendarID: 'calendarID',
@@ -213,9 +212,9 @@ describe('calendar encryption', () => {
                 },
             ],
             Attendees: [
-                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
-                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE },
-                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
+                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION, Comment: null },
+                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE, Comment: null },
+                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED, Comment: null },
             ],
             Color: ACCENT_COLORS_MAP.enzian.color,
         });
@@ -271,10 +270,11 @@ describe('calendar encryption', () => {
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
+            // TODO Test this part
             Attendees: [
-                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
-                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE },
-                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
+                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION, Comment: null },
+                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE, Comment: null },
+                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED, Comment: null },
             ],
             Color: null,
         });

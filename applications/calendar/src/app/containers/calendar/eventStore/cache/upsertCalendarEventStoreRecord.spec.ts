@@ -1,6 +1,6 @@
 import { getUnixTime } from 'date-fns';
 
-import { ATTENDEE_STATUS_API } from '@proton/shared/lib/calendar/constants';
+import { ATTENDEE_MORE_ATTENDEES, ATTENDEE_STATUS_API } from '@proton/shared/lib/calendar/constants';
 import type {
     CalendarEvent,
     CalendarEventBlobData,
@@ -16,6 +16,7 @@ const dummyAttendee = {
     Token: 'token-1',
     Status: ATTENDEE_STATUS_API.NEEDS_ACTION,
     UpdateTime: dummyModifyTime,
+    Comment: null,
 };
 const dummySharedData: CalendarEventSharedData = {
     ID: 'id',
@@ -39,8 +40,10 @@ const dummyBlobData: CalendarEventBlobData = {
     SharedEvents: [],
     Notifications: null,
     AttendeesEvents: [],
-    Attendees: [dummyAttendee],
-    AttendeesInfo: [],
+    AttendeesInfo: {
+        Attendees: [dummyAttendee],
+        MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+    },
 };
 const dummyEventData: CalendarEvent = {
     ...dummySharedData,
@@ -100,7 +103,7 @@ describe('getHasUpdatedAttendees', function () {
         };
         expect(getHasUpdatedAttendees(newEventData, oldEventData)).toEqual({
             hasUpdatedAttendees: false,
-            attendees: oldEventData.Attendees,
+            attendees: oldEventData.AttendeesInfo.Attendees,
         });
     });
 
@@ -340,7 +343,7 @@ describe('getHasUpdatedEventData', () => {
             hasUpdatedEventData: true,
             eventData: {
                 ...newEventData,
-                Attendees: oldEventData.Attendees,
+                Attendees: oldEventData.AttendeesInfo.Attendees,
             },
         });
     });
