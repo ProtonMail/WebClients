@@ -2695,6 +2695,12 @@
       "Please select a state": [
         "Per favore seleziona uno stato"
       ],
+      "Please select at least one location before continuing.": [
+        "Seleziona almeno una posizione prima di continuare."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Seleziona almeno un utente o un gruppo prima di continuare."
+      ],
       "Please set a recovery email first": [
         "Imposta prima un indirizzo email di recupero"
       ],
@@ -2754,6 +2760,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Il pagamento minimo che accettiamo è di ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Il nome della policy deve essere compreso tra 3 e 40 caratteri."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
@@ -4519,6 +4528,9 @@
       "Or select a particular server:": [
         "O seleziona un server specifico:"
       ],
+      "Organization --> Groups": [
+        "Organizzazione --> Gruppi"
+      ],
       "Organization size": [
         "Dimensione dell'organizzazione"
       ],
@@ -4967,6 +4979,9 @@
       ],
       "to continue to ${ product }": [
         "per continuare su ${ product }"
+      ],
+      "To create your first user group, go to": [
+        "Per creare il tuo primo gruppo di utenti, vai a"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
@@ -7728,6 +7743,12 @@
       "Maybe later": [
         "Forse più tardi"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "L'offerta scade il ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Paga annualmente, assicurati la nostra migliore offerta"
+      ],
       "Save": [
         "Salva"
       ],
@@ -7748,6 +7769,9 @@
       ],
       "You currently pay": [
         "Attualmente paghi"
+      ],
+      "Your subscription renews soon": [
+        "Il tuo abbonamento si rinnoverà presto"
       ]
     },
     "Offer feature": {
@@ -9671,6 +9695,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } con funzionalità premium"
@@ -9959,47 +10024,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Il tuo alias email breve @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription renewal state": {
