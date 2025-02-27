@@ -45,6 +45,12 @@
       "Add": [
         "Дадаць"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Дадаць ${ photos.length } фатаграфію ў новы альбом",
+        "Дадаць ${ photos.length } фатаграфіі ў новы альбом",
+        "Дадаць ${ photos.length } фатаграфій у новы альбом",
+        "Дадаць ${ photos.length } фатаграфій у новы альбом"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -86,6 +92,12 @@
       ],
       "Add to group": [
         "Дадаць у групу"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфію)",
+        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфіі)",
+        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфій)",
+        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфій)"
       ],
       "Album name": [
         "Назва альбома"
@@ -339,7 +351,10 @@
       "Download logs": [
         "Спампаваць журнал"
       ],
-      "Download photos": [
+      "Download photo": [
+        "Спампаваць фатаграфію",
+        "Спампаваць фатаграфіі",
+        "Спампаваць фатаграфіі",
         "Спампаваць фатаграфіі"
       ],
       "Download without scanning": [
@@ -678,6 +693,9 @@
       "Remove device": [
         "Выдаліць прыладу"
       ],
+      "Remove from album": [
+        "Выдаліць з альбома"
+      ],
       "Remove from this list": [
         "Выдаліць з гэтага спіса"
       ],
@@ -687,8 +705,14 @@
       "Remove me": [
         "Выдаліць мяне"
       ],
+      "Remove Without Saving": [
+        "Выдаліць без захавання"
+      ],
       "Rename": [
         "Перайменаваць"
+      ],
+      "Rename album": [
+        "Перайменаваць альбом"
       ],
       "Replace file": [
         "Замяніць файл"
@@ -756,6 +780,9 @@
       "Save": [
         "Захаваць"
       ],
+      "Save and Remove": [
+        "Захаваць і выдаліць"
+      ],
       "Save changes": [
         "Захаваць змены"
       ],
@@ -806,6 +833,9 @@
       ],
       "Share": [
         "Абагуліць"
+      ],
+      "Share album": [
+        "Абагуліць альбом"
       ],
       "Share file": [
         "Абагуліць файл"
@@ -1393,14 +1423,6 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Дадайце ${ photos.length } фатаграфію ў",
-        "Дадайце ${ photos.length } фатаграфіі ў",
-        "Дадайце ${ photos.length } фатаграфій у",
-        "Дадайце ${ photos.length } фатаграфій у"
       ]
     },
     "Cancellation reminder": {
@@ -2486,6 +2508,11 @@
         "Пратэрмінаваны рахунак"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -2542,7 +2569,7 @@
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
       "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
-        "Палепшыць да ${ BRAND_NAME } ${ planName }, каб захаваць абагульванне файлаў з правам на рэдагаванне."
+        "Палепшыце да ${ BRAND_NAME } ${ planName }, каб захаваць абагульванне файлаў з правам на рэдагаванне."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з падтрымкай ад экспертаў 24/7."
@@ -2567,11 +2594,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3757,6 +3779,20 @@
         "Цэнтр бяспекі"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Дадаць ${ photos.length } фатаграфію ў",
+        "Дадаць ${ photos.length } фатаграфіі ў",
+        "Дадаць ${ photos.length } фатаграфій у",
+        "Дадаць ${ photos.length } фатаграфій у"
+      ],
+      "All albums": [
+        "Усе альбомы"
+      ],
+      "Recent": [
+        "Нядаўнія"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
@@ -4382,9 +4418,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
       ],
-      "Album is empty": [
-        "Альбом пусты"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Уся (${ totalFoldersCount } папка)",
         "Усе (${ totalFoldersCount } папкі)",
@@ -4396,9 +4429,6 @@
         "Усе (${ totalFoldersCount } меткі)",
         "Усе (${ totalFoldersCount } метак)",
         "Усе (${ totalFoldersCount } меткі)"
-      ],
-      "All albums": [
-        "Усе альбомы"
       ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
@@ -5073,7 +5103,7 @@
         "з"
       ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
-        "Вы знойдзеце копію вашых адноўленых даных у новай папцы з назвай \"Аўтаматычна адноўленае (сённяшняя дата)\". Гэта копія даных не будзе ўлічвацца ў квоце вашага сховішча."
+        "Вы знойдзеце копію вашых адноўленых даных у новай папцы з назвай \"Аўтаматычна адноўлена (сённяшняя дата)\". Гэта копія даных не будзе ўлічвацца ў квоце вашага сховішча."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Адзін з вашых зашыфраваных дыскаў заблакіраваны. Верагодна па прычыне таго, што нядаўна было скіданне пароля."
@@ -5242,9 +5272,6 @@
       ],
       "Ready to add some photos?": [
         "Гатовыя дадаць некаторыя фатаграфіі?"
-      ],
-      "Recent": [
-        "Нядаўнія"
       ],
       "recommended browser": [
         "рэкамендаваны браўзер"
@@ -5464,6 +5491,9 @@
       ],
       "This item already exists in your library": [
         "Гэты элемент ужо існуе ў вашай бібліятэцы"
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
+        "Гэты элемент не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да яго, калі выдаліце з гэтага альбома. Ці хочаце вы захаваць дадзены элемент перад выдаленнем?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
@@ -5893,6 +5923,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your photo has been removed from the album": [
+        "Ваша фатаграфія была выдалена з альбома",
+        "Вашы фатаграфіі былі выдалены з альбома",
+        "Вашы фатаграфіі былі выдалены з альбома",
+        "Вашы фатаграфіі былі выдалены з альбома"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Ваш тарыфны план абмежаваны 10 версіямі на тэрмін да 7 дзён"
@@ -6647,6 +6683,9 @@
     "Link": {
       "Add a gift code": [
         "Дадаць падарункавы код"
+      ],
+      "Albums": [
+        "Альбомы"
       ],
       "All mail": [
         "Уся пошта"
@@ -8486,6 +8525,12 @@
       "Maybe later": [
         "Магчыма пазней"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Прапанова міне ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "Плаціце штогод, каб атрымаць нашу лепшую прапанову"
+      ],
       "Save": [
         "Эканомія"
       ],
@@ -8506,6 +8551,9 @@
       ],
       "You currently pay": [
         "У цяперашні час аплачана"
+      ],
+      "Your subscription renews soon": [
+        "Ваша падпіска неўзабаве падоўжыцца"
       ]
     },
     "Offer feature": {
@@ -10947,7 +10995,7 @@
         "Паўторна падпісаць кантакты"
       ],
       "Recommended": [
-        "Рэкамендавана"
+        "Рэкамендаваны"
       ],
       "Recommended actions": [
         "Рэкамендаваныя дзеянні"
@@ -10960,6 +11008,9 @@
       ],
       "Remove device?": [
         "Выдаліць прыладу?"
+      ],
+      "Remove items": [
+        "Выдаліць элементы"
       ],
       "Rename a file": [
         "Перайменаваць файл"
@@ -11171,6 +11222,11 @@
         "Сёння"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Дадаць гэты абагулены файл у свой ${ DRIVE_APP_NAME } для лёгкага доступу да яго ў будучыні."
@@ -11252,11 +11308,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы адправілі ім запрашэнне на доступ да элемента."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
     },
     "Validation": {

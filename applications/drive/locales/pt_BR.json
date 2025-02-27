@@ -333,9 +333,6 @@
       "Download logs": [
         "Registros de downloads"
       ],
-      "Download photos": [
-        "Baixar as fotos"
-      ],
       "Download without scanning": [
         "Baixar sem verificar"
       ],
@@ -672,6 +669,9 @@
       "Remove device": [
         "Remover dispositivo"
       ],
+      "Remove from album": [
+        "Remover do álbum"
+      ],
       "Remove from this list": [
         "Remover desta lista"
       ],
@@ -680,6 +680,9 @@
       ],
       "Remove me": [
         "Remover-me"
+      ],
+      "Remove Without Saving": [
+        "Remover sem salvar"
       ],
       "Rename": [
         "Renomear"
@@ -749,6 +752,9 @@
       ],
       "Save": [
         "Salvar"
+      ],
+      "Save and Remove": [
+        "Salvar e remover"
       ],
       "Save changes": [
         "Salvar alterações"
@@ -1373,12 +1379,6 @@
       ],
       "Take a tour": [
         "Faça um tour"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Adicionar ${ photos.length } foto para",
-        "Adicionar ${ photos.length } foto para"
       ]
     },
     "Cancellation reminder": {
@@ -2460,6 +2460,11 @@
         "Fatura vencida"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
@@ -2541,11 +2546,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3699,6 +3699,14 @@
         "Central de segurança"
       ]
     },
+    "Heading": {
+      "All albums": [
+        "Todos os álbuns"
+      ],
+      "Recent": [
+        "Recente"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Encontrada ${ itemsCount } sugestão, use o teclado para navegar.",
@@ -4246,9 +4254,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
       ],
-      "Album is empty": [
-        "O álbum está vazio."
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
         "Todas (${ totalFoldersCount } pastas)"
@@ -4256,9 +4261,6 @@
       "All (${ totalFoldersCount } label)": [
         "Tudo (${ totalFoldersCount } marcador)",
         "Todos (${ totalFoldersCount } marcadores)"
-      ],
-      "All albums": [
-        "Todos os álbuns"
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
@@ -4326,6 +4328,9 @@
       ],
       "Attention required": [
         "Atenção necessária"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Recuperação automática ${ formattedDate }"
       ],
       "Available": [
         "Disponível"
@@ -5075,9 +5080,6 @@
       ],
       "Ready to add some photos?": [
         "Vamos adicionar algumas fotos?"
-      ],
-      "Recent": [
-        "Recente"
       ],
       "recommended browser": [
         "navegador recomendado"
@@ -6455,6 +6457,9 @@
     "Link": {
       "Add a gift code": [
         "Adicionar código de vale-presente"
+      ],
+      "Albums": [
+        "Álbuns"
       ],
       "All mail": [
         "Todos os e-mails"
@@ -10184,6 +10189,9 @@
       "Auto-deletion is active": [
         "A exclusão automática está ativa."
       ],
+      "Automatic Recovery in Progress": [
+        "Recuperação automática em progresso"
+      ],
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
@@ -10569,6 +10577,9 @@
       "Remove device?": [
         "Remover dispositivo?"
       ],
+      "Remove items": [
+        "Remover itens"
+      ],
       "Rename a file": [
         "Renomear um arquivo"
       ],
@@ -10779,6 +10790,11 @@
         "Hoje"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adicione este arquivo compartilhado ao seu ${ DRIVE_APP_NAME } para fácil acesso mais tarde."
@@ -10860,11 +10876,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviamos um convite para acessar o item."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Valentine_2025": {
