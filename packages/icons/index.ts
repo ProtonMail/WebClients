@@ -196,6 +196,7 @@ export type IconName =
     | 'grid-3'
     | 'hamburger'
     | 'heart'
+    | 'heart-filled'
     | 'hook'
     | 'hourglass'
     | 'house'
@@ -586,6 +587,7 @@ export { IcGrid2 } from './icons/IcGrid2';
 export { IcGrid3 } from './icons/IcGrid3';
 export { IcHamburger } from './icons/IcHamburger';
 export { IcHeart } from './icons/IcHeart';
+export { IcHeartFilled } from './icons/IcHeartFilled';
 export { IcHook } from './icons/IcHook';
 export { IcHourglass } from './icons/IcHourglass';
 export { IcHouse } from './icons/IcHouse';
