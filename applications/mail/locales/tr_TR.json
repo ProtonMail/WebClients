@@ -5804,7 +5804,7 @@
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
-        "${ BRAND_NAME }'in parola yöneticisi parolaları oluşturmanıza, saklamanıza ve otomatik olarak doldurmanıza olanak tanır. Böylece onları asla sıfırlamak zorunda kalmazsınız."
+        "${ BRAND_NAME } parola yöneticisi, parolaları oluşturmanız, kaydetmenizi ve otomatik olarak doldurmanızı sağlar. Böylece parolalarınızı asla sıfırlamak zorunda kalmazsınız."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
@@ -6337,7 +6337,7 @@
         "Varsayılan e-posta uygulaması"
       ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
-        "Algılama cihazınızda gerçekleşir. Bu nedenle e-postalarınızdan sunucularımıza hiçbir veri gönderilmez."
+        "Algılama aygıtınızda yapılır. Bu nedenle e-postalarınızdan sunucularımıza hiçbir veri gönderilmez."
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "${ BRAND_NAME } hesabınızla birlikte bir şifrelenmiş bulut depolama alanınızın olduğunu biliyor muydunuz? ${ DRIVE_APP_NAME } uygulamasına gidin ve depolama alanınızdan en iyi şekilde yararlanın. Ücretsizdir."
@@ -6814,7 +6814,7 @@
         "Ayda bir ${ onDayString }"
       ],
       "More infos": [
-        "Daha fazla bilgi"
+        "Ayrıntılı bilgi alın"
       ],
       "More refine actions": [
         "Diğer düzeltme işlemleri"
@@ -7408,7 +7408,7 @@
         "Henüz bu göndericinin herkese açık anahtarına güvenilmemiş."
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
-        "E-posta konu satırınız parola sıfırlama anahtar kelimeleri içerdiği için bu size gösterildi."
+        "Bu bilgi, e-posta konu satırınızda parola sıfırlama anahtar sözcükleri bulunduğundan görüntülendi."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
@@ -7917,10 +7917,10 @@
     },
     "Info for cash payment method": {
       "How to send a cash payment?": [
-        "Nakit ödeme nasıl gönderilir?"
+        "Nakit ödeme nasıl yapılır?"
       ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
+        "Lütfen yönerge için şu yazıya bakın: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -8900,7 +8900,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Less": [
-        "Daha az görüntüle"
+        "Daha az"
       ],
       "Manage blocked email addresses": [
         "Engellenmiş e-posta adresleri yönetimi"
@@ -10401,6 +10401,12 @@
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
+      ],
+      "Pay annually, secure our best offer": [
+        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+      ],
       "Save": [
         "İndirim"
       ],
@@ -10421,6 +10427,9 @@
       ],
       "You currently pay": [
         "Şu anda ödediğiniz"
+      ],
+      "Your subscription renews soon": [
+        "Aboneliğiniz yakında yenilenecek"
       ]
     },
     "Offer feature": {
@@ -10555,7 +10564,7 @@
         "Görüntülenecek adı ayarlayın"
       ],
       "Start using ${ BRAND_NAME }": [
-        "${ BRAND_NAME } kullanmaya başlayın"
+        "${ BRAND_NAME } ile başla"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "E-posta adresinizin daha kısa ve akılda kalıcı sürümünü kullanmaya başlayın."
@@ -12095,6 +12104,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -12353,47 +12403,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -13436,7 +13445,7 @@
         "Notlar"
       ],
       "On-device suggestions": [
-        "Cihaz içi öneriler"
+        "Aygıt üzerinde öneriler"
       ],
       "One email, many recipients": [
         "Bir e-posta adresi, çok sayıda alıcı"
@@ -13728,11 +13737,6 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
@@ -13814,6 +13818,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Tor out of date": {
