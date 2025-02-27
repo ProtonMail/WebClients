@@ -84,12 +84,11 @@ const saveWindowConfig = (browserWindow: BrowserWindow) => {
 };
 
 export const registerWindowManagementHandlers = (window: BrowserWindow) => {
-    const debouncedSave = debounce(() => saveWindowConfig(window), 1_000);
+    const debouncedSave = debounce(() => saveWindowConfig(window), 100);
 
     window.on('resize', debouncedSave);
     window.on('maximize', debouncedSave);
     window.on('move', debouncedSave);
     window.on('unmaximize', debouncedSave);
     window.webContents.on('zoom-changed', debouncedSave);
-    window.on('close', () => saveWindowConfig(window));
 };
