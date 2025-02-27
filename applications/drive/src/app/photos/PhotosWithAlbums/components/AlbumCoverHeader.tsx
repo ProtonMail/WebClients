@@ -39,44 +39,7 @@ export const AlbumCoverHeader = ({ album }: { album: DecryptedAlbum }) => {
                         '--h-custom': '14rem',
                     }}
                 >
-                    {/* temporary until we add it as a real icon */}
-                    <svg
-                        className="m-auto"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M6 3V21"
-                            style={{ stroke: 'var(--text-norm)' }}
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                        <path
-                            d="M18 3V21"
-                            style={{ stroke: 'var(--text-norm)' }}
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                        <path
-                            d="M3 6H21"
-                            style={{ stroke: 'var(--text-norm)' }}
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                        <path
-                            d="M3 18H21"
-                            style={{ stroke: 'var(--text-norm)' }}
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
+                    <Icon name="album" className="m-auto" size={6} />
                 </span>
             )}
 
