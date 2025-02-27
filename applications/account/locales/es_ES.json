@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -131,7 +131,7 @@
         "Añadir una etiqueta"
       ],
       "Add more ${ BRAND_NAME } Scribe seats": [
-        "Agregar más asientos para ${ BRAND_NAME } Scribe"
+        "Añadir más asientos para ${ BRAND_NAME } Scribe"
       ],
       "Add notification": [
         "Añadir notificación"
@@ -4740,7 +4740,7 @@
         "Configura un dominio personalizado antes de añadir direcciones."
       ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Configura un dominio personalizado antes de agregar usuarios a tu organización."
+        "Configura un dominio personalizado antes de añadir usuarios a tu organización."
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
@@ -4760,6 +4760,12 @@
       ],
       "Please select a state": [
         "Selecciona un estado"
+      ],
+      "Please select at least one location before continuing.": [
+        "Seleccione al menos una ubicación antes de continuar."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Selecciona al menos un usuario o grupo antes de continuar."
       ],
       "Please set a recovery email first": [
         "Establece primero un correo electrónico de recuperación."
@@ -4884,6 +4890,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "El pago mínimo que aceptamos es de ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "El nombre de la política debe tener entre 3 y 40 caracteres."
       ],
       "The sending key is not valid": [
         "La clave de envío no es válida."
@@ -6997,11 +7006,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activa como mínimo un método de recuperación de datos para asegurarte de que puedes continuar accediendo a los contenidos de tu cuenta ${ BRAND_NAME } si pierdes tu contraseña."
       ],
-      "active": [
-        "activa"
-      ],
       "Active": [
         "Activo"
+      ],
+      "active": [
+        "activa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añade una dirección de correo electrónico @pm.me a tu cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME } me\" o \"Mensaje privado\"."
@@ -7082,7 +7091,7 @@
         "Se han reactivado todas las claves."
       ],
       "All members have been added.": [
-        "Se han agregado todos los miembros."
+        "Se han añadido todos los miembros."
       ],
       "All users": [
         "Todos los usuarios"
@@ -7559,7 +7568,7 @@
         "Cada código puede utilizarse solo una vez."
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
-        "Cada dominio solo puede tener un registro SPF (TXT). Si deseas mantener el registro SPF (TXT) existente, puedes agregar ${ spf } a tu registro actual (colóquelo después de ${ spfValue })."
+        "Cada dominio solo puede tener un registro SPF (TXT). Si deseas mantener el registro SPF (TXT) existente, puedes añadir ${ spf } a tu registro actual (colóquelo después de ${ spfValue })."
       ],
       "Early access": [
         "Acceso anticipado"
@@ -8312,6 +8321,9 @@
       "Or select a particular server:": [
         "O selecciona un servidor en particular:"
       ],
+      "Organization --> Groups": [
+        "Organización --> Grupos"
+      ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Los miembros de la organización necesitarán desbloquear ${ PASS_APP_NAME } con su contraseña o código PIN, etc."
       ],
@@ -9050,6 +9062,9 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Para mejorar continuamente nuestros servicios, a veces recopilamos datos para controlar el buen funcionamiento de nuestras aplicaciones. Esta información no se comparte con ningún servicio de terceros."
       ],
+      "To create your first user group, go to": [
+        "Para crear tu primer grupo de usuarios, ve a"
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Selecciona el método de recuperación para descifrar y ver los datos protegidos después de restablecer la contraseña."
       ],
@@ -9246,7 +9261,7 @@
         "La verificación puede tardar unos minutos."
       ],
       "Verification link expired": [
-        "El enlace de verificación ha expirado"
+        "El enlace de verificación ha expirado."
       ],
       "Verification may take a few minutes.": [
         "La verificación puede tardar unos minutos."
@@ -9399,7 +9414,7 @@
         "Al hacer clic en un enlace, esta función contra la suplantación de identidad te pedirá que confirmes la URL de la página web."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
-        "Cuando se elimina un servidor de una puerta de enlace, este entra en un período de desactivación de 10 días. Este servidor se puede agregar a una nueva puerta de enlace, pero no se puede cambiar su país."
+        "Cuando se elimina un servidor de una puerta de enlace, este entra en un período de desactivación de 10 días. Este servidor se puede añadir a una nueva puerta de enlace, pero no se puede cambiar su país."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
@@ -9739,7 +9754,7 @@
         "Tu tiquete de soporte se ha cerrado. Gracias por contactar al soporte de ${ BRAND_NAME }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
-        "Podrás agregar estos servidores a otra puerta de enlace inmediatamente."
+        "Podrás añadir estos servidores a otra puerta de enlace inmediatamente."
       ],
       "Zoom meeting": [
         "reunión de Zoom"
@@ -10291,7 +10306,7 @@
         "Actividad"
       ],
       "Add all organization members": [
-        "Agregar todos los miembros de la organización"
+        "Añadir todos los miembros de la organización"
       ],
       "Add group member": [
         "Añadir un miembro al grupo"
@@ -13141,7 +13156,7 @@
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Herramienta de gestión de la organización que permite a los administradores agregar y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
+        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrás acceder a tu cuenta cuando lo necesites."
@@ -13592,6 +13607,12 @@
       "Maybe later": [
         "Quizás más tarde"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "La oferta expira el ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Paga anualmente y asegúrate nuestra mejor oferta."
+      ],
       "Save": [
         "Ahorra"
       ],
@@ -13612,6 +13633,9 @@
       ],
       "You currently pay": [
         "Actualmente pagas"
+      ],
+      "Your subscription renews soon": [
+        "Tu suscripción se renueva pronto."
       ]
     },
     "Offer feature": {
@@ -15076,7 +15100,7 @@
         "Añadir una dirección de correo de recuperación"
       ],
       "Add a recovery phone number": [
-        "Agregar un número de teléfono de recuperación"
+        "Añadir un número de teléfono de recuperación"
       ],
       "Back to Safety Review": [
         "Volver a la verificación de seguridad"
@@ -15518,7 +15542,7 @@
     },
     "Service provider": {
       "Allows you to add a Zoom video conference to any of your calendar events": [
-        "Te permite agregar una videoconferencia de Zoom a cualquiera de tus eventos del calendario"
+        "Te permite añadir una videoconferencia de Zoom a cualquiera de tus eventos del calendario"
       ],
       "Zoom": [
         "Zoom"
@@ -16309,7 +16333,7 @@
         "Acceso concedido"
       ],
       "added you to their ${ BRAND_NAME } organization": [
-        "te agregaron a su organización ${ BRAND_NAME }"
+        "te han añadido a su organización ${ BRAND_NAME }"
       ],
       "Approve": [
         "Aprobar"
@@ -16443,7 +16467,7 @@
         "¿Eliminar el inicio de sesión único de la organización?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
-        "Establezca una contraseña de respaldo para agregar una capa adicional de protección. Te permitirá iniciar sesión si se bloquea tu cuenta, así que asegúrese de guardarla en un lugar seguro."
+        "Establece una contraseña de respaldo para añadir una capa extra de protección. Te permitirá iniciar sesión si quedas bloqueado, así que guárdala en un lugar seguro."
       ],
       "Set your backup password": [
         "Establecer la contraseña de respaldo"
@@ -16820,6 +16844,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, y ${ VPN_SHORT_APP_NAME } con características prémium"
@@ -17108,47 +17173,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Tu alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription renewal state": {

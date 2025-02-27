@@ -3506,7 +3506,7 @@
         "Тып ключа"
       ],
       "Location": [
-        "Размяшчэнне"
+        "Месцазнах."
       ],
       "Members": [
         "Удзельнікі"
@@ -6505,7 +6505,7 @@
         "за ${ price }"
       ],
       "Set up your account with your Porkbun domain.": [
-        "Наладзьце свой уліковы запіс з даменам Porkbun."
+        "Наладзьце свой уліковы запіс з дапамогай дамена Porkbun."
       ]
     },
     "mailtrial2024: Action": {
@@ -7033,7 +7033,7 @@
         "Кіраванне групай (неўзабаве)"
       ],
       "High-speed Swiss VPN that protects your privacy": [
-        "Высакахуткасны швейцарскі VPN, які абараняе вашу прыватнасць."
+        "Высакахуткасны швейцарскі VPN, які абараняе вашу прыватнасць"
       ],
       "High-speed VPN on ${ n } device": [
         "Высакахуткасны VPN на ${ n } прыладзе",
@@ -7905,6 +7905,12 @@
       "Maybe later": [
         "Магчыма пазней"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Прапанова міне ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "Плаціце штогод, каб атрымаць нашу лепшую прапанову"
+      ],
       "Save": [
         "Эканомія"
       ],
@@ -7925,6 +7931,9 @@
       ],
       "You currently pay": [
         "У цяперашні час аплачана"
+      ],
+      "Your subscription renews soon": [
+        "Ваша падпіска неўзабаве падоўжыцца"
       ]
     },
     "Offer feature": {
@@ -9601,7 +9610,7 @@
         "Адзіны ўваход выдалены"
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
-        "У карыстальніка ${ user } цяпер уліковы запіс з адзіным уваходам. Яго папярэдні пароль цяпер з'яўляецца рэзервовым паролем."
+        "У карыстальніка ${ user } цяпер уліковы запіс з адзіным уваходам. Яго папярэдні пароль цяпер стаў рэзервовым паролем."
       ],
       "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
         "Яму неабходна будзе зноў увайсці ў сістэму з дапамогай вашага пастаўшчыка пасведчанняў, каб атрымаць доступ да сэрвісаў ${ BRAND_NAME }. Пераканайцеся, што карыстальнік існуе ў вашым пастаўшчыку пасведчанняў для магчымасці яго ўваходу."
@@ -9925,6 +9934,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -10225,47 +10275,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -11153,7 +11162,7 @@
         "QR-код"
       ],
       "Recommended": [
-        "Рэкамендавана"
+        "Рэкамендаваны"
       ],
       "Recovery": [
         "Аднаўленне"

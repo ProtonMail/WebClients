@@ -30,7 +30,7 @@
         "Añadir dominio"
       ],
       "Add forwarding mailbox": [
-        "Agregar un buzón de reenvío"
+        "Añadir un buzón de reenvío"
       ],
       "Add mailbox": [
         "Añadir un buzón"
@@ -692,13 +692,13 @@
         "Una casilla marcada significa que la función está desactivada."
       ],
       "Add the following CNAME DNS records to your domain.": [
-        "Agrega los siguientes registros DNS CNAME a tu dominio."
+        "Añade los siguientes registros DNS CNAME a tu dominio."
       ],
       "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
-        "Agrega el siguiente registro DNS MX a tu dominio. Ten en cuenta que hay un punto (.) al final de las direcciones de destino. Si tu registrador de dominio no permite este punto final, elimínalo al agregar el registro DNS."
+        "Añade el siguiente registro DNS MX a tu dominio. Ten en cuenta que hay un punto (.) al final de las direcciones de destino. Si tu registrador de dominio no permite este punto final, elimínalo al añadir el registro DNS."
       ],
       "Add the following TXT DNS record to your domain.": [
-        "Agrega el siguiente registro DNS TXT a tu dominio."
+        "Añade el siguiente registro DNS TXT a tu dominio."
       ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "El protocolo DKIM ${ WIKIPEDIA_LINK_DKIM } es un método de autenticación de correo electrónico diseñado para evitar la suplantación de identidad. Se recomienda encarecidamente configurar DKIM para reducir las posibilidades de que tus correos electrónicos terminen en la carpeta de spam del destinatario."
@@ -734,7 +734,7 @@
         "Este servicio ofrece la 2FA. Actívala para aumentar la seguridad de la cuenta."
       ],
       "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
-        "Para verificar la propiedad del dominio, agrega el siguiente registro TXT. Algunos registradores de dominios (Namecheap, Cloudflare, etc.) pueden usar @ para el dominio raíz."
+        "Para verificar la propiedad del dominio, añadi el siguiente registro TXT. Algunos registradores de dominios (Namecheap, Cloudflare, etc.) pueden usar @ para el dominio raíz."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloquea funciones de seguridad avanzadas y registros detallados para proteger tu presencia en línea."
@@ -833,7 +833,7 @@
         "Se han detectado ${ errors.length } filas dañadas en el archivo CSV."
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
-        "No se ha podido verificar el dominio. Asegúrate de haber agregado los registros DNS correctos."
+        "No se ha podido verificar el dominio. Asegúrate de haber añadido los registros DNS correctos."
       ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
@@ -1217,31 +1217,6 @@
         "Terabytes"
       ]
     },
-    "Font face option": {
-      "System default": [
-        "Valor por defecto"
-      ],
-      "Theme font": [
-        "Fuente del tema"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Grande"
-      ],
-      "Medium (recommended)": [
-        "Mediano (recomendado)"
-      ],
-      "Small": [
-        "Pequeño"
-      ],
-      "Very large": [
-        "Muy grande"
-      ],
-      "Very small": [
-        "Muy pequeño"
-      ]
-    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Se ha descartado el elemento \"${ payload.item.data.metadata.name }\"."
@@ -1445,7 +1420,7 @@
         "Autenticador de 2FA integrado"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
-        "Al agregar tu dominio, puedes crear alias como hola@mi-dominio.es."
+        "Al añadir tu dominio, puedes crear alias como hola@mi-dominio.es."
       ],
       "Can be viewed": [
         "Leer"
@@ -2455,7 +2430,7 @@
         "Cuenta"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
-        "Agrega un prefijo aleatorio para este dominio al crear un nuevo alias."
+        "Añade un prefijo aleatorio para este dominio al crear un nuevo alias."
       ],
       "Add section": [
         "Añadir una sección"

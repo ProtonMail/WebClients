@@ -2695,6 +2695,12 @@
       "Please select a state": [
         "Lütfen bir eyalet seçin"
       ],
+      "Please select at least one location before continuing.": [
+        "Devam etmeden önce lütfen en az bir konum seçin."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Devam etmeden önce lütfen en az bir kullanıcı veya grup seçin."
+      ],
       "Please set a recovery email first": [
         "Lütfen önce bir kurtarma e-postası adresi ayarlayın"
       ],
@@ -2754,6 +2760,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Kabul ettiğimiz en az ödeme: ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "İlke adı 3 ila 40 karakter arasında olmalıdır."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -4519,6 +4528,9 @@
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
       ],
+      "Organization --> Groups": [
+        "Kuruluş --> Gruplar"
+      ],
       "Organization size": [
         "Kuruluş boyutu"
       ],
@@ -4964,6 +4976,9 @@
       ],
       "to continue to ${ product }": [
         "${ product } ile ilerlemek için"
+      ],
+      "To create your first user group, go to": [
+        "İlk kullanıcı grubunuzu oluşturmak için şu adrese gidin"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -5419,10 +5434,10 @@
     },
     "Info for cash payment method": {
       "How to send a cash payment?": [
-        "Nakit ödeme nasıl gönderilir?"
+        "Nakit ödeme nasıl yapılır?"
       ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
+        "Lütfen yönerge için şu yazıya bakın: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -7719,6 +7734,12 @@
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
+      ],
+      "Pay annually, secure our best offer": [
+        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+      ],
       "Save": [
         "İndirim"
       ],
@@ -7739,6 +7760,9 @@
       ],
       "You currently pay": [
         "Şu anda ödediğiniz"
+      ],
+      "Your subscription renews soon": [
+        "Aboneliğiniz yakında yenilenecek"
       ]
     },
     "Offer feature": {
@@ -7936,12 +7960,12 @@
         "Kullanıcılara ${ PASS_APP_NAME } erişim izni vermek için kullanıcı eklemeye başlayın."
       ],
       "Start using ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } kullanmaya başlayın"
+        "${ PASS_APP_NAME } ile başla"
       ]
     },
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
-        "${ appName } kullanmaya başlayın"
+        "${ appName } ile başla"
       ]
     },
     "pass_signup_2023: Info": {
@@ -9641,6 +9665,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -9929,47 +9994,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {

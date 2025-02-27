@@ -1378,6 +1378,9 @@
       "Use ${ label } theme": [
         "Utilizar o tema ${ label }"
       ],
+      "Use ${ PASS_APP_NAME }": [
+        "Utilizar o ${ PASS_APP_NAME }"
+      ],
       "Use a different card": [
         "Utilizar um cartão diferente"
       ],
@@ -5797,6 +5800,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "O gestor de palavras-passe do ${ BRAND_NAME } permite criar, armazenar e preencher automaticamente as palavras-passe, para que nunca tenha de as redefinir."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
         "${ calendarsToBeCreatedCount } novos calendários"
@@ -6327,6 +6333,9 @@
       "Default email application": [
         "Aplicação de e-mail padrão"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "A deteção ocorre no seu dispositivo, pelo que nenhum dado dos seus e-mails é enviado para os nossos servidores."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Sabia que tem armazenamento encriptado na nuvem incluído na sua conta ${ BRAND_NAME }? Aceda a ${ DRIVE_APP_NAME } e tire o máximo partido do seu espaço. É gratuito."
       ],
@@ -6800,6 +6809,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
+      ],
+      "More infos": [
+        "Mais informação"
       ],
       "More refine actions": [
         "Mais ações de refinamento"
@@ -7391,6 +7403,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "A chave pública deste remetente ainda não foi confiada."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Isto foi-lhe mostrado porque o assunto do seu e-mail contém palavras-chave para redefinição de palavra-passe."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Esta ação irá terminar a sessão de todas as contas atualmente conectadas."
@@ -8361,6 +8376,9 @@
       ],
       "Don't show this again": [
         "Não mostrar novamente"
+      ],
+      "Don't show this suggestion": [
+        "Não mostrar esta sugestão"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "ex.: Amazon, eBay, Etsy"
@@ -10380,6 +10398,12 @@
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "A oferta expira a ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Paga anualmente e garante a nossa melhor oferta"
+      ],
       "Save": [
         "Poupe"
       ],
@@ -10400,6 +10424,9 @@
       ],
       "You currently pay": [
         "Atualmente paga"
+      ],
+      "Your subscription renews soon": [
+        "A sua subscrição renova em breve."
       ]
     },
     "Offer feature": {
@@ -12074,6 +12101,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -12332,47 +12400,6 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -13414,6 +13441,9 @@
       "Notes": [
         "Notas"
       ],
+      "On-device suggestions": [
+        "Sugestões no dispositivo"
+      ],
       "One email, many recipients": [
         "Um e-mail, muitos destinatários"
       ],
@@ -13704,11 +13734,6 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é utilizado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
@@ -13790,6 +13815,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
     },
     "Tor out of date": {

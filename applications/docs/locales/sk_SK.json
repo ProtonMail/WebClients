@@ -2205,11 +2205,6 @@
         "Faktúra po splatnosti"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2288,6 +2283,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -8581,29 +8581,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložisko na používateľa"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastná emailová doména",
-        "${ planNumberOfDomains } vlastné emailové domény",
-        "${ planNumberOfDomains } vlastných emailových domén",
-        "${ planNumberOfDomains } vlastných emailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } emailová adresa",
-        "${ planNumberOfEmails } emailové adresy",
-        "${ planNumberOfEmails } emailových adries",
-        "${ planNumberOfEmails } emailových adries"
-      ],
-      "Folders, labels, and custom filters": [
-        "Priečinky, štítky a vlastné filtre"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložného priestoru"
@@ -8643,6 +8620,29 @@
       ],
       "Your privacy is our mission": [
         "Vaše súkromie je naším poslaním"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložisko na používateľa"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
+      ],
+      "Folders, labels, and custom filters": [
+        "Priečinky, štítky a vlastné filtre"
       ]
     },
     "Subscription renewal state": {

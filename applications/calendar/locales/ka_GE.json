@@ -2520,6 +2520,21 @@
         "თქვენი დროის სარტყელზე დაყრდნობით"
       ]
     },
+    "Custom frequency option": {
+      "Don't end": [
+        "არ დაასრულო"
+      ],
+      "End after": [
+        "სრულდება შემდეგ"
+      ],
+      "End on": [
+        "დასრულება"
+      ],
+      "event": [
+        "მოვლენა",
+        "მოვლენა"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/თვე"
@@ -3975,6 +3990,9 @@
       ],
       "Name": [
         "სახელი"
+      ],
+      "Repeat event": [
+        "მოვლენის გამეორება"
       ],
       "Search": [
         "ძებნა"
@@ -5465,6 +5483,14 @@
         "შეგიძლიათ, განაახლოთ ძებნის პირობა ან დახუროთ ძებნა და უკან, კალენდრის ხედზე დაბრუნდეთ"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "როგორ გავაგზავნო გადასახდელი თანხა?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "ინსტრუქციებს იპოვით სტატიაში: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info message": {
       "No results found": [
         "შედეგების გარეშე"
@@ -5787,6 +5813,9 @@
       "Event title": [
         "მოვლენის სათაური"
       ],
+      "Every": [
+        "ყოველი"
+      ],
       "Expiration (${ patternExpiration })": [
         "ვადა (${ patternExpiration })"
       ],
@@ -5888,6 +5917,9 @@
       ],
       "Notifications": [
         "შეტყობინებები"
+      ],
+      "On": [
+        "ჩართ"
       ],
       "Operating system": [
         "ოპერაციული სისტემა"
@@ -6414,6 +6446,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }-ზე"
+      ],
       "on the first Friday": [
         "პირველ პარასკევს"
       ],
@@ -7794,6 +7829,9 @@
       "Custom": [
         "ხელით"
       ],
+      "Custom...": [
+        "ხელით..."
+      ],
       "Day": [
         "დღე",
         "დღე"
@@ -7803,6 +7841,15 @@
       ],
       "Every day": [
         "ყოველდღე"
+      ],
+      "Every month ${ description }": [
+        "ყოველთვე ${ description }"
+      ],
+      "Every week ${ everyWeekDescription }": [
+        "ყოველკვირა ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "კვირის ყოველ დღეს ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "ყოველ წელს"
@@ -9827,6 +9874,9 @@
       "Details": [
         "დეტალები"
       ],
+      "Does not repeat": [
+        "არ მეორდება"
+      ],
       "Downgrade account": [
         "ანგარიშის ტარიფის ჩამოწევა"
       ],
@@ -9877,6 +9927,21 @@
       ],
       "Event is happening on defined time slot": [
         "მოვლენა გარკვეულ დროს ხდება"
+      ],
+      "Every day": [
+        "ყოველდღე"
+      ],
+      "Every month ${ option.text }": [
+        "ყოველთვე ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "ყოველკვირა ${ weekdaysLong[currentDay] }-ზე"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "ყოველ ${ startOfTheWeekDay }-${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "ყოველ წელს"
       ],
       "Exporting contacts": [
         "კონტაქტების გატანა"
