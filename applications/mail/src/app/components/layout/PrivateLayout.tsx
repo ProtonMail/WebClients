@@ -8,7 +8,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { selectLayoutIsExpanded } from 'proton-mail/store/layout/layoutSliceSelectors';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
@@ -40,6 +41,8 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 
+    const isSidebarExpanded = useMailSelector(selectLayoutIsExpanded);
+
     const [user] = useUser();
 
     const handleContactsCompose = async (emails: Recipient[], attachments: File[]) => {
@@ -51,7 +54,9 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     };
 
     useEffect(() => {
-        dispatch(layoutActions.setSidebarExpanded(false));
+        if (isSidebarExpanded) {
+            dispatch(layoutActions.setSidebarExpanded(false));
+        }
     }, [location.pathname, location.hash]);
 
     const top = (
@@ -69,12 +74,10 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
         </>
     );
 
-    const sidebar = <MailSidebar labelID={labelID} />;
-
     return (
         <PrivateAppContainer
             top={top}
-            sidebar={sidebar}
+            sidebar={<MailSidebar labelID={labelID} />}
             containerRef={ref}
             drawerApp={
                 <DrawerApp
