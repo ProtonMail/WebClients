@@ -385,14 +385,30 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
 
                 {isAlbumPhotosEmpty ? (
                     <div className="flex flex-column flex-nowrap mx-2 w-full h-full">
-                        <AlbumCoverHeader album={album} />
+                        <AlbumCoverHeader
+                            shareId={shareId}
+                            linkId={uploadLinkId}
+                            onFileUpload={onPhotoUploadedToAlbum}
+                            album={album}
+                            onShare={() => {
+                                showLinkSharingModal({ shareId, linkId });
+                            }}
+                        />
                     </div>
                 ) : (
                     <div
                         ref={containerRef}
                         className="flex flex-column flex-nowrap mx-2 w-full h-full overflow-auto outline-none--at-all mb-2"
                     >
-                        <AlbumCoverHeader album={album} />
+                        <AlbumCoverHeader
+                            album={album}
+                            shareId={shareId}
+                            onFileUpload={onPhotoUploadedToAlbum}
+                            linkId={uploadLinkId}
+                            onShare={() => {
+                                showLinkSharingModal({ shareId, linkId: album.linkId });
+                            }}
+                        />
                         <PhotosInsideAlbumsGrid
                             data={albumPhotos}
                             onItemRender={handleItemRender}
