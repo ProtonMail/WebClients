@@ -82,8 +82,8 @@ const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgra
         <div className={clsx('p-4', dark && 'userDropdownV2-theme-dark')}>
             <div className="flex justify-center items-center flex-column">
                 <span
-                    className="my-auto mb-2 text-sm rounded-xl border p-4 inline-block relative flex shrink-0 user-initials user-initials-active w-custom ratio-square text-2xl"
-                    style={{ '--w-custom': '4rem' }}
+                    className="my-auto mb-2 text-sm rounded-xl border inline-block relative flex shrink-0 user-initials user-initials-active w-custom ratio-square text-2xl"
+                    style={{ '--w-custom': '3.4rem' }}
                     aria-hidden="true"
                 >
                     <span className="m-auto">{info.initials}</span>
