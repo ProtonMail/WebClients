@@ -2695,6 +2695,12 @@
       "Please select a state": [
         "Velg en stat"
       ],
+      "Please select at least one location before continuing.": [
+        "Velg minst én plassering før du fortsetter."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Velg minst én bruker eller gruppe før du fortsetter."
+      ],
       "Please set a recovery email first": [
         "Angi en gjenopprettings-e-post først"
       ],
@@ -2754,6 +2760,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimumsbetalingen vi aksepterer er ${ price }."
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Retningslinjenavnet må bestå av mellom 3 og 40 tegn."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
@@ -4519,6 +4528,9 @@
       "Or select a particular server:": [
         "Eller velg en spesiell tjener:"
       ],
+      "Organization --> Groups": [
+        "Organisasjon --> Grupper"
+      ],
       "Organization size": [
         "Organisasjonsstørrelse"
       ],
@@ -4967,6 +4979,9 @@
       ],
       "to continue to ${ product }": [
         "for å fortsette til ${ product }"
+      ],
+      "To create your first user group, go to": [
+        "For å opprette din første brukergruppe, gå til"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
@@ -7725,6 +7740,12 @@
       "Maybe later": [
         "Kanskje senere"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Tilbudet utløper ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "Betal årlig, sikre deg vårt beste tilbud"
+      ],
       "Save": [
         "Spar"
       ],
@@ -7745,6 +7766,9 @@
       ],
       "You currently pay": [
         "Du betaler for øyeblikket"
+      ],
+      "Your subscription renews soon": [
+        "Abonnementet ditt fornyes snart"
       ]
     },
     "Offer feature": {
@@ -9668,6 +9692,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -9956,47 +10021,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {

@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -3671,6 +3671,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Crie quantos marcadores ou pastas precisar para manter sua caixa de entrada organizada."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Crie políticas para decidir quem pode se conectar a servidores compartilhados em cada país."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
       ],
@@ -3682,6 +3685,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Todos na sua organização podem se conectar a servidores compartilhados em todos os países."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Seja notificado caso sua senha ou outros dados sejam vazados de um serviço de terceiros."
@@ -6991,11 +6997,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ative pelo menos um método de recuperação de dados para garantir que você possa continuar acessando o conteúdo de sua conta da ${ BRAND_NAME } caso perca sua senha."
       ],
-      "active": [
-        "ativo"
-      ],
       "Active": [
         "Ativo"
+      ],
+      "active": [
+        "ativo"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\""
@@ -12044,6 +12050,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "no dia ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "na primeira Sexta-feira"
       ],
@@ -16836,6 +16845,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerta de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Faça upgrade da sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
@@ -17124,47 +17174,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Seu próprio alias de e-mail @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Armazenamento de 15 GB"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 recursos premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento de e-mail automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerta de violações de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicativo para computador"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie nossa missão"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Faça upgrade da sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos seus dados"
-      ],
-      "Your privacy is our mission": [
-        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription renewal state": {

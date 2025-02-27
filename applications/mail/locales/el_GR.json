@@ -10398,6 +10398,12 @@
       "Maybe later": [
         "Ίσως αργότερα"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Η προσφορά λήγει στις ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Πληρώστε ετησίως, εξασφαλίστε την καλύτερη προσφορά μας"
+      ],
       "Save": [
         "Εξοικονομήστε"
       ],
@@ -10418,6 +10424,9 @@
       ],
       "You currently pay": [
         "Αυτή τη στιγμή πληρώνετε"
+      ],
+      "Your subscription renews soon": [
+        "Η συνδρομή σας ανανεωθεί σύντομα"
       ]
     },
     "Offer feature": {
@@ -12092,6 +12101,47 @@
         "Για ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium χαρακτηριστικά"
@@ -12350,47 +12400,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερα premium χαρακτηριστικά"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -13725,11 +13734,6 @@
         "Σήμερα"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
@@ -13811,6 +13815,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
     "Tor out of date": {

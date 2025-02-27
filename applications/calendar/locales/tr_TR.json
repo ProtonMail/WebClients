@@ -2532,10 +2532,10 @@
         "Bitmesin"
       ],
       "End after": [
-        "Sonrasında bitir"
+        "Şu kadar sonra bitsin"
       ],
       "End on": [
-        "Sonlandır"
+        "Şu tarihte bitsin"
       ],
       "event": [
         "etkinlik",
@@ -4002,7 +4002,7 @@
         "Ad"
       ],
       "Repeat event": [
-        "Etkinliği tekrarla"
+        "Etkinliği yinele"
       ],
       "Search": [
         "Ara"
@@ -5504,10 +5504,10 @@
     },
     "Info for cash payment method": {
       "How to send a cash payment?": [
-        "Nakit ödeme nasıl gönderilir?"
+        "Nakit ödeme nasıl yapılır?"
       ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
-        "Lütfen talimatları makalede bulun: ${ howToSendCashArticleUrl }"
+        "Lütfen yönerge için şu yazıya bakın: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -5938,7 +5938,7 @@
         "Bildirimler"
       ],
       "On": [
-        "Üzerinde"
+        "Şu zamanda"
       ],
       "Operating system": [
         "İşletim sistemi"
@@ -7745,6 +7745,12 @@
       "Maybe later": [
         "Belki daha sonra"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
+      ],
+      "Pay annually, secure our best offer": [
+        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+      ],
       "Save": [
         "İndirim"
       ],
@@ -7765,6 +7771,9 @@
       ],
       "You currently pay": [
         "Şu anda ödediğiniz"
+      ],
+      "Your subscription renews soon": [
+        "Aboneliğiniz yakında yenilenecek"
       ]
     },
     "Offer feature": {
@@ -7806,7 +7815,7 @@
         "Sonraki"
       ],
       "Start using ${ appName }": [
-        "${ appName } kullanmaya başlayın"
+        "${ appName } ile başla"
       ]
     },
     "Onboarding Proton": {
@@ -9903,7 +9912,7 @@
         "Ayrıntılar"
       ],
       "Does not repeat": [
-        "Tekrarlamaz"
+        "Yinelenmiyor"
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
@@ -9966,7 +9975,7 @@
         "Her hafta ${ weekdaysLong[currentDay] }"
       ],
       "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
-        "Hafta içi her gün ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+        "Her hafta içi gün ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
       ],
       "Every year": [
         "Her yıl"

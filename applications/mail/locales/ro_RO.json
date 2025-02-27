@@ -1382,6 +1382,9 @@
       "Use ${ label } theme": [
         "Folosire tema ${ label }"
       ],
+      "Use ${ PASS_APP_NAME }": [
+        "Utilizați ${ PASS_APP_NAME }"
+      ],
       "Use a different card": [
         "Folosire alt card"
       ],
@@ -5848,6 +5851,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "Managerul de parole ${ BRAND_NAME } vă permite să creați, să stocați și să autocompletați parolele, astfel încât nu va mai trebui să le resetați."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Un calendar nou",
         "${ calendarsToBeCreatedCount } calendare noi",
@@ -6428,6 +6434,9 @@
       "Default email application": [
         "Aplicaţia de e-mail implicită"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Detectarea se execută pe dispozitiv, astfel că nu se trimit nici un fel de date spre servere."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Știați că aveți spațiu de stocare criptat în cloud inclus în contul ${ BRAND_NAME }? Mergeți la ${ DRIVE_APP_NAME } și profitați la maximum de spațiul oferit. Este gratis."
       ],
@@ -6910,6 +6919,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
+      ],
+      "More infos": [
+        "Detalii"
       ],
       "More refine actions": [
         "Mai multe acțiuni de cizelare"
@@ -7508,6 +7520,9 @@
       "This sender's public key has not been trusted yet.": [
         "Cheia publică a acestui destinatar nu a fost încă aprobată."
       ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Vi s-a afișat aceasta deoarece subiectul mesajului conține cuvinte cheie pentru resetarea parolei."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
       ],
@@ -8029,6 +8044,14 @@
         "Culoare selectată:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Cum se trimite o plată în numerar?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Găsiți instrucțiunile în articolul: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Apăsați pentru detalii"
@@ -8490,6 +8513,9 @@
       ],
       "Don't show this again": [
         "Nu mai arăta asta"
+      ],
+      "Don't show this suggestion": [
+        "Nu afișa această sugestie"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "ex. Amazon, eBay, Etsy"
@@ -9355,6 +9381,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "${ shortenedDay }"
+      ],
       "on the first Friday": [
         "în prima vineri"
       ],
@@ -12270,6 +12299,47 @@
         "Pentru ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -12534,47 +12604,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -13657,6 +13686,9 @@
       "Notes": [
         "Notițe"
       ],
+      "On-device suggestions": [
+        "Sugestii pe dispozitiv"
+      ],
       "One email, many recipients": [
         "Un singur cont, mai mulți destinatari"
       ],
@@ -13949,11 +13981,6 @@
         "Astăzi"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
@@ -14035,6 +14062,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Tor out of date": {

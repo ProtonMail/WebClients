@@ -11674,6 +11674,47 @@
         "Til ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -11920,47 +11961,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -13241,11 +13241,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivesessionen benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelse."
@@ -13324,6 +13319,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
     },
     "Tor out of date": {

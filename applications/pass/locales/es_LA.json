@@ -32,37 +32,37 @@
         "Aceptar y ver el elemento"
       ],
       "Add": [
-        "Añadir"
+        "Agregar"
       ],
       "Add account": [
-        "Añadir una cuenta"
+        "Agregar una cuenta"
       ],
       "Add current URL": [
-        "Añadir la URL actual"
+        "Agregar la URL actual"
       ],
       "Add custom domain": [
-        "Añadir un dominio personalizado"
+        "Agregar un dominio personalizado"
       ],
       "Add domain": [
-        "Añadir dominio"
+        "Agregar dominio"
       ],
       "Add forwarding mailbox": [
         "Agregar un buzón de reenvío"
       ],
       "Add mailbox": [
-        "Añadir un buzón"
+        "Agregar un buzón"
       ],
       "Add more": [
-        "Añadir más"
+        "Agregar más"
       ],
       "Add new item": [
-        "Añadir elemento nuevo"
+        "Agregar elemento nuevo"
       ],
       "Add section": [
-        "Añadir sección"
+        "Agregar sección"
       ],
       "Add username field": [
-        "Añadir un campo de nombre de usuario"
+        "Agregar un campo de nombre de usuario"
       ],
       "Admin panel": [
         "Panel de administración"
@@ -688,7 +688,7 @@
         "Otros ${ total } inicios de sesión usan la misma contraseña."
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
-        "La autenticación 2FA añade otra capa de seguridad a sus inicios de sesión. ${ PASS_APP_NAME } hace más fácil usar la autenticación 2FA al almacenar y rellenar automáticamente los códigos 2FA."
+        "La autenticación 2FA agrega otra capa de seguridad a sus inicios de sesión. ${ PASS_APP_NAME } hace más fácil usar la autenticación 2FA al almacenar y rellenar automáticamente los códigos 2FA."
       ],
       "Add the following CNAME DNS records to your domain.": [
         "Agregue los siguientes registros DNS CNAME a su dominio."
@@ -757,7 +757,7 @@
         "Esta cuenta es vulnerable. Visite el servicio y cambie la contraseña."
       ],
       "This service offers 2FA. Enable it for added account security.": [
-        "Este servicio ofrece 2FA. Actívelo para añadir seguridad a la cuenta."
+        "Este servicio ofrece 2FA. Actívelo para agregar seguridad a la cuenta."
       ],
       "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
         "Para verificar la propiedad del dominio, agregue el siguiente registro TXT. Algunos registradores de dominios (Namecheap, Cloudflare, etc.) pueden usar @ para el dominio raíz."
@@ -895,7 +895,7 @@
         "Error al reenviar la invitación."
       ],
       "Failed to add email address": [
-        "Error al añadir la dirección de correo"
+        "Error al agregar la dirección de correo"
       ],
       "Failed to block the contact": [
         "Error al bloquear el contacto"
@@ -1248,31 +1248,6 @@
         "Terabytes"
       ]
     },
-    "Font face option": {
-      "System default": [
-        "Del sistema"
-      ],
-      "Theme font": [
-        "Fuente del tema"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Grande"
-      ],
-      "Medium (recommended)": [
-        "Mediana (recomendada)"
-      ],
-      "Small": [
-        "Pequeña"
-      ],
-      "Very large": [
-        "Muy grande"
-      ],
-      "Very small": [
-        "Muy pequeña"
-      ]
-    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "El elemento \"${ payload.item.data.metadata.name }\" fue descartado."
@@ -1374,7 +1349,7 @@
         "El acceso a ${ PASS_APP_NAME } requerirá su huella dactilar o el código PIN del dispositivo."
       ],
       "Add your custom email address to monitor:": [
-        "Añada su dirección de correo personalizado para monitorear:"
+        "Agregue su dirección de correo personalizado para monitorear:"
       ],
       "Admin": [
         "Administrador"
@@ -1464,7 +1439,7 @@
         "Autenticador de 2FA integrado"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
-        "Al añadir su dominio, puede crear alias como hola@mi-dominio.com."
+        "Al agregar su dominio, puede crear alias como hola@mi-dominio.com."
       ],
       "Can be viewed": [
         "Puede ser visto"
@@ -2090,7 +2065,7 @@
         "Se actualizaron los ajustes."
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
-        "Comparta aliases con otros añadiendo su bandeja de entrada como buzón de reenvío."
+        "Comparta aliases con otros agregando su bandeja de entrada como buzón de reenvío."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Comparta sus inicios de sesión y notas con hasta 10 personas"
@@ -2193,7 +2168,7 @@
         "Esta bóveda ya no se comparte con nadie. Invite a personas para compartirla con otros."
       ],
       "This version will be added to the history as the newest version.": [
-        "Esta versión será añadida al historial como la versión nueva."
+        "Esta versión será agregada al historial como la versión nueva."
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Esto rechazará el dispositivo **${ name }** que intentó iniciar sesión en su cuenta ${ BRAND_NAME } el **${ date }**."
@@ -2487,7 +2462,7 @@
         "Agregue un prefijo aleatorio para este dominio al crear un nuevo alias."
       ],
       "Add section": [
-        "Añadir sección"
+        "Agregar sección"
       ],
       "Additional details": [
         "Detalles adicionales"
@@ -3277,16 +3252,16 @@
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "Añadir una clave secreta 2FA"
+        "Agregar una clave secreta 2FA"
       ],
       "Add hidden text": [
-        "Añadir texto oculto"
+        "Agregar texto oculto"
       ],
       "Add note": [
-        "Añadir nota"
+        "Agregar nota"
       ],
       "Add text": [
-        "Añadir texto"
+        "Agregar texto"
       ],
       "Alias Display Name": [
         "Nombre a mostrar del alias"
@@ -3546,10 +3521,10 @@
         "Actividad"
       ],
       "Add custom domain": [
-        "Añadir un dominio personalizado"
+        "Agregar un dominio personalizado"
       ],
       "Add mailbox": [
-        "Añadir un buzón"
+        "Agregar un buzón"
       ],
       "Alias contacts": [
         "Contactos del alias"

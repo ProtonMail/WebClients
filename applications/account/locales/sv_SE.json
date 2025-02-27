@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -4761,6 +4761,12 @@
       "Please select a state": [
         "Välj en delstat"
       ],
+      "Please select at least one location before continuing.": [
+        "Välj minst en plats innan du fortsätter."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Välj minst en användare eller grupp innan du fortsätter."
+      ],
       "Please set a recovery email first": [
         "Ställ in en e-postadress för återställning först"
       ],
@@ -4884,6 +4890,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minsta betalningen vi accepterar är ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Policynamnet måste vara mellan 3 och 40 tecken."
       ],
       "The sending key is not valid": [
         "Den skickande nyckeln är inte giltig"
@@ -6997,11 +7006,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivera minst en dataåterställningsmetod för att se till att du kan fortsätta komma åt innehållet på ditt ${ BRAND_NAME }-konto om du tappar bort ditt lösenord."
       ],
-      "active": [
-        "aktiv"
-      ],
       "Active": [
         "Aktiv"
+      ],
+      "active": [
+        "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -7102,6 +7111,9 @@
       ],
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "Tillåt användare att ansluta till säkra delade servrar från sektionen **Länder** i appen ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Redan tilldelad"
@@ -8300,6 +8312,9 @@
       "Or select a particular server:": [
         "Eller välj en specifik server:"
       ],
+      "Organization --> Groups": [
+        "Organisation --> Grupper"
+      ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Organisationsmedlemmar kommer behöva låsa upp ${ PASS_APP_NAME } med deras lösenord eller PIN etc."
       ],
@@ -9033,6 +9048,9 @@
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "För att kontinuerligt förbättra våra tjänster samlar vi ibland in data för att övervaka att våra applikationer fungerar korrekt. Denna information delas inte med några tredjepartstjänster."
+      ],
+      "To create your first user group, go to": [
+        "För att skapa din första användargrupp, gå till"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "För att dekryptera och visa dina låsta data efter en lösenordsåterställning, välj en återställningsmetod."
@@ -13582,6 +13600,12 @@
       "Maybe later": [
         "Kanske senare"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Erbjudande löper ut ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Betala årsvis, säkra vårt bästa erbjudande"
+      ],
       "Save": [
         "Spara"
       ],
@@ -13602,6 +13626,9 @@
       ],
       "You currently pay": [
         "Du betalar för närvarande"
+      ],
+      "Your subscription renews soon": [
+        "Din prenumeration förnyas snart"
       ]
     },
     "Offer feature": {
@@ -16831,6 +16858,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -17119,47 +17187,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {

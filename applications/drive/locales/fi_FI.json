@@ -333,9 +333,6 @@
       "Download logs": [
         "Lataa lokitiedot"
       ],
-      "Download photos": [
-        "Lataa kuvat"
-      ],
       "Download without scanning": [
         "Lataa ilman skannausta"
       ],
@@ -1364,12 +1361,6 @@
       ],
       "Take a tour": [
         "Katso esittely"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Lisää ${ photos.length } kuva albumiin",
-        "Lisää ${ photos.length } kuvaa albumiin"
       ]
     },
     "Cancellation reminder": {
@@ -2451,6 +2442,11 @@
         "Erääntynyt lasku"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2529,11 +2525,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4225,9 +4216,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
       ],
-      "Album is empty": [
-        "Albumi on tyhjä"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Kaikki (${ totalFoldersCount } kansio)",
         "Kaikki (${ totalFoldersCount } kansiota)"
@@ -4235,9 +4223,6 @@
       "All (${ totalFoldersCount } label)": [
         "Kaikki (${ totalFoldersCount } tunniste)",
         "Kaikki (${ totalFoldersCount } tunnistetta)"
-      ],
-      "All albums": [
-        "Kaikki albumit"
       ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
@@ -5045,9 +5030,6 @@
       ],
       "Ready to add some photos?": [
         "Oletko valmis lisäämään kuvia?"
-      ],
-      "Recent": [
-        "Viimeisimmät"
       ],
       "recommended browser": [
         "suositeltujen selainten"
@@ -10594,6 +10576,11 @@
         "Tänään"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Lisää tämä jaettu tiedosto ${ DRIVE_APP_NAME }esi myöhempää käyttöä varten."
@@ -10675,11 +10662,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Heille on lähetetty kutsu kohteeseen."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
       ]
     },
     "Validation": {

@@ -2529,13 +2529,13 @@
     },
     "Custom frequency option": {
       "Don't end": [
-        "Endeløs"
+        "Avsluttes ikke"
       ],
       "End after": [
         "Slutter etter"
       ],
       "End on": [
-        "Fullfør på"
+        "Slutter på"
       ],
       "event": [
         "hendelse",
@@ -7745,6 +7745,12 @@
       "Maybe later": [
         "Kanskje senere"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Tilbudet utløper ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "Betal årlig, sikre deg vårt beste tilbud"
+      ],
       "Save": [
         "Spar"
       ],
@@ -7765,6 +7771,9 @@
       ],
       "You currently pay": [
         "Du betaler for øyeblikket"
+      ],
+      "Your subscription renews soon": [
+        "Abonnementet ditt fornyes snart"
       ]
     },
     "Offer feature": {
@@ -7865,7 +7874,7 @@
         "Hver måned ${ description }"
       ],
       "Every week ${ everyWeekDescription }": [
-        "Hver uke på ${ everyWeekDescription }"
+        "Hver uke ${ everyWeekDescription }"
       ],
       "Every weekday ${ everyWeekdayDescription }": [
         "Hver ukedag ${ everyWeekdayDescription }"

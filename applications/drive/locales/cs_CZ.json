@@ -45,6 +45,12 @@
       "Add": [
         "Přidat"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Přidat ${ photos.length } fotku do nového alba",
+        "Přidat ${ photos.length } fotky do nového alba",
+        "Přidat ${ photos.length } fotek do nového alba",
+        "Přidat ${ photos.length } fotek do nového alba"
+      ],
       "Add account": [
         "Přidat účet"
       ],
@@ -86,6 +92,12 @@
       ],
       "Add to group": [
         "Přidat do skupiny"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Přidat do “${ album.name }” (${ album.photoCount } fotku)",
+        "Přidat do “${ album.name }” (${ album.photoCount } fotky)",
+        "Přidat do “${ album.name }” (${ album.photoCount } fotek)",
+        "Přidat do “${ album.name }” (${ album.photoCount } fotek)"
       ],
       "Album name": [
         "Název alba"
@@ -339,7 +351,10 @@
       "Download logs": [
         "Stáhnout logy"
       ],
-      "Download photos": [
+      "Download photo": [
+        "Stáhnout fotku",
+        "Stáhnout fotky",
+        "Stáhnout fotky",
         "Stáhnout fotky"
       ],
       "Download without scanning": [
@@ -690,6 +705,9 @@
       "Rename": [
         "Přejmenovat"
       ],
+      "Rename album": [
+        "Přejmenovat album"
+      ],
       "Replace file": [
         "Nahradit soubor"
       ],
@@ -806,6 +824,9 @@
       ],
       "Share": [
         "Sdílet"
+      ],
+      "Share album": [
+        "Sdílet album"
       ],
       "Share file": [
         "Sdílet soubor"
@@ -1393,14 +1414,6 @@
       ],
       "Take a tour": [
         "Absolvovat prohlídku"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Add ${ photos.length } photo to": [
-        "Přidat ${ photos.length } fotku do",
-        "Přidat ${ photos.length } fotky do",
-        "Přidat ${ photos.length } fotek do",
-        "Přidat ${ photos.length } fotek do"
       ]
     },
     "Cancellation reminder": {
@@ -2486,6 +2499,11 @@
         "Faktura po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2567,11 +2585,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3757,6 +3770,20 @@
         "Bezpečnostní centrum"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Přidat ${ photos.length } fotku do",
+        "Přidat ${ photos.length } fotky do",
+        "Přidat ${ photos.length } fotek do",
+        "Přidat ${ photos.length } fotek do"
+      ],
+      "All albums": [
+        "Všechna alba"
+      ],
+      "Recent": [
+        "Nedávné"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Nalezen ${ itemsCount } návrh, použijte klávesnice pro navigaci.",
@@ -4382,9 +4409,6 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
       ],
-      "Album is empty": [
-        "Album je prázdné"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
         "Všechny (${ totalFoldersCount } složky)",
@@ -4396,9 +4420,6 @@
         "Všechny (${ totalFoldersCount } štítky)",
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
-      ],
-      "All albums": [
-        "Všechna alba"
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
@@ -5242,9 +5263,6 @@
       ],
       "Ready to add some photos?": [
         "Jste připraveni přidat nějaké fotografie?"
-      ],
-      "Recent": [
-        "Nedávné"
       ],
       "recommended browser": [
         "doporučený prohlížeč"
@@ -6647,6 +6665,9 @@
     "Link": {
       "Add a gift code": [
         "Přidat dárkový kód"
+      ],
+      "Albums": [
+        "Alba"
       ],
       "All mail": [
         "Všechna pošta"
@@ -8435,6 +8456,12 @@
       "Maybe later": [
         "Možná později"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Nabídka vyprší ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "Plaťte ročně, zajistěte si naši nejlepší nabídku"
+      ],
       "Save": [
         "Ušetřete"
       ],
@@ -8455,6 +8482,9 @@
       ],
       "You currently pay": [
         "V současnosti platíte"
+      ],
+      "Your subscription renews soon": [
+        "Vaše předplatné se brzy obnoví"
       ]
     },
     "Offer feature": {
@@ -11120,6 +11150,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Přidejte tento sdílený soubor na svůj ${ DRIVE_APP_NAME } pro pozdější snadný přístup."
@@ -11201,11 +11236,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "Validation": {
