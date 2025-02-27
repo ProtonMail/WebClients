@@ -5,7 +5,7 @@
 const presetEnvOpts = {
     bugfixes: true,
     useBuiltIns: 'usage',
-    corejs: '3.40',
+    corejs: require('core-js/package.json').version,
 };
 
 module.exports = {
