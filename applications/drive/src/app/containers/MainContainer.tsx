@@ -74,7 +74,7 @@ const FloatingElements = () => {
 const InitContainer = () => {
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
-    const { autoRestore } = useSanitization();
+    const { autoRestore, restoreHashKey } = useSanitization();
     const [loading, withLoading] = useLoading(true);
     const [error, setError] = useState<Error>();
     const [defaultShareRoot, setDefaultShareRoot] =
@@ -126,6 +126,7 @@ const InitContainer = () => {
 
                 if (driveWebASVEnabled) {
                     void autoRestore(showAutoRestoreModal);
+                    void restoreHashKey();
                 }
             } catch (err) {
                 setError(err as unknown as Error);
