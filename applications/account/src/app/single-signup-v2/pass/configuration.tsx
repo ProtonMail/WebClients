@@ -5,8 +5,6 @@ import { PassLogo } from '@proton/components';
 import { getPassKeys, getPassMonitor } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
-    FREE_VAULTS,
-    PAID_VAULTS,
     get2FAAuthenticator,
     get2FAAuthenticatorText,
     getActivityLogText,
@@ -17,7 +15,7 @@ import {
     getLoginsAndNotesText,
     getPassUsers,
     getPassUsersText,
-    getSecureSharingTextEmpty,
+    getSecureSharingText,
     getSecureVaultSharing,
     getTeamPoliciesText,
     getUnlimitedHideMyEmailAliasesText,
@@ -124,7 +122,7 @@ const getAliasesBenefit = (): BenefitItem => {
 const getSecureSharingBenefit = (): BenefitItem => {
     return {
         key: `secure-sharing`,
-        text: getSecureSharingTextEmpty(true),
+        text: getSecureSharingText(true),
         icon: {
             name: 'arrow-up-from-square',
         },
@@ -214,7 +212,7 @@ const getEmailAliasesBenefit = (): BenefitItem => {
 const getSecureLinkAndVaultSharingBenefit = (): BenefitItem => {
     return {
         key: 'secure-vault-sharing',
-        text: getSecureSharingTextEmpty(true),
+        text: getSecureSharingText(true),
         icon: {
             name: 'arrow-up-from-square' as const,
         },
@@ -331,13 +329,7 @@ export const getPassBenefits = (
 };
 
 export const getFreePassFeatures = () => {
-    return [
-        getPassUsers(1),
-        getLoginsAndNotes('free'),
-        getDevices(),
-        getPassKeys(true),
-        getSecureVaultSharing(FREE_VAULTS),
-    ];
+    return [getPassUsers(1), getLoginsAndNotes('free'), getDevices(), getPassKeys(true), getSecureVaultSharing()];
 };
 
 export const getCustomPassFeatures = () => {
@@ -347,7 +339,7 @@ export const getCustomPassFeatures = () => {
         getDevicesAndAliases(),
         getAdvancedAliasFeatures(true),
         getPassKeys(true),
-        getSecureVaultSharing(PAID_VAULTS, true),
+        getSecureVaultSharing(true),
         getPassMonitor(true),
         get2FAAuthenticator(true),
     ];
@@ -371,7 +363,7 @@ export const getCustomPassFamilyFeatures = () => {
         getDevicesAndAliases(),
         getAdvancedAliasFeatures(true),
         getPassKeys(true),
-        getSecureVaultSharing(PAID_VAULTS, true),
+        getSecureVaultSharing(true),
         getPassMonitor(true),
         get2FAAuthenticator(true),
     ];
