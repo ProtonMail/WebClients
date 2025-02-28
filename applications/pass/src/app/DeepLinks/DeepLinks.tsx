@@ -8,13 +8,18 @@ import { DEEPLINK_CONFIG, getDeeplinkFallbackURL, getDeeplinkURLPrefix } from '.
 import type { DeepLinkRoutes } from './types';
 
 export const DeepLinks: FC<RouteChildrenProps> = ({ match, location }) => {
-    const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.DEFAULT });
-    const { key } = useParams<{ key: keyof DeepLinkRoutes }>();
     const path = match?.path ?? '';
-
-    // Redirect to external link when 'upgrade' event is received
-    if (key === 'upgrade') navigateToUpgrade();
+    const { key } = useParams<{ key: keyof DeepLinkRoutes }>();
     const params = new URLSearchParams(location.search);
+
+    const navigateToUpgrade = useNavigateToUpgrade({
+        upsellRef: UpsellRef.DEFAULT,
+        coupon: params.get('Coupon') ?? undefined,
+    });
+
+    /* Redirect to external link when 'upgrade' event is received */
+    if (key === 'upgrade') navigateToUpgrade();
+
     const config = DEEPLINK_CONFIG[key] || getDeeplinkFallbackURL;
     const targetUrl = `${getDeeplinkURLPrefix(path)}${config(params)}`;
 
