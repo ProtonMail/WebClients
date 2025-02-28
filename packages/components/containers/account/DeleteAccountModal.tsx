@@ -17,6 +17,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import StepDot from '@proton/components/components/stepDot/StepDot';
+import StepDots from '@proton/components/components/stepDots/StepDots';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
@@ -297,7 +299,24 @@ const DeleteAccountModal = (props: Props) => {
             >
                 {!hideHeader && <ModalTwoHeader title={c('Title').t`Delete account`} subline={Email} />}
                 <ModalTwoContent>{content}</ModalTwoContent>
-                <ModalTwoFooter>{footer}</ModalTwoFooter>
+                <ModalTwoFooter className="block">
+                    <div className="flex justify-space-between">{footer}</div>
+
+                    <div className="flex justify-center">
+                        <StepDots ulClassName="m-0">
+                            <StepDot
+                                active={step === STEP.REASON_SELECTION}
+                                key={STEP.REASON_SELECTION}
+                                index={STEP.REASON_SELECTION}
+                            />
+                            <StepDot
+                                active={step === STEP.CONFIRM_ACCOUNT_DELETION}
+                                key={STEP.CONFIRM_ACCOUNT_DELETION}
+                                index={STEP.CONFIRM_ACCOUNT_DELETION}
+                            />
+                        </StepDots>
+                    </div>
+                </ModalTwoFooter>
             </ModalTwo>
         </>
     );
