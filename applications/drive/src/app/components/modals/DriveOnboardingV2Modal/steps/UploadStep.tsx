@@ -98,7 +98,7 @@ export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
                 ref={fileInput}
                 className="hidden"
                 onChange={(e) => {
-                    countActionWithTelemetry(Actions.OnboardingV2UploadFile);
+                    void countActionWithTelemetry(Actions.OnboardingV2UploadFile);
                     fileChange(e);
                     onNext();
                 }}
@@ -108,7 +108,7 @@ export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
                 ref={folderInput}
                 className="hidden"
                 onChange={(e) => {
-                    countActionWithTelemetry(Actions.OnboardingV2UploadFolder);
+                    void countActionWithTelemetry(Actions.OnboardingV2UploadFolder);
                     folderChange(e);
                     onNext();
                 }}
@@ -119,7 +119,7 @@ export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
                 shape="ghost"
                 color="norm"
                 onClick={() => {
-                    countActionWithTelemetry(Actions.OnboardingV2UploadSkip);
+                    void countActionWithTelemetry(Actions.OnboardingV2UploadSkip);
                     onNext();
                 }}
             >

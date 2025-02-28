@@ -13,6 +13,7 @@ type AlbumsGridProps = {
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     isLoading: boolean;
     onItemClick: (linkId: string) => void;
+    onItemShare: (linkId: string) => void;
 };
 
 export const AlbumsGrid: FC<AlbumsGridProps> = ({
@@ -21,6 +22,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
     onItemRenderLoadedLink,
     isLoading,
     onItemClick,
+    onItemShare,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
@@ -118,6 +120,15 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
                         onClick={() => {
                             onItemClick(item.linkId);
                         }}
+                        onRename={() => {
+                            // TODO: Rename modal
+                        }}
+                        onShare={() => {
+                            onItemShare(item.linkId);
+                        }}
+                        onDelete={() => {
+                            // TODO: Delete modal/flow
+                        }}
                         style={{
                             position: 'absolute',
                             width: itemWidth,
@@ -142,7 +153,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
         };
 
         return [items, innerStyle];
-    }, [data, dimensions, scrollPosition, isLoading]);
+    }, [data, dimensions, scrollPosition, onItemClick, onItemRender, onItemRenderLoadedLink, onItemShare]);
 
     return (
         <div className="px-2 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
