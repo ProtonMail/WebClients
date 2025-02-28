@@ -4,8 +4,14 @@ import { verifyAllWhenMocksCalled, when } from 'jest-when';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { queryListShareAutoRestore, querySendShareAutoRestoreStatus } from '@proton/shared/lib/api/drive/sanitization';
+import {
+    queryListNodesWithMissingNodeHashKeys,
+    querySendNodesWithNewNodeHashKeys,
+} from '@proton/shared/lib/api/drive/sanitization';
+import { generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
 import { useDebouncedRequest } from '../_api';
+import { useLink } from '../_links';
 import { ShareType, useLockedVolume, useShare } from '../_shares';
 import { useSanitization } from './useSanitization';
 
@@ -32,9 +38,12 @@ const mockedGetShareWithKey = jest.fn().mockImplementation((_, shareId) => ({
     rootLinkId: 'rootLinkId',
     shareId,
 }));
+const mockedGetShareCreatorKeys = jest.fn();
+
 jest.mocked(useShare).mockReturnValue({
     ...jest.requireActual('../_shares/useShare'),
     getShareWithKey: mockedGetShareWithKey,
+    getShareCreatorKeys: mockedGetShareCreatorKeys,
 });
 
 jest.mock('@proton/shared/lib/api/drive/sanitization');
@@ -47,6 +56,15 @@ jest.mocked(useLockedVolume).mockReturnValue({
 } as any);
 
 const mockedShowAutoRestoreModal = jest.fn();
+
+jest.mock('../_links');
+const mockedGetPrivateKey = jest.fn();
+jest.mocked(useLink).mockReturnValue({
+    getLinkPrivateKey: mockedGetPrivateKey,
+} as any);
+
+jest.mock('@proton/shared/lib/keys/driveKeys');
+const mockedGenerateNodeHashKey = jest.mocked(generateNodeHashKey);
 
 describe('useSanitization', () => {
     let originalConsoleWarn: Console['warn'];
@@ -365,6 +383,78 @@ describe('useSanitization', () => {
             });
             expect(mockedQuerySendShareAutoRestoreStatus).toHaveBeenCalledTimes(0);
             expect(mockedShowAutoRestoreModal).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    describe('restoreHashKey', () => {
+        it('should restore missing node hash keys', async () => {
+            const nodesWithMissingHashKey = [
+                {
+                    LinkID: 'link1',
+                    ShareID: 'share1',
+                    VolumeID: 'volume1',
+                    PGPArmoredEncryptedNodeHashKey: '',
+                },
+            ];
+
+            const linkPrivateKey = 'linkPrivateKey';
+            const generatedHashKey = { NodeHashKey: 'newHashKey' };
+
+            when(mockedDebounceRequest)
+                .calledWith(queryListNodesWithMissingNodeHashKeys(), expect.any(AbortSignal))
+                .mockResolvedValueOnce({ NodesWithMissingNodeHashKey: nodesWithMissingHashKey });
+
+            when(mockedGetPrivateKey)
+                .calledWith(
+                    expect.any(AbortSignal),
+                    nodesWithMissingHashKey[0].ShareID,
+                    nodesWithMissingHashKey[0].LinkID
+                )
+                .mockResolvedValueOnce(linkPrivateKey);
+
+            mockedGenerateNodeHashKey.mockResolvedValueOnce(generatedHashKey);
+
+            when(mockedDebounceRequest)
+                .calledWith(
+                    querySendNodesWithNewNodeHashKeys({
+                        NodesWithMissingNodeHashKey: [
+                            {
+                                ...nodesWithMissingHashKey[0],
+                                PGPArmoredEncryptedNodeHashKey: generatedHashKey.NodeHashKey,
+                            },
+                        ],
+                    }),
+                    expect.any(AbortSignal)
+                )
+                .mockResolvedValueOnce({ Code: 1000 });
+
+            const { result } = renderHook(() => useSanitization());
+            await result.current.restoreHashKey();
+
+            expect(mockedGenerateNodeHashKey).toHaveBeenCalledWith(linkPrivateKey, linkPrivateKey);
+            expect(mockedDebounceRequest).toHaveBeenCalledWith(
+                querySendNodesWithNewNodeHashKeys({
+                    NodesWithMissingNodeHashKey: [
+                        {
+                            ...nodesWithMissingHashKey[0],
+                            PGPArmoredEncryptedNodeHashKey: generatedHashKey.NodeHashKey,
+                        },
+                    ],
+                }),
+                expect.any(AbortSignal)
+            );
+        });
+
+        it('should handle empty list of nodes with missing hash keys', async () => {
+            when(mockedDebounceRequest)
+                .calledWith(queryListNodesWithMissingNodeHashKeys(), expect.any(AbortSignal))
+                .mockResolvedValueOnce({ NodesWithMissingNodeHashKey: [] });
+
+            const { result } = renderHook(() => useSanitization());
+            await result.current.restoreHashKey();
+
+            expect(mockedGenerateNodeHashKey).not.toHaveBeenCalled();
+            expect(mockedDebounceRequest).toHaveBeenCalledTimes(1);
         });
     });
 });
