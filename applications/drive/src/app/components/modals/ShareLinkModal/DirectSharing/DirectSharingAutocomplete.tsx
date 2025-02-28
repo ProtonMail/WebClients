@@ -61,7 +61,7 @@ export const DirectSharingAutocomplete = ({
                     onClick={() => {
                         document.getElementById(inputId)?.focus();
                     }}
-                    assistContainerClassName="hidden"
+                    assistContainerClassName="sr-only"
                     autocomplete={
                         <AddressesAutocompleteTwo
                             hasAddOnBlur
