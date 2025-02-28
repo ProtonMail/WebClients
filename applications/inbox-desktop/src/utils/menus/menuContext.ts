@@ -1,9 +1,9 @@
-import { BrowserView, ContextMenuParams, Menu, MenuItemConstructorOptions, app, clipboard } from "electron";
+import { ContextMenuParams, Menu, MenuItemConstructorOptions, WebContentsView, app, clipboard } from "electron";
 import { c } from "ttag";
 import { isMac, smartTruncateText } from "../helpers";
 import { getCurrentView, getMainWindow } from "../view/viewManagement";
 
-const getContextMenuSpellCheck = (props: ContextMenuParams, view: BrowserView) => {
+const getContextMenuSpellCheck = (props: ContextMenuParams, view: WebContentsView) => {
     if (!props.dictionarySuggestions || props.dictionarySuggestions.length === 0) {
         return [];
     }
@@ -114,7 +114,7 @@ const getContextMenu = (props: ContextMenuParams, entriesBefore: boolean) => {
     return template;
 };
 
-export const createContextMenu = (props: ContextMenuParams, view: BrowserView): Menu | undefined => {
+export const createContextMenu = (props: ContextMenuParams, view: WebContentsView): Menu | undefined => {
     const spellCheckTemplate = getContextMenuSpellCheck(props, view);
     const flagsTemplate = getContextEditFlags(props);
     const context = getContextMenu(props, spellCheckTemplate.length > 0 || flagsTemplate.length > 0);
