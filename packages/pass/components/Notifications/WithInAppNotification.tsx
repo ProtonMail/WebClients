@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/routing';
+import { UpsellRef } from '@proton/pass/constants';
+import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { updateInAppNotificationState } from '@proton/pass/store/actions';
@@ -37,6 +39,7 @@ export const WithInAppNotification = <P extends InAppNotificationRenderProps>(
         const history = useHistory();
 
         const { id, notificationKey, content } = props.notification;
+        const upgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.DEFAULT });
 
         useTelemetryEvent(TelemetryEventName.PassNotificationDisplay, {}, { notificationKey })([]);
 
@@ -60,8 +63,14 @@ export const WithInAppNotification = <P extends InAppNotificationRenderProps>(
                         handles.setNotificationState(InAppNotificationState.READ);
 
                         if (type === InAppNotificationCtaType.EXTERNAL_LINK) return onLink(ref, { replace: true });
-                        else if (EXTENSION_BUILD) return onLink(getPassWebUrl(API_URL, subPath));
-                        else return history.push(getLocalPath(subPath));
+                        else if (!EXTENSION_BUILD) return history.push(getLocalPath(subPath));
+                        else {
+                            /** Avoid redirecting to web-app for extension upgrades */
+                            const isUpgrade = subPath.includes('internal/upgrade');
+                            const params = new URLSearchParams(subPath.split('?')?.[1] ?? '');
+                            const coupon = isUpgrade ? params.get('Coupon') : null;
+                            return isUpgrade ? upgrade({ coupon }) : onLink(getPassWebUrl(API_URL, subPath));
+                        }
                     }
                 },
             }),
