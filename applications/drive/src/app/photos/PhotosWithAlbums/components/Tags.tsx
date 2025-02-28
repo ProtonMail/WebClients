@@ -107,7 +107,7 @@ const getTagLabelWithIcon = (
 
 function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) {
     return (
-        <div className="flex flex-nowrap items-center py-2 gap-1 mx-2">
+        <div className="flex flex-wrap items-center py-2 gap-1 mx-2">
             {tags.map((tag) => {
                 const { iconName, label } = getTagLabelWithIcon(tag);
                 const selected = selectedTags.includes(tag);
