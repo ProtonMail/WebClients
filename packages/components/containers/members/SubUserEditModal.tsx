@@ -43,6 +43,7 @@ import {
     NAME_PLACEHOLDER,
 } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
@@ -228,12 +229,11 @@ const SubUserEditModal = ({
 
     const isSelf = Boolean(member.Self);
 
-    const organizationHasKeys = Boolean(organization?.HasKeys);
     const isSelfAndPrivate = Boolean(isSelf && member.Private === MEMBER_PRIVATE.UNREADABLE);
 
     const canTogglePrivate =
         // Organization must be keyful, so not family-style organization
-        organizationHasKeys &&
+        hasOrganizationSetupWithKeys(organization) &&
         // Not yourself, to avoid requesting unprivatization for yourself
         !isSelfAndPrivate &&
         // The user does not have an ongoing unprivatization request or an admin request is ongoing (to be able to remove it)
