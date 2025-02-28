@@ -55,6 +55,7 @@ enum AccountFlag {
     PassB2BVaultCreation = 'PassB2BVaultCreation',
     PassB2BItemSharing = 'PassB2BItemSharing',
     PassB2BReports = 'PassB2BReports',
+    DeleteAccountMergeReason = 'DeleteAccountMergeReason',
 }
 
 enum PaymentsFlag {
