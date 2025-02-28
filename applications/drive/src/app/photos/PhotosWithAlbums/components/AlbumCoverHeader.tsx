@@ -7,9 +7,19 @@ import { Icon } from '@proton/components/index';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import type { OnFileUploadSuccessCallbackData } from '../../../store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { PhotosUploadButton } from '../toolbar/PhotosUploadButton';
 
-export const AlbumCoverHeader = ({ album }: { album: DecryptedAlbum }) => {
+interface AlbumCoverHeaderProps {
+    album: DecryptedAlbum;
+    onShare: () => void;
+    shareId: string;
+    linkId: string;
+    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+}
+
+export const AlbumCoverHeader = ({ album, shareId, linkId, onFileUpload, onShare }: AlbumCoverHeaderProps) => {
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
     }).format(fromUnixTime(album.createTime));
@@ -64,19 +74,13 @@ export const AlbumCoverHeader = ({ album }: { album: DecryptedAlbum }) => {
                         shape="solid"
                         size="small"
                         className="inline-flex flex-row flex-nowrap items-center"
+                        onClick={onShare}
                     >
                         <Icon name="user-plus" className="mr-2" />
                         {c('Action').t`Share`}
                     </Button>
-                    <Button
-                        color="norm"
-                        shape="solid"
-                        size="small"
-                        className="inline-flex flex-row flex-nowrap items-center"
-                    >
-                        <Icon name="plus" className="mr-2" />
-                        {c('Action').t`Add photos`}
-                    </Button>
+
+                    <PhotosUploadButton type="norm" shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />
                 </div>
             </div>
         </div>
