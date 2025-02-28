@@ -5,6 +5,7 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type { CachedOrganizationKey, Organization, OrganizationKey, UserModel } from '@proton/shared/lib/interfaces';
 import { getCachedOrganizationKey } from '@proton/shared/lib/keys';
 
@@ -35,7 +36,7 @@ type Model = NonNullable<SliceState['value']>;
 export const selectOrganizationKey = (state: OrganizationKeyState) => state.organizationKey;
 
 const canFetch = (user: UserModel, organization: Organization) => {
-    return user.isAdmin && organization.HasKeys;
+    return user.isAdmin && hasOrganizationSetupWithKeys(organization);
 };
 
 const modelThunk = createAsyncModelThunk<Model, OrganizationKeyState, ProtonThunkArguments>(`${name}/fetch`, {
