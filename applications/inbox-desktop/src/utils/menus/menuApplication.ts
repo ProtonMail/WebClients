@@ -1,4 +1,4 @@
-import { app, Menu, shell, type MenuItemConstructorOptions } from "electron";
+import { app, Menu, shell, WebContentsView, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
@@ -70,7 +70,8 @@ export const setApplicationMenu = () => {
                     click: () => {
                         const mainWindow = getMainWindow();
                         if (mainWindow) {
-                            const view = mainWindow.getBrowserView();
+                            // We need to force WebContentsView type here because getContentView() has a type bug.
+                            const view = mainWindow.getContentView() as unknown as WebContentsView;
                             if (view) {
                                 view.webContents.reload();
                             } else {
@@ -85,7 +86,8 @@ export const setApplicationMenu = () => {
                     click: () => {
                         const mainWindow = getMainWindow();
                         if (mainWindow) {
-                            const view = mainWindow.getBrowserView();
+                            // We need to force WebContentsView type here because getContentView() has a type bug.
+                            const view = mainWindow.getContentView() as unknown as WebContentsView;
                             if (view) {
                                 view.webContents.reloadIgnoringCache();
                             } else {
