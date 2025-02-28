@@ -1,4 +1,4 @@
-import { BrowserView, Notification, app, Event, nativeImage } from "electron";
+import { Notification, app, Event, nativeImage, WebContentsView } from "electron";
 import {
     bringWindowToFront,
     openMail,
@@ -71,19 +71,19 @@ async function setBadgeCount(value: number) {
             const strValue = value > 99 ? "+" : value.toString();
             const fontSize = value < 10 || value > 99 ? 24 : 20;
 
-            const browserView = new BrowserView();
+            const webContentsView = new WebContentsView();
 
-            await new Promise((resolve) => {
-                browserView.webContents.once("dom-ready", resolve);
+            await new Promise<void>((resolve) => {
+                webContentsView.webContents.once("dom-ready", resolve);
                 // We need to load something on the browser view so we can
                 // now that DOM is ready to execute injected JS
                 const filePath = app.isPackaged
                     ? join(process.resourcesPath, "blank.html")
                     : join(app.getAppPath(), "assets/blank.html");
-                browserView.webContents.loadURL(`file://${filePath}`);
+                webContentsView.webContents.loadURL(`file://${filePath}`);
             });
 
-            const badgeURL = await browserView.webContents.executeJavaScript(
+            const badgeURL = await webContentsView.webContents.executeJavaScript(
                 `(${drawBadge})("${strValue}", {badgeSize: ${size}, fontSize: ${fontSize}});`,
                 true,
             );

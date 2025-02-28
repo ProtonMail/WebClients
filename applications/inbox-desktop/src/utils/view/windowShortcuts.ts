@@ -1,4 +1,4 @@
-import { Event, Input } from "electron";
+import { Event, Input, WebContentsView } from "electron";
 import { getMainWindow, updateZoom } from "./viewManagement";
 import { isLinux, isWindows } from "../helpers";
 
@@ -20,10 +20,11 @@ export function handleBeforeInput(event: Event, input: Input) {
 
     if (input.control && input.alt && input.shift && input.code === "KeyI") {
         const mainWindow = getMainWindow();
-        const browserView = mainWindow.getBrowserView();
+        // We need to force WebContentsView type here because getContentView() has a type bug.
+        const view = mainWindow.getContentView() as unknown as WebContentsView;
 
-        if (browserView) {
-            browserView.webContents.toggleDevTools();
+        if (view) {
+            view.webContents.toggleDevTools();
         } else {
             mainWindow.webContents.toggleDevTools();
         }

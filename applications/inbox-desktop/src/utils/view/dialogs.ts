@@ -1,4 +1,4 @@
-import { BrowserView, app, dialog } from "electron";
+import { app, dialog, WebContentsView } from "electron";
 import { c } from "ttag";
 import { mainLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
@@ -15,7 +15,7 @@ const beforeUnloadChoice = () => {
     });
 };
 
-export const handleBeforeHandle = (viewID: CHANGE_VIEW_TARGET, view: BrowserView) => {
+export const handleBeforeHandle = (viewID: CHANGE_VIEW_TARGET, view: WebContentsView) => {
     view.webContents.on("will-prevent-unload", (ev) => {
         viewLogger(viewID).info("will-prevent-unload");
         const choice = beforeUnloadChoice();
