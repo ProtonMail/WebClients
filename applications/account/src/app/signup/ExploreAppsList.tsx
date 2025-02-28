@@ -14,7 +14,6 @@ import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { User } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
-import isTruthy from '@proton/utils/isTruthy';
 
 interface App {
     name: APP_NAMES;
@@ -81,7 +80,6 @@ export const getExploreApps = ({
             description: () => '',
         },
     ]
-        .filter(isTruthy)
         .sort((a, b) => {
             if (
                 (hasBit(subscribed, a.bit) && !hasBit(subscribed, b.bit)) ||
