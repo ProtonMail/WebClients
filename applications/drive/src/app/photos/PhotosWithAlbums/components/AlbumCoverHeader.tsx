@@ -66,7 +66,7 @@ export const AlbumCoverHeader = ({ album, shareId, linkId, onFileUpload, onShare
                         )}
                     </span>
                 </p>
-                <div className="flex flex-nowrap flex-row gap-2">
+                <div className="flex flex-wrap flex-row gap-2">
                     <Avatar color="weak">{initials}</Avatar>
                     {/** TO DO: connect buttons to functions */}
                     <Button
