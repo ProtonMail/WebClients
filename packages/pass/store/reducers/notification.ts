@@ -17,8 +17,19 @@ const getInitialState = (): NotificationReducerState => ({
 
 const reducer: Reducer<NotificationReducerState> = (state = getInitialState(), action) => {
     if (getInAppNotifications.success.match(action)) {
-        const notifications = action.payload;
-        if (!notifications) return state;
+        if (!action.payload) return state;
+
+        // remove upgrade notifications on safari extension
+        const notifications =
+            BUILD_TARGET === 'safari'
+                ? {
+                      ...action.payload,
+                      notifications: action.payload.notifications.filter((notification) => {
+                          const isUpgradeNotification = notification.content?.cta?.ref?.includes('internal/upgrade');
+                          return !isUpgradeNotification;
+                      }),
+                  }
+                : action.payload;
 
         return partialMerge(state, notifications);
     }
