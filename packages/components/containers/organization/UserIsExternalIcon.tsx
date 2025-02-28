@@ -11,8 +11,7 @@ const UserIsExternalIcon = ({ groupMemberType }: { groupMemberType: GROUP_MEMBER
     }
 
     const messages = {
-        [GROUP_MEMBER_TYPE.INTERNAL_TYPE_EXTERNAL]: c('tooltip')
-            .t`External address - disables end-to-end email encryption for this group`,
+        [GROUP_MEMBER_TYPE.INTERNAL_TYPE_EXTERNAL]: c('tooltip').t`Disables end-to-end email encryption for this group`,
         [GROUP_MEMBER_TYPE.EXTERNAL]: c('tooltip')
             .t`External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.`,
     };
