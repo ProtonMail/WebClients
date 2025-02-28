@@ -14,7 +14,7 @@ export const DeepLinks: FC<RouteChildrenProps> = ({ match, location }) => {
 
     const navigateToUpgrade = useNavigateToUpgrade({
         upsellRef: UpsellRef.DEFAULT,
-        coupon: params.get('Coupon') ?? undefined,
+        coupon: params.get('Coupon'),
     });
 
     /* Redirect to external link when 'upgrade' event is received */
