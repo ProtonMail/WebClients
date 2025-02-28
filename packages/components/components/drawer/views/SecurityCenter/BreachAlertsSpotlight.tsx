@@ -34,15 +34,13 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
      * Display conditions:
      * 1. User is not on a mobile screen
      * 2. User has done the welcome flow
-     * 3. User has a plan that can utilize breach alerts: free, mail2022, bundle2022, family2022, visionary2022, duo2024
+     * 3. User has a plan that can utilize breach alerts: mail2022, bundle2022, family2022, visionary2022, duo2024
      * 4. User does not have a custom domain
      * 5. Account is older than 4 days
      */
-    const isPlanAllowed =
-        user.isFree ||
-        [PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY].some((plan) =>
-            subscription?.Plans?.some(({ Name }) => Name === plan)
-        );
+    const isPlanAllowed = [PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY].some((plan) =>
+        subscription?.Plans?.some(({ Name }) => Name === plan)
+    );
     const hasCustomDomains = organization && organization?.UsedDomains > 0;
     const accountIsOlderThanFourDays = differenceInDays(new Date(), fromUnixTime(user.CreateTime)) >= 4;
 
