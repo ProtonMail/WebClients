@@ -118,7 +118,7 @@ export const PublicSharing = ({
                 <Toggle checked={!!publicSharedLink} loading={isLoading} onChange={handleToggle} />
             </div>
             <div className={clsx('flex items-center justify-space-between mb-4', !publicSharedLink && 'opacity-30')}>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-nowrap gap-2">
                     <Avatar color="weak" className="shrink-0">
                         <Icon name="globe" />
                     </Avatar>
@@ -135,18 +135,20 @@ export const PublicSharing = ({
                             )}
                         </span>
                     </p>
+                    <div className="shrink-0">
+                        {viewOnly ? (
+                            <div className="hidden sm:block">{c('Label').t`Viewer`}</div>
+                        ) : (
+                            <PermissionsDropdownMenu
+                                disabled={!publicSharedLink || isLoading}
+                                isLoading={isPermissionsLoading}
+                                selectedPermissions={publicSharedLinkPermissions}
+                                onChangePermissions={handleUpdatePermissions}
+                                publicSharingOptions
+                            />
+                        )}
+                    </div>
                 </div>
-                {viewOnly ? (
-                    <div className="hidden sm:block shrink-0">{c('Label').t`Viewer`}</div>
-                ) : (
-                    <PermissionsDropdownMenu
-                        disabled={!publicSharedLink || isLoading}
-                        isLoading={isPermissionsLoading}
-                        selectedPermissions={publicSharedLinkPermissions}
-                        onChangePermissions={handleUpdatePermissions}
-                        publicSharingOptions
-                    />
-                )}
             </div>
             {!!publicSharedLink ? (
                 <div className="w-full flex justify-space-between">

@@ -142,17 +142,19 @@ export const DirectSharingListing = ({
     }
     return (
         <>
-            <div className="flex my-4 justify-space-between items-center" data-testid="share-owner">
-                <div className="flex items-center gap-2">
-                    <UserAvatar name={displayName || user.Email} />
-                    <p className="flex flex-column p-0 m-0">
+            <div className="flex flex-nowrap my-4 items-center" data-testid="share-owner">
+                <div className="flex-1 flex flex-nowrap items-center gap-2">
+                    <UserAvatar name={displayName || user.Email} className="shrink-0" />
+                    <p className="flex-1 flex flex-column flex-nowrap p-0 m-0">
                         <span className="text-semibold">
                             {displayName} ({c('Info').t`you`})
                         </span>
-                        <span className="color-weak">{user.Email}</span>
+                        <span className="color-weak block max-w-full text-ellipsis" title={user.Email}>
+                            {user.Email}
+                        </span>
                     </p>
                 </div>
-                <div className="mr-8">{c('Info').t`Owner`}</div>
+                <div className="mx-2 shrink-0">{c('Info').t`Owner`}</div>
             </div>
 
             {volumeId &&
