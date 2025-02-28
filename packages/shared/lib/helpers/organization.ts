@@ -59,9 +59,9 @@ export const hasPermission = (organization: Partial<Organization> = {}, mask: nu
 };
 
 export const hasOrganizationSetup = (organization: Partial<Organization> = {}) => {
-    return !organization.RequiresKey && !!organization.Name;
+    return Boolean(!organization.RequiresKey && organization.Name);
 };
 
 export const hasOrganizationSetupWithKeys = (organization: Partial<Organization> = {}) => {
-    return !!organization.RequiresKey && !!organization.HasKeys;
+    return Boolean(organization.RequiresKey && organization.HasKeys);
 };
