@@ -87,7 +87,7 @@ export const DirectSharingAutocomplete = ({
                     }
                     items={invitees.map((invitee) => (
                         <DirectSharingAddressesInputItem
-                            key={invitee.contactId}
+                            key={`${invitee.contactId}-${invitee.email}`}
                             invitee={invitee}
                             disabled={disabled}
                             onRemove={onRemove}
