@@ -111,7 +111,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         return () => {
             driveEventManager.volumes.unsubscribe(volumeId);
         };
-    }, [volumeId]);
+    }, [volumeId, driveEventManager.volumes]);
 
     const loadPhotos = async (abortSignal: AbortSignal) => {
         if (!volumeId || !shareId) {
@@ -186,51 +186,54 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             setIsAlbumPhotosLoading(true);
             void albumPhotosCall();
         },
-        [request]
+        [request, currentAlbumLinkId, volumeId]
     );
 
-    const loadAlbums = async (abortSignal: AbortSignal) => {
-        const albumCall = async (anchorID?: string) => {
-            if (!volumeId || !shareId) {
-                return;
-            }
-            const { Albums, Code, AnchorID, More } = await request<{
-                Albums: Album[];
-                Code: number;
-                AnchorID: string;
-                More: boolean;
-            }>(
-                queryAlbums(volumeId, {
-                    AnchorID: anchorID,
-                }),
-                abortSignal
-            );
-            if (Code === 1000) {
-                const decryptedAlbums = await Promise.all(
-                    Albums.map(async (album) => {
-                        const link = await getLink(abortSignal, shareId, album.LinkID);
-                        const cover = album.CoverLinkID
-                            ? await getLink(abortSignal, shareId, album.CoverLinkID)
-                            : undefined;
-                        return {
-                            ...link,
-                            cover: cover,
-                            photoCount: album.PhotoCount,
-                        };
-                    })
-                );
-                setAlbums(() => [...decryptedAlbums]);
-                // there is a limit of 500 albums so should actually never happen technically
-                if (More) {
-                    void albumCall(AnchorID);
+    const loadAlbums = useCallback(
+        async (abortSignal: AbortSignal) => {
+            const albumCall = async (anchorID?: string) => {
+                if (!volumeId || !shareId) {
+                    return;
                 }
-            }
-            setIsAlbumsLoading(false);
-        };
+                const { Albums, Code, AnchorID, More } = await request<{
+                    Albums: Album[];
+                    Code: number;
+                    AnchorID: string;
+                    More: boolean;
+                }>(
+                    queryAlbums(volumeId, {
+                        AnchorID: anchorID,
+                    }),
+                    abortSignal
+                );
+                if (Code === 1000) {
+                    const decryptedAlbums = await Promise.all(
+                        Albums.map(async (album) => {
+                            const link = await getLink(abortSignal, shareId, album.LinkID);
+                            const cover = album.CoverLinkID
+                                ? await getLink(abortSignal, shareId, album.CoverLinkID)
+                                : undefined;
+                            return {
+                                ...link,
+                                cover: cover,
+                                photoCount: album.PhotoCount,
+                            };
+                        })
+                    );
+                    setAlbums(() => [...decryptedAlbums]);
+                    // there is a limit of 500 albums so should actually never happen technically
+                    if (More) {
+                        void albumCall(AnchorID);
+                    }
+                }
+                setIsAlbumsLoading(false);
+            };
 
-        setIsAlbumsLoading(true);
-        void albumCall();
-    };
+            setIsAlbumsLoading(true);
+            void albumCall();
+        },
+        [getLink, request, shareId, volumeId]
+    );
 
     const addAlbumPhotos = useCallback(
         async (abortSignal: AbortSignal, albumLinkId: string, LinkIDs: string[]): Promise<void> => {
@@ -286,11 +289,15 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         throw new Error(`Photo(s) could not be added to album: ${Response.Error || 'unknown'}`);
                     }
                 }
+                // refreshing the album is only needed after adding photos for the first time to an album
+                if (albumPhotos.length === 0) {
+                    void loadAlbums(abortSignal);
+                }
                 void loadAlbumPhotos(abortSignal, albumLinkId);
             };
             return addAlbumPhotosCall();
         },
-        [request, loadAlbumPhotos, getLink, getPhotoCloneForAlbum, volumeId, shareId]
+        [request, loadAlbumPhotos, loadAlbums, getLink, getPhotoCloneForAlbum, volumeId, shareId, albumPhotos]
     );
 
     const addPhotoAsCover = useCallback(
@@ -313,7 +320,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             };
             return addPhotoAsCoverCall();
         },
-        [request]
+        [request, volumeId]
     );
 
     const removePhotosFromCache = useCallback((linkIds: string[]) => {
