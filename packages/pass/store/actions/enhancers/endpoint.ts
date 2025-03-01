@@ -32,7 +32,7 @@ export const isActionFor = (action: Action, endpoint: ClientEndpoint, tabId?: Ta
     if (isActionWithReceiver(action)) {
         const { meta } = action;
         return (
-            (meta.receiver === undefined || meta.receiver.endpoint === endpoint) &&
+            (meta.receiver.endpoint === undefined || meta.receiver.endpoint === endpoint) &&
             (meta.receiver.tabId === undefined || meta.receiver.tabId === tabId)
         );
     }
