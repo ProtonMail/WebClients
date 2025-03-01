@@ -1,11 +1,23 @@
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import type { Action } from 'redux';
 import { type Middleware, isAction } from 'redux';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
-import { withSender } from '@proton/pass/store/actions/enhancers/endpoint';
+import { actionStream } from '@proton/pass/store/actions';
+import { isStreamableAction } from '@proton/pass/store/actions/enhancers/client';
+import { isActionWithReceiver, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { State } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { toChunks } from '@proton/pass/utils/object/chunk';
 
-import WorkerMessageBroker from '../channel';
+const broadcast = (action: Action) =>
+    WorkerMessageBroker.ports.broadcast(
+        backgroundMessage({
+            type: WorkerMessageType.STORE_DISPATCH,
+            payload: { action: withSender({ endpoint: 'background' })(action) },
+        }),
+        (name) => /^(popup|page)/.test(name)
+    );
 
 /** Middleware that broadcasts Redux actions from the worker to all clients.
  * This middleware handles broadcasting store updates to extension clients
@@ -14,13 +26,10 @@ import WorkerMessageBroker from '../channel';
  * 2. Broadcast to popup/page clients via ports */
 export const broadcastMiddleware: Middleware<{}, State> = () => (next) => (action: unknown) => {
     if (isAction(action)) {
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.STORE_DISPATCH,
-                payload: { action: withSender({ endpoint: 'background' })(action) },
-            }),
-            (name) => /^(popup|page)/.test(name)
-        );
+        if (EXTENSION_BUILD && isStreamableAction(action)) {
+            const options = isActionWithReceiver(action) ? action.meta.receiver : {};
+            for (const chunk of toChunks(action)) broadcast(actionStream(chunk, options));
+        } else broadcast(action);
 
         next(action);
     }
