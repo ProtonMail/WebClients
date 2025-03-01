@@ -22,6 +22,7 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { not } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
@@ -42,7 +43,7 @@ const store = configureStore({
             ENV === 'development'
                 ? [
                       devToolsEnhancer({
-                          name: 'store::sw',
+                          name: `store::sw::${uniqueId()}`,
                           port: REDUX_DEVTOOLS_PORT,
                           realtime: true,
                       }),
