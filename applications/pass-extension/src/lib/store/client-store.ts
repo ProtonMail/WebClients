@@ -1,6 +1,7 @@
 import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
+import { chunkMiddleware } from 'proton-pass-extension/lib/store/chunk.middleware';
 
 import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
@@ -18,7 +19,8 @@ export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
         middleware: (mw) =>
             mw({ serializableCheck: false, immutableCheck: false, thunk: false }).concat(
                 requestMiddlewareFactory({ acceptAsync: not(isActionFrom('background')) }),
-                relayMiddleware({ endpoint, tabId })
+                relayMiddleware({ endpoint, tabId }),
+                chunkMiddleware()
             ),
         enhancers: (e) =>
             e().concat(
