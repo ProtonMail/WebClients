@@ -29,6 +29,7 @@ export const UserAvatar = <E extends ElementType = typeof defaultElement>({
     color,
     as,
     size = 'medium',
+    style,
     ...rest
 }: UserAvatarProps<E>) => {
     const nameWithColor = useMemo(
@@ -60,7 +61,7 @@ export const UserAvatar = <E extends ElementType = typeof defaultElement>({
             data-testid="user-avatar"
             className={clsx(
                 'h-custom w-custom',
-                'relative flex items-center justify-center overflow-hidden rounded user-select-none',
+                'relative flex items-center justify-center overflow-hidden rounded user-select-none shrink-0',
                 'text-sm text-semibold',
                 name && 'text-capitalize',
                 className
@@ -69,8 +70,9 @@ export const UserAvatar = <E extends ElementType = typeof defaultElement>({
                 {
                     backgroundColor: `hsl(${hue}, 100%, 90%)`,
                     color: `hsl(${hue}, 100%, 10%)`,
-                    '--h-custom': width,
-                    '--w-custom': height,
+                    '--h-custom': height,
+                    '--w-custom': width,
+                    ...style,
                 } as React.CSSProperties
             }
             {...rest}
