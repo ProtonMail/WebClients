@@ -2,13 +2,7 @@ import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
 import { clientBooted } from '@proton/pass/lib/client';
 import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
-import {
-    getUserAccessIntent,
-    secureLinksGet,
-    stateHydrate,
-    wakeupIntent,
-    wakeupSuccess,
-} from '@proton/pass/store/actions';
+import { clientInit, getUserAccessIntent, secureLinksGet, stateHydrate } from '@proton/pass/store/actions';
 import { garbageCollectTabState } from '@proton/pass/store/actions/creators/filters';
 import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
 import type { WithReceiverAction } from '@proton/pass/store/actions/enhancers/endpoint';
@@ -18,17 +12,23 @@ import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { TabId } from '@proton/pass/types';
 import identity from '@proton/utils/identity';
 
-function* wakeupWorker(
+function* clientInitWorker(
     { getAuthStore: getAuth }: RootSagaOptions,
-    { payload: { status }, meta }: WithReceiverAction<ReturnType<typeof wakeupIntent>>
+    { payload: { status }, meta }: WithReceiverAction<ReturnType<typeof clientInit.intent>>
 ) {
     const { tabId, endpoint } = meta.receiver;
     const loggedIn = getAuth().hasSession();
     const userId = getAuth().getUserID();
 
     if (loggedIn && userId && clientBooted(status)) {
-        const state: State = yield select();
-        yield put(stateHydrate(state, { endpoint, tabId }));
+        /** Only hydrate the client who initiated the wakeup sequence
+         * if the app is actually booted. `boot.saga` will take care of
+         * client hydration if the wakeup was triggered in parallel.
+         * Only for popup or pages - contentscripts don't need hydration. */
+        if (endpoint === 'popup' || endpoint === 'page') {
+            const state: State = yield select();
+            yield put(stateHydrate(state, { endpoint, tabId }));
+        }
 
         const maybeRevalidate = endpoint === 'popup' ? withRevalidate : identity;
         yield put(maybeRevalidate(getUserAccessIntent(userId)));
@@ -47,9 +47,9 @@ function* wakeupWorker(
         }
     }
 
-    yield put(wakeupSuccess(meta.request.id, { endpoint, tabId }));
+    yield put(clientInit.success(meta.request.id, { endpoint, tabId }));
 }
 
 export default function* watcher(options: RootSagaOptions): Generator {
-    yield takeEvery(wakeupIntent.match, wakeupWorker, options);
+    yield takeEvery(clientInit.intent.match, clientInitWorker, options);
 }
