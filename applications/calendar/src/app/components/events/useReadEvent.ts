@@ -47,7 +47,6 @@ const useReadEvent = (
         const isAllDay = getIsAllDay(veventComponent);
         const model = propertiesToModel({
             veventComponent,
-            eventData: targetEventData.eventData,
             hasDefaultNotifications,
             verificationStatus,
             selfAddressData,

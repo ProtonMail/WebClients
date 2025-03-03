@@ -53,6 +53,8 @@ type AttendeeViewModel = {
     isCurrentUser?: boolean;
     /** If registered in contacts */
     contactID?: string;
+    /** RSVP note */
+    comment?: string;
 };
 type GroupedAttendees = {
     [key: string]: AttendeeViewModel[];
@@ -172,7 +174,6 @@ const PopoverEventContent = ({
     );
     const groupedAttendees = attendeesWithoutOrganizer
         .map((attendee) => {
-            // TODO: handle display logic here
             const attendeeEmail = attendee.email;
             const selfEmail = model.selfAddress?.Email;
             const displayContact = displayNameEmailMap[canonicalizeEmailByGuess(attendeeEmail)];
@@ -203,7 +204,6 @@ const PopoverEventContent = ({
         })
         .reduce<GroupedAttendees>(
             (acc, item) => {
-                console.log({ item });
                 if (Object.prototype.hasOwnProperty.call(acc, item.partstat)) {
                     acc[item.partstat as keyof typeof acc].push(item);
                 } else {
