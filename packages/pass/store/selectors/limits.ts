@@ -18,15 +18,15 @@ export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan
     };
 });
 
-export const selectAliasLimits = createSelector([selectAliasItems, selectUserPlan], (alias, plan) => {
+export const selectAliasLimits = createSelector([selectAliasItems, selectUserPlan], (aliases, plan) => {
     const aliasLimit = plan?.AliasLimit ?? Number.MAX_SAFE_INTEGER;
 
     return {
         aliasLimit,
         aliasLimited: typeof plan?.AliasLimit === 'number',
-        aliasTotalCount: alias.length,
-        needsUpgrade: alias.length >= aliasLimit,
-        didDowngrade: alias.length > aliasLimit,
+        aliasTotalCount: aliases.length,
+        needsUpgrade: aliases.length >= aliasLimit,
+        didDowngrade: aliases.length > aliasLimit,
     };
 });
 

@@ -2,38 +2,26 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { isActive } from '@proton/pass/lib/items/item.predicates';
 import { sortItems } from '@proton/pass/lib/items/item.utils';
-import { searchItems } from '@proton/pass/lib/search/match-items';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import type { State } from '@proton/pass/store/types';
+import type { ItemRevision, Share } from '@proton/pass/types';
 import { type SelectedItem } from '@proton/pass/types';
 
-import type { ItemsSearchResults } from './items';
-import { itemsFromSelection, selectAllItems, selectItems } from './items';
-import { selectItemShares, selectShares } from './shares';
+import { itemsFromSelection, selectAllItems, selectItem, selectItems, selectTrashedItems } from './items';
+import { selectItemShares, selectShare, selectShares } from './shares';
 
-const selectSharedWithMe = createSelector([selectItemShares, selectItems], (itemShares, items) => {
+export const isItemShared = (item?: ItemRevision, share?: Share): boolean =>
+    Boolean((item?.shareCount ?? 0) > 0 || share?.shared);
+
+export const selectItemShared = (shareId: string, itemId: string) =>
+    createSelector([selectItem(shareId, itemId), selectShare(shareId)], isItemShared);
+
+export const selectSharedWithMe = createSelector([selectItemShares, selectItems], (itemShares, items) => {
     const selection: SelectedItem[] = itemShares.map(({ shareId, targetId: itemId }) => ({ shareId, itemId }));
     const sharedWithMe = itemsFromSelection(selection)(items);
     return sortItems('recent')(sharedWithMe);
 });
 
-export const selectSharedWithMeCount = createSelector(selectSharedWithMe, (items) => items.length);
-
-export const selectActiveSharedWithMeCount = createSelector(
-    selectSharedWithMe,
-    (items) => items.filter(isActive).length
-);
-
-/** "Sort before search" strategy */
-export const selectSharedWithMeSearchResult = createSelector(
-    [selectSharedWithMe, (_: State, search?: string) => search],
-    (sorted, search): ItemsSearchResults => {
-        const searched = searchItems(sorted, search);
-        return { searched, filtered: searched, totalCount: sorted.length };
-    }
-);
-
-const selectSharedByMe = createSelector([selectAllItems, selectShares], (items, shares) => {
+export const selectSharedByMe = createSelector([selectAllItems, selectShares], (items, shares) => {
     const sharedByMe = items.filter(({ shareId, shareCount = 0 }) => {
         if (shareCount <= 0) return false;
         const share = shares?.[shareId];
@@ -43,13 +31,14 @@ const selectSharedByMe = createSelector([selectAllItems, selectShares], (items, 
     return sortItems('recent')(sharedByMe);
 });
 
-export const selectSharedByMeCount = createSelector(selectSharedByMe, (items) => items.length);
+export const selectHasTrashedSharedItems = createSelector(
+    [selectTrashedItems, selectShares],
+    (items, shares) => items.filter((item) => isItemShared(item, shares?.[item.shareId])).length > 0
+);
 
-/** "Sort before search" strategy */
-export const selectSharedByMeSearchResult = createSelector(
-    [selectSharedByMe, (_: State, search?: string) => search],
-    (sorted, search): ItemsSearchResults => {
-        const searched = searchItems(sorted, search);
-        return { searched, filtered: searched, totalCount: sorted.length };
-    }
+export const selectSharedByMeCount = createSelector(selectSharedByMe, (items) => items.length);
+export const selectSharedWithMeCount = createSelector(selectSharedWithMe, (items) => items.length);
+export const selectActiveSharedWithMeCount = createSelector(
+    selectSharedWithMe,
+    (items) => items.filter(isActive).length
 );
