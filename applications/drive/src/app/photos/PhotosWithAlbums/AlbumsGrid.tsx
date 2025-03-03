@@ -107,7 +107,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
 
         data.forEach((item, i) => {
             const x = currentX * (itemWidth + gap);
-            const y = currentY + additionalSpace;
+            const y = currentY;
             lastY = y;
 
             if (itemShouldRender(y, scrollPosition)) {
@@ -156,7 +156,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
     }, [data, dimensions, scrollPosition, onItemClick, onItemRender, onItemRenderLoadedLink, onItemShare]);
 
     return (
-        <div className="px-2 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
+        <div className="mt-4 pt-4 px-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
