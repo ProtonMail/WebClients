@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
@@ -93,49 +93,55 @@ export const VaultMenuItem = memo(
         return (
             <DropdownMenuButton
                 onClick={pipe(() => !selected && vaultActions.select(vault.shareId), onAction)}
-                label={<span className="block text-ellipsis">{label}</span>}
+                label={
+                    <div>
+                        <div className="text-ellipsis">{label}</div>
+                        <div className="color-weak">
+                            {c('Label').ngettext(msgid`${count} item`, `${count} items`, count)}
+                        </div>
+                    </div>
+                }
                 parentClassName={clsx(
                     'pass-vault-submenu-vault-item w-full',
                     !withActions && 'pass-vault-submenu-vault-item--no-actions'
                 )}
-                className={clsx((selected || dragOver) && 'is-selected', !dense && 'py-3')}
-                style={{ '--max-h-custom': '1.25rem' }}
+                className={clsx((selected || dragOver) && 'is-selected', !dense && 'py-2')}
                 extra={
-                    <>
-                        {canManage && (
-                            <ButtonLike
-                                as="div"
-                                icon
-                                pill
-                                size="small"
-                                color="weak"
-                                onClick={handleClickEvent(onManage)}
-                                shape="ghost"
-                                title={c('Action').t`See members`}
-                                className="relative"
-                            >
-                                {notification && (
-                                    <Icon
-                                        name="exclamation-circle-filled"
-                                        size={3}
-                                        className="absolute top-custom right-custom"
-                                        style={{
-                                            '--top-custom': '-1px',
-                                            '--right-custom': '-1px',
-                                            color: 'var(--signal-danger)',
-                                        }}
-                                    />
-                                )}
-                                <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
-                            </ButtonLike>
-                        )}
-                        <span className="pass-vault--count shrink-0 color-weak mx-1">{count}</span>
-                    </>
+                    vault.shared &&
+                    canManage && (
+                        <ButtonLike
+                            as="div"
+                            icon
+                            pill
+                            size="small"
+                            color="weak"
+                            onClick={handleClickEvent(onManage)}
+                            shape="solid"
+                            title={c('Action').t`See members`}
+                            className="relative mr-1"
+                            style={{ color: 'var(--text-weak)' }}
+                        >
+                            {notification && (
+                                <Icon
+                                    name="exclamation-circle-filled"
+                                    size={4}
+                                    className="absolute top-custom right-custom"
+                                    style={{
+                                        '--top-custom': '-1px',
+                                        '--right-custom': '-1px',
+                                        color: 'var(--signal-danger)',
+                                    }}
+                                />
+                            )}
+                            <Icon name="users" alt={c('Action').t`See members`} />
+                        </ButtonLike>
+                    )
                 }
                 icon={
                     <VaultIcon
+                        background
                         className="shrink-0"
-                        size={3.5}
+                        size={4}
                         color={vault?.content.display.color}
                         icon={vault?.content.display.icon}
                     />
