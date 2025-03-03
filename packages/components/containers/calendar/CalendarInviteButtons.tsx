@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -44,7 +46,17 @@ const CalendarInviteButtons = ({
     const { startERRTMetric, stopERRTMetric } = useCalendarERRTetric();
 
     const { accept, acceptTentatively, decline } = actions;
+
+    const accepted = partstat === ICAL_ATTENDEE_STATUS.ACCEPTED;
+    const tentative = partstat === ICAL_ATTENDEE_STATUS.TENTATIVE;
+    const declined = partstat === ICAL_ATTENDEE_STATUS.DECLINED;
+
+    const answerIndex = [accepted, tentative, declined].findIndex((bool) => bool === true);
+
+    const [selectedAnswer, setSelectedAnswer] = useState(answerIndex);
+
     const onAccept = () => {
+        setSelectedAnswer(0);
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'yes', plan },
@@ -56,6 +68,7 @@ const CalendarInviteButtons = ({
         return promise;
     };
     const onTentative = () => {
+        setSelectedAnswer(1);
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'maybe', plan },
@@ -67,6 +80,7 @@ const CalendarInviteButtons = ({
         return promise;
     };
     const onDecline = () => {
+        setSelectedAnswer(2);
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'no', plan },
@@ -83,6 +97,23 @@ const CalendarInviteButtons = ({
     const acceptText = c('Action').t`Yes, I'll attend`;
     const tentativeText = c('Action').t`Maybe I'll attend`;
     const declineText = c('Action').t`No, I won't attend`;
+
+    const list = [
+        {
+            text: acceptText,
+            onClick: accepted ? noop : onAccept,
+        },
+        {
+            text: tentativeText,
+            onClick: tentative ? noop : onTentative,
+        },
+        {
+            text: declineText,
+            onClick: declined ? noop : onDecline,
+        },
+    ];
+    const orderedList = move(list, selectedAnswer, 0);
+    const [{ text }, ...restList] = orderedList;
 
     if (partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
         return (
@@ -114,26 +145,6 @@ const CalendarInviteButtons = ({
             </ButtonGroup>
         );
     }
-    const accepted = partstat === ICAL_ATTENDEE_STATUS.ACCEPTED;
-    const tentative = partstat === ICAL_ATTENDEE_STATUS.TENTATIVE;
-    const declined = partstat === ICAL_ATTENDEE_STATUS.DECLINED;
-    const list = [
-        {
-            text: acceptText,
-            onClick: accepted ? noop : onAccept,
-        },
-        {
-            text: tentativeText,
-            onClick: tentative ? noop : onTentative,
-        },
-        {
-            text: declineText,
-            onClick: declined ? noop : onDecline,
-        },
-    ];
-    const answerIndex = [accepted, tentative, declined].findIndex((bool) => bool === true);
-    const orderedList = move(list, answerIndex, 0);
-    const [{ text }, ...restList] = orderedList;
 
     return (
         <SimpleDropdown
