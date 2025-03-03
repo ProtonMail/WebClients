@@ -13,7 +13,7 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
-import { elements as elementsSelector } from 'proton-mail/store/elements/elementsSelectors';
+// import { elements as elementsSelector } from 'proton-mail/store/elements/elementsSelectors';
 
 import type { Element } from '../../models/element';
 import type { MailState, MailThunkExtra } from '../store';
@@ -73,7 +73,7 @@ export const load = createAsyncThunk<
             result: QueryResults;
             page: number;
         }) => {
-            const elementsInState = elementsSelector(getState() as MailState);
+            // const elementsInState = elementsSelector(getState() as MailState);
             /* When we receive Stale from the api response, we don't want to update the local state.
              * While Stale = 1, we might receive in the element list elements that are no longer in the location,
              * which sometimes leads in flickering UI and items re-appearing when they should not.
@@ -87,9 +87,10 @@ export const load = createAsyncThunk<
              * So, when we have nothing to display to the user and Stale = 1, we actually want to use the API result
              * so that we can display something to the user quickly.
              */
-            if (elementsInState.length > 0 && result.Stale === 1) {
-                return;
-            }
+            // if (elementsInState.length > 0 && result.Stale === 1) {
+            //     return;
+            // }
+            // TODO remove
 
             dispatch(
                 showSerializedElements({
