@@ -12,6 +12,7 @@ import {
     type ModalStateReturnObj,
     Toolbar,
     ToolbarButton,
+    useActiveBreakpoint,
     usePopperAnchor,
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -52,7 +53,7 @@ const AlbumGalleryDropdownButton = () => {
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
-                className="inline-flex flex-nowrap flex-row items-center"
+                className="inline-flex flex-nowrap flex-row items-center toolbar-button"
             >
                 <Icon name="three-dots-vertical" className="mr-2" /> {c('Action').t`More`}
             </DropdownButton>
@@ -143,7 +144,7 @@ export const ToolbarLeftActionsAlbumsGallery = ({
             {...getButtonStyles()}
             onClick={onAlbumsClick}
         >
-            <Icon name="arrow-left" className="mr-2" /> {c('Action').t`Go back`}
+            <Icon name="arrow-left" className="mr-2 shirnk-0" /> {c('Action').t`Go back`}
         </Button>
     );
 };
@@ -154,6 +155,8 @@ interface ToolbarRightActionsAlbumsProps {
 
 const ToolbarRightActionsAlbums = ({ createAlbumModal }: ToolbarRightActionsAlbumsProps) => {
     const { openModal } = createAlbumModal;
+    const { viewportWidth } = useActiveBreakpoint();
+
     return (
         <>
             <Button
@@ -162,9 +165,11 @@ const ToolbarRightActionsAlbums = ({ createAlbumModal }: ToolbarRightActionsAlbu
                 }}
                 color="weak"
                 shape="ghost"
+                icon={viewportWidth.xsmall}
                 className="inline-flex flex-nowrap flex-row items-center"
             >
-                <Icon name="plus" className="mr-2" /> {c('Action').t`New album`}
+                <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />{' '}
+                <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`New album`}</span>
             </Button>
         </>
     );
