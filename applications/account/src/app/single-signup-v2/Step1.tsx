@@ -298,6 +298,16 @@ const Step1 = ({
             coupon: subscriptionCheckOptions.coupon || signupParameters.coupon,
             ...mergedCheckOptions,
         };
+
+        const plan = getPlanFromPlanIDs(model.plansMap, completeCheckOptions.planIDs);
+        const cycle = completeCheckOptions.cycle;
+        const planCycleMapping = plan ? model.subscriptionDataCycleMapping[plan?.Name] : undefined;
+        const lastRememberedCoupon =
+            cycle !== undefined ? planCycleMapping?.[cycle]?.checkResult?.Coupon?.Code : undefined;
+        if (!completeCheckOptions.coupon && lastRememberedCoupon) {
+            completeCheckOptions.coupon = lastRememberedCoupon;
+        }
+
         const optimisticCheckResult = getOptimisticCheckResult({
             plansMap: model.plansMap,
             planIDs: completeCheckOptions.planIDs,
