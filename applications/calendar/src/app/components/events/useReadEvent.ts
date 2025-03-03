@@ -23,6 +23,8 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
         value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true },
     },
 };
+
+// TODO: Here we can add attendees comments to the model used for displaying the evnet
 const useReadEvent = (
     targetEventData: CalendarViewEventData,
     tzid: string,
@@ -45,6 +47,7 @@ const useReadEvent = (
         const isAllDay = getIsAllDay(veventComponent);
         const model = propertiesToModel({
             veventComponent,
+            eventData: targetEventData.eventData,
             hasDefaultNotifications,
             verificationStatus,
             selfAddressData,
@@ -52,6 +55,7 @@ const useReadEvent = (
             isProtonProtonInvite: !!IsProtonProtonInvite,
             tzid,
         });
+
         const notifications =
             hasDefaultNotifications && calendarSettings
                 ? apiNotificationsToModel({ notifications: null, isAllDay, calendarSettings })

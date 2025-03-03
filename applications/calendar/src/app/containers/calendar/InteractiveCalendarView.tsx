@@ -683,8 +683,10 @@ const InteractiveCalendarView = ({
         if (shouldDropColor) {
             veventComponent.color = undefined;
         }
+
         const eventResult = getExistingEvent({
             veventComponent,
+            eventData,
             hasDefaultNotifications,
             veventComponentParentPartial: existingVeventComponentParentPartial,
             tzid,
