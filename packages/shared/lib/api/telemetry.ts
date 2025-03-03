@@ -294,7 +294,7 @@ export enum TelemetryPaidUsersNudge {
 }
 
 export enum TelemetryPassNudgeEvents {
-    banner_display = 'banner_display',
+    banner_display = 'banner_displayed',
     banner_interaction = 'banner_interaction',
     pass_cta_click = 'pass_cta_click',
 }
