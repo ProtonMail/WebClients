@@ -95,6 +95,8 @@ export const PhotosCard: FC<Props> = ({
 
     const [isFavorite, setisFavorite] = useState(false);
 
+    const isNotStorredInLibrary = false; // TO Do - connect to API
+
     return (
         /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <ButtonLike
@@ -147,12 +149,7 @@ export const PhotosCard: FC<Props> = ({
                         setisFavorite(!isFavorite); // TO DO, really put it in favorite
                     }}
                 >
-                    <Icon
-                        name="heart-filled"
-                        className="shadow-liftedfdsqfdqsfdsq"
-                        size={5}
-                        alt={c('Action').t`Mark as favorite`}
-                    />
+                    <Icon name={isFavorite ? 'heart-filled' : 'heart'} size={5} alt={c('Action').t`Mark as favorite`} />
                 </button>
             </Tooltip>
 
@@ -182,11 +179,18 @@ export const PhotosCard: FC<Props> = ({
                             )}
                             {photo.isShared && (
                                 <div className="photos-card-share-icon rounded-50 flex items-center justify-center">
-                                    <Icon name={'users'} color="white" size={3} />
+                                    <Icon name="users" color="white" size={3} />
                                 </div>
                             )}
                         </div>
                     )}
+
+                    {isNotStorredInLibrary && (
+                        <div className="absolute bottom-0 flex right-0 mr-2 mb-2 photo-card-video-cloud color-disabled">
+                            <Icon name="cloud" alt={c('Info').t`Photo is not saved to your library`} />
+                        </div>
+                    )}
+
                     {photo.mimeType && isVideo(photo.mimeType) && (
                         <div className="absolute bottom-0 flex right-0 rounded-full items-center pl-1 mr-2 mb-2 photo-card-video-info">
                             {photo.duration && (
