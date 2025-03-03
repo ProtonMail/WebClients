@@ -6,27 +6,44 @@ import type { TelemetryPassNudgeEvents } from '@proton/shared/lib/api/telemetry'
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 
-type InteractionType = 'dismiss' | 'more_info' | 'dont_show';
+/**
+ * Interaction types for Pass nudge telemetry
+ */
+export enum PASS_NUDGE_INTERACTION_TYPE {
+    DISMISS_FOR_30_DAYS = 'dismiss_for_30_days',
+    MORE_INFO = 'more_info',
+    DONT_SHOW_FOREVER = 'dont_show_forever',
+}
+
+/**
+ * Source identifier for telemetry
+ */
+export const PASS_NUDGE_SOURCE = 'mail';
+
+type InteractionType =
+    | PASS_NUDGE_INTERACTION_TYPE.DISMISS_FOR_30_DAYS
+    | PASS_NUDGE_INTERACTION_TYPE.MORE_INFO
+    | PASS_NUDGE_INTERACTION_TYPE.DONT_SHOW_FOREVER;
 
 type Dimensions = {
-    is_user_free: string;
-    is_pass_user: string;
-    interaction_type?: InteractionType;
-    source: 'mail';
+    isUserFree: string;
+    isPassUser: string;
+    interactionType?: InteractionType;
+    source: typeof PASS_NUDGE_SOURCE;
 };
 
 type Options =
     | {
           event: TelemetryPassNudgeEvents.banner_display;
-          dimensions: Pick<Dimensions, 'is_user_free' | 'is_pass_user' | 'source'>;
+          dimensions: Pick<Dimensions, 'isPassUser' | 'source'>;
       }
     | {
           event: TelemetryPassNudgeEvents.banner_interaction;
-          dimensions: Pick<Dimensions, 'is_user_free' | 'is_pass_user' | 'interaction_type' | 'source'>;
+          dimensions: Pick<Dimensions, 'isPassUser' | 'interactionType' | 'source'>;
       }
     | {
           event: TelemetryPassNudgeEvents.pass_cta_click;
-          dimensions: Pick<Dimensions, 'is_user_free' | 'is_pass_user' | 'source'>;
+          dimensions: Pick<Dimensions, 'isPassUser' | 'source'>;
       };
 
 const usePassNudgeTelemetry = () => {
