@@ -96,6 +96,7 @@ export const getSignupParameters = ({
                     },
                 },
                 preSelectedPlan: PLANS.FREE,
+                coupon: 'PORKBUN',
             };
         }
     }
