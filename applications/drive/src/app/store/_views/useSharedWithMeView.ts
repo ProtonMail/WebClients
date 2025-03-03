@@ -35,7 +35,7 @@ export default function useSharedWithMeView(shareId: string) {
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const [isBookmarksLoading, withBookmarksLoading] = useLoading(!bookmarksFeatureDisabled);
     const linksListing = useLinksListing();
-    const invitationsPositions = useRef<Map<string, number>>(new Map());
+    const itemsPositions = useRef<Map<string, number>>(new Map());
     const { invitationsBrowserItems, isLoading: isInvitationsLoading } = useInvitationsView();
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { cleanupUrl } = useRedirectToPublicPage();
@@ -84,18 +84,31 @@ export default function useSharedWithMeView(shareId: string) {
         };
     }, [loadSharedWithMeLinks, driveEventManager.eventHandlers]);
 
-    useEffect(() => {
-        const newInvitationsPositions = new Map(invitationsPositions.current);
-        invitationsBrowserItems.forEach((item, index) => {
-            newInvitationsPositions.set(item.rootShareId, index);
-        });
-        invitationsPositions.current = newInvitationsPositions;
-    }, [invitationsBrowserItems]);
+    // This algorithm will first set all items positions in the list by shareId, then with the sortItemsWithPositions, we will get the real items list.
+    // As shareId is unique, when the invite is accepted and converted to an item (will not be in invitationsBrowserItems but in browserItems), the position will be keep.
+    const { sortedItems } = useMemo(() => {
+        const newItemsPositions = new Map(itemsPositions.current);
+        const allItems = [...invitationsBrowserItems, ...browserItems];
 
-    const sortedItems = useMemo(
-        () => sortItemsWithPositions([...invitationsBrowserItems, ...browserItems], invitationsPositions.current),
-        [invitationsBrowserItems, browserItems, invitationsPositions.current]
-    );
+        if (!itemsPositions.current.size) {
+            allItems.forEach((item, index) => {
+                newItemsPositions.set(item.rootShareId, index);
+            });
+        } else {
+            const maxPosition = newItemsPositions.size;
+            allItems.forEach((item) => {
+                if (!newItemsPositions.has(item.rootShareId)) {
+                    newItemsPositions.set(item.rootShareId, maxPosition + 1);
+                }
+            });
+        }
+
+        itemsPositions.current = newItemsPositions;
+
+        return {
+            sortedItems: sortItemsWithPositions(allItems, newItemsPositions),
+        };
+    }, [invitationsBrowserItems, browserItems]);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -136,12 +149,8 @@ export default function useSharedWithMeView(shareId: string) {
         items: sortedItems,
         sortParams,
         setSorting: (sortParams: SortParams<SortField>) => {
-            // If user wants to sort items we clear the pinnedItemsIds to have the normal sortedList
-            invitationsPositions.current = new Map(
-                Array.from(invitationsPositions.current).filter(
-                    ([key]) => !browserItems.some((item) => item.rootShareId === key)
-                )
-            );
+            // If user wants to sort items we clear the itemsPositions to have the normal sortedList
+            itemsPositions.current = new Map();
             return setSorting(sortParams);
         },
         isLoading: isLoading || isInvitationsLoading || isDecrypting || isBookmarksLoading || isDecryptingBookmarks,
