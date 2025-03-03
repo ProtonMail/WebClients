@@ -87,9 +87,9 @@ export const loadFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ result: QueryResults; taskRunning: TaskRunningInfo }, string, { arg: QueryParams }>
 ) => {
-    const { page, params, refetch, isLastRefetch } = action.meta.arg;
+    const { page, params, refetch /*, isLastRefetch*/ } = action.meta.arg;
     const {
-        result: { Total, Stale },
+        result: { Total /*, Stale*/ },
         taskRunning,
     } = action.payload;
 
@@ -111,10 +111,10 @@ export const loadFulfilled = (
          * In that case, we want to update the state, and especially the pendingRequest,
          * so that the UI does not stay in a loading state forever.
          */
-        if (Stale !== 1 || isLastRefetch) {
-            state.pendingRequest = false;
-            state.total = Total;
-        }
+        // if (Stale !== 1 || isLastRefetch) {
+        state.pendingRequest = false;
+        state.total = Total;
+        // }
 
         state.taskRunning = taskRunning;
     }
