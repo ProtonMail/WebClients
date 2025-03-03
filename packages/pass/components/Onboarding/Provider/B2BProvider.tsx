@@ -7,6 +7,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import {
     selectB2BOnboardingComplete,
     selectB2BOnboardingEnabled,
@@ -23,8 +24,8 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
     const navigate = useNavigate();
 
     const state = useSelector(selectB2BOnboardingState);
-    const complete = useSelector(selectB2BOnboardingComplete(extension.installed));
-    const disabled = !useSelector(selectB2BOnboardingEnabled(extension.installed));
+    const complete = useMemoSelector(selectB2BOnboardingComplete, [extension.installed]);
+    const disabled = !useMemoSelector(selectB2BOnboardingEnabled, [extension.installed]);
     const isActive = useRouteMatch(getLocalPath('onboarding'));
 
     const [enabled, setEnabled] = useState(!disabled);
