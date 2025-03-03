@@ -4,10 +4,11 @@ import { type Middleware, isAction } from 'redux';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { actionStream } from '@proton/pass/store/actions';
-import { isStreamableAction } from '@proton/pass/store/actions/enhancers/client';
+import { isBackgroundAction, isStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { isActionWithReceiver, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { State } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { not } from '@proton/pass/utils/fp/predicates';
 import { toChunks } from '@proton/pass/utils/object/chunk';
 
 const broadcast = (action: Action) =>
@@ -25,7 +26,7 @@ const broadcast = (action: Action) =>
  * 1. Sanitize action and mark as worker-originated
  * 2. Broadcast to popup/page clients via ports */
 export const broadcastMiddleware: Middleware<{}, State> = () => (next) => (action: unknown) => {
-    if (isAction(action)) {
+    if (isAction(action) && not(isBackgroundAction)(action)) {
         if (EXTENSION_BUILD && isStreamableAction(action)) {
             const options = isActionWithReceiver(action) ? action.meta.receiver : {};
             for (const chunk of toChunks(action)) broadcast(actionStream(chunk, options));
