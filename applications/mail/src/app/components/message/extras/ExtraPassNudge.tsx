@@ -17,7 +17,7 @@ import PasswordResetDetector from '@proton/shared/lib/mail/PasswordResetDetector
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import usePassNudgeTelemetry from '../../../hooks/usePassNudgeTelemetry';
+import usePassNudgeTelemetry, { PASS_NUDGE_INTERACTION_TYPE, PASS_NUDGE_SOURCE } from '../hooks/usePassNudgeTelemetry';
 
 interface Props {
     messageSubject: string;
@@ -77,9 +77,8 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
             sendTelemetry({
                 event: TelemetryPassNudgeEvents.banner_display,
                 dimensions: {
-                    is_user_free: isFree.toString(),
-                    is_pass_user: (!hasNeverUsedPass).toString(),
-                    source: 'mail',
+                    isPassUser: (!hasNeverUsedPass).toString(),
+                    source: PASS_NUDGE_SOURCE,
                 },
             });
         }
@@ -94,10 +93,11 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
         sendTelemetry({
             event: TelemetryPassNudgeEvents.banner_interaction,
             dimensions: {
-                is_user_free: isFree.toString(),
-                is_pass_user: (!hasNeverUsedPass).toString(),
-                interaction_type: dontShowAgainCheckbox ? 'dont_show' : 'dismiss',
-                source: 'mail',
+                isPassUser: (!hasNeverUsedPass).toString(),
+                interactionType: dontShowAgainCheckbox
+                    ? PASS_NUDGE_INTERACTION_TYPE.DONT_SHOW_FOREVER
+                    : PASS_NUDGE_INTERACTION_TYPE.DISMISS_FOR_30_DAYS,
+                source: PASS_NUDGE_SOURCE,
             },
         });
     };
@@ -108,9 +108,8 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
         sendTelemetry({
             event: TelemetryPassNudgeEvents.pass_cta_click,
             dimensions: {
-                is_user_free: isFree.toString(),
-                is_pass_user: (!hasNeverUsedPass).toString(),
-                source: 'mail',
+                isPassUser: (!hasNeverUsedPass).toString(),
+                source: PASS_NUDGE_SOURCE,
             },
         });
     };
@@ -121,10 +120,9 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
         sendTelemetry({
             event: TelemetryPassNudgeEvents.banner_interaction,
             dimensions: {
-                is_user_free: isFree.toString(),
-                is_pass_user: (!hasNeverUsedPass).toString(),
-                interaction_type: 'more_info',
-                source: 'mail',
+                isPassUser: (!hasNeverUsedPass).toString(),
+                interactionType: PASS_NUDGE_INTERACTION_TYPE.MORE_INFO,
+                source: PASS_NUDGE_SOURCE,
             },
         });
     };
@@ -138,10 +136,9 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
         sendTelemetry({
             event: TelemetryPassNudgeEvents.banner_interaction,
             dimensions: {
-                is_user_free: isFree.toString(),
-                is_pass_user: (!hasNeverUsedPass).toString(),
-                interaction_type: 'dismiss',
-                source: 'mail',
+                isPassUser: (!hasNeverUsedPass).toString(),
+                interactionType: PASS_NUDGE_INTERACTION_TYPE.DISMISS_FOR_30_DAYS,
+                source: PASS_NUDGE_SOURCE,
             },
         });
     }
