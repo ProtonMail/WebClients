@@ -265,26 +265,11 @@ export const getVaultSharingB2B = (n: number | 'unlimited'): PlanCardFeatureDefi
     };
 };
 
-export const getSecureSharingTextEmpty = (link?: boolean) => {
+export const getSecureSharingText = (link?: boolean) => {
     if (link) {
         return c('pass_signup_2023: Info').t`Secure vault and link sharing`;
     }
     return c('pass_signup_2023: Info').t`Secure vault sharing`;
-};
-
-export const getSecureSharingText = (n: number, link?: boolean) => {
-    if (link) {
-        return c('pass_signup_2023: Info').ngettext(
-            msgid`Secure vault sharing (${n} vault) and link sharing`,
-            `Secure vault sharing (${n} vaults) and link sharing`,
-            n
-        );
-    }
-    return c('pass_signup_2023: Info').ngettext(
-        msgid`Secure vault sharing (${n} vault)`,
-        `Secure vault sharing (${n} vaults)`,
-        n
-    );
 };
 
 export const getSecureVaultSharing = (...args: Parameters<typeof getSecureSharingText>): PlanCardFeatureDefinition => {
