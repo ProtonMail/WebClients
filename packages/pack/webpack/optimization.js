@@ -56,6 +56,12 @@ module.exports = /** @type { (env: any) => import('webpack').Options.Optimizatio
         new TerserPlugin({
             parallel,
             minify: TerserPlugin.swcMinify,
+            /** Override `@swc/core`'s default of 2 passes (introduced in v1.10.15).
+             * With only 2 passes, dead code elimination is insufficient and can leave
+             * problematic code fragments in the bundle (like calls to `null`).
+             * Our testing shows 5 passes provides optimal dead code elimination
+             * with acceptable performance impact on build times. */
+            terserOptions: { compress: { passes: 5 } },
             extractComments: false,
         }),
         webpackOnCaffeine
