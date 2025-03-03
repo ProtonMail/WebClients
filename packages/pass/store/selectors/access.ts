@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
 import type { AccessItem, AccessKeys } from '@proton/pass/lib/access/types';
-import { selectState } from '@proton/pass/store/selectors/utils';
+import type { AccessState } from '@proton/pass/store/reducers';
 import type { State } from '@proton/pass/store/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 
@@ -14,10 +14,13 @@ const DEFAULT_ACCESS: AccessItem = {
     newUserInvites: [],
 };
 
+export const selectAccessState = (state: State) => state.access;
+const getAccess = (access: AccessState, key: string) => access[key] || DEFAULT_ACCESS;
+
 export const selectAccess =
     (shareId: string, itemId?: string) =>
     ({ access }: State) =>
-        access[toShareAccessKey({ shareId, itemId })] || DEFAULT_ACCESS;
+        getAccess(access, toShareAccessKey({ shareId, itemId }));
 
 export const selectAccessOrThrow = (shareId: string, itemId?: string) =>
     createSelector([selectAccess(shareId, itemId)], (access) => {
@@ -37,15 +40,14 @@ export const selectAccessMembers = (shareId: string, itemId?: string) =>
             )
     );
 
-export const selectAccessForMany = createSelector(
-    [selectState, (_: State, dto: AccessKeys[]) => dto],
-    (state: State, dtos) =>
+export const selectAccessForMany = (dtos: AccessKeys[]) =>
+    createSelector(selectAccessState, (access) =>
         Object.fromEntries(
             new Map(
                 dtos.map((dto) => {
                     const stateKey = toShareAccessKey(dto);
-                    return [stateKey, selectAccess(stateKey)(state)];
+                    return [stateKey, getAccess(access, stateKey)];
                 })
             )
         )
-);
+    );

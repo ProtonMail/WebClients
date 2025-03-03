@@ -11,9 +11,8 @@ import type { DomainCriterias } from '@proton/pass/types/worker/settings';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { selectState } from './utils';
-
-export const selectProxiedSettings = createSelector(selectState, ({ settings }: State) =>
+const selectSettings = ({ settings }: State) => settings;
+export const selectProxiedSettings = createSelector(selectSettings, (settings) =>
     omit(settings, EXCLUDED_SETTINGS_KEYS)
 );
 
