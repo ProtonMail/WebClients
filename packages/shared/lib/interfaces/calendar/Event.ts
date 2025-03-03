@@ -147,6 +147,7 @@ export interface AttendeeModel {
     role: ICAL_ATTENDEE_ROLE;
     partstat: ICAL_ATTENDEE_STATUS;
     token?: string;
+    comment?: string;
 }
 
 export interface CalendarViewModel {
