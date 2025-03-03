@@ -3,8 +3,9 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, ToolbarButton } from '@proton/components';
+import { Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
+import clsx from '@proton/utils/clsx';
 
 import { type OnFileUploadSuccessCallbackData, useFileUploadInput } from '../../../store';
 
@@ -21,6 +22,8 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
     type = 'toolbar',
 }) => {
     const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput(shareId, linkId, true);
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <>
@@ -41,7 +44,8 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
                     title={c('Action').t`Upload photos`}
                     className="inline-flex flex-nowrap flex-row items-center"
                 >
-                    <Icon name="plus" className="mr-2" /> {c('Action').t`Upload photos`}
+                    <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />{' '}
+                    <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`Upload photos`}</span>
                 </ToolbarButton>
             )}
             {type === 'norm' && (
@@ -51,11 +55,12 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
                     color="norm"
                     shape="solid"
                     size="small"
+                    icon={viewportWidth.xsmall}
                     title={c('Action').t`Add photos`}
                     className="inline-flex flex-row flex-nowrap items-center"
                 >
-                    <Icon name="plus" className="mr-2" />
-                    {c('Action').t`Add photos`}
+                    <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />
+                    <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`Add photos`}</span>
                 </Button>
             )}
         </>
