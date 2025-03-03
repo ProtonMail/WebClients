@@ -7,10 +7,11 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/index';
 import { useInsecurePasswords, useMissing2FAs } from '@proton/pass/hooks/monitor/useAsyncMonitorState';
 import { useRequest } from '@proton/pass/hooks/useRequest';
+import { intoAliasMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
 import {
-    selectAliasBreaches,
+    selectAliasItems,
     selectCustomBreaches,
     selectDuplicatePasswords,
     selectExcludedItems,
@@ -34,7 +35,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const didLoad = useSelector(selectMonitorState) !== null;
 
-    const alias = useSelector(selectAliasBreaches) ?? [];
+    const aliases = useSelector(selectAliasItems) ?? [];
     const proton = useSelector(selectProtonBreaches) ?? [];
     const custom = useSelector(selectCustomBreaches) ?? [];
     const count = useSelector(selectTotalBreaches) ?? 0;
@@ -70,11 +71,15 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const breaches = useMemo<MonitorContextValue['breaches']>(
         () => ({
-            data: { alias, proton, custom },
+            data: {
+                alias: aliases.map(intoAliasMonitorAddress),
+                proton,
+                custom,
+            },
             loading: loadBreaches.loading,
             count,
         }),
-        [alias, proton, custom, count, loadBreaches.loading]
+        [aliases, proton, custom, count, loadBreaches.loading]
     );
 
     const context = useMemo<MonitorContextValue>(
