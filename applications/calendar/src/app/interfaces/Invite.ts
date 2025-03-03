@@ -1,6 +1,11 @@
 import type { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import type { Address, RequireSome } from '@proton/shared/lib/interfaces';
-import type { CalendarEvent, VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    AttendeeComment,
+    CalendarEvent,
+    VcalAttendeeProperty,
+    VcalVeventComponent,
+} from '@proton/shared/lib/interfaces/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { AugmentedSendPreferences } from '../containers/calendar/interface';
@@ -23,7 +28,7 @@ export interface InviteActions {
     sharedSessionKey?: string;
     isProtonProtonInvite?: boolean;
     partstat?: ICAL_ATTENDEE_STATUS;
-    comment?: string;
+    comment?: AttendeeComment;
     sendCancellationNotice?: boolean;
     resetSingleEditsPartstat?: boolean;
     deleteSingleEdits?: boolean;
@@ -90,7 +95,7 @@ export interface UpdatePartstatOperation {
         eventID: string;
         attendeeID: string;
         partstat: ICAL_ATTENDEE_STATUS;
-        comment?: string;
+        comment?: AttendeeComment;
         updateTime: number;
     };
     silence: boolean;

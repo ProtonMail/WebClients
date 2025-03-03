@@ -2276,7 +2276,7 @@ const InteractiveCalendarView = ({
                                           });
                                       }
                             }
-                            onChangePartstat={async (inviteActions: InviteActions) => {
+                            onChangePartstat={async (inviteActions: InviteActions, saveEvent?: boolean) => {
                                 const { partstat } = inviteActions;
                                 if (!targetEvent || !partstat) {
                                     return;
@@ -2295,7 +2295,9 @@ const InteractiveCalendarView = ({
                                     tzid
                                 );
 
-                                return handleSaveEvent(newTemporaryEvent, inviteActions, false, true);
+                                if (saveEvent) {
+                                    return handleSaveEvent(newTemporaryEvent, inviteActions, false, true);
+                                }
                             }}
                             onClose={handleCloseEventPopover}
                             onNavigateToEventFromSearch={(

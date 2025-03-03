@@ -9,7 +9,7 @@ import {
     CalendarEventDateHeader,
     CalendarInviteButtons,
     Loader,
-    RsvpModal,
+    RsvpSection,
     useActiveBreakpoint,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
@@ -26,7 +26,11 @@ import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurre
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    CalendarEventSharedData,
+    PartstatData,
+    VcalVeventComponent,
+} from '@proton/shared/lib/interfaces/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -69,7 +73,7 @@ interface Props {
     onEdit: (userCanDuplicateEvent: boolean) => void;
     onRefresh: () => Promise<void>;
     onDuplicate?: () => void;
-    onChangePartstat: (inviteActions: InviteActions) => Promise<void>;
+    onChangePartstat: (inviteActions: InviteActions, save: boolean) => Promise<void>;
     onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
     onNavigateToEventFromSearch?: (
@@ -177,15 +181,18 @@ const EventPopover = ({
         );
     };
 
-    const handleChangePartstat = (partstat: ICAL_ATTENDEE_STATUS, comment?: string) => {
-        return onChangePartstat({
-            isProtonProtonInvite: model.isProtonProtonInvite,
-            type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
-            partstat,
-            comment: comment,
-            selfAddress: model.selfAddress,
-            selfAttendeeIndex: model.selfAttendeeIndex,
-        });
+    const handleChangePartstat = (partstatData: PartstatData, save: boolean = true) => {
+        return onChangePartstat(
+            {
+                isProtonProtonInvite: model.isProtonProtonInvite,
+                type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
+                partstat: partstatData.Status,
+                comment: partstatData.Comment,
+                selfAddress: model.selfAddress,
+                selfAttendeeIndex: model.selfAttendeeIndex,
+            },
+            save
+        );
     };
 
     const dateHeader = useMemo(
@@ -357,9 +364,10 @@ const EventPopover = ({
                     <div className="ml-0 md:ml-auto">
                         <CalendarInviteButtons
                             actions={{
-                                accept: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
-                                acceptTentatively: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
-                                decline: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.DECLINED),
+                                accept: () => handleChangePartstat({ Status: ICAL_ATTENDEE_STATUS.ACCEPTED }),
+                                acceptTentatively: () =>
+                                    handleChangePartstat({ Status: ICAL_ATTENDEE_STATUS.TENTATIVE }),
+                                decline: () => handleChangePartstat({ Status: ICAL_ATTENDEE_STATUS.DECLINED }),
                                 retryCreateEvent: () => wait(0),
                                 retryUpdateEvent: () => wait(0),
                             }}
@@ -372,7 +380,7 @@ const EventPopover = ({
             {canReplyToEvent && rsvpCommentEnabled && (
                 <PopoverFooter className="shrink-0" key={targetEvent.uniqueId}>
                     <div className="ml-0 md:ml-auto">
-                        <RsvpModal
+                        <RsvpSection
                             handleChangePartstat={handleChangePartstat}
                             userPartstat={userPartstat}
                             disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
