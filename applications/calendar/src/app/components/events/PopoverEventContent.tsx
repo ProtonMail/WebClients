@@ -196,12 +196,14 @@ const PopoverEventContent = ({
                 tooltip,
                 extraText,
                 email: attendeeEmail,
+                comment: attendee.comment,
                 isCurrentUser,
                 contactID: contactEmail?.ContactID,
             };
         })
         .reduce<GroupedAttendees>(
             (acc, item) => {
+                console.log({ item });
                 if (Object.prototype.hasOwnProperty.call(acc, item.partstat)) {
                     acc[item.partstat as keyof typeof acc].push(item);
                 } else {
@@ -227,24 +229,27 @@ const PopoverEventContent = ({
                     ...groupedAttendees[DECLINED],
                     ...groupedAttendees[NEEDS_ACTION],
                     ...groupedAttendees.other,
-                ].map(({ icon, name, title, initials, tooltip, extraText, email, contactID, isCurrentUser }) => (
-                    <li className="pr-1" key={title}>
-                        <Participant
-                            title={title}
-                            initials={initials}
-                            icon={icon}
-                            name={name}
-                            tooltip={tooltip}
-                            extraText={extraText}
-                            email={email}
-                            isContact={!!contactID}
-                            isCurrentUser={isCurrentUser}
-                            onCreateOrEditContact={
-                                contactID ? handleContactDetails(contactID) : handleContactAdd(email, name)
-                            }
-                        />
-                    </li>
-                ))}
+                ].map(
+                    ({ icon, name, comment, title, initials, tooltip, extraText, email, contactID, isCurrentUser }) => (
+                        <li className="pr-1" key={title}>
+                            <Participant
+                                title={title}
+                                initials={initials}
+                                icon={icon}
+                                name={name}
+                                tooltip={tooltip}
+                                extraText={extraText}
+                                comment={comment}
+                                email={email}
+                                isContact={!!contactID}
+                                isCurrentUser={isCurrentUser}
+                                onCreateOrEditContact={
+                                    contactID ? handleContactDetails(contactID) : handleContactAdd(email, name)
+                                }
+                            />
+                        </li>
+                    )
+                )}
             </ul>
         );
     };

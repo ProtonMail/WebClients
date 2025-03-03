@@ -6,6 +6,7 @@ import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import type { EventModelView, SelfAddressData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import truncate from '@proton/utils/truncate';
 
+import type { CalendarViewEventData } from '../../../containers/calendar/interface';
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
@@ -18,6 +19,7 @@ const DEFAULT_TIME = {
 
 export const propertiesToModel = ({
     veventComponent,
+    eventData,
     hasDefaultNotifications,
     verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
     selfAddressData,
@@ -26,6 +28,7 @@ export const propertiesToModel = ({
     tzid,
 }: {
     veventComponent: VcalVeventComponent;
+    eventData: CalendarViewEventData['eventData'];
     hasDefaultNotifications: boolean;
     verificationStatus?: EVENT_VERIFICATION_STATUS;
     selfAddressData?: SelfAddressData;
@@ -59,7 +62,7 @@ export const propertiesToModel = ({
         location: truncate((location?.value ?? '').trim(), MAX_CHARS_API.LOCATION),
         description: truncate(cleanDescription.trim(), MAX_CHARS_API.EVENT_DESCRIPTION),
         color: color?.value,
-        attendees: propertiesToAttendeeModel(attendee),
+        attendees: propertiesToAttendeeModel(attendee, eventData),
         organizer: propertiesToOrganizerModel(organizer),
         isProtonProtonInvite,
         status: getVeventStatus(veventComponent),

@@ -10,6 +10,7 @@ import ParticipantDropdown from './ParticipantDropdown';
 interface Props {
     icon: React.ReactNode;
     name: string;
+    comment?: string;
     extraText?: string;
     title: string;
     initials: string;
@@ -25,6 +26,7 @@ const Participant = ({
     icon,
     name,
     title,
+    comment,
     tooltip,
     initials,
     extraText,
@@ -63,6 +65,7 @@ const Participant = ({
                         {extraText}
                     </div>
                 )}
+                {comment}
             </div>
             <Button
                 shape="ghost"
