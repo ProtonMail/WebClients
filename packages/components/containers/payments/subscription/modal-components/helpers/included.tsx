@@ -25,7 +25,7 @@ import {
     getLoginsAndNotesText,
     getPassUsersText,
     getProtonPassFeatureTooltipText,
-    getSecureSharingTextEmpty,
+    getSecureSharingText,
     getUnlimitedHideMyEmailAliasesText,
 } from '../../../features/pass';
 import {
@@ -129,7 +129,7 @@ export const getWhatsIncluded = ({
         },
         {
             type: 'text',
-            text: getSecureSharingTextEmpty(),
+            text: getSecureSharingText(),
         },
         {
             type: 'text',
@@ -174,7 +174,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: getSecureSharingTextEmpty(true),
+                text: getSecureSharingText(true),
             },
             {
                 type: 'text',
