@@ -188,10 +188,10 @@ export const PhotosCard: FC<Props> = ({
                         </div>
                     )}
                     {photo.mimeType && isVideo(photo.mimeType) && (
-                        <div className="w-full absolute bottom-0 flex justify-end items-center px-2 py-2 photos-card-video-info">
+                        <div className="absolute bottom-0 flex right-0 rounded-full items-center pl-1 mr-2 mb-2 photo-card-video-info">
                             {photo.duration && (
                                 <time
-                                    className="text-semibold mr-1"
+                                    className="text-semibold pt-0.5 lh100 text-xs text-tabular-nums mr-0.5"
                                     dateTime={formatDuration(
                                         { seconds: Math.floor(photo.duration) },
                                         {
