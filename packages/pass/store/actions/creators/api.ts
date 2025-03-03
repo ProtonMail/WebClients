@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withBackgroundAction } from '@proton/pass/store/actions/enhancers/client';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
 import { withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import type { ShareEventResponse } from '@proton/pass/store/sagas/events/channel.share';
@@ -17,5 +18,5 @@ export const userEvent = createAction('api::event::user', (payload: UserEvent) =
 
 export const channelAcknowledge = createAction(
     'api::channel::ack',
-    withRequestSuccess(() => ({ payload: {} }), { maxAge: -1, data: null })
+    withRequestSuccess(() => withBackgroundAction({ payload: null }), { maxAge: -1, data: null })
 );
