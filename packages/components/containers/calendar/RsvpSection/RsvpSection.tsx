@@ -2,28 +2,25 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import { InputFieldTwo, TextAreaTwo } from '@proton/components/index';
-import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { Button } from '@proton/atoms';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import { ATTENDEE_COMMENT_TYPE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import type { AttendeeComment, PartstatData } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import CalendarInviteButtons from '../CalendarInviteButtons';
 
 interface Props {
-    handleChangePartstat: (partstat: ICAL_ATTENDEE_STATUS, comment?: string) => Promise<void>;
+    handleChangePartstat: (partstatData: PartstatData, save: boolean) => Promise<void>;
     userPartstat: ICAL_ATTENDEE_STATUS;
-    userComment?: string;
+    userComment?: AttendeeComment;
     disabled: boolean;
 }
 
-interface PartstatData {
-    Status: ICAL_ATTENDEE_STATUS;
-    Comment?: string;
-}
-
-const RsvpModal = ({ handleChangePartstat, userPartstat, userComment, disabled }: Props) => {
+const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled }: Props) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [model, setModel] = useState<PartstatData>({
         Status: userPartstat,
@@ -38,21 +35,27 @@ const RsvpModal = ({ handleChangePartstat, userPartstat, userComment, disabled }
                 ...model,
                 Status: status,
             });
-        } else {
-            return handleChangePartstat(status);
         }
+
+        return handleChangePartstat(
+            {
+                ...model,
+                Status: status,
+            },
+            !isExpanded
+        );
     };
 
     const handleNote = (note: string) => {
         setModel({
             ...model,
-            Comment: note,
+            Comment: { Message: note, Type: ATTENDEE_COMMENT_TYPE.CLEAR }, // todo enctypted?
         });
     };
 
     const handleSend = () => {
         // send response & comment
-        return handleChangePartstat(model.Status, model.Comment);
+        return handleChangePartstat(model, true);
     };
 
     const handleCancel = () => {
@@ -71,7 +74,7 @@ const RsvpModal = ({ handleChangePartstat, userPartstat, userComment, disabled }
     );
 
     return (
-        <ModalFooter>
+        <ModalTwoFooter>
             <div className={clsx('flex')}>
                 <div className="flex flex-auto items-start md:items-center justify-space-between gap-4 flex-column md:flex-row">
                     <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
@@ -104,7 +107,7 @@ const RsvpModal = ({ handleChangePartstat, userPartstat, userComment, disabled }
                         as={TextAreaTwo}
                         rows={5}
                         placeholder={c('Placeholder').t`Leave a note for all participants`}
-                        value={model.Comment}
+                        value={model.Comment?.Message}
                         onValue={handleNote}
                     />
                 )}
@@ -115,8 +118,8 @@ const RsvpModal = ({ handleChangePartstat, userPartstat, userComment, disabled }
                     </div>
                 )}
             </div>
-        </ModalFooter>
+        </ModalTwoFooter>
     );
 };
 
-export default RsvpModal;
+export default RsvpSection;

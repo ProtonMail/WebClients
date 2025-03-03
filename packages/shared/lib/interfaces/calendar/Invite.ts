@@ -8,9 +8,9 @@ import type { CalendarEvent } from './Event';
 import type { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from './VcalModel';
 
 export interface PartstatActions {
-    accept: () => Promise<void> | void;
-    acceptTentatively: () => Promise<void> | void;
-    decline: () => Promise<void> | void;
+    accept: () => Promise<void>;
+    acceptTentatively: () => Promise<void>;
+    decline: () => Promise<void>;
     retryCreateEvent: ({
         partstat,
         isProtonInvite,

@@ -36,15 +36,22 @@ export interface CalendarPersonalEventData extends CalendarEventData {
     MemberID: string;
 }
 
+export interface PartstatData {
+    Status: ICAL_ATTENDEE_STATUS;
+    Comment?: AttendeeComment;
+}
+
+export interface AttendeeComment {
+    Message: string;
+    Type: ATTENDEE_COMMENT_TYPE;
+}
+
 export interface Attendee {
     ID: string;
     Token: string;
     Status: ATTENDEE_STATUS_API;
     UpdateTime: Nullable<number>;
-    Comment: Nullable<{
-        Message: string;
-        Type: ATTENDEE_COMMENT_TYPE;
-    }>;
+    Comment?: Nullable<AttendeeComment>;
 }
 
 export interface AttendeesInfo {
