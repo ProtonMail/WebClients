@@ -1,33 +1,36 @@
+/**
+ * Sorts items based on provided positions map, placing items with defined positions first
+ * and filling gaps with remaining items in their original order.
+ * @param items Array of items to sort, each containing a rootShareId
+ * @param positionsWithShareId Map of rootShareId to desired position
+ * @returns Sorted array of items
+ */
 export function sortItemsWithPositions<T extends { rootShareId: string }>(
     items: T[],
     positionsWithShareId: Map<string, number>
 ): T[] {
-    if (!positionsWithShareId.size) {
+    if (!positionsWithShareId.size || !items.length) {
         return items;
     }
-    const sortedItems: (T | undefined)[] = new Array(items.length).fill(undefined);
 
-    // Place items with specified positions
-    positionsWithShareId.forEach((position, shareId) => {
-        const item = items.find((item) => item.rootShareId === shareId);
-        if (item) {
+    const sortedItems = new Array(positionsWithShareId.size).fill(undefined);
+
+    items.forEach((item) => {
+        const position = positionsWithShareId.get(item.rootShareId);
+        if (position !== undefined) {
             sortedItems[position] = item;
         }
     });
 
-    // Fill in the remaining items in their original order
-    let filledPosition = 0;
+    let nextEmptyPosition = 0;
     items.forEach((item) => {
         if (!positionsWithShareId.has(item.rootShareId)) {
-            // Find the next available position
-            while (sortedItems[filledPosition] !== undefined) {
-                filledPosition++;
+            while (sortedItems[nextEmptyPosition] !== undefined) {
+                nextEmptyPosition++;
             }
-            sortedItems[filledPosition] = item;
-            filledPosition++;
+            sortedItems[nextEmptyPosition] = item;
         }
     });
 
-    // Remove any undefined entries (in case positions were out of bounds)
-    return sortedItems.filter((item): item is T => item !== undefined);
+    return sortedItems.filter((item) => item !== undefined);
 }
