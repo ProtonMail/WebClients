@@ -102,14 +102,21 @@ export const requestMiddlewareFactory =
 
                                 if (cached) return maybePromise(async () => ({ type: 'success', data }));
                                 else {
+                                    const result = maybePromise(() => tracker.push(requestID));
                                     next(action);
-                                    return maybePromise(() => tracker.push(requestID));
+
+                                    return result;
                                 }
                             }
 
                             default: {
+                                /** Start tracking before calling the next middleware to
+                                 * avoid missing the pending promise if the success action
+                                 * is dispatched synchronously */
+                                const result = maybePromise(() => tracker.push(requestID));
                                 next(action);
-                                return maybePromise(() => tracker.push(requestID));
+
+                                return result;
                             }
                         }
                     }
