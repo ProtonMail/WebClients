@@ -108,6 +108,7 @@ export const AlbumsView: FC = () => {
             <ToolbarRow
                 withBorder={false}
                 withPadding={false}
+                className="m-2 toolbar-row--no-responsive"
                 titleArea={
                     <>
                         <ToolbarLeftActionsGallery

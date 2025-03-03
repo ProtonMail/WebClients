@@ -20,4 +20,14 @@
 	&-titleArea {
 		min-block-size: rem(36);
 	}
+
+	// small adaptation for albums
+	&--no-responsive {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	&--no-responsive &-toolbar {
+		border-block-end: none;
+	}
 }

@@ -195,7 +195,7 @@ export const PhotosWithAlbumsView: FC = () => {
                 className="flex flex-column flex-nowrap flex-1"
             >
                 <ToolbarRow
-                    className={clsx('m-2 rounded', selectedCount > 0 && 'bg-weak')}
+                    className={clsx('m-2 rounded toolbar-row--no-responsive', selectedCount > 0 && 'bg-weak')}
                     withBorder={false}
                     withPadding={false}
                     titleArea={
