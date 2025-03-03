@@ -15,20 +15,14 @@ const getSubscriptionAgeGroup = (subscriptionAge: number) => {
         return 'unknown';
     }
 
-    if (subscriptionAge >= ReminderDates.day25 && subscriptionAge <= ReminderDates.day25 + OfferDuration) {
-        return '25-39';
-    }
-    if (subscriptionAge >= ReminderDates.day90 && subscriptionAge <= ReminderDates.day90 + OfferDuration) {
-        return '90-104';
-    }
-    if (subscriptionAge >= ReminderDates.day180 && subscriptionAge <= ReminderDates.day180 + OfferDuration) {
-        return '180-194';
-    }
-    if (subscriptionAge >= ReminderDates.day365 && subscriptionAge <= ReminderDates.day365 + OfferDuration) {
-        return '365-379';
-    }
+    let value = 'unknown';
+    Object.entries(ReminderDates).forEach((val) => {
+        if (subscriptionAge >= val[1] && subscriptionAge <= val[1] + OfferDuration) {
+            value = val[0];
+        }
+    });
 
-    return 'unknown';
+    return value;
 };
 
 export const usePaidUsersNudgeTelemetry = () => {
