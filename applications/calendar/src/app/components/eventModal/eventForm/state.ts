@@ -40,7 +40,6 @@ import type {
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import type { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
-import type { CalendarViewEventData } from '../../../containers/calendar/interface';
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
 import getFrequencyModelChange from './getFrequencyModelChange';
 import { propertiesToModel } from './propertiesToModel';
@@ -250,19 +249,16 @@ const getParentMerge = ({
     hasDefaultNotifications,
     isProtonProtonInvite,
     tzid,
-    eventData,
 }: {
     veventComponentParentPartial: SharedVcalVeventComponent;
     recurrenceStart: DateTimeModel;
     hasDefaultNotifications: boolean;
     isProtonProtonInvite: boolean;
     tzid: string;
-    eventData: CalendarViewEventData['eventData'];
 }) => {
     const isAllDay = getIsAllDay(veventComponentParentPartial);
     const parentModel = propertiesToModel({
         veventComponent: veventComponentParentPartial,
-        eventData,
         isAllDay,
         hasDefaultNotifications,
         isProtonProtonInvite,
@@ -276,7 +272,6 @@ const getParentMerge = ({
 
 interface GetExistingEventArguments {
     veventComponent: VcalVeventComponent;
-    eventData: CalendarViewEventData['eventData'];
     hasDefaultNotifications: boolean;
     veventComponentParentPartial?: SharedVcalVeventComponent;
     isProtonProtonInvite: boolean;
@@ -288,7 +283,6 @@ interface GetExistingEventArguments {
 
 export const getExistingEvent = ({
     veventComponent,
-    eventData,
     hasDefaultNotifications,
     veventComponentParentPartial,
     isProtonProtonInvite,
@@ -301,7 +295,6 @@ export const getExistingEvent = ({
 
     const newModel = propertiesToModel({
         veventComponent,
-        eventData,
         hasDefaultNotifications,
         selfAddressData,
         isAllDay,
@@ -318,7 +311,6 @@ export const getExistingEvent = ({
         veventComponentParentPartial && recurrenceId
             ? getParentMerge({
                   veventComponentParentPartial,
-                  eventData,
                   recurrenceStart: newModel.start,
                   hasDefaultNotifications,
                   isProtonProtonInvite,

@@ -212,6 +212,7 @@ export interface VcalAttendeePropertyParameters extends VcalOrganizerPropertyPar
     role?: ICAL_ATTENDEE_ROLE | string;
     partstat?: ICAL_ATTENDEE_STATUS | string;
     rsvp?: ICAL_ATTENDEE_RSVP | string;
+    comment?: string;
     'delegated-from'?: string;
     'delegated-to'?: string;
     'x-pm-token'?: string;
