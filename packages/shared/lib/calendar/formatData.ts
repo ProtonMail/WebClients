@@ -112,7 +112,7 @@ export const formatData = ({
         result.Attendees = attendeesClearPart.map(({ token, status }) => ({
             Token: token,
             Status: status,
-            // TODO add comment value here
+            // TODO: handle comment serialization here
             Comment: null,
         }));
     }

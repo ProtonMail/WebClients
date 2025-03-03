@@ -686,7 +686,6 @@ const InteractiveCalendarView = ({
 
         const eventResult = getExistingEvent({
             veventComponent,
-            eventData,
             hasDefaultNotifications,
             veventComponentParentPartial: existingVeventComponentParentPartial,
             tzid,
