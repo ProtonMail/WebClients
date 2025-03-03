@@ -7,8 +7,8 @@ import { withStreamableAction } from '@proton/pass/store/actions/enhancers/clien
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
-import { withRequest, withRequestSuccess } from '@proton/pass/store/request/enhancers';
+import { bootRequest, syncRequest } from '@proton/pass/store/actions/requests';
+import { withRequest } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus } from '@proton/pass/types';
@@ -36,16 +36,13 @@ export const cacheRequest = createAction('cache::request', (options: Omit<CacheM
 
 export const cacheCancel = createAction('cache::cancel');
 
-export const wakeupIntent = createAction(
-    'wakeup::intent',
-    (payload: { status: AppStatus }, receiver: EndpointOptions) =>
-        pipe(withReceiver(receiver), withRequest({ id: wakeupRequest(receiver), status: 'start' }))({ payload })
-);
-
-export const wakeupSuccess = createAction(
-    'wakeup::success',
-    withRequestSuccess((receiver: EndpointOptions) => withReceiver(receiver)({ payload: {} }))
-);
+export const clientInit = requestActionsFactory<{ status: AppStatus } & EndpointOptions, EndpointOptions>(
+    'client::init'
+)({
+    key: ({ tabId, endpoint }: EndpointOptions) => `${endpoint}::${tabId}`,
+    intent: { prepare: (payload) => withReceiver(payload)({ payload }) },
+    success: { prepare: (payload) => withReceiver(payload)({ payload }) },
+});
 
 export const bootIntent = createAction(
     'boot::intent',

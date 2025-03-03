@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import { createContext, useCallback, useEffect, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionState';
@@ -15,9 +15,7 @@ import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { clientErrored } from '@proton/pass/lib/client';
 import { isExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
-import { wakeupRequest } from '@proton/pass/store/actions/requests';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
-import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -45,12 +43,11 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     const config = usePassConfig();
 
     const dispatch = useDispatch();
-    const { tabId, url, port } = useExtensionContext();
-    const ready = !useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
+    const { url, port } = useExtensionContext();
 
     const activityProbe = useExtensionActivityProbe();
 
-    useExtensionState(
+    const ready = useExtensionState(
         useCallback((state) => {
             if (state.criticalRuntimeError) reloadManager.runtimeReload().catch(noop);
 

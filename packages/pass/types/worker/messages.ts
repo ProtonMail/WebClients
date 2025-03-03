@@ -81,6 +81,7 @@ export enum WorkerMessageType {
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
     B2B_EVENT = 'B2B_EVENT',
+    CLIENT_INIT = 'CLIENT_INIT',
     DEBUG = 'DEBUG',
     EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
@@ -128,7 +129,6 @@ export enum WorkerMessageType {
     WEBSITE_RULES_REQUEST = 'WEBSITE_RULES_REQUEST',
     WORKER_RELOAD = 'WORKER_RELOAD',
     WORKER_STATE_CHANGE = 'WORKER_STATE_CHANGE',
-    WORKER_WAKEUP = 'WORKER_WAKEUP',
 }
 
 /* messages for communication with account */
@@ -152,6 +152,7 @@ export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGE
 export type AutofillSyncMessage = { type: WorkerMessageType.AUTOFILL_SYNC };
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
+export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId }>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportOptions>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
@@ -170,9 +171,6 @@ export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
 export type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
-export type SpotlightAckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_ACK, { message: SpotlightMessage }>;
-export type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHECK, { message: SpotlightMessage }>;
-export type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type PassCoreRPCMessage = WithPayload<WorkerMessageType.PASS_CORE_RPC, PassCoreRPC<PassCoreMethod>>;
 export type PasskeyCreateMessage = WithPayload<WorkerMessageType.PASSKEY_CREATE, PasskeyCreatePayload>;
@@ -189,6 +187,9 @@ export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTEN
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
+export type SpotlightAckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_ACK, { message: SpotlightMessage }>;
+export type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHECK, { message: SpotlightMessage }>;
+export type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
 export type TabsQueryMessage = WithPayload<WorkerMessageType.TABS_QUERY, { current?: boolean }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
@@ -198,7 +199,6 @@ export type VaultsQueryMessage = { type: WorkerMessageType.VAULTS_QUERY };
 export type WebsiteRulesMessage = { type: WorkerMessageType.WEBSITE_RULES_REQUEST };
 export type WorkerReloadMessage = { type: WorkerMessageType.WORKER_RELOAD };
 export type WorkerStateChangeMessage = WithPayload<WorkerMessageType.WORKER_STATE_CHANGE, { state: AppState }>;
-export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 
 export type WorkerMessage =
     | AccountAuthExtMessage
@@ -221,6 +221,7 @@ export type WorkerMessage =
     | AutofillSyncMessage
     | AutoSaveRequestMessage
     | B2BEventMessage
+    | ClientInitMessage
     | DebugMessage
     | ExportRequestMessage
     | FeatureFlagsUpdateMessage
@@ -232,7 +233,6 @@ export type WorkerMessage =
     | FormEntryStashMessage
     | FormStatusMessage
     | ImportDecryptMessage
-    | WebsiteRulesMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage
@@ -240,9 +240,6 @@ export type WorkerMessage =
     | Monitor2FAsMessage
     | MonitorWeakPasswordsMessage
     | NotificationMessage
-    | SpotlightAckMessage
-    | SpotlightCheckMessage
-    | SpotlightRequestMessage
     | OTPCodeGenerateMessage
     | PassCoreRPCMessage
     | PasskeyCreateMessage
@@ -260,15 +257,18 @@ export type WorkerMessage =
     | ResolveUserDataMessage
     | SentryCSEventMessage
     | SettingsUpdateMessage
+    | SpotlightAckMessage
+    | SpotlightCheckMessage
+    | SpotlightRequestMessage
     | StoreActionMessage
     | TabsQueryMessage
     | TelemetryEventMessage
     | UnloadContentScriptMessage
     | UpdateAvailableMessage
     | VaultsQueryMessage
+    | WebsiteRulesMessage
     | WorkerReloadMessage
-    | WorkerStateChangeMessage
-    | WorkerWakeUpMessage;
+    | WorkerStateChangeMessage;
 
 export type MessageFailure = { type: 'error'; error: string; critical?: boolean; payload?: string };
 export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: 'success' } : { type: 'success' };
@@ -290,18 +290,16 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
+    [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
     [WorkerMessageType.EXPORT_REQUEST]: { file: TransferableFile };
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
-    [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<ExclusionRules> };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
-    [WorkerMessageType.SPOTLIGHT_CHECK]: { enabled: boolean };
-    [WorkerMessageType.SPOTLIGHT_REQUEST]: { message: MaybeNull<SpotlightMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.PASS_CORE_RPC]: { result: PassCoreResult<PassCoreMethod> };
     [WorkerMessageType.PASSKEY_CREATE]: PasskeyCreateResponse;
@@ -312,9 +310,11 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.REGISTER_ELEMENTS]: { hash: string };
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
+    [WorkerMessageType.SPOTLIGHT_CHECK]: { enabled: boolean };
+    [WorkerMessageType.SPOTLIGHT_REQUEST]: { message: MaybeNull<SpotlightMessage> };
     [WorkerMessageType.TABS_QUERY]: TabInfo;
-    [WorkerMessageType.WORKER_WAKEUP]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
     [WorkerMessageType.VAULTS_QUERY]: { vaults: VaultShareItem[]; defaultShareId: ShareId };
+    [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<ExclusionRules> };
 };
 
 export type WorkerMessageResponse<MessageType> =
