@@ -287,6 +287,7 @@ export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): Agg
         [CYCLE.MONTHLY]: 0,
         [CYCLE.YEARLY]: 0,
         [CYCLE.THREE]: 0,
+        [CYCLE.SIX]: 0,
         [CYCLE.EIGHTEEN]: 0,
         [CYCLE.TWO_YEARS]: 0,
         [CYCLE.FIFTEEN]: 0,
