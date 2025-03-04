@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
 import {
@@ -12,23 +12,18 @@ import {
 import useLoading from '@proton/hooks/useLoading';
 
 export const RemoveAlbumPhotosModal = ({
-    selectedPhotosIds,
-    missingPhotosIds,
+    selectedPhotosCount,
     removeAlbumPhotos,
     ...modalProps
 }: {
-    selectedPhotosIds: string[];
-    missingPhotosIds: string[];
-    removeAlbumPhotos: (params: { missingPhotosIds?: string[]; selectedPhotosIds: string[] }) => Promise<void>;
+    selectedPhotosCount: number;
+    removeAlbumPhotos: (withSave: boolean) => Promise<void>;
 } & ModalStateProps) => {
     const [isRemoveWithSaveLoading, withRemoveWithSaveLoading] = useLoading(false);
     const [isRemoveLoading, withRemoveLoading] = useLoading(false);
 
     const handleSubmit = (withSave: boolean) => {
-        return removeAlbumPhotos({
-            missingPhotosIds: withSave ? missingPhotosIds : undefined,
-            selectedPhotosIds,
-        }).finally(() => {
+        return removeAlbumPhotos(withSave).finally(() => {
             modalProps.onClose();
         });
     };
@@ -40,11 +35,21 @@ export const RemoveAlbumPhotosModal = ({
 
     return (
         <ModalTwo {...modalProps} as="form" onSubmit={(e) => withRemoveWithSaveLoading(() => onSubmit(e))} size="large">
-            <ModalTwoHeader title={c('Title').t`Remove items`} />
+            <ModalTwoHeader title={c('Title').ngettext(msgid`Remove item?`, `Remove items?`, selectedPhotosCount)} />
             <ModalTwoContent>
                 <p>
-                    {c('Info')
-                        .t`This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?`}
+                    {c('Info').ngettext(
+                        msgid`This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.`,
+                        `Some of the selected items aren’t saved in your Photos library. If you remove them from this album, you’ll lose access to them permanently.`,
+                        selectedPhotosCount
+                    )}
+                </p>
+                <p>
+                    {c('Info').ngettext(
+                        msgid`Would you like to save it before removing?`,
+                        `Would you like to save them before removing?`,
+                        selectedPhotosCount
+                    )}
                 </p>
             </ModalTwoContent>
             <ModalTwoFooter className="flex space-between flex-nowrap">
@@ -59,10 +64,10 @@ export const RemoveAlbumPhotosModal = ({
                         onClick={() => withRemoveLoading(() => handleSubmit(false))}
                         loading={isRemoveLoading}
                     >
-                        {c('Action').t`Remove Without Saving`}
+                        {c('Action').t`Remove without saving`}
                     </Button>
                     <Button disabled={isRemoveLoading} color="norm" type="submit" loading={isRemoveWithSaveLoading}>
-                        {c('Action').t`Save and Remove`}
+                        {c('Action').t`Save and remove`}
                     </Button>
                 </div>
             </ModalTwoFooter>
