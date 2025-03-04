@@ -34,6 +34,7 @@ import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
 import { useDebug } from '../../../../hooks/drive/useDebug';
 import type { ShareWithKey } from '../../../../store';
 import { useCreateDevice } from '../../../../store/_shares/useCreateDevice';
+import { useCreatePhotos } from '../../../../store/_shares/useCreatePhotos';
 import { useDefaultShare } from '../../../../store/_shares/useDefaultShare';
 import { logPerformanceMarker } from '../../../../utils/performance';
 import { ActionMenuButton } from '../ActionMenu/ActionMenuButton';
@@ -53,6 +54,7 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
     const debug = useDebug();
     const [defaultShare, setDefaultShare] = useState<ShareWithKey>();
     const { createDevice } = useCreateDevice();
+    const { createPhotosShare } = useCreatePhotos();
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [showSideBar, setShowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONDRIVE}-left-nav-opened`);
@@ -128,12 +130,8 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
                     className={clsx(
                         'mt-auto',
                         !collapsed && 'absolute bottom-0 right-0',
-                        !collapsed &&
-                            showStorage &&
-                            'sidebar-collapse-button-container--not-collapsed',
-                        !collapsed &&
-                            !showStorage &&
-                            'sidebar-collapse-button-container--not-collapsed-no-storage',
+                        !collapsed && showStorage && 'sidebar-collapse-button-container--not-collapsed',
+                        !collapsed && !showStorage && 'sidebar-collapse-button-container--not-collapsed-no-storage',
                         isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
                     )}
                 >
@@ -163,6 +161,7 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
                 </span>
             </SidebarNav>
             {debug ? <button onClick={createDevice}>Create device</button> : null}
+            {debug ? <button onClick={createPhotosShare}>Create photos</button> : null}
         </Sidebar>
     );
 };
