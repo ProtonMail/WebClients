@@ -86,6 +86,8 @@ export const handleIPCCalls = () => {
                 break;
             default:
                 ipcLogger.error(`Invalid getInfo message: ${message}`);
+                // We need to return some value or the client will keep waiting indefinitely
+                event.returnValue = null;
                 break;
         }
     });
