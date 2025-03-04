@@ -1,0 +1,47 @@
+@import '~@proton/styles/scss/lib';
+
+.uncontained-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.uncontained-wrapper {
+	white-space: nowrap;
+	scrollbar-width: none !important;
+
+	> * {
+		// simple security
+		flex-shrink: 0;
+	}
+
+	// button is meant to be 36px
+
+	&-prev-button-container,
+	&-next-button-container {
+		inset-block-start: 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset-block: 0;
+			inline-size: rem(52); // design value
+		}
+	}
+
+	&-prev-button-container {
+		inset-inline-end: calc(100% - #{rem(36)});
+
+		&::before {
+			inset-inline-start: 100%;
+			background: linear-gradient(90deg, var(--background-norm) 0%, transparent 100%);
+		}
+	}
+
+	&-next-button-container {
+		inset-inline-start: calc(100% - #{rem(36)});
+
+		&::before {
+			inset-inline-start: rem(-52);
+			background: linear-gradient(90deg, transparent 0%, var(--background-norm) 100%);
+		}
+	}
+}
