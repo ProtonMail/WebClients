@@ -1,0 +1,13 @@
+{
+    "baseDir": "../../applications/drive",
+    "files": [
+        {
+            "path": "dist/assets/static/*.<hash>.chunk.js"
+        },
+        {
+            "path": "dist/assets/static/*.<hash>.js"
+        }
+    ],
+    "reportOutput": ["json"],
+    "subProject": "drive"
+}
