@@ -5,7 +5,7 @@
  * types.
  */
 import type { FileMetadata } from './file-v1';
-import type { ExtraField, ExtraIdentitySection, PlatformSpecific } from './item-v1';
+import type { ExtraField, CustomSection, PlatformSpecific } from './item-v1';
 import {
     Content,
     Metadata,
@@ -15,14 +15,17 @@ import {
     ItemIdentity as ProtobufItemIdentity,
     ItemLogin as ProtobufItemLogin,
     ItemNote as ProtobufItemNote,
+    ItemSSHKey as ProtobufItemSSHKey,
+    ItemWifi as ProtobufItemWifi,
+    ItemCustom as ProtobufItemCustom,
 } from './item-v1';
 import { Vault } from './vault-v1';
 
 export {
     Content,
     ExtraField,
-    ExtraIdentitySection,
     FileMetadata,
+    CustomSection,
     Metadata,
     ProtobufItem,
     ProtobufItemAlias,
@@ -30,6 +33,9 @@ export {
     ProtobufItemIdentity,
     ProtobufItemLogin,
     ProtobufItemNote,
+    ProtobufItemSSHKey,
+    ProtobufItemWifi,
+    ProtobufItemCustom,
     Vault,
 };
 

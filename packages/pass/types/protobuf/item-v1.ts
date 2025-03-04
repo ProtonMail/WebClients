@@ -12,6 +12,7 @@ import { UnknownFieldHandler } from '@protobuf-ts/runtime';
 import type { PartialMessage } from '@protobuf-ts/runtime';
 import { reflectionMergePartial } from '@protobuf-ts/runtime';
 import { MessageType } from '@protobuf-ts/runtime';
+import { Timestamp } from './google/protobuf/timestamp';
 // Item types
 
 /**
@@ -129,6 +130,66 @@ export interface ItemLogin {
  * @generated from protobuf message proton_pass_item_v1.ItemAlias
  */
 export interface ItemAlias {}
+/**
+ * @generated from protobuf message proton_pass_item_v1.CustomSection
+ */
+export interface CustomSection {
+    /**
+     * @generated from protobuf field: string section_name = 1;
+     */
+    sectionName: string;
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.ExtraField section_fields = 2;
+     */
+    sectionFields: ExtraField[];
+}
+/**
+ * @generated from protobuf message proton_pass_item_v1.ItemCustom
+ */
+export interface ItemCustom {
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.CustomSection sections = 1;
+     */
+    sections: CustomSection[];
+}
+/**
+ * @generated from protobuf message proton_pass_item_v1.ItemSSHKey
+ */
+export interface ItemSSHKey {
+    /**
+     * @generated from protobuf field: string private_key = 1;
+     */
+    privateKey: string;
+    /**
+     * @generated from protobuf field: string public_key = 2;
+     */
+    publicKey: string;
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.CustomSection sections = 3;
+     */
+    sections: CustomSection[];
+}
+/**
+ * @generated from protobuf message proton_pass_item_v1.ItemWifi
+ */
+export interface ItemWifi {
+    /**
+     * @generated from protobuf field: string ssid = 1;
+     */
+    ssid: string;
+    /**
+     * @generated from protobuf field: string password = 2;
+     */
+    password: string;
+    /**
+     * @generated from protobuf field: proton_pass_item_v1.WifiSecurity security = 3;
+     */
+    security: WifiSecurity;
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.CustomSection sections = 4;
+     */
+    sections: CustomSection[];
+}
 /**
  * @generated from protobuf message proton_pass_item_v1.ItemCreditCard
  */
@@ -331,22 +392,9 @@ export interface ItemIdentity {
     /**
      * Extra sections
      *
-     * @generated from protobuf field: repeated proton_pass_item_v1.ExtraIdentitySection extra_sections = 37;
+     * @generated from protobuf field: repeated proton_pass_item_v1.CustomSection extra_sections = 37;
      */
-    extraSections: ExtraIdentitySection[];
-}
-/**
- * @generated from protobuf message proton_pass_item_v1.ExtraIdentitySection
- */
-export interface ExtraIdentitySection {
-    /**
-     * @generated from protobuf field: string section_name = 1;
-     */
-    sectionName: string;
-    /**
-     * @generated from protobuf field: repeated proton_pass_item_v1.ExtraField section_fields = 2;
-     */
-    sectionFields: ExtraField[];
+    extraSections: CustomSection[];
 }
 /**
  * Client extras
@@ -415,6 +463,15 @@ export interface ExtraHiddenField {
     content: string;
 }
 /**
+ * @generated from protobuf message proton_pass_item_v1.ExtraTimestampField
+ */
+export interface ExtraTimestampField {
+    /**
+     * @generated from protobuf field: google.protobuf.Timestamp timestamp = 1;
+     */
+    timestamp?: Timestamp;
+}
+/**
  * @generated from protobuf message proton_pass_item_v1.ExtraField
  */
 export interface ExtraField {
@@ -446,6 +503,13 @@ export interface ExtraField {
                * @generated from protobuf field: proton_pass_item_v1.ExtraHiddenField hidden = 4;
                */
               hidden: ExtraHiddenField;
+          }
+        | {
+              oneofKind: 'timestamp';
+              /**
+               * @generated from protobuf field: proton_pass_item_v1.ExtraTimestampField timestamp = 5;
+               */
+              timestamp: ExtraTimestampField;
           }
         | {
               oneofKind: undefined;
@@ -512,6 +576,27 @@ export interface Content {
               identity: ItemIdentity;
           }
         | {
+              oneofKind: 'sshKey';
+              /**
+               * @generated from protobuf field: proton_pass_item_v1.ItemSSHKey ssh_key = 7;
+               */
+              sshKey: ItemSSHKey;
+          }
+        | {
+              oneofKind: 'wifi';
+              /**
+               * @generated from protobuf field: proton_pass_item_v1.ItemWifi wifi = 8;
+               */
+              wifi: ItemWifi;
+          }
+        | {
+              oneofKind: 'custom';
+              /**
+               * @generated from protobuf field: proton_pass_item_v1.ItemCustom custom = 9;
+               */
+              custom: ItemCustom;
+          }
+        | {
               oneofKind: undefined;
           };
 }
@@ -535,6 +620,31 @@ export interface Item {
      * @generated from protobuf field: repeated proton_pass_item_v1.ExtraField extra_fields = 4;
      */
     extraFields: ExtraField[];
+}
+/**
+ * @generated from protobuf enum proton_pass_item_v1.WifiSecurity
+ */
+export enum WifiSecurity {
+    /**
+     * @generated from protobuf enum value: UnspecifiedWifiSecurity = 0;
+     */
+    UnspecifiedWifiSecurity = 0,
+    /**
+     * @generated from protobuf enum value: WPA = 1;
+     */
+    WPA = 1,
+    /**
+     * @generated from protobuf enum value: WPA2 = 2;
+     */
+    WPA2 = 2,
+    /**
+     * @generated from protobuf enum value: WPA3 = 3;
+     */
+    WPA3 = 3,
+    /**
+     * @generated from protobuf enum value: WEP = 4;
+     */
+    WEP = 4,
 }
 /**
  * Credit cards
@@ -934,6 +1044,271 @@ class ItemAlias$Type extends MessageType<ItemAlias> {
  */
 export const ItemAlias = new ItemAlias$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class CustomSection$Type extends MessageType<CustomSection> {
+    constructor() {
+        super('proton_pass_item_v1.CustomSection', [
+            { no: 1, name: 'section_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: 'section_fields', kind: 'message', repeat: 1 /*RepeatType.PACKED*/, T: () => ExtraField },
+        ]);
+    }
+    create(value?: PartialMessage<CustomSection>): CustomSection {
+        const message = globalThis.Object.create(this.messagePrototype!);
+        message.sectionName = '';
+        message.sectionFields = [];
+        if (value !== undefined) reflectionMergePartial<CustomSection>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(
+        reader: IBinaryReader,
+        length: number,
+        options: BinaryReadOptions,
+        target?: CustomSection
+    ): CustomSection {
+        let message = target ?? this.create(),
+            end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string section_name */ 1:
+                    message.sectionName = reader.string();
+                    break;
+                case /* repeated proton_pass_item_v1.ExtraField section_fields */ 2:
+                    message.sectionFields.push(ExtraField.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === 'throw')
+                        throw new globalThis.Error(
+                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
+                        );
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: CustomSection, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string section_name = 1; */
+        if (message.sectionName !== '') writer.tag(1, WireType.LengthDelimited).string(message.sectionName);
+        /* repeated proton_pass_item_v1.ExtraField section_fields = 2; */
+        for (let i = 0; i < message.sectionFields.length; i++)
+            ExtraField.internalBinaryWrite(
+                message.sectionFields[i],
+                writer.tag(2, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        let u = options.writeUnknownFields;
+        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message proton_pass_item_v1.CustomSection
+ */
+export const CustomSection = new CustomSection$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class ItemCustom$Type extends MessageType<ItemCustom> {
+    constructor() {
+        super('proton_pass_item_v1.ItemCustom', [
+            { no: 1, name: 'sections', kind: 'message', repeat: 1 /*RepeatType.PACKED*/, T: () => CustomSection },
+        ]);
+    }
+    create(value?: PartialMessage<ItemCustom>): ItemCustom {
+        const message = globalThis.Object.create(this.messagePrototype!);
+        message.sections = [];
+        if (value !== undefined) reflectionMergePartial<ItemCustom>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(
+        reader: IBinaryReader,
+        length: number,
+        options: BinaryReadOptions,
+        target?: ItemCustom
+    ): ItemCustom {
+        let message = target ?? this.create(),
+            end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated proton_pass_item_v1.CustomSection sections */ 1:
+                    message.sections.push(CustomSection.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === 'throw')
+                        throw new globalThis.Error(
+                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
+                        );
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: ItemCustom, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* repeated proton_pass_item_v1.CustomSection sections = 1; */
+        for (let i = 0; i < message.sections.length; i++)
+            CustomSection.internalBinaryWrite(
+                message.sections[i],
+                writer.tag(1, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        let u = options.writeUnknownFields;
+        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message proton_pass_item_v1.ItemCustom
+ */
+export const ItemCustom = new ItemCustom$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class ItemSSHKey$Type extends MessageType<ItemSSHKey> {
+    constructor() {
+        super('proton_pass_item_v1.ItemSSHKey', [
+            { no: 1, name: 'private_key', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: 'public_key', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: 'sections', kind: 'message', repeat: 1 /*RepeatType.PACKED*/, T: () => CustomSection },
+        ]);
+    }
+    create(value?: PartialMessage<ItemSSHKey>): ItemSSHKey {
+        const message = globalThis.Object.create(this.messagePrototype!);
+        message.privateKey = '';
+        message.publicKey = '';
+        message.sections = [];
+        if (value !== undefined) reflectionMergePartial<ItemSSHKey>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(
+        reader: IBinaryReader,
+        length: number,
+        options: BinaryReadOptions,
+        target?: ItemSSHKey
+    ): ItemSSHKey {
+        let message = target ?? this.create(),
+            end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string private_key */ 1:
+                    message.privateKey = reader.string();
+                    break;
+                case /* string public_key */ 2:
+                    message.publicKey = reader.string();
+                    break;
+                case /* repeated proton_pass_item_v1.CustomSection sections */ 3:
+                    message.sections.push(CustomSection.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === 'throw')
+                        throw new globalThis.Error(
+                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
+                        );
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: ItemSSHKey, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string private_key = 1; */
+        if (message.privateKey !== '') writer.tag(1, WireType.LengthDelimited).string(message.privateKey);
+        /* string public_key = 2; */
+        if (message.publicKey !== '') writer.tag(2, WireType.LengthDelimited).string(message.publicKey);
+        /* repeated proton_pass_item_v1.CustomSection sections = 3; */
+        for (let i = 0; i < message.sections.length; i++)
+            CustomSection.internalBinaryWrite(
+                message.sections[i],
+                writer.tag(3, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        let u = options.writeUnknownFields;
+        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message proton_pass_item_v1.ItemSSHKey
+ */
+export const ItemSSHKey = new ItemSSHKey$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class ItemWifi$Type extends MessageType<ItemWifi> {
+    constructor() {
+        super('proton_pass_item_v1.ItemWifi', [
+            { no: 1, name: 'ssid', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: 'password', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: 'security', kind: 'enum', T: () => ['proton_pass_item_v1.WifiSecurity', WifiSecurity] },
+            { no: 4, name: 'sections', kind: 'message', repeat: 1 /*RepeatType.PACKED*/, T: () => CustomSection },
+        ]);
+    }
+    create(value?: PartialMessage<ItemWifi>): ItemWifi {
+        const message = globalThis.Object.create(this.messagePrototype!);
+        message.ssid = '';
+        message.password = '';
+        message.security = 0;
+        message.sections = [];
+        if (value !== undefined) reflectionMergePartial<ItemWifi>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: ItemWifi): ItemWifi {
+        let message = target ?? this.create(),
+            end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string ssid */ 1:
+                    message.ssid = reader.string();
+                    break;
+                case /* string password */ 2:
+                    message.password = reader.string();
+                    break;
+                case /* proton_pass_item_v1.WifiSecurity security */ 3:
+                    message.security = reader.int32();
+                    break;
+                case /* repeated proton_pass_item_v1.CustomSection sections */ 4:
+                    message.sections.push(CustomSection.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === 'throw')
+                        throw new globalThis.Error(
+                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
+                        );
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: ItemWifi, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string ssid = 1; */
+        if (message.ssid !== '') writer.tag(1, WireType.LengthDelimited).string(message.ssid);
+        /* string password = 2; */
+        if (message.password !== '') writer.tag(2, WireType.LengthDelimited).string(message.password);
+        /* proton_pass_item_v1.WifiSecurity security = 3; */
+        if (message.security !== 0) writer.tag(3, WireType.Varint).int32(message.security);
+        /* repeated proton_pass_item_v1.CustomSection sections = 4; */
+        for (let i = 0; i < message.sections.length; i++)
+            CustomSection.internalBinaryWrite(
+                message.sections[i],
+                writer.tag(4, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        let u = options.writeUnknownFields;
+        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message proton_pass_item_v1.ItemWifi
+ */
+export const ItemWifi = new ItemWifi$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class ItemCreditCard$Type extends MessageType<ItemCreditCard> {
     constructor() {
         super('proton_pass_item_v1.ItemCreditCard', [
@@ -1090,7 +1465,7 @@ class ItemIdentity$Type extends MessageType<ItemIdentity> {
                 name: 'extra_sections',
                 kind: 'message',
                 repeat: 1 /*RepeatType.PACKED*/,
-                T: () => ExtraIdentitySection,
+                T: () => CustomSection,
             },
         ]);
     }
@@ -1255,10 +1630,8 @@ class ItemIdentity$Type extends MessageType<ItemIdentity> {
                 case /* repeated proton_pass_item_v1.ExtraField extra_work_details */ 36:
                     message.extraWorkDetails.push(ExtraField.internalBinaryRead(reader, reader.uint32(), options));
                     break;
-                case /* repeated proton_pass_item_v1.ExtraIdentitySection extra_sections */ 37:
-                    message.extraSections.push(
-                        ExtraIdentitySection.internalBinaryRead(reader, reader.uint32(), options)
-                    );
+                case /* repeated proton_pass_item_v1.CustomSection extra_sections */ 37:
+                    message.extraSections.push(CustomSection.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1368,9 +1741,9 @@ class ItemIdentity$Type extends MessageType<ItemIdentity> {
                 writer.tag(36, WireType.LengthDelimited).fork(),
                 options
             ).join();
-        /* repeated proton_pass_item_v1.ExtraIdentitySection extra_sections = 37; */
+        /* repeated proton_pass_item_v1.CustomSection extra_sections = 37; */
         for (let i = 0; i < message.extraSections.length; i++)
-            ExtraIdentitySection.internalBinaryWrite(
+            CustomSection.internalBinaryWrite(
                 message.extraSections[i],
                 writer.tag(37, WireType.LengthDelimited).fork(),
                 options
@@ -1384,74 +1757,6 @@ class ItemIdentity$Type extends MessageType<ItemIdentity> {
  * @generated MessageType for protobuf message proton_pass_item_v1.ItemIdentity
  */
 export const ItemIdentity = new ItemIdentity$Type();
-// @generated message type with reflection information, may provide speed optimized methods
-class ExtraIdentitySection$Type extends MessageType<ExtraIdentitySection> {
-    constructor() {
-        super('proton_pass_item_v1.ExtraIdentitySection', [
-            { no: 1, name: 'section_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: 'section_fields', kind: 'message', repeat: 1 /*RepeatType.PACKED*/, T: () => ExtraField },
-        ]);
-    }
-    create(value?: PartialMessage<ExtraIdentitySection>): ExtraIdentitySection {
-        const message = globalThis.Object.create(this.messagePrototype!);
-        message.sectionName = '';
-        message.sectionFields = [];
-        if (value !== undefined) reflectionMergePartial<ExtraIdentitySection>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(
-        reader: IBinaryReader,
-        length: number,
-        options: BinaryReadOptions,
-        target?: ExtraIdentitySection
-    ): ExtraIdentitySection {
-        let message = target ?? this.create(),
-            end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* string section_name */ 1:
-                    message.sectionName = reader.string();
-                    break;
-                case /* repeated proton_pass_item_v1.ExtraField section_fields */ 2:
-                    message.sectionFields.push(ExtraField.internalBinaryRead(reader, reader.uint32(), options));
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === 'throw')
-                        throw new globalThis.Error(
-                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
-                        );
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(
-        message: ExtraIdentitySection,
-        writer: IBinaryWriter,
-        options: BinaryWriteOptions
-    ): IBinaryWriter {
-        /* string section_name = 1; */
-        if (message.sectionName !== '') writer.tag(1, WireType.LengthDelimited).string(message.sectionName);
-        /* repeated proton_pass_item_v1.ExtraField section_fields = 2; */
-        for (let i = 0; i < message.sectionFields.length; i++)
-            ExtraField.internalBinaryWrite(
-                message.sectionFields[i],
-                writer.tag(2, WireType.LengthDelimited).fork(),
-                options
-            ).join();
-        let u = options.writeUnknownFields;
-        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message proton_pass_item_v1.ExtraIdentitySection
- */
-export const ExtraIdentitySection = new ExtraIdentitySection$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class AllowedAndroidApp$Type extends MessageType<AllowedAndroidApp> {
     constructor() {
@@ -1800,6 +2105,71 @@ class ExtraHiddenField$Type extends MessageType<ExtraHiddenField> {
  */
 export const ExtraHiddenField = new ExtraHiddenField$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class ExtraTimestampField$Type extends MessageType<ExtraTimestampField> {
+    constructor() {
+        super('proton_pass_item_v1.ExtraTimestampField', [
+            { no: 1, name: 'timestamp', kind: 'message', T: () => Timestamp },
+        ]);
+    }
+    create(value?: PartialMessage<ExtraTimestampField>): ExtraTimestampField {
+        const message = globalThis.Object.create(this.messagePrototype!);
+        if (value !== undefined) reflectionMergePartial<ExtraTimestampField>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(
+        reader: IBinaryReader,
+        length: number,
+        options: BinaryReadOptions,
+        target?: ExtraTimestampField
+    ): ExtraTimestampField {
+        let message = target ?? this.create(),
+            end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* google.protobuf.Timestamp timestamp */ 1:
+                    message.timestamp = Timestamp.internalBinaryRead(
+                        reader,
+                        reader.uint32(),
+                        options,
+                        message.timestamp
+                    );
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === 'throw')
+                        throw new globalThis.Error(
+                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
+                        );
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(
+        message: ExtraTimestampField,
+        writer: IBinaryWriter,
+        options: BinaryWriteOptions
+    ): IBinaryWriter {
+        /* google.protobuf.Timestamp timestamp = 1; */
+        if (message.timestamp)
+            Timestamp.internalBinaryWrite(
+                message.timestamp,
+                writer.tag(1, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        let u = options.writeUnknownFields;
+        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message proton_pass_item_v1.ExtraTimestampField
+ */
+export const ExtraTimestampField = new ExtraTimestampField$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class ExtraField$Type extends MessageType<ExtraField> {
     constructor() {
         super('proton_pass_item_v1.ExtraField', [
@@ -1807,6 +2177,7 @@ class ExtraField$Type extends MessageType<ExtraField> {
             { no: 2, name: 'totp', kind: 'message', oneof: 'content', T: () => ExtraTotp },
             { no: 3, name: 'text', kind: 'message', oneof: 'content', T: () => ExtraTextField },
             { no: 4, name: 'hidden', kind: 'message', oneof: 'content', T: () => ExtraHiddenField },
+            { no: 5, name: 'timestamp', kind: 'message', oneof: 'content', T: () => ExtraTimestampField },
         ]);
     }
     create(value?: PartialMessage<ExtraField>): ExtraField {
@@ -1863,6 +2234,17 @@ class ExtraField$Type extends MessageType<ExtraField> {
                         ),
                     };
                     break;
+                case /* proton_pass_item_v1.ExtraTimestampField timestamp */ 5:
+                    message.content = {
+                        oneofKind: 'timestamp',
+                        timestamp: ExtraTimestampField.internalBinaryRead(
+                            reader,
+                            reader.uint32(),
+                            options,
+                            (message.content as any).timestamp
+                        ),
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === 'throw')
@@ -1898,6 +2280,13 @@ class ExtraField$Type extends MessageType<ExtraField> {
             ExtraHiddenField.internalBinaryWrite(
                 message.content.hidden,
                 writer.tag(4, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* proton_pass_item_v1.ExtraTimestampField timestamp = 5; */
+        if (message.content.oneofKind === 'timestamp')
+            ExtraTimestampField.internalBinaryWrite(
+                message.content.timestamp,
+                writer.tag(5, WireType.LengthDelimited).fork(),
                 options
             ).join();
         let u = options.writeUnknownFields;
@@ -1979,6 +2368,9 @@ class Content$Type extends MessageType<Content> {
             { no: 4, name: 'alias', kind: 'message', oneof: 'content', T: () => ItemAlias },
             { no: 5, name: 'credit_card', kind: 'message', oneof: 'content', T: () => ItemCreditCard },
             { no: 6, name: 'identity', kind: 'message', oneof: 'content', T: () => ItemIdentity },
+            { no: 7, name: 'ssh_key', kind: 'message', oneof: 'content', T: () => ItemSSHKey },
+            { no: 8, name: 'wifi', kind: 'message', oneof: 'content', T: () => ItemWifi },
+            { no: 9, name: 'custom', kind: 'message', oneof: 'content', T: () => ItemCustom },
         ]);
     }
     create(value?: PartialMessage<Content>): Content {
@@ -2048,6 +2440,39 @@ class Content$Type extends MessageType<Content> {
                         ),
                     };
                     break;
+                case /* proton_pass_item_v1.ItemSSHKey ssh_key */ 7:
+                    message.content = {
+                        oneofKind: 'sshKey',
+                        sshKey: ItemSSHKey.internalBinaryRead(
+                            reader,
+                            reader.uint32(),
+                            options,
+                            (message.content as any).sshKey
+                        ),
+                    };
+                    break;
+                case /* proton_pass_item_v1.ItemWifi wifi */ 8:
+                    message.content = {
+                        oneofKind: 'wifi',
+                        wifi: ItemWifi.internalBinaryRead(
+                            reader,
+                            reader.uint32(),
+                            options,
+                            (message.content as any).wifi
+                        ),
+                    };
+                    break;
+                case /* proton_pass_item_v1.ItemCustom custom */ 9:
+                    message.content = {
+                        oneofKind: 'custom',
+                        custom: ItemCustom.internalBinaryRead(
+                            reader,
+                            reader.uint32(),
+                            options,
+                            (message.content as any).custom
+                        ),
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === 'throw')
@@ -2095,6 +2520,27 @@ class Content$Type extends MessageType<Content> {
             ItemIdentity.internalBinaryWrite(
                 message.content.identity,
                 writer.tag(6, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* proton_pass_item_v1.ItemSSHKey ssh_key = 7; */
+        if (message.content.oneofKind === 'sshKey')
+            ItemSSHKey.internalBinaryWrite(
+                message.content.sshKey,
+                writer.tag(7, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* proton_pass_item_v1.ItemWifi wifi = 8; */
+        if (message.content.oneofKind === 'wifi')
+            ItemWifi.internalBinaryWrite(
+                message.content.wifi,
+                writer.tag(8, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* proton_pass_item_v1.ItemCustom custom = 9; */
+        if (message.content.oneofKind === 'custom')
+            ItemCustom.internalBinaryWrite(
+                message.content.custom,
+                writer.tag(9, WireType.LengthDelimited).fork(),
                 options
             ).join();
         let u = options.writeUnknownFields;

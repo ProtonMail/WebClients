@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package proton_pass_item_v1;
 
+import "google/protobuf/timestamp.proto";
+
 // Item types
 
 message ItemNote {
@@ -40,6 +42,36 @@ message ItemLogin {
 }
 
 message ItemAlias {
+}
+
+message CustomSection {
+	string section_name = 1;
+	repeated ExtraField section_fields = 2;
+}
+
+message ItemCustom {
+	repeated CustomSection sections = 1;
+}
+
+message ItemSSHKey {
+	string private_key = 1;
+	string public_key = 2;
+	repeated CustomSection sections = 3;
+}
+
+message ItemWifi {
+	string ssid = 1;
+	string password = 2;
+	WifiSecurity security = 3;
+	repeated CustomSection sections = 4;
+}
+
+enum WifiSecurity {
+	UnspecifiedWifiSecurity = 0;
+	WPA = 1;
+	WPA2 = 2;
+	WPA3 = 3;
+	WEP = 4;
 }
 
 // Credit cards
@@ -116,12 +148,7 @@ message ItemIdentity {
 	repeated ExtraField extra_work_details = 36;
 
 	// Extra sections
-	repeated ExtraIdentitySection extra_sections = 37;
-}
-
-message ExtraIdentitySection {
-	string section_name = 1;
-	repeated ExtraField section_fields = 2;
+	repeated CustomSection extra_sections = 37;
 }
 
 // Client extras
@@ -153,12 +180,17 @@ message ExtraHiddenField {
 	string content = 1;
 }
 
+message ExtraTimestampField {
+	google.protobuf.Timestamp timestamp = 1;
+}
+
 message ExtraField {
 	string field_name = 1;
 	oneof content {
 		ExtraTotp totp = 2;
 		ExtraTextField text = 3;
 		ExtraHiddenField hidden = 4;
+		ExtraTimestampField timestamp = 5;
 	}
 }
 
@@ -176,6 +208,9 @@ message Content {
 		ItemAlias alias = 4;
 		ItemCreditCard credit_card = 5;
 		ItemIdentity identity = 6;
+		ItemSSHKey ssh_key = 7;
+		ItemWifi wifi = 8;
+		ItemCustom custom = 9;
 	}
 }
 
