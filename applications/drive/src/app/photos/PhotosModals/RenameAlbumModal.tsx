@@ -15,17 +15,19 @@ import {
 
 import { validateLinkNameField } from '../../store';
 
-export const CreateAlbumModal = ({
-    createAlbumModal,
-    createAlbum,
+export const RenameAlbumModal = ({
+    renameAlbumModal,
+    renameAlbum,
+    name,
 }: {
-    createAlbumModal: ModalStateReturnObj;
-    createAlbum: (name: string) => Promise<void>;
+    renameAlbumModal: ModalStateReturnObj;
+    renameAlbum: (name: string) => Promise<void>;
+    name?: string;
 }) => {
     const { validator, onFormSubmit } = useFormErrors();
-    const [albumName, setAlbumName] = useState<string>('');
+    const [albumName, setAlbumName] = useState<string>(name || '');
     const [loading, setLoading] = useState<boolean>(false);
-    const { modalProps, openModal, render } = createAlbumModal;
+    const { modalProps, openModal, render } = renameAlbumModal;
 
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -35,7 +37,7 @@ export const CreateAlbumModal = ({
 
         setLoading(true);
 
-        void createAlbum(albumName).finally(() => {
+        void renameAlbum(albumName).finally(() => {
             setLoading(false);
             openModal(false);
         });
@@ -45,7 +47,7 @@ export const CreateAlbumModal = ({
         <>
             {render && (
                 <ModalTwo {...modalProps} as="form" onSubmit={onSubmit}>
-                    <ModalTwoHeader title={c('Header').t`Create new album`} />
+                    <ModalTwoHeader title={c('Header').t`Rename`} />
                     <ModalTwoContent>
                         <InputFieldTwo
                             autoFocus
@@ -61,7 +63,7 @@ export const CreateAlbumModal = ({
                     <ModalTwoFooter>
                         <Button onClick={() => openModal(false)}>{c('Action').t`Cancel`}</Button>
                         <Button color="norm" disabled={!albumName.length} type="submit" loading={loading}>
-                            {c('Action').t`Create`}
+                            {c('Action').t`Rename`}
                         </Button>
                     </ModalTwoFooter>
                 </ModalTwo>
