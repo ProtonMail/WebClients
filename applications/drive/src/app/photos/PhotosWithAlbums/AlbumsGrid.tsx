@@ -14,6 +14,7 @@ type AlbumsGridProps = {
     isLoading: boolean;
     onItemClick: (linkId: string) => void;
     onItemShare: (linkId: string) => void;
+    onItemRename: (linkId: string) => void;
 };
 
 export const AlbumsGrid: FC<AlbumsGridProps> = ({
@@ -23,6 +24,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
     isLoading,
     onItemClick,
     onItemShare,
+    onItemRename,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
@@ -121,7 +123,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
                             onItemClick(item.linkId);
                         }}
                         onRename={() => {
-                            // TODO: Rename modal
+                            onItemRename(item.linkId);
                         }}
                         onShare={() => {
                             onItemShare(item.linkId);
