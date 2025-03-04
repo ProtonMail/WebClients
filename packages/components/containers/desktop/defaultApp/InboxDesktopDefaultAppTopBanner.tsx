@@ -19,8 +19,12 @@ export const InboxDesktopDefaultAppTopBanner = () => {
     };
 
     useEffect(() => {
+        if (!enabled) {
+            return;
+        }
+
         setShowBanner(!isDefault && !getInboxDesktopInfo('defaultMailtoBannerDismissed') && shouldCheck);
-    }, [shouldCheck, isDefault]);
+    }, [enabled, shouldCheck, isDefault]);
 
     if (!enabled || !showBanner) {
         return null;
