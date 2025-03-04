@@ -343,6 +343,8 @@ export { default as PasswordInputTwo } from './components/v2/input/PasswordInput
 export { default as TextAreaTwo } from './components/v2/input/TextArea';
 export { default as TotpInput } from './components/v2/input/TotpInput';
 export { default as PhoneInput } from './components/v2/phone/LazyPhoneInput';
+
+export { default as UncontainedWrapper } from './components/uncontainedwrapper/UncontainedWrapper';
 export { default as useFormErrors } from './components/v2/useFormErrors';
 export { default as AppVersion } from './components/version/AppVersion';
 export { default as VideoInstructions } from './components/videoInstructions/VideoInstructions';
