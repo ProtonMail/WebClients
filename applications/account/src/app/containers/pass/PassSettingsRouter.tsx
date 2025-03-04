@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { PassEvents, PassPolicies, PrivateMainSettingsArea } from '@proton/components';
-import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { PassReports } from '@proton/components/containers/pass/reports/PassReports';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 
@@ -29,25 +29,31 @@ const PassSettingsRouter = ({
                     <PassDownloadsSettingsPage />
                 </PrivateMainSettingsArea>
             </Route>
-            <Route path={getSectionPath(path, activityLogs)}>
-                <PrivateMainSettingsArea config={activityLogs}>
-                    <PassEvents />
-                </PrivateMainSettingsArea>
-            </Route>
-            <Route path={getSectionPath(path, policies)}>
-                <PrivateMainSettingsArea config={policies}>
-                    <PassBridgeProvider>
-                        <PassPolicies />
-                    </PassBridgeProvider>
-                </PrivateMainSettingsArea>
-            </Route>
-            <Route path={getSectionPath(path, reports)}>
-                <PrivateMainSettingsArea config={reports}>
-                    <PassBridgeProvider>
-                        <PassReports />
-                    </PassBridgeProvider>
-                </PrivateMainSettingsArea>
-            </Route>
+            {getIsSectionAvailable(activityLogs) && (
+                <Route path={getSectionPath(path, activityLogs)}>
+                    <PrivateMainSettingsArea config={activityLogs}>
+                        <PassEvents />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(policies) && (
+                <Route path={getSectionPath(path, policies)}>
+                    <PrivateMainSettingsArea config={policies}>
+                        <PassBridgeProvider>
+                            <PassPolicies />
+                        </PassBridgeProvider>
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(reports) && (
+                <Route path={getSectionPath(path, reports)}>
+                    <PrivateMainSettingsArea config={reports}>
+                        <PassBridgeProvider>
+                            <PassReports />
+                        </PassBridgeProvider>
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
             {redirect}
         </Switch>
     );
