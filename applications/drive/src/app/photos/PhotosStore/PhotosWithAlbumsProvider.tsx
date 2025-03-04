@@ -8,7 +8,7 @@ import {
     queryDeletePhotosShare,
     queryPhotos,
     queryRemoveAlbumPhotos,
-    queryUpdateAlbum,
+    queryUpdateAlbumCover,
 } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
@@ -309,7 +309,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 const response = await request<{
                     Code: number;
                 }>(
-                    queryUpdateAlbum(volumeId, albumLinkId, {
+                    queryUpdateAlbumCover(volumeId, albumLinkId, {
                         CoverLinkID: coverLinkId,
                     }),
                     abortSignal
