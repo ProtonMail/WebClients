@@ -27,7 +27,6 @@ type Props = {
     onClick: () => void;
     onRename: () => void;
     onShare: () => void;
-    onDelete: () => void;
 };
 
 const getAltText = ({ mimeType, name }: DecryptedLink) =>
@@ -36,7 +35,6 @@ const getAltText = ({ mimeType, name }: DecryptedLink) =>
 interface AlbumDropdownButtonprops {
     onRename: () => void;
     onShare: () => void;
-    onDelete: () => void;
 }
 
 export const AlbumDropdownButton = ({ onShare, onRename }: AlbumDropdownButtonprops) => {
@@ -80,31 +78,18 @@ export const AlbumDropdownButton = ({ onShare, onRename }: AlbumDropdownButtonpr
                         <Icon className="mr-2" name="user-plus" />
                         {c('Action').t`Share album`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton
-                        onClick={() => {
-                            // TODO: console.log("Delete album modal/flow")
-                        }}
-                        className="text-left flex items-center flex-nowrap"
-                    >
+                    {/* TODO: Add delete album logic from album grid view */}
+                    {/* <DropdownMenuButton className="text-left flex items-center flex-nowrap">
                         <Icon className="mr-2" name="trash" />
                         {c('Action').t`Delete album`}
-                    </DropdownMenuButton>
+                    </DropdownMenuButton> */}
                 </DropdownMenu>
             </Dropdown>
         </>
     );
 };
 
-export const AlbumsCard: FC<Props> = ({
-    style,
-    onRender,
-    onRenderLoadedLink,
-    album,
-    onClick,
-    onShare,
-    onRename,
-    onDelete,
-}) => {
+export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, album, onClick, onShare, onRename }) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
@@ -236,7 +221,7 @@ export const AlbumsCard: FC<Props> = ({
                             </div>
                         </div>
                         <div className="shrink-0 mb-2">
-                            <AlbumDropdownButton onShare={onShare} onDelete={onDelete} onRename={onRename} />
+                            <AlbumDropdownButton onShare={onShare} onRename={onRename} />
                         </div>
                     </div>
                 </>
