@@ -44,7 +44,11 @@ interface TabOption {
     onClick: () => void;
 }
 
-const AlbumGalleryDropdownButton = () => {
+interface AlbumGalleryDropdownButtonProps {
+    onDelete: () => void;
+}
+
+const AlbumGalleryDropdownButton = ({ onDelete }: AlbumGalleryDropdownButtonProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     return (
         <>
@@ -71,7 +75,7 @@ const AlbumGalleryDropdownButton = () => {
                         <Icon className="mr-2" name="info-circle" />
                         {c('Action').t`Details`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                    <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onDelete}>
                         <Icon className="mr-2" name="trash" />
                         {c('Action').t`Delete album`}
                     </DropdownMenuButton>
@@ -186,6 +190,7 @@ interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGaller
     requestDownload: (linkIds: string[]) => Promise<void>;
     data: PhotoGridItem[];
     album: DecryptedAlbum;
+    onDeleteAlbum: () => void;
 }
 
 const ToolbarRightActionsGallery = ({
@@ -207,6 +212,7 @@ const ToolbarRightActionsAlbumGallery = ({
     requestDownload,
     album,
     data,
+    onDeleteAlbum,
 }: ToolbarRightActionsAlbumGalleryProps) => {
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
@@ -247,7 +253,7 @@ const ToolbarRightActionsAlbumGallery = ({
                 <Icon name="user-plus" className="mr-2" alt={c('Action').t`Share`} />
                 {c('Action').t`Share`}
             </ToolbarButton>
-            <AlbumGalleryDropdownButton />
+            <AlbumGalleryDropdownButton onDelete={onDeleteAlbum} />
             {linkSharingModal}
         </>
     );
@@ -268,6 +274,7 @@ interface PhotosWithAlbumToolbarProps {
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onSelectCover?: () => Promise<void>;
     album?: DecryptedAlbum;
+    onDeleteAlbum?: () => void;
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
@@ -285,6 +292,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onFileUpload,
     onSelectCover,
     album,
+    onDeleteAlbum,
 }) => {
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
@@ -297,7 +305,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                 )}
                 {tabSelection === 'albums' && <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />}
 
-                {tabSelection === 'albums-gallery' && !hasSelection && album && (
+                {tabSelection === 'albums-gallery' && !hasSelection && album && onDeleteAlbum && (
                     <ToolbarRightActionsAlbumGallery
                         uploadDisabled={uploadDisabled}
                         shareId={shareId}
@@ -306,6 +314,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         data={data}
                         onFileUpload={onFileUpload}
                         album={album}
+                        onDeleteAlbum={onDeleteAlbum}
                     />
                 )}
 

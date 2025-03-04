@@ -1,4 +1,5 @@
 import { PHOTOS_PAGE_SIZE } from '../../drive/constants';
+import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 export const queryPhotos = (
     volumeId: string,
@@ -137,4 +138,15 @@ export const queryRemoveAlbumPhotos = (
     method: 'POST',
     url: `drive/photos/volumes/${volumeId}/albums/${albumLinkId}/remove-multiple`,
     data,
+});
+
+export const queryDeleteAlbum = (
+    volumeId: string,
+    albumLinkId: string,
+    params: { DeleteAlbumPhotos?: 0 | 1 } = {}
+) => ({
+    method: 'DELETE',
+    url: `drive/photos/volumes/${volumeId}/albums/${albumLinkId}`,
+    params,
+    silence: [API_CUSTOM_ERROR_CODES.ALBUM_DATA_LOSS],
 });
