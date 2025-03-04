@@ -53,6 +53,11 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
         label: c('Label').t`Hidden`,
         placeholder: c('Placeholder').t`Add hidden text`,
     },
+    timestamp: {
+        icon: 'clock',
+        label: c('Label').t`Timestamp`,
+        placeholder: c('Placeholder').t`Add date and time`,
+    },
 });
 
 export const getExtraFieldOption = (type: ExtraFieldType) => getExtraFieldOptions()[type];

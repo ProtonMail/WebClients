@@ -39,6 +39,9 @@ export type ItemEditIntentDTO = {
     note: never;
     creditCard: never;
     identity: never;
+    sshKey: never;
+    wifi: never;
+    custom: never;
 };
 
 export type ItemImportIntentDTO = {

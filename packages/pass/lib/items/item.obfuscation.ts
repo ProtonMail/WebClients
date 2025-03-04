@@ -62,6 +62,10 @@ export const obfuscateItem = <T extends ItemType = ItemType>(item: DeobfuscatedI
             return { ...item, ...base } satisfies Item<'alias'> as Item<T>;
         case 'identity':
             return { ...item, ...base } satisfies Item<'identity'> as Item<T>;
+        case 'sshKey':
+        case 'wifi':
+        case 'custom':
+            throw new Error('FIXME');
     }
 };
 
@@ -102,6 +106,10 @@ export const deobfuscateItem = <T extends ItemType>(item: Item): DeobfuscatedIte
             return { ...item, ...base } satisfies DeobfuscatedItem<'alias'> as DeobfuscatedItem<T>;
         case 'identity':
             return { ...item, ...base } satisfies DeobfuscatedItem<'identity'> as DeobfuscatedItem<T>;
+        case 'sshKey':
+        case 'wifi':
+        case 'custom':
+            throw new Error('FIXME');
     }
 };
 
@@ -133,5 +141,9 @@ export const deobfuscateItemPartial = <T extends ItemType, R = DeobfuscatedItem<
             return { ...item, ...base } satisfies DeobfuscatedItem<'alias', DeobfuscateMode.AUTO> as R;
         case 'identity':
             return { ...item, ...base } satisfies DeobfuscatedItem<'identity', DeobfuscateMode.AUTO> as R;
+        case 'sshKey':
+        case 'wifi':
+        case 'custom':
+            throw new Error('FIXME');
     }
 };
