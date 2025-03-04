@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import { Icon, type IconName, useActiveBreakpoint } from '@proton/components/index';
+import { Icon, type IconName, UncontainedWrapper } from '@proton/components/index';
 import clsx from '@proton/utils/clsx';
 
 import { AlbumTag, PhotoTag, type Tag } from '../../../store';
@@ -106,10 +106,8 @@ const getTagLabelWithIcon = (
 };
 
 function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) {
-    const { viewportWidth } = useActiveBreakpoint();
-
     return (
-        <div className="flex flex-wrap items-center py-2 gap-1 mx-4">
+        <UncontainedWrapper className="mx-4" innerClassName="flex flex-nowrap items-center gap-1 py-0.5">
             {tags.map((tag) => {
                 const { iconName, label } = getTagLabelWithIcon(tag);
                 const selected = selectedTags.includes(tag);
@@ -118,7 +116,6 @@ function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) 
                         shape="ghost"
                         aria-pressed={selected}
                         key={tag}
-                        icon={viewportWidth['<=small']}
                         className={clsx(
                             'inline-flex gap-2 items-center flex-nowrap text-semibold',
                             selected ? 'is-active' : 'color-weak'
@@ -126,11 +123,11 @@ function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) 
                         onClick={() => onTagSelect([tag])}
                     >
                         <Icon className="shrink-0" name={iconName} />
-                        <span className={clsx(viewportWidth['<=small'] && 'sr-only')}>{label}</span>
+                        <span>{label}</span>
                     </Button>
                 );
             })}
-        </div>
+        </UncontainedWrapper>
     );
 }
 
