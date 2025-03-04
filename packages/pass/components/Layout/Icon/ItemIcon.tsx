@@ -19,6 +19,9 @@ export const itemTypeToIconName: ItemMap<IconName> = {
     alias: 'alias',
     creditCard: 'credit-card',
     identity: 'card-identity',
+    sshKey: 'filing-cabinet',
+    wifi: 'shield-2-bolt',
+    custom: 'pen-sparks',
 };
 
 export const presentItemIcon = (item: ItemRevision): IconName =>

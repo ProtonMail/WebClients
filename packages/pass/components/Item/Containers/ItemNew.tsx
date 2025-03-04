@@ -30,6 +30,15 @@ const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
     alias: AliasNew,
     creditCard: CreditCardNew,
     identity: IdentityNew,
+    sshKey: () => {
+        throw new Error('FIXME');
+    },
+    wifi: () => {
+        throw new Error('FIXME');
+    },
+    custom: () => {
+        throw new Error('FIXME');
+    },
 };
 
 export const ItemNew: FC = () => {

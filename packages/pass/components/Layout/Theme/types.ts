@@ -15,6 +15,9 @@ export const itemTypeToSubThemeClassName: ItemMap<SubTheme> = {
     login: SubTheme.VIOLET,
     note: SubTheme.ORANGE,
     identity: SubTheme.PURPLE,
+    sshKey: SubTheme.PURPLE, // TODO(@djankovic): FIXME
+    wifi: SubTheme.PURPLE, // TODO(@djankovic): FIXME
+    custom: SubTheme.PURPLE, // TODO(@djankovic): FIXME
 };
 
 /** Avoid importing `ThemeTypes` as it is not
