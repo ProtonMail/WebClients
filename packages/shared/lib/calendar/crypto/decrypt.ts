@@ -5,7 +5,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { isElectronMail } from '../../helpers/desktop';
 import { base64StringToUint8Array } from '../../helpers/encoding';
-import type { AttendeesInfo, CalendarEventData } from '../../interfaces/calendar';
+import type { CalendarEventData } from '../../interfaces/calendar';
 import type { SimpleMap } from '../../interfaces/utils';
 import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from '../constants';
 
@@ -160,14 +160,4 @@ export const decryptAndVerifyCalendarEvent = (
         return decryptCard(base64StringToUint8Array(Data), Signature, publicKeys, sessionKey);
     }
     throw new Error('Unknow event card type');
-};
-
-export const decryptAndVerifyAttendeesInfo = async (
-    attendeesInfo: AttendeesInfo,
-    publicKeysMap: SimpleMap<PublicKeyReference | PublicKeyReference[]>,
-    sessionKey: SessionKey | undefined
-): Promise<AttendeesInfo> => {
-    // TODO: handle decryption logic for attendees info ?
-    console.log('attendeesInfo', attendeesInfo, publicKeysMap, sessionKey);
-    return attendeesInfo;
 };
