@@ -30,6 +30,7 @@ import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../store';
 import { isDecryptedLink, useThumbnailsDownload } from '../../store';
 import { useLinksActions } from '../../store/_links';
 import { sendErrorReport } from '../../utils/errorHandling';
+import { useDeleteAlbumModal } from '../PhotosModals/DeleteAlbumModal';
 import { useRemoveAlbumPhotosModal } from '../PhotosModals/RemoveAlbumPhotosModal';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
@@ -77,6 +78,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         setPhotoAsCover,
         removeAlbumPhotos,
         photoLinkIds,
+        deleteAlbum,
     } = usePhotosWithAlbumsView();
 
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
@@ -87,6 +89,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const createAlbumModal = useModalStateObject();
     const [removeAlbumPhotosModal, showRemoveAlbumPhotosModal] = useRemoveAlbumPhotosModal();
+    const [deleteAlbumModal, showDeleteAlbumModal] = useDeleteAlbumModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -192,18 +195,20 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     }, [createNotification, onSelectCover, selectedItems]);
 
     const handleRemoveAlbumPhotos = useCallback(
-        async ({
-            selectedPhotosIds,
-            missingPhotosIds,
-        }: {
-            selectedPhotosIds: string[];
-            missingPhotosIds?: string[];
-        }) => {
+        async (
+            abortSignal: AbortSignal,
+            {
+                selectedPhotosIds,
+                missingPhotosIds,
+            }: {
+                selectedPhotosIds: string[];
+                missingPhotosIds?: string[];
+            }
+        ) => {
             if (!shareId || !linkId) {
                 return;
             }
             try {
-                const abortSignal = new AbortController().signal;
                 if (missingPhotosIds) {
                     await moveLinks(abortSignal, {
                         shareId,
@@ -221,9 +226,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     ),
                 });
             } catch (e) {
-                if (e instanceof Error) {
-                    createNotification({ text: e.message, type: 'error' });
-                }
                 sendErrorReport(e);
             }
         },
@@ -244,14 +246,17 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             },
             { selectedPhotosIds: [], missingPhotosIds: [] }
         );
-
-        if (!!missingPhotosIds.length) {
-            await handleRemoveAlbumPhotos({ selectedPhotosIds });
+        const abortSignal = new AbortController().signal;
+        if (!missingPhotosIds.length) {
+            await handleRemoveAlbumPhotos(abortSignal, { selectedPhotosIds });
         } else {
             void showRemoveAlbumPhotosModal({
-                missingPhotosIds,
-                selectedPhotosIds,
-                removeAlbumPhotos: handleRemoveAlbumPhotos,
+                selectedPhotosCount: selectedPhotosIds.length,
+                removeAlbumPhotos: (withSave) =>
+                    handleRemoveAlbumPhotos(abortSignal, {
+                        missingPhotosIds: withSave ? missingPhotosIds : undefined,
+                        selectedPhotosIds,
+                    }),
             });
         }
     }, [selectedItems, photoLinkIds, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
@@ -259,12 +264,58 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const isAlbumPhotosEmpty = albumPhotos.length === 0;
     const album = albumLinkId ? albums.find((album) => album.linkId === albumLinkId) : undefined;
     const isOwner = album?.signatureEmail === userAddressEmail;
+    const albumName = album?.name;
+
+    const handleDeleteAlbum = useCallback(
+        async (
+            abortSignal: AbortSignal,
+            { missingPhotosIds, force }: { missingPhotosIds: string[]; force: boolean }
+        ) => {
+            if (!shareId || !linkId || !albumName) {
+                return;
+            }
+            if (missingPhotosIds.length && !force) {
+                await moveLinks(abortSignal, {
+                    shareId,
+                    linkIds: missingPhotosIds,
+                    newShareId: shareId,
+                    newParentLinkId: linkId,
+                });
+            }
+            await deleteAlbum(abortSignal, albumLinkId, force);
+            createNotification({
+                text: c('Info').t`${albumName} has been successfully deleted`,
+            });
+        },
+        [shareId, linkId, moveLinks, deleteAlbum, albumLinkId, createNotification, albumName]
+    );
+
+    // For delete album we do the happy path and just compare with photos you have in cache.
+    // In most cases, if user have all the photos in his library will mean there are no direct children inside the album
+    // There is a fallback in the modal in case BE detect that some items are direct children of the album
+    const onDeleteAlbum = useCallback(async () => {
+        if (!albumName) {
+            return;
+        }
+        const abortSignal = new AbortController().signal;
+        const missingPhotosIds = albumPhotosLinkIds.filter((photoLinkId) => !photoLinkIds.includes(photoLinkId));
+        void showDeleteAlbumModal({
+            missingPhotosCount: missingPhotosIds.length,
+            name: albumName,
+            deleteAlbum: (force, childLinkIds) =>
+                // childLinkIds are from BE, so this is a better source of truth compare to missingPhotosIds
+                handleDeleteAlbum(abortSignal, { missingPhotosIds: childLinkIds || missingPhotosIds, force }),
+            onDeleted: () => {
+                navigateToAlbums();
+            },
+        });
+    }, [albumPhotosLinkIds, photoLinkIds, handleDeleteAlbum, showDeleteAlbumModal, albumName, navigateToAlbums]);
 
     useEffect(() => {
-        if (album) {
-            updateTitle(`Album > ${album.name}`);
+        if (albumName) {
+            updateTitle(`Album > ${albumName}`);
         }
-    }, [album, updateTitle]);
+    }, [albumName, updateTitle]);
 
     if (!shareId || !linkId || !album || isAlbumsLoading || isAlbumPhotosLoading) {
         return <Loader />;
@@ -353,12 +404,12 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                                 </span>
                             )}
 
-                            {selectedCount === 0 && album && (
+                            {selectedCount === 0 && albumName && (
                                 <ToolbarLeftActionsAlbumsGallery
                                     onAlbumsClick={() => {
                                         navigateToAlbums();
                                     }}
-                                    name={album.name}
+                                    name={albumName}
                                     isLoading={isAlbumsLoading}
                                 />
                             )}
@@ -379,6 +430,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onFileUpload={onPhotoUploadedToAlbum}
                             removeAlbumPhotos={onRemoveAlbumPhotos}
                             onSelectCover={onSelectCoverToolbar}
+                            onDeleteAlbum={onDeleteAlbum}
                         />
                     }
                 />
@@ -426,6 +478,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 )}
             </UploadDragDrop>
             {removeAlbumPhotosModal}
+            {deleteAlbumModal}
         </>
     );
 };
