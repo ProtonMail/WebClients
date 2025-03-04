@@ -1,3 +1,7 @@
+### Version 1.29.5
+
+- Support coupons from in-app notifications
+
 ### Version 1.29.4
 
 - Improve in-app messaging triggers
