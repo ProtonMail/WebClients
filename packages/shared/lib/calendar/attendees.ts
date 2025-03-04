@@ -89,11 +89,15 @@ export const toInternalAttendee = (
             return attendee;
         }
         const partstat = toIcsPartstat(extra.Status);
+        // TODO: Manage decryption of RSVP note here (comment)
+        // Make helper in calendar/helper/crypto.ts ?
+        const comment = extra.Comment?.Message;
         return {
             ...attendee,
             parameters: {
                 ...attendee.parameters,
                 partstat,
+                comment,
             },
         };
     });

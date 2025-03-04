@@ -285,36 +285,17 @@ export const readCalendarEvent = async ({
         calendarSettings
     );
 
-    // Those comments are the one comming from the
-    const attendeesCommentsFromApi = AttendeesInfo.Attendees.map((attendee) => {
-        // TODO: Handle decryption of API comments there
-        return { comment: attendee.Comment?.Message, token: attendee.Token };
-    });
+    const veventAttendees = decryptedAttendeesEvents.reduce<VcalAttendeeProperty[]>((acc, event) => {
+        if (!event) {
+            return acc;
+        }
+        const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
+        if (!getIsEventComponent(parsedComponent)) {
+            return acc;
+        }
 
-    const veventAttendees = decryptedAttendeesEvents
-        .reduce<VcalAttendeeProperty[]>((acc, event) => {
-            if (!event) {
-                return acc;
-            }
-            const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
-            if (!getIsEventComponent(parsedComponent)) {
-                return acc;
-            }
-            return acc.concat(toInternalAttendee(parsedComponent, AttendeesInfo.Attendees));
-        }, [])
-        // Map the comments from API attendees to ICS attendees
-        .map((attendee) => {
-            const icsToken = attendee.parameters?.['x-pm-token'];
-            const comment = attendeesCommentsFromApi.find(({ token }) => token === icsToken)?.comment;
-
-            return {
-                ...attendee,
-                parameters: {
-                    ...attendee.parameters,
-                    comment,
-                },
-            };
-        });
+        return acc.concat(toInternalAttendee(parsedComponent, AttendeesInfo.Attendees));
+    }, []);
 
     if (valarmComponents.length) {
         vevent.components = valarmComponents;
