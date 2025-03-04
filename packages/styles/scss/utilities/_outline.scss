@@ -14,6 +14,7 @@
 	}
 
 	&--at-all {
+		// God forgive me for this = please use this really if you know what you're doing, usually removing all outline is not a good practice.
 		&:focus-visible {
 			outline: 0;
 		}
