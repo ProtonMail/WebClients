@@ -14,6 +14,8 @@ export const BilledCycleText = ({ cycle }: { cycle: Cycle }) => {
                 return c('Subscription').t`Billed yearly`;
             case CYCLE.MONTHLY:
                 return c('Subscription').t`Billed monthly`;
+            case CYCLE.SIX:
+                return c('Subscription').t`Billed every 6 months`;
             case CYCLE.THREE:
                 return c('Subscription').t`Billed for 3 months`;
             case CYCLE.FIFTEEN:

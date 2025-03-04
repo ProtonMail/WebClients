@@ -10,7 +10,8 @@ export type Cycle =
     | CYCLE.THIRTY
     | CYCLE.FIFTEEN
     | CYCLE.THREE
-    | CYCLE.EIGHTEEN;
+    | CYCLE.EIGHTEEN
+    | CYCLE.SIX;
 
 export interface CycleMapping<T> {
     [CYCLE.MONTHLY]?: T;
@@ -21,6 +22,7 @@ export interface CycleMapping<T> {
     [CYCLE.FIFTEEN]?: T;
     [CYCLE.THREE]?: T;
     [CYCLE.EIGHTEEN]?: T;
+    [CYCLE.SIX]?: T;
 }
 
 export type Pricing = CycleMapping<number>;

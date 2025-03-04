@@ -500,6 +500,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 499,
                 '3': 0,
+                '6': 0,
                 '12': 1200,
                 '15': 0,
                 '18': 0,
@@ -510,6 +511,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 499,
                 '3': 0,
+                '6': 0,
                 '12': 1200,
                 '15': 0,
                 '18': 0,
@@ -519,6 +521,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 499,
                 '3': 0,
+                '6': 0,
                 '12': 1200,
                 '15': 0,
                 '18': 0,
@@ -544,6 +547,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -554,6 +558,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -563,6 +568,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -589,6 +595,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 6392,
                 '3': 0,
+                '6': 0,
                 '12': 67104,
                 '15': 0,
                 '18': 0,
@@ -599,6 +606,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 6392,
                 '3': 0,
+                '6': 0,
                 '12': 67104,
                 '15': 0,
                 '18': 0,
@@ -608,6 +616,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -634,6 +643,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 1299,
                 '3': 0,
+                '6': 0,
                 '12': 13188,
                 '15': 0,
                 '18': 0,
@@ -644,6 +654,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 1299,
                 '3': 0,
+                '6': 0,
                 '12': 13188,
                 '15': 0,
                 '18': 0,
@@ -653,6 +664,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 1299,
                 '3': 0,
+                '6': 0,
                 '12': 13188,
                 '15': 0,
                 '18': 0,
@@ -685,6 +697,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 11742,
                 '3': 0,
+                '6': 0,
                 '12': 120624,
                 '15': 0,
                 '18': 0,
@@ -695,6 +708,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 10392,
                 '3': 0,
+                '6': 0,
                 '12': 105504,
                 '15': 0,
                 '18': 0,
@@ -704,6 +718,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 1299,
                 '3': 0,
+                '6': 0,
                 '12': 13188,
                 '15': 0,
                 '18': 0,
@@ -730,6 +745,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 2999,
                 '3': 0,
+                '6': 0,
                 '12': 28788,
                 '15': 0,
                 '18': 0,
@@ -742,6 +758,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 2999,
                 '3': 0,
+                '6': 0,
                 '12': 28788,
                 '15': 0,
                 '18': 0,
@@ -751,6 +768,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 2999,
                 '3': 0,
+                '6': 0,
                 '12': 28788,
                 '15': 0,
                 '18': 0,
@@ -777,6 +795,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 1798,
                 '3': 0,
+                '6': 0,
                 '12': 16776,
                 '15': 0,
                 '18': 0,
@@ -787,6 +806,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 1798,
                 '3': 0,
+                '6': 0,
                 '12': 16776,
                 '15': 0,
                 '18': 0,
@@ -796,6 +816,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 1798,
                 '3': 0,
+                '6': 0,
                 '12': 16776,
                 '15': 0,
                 '18': 0,
@@ -824,6 +845,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 8091,
                 '3': 0,
+                '6': 0,
                 '12': 75492,
                 '15': 0,
                 '18': 0,
@@ -834,6 +856,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 8091,
                 '3': 0,
+                '6': 0,
                 '12': 75492,
                 '15': 0,
                 '18': 0,
@@ -843,6 +866,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 1798,
                 '3': 0,
+                '6': 0,
                 '12': 16776,
                 '15': 0,
                 '18': 0,
@@ -873,6 +897,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 7379,
                 '3': 0,
+                '6': 0,
                 '12': 71964,
                 '15': 0,
                 '18': 0,
@@ -883,6 +908,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 2380,
                 '3': 0,
+                '6': 0,
                 '12': 23976,
                 '15': 0,
                 '18': 0,
@@ -892,6 +918,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 7379,
                 '3': 0,
+                '6': 0,
                 '12': 71964,
                 '15': 0,
                 '18': 0,
@@ -928,6 +955,7 @@ describe('getPricingFromPlanIDs', () => {
             all: {
                 '1': 30706,
                 '3': 0,
+                '6': 0,
                 '12': 299844,
                 '15': 0,
                 '18': 0,
@@ -939,6 +967,7 @@ describe('getPricingFromPlanIDs', () => {
             members: {
                 '1': 10710,
                 '3': 0,
+                '6': 0,
                 '12': 107892,
                 '15': 0,
                 '18': 0,
@@ -948,6 +977,7 @@ describe('getPricingFromPlanIDs', () => {
             plans: {
                 '1': 7379,
                 '3': 0,
+                '6': 0,
                 '12': 71964,
                 '15': 0,
                 '18': 0,
@@ -970,6 +1000,7 @@ describe('getTotalFromPricing', () => {
             all: {
                 '1': 8596,
                 '3': 0,
+                '6': 0,
                 '12': 83952,
                 '15': 0,
                 '18': 0,
@@ -979,6 +1010,7 @@ describe('getTotalFromPricing', () => {
             members: {
                 '1': 3597,
                 '3': 0,
+                '6': 0,
                 '12': 35964,
                 '15': 0,
                 '18': 0,
@@ -989,6 +1021,7 @@ describe('getTotalFromPricing', () => {
             plans: {
                 '1': 7397,
                 '3': 0,
+                '6': 0,
                 '12': 71964,
                 '15': 0,
                 '18': 0,
@@ -1035,6 +1068,7 @@ describe('getTotalFromPricing', () => {
             all: {
                 '1': 899,
                 '3': 0,
+                '6': 0,
                 '12': 7188,
                 '15': 14985,
                 '18': 0,
@@ -1044,6 +1078,7 @@ describe('getTotalFromPricing', () => {
             members: {
                 '1': 899,
                 '3': 0,
+                '6': 0,
                 '12': 7188,
                 '15': 14985,
                 '18': 0,
@@ -1053,6 +1088,7 @@ describe('getTotalFromPricing', () => {
             plans: {
                 '1': 899,
                 '3': 0,
+                '6': 0,
                 '12': 7188,
                 '15': 14985,
                 '18': 0,
@@ -1100,6 +1136,7 @@ describe('getTotalFromPricing', () => {
             all: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -1109,6 +1146,7 @@ describe('getTotalFromPricing', () => {
             members: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -1118,6 +1156,7 @@ describe('getTotalFromPricing', () => {
             plans: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -1146,6 +1185,7 @@ describe('getTotalFromPricing', () => {
             all: {
                 '1': 1198,
                 '3': 0,
+                '6': 0,
                 '12': 11976,
                 '15': 0,
                 '18': 0,
@@ -1155,6 +1195,7 @@ describe('getTotalFromPricing', () => {
             members: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -1164,6 +1205,7 @@ describe('getTotalFromPricing', () => {
             plans: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -1197,6 +1239,7 @@ describe('getTotalFromPricing', () => {
             all: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -1206,6 +1249,7 @@ describe('getTotalFromPricing', () => {
             members: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -1215,6 +1259,7 @@ describe('getTotalFromPricing', () => {
             plans: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -1304,6 +1349,7 @@ describe('getTotalFromPricing', () => {
             all: {
                 '1': 1198,
                 '3': 0,
+                '6': 0,
                 '12': 11976,
                 '15': 0,
                 '18': 0,
@@ -1313,6 +1359,7 @@ describe('getTotalFromPricing', () => {
             members: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
@@ -1322,6 +1369,7 @@ describe('getTotalFromPricing', () => {
             plans: {
                 '1': 799,
                 '3': 0,
+                '6': 0,
                 '12': 8388,
                 '15': 0,
                 '18': 0,
