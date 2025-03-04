@@ -123,14 +123,14 @@ export function usePublicActions() {
         }
     ) => {
         const isSingleItem = links.length === 1;
-        const item = links[0];
+        const { name, isFile } = links[0];
 
         let title;
         let message;
         if (isSingleItem) {
-            // translator: ${item.name} is for a folder or file name.
-            title = c('Title').t`Delete ${item.name}?`;
-            message = item.isFile
+            // translator: ${name} is for a folder/file/album name.
+            title = c('Title').t`Delete ${name}?`;
+            message = isFile
                 ? c('Info').t`This will permanently delete the file you uploaded.`
                 : c('Info').t`This will permanently delete the folder you uploaded.`;
         } else {

@@ -128,9 +128,6 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
                         onShare={() => {
                             onItemShare(item.linkId);
                         }}
-                        onDelete={() => {
-                            // TODO: Delete modal/flow
-                        }}
                         style={{
                             position: 'absolute',
                             width: itemWidth,

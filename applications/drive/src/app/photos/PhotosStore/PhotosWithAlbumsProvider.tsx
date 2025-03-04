@@ -5,6 +5,7 @@ import {
     queryAddAlbumPhotos,
     queryAlbumPhotos,
     queryAlbums,
+    queryDeleteAlbum,
     queryDeletePhotosShare,
     queryPhotos,
     queryRemoveAlbumPhotos,
@@ -57,6 +58,7 @@ export const PhotosWithAlbumsContext = createContext<{
     removePhotosFromCache: (linkIds: string[]) => void;
     deletePhotosShare: () => Promise<void>;
     removeAlbumPhotos: (abortSignal: AbortSignal, albumId: string, linkIds: string[]) => Promise<void>;
+    deleteAlbum: (abortSignal: AbortSignal, albumLinkId: string, force: boolean) => Promise<void>;
 } | null>(null);
 
 export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children }) => {
@@ -336,6 +338,17 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         await request(queryDeletePhotosShare(volumeId, shareId));
     }, [request, volumeId, shareId]);
 
+    const deleteAlbum = useCallback(
+        async (abortSignal: AbortSignal, albumLinkId: string, force: boolean): Promise<void> => {
+            if (!volumeId) {
+                return;
+            }
+            await request(queryDeleteAlbum(volumeId, albumLinkId, { DeleteAlbumPhotos: force ? 1 : 0 }), abortSignal);
+            setAlbums((prevAlbums) => prevAlbums.filter((album) => album.linkId !== albumLinkId));
+        },
+        [request, volumeId]
+    );
+
     const removeAlbumPhotos = useCallback(
         async (abortSignal: AbortSignal, albumId: string, linkIds: string[]) => {
             if (!volumeId) {
@@ -368,6 +381,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 removePhotosFromCache,
                 deletePhotosShare,
                 removeAlbumPhotos,
+                deleteAlbum,
             }}
         >
             {children}
