@@ -13,8 +13,10 @@ import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { AlbumTag, useThumbnailsDownload } from '../../store';
-import { useCreateAlbum } from '../PhotosActions/Albums';
+import { sendErrorReport } from '../../utils/errorHandling';
+import { useCreateAlbum, useRenameAlbum } from '../PhotosActions/Albums';
 import { CreateAlbumModal } from '../PhotosModals/CreateAlbumModal';
+import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { AlbumsGrid } from './AlbumsGrid';
@@ -42,13 +44,16 @@ const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[]
 
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
-    const { volumeId, shareId, linkId, albums, isPhotosLoading, loadPhotoLink, requestDownload } =
+    const { volumeId, shareId, linkId, albums, isPhotosLoading, loadPhotoLink, requestDownload, refreshAlbums } =
         usePhotosWithAlbumsView();
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const createAlbumModal = useModalStateObject();
+    const renameAlbumModal = useModalStateObject();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const createAlbum = useCreateAlbum();
+    const renameAlbum = useRenameAlbum();
+    const [renameAlbumLinkId, setRenameAlbumLinkId] = useState<string>('');
 
     const thumbnails = useThumbnailsDownload();
     const { navigateToPhotos, navigateToAlbum, navigateToAlbums } = useNavigate();
@@ -92,6 +97,23 @@ export const AlbumsView: FC = () => {
             }
         },
         [shareId, linkId, createAlbum, navigateToAlbum]
+    );
+
+    const onRenameAlbum = useCallback(
+        async (name: string) => {
+            if (!shareId || !volumeId || !renameAlbumLinkId) {
+                return;
+            }
+            try {
+                const abortSignal = new AbortController().signal;
+                await renameAlbum(abortSignal, volumeId, shareId, renameAlbumLinkId, name);
+                setRenameAlbumLinkId('');
+                refreshAlbums();
+            } catch (e) {
+                sendErrorReport(e);
+            }
+        },
+        [shareId, volumeId, renameAlbumLinkId, renameAlbum]
     );
 
     const isAlbumsEmpty = albums.length === 0;
@@ -181,10 +203,21 @@ export const AlbumsView: FC = () => {
                     onItemShare={(linkId) => {
                         showLinkSharingModal({ shareId, linkId });
                     }}
+                    onItemRename={(linkId) => {
+                        setRenameAlbumLinkId(linkId);
+                        renameAlbumModal.openModal(true);
+                    }}
                 />
             )}
 
             <CreateAlbumModal createAlbumModal={createAlbumModal} createAlbum={onCreateAlbum} />
+            {renameAlbumLinkId && (
+                <RenameAlbumModal
+                    name={filteredAlbums.find((album) => album.linkId === renameAlbumLinkId)?.name}
+                    renameAlbumModal={renameAlbumModal}
+                    renameAlbum={onRenameAlbum}
+                />
+            )}
         </>
     );
 };

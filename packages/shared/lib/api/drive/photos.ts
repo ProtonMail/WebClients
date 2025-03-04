@@ -29,7 +29,7 @@ export const queryAlbums = (
     },
 });
 
-export const queryUpdateAlbum = (
+export const queryUpdateAlbumCover = (
     volumeId: string,
     albumLinkId: string,
     data: {
@@ -41,11 +41,37 @@ export const queryUpdateAlbum = (
     data,
 });
 
+export const queryUpdateAlbumName = (
+    volumeId: string,
+    albumLinkId: string,
+    data: {
+        Link: {
+            Name: string;
+            Hash: string;
+            OriginalHash: string;
+            NameSignatureEmail?: string;
+        };
+    }
+) => ({
+    method: 'PUT',
+    url: `drive/photos/volumes/${volumeId}/albums/${albumLinkId}`,
+    data,
+});
+
 export const queryAddAlbumPhotos = (
     volumeId: string,
     albumLinkId: string,
     data: {
-        AlbumData: any[]; // TODO: type correctly
+        AlbumData: {
+            LinkID: string;
+            Name: string;
+            Hash: string;
+            NodePassphrase: string;
+            NodePassphraseSignature: string;
+            SignatureEmail?: string;
+            NameSignatureEmail?: string;
+            ContentHash?: string;
+        }[];
     }
 ) => ({
     method: 'POST',
@@ -80,8 +106,22 @@ export const queryPhotosDuplicates = (volumeId: string, { nameHashes }: { nameHa
     },
 });
 
-// TODO: Type data properly
-export const queryCreateAlbum = (volumeId: string, data: any) => ({
+export const queryCreateAlbum = (
+    volumeId: string,
+    data: {
+        Locked: boolean;
+        Link: {
+            Name: string;
+            Hash: string;
+            NodePassphrase: string;
+            NodePassphraseSignature: string;
+            SignatureEmail: string;
+            NodeKey: string;
+            NodeHashKey: string;
+            XAttr?: string;
+        };
+    }
+) => ({
     method: 'post',
     url: `drive/photos/volumes/${volumeId}/albums`,
     data,
