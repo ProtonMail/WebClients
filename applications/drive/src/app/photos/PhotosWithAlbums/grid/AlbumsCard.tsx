@@ -39,7 +39,7 @@ interface AlbumDropdownButtonprops {
     onDelete: () => void;
 }
 
-export const AlbumDropdownButton = ({ onShare }: AlbumDropdownButtonprops) => {
+export const AlbumDropdownButton = ({ onShare, onRename }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -61,8 +61,9 @@ export const AlbumDropdownButton = ({ onShare }: AlbumDropdownButtonprops) => {
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
                     <DropdownMenuButton
-                        onClick={() => {
-                            // TODO: console.log("Rename modal")
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onRename();
                         }}
                         className="text-left flex items-center flex-nowrap"
                     >

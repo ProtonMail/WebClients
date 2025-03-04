@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { usePreventLeave } from '@proton/components';
-import { queryCreateAlbum } from '@proton/shared/lib/api/drive/photos';
+import { queryCreateAlbum, queryUpdateAlbumName } from '@proton/shared/lib/api/drive/photos';
 import {
     encryptName,
     generateLookupHash,
@@ -24,7 +24,7 @@ function useAlbumsActions() {
     const { preventLeave } = usePreventLeave();
     const debouncedRequest = useDebouncedRequest();
     const events = useDriveEventManager();
-    const { getLinkPrivateKey, getLinkHashKey } = useLink();
+    const { getLinkPrivateKey, getLinkHashKey, getLink } = useLink();
     const { getShareCreatorKeys } = useShare();
 
     const createAlbum = async (
@@ -121,8 +121,77 @@ function useAlbumsActions() {
         return Album.Link.LinkID;
     };
 
+    const renameAlbum = async (
+        abortSignal: AbortSignal,
+        volumeId: string,
+        shareId: string,
+        linkId: string,
+        name: string
+    ) => {
+        const error = validateLinkName(name);
+        if (error) {
+            throw new ValidationError(error);
+        }
+
+        const [parentPrivateKey, parentHashKey, { privateKey: addressKey }] = await Promise.all([
+            getLinkPrivateKey(abortSignal, shareId, linkId),
+            getLinkHashKey(abortSignal, shareId, linkId),
+            getShareCreatorKeys(abortSignal, shareId),
+        ]);
+
+        const [Hash, encryptedName] = await Promise.all([
+            generateLookupHash(name, parentHashKey).catch((e) =>
+                Promise.reject(
+                    new EnrichedError('Failed to generate album link lookup hash during album rename', {
+                        tags: {
+                            shareId,
+                            linkId,
+                        },
+                        extra: { e },
+                    })
+                )
+            ),
+            encryptName(name, parentPrivateKey, addressKey).catch((e) =>
+                Promise.reject(
+                    new EnrichedError('Failed to encrypt album link name during album rename', {
+                        tags: {
+                            shareId,
+                            linkId,
+                        },
+                        extra: { e },
+                    })
+                )
+            ),
+        ]);
+
+        const link = await getLink(abortSignal, shareId, linkId);
+
+        const { Code } = await preventLeave(
+            debouncedRequest<{ Code: number }>(
+                queryUpdateAlbumName(volumeId, linkId, {
+                    Link: {
+                        Name: encryptedName,
+                        Hash,
+                        OriginalHash: link.hash,
+                        NameSignatureEmail: link.nameSignatureEmail,
+                    },
+                })
+            )
+        );
+
+        if (Code !== 1000) {
+            throw new EnrichedError('Failed to rename album', {
+                tags: {
+                    shareId,
+                    linkId,
+                },
+            });
+        }
+    };
+
     return {
         createAlbum,
+        renameAlbum,
     };
 }
 
@@ -154,5 +223,35 @@ export const useCreateAlbum = () => {
             }
         },
         [createAlbum, createNotification, showErrorNotification]
+    );
+};
+
+export const useRenameAlbum = () => {
+    const { showErrorNotification } = useErrorHandler();
+    const { createNotification } = useNotifications();
+    const { renameAlbum } = useAlbumsActions();
+
+    return useCallback(
+        async (
+            abortSignal: AbortSignal,
+            volumeId: string,
+            shareId: string,
+            linkId: string,
+            name: string
+        ): Promise<void> => {
+            try {
+                await renameAlbum(abortSignal, volumeId, shareId, linkId, name);
+                createNotification({
+                    text: <span className="text-pre-wrap">{c('Notification').t`Album renamed successfully`}</span>,
+                });
+            } catch (e) {
+                showErrorNotification(
+                    e,
+                    <span className="text-pre-wrap">{c('Notification').t`Album failed to be renamed`}</span>
+                );
+                throw e;
+            }
+        },
+        [renameAlbum, createNotification, showErrorNotification]
     );
 };
