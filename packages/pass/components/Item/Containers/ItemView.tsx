@@ -37,6 +37,15 @@ const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     alias: AliasView,
     creditCard: CreditCardView,
     identity: IdentityView,
+    sshKey: () => {
+        throw new Error('FIXME');
+    },
+    wifi: () => {
+        throw new Error('FIXME');
+    },
+    custom: () => {
+        throw new Error('FIXME');
+    },
 };
 
 export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {

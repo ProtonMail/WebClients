@@ -39,6 +39,15 @@ const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     alias: AliasContent,
     creditCard: CreditCardContent,
     identity: IdentityContent,
+    sshKey: () => {
+        throw new Error('FIXME');
+    },
+    wifi: () => {
+        throw new Error('FIXME');
+    },
+    custom: () => {
+        throw new Error('FIXME');
+    },
 };
 
 export const RevisionDiff: FC = () => {

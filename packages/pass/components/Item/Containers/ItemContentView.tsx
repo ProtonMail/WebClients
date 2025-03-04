@@ -19,6 +19,15 @@ const itemContentViewMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     login: LoginContent,
     note: NoteContent,
     identity: IdentityContent,
+    sshKey: () => {
+        throw new Error('FIXME');
+    },
+    wifi: () => {
+        throw new Error('FIXME');
+    },
+    custom: () => {
+        throw new Error('FIXME');
+    },
 };
 
 export const ItemContentView: FC<PropsWithChildren<ItemContentProps>> = ({ children, revision }) => {

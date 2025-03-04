@@ -142,6 +142,9 @@ const itemMatchers: ItemMatchMap = {
     alias: matchesAliasItem,
     creditCard: matchesCreditCardItem,
     identity: matchesIdentityItem,
+    sshKey: () => () => false, // FIXME
+    wifi: () => () => false, // FIXME
+    custom: () => () => false, // FIXME
 };
 
 const matchItem: ItemMatch = <T extends ItemType>(item: ItemRevision<T>) => itemMatchers[item.data.type](item);
