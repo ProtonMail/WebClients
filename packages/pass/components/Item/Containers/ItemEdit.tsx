@@ -23,6 +23,15 @@ const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
     alias: AliasEdit,
     creditCard: CreditCardEdit,
     identity: IdentityEdit,
+    sshKey: () => {
+        throw new Error('FIXME');
+    },
+    wifi: () => {
+        throw new Error('FIXME');
+    },
+    custom: () => {
+        throw new Error('FIXME');
+    },
 };
 
 export const ItemEdit: FC = () => {

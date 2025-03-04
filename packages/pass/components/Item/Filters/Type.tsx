@@ -42,6 +42,18 @@ export const getItemTypeOptions = (): Record<ItemTypeFilter, { label: string; ic
         label: c('Label').t`Identities`,
         icon: itemTypeToIconName.identity,
     },
+    sshKey: {
+        label: c('Label').t`SSH Keys`,
+        icon: itemTypeToIconName.sshKey,
+    },
+    wifi: {
+        label: c('Label').t`WiFi Networks`,
+        icon: itemTypeToIconName.wifi,
+    },
+    custom: {
+        label: c('Label').t`Custom Items`,
+        icon: itemTypeToIconName.custom,
+    },
 });
 
 export const TypeFilter = memo(({ items, value, onChange }: Props) => {

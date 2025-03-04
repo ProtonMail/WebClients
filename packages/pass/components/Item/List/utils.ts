@@ -32,6 +32,18 @@ const itemListPresenter: ItemListPresenterMap = {
         heading: data.metadata.name,
         subheading: '',
     }),
+    sshKey: ({ data }) => ({
+        heading: data.metadata.name,
+        subheading: '',
+    }),
+    wifi: ({ data }) => ({
+        heading: data.metadata.name,
+        subheading: '',
+    }),
+    custom: ({ data }) => ({
+        heading: data.metadata.name,
+        subheading: '',
+    }),
 };
 
 export const presentListItem = <T extends ItemType>(revision: ItemRevision<T>): PresentedListItem =>
