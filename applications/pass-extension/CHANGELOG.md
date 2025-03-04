@@ -1,3 +1,9 @@
+### Version 1.29.5
+
+- Support coupons from in-app notifications
+- Fix in-app notification upsell redirection
+- Disable upselling notifications in safari extension
+
 ### Version 1.29.4
 
 - Improve in-app messaging triggers
