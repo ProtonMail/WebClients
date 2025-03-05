@@ -95,7 +95,7 @@ const ComposerAssistant = ({
     });
 
     // Selected text in the composer or assistant result that the user might want to refine
-    const { selectedText, handleMouseDown, handleSelectionChange } = useComposerAssistantSelectedText({
+    const { selection, handleMouseDown, handleSelectionChange } = useComposerAssistantSelectedText({
         assistantID,
         assistantResultRef,
         composerSelectedText,
@@ -124,8 +124,8 @@ const ComposerAssistant = ({
         sender,
         getContentBeforeBlockquote,
         checkScrollButtonDisplay,
-        selectedText,
-        composerSelectedText,
+        selection,
+        onSelectionChange: handleSelectionChange,
         onUseGeneratedText,
         onUseRefinedText,
         setContentBeforeBlockquote,
@@ -171,7 +171,8 @@ const ComposerAssistant = ({
     // - There is some content selected in the assistant expanded
     // - Message body in composer has some content
     // - There is some content that has been generated in the assistant expanded
-    const canUseRefineButtons = !!selectedText || (!isAssistantExpanded && hasComposerContent) || !!generationResult;
+    const canUseRefineButtons =
+        !!selection.generationSelectedText || (!isAssistantExpanded && hasComposerContent) || !!generationResult;
 
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
@@ -186,7 +187,7 @@ const ComposerAssistant = ({
                 assistantID={assistantID}
                 prompt={prompt}
                 setPrompt={setPrompt}
-                selectedText={selectedText}
+                selection={selection}
                 isAssistantExpanded={isAssistantExpanded}
                 onExpandAssistant={expandAssistant}
                 onGenerate={generate}

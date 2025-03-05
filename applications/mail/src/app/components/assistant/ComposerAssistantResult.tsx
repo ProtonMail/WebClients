@@ -17,9 +17,9 @@ const HTMLResult = ({ result, messageID }: { result: string; messageID: string }
 };
 
 const ComposerAssistantResult = ({ result, assistantID, isComposerPlainText, messageID }: Props) => {
-    const { isGeneratingResult, canKeepFormatting } = useAssistant(assistantID);
+    const { isGeneratingResult } = useAssistant(assistantID);
 
-    if (isGeneratingResult || isComposerPlainText || !canKeepFormatting) {
+    if (isGeneratingResult || isComposerPlainText) {
         return <div>{result}</div>;
     }
     // We transform and clean the result after generation completed to avoid costly operations (markdown to html, sanitize)
