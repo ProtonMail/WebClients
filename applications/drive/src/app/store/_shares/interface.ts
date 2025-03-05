@@ -175,6 +175,7 @@ interface ShareInvitationLink {
     name: string;
     mimeType: string;
     isFile: boolean;
+    type: LinkType;
 }
 
 export interface ShareInvitationDetails {

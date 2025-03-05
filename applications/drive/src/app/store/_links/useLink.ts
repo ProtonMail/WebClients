@@ -15,12 +15,8 @@ import type {
 } from '@proton/shared/lib/interfaces/drive/file';
 import type { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
-import type {
-    VerificationKeysCallback} from '@proton/shared/lib/keys/drivePassphrase';
-import {
-    decryptPassphrase,
-    getDecryptedSessionKey,
-} from '@proton/shared/lib/keys/drivePassphrase';
+import type { VerificationKeysCallback } from '@proton/shared/lib/keys/drivePassphrase';
+import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -734,12 +730,7 @@ export function useLinkInner(
      */
     const getLink = debouncedFunctionDecorator(
         'getLink',
-        async (
-            abortSignal: AbortSignal,
-            shareId: string,
-            linkId: string,
-            share?: ShareWithKey | Share
-        ): Promise<DecryptedLink> => {
+        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink> => {
             const cachedLink = linksState.getLink(shareId, linkId);
             if (cachedLink && cachedLink.decrypted && !cachedLink.decrypted.isStale) {
                 return cachedLink.decrypted;
@@ -748,7 +739,7 @@ export function useLinkInner(
             const encrypted = await getEncryptedLink(abortSignal, shareId, linkId);
 
             try {
-                const decrypted = await decryptLink(abortSignal, shareId, encrypted, undefined, share);
+                const decrypted = await decryptLink(abortSignal, shareId, encrypted);
 
                 linksState.setLinks(shareId, [{ encrypted, decrypted }]);
 
