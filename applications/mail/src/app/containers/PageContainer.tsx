@@ -11,6 +11,7 @@ import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { HUMAN_TO_LABEL_IDS } from '@proton/shared/lib/mail/constants';
 
 import AssistantIframe from 'proton-mail/components/assistant/AssistantIframe';
+import useComposerEvent from 'proton-mail/hooks/useComposerEvent';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
 
@@ -52,6 +53,8 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
      */
     useIncomingDefaultsLoad();
     useIncomingDefaultsEvents();
+
+    useComposerEvent();
 
     usePageHotkeys({ onOpenShortcutsModal: () => setMailShortcutsModalOpen(true) });
 
