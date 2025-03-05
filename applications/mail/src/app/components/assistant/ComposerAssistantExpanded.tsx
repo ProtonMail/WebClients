@@ -59,7 +59,7 @@ const ComposerAssistantExpanded = ({
 }: Props) => {
     const { createNotification } = useNotifications();
     const { sendNotUseAnswerAssistantReport } = useAssistantTelemetry();
-    const { isGeneratingResult, setAssistantStatus, cancelRunningAction, cleanSpecificErrors, canKeepFormatting } =
+    const { isGeneratingResult, setAssistantStatus, cancelRunningAction, cleanSpecificErrors } =
         useAssistant(assistantID);
     const generatedContentRef = useRef<HTMLDivElement>(null);
 
@@ -91,8 +91,7 @@ const ComposerAssistantExpanded = ({
         onResetGeneration();
     };
 
-    const hasPlaintextGeneration =
-        isComposerPlainText || isGeneratingResult || !canKeepFormatting || !generatedContentRef.current;
+    const hasPlaintextGeneration = isComposerPlainText || isGeneratingResult || !generatedContentRef.current;
 
     return (
         <div className="flex-1 flex flex-nowrap flex-column">
