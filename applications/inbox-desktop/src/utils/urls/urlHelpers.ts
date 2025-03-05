@@ -11,3 +11,10 @@ export const addHashToCurrentURL = (currentURLString: string, hash: string) => {
     }
     return currentURLString;
 };
+
+export const parseURLParams = (url: string): URLSearchParams | undefined => {
+    const question = url.indexOf("?");
+    if (question === -1 || question === url.length - 1) return undefined;
+
+    return new URLSearchParams(url.substring(question + 1));
+};
