@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,6 +12,7 @@ import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import type { ComposerAssistantInitialSetupSpotlightRef } from 'proton-mail/components/assistant/spotlights/ComposerAssistantInitialSetupSpotlight';
 import type { GenerateResultProps } from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
+import type { ComposerAssistantSelection } from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';
 
 import ComposerAssistantCustomInput from './ComposerAssistantCustomInput';
 import ComposerAssistantQuickAction from './ComposerAssistantQuickAction';
@@ -21,7 +22,7 @@ import ComposerAssistantStatusText from './ComposerAssistantStatusText';
 interface Props {
     assistantID: string;
     isAssistantExpanded?: boolean;
-    selectedText?: string;
+    selection: ComposerAssistantSelection;
     prompt: string;
     setPrompt: (value: string) => void;
     onExpandAssistant: () => void;
@@ -33,7 +34,7 @@ interface Props {
 const ComposerAssistantToolbar = ({
     assistantID,
     isAssistantExpanded,
-    selectedText,
+    selection,
     prompt,
     setPrompt,
     onExpandAssistant,
@@ -61,6 +62,10 @@ const ComposerAssistantToolbar = ({
         // We want to have focus inside assistant when popover is closed (so that user can close assistant using Esc)
         containerRef.current?.focus();
     };
+
+    const hasSelectedText = useMemo(() => {
+        return !!selection.composerSelectedText || !!selection.generationSelectedText;
+    }, [selection.composerSelectedText, selection.generationSelectedText]);
 
     // Set this ref around the toolbar so that any click on the toolbar (that is outside the assistant generation)
     // is not resetting the user selected text
@@ -115,7 +120,7 @@ const ComposerAssistantToolbar = ({
                 ) : (
                     <div className="flex flex-row flex-nowrap">
                         <ComposerAssistantCustomInput
-                            selectedText={selectedText}
+                            selection={selection}
                             isAssistantExpanded={isAssistantExpanded}
                             prompt={prompt}
                             setPrompt={setPrompt}
@@ -128,7 +133,7 @@ const ComposerAssistantToolbar = ({
                             <>
                                 <ComposerAssistantQuickAction
                                     tooltipText={
-                                        selectedText ? c('Info').t`Proofread selection` : c('Info').t`Proofread text`
+                                        hasSelectedText ? c('Info').t`Proofread selection` : c('Info').t`Proofread text`
                                     }
                                     text={c('Action').t`Proofread`}
                                     icon="magnifier-check"
@@ -142,7 +147,7 @@ const ComposerAssistantToolbar = ({
                             <>
                                 <ComposerAssistantQuickAction
                                     tooltipText={
-                                        selectedText ? c('Info').t`Expand selection` : c('Info').t`Expand text`
+                                        hasSelectedText ? c('Info').t`Expand selection` : c('Info').t`Expand text`
                                     }
                                     text={c('Action').t`Expand`}
                                     icon="arrows-from-center-horizontal"
@@ -152,7 +157,7 @@ const ComposerAssistantToolbar = ({
                                 <Vr className="h-custom" style={{ '--h-custom': '2em' }} />
                                 <ComposerAssistantQuickAction
                                     tooltipText={
-                                        selectedText ? c('Info').t`Shorten selection` : c('Info').t`Shorten text`
+                                        hasSelectedText ? c('Info').t`Shorten selection` : c('Info').t`Shorten text`
                                     }
                                     text={c('Action').t`Shorten`}
                                     icon="arrow-to-center-horizontal"

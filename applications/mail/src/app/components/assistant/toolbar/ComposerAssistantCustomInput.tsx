@@ -9,9 +9,11 @@ import { Icon, InputFieldTwo, Tooltip, useActiveBreakpoint } from '@proton/compo
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
 
+import type { ComposerAssistantSelection } from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';
+
 interface Props {
     isAssistantExpanded?: boolean;
-    selectedText?: string;
+    selection: ComposerAssistantSelection;
     prompt: string;
     setPrompt: (value: string) => void;
     onSubmit: () => void;
@@ -21,7 +23,7 @@ interface Props {
 
 const ComposerAssistantCustomInput = ({
     isAssistantExpanded,
-    selectedText,
+    selection,
     prompt,
     setPrompt,
     onSubmit,
@@ -40,13 +42,20 @@ const ComposerAssistantCustomInput = ({
             buttonText = c('Action').t`Modify`;
         }
 
-        if (selectedText) {
+        // If some content is selected in the composer, assistant is expanded, and no text is selected in the generation,
+        // we should show "Modify selection" since no text is selected at this stage.
+        const hasSelectedTextInComposer = !!selection.composerSelectedText && !isAssistantExpanded;
+        if (hasSelectedTextInComposer || !!selection.generationSelectedText) {
             buttonIconName = 'text-quote-filled';
             buttonText = c('Action').t`Modify selection`;
         }
 
         return { buttonText, buttonIconName };
-    }, [isAssistantExpanded, selectedText]);
+    }, [isAssistantExpanded, selection.composerSelectedText, selection.generationSelectedText]);
+
+    const selectedTextToDisplay = useMemo(() => {
+        return isAssistantExpanded ? selection.generationSelectedText : selection.composerSelectedText;
+    }, [selection.composerSelectedText, selection.generationSelectedText, isAssistantExpanded]);
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -114,9 +123,9 @@ const ComposerAssistantCustomInput = ({
             </Button>
             {showPopover && (
                 <div className="absolute composer-assistant-refine-popover rounded-lg border border-weak bg-norm p-4 pt-3 flex flex-column flex-nowrap shadow-raised items-start">
-                    {selectedText && (
+                    {selectedTextToDisplay && (
                         <div className="text-ellipsis pb-2 color-weak w-full text-sm border-bottom border-weak mb-1">
-                            {selectedText}
+                            {selectedTextToDisplay}
                         </div>
                     )}
 
@@ -125,7 +134,7 @@ const ComposerAssistantCustomInput = ({
                         autoFocus
                         value={prompt}
                         placeholder={
-                            selectedText || isAssistantExpanded
+                            !!selection.composerSelectedText || isAssistantExpanded
                                 ? c('Placeholder').t`Describe what to change`
                                 : randomPlaceholder
                         }
