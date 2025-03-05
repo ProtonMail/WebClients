@@ -28,6 +28,18 @@
 	}
 }
 
+:host::backdrop {
+	position: fixed !important;
+	inset: 0 !important;
+	background: transparent !important;
+	background-image: none !important;
+	backdrop-filter: none !important;
+	pointer-events: none !important;
+	animation: none !important;
+	transform: none !important;
+	transition: none !important;
+}
+
 iframe {
 	position: absolute;
 	inline-size: var(--frame-width) !important;
@@ -40,6 +52,7 @@ iframe {
 	border: none !important;
 	display: none;
 	margin: 0 !important;
+	pointer-events: all !important;
 
 	&.visible {
 		display: block;
