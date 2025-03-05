@@ -9,8 +9,8 @@ import ProtonPassControlStyles from 'proton-pass-extension/app/content/injection
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
 import {
-    type BoundComputeStyles,
-    createStyleCompute,
+    type StyleParser,
+    createStyleParser,
     getComputedHeight,
     pixelEncoder,
     pixelParser,
@@ -29,8 +29,8 @@ type InjectionElements = {
 
 type InjectionOptions = {
     inputBox: HTMLElement;
-    getInputStyle: BoundComputeStyles;
-    getBoxStyle: BoundComputeStyles;
+    getInputStyle: StyleParser;
+    getBoxStyle: StyleParser;
 };
 
 /* input styles we may override */
@@ -108,10 +108,7 @@ const computeIconInjectionStyles = (
      * without offsets in order to correctly position icon
      * if bounding element has some padding-top/border-top */
     const boxed = inputBox !== input;
-    const { value: boxHeight, offset: boxOffset } = getComputedHeight(getBoxStyle, {
-        node: inputBox,
-        mode: boxed ? 'inner' : 'outer',
-    });
+    const { value: boxHeight, offset: boxOffset } = getComputedHeight(getBoxStyle, boxed ? 'inner' : 'outer');
 
     const size = Math.max(Math.min(boxMaxHeight - ICON_PADDING, ICON_MAX_HEIGHT), ICON_MIN_HEIGHT);
     const pl = getInputStyle('padding-left', pixelParser);
@@ -241,8 +238,8 @@ export const applyInjectionStyles = (elements: InjectionElements) => {
 
     const options = {
         inputBox,
-        getInputStyle: createStyleCompute(input),
-        getBoxStyle: createStyleCompute(inputBox),
+        getInputStyle: createStyleParser(input),
+        getBoxStyle: createStyleParser(inputBox),
     };
 
     applyIconInjectionStyles(elements, options);

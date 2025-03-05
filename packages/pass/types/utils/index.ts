@@ -12,6 +12,7 @@ export type Unpack<T> =
     : never;
 
 export type IsNever<T> = [T] extends [never] ? true : false;
+export type Identity<T> = (x: T) => T;
 
 export type Result<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error?: MaybeNull<string> } & F);
 
