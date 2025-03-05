@@ -16,7 +16,7 @@ export const getVerificationStatusFromKeys = (
     decryptedAttachment: WorkerDecryptionResult<Uint8Array>,
     verifyingKeys: PublicKeyReference[]
 ) => {
-    return verifyingKeys.length > 0 ? decryptedAttachment.verified : VERIFICATION_STATUS.NOT_VERIFIED;
+    return verifyingKeys.length > 0 ? decryptedAttachment.verificationStatus : VERIFICATION_STATUS.NOT_VERIFIED;
 };
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
@@ -71,11 +71,11 @@ export const getDecryptedAttachment = async (
                 verification?.verifyingKeys
             );
 
-            const verified = getVerificationStatusFromKeys(decryptedAttachment, verification?.verifyingKeys || []);
+            const verificationStatus = getVerificationStatusFromKeys(decryptedAttachment, verification?.verifyingKeys || []);
 
             return {
                 ...decryptedAttachment,
-                verified,
+                verificationStatus,
             } as WorkerDecryptionResult<Uint8Array>;
         }
         const sessionKey = await getEOSessionKey(attachment, messageKeys.password);
@@ -126,7 +126,7 @@ export const getAndVerify = async (
             data: attachment.Preview,
             filename: 'preview',
             signatures: [],
-            verified: VERIFICATION_STATUS.NOT_SIGNED,
+            verificationStatus: VERIFICATION_STATUS.NOT_SIGNED,
         } as WorkerDecryptionResult<Uint8Array>;
     }
 

@@ -45,13 +45,13 @@ export const mockedCryptoApi = {
     })),
     decryptMessage: jest.fn().mockImplementation(async ({ armoredMessage }) => ({
         data: `${armoredMessage}`,
-        verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+        verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
     })),
     signMessage: jest
         .fn()
         .mockImplementation(async ({ textData }) => ({ signature: `mocked signature over ${textData}` })),
     verifyMessage: jest.fn().mockImplementation(async () => ({
-        verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+        verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
         signatureTimestamp: new Date(),
     })),
 } as any as CryptoApiInterface;

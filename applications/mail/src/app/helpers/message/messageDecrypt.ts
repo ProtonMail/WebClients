@@ -147,7 +147,7 @@ export const verifyMessage = async (
     message: Message,
     publicKeys: PublicKeyReference[]
 ): Promise<{
-    verified: VERIFICATION_STATUS;
+    verificationStatus: VERIFICATION_STATUS;
     signature?: Uint8Array;
     verificationErrors?: Error[];
 }> => {
@@ -164,7 +164,7 @@ export const verifyMessage = async (
                 binarySignature: cryptoSignature,
                 verificationKeys: publicKeys,
             });
-            cryptoVerified = cryptoVerify.verified;
+            cryptoVerified = cryptoVerify.verificationStatus;
         }
 
         if (contentType === MIME_TYPES.MIME) {
@@ -173,26 +173,26 @@ export const verifyMessage = async (
                 verificationKeys: publicKeys,
             });
             [mimeSignature] = mimeVerify.signatures;
-            mimeVerified = mimeVerify.verified;
+            mimeVerified = mimeVerify.verificationStatus;
         }
 
         if (!cryptoSignature && !mimeSignature) {
-            return { verified: NOT_SIGNED, signature: undefined };
+            return { verificationStatus: NOT_SIGNED, signature: undefined };
         }
 
         if (!publicKeys.length) {
-            return { verified: NOT_VERIFIED, signature: cryptoSignature };
+            return { verificationStatus: NOT_VERIFIED, signature: cryptoSignature };
         }
 
         if (cryptoSignature) {
-            return { verified: cryptoVerified as VERIFICATION_STATUS, signature: cryptoSignature };
+            return { verificationStatus: cryptoVerified as VERIFICATION_STATUS, signature: cryptoSignature };
         }
 
         // mimeSignature can't be undefined at this point
-        return { verified: mimeVerified as VERIFICATION_STATUS, signature: mimeSignature };
+        return { verificationStatus: mimeVerified as VERIFICATION_STATUS, signature: mimeSignature };
     } catch (error: any) {
         return {
-            verified: NOT_VERIFIED,
+            verificationStatus: NOT_VERIFIED,
             verificationErrors: [error],
         };
     }

@@ -91,16 +91,16 @@ To decrypt and verify:
 const senderPublicKey = await CryptoProxy.importPublicKey(...);
 const recipientPrivateKey = await CryptoProxy.importPrivateKey(...);
 
-const { data: decryptedData, verified, verificationErrors } = await CryptoProxy.decryptMessage({
+const { data: decryptedData, verificationStatus, verificationErrors } = await CryptoProxy.decryptMessage({
   armoredMessage, // or `binaryMessage`
   armoredEncryptedSignature, // or 'binaryEncryptedSignature'/'armoredSignature'/'binarySignature'
   decryptionKeys: recipientPrivateKey // and/or 'passwords'/'sessionKey'
   verificationKeys: senderPublicKey
 });
 
-if (verified === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+if (verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
   console.log(decryptedData)
-} else if (verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+} else if (verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
   console.log(verificationErrors)
 }
 ```

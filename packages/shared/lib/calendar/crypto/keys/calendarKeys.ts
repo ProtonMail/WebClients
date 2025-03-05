@@ -181,7 +181,7 @@ export const decryptPassphrase = async ({
     privateKeys?: PrivateKeyReference[];
     publicKeys?: PublicKeyReference[];
 }) => {
-    const { data: decryptedPassphrase, verified } = await CryptoProxy.decryptMessage({
+    const { data: decryptedPassphrase, verificationStatus } = await CryptoProxy.decryptMessage({
         armoredMessage: armoredPassphrase,
         armoredSignature,
         decryptionKeys: privateKeys,
@@ -189,7 +189,7 @@ export const decryptPassphrase = async ({
         sessionKeys: sessionKey,
     });
 
-    if (publicKeys?.length && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (publicKeys?.length && verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;

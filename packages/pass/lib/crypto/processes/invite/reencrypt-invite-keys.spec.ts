@@ -49,7 +49,7 @@ describe('acceptVaultInvite crypto process', () => {
             })
         );
 
-        decryptedKeys.forEach(({ verified }) => expect(verified).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID));
+        decryptedKeys.forEach(({ verificationStatus }) => expect(verificationStatus).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID));
         decryptedKeys.forEach(({ data }, i) => expect(data).toStrictEqual(vaultKeys[i].raw));
     });
 });

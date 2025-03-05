@@ -77,12 +77,12 @@ export const useDownload = () => {
                 );
             }
 
-            if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+            if (download.isError || download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 await handleShowModal({ downloads: [download] });
             }
 
             await generateDownload(download);
-            return download.verified;
+            return download.verificationStatus;
         },
         [api]
     );
@@ -133,7 +133,7 @@ export const useDownloadAll = () => {
 
             const isError = list.some(({ isError }) => isError);
             const senderVerificationFailed = list.some(
-                ({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_INVALID
+                ({ verificationStatus }) => verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID
             );
 
             if (isError || senderVerificationFailed) {
@@ -186,7 +186,7 @@ export const usePreview = () => {
                 );
             }
 
-            if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+            if (download.isError || download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 const handleError = async () => {
                     await handleShowModal({ downloads: [download] });
                     await generateDownload(download);

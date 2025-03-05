@@ -13,39 +13,40 @@ type GetKeysCallback = () => Promise<DecryptFileKeys>;
 export default async function downloadThumbnail(url: string, token: string, getKeys: GetKeysCallback) {
     const abortController = new AbortController();
     const stream = await downloadBlock(abortController, url, token);
-    const { data: decryptedStream, verifiedPromise } = await decryptThumbnail(stream, getKeys);
+    const { data: decryptedStream, verificationStatusPromise } = await decryptThumbnail(stream, getKeys);
     const thumbnailData = streamToBuffer(decryptedStream);
     return {
         abortController,
         contents: thumbnailData,
-        verifiedPromise,
+        verificationStatusPromise,
     };
 }
 
 async function decryptThumbnail(
     stream: ReadableStream<Uint8Array>,
     getKeys: GetKeysCallback
-): Promise<{ data: ReadableStream<Uint8Array>; verifiedPromise: Promise<VERIFICATION_STATUS> }> {
+): Promise<{ data: ReadableStream<Uint8Array>; verificationStatusPromise: Promise<VERIFICATION_STATUS> }> {
     const { sessionKeys, addressPublicKeys } = await getKeys();
 
-    const { data, verified } = await markErrorAsCrypto<{ data: Uint8Array; verified: VERIFICATION_STATUS }>(
-        async () => {
-            const { data, verified } = await CryptoProxy.decryptMessage({
-                binaryMessage: await readToEnd(stream),
-                sessionKeys,
-                verificationKeys: addressPublicKeys,
-                format: 'binary',
-            });
+    const { data, verificationStatus } = await markErrorAsCrypto<{
+        data: Uint8Array;
+        verificationStatus: VERIFICATION_STATUS;
+    }>(async () => {
+        const { data, verificationStatus } = await CryptoProxy.decryptMessage({
+            binaryMessage: await readToEnd(stream),
+            sessionKeys,
+            verificationKeys: addressPublicKeys,
+            format: 'binary',
+        });
 
-            return {
-                data,
-                verified,
-            };
-        }
-    );
+        return {
+            data,
+            verificationStatus,
+        };
+    });
 
     return {
         data: toStream(data) as ReadableStream<Uint8Array>,
-        verifiedPromise: Promise.resolve(verified), // TODO lara/michal: refactor this since we no longer use streaming on decryption, hence verified is no longer a promise
+        verificationStatusPromise: Promise.resolve(verificationStatus), // TODO lara/michal: refactor this since we no longer use streaming on decryption, hence verified is no longer a promise
     };
 }
