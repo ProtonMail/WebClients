@@ -89,7 +89,6 @@ export interface EditorComposer {
     closeAssistant: (id: string) => void;
     setAssistantStatus: (id: string, status: OpenedAssistantStatus) => void;
     handleResetAssistantState: () => void;
-    canKeepFormatting: boolean;
 }
 
 export interface EditorQuickReply {
@@ -562,7 +561,6 @@ export const useComposerContent = (args: EditorArgs) => {
             content,
             wrapperDivStyles: getComposerDefaultFontStyles(mailSettings),
             addressSignature,
-            canKeepFormatting: args.canKeepFormatting,
             messageID: modelMessage.localID,
         });
 

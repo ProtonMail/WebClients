@@ -129,7 +129,6 @@ enum MailFeatureFlag {
     PasswordNudge = 'PasswordNudge',
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     ComposerAssistant = 'ComposerAssistant',
-    ComposerAssistantFormatting = 'ComposerAssistantFormatting',
     WalletRightSidebarLink = 'WalletRightSidebarLink',
     ProtonTips = 'ProtonTips',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
