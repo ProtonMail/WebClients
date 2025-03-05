@@ -241,6 +241,9 @@ export const getCheckout = ({
     const membersPerMonth =
         membersPerCycle !== null ? (membersPerCycle / cycle) * usersAndAddons.users : amount / cycle - addonsPerMonth;
 
+    const couponDiscountPerMonth = couponDiscount / cycle;
+    const withDiscountMembersPerMonth = membersPerMonth - couponDiscountPerMonth;
+
     return {
         couponDiscount: checkResult.CouponDiscount,
         planIDs,
@@ -256,6 +259,7 @@ export const getCheckout = ({
         discountPerCycle,
         discountPercent,
         currency: checkResult.Currency,
+        withDiscountMembersPerMonth,
     };
 };
 
