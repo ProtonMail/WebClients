@@ -118,7 +118,7 @@ export const PublicSharing = ({
                 <Toggle checked={!!publicSharedLink} loading={isLoading} onChange={handleToggle} />
             </div>
             <div className={clsx('flex items-center justify-space-between mb-4', !publicSharedLink && 'opacity-30')}>
-                <div className="flex flex-nowrap gap-2">
+                <div className="w-full flex flex-nowrap gap-2">
                     <Avatar color="weak" className="shrink-0">
                         <Icon name="globe" />
                     </Avatar>
