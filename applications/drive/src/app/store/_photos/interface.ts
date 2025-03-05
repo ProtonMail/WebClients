@@ -11,6 +11,11 @@ export interface Photo {
     relatedPhotosLinkIds?: string[];
 }
 
+export interface AlbumPhoto extends Photo {
+    parentLinkId: string; // the album link id
+    rootShareId: string; // the album share id
+}
+
 export enum PhotoTag {
     All = -1,
     // All these are defined by the BE

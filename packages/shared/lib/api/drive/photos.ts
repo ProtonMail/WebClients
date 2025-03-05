@@ -30,6 +30,12 @@ export const queryAlbums = (
     },
 });
 
+export const querySharedWithMeAlbums = (params?: { AnchorID?: string }) => ({
+    method: 'get',
+    url: `drive/photos/albums/shared-with-me`,
+    params,
+});
+
 export const queryUpdateAlbumCover = (
     volumeId: string,
     albumLinkId: string,
