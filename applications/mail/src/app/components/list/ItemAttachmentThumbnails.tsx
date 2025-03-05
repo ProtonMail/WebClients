@@ -58,7 +58,7 @@ const ItemAttachmentThumbnails = ({
             }
 
             // Don't preview unverified attachment
-            if (download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+            if (download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 return {
                     // Overriding mime type to prevent opening any visualizer with empty data, especially needed for pdfs
                     attachment: { ...attachmentsMetadata, MIMEType: '' },

@@ -145,7 +145,7 @@ export const verifySKLSignature = async ({
             })
         )
     );
-    if (verificationResults.some(({ verified }) => verified !== VERIFICATION_STATUS.SIGNED_AND_VALID)) {
+    if (verificationResults.some(({ verificationStatus }) => verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID)) {
         return null;
     }
     return verificationResults[0].signatureTimestamp; // any timestamp works as they are expected to have the same value

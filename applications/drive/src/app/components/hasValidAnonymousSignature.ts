@@ -17,16 +17,16 @@ export const hasValidAnonymousSignature = (
             return false;
         }
     }
-    return Object.entries(signatureIssues).every(([key, verified]) => {
+    return Object.entries(signatureIssues).every(([key, verificationStatus]) => {
         if (key === 'thumbnail' || key === 'blocks') {
-            if (verified === VERIFICATION_STATUS.NOT_SIGNED) {
+            if (verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
                 return true;
             } else {
                 console.warn(`${key} signature should not be signed in case of anonymous upload`);
                 return false;
             }
         } else {
-            return verified === VERIFICATION_STATUS.SIGNED_AND_VALID;
+            return verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID;
         }
     });
 };

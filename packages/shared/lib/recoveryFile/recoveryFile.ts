@@ -108,14 +108,14 @@ export const exportRecoveryFile = async ({
 export const validateRecoverySecret = async (recoverySecret: KeyWithRecoverySecret, publicKey: PublicKeyReference) => {
     const { RecoverySecret, RecoverySecretSignature } = recoverySecret;
 
-    const { verified } = await CryptoProxy.verifyMessage({
+    const { verificationStatus } = await CryptoProxy.verifyMessage({
         textData: RecoverySecret,
         stripTrailingSpaces: true,
         verificationKeys: publicKey,
         armoredSignature: RecoverySecretSignature,
     });
 
-    return verified === VERIFICATION_STATUS.SIGNED_AND_VALID;
+    return verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID;
 };
 
 export const getKeyWithRecoverySecret = (key: Key | undefined) => {

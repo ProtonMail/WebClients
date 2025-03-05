@@ -53,7 +53,7 @@ export const useAttachmentThumbnailDownload = () => {
                     data: attachmentInState.data,
                     // If attachment is in state, we already verified it during download process
                     // So if we open the attachment using Redux state, we should see the same verifications (e.g. modals are displayed in case of SIGNED_AND_INVALID)
-                    verified: attachmentInState.verified,
+                    verificationStatus: attachmentInState.verificationStatus,
                 };
                 attachment = attachmentInState;
             } else {
@@ -97,7 +97,7 @@ export const useAttachmentThumbnailDownload = () => {
                     // EncSignature TODO uncomment when fixed
                 );
 
-                const verified = getVerificationStatusFromKeys(
+                const verificationStatus = getVerificationStatusFromKeys(
                     decryptedAttachment,
                     verificationPreferences.verifyingKeys
                 );
@@ -105,7 +105,7 @@ export const useAttachmentThumbnailDownload = () => {
                 // Set verified state in the attachment to keep track of it in Redux
                 attachment = {
                     ...decryptedAttachment,
-                    verified,
+                    verificationStatus,
                 } as WorkerDecryptionResult<Uint8Array>;
 
                 download = {
@@ -117,7 +117,7 @@ export const useAttachmentThumbnailDownload = () => {
                         Size: attachmentsMetadata.Size,
                     },
                     data: decryptedAttachment.data,
-                    verified,
+                    verificationStatus,
                 };
             }
 
@@ -133,7 +133,7 @@ export const useAttachmentThumbnailDownload = () => {
                         Size: attachmentsMetadata.Size,
                     },
                     data: new Uint8Array([]),
-                    verified: VERIFICATION_STATUS.NOT_VERIFIED,
+                    verificationStatus: VERIFICATION_STATUS.NOT_VERIFIED,
                 };
             } else {
                 // When downloading, if an error occurs while decrypting, download the encrypted version
@@ -145,7 +145,7 @@ export const useAttachmentThumbnailDownload = () => {
                         ID: attachmentsMetadata.ID,
                     },
                     data: error.binary,
-                    verified: VERIFICATION_STATUS.NOT_VERIFIED,
+                    verificationStatus: VERIFICATION_STATUS.NOT_VERIFIED,
                 };
             }
         }
@@ -156,7 +156,7 @@ export const useAttachmentThumbnailDownload = () => {
     const handleThumbnailPreview = async (attachmentsMetadata: AttachmentsMetadata) => {
         const download = await downloadAttachment(DOWNLOAD_TYPE.PREVIEW, attachmentsMetadata);
 
-        if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+        if (download.isError || download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
             const handleError = async () => {
                 await handleShowModal({ downloads: [download] });
                 await generateDownload(download);
@@ -171,12 +171,12 @@ export const useAttachmentThumbnailDownload = () => {
     const handleThumbnailDownload = async (attachmentsMetadata: AttachmentsMetadata) => {
         const download = await downloadAttachment(DOWNLOAD_TYPE.DOWNLOAD, attachmentsMetadata);
 
-        if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+        if (download.isError || download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
             await handleShowModal({ downloads: [download] });
         }
 
         await generateDownload(download);
-        return download.verified;
+        return download.verificationStatus;
     };
 
     return { handleThumbnailPreview, handleThumbnailDownload, confirmDownloadModal };

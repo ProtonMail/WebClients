@@ -92,18 +92,18 @@ tE1tRB5+iYHzBnQVEeKN7T12E5zo1HShM7ntSgE=
         const textData = 'BEGIN:VCARD\r\nVERSION:4.0\r\nFN;PREF=1:   \r\nEND:VCARD';
 
         const verificationKeys = await CryptoProxy.importPublicKey({ armoredKey });
-        const { verified, data: verifiedData } = await CryptoProxy.verifyMessage({
+        const { verificationStatus, data: verifiedData } = await CryptoProxy.verifyMessage({
             textData,
             armoredSignature: signatureOverStrippedWhitespace,
             verificationKeys,
             stripTrailingSpaces: true,
         });
-        expect(verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
         // confirm data was normalised as expected
         expect(verifiedData).to.equal('BEGIN:VCARD\nVERSION:4.0\nFN;PREF=1:\nEND:VCARD');
 
         // test fallback verification
-        const { verified: verifiedFallback, data: verifiedDataFallback } = await CryptoProxy.verifyMessage({
+        const { verificationStatus: verifiedFallback, data: verifiedDataFallback } = await CryptoProxy.verifyMessage({
             textData,
             armoredSignature: signatureOverTrailingWhitespace,
             verificationKeys,
