@@ -12,7 +12,7 @@ type AlbumsGridProps = {
     onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     isLoading: boolean;
-    onItemClick: (linkId: string) => void;
+    onItemClick: (shareId: string, linkId: string) => void;
     onItemShare: (linkId: string) => void;
     onItemRename: (linkId: string) => void;
 };
@@ -115,12 +115,12 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
             if (itemShouldRender(y, scrollPosition)) {
                 items.push(
                     <AlbumsCard
-                        key={`album-${item.linkId}=${item.shareId}`}
+                        key={`album-${item.linkId}-${item.rootShareId}`}
                         album={item}
                         onRender={onItemRender}
                         onRenderLoadedLink={onItemRenderLoadedLink}
                         onClick={() => {
-                            onItemClick(item.linkId);
+                            onItemClick(item.rootShareId, item.linkId);
                         }}
                         onRename={() => {
                             onItemRename(item.linkId);

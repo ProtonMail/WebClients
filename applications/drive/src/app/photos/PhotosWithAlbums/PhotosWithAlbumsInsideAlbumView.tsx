@@ -60,7 +60,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useAppTitle(c('Title').t`Album`);
     const updateTitle = useAppTitleUpdate();
     const { createNotification } = useNotifications();
-    let { albumLinkId } = useParams<{ albumLinkId: string }>();
+    let { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const {
         shareId,
@@ -102,17 +102,19 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
             incrementItemRenderedCounter();
-            loadPhotoLink(itemLinkId, domRef);
+            loadPhotoLink(albumShareId, itemLinkId, domRef);
         },
-        [incrementItemRenderedCounter, loadPhotoLink]
+        [incrementItemRenderedCounter, loadPhotoLink, albumShareId]
     );
 
     const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
-        if (shareId) {
-            thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
+        if (albumShareId) {
+            thumbnails.addToDownloadQueue(albumShareId, itemLinkId, undefined, domRef);
         }
     };
 
+    const album = albumLinkId ? albums.find((album) => album.linkId === albumLinkId) : undefined;
+    const isOwner = album?.signatureEmail === userAddressEmail;
     const photoCount = albumPhotos.length;
     const selectedCount = selectedItems.length;
 
@@ -148,7 +150,12 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             }
             const abortSignal = new AbortController().signal;
             try {
-                await addAlbumPhoto(abortSignal, file.fileId);
+                // If you're not the owner of the album
+                // you just upload directly in the album
+                // so you don't add afterwards to add the photo to the album
+                if (isOwner) {
+                    await addAlbumPhoto(abortSignal, albumShareId, file.fileId);
+                }
             } catch (e) {
                 if (e instanceof Error) {
                     createNotification({ text: e.message, type: 'error' });
@@ -156,7 +163,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 sendErrorReport(e);
             }
         },
-        [createNotification, addAlbumPhoto]
+        [createNotification, addAlbumPhoto, albumShareId, isOwner]
     );
 
     const onSelectCover = useCallback(
@@ -205,15 +212,15 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 missingPhotosIds?: string[];
             }
         ) => {
-            if (!shareId || !linkId) {
+            if (!albumShareId || !linkId) {
                 return;
             }
             try {
                 if (missingPhotosIds) {
                     await moveLinks(abortSignal, {
-                        shareId,
+                        shareId: albumShareId,
                         linkIds: missingPhotosIds,
-                        newShareId: shareId,
+                        newShareId: albumShareId,
                         newParentLinkId: linkId,
                     });
                 }
@@ -229,7 +236,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 sendErrorReport(e);
             }
         },
-        [shareId, linkId, moveLinks, removeAlbumPhotos, albumLinkId, createNotification]
+        [albumShareId, linkId, moveLinks, removeAlbumPhotos, albumLinkId, createNotification]
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {
@@ -262,8 +269,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     }, [selectedItems, photoLinkIds, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
 
     const isAlbumPhotosEmpty = albumPhotos.length === 0;
-    const album = albumLinkId ? albums.find((album) => album.linkId === albumLinkId) : undefined;
-    const isOwner = album?.signatureEmail === userAddressEmail;
     const albumName = album?.name;
 
     const handleDeleteAlbum = useCallback(
@@ -271,12 +276,12 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             abortSignal: AbortSignal,
             { missingPhotosIds, force }: { missingPhotosIds: string[]; force: boolean }
         ) => {
-            if (!shareId || !linkId || !albumName) {
+            if (!albumShareId || !linkId || !albumName) {
                 return;
             }
             if (missingPhotosIds.length && !force) {
                 await moveLinks(abortSignal, {
-                    shareId,
+                    shareId: albumShareId,
                     linkIds: missingPhotosIds,
                     newShareId: shareId,
                     newParentLinkId: linkId,
@@ -287,7 +292,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 text: c('Info').t`${albumName} has been successfully deleted`,
             });
         },
-        [shareId, linkId, moveLinks, deleteAlbum, albumLinkId, createNotification, albumName]
+        [albumShareId, linkId, moveLinks, deleteAlbum, albumLinkId, createNotification, albumName]
     );
 
     // For delete album we do the happy path and just compare with photos you have in cache.
@@ -317,7 +322,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }
     }, [albumName, updateTitle]);
 
-    if (!shareId || !linkId || !album || isAlbumsLoading || isAlbumPhotosLoading) {
+    if (!albumShareId || !linkId || !album || isAlbumsLoading || isAlbumPhotosLoading) {
         return <Loader />;
     }
 
@@ -339,7 +344,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             {hasPreview && (
                 <PortalPreview
                     ref={previewRef}
-                    shareId={shareId}
+                    shareId={albumShareId}
                     linkId={previewItem.linkId}
                     revisionId={isDecryptedLink(previewItem) ? previewItem.activeRevision?.id : undefined}
                     key="portal-preview-photos"
@@ -351,11 +356,11 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     onShare={
                         isDecryptedLink(previewItem) && previewItem?.trashed
                             ? undefined
-                            : () => showLinkSharingModal({ shareId, linkId: previewItem.linkId })
+                            : () => showLinkSharingModal({ shareId: albumShareId, linkId: previewItem.linkId })
                     }
                     onDetails={() =>
                         showDetailsModal({
-                            shareId,
+                            shareId: albumShareId,
                             linkId: previewItem.linkId,
                         })
                     }
@@ -376,7 +381,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             <UploadDragDrop
                 disabled={isUploadDisabled}
                 isForPhotos={true}
-                shareId={shareId}
+                shareId={albumShareId}
                 parentLinkId={uploadLinkId}
                 onFileUpload={onPhotoUploadedToAlbum}
                 className="flex flex-column flex-nowrap flex-1"
@@ -417,7 +422,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     }
                     toolbar={
                         <PhotosWithAlbumsToolbar
-                            shareId={shareId}
+                            shareId={albumShareId}
                             linkId={uploadLinkId}
                             album={album}
                             selectedItems={selectedItems}
@@ -438,12 +443,12 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 {isAlbumPhotosEmpty ? (
                     <div className="flex flex-column flex-nowrap mx-2 w-full h-full">
                         <AlbumCoverHeader
-                            shareId={shareId}
+                            shareId={albumShareId}
                             linkId={uploadLinkId}
                             onFileUpload={onPhotoUploadedToAlbum}
                             album={album}
                             onShare={() => {
-                                showLinkSharingModal({ shareId, linkId });
+                                showLinkSharingModal({ shareId: albumShareId, linkId });
                             }}
                         />
                     </div>
@@ -454,11 +459,11 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     >
                         <AlbumCoverHeader
                             album={album}
-                            shareId={shareId}
+                            shareId={albumShareId}
                             onFileUpload={onPhotoUploadedToAlbum}
                             linkId={uploadLinkId}
                             onShare={() => {
-                                showLinkSharingModal({ shareId, linkId: album.linkId });
+                                showLinkSharingModal({ shareId: albumShareId, linkId: album.linkId });
                             }}
                         />
                         <PhotosInsideAlbumsGrid

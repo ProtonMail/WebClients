@@ -9,15 +9,17 @@ import {
     queryDeletePhotosShare,
     queryPhotos,
     queryRemoveAlbumPhotos,
+    querySharedWithMeAlbums,
     queryUpdateAlbumCover,
 } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
-import { type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
+import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
 import { useShare } from '../../store/_shares';
 import { VolumeType, useVolumesState } from '../../store/_volumes';
+import { sendErrorReport } from '../../utils/errorHandling';
 import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
 
 export interface Album {
@@ -48,13 +50,19 @@ export const PhotosWithAlbumsContext = createContext<{
     isAlbumsLoading: boolean;
     isAlbumPhotosLoading: boolean;
     photos: Photo[];
-    albumPhotos: Photo[];
+    albumPhotos: AlbumPhoto[];
     albums: DecryptedAlbum[];
-    loadPhotos: (abortSignal: AbortSignal) => void;
-    addAlbumPhotos: (abortSignal: AbortSignal, albumLinkId: string, LinkIDs: string[]) => Promise<void>;
+    loadPhotos: (abortSignal: AbortSignal) => Promise<void>;
+    addAlbumPhotos: (
+        abortSignal: AbortSignal,
+        albumShareId: string,
+        albumLinkId: string,
+        LinkIDs: string[]
+    ) => Promise<void>;
     addPhotoAsCover: (abortSignal: AbortSignal, albumLinkId: string, coverLinkId: string) => void;
-    loadAlbumPhotos: (abortSignal: AbortSignal, albumLinkId: string) => void;
-    loadAlbums: (abortSignal: AbortSignal) => void;
+    loadAlbumPhotos: (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string) => Promise<void>;
+    loadAlbums: (abortSignal: AbortSignal) => Promise<void>;
+    loadSharedWithMeAlbums: (abortSignal: AbortSignal) => Promise<void>;
     removePhotosFromCache: (linkIds: string[]) => void;
     deletePhotosShare: () => Promise<void>;
     removeAlbumPhotos: (abortSignal: AbortSignal, albumId: string, linkIds: string[]) => Promise<void>;
@@ -78,8 +86,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const [photos, setPhotos] = useState<Photo[]>([]);
     const [albums, setAlbums] = useState<DecryptedAlbum[]>([]);
     const [currentAlbumLinkId, setCurrentAlbumLinkId] = useState<string>();
-    const [albumPhotos, setAlbumPhotos] = useState<Photo[]>([]);
-    const { getShareWithKey, getShareCreatorKeys } = useShare();
+    const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
+    const { getShareWithKey, getShareCreatorKeys, getShare } = useShare();
     const { getLink } = useLink();
     const { setVolumeShareIds } = useVolumesState();
 
@@ -147,18 +155,23 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     };
 
     const loadAlbumPhotos = useCallback(
-        async (abortSignal: AbortSignal, albumLinkId: string) => {
+        async (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string) => {
             if (!volumeId) {
                 return;
             }
             const albumPhotosCall = async (anchorID?: string) => {
+                let albumVolumeId = volumeId;
+                if (albumShareId !== undefined && shareId !== albumShareId) {
+                    const share = await getShare(abortSignal, albumShareId);
+                    albumVolumeId = share.volumeId;
+                }
                 const { Photos, Code, AnchorID, More } = await request<{
                     Photos: PhotoPayload[];
                     Code: number;
                     AnchorID: string;
                     More: boolean;
                 }>(
-                    queryAlbumPhotos(volumeId, albumLinkId, {
+                    queryAlbumPhotos(albumVolumeId, albumLinkId, {
                         AnchorID: anchorID,
                     }),
                     abortSignal
@@ -168,12 +181,28 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     if (!currentAlbumLinkId || currentAlbumLinkId !== albumLinkId) {
                         setCurrentAlbumLinkId(albumLinkId);
                         // We swapped album, so we remove previous ones from state
-                        setAlbumPhotos(photosData);
+                        setAlbumPhotos(
+                            photosData.map((photo) => {
+                                return {
+                                    ...photo,
+                                    parentLinkId: albumLinkId,
+                                    rootShareId: albumShareId,
+                                };
+                            })
+                        );
                     } else {
                         setAlbumPhotos((prevPhotos) => {
-                            const newPhotos = photosData.filter(
-                                (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
-                            );
+                            const newPhotos = photosData
+                                .filter(
+                                    (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
+                                )
+                                .map((photo) => {
+                                    return {
+                                        ...photo,
+                                        parentLinkId: albumLinkId,
+                                        rootShareId: albumShareId,
+                                    };
+                                });
                             return [...prevPhotos, ...newPhotos];
                         });
                     }
@@ -209,20 +238,26 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     abortSignal
                 );
                 if (Code === 1000) {
-                    const decryptedAlbums = await Promise.all(
-                        Albums.map(async (album) => {
-                            const link = await getLink(abortSignal, shareId, album.LinkID);
-                            const cover = album.CoverLinkID
-                                ? await getLink(abortSignal, shareId, album.CoverLinkID)
-                                : undefined;
-                            return {
-                                ...link,
-                                cover: cover,
-                                photoCount: album.PhotoCount,
-                            };
+                    const newDecryptedAlbums = await Promise.all(
+                        Albums.filter(
+                            (album) => !albums.some((existingAlbum) => existingAlbum.linkId === album.LinkID)
+                        ).map(async (album) => {
+                            try {
+                                const link = await getLink(abortSignal, shareId, album.LinkID);
+                                const cover = album.CoverLinkID
+                                    ? await getLink(abortSignal, shareId, album.CoverLinkID)
+                                    : undefined;
+                                return {
+                                    ...link,
+                                    cover: cover,
+                                    photoCount: album.PhotoCount,
+                                };
+                            } catch (e) {
+                                sendErrorReport(e);
+                            }
                         })
                     );
-                    setAlbums(() => [...decryptedAlbums]);
+                    setAlbums((prevAlbums) => [...prevAlbums, ...newDecryptedAlbums.filter((a) => a !== undefined)]);
                     // there is a limit of 500 albums so should actually never happen technically
                     if (More) {
                         void albumCall(AnchorID);
@@ -234,20 +269,82 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             setIsAlbumsLoading(true);
             void albumCall();
         },
-        [getLink, request, shareId, volumeId]
+        [getLink, request, shareId, volumeId, albums]
+    );
+
+    const loadSharedWithMeAlbums = useCallback(
+        async (abortSignal: AbortSignal) => {
+            const sharedWithMeCall = async (anchorID?: string) => {
+                if (!volumeId || !shareId) {
+                    return;
+                }
+                const { Albums, Code, AnchorID, More } = await request<{
+                    Albums: Album[];
+                    Code: number;
+                    AnchorID: string;
+                    More: boolean;
+                }>(
+                    querySharedWithMeAlbums({
+                        AnchorID: anchorID,
+                    }),
+                    abortSignal
+                );
+                if (Code === 1000) {
+                    const newDecryptedAlbums = await Promise.all(
+                        Albums.filter(
+                            (album) => !albums.some((existingAlbum) => existingAlbum.linkId === album.LinkID)
+                        ).map(async (album) => {
+                            try {
+                                const link = await getLink(abortSignal, album.ShareID, album.LinkID);
+
+                                let cover = undefined;
+                                try {
+                                    cover = album.CoverLinkID
+                                        ? await getLink(abortSignal, album.ShareID, album.CoverLinkID)
+                                        : undefined;
+                                } catch (e) {
+                                    sendErrorReport(e);
+                                }
+                                return {
+                                    ...link,
+                                    cover: cover,
+                                    photoCount: album.PhotoCount,
+                                };
+                            } catch (e) {
+                                sendErrorReport(e);
+                            }
+                        })
+                    );
+                    setAlbums((prevAlbums) => [...prevAlbums, ...newDecryptedAlbums.filter((a) => a !== undefined)]);
+                    if (More) {
+                        void sharedWithMeCall(AnchorID);
+                    }
+                }
+                setIsAlbumsLoading(false);
+            };
+
+            setIsAlbumsLoading(true);
+            void sharedWithMeCall();
+        },
+        [getLink, request, shareId, volumeId, albums]
     );
 
     const addAlbumPhotos = useCallback(
-        async (abortSignal: AbortSignal, albumLinkId: string, LinkIDs: string[]): Promise<void> => {
+        async (
+            abortSignal: AbortSignal,
+            albumShareId: string,
+            albumLinkId: string,
+            LinkIDs: string[]
+        ): Promise<void> => {
             if (!shareId || !volumeId) {
                 throw new Error('Photo volume or share not found');
             }
             const links = await Promise.all(
                 LinkIDs.map(async (linkId) => {
-                    const link = await getLink(abortSignal, shareId, linkId);
+                    const link = await getLink(abortSignal, albumShareId, linkId);
                     const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
                         abortSignal,
-                        shareId,
+                        albumShareId,
                         albumLinkId,
                         link.name
                     );
@@ -295,7 +392,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 if (albumPhotos.length === 0) {
                     void loadAlbums(abortSignal);
                 }
-                void loadAlbumPhotos(abortSignal, albumLinkId);
+                void loadAlbumPhotos(abortSignal, albumShareId, albumLinkId);
             };
             return addAlbumPhotosCall();
         },
@@ -377,6 +474,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 addPhotoAsCover,
                 loadAlbumPhotos,
                 loadAlbums,
+                loadSharedWithMeAlbums,
                 loadPhotos,
                 removePhotosFromCache,
                 deletePhotosShare,

@@ -18,7 +18,7 @@ const HASH_CHECK_AMOUNT = 10;
 
 export default function useUploadHelper() {
     const debouncedRequest = useDebouncedRequest();
-    const { getLinkHashKey } = useLink();
+    const { getLinkHashKey, getLink } = useLink();
     const { loadChildren, getCachedChildren } = useLinksListing();
 
     const findAvailableName = async (
@@ -124,7 +124,15 @@ export default function useUploadHelper() {
         if (!parentHashKey) {
             throw Error('Missing hash key on folder link');
         }
+        const parentLink = await getLink(abortSignal, shareId, parentLinkId);
         const hash = await generateLookupHash(file.name, parentHashKey);
+
+        if (parentLink.mimeType === 'Album') {
+            return {
+                filename: file.name,
+                hash,
+            };
+        }
 
         const { DuplicateHashes } = await debouncedRequest<{ DuplicateHashes: DuplicatePhotosHash[] }>(
             queryPhotosDuplicates(volumeId, {
