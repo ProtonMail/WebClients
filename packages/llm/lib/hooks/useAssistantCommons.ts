@@ -8,13 +8,11 @@ import { getAssistantHasCompatibleBrowser, getAssistantHasCompatibleHardware } f
 import useAssistantErrors from '@proton/llm/lib/hooks/useAssistantErrors';
 import useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 
 const { OFF } = AI_ASSISTANT_ACCESS;
 
 const useAssistantCommons = (): AssistantCommonProps => {
     const assistantFeatureEnabled = useAssistantFeatureEnabled();
-    const canKeepFormatting = useFlag('ComposerAssistantFormatting');
     const [{ AIAssistantFlags }] = useUserSettings();
 
     const assistantSubscriptionStatus = useAssistantSubscriptionStatus();
@@ -73,7 +71,6 @@ const useAssistantCommons = (): AssistantCommonProps => {
         hasCompatibleHardware,
         hasCompatibleBrowser,
         canUseAssistant,
-        canKeepFormatting,
 
         errors,
         addSpecificError,

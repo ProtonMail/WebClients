@@ -100,7 +100,6 @@ const Composer = (
         downloadPaused,
         getIsStickyAssistant,
         cancelRunningAction,
-        canKeepFormatting,
     } = useAssistant(composerID);
 
     // onClose handler can be called in an async handler
@@ -204,7 +203,6 @@ const Composer = (
         closeAssistant,
         setAssistantStatus,
         handleResetAssistantState,
-        canKeepFormatting,
     });
 
     // Update subject on ComposerFrame
@@ -334,12 +332,7 @@ const Composer = (
     }, []);
 
     const handleInsertGeneratedTextInEditor = (textToInsert: string) => {
-        const cleanedText = prepareContentToInsert(
-            textToInsert,
-            metadata.isPlainText,
-            canKeepFormatting,
-            modelMessage.localID
-        );
+        const cleanedText = prepareContentToInsert(textToInsert, metadata.isPlainText, modelMessage.localID);
         const needsSeparator = !!removeLineBreaks(getContentBeforeBlockquote());
         const newBody = insertTextBeforeContent(modelMessage, cleanedText, mailSettings, needsSeparator);
 
@@ -367,7 +360,7 @@ const Composer = (
 
     const handleSetEditorSelection = (textToInsert: string) => {
         if (editorRef.current) {
-            const cleanedText = prepareContentToInsert(textToInsert, metadata.isPlainText, false, modelMessage.localID);
+            const cleanedText = prepareContentToInsert(textToInsert, metadata.isPlainText, modelMessage.localID);
 
             editorRef.current.setSelectionContent(cleanedText);
         }

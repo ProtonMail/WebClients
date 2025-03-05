@@ -165,10 +165,6 @@ export interface AssistantCommonProps {
      */
     cleanGlobalErrors: () => void;
     /**
-     * Feature flag that allows to use the logic to keep HTML formatting
-     */
-    canKeepFormatting: boolean;
-    /**
      * Close the assistant. Warning use the one that is coming from assistant hooks instead, it is also cleaning running actions
      */
     closeAssistant: (
@@ -229,7 +225,6 @@ export const useAssistant = (assistantID?: string) => {
         handleCheckHardwareCompatibility,
         cleanSpecificErrors,
         addSpecificError,
-        canKeepFormatting,
     } = assistantContext;
 
     const isGeneratingResult = !assistantID ? false : !!runningActions[assistantID];
@@ -301,6 +296,5 @@ export const useAssistant = (assistantID?: string) => {
         handleCheckHardwareCompatibility,
         cleanSpecificErrors: handleCleanSpecifcErrors,
         addSpecificError,
-        canKeepFormatting,
     };
 };
