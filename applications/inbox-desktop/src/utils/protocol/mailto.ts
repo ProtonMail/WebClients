@@ -1,23 +1,12 @@
-import { isMac } from "../helpers";
+import { isMac, OneTimeArgument } from "../helpers";
 import { Event, app } from "electron";
 import { mainLogger } from "../log";
 import { handleMailToUrls } from "../urls/mailtoLinks";
 
-let mailtoArgument = "";
-let mailtoAdded = false;
+const mailtoArgument = new OneTimeArgument();
 
 export function urlHasMailto(url: string): boolean {
     return url.includes("#mailto=");
-}
-
-function addMailtoArgOnce(url: string) {
-    if (mailtoAdded) {
-        return;
-    }
-
-    mainLogger.info("Adding mailto argument:", url);
-    mailtoArgument = url;
-    mailtoAdded = true;
 }
 
 function getMailtoArg(argv: string[]): string {
@@ -28,20 +17,15 @@ export function checkArgsForMailto() {
     const url = getMailtoArg(process.argv);
     if (url) {
         mainLogger.info("Found mailto in arguments:", url);
-        addMailtoArgOnce(url);
+        mailtoArgument.setOnce(url);
     }
 }
 
-export function readAndClearMailtoArgs(): string {
-    mainLogger.info("Read and clear mailto argument", mailtoArgument);
-    const tmp = mailtoArgument;
-    mailtoArgument = "";
-    return tmp;
-}
+export const readAndClearMailtoArgs = (): string => mailtoArgument.readAndClear();
 
 function earlyOpenURLMailto(_e: Event, url: string) {
     mainLogger.log("Open URL called before app is ready:", url);
-    addMailtoArgOnce(url);
+    mailtoArgument.setOnce(url);
 }
 
 export function handleStartupMailto() {
