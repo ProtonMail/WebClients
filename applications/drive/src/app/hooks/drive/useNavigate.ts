@@ -61,8 +61,8 @@ function useNavigate() {
         pushToHistory(`/shared-with-me`);
     };
 
-    const navigateToAlbum = useCallback((linkId: string) => {
-        pushToHistory(`/photos/${linkId}`);
+    const navigateToAlbum = useCallback((shareId: string, linkId: string) => {
+        pushToHistory(`/photos/album/${shareId}/${linkId}`);
     }, []);
 
     const navigateToPhotos = useCallback(() => {

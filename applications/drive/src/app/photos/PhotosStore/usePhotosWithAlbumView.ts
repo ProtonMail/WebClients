@@ -41,7 +41,7 @@ export function updateByEvents(
 }
 
 export const usePhotosWithAlbumsView = () => {
-    let { albumLinkId } = useParams<{ albumLinkId?: string }>();
+    let { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
     const eventsManager = useDriveEventManager();
     const { getCachedChildren, loadLinksMeta, getCachedLinksWithoutMeta } = useLinksListing();
     const {
@@ -57,6 +57,7 @@ export const usePhotosWithAlbumsView = () => {
         userAddressEmail,
         loadPhotos,
         loadAlbums,
+        loadSharedWithMeAlbums,
         addAlbumPhotos,
         loadAlbumPhotos,
         removePhotosFromCache,
@@ -176,8 +177,8 @@ export const usePhotosWithAlbumsView = () => {
         albumPhotos.forEach((photo) => {
             result[photo.linkId] = {
                 linkId: photo.linkId,
-                rootShareId: shareId,
-                parentLinkId: linkId,
+                rootShareId: photo.rootShareId,
+                parentLinkId: photo.parentLinkId,
                 isFile: true,
                 activeRevision: {
                     photo,
@@ -245,13 +246,17 @@ export const usePhotosWithAlbumsView = () => {
         }
         const abortController = new AbortController();
 
-        // Always load albums
-        loadAlbums(abortController.signal);
-
-        if (albumLinkId) {
-            loadAlbumPhotos(abortController.signal, albumLinkId);
+        if (albumShareId && albumLinkId) {
+            void loadSharedWithMeAlbums(abortController.signal);
+            void loadAlbums(abortController.signal).then(() => {
+                void loadAlbumPhotos(abortController.signal, albumShareId, albumLinkId);
+            });
         } else {
-            loadPhotos(abortController.signal);
+            // If loading /photos first, defer loading of albums after photos
+            void loadPhotos(abortController.signal).then(() => {
+                void loadAlbums(abortController.signal);
+                void loadSharedWithMeAlbums(abortController.signal);
+            });
         }
 
         const callbackId = eventsManager.eventHandlers.register((eventVolumeId, events, processedEventCounter) => {
@@ -264,9 +269,9 @@ export const usePhotosWithAlbumsView = () => {
             eventsManager.eventHandlers.unregister(callbackId);
             abortController.abort();
         };
-    }, [volumeId, shareId, albumLinkId]);
+    }, [volumeId, shareId, albumLinkId, albumShareId]);
 
-    const loadPhotoLink = (linkId: string, domRef?: React.MutableRefObject<unknown>) => {
+    const loadPhotoLink = (shareId: string, linkId: string, domRef?: React.MutableRefObject<unknown>) => {
         if (!shareId || !linkId) {
             return;
         }
@@ -278,8 +283,8 @@ export const usePhotosWithAlbumsView = () => {
             return;
         }
         const abortController = new AbortController();
-        loadPhotos(abortController.signal);
-        loadAlbums(abortController.signal);
+        void loadPhotos(abortController.signal);
+        void loadAlbums(abortController.signal);
     };
 
     const refreshAlbums = () => {
@@ -287,16 +292,16 @@ export const usePhotosWithAlbumsView = () => {
             return;
         }
         const abortController = new AbortController();
-        loadAlbums(abortController.signal);
+        void loadAlbums(abortController.signal);
     };
 
     const refreshAlbumPhotos = useCallback(
         (albumLinkId: string) => {
-            if (!volumeId || !shareId) {
+            if (!volumeId || !shareId || !albumShareId || !albumLinkId) {
                 return;
             }
             const abortController = new AbortController();
-            loadAlbumPhotos(abortController.signal, albumLinkId);
+            void loadAlbumPhotos(abortController.signal, albumShareId, albumLinkId);
         },
         [volumeId, shareId, loadAlbumPhotos]
     );
@@ -306,7 +311,7 @@ export const usePhotosWithAlbumsView = () => {
             return;
         }
         const abortController = new AbortController();
-        loadPhotos(abortController.signal);
+        void loadPhotos(abortController.signal);
     };
 
     /**
@@ -383,13 +388,13 @@ export const usePhotosWithAlbumsView = () => {
     };
 
     const addAlbumPhoto = useCallback(
-        (abortSignal: AbortSignal, linkId: string) => {
+        (abortSignal: AbortSignal, albumShareId: string, linkId: string) => {
             if (!albumLinkId) {
                 throw new Error('Failed to add a photo to an album');
             }
-            return addAlbumPhotos(abortSignal, albumLinkId, [linkId]);
+            return addAlbumPhotos(abortSignal, albumShareId, albumLinkId, [linkId]);
         },
-        [albumLinkId, addAlbumPhotos]
+        [albumLinkId, albumShareId, addAlbumPhotos]
     );
 
     const setPhotoAsCover = useCallback(
