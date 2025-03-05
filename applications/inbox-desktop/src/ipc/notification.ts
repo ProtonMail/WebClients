@@ -1,10 +1,57 @@
-import { BrowserView, Notification, app, nativeImage } from "electron";
-import { addHashToCurrentURL } from "../utils/urls/urlHelpers";
-import { getMailView, getMainWindow, showView } from "../utils/view/viewManagement";
+import { BrowserView, Notification, app, Event, nativeImage } from "electron";
+import {
+    bringWindowToFront,
+    openMail,
+    openCalendar,
+    getMainWindow,
+    getCurrentLocalID,
+} from "../utils/view/viewManagement";
 import { ipcLogger, notificationLogger } from "../utils/log";
 import { ElectronNotification } from "@proton/shared/lib/desktop/desktopTypes";
-import { isWindows } from "../utils/helpers";
+import { isWindows, isMac } from "../utils/helpers";
+import { parseURLParams } from "../utils/urls/urlHelpers";
 import { join } from "node:path";
+import { DEEPLINK_PROTOCOL, DeepLinkActions } from "../utils/protocol/deep_links";
+
+const notifications: Map<string, Notification> = new Map();
+
+const NOTIFICATION_ID_KEY = "notificationID";
+
+const findNotificationID = (argv: string[]): string | undefined => {
+    const url = argv.find((value: string) => value.includes(`${NOTIFICATION_ID_KEY}=`));
+    if (!url) {
+        return undefined;
+    }
+
+    const params = parseURLParams(url);
+    return params?.get(NOTIFICATION_ID_KEY) ?? undefined;
+};
+
+export const handleWinNotification = () => {
+    app.on("second-instance", (_ev: Event, argv: string[]) => {
+        const notificationID = findNotificationID(argv);
+        if (!notificationID) {
+            return;
+        }
+
+        notificationLogger.debug("Clear notification from deep link", notificationID);
+        notifications.delete(notificationID);
+    });
+
+    if (!isMac) {
+        return;
+    }
+
+    app.on("open-url", (_ev: Event, url: string) => {
+        const notificationID = findNotificationID([url]);
+        if (!notificationID) {
+            return;
+        }
+
+        notificationLogger.debug("Clear notification from open link", notificationID);
+        notifications.delete(notificationID);
+    });
+};
 
 async function setBadgeCount(value: number) {
     if (isWindows) {
@@ -94,39 +141,81 @@ export const resetBadge = () => {
     setBadgeCount(0);
 };
 
-export const showNotification = (payload: ElectronNotification) => {
+const windowsToastNotification = (
+    payload: ElectronNotification,
+    uuid: string,
+    localID: string | null,
+): { toastXml: string } => {
     const { title, body, app, labelID, elementID } = payload;
-    const notification = new Notification({ title, body });
+
+    const action = app === "calendar" ? DeepLinkActions.OpenCalendar : DeepLinkActions.OpenMail;
+    const params =
+        app === "mail" && labelID !== undefined && labelID !== "" && elementID !== undefined && elementID !== ""
+            ? `?labelID=${encodeURIComponent(labelID)}&amp;elementID=${encodeURIComponent(elementID)}&amp;${NOTIFICATION_ID_KEY}=${uuid}&amp;localID=${localID ?? "null"}`
+            : `?${NOTIFICATION_ID_KEY}=${uuid}`;
+
+    return {
+        toastXml: `<toast launch="${DEEPLINK_PROTOCOL}:${action}${params}" activationType="protocol">
+                <visual>
+                <binding template="ToastText02">
+                <text id="1">${title}</text>
+                <text id="2">${body}</text>
+                </binding>
+                </visual>
+                </toast>`,
+    };
+};
+
+const filterSenisitve = (payload: ElectronNotification): string =>
+    `app="${payload.app}", labelID="${payload.labelID}", elementID="${payload.elementID}"`;
+
+export const showNotification = (payload: ElectronNotification) => {
+    const uuid: string = crypto.randomUUID();
+    const localID = getCurrentLocalID();
+    notificationLogger.debug(`Notification request received ${uuid}, ${localID}:`, filterSenisitve(payload));
+
+    const { title, body, app, labelID, elementID } = payload;
+
+    const notification = new Notification(
+        isWindows ? windowsToastNotification(payload, uuid, localID) : { title, body },
+    );
 
     notification.on("click", () => {
-        const mainWindow = getMainWindow();
+        const clickLocalID = getCurrentLocalID();
+        notificationLogger.info("Notification clicked", uuid, clickLocalID);
+        if (!isWindows) bringWindowToFront();
 
-        if (!mainWindow || mainWindow.isDestroyed()) {
-            notificationLogger.warn("Ignoring notification, mainWindow is not available");
-            return;
+        switch (app) {
+            case "mail":
+                if (localID !== clickLocalID) {
+                    notificationLogger.warn(`Wrong localID: ${app}, ${uuid}`);
+                    // INDA-440: switch account
+                } else {
+                    openMail(labelID, elementID);
+                }
+                break;
+            case "calendar":
+                openCalendar();
+                break;
+            default:
+                notificationLogger.error(`Wrong notification app: ${app}, ${uuid}`);
+                return;
         }
 
-        if (labelID && elementID && app === "mail") {
-            const url = addHashToCurrentURL(
-                getMailView().webContents.getURL(),
-                `#elementID=${elementID}&labelID=${labelID}`,
-            );
-
-            notificationLogger.info("Opening email from notification");
-            showView("mail", url);
-        } else {
-            notificationLogger.info("Showing app from notification");
-            showView(app);
-        }
-
-        if (mainWindow.isMinimized()) {
-            notificationLogger.info("Restoring main window");
-            mainWindow.restore();
-        }
-
-        mainWindow.focus();
+        notifications.delete(uuid);
     });
 
-    notificationLogger.info("Showing notification");
+    notification.on("failed", () => {
+        notificationLogger.info("Notification failed", uuid);
+        notifications.delete(uuid);
+    });
+
+    notification.on("close", () => {
+        notificationLogger.info("Notification closed", uuid);
+        notifications.delete(uuid);
+    });
+
+    notifications.set(uuid, notification);
+    notificationLogger.info("Showing notification", uuid);
     notification.show();
 };
