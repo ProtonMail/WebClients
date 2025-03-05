@@ -52,6 +52,7 @@ iframe {
 	border: none !important;
 	display: none;
 	margin: 0 !important;
+	pointer-events: all !important;
 
 	&.visible {
 		display: block;
