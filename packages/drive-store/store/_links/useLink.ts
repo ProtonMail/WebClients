@@ -231,11 +231,11 @@ export function useLinkInner(
         shareId: string,
         encryptedLink: EncryptedLink,
         location: SignatureIssueLocation,
-        verified: VERIFICATION_STATUS
+        verificationStatus: VERIFICATION_STATUS
     ) => {
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             const signatureIssues: SignatureIssues = {};
-            signatureIssues[location] = verified;
+            signatureIssues[location] = verificationStatus;
             linksState.setLinks(shareId, [
                 {
                     encrypted: {
@@ -320,7 +320,7 @@ export function useLinkInner(
                 const {
                     decryptedPassphrase,
                     sessionKey: passphraseSessionKey,
-                    verified,
+                    verificationStatus,
                 } = await decryptPassphrase({
                     armoredPassphrase: encryptedLink.nodePassphrase,
                     armoredSignature: encryptedLink.nodePassphraseSignature,
@@ -328,7 +328,7 @@ export function useLinkInner(
                     publicKeysCallbackList,
                 });
 
-                handleSignatureCheck(shareId, encryptedLink, 'passphrase', verified);
+                handleSignatureCheck(shareId, encryptedLink, 'passphrase', verificationStatus);
 
                 linksKeys.setPassphrase(shareId, linkId, decryptedPassphrase);
                 linksKeys.setPassphraseSessionKey(shareId, linkId, passphraseSessionKey);
@@ -419,7 +419,7 @@ export function useLinkInner(
 
             if (encryptedLink.contentKeyPacketSignature) {
                 const publicKeys = [privateKey, ...(await getVerificationKey(encryptedLink.signatureEmail))];
-                const { verified } = await CryptoProxy.verifyMessage({
+                const { verificationStatus } = await CryptoProxy.verifyMessage({
                     binaryData: sessionKey.data,
                     verificationKeys: publicKeys,
                     armoredSignature: encryptedLink.contentKeyPacketSignature,
@@ -427,8 +427,8 @@ export function useLinkInner(
                 // iOS signed content key instead of session key in the past.
                 // Therefore we need to check that as well until we migrate
                 // old files.
-                if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                    const { verified: blockKeysVerified } = await CryptoProxy.verifyMessage({
+                if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    const { verificationStatus: blockKeysVerified } = await CryptoProxy.verifyMessage({
                         binaryData: blockKeys,
                         verificationKeys: publicKeys,
                         armoredSignature: encryptedLink.contentKeyPacketSignature,
@@ -437,7 +437,7 @@ export function useLinkInner(
                         // If even fall back solution does not succeed, report
                         // the original verified status of the session key as
                         // that one is the one we want to verify here.
-                        handleSignatureCheck(shareId, encryptedLink, 'contentKeyPacket', verified);
+                        handleSignatureCheck(shareId, encryptedLink, 'contentKeyPacket', verificationStatus);
                     }
                 }
             }
@@ -479,7 +479,7 @@ export function useLinkInner(
             const publicKey = [privateKey, ...addressPrivateKey];
 
             try {
-                const { data: hashKey, verified } = await decryptSigned({
+                const { data: hashKey, verificationStatus } = await decryptSigned({
                     armoredMessage: encryptedLink.nodeHashKey,
                     privateKey,
                     publicKey,
@@ -487,12 +487,12 @@ export function useLinkInner(
                 });
 
                 if (
-                    verified === VERIFICATION_STATUS.SIGNED_AND_INVALID ||
+                    verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID ||
                     // The hash was not signed until Beta 17 (DRVWEB-1219).
-                    (verified === VERIFICATION_STATUS.NOT_SIGNED &&
+                    (verificationStatus === VERIFICATION_STATUS.NOT_SIGNED &&
                         isAfter(fromUnixTime(encryptedLink.createTime), new Date(2021, 7, 1)))
                 ) {
-                    handleSignatureCheck(shareId, encryptedLink, 'hash', verified);
+                    handleSignatureCheck(shareId, encryptedLink, 'hash', verificationStatus);
                 }
 
                 linksKeys.setHashKey(shareId, linkId, hashKey);
@@ -541,7 +541,7 @@ export function useLinkInner(
                                 : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId);
                             const signatureEmail = encryptedLink.nameSignatureEmail || encryptedLink.signatureEmail;
                             const publicKey = signatureEmail ? await getVerificationKey(signatureEmail) : privateKey;
-                            const { data, verified } = await decryptSigned({
+                            const { data, verificationStatus } = await decryptSigned({
                                 armoredMessage: encryptedLink.name,
                                 privateKey,
                                 // nameSignatureEmail is missing for some old files.
@@ -554,7 +554,7 @@ export function useLinkInner(
                                 // would be to fix it properly in the database.
                                 publicKey,
                             });
-                            resolve({ name: data, nameVerified: verified });
+                            resolve({ name: data, nameVerified: verificationStatus });
                         } catch (error) {
                             reject(error);
                         }
@@ -587,9 +587,9 @@ export function useLinkInner(
                                   signatureEmail ? await getVerificationKey(signatureEmail) : privateKey
                               )
                           )
-                          .then(({ xattrs, verified }) => ({
+                          .then(({ xattrs, verificationStatus }) => ({
                               fileModifyTime: xattrs.Common.ModificationTime || encryptedLink.metaDataModifyTime,
-                              fileModifyTimeVerified: verified,
+                              fileModifyTimeVerified: verificationStatus,
                               originalSize: xattrs.Common?.Size,
                               originalDimensions: xattrs.Media
                                   ? {
@@ -812,7 +812,7 @@ export function useLinkInner(
         downloadCallback: (
             downloadUrl: string,
             downloadToken: string
-        ) => Promise<{ contents: Promise<Uint8Array[]>; verifiedPromise: Promise<VERIFICATION_STATUS> }>
+        ) => Promise<{ contents: Promise<Uint8Array[]>; verificationStatusPromise: Promise<VERIFICATION_STATUS> }>
     ): Promise<string | undefined> => {
         const link = await getLink(abortSignal, shareId, linkId);
         if (link.cachedThumbnailUrl || !link.hasThumbnail || !link.activeRevision) {
@@ -838,15 +838,15 @@ export function useLinkInner(
         };
 
         const loadThumbnailUrl = async (downloadUrl: string, downloadToken: string): Promise<string> => {
-            const { contents, verifiedPromise } = await downloadCallback(downloadUrl, downloadToken);
+            const { contents, verificationStatusPromise } = await downloadCallback(downloadUrl, downloadToken);
             const data = await contents;
             const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
             linksState.setCachedThumbnail(shareId, linkId, url);
 
             const cachedLink = linksState.getLink(shareId, linkId);
             if (cachedLink) {
-                const verified = await verifiedPromise;
-                handleSignatureCheck(shareId, cachedLink.encrypted, 'thumbnail', verified);
+                const verificationStatus = await verificationStatusPromise;
+                handleSignatureCheck(shareId, cachedLink.encrypted, 'thumbnail', verificationStatus);
             }
 
             return url;

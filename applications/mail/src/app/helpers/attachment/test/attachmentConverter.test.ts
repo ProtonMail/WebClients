@@ -1,4 +1,4 @@
-import type { MIMEAttachment, WorkerDecryptionResult } from '@proton/crypto';
+import { VERIFICATION_STATUS, type MIMEAttachment, type WorkerDecryptionResult } from '@proton/crypto';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
@@ -134,7 +134,7 @@ describe('convertToFile', () => {
         const spy = jest.fn((ID: string) => {
             return {
                 filename: 'attachment-2',
-                verified: 1,
+                verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
                 data: stringToUint8Array(`content-${ID}`),
                 signatures: [stringToUint8Array(`content-${ID}`)],
             } as WorkerDecryptionResult<Uint8Array>;

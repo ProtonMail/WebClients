@@ -78,7 +78,7 @@ describe('useRevision', () => {
         mockedGetLinkPrivateKey.mockResolvedValue('privateKey');
         mockedDecryptExtendedAttributes.mockResolvedValue({
             xattrs: revisionXattrs,
-            verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+            verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
         });
         const {
             result: {
@@ -101,7 +101,7 @@ describe('useRevision', () => {
     it('getRevisionDecryptedXattrs should sendErrorReport if a promise failed', async () => {
         mockedDecryptExtendedAttributes.mockResolvedValue({
             xattrs: revisionXattrs,
-            verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+            verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
         });
         mockedGetVerificationKey.mockResolvedValue(['key']);
         const error = new Error('getLinkPrivateKey error');

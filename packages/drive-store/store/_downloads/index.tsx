@@ -23,7 +23,7 @@ export function DownloadsProvider({ children }: { children: React.ReactNode }) {
         downloadUrl: string,
         downloadToken: string
     ) => {
-        const { contents, abortController, verifiedPromise } = await downloadThumbnail(
+        const { contents, abortController, verificationStatusPromise } = await downloadThumbnail(
             signal,
             shareId,
             linkId,
@@ -39,7 +39,7 @@ export function DownloadsProvider({ children }: { children: React.ReactNode }) {
             });
         }
 
-        return { contents, verifiedPromise };
+        return { contents, verificationStatusPromise };
     };
 
     return (
@@ -66,7 +66,7 @@ export function PublicDownloadsProvider({ children }: { children: React.ReactNod
         downloadUrl: string,
         downloadToken: string
     ) => {
-        const { contents, verifiedPromise } = await downloadThumbnail(
+        const { contents, verificationStatusPromise } = await downloadThumbnail(
             signal,
             token,
             linkId,
@@ -74,7 +74,7 @@ export function PublicDownloadsProvider({ children }: { children: React.ReactNod
             downloadToken
         );
 
-        return { contents, verifiedPromise };
+        return { contents, verificationStatusPromise };
     };
 
     return (
