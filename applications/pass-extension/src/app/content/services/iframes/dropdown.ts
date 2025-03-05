@@ -17,7 +17,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { isShadowRoot, isVisible } from '@proton/pass/fathom';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
+import { createStyleParser, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -68,11 +68,9 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
             const boxed = boxElement !== element;
             const bodyTop = root.getBoundingClientRect().top;
 
-            const { value: height, offset: offsetBox } = getComputedHeight(createStyleCompute(boxElement), {
-                node: boxElement,
-                mode: boxed ? 'inner' : 'outer',
-            });
-
+            const styles = createStyleParser(boxElement);
+            const computedHeight = getComputedHeight(styles, boxed ? 'inner' : 'outer');
+            const { value: height, offset: offsetBox } = computedHeight;
             const { left: boxLeft, top, width } = boxElement.getBoundingClientRect();
 
             return {

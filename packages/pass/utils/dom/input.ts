@@ -1,6 +1,6 @@
 import type { RectOffset } from '@proton/pass/types/utils/dom';
 
-import { createStyleCompute, getComputedHeight, pixelParser } from './computed-styles';
+import { createStyleParser, getComputedHeight, pixelParser } from './computed-styles';
 import { allChildrenOverlap } from './overlap';
 
 const containsTextNode = (el: HTMLElement) =>
@@ -130,8 +130,8 @@ export const findBoundingInputElement = (
 
     /* If a parent is much taller than its child, stop.
      * Indicates container size affected by CSS (float, flexbox) */
-    const styles = createStyleCompute(parent);
-    const parentInnerHeight = getComputedHeight(styles, { mode: 'inner', node: parent });
+    const styles = createStyleParser(parent);
+    const parentInnerHeight = getComputedHeight(styles, 'inner');
     if (!isInput && parentInnerHeight.value > curr.offsetHeight * BOUNDING_ELEMENT_MAX_RATIO) return curr;
 
     /* Check for single child, excluding injected elements */
