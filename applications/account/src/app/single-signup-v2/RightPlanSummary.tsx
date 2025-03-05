@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { getDealDurationText } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { type CYCLE, type Currency } from '@proton/payments';
+import { CYCLE, type Currency } from '@proton/payments';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import type { Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -128,19 +128,28 @@ export const RightPlanSummaryAddons = ({
     cycle,
     currency,
     checkout,
+    isOutrageousDiscount,
 }: {
     cycle: Cycle;
     currency: Currency;
     checkout: SubscriptionCheckoutData;
+    isOutrageousDiscount: boolean;
 }) => {
     return [
         {
             key: 'users',
             left: checkout?.usersTitle,
-            right: getPrice(getSimplePriceString(currency, checkout.membersPerMonth)),
+            right: getPrice(
+                getSimplePriceString(
+                    currency,
+                    isOutrageousDiscount ? checkout.withoutDiscountMembersPerMonth : checkout.membersPerMonth
+                )
+            ),
         },
         ...checkout.addons.map((addon) => {
-            const price = (addon.quantity * (addon.pricing[cycle] || 0)) / cycle;
+            const price = isOutrageousDiscount
+                ? addon.quantity * (addon.pricing[CYCLE.MONTHLY] ?? 0)
+                : (addon.quantity * (addon.pricing[cycle] ?? 0)) / cycle;
             if (isNaN(price)) {
                 return;
             }
