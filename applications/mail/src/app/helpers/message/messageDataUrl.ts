@@ -9,7 +9,7 @@ import { generateCid, setEmbeddedAttr } from './messageEmbeddeds';
 /**
  * Convert data-uri to blob
  */
-const dataUrlToFile = (fileName: string, dataUrl: string) => {
+export const dataUrlToFile = (fileName: string, dataUrl: string) => {
     const [mime = '', byte = ''] = dataUrl.split(',');
 
     // separate out the mime component
@@ -34,19 +34,35 @@ export const replaceDataUrl = (message: MessageState) => {
         return [];
     }
 
-    return [...message.messageDocument?.document.querySelectorAll('img')]
-        .map((image) => ({ image, src: image.src || '' }))
-        .filter(({ src }) => /data:image/.test(src)) // only data:uri image
-        .filter(({ src }) => src.includes(',')) // remove invalid data:uri
-        .map(({ image, src }) => {
-            const cid = generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '');
+    // Store replaced images so that we can check for duplicates
+    const cidMap = new Map<string, { cid: string; file: File }>();
 
-            const fileName = image.alt || `image${Date.now()}`;
-            const file = dataUrlToFile(fileName, src);
+    return [...message.messageDocument?.document.querySelectorAll('img')].reduce<{ cid: string; file: File }[]>(
+        (acc, image) => {
+            const src = image.src;
+            // Ignore non-data:uri images and invalid data:uri
+            if (!/data:image/.test(src) || !src.includes(',')) {
+                return acc;
+            }
+
+            // If image has not been found yet, create cid and file for the image
+            if (!cidMap.has(src)) {
+                const cid = generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '');
+                const fileName = image.alt || `image${Date.now()}`;
+                const file = dataUrlToFile(fileName, src);
+
+                cidMap.set(src, { cid, file });
+                acc.push({ cid, file });
+            }
+
+            // Get cid and insert it in the content
+            const { cid } = cidMap.get(src)!;
 
             setEmbeddedAttr(cid, '', image);
             image.removeAttribute('src');
 
-            return { cid, file };
-        });
+            return acc;
+        },
+        []
+    );
 };
