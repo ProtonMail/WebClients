@@ -1,5 +1,6 @@
 import { Notification, Event, app } from "electron";
 import { handleIPCCalls } from "./ipc/main";
+import { handleWinNotification } from "./ipc/notification";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
@@ -7,13 +8,19 @@ import { performStoreMigrations } from "./store/storeMigrations";
 import { initializeUpdateChecks, updateDownloaded } from "./update";
 import { isMac } from "./utils/helpers";
 import { urlOverrideError } from "./utils/view/dialogs";
-import { getMainWindow, getWebContentsViewName, viewCreationAppStartup } from "./utils/view/viewManagement";
+import {
+    bringWindowToFront,
+    getMainWindow,
+    getWebContentsViewName,
+    viewCreationAppStartup,
+} from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
+import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
 import { startFeatureCheck, setRequestPermission, extendAppVersionHeader } from "./utils/session";
@@ -27,6 +34,7 @@ import metrics from "./utils/metrics";
     await initializeSentry();
     logInitialAppInfo();
     handleStartupMailto();
+    handleStartupDeepLink();
 
     // Handle squirrel events at the very top of the application
     // WARN: We need to wait for this promise because we do not want any code to be executed
@@ -80,14 +88,7 @@ import metrics from "./utils/metrics";
         mainLogger.info("Second instance called", argv);
 
         // Bring window to focus
-        const mainWindow = getMainWindow();
-        if (mainWindow) {
-            if (mainWindow.isMinimized()) {
-                mainWindow.restore();
-            }
-
-            mainWindow.show();
-        }
+        bringWindowToFront();
     });
 
     if (!app.requestSingleInstanceLock()) {
@@ -105,6 +106,8 @@ import metrics from "./utils/metrics";
     new Notification();
     handleIPCCalls();
     handleAppReadyMailto();
+    handleDeepLink();
+    handleWinNotification();
 
     // After this point the main window and views have been created
     viewCreationAppStartup();
@@ -122,7 +125,7 @@ import metrics from "./utils/metrics";
 
     app.on("activate", () => {
         if (isMac) {
-            getMainWindow()?.show();
+            bringWindowToFront();
             return;
         }
 
@@ -135,11 +138,7 @@ import metrics from "./utils/metrics";
         mainLogger.info("Open URL event", url);
 
         // Bring window to focus
-        const mainWindow = getMainWindow();
-        if (mainWindow.isMinimized()) {
-            mainWindow.restore();
-        }
-        mainWindow.show();
+        bringWindowToFront();
     });
 
     startFeatureCheck();
