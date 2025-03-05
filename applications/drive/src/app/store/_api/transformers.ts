@@ -365,6 +365,7 @@ export const shareInvitationDetailsPayloadToShareInvitationDetails = (
             name: shareInvitationDetails.Link.Name,
             mimeType: shareInvitationDetails.Link.MIMEType,
             isFile: shareInvitationDetails.Link.Type === LinkType.FILE,
+            type: shareInvitationDetails.Link.Type,
         },
     };
 };
