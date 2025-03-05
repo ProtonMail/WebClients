@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { addDays, isBefore } from 'date-fns';
 import { c } from 'ttag';
@@ -29,6 +29,7 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
     const isFeatureEnabled = useFlag('PasswordNudge');
     const isFeatureEnabledForPaidUsers = useFlag('PasswordNudgeForPaidUsers');
     const sendTelemetry = usePassNudgeTelemetry();
+    const displayTelemetrySentRef = useRef(false);
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -73,7 +74,8 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
         !shouldHideBanner;
 
     useEffect(() => {
-        if (showPassNudge) {
+        if (showPassNudge && !displayTelemetrySentRef.current) {
+            displayTelemetrySentRef.current = true;
             sendTelemetry({
                 event: TelemetryPassNudgeEvents.banner_display,
                 dimensions: {
@@ -82,7 +84,7 @@ const ExtraPassNudge = ({ messageSubject = '' }: Props) => {
                 },
             });
         }
-    }, [showPassNudge, isFree, hasNeverUsedPass, sendTelemetry]);
+    }, [showPassNudge, hasNeverUsedPass, sendTelemetry]);
 
     const handleCloseInfoModal = () => {
         if (dontShowAgainCheckbox) {
