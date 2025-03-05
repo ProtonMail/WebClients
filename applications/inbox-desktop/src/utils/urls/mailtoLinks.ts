@@ -4,9 +4,8 @@ import { mainLogger } from "../log";
 import telemetry from "../telemetry";
 
 export const handleMailToUrls = (url: string) => {
-    mainLogger.info("Open mailto url and adding it to path");
-
     if (!url.startsWith("mailto:")) return;
+    mainLogger.info("Open mailto url and adding it to path");
 
     const mailView = getMailView();
     if (!mailView) return;
