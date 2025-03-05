@@ -7,8 +7,12 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl, getProductForSupport } from '@proton/shared/lib/helpers/url';
+import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
+import { type APP_NAMES, OPEN_COMPOSER_WITH_MAILTO_EVENT } from '@proton/shared/lib/constants';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { getKnowledgeBaseUrl, getProductForSupport, getStaticURL } from '@proton/shared/lib/helpers/url';
+
+import { useHelpCenterIframeStyles } from './useIframeCssOverrides';
 
 import './SelfHelpModal.scss';
 
@@ -22,64 +26,48 @@ interface Props {
 
 interface KnowledgeBaseMessage {
     type:
-    | 'CONTACT_SUPPORT_REQUESTED'
-    | 'CONTENT_HEIGHT_CHANGED'
-    | 'TROUBLESHOOTING_CLOSE'
-    | 'TROUBLESHOOTING_LOADED'
-    | 'IFRAME_READY_FOR_STYLES';
+        | 'CONTACT_SUPPORT_REQUESTED'
+        | 'CONTENT_HEIGHT_CHANGED'
+        | 'TROUBLESHOOTING_CLOSE'
+        | 'TROUBLESHOOTING_LOADED'
+        | 'IFRAME_READY_FOR_STYLES'
+        | 'OPEN_LINK'
+        | 'OPEN_COMPOSER';
     height?: number;
+    href?: string;
+    mailto?: string;
 }
-
-// Extract CSS variables from computed styles
-const extractCssVariable = (variableName: string) => {
-    const root = document.documentElement;
-    const computedStyle = getComputedStyle(root);
-    return computedStyle.getPropertyValue(variableName).trim() || 'initial';
-};
-
-const cssOverrides = `
-        ${(() => {
-        const linkNorm = extractCssVariable('--optional-link-norm');
-        const linkActive = extractCssVariable('--optional-link-active');
-        return linkNorm !== 'initial'
-            ? `
-                main a { color: ${linkNorm} !important; }
-                main a:hover { color: ${linkActive} !important; }
-                main a:focus { color: ${linkActive} !important; }
-            `
-            : '';
-    })()}
-        #plans, #header { display: none !important;}
-        #answer { padding-top: 0 !important;}
-        .shadow-s { box-shadow: none !important; }
-        .focus-within\\:ring-purple-200:focus-within { --tw-ring-color: ${extractCssVariable('--border-weak')} !important; }
-        .md\\:flex-row { flex-direction: row !important; }
-        [class*="hover\\:bg-purple-"]:hover { background-color: transparent !important; }
-        .p-8 { padding-left: 0 !important; padding-right: 0 !important; }
-        .px-2 { padding-left: 0 !important; padding-right: 0 !important; }
-        .px-4 { padding-left: 0 !important; padding-right: 0 !important; }
-        .border-purple-800 { border-color: ${extractCssVariable('--border-norm')} !important; }
-        .text-purple-800 { color: ${extractCssVariable('--text-norm')} !important; }
-        .text-body { color: ${extractCssVariable('--text-weak')} !important; }
-        [class*="bg-purple-"] { background-color: transparent !important; }
-        .bg-white { background-color: transparent !important; }
-        .bg-transparent { background-color: transparent !important; }
-        .bg-gray-100 { background-color: transparent !important; }
-        .button-text-shadow { text-shadow: none !important; }
-        button.bg-purple-500 { background-color: ${extractCssVariable('--interaction-norm')} !important; color: ${extractCssVariable('--interaction-norm-contrast')} !important; }
-        button.bg-purple-500:hover { background-color: ${extractCssVariable('--interaction-norm-major-1')} !important; }
-        button.bg-purple-500:active { background-color: ${extractCssVariable('--interaction-norm-major-2')} !important; }
-        body { color: ${extractCssVariable('--text-norm')} !important; }
-    `.trim();
 
 const SelfHelpModal = ({ open, onClose, onExit, onBugReportClick, app }: Props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [containerHeight, setContainerHeight] = useState(344);
+    const cssOverrides = useHelpCenterIframeStyles();
 
     const product = getProductForSupport(app);
 
     useEffect(() => {
+        /**
+         * Handle messages from the iframe
+         * Security considerations:
+         * 1. We validate the origin of incoming messages to ensure they come from trusted sources
+         * 2. We only send messages back to trusted origins
+         *
+         * Since we validate the origin of the messages, we can trust the content (including URLs)
+         * sent from the iframe. The iframe is hosted on our domain and is under our control.
+         */
         const handleMessage = (event: MessageEvent<KnowledgeBaseMessage>) => {
+            // Validate the origin of the message
+            // Trusted origins are proton.me and current domain
+            const trustedOrigins = [
+                getStaticURL(''), // KB URL without trailing slash
+                window.location.origin, // Same origin
+            ];
+
+            if (!trustedOrigins.includes(event.origin)) {
+                console.warn(`Message received from untrusted origin: ${event.origin}`);
+                return;
+            }
+
             if (event.data?.type === 'CONTACT_SUPPORT_REQUESTED') {
                 onBugReportClick();
                 onClose?.();
@@ -101,10 +89,41 @@ const SelfHelpModal = ({ open, onClose, onExit, onBugReportClick, app }: Props) 
                     iframe.contentWindow.postMessage(
                         {
                             type: 'THEME_STYLES',
-                            styles: cssOverrides,
+                            styles: encodeURIComponent(cssOverrides),
                         },
                         '*'
                     );
+                }
+            }
+            if (event.data?.type === 'OPEN_LINK') {
+                // Handle link clicks from the iframe
+                if (event.data.href) {
+                    const url = event.data.href;
+
+                    // Since we've already validated the origin of the message,
+                    // we can trust the URLs sent from the iframe
+
+                    if (isElectronMail) {
+                        // For Electron, use the openLinkInBrowser helper
+                        openLinkInBrowser(url);
+                    } else {
+                        // For web browser
+                        if (url.startsWith('mailto:')) {
+                            // Use the custom event to open the composer with the mailto link
+                            document.dispatchEvent(
+                                new CustomEvent(OPEN_COMPOSER_WITH_MAILTO_EVENT, {
+                                    detail: { mailto: url },
+                                })
+                            );
+                            onClose?.();
+                        } else {
+                            if (url.startsWith('https://')) {
+                                window.open(url, '_blank');
+                            } else {
+                                window.open(getStaticURL(url), '_blank');
+                            }
+                        }
+                    }
                 }
             }
         };
