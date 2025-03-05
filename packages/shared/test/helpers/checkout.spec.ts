@@ -135,6 +135,9 @@ describe('should get checkout result', () => {
             discountPercent: 0,
             membersPerMonth: 999,
             currency: 'USD',
+            withoutDiscountMembersPerMonth: 999,
+            worstCaseAmountPerCycle: 999,
+            outrageousDiscountPerCycle: 0,
         });
     });
 
@@ -191,6 +194,9 @@ describe('should get checkout result', () => {
             discountPercent: 0,
             membersPerMonth: 1199,
             currency: 'USD',
+            withoutDiscountMembersPerMonth: 1199,
+            worstCaseAmountPerCycle: 1199,
+            outrageousDiscountPerCycle: 0,
         });
     });
 
@@ -245,6 +251,9 @@ describe('should get checkout result', () => {
             discountPercent: 20,
             membersPerMonth: 799,
             currency: 'USD',
+            withoutDiscountMembersPerMonth: 799,
+            worstCaseAmountPerCycle: 999,
+            outrageousDiscountPerCycle: 200,
         });
     });
 
@@ -286,6 +295,9 @@ describe('should get checkout result', () => {
             discountPercent: 40,
             membersPerMonth: 1999,
             currency: 'USD',
+            withoutDiscountMembersPerMonth: 2999,
+            worstCaseAmountPerCycle: 71976,
+            outrageousDiscountPerCycle: 28776,
         });
     });
 
@@ -327,6 +339,9 @@ describe('should get checkout result', () => {
             discountPercent: 60,
             membersPerMonth: 999,
             currency: 'USD',
+            withoutDiscountMembersPerMonth: 999,
+            worstCaseAmountPerCycle: 29970,
+            outrageousDiscountPerCycle: 17994,
         });
     });
 
@@ -383,6 +398,9 @@ describe('should get checkout result', () => {
             discountPercent: 22,
             membersPerMonth: 2997,
             currency: 'USD',
+            withoutDiscountMembersPerMonth: 3897,
+            worstCaseAmountPerCycle: 104328,
+            outrageousDiscountPerCycle: 23040,
         });
     });
 
@@ -431,6 +449,9 @@ describe('should get checkout result', () => {
             discountPercent: 33,
             membersPerMonth: twoYearPrice3Members / 24,
             currency: 'USD',
+            withoutDiscountMembersPerMonth: 3596,
+            worstCaseAmountPerCycle: 86304,
+            outrageousDiscountPerCycle: 28800,
         });
     });
 
@@ -487,6 +508,9 @@ describe('should get checkout result', () => {
             discountPercent: 17,
             membersPerMonth: twoYearPrice3Members / 24,
             currency: 'USD',
+            withoutDiscountMembersPerMonth: 0,
+            worstCaseAmountPerCycle: 0,
+            outrageousDiscountPerCycle: 0,
         });
     });
 
@@ -530,6 +554,9 @@ describe('should get checkout result', () => {
             discountPercent: 100,
             membersPerMonth: 1999,
             currency: 'USD',
+            withoutDiscountMembersPerMonth: 2999,
+            worstCaseAmountPerCycle: 71976,
+            outrageousDiscountPerCycle: 71976,
         });
     });
 });

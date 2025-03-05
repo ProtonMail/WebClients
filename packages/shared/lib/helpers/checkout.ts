@@ -241,6 +241,11 @@ export const getCheckout = ({
     const membersPerMonth =
         membersPerCycle !== null ? (membersPerCycle / cycle) * usersAndAddons.users : amount / cycle - addonsPerMonth;
 
+    const memberMonthly = usersAndAddons.usersPricing?.[CYCLE.MONTHLY] ?? null;
+    const withoutDiscountMembersPerMonth = memberMonthly ? memberMonthly * usersAndAddons.users : membersPerMonth;
+    const worstCaseAmountPerCycle = withoutDiscountPerMonth * cycle;
+    const outrageousDiscountPerCycle = worstCaseAmountPerCycle - withDiscountPerCycle;
+
     return {
         couponDiscount: checkResult.CouponDiscount,
         planIDs,
@@ -253,9 +258,12 @@ export const getCheckout = ({
         withDiscountPerCycle,
         withDiscountPerMonth: withDiscountPerCycle / cycle,
         membersPerMonth,
+        withoutDiscountMembersPerMonth,
+        outrageousDiscountPerCycle,
         discountPerCycle,
         discountPercent,
         currency: checkResult.Currency,
+        worstCaseAmountPerCycle,
     };
 };
 
