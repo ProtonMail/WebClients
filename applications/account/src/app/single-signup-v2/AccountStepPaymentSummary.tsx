@@ -5,6 +5,7 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { Info, Price } from '@proton/components/index';
+import { COUPON_CODES } from '@proton/payments/index';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import {
@@ -68,7 +69,10 @@ const AccountStepPaymentSummary = ({
     const couponDiscount = isBFOffer ? 0 : currentCheckout.couponDiscount || 0;
     const billingAddress = subscriptionData.billingAddress;
 
-    const showAmountDue = proration !== 0 || credits !== 0 || couponDiscount !== 0;
+    const isPorkbun = subscriptionData.checkResult.Coupon?.Code === COUPON_CODES.PORKBUN;
+    const hideDiscount = isPorkbun;
+
+    const showAmountDue = proration !== 0 || credits !== 0 || couponDiscount !== 0 || hideDiscount;
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlan.Name);
 
@@ -83,6 +87,105 @@ const AccountStepPaymentSummary = ({
     const initialLoading = model.loadingDependencies;
     const loading = loadingPaymentDetails || initialLoading;
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
+
+    const priceBreakdown = (() => {
+        const getPrice = (price: number) => {
+            return <Price currency={subscriptionData.currency}>{price}</Price>;
+        };
+        return [
+            !hideDiscount && {
+                id: 'amount',
+                left: <span>{getTotalBillingText(options.cycle, currentCheckout.planIDs)}</span>,
+                right: isBFOffer ? (
+                    <>
+                        {loading ? (
+                            loaderNode
+                        ) : (
+                            <>
+                                <Price currency={subscriptionData.currency}>
+                                    {currentCheckout.withDiscountPerCycle}
+                                </Price>
+                                {!showAmountDue && showRenewalNotice && '*'}
+                            </>
+                        )}
+                    </>
+                ) : (
+                    <>
+                        {getPrice(currentCheckout.withoutDiscountPerCycle)}
+                        {!showAmountDue && showRenewalNotice && '*'}
+                    </>
+                ),
+                bold: true,
+                loader: !showAmountDue,
+            },
+            !hideDiscount &&
+                couponDiscount !== 0 && {
+                    id: 'discount',
+                    left: (
+                        <div>
+                            {c('Info').t`Discount`}{' '}
+                            <span className="text-sm">
+                                <SaveLabel percent={currentCheckout.discountPercent} />
+                            </span>
+                        </div>
+                    ),
+                    right: getPrice(couponDiscount),
+                },
+            proration !== 0 && {
+                id: 'proration',
+                left: (
+                    <span className="inline-flex items-center">
+                        <span className="mr-2">{c('Label').t`Proration`}</span>
+                        <Info
+                            title={
+                                proration < 0
+                                    ? c('Info').t`Credit for the unused portion of your previous plan subscription`
+                                    : c('Info').t`Balance from your previous subscription`
+                            }
+                            url={getKnowledgeBaseUrl('/credit-proration-coupons')}
+                        />
+                    </span>
+                ),
+                right: getPrice(proration),
+                bold: false,
+            },
+            credits !== 0 && {
+                id: 'credits',
+                left: <span>{c('Title').t`Credits`}</span>,
+                right: getPrice(credits),
+                bold: false,
+            },
+            !showAmountDue &&
+                showInclusiveTax && {
+                    id: 'vat',
+                    left: taxInclusiveText,
+                },
+        ]
+            .filter(isTruthy)
+            .map(({ id, bold, left, right, loader }) => {
+                return (
+                    <div key={id} className={clsx(bold && 'text-bold', 'flex justify-space-between text-rg')}>
+                        {left}
+                        <span>
+                            {(() => {
+                                if (!right) {
+                                    return null;
+                                }
+
+                                if (loading) {
+                                    if (loader) {
+                                        return loaderNode;
+                                    }
+                                    return null;
+                                }
+
+                                return right;
+                            })()}
+                        </span>
+                    </div>
+                );
+            });
+    })();
 
     return (
         <RightSummary variant="border" className="mx-auto md:mx-0 rounded-xl">
@@ -104,6 +207,7 @@ const AccountStepPaymentSummary = ({
                         cycle={options.cycle}
                         checkout={currentCheckout}
                         currency={options.currency}
+                        displayMembersWithDiscount={hideDiscount}
                     />
                 }
                 discount={initialLoading ? 0 : currentCheckout.discountPercent}
@@ -124,111 +228,10 @@ const AccountStepPaymentSummary = ({
                     />
                 )}
                 <div className="flex flex-column gap-2">
-                    {(() => {
-                        const getPrice = (price: number) => {
-                            return <Price currency={subscriptionData.currency}>{price}</Price>;
-                        };
-                        return [
-                            {
-                                id: 'amount',
-                                left: <span>{getTotalBillingText(options.cycle, currentCheckout.planIDs)}</span>,
-                                right: isBFOffer ? (
-                                    <>
-                                        {loading ? (
-                                            loaderNode
-                                        ) : (
-                                            <>
-                                                <Price currency={subscriptionData.currency}>
-                                                    {currentCheckout.withDiscountPerCycle}
-                                                </Price>
-                                                {!showAmountDue && showRenewalNotice && '*'}
-                                            </>
-                                        )}
-                                    </>
-                                ) : (
-                                    <>
-                                        {getPrice(currentCheckout.withoutDiscountPerCycle)}
-                                        {!showAmountDue && showRenewalNotice && '*'}
-                                    </>
-                                ),
-                                bold: true,
-                                loader: !showAmountDue,
-                            },
-                            couponDiscount !== 0 && {
-                                id: 'discount',
-                                left: (
-                                    <div>
-                                        {c('Info').t`Discount`}{' '}
-                                        <span className="text-sm">
-                                            <SaveLabel percent={currentCheckout.discountPercent} />
-                                        </span>
-                                    </div>
-                                ),
-                                right: getPrice(couponDiscount),
-                            },
-                            proration !== 0 && {
-                                id: 'proration',
-                                left: (
-                                    <span className="inline-flex items-center">
-                                        <span className="mr-2">{c('Label').t`Proration`}</span>
-                                        <Info
-                                            title={
-                                                proration < 0
-                                                    ? c('Info')
-                                                          .t`Credit for the unused portion of your previous plan subscription`
-                                                    : c('Info').t`Balance from your previous subscription`
-                                            }
-                                            url={getKnowledgeBaseUrl('/credit-proration-coupons')}
-                                        />
-                                    </span>
-                                ),
-                                right: getPrice(proration),
-                                bold: false,
-                            },
-                            credits !== 0 && {
-                                id: 'credits',
-                                left: <span>{c('Title').t`Credits`}</span>,
-                                right: getPrice(credits),
-                                bold: false,
-                            },
-                            !showAmountDue &&
-                                showInclusiveTax && {
-                                    id: 'vat',
-                                    left: taxInclusiveText,
-                                },
-                        ]
-                            .filter(isTruthy)
-                            .map(({ id, bold, left, right, loader }) => {
-                                return (
-                                    <div
-                                        key={id}
-                                        className={clsx(bold && 'text-bold', 'flex justify-space-between text-rg')}
-                                    >
-                                        {left}
-                                        <span>
-                                            {(() => {
-                                                if (!right) {
-                                                    return null;
-                                                }
-
-                                                if (loading) {
-                                                    if (loader) {
-                                                        return loaderNode;
-                                                    }
-                                                    return null;
-                                                }
-
-                                                return right;
-                                            })()}
-                                        </span>
-                                    </div>
-                                );
-                            });
-                    })()}
-
+                    {priceBreakdown}
                     {showAmountDue && (
                         <>
-                            <hr className="m-0" />
+                            {priceBreakdown.length > 0 && <hr className="m-0" />}
                             <div className="flex justify-space-between text-bold text-rg">
                                 <span className="">{c('Label').t`Amount due`}</span>
                                 <span>
