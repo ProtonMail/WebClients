@@ -106,7 +106,11 @@ export const loadFulfilled = (state: Draft<MessagesState>, { payload }: PayloadA
     const messageState = getMessage(state, payload.ID);
 
     if (messageState) {
-        messageState.data = payload;
+        // Use current message.data in case the user is undoing send. We want to keep data like Password or Hint for example.
+        messageState.data = {
+            ...messageState.data,
+            ...payload,
+        };
         messageState.loadRetry = messageState.loadRetry ? messageState.loadRetry + 1 : 1;
     }
 };
