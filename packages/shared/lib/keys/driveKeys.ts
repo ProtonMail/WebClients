@@ -65,13 +65,13 @@ export const decryptSigned = async <F extends 'utf8' | 'binary' = 'utf8'>({
     publicKey,
     format,
 }: SignedDecryptionPayload<F>) => {
-    const { data, verified } = await CryptoProxy.decryptMessage({
+    const { data, verificationStatus } = await CryptoProxy.decryptMessage({
         armoredMessage,
         decryptionKeys: privateKey,
         verificationKeys: publicKey,
         format,
     });
-    return { data, verified };
+    return { data, verificationStatus };
 };
 
 /**

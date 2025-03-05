@@ -363,7 +363,7 @@ export const verifyOrganizationTokenSignature = async ({
         signatureContext: { value: ORGANIZATION_SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, required: true },
     });
 
-    if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (result.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;
@@ -551,7 +551,7 @@ export const validateOrganizationKeySignature = async ({
         },
     });
 
-    if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (result.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;

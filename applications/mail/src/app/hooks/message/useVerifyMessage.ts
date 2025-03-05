@@ -50,7 +50,7 @@ export const useVerifyMessage = (localID: string) => {
                     verificationComplete({
                         ID: localID,
                         verification: {
-                            verified: VERIFICATION_STATUS.SIGNED_AND_INVALID,
+                            verificationStatus: VERIFICATION_STATUS.SIGNED_AND_INVALID,
                             verificationErrors: [new Error('message decryption failure')],
                         },
                     })
@@ -105,7 +105,7 @@ export const useVerifyMessage = (localID: string) => {
                     ...autocryptKeys,
                 ];
 
-                const signed = verification.verified !== VERIFICATION_STATUS.NOT_SIGNED;
+                const signed = verification.verificationStatus !== VERIFICATION_STATUS.NOT_SIGNED;
                 signingPublicKey =
                     signed && verification.signature
                         ? await getMatchingSigningKey({

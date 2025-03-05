@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@proton/crypto'
+import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants'
 import { SignedPlaintextContent } from '@proton/docs-proto'
 import { EncryptionService } from './EncryptionService'
 import { HKDF_SALT_SIZE } from '../../Crypto/Constants'
@@ -151,14 +152,16 @@ describe('EncryptionService', () => {
     const mockVerificationKeys = { key: 'verification-key' } as any
 
     beforeEach(() => {
-      ;(CryptoProxy.verifyMessage as jest.Mock).mockResolvedValue({ verified: true })
+      ;(CryptoProxy.verifyMessage as jest.Mock).mockResolvedValue({
+        verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+      })
     })
 
     it('should successfully verify data', async () => {
       const result = await service.verifyData(mockData, mockSignature, mockAssociatedData, mockVerificationKeys)
 
       expect(result.isFailed()).toBe(false)
-      expect(result.getValue()).toBe(true)
+      expect(result.getValue()).toBe(VERIFICATION_STATUS.SIGNED_AND_VALID)
       expect(CryptoProxy.verifyMessage).toHaveBeenCalledWith({
         binaryData: mockData,
         binarySignature: mockSignature,

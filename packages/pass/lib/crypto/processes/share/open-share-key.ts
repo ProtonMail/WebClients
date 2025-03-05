@@ -14,14 +14,14 @@ export const openShareKey = async ({ shareKey, userKeys }: OpenVaultKeyProcessPa
     const { Key, KeyRotation, UserKeyID } = shareKey;
     const privateUserKeys = userKeys.map(({ privateKey }) => privateKey);
 
-    const { data: vaultKey, verified } = await CryptoProxy.decryptMessage({
+    const { data: vaultKey, verificationStatus } = await CryptoProxy.decryptMessage({
         binaryMessage: base64StringToUint8Array(Key),
         decryptionKeys: privateUserKeys,
         verificationKeys: privateUserKeys,
         format: 'binary',
     });
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         throw new PassCryptoVaultError(`Could not validate vault key signature`);
     }
 

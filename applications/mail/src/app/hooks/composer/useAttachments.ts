@@ -32,6 +32,7 @@ import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
 import { usePromise } from '../usePromise';
+import { VERIFICATION_STATUS } from '@proton/crypto';
 
 type AttachmentUpload = {
     file: File;
@@ -129,7 +130,7 @@ export const useAttachments = ({
                 dispatch(
                     addAttachment({
                         ID: upload?.attachment.ID || '',
-                        attachment: { data, verified: 1, filename, signatures: [] },
+                        attachment: { data, verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID, filename, signatures: [] },
                     })
                 );
 

@@ -75,14 +75,14 @@ const getVerifiedLegacy = async ({
     if (!isElectronMail) {
         captureMessage('Fallback to legacy signature verification of calendar event', { level: 'info' });
     }
-    const { verified: verifiedLegacy } = await CryptoProxy.verifyMessage({
+    const { verificationStatus: verificationStatusLegacy } = await CryptoProxy.verifyMessage({
         textData,
         stripTrailingSpaces: true,
         verificationKeys: publicKeys,
         armoredSignature: signature,
     });
 
-    return verifiedLegacy;
+    return verificationStatusLegacy;
 };
 
 export const verifySignedCard = async (
@@ -90,16 +90,16 @@ export const verifySignedCard = async (
     signature: string,
     publicKeys: PublicKeyReference | PublicKeyReference[]
 ) => {
-    const { verified: verifiedBinary } = await CryptoProxy.verifyMessage({
+    const { verificationStatus: verifiedBinary } = await CryptoProxy.verifyMessage({
         binaryData: stringToUtf8Array(dataToVerify), // not 'utf8' to avoid issues with trailing spaces and automatic normalisation of EOLs to \n
         verificationKeys: publicKeys,
         armoredSignature: signature,
     });
-    const verified = getNeedsLegacyVerification(verifiedBinary, dataToVerify)
+    const maybeLegacyVerificationStatus = getNeedsLegacyVerification(verifiedBinary, dataToVerify)
         ? await getVerifiedLegacy({ textData: dataToVerify, signature, publicKeys })
         : verifiedBinary;
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
-    const verificationStatus = getEventVerificationStatus(verified, hasPublicKeys);
+    const verificationStatus = getEventVerificationStatus(maybeLegacyVerificationStatus, hasPublicKeys);
 
     return { data: dataToVerify, verificationStatus };
 };
@@ -110,7 +110,7 @@ export const decryptCard = async (
     publicKeys: PublicKeyReference | PublicKeyReference[],
     sessionKey: SessionKey
 ) => {
-    const { data: decryptedData, verified: verifiedBinary } = await CryptoProxy.decryptMessage({
+    const { data: decryptedData, verificationStatus: verifiedBinary } = await CryptoProxy.decryptMessage({
         binaryMessage: dataToDecrypt,
         format: 'binary', // even though we convert to utf8 later, we can't use 'utf8' here as that would entail automatic normalisation of EOLs to \n
         verificationKeys: publicKeys,
@@ -118,12 +118,12 @@ export const decryptCard = async (
         sessionKeys: [sessionKey],
     });
     const decryptedText = utf8ArrayToString(decryptedData);
-    const verified =
+    const maybeLegacyVerificationStatus =
         signature && getNeedsLegacyVerification(verifiedBinary, decryptedText)
             ? await getVerifiedLegacy({ textData: decryptedText, signature, publicKeys })
             : verifiedBinary;
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
-    const verificationStatus = getEventVerificationStatus(verified, hasPublicKeys);
+    const verificationStatus = getEventVerificationStatus(maybeLegacyVerificationStatus, hasPublicKeys);
 
     return { data: utf8ArrayToString(decryptedData), verificationStatus };
 };
