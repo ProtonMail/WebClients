@@ -128,16 +128,23 @@ export const RightPlanSummaryAddons = ({
     cycle,
     currency,
     checkout,
+    displayMembersWithDiscount,
 }: {
     cycle: Cycle;
     currency: Currency;
     checkout: SubscriptionCheckoutData;
+    displayMembersWithDiscount: boolean;
 }) => {
     return [
         {
             key: 'users',
             left: checkout?.usersTitle,
-            right: getPrice(getSimplePriceString(currency, checkout.membersPerMonth)),
+            right: getPrice(
+                getSimplePriceString(
+                    currency,
+                    displayMembersWithDiscount ? checkout.withDiscountMembersPerMonth : checkout.membersPerMonth
+                )
+            ),
         },
         ...checkout.addons.map((addon) => {
             const price = (addon.quantity * (addon.pricing[cycle] || 0)) / cycle;

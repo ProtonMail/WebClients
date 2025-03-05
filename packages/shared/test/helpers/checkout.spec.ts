@@ -135,6 +135,7 @@ describe('should get checkout result', () => {
             discountPercent: 0,
             membersPerMonth: 999,
             currency: 'USD',
+            withDiscountMembersPerMonth: 999,
         });
     });
 
@@ -191,6 +192,7 @@ describe('should get checkout result', () => {
             discountPercent: 0,
             membersPerMonth: 1199,
             currency: 'USD',
+            withDiscountMembersPerMonth: 1199,
         });
     });
 
@@ -245,6 +247,7 @@ describe('should get checkout result', () => {
             discountPercent: 20,
             membersPerMonth: 799,
             currency: 'USD',
+            withDiscountMembersPerMonth: 799,
         });
     });
 
@@ -286,33 +289,35 @@ describe('should get checkout result', () => {
             discountPercent: 40,
             membersPerMonth: 1999,
             currency: 'USD',
+            withDiscountMembersPerMonth: 1800,
         });
     });
 
     it('should calculate bf 30 month vpn plus', () => {
-        expect(
-            getCheckout({
-                planIDs: {
-                    [PLANS.VPN]: 1,
+        const result = getCheckout({
+            planIDs: {
+                [PLANS.VPN]: 1,
+            },
+            checkResult: {
+                Amount: 29970,
+                AmountDue: 29970,
+                CouponDiscount: -17994,
+                Cycle: CYCLE.THIRTY,
+                Coupon: {
+                    Code: 'TEST',
+                    Description: '',
+                    MaximumRedemptionsPerUser: null,
                 },
-                checkResult: {
-                    Amount: 29970,
-                    AmountDue: 29970,
-                    CouponDiscount: -17994,
-                    Cycle: CYCLE.THIRTY,
-                    Coupon: {
-                        Code: 'TEST',
-                        Description: '',
-                        MaximumRedemptionsPerUser: null,
-                    },
-                    Currency: 'USD',
-                    SubscriptionMode: SubscriptionMode.Regular,
-                },
-                plansMap: {
-                    [PLANS.VPN]: getPlan(vpnPlan),
-                },
-            })
-        ).toEqual({
+                Currency: 'USD',
+                SubscriptionMode: SubscriptionMode.Regular,
+            },
+            plansMap: {
+                [PLANS.VPN]: getPlan(vpnPlan),
+            },
+        });
+
+        // Create a copy of the expected result with the approximate value
+        const expected = {
             couponDiscount: -17994,
             planTitle: 'VPN',
             planName: PLANS.VPN,
@@ -327,7 +332,20 @@ describe('should get checkout result', () => {
             discountPercent: 60,
             membersPerMonth: 999,
             currency: 'USD',
-        });
+            withDiscountMembersPerMonth: 399.2,
+        };
+
+        // Use toBeCloseTo for the floating point value
+        expect(result.withDiscountMembersPerMonth).toBeCloseTo(expected.withDiscountMembersPerMonth, 1);
+
+        // For the rest of the object, we can delete the problematic property and compare the rest
+        // Create copies with optional properties that can be deleted
+        const resultCopy: Record<string, any> = { ...result };
+        const expectedCopy: Record<string, any> = { ...expected };
+
+        resultCopy.withDiscountMembersPerMonth = undefined;
+        expectedCopy.withDiscountMembersPerMonth = undefined;
+        expect(resultCopy).toEqual(expectedCopy);
     });
 
     it('should calculate business with addons', () => {
@@ -383,6 +401,7 @@ describe('should get checkout result', () => {
             discountPercent: 22,
             membersPerMonth: 2997,
             currency: 'USD',
+            withDiscountMembersPerMonth: 2997,
         });
     });
 
@@ -431,6 +450,7 @@ describe('should get checkout result', () => {
             discountPercent: 33,
             membersPerMonth: twoYearPrice3Members / 24,
             currency: 'USD',
+            withDiscountMembersPerMonth: twoYearPrice3Members / 24,
         });
     });
 
@@ -487,6 +507,7 @@ describe('should get checkout result', () => {
             discountPercent: 17,
             membersPerMonth: twoYearPrice3Members / 24,
             currency: 'USD',
+            withDiscountMembersPerMonth: twoYearPrice3Members / 24,
         });
     });
 
@@ -530,6 +551,7 @@ describe('should get checkout result', () => {
             discountPercent: 100,
             membersPerMonth: 1999,
             currency: 'USD',
+            withDiscountMembersPerMonth: 0,
         });
     });
 });
