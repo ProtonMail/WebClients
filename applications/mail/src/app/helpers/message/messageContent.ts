@@ -3,8 +3,7 @@ import { checkContrast, parseStringToDOM } from '@proton/shared/lib/helpers/dom'
 import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import { message } from '@proton/shared/lib/sanitize';
-import { escape, unescape } from '@proton/shared/lib/sanitize/escape';
+import { unescape } from '@proton/shared/lib/sanitize/escape';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
 import type { MESSAGE_ACTIONS } from '../../constants';
@@ -201,26 +200,12 @@ export const getContentWithBlockquotes = (
 export const getComposerDefaultFontStyles = (mailSettings: MailSettings) =>
     `font-family: ${mailSettings?.FontFace || DEFAULT_FONT_FACE_ID}; font-size: ${mailSettings?.FontSize || DEFAULT_FONT_SIZE}px`;
 
-export const prepareContentToInsert = (
-    textToInsert: string,
-    isPlainText: boolean,
-    isMarkdown: boolean,
-    messageID: string
-) => {
+export const prepareContentToInsert = (textToInsert: string, isPlainText: boolean, messageID: string) => {
     if (isPlainText) {
         return unescape(textToInsert);
     }
 
-    if (isMarkdown) {
-        return parseModelResult(textToInsert, messageID);
-    }
-
-    // Because rich text editor convert text to HTML, we need to escape the text before inserting it
-    // As a 2nd layer of security, to prevent adding unsafe elements, we also want to sanitize the content before importing it
-    const escapedText = escape(textToInsert);
-    const sanitizedText = message(escapedText);
-
-    return sanitizedText;
+    return parseModelResult(textToInsert, messageID);
 };
 
 export const insertTextBeforeContent = (

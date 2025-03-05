@@ -84,7 +84,6 @@ type SetContentBeforeBlockquoteOptions = (
            * Expected string format example: 'font-family: Arial, serif; font-size: 12px;'
            */
           wrapperDivStyles: string;
-          canKeepFormatting: boolean;
           messageID: string;
       }
 ) & {
@@ -101,7 +100,7 @@ export const setMessageContentBeforeBlockquote = (args: SetContentBeforeBlockquo
     }
 
     if ('html' === editorType) {
-        const { wrapperDivStyles, canKeepFormatting, messageID } = args;
+        const { wrapperDivStyles, messageID } = args;
         const editorContentRootDiv = new DOMParser().parseFromString(editorContent, 'text/html').body as HTMLElement;
         let shouldDelete = true;
 
@@ -128,7 +127,7 @@ export const setMessageContentBeforeBlockquote = (args: SetContentBeforeBlockquo
 
         const divEl = document.createElement('div');
         divEl.setAttribute('style', wrapperDivStyles);
-        divEl.innerHTML = canKeepFormatting ? prepareContentToInsert(content, false, true, messageID) : content;
+        divEl.innerHTML = prepareContentToInsert(content, false, messageID);
         divEl.appendChild(document.createElement('br'));
         divEl.appendChild(document.createElement('br'));
 
