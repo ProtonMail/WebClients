@@ -84,6 +84,12 @@ interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onCli
     sessionOptions?: Parameters<typeof AccountSessionsSwitcher>[0]['sessionOptions'];
 }
 
+const ALLOWED_APPS_FOR_SELF_TROUBLESHOOT: Partial<APP_NAMES>[] = [
+    APPS.PROTONMAIL,
+    APPS.PROTONCALENDAR,
+    APPS.PROTONACCOUNT,
+];
+
 const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessionOptions, ...rest }: Props) => {
     const { APP_NAME } = useConfig();
     const [organization] = useOrganization();
@@ -104,7 +110,8 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
     const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
-    const isSelfTroubleshoot = useFlag('SelfTroubleshoot');
+    /* Enable for calendar, account and mail */
+    const isSelfTroubleshoot = useFlag('SelfTroubleshoot') && ALLOWED_APPS_FOR_SELF_TROUBLESHOOT.includes(app);
 
     const [{ isSentinelUser }] = useIsSentinelUser();
     const [

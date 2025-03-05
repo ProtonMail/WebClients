@@ -1008,6 +1008,11 @@ export enum SIMPLE_LOGIN_EXTENSION_LINKS {
 
 export const OPEN_OFFER_MODAL_EVENT = 'openoffermodal';
 
+/**
+ * Custom event name for opening the composer with a mailto link
+ */
+export const OPEN_COMPOSER_WITH_MAILTO_EVENT = 'open-composer-with-mailto';
+
 export enum DESKTOP_APP_NAMES {
     DRIVE = 'drive',
 }
