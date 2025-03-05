@@ -2,7 +2,7 @@ import { getAppURL } from "../../store/urlStore";
 import { mainLogger } from "../log";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
-export const getLocalID = (url?: string) => {
+export const getLocalID = (url?: string): string | null => {
     if (!url) {
         return null;
     }
@@ -12,7 +12,7 @@ export const getLocalID = (url?: string) => {
 
         const localID = pathName.match(sessionRegex)?.[0];
 
-        if (isNaN(Number(localID))) {
+        if (!localID || isNaN(Number(localID))) {
             return null;
         }
 
