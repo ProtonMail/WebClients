@@ -459,7 +459,7 @@ export const useInvitations = () => {
             binarySignature: base64StringToUint8Array(currentExternalInvitation.externalInvitationSignature),
         });
 
-        if (!verificationStatus) {
+        if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             throw new EnrichedError('Failed to validate the signature', {
                 tags: {
                     linkId: linkId,
