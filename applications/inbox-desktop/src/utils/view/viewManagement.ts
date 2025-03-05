@@ -6,6 +6,7 @@ import { updateDownloaded } from "../../update";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { urlHasMailto, readAndClearMailtoArgs } from "../protocol/mailto";
+import { urlHasOpenMailParams, readAndClearOpenMailArgs, readAndClearOpenCalendarArgs } from "../protocol/deep_links";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { setApplicationMenu } from "../menus/menuApplication";
@@ -19,6 +20,7 @@ import {
     isSameURL,
     trimLocalID,
 } from "../urls/urlTests";
+import { addHashToCurrentURL } from "../urls/urlHelpers";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
@@ -110,8 +112,33 @@ export const viewCreationAppStartup = async () => {
     await new Promise((resolve) => setTimeout(resolve, delay));
 
     const mailto = readAndClearMailtoArgs();
+    if (mailto) {
+        loadURL("mail", getAppURL().mail + `/inbox#mailto=${mailto}`).then(() => {
+            showView("mail");
+            mainWindow!.show();
+        });
+        return;
+    }
 
-    loadURL("mail", getAppURL().mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
+    const openMail = readAndClearOpenMailArgs();
+    if (openMail) {
+        loadURL("mail", getAppURL().mail + `/inbox#${openMail}`).then(() => {
+            showView("mail");
+            mainWindow!.show();
+        });
+        return;
+    }
+
+    const openCalendar = readAndClearOpenCalendarArgs();
+    if (openCalendar) {
+        loadURL("calendar", getAppURL().calendar).then(() => {
+            showView("calendar");
+            mainWindow!.show();
+        });
+        return;
+    }
+
+    loadURL("mail", getAppURL().mail).then(() => {
         showView("mail");
         mainWindow!.show();
     });
@@ -283,6 +310,11 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
         await showLoadingPage(viewTitleMap[viewID]);
         await loadURL(viewID, url);
         mainWindow!.setBrowserView(view);
+    } else if (url && urlHasOpenMailParams(url)) {
+        viewLogger(viewID).debug(`showView loading open mail ${url} from`, await getViewURL(viewID));
+        await showLoadingPage(viewTitleMap[viewID]);
+        await loadURL(viewID, url);
+        mainWindow!.setBrowserView(view);
     } else if (url && !isSameURL(url, await getViewURL(viewID))) {
         viewLogger(viewID).debug("showView current url is different", await getViewURL(viewID));
         viewLogger(viewID).info("showView loading", url);
@@ -294,6 +326,47 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
         mainWindow!.setBrowserView(view);
     }
 }
+
+export const openMail = (labelID: string | undefined, elementID: string | undefined) => {
+    if (!mainWindow || mainWindow.isDestroyed()) {
+        viewLogger("mail").warn("Ignoring openMail action, mainWindow is not available");
+        return;
+    }
+
+    const currentUrl = browserViewMap.mail!.webContents.getURL();
+    const url =
+        labelID !== undefined && labelID !== "" && elementID !== undefined && elementID !== ""
+            ? addHashToCurrentURL(
+                  currentUrl,
+                  `#labelID=${encodeURIComponent(labelID)}&elementID=${encodeURIComponent(elementID)}`,
+              )
+            : getAppURL().mail + "/u/0/all-mail"; // localID will be fixed by showView
+
+    showView("mail", url);
+
+    if (mainWindow.isMinimized()) {
+        viewLogger("mail").info("Restoring main window");
+        mainWindow.restore();
+    }
+
+    mainWindow.focus();
+};
+
+export const openCalendar = () => {
+    if (!mainWindow || mainWindow.isDestroyed()) {
+        viewLogger("calendar").warn("Ignoring openCalendar action, mainWindow is not available");
+        return;
+    }
+
+    showView("calendar");
+
+    if (mainWindow.isMinimized()) {
+        viewLogger("calendar").info("Restoring main window");
+        mainWindow.restore();
+    }
+
+    mainWindow.focus();
+};
 
 export async function loadURL(viewID: ViewID, url: string, { force } = { force: false }) {
     if (!url) {
@@ -311,11 +384,11 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
     // NOTE isSameURL will ignore `#mailto` arguments, but we want to load even if it's
     // same. In some cases this might cause a view reload.
-    if (urlHasMailto(url)) {
+    if (urlHasMailto(url) || urlHasOpenMailParams(url)) {
         if (viewURL == url) {
-            const defURL = url.replace(/#mailto=.*$/, "#mailto=default");
+            const defURL = url.replace(/#.*$/, "#mailto=default");
             viewLogger(viewID).info(
-                `loadURL asked to navigate to the same mailto ${url}, first navigating to ${defURL}`,
+                `loadURL asked to navigate to the same anchor ${url}, first navigating to ${defURL}`,
             );
             await view.webContents.loadURL(defURL);
         }
@@ -572,3 +645,31 @@ export function updateZoom(direction: "in" | "out") {
 
     setZoom(nextZoomFactor);
 }
+
+export const bringWindowToFront = () => {
+    if (!mainWindow) {
+        mainLogger.info("Cannot bring window to front: window unavailable.");
+        return;
+    }
+
+    if (mainWindow.isMinimized()) {
+        mainWindow.restore();
+    }
+
+    if (isWindows) {
+        mainLogger.debug("Main window topMost On, focus and Off");
+        mainWindow.setAlwaysOnTop(true);
+    }
+
+    mainWindow.show();
+
+    if (isWindows) {
+        mainWindow.setAlwaysOnTop(false);
+    }
+
+    mainWindow.focus();
+};
+
+export const getCurrentLocalID = (): string | null => {
+    return getLocalID(browserViewMap["mail"]!.webContents.getURL());
+};
