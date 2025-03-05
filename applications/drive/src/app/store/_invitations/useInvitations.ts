@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import {
     queryAcceptShareInvite,
     queryDeleteExternalInvitation,
@@ -459,7 +459,7 @@ export const useInvitations = () => {
             binarySignature: base64StringToUint8Array(currentExternalInvitation.externalInvitationSignature),
         });
 
-        if (!verificationStatus) {
+        if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             throw new EnrichedError('Failed to validate the signature', {
                 tags: {
                     linkId: linkId,
