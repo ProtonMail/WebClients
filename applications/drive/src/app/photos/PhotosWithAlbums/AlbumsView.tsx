@@ -3,9 +3,7 @@ import React, { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
-import { Icon, Loader, useAppTitle, useModalStateObject } from '@proton/components';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { Loader, useAppTitle, useModalStateObject } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
@@ -20,32 +18,45 @@ import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
 import { AlbumsGrid } from './AlbumsGrid';
+import { AlbumsInvitations } from './AlbumsInvitations';
 import { EmptyAlbums } from './EmptyAlbums';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
 import './BannerInvite.scss';
 
-// TODO: Move in separate file once it's completed
-const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[] => {
+const filterAlbums = (albums: DecryptedAlbum[], userAddress: string | undefined, tag: AlbumTag): DecryptedAlbum[] => {
+    if (!userAddress) {
+        if (albums.length) {
+            sendErrorReport(new Error('Attempting to filter without owner address'));
+        }
+        return albums;
+    }
     if (tag === AlbumTag.Shared) {
-        return albums.filter((album) => album.isShared);
+        return albums.filter((album) => album.isShared && album.signatureEmail === userAddress);
     }
     if (tag === AlbumTag.MyAlbums) {
-        // TODO: Reverse of Shared With Me (everything else)
-        return albums;
+        return albums.filter((album) => album.signatureEmail === userAddress);
     }
     if (tag === AlbumTag.SharedWithMe) {
-        // TODO: Shared With Me (comes from Api Call)
-        return albums;
+        return albums.filter((album) => album.isShared && album.signatureEmail !== userAddress);
     }
     return albums;
 };
 
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
-    const { volumeId, shareId, linkId, albums, isPhotosLoading, loadPhotoLink, requestDownload, refreshAlbums } =
-        usePhotosWithAlbumsView();
+    const {
+        volumeId,
+        shareId,
+        linkId,
+        albums,
+        isPhotosLoading,
+        userAddressEmail,
+        loadPhotoLink,
+        requestDownload,
+        refreshAlbums,
+    } = usePhotosWithAlbumsView();
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const createAlbumModal = useModalStateObject();
@@ -62,26 +73,30 @@ export const AlbumsView: FC = () => {
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
+            if (!shareId) {
+                return;
+            }
             incrementItemRenderedCounter();
-            loadPhotoLink(itemLinkId, domRef);
+            const album = albums.find((album) => album.linkId === itemLinkId);
+            if (album && album.rootShareId) {
+                loadPhotoLink(album.rootShareId, itemLinkId, domRef);
+            } else {
+                loadPhotoLink(shareId, itemLinkId, domRef);
+            }
         },
         [incrementItemRenderedCounter, loadPhotoLink]
     );
 
     const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
         if (shareId) {
-            thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
+            const album = albums.find((album) => album.linkId === itemLinkId);
+            if (album && album.rootShareId) {
+                thumbnails.addToDownloadQueue(album.rootShareId, itemLinkId, undefined, domRef);
+            } else {
+                thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
+            }
         }
     };
-
-    const showBannerInvite = false; // TO DO
-    const peopleInvite = 'Doc Brown'; // To replace
-    const emailInvite = 'doc.brown@proton.me'; // To replace
-    const albumName = 'Back to Hill Valley'; // To replace
-    // translator: please keep **${albumName}** so album name is properly put in bold. Full sentence example is: Doc Brown (doc.brown@proton.me) invited you to join **Back to Hill Valley**)
-    const inviteText = getBoldFormattedText(
-        c('Info').t`${peopleInvite} (${emailInvite}) invited you to join **${albumName}**`
-    );
 
     const onCreateAlbum = useCallback(
         async (name: string) => {
@@ -91,8 +106,9 @@ export const AlbumsView: FC = () => {
             try {
                 const abortSignal = new AbortController().signal;
                 const albumLinkId = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
-                navigateToAlbum(albumLinkId);
+                navigateToAlbum(shareId, albumLinkId);
             } catch (e) {
+                sendErrorReport(e);
                 console.error('album creation failed', e);
             }
         },
@@ -117,7 +133,7 @@ export const AlbumsView: FC = () => {
     );
 
     const isAlbumsEmpty = albums.length === 0;
-    const filteredAlbums = filterAlbums(albums, selectedTags[0]);
+    const filteredAlbums = filterAlbums(albums, userAddressEmail, selectedTags[0]);
 
     if (!shareId || !linkId || isPhotosLoading) {
         return <Loader />;
@@ -163,29 +179,7 @@ export const AlbumsView: FC = () => {
                 />
             )}
 
-            {showBannerInvite && (
-                <div className="banner-invite">
-                    <div className="banner-invite-inner border border-info rounded m-2 py-1 px-2 flex flex-row flex-nowrap items-center *:min-size-auto">
-                        <div className="flex-1 flex flex-nowrap flex-row items-start py-0.5">
-                            <span
-                                className="rounded-full custom-bg shrink-0 mr-2 p-1 ratio-square flex"
-                                style={{ '--custom-bg': 'var(--signal-info-minor-1)' }}
-                            >
-                                <Icon name="album" className="m-auto" />
-                            </span>
-                            <span className="mt-0.5">{inviteText}</span>
-                        </div>
-                        <span className="shrink-0 flex gap-2 py-0.5">
-                            <Button shape="ghost" color="norm">
-                                {c('Action').t`Decline`}
-                            </Button>
-                            <Button shape="solid" color="norm" loading={true}>
-                                {c('Action').t`Join album`}
-                            </Button>
-                        </span>
-                    </div>
-                </div>
-            )}
+            <AlbumsInvitations />
 
             {isAlbumsEmpty ? (
                 <>
@@ -197,8 +191,8 @@ export const AlbumsView: FC = () => {
                     onItemRender={handleItemRender}
                     onItemRenderLoadedLink={handleItemRenderLoadedLink}
                     isLoading={false} // TODO: Get Albums loading status
-                    onItemClick={(linkId) => {
-                        navigateToAlbum(linkId);
+                    onItemClick={(shareId, linkId) => {
+                        navigateToAlbum(shareId, linkId);
                     }}
                     onItemShare={(linkId) => {
                         showLinkSharingModal({ shareId, linkId });

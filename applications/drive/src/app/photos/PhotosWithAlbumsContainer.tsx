@@ -10,7 +10,11 @@ export const PhotosWithAlbumsContainer: FC<RouteComponentProps> = ({ match }) =>
         <Switch>
             <Route path={match.url} exact component={PhotosWithAlbumsView} />
             <Route path={`${match.url}/albums`} exact component={AlbumsView} />
-            <Route path={`${match.url}/:albumLinkId`} exact component={PhotosWithAlbumsInsideAlbumView} />
+            <Route
+                path={`${match.url}/album/:albumShareId/:albumLinkId`}
+                exact
+                component={PhotosWithAlbumsInsideAlbumView}
+            />
             <Redirect to="/photos" />
         </Switch>
     );

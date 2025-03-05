@@ -18,6 +18,7 @@ import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMet
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { PhotoLink } from '../../store';
 import { PhotoTag, isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { sendErrorReport } from '../../utils/errorHandling';
 import { useCreateAlbum } from '../PhotosActions/Albums';
 import { AddAlbumPhotosModal } from '../PhotosModals/AddAlbumPhotosModal';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
@@ -65,8 +66,11 @@ export const PhotosWithAlbumsView: FC = () => {
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
+            if (!shareId) {
+                return;
+            }
             incrementItemRenderedCounter();
-            loadPhotoLink(itemLinkId, domRef);
+            loadPhotoLink(shareId, itemLinkId, domRef);
         },
         [incrementItemRenderedCounter, loadPhotoLink]
     );
@@ -110,9 +114,10 @@ export const PhotosWithAlbumsView: FC = () => {
             }
             try {
                 const abortSignal = new AbortController().signal;
-                await addAlbumPhotos(abortSignal, albumLinkId, linkIds);
-                navigateToAlbum(albumLinkId);
+                await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
+                navigateToAlbum(shareId, albumLinkId);
             } catch (e) {
+                sendErrorReport(e);
                 console.error('photos addition failed', e);
             }
         },
@@ -127,9 +132,10 @@ export const PhotosWithAlbumsView: FC = () => {
             try {
                 const abortSignal = new AbortController().signal;
                 const albumLinkId = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
-                await addAlbumPhotos(abortSignal, albumLinkId, linkIds);
-                navigateToAlbum(albumLinkId);
+                await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
+                navigateToAlbum(shareId, albumLinkId);
             } catch (e) {
+                sendErrorReport(e);
                 console.error('album creation failed', e);
             }
         },
