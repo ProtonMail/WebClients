@@ -92,3 +92,20 @@ export const smartTruncateText = (text: string, maxLength: number) => {
 
     return `${truncated}...`;
 };
+
+export class OneTimeArgument {
+    private val: string = "";
+    private isAssigned: boolean = false;
+
+    setOnce(newVal: string) {
+        if (this.isAssigned) return;
+        this.val = newVal;
+        this.isAssigned = true;
+    }
+
+    readAndClear(): string {
+        const out = this.val;
+        this.val = "";
+        return out;
+    }
+}
