@@ -5,7 +5,6 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { Info, Price } from '@proton/components/index';
-import { COUPON_CODES } from '@proton/payments/index';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import {
@@ -63,23 +62,10 @@ const AccountStepPaymentSummary = ({
 
     const subscriptionData = model.subscriptionData;
 
-    const isPorkbun = subscriptionData.checkResult.Coupon?.Code === COUPON_CODES.PORKBUN;
-    const isOutrageousDiscount = isPorkbun;
-
     const proration = subscriptionData.checkResult?.Proration ?? 0;
     const credits = subscriptionData.checkResult?.Credit ?? 0;
     const isBFOffer = getHas2024OfferCoupon(subscriptionData.checkResult?.Coupon?.Code);
-    const couponDiscount = (() => {
-        if (isBFOffer) {
-            return 0;
-        }
-
-        if (isOutrageousDiscount) {
-            return currentCheckout.outrageousDiscountPerCycle;
-        }
-
-        return currentCheckout.couponDiscount || 0;
-    })();
+    const couponDiscount = isBFOffer ? 0 : currentCheckout.couponDiscount || 0;
     const billingAddress = subscriptionData.billingAddress;
 
     const showAmountDue = proration !== 0 || credits !== 0 || couponDiscount !== 0;
@@ -118,7 +104,6 @@ const AccountStepPaymentSummary = ({
                         cycle={options.cycle}
                         checkout={currentCheckout}
                         currency={options.currency}
-                        isOutrageousDiscount={isOutrageousDiscount}
                     />
                 }
                 discount={initialLoading ? 0 : currentCheckout.discountPercent}
@@ -162,11 +147,7 @@ const AccountStepPaymentSummary = ({
                                     </>
                                 ) : (
                                     <>
-                                        {getPrice(
-                                            isOutrageousDiscount
-                                                ? currentCheckout.worstCaseAmountPerCycle
-                                                : currentCheckout.withoutDiscountPerCycle
-                                        )}
+                                        {getPrice(currentCheckout.withoutDiscountPerCycle)}
                                         {!showAmountDue && showRenewalNotice && '*'}
                                     </>
                                 ),
