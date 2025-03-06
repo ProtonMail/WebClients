@@ -29,6 +29,7 @@ import {
 import type { MoveParams } from 'proton-mail/hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
+import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Element } from 'proton-mail/models/element';
 import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
@@ -46,7 +47,7 @@ interface MoveSelectionParams extends MoveParams {
  */
 export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
-    const { stop, start } = useEventManager();
+    const { stop, start, call } = useEventManager();
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
     const getFolders = useGetFolders();
@@ -55,6 +56,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const dispatch = useMailDispatch();
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
+    const isES = useIsEncryptedSearch();
 
     const [canUndo, setCanUndo] = useState(true); // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
@@ -148,7 +150,10 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                 } finally {
                     start();
                     // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
-                    // await call();
+                    // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                    if (isES) {
+                        await call();
+                    }
                 }
             };
 
