@@ -379,6 +379,9 @@
       "Delete": [
         "Sil"
       ],
+      "Delete account": [
+        "Hesabı sil"
+      ],
       "Delete and confirm": [
         "Sil ve onayla"
       ],
@@ -3955,7 +3958,7 @@
     },
     "driveplus2024: Deal details": {
       "Extended version history": [
-        "Genişletilmiş sürüm geçmişi"
+        "Ayrıntılı sürüm geçmişi"
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -4737,7 +4740,7 @@
         "Ödemeler şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin"
       ],
       "Please configure a custom domain before adding addresses.": [
-        "Lütfen adresleri eklemeden önce özel bir etki alanı yapılandırın."
+        "Lütfen adresleri eklemeden önce bir özel etki alanı yapılandırın."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
@@ -4762,10 +4765,10 @@
         "Lütfen bir eyalet seçin"
       ],
       "Please select at least one location before continuing.": [
-        "Devam etmeden önce lütfen en az bir konum seçin."
+        "İlerlemeden önce lütfen en az bir konum seçin."
       ],
       "Please select at least one user or group before continuing.": [
-        "Devam etmeden önce lütfen en az bir kullanıcı veya grup seçin."
+        "İlerlemeden önce lütfen en az bir kullanıcı veya grup seçin."
       ],
       "Please set a recovery email first": [
         "Lütfen önce bir kurtarma e-postası adresi ayarlayın"
@@ -4892,7 +4895,7 @@
         "Kabul ettiğimiz en az ödeme: ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
-        "İlke adı 3 ila 40 karakter arasında olmalıdır."
+        "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
       ],
       "The sending key is not valid": [
         "Gönderim anahtarı geçersiz"
@@ -5518,7 +5521,7 @@
         "Ödenmemiş faturalarınız var. Bir aile tarifesine geçmeden önce lütfen onları ödeyin."
       ],
       "You need to configure a custom domain before adding multiple users.": [
-        "Birkaç kullanıcı eklemeden önce özel bir etki alanı yapılandırmanız gerekir."
+        "Birkaç kullanıcı eklemeden önce bir özel etki alanı yapılandırmanız gerekir."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Yeni bir kullanıcı oluşturmadan önce özel bir etki alanı yapılandırmanız gerekir."
@@ -5915,7 +5918,7 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "İletileri etiketlemek ya da arşivlemek gibi belirli işlemleri otomatik olarak yapmak için özel bir süzgeç ekleyin."
+        "İletileri etiketlemek ya da arşivlemek gibi belirli işlemleri otomatik olarak yapmak için bir özel süzgeç ekleyin."
       ],
       "Allow:": [
         "İzin verilen:"
@@ -6805,6 +6808,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: düşük çözünürlüklü ön izleme"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } aile üyeniz iki adımlı doğrulama kullanıyor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } aile üyeniz iki adımlı doğrulama kullanıyor."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
+        "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
       ],
@@ -6817,6 +6832,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: Yetkisiz e-postaları karantinaya almaz veya reddetmez. Genellikle insanlar bu ilkeyi yalnızca sorun gidermek veya denemeler yapmak için kullanır."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üye",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üye"
       ],
       "${ number } city": [
         "${ number } il",
@@ -7864,9 +7883,6 @@
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Parolanızı yakın zamanda sıfırladıysanız, bir veri kurtarma yöntemini kullanarak verilerinizin kilidini açabilirsiniz"
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. Destek uzmanlarımızdan biriyle ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile görüşün. Canlı destek almak için bir ${ boldLiveChat } açın."
       ],
@@ -8735,7 +8751,7 @@
         "SMTP gönderimi özelliği ile üçüncü taraf hizmetler ya da aygıtlar ${ MAIL_APP_NAME } üzerinden özel etki alanı adreslerinizle e-posta gönderebilir. Bu özelliği kullanmaya başlamak için yeni bir kod oluşturun."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
-        "İletilerinizi daha sonraya erteleyin. İstediğiniz zaman gelen kutunuzun üstünde görünürler"
+        "İletilerinizi daha sonraya erteleyin. İstediğiniz zamanda gelen kutunuzun üstünde görüntülenirler"
       ],
       "Some keys successfully reactivated": [
         "Bazı anahtarlar yeniden kullanıma alındı"
@@ -9017,6 +9033,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Bu işlem ${ boldDomainName } için tek oturum açmayı kaldıracak."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Bu işlem, ilişkili tüm hizmetlere erişiminizi kaldırır ve kişiler, ek dosyalar, etkinlikler, parolalar ve dosyalar gibi tüm verilerinizi siler."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Bu bilgi, geçici parolanızın yerini alır. Gelecekte ${ BRAND_NAME } hesabınıza erişmek için bunu kullanacaksınız."
       ],
@@ -9060,7 +9079,7 @@
         "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir üçüncü taraf ile paylaşılmıyor."
       ],
       "To create your first user group, go to": [
-        "İlk kullanıcı grubunuzu oluşturmak için şu adrese gidin"
+        "İlk kullanıcı grubunuzu oluşturmak için şuraya gidin"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Parola sıfırlandıktan sonra erişilmesi engellenen verilerinizin şifresini çözmek ve bunları görüntülemek için bir kurtarma yöntemi belirleyin."
@@ -9305,8 +9324,8 @@
       "Warning:": [
         "Uyarı:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Uyarı: Silme işlemi geri alınamaz. Bu işlem, tüm ilgili hizmetlere erişiminizi keser ve tüm kişilerinizi siler."
+      "Warning: deleting your account is permanent.": [
+        "Uyarı: Hesabınızın sildikten sonra geri alamazsınız."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Olabildiğince resmi ${ VPN_APP_NAME } uygulamalarını kullanmanızı öneririz."
@@ -9390,13 +9409,13 @@
         "Kapatıldığında, görsel dosyalarının bilginiz olmadan aygıtınıza yüklenmesi engellenir."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Açıldığında ${ MAIL_APP_NAME } uygulamasının varsayılan e-posta uygulamanız olup olmadığını denetleyip, değilse sizi bilgilendireceğiz."
+        "${ MAIL_APP_NAME } uygulamasının varsayılan e-posta uygulamanız olup olmadığını denetler ve değilse sizi bilgilendirir."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kimlik hizmeti sağlayıcınızda ${ appName } için SAML özelliğini etkinleştirirken geri çağırma (ACS) adresini ve yayıncı kimliğini kullanmanız istenebilir. Aşağıdaki verileri kopyalayıp kimlik hizmeti sağlayıcı alanlarına yapıştırmanız yeterlidir."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Bildirimler açıldığında, ${ MAIL_APP_NAME } hesabınızda yeni ileti varsa, kurtarma/bildirim adresinize bir uyarı göndeririz."
+        "${ MAIL_APP_NAME } hesabınızdaki yeni iletiler için kurtarma/bildirim adresinize bir bildirim gönderir."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Bir tarifeye abone olduklarında, aboneliğiniz ile kullanabileceğiniz bir miktar kredi kazanacaksınız."
@@ -9770,7 +9789,7 @@
     },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Açıldığında alt klasörler üst klasörün rengini alır."
+        "Alt klasörleri üst klasörün renginde görüntüler."
       ]
     },
     "Info for cash payment method": {
@@ -10398,6 +10417,9 @@
       "Apply policy to": [
         "İlkeyi şunlara uygula"
       ],
+      "Ask members to set up 2FA": [
+        "Üyelerden iki adımlı doğrulamayı açmalarını isteyin"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service adresi"
       ],
@@ -10791,6 +10813,9 @@
       "Hide password": [
         "Parolayı gizle"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Bu e-posta adresini kalıcı olarak kaybetmemek için bu adresi şu anda başka bir hesaba eklemem gerektiğini anladım."
+      ],
       "I understand the risk": [
         "Riski anladım"
       ],
@@ -10898,6 +10923,9 @@
       ],
       "Maximum number of words": [
         "En fazla sözcük sayısı"
+      ],
+      "Members without 2FA": [
+        "İki adımlı doğrulama kullanmayan üyeler"
       ],
       "Message": [
         "İleti"
@@ -11260,6 +11288,9 @@
       "Tips and insights": [
         "İpuçları ve öngörüler"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Gelişmemize yardımcı olmak için, lütfen neden ayrıldığınızı açıklayın."
+      ],
       "To: ${ toEmail }": [
         "Kime: ${ toEmail }"
       ],
@@ -11328,9 +11359,6 @@
       ],
       "Vulnerable password": [
         "Güvenlik açığı bulunan parola"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
       ],
       "Weak": [
         "Zayıf"
@@ -11696,10 +11724,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "Kuruluşunuzdaki ${ twoFAMembers.length }/${ members.length } üye iki adımlı doğrulama kullanıyor.",
-        "Kuruluşunuzdaki ${ twoFAMembers.length }/${ members.length } üye iki adımlı doğrulama kullanıyor."
-      ],
       "Almost there": [
         "Neredeyse tamam"
       ],
@@ -13177,7 +13201,7 @@
         "Wi-Fi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
+        "Ailenizi zararlı sitelerden koruyun ve sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
@@ -13608,7 +13632,7 @@
         "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
       ],
       "Pay annually, secure our best offer": [
-        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+        "Yıllık ödeme yapın, en iyi teklifimizi değerlendirin"
       ],
       "Save": [
         "İndirim"
@@ -13621,6 +13645,9 @@
       ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "Special offer": [
+        "Özel teklif"
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
@@ -13803,6 +13830,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
+      ],
+      "I'd like to merge this account into another one": [
+        "Bu hesabı başka bir hesapla birleştirmek istiyorum"
       ],
       "Ignore group": [
         "Grubu yok say"
@@ -14336,14 +14366,6 @@
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Güvenli kasa paylaşımı (${ n } kasa)",
-        "Güvenli kasa paylaşımı (${ n } kasa)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ],
       "Secure your family’s passwords and online identities": [
         "Ailenizin parolalarını ve çevrim içi kimliklerini koruyun"
@@ -16708,6 +16730,9 @@
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
       ],
+      "Billed every 6 months": [
+        "6 ayda bir faturalanır"
+      ],
       "Billed for 15 months": [
         "15 aylık olarak faturalanır"
       ],
@@ -17763,7 +17788,7 @@
         "${ totalServerCount } sunucu eklensin mi?"
       ],
       "Add a custom logo": [
-        "Özel bir logo ekle"
+        "Özel logo ekle"
       ],
       "Add address": [
         "Adres ekle"
@@ -19213,6 +19238,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "İki adımlı doğrulama özelliği kimlik hizmeti sağlayıcınız tarafından tek oturum açma kullanıcıları katılmıyor"
+      ],
       "Feature in early access": [
         "Erken erişim özelliği"
       ],
@@ -19234,8 +19262,8 @@
       "IP address (Internet Service Provider)": [
         "IP adresi (internet hizmeti sağlayıcı)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "İki adımlı doğrulama kullanmayan üyelere bu özelliği en kısa sürede açmalarını isteyen bir e-posta gönderilecek."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "İki adımlı doğrulama kullanmayan üyelere, bunu en kısa sürede açmaları için bir e-posta gönderilecek. Bu bildirim e-postası, tek oturum açma kullanıcılarına gönderilmeyecek."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
@@ -19325,7 +19353,7 @@
         "Bu anahtar, e-posta iletimi için kullanılır"
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
-        "Açıldığında, tarayıcınızın varsayılan kaydırma çubukları kullanılır. Bunlar genellikle daha geniştir ve daha kolay kullanılır"
+        "Tarayıcınızın varsayılan kaydırma çubukları kullanılır. Bunlar genellikle daha geniştir ve daha kolay kullanılır"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Kullanıcılar internet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
@@ -19343,7 +19371,7 @@
         "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamasını durdurduk. İmzalamayı sürdürmek için aşağıdaki yönergeleri izleyin."
       ],
       "When enabled, animations and transitions will not show": [
-        "Açıldığında, canlandırma ve geçişler görüntülenmez"
+        "Canlandırmaları ve geçişleri görüntülemez"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Bir yazışmadaki bir iletiyi etiketlediğinizde, bu etiket yazışmada göndereceğiniz veya alacağınız tüm yeni iletilere otomatik olarak uygulanır."
@@ -19371,8 +19399,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır"
+      "Disables end-to-end email encryption for this group": [
+        "Bu grup için uçtan uca e-posta şifrelemesini kapatır"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."
@@ -19392,7 +19420,7 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Açıldığında, gönderdiğiniz her iletiye otomatik olarak herkese açık anahtarınızın eklenmesini sağlar. Alıcılar bu anahtarı kullanarak, iletilerinizi doğrulayabilir ve size şifrelenmiş iletiler gönderebilir."
+        "Gönderdiğiniz her iletiye otomatik olarak herkese açık anahtarınızı ekler. Alıcılar bu anahtarı kullanarak, iletilerinizi doğrulayabilir ve size şifrelenmiş iletiler gönderebilir."
       ]
     },
     "Tooltip default pgp scheme": {
