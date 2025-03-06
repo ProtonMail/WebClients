@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 
@@ -22,6 +22,7 @@ export const useExtensionState = (onStateChange: (state: AppState) => void) => {
     const message = useEndpointMessage();
 
     const ready = useRef<Awaiter<void>>(awaiter());
+    const [connected, setConnected] = useState(false);
 
     const onChange = useCallback((state: AppState) => {
         AppStateManager.setState(state);
@@ -42,7 +43,7 @@ export const useExtensionState = (onStateChange: (state: AppState) => void) => {
         const wakeup = () =>
             sendMessage.on(
                 message({
-                    type: WorkerMessageType.WORKER_WAKEUP,
+                    type: WorkerMessageType.CLIENT_INIT,
                     payload: { tabId },
                 }),
                 (response) => {
@@ -66,8 +67,13 @@ export const useExtensionState = (onStateChange: (state: AppState) => void) => {
                     UID: undefined,
                 })
             )
-            .finally(ready.current.resolve);
+            .finally(() => {
+                ready.current.resolve();
+                setConnected(true);
+            });
 
         return () => port.onMessage.removeListener(onMessage);
     }, []);
+
+    return connected;
 };

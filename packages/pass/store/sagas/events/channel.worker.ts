@@ -4,7 +4,7 @@ import { call, cancel, cancelled, fork, put, select, take, takeLeading } from 'r
 
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { channelAcknowledge, wakeupSuccess } from '@proton/pass/store/actions';
+import { channelAcknowledge, clientInit } from '@proton/pass/store/actions';
 import { forcePoll } from '@proton/pass/store/actions/creators/polling';
 import { channelRequest } from '@proton/pass/store/actions/requests';
 import type { RequestEntry } from '@proton/pass/store/request/types';
@@ -74,7 +74,7 @@ export function* channelInitalize<T extends {}>(
          * Cancels delayed init, forces immediate poll, and applies
          * cooldown to prevent rapid re-polling on popup toggle */
         yield takeLeading(
-            (action: Action) => wakeupSuccess.match(action) && action.meta.receiver.endpoint === 'popup',
+            (action: Action) => clientInit.intent.match(action) && action.meta.receiver.endpoint === 'popup',
             function* () {
                 yield cancel(initTask);
                 yield manager.call().catch(noop);
