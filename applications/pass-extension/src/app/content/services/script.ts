@@ -102,7 +102,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
 
             const res = await sendMessage(
                 contentScriptMessage({
-                    type: WorkerMessageType.WORKER_WAKEUP,
+                    type: WorkerMessageType.CLIENT_INIT,
                     payload: { endpoint: 'contentscript', tabId },
                 })
             );
