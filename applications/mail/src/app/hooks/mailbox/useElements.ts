@@ -7,7 +7,6 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
-import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -86,8 +85,6 @@ export const useElements: UseElements = ({
 }) => {
     const store = useMailStore();
     const dispatch = useMailDispatch();
-
-    const isPageSizeSettingEnabled = useFlag('WebMailPageSizeSetting');
 
     const abortControllerRef = useRef<AbortController>();
 
@@ -170,8 +167,8 @@ export const useElements: UseElements = ({
     }, [shouldResetElementsState]);
 
     useEffect(() => {
-        dispatch(setPageSize(isPageSizeSettingEnabled ? pageSize : MAIL_PAGE_SIZE.FIFTY));
-    }, [pageSize]);
+        dispatch(setPageSize(MAIL_PAGE_SIZE.FIFTY));
+    }, []);
 
     // Main effect watching all inputs and responsible to trigger actions on the state
     useEffect(() => {
