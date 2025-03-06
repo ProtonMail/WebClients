@@ -379,6 +379,9 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete account": [
+        "Eliminar la cuenta"
+      ],
       "Delete and confirm": [
         "Eliminar y confirmar"
       ],
@@ -4892,7 +4895,7 @@
         "El pago mínimo que aceptamos es de ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
-        "El nombre de la política debe tener entre 3 y 40 caracteres"
+        "El nombre de la política debe tener entre 3 y 40 caracteres."
       ],
       "The sending key is not valid": [
         "La clave para enviar no es válida"
@@ -6808,6 +6811,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista previa de baja resolución"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus familiares usa autenticación de dos factores.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus familiares usan autenticación de dos factores."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros usan autenticación de dos factores para iniciar sesión en su organización.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros usan autenticación de dos factores para iniciar sesión en su organización."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usa autenticación de dos factores para iniciar sesión en su organización.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usan autenticación de dos factores para iniciar sesión en su organización."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quiere compartir información con usted en ${ PASS_APP_NAME }"
       ],
@@ -6820,6 +6835,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: no poner en cuarentena o rechazar los correos no autorizados. Usualmente las personas solo usan esta política como prueba."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } miembro",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } miembros"
       ],
       "${ number } city": [
         "${ number } ciudad",
@@ -7866,9 +7885,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si restableció la contraseña recientemente, puede usar un método de recuperación para desbloquear los datos"
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Si quiere combinar esta cuenta con otra, NO la elimine."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Estamos para ayudarle si tiene problemas. ${ boldPhoneCall } o una ${ boldZoomMeeting } con uno de nuestros especialistas de soporte, o abra el ${ boldLiveChat } para soporte vía chat."
@@ -9020,6 +9036,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Esto eliminará el SSO de ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Esto eliminará el acceso a todos los servicios conectados y eliminará toda su información, incluyendo contactos, archivos adjuntos, eventos, contraseñas y archivos."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Esto reemplazará la contraseña temporal. La usará para acceder a la cuenta de ${ BRAND_NAME } en el futuro."
       ],
@@ -9308,8 +9327,8 @@
       "Warning:": [
         "Advertencia:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Advertencia: la eliminación es permanente. Esto también elimina el acceso a todos los servicios conectados y todos los contactos."
+      "Warning: deleting your account is permanent.": [
+        "Advertencia: eliminar su cuenta es permanente."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Le aconsejamos usar las aplicaciones oficiales de ${ VPN_APP_NAME } cuando sea posible."
@@ -10401,6 +10420,9 @@
       "Apply policy to": [
         "Aplicar la política a"
       ],
+      "Ask members to set up 2FA": [
+        "Pida a los miembros que configuren la autenticación en dos pasos."
+      ],
       "Assertion Consumer Service URL": [
         "URL de ACS (Assertion Consumer Service)"
       ],
@@ -10794,6 +10816,9 @@
       "Hide password": [
         "Ocultar contraseña"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Entiendo que debo añadir esta dirección de correo de inmediato a la otra cuenta para evitar la pérdida de esta cuenta permanentemente."
+      ],
       "I understand the risk": [
         "Entiendo el riesgo"
       ],
@@ -10901,6 +10926,9 @@
       ],
       "Maximum number of words": [
         "Número máximo de palabras"
+      ],
+      "Members without 2FA": [
+        "Miembros sin 2FA"
       ],
       "Message": [
         "Mensaje"
@@ -11263,6 +11291,9 @@
       "Tips and insights": [
         "Consejos e informaciones"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Para ayudarnos a mejorar, díganos por qué se va."
+      ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
       ],
@@ -11331,9 +11362,6 @@
       ],
       "Vulnerable password": [
         "Contraseña vulnerable"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Lamentamos que se vaya. Indíquenos por qué se va para ayudarnos a mejorar."
       ],
       "Weak": [
         "Débil"
@@ -11699,10 +11727,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } para el miembro de la organización usando autenticación de dos factores",
-        "${ twoFAMembers.length }/${ members.length } para los miembros de la organización usando autenticación de dos factores"
-      ],
       "Almost there": [
         "Ya casi está"
       ],
@@ -13625,6 +13649,9 @@
       "Save big when you pay annually": [
         "Ahorre mucho más al pagar anualmente"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "This offer won't be shown again.": [
         "Esta oferta no se mostrará nuevamente."
       ],
@@ -13806,6 +13833,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Uso una cuenta diferente de ${ BRAND_NAME }"
+      ],
+      "I'd like to merge this account into another one": [
+        "Quisiera fusionar esta cuenta con otra"
       ],
       "Ignore group": [
         "Ignorar grupo"
@@ -14339,14 +14369,6 @@
       ],
       "Secure vault sharing": [
         "Uso compartido seguro de bóvedas"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Intercambio seguro de bóveda (${ n } bóveda)",
-        "Intercambio seguro de bóveda (${ n } bóvedas)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Intercambio seguro de bóveda (${ n } bóveda) e intercambio de enlaces",
-        "Intercambio seguro de bóveda (${ n } bóvedas) e intercambio de enlaces"
       ],
       "Secure your family’s passwords and online identities": [
         "Proteja las contraseñas de su familia y sus identidades en línea"
@@ -16710,6 +16732,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturación cada 2 años"
+      ],
+      "Billed every 6 months": [
+        "Se factura cada 6 meses"
       ],
       "Billed for 15 months": [
         "Facturación por 15 meses"
@@ -19216,6 +19241,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL de punto final del proveedor de identidad (por ejemplo, https://idp.ejemplo.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Excluyendo usuarios con inicio de sesión con 2FA administrado por su proveedor de identidad"
+      ],
       "Feature in early access": [
         "Funcionalidad en acceso anticipado"
       ],
@@ -19237,8 +19265,8 @@
       "IP address (Internet Service Provider)": [
         "Dirección IP (proveedor de servicios de internet)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Los miembros que no usan 2FA recibirán un correo electrónico pidiéndoles que la activen tan pronto como sea posible."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Los miembros que no usen 2FA recibirán un correo electrónico pidiendo que lo activen tan pronto como sea posible. Los usuarios con inicio de sesión único no recibirán el recordatorio por correo electrónico."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Los mensajes en la carpeta enviados o borradores continuarán apareciendo en esa carpeta, incluso si los mueve a otra carpeta."
@@ -19374,8 +19402,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo."
+      "Disables end-to-end email encryption for this group": [
+        "Desactiva el cifrado de correo electrónico de extremo a extremo para este grupo"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."

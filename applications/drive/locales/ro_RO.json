@@ -310,6 +310,9 @@
       "Delete version": [
         "Ștergere versiune"
       ],
+      "Delete without saving": [
+        "Ștergere fără salvare"
+      ],
       "Deselect all": [
         "Deselectare toate"
       ],
@@ -324,6 +327,12 @@
       ],
       "Display navigation bar": [
         "Afișare bară de navigare"
+      ],
+      "Display next": [
+        "Afișare următoare"
+      ],
+      "Display previous": [
+        "Afișare anterioare"
       ],
       "Done": [
         "Gata"
@@ -345,6 +354,11 @@
       ],
       "Download logs": [
         "Jurnal descărcare"
+      ],
+      "Download photo": [
+        "Descărcare fotografie",
+        "Descărcare fotografii",
+        "Descărcare fotografii"
       ],
       "Download without scanning": [
         "Descărcare fără scanare"
@@ -496,6 +510,9 @@
       "Increase": [
         "Mărire"
       ],
+      "Join album": [
+        "Alăturați-vă albumului"
+      ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
       ],
@@ -537,6 +554,9 @@
       ],
       "Manage share": [
         "Gestionare partajări"
+      ],
+      "Mark as favorite": [
+        "Marcare ca favorită"
       ],
       "Mark as resolved": [
         "Marcare ca rezolvată"
@@ -685,6 +705,9 @@
       "Remove from album": [
         "Eliminare din album"
       ],
+      "Remove from favorites": [
+        "Eliminare din favorite"
+      ],
       "Remove from this list": [
         "Eliminare din listă"
       ],
@@ -694,11 +717,14 @@
       "Remove me": [
         "Elimină-mă"
       ],
-      "Remove Without Saving": [
+      "Remove without saving": [
         "Eliminare fără salvare"
       ],
       "Rename": [
         "Redenumire"
+      ],
+      "Rename album": [
+        "Redenumire album"
       ],
       "Replace file": [
         "înlocuiți fişierul"
@@ -766,11 +792,14 @@
       "Save": [
         "Salvare"
       ],
-      "Save and Remove": [
+      "Save and remove": [
         "Salvare și eliminare"
       ],
       "Save changes": [
         "Salvare modificări"
+      ],
+      "Save photos and remove": [
+        "Salvare și eliminare fotografii"
       ],
       "Search": [
         "Căutare"
@@ -819,6 +848,9 @@
       ],
       "Share": [
         "Partajare"
+      ],
+      "Share album": [
+        "Partajare album"
       ],
       "Share file": [
         "Partajare fişier"
@@ -3733,6 +3765,9 @@
       "Create new album": [
         "Creare album"
       ],
+      "Rename": [
+        "Redenumire"
+      ],
       "Security Center": [
         "Centru de securitate"
       ]
@@ -4122,6 +4157,9 @@
         "Articole: ${ album.photoCount }",
         "Articole: ${ album.photoCount }"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } a fost șters."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
@@ -4192,6 +4230,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } din Magazinul Play"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } v-a invitat să vă alăturați la **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "Unul a eșuat",
@@ -5065,6 +5106,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME trimite automat mesajul folosind modul curent de compunere."
       ],
+      "Photo is not saved to your library": [
+        "Fotografia nu este salvată în librărie."
+      ],
       "Photo is set as album cover": [
         "Fotografia este setată ca și copertă de album"
       ],
@@ -5312,6 +5356,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Unele dintre fișiere nu mai sunt accesibile. Restaurați accesul la fișiere. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Unele fotografii din acest album nu sunt salvate în cronologie. Ștergerea acestui album va șterge definitiv acele fotografii."
+      ],
       "Something went wrong, please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
       ],
@@ -5399,8 +5446,10 @@
       "This item already exists in your library": [
         "Articolul există deja în librăria proprie."
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Această fotografie nu este salvată în librăria de fotografii. Dacă o eliminați din acest album, veți pierde accesul la ea definitiv. Doriți să o salvați înainte de eliminare?"
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Acest articol nu este salvat în librăria de fotografii. Dacă îl eliminați din acest album, veți pierde definitiv accesul la el.",
+        "Unele din articolele selectate nu sunt salvate în librăria de fotografii. Dacă le eliminați din acest album, veți pierde definitiv accesul la ele.",
+        "Unele din articolele selectate nu sunt salvate în librăria de fotografii. Dacă le eliminați din acest album, veți pierde definitiv accesul la ele."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
@@ -5413,6 +5462,9 @@
       ],
       "This month": [
         "Luna curentă"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Aceasta va șterge doar albumul. Fotografiile vor rămâne în cronologie. Această acțiune nu poate fi anulată."
       ],
       "This will permanently delete the file you uploaded.": [
         "Aceasta va șterge permanent fișierul încărcat."
@@ -5653,6 +5705,14 @@
       ],
       "Would you like to restore your files?": [
         "Doriţi să restauraţi fişierele?"
+      ],
+      "Would you like to save it before removing?": [
+        "Doriți să-l salvați înainte de a-l elimina?",
+        "Doriți să le salvați înainte de a le elimina?",
+        "Doriți să le salvați înainte de a le elimina?"
+      ],
+      "Would you like to save them before removing?": [
+        "Doriți să le salvați înainte de a le elimina?"
       ],
       "Writing assistant": [
         "Asistent de scriere"
@@ -8099,6 +8159,12 @@
       "Access updated and shared": [
         "Acces actualizat și partajat"
       ],
+      "Album failed to be renamed": [
+        "Albumul nu a putut fi redenumit."
+      ],
+      "Album renamed successfully": [
+        "Albumul a fost redenumit."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Toate articolele vor fi eliminate permanent din «Gunoi»."
       ],
@@ -8321,6 +8387,12 @@
       "Maybe later": [
         "Poate mai târziu"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Oferta expiră ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Plătiți anual, asigurați-vă cea mai bună ofertă"
+      ],
       "Save": [
         "Economisiți"
       ],
@@ -8333,6 +8405,9 @@
       "Save big when you pay annually": [
         "Economisiți mult dacă plătiți anual"
       ],
+      "Special offer": [
+        "Ofertă specială"
+      ],
       "This offer won't be shown again.": [
         "Această ofertă nu va mai fi afișată."
       ],
@@ -8341,6 +8416,9 @@
       ],
       "You currently pay": [
         "Acum plătiți"
+      ],
+      "Your subscription renews soon": [
+        "Abonamentul se va reînnoi în curând"
       ]
     },
     "Offer feature": {
@@ -8555,16 +8633,6 @@
       ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Partajare securizată seif (${ n } seif)",
-        "Partajare securizată seifuri (${ n } seifuri)",
-        "Partajare securizată seifuri (${ n } de seifuri)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Partajare securizată seif (${ n } seif) și legături web",
-        "Partajare securizată seifuri (${ n } seifuri) și legături web",
-        "Partajare securizată seifuri (${ n } de seifuri) și legături web"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9580,6 +9648,9 @@
       "Billed every 2 years": [
         "Facturat la doi ani"
       ],
+      "Billed every 6 months": [
+        "Facturat la fiecare 6 luni"
+      ],
       "Billed for 15 months": [
         "Facturat pentru 15 luni"
       ],
@@ -10467,11 +10538,11 @@
         "Ștergere ${ count } grupuri de contacte",
         "Ștergere ${ count } de grupuri de contacte"
       ],
-      "Delete ${ item.name }?": [
-        "Ștergeți ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Ștergeți ${ links.length } de articole?"
+      ],
+      "Delete ${ name }?": [
+        "Ștergeți ${ name }?"
       ],
       "Delete ${ value }": [
         "Ștergere ${ value }"
@@ -10741,8 +10812,10 @@
       "Remove device?": [
         "Eliminați dispozitivul?"
       ],
-      "Remove items": [
-        "Eliminare articole"
+      "Remove item?": [
+        "Eliminați articolul?",
+        "Eliminați articolele?",
+        "Eliminați articolele?"
       ],
       "Rename a file": [
         "Redenumire fișier"

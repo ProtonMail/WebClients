@@ -148,7 +148,7 @@
         "认证"
       ],
       "Auto-delete spam and trash": [
-        "自动清理垃圾邮件和废件箱"
+        "自动清理垃圾邮件和回收站"
       ],
       "Back": [
         "上一步"
@@ -814,7 +814,7 @@
         "全部存档"
       ],
       "Move all to trash": [
-        "全部移至废件箱"
+        "全部移至回收站"
       ],
       "move emails to": [
         "将邮件移至"
@@ -838,7 +838,7 @@
         "标为垃圾邮件并退订"
       ],
       "Move to trash": [
-        "移至废件箱"
+        "移至回收站"
       ],
       "Move to...": [
         "移至..."
@@ -1219,7 +1219,7 @@
         "显示工具栏"
       ],
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Sign out of all accounts": [
         "退出所有账户"
@@ -1372,7 +1372,10 @@
         "上传图片"
       ],
       "Use ${ label } theme": [
-        "使用 ${ label } 配色"
+        "使用 ${ label } 主题"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "使用 ${ PASS_APP_NAME }"
       ],
       "Use a different card": [
         "使用其他银行卡"
@@ -1511,7 +1514,7 @@
         "${ domains } 个额外的自有域名"
       ],
       "${ ips } server": [
-        "${ ips } 个服务器"
+        "${ ips } 台服务器"
       ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
@@ -2499,7 +2502,7 @@
         "转至星标邮件"
       ],
       "Go to Trash": [
-        "转至废件箱"
+        "转至回收站"
       ],
       "New message": [
         "撰写邮件"
@@ -3601,7 +3604,7 @@
         "自动删除垃圾邮件和垃圾信息，升级后还能解锁更多高级功能。"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "自动清除 30 天前移至废件箱和垃圾邮件的电子邮件。"
+        "自动清除 30 天前移至回收站和垃圾邮件的电子邮件。"
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在邮件到达收件箱前自动分类。"
@@ -5008,7 +5011,7 @@
         "垃圾邮件"
       ],
       "Trash": [
-        "废件箱"
+        "回收站"
       ]
     },
     "Filter modal operators": {
@@ -5746,6 +5749,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "${ BRAND_NAME } 的密码管理器可让你创建、存储和自动填充密码，这样您就再也不用重置密码了。"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
@@ -6038,7 +6044,7 @@
         "确定要将此处所有邮件存档吗？"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "确定要将此处所有邮件移至废件箱吗？"
+        "确定要将此处所有邮件移至回收站吗？"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "确定要永久删除 ${ count } 项会话吗？"
@@ -6065,10 +6071,10 @@
         "需要关注"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "自动清除 30 天前移至废件箱和垃圾邮件的电子邮件。"
+        "自动清除 30 天前移至回收站和垃圾邮件的电子邮件。"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "自动删除归入垃圾邮件或废件箱超过 30 天的邮件。"
+        "自动删除归入垃圾邮件或回收站超过 30 天的邮件。"
       ],
       "Awaiting transaction": [
         "等待交易"
@@ -6226,6 +6232,9 @@
       "Default email application": [
         "设为默认邮件应用"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "检测在您的设备上进行，因此不会将您的电子邮件数据发送到我们的服务器。"
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "你知道你的 ${ BRAND_NAME } 账户中包含加密云存储吗？前往 ${ DRIVE_APP_NAME } 充分利用你的空间。这是免费的。"
       ],
@@ -6335,7 +6344,7 @@
         "自动对邮件进行数字签名"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "超过 30 天前移至废件箱和垃圾邮件的电子邮件将自动清除。"
+        "超过 30 天前移至回收站和垃圾邮件的电子邮件将自动清除。"
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "标记为 ${ nameDeleted } 的邮件不会被删除，仍可在相应的文件夹中找到。"
@@ -6515,7 +6524,7 @@
         "在下一步中，您将能够使用比特币地址提交存款。"
       ],
       "Include Spam/Trash.": [
-        "包含垃圾邮件和废件箱中的搜索结果。"
+        "包含垃圾邮件和回收站中的搜索结果。"
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "请提供您的提示词和回复内容以帮助我们提高准确性。"
@@ -6677,7 +6686,7 @@
         "邮件将于明天 ${ formattedTime } 发送"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "已归入垃圾邮件或废件箱超过 30 天的邮件将被直接删除。"
+        "已归入垃圾邮件或回收站超过 30 天的邮件将被直接删除。"
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "发送到您所有邮箱地址的信息将全部转至您的收件箱。"
@@ -6690,6 +6699,9 @@
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
+      ],
+      "More infos": [
+        "更多信息"
       ],
       "More refine actions": [
         "更多改进操作"
@@ -7178,13 +7190,13 @@
         "此会话中有一封定时发送的邮件将取消发送。"
       ],
       "This conversation contains non-trashed messages.": [
-        "此会话包含不在废件箱中的邮件。"
+        "此会话包含不在回收站中的邮件。"
       ],
       "This conversation contains one or more expiring messages": [
         "此会话中部分邮件已设置有效期"
       ],
       "This conversation contains trashed messages.": [
-        "此会话包含废件箱中的邮件。"
+        "此会话包含回收站中的邮件。"
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "标为垃圾邮件后，是否要退订此类邮件？"
@@ -7275,6 +7287,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "尚未信任此发件人的公钥。"
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "之所以向您显示此信息，是因为您的电子邮件主题行包含密码重置关键词。"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "此操作将退出当前登录的所有账户。"
@@ -7373,7 +7388,7 @@
         "升级后可向您的账户添加更多地址。"
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
-        "升级账户即可自动删除在废件箱或垃圾邮件中超过 30 天的邮件。"
+        "升级账户即可自动删除在回收站或垃圾邮件中超过 30 天的邮件。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "升级账户即可创建更多文件夹、筛选规则和邮箱地址。"
@@ -7765,6 +7780,14 @@
         "所选颜色"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "如何进行现金支付？"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "请参阅文章中的说明：${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "点击查看详情"
@@ -7881,7 +7904,7 @@
         "转至星标邮件"
       ],
       "Go to Trash": [
-        "转至废件箱"
+        "转至回收站"
       ],
       "Insert link": [
         "插入链接"
@@ -7929,7 +7952,7 @@
         "标为垃圾邮件"
       ],
       "Move to Trash": [
-        "移至废件箱"
+        "移至回收站"
       ],
       "Move to...": [
         "移动邮件"
@@ -8216,6 +8239,9 @@
       ],
       "Don't show this again": [
         "不再显示此内容"
+      ],
+      "Don't show this suggestion": [
+        "不显示此建议"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "例如：Amazon, eBay, Etsy"
@@ -8515,7 +8541,7 @@
         "系统信息"
       ],
       "Theme": [
-        "配色"
+        "主题"
       ],
       "Then": [
         "则"
@@ -8812,7 +8838,7 @@
         "此 ICS 文件包含多项日程，请下载后前往 ${ CALENDAR_APP_NAME } 导入"
       ],
       "Trash": [
-        "废件箱"
+        "回收站"
       ],
       "What’s this?": [
         "这是什么？"
@@ -8942,7 +8968,7 @@
         "垃圾邮件"
       ],
       "Trash": [
-        "废件箱"
+        "回收站"
       ]
     },
     "mailtrial2024: Action": {
@@ -9065,6 +9091,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "在 ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "第一个星期五"
       ],
@@ -9373,10 +9402,10 @@
         "一次轻松订阅，享受所有高级 ${ BRAND_NAME } 服务"
       ],
       "Auto-delete Spam and Trash": [
-        "自动清理垃圾邮件和废件箱"
+        "自动清理垃圾邮件和回收站"
       ],
       "Auto-delete spam and trashed messages": [
-        "自动删除垃圾邮件和废件箱中邮件"
+        "自动删除垃圾邮件和回收站中邮件"
       ],
       "Auto-reply": [
         "自动回复"
@@ -9855,7 +9884,7 @@
         "可对收到的邮件自动予以回复"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "垃圾邮件和废件箱中的邮件超过 30 天自动删除"
+        "垃圾邮件和回收站中的邮件超过 30 天自动删除"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "将您的 ${ MAIL_APP_NAME } 账户收到的邮件自动转发至其他邮箱。"
@@ -10198,6 +10227,12 @@
       "Maybe later": [
         "以后再说"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "优惠有效期至 ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "按年支付，确保我们的最佳优惠"
+      ],
       "Save": [
         "节省"
       ],
@@ -10210,6 +10245,9 @@
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
       ],
+      "Special offer": [
+        "特价"
+      ],
       "This offer won't be shown again.": [
         "此优惠不再显示。"
       ],
@@ -10218,6 +10256,9 @@
       ],
       "You currently pay": [
         "您目前支付"
+      ],
+      "Your subscription renews soon": [
+        "您的订阅即将续订"
       ]
     },
     "Offer feature": {
@@ -10295,7 +10336,7 @@
         "随时随地访问"
       ],
       "Auto-delete spam and trash": [
-        "自动清理垃圾邮件和废件箱"
+        "自动清理垃圾邮件和回收站"
       ],
       "browser": [
         "浏览器"
@@ -10402,7 +10443,7 @@
         "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
       ],
       "You will be able to change your theme any time in your settings.": [
-        "您可以随时在设置中更换配色。"
+        "您可以随时在设置中更换主题。"
       ]
     },
     "Online accounts": {
@@ -10489,12 +10530,6 @@
       ],
       "Secure vault sharing": [
         "安全保险库共享"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全保险库共享 ( ${ n } 保险库 )"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全保险库共享 (${ n } 个保险库) 和链接共享"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11304,7 +11339,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Stay signed in": [
         "保持登录"
@@ -11318,10 +11353,10 @@
         "${ passwordReset }现已可用。"
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "如果您在重置密码完成之前退出，您可能会失去对账户的访问权限。"
+        "如果您在重置密码完成之前登出，您可能会失去对账户的访问权限。"
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "如果您未重置密码就退出，您可能会失去对账户的访问权限。"
+        "如果您未重置密码就登出，您可能会失去对账户的访问权限。"
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "您可以在${ boldTimeLeft }之内重置密码。"
@@ -11334,7 +11369,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "退出而不重置密码？"
+        "登出而不重置密码？"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -11856,47 +11891,6 @@
         "总计${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动转发 ${ strongText } 电子邮件"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "短电子邮箱地址 @pm.me"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -12149,6 +12143,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 电子邮件别名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动转发 ${ strongText } 电子邮件"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "短电子邮箱地址 @pm.me"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -13087,7 +13122,7 @@
         "将所有邮件存档"
       ],
       "Move all messages to trash": [
-        "将所有邮件移至废件箱"
+        "将所有邮件移至回收站"
       ],
       "Move to": [
         "移动到"
@@ -13102,7 +13137,7 @@
         "标为垃圾邮件"
       ],
       "Move to trash": [
-        "移至废件箱"
+        "移至回收站"
       ],
       "Moving a scheduled message": [
         "正在移动定时发送邮件"
@@ -13138,7 +13173,7 @@
         "未检测到数据泄露"
       ],
       "No need to empty the trash": [
-        "无需清空废件箱"
+        "无需清空回收站"
       ],
       "No trackers found": [
         "未发现跟踪器"
@@ -13148,6 +13183,9 @@
       ],
       "Notes": [
         "备注"
+      ],
+      "On-device suggestions": [
+        "设备建议"
       ],
       "One email, many recipients": [
         "一封邮件，多个收件人"
@@ -13255,7 +13293,7 @@
         "选择账户等级"
       ],
       "Select a theme": [
-        "选择配色"
+        "选择主题"
       ],
       "Select action to take on contact group": [
         "选择针对联系人群组的动作"
@@ -13312,7 +13350,7 @@
         "登录并授予权限"
       ],
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Snooze": [
         "延迟通知"
@@ -13354,7 +13392,7 @@
         "收件人"
       ],
       "Trash": [
-        "废件箱"
+        "回收站"
       ],
       "Trust new key?": [
         "信任新密钥？"
@@ -13437,6 +13475,11 @@
         "今天"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
@@ -13505,10 +13548,10 @@
         "新的计费周期将从 ${ formattedTime } 开始"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "所选模式将在系统设置为“暗色模式”时生效。"
+        "所选模式将在系统设置为 \"深色模式\" 时生效。"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "所选模式将在系统设置为“亮色模式”时生效。"
+        "所选模式将在系统设置为 \"浅色模式\" 时生效。"
       ],
       "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
         "这样可以确保任何人都无法看到定位、设备和其他信息，这些信息可能会被用来识别或跟踪你。"
@@ -13518,11 +13561,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ]
     },
     "Tor out of date": {

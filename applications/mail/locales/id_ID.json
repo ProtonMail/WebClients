@@ -1273,7 +1273,7 @@
         "Pesan ini mengandung gambar yang tersemat."
       ],
       "This message contains remote content.": [
-        "Pesan ini mengandung remote content."
+        "Pesan ini mengandung konten yang berasal dari sumber eksternal."
       ],
       "This weekend": [
         "Minggu ini"
@@ -1373,6 +1373,9 @@
       ],
       "Use ${ label } theme": [
         "Gunakan tema ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "Gunakan ${ PASS_APP_NAME }"
       ],
       "Use a different card": [
         "Gunakan kartu lain"
@@ -6229,6 +6232,9 @@
       "Default email application": [
         "Aplikasi email bawaan"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Pendeteksian berlangsung pada perangkat Anda, sehingga tidak ada data dari email Anda yang dikirim ke server kami."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Tahukah Anda bahwa Anda memiliki penyimpanan cloud terenkripsi yang terliput dalam Akun ${ BRAND_NAME } Anda? Kunjungi ${ DRIVE_APP_NAME } dan manfaatkan ruang penyimpanan Anda semaksimal mungkin. Gratis."
       ],
@@ -7774,6 +7780,14 @@
         "Warna terpilih:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Bagaimana cara mengirim pembayaran tunai?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Silakan ikuti instruksi yang tertera pada artikel berikut: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Klik untuk rincian"
@@ -7908,7 +7922,7 @@
         "Muat gambar yang tersemat"
       ],
       "Load remote content": [
-        "Muat remote content"
+        "Muat konten eksternal"
       ],
       "Mark as read": [
         "Tandai telah dibaca"
@@ -8225,6 +8239,9 @@
       ],
       "Don't show this again": [
         "Jangan tampilkan lagi"
+      ],
+      "Don't show this suggestion": [
+        "Jangan tampilkan saran ini"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "mis. Amazon, eBay, Etsy"
@@ -9074,6 +9091,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "pada ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "pada hari Jumat pertama"
       ],
@@ -10207,6 +10227,12 @@
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Penawaran akan berakhir pada ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Bayar per tahun, kantongi penawaran terbaik kami"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -10219,11 +10245,20 @@
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
       ],
+      "Special offer": [
+        "Penawaran spesial"
+      ],
       "This offer won't be shown again.": [
         "Penawaran ini tidak akan lagi ditampilkan."
       ],
+      "When you switch from a monthly to annual subscription.": [
+        "Pada saat Anda beralih dari langganan bulanan ke langganan tahunan."
+      ],
       "You currently pay": [
         "Anda saat ini membayar"
+      ],
+      "Your subscription renews soon": [
+        "Langganan Anda akan segera diperbarui"
       ]
     },
     "Offer feature": {
@@ -10495,12 +10530,6 @@
       ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Pembagian brankas aman (${ n } brankas)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11788,6 +11817,9 @@
       "Billed every 2 years": [
         "Ditagihkan setiap 2 tahun"
       ],
+      "Billed every 6 months": [
+        "Ditagih setiap 6 bulan"
+      ],
       "Billed for 15 months": [
         "Tertagih selama 15 bulan"
       ],
@@ -11860,47 +11892,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription reminder": {
@@ -12155,6 +12146,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -13030,7 +13062,7 @@
         "Muat gambar yang tersemat"
       ],
       "Load remote content": [
-        "Muat remote content"
+        "Muat konten eksternal"
       ],
       "Mark as read": [
         "Tandai telah dibaca"
@@ -13154,6 +13186,9 @@
       ],
       "Notes": [
         "Catatan"
+      ],
+      "On-device suggestions": [
+        "Saran pada perangkat"
       ],
       "One email, many recipients": [
         "Satu email, banyak penerima"
@@ -13443,6 +13478,11 @@
         "Hari ini"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
@@ -13524,11 +13564,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Tor out of date": {

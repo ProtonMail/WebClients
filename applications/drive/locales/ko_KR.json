@@ -336,6 +336,9 @@
       "Download logs": [
         "다운로드 로그"
       ],
+      "Download photo": [
+        "사진 다운로드"
+      ],
       "Download without scanning": [
         "스캔 없이 다운로드"
       ],
@@ -486,6 +489,9 @@
       "Increase": [
         "증가"
       ],
+      "Join album": [
+        "앨범 참여"
+      ],
       "Keep my subscription": [
         "내 구독 유지하기"
       ],
@@ -527,6 +533,9 @@
       ],
       "Manage share": [
         "공유 관리"
+      ],
+      "Mark as favorite": [
+        "즐겨찾기로 표시"
       ],
       "Mark as resolved": [
         "해결됨으로 표시"
@@ -675,6 +684,9 @@
       "Remove from album": [
         "앨범에서 제거"
       ],
+      "Remove from favorites": [
+        "즐겨찾기에서 삭제"
+      ],
       "Remove from this list": [
         "이 리스트에서 삭제"
       ],
@@ -684,11 +696,11 @@
       "Remove me": [
         "나 제거하기"
       ],
-      "Remove Without Saving": [
-        "저장하지 않고 삭제하기"
-      ],
       "Rename": [
         "이름 바꾸기"
+      ],
+      "Rename album": [
+        "앨범 이름 변경"
       ],
       "Replace file": [
         "파일 대체"
@@ -756,9 +768,6 @@
       "Save": [
         "저장"
       ],
-      "Save and Remove": [
-        "저장하고 삭제하기"
-      ],
       "Save changes": [
         "변경 사항 저장"
       ],
@@ -809,6 +818,9 @@
       ],
       "Share": [
         "공유"
+      ],
+      "Share album": [
+        "앨범 공유"
       ],
       "Share file": [
         "파일 공유"
@@ -5237,9 +5249,6 @@
       "This item already exists in your library": [
         "이 항목은 이미 라이브러리에 존재합니다."
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "이 항목은 사진 보관함에 저장되지 않습니다. 이 앨범에서 제거하면 영구적으로 접근할 수 없습니다. 제거하기 전에 저장하시겠습니까?"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
       ],
@@ -8057,6 +8066,9 @@
       "Save big when you pay annually": [
         "매년 결제로 더 크게 절약하세요"
       ],
+      "Special offer": [
+        "특가 할인"
+      ],
       "This offer won't be shown again.": [
         "이 제안은 다시 표시되지 않습니다."
       ],
@@ -8282,12 +8294,6 @@
       ],
       "Secure vault sharing": [
         "안전한 금고 공유"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "안전한 링크 공유 (${ n }개 금고)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "안전한 링크 공유 (${ n }개 금고) 및 링크 공유"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10088,9 +10094,6 @@
       "Delete ${ count } contact group": [
         "${ count }개의 그룹 삭제"
       ],
-      "Delete ${ item.name }?": [
-        "${ item.name }을(를) 삭제할까요?"
-      ],
       "Delete ${ links.length } items?": [
         "${ links.length }개 항목을 삭제할까요?"
       ],
@@ -10357,9 +10360,6 @@
       ],
       "Remove device?": [
         "기기를 삭제할까요?"
-      ],
-      "Remove items": [
-        "항목 제거하기"
       ],
       "Rename a file": [
         "파일 이름 변경"

@@ -5134,6 +5134,14 @@
         "Vybraná farba:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Ako poslať hotovostnú platbu?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Pokyny nájdete v článku: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Kliknite pre podrobnosti"
@@ -7386,6 +7394,12 @@
       "Maybe later": [
         "Možno neskôr"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Ponuka skončí ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Plaťte ročne, poistite si našu najlepšiu ponuku"
+      ],
       "Save": [
         "Ušetrite"
       ],
@@ -7398,6 +7412,9 @@
       "Save big when you pay annually": [
         "Pri ročnej platbe ušetríte viac"
       ],
+      "Special offer": [
+        "Špeciálna ponuka"
+      ],
       "This offer won't be shown again.": [
         "Táto ponuka sa už nezobrazí."
       ],
@@ -7406,6 +7423,9 @@
       ],
       "You currently pay": [
         "V súčasnosti platíte"
+      ],
+      "Your subscription renews soon": [
+        "Vaše predplatné čoskoro obnoví"
       ]
     },
     "Offer feature": {
@@ -7470,18 +7490,6 @@
       ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpečné zdieľanie trezora (${ n } trezor)",
-        "Bezpečné zdieľanie trezorov (${ n } trezory)",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov)",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpečné zdieľanie trezora (${ n } trezor) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezory) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8491,6 +8499,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Účtované každé 2 roky"
+      ],
+      "Billed every 6 months": [
+        "Účtované každých 6 mesiacov"
       ],
       "Billed for 15 months": [
         "Účtované za 15 mesiacov"

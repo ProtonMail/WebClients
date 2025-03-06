@@ -412,7 +412,7 @@
         "Transferir agora"
       ],
       "Download the desktop app": [
-        "Transfira a aplicação para desktop"
+        "Transfira a aplicação para computador"
       ],
       "Downloading": [
         "A transferir"
@@ -677,7 +677,7 @@
         "Inserir uma ligação"
       ],
       "Invite members": [
-        "Convide membros"
+        "Convidar membros"
       ],
       "Italic": [
         "Itálico"
@@ -6292,7 +6292,7 @@
         "Criar em"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "A criação de várias contas gratuitas não é permitida pelos nossos ${ termsLink }."
+        "A criação de múltiplas contas gratuitas não é permitida pelos nossos ${ termsLink }."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
@@ -7225,7 +7225,7 @@
         "Mudar para"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
-        "Sincronize e gire ficheiros com a aplicação ${ DRIVE_APP_NAME } . Crie e partilhe documentos no ${ DOCS_APP_NAME }e armazene-os de forma segura. Tudo em ${ ios }, ${ android } e ${ desktop }."
+        "Sincronize e gire ficheiros com a aplicação ${ DRIVE_APP_NAME }. Crie e partilhe documentos no ${ DOCS_APP_NAME }e armazene-os de forma segura. Tudo em ${ ios }, ${ android } e ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -10416,6 +10416,9 @@
       "Save big when you pay annually": [
         "Poupe em grande ao pagar anualmente!"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "This offer won't be shown again.": [
         "Esta oferta não será mostrada novamente."
       ],
@@ -10698,14 +10701,6 @@
       ],
       "Secure vault sharing": [
         "Partilha segura de cofre"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Partilha segura de cofre (${ n } cofre)",
-        "Partilha segura de cofre (${ n } cofres)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Partilha segura de cofre (${ n } cofre) e partilha de ligações",
-        "Partilha segura de cofre (${ n } cofres) e partilha de ligações"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12022,6 +12017,9 @@
       "Billed every 2 years": [
         "Faturado a cada 2 anos"
       ],
+      "Billed every 6 months": [
+        "Faturação a cada 6 meses"
+      ],
       "Billed for 15 months": [
         "Faturação para 15 meses"
       ],
@@ -12099,47 +12097,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription reminder": {
@@ -12400,6 +12357,47 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -13734,6 +13732,11 @@
         "Hoje"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é utilizado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
@@ -13815,11 +13818,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
     },
     "Tor out of date": {

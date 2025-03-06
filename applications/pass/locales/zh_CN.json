@@ -1,1217 +1,1211 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "nb_NO"
+    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "language": "zh_CN"
   },
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+        "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } og 1 annen potensiell lekkasje oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+        "检测到 ${ name } 和 1 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potensiell ${ name }-lekkasje ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+        "检测到潜在的 ${ name } 泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息并采取措施。${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potensiell lekkasje fra ${ name } ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+        "检测到来自 ${ name } 的潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息并采取措施。${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "En potensiell lekkasje fra ${ name } ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+        "检测到来自 ${ name } 的潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Informasjonen din ble funnet i minst én datalekkasje. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+        "您的信息至少涉及一次数据泄露。请开启 ${ DARK_WEB_MONITORING_NAME } 查看详情并采取措施。${ link }"
       ]
     },
     "Action": {
       "Accept": [
-        "Aksepter"
+        "接受"
       ],
       "Accept and view the item": [
-        "Aksepter og se elementet"
+        "接受并查看项目"
       ],
       "Add": [
-        "Legg til"
+        "添加"
       ],
       "Add account": [
-        "Legg til konto"
+        "添加帐户"
       ],
       "Add current URL": [
-        "Legg til gjeldende nettadresse"
+        "添加当前 URL"
       ],
       "Add custom domain": [
-        "Legg til egendefinert domene"
+        "添加自定义域名"
       ],
       "Add domain": [
-        "Legg til domene"
+        "添加域名"
       ],
       "Add forwarding mailbox": [
-        "Legg til postboks for videresending"
+        "添加转发邮箱"
       ],
       "Add mailbox": [
-        "Legg til postboks"
+        "添加邮箱"
       ],
       "Add more": [
-        "Legg til flere"
+        "添加更多"
       ],
       "Add new item": [
-        "Legg til nytt element"
+        "添加新项目"
       ],
       "Add section": [
-        "Legg til seksjon"
+        "添加分组"
       ],
       "Add username field": [
-        "Legg til brukernavnfelt"
+        "添加用户名字段"
       ],
       "Admin panel": [
-        "Administrasjonspanel"
+        "管理面板"
       ],
       "Advanced": [
-        "Avansert"
+        "高级"
       ],
       "Advanced options": [
-        "Avanserte innstillinger"
+        "高级选项"
       ],
       "Apply lifetime coupon code": [
-        "Bruk livstidskupongkode"
+        "使用终身优惠券代码"
       ],
       "Authenticate": [
-        "Autentiser"
+        "认证"
       ],
       "Back": [
-        "Tilbake"
+        "上一步"
       ],
       "Block contact": [
-        "Blokkèr kontakt"
+        "屏蔽联系人"
       ],
       "Bulk delete items from trash": [
-        "Masseslett elementer fra papirkurven"
+        "从回收站中批量删除项目"
       ],
       "Bulk move items to another vault": [
-        "Masseflytt elementer til et annet hvelv"
+        "批量移动项目至另一个保险库"
       ],
       "Bulk move items to trash": [
-        "Masseflytt elementer til papirkurven"
+        "批量移动项目至回收站"
       ],
       "Bulk restore items from trash": [
-        "Massegjenopprett elementer fra papirkurven"
+        "从回收站中批量还原项目"
       ],
       "Bulk select items": [
-        "Massevelg elementer"
+        "批量选择项目"
       ],
       "Cancel": [
-        "Avbryt"
+        "取消"
       ],
       "Cancel email change": [
-        "Avbryt endring av e-post"
+        "取消邮箱更改"
       ],
       "Change": [
-        "Endre"
+        "更改"
       ],
       "Change email": [
-        "Endre e-post"
+        "更换邮箱"
       ],
       "Check DNS": [
-        "Sjekk DNS"
+        "检查 DNS"
       ],
       "Check settings": [
-        "Kontroller innstillinger"
+        "检查设置"
       ],
       "Choose a file or drag it here": [
-        "Velg en fil eller dra den hit"
+        "选择文件或将文件拖至此处"
       ],
       "Clear": [
-        "Tøm"
+        "清除"
       ],
       "Clear search": [
-        "Tøm søk"
+        "清除搜索条件"
       ],
       "Close": [
-        "Lukk"
+        "关闭"
       ],
       "Close advanced options": [
-        "Lukk avanserte innstillinger"
+        "关闭进阶选项"
       ],
       "Close navigation": [
-        "Lukk navigasjonsmeny"
+        "关闭导航栏"
       ],
       "Confirm": [
-        "Bekreft"
+        "确定"
       ],
       "Confirm access": [
-        "Bekreft tilgang"
+        "确认访问"
       ],
       "Confirm all": [
-        "Bekreft alle"
+        "确认全部"
       ],
       "Continue": [
-        "Fortsett"
+        "继续"
       ],
       "Continue offline": [
-        "Fortsett i frakoblet modus"
+        "保持离线"
       ],
       "Copy and close": [
-        "Kopier og lukk"
+        "复制并关闭"
       ],
       "Copy forwarding address": [
-        "Kopier videresendingsadresse"
+        "复制转发地址"
       ],
       "Copy link": [
-        "Kopier kobling"
+        "复制链接"
       ],
       "Copy to clipboard": [
-        "Kopier til utklippstavlen"
+        "复制到剪贴板"
       ],
       "Create": [
-        "Opprett"
+        "创建"
       ],
       "Create a ${ BRAND_NAME } account": [
-        "Opprett en ${ BRAND_NAME }-konto"
+        "创建 ${ BRAND_NAME } 账户"
       ],
       "Create a new vault": [
-        "Opprett et nytt hvelv"
+        "创建新保险库"
       ],
       "Create alias": [
-        "Opprett alias"
+        "创建别名"
       ],
       "Create card": [
-        "Opprett kort"
+        "创建卡片"
       ],
       "Create contact": [
-        "Opprett kontakt"
+        "创建联系人"
       ],
       "Create identity": [
-        "Opprett identitet"
+        "创建身份"
       ],
       "Create item": [
-        "Opprett element"
+        "新增项目"
       ],
       "Create login": [
-        "Opprett pålogging"
+        "创建登录"
       ],
       "Create new items": [
-        "Opprett nye elementer"
+        "创建新项目"
       ],
       "Create note": [
-        "Opprett notat"
+        "创建笔记"
       ],
       "Create vault": [
-        "Opprett hvelv"
+        "创建保险库"
       ],
       "Creating vault": [
-        "Oppretter hvelv"
+        "正在创建保险库"
       ],
       "Custom section": [
-        "Tilpasset seksjon"
+        "自定义选项"
       ],
       "Delete": [
-        "Slett"
+        "删除"
       ],
       "Delete alias": [
-        "Slett alias"
+        "删除别名"
       ],
       "Delete all": [
-        "Slett alle"
+        "全部删除"
       ],
       "Delete it, I will never need it": [
-        "Slett det, jeg kommer aldri til å trenge det"
+        "删除它，我不在需要这个了"
       ],
       "Delete mailbox": [
-        "Slett postboks"
+        "删除邮箱"
       ],
       "Delete password": [
-        "Slett passord"
+        "删除密码"
       ],
       "Delete permanently": [
-        "Slett permanent"
+        "永久删除"
       ],
       "Delete vault": [
-        "Slett hvelv"
+        "删除保险库"
       ],
       "Deselect": [
-        "Fjern markeringen"
+        "取消选择"
       ],
       "Disable alias": [
-        "Deaktiver alias"
+        "禁用别名"
       ],
       "Disable instead": [
-        "Deaktiver i stedet"
+        "改为禁用"
       ],
       "Disable this alias to stop receiving emails sent to this alias": [
-        "Deaktiver dette aliaset for å slutte å motta e-post sendt til dette aliaset"
+        "禁用此别名以停止接收发送到此别名的邮件"
       ],
       "Discard": [
-        "Forkast"
+        "放弃"
       ],
       "Dismiss": [
-        "Avvis"
+        "忽略"
       ],
       "Download this CSV template": [
-        "Last ned denne CSV-malen"
+        "下载CSV模板"
       ],
       "Edit": [
-        "Rediger"
+        "更改"
       ],
       "Edit vault": [
-        "Rediger hvelv"
+        "编辑保险库"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
-        "Aktiver ${ DARK_WEB_MONITORING_NAME }"
+        "启用 ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "Aktiver dette aliaset for å motta e-poster sendt til dette aliaset"
+        "启用此别名以接收发送到此别名的邮件"
       ],
       "Exclude from monitoring": [
-        "Ekskluder fra overvåking"
+        "从监测中移除"
       ],
       "Export": [
-        "Eksport"
+        "导出"
       ],
       "Fill password": [
-        "Fyll ut passord"
+        "填写密码"
       ],
       "Filter vault items": [
-        "Filtrer hvelvelementer"
+        "筛选保险库项目"
       ],
       "Generate alias": [
-        "Generer alias"
+        "生成别名"
       ],
       "Generate password": [
-        "Generer passord"
+        "生成密码"
       ],
       "Generate secure link": [
-        "Generer sikker kobling"
+        "生成安全链接"
       ],
       "Generated passwords": [
-        "Generert passord"
+        "生成的密码"
       ],
       "Generating secure link...": [
-        "Genererer sikker kobling..."
+        "正在生成安全链接..."
       ],
       "Get ${ PASS_APP_NAME }": [
-        "Skaff deg ${ PASS_APP_NAME }"
+        "开通 ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
-        "Skaff deg mobilapper"
+        "获取移动应用"
       ],
       "Get Pass Business": [
-        "Skaff deg Pass Business"
+        "获取 Pass Business"
       ],
       "Get Pass Plus": [
-        "Skaff deg Pass Plus"
+        "获取 Pass Plus"
       ],
       "Get Started": [
-        "Kom i gang"
+        "立即体验"
       ],
       "Hide": [
-        "Skjul"
+        "隐藏"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
-        "Hvordan eksporterer jeg mine data fra ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+        "如何从${ PROVIDER_INFO_MAP[form.values.provider].title }导出我的数据？"
       ],
       "How to use ${ PASS_APP_NAME }": [
-        "Hvordan bruke ${ PASS_APP_NAME }"
+        "如何使用${ PASS_APP_NAME }"
       ],
       "Import": [
-        "Importer"
+        "导入"
       ],
       "Importing": [
-        "Importerer"
+        "正在导入"
       ],
       "Include in monitoring": [
-        "Inkluder i overvåking"
+        "纳入监测中"
       ],
       "Install extension": [
-        "Installer utvidelse"
+        "安装扩展"
       ],
       "Invite more...": [
-        "Inviter flere..."
+        "邀请更多..."
       ],
       "Invite others": [
-        "Inviter andre"
+        "邀请他人"
       ],
       "Join our Reddit": [
-        "Bli med på vår Reddit"
+        "加入我们的 Reddit"
       ],
       "Join shared vault": [
-        "Bli med delt hvelv"
+        "加入共享保险库"
       ],
       "Learn more": [
-        "Lær mer"
+        "了解详情"
       ],
       "Leave": [
-        "Forlat"
+        "离开"
       ],
       "Leave vault": [
-        "Forlat hvelv"
+        "离开保险库"
       ],
       "Link copied to clipboard": [
-        "Kobling kopiert til utklippstavlen"
+        "链接已复制到剪贴板"
       ],
       "Link expires after": [
-        "Koblingen utløper etter"
+        "链接过期于"
       ],
       "Lock ${ PASS_APP_NAME }": [
-        "Lås ${ PASS_APP_NAME }"
+        "锁定 ${ PASS_APP_NAME }"
       ],
       "Make admin": [
-        "Gjør til administrator"
+        "设为管理员"
       ],
       "Make default": [
-        "Angi som standard"
+        "设为默认"
       ],
       "Make editor": [
-        "Gjør til redaktør"
+        "成为编辑者"
       ],
       "Make viewer": [
-        "Gjør til leser"
+        "成为查看者"
       ],
       "Manage access": [
-        "Administrer tilgang"
+        "管理权限"
       ],
       "Manually sync your data": [
-        "Synkroniser dine data manuelt"
+        "手动同步您的数据"
       ],
       "Mark as resolved": [
-        "Merk som løst"
+        "标记为已解决"
       ],
       "Maximum views": [
-        "Maksimalt antall visninger"
+        "最大访问次数"
       ],
       "More info": [
-        "Mer info"
+        "更多信息"
       ],
       "More info: ${ safeTitle }": [
-        "Mer informasjon: ${ safeTitle }"
+        "更多信息：${ safeTitle }"
       ],
       "More options": [
-        "Flere valg"
+        "更多选项"
       ],
       "Move": [
-        "Flytt"
+        "移动"
       ],
       "Move all items": [
-        "Flytt alle elementer"
+        "移动所有项目"
       ],
       "Move to another vault": [
-        "Flytt til annet hvelv"
+        "移至另一个保险库"
       ],
       "Move to trash": [
-        "Flytt til papirkurven"
+        "移至回收站"
       ],
       "Move to Trash": [
-        "Flytt til papirkurven"
+        "移至回收站"
       ],
       "Multiple select": [
-        "Flere valg"
+        "多重选择"
       ],
       "No expired links": [
-        "Ingen utløpte koblinger"
+        "无过期链接"
       ],
       "Not now": [
-        "Ikke nå"
+        "以后再说"
       ],
       "OK": [
-        "OK"
+        "确定"
       ],
       "Open navigation": [
-        "Åpne navigasjonsmeny"
+        "打开导航栏"
       ],
       "Pass for Android": [
-        "Pass for Android"
+        "Android版Proton Pass"
       ],
       "Pass for iOS": [
-        "Pass for iOS"
+        "iOS版Proton Pass"
       ],
       "Pass Monitor": [
         "Pass Monitor"
       ],
       "Pause monitoring": [
-        "Sett overvåking på vent"
+        "暂停监测"
       ],
       "Pin item": [
-        "Fest element"
+        "固定项"
       ],
       "Please retry": [
-        "Prøv igjen"
+        "请重试"
       ],
       "Re-verify": [
-        "Verifiser på nytt"
+        "重新验证"
       ],
       "Reactivate now": [
-        "Aktiver på nytt nå"
+        "立即重新激活"
       ],
       "Refresh the page": [
-        "Oppdater siden"
+        "刷新页面"
       ],
       "Regenerate": [
-        "Generer på nytt"
+        "重新生成"
       ],
       "Reject": [
-        "Avvis"
+        "拒绝"
       ],
       "Reject invitation": [
-        "Avslå invitasjon"
+        "拒绝邀请"
       ],
       "Reload": [
-        "Last inn på nytt"
+        "刷新"
       ],
       "Remove": [
-        "Fjern"
+        "移除"
       ],
       "Remove access": [
-        "Fjern tilgang"
+        "移除访问权"
       ],
       "Remove all expired links (${ inactiveLinkCount })": [
-        "Fjern alle utløpte koblinger (${ inactiveLinkCount })"
+        "移除所有过期链接 ( ${ inactiveLinkCount } )"
       ],
       "Remove link": [
-        "Fjern kobling"
+        "移除链接"
       ],
       "Remove member": [
-        "Fjern medlem"
+        "移除成员"
       ],
       "Request a feature": [
-        "Be om en funksjon"
+        "功能建议"
       ],
       "Resend code": [
-        "Send kode på nytt"
+        "重新发送验证码"
       ],
       "Resend code (in ${ remaining }s)": [
-        "Send kode på nytt (om ${ remaining }s)"
+        "重新发送代码 ( ${ remaining } 秒 )"
       ],
       "Resend invitation": [
-        "Send invitasjon på nytt"
+        "重新发送邀请"
       ],
       "Restore": [
-        "Gjenopprett"
+        "还原"
       ],
       "Restore item": [
-        "Gjenopprett element"
+        "恢复项目"
       ],
       "Restrict number of views": [
-        "Begrens antall visninger"
+        "限制浏览次数"
       ],
       "Resume monitoring": [
-        "Gjenoppta overvåking"
+        "恢复监测"
       ],
       "Retry": [
-        "Prøv på nytt"
+        "重试"
       ],
       "Right click and download this CSV": [
-        "Høyreklikk og last ned denne CSV-filen"
+        "右键单击并下载此CSV"
       ],
       "Save": [
-        "Lagre"
+        "保存"
       ],
       "Saving": [
-        "Lagrer"
+        "正在保存"
       ],
       "Section name": [
-        "Seksjonsnavn"
+        "分组名称"
       ],
       "Secure links": [
-        "Sikre koblinger"
+        "安全链接"
       ],
       "See all": [
-        "Se alle"
+        "查看全部"
       ],
       "See members": [
-        "Vis medlemmer"
+        "查看成员"
       ],
       "Select": [
-        "Velg"
+        "选择"
       ],
       "Send email": [
-        "Send e-post"
+        "发送邮件"
       ],
       "Send invite": [
-        "Send invitasjon"
+        "发送邀请"
       ],
       "Set access level": [
-        "Sett tilgangsnivå"
+        "设置访问级别"
       ],
       "Set extra password": [
-        "Angi ekstra passord"
+        "设置额外密码"
       ],
       "Setup 2FA": [
-        "Sett opp 2FA"
+        "设置 2FA"
       ],
       "Share": [
-        "Del"
+        "分享"
       ],
       "Share item": [
-        "Del element"
+        "共享项目"
       ],
       "Share secure link": [
-        "Del sikker kobling"
+        "分享安全链接"
       ],
       "Share vault": [
-        "Del hvelv"
+        "共享保险库"
       ],
       "Show": [
-        "Vis"
+        "显示"
       ],
       "Show advanced options": [
-        "Vis avanserte alternativer"
+        "显示进阶选项"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "Logg på med ${ BRAND_NAME }"
+        "使用${ BRAND_NAME }登录"
       ],
       "Sign out": [
-        "Logg av"
+        "登出"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Noen har delt et element med deg på ${ PASS_APP_NAME }."
+        "有人在 ${ PASS_APP_NAME } 上与您分享了一个项目。"
       ],
       "Sort vault items": [
-        "Sorter hvelvelementer"
+        "对保险库项目排序"
       ],
       "Submit": [
-        "Send inn"
+        "提交"
       ],
       "Submitting report...": [
-        "Sender inn rapport..."
+        "正在提交报告..."
       ],
       "Sync alias": [
-        "Synkroniser alias",
-        "Synkroniser aliaser"
+        "同步别名"
       ],
       "Sync aliases": [
-        "Synkroniser aliaser"
+        "同步别名"
       ],
       "To mailbox": [
-        "Til postboks"
+        "转到邮箱"
       ],
       "Transfer aliases": [
-        "Overfør aliaser"
+        "转移别名"
       ],
       "Transfer and delete mailbox": [
-        "Overfør og slett postboks"
+        "转移并删除邮箱"
       ],
       "Transfer ownership": [
-        "Overfør eierskap"
+        "转移所有权"
       ],
       "Trash": [
-        "Legg i papirkurven"
+        "回收站"
       ],
       "Try again.": [
-        "Prøv igjen."
+        "重试."
       ],
       "Try for free": [
-        "Prøv gratis"
+        "免费试用"
       ],
       "Unblock contact": [
-        "Fjern blokkering av kontakt"
+        "取消屏蔽联系人"
       ],
       "Understood, I will never need it": [
-        "Forstått, jeg kommer aldri til å trenge det",
-        "Forstått, jeg kommer aldri til å trenge dem"
+        "明白，我将永远不再需要它们"
       ],
       "Unlock": [
-        "Lås opp"
+        "解锁"
       ],
       "Unlock offline with password": [
-        "Lås opp frakoblet modus med passord"
+        "使用密码离线解锁"
       ],
       "Unpin item": [
-        "Løsne element"
+        "取消固定项"
       ],
       "Update": [
-        "Oppdater"
+        "更改"
       ],
       "Upgrade": [
-        "Oppgrader"
+        "升级账户"
       ],
       "Upgrade now": [
-        "Oppgrader nå"
+        "立即升级账户"
       ],
       "Upgrade now to share with more people": [
-        "Oppgrader nå for å dele med flere"
+        "立即升级以与更多人分享"
       ],
       "Use ${ label } theme": [
-        "Bruk ${ label }-temaet"
+        "使用 ${ label } 主题"
       ],
       "Verify": [
-        "Verifiser"
+        "验证"
       ],
       "Via secure link": [
-        "Via sikker kobling"
+        "通过安全链接"
       ],
       "View details": [
-        "Vis detaljer"
+        "查看详细信息"
       ],
       "View history": [
-        "Vis historikk"
+        "查看历史"
       ],
       "View item history": [
-        "Vis elementhistorikk"
+        "查看项目历史记录"
       ],
       "View older history": [
-        "Vis eldre historikk"
+        "查看更早的历史"
       ],
       "With other ${ BRAND_NAME } users": [
-        "Med andre ${ BRAND_NAME }-brukere"
+        "与其他 ${ BRAND_NAME } 用户"
       ],
       "Write us on X/Twitter": [
-        "Skriv til oss på X/Twitter"
+        "请在 X/Twitter 上给我们留言"
       ],
       "Your password manager is not here? Request it.": [
-        "Passordbehandleren din er ikke her? Be om den."
+        "您的密码管理器不在这里？请求添加它。"
       ]
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
+        "${ MAIL_APP_NAME } 桌面应用"
       ]
     },
     "Button": {
       "More info": [
-        "Mer informasjon"
+        "更多信息"
       ]
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Skjul"
+        "收起"
       ],
       "Expand": [
-        "Utvid"
+        "展开"
       ]
     },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
-        "${ DARK_WEB_MONITORING_NAME } er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
+        "${ DARK_WEB_MONITORING_NAME } 通过付费计划提供。升级后可立即访问。"
       ],
       "${ total } other login uses the same password": [
-        "${ total } annen pålogging bruker det samme passordet",
-        "${ total } andre pålogginger bruker det samme passordet"
+        "其他 ${ total } 个登录使用相同密码"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
-        "2FA legger til et nytt lag med sikkerhet til påloggingene dine. ${ PASS_APP_NAME } gjør 2FA enklere ved å lagre og automatisk fylle ut 2FA-kodene dine."
+        "2FA 给您的登录添加了另一层安全。 ${ PASS_APP_NAME } 通过存储和自动自动填充您的两步验证代码使 2FA 更加容易。"
       ],
       "Add the following CNAME DNS records to your domain.": [
-        "Legg til følgende CNAME DNS-poster til domenet ditt."
+        "将以下 CNAME DNS 记录添加到您的域。"
       ],
       "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
-        "Legg til følgende MX DNS-post til domenet ditt. Vær oppmerksom på at det er en prikk (.) ved sluttmåladressene. Hvis domeneregistratoren ikke tillater dette etterfølgende punktumet, må du fjerne det når du legger til DNS-posten."
+        "为您的域名添加以下 MX DNS 记录。请注意，目标地址末尾有一个点 ( . ) 。如果您的域名注册商不允许使用这个尾点，请在添加 DNS 记录时将其删除。"
       ],
       "Add the following TXT DNS record to your domain.": [
-        "Legg til følgende TXT DNS-post til domenet ditt."
+        "为您的域名添加以下 TXT DNS 记录。"
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "Et e-postalias fungerer som en e-postadresse, men reduserer søppelpost og holder den faktiske e-postadressen og identiteten din skjult."
+        "电子邮件别名的作用与电子邮件地址类似，但可以减少垃圾邮件，并隐藏您的真实电子邮件地址和身份。"
       ],
       "Change your passwords": [
-        "Endre passordene dine"
+        "更改密码"
       ],
       "Create unique passwords": [
-        "Opprett unike passord"
+        "创建唯一密码"
       ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "DKIM ${ WIKIPEDIA_LINK_DKIM } er en e-postautentiseringsmetode designet for å unngå e-postforfalskning. Det anbefales på det sterkeste å sette opp DKIM for å redusere sjansen for at e-postene dine havner i mottakerens søppelpostmappe."
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } 是一种电子邮件验证方法，旨在避免电子邮件被欺骗。强烈建议设置 DKIM，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
-        "DMARC ${ WIKIPEDIA_LINK_DMARC } er designet for å beskytte domenet mot uautorisert bruk, ofte kjent som e-postforfalskning. Bygget rundt SPF og DKIM, forteller en DMARC-policy den mottakende e-postserveren hva den skal gjøre hvis ingen av disse autentiseringsmetodene går gjennom."
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } 旨在保护域免遭未经授权的使用，也就是通常所说的电子邮件欺骗。DMARC 策略以 SPF 和 DKIM 为基础，告诉接收邮件服务器在这两种验证方法都不通过时该怎么办。"
       ],
       "Get notified if your email, password or other personal data was leaked.": [
-        "Bli varslet hvis e-posten, passordet eller andre personlige data ble lekket."
+        "如果您的电子邮件、密码或其他个人数据被泄露，您会收到通知。"
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
-        "Hvis du bruker et underdomene, f.eks. ${ subdomainExample }, må du istedenfor bruke ${ dmarcExampleSubdomain } som domenet."
+        "如果您正在使用子域，例如 ${ subdomainExample }，那么您需要使用 ${ dmarcExampleSubdomain } 作为域名。"
       ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
-        "Hvis du bruker et underdomene, f.eks. underdomene.domene.no, må du istedenfor bruke ${ domainKeyExampleSubdomain } som domenet. Det betyr, hvis domenet ditt er e-post.domene.no, skal du skrive inn ${ domainKeyExampleMail } som domenet."
+        "如果使用的是子域，例如 subdomain.domain.com，则需要使用 ${ domainKeyExampleSubdomain } 作为域。也就是说，如果您的域名是 mail.domain.com，则应输入 ${ domainKeyExampleMail } 作为域名。"
       ],
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
-        "Hvis du bruker CloudFlare, sørg for at du ikke velger alternativet Proxy."
+        "如果使用 Cloudflare，请确保不要选择代理选项。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
-        "Hold informasjonen din sikrere og mer privat med disse veiledningene og tipsene."
+        "使用这些指南和技巧，让您的信息更安全、更私密。"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Vår banebrytende AI-drevne sikkerhetsløsning designet for brukere som ønsker økt beskyttelse for kontoene sine. ${ learnMoreLink }."
+        "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
       ],
       "Set up 2FA for more security": [
-        "Sett opp 2FA for ekstra sikkerhet"
+        "设置 2FA 以获得更多安全"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
-        "Noen DNS-registratorer kan kreve en fullstendig postbane, i dette tilfellet kan du bruke ${ domain } som domeneverdi i stedet."
+        "某些 DNS 注册商可能需要完整的记录路径，在这种情况下，请使用 ${ domain }  作为域值。"
       ],
       "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
-        "Noen domeneregistratorer (Namecheap, CloudFlare, osv) kan også bruke @ for rotdomenet."
+        "些域名注册商 ( Namecheap、Cloudflare 等 ) 可能使用 @ 作为根域名。"
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "SPF ${ WIKIPEDIA_LINK_SPF } er en e-postautentiseringsmetode utviklet for å oppdage forfalskede avsenderadresser under levering av e-posten. Det anbefales sterkt å sette opp SPF for å redusere sjansen for at e-postene dine havner i mottakerens søppelpostmappe."
+        "SPF ${ WIKIPEDIA_LINK_SPF } 是一种电子邮件验证方法，旨在检测电子邮件发送过程中伪造的发件人地址。强烈建议设置 SPF，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "Begynn å overvåke for datainnbrudd relatert til kontoer som er opprettet med e-postadressen din og dine hide-my-email-aliaser."
+        "开始监测与您的电子邮件地址和 hide-my-email 别名创建的账户相关的数据泄露。"
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "Det mørke nettet er en skjult del av internett hvor stjålet personlig informasjon, som identiteter, kan kjøpes og selges."
+        "暗网是互联网的一个隐蔽部分，在这里可以买卖被盗的个人信息，比如身份信息。"
       ],
       "These items remain at risk": [
-        "Disse elementene er fortsatt i fare"
+        "这些项目仍然处于危险中"
       ],
       "This account is vulnerable, visit the service and change your password.": [
-        "Denne kontoen er sårbar, besøk tjenesten og endre passordet ditt."
+        "该账户存在漏洞，请访问该服务并更改密码。"
       ],
       "This service offers 2FA. Enable it for added account security.": [
-        "Denne tjenesten tilbyr 2FA. Aktiver den for ekstra kontosikkerhet."
+        "该服务提供 2FA。启用它可提高账户安全性。"
       ],
       "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
-        "For å bekrefte eierskapet til domenet, legg til følgende TXT-post. Noen domeneregistratorer (Namecheap, CloudFlare, osv) kan bruke @ for rotdomenet."
+        "要验证域名的所有权，请添加以下 TXT 记录。某些域名注册商 ( Namecheap、Cloudflare 等 ) 可能使用 @ 作为根域名。"
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Lås opp avanserte sikkerhetsfunksjoner og detaljerte logger for å beskytte din tilstedeværelse på nettet."
+        "解锁高级安全功能和详细日志，保护您的在线形象。"
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Med ${ PASS_SHORT_APP_NAME }-overvåking, hold deg i forkant av trusler ved å få øyeblikkelige varsler hvis legitimasjonen din er kompromittert. Lås opp avanserte sikkerhetsfunksjoner og detaljerte logger for å beskytte din tilstedeværelse på nettet."
+        "使用 ${ PASS_SHORT_APP_NAME } 监视器，在您的凭证受到威胁时，您会收到即时警报，从而在威胁面前保持领先。解锁高级安全功能和详细日志，保护您的在线形象。"
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
-        "E-postadressene dine ble lekket i minst 1 datainnbrudd."
+        "您的电子邮件地址在至少一次数据泄露事件中被泄露。"
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
-        "Din personlige informasjon ble lekket i et datainnbrudd på en tredjepartstjeneste."
+        "您的个人信息在第三方服务数据泄露事件中被泄露。"
       ]
     },
     "Email": {
       "anything@${ domainDisplay }": [
-        "alt@${ domainDisplay }"
+        "anything@${ domainDisplay }"
       ]
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
+        "无法解析 ${ provider } 文件。${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
-        "[Feil] et element kunne ikke analyseres"
+        "[错误] 无法解析一个项目"
       ],
       "A domain ownership must be verified first.": [
-        "Et domeneeierskap må bekreftes først."
+        "必须首先验证域名所有权。"
       ],
       "Alias could not be updated at the moment. Please try again later": [
-        "Alias kunne ikke oppdateres for øyeblikket. Prøv igjen senere"
+        "暂时无法更新别名。请稍后再试"
       ],
       "Alias options could not be resolved": [
-        "Aliasalternativene kunne ikke løses"
+        "无法解决别名选项问题"
       ],
       "An error occurred while resuming your session": [
-        "Det oppstod en feil under gjenopptakelse av økten"
+        "恢复会话时发生错误"
       ],
       "Authentication error": [
-        "Autentiseringsfeil"
+        "认证错误"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Autentisering mislyktes. Bekreft ${ BRAND_NAME }-passordet for å forsette med eksporten."
+        "身份验证失败。请确认您的 ${ BRAND_NAME } 密码以继续导出"
       ],
       "Authentication failed. Confirm your backup password in order to proceed with the export": [
-        "Autentisering mislyktes. Bekreft reservepassordet for å forsette med eksporten."
+        "身份验证失败。请确认您的备份密码以继续导出"
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
-        "Autentisering mislyktes. Bekreft ekstra passordet for å forsette med eksporten."
+        "身份验证失败。请确认您的额外密码以继续导出"
       ],
       "Biometric authentication failed": [
-        "Biometrisk autentisering mislyktes"
+        "生物特征认证失败"
       ],
       "Cannot send invitation at the moment": [
-        "Kan ikke sende invitasjon for øyeblikket",
-        "Kan ikke sende invitasjoner for øyeblikket"
+        "目前无法发送邀请"
       ],
       "Cannot send invitations at the moment": [
-        "Kan ikke sende invitasjoner for øyeblikket"
+        "目前无法发送邀请"
       ],
       "Could not confirm this invite at the moment": [
-        "Kunne ikke bekrefte denne invitasjonen for øyeblikket."
+        "目前无法确认此邀请"
       ],
       "Could not leave item.": [
-        "Kunne ikke forlate elementet."
+        "无法离开项目。"
       ],
       "Could not leave vault.": [
-        "Kunne ikke forlate hvelvet."
+        "无法离开保险库。"
       ],
       "Could not load recommendations at the moment.": [
-        "Kunne ikke laste inn anbefalinger for øyeblikket."
+        "目前无法加载建议。"
       ],
       "Could not open created vault": [
-        "Kunne ikke åpne opprettet hvelv"
+        "无法打开创建的保险库"
       ],
       "Could not open invited vault": [
-        "Kunne ikke åpne invitert hvelv"
+        "无法打开受邀保险库"
       ],
       "Could not open updated vault": [
-        "Kunne ikke åpne oppdatert hvelv"
+        "无法打开已更新的保险库"
       ],
       "Could not resolve share members": [
-        "Kunne ikke nøste opp medlemmene av delt ressurs."
+        "无法解析共享成员"
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
-        "Kan ikke hente brukerinvitasjoner for \"${ vaultName }\"-hvelvet"
+        "无法获取用户对 “${ vaultName }” 保险库的邀请"
       ],
       "Could not validate addresses at the moment.": [
-        "Kunne ikke validere adresser for øyeblikket."
+        "目前无法验证地址。"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
-        "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
+        "CSV 文件缺少预期标头：${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "Dekryptering av din ${ PASS_APP_NAME }-eksportfil mislyktes. ${ errorDetail }"
+        "解密您的 ${ PASS_APP_NAME } 导出文件失败。${ errorDetail }"
       ],
       "Deleting item failed": [
-        "Sletting av element mislyktes"
+        "删除项目失败"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "Sletting av hvelv \"${ payload.content.name }\" mislyktes."
+        "删除保险库 “${ payload.content.name }” 失败"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "Oppdaget ${ errors.length } korrupt csv-rad",
-        "Oppdaget ${ errors.length } korrupte csv-rader"
+        "检测到 CSV 中有 ${ errors.length } 行数据损坏"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
-        "Domenet kunne ikke bekreftes. Sørg for at du har lagt til de riktige DNS-postene"
+        "无法验证域名。请确保您添加了正确的 DNS 记录"
       ],
       "Domain not available, try again later": [
-        "Domenet er ikke tilgjengelig. Prøv igjen senere."
+        "域名不可用，请稍后再试"
       ],
       "Editing item failed": [
-        "Redigering av element mislyktes"
+        "编辑项目失败"
       ],
       "Empty CSV file": [
-        "Tom CSV-fil"
+        "空 CSV 文件"
       ],
       "Emptying trash failed": [
-        "Tømming av papirkurven mislyktes"
+        "清空回收站失败"
       ],
       "Encrypted JSON not supported": [
-        "Kryptert JSON ikke støttet"
+        "不支持加密的 JSON"
       ],
       "Error reporting problem": [
-        "Problem med feilrapportering"
+        "错误报告"
       ],
       "Failed removing the invite.": [
-        "Fjerning av invitasjonen mislyktes."
+        "移除邀请失败。"
       ],
       "Failed resending invite.": [
-        "Sending av invitering på nytt mislyktes."
+        "重新发送邀请失败。"
       ],
       "Failed to add email address": [
-        "Kunne ikke legge til e-postadresse"
+        "无法添加电子邮件地址"
       ],
       "Failed to block the contact": [
-        "Kunne ikke blokkere kontakten"
+        "无法屏蔽联系人"
       ],
       "Failed to cancel mailbox change": [
-        "Kan ikke avbryte endring av postboks"
+        "取消邮箱更改失败"
       ],
       "Failed to change mailbox": [
-        "Kan ikke endre postboks"
+        "更改邮箱失败"
       ],
       "Failed to create domain": [
-        "Kunne ikke opprette domenet"
+        "创建域失败"
       ],
       "Failed to create new mailbox": [
-        "Kan ikke opprette ny postboks"
+        "创建新邮箱失败"
       ],
       "Failed to create the contact": [
-        "Kunne ikke opprette kontakten"
+        "无法创建联系人"
       ],
       "Failed to delete domain": [
-        "Kunne ikke slette domenet"
+        "删除域失败"
       ],
       "Failed to delete email address from monitoring": [
-        "Kunne ikke slette e-postadresse fra overvåking"
+        "从监测中删除电子邮件地址失败"
       ],
       "Failed to delete selected items": [
-        "Kunne ikke slette valgte elementer"
+        "删除失败"
       ],
       "Failed to delete the contact": [
-        "Kunne ikke slette kontakten"
+        "无法删除联系人"
       ],
       "Failed to delete the mailbox": [
-        "Kan ikke slette postboksen"
+        "删除邮箱失败"
       ],
       "Failed to edit user's access.": [
-        "Kunne ikke redigere brukerens tilgang."
+        "修改用户权限失败。"
       ],
       "Failed to load breaches for this address": [
-        "Kunne ikke laste inn brudd for denne adressen"
+        "无法加载此地址的泄露信息"
       ],
       "Failed to load breaches for this email alias": [
-        "Kunne ikke laste inn brudd for denne e-postaliasen"
+        "加载此电子邮件别名的泄露信息失败"
       ],
       "Failed to load domain settings.": [
-        "Kunne ikke laste inn innstillingene for domenet."
+        "加载域设置失败。"
       ],
       "Failed to load item history": [
-        "Kunne ikke laste inn elementhistorikken"
+        "加载项目历史记录失败"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
-        "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
+        "无法从 “${ payload.content.name }” 移动所有项目"
       ],
       "Failed to move items": [
-        "Kunne ikke flytte elementer"
+        "移动项目失败"
       ],
       "Failed to move items to trash": [
-        "Kunne ikke flytte elementer til papirkurven"
+        "未能将项目移至回收站"
       ],
       "Failed to pin item": [
-        "Kunne ikke feste element"
+        "无法固定项目"
       ],
       "Failed to remove user's access.": [
-        "Kunne ikke fjerne brukerens tilgang."
+        "无法移除用户的访问权限。"
       ],
       "Failed to resend verification code": [
-        "Kan ikke sende bekreftelseskoden på nytt"
+        "无法重新发送验证码"
       ],
       "Failed to resend verification for custom email": [
-        "Kunne ikke sende bekreftelse på nytt for tilpasset e-post"
+        "无法重新发送自定义电子邮件的验证"
       ],
       "Failed to resolve breaches for this address": [
-        "Kunne ikke løse brudd for denne adressen"
+        "未能解决此地址的泄露问题"
       ],
       "Failed to restore items from trash": [
-        "Kunne ikke gjenopprette elementer fra papirkurven"
+        "从回收站中恢复项目失败"
       ],
       "Failed to set default mailbox": [
-        "Kan ikke angi standard postboks"
+        "设置默认邮箱失败"
       ],
       "Failed to sync aliases": [
-        "Kunne ikke synkronisere aliaser"
+        "同步别名失败"
       ],
       "Failed to transfer this vault's ownership.": [
-        "Kunne ikke overføre hvelvets eierskap."
+        "转移该保险库所有权失败。"
       ],
       "Failed to unpin item": [
-        "Kunne ikke løsne element"
+        "取消固定项目失败"
       ],
       "Failed to update catch-all setting.": [
-        "Kunne ikke oppdatere innstilling for catch-all."
+        "更新通配邮箱设置失败。"
       ],
       "Failed to update default domain": [
-        "Kan ikke oppdatere standard domene"
+        "更新默认域名失败"
       ],
       "Failed to update domain mailboxes.": [
-        "Kunne ikke oppdatere domenepostbokser."
+        "更新域名邮箱失败。"
       ],
       "Failed to update domain name.": [
-        "Kunne ikke oppdatere domenenavnet."
+        "更新域名失败。"
       ],
       "Failed to update monitoring settings": [
-        "Kunne ikke oppdatere overvåkingsinnstillingene"
+        "监测设置更新失败"
       ],
       "Failed to update random prefix generation setting.": [
-        "Kunne ikke oppdatere innstillingen for generering av tilfeldige prefikser."
+        "更新随机前缀生成设置失败。"
       ],
       "Failed to verify domain": [
-        "Kunne ikke bekrefte domenet"
+        "无法验证域"
       ],
       "Failed to verify email address": [
-        "Kunne ikke verifisere e-postadressen"
+        "验证邮件地址失败"
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
-        "Kunne ikke oppdatere ${ PROTON_SENTINEL_NAME }-innstillingen"
+        "更新 ${ PROTON_SENTINEL_NAME } 设置失败"
       ],
       "Failed updating monitor flag of the item": [
-        "Kunne ikke oppdatere overvåkningsflagget for elementet"
+        "更新项目的监测标志失败"
       ],
       "Failed updating monitoring status for this email address": [
-        "Kunne ikke oppdatere overvåkingsstatus for denne e-postadressen"
+        "更新此电子邮件地址的监测状态失败"
       ],
       "File could not be parsed": [
-        "Fil kunne ikke tolkes"
+        "文件无法解析"
       ],
       "File could not be read": [
-        "Filen kunne ikke leses"
+        "文件无法读取"
       ],
       "File does not match expected format": [
-        "Fil samsvarer ikke med forventet format"
+        "文件与预期格式不匹配"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Import mislyktes for hvelv \"${ vaultData.name }\" : ${ description }"
+        "保险库 “${ vaultData.name }” 导入失败：${ description }"
       ],
       "Importing items failed": [
-        "Import av elementer mislyktes"
+        "导入项目失败"
       ],
       "Inactive secure links could not be removed.": [
-        "Inaktive sikre koblinger kunne ikke fjernes."
+        "无法删除非活动安全链接。"
       ],
       "Invalid password manager": [
-        "Ugyldig passordbehandler"
+        "密码管理器无效"
       ],
       "Invitation could not be accepted": [
-        "Invitasjon kunne ikke aksepteres"
+        "邀请无法被接受"
       ],
       "Invitation could not be rejected": [
-        "Invitasjon kunne ikke avvises"
+        "邀请无法拒绝"
       ],
       "Item content cannot exceed 40KB": [
-        "Elementinnhold kan ikke overskride 40KB"
+        "项目内容不能超过 40KB"
       ],
       "Item creation failed": [
-        "Opprettelse av element mislyktes"
+        "项目创建失败"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass vil eksportere en ødelagt CSV-fil hvis noen av elementfeltene dine inneholder uventede komma, anførselstegn eller flere linjer."
+        "如果您的任何项目字段包含意外的逗号、引号或多行，LastPass 将导出损坏的 CSV 文件"
       ],
       "Moving item failed": [
-        "Flytting av element mislyktes"
+        "移动项目失败"
       ],
       "Network error": [
-        "Nettverksfeil"
+        "网络错误"
       ],
       "Offline mode is currently not available for two password mode.": [
-        "Frakoblet modus er for øyeblikket ikke tilgjengelig for topassordmodus."
+        "脱机模式目前不适用于双密码模式。"
       ],
       "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Frakoblet modus er for øyeblikket ikke tilgjengelig for planen din og er ikke kompatibel med to passordmodus."
+        "脱机模式目前不适用于您的计划，并且与双密码模式不兼容。"
       ],
       "Passphrase is incorrect": [
-        "Passfrase er feil"
+        "密码不正确"
       ],
       "PIN codes do not match": [
-        "PIN-kodene samsvarer ikke"
+        "两次输入的 PIN 码不一致"
       ],
       "Request timed out": [
-        "Forespørselen ble tidsavbrutt"
+        "请求超时"
       ],
       "Requesting alias options failed": [
-        "Forespørsel om aliasalternativer mislyktes"
+        "请求别名选项失败"
       ],
       "Restoring item failed": [
-        "Gjenoppretting av element mislyktes"
+        "恢复项目失败"
       ],
       "Restoring trashed items failed": [
-        "Gjennoppretting av elementer fra papirkurven mislyktes."
+        "恢复已销毁项目失败"
       ],
       "Secure link could not be created.": [
-        "Kunne ikke opprette sikker kobling."
+        "无法创建安全链接。"
       ],
       "Secure link could not be opened.": [
-        "Sikker kobling kunne ikke åpnes."
+        "无法打开安全链接。"
       ],
       "Settings update failed": [
-        "Oppdatering av innstillinger mislyktes"
+        "设置更新失败"
       ],
       "Signature verification failed": [
-        "Signaturbekreftelse mislyktes"
+        "签名验证失败"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Noen hvelv er ikke lenger tilgjengelige på grunn av tilbakestilling av passord. Aktiver kontonøklene dine på nytt for å få tilgang igjen. ${ reactivateLink }"
+        "由于密码重置，有些保险库已无法访问。请重新激活您的账户密钥，以重新获得访问权。${ reactivateLink }"
       ],
       "Something went wrong": [
-        "Noe gikk galt"
+        "出了些问题"
       ],
       "Something went wrong. Please sign in again.": [
-        "Noe gikk galt, logg inn på nytt."
+        "出错了。请重新登录。"
       ],
       "The file you are trying to import is empty": [
-        "Filen du prøver å importere er tom"
+        "您正在尝试导入的文件为空"
       ],
       "The session has expired. Please sign in again.": [
-        "Økten er utløpt. Logg på nytt."
+        "登录状态已过期，请重新登录。"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
-        "Det oppstod en feil under fjerning av den sikre koblingen. Prøv igjen om noen minutter."
+        "删除安全链接时出现错误。请几分钟后再试。"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "For mange mislykkede forsøk. Logg på igjen."
+        "失败次数过多，请重新登录。"
       ],
       "Trashing item failed": [
-        "Sletting av element til papirkurv mislyktes"
+        "丢弃项目失败"
       ],
       "Try reaching out to the link owner.": [
-        "Prøv å kontakte eieren av koblingen."
+        "尝试联系链接所有者。"
       ],
       "Unable to generate an OTP code for this item": [
-        "Ikke i stand tl å generere en OTP-kode for dette elementet."
+        "无法为该项目生成 OTP 代码"
       ],
       "Unable to sync": [
-        "Ikke i stand til å synkronisere"
+        "无法同步"
       ],
       "Unknown error": [
-        "Ukjent feil"
+        "未知错误"
       ],
       "Unknown invite": [
-        "Ukjent invitasjon"
+        "无效的邀请"
       ],
       "Unknown item": [
-        "Ukjent element"
+        "未知项目"
       ],
       "Unlock failure": [
-        "Opplåsingsfeil"
+        "解锁失败"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
-        "Ikke støttet ${ PASS_APP_NAME }-filformat"
+        "不支持的 ${ PASS_APP_NAME } 文件格式"
       ],
       "Unsupported 1Password file format": [
-        "Ikke støttet 1Password-filformat"
+        "不支持的 1Password 文件格式"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "Oppdatering av hvelv \"${ payload.content.name }\" mislyktes."
+        "更新保险库 “${ payload.content.name }” 失败"
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
-        "Opprettelse av hvelv \"${ payload.content.name }\" mislyktes."
+        "保险库 “${ payload.content.name }” 创建失败"
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
-        "Hvelv \"${ vaultData.name }\" kunne ikke opprettes"
+        "保险库 “${ vaultData.name }” 无法创建"
       ],
       "Vault name does not match": [
-        "Hvelvnavn samsvarer ikke"
+        "保险库名称不匹配"
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
-        "Det oppstod et problem under oppstart av ${ PASS_SHORT_APP_NAME }. Hvis dette problemet vedvarer, kan du kontakte vår kundestøtte for å få hjelp."
+        "我们在启动 ${ PASS_SHORT_APP_NAME } 时遇到了一个问题。如果问题仍然存在，请联系我们的客户支持部门寻求帮助。"
       ],
       "Wrong backup password": [
-        "Feil reservepassord"
+        "备份密码错误"
       ],
       "Wrong extra password": [
-        "Galt ekstra passord"
+        "额外密码错误"
       ],
       "Wrong password": [
-        "Feil passord"
+        "密码错误"
       ],
       "Wrong PIN code. Try again.": [
-        "Feil PIN-kode. Prøv igjen."
+        "解锁密码错误，请重试。"
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Du er frakoblet. Gjenoppta tilkoblingen for å låse opp ${ PASS_SHORT_APP_NAME }."
+        "您目前处于离线状态。请恢复连接以解锁 ${ PASS_SHORT_APP_NAME }。"
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
-        "DNS-en din er ikke riktig angitt. MX-posten vi får er:"
+        "您的 DNS 设置不正确。我们获得的 MX 记录是："
       ],
       "Your DNS is not correctly set. The TXT record we obtain is:": [
-        "DNS-en din er ikke riktig angitt. TXT-posten vi får er:"
+        "您的 DNS 设置不正确。我们获得的 TXT 记录是："
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
+        "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
       ]
     },
     "Error message": {
       "Oops, something went wrong": [
-        "Oops, noe gikk galt"
+        "糟糕，出错了"
       ],
       "Please refresh the page or try again later.": [
-        "Oppdater siden eller forsøk igjen senere."
+        "请刷新页面或稍后重试。"
       ],
       "Something went wrong": [
-        "Noe gikk galt"
+        "出错了"
       ]
     },
     "Feature": {
       "Integrated 2FA authenticator": [
-        "Integrert 2FA-autentisering"
+        "集成了双重身份验证"
       ],
       "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
+        "无限制地 hide-my-email"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
-        "Deling av hvelv (opptil ${ MAX_VAULT_MEMBERS } personer)"
+        "密码分享（最多 ${ MAX_VAULT_MEMBERS } 个人）"
       ]
     },
     "file size format": {
       "byte": [
-        "byte",
-        "bytes"
+        "B"
       ],
       "GB": [
         "GB"
@@ -1228,3033 +1222,2978 @@
     },
     "file size format, long": {
       "Byte": [
-        "Byte",
-        "Bytes"
+        "字节"
       ],
       "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
+        "GB"
       ],
       "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
+        "KB"
       ],
       "Megabyte": [
-        "Megabyte",
-        "Megabytes"
+        "MB"
       ],
       "Terabyte": [
-        "Terabyte",
-        "Terabytes"
+        "TB"
       ]
     },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "\"${ payload.item.data.metadata.name }\"-element ble avvist"
+        "“${ payload.item.data.metadata.name }” 项目被拒绝"
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "\"${ payload.item.data.metadata.name }\" oppdatering ble avvist"
+        "“${ payload.item.data.metadata.name }” 更新被拒绝"
       ],
       "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } blokkert",
-        "${ blockedEmailsCount } blokkerte"
+        "${ blockedEmailsCount } 已阻止"
       ],
       "${ count } time": [
-        "${ count } gang",
-        "${ count } ganger"
+        "${ count } 次"
       ],
       "${ count } view": [
-        "${ count } visning",
-        "${ count } visninger"
+        "${ count } 次查看"
       ],
       "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } visninger"
+        "${ count }/${ maxReads } 浏览"
       ],
       "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } videresendt",
-        "${ forwardedEmailsCount } videresendte"
+        "${ forwardedEmailsCount } 已转发"
       ],
       "${ inviterEmail } wants to share an item with you.": [
-        "${ inviterEmail } ønsker å dele et element med deg."
+        "${ inviterEmail } 希望与您分享一个项目。"
       ],
       "${ memberCount } member": [
-        "${ memberCount } medlem",
-        "${ memberCount } medlemmer"
+        "${ memberCount } 位成员"
       ],
       "${ n } item": [
-        "${ n } element",
-        "${ n } elementer"
+        "${ n } 个项目"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
-        "${ PASS_APP_NAME } vil alltid være tilgjengelig"
+        "${ PASS_APP_NAME } 将始终可以访问"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME } vil vise elementfavorittikonet via ${ BRAND_NAME }s anonymiserte bildeproxy."
+        "${ PASS_APP_NAME } 将通过 ${ BRAND_NAME } 匿名图像代理显示项目图标。"
       ],
       "${ PASS_APP_NAME } will follow your system theme.": [
-        "${ PASS_APP_NAME } vil følge systemtemaet ditt."
+        "${ PASS_APP_NAME } 将遵循您的系统主题。"
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
-        "${ PASS_APP_NAME } vil generere en videresendingsadresse (også kalt omvendt alias) som du kan kopiere til utklippstavlen."
+        "${ PASS_APP_NAME } 将生成一个转发地址 ( 也称为反向别名 ) ，你可以将其复制到剪贴板。"
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
-        "${ PASS_APP_NAME } vil bare importere pålogginger, notater, kredittkort og identiteter."
+        "${ PASS_APP_NAME } 只能导入登录、笔记、信用卡和身份信息。"
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } krever passordet ditt for ${ BRAND_NAME } for å få frakoblet tilgang til data."
+        "${ PASS_APP_NAME } 需要您的 ${ BRAND_NAME } 密码才能离线访问数据。"
       ],
       "${ payload.count } invite successfully sent": [
-        "${ payload.count } invitasjon sendt",
-        "${ payload.count } invitasjoner sendt"
+        "成功发送 ${ payload.count } 份邀请"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
-        "${ PROTON_SENTINEL_NAME } deaktivert"
+        "${ PROTON_SENTINEL_NAME } 已成功禁用"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
-        "${ PROTON_SENTINEL_NAME } aktivert"
+        "${ PROTON_SENTINEL_NAME } 已成功启用"
       ],
       "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } sendt",
-        "${ repliedEmailsCount } sendte"
+        "${ repliedEmailsCount } 已发送"
       ],
       "${ row.breachCount } breach detected": [
-        "${ row.breachCount } brudd oppdaget",
-        "${ row.breachCount } brudd oppdaget"
+        "检测到 ${ row.breachCount } 泄露"
       ],
       "(Empty)": [
-        "(Tom)"
+        "（空）"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 dager for å prøve premiumfunksjoner gratis. Bare i løpet av den første uken med ${ BRAND_NAME }."
+        "7 天免费试用高级功能。仅在您使用 ${ BRAND_NAME } 的第一个星期。"
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
-        "Det opprettes en kontakt for hver e-postadresse som sender e-post til eller mottar e-post fra ${ aliasEmail }."
+        "向 ${ aliasEmail } 发送电子邮件或接收电子邮件的每个电子邮件地址都将创建一个联系人。"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "En ny versjon av ${ PASS_APP_NAME } er tilgjengelig. Oppdater den for å nyte de nyeste funksjonene og feilrettingene."
+        "新版 ${ PASS_APP_NAME } 已发布。更新后即可享受最新功能和错误修复。"
       ],
       "Access successfully confirmed": [
-        "Tilgang bekreftet"
+        "访问已成功确认"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve ${ BRAND_NAME }-passordet ditt."
+        "访问 ${ PASS_APP_NAME } 将始终需要您的 ${ BRAND_NAME } 密码。"
       ],
       "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve reservepassordet ditt."
+        "访问 ${ PASS_APP_NAME } 将始终需要您的备份密码。"
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
-        "Tilgang til ${ PASS_APP_NAME } vil alltid kreve det ekstra passordet ditt."
+        "访问 ${ PASS_APP_NAME } 将始终需要您的额外密码。"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
-        "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
+        "访问 ${ PASS_APP_NAME } 需要您的指纹或设备 PIN 码。"
       ],
       "Add your custom email address to monitor:": [
-        "Legg til den tilpassede e-postadressen din for å overvåke:"
+        "添加您的自定义电子邮件地址进行监控："
       ],
       "Admin": [
-        "Administrator"
+        "管理员"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
+        "成功导入数据后，为安全起见，您可以删除包含密码的 CSV 文件。"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias er deaktivert. Du vil ikke lenger motta e-poster sendt til ${ item.aliasEmail }"
+        "别名已成功禁用。您将不再收到发送至 ${ item.aliasEmail } 的电子邮件"
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias er aktivert. Du kan nå motta e-poster sendt til ${ item.aliasEmail }"
+        "别名已成功启用。现在您可以接收发送至 ${ item.aliasEmail } 的电子邮件了"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
-        "Alias-synkronisering mellom ${ BRAND_NAME }- og SimpleLogin-kontoene dine er aktiv."
+        "${ BRAND_NAME } 和 SimpleLogin 账户之间的别名同步已激活。"
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
-        "Aliaser i papirkurven fortsetter å videresende e-poster. Hvis du vil slutte å motta e-post på denne adressen, deaktiver det i stedet."
+        "回收站中的别名将继续转发电子邮件。如果您想停止接收该地址的邮件，请禁用它。"
       ],
       "Aliases out of sync (${ aliasCount })": [
-        "Aliaser ute av synkronisering (${ aliasCount })"
+        "别名未同步 ( ${ aliasCount } )"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
-        "Aliaser med egendefinerte domener overvåkes ikke, legg dem til som en tilpasset e-post for overvåking."
+        "自定义域名的别名不受监控，请将其添加为自定义电子邮件以便监控。"
       ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
-        "Alle aliaser som bruker postkassen ${ emailJSX } vil også bli slettet."
+        "使用邮箱 ${ emailJSX } 的所有别名也将被删除。"
       ],
       "All breaches for this address were resolved": [
-        "Alle brudd for denne adressen ble løst"
+        "该地址的所有泄露问题均已解决"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
-        "Alle gjeldende brudd vil bli merket som løst. Ved fremtidige datainnbrudd vil du bli varslet."
+        "所有当前的数据泄露事件都将被标记为已解决。如果将来发生数据泄露，我们将通知您。"
       ],
       "All inactive secure links were removed": [
-        "Alle inaktive sikre koblinger ble fjernet"
+        "所有不活动的安全链接都已删除"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
-        "Alle elementer fra \"${ payload.content.name }\" flyttet"
+        "来自 “${ payload.content.name }” 的所有项目均已成功移动"
       ],
       "All items successfully moved": [
-        "Alle elementer er flyttet"
+        "所有项目已成功移动"
       ],
       "All trashed items permanently deleted": [
-        "Alle papirkurvelementer slettet permanent"
+        "所有项目均已永久删除"
       ],
       "All trashed items successfully restored": [
-        "Alle papirkurvelementer gjenopprettet"
+        "所有回收站中的项目已成功恢复"
       ],
       "An item previously shared with you was removed": [
-        "Et element som tidligere er delt med deg, ble fjernet."
+        "之前与您共享的项目已被删除"
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
-        "Er du sikker på at du vil fjerne ${ emailJSX } fra postboksene dine?"
+        "您确定要从您的邮箱中删除 ${ emailJSX } 吗？"
       ],
       "Are you sure you want to remove the link?": [
-        "Er du sikker på at du vil fjerne denne koblingen?"
+        "您确定要删除此链接吗？"
       ],
       "Auto-created aliases are automatically owned by the following mailbox(es):": [
-        "Automatisk opprettede aliaser eies automatisk av følgende postboks(er):"
+        "自动创建的别名自动归以下邮箱所有："
       ],
       "Auto-lock successfully disabled.": [
-        "Auto-lås vellykket deaktivert."
+        "已成功禁用自动锁定。"
       ],
       "automatically": [
-        "automatisk"
+        "自动"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
-        "Før du eksporterer dataene dine med dette formatet, må du åpne Safari-innstillinger -> kategorien \"Generelt\" -> deaktivere alternativet \"Åpne sikre filer etter nedlasting\". Dette forhindrer at Safari trekker ut den eksporterte filen feil."
+        "使用此格式导出数据前，请打开 Safari 设置 -> “常规”选项卡 -> 禁用 “下载后打开安全文件”选项。这将防止 Safari 错误提取导出的文件。"
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Biometrisk lås registrert. Bruk den til å låse opp ${ PASS_APP_NAME }"
+        "生物识别锁注册成功。使用它解锁 ${ PASS_APP_NAME }"
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
-        "Biometri vil bli deaktivert og må aktiveres på nytt."
+        "生物识别将被禁用，需要重新启用。"
       ],
       "Breaches detected": [
-        "Brudd oppdaget"
+        "检测到的泄露行为"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Ta med eksisterende passord til ${ BRAND_NAME }."
+        "将您的现有的密码导入 ${ BRAND_NAME }。"
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
-        "Ta med ditt eget domene, og du trenger ikke kjøpe enda en e-posthostingløsning."
+        "自带域名，无需再购买其他电子邮件托管解决方案。"
       ],
       "Built in 2FA authenticator": [
-        "Innebygget 2FA-autentisering"
+        "内置 2FA 身份验证器"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
-        "Ved å legge til domenet ditt kan du opprette aliaser som hei@mitt-domene.no."
+        "通过添加域名，您可以创建别名，如 hi@my-domain.com。"
       ],
       "Can be viewed": [
-        "Kan sees"
+        "可查看"
       ],
       "Can create, edit, and delete items in this vault.": [
-        "Kan opprette, redigere og slette elementer i dette hvelvet."
+        "可以创建、编辑和删除该保险库中的项目。"
       ],
       "Can create, edit, and delete this item.": [
-        "Kan opprette, redigere og slette dette elementet."
+        "可以创建、编辑和删除此项目。"
       ],
       "Can grant and revoke access to this item, and delete it.": [
-        "Kan innvilge og oppheve tilgang til dette elementet, og slette det."
+        "可以授予和撤销对该项目的访问权限，也可以将其删除。"
       ],
       "Can grant and revoke access to this item.": [
-        "Kan innvilge og oppheve tilgang til dette elementet."
+        "可以授予和撤销对该项目的访问权限。"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Kan innvilge og oppheve tilgang til dette hvelvet, og slette det."
+        "可以授予和撤销对该保险库的访问权限，也可以删除该保险库。"
       ],
       "Can grant and revoke access to this vault.": [
-        "Kan innvilge og oppheve tilgang til dette hvelvet."
+        "可授予和撤销对此保险库的访问权限."
       ],
       "Can view items in this vault.": [
-        "Kan se elementer i dette hvelvet."
+        "可查看此保险库中的项目."
       ],
       "Can view this item.": [
-        "Kan lese dette elementet."
+        "可以查看此项目。"
       ],
       "Change your password": [
-        "Endre passordet ditt"
+        "更改密码"
       ],
       "Choose your preferred look and feel.": [
-        "Velg ditt foretrukne utseende og følelse."
+        "选择您喜欢的外观和感觉。"
       ],
       "Confirm your extra password to proceed with its removal.": [
-        "Bekreft det ekstra passordet ditt for å fortsette med fjerningen."
+        "确认您的额外密码以继续删除。"
       ],
       "Congratulations, your access has been confirmed": [
-        "Gratulerer, tilgangen din er bekreftet"
+        "恭喜，您的访问权限已确认"
       ],
       "Copied to clipboard": [
-        "Kopiert til utklippstavlen"
+        "已复制到剪贴板"
       ],
       "Coupon successfully applied!": [
-        "Kupong vellykket brukt!"
+        "优惠券已成功应用！"
       ],
       "Create contact illustration": [
-        "Lag kontaktillustrasjon"
+        "创建联系人图标"
       ],
       "Created ${ time }.": [
-        "Opprettet ${ time }."
+        "已创建 ${ time }。"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV tilbyr et praktisk format for å se dataene dine. På grunn av sin enkelhet vil imidlertid noen data ikke bli inkludert (egendefinerte felt, tilgangsnøkler...). For en fullstendig eksport anbefaler vi at du bruker et annet format."
+        "CSV 为查看数据提供了一种方便的格式。但由于其简单性，某些数据将不包括在内 ( 自定义字段、密码... ) 。如需完整导出，建议使用其他格式。"
       ],
       "Current version": [
-        "Gjeldende versjon"
+        "当前版本"
       ],
       "Decrypting your data": [
-        "Dekrypterer dataene dine"
+        "正在解密您的数据"
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
-        "Standard visningsnavn for aliaser som er opprettet med ${ domainDisplay }, med mindre det overskrives av aliasets visningsnavn."
+        "使用 ${ domainDisplay } 创建别名的默认显示名称，除非被别名显示名称覆盖。"
       ],
       "Deleted items will be moved here first": [
-        "Slettede elementer flyttes hit først"
+        "删除的项目将首先移至此处"
       ],
       "Deleting \"${ payload.content.name }\"": [
-        "Sletter \"${ payload.content.name }\""
+        "正在删除 “${ payload.content.name }”"
       ],
       "Didn't receive the code?": [
-        "Fikk du ikke koden?"
+        "没有收到验证码？"
       ],
       "Disabling auto-lock": [
-        "Deaktiverer auto-lås"
+        "禁用自动锁定"
       ],
       "Disabling auto-lock failed": [
-        "Deaktivering av auto-lås mislyktes"
+        "禁用自动锁定失败"
       ],
       "Disabling offline mode...": [
-        "Deaktiverer frakoblet modus..."
+        "正在关闭离线模式..."
       ],
       "DNS changes could take up to 24 hours to update.": [
-        "DNS-endringer kan ta opptil 24 timer å oppdatere."
+        "DNS更改可能需要长达24小时才能更新。"
       ],
       "Domain: ${ domainPath } or @": [
-        "Domene: ${ domainPath } eller @"
+        "域名：${ domainPath } 或 @"
       ],
       "Drop file here to upload": [
-        "Slipp fil her for å laste opp"
+        "拖至此处上传文件"
       ],
       "Drop to import": [
-        "Slipp for å importere"
+        "拖至此处即可导入"
       ],
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "På grunn av en begrensning av Safari-nettleserutvidelser, etter eksport av dataene, vil filtypen mangle \".pgp\". Gi nytt navn til filen for å inkludere filtypen .pgp (f.eks. fil.pgp) etter eksport."
+        "由于 Safari 浏览器扩展的限制，导出数据后文件扩展名将缺少“.pgp”。请在导出后重命名文件，使其包含 .pgp 扩展名（如 file.pgp）。"
       ],
       "Editor": [
-        "Redaktør"
+        "编辑者"
       ],
       "email": [
-        "e-post"
+        "电子邮箱"
       ],
       "Email address successfully deleted from monitoring": [
-        "E-postadresse slettet fra overvåking"
+        "从监测中成功删除电子邮件地址"
       ],
       "Email address successfully excluded from monitoring": [
-        "E-postadresse ekskludert fra overvåking"
+        "成功将电子邮件地址排除在监测范围之外"
       ],
       "Email address successfully included in monitoring": [
-        "E-postadresse inkludert i overvåking"
+        "电子邮件地址成功纳入监测"
       ],
       "Email headers illustration": [
-        "E-posthoderillustrasjon"
+        "电子邮件头部示意图"
       ],
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
-        "Send denne e-posten til denne adressen, og den vil se ut til å være sendt fra ${ exampleEmail } for eksempel."
+        "给这个地址发送电子邮件，就会显示是从 ${ exampleEmail } 发送的。"
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "E-poster som sendes til aliasene dine, videresendes til postkassene dine. Et alias kan ha mer enn én postboks: nyttig for å dele et alias mellom deg og vennene dine."
+        "发送到别名的邮件会转发到您的邮箱。一个别名可以拥有多个邮箱：这对您和朋友共享一个别名非常有用。"
       ],
       "Emptying trash...": [
-        "Tømmer papirkurven..."
+        "正在清空回收站..."
       ],
       "Enable ${ PASS_SHORT_APP_NAME } beta": [
-        "Aktiver ${ PASS_SHORT_APP_NAME }-testversjon"
+        "启用 ${ PASS_SHORT_APP_NAME } 测试版"
       ],
       "Enable auto-locking to secure your data": [
-        "Aktiver automatisk låsing for å sikre dataene dine"
+        "启用自动锁定功能，确保数据安全"
       ],
       "Enabling biometrics auto-lock": [
-        "Aktiverer biometrisk auto-lås"
+        "启用生物识别自动锁定"
       ],
       "Enabling biometrics lock failed": [
-        "Aktivering av biometrisk lås mislyktes"
+        "启用生物识别锁失败"
       ],
       "Enabling offline mode...": [
-        "Aktiverer frakoblet modus..."
+        "正在启用离线模式..."
       ],
       "Enabling password auto-lock": [
-        "Aktiverer passord auto-lås"
+        "启用密码自动锁定"
       ],
       "Enabling password lock failed": [
-        "Aktivering av passordlås mislyktes"
+        "启用密码锁定失败"
       ],
       "Enabling PIN auto-lock": [
-        "Aktiverer PIN auto-lås"
+        "启用 PIN 码自动锁定"
       ],
       "Enter the address you want to email.": [
-        "Skriv inn adressen du vil sende e-post til."
+        "输入您要发送电子邮件的地址。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Skriv inn verifiseringskode. Siffer ${ digit }."
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your extra password": [
-        "Angi det ekstra passordet ditt"
+        "输入您的额外密码"
       ],
       "Enter your PIN code": [
-        "Skriv inn din PIN-kode"
+        "输入 PIN 码"
       ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
-        "Hver gang aliaset ditt mottar en e-post fra noen, opprettes det automatisk en ny kontakt."
+        "每次您的别名收到某人的电子邮件时，就会自动创建一个新的联系人。"
       ],
       "Expires in": [
-        "Utløper om"
+        "到期于"
       ],
       "Expires in ${ remainingTime }": [
-        "Utløper om ${ remainingTime }"
+        "在 ${ remainingTime } 后过期"
       ],
       "Exporting your data...": [
-        "Eksporterer dataene dine..."
+        "正在导出您的数据..."
       ],
       "Extra password successfully created": [
-        "Ekstra passord vellykket opprettet"
+        "成功创建额外密码"
       ],
       "Extra password successfully removed": [
-        "Ekstra passord vellykket fjernet"
+        "成功删除额外密码"
       ],
       "Fill in the CSV with your data": [
-        "Fyll ut CSV-filen med dataene dine"
+        "在 CSV 中填入您的数据"
       ],
       "finance": [
-        "finans"
+        "金融"
       ],
       "Follow those steps to import your data with a generic CSV:": [
-        "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil:"
+        "按照这些步骤使用通用 CSV 导入数据："
       ],
       "For security reasons, this action requires identity verification.": [
-        "Av sikkerhetsgrunner krever denne handlingen identitetsbekreftelse."
+        "出于安全原因，此操作需要身份验证。"
       ],
       "For security reasons, you need to confirm access to this shared vault": [
-        "Av sikkerhetsgrunner må du bekrefte tilgangen til dette delte hvelvet",
-        "Av sikkerhetsgrunner må du bekrefte tilgang til disse delte hvelvene"
+        "出于安全考虑，您需要确认这些共享保险库的访问权限"
       ],
       "For security reasons, your access needs to be confirmed": [
-        "Av sikkerhetsgrunner må tilgangen din bekreftes"
+        "出于安全原因，需要确认您的访问权限"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Adressen for videresending kopiert til utklippstavlen. Send en e-post til denne adressen, og ${ Email } vil motta den."
+        "转发地址已复制到剪贴板。向该地址发送电子邮件，${ Email } 就会收到。"
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke.",
-        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker."
+        "生成的密码将在 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周内存储。"
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
-        "Få mest mulig ut av Pass ved å opprette et hvelv for hvert team eller prosjekt."
+        "通过为每个团队或项目创建一个保险库以此充分利用 Pass。"
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
-        "Få ubegrensede aliaser, nyt eksklusive funksjoner og støtt oss ved å abonnere på Pass Plus."
+        "通过订阅 Pass Plus 来获得无限别名，享受独家功能并支持我们。"
       ],
       "Here's how it works:": [
-        "Slik fungerer det:"
+        "具体操作如下："
       ],
       "High Priority": [
-        "Høy prioritet"
+        "首要优先顺序"
       ],
       "How does monitoring work?": [
-        "Hvordan fungerer overvåking?"
+        "监测原理是什么？"
       ],
       "Identity confirmed": [
-        "Identitet bekreftet"
+        "身份已确认"
       ],
       "Import in progress:": [
-        "Import pågår:"
+        "正在导入:"
       ],
       "Import the CSV file below.": [
-        "Importer CSV-filen nedenfor."
+        "导入以下 CSV 文件。"
       ],
       "Imported ${ payload.total } item": [
-        "Importerte ${ payload.total } element",
-        "Importerte ${ payload.total } elementer"
+        "已导入 ${ payload.total } 项"
       ],
       "Imported on ${ date }": [
-        "Importert den ${ date }."
+        "导入 ${ date }"
       ],
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
-        "I ${ PASS_SHORT_APP_NAME } krypteres et elementnotat med elementkrypteringsnøkkelen, og bare brukere som har tilgang til elementet, kan se notatet. Ikke engang ${ BRAND_NAME } eller SimpleLogin kan se det."
+        "在 ${ PASS_SHORT_APP_NAME } 中，项目笔记使用项目加密密钥加密，只有有权访问项目的用户才能查看备注。甚至 ${ BRAND_NAME } 或 SimpleLogin 也无法查看。"
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "For å få den beste opplevelsen ut av ${ PASS_APP_NAME }, gi de nødvendige utvidelsestillatelsene."
+        "为了获得 ${ PASS_APP_NAME } 的最佳体验，请授予必要的扩展权限"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
-        "Installer ${ PASS_APP_NAME } for ${ browser.title } for raskt å fylle ut påloggingene dine."
+        "安装 ${ PASS_APP_NAME } 到 ${ browser.title } 以快速自动填充您的登录信息。 "
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
-        "Installer ${ PASS_APP_NAME } for ${ browser.title } for raskt å fylle ut påloggingene dine. "
+        "安装 ${ PASS_APP_NAME } 到 ${ browser.title } 以快速自动填充您的登录信息。 "
       ],
       "Internet connection lost": [
-        "Mistet internettilkobling"
+        "网络连接已断开"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internett-tilkoblingen tapt. Sjekk enhetens tilkobling."
+        "网络连接中断，请检查系统网络情况。"
       ],
       "Invitation sent": [
-        "Invitasjon sendt"
+        "已发出邀请"
       ],
       "Invite specific people and set the right permissions.": [
-        "Inviter bestemte personer og angi de riktige tillatelsene."
+        "邀请特定人员并设置正确的权限。"
       ],
       "Invite successfully removed": [
-        "Invitasjon fjernet"
+        "邀请已成功删除"
       ],
       "Invite successfully resent": [
-        "Invitasjon sendt på nytt"
+        "已重新发送邀请"
       ],
       "invites you to access items in": [
-        "inviterer deg til å få tilgang til elementer i"
+        "邀请您访问其中的项目"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Det ser ut til at du allerede er logget inn på ${ PASS_APP_NAME }. Hvis du prøver å logge på med en annen konto, må du først logge av fra utvidelsen."
+        "您似乎已登录到 ${ PASS_APP_NAME } 。如果您正在尝试使用不同的账户登录，请先从扩展中登出。"
       ],
       "item": [
-        "element",
-        "elementer"
+        "项目"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
-        "Element \"${ payload.item.data.metadata.name }\" opprettet"
+        "项目 “${ payload.item.data.metadata.name }” 已创建"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
-        "Element \"${ payload.item.data.metadata.name }\" oppdatert"
+        "项目 “${ payload.item.data.metadata.name }” 已更新"
       ],
       "Item moved to trash": [
-        "Element flyttet til papirkurven"
+        "项目已经移至回收站"
       ],
       "Item permanently deleted": [
-        "Element slettet permanent"
+        "项目已永久删除"
       ],
       "Item restored": [
-        "Element gjenopprettet"
+        "个项目已恢复"
       ],
       "Item sharing: ${ itemAccessCount } user": [
-        "Elementdeling: ${ itemAccessCount } bruker",
-        "Elementdeling: ${ itemAccessCount } brukere"
+        "项目共享： ${ itemAccessCount } 位用户"
       ],
       "Item successfully excluded from monitoring": [
-        "Element ekskludert fra overvåking"
+        "项目成功排除在监测外"
       ],
       "Item successfully included in monitoring": [
-        "Element inkludert i overvåking"
+        "成功将项目纳入监测"
       ],
       "Item successfully moved": [
-        "Element flyttet"
+        "项目已成功移动"
       ],
       "Item successfully pinned": [
-        "Element festet"
+        "项目成功固定"
       ],
       "Item successfully unpinned": [
-        "Element ikke festet"
+        "项目成功取消固定"
       ],
       "Latest breach on ${ formattedDate }": [
-        "Siste brudd den ${ formattedDate }."
+        "最近一次泄露的时间 ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
-        "Lær hvordan du ${ staySaferOnlineLink }"
+        "学习如何 ${ staySaferOnlineLink }"
       ],
       "Leaving item...": [
-        "Forlater element..."
+        "正在离开项目..."
       ],
       "Leaving vault...": [
-        "Forlater hvelv..."
+        "离开保险库..."
       ],
       "Let's get you started by creating your first item": [
-        "Kom i gang ved å opprette ditt første element"
+        "让我们从创建第一个项目开始吧"
       ],
       "Loading": [
-        "Laster"
+        "加载中"
       ],
       "Loading ${ PASS_APP_NAME }": [
-        "Laster ${ PASS_APP_NAME }"
+        "正在加载 ${ PASS_APP_NAME }"
       ],
       "Logging you out...": [
-        "Logger deg av..."
+        "正在退出账户..."
       ],
       "Low Priority": [
-        "Lav prioritet"
+        "较低优先顺序"
       ],
       "Make it your own": [
-        "Gjør det til ditt eget"
+        "让它属于您自己"
       ],
       "me": [
-        "meg"
+        "我"
       ],
       "Medium Priority": [
-        "Middels prioritet"
+        "中等优先顺序"
       ],
       "Monitor accounts": [
-        "Overvåk kontoer"
+        "监控账户"
       ],
       "Monitoring settings successfully updated": [
-        "Overvåkingsinnstillingene er oppdatert"
+        "监测设置已更新"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
-        "Mer enn en passordbehandler, ${ PASS_APP_NAME } beskytter passordet ditt og din personlige e-postadresse via e-postaliaser. Drevet av den samme teknologien bak ${ MAIL_APP_NAME }, er dataene dine kryptert fra ende til ende og er bare tilgjengelige for deg."
+        "不仅仅是一个密码管理器，${ PASS_APP_NAME } 通过电子邮件别名保护您的密码和个人电子邮件地址。它采用与 ${ MAIL_APP_NAME } 相同的技术，对您的数据进行端到端加密，只有您自己才能访问它。"
       ],
       "Move ${ count } item": [
-        "Flytt ${ count } element",
-        "Flytt ${ count } elementer"
+        "移动 ${ count } 个项目"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
-        "Flytter alle elementer fra \"${ payload.content.name }\""
+        "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
-        "Flytter elementer"
+        "正在移动"
       ],
       "Moving items to another vault will erase their history and all secure links.": [
-        "Hvis du flytter elementer til et annet hvelv, slettes historikken og alle sikre koblinger."
+        "将项目移动到另一个保险库会删除其历史记录和所有安全链接。"
       ],
       "Moving items to another vault will erase their history.": [
-        "Flytting av elementer til et annet hvelv vil slette historikken deres."
+        "将项目移动到另一个保险库会删除其历史记录。"
       ],
       "Moving items to trash": [
-        "Flytter elementer til papirkurven"
+        "将项目移动至回收站"
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
-        "Trenger du å sende e-post til noen, men vil ikke at de skal se e-postadressen din? Sett opp et kontaktalias."
+        "需要给某人发送电子邮件，但又不想让对方看到您的电子邮件地址？设置联系人别名。"
       ],
       "Never": [
-        "Aldri"
+        "从不"
       ],
       "No breaches detected": [
-        "Ingen brudd oppdaget"
+        "未检测到数据泄露"
       ],
       "No network connection": [
-        "Ingen internettforbindelse"
+        "无网络连接"
       ],
       "None": [
-        "Ingen"
+        "无"
       ],
       "Not recommended": [
-        "Ikke anbefalt"
+        "不推荐"
       ],
       "Offline mode": [
-        "Frakoblet modus"
+        "脱机模式"
       ],
       "Offline mode could not be disabled at the moment": [
-        "Frakoblet modus kunne ikke deaktiveres for øyeblikket"
+        "暂时无法禁用脱机模式"
       ],
       "Offline mode could not be enabled at the moment": [
-        "Frakoblet modus kunne ikke aktiveres for øyeblikket"
+        "暂时无法启用脱机模式"
       ],
       "Offline support successfully disabled": [
-        "Støtte for frakoblet tilgang deaktivert"
+        "成功禁用脱机支持"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
-        "Nettilgang til ${ PASS_APP_NAME } krever en PIN-kode. Du blir logget ut etter 3 mislykkede forsøk."
+        "在线访问 ${ PASS_APP_NAME } 将需要 PIN 码。您将在 3 次尝试失败后注销。"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
+        "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
       ],
       "Owner": [
-        "Eier"
+        "所有者"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Eierskap overført. Du er ikke lenger eier av dette hvelvet."
+        "所有权转移成功，您不再是该保险库的所有者。"
       ],
       "Pass Plus trial": [
-        "Pass Plus-prøveversjon"
+        "Pass Plus 试用"
       ],
       "password": [
-        "passord"
+        "密码"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Passordlås er registrert. Bruk den til å låse opp ${ PASS_APP_NAME }"
+        "密码锁已成功注册，该密码可用于解锁 ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke slettes automatisk fra historikken.",
-        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker slettes automatisk fra historikken."
+        "超过 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周的密码将自动从历史记录中删除。"
       ],
       "Paused": [
-        "Satt på pause"
+        "已暂停"
       ],
       "Permanently deleting selected items": [
-        "Sletter valgte elementer permanent"
+        "永久删除选定项目"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "PIN-koden er registrert. Bruk den til å låse opp ${ PASS_APP_NAME }."
+        " PIN 码设置成功，该密码可用于解锁 ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
-        "Fester element..."
+        "正在固定项目..."
       ],
       "Please check your spam folder or try resending the code.": [
-        "Sjekk søppelpostmappen din eller prøv å sende koden på nytt."
+        "请检查您的垃圾邮件文件夹或尝试重新发送代码。"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Bekreft passordet for ${ BRAND_NAME } for å deaktivere frakoblet modus"
+        "请确认您的 ${ BRAND_NAME } 密码以禁用脱机模式"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
-        "Bekreft passordet for ${ BRAND_NAME } for å aktivere frakoblet modus"
+        "请确认您的 ${ BRAND_NAME } 密码以启用脱机模式"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
+        "请确认您的 ${ BRAND_NAME } 密码以导出您的 ${ PASS_APP_NAME } 数据"
       ],
       "Please confirm your backup password": [
-        "Bekreft reservepassordet ditt"
+        "请确认您的备份密码"
       ],
       "Please confirm your backup password in order to auto-lock with biometrics.": [
-        "Bekreft reservepassordet ditt for å låse automatisk med biometri."
+        "请确认您的备份密码，以便使用生物识别技术自动锁定。"
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
-        "Bekreft reservepassordet ditt for å låse automatisk med passordet ditt."
+        "请确认备份密码，以便使用密码自动锁定。"
       ],
       "Please confirm your backup password in order to disable offline mode": [
-        "Bekreft reservepassordet ditt for å deaktivere frakoblet modus"
+        "请确认您的备份密码，以便禁用脱机模式"
       ],
       "Please confirm your backup password in order to enable offline mode": [
-        "Bekreft reservepassordet ditt for å aktivere frakoblet modus"
+        "请确认您的备份密码，以便启用离线模式"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
-        "Bekreft reservepassordet ditt for å eksportere ${ PASS_APP_NAME }-dataene."
+        "请确认您的备份密码，以便导出 ${ PASS_APP_NAME } 数据"
       ],
       "Please confirm your backup password in order to unregister your current lock.": [
-        "Bekreft reservepassordet ditt for å avregistrere din nåværende lås."
+        "请确认您的备份密码，以取消您当前的锁定。"
       ],
       "Please confirm your backup password in order to update the auto-lock time.": [
-        "Bekreft reservepassordet ditt for å oppdatere tiden for automatisk låsing."
+        "请确认备份密码，以便更新自动锁定时间。"
       ],
       "Please confirm your extra password": [
-        "Bekreft det ekstra passordet"
+        "请确认您的额外密码"
       ],
       "Please confirm your extra password in order to auto-lock with biometrics.": [
-        "Bekreft det ekstra passordet ditt for å låse automatisk med biometri."
+        "请确认您的额外密码，以便使用生物识别技术自动锁定。"
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
-        "Bekreft det ekstra passordet for å kunne låse automatisk med ditt ekstra passord."
+        "请确认额外密码，以便使用额外密码自动锁定。"
       ],
       "Please confirm your extra password in order to disable offline mode": [
-        "Bekreft ekstra passordet ditt for å deaktivere frakoblet modus"
+        "请确认您的额外密码，以便禁用脱机模式"
       ],
       "Please confirm your extra password in order to enable offline mode": [
-        "Bekreft ekstra passordet ditt for å aktivere frakoblet modus"
+        "请确认您的额外密码，以便启用脱机模式"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
-        "Bekreft ekstra passordet for å eksportere ${ PASS_APP_NAME }-dataene dine."
+        "请确认您的额外密码，以便导出 ${ PASS_APP_NAME } 数据"
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
-        "Bekreft det ekstra passordet for å avregistrere din nåværende lås."
+        "请确认您的额外密码，以取消您当前的锁定。"
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
-        "Bekreft det ekstra passordet ditt for å oppdatere tiden for automatisk låsing."
+        "请确认您的额外密码，以便更新自动锁定时间。"
       ],
       "Please confirm your password": [
-        "Bekreft passordet ditt"
+        "请确认您的密码"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Bekreft passordet ditt for å låse automatisk med biometri."
+        "请确认您的密码，以便使用生物识别技术自动锁定。"
       ],
       "Please confirm your password in order to auto-lock with your password.": [
-        "Bekreft passordet for å automatisk låse med passordet ditt."
+        "请确认密码，以便使用密码自动锁定。"
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "Bekreft passordet ditt for å avregistrere din nåværende lås."
+        "请确认您的密码以取消当前锁定。"
       ],
       "Please confirm your password in order to update the auto-lock time.": [
-        "Bekreft passordet ditt for å oppdatere tiden for automatisk låsing."
+        "请确认密码，以便更新自动锁定时间。"
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "Bekreft PIN-koden din for å avregistrere din nåværende lås."
+        "请确认您的 PIN 码，以便取消您当前的锁定。"
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Bekreft PIN-koden for å redigere denne innstillingen."
+        "请输入 PIN 码以更改此设置。"
       ],
       "Please consider leaving a review.": [
-        "Vurder å legge igjen en anmeldelse."
+        "请考虑留下评论。"
       ],
       "Please do not close this window": [
-        "Ikke lukk dette vinduet"
+        "请勿关闭此窗口"
       ],
       "Please enter your current PIN code to continue": [
-        "Skriv inn din nåværende PIN-kode for å fortsette."
+        "请先输入当前 PIN 码"
       ],
       "Please follow the steps below to set up your domain.": [
-        "Følg trinnene nedenfor for å sette opp domenet ditt."
+        "请按照下面的步骤设置您的域。"
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
-        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Kanskje du vil deaktivere aliaset i stedet?"
+        "请注意别名一旦删除就无法恢复。也许您想禁用别名？"
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
-        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Aliaset er allerede deaktivert og videresender ikke e-post til postboksen din"
+        "请注意别名一旦删除就无法恢复。别名已被禁用，不会将邮件转发到您的邮箱"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
-        "Bruk fullbanedomene, for eksempel mitt-domene.no eller mitt-underdomene.mitt-domene.no hvis du bruker et underdomene."
+        "请使用全路径域名，例如 my-domain.com，如果使用的是子域，则使用 my-subdomain.my-domain.com。"
       ],
       "Press Enter to copy": [
-        "Trykk Enter for å kopiere"
+        "按回车键以复制"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Beskyttet av ${ PROTON_SENTINEL_LINK }, vårt avanserte kontobeskyttelsesprogram"
+        "受我们的高等级账户保护计划 ${ PROTON_SENTINEL_LINK } 保护"
       ],
       "Reconnect": [
-        "Koble til på nytt"
+        "重新连接"
       ],
       "Reconnecting": [
-        "Kobler til på nytt"
+        "正在重新连接"
       ],
       "Record: CNAME": [
-        "Post: CNAME"
+        "记录：CNAME"
       ],
       "Record: MX": [
-        "Post: MX"
+        "记录：MX"
       ],
       "Record: TXT": [
-        "Post: TXT"
+        "记录：TXT"
       ],
       "Registering extra password...": [
-        "Registrerer ekstra passord..."
+        "正在注册额外密码..."
       ],
       "Registering PIN lock failed": [
-        "Registrering av PIN-lås mislyktes"
+        "注册PIN码锁定失败"
       ],
       "Removing all inactive secure links...": [
-        "Fjerner alle inaktive sikre koblinger..."
+        "正在删除所有不活动的安全链接..."
       ],
       "Removing extra password...": [
-        "Fjerner ekstra passord..."
+        "正在删除额外密码..."
       ],
       "Removing secure link...": [
-        "Fjerner sikker kobling..."
+        "正在删除安全链接..."
       ],
       "Restoring items from trash": [
-        "Gjenoppretter elementer fra papirkurven"
+        "正在从回收站中恢复项目"
       ],
       "Restoring trashed items...": [
-        "Gjenoppretter elementer fra papirkurven..."
+        "正在还原回收站中的项目..."
       ],
       "Secure links": [
-        "Sikre koblinger"
+        "安全链接"
       ],
       "See more info": [
-        "Se mer info"
+        "查看更多信息"
       ],
       "Select destination vault": [
-        "Velg destinasjonshvelv"
+        "选择目标保险库"
       ],
       "Select vault to share": [
-        "Velg hvelv å dele"
+        "选择要共享的保险库"
       ],
       "Select where you want your imported vaults to be saved.": [
-        "Velg hvor du vil at de importerte hvelvene skal lagres."
+        "选择您想要保存导入的保险库。"
       ],
       "Selected items permanently deleted": [
-        "Valgte elementer permanent slettet"
+        "选定项目均已永久删除"
       ],
       "Selected items successfully moved to trash": [
-        "Valgte elementer er flyttet til papirkurven"
+        "选中的项目成功移动至回收站"
       ],
       "Selected items successfully restored from trash": [
-        "Valgte elementer er gjenopprettet fra papirkurven"
+        "所选项目成功从回收站还原"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "服务器无法访问，请过几分钟后再试"
       ],
       "Session timed out": [
-        "Økten ble tidsavbrutt"
+        "会话超时"
       ],
       "Set by your organization": [
-        "Angitt av organisasjonen din"
+        "由贵组织设定"
       ],
       "Settings successfully updated": [
-        "Innstillinger oppdatert"
+        "设置更新成功"
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
-        "Del aliaser med andre ved å legge til innboksen deres som en postboks for videresending."
+        "将他人的收件箱添加为转发邮箱，与他人共享别名。"
       ],
       "Share your logins and secure notes, with up to 10 people": [
-        "Del pålogginger og sikre notater med opptil 10 personer"
+        "最多可与 10 人共享登录信息和安全笔记"
       ],
       "Shared item invitation": [
-        "Delt elementinvitasjon"
+        "共享的项目邀请"
       ],
       "Sign in to your account": [
-        "Logg på kontoen din"
+        "登录到您的帐户"
       ],
       "Signing you in": [
-        "Logger deg på"
+        "正在登录"
       ],
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
-        "SimpleLogin-notatet lagres sammen på samme sted med aliasadresse, og selv om det er beskyttet av kryptering i hvile, er det ikke E2E-kryptert, noe som betyr at alle som har tilgang til SimpleLogin-databasen kan lese det."
+        "SimpleLogin 笔记与别名地址一起存储在同一位置，虽然在静态时受到加密保护，但没有进行 E2E 加密，这意味着任何可以访问 SimpleLogin 数据库的人都可以读取它。"
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
-        "Bare bruk ${ emailBold } neste gang du trenger et alias: det blir ${ automaticallyBold } opprettet første gang det mottar en e-post. Hvis du vil ha mer finkornet kontroll, kan du også definere ${ rulesHyperLink }."
+        "下次需要别名时，只需使用 ${ emailBold } 即可：它将在第一次收到电子邮件时创建 ${ automaticallyBold }。要进行更精细的控制，还可以定义 ${ rulesHyperLink }。"
       ],
       "Successfully exported all your items": [
-        "Eksporterte alle elementene dine"
+        "成功导出所有项目"
       ],
       "Successfully left the item": [
-        "Forlot elementet"
+        "已成功离开项目"
       ],
       "Successfully left the vault": [
-        "Forlot hvelvet"
+        "已成功离开保险库"
       ],
       "Successfully synced all vaults": [
-        "Alle hvelv synkronisert"
+        "所有保险库已同步成功"
       ],
       "Suggested": [
-        "Foreslått"
+        "建议"
       ],
       "Switch to another vault or create an item in this vault": [
-        "Bytt til et annet hvelv eller opprett et element i dette hvelvet."
+        "切换到另一个保险库或在此保险库中创建一个项目"
       ],
       "Syncing your vaults…": [
-        "Synkroniserer dine hvelv…"
+        "正在同步您的保险库…"
       ],
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
-        "Trykk på ikonet ${ gearIcon } for å tilpasse aliaset slik du vil."
+        "点击图标 ${ gearIcon }，按自己想要的方式自定义别名。"
       ],
       "Thank you, the problem has been reported": [
-        "Takk, problemet er rapportert"
+        "谢谢，这个问题已上报"
       ],
       "The display name when sending an email from this alias.": [
-        "Visningsnavnet når du sender en e-post fra dette aliaset."
+        "使用此别名发送电子邮件时的显示名称。"
       ],
       "The export will only contain vaults that you own.": [
-        "Eksporten inneholder bare hvelv som du eier."
+        "导出将只包含您拥有的保险库。"
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "Eksportfilen krypteres ved hjelp av PGP og krever en sterk passfrase."
+        "导出的文件将使用 PGP 加密，需要一个强大的口令。"
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
+        "所暴露的信息是从第三方服务泄露的。您的 ${ BRAND_NAME } 账户信息仍然安全且被加密。${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
-        "Det ekstra passordet kreves for å bruke ${ PASS_APP_NAME }. Det fungerer som et ekstra passord på toppen av ${ BRAND_NAME }-passordet ditt."
+        "使用 ${ PASS_APP_NAME } 时需要输入额外密码。它是 ${ BRAND_NAME } 密码之外的附加密码。"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
-        "Følgende ${ result.ignored.length } element kan ikke importeres:",
-        "Følgende ${ result.ignored.length } elementer kan ikke importeres:"
+        "无法导入以下 ${ result.ignored.length } 项："
       ],
       "The secure link has been removed": [
-        "Den sikre koblingen er fjernet"
+        "安全链接已删除"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
-        "Teksten du prøver å lime inn, er lengre enn den maksimalt tillatte lengden på ${ maxLength }-tegn."
+        "您要粘贴的文本长度超过了允许的最大长度 ${ maxLength } 个字符。"
       ],
       "The user did not accept the invitation yet.": [
-        "Brukeren har ikke akseptert invitasjonen enda."
+        "用户尚未接受邀请。"
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Denne eksporten vil være ukryptert, og alle med tilgang til den eksporterte filen vil kunne se passordene dine. For sikkerhets skyld, slett den etter at du er ferdig med å bruke den."
+        "该导出文件未经加密，任何可以访问您导出文件的人都可以看到您的密码。为了安全起见，请在使用完毕后将其删除。"
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
-        "Dette elementet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
+        "此项目目前未与任何人共享。请与他人共享。"
       ],
       "This mailbox will use your previous email.": [
-        "Denne postboksen vil bruke din forrige e-post."
+        "该邮箱将使用您之前的邮箱地址。"
       ],
       "This operation is irreversible.": [
-        "Denne operasjonen er irreversibel."
+        "此操作是不可逆的。"
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
-        "Denne operasjonen er irreversibel. Alle aliaser som bruker domenet ${ domainTextBold } vil bli slettet. Vær oppmerksom på at aliaser ikke kan gjenopprettes når de er slettet."
+        "此操作不可逆转。所有使用 ${ domainTextBold } 域名的别名都将被删除。请注意，别名一旦删除将无法恢复。"
       ],
       "This option is currently not available on your device.": [
-        "Dette alternativet er for øyeblikket ikke tilgjengelig på enheten din."
+        "您的设备目前无法使用此选项。"
       ],
       "This setting is disabled on the organization level": [
-        "Denne innstillingen er deaktivert på organisasjonsnivå"
+        "此设置在组织级别被禁用"
       ],
       "This setting is enforced by your organization": [
-        "Denne innstillingen er håndhevet av organisasjonen din"
+        "此设置由您的组织执行"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Hvelvet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
+        "该保险库目前未与任何人共享。请与他人共享。"
       ],
       "This version will be added to the history as the newest version.": [
-        "Denne versjonen vil bli lagt til i historikken som den nyeste versjonen."
+        "此版本将作为最新版本添加到历史记录中。"
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
-        "Dette vil avvise enheten **${ name }** som prøvde å logge på ${ BRAND_NAME }-kontoen din den **${ date }**."
+        "这将拒绝尝试在 **${ date }** 登录您的 ${ BRAND_NAME } 账户的设备 **${ name }**。"
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
-        "Hvis du vil fortsette å motta e-post, flytter du disse aliasene til en annen postboks:"
+        "要继续接收电子邮件，请将这些别名转移到其他邮箱："
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
-        "Hvis du vil holde den personlige e-postadressen din skjult, kan du opprette en aliaskontakt som maskerer adressen din."
+        "要隐藏您的个人电子邮件地址，您可以创建一个别名联系人来掩盖您的地址。"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "For å migrere data fra en annen passordbehandler, gå til passordbehandleren, eksporter dataene dine og last dem deretter opp til ${ PASS_APP_NAME }. Når dataene er importert, sletter du den eksporterte filen."
+        "要从其他密码管理器迁移数据，请访问密码管理器，导出您的数据，然后上传到 ${ PASS_APP_NAME }。导入数据后，删除导出文件。"
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
-        "For å se gjennom de importerte dataene dine, klikk på ${ PASS_APP_NAME }-ikonet i nettleserens verktøylinje."
+        "要查看您导入到数据，请点击浏览器工具栏中的 ${ PASS_APP_NAME } 图标。"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
+        "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
       ],
       "Unable to copy to clipboard": [
-        "Ikke i stand til å kopiere til utklippstavlen"
+        "无法复制到剪贴板"
       ],
       "Unconfigured": [
-        "Ikke konfigurert"
+        "尚未配置"
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
-        "Ubegrenset antall hide-my-email-aliaser og avansert aliasadministrasjon"
+        "无限制 hide-my-email 别名和高级别名管理"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
-        "Lås opp ${ PASS_SHORT_APP_NAME } med biometri"
+        "使用生物识别技术解 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Lås opp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-passord"
+        "用您的 ${ BRAND_NAME } 密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
-        "Lås opp ${ PASS_SHORT_APP_NAME } med reservepassordet ditt"
+        "用您的备份密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
-        "Lås opp ${ PASS_SHORT_APP_NAME } med ditt ekstra passord"
+        "用您的额外密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock with biometrics": [
-        "Lås opp med biometri"
+        "使用生物识别技术解锁"
       ],
       "Unpinning item...": [
-        "Løser element..."
+        "正在取消固定项目..."
       ],
       "Unverified": [
-        "Uverifisert"
+        "未验证"
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Oppgrader nå for å låse opp premiumfunksjoner"
+        "立即升级以解锁高级功能"
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
-        "Oppgrader til en betalt plan for å opprette flere hvelv."
+        "升级到付费计划以创建多个保险库。"
       ],
       "User's access removed": [
-        "Brukerens tilgang fjernet"
+        "用户权限已被撤销"
       ],
       "User's access successfully updated": [
-        "Brukerens tilgang oppdatert"
+        "用户访问权限成功更新"
       ],
       "username": [
-        "brukernavn"
+        "用户名"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "Hvelv \"${ payload.content.name }\" slettet"
+        "保险库 “${ payload.content.name }” 成功删除"
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "Hvelv \"${ payload.share.content.name }\" opprettet"
+        "保险库 “${ payload.share.content.name }” 成功创建"
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "Hvelv \"${ payload.share.content.name }\" oppdatert"
+        "保险库 “${ payload.share.content.name }” 成功更新"
       ],
       "Vault \"${ share.content.name }\" was removed": [
-        "Hvelv \"${ share.content.name }\" ble fjernet."
+        "保险库 “${ share.content.name }” 已删除"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
-        "Hvelvdeling: ${ vaultMembersCount } medlem",
-        "Hvelvdeling: ${ vaultMembersCount } medlemmer"
+        "保险库共享： ${ vaultMembersCount } 位成员"
       ],
       "Verification code sent.": [
-        "Verifiseringskode sendt."
+        "验证码已发送。"
       ],
       "Viewer": [
-        "Leser"
+        "查看者"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Vi har problemer med å synkronisere data til din lokale lagring. Forsikre deg om at du har nok diskplass til at ${ PASS_SHORT_APP_NAME } kan fungere problemfritt."
+        "我们在将数据同步到您的本地存储空间时遇到了问题。请确保您有足够的磁盘空间让 ${ PASS_SHORT_APP_NAME } 顺利运行。"
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Vi oppdaget at du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere det?",
-        "Vi oppdaget at du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere dem?"
+        "我们检测到您有 ${ aliasCount } 个别名存在于 SimpleLogin 中，但在 ${ PASS_APP_NAME } 中丢失了。您想导入它们吗？"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
-        "Vi har sendt en verifiseringskode til ${ email }. Skriv den inn nedenfor:"
+        "我们已经向 ${ email }发送了验证码。请在下面输入："
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Når du oppretter/redigerer en pålogging på ${ PASS_APP_NAME } vil 'brukernavn'-feltet alltid være synlig."
+        "在 ${ PASS_APP_NAME } 上创建/编辑登录时，“用户名” 输入始终可见。"
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
-        "Når du sender en e-post fra dette aliaset, vil e-posten vise ${ emailSender } som avsender."
+        "当从此别名发送邮件时，电子邮件将显示 ${ emailSender } 作为发送者。"
       ],
       "You are about to create:": [
-        "Du er i ferd med å opprette:"
+        "你即将创建:"
       ],
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
-        "Du kan også definere en PIN-kode for å låse opp ${ PASS_APP_NAME }"
+        "您也可以定义一个 PIN 码来解锁 ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Du kan nå bruke ${ BRAND_NAME }-passordet for å få frakoblet tilgang til ${ PASS_SHORT_APP_NAME }."
+        "您现在可以使用您的 ${ BRAND_NAME } 密码离线访问 ${ PASS_SHORT_APP_NAME }"
       ],
       "You cannot change the mailboxes for this alias.": [
-        "Du kan ikke endre postboksene for dette aliaset."
+        "您不能更改此别名的邮箱。"
       ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du synkronisere det?",
-        "Du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du synkronisere dem?"
+        "您有 ${ aliasCount } 个在 SimpleLogin 中存在但在 ${ PASS_APP_NAME } 中丢失的别名。您想同步吗？"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Du har ${ daysRemaining } dag igjen til å prøve disse og andre premiumfunksjoner.",
-        "Du har ${ daysRemaining } dager igjen til å prøve disse og andre premiumfunksjoner."
+        "您还剩 ${ daysRemaining } 天来尝试这些及其他高级功能。"
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Du har overskredet antall hvelv som er inkludert i abonnementet ditt. Elementer kan bare opprettes i de to første hvelvene. For å flytte elementer mellom alle hvelv, oppgraderer du abonnementet."
+        "您已超出订阅中包含的保险库数量。 项目只能移至您的前两个保险库。 要在所有保险库之间转移项目，请升级您的订阅。"
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "Du har overskredet antall hvelv som er inkludert i abonnementet ditt. Nye elementer kan bare opprettes i de to første hvelvene. Hvis du vil opprette nye elementer i alle hvelv, oppgraderer du abonnementet."
+        "您已超出订阅中包含的保险库数量。 新项目只能在前两个保险库中创建。 要在所有保险库中创建新项目，请升级您的订阅。"
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "Du har nådd grensen for aliaser du kan opprette. Opprett et ubegrenset antall aliaser når du oppgraderer abonnementet."
+        "您已达到可以创建的别名的限制。升级订阅时创建无限数量的别名。"
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Du har nådd grensen for kredittkort du kan opprette. Opprett et ubegrenset antall kredittkort når du oppgraderer abonnementet."
+        "您已达到可创建信用卡的上限。升级订购后，创建的信用卡数量将不受限制。"
       ],
       "You have reached the limit of vaults you can create.": [
-        "Du har nådd grensen for hvor mange hvelv du kan opprette."
+        "您已达到可创建保险库的上限。"
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
-        "Du har nådd den maksimalt tillatte lengden på ${ maxLength }-tegn."
+        "您已达到允许的 ${ maxLength } 字符的最大长度。"
       ],
       "You may close this tab.": [
-        "Du kan lukke denne fanen."
+        "您可以关闭此标签页。"
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
-        "Du vil kunne tilpasse domeneinnstillingene dine (catch-all e-postaliaser, standard visningsnavn for aliaser osv...) etter å ha bekreftet domenet ditt."
+        "验证域名后，您就可以自定义域名设置 ( 通配邮箱别名、别名的默认显示名称等... ) 。"
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
-        "Du blir logget ut og må logge på igjen på alle de andre enhetene dine."
+        "您将被注销并需要在所有其他设备上重新登录。"
       ],
       "You will be notified of data breaches for these email addresses.": [
-        "Du vil bli varslet om datainnbrudd for disse e-postadressene."
+        "您将收到这些电子邮件地址的数据泄露通知。"
       ],
       "You will be notified of data breaches for this email address.": [
-        "Du vil bli varslet om datainnbrudd for denne e-postadressen."
+        "您将收到有关此电子邮件地址数据泄露的通知。"
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
-        "Du vil ikke lenger bli varslet om datainnbrudd for disse e-postadressene."
+        "您将不再收到这些电子邮件地址的数据泄露通知。"
       ],
       "You will no longer be notified of data breaches for this email address.": [
-        "Du vil ikke lenger bli varslet om datainnbrudd for denne e-postadressen."
+        "您将不再收到该电子邮件地址的数据泄露通知。"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
-        "Du vil ikke lenger ha tilgang til deling, 2FA, kredittkort og andre avanserte funksjoner i ${ PASS_APP_NAME }"
+        "您将无法再访问 ${ PASS_APP_NAME } 中的共享、2FA、信用卡和其他高级功能"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Du vil bruke denne PIN-koden til å låse opp ${ PASS_APP_NAME } når den låses automatisk etter en periode med inaktivitet."
+        "${ PASS_APP_NAME } 一段时间无操作后将自动锁定，您需要使用此密码解锁。"
       ],
       "You're invited to a vault.": [
-        "Du er invitert til et hvelv."
+        "您被邀请到保险库。"
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "Kontoen din er begrenset fordi organisasjonen din har håndhevet totrinnsverifisering. Aktiver tofaktorautentisering i kontoinnstillingene, eller kontakt administratoren."
+        "您的账户受限，因为您的组织已强制执行双因素身份验证。请在账户设置中启用双因素身份验证，或联系您的管理员。"
       ],
       "your domain": [
-        "ditt domene"
+        "您的域名"
       ],
       "Your files will be encrypted and then saved": [
-        "Filene dine vil bli kryptert og deretter lagret"
+        "文件会加密保存"
       ],
       "Your information was found on ${ displayedDate }": [
-        "Informasjonen din ble funnet den ${ displayedDate }."
+        "您的信息在 ${ displayedDate } 找到"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
-        "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+        "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
       ]
     },
     "Label": {
       "${ aliasCount } alias": [
-        "${ aliasCount } alias",
-        "${ aliasCount } aliaser"
+        "${ aliasCount } 个别名"
       ],
       "${ blockedCount } block": [
-        "${ blockedCount } blokkering",
-        "${ blockedCount } blokkeringer"
+        "${ blockedCount } 已屏蔽"
       ],
       "${ config.options.length } character": [
-        "${ config.options.length } tegn",
-        "${ config.options.length } tegn"
+        "${ config.options.length } 个字符"
       ],
       "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } ord",
-        "${ config.options.wordCount } ord"
+        "${ config.options.wordCount } 个词"
       ],
       "${ days } day": [
-        "${ days } dag",
-        "${ days } dager"
+        "${ days } 天"
       ],
       "${ forwardCount } forward": [
-        "${ forwardCount } videresending",
-        "${ forwardCount } videresendinger"
+        "${ forwardCount } 已转发"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
-        "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } i løpet av de siste 14 dagene."
+        "${ forwardedEmails } 、${ repliedEmails } 、${ blockedEmails } 在过去 14 天内"
       ],
       "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
+        "${ hours } 小时"
       ],
       "${ minutes } minute": [
-        "${ minutes } minutt",
-        "${ minutes } minutter"
+        "${ minutes } 分钟"
       ],
       "${ months } month": [
-        "${ months } måned",
-        "${ months } måneder"
+        "${ months } 个月"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
-        "${ PASS_SHORT_APP_NAME }-versjon"
+        "${ PASS_SHORT_APP_NAME } 版本"
       ],
       "${ repliedCount } reply": [
-        "${ repliedCount } svar",
-        "${ repliedCount } svar"
+        "${ repliedCount } 回复"
       ],
       "${ usageCount } login": [
-        "${ usageCount } pålogging",
-        "${ usageCount } pålogginger"
+        "${ usageCount } 登录项目"
       ],
       "${ years } year": [
-        "${ years } år",
-        "${ years } år"
+        "${ years } 年"
       ],
       "1 hour": [
-        "1 time"
+        "1 小时"
       ],
       "1 minute": [
-        "1 minutt"
+        "1 分钟"
       ],
       "10 minutes": [
-        "10 minutter"
+        "10 分钟"
       ],
       "14 days": [
-        "14 dager"
+        "14 天"
       ],
       "15 minutes": [
-        "15 minutter"
+        "15 分钟"
       ],
       "2 minutes": [
-        "2 minutter"
+        "2 分钟"
       ],
       "24 hours": [
-        "24 timer"
+        "24 小时"
       ],
       "2FA secret key (TOTP)": [
-        "2FA-hemmelig nøkkel (TOTP)"
+        "2FA 密钥 (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "2FA-token (TOTP)"
+        "2FA 密钥 (TOTP)"
       ],
       "30 days": [
-        "30 dager"
+        "30 天"
       ],
       "30 minutes": [
-        "30 minutter"
+        "30 分钟"
       ],
       "30 seconds": [
-        "30 sekunder"
+        "30 秒"
       ],
       "5 minutes": [
-        "5 minutter"
+        "5 分钟"
       ],
       "7 days": [
-        "7 dager"
+        "7 天"
       ],
       "A-Z": [
-        "A-Å"
+        "A-Z"
       ],
       "Account": [
-        "Konto"
+        "账号"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
-        "Legg til et tilfeldig prefiks for dette domenet når du oppretter et nytt alias."
+        "创建新别名时，请为该域添加一个随机前缀。"
       ],
       "Add section": [
-        "Legg til seksjon"
+        "添加分组"
       ],
       "Additional details": [
-        "Ytterligere detaljer"
+        "更多详细信息"
       ],
       "Address details": [
-        "Adressedetaljer"
+        "地址详情"
       ],
       "Alias": [
-        "Alias"
+        "别名"
       ],
       "Alias address": [
-        "Aliasadresse"
+        "别名地址"
       ],
       "Alias address (disabled)": [
-        "Aliasadresse (deaktivert)"
+        "别名地址 ( 已禁用 )"
       ],
       "Aliases": [
-        "Aliaser"
+        "別名"
       ],
       "All": [
-        "Alle"
+        "全部"
       ],
       "All items": [
-        "Alle elementer"
+        "所有项目"
       ],
       "Alphabetical": [
-        "Alfabetisk"
+        "按字母顺序"
       ],
       "Always show username field": [
-        "Vis alltid brukernavnfeltet"
+        "始终显示用户名字段"
       ],
       "Application logs": [
-        "Applikasjonslogger"
+        "应用程序日志"
       ],
       "Auto-lock after": [
-        "Autolås etter"
+        "自动锁定时间"
       ],
       "Backup password": [
-        "Reservepassord"
+        "备用密码"
       ],
       "Beta Access": [
-        "Beta-tilgang"
+        "测试版功能"
       ],
       "Biometrics": [
-        "Biometri"
+        "生物识别"
       ],
       "Birthdate": [
-        "Fødselsdato"
+        "生日"
       ],
       "Capital letters (A-Z)": [
-        "Store bokstaver (A–Å)"
+        "大写字母 (A-Z)"
       ],
       "Capitalize": [
-        "Gjør om til store bokstaver"
+        "大写"
       ],
       "Card": [
-        "Kort"
+        "卡号"
       ],
       "Card number": [
-        "Kortnummer"
+        "卡号"
       ],
       "Cards": [
-        "Kort"
+        "信用卡"
       ],
       "Catch-All": [
-        "Catch-all"
+        "通配邮箱"
       ],
       "City": [
-        "Poststed"
+        "城市"
       ],
       "Code": [
-        "Kode"
+        "验证码"
       ],
       "Company": [
-        "Firma"
+        "公司"
       ],
       "Confirm vault name": [
-        "Bekreft hvelvnavn"
+        "确认保险库名称"
       ],
       "Contact created ${ time } ago.": [
-        "Kontakt opprettet ${ time } siden."
+        "联系人创建于 ${ time } 前。"
       ],
       "Contact details": [
-        "Kontaktdetaljer"
+        "联系人详情"
       ],
       "Contacts": [
-        "Kontakter"
+        "通讯录"
       ],
       "Copy": [
-        "Kopier"
+        "复制"
       ],
       "Country or Region": [
-        "Land eller region"
+        "国家或地区"
       ],
       "County": [
-        "Fylke"
+        "县市"
       ],
       "Create a credit card": [
-        "Opprett et kredittkort"
+        "创建信用卡"
       ],
       "Create a hide-my-email alias": [
-        "Opprett et hide-my-email-alias"
+        "创建一个 hide-my-email 别名"
       ],
       "Create a login": [
-        "Opprett en pålogging"
+        "创建登录"
       ],
       "Create an encrypted note": [
-        "Opprett et kryptert notat"
+        "创建加密笔记"
       ],
       "Create an Identity": [
-        "Opprett en identitet"
+        "创建身份"
       ],
       "Create lock": [
-        "Opprett lås"
+        "创建锁"
       ],
       "Create new vault": [
-        "Opprett nytt hvelv"
+        "创建新的保险库"
       ],
       "Created": [
-        "Opprettet"
+        "创建时间"
       ],
       "Created at": [
-        "Opprettet den"
+        "创建于"
       ],
       "Custom hidden field": [
-        "Tilpasset skjult felt"
+        "自定义隐藏字段"
       ],
       "Custom text field": [
-        "Tilpasset tekstfelt"
+        "自定义文本字段"
       ],
       "Date": [
-        "Dato"
+        "日期"
       ],
       "Device": [
-        "Enhet"
+        "设备"
       ],
       "Display": [
-        "Vis"
+        "显示"
       ],
       "Display name": [
-        "Visningsnavn"
-      ],
-      "DNS": [
-        "DNS"
+        "称呼"
       ],
       "Domain": [
-        "Domene"
+        "域名"
       ],
       "Domain:": [
-        "Domene:"
+        "域名:"
       ],
       "Domains": [
-        "Domener"
+        "域名"
       ],
       "Don't remind me again": [
-        "Ikke minn meg på det igjen"
+        "不再提醒我"
       ],
       "Download logs": [
-        "Last ned logger"
+        "下载日志"
       ],
       "Email": [
-        "E-post"
+        "邮箱"
       ],
       "Email (alias)": [
-        "E-post (alias)"
+        "电子邮件 ( 别名 )"
       ],
       "Email (new alias)": [
-        "E-post (nytt alias)"
+        "电子邮件 ( 新别名 )"
       ],
       "Email address": [
-        "E-postadresse"
+        "邮箱地址"
       ],
       "Email or username": [
-        "E-post eller brukernavn"
+        "邮箱或账户名"
       ],
       "Empty trash": [
-        "Tøm papirkurven"
+        "清空回收站"
       ],
       "Enable offline access": [
-        "Aktiver frakoblet tilgang"
+        "启用脱机访问"
       ],
       "Enter email or username": [
-        "Skriv inn e-post eller brukernavn"
+        "输入电子邮箱或用户名"
       ],
       "Expiration date": [
-        "Utløpsdato"
+        "有效期至"
       ],
       "Expired": [
-        "Utløpt"
+        "已失效"
       ],
       "Expired link": [
-        "Utgått kobling"
+        "链接已过期"
       ],
       "Export": [
-        "Eksporter"
+        "导出"
       ],
       "Extra password": [
-        "Ekstra passord"
+        "额外密码"
       ],
       "Facebook account": [
-        "Facebook-konto"
+        "Facebook 账号"
       ],
       "Feedback": [
-        "Tilbakemelding"
+        "用户反馈"
       ],
       "Field name": [
-        "Feltnavn"
+        "字段名称"
       ],
       "File format": [
-        "Filformat"
+        "文件格式"
       ],
       "First name": [
-        "Fornavn"
+        "名"
       ],
       "Floor, apartment, building": [
-        "Etasje, leilighet, bygning"
+        "楼层、公寓、楼宇"
       ],
       "For a one-off sharing": [
-        "For en engangsdeling"
+        "用于一次性共享"
       ],
       "Forwards to": [
-        "Videresendes til"
+        "转发至"
       ],
       "Free forever": [
-        "Gratis for alltid"
+        "永久免费"
       ],
       "Full Name": [
-        "Fullt navn"
+        "全名"
       ],
       "Gender": [
-        "Kjønn"
+        "性别"
       ],
       "General": [
-        "Generelt"
+        "通用"
       ],
       "Generic CSV": [
-        "Generisk CSV"
+        "通用 CSV"
       ],
       "Get Started": [
-        "Kom i gang"
+        "立即体验"
       ],
       "Grant": [
-        "Gi"
+        "授权"
       ],
       "Hidden": [
-        "Skjult"
+        "隐藏"
       ],
       "Hide password": [
-        "Skjul passord"
+        "隐藏密码"
       ],
       "https://example.com": [
-        "https://eksempel.com"
+        "https://example.com"
       ],
       "ID Card": [
-        "ID-kort"
+        "身份证"
       ],
       "ID Card number": [
-        "ID-kortnummer"
+        "身份证号码"
       ],
       "Identities": [
-        "Identiteter"
+        "身份"
       ],
       "Identity": [
-        "Identitet"
+        "身份信息"
       ],
       "Import": [
-        "Importer"
+        "导入"
       ],
       "Import passwords": [
-        "Importer passord"
+        "导入密码"
       ],
       "Imported from: ": [
-        "Importert fra: "
+        "导入自："
       ],
       "Imported on : ": [
-        "Importert den : "
+        "导入时间："
       ],
       "Include numbers": [
-        "Inkluder tall"
+        "包含数字"
       ],
       "Include numbers (0-9)": [
-        "Inkluder tall (0-9)"
+        "包含数字 (0-9)"
       ],
       "Info": [
-        "Info"
+        "信息"
       ],
       "Instagram handle": [
-        "Instagram-brukernavn"
+        "Instagram 用户名"
       ],
       "Invitations": [
-        "Invitasjoner"
+        "邀请"
       ],
       "Item ID": [
-        "Element ID"
+        "项目 ID"
       ],
       "Job title": [
-        "Jobbtittel"
+        "职务"
       ],
       "Key": [
-        "Nøkkel"
+        "密钥"
       ],
       "Keyboard shortcut: ${ shortcut }": [
-        "Tastatursnarvei: ${ shortcut }"
+        "快捷键：${ shortcut }"
       ],
       "Language": [
-        "Språk"
+        "语言"
       ],
       "Last 2 weeks": [
-        "Siste 2 uker"
+        "最近两周"
       ],
       "Last month": [
-        "Siste måned"
+        "上个月"
       ],
       "Last name": [
-        "Etternavn"
+        "姓"
       ],
       "Last updated": [
-        "Sist oppdatert"
+        "上次更新于"
       ],
       "Last week": [
-        "Forrige uke"
+        "上周"
       ],
       "Latest import": [
-        "Seneste import"
+        "最近一次导入"
       ],
       "Learn more": [
-        "Lær mer"
+        "了解更多信息"
       ],
       "License": [
-        "Førerkort"
+        "许可协议"
       ],
       "License number": [
-        "Førerkortnummer"
+        "许可编号"
       ],
       "LinkedIn account": [
-        "LinkedIn-konto"
+        "LinkedIn 帐户"
       ],
       "Login": [
-        "Pålogging"
+        "登录"
       ],
       "Logins": [
-        "Pålogginger"
+        "登录"
       ],
       "Mailboxes": [
-        "Postbokser"
+        "邮箱"
       ],
       "Make all admins": [
-        "Gjør alle administratorer"
+        "将所有管理员设为"
       ],
       "Make all editors": [
-        "Gjør alle redaktører"
+        "将所有编辑者设为"
       ],
       "Make all viewers": [
-        "Gjør alle seere"
+        "将所有查看者设为"
       ],
       "max views reached": [
-        "maks antall visninger nådd"
+        "达到最大浏览量"
       ],
       "Members": [
-        "Medlemmer"
+        "成员"
       ],
       "Middle name": [
-        "Mellomnavn"
+        "中间名 ( 若有 )"
       ],
       "Modified": [
-        "Endret"
+        "修改时间"
       ],
       "More than a month": [
-        "Mer enn én måned"
+        "一个多月"
       ],
       "Most recent": [
-        "Nyeste"
+        "最近"
       ],
       "Name": [
-        "Navn"
+        "姓名"
       ],
       "Name on card": [
-        "Navn på kortet"
+        "持卡人姓名"
       ],
       "Need help?": [
-        "Trenger du hjelp?"
+        "需要帮助？"
       ],
       "New": [
-        "Ny"
+        "新"
       ],
       "New email": [
-        "Ny e-post"
+        "新邮箱"
       ],
       "New vault": [
-        "Nytt hvelv"
+        "新的保险库"
       ],
       "New-Old": [
-        "Ny-Gammel"
+        "新 - 旧"
       ],
       "Newest to oldest": [
-        "Nyeste til eldste"
+        "从新到旧"
       ],
       "No Activity in the last 14 days.": [
-        "Ingen aktivitet de siste 14 dagene."
+        "过去 14 天内无活动。"
       ],
       "No history": [
-        "Ingen historikk"
+        "无历史记录"
       ],
       "None": [
-        "Ingen"
+        "无"
       ],
       "Not selected": [
-        "Ikke valgt"
+        "未选中"
       ],
       "Note": [
-        "Notat"
+        "笔记"
       ],
       "Note • SimpleLogin": [
-        "Notat • SimpleLogin"
+        "笔记 • SimpleLogin"
       ],
       "Notes": [
-        "Notater"
+        "备注"
       ],
       "Offline mode": [
-        "Frakoblet modus"
+        "脱机模式"
       ],
       "Old-New": [
-        "Gammel-Ny"
+        "旧 - 新"
       ],
       "Oldest to newest": [
-        "Eldste til nyeste"
+        "从旧到新"
       ],
       "Open-source password manager for effortless protection.": [
-        "Passordbehandling med åpen kildekode for uanstrengt beskyttelse."
+        "开源密码管理器，轻松提供保护。"
       ],
       "Organization": [
-        "Organisasjon"
+        "机构"
       ],
       "Passkey": [
-        "Tilgangsnøkkel"
+        "通行密钥"
       ],
       "Passphrase": [
-        "Passfrase"
+        "密码"
       ],
       "Passport": [
-        "Pass"
+        "护照"
       ],
       "Passport number": [
-        "Passnummer"
+        "护照号码"
       ],
       "Password": [
-        "Passord"
+        "密码"
       ],
       "Password history": [
-        "Passordhistorikk"
+        "密码历史记录"
       ],
       "Personal details": [
-        "Personopplysninger"
+        "个人资料"
       ],
       "Personal website": [
-        "Personlig nettside"
+        "个人网站"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "PGP-kryptert JSON (anbefalt)"
+        "PGP 加密的 JSON ( 推荐 )"
       ],
       "Phone number": [
-        "Telefonnummer"
+        "电话号码"
       ],
       "PIN": [
-        "PIN"
+        "PIN 码"
       ],
       "PIN code": [
-        "PIN-kode"
+        "PIN 码"
       ],
       "Prefix": [
-        "Prefiks"
+        "前綴"
       ],
       "Premium domain": [
-        "Premium-domene"
+        "高级域名"
       ],
       "Priority:": [
-        "Prioritet:"
+        "优先级："
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
-        "Beskytt ${ PASS_APP_NAME } med ett ekstra passord"
+        "用额外密码保护 ${ PASS_APP_NAME }"
       ],
       "Public domain": [
-        "Offentlig domene"
+        "公共域名"
       ],
       "Rate us": [
-        "Vurder oss"
+        "去评分"
       ],
       "Recent": [
-        "Nylig"
+        "最近"
       ],
       "Reddit handle": [
-        "Reddit-brukernavn"
+        "Reddit 用户名"
       ],
       "Remove link": [
-        "Fjern kobling"
+        "移除链接"
       ],
       "Report a problem": [
-        "Rapporter et problem"
+        "反馈问题"
       ],
       "Restore all items": [
-        "Gjenopprett alle elementer"
+        "还原所有项目"
       ],
       "Reveal password": [
-        "Avslør passord"
+        "显示密码"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
-        "Lagre sikkert, dele og logg inn automatisk på kontoene dine med ${ PASS_APP_NAME }, ved hjelp av ende-til-ende-kryptering klarert av millioner."
+        "使用 ${ PASS_APP_NAME } 安全地存储、共享和自动登录您的账户，采用端到端加密技术，受到数百万人的信赖。"
       ],
       "Security": [
-        "Sikkerhet"
+        "安全"
       ],
       "Security code": [
-        "Sikkerhetskode"
+        "安全码"
       ],
       "See member and permission overview": [
-        "Se oversikt over medlemmer og tillatelser"
+        "查看成员和权限概述。"
       ],
       "Select a domain": [
-        "Velg et domene"
+        "选择域名"
       ],
       "Select an email address": [
-        "Velg en e-postadresse"
+        "选择邮箱地址"
       ],
       "Select preferred language": [
-        "Velg ønsket språk"
+        "选择首选语言"
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
-        "Velg hvelvet der SimpleLogin-aliaser skal importeres til"
+        "选择将 SimpleLogin 别名导入的保险库"
       ],
       "Select your password manager": [
-        "Velg passordbehandleren din"
+        "选择您的密码管理器"
       ],
       "Selected": [
-        "Valgt"
+        "已选中"
       ],
       "Share": [
-        "Del"
+        "分享"
       ],
       "Shared": [
-        "Delt"
+        "已共享"
       ],
       "Shared by me": [
-        "Delt av meg"
+        "我的共享"
       ],
       "Shared link": [
-        "Delt kobling"
+        "共享链接"
       ],
       "Shared with me": [
-        "Delt med meg"
+        "与我共享"
       ],
       "Show website favicons": [
-        "Vis favorittikon for nettsteder"
+        "显示网站收藏夹"
       ],
       "Social security": [
-        "Trygd"
+        "社会保障"
       ],
       "Social security number": [
-        "Personnummer"
+        "社会保障号码"
       ],
       "Special characters (!&*)": [
-        "Spesialtegn (!&*)"
+        "特殊字符 (!&*)"
       ],
       "State or province": [
-        "Delstat eller provins"
+        "省、自治区或直辖市"
       ],
       "Status": [
-        "Status"
+        "状态"
       ],
       "Street address": [
-        "Gateadresse"
+        "街道地址"
       ],
       "Street address, P.O. box": [
-        "Gateadresse, postboksadresse"
+        "街道地址，邮政编号"
       ],
       "Strong": [
-        "Sterk"
+        "强"
       ],
       "Suffix": [
-        "Suffiks"
+        "后缀"
       ],
       "Support": [
-        "Brukerstøtte"
+        "帮助"
       ],
       "Sync aliases with SimpleLogin": [
-        "Synkroniser aliaser med SimpleLogin"
+        "使用 SimpleLogin 同步别名"
       ],
       "Target:": [
-        "Mål:"
+        "目标："
       ],
       "Tax number": [
-        "Avgiftsnummer"
+        "纳税人识别号"
       ],
       "Text": [
-        "Tekst"
+        "文本"
       ],
       "The URL has been copied to the clipboard": [
-        "Nettadressen er kopiert til utklippstavlen"
+        "URL 已复制到剪贴板"
       ],
       "Theme": [
-        "Tema"
+        "主题"
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Dette elementet er tilgjengelig til ${ date } eller til visningsgrensen er nådd."
+        "在 ${ date } 或达到查看限制之前，都可以访问此项目。"
       ],
       "Title": [
-        "Tittel"
+        "标题"
       ],
       "Today": [
-        "I dag"
+        "今天"
       ],
       "Total imported items: ": [
-        "Totalt antall importerte elementer: "
+        "总导入项目数："
       ],
       "Total items: ": [
-        "Totalt antall elementer: "
+        "总计："
       ],
       "TOTP": [
         "TOTP"
       ],
       "Trash": [
-        "Papirkurv"
+        "回收站"
       ],
       "Type": [
-        "Type"
+        "类型"
       ],
       "Unknown": [
-        "Ukjent"
+        "未知"
       ],
       "Unlock with": [
-        "Lås opp med"
+        "解锁方式"
       ],
       "Unlock with:": [
-        "Lås opp med:"
+        "解锁方式："
       ],
       "Unnamed Credit Card": [
-        "Ikke navngitt kredittkort"
+        "未命名信用卡"
       ],
       "Unnamed identity": [
-        "Ikke navngitt identitet"
+        "未命名标识"
       ],
       "Unnamed item": [
-        "Ikke navngitt element"
+        "未命名项目"
       ],
       "Unnamed note": [
-        "Ikke navngitt notat"
+        "未命名笔记"
       ],
       "Untitled": [
-        "Uten tittel"
+        "未命名"
       ],
       "Update": [
-        "Oppdater"
+        "更新"
       ],
       "Used in": [
-        "Brukt i"
+        "已用于"
       ],
       "Useful for permanent sharing": [
-        "Nyttig for permanent deling"
+        "有利于永久共享"
       ],
       "Username": [
-        "Brukernavn"
+        "用户名"
       ],
       "Value:": [
-        "Verdi:"
+        "值:"
       ],
       "Vault ID": [
-        "Hvelv ID"
+        "保险库 ID"
       ],
       "Vaults": [
-        "Hvelv"
+        "保险库"
       ],
       "View details": [
-        "Vis detaljer"
+        "查看详细信息"
       ],
       "View logs": [
-        "Se logger"
+        "查看日志"
       ],
       "Vulnerable": [
-        "Sårbar"
+        "易受攻击"
       ],
       "Weak": [
-        "Svak"
+        "弱"
       ],
       "Website": [
-        "Nettsted"
+        "网站"
       ],
       "Websites": [
-        "Nettsteder"
+        "网站"
       ],
       "Work details": [
-        "Arbeidsdetaljer"
+        "工作详情"
       ],
       "Work email": [
-        "E-postadresse for arbeid"
+        "工作邮箱"
       ],
       "Work phone number": [
-        "Telefonnummer for arbeid"
+        "工作电话号码"
       ],
       "X handle": [
-        "X-brukernavn"
+        "X-用户名"
       ],
       "Yahoo account": [
-        "Yahoo-konto"
+        "Yahoo 帐户"
       ],
       "You are about to create": [
-        "Du er i ferd med å opprette"
+        "你即将创建"
       ],
       "Your domain": [
-        "Ditt domene"
+        "您的域名"
       ],
       "ZIP or Postal code": [
-        "Postnummer"
+        "邮政编码"
       ]
     },
     "Link": {
       "auto create rules ››": [
-        "opprett automatisk regler ››"
+        "自动创建规则 ››"
       ],
       "Learn more": [
-        "Lær mer"
+        "了解详情"
       ],
       "stay safer online": [
-        "vær sikrere på nettet"
+        "安全上网"
       ]
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Aktiver ${ reason }"
+        "启用 ${ reason }"
       ]
     },
     "Message": {
       "${ count } item": [
-        "${ count } element",
-        "${ count } elementer"
+        "${ count } 项"
       ],
       "You can drag and drop the selected item to another vault": [
-        "Du kan dra og slippe det valgte elementet til et annet hvelv",
-        "Du kan dra og slippe de valgte elementene til et annet hvelv"
+        "您可以将所选项目拖放到另一个保险库中"
       ],
       "You selected ${ semiboldText } in this vault.": [
-        "Du valgte ${ semiboldText } i dette hvelvet."
+        "您在此保险库中选择了 ${ semiboldText }。"
       ]
     },
     "new_plans: feature": {
       "Require 2FA for organization": [
-        "Krev 2FA for organisasjonen"
+        "可要求机构全员开启双重验证"
       ],
       "SSO integration": [
-        "SSO-integrasjon"
+        "SSO 集成"
       ]
     },
     "Notification": {
       "${ reason } has been disabled": [
-        "${ reason } er deaktivert"
+        "${ reason } 已停用"
       ],
       "${ reason } has been enabled": [
-        "${ reason } er aktivert"
+        "${ reason } 已启用"
       ]
     },
     "Option": {
       "Commas": [
-        "Kommaer"
+        "半角逗号"
       ],
       "Hyphens": [
-        "Bindestreker"
+        "连字符"
       ],
       "Memorable Password": [
-        "Minneverdig passord"
+        "好记的密码"
       ],
       "Numbers": [
-        "Tall"
+        "数字"
       ],
       "Numbers and Symbols": [
-        "Tall og symboler"
+        "数字和符号"
       ],
       "Periods": [
-        "Punktum"
+        "句点"
       ],
       "Random Password": [
-        "Tilfeldig passord"
+        "随机密码"
       ],
       "Spaces": [
-        "Mellomrom"
+        "空格"
       ],
       "Underscores": [
-        "Understrekingstegn"
+        "下划线"
       ]
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "Legg til 2FA-hemmelig nøkkel"
+        "添加 2FA 密钥"
       ],
       "Add hidden text": [
-        "Legg til skjult tekst"
+        "添加隐藏文本"
       ],
       "Add note": [
-        "Legg til notat"
+        "添加备注"
       ],
       "Add text": [
-        "Legg til tekst"
+        "添加文本"
       ],
       "Alias Display Name": [
-        "Visningsnavn for alias"
+        "别名显示名称"
       ],
       "Coupon": [
-        "Kupong"
+        "优惠券"
       ],
       "Email address": [
-        "E-postadresse"
+        "邮箱地址"
       ],
       "Enter a note...": [
-        "Skriv et notat..."
+        "输入笔记..."
       ],
       "Enter a prefix": [
-        "Angi et prefiks"
+        "输入前缀"
       ],
       "Enter email": [
-        "Angi e-post"
+        "输入电子邮箱"
       ],
       "Enter password": [
-        "Skriv inn passord"
+        "输入密码"
       ],
       "Enter username": [
-        "Angi brukernavn"
+        "请输入用户名"
       ],
       "Full Name": [
-        "Fullt navn"
+        "全名"
       ],
       "me@example.com": [
-        "meg@eksempel.no"
+        "me@example.com"
       ],
       "MM/YY": [
-        "MM/ÅÅ"
+        "月/年"
       ],
       "my-domain.com": [
-        "mitt-domene.no"
+        "my-domain.com"
       ],
       "Name to display when sending an email": [
-        "Navn som skal vises når du sender en e-post"
+        "发送电子邮件时要显示的名称"
       ],
       "Note from SimpleLogin": [
-        "Notat fra SimpleLogin"
+        "来自 SimpleLogin 的笔记"
       ],
       "Password": [
-        "Passord"
+        "密码"
       ],
       "Pick a vault": [
-        "Velg et hvelv"
+        "选择一个保险库"
       ],
       "Please describe the problem and include any error messages": [
-        "Beskriv problemet og inkluder eventuelle feilmeldinger"
+        "请说明您的问题，并附上看到的所有错误提示"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
-        "Skriv inn \"${ vaultName }\" for å bekrefte sletting"
+        "重新输入 \"${ vaultName }\" 以确认删除"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
-        "Søk ${ pluralItemType } i ${ vaultName }"
+        "在 ${ vaultName } 中搜索 ${ pluralItemType }"
       ],
       "Search ${ pluralItemType } in all items": [
-        "Søk ${ pluralItemType } i alle elementer"
+        "在所有项目中搜索 ${ pluralItemType }"
       ],
       "Search in ${ vaultName }": [
-        "Søk i ${ vaultName }"
+        "在 ${ vaultName } 中搜索"
       ],
       "Search in all items": [
-        "Søk i alle elementer"
+        "在所有项目中搜索"
       ],
       "Search in Trash": [
-        "Søk i papirkurven…"
+        "在回收站中搜索"
       ],
       "Select a suffix": [
-        "Velg et prefiks"
+        "选择一个后缀"
       ],
       "Unknown origin": [
-        "Ukjent opprinnelse"
+        "未知来源"
       ],
       "Untitled": [
-        "Uten tittel"
+        "未命名"
       ],
       "Used on ${ url }": [
-        "Brukt på ${ url }"
+        "用于 ${ url }"
       ],
       "Write your note": [
-        "Skriv notatet ditt"
+        "撰写您的笔记"
       ]
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+        "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } og 1 annen potensiell lekkasje oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+        "检测到 ${ name } 和 1 个其他潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "En potensiell ${ name }-lekkasje ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+        "检测到来自 ${ name } 的潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Informasjonen din ble funnet i minst én datalekkasje. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+        "您的信息至少涉及一次数据泄露。请打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ]
     },
     "sso": {
       "Approve or deny it now": [
-        "Godkjenn eller avvis den nå"
+        "立即批准或否决"
       ],
       "Enter the confirmation code we sent on your other device.": [
-        "Skriv inn bekreftelseskoden vi sendte på den andre enheten din."
+        "输入我们发送到您另一台设备上的确认代码。"
       ],
       "If you didn't make this request, cancel it now.": [
-        "Hvis du ikke sendte denne forespørselen, kanseller den nå."
+        "如果您没有提出申请，请立即取消。"
       ],
       "Invalid confirmation code": [
-        "Ugyldig bekreftelseskode"
+        "无效的验证码"
       ],
       "No, it wasn’t me": [
-        "Nei, det var ikke meg"
+        "不是，那不是我"
       ],
       "Sign-in confirmed": [
-        "Pålogging bekreftet"
+        "已确认登录"
       ],
       "Sign-in failed": [
-        "Pålogging mislyktes"
+        "登录失败"
       ],
       "Sign-in rejected": [
-        "Pålogging avvist"
+        "登录被拒绝"
       ],
       "Sign-in rejection failure": [
-        "Feil ved avvisning av pålogging"
+        "登录拒绝失败"
       ],
       "Sign-in requested on another device. Was it you?": [
-        "Pålogging forespurt på en annen enhet. Var det deg?"
+        "请求在其他设备上登录。是您在操作？"
       ],
       "Sign-in requested on another device. Was it you? ": [
-        "Pålogging forespurt på en annen enhet. Var det deg? "
+        "请求在其他设备上登录。是您在操作吗？ "
       ],
       "Yes, it was me": [
-        "Ja, det var meg"
+        "是的，就是我"
       ]
     },
     "sso: auth device state": {
       "Active": [
-        "Aktiv"
+        "已激活"
       ],
       "Inactive": [
-        "Inaktiv"
+        "未激活"
       ],
       "Pending activation": [
-        "Avventer aktivering"
+        "待激活"
       ],
       "Pending admin activation": [
-        "Avventer administratoraktivering"
+        "等待管理员激活"
       ],
       "Rejected": [
-        "Avvist"
+        "已拒绝"
       ],
       "Signed out": [
-        "Logget av"
+        "已登出"
       ],
       "Unknown": [
-        "Ukjent"
+        "未知"
       ]
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "Aliassynkronisering aktivert. SimpleLogin-aliaser kan ta litt tid å synkronisere"
+        "别名同步已成功启用，SimpleLogin 别名可能需要一些时间才能同步"
       ],
       "Catch-all setting successfully disabled": [
-        "Catch-all-innstilling ble deaktivert"
+        "成功禁用通配设置"
       ],
       "Catch-all setting successfully enabled": [
-        "Catch-all-innstilling ble aktivert"
+        "成功启用通配设置"
       ],
       "Contact successfully blocked": [
-        "Kontakt blokkert"
+        "成功屏蔽联系人"
       ],
       "Contact successfully created": [
-        "Kontakt opprettet"
+        "成功创建联系人"
       ],
       "Contact successfully deleted": [
-        "Kontakt slettet"
+        "成功删除联系人"
       ],
       "Contact successfully unblocked": [
-        "Kontakt opphevet fra blokkering"
+        "成功解除联系人屏蔽"
       ],
       "Default domain successfully updated": [
-        "Standard domene ble oppdatert"
+        "成功更新默认域名"
       ],
       "Default mailbox successfully updated": [
-        "Standard postboks ble oppdatert"
+        "成功更新默认邮箱"
       ],
       "Display name successfully updated": [
-        "Visningsnavn ble oppdatert"
+        "成功更新显示名称"
       ],
       "Domain ownership verified. You can now set up MX record.": [
-        "Domeneeierskap bekreftet. Du kan nå sette opp MX-post."
+        "域名所有权已验证，您现在可以设置 MX 记录。"
       ],
       "Domain successfully deleted": [
-        "Domene ble slettet"
+        "成功移除域名"
       ],
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
-        "Domenet er bekreftet. Domenet ditt kan begynne å motta e-poster og opprette aliaser"
+        "域名验证成功，您的域可以开始接收电子邮件并创建别名"
       ],
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } bruker.",
-        "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } brukere."
+        "项目包含的用户数不能超过 ${ share.targetMaxMembers } 位。"
       ],
       "Mailbox change successfully cancelled": [
-        "Postboksendringen ble avbrutt"
+        "成功取消邮箱更改"
       ],
       "Mailbox successfully deleted": [
-        "Postboks ble slettet"
+        "成功移除邮箱"
       ],
       "Mailbox successfully verified": [
-        "Postboks verifisert"
+        "邮箱验证成功"
       ],
       "Mailboxes successfully updated": [
-        "Postbokser ble oppdatert"
+        "成功更新邮箱"
       ],
       "Random prefix generation successfully disabled": [
-        "Generering av tilfeldige prefikser er deaktivert"
+        "成功禁用随机前缀生成功能"
       ],
       "Random prefix generation successfully enabled": [
-        "Generering av tilfeldige prefikser er aktivert"
+        "成功启用随机前缀生成功能"
       ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } bruker.",
-        "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } brukere."
+        "保险库包含的用户数不能超过 ${ targetMaxMembers } 位。"
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
-        "Bekreftelses-e-post sendt. Sjekk innboksen din for å bekrefte postkassen din"
+        "已发送验证邮件，请检查您的收件箱以验证您的邮箱"
       ]
     },
     "Theme": {
       "Automatic": [
-        "Automatisk"
+        "自动操作"
       ],
       "Dark": [
-        "Mørk"
+        "暗色主题"
       ],
       "Light": [
-        "Lys"
+        "浅色主题"
       ]
     },
     "Title": {
       "${ BRAND_NAME } addresses": [
-        "${ BRAND_NAME }-adresser"
+        "${ BRAND_NAME } 个地址"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "${ PASS_SHORT_APP_NAME } Monitor"
+        "${ PASS_SHORT_APP_NAME } 监视器"
       ],
       "Account protection": [
-        "Kontobeskyttelse"
+        "账户保护"
       ],
       "Actions": [
-        "Handlinger"
+        "操作"
       ],
       "Activity": [
-        "Aktivitet"
+        "启用"
       ],
       "Add custom domain": [
-        "Legg til egendefinert domene"
+        "添加自定义域名"
       ],
       "Add mailbox": [
-        "Legg til postboks"
+        "添加邮箱"
       ],
       "Alias contacts": [
-        "Alias-kontakter"
+        "别名联系人"
       ],
       "Aliases": [
-        "Aliaser"
+        "别名"
       ],
       "Auto create/on the fly alias": [
-        "Automatisk oppretting/på farten-alias"
+        "自动创建/在运行中创建别名"
       ],
       "Auto-lock update": [
-        "Oppdatering av autolås"
+        "自动锁定更新"
       ],
       "Blocked addresses": [
-        "Blokkerte adresser"
+        "屏蔽名单"
       ],
       "Breach detected": [
-        "Brudd oppdaget"
+        "已监测到泄露信息"
       ],
       "Breaches": [
-        "Brudd"
+        "泄露信息"
       ],
       "Breaches detected for": [
-        "Brudd oppdaget for"
+        "检测到的泄露信息"
       ],
       "Cancel changing your email?": [
-        "Vil du avbryte endringen av e-post?"
+        "取消更改您的邮箱？"
       ],
       "Change mailbox email": [
-        "Endre e-post for postboks"
+        "更改邮箱"
       ],
       "Change your lock method": [
-        "Endre låsemetoden din"
+        "更改您的锁定方式"
       ],
       "Confirm extra password": [
-        "Bekreft ekstra passord"
+        "确认额外密码"
       ],
       "Confirm identity": [
-        "Bekreft identitet"
+        "确认身份信息"
       ],
       "Confirm PIN code": [
-        "Bekreft PIN-kode"
+        "确认 PIN 码"
       ],
       "Confirm your email": [
-        "Bekreft e-posten din"
+        "确认您的邮箱"
       ],
       "Contacts": [
-        "Kontakter"
+        "通讯录"
       ],
       "Create a vault": [
-        "Opprett et hvelv"
+        "创建保险库"
       ],
       "Create contact": [
-        "Opprett kontakt"
+        "创建联系人"
       ],
       "Create PIN code": [
-        "Opprett PIN-kode"
+        "创建 PIN 码"
       ],
       "Created": [
-        "Opprettet"
+        "创建时间"
       ],
       "Current version": [
-        "Gjeldende versjon"
+        "当前版本"
       ],
       "Custom addresses": [
-        "Tilpassede adresser"
+        "自定义地址"
       ],
       "Custom domains": [
-        "Egendefinerte domener"
+        "自定义域名"
       ],
       "Custom email monitoring": [
-        "Overvåking av tilpasset e-post"
+        "自定义电子邮件监测"
       ],
       "Custom emails": [
-        "Tilpassede e-poster"
+        "自定义电子邮件"
       ],
       "Default": [
-        "Standard"
+        "默认"
       ],
       "Default Display Name": [
-        "Standard visningsnavn"
+        "默认显示名称"
       ],
       "Delete ${ deletedItemsCount } item?": [
-        "Slette ${ deletedItemsCount } element?",
-        "Slette ${ deletedItemsCount } elementer?"
+        "删除 ${ deletedItemsCount } 项吗？"
       ],
       "Delete domain": [
-        "Slett domene"
+        "删除域名"
       ],
       "Delete mailbox": [
-        "Slett postboks"
+        "删除邮箱"
       ],
       "Delete this item?": [
-        "Slette dette elementet?"
+        "删除这个项目？"
       ],
       "Delete vault \"${ vaultName }\"?": [
-        "Slette hvelv \"${ vaultName }\"?"
+        "是否删除保险库 “${ vaultName }”？"
       ],
       "Details": [
-        "Detaljer"
+        "详细信息"
       ],
       "Did you know?": [
-        "Visste du at?"
+        "您知道吗？"
       ],
       "Discard changes?": [
-        "Forkaste endringer?"
+        "放弃更改？"
       ],
       "DKIM (Optional)": [
-        "DKIM (valgfritt)"
+        "DKIM ( 可选 )"
       ],
       "DMARC (Optional)": [
-        "DMARC (valgfritt)"
+        "DMARC ( 可选 )"
       ],
       "Domain": [
-        "Domene"
+        "域名"
       ],
       "Domain ownership verification": [
-        "Bekreftelse av domeneeierskap"
+        "域名所有权验证"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
-        "Koser du deg med ${ PASS_APP_NAME }?"
+        "喜欢 ${ PASS_APP_NAME } 吗？"
       ],
       "Enter coupon code": [
-        "Skriv inn kupongkode"
+        "输入优惠券代码"
       ],
       "Enter your backup password": [
-        "Skriv inn reservepassordet ditt"
+        "输入您的备份密码"
       ],
       "Enter your extra password": [
-        "Angi det ekstra passordet ditt"
+        "输入您额外的密码"
       ],
       "Enter your password": [
-        "Skriv inn passord"
+        "输入密码"
       ],
       "Enter your PIN": [
-        "Skriv inn PIN-koden din"
+        "输入 PIN 码"
       ],
       "Excluded items": [
-        "Ekskluderte elementer"
+        "不包括的项目"
       ],
       "Get Started": [
-        "Kom i gang"
+        "立即体验"
       ],
       "Grant permissions": [
-        "Gi tillatelser"
+        "授予权限"
       ],
       "Hide-my-email aliases": [
-        "Hide-my-email-aliaser"
+        "个hide-my-email别名"
       ],
       "History": [
-        "Historikk"
+        "历史记录"
       ],
       "Import - ${ date }": [
-        "Import - ${ date }"
+        "导入- ${ date }"
       ],
       "Import to vault(s)": [
-        "Importer til hvelv"
+        "导入到保险库"
       ],
       "Import your data": [
-        "Importer dine data"
+        "导入您的数据"
       ],
       "Inactive 2FA": [
-        "Inaktiv 2FA"
+        "未启用 2FA"
       ],
       "Install extension": [
-        "Installer utvidelse"
+        "安装扩展"
       ],
       "Item": [
-        "Element"
+        "项目"
       ],
       "Last autofill": [
-        "Siste autofyll"
+        "最后自动填充"
       ],
       "Last modified": [
-        "Sist endret"
+        "最后修改"
       ],
       "Leave this item?": [
-        "Forlate dette elementet?"
+        "离开此项目吗？"
       ],
       "Leave vault?": [
-        "Forlate hvelv?"
+        "离开保险库?"
       ],
       "Loading breaches...": [
-        "Laster inn brudd..."
+        "正在加载泄露信息..."
       ],
       "Low disk space": [
-        "Lite diskplass"
+        "磁盘空间不足"
       ],
       "Mailbox": [
-        "Postboks"
+        "邮箱"
       ],
       "Mark as resolved?": [
-        "Merke som løst?"
+        "标记为已解决?"
       ],
       "Member limit": [
-        "Medlemsgrense"
+        "成员上限"
       ],
       "Members": [
-        "Medlemmer"
+        "成员"
       ],
       "Modified": [
-        "Endret"
+        "修改时间"
       ],
       "Move ${ count } item to ${ vaultName }": [
-        "Flytt ${ count } element til ${ vaultName }",
-        "Flytt ${ count } elementer til ${ vaultName }"
+        "将 ${ count } 项移动到 ${ vaultName }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
-        "Flytte ${ trashedItemsCount } element til papirkurven?",
-        "Flytte ${ trashedItemsCount } elementer til papirkurven?"
+        "将 ${ trashedItemsCount } 项移动到回收站？"
       ],
       "Move all items to \"${ vaultName }\"?": [
-        "Flytte alle elementer til \"${ vaultName }\"?"
+        "将所有项目移动到 \"${ vaultName }\"？"
       ],
       "Move item to \"${ vaultName }\"": [
-        "Flytte element til \"${ vaultName }\"?"
+        "将项目移动到 \"${ vaultName }\""
       ],
       "MX record": [
-        "MX-post"
+        "MX 记录"
       ],
       "No excluded items": [
-        "Ingen ekskluderte elementer"
+        "无除外项目"
       ],
       "No inactive 2FAs": [
-        "Ingen inaktive 2FAer"
+        "没有未激活的 2FA"
       ],
       "No insecure passwords": [
-        "Ingen usikre passord"
+        "没有不安全的密码"
       ],
       "No items selected": [
-        "Ingen elementer valgt"
+        "未选择任何项目"
       ],
       "No reused passwords": [
-        "Ingen gjenbrukte passord"
+        "没有重复使用的密码"
       ],
       "No shared items": [
-        "Ingen delte elementer"
+        "没有共享的项目"
       ],
       "No shared secure links": [
-        "Ingen delte sikre koblinger"
+        "没有共享的安全链接"
       ],
       "Our welcome gift to you": [
-        "Vår velkomstgave til deg"
+        "我们送给您的欢迎礼物"
       ],
       "Passkey": [
-        "Tilgangsnøkkel"
+        "通行密钥"
       ],
       "Password Health": [
-        "Passordhelse"
+        "密码安全"
       ],
       "Pause monitoring?": [
-        "Sette overvåking på vent?"
+        "暂停监测?"
       ],
       "Pending access confirmation": [
-        "Venter på tilgangsbekreftelse"
+        "正在等待访问确认"
       ],
       "Pending access to the shared data": [
-        "Venter på tilgang til de delte dataene"
+        "等待访问共享数据"
       ],
       "Permanently remove all items?": [
-        "Fjerne alle elementer permanent?"
+        "是否永久移除所有项目？"
       ],
       "Pinned (${ items.length })": [
-        "Festet (${ items.length })"
+        "已固定 ( ${ items.length } )"
       ],
       "Please note that once deleted, the alias can't be restored.": [
-        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet.",
-        "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet."
+        "请注意，别名一旦删除就无法恢复。"
       ],
       "Random Prefix Generation": [
-        "Generering av tilfeldig prefiks"
+        "随机前缀生成"
       ],
       "Recommended actions": [
-        "Anbefalte tiltak"
+        "建议采取的行动"
       ],
       "Reject device?": [
-        "Avvise enhet?"
+        "剔除设备？"
       ],
       "Remove email address?": [
-        "Fjerne e-postadresse?"
+        "移除电子邮件地址？"
       ],
       "Remove extra password": [
-        "Fjern ekstra passord"
+        "移除额外密码"
       ],
       "Remove secure link?": [
-        "Fjerne sikker kobling?"
+        "移除安全链接？"
       ],
       "Resolved breaches": [
-        "Løste brudd"
+        "已解决的泄露信息"
       ],
       "Restore this version?": [
-        "Gjenopprette denne versjonen?"
+        "恢复此版本?"
       ],
       "Resume monitoring?": [
-        "Gjenoppta overvåking?"
+        "恢复监测?"
       ],
       "Reused ${ count } time": [
-        "Gjenbrukt ${ count } gang",
-        "Gjenbrukt ${ count } ganger"
+        "重复使用 ${ count } 次"
       ],
       "Reused passwords": [
-        "Gjenbrukte passord"
+        "重复使用的密码"
       ],
       "Review and share": [
-        "Se over og del"
+        "回顾与分享"
       ],
       "Secure your data": [
-        "Sikre dataene dine"
+        "保护您的数据"
       ],
       "Select the default domain for aliases": [
-        "Velg standard domene for aliaser"
+        "为别名选择默认域"
       ],
       "Set access level": [
-        "Sett tilgangsnivå"
+        "设置访问级别"
       ],
       "Set extra password": [
-        "Angi ekstra passord"
+        "设置额外密码"
       ],
       "Set up 2FA for better security": [
-        "Sett opp 2FA for bedre sikkerhet"
+        "设置 2FA 以获得更多安全"
       ],
       "Set up 2FA for more security": [
-        "Sett opp 2FA for ekstra sikkerhet"
+        "设置 2FA 以获得更多安全"
       ],
       "Settings": [
-        "Innstillinger"
+        "设置"
       ],
       "Share vaults with your team": [
-        "Del hvelv med teamet ditt"
+        "与您的团队分享保险库"
       ],
       "Share with": [
-        "Del med"
+        "分享给"
       ],
       "Shared item invitation": [
-        "Delt elementinvitasjon"
+        "共享的项目邀请"
       ],
       "Shared via": [
-        "Delt via"
+        "共享方式"
       ],
       "SPF (Optional)": [
-        "SPF (valgfritt)"
+        "SPF ( 可选 )"
       ],
       "Status": [
-        "Status"
+        "状态"
       ],
       "Stay safer online": [
-        "Hold deg tryggere på nettet"
+        "更安全地上网"
       ],
       "Suggestions": [
-        "Forslag"
+        "建议"
       ],
       "Switch to": [
-        "Bytt til"
+        "切换到"
       ],
       "Sync alias": [
-        "Synkroniser alias"
+        "同步别名"
       ],
       "Sync your aliases from SimpleLogin": [
-        "Synkroniser aliasene dine fra SimpleLogin"
+        "从 SimpleLogin 同步您的别名"
       ],
       "Transfer ownership": [
-        "Overfør eierskap"
+        "转移所有权"
       ],
       "Trash empty": [
-        "Papirkurven er tom"
+        "回收站为空"
       ],
       "Unlock ${ brandNameJSX }": [
-        "Lås opp ${ brandNameJSX }"
+        "解锁 ${ brandNameJSX }"
       ],
       "Unverified": [
-        "Uverifisert"
+        "未验证"
       ],
       "Update available": [
-        "Oppdatering tilgjengelig"
+        "有可用更新"
       ],
       "Vault": [
-        "Hvelv"
+        "保险库"
       ],
       "Vault shared with you": [
-        "Hvelv delt med deg"
+        "与您共享的保险库"
       ],
       "Want to learn more?": [
-        "Vil du lære mer?"
+        "想详细了解？"
       ],
       "Weak password": [
-        "Svakt passord"
+        "弱密码"
       ],
       "Weak passwords": [
-        "Svake passord"
+        "弱密码"
       ],
       "Welcome to ${ brandNameJSX }": [
-        "Velkommen til ${ brandNameJSX }"
+        "欢迎来到 ${ brandNameJSX }"
       ],
       "What is an alias?": [
-        "Hva er et alias?"
+        "什么是电子邮件别名？"
       ],
       "What is the dark web?": [
-        "Hva er det mørke nettet?"
+        "什么是暗网？"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
-        "Hva er foskjellen mellom ${ PASS_SHORT_APP_NAME }-notat og SimpleLogin-notat?"
+        "${ PASS_SHORT_APP_NAME } 笔记和 SimpleLogin 笔记之间有什么区别？"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
-        "${ planName }-abonnementet avsluttes den ${ endDate }"
+        "您的 ${ planName } 订阅将在 ${ endDate } 结束"
       ],
       "Your exposed information": [
-        "Din eksponerte informasjon"
+        "您的泄露信息"
       ],
       "Your vault is empty": [
-        "Hvelvet ditt er tomt"
+        "您的保险库是空的"
       ],
       "Your welcome gift": [
-        "Din velkomstgave"
+        "您的新人礼包"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Du er i ferd med å slette permanent ${ aliasCount } alias.",
-        "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+        "您将永久删除 ${ aliasCount } 个别名。"
       ]
     },
     "Validation": {
       "Domain URL is invalid": [
-        "URL-adressen til domenet er ugyldig"
+        "域名 URL 无效"
       ],
       "Duplicated URL": [
-        "Duplisert nettadresse"
+        "网址重复"
       ],
       "Field name is required": [
-        "Feltnavn er obligatorisk"
+        "字段名称是必填项"
       ],
       "OTP secret or URI is invalid": [
-        "OTP-hemmelighet eller URI er ugyldig"
+        "动态密码或网址无效"
       ],
       "OTP secret or URI required": [
-        "OTP-hemmelighet eller URI kreves"
+        "需要动态密码或网址"
       ],
       "Section name cannot be empty": [
-        "Seksjonsnavn kan ikke være tomt"
+        "分组名称不能为空"
       ],
       "URL already exists": [
-        "Nettadresse finnes allerede"
+        "网址已存在"
       ],
       "URL cannot be empty": [
-        "Nettadresse kan ikke være tom"
+        "网址不可为空"
       ],
       "URL is invalid": [
-        "Nettadressen er ugyldig"
+        "网址无效"
       ]
     },
     "Warning": {
       "${ BRAND_NAME } password is required": [
-        "${ BRAND_NAME }-passord kreves"
+        "需要 ${ BRAND_NAME } 密码"
       ],
       "2 consecutive dots are not allowed": [
-        "2 påfølgende prikker er ikke tillatt"
+        "不允许出现 2 个连续的点"
       ],
       "A description of the problem is required": [
-        "En beskrivelse av problemet er nødvendig"
+        "需要提供问题的描述"
       ],
       "Addresses already invited.": [
-        "Adresser allerede invitert."
+        "地址已被邀请。"
       ],
       "Aliases in trash will continue forwarding emails.": [
-        "Aliaser i papirkurven fortsetter å videresende e-poster."
+        "回收站中的别名将继续转发电子邮件。"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Alle dine elementer i papirkurven blir slettet permanent. Du kan ikke angre denne handlingen."
+        "回收站中的项目会被永久删除。您将无法撤销这一操作。"
       ],
       "An error occurred while exporting your data": [
-        "Det oppstod en feil under eksport av dataene dine"
+        "导出数据时发生错误"
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Er du sikker på at du ønsker å flytte ${ trashedItemsCount } element til papirkurven?",
-        "Er du sikker på at du ønsker å flytte ${ trashedItemsCount } elementer til papirkurven?"
+        "您确定要将 ${ trashedItemsCount } 项移至回收站吗？"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Er du sikker på at du vil slette ${ deletedItemsCount } element permanent?",
-        "Er du sikker på at du vil slette ${ deletedItemsCount } elementer permanent?"
+        "您确定要永久删除 ${ deletedItemsCount } 项吗？"
       ],
       "Are you sure you want to permanently delete this item?": [
-        "Er du sikker på at du vil slette dette elementet permanent?"
+        "确定要永久删除此项目吗？"
       ],
       "At least one email address is required": [
-        "Minst én e-postadresse kreves"
+        "至少需要一个电子邮件地址"
       ],
       "Cannot contain a dot at the beginning": [
-        "Kan ikke inneholde en prikk i begynnelsen"
+        "开头不能包含点"
       ],
       "Cannot contain a dot at the end": [
-        "Kan ikke inneholde en prikk ved slutten"
+        "末尾不能包含点"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
-        "Kan ikke hente postbokser for dette aliaset akkurat nå."
+        "暂时无法通过别名获取邮箱"
       ],
       "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
-        "Forsiktig: du får ikke tilgang til ${ PASS_APP_NAME }-kontoen din hvis du mister dette passordet."
+        "注意： 如果丢失此密码，您将无法访问 ${ PASS_APP_NAME } 帐户。"
       ],
       "Could not create vault \"${ vaultName }\"": [
-        "Kunne ikke opprette hvelv \"${ vaultName }\""
+        "无法创建保险库 “${ vaultName }”"
       ],
       "Could not send invitations to the following addresses:": [
-        "Kunne ikke sende invitasjoner til følgende adresser:"
+        "无法向以下地址发送邀请："
       ],
       "Coupon cannot be empty": [
-        "Kupongen kan ikke være tom"
+        "优惠券不能为空"
       ],
       "Coupon could not be applied.": [
-        "Kupongen kan ikke brukes."
+        "无法应用优惠券。"
       ],
       "Delete alias": [
-        "Slett alias"
+        "删除别名"
       ],
       "Domain cannot be empty": [
-        "Domene kan ikke være tomt"
+        "域名不能为空"
       ],
       "Duplicate email addresses.": [
-        "Dupliserte e-postadresser."
+        "复制邮件地址。"
       ],
       "Email cannot be empty": [
-        "E-post kan ikke være tomt"
+        "邮箱地址不能为空"
       ],
       "Email is required": [
-        "E-postadresse kreves"
+        "电子邮件为必填项"
       ],
       "Empty note": [
-        "Tomt notat"
+        "空注"
       ],
       "Expiration Date is not in the format MM/YY": [
-        "Utløpsdato er ikke i formatet MM/ÅÅ"
+        "过期日期格式不是 MM/YY"
       ],
       "Extra password cannot be empty": [
-        "Ekstra passord kan ikke være tomt"
+        "额外密码不能为空"
       ],
       "Extra password is required": [
-        "Ekstra passord kreves"
+        "需要额外的密码"
       ],
       "Extra password should have at least 8 characters": [
-        "Ekstra passord bør ha minst 8 tegn"
+        "额外密码至少要有 8 个字符"
       ],
       "Failed to load breaches.": [
-        "Kunne ikke laste inn brudd."
+        "加载泄露信息失败"
       ],
       "Identity could not be confirmed": [
-        "Identitet kunne ikke bekreftes"
+        "无法确认身份"
       ],
       "Invalid alias prefix": [
-        "Ugyldig aliasprefiks"
+        "无效的别名前缀"
       ],
       "Invalid code": [
-        "Ugyldig kode"
+        "无效的验证码"
       ],
       "Invalid email": [
-        "Ugyldig e-post"
+        "邮箱地址无效"
       ],
       "Invalid email addresses.": [
-        "Ugyldige e-postadresser"
+        "无效的邮箱地址。"
       ],
       "Inviting email addresses outside organization is not allowed.": [
-        "Det er ikke tillatt å invitere e-postadresser utenfor organisasjonen."
+        "不允许邀请组织外的电子邮件地址。"
       ],
       "item was imported without custom fields": [
-        "elementet ble importert uten egendefinerte felt"
+        "项目导入时没有自定义字段"
       ],
       "Maximum length is ${ maxLength } character": [
-        "Maksimal lengde er ${ maxLength } tegn",
-        "Maksimal lengde er ${ maxLength } tegn"
+        "最大长度为 ${ maxLength } 个字符"
       ],
       "Missing alias prefix": [
-        "Mangler aliasprefiks"
+        "缺少别名前缀"
       ],
       "Missing alias suffix": [
-        "Mangler aliasprefiks"
+        "缺少别名后缀"
       ],
       "Move to trash": [
-        "Flytt til papirkurven"
+        "移至回收站"
       ],
       "Name is required": [
-        "Navn kreves"
+        "名称为必填项"
       ],
       "No items": [
-        "Ingen elementer"
+        "没有项目"
       ],
       "No items in trash matching": [
-        "Ingen elementer i papirkurven samsvarer"
+        "回收站中没有匹配的项目"
       ],
       "No items matching": [
-        "Ingen elementer samsvarer"
+        "没有匹配的项目"
       ],
       "No password manager selected": [
-        "Ingen passordbehandler valgt"
+        "未选择密码管理器"
       ],
       "No results": [
-        "Ingen resultater"
+        "未找到任何结果"
       ],
       "No secure links matching": [
-        "Ingen sikre koblinger som samsvarer"
+        "没有匹配的安全连接"
       ],
       "No shared items matching": [
-        "Ingen delte elementer samsvarer"
+        "没有匹配的共享项目"
       ],
       "Offline": [
-        "Frakoblet"
+        "无网络连接"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Når de er synkronisert, vil sletting av aliaser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
+        "同步后，在 ${ PASS_SHORT_APP_NAME } 中删除的别名也会在 SimpleLogin 中删除。"
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Bare små alfanumeriske tegn, punktum og bindestreker (inkludert understrek) er tillatt."
+        "只允许使用字母数字小写字符、点、连字符和下划线"
       ],
       "Passphrase is required": [
-        "Passfrase kreves"
+        "需要提供密码"
       ],
       "Passwords do not match": [
-        "Passordene samsvarer ikke"
+        "密码不匹配"
       ],
       "PGP encrypted export file requires passphrase": [
-        "PGP-kryptert eksportfil krever passfrase."
+        "PGP加密的导出文件需要密码"
       ],
       "Please check that the extension is properly installed and enabled": [
-        "Kontroller at utvidelsen er riktig installert og aktivert"
+        "请检查扩展是否正确安装并启用"
       ],
       "Please contact us to investigate the issue": [
-        "Gjerne kontakt oss for å undersøke problemet."
+        "请联系我们调查该问题"
       ],
       "Please note that once deleted, aliases can't be restored": [
-        "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet"
+        "请注意，别名一旦删除将无法恢复"
       ],
       "Please update the extension to its latest version": [
-        "Oppdater utvidelsen til siste versjon"
+        "请更新扩展至最新版本"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Bekreft e-postadressen din for å kunne bruke e-postaliaser."
+        "使用邮箱别名前请先验证您的邮箱地址"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
-        "Hvis du fjerner det ekstra passordet, logger du deg ut fra alle enheter og avslutter alle aktive økter."
+        "删除额外密码后，您将退出所有设备并结束所有活动会话。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
+        "反馈内容不会经过端对端加密，请勿发送敏感信息。"
       ],
       "Some items are currently shared. Deleting them will remove access for all other users.": [
-        "Noen elementer er for øyeblikket delt. Hvis du sletter dem, fjernes tilgangen for alle andre brukere."
+        "某些项目目前是共享的。删除它们将取消所有其他用户的访问权限。"
       ],
       "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
-        "Noen elementer er for øyeblikket delt. Hvis du flytter dem til et annet hvelv, fjernes tilgangen for alle andre brukere."
+        "某些项目目前是共享的。将它们移到另一个保险库将取消所有其他用户的访问权限。"
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
-        "Noe gikk galt under oppstart av ${ PASS_APP_NAME }. Prøv å oppdatere eller laste inn utvidelsen på nytt."
+        "启用${ PASS_APP_NAME }时发生了错误。请尝试刷新或重载该插件。"
       ],
       "The alias prefix cannot be longer than 40 characters": [
-        "Aliasprefikset kan ikke være lenger enn 40 tegn."
+        "别名前缀不可超过40个字符"
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
-        "Dette aliaset \"${ aliasEmail }\" brukes for øyeblikket i påloggingen \"${ relatedLoginName }\"."
+        "此别名 \"${ aliasEmail }\" 目前用于登录 \"${ relatedLoginName }\"。"
       ],
       "This email address will no longer be monitored for data breaches.": [
-        "Denne e-postadressen vil ikke lenger overvåkes for datainnbrudd."
+        "该电子邮件地址将不再受到数据泄露监测。"
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
-        "Dette elementet er for øyeblikket delt. Hvis du sletter det, fjernes tilgangen for alle andre brukere."
+        "此项目目前是共享的。删除它将取消所有其他用户的访问权限。"
       ],
       "This item is currently shared. Moving it to another vault will remove access for all other users.": [
-        "Dette elementet er for øyeblikket delt. Hvis du flytter det til et annet hvelv, fjernes tilgangen for alle andre brukere."
+        "此项目目前是共享的。将其移动到另一个保险库将取消所有其他用户的访问权限。"
       ],
       "Title is required": [
-        "Tittel kreves"
+        "需要填写标题"
       ],
       "Too many attempts": [
-        "For mange forsøk"
+        "尝试次数过多"
       ],
       "Transfer ownership of this vault to ${ email }?": [
-        "Overføre eierskap av dette hvelvet til ${ email }?"
+        "将此保险库的所有权转移给 ${ email }？"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
-        "Ikke i stand til å logge på ${ PASS_APP_NAME }. ${ additionalMessage }"
+        "无法登录至 ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Hvelv \"${ vaultName }\" og alle dets elementer vil slettes permanent. Du kan ikke angre denne handlingen."
+        "保管库 “${ vaultName }” 及其包含的所有项目会被永久删除。您将无法撤销这一操作。"
       ],
       "Vault name is required": [
-        "Hvelvnavn kreves"
+        "需要提供保险库名称"
       ],
       "Verification code is required": [
-        "Bekreftelseskode er påkrevd"
+        "需要验证码"
       ],
       "You have reached the limit of members who can access this item.": [
-        "Du har nådd grensen for medlemmer som kan ha tilgang til dette elementet."
+        "您已达到此项目的可访问人数上限。"
       ],
       "You have reached the limit of members who can access this vault.": [
-        "Du har nådd grensen for medlemmer som kan ha tilgang til dette hvelvet."
+        "您已达到此保险库的可访问人数上限。"
       ],
       "You have reached the limit of users for this item. ${ upgradeLink }": [
-        "Du har nådd grensen for antall brukere for dette elementet. ${ upgradeLink }"
+        "您已达到此项目的用户上限。${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
-        "Du har nådd grensen for brukere i dette hvelvet. ${ upgradeLink }"
+        "您已达到此保险库的使用人数上限。${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
-        "Du har nådd grensen for hvor mange hvelv du kan ha i planen din."
+        "您已达到您的套餐所允许您拥有的保险库数量上限。"
       ],
       "You have unsaved changes.": [
-        "Du har ulagrede endringer."
+        "您有尚未保存的更改。"
       ],
       "You must select at least one mailbox": [
-        "Du må velge minst en postboks"
+        "您必须选择至少一个邮箱"
       ],
       "You will lose access to this item and its details. Do you want to continue?": [
-        "Du mister tilgangen til dette elementet og dets detaljer. Vil du fortsette?"
+        "您将无法访问此项目及其详细信息。您想继续吗？"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "Du vil ikke lenger ha tilgang til dette hvelvet. For å bli med i det igjen, trenger du en ny invitasjon."
+        "您将不再拥有该保险库的访问权。若要重新加入，您需要获得新的邀请。"
       ],
       "Your organization does not allow sharing individual items": [
-        "Organisasjonen tillater ikke deling av enkeltelementer"
+        "您的组织不允许共享单个项目"
       ],
       "Your session could not be authorized.": [
-        "Økten din kunne ikke autoriseres."
+        "您的会话无法被授权。"
       ],
       "Your session could not be resumed.": [
-        "Økten din kunne ikke gjenopptas."
+        "你的会话无法被恢复。"
       ],
       "Your session is inactive.": [
-        "Økten er inaktiv"
+        "您的会话已处于非活动状态。"
       ],
       "Your session was locked.": [
-        "Økten din ble låst."
+        "您的会话已被锁定。"
       ],
       "Your subscription does not allow you to create more vaults.": [
-        "Abonnementet ditt lar deg ikke opprette flere hvelv."
+        "您的订阅不允许您创建更多的别名。"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "Abonnementet ditt lar deg ikke opprette flere hvelv. Alle elementer vil bli importert til ditt første hvelv. Hvis du vil importere til flere hvelv, oppgraderer du abonnementet."
+        "您的订阅不允许您创建多个保险库。 所有项目都将导入到您的第一个保险库中。 要导入多个保险库，请升级您的订阅。"
       ]
     }
   }

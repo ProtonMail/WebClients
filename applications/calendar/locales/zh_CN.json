@@ -663,7 +663,7 @@
         "显示时区"
       ],
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Sign out of all accounts": [
         "退出所有账户"
@@ -750,7 +750,7 @@
         "上传图片"
       ],
       "Use ${ label } theme": [
-        "使用 ${ label } 配色"
+        "使用 ${ label } 主题"
       ],
       "Use a different card": [
         "使用其他银行卡"
@@ -850,7 +850,7 @@
         "${ domains } 个额外的自有域名"
       ],
       "${ ips } server": [
-        "${ ips } 个服务器"
+        "${ ips } 台服务器"
       ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
@@ -2512,6 +2512,20 @@
         "根据您的时区"
       ]
     },
+    "Custom frequency option": {
+      "Don't end": [
+        "不结束"
+      ],
+      "End after": [
+        "结束于"
+      ],
+      "End on": [
+        "结束于"
+      ],
+      "event": [
+        "事件"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/月"
@@ -3946,6 +3960,9 @@
       "Name": [
         "名称"
       ],
+      "Repeat event": [
+        "重复事件"
+      ],
       "Search": [
         "搜索"
       ],
@@ -4630,7 +4647,7 @@
         "自动对邮件进行数字签名"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "超过 30 天前移至废件箱和垃圾邮件的电子邮件将自动清除。"
+        "超过 30 天前移至回收站和垃圾邮件的电子邮件将自动清除。"
       ],
       "Enabling auto-deletion…": [
         "正在启用自动删除…"
@@ -5405,6 +5422,14 @@
         "您可以更新搜索查询或关闭搜索，返回日历视图"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "如何进行现金支付？"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "请参阅文章中的说明：${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info message": {
       "No results found": [
         "未找到结果"
@@ -5723,6 +5748,9 @@
       "Event title": [
         "日程名称"
       ],
+      "Every": [
+        "每个"
+      ],
       "Expiration (${ patternExpiration })": [
         "到期 (${ patternExpiration })"
       ],
@@ -5825,6 +5853,9 @@
       "Notifications": [
         "通知"
       ],
+      "On": [
+        "在"
+      ],
       "Operating system": [
         "操作系统"
       ],
@@ -5925,7 +5956,7 @@
         "系统信息"
       ],
       "Theme": [
-        "配色"
+        "主题"
       ],
       "Thomas": [
         "Thomas"
@@ -6099,7 +6130,7 @@
         "安全上网"
       ],
       "Trash": [
-        "废件箱"
+        "回收站"
       ],
       "What’s this?": [
         "这是什么？"
@@ -6341,6 +6372,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "在 ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "第一个星期五"
       ],
@@ -6646,10 +6680,10 @@
         "一次轻松订阅，享受所有高级 ${ BRAND_NAME } 服务"
       ],
       "Auto-delete Spam and Trash": [
-        "自动清理垃圾邮件和废件箱"
+        "自动清理垃圾邮件和回收站"
       ],
       "Auto-delete spam and trashed messages": [
-        "自动删除垃圾邮件和废件箱中邮件"
+        "自动删除垃圾邮件和回收站中邮件"
       ],
       "Auto-reply": [
         "自动回复"
@@ -7128,7 +7162,7 @@
         "可对收到的邮件自动予以回复"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "垃圾邮件和废件箱中的邮件超过 30 天自动删除"
+        "垃圾邮件和回收站中的邮件超过 30 天自动删除"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "将您的 ${ MAIL_APP_NAME } 账户收到的邮件自动转发至其他邮箱。"
@@ -7571,6 +7605,12 @@
       "Maybe later": [
         "以后再说"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "优惠有效期至 ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "按年支付，确保我们的最佳优惠"
+      ],
       "Save": [
         "节省"
       ],
@@ -7583,6 +7623,9 @@
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
       ],
+      "Special offer": [
+        "特价"
+      ],
       "This offer won't be shown again.": [
         "此优惠不再显示。"
       ],
@@ -7591,6 +7634,9 @@
       ],
       "You currently pay": [
         "您目前支付"
+      ],
+      "Your subscription renews soon": [
+        "您的订阅即将续订"
       ]
     },
     "Offer feature": {
@@ -7652,7 +7698,7 @@
         "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME }。"
       ],
       "You will be able to change your theme any time in your settings.": [
-        "您可以随时在设置中更换配色。"
+        "您可以随时在设置中更换主题。"
       ]
     },
     "Option": {
@@ -7674,6 +7720,9 @@
       "Custom": [
         "其他"
       ],
+      "Custom...": [
+        "自定义..."
+      ],
       "Day": [
         "天"
       ],
@@ -7682,6 +7731,15 @@
       ],
       "Every day": [
         "每天"
+      ],
+      "Every month ${ description }": [
+        "每月 ${ description }"
+      ],
+      "Every week ${ everyWeekDescription }": [
+        "每周 ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "每个工作日 ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "每年"
@@ -7737,12 +7795,6 @@
       ],
       "Secure vault sharing": [
         "安全保险库共享"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全保险库共享 ( ${ n } 保险库 )"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全保险库共享 (${ n } 个保险库) 和链接共享"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8353,7 +8405,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Stay signed in": [
         "保持登录"
@@ -8367,10 +8419,10 @@
         "${ passwordReset }现已可用。"
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "如果您在重置密码完成之前退出，您可能会失去对账户的访问权限。"
+        "如果您在重置密码完成之前登出，您可能会失去对账户的访问权限。"
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "如果您未重置密码就退出，您可能会失去对账户的访问权限。"
+        "如果您未重置密码就登出，您可能会失去对账户的访问权限。"
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "您可以在${ boldTimeLeft }之内重置密码。"
@@ -8383,7 +8435,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "退出而不重置密码？"
+        "登出而不重置密码？"
       ]
     },
     "Settings update growler warning": {
@@ -9663,6 +9715,9 @@
       "Details": [
         "详细信息"
       ],
+      "Does not repeat": [
+        "不重复"
+      ],
       "Downgrade account": [
         "降级账户"
       ],
@@ -9713,6 +9768,21 @@
       ],
       "Event is happening on defined time slot": [
         "事件在指定的时间段发生"
+      ],
+      "Every day": [
+        "每天"
+      ],
+      "Every month ${ option.text }": [
+        "每月 ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "每周在 ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "每个工作日 ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "每年"
       ],
       "Exporting contacts": [
         "导出联系人"
@@ -9925,7 +9995,7 @@
         "登录并授予权限"
       ],
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Start a new import": [
         "开始导入"

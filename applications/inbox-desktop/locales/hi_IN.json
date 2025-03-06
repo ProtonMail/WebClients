@@ -5,8 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "Actual Size": [
+        "वास्तविक साइज़"
+      ],
+      "Check spelling while typing": [
+        "टाइप करते समय वर्तनी जांचें"
+      ],
       "Clear application data": [
         "एप्लिकेशन डेटा साफ़ करें"
+      ],
+      "Force Reload": [
+        "जबर्दस्ती पुनः लोड करें"
       ],
       "Reload": [
         "रिलोड"
@@ -17,23 +26,65 @@
       "Speech": [
         "भाषण"
       ],
+      "Start Proton Mail at login": [
+        "लॉगइन पर Proton Mail शुरू करें"
+      ],
       "Uninstall Proton Mail": [
         "Proton Mail को अनइंस्टॉल करें"
+      ],
+      "Zoom In": [
+        "ज़ूम करें"
+      ],
+      "Zoom Out": [
+        "ज़ूम कम करें"
       ]
     },
     "Conext menu": {
+      "Save image as…": [
+        "छवि को सहेजें…"
+      ],
       "Speech": [
         "भाषण"
       ]
     },
     "Context menu": {
+      "Add to dictionary": [
+        "शब्दकोश में जोड़ें"
+      ],
       "Copy link": [
         "लिंक कॉपी करें"
+      ],
+      "Emoji and Symbols": [
+        "इमोजी और सिंबल"
       ]
     },
     "Context Menu": {
       "Copy": [
         "कॉपी करें"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "एरर के कारण, ऐप बंद हो जाएगा। इसे फिर से चलाने की कोशिश करें और यदि समस्या बनी रहती है, तो हमसे संपर्क करें। एप्लीकेशन लॉग में एरर की जानकारी पाई जा सकती है।"
+      ],
+      "Unexpected error": [
+        "अनअपेक्षित त्रुटि"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "कनेक्शन स्थापित नहीं हो पा रहा"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "अपना इंटरनेट कनेक्शन या नेटवर्क सेटिंग की जांच करें। यदि समस्या बनी रहती है, तो कृपया ग्राहक सहायता से संपर्क करें।"
+      ],
+      "Try again": [
+        "वापस कोशिश करें"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "${ title } लोड हो रहा है…"
       ]
     },
     "Menu": {

@@ -3920,6 +3920,9 @@
       "Please select a category and what went wrong with the generated text": [
         "Kérem válasszon egy kategóriát és adja meg, mi sikerült félre a létrehozott szöveg kapcsán."
       ],
+      "Please select a country": [
+        "Kérjük, válasszon egy országot"
+      ],
       "Please try again or refresh the page.": [
         "Próbálja meg újra, vagy frissítse az oldalt"
       ],
@@ -5477,6 +5480,9 @@
       "Activation in progress": [
         "A bekapcsolás folyamatban"
       ],
+      "Active": [
+        "Aktív"
+      ],
       "Add image URL": [
         "Kép URL megadása"
       ],
@@ -5485,6 +5491,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Cím hitelesítés a megbízható kulcsokkal engedélyezve van ehhez a címhez. A küldéshez a címzett nyilvános kulcsát megbízhatóként kell megjelölnie."
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "A mesterséges intelligenciával működő asszisztens segít jobb e-maileket készíteni, gyorsan és könnyedén."
       ],
       "Align left": [
         "Balra igazítás"
@@ -5596,6 +5605,9 @@
       ],
       "Attention required": [
         "Figyelem szükséges"
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatikusan törli a 30 napnál régebbi, Kukába vagy Levélszemétbe áthelyezett e-maileket."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "A 30 napnál régebben a lomtárba vagy a levélszemét mappába helyezett üzenetek automatikus törlése."
@@ -5743,8 +5755,14 @@
       "Dedicated servers": [
         "Dedikált szerverek"
       ],
+      "default email address": [
+        "alapértelmezett e-mail cím"
+      ],
       "Default email application": [
         "Alapértelmezett e-mail alkalmazás"
+      ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Az észlelés az Ön eszközén történik, így az e-mailek tartalma nem kerül a szervereinkre."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Tudtad? Lefoglaltunk neked egy rövidebb e-mail címet. Ez a felhasználóneved és utána \"@${ PM_DOMAIN }\"."
@@ -5773,6 +5791,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
+      ],
+      "Download on the App Store": [
+        "Töltse le az App Store-ból"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
@@ -5833,6 +5854,9 @@
       ],
       "Emails are automatically signed": [
         "Az e-mailek automatikusan aláírásra kerülnek"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "30 napnál régebben a Kukába és a Levélszemétbe áthelyezett e-mailek automatikusan törlődnek."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "A ${ nameDeleted } címkével ellátott e-mailek nem kerülnek törlésre, és továbbra is megtalálhatók az adott mappában."
@@ -5911,6 +5935,12 @@
       ],
       "From": [
         "Forrás:"
+      ],
+      "Get it on Google Play": [
+        "Szerezze be a Google Play-en"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Értesítést kap, ha jelszava vagy más adata kiszivárgott egy harmadik fél szolgáltatásából."
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Adjon egy színes címkét a számláknak például \"${ suggestedLabelName }\". Miután be lettek fizetve változtassa meg a címkét \"${ suggestedPaidLabelName }-re\""
@@ -6438,6 +6468,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
+      "Setting up your new address…": [
+        "Új e-mail cím beállítása..."
+      ],
       "Shorten selection": [
         "Rövidíteni a kiválasztást"
       ],
@@ -6580,6 +6613,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Ez a meghívó egy letiltott naptárban van."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Ez mostantól az ${ defaultEmailAddress } az új üzenetek küldéséhez."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
@@ -9388,14 +9424,6 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Biztonságos tároló megosztás (${ n } tároló)",
-        "Biztonságos tároló megosztás (${ n } tároló)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás.",
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás."
       ]
     },
     "pass_signup_2024: Info": {
@@ -10533,29 +10561,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -10706,6 +10711,29 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -12036,7 +12064,7 @@
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
-        "Haladó VPN beállítások"
+        "Speciális VPN beállítások"
       ],
       "No ads": [
         "Nincsenek hirdetések"

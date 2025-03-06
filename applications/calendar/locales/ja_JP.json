@@ -7605,6 +7605,12 @@
       "Maybe later": [
         "またあとで"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "オファーの有効期限は ${ formattedDate }です。"
+      ],
+      "Pay annually, secure our best offer": [
+        "毎年払い、安全な私たちの最高のオファー"
+      ],
       "Save": [
         "節約"
       ],
@@ -7617,6 +7623,9 @@
       "Save big when you pay annually": [
         "年払いで大幅に節約"
       ],
+      "Special offer": [
+        "特別オファー"
+      ],
       "This offer won't be shown again.": [
         "このオファーは二度と表示されません。"
       ],
@@ -7625,6 +7634,9 @@
       ],
       "You currently pay": [
         "現在の支払い方法"
+      ],
+      "Your subscription renews soon": [
+        "サブスクリプションはまもなく更新されます"
       ]
     },
     "Offer feature": {
@@ -7783,12 +7795,6 @@
       ],
       "Secure vault sharing": [
         "安全な保管庫共有"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全な保管庫の共有 (${ n } 個の保管庫)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全な保管庫共有 (${ n } 個の保管庫) とリンクの共有"
       ]
     },
     "pass_signup_2024: Info": {

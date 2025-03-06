@@ -3857,7 +3857,7 @@
     },
     "driveplus2024: Deal details": {
       "Extended version history": [
-        "Genişletilmiş sürüm geçmişi"
+        "Ayrıntılı sürüm geçmişi"
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -4091,7 +4091,7 @@
         "Bu sorunu çözmek için kuruluşunuzun yöneticisi ile görüşün"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
+        "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel pencereden çıkın ya da farklı bir tarayıcı deneyin."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "İçerik arama açılamadı. Lütfen uygulamayı yeniden başlatın ya da verileri temizleyin."
@@ -4404,7 +4404,7 @@
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong. Please try again.": [
-        "Bir şeyler ters gitti. Lütfen yeniden deneyin."
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Ne yazık ki, ${ BRAND_NAME } iletinizin şifresini çözemiyor. Lütfen tüm anahtarlarınızın etkin olduğundan emin olun."
@@ -6913,7 +6913,7 @@
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME geçerli oluşturucu kipinde iletiyi otomatik olarak gönderir."
+        "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
       ],
       "Phone number": [
         "Telefon numarası"
@@ -7174,7 +7174,7 @@
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
-        "İletilerinizi daha sonraya erteleyin. İstediğiniz zaman gelen kutunuzun üstünde görünürler"
+        "İletilerinizi daha sonraya erteleyin. İstediğiniz zamanda gelen kutunuzun üstünde görüntülenirler"
       ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
         "${ dateString } tarihine ${ formattedTime } saatine ertelendi"
@@ -10162,7 +10162,7 @@
         "Wi-Fi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
+        "Ailenizi zararlı sitelerden koruyun ve sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
@@ -10405,7 +10405,7 @@
         "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
       ],
       "Pay annually, secure our best offer": [
-        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+        "Yıllık ödeme yapın, en iyi teklifimizi değerlendirin"
       ],
       "Save": [
         "İndirim"
@@ -10418,6 +10418,9 @@
       ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "Special offer": [
+        "Özel teklif"
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
@@ -10701,14 +10704,6 @@
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Güvenli kasa paylaşımı (${ n } kasa)",
-        "Güvenli kasa paylaşımı (${ n } kasa)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12025,6 +12020,9 @@
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
       ],
+      "Billed every 6 months": [
+        "6 ayda bir faturalanır"
+      ],
       "Billed for 15 months": [
         "15 aylık olarak faturalanır"
       ],
@@ -12102,47 +12100,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription reminder": {
@@ -12403,6 +12360,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -12952,7 +12950,7 @@
         "@pm.me adresini kullanıma al"
       ],
       "Add a custom logo": [
-        "Özel bir logo ekle"
+        "Özel logo ekle"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
@@ -13737,6 +13735,11 @@
         "Bugün"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
@@ -13818,11 +13821,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Tor out of date": {

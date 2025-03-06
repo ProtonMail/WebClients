@@ -181,6 +181,9 @@
       "Create new password": [
         "Создать новый пароль"
       ],
+      "Create new policy": [
+        "Создать новую политику"
+      ],
       "Create users": [
         "Создать пользователей"
       ],
@@ -195,6 +198,9 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Delete account": [
+        "Удалить аккаунт"
       ],
       "Delete Gateway": [
         "Удалить Шлюз"
@@ -259,6 +265,9 @@
       "Edit": [
         "Изменить"
       ],
+      "Edit billing address": [
+        "Изменить адрес для выставления счетов"
+      ],
       "Edit billing cycle": [
         "Изменить платежный цикл"
       ],
@@ -273,6 +282,9 @@
       ],
       "Edit group": [
         "Редактировать группу"
+      ],
+      "Edit invoice note": [
+        "Изменить примечание к счету"
       ],
       "Edit name": [
         "Изменить имя"
@@ -357,6 +369,9 @@
       ],
       "Go to label": [
         "Перейти к ярлыку"
+      ],
+      "Go to panel ${ index }": [
+        "Перейти к панели ${ index }"
       ],
       "Got it": [
         "Понятно"
@@ -1246,6 +1261,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Закрыть"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -2476,6 +2494,9 @@
       ]
     },
     "Edit billing address form note": {
+      "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
+        "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, будет отображаться только в счетах, выставляемых в будущем, и не повлияет на существующие счета."
+      ],
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
         "Текстовые поля являются необязательными. Информация, которую вы предоставите в этой форме, изменит только выбранный вами счет-фактуру, но не ваши будущие данные о счете-фактуре."
       ]
@@ -2595,6 +2616,9 @@
       "Impossible to rename the gateway": [
         "Невозможно переименовать шлюз"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Неверный пароль резервной копии. Попробуйте еще раз."
+      ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Неверный тип файла. Загрузите файл в формате PNG или JPEG."
       ],
@@ -2685,6 +2709,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
       ],
+      "Please enter a valid Entity ID URL": [
+        "Введите действительный URL идентификации субъекта"
+      ],
       "Please generate keys before you try to change your password": [
         "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ],
@@ -2693,6 +2720,12 @@
       ],
       "Please select a state": [
         "Пожалуйста, выберите штат"
+      ],
+      "Please select at least one location before continuing.": [
+        "Выберите по крайней мере одно место, прежде чем продолжить."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Выберите хотя бы одного пользователя или группу, прежде чем продолжить."
       ],
       "Please set a recovery email first": [
         "Сначала установите резервный адрес электронной почты"
@@ -2711,6 +2744,9 @@
       ],
       "Please upload a square logo": [
         "Пожалуйста, загрузите квадратный логотип"
+      ],
+      "Please upload an XML file": [
+        "Загрузите файл XML"
       ],
       "Please upload only 1 file": [
         "Загрузите только 1 файл"
@@ -2750,6 +2786,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Минимальный платеж, который мы принимаем, составляет ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Название политики должно содержать от 3 до 40 символов."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Длина этого поля превысила максимальные ${ maximumLength } символов."
@@ -2804,6 +2843,9 @@
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш аккаунт или организация имеет просроченный счет. Пожалуйста, оплатите все неоплаченные счета."
+      ],
+      "ZIP code is required": [
+        "Необходимо указать почтовый индекс"
       ]
     },
     "error": {
@@ -3044,6 +3086,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Если у пользователя уже есть адрес ${ MAIL_APP_NAME }, введите его. В противном случае сначала необходимо создать аккаунт."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Если у пользователя уже есть аккаунт на ${ BRAND_NAME }, укажите его здесь. В противном случае необходимо сначала создать учетную запись."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Приглашение будет отменено, и пользователь не сможет присоединиться к ${ organizationName }."
@@ -3592,6 +3637,12 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } пользователей в настоящее время имеет доступ к общим серверам.",
+        "${ amountUsers }/${ totalUsers } пользователей в настоящее время имеют доступ к общим серверам.",
+        "${ amountUsers }/${ totalUsers } пользователей в настоящее время имеют доступ к общим серверам.",
+        "${ amountUsers }/${ totalUsers } пользователей в настоящее время имеют доступ к общим серверам."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
@@ -3613,6 +3664,24 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: предпросмотр в низком разрешении"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член вашей семьи используют двухфакторную аутентификацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена вашей семьи используют двухфакторную аутентификацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей семьи используют двухфакторную аутентификацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей семьи используют двухфакторную аутентификацию."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член вашей организации используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена вашей организации используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации используют двухфакторную аутентификацию для входа в вашу организацию."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с единым паролем, который заменяет и имя пользователя, и второй пароль. Чтобы переключиться в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
       ],
@@ -3624,6 +3693,12 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: не помещать в карантин и не отклонять неавторизованные письма. Обычно люди используют эту политику только для устранения неполадок или тестирования."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов"
       ],
       "${ number } city": [
         "${ number } город",
@@ -3955,6 +4030,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Скопируйте и вставьте этот URL в поле идентификатора субъекта вашего провайдера личных данных"
+      ],
       "Copy the suggested password to clipboard": [
         "Скопировать предложенный пароль в буфер обмена"
       ],
@@ -4162,6 +4240,9 @@
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "Введите код, который был отправлен на ${ email }. Если вы не нашли письмо в папке \"Входящие\", проверьте папку \"Спам\"."
       ],
+      "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
+        "Введите идентификатор организации для организации **eduGAIN** для **${ domain.DomainName }**."
+      ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введите пароль организации для восстановления полномочий администратора. ${ learnMore }"
       ],
@@ -4281,9 +4362,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ VPN_APP_NAME }."
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Если вы хотите объединить эту учетную запись с другой, НЕ удаляйте ее."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Если у вас возникли проблемы, мы готовы помочь. ${ boldPhoneCall } или ${ boldZoomMeeting } одному из наших специалистов по поддержке, или откройте чат ${ boldLiveChat } для поддержки в чате."
@@ -4567,6 +4645,9 @@
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
       ],
+      "Organization --> Groups": [
+        "Организация --> Группы"
+      ],
       "Organization size": [
         "Размер организации"
       ],
@@ -4773,6 +4854,9 @@
       ],
       "Select recently used servers": [
         "Выберите недавно использованный сервер"
+      ],
+      "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
+        "Выберите пользовательские принадлежности из ${ getFormattedOrganization }, которые вы хотите разрешить в своей организации ${ BRAND_NAME }:"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Отправьте электронные письма, чтобы убедить ваших пользователей защитить свои аккаунты двухфакторной аутентификацией (2FA)."
@@ -4993,6 +5077,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Это удалит SSO для ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Это удалит ваш доступ ко всем подключенным службам и удалит все ваши данные, включая контакты, вложения, события, пароли и файлы."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Это заменит ваш временный пароль. Вы будете использовать его для доступа к вашему аккаунту в ${ BRAND_NAME } в будущем."
       ],
@@ -5025,6 +5112,9 @@
       ],
       "to continue to ${ product }": [
         "чтобы продолжить в ${ product }"
+      ],
+      "To create your first user group, go to": [
+        "Чтобы создать свою первую группу пользователей, перейдите к"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -5179,8 +5269,8 @@
       "Warning:": [
         "Предупреждение:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Внимание: удаление безвозвратно. Это также отключит доступ ко всем подключенным службам и удалит все ваши контакты."
+      "Warning: deleting your account is permanent.": [
+        "Предупреждение: удаление вашего аккаунта необратимо."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы советуем вам по возможности использовать официальные приложения ${ VPN_APP_NAME }."
@@ -5518,6 +5608,11 @@
         "Вы можете добавить способ оплаты, чтобы ваша подписка обновилась автоматически. Другие способы оплаты также доступны."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a note for the invoices. These details will be added to both personal and organizational invoices. They will appear only on invoices issued in the future.": [
+        "Введите примечание для счетов. Эти сведения будут добавлены как к личным счетам, так и к счетам организации. Они будут отображаться только в счетах, выставляемых в будущем."
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Вы можете предотвратить истечение срока действия, повторно активировав подписку"
@@ -5596,6 +5691,9 @@
       ],
       "Other": [
         "Другое"
+      ],
+      "Product": [
+        "Продукт"
       ],
       "Refund": [
         "Возврат средств"
@@ -5685,6 +5783,9 @@
       ],
       "Apply policy to": [
         "Применить политику к"
+      ],
+      "Ask members to set up 2FA": [
+        "Попросить членов настроить двухфакторную аутентификации"
       ],
       "Assertion Consumer Service URL": [
         "URL службы подтверждения потребителя"
@@ -5893,6 +5994,9 @@
       "Hide password": [
         "Скрыть пароль"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Я понимаю, что мне нужно будет немедленно добавить этот адрес электронной почты в другой аккаунт, чтобы не потерять его навсегда."
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5919,6 +6023,9 @@
       ],
       "Main": [
         "Главная"
+      ],
+      "Members without 2FA": [
+        "Члены без двухфакторной аутентификации"
       ],
       "Metadata file for ${ appName }": [
         "Файл метаданных для ${ appName }"
@@ -6094,6 +6201,9 @@
         "Показать ${ n } администраторов",
         "Показать ${ n } администратора"
       ],
+      "Single sign-on Entity ID": [
+        "Единый вход для идентификатора организации"
+      ],
       "Single sign-on URL": [
         "URL единого входа"
       ],
@@ -6127,6 +6237,9 @@
       "Thomas": [
         "Томас"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Чтобы помочь нам улучшить качество, пожалуйста, объясните, почему вы уходите."
+      ],
       "Two-password mode": [
         "Режим с двумя паролями"
       ],
@@ -6154,6 +6267,9 @@
       "VAT": [
         "НДС"
       ],
+      "VAT identification number": [
+        "Идентификационный номер плательщика НДС"
+      ],
       "Verification code": [
         "Код подтверждения"
       ],
@@ -6165,9 +6281,6 @@
       ],
       "Vulnerable password": [
         "Уязвимый пароль"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать нашу службу."
       ],
       "Weak": [
         "Слабый"
@@ -6195,6 +6308,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "ZIP code": [
+        "Почтовый индекс"
       ]
     },
     "label": {
@@ -6393,14 +6509,6 @@
         "Улучшите подписку, чтобы разблокировать чат с поддержкой и другие платные функции, или используйте бесплатную форму поддержки, чтобы сообщить о вашей проблеме."
       ]
     },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length } из ${ members.length } члена вашей организации используют двухфакторную аутентификацию.",
-        "${ twoFAMembers.length } из ${ members.length } членов вашей организации используют двухфакторную аутентификацию.",
-        "${ twoFAMembers.length } из ${ members.length } членов вашей организации используют двухфакторную аутентификацию.",
-        "${ twoFAMembers.length } из ${ members.length } членов вашей организации используют двухфакторную аутентификацию."
-      ]
-    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Подробнее"
@@ -6441,6 +6549,9 @@
       ],
       "for ${ price }": [
         "за ${ price }"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Настройте учетную запись с доменом Porkbun."
       ]
     },
     "mailtrial2024: Action": {
@@ -6479,11 +6590,17 @@
       "Change password": [
         "Изменить пароль"
       ],
+      "Convert to SSO": [
+        "Конвертировать в SSO"
+      ],
       "Delete": [
         "Удалить"
       ],
       "Delete and revoke invite": [
         "Удалить и отозвать приглашение"
+      ],
+      "Detach from SSO": [
+        "Отсоединить от ССО"
       ],
       "Edit": [
         "Изменить"
@@ -6541,8 +6658,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Австралийский доллар"
+      ],
       "Brazilian real": [
         "Бразильский реал"
+      ],
+      "British pound": [
+        "Британский фунт"
+      ],
+      "Canadian dollar": [
+        "Канадский доллар"
       ],
       "Euro": [
         "Евро"
@@ -7693,6 +7819,9 @@
       "1 email per month": [
         "1 письмо в месяц"
       ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 электронное письмо в месяц. Получайте последние новости о защите частной жизни и о том, что происходит во вселенной ${ BRAND_NAME }."
+      ],
       "1 email per quarter": [
         "1 письмо в квартал"
       ],
@@ -7705,8 +7834,17 @@
       "4-6 emails per year": [
         "4-6 электронных писем в год"
       ],
+      "Application notifications": [
+        "Уведомления приложения"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Критические уведомления аккаунта по-прежнему будут доставляться"
+      ],
       "Daily email notifications": [
         "Ежедневные уведомления по электронной почте"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Отключение этого удалит возможность получать уведомления в приложениях ${ BRAND_NAME }"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "В течение первого месяца использования продукта ${ BRAND_NAME }"
@@ -7714,8 +7852,14 @@
       "Email subscriptions": [
         "Подписки на рассылки"
       ],
+      "In-app notifications": [
+        "Уведомления в приложении"
+      ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participate in surveys to improve ${ BRAND_NAME } services"
+      ],
+      "Product updates": [
+        "Обновления продукта"
       ]
     },
     "Notification": {
@@ -7807,6 +7951,12 @@
       "Maybe later": [
         "Может быть позже"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Срок действия предложения истекает ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Платите ежегодно, получите наше лучшее предложение"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -7819,6 +7969,9 @@
       "Save big when you pay annually": [
         "Экономьте больше, когда платите ежегодно"
       ],
+      "Special offer": [
+        "Специальное предложение"
+      ],
       "This offer won't be shown again.": [
         "Это предложение больше не будет показано."
       ],
@@ -7827,6 +7980,9 @@
       ],
       "You currently pay": [
         "Вы оплачиваете сейчас"
+      ],
+      "Your subscription renews soon": [
+        "Ваша подписка скоро обновится"
       ]
     },
     "Offer feature": {
@@ -7872,6 +8028,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Я использую другой аккаунт ${ BRAND_NAME }"
+      ],
+      "I'd like to merge this account into another one": [
+        "Я хочу объединить этот аккаунт с другим"
       ],
       "It's missing a key feature that I need": [
         "У вас отсутствует важная функция, которая мне нужна"
@@ -8044,18 +8203,6 @@
       ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8351,11 +8498,20 @@
       "Address": [
         "Адрес"
       ],
+      "Anderson": [
+        "Андерсон"
+      ],
+      "Anytown": [
+        "Любой город"
+      ],
       "Choose a name": [
         "Задайте название"
       ],
       "Choose display name": [
         "Задайте отображаемое имя"
+      ],
+      "Company name": [
+        "Название компании"
       ],
       "Confirm": [
         "Подтвердить"
@@ -8389,6 +8545,9 @@
       ],
       "Group name": [
         "Название группы"
+      ],
+      "Main street 12": [
+        "Мейн стрит 12"
       ],
       "Other": [
         "Другое"
@@ -8431,6 +8590,12 @@
       ],
       "Start date": [
         "Дата начала"
+      ],
+      "Thomas": [
+        "Томас"
+      ],
+      "VAT number": [
+        "Номер плательщика НДС"
       ],
       "yourdomain.com": [
         "vashdomain.com"
@@ -8541,6 +8706,9 @@
       "Changing organization password": [
         "Изменение пароля организации"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Создание или доступ к нечастным аккаунтам пользователей"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "По причине смены пароля ваши полномочия администратора организации были ограничены. Указанные действия более не разрешены:"
       ]
@@ -8572,6 +8740,9 @@
       ],
       "Something went wrong": [
         "Что-то пошло не так"
+      ],
+      "The email address **${ email }** already exists as a ${ BRAND_NAME } user. Please enter the email address of a user from your identity provider.": [
+        "Адрес электронной почты **${ email }** уже существует как пользователь ${ BRAND_NAME }. Введите адрес электронной почты пользователя от вашего поставщика личных данных."
       ]
     },
     "saml: Info": {
@@ -8580,6 +8751,9 @@
       ],
       "Details": [
         "Информация"
+      ],
+      "Enter the email address of a user provided by your identity provider for **${ domainName }**": [
+        "Введите адрес электронной почты пользователя, предоставленный вашим поставщиком личных данных для **${ domainName }**."
       ],
       "Test in progress...": [
         "Выполняется проверка..."
@@ -9334,6 +9508,12 @@
         "${ n } пользователей просят вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом.",
         "${ n } пользователей просят вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом."
       ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**пользователи SSO (предоставленные вашим провайдером личных данных) будут удалены** и вам нужно буден создать их вручную для добавления обратно в вашу организацию."
+      ],
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "Пользователи **SSO будут отделены от вашего поставщика идентификации** и преобразованы в пользователей, не являющихся SSO."
+      ],
       "Access denied": [
         "Доступ запрещен"
       ],
@@ -9635,6 +9815,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Оплата каждые 2 года"
+      ],
+      "Billed every 6 months": [
+        "Списано каждые 6 месяцев"
       ],
       "Billed for 15 months": [
         "Оплата за 15 месяцев."
@@ -10016,6 +10199,9 @@
       "Keep ${ config.planName }": [
         "Сохранить ${ config.planName }"
       ],
+      "Keep subscription": [
+        "Продолжить подписку"
+      ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Обеспечьте защищенность своей команды в пути с помощью наших веб-приложений и приложений для iOS, Android, Windows, Mac и Linux."
       ],
@@ -10121,6 +10307,9 @@
       "Yearly free storage bonuses": [
         "Ежегодные бесплатные бонусы для места в хранилище"
       ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "Вы можете продолжать пользоваться всеми преимуществами вашего текущего тарифа до ${ boldedDate }."
+      ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "У вас еще есть ${ expiryDate } на подписке ${ planName }. Мы добавим остаток на счете за оставшееся время к вашему аккаунту ${ BRAND_NAME }. Перед отменой подписки убедитесь, что вы не превысили предел бесплатного тарифа. ${ learnMoreLink }"
       ],
@@ -10187,6 +10376,9 @@
       ],
       "Backup password updated": [
         "Пароль резервного копирования обновлен"
+      ],
+      "Billing details updated": [
+        "Информация о платеже обновлена"
       ],
       "Catch-all address updated": [
         "Адрес для приема всей почты домена обновлен"
@@ -10796,6 +10988,9 @@
       "Downloads": [
         "Загрузки"
       ],
+      "Edit billing address": [
+        "Изменить платежный адрес"
+      ],
       "Edit countries": [
         "Изменить страны"
       ],
@@ -10813,6 +11008,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Изменить Шлюз ${ currentName }"
+      ],
+      "Edit invoice note": [
+        "Изменить примечание к счету"
       ],
       "Edit name": [
         "Изменить имя"
@@ -11162,6 +11360,9 @@
       "User": [
         "Пользователь"
       ],
+      "User converted to SSO": [
+        "Пользователь преобразован в SSO"
+      ],
       "Users": [
         "Пользователи"
       ],
@@ -11290,6 +11491,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
       ],
+      "Copy and paste this URL into the Entity ID field of your identity provider": [
+        "Скопируйте и вставьте этот URL в поле идентификатора субъекта вашего провайдера личных данных"
+      ],
       "Device information such as operating system": [
         "Информация об устройстве, например операционная система"
       ],
@@ -11298,6 +11502,9 @@
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL конечной точки поставщика личных данных (например, https://idp.primer.com/sso/saml)."
+      ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Исключение пользователей с единым входом, чья двухфакторная идентификация обрабатывается поставщиком личных данных."
       ],
       "Feature in early access": [
         "Функция раннего доступа"
@@ -11311,8 +11518,8 @@
       "IP address (Internet Service Provider)": [
         "IP-адрес (поставщик услуг Интернета)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Члены, не использующие 2ФА, получат письмо с просьбой включить её незамедлительно."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Пользователи, которые не используют двухфакторную идентификацию, получат электронное письмо с просьбой включить ее как можно скорее. Пользователи единого входа не получат напоминание по электронной почте."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Общие политики серверов могут применяться к отдельным пользователям или группам"
@@ -11361,8 +11568,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы"
+      "Disables end-to-end email encryption for this group": [
+        "Отключает сквозное шифрование электронной почты для этой группы"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Внешний адрес - отключает сквозное шифрование электронной почты для этой группы, и этим пользователем не будут передаваться шифрованные ресурсы."

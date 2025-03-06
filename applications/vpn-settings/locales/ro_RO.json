@@ -199,6 +199,9 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete account": [
+        "Ștergere cont"
+      ],
       "Delete Gateway": [
         "Ștergere poartă de acces"
       ],
@@ -366,6 +369,9 @@
       ],
       "Go to label": [
         "Accesare etichetă"
+      ],
+      "Go to panel ${ index }": [
+        "Salt la panoul ${ index }"
       ],
       "Got it": [
         "Am înțeles"
@@ -2705,6 +2711,12 @@
       "Please select a state": [
         "Alegeți un stat"
       ],
+      "Please select at least one location before continuing.": [
+        "Selectați cel puțin un loc înainte de a continua."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Selectați cel puțin un utilizator sau grup înainte de a continua."
+      ],
       "Please set a recovery email first": [
         "Setați mai întâi un e-mail de recuperare."
       ],
@@ -2764,6 +2776,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Plata minimă acceptată este de ${ price }."
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Numele regulei trebuie să aibă între 3 și 40 de caractere."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
@@ -3623,6 +3638,21 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pictogramă cu rezoluție mică"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membru al familiei folosește autentificarea cu doi factori.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membri ai familiei folosesc autentificarea cu doi factori.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de membri ai familiei folosesc autentificarea cu doi factori."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membru folosește autentificarea cu doi factori pentru a se conecta la organizație.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membri folosesc autentificarea cu doi factori pentru a se conecta la organizație.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de membri folosesc autentificarea cu doi factori pentru a se conecta la organizație."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membru fără autentificare unică folosește autentificarea cu doi factori pentru a se conecta la organizație.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
@@ -3633,6 +3663,11 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: nu se pun în carantină sau nu se resping e-mailurile neautorizate. De obicei, se folosește această politică doar pentru depanare sau testare."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membru",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membri",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de membri"
       ],
       "${ number } city": [
         "Un oraș",
@@ -4261,7 +4296,7 @@
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Dacă aveți un domeniu personal cu ${ MAIL_APP_NAME }, puteți seta o adresă de e-mail de agregare, pentru a primi mesajele trimise către domeniul propriu, dar către o adresă de e-mail inexistentă (ex: greșeli de redactare)."
+        "Dacă aveți un domeniu personal cu ${ MAIL_APP_NAME }, puteți seta o adresă de e-mail de agregare, pentru a primi mesajele trimise către domeniul propriu, dar către o adresă de e-mail incorectă (ex: greșeli de redactare)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Dacă aveți un cod cadou, introduceți-l mai jos pentru a aplica reducerea."
@@ -4280,9 +4315,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Dacă doriți să combinați acest cont cu un altul, NU îl ștergeți."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Dacă întâmpinați probleme, suntem aici pentru a vă ajuta. ${ boldPhoneCall } sau ${ boldZoomMeeting } cu unul dintre specialiștii noștri de asistență sau deschideți o ${ boldLiveChat } pentru asistență."
@@ -4563,6 +4595,9 @@
       ],
       "Or select a particular server:": [
         "Sau selectați un server anume:"
+      ],
+      "Organization --> Groups": [
+        "Organizație -> Grupuri"
       ],
       "Organization size": [
         "Mărime organizație"
@@ -4988,6 +5023,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Aceasta va elimina conectarea unică (SSO) pentru ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Aceasta vă va elimina accesul la toate serviciile conectate și vă va șterge toate datele, inclusiv contactele, atașamentele, evenimentele, parolele și fișierele."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Aceasta vă va înlocui parola temporară. O veți folosi pentru a vă accesa contul ${ BRAND_NAME } în viitor."
       ],
@@ -5020,6 +5058,9 @@
       ],
       "to continue to ${ product }": [
         "pentru a continua cu ${ product }"
+      ],
+      "To create your first user group, go to": [
+        "Pentru a vă crea primul grup de utilizatori, accesați"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
@@ -5174,8 +5215,8 @@
       "Warning:": [
         "Avertizare:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Atenție: ștergerea este permanentă. Se elimină și accesul la toate serviciile conectate și se șterg toate contactele dvs."
+      "Warning: deleting your account is permanent.": [
+        "Avertizare: ștergerea contului este permanentă."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vă sfătuim să utilizați aplicațiile oficiale ${ VPN_APP_NAME } atunci când este posibil."
@@ -5678,6 +5719,9 @@
       "Apply policy to": [
         "Aplicare regulă la"
       ],
+      "Ask members to set up 2FA": [
+        "Solicitați membrilor să-și activeze A2F"
+      ],
       "Assertion Consumer Service URL": [
         "URL ACS (Assertion Consumer Service)"
       ],
@@ -5885,6 +5929,9 @@
       "Hide password": [
         "Ascundere parolă"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Înțeleg că va trebui să adaug imediat această adresă de e-mail la celălalt cont, pentru a evita pierderea definitivă a acestei adrese."
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5911,6 +5958,9 @@
       ],
       "Main": [
         "Principală"
+      ],
+      "Members without 2FA": [
+        "Membri fără A2F"
       ],
       "Metadata file for ${ appName }": [
         "Fișier metadate pentru ${ appName }"
@@ -6121,6 +6171,9 @@
       "Thomas": [
         "Thomas"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Pentru a ne ajuta să îmbunătățim serviciul, vă rugăm să ne explicați de ce închideți contul."
+      ],
       "Two-password mode": [
         "Mod cu două parole"
       ],
@@ -6165,9 +6218,6 @@
       ],
       "Vulnerable password": [
         "Parolă vulnerabilă"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Ne pare rău că ne părăsiți. Vă rugăm să ne explicaţi de ce plecaţi pentru a ne ajuta să îmbunătăţim serviciul."
       ],
       "Weak": [
         "Slabă"
@@ -6394,13 +6444,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Modificați-vă planul pentru a debloca asistența live și alte funcții premium sau folosiți formularul de suport gratuit pentru a raporta o problemă."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori.",
-        "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori.",
-        "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7818,6 +7861,12 @@
       "Maybe later": [
         "Poate mai târziu"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Oferta expiră ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Plătiți anual, asigurați-vă cea mai bună ofertă"
+      ],
       "Save": [
         "Economisiți"
       ],
@@ -7830,6 +7879,9 @@
       "Save big when you pay annually": [
         "Economisiți mult dacă plătiți anual"
       ],
+      "Special offer": [
+        "Ofertă specială"
+      ],
       "This offer won't be shown again.": [
         "Această ofertă nu va mai fi afișată."
       ],
@@ -7838,6 +7890,9 @@
       ],
       "You currently pay": [
         "Acum plătiți"
+      ],
+      "Your subscription renews soon": [
+        "Abonamentul se va reînnoi în curând"
       ]
     },
     "Offer feature": {
@@ -7889,6 +7944,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Folosesc un cont ${ BRAND_NAME } diferit"
+      ],
+      "I'd like to merge this account into another one": [
+        "Aș dori să combin acest cont cu un alt cont"
       ],
       "iOS": [
         "iOS"
@@ -8073,16 +8131,6 @@
       ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Partajare securizată seif (${ n } seif)",
-        "Partajare securizată seifuri (${ n } seifuri)",
-        "Partajare securizată seifuri (${ n } de seifuri)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Partajare securizată seif (${ n } seif) și legături web",
-        "Partajare securizată seifuri (${ n } seifuri) și legături web",
-        "Partajare securizată seifuri (${ n } de seifuri) și legături web"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9665,6 +9713,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturat la doi ani"
+      ],
+      "Billed every 6 months": [
+        "Facturat la fiecare 6 luni"
       ],
       "Billed for 15 months": [
         "Facturat pentru 15 luni"
@@ -11328,6 +11379,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL a punctului final de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Excluzând utilizatorii cu autentificare unică a căror A2F este gestionată de furnizorul de identitate propriu."
+      ],
       "Feature in early access": [
         "Funcție disponibilă în acces timpuriu."
       ],
@@ -11340,8 +11394,8 @@
       "IP address (Internet Service Provider)": [
         "Adresa IP (Furnizor de servicii de internet)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Membrii care nu folosesc A2F vor primi un mesaj pe e-mail solicitându-le să o activeze cât mai curând."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Membrii care nu folosesc A2F vor primi un e-mail prin care li se va cere să îl activeze cât mai curând posibil. Utilizatorii cu autentificare unică nu vor primi acest mesajul."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Regulile partajate ale serverului pot fi aplicate la utilizatori sau grupuri."
@@ -11390,8 +11444,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup."
+      "Disables end-to-end email encryption for this group": [
+        "Dezactivează criptarea bilaterală a mesajelor pentru acest grup."
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup și nici o resursă criptată nu va fi partajată cu acest utilizator."

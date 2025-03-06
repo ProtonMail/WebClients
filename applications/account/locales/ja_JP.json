@@ -379,6 +379,9 @@
       "Delete": [
         "削除"
       ],
+      "Delete account": [
+        "アカウントを削除"
+      ],
       "Delete and confirm": [
         "削除と確認"
       ],
@@ -4742,6 +4745,12 @@
       "Please select a state": [
         "州を選択してください"
       ],
+      "Please select at least one location before continuing.": [
+        "続行する前に少なくとも1つの場所を選択してください。"
+      ],
+      "Please select at least one user or group before continuing.": [
+        "続行する前に少なくとも1つのユーザーまたはグループを選択してください。"
+      ],
       "Please set a recovery email first": [
         "まず回復用メールアドレスを設定してください"
       ],
@@ -4864,6 +4873,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "最低 ${ price } より受け付けています。"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "ポリシー名は 3 文字以上 40 文字以下で入力してください。"
       ],
       "The sending key is not valid": [
         "送信用の鍵が有効ではありません"
@@ -6749,6 +6761,15 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 低画質のプレビュー"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "あなたの家族の${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } は2要素認証を使用しています。"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "あなたのメンバーの ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } が 2要素認証を使用してあなたの組織にサインインします。"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "SSO以外のメンバーの${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } は、あなたの組織にサインインするために2要素認証を使用します。"
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } は ${ PASS_APP_NAME } であなたとデータを共有したいと考えています"
       ],
@@ -6760,6 +6781,9 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: 不正なメールを隔離したり拒否したりしません。 通常、このポリシーはトラブルシューティングまたはテストにのみ使用されます。"
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } メンバー"
       ],
       "${ number } city": [
         "${ number } つの都市"
@@ -7781,9 +7805,6 @@
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "最近、パスワードをリセットしたのであれば、回復手段を使ってデータのロックを解除することができます"
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "他のアカウントと統合する場合は、このアカウントを削除しないでください。"
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "問題がある場合は、私たちがお手伝いいたします。弊社のサポート スペシャリストの 1 人に${ boldPhoneCall } または ${ boldZoomMeeting } でご相談いただくか、${ boldLiveChat } を開いてチャット サポートをご利用ください。"
       ],
@@ -8230,6 +8251,9 @@
       ],
       "Or select a particular server:": [
         "または特定のサーバーを選択:"
+      ],
+      "Organization --> Groups": [
+        "組織 --> グループ"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "組織メンバーはパスワードやPINなどで${ PASS_APP_NAME }のロックを解除しなくてはならなくなります。"
@@ -8918,6 +8942,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "これにより、${ boldDomainName } の SSO が削除されます。"
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "これにより、接続されているすべてのサービスへのアクセスが削除され、連絡先、添付ファイル、予定、パスワード、およびファイルを含むすべてのデータが削除されます。"
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "これにより、一時的なパスワードが置き換えられます。 今後、これを使用して ${ BRAND_NAME } アカウントにアクセスします。"
       ],
@@ -8959,6 +8986,9 @@
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "サービスを継続的に改善するため、アプリケーションの正常な動作を監視するためのデータを収集することがあります。この情報は、いかなる第三者サービスにも共有されません。"
+      ],
+      "To create your first user group, go to": [
+        "最初のユーザーグループを作成するには、"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "パスワードをリセットしたあともロックされたデータを復号して表示できるようにするために、回復手段を選択してください。"
@@ -9203,8 +9233,8 @@
       "Warning:": [
         "警告:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "警告: 削除を取り消すことはできません。この操作により接続されているすべてのサービスへのアクセスを削除し、すべての連絡先を削除します。"
+      "Warning: deleting your account is permanent.": [
+        "警告: アカウントを削除すると元には戻せません"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "公式の ${ VPN_APP_NAME } アプリケーションの使用をおすすめします。"
@@ -10280,6 +10310,9 @@
       "Apply policy to": [
         "ポリシーを適用"
       ],
+      "Ask members to set up 2FA": [
+        "メンバーに2要素認証を設定するように依頼"
+      ],
       "Assertion Consumer Service URL": [
         "アサーション コンシューマ サービス URL"
       ],
@@ -10673,6 +10706,9 @@
       "Hide password": [
         "パスワードを隠す"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "このメールアドレスを永久に失うことを避けるために、すぐに他のアカウントにこのメールアドレスを追加する必要があることを理解しています。"
+      ],
       "I understand the risk": [
         "リスクを承知しました"
       ],
@@ -10780,6 +10816,9 @@
       ],
       "Maximum number of words": [
         "最大単語数"
+      ],
+      "Members without 2FA": [
+        "2要素認証がないメンバー"
       ],
       "Message": [
         "メッセージ"
@@ -11141,6 +11180,9 @@
       "Tips and insights": [
         "ヒントとインサイト"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "今後の改善のために、なぜあなたが去ろうとしているのかを教えてください。"
+      ],
       "To: ${ toEmail }": [
         "宛先: ${ toEmail }"
       ],
@@ -11209,9 +11251,6 @@
       ],
       "Vulnerable password": [
         "脆弱なパスワード"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "今後の改善のため、アカウントを削除する理由をお聞かせください。"
       ],
       "Weak": [
         "弱い"
@@ -11577,9 +11616,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "組織メンバーうち、${ twoFAMembers.length }/${ members.length } 人が 2 要素認証を使用しています。"
-      ],
       "Almost there": [
         "もう少しです"
       ],
@@ -13442,6 +13478,12 @@
       "Maybe later": [
         "またあとで"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "オファーの有効期限は ${ formattedDate }です。"
+      ],
+      "Pay annually, secure our best offer": [
+        "毎年払い、安全な私たちの最高のオファー"
+      ],
       "Save": [
         "節約"
       ],
@@ -13454,6 +13496,9 @@
       "Save big when you pay annually": [
         "年払いで大幅に節約"
       ],
+      "Special offer": [
+        "特別オファー"
+      ],
       "This offer won't be shown again.": [
         "このオファーは二度と表示されません。"
       ],
@@ -13462,6 +13507,9 @@
       ],
       "You currently pay": [
         "現在の支払い方法"
+      ],
+      "Your subscription renews soon": [
+        "サブスクリプションはまもなく更新されます"
       ]
     },
     "Offer feature": {
@@ -13632,6 +13680,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "別の ${ BRAND_NAME } アカウントを使っている"
+      ],
+      "I'd like to merge this account into another one": [
+        "このアカウントを別のアカウントに統合したい"
       ],
       "Ignore group": [
         "グループを無視"
@@ -14162,12 +14213,6 @@
       ],
       "Secure vault sharing": [
         "安全な保管庫共有"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全な保管庫の共有 (${ n } 個の保管庫)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全な保管庫共有 (${ n } 個の保管庫) とリンクの共有"
       ],
       "Secure your family’s passwords and online identities": [
         "家族のパスワードとオンライン上の身元を保護する"
@@ -18974,6 +19019,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ユーザー情報プロバイダーからのエンドポイントURL(例：https://idp.example.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "シングルサインオンユーザーを除き、2要素認証がアイデンティティプロバイダによって処理されるユーザー"
+      ],
       "Feature in early access": [
         "早期アクセスの機能"
       ],
@@ -18995,8 +19043,8 @@
       "IP address (Internet Service Provider)": [
         "IPアドレス(インターネットサービスプロバイダー)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "2FA を使用していないメンバーには、できるだけ早く有効にするよう求めるメールが届きます。"
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "2要素認証を使用しないメンバーには、できるだけ早く有効にするように求めるメールが届きます。 シングルサインオンユーザーはメール通知を受信しません。"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "[送信済み] フォルダーまたは [下書き] フォルダー内のメッセージは、別のフォルダーに移動した場合でも、引き続きそのフォルダーに表示されます。"
@@ -19132,8 +19180,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効"
+      "Disables end-to-end email encryption for this group": [
+        "このグループのエンドツーエンドのメール暗号化を無効"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"

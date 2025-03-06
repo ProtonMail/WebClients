@@ -45,6 +45,9 @@
       "Add": [
         "Tambah"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Tambah ${ photos.length } foto ke album baru"
+      ],
       "Add account": [
         "Tambah akun"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add to group": [
         "Tambah ke grup"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Tambah ke \"${ album.name }\" (${ album.photoCount } foto)"
       ],
       "Album name": [
         "Nama album"
@@ -294,6 +300,9 @@
       "Delete version": [
         "Hapus versi"
       ],
+      "Delete without saving": [
+        "Hapus tanpa menyimpan"
+      ],
       "Deselect all": [
         "Batalkan semua pilihan"
       ],
@@ -308,6 +317,12 @@
       ],
       "Display navigation bar": [
         "Tampilkan bilah navigasi"
+      ],
+      "Display next": [
+        "Tampilkan berikutnya"
+      ],
+      "Display previous": [
+        "Tampilkan sebelumnya"
       ],
       "Done": [
         "Selesai"
@@ -329,6 +344,9 @@
       ],
       "Download logs": [
         "Unduh log"
+      ],
+      "Download photo": [
+        "Unduh foto"
       ],
       "Download without scanning": [
         "Unduh tanpa memindai"
@@ -480,6 +498,9 @@
       "Increase": [
         "Tambah"
       ],
+      "Join album": [
+        "Gabung ke album"
+      ],
       "Keep my subscription": [
         "Pertahankan langganan saya"
       ],
@@ -521,6 +542,9 @@
       ],
       "Manage share": [
         "Kelola pembagian"
+      ],
+      "Mark as favorite": [
+        "Tandai sebagai favorit"
       ],
       "Mark as resolved": [
         "Tandai sebagai terselesaikan"
@@ -666,6 +690,12 @@
       "Remove device": [
         "Hapus perangkat"
       ],
+      "Remove from album": [
+        "Hapus dari album"
+      ],
+      "Remove from favorites": [
+        "Hapus dari favorit"
+      ],
       "Remove from this list": [
         "Hapus dari daftar ini"
       ],
@@ -675,8 +705,14 @@
       "Remove me": [
         "Hapus saya"
       ],
+      "Remove without saving": [
+        "Hapus tanpa menyimpan"
+      ],
       "Rename": [
         "Ubah nama"
+      ],
+      "Rename album": [
+        "Ubah nama album"
       ],
       "Replace file": [
         "Ubah berkas"
@@ -744,8 +780,14 @@
       "Save": [
         "Simpan"
       ],
+      "Save and remove": [
+        "Simpan dan hapus"
+      ],
       "Save changes": [
         "Simpan perubahan"
+      ],
+      "Save photos and remove": [
+        "Simpan foto dan hapus"
       ],
       "Search": [
         "Pencarian"
@@ -794,6 +836,9 @@
       ],
       "Share": [
         "Bagikan"
+      ],
+      "Share album": [
+        "Bagikan album"
       ],
       "Share file": [
         "Bagikan berkas"
@@ -3658,8 +3703,22 @@
       "Create new album": [
         "Buat album baru"
       ],
+      "Rename": [
+        "Ubah nama"
+      ],
       "Security Center": [
         "Pusat Keamanan"
+      ]
+    },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Tambah ${ photos.length } foto ke"
+      ],
+      "All albums": [
+        "Seluruh album"
+      ],
+      "Recent": [
+        "Terkini"
       ]
     },
     "Hint": {
@@ -4008,6 +4067,9 @@
       "${ album.photoCount } item": [
         "${ album.photoCount } item"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } berhasil dihapus"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
@@ -4241,6 +4303,9 @@
       ],
       "Attention required": [
         "Diperlukan perhatian"
+      ],
+      "Automated Recovery ${ formattedDate }": [
+        "Pemulihan Otomatis ${ formattedDate }"
       ],
       "Available": [
         "Tersedia"
@@ -4824,6 +4889,9 @@
       "of": [
         "dari"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Setelah proses ini rampung, Anda akan dapat menemukan salinan data yang dipulihkan pada folder baru bernama \"Pemulihan Otomatis (tanggal hari ini)\". Salinan data ini tidak akan dihitung terhadap kuota ruang penyimpanan Anda."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Salah satu drive Anda terkunci. Hal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi yang berlangsung baru-baru ini."
       ],
@@ -4848,6 +4916,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Sistem kami mendeteksi bahwa pemulihan Anda sebelumnya tidak sepenuhnya rampung, dan sebagian berkas Anda berisiko untuk tidak pulih sepenuhnya. Oleh karenanya, kami telah memulai ulang proses pemulihan ini secara otomatis demi memastikan segala sesuatunya dapat dipulihkan secara utuh."
+      ],
       "Owner": [
         "Pemilik"
       ],
@@ -4871,6 +4942,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "Enkripsi PGP/MIME akan secara otomatis mengirim pesan dengan mode komposer yang saat ini digunakan."
+      ],
+      "Photo is not saved to your library": [
+        "Foto tidak tersimpan pada pustaka Anda"
       ],
       "Photo is set as album cover": [
         "Foto dipasang sebagai sampul album"
@@ -5115,6 +5189,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Beberapa berkas Anda tidak lagi dapat diakses. Pulihkan akses ke berkas Anda. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Beberapa foto dalam album ini tidak tersimpan di lini masa Anda. Menghapus album ini akan menghapus foto-foto tersebut."
+      ],
       "Something went wrong, please try again later.": [
         "Ada sesuatu yang salah, silakan coba lagi nanti."
       ],
@@ -5202,6 +5279,9 @@
       "This item already exists in your library": [
         "Item ini telah ada pada pustaka Anda"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Item yang dipilih tidak tersimpan dalam pustaka Foto Anda. Jika Anda menghapusnya dari album ini, Anda akan kehilangan akses secara permanen."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
       ],
@@ -5213,6 +5293,9 @@
       ],
       "This month": [
         "Bulan ini"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Ini hanya akan menghapus album. Foto-foto Anda akan tetap di lini masa Anda. Tindakan ini tidak dapat diurungkan."
       ],
       "This will permanently delete the file you uploaded.": [
         "Tindakan ini akan menghapus berkas yang telah Anda unggah secara permanen."
@@ -5409,6 +5492,9 @@
       "We need to authenticate your payment with your bank.": [
         "Kami perlu untuk mengautentikasi pembayaran Anda dengan bank Anda."
       ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Kami memohon maaf yang sebesar-besarnya atas ketidaknyamanan yang mungkin Anda alami."
+      ],
       "We use 3-D Secure to protect your payments": [
         "Kami menggunakan 3-D Secure untuk melindungi pembayaran Anda"
       ],
@@ -5450,6 +5536,12 @@
       ],
       "Would you like to restore your files?": [
         "Apakah Anda ingin untuk memulihkan berkas Anda?"
+      ],
+      "Would you like to save it before removing?": [
+        "Apakah Anda ingin menyimpannya sebelum menghapus?"
+      ],
+      "Would you like to save them before removing?": [
+        "Apakah Anda ingin menyimpannya sebelum menghapus?"
       ],
       "Writing assistant": [
         "Asisten penulisan"
@@ -5616,6 +5708,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
+      "Your photo has been removed from the album": [
+        "Foto Anda telah dihapus dari album"
+      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Paket Anda terbatas pada 10 versi hingga 7 hari"
       ],
@@ -5635,6 +5730,14 @@
     "info": {
       "Selected color:": [
         "Warna terpilih:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Bagaimana cara mengirim pembayaran tunai?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Silakan ikuti instruksi yang tertera pada artikel berikut: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -6343,6 +6446,9 @@
     "Link": {
       "Add a gift code": [
         "Tambah kode hadiah"
+      ],
+      "Albums": [
+        "Album"
       ],
       "All mail": [
         "Semua surat"
@@ -7833,6 +7939,12 @@
       "Access updated and shared": [
         "Akses diperbarui dan dibagikan"
       ],
+      "Album failed to be renamed": [
+        "Nama album gagal diubah"
+      ],
+      "Album renamed successfully": [
+        "Nama album berhasil diubah"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Seluruh item akan dihapus secara permanen dari sampah"
       ],
@@ -8041,6 +8153,12 @@
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Penawaran akan berakhir pada ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Bayar per tahun, kantongi penawaran terbaik kami"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -8053,11 +8171,20 @@
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
       ],
+      "Special offer": [
+        "Penawaran spesial"
+      ],
       "This offer won't be shown again.": [
         "Penawaran ini tidak akan lagi ditampilkan."
       ],
+      "When you switch from a monthly to annual subscription.": [
+        "Pada saat Anda beralih dari langganan bulanan ke langganan tahunan."
+      ],
       "You currently pay": [
         "Anda saat ini membayar"
+      ],
+      "Your subscription renews soon": [
+        "Langganan Anda akan segera diperbarui"
       ]
     },
     "Offer feature": {
@@ -8272,12 +8399,6 @@
       ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Pembagian brankas aman (${ n } brankas)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9249,6 +9370,9 @@
       "Billed every 2 years": [
         "Ditagihkan setiap 2 tahun"
       ],
+      "Billed every 6 months": [
+        "Ditagih setiap 6 bulan"
+      ],
       "Billed for 15 months": [
         "Tertagih selama 15 bulan"
       ],
@@ -9964,6 +10088,9 @@
       "Auto-deletion is active": [
         "Penghapusan otomatis aktif"
       ],
+      "Automatic Recovery in Progress": [
+        "Pemulihan Otomatis Sedang Berlangsung"
+      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -10075,11 +10202,11 @@
       "Delete ${ count } contact group": [
         "Hapus ${ count } grup kontak"
       ],
-      "Delete ${ item.name }?": [
-        "Hapus ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Hapus ${ links.length } item?"
+      ],
+      "Delete ${ name }?": [
+        "Hapus ${ name }?"
       ],
       "Delete ${ value }": [
         "Hapus ${ value }"
@@ -10344,6 +10471,9 @@
       ],
       "Remove device?": [
         "Hapus perangkat?"
+      ],
+      "Remove item?": [
+        "Hapus item?"
       ],
       "Rename a file": [
         "Ubah nama berkas"
