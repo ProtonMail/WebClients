@@ -10569,6 +10569,12 @@
       "Maybe later": [
         "Poate mai târziu"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Oferta expiră ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Plătiți anual, asigurați-vă cea mai bună ofertă"
+      ],
       "Save": [
         "Economisiți"
       ],
@@ -10581,6 +10587,9 @@
       "Save big when you pay annually": [
         "Economisiți mult dacă plătiți anual"
       ],
+      "Special offer": [
+        "Ofertă specială"
+      ],
       "This offer won't be shown again.": [
         "Această ofertă nu va mai fi afișată."
       ],
@@ -10589,6 +10598,9 @@
       ],
       "You currently pay": [
         "Acum plătiți"
+      ],
+      "Your subscription renews soon": [
+        "Abonamentul se va reînnoi în curând"
       ]
     },
     "Offer feature": {
@@ -10860,16 +10872,6 @@
       ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Partajare securizată seif (${ n } seif)",
-        "Partajare securizată seifuri (${ n } seifuri)",
-        "Partajare securizată seifuri (${ n } de seifuri)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Partajare securizată seif (${ n } seif) și legături web",
-        "Partajare securizată seifuri (${ n } seifuri) și legături web",
-        "Partajare securizată seifuri (${ n } de seifuri) și legături web"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12215,6 +12217,9 @@
       "Billed every 2 years": [
         "Facturat la doi ani"
       ],
+      "Billed every 6 months": [
+        "Facturat la fiecare 6 luni"
+      ],
       "Billed for 15 months": [
         "Facturat pentru 15 luni"
       ],
@@ -12297,47 +12302,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pentru ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription reminder": {
@@ -12604,6 +12568,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -13981,6 +13986,11 @@
         "Astăzi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
@@ -14062,11 +14072,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Tor out of date": {

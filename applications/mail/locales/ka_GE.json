@@ -10364,6 +10364,12 @@
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "შეთავაზების ვადა იწურება ${ formattedDate }-ზე."
+      ],
+      "Pay annually, secure our best offer": [
+        "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
+      ],
       "Save": [
         "შენახვა"
       ],
@@ -10376,6 +10382,9 @@
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
       ],
+      "Special offer": [
+        "სპეციალური შეთავაზება"
+      ],
       "This offer won't be shown again.": [
         "ამ შემოთავაზებას აღარ გაჩვენებთ."
       ],
@@ -10384,6 +10393,9 @@
       ],
       "You currently pay": [
         "ამჟამად იხდით"
+      ],
+      "Your subscription renews soon": [
+        "თქვენი გამოწერა მალე განახლდება"
       ]
     },
     "Offer feature": {
@@ -10652,14 +10664,6 @@
       ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "დაცული საცავის გაზიარება (${ n } საცავი)",
-        "დაცული საცავის გაზიარება (${ n } საცავი)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება",
-        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11970,6 +11974,9 @@
       "Billed every 2 years": [
         "გადახდა 2 წელიწადში ერთხელ"
       ],
+      "Billed every 6 months": [
+        "გადახდა 6 თვეში ერთხელ"
+      ],
       "Billed for 15 months": [
         "გადაიხადეთ 15 თვისთვის"
       ],
@@ -12047,47 +12054,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription reminder": {
@@ -12345,6 +12311,47 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -13679,6 +13686,11 @@
         "დღეს"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "ავტომატური ნიშნავს ფორმატს, რომლითაც ელფოსტა ამ მომხმარებელთან იგზავნება. უბრალო ტექსტი ნიშნავს, რომ შეტყობინების ტექსტი გაგზავნის წინ მაინც გარდაიქმება უბრალო ტექსტად."
@@ -13760,11 +13772,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "ამ ელფოსტიდან გამჭოლი შიფრაციით დაშიფრული ელფოსტების გასაგზავნად ატვირთეთ საჯარო გასაღები"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ]
     },
     "Tor out of date": {
