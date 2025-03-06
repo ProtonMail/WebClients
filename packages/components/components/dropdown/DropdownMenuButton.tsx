@@ -7,7 +7,6 @@ import clsx from '@proton/utils/clsx';
 export interface Props extends Omit<ComponentPropsWithRef<'button'>, 'color'> {
     loading?: boolean;
     isSelected?: boolean;
-    makeSelectedCliquable?: boolean;
     /*
      * Used by DropdownMenu to add CSS classes to the parent li
      */
@@ -26,7 +25,6 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
             loading,
             children,
             fakeDisabled,
-            makeSelectedCliquable,
             liClassName, // eslint-disable-line no-unused-vars, @typescript-eslint/no-unused-vars
             actionType, // eslint-disable-line no-unused-vars, @typescript-eslint/no-unused-vars
             ...rest
@@ -41,7 +39,6 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
                 className={clsx([
                     'dropdown-item-button w-full px-4 py-2',
                     isSelected && 'dropdown-item--is-selected',
-                    makeSelectedCliquable && 'dropdown-item--is-selected-cliquable',
                     fakeDisabled && 'dropdown-item--fake-disabled',
                     className,
                 ])}
