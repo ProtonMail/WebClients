@@ -305,6 +305,9 @@
       "Delete version": [
         "Elimina la versió"
       ],
+      "Delete without saving": [
+        "Elimina sense desar"
+      ],
       "Deselect all": [
         "Desseleccionar-ho tot"
       ],
@@ -319,6 +322,12 @@
       ],
       "Display navigation bar": [
         "Mostra la barra de navegació"
+      ],
+      "Display next": [
+        "Mostra següent"
+      ],
+      "Display previous": [
+        "Mostra anterior"
       ],
       "Done": [
         "Fet"
@@ -495,6 +504,9 @@
       "Increase": [
         "Incrementa"
       ],
+      "Join album": [
+        "Uneix-m'hi"
+      ],
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
@@ -536,6 +548,9 @@
       ],
       "Manage share": [
         "Gestiona la compartició"
+      ],
+      "Mark as favorite": [
+        "Marca com a favorit"
       ],
       "Mark as resolved": [
         "Marca com a resolt"
@@ -684,6 +699,9 @@
       "Remove from album": [
         "Esborra de l'àlbum"
       ],
+      "Remove from favorites": [
+        "Suprimeix dels favorits"
+      ],
       "Remove from this list": [
         "Esborra de la llista"
       ],
@@ -693,7 +711,7 @@
       "Remove me": [
         "Esborra'm"
       ],
-      "Remove Without Saving": [
+      "Remove without saving": [
         "Esborra sense desar"
       ],
       "Rename": [
@@ -768,11 +786,14 @@
       "Save": [
         "Desa"
       ],
-      "Save and Remove": [
+      "Save and remove": [
         "Desa i esborra"
       ],
       "Save changes": [
         "Desa els canvis"
+      ],
+      "Save photos and remove": [
+        "Desa les fotos i esborra"
       ],
       "Search": [
         "Cerca"
@@ -3713,6 +3734,9 @@
       "Create new album": [
         "Crea un àlbum"
       ],
+      "Rename": [
+        "Canvia el nom"
+      ],
       "Security Center": [
         "Centre de seguretat"
       ]
@@ -4088,6 +4112,9 @@
         "${ album.photoCount } element",
         "${ album.photoCount } elements"
       ],
+      "${ albumName } has been successfully deleted": [
+        "L'àlbum ${ albumName } s'ha eliminat."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -4148,6 +4175,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } a Play Store"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } us ha convidat a unir-vos a **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } error",
@@ -4996,6 +5026,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envia automàticament el missatge utilitzant el mode d'editor actual."
       ],
+      "Photo is not saved to your library": [
+        "La foto no es desa a la vostra biblioteca."
+      ],
       "Photo is set as album cover": [
         "La foto s'ha establert com a portada de l'àlbum."
       ],
@@ -5241,6 +5274,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alguns dels vostres arxius ja no són accessibles. Restaureu l'accés als vostres arxius. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Algunes fotos d'aquest àlbum no estan desades a la vostra cronologia. Eliminar aquest àlbum eliminarà aquestes fotos de manera permanent."
+      ],
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament. Intenteu-ho de nou més tard."
       ],
@@ -5328,8 +5364,9 @@
       "This item already exists in your library": [
         "Aquest element ja existeix a la biblioteca"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Aquest element no està desat a la vostra biblioteca de fotos. Si l'elimineu d'aquest àlbum, hi perdreu l'accés permanentment. Voleu desar-lo abans de suprimir-lo?"
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Aquest element no està desat a la vostra biblioteca de fotos. Si l'elimineu d'aquest àlbum, perdreu l'accés a ell de manera permanent.",
+        "Alguns dels elements seleccionats no estan desats a la vostra biblioteca de fotos. Si els elimineu d'aquest àlbum, perdreu l'accés a ells de manera permanent."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
@@ -5342,6 +5379,9 @@
       ],
       "This month": [
         "Aquest mes"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Això només eliminarà l'àlbum. Les vostres fotos romandran a la vostra cronologia. Aquesta acció no es pot desfer."
       ],
       "This will permanently delete the file you uploaded.": [
         "Això eliminarà permanentment el fitxer que heu carregat."
@@ -5582,6 +5622,13 @@
       ],
       "Would you like to restore your files?": [
         "Voleu restaurar els vostres fitxers?"
+      ],
+      "Would you like to save it before removing?": [
+        "Voleu desar-ho abans d'eliminar-ho?",
+        "Voleu desar-los abans d'eliminar-los?"
+      ],
+      "Would you like to save them before removing?": [
+        "Voleu desar-los abans d'eliminar-los?"
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
@@ -8038,6 +8085,12 @@
       "Access updated and shared": [
         "S'ha actualitzat i compartit l'accés"
       ],
+      "Album failed to be renamed": [
+        "No s'ha pogut canviar el nom l'àlbum."
+      ],
+      "Album renamed successfully": [
+        "S'ha canviat el nom de l'àlbum."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
       ],
@@ -8271,6 +8324,9 @@
       "Save big when you pay annually": [
         "Estalvieu de debò pagant anualment!"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "This offer won't be shown again.": [
         "Aquesta oferta no es tornarà a mostrar."
       ],
@@ -8496,14 +8552,6 @@
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Compartició segura de caixes fortes (${ n } caixa forta)",
-        "Compartició segura de caixes fortes (${ n } caixes fortes)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartició segura de caixes fortes (${ n } caixa forta) i compartició d'enllaços",
-        "Compartició segura de caixes fortes (${ n } caixes fortes) i compartició d'enllaços"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9497,6 +9545,9 @@
       "Billed every 2 years": [
         "Facturació cada 2 anys"
       ],
+      "Billed every 6 months": [
+        "Facturació cada 6 mesos"
+      ],
       "Billed for 15 months": [
         "Facturació per 15 mesos"
       ],
@@ -10355,11 +10406,11 @@
         "Eliminar ${ count } grup de contactes",
         "Eliminar ${ count } grups de contactes"
       ],
-      "Delete ${ item.name }?": [
-        "Voleu eliminar ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Voleu eliminar ${ links.length } elements?"
+      ],
+      "Delete ${ name }?": [
+        "Elimina ${ name }?"
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
@@ -10627,8 +10678,9 @@
       "Remove device?": [
         "Voleu esborrar el dispositiu?"
       ],
-      "Remove items": [
-        "Esborra els elements"
+      "Remove item?": [
+        "Esborra l'element?",
+        "Esborra els elements?"
       ],
       "Rename a file": [
         "Canvia el nom"

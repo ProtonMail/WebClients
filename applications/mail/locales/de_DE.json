@@ -385,7 +385,7 @@
         "Alias deaktivieren"
       ],
       "Disabling alias": [
-        "Alias deaktivieren"
+        "Alias wird deaktiviert"
       ],
       "Discard": [
         "Verwerfen"
@@ -1379,7 +1379,7 @@
         "Farbschema „${ label }“ verwenden"
       ],
       "Use ${ PASS_APP_NAME }": [
-        "Benutze ${ PASS_APP_NAME }"
+        "${ PASS_APP_NAME } verwenden"
       ],
       "Use a different card": [
         "Eine andere Karte verwenden"
@@ -1467,7 +1467,7 @@
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
-        "Dein E-Mail Schreibeisstent"
+        "Dein E-Mail-Schreibassistent"
       ],
       "Zoom in": [
         "Vergrößern"
@@ -6811,7 +6811,7 @@
         "Monatlich ${ onDayString }"
       ],
       "More infos": [
-        "Weitere Infos"
+        "Weitere Informationen"
       ],
       "More refine actions": [
         "Weitere Verbesserungsaktionen"
@@ -6969,7 +6969,7 @@
         "Bitte teile uns mit, was das Problem ist"
       ],
       "Please share what you expected": [
-        "Bitte teil was du erwartet hast"
+        "Bitte teile deine Erwartungen"
       ],
       "Please try again in a few moments": [
         "Bitte versuche es in Kürze erneut."
@@ -10405,7 +10405,7 @@
         "Jährlich zahlen, unser bestes Angebot sichern"
       ],
       "Save": [
-        "Sparen"
+        "Spare"
       ],
       "Save ${ prices.savedPercentage }%": [
         "Spare ${ prices.savedPercentage }%"
@@ -10415,6 +10415,9 @@
       ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"
+      ],
+      "Special offer": [
+        "Sonderangebot"
       ],
       "This offer won't be shown again.": [
         "Dieses Angebot wird nicht wieder angezeigt."
@@ -10698,14 +10701,6 @@
       ],
       "Secure vault sharing": [
         "Sicheres Teilen von Tresoren"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Sichere Tresorfreigabe (${ n } Tresor)",
-        "Sichere Tresorfreigabe (${ n } Tresore)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Sichere Tresorfreigabe (${ n } Tresor) und Linkfreigabe",
-        "Sichere Tresorfreigabe (${ n } Tresore) und Linkfreigabe"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12022,6 +12017,9 @@
       "Billed every 2 years": [
         "Wird alle 2 Jahre abgerechnet"
       ],
+      "Billed every 6 months": [
+        "Wird alle 6 Monate abgerechnet"
+      ],
       "Billed for 15 months": [
         "Bezahlt für 15 Monate"
       ],
@@ -12099,47 +12097,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription reminder": {
@@ -12400,6 +12357,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -13734,6 +13732,11 @@
         "Heute"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "„Automatisch“ zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
@@ -13815,11 +13818,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Tor out of date": {

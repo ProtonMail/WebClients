@@ -1,1243 +1,1243 @@
 {
   "headers": {
-    "plural-forms": "nplurals=1; plural=0;",
-    "language": "id_ID"
+    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "language": "zh_CN"
   },
   "contexts": {
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+        "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "${ name } dan 1 kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+        "检测到 ${ name } 和 1 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Kebocoran potensial ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+        "检测到潜在的 ${ name } 泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息并采取措施。${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Potensi kebocoran dari ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+        "检测到来自 ${ name } 的潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息并采取措施。${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Potensi kebocoran dari ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+        "检测到来自 ${ name } 的潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+        "您的信息至少涉及一次数据泄露。请开启 ${ DARK_WEB_MONITORING_NAME } 查看详情并采取措施。${ link }"
       ]
     },
     "Action": {
       "Accept": [
-        "Terima"
+        "接受"
       ],
       "Accept and view the item": [
-        "Terima dan lihat item"
+        "接受并查看项目"
       ],
       "Add": [
-        "Tambah"
+        "添加"
       ],
       "Add account": [
-        "Tambah akun"
+        "添加帐户"
       ],
       "Add current URL": [
-        "Tambahkan URL saat ini"
+        "添加当前 URL"
       ],
       "Add custom domain": [
-        "Tambahkan domain khusus"
+        "添加自定义域名"
       ],
       "Add domain": [
-        "Tambah domain"
+        "添加域名"
       ],
       "Add forwarding mailbox": [
-        "Tambah kotak surat penerusan"
+        "添加转发邮箱"
       ],
       "Add mailbox": [
-        "Tambahkan kotak surat"
+        "添加邮箱"
       ],
       "Add more": [
-        "Tambahkan lagi"
+        "添加更多"
       ],
       "Add new item": [
-        "Tambahkan item baru"
+        "添加新项目"
       ],
       "Add section": [
-        "Tambahkan bagian"
+        "添加分组"
       ],
       "Add username field": [
-        "Tambahkan kolom nama pengguna"
+        "添加用户名字段"
       ],
       "Admin panel": [
-        "Panel admin"
+        "管理面板"
       ],
       "Advanced": [
-        "Opsi lanjutan"
+        "高级"
       ],
       "Advanced options": [
-        "Opsi lanjutan"
+        "高级选项"
       ],
       "Apply lifetime coupon code": [
-        "Terapkan kode kupon Lifetime"
+        "使用终身优惠券代码"
       ],
       "Authenticate": [
-        "Autentikasi"
+        "认证"
       ],
       "Back": [
-        "Kembali"
+        "上一步"
       ],
       "Block contact": [
-        "Blokir kontak"
+        "屏蔽联系人"
       ],
       "Bulk delete items from trash": [
-        "Hapus banyak item sekaligus dari sampah"
+        "从回收站中批量删除项目"
       ],
       "Bulk move items to another vault": [
-        "Pindahkan banyak item sekaligus ke brankas lainnya"
+        "批量移动项目至另一个保险库"
       ],
       "Bulk move items to trash": [
-        "Pindahkan banyak item sekaligus ke sampah"
+        "批量移动项目至回收站"
       ],
       "Bulk restore items from trash": [
-        "Pulihkan banyak item sekaligus dari sampah"
+        "从回收站中批量还原项目"
       ],
       "Bulk select items": [
-        "Pilih banyak item sekaligus"
+        "批量选择项目"
       ],
       "Cancel": [
-        "Batal"
+        "取消"
       ],
       "Cancel email change": [
-        "Batalkan perubahan email"
+        "取消邮箱更改"
       ],
       "Change": [
-        "Ubah"
+        "更改"
       ],
       "Change email": [
-        "Ubah email"
+        "更换邮箱"
       ],
       "Check DNS": [
-        "Periksa DNS"
+        "检查 DNS"
       ],
       "Check settings": [
-        "Periksa pengaturan"
+        "检查设置"
       ],
       "Choose a file or drag it here": [
-        "Pilih berkas atau taruh di sini"
+        "选择文件或将文件拖至此处"
       ],
       "Clear": [
-        "Bersihkan"
+        "清除"
       ],
       "Clear search": [
-        "Hapus pencarian"
+        "清除搜索条件"
       ],
       "Close": [
-        "Tutup"
+        "关闭"
       ],
       "Close advanced options": [
-        "Tutup opsi lanjutan"
+        "关闭进阶选项"
       ],
       "Close navigation": [
-        "Tutup navigasi"
+        "关闭导航栏"
       ],
       "Confirm": [
-        "Konfirmasi"
+        "确定"
       ],
       "Confirm access": [
-        "Konfirmasi akses"
+        "确认访问"
       ],
       "Confirm all": [
-        "Konfirmasi semua"
+        "确认全部"
       ],
       "Continue": [
-        "Lanjutkan"
+        "继续"
       ],
       "Continue offline": [
-        "Lanjut secara offline"
+        "保持离线"
       ],
       "Copy and close": [
-        "Salin dan tutup"
+        "复制并关闭"
       ],
       "Copy forwarding address": [
-        "Salin alamat penerusan"
+        "复制转发地址"
       ],
       "Copy link": [
-        "Salin tautan"
+        "复制链接"
       ],
       "Copy to clipboard": [
-        "Salin ke papan klip"
+        "复制到剪贴板"
       ],
       "Create": [
-        "Buat"
+        "创建"
       ],
       "Create a ${ BRAND_NAME } account": [
-        "Buat akun ${ BRAND_NAME }"
+        "创建 ${ BRAND_NAME } 账户"
       ],
       "Create a new vault": [
-        "Buat brankas baru"
+        "创建新保险库"
       ],
       "Create alias": [
-        "Buat alias"
+        "创建别名"
       ],
       "Create card": [
-        "Buat kartu"
+        "创建卡片"
       ],
       "Create contact": [
-        "Buat kontak"
+        "创建联系人"
       ],
       "Create identity": [
-        "Buat identitas"
+        "创建身份"
       ],
       "Create item": [
-        "Buat item"
+        "新增项目"
       ],
       "Create login": [
-        "Buat entri masuk"
+        "创建登录"
       ],
       "Create new items": [
-        "Buat item baru"
+        "创建新项目"
       ],
       "Create note": [
-        "Buat catatan"
+        "创建笔记"
       ],
       "Create vault": [
-        "Buat brankas"
+        "创建保险库"
       ],
       "Creating vault": [
-        "Membuat brankas"
+        "正在创建保险库"
       ],
       "Custom section": [
-        "Bagian khusus"
+        "自定义选项"
       ],
       "Delete": [
-        "Hapus"
+        "删除"
       ],
       "Delete alias": [
-        "Hapus alias"
+        "删除别名"
       ],
       "Delete all": [
-        "Hapus semua"
+        "全部删除"
       ],
       "Delete it, I will never need it": [
-        "Lanjut hapus, saya tidak akan butuh alias ini lagi"
+        "删除它，我不在需要这个了"
       ],
       "Delete mailbox": [
-        "Hapus kotak surat"
+        "删除邮箱"
       ],
       "Delete password": [
-        "Hapus kata sandi"
+        "删除密码"
       ],
       "Delete permanently": [
-        "Hapus secara permanen"
+        "永久删除"
       ],
       "Delete vault": [
-        "Hapus brankas"
+        "删除保险库"
       ],
       "Deselect": [
-        "Lepas pilihan"
+        "取消选择"
       ],
       "Disable alias": [
-        "Nonaktifkan alias"
+        "禁用别名"
       ],
       "Disable instead": [
-        "Nonaktifkan saja"
+        "改为禁用"
       ],
       "Disable this alias to stop receiving emails sent to this alias": [
-        "Nonaktifkan alias ini untuk berhenti menerima email yang terkirim ke alias ini"
+        "禁用此别名以停止接收发送到此别名的邮件"
       ],
       "Discard": [
-        "Buang"
+        "放弃"
       ],
       "Dismiss": [
-        "Abaikan"
+        "忽略"
       ],
       "Download this CSV template": [
-        "Unduh template CSV ini"
+        "下载CSV模板"
       ],
       "Edit": [
-        "Sunting"
+        "更改"
       ],
       "Edit vault": [
-        "Sunting brankas"
+        "编辑保险库"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
-        "Aktfkan ${ DARK_WEB_MONITORING_NAME }"
+        "启用 ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "Aktifkan alias ini untuk menerima email yang terkirim ke alias ini"
+        "启用此别名以接收发送到此别名的邮件"
       ],
       "Exclude from monitoring": [
-        "Kecualikan dari pemantauan"
+        "从监测中移除"
       ],
       "Export": [
-        "Ekspor"
+        "导出"
       ],
       "Fill password": [
-        "Isi kata sandi"
+        "填写密码"
       ],
       "Filter vault items": [
-        "Saring item brankas"
+        "筛选保险库项目"
       ],
       "Generate alias": [
-        "Hasilkan alias"
+        "生成别名"
       ],
       "Generate password": [
-        "Hasilkan kata sandi"
+        "生成密码"
       ],
       "Generate secure link": [
-        "Hasilkan tautan aman"
+        "生成安全链接"
       ],
       "Generated passwords": [
-        "Kata sandi yang dihasilkan"
+        "生成的密码"
       ],
       "Generating secure link...": [
-        "Membuat tautan aman..."
+        "正在生成安全链接..."
       ],
       "Get ${ PASS_APP_NAME }": [
-        "Dapatkan ${ PASS_APP_NAME }"
+        "开通 ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
-        "Dapatkan Pass versi mobile"
+        "获取移动应用"
       ],
       "Get Pass Business": [
-        "Dapatkan Pass Business"
+        "获取 Pass Business"
       ],
       "Get Pass Plus": [
-        "Dapatkan Pass Plus"
+        "获取 Pass Plus"
       ],
       "Get Started": [
-        "Mulai"
+        "立即体验"
       ],
       "Hide": [
-        "Sembunyikan"
+        "隐藏"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
-        "Bagaimana cara mengekspor data saya dari ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+        "如何从${ PROVIDER_INFO_MAP[form.values.provider].title }导出我的数据？"
       ],
       "How to update ${ PASS_APP_NAME } on Linux": [
-        "Cara memperbarui ${ PASS_APP_NAME } di Linux"
+        "如何在 Linux 上更新${ PASS_APP_NAME }"
       ],
       "How to use ${ PASS_APP_NAME }": [
-        "Cara menggunakan ${ PASS_APP_NAME }"
+        "如何使用${ PASS_APP_NAME }"
       ],
       "Import": [
-        "Impor"
+        "导入"
       ],
       "Importing": [
-        "Mengimpor"
+        "正在导入"
       ],
       "Include in monitoring": [
-        "Sertakan dalam pemantauan"
+        "纳入监测中"
       ],
       "Install extension": [
-        "Pasang ekstensi"
+        "安装扩展"
       ],
       "Invite more...": [
-        "Undang lebih banyak pengguna..."
+        "邀请更多..."
       ],
       "Invite others": [
-        "Undang yang lain"
+        "邀请他人"
       ],
       "Join our Reddit": [
-        "Gabung ke Reddit kami"
+        "加入我们的 Reddit"
       ],
       "Join shared vault": [
-        "Bergabung ke brankas bersama"
+        "加入共享保险库"
       ],
       "Learn more": [
-        "Pelajari lebih lanjut"
+        "了解详情"
       ],
       "Leave": [
-        "Tinggalkan"
+        "离开"
       ],
       "Leave vault": [
-        "Tinggalkan brankas"
+        "离开保险库"
       ],
       "Link copied to clipboard": [
-        "Tautan disalin ke papan klip"
+        "链接已复制到剪贴板"
       ],
       "Link expires after": [
-        "Tautan akan kedaluwarsa setelah"
+        "链接过期于"
       ],
       "Lock ${ PASS_APP_NAME }": [
-        "Kunci ${ PASS_APP_NAME }"
+        "锁定 ${ PASS_APP_NAME }"
       ],
       "Make admin": [
-        "Jadikan admin"
+        "设为管理员"
       ],
       "Make default": [
-        "Jadikan bawaan"
+        "设为默认"
       ],
       "Make editor": [
-        "Jadikan penyunting"
+        "成为编辑者"
       ],
       "Make viewer": [
-        "Jadikan pengamat"
+        "成为查看者"
       ],
       "Manage access": [
-        "Kelola akses"
+        "管理权限"
       ],
       "Manually sync your data": [
-        "Sinkronkan data"
+        "手动同步您的数据"
       ],
       "Mark as resolved": [
-        "Tandai sebagai terselesaikan"
+        "标记为已解决"
       ],
       "Maximum views": [
-        "Jumlah tampilan maksimum"
+        "最大访问次数"
       ],
       "More info": [
-        "Info lebih lanjut"
+        "更多信息"
       ],
       "More info: ${ safeTitle }": [
-        "Info lebih lanjut: ${ safeTitle }"
+        "更多信息：${ safeTitle }"
       ],
       "More options": [
-        "Opsi lainnya"
+        "更多选项"
       ],
       "Move": [
-        "Pindahkan"
+        "移动"
       ],
       "Move all items": [
-        "Pindahkan semua item"
+        "移动所有项目"
       ],
       "Move to another vault": [
-        "Pindahkan ke brankas lainnya"
+        "移至另一个保险库"
       ],
       "Move to trash": [
-        "Pindahkan ke sampah"
+        "移至回收站"
       ],
       "Move to Trash": [
-        "Pindahkan ke Sampah"
+        "移至回收站"
       ],
       "Multiple select": [
-        "Pilih banyak berkas"
+        "多重选择"
       ],
       "Next": [
-        "Selanjutnya"
+        "继续"
       ],
       "No expired links": [
-        "Tidak ada tautan yang kedaluwarsa"
+        "无过期链接"
       ],
       "Not now": [
-        "Tidak sekarang"
+        "以后再说"
       ],
       "OK": [
-        "OK"
+        "确定"
       ],
       "Open navigation": [
-        "Buka navigasi"
+        "打开导航栏"
       ],
       "Pass for Android": [
-        "Pass untuk Android"
+        "Android版Proton Pass"
       ],
       "Pass for iOS": [
-        "Pass untuk iOS"
+        "iOS版Proton Pass"
       ],
       "Pass Monitor": [
         "Pass Monitor"
       ],
       "Pause monitoring": [
-        "Jeda pemantauan"
+        "暂停监测"
       ],
       "Pin item": [
-        "Sematkan item"
+        "固定项"
       ],
       "Please retry": [
-        "Silakan coba lagi"
+        "请重试"
       ],
       "Previous": [
-        "Sebelumnya"
+        "上一页"
       ],
       "Re-verify": [
-        "Verifikasi ulang"
+        "重新验证"
       ],
       "Reactivate now": [
-        "Aktifkan ulang sekarang"
+        "立即重新激活"
       ],
       "Refresh the page": [
-        "Muat ulang halaman"
+        "刷新页面"
       ],
       "Regenerate": [
-        "Hasilkan ulang"
+        "重新生成"
       ],
       "Reject": [
-        "Tolak"
+        "拒绝"
       ],
       "Reject invitation": [
-        "Tolak undangan"
+        "拒绝邀请"
       ],
       "Reload": [
-        "Muat ulang"
+        "刷新"
       ],
       "Remove": [
-        "Hapus"
+        "移除"
       ],
       "Remove access": [
-        "Hapus akses"
+        "移除访问权"
       ],
       "Remove all expired links (${ inactiveLinkCount })": [
-        "Seluruh tautan yang kedaluwarsa dihapus (${ inactiveLinkCount })"
+        "移除所有过期链接 ( ${ inactiveLinkCount } )"
       ],
       "Remove link": [
-        "Hapus tautan"
+        "移除链接"
       ],
       "Remove member": [
-        "Hapus anggota"
+        "移除成员"
       ],
       "Request a feature": [
-        "Minta fitur"
+        "功能建议"
       ],
       "Resend code": [
-        "Kirim ulang kode"
+        "重新发送验证码"
       ],
       "Resend code (in ${ remaining }s)": [
-        "Kirim ulang kode (dalam ${ remaining } detik)"
+        "重新发送代码 ( ${ remaining } 秒 )"
       ],
       "Resend invitation": [
-        "Kirim ulang undangan"
+        "重新发送邀请"
       ],
       "Restore": [
-        "Pulihkan"
+        "还原"
       ],
       "Restore item": [
-        "Pulihkan item"
+        "恢复项目"
       ],
       "Restrict number of views": [
-        "Batasi jumlah tampilan"
+        "限制浏览次数"
       ],
       "Resume monitoring": [
-        "Lanjutkan pemantauan"
+        "恢复监测"
       ],
       "Retry": [
-        "Coba lagi"
+        "重试"
       ],
       "Right click and download this CSV": [
-        "Klik kanan dan unduh CSV ini"
+        "右键单击并下载此CSV"
       ],
       "Save": [
-        "Simpan"
+        "保存"
       ],
       "Saving": [
-        "Menyimpan"
+        "正在保存"
       ],
       "Section name": [
-        "Nama bagian"
+        "分组名称"
       ],
       "Secure links": [
-        "Tautan aman"
+        "安全链接"
       ],
       "See all": [
-        "Lihat semua"
+        "查看全部"
       ],
       "See members": [
-        "Lihat anggota"
+        "查看成员"
       ],
       "Send email": [
-        "Kirim email"
+        "发送邮件"
       ],
       "Send invite": [
-        "Kirim undangan"
+        "发送邀请"
       ],
       "Set access level": [
-        "Tentukan tingkat akses"
+        "设置访问级别"
       ],
       "Set extra password": [
-        "Tetapkan kata sandi tambahan"
+        "设置额外密码"
       ],
       "Setup 2FA": [
-        "Siapkan 2FA"
+        "设置 2FA"
       ],
       "Share": [
-        "Bagikan"
+        "分享"
       ],
       "Share item": [
-        "Bagikan item"
+        "共享项目"
       ],
       "Share secure link": [
-        "Bagikan tautan aman"
+        "分享安全链接"
       ],
       "Share vault": [
-        "Bagikan brankas"
+        "共享保险库"
       ],
       "Show": [
-        "Tampilkan"
+        "显示"
       ],
       "Show advanced options": [
-        "Tampilkan opsi lanjutan"
+        "显示进阶选项"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "Masuk dengan ${ BRAND_NAME }"
+        "使用${ BRAND_NAME }登录"
       ],
       "Sign out": [
-        "Keluar"
+        "登出"
       ],
       "Skip": [
-        "Lewati"
+        "跳过"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Seseorang telah membagikan item kepada Anda di ${ PASS_APP_NAME }"
+        "有人在 ${ PASS_APP_NAME } 上与您分享了一个项目。"
       ],
       "Sort vault items": [
-        "Sortir item brankas"
+        "对保险库项目排序"
       ],
       "Submit": [
-        "Kirim"
+        "提交"
       ],
       "Submitting report...": [
-        "Mengirim laporan..."
+        "正在提交报告..."
       ],
       "Sync alias": [
-        "Sinkronkan alias"
+        "同步别名"
       ],
       "Sync aliases": [
-        "Sinkronkan alias"
+        "同步别名"
       ],
       "To mailbox": [
-        "Ke kotak surat"
+        "转到邮箱"
       ],
       "Transfer aliases": [
-        "Transfer alias"
+        "转移别名"
       ],
       "Transfer and delete mailbox": [
-        "Transfer dan hapus kotak surat"
+        "转移并删除邮箱"
       ],
       "Transfer ownership": [
-        "Transfer kepemilikan"
+        "转移所有权"
       ],
       "Trash": [
-        "Pindahkan ke sampah"
+        "回收站"
       ],
       "Try again.": [
-        "Coba lagi."
+        "重试."
       ],
       "Try for free": [
-        "Coba gratis"
+        "免费试用"
       ],
       "Unblock contact": [
-        "Buka blokir kontak"
+        "取消屏蔽联系人"
       ],
       "Understood, I will never need it": [
-        "Saya mengerti, saya tidak akan butuh alias ini lagi"
+        "明白，我将永远不再需要它们"
       ],
       "Unlock": [
-        "Membuka"
+        "解锁"
       ],
       "Unlock offline with password": [
-        "Buka kunci secara offline dengan kata sandi"
+        "使用密码离线解锁"
       ],
       "Unpin item": [
-        "Lepas sematan item"
+        "取消固定项"
       ],
       "Update": [
-        "Perbarui"
+        "更改"
       ],
       "Upgrade": [
-        "Tingkatkan"
+        "升级账户"
       ],
       "Upgrade now": [
-        "Tingkatkan sekarang"
+        "立即升级账户"
       ],
       "Upgrade now to share with more people": [
-        "Tingkatkan sekarang untuk berbagi dengan lebih banyak pengguna"
+        "立即升级以与更多人分享"
       ],
       "Use ${ label } theme": [
-        "Gunakan tema ${ label }"
+        "使用 ${ label } 主题"
       ],
       "Verify": [
-        "Verifikasi"
+        "验证"
       ],
       "Via secure link": [
-        "Via tautan aman"
+        "通过安全链接"
       ],
       "View details": [
-        "Lihat rincian"
+        "查看详细信息"
       ],
       "View history": [
-        "Lihat riwayat"
+        "查看历史"
       ],
       "View item history": [
-        "Lihat riwayat item"
+        "查看项目历史记录"
       ],
       "View older history": [
-        "Tampilkan riwayat lebih lama"
+        "查看更早的历史"
       ],
       "With other ${ BRAND_NAME } users": [
-        "Dengan pengguna ${ BRAND_NAME } lainnya"
+        "与其他 ${ BRAND_NAME } 用户"
       ],
       "Write us on X/Twitter": [
-        "Tulis kepada kami di X/Twitter"
+        "请在 X/Twitter 上给我们留言"
       ],
       "Your password manager is not here? Request it.": [
-        "Pengelola kata sandi Anda tidak terdaftar? Mintalah kepada kami."
+        "您的密码管理器不在这里？请求添加它。"
       ]
     },
     "App menu": {
       "Force Reload": [
-        "Paksa Muat Ulang"
+        "全部重新加载"
       ],
       "Reload": [
-        "Muat Ulang"
+        "重新加载"
       ],
       "Show logs": [
-        "Tampilkan log"
+        "显示日志"
       ],
       "Speech": [
-        "Suara"
+        "语音"
       ],
       "Start ${ PASS_APP_NAME } at login": [
-        "Mulai ${ PASS_APP_NAME } saat masuk"
+        "在启动时登录${ PASS_APP_NAME }"
       ],
       "Toggle developers tools": [
-        "Tampilkan gawai pengembang"
+        "切换开发人员工具"
       ],
       "Uninstall ${ PASS_APP_NAME }": [
-        "Copot pemasangan ${ PASS_APP_NAME }"
+        "卸载 ${ PASS_APP_NAME }"
       ]
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
+        "${ MAIL_APP_NAME } 桌面应用"
       ]
     },
     "Button": {
       "More info": [
-        "Info lebih lanjut"
+        "更多信息"
       ]
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Ciutkan"
+        "收起"
       ],
       "Expand": [
-        "Lebarkan"
+        "展开"
       ]
     },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
-        "${ DARK_WEB_MONITORING_NAME } tersedia dengan paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke fitur ini dengan segera."
+        "${ DARK_WEB_MONITORING_NAME } 通过付费计划提供。升级后可立即访问。"
       ],
       "${ total } other login uses the same password": [
-        "${ total } entri masuk lainnya menggunakan kata sandi yang sama"
+        "其他 ${ total } 个登录使用相同密码"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
-        "2FA menambahkan lapisan keamanan tambahan pada entri masuk Anda. ${ PASS_APP_NAME } menjadikan 2FA lebih mudah dengan menyimpan dan mengisi kode 2FA Anda secara otomatis."
+        "2FA 给您的登录添加了另一层安全。 ${ PASS_APP_NAME } 通过存储和自动自动填充您的两步验证代码使 2FA 更加容易。"
       ],
       "Add the following CNAME DNS records to your domain.": [
-        "Tambahkan rekaman DNS CNAME berikut ke domain Anda."
+        "将以下 CNAME DNS 记录添加到您的域。"
       ],
       "Add the following MX DNS record to your domain. Please note that there's a dot (.) at the end target addresses. If your domain registrar doesn't allow this trailing dot, please remove it when adding the DNS record.": [
-        "Tambahkan rekaman DNS MX berikut ke domain Anda. Mohon diperhatikan bahwa terdapat tanda titik (.) pada akhir masing-masing alamat tujuan. Apabila pendaftar domain Anda tidak mengizinkan penggunaan tanda titik di akhir, silakan hapus tanda titik ini pada saat menambahkan rekaman DNS."
+        "为您的域名添加以下 MX DNS 记录。请注意，目标地址末尾有一个点 ( . ) 。如果您的域名注册商不允许使用这个尾点，请在添加 DNS 记录时将其删除。"
       ],
       "Add the following TXT DNS record to your domain.": [
-        "Tambahkan rekaman DNS TXT berikut ke domain Anda."
+        "为您的域名添加以下 TXT DNS 记录。"
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "Alias email berfungsi seperti alamat email pada umumnya, namun akan mengurangi spam serta menjaga agar alamat email dan identitas asli Anda tetap tersembunyi."
+        "电子邮件别名的作用与电子邮件地址类似，但可以减少垃圾邮件，并隐藏您的真实电子邮件地址和身份。"
       ],
       "Change your passwords": [
-        "Ubah kata sandi Anda"
+        "更改密码"
       ],
       "Create unique passwords": [
-        "Hasilkan kata sandi yang unik"
+        "创建唯一密码"
       ],
       "DKIM ${ WIKIPEDIA_LINK_DKIM } is an email authentication method designed to avoid email spoofing. Setting up DKIM is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "DKIM ${ WIKIPEDIA_LINK_DKIM } merupakan metode autentikasi emial yang dirancang untuk mencegah pemalsuan email. Mengatur DKIM sangat disarankan demi menurunkan peluang email Anda berakhir pada folder Spam penerima."
+        "DKIM ${ WIKIPEDIA_LINK_DKIM } 是一种电子邮件验证方法，旨在避免电子邮件被欺骗。强烈建议设置 DKIM，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
-        "DMARC ${ WIKIPEDIA_LINK_DMARC } dirancang untuk melindungi domain dari penggunaan yang tidak diizinkan, atau yang umum dikenal sebagai tindak pemalsuan email (email spoofing). Sebagai teknologi yang dilandaskan pada SPF dan DKIM, kebijakan DMARC akan memberi tahu server email penerima apa yang harus dilakukan apabila kedua metode autentikasi ini gagal dilewati."
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } 旨在保护域免遭未经授权的使用，也就是通常所说的电子邮件欺骗。DMARC 策略以 SPF 和 DKIM 为基础，告诉接收邮件服务器在这两种验证方法都不通过时该怎么办。"
       ],
       "Get notified if your email, password or other personal data was leaked.": [
-        "Dapatkan notifikasi apabila email, kata sandi, atau data pribadi Anda lainnya dibocorkan."
+        "如果您的电子邮件、密码或其他个人数据被泄露，您会收到通知。"
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
-        "Apabila Anda menggunakan subdomain, mis. ${ subdomainExample }, Anda perlu untuk menggunakan ${ dmarcExampleSubdomain } sebagai domain Anda."
+        "如果您正在使用子域，例如 ${ subdomainExample }，那么您需要使用 ${ dmarcExampleSubdomain } 作为域名。"
       ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
-        "Apabila Anda menggunakan subdomain, mis. subdomain.domain.com, Anda perlu untuk menggunakan ${ domainKeyExampleSubdomain } sebagai domain Anda. Hal ini berarti apabila domain Anda adalah mail.domain.com, Anda harus memasukkan ${ domainKeyExampleMail } sebagai nama Domain."
+        "如果使用的是子域，例如 subdomain.domain.com，则需要使用 ${ domainKeyExampleSubdomain } 作为域。也就是说，如果您的域名是 mail.domain.com，则应输入 ${ domainKeyExampleMail } 作为域名。"
       ],
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
-        "Apabila Anda menggunakan Cloudflare, pastikan untuk tidak memilih pilihan Proxy."
+        "如果使用 Cloudflare，请确保不要选择代理选项。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
-        "Jaga agar informasi Anda lebih aman dan privat dengan berbagai panduan dan tips berikut."
+        "使用这些指南和技巧，让您的信息更安全、更私密。"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Solusi keamanan mutakhir berbasis AI kami dirancang untuk para pengguna yang menginginkan perlindungan yang lebih bagi akun mereka. ${ learnMoreLink }"
+        "我们的顶尖安全体系，由人工智能技术驱动，专为寻求高标准安全防护的用户而生。${ learnMoreLink }"
       ],
       "Set up 2FA for more security": [
-        "Atur 2FA untuk keamanan yang lebih"
+        "设置 2FA 以获得更多安全"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
-        "Pendaftar DNS tertentu dapat memerlukan jalur rekaman yang lengkap. Dalam kasus yang demikian, silakan gunakan ${ domain } sebagai nilai domain."
+        "某些 DNS 注册商可能需要完整的记录路径，在这种情况下，请使用 ${ domain }  作为域值。"
       ],
       "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
-        "Pendaftar domain tertentu (Namecheap, Cloudflare, dll.) juga dapat menggunakan karakter \"@\" sebagai domain root."
+        "些域名注册商 ( Namecheap、Cloudflare 等 ) 可能使用 @ 作为根域名。"
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
-        "SPF ${ WIKIPEDIA_LINK_SPF } merupakan metode autentikasi email yang dirancang untuk mendeteksi pemalsuan alamat pengirim pada saat proses pengiriman email. Mengatur SPF sangat disarankan demi menurunkan peluang email Anda berakhir pada folder Spam penerima."
+        "SPF ${ WIKIPEDIA_LINK_SPF } 是一种电子邮件验证方法，旨在检测电子邮件发送过程中伪造的发件人地址。强烈建议设置 SPF，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "Mulai pantau kebocoran data yang terhubung dengan akun yang dibuat dengan alamat email dan alias hide-my-email Anda."
+        "开始监测与您的电子邮件地址和 hide-my-email 别名创建的账户相关的数据泄露。"
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "Dark web merupakan bagian tersembunyi dari internet di mana informasi pribadi yang dicuri, seperti identitas diri, dapat diperjualbelikan."
+        "暗网是互联网的一个隐蔽部分，在这里可以买卖被盗的个人信息，比如身份信息。"
       ],
       "These items remain at risk": [
-        "Item berikut ini akan tetap terpapar risiko"
+        "这些项目仍然处于危险中"
       ],
       "This account is vulnerable, visit the service and change your password.": [
-        "Akun ini terindikasi rentan. Kunjungi layanan keamanan kami dan ubah kata sandi Anda."
+        "该账户存在漏洞，请访问该服务并更改密码。"
       ],
       "This service offers 2FA. Enable it for added account security.": [
-        "Layanan ini menawarkan 2FA. Aktifkan fitur ini untuk meningkatkan keamanan akun."
+        "该服务提供 2FA。启用它可提高账户安全性。"
       ],
       "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
-        "Untuk memverifikasi kepemilikan domain, silakan menambahkan rekaman TXT berikut. Beberapa pencatat domain (Namecheap, Cloudflare, dll.) dapat menggunakan @ untuk domain akar."
+        "要验证域名的所有权，请添加以下 TXT 记录。某些域名注册商 ( Namecheap、Cloudflare 等 ) 可能使用 @ 作为根域名。"
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Dapatkan berbagai fitur keamanan mutakhir dan log yang terperinci untuk melindungi presensi online Anda."
+        "解锁高级安全功能和详细日志，保护您的在线形象。"
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Dengan ${ PASS_SHORT_APP_NAME } Monitor, tempatkan diri Anda selangkah di depan ancaman dengan memperoleh peringatan secara instan apabila kredensial Anda terpapar. Dapatkan berbagai fitur keamanan lanjutan dan log yang terperinci untuk melindungi presensi online Anda."
+        "使用 ${ PASS_SHORT_APP_NAME } 监视器，在您的凭证受到威胁时，您会收到即时警报，从而在威胁面前保持领先。解锁高级安全功能和详细日志，保护您的在线形象。"
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
-        "Alamat email Anda telah dibocorkan pada setidaknya 1 insiden kebocoran data."
+        "您的电子邮件地址在至少一次数据泄露事件中被泄露。"
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
-        "Informasi pribadi Anda telah dibocorkan dalam insiden kebocoran data dari layanan pihak ketiga."
+        "您的个人信息在第三方服务数据泄露事件中被泄露。"
       ]
     },
     "Email": {
       "anything@${ domainDisplay }": [
-        "apasaja@${ domainDisplay }"
+        "anything@${ domainDisplay }"
       ]
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "Berkas ${ provider } tidak dapat diurai. ${ errorDetail }"
+        "无法解析 ${ provider } 文件。${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
-        "[Kesalahan] terdapat item yang tidak dapat diurai"
+        "[错误] 无法解析一个项目"
       ],
       "A domain ownership must be verified first.": [
-        "Kepemilikan domain harus diverifikasi terlebih dahulu."
+        "必须首先验证域名所有权。"
       ],
       "Alias could not be updated at the moment. Please try again later": [
-        "Alias tidak dapat diperbarui untuk saat ini. Silakan coba lagi nanti"
+        "暂时无法更新别名。请稍后再试"
       ],
       "Alias options could not be resolved": [
-        "Pengaturan alias tidak dapat diperoleh"
+        "无法解决别名选项问题"
       ],
       "An error occurred while resuming your session": [
-        "Terdapat kesalahan pada saat melanjutkan sesi Anda"
+        "恢复会话时发生错误"
       ],
       "Authentication error": [
-        "Kesalahan autentikasi"
+        "认证错误"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Autentikasi gagal. Konfirmasi kata sandi ${ BRAND_NAME } Anda untuk melanjutkan ekspor"
+        "身份验证失败。请确认您的 ${ BRAND_NAME } 密码以继续导出"
       ],
       "Authentication failed. Confirm your backup password in order to proceed with the export": [
-        "Autentikasi gagal. Konfirmasi kata sandi cadangan Anda untuk melanjutkan ekspor"
+        "身份验证失败。请确认您的备份密码以继续导出"
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
-        "Autentikasi gagal. Konfirmasi kata sandi tambahan Anda untuk melanjutkan ekspor"
+        "身份验证失败。请确认您的额外密码以继续导出"
       ],
       "Biometric authentication failed": [
-        "Autentikasi biometrik gagal"
+        "生物特征认证失败"
       ],
       "Cannot send invitation at the moment": [
-        "Undangan tidak dapat dikirim untuk saat ini"
+        "目前无法发送邀请"
       ],
       "Cannot send invitations at the moment": [
-        "Undangan tidak dapat dikirim untuk saat ini"
+        "目前无法发送邀请"
       ],
       "Could not confirm this invite at the moment": [
-        "Undangan ini tidak dapat dikonfirmasi untuk saat ini"
+        "目前无法确认此邀请"
       ],
       "Could not leave item.": [
-        "Item tidak dapat ditinggalkan."
+        "无法离开项目。"
       ],
       "Could not leave vault.": [
-        "Brankas tidak dapat ditinggalkan."
+        "无法离开保险库。"
       ],
       "Could not load recommendations at the moment.": [
-        "Rekomendasi untuk saat ini tidak dapat dimuat."
+        "目前无法加载建议。"
       ],
       "Could not open created vault": [
-        "Brankas yang dibuat tidak dapat dibuka"
+        "无法打开创建的保险库"
       ],
       "Could not open invited vault": [
-        "Brankas yang diundang tidak dapat dibuka"
+        "无法打开受邀保险库"
       ],
       "Could not open updated vault": [
-        "Brankas yang diperbarui tidak dapat dibuka"
+        "无法打开已更新的保险库"
       ],
       "Could not resolve share members": [
-        "Anggota share tidak dapat ditetapkan"
+        "无法解析共享成员"
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
-        "Tidak dapat mendapatkan undangan pengguna untuk brankas \"${ vaultName }\""
+        "无法获取用户对 “${ vaultName }” 保险库的邀请"
       ],
       "Could not validate addresses at the moment.": [
-        "Alamat tidak dapat divalidasi pada saat ini."
+        "目前无法验证地址。"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
-        "Berkas CSV tidak memiliki header yang seharusnya ada: ${ missingHeaders }"
+        "CSV 文件缺少预期标头：${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "Berkas ekspor ${ PASS_APP_NAME } Anda gagal didekripsi. ${ errorDetail }"
+        "解密您的 ${ PASS_APP_NAME } 导出文件失败。${ errorDetail }"
       ],
       "Deleting item failed": [
-        "Item gagal dihapus"
+        "删除项目失败"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "Brankas \"${ payload.content.name }\" gagal dihapus"
+        "删除保险库 “${ payload.content.name }” 失败"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } baris CSV yang rusak terdeteksi"
+        "检测到 CSV 中有 ${ errors.length } 行数据损坏"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
-        "Domain tidak dapat diverifikasi. Silakan pastikan Anda telah menambahkan rekaman DNS yang benar"
+        "无法验证域名。请确保您添加了正确的 DNS 记录"
       ],
       "Domain not available, try again later": [
-        "Domain tidak tersedia, coba lagi nanti"
+        "域名不可用，请稍后再试"
       ],
       "Editing item failed": [
-        "Item gagal disunting"
+        "编辑项目失败"
       ],
       "Empty CSV file": [
-        "Berkas CSV kosong"
+        "空 CSV 文件"
       ],
       "Emptying trash failed": [
-        "Sampah gagal dikosongkan"
+        "清空回收站失败"
       ],
       "Encrypted JSON not supported": [
-        "JSON terenkripsi tidak didukung"
+        "不支持加密的 JSON"
       ],
       "Error reporting problem": [
-        "Terdapat masalah dengan pelaporan masalah"
+        "错误报告"
       ],
       "Failed removing the invite.": [
-        "Undangan gagal dihapus."
+        "移除邀请失败。"
       ],
       "Failed resending invite.": [
-        "Undangan gagal dikirim ulang."
+        "重新发送邀请失败。"
       ],
       "Failed to add email address": [
-        "Alamat surel gagal ditambahkan"
+        "无法添加电子邮件地址"
       ],
       "Failed to block the contact": [
-        "Kontak gagal diblokir"
+        "无法屏蔽联系人"
       ],
       "Failed to cancel mailbox change": [
-        "Perubahan kotak surat gagal dibatalkan"
+        "取消邮箱更改失败"
       ],
       "Failed to change mailbox": [
-        "Kotak surat gagal diubah"
+        "更改邮箱失败"
       ],
       "Failed to create domain": [
-        "Domain gagal dibuat"
+        "创建域失败"
       ],
       "Failed to create new mailbox": [
-        "Kotak masuk baru gagal dibuat"
+        "创建新邮箱失败"
       ],
       "Failed to create the contact": [
-        "Kontak gagal dibuat"
+        "无法创建联系人"
       ],
       "Failed to delete domain": [
-        "Domain gagal dihapus"
+        "删除域失败"
       ],
       "Failed to delete email address from monitoring": [
-        "Alamat surel gagal dihapus dari pemantauan"
+        "从监测中删除电子邮件地址失败"
       ],
       "Failed to delete selected items": [
-        "Item yang dipilih gagal dihapus"
+        "删除失败"
       ],
       "Failed to delete the contact": [
-        "Kontak gagal dihapus"
+        "无法删除联系人"
       ],
       "Failed to delete the mailbox": [
-        "Kotak surat gagal dihapus"
+        "删除邮箱失败"
       ],
       "Failed to edit user's access.": [
-        "Akses pengguna gagal disunting."
+        "修改用户权限失败。"
       ],
       "Failed to load breaches for this address": [
-        "Daftar kebocoran untuk alamat ini gagal dimuat"
+        "无法加载此地址的泄露信息"
       ],
       "Failed to load breaches for this email alias": [
-        "Daftar kebocoran untuk alias email ini gagal dimuat"
+        "加载此电子邮件别名的泄露信息失败"
       ],
       "Failed to load domain settings.": [
-        "Pengaturan domain gagal dimuat"
+        "加载域设置失败。"
       ],
       "Failed to load item history": [
-        "Riwayat item gagal dimuat"
+        "加载项目历史记录失败"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
-        "Gagal memindahkan semua item dari \"${ payload.content.name }\""
+        "无法从 “${ payload.content.name }” 移动所有项目"
       ],
       "Failed to move items": [
-        "Item gagal dipindahkan"
+        "移动项目失败"
       ],
       "Failed to move items to trash": [
-        "Item gagal dipindahkan ke sampah"
+        "未能将项目移至回收站"
       ],
       "Failed to pin item": [
-        "Item gagal disematkan"
+        "无法固定项目"
       ],
       "Failed to remove user's access.": [
-        "Akses pengguna gagal dihapus."
+        "无法移除用户的访问权限。"
       ],
       "Failed to resend verification code": [
-        "Kode verifikasi gagal dikirim ulang"
+        "无法重新发送验证码"
       ],
       "Failed to resend verification for custom email": [
-        "Verifikasi untuk surel khusus gagal dikirim ulang"
+        "无法重新发送自定义电子邮件的验证"
       ],
       "Failed to resolve breaches for this address": [
-        "Kebocoran untuk alamat ini gagal diselesaikan"
+        "未能解决此地址的泄露问题"
       ],
       "Failed to restore items from trash": [
-        "Item gagal dipulihkan dari sampah"
+        "从回收站中恢复项目失败"
       ],
       "Failed to set default mailbox": [
-        "Gagal menetapkan kotak surat bawaan"
+        "设置默认邮箱失败"
       ],
       "Failed to sync aliases": [
-        "Gagal menyinkronkan alias"
+        "同步别名失败"
       ],
       "Failed to transfer this vault's ownership.": [
-        "Kepemilikan brankas gagal dipindahkan."
+        "转移该保险库所有权失败。"
       ],
       "Failed to unpin item": [
-        "Sematan item gagal dilepas"
+        "取消固定项目失败"
       ],
       "Failed to update catch-all setting.": [
-        "Pengaturan catch-all gagal diperbarui"
+        "更新通配邮箱设置失败。"
       ],
       "Failed to update default domain": [
-        "Domain bawaan gagal diperbarui"
+        "更新默认域名失败"
       ],
       "Failed to update domain mailboxes.": [
-        "Kotak surat domain gagal diperbarui"
+        "更新域名邮箱失败。"
       ],
       "Failed to update domain name.": [
-        "Nama domain gagal diperbarui"
+        "更新域名失败。"
       ],
       "Failed to update monitoring settings": [
-        "Pengaturan pemantauan gagal diperbarui"
+        "监测设置更新失败"
       ],
       "Failed to update random prefix generation setting.": [
-        "Pengaturan pembuatan awalan acak gagal diperbarui"
+        "更新随机前缀生成设置失败。"
       ],
       "Failed to verify domain": [
-        "Domain gagal diverifikasi"
+        "无法验证域"
       ],
       "Failed to verify email address": [
-        "Alamat surel gagal diverifikasi"
+        "验证邮件地址失败"
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
-        "Pengaturan ${ PROTON_SENTINEL_NAME } gagal diperbarui"
+        "更新 ${ PROTON_SENTINEL_NAME } 设置失败"
       ],
       "Failed updating monitor flag of the item": [
-        "Status pemantauan item ini gagal diperbarui"
+        "更新项目的监测标志失败"
       ],
       "Failed updating monitoring status for this email address": [
-        "Status pemantauan untuk alamat surel ini gagal diperbarui"
+        "更新此电子邮件地址的监测状态失败"
       ],
       "File could not be parsed": [
-        "Berkas tidak dapat diurai"
+        "文件无法解析"
       ],
       "File could not be read": [
-        "Berkas tidak dapat dibaca"
+        "文件无法读取"
       ],
       "File does not match expected format": [
-        "Berkas tidak cocok dengan format yang diharapkan"
+        "文件与预期格式不匹配"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Proses impor brankas \"${ vaultData.name }\" gagal: ${ description }"
+        "保险库 “${ vaultData.name }” 导入失败：${ description }"
       ],
       "Importing items failed": [
-        "Item gagal diimpor"
+        "导入项目失败"
       ],
       "Inactive secure links could not be removed.": [
-        "Tautan aman yang tidak aktif tidak dapat dihapus."
+        "无法删除非活动安全链接。"
       ],
       "Invalid password manager": [
-        "Pengelola kata sandi tidak valid"
+        "密码管理器无效"
       ],
       "Invitation could not be accepted": [
-        "Undangan tidak dapat diterima"
+        "邀请无法被接受"
       ],
       "Invitation could not be rejected": [
-        "Undangan tidak dapat ditolak"
+        "邀请无法拒绝"
       ],
       "Item content cannot exceed 40KB": [
-        "Konten item tidak boleh melebihi 40KB"
+        "项目内容不能超过 40KB"
       ],
       "Item creation failed": [
-        "Item gagal dibuat"
+        "项目创建失败"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass akan mengekspor berkas CSV yang rusak apabila satu atau lebih kolom item Anda mengandung koma, tanda kutip, atau rangkaian baris yang tidak terduga"
+        "如果您的任何项目字段包含意外的逗号、引号或多行，LastPass 将导出损坏的 CSV 文件"
       ],
       "Moving item failed": [
-        "Item gagal dipindahkan"
+        "移动项目失败"
       ],
       "Network error": [
-        "Kesalahan jaringan"
+        "网络错误"
       ],
       "Offline mode is currently not available for two password mode.": [
-        "Mode luring saat ini tidak tersedia pada mode kata sandi ganda."
+        "脱机模式目前不适用于双密码模式。"
       ],
       "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Mode offline saat ini tidak tersedia untuk paket Anda dan tidak kompatibel dengan mode kata sandi ganda."
+        "脱机模式目前不适用于您的计划，并且与双密码模式不兼容。"
       ],
       "Passphrase is incorrect": [
-        "Frasa sandi salah"
+        "密码不正确"
       ],
       "PIN codes do not match": [
-        "Kode PIN tidak sesuai"
+        "两次输入的 PIN 码不一致"
       ],
       "Request timed out": [
-        "Waktu permintaan habis"
+        "请求超时"
       ],
       "Requesting alias options failed": [
-        "Permintaan pengaturan alias gagal"
+        "请求别名选项失败"
       ],
       "Restoring item failed": [
-        "Item gagal dipulihkan"
+        "恢复项目失败"
       ],
       "Restoring trashed items failed": [
-        "Item yang dibuang gagal dipulihkan"
+        "恢复已销毁项目失败"
       ],
       "Secure link could not be created.": [
-        "Tautan aman tidak dapat dibuat."
+        "无法创建安全链接。"
       ],
       "Secure link could not be opened.": [
-        "Tautan aman tidak dapat dibuka."
+        "无法打开安全链接。"
       ],
       "Settings update failed": [
-        "Pengaturan gagal diperbarui"
+        "设置更新失败"
       ],
       "Signature verification failed": [
-        "Verifikasi tanda tangan gagal"
+        "签名验证失败"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Sebagian brankas tidak lagi dapat diakses akibat pengaturan ulang kata sandi. Aktifkan ulang kunci akun Anda untuk mengakses kembali brankas yang terkunci. ${ reactivateLink }"
+        "由于密码重置，有些保险库已无法访问。请重新激活您的账户密钥，以重新获得访问权。${ reactivateLink }"
       ],
       "Something went wrong": [
-        "Terjadi kesalahan"
+        "出了些问题"
       ],
       "Something went wrong. Please sign in again.": [
-        "Terdapat suatu kesalahan. Silakan masuk kembali."
+        "出错了。请重新登录。"
       ],
       "The file you are trying to import is empty": [
-        "Berkas yang ingin Anda impor kosong"
+        "您正在尝试导入的文件为空"
       ],
       "The session has expired. Please sign in again.": [
-        "Masa berlaku sesi telah habis. Silakan masuk lagi."
+        "登录状态已过期，请重新登录。"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
-        "Terdapat masalah pada saat menghapus tautan aman. Silakan coba lagi dalam beberapa menit."
+        "删除安全链接时出现错误。请几分钟后再试。"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Terlalu banyak percobaan yang gagal. Silakan masuk kembali."
+        "失败次数过多，请重新登录。"
       ],
       "Trashing item failed": [
-        "Item gagal dibuang"
+        "丢弃项目失败"
       ],
       "Try reaching out to the link owner.": [
-        "Cobalah untuk menghubungi pemilik tautan."
+        "尝试联系链接所有者。"
       ],
       "Unable to generate an OTP code for this item": [
-        "Kode OTP untuk item ini tidak dapat dibuat"
+        "无法为该项目生成 OTP 代码"
       ],
       "Unable to sync": [
-        "Tidak dapat menyinkronkan"
+        "无法同步"
       ],
       "Unknown error": [
-        "Kesalahan yang tidak diketahui"
+        "未知错误"
       ],
       "Unknown invite": [
-        "Undangan tidak dikenal"
+        "无效的邀请"
       ],
       "Unknown item": [
-        "Item yang tidak diketahui"
+        "未知项目"
       ],
       "Unlock failure": [
-        "Pembukaan kunci gagal"
+        "解锁失败"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
-        "Berkas format ${ PASS_APP_NAME } tidak didukung"
+        "不支持的 ${ PASS_APP_NAME } 文件格式"
       ],
       "Unsupported 1Password file format": [
-        "Format berkas 1Password tidak didukung"
+        "不支持的 1Password 文件格式"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "Brankas \"${ payload.content.name }\" gagal diperbarui"
+        "更新保险库 “${ payload.content.name }” 失败"
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
-        "Pembuatan brankas \"${ payload.content.name }\" gagal"
+        "保险库 “${ payload.content.name }” 创建失败"
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
-        "Brankas \"${ vaultData.name }\" tidak dapat dibuat"
+        "保险库 “${ vaultData.name }” 无法创建"
       ],
       "Vault name does not match": [
-        "Nama brankas tidak sesuai"
+        "保险库名称不匹配"
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
-        "Kami menemui masalah pada saat memulai ${ PASS_SHORT_APP_NAME }. Apabila masalah ini terus berlanjut, silakan hubungi layanan dukungan pelanggan kami untuk memperoleh bantuan."
+        "我们在启动 ${ PASS_SHORT_APP_NAME } 时遇到了一个问题。如果问题仍然存在，请联系我们的客户支持部门寻求帮助。"
       ],
       "Wrong backup password": [
-        "Kata sandi cadangan salah"
+        "备份密码错误"
       ],
       "Wrong extra password": [
-        "Kata sandi tambahan salah"
+        "额外密码错误"
       ],
       "Wrong password": [
-        "Kata sandi salah"
+        "密码错误"
       ],
       "Wrong PIN code. Try again.": [
-        "Kode PIN salah. Coba lagi."
+        "解锁密码错误，请重试。"
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Anda sedang offline. Silakan hubungkan kembali diri Anda ke jaringan internet untuk membuka ${ PASS_SHORT_APP_NAME }."
+        "您目前处于离线状态。请恢复连接以解锁 ${ PASS_SHORT_APP_NAME }。"
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
-        "DNS Anda tidak diatur dengan benar. Rekaman MX yang kami peroleh adalah:"
+        "您的 DNS 设置不正确。我们获得的 MX 记录是："
       ],
       "Your DNS is not correctly set. The TXT record we obtain is:": [
-        "DNS Anda tidak diatur dengan benar. Rekaman TXT yang kami peroleh adalah:"
+        "您的 DNS 设置不正确。我们获得的 TXT 记录是："
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "Kode PIN Anda telah dihapus oleh klien ${ PASS_APP_NAME } lainnya"
+        "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
       ]
     },
     "Error message": {
       "Oops, something went wrong": [
-        "Aduh, ada yang tidak beres"
+        "糟糕，出错了"
       ],
       "Please refresh the page or try again later.": [
-        "Silakan muat ulang halaman ini atau coba lagi nanti."
+        "请刷新页面或稍后重试。"
       ],
       "Something went wrong": [
-        "Terdapat suatu kesalahan"
+        "出错了"
       ]
     },
     "Feature": {
       "Integrated 2FA authenticator": [
-        "Autentikator 2FA terintegrasi"
+        "集成了双重身份验证"
       ],
       "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias hide-my-email"
+        "无限制地 hide-my-email"
       ],
       "Vault sharing (up to ${ MAX_VAULT_MEMBERS } people)": [
-        "Pembagian brankas (hingga ${ MAX_VAULT_MEMBERS } pengguna)"
+        "密码分享（最多 ${ MAX_VAULT_MEMBERS } 个人）"
       ]
     },
     "file size format": {
       "byte": [
-        "byte"
+        "B"
       ],
       "GB": [
         "GB"
@@ -1254,3104 +1254,3101 @@
     },
     "file size format, long": {
       "Byte": [
-        "Byte"
+        "字节"
       ],
       "Gigabyte": [
-        "Gigabyte"
+        "GB"
       ],
       "Kilobyte": [
-        "Kilobyte"
+        "KB"
       ],
       "Megabyte": [
-        "Megabyte"
+        "MB"
       ],
       "Terabyte": [
-        "Terabyte"
+        "TB"
       ]
     },
     "Font face option": {
       "System default": [
-        "Bawaan sistem"
+        "跟随系统"
       ],
       "Theme font": [
-        "Jenis tulisan tema"
+        "跟随配色"
       ]
     },
     "Font size option": {
       "Large": [
-        "Besar"
+        "大"
       ],
       "Medium (recommended)": [
-        "Sedang (direkomendasikan)"
+        "中等（推荐）"
       ],
       "Small": [
-        "Kecil"
+        "小"
       ],
       "Very large": [
-        "Sangat besar"
+        "极大"
       ],
       "Very small": [
-        "Mungil"
+        "极小"
       ]
     },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Item \"${ payload.item.data.metadata.name }\" telah diabaikan"
+        "“${ payload.item.data.metadata.name }” 项目被拒绝"
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
+        "“${ payload.item.data.metadata.name }” 更新被拒绝"
       ],
       "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } diblokir"
+        "${ blockedEmailsCount } 已阻止"
       ],
       "${ count } time": [
-        "${ count } kali"
+        "${ count } 次"
       ],
       "${ count } view": [
-        "${ count } kali dilihat"
+        "${ count } 次查看"
       ],
       "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } tampilan"
+        "${ count }/${ maxReads } 浏览"
       ],
       "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } diteruskan"
+        "${ forwardedEmailsCount } 已转发"
       ],
       "${ inviterEmail } wants to share an item with you.": [
-        "${ inviterEmail } ingin membagikan suatu item dengan Anda."
+        "${ inviterEmail } 希望与您分享一个项目。"
       ],
       "${ memberCount } member": [
-        "${ memberCount } anggota"
+        "${ memberCount } 位成员"
       ],
       "${ n } item": [
-        "${ n } item"
+        "${ n } 个项目"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
-        "${ PASS_APP_NAME } akan selalu dapat diakses"
+        "${ PASS_APP_NAME } 将始终可以访问"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
+        "${ PASS_APP_NAME } 将通过 ${ BRAND_NAME } 匿名图像代理显示项目图标。"
       ],
       "${ PASS_APP_NAME } will follow your system theme.": [
-        "${ PASS_APP_NAME } akan mengikuti tema sistem Anda."
+        "${ PASS_APP_NAME } 将遵循您的系统主题。"
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
-        "${ PASS_APP_NAME } akan menghasilkan alamat penerusan (yang juga dikenal dengan istilah alias terbalik) yang dapat Anda salin ke papan klip."
+        "${ PASS_APP_NAME } 将生成一个转发地址 ( 也称为反向别名 ) ，你可以将其复制到剪贴板。"
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
-        "${ PASS_APP_NAME } hanya akan mengimpor entri masuk, catatan, kartu kredit, dan identitas."
+        "${ PASS_APP_NAME } 只能导入登录、笔记、信用卡和身份信息。"
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } akan memerlukan kata sandi ${ BRAND_NAME } Anda untuk dapat mengakses data secara offline."
+        "${ PASS_APP_NAME } 需要您的 ${ BRAND_NAME } 密码才能离线访问数据。"
       ],
       "${ payload.count } invite successfully sent": [
-        "${ payload.count } undangan berhasil dikirim"
+        "成功发送 ${ payload.count } 份邀请"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
-        "${ PROTON_SENTINEL_NAME } berhasil dinonaktifkan"
+        "${ PROTON_SENTINEL_NAME } 已成功禁用"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
-        "${ PROTON_SENTINEL_NAME } berhasil diaktifkan"
+        "${ PROTON_SENTINEL_NAME } 已成功启用"
       ],
       "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } dikirim"
+        "${ repliedEmailsCount } 已发送"
       ],
       "${ row.breachCount } breach detected": [
-        "${ row.breachCount } kebocoran terdeteksi"
+        "检测到 ${ row.breachCount } 泄露"
       ],
       "(Empty)": [
-        "(Kosong)"
+        "（空）"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 hari untuk mencoba berbagai fitur premium secara gratis. Hanya selama minggu pertama ${ BRAND_NAME } Anda."
+        "7 天免费试用高级功能。仅在您使用 ${ BRAND_NAME } 的第一个星期。"
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
-        "Kontak dibuat untuk setiap alamat email yang mengirim atau menerima email dari ${ aliasEmail }."
+        "向 ${ aliasEmail } 发送电子邮件或接收电子邮件的每个电子邮件地址都将创建一个联系人。"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "Versi terbaru dari ${ PASS_APP_NAME } telah tersedia. Perbarui aplikasi Anda untuk menikmati berbagai fitur terbaru dan perbaikan bug."
+        "新版 ${ PASS_APP_NAME } 已发布。更新后即可享受最新功能和错误修复。"
       ],
       "Access successfully confirmed": [
-        "Akses berhasil dikonfirmasi"
+        "访问已成功确认"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi ${ BRAND_NAME } Anda."
+        "访问 ${ PASS_APP_NAME } 将始终需要您的 ${ BRAND_NAME } 密码。"
       ],
       "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi cadangan Anda."
+        "访问 ${ PASS_APP_NAME } 将始终需要您的备份密码。"
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
-        "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi tambahan Anda."
+        "访问 ${ PASS_APP_NAME } 将始终需要您的额外密码。"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
-        "Akses ke ${ PASS_APP_NAME } akan membutuhkan sidik jari atau PIN milik perangkat Anda."
+        "访问 ${ PASS_APP_NAME } 需要您的指纹或设备 PIN 码。"
       ],
       "Add your custom email address to monitor:": [
-        "Tambahkan alamat email khusus Anda untuk dipantau:"
+        "添加您的自定义电子邮件地址进行监控："
       ],
       "Admin": [
-        "Admin"
+        "管理员"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
+        "成功导入数据后，为安全起见，您可以删除包含密码的 CSV 文件。"
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias berhasil dinonaktifkan. Anda tidak akan lagi menerima email yang dikirim ke ${ item.aliasEmail }."
+        "别名已成功禁用。您将不再收到发送至 ${ item.aliasEmail } 的电子邮件"
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias berhasil diaktifkan. Anda kini dapat menerima email yang dikirim ke ${ item.aliasEmail }"
+        "别名已成功启用。现在您可以接收发送至 ${ item.aliasEmail } 的电子邮件了"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
-        "Penyinkronan alias antara akun ${ BRAND_NAME } dan SimpleLogin Anda sedang aktif."
+        "${ BRAND_NAME } 和 SimpleLogin 账户之间的别名同步已激活。"
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
-        "Alias di sampah akan terus meneruskan email. Jika anda mau berhenti menerima email di alamat ini, nonaktifkan saja."
+        "回收站中的别名将继续转发电子邮件。如果您想停止接收该地址的邮件，请禁用它。"
       ],
       "Aliases out of sync (${ aliasCount })": [
-        "Alias yang tidak sinkron (${ aliasCount })"
+        "别名未同步 ( ${ aliasCount } )"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
-        "Alias dengan domain khusus tidak dipantau. Silakan tambahkan alias ini sebagai email khusus untuk keperluan pemantauan."
+        "自定义域名的别名不受监控，请将其添加为自定义电子邮件以便监控。"
       ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
-        "Seluruh alias yang menggunakan kotak surat ${ emailJSX } akan turut dihapus."
+        "使用邮箱 ${ emailJSX } 的所有别名也将被删除。"
       ],
       "All breaches for this address were resolved": [
-        "Seluruh kebocoran untuk alamat ini telah terselesaikan"
+        "该地址的所有泄露问题均已解决"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
-        "Seluruh kebocoran yang ada saat ini akan ditandai sebagai telah terselesaikan. Apabila ke depannya terdapat kebocoran data baru, Anda akan menerima notifikasi seputar hal ini."
+        "所有当前的数据泄露事件都将被标记为已解决。如果将来发生数据泄露，我们将通知您。"
       ],
       "All inactive secure links were removed": [
-        "Seluruh tautan aman yang tidak aktif dihapus"
+        "所有不活动的安全链接都已删除"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
-        "Semua item dari \"${ payload.content.name }\" berhasil dipindahkan"
+        "来自 “${ payload.content.name }” 的所有项目均已成功移动"
       ],
       "All items successfully moved": [
-        "Seluruh item berhasil dipindahkan"
+        "所有项目已成功移动"
       ],
       "All trashed items permanently deleted": [
-        "Seluruh item yang dibuang dihapus secara permanen"
+        "所有项目均已永久删除"
       ],
       "All trashed items successfully restored": [
-        "Semua item yang dibuang berhasil dipulihkan"
+        "所有回收站中的项目已成功恢复"
       ],
       "An item previously shared with you was removed": [
-        "Item yang sebelumnya dibagikan dengan Anda telah dihapus"
+        "之前与您共享的项目已被删除"
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
-        "Apakah Anda yakin ingin menghapus ${ emailJSX } dari kotak surat Anda?"
+        "您确定要从您的邮箱中删除 ${ emailJSX } 吗？"
       ],
       "Are you sure you want to remove the link?": [
-        "Apakah Anda yakin ingin menghapus tautan?"
+        "您确定要删除此链接吗？"
       ],
       "Auto-created aliases are automatically owned by the following mailbox(es):": [
-        "Alias yang dibuat otomatis secara otomatis dimiliki oleh kotak surat berikut:"
+        "自动创建的别名自动归以下邮箱所有："
       ],
       "Auto-lock successfully disabled.": [
-        "Pengunci otomatis berhasil dinonaktifkan."
+        "已成功禁用自动锁定。"
       ],
       "automatically": [
-        "secara otomatis"
+        "自动"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
-        "Sebelum mengekspor data Anda dengan format ini, silakan buka pengaturan Safari -> tab \"Umum\" -> nonaktifkan pilihan \"Buka berkas aman setelah mengunduh\". Hal ini akan mencegah Safari untuk secara tidak sengaja mengekstrak berkas yang diekspor."
+        "使用此格式导出数据前，请打开 Safari 设置 -> “常规”选项卡 -> 禁用 “下载后打开安全文件”选项。这将防止 Safari 错误提取导出的文件。"
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Kunci biometrik berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
+        "生物识别锁注册成功。使用它解锁 ${ PASS_APP_NAME }"
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
-        "Biometrik akan dinonaktifkan dan akan harus diaktifkan lagi."
+        "生物识别将被禁用，需要重新启用。"
       ],
       "Breaches detected": [
-        "Kebocoran terdeteksi"
+        "检测到的泄露行为"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
-        "Bawa kata sandi Anda ke ${ BRAND_NAME }."
+        "将您的现有的密码导入 ${ BRAND_NAME }。"
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
-        "Bawa domain milik Anda sendiri, dan Anda tidak akan lagi butuh untuk membeli solusi hosting email lainnya."
+        "自带域名，无需再购买其他电子邮件托管解决方案。"
       ],
       "Built in 2FA authenticator": [
-        "Autentikator 2FA terintegrasi"
+        "内置 2FA 身份验证器"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
-        "Dengan menambahkan domain milik Anda, Anda dapat membuat alias seperti halo@domain-saya.com."
+        "通过添加域名，您可以创建别名，如 hi@my-domain.com。"
       ],
       "Can be viewed": [
-        "Dapat dilihat"
+        "可查看"
       ],
       "Can create, edit, and delete items in this vault.": [
-        "Dapat membuat, menyunting, dan menghapus item dalam brankas ini."
+        "可以创建、编辑和删除该保险库中的项目。"
       ],
       "Can create, edit, and delete this item.": [
-        "Dapat membuat, menyunting, dan menghapus item ini."
+        "可以创建、编辑和删除此项目。"
       ],
       "Can grant and revoke access to this item, and delete it.": [
-        "Dapat memberikan dan mencabut izin akses ke item ini serta menghapus item."
+        "可以授予和撤销对该项目的访问权限，也可以将其删除。"
       ],
       "Can grant and revoke access to this item.": [
-        "Dapat memberikan dan mencabut izin akses ke item ini."
+        "可以授予和撤销对该项目的访问权限。"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Dapat memberikan dan mencabut izin akses ke brankas ini serta menghapus brankas."
+        "可以授予和撤销对该保险库的访问权限，也可以删除该保险库。"
       ],
       "Can grant and revoke access to this vault.": [
-        "Dapat memberikan dan mencabut izin akses ke brankas ini."
+        "可授予和撤销对此保险库的访问权限."
       ],
       "Can view items in this vault.": [
-        "Dapat melihat item yang terkandung dalam brankas ini."
+        "可查看此保险库中的项目."
       ],
       "Can view this item.": [
-        "Dapat melihat item ini."
+        "可以查看此项目。"
       ],
       "Change your password": [
-        "Ubah kata sandi Anda"
+        "更改密码"
       ],
       "Confirm your extra password to proceed with its removal.": [
-        "Konfirmasi kata sandi tambahan Anda untuk melanjutkan penghapusan kata sandi ini."
+        "确认您的额外密码以继续删除。"
       ],
       "Congratulations, your access has been confirmed": [
-        "Selamat, akses Anda telah dikonfirmasi"
+        "恭喜，您的访问权限已确认"
       ],
       "Copied to clipboard": [
-        "Disalin ke papan klip"
+        "已复制到剪贴板"
       ],
       "Coupon successfully applied!": [
-        "Kupon berhasil diterapkan!"
+        "优惠券已成功应用！"
       ],
       "Create contact illustration": [
-        "Ilustrasi pembuatan kontak"
+        "创建联系人图标"
       ],
       "Created ${ time }.": [
-        "Dibuat ${ time }."
+        "已创建 ${ time }。"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV merupakan format berkas yang menawarkan tampilan data yang ramah dipandang. Namun, karena kesederhanaannya, sebagian data tidak akan diikutsertakan dalam ekspor (kolom kustom, passkey, dll.). Untuk ekspor yang lengkap, kami menyarankan Anda untuk menggunakan format berkas yang berbeda."
+        "CSV 为查看数据提供了一种方便的格式。但由于其简单性，某些数据将不包括在内 ( 自定义字段、密码... ) 。如需完整导出，建议使用其他格式。"
       ],
       "Current version": [
-        "Versi saat ini"
+        "当前版本"
       ],
       "Decrypting your data": [
-        "Mendekripsi data Anda"
+        "正在解密您的数据"
       ],
       "Default display name for aliases created with ${ domainDisplay } unless overwritten by the alias display name.": [
-        "Nama tampilan bawaan untuk alias yang dibuat dengan ${ domainDisplay } kecuali jika ditimpa nama tampilan alias."
+        "使用 ${ domainDisplay } 创建别名的默认显示名称，除非被别名显示名称覆盖。"
       ],
       "Deleted items will be moved here first": [
-        "Item yang dihapus akan terlebih dahulu dipindahkan ke sini"
+        "删除的项目将首先移至此处"
       ],
       "Deleting \"${ payload.content.name }\"": [
-        "Menghapus \"${ payload.content.name }\""
+        "正在删除 “${ payload.content.name }”"
       ],
       "Didn't receive the code?": [
-        "Tidak menerima kode verifikasi?"
+        "没有收到验证码？"
       ],
       "Disabling auto-lock": [
-        "Menonaktifkan kunci otomatis"
+        "禁用自动锁定"
       ],
       "Disabling auto-lock failed": [
-        "Gagal menonaktifkan penguncian otomatis"
+        "禁用自动锁定失败"
       ],
       "Disabling offline mode...": [
-        "Menonaktifkan mode offline..."
+        "正在关闭离线模式..."
       ],
       "DNS changes could take up to 24 hours to update.": [
-        "Perubahan DNS dapat memakan waktu hingga 24 jam untuk diperbarui."
+        "DNS更改可能需要长达24小时才能更新。"
       ],
       "Domain: ${ domainPath } or @": [
-        "Domain: ${ domainPath } atau @"
+        "域名：${ domainPath } 或 @"
       ],
       "Drop file here to upload": [
-        "Lepaskan berkas di sini untuk mengunggah"
+        "拖至此处上传文件"
       ],
       "Drop to import": [
-        "Lepaskan untuk mengimpor"
+        "拖至此处即可导入"
       ],
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Karena batasan pada ekstensi browser Safari, data yang diekspor tidak akan mengandung ekstensi \".pgp\". Silakan ubah nama berkas yang bersangkutan untuk menyertakan ekstensi .pgp (mis. file.pgp) setelah mengekspor."
+        "由于 Safari 浏览器扩展的限制，导出数据后文件扩展名将缺少“.pgp”。请在导出后重命名文件，使其包含 .pgp 扩展名（如 file.pgp）。"
       ],
       "Editor": [
-        "Penyunting"
+        "编辑者"
       ],
       "email": [
-        "email"
+        "电子邮箱"
       ],
       "Email address successfully deleted from monitoring": [
-        "Alamat email berhasil dihapus dari pemantauan"
+        "从监测中成功删除电子邮件地址"
       ],
       "Email address successfully excluded from monitoring": [
-        "Alamat email berhasil dikecualikan dari pemantauan"
+        "成功将电子邮件地址排除在监测范围之外"
       ],
       "Email address successfully included in monitoring": [
-        "Alamat email berhasil diikutsertakan dalam pemantauan"
+        "电子邮件地址成功纳入监测"
       ],
       "Email headers illustration": [
-        "Ilustrasi header email"
+        "电子邮件头部示意图"
       ],
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
-        "Kirim email ke alamat ini dan akan terlihat dikirim dari ${ exampleEmail }, misalnya."
+        "给这个地址发送电子邮件，就会显示是从 ${ exampleEmail } 发送的。"
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Email yang dikirim ke alias Anda akan diteruskan ke kotak surat Anda. Suatu alias dapat memiliki lebih dari satu kotak surat: hal ini berguna untuk membagikan alias kepada Anda dan teman Anda."
+        "发送到别名的邮件会转发到您的邮箱。一个别名可以拥有多个邮箱：这对您和朋友共享一个别名非常有用。"
       ],
       "Emptying trash...": [
-        "Mengosongkan sampah..."
+        "正在清空回收站..."
       ],
       "Enable auto-locking to secure your data": [
-        "Aktifkan pengucian otomatis untuk mengamankan data Anda"
+        "启用自动锁定功能，确保数据安全"
       ],
       "Enabling biometrics auto-lock": [
-        "Mengaktifkan penguncian otomatis biometrik"
+        "启用生物识别自动锁定"
       ],
       "Enabling biometrics lock failed": [
-        "Gagal mengaktifkan penguncian biometrik"
+        "启用生物识别锁失败"
       ],
       "Enabling offline mode...": [
-        "Mengaktifkan mode offline..."
+        "正在启用离线模式..."
       ],
       "Enabling password auto-lock": [
-        "Mengaktifkan penguncian kata sandi otomatis"
+        "启用密码自动锁定"
       ],
       "Enabling password lock failed": [
-        "Gagal mengaktifkan penguncian kata sandi"
+        "启用密码锁定失败"
       ],
       "Enabling PIN auto-lock": [
-        "Mengaktifkan penguncian PIN otomatis"
+        "启用 PIN 码自动锁定"
       ],
       "Enter the address you want to email.": [
-        "Masukkan alamat yang ingin Anda kirimi email."
+        "输入您要发送电子邮件的地址。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Masukkan kode verifikasi. Digit ${ digit }."
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your extra password": [
-        "Masukkan kata sandi tambahan Anda"
+        "输入您的额外密码"
       ],
       "Enter your PIN code": [
-        "Masukkan kode PIN Anda"
+        "输入 PIN 码"
       ],
       "Every time your alias receives an email from someone, a new contact is automatically created.": [
-        "Setiap kali alias Anda menerima email dari orang lain, kontak baru akan dibuat secara otomatis."
+        "每次您的别名收到某人的电子邮件时，就会自动创建一个新的联系人。"
       ],
       "Expires in": [
-        "Kedaluwarsa dalam"
+        "到期于"
       ],
       "Expires in ${ remainingTime }": [
-        "Kedaluwarsa dalam ${ remainingTime }"
+        "在 ${ remainingTime } 后过期"
       ],
       "Exporting your data...": [
-        "Mengekspor data Anda..."
+        "正在导出您的数据..."
       ],
       "Extra password successfully created": [
-        "Kata sandi tambahan berhasil dibuat"
+        "成功创建额外密码"
       ],
       "Extra password successfully removed": [
-        "Kata sandi tambahan berhasil dihapus"
+        "成功删除额外密码"
       ],
       "Fill in the CSV with your data": [
-        "Isi CSV dengan data Anda"
+        "在 CSV 中填入您的数据"
       ],
       "finance": [
-        "keuangan"
+        "金融"
       ],
       "Follow those steps to import your data with a generic CSV:": [
-        "Ikuti langkah-langkah berikut untuk mengimpor data Anda dengan berkas CSV generik:"
+        "按照这些步骤使用通用 CSV 导入数据："
       ],
       "For security reasons, this action requires identity verification.": [
-        "Demi alasan keamanan, tindakan ini memerlukan verifikasi identitas."
+        "出于安全原因，此操作需要身份验证。"
       ],
       "For security reasons, you need to confirm access to this shared vault": [
-        "Demi alasan keamanan, Anda perlu untuk mengonfirmasi akses ke brankas terbagi ini"
+        "出于安全考虑，您需要确认这些共享保险库的访问权限"
       ],
       "For security reasons, your access needs to be confirmed": [
-        "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
+        "出于安全原因，需要确认您的访问权限"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Alamat penerusan disalin ke papan klip. Kirimlah email ke alamat ini, dan ${ Email } akan menerima email ini."
+        "转发地址已复制到剪贴板。向该地址发送电子邮件，${ Email } 就会收到。"
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Kata sandi yang dihasilkan akan disimpan selama ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu."
+        "生成的密码将在 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周内存储。"
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
-        "Dapatkan pengalaman Pass yang maksimal dengan membuat brankas khusus bagi masing-masing tim atau proyek."
+        "通过为每个团队或项目创建一个保险库以此充分利用 Pass。"
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
-        "Dapatkan alias tak terbatas, nikmati fitur eksklusif, dan dukung kami dengan berlangganan Pass Plus."
+        "通过订阅 Pass Plus 来获得无限别名，享受独家功能并支持我们。"
       ],
       "here": [
-        "di sini"
+        "此处"
       ],
       "Here's how it works:": [
-        "Berikut cara kerjanya:"
+        "具体操作如下："
       ],
       "High Priority": [
-        "Prioritas Tinggi"
+        "首要优先顺序"
       ],
       "How does monitoring work?": [
-        "Bagaimana cara pemantauan ini bekerja?"
+        "监测原理是什么？"
       ],
       "Identity confirmed": [
-        "Identitas terkonfirmasi"
+        "身份已确认"
       ],
       "Import in progress:": [
-        "Impor yang sedang berlangsung:"
+        "正在导入:"
       ],
       "Import the CSV file below.": [
-        "Impor CSV pada kolom di bawah ini."
+        "导入以下 CSV 文件。"
       ],
       "Imported ${ payload.total } item": [
-        "${ payload.total } item diimpor"
+        "已导入 ${ payload.total } 项"
       ],
       "Imported on ${ date }": [
-        "Diimpor pada tanggal ${ date }"
+        "导入 ${ date }"
       ],
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
-        "Pada ${ PASS_SHORT_APP_NAME }, catatan item dienkripsi dengan kunci enkripsi dan hanya dapat dilihat oleh pengguna yang memiliki akses ke item. Bahkan ${ BRAND_NAME } atau SimpleLogin pun tidak dapat melihat catatan ini."
+        "在 ${ PASS_SHORT_APP_NAME } 中，项目笔记使用项目加密密钥加密，只有有权访问项目的用户才能查看备注。甚至 ${ BRAND_NAME } 或 SimpleLogin 也无法查看。"
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Untuk mendapatkan pengalaman terbaik menggunakan ${ PASS_APP_NAME }, mohon berikan izin yang diperlukan pada ekstensi ini."
+        "为了获得 ${ PASS_APP_NAME } 的最佳体验，请授予必要的扩展权限"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
-        "Pasang ${ PASS_APP_NAME } untuk ${ browser.title } agar rincian masuk Anda dapat terisi secara cepat dan otomatis."
+        "安装 ${ PASS_APP_NAME } 到 ${ browser.title } 以快速自动填充您的登录信息。 "
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
-        "Pasang ${ PASS_APP_NAME } untuk ${ browser.title } agar rincian masuk Anda dapat terisi secara cepat dan otomatis. "
+        "安装 ${ PASS_APP_NAME } 到 ${ browser.title } 以快速自动填充您的登录信息。 "
       ],
       "Internet connection lost": [
-        "Koneksi internet terputus"
+        "网络连接已断开"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet terputus. Silakan periksa konektivitas perangkat Anda."
+        "网络连接中断，请检查系统网络情况。"
       ],
       "Invitation sent": [
-        "Undangan dikirim"
+        "已发出邀请"
       ],
       "Invite specific people and set the right permissions.": [
-        "Undang orang-orang yang Anda kehendaki dan tentukan izin akses yang sesuai bagi mereka."
+        "邀请特定人员并设置正确的权限。"
       ],
       "Invite successfully removed": [
-        "Undangan berhasil dihapus"
+        "邀请已成功删除"
       ],
       "Invite successfully resent": [
-        "Undangan berhasil dikirim ulang"
+        "已重新发送邀请"
       ],
       "invites you to access items in": [
-        "mengundang Anda untuk mengakses item pada"
+        "邀请您访问其中的项目"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Sepertinya Anda telah masuk ke ${ PASS_APP_NAME }. Apabila Anda mencoba masuk dengan akun lain, silakan keluar dari ekstensi terlebih dahulu."
+        "您似乎已登录到 ${ PASS_APP_NAME } 。如果您正在尝试使用不同的账户登录，请先从扩展中登出。"
       ],
       "item": [
-        "item"
+        "项目"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
-        "Item \"${ payload.item.data.metadata.name }\" dibuat"
+        "项目 “${ payload.item.data.metadata.name }” 已创建"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
-        "Item \"${ payload.item.data.metadata.name }\" diperbarui"
+        "项目 “${ payload.item.data.metadata.name }” 已更新"
       ],
       "Item moved to trash": [
-        "Item dipindahkan ke sampah"
+        "项目已经移至回收站"
       ],
       "Item permanently deleted": [
-        "Item dihapus secara permanen"
+        "项目已永久删除"
       ],
       "Item restored": [
-        "Item dipulihkan"
+        "个项目已恢复"
       ],
       "Item sharing: ${ itemAccessCount } user": [
-        "Pembagian item: ${ itemAccessCount } pengguna"
+        "项目共享： ${ itemAccessCount } 位用户"
       ],
       "Item successfully excluded from monitoring": [
-        "Item berhasil dikecualikan dari pemantauan"
+        "项目成功排除在监测外"
       ],
       "Item successfully included in monitoring": [
-        "Item berhasil diikutsertakan dalam pemantauan"
+        "成功将项目纳入监测"
       ],
       "Item successfully moved": [
-        "Item berhasil dipindahkan"
+        "项目已成功移动"
       ],
       "Item successfully pinned": [
-        "Item berhasil disematkan"
+        "项目成功固定"
       ],
       "Item successfully unpinned": [
-        "Sematan item berhasil dilepas"
+        "项目成功取消固定"
       ],
       "Latest breach on ${ formattedDate }": [
-        "Kebocoran terkini pada ${ formattedDate }"
+        "最近一次泄露的时间 ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
-        "Pelajari cara untuk ${ staySaferOnlineLink }"
+        "学习如何 ${ staySaferOnlineLink }"
       ],
       "Leaving item...": [
-        "Meninggalkan item..."
+        "正在离开项目..."
       ],
       "Leaving vault...": [
-        "Meninggalkan brankas..."
+        "离开保险库..."
       ],
       "Let's get you started by creating your first item": [
-        "Mulailah dengan membuat item pertama Anda"
+        "让我们从创建第一个项目开始吧"
       ],
       "Loading": [
-        "Memuat"
+        "加载中"
       ],
       "Loading ${ PASS_APP_NAME }": [
-        "Memuat ${ PASS_APP_NAME }"
+        "正在加载 ${ PASS_APP_NAME }"
       ],
       "Logging you out...": [
-        "Mengeluarkan Anda dari akun..."
+        "正在退出账户..."
       ],
       "Low Priority": [
-        "Prioritas Rendah"
+        "较低优先顺序"
       ],
       "me": [
-        "saya"
+        "我"
       ],
       "Medium Priority": [
-        "Prioritas Menengah"
+        "中等优先顺序"
       ],
       "Monitor accounts": [
-        "Monitor akun"
+        "监控账户"
       ],
       "Monitoring settings successfully updated": [
-        "Pengaturan pemantauan berhasil diperbarui"
+        "监测设置已更新"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
-        "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alias email. Didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
+        "不仅仅是一个密码管理器，${ PASS_APP_NAME } 通过电子邮件别名保护您的密码和个人电子邮件地址。它采用与 ${ MAIL_APP_NAME } 相同的技术，对您的数据进行端到端加密，只有您自己才能访问它。"
       ],
       "Move ${ count } item": [
-        "Pindahkan ${ count } item"
+        "移动 ${ count } 个项目"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
-        "Memindahkan semua item dari \"${ payload.content.name }\""
+        "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
-        "Memindahkan item"
+        "正在移动"
       ],
       "Moving items to another vault will erase their history and all secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus riwayatnya."
+        "将项目移动到另一个保险库会删除其历史记录和所有安全链接。"
       ],
       "Moving items to another vault will erase their history.": [
-        "Memindahkan item ke brankas lain akan menghapus riwayatnya."
+        "将项目移动到另一个保险库会删除其历史记录。"
       ],
       "Moving items to trash": [
-        "Memindahkan item ke sampah"
+        "将项目移动至回收站"
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
-        "Perlu untuk mengirim email kepada seseorang, namun tidak ingin mereka sampai melihat alamat email Anda? Siapkan alias kontak."
+        "需要给某人发送电子邮件，但又不想让对方看到您的电子邮件地址？设置联系人别名。"
       ],
       "Never": [
-        "Tidak pernah"
+        "从不"
       ],
       "New version ${ latestVersion } is available.": [
-        "Versi baru ${ latestVersion } tersedia."
+        "新版本 ${ latestVersion } 可用。"
       ],
       "No breaches detected": [
-        "Tidak ada kebocoran yang terdeteksi"
+        "未检测到数据泄露"
       ],
       "No network connection": [
-        "Tidak ada koneksi jaringan"
+        "无网络连接"
       ],
       "None": [
-        "Tidak ada"
+        "无"
       ],
       "Not recommended": [
-        "Tidak disarankan"
+        "不推荐"
       ],
       "Offline mode": [
-        "Mode offline"
+        "脱机模式"
       ],
       "Offline mode could not be disabled at the moment": [
-        "Mode offline tidak dapat dinonaktifkan untuk saat ini"
+        "暂时无法禁用脱机模式"
       ],
       "Offline mode could not be enabled at the moment": [
-        "Mode offline tidak dapat diaktifkan pada saat ini"
+        "暂时无法启用脱机模式"
       ],
       "Offline support successfully disabled": [
-        "Dukungan offline berhasil dinonaktifkan"
+        "成功禁用脱机支持"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
-        "Akses online ke ${ PASS_APP_NAME } akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 upaya percobaan yang gagal."
+        "在线访问 ${ PASS_APP_NAME } 将需要 PIN 码。您将在 3 次尝试失败后注销。"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
+        "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
       ],
       "Owner": [
-        "Pemilik"
+        "所有者"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Kepemilikan brankas berhasil dipindahkan. Anda kini tidak lagi menjadi pemilik dari brankas ini."
+        "所有权转移成功，您不再是该保险库的所有者。"
       ],
       "Pass Plus trial": [
-        "Uji coba Pass Plus"
+        "Pass Plus 试用"
       ],
       "password": [
-        "kata sandi"
+        "密码"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Kunci kata sandi berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
+        "密码锁已成功注册，该密码可用于解锁 ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Kata sandi yang berusia lebih dari ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu akan dihapus dari daftar riwayat secara otomatis."
+        "超过 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周的密码将自动从历史记录中删除。"
       ],
       "Paused": [
-        "Dijeda"
+        "已暂停"
       ],
       "Permanently deleting selected items": [
-        "Menghapus item yang dipilih secara permanen"
+        "永久删除选定项目"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Kode PIN berhasil didaftarkan. Gunakan kode PIN ini untuk membuka kunci ${ PASS_APP_NAME }"
+        " PIN 码设置成功，该密码可用于解锁 ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
-        "Menyematkan item..."
+        "正在固定项目..."
       ],
       "Please check your spam folder or try resending the code.": [
-        "Silakan periksa folder spam Anda atau cobalah untuk mengirimkan ulang kode ini."
+        "请检查您的垃圾邮件文件夹或尝试重新发送代码。"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
-        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk menonaktifkan mode offline"
+        "请确认您的 ${ BRAND_NAME } 密码以禁用脱机模式"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
-        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengaktifkan mode offline"
+        "请确认您的 ${ BRAND_NAME } 密码以启用脱机模式"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
+        "请确认您的 ${ BRAND_NAME } 密码以导出您的 ${ PASS_APP_NAME } 数据"
       ],
       "Please confirm your backup password": [
-        "Silakan konfirmasi kata sandi cadangan Anda"
+        "请确认您的备份密码"
       ],
       "Please confirm your backup password in order to auto-lock with biometrics.": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk mengunci aplikasi secara otomatis dengan kunci biometrik."
+        "请确认您的备份密码，以便使用生物识别技术自动锁定。"
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi Anda."
+        "请确认备份密码，以便使用密码自动锁定。"
       ],
       "Please confirm your backup password in order to disable offline mode": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk menonaktifkan mode offline"
+        "请确认您的备份密码，以便禁用脱机模式"
       ],
       "Please confirm your backup password in order to enable offline mode": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk mengaktifkan mode offline"
+        "请确认您的备份密码，以便启用离线模式"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk mengekspor data ${ PASS_APP_NAME } milik Anda"
+        "请确认您的备份密码，以便导出 ${ PASS_APP_NAME } 数据"
       ],
       "Please confirm your backup password in order to unregister your current lock.": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk membatalkan kunci Anda saat ini."
+        "请确认您的备份密码，以取消您当前的锁定。"
       ],
       "Please confirm your backup password in order to update the auto-lock time.": [
-        "Silakan konfirmasi kata sandi cadangan Anda untuk memperbarui waktu penguncian otomatis."
+        "请确认备份密码，以便更新自动锁定时间。"
       ],
       "Please confirm your extra password": [
-        "Silakan konfirmasi kata sandi tambahan Anda"
+        "请确认您的额外密码"
       ],
       "Please confirm your extra password in order to auto-lock with biometrics.": [
-        "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci otomatis dengan biometrik."
+        "请确认您的额外密码，以便使用生物识别技术自动锁定。"
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
-        "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi tambahan Anda."
+        "请确认额外密码，以便使用额外密码自动锁定。"
       ],
       "Please confirm your extra password in order to disable offline mode": [
-        "Silakan konfirmasi kata sandi tambahan Anda untuk menonaktifkan mode offline"
+        "请确认您的额外密码，以便禁用脱机模式"
       ],
       "Please confirm your extra password in order to enable offline mode": [
-        "Silakan konfirmasi kata sandi tambahan Anda untuk mengaktifkan mode offline"
+        "请确认您的额外密码，以便启用脱机模式"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
-        "Silakan konfirmasi kata sandi tambahan Anda untuk mengekspor data ${ PASS_APP_NAME } milik Anda"
+        "请确认您的额外密码，以便导出 ${ PASS_APP_NAME } 数据"
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
-        "Silakan konfirmasi kata sandi tambahan Anda untuk menonaktifkan kunci Anda saat ini."
+        "请确认您的额外密码，以取消您当前的锁定。"
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
-        "Silakan konfirmasi kata sandi tambahan Anda untuk memperbarui waktu penguncian otomatis."
+        "请确认您的额外密码，以便更新自动锁定时间。"
       ],
       "Please confirm your password": [
-        "Silakan konfirmasi kata sandi Anda"
+        "请确认您的密码"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Silakan konfirmasi kata sandi Anda untuk mengunci otomatis dengan biometrik."
+        "请确认您的密码，以便使用生物识别技术自动锁定。"
       ],
       "Please confirm your password in order to auto-lock with your password.": [
-        "Silakan konfirmasi kata sandi Anda untuk mengunci secara otomatis dengan kata sandi Anda."
+        "请确认密码，以便使用密码自动锁定。"
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "Silakan konfirmasi kata sandi Anda untuk menonaktifkan kunci Anda saat ini."
+        "请确认您的密码以取消当前锁定。"
       ],
       "Please confirm your password in order to update the auto-lock time.": [
-        "Silakan konfirmasi kata sandi Anda untuk memperbarui waktu penguncian otomatis."
+        "请确认密码，以便更新自动锁定时间。"
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "Silakan konfirmasi kode PIN Anda untuk menonaktifkan kunci Anda saat ini."
+        "请确认您的 PIN 码，以便取消您当前的锁定。"
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Mohon konfirmasi kode PIN Anda untuk menyunting pengaturan ini."
+        "请输入 PIN 码以更改此设置。"
       ],
       "Please consider leaving a review.": [
-        "Mohon pertimbangkan untuk memberikan ulasan."
+        "请考虑留下评论。"
       ],
       "Please do not close this window": [
-        "Mohon untuk tidak menutup jendela ini"
+        "请勿关闭此窗口"
       ],
       "Please enter your current PIN code to continue": [
-        "Silakan masukkan kode PIN Anda saat ini untuk melanjutkan"
+        "请先输入当前 PIN 码"
       ],
       "Please follow the steps below to set up your domain.": [
-        "Silakan ikuti langkah-langkah di bawah ini untuk mengatur domain Anda."
+        "请按照下面的步骤设置您的域。"
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
-        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Apakah Anda ingin sekadar menonaktifkan alias ini?"
+        "请注意别名一旦删除就无法恢复。也许您想禁用别名？"
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
-        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Alias ini telah dinonaktifkan dan tidak akan lagi meneruskan email ke kotak surat Anda"
+        "请注意别名一旦删除就无法恢复。别名已被禁用，不会将邮件转发到您的邮箱"
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
-        "Silakan gunakan jalur domain selengkapnya, semisal domain-saya.com atau subdomain-saya.domain-saya.com apabila Anda menggunakan subdomain."
+        "请使用全路径域名，例如 my-domain.com，如果使用的是子域，则使用 my-subdomain.my-domain.com。"
       ],
       "Press Enter to copy": [
-        "Tekan Enter untuk menyalin"
+        "按回车键以复制"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Dilindungi oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
+        "受我们的高等级账户保护计划 ${ PROTON_SENTINEL_LINK } 保护"
       ],
       "Reconnect": [
-        "Hubungkan ulang"
+        "重新连接"
       ],
       "Reconnecting": [
-        "Menghubungkan ulang"
+        "正在重新连接"
       ],
       "Record: CNAME": [
-        "Rekaman: CNAME"
+        "记录：CNAME"
       ],
       "Record: MX": [
-        "Rekaman: MX"
+        "记录：MX"
       ],
       "Record: TXT": [
-        "Rekaman: TXT"
+        "记录：TXT"
       ],
       "Registering extra password...": [
-        "Mendaftarkan kata sandi tambahan..."
+        "正在注册额外密码..."
       ],
       "Registering PIN lock failed": [
-        "Pendaftaran kunci PIN gagal"
+        "注册PIN码锁定失败"
       ],
       "Removing all inactive secure links...": [
-        "Menghapus seluruh tautan aman yang tidak aktif..."
+        "正在删除所有不活动的安全链接..."
       ],
       "Removing extra password...": [
-        "Menghapus kata sandi tambahan..."
+        "正在删除额外密码..."
       ],
       "Removing secure link...": [
-        "Menghapus tautan aman..."
+        "正在删除安全链接..."
       ],
       "Restoring items from trash": [
-        "Memulihkan item dari sampah"
+        "正在从回收站中恢复项目"
       ],
       "Restoring trashed items...": [
-        "Memulihkan item yang dibuang..."
+        "正在还原回收站中的项目..."
       ],
       "Secure links": [
-        "Tautan aman"
+        "安全链接"
       ],
       "See more info": [
-        "Lihat info lebih lanjut"
+        "查看更多信息"
       ],
       "Select destination vault": [
-        "Pilih brankas tujuan"
+        "选择目标保险库"
       ],
       "Select vault to share": [
-        "Pilih brankas untuk dibagikan"
+        "选择要共享的保险库"
       ],
       "Select where you want your imported vaults to be saved.": [
-        "Tentukan di mana brankas yang Anda impor akan tersimpan."
+        "选择您想要保存导入的保险库。"
       ],
       "Selected items permanently deleted": [
-        "Item yang dipilih dihapus secara permanen"
+        "选定项目均已永久删除"
       ],
       "Selected items successfully moved to trash": [
-        "Item yang dipilih berhasil dipindahkan ke sampah"
+        "选中的项目成功移动至回收站"
       ],
       "Selected items successfully restored from trash": [
-        "Item yang dipilih berhasil dipulihkan dari sampah"
+        "所选项目成功从回收站还原"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+        "服务器无法访问，请过几分钟后再试"
       ],
       "Session timed out": [
-        "Masa berlaku sesi telah berakhir"
+        "会话超时"
       ],
       "Set by your organization": [
-        "Ditetapkan oleh organisasi Anda"
+        "由贵组织设定"
       ],
       "Settings successfully updated": [
-        "Pengaturan berhasil diperbarui"
+        "设置更新成功"
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
-        "Bagikan alias kepada pengguna lainnya dengan menambahkan kotak masuk mereka sebagai kotak masuk penerusan."
+        "将他人的收件箱添加为转发邮箱，与他人共享别名。"
       ],
       "Share your logins and secure notes, with up to 10 people": [
-        "Bagikan entri masuk dan catatan aman Anda, sampai dengan 10 pengguna"
+        "最多可与 10 人共享登录信息和安全笔记"
       ],
       "Shared item invitation": [
-        "Undangan item yang dibagikan"
+        "共享的项目邀请"
       ],
       "Sign in to your account": [
-        "Masuk ke akun Anda"
+        "登录到您的帐户"
       ],
       "Signing you in": [
-        "Memasukkan Anda ke akun"
+        "正在登录"
       ],
       "SimpleLogin note is stored together in the same location with alias address and while it is protected by encryption at rest, it isn't E2E encrypted meaning anyone who has access to SimpleLogin database can read it.": [
-        "Catatan SimpleLogin disimpan pada lokasi yang sama dengan alamat alias, dan walaupun catatan ini terlindung oleh enkripsi, catatan ini tidak terlindung secara E2E — yang berarti bahwa siapa pun yang memiliki akses ke basis data SimpleLogin akan dapat membaca catatan ini."
+        "SimpleLogin 笔记与别名地址一起存储在同一位置，虽然在静态时受到加密保护，但没有进行 E2E 加密，这意味着任何可以访问 SimpleLogin 数据库的人都可以读取它。"
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
-        "Cukup gunakan ${ emailBold } pada saat Anda membutuhkan alias ke depannya: alias ini akan ${ automaticallyBold } dihasilkan secara otomatis pada saat alias menerima email. Untuk memperoleh kendali yang lebih terperinci, Anda juga dapat mendefinisikan ${ rulesHyperLink }."
+        "下次需要别名时，只需使用 ${ emailBold } 即可：它将在第一次收到电子邮件时创建 ${ automaticallyBold }。要进行更精细的控制，还可以定义 ${ rulesHyperLink }。"
       ],
       "Successfully exported all your items": [
-        "Seluruh item Anda berhasil diekspor"
+        "成功导出所有项目"
       ],
       "Successfully left the item": [
-        "Item berhasil ditinggalkan"
+        "已成功离开项目"
       ],
       "Successfully left the vault": [
-        "Brankas berhasil ditinggalkan"
+        "已成功离开保险库"
       ],
       "Successfully synced all vaults": [
-        "Seluruh brankas berhasil disinkronkan"
+        "所有保险库已同步成功"
       ],
       "Suggested": [
-        "Disarankan"
+        "建议"
       ],
       "Switch to another vault or create an item in this vault": [
-        "Ganti ke brankas lain atau buat item dalam brankas ini"
+        "切换到另一个保险库或在此保险库中创建一个项目"
       ],
       "Syncing your vaults…": [
-        "Menyinkronkan brankas Anda…"
+        "正在同步您的保险库…"
       ],
       "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
-        "Ketuk ikon ${ gearIcon } untuk menyesuaikan alias sesuai keinginan Anda."
+        "点击图标 ${ gearIcon }，按自己想要的方式自定义别名。"
       ],
       "Thank you, the problem has been reported": [
-        "Terima kasih, masalah ini telah dilaporkan"
+        "谢谢，这个问题已上报"
       ],
       "The changelog can be found ${ changelogLink }.": [
-        "Riwayat perubahan ini dapat ditemukan ${ changelogLink }."
+        "更新日志可从 ${ changelogLink } 找到。"
       ],
       "The display name when sending an email from this alias.": [
-        "Nama tampilan pada saat mengirimkan email dari alias ini."
+        "使用此别名发送电子邮件时的显示名称。"
       ],
       "The export will only contain vaults that you own.": [
-        "Ekspor ini hanya akan mengandung brankas yang Anda miliki."
+        "导出将只包含您拥有的保险库。"
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "Berkas yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
+        "导出的文件将使用 PGP 加密，需要一个强大的口令。"
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
+        "所暴露的信息是从第三方服务泄露的。您的 ${ BRAND_NAME } 账户信息仍然安全且被加密。${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
-        "Kata sandi tambahan ini akan dibutuhkan untuk dapat menggunakan ${ PASS_APP_NAME }. Kata sandi ini berfungsi sebagai kata sandi kedua yang merangkapi kata sandi ${ BRAND_NAME } Anda."
+        "使用 ${ PASS_APP_NAME } 时需要输入额外密码。它是 ${ BRAND_NAME } 密码之外的附加密码。"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } item berikut tidak dapat diimpor:"
+        "无法导入以下 ${ result.ignored.length } 项："
       ],
       "The secure link has been removed": [
-        "Tautan aman telah dihapus"
+        "安全链接已删除"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
-        "Panjang teks yang ingin Anda salin melebihi batas ${ maxLength } karakter yang diperkenankan."
+        "您要粘贴的文本长度超过了允许的最大长度 ${ maxLength } 个字符。"
       ],
       "The user did not accept the invitation yet.": [
-        "Pengguna ini belum menjawab undangan Anda."
+        "用户尚未接受邀请。"
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor yang dihasilkan akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
+        "该导出文件未经加密，任何可以访问您导出文件的人都可以看到您的密码。为了安全起见，请在使用完毕后将其删除。"
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
-        "Item ini tidak sedang dibagikan dengan siapa pun. Undang pengguna lain ke item ini untuk saling berbagi item bersama."
+        "此项目目前未与任何人共享。请与他人共享。"
       ],
       "This mailbox will use your previous email.": [
-        "Kotak surat ini akan menggunakan alamat email sebelumnya."
+        "该邮箱将使用您之前的邮箱地址。"
       ],
       "This operation is irreversible.": [
-        "Tindakan ini tidak dapat diurungkan."
+        "此操作是不可逆的。"
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
-        "Tindakan ini tidak dapat diurungkan. Seluruh alias yang menggunakan domain ${ domainTextBold } akan dihapus. Mohon diperhatikan bahwa setelah dihapus, alias tidak akan lagi dapat dipulihkan."
+        "此操作不可逆转。所有使用 ${ domainTextBold } 域名的别名都将被删除。请注意，别名一旦删除将无法恢复。"
       ],
       "This option is currently not available on your device.": [
-        "Pilihan ini untuk saat ini tidak tersedia pada perangkat Anda."
+        "您的设备目前无法使用此选项。"
       ],
       "This setting is disabled on the organization level": [
-        "Pengaturan ini dinonaktifkan pada tingkat organisasi"
+        "此设置在组织级别被禁用"
       ],
       "This setting is enforced by your organization": [
-        "Pengaturan ini diwajibkan oleh organisasi Anda"
+        "此设置由您的组织执行"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Brankas ini sedang tidak dibagikan dengan siapa pun. Undanglah orang-orang ke brankas ini untuk saling berbagi brankas bersama mereka."
+        "该保险库目前未与任何人共享。请与他人共享。"
       ],
       "This version will be added to the history as the newest version.": [
-        "Versi ini akan ditambahkan ke riwayat sebagai versi terbaru."
+        "此版本将作为最新版本添加到历史记录中。"
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
-        "Tindakan ini akan menolak izin akses perangkat **${ name }** yang mencoba untuk masuk ke akun ${ BRAND_NAME } Anda pada **${ date }**."
+        "这将拒绝尝试在 **${ date }** 登录您的 ${ BRAND_NAME } 账户的设备 **${ name }**。"
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
-        "Untuk tetap menerima email, pindahkan alias berikut ke kotak surat yang berbeda:"
+        "要继续接收电子邮件，请将这些别名转移到其他邮箱："
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
-        "Untuk menjaga agar alamat email pribadi Anda tetap tersembunyi, Anda dapat membuat kontak alias yang menyamarkan alamat Anda."
+        "要隐藏您的个人电子邮件地址，您可以创建一个别名联系人来掩盖您的地址。"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Untuk memindahkan data dari pengelola kata sandi lain, tuju pengelola kata sandi yang dimaksud, ekspor data Anda, lalu unggah data ini ke ${ PASS_APP_NAME }. Setelah data selesai diunggah, hapus berkas yang diekspor."
+        "要从其他密码管理器迁移数据，请访问密码管理器，导出您的数据，然后上传到 ${ PASS_APP_NAME }。导入数据后，删除导出文件。"
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
-        "Untuk meninjau data Anda yang telah diimpor, klik ikon ${ PASS_APP_NAME } pada bilah toolbar browser Anda."
+        "要查看您导入到数据，请点击浏览器工具栏中的 ${ PASS_APP_NAME } 图标。"
       ],
       "Unable to copy to clipboard": [
-        "Tidak dapat menyalin ke papan klip"
+        "无法复制到剪贴板"
       ],
       "Unconfigured": [
-        "Tidak diatur"
+        "尚未配置"
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
-        "Alias hide-my-email tanpa batasan jumlah dan pengelolaan alias tingkat lanjut"
+        "无限制 hide-my-email 别名和高级别名管理"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
-        "Buka ${ PASS_SHORT_APP_NAME } dengan biometrik"
+        "使用生物识别技术解 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi ${ BRAND_NAME } Anda"
+        "用您的 ${ BRAND_NAME } 密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
-        "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi cadangan Anda"
+        "用您的备份密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
-        "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi tambahan Anda"
+        "用您的额外密码解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "Unlock with biometrics": [
-        "Buka dengan biometrik"
+        "使用生物识别技术解锁"
       ],
       "Unpinning item...": [
-        "Melepas sematan item..."
+        "正在取消固定项目..."
       ],
       "Unverified": [
-        "Tidak terverifikasi"
+        "未验证"
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Tingkatkan Sekarang untuk Memperoleh Fitur Premium"
+        "立即升级以解锁高级功能"
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
-        "Tingkatkan ke paket berbayar untuk membuat lebih dari satu brankas."
+        "升级到付费计划以创建多个保险库。"
       ],
       "User's access removed": [
-        "Akses pengguna dihapus"
+        "用户权限已被撤销"
       ],
       "User's access successfully updated": [
-        "Akses pengguna berhasil diperbarui"
+        "用户访问权限成功更新"
       ],
       "username": [
-        "nama pengguna"
+        "用户名"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "Brankas \"${ payload.content.name }\" berhasil dihapus"
+        "保险库 “${ payload.content.name }” 成功删除"
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "Brankas \"${ payload.share.content.name }\" berhasil dibuat"
+        "保险库 “${ payload.share.content.name }” 成功创建"
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "Brankas \"${ payload.share.content.name }\" berhasil diperbarui"
+        "保险库 “${ payload.share.content.name }” 成功更新"
       ],
       "Vault \"${ share.content.name }\" was removed": [
-        "Brankas \"${ share.content.name }\" telah dihapus"
+        "保险库 “${ share.content.name }” 已删除"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
-        "Pembagian brankas: ${ vaultMembersCount } anggota"
+        "保险库共享： ${ vaultMembersCount } 位成员"
       ],
       "Verification code sent.": [
-        "Kode verifikasi telah dikirim."
+        "验证码已发送。"
       ],
       "Viewer": [
-        "Pengamat"
+        "查看者"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Kami mengalami masalah menyinkronkan data ke penyimpanan lokal Anda. Pastikan Anda memiliki ruang penyimpanan yang cukup supaya ${ PASS_SHORT_APP_NAME } dapat bekerja."
+        "我们在将数据同步到您的本地存储空间时遇到了问题。请确保您有足够的磁盘空间让 ${ PASS_SHORT_APP_NAME } 顺利运行。"
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Kami mendeteksi bahwa Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun tidak ada pada ${ PASS_APP_NAME }. Apakah Anda ingin mengimpor alias ini?"
+        "我们检测到您有 ${ aliasCount } 个别名存在于 SimpleLogin 中，但在 ${ PASS_APP_NAME } 中丢失了。您想导入它们吗？"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
-        "Kami telah mengirimkan kode verifikasi ke ${ email }. Masukkan kode tersebut pada kolom di bawah ini:"
+        "我们已经向 ${ email }发送了验证码。请在下面输入："
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Pada saat Anda membuat/menyunting informasi entri masuk pada ${ PASS_APP_NAME }, kolom masukan 'nama pengguna' akan selalu ditampilkan."
+        "在 ${ PASS_APP_NAME } 上创建/编辑登录时，“用户名” 输入始终可见。"
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
-        "Pada saat mengirim email dari alias ini, email yang bersangkutan akan menampilkan ${ emailSender } sebagai nama pengirimnya."
+        "当从此别名发送邮件时，电子邮件将显示 ${ emailSender } 作为发送者。"
       ],
       "You are about to create:": [
-        "Anda akan membuat:"
+        "你即将创建:"
       ],
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
-        "Anda juga dapat menetapkan kode PIN untuk membuka kunci ${ PASS_APP_NAME }"
+        "您也可以定义一个 PIN 码来解锁 ${ PASS_APP_NAME }"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Anda kini dapat menggunakan kata sandi ${ BRAND_NAME } Anda untuk mengakses ${ PASS_SHORT_APP_NAME } secara offline"
+        "您现在可以使用您的 ${ BRAND_NAME } 密码离线访问 ${ PASS_SHORT_APP_NAME }"
       ],
       "You cannot change the mailboxes for this alias.": [
-        "Anda tidak dapat mengubah kotak surat untuk alias ini."
+        "您不能更改此别名的邮箱。"
       ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun tidak ada pada ${ PASS_APP_NAME }. Apakah Anda ingin menyinkronkan alias ini?"
+        "您有 ${ aliasCount } 个在 SimpleLogin 中存在但在 ${ PASS_APP_NAME } 中丢失的别名。您想同步吗？"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
+        "您还剩 ${ daysRemaining } 天来尝试这些及其他高级功能。"
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Anda telah melebihi jumlah brankas yang tercakup dalam paket langganan Anda. Item yang Anda miliki hanya akan dapat dipindahkan ke dalam dua brankas pertama Anda. Untuk memindahkan item antar seluruh brankas, tingkatkan paket langganan Anda."
+        "您已超出订阅中包含的保险库数量。 项目只能移至您的前两个保险库。 要在所有保险库之间转移项目，请升级您的订阅。"
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "Anda telah melebihi jumlah brankas yang tercakup dalam paket langganan Anda. Item baru hanya akan dapat dibuat pada dua brankas pertama Anda. Untuk membuat item baru di seluruh brankas, tingkatkan paket langganan Anda."
+        "您已超出订阅中包含的保险库数量。 新项目只能在前两个保险库中创建。 要在所有保险库中创建新项目，请升级您的订阅。"
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "Anda telah mencapai batas jumlah alias yang dapat Anda buat. Dapatkan kemampuan untuk membuat berbagai macam alias tanpa batasan jumlah dengan meningkatkan paket langganan Anda."
+        "您已达到可以创建的别名的限制。升级订阅时创建无限数量的别名。"
       ],
       "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Anda telah mencapai batas jumlah kartu kredit yang dapat Anda buat. Dapatkan kemampuan untuk membuat kartu kredit tanpa batasan jumlah dengan meningkatkan paket Anda."
+        "您已达到可创建信用卡的上限。升级订购后，创建的信用卡数量将不受限制。"
       ],
       "You have reached the limit of vaults you can create.": [
-        "Anda telah mencapai batas jumlah brankas yang dapat Anda buat."
+        "您已达到可创建保险库的上限。"
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
-        "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
+        "您已达到允许的 ${ maxLength } 字符的最大长度。"
       ],
       "You may close this tab.": [
-        "Anda dapat menutup tab ini."
+        "您可以关闭此标签页。"
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
-        "Anda akan dapat menyesuaikan pengaturan domain Anda (alias email catch-all, nama tampilan alias bawaan, dll...) setelah memverifikasi domain Anda."
+        "验证域名后，您就可以自定义域名设置 ( 通配邮箱别名、别名的默认显示名称等... ) 。"
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
-        "Anda akan dikeluarkan dari akun dan perlu untuk masuk kembali pada seluruh perangkat lainnya yang Anda miliki."
+        "您将被注销并需要在所有其他设备上重新登录。"
       ],
       "You will be notified of data breaches for these email addresses.": [
-        "Anda akan diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
+        "您将收到这些电子邮件地址的数据泄露通知。"
       ],
       "You will be notified of data breaches for this email address.": [
-        "Anda akan diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
+        "您将收到有关此电子邮件地址数据泄露的通知。"
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
-        "Anda tidak akan lagi diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
+        "您将不再收到这些电子邮件地址的数据泄露通知。"
       ],
       "You will no longer be notified of data breaches for this email address.": [
-        "Anda tidak akan lagi diberi tahu seputar kebocoran data yang terjadi pada alamat email ini."
+        "您将不再收到该电子邮件地址的数据泄露通知。"
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
-        "Anda tidak akan lagi memiliki akses ke pembagian item, 2FA, kartu kredit, dan berbagai fitur lanjutan lainnya di ${ PASS_APP_NAME }"
+        "您将无法再访问 ${ PASS_APP_NAME } 中的共享、2FA、信用卡和其他高级功能"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Anda akan menggunakan PIN ini untuk membuka ${ PASS_APP_NAME } setelah aplikasi terkunci secara otomatis akibat tidak digunakan dalam jangka waktu tertentu."
+        "${ PASS_APP_NAME } 一段时间无操作后将自动锁定，您需要使用此密码解锁。"
       ],
       "You're invited to a vault.": [
-        "Anda telah diundang ke brankas."
+        "您被邀请到保险库。"
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "Akun Anda dibatasi karena organisasi Anda telah mewajibkan penggunaan autentikasi dua faktor. Silakan aktifkan autentikasi dua faktor dalam Pengaturan Akun Anda atau hubungi administrator Anda."
+        "您的账户受限，因为您的组织已强制执行双因素身份验证。请在账户设置中启用双因素身份验证，或联系您的管理员。"
       ],
       "your domain": [
-        "domain Anda"
+        "您的域名"
       ],
       "Your files will be encrypted and then saved": [
-        "Berkas Anda akan dienkripsi dan kemudian disimpan"
+        "文件会加密保存"
       ],
       "Your information was found on ${ displayedDate }": [
-        "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
+        "您的信息在 ${ displayedDate } 找到"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
-        "Organisasi Anda memerlukan Anda mengamankan akses ke ${ PASS_APP_NAME }"
+        "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
       ]
     },
     "Label": {
       "${ aliasCount } alias": [
-        "${ aliasCount } alias"
+        "${ aliasCount } 个别名"
       ],
       "${ blockedCount } block": [
-        "${ blockedCount } pemblokiran"
+        "${ blockedCount } 已屏蔽"
       ],
       "${ config.options.length } character": [
-        "${ config.options.length } karakter"
+        "${ config.options.length } 个字符"
       ],
       "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } kata"
+        "${ config.options.wordCount } 个词"
       ],
       "${ days } day": [
-        "${ days } hari"
+        "${ days } 天"
       ],
       "${ forwardCount } forward": [
-        "${ forwardCount } penerusan"
+        "${ forwardCount } 已转发"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
-        "${ forwardedEmails }, ${ repliedEmails }, dan ${ blockedEmails } dalam 14 hari terakhir."
+        "${ forwardedEmails } 、${ repliedEmails } 、${ blockedEmails } 在过去 14 天内"
       ],
       "${ hours } hour": [
-        "${ hours } jam"
+        "${ hours } 小时"
       ],
       "${ minutes } minute": [
-        "${ minutes } menit"
+        "${ minutes } 分钟"
       ],
       "${ months } month": [
-        "${ months } bulan"
+        "${ months } 个月"
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
-        "${ PASS_APP_NAME } mengenali situs web dan aplikasi yang Anda gunakan serta mengisi berbagai formulir dengan kredensial Anda pada browser atau perangkat apa pun secara otomatis. Anda tidak perlu lagi menyalin dan menempel."
+        "${ PASS_APP_NAME } 能识别您使用的网站和应用程序，并在任何浏览器或设备上为您自动填写包含凭据的表单。无需复制和粘贴。"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
-        "Versi ${ PASS_SHORT_APP_NAME }"
+        "${ PASS_SHORT_APP_NAME } 版本"
       ],
       "${ repliedCount } reply": [
-        "${ repliedCount } balasan"
+        "${ repliedCount } 回复"
       ],
       "${ usageCount } login": [
-        "${ usageCount } entri masuk"
+        "${ usageCount } 登录项目"
       ],
       "${ years } year": [
-        "${ years } tahun"
+        "${ years } 年"
       ],
       "1 hour": [
-        "1 jam"
+        "1 小时"
       ],
       "1 minute": [
-        "1 menit"
+        "1 分钟"
       ],
       "10 minutes": [
-        "10 menit"
+        "10 分钟"
       ],
       "14 days": [
-        "14 hari"
+        "14 天"
       ],
       "15 minutes": [
-        "15 menit"
+        "15 分钟"
       ],
       "15 seconds": [
-        "15 detik"
+        "15 秒"
       ],
       "2 minutes": [
-        "2 menit"
+        "2 分钟"
       ],
       "24 hours": [
-        "24 jam"
+        "24 小时"
       ],
       "2FA secret key (TOTP)": [
-        "Kunci rahasia 2FA (TOTP)"
+        "2FA 密钥 (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "Token 2FA (TOTP)"
+        "2FA 密钥 (TOTP)"
       ],
       "30 days": [
-        "30 hari"
+        "30 天"
       ],
       "30 minutes": [
-        "30 menit"
+        "30 分钟"
       ],
       "30 seconds": [
-        "30 detik"
+        "30 秒"
       ],
       "5 minutes": [
-        "5 menit"
+        "5 分钟"
       ],
       "7 days": [
-        "7 hari"
+        "7 天"
       ],
       "A-Z": [
         "A-Z"
       ],
       "Account": [
-        "Akun"
+        "账号"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
-        "Tambahkan awalan acak untuk domain ini pada saat membuat alias baru."
+        "创建新别名时，请为该域添加一个随机前缀。"
       ],
       "Add section": [
-        "Tambahkan bagian"
+        "添加分组"
       ],
       "Additional details": [
-        "Rincian tambahan"
+        "更多详细信息"
       ],
       "Address details": [
-        "Rincian alamat"
+        "地址详情"
       ],
       "Alias": [
-        "Alias"
+        "别名"
       ],
       "Alias address": [
-        "Alamat alias"
+        "别名地址"
       ],
       "Alias address (disabled)": [
-        "Alamat alias (dinonaktifkan)"
+        "别名地址 ( 已禁用 )"
       ],
       "Aliases": [
-        "Alias"
+        "別名"
       ],
       "All": [
-        "Semua"
+        "全部"
       ],
       "All items": [
-        "Semua item"
+        "所有项目"
       ],
       "Alphabetical": [
-        "Menurut abjad"
+        "按字母顺序"
       ],
       "Always show username field": [
-        "Selalu tampilkan kolom nama pengguna"
+        "始终显示用户名字段"
       ],
       "Application logs": [
-        "Log aplikasi"
+        "应用程序日志"
       ],
       "Auto-lock after": [
-        "Kunci Pass secara otomatis setelah"
+        "自动锁定时间"
       ],
       "Backup password": [
-        "Kata sandi cadangan"
+        "备用密码"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
-        "Di samping menyimpan entri masuk Anda, ${ PASS_APP_NAME } juga melindungi identitas Anda dengan fitur alias email yang terintegrasi. Pada saat Anda mendaftar akun online baru, ${ PASS_APP_NAME } dapat menghasilkan alias secara otomatis untuk melindungi alamat email asli Anda. "
+        "除了储存登录信息外，${ PASS_APP_NAME } 还通过集成的电子邮件别名功能保护您的身份。每当你注册一个新的在线账户时，${ PASS_APP_NAME } 都会自动创建一个别名，以保护您的真实电子邮件地址。"
       ],
       "Biometrics": [
-        "Biometrik"
+        "生物识别"
       ],
       "Birthdate": [
-        "Tanggal lahir"
+        "生日"
       ],
       "Browse faster, smarter": [
-        "Jelajahi internet secara lebih cepat dan cermat"
+        "更快、更智能地浏览"
       ],
       "Capital letters (A-Z)": [
-        "Huruf kapital (A-Z)"
+        "大写字母 (A-Z)"
       ],
       "Capitalize": [
-        "Kapitalkan"
+        "大写"
       ],
       "Card": [
-        "Kartu"
+        "卡号"
       ],
       "Card number": [
-        "Nomor kartu"
+        "卡号"
       ],
       "Cards": [
-        "Kartu"
+        "信用卡"
       ],
       "Catch-All": [
-        "Catch-All"
+        "通配邮箱"
       ],
       "Choose unlock method": [
-        "Pilih metode pembukaan"
+        "选择解锁方式"
       ],
       "Choose your preferred look and feel.": [
-        "Tentukan tampilan dan nuansa yang Anda kehendaki."
+        "请选择您喜欢的外观"
       ],
       "City": [
-        "Kota"
+        "城市"
       ],
       "Clear clipboard after": [
-        "Bersihkan papan klip setelah"
+        "在清除剪贴板后"
       ],
       "Code": [
-        "Kode"
+        "验证码"
       ],
       "Company": [
-        "Perusahaan"
+        "公司"
       ],
       "Confirm vault name": [
-        "Konfirmasi nama brankas"
+        "确认保险库名称"
       ],
       "Contact created ${ time } ago.": [
-        "Kontak dibuat ${ time } yang lalu."
+        "联系人创建于 ${ time } 前。"
       ],
       "Contact details": [
-        "Rincian kontak"
+        "联系人详情"
       ],
       "Contacts": [
-        "Kontak"
+        "通讯录"
       ],
       "Copy": [
-        "Salin"
+        "复制"
       ],
       "Country or Region": [
-        "Negara atau Wilayah"
+        "国家或地区"
       ],
       "County": [
-        "Daerah"
+        "县市"
       ],
       "Create a credit card": [
-        "Buat kartu kredit"
+        "创建信用卡"
       ],
       "Create a hide-my-email alias": [
-        "Buat alias hide-my-email"
+        "创建一个 hide-my-email 别名"
       ],
       "Create a login": [
-        "Buat entri masuk"
+        "创建登录"
       ],
       "Create an encrypted note": [
-        "Buat catatan yang terenkripsi"
+        "创建加密笔记"
       ],
       "Create an Identity": [
-        "Buat Identitas"
+        "创建身份"
       ],
       "Create lock": [
-        "Buat kunci"
+        "创建锁"
       ],
       "Create new vault": [
-        "Buat brankas baru"
+        "创建新的保险库"
       ],
       "Created": [
-        "Waktu pembuatan"
+        "创建时间"
       ],
       "Created at": [
-        "Dibuat pada"
+        "创建于"
       ],
       "Custom hidden field": [
-        "Kolom khusus tersembunyi"
+        "自定义隐藏字段"
       ],
       "Custom text field": [
-        "Kolom teks khusus"
+        "自定义文本字段"
       ],
       "Date": [
-        "Tanggal"
+        "日期"
       ],
       "Device": [
-        "Perangkat"
+        "设备"
       ],
       "Display": [
-        "Tampilan"
+        "显示"
       ],
       "Display name": [
-        "Nama tampilan"
-      ],
-      "DNS": [
-        "DNS"
+        "称呼"
       ],
       "Domain": [
-        "Domain"
+        "域名"
       ],
       "Domain:": [
-        "Domain:"
+        "域名:"
       ],
       "Domains": [
-        "Domain"
+        "域名"
       ],
       "Don't remind me again": [
-        "Jangan ingatkan saya lagi"
+        "不再提醒我"
       ],
       "Download logs": [
-        "Unduh log"
+        "下载日志"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
-        "Bagikan informasi yang sensitif dengan mudah kepada siapa pun, bahkan apabila mereka tidak menggunakan ${ PASS_APP_NAME } sekalipun. Anda dapat membagikan kata sandi, catatan, kartu kredit, atau berbagai item secara sekaligus dalam folder yang sama."
+        "轻松与任何人共享敏感信息，即使他们不使用 ${ PASS_APP_NAME } 。您可以共享单个密码、便条或信用卡，也可以共享同一文件夹中的多个项目。"
       ],
       "Email": [
-        "Email"
+        "邮箱"
       ],
       "Email (alias)": [
-        "Email (alias)"
+        "电子邮件 ( 别名 )"
       ],
       "Email (new alias)": [
-        "Email (alias baru)"
+        "电子邮件 ( 新别名 )"
       ],
       "Email address": [
-        "Alamat email"
+        "邮箱地址"
       ],
       "Email or username": [
-        "Email atau nama pengguna"
+        "邮箱或账户名"
       ],
       "Empty trash": [
-        "Kosongkan sampah"
+        "清空回收站"
       ],
       "Enable offline access": [
-        "Aktifkan akses offline"
+        "启用脱机访问"
       ],
       "Enter email or username": [
-        "Masukkan email atau nama pengguna"
+        "输入电子邮箱或用户名"
       ],
       "Expiration date": [
-        "Tanggal kedaluwarsa"
+        "有效期至"
       ],
       "Expired": [
-        "Kedaluwarsa"
+        "已失效"
       ],
       "Expired link": [
-        "Tautan kedaluwarsa"
+        "链接已过期"
       ],
       "Export": [
-        "Ekspor"
+        "导出"
       ],
       "Extra password": [
-        "Kata sandi tambahan"
+        "额外密码"
       ],
       "Facebook account": [
-        "Akun Facebook"
+        "Facebook 账号"
       ],
       "Feedback": [
-        "Kritik dan saran"
+        "用户反馈"
       ],
       "Field name": [
-        "Nama kolom"
+        "字段名称"
       ],
       "File format": [
-        "Format berkas"
+        "文件格式"
       ],
       "First name": [
-        "Nama depan"
+        "名"
       ],
       "Floor, apartment, building": [
-        "Lantai, apartemen, gedung"
+        "楼层、公寓、楼宇"
       ],
       "For a one-off sharing": [
-        "Untuk pembagian yang hanya satu kali"
+        "用于一次性共享"
       ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
-        "Demi alasan keamanan, ${ PASS_SHORT_APP_NAME } akan mengunci dirinya sendiri secara otomatis setelah 10 menit tidak aktif."
+        "出于安全考虑，${ PASS_SHORT_APP_NAME }在 10 分钟未活动后会自动锁定。"
       ],
       "Forwards to": [
-        "Teruskan ke"
+        "转发至"
       ],
       "Free forever": [
-        "Gratis untuk selamanya"
+        "永久免费"
       ],
       "Free password manager with identity protection": [
-        "Pengelola kata sandi gratis dengan perlindungan identitas"
+        "具有身份保护功能的免费密码管理器"
       ],
       "Full Name": [
-        "Nama Lengkap"
+        "全名"
       ],
       "Gender": [
-        "Jenis kelamin"
+        "性别"
       ],
       "General": [
-        "Umum"
+        "通用"
       ],
       "Generic CSV": [
-        "Berkas CSV umum"
+        "通用 CSV"
       ],
       "Get Started": [
-        "Mulai"
+        "立即体验"
       ],
       "Get the extension for your browser.": [
-        "Dapatkan ekstensi ini untuk browser Anda"
+        "获取您的浏览器插件。"
       ],
       "Grant": [
-        "Izinkan"
+        "授权"
       ],
       "Hidden": [
-        "Tersembunyi"
+        "隐藏"
       ],
       "Hide password": [
-        "Sembunyikan kata sandi"
+        "隐藏密码"
       ],
       "Hide-my-email aliases": [
-        "Alias hide-my-email"
+        "Hide-my-email 别名"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
-        "Cara membuka ${ PASS_SHORT_APP_NAME }"
+        "如何解锁 ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
-        "https://contoh.com"
+        "https://example.com"
       ],
       "ID Card": [
-        "Kartu ID"
+        "身份证"
       ],
       "ID Card number": [
-        "Nomor KTP"
+        "身份证号码"
       ],
       "Identities": [
-        "Identitas"
+        "身份"
       ],
       "Identity": [
-        "Identitas"
+        "身份信息"
       ],
       "Import": [
-        "Impor"
+        "导入"
       ],
       "Import passwords": [
-        "Impor kata sandi"
+        "导入密码"
       ],
       "Imported from: ": [
-        "Diimpor dari: "
+        "导入自："
       ],
       "Imported on : ": [
-        "Diimpor pada : "
+        "导入时间："
       ],
       "Include numbers": [
-        "Sertakan angka"
+        "包含数字"
       ],
       "Include numbers (0-9)": [
-        "Sertakan angka (0-9)"
+        "包含数字 (0-9)"
       ],
       "Info": [
-        "Info"
+        "信息"
       ],
       "Instagram handle": [
-        "Akun Instagram"
+        "Instagram 用户名"
       ],
       "Install and continue": [
-        "Pasang dan lanjutkan"
+        "安装并继续"
       ],
       "Install extension": [
-        "Pasang ekstensi"
+        "安装插件"
       ],
       "Integrated 2FA authenticator": [
-        "Autentikator 2FA terintegrasi"
+        "内置 2FA 验证器"
       ],
       "Invitations": [
-        "Undangan"
+        "邀请"
       ],
       "Item ID": [
-        "ID Item"
+        "项目 ID"
       ],
       "Job title": [
-        "Jabatan"
+        "职务"
       ],
       "Key": [
-        "Kunci"
+        "密钥"
       ],
       "Keyboard shortcut: ${ shortcut }": [
-        "Pintasan keyboard: ${ shortcut }"
+        "快捷键：${ shortcut }"
       ],
       "Language": [
-        "Bahasa"
+        "语言"
       ],
       "Last 2 weeks": [
-        "2 minggu terakhir"
+        "最近两周"
       ],
       "Last month": [
-        "Bulan lalu"
+        "上个月"
       ],
       "Last name": [
-        "Nama belakang"
+        "姓"
       ],
       "Last updated": [
-        "Terakhir diperbarui"
+        "上次更新于"
       ],
       "Last week": [
-        "Minggu lalu"
+        "上周"
       ],
       "Latest import": [
-        "Impor terkini"
+        "最近一次导入"
       ],
       "Learn more": [
-        "Pelajari lebih lanjut"
+        "了解更多信息"
       ],
       "License": [
-        "Lisensi"
+        "许可协议"
       ],
       "License number": [
-        "Nomor lisensi"
+        "许可编号"
       ],
       "LinkedIn account": [
-        "Akun LinkedIn"
+        "LinkedIn 帐户"
       ],
       "Login": [
-        "Entri masuk"
+        "登录"
       ],
       "Logins": [
-        "Entri masuk"
+        "登录"
       ],
       "Mailboxes": [
-        "Kotak surat"
+        "邮箱"
       ],
       "Make all admins": [
-        "Jadikan seluruh anggota sebagai admin"
+        "将所有管理员设为"
       ],
       "Make all editors": [
-        "Jadikan seluruh anggota sebagai penyunting"
+        "将所有编辑者设为"
       ],
       "Make all viewers": [
-        "Jadikan seluruh anggota sebagai pengamat"
+        "将所有查看者设为"
       ],
       "Make it your own.": [
-        "Jadikan aplikasi ini milik Anda."
+        "专属定制"
       ],
       "max views reached": [
-        "tampilan maksimum tercapai"
+        "达到最大浏览量"
       ],
       "Members": [
-        "Anggota"
+        "成员"
       ],
       "Middle name": [
-        "Nama tengah"
+        "中间名 ( 若有 )"
       ],
       "Modified": [
-        "Dimodifikasi"
+        "修改时间"
       ],
       "More than a month": [
-        "Lebih dari sebulan"
+        "一个多月"
       ],
       "Most recent": [
-        "Terkini"
+        "最近"
       ],
       "Name": [
-        "Nama"
+        "姓名"
       ],
       "Name on card": [
-        "Nama di kartu"
+        "持卡人姓名"
       ],
       "Need help?": [
-        "Butuh bantuan?"
+        "需要帮助？"
       ],
       "Never": [
-        "Tidak pernah"
+        "永不"
       ],
       "New": [
-        "Baru"
+        "新"
       ],
       "New email": [
-        "Email baru"
+        "新邮箱"
       ],
       "New vault": [
-        "Brankas baru"
+        "新的保险库"
       ],
       "New-Old": [
-        "Baru–Lama"
+        "新 - 旧"
       ],
       "Newest to oldest": [
-        "Terbaru ke terlama"
+        "从新到旧"
       ],
       "No Activity in the last 14 days.": [
-        "Tidak ada aktivitas dalam 14 hari terakhir."
+        "过去 14 天内无活动。"
       ],
       "No history": [
-        "Tidak ada riwayat"
+        "无历史记录"
       ],
       "None": [
-        "Tidak ada"
+        "无"
       ],
       "Not selected": [
-        "Tidak dipilih"
+        "未选中"
       ],
       "Note": [
-        "Catatan"
+        "笔记"
       ],
       "Note • SimpleLogin": [
-        "Catatan • SimpleLogin"
+        "笔记 • SimpleLogin"
       ],
       "Notes": [
-        "Catatan"
+        "备注"
       ],
       "Offline mode": [
-        "Mode offline"
+        "脱机模式"
       ],
       "Old-New": [
-        "Lama–Baru"
+        "旧 - 新"
       ],
       "Oldest to newest": [
-        "Terlama ke terbaru"
+        "从旧到新"
       ],
       "Open-source password manager for effortless protection.": [
-        "Pengelola kata sandi open-source untuk perlindungan yang mudah."
+        "开源密码管理器，轻松提供保护。"
       ],
       "Organization": [
-        "Organisasi"
+        "机构"
       ],
       "Passkey": [
-        "Passkey"
+        "通行密钥"
       ],
       "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
-        "Passkey merupakan alternatif yang mudah dan aman dari kata sandi konvensional, yang dapat mencegah serangan phishing serta membuat pengalaman online Anda menjadi lebih mulus. ${ PASS_APP_NAME } mendukung penggunaan passkey pada seluruh platform."
+        "密钥是传统密码的一种简单而安全的替代品，可以防止网络钓鱼攻击，使您的上网体验更加流畅。${ PASS_APP_NAME } 支持所有平台上的通行密钥。"
       ],
       "Passphrase": [
-        "Frasa sandi"
+        "密码"
       ],
       "Passport": [
-        "Paspor"
+        "护照"
       ],
       "Passport number": [
-        "Nomor paspor"
+        "护照号码"
       ],
       "Password": [
-        "Kata sandi"
+        "密码"
       ],
       "Password history": [
-        "Riwayat kata sandi"
+        "密码历史记录"
       ],
       "Personal details": [
-        "Rincian pribadi"
+        "个人资料"
       ],
       "Personal website": [
-        "Situs web pribadi"
+        "个人网站"
       ],
       "Personalize": [
-        "Personalisasi"
+        "个性化设置"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "JSON yang terenkripsi PGP (direkomendasikan)"
+        "PGP 加密的 JSON ( 推荐 )"
       ],
       "Phone number": [
-        "Nomor telepon"
+        "电话号码"
       ],
       "PIN": [
-        "PIN"
+        "PIN 码"
       ],
       "PIN code": [
-        "Kode PIN"
+        "PIN 码"
       ],
       "Prefix": [
-        "Awalan"
+        "前綴"
       ],
       "Premium domain": [
-        "Domain premium"
+        "高级域名"
       ],
       "Priority:": [
-        "Prioritas:"
+        "优先级："
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
-        "Lindungi ${ PASS_APP_NAME } dengan kata sandi tambahan"
+        "用额外密码保护 ${ PASS_APP_NAME }"
       ],
       "Public domain": [
-        "Domain publik"
+        "公共域名"
       ],
       "Rate us": [
-        "Beri kami nilai"
+        "去评分"
       ],
       "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
-        "Dapatkan notifikasi dengan segera apabila informasi pribadi Anda terpapar dalam insiden kebocoran data pihak ketiga. Anda dapat memonitor berbagai alamat email atau nama domain milik Anda sendiri."
+        "如果您的个人信息在第三方数据泄露事件中被泄露，您将立即收到警报。您还可以监控多个电子邮件地址或自己的域名。"
       ],
       "Recent": [
-        "Baru digunakan"
+        "最近"
       ],
       "Reddit handle": [
-        "Akun Reddit"
+        "Reddit 用户名"
       ],
       "Remove link": [
-        "Hapus tautan"
+        "移除链接"
       ],
       "Report a problem": [
-        "Laporkan masalah"
+        "反馈问题"
       ],
       "Restore all items": [
-        "Pulihkan seluruh item"
+        "还原所有项目"
       ],
       "Reveal password": [
-        "Perlihatkan kata sandi"
+        "显示密码"
       ],
       "Secure password sharing": [
-        "Pembagian kata sandi aman"
+        "安全共享密码"
       ],
       "Securely log in with passkeys": [
-        "Masuk dengan aman menggunakan passkey"
+        "使用密钥安全登录"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
-        "Simpan, bagikan, dan masuk secara otomatis ke akun Anda secara aman dengan ${ PASS_APP_NAME } menggunakan enkripsi end-to-end yang telah dipercaya oleh jutaan orang"
+        "使用受数百万人信赖的端到端加密技术，通过 ${ PASS_APP_NAME } 安全存储、共享和自动登录您的账户"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
-        "Simpan, bagikan, dan masuk otomatis ke akun Anda secara aman dengan ${ PASS_APP_NAME }, yang menggunakan enkripsi end-to-end yang telah dipercaya oleh jutaan orang."
+        "使用 ${ PASS_APP_NAME } 安全地存储、共享和自动登录您的账户，采用端到端加密技术，受到数百万人的信赖。"
       ],
       "Security": [
-        "Keamanan"
+        "安全"
       ],
       "Security code": [
-        "Kode keamanan"
+        "安全码"
       ],
       "See member and permission overview": [
-        "Lihat ikhtisar anggota dan perizinan"
+        "查看成员和权限概述。"
       ],
       "Select a domain": [
-        "Pilih domain"
+        "选择域名"
       ],
       "Select an email address": [
-        "Pilih alamat email"
+        "选择邮箱地址"
       ],
       "Select preferred language": [
-        "Pilih bahasa yang diinginkan"
+        "选择首选语言"
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
-        "Pilih brankas di mana alias SimpleLogin akan diimpor"
+        "选择将 SimpleLogin 别名导入的保险库"
       ],
       "Select theme": [
-        "Pilih tema"
+        "选择主题"
       ],
       "Select your password manager": [
-        "Pilih pengelola kata sandi Anda"
+        "选择您的密码管理器"
       ],
       "Select your theme": [
-        "Pilih tema Anda"
+        "选择您的主题"
       ],
       "Selected": [
-        "Dipilih"
+        "已选中"
       ],
       "Share": [
-        "Bagikan"
+        "分享"
       ],
       "Shared": [
-        "Dibagikan"
+        "已共享"
       ],
       "Shared by me": [
-        "Dibagikan oleh saya"
+        "我的共享"
       ],
       "Shared link": [
-        "Tautan terbagi"
+        "共享链接"
       ],
       "Shared with me": [
-        "Dibagikan dengan saya"
+        "与我共享"
       ],
       "Show website favicons": [
-        "Tampilkan favicon situs web"
+        "显示网站收藏夹"
       ],
       "Sign in faster with ${ PASS_APP_NAME }": [
-        "Masuk lebih cepat dengan ${ PASS_APP_NAME }"
+        "使用 ${ PASS_APP_NAME } 更快登录"
       ],
       "Social security": [
-        "Jaminan sosial"
+        "社会保障"
       ],
       "Social security number": [
-        "Nomor jaminan sosial"
+        "社会保障号码"
       ],
       "Special characters (!&*)": [
-        "Karakter khusus (!&*)"
+        "特殊字符 (!&*)"
       ],
       "State or province": [
-        "Negara bagian atau provinsi"
+        "省、自治区或直辖市"
       ],
       "Status": [
-        "Status"
+        "状态"
       ],
       "Street address": [
-        "Alamat jalan"
+        "街道地址"
       ],
       "Street address, P.O. box": [
-        "Alamat jalan, P.O. Box"
+        "街道地址，邮政编号"
       ],
       "Strong": [
-        "Kuat"
+        "强"
       ],
       "Suffix": [
-        "Akhiran"
+        "后缀"
       ],
       "Support": [
-        "Dukungan"
+        "帮助"
       ],
       "Sync aliases with SimpleLogin": [
-        "Sinkronkan alias dengan SimpleLogin"
+        "使用 SimpleLogin 同步别名"
       ],
       "Target:": [
-        "Target:"
+        "目标："
       ],
       "Tax number": [
-        "Nomor pajak"
+        "纳税人识别号"
       ],
       "Text": [
-        "Teks"
+        "文本"
       ],
       "The URL has been copied to the clipboard": [
-        "URL telah disalin ke papan klip"
+        "URL 已复制到剪贴板"
       ],
       "Theme": [
-        "Tema"
+        "主题"
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Item ini dapat diakses hingga ${ date } atau hingga batas jumlah tampilannya tercapai."
+        "在 ${ date } 或达到查看限制之前，都可以访问此项目。"
       ],
       "Title": [
-        "Judul"
+        "标题"
       ],
       "Today": [
-        "Hari ini"
+        "今天"
       ],
       "Total imported items: ": [
-        "Total item terimpor: "
+        "总导入项目数："
       ],
       "Total items: ": [
-        "Jumlah item: "
+        "总计："
       ],
       "TOTP": [
         "TOTP"
       ],
       "Trash": [
-        "Sampah"
+        "回收站"
       ],
       "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
-        "Autentikasi dua faktor (2FA) merupakan salah satu cara terbaik untuk melindungi akun Anda secara online. ${ PASS_APP_NAME } memudahkan proses 2FA dengan autentikator terintegrasi yang menyimpan kode 2FA Anda serta menampilkan dan mengisi kode ini secara otomatis."
+        "双因素身份验证 (2FA) 是保护在线账户的最佳方法之一。${ PASS_APP_NAME } 通过集成的身份验证器存储你的 2FA 代码，并自动显示和自动填充代码，让 2FA 变得更简单。"
       ],
       "Type": [
-        "Jenis"
+        "类型"
       ],
       "Unknown": [
-        "Tidak diketahui"
+        "未知"
       ],
       "Unlock with": [
-        "Buka dengan"
+        "解锁方式"
       ],
       "Unlock with:": [
-        "Buka kunci dengan:"
+        "解锁方式："
       ],
       "Unnamed Credit Card": [
-        "Kartu Kredit tidak bernama"
+        "未命名信用卡"
       ],
       "Unnamed identity": [
-        "Identitas tanpa nama"
+        "未命名标识"
       ],
       "Unnamed item": [
-        "Item tidak bernama"
+        "未命名项目"
       ],
       "Unnamed note": [
-        "Catatan tidak bernama"
+        "未命名笔记"
       ],
       "Untitled": [
-        "Tanpa judul"
+        "未命名"
       ],
       "Update": [
-        "Perbarui"
+        "更新"
       ],
       "Used in": [
-        "Digunakan pada"
+        "已用于"
       ],
       "Useful for permanent sharing": [
-        "Berguna untuk pembagian yang bersifat permanen"
+        "有利于永久共享"
       ],
       "Username": [
-        "Nama pengguna"
+        "用户名"
       ],
       "Value:": [
-        "Nilai:"
+        "值:"
       ],
       "Vault ID": [
-        "ID Brankas"
+        "保险库 ID"
       ],
       "Vaults": [
-        "Brankas"
+        "保险库"
       ],
       "View details": [
-        "Lihat rincian"
+        "查看详细信息"
       ],
       "View logs": [
-        "Lihat log"
+        "查看日志"
       ],
       "Vulnerable": [
-        "Rentan"
+        "易受攻击"
       ],
       "Weak": [
-        "Lemah"
+        "弱"
       ],
       "Website": [
-        "Situs web"
+        "网站"
       ],
       "Websites": [
-        "Situs web"
+        "网站"
       ],
       "Work details": [
-        "Rincian pekerjaan"
+        "工作详情"
       ],
       "Work email": [
-        "Email kantor"
+        "工作邮箱"
       ],
       "Work phone number": [
-        "Nomor telepon kantor"
+        "工作电话号码"
       ],
       "X handle": [
-        "Akun X"
+        "X-用户名"
       ],
       "Yahoo account": [
-        "Akun Yahoo"
+        "Yahoo 帐户"
       ],
       "You are about to create": [
-        "Anda akan membuat"
+        "你即将创建"
       ],
       "You can choose between PIN code, biometrics, or your account password to unlock.": [
-        "Anda dapat memilih antara kode PIN, biometrik, atau kata sandi akun untuk membuka kunci."
+        "您可以选择 PIN 码、生物识别或账户密码来解锁。"
       ],
       "Your domain": [
-        "Domain Anda"
+        "您的域名"
       ],
       "Your passwords. Everywhere.": [
-        "Kata sandi Anda. Di mana pun Anda berada."
+        "您的密码，无处不在。"
       ],
       "ZIP or Postal code": [
-        "ZIP atau kode pos"
+        "邮政编码"
       ]
     },
     "Link": {
       "auto create rules ››": [
-        "buat aturan otomatis ››"
+        "自动创建规则 ››"
       ],
       "Learn more": [
-        "Lebih lanjut"
+        "了解详情"
       ],
       "stay safer online": [
-        "beraktivitas online secara lebih aman"
+        "安全上网"
       ]
     },
     "Log preference": {
       "Enable ${ reason }": [
-        "Aktifkan ${ reason }"
+        "启用 ${ reason }"
       ]
     },
     "Menu": {
       "Edit": [
-        "Sunting"
+        "更改"
       ],
       "File": [
-        "Berkas"
+        "文件"
       ],
       "View": [
-        "Tampilan"
+        "视图"
       ],
       "Window": [
-        "Jendela"
+        "窗口"
       ]
     },
     "Message": {
       "${ count } item": [
-        "${ count } item"
+        "${ count } 项"
       ],
       "You can drag and drop the selected item to another vault": [
-        "Anda dapat menarik dan melepas item yang dipilih ke brankas lain"
+        "您可以将所选项目拖放到另一个保险库中"
       ],
       "You selected ${ semiboldText } in this vault.": [
-        "Anda memilih ${ semiboldText } dalam brankas ini."
+        "您在此保险库中选择了 ${ semiboldText }。"
       ]
     },
     "new_plans: feature": {
       "Require 2FA for organization": [
-        "2FA wajib bagi organisasi"
+        "可要求机构全员开启双重验证"
       ],
       "SSO integration": [
-        "Integrasi SSO"
+        "SSO 集成"
       ]
     },
     "Notification": {
       "${ reason } has been disabled": [
-        "${ reason } telah dinonaktifkan"
+        "${ reason } 已停用"
       ],
       "${ reason } has been enabled": [
-        "${ reason } telah diaktifkan"
+        "${ reason } 已启用"
       ]
     },
     "Option": {
       "Commas": [
-        "Koma"
+        "半角逗号"
       ],
       "Hyphens": [
-        "Tanda hubung"
+        "连字符"
       ],
       "Memorable Password": [
-        "Kata Sandi yang Mudah Diingat"
+        "好记的密码"
       ],
       "Numbers": [
-        "Angka"
+        "数字"
       ],
       "Numbers and Symbols": [
-        "Angka dan simbol"
+        "数字和符号"
       ],
       "Periods": [
-        "Titik"
+        "句点"
       ],
       "Random Password": [
-        "Kata Sandi Acak"
+        "随机密码"
       ],
       "Spaces": [
-        "Spasi"
+        "空格"
       ],
       "Underscores": [
-        "Garis bawah"
+        "下划线"
       ]
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "Tambah kunci rahasia 2FA"
+        "添加 2FA 密钥"
       ],
       "Add hidden text": [
-        "Tambahkan teks tersembunyi"
+        "添加隐藏文本"
       ],
       "Add note": [
-        "Tambah catatan"
+        "添加备注"
       ],
       "Add text": [
-        "Tambahkan teks"
+        "添加文本"
       ],
       "Alias Display Name": [
-        "Nama Tampilan Alias"
+        "别名显示名称"
       ],
       "Coupon": [
-        "Kupon"
+        "优惠券"
       ],
       "Email address": [
-        "Alamat email"
+        "邮箱地址"
       ],
       "Enter a note...": [
-        "Masukkan catatan..."
+        "输入笔记..."
       ],
       "Enter a prefix": [
-        "Masukkan awalan"
+        "输入前缀"
       ],
       "Enter email": [
-        "Masukkan email"
+        "输入电子邮箱"
       ],
       "Enter password": [
-        "Masukkan kata sandi"
+        "输入密码"
       ],
       "Enter username": [
-        "Masukkan nama pengguna"
+        "请输入用户名"
       ],
       "Full Name": [
-        "Nama Lengkap"
+        "全名"
       ],
       "me@example.com": [
-        "saya@contoh.com"
+        "me@example.com"
       ],
       "MM/YY": [
-        "BB/TT"
+        "月/年"
       ],
       "my-domain.com": [
-        "domain-saya.com"
+        "my-domain.com"
       ],
       "Name to display when sending an email": [
-        "Nama yang ditampilkan saat mengirim email"
+        "发送电子邮件时要显示的名称"
       ],
       "Note from SimpleLogin": [
-        "Catatan dari SimpleLogin"
+        "来自 SimpleLogin 的笔记"
       ],
       "Password": [
-        "Kata sandi"
+        "密码"
       ],
       "Pick a vault": [
-        "Pilih brankas"
+        "选择一个保险库"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah Anda dan sertakan pesan kesalahan yang Anda temui"
+        "请说明您的问题，并附上看到的所有错误提示"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
-        "Ketik ulang \"${ vaultName }\" untuk mengonfirmasi penghapusan"
+        "重新输入 \"${ vaultName }\" 以确认删除"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
-        "Cari ${ pluralItemType } di ${ vaultName }"
+        "在 ${ vaultName } 中搜索 ${ pluralItemType }"
       ],
       "Search ${ pluralItemType } in all items": [
-        "Cari ${ pluralItemType } di seluruh item"
+        "在所有项目中搜索 ${ pluralItemType }"
       ],
       "Search in ${ vaultName }": [
-        "Cari di ${ vaultName }"
+        "在 ${ vaultName } 中搜索"
       ],
       "Search in all items": [
-        "Cari di semua item"
+        "在所有项目中搜索"
       ],
       "Search in Trash": [
-        "Cari di Sampah"
+        "在回收站中搜索"
       ],
       "Select a suffix": [
-        "Pilih akhiran"
+        "选择一个后缀"
       ],
       "Unknown origin": [
-        "Asal tidak diketahui"
+        "未知来源"
       ],
       "Untitled": [
-        "Tanpa judul"
+        "未命名"
       ],
       "Used on ${ url }": [
-        "Digunakan pada ${ url }"
+        "用于 ${ url }"
       ],
       "Write your note": [
-        "Tulis catatan Anda"
+        "撰写您的笔记"
       ]
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+        "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } dan 1 kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+        "检测到 ${ name } 和 1 个其他潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } kebocoran potensial terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+        "检测到来自 ${ name } 的潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+        "您的信息至少涉及一次数据泄露。请打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ]
     },
     "sso": {
       "Approve or deny it now": [
-        "Setujui atau tolak permintaan ini sekarang"
+        "立即批准或否决"
       ],
       "Enter the confirmation code we sent on your other device.": [
-        "Masukkan kode konfirmasi yang kami kirim ke perangkat lainnya yang Anda miliki."
+        "输入我们发送到您另一台设备上的确认代码。"
       ],
       "If you didn't make this request, cancel it now.": [
-        "Apabila Anda tidak mengajukan hal ini, batalkan permintaan ini sekarang juga."
+        "如果您没有提出申请，请立即取消。"
       ],
       "Invalid confirmation code": [
-        "Kode konfirmasi tidak valid"
+        "无效的验证码"
       ],
       "No, it wasn’t me": [
-        "Tidak, itu bukan saya"
+        "不是，那不是我"
       ],
       "Sign-in confirmed": [
-        "Masuk dikonfirmasi"
+        "已确认登录"
       ],
       "Sign-in failed": [
-        "Upaya masuk gagal"
+        "登录失败"
       ],
       "Sign-in rejected": [
-        "Masuk ditolak"
+        "登录被拒绝"
       ],
       "Sign-in rejection failure": [
-        "Penolakan upaya masuk yang gagal"
+        "登录拒绝失败"
       ],
       "Sign-in requested on another device. Was it you?": [
-        "Terdapat permintaan entri masuk pada perangkat lainnya. Apakah ini Anda?"
+        "请求在其他设备上登录。是您在操作？"
       ],
       "Sign-in requested on another device. Was it you? ": [
-        "Terdapat permintaan entri masuk pada perangkat lainnya. Apakah ini Anda? "
+        "请求在其他设备上登录。是您在操作吗？ "
       ],
       "Yes, it was me": [
-        "Ya, itu saya"
+        "是的，就是我"
       ]
     },
     "sso: auth device state": {
       "Active": [
-        "Aktif"
+        "已激活"
       ],
       "Inactive": [
-        "Nonaktif"
+        "未激活"
       ],
       "Pending activation": [
-        "Menunggu aktivasi"
+        "待激活"
       ],
       "Pending admin activation": [
-        "Menunggu aktivasi admin"
+        "等待管理员激活"
       ],
       "Rejected": [
-        "Ditolak"
+        "已拒绝"
       ],
       "Signed out": [
-        "Sudah keluar"
+        "已登出"
       ],
       "Unknown": [
-        "Tidak diketahui"
+        "未知"
       ]
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "Penyinkronan alias berhasil diaktifkan. Alias SimpleLogin dapat memerlukan beberapa saat untuk tersinkron"
+        "别名同步已成功启用，SimpleLogin 别名可能需要一些时间才能同步"
       ],
       "Catch-all setting successfully disabled": [
-        "Pengaturan catch-all berhasil dinonaktifkan"
+        "成功禁用通配设置"
       ],
       "Catch-all setting successfully enabled": [
-        "Pengaturan catch-all berhasil diaktifkan"
+        "成功启用通配设置"
       ],
       "Contact successfully blocked": [
-        "Kontak berhasil diblokir"
+        "成功屏蔽联系人"
       ],
       "Contact successfully created": [
-        "Kontak berhasil dibuat"
+        "成功创建联系人"
       ],
       "Contact successfully deleted": [
-        "Kontak berhasil dihapus"
+        "成功删除联系人"
       ],
       "Contact successfully unblocked": [
-        "Kontak berhasil dibuka blokir"
+        "成功解除联系人屏蔽"
       ],
       "Default domain successfully updated": [
-        "Domain bawaan berhasil diperbarui"
+        "成功更新默认域名"
       ],
       "Default mailbox successfully updated": [
-        "Kotak surat bawaan berhasil diperbarui"
+        "成功更新默认邮箱"
       ],
       "Display name successfully updated": [
-        "Nama tampilan berhasil diperbarui"
+        "成功更新显示名称"
       ],
       "Domain ownership verified. You can now set up MX record.": [
-        "Kepemilikan domain diverifikasi. Anda kini dapat mengatur rekaman MX."
+        "域名所有权已验证，您现在可以设置 MX 记录。"
       ],
       "Domain successfully deleted": [
-        "Domain berhasil dihapus."
+        "成功移除域名"
       ],
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
-        "Domain berhasil diverifikasi. Domain Anda kini dapat mulai menerima email dan membuat alias"
+        "域名验证成功，您的域可以开始接收电子邮件并创建别名"
       ],
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Item tidak dapat mengandung lebih dari ${ share.targetMaxMembers } pengguna."
+        "项目包含的用户数不能超过 ${ share.targetMaxMembers } 位。"
       ],
       "Mailbox change successfully cancelled": [
-        "Perubahan kotak surat berhasil dibatalkan"
+        "成功取消邮箱更改"
       ],
       "Mailbox successfully deleted": [
-        "Kotak surat berhasil dihapus"
+        "成功移除邮箱"
       ],
       "Mailbox successfully verified": [
-        "Kotak surat berhasil diverifikasi"
+        "邮箱验证成功"
       ],
       "Mailboxes successfully updated": [
-        "Kotak surat berhasil diperbarui"
+        "成功更新邮箱"
       ],
       "Random prefix generation successfully disabled": [
-        "Pembuatan awalan acak berhasil dinonaktifkan"
+        "成功禁用随机前缀生成功能"
       ],
       "Random prefix generation successfully enabled": [
-        "Pembuatan awalan acak berhasil diaktifkan"
+        "成功启用随机前缀生成功能"
       ],
       "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Brankas tidak dapat mengandung lebih dari ${ targetMaxMembers } pengguna."
+        "保险库包含的用户数不能超过 ${ targetMaxMembers } 位。"
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
-        "Email verifikasi dikirim. Silakan periksa kotak masuk Anda untuk memverifikasi kotak surat Anda"
+        "已发送验证邮件，请检查您的收件箱以验证您的邮箱"
       ]
     },
     "Theme": {
       "Automatic": [
-        "Otomatis"
+        "自动操作"
       ],
       "Dark": [
-        "Gelap"
+        "暗色主题"
       ],
       "Light": [
-        "Terang"
+        "浅色主题"
       ]
     },
     "Title": {
       "${ BRAND_NAME } addresses": [
-        "Alamat ${ BRAND_NAME }"
+        "${ BRAND_NAME } 个地址"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
-        "${ PASS_SHORT_APP_NAME } Monitor"
+        "${ PASS_SHORT_APP_NAME } 监视器"
       ],
       "Account protection": [
-        "Perlindungan akun"
+        "账户保护"
       ],
       "Actions": [
-        "Tindakan"
+        "操作"
       ],
       "Activity": [
-        "Aktivitas"
+        "启用"
       ],
       "Add custom domain": [
-        "Tambahkan domain khusus"
+        "添加自定义域名"
       ],
       "Add mailbox": [
-        "Tambah kotak surat"
+        "添加邮箱"
       ],
       "Alias contacts": [
-        "Kontak alias"
+        "别名联系人"
       ],
       "Aliases": [
-        "Alias"
+        "别名"
       ],
       "Auto create/on the fly alias": [
-        "Pembuatan alias otomatis"
+        "自动创建/在运行中创建别名"
       ],
       "Auto-lock update": [
-        "Pembaruan kunci otomatis"
+        "自动锁定更新"
       ],
       "Blocked addresses": [
-        "Alamat terblokir"
+        "屏蔽名单"
       ],
       "Breach detected": [
-        "Kebocoran terdeteksi"
+        "已监测到泄露信息"
       ],
       "Breaches": [
-        "Kebocoran"
+        "泄露信息"
       ],
       "Breaches detected for": [
-        "Kebocoran terdeteksi untuk"
+        "检测到的泄露信息"
       ],
       "Cancel changing your email?": [
-        "Batalkan mengubah email Anda?"
+        "取消更改您的邮箱？"
       ],
       "Change mailbox email": [
-        "Ubah email kotak surat"
+        "更改邮箱"
       ],
       "Change your lock method": [
-        "Ubah metode penguncian Anda"
+        "更改您的锁定方式"
       ],
       "Confirm extra password": [
-        "Konfirmasi kata sandi tambahan"
+        "确认额外密码"
       ],
       "Confirm identity": [
-        "Konfirmasi identitas"
+        "确认身份信息"
       ],
       "Confirm PIN code": [
-        "Konfirmasikan kode PIN"
+        "确认 PIN 码"
       ],
       "Confirm your email": [
-        "Konfirmasi email Anda"
+        "确认您的邮箱"
       ],
       "Contacts": [
-        "Kontak"
+        "通讯录"
       ],
       "Create a vault": [
-        "Buat brankas"
+        "创建保险库"
       ],
       "Create contact": [
-        "Buat kontak"
+        "创建联系人"
       ],
       "Create PIN code": [
-        "Buat kode PIN"
+        "创建 PIN 码"
       ],
       "Created": [
-        "Dibuat"
+        "创建时间"
       ],
       "Current version": [
-        "Versi saat ini"
+        "当前版本"
       ],
       "Custom addresses": [
-        "Alamat khusus"
+        "自定义地址"
       ],
       "Custom domains": [
-        "Domain khusus"
+        "自定义域名"
       ],
       "Custom email monitoring": [
-        "Pemantauan email khusus"
+        "自定义电子邮件监测"
       ],
       "Custom emails": [
-        "Email khusus"
+        "自定义电子邮件"
       ],
       "Default": [
-        "Bawaan"
+        "默认"
       ],
       "Default Display Name": [
-        "Nama Tampilan Bawaan"
+        "默认显示名称"
       ],
       "Delete ${ deletedItemsCount } item?": [
-        "Hapus ${ deletedItemsCount } item?"
+        "删除 ${ deletedItemsCount } 项吗？"
       ],
       "Delete domain": [
-        "Hapus domain"
+        "删除域名"
       ],
       "Delete mailbox": [
-        "Hapus kotak surat"
+        "删除邮箱"
       ],
       "Delete this item?": [
-        "Hapus item ini?"
+        "删除这个项目？"
       ],
       "Delete vault \"${ vaultName }\"?": [
-        "Hapus brankas \"${ vaultName }\"?"
+        "是否删除保险库 “${ vaultName }”？"
       ],
       "Details": [
-        "Rincian"
+        "详细信息"
       ],
       "Did you know?": [
-        "Tahukah Anda?"
+        "您知道吗？"
       ],
       "Discard changes?": [
-        "Batalkan perubahan?"
+        "放弃更改？"
       ],
       "DKIM (Optional)": [
-        "DKIM (Opsional)"
+        "DKIM ( 可选 )"
       ],
       "DMARC (Optional)": [
-        "DMARC (Opsional)"
+        "DMARC ( 可选 )"
       ],
       "Domain": [
-        "Domain"
+        "域名"
       ],
       "Domain ownership verification": [
-        "Verifikasi kepemilikan domain"
+        "域名所有权验证"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
-        "Menikmati ${ PASS_APP_NAME }?"
+        "喜欢 ${ PASS_APP_NAME } 吗？"
       ],
       "Enter coupon code": [
-        "Masukkan kode kupon"
+        "输入优惠券代码"
       ],
       "Enter your backup password": [
-        "Masukkan kata sandi cadangan Anda"
+        "输入您的备份密码"
       ],
       "Enter your extra password": [
-        "Masukkan kata sandi tambahan Anda"
+        "输入您额外的密码"
       ],
       "Enter your password": [
-        "Masukkan kata sandi Anda"
+        "输入密码"
       ],
       "Enter your PIN": [
-        "Masukkan PIN Anda"
+        "输入 PIN 码"
       ],
       "Excluded items": [
-        "Item yang dikecualikan"
+        "不包括的项目"
       ],
       "Get Started": [
-        "Mulai"
+        "立即体验"
       ],
       "Grant permissions": [
-        "Berikan izin"
+        "授予权限"
       ],
       "Hide-my-email aliases": [
-        "Alias hide-my-email"
+        "个hide-my-email别名"
       ],
       "History": [
-        "Riwayat"
+        "历史记录"
       ],
       "Import - ${ date }": [
-        "Impor - ${ date }"
+        "导入- ${ date }"
       ],
       "Import to vault(s)": [
-        "Impor ke brankas"
+        "导入到保险库"
       ],
       "Import your data": [
-        "Impor data Anda"
+        "导入您的数据"
       ],
       "Inactive 2FA": [
-        "2FA yang tidak aktif"
+        "未启用 2FA"
       ],
       "Install extension": [
-        "Pasang ekstensi"
+        "安装扩展"
       ],
       "Item": [
-        "Item"
+        "项目"
       ],
       "Last autofill": [
-        "Pengisian otomatis terakhir"
+        "最后自动填充"
       ],
       "Last modified": [
-        "Terakhir diubah"
+        "最后修改"
       ],
       "Leave this item?": [
-        "Tinggalkan item ini?"
+        "离开此项目吗？"
       ],
       "Leave vault?": [
-        "Tinggalkan brankas?"
+        "离开保险库?"
       ],
       "Loading breaches...": [
-        "Memuat kebocoran..."
+        "正在加载泄露信息..."
       ],
       "Low disk space": [
-        "Ruang penyimpanan rendah"
+        "磁盘空间不足"
       ],
       "Mailbox": [
-        "Kotak surat"
+        "邮箱"
       ],
       "Mark as resolved?": [
-        "Tandai sebagai terselesaikan?"
+        "标记为已解决?"
       ],
       "Member limit": [
-        "Batas anggota"
+        "成员上限"
       ],
       "Members": [
-        "Anggota"
+        "成员"
       ],
       "Modified": [
-        "Diubah"
+        "修改时间"
       ],
       "Move ${ count } item to ${ vaultName }": [
-        "Pindahkan ${ count } item ke ${ vaultName }"
+        "将 ${ count } 项移动到 ${ vaultName }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
-        "Pindahkan ${ trashedItemsCount } item ke sampah?"
+        "将 ${ trashedItemsCount } 项移动到回收站？"
       ],
       "Move all items to \"${ vaultName }\"?": [
-        "Pindahkan semua item ke \"${ vaultName }\"?"
+        "将所有项目移动到 \"${ vaultName }\"？"
       ],
       "Move item to \"${ vaultName }\"": [
-        "Pindahkan item ke \"${ vaultName }\""
+        "将项目移动到 \"${ vaultName }\""
       ],
       "MX record": [
-        "Rekaman MX"
+        "MX 记录"
       ],
       "No excluded items": [
-        "Tidak ada item yang dikecualikan"
+        "无除外项目"
       ],
       "No inactive 2FAs": [
-        "Tidak ada 2FA yang tidak aktif"
+        "没有未激活的 2FA"
       ],
       "No insecure passwords": [
-        "Tidak ada kata sandi yang tidak aman"
+        "没有不安全的密码"
       ],
       "No items selected": [
-        "Tidak ada item yang dipilih"
+        "未选择任何项目"
       ],
       "No reused passwords": [
-        "Tidak ada kata sandi yang digunakan ulang"
+        "没有重复使用的密码"
       ],
       "No shared items": [
-        "Tidak ada item yang dibagikan"
+        "没有共享的项目"
       ],
       "No shared secure links": [
-        "Tidak ada tautan aman terbagi"
+        "没有共享的安全链接"
       ],
       "Our welcome gift to you": [
-        "Hadiah selamat datang kami kepada Anda"
+        "我们送给您的欢迎礼物"
       ],
       "Passkey": [
-        "Passkey"
+        "通行密钥"
       ],
       "Password Health": [
-        "Kesehatan Kata Sandi"
+        "密码安全"
       ],
       "Pause monitoring?": [
-        "Jeda pemantauan?"
+        "暂停监测?"
       ],
       "Pending access confirmation": [
-        "Menunggu konfirmasi akses"
+        "正在等待访问确认"
       ],
       "Pending access to the shared data": [
-        "Menunggu akses ke data yang dibagikan"
+        "等待访问共享数据"
       ],
       "Permanently remove all items?": [
-        "Hapus semua item secara permanen?"
+        "是否永久移除所有项目？"
       ],
       "Pinned (${ items.length })": [
-        "Disematkan (${ items.length })"
+        "已固定 ( ${ items.length } )"
       ],
       "Please note that once deleted, the alias can't be restored.": [
-        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan."
+        "请注意，别名一旦删除就无法恢复。"
       ],
       "Random Prefix Generation": [
-        "Pembuatan Awalan Acak"
+        "随机前缀生成"
       ],
       "Recommended actions": [
-        "Tindakan yang direkomendasikan"
+        "建议采取的行动"
       ],
       "Reject device?": [
-        "Tolak perangkat?"
+        "剔除设备？"
       ],
       "Remove email address?": [
-        "Hapus alamat email?"
+        "移除电子邮件地址？"
       ],
       "Remove extra password": [
-        "Hapus kata sandi tambahan"
+        "移除额外密码"
       ],
       "Remove secure link?": [
-        "Hapus tautan aman?"
+        "移除安全链接？"
       ],
       "Resolved breaches": [
-        "Kebocoran yang telah terselesaikan"
+        "已解决的泄露信息"
       ],
       "Restore this version?": [
-        "Pulihkan versi ini?"
+        "恢复此版本?"
       ],
       "Resume monitoring?": [
-        "Lanjutkan pemantauan?"
+        "恢复监测?"
       ],
       "Reused ${ count } time": [
-        "Digunakan ulang ${ count } kali"
+        "重复使用 ${ count } 次"
       ],
       "Reused passwords": [
-        "Kata sandi yang digunakan ulang"
+        "重复使用的密码"
       ],
       "Review and share": [
-        "Kaji dan bagikan"
+        "回顾与分享"
       ],
       "Secure your data": [
-        "Amankan data Anda"
+        "保护您的数据"
       ],
       "Select the default domain for aliases": [
-        "Pilih domain bawaan untuk alias"
+        "为别名选择默认域"
       ],
       "Set access level": [
-        "Tentukan tingkat akses"
+        "设置访问级别"
       ],
       "Set extra password": [
-        "Tetapkan kata sandi tambahan"
+        "设置额外密码"
       ],
       "Set up 2FA for better security": [
-        "Atur 2FA untuk keamanan yang lebih"
+        "设置 2FA 以获得更多安全"
       ],
       "Set up 2FA for more security": [
-        "Atur 2FA untuk keamanan yang lebih"
+        "设置 2FA 以获得更多安全"
       ],
       "Settings": [
-        "Pengaturan"
+        "设置"
       ],
       "Share vaults with your team": [
-        "Bagikan brankas dengan tim Anda"
+        "与您的团队分享保险库"
       ],
       "Share with": [
-        "Bagikan dengan"
+        "分享给"
       ],
       "Shared item invitation": [
-        "Undangan item yang dibagikan"
+        "共享的项目邀请"
       ],
       "Shared via": [
-        "Dibagikan via"
+        "共享方式"
       ],
       "SPF (Optional)": [
-        "SPF (Opsional)"
+        "SPF ( 可选 )"
       ],
       "Status": [
-        "Status"
+        "状态"
       ],
       "Stay safer online": [
-        "Tetap aman saat online"
+        "更安全地上网"
       ],
       "Suggestions": [
-        "Saran"
+        "建议"
       ],
       "Switch to": [
-        "Ganti ke"
+        "切换到"
       ],
       "Sync alias": [
-        "Sinkronkan alias"
+        "同步别名"
       ],
       "Sync your aliases from SimpleLogin": [
-        "Sinkronkan alias Anda dari SimpleLogin"
+        "从 SimpleLogin 同步您的别名"
       ],
       "Transfer ownership": [
-        "Transfer kepemilikan"
+        "转移所有权"
       ],
       "Trash empty": [
-        "Sampah kosong"
+        "回收站为空"
       ],
       "Unlock ${ brandNameJSX }": [
-        "Dapatkan ${ brandNameJSX }"
+        "解锁 ${ brandNameJSX }"
       ],
       "Unverified": [
-        "Tidak terverifikasi"
+        "未验证"
       ],
       "Update available": [
-        "Pembaruan tersedia"
+        "有可用更新"
       ],
       "Vault": [
-        "Brankas"
+        "保险库"
       ],
       "Vault shared with you": [
-        "Brankas yang dibagikan dengan Anda"
+        "与您共享的保险库"
       ],
       "Want to learn more?": [
-        "Ingin mempelajari lebih lanjut?"
+        "想详细了解？"
       ],
       "Weak password": [
-        "Kata sandi lemah"
+        "弱密码"
       ],
       "Weak passwords": [
-        "Kata sandi yang lemah"
+        "弱密码"
       ],
       "Welcome to ${ brandNameJSX }": [
-        "Selamat datang di ${ brandNameJSX }"
+        "欢迎来到 ${ brandNameJSX }"
       ],
       "What is an alias?": [
-        "Apa itu alias?"
+        "什么是电子邮件别名？"
       ],
       "What is the dark web?": [
-        "Apa itu dark web?"
+        "什么是暗网？"
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
-        "Apa perbedaan antara catatan ${ PASS_SHORT_APP_NAME } dan catatan SimpleLogin?"
+        "${ PASS_SHORT_APP_NAME } 笔记和 SimpleLogin 笔记之间有什么区别？"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
-        "Langganan ${ planName } Anda akan berakhir pada ${ endDate }"
+        "您的 ${ planName } 订阅将在 ${ endDate } 结束"
       ],
       "Your exposed information": [
-        "Informasi Anda yang terpapar"
+        "您的泄露信息"
       ],
       "Your vault is empty": [
-        "Brankas Anda kosong"
+        "您的保险库是空的"
       ],
       "Your welcome gift": [
-        "Hadiah selamat datang Anda"
+        "您的新人礼包"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Anda akan menghapus ${ aliasCount } alias secara permanen."
+        "您将永久删除 ${ aliasCount } 个别名。"
       ]
     },
     "Validation": {
       "Domain URL is invalid": [
-        "URL domain tidak valid"
+        "域名 URL 无效"
       ],
       "Duplicated URL": [
-        "URL terduplikat"
+        "网址重复"
       ],
       "Field name is required": [
-        "Nama kolom wajib diisi"
+        "字段名称是必填项"
       ],
       "OTP secret or URI is invalid": [
-        "Secret OTP atau URI tidak valid"
+        "动态密码或网址无效"
       ],
       "OTP secret or URI required": [
-        "Secret OTP atau URI wajib diisi"
+        "需要动态密码或网址"
       ],
       "Section name cannot be empty": [
-        "Nama bagian tidak dapat dikosongkan"
+        "分组名称不能为空"
       ],
       "URL already exists": [
-        "URL sudah ada"
+        "网址已存在"
       ],
       "URL cannot be empty": [
-        "URL tidak boleh kosong"
+        "网址不可为空"
       ],
       "URL is invalid": [
-        "URL tidak valid"
+        "网址无效"
       ]
     },
     "Warning": {
       "${ BRAND_NAME } password is required": [
-        "Kata sandi ${ BRAND_NAME } diperlukan"
+        "需要 ${ BRAND_NAME } 密码"
       ],
       "2 consecutive dots are not allowed": [
-        "Alias tidak dapat mengandung 2 titik secara berurutan"
+        "不允许出现 2 个连续的点"
       ],
       "A description of the problem is required": [
-        "Penjelasan masalah diperlukan"
+        "需要提供问题的描述"
       ],
       "Addresses already invited.": [
-        "Alamat telah diundang."
+        "地址已被邀请。"
       ],
       "Aliases in trash will continue forwarding emails.": [
-        "Alias yang berada di sampah akan tetap meneruskan email."
+        "回收站中的别名将继续转发电子邮件。"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Seluruh item yang telah Anda buang ke sampah akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan."
+        "回收站中的项目会被永久删除。您将无法撤销这一操作。"
       ],
       "An error occurred while exporting your data": [
-        "Terdapat kesalahan pada saat mengekspor data Anda"
+        "导出数据时发生错误"
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Apakah Anda yakin ingin memindahkan ${ trashedItemsCount } item ke sampah?"
+        "您确定要将 ${ trashedItemsCount } 项移至回收站吗？"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Apakah Anda yakin ingin menghapus ${ deletedItemsCount } item secara permanen?"
+        "您确定要永久删除 ${ deletedItemsCount } 项吗？"
       ],
       "Are you sure you want to permanently delete this item?": [
-        "Apakah Anda yakin ingin menghapus item ini secara permanen?"
+        "确定要永久删除此项目吗？"
       ],
       "At least one email address is required": [
-        "Setidaknya satu alamat surel dibutuhkan"
+        "至少需要一个电子邮件地址"
       ],
       "Cannot contain a dot at the beginning": [
-        "Alias tidak dapat dimulai dengan titik"
+        "开头不能包含点"
       ],
       "Cannot contain a dot at the end": [
-        "Alias tidak dapat diakhiri dengan titik"
+        "末尾不能包含点"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
-        "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
+        "暂时无法通过别名获取邮箱"
       ],
       "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
-        "Peringatan: Anda tidak akan dapat mengakses akun ${ PASS_APP_NAME } Anda apabila Anda kehilangan kata sandi ini."
+        "注意： 如果丢失此密码，您将无法访问 ${ PASS_APP_NAME } 帐户。"
       ],
       "Could not create vault \"${ vaultName }\"": [
-        "Brankas \"${ vaultName }\" tidak dapat dibuat"
+        "无法创建保险库 “${ vaultName }”"
       ],
       "Could not send invitations to the following addresses:": [
-        "Undangan tidak dapat dikirimkan ke alamat berikut:"
+        "无法向以下地址发送邀请："
       ],
       "Coupon cannot be empty": [
-        "Kupon tidak boleh kosong"
+        "优惠券不能为空"
       ],
       "Coupon could not be applied.": [
-        "Kupon tidak dapat diterapkan."
+        "无法应用优惠券。"
       ],
       "Delete alias": [
-        "Hapus alias"
+        "删除别名"
       ],
       "Domain cannot be empty": [
-        "Domain tidak boleh kosong"
+        "域名不能为空"
       ],
       "Duplicate email addresses.": [
-        "Terdapat alamat email duplikat."
+        "复制邮件地址。"
       ],
       "Email cannot be empty": [
-        "Email tidak boleh kosong"
+        "邮箱地址不能为空"
       ],
       "Email is required": [
-        "Email diperlukan"
+        "电子邮件为必填项"
       ],
       "Empty note": [
-        "Catatan kosong"
+        "空注"
       ],
       "Expiration Date is not in the format MM/YY": [
-        "Tanggal Kedaluwarsa bukan dalam format BB/TT"
+        "过期日期格式不是 MM/YY"
       ],
       "Extra password cannot be empty": [
-        "Kata sandi tambahan tidak boleh kosong"
+        "额外密码不能为空"
       ],
       "Extra password is required": [
-        "Kata sandi tambahan diperlukan"
+        "需要额外的密码"
       ],
       "Extra password should have at least 8 characters": [
-        "Kata sandi tambahan harus mengandung setidaknya 8 karakter"
+        "额外密码至少要有 8 个字符"
       ],
       "Failed to load breaches.": [
-        "Daftar kebocoran gagal dimuat."
+        "加载泄露信息失败"
       ],
       "Identity could not be confirmed": [
-        "Identitas tidak dapat dikonfirmasi"
+        "无法确认身份"
       ],
       "Invalid alias prefix": [
-        "Awalan alias tidak valid"
+        "无效的别名前缀"
       ],
       "Invalid code": [
-        "Kode tidak valid"
+        "无效的验证码"
       ],
       "Invalid email": [
-        "Email tidak valid"
+        "邮箱地址无效"
       ],
       "Invalid email addresses.": [
-        "Terdapat alamat surel yang tidak valid."
+        "无效的邮箱地址。"
       ],
       "Inviting email addresses outside organization is not allowed.": [
-        "Mengundang alamat email di luar organisasi tidak diperkenankan"
+        "不允许邀请组织外的电子邮件地址。"
       ],
       "item was imported without custom fields": [
-        "item diimpor tanpa kolom khusus"
+        "项目导入时没有自定义字段"
       ],
       "Maximum length is ${ maxLength } character": [
-        "Panjang maksimum adalah ${ maxLength } karakter"
+        "最大长度为 ${ maxLength } 个字符"
       ],
       "Missing alias prefix": [
-        "Awalan alias hilang"
+        "缺少别名前缀"
       ],
       "Missing alias suffix": [
-        "Akhiran alias hilang"
+        "缺少别名后缀"
       ],
       "Move to trash": [
-        "Pindahkan ke sampah"
+        "移至回收站"
       ],
       "Name is required": [
-        "Nama dibutuhkan"
+        "名称为必填项"
       ],
       "No items": [
-        "Tidak ada item"
+        "没有项目"
       ],
       "No items in trash matching": [
-        "Tidak ada item yang sesuai di sampah"
+        "回收站中没有匹配的项目"
       ],
       "No items matching": [
-        "Tidak ada item yang cocok"
+        "没有匹配的项目"
       ],
       "No password manager selected": [
-        "Tidak ada pengelola kata sandi yang dipilih"
+        "未选择密码管理器"
       ],
       "No results": [
-        "Tidak ada hasil yang ditemukan"
+        "未找到任何结果"
       ],
       "No secure links matching": [
-        "Tidak ada tautan aman yang cocok"
+        "没有匹配的安全连接"
       ],
       "No shared items matching": [
-        "Tidak ada item yang dibagikan yang cocok"
+        "没有匹配的共享项目"
       ],
       "Offline": [
-        "Offline"
+        "无网络连接"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Setelah data tersinkron, menghapus alias di ${ PASS_SHORT_APP_NAME } akan turut menghapus alias yang sama pada SimpleLogin."
+        "同步后，在 ${ PASS_SHORT_APP_NAME } 中删除的别名也会在 SimpleLogin 中删除。"
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Alias hanya dapat mengandung karakter alfanumerik yang ditulis dalam huruf kecil, titik, tanda hubung, dan garis bawah"
+        "只允许使用字母数字小写字符、点、连字符和下划线"
       ],
       "Passphrase is required": [
-        "Frasa sandi dibutuhkan"
+        "需要提供密码"
       ],
       "Passwords do not match": [
-        "Kata sandi tidak sesuai"
+        "密码不匹配"
       ],
       "PGP encrypted export file requires passphrase": [
-        "Berkas ekspor yang terenkripsi PGP memerlukan frasa sandi"
+        "PGP加密的导出文件需要密码"
       ],
       "Please check that the extension is properly installed and enabled": [
-        "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah aktif"
+        "请检查扩展是否正确安装并启用"
       ],
       "Please contact us to investigate the issue": [
-        "Silakan hubungi kami untuk menyelidiki masalah ini"
+        "请联系我们调查该问题"
       ],
       "Please note that once deleted, aliases can't be restored": [
-        "Mohon diperhatikan bahwa setelah dihapus, alias tidak akan lagi dapat dipulihkan"
+        "请注意，别名一旦删除将无法恢复"
       ],
       "Please update the extension to its latest version": [
-        "Silakan perbarui ekstensi ke versi terkini"
+        "请更新扩展至最新版本"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Silakan verifikasi alamat email Anda untuk dapat menggunakan fitur alias email"
+        "使用邮箱别名前请先验证您的邮箱地址"
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
-        "Menghapus kata sandi tambahan akan mengeluarkan Anda dari seluruh perangkat dan mengakhiri seluruh sesi yang aktif."
+        "删除额外密码后，您将退出所有设备并结束所有活动会话。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
+        "反馈内容不会经过端对端加密，请勿发送敏感信息。"
       ],
       "Some items are currently shared. Deleting them will remove access for all other users.": [
-        "Sebagian item saat ini sedang dibagikan. Dengan menghapus item ini, izin akses bagi seluruh pengguna lainnya akan dihapus."
+        "某些项目目前是共享的。删除它们将取消所有其他用户的访问权限。"
       ],
       "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
-        "Sebagian item saat ini sedang dibagikan. Dengan memindahkan item ini ke brankas lain, izin akses bagi seluruh pengguna lainnya akan dihapus."
+        "某些项目目前是共享的。将它们移到另一个保险库将取消所有其他用户的访问权限。"
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
-        "Terjadi masalah saat memulai ${ PASS_APP_NAME }. Silakan coba segarkan atau muat ulang ekstensi."
+        "启用${ PASS_APP_NAME }时发生了错误。请尝试刷新或重载该插件。"
       ],
       "The alias prefix cannot be longer than 40 characters": [
-        "Awalan alias tidak boleh melebihi 40 karakter"
+        "别名前缀不可超过40个字符"
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
-        "Alias ini \"${ aliasEmail }\" sedang digunakan pada entri masuk \"${ relatedLoginName }\"."
+        "此别名 \"${ aliasEmail }\" 目前用于登录 \"${ relatedLoginName }\"。"
       ],
       "This email address will no longer be monitored for data breaches.": [
-        "Alamat email ini tidak akan lagi dipantau untuk kebocoran data."
+        "该电子邮件地址将不再受到数据泄露监测。"
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
-        "Item ini saat ini sedang dibagikan. Dengan menghapus item ini, izin akses bagi seluruh pengguna lainnya akan dihapus."
+        "此项目目前是共享的。删除它将取消所有其他用户的访问权限。"
       ],
       "This item is currently shared. Moving it to another vault will remove access for all other users.": [
-        "Item ini saat ini sedang dibagikan. Dengan memindahkan item ini ke brankas lain, izin akses bagi seluruh pengguna lainnya akan dihapus."
+        "此项目目前是共享的。将其移动到另一个保险库将取消所有其他用户的访问权限。"
       ],
       "Title is required": [
-        "Judul dibutuhkan"
+        "需要填写标题"
       ],
       "Too many attempts": [
-        "Terlalu banyak percobaan"
+        "尝试次数过多"
       ],
       "Transfer ownership of this vault to ${ email }?": [
-        "Transfer kepemilikan brankas ini ke ${ email }?"
+        "将此保险库的所有权转移给 ${ email }？"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
-        "Tidak dapat masuk ke ${ PASS_APP_NAME }. ${ additionalMessage }."
+        "无法登录至 ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Brankas \"${ vaultName }\" dan seluruh item di dalamnya akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan."
+        "保管库 “${ vaultName }” 及其包含的所有项目会被永久删除。您将无法撤销这一操作。"
       ],
       "Vault name is required": [
-        "Nama brankas dibutuhkan"
+        "需要提供保险库名称"
       ],
       "Verification code is required": [
-        "Kode verifikasi diperlukan"
+        "需要验证码"
       ],
       "You have reached the limit of members who can access this item.": [
-        "Anda telah mencapai batas jumlah anggota yang dapat mengakses item ini."
+        "您已达到此项目的可访问人数上限。"
       ],
       "You have reached the limit of members who can access this vault.": [
-        "Anda telah mencapai batas jumlah anggota yang dapat mengakses brankas ini."
+        "您已达到此保险库的可访问人数上限。"
       ],
       "You have reached the limit of users for this item. ${ upgradeLink }": [
-        "Anda telah mencapai batas jumlah pengguna untuk item ini. ${ upgradeLink }"
+        "您已达到此项目的用户上限。${ upgradeLink }"
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
-        "Anda telah mencapai batas pengguna pada brankas ini. ${ upgradeLink }"
+        "您已达到此保险库的使用人数上限。${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
-        "Anda telah mencapai batas jumlah brankas yang dapat dimiliki pada paket langganan Anda."
+        "您已达到您的套餐所允许您拥有的保险库数量上限。"
       ],
       "You have unsaved changes.": [
-        "Anda memiliki perubahan yang belum disimpan."
+        "您有尚未保存的更改。"
       ],
       "You must select at least one mailbox": [
-        "Anda harus memilih setidaknya satu kotak surat"
+        "您必须选择至少一个邮箱"
       ],
       "You will lose access to this item and its details. Do you want to continue?": [
-        "Anda akan kehilangan akses ke item ini beserta dengan seluruh rinciannya. Apakah Anda yakin ingin melanjutkan?"
+        "您将无法访问此项目及其详细信息。您想继续吗？"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "Anda tidak akan lagi memiliki akses ke brankas ini. Untuk dapat kembali bergabung dengan brankas ini, Anda akan memerlukan undangan baru."
+        "您将不再拥有该保险库的访问权。若要重新加入，您需要获得新的邀请。"
       ],
       "Your organization does not allow sharing individual items": [
-        "Organisasi Anda tidak mengizinkan pembagian item secara satu per satu"
+        "您的组织不允许共享单个项目"
       ],
       "Your session could not be authorized.": [
-        "Sesi Anda tidak dapat diautorisasi."
+        "您的会话无法被授权。"
       ],
       "Your session could not be resumed.": [
-        "Sesi Anda tidak dapat dilanjutkan."
+        "你的会话无法被恢复。"
       ],
       "Your session is inactive.": [
-        "Sesi Anda tidak aktif."
+        "您的会话已处于非活动状态。"
       ],
       "Your session was locked.": [
-        "Sesi Anda dikunci."
+        "您的会话已被锁定。"
       ],
       "Your subscription does not allow you to create more vaults.": [
-        "Langganan Anda tidak mengizinkan Anda untuk membuat lebih banyak brankas."
+        "您的订阅不允许您创建更多的别名。"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "Paket langganan Anda tidak mengizinkan Anda untuk membuat lebih dari satu brankas. Seluruh item akan diimpor ke brankas pertama Anda. Untuk mengimpor ke lebih dari satu brankas, tingkatkan paket langganan Anda."
+        "您的订阅不允许您创建多个保险库。 所有项目都将导入到您的第一个保险库中。 要导入多个保险库，请升级您的订阅。"
       ]
     }
   }

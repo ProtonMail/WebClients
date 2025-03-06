@@ -45,6 +45,9 @@
       "Add": [
         "加入"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "新增${ photos.length }照片至新相簿"
+      ],
       "Add address": [
         "加入電郵位址"
       ],
@@ -80,6 +83,12 @@
       ],
       "Add to group": [
         "加入至群組"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "添加至\"\"${ album.name }\"(${ album.photoCount }照片)"
+      ],
+      "Album name": [
+        "相簿名稱"
       ],
       "Apply": [
         "套用"
@@ -317,6 +326,9 @@
       ],
       "Download logs": [
         "下載日誌"
+      ],
+      "Download photo": [
+        "下載照片"
       ],
       "Download without scanning": [
         "無掃描下載"
@@ -759,6 +771,9 @@
       "Select country": [
         "選擇國家"
       ],
+      "Set as album cover": [
+        "設定相簿封面"
+      ],
       "Set recovery phrase": [
         "設定還原短語"
       ],
@@ -997,7 +1012,7 @@
         "${ seats }撰寫幫手就位"
       ],
       "${ users } user": [
-        "${ users } 個使用者"
+        "${ users } 位使用者"
       ]
     },
     "Alert": {
@@ -1392,7 +1407,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } 個使用者"
+        "${ users } 位使用者"
       ],
       "Total": [
         "總共"
@@ -2688,6 +2703,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「身分 \n及地址」>「短網域名稱 (pm.me)」裡面去設定。"
+      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -3621,6 +3639,11 @@
       ],
       "Security Center": [
         "安全中心"
+      ]
+    },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "新增${ photos.length }照片至"
       ]
     },
     "Hint": {
@@ -5553,6 +5576,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
       ],
+      "Your photo has been removed from the album": [
+        "您的照片已從相簿中移除"
+      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "您的方案限制為多達 7 天的 10 個版本"
       ],
@@ -5572,6 +5598,14 @@
     "info": {
       "Selected color:": [
         "已選取的色彩:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "如何傳送現金付款?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "請參見此文章的指示:${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -7894,6 +7928,12 @@
       "Maybe later": [
         "稍後再說"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "優惠將於${ formattedDate }過期."
+      ],
+      "Pay annually, secure our best offer": [
+        "每年付款，安全及最適方案"
+      ],
       "Save": [
         "儲存"
       ],
@@ -7903,6 +7943,9 @@
       "Save 80% on your first month.": [
         "首月省下80%"
       ],
+      "Special offer": [
+        "特別優惠"
+      ],
       "This offer won't be shown again.": [
         "此優惠將不再顯示。"
       ],
@@ -7911,6 +7954,9 @@
       ],
       "You currently pay": [
         "您目前付款"
+      ],
+      "Your subscription renews soon": [
+        "您的訂閱即將重新續約"
       ]
     },
     "Offer feature": {
@@ -8119,12 +8165,6 @@
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全保管庫共享(${ n }保管庫)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全保管庫共享(${ n } 保管庫)和連結共享"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9112,7 +9152,7 @@
         "${ n } 個極飆速 VPN 連線"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } 個極飆速 VPN 連線 / 每一位使用者"
+        "${ n } 組極飆速 VPN 連線 / 每一位使用者"
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
@@ -9878,9 +9918,6 @@
       "Delete ${ count } contact group": [
         "刪除 ${ count } 個聯絡人群組"
       ],
-      "Delete ${ item.name }?": [
-        "刪除 ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "刪除${ links.length }項目?"
       ],
@@ -10469,13 +10506,13 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } 台伺服器"
+        "${ n } 臺伺服器"
       ],
       "${ n } VPN connection": [
         "${ n } 條VPN連線"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } 台，分布於 ${ numberOfCountries }+ 個國家"
+        "${ numberOfServers } 臺伺服器，橫跨 ${ numberOfCountries }+ 個國家"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"

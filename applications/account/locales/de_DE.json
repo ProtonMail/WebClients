@@ -379,6 +379,9 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete account": [
+        "Konto löschen"
+      ],
       "Delete and confirm": [
         "Löschen und bestätigen"
       ],
@@ -1046,7 +1049,7 @@
         "Kalenderansicht wählen"
       ],
       "Select city ${ city }": [
-        "Ort ${ city } auswählen"
+        "Stadt ${ city } auswählen"
       ],
       "Select country": [
         "Land wählen"
@@ -6805,6 +6808,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: Vorschau in niedriger Auflösung"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Familienmitglieder verwenden die Zwei-Faktor-Authentifizierung.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Familienmitglieder verwenden die Zwei-Faktor-Authentifizierung."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Nicht-SSO-Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Nicht-SSO-Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } möchte Daten in ${ PASS_APP_NAME } mit dir teilen."
       ],
@@ -6817,6 +6832,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: Keine Quarantäne oder Ablehnung nicht autorisierter E-Mails. Normalerweise wird diese Richtlinie nur zum Troubleshooting oder Testen verwendet."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } Mitglied",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } Mitglieder"
       ],
       "${ number } city": [
         "${ number } Stadt",
@@ -7863,9 +7882,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Falls du kürzlich dein Passwort zurückgesetzt hast, kannst du deine Daten mit einer Datenwiederherstellungsmethode wiederherstellen"
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Wenn du dieses Konto mit einem anderen kombinieren möchtest, darfst du es NICHT löschen."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Wenn du Probleme hast, sind wir für dich da. ${ boldPhoneCall } oder ${ boldZoomMeeting } mit einem unserer Support-Spezialisten, oder öffne einen ${ boldLiveChat } für Chat-Support."
@@ -9017,6 +9033,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Dadurch wird Single Sign-on für ${ boldDomainName } entfernt."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Dadurch wird dein Zugriff aus alle verbundenen Dienste entfernt und alle deine Daten, einschließlich Kontakte, Anhänge, Termine, Passwörter und Dateien, gelöscht."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dies ersetzt dein vorläufiges Passwort. Du benötigst es, um zukünftig auf dein ${ BRAND_NAME }-Konto zuzugreifen."
       ],
@@ -9305,8 +9324,8 @@
       "Warning:": [
         "Warnung:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Warnhinweis: Löschvorgang kann nicht widerrufen werden. Dadurch wird auch der Zugriff auf alle verbundenen Dienste entfernt und alle deine Kontakte werden gelöscht."
+      "Warning: deleting your account is permanent.": [
+        "Achtung: Die Löschung deines Kontos ist dauerhaft."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Wir empfehlen dir, wenn möglich, die offiziellen ${ VPN_APP_NAME } Anwendungen zu verwenden."
@@ -9988,7 +10007,7 @@
         "Entwurf schließen"
       ],
       "Create new event": [
-        "Neuer Termin erstellen"
+        "Neuen Termin erstellen"
       ],
       "Day view": [
         "Tagesansicht"
@@ -10398,6 +10417,9 @@
       "Apply policy to": [
         "Richtlinie anwenden auf"
       ],
+      "Ask members to set up 2FA": [
+        "Mitglieder auffordern, 2FA einzurichten"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
       ],
@@ -10791,6 +10813,9 @@
       "Hide password": [
         "Passwort ausblenden"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Mir ist klar, dass ich diese E-Mail-Adresse sofort zum anderen Konto hinzufügen muss, um zu vermeiden, dass diese Adresse dauerhaft verloren geht."
+      ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
       ],
@@ -10898,6 +10923,9 @@
       ],
       "Maximum number of words": [
         "Maximale Wörteranzahl"
+      ],
+      "Members without 2FA": [
+        "Mitglieder ohne 2FA"
       ],
       "Message": [
         "Nachricht"
@@ -11104,7 +11132,7 @@
         "Entfernen"
       ],
       "Remove image metadata": [
-        "Metadaten aus Bildern entfernt"
+        "Metadaten aus Bildern entfernen"
       ],
       "Repeat backup password": [
         "Wiederholung des Backup-Passworts"
@@ -11260,6 +11288,9 @@
       "Tips and insights": [
         "Tipps und Hintergründe"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Um uns zu helfen, uns zu verbessern, erkläre bitte, warum du gehst."
+      ],
       "To: ${ toEmail }": [
         "An: ${ toEmail }"
       ],
@@ -11328,9 +11359,6 @@
       ],
       "Vulnerable password": [
         "Gefährdetes Passwort"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Wir bedauern es sehr, dass du ProtonMail nicht mehr nutzen möchtest. Bitte teile uns deine Gründe mit, damit wir uns verbessern können."
       ],
       "Weak": [
         "Schwach"
@@ -11696,10 +11724,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } Mitglied deiner Organisation verwendet die Zwei-Faktor-Authentifizierung.",
-        "${ twoFAMembers.length }/${ members.length } Mitglieder deiner Organisation verwenden die Zwei-Faktor-Authentifizierung."
-      ],
       "Almost there": [
         "Fast geschafft"
       ],
@@ -13611,7 +13635,7 @@
         "Jährlich zahlen, unser bestes Angebot sichern"
       ],
       "Save": [
-        "Sparen"
+        "Spare"
       ],
       "Save ${ prices.savedPercentage }%": [
         "Spare ${ prices.savedPercentage }%"
@@ -13621,6 +13645,9 @@
       ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"
+      ],
+      "Special offer": [
+        "Sonderangebot"
       ],
       "This offer won't be shown again.": [
         "Dieses Angebot wird nicht wieder angezeigt."
@@ -13803,6 +13830,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Ich verwende ein anderes ${ BRAND_NAME }-Konto"
+      ],
+      "I'd like to merge this account into another one": [
+        "Ich möchte dieses Konto mit einem anderen Konto zusammenlegen."
       ],
       "Ignore group": [
         "Gruppe ignorieren"
@@ -14336,14 +14366,6 @@
       ],
       "Secure vault sharing": [
         "Sicheres Teilen von Tresoren"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Sichere Tresorfreigabe (${ n } Tresor)",
-        "Sichere Tresorfreigabe (${ n } Tresore)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Sichere Tresorfreigabe (${ n } Tresor) und Linkfreigabe",
-        "Sichere Tresorfreigabe (${ n } Tresore) und Linkfreigabe"
       ],
       "Secure your family’s passwords and online identities": [
         "Sichere Passwörter und Online-Identitäten für deine Familie"
@@ -16707,6 +16729,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Wird alle 2 Jahre abgerechnet"
+      ],
+      "Billed every 6 months": [
+        "Wird alle 6 Monate abgerechnet"
       ],
       "Billed for 15 months": [
         "Bezahlt für 15 Monate"
@@ -19213,6 +19238,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Endpunkt-URL des Identitätsanbieters (z.B. https://idp.beispiel.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Ausschluss von Single Sign-On-Benutzern, deren 2FA von Ihrem Identitätsanbieter verwaltet wird"
+      ],
       "Feature in early access": [
         "Funktion im frühzeitigen Zugang"
       ],
@@ -19234,8 +19262,8 @@
       "IP address (Internet Service Provider)": [
         "IP-Adresse (Internetdienstanbieter)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail mit der Aufforderung, sie so bald wie möglich zu aktivieren."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail, in der sie aufgefordert werden, diese so bald wie möglich zu aktivieren. Single Sign-On-Benutzer, erhalten diese Aufforderung nicht."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Nachrichten in den Ordnern „Gesendet“ oder „Entwürfe“ werden weiterhin in diesem Ordner angezeigt, auch wenn du diese in einen anderen Ordner verschiebst."
@@ -19371,8 +19399,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Externe Adresse - deaktiviert die Ende-zu-Ende-Verschlüsselung für diese Gruppe"
+      "Disables end-to-end email encryption for this group": [
+        "Deaktiviert die Ende-zu-Ende-Verschlüsselung von E-Mails für diese Gruppe"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Externe Adresse – deaktiviert die Ende-zu-Ende E-Mail-Verschlüsselung für diese Gruppe, und keine verschlüsselten Ressourcen werden mit diesem Benutzer geteilt."
@@ -19469,7 +19497,7 @@
         "Rückbuchung"
       ],
       "Credit": [
-        "Kredit"
+        "Guthaben"
       ],
       "Credit transfer": [
         "Überweisung"

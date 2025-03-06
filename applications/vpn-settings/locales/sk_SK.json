@@ -199,6 +199,9 @@
       "Delete": [
         "Odstrániť"
       ],
+      "Delete account": [
+        "Vymazať účet"
+      ],
       "Delete Gateway": [
         "Odstrániť bránu"
       ],
@@ -366,6 +369,9 @@
       ],
       "Go to label": [
         "Prejsť na štítok"
+      ],
+      "Go to panel ${ index }": [
+        "Prejsť na panel ${ index }"
       ],
       "Got it": [
         "Rozumiem"
@@ -2715,6 +2721,12 @@
       "Please select a state": [
         "Vyberte kraj, prosím"
       ],
+      "Please select at least one location before continuing.": [
+        "Pred pokračovaním vyberte aspoň jednu lokalitu, prosím."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Pred pokračovaním vyberte aspoň jedného člena skupiny, prosím."
+      ],
       "Please set a recovery email first": [
         "Najprv prosím zadajte email pre obnovenie"
       ],
@@ -2774,6 +2786,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimálna platba, ktorú akceptujeme, je ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Názov politiky musí mať 3 až 40 znakov."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
@@ -3649,6 +3664,24 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhľad v nízkom rozlíšení"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } člen vašej rodiny používa dvojstupňové overenie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členovia vašej rodiny používajú dvojstupňové overenie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členov vašej rodiny používa dvojstupňové overenie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členov vašej rodiny používa dvojstupňové overenie."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov používa dvojstupňové overenie na prihlásenie do vašej organizácie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov používa dvojstupňové overenie na prihlásenie do vašej organizácie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov používa dvojstupňové overenie na prihlásenie do vašej organizácie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov používa dvojstupňové overenie na prihlásenie do vašej organizácie."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete aktivovať režim jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
       ],
@@ -3660,6 +3693,12 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: neumiestňovať do karantény ani neodmietať neautorizované emaily. Obvykle túto zásadu ľudia používajú zvyčajne na diagnostiku a odstraňovanie problémov alebo na testovanie."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } člen",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členovia",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členov",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členov"
       ],
       "${ number } city": [
         "${ number } mesto",
@@ -4324,9 +4363,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ak prejdete na nižšie predplatné, stratíte prístup k plateným funkciám ${ VPN_APP_NAME } ."
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Ak si želáte skombinovať tento účet s iným, nemažte ho."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Ak máte problémy, sme tu, aby sme vám pomohli. Skúste ${ boldPhoneCall } alebo ${ boldZoomMeeting } s jedným z našich špecialistov podpory, alebo otvorte ${ boldLiveChat } pre chatovú podporu."
       ],
@@ -4608,6 +4644,9 @@
       ],
       "Or select a particular server:": [
         "Alebo vyberte konkrétny server:"
+      ],
+      "Organization --> Groups": [
+        "Organizácia --> Skupiny"
       ],
       "Organization size": [
         "Veľkosť organizácie"
@@ -5038,6 +5077,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Týmto odstránite SSO pre ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Týmto sa odstráni váš prístup ku všetkým pripojeným službám a vymažú sa všetky vaše údaje vrátane kontaktov, príloh, udalostí, hesiel a súborov."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Týmto sa nahradí vaše dočasné heslo. V budúcnosti ho použite pre prístup k vášmu účtu ${ BRAND_NAME }."
       ],
@@ -5070,6 +5112,9 @@
       ],
       "to continue to ${ product }": [
         "pokračovať na ${ product }"
+      ],
+      "To create your first user group, go to": [
+        "Pre vytvorenie vašej prvej skupiny používateľov prejdite do"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
@@ -5224,8 +5269,8 @@
       "Warning:": [
         "Upozornenie:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Upozornenie: vymazanie je trvalé. Odstráni sa tým aj prístup ku všetkým pripojeným službám a vymažú sa všetky vaše kontakty."
+      "Warning: deleting your account is permanent.": [
+        "Upozornenie: vymazanie účtu je trvalé."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ak je to možné, odporúčame vám používať oficiálne aplikácie ${ VPN_APP_NAME }."
@@ -5539,6 +5584,14 @@
         "Vybraná farba:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Ako poslať hotovostnú platbu?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Pokyny nájdete v článku: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Pridajte novú adresu pre existujúcich používateľov vašej organizácie."
@@ -5730,6 +5783,9 @@
       ],
       "Apply policy to": [
         "Uplatniť pravidlá na"
+      ],
+      "Ask members to set up 2FA": [
+        "Požiadajte členov, aby si nastavili 2FA"
       ],
       "Assertion Consumer Service URL": [
         "URL adresa zákazníckej služby"
@@ -5938,6 +5994,9 @@
       "Hide password": [
         "Skryť heslo"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Chápem, že túto emailovú adresu budem musieť okamžite pridať do druhého konta, aby nedošlo k trvalej strate tejto adresy."
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5964,6 +6023,9 @@
       ],
       "Main": [
         "Hlavné"
+      ],
+      "Members without 2FA": [
+        "Členovia bez 2FA"
       ],
       "Metadata file for ${ appName }": [
         "Súbor metadát pre ${ appName }"
@@ -6175,6 +6237,9 @@
       "Thomas": [
         "Tomáš"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Aby ste nám pomohli zlepšiť sa, vysvetlite, prosím, prečo odchádzate"
+      ],
       "Two-password mode": [
         "Režim s dvomi heslami"
       ],
@@ -6216,9 +6281,6 @@
       ],
       "Vulnerable password": [
         "Zraniteľné heslo"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Je nám ľúto, že odchádzate. Napíšte nám svoj dôvod, prečo odchádzate, aby sme mohli zlepšiť naše služby."
       ],
       "Weak": [
         "Slabé"
@@ -6445,14 +6507,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Inovujte a odomknite chatovú podporu a ďalšie prémiové funkcie, alebo využite náš formulár bezplatnej podpory a nahláste váš problém."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } členov vašej organizácie používa dvojstupňové overenie.",
-        "${ twoFAMembers.length }/${ members.length } členov vašej organizácie používa dvojstupňové overenie.",
-        "${ twoFAMembers.length }/${ members.length } členov vašej organizácie používa dvojstupňové overenie.",
-        "${ twoFAMembers.length }/${ members.length } členov vašej organizácie používa dvojstupňové overenie."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7897,6 +7951,12 @@
       "Maybe later": [
         "Možno neskôr"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Ponuka skončí ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Plaťte ročne, poistite si našu najlepšiu ponuku"
+      ],
       "Save": [
         "Ušetrite"
       ],
@@ -7909,6 +7969,9 @@
       "Save big when you pay annually": [
         "Pri ročnej platbe ušetríte viac"
       ],
+      "Special offer": [
+        "Špeciálna ponuka"
+      ],
       "This offer won't be shown again.": [
         "Táto ponuka sa už nezobrazí."
       ],
@@ -7917,6 +7980,9 @@
       ],
       "You currently pay": [
         "V súčasnosti platíte"
+      ],
+      "Your subscription renews soon": [
+        "Vaše predplatné čoskoro obnoví"
       ]
     },
     "Offer feature": {
@@ -7962,6 +8028,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Používam iný účet ${ BRAND_NAME }"
+      ],
+      "I'd like to merge this account into another one": [
+        "Chcel by som zlúčiť tento účet s iným účtom"
       ],
       "It's missing a key feature that I need": [
         "Chýba kľúčová funkcia, kterú potrebujem"
@@ -8134,18 +8203,6 @@
       ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpečné zdieľanie trezora (${ n } trezor)",
-        "Bezpečné zdieľanie trezorov (${ n } trezory)",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov)",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpečné zdieľanie trezora (${ n } trezor) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezory) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9758,6 +9815,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Účtované každé 2 roky"
+      ],
+      "Billed every 6 months": [
+        "Účtované každých 6 mesiacov"
       ],
       "Billed for 15 months": [
         "Účtované za 15 mesiacov"
@@ -11446,6 +11506,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL koncového bodu od poskytovateľa identity (napr. https://idp.example.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Vylúčenie používateľov jednotného prihlásenia, ktorých 2FA spracúva váš poskytovateľ identity"
+      ],
       "Feature in early access": [
         "Funkcia v predbežnom prístupe"
       ],
@@ -11458,8 +11521,8 @@
       "IP address (Internet Service Provider)": [
         "IP adresa (poskytovateľ internetových služieb)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Členovia, ktorí nepoužívajú 2FA dostanú email s výzvou, aby 2FA čo najskôr povolili "
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Členovia, ktorí nepoužívajú 2FA, dostanú email s výzvou, aby si ho čo najskôr aktivovali. Používatelia s jedným prihlásením nedostanú emailovú pripomienku."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Pravidlá zdieľaných serverov možno použiť na jednotlivých používateľov alebo skupiny"
@@ -11508,8 +11571,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Externá adresa - deaktivuje end-to-end šifrovanie emailov pre túto skupinu"
+      "Disables end-to-end email encryption for this group": [
+        "Deaktivuje end-to-end šifrovanie emailov pre túto skupinu"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Externá adresa - deaktivuje end-to-end šifrovanie emailov pre túto skupinu a s týmto používateľom nebudú zdieľané žiadne šifrované zdroje."

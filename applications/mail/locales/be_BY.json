@@ -10758,6 +10758,9 @@
       "Save big when you pay annually": [
         "Эканомце больш пры гадавой аплаце"
       ],
+      "Special offer": [
+        "Спецыяльная прапанова"
+      ],
       "This offer won't be shown again.": [
         "Гэта прапанова больш не будзе паказвацца."
       ],
@@ -11040,18 +11043,6 @@
       ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Бяспечнае абагульванне сховішча (${ n } сховішча)",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчы)",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Бяспечнае абагульванне сховішча (${ n } сховішча) і абагульванне спасылкі",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчы) і абагульванне спасылкі",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12426,6 +12417,9 @@
       "Billed every 2 years": [
         "Аплачваецца кожныя 2 гады"
       ],
+      "Billed every 6 months": [
+        "Аплачваецца кожныя 6 месяцаў"
+      ],
       "Billed for 15 months": [
         "Аплачваецца за 15 месяцаў"
       ],
@@ -12513,47 +12507,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription reminder": {
@@ -12826,6 +12779,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -14246,6 +14240,11 @@
         "Сёння"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“Аўтаматычна” азначае, што для адпраўкі гэтаму карыстальніку выкарыстоўваецца фармат рэдактара. “Звычайны тэкст” азначае, што пры адпраўцы паведамленне заўсёды будзе ператварацца ў звычайны тэкст."
@@ -14327,11 +14326,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
     },
     "Tor out of date": {
@@ -14460,7 +14454,7 @@
         "Bitcoin праз электронную пошту"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin каму заўгодна, выкарыстоўваючы толькі імя карыстальніка ${ BRAND_NAME }."
+        "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin любому карыстальніку, выкарыстоўваючы толькі яго імя ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных, 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"

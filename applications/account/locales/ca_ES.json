@@ -379,6 +379,9 @@
       "Delete": [
         "Elimina"
       ],
+      "Delete account": [
+        "Suprimeix el compte"
+      ],
       "Delete and confirm": [
         "Elimina i confirma"
       ],
@@ -6805,6 +6808,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista prèvia de baixa resolució"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de factor doble.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de factor doble."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de factor doble per a iniciar la sessió a la vostra organització.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de factor doble per a iniciar la sessió a la vostra organització."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vol compartir dades amb vós a ${ PASS_APP_NAME }"
       ],
@@ -6817,6 +6832,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: no posar en quarantena ni rebutjar correus electrònics no autoritzats. Normalment, la gent només utilitza aquesta política per solucionar problemes o fer proves."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membre",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membres"
       ],
       "${ number } city": [
         "${ number } ciutat",
@@ -7863,9 +7882,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si recentment heu restablert la vostra contrasenya, podeu utilitzar un mètode de recuperació de dades per desbloquejar les vostres dades."
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Si voleu combinar aquest compte amb un altre, NO l'elimineu."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Si teniu problemes, estem aquí per ajudar-vos. ${ boldPhoneCall } o ${ boldZoomMeeting } amb un dels nostres especialistes en suport, o obriu un ${ boldLiveChat } per rebre suport per xat."
@@ -9017,6 +9033,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Això esborrarà l'inici de sessió únic (SSO) per a ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Això suprimirà el vostre accés a tots els serveis connectats i totes les dades, incloent-hi contactes, adjunts, esdeveniments, contrasenyes i fitxers."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Això reemplaçarà la vostra contrasenya temporal. Ho utilitzareu per accedir al vostre compte ${ BRAND_NAME } en el futur."
       ],
@@ -9305,8 +9324,8 @@
       "Warning:": [
         "Atenció:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Advertència: l'eliminació és permanent. Això també esborra l'accés a tots els serveis connectats i elimina tots els vostres contactes."
+      "Warning: deleting your account is permanent.": [
+        "Atenció: La supressió del compte és permanent."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Us recomanem utilitzar les aplicacions ${ VPN_APP_NAME } oficials quan sigui possible."
@@ -10398,6 +10417,9 @@
       "Apply policy to": [
         "Apliqueu la política a"
       ],
+      "Ask members to set up 2FA": [
+        "Demaneu als membres que configurin el 2FA"
+      ],
       "Assertion Consumer Service URL": [
         "URL d'Assertion Consumer Service"
       ],
@@ -10791,6 +10813,9 @@
       "Hide password": [
         "Amaga la contrasenya"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Entenc que haig d'associar aquesta adreça de correu-e a un altre compte immediatament, per a evitar la pèrdua de l'adreça de forma permanent."
+      ],
       "I understand the risk": [
         "Entenc el risc"
       ],
@@ -10898,6 +10923,9 @@
       ],
       "Maximum number of words": [
         "Nombre màxim de paraules"
+      ],
+      "Members without 2FA": [
+        "Membres sense 2FA"
       ],
       "Message": [
         "Missatge"
@@ -11260,6 +11288,9 @@
       "Tips and insights": [
         "Consells i informació"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Per ajudar-nos a millorar, expliqueu per què marxeu."
+      ],
       "To: ${ toEmail }": [
         "Per a: ${ toEmail }"
       ],
@@ -11328,9 +11359,6 @@
       ],
       "Vulnerable password": [
         "Contrasenya vulnerable"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Ens sap greu que marxeu. Expliqueu perquè us n'aneu per ajudar-nos a millorar."
       ],
       "Weak": [
         "Feble"
@@ -11696,10 +11724,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length } membre de ${ members.length } de la vostra organització usa l'autenticació de doble factor.",
-        "${ twoFAMembers.length } membres de ${ members.length } de la vostra organització usen l'autenticació de doble factor."
-      ],
       "Almost there": [
         "Ja gairebé està"
       ],
@@ -13622,6 +13646,9 @@
       "Save big when you pay annually": [
         "Estalvieu de debò pagant anualment!"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "This offer won't be shown again.": [
         "Aquesta oferta no es tornarà a mostrar."
       ],
@@ -13803,6 +13830,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Faig ús d'un compte ${ BRAND_NAME } diferent"
+      ],
+      "I'd like to merge this account into another one": [
+        "Vull combinar aquest compte en un altre"
       ],
       "Ignore group": [
         "Ignorar grup"
@@ -14336,14 +14366,6 @@
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Compartició segura de caixes fortes (${ n } caixa forta)",
-        "Compartició segura de caixes fortes (${ n } caixes fortes)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartició segura de caixes fortes (${ n } caixa forta) i compartició d'enllaços",
-        "Compartició segura de caixes fortes (${ n } caixes fortes) i compartició d'enllaços"
       ],
       "Secure your family’s passwords and online identities": [
         "Protegiu les contrasenyes i les identitats en línia de la vostra família."
@@ -16710,6 +16732,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturació cada 2 anys"
+      ],
+      "Billed every 6 months": [
+        "Facturació cada 6 mesos"
       ],
       "Billed for 15 months": [
         "Facturació per 15 mesos"
@@ -19216,6 +19241,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.cat/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Exclou els usuaris que el seu inici de sessió 2FA d'un sol cop és administrat pel vostre proveïdor d'identitat"
+      ],
       "Feature in early access": [
         "Característica en accés anticipat"
       ],
@@ -19237,8 +19265,8 @@
       "IP address (Internet Service Provider)": [
         "Adreça IP (proveïdor de serveis d'Internet)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Els membres que no utilitzen l'A2F rebran un correu electrònic sol·licitant-los que ho habiliten al més aviat possible."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Els membres que no utilitzin l'autenticació 2FA rebran un correu-e demanant que ho habilitin com més aviat millor. Això exclou als usuaris amb inici d'un sol cop."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
@@ -19374,8 +19402,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Adreça externa: desactiva el xifratge d'extrem a extrem de correu electrònic per a aquest grup."
+      "Disables end-to-end email encryption for this group": [
+        "Desactiva l'encriptació de correu electrònic d'extrem a extrem per a aquest grup"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Adreça externa: desactiva el xifratge d'extrem a extrem de correu electrònic per a aquest grup i no es compartirà cap recurs xifrat amb aquest usuari."

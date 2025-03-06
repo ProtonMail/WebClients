@@ -315,6 +315,9 @@
       "Delete version": [
         "Удалить версию"
       ],
+      "Delete without saving": [
+        "Удалить без сохранения"
+      ],
       "Deselect all": [
         "Снять выделение со всех"
       ],
@@ -329,6 +332,12 @@
       ],
       "Display navigation bar": [
         "Показать панель навигации"
+      ],
+      "Display next": [
+        "Следующий"
+      ],
+      "Display previous": [
+        "Предыдущий"
       ],
       "Done": [
         "Готово"
@@ -351,8 +360,17 @@
       "Download logs": [
         "Скачать журналы"
       ],
+      "Download photo": [
+        "Скачать фото",
+        "Скачать фото",
+        "Скачать фото",
+        "Скачать фото"
+      ],
       "Download without scanning": [
         "Скачать без сканирования"
+      ],
+      "Download without scanning (${ count })": [
+        "Скачать без сканирования (${ count })"
       ],
       "Drive Locked": [
         "Хранилище заблокировано"
@@ -498,6 +516,9 @@
       "Increase": [
         "Увеличить"
       ],
+      "Join album": [
+        "Присоединиться к альбому"
+      ],
       "Keep my subscription": [
         "Сохранить подписку"
       ],
@@ -539,6 +560,9 @@
       ],
       "Manage share": [
         "Управление общим ресурсом"
+      ],
+      "Mark as favorite": [
+        "Отметить как избранное"
       ],
       "Mark as resolved": [
         "Отметить как устраненную"
@@ -684,6 +708,12 @@
       "Remove device": [
         "Удалить устройство"
       ],
+      "Remove from album": [
+        "Удалить из альбома"
+      ],
+      "Remove from favorites": [
+        "Убрать из избранных"
+      ],
       "Remove from this list": [
         "Удалить из этого списка"
       ],
@@ -693,8 +723,14 @@
       "Remove me": [
         "Уберите меня"
       ],
+      "Remove without saving": [
+        "Удалить без сохранения"
+      ],
       "Rename": [
         "Переименовать"
+      ],
+      "Rename album": [
+        "Переименовать альбом"
       ],
       "Replace file": [
         "Заменить файл"
@@ -762,8 +798,14 @@
       "Save": [
         "Сохранить"
       ],
+      "Save and remove": [
+        "Сохранить и удалить"
+      ],
       "Save changes": [
         "Сохранить изменения"
+      ],
+      "Save photos and remove": [
+        "Сохранить и удалить"
       ],
       "Search": [
         "Поиск"
@@ -809,6 +851,9 @@
       ],
       "Share": [
         "Поделиться"
+      ],
+      "Share album": [
+        "Поделиться альбомом"
       ],
       "Share file": [
         "Поделиться файлом"
@@ -1370,6 +1415,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Закрыть"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -3739,6 +3787,9 @@
       "Create new album": [
         "Создать новый альбом"
       ],
+      "Rename": [
+        "Переименовать"
+      ],
       "Security Center": [
         "Центр безопасности"
       ]
@@ -4142,6 +4193,9 @@
         "${ album.photoCount } элементов",
         "${ album.photoCount } элементов"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } был успешно удалён."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
@@ -4195,6 +4249,9 @@
         "${ contactsLength } контакта",
         "${ contactsLength } контактов",
         "${ contactsLength } контактов"
+      ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } не может быть скачан напрямую и не буден включён в загрузку. Вы можете скачать остальные объекты нажав 'Продолжить скачивание'."
       ],
       "${ doneCount } finished": [
         "${ doneCount } завершен",
@@ -4273,6 +4330,12 @@
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыка",
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков",
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
+      ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } сканирование не удалось",
+        "${ scanErrorCount } сканирования не удались",
+        "${ scanErrorCount } сканирований не удались",
+        "${ scanErrorCount } сканирования не удалась"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
@@ -4420,6 +4483,9 @@
       ],
       "And access it from anywhere": [
         "Доступ откуда угодно"
+      ],
+      "Anonymous": [
+        "Аноним"
       ],
       "Anyone with this link can access your file.": [
         "Доступ к файлу разрешен всем, у кого есть ссылка."
@@ -5108,6 +5174,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем."
       ],
+      "Photo is not saved to your library": [
+        "Данное фото не было сохранено в вашей библиотеке"
+      ],
       "Photo is set as album cover": [
         "Фотография установлена обложкой альбома"
       ],
@@ -5324,6 +5393,9 @@
       "Shared": [
         "В общем доступе"
       ],
+      "Shared by ${ rootLink.signatureEmail }": [
+        "${ rootLink.signatureEmail } поделился с вами."
+      ],
       "Shared link not found": [
         "Ссылка общего доступа не найдена"
       ],
@@ -5354,6 +5426,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Некоторые из ваших файлов больше недоступны. Восстановите доступ к своим файлам. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Некоторые фото не были сохранены в вашей хронологии. Удаление этого альбома приведёт к удалению этих фотографий."
+      ],
       "Something went wrong, please try again later.": [
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
       ],
@@ -5383,6 +5458,12 @@
       ],
       "The albums you create are shown here.": [
         "Альбомы, которые вы создаете, показаны здесь."
+      ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Цифровая подпись была частично подтверждена. Данный файл был загружен через публичную ссылку без аккаунта ${ BRAND_NAME }, поэтому их личность не может быть подтверждена."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Цифровая подпись была частично подтверждена. Данная папка была загружена через публичную ссылку без аккаунта ${ BRAND_NAME }, поэтому их личность не может быть подтверждена."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Количество загрузок включает как фактические загрузки, так и случаи предварительного просмотра файлов."
@@ -5417,6 +5498,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Браузер не поддерживает предварительный просмотр документов PDF. Пожалуйста, скачайте файл."
       ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Данное действие необратимо. Введите имя устройства, чтобы подтвердить удаление."
+      ],
       "This file is too large to preview": [
         "Этот файл слишком большой для предпросмотра"
       ],
@@ -5444,6 +5528,9 @@
       "This month": [
         "Этот месяц"
       ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Будет удален только альбом. Вши фото останутся в вашей хронологии. Данное действие необратимо."
+      ],
       "This will permanently delete the file you uploaded.": [
         "Это навсегда удалит загруженный вами файл"
       ],
@@ -5470,6 +5557,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Для завершения оплаты, пожалуйста, отправьте ${ btcAmountBold } на адрес ниже."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Чтобы скачать файлы ${ DOCS_APP_NAME }, откройте их в ${ DOCS_APP_NAME } и экспортируйте их."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен проиндексировать ваши файлы локально."
@@ -5851,6 +5941,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
+      ],
+      "Your photo has been removed from the album": [
+        "Ваше фото было удалено из альбома",
+        "Ваши фото были удалены из альбома",
+        "Ваши фото были удалены из альбома",
+        "Ваши фото были удалены из альбома"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Ваш план ограничен 10 версиями на срок до 7 дней"
@@ -6677,6 +6773,11 @@
       ],
       "What’s this?": [
         "Что это такое?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "Включает в себя:"
       ]
     },
     "Loading info": {
@@ -8033,6 +8134,9 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" успешно создано"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" удалён"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" безвозвратно удалено из корзины"
       ],
@@ -8155,6 +8259,12 @@
       ],
       "Access updated and shared": [
         "Доступ обновлен и открыт общий доступ"
+      ],
+      "Album failed to be renamed": [
+        "Не удалось переименовать альбом"
+      ],
+      "Album renamed successfully": [
+        "Альбом успешно переименован."
       ],
       "All items will soon be permanently deleted from trash": [
         "Все элементы скоро будут окончательно удалены из корзины"
@@ -8382,6 +8492,12 @@
       "Maybe later": [
         "Может быть позже"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Срок действия предложения истекает ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Платите ежегодно, получите наше лучшее предложение"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -8394,6 +8510,9 @@
       "Save big when you pay annually": [
         "Экономьте больше, когда платите ежегодно"
       ],
+      "Special offer": [
+        "Специальное предложение"
+      ],
       "This offer won't be shown again.": [
         "Это предложение больше не будет показано."
       ],
@@ -8402,6 +8521,9 @@
       ],
       "You currently pay": [
         "Вы оплачиваете сейчас"
+      ],
+      "Your subscription renews soon": [
+        "Ваша подписка скоро обновится"
       ]
     },
     "Offer feature": {
@@ -8616,18 +8738,6 @@
       ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9665,6 +9775,9 @@
       "Billed every 2 years": [
         "Оплата каждые 2 года"
       ],
+      "Billed every 6 months": [
+        "Списано каждые 6 месяцев"
+      ],
       "Billed for 15 months": [
         "Оплата за 15 месяцев."
       ],
@@ -10581,8 +10694,11 @@
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } группы контактов"
       ],
-      "Delete ${ item.name }?": [
-        "Удалить ${ item.name }?"
+      "Delete ${ links.length } items?": [
+        "Удалить ${ links.length } объектов?"
+      ],
+      "Delete ${ name }?": [
+        "Удалить ${ name }?"
       ],
       "Delete ${ value }": [
         "Удалить ${ value }"

@@ -1386,6 +1386,9 @@
       "Use ${ label } theme": [
         "Použiť motív ${ label }"
       ],
+      "Use ${ PASS_APP_NAME }": [
+        "Použiť ${ PASS_APP_NAME }"
+      ],
       "Use a different card": [
         "Použiť inú kartu"
       ],
@@ -5899,6 +5902,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "Správca hesiel ${ BRAND_NAME } vám umožňuje vytvárať, ukladať a automaticky vypĺňať heslá, takže ich už nikdy nebudete musieť obnovovať."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendár",
         "${ calendarsToBeCreatedCount } nové kalendáre",
@@ -6529,6 +6535,9 @@
       "Default email application": [
         "Predvolená emailová aplikácia"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Detekcia prebieha vo vašom zariadení, takže žiadne údaje z vašich emailov sa neodosielajú na naše servery."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Vedeli ste, že súčasťou vášho ${ BRAND_NAME } účtu je aj šifrované cloudové úložisko? Prejdite na ${ DRIVE_APP_NAME } a využite svoj priestor naplno. Je to zadarmo."
       ],
@@ -7020,6 +7029,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Mesačne ${ onDayString }"
+      ],
+      "More infos": [
+        "Viac informácií"
       ],
       "More refine actions": [
         "Ďalšie spresnenie akcií"
@@ -7624,6 +7636,9 @@
       "This sender's public key has not been trusted yet.": [
         "Verejný kľúč tohto odosielateľa nebol doposiaľ overený."
       ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Toto sa vám zobrazilo, pretože predmet vášho emailu obsahuje kľúčové slová pre resetovanie hesla."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
       ],
@@ -8161,6 +8176,14 @@
         "Vybraná farba:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Ako poslať hotovostnú platbu?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Pokyny nájdete v článku: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Kliknite pre podrobnosti"
@@ -8627,6 +8650,9 @@
       ],
       "Don't show this again": [
         "Nabudúce nezobrazovať"
+      ],
+      "Don't show this suggestion": [
+        "Nezobrazovať tento návrh"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "napr. Amazon, eBay, Etsy"
@@ -9500,6 +9526,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "v ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "v prvý piatok"
       ],
@@ -10711,6 +10740,12 @@
       "Maybe later": [
         "Možno neskôr"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Ponuka skončí ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Plaťte ročne, poistite si našu najlepšiu ponuku"
+      ],
       "Save": [
         "Ušetrite"
       ],
@@ -10723,6 +10758,9 @@
       "Save big when you pay annually": [
         "Pri ročnej platbe ušetríte viac"
       ],
+      "Special offer": [
+        "Špeciálna ponuka"
+      ],
       "This offer won't be shown again.": [
         "Táto ponuka sa už nezobrazí."
       ],
@@ -10731,6 +10769,9 @@
       ],
       "You currently pay": [
         "V súčasnosti platíte"
+      ],
+      "Your subscription renews soon": [
+        "Vaše predplatné čoskoro obnoví"
       ]
     },
     "Offer feature": {
@@ -11002,18 +11043,6 @@
       ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpečné zdieľanie trezora (${ n } trezor)",
-        "Bezpečné zdieľanie trezorov (${ n } trezory)",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov)",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpečné zdieľanie trezora (${ n } trezor) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezory) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12388,6 +12417,9 @@
       "Billed every 2 years": [
         "Účtované každé 2 roky"
       ],
+      "Billed every 6 months": [
+        "Účtované každých 6 mesiacov"
+      ],
       "Billed for 15 months": [
         "Účtované za 15 mesiacov"
       ],
@@ -12475,47 +12507,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription reminder": {
@@ -12788,6 +12779,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -13911,6 +13943,9 @@
       "Notes": [
         "Poznámky"
       ],
+      "On-device suggestions": [
+        "Návrhy v zariadení"
+      ],
       "One email, many recipients": [
         "Jeden email, množstvo príjemcov"
       ],
@@ -14205,6 +14240,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editore bude použitý na odoslanie užívateľovi. Jednoduchý text znamená, že správa bude pri odoslaní vždy prevedená na obyčajný text."
@@ -14286,11 +14326,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Tor out of date": {

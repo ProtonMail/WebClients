@@ -188,7 +188,7 @@
         "认证中"
       ],
       "Auto-delete spam and trash": [
-        "自动清理垃圾邮件和废件箱"
+        "自动清理垃圾邮件和回收站"
       ],
       "Back": [
         "上一步"
@@ -378,6 +378,9 @@
       ],
       "Delete": [
         "删除"
+      ],
+      "Delete account": [
+        "删除账号"
       ],
       "Delete and confirm": [
         "删除并确认"
@@ -1142,7 +1145,7 @@
         "使用密码登录"
       ],
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "从 ${ nameToDisplay } ${ maybeEmailInBrackets } 中退出登录"
@@ -1277,7 +1280,7 @@
         "上传图片"
       ],
       "Use ${ label } theme": [
-        "使用 ${ label } 配色"
+        "使用 ${ label } 主题"
       ],
       "Use a different card": [
         "使用其他银行卡"
@@ -1408,7 +1411,7 @@
         "${ domains } 个额外的自有域名"
       ],
       "${ ips } server": [
-        "${ ips } 个服务器"
+        "${ ips } 台服务器"
       ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
@@ -3639,7 +3642,7 @@
         "自动删除垃圾邮件和垃圾信息，升级后还能解锁更多高级功能。"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "自动清除 30 天前移至废件箱和垃圾邮件的电子邮件。"
+        "自动清除 30 天前移至回收站和垃圾邮件的电子邮件。"
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在邮件到达收件箱前自动分类。"
@@ -4742,6 +4745,12 @@
       "Please select a state": [
         "请选择州"
       ],
+      "Please select at least one location before continuing.": [
+        "请至少选择一个位置后再继续。"
+      ],
+      "Please select at least one user or group before continuing.": [
+        "请至少选择一个用户或组，然后再继续。"
+      ],
       "Please set a recovery email first": [
         "请先设置密保邮箱"
       ],
@@ -4864,6 +4873,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "支付金额不能低于 ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "策略名称必须在 3 至 40 个字符之间。"
       ],
       "The sending key is not valid": [
         "发送密钥无效"
@@ -5809,7 +5821,7 @@
         "垃圾邮件"
       ],
       "Trash": [
-        "废件箱"
+        "回收站"
       ]
     },
     "Filter modal operators": {
@@ -6749,6 +6761,15 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }：小图预览"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的家庭成员使用双因素身份验证。"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的成员使用双因素身份验证登录贵组织。"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的非 SSO 成员使用双因素身份验证登录贵组织。"
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } 想要与您分享 ${ PASS_APP_NAME }中的数据"
       ],
@@ -6760,6 +6781,9 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }：不隔离也不拒收未经授权的电子邮件，通常只用于调试。"
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的成员"
       ],
       "${ number } city": [
         "${ number } 个城市"
@@ -7146,7 +7170,7 @@
         "在指定的时段开启自动回复。"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "自动清除 30 天前移至废件箱和垃圾邮件的电子邮件。"
+        "自动清除 30 天前移至回收站和垃圾邮件的电子邮件。"
       ],
       "Available on macOS, Windows, and Linux.": [
         "多平台 macOS, Windows, 以及 Linux。"
@@ -7485,7 +7509,7 @@
         "每个域名只能有一个SPF (TXT) 记录。 如果您想保留现有的 SPF (TXT) 记录， 您可以添加 ${ spf } 到您当前的记录 (放在 ${ spfValue } 之后)。"
       ],
       "Early access": [
-        "抢先访问"
+        "抢先体验"
       ],
       "Edit email address": [
         "编辑邮箱地址"
@@ -7512,7 +7536,7 @@
         "邮件设置已保存"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "超过 30 天前移至废件箱和垃圾邮件的电子邮件将自动清除。"
+        "超过 30 天前移至回收站和垃圾邮件的电子邮件将自动清除。"
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "标记为 ${ nameDeleted } 的邮件不会被删除，仍可在相应的文件夹中找到。"
@@ -7781,9 +7805,6 @@
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "如果您近期重置了您的密码，您可以使用数据恢复手段解锁您的数据。"
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "如果您想将此账户与其他账户合并，请不要删除此账户。"
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "如果您遇到困难，我们将竭诚为您服务。${ boldPhoneCall } 或 ${ boldZoomMeeting } 与我们的支持专家联系，或打开 ${ boldLiveChat } 获得聊天支持。"
       ],
@@ -7932,16 +7953,16 @@
         "保险库中的物品标记已更改"
       ],
       "Item in ${ vaultLink } trashed": [
-        "在 ${ vaultLink } 中有项目被移至垃圾箱"
+        "在 ${ vaultLink } 中有项目被移至回收站"
       ],
       "Item in ${ vaultLink } untrashed": [
-        "在 ${ vaultLink } 中有项目被移除垃圾箱"
+        "在 ${ vaultLink } 中有项目被移除回收站"
       ],
       "Item in vault trashed": [
-        "密码库中有条目被移至垃圾箱"
+        "保险库中有项目被移至回收站"
       ],
       "Item in vault untrashed": [
-        "密码库中有条目被移出垃圾箱"
+        "保险库中有项目被移出回收站"
       ],
       "Item read in ${ vaultLink }": [
         "在 ${ vaultLink } 中读取项目"
@@ -8115,7 +8136,7 @@
         "不能有空格。"
       ],
       "Must start with a letter.": [
-        "必须字母打头。"
+        "必须以字母开头。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
@@ -8230,6 +8251,9 @@
       ],
       "Or select a particular server:": [
         "或指定服务器："
+      ],
+      "Organization --> Groups": [
+        "组织 --> 群组"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "组织成员需要用密码或 PIN 码等解锁 ${ PASS_APP_NAME }。"
@@ -8430,7 +8454,7 @@
         "首先阅读我们的双重认证指南"
       ],
       "Recently used servers:": [
-        "近期使用的服务器:"
+        "近期使用的服务器："
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "建议仅在可信设备上勾选。${ keepMeSignedInLearnMoreLink }"
@@ -8918,6 +8942,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "${ boldDomainName } 的 SSO 会被移除。"
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "这将移除您对所有已连接服务的访问权限，并删除您的所有数据，包括联系人、附件、事件、密码和文件。"
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "这将替换您的临时密码。您今后将使用此密码来访问您的 ${ BRAND_NAME } 账户。"
       ],
@@ -8959,6 +8986,9 @@
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。这些数据不会传输至任何第三方平台。"
+      ],
+      "To create your first user group, go to": [
+        "要创建第一个用户组，请访问"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "密码重置后如需解密账户数据，请选择一种恢复方式。"
@@ -9048,7 +9078,7 @@
         "未知事件类型"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "除非您手动退出账户或更改密码，账户将保持登录状态，直到 60 天无操作后自动退出。"
+        "除非您手动登出账户或更改密码，账户将保持登录状态，直到 60 天无操作后自动登出。"
       ],
       "Unlimited folders, labels, and filters": [
         "文件夹、标签、筛选规则不限量"
@@ -9203,8 +9233,8 @@
       "Warning:": [
         "警告："
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "警告：账户一经删除无法恢复，您将不能再登录任何相关服务，通讯录中的所有信息也将清空。"
+      "Warning: deleting your account is permanent.": [
+        "警告：删除账号将是永久性的。"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "我们建议尽可能使用官方 ${ VPN_APP_NAME } 客户端。"
@@ -9661,6 +9691,14 @@
         "令下层文件夹的颜色与上层文件夹一致"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "如何进行现金支付？"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "请参阅文章中的说明：${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "为组织的现有用户添加新地址。"
@@ -9908,7 +9946,7 @@
         "转至星标邮件"
       ],
       "Go to Trash": [
-        "转至废件箱"
+        "转至回收站"
       ],
       "Insert link": [
         "插入链接"
@@ -9959,7 +9997,7 @@
         "标为垃圾邮件"
       ],
       "Move to Trash": [
-        "移至废件箱"
+        "移至回收站"
       ],
       "Move to...": [
         "移动邮件"
@@ -10271,6 +10309,9 @@
       ],
       "Apply policy to": [
         "应用策略到"
+      ],
+      "Ask members to set up 2FA": [
+        "要求成员设置 2FA"
       ],
       "Assertion Consumer Service URL": [
         "断言消费者服务 URL"
@@ -10615,7 +10656,7 @@
         "事件通知"
       ],
       "Exclude Spam/Trash from All mail": [
-        "所有邮件中不显示垃圾邮件和废件箱中的邮件"
+        "所有邮件中不显示垃圾邮件和回收站中的邮件"
       ],
       "Expiration (${ patternExpiration })": [
         "到期 (${ patternExpiration })"
@@ -10664,6 +10705,9 @@
       ],
       "Hide password": [
         "隐藏密码"
+      ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "我知道我需要立即将此邮箱地址添加到另一个账户中，以免永久丢失该地址。"
       ],
       "I understand the risk": [
         "风险已知悉"
@@ -10772,6 +10816,9 @@
       ],
       "Maximum number of words": [
         "最多单词数"
+      ],
+      "Members without 2FA": [
+        "未使用 2FA 的成员"
       ],
       "Message": [
         "内容"
@@ -11133,6 +11180,9 @@
       "Tips and insights": [
         "提示和见解"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "为了帮助我们改进工作，请解释您离开的原因。"
+      ],
       "To: ${ toEmail }": [
         "收件人：${ toEmail }"
       ],
@@ -11201,9 +11251,6 @@
       ],
       "Vulnerable password": [
         "易受攻击的密码"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "我们对您的离去深表遗憾。请告诉我们您为什么要删除账户，帮助我们加以改进："
       ],
       "Weak": [
         "弱"
@@ -11569,9 +11616,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "您的组织已有 ${ twoFAMembers.length }/${ members.length } 位成员启用双重验证。"
-      ],
       "Almost there": [
         "即将准备就绪"
       ],
@@ -11929,6 +11973,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "在 ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "第一个星期五"
       ],
@@ -12302,10 +12349,10 @@
         "应用程序用于"
       ],
       "Auto-delete Spam and Trash": [
-        "自动清理垃圾邮件和废件箱"
+        "自动清理垃圾邮件和回收站"
       ],
       "Auto-delete spam and trashed messages": [
-        "自动删除垃圾邮件和废件箱中邮件"
+        "自动删除垃圾邮件和回收站中邮件"
       ],
       "Auto-reply": [
         "自动回复"
@@ -12905,7 +12952,7 @@
         "可对收到的邮件自动予以回复"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "垃圾邮件和废件箱中的邮件超过 30 天自动删除"
+        "垃圾邮件和回收站中的邮件超过 30 天自动删除"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "将您的 ${ MAIL_APP_NAME } 账户收到的邮件自动转发至其他邮箱。"
@@ -13255,7 +13302,7 @@
         "其他邮箱的地址不能作为首选地址"
       ],
       "Downloaded 2FA recovery codes": [
-        "下载 2FA 恢复代码"
+        "下载 2FA 恢复码"
       ],
       "Email notifications have been disabled": [
         "电子邮件通知已禁用"
@@ -13431,6 +13478,12 @@
       "Maybe later": [
         "以后再说"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "优惠有效期至 ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "按年支付，确保我们的最佳优惠"
+      ],
       "Save": [
         "节省"
       ],
@@ -13443,6 +13496,9 @@
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
       ],
+      "Special offer": [
+        "特价"
+      ],
       "This offer won't be shown again.": [
         "此优惠不再显示。"
       ],
@@ -13451,6 +13507,9 @@
       ],
       "You currently pay": [
         "您目前支付"
+      ],
+      "Your subscription renews soon": [
+        "您的订阅即将续订"
       ]
     },
     "Offer feature": {
@@ -13621,6 +13680,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "我要改用其他 ${ BRAND_NAME } 账户"
+      ],
+      "I'd like to merge this account into another one": [
+        "我想将此账户合并到另一个账户"
       ],
       "Ignore group": [
         "忽略分组"
@@ -14151,12 +14213,6 @@
       ],
       "Secure vault sharing": [
         "安全保险库共享"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全保险库共享 ( ${ n } 保险库 )"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全保险库共享 (${ n } 个保险库) 和链接共享"
       ],
       "Secure your family’s passwords and online identities": [
         "保护家人的密码和在线身份安全"
@@ -14971,7 +15027,7 @@
         "密保邮箱"
       ],
       "Recovery phone number": [
-        "密保手机号"
+        "密保手机"
       ],
       "Review account safety": [
         "审查帐户安全"
@@ -15034,7 +15090,7 @@
         "验证您的密保邮箱地址"
       ],
       "Verify your recovery phone number": [
-        "验证您的密保手机号码"
+        "验证您的密保手机"
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "我们在生成您的恢复套件时遇到了错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
@@ -15130,7 +15186,7 @@
         "您的密保手机已设置"
       ],
       "Your recovery phone number is:": [
-        "您的密保手机号码是："
+        "您的密保手机是："
       ]
     },
     "saml: Action": {
@@ -15602,7 +15658,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Stay signed in": [
         "保持登录"
@@ -15616,10 +15672,10 @@
         "${ passwordReset }现已可用。"
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "如果您在重置密码完成之前退出，您可能会失去对账户的访问权限。"
+        "如果您在重置密码完成之前登出，您可能会失去对账户的访问权限。"
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "如果您未重置密码就退出，您可能会失去对账户的访问权限。"
+        "如果您未重置密码就登出，您可能会失去对账户的访问权限。"
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "您可以在${ boldTimeLeft }之内重置密码。"
@@ -15632,7 +15688,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "退出而不重置密码？"
+        "登出而不重置密码？"
       ]
     },
     "session_recovery:status:info": {
@@ -16259,7 +16315,7 @@
         "登录到您的组织"
       ],
       "Sign out and in again to change your backup password": [
-        "退出并重新登录以更改备份密码"
+        "登出并重新登录以更改备份密码"
       ],
       "Sign-in confirmed": [
         "已确认登录"
@@ -16514,7 +16570,7 @@
         "${ BRAND_NAME } 的 Scribe 写作助手，供 ${ maxAi } 位用户使用。"
       ],
       "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } 个专用服务器"
+        "${ ipAddresses } 台专用服务器"
       ],
       "${ n } calendar per user": [
         "每位用户 ${ n } 份日历"
@@ -18271,7 +18327,7 @@
         "在任何数据泄露中没有发现您的账户信息"
       ],
       "No need to empty the trash": [
-        "无需清空废件箱"
+        "无需清空回收站"
       ],
       "No recovery method": [
         "无法重置密码"
@@ -18529,7 +18585,7 @@
         "设置邮件自动转发"
       ],
       "Set up two-factor authentication": [
-        "设置双重验证"
+        "设置双因素身份验证"
       ],
       "Set up your family account": [
         "设置您的家庭账户"
@@ -18559,7 +18615,7 @@
         "登录以加入测试版计划"
       ],
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Signed in successfully!": [
         "登录成功！"
@@ -18625,7 +18681,7 @@
         "文本"
       ],
       "Theme": [
-        "配色"
+        "主题"
       ],
       "There are no groups": [
         "没有任何群组"
@@ -18655,7 +18711,7 @@
         "执行双重身份验证"
       ],
       "Two-factor authentication reminders": [
-        "双重身份验证提醒"
+        "双因素身份验证 (2FA) 提醒"
       ],
       "Type": [
         "类型"
@@ -18934,7 +18990,7 @@
         "自定义导入以减少标签数量"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "垃圾邮件与废件箱中的邮件 30 天后自动删除。开启此选项时，现有的无用邮件按其存在于对应文件夹中的时长推算删除时间。"
+        "垃圾邮件与回收站中的邮件 30 天后自动删除。开启此选项时，现有的无用邮件按其存在于对应文件夹中的时长推算删除时间。"
       ],
       "Device information such as operating system": [
         "操作系统等设备信息"
@@ -18960,6 +19016,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "来自身份供应商的端点 ( 如 https://idp.example.com/sso/saml )"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "不包括由身份提供商处理 2FA 的单点登录 (SSO) 用户"
+      ],
       "Feature in early access": [
         "测试中的功能"
       ],
@@ -18981,8 +19040,8 @@
       "IP address (Internet Service Provider)": [
         "IP 地址 ( 互联网服务提供商 )"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "未使用 2FA 的成员将会收到一封电子邮件，要求他们尽快启用 2FA。"
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "未使用 2FA 的成员将收到一封电子邮件，要求他们尽快启用 2FA。单点登录 (SSO) 用户不会收到电子邮件提醒。"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "“已发送”和“草稿”文件夹中的邮件始终显示在相应文件夹中，无论移动与否。"
@@ -19036,10 +19095,10 @@
         "此设备已开启减少动态效果的选项"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "所选模式将在系统设置为“暗色模式”时生效。"
+        "所选模式将在系统设置为 \"深色模式\" 时生效。"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "所选模式将在系统设置为“亮色模式”时生效。"
+        "所选模式将在系统设置为 \"浅色模式\" 时生效。"
       ],
       "This address has been disabled": [
         "此地址已被停用"
@@ -19118,8 +19177,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "外部地址 - 禁用该组的端到端电子邮件加密功能"
+      "Disables end-to-end email encryption for this group": [
+        "禁用该组的端到端电子邮件加密"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "外部地址 - 禁用该组的端到端电子邮件加密，不会与该用户共享加密资源。"

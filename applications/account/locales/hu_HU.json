@@ -4346,6 +4346,9 @@
       "Please generate keys before you try to change your password": [
         "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
       ],
+      "Please select a country": [
+        "Kérjük, válasszon egy országot"
+      ],
       "Please set a recovery email first": [
         "Először adja meg a helyreállítási e-mail címet"
       ],
@@ -6335,6 +6338,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiváljon legalább egy helyreállítási módszert, hogy abban az esetben is visszaszerezhesse a hozzáférést a ${ BRAND_NAME } fiókjában tárolt adataihoz, ha elfelejtené a jelszavát."
       ],
+      "Active": [
+        "Aktív"
+      ],
       "active": [
         "aktív"
       ],
@@ -6377,6 +6383,9 @@
       "Affected user is on row": [
         "Az érintett felhasználó a következő sorban van:",
         "Az érintett felhasználók a következő sorokban vannak:"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "A mesterséges intelligenciával működő asszisztens segít jobb e-maileket készíteni, gyorsan és könnyedén."
       ],
       "Align left": [
         "Balra igazítás"
@@ -6515,6 +6524,9 @@
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Az automatikus válasz mindig aktív a hét kiválasztott napjain a választott órák között."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "Automatikusan törli a 30 napnál régebbi, Kukába vagy Levélszemétbe áthelyezett e-maileket."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Elérhető macOS, Windows és Linux rendszerekhez."
@@ -6695,6 +6707,9 @@
       "Dedicated servers": [
         "Dedikált szerverek"
       ],
+      "default email address": [
+        "alapértelmezett e-mail cím"
+      ],
       "Default email application": [
         "Alapértelmezett e-mail alkalmazás"
       ],
@@ -6750,6 +6765,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A lemondás megszünteti a fizetett ${ VPN_APP_NAME } szerverekkel való összes kapcsolatot."
       ],
+      "Download on the App Store": [
+        "Töltse le az App Store-ból"
+      ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Töltse le a CSV sablonunkat, töltse ki a felhasználói adatokat, majd töltse fel a kész CSV fájlt a felhasználók fiókjának létrehozásához."
       ],
@@ -6797,6 +6815,9 @@
       ],
       "Emailing preference saved": [
         "E-mail beállítás elmentve"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "30 napnál régebben a Kukába és a Levélszemétbe áthelyezett e-mailek automatikusan törlődnek."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "A ${ nameDeleted } címkével ellátott e-mailek nem kerülnek törlésre, és továbbra is megtalálhatók az adott mappában."
@@ -6924,6 +6945,12 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "A hozzáféréshez hozzon létre egy ${ BRAND_NAME } fiókot, a meghívó elfogadásával."
       ],
+      "Get it on Google Play": [
+        "Szerezze be a Google Play-en"
+      ],
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "Értesítést kap, ha jelszava vagy más adata kiszivárgott egy harmadik fél szolgáltatásából."
+      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Értesüljön arról, ha jelszava vagy más személyes adatai kiszivárogtak. ${ learnMoreLinkNoBreach }"
       ],
@@ -6950,6 +6977,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Ha nem felel meg önnek, visszafizetjük a pénzét."
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Ha a gyorsbillentyűk engedélyezve vannak, a következő billentyűkkel gyors műveleteket végezhet, illetve különböző nézetekre ugorhat. ${ metaKey } + K mindig engedélyezve van."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Amikor a rendszer időzónája eltér az aktuális időzóna beállításától, rákérdez, hogy frissítse-e a beállítást (maximum naponta egyszer)."
@@ -7001,9 +7031,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Ha nemrégiben visszaállította a jelszavát, továbbra is hozzáférhet az adataihoz, valamelyik helyreállítási módszer használatával"
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Ha egy másik fiókkal szeretné összevonni ezt a fiókot, NE törölje."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Ha problémába ütközött, segítünk. ${ boldPhoneCall } vagy ${ boldZoomMeeting } egy támogatási szakemberünkkel, vagy indítson ${ boldLiveChat } egy segítségnyújtóval."
@@ -7703,6 +7730,9 @@
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
+      "Setting up your new address…": [
+        "Új e-mail cím beállítása..."
+      ],
       "Setting up your organization": [
         "Szervezet beállítása"
       ],
@@ -7932,6 +7962,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Ez egy titkosítási kulcs amelyet korábban lementhetett."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Ez mostantól az ${ defaultEmailAddress } az új üzenetek küldéséhez."
       ],
       "This is the password you used before the password reset.": [
         "Ez az a jelszó, amelyet a jelszó visszaállítása előtt használt."
@@ -8253,9 +8286,6 @@
       ],
       "Warning:": [
         "Figyelem:"
-      ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Figyelmeztetés: a törlés végleges. Ezzel elveszti az elérését az összes kapcsolódó szolgáltatáshoz és törli minden névjegyét."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Amikor lehetséges, javasoljuk inkább a hivatalos ${ VPN_APP_NAME } alkalmazás használatát."
@@ -8822,6 +8852,12 @@
       "Close draft": [
         "Piszkozat bezárása"
       ],
+      "Create new event": [
+        "Új esemény létrehozása"
+      ],
+      "Day view": [
+        "Napi nézet"
+      ],
       "Delete permanently": [
         "Végleges törlés"
       ],
@@ -8888,6 +8924,9 @@
       "Minimize / maximize composer": [
         "Szerkesztő kicsinyítése / felnagyítása"
       ],
+      "Month view": [
+        "Havi nézet"
+      ],
       "Move down": [
         "Mozgás lefelé"
       ],
@@ -8927,6 +8966,9 @@
       "Open previous message": [
         "Előző üzenet megnyitása"
       ],
+      "Open quick actions menu": [
+        "Gyorsműveletek menü megnyitása"
+      ],
       "Open this modal": [
         "Ablak megnyitása"
       ],
@@ -8941,6 +8983,9 @@
       ],
       "Search": [
         "Keresés"
+      ],
+      "Search events": [
+        "Események keresése"
       ],
       "Select / unselect": [
         "Kiválasztás / mégsem választ ki"
@@ -8962,6 +9007,12 @@
       ],
       "Star": [
         "Csillagozás"
+      ],
+      "Today": [
+        "Ma"
+      ],
+      "Week view": [
+        "Heti nézet"
       ]
     },
     "Keyboard shortcut section name": {
@@ -10004,9 +10055,6 @@
       "Vulnerable": [
         "Sebezhető"
       ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Sajnáljuk, hogy megszünteti a fiókját. Kérjük, ossza meg velünk az indokait, hogy fejlődhessünk."
-      ],
       "Weak": [
         "Gyenge"
       ],
@@ -10345,10 +10393,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést.",
-        "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
-      ],
       "Almost there": [
         "Majdnem kész"
       ],
@@ -12526,14 +12570,6 @@
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
       ],
-      "Secure vault sharing (${ n } vault)": [
-        "Biztonságos tároló megosztás (${ n } tároló)",
-        "Biztonságos tároló megosztás (${ n } tároló)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás.",
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás."
-      ],
       "Secured by end-to-end encryption": [
         "Végpontok közti titkosítással biztosítva."
       ],
@@ -13941,7 +13977,7 @@
         "E-mail álnevek"
       ],
       "Email, calendar, password manager, and VPN included": [
-        "Email, naptár, jelszókezelő és VPN is tartozik hozzá"
+        "E-mail, naptár, jelszókezelő és VPN is tartozik hozzá"
       ],
       "End-to-end encryption": [
         "Végpontok közti titkosítás"
@@ -16496,9 +16532,6 @@
       "IP address (Internet Service Provider)": [
         "IP cím (Internetszolgáltató)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Azok a tagok akinek nincs bekapcsolva a kétlépcsős hitelesítés, egy e-mailt fognak kapni, hogy minél előbb kapcsolják be."
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Az üzenetek továbbra is megjelennek az Elküldött elemek és a Piszkozatok közt, akkor is, ha áthelyezi őket egy másik mappába."
       ],
@@ -16981,7 +17014,7 @@
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
-        "Haladó VPN beállítások"
+        "Speciális VPN beállítások"
       ],
       "No ads": [
         "Nincsenek hirdetések"
