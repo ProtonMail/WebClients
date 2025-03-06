@@ -528,11 +528,20 @@
       "Get started": [
         "Kom godt i gang"
       ],
+      "Get the app": [
+        "Hent appen"
+      ],
+      "Get the browser extension": [
+        "Hent browserudvidelsen"
+      ],
       "Get the writing assistant": [
         "Hent skriveassistenten"
       ],
       "Get verification code": [
         "Få bekræftelseskode"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Gå til ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Gå til etikette"
@@ -575,6 +584,9 @@
       ],
       "Hide messages": [
         "Skjul beskeder"
+      ],
+      "Hide my email": [
+        "Skjul min e-mail"
       ],
       "Hide toolbar": [
         "Skjul værktøjslinjen"
@@ -646,6 +658,9 @@
       "Insert link": [
         "Indsæt link"
       ],
+      "Invite members": [
+        "Invitér medlemmer"
+      ],
       "Italic": [
         "Kursiv"
       ],
@@ -690,6 +705,9 @@
       ],
       "Loading${ ellipsis }": [
         "Indlæser${ ellipsis }"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Gør ${ MAIL_APP_NAME } til din standard e-mailapplikation"
       ],
       "Make it friendly": [
         "Gør det venligt"
@@ -1335,6 +1353,9 @@
       ],
       "Use ${ label } theme": [
         "Brug ${ label } tema"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "Brug ${ PASS_APP_NAME }"
       ],
       "Use a different card": [
         "Benyt et andet kort"
@@ -5685,6 +5706,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "${ BRAND_NAME }'s adgangskodeadministrator gør det muligt for dig at oprette, gemme og automatisk udfylde adgangskoder, så du aldrig behøver at nulstille dem."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
@@ -6215,6 +6239,9 @@
       "Default email application": [
         "Standardprogram til mails"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Registreringen sker på din enhed, så ingen data fra dine e-mails sendes til vores servere."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Vidste du, at du har krypteret skylagring som en del af din ${ BRAND_NAME }-konto? Gå over til ${ DRIVE_APP_NAME } og få mest muligt ud af din plads. Det er helt gratis."
       ],
@@ -6551,6 +6578,9 @@
       "JCB logo": [
         "JCB logo"
       ],
+      "Join ${ PROTON_SENTINEL_NAME } program for our highest level of account security and support.": [
+        "Tilmeld dig ${ PROTON_SENTINEL_NAME }-programmet for at vores højeste niveau af kontosikkerhed og support."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, og så klarer vi resten."
       ],
@@ -6685,6 +6715,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
+      ],
+      "More infos": [
+        "Mere info"
       ],
       "More refine actions": [
         "Mere præcise handlinger"
@@ -7276,6 +7309,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Denne afsenders offentlige nøgle er endnu ikke betroet."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Dette blev vist til dig, fordi din e-mail-emnelinje indeholder nøgleord til nulstilling af adgangskode."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
@@ -8236,6 +8272,9 @@
       "Don't show this again": [
         "Vis ikke dette igen"
       ],
+      "Don't show this suggestion": [
+        "Vis ikke dette forslag"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "fx på Amazon, eBay osv."
       ],
@@ -8796,6 +8835,9 @@
       ],
       "Sent": [
         "Sendt"
+      ],
+      "settings": [
+        "indstillinger"
       ],
       "Sign up for free": [
         "Tilmeld gratis"
@@ -10346,14 +10388,6 @@
       ],
       "Secure vault sharing": [
         "Sikker deling af boks"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Sikker deling af boks (${ n } vault)",
-        "Sikker deling af bokse (${ n } vault)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Sikker deling af boks (${ n } vault) og deling af link",
-        "Sikker deling af bokse (${ n } vault) og deling af links"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11674,47 +11708,6 @@
         "Til ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dag tilbage",
@@ -11872,6 +11865,9 @@
       "Learn more about our impact": [
         "Lær mere om vores indflydelse"
       ],
+      "Limitations of the free plan:": [
+        "Begrænsninger ved et gratis abonnement:"
+      ],
       "Make your business stand out": [
         "Lad din virksomhed skille sig ud"
       ],
@@ -11961,6 +11957,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -12978,6 +13015,9 @@
       "Open actions dropdown": [
         "Åbn handlings-dropdownmenuen"
       ],
+      "Other features included in your plan": [
+        "Andre funktioner inkluderet i dit abonnement"
+      ],
       "Other information": [
         "Anden information"
       ],
@@ -13110,6 +13150,9 @@
       "Set recovery phrase": [
         "Indstil gendannelsessætning"
       ],
+      "Set up your family account": [
+        "Konfigurér din familiekonto"
+      ],
       "Set your own schedule": [
         "Sæt din egen tidsplan"
       ],
@@ -13241,6 +13284,11 @@
         "I dag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivesessionen benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelse."
@@ -13319,11 +13367,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
     },
     "Tor out of date": {

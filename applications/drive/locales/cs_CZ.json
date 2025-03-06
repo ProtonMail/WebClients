@@ -315,6 +315,9 @@
       "Delete version": [
         "Odstranit verzi"
       ],
+      "Delete without saving": [
+        "Smazat bez uložení"
+      ],
       "Deselect all": [
         "Zrušit výběr všeho"
       ],
@@ -329,6 +332,12 @@
       ],
       "Display navigation bar": [
         "Zobrazit navigační panel"
+      ],
+      "Display next": [
+        "Zobrazit další"
+      ],
+      "Display previous": [
+        "Zobrazit předchozí"
       ],
       "Done": [
         "Hotovo"
@@ -507,6 +516,9 @@
       "Increase": [
         "Zvýšit"
       ],
+      "Join album": [
+        "Připojit album"
+      ],
       "Keep my subscription": [
         "Zachovat mé předplatné"
       ],
@@ -548,6 +560,9 @@
       ],
       "Manage share": [
         "Spravovat sdílení"
+      ],
+      "Mark as favorite": [
+        "Označit jako oblíbené"
       ],
       "Mark as resolved": [
         "Označit jako vyřešené"
@@ -693,6 +708,12 @@
       "Remove device": [
         "Odstranit zařízení"
       ],
+      "Remove from album": [
+        "Odebrat z alba"
+      ],
+      "Remove from favorites": [
+        "Odebrat z oblíbených"
+      ],
       "Remove from this list": [
         "Odebrat ze seznamu"
       ],
@@ -701,6 +722,9 @@
       ],
       "Remove me": [
         "Odebrat mě"
+      ],
+      "Remove without saving": [
+        "Odebrat bez uložení"
       ],
       "Rename": [
         "Přejmenovat"
@@ -774,8 +798,14 @@
       "Save": [
         "Uložit"
       ],
+      "Save and remove": [
+        "Uložit a odebrat"
+      ],
       "Save changes": [
         "Uložit změny"
+      ],
+      "Save photos and remove": [
+        "Uložit fotky a odebrat"
       ],
       "Search": [
         "Vyhledat"
@@ -3766,6 +3796,9 @@
       "Create new album": [
         "Vytvořit nové album"
       ],
+      "Rename": [
+        "Přejmenovat"
+      ],
       "Security Center": [
         "Bezpečnostní centrum"
       ]
@@ -4169,6 +4202,9 @@
         "${ album.photoCount } položek",
         "${ album.photoCount } položek"
       ],
+      "${ albumName } has been successfully deleted": [
+        "Album ${ albumName } bylo úspěšně smazáno"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -4249,6 +4285,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } v Obchodu Play"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } vás pozval(a), abyste se připojili k **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } selhal",
@@ -5147,6 +5186,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticky odešle zprávu pomocí aktuálního režimu psaní zpráv."
       ],
+      "Photo is not saved to your library": [
+        "Fotka není uložena do vaší knihovny"
+      ],
       "Photo is set as album cover": [
         "Fotka je nastavena jako obálka alba"
       ],
@@ -5396,6 +5438,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Některé vaše soubory již nejsou přístupné. Obnovte přístup k souborům. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Některé fotky v tomto albu se neukládají na časovou osu. Smazáním tohoto alba budou tyto fotky trvale smazány."
+      ],
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
       ],
@@ -5483,6 +5528,12 @@
       "This item already exists in your library": [
         "Tato položka již ve vaší knihovně existuje"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Tato položka není uložena ve vaší knihovně fotek. Pokud ji z tohoto alba odeberete, ztratíte k ní trvale přístup.",
+        "Tyto položky nejsou uloženy ve vaší knihovně fotek. Pokud je z tohoto alba odeberete, ztratíte k nim trvale přístup.",
+        "Tyto položky nejsou uloženy ve vaší knihovně fotek. Pokud je z tohoto alba odeberete, ztratíte k nim trvale přístup.",
+        "Tyto položky nejsou uloženy ve vaší knihovně fotek. Pokud je z tohoto alba odeberete, ztratíte k nim trvale přístup."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o platební kartě."
       ],
@@ -5494,6 +5545,9 @@
       ],
       "This month": [
         "Tento měsíc"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Tím se smaže pouze album. Vaše fotky zůstanou na časové ose. Tuto akci nelze vzít zpět."
       ],
       "This will permanently delete the file you uploaded.": [
         "Tímto trvale smažete vámi nahraný soubor."
@@ -5735,6 +5789,15 @@
       "Would you like to restore your files?": [
         "Chcete obnovit soubory?"
       ],
+      "Would you like to save it before removing?": [
+        "Chtěli byste ji před odebráním uložit?",
+        "Chtěli byste je před odebráním uložit?",
+        "Chtěli byste je před odebráním uložit?",
+        "Chtěli byste je před odebráním uložit?"
+      ],
+      "Would you like to save them before removing?": [
+        "Chtěli byste je před odebráním uložit?"
+      ],
       "Writing assistant": [
         "Asistent psaní"
       ],
@@ -5911,6 +5974,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "Your photo has been removed from the album": [
+        "Vaše fotka byla odebrána z alba",
+        "Vaše fotky byly odebrány z alba",
+        "Vaše fotky byly odebrány z alba",
+        "Vaše fotky byly odebrány z alba"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Váš plán je limitovaný na 10 verzí až na 7 dní"
@@ -8227,6 +8296,12 @@
       "Access updated and shared": [
         "Přístup aktualizován a sdílen"
       ],
+      "Album failed to be renamed": [
+        "Přejmenování alba selhalo"
+      ],
+      "Album renamed successfully": [
+        "Album úspěšně přejmenováno"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Všechny položky budou brzy nevratně smazány z koše"
       ],
@@ -8457,7 +8532,7 @@
         "Možná později"
       ],
       "Offer expires ${ formattedDate }.": [
-        "Nabídka vyprší ${ formattedDate }"
+        "Nabídka vyprší ${ formattedDate }."
       ],
       "Pay annually, secure our best offer": [
         "Plaťte ročně, zajistěte si naši nejlepší nabídku"
@@ -8473,6 +8548,9 @@
       ],
       "Save big when you pay annually": [
         "Při roční platbě můžete výrazně ušetřit"
+      ],
+      "Special offer": [
+        "Speciální nabídka"
       ],
       "This offer won't be shown again.": [
         "Tato nabídka se již nezobrazí."
@@ -8699,18 +8777,6 @@
       ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpečné sdílení trezoru (${ n } trezor)",
-        "Bezpečné sdílení trezoru (${ n } trezory)",
-        "Bezpečné sdílení trezoru (${ n } trezorů)",
-        "Bezpečné sdílení trezoru (${ n } trezorů)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpečné sdílení trezoru (${ n } trezor) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9748,6 +9814,9 @@
       "Billed every 2 years": [
         "Účtováno každé 2 roky"
       ],
+      "Billed every 6 months": [
+        "Účtováno každých 6 měsíců"
+      ],
       "Billed for 15 months": [
         "Účtováno za 15 měsíců"
       ],
@@ -10664,11 +10733,11 @@
         "Smazat ${ count } skupin kontaktů",
         "Smazat ${ count } skupin kontaktů"
       ],
-      "Delete ${ item.name }?": [
-        "Smazat ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Smazat ${ links.length } položek?"
+      ],
+      "Delete ${ name }?": [
+        "Smazat ${ name }?"
       ],
       "Delete ${ value }": [
         "Smazat ${ value }"
@@ -10939,6 +11008,12 @@
       ],
       "Remove device?": [
         "Odstranit zařízení?"
+      ],
+      "Remove item?": [
+        "Odebrat položku?",
+        "Odebrat položky?",
+        "Odebrat položky?",
+        "Odebrat položky?"
       ],
       "Rename a file": [
         "Přejmenovat soubor"

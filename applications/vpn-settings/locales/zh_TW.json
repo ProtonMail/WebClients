@@ -361,6 +361,9 @@
       "Go to label": [
         "跳至標籤"
       ],
+      "Go to panel ${ index }": [
+        "前往面板 ${ index }"
+      ],
       "Got it": [
         "了解"
       ],
@@ -610,6 +613,9 @@
       "Send reminder": [
         "發送提醒"
       ],
+      "Set as album cover": [
+        "設定相簿封面"
+      ],
       "Set catch-all": [
         "設定全部擷取"
       ],
@@ -807,7 +813,7 @@
         "${ seats }撰寫幫手就位"
       ],
       "${ users } user": [
-        "${ users } 個使用者"
+        "${ users } 位使用者"
       ]
     },
     "Address action": {
@@ -1281,7 +1287,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } 個使用者"
+        "${ users } 位使用者"
       ],
       "Total": [
         "總共"
@@ -2450,6 +2456,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「身分 \n及地址」>「短網域名稱 (pm.me)」裡面去設定。"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
       ],
@@ -2625,7 +2634,7 @@
         "請升級至選用多於 1 位使用者的企業方案，以便享用多使用者支援"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "請升級至選用多於 1 位使用者的企業方案，以便管理多個使用者。"
+        "請升級至商務方案，可享有多使用者帳號與管理多使用者功能。"
       ],
       "Please upload a square logo": [
         "請上傳正方形標誌"
@@ -2746,7 +2755,7 @@
         "上載您的檔案時發生錯誤。未選取任何檔案。"
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
-        "上傳一個少於 ${ MAX_NUMBER_OF_USER_ROWS } 個使用者帳號的 CSV 檔案。"
+        "上載一個 CSV 檔案，其至多不超過 ${ MAX_NUMBER_OF_USER_ROWS } 位使用者帳號。"
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "您的檔案 \"${ formattedFilename }\" 是空的。"
@@ -3499,7 +3508,7 @@
         "${ storage } 儲存空間"
       ],
       "${ userFound } user found": [
-        "找到 ${ userFound } 個使用者"
+        "找到 ${ userFound } 位使用者"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } 已創建"
@@ -3577,7 +3586,7 @@
         "加入網域"
       ],
       "Add multiple users to your organization at once.": [
-        "一次新增多個使用者到您的組織中。"
+        "一次加入多位使用者到您的組織中。"
       ],
       "Add server (${ availableAddedCount } available)": [
         "新增伺服器 (${ availableAddedCount } 台可用)"
@@ -3620,6 +3629,9 @@
       ],
       "Allocated": [
         "已分配"
+      ],
+      "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
+        "允許使用者連接至安全共享於**國家**的${ VPN_APP_NAME }伺服器"
       ],
       "Already allocated": [
         "已分配"
@@ -4046,9 +4058,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "若您仍然選擇降級，你將會失去 ${ VPN_APP_NAME } 的付費功能。"
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "若您想要將此帳號與其它的結合，則請不要刪除它。"
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "若您有任何問題，我們在此服務。${ boldPhoneCall }或${ boldZoomMeeting }與我們的支援專家或開啟支援對話${ boldLiveChat }。"
@@ -4551,6 +4560,9 @@
       "Shared ${ vaultLink } updated": [
         "共享${ vaultLink }已更新"
       ],
+      "Shared server country (${ countriesCount })": [
+        "共享伺服器國家 (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "共享保管庫已刪除"
       ],
@@ -4579,13 +4591,13 @@
         "儲存空間已分配給這個組織中的其他使用者"
       ],
       "Storage allocated to this user": [
-        "儲存空間已分配給這個使用者"
+        "此位使用者分配的儲存空間"
       ],
       "Storage for users": [
         "使用者的儲存空間"
       ],
       "Storage used by this user": [
-        "儲存空間已被這個使用者所使用"
+        "此位使用者已用的儲存空間"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
@@ -4890,9 +4902,6 @@
       "Warning:": [
         "警告："
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "警告：刪除是永久性的。這也會一併移除對所有已連結服務的存取權限並刪除您所有的聯絡人。"
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "我們建議您使用正版 ${ VPN_APP_NAME } 應用程式。"
       ],
@@ -5178,9 +5187,17 @@
         "已選取的色彩:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "如何傳送現金付款?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "請參見此文章的指示:${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
-        "為您組織的任何一個使用者新增地址。"
+        "為您組織裡現有的使用者加入新的電郵位址。"
       ],
       "Add a new user to your organization and create an address for it.": [
         "將新使用者加入到您的組織並為其創建位址。"
@@ -5294,7 +5311,7 @@
         "${ nbDay } 天"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
+        "最多可有 ${ MaxAddresses } 組電郵位址，目前已有 ${ UsedAddresses } 組"
       ],
       "Account holder": [
         "帳戶持有人"
@@ -5806,9 +5823,6 @@
       "Vulnerable password": [
         "有安全隱患的密碼"
       ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "很抱歉您想離開。請告訴我們原因以讓我們改進。"
-      ],
       "Weak": [
         "弱"
       ],
@@ -6026,11 +6040,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "升級以解鎖聊天支援與其他進階功能，或是使用我們的免費支援表單來回報您的問題。"
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length }位組織成員採用雙重身分驗證"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -6621,7 +6630,7 @@
         "傳送並接收邀請"
       ],
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "於${ vpnServersCountData.paid.countries }+國家的伺服器"
+        "伺服器遍布 ${ vpnServersCountData.paid.countries }+ 國家"
       ],
       "Share files with no size limit": [
         "分享檔案無大小限制"
@@ -7263,6 +7272,12 @@
       "Maybe later": [
         "稍後再說"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "優惠將於${ formattedDate }過期."
+      ],
+      "Pay annually, secure our best offer": [
+        "每年付款，安全及最適方案"
+      ],
       "Save": [
         "儲存"
       ],
@@ -7272,6 +7287,9 @@
       "Save 80% on your first month.": [
         "首月省下80%"
       ],
+      "Special offer": [
+        "特別優惠"
+      ],
       "This offer won't be shown again.": [
         "此優惠將不再顯示。"
       ],
@@ -7280,6 +7298,9 @@
       ],
       "You currently pay": [
         "您目前付款"
+      ],
+      "Your subscription renews soon": [
+        "您的訂閱即將重新續約"
       ]
     },
     "Offer feature": {
@@ -7464,12 +7485,6 @@
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全保管庫共享(${ n }保管庫)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全保管庫共享(${ n } 保管庫)和連結共享"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8178,7 +8193,7 @@
         "我們收到了 ${ boldEmail } 的密碼重設需求。"
       ],
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "您可以在${ gracePeriodHoursRemaining }小時內變更您的密碼"
+        "距離您可以變更密碼的時間，還有 ${ gracePeriodHoursRemaining } 小時"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -8223,7 +8238,7 @@
         "需求密碼重設？"
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "您將可以在${ gracePeriodHoursRemaining }小時內重設您的密碼"
+        "距離您可以重設密碼的時間，還有 ${ gracePeriodHoursRemaining } 小時"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -8815,7 +8830,7 @@
         "${ n } 個極飆速 VPN 連線"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } 個極飆速 VPN 連線 / 每一位使用者"
+        "${ n } 組極飆速 VPN 連線 / 每一位使用者"
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
@@ -9725,7 +9740,7 @@
         "優惠券"
       ],
       "Create ${ selectedUserIds.length } user": [
-        "創建 ${ selectedUserIds.length } 個使用者"
+        "創建 ${ selectedUserIds.length } 位使用者"
       ],
       "Create a new Gateway": [
         "創建新閘道器"
@@ -9737,7 +9752,7 @@
         "創建閘道器"
       ],
       "Create multiple user accounts": [
-        "新增多個使用者帳號"
+        "創建多位使用者帳號"
       ],
       "Create organization key": [
         "建立組織機構金鑰"
@@ -9782,7 +9797,7 @@
         "刪除組織標誌？"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "刪除伺服器(您仍可於 ${ days } 天內還原)"
+        "刪除伺服器 (您仍可在 ${ days } 天內復原)"
       ],
       "Delete user?": [
         "刪除使用者?"
@@ -9890,7 +9905,7 @@
         "團隊內的每個成員都能存取"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
-        "${ failedUsers.length } 個使用者帳號創建失敗。"
+        "無法創建 ${ failedUsers.length } 位使用者帳號。"
       ],
       "Find email or username": [
         "尋找電郵位址或使用者名稱"
@@ -10326,9 +10341,6 @@
       "IP address (Internet Service Provider)": [
         "IP地址(網際網路服務提供商)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "未使用雙重驗證的成員將收到電子郵件要求它們盡速啟用"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "指定允許以 SAML SSO 驗證的網域"
       ],
@@ -10366,9 +10378,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "外部連結 - 關閉此群組的端對端電子郵件加密"
       ],
       "Group membership paused": [
         "已暫停群組會員"
@@ -10523,13 +10532,13 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } 台伺服器"
+        "${ n } 臺伺服器"
       ],
       "${ n } VPN connection": [
         "${ n } 條VPN連線"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } 台，分布於 ${ numberOfCountries }+ 個國家"
+        "${ numberOfServers } 臺伺服器，橫跨 ${ numberOfCountries }+ 個國家"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"

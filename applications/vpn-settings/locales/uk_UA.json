@@ -346,6 +346,9 @@
       "Go to label": [
         "Перейти до мітки"
       ],
+      "Go to panel ${ index }": [
+        "Перейти до панелі ${ index }"
+      ],
       "Got it": [
         "Зрозуміло"
       ],
@@ -4167,9 +4170,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ VPN_APP_NAME }."
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Якщо ви хочете об'єднати цей обліковий запис з іншим, НЕ видаляйте його."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Якщо у вас виникли проблеми, ми вам допоможемо. ${ boldPhoneCall }, ${ boldZoomMeeting } з нашим фахівцем, або відкрийте ${ boldLiveChat } для отримання підтримки онлайн."
       ],
@@ -5024,9 +5024,6 @@
       ],
       "Warning:": [
         "Попередження:"
-      ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Попередження: Видалення є незворотним. Це також вилучить доступ для всіх під'єднаних служб та видалить усі ваші контакти."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ми рекомендуємо вам використовувати офіційні програми ${ VPN_APP_NAME }, якщо це можливо."
@@ -5974,9 +5971,6 @@
       "Vulnerable": [
         "Вразливий"
       ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Нам шкода, що ви йдете. Будь ласка, розкажіть чому ви покидаєте нас, щоб допомогти нам вдосконалитися."
-      ],
       "Weak": [
         "Слабкий"
       ],
@@ -6190,14 +6184,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Передплатіть тарифний план для доступу до підтримки в чаті та інших преміальних функцій, або скористайтеся нашою формою підтримки та повідомте про свою проблему."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "У вашій організації двоетапну перевірку використовує ${ twoFAMembers.length } учасник із ${ members.length }.",
-        "У вашій організації двоетапну перевірку використовують ${ twoFAMembers.length } учасники з ${ members.length }.",
-        "У вашій організації двоетапну перевірку використовують ${ twoFAMembers.length } учасників із ${ members.length }.",
-        "У вашій організації двоетапну перевірку використовують ${ twoFAMembers.length } учасників із ${ members.length }."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7744,18 +7730,6 @@
       ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Безпечний спільний доступ (${ n } сховище)",
-        "Безпечний спільний доступ (${ n } сховищ)",
-        "Безпечний спільний доступ (${ n } сховищ)",
-        "Безпечний спільний доступ (${ n } сховищ)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Безпечний спільний доступ (${ n } сховище) та обмін посиланнями",
-        "Безпечний спільний доступ (${ n } сховищ) та обмін посиланнями",
-        "Безпечний спільний доступ (${ n } сховищ) та обмін посиланнями",
-        "Безпечний спільний доступ (${ n } сховищ) та обмін посиланнями"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10968,9 +10942,6 @@
       "IP address (Internet Service Provider)": [
         "IP адреса (інтернет-провайдер)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Учасники, які не використовують двоетапну перевірку, отримають електронного листа з проханням увімкнути її якнайшвидше."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Вкажіть домен, якому дозволено автентифікацію з SAML SSO"
       ],
@@ -11014,9 +10985,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи, і жодні зашифровані ресурси не будуть доступні цьому користувачеві."

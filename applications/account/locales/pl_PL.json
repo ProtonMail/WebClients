@@ -7194,7 +7194,7 @@
         "Zezwalaj na odzyskiwanie przez telefon"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Umożliwienie użytkownikom łączenia się z bezpiecznymi serwerami współdzielonymi z sekcji **Kraje** aplikacji ${ VPN_APP_NAME }."
+        "Umożliwia użytkownikom łączenia się z bezpiecznymi serwerami współdzielonymi z sekcji **Kraje** aplikacji ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Już przydzielona"
@@ -7904,6 +7904,9 @@
       "If it’s not right for you, we’ll refund you.": [
         "Zwrócimy pieniądze, jeśli nie spodoba Ci się usługa."
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Jeśli włączone są skróty klawiaturowe, można używać następujących klawiszy do wykonywania szybkich akcji lub przechodzenia do różnych widoków. ${ metaKey } + K jest zawsze włączony."
+      ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Zostaniesz poproszony o aktualizację strefy czasowej (maksymalnie raz dziennie), jeśli nie będzie odpowiadać strefie czasowej systemu."
       ],
@@ -7954,9 +7957,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Po zresetowaniu hasła możesz odblokować dane za pomocą metody odzyskiwania danych"
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Jeśli chcesz połączyć to konto z innym, NIE usuwaj go."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Jesteśmy tu, aby pomóc. ${ boldPhoneCall }, ${ boldZoomMeeting } z jednym z naszych specjalistów lub rozpocznij ${ boldLiveChat }."
@@ -9167,6 +9167,9 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Aby stale ulepszać nasze usługi, czasami zbieramy dane, które monitorują poprawne działanie naszych aplikacji. Te informacje nie są udostępniane innym stronom trzecim."
       ],
+      "To create your first user group, go to": [
+        "Aby stworzyć swoją pierwszą grupę użytkowników, idź do"
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Wybierz metodę odzyskiwania, aby odszyfrować dane zablokowane przed zresetowaniem hasła."
       ],
@@ -9409,9 +9412,6 @@
       ],
       "Warning:": [
         "Ostrzeżenie:"
-      ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Ostrzeżenie: Usunięcia nie możesz cofnąć. Ta czynność spowoduje również utratę dostępu do wszystkich usług i usunięcie kontaktów."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Zalecamy używanie oficjalnych aplikacji ${ VPN_APP_NAME }."
@@ -10290,6 +10290,9 @@
       ],
       "Message shortcuts": [
         "Skróty wiadomości"
+      ],
+      "View options": [
+        "Wyświetl opcje"
       ]
     },
     "Keys actions": {
@@ -11440,9 +11443,6 @@
       "Vulnerable password": [
         "Słabe hasło"
       ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Przykro nam, że odchodzisz. Wyjaśnij nam, dlaczego nas opuszczasz, aby pomóc ulepszać nasze usługi."
-      ],
       "Weak": [
         "Słabe"
       ],
@@ -11807,12 +11807,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego.",
-        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego.",
-        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego.",
-        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego."
-      ],
       "Almost there": [
         "Już prawie"
       ],
@@ -13768,6 +13762,9 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta ${ pricingTitle } wygasa dzisiaj!"
       ],
+      "Don’t show this offer again": [
+        "Nie pokazuj tej oferty ponownie"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Wybierz plan Drive Plus za ${ pricingTitle }"
       ],
@@ -13777,14 +13774,38 @@
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
+      "Last day to save": [
+        "Ostatni dzień, aby zaoszczędzić"
+      ],
       "Limited-time offer": [
         "Oferta ograniczona czasowo"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 miesięcy"
       ],
       "Maybe later": [
         "Może później"
       ],
+      "Save": [
+        "Zaoszczędź"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Zaoszczędź ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Zaoszczędź 80% przez pierwszy miesiąc."
+      ],
+      "Save big when you pay annually": [
+        "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
+      ],
+      "This offer won't be shown again.": [
+        "Ta oferta nie pojawi się ponownie."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Po przejściu z subskrypcji miesięcznej na roczną."
+      ],
+      "You currently pay": [
+        "Aktualnie płacisz"
       ]
     },
     "Offer feature": {
@@ -14488,18 +14509,6 @@
       ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpieczne udostępnianie ${ n } sejfu",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpieczne udostępnianie ${ n } sejfu i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków"
       ],
       "Secure your family’s passwords and online identities": [
         "Zabezpiecz hasła i tożsamości online swojej rodziny"
@@ -17915,6 +17924,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ appName } keyboard shortcuts": [
+        "${ appName } skróty klawiaturowe"
+      ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME } Scribe"
       ],
@@ -19463,9 +19475,6 @@
       "IP address (Internet Service Provider)": [
         "Adres IP (ISP)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Użytkownicy, którzy nie korzystają z uwierzytelniania dwustopniowego, otrzymają wiadomość z prośbą o jej włączenie."
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Wiadomości w folderze Wysłane lub Szkice będą nadal wyświetlane w tym folderze, nawet jeśli przeniesiesz je do innego folderu."
       ],
@@ -19596,9 +19605,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Zewnętrzny adres wyłącza szyfrowanie end-to-end wiadomości w grupie"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Zewnętrzny adres wyłącza szyfrowanie end-to-end wiadomości w grupie. Żadne szyfrowane zasoby nie będą udostępniane takiemu użytkownikowi."

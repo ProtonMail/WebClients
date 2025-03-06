@@ -337,6 +337,9 @@
       "Go to label": [
         "Pojdi na oznako"
       ],
+      "Go to panel ${ index }": [
+        "Pojdi na ploščo ${ index }"
+      ],
       "Got it": [
         "Razumem"
       ],
@@ -3955,9 +3958,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ VPN_APP_NAME }."
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Če želite združiti ta račun z drugim, ga NE izbrišite."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Če imate težave, smo vam na voljo za pomoč. ${ boldPhoneCall } ali ${ boldZoomMeeting } z enim od naših strokovnjakov za podporo ali odprite ${ boldLiveChat } za podporo v klepetu."
       ],
@@ -4641,9 +4641,6 @@
       ],
       "Warning:": [
         "Opozorilo:"
-      ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Opozorilo: izbris je trajen. S tem se odstrani tudi dostop do vseh povezanih storitev in izbrišejo vsi vaši stiki."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Svetujemo vam, da če je le mogoče, uporabljate uradne aplikacije ${ VPN_APP_NAME }."
@@ -5499,9 +5496,6 @@
       "Vulnerable": [
         "Ranljivo"
       ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Žal nam je, da nas zapuščate. Prosimo, povejte nam razlog za to, da se lahko izboljšamo."
-      ],
       "Weak": [
         "Šibko"
       ],
@@ -5704,14 +5698,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Nadgradite, da odklenete podporo za klepet in druge premijske funkcije, ali uporabite naš brezplačni obrazec za podporo, da prijavite svojo težavo."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } članov vaše organizacije uporabljajo dvojno preverjanje pristnosti.",
-        "${ twoFAMembers.length }/${ members.length } članov vaše organizacije uporabljajo dvojno preverjanje pristnosti.",
-        "${ twoFAMembers.length }/${ members.length } članov vaše organizacije uporabljajo dvojno preverjanje pristnosti.",
-        "${ twoFAMembers.length }/${ members.length } članov vaše organizacije uporabljajo dvojno preverjanje pristnosti."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9864,9 +9850,6 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Če ste kupili darilno kodo ali ste jo prejeli od naše podporne ekipe, jo lahko vnesete tukaj."
-      ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Člani, ki ne uporabljajo 2FA, bodo prejeli e-poštno sporočilo s prošnjo, da ga omogočijo čim prej."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Določite domeno, ki ima dovoljenje za preverjanje pristnosti s SAML SSO"

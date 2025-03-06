@@ -45,6 +45,10 @@
       "Add": [
         "Adicionar"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Adicionar ${ photos.length } foto para um novo álbum",
+        "Adicionar ${ photos.length } fotos para um novo álbum"
+      ],
       "Add account": [
         "Adicionar conta"
       ],
@@ -86,6 +90,10 @@
       ],
       "Add to group": [
         "Adicionar ao grupo"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Adicionar para “${ album.name }” (${ album.photoCount } foto)",
+        "Adicionar para “${ album.name }” (${ album.photoCount } fotos)"
       ],
       "Album name": [
         "Nome do álbum"
@@ -280,7 +288,7 @@
         "Excluir ${ selectedCount } grupos de contatos"
       ],
       "Delete album": [
-        "Excluir o álbum"
+        "Excluir álbum"
       ],
       "Delete contact": [
         "Excluir contato"
@@ -297,6 +305,9 @@
       "Delete version": [
         "Excluir versão"
       ],
+      "Delete without saving": [
+        "Excluir sem salvar"
+      ],
       "Deselect all": [
         "Desmarcar todos"
       ],
@@ -311,6 +322,12 @@
       ],
       "Display navigation bar": [
         "Mostrar barra de navegação"
+      ],
+      "Display next": [
+        "Mostrar próximo"
+      ],
+      "Display previous": [
+        "Mostra anterior"
       ],
       "Done": [
         "Concluído"
@@ -333,6 +350,10 @@
       "Download logs": [
         "Registros de downloads"
       ],
+      "Download photo": [
+        "Baixar foto",
+        "Baixar fotos"
+      ],
       "Download without scanning": [
         "Baixar sem verificar"
       ],
@@ -346,7 +367,7 @@
         "Editar"
       ],
       "Edit album": [
-        "Editar o álbum"
+        "Editar álbum"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -483,6 +504,9 @@
       "Increase": [
         "Aumentar"
       ],
+      "Join album": [
+        "Unir-se ao álbum"
+      ],
       "Keep my subscription": [
         "Manter minha assinatura"
       ],
@@ -524,6 +548,9 @@
       ],
       "Manage share": [
         "Gerenciar compartilhamentos"
+      ],
+      "Mark as favorite": [
+        "Marcar como favorito"
       ],
       "Mark as resolved": [
         "Marcar como resolvido"
@@ -672,6 +699,9 @@
       "Remove from album": [
         "Remover do álbum"
       ],
+      "Remove from favorites": [
+        "Remover dos favoritos"
+      ],
       "Remove from this list": [
         "Remover desta lista"
       ],
@@ -681,11 +711,14 @@
       "Remove me": [
         "Remover-me"
       ],
-      "Remove Without Saving": [
+      "Remove without saving": [
         "Remover sem salvar"
       ],
       "Rename": [
         "Renomear"
+      ],
+      "Rename album": [
+        "Alterar o nome do álbum"
       ],
       "Replace file": [
         "Substituir arquivo"
@@ -753,11 +786,14 @@
       "Save": [
         "Salvar"
       ],
-      "Save and Remove": [
+      "Save and remove": [
         "Salvar e remover"
       ],
       "Save changes": [
         "Salvar alterações"
+      ],
+      "Save photos and remove": [
+        "Salvar fotos e remover"
       ],
       "Search": [
         "Pesquisar"
@@ -790,7 +826,7 @@
         "Selecionar país"
       ],
       "Set album cover": [
-        "Definir a capa do álbum"
+        "Definir capa do álbum"
       ],
       "Set as album cover": [
         "Definir como capa do álbum"
@@ -806,6 +842,9 @@
       ],
       "Share": [
         "Compartilhar"
+      ],
+      "Share album": [
+        "Compartilhar o álbum"
       ],
       "Share file": [
         "Compartilhar arquivo"
@@ -3695,11 +3734,18 @@
       "Create new album": [
         "Criar um álbum"
       ],
+      "Rename": [
+        "Renomear"
+      ],
       "Security Center": [
         "Central de segurança"
       ]
     },
     "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Adicionar ${ photos.length } foto a",
+        "Adicionar ${ photos.length } fotos a"
+      ],
       "All albums": [
         "Todos os álbuns"
       ],
@@ -4066,6 +4112,9 @@
         "${ album.photoCount } item",
         "${ album.photoCount } itens"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } foi excluída com sucesso"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -4126,6 +4175,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } na Play Store"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } convidou você para se juntar-se a **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } erro",
@@ -4968,6 +5020,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticamente envia a mensagem usando o modo compositor atual."
       ],
+      "Photo is not saved to your library": [
+        "A foto não foi salva na sua biblioteca"
+      ],
       "Photo is set as album cover": [
         "A foto está configurada como uma capa do álbum"
       ],
@@ -5718,6 +5773,10 @@
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
       ],
+      "Your photo has been removed from the album": [
+        "Sua foto foi removida do álbum",
+        "Suas fotos foram removidas do álbum"
+      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Seu plano é limitado a 10 versões por até 7 dias"
       ],
@@ -5737,6 +5796,11 @@
     "info": {
       "Selected color:": [
         "Cor selecionada:"
+      ]
+    },
+    "Info for cash payment method": {
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Encontre as instruções no artigo: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -7991,6 +8055,12 @@
       "Access updated and shared": [
         "Acesso atualizado e compartilhado"
       ],
+      "Album failed to be renamed": [
+        "Não foi possível renomear o álbum"
+      ],
+      "Album renamed successfully": [
+        "O álbum foi renomeado."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Todos os itens serão em breve excluídos permanentemente da lixeira"
       ],
@@ -8206,6 +8276,12 @@
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "A oferta expira a ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Pague anualmente e assegure nossa melhor oferta"
+      ],
       "Save": [
         "Economize"
       ],
@@ -8218,6 +8294,9 @@
       "Save big when you pay annually": [
         "Aproveite descontos incríveis ao pagar anualmente!"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "This offer won't be shown again.": [
         "Esta oferta não será exibida novamente."
       ],
@@ -8226,6 +8305,9 @@
       ],
       "You currently pay": [
         "Você paga atualmente"
+      ],
+      "Your subscription renews soon": [
+        "Sua assinatura renovará em breve"
       ]
     },
     "Offer feature": {
@@ -8440,14 +8522,6 @@
       ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Compartilhamento seguro de cofre (${ n } cofre)",
-        "Compartilhamento seguro de cofre (${ n } cofres)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartilhamento seguro de cofre (${ n } cofre) e compartilhamento de link.",
-        "Compartilhamento seguro de cofre (${ n } cofres) e compartilhamento de link."
       ]
     },
     "pass_signup_2024: Info": {
@@ -9447,6 +9521,9 @@
       "Billed every 2 years": [
         "Cobrado a cada 2 anos"
       ],
+      "Billed every 6 months": [
+        "Cobrado a cada 6 meses"
+      ],
       "Billed for 15 months": [
         "Cobrança a cada 15 meses"
       ],
@@ -10305,11 +10382,11 @@
         "Excluir ${ count } grupo de contatos",
         "Excluir ${ count } grupos de contatos"
       ],
-      "Delete ${ item.name }?": [
-        "Excluir ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Excluir ${ links.length } itens?"
+      ],
+      "Delete ${ name }?": [
+        "Excluir ${ name }?"
       ],
       "Delete ${ value }": [
         "Excluir ${ value }"
@@ -10577,8 +10654,9 @@
       "Remove device?": [
         "Remover dispositivo?"
       ],
-      "Remove items": [
-        "Remover itens"
+      "Remove item?": [
+        "Remover item?",
+        "Remover itens?"
       ],
       "Rename a file": [
         "Renomear um arquivo"

@@ -379,7 +379,7 @@
         "E-mailindstillinger"
       ],
       "Empty trash": [
-        "Tøm Papirkurv"
+        "Tøm papirkurv"
       ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
@@ -489,6 +489,9 @@
       "Increase": [
         "Forøg"
       ],
+      "Join album": [
+        "Deltag i album"
+      ],
       "Keep my subscription": [
         "Bevar mit abonnement"
       ],
@@ -530,6 +533,9 @@
       ],
       "Manage share": [
         "Håndter deling"
+      ],
+      "Mark as favorite": [
+        "Markér som favorit"
       ],
       "Mark as resolved": [
         "Markér som løst"
@@ -678,6 +684,9 @@
       "Remove from album": [
         "Fjern fra album"
       ],
+      "Remove from favorites": [
+        "Fjern fra favoritter"
+      ],
       "Remove from this list": [
         "Fjern fra denne liste"
       ],
@@ -686,9 +695,6 @@
       ],
       "Remove me": [
         "Fjern mig"
-      ],
-      "Remove Without Saving": [
-        "Fjern uden at gemme"
       ],
       "Rename": [
         "Omdøb"
@@ -761,9 +767,6 @@
       ],
       "Save": [
         "Gem"
-      ],
-      "Save and Remove": [
-        "Gem og fjern"
       ],
       "Save changes": [
         "Gem ændringer"
@@ -5272,9 +5275,6 @@
       "This item already exists in your library": [
         "Dette element findes allerede i dit bibliotek"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Dette element er ikke gemt i dit Fotos-bibliotek. Hvis du fjerner det fra dette album, mister du adgangen til det permanent. Vil du gerne gemme det, før du fjerner det?"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
       ],
@@ -6472,6 +6472,9 @@
       ],
       "Sent": [
         "Sendt"
+      ],
+      "settings": [
+        "indstillinger"
       ],
       "Shared": [
         "Delt"
@@ -8227,14 +8230,6 @@
       ],
       "Secure vault sharing": [
         "Sikker deling af boks"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Sikker deling af boks (${ n } vault)",
-        "Sikker deling af bokse (${ n } vault)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Sikker deling af boks (${ n } vault) og deling af link",
-        "Sikker deling af bokse (${ n } vault) og deling af links"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9412,6 +9407,9 @@
       "Learn more about our impact": [
         "Lær mere om vores indflydelse"
       ],
+      "Limitations of the free plan:": [
+        "Begrænsninger ved et gratis abonnement:"
+      ],
       "Make your business stand out": [
         "Lad din virksomhed skille sig ud"
       ],
@@ -10016,9 +10014,6 @@
         "Slet ${ count } kontaktgruppe",
         "Slet ${ count } kontaktgrupper"
       ],
-      "Delete ${ item.name }?": [
-        "Slet ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Slet ${ links.length } elementer?"
       ],
@@ -10284,9 +10279,6 @@
       ],
       "Remove device?": [
         "Fjern enhed?"
-      ],
-      "Remove items": [
-        "Fjern elementer"
       ],
       "Rename a file": [
         "Omdøb en fil"

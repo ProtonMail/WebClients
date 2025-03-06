@@ -2684,6 +2684,9 @@
       "Please provide either a first name, a last name or a display name": [
         "Adjon meg egy keresztnevet, vezetéknevet vagy megjelenített nevet"
       ],
+      "Please select a country": [
+        "Kérjük, válasszon egy országot"
+      ],
       "Port is required": [
         "A port megadása szükséges"
       ],
@@ -3763,6 +3766,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Cím hitelesítés a megbízható kulcsokkal engedélyezve van ehhez a címhez. A küldéshez a címzett nyilvános kulcsát megbízhatóként kell megjelölnie."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "A mesterséges intelligenciával működő asszisztens segít jobb e-maileket készíteni, gyorsan és könnyedén."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Mind (${ totalFoldersCount } mappa)",
         "Mind (${ totalFoldersCount } mappa)"
@@ -3981,6 +3987,9 @@
       "Dedicated servers": [
         "Dedikált szerverek"
       ],
+      "default email address": [
+        "alapértelmezett e-mail cím"
+      ],
       "Delete locked drive": [
         "Zárolt tárhely törlése",
         "Zárolt tárhelyek törlése"
@@ -4047,6 +4056,9 @@
       ],
       "Emails are automatically signed": [
         "Az e-mailek automatikusan aláírásra kerülnek"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "30 napnál régebben a Kukába és a Levélszemétbe áthelyezett e-mailek automatikusan törlődnek."
       ],
       "Empty folder": [
         "Üres mappa"
@@ -4610,6 +4622,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
+      "Setting up your new address…": [
+        "Új e-mail cím beállítása..."
+      ],
       "Share files with links": [
         "Fájlok megosztása hivatkozással"
       ],
@@ -4714,6 +4729,9 @@
       ],
       "This folder is empty": [
         "Ez a mappa üres"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Ez mostantól az ${ defaultEmailAddress } az új üzenetek küldéséhez."
       ],
       "This item already exists in your library": [
         "Ez az elem már létezik a könyvtárban"
@@ -7184,14 +7202,6 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Biztonságos tároló megosztás (${ n } tároló)",
-        "Biztonságos tároló megosztás (${ n } tároló)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás.",
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás."
       ]
     },
     "pass_signup_2024: Info": {
@@ -8644,9 +8654,6 @@
         "${ count } névjegy csoport törlése",
         "${ count } névjegy csoport törlése"
       ],
-      "Delete ${ item.name }?": [
-        "${ item.name } törlése?"
-      ],
       "Delete ${ value }": [
         "${ value } törlése"
       ],
@@ -9211,7 +9218,7 @@
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
-        "Haladó VPN beállítások"
+        "Speciális VPN beállítások"
       ],
       "No ads": [
         "Nincsenek hirdetések"

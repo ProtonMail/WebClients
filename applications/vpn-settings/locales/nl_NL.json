@@ -199,6 +199,9 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Delete account": [
+        "Account verwijderen"
+      ],
       "Delete Gateway": [
         "Gateway verwijderen"
       ],
@@ -366,6 +369,9 @@
       ],
       "Go to label": [
         "Ga naar label"
+      ],
+      "Go to panel ${ index }": [
+        "Ga naar paneel ${ index }"
       ],
       "Got it": [
         "Begrepen"
@@ -3606,6 +3612,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: voorbeeld in lage resolutie"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw familieleden gebruiken tweestapsverificatie authenticatie",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw familieleden gebruiken tweestapsverificatie authenticatie"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw leden gebruiken tweestapsverificatie authenticatie om aan te melden bij uw organisatie",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw leden gebruiken tweestapsverificatie authenticatie om aan te melden bij uw organisatie"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat zowel de login als het tweede wachtwoord vervangt. Om over te schakelen naar één wachtwoord modus vult u een enkel wachtwoord naar keuze in en klikt u op Opslaan."
       ],
@@ -3615,6 +3633,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: niet quarantaine of afwijzing van ongeautoriseerde e-mails. Meestal gebruiken mensen dit beleid alleen om problemen te krijgen of te testen."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } gebruiker",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } gebruikers"
       ],
       "${ number } city": [
         "${ number } stad",
@@ -4246,9 +4268,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ VPN_APP_NAME }."
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Als u dit account met een ander account wilt combineren, verwijder deze dan NIET."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Als u problemen hebt, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze ondersteuningsspecialisten, of open een ${ boldLiveChat } voor chatondersteuning."
@@ -4944,6 +4963,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Dit verwijdert SSO voor ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Hiermee verwijdert u uw toegang tot alle verbonden diensten en verwijdert u al uw gegevens, inclusief contacten, bijlagen, afspraken, wachtwoorden en bestanden."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dit zal uw tijdelijke wachtwoord vervangen. U zult het gebruiken om in de toekomst toegang te krijgen tot uw ${ BRAND_NAME } -account."
       ],
@@ -5133,8 +5155,8 @@
       "Warning:": [
         "Waarschuwing:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Waarschuwing: verwijdering is permanent. Dit verwijdert ook de toegang tot alle verbonden diensten en verwijdert al uw contacten."
+      "Warning: deleting your account is permanent.": [
+        "Opgelet: het verwijderen van uw account is permanent."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "We raden u aan om officiële ${ VPN_APP_NAME }-applicaties te gebruiken waar mogelijk."
@@ -5626,6 +5648,9 @@
       "Apply policy to": [
         "Policy toepassen op"
       ],
+      "Ask members to set up 2FA": [
+        "Vraag de leden om 2FA in te stellen"
+      ],
       "Assertion Consumer Service URL": [
         "URL van Assertion Consumer Service"
       ],
@@ -5833,6 +5858,9 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Ik begrijp dat ik dit e-mailadres onmiddellijk aan het andere account moet toevoegen, om te voorkomen dat dit adres permanent verloren gaat."
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5859,6 +5887,9 @@
       ],
       "Main": [
         "Primair"
+      ],
+      "Members without 2FA": [
+        "Leden zonder 2FA"
       ],
       "Metadata file for ${ appName }": [
         "Metagegevens bestand voor ${ appName }"
@@ -6068,6 +6099,9 @@
       "Thomas": [
         "Thomas"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Om ons te helpen verbeteren, willen we u vragen om uit te leggen waarom u weggaat."
+      ],
       "Two-password mode": [
         "Twee-wachtwoord modus"
       ],
@@ -6109,9 +6143,6 @@
       ],
       "Vulnerable password": [
         "Kwetsbaar wachtwoord"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "We vinden het jammer u te zien gaan. Leg uit waarom u vertrekt om ons te helpen te verbeteren."
       ],
       "Weak": [
         "Zwak"
@@ -6338,12 +6369,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Upgraden om chatondersteuning en andere premium functies te ontgrendelen, of gebruik ons gratis ondersteuningsformulier om uw probleem te melden."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } organisatielid gebruikt tweestapsverificatie",
-        "${ twoFAMembers.length }/${ members.length } organisatieleden gebruiken tweestapsverificatie"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7752,6 +7777,9 @@
       "Save big when you pay annually": [
         "Bespaar veel wanneer u jaarlijks betaalt"
       ],
+      "Special offer": [
+        "Speciale aanbieding"
+      ],
       "This offer won't be shown again.": [
         "Deze aanbieding wordt niet meer getoond."
       ],
@@ -7808,6 +7836,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Ik gebruik een ander ${ BRAND_NAME }-account"
+      ],
+      "I'd like to merge this account into another one": [
+        "Ik wil dit account graag samenvoegen met een andere"
       ],
       "It's missing a key feature that I need": [
         "Ik mis een belangrijke functie"
@@ -7974,14 +8005,6 @@
       ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Veilig delen van kluis (${ n } kluis)",
-        "Veilig delen van kluis (${ n } kluizen)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Veilig delen van kluis (${ n } kluis) en het delen van links",
-        "Veilig delen van kluis (${ n } kluizen) en het delen van links"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9534,6 +9557,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
+      ],
+      "Billed every 6 months": [
+        "Elke 6 maanden gefactureerd"
       ],
       "Billed for 15 months": [
         "U betaalt voor 15 maanden"
@@ -11172,6 +11198,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Eindpunt URL van identiteitsprovider (bv. https://idp.example.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Exclusief single sign-on gebruikers waarvan de 2FA wordt afgehandeld door uw identiteitsprovider"
+      ],
       "Feature in early access": [
         "Functie in vroegtijdige toegang"
       ],
@@ -11184,8 +11213,8 @@
       "IP address (Internet Service Provider)": [
         "IP-adres (Internet Service Provider)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Leden die geen 2FA gebruiken zullen een e-mail ontvangen met de vraag om het zo snel mogelijk in te schakelen."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Leden die geen 2FA gebruiken krijgen een e-mail met het verzoek om deze zo snel mogelijk in te schakelen. Single sign-on gebruikers zullen de e-mail herinnering niet ontvangen."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Beleid voor gedeelde servers kan worden toegepast op individuele gebruikers of groepen"
@@ -11234,8 +11263,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit"
+      "Disables end-to-end email encryption for this group": [
+        "Schakelt end-to-end e-mailversleuteling voor deze groep uit"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
