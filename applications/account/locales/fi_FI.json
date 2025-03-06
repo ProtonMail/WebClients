@@ -7718,9 +7718,6 @@
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Jos olet hiljattain nollannut salasanasi, voit avata tietosi tilisi tietojenpalautustapojen avulla"
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Jos haluat yhdistää tämän tilin toiseen tiliin, ÄLÄ poista sitä."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Jos kohtaat ongelmia, tarjoamme apua. ${ boldPhoneCall } tai ${ boldZoomMeeting } asiakaspalvelijamme kanssa tai aloita ${ boldLiveChat } saadaksesi tukea tekstiviestitse."
       ],
@@ -9103,9 +9100,6 @@
       ],
       "Warning:": [
         "Varoitus:"
-      ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Varoitus: poisto on pysyvää. Tämä poistaa pääsyn myös kaikkiin yhdistettyihin palveluihin ja poistaa kaikki yhteystietosi."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Suosittelemme aina virallisten ${ VPN_APP_NAME } -sovellusten käyttöä, jos mahdollista."
@@ -11046,9 +11040,6 @@
       "Vulnerable password": [
         "Haavoittuva salasana"
       ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Olemme pahoillamme kun lähdet. Kertoisitko meille miksi, jotta voimme parantaa toimintaamme, kiitos."
-      ],
       "Weak": [
         "Heikko"
       ],
@@ -11413,10 +11404,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsen käyttää kaksivaiheista tunnistautumista.",
-        "${ twoFAMembers.length }/${ members.length } organisaatiosi jäsentä käyttää kaksivaiheista tunnistautumista."
-      ],
       "Almost there": [
         "Melkein valmis"
       ],
@@ -13969,14 +13956,6 @@
       ],
       "Secure vault sharing": [
         "Suojattu holvien jako"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Turvallisten holvien jakaminen (${ n } holvi)",
-        "Turvallisten holvien jakaminen (${ n } holvia)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Holvien (${ n } holvi) ja linkkien turvallinen jakaminen",
-        "Holvien (${ n } holvia) ja linkkien turvallinen jakaminen"
       ],
       "Secure your family’s passwords and online identities": [
         "Suojaa perheesi salasanat ja verkkoidentiteetit"
@@ -18780,9 +18759,6 @@
       "IP address (Internet Service Provider)": [
         "IP-osoite (Internet-palveluntarjoaja)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian."
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Lähetetyt- ja Luonnokset-kansioiden viestit näytetään niissä edelleen, vaikka ne siirrettäisiin eri kansioihin."
       ],
@@ -18913,9 +18889,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä, eikä mitään salattuja tietoja jaeta tälle käyttäjälle."

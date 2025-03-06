@@ -379,6 +379,9 @@
       "Delete": [
         "წაშლა"
       ],
+      "Delete account": [
+        "ანგარიშის წაშლა"
+      ],
       "Delete and confirm": [
         "წაშლა და დადასტურება"
       ],
@@ -4743,6 +4746,9 @@
       "Please select a state": [
         "აირჩიეთ შტატი"
       ],
+      "Please select at least one location before continuing.": [
+        "გაგრძელებამდე, სულ ცოტა, ერთი მდებარეობა უნდა აირჩიოთ."
+      ],
       "Please set a recovery email first": [
         "ჯერ დააყენეთ აღდგენის ელფოსტა"
       ],
@@ -4866,6 +4872,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "გადახდის მინიმალური თანხაა ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "პოლიტიკის სახელი 3-40 სიმბოლოს უნდა შეიცავდეს."
       ],
       "The sending key is not valid": [
         "გაგზავნის გასაღები არასწორია"
@@ -7810,9 +7819,6 @@
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "თუ თქვენ ახლახან შეცვალეთ პაროლი, შეგიძლიათ, გამოიყენოთ მონაცემების აღდგენის ტიპი თქვენი მონაცემების განსაბლოკად"
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "თუ გნებავთ ამ ანგარიშის სხვა ანგარიშთან გაერთიანება, არ წაშალოთ ის."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "თუ პრობლემები გაქვთ, ჩვენ დასახმარებლად მზად ვართ. ${ boldPhoneCall } ან ${ boldZoomMeeting } ჩვენი მხარდაჭერის სპეცალისტით, ან გახსენით ${ boldLiveChat } ჩატიდან მხარდაჭერისთვის."
       ],
@@ -8263,6 +8269,9 @@
       ],
       "Or select a particular server:": [
         "ან აირჩიეთ სერვერი:"
+      ],
+      "Organization --> Groups": [
+        "ორგანიზაცია -> ჯგუფები"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "ორგანიზაციის წევრებს თავიანთი ${ PASS_APP_NAME }-ის განბლოკვა დასჭირდებათ თავისი პაროლით ან PIN-კოდით."
@@ -8996,6 +9005,9 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "ჩვენი სერვისების მუდმივად გასაუმჯობესებლად ჩვენ ხანდახან ვაგროვებთ მონაცემებს ჩვენი აპლიკაციების ნორმალურად ფუნქციონირების შესახებ. ეს ინფორმაცია მესამე პირებთან არასოდეს ზიარდება."
       ],
+      "To create your first user group, go to": [
+        "პირველი მომხმარებლის ჯგუფის შესაქმნელად გადადით"
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "პაროლის გადაყენების შემდეგ თქვენი დაბლოკილი მონაცემების გასაშიფრად და სანახავად აირჩიეთ აღდგენის მეთოდი."
       ],
@@ -9236,8 +9248,8 @@
       "Warning:": [
         "გაფრთხილება:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "გაფრთხილება: წაშლა სამუდამოა. ასევე წაიშლება წვდომა ყველა მიერთებულ სერვისთან და ყველა თქვენი კონტაქტი."
+      "Warning: deleting your account is permanent.": [
+        "გაფრთხილება: თქვენი ანგარიშის წაშლა შეუქცევადია."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "გირჩევთ, როცა ეს შესაძლებელია, ${ VPN_APP_NAME }-ის ოფიცალური აპლიკაციები გამოიყენოთ ."
@@ -10318,6 +10330,9 @@
       "Apply policy to": [
         "პოლიტიკის გადატარება"
       ],
+      "Ask members to set up 2FA": [
+        "წევრებისთვის 2FA-ის მორგების თხოვნა"
+      ],
       "Assertion Consumer Service URL": [
         "ACS სამსახურის ბმული"
       ],
@@ -10819,6 +10834,9 @@
       "Maximum number of words": [
         "სიტყვების მაქსიმალური რაოდენობა"
       ],
+      "Members without 2FA": [
+        "წევრები 2FA-ის გარეშე"
+      ],
       "Message": [
         "შეტყობინება"
       ],
@@ -11180,6 +11198,9 @@
       "Tips and insights": [
         "ჩაი და შიგნეულობა"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "იმისათვის, რომ უკეთესები გავხდეთ, აგვიხსენთ, რატომ გვტოვებთ."
+      ],
       "To: ${ toEmail }": [
         "მიმღები: ${ toEmail }"
       ],
@@ -11248,9 +11269,6 @@
       ],
       "Vulnerable password": [
         "მოწყვლადი პაროლი"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "ვწუხვართ, რომ მიდიხართ. აგვიხსენით, რატომ გვტოვებთ, რომ უკეთესები გავხდეთ."
       ],
       "Weak": [
         "სუსტი"
@@ -11616,10 +11634,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } თქვენი ორგანიზაციის წევრი იყენებს 2FA-ს.",
-        "${ twoFAMembers.length }/${ members.length } თქვენი ორგანიზაციის წევრი იყენებს 2FA-ს."
-      ],
       "Almost there": [
         "თითქმის მივედით"
       ],
@@ -13524,6 +13538,12 @@
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "შეთავაზების ვადა იწურება ${ formattedDate }-ზე."
+      ],
+      "Pay annually, secure our best offer": [
+        "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
+      ],
       "Save": [
         "შენახვა"
       ],
@@ -13536,6 +13556,9 @@
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
       ],
+      "Special offer": [
+        "სპეციალური შეთავაზება"
+      ],
       "This offer won't be shown again.": [
         "ამ შემოთავაზებას აღარ გაჩვენებთ."
       ],
@@ -13544,6 +13567,9 @@
       ],
       "You currently pay": [
         "ამჟამად იხდით"
+      ],
+      "Your subscription renews soon": [
+        "თქვენი გამოწერა მალე განახლდება"
       ]
     },
     "Offer feature": {
@@ -13714,6 +13740,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "მე ${ BRAND_NAME }-ის განსხვავებულ ანგარიშს ვიყენებ"
+      ],
+      "I'd like to merge this account into another one": [
+        "მე მინდა ამ ანგარიშის სხვა ანგარიშთან შერწყმა"
       ],
       "Ignore group": [
         "ჯგუფის იგნორი"
@@ -14247,14 +14276,6 @@
       ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "დაცული საცავის გაზიარება (${ n } საცავი)",
-        "დაცული საცავის გაზიარება (${ n } საცავი)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება",
-        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება"
       ],
       "Secure your family’s passwords and online identities": [
         "დაიცავით თქვენი ოჯახის პაროლები და ინტერნეტიდენტიფიკატორები"
@@ -16606,6 +16627,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "გადახდა 2 წელიწადში ერთხელ"
+      ],
+      "Billed every 6 months": [
+        "გადახდა 6 თვეში ერთხელ"
       ],
       "Billed for 15 months": [
         "გადაიხადეთ 15 თვისთვის"
@@ -19130,9 +19154,6 @@
       "IP address (Internet Service Provider)": [
         "IP მისამართი (ინტერნეტპროვაიდერი)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "წევრები, რომლებც 2FA-ს არ იყენებენ, მიიღებენ ელფოსტას, რომელიც მისი გამოყენების, რაც შეიძლება, მალე ჩართვას მოსთხოვს."
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "შეტყობინებები მონახაზებისა და გაგზავნილი ელფოსტების საქაღალდიდან მაინც გამოჩნდებიან თავის ადგილას, მიუხედავად იმისა, გადაიტანთ თუ არა მათ სხვა საქაღალდეში."
       ],
@@ -19267,8 +19288,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "გარე მისამართი - გათიშავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
+      "Disables end-to-end email encryption for this group": [
+        "გათიშავს ელფოსტის გამჭოლ დაშიფვრას ამ ჯგუფისთვის"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "გარე მისამართი - გამორთავს გამჭოლ დაშიფვრას ამ ჯგუფისთვის და ამ მომხამრებელთან დაშიფრული რესურსები გაზიარებული არ იქნება."
