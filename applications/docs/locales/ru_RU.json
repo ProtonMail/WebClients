@@ -84,6 +84,9 @@
       "Apply": [
         "Применить"
       ],
+      "Ask me next time": [
+        "Спросить в следующий раз"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "В группе может быть не больше ${ maxContacts } контакта",
         "В группе может быть не больше ${ maxContacts } контактов",
@@ -162,6 +165,9 @@
       "Contact group": [
         "Группа контактов"
       ],
+      "Context menu": [
+        "Контекстное меню"
+      ],
       "Continue": [
         "Продолжить"
       ],
@@ -185,6 +191,9 @@
       ],
       "Copy invite link": [
         "Скопировать ссылку-приглашение"
+      ],
+      "Create a copy": [
+        "Создать копию"
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
@@ -552,11 +561,17 @@
       "Save changes": [
         "Сохранить изменения"
       ],
+      "Save preferences": [
+        "Сохранить настройки"
+      ],
       "Search": [
         "Поиск"
       ],
       "Search countries": [
         "Поиск стран"
+      ],
+      "Search docs": [
+        "Поиск документов"
       ],
       "See how": [
         "Посмотреть, как"
@@ -591,6 +606,9 @@
       "Show advanced PGP settings": [
         "Показать расширенные настройки PGP"
       ],
+      "Show options": [
+        "Показать параметры"
+      ],
       "Sign out": [
         "Выйти"
       ],
@@ -617,6 +635,9 @@
       ],
       "Submit": [
         "Отправить"
+      ],
+      "Switch accounts": [
+        "Переключить аккаунты"
       ],
       "Switch or add account": [
         "Переключить или добавить аккаунт"
@@ -1084,6 +1105,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Закрыть"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -3805,6 +3829,9 @@
         "${ contactsLength } контактов",
         "${ contactsLength } контактов"
       ],
+      "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "${ DOCS_APP_NAME } не может быть скачан напрямую и не буден включён в загрузку. Вы можете скачать остальные объекты нажав 'Продолжить скачивание'."
+      ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } в"
       ],
@@ -4072,6 +4099,9 @@
       "Create public link": [
         "Создать публичную ссылку"
       ],
+      "Create your end-to-end encrypted document": [
+        "Создайте документ, зашифрованный сквозным методом"
+      ],
       "Creating link to file": [
         "Создание ссылки на файл"
       ],
@@ -4255,6 +4285,9 @@
       "Free 5GB encrypted storage to get started": [
         "Бесплатное зашифрованное хранилище объемом 5ГБ для начала работы"
       ],
+      "Get Notified About Comments": [
+        "Получить уведомления о комментариях"
+      ],
       "here": [
         "здесь"
       ],
@@ -4387,6 +4420,9 @@
       "Low Priority": [
         "Низкий приоритет"
       ],
+      "Making a copy...": [
+        "Создание копии..."
+      ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
@@ -4441,6 +4477,9 @@
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
       ],
+      "No recent documents": [
+        "Нет недавних документов"
+      ],
       "No results found": [
         "Результаты не найдены"
       ],
@@ -4479,6 +4518,12 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
+      ],
+      "Owned by me": [
+        "Принадлежащие мне"
+      ],
+      "Owned by others": [
+        "Принадлежащие другим"
       ],
       "Owner": [
         "Владелец"
@@ -4582,6 +4627,9 @@
       "Registering your subscription…": [
         "Регистрация вашей подписки…"
       ],
+      "Save Document as PDF": [
+        "Сохранить документ в формате PDF"
+      ],
       "Saving": [
         "Сохранение"
       ],
@@ -4672,6 +4720,12 @@
       "The Beginning": [
         "Начало"
       ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Цифровая подпись была частично подтверждена. Данный файл был загружен через публичную ссылку без аккаунта ${ BRAND_NAME }, поэтому их личность не может быть подтверждена."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Цифровая подпись была частично подтверждена. Данная папка была загружена через публичную ссылку без аккаунта ${ BRAND_NAME }, поэтому их личность не может быть подтверждена."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
       ],
@@ -4741,6 +4795,9 @@
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Для завершения оплаты, пожалуйста, отправьте ${ btcAmountBold } на адрес ниже."
       ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Чтобы скачать файлы ${ DOCS_APP_NAME }, откройте их в ${ DOCS_APP_NAME } и экспортируйте их."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
@@ -4782,6 +4839,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
+      ],
+      "Undo successful": [
+        "Успешно отменено"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "К сожалению, похоже, что файл или некоторые его данные не удается расшифровать."
@@ -5351,6 +5411,9 @@
       "Import to:": [
         "Импортировать в:"
       ],
+      "Include document name in notification": [
+        "Включить имя документа в уведомление"
+      ],
       "Include message and file name in invite email": [
         "Включите сообщение и имя файла в приглашение по электронной почте"
       ],
@@ -5642,6 +5705,11 @@
       ],
       "What’s this?": [
         "Что это такое?"
+      ]
+    },
+    "List title": {
+      "Also included:": [
+        "Включает в себя:"
       ]
     },
     "Loading info": {
@@ -6998,6 +7066,9 @@
       "\"${ name }\" created successfully": [
         "\"${ name }\" успешно создано"
       ],
+      "\"${ name }\" deleted": [
+        "\"${ name }\" удалён"
+      ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" безвозвратно удалено из корзины"
       ],
@@ -7275,6 +7346,12 @@
       "Maybe later": [
         "Может быть позже"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Срок действия предложения истекает ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Платите ежегодно, получите наше лучшее предложение"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -7287,6 +7364,9 @@
       "Save big when you pay annually": [
         "Экономьте больше, когда платите ежегодно"
       ],
+      "Special offer": [
+        "Специальное предложение"
+      ],
       "This offer won't be shown again.": [
         "Это предложение больше не будет показано."
       ],
@@ -7295,6 +7375,9 @@
       ],
       "You currently pay": [
         "Вы оплачиваете сейчас"
+      ],
+      "Your subscription renews soon": [
+        "Ваша подписка скоро обновится"
       ]
     },
     "Offer feature": {
@@ -7359,18 +7442,6 @@
       ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8378,6 +8449,9 @@
       "Billed every 2 years": [
         "Оплата каждые 2 года"
       ],
+      "Billed every 6 months": [
+        "Списано каждые 6 месяцев"
+      ],
       "Billed for 15 months": [
         "Оплата за 15 месяцев."
       ],
@@ -8941,6 +9015,9 @@
       "Delete ${ item.name }?": [
         "Удалить ${ item.name }?"
       ],
+      "Delete ${ links.length } items?": [
+        "Удалить ${ links.length } объектов?"
+      ],
       "Delete ${ value }": [
         "Удалить ${ value }"
       ],
@@ -8958,6 +9035,9 @@
       ],
       "Discard changes?": [
         "Сбросить изменения?"
+      ],
+      "Docs": [
+        "Документы"
       ],
       "Document verification failed": [
         "Проверка пользователя не удалась"

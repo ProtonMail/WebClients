@@ -45,6 +45,10 @@
       "Add": [
         "დამატება"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "${ photos.length } სურათის დამატება ახალ ალბომში",
+        "${ photos.length } სურათის დამატება ახალ ალბომში"
+      ],
       "Add account": [
         "ანგარიშის დამატება"
       ],
@@ -86,6 +90,10 @@
       ],
       "Add to group": [
         "ჯგუფში ჩამატება"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "\"${ album.name }\"-ში ჩამატება. (${ album.photoCount } სურათი)",
+        "\"${ album.name }\"-ში ჩამატება. (${ album.photoCount } სურათი)"
       ],
       "Album name": [
         "ალბომის სახელი"
@@ -297,6 +305,9 @@
       "Delete version": [
         "ვერსიის წაშლა"
       ],
+      "Delete without saving": [
+        "წაშლა შენახვის გარეშე"
+      ],
       "Deselect all": [
         "მონიშვნის მოხსნა"
       ],
@@ -311,6 +322,12 @@
       ],
       "Display navigation bar": [
         "ნავიგაციის პანელის ჩვენება"
+      ],
+      "Display next": [
+        "შემდეგის ჩვენება"
+      ],
+      "Display previous": [
+        "წინას ჩვენება"
       ],
       "Done": [
         "მზადაა"
@@ -332,6 +349,10 @@
       ],
       "Download logs": [
         "ჟურნალის გადმოწერა"
+      ],
+      "Download photo": [
+        "სურათის გადმოწერა",
+        "სურათების გადმოწერა"
       ],
       "Download without scanning": [
         "გამოწერა სკანირების გარეშე"
@@ -483,6 +504,9 @@
       "Increase": [
         "გაგრძელება"
       ],
+      "Join album": [
+        "ალბომში გაწევრება"
+      ],
       "Keep my subscription": [
         "ჩემი გამოწერის შენარჩუნება"
       ],
@@ -524,6 +548,9 @@
       ],
       "Manage share": [
         "ზიარის მართვა"
+      ],
+      "Mark as favorite": [
+        "რჩეულად მონიშვნა"
       ],
       "Mark as resolved": [
         "მონიშნე გადაწყვეტილად"
@@ -669,6 +696,12 @@
       "Remove device": [
         "მოწყობილობის წაშლა"
       ],
+      "Remove from album": [
+        "ალბომიდან წაშლა"
+      ],
+      "Remove from favorites": [
+        "წაშლა რჩეულებიდან"
+      ],
       "Remove from this list": [
         "ამ სიიდან წაშლა"
       ],
@@ -678,8 +711,14 @@
       "Remove me": [
         "წამშალე"
       ],
+      "Remove without saving": [
+        "წაშლა შენახვის გარეშე"
+      ],
       "Rename": [
         "სახელის გადარქმევა"
+      ],
+      "Rename album": [
+        "ალბომის სახელის გადარქმევა"
       ],
       "Replace file": [
         "ფაილის ჩანაცვლება"
@@ -747,8 +786,14 @@
       "Save": [
         "შენახვა"
       ],
+      "Save and remove": [
+        "შენახვა და წაშლა"
+      ],
       "Save changes": [
         "ცვლილებების შენახვა"
+      ],
+      "Save photos and remove": [
+        "სურათების შენახვა და წაშლა"
       ],
       "Search": [
         "ძებნა"
@@ -797,6 +842,9 @@
       ],
       "Share": [
         "გაზიარება"
+      ],
+      "Share album": [
+        "ალბომის გაზიარება"
       ],
       "Share file": [
         "ფაილის გაზიარება"
@@ -3676,8 +3724,23 @@
       "Create new album": [
         "ახალი ალბომის შექმნა"
       ],
+      "Rename": [
+        "სახელის გადარქმევა"
+      ],
       "Security Center": [
         "უსაფრთხოების ცენტრი"
+      ]
+    },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "${ photos.length } სურათის დამატება",
+        "${ photos.length } სურათის დამატება"
+      ],
+      "All albums": [
+        "ყველა ალბომი"
+      ],
+      "Recent": [
+        "უახლესი"
       ]
     },
     "Hint": {
@@ -4038,6 +4101,9 @@
       "${ album.photoCount } item": [
         "${ album.photoCount } ელემენტი",
         "${ album.photoCount } ელემენტი"
+      ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } წარმატებით წაიშალა"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -4935,6 +5001,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME ავტომატურად აგზავნის შეტყობინებას, რედაქტორის მიმდინარე რეჟიმის გამოყენებით."
       ],
+      "Photo is not saved to your library": [
+        "ფოტო თქვენს ბიბლიოთეკაში შენახული არაა"
+      ],
       "Photo is set as album cover": [
         "სურათი დაყენებულია ალბომის ყდად"
       ],
@@ -5510,6 +5579,13 @@
       "Would you like to restore your files?": [
         "გნებავთ თქვენი ფაილების აღდგენა?"
       ],
+      "Would you like to save it before removing?": [
+        "გნებავთ მისი შენახვა წაშლამდე?",
+        "გნებავთ მათი შენახვა წაშლამდე?"
+      ],
+      "Would you like to save them before removing?": [
+        "გნებავთ მათი შენახვა წაშლამდე?"
+      ],
       "Writing assistant": [
         "წერაში დამხმარე"
       ],
@@ -5675,6 +5751,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
+      ],
+      "Your photo has been removed from the album": [
+        "თქვენი სურათი წაიშალა ალბომიდან",
+        "თქვენი სურათები წაიშალა ალბომიდან"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "თქვენი გეგმა 7 დღეში 10 ვერსიითაა შეზღუდული"
@@ -7895,6 +7975,12 @@
       "Access updated and shared": [
         "წვდომა განახლებული და გაზიარებულია"
       ],
+      "Album failed to be renamed": [
+        "ალბომის სახელის გადარქმევა ჩავარდა"
+      ],
+      "Album renamed successfully": [
+        "ალბომის სახელი წარმატებით შეიცვალა"
+      ],
       "All items will soon be permanently deleted from trash": [
         "ნაგვის ყუთიდან ფაილები მალე სამუდამოდ წაიშლება"
       ],
@@ -8110,6 +8196,12 @@
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "შეთავაზების ვადა იწურება ${ formattedDate }-ზე."
+      ],
+      "Pay annually, secure our best offer": [
+        "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
+      ],
       "Save": [
         "შენახვა"
       ],
@@ -8122,6 +8214,9 @@
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
       ],
+      "Special offer": [
+        "სპეციალური შეთავაზება"
+      ],
       "This offer won't be shown again.": [
         "ამ შემოთავაზებას აღარ გაჩვენებთ."
       ],
@@ -8130,6 +8225,9 @@
       ],
       "You currently pay": [
         "ამჟამად იხდით"
+      ],
+      "Your subscription renews soon": [
+        "თქვენი გამოწერა მალე განახლდება"
       ]
     },
     "Offer feature": {
@@ -8344,14 +8442,6 @@
       ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "დაცული საცავის გაზიარება (${ n } საცავი)",
-        "დაცული საცავის გაზიარება (${ n } საცავი)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება",
-        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9339,6 +9429,9 @@
       "Billed every 2 years": [
         "გადახდა 2 წელიწადში ერთხელ"
       ],
+      "Billed every 6 months": [
+        "გადახდა 6 თვეში ერთხელ"
+      ],
       "Billed for 15 months": [
         "გადაიხადეთ 15 თვისთვის"
       ],
@@ -10194,11 +10287,11 @@
         "${ count } კონტაქტების ჯგუფის წაშლა",
         "${ count } კონტაქტების ჯგუფის წაშლა"
       ],
-      "Delete ${ item.name }?": [
-        "წავშალო ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "წავშალო ${ links.length } ელემენტი?"
+      ],
+      "Delete ${ name }?": [
+        "წავშალო ${ name }?"
       ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"
@@ -10465,6 +10558,10 @@
       ],
       "Remove device?": [
         "წავშალო მოწყობილობა?"
+      ],
+      "Remove item?": [
+        "წავშალო ელემენტი?",
+        "წავშალო ელემენტები?"
       ],
       "Rename a file": [
         "ფაილის სახელის გადარქმევა"

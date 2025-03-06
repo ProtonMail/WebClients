@@ -7726,6 +7726,12 @@
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "შეთავაზების ვადა იწურება ${ formattedDate }-ზე."
+      ],
+      "Pay annually, secure our best offer": [
+        "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
+      ],
       "Save": [
         "შენახვა"
       ],
@@ -7738,6 +7744,9 @@
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
       ],
+      "Special offer": [
+        "სპეციალური შეთავაზება"
+      ],
       "This offer won't be shown again.": [
         "ამ შემოთავაზებას აღარ გაჩვენებთ."
       ],
@@ -7746,6 +7755,9 @@
       ],
       "You currently pay": [
         "ამჟამად იხდით"
+      ],
+      "Your subscription renews soon": [
+        "თქვენი გამოწერა მალე განახლდება"
       ]
     },
     "Offer feature": {
@@ -7908,14 +7920,6 @@
       ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "დაცული საცავის გაზიარება (${ n } საცავი)",
-        "დაცული საცავის გაზიარება (${ n } საცავი)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება",
-        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8969,6 +8973,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "გადახდა 2 წელიწადში ერთხელ"
+      ],
+      "Billed every 6 months": [
+        "გადახდა 6 თვეში ერთხელ"
       ],
       "Billed for 15 months": [
         "გადაიხადეთ 15 თვისთვის"

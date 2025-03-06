@@ -10741,7 +10741,7 @@
         "Možná později"
       ],
       "Offer expires ${ formattedDate }.": [
-        "Nabídka vyprší ${ formattedDate }"
+        "Nabídka vyprší ${ formattedDate }."
       ],
       "Pay annually, secure our best offer": [
         "Plaťte ročně, zajistěte si naši nejlepší nabídku"
@@ -10757,6 +10757,9 @@
       ],
       "Save big when you pay annually": [
         "Při roční platbě můžete výrazně ušetřit"
+      ],
+      "Special offer": [
+        "Speciální nabídka"
       ],
       "This offer won't be shown again.": [
         "Tato nabídka se již nezobrazí."
@@ -11040,18 +11043,6 @@
       ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpečné sdílení trezoru (${ n } trezor)",
-        "Bezpečné sdílení trezoru (${ n } trezory)",
-        "Bezpečné sdílení trezoru (${ n } trezorů)",
-        "Bezpečné sdílení trezoru (${ n } trezorů)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpečné sdílení trezoru (${ n } trezor) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12426,6 +12417,9 @@
       "Billed every 2 years": [
         "Účtováno každé 2 roky"
       ],
+      "Billed every 6 months": [
+        "Účtováno každých 6 měsíců"
+      ],
       "Billed for 15 months": [
         "Účtováno za 15 měsíců"
       ],
@@ -12513,47 +12507,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription reminder": {
@@ -12826,6 +12779,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription renewal state": {
@@ -14246,6 +14240,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editoru bude použit pro odeslání uživateli. Prostý text znamená, že zpráva bude při odeslání vždy převedena na prostý text."
@@ -14327,11 +14326,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "Tor out of date": {

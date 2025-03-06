@@ -199,6 +199,9 @@
       "Delete": [
         "삭제"
       ],
+      "Delete account": [
+        "계정 삭제"
+      ],
       "Delete Gateway": [
         "게이트웨이 삭제"
       ],
@@ -366,6 +369,9 @@
       ],
       "Go to label": [
         "라벨로 이동"
+      ],
+      "Go to panel ${ index }": [
+        "패널로 가기 ${ index }"
       ],
       "Got it": [
         "알겠습니다"
@@ -2685,6 +2691,12 @@
       "Please select a state": [
         "주를 선택해주세요"
       ],
+      "Please select at least one location before continuing.": [
+        "계속하기 전 최소 하나의 위치를 선택해 주세요."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "계속하기 전 한 명 이상의 사용자나 그룹을 선택해 주세요."
+      ],
       "Please set a recovery email first": [
         "복구 이메일을 먼저 설정하세요"
       ],
@@ -2744,6 +2756,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "허용되는 최소 결제 금액은 ${ price } 입니다."
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "정책 이름은 3자에서 40자 사이여야 합니다."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
@@ -3571,6 +3586,15 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 저화질 미리보기"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ canHaveTwoFAMembersLength }명 중 ${ hasTwoFAMembersLength }명의 가족 구성원이 2단계 인증을 사용합니다."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "SSO를 사용하지 않는 ${ canHaveTwoFAMembersLength }명 중 ${ hasTwoFAMembersLength }명이 조직에 로그인하기 위해 2단계 인증을 사용합니다."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "SSO를 사용하지 않는 ${ canHaveTwoFAMembersLength }명 중 ${ hasTwoFAMembersLength }명이 조직에 로그인하기 위해 2단계 인증을 사용합니다."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 은 로그인 및 사서함 암호를 모두 대체하는 단일 암호와 함께 사용할 수도 있습니다. 단일 비밀번호 모드로 전환하려면 사용하려는 단일 비밀번호를 입력하고 저장을 클릭하십시오."
       ],
@@ -3579,6 +3603,9 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: 무단 이메일을 격리하거나 거부하지 마세요. 보통, 이 정책을 문제 해결이나 테스트에만 사용합니다."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }명/${ canHaveTwoFAMembersLength }명 구성원"
       ],
       "${ number } city": [
         "${ number } 도시"
@@ -4195,9 +4222,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ VPN_APP_NAME } 유료 기능을 사용할 수 없습니다."
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "만약 이 계정을 다른 계정과 합치려는 경우, 절대로 삭제하지 마세요."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "만약 문제를 가지고 계신다면, 저희가 도와드리겠습니다. 자사 지원 전문가를 ${ boldPhoneCall }하거나 ${ boldZoomMeeting }을 통해 만나실 수 있습니다. 또는 ${ boldLiveChat }으로 채팅 지원을 시작하세요."
       ],
@@ -4473,6 +4497,9 @@
       ],
       "Or select a particular server:": [
         "또는 특정 서버 선택:"
+      ],
+      "Organization --> Groups": [
+        "조직 --> 그룹으로 이동하세요"
       ],
       "Organization size": [
         "조직 크기"
@@ -4882,6 +4909,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "이 작업은 ${ boldDomainName }의 SSO를 제거합니다."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "이 작업으로 연결된 모든 서비스에 대한 접근 권한이 제거되며 연락처, 첨부 파일, 이벤트, 암호 및 파일을 포함한 모든 데이터가 삭제됩니다."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "임시 비밀번호를 대체하게 됩니다. 추후 ${ BRAND_NAME } 계정에 접근하는데 사용할 수 있습니다."
       ],
@@ -4914,6 +4944,9 @@
       ],
       "to continue to ${ product }": [
         "${ product }(으)로 계속하기"
+      ],
+      "To create your first user group, go to": [
+        "첫 사용자 그룹을 생성하려면,"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
@@ -5068,8 +5101,8 @@
       "Warning:": [
         "주의:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "경고: 삭제는 영구적입니다. 연결된 모든 서비스에 더 이상 접근할 수 없게 되고, 저장된 모든 연락처가 삭제됩니다."
+      "Warning: deleting your account is permanent.": [
+        "경고: 계정 삭제는 영구적입니다."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "가능하면 ${ VPN_APP_NAME } 공식 애플리케이션 사용을 권장합니다."
@@ -5550,6 +5583,9 @@
       "Apply policy to": [
         "다음 항목에 정책 적용:"
       ],
+      "Ask members to set up 2FA": [
+        "구성원에게 2단계 인증 설정 요청"
+      ],
       "Assertion Consumer Service URL": [
         "문제 알림 소비자 서비스 (ACS, 약칭;Assertion Consumer Service) URL"
       ],
@@ -5757,6 +5793,9 @@
       "Hide password": [
         "비밀번호 숨기기"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "이 주소를 영구적으로 잃지 않으려면 이 이메일 주소를 다른 계정에 즉시 추가해야 한다는 것을 이해했습니다."
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5783,6 +5822,9 @@
       ],
       "Main": [
         "메인"
+      ],
+      "Members without 2FA": [
+        "2단계 인증 미사용 구성원"
       ],
       "Metadata file for ${ appName }": [
         "${ appName } 메타데이터 파일"
@@ -5991,6 +6033,9 @@
       "Thomas": [
         "홍"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "저희가 한 층 발전할 수 있도록 왜 떠나시는지 알려주세요."
+      ],
       "Two-password mode": [
         "2차 비밀번호 모드"
       ],
@@ -6035,9 +6080,6 @@
       ],
       "Vulnerable password": [
         "취약한 비밀번호"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "가시는 모습을 본다니 슬프네요. 저희가 한층 더 발전할 수 있도록 어떤 이유로 떠나는지 알려주세요."
       ],
       "Weak": [
         "약함"
@@ -6264,11 +6306,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "채팅 지원과 다른 프리미엄 서비스를 잠금해제 하기 위해 업그레이드 하거나, 문제를 신고하기 위해 무료 지원팀에 연락하세요."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "조직 구성원의 ${ twoFAMembers.length }/${ members.length }명이 2단계 인증을 사용 중입니다."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7647,6 +7684,9 @@
       "Save big when you pay annually": [
         "매년 결제로 더 크게 절약하세요"
       ],
+      "Special offer": [
+        "특가 할인"
+      ],
       "This offer won't be shown again.": [
         "이 제안은 다시 표시되지 않습니다."
       ],
@@ -7709,6 +7749,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "다른 ${ BRAND_NAME } 계정을 사용합니다"
+      ],
+      "I'd like to merge this account into another one": [
+        "이 계정을 다른 계정으로 병합하고 싶습니다."
       ],
       "iOS": [
         "iOS"
@@ -7887,12 +7930,6 @@
       ],
       "Secure vault sharing": [
         "안전한 금고 공유"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "안전한 링크 공유 (${ n }개 금고)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "안전한 링크 공유 (${ n }개 금고) 및 링크 공유"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11025,6 +11062,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "2단계 인증이 신원 제공자에 의해 처리되는 단일 사인온 사용자 제외"
+      ],
       "Feature in early access": [
         "얼리 엑세스 기능"
       ],
@@ -11037,8 +11077,8 @@
       "IP address (Internet Service Provider)": [
         "IP 주소 (인터넷 서비스 제공자)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "2단계 인증을 사용하지 않는 회원들은 가능한 한 빨리 활성화하라는 메일을 받게 됩니다."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "2단계 인증을 사용하지 않는 회원은 가능 한 빠른 시일 내로 활성화해 달라는 이메일을 받게 됩니다. 싱글 사인 온(SSO)사용자는 이메일 알림을 받지 않습니다."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "공유 서버 정책은 개별 사용자 또는 그룹에 적용될 수 있습니다."
@@ -11087,8 +11127,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "외부 주소 - 이 그룹의 모든 이메일 종단간 암호화를 비활성화 합니다"
+      "Disables end-to-end email encryption for this group": [
+        "이 그룹의 종단간 이메일 암호화를 비활성화합니다"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"

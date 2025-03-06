@@ -895,6 +895,12 @@
       "Failed to block the contact": [
         "Kontak gagal diblokir"
       ],
+      "Failed to cancel mailbox change": [
+        "Perubahan kotak surat gagal dibatalkan"
+      ],
+      "Failed to change mailbox": [
+        "Kotak surat gagal diubah"
+      ],
       "Failed to create domain": [
         "Domain gagal dibuat"
       ],
@@ -3413,6 +3419,9 @@
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
         "Item tidak dapat mengandung lebih dari ${ share.targetMaxMembers } pengguna."
       ],
+      "Mailbox change successfully cancelled": [
+        "Perubahan kotak surat berhasil dibatalkan"
+      ],
       "Mailbox successfully deleted": [
         "Kotak surat berhasil dihapus"
       ],
@@ -3491,6 +3500,9 @@
       ],
       "Breaches detected for": [
         "Kebocoran terdeteksi untuk"
+      ],
+      "Cancel changing your email?": [
+        "Batalkan mengubah email Anda?"
       ],
       "Change mailbox email": [
         "Ubah email kotak surat"

@@ -200,6 +200,9 @@
       "Go to label": [
         "رفتن به برچسب"
       ],
+      "Go to panel ${ index }": [
+        "برو به صفحه ${ index }"
+      ],
       "Got it": [
         "متوجه شدم"
       ],
@@ -711,7 +714,7 @@
       ],
       "Total for ${ n } month": [
         "جمعا برای ${ n } ماه",
-        "جمعا برای ${ n } ماه"
+        "جمعا برای ${ n } ماه‌ها"
       ]
     },
     "Checkout summary": {
@@ -2091,6 +2094,9 @@
       "App version": [
         "نسخه برنامه"
       ],
+      "Best deal": [
+        "بهترین پیشنهاد"
+      ],
       "Device": [
         "دستگاه"
       ],
@@ -2111,6 +2117,9 @@
       ],
       "Organization key fingerprint": [
         "اثر انگشت کلید سازمان"
+      ],
+      "Select your pricing plan": [
+        "طرح مورد نظر خود را انتخاب کنید"
       ],
       "Server": [
         "سرور"
@@ -2445,9 +2454,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "اگر به تنزیل طرح خود ادامه دهید، دسترسی به ویژگی های خریدنی ${ VPN_APP_NAME } را از دست خواهید داد."
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "اگر شما مایل به ادغام این حساب کاربری با یکی دیگر هستید، حذفش نکنید."
-      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "مهم: لطفا اطمینان حاصل کنید که کدهای بازیابی را ذخیره کرده‌اید. در غیر این صورت اگر دستگاه 2FA خود را گم کنید برای همیشه دسترسی به حساب خود را از دست می‌دهید."
       ],
@@ -2529,6 +2535,9 @@
       "of": [
         "از"
       ],
+      "Open source": [
+        "متن‌باز"
+      ],
       "Or select a particular server:": [
         "یا سروری خاص را انتخاب کنید:"
       ],
@@ -2547,6 +2556,9 @@
       "per month": [
         "در ماه"
       ],
+      "per month, billed at ${ price }": [
+        "به ازای هر ماه ${ price }"
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "لطفاً عبارت بازیابی ١٢ واژه‌ای مرتبط با حساب خود را وارد نمایید."
       ],
@@ -2561,6 +2573,9 @@
       ],
       "Preview": [
         "پیش‌نمایش"
+      ],
+      "Protected by Swiss privacy laws": [
+        "محافظت شده توسط قوانین حریم خصوصی سوئیس"
       ],
       "read our two-factor authentication guide first": [
         "ابتدا راهنمای تایید هویت دو مرحله‌ای ما را مطالعه کنید"
@@ -2579,6 +2594,9 @@
       ],
       "Revoke certificate ${ name }": [
         "لغو کردن گواهی ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "${ percentage } پس‌انداز کنید"
       ],
       "Save your password somewhere safe.": [
         "گذرواژه خود را در جایی امن ذخیره کنید."
@@ -2751,9 +2769,6 @@
       "Warning:": [
         "هشدار:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "هشدار: این حذف ابدیست. با این کار دسترسی به همه سرویس‌های متصل نیز از بین می‌رود و تمام مخاطبین شما پاک می‌شوند."
-      ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "توصیه میکنیم درصورت امکان از برنامه های رسمی ${ VPN_APP_NAME } استفاده کنید."
       ],
@@ -2761,7 +2776,7 @@
         "پیشنهاد می‌کنیم به‌جای آن از عبارت بازیابی خود استفاده کنید."
       ],
       "We use 3-D Secure to protect your payments": [
-        "ما برای محافظت از پرداخت‌های شما از امنیت 3 بعدی استفاده می‌کنیم"
+        "ما برای محافظت از پرداخت‌های شما از 3D Secure استفاده می‌کنیم"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "برای تکمیل این تراکنش شما از طریق یک زبانه جدید در مرورگر به PayPal منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های پیش‌آ استفاده می‌کنید، آن‌ها را غیرفعال کنید."
@@ -2843,6 +2858,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "فایل‌های شما رمزگذاری شده و سپس ذخیره می‌شوند"
+      ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "اطلاعات شما پیش ما محفوظ است. ما فقط وقتی با شما تماس می‌گیریم که برای ارائه خدمات نیاز باشد."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "رایانامه‌های سازمان شما با رمزگذاری سرتاسری توسط کلید سازمان محافظت می‌شوند. این اثر انگشت می‌تواند برای تایید این موضوع مورد استفاده قرار گیرد که تمام مدیران در حساب شما دارای کلید یکسانی هستند."
@@ -3001,6 +3019,9 @@
       ],
       "BTC amount": [
         "مبلغ بیت‌کوین"
+      ],
+      "Card details": [
+        "جزئیات کارت"
       ],
       "Card holder": [
         "صاحب کارت"
@@ -3280,9 +3301,6 @@
       ],
       "Vulnerable": [
         "آسیب پذیر"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "ما متاسفیم که میبینیم شما میروید. لطفاً شرح دهید که چرا ترک میکنید تا به ما در بهتر کردن کمک کنید."
       ],
       "Weak": [
         "ضعیف"
@@ -3639,11 +3657,17 @@
       "1 user": [
         "۱ کاربر"
       ],
+      "Ad-blocker and malware protection": [
+        "محدودسازی تبلیغات و محافظت در برابر بدافزارها"
+      ],
       "Admin console": [
         "کنسول مدیریت"
       ],
       "Auto-reply": [
         "پاسخ خودکار"
+      ],
+      "Available on all platforms": [
+        "در همه پلتفرم‌ها در دسترس است"
       ],
       "Calendar sharing": [
         "اشتراک گذاری تقویم"
@@ -3693,6 +3717,9 @@
       "Free VPN on a single device": [
         "VPN رایگان در یک دستگاه"
       ],
+      "Fully refundable for 30 days": [
+        "قابل بازگشت طی ۳۰ روز"
+      ],
       "GDPR data processing agreement": [
         "توافقنامه پردازش داده های GDPR"
       ],
@@ -3715,6 +3742,9 @@
       "Multiple admin roles": [
         "نقش ها مدیریت متعدد"
       ],
+      "No-logs policy": [
+        "سیاست عدم ثبت رویدادها"
+      ],
       "Password-protected Emails": [
         "ایمیل محافظت شده با رمزعبور"
       ],
@@ -3723,6 +3753,9 @@
       ],
       "Priority support": [
         "اولویت پشتیبانی"
+      ],
+      "Priority support & live chat": [
+        "پشتیبانی با الویت بالا و گفتگوی آنلاین"
       ],
       "Router support": [
         "پشتیبانی روتر"
@@ -3853,6 +3886,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "کلیک کردن روی «پرداخت»، نشان موافقت شما با ${ termsAndConditions } است."
+      ],
       "terms and conditions": [
         "شرایط و ضوابط"
       ]
@@ -4100,6 +4136,9 @@
     "Payments": {
       "Card number": [
         "شماره كارت"
+      ],
+      "CVC": [
+        "کد امنیتی"
       ],
       "Got it": [
         "متوجه شدم"
@@ -5393,6 +5432,11 @@
     "vpn_2step: discount": {
       "monthly": [
         "ماهانه"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "سفارشی‌سازی پیشرفته VPN"
       ]
     },
     "vpn_2step: info": {

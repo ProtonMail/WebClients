@@ -1271,7 +1271,7 @@
         "Basculer vers ou ajouter un compte"
       ],
       "Take a tour": [
-        "Visite guidée"
+        "Laissez-vous guider"
       ],
       "This message contains embedded images.": [
         "Ce message contient des images intégrées."
@@ -1969,7 +1969,7 @@
         "Configurez d'autres fonctionnalités"
       ],
       "Take a tour": [
-        "Visite guidée"
+        "Laissez-vous guider"
       ]
     },
     "Calendar attachment tooltip": {
@@ -10419,6 +10419,9 @@
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
       ],
+      "Special offer": [
+        "Offre spéciale"
+      ],
       "This offer won't be shown again.": [
         "Cette offre ne sera plus affichée."
       ],
@@ -10707,14 +10710,6 @@
       ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Partage de coffre-fort sécurisé (${ n } coffre-fort)",
-        "Partage de coffres-forts sécurisés (${ n } coffres-forts)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
-        "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11744,7 +11739,7 @@
         "Passez à Premium"
       ],
       "Upgrade for ${ pricingTitle }": [
-        "Passez à un abonnement supérieur pour ${ pricingTitle }"
+        "Changez d'abonnement pour ${ pricingTitle }"
       ]
     },
     "specialoffer: Offers": {
@@ -12031,6 +12026,9 @@
       "Billed every 2 years": [
         "Facturé tous les 2 ans"
       ],
+      "Billed every 6 months": [
+        "Facturation tous les 6 mois"
+      ],
       "Billed for 15 months": [
         "Facturé pour 15 mois"
       ],
@@ -12108,47 +12106,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pour ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription reminder": {
@@ -12409,6 +12366,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -13743,6 +13741,11 @@
         "Aujourd'hui"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatique : le format utilisé dans l'éditeur est utilisé pour l'envoi à cet utilisateur. Texte brut : le message sera toujours converti en texte brut lors de l'envoi."
@@ -13824,11 +13827,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
     "Tor out of date": {

@@ -5009,6 +5009,11 @@
         "Cor selecionada:"
       ]
     },
+    "Info for cash payment method": {
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Encontre as instruções no artigo: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Clique para ver detalhes"
@@ -7234,6 +7239,12 @@
       "Maybe later": [
         "Talvez mais tarde"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "A oferta expira a ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Pague anualmente e assegure nossa melhor oferta"
+      ],
       "Save": [
         "Economize"
       ],
@@ -7246,6 +7257,9 @@
       "Save big when you pay annually": [
         "Aproveite descontos incríveis ao pagar anualmente!"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "This offer won't be shown again.": [
         "Esta oferta não será exibida novamente."
       ],
@@ -7254,6 +7268,9 @@
       ],
       "You currently pay": [
         "Você paga atualmente"
+      ],
+      "Your subscription renews soon": [
+        "Sua assinatura renovará em breve"
       ]
     },
     "Offer feature": {
@@ -7318,14 +7335,6 @@
       ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Compartilhamento seguro de cofre (${ n } cofre)",
-        "Compartilhamento seguro de cofre (${ n } cofres)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartilhamento seguro de cofre (${ n } cofre) e compartilhamento de link.",
-        "Compartilhamento seguro de cofre (${ n } cofres) e compartilhamento de link."
       ]
     },
     "pass_signup_2024: Info": {
@@ -8297,6 +8306,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Cobrado a cada 2 anos"
+      ],
+      "Billed every 6 months": [
+        "Cobrado a cada 6 meses"
       ],
       "Billed for 15 months": [
         "Cobrança a cada 15 meses"

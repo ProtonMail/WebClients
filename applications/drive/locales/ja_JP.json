@@ -45,6 +45,9 @@
       "Add": [
         "追加"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "新しいアルバムに ${ photos.length } 枚の写真を追加"
+      ],
       "Add account": [
         "アカウントを追加"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add to group": [
         "グループに追加"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "「${ album.name }」に追加（${ album.photoCount } 枚の写真）"
       ],
       "Album name": [
         "アルバム名"
@@ -330,6 +336,9 @@
       "Download logs": [
         "ログをダウンロードする"
       ],
+      "Download photo": [
+        "写真をダウンロード"
+      ],
       "Download without scanning": [
         "スキャンせずにダウンロード"
       ],
@@ -480,6 +489,9 @@
       "Increase": [
         "増加"
       ],
+      "Join album": [
+        "アルバムに参加"
+      ],
       "Keep my subscription": [
         "サブスクリプションを継続する"
       ],
@@ -521,6 +533,9 @@
       ],
       "Manage share": [
         "共有を管理"
+      ],
+      "Mark as favorite": [
+        "お気に入りに追加"
       ],
       "Mark as resolved": [
         "解決済みにする"
@@ -669,6 +684,9 @@
       "Remove from album": [
         "アルバムから削除"
       ],
+      "Remove from favorites": [
+        "お気に入りから削除"
+      ],
       "Remove from this list": [
         "この一覧から削除"
       ],
@@ -678,11 +696,11 @@
       "Remove me": [
         "削除"
       ],
-      "Remove Without Saving": [
-        "保存せずに削除"
-      ],
       "Rename": [
         "名前を変更"
+      ],
+      "Rename album": [
+        "アルバム名を変更"
       ],
       "Replace file": [
         "ファイルを置き換え"
@@ -750,9 +768,6 @@
       "Save": [
         "保存"
       ],
-      "Save and Remove": [
-        "保存して削除"
-      ],
       "Save changes": [
         "変更を保存"
       ],
@@ -803,6 +818,9 @@
       ],
       "Share": [
         "共有"
+      ],
+      "Share album": [
+        "アルバムを共有"
       ],
       "Share file": [
         "ファイルを共有"
@@ -3672,6 +3690,9 @@
       ]
     },
     "Heading": {
+      "Add ${ photos.length } photo to": [
+        "${ photos.length } 枚の写真を追加"
+      ],
       "All albums": [
         "すべてのアルバム"
       ],
@@ -4898,6 +4919,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME は、現在の新規作成時のモードを使用して自動的にメッセージを送信します。"
       ],
+      "Photo is not saved to your library": [
+        "写真はライブラリに保存されていません"
+      ],
       "Photo is set as album cover": [
         "写真はアルバムカバーとして設定されています"
       ],
@@ -5227,9 +5251,6 @@
       ],
       "This item already exists in your library": [
         "このアイテムはすでにライブラリに存在します"
-      ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "このアイテムは写真ライブラリに保存されていません。 このアルバムから削除すると、二度と見れなくなります。削除前に保存しますか？"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
@@ -5647,6 +5668,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your photo has been removed from the album": [
+        "写真がアルバムから削除されました"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "あなたのプランでは、最大 7 日間 10 バージョンに制限されています"
@@ -8027,6 +8051,12 @@
       "Maybe later": [
         "またあとで"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "オファーの有効期限は ${ formattedDate }です。"
+      ],
+      "Pay annually, secure our best offer": [
+        "毎年払い、安全な私たちの最高のオファー"
+      ],
       "Save": [
         "節約"
       ],
@@ -8039,6 +8069,9 @@
       "Save big when you pay annually": [
         "年払いで大幅に節約"
       ],
+      "Special offer": [
+        "特別オファー"
+      ],
       "This offer won't be shown again.": [
         "このオファーは二度と表示されません。"
       ],
@@ -8047,6 +8080,9 @@
       ],
       "You currently pay": [
         "現在の支払い方法"
+      ],
+      "Your subscription renews soon": [
+        "サブスクリプションはまもなく更新されます"
       ]
     },
     "Offer feature": {
@@ -8261,12 +8297,6 @@
       ],
       "Secure vault sharing": [
         "安全な保管庫共有"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全な保管庫の共有 (${ n } 個の保管庫)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全な保管庫共有 (${ n } 個の保管庫) とリンクの共有"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10067,9 +10097,6 @@
       "Delete ${ count } contact group": [
         "${ count } 件の連絡先を削除"
       ],
-      "Delete ${ item.name }?": [
-        "${ item.name }を削除しますか？"
-      ],
       "Delete ${ links.length } items?": [
         "${ links.length }個のアイテムを削除しますか？"
       ],
@@ -10336,9 +10363,6 @@
       ],
       "Remove device?": [
         "デバイスを削除しますか？"
-      ],
-      "Remove items": [
-        "アイテムを削除"
       ],
       "Rename a file": [
         "ファイル名の変更"
