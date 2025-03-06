@@ -25,7 +25,7 @@ import { rejectAllSuggestions } from '../Plugins/Suggestions/rejectAllSuggestion
 import { removeCommentThreadMarks } from '../Tools/removeCommentThreadMarks'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { SHOW_ALL_COMMENTS_COMMAND } from '../Commands'
-import { type LexicalEditor, type SerializedEditorState } from 'lexical'
+import { $getSelection, $setSelection, type LexicalEditor, type SerializedEditorState } from 'lexical'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useSyncedState } from '../Hooks/useSyncedState'
 import * as config from '../config'
@@ -33,11 +33,12 @@ import clsx from '@proton/utils/clsx'
 import debounce from '@proton/utils/debounce'
 import locales from '../locales'
 import noop from '@proton/utils/noop'
-import type { EditorState } from 'lexical'
+import type { EditorState, BaseSelection } from 'lexical'
 import type { useBridge } from '../Lib/useBridge'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useEditorStateValues } from '../Lib/useEditorStateValues'
 import { useEditorState } from './EditorStateProvider'
+import { IS_CHROME } from '../Shared/environment'
 
 type AppProps = {
   systemMode: EditorSystemMode
@@ -87,9 +88,23 @@ export function App({ systemMode, bridgeState }: AppProps) {
     })
   }, [userMode])
 
+  const updateFrameSize = useCallback(() => {
+    if (!bridge || !editorRef.current) {
+      return
+    }
+    const rootElement = editorRef.current.getRootElement()
+    if (rootElement) {
+      bridge.getClientInvoker().updateFrameSize(rootElement.scrollHeight)
+    }
+  }, [bridge])
+
   const setEditorRef = useCallback(
     (instance: LexicalEditor | null) => {
       editorRef.current = instance
+
+      if (editorRef.current) {
+        updateFrameSize()
+      }
 
       /**
        * Remove comment marks if we are in system presentation mode.
@@ -103,11 +118,55 @@ export function App({ systemMode, bridgeState }: AppProps) {
         rejectAllSuggestions(editorRef.current)
       }
     },
-    [systemMode],
+    [systemMode, updateFrameSize],
   )
 
   const notifyParentEditorIsReady = useCallback(() => {
     window.parent.postMessage(EDITOR_READY_POST_MESSAGE_EVENT, BridgeOriginProvider.GetClientOrigin())
+  }, [])
+
+  const scrollPositionBeforePrint = useRef<number | null>(null)
+  const selectionBeforePrint = useRef<BaseSelection | null>(null)
+  const applyBeforePrintFixesForChrome = useCallback(() => {
+    const editor = editorRef.current
+    if (!editor) {
+      throw new Error('Trying to print document before the editor is ready.')
+    }
+    if (!IS_CHROME) {
+      return
+    }
+    /**
+     * Opening the print dialog directly on Chrome (e.g using the Cmd+P shortcut)
+     * when the focus is in the editor scrolls the editor to the top, and if the
+     * selection is collapsed correctly restores the scroll position after print.
+     * However, if it is not collapsed it doesn't restore the scroll position.
+     * So we store the current scroll position so that we can restore it ourselves.
+     */
+    const rootElement = editor.getRootElement()
+    const scrollContainer = rootElement?.parentElement
+    if (scrollContainer) {
+      scrollPositionBeforePrint.current = scrollContainer.scrollTop
+    }
+    /*
+     * Chrome has an issue when the editor is scrolled and there is
+     * a selection, calling `window.print` only prints a cut-out version
+     * of the document and opening print dialog directly prints a
+     * shrunk down version of the document.
+     * So we remove the selection before printing, and reinstate it on
+     * afterprint.
+     */
+    if (!selectionBeforePrint.current) {
+      editor.update(
+        () => {
+          const selection = $getSelection()
+          selectionBeforePrint.current = selection ? selection.clone() : null
+          $setSelection(null)
+        },
+        {
+          discrete: true,
+        },
+      )
+    }
   }, [])
 
   useEffect(() => {
@@ -270,7 +329,18 @@ export function App({ systemMode, bridgeState }: AppProps) {
       },
 
       async printAsPDF(): Promise<void> {
-        window.print()
+        applyBeforePrintFixesForChrome()
+        if (IS_CHROME) {
+          // Because of the chrome print bug, we need to wait for the
+          // removal of the selection to actually get committed before
+          // we call `window.print`. The timeout is not required when
+          // the print dialog is opened directly.
+          setTimeout(() => {
+            window.print()
+          })
+        } else {
+          window.print()
+        }
       },
 
       async getCurrentEditorState(): Promise<SerializedEditorState | undefined> {
@@ -289,7 +359,15 @@ export function App({ systemMode, bridgeState }: AppProps) {
     bridge.setClientRequestHandler(requestHandler)
 
     notifyParentEditorIsReady()
-  }, [bridge, docMap, application, docState, notifyParentEditorIsReady, setEditorConfig])
+  }, [
+    bridge,
+    docMap,
+    application,
+    docState,
+    notifyParentEditorIsReady,
+    setEditorConfig,
+    applyBeforePrintFixesForChrome,
+  ])
 
   const onUserModeChange = useCallback(
     (mode: EditorUserMode) => {
@@ -308,33 +386,60 @@ export function App({ systemMode, bridgeState }: AppProps) {
   )
 
   useEffect(() => {
-    if (!bridge || !editorRef || !editorRef.current) {
+    if (!bridge) {
       return
-    }
-
-    const updateFrameSize = () => {
-      const element = editorRef.current?.getRootElement()
-      if (element) {
-        void bridge.getClientInvoker().updateFrameSize(element.scrollHeight)
-      }
     }
 
     const updateFrameSizeDebounced = debounce(() => {
       updateFrameSize()
     }, 1_000)
 
-    const removeListener = editorRef.current.registerUpdateListener(updateFrameSizeDebounced)
+    const removeListener = editorRef.current?.registerUpdateListener(updateFrameSizeDebounced)
     window.addEventListener('resize', updateFrameSizeDebounced)
-    window.addEventListener('beforeprint', updateFrameSize)
 
     updateFrameSize()
 
     return () => {
-      removeListener()
+      removeListener?.()
       window.removeEventListener('resize', updateFrameSizeDebounced)
-      window.removeEventListener('beforeprint', updateFrameSize)
     }
-  }, [bridge])
+  }, [bridge, updateFrameSize])
+
+  useEffect(() => {
+    function handleBeforePrint(event: Event) {
+      event.preventDefault()
+      updateFrameSize()
+      applyBeforePrintFixesForChrome()
+    }
+
+    function handleAfterPrint() {
+      if (IS_CHROME) {
+        editorRef.current?.update(() => {
+          if (selectionBeforePrint.current) {
+            $setSelection(selectionBeforePrint.current)
+          }
+          selectionBeforePrint.current = null
+        })
+        const rootElement = editorRef.current?.getRootElement()
+        const scrollContainer = rootElement?.parentElement
+        const scrollPositionBefore = scrollPositionBeforePrint.current
+        if (scrollContainer && scrollPositionBefore !== null) {
+          const scrollPositionAfter = scrollContainer.scrollTop
+          if (scrollPositionBefore !== scrollPositionAfter) {
+            scrollContainer.scrollTop = scrollPositionBefore
+          }
+        }
+      }
+    }
+
+    window.addEventListener('beforeprint', handleBeforePrint)
+    window.addEventListener('afterprint', handleAfterPrint)
+
+    return () => {
+      window.removeEventListener('beforeprint', handleBeforePrint)
+      window.removeEventListener('afterprint', handleAfterPrint)
+    }
+  }, [applyBeforePrintFixesForChrome, updateFrameSize])
 
   const onEditorLoadResult = useCallback(
     (result: TranslatedResult<void>) => {

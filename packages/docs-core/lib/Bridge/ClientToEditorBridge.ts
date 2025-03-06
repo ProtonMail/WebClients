@@ -37,11 +37,11 @@ export class ClientToEditorBridge {
 
   constructor(
     private editorFrame: HTMLIFrameElement,
-    private readonly editorController: EditorOrchestratorInterface,
+    private readonly orchestrator: EditorOrchestratorInterface,
     private readonly eventBus: InternalEventBusInterface,
     private readonly syncedEditorState: SyncedEditorState,
   ) {
-    this.editorRequestHandler = new EditorToClientRequestHandler(this.editorFrame, this.editorController, this.eventBus)
+    this.editorRequestHandler = new EditorToClientRequestHandler(this.editorFrame, this.orchestrator, this.eventBus)
 
     this.syncedEditorState.subscribeToAnyProperty((property, value) => {
       void this.editorInvoker.syncProperty(property, value)
@@ -72,7 +72,7 @@ export class ClientToEditorBridge {
       }
     })
 
-    editorController.provideEditorInvoker(this.editorInvoker)
+    orchestrator.provideEditorInvoker(this.editorInvoker)
   }
 
   private async handleEditorRequestingClientMethod(
