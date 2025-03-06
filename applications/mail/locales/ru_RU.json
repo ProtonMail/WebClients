@@ -1957,6 +1957,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Закрыть"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ],
@@ -10737,6 +10740,12 @@
       "Maybe later": [
         "Может быть позже"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Срок действия предложения истекает ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Платите ежегодно, получите наше лучшее предложение"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -10749,6 +10758,9 @@
       "Save big when you pay annually": [
         "Экономьте больше, когда платите ежегодно"
       ],
+      "Special offer": [
+        "Специальное предложение"
+      ],
       "This offer won't be shown again.": [
         "Это предложение больше не будет показано."
       ],
@@ -10757,6 +10769,9 @@
       ],
       "You currently pay": [
         "Вы оплачиваете сейчас"
+      ],
+      "Your subscription renews soon": [
+        "Ваша подписка скоро обновится"
       ]
     },
     "Offer feature": {
@@ -11028,18 +11043,6 @@
       ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12414,6 +12417,9 @@
       "Billed every 2 years": [
         "Оплата каждые 2 года"
       ],
+      "Billed every 6 months": [
+        "Списано каждые 6 месяцев"
+      ],
       "Billed for 15 months": [
         "Оплата за 15 месяцев."
       ],
@@ -12501,47 +12507,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription reminder": {
@@ -12814,6 +12779,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -14234,6 +14240,11 @@
         "Сегодня"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
@@ -14315,11 +14326,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Tor out of date": {
