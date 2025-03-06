@@ -52,6 +52,7 @@ export const AlbumsView: FC = () => {
         linkId,
         albums,
         isPhotosLoading,
+        isAlbumsLoading,
         userAddressEmail,
         loadPhotoLink,
         requestDownload,
@@ -135,7 +136,7 @@ export const AlbumsView: FC = () => {
     const isAlbumsEmpty = albums.length === 0;
     const filteredAlbums = filterAlbums(albums, userAddressEmail, selectedTags[0]);
 
-    if (!shareId || !linkId || isPhotosLoading) {
+    if (!shareId || !linkId || isPhotosLoading || isAlbumsLoading) {
         return <Loader />;
     }
 
