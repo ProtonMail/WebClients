@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -18,13 +18,15 @@ import {
 } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 
 type Props = {
     dense?: boolean;
     onAction?: () => void;
+    heading?: ReactNode;
 };
 
-export const SharedMenuContent: FC<Props> = ({ dense, onAction }) => {
+export const SharedMenuContent: FC<Props> = ({ heading, dense, onAction }) => {
     const scope = useItemScope();
 
     const sharedWithMeCount = useSelector(selectSharedWithMeCount);
@@ -32,40 +34,40 @@ export const SharedMenuContent: FC<Props> = ({ dense, onAction }) => {
     const secureLinksCount = useSelector(selectSecureLinksCount);
     const passPlan = useSelector(selectPassPlan);
     const free = passPlan === UserPassPlan.FREE;
-
-    return (
-        <>
-            {sharedWithMeCount > 0 && (
-                <FeatureFlag feature={PassFeature.PassItemSharingV1}>
-                    <SharedMenuItem
-                        upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
-                        label={c('Label').t`Shared with me`}
-                        count={sharedWithMeCount}
-                        selected={scope === 'shared-with-me'}
-                        to="shared-with-me"
-                        icon="user-arrow-left"
-                        onAction={onAction}
-                        dense={dense}
-                    />
-                </FeatureFlag>
-            )}
-
-            {sharedByMeCount > 0 && (
-                <FeatureFlag feature={PassFeature.PassItemSharingV1}>
-                    <SharedMenuItem
-                        upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
-                        label={c('Label').t`Shared by me`}
-                        count={sharedByMeCount}
-                        selected={scope === 'shared-by-me'}
-                        to="shared-by-me"
-                        icon="user-arrow-right"
-                        onAction={onAction}
-                        dense={dense}
-                    />
-                </FeatureFlag>
-            )}
-
+    const elements = [
+        sharedWithMeCount > 0 && (
+            <FeatureFlag feature={PassFeature.PassItemSharingV1}>
+                <SharedMenuItem
+                    key="shared-with-me"
+                    upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
+                    label={c('Label').t`Shared with me`}
+                    count={sharedWithMeCount}
+                    selected={scope === 'shared-with-me'}
+                    to="shared-with-me"
+                    icon="user-arrow-left"
+                    onAction={onAction}
+                    dense={dense}
+                />
+            </FeatureFlag>
+        ),
+        sharedByMeCount > 0 && (
+            <FeatureFlag feature={PassFeature.PassItemSharingV1}>
+                <SharedMenuItem
+                    key="shared-by-me"
+                    upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
+                    label={c('Label').t`Shared by me`}
+                    count={sharedByMeCount}
+                    selected={scope === 'shared-by-me'}
+                    to="shared-by-me"
+                    icon="user-arrow-right"
+                    onAction={onAction}
+                    dense={dense}
+                />
+            </FeatureFlag>
+        ),
+        secureLinksCount > 0 && (
             <SharedMenuItem
+                key="secure-links"
                 upsellRef={free ? UpsellRef.SECURE_LINKS : undefined}
                 label={c('Action').t`Secure links`}
                 count={secureLinksCount}
@@ -75,6 +77,13 @@ export const SharedMenuContent: FC<Props> = ({ dense, onAction }) => {
                 onAction={onAction}
                 dense={dense}
             />
+        ),
+    ].filter(truthy);
+
+    return (
+        <>
+            {elements.length > 0 && heading}
+            {elements}
         </>
     );
 };
@@ -86,16 +95,19 @@ export const SharedMenu = memo(() => {
 
     return (
         <div className="flex flex-column w-full">
-            <div className="px-2 flex flex-nowrap items-center gap-3 w-full mb-2">
-                <span className="text-ellipsis color-weak"> {c('Label').t`Shared`}</span>
-                {free && (
-                    <PassPlusPromotionButton
-                        style={{ '--background-norm': 'var(--background-strong)' }}
-                        onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING })}
-                    />
-                )}
-            </div>
-            <SharedMenuContent />
+            <SharedMenuContent
+                heading={
+                    <div className="px-2 flex flex-nowrap items-center gap-3 w-full mb-2">
+                        <span className="text-ellipsis color-weak"> {c('Label').t`Shared`}</span>
+                        {free && (
+                            <PassPlusPromotionButton
+                                style={{ '--background-norm': 'var(--background-strong)' }}
+                                onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING })}
+                            />
+                        )}
+                    </div>
+                }
+            />
         </div>
     );
 });
