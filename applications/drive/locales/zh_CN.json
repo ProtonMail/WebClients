@@ -45,6 +45,9 @@
       "Add": [
         "添加"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "添加 ${ photos.length } 照片到新相册"
+      ],
       "Add account": [
         "添加帐户"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add to group": [
         "添加至群组"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "添加到 \"${ album.name }\" (${ album.photoCount } 照片)"
       ],
       "Album name": [
         "相册名称"
@@ -330,6 +336,9 @@
       "Download logs": [
         "下载日志"
       ],
+      "Download photo": [
+        "下载照片"
+      ],
       "Download without scanning": [
         "下载时不扫描"
       ],
@@ -480,6 +489,9 @@
       "Increase": [
         "增加"
       ],
+      "Join album": [
+        "加入相册"
+      ],
       "Keep my subscription": [
         "保留订阅"
       ],
@@ -522,6 +534,9 @@
       "Manage share": [
         "管理共享"
       ],
+      "Mark as favorite": [
+        "标记为收藏"
+      ],
       "Mark as resolved": [
         "标记为已解决"
       ],
@@ -559,7 +574,7 @@
         "移动至文件夹"
       ],
       "Move to trash": [
-        "移至废件箱"
+        "移至回收站"
       ],
       "Name your album": [
         "命名您的相册"
@@ -666,6 +681,12 @@
       "Remove device": [
         "移除设备"
       ],
+      "Remove from album": [
+        "从相册中移除"
+      ],
+      "Remove from favorites": [
+        "从收藏夹中删除"
+      ],
       "Remove from this list": [
         "从此列表中移除"
       ],
@@ -677,6 +698,9 @@
       ],
       "Rename": [
         "重命名"
+      ],
+      "Rename album": [
+        "重命名相册"
       ],
       "Replace file": [
         "替换文件"
@@ -795,6 +819,9 @@
       "Share": [
         "分享"
       ],
+      "Share album": [
+        "分享相册"
+      ],
       "Share file": [
         "共享文件"
       ],
@@ -823,7 +850,7 @@
         "显示侧边栏"
       ],
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Sign out of all accounts": [
         "退出所有账户"
@@ -934,7 +961,7 @@
         "上传图片"
       ],
       "Use ${ label } theme": [
-        "使用 ${ label } 配色"
+        "使用 ${ label } 主题"
       ],
       "Use a different card": [
         "使用其他银行卡"
@@ -1009,7 +1036,7 @@
         "${ domains } 个额外的自有域名"
       ],
       "${ ips } server": [
-        "${ ips } 个服务器"
+        "${ ips } 台服务器"
       ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
@@ -3662,6 +3689,17 @@
         "安全中心"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "添加 ${ photos.length } 照片到"
+      ],
+      "All albums": [
+        "所有相册"
+      ],
+      "Recent": [
+        "最近使用"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "已找到${ itemsCount }建议，请使用键盘导航。"
@@ -4242,6 +4280,9 @@
       "Attention required": [
         "需要关注"
       ],
+      "Automated Recovery ${ formattedDate }": [
+        "自动恢复 ${ formattedDate }"
+      ],
       "Available": [
         "可用"
       ],
@@ -4462,7 +4503,7 @@
         "自动对邮件进行数字签名"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "超过 30 天前移至废件箱和垃圾邮件的电子邮件将自动清除。"
+        "超过 30 天前移至回收站和垃圾邮件的电子邮件将自动清除。"
       ],
       "Empty folder": [
         "空文件夹"
@@ -4824,6 +4865,9 @@
       "of": [
         "，共"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "此过程完成后，您会在一个名为 \"自动恢复 (今天的日期)\" 的新文件夹中找到已恢复数据的副本。该数据副本不计入存储配额。"
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "其中一个加密网盘已被锁定。 这很可能是由于最近密码重置。"
       ],
@@ -4847,6 +4891,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "我们的系统检测到您之前的恢复没有成功完成，某些文件可能没有完全恢复。我们已自动重新启动恢复程序，以确保所有内容都已完全恢复。"
       ],
       "Owner": [
         "所有者"
@@ -5409,6 +5456,9 @@
       "We need to authenticate your payment with your bank.": [
         "我们需要与您的发卡银行确认支付。"
       ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "对于给您带来的不便，我们深表歉意。"
+      ],
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
       ],
@@ -5616,6 +5666,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
       ],
+      "Your photo has been removed from the album": [
+        "您的照片已从相册中删除"
+      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "您的计划仅限 10 个版本，最长 7 天"
       ],
@@ -5635,6 +5688,14 @@
     "info": {
       "Selected color:": [
         "所选颜色"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "如何进行现金支付？"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "请参阅文章中的说明：${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -6219,7 +6280,7 @@
         "系统信息"
       ],
       "Theme": [
-        "配色"
+        "主题"
       ],
       "This will permanently delete all files in your locked drive.": [
         "这将永久删除您的锁定网盘中的所有文件。"
@@ -6344,6 +6405,9 @@
       "Add a gift code": [
         "使用礼品码"
       ],
+      "Albums": [
+        "相册"
+      ],
       "All mail": [
         "所有邮件"
       ],
@@ -6408,7 +6472,7 @@
         "安全上网"
       ],
       "Trash": [
-        "废件箱"
+        "回收站"
       ],
       "What’s this?": [
         "这是什么？"
@@ -6952,10 +7016,10 @@
         "一次轻松订阅，享受所有高级 ${ BRAND_NAME } 服务"
       ],
       "Auto-delete Spam and Trash": [
-        "自动清理垃圾邮件和废件箱"
+        "自动清理垃圾邮件和回收站"
       ],
       "Auto-delete spam and trashed messages": [
-        "自动删除垃圾邮件和废件箱中邮件"
+        "自动删除垃圾邮件和回收站中邮件"
       ],
       "Auto-reply": [
         "自动回复"
@@ -7434,7 +7498,7 @@
         "可对收到的邮件自动予以回复"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "垃圾邮件和废件箱中的邮件超过 30 天自动删除"
+        "垃圾邮件和回收站中的邮件超过 30 天自动删除"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
         "将您的 ${ MAIL_APP_NAME } 账户收到的邮件自动转发至其他邮箱。"
@@ -7984,6 +8048,12 @@
       "Maybe later": [
         "以后再说"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "优惠有效期至 ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "按年支付，确保我们的最佳优惠"
+      ],
       "Save": [
         "节省"
       ],
@@ -7996,6 +8066,9 @@
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
       ],
+      "Special offer": [
+        "特价"
+      ],
       "This offer won't be shown again.": [
         "此优惠不再显示。"
       ],
@@ -8004,6 +8077,9 @@
       ],
       "You currently pay": [
         "您目前支付"
+      ],
+      "Your subscription renews soon": [
+        "您的订阅即将续订"
       ]
     },
     "Offer feature": {
@@ -8218,12 +8294,6 @@
       ],
       "Secure vault sharing": [
         "安全保险库共享"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全保险库共享 ( ${ n } 保险库 )"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全保险库共享 (${ n } 个保险库) 和链接共享"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8818,7 +8888,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Stay signed in": [
         "保持登录"
@@ -8832,10 +8902,10 @@
         "${ passwordReset }现已可用。"
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "如果您在重置密码完成之前退出，您可能会失去对账户的访问权限。"
+        "如果您在重置密码完成之前登出，您可能会失去对账户的访问权限。"
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "如果您未重置密码就退出，您可能会失去对账户的访问权限。"
+        "如果您未重置密码就登出，您可能会失去对账户的访问权限。"
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "您可以在${ boldTimeLeft }之内重置密码。"
@@ -8848,7 +8918,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "退出而不重置密码？"
+        "登出而不重置密码？"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -9910,6 +9980,9 @@
       "Auto-deletion is active": [
         "自动删除已启用"
       ],
+      "Automatic Recovery in Progress": [
+        "正在进行自动恢复"
+      ],
       "Billing cycle": [
         "计费周期"
       ],
@@ -10020,9 +10093,6 @@
       ],
       "Delete ${ count } contact group": [
         "删除 ${ count } 个联系人组"
-      ],
-      "Delete ${ item.name }?": [
-        "删除 ${ item.name }？"
       ],
       "Delete ${ links.length } items?": [
         "删除 ${ links.length } 项目？"
@@ -10361,7 +10431,7 @@
         "登录并授予权限"
       ],
       "Sign out": [
-        "退出"
+        "登出"
       ],
       "Size": [
         "大小"
@@ -10406,7 +10476,7 @@
         "总大小"
       ],
       "Trash": [
-        "废件箱"
+        "回收站"
       ],
       "Type": [
         "类型"

@@ -305,6 +305,9 @@
       "Delete version": [
         "Elimina versione"
       ],
+      "Delete without saving": [
+        "Elimina senza salvare"
+      ],
       "Deselect all": [
         "Deseleziona tutto"
       ],
@@ -319,6 +322,12 @@
       ],
       "Display navigation bar": [
         "Visualizza la barra di navigazione"
+      ],
+      "Display next": [
+        "Visualizza successivo"
+      ],
+      "Display previous": [
+        "Visualizza precedente"
       ],
       "Done": [
         "Fatto"
@@ -495,6 +504,9 @@
       "Increase": [
         "Aumenta"
       ],
+      "Join album": [
+        "Unisciti all'album"
+      ],
       "Keep my subscription": [
         "Mantieni il mio abbonamento"
       ],
@@ -536,6 +548,9 @@
       ],
       "Manage share": [
         "Gestisci condivisione"
+      ],
+      "Mark as favorite": [
+        "Segna come preferito"
       ],
       "Mark as resolved": [
         "Segna come risolto"
@@ -684,6 +699,9 @@
       "Remove from album": [
         "Rimuovi dall'album"
       ],
+      "Remove from favorites": [
+        "Rimuovere dai preferiti"
+      ],
       "Remove from this list": [
         "Rimuovi da questa lista"
       ],
@@ -693,7 +711,7 @@
       "Remove me": [
         "Rimuovimi"
       ],
-      "Remove Without Saving": [
+      "Remove without saving": [
         "Rimuovi senza salvare"
       ],
       "Rename": [
@@ -768,11 +786,14 @@
       "Save": [
         "Salva"
       ],
-      "Save and Remove": [
-        "Salva e Rimuovi"
+      "Save and remove": [
+        "Salva e rimuovi"
       ],
       "Save changes": [
         "Salva le modifiche"
+      ],
+      "Save photos and remove": [
+        "Salva foto e rimuovi"
       ],
       "Search": [
         "Cerca"
@@ -3713,6 +3734,9 @@
       "Create new album": [
         "Crea nuovo album"
       ],
+      "Rename": [
+        "Rinomina"
+      ],
       "Security Center": [
         "Centro sicurezza"
       ]
@@ -4088,6 +4112,9 @@
         "${ album.photoCount } elemento",
         "${ album.photoCount } elementi"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } è stato eliminato correttamente"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
@@ -4148,6 +4175,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } su Play Store"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } ti ha invitato a partecipare a **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } non riuscito",
@@ -4996,6 +5026,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME invia automaticamente il messaggio usando l'attuale modalità di composizione."
       ],
+      "Photo is not saved to your library": [
+        "La foto non è salvata nella tua libreria"
+      ],
       "Photo is set as album cover": [
         "La foto è impostata come copertina dell'album."
       ],
@@ -5241,6 +5274,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alcuni dei tuoi file non sono più accessibili. Ripristina l'accesso ai tuoi file. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Alcune delle foto in questo album non sono salvate nella tua linea temporale. Eliminando questo album eliminerai anche le foto in modo permanente."
+      ],
       "Something went wrong, please try again later.": [
         "Qualcosa è andato storto, riprova più tardi."
       ],
@@ -5328,8 +5364,9 @@
       "This item already exists in your library": [
         "Questo elemento è già presente nella tua libreria"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Questo elemento non è salvato nella tua libreria Foto. Se lo rimuovi da questo album, perderai definitivamente l'accesso. Vuoi salvarlo prima di rimuoverlo?"
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Questo elemento non è salvato nella tua libreria Foto. Se lo rimuovi da questo album, perderai definitivamente l'accesso.",
+        "Alcuni degli elementi non sono salvati nella tua libreria Foto. Se li rimuovi da questo album, perderai definitivamente l'accesso."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
@@ -5342,6 +5379,9 @@
       ],
       "This month": [
         "Questo mese"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Quest'azione rimuoverà solo l'album. Le tue foto rimarranno nella tua linea temporale. Quest'azione non può essere annullata."
       ],
       "This will permanently delete the file you uploaded.": [
         "Questo eliminerà definitivamente il file caricato."
@@ -5582,6 +5622,13 @@
       ],
       "Would you like to restore your files?": [
         "Vuoi ripristinare i tuoi file?"
+      ],
+      "Would you like to save it before removing?": [
+        "Vorresti salvarlo prima di rimuoverlo?",
+        "Vorresti salvarli prima di rimuoverli?"
+      ],
+      "Would you like to save them before removing?": [
+        "Vorresti salvarle prima di rimuoverle?"
       ],
       "Writing assistant": [
         "Assistente alla scrittura"
@@ -8031,6 +8078,12 @@
       "Access updated and shared": [
         "Accesso aggiornato e condiviso"
       ],
+      "Album failed to be renamed": [
+        "Impossibile rinominare l'album"
+      ],
+      "Album renamed successfully": [
+        "Album rinominato con successo"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Tutti gli elementi verranno presto eliminati definitivamente dal cestino"
       ],
@@ -8264,6 +8317,9 @@
       "Save big when you pay annually": [
         "Risparmia di più pagando annualmente"
       ],
+      "Special offer": [
+        "Offerta speciale"
+      ],
       "This offer won't be shown again.": [
         "Questa offerta non verrà più mostrata."
       ],
@@ -8489,14 +8545,6 @@
       ],
       "Secure vault sharing": [
         "Condivisione sicura della cassaforte"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Condivisione sicura della cassaforte (${ n } cassaforte)",
-        "Condivisione sicura delle casseforti (${ n } casseforti)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Condivisione sicura della cassaforte (${ n } cassaforte) e condivisione dei collegamenti",
-        "Condivisione sicura delle casseforti (${ n } casseforti) e condivisione dei collegamenti"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9490,6 +9538,9 @@
       "Billed every 2 years": [
         "Fatturazione biennale"
       ],
+      "Billed every 6 months": [
+        "Fatturato ogni 6 mesi"
+      ],
       "Billed for 15 months": [
         "Addebitato per 15 mesi"
       ],
@@ -10348,11 +10399,11 @@
         "Elimina ${ count } gruppo di contatti",
         "Elimina ${ count } gruppi di contatti"
       ],
-      "Delete ${ item.name }?": [
-        "Eliminare ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Eliminare ${ links.length } elementi?"
+      ],
+      "Delete ${ name }?": [
+        "Eliminare ${ name }?"
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
@@ -10620,8 +10671,9 @@
       "Remove device?": [
         "Rimuovere il dispositivo?"
       ],
-      "Remove items": [
-        "Rimuovi elementi"
+      "Remove item?": [
+        "Rimuovere l'elemento?",
+        "Rimuovere gli elementi?"
       ],
       "Rename a file": [
         "Rinominare un file"

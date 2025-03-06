@@ -305,6 +305,9 @@
       "Delete version": [
         "Sürümü sil"
       ],
+      "Delete without saving": [
+        "Kaydetmeden sil"
+      ],
       "Deselect all": [
         "Tümünü bırak"
       ],
@@ -319,6 +322,12 @@
       ],
       "Display navigation bar": [
         "Gezinme çubuğunu görüntüle"
+      ],
+      "Display next": [
+        "Sonrakini görüntüle"
+      ],
+      "Display previous": [
+        "Öncekini görüntüle"
       ],
       "Done": [
         "Tamam"
@@ -342,7 +351,7 @@
         "Günlüğü indir"
       ],
       "Download photo": [
-        "Fotoğraf indir",
+        "Fotoğrafı indir",
         "Fotoğrafları indir"
       ],
       "Download without scanning": [
@@ -495,6 +504,9 @@
       "Increase": [
         "Artır"
       ],
+      "Join album": [
+        "Albüme katıl"
+      ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
@@ -536,6 +548,9 @@
       ],
       "Manage share": [
         "Paylaşım yönetimi"
+      ],
+      "Mark as favorite": [
+        "Beğenilen olarak işaretle"
       ],
       "Mark as resolved": [
         "Çözümlenmiş olarak işaretle"
@@ -682,7 +697,10 @@
         "Aygıtı kaldır"
       ],
       "Remove from album": [
-        "Albümden sil"
+        "Albümden kaldır"
+      ],
+      "Remove from favorites": [
+        "Beğenilenlerden kaldır"
       ],
       "Remove from this list": [
         "Bu listeden kaldır"
@@ -693,8 +711,8 @@
       "Remove me": [
         "Beni çıkar"
       ],
-      "Remove Without Saving": [
-        "Kaydetmeden sil"
+      "Remove without saving": [
+        "Kaydetmeden kaldır"
       ],
       "Rename": [
         "Yeniden adlandır"
@@ -768,11 +786,14 @@
       "Save": [
         "Kaydet"
       ],
-      "Save and Remove": [
-        "Kaydet ve Sil"
+      "Save and remove": [
+        "Kaydet ve kaldır"
       ],
       "Save changes": [
         "Değişiklikleri kaydet"
+      ],
+      "Save photos and remove": [
+        "Fotoğrafları kaydet ve kaldır"
       ],
       "Search": [
         "Arama"
@@ -2652,7 +2673,7 @@
     },
     "driveplus2024: Deal details": {
       "Extended version history": [
-        "Genişletilmiş sürüm geçmişi"
+        "Ayrıntılı sürüm geçmişi"
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -2824,7 +2845,7 @@
         "Kişi imzası doğrulanamadı"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
+        "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel pencereden çıkın ya da farklı bir tarayıcı deneyin."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "İçerik arama açılamadı. Lütfen uygulamayı yeniden başlatın ya da verileri temizleyin."
@@ -3713,6 +3734,9 @@
       "Create new album": [
         "Yeni albüm oluştur"
       ],
+      "Rename": [
+        "Yeniden adlandır"
+      ],
       "Security Center": [
         "Güvenlik merkezi"
       ]
@@ -4088,6 +4112,9 @@
         "${ album.photoCount } öge",
         "${ album.photoCount } öge"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } albümü silindi"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -4148,6 +4175,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store üzerinde ${ DRIVE_APP_NAME }"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } sizi **${ albumName }** albümüne katılmaya davet etti"
       ],
       "${ errorCount } failed": [
         "${ errorCount } başarısız oldu",
@@ -4994,7 +5024,10 @@
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME geçerli oluşturucu kipinde iletiyi otomatik olarak gönderir."
+        "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
+      ],
+      "Photo is not saved to your library": [
+        "Fotoğraf kitaplığınıza kaydedilmedi"
       ],
       "Photo is set as album cover": [
         "Fotoğraf albüm kapağı olarak ayarlandı"
@@ -5206,7 +5239,7 @@
         "Bağlantı ayarları ile paylaş"
       ],
       "Shared": [
-        "Paylaşılmış"
+        "Paylaşılanlar"
       ],
       "Shared by ${ rootLink.signatureEmail }": [
         "${ rootLink.signatureEmail } tarafından paylaşıldı"
@@ -5240,6 +5273,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Bazı dosyalarınıza artık erişilemiyor. Dosyalara yeniden erişim kazanın. ${ StartRecoveryButton }"
+      ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Bu albümdeki bazı fotoğraflar zaman akışınıza kaydedilmez. Bu albümü silindiğinde bu fotoğraflar kalıcı olarak silinir."
       ],
       "Something went wrong, please try again later.": [
         "Bir şeyler ters gitti. Lütfen bir süre sonra yeniden deneyin."
@@ -5328,8 +5364,9 @@
       "This item already exists in your library": [
         "Bu öge kitaplığınızda zaten var"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Bu öge fotoğraf kütüphanenize kaydedilemiş. Eğer silerseniz, erişime sonsuza dek kaybedeceksiniz. Silmeden önce kaydetmek ister misiniz ?"
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Bu öge Fotoğraflar kitaplığınızda kayıtlı değil. Ögeyi bu albümden kaldırırsanız, ögeye erişiminizi kalıcı olarak kaybedersiniz.",
+        "Seçilmiş ögelerin bazıları Fotoğraflar kitaplığınızda kayıtlı değil. Ögeleri bu albümden kaldırırsanız, ögelere erişiminizi kalıcı olarak kaybedersiniz."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
@@ -5342,6 +5379,9 @@
       ],
       "This month": [
         "Bu ay"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Bu işlem yalnızca albümü siler. Fotoğraflarınız zaman akışınızda kalır. Bu işlem geri alınamaz."
       ],
       "This will permanently delete the file you uploaded.": [
         "Bu işlem yüklediğiniz dosyayı kalıcı olarak silecek."
@@ -5583,6 +5623,13 @@
       "Would you like to restore your files?": [
         "Dosyalarınızı geri yüklemek ister misiniz?"
       ],
+      "Would you like to save it before removing?": [
+        "Onu kaldırmadan önce kaydetmek ister misiniz?",
+        "Onları kaldırmadan önce kaydetmek ister misiniz?"
+      ],
+      "Would you like to save them before removing?": [
+        "Onları kaldırmadan önce kaydetmek ister misiniz?"
+      ],
       "Writing assistant": [
         "Yazma yardımcısı"
       ],
@@ -5753,8 +5800,8 @@
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
       "Your photo has been removed from the album": [
-        "Fotoğrafınız albümden silindi",
-        "Fotoğraflarınız albümden silindi"
+        "Fotoğrafınız albümden kaldırıldı",
+        "Fotoğraflarınız albümden kaldırıldı"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tarifeniz 10 sürüm ve 7 gün ile sınırlıdır"
@@ -6547,7 +6594,7 @@
         "ayarlar"
       ],
       "Shared": [
-        "Paylaşılmış"
+        "Paylaşılanlar"
       ],
       "Shared with me": [
         "Benimle paylaşılan"
@@ -7726,7 +7773,7 @@
         "Wi-Fi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
+        "Ailenizi zararlı sitelerden koruyun ve sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
@@ -7975,6 +8022,12 @@
       "Access updated and shared": [
         "Erişim güncellendi ve paylaşıldı"
       ],
+      "Album failed to be renamed": [
+        "Albüm yeniden adlandırılamadı"
+      ],
+      "Album renamed successfully": [
+        "Albüm yeniden adlandırıldı"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
       ],
@@ -8194,7 +8247,7 @@
         "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
       ],
       "Pay annually, secure our best offer": [
-        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+        "Yıllık ödeme yapın, en iyi teklifimizi değerlendirin"
       ],
       "Save": [
         "İndirim"
@@ -8207,6 +8260,9 @@
       ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "Special offer": [
+        "Özel teklif"
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
@@ -8313,7 +8369,7 @@
         "Belgeler üzerinde iş birliği yapın"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "${ DRIVE_APP_NAME } uygulamasını koyu ya da açık kipte mi kullanmak istersiniz? Hoşunuza giden rengi seçin."
+        "${ DRIVE_APP_NAME } uygulamasını koyu ya da açık hangi temayla kullanmak istersiniz? Hoşunuza giden rengi seçin."
       ],
       "Drag and drop your files here": [
         "Dosyalarınızı sürükleyip buraya bırakın"
@@ -8433,14 +8489,6 @@
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Güvenli kasa paylaşımı (${ n } kasa)",
-        "Güvenli kasa paylaşımı (${ n } kasa)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9434,6 +9482,9 @@
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
       ],
+      "Billed every 6 months": [
+        "6 ayda bir faturalanır"
+      ],
       "Billed for 15 months": [
         "15 aylık olarak faturalanır"
       ],
@@ -10042,7 +10093,7 @@
         "Ardışık çekimler"
       ],
       "Favorites": [
-        "Sık kullanılanlar"
+        "Beğenilenler"
       ],
       "Live Photos": [
         "Live Photo çekimleri"
@@ -10127,7 +10178,7 @@
         "İşlenen"
       ],
       "Add a custom logo": [
-        "Özel bir logo ekle"
+        "Özel logo ekle"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
@@ -10292,11 +10343,11 @@
         "${ count } kişi grubunu sil",
         "${ count } kişi grubunu sil"
       ],
-      "Delete ${ item.name }?": [
-        "${ item.name } silinsin mi?"
-      ],
       "Delete ${ links.length } items?": [
         "${ links.length } öge silinsin mi?"
+      ],
+      "Delete ${ name }?": [
+        "${ name } albümü silinsin mi?"
       ],
       "Delete ${ value }": [
         "${ value } sil"
@@ -10564,8 +10615,9 @@
       "Remove device?": [
         "Aygıt kaldırılsın mı?"
       ],
-      "Remove items": [
-        "Ögeleri sil"
+      "Remove item?": [
+        "Öge kaldırılsın mı?",
+        "Ögeler kaldırılsın mı?"
       ],
       "Rename a file": [
         "Bir dosyayı yeniden adlandır"
