@@ -42,7 +42,7 @@ body {
 
 @media print {
 	// prevent cursors and names/email to be printed
-	body .Lexical__cursorsContainer {
+	.Lexical__cursorsContainer {
 		display: none;
 	}
 
