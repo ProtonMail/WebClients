@@ -1,4 +1,5 @@
-import { FieldType, FormType } from '@proton/pass/fathom';
+import { FieldType, FormType } from '@protontech/autofill';
+
 import browser from '@proton/pass/lib/globals/browser';
 
 import type { FormTrackerFieldConfig } from './types';
