@@ -717,6 +717,9 @@
       "Loading${ ellipsis }": [
         "正在載入${ ellipsis }"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "設定${ MAIL_APP_NAME }為預設電子郵件應用程式"
+      ],
       "Make it friendly": [
         "使其更友善"
       ],
@@ -1143,6 +1146,9 @@
       "Set ${ MAIL_APP_NAME } as default email application": [
         "設定${ MAIL_APP_NAME }為預設電子郵件應用程式"
       ],
+      "Set as album cover": [
+        "設定相簿封面"
+      ],
       "Set as default": [
         "設為預設"
       ],
@@ -1365,6 +1371,9 @@
       "Use ${ label } theme": [
         "使用 ${ label } 布景主題"
       ],
+      "Use ${ PASS_APP_NAME }": [
+        "使用：${ PASS_APP_NAME }"
+      ],
       "Use a different card": [
         "改用另一張卡"
       ],
@@ -1517,7 +1526,7 @@
         "${ seats }撰寫幫手就位"
       ],
       "${ users } user": [
-        "${ users } 個使用者"
+        "${ users } 位使用者"
       ]
     },
     "Alert": {
@@ -2277,7 +2286,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } 個使用者"
+        "${ users } 位使用者"
       ],
       "Total": [
         "總共"
@@ -3966,6 +3975,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「身分 \n及地址」>「短網域名稱 (pm.me)」裡面去設定。"
       ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
@@ -5731,6 +5743,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "${ BRAND_NAME }的密碼管理器使您能創建，儲存，及自動填入密碼，所以您永遠不需要重設他們。"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
       ],
@@ -6211,6 +6226,9 @@
       "Default email application": [
         "預設郵件應用程式"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "於您的裝置執行偵測，無電子郵件內容被傳送至我們的伺服器。"
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "您知道您的 ${ BRAND_NAME } 已包含加密雲端儲存空間嗎？前往 ${ DRIVE_APP_NAME }，充分利用您的空間。這是免費的。"
       ],
@@ -6604,6 +6622,9 @@
       "Low Priority": [
         "較低優先順序"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "設定${ MAIL_APP_NAME }為預設電子郵件應用程式."
+      ],
       "Manage your folders": [
         "管理您的資料夾"
       ],
@@ -6672,6 +6693,9 @@
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
+      ],
+      "More infos": [
+        "更多資訊"
       ],
       "More refine actions": [
         "更多改進動作"
@@ -7003,6 +7027,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "將 ${ MAIL_APP_NAME } 設為您的瀏覽器預設郵件應用程式。當您點擊電郵位址連結時，${ MAIL_APP_NAME } 將會自動開啟。"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "將 ${ MAIL_APP_NAME } 設為您預設郵件應用程式。當您點擊電郵位址連結時，${ MAIL_APP_NAME } 將會自動開啟。"
+      ],
       "Setting up ${ feature }…": [
         "設定${ feature }…"
       ],
@@ -7254,6 +7281,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "此寄件人的公開金鑰尚未信任。"
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "此因為您電子郵件主旨行包含密碼重設關鍵字而顯示。"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "這麼做會把您所有已登入的帳號登出。"
@@ -7744,6 +7774,14 @@
         "已選取的色彩:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "如何傳送現金付款?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "請參見此文章的指示:${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "點擊以查看詳細資料"
@@ -8195,6 +8233,9 @@
       ],
       "Don't show this again": [
         "不再顯示此內容"
+      ],
+      "Don't show this suggestion": [
+        "不再顯示此建議"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "如 Amazon, eBay, Etsy"
@@ -9044,6 +9085,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "在${ shortenedDay }"
+      ],
       "on the first Friday": [
         "第一個週五"
       ],
@@ -10162,6 +10206,12 @@
       "Maybe later": [
         "稍後再說"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "優惠將於${ formattedDate }過期."
+      ],
+      "Pay annually, secure our best offer": [
+        "每年付款，安全及最適方案"
+      ],
       "Save": [
         "儲存"
       ],
@@ -10171,6 +10221,9 @@
       "Save 80% on your first month.": [
         "首月省下80%"
       ],
+      "Special offer": [
+        "特別優惠"
+      ],
       "This offer won't be shown again.": [
         "此優惠將不再顯示。"
       ],
@@ -10179,6 +10232,9 @@
       ],
       "You currently pay": [
         "您目前付款"
+      ],
+      "Your subscription renews soon": [
+        "您的訂閱即將重新續約"
       ]
     },
     "Offer feature": {
@@ -10450,12 +10506,6 @@
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全保管庫共享(${ n }保管庫)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全保管庫共享(${ n } 保管庫)和連結共享"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11759,7 +11809,7 @@
         "${ n } 個極飆速 VPN 連線"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } 個極飆速 VPN 連線 / 每一位使用者"
+        "${ n } 組極飆速 VPN 連線 / 每一位使用者"
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
@@ -11804,47 +11854,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } 版"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
       ]
     },
     "Subscription reminder": {
@@ -12078,6 +12087,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {
@@ -13078,6 +13128,9 @@
       "Notes": [
         "備註"
       ],
+      "On-device suggestions": [
+        "裝置上建議"
+      ],
       "One email, many recipients": [
         "一個電子郵件，多位收件者"
       ],
@@ -13366,6 +13419,11 @@
         "今天"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
@@ -13449,11 +13507,6 @@
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "穩定版本"
@@ -13491,13 +13544,13 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } 台伺服器"
+        "${ n } 臺伺服器"
       ],
       "${ n } VPN connection": [
         "${ n } 條VPN連線"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } 台，分布於 ${ numberOfCountries }+ 個國家"
+        "${ numberOfServers } 臺伺服器，橫跨 ${ numberOfCountries }+ 個國家"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"
