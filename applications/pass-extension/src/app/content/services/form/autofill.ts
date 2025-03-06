@@ -1,8 +1,8 @@
+import { FieldType, FormType, isIgnored } from '@protontech/autofill';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { type FieldHandle, type FormHandle, NotificationAction } from 'proton-pass-extension/app/content/types';
 import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 
-import { FieldType, FormType, isIgnored } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
