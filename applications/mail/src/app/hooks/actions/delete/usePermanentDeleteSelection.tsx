@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton, Prompt, useApi, useModalState, useNotifications } from '@proton/components';
+import { ErrorButton, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
@@ -12,6 +12,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
 import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
+import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { isConversation } from '../../../helpers/elements';
@@ -142,12 +143,14 @@ export const getNotificationText = (
  */
 export const usePermanentDeleteSelection = (labelID: string) => {
     const { createNotification } = useNotifications();
+    const { call } = useEventManager();
     const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
     const optimisticDelete = useOptimisticDelete();
     const dispatch = useMailDispatch();
     const { sendSimpleActionReport } = useListTelemetry();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
+    const isES = useIsEncryptedSearch();
 
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
     const [deleteModalProps, setDeleteModalOpen] = useModalState();
@@ -200,7 +203,10 @@ export const usePermanentDeleteSelection = (labelID: string) => {
             dispatch(backendActionFinished());
         }
         // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
-        // await call();
+        // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+        if (isES) {
+            await call();
+        }
     };
 
     const deleteSelectionModal = (
