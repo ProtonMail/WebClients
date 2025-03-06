@@ -1,5 +1,5 @@
 import type React from 'react';
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
@@ -48,7 +48,6 @@ export const usePhotosWithAlbumsView = () => {
         shareId,
         linkId,
         isPhotosLoading,
-        isAlbumsLoading,
         isAlbumPhotosLoading,
         volumeId,
         photos,
@@ -67,6 +66,7 @@ export const usePhotosWithAlbumsView = () => {
     } = usePhotosWithAlbums();
     const { addToQueue } = useLinksQueue({ loadThumbnails: true });
     const { download } = useDownloadProvider();
+    const [isAlbumsLoading, setIsAlbumsLoading] = useState<boolean>(true);
 
     const abortSignal = useAbortSignal([shareId, linkId]);
     const cache = shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
@@ -247,15 +247,24 @@ export const usePhotosWithAlbumsView = () => {
         const abortController = new AbortController();
 
         if (albumShareId && albumLinkId) {
-            void loadSharedWithMeAlbums(abortController.signal);
-            void loadAlbums(abortController.signal).then(() => {
+            setIsAlbumsLoading(true);
+            void Promise.all([
+                loadSharedWithMeAlbums(abortController.signal),
+                loadAlbums(abortController.signal),
+            ]).finally(() => {
+                setIsAlbumsLoading(false);
                 void loadAlbumPhotos(abortController.signal, albumShareId, albumLinkId);
             });
         } else {
             // If loading /photos first, defer loading of albums after photos
             void loadPhotos(abortController.signal).then(() => {
-                void loadAlbums(abortController.signal);
-                void loadSharedWithMeAlbums(abortController.signal);
+                setIsAlbumsLoading(true);
+                void Promise.all([
+                    loadAlbums(abortController.signal),
+                    loadSharedWithMeAlbums(abortController.signal),
+                ]).finally(() => {
+                    setIsAlbumsLoading(false);
+                });
             });
         }
 
@@ -394,7 +403,7 @@ export const usePhotosWithAlbumsView = () => {
             }
             return addAlbumPhotos(abortSignal, albumShareId, albumLinkId, [linkId]);
         },
-        [albumLinkId, albumShareId, addAlbumPhotos]
+        [albumLinkId, addAlbumPhotos]
     );
 
     const setPhotoAsCover = useCallback(
