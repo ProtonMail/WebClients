@@ -305,6 +305,9 @@
       "Delete version": [
         "Slett versjon"
       ],
+      "Delete without saving": [
+        "Slett uten å lagre"
+      ],
       "Deselect all": [
         "Fjern merket for alle"
       ],
@@ -319,6 +322,12 @@
       ],
       "Display navigation bar": [
         "Vis navigasjonslinjen"
+      ],
+      "Display next": [
+        "Vis neste"
+      ],
+      "Display previous": [
+        "Vis forrige"
       ],
       "Done": [
         "Utført"
@@ -495,6 +504,9 @@
       "Increase": [
         "Øk"
       ],
+      "Join album": [
+        "Bli med i albumet"
+      ],
       "Keep my subscription": [
         "Behold mitt abonnement"
       ],
@@ -536,6 +548,9 @@
       ],
       "Manage share": [
         "Administrer deling"
+      ],
+      "Mark as favorite": [
+        "Merk som favoritt"
       ],
       "Mark as resolved": [
         "Merk som løst"
@@ -684,6 +699,9 @@
       "Remove from album": [
         "Fjern fra album"
       ],
+      "Remove from favorites": [
+        "Fjern fra favoritter"
+      ],
       "Remove from this list": [
         "Fjern fra denne listen"
       ],
@@ -693,7 +711,7 @@
       "Remove me": [
         "Fjern meg"
       ],
-      "Remove Without Saving": [
+      "Remove without saving": [
         "Fjern uten å lagre"
       ],
       "Rename": [
@@ -768,11 +786,14 @@
       "Save": [
         "Lagre"
       ],
-      "Save and Remove": [
+      "Save and remove": [
         "Lagre og fjern"
       ],
       "Save changes": [
         "Lagre endringer"
+      ],
+      "Save photos and remove": [
+        "Lagre bildene og fjern"
       ],
       "Search": [
         "Søk"
@@ -3713,6 +3734,9 @@
       "Create new album": [
         "Opprett nytt album"
       ],
+      "Rename": [
+        "Gi nytt navn"
+      ],
       "Security Center": [
         "Sikkerhetssenter"
       ]
@@ -4088,6 +4112,9 @@
         "${ album.photoCount } element",
         "${ album.photoCount } elementer"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } har blitt slettet"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
@@ -4148,6 +4175,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } på Play Store"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } har invitert deg til å bli med i **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } mislyktes",
@@ -4996,6 +5026,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sender automatisk meldingen ved hjelp av gjeldende skrivemodus."
       ],
+      "Photo is not saved to your library": [
+        "Bildet lagres ikke i biblioteket ditt"
+      ],
       "Photo is set as album cover": [
         "Bildet er angitt som albumomslag"
       ],
@@ -5241,6 +5274,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Noen av filene dine er ikke lenger tilgjengelige. Gjenopprett tilgangen til filene dine. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Noen bilder i dette albumet lagres ikke på tidslinjen din. Hvis du sletter dette albumet, slettes disse bildene permanent."
+      ],
       "Something went wrong, please try again later.": [
         "Noe gikk galt, prøv igjen senere."
       ],
@@ -5328,8 +5364,9 @@
       "This item already exists in your library": [
         "Dette elementet finnes allerede i biblioteket ditt"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Dette elementet lagres ikke i Bilder-biblioteket. Hvis du fjerner det fra dette albumet, mister du tilgangen til det permanent. Vil du lagre det før du fjerner det?"
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Dette elementet lagres ikke i Bilder-biblioteket. Hvis du fjerner det fra dette albumet, mister du tilgangen til det permanent.",
+        "Noen av de markerte elementene arkiveres ikke i Bilder-biblioteket. Hvis du fjerner dem fra dette albumet, mister du tilgangen til dem permanent."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denne koblingen fører til et nettsted som kanskje prøver å stjele informasjonen din, for eksempel passord og kredittkortdetaljer."
@@ -5342,6 +5379,9 @@
       ],
       "This month": [
         "Denne måneden"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Dette vil bare slette albumet. Bildene dine forblir på tidslinjen din. Denne handlingen kan ikke angres."
       ],
       "This will permanently delete the file you uploaded.": [
         "Dette vil slette filen du lastet opp permanent."
@@ -5582,6 +5622,13 @@
       ],
       "Would you like to restore your files?": [
         "Vil du gjenopprette filene dine?"
+      ],
+      "Would you like to save it before removing?": [
+        "Vil du lagre det før du fjerner det?",
+        "Vil du lagre dem før du fjerner dem?"
+      ],
+      "Would you like to save them before removing?": [
+        "Vil du lagre dem før du fjerner dem?"
       ],
       "Writing assistant": [
         "Skriveassistent"
@@ -8032,6 +8079,12 @@
       "Access updated and shared": [
         "Tilgang oppdatert og delt"
       ],
+      "Album failed to be renamed": [
+        "Album kunne ikke gis nytt navn"
+      ],
+      "Album renamed successfully": [
+        "Album har fått nytt navn"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer vil snart bli slettet permanent fra papirkurven."
       ],
@@ -8265,6 +8318,9 @@
       "Save big when you pay annually": [
         "Spar mye når du betaler årlig"
       ],
+      "Special offer": [
+        "Spesialtilbud"
+      ],
       "This offer won't be shown again.": [
         "Dette tilbudet vises ikke igjen."
       ],
@@ -8490,14 +8546,6 @@
       ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Sikker hvelvdeling (${ n } hvelv)",
-        "Sikker hvelvdeling (${ n } hvelv)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling",
-        "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9491,6 +9539,9 @@
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
       ],
+      "Billed every 6 months": [
+        "Faktureres hver 6. måned"
+      ],
       "Billed for 15 months": [
         "Faktureres for 15 måneder"
       ],
@@ -10349,11 +10400,11 @@
         "Slett ${ count } kontaktgruppe",
         "Slett ${ count } kontaktgrupper"
       ],
-      "Delete ${ item.name }?": [
-        "Slette ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Slette ${ links.length } elementer?"
+      ],
+      "Delete ${ name }?": [
+        "Slette ${ name }?"
       ],
       "Delete ${ value }": [
         "Slett ${ value }"
@@ -10621,8 +10672,9 @@
       "Remove device?": [
         "Fjern enhet?"
       ],
-      "Remove items": [
-        "Fjern elementer"
+      "Remove item?": [
+        "Fjerne elementet?",
+        "Fjerne elementene?"
       ],
       "Rename a file": [
         "Gi en fil nytt navn"

@@ -91,6 +91,10 @@
       "Add to group": [
         "Lägg till i grupp"
       ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Lägg till “${ album.name }” (${ album.photoCount } foto)",
+        "Lägg till “${ album.name }” (${ album.photoCount } foton)"
+      ],
       "Album name": [
         "Albumnamn"
       ],
@@ -301,6 +305,9 @@
       "Delete version": [
         "Ta bort version"
       ],
+      "Delete without saving": [
+        "Ta bort utan att spara"
+      ],
       "Deselect all": [
         "Avmarkera alla"
       ],
@@ -315,6 +322,12 @@
       ],
       "Display navigation bar": [
         "Visa navigeringsfält"
+      ],
+      "Display next": [
+        "Visa nästa"
+      ],
+      "Display previous": [
+        "Visa föregående"
       ],
       "Done": [
         "Klar"
@@ -491,6 +504,9 @@
       "Increase": [
         "Öka"
       ],
+      "Join album": [
+        "Gå med i album"
+      ],
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
@@ -532,6 +548,9 @@
       ],
       "Manage share": [
         "Hantera delning"
+      ],
+      "Mark as favorite": [
+        "Markera som favorit"
       ],
       "Mark as resolved": [
         "Markera som löst"
@@ -680,6 +699,9 @@
       "Remove from album": [
         "Ta bort från album"
       ],
+      "Remove from favorites": [
+        "Ta bort från favoriter"
+      ],
       "Remove from this list": [
         "Ta bort från denna lista"
       ],
@@ -689,7 +711,7 @@
       "Remove me": [
         "Ta bort mig"
       ],
-      "Remove Without Saving": [
+      "Remove without saving": [
         "Ta bort utan att spara"
       ],
       "Rename": [
@@ -764,11 +786,14 @@
       "Save": [
         "Spara"
       ],
-      "Save and Remove": [
+      "Save and remove": [
         "Spara och ta bort"
       ],
       "Save changes": [
         "Spara ändringar"
+      ],
+      "Save photos and remove": [
+        "Spara foton och ta bort"
       ],
       "Search": [
         "Sök"
@@ -3709,6 +3734,9 @@
       "Create new album": [
         "Skapa nytt album"
       ],
+      "Rename": [
+        "Byt namn"
+      ],
       "Security Center": [
         "Säkerhetscenter"
       ]
@@ -4084,6 +4112,9 @@
         "${ album.photoCount } objekt",
         "${ album.photoCount } objekt"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } har tagits bort"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
@@ -4144,6 +4175,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } på Play Butik"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } bjöd in dig att gå med i **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } misslyckades",
@@ -4992,6 +5026,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME skickar automatiskt meddelandet med det aktuella kompositörsläget."
       ],
+      "Photo is not saved to your library": [
+        "Bilden är inte sparad i ditt bibliotek"
+      ],
       "Photo is set as album cover": [
         "Foto är inställt som albumomslag"
       ],
@@ -5237,6 +5274,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Vissa av dina filer är inte längre åtkomliga. Återställ åtkomsten till dina filer. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Några foton i detta album sparas inte på din tidslinje. Att ta bort detta album kommer ta bort dessa foton permanent."
+      ],
       "Something went wrong, please try again later.": [
         "Något gick fel, försök igen senare."
       ],
@@ -5324,8 +5364,9 @@
       "This item already exists in your library": [
         "Detta objekt finns redan i ditt bibliotek"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Detta objekt är inte sparat i ditt fotobibliotek. Om du tar bort det från detta album förlorar du åtkomst till det permanent. Vill du spara det före borttagning?"
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Detta objekt är inte sparat i ditt fotobibliotek. Om du tar bort det från detta album förlorar du åtkomst till det permanent.",
+        "Några av de valda objekten sparas inte i ditt fotobibliotek. Om du tar bort dem från detta album förlorar du åtkomsten till dem permanent."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denna länk leder till en webbplats som kanske försöker stjäla din information, såsom lösenord och kreditkortsuppgifter."
@@ -5338,6 +5379,9 @@
       ],
       "This month": [
         "Denna månad"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Detta kommer endast ta bort albumet. Dina foton kommer finnas kvar på din tidslinje. Denna åtgärd kan inte ångras."
       ],
       "This will permanently delete the file you uploaded.": [
         "Detta kommer ta bort filen du laddade upp permanent."
@@ -5578,6 +5622,13 @@
       ],
       "Would you like to restore your files?": [
         "Vill du återställa dina filer?"
+      ],
+      "Would you like to save it before removing?": [
+        "Vill du spara det innan du tar bort det?",
+        "Vill du spara dem innan du tar bort dem?"
+      ],
+      "Would you like to save them before removing?": [
+        "Vill du spara dem innan du tar bort dem?"
       ],
       "Writing assistant": [
         "Skrivassistent"
@@ -8036,6 +8087,12 @@
       "Access updated and shared": [
         "Åtkomst uppdaterad och delad"
       ],
+      "Album failed to be renamed": [
+        "Album misslyckades att byta namn"
+      ],
+      "Album renamed successfully": [
+        "Album har bytt namn"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alla objekt kommer snart att tas bort permanent från papperskorgen"
       ],
@@ -8269,6 +8326,9 @@
       "Save big when you pay annually": [
         "Spara stort när du betalar årligen"
       ],
+      "Special offer": [
+        "Specialerbjudande"
+      ],
       "This offer won't be shown again.": [
         "Detta erbjudande kommer inte att visas igen."
       ],
@@ -8494,14 +8554,6 @@
       ],
       "Secure vault sharing": [
         "Säker valvdelning"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Säker valvdelning (${ n } valv)",
-        "Säker valvdelning (${ n } valv)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Säker valvdelning (${ n } valv) och länkdelning",
-        "Säker valvdelning (${ n } valv) och länkdelning"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9501,6 +9553,9 @@
       "Billed every 2 years": [
         "Faktureras vartannat år"
       ],
+      "Billed every 6 months": [
+        "Faktureras var 6:e månad"
+      ],
       "Billed for 15 months": [
         "Fakturerad med för 15 månader"
       ],
@@ -10359,11 +10414,11 @@
         "Ta bort ${ count } kontaktgrupp",
         "Ta bort ${ count } kontaktgrupper"
       ],
-      "Delete ${ item.name }?": [
-        "Ta bort ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Ta bort ${ links.length } objekt?"
+      ],
+      "Delete ${ name }?": [
+        "Ta bort ${ name }?"
       ],
       "Delete ${ value }": [
         "Ta bort ${ value }"
@@ -10631,8 +10686,9 @@
       "Remove device?": [
         "Ta bort enhet?"
       ],
-      "Remove items": [
-        "Ta bort objekt"
+      "Remove item?": [
+        "Ta bort objekt?",
+        "Ta bort objekten?"
       ],
       "Rename a file": [
         "Byt namn på en fil"

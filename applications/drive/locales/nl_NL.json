@@ -305,6 +305,9 @@
       "Delete version": [
         "Versie verwijderen"
       ],
+      "Delete without saving": [
+        "Verwijder zonder op te slaan"
+      ],
       "Deselect all": [
         "Alles deselecteren"
       ],
@@ -319,6 +322,12 @@
       ],
       "Display navigation bar": [
         "Navigatiebalk weergeven"
+      ],
+      "Display next": [
+        "Toon volgende"
+      ],
+      "Display previous": [
+        "Toon vorige"
       ],
       "Done": [
         "Klaar"
@@ -495,6 +504,9 @@
       "Increase": [
         "Verhogen"
       ],
+      "Join album": [
+        "Deelnemen aan album"
+      ],
       "Keep my subscription": [
         "Mijn abonnement behouden"
       ],
@@ -536,6 +548,9 @@
       ],
       "Manage share": [
         "Delen beheren"
+      ],
+      "Mark as favorite": [
+        "Markeer als favoriet"
       ],
       "Mark as resolved": [
         "Markeren als opgelost"
@@ -684,6 +699,9 @@
       "Remove from album": [
         "Uit album verwijderen"
       ],
+      "Remove from favorites": [
+        "Verwijder uit favorieten"
+      ],
       "Remove from this list": [
         "Van deze lijst verwijderen"
       ],
@@ -693,8 +711,8 @@
       "Remove me": [
         "Verwijder mij"
       ],
-      "Remove Without Saving": [
-        "Verwijderen zonder opslaan"
+      "Remove without saving": [
+        "Verwijder zonder op te slaan"
       ],
       "Rename": [
         "Hernoem"
@@ -768,11 +786,14 @@
       "Save": [
         "Opslaan"
       ],
-      "Save and Remove": [
+      "Save and remove": [
         "Opslaan en verwijderen"
       ],
       "Save changes": [
         "Wijzigingen opslaan"
+      ],
+      "Save photos and remove": [
+        "Sla foto's op en verwijder ze"
       ],
       "Search": [
         "Zoeken"
@@ -3713,6 +3734,9 @@
       "Create new album": [
         "Nieuw album maken"
       ],
+      "Rename": [
+        "Hernoemen"
+      ],
       "Security Center": [
         "Beveiligingscentrum"
       ]
@@ -4088,6 +4112,9 @@
         "${ album.photoCount } item",
         "${ album.photoCount } items"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } is succesvol verwijderd"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
@@ -4148,6 +4175,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } in de Play Store"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } heeft u uitgenodigd om lid te worden van **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } mislukt",
@@ -4996,6 +5026,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME verzendt automatisch het bericht gebruikmakend van de huidige opstelmodus."
       ],
+      "Photo is not saved to your library": [
+        "Foto is niet opgeslagen in uw bibliotheek"
+      ],
       "Photo is set as album cover": [
         "Foto is ingesteld als albumhoes"
       ],
@@ -5241,6 +5274,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Sommige bestanden zijn niet meer toegankelijk. Herstel de toegang tot uw bestanden. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Sommige foto's in dit album zijn niet opgeslagen in uw tijdlijn. Als u dit album verwijdert, worden deze foto's permanent verwijderd."
+      ],
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
       ],
@@ -5328,8 +5364,9 @@
       "This item already exists in your library": [
         "Dit item bestaat al in uw bibliotheek"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Dit item is niet opgeslagen in uw Foto's bibliotheek. Als u het verwijdert uit dit album, verliest u de toegang voorgoed. Wilt u het opslaan voordat u het verwijdert?"
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Dit item is niet opgeslagen in uw Foto's bibliotheek. Als u het verwijdert uit dit album, verliest u toegang tot het item.",
+        "Sommige van de geselecteerde items zijn niet opgeslagen in uw Foto's bibliotheek. Als u ze verwijdert uit dit album, verliest u toegang tot de items."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
@@ -5342,6 +5379,9 @@
       ],
       "This month": [
         "Deze maand"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Dit verwijdert alleen het album. Uw foto's blijven in uw tijdlijn. Deze actie kan niet ongedaan worden gemaakt."
       ],
       "This will permanently delete the file you uploaded.": [
         "Deze actie zal het bestand dat u heeft opgeladen definitief verwijderen."
@@ -5582,6 +5622,13 @@
       ],
       "Would you like to restore your files?": [
         "Wilt u uw bestanden herstellen?"
+      ],
+      "Would you like to save it before removing?": [
+        "Wilt u het opslaan voordat u het verwijdert?",
+        "Wilt u ze opslaan voordat u ze verwijdert?"
+      ],
+      "Would you like to save them before removing?": [
+        "Wilt u ze opslaan voordat u ze verwijdert?"
       ],
       "Writing assistant": [
         "Schrijfassistent"
@@ -7975,6 +8022,12 @@
       "Access updated and shared": [
         "Toegang bijgewerkt en gedeeld"
       ],
+      "Album failed to be renamed": [
+        "Album kon niet worden hernoemd"
+      ],
+      "Album renamed successfully": [
+        "Album is hernoemd"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle items zullen binnenkort permanent uit de prullenbak worden verwijderd"
       ],
@@ -8208,6 +8261,9 @@
       "Save big when you pay annually": [
         "Bespaar veel wanneer u jaarlijks betaalt"
       ],
+      "Special offer": [
+        "Speciale aanbieding"
+      ],
       "This offer won't be shown again.": [
         "Deze aanbieding wordt niet meer getoond."
       ],
@@ -8433,14 +8489,6 @@
       ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Veilig delen van kluis (${ n } kluis)",
-        "Veilig delen van kluis (${ n } kluizen)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Veilig delen van kluis (${ n } kluis) en het delen van links",
-        "Veilig delen van kluis (${ n } kluizen) en het delen van links"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9434,6 +9482,9 @@
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
       ],
+      "Billed every 6 months": [
+        "Elke 6 maanden gefactureerd"
+      ],
       "Billed for 15 months": [
         "U betaalt voor 15 maanden"
       ],
@@ -10292,11 +10343,11 @@
         "${ count } contactgroep verwijderen",
         "${ count } contactgroepen verwijderen"
       ],
-      "Delete ${ item.name }?": [
-        "Verwijder ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Verwijder ${ links.length } items?"
+      ],
+      "Delete ${ name }?": [
+        "Verwijder ${ name }?"
       ],
       "Delete ${ value }": [
         "Verwijder ${ value }"
@@ -10564,8 +10615,9 @@
       "Remove device?": [
         "Apparaat verwijderen?"
       ],
-      "Remove items": [
-        "Verwijder items"
+      "Remove item?": [
+        "Item verwijderen?",
+        "Items verwijderen?"
       ],
       "Rename a file": [
         "Hernoem een bestand"

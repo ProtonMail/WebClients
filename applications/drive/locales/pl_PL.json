@@ -45,6 +45,12 @@
       "Add": [
         "Dodaj"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Dodaj ${ photos.length } zdjęcie do nowego albumu",
+        "Dodaj ${ photos.length } zdjęcia do nowego albumu",
+        "Dodaj ${ photos.length } zdjęć do nowego albumu",
+        "Dodaj ${ photos.length } zdjęć do nowego albumu"
+      ],
       "Add account": [
         "Dodaj konto"
       ],
@@ -285,6 +291,9 @@
         "Usuń ${ selectedCount } grup kontaktów",
         "Usuń ${ selectedCount } grupy kontaktów"
       ],
+      "Delete album": [
+        "Usuń album"
+      ],
       "Delete contact": [
         "Usuń kontakt"
       ],
@@ -335,6 +344,12 @@
       ],
       "Download logs": [
         "Pobierz logi"
+      ],
+      "Download photo": [
+        "Pobierz zdjęcie",
+        "Pobierz zdjęcia",
+        "Pobierz zdjęcia",
+        "Pobierz zdjęcia"
       ],
       "Download without scanning": [
         "Pobierz bez skanowania"
@@ -669,6 +684,9 @@
       "Remove device": [
         "Usuń urządzenie"
       ],
+      "Remove from album": [
+        "Usuń z albumu"
+      ],
       "Remove from this list": [
         "Usuń z listy"
       ],
@@ -680,6 +698,9 @@
       ],
       "Rename": [
         "Zmień nazwę"
+      ],
+      "Rename album": [
+        "Zmień nazwę albumu"
       ],
       "Replace file": [
         "Zastąp plik"
@@ -780,8 +801,14 @@
       "Select country": [
         "Wybierz kraj"
       ],
+      "Set album cover": [
+        "Ustaw okładkę albumu"
+      ],
       "Set as album cover": [
         "Ustaw jako okładkę albumu"
+      ],
+      "Set as cover": [
+        "Ustaw jako okładkę"
       ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
@@ -791,6 +818,9 @@
       ],
       "Share": [
         "Udostępnij"
+      ],
+      "Share album": [
+        "Udostępnij album"
       ],
       "Share file": [
         "Udostępnij plik"
@@ -3159,6 +3189,9 @@
       "Try using only letters, numerals, and _.-": [
         "Użyj tylko liter, cyfr i znaków _.-"
       ],
+      "Unable to set photo as cover": [
+        "Nie można ustawić zdjęcia jako okładki"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Wystąpił nieoczekiwany błąd. Nie możemy zaimportować kontaktów"
       ],
@@ -3725,6 +3758,20 @@
         "Centrum zabezpieczeń"
       ]
     },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Dodaj ${ photos.length } zdjęcie do",
+        "Dodaj ${ photos.length } zdjęcia do",
+        "Dodaj ${ photos.length } zdjęć do",
+        "Dodaj ${ photos.length } zdjęć do"
+      ],
+      "All albums": [
+        "Wszystkie albumy"
+      ],
+      "Recent": [
+        "Ostatnie"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Została znaleziona ${ itemsCount } sugestia. Użyj klawiszy do nawigacji.",
@@ -4103,6 +4150,12 @@
         "${ addressCount } adresy e-mail",
         "${ addressCount } adresów e-mail",
         "${ addressCount } adresów e-mail"
+      ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } element",
+        "${ album.photoCount } elementy",
+        "${ album.photoCount } elementów",
+        "${ album.photoCount } elementów"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -6563,6 +6616,9 @@
       "Add a gift code": [
         "Dodaj kod podarunkowy"
       ],
+      "Albums": [
+        "Albumy"
+      ],
       "All mail": [
         "Wszystkie wiadomości"
       ],
@@ -8380,6 +8436,9 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta ${ pricingTitle } wygasa dzisiaj!"
       ],
+      "Don’t show this offer again": [
+        "Nie pokazuj tej oferty ponownie"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Wybierz plan Drive Plus za ${ pricingTitle }"
       ],
@@ -8389,14 +8448,38 @@
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
+      "Last day to save": [
+        "Ostatni dzień, aby zaoszczędzić"
+      ],
       "Limited-time offer": [
         "Oferta ograniczona czasowo"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 miesięcy"
       ],
       "Maybe later": [
         "Może później"
       ],
+      "Save": [
+        "Zaoszczędź"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Zaoszczędź ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Zaoszczędź 80% przez pierwszy miesiąc."
+      ],
+      "Save big when you pay annually": [
+        "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
+      ],
+      "This offer won't be shown again.": [
+        "Ta oferta nie pojawi się ponownie."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Po przejściu z subskrypcji miesięcznej na roczną."
+      ],
+      "You currently pay": [
+        "Aktualnie płacisz"
       ]
     },
     "Offer feature": {
@@ -8608,18 +8691,6 @@
       ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpieczne udostępnianie ${ n } sejfu",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpieczne udostępnianie ${ n } sejfu i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10552,9 +10623,6 @@
         "Usuń ${ count } grupy kontaktów",
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
-      ],
-      "Delete ${ item.name }?": [
-        "Usunąć ${ item.name }?"
       ],
       "Delete ${ value }": [
         "Usuń ${ value }"
