@@ -30,7 +30,6 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
@@ -99,7 +98,6 @@ const MailboxContainer = ({
     messageID,
 }: Props) => {
     const location = useLocation();
-    const isPageSizeSettingEnabled = useFlag('WebMailPageSizeSetting');
     const history = useHistory();
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -159,7 +157,7 @@ const MailboxContainer = ({
     const onMessageLoad = useCallback(() => setIsMessageOpening(true), []);
     const onMessageReady = useCallback(() => setIsMessageOpening(false), [setIsMessageOpening]);
 
-    const pageSize = isPageSizeSettingEnabled && mailSettings?.PageSize ? mailSettings?.PageSize : MAIL_PAGE_SIZE.FIFTY;
+    const pageSize = mailSettings?.PageSize || MAIL_PAGE_SIZE.FIFTY;
 
     const elementsParams = {
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
