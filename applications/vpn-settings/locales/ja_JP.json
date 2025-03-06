@@ -199,6 +199,9 @@
       "Delete": [
         "削除"
       ],
+      "Delete account": [
+        "アカウントを削除"
+      ],
       "Delete Gateway": [
         "ゲートウェイ削除"
       ],
@@ -366,6 +369,9 @@
       ],
       "Go to label": [
         "ラベルへ移動"
+      ],
+      "Go to panel ${ index }": [
+        "パネル ${ index } に移動"
       ],
       "Got it": [
         "はい"
@@ -2685,6 +2691,12 @@
       "Please select a state": [
         "州を選択してください"
       ],
+      "Please select at least one location before continuing.": [
+        "続行する前に少なくとも1つの場所を選択してください。"
+      ],
+      "Please select at least one user or group before continuing.": [
+        "続行する前に少なくとも1つのユーザーまたはグループを選択してください。"
+      ],
       "Please set a recovery email first": [
         "まず回復用メールアドレスを設定してください"
       ],
@@ -2744,6 +2756,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "最低 ${ price } より受け付けています。"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "ポリシー名は 3 文字以上 40 文字以下で入力してください。"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "このフィールドは${ maximumLength }文字の最大値を超えています。"
@@ -3571,6 +3586,15 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 低画質のプレビュー"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "あなたの家族の${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } は2要素認証を使用しています。"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "あなたのメンバーの ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } が 2要素認証を使用してあなたの組織にサインインします。"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "SSO以外のメンバーの${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } は、あなたの組織にサインインするために2要素認証を使用します。"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } は、ログインパスワードと2番目のパスワードの両方を置き換える単一のパスワードで使用することもできます。 単一のパスワードモードに切り替えるには、使用する単一のパスワードを入力し、保存をクリックします。"
       ],
@@ -3579,6 +3603,9 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: 不正なメールを隔離したり拒否したりしません。 通常、このポリシーはトラブルシューティングまたはテストにのみ使用されます。"
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } メンバー"
       ],
       "${ number } city": [
         "${ number } つの都市"
@@ -4195,9 +4222,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "他のアカウントと統合する場合は、このアカウントを削除しないでください。"
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "問題がある場合は、私たちがお手伝いいたします。弊社のサポート スペシャリストの 1 人に${ boldPhoneCall } または ${ boldZoomMeeting } でご相談いただくか、${ boldLiveChat } を開いてチャット サポートをご利用ください。"
       ],
@@ -4473,6 +4497,9 @@
       ],
       "Or select a particular server:": [
         "または特定のサーバーを選択:"
+      ],
+      "Organization --> Groups": [
+        "組織 --> グループ"
       ],
       "Organization size": [
         "組織の規模"
@@ -4879,6 +4906,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "これにより、${ boldDomainName } の SSO が削除されます。"
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "これにより、接続されているすべてのサービスへのアクセスが削除され、連絡先、添付ファイル、予定、パスワード、およびファイルを含むすべてのデータが削除されます。"
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "これにより、一時的なパスワードが置き換えられます。 今後、これを使用して ${ BRAND_NAME } アカウントにアクセスします。"
       ],
@@ -4911,6 +4941,9 @@
       ],
       "to continue to ${ product }": [
         "${ product } に進む"
+      ],
+      "To create your first user group, go to": [
+        "最初のユーザーグループを作成するには、"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
@@ -5065,8 +5098,8 @@
       "Warning:": [
         "警告:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "警告: 削除を取り消すことはできません。この操作により接続されているすべてのサービスへのアクセスを削除し、すべての連絡先を削除します。"
+      "Warning: deleting your account is permanent.": [
+        "警告: アカウントを削除すると元には戻せません"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "公式の ${ VPN_APP_NAME } アプリケーションの使用をおすすめします。"
@@ -5547,6 +5580,9 @@
       "Apply policy to": [
         "ポリシーを適用"
       ],
+      "Ask members to set up 2FA": [
+        "メンバーに2要素認証を設定するように依頼"
+      ],
       "Assertion Consumer Service URL": [
         "アサーション コンシューマ サービス URL"
       ],
@@ -5754,6 +5790,9 @@
       "Hide password": [
         "パスワードを隠す"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "このメールアドレスを永久に失うことを避けるために、すぐに他のアカウントにこのメールアドレスを追加する必要があることを理解しています。"
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5780,6 +5819,9 @@
       ],
       "Main": [
         "メイン"
+      ],
+      "Members without 2FA": [
+        "2要素認証がないメンバー"
       ],
       "Metadata file for ${ appName }": [
         "${ appName } のメタデータ ファイル"
@@ -5988,6 +6030,9 @@
       "Thomas": [
         "トーマス"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "今後の改善のために、なぜあなたが去ろうとしているのかを教えてください。"
+      ],
       "Two-password mode": [
         "2 パスワードモード"
       ],
@@ -6029,9 +6074,6 @@
       ],
       "Vulnerable password": [
         "脆弱なパスワード"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "今後の改善のため、アカウントを削除する理由をお聞かせください。"
       ],
       "Weak": [
         "弱い"
@@ -6258,11 +6300,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "アップグレードしてチャットによるサポートやその他プレミアム機能を解放するか、無料のサポートフォームで問題をご報告ください。"
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "組織メンバーうち、${ twoFAMembers.length }/${ members.length } 人が 2 要素認証を使用しています。"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7626,6 +7663,12 @@
       "Maybe later": [
         "またあとで"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "オファーの有効期限は ${ formattedDate }です。"
+      ],
+      "Pay annually, secure our best offer": [
+        "毎年払い、安全な私たちの最高のオファー"
+      ],
       "Save": [
         "節約"
       ],
@@ -7638,6 +7681,9 @@
       "Save big when you pay annually": [
         "年払いで大幅に節約"
       ],
+      "Special offer": [
+        "特別オファー"
+      ],
       "This offer won't be shown again.": [
         "このオファーは二度と表示されません。"
       ],
@@ -7646,6 +7692,9 @@
       ],
       "You currently pay": [
         "現在の支払い方法"
+      ],
+      "Your subscription renews soon": [
+        "サブスクリプションはまもなく更新されます"
       ]
     },
     "Offer feature": {
@@ -7691,6 +7740,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "別の ${ BRAND_NAME } アカウントを使っている"
+      ],
+      "I'd like to merge this account into another one": [
+        "このアカウントを別のアカウントに統合したい"
       ],
       "It's missing a key feature that I need": [
         "欲しい機能が含まれていない"
@@ -7854,12 +7906,6 @@
       ],
       "Secure vault sharing": [
         "安全な保管庫共有"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "安全な保管庫の共有 (${ n } 個の保管庫)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "安全な保管庫共有 (${ n } 個の保管庫) とリンクの共有"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10995,6 +11041,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ユーザー情報プロバイダーからのエンドポイントURL(例：https://idp.example.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "シングルサインオンユーザーを除き、2要素認証がアイデンティティプロバイダによって処理されるユーザー"
+      ],
       "Feature in early access": [
         "早期アクセスの機能"
       ],
@@ -11007,8 +11056,8 @@
       "IP address (Internet Service Provider)": [
         "IPアドレス(インターネットサービスプロバイダー)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "2FA を使用していないメンバーには、できるだけ早く有効にするよう求めるメールが届きます。"
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "2要素認証を使用しないメンバーには、できるだけ早く有効にするように求めるメールが届きます。 シングルサインオンユーザーはメール通知を受信しません。"
       ],
       "Shared server policies can be applied to individual users or groups": [
         "共有サーバーポリシーは、個々のユーザーまたはグループに適用できます"
@@ -11057,8 +11106,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効"
+      "Disables end-to-end email encryption for this group": [
+        "このグループのエンドツーエンドのメール暗号化を無効"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
