@@ -10,5 +10,5 @@ module.exports = {
         'no-console': ['error', { allow: ['warn', 'error'] }],
         curly: ['error', 'multi-line'],
     },
-    ignorePatterns: ['.eslintrc.js', 'prettier.config.mjs', 'fathom/', 'asm/'],
+    ignorePatterns: ['.eslintrc.js', 'prettier.config.mjs'],
 };
