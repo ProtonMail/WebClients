@@ -4893,6 +4893,9 @@
       "High Priority": [
         "Wysoki priorytet"
       ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Jeśli włączone są skróty klawiaturowe, można używać następujących klawiszy do wykonywania szybkich akcji lub przechodzenia do różnych widoków. ${ metaKey } + K jest zawsze włączony."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
       ],
@@ -5769,6 +5772,9 @@
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Podstawowe akcje"
+      ],
+      "View options": [
+        "Wyświetl opcje"
       ]
     },
     "Knowledge base link label": {
@@ -7946,6 +7952,9 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta ${ pricingTitle } wygasa dzisiaj!"
       ],
+      "Don’t show this offer again": [
+        "Nie pokazuj tej oferty ponownie"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Wybierz plan Drive Plus za ${ pricingTitle }"
       ],
@@ -7955,14 +7964,38 @@
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
+      "Last day to save": [
+        "Ostatni dzień, aby zaoszczędzić"
+      ],
       "Limited-time offer": [
         "Oferta ograniczona czasowo"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 miesięcy"
       ],
       "Maybe later": [
         "Może później"
       ],
+      "Save": [
+        "Zaoszczędź"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Zaoszczędź ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Zaoszczędź 80% przez pierwszy miesiąc."
+      ],
+      "Save big when you pay annually": [
+        "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
+      ],
+      "This offer won't be shown again.": [
+        "Ta oferta nie pojawi się ponownie."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Po przejściu z subskrypcji miesięcznej na roczną."
+      ],
+      "You currently pay": [
+        "Aktualnie płacisz"
       ]
     },
     "Offer feature": {
@@ -8118,18 +8151,6 @@
       ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpieczne udostępnianie ${ n } sejfu",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpieczne udostępnianie ${ n } sejfu i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8343,6 +8364,9 @@
       ],
       "Filter groups": [
         "Filtruj grupy"
+      ],
+      "Filter quick actions": [
+        "Filtrowanie szybkich akcji"
       ],
       "First name": [
         "Imię"
@@ -9982,6 +10006,9 @@
       ]
     },
     "Title": {
+      "${ appName } keyboard shortcuts": [
+        "${ appName } skróty klawiaturowe"
+      ],
       "${ emailsCount } email address": [
         "${ emailsCount } adres e-mail",
         "${ emailsCount } adresy e-mail",

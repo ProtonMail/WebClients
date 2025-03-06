@@ -8026,7 +8026,7 @@
         "Možná později"
       ],
       "Offer expires ${ formattedDate }.": [
-        "Nabídka vyprší ${ formattedDate }"
+        "Nabídka vyprší ${ formattedDate }."
       ],
       "Pay annually, secure our best offer": [
         "Plaťte ročně, zajistěte si naši nejlepší nabídku"
@@ -8042,6 +8042,9 @@
       ],
       "Save big when you pay annually": [
         "Při roční platbě můžete výrazně ušetřit"
+      ],
+      "Special offer": [
+        "Speciální nabídka"
       ],
       "This offer won't be shown again.": [
         "Tato nabídka se již nezobrazí."
@@ -8224,18 +8227,6 @@
       ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpečné sdílení trezoru (${ n } trezor)",
-        "Bezpečné sdílení trezoru (${ n } trezory)",
-        "Bezpečné sdílení trezoru (${ n } trezorů)",
-        "Bezpečné sdílení trezoru (${ n } trezorů)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpečné sdílení trezoru (${ n } trezor) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9344,6 +9335,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Účtováno každé 2 roky"
+      ],
+      "Billed every 6 months": [
+        "Účtováno každých 6 měsíců"
       ],
       "Billed for 15 months": [
         "Účtováno za 15 měsíců"
