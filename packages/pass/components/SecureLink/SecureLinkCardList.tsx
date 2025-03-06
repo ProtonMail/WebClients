@@ -4,6 +4,7 @@ import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkMo
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { selectItemSecureLinks } from '@proton/pass/store/selectors';
 import type { MaybeNull, SelectedItem } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 
 import { SecureLinkCard } from './SecureLinkCard';
 
@@ -18,9 +19,15 @@ export const SecureLinkCardList: FC<SelectedItem> = ({ shareId, itemId }) => {
 
     return (
         <>
-            {secureLinks?.map((secureLink) => (
-                <SecureLinkCard key={secureLink.linkId} onClick={() => setLinkID(secureLink.linkId)} {...secureLink} />
-            ))}
+            {secureLinks
+                ?.filter(prop('active'))
+                .map((secureLink) => (
+                    <SecureLinkCard
+                        key={secureLink.linkId}
+                        onClick={() => setLinkID(secureLink.linkId)}
+                        {...secureLink}
+                    />
+                ))}
 
             {selectedSecureLink && (
                 <SecureLinkModal

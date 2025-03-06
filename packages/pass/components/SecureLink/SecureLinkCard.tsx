@@ -19,7 +19,6 @@ import clsx from '@proton/utils/clsx';
 type Props = SecureLink & { onClick: () => void };
 
 export const SecureLinkCard: FC<Props> = ({
-    active,
     expirationDate,
     itemId,
     linkId,
@@ -40,7 +39,6 @@ export const SecureLinkCard: FC<Props> = ({
         () =>
             epochToRemainingDuration(expirationDate, {
                 format: (remainingTime) => c('Info').t`Expires in ${remainingTime}`,
-                expiredLabel: c('Label').t`Expired link`,
             }),
         [expirationDate]
     );
@@ -57,22 +55,15 @@ export const SecureLinkCard: FC<Props> = ({
                 type="primary"
                 className={clsx('mb-2 cursor-pointer rounded-xl ui-violet')}
                 onClick={onClick}
-                style={{
-                    backgroundColor: `var(${active ? '--primary-minor-1' : '--primary-minor-2'})`,
-                }}
+                style={{ backgroundColor: 'var(--primary-minor-1)' }}
             >
                 <div className="flex flex-nowrap items-center justify-space-between">
-                    <IconBox
-                        mode="icon"
-                        size={3}
-                        pill={false}
-                        style={{ backgroundColor: `var(${active ? '--interaction-weak' : '--primary-minor-1'})` }}
-                    >
-                        <Icon name={active ? 'link' : 'link-slash'} size={3} className="absolute inset-center" />
+                    <IconBox mode="icon" size={3} pill={false} style={{ backgroundColor: 'var(--interaction-weak)' }}>
+                        <Icon name="link" size={3} className="absolute inset-center" />
                     </IconBox>
 
                     <div className="flex-1 px-4">
-                        <b>{active ? c('Label').t`Shared link` : c('Label').t`Expired link`}</b>
+                        <b>{c('Label').t`Shared link`}</b>
                         <div className="color-weak text-sm">
                             {remaining}
                             {' · '}
@@ -80,9 +71,7 @@ export const SecureLinkCard: FC<Props> = ({
                         </div>
                     </div>
                     <div className="flex">
-                        {active && (
-                            <Copy value={secureLink} shape="ghost" className="color-weak" onCopy={onCopy} pill />
-                        )}
+                        <Copy value={secureLink} shape="ghost" className="color-weak" onCopy={onCopy} pill />
                         <QuickActionsDropdown color="weak" shape="ghost" className="color-weak">
                             <DropdownMenuButton
                                 onClick={(e) => {
