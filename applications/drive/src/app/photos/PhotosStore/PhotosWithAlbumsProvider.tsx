@@ -47,7 +47,6 @@ export const PhotosWithAlbumsContext = createContext<{
     volumeId?: string;
     userAddressEmail?: string;
     isPhotosLoading: boolean;
-    isAlbumsLoading: boolean;
     isAlbumPhotosLoading: boolean;
     photos: Photo[];
     albumPhotos: AlbumPhoto[];
@@ -80,7 +79,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const request = useDebouncedRequest();
     const driveEventManager = useDriveEventManager();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
-    const [albumsLoading, setIsAlbumsLoading] = useState<boolean>(true);
     const [albumPhotosLoading, setIsAlbumPhotosLoading] = useState<boolean>(true);
     const [userAddressEmail, setUserAddressEmail] = useState<string>();
     const [photos, setPhotos] = useState<Photo[]>([]);
@@ -239,9 +237,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 );
                 if (Code === 1000) {
                     const newDecryptedAlbums = await Promise.all(
-                        Albums.filter(
-                            (album) => !albums.some((existingAlbum) => existingAlbum.linkId === album.LinkID)
-                        ).map(async (album) => {
+                        Albums.map(async (album) => {
                             try {
                                 const link = await getLink(abortSignal, shareId, album.LinkID);
                                 const cover = album.CoverLinkID
@@ -257,17 +253,15 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                             }
                         })
                     );
-                    setAlbums((prevAlbums) => [...prevAlbums, ...newDecryptedAlbums.filter((a) => a !== undefined)]);
+                    setAlbums(() => [...newDecryptedAlbums.filter((a) => a !== undefined)]);
                     // there is a limit of 500 albums so should actually never happen technically
                     if (More) {
                         void albumCall(AnchorID);
                     }
                 }
-                setIsAlbumsLoading(false);
             };
 
-            setIsAlbumsLoading(true);
-            void albumCall();
+            return albumCall();
         },
         [getLink, request, shareId, volumeId, albums]
     );
@@ -291,9 +285,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 );
                 if (Code === 1000) {
                     const newDecryptedAlbums = await Promise.all(
-                        Albums.filter(
-                            (album) => !albums.some((existingAlbum) => existingAlbum.linkId === album.LinkID)
-                        ).map(async (album) => {
+                        Albums.map(async (album) => {
                             try {
                                 const link = await getLink(abortSignal, album.ShareID, album.LinkID);
 
@@ -315,16 +307,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                             }
                         })
                     );
-                    setAlbums((prevAlbums) => [...prevAlbums, ...newDecryptedAlbums.filter((a) => a !== undefined)]);
+                    setAlbums(() => [...newDecryptedAlbums.filter((a) => a !== undefined)]);
                     if (More) {
                         void sharedWithMeCall(AnchorID);
                     }
                 }
-                setIsAlbumsLoading(false);
             };
 
-            setIsAlbumsLoading(true);
-            void sharedWithMeCall();
+            return sharedWithMeCall();
         },
         [getLink, request, shareId, volumeId, albums]
     );
@@ -466,7 +456,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 userAddressEmail: userAddressEmail,
                 isPhotosLoading: photosLoading,
                 isAlbumPhotosLoading: albumPhotosLoading,
-                isAlbumsLoading: albumsLoading,
                 photos,
                 albums,
                 albumPhotos,
