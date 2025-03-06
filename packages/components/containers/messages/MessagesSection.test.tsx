@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { FeatureCode } from '@proton/features';
 import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseFlag, renderWithProviders } from '@proton/testing';
+import { renderWithProviders } from '@proton/testing';
 import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
@@ -23,10 +23,6 @@ describe('MessagesSection', () => {
         mockUseApi(mockedApi);
 
         mockUseNotifications();
-
-        mockUseFlag().mockImplementation((code) => {
-            return code === 'WebMailPageSizeSetting';
-        });
 
         mockUseUser();
         mockUseMailSettings();
@@ -105,36 +101,20 @@ describe('MessagesSection', () => {
             mockUseMailSettings([{ ViewMode: VIEW_MODE.SINGLE }]);
         });
 
-        describe('when PageSize selection is disabled', () => {
-            beforeEach(() => {
-                mockUseFlag().mockImplementation((code) => {
-                    return code !== 'WebMailPageSizeSetting';
-                });
-            });
-
-            it('should not display selector', () => {
-                renderComponent();
-                expect(screen.queryByText(/Messages per page/)).not.toBeInTheDocument();
-                expect(screen.queryByText(/Conversations per page/)).not.toBeInTheDocument();
-            });
+        it('should display correct label', () => {
+            renderComponent();
+            expect(screen.getByText(/Messages per page/)).toBeInTheDocument();
         });
 
-        describe('when PageSize selection is enabled', () => {
-            it('should display correct label', () => {
-                renderComponent();
-                expect(screen.getByText(/Messages per page/));
+        describe('when user is in grouped messages mode', () => {
+            beforeEach(() => {
+                mockUseMailSettings([{ ViewMode: VIEW_MODE.GROUP }]);
             });
 
-            describe('when user is in grouped messages mode', () => {
-                beforeEach(() => {
-                    mockUseMailSettings([{ ViewMode: VIEW_MODE.GROUP }]);
-                });
+            it('should display correct label', () => {
+                renderComponent();
 
-                it('should display correct label', () => {
-                    renderComponent();
-
-                    expect(screen.getByText(/Conversations per page/));
-                });
+                expect(screen.getByText(/Conversations per page/)).toBeInTheDocument();
             });
         });
     });
