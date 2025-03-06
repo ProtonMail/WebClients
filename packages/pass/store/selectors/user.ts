@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getPassPlan } from '@proton/pass/lib/user/user.plan';
+import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
 import { type Maybe, type MaybeNull } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -24,11 +25,14 @@ export const selectUserPlan = ({ user: { plan } }: State) => plan;
 export const selectUserSettings = ({ user: { userSettings } }: State) => userSettings;
 export const selectUserData = ({ user: { userData } }: State) => userData;
 export const selectHasPendingShareAccess = ({ user }: State) => (user.waitingNewUserInvites ?? 0) > 0;
-
 export const selectSentinelEligible = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Eligible ?? false);
 export const selectSentinelEnabled = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Value ?? false);
 export const selectTelemetryEnabled = ({ user }: State) => user.userSettings?.Telemetry === 1;
 export const selectUserType = ({ user }: State) => user.user?.Type;
+export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
+export const selectFeatureFlags = ({ user: { features } }: State) => features;
+export const selectAddresses = ({ user }: State) => user.addresses;
+export const selectAuthDevices = (state: State) => state.user.devices;
 
 /* Specification for pass specific plans in `/user/access` response :
  * `business` -> Plan: Business | Trial: null | Limits: none
@@ -56,12 +60,9 @@ export const selectTrialDaysRemaining = ({ user: { plan } }: State): MaybeNull<n
 export const selectUserTier = ({ user: { user, plan } }: State): string | undefined =>
     user?.Type === UserType.MANAGED ? 'subuser' : plan?.InternalName;
 
-export const selectAddresses = ({ user }: State) => user.addresses;
-export const selectAllAddresses = createSelector(selectAddresses, (addresses): Address[] => Object.values(addresses));
-
-export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
-
-export const selectFeatureFlags = ({ user: { features } }: State) => features;
+export const selectAllAddresses = createUncachedSelector(selectAddresses, (addresses): Address[] =>
+    Object.values(addresses)
+);
 
 export const selectFeatureFlag =
     (feature: PassFeature) =>
@@ -74,8 +75,6 @@ export const selectUserDefaultShareID = createSelector(
     [selectUserData, selectDefaultVault],
     (userData, defaultShare): Maybe<string> => userData?.defaultShareId ?? defaultShare?.shareId
 );
-
-export const selectAuthDevices = (state: State) => state.user.devices;
 
 export const selectPendingAuthDevices = createSelector([selectAuthDevices, selectAddresses], (authDevices, addresses) =>
     authDevices

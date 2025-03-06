@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, createContext, useContext, useEffect } from 'react';
+import { type FC, createContext, useContext, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
@@ -10,10 +10,10 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { secureLinksGet } from '@proton/pass/store/actions';
 import {
-    selectItemsSearchResult,
-    selectSecureLinksSearchResult,
-    selectSharedByMeSearchResult,
-    selectSharedWithMeSearchResult,
+    createMatchItemsSelector,
+    createMatchSecureLinksSelector,
+    createMatchSharedByMeSelector,
+    createMatchSharedWithMeSelector,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
@@ -39,24 +39,28 @@ export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
     const { filters } = useNavigationFilters();
     const navigate = useNavigate();
 
-    const items = useSelector((state: State) => {
+    const match = useMemo(() => {
         switch (scope) {
             case 'secure-links':
-                return selectSecureLinksSearchResult(state, filters.search);
+                return createMatchSecureLinksSelector();
             case 'shared-by-me':
-                return selectSharedByMeSearchResult(state, filters.search);
+                return createMatchSharedByMeSelector();
             case 'shared-with-me':
-                return selectSharedWithMeSearchResult(state, filters.search);
+                return createMatchSharedWithMeSelector();
             default:
-                return selectItemsSearchResult(state, {
-                    type: filters.type === '*' ? null : filters.type,
-                    search: filters.search,
-                    shareId: trash ? null : filters.selectedShareId,
-                    sort: filters.sort,
-                    trashed: trash,
-                });
+                return createMatchItemsSelector();
         }
-    });
+    }, [scope]);
+
+    const items = useSelector((state: State) =>
+        match(state, {
+            type: filters.type === '*' ? null : filters.type,
+            search: filters.search,
+            shareId: trash ? null : filters.selectedShareId,
+            sort: filters.sort,
+            trashed: trash,
+        })
+    );
 
     useEffect(() => {
         /* Check if the currently selected item is not present in the current
