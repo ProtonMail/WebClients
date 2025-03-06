@@ -379,6 +379,9 @@
       "Delete": [
         "Slett"
       ],
+      "Delete account": [
+        "Slett konto"
+      ],
       "Delete and confirm": [
         "Slett og bekreft"
       ],
@@ -6805,6 +6808,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: forhåndsvisning i lav oppløsning"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }${ canHaveTwoFAMembersLength } av familiemedlemmene bruker tofaktorautentisering.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } av familiemedlemmene bruker tofaktorautentisering."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } av familiemedlemmene bruker tofaktorautentisering for å logge på organisasjonen din.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } av familiemedlemmene bruker tofaktorautentisering for å logge på organisasjonen din."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }${ canHaveTwoFAMembersLength } av ikke-SSO-medlemmene bruker tofaktorautentisering for å logge på organisasjonen.",
+        "${ hasTwoFAMembersLength }${ canHaveTwoFAMembersLength } av ikke-SSO-medlemmene bruker tofaktorautentisering for å logge på organisasjonen."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker å dele data med deg i ${ PASS_APP_NAME }"
       ],
@@ -6817,6 +6832,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: ikke sett uautoriserte e-poster i karantene eller avvis e-poster. Vanligvis bruker folk bare denne policyen til å feilsøke eller teste."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } medlem",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } medlemmer"
       ],
       "${ number } city": [
         "${ number } by",
@@ -7863,9 +7882,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Hvis du nylig tilbakestilte passordet ditt, kan du bruke en datagjenopprettingsmetode til å låse opp dine data."
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Hvis du ønker å kombinere denne kontoen med en annen, IKKE slett den."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Hvis du har problemer, er vi her for å hjelpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våre brukerstøttespesialister, eller åpne en ${ boldLiveChat } for chat-støtte."
@@ -9020,6 +9036,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Dette vil fjerne SSO for ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Dette vil fjerne tilgangen din til alle tilkoblede tjenester og slette alle dataene dine, inkludert kontakter, vedlegg, hendelser, passord og filer."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dette vil erstatte ditt midlertidige passord. Du vil bruke det for å tilgang til din ${ BRAND_NAME }-konto i fremtiden."
       ],
@@ -9308,8 +9327,8 @@
       "Warning:": [
         "Advarsel:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Advarsel: sletting er permanent. Dette fjerner også tilgang til alle tilkoblede tjenester og sletter alle dine kontakter."
+      "Warning: deleting your account is permanent.": [
+        "Advarsel: sletting av kontoen din er permanent."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi råder deg til å bruke offisielle ${ VPN_APP_NAME }-applikasjoner når mulig."
@@ -10401,6 +10420,9 @@
       "Apply policy to": [
         "Anvend retningslinjen på"
       ],
+      "Ask members to set up 2FA": [
+        "Be medlemmene om å sette opp 2FA"
+      ],
       "Assertion Consumer Service URL": [
         "URL-adresse for påstand om forbrukertjeneste"
       ],
@@ -10794,6 +10816,9 @@
       "Hide password": [
         "Skjul passord"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Jeg forstår at jeg må legge til denne e-postadressen i den andre kontoen umiddelbart, for å unngå å miste denne adressen permanent."
+      ],
       "I understand the risk": [
         "Jeg forstår risikoen"
       ],
@@ -10901,6 +10926,9 @@
       ],
       "Maximum number of words": [
         "Maksimalt antall ord"
+      ],
+      "Members without 2FA": [
+        "Medlemmer uten 2FA"
       ],
       "Message": [
         "Melding"
@@ -11263,6 +11291,9 @@
       "Tips and insights": [
         "Tips og innsikt"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "For å hjelpe oss med å forbedre oss, vennligst forklar hvorfor du slutter."
+      ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
       ],
@@ -11334,9 +11365,6 @@
       ],
       "Vulnerable password": [
         "Sårbart passord"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Vi beklager å se deg gå. Forklar hvorfor du slutter for å hjelpe oss med å forbedre oss."
       ],
       "Weak": [
         "Svak"
@@ -11702,10 +11730,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } organisasjonsmedlem bruker to-faktorautentisering.",
-        "${ twoFAMembers.length }/${ members.length } av dine organisasjonsmedlemmer bruker to-faktorautentisering."
-      ],
       "Almost there": [
         "Nesten der"
       ],
@@ -13628,6 +13652,9 @@
       "Save big when you pay annually": [
         "Spar mye når du betaler årlig"
       ],
+      "Special offer": [
+        "Spesialtilbud"
+      ],
       "This offer won't be shown again.": [
         "Dette tilbudet vises ikke igjen."
       ],
@@ -13815,6 +13842,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Jeg bruker en annen ${ BRAND_NAME }-konto"
+      ],
+      "I'd like to merge this account into another one": [
+        "Jeg vil gjerne slå sammen denne kontoen til en annen"
       ],
       "Ignore group": [
         "Ignorer gruppe"
@@ -14363,14 +14393,6 @@
       ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Sikker hvelvdeling (${ n } hvelv)",
-        "Sikker hvelvdeling (${ n } hvelv)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling",
-        "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling"
       ],
       "Secure your family’s passwords and online identities": [
         "Sikre familiens passord og identiteter på nettet"
@@ -16734,6 +16756,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
+      ],
+      "Billed every 6 months": [
+        "Faktureres hver 6. måned"
       ],
       "Billed for 15 months": [
         "Faktureres for 15 måneder"
@@ -19237,6 +19262,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-adresse for endepunkt fra identitetsleverandøren (f.eks. https://idp.eksempel.com/sso/saml)."
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Ekskluderer brukere med enkel pålogging med 2FA som håndteres av identitetsleverandøren din"
+      ],
       "Feature in early access": [
         "Funksjon i tidlig tilgang"
       ],
@@ -19258,8 +19286,8 @@
       "IP address (Internet Service Provider)": [
         "IP-adresse (Internett-leverandør)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Medlemmer som ikke bruker 2FA vil få en e-post som ber dem om å aktivere den så snart som mulig."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Medlemmer som ikke bruker 2FA vil motta en e-post som ber dem om å aktivere det så snart som mulig. Brukere med enkel pålogging vil ikke motta e-postpåminnelsen."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meldinger i Sendt- eller Utkast-mappe vil fortsette å vises i den mappen, selv om du flytter dem til en annen mappe."
@@ -19395,8 +19423,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Ekstern adresse – deaktiverer ende-til-ende-kryptering av e-post for denne gruppen"
+      "Disables end-to-end email encryption for this group": [
+        "Deaktiverer ende-til-ende-e-postkryptering for denne gruppen"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Ekstern adresse – deaktiverer ende-til-ende-e-postkryptering for denne gruppen, og ingen krypterte ressurser deles med denne brukeren."

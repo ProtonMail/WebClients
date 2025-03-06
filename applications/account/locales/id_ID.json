@@ -379,6 +379,9 @@
       "Delete": [
         "Hapus"
       ],
+      "Delete account": [
+        "Hapus akun"
+      ],
       "Delete and confirm": [
         "Hapus dan konfirmasi"
       ],
@@ -4742,6 +4745,12 @@
       "Please select a state": [
         "Silakan pilih negara bagian/provinsi"
       ],
+      "Please select at least one location before continuing.": [
+        "Silakan pilih setidaknya satu lokasi sebelum melanjutkan."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Silakan pilih setidaknya satu pengguna atau grup sebelum melanjutkan."
+      ],
       "Please set a recovery email first": [
         "Harap tentukan alamat email pemulihan terlebih dahulu"
       ],
@@ -4864,6 +4873,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Nominal pembayaran minimal yang kami terima adalah ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Nama kebijakan harus terdiri dari 3 hingga 40 karakter."
       ],
       "The sending key is not valid": [
         "Kunci pengiriman tidak valid"
@@ -6749,6 +6761,15 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pratinjau resolusi rendah"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dari anggota keluarga Anda menggunakan autentikasi dua-faktor."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dari anggota Anda menggunakan autentikasi dua faktor untuk masuk ke organisasi Anda."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dari anggota non-SSO menggunakan autentikasi dua faktor untuk masuk ke organisasi Anda."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ingin berbagi data dengan Anda pada ${ PASS_APP_NAME }"
       ],
@@ -6760,6 +6781,9 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: meminta platform penerima untuk tidak mengarantina ataupun menolak email yang tidak berizin. Pada umumnya, pengaturan kebijakan ini hanya digunakan untuk menangani masalah atau menguji sesuatu."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } anggota"
       ],
       "${ number } city": [
         "${ number } kota"
@@ -7701,7 +7725,7 @@
         "di sini"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "Menyembunyikan informasi pribadi dengan memuat remote content melalui proxy. Remote content yang ada akan tetap dapat dilihat dan disimpan sebagai lampiran."
+        "Menyembunyikan informasi pribadi dengan memuat konten eksternal melalui proxy. Konten eksternal yang ada akan tetap dapat dilihat dan disimpan sebagai lampiran."
       ],
       "High Priority": [
         "Prioritas Tinggi"
@@ -7780,9 +7804,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Apabila Anda baru saja mengatur ulang kata sandi Anda, Anda dapat menggunakan salah satu metode pemulihan untuk membuka kunci data Anda"
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Apabila Anda ingin menggabungkan akun ini dengan akun lain, JANGAN hapus akun ini."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Apabila Anda menemui masalah, kami siap untuk membantu. ${ boldPhoneCall } atau ${ boldZoomMeeting } dengan salah satu staf layanan dukungan ahli kami, atau ${ boldLiveChat } untuk memperoleh dukungan via chat."
@@ -8230,6 +8251,9 @@
       ],
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
+      ],
+      "Organization --> Groups": [
+        "Organisasi --> Grup"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Setelah dikunci, anggota organisasi akan harus membuka ${ PASS_APP_NAME } dengan kata sandi, PIN, dll."
@@ -8918,6 +8942,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Tindakan ini akan menghapus SSO untuk ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Ini akan menghilangkan akses ke semua layanan terhubung dan menghapus semua data Anda, termasuk kontak, lampiran, acara, kata sandi, dan berkas."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
       ],
@@ -8959,6 +8986,9 @@
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Agar layanan kami dapat terus berkembang, kami mengumpulkan berbagai data yang digunakan untuk memonitor kinerja aplikasi kami dari waktu ke waktu. Informasi ini tidak akan dibagikan kepada layanan pihak ketiga mana pun."
+      ],
+      "To create your first user group, go to": [
+        "Untuk membuat grup pengguna pertama Anda, tuju"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Untuk mendekripsi dan mengakses data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan yang Anda kehendaki."
@@ -9203,8 +9233,8 @@
       "Warning:": [
         "Peringatan:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Peringatan: penghapusan bersifat permanen. Hal ini juga menghapus akses ke semua layanan yang terhubung dan menghapus semua kontak Anda."
+      "Warning: deleting your account is permanent.": [
+        "Peringatan: menghapus akun Anda bersifat permanen."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Kami menyarankan Anda untuk menggunakan aplikasi resmi ${ VPN_APP_NAME } apabila memungkinkan."
@@ -9661,6 +9691,14 @@
         "Pada saat diaktifkan, warna sub-folder akan mengikuti warna folder induk."
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Bagaimana cara mengirim pembayaran tunai?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Silakan ikuti instruksi yang tertera pada artikel berikut: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Tambahkan alamat baru untuk pengguna yang telah terdaftar pada organisasi Anda."
@@ -9926,7 +9964,7 @@
         "Muat gambar yang tersemat"
       ],
       "Load remote content": [
-        "Muat remote content"
+        "Muat konten eksternal"
       ],
       "Mark as read": [
         "Tandai telah dibaca"
@@ -10271,6 +10309,9 @@
       ],
       "Apply policy to": [
         "Terapkan kebijakan ke"
+      ],
+      "Ask members to set up 2FA": [
+        "Minta anggota menyiapkan 2FA"
       ],
       "Assertion Consumer Service URL": [
         "URL Assertion Consumer Service"
@@ -10665,6 +10706,9 @@
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Saya mengerti bahwa saya harus menambahkan alamat email ini ke akun lain dengan segera untuk menghindari kehilangan alamat ini secara permanen."
+      ],
       "I understand the risk": [
         "Saya paham akan risikonya"
       ],
@@ -10772,6 +10816,9 @@
       ],
       "Maximum number of words": [
         "Jumlah kata maksimum"
+      ],
+      "Members without 2FA": [
+        "Anggota tanpa 2FA"
       ],
       "Message": [
         "Pesan"
@@ -11133,6 +11180,9 @@
       "Tips and insights": [
         "Tips dan wawasan"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Untuk membantu kami meningkatkan, silakan menjelaskan mengapa Anda keluar."
+      ],
       "To: ${ toEmail }": [
         "Kepada: ${ toEmail }"
       ],
@@ -11201,9 +11251,6 @@
       ],
       "Vulnerable password": [
         "Kata sandi yang rentan"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Kami menyayangkan kepergian Anda dari layanan kami. Mohon jelaskan alasan kepergian Anda untuk membantu kami berkembang."
       ],
       "Weak": [
         "Lemah"
@@ -11566,9 +11613,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } anggota organisasi Anda menggunakan autentikasi dua faktor."
-      ],
       "Almost there": [
         "Hampir selesai"
       ],
@@ -11926,6 +11970,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "pada ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "pada hari Jumat pertama"
       ],
@@ -13428,6 +13475,12 @@
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Penawaran akan berakhir pada ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Bayar per tahun, kantongi penawaran terbaik kami"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -13440,11 +13493,20 @@
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
       ],
+      "Special offer": [
+        "Penawaran spesial"
+      ],
       "This offer won't be shown again.": [
         "Penawaran ini tidak akan lagi ditampilkan."
       ],
+      "When you switch from a monthly to annual subscription.": [
+        "Pada saat Anda beralih dari langganan bulanan ke langganan tahunan."
+      ],
       "You currently pay": [
         "Anda saat ini membayar"
+      ],
+      "Your subscription renews soon": [
+        "Langganan Anda akan segera diperbarui"
       ]
     },
     "Offer feature": {
@@ -13615,6 +13677,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Saya menggunakan akun ${ BRAND_NAME } lainnya"
+      ],
+      "I'd like to merge this account into another one": [
+        "Saya ingin menggabungkan akun ini ke akun yang lain"
       ],
       "Ignore group": [
         "Abaikan grup"
@@ -14145,12 +14210,6 @@
       ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Pembagian brankas aman (${ n } brankas)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ],
       "Secure your family’s passwords and online identities": [
         "Amankan kata sandi dan identitas online keluarga Anda"
@@ -16483,6 +16542,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Ditagihkan setiap 2 tahun"
+      ],
+      "Billed every 6 months": [
+        "Ditagih setiap 6 bulan"
       ],
       "Billed for 15 months": [
         "Tertagih selama 15 bulan"
@@ -18957,6 +19019,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL endpoint dari penyedia identitas (mis. https://idp.contoh.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Tidak menyertakan pengguna sistem masuk tunggal yang 2FA-nya ditangani oleh penyedia identitas Anda"
+      ],
       "Feature in early access": [
         "Fitur dalam masa akses dini"
       ],
@@ -18978,8 +19043,8 @@
       "IP address (Internet Service Provider)": [
         "Alamat IP (Penyedia Layanan Internet)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Anggota organisasi yang tidak menggunakan 2FA akan menerima email yang meminta mereka untuk mengaktifkan 2FA sesegera mungkin."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Anggota yang tidak menggunakan 2FA akan mendapatkan email untuk meminta mereka mengaktifkan sesegera mungkin. Pengguna sistem masuk tunggal tidak akan menerima pengingat email."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Pesan yang terdapat pada folder Terkirim atau Draf akan tetap muncul pada folder tersebut, bahkan apabila Anda memindahkan pesan ini ke folder lain."
@@ -19115,8 +19180,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini"
+      "Disables end-to-end email encryption for this group": [
+        "Menonaktifkan enkripsi email end-to-end untuk grup ini"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini, dan tidak ada sumber daya terenkripsi yang akan dibagikan dengan pengguna ini."

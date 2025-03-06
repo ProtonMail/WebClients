@@ -379,6 +379,9 @@
       "Delete": [
         "Διαγραφή"
       ],
+      "Delete account": [
+        "Διαγραφή λογαριασμού"
+      ],
       "Delete and confirm": [
         "Διαγραφή και επιβεβαίωση"
       ],
@@ -6805,6 +6808,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: προεπισκόπηση χαμηλής ανάλυσης"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μελών της οικογένειάς σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μελών της οικογένειάς σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "Ο ${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
       ],
@@ -6817,6 +6832,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: μη βάζετε σε καραντίνα ή απορρίπτετε μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου. Συνήθως, οι χρήστες χρησιμοποιούν αυτήν την πολιτική μόνο για την αντιμετώπιση προβλημάτων ή τη δοκιμή."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } μέλος",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } μέλη"
       ],
       "${ number } city": [
         "${ number } πόλη",
@@ -7863,9 +7882,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Εάν πρόσφατα έχετε επαναφέρει τον κωδικό σας, μπορείτε να χρησιμοποιήσετε μία μέθοδο επαναφοράς δεδομένων για να ξεκλειδώσετε τα δεδομένα σας"
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Εάν επιθυμείτε να συνδυάσετε αυτόν τον λογαριασμό με έναν άλλο, ΜΗΝ τον διαγράψετε."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Αν αντιμετωπίζετε προβλήματα, είμαστε εδώ για να σας βοηθήσουμε. ${ boldPhoneCall } ή ${ boldZoomMeeting } με έναν από τους ειδικούς υποστήριξής μας ή ανοίξτε ένα ${ boldLiveChat } για υποστήριξη με ζωντανή συνομιλία."
@@ -9017,6 +9033,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Αυτό θα καταργήσει το SSO για το ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Αυτό θα καταργήσει την πρόσβασή σας σε όλες τις συνδεδεμένες υπηρεσίες και θα διαγράψει όλα τα δεδομένα σας, συμπεριλαμβανομένων επαφών, συνημμένων, συμβάντων, κωδικών πρόσβασης και αρχείων."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Αυτό θα αντικαταστήσει τον προσωρινό κωδικό πρόσβασης σας. Στο εξής θα τον χρησιμοποιείτε για την πρόσβαση στον λογαριασμό σας στο ${ BRAND_NAME }."
       ],
@@ -9305,8 +9324,8 @@
       "Warning:": [
         "Προειδοποίηση:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Προειδοποίηση: Η διαγραφή είναι μόνιμη. Αυτό επίσης αφαιρεί την πρόσβαση σε όλες τις συνδεδεμένες υπηρεσίες και διαγράφει όλες τις επαφές σας."
+      "Warning: deleting your account is permanent.": [
+        "Προειδοποίηση: η διαγραφή του λογαριασμού σας είναι μόνιμη."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Σας συμβουλεύουμε όταν είναι δυνατόν να χρησιμοποιείτε επίσημες εφαρμογές ${ VPN_APP_NAME }."
@@ -10398,6 +10417,9 @@
       "Apply policy to": [
         "Εφαρμογή πολιτικής σε"
       ],
+      "Ask members to set up 2FA": [
+        "Ζητήστε από τα μέλη να ρυθμίσουν το 2FA"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
       ],
@@ -10791,6 +10813,9 @@
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Καταλαβαίνω ότι θα πρέπει να προσθέσω αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου στον άλλο λογαριασμό αμέσως, για να μη χάσω μόνιμα αυτήν τη διεύθυνση."
+      ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
       ],
@@ -10898,6 +10923,9 @@
       ],
       "Maximum number of words": [
         "Μέγιστος αριθμός λέξεων"
+      ],
+      "Members without 2FA": [
+        "Μέλη δίχως 2FA"
       ],
       "Message": [
         "Μήνυμα"
@@ -11260,6 +11288,9 @@
       "Tips and insights": [
         "Συμβουλές και πληροφορίες"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Για να μας βοηθήσετε να βελτιωθούμε, παρακαλούμε εξηγήστε γιατί φεύγετε."
+      ],
       "To: ${ toEmail }": [
         "Προς: ${ toEmail }"
       ],
@@ -11328,9 +11359,6 @@
       ],
       "Vulnerable password": [
         "Ευάλωτος κωδικός πρόσβασης"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Λυπούμαστε που φεύγετε. Παρακαλούμε εξηγήστε τον λόγο, για να μας βοηθήσετε να βελτιωθούμε."
       ],
       "Weak": [
         "Αδύναμο"
@@ -11696,10 +11724,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } του μέλους του οργανισμού σας χρησιμοποιεί έλεγχο ταυτότητας δύο παραγόντων.",
-        "${ twoFAMembers.length }/${ members.length } των μέλλων του οργανισμού σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων."
-      ],
       "Almost there": [
         "Ακόμα λίγο"
       ],
@@ -13622,6 +13646,9 @@
       "Save big when you pay annually": [
         "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
       ],
+      "Special offer": [
+        "Ειδική προσφορά"
+      ],
       "This offer won't be shown again.": [
         "Αυτή η προσφορά δε θα εμφανιστεί ξανά."
       ],
@@ -13803,6 +13830,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Χρησιμοποιώ διαφορετικό ${ BRAND_NAME } λογαριασμό"
+      ],
+      "I'd like to merge this account into another one": [
+        "Θα ήθελα να συγχωνεύσω αυτόν τον λογαριασμό σε έναν άλλο"
       ],
       "Ignore group": [
         "Παράβλεψη ομάδας"
@@ -14336,14 +14366,6 @@
       ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη)",
-        "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη) και κοινή χρήση συνδέσμων",
-        "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες) και κοινή χρήση συνδέσμων"
       ],
       "Secure your family’s passwords and online identities": [
         "Ασφαλίστε τους κωδικούς πρόσβασης και τις ηλεκτρονικές ταυτότητες της οικογένειάς σας"
@@ -16708,6 +16730,9 @@
       "Billed every 2 years": [
         "Χρέωση κάθε 2 χρόνια"
       ],
+      "Billed every 6 months": [
+        "Χρέωση κάθε 6 μήνες"
+      ],
       "Billed for 15 months": [
         "Χρέωση για 15 μήνες"
       ],
@@ -18448,7 +18473,7 @@
         "IP"
       ],
       "Items owned": [
-        "Αντικείμενα που ανήκουν"
+        "Ιδιόκτητα στοιχεία"
       ],
       "Keep your inbox organized": [
         "Διατηρήστε τα εισερχόμενά σας οργανωμένα"
@@ -18941,10 +18966,10 @@
         "Χρήστες και διευθύνσεις"
       ],
       "Vault owned": [
-        "Κρύπτη που ανήκει"
+        "Ιδιόκτητη κρύπτη"
       ],
       "Vaults owned": [
-        "Κρύπτες που ανήκουν"
+        "Ιδιόκτητες κρύπτες"
       ],
       "Verification": [
         "Επαλήθευση"
@@ -19210,6 +19235,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL τελικού σημείου από πάροχο ταυτότητας (π.χ. https://idp.example.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Εξαιρούνται οι χρήστες καθολικής σύνδεσης των οποίων το 2FA χειρίζεται ο πάροχος ταυτότητάς σας"
+      ],
       "Feature in early access": [
         "Δυνατότητα σε πρώιμη πρόσβαση"
       ],
@@ -19231,8 +19259,8 @@
       "IP address (Internet Service Provider)": [
         "Διεύθυνση IP (Πάροχος Υπηρεσιών Διαδικτύου)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα email που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα μήνυμα ηλεκτρονικού ταχυδρομείου που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό. Οι χρήστες καθολικής σύνδεσης δε θα λάβουν την υπενθύμιση ηλεκτρονικού ταχυδρομείου."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
@@ -19368,8 +19396,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα"
+      "Disables end-to-end email encryption for this group": [
+        "Απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα και δε θα γίνει κοινή χρήση κρυπτογραφημένων πόρων με αυτόν τον χρήστη."
