@@ -340,6 +340,9 @@
       "Go to label": [
         "Gå til etikette"
       ],
+      "Go to panel ${ index }": [
+        "Gå til panel ${ index }"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -4014,9 +4017,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ VPN_APP_NAME }."
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Slet IKKE denne konto, hvis du ønsker at kombinere den med en anden."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Ved problemer er vi her for at hjælpe. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en af vores supportspecialister, eller åbn en ${ boldLiveChat } for chatsupport."
       ],
@@ -4827,9 +4827,6 @@
       ],
       "Warning:": [
         "Advarsel:"
-      ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Advarsel: Sletning er permanent. Dette fjerner også adgang til alle tilknyttede tjenester og sletter alle dine kontakter."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi råder dig til at bruge officielle ${ VPN_APP_NAME }-applikationer, når det er muligt."
@@ -5726,9 +5723,6 @@
       "Vulnerable": [
         "Sårbar"
       ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Vi er kede af at du forlader os. Forklar venligst hvorfor, så vi kan forbedre os."
-      ],
       "Weak": [
         "Svag"
       ],
@@ -5900,6 +5894,9 @@
       "Request an invite": [
         "Anmod om invitation"
       ],
+      "settings": [
+        "indstillinger"
+      ],
       "Sign in": [
         "Log ind"
       ],
@@ -5937,12 +5934,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Opgradér for at låse op for chat-support og andre premium-funktioner, eller brug vores gratis supportformular til at rapportere dit problem."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } af din organisations medlem bruger totrins-godkendelse.",
-        "${ twoFAMembers.length }/${ members.length } af din organisations medlemmer bruger totrins-godkendelse."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7407,14 +7398,6 @@
       ],
       "Secure vault sharing": [
         "Sikker deling af boks"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Sikker deling af boks (${ n } vault)",
-        "Sikker deling af bokse (${ n } vault)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Sikker deling af boks (${ n } vault) og deling af link",
-        "Sikker deling af bokse (${ n } vault) og deling af links"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9093,6 +9076,9 @@
       "Learn more about our impact": [
         "Lær mere om vores indflydelse"
       ],
+      "Limitations of the free plan:": [
+        "Begrænsninger ved et gratis abonnement:"
+      ],
       "Make your business stand out": [
         "Lad din virksomhed skille sig ud"
       ],
@@ -10267,9 +10253,6 @@
       ],
       "IP address (Internet Service Provider)": [
         "IP Adresse (Internetudbyder)"
-      ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Medlemmer, der ikke bruger 2FA, vil modtage en e-mail, der beder dem om at aktivere det hurtigst muligt."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."

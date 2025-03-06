@@ -199,6 +199,9 @@
       "Delete": [
         "Sil"
       ],
+      "Delete account": [
+        "Hesabı sil"
+      ],
       "Delete Gateway": [
         "Ağ geçidini sil"
       ],
@@ -366,6 +369,9 @@
       ],
       "Go to label": [
         "Etikete git"
+      ],
+      "Go to panel ${ index }": [
+        "${ index } panosuna git"
       ],
       "Got it": [
         "Anladım"
@@ -2461,7 +2467,7 @@
     },
     "driveplus2024: Deal details": {
       "Extended version history": [
-        "Genişletilmiş sürüm geçmişi"
+        "Ayrıntılı sürüm geçmişi"
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -2675,7 +2681,7 @@
         "Ödemeler şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin"
       ],
       "Please configure a custom domain before adding addresses.": [
-        "Lütfen adresleri eklemeden önce özel bir etki alanı yapılandırın."
+        "Lütfen adresleri eklemeden önce bir özel etki alanı yapılandırın."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
@@ -2696,10 +2702,10 @@
         "Lütfen bir eyalet seçin"
       ],
       "Please select at least one location before continuing.": [
-        "Devam etmeden önce lütfen en az bir konum seçin."
+        "İlerlemeden önce lütfen en az bir konum seçin."
       ],
       "Please select at least one user or group before continuing.": [
-        "Devam etmeden önce lütfen en az bir kullanıcı veya grup seçin."
+        "İlerlemeden önce lütfen en az bir kullanıcı veya grup seçin."
       ],
       "Please set a recovery email first": [
         "Lütfen önce bir kurtarma e-postası adresi ayarlayın"
@@ -2762,7 +2768,7 @@
         "Kabul ettiğimiz en az ödeme: ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
-        "İlke adı 3 ila 40 karakter arasında olmalıdır."
+        "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -3018,7 +3024,7 @@
         "Ödenmemiş faturalarınız var. Bir aile tarifesine geçmeden önce lütfen onları ödeyin."
       ],
       "You need to configure a custom domain before adding multiple users.": [
-        "Birkaç kullanıcı eklemeden önce özel bir etki alanı yapılandırmanız gerekir."
+        "Birkaç kullanıcı eklemeden önce bir özel etki alanı yapılandırmanız gerekir."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Yeni bir kullanıcı oluşturmadan önce özel bir etki alanı yapılandırmanız gerekir."
@@ -3606,6 +3612,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: düşük çözünürlüklü ön izleme"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } aile üyeniz iki adımlı doğrulama kullanıyor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } aile üyeniz iki adımlı doğrulama kullanıyor."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
+        "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, kullanıcı adı ve ikinci parola yerine tek bir parola ile de kullanılabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
@@ -3615,6 +3633,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: Yetkisiz e-postaları karantinaya almaz veya reddetmez. Genellikle insanlar bu ilkeyi yalnızca sorun gidermek veya denemeler yapmak için kullanır."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üye",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üye"
       ],
       "${ number } city": [
         "${ number } il",
@@ -4246,9 +4268,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Sorun yaşıyorsanız, size yardımcı olmak için buradayız. Destek uzmanlarımızdan biriyle ${ boldPhoneCall } yapın ya da ${ boldZoomMeeting } ile görüşün. Canlı destek almak için bir ${ boldLiveChat } açın."
@@ -4944,6 +4963,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Bu işlem ${ boldDomainName } için tek oturum açmayı kaldıracak."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Bu işlem, ilişkili tüm hizmetlere erişiminizi kaldırır ve kişiler, ek dosyalar, etkinlikler, parolalar ve dosyalar gibi tüm verilerinizi siler."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Bu bilgi, geçici parolanızın yerini alır. Gelecekte ${ BRAND_NAME } hesabınıza erişmek için bunu kullanacaksınız."
       ],
@@ -4978,7 +5000,7 @@
         "${ product } ile ilerlemek için"
       ],
       "To create your first user group, go to": [
-        "İlk kullanıcı grubunuzu oluşturmak için şu adrese gidin"
+        "İlk kullanıcı grubunuzu oluşturmak için şuraya gidin"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -5133,8 +5155,8 @@
       "Warning:": [
         "Uyarı:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Uyarı: Silme işlemi geri alınamaz. Bu işlem, tüm ilgili hizmetlere erişiminizi keser ve tüm kişilerinizi siler."
+      "Warning: deleting your account is permanent.": [
+        "Uyarı: Hesabınızın sildikten sonra geri alamazsınız."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Olabildiğince resmi ${ VPN_APP_NAME } uygulamalarını kullanmanızı öneririz."
@@ -5626,6 +5648,9 @@
       "Apply policy to": [
         "İlkeyi şunlara uygula"
       ],
+      "Ask members to set up 2FA": [
+        "Üyelerden iki adımlı doğrulamayı açmalarını isteyin"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service adresi"
       ],
@@ -5833,6 +5858,9 @@
       "Hide password": [
         "Parolayı gizle"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Bu e-posta adresini kalıcı olarak kaybetmemek için bu adresi şu anda başka bir hesaba eklemem gerektiğini anladım."
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5859,6 +5887,9 @@
       ],
       "Main": [
         "Ana"
+      ],
+      "Members without 2FA": [
+        "İki adımlı doğrulama kullanmayan üyeler"
       ],
       "Metadata file for ${ appName }": [
         "${ appName } için üst veriler dosyası"
@@ -6068,6 +6099,9 @@
       "Thomas": [
         "Thomas"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Gelişmemize yardımcı olmak için, lütfen neden ayrıldığınızı açıklayın."
+      ],
       "Two-password mode": [
         "İki parola kipi"
       ],
@@ -6109,9 +6143,6 @@
       ],
       "Vulnerable password": [
         "Güvenlik açığı bulunan parola"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
       ],
       "Weak": [
         "Zayıf"
@@ -6338,12 +6369,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Destek ekibi ile sohbete ve diğer ücretli özelliklere erişmek için abonelik tarifenizi yükseltin ya da sorununuzu bildirmek için ücretsiz destek formumuzu kullanın."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "Kuruluşunuzdaki ${ twoFAMembers.length }/${ members.length } üye iki adımlı doğrulama kullanıyor.",
-        "Kuruluşunuzdaki ${ twoFAMembers.length }/${ members.length } üye iki adımlı doğrulama kullanıyor."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7422,7 +7447,7 @@
         "Wi-Fi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
+        "Ailenizi zararlı sitelerden koruyun ve sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
@@ -7738,7 +7763,7 @@
         "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
       ],
       "Pay annually, secure our best offer": [
-        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+        "Yıllık ödeme yapın, en iyi teklifimizi değerlendirin"
       ],
       "Save": [
         "İndirim"
@@ -7751,6 +7776,9 @@
       ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "Special offer": [
+        "Özel teklif"
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
@@ -7808,6 +7836,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
+      ],
+      "I'd like to merge this account into another one": [
+        "Bu hesabı başka bir hesapla birleştirmek istiyorum"
       ],
       "It's missing a key feature that I need": [
         "İhtiyacım olan önemli bir özellik eksik"
@@ -7974,14 +8005,6 @@
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Güvenli kasa paylaşımı (${ n } kasa)",
-        "Güvenli kasa paylaşımı (${ n } kasa)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9534,6 +9557,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
+      ],
+      "Billed every 6 months": [
+        "6 ayda bir faturalanır"
       ],
       "Billed for 15 months": [
         "15 aylık olarak faturalanır"
@@ -11172,6 +11198,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "İki adımlı doğrulama özelliği kimlik hizmeti sağlayıcınız tarafından tek oturum açma kullanıcıları katılmıyor"
+      ],
       "Feature in early access": [
         "Erken erişim özelliği"
       ],
@@ -11184,8 +11213,8 @@
       "IP address (Internet Service Provider)": [
         "IP adresi (internet hizmeti sağlayıcı)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "İki adımlı doğrulama kullanmayan üyelere bu özelliği en kısa sürede açmalarını isteyen bir e-posta gönderilecek."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "İki adımlı doğrulama kullanmayan üyelere, bunu en kısa sürede açmaları için bir e-posta gönderilecek. Bu bildirim e-postası, tek oturum açma kullanıcılarına gönderilmeyecek."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Paylaşılan sunucu ilkeleri bireysel kullanıcılara veya gruplara uygulanabilir"
@@ -11234,8 +11263,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır"
+      "Disables end-to-end email encryption for this group": [
+        "Bu grup için uçtan uca e-posta şifrelemesini kapatır"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."

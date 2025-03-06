@@ -322,6 +322,9 @@
       "Go to label": [
         "Címkéhez ugrás"
       ],
+      "Go to panel ${ index }": [
+        "Váltás: ${ index }"
+      ],
       "Got it": [
         "Rendben!"
       ],
@@ -2422,6 +2425,9 @@
       "Please generate keys before you try to change your password": [
         "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
       ],
+      "Please select a country": [
+        "Kérjük, válasszon egy országot"
+      ],
       "Please set a recovery email first": [
         "Először adja meg a helyreállítási e-mail címet"
       ],
@@ -3324,6 +3330,9 @@
         "Az érintett felhasználó a következő sorban van:",
         "Az érintett felhasználók a következő sorokban vannak:"
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "A mesterséges intelligenciával működő asszisztens segít jobb e-maileket készíteni, gyorsan és könnyedén."
+      ],
       "All members have been added.": [
         "Minden tag hozzáadva."
       ],
@@ -3472,6 +3481,9 @@
       "dedicated servers": [
         "dedikált szerverek"
       ],
+      "default email address": [
+        "alapértelmezett e-mail cím"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
       ],
@@ -3538,6 +3550,9 @@
       ],
       "Emailing preference saved": [
         "E-mail beállítás elmentve"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "30 napnál régebben a Kukába és a Levélszemétbe áthelyezett e-mailek automatikusan törlődnek."
       ],
       "Enable single sign-on to keep your organization safe": [
         "Engedélyezze az egyszeri bejelentkezést szervezete biztonsága érdekében"
@@ -3667,9 +3682,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Ha egy másik fiókkal szeretné összevonni ezt a fiókot, NE törölje."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Ha problémába ütközött, segítünk. ${ boldPhoneCall } vagy ${ boldZoomMeeting } egy támogatási szakemberünkkel, vagy indítson ${ boldLiveChat } egy segítségnyújtóval."
@@ -4093,6 +4105,9 @@
       "Session timed out": [
         "A munkamenet lejárt"
       ],
+      "Setting up your new address…": [
+        "Új e-mail cím beállítása..."
+      ],
       "Setting up your organization": [
         "Szervezet beállítása"
       ],
@@ -4223,6 +4238,9 @@
       ],
       "This file is too large to preview": [
         "Ez a fájl túl nagy az előnézethez"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Ez mostantól az ${ defaultEmailAddress } az új üzenetek küldéséhez."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Ez az üzenet nem a támogatási csoporthoz érkezik. Ha problémája van a szolgáltatással vagy további segítségre van szüksége ${ supportLink }."
@@ -4421,9 +4439,6 @@
       ],
       "Warning:": [
         "Figyelem:"
-      ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Figyelmeztetés: a törlés végleges. Ezzel elveszti az elérését az összes kapcsolódó szolgáltatáshoz és törli minden névjegyét."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Amikor lehetséges, javasoljuk inkább a hivatalos ${ VPN_APP_NAME } alkalmazás használatát."
@@ -5221,9 +5236,6 @@
       "Vulnerable": [
         "Sebezhető"
       ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Sajnáljuk, hogy megszünteti a fiókját. Kérjük, ossza meg velünk az indokait, hogy fejlődhessünk."
-      ],
       "Weak": [
         "Gyenge"
       ],
@@ -5412,12 +5424,6 @@
       ],
       "What’s this?": [
         "Mi ez?"
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést.",
-        "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -6634,14 +6640,6 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Biztonságos tároló megosztás (${ n } tároló)",
-        "Biztonságos tároló megosztás (${ n } tároló)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás.",
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás."
       ]
     },
     "pass_signup_2024: Info": {
@@ -9081,9 +9079,6 @@
       "IP address (Internet Service Provider)": [
         "IP cím (Internetszolgáltató)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Azok a tagok akinek nincs bekapcsolva a kétlépcsős hitelesítés, egy e-mailt fognak kapni, hogy minél előbb kapcsolják be."
-      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Az új előfizetési ciklus ekkor indul: ${ formattedTime }"
       ],
@@ -9390,7 +9385,7 @@
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
-        "Haladó VPN beállítások"
+        "Speciális VPN beállítások"
       ],
       "No ads": [
         "Nincsenek hirdetések"
