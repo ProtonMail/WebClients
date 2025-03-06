@@ -8,6 +8,8 @@ import { ItemsListActions } from '@proton/pass/components/Item/List/ItemsListAct
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { SecureLinkQuickActions } from '@proton/pass/components/SecureLink/SecureLinkQuickActions';
 
+import { getVaultOptionInfo } from '../../Menu/Vault/utils';
+
 export const ItemsListHeader = memo(() => {
     const scope = useItemScope();
     const items = useItems();
@@ -24,7 +26,7 @@ export const ItemsListHeader = memo(() => {
                                     <ScopeFilter
                                         label={c('Action').t`Secure links`}
                                         count={items.totalCount}
-                                        icon="link"
+                                        icon={getVaultOptionInfo('secure-links').icon}
                                     />
                                     <SecureLinkQuickActions />
                                 </>
@@ -35,7 +37,7 @@ export const ItemsListHeader = memo(() => {
                                 <ScopeFilter
                                     label={c('Label').t`Shared with me`}
                                     count={items.totalCount}
-                                    icon="user-arrow-left"
+                                    icon={getVaultOptionInfo('shared-with-me').icon}
                                 />
                             );
 
@@ -44,7 +46,7 @@ export const ItemsListHeader = memo(() => {
                                 <ScopeFilter
                                     label={c('Label').t`Shared by me`}
                                     count={items.totalCount}
-                                    icon="user-arrow-right"
+                                    icon={getVaultOptionInfo('shared-by-me').icon}
                                 />
                             );
 
