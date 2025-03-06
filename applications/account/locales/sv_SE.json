@@ -379,6 +379,9 @@
       "Delete": [
         "Ta bort"
       ],
+      "Delete account": [
+        "Ta bort konto"
+      ],
       "Delete and confirm": [
         "Ta bort och bekräfta"
       ],
@@ -6821,6 +6824,10 @@
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: sätt inte i karantän eller avvisa ej oauktoriserade e-postmeddelanden. Vanligtvis använder människor bara denna policy för felsökning eller testning."
       ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } medlem",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } medlemmar"
+      ],
       "${ number } city": [
         "${ number } ort",
         "${ number } orter"
@@ -7857,9 +7864,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Om du nyligen har återställt ditt lösenord kan du använda en dataåterställningsmetod för att låsa upp dina data"
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Om du vill kombinera detta konto med ett annat, ta INTE bort det."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Om du har problem finns vi här för att hjälpa dig. ${ boldPhoneCall } eller ${ boldZoomMeeting } med en av våra supportspecialister, eller öppna en ${ boldLiveChat } för chattsupport."
@@ -9007,6 +9011,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Detta kommer ta bort SSO för ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Detta kommer ta bort din åtkomst till alla anslutna tjänster och ta bort all din data, inklusive kontakter, bilagor, händelser, lösenord och filer."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Detta kommer att ersätta ditt temporära lösenord. Du kommer att använda det för att komma åt ditt ${ BRAND_NAME }-konto i framtiden."
       ],
@@ -9050,7 +9057,7 @@
         "För att kontinuerligt förbättra våra tjänster samlar vi ibland in data för att övervaka att våra applikationer fungerar korrekt. Denna information delas inte med några tredjepartstjänster."
       ],
       "To create your first user group, go to": [
-        "För att skapa din första användargrupp, gå till"
+        "För att skapa din första användare grupp, gå till"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "För att dekryptera och visa dina låsta data efter en lösenordsåterställning, välj en återställningsmetod."
@@ -9295,8 +9302,8 @@
       "Warning:": [
         "Varning:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Varning: borttagning är permanent. Detta tar också bort åtkomst till alla anslutna tjänster och tar bort alla dina kontakter."
+      "Warning: deleting your account is permanent.": [
+        "Varning: borttagning av ditt konto är permanent."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi rekommenderar att du använder officiella ${ VPN_APP_NAME }-applikationer när det är möjligt."
@@ -10388,6 +10395,9 @@
       "Apply policy to": [
         "Tillämpa policy till"
       ],
+      "Ask members to set up 2FA": [
+        "Be medlemmar att ställa in 2FA"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service-URL"
       ],
@@ -10781,6 +10791,9 @@
       "Hide password": [
         "Dölj lösenord"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Jag förstår att jag måste lägga till denna e-postadress till det andra kontot omedelbart för att undvika att förlora denna adress permanent."
+      ],
       "I understand the risk": [
         "Jag förstår risken"
       ],
@@ -10888,6 +10901,9 @@
       ],
       "Maximum number of words": [
         "Max antal ord"
+      ],
+      "Members without 2FA": [
+        "Medlemmar utan 2FA"
       ],
       "Message": [
         "Meddelande"
@@ -11250,6 +11266,9 @@
       "Tips and insights": [
         "Tips och insikter"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "För att hjälpa oss att bli bättre, förklara varför du lämnar."
+      ],
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
       ],
@@ -11321,9 +11340,6 @@
       ],
       "Vulnerable password": [
         "Sårbart lösenord"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Tråkigt att du lämnar oss. Vill du vara snäll och berätta varför du lämnar oss för att hjälpa oss bli bättre."
       ],
       "Weak": [
         "Svagt"
@@ -11689,10 +11705,6 @@
       ]
     },
     "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } av din organisationsmedlem använder tvåfaktorsautentisering.",
-        "${ twoFAMembers.length }/${ members.length } av dina organisationsmedlemmar använder tvåfaktorsautentisering."
-      ],
       "Almost there": [
         "Nästan framme"
       ],
@@ -13618,6 +13630,9 @@
       "Save big when you pay annually": [
         "Spara stort när du betalar årligen"
       ],
+      "Special offer": [
+        "Specialerbjudande"
+      ],
       "This offer won't be shown again.": [
         "Detta erbjudande kommer inte att visas igen."
       ],
@@ -13805,6 +13820,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Jag använder ett annat ${ BRAND_NAME }-konto"
+      ],
+      "I'd like to merge this account into another one": [
+        "Jag skulle vilja slå ihop detta konto till ett annat"
       ],
       "Ignore group": [
         "Ignorera grupp"
@@ -14353,14 +14371,6 @@
       ],
       "Secure vault sharing": [
         "Säker valvdelning"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Säker valvdelning (${ n } valv)",
-        "Säker valvdelning (${ n } valv)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Säker valvdelning (${ n } valv) och länkdelning",
-        "Säker valvdelning (${ n } valv) och länkdelning"
       ],
       "Secure your family’s passwords and online identities": [
         "Säkra din familjs lösenord och identiteter online"
@@ -16727,6 +16737,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureras vartannat år"
+      ],
+      "Billed every 6 months": [
+        "Faktureras var 6:e månad"
       ],
       "Billed for 15 months": [
         "Fakturerad med för 15 månader"
@@ -19266,9 +19279,6 @@
       "IP address (Internet Service Provider)": [
         "IP-adress (internetleverantör)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Medlemmar som inte använder 2FA kommer få ett e-postmeddelande som ber dem att aktivera det så fort som möjligt."
-      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meddelanden i mappen “Skickat“ eller “Utkast“ kommer att fortsätta att visas i den mappen även om du flyttar dem till en annan mapp."
       ],
@@ -19403,8 +19413,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp"
+      "Disables end-to-end email encryption for this group": [
+        "Inaktiverar end-to-end e-postkryptering för denna grupp"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp och inga krypterade resurser kommer att delas med denna användare."
