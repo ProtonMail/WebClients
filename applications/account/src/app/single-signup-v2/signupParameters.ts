@@ -1,6 +1,6 @@
 import type * as H from 'history';
 
-import { CYCLE, PLANS } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import { getReturnUrlParameter } from '@proton/shared/lib/authentication/returnUrl';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -96,7 +96,7 @@ export const getSignupParameters = ({
                     },
                 },
                 preSelectedPlan: PLANS.FREE,
-                coupon: 'PORKBUN',
+                coupon: COUPON_CODES.PORKBUN,
             };
         }
     }
