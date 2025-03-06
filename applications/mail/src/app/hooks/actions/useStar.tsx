@@ -50,10 +50,10 @@ export const useStar = () => {
                 rollback = optimisticApplyLabels({
                     elements,
                     inputChanges: { [MAILBOX_LABEL_IDS.STARRED]: value },
+                    currentLabelID: labelID,
                     // When un-staring an item from star folder, the item should move out from the folder.
                     // To update Total optimistically correctly, we need to specify this
-                    isMove: labelID === MAILBOX_LABEL_IDS.STARRED && !value,
-                    currentLabelID: labelID,
+                    isUnstarringElement: labelID === MAILBOX_LABEL_IDS.STARRED && !value,
                 });
                 await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
             } catch (error: any) {

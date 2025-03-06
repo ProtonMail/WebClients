@@ -113,6 +113,7 @@ export const useOptimisticApplyLabels = () => {
             currentLabelID,
             isRollback,
             inputElementTotalAdjustment,
+            isUnstarringElement = false,
         }: {
             elements: Element[];
             inputChanges: LabelChanges | LabelChanges[];
@@ -121,6 +122,7 @@ export const useOptimisticApplyLabels = () => {
             currentLabelID?: string;
             isRollback?: boolean;
             inputElementTotalAdjustment?: number;
+            isUnstarringElement?: boolean;
         }) => {
             const rollbackChanges = [] as { element: Element; changes: LabelChanges }[];
             const updatedElements = [] as Element[];
@@ -139,7 +141,7 @@ export const useOptimisticApplyLabels = () => {
                 const changes = Array.isArray(inputChanges) ? { ...inputChanges[index] } : { ...inputChanges };
 
                 // No need to trigger this action during rollback since we already know where to put the element back
-                if (isMove && !isRollback) {
+                if ((isMove || isUnstarringElement) && !isRollback) {
                     const currentFolderIDs = ([SENT, DRAFTS] as string[]).includes(currentLabelID || '')
                         ? [currentLabelID as string]
                         : getCurrentFolderIDs(element, folders);
@@ -168,9 +170,16 @@ export const useOptimisticApplyLabels = () => {
                         }
                     }
 
-                    currentFolderIDs.forEach((folderID) => {
-                        changes[folderID] = false;
-                    });
+                    // When an item is un-starred, we want to update the counters,
+                    // so we need to pass in the parent "if" condition
+                    // However, in case of a "true" move action, we need to move the item from other location,
+                    // Which we shouldn't do when un-starring an item
+                    // e.g. a starred element in inbox should be moved out from starred but not from inbox when un-starring it
+                    if (!isUnstarringElement) {
+                        currentFolderIDs.forEach((folderID) => {
+                            changes[folderID] = false;
+                        });
+                    }
 
                     // If moving an element to spam or trash, we can remove it from almost all mail and custom labels too
                     if (
