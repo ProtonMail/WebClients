@@ -7885,6 +7885,12 @@
       "Maybe later": [
         "Poate mai târziu"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Oferta expiră ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Plătiți anual, asigurați-vă cea mai bună ofertă"
+      ],
       "Save": [
         "Economisiți"
       ],
@@ -7897,6 +7903,9 @@
       "Save big when you pay annually": [
         "Economisiți mult dacă plătiți anual"
       ],
+      "Special offer": [
+        "Ofertă specială"
+      ],
       "This offer won't be shown again.": [
         "Această ofertă nu va mai fi afișată."
       ],
@@ -7905,6 +7914,9 @@
       ],
       "You currently pay": [
         "Acum plătiți"
+      ],
+      "Your subscription renews soon": [
+        "Abonamentul se va reînnoi în curând"
       ]
     },
     "Offer feature": {
@@ -8071,16 +8083,6 @@
       ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Partajare securizată seif (${ n } seif)",
-        "Partajare securizată seifuri (${ n } seifuri)",
-        "Partajare securizată seifuri (${ n } de seifuri)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Partajare securizată seif (${ n } seif) și legături web",
-        "Partajare securizată seifuri (${ n } seifuri) și legături web",
-        "Partajare securizată seifuri (${ n } de seifuri) și legături web"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9163,6 +9165,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturat la doi ani"
+      ],
+      "Billed every 6 months": [
+        "Facturat la fiecare 6 luni"
       ],
       "Billed for 15 months": [
         "Facturat pentru 15 luni"

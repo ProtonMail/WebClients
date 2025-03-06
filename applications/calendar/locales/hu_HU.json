@@ -1457,6 +1457,26 @@
         "eper"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "Napi nézet"
+      ],
+      "Month view": [
+        "Havi nézet"
+      ],
+      "New event": [
+        "Új esemény"
+      ],
+      "Search events": [
+        "Események keresése"
+      ],
+      "Today": [
+        "Ma"
+      ],
+      "Week view": [
+        "Heti nézet"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Elveti az importálás módosításait?"
@@ -2360,6 +2380,12 @@
         "A jelenlegi időzóna alapján"
       ]
     },
+    "Custom frequency option": {
+      "event": [
+        "esemény",
+        "esemény"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/hó"
@@ -3008,6 +3034,9 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "Adjon meg egy keresztnevet, vezetéknevet vagy megjelenített nevet"
+      ],
+      "Please select a country": [
+        "Kérjük, válasszon egy országot"
       ],
       "Port is required": [
         "A port megadása szükséges"
@@ -3685,6 +3714,9 @@
       "Name": [
         "Név"
       ],
+      "Repeat event": [
+        "Esemény ismétlése"
+      ],
       "Search": [
         "Keresés"
       ],
@@ -4103,6 +4135,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Cím hitelesítés a megbízható kulcsokkal engedélyezve van ehhez a címhez. A küldéshez a címzett nyilvános kulcsát megbízhatóként kell megjelölnie."
       ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "A mesterséges intelligenciával működő asszisztens segít jobb e-maileket készíteni, gyorsan és könnyedén."
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Mind (${ totalFoldersCount } mappa)",
         "Mind (${ totalFoldersCount } mappa)"
@@ -4270,6 +4305,9 @@
       "Dedicated servers": [
         "Dedikált szerverek"
       ],
+      "default email address": [
+        "alapértelmezett e-mail cím"
+      ],
       "Deleting event...": [
         "Esemény törlése...",
         "Események törlése..."
@@ -4319,6 +4357,9 @@
       "Emails are automatically signed": [
         "Az e-mailek automatikusan aláírásra kerülnek"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "30 napnál régebben a Kukába és a Levélszemétbe áthelyezett e-mailek automatikusan törlődnek."
+      ],
       "Enter the code from your authenticator app": [
         "Adja meg a hitelesítő alkalmazása által generált kódot"
       ],
@@ -4367,6 +4408,9 @@
       ],
       "High Priority": [
         "Magas prioritású"
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Ha a gyorsbillentyűk engedélyezve vannak, a következő billentyűkkel gyors műveleteket végezhet, illetve különböző nézetekre ugorhat. ${ metaKey } + K mindig engedélyezve van."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
@@ -4659,6 +4703,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
+      "Setting up your new address…": [
+        "Új e-mail cím beállítása..."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
       ],
@@ -4733,6 +4780,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Az esemény frissítésre került. Az esemény szervezője nem kap értesítést, hogy elutasítja a meghívást, mivel a meghívóban szereplő címről nem tud levelet küldeni. Ebben az esetben is törli az eseményt?"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "Ez mostantól az ${ defaultEmailAddress } az új üzenetek küldéséhez."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
@@ -5141,8 +5191,29 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "Új esemény létrehozása"
+      ],
+      "Day view": [
+        "Napi nézet"
+      ],
+      "Month view": [
+        "Havi nézet"
+      ],
+      "Open quick actions menu": [
+        "Gyorsműveletek menü megnyitása"
+      ],
       "Open this modal": [
         "Ablak megnyitása"
+      ],
+      "Search events": [
+        "Események keresése"
+      ],
+      "Today": [
+        "Ma"
+      ],
+      "Week view": [
+        "Heti nézet"
       ]
     },
     "Keyboard shortcut section name": {
@@ -7066,14 +7137,6 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Biztonságos tároló megosztás (${ n } tároló)",
-        "Biztonságos tároló megosztás (${ n } tároló)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás.",
-        "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás."
       ]
     },
     "pass_signup_2024: Info": {
@@ -9149,7 +9212,7 @@
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
-        "Haladó VPN beállítások"
+        "Speciális VPN beállítások"
       ],
       "No ads": [
         "Nincsenek hirdetések"
