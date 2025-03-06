@@ -199,6 +199,9 @@
       "Delete": [
         "Выдаліць"
       ],
+      "Delete account": [
+        "Выдаліць уліковы запіс"
+      ],
       "Delete Gateway": [
         "Выдаліць шлюз"
       ],
@@ -314,7 +317,7 @@
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Азнаёміцца з іншымі тарыфнымі планамі ${ BRAND_NAME }"
+        "Даследаваць іншыя тарыфныя планы ${ BRAND_NAME }"
       ],
       "Export": [
         "Экспартаваць"
@@ -366,6 +369,9 @@
       ],
       "Go to label": [
         "Перайсці да меткі"
+      ],
+      "Go to panel ${ index }": [
+        "Перайсці да панэлі ${ index }"
       ],
       "Got it": [
         "Зразумела"
@@ -2715,6 +2721,12 @@
       "Please select a state": [
         "Выберыце рэгіён"
       ],
+      "Please select at least one location before continuing.": [
+        "Выберыце прынамсі адно месцазнаходжанне перад працягам."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Выберыце прынамсі аднаго карыстальніка або групу перад працягам."
+      ],
       "Please set a recovery email first": [
         "Спачатку задайце электронную пошту для аднаўлення доступу"
       ],
@@ -2774,6 +2786,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Мінімальная аплата, якую мы прымаем, складае ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Назва палітыкі павінна мець даўжыню ад 3 да 40 сімвалаў."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
@@ -3649,6 +3664,24 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength } удзельнік вашай сям'і з ${ canHaveTwoFAMembersLength } выкарыстоўвае двухфактарную аўтэнтыфікацыю.",
+        "${ hasTwoFAMembersLength } удзельнікі вашай сям'і з ${ canHaveTwoFAMembersLength } выкарыстоўваюць двухфактарную аўтэнтыфікацыю.",
+        "${ hasTwoFAMembersLength } удзельнікаў вашай сям'і з ${ canHaveTwoFAMembersLength } выкарыстоўваюць двухфактарную аўтэнтыфікацыю.",
+        "${ hasTwoFAMembersLength } удзельнікаў вашай сям'і з ${ canHaveTwoFAMembersLength } выкарыстоўваюць двухфактарную аўтэнтыфікацыю."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength } удзельнік з ${ canHaveTwoFAMembersLength } выкарыстоўвае двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
+        "${ hasTwoFAMembersLength } удзельнікі з ${ canHaveTwoFAMembersLength } выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
+        "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength } выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
+        "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength } выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength } удзельнік з ${ canHaveTwoFAMembersLength }, які не належыць да SSO выкарыстоўвае двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
+        "${ hasTwoFAMembersLength } удзельнікі з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
+        "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
+        "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме аднаго пароля, які замяняе сабой пароль ад уваходу і другі пароль. Для пераключэння ў рэжым аднаго пароля, увядзіце адзіны пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
@@ -3660,6 +3693,12 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: не пераводзіць у каранцін і не адхіляць неаўтарызаваныя электронныя лісты. Звычайна карыстальнікі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength } удзельнік з ${ canHaveTwoFAMembersLength }",
+        "${ noTwoFAMembersLength } удзельнікі з ${ canHaveTwoFAMembersLength }",
+        "${ noTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }",
+        "${ noTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }"
       ],
       "${ number } city": [
         "${ number } горад",
@@ -3962,7 +4001,7 @@
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
-        "Узнагарода выбар рэдакцыі CNET з рэйтынгам 8,4 з 10"
+        "Узнагарода \"Выбар рэдакцыі CNET\" з рэйтынгам 8,4 з 10"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (ldP). Гэта ўключыць SAML для ўсёй арганізацыі."
@@ -4324,9 +4363,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ VPN_APP_NAME }."
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Калі вы хочаце аб'яднаць гэты ўліковы запіс з іншым, то НЕ выдаляйце яго."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Мы заўсёды гатовыя дапамагчы ў выпадку ўзнікнення праблем. ${ boldPhoneCall } або ${ boldZoomMeeting } з адным з нашых спецыялістаў або адкрыць ${ boldLiveChat }, каб атрымаць падтрымку ў чаце."
       ],
@@ -4609,6 +4645,9 @@
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
       ],
+      "Organization --> Groups": [
+        "Арганізацыі --> Групы"
+      ],
       "Organization size": [
         "Памер арганізацыі"
       ],
@@ -4640,7 +4679,7 @@
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
-        "Узнагарода выбар рэдакцыі PC Magazine з рэйтынгам 5 з 5 зорак"
+        "Узнагарода \"Выбар рэдакцыі PC Magazine\" з рэйтынгам 5 з 5 зорак"
       ],
       "per month": [
         "ў месяц"
@@ -5038,6 +5077,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Гэта прывядзе да выдалення SSO для ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Гэта выдаліць ваш доступ да ўсіх падключаных сэрвісаў і выдаліць усе вашы даныя, якія ўключаюць кантакты, далучэнні, падзеі, паролі і файлы."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Гэта заменіць ваш часовы пароль. Вы будзеце выкарыстоўваць яго для доступу да свайго ўліковага запісу ${ BRAND_NAME } у будучыні."
       ],
@@ -5070,6 +5112,9 @@
       ],
       "to continue to ${ product }": [
         "для працягу ў ${ product }"
+      ],
+      "To create your first user group, go to": [
+        "Для стварэння першай карыстальніцкай групы, перайдзіце ў"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -5224,8 +5269,8 @@
       "Warning:": [
         "Папярэджанне:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Папярэджанне: выдаленне з'яўляецца незваротным. Гэта таксама скасуе доступ да ўсіх падключаных сэрвісаў і выдаліць усе вашы кантакты."
+      "Warning: deleting your account is permanent.": [
+        "Папярэджанне: выдаленне вашага ўліковага запісу з'яўляецца незваротным."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы рэкамендуем вам па магчымасці выкарыстоўваць афіцыйныя праграмы ${ VPN_APP_NAME }."
@@ -5739,6 +5784,9 @@
       "Apply policy to": [
         "Ужыць палітыку да"
       ],
+      "Ask members to set up 2FA": [
+        "Папрасіць удзельнікаў наладзіць 2ФА"
+      ],
       "Assertion Consumer Service URL": [
         "URL-адрас службы сцверджання кліентаў (ACS)"
       ],
@@ -5946,6 +5994,9 @@
       "Hide password": [
         "Схаваць пароль"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Я разумею, што мне неабходна будзе неадкладна дадаць гэты адрас электроннай пошты ў іншы ўліковы запіс, каб пазбегнуць незваротнай страты гэтага адраса."
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5972,6 +6023,9 @@
       ],
       "Main": [
         "Галоўная"
+      ],
+      "Members without 2FA": [
+        "Удзельнікі без 2ФА"
       ],
       "Metadata file for ${ appName }": [
         "Метаданыя файла для ${ appName }"
@@ -6183,6 +6237,9 @@
       "Thomas": [
         "Янка"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Растлумачце, чаму вы пакідаеце нас. Гэта дапаможа палепшыць наш сэрвіс."
+      ],
       "Two-password mode": [
         "Рэжым двух пароляў"
       ],
@@ -6224,9 +6281,6 @@
       ],
       "Vulnerable password": [
         "Уразлівы пароль"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа нам палепшыць наш сэрвіс"
       ],
       "Weak": [
         "Ненадзейны"
@@ -6455,14 +6509,6 @@
         "Палепшыце тарыфны план, каб разблакіраваць падтрымку ў чаце і іншыя прэміяльныя функцыі або скарыстайцеся нашай бясплатнай формай падтрымкі, калі хочаце паведаміць аб праблеме."
       ]
     },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } удзельніка вашай арганізацыі выкарыстоўвае двухфактарную аўтэнтыфікацыю.",
-        "${ twoFAMembers.length }/${ members.length } удзельнікаў вашай арганізацыі выкарыстоўваюць двухфактарную аўтэнтыфікацыю.",
-        "${ twoFAMembers.length }/${ members.length } удзельнікаў вашай арганізацыі выкарыстоўваюць двухфактарную аўтэнтыфікацыю.",
-        "${ twoFAMembers.length }/${ members.length } удзельнікаў вашай арганізацыі выкарыстоўваюць двухфактарную аўтэнтыфікацыю."
-      ]
-    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Даведацца больш"
@@ -6675,7 +6721,7 @@
         "Панізіць да ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+        "Даследаваць усе тарыфныя планы ${ BRAND_NAME }"
       ],
       "From ${ price }": [
         "Ад ${ price }"
@@ -7923,6 +7969,9 @@
       "Save big when you pay annually": [
         "Эканомце больш пры гадавой аплаце"
       ],
+      "Special offer": [
+        "Спецыяльная прапанова"
+      ],
       "This offer won't be shown again.": [
         "Гэта прапанова больш не будзе паказвацца."
       ],
@@ -7979,6 +8028,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Я выкарыстоўваю іншы ўліковы запіс ${ BRAND_NAME }"
+      ],
+      "I'd like to merge this account into another one": [
+        "Я хачу аб'яднаць гэты ўліковы запіс з іншым"
       ],
       "It's missing a key feature that I need": [
         "У вас адсутнічае важная функцыя, якая мне неабходна"
@@ -8151,18 +8203,6 @@
       ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Бяспечнае абагульванне сховішча (${ n } сховішча)",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчы)",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Бяспечнае абагульванне сховішча (${ n } сховішча) і абагульванне спасылкі",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчы) і абагульванне спасылкі",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9775,6 +9815,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Аплачваецца кожныя 2 гады"
+      ],
+      "Billed every 6 months": [
+        "Аплачваецца кожныя 6 месяцаў"
       ],
       "Billed for 15 months": [
         "Аплачваецца за 15 месяцаў"
@@ -11463,6 +11506,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Выключэнне карыстальнікаў з адзіным уваходам у якіх 2ФА апрацоўваецца на баку пастаўшчыка пасведчанняў."
+      ],
       "Feature in early access": [
         "Функцыю можна паспрабаваць у раннім доступе"
       ],
@@ -11475,8 +11521,8 @@
       "IP address (Internet Service Provider)": [
         "IP-адрас (пастаўшчык паслуг інтэрнэту)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Удзельнікі, якія не выкарыстоўваць 2ФА, атрымаюць ліст з просьбай як мага хутчэй уключыць двухфактарную аўтэнтыфікацыю."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Удзельнікі, якія не выкарыстоўваюць 2ФА, атрымаюць ліст з просьбай уключыць яе як мага хутчэй. Карыстальнікі з адзіным уваходам напамін на сваю электронную пошту не атрымаюць."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Абагуленыя палітыкі сервера могуць быць ужыты да індывідуальных карыстальнікаў або груп"
@@ -11525,8 +11571,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы"
+      "Disables end-to-end email encryption for this group": [
+        "Адключыць скразное шыфраванне лістоў для гэтай групы"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы і зашыфраваныя рэсурсы не будуць абагулены з гэтым карыстальнікам."
@@ -11996,7 +12042,7 @@
         "Bitcoin праз электронную пошту"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin каму заўгодна, выкарыстоўваючы толькі імя карыстальніка ${ BRAND_NAME }."
+        "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin любому карыстальніку, выкарыстоўваючы толькі яго імя ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных, 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"
