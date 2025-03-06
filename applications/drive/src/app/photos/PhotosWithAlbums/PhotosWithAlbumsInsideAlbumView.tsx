@@ -100,14 +100,14 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const { moveLinks } = useLinksActions();
 
     const handleItemRender = useCallback(
-        (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
+        (itemLinkId: string, domRef?: React.MutableRefObject<unknown>) => {
             incrementItemRenderedCounter();
             loadPhotoLink(albumShareId, itemLinkId, domRef);
         },
         [incrementItemRenderedCounter, loadPhotoLink, albumShareId]
     );
 
-    const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
+    const handleItemRenderLoadedLink = (itemLinkId: string, domRef?: React.MutableRefObject<unknown>) => {
         if (albumShareId) {
             thumbnails.addToDownloadQueue(albumShareId, itemLinkId, undefined, domRef);
         }
@@ -316,6 +316,13 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         });
     }, [albumPhotosLinkIds, photoLinkIds, handleDeleteAlbum, showDeleteAlbumModal, albumName, navigateToAlbums]);
 
+    const onShowDetails = useCallback(async () => {
+        showDetailsModal({
+            shareId: albumShareId,
+            linkId: previewItem ? previewItem.linkId : albumLinkId,
+        });
+    }, [albumShareId, albumLinkId, showDetailsModal, previewItem]);
+
     useEffect(() => {
         if (albumName) {
             updateTitle(`Album > ${albumName}`);
@@ -358,12 +365,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             ? undefined
                             : () => showLinkSharingModal({ shareId: albumShareId, linkId: previewItem.linkId })
                     }
-                    onDetails={() =>
-                        showDetailsModal({
-                            shareId: albumShareId,
-                            linkId: previewItem.linkId,
-                        })
-                    }
+                    onDetails={onShowDetails}
                     onSelectCover={onSelectCoverPreview}
                     navigationControls={
                         <NavigationControl
@@ -436,6 +438,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             removeAlbumPhotos={onRemoveAlbumPhotos}
                             onSelectCover={onSelectCoverToolbar}
                             onDeleteAlbum={onDeleteAlbum}
+                            onShowDetails={onShowDetails}
                         />
                     }
                 />
