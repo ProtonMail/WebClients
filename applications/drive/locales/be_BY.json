@@ -94,7 +94,7 @@
         "Дадаць у групу"
       ],
       "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфію)",
+        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфія)",
         "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфіі)",
         "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфій)",
         "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфій)"
@@ -315,6 +315,9 @@
       "Delete version": [
         "Выдаліць версію"
       ],
+      "Delete without saving": [
+        "Выдаліць без захавання"
+      ],
       "Deselect all": [
         "Зняць выбар з усіх"
       ],
@@ -329,6 +332,12 @@
       ],
       "Display navigation bar": [
         "Адлюстраваць панэль навігацыі"
+      ],
+      "Display next": [
+        "Адлюстраваць наступны"
+      ],
+      "Display previous": [
+        "Адлюстраваць папярэдні"
       ],
       "Done": [
         "Гатова"
@@ -507,6 +516,9 @@
       "Increase": [
         "Павялічыць"
       ],
+      "Join album": [
+        "Далучыцца да альбома"
+      ],
       "Keep my subscription": [
         "Пакінуць падпіску"
       ],
@@ -548,6 +560,9 @@
       ],
       "Manage share": [
         "Кіраваць абагульваннем"
+      ],
+      "Mark as favorite": [
+        "Пазначыць як абранае"
       ],
       "Mark as resolved": [
         "Пазначыць як вырашанае"
@@ -696,6 +711,9 @@
       "Remove from album": [
         "Выдаліць з альбома"
       ],
+      "Remove from favorites": [
+        "Выдаліць з абранага"
+      ],
       "Remove from this list": [
         "Выдаліць з гэтага спіса"
       ],
@@ -705,7 +723,7 @@
       "Remove me": [
         "Выдаліць мяне"
       ],
-      "Remove Without Saving": [
+      "Remove without saving": [
         "Выдаліць без захавання"
       ],
       "Rename": [
@@ -780,11 +798,14 @@
       "Save": [
         "Захаваць"
       ],
-      "Save and Remove": [
+      "Save and remove": [
         "Захаваць і выдаліць"
       ],
       "Save changes": [
         "Захаваць змены"
+      ],
+      "Save photos and remove": [
+        "Захаваць фатаграфіі і выдаліць"
       ],
       "Search": [
         "Пошук"
@@ -3775,6 +3796,9 @@
       "Create new album": [
         "Стварыць новы альбом"
       ],
+      "Rename": [
+        "Перайменаваць"
+      ],
       "Security Center": [
         "Цэнтр бяспекі"
       ]
@@ -4178,6 +4202,9 @@
         "${ album.photoCount } элементаў",
         "${ album.photoCount } элементаў"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } быў паспяхова выдалены"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
@@ -4258,6 +4285,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } у Play Store"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } запрасіў(ла) вас далучыцца да **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } са збоем",
@@ -5130,7 +5160,7 @@
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
       ],
       "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
-        "Наша сістэма выявіла, што ў мінулы раз аднаўленне завяршылася збоем і магчыма, што некаторыя файлы не былі цалкам адноўленыя. Працэс аднаўлення быў аўтаматычна перазапушчаны, каб пераканацца ў поўным аднаўленні ўсіх файлаў."
+        "Наша сістэма выявіла, што ў мінулы раз аднаўленне завяршылася збоем і магчыма, што некаторыя файлы не былі цалкам адноўлены. Працэс аднаўлення быў аўтаматычна перазапушчаны сістэмай, каб пераканацца ў поўным аднаўленні ўсіх файлаў."
       ],
       "Owner": [
         "Уладальнік"
@@ -5155,6 +5185,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME аўтаматычна адпраўляе паведамленні з выкарыстаннем бягучага рэжыму рэдактара."
+      ],
+      "Photo is not saved to your library": [
+        "Фатаграфія не захавана ў вашай бібліятэцы"
       ],
       "Photo is set as album cover": [
         "Фатаграфія зададзена ў якасці вокладкі альбома"
@@ -5405,6 +5438,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да вашых файлаў. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Некаторыя фатаграфіі ў гэтым альбоме не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незаваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
+      ],
       "Something went wrong, please try again later.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
       ],
@@ -5492,8 +5528,11 @@
       "This item already exists in your library": [
         "Гэты элемент ужо існуе ў вашай бібліятэцы"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Гэты элемент не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да яго, калі выдаліце з гэтага альбома. Ці хочаце вы захаваць дадзены элемент перад выдаленнем?"
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Гэты элемент не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да яго, калі выдаліце з гэтага альбома.",
+        "Некаторыя выбарныя элементы не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да іх, калі выдаліце з гэтага альбома.",
+        "Некаторыя выбарныя элементы не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да іх, калі выдаліце з гэтага альбома.",
+        "Некаторыя выбарныя элементы не захаваны ў вашай бібліятэцы фатаграфій. Вы незваротна згубіце доступ да іх, калі выдаліце з гэтага альбома."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
@@ -5506,6 +5545,9 @@
       ],
       "This month": [
         "У гэтым месяцы"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Будзе выдалены толькі альбом. Вашы фатаграфіі застануцца ў вашай шкале часу. Гэта дзеянне нельга будзе адрабіць."
       ],
       "This will permanently delete the file you uploaded.": [
         "Гэта незваротна выдаліць файл, які вы запампавалі."
@@ -5746,6 +5788,15 @@
       ],
       "Would you like to restore your files?": [
         "Ці хочаце вы аднавіць свае файлы?"
+      ],
+      "Would you like to save it before removing?": [
+        "Ці хочаце вы захаваць яго/іх перад выдаленнем?",
+        "Ці хочаце вы захаваць іх перад выдаленнем?",
+        "Ці хочаце вы захаваць іх перад выдаленнем?",
+        "Ці хочаце вы захаваць іх перад выдаленнем?"
+      ],
+      "Would you like to save them before removing?": [
+        "Ці хочаце вы захаваць іх перад выдаленнем?"
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
@@ -8296,6 +8347,12 @@
       "Access updated and shared": [
         "Доступ абноўлены і абагулены"
       ],
+      "Album failed to be renamed": [
+        "Не ўдалося перайменаваць альбом"
+      ],
+      "Album renamed successfully": [
+        "Альбом паспяхова перайменаваны"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Усе элементы неўзабаве будуць незваротна выдалены са сметніцы"
       ],
@@ -8543,6 +8600,9 @@
       "Save big when you pay annually": [
         "Эканомце больш пры гадавой аплаце"
       ],
+      "Special offer": [
+        "Спецыяльная прапанова"
+      ],
       "This offer won't be shown again.": [
         "Гэта прапанова больш не будзе паказвацца."
       ],
@@ -8768,18 +8828,6 @@
       ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Бяспечнае абагульванне сховішча (${ n } сховішча)",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчы)",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Бяспечнае абагульванне сховішча (${ n } сховішча) і абагульванне спасылкі",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчы) і абагульванне спасылкі",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
-        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9817,6 +9865,9 @@
       "Billed every 2 years": [
         "Аплачваецца кожныя 2 гады"
       ],
+      "Billed every 6 months": [
+        "Аплачваецца кожныя 6 месяцаў"
+      ],
       "Billed for 15 months": [
         "Аплачваецца за 15 месяцаў"
       ],
@@ -10733,11 +10784,11 @@
         "Выдаліць ${ count } груп кантактаў",
         "Выдаліць ${ count } групы кантактаў"
       ],
-      "Delete ${ item.name }?": [
-        "Выдаліць ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Выдаліць ${ links.length } элементы(аў)?"
+      ],
+      "Delete ${ name }?": [
+        "Выдаліць ${ name }?"
       ],
       "Delete ${ value }": [
         "Выдаліць ${ value }"
@@ -11009,8 +11060,11 @@
       "Remove device?": [
         "Выдаліць прыладу?"
       ],
-      "Remove items": [
-        "Выдаліць элементы"
+      "Remove item?": [
+        "Выдаліць элемент?",
+        "Выдаліць элементы?",
+        "Выдаліць элементы?",
+        "Выдаліць элементы?"
       ],
       "Rename a file": [
         "Перайменаваць файл"
@@ -11428,7 +11482,7 @@
         "Bitcoin праз электронную пошту"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin каму заўгодна, выкарыстоўваючы толькі імя карыстальніка ${ BRAND_NAME }."
+        "Зашыфраваны і бяспечны адрас электроннай пошты ${ MAIL_APP_NAME }. Вы можаце лёгка адправіць Bitcoin любому карыстальніку, выкарыстоўваючы толькі яго імя ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных, 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"

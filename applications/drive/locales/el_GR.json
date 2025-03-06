@@ -305,6 +305,9 @@
       "Delete version": [
         "Διαγραφή έκδοσης"
       ],
+      "Delete without saving": [
+        "Διαγραφή χωρίς αποθήκευση"
+      ],
       "Deselect all": [
         "Αποεπιλογή όλων"
       ],
@@ -319,6 +322,12 @@
       ],
       "Display navigation bar": [
         "Εμφάνιση γραμμής περιήγησης"
+      ],
+      "Display next": [
+        "Εμφάνιση επόμενου"
+      ],
+      "Display previous": [
+        "Εμφάνιση προηγούμενου"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -495,6 +504,9 @@
       "Increase": [
         "Αύξηση"
       ],
+      "Join album": [
+        "Συμμετοχή στο άλμπουμ"
+      ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
@@ -536,6 +548,9 @@
       ],
       "Manage share": [
         "Διαχείριση κοινοποίησης"
+      ],
+      "Mark as favorite": [
+        "Ορισμός ως αγαπημένο"
       ],
       "Mark as resolved": [
         "Σήμανση ως επιλυμένου"
@@ -684,6 +699,9 @@
       "Remove from album": [
         "Αφαίρεση από το άλμπουμ"
       ],
+      "Remove from favorites": [
+        "Κατάργηση από τα αγαπημένα"
+      ],
       "Remove from this list": [
         "Κατάργηση από αυτή τη λίστα"
       ],
@@ -693,7 +711,7 @@
       "Remove me": [
         "Αφαιρέστε με"
       ],
-      "Remove Without Saving": [
+      "Remove without saving": [
         "Αφαίρεση χωρίς αποθήκευση"
       ],
       "Rename": [
@@ -768,11 +786,14 @@
       "Save": [
         "Αποθήκευση"
       ],
-      "Save and Remove": [
+      "Save and remove": [
         "Αποθήκευση και αφαίρεση"
       ],
       "Save changes": [
         "Αποθήκευση αλλαγών"
+      ],
+      "Save photos and remove": [
+        "Αποθήκευση φωτογραφιών και κατάργηση"
       ],
       "Search": [
         "Αναζήτηση"
@@ -3713,6 +3734,9 @@
       "Create new album": [
         "Δημιουργία νέου άλμπουμ"
       ],
+      "Rename": [
+        "Μετονομασία"
+      ],
       "Security Center": [
         "Κέντρο Ασφαλείας"
       ]
@@ -4088,6 +4112,9 @@
         "${ album.photoCount } στοιχείο",
         "${ album.photoCount } στοιχεία"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } διαγράφηκε με επιτυχία"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
@@ -4148,6 +4175,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } στο Play Store"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } σας προσκάλεσε να συμμετάσχετε στο **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } απέτυχε",
@@ -4996,6 +5026,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME στέλνει αυτόματα το μήνυμα με την παρούσα λειτουργία συνθέτη."
       ],
+      "Photo is not saved to your library": [
+        "Η φωτογραφία δεν αποθηκεύεται στη βιβλιοθήκη σας"
+      ],
       "Photo is set as album cover": [
         "Η φωτογραφία έχει οριστεί ως εξώφυλλο άλμπουμ"
       ],
@@ -5241,6 +5274,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Κάποια από τα αρχεία σας δεν είναι πλέον προσβάσιμα. Αποκαταστήστε την πρόσβαση στα αρχεία σας. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Ορισμένες φωτογραφίες σε αυτό το άλμπουμ δεν αποθηκεύονται στο χρονολόγιό σας. Η διαγραφή αυτού του άλμπουμ θα διαγράψει οριστικά αυτές τις φωτογραφίες."
+      ],
       "Something went wrong, please try again later.": [
         "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
@@ -5328,8 +5364,9 @@
       "This item already exists in your library": [
         "Αυτό το στοιχείο υπάρχει ήδη στη βιβλιοθήκη σας"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently. Would you like to save it before removing?": [
-        "Αυτό το στοιχείο δεν είναι αποθηκευμένο στη βιβλιοθήκη Φωτογραφιών σας. Αν το αφαιρέσετε από αυτό το άλμπουμ, θα χάσετε δια παντός την πρόσβαση σε αυτό. Θα θέλατε να το αποθηκεύσετε πριν από την αφαίρεση;"
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Αυτό το στοιχείο δεν είναι αποθηκευμένο στη βιβλιοθήκη Φωτογραφιών σας. Αν το αφαιρέσετε από αυτό το άλμπουμ, θα χάσετε οριστικά την πρόσβαση σε αυτό.",
+        "Ορισμένα από τα επιλεγμένα στοιχεία δεν είναι αποθηκευμένα στη βιβλιοθήκη Φωτογραφιών σας. Αν τα αφαιρέσετε από αυτό το άλμπουμ, θα χάσετε οριστικά την πρόσβαση σε αυτά."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
@@ -5342,6 +5379,9 @@
       ],
       "This month": [
         "Αυτό το μήνα"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Αυτό θα διαγράψει μόνο το άλμπουμ. Οι φωτογραφίες σας θα παραμείνουν στο χρονολόγιό σας. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
       ],
       "This will permanently delete the file you uploaded.": [
         "Αυτό θα διαγράψει οριστικά το αρχείο που ανεβάσατε."
@@ -5582,6 +5622,13 @@
       ],
       "Would you like to restore your files?": [
         "Θα θέλατε να επαναφέρετε τα αρχεία σας;"
+      ],
+      "Would you like to save it before removing?": [
+        "Θα θέλατε να το αποθηκεύσετε πριν το αφαιρέσετε;",
+        "Θα θέλατε να τα αποθηκεύσετε πριν τα αφαιρέσετε;"
+      ],
+      "Would you like to save them before removing?": [
+        "Θα θέλατε να τα αποθηκεύσετε πριν τα αφαιρέσετε;"
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
@@ -7975,6 +8022,12 @@
       "Access updated and shared": [
         "Η πρόσβαση ενημερώθηκε και κοινοποιήθηκε"
       ],
+      "Album failed to be renamed": [
+        "Το άλμπουμ απέτυχε να μετονομαστεί"
+      ],
+      "Album renamed successfully": [
+        "Το άλμπουμ μετονομάστηκε με επιτυχία"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Όλα τα διαγραμμένα στοιχεία σύντομα θα εξαλειφθούν οριστικά"
       ],
@@ -8208,6 +8261,9 @@
       "Save big when you pay annually": [
         "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
       ],
+      "Special offer": [
+        "Ειδική προσφορά"
+      ],
       "This offer won't be shown again.": [
         "Αυτή η προσφορά δε θα εμφανιστεί ξανά."
       ],
@@ -8433,14 +8489,6 @@
       ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη)",
-        "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη) και κοινή χρήση συνδέσμων",
-        "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες) και κοινή χρήση συνδέσμων"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9434,6 +9482,9 @@
       "Billed every 2 years": [
         "Χρέωση κάθε 2 χρόνια"
       ],
+      "Billed every 6 months": [
+        "Χρέωση κάθε 6 μήνες"
+      ],
       "Billed for 15 months": [
         "Χρέωση για 15 μήνες"
       ],
@@ -10292,11 +10343,11 @@
         "Διαγραφή ${ count } ομάδα επαφών",
         "Διαγραφή ${ count } ομάδες επαφών"
       ],
-      "Delete ${ item.name }?": [
-        "Να διαγραφεί το ${ item.name };"
-      ],
       "Delete ${ links.length } items?": [
         "Να διαγραφούν τα ${ links.length } στοιχεία;"
+      ],
+      "Delete ${ name }?": [
+        "Διαγραφή ${ name };"
       ],
       "Delete ${ value }": [
         "Διαγραφή ${ value }"
@@ -10564,8 +10615,9 @@
       "Remove device?": [
         "Διαγραφή συσκευής;"
       ],
-      "Remove items": [
-        "Αφαίρεση στοιχείων"
+      "Remove item?": [
+        "Κατάργηση στοιχείου;",
+        "Αφαίρεση στοιχείων;"
       ],
       "Rename a file": [
         "Μετονομασία αρχείου"

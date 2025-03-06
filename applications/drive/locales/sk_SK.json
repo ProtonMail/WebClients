@@ -45,6 +45,12 @@
       "Add": [
         "Pridať"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Pridať ${ photos.length } fotografiu do nového albumu",
+        "Pridať ${ photos.length } fotografie do nového albumu",
+        "Pridať ${ photos.length } fotografií do nového albumu",
+        "Pridať ${ photos.length } fotografií do nového albumu"
+      ],
       "Add account": [
         "Pridať účet"
       ],
@@ -86,6 +92,12 @@
       ],
       "Add to group": [
         "Pridať do skupiny"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografiu)",
+        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografie)",
+        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografií)",
+        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografií)"
       ],
       "Album name": [
         "Názov albumu"
@@ -303,6 +315,9 @@
       "Delete version": [
         "Zmazať verziu"
       ],
+      "Delete without saving": [
+        "Vymazať bez uloženia"
+      ],
       "Deselect all": [
         "Zrušiť výber všetkého"
       ],
@@ -317,6 +332,12 @@
       ],
       "Display navigation bar": [
         "Zobraziť navigačný panel"
+      ],
+      "Display next": [
+        "Zobraziť ďalšiu"
+      ],
+      "Display previous": [
+        "Zobraziť predchádzajúcu"
       ],
       "Done": [
         "Hotovo"
@@ -338,6 +359,12 @@
       ],
       "Download logs": [
         "Záznamy sťahovania"
+      ],
+      "Download photo": [
+        "Stiahnuť fotografiu",
+        "Stiahnuť fotografie",
+        "Stiahnuť fotografie",
+        "Stiahnuť fotografie"
       ],
       "Download without scanning": [
         "Stiahnuť bez skenovania"
@@ -489,6 +516,9 @@
       "Increase": [
         "Zvýšiť"
       ],
+      "Join album": [
+        "Pripojiť album"
+      ],
       "Keep my subscription": [
         "Ponechať moje predplatné"
       ],
@@ -530,6 +560,9 @@
       ],
       "Manage share": [
         "Spravovať zdieľanie"
+      ],
+      "Mark as favorite": [
+        "Označiť ako obľúbené"
       ],
       "Mark as resolved": [
         "Označiť ako vyriešené"
@@ -675,6 +708,12 @@
       "Remove device": [
         "Odstrániť zariadenie"
       ],
+      "Remove from album": [
+        "Odstrániť z albumu"
+      ],
+      "Remove from favorites": [
+        "Odobrať z obľúbených"
+      ],
       "Remove from this list": [
         "Odstrániť z tohto zoznamu"
       ],
@@ -684,8 +723,14 @@
       "Remove me": [
         "Odstrániť ma"
       ],
+      "Remove without saving": [
+        "Odstrániť bez uloženia"
+      ],
       "Rename": [
         "Premenovať"
+      ],
+      "Rename album": [
+        "Premenovať album"
       ],
       "Replace file": [
         "Nahradiť súbor"
@@ -753,8 +798,14 @@
       "Save": [
         "Uložiť"
       ],
+      "Save and remove": [
+        "Uložiť a odstrániť"
+      ],
       "Save changes": [
         "Uložiť zmeny"
+      ],
+      "Save photos and remove": [
+        "Uložiť fotografie a odstrániť"
       ],
       "Search": [
         "Hľadať"
@@ -803,6 +854,9 @@
       ],
       "Share": [
         "Zdieľať"
+      ],
+      "Share album": [
+        "Zdieľať album"
       ],
       "Share file": [
         "Zdieľať súbor"
@@ -3742,8 +3796,25 @@
       "Create new album": [
         "Vytvoriť nový album"
       ],
+      "Rename": [
+        "Premenovať"
+      ],
       "Security Center": [
         "Centrum zabezpečenia"
+      ]
+    },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Pridať ${ photos.length } fotografiu do",
+        "Pridať ${ photos.length } fotografie do",
+        "Pridať ${ photos.length } fotografií do",
+        "Pridať ${ photos.length } fotografií do"
+      ],
+      "All albums": [
+        "Všetky albumy"
+      ],
+      "Recent": [
+        "Nedávne"
       ]
     },
     "Hint": {
@@ -4452,6 +4523,9 @@
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
+      "Automated Recovery ${ formattedDate }": [
+        "Automatická obnova ${ formattedDate }"
+      ],
       "Available": [
         "Dostupné"
       ],
@@ -5052,6 +5126,9 @@
       "of": [
         "z"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Po dokončení tohto procesu nájdete kópiu obnovených údajov v novom priečinku s názvom „ Automatická obnova (dnešný dátum)“. Táto kópia vašich údajov sa nebude započítavať do vašej kvóty úložiska."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Jeden z vašich šifrovaných diskov je zamknutý, pravdepodobne kvôli nedávnemu resetu hesla."
       ],
@@ -5075,6 +5152,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Prioritou našich upozornení je bezpečnosť. Ak nepoznáte žiadnu z ohrozených informácií, môžete túto správu pokojne ignorovať."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Naše systémy zistili, že vaše predchádzajúce obnovenie sa nedokončilo úspešne a niektoré súbory možno neboli úplne obnovené. Automaticky sme znovu spustili proces obnovy, aby sme sa uistili, že je všetko úplne obnovené."
       ],
       "Owner": [
         "Vlastník"
@@ -5436,6 +5516,12 @@
       "This item already exists in your library": [
         "Táto položka už vo vašej knižnici existuje"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Táto položka nie je uložená vo vašej knižnici fotografií. Ak ju z tohto albumu odstránite, natrvalo k nej stratíte prístup.",
+        "Niektoré z vybraných položiek nie sú uložené vo vašej knižnici fotografií. Ak ich z tohto albumu odstránite, natrvalo k nim stratíte prístup.",
+        "Niektoré z vybraných položiek nie sú uložené vo vašej knižnici fotografií. Ak ich z tohto albumu odstránite, natrvalo k nim stratíte prístup.",
+        "Niektoré z vybraných položiek nie sú uložené vo vašej knižnici fotografií. Ak ich z tohto albumu odstránite, natrvalo k nim stratíte prístup."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
       ],
@@ -5643,6 +5729,9 @@
       "We need to authenticate your payment with your bank.": [
         "Potrebujeme overiť platbu vo vašej banke."
       ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Úprimne sa ospravedlňujeme za nepríjemnosti, ktoré vám to mohlo spôsobiť."
+      ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
       ],
@@ -5684,6 +5773,12 @@
       ],
       "Would you like to restore your files?": [
         "Prajete si obnoviť vaše súbory?"
+      ],
+      "Would you like to save it before removing?": [
+        "Chcete ju pred odstránením uložiť?",
+        "Chcete ich pred odstránením uložiť?",
+        "Chcete ich pred odstránením uložiť?",
+        "Chcete ich pred odstránením uložiť?"
       ],
       "Writing assistant": [
         "Asistent písania"
@@ -5862,6 +5957,12 @@
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
       ],
+      "Your photo has been removed from the album": [
+        "Vaša fotografia bola odstránená z albumu",
+        "Vaša fotografia bola odstránená z albumu",
+        "Vaše fotografie boli odstránené z albumu",
+        "Vaše fotografie boli odstránené z albumu"
+      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Váš plán je limitovaný na 10 verzií do 7 dní"
       ],
@@ -5881,6 +5982,14 @@
     "info": {
       "Selected color:": [
         "Vybraná farba:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Ako poslať hotovostnú platbu?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Pokyny nájdete v článku: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -6607,6 +6716,9 @@
     "Link": {
       "Add a gift code": [
         "Vložiť darčekový kód"
+      ],
+      "Albums": [
+        "Albumy"
       ],
       "All mail": [
         "Všetky správy"
@@ -8166,6 +8278,9 @@
       "Access updated and shared": [
         "Prístup bol aktualizovaný a zdieľaný"
       ],
+      "Album failed to be renamed": [
+        "Premenovanie albumu zlyhalo"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Všetky položky budú čoskoro trvalo zmazané z koša"
       ],
@@ -8395,6 +8510,12 @@
       "Maybe later": [
         "Možno neskôr"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Ponuka skončí ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Plaťte ročne, poistite si našu najlepšiu ponuku"
+      ],
       "Save": [
         "Ušetrite"
       ],
@@ -8407,6 +8528,9 @@
       "Save big when you pay annually": [
         "Pri ročnej platbe ušetríte viac"
       ],
+      "Special offer": [
+        "Špeciálna ponuka"
+      ],
       "This offer won't be shown again.": [
         "Táto ponuka sa už nezobrazí."
       ],
@@ -8415,6 +8539,9 @@
       ],
       "You currently pay": [
         "V súčasnosti platíte"
+      ],
+      "Your subscription renews soon": [
+        "Vaše predplatné čoskoro obnoví"
       ]
     },
     "Offer feature": {
@@ -8629,18 +8756,6 @@
       ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpečné zdieľanie trezora (${ n } trezor)",
-        "Bezpečné zdieľanie trezorov (${ n } trezory)",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov)",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpečné zdieľanie trezora (${ n } trezor) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezory) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu",
-        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9678,6 +9793,9 @@
       "Billed every 2 years": [
         "Účtované každé 2 roky"
       ],
+      "Billed every 6 months": [
+        "Účtované každých 6 mesiacov"
+      ],
       "Billed for 15 months": [
         "Účtované za 15 mesiacov"
       ],
@@ -10474,6 +10592,9 @@
       "Auto-deletion is active": [
         "Automatické mazanie je aktívne"
       ],
+      "Automatic Recovery in Progress": [
+        "Prebieha automatická obnova"
+      ],
       "Billing cycle": [
         "Fakturačné obdobie"
       ],
@@ -10590,9 +10711,6 @@
         "Zmazať ${ count } skupiny kontaktov",
         "Zmazať ${ count } skupín kontaktov",
         "Zmazať ${ count } skupín kontaktov"
-      ],
-      "Delete ${ item.name }?": [
-        "Vymazať ${ item.name }?"
       ],
       "Delete ${ links.length } items?": [
         "Vymazať ${ links.length } položiek?"
@@ -10866,6 +10984,12 @@
       ],
       "Remove device?": [
         "Odstrániť zariadenie?"
+      ],
+      "Remove item?": [
+        "Odstrániť položku?",
+        "Odstrániť položky?",
+        "Odstrániť položky?",
+        "Odstrániť položky?"
       ],
       "Rename a file": [
         "Premenovať súbor"
