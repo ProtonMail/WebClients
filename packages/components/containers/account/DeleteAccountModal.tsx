@@ -56,6 +56,8 @@ const DeleteAccountModal = (props: Props) => {
     const deleteAccountMergeReasonEnabled = useFlag('DeleteAccountMergeReason');
     const [step, setStep] = useState<STEP>(STEP.REASON_SELECTION);
 
+    const reasonsWhichIgnoreFeedback: ACCOUNT_DELETION_REASONS[] = [MERGE_ACCOUNT];
+
     const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
     const { createNotification } = useNotifications();
 
@@ -109,6 +111,8 @@ const DeleteAccountModal = (props: Props) => {
         <Option title={c('Option').t`My reason isn't listed`} value={OTHER} key={OTHER} />,
     ].filter(isTruthy);
 
+    const includeFeedback = !reasonsWhichIgnoreFeedback.includes(model.reason as ACCOUNT_DELETION_REASONS);
+
     const handleSubmit = async () => {
         try {
             eventManager.stop();
@@ -127,7 +131,7 @@ const DeleteAccountModal = (props: Props) => {
             await api(
                 deleteUser({
                     Reason: model.reason,
-                    Feedback: model.feedback,
+                    Feedback: includeFeedback ? model.feedback : undefined,
                 })
             );
 
@@ -178,20 +182,22 @@ const DeleteAccountModal = (props: Props) => {
                             {reasons}
                         </InputFieldTwo>
 
-                        <InputFieldTwo
-                            id="feedback"
-                            as={TextAreaTwo}
-                            rows={3}
-                            label={c('Label').t`To help us improve, please explain why you are leaving.`}
-                            placeholder={c('Placeholder').t`Feedback`}
-                            value={model.feedback}
-                            onValue={(value: string) => setModel({ ...model, feedback: value })}
-                            error={validator([
-                                requiredValidator(model.feedback),
-                                minLengthValidator(model.feedback, 10),
-                            ])}
-                            disabled={loading}
-                        />
+                        {includeFeedback && (
+                            <InputFieldTwo
+                                id="feedback"
+                                as={TextAreaTwo}
+                                rows={3}
+                                label={c('Label').t`To help us improve, please explain why you are leaving.`}
+                                placeholder={c('Placeholder').t`Feedback`}
+                                value={model.feedback}
+                                onValue={(value: string) => setModel({ ...model, feedback: value })}
+                                error={validator([
+                                    requiredValidator(model.feedback),
+                                    minLengthValidator(model.feedback, 10),
+                                ])}
+                                disabled={loading}
+                            />
+                        )}
 
                         <p className="text-sm color-weak mt-0">
                             {
