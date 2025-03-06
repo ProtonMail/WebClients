@@ -199,6 +199,9 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete account": [
+        "Eliminar a conta"
+      ],
       "Delete Gateway": [
         "Eliminar a porta de entrada"
       ],
@@ -366,6 +369,9 @@
       ],
       "Go to label": [
         "Ir para a etiqueta"
+      ],
+      "Go to panel ${ index }": [
+        "Ir para o painel ${ index }"
       ],
       "Got it": [
         "Entendido"
@@ -3531,7 +3537,7 @@
     },
     "Header for domain modal": {
       "Host name": [
-        "Nome de anfitrião"
+        "Nome de hospedeiro"
       ],
       "Priority": [
         "Prioridade"
@@ -3606,6 +3612,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pré-visualização de baixa resolução"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membros da sua família utiliza a autenticação de dois fatores.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membros da sua família utilizam a autenticação de dois fatores."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros utiliza a autenticação de dois fatores para iniciar sessão na sua organização.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros utilizam a autenticação de dois fatores para iniciar sessão na sua organização."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros sem início de sessão único utiliza a autenticação de dois fatores para iniciar sessão na sua organização.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros sem início de sessão único utilizam a autenticação de dois fatores para iniciar sessão na sua organização."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ${ MAIL_APP_NAME } também pode ser utilizado com uma palavra-passe única que substitui a palavra-passe de início de sessão e da caixa de correio e a segunda palavra-passe. Para mudar para o modo de palavra-passe única, introduza a palavra-passe única que pretende utilizar e clique em Guardar."
       ],
@@ -3615,6 +3633,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: não coloque em quarentena nem rejeite e-mails não autorizados. Normalmente, esta política é utilizada apenas para resolver problemas ou realizar testes."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membro",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membros"
       ],
       "${ number } city": [
         "${ number } cidade",
@@ -4246,9 +4268,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Se continuar com a alteração, perderá o acesso às funcionalidades pagas do ${ VPN_APP_NAME }."
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Se deseja combinar esta conta com outra, NÃO a elimine."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Se estiver com dificuldades, estamos aqui para ajudar. ${ boldPhoneCall } ou ${ boldZoomMeeting } com um dos nossos especialistas de suporte, ou abra um ${ boldLiveChat } para suporte por chat."
@@ -4947,6 +4966,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Isto irá remover a autenticação única (SSO) para ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Isto removerá o seu acesso a todos os serviços ligados e eliminará todos os seus dados, incluindo contactos, anexos, eventos, palavras-passe e ficheiros."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
@@ -5136,8 +5158,8 @@
       "Warning:": [
         "Aviso:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Aviso: a eliminação é permanente. Remove também o acesso a todos os serviços ligados e elimina todos os contactos."
+      "Warning: deleting your account is permanent.": [
+        "Aviso: a eliminação da sua conta é permanente."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Recomendamos utilizar as aplicações oficiais do ${ VPN_APP_NAME } quando possível."
@@ -5629,6 +5651,9 @@
       "Apply policy to": [
         "Aplica a política a"
       ],
+      "Ask members to set up 2FA": [
+        "Pedir aos membros para configurar a A2F"
+      ],
       "Assertion Consumer Service URL": [
         "URL de Assertion Consumer Service (ACS)"
       ],
@@ -5836,6 +5861,9 @@
       "Hide password": [
         "Ocultar a palavra-passe"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Compreendo que preciso de adicionar este endereço de e-mail à outra conta imediatamente para evitar perdê-lo permanentemente."
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5862,6 +5890,9 @@
       ],
       "Main": [
         "Principal"
+      ],
+      "Members without 2FA": [
+        "Membros sem A2F"
       ],
       "Metadata file for ${ appName }": [
         "Ficheiro de metadados para o ${ appName }"
@@ -6071,6 +6102,9 @@
       "Thomas": [
         "Tomás"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Para nos ajudar a melhorar, explique porque nos deixa."
+      ],
       "Two-password mode": [
         "Modo palavra-passe dupla"
       ],
@@ -6112,9 +6146,6 @@
       ],
       "Vulnerable password": [
         "Palavra-passe vulnerável"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Lamentamos a sua partida. Diga-nos porquê, para podermos melhorar o serviço."
       ],
       "Weak": [
         "Fraco"
@@ -6341,12 +6372,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Actualize para desbloquear o suporte por chat e outras funcionalidades premium, ou utilize o nosso formulário de suporte gratuito para comunicar o seu problema."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } membro da sua organização utilize a autenticação de dois factores.",
-        "${ twoFAMembers.length }/${ members.length } membros da sua organização utilizam a autenticação de dois factores."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7755,6 +7780,9 @@
       "Save big when you pay annually": [
         "Poupe em grande ao pagar anualmente!"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "This offer won't be shown again.": [
         "Esta oferta não será mostrada novamente."
       ],
@@ -7811,6 +7839,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Utilizo outra conta da ${ BRAND_NAME }."
+      ],
+      "I'd like to merge this account into another one": [
+        "Quero juntar esta conta a outra"
       ],
       "iOS": [
         "iOS"
@@ -7986,14 +8017,6 @@
       ],
       "Secure vault sharing": [
         "Partilha segura de cofre"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Partilha segura de cofre (${ n } cofre)",
-        "Partilha segura de cofre (${ n } cofres)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Partilha segura de cofre (${ n } cofre) e partilha de ligações",
-        "Partilha segura de cofre (${ n } cofres) e partilha de ligações"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9546,6 +9569,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faturado a cada 2 anos"
+      ],
+      "Billed every 6 months": [
+        "Faturação a cada 6 meses"
       ],
       "Billed for 15 months": [
         "Faturação para 15 meses"
@@ -11181,6 +11207,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL do endpoint do fornecedor de identidade (por exemplo, https://idp.exemplo.pt/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "A excluir os utilizadores de início de sessão único cuja A2F é gerida pelo seu fornecedor de identidade"
+      ],
       "Feature in early access": [
         "Funcionalidade em acesso antecipado"
       ],
@@ -11193,8 +11222,8 @@
       "IP address (Internet Service Provider)": [
         "Endereço IP (fornecedor de serviços de internet)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Os membros que não utilizam a autenticação A2F receberão um e-mail pedindo-lhes que o ativem o mais rapidamente possível."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Os membros que não utilizam a A2F receberão um e-mail a solicitar que a ativem o mais rapidamente possível. Os utilizadores de início de sessão único não receberão o lembrete por e-mail."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "As políticas de servidor partilhadas podem ser aplicadas a cada utilizador ou a grupos."
@@ -11243,8 +11272,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Endereço externo - desativa a encriptação criptografia de ponta a ponta de email para este grupo."
+      "Disables end-to-end email encryption for this group": [
+        "Desativa a encriptação de email de ponta a ponta para este grupo"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Endereço externo - desativa a encriptação de ponta a ponta de e-mail para este grupo e nenhum recurso encriptado será partilhado com este utilizador."

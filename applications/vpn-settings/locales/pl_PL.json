@@ -361,6 +361,9 @@
       "Go to label": [
         "Przejdź do etykiety"
       ],
+      "Go to panel ${ index }": [
+        "Przejdź do panelu ${ index }"
+      ],
       "Got it": [
         "Ok"
       ],
@@ -3812,7 +3815,7 @@
         "Przydzielona"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Umożliwienie użytkownikom łączenia się z bezpiecznymi serwerami współdzielonymi z sekcji **Kraje** aplikacji ${ VPN_APP_NAME }."
+        "Umożliwia użytkownikom łączenia się z bezpiecznymi serwerami współdzielonymi z sekcji **Kraje** aplikacji ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Już przydzielona"
@@ -4278,9 +4281,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Po obniżeniu planu stracisz dostęp do płatnych funkcji usługi ${ VPN_APP_NAME }."
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Jeśli chcesz połączyć to konto z innym, NIE usuwaj go."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Jesteśmy tu, aby pomóc. ${ boldPhoneCall }, ${ boldZoomMeeting } z jednym z naszych specjalistów lub rozpocznij ${ boldLiveChat }."
@@ -5023,6 +5023,9 @@
       "to continue to ${ product }": [
         "i przejdź do ${ product }"
       ],
+      "To create your first user group, go to": [
+        "Aby stworzyć swoją pierwszą grupę użytkowników, idź do"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
       ],
@@ -5175,9 +5178,6 @@
       ],
       "Warning:": [
         "Ostrzeżenie:"
-      ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Ostrzeżenie: Usunięcia nie możesz cofnąć. Ta czynność spowoduje również utratę dostępu do wszystkich usług i usunięcie kontaktów."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Zalecamy używanie oficjalnych aplikacji ${ VPN_APP_NAME }."
@@ -6152,9 +6152,6 @@
       "Vulnerable password": [
         "Słabe hasło"
       ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Przykro nam, że odchodzisz. Wyjaśnij nam, dlaczego nas opuszczasz, aby pomóc ulepszać nasze usługi."
-      ],
       "Weak": [
         "Słabe"
       ],
@@ -6380,14 +6377,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Ulepsz konto, aby odblokować czat i inne funkcje premium lub skorzystaj z naszego darmowego formularza kontaktowego, aby zgłosić problem."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego.",
-        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego.",
-        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego.",
-        "${ twoFAMembers.length } / ${ members.length } użytkowników organizacji korzysta z uwierzytelniania dwustopniowego."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7802,6 +7791,9 @@
       "${ pricingTitle } offer expires today!": [
         "Oferta ${ pricingTitle } wygasa dzisiaj!"
       ],
+      "Don’t show this offer again": [
+        "Nie pokazuj tej oferty ponownie"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Wybierz plan Drive Plus za ${ pricingTitle }"
       ],
@@ -7811,14 +7803,38 @@
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
+      "Last day to save": [
+        "Ostatni dzień, aby zaoszczędzić"
+      ],
       "Limited-time offer": [
         "Oferta ograniczona czasowo"
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus na 12 miesięcy"
       ],
       "Maybe later": [
         "Może później"
       ],
+      "Save": [
+        "Zaoszczędź"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Zaoszczędź ${ prices.savedPercentage }%"
+      ],
       "Save 80% on your first month.": [
         "Zaoszczędź 80% przez pierwszy miesiąc."
+      ],
+      "Save big when you pay annually": [
+        "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
+      ],
+      "This offer won't be shown again.": [
+        "Ta oferta nie pojawi się ponownie."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Po przejściu z subskrypcji miesięcznej na roczną."
+      ],
+      "You currently pay": [
+        "Aktualnie płacisz"
       ]
     },
     "Offer feature": {
@@ -8033,18 +8049,6 @@
       ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpieczne udostępnianie ${ n } sejfu",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpieczne udostępnianie ${ n } sejfu i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11316,9 +11320,6 @@
       "IP address (Internet Service Provider)": [
         "Adres IP (ISP)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Użytkownicy, którzy nie korzystają z uwierzytelniania dwustopniowego, otrzymają wiadomość z prośbą o jej włączenie."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Wybierz dozwoloną domenę dla logowania SSO (SAML)."
       ],
@@ -11362,9 +11363,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
-      ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Zewnętrzny adres wyłącza szyfrowanie end-to-end wiadomości w grupie"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Zewnętrzny adres wyłącza szyfrowanie end-to-end wiadomości w grupie. Żadne szyfrowane zasoby nie będą udostępniane takiemu użytkownikowi."

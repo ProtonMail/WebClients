@@ -199,6 +199,9 @@
       "Delete": [
         "Smazat"
       ],
+      "Delete account": [
+        "Smazat účet"
+      ],
       "Delete Gateway": [
         "Smazat bránu"
       ],
@@ -366,6 +369,9 @@
       ],
       "Go to label": [
         "Přejít na štítek"
+      ],
+      "Go to panel ${ index }": [
+        "Přejít na panel ${ index }"
       ],
       "Got it": [
         "Rozumím"
@@ -2715,6 +2721,12 @@
       "Please select a state": [
         "Vyberte prosím stát"
       ],
+      "Please select at least one location before continuing.": [
+        "Před pokračováním vyberte alespoň jedno umístění."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Před pokračováním vyberte alespoň jednoho uživatele nebo skupinu."
+      ],
       "Please set a recovery email first": [
         "Nejprve prosím zadejte e-mail pro obnovení"
       ],
@@ -2774,6 +2786,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimální platba, kterou přijímáme je ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Název zásady musí mít délku 3 až 40 znaků."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
@@ -3649,6 +3664,24 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhled v nízkém rozlišení"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používá dvoufázové ověření.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používají dvoufázové ověření.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používá dvoufázové ověření.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používá dvoufázové ověření."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používá dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používají dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používá dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používá dvoufázové ověření pro přihlášení do vaší organizace."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používají dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } lze také použít s jediným heslem, které nahradí přihlašovací i druhé heslo. Chcete-li přepnout do režimu jediného hesla, zadejte jediné heslo, které chcete použít, a klikněte na tlačítko Uložit."
       ],
@@ -3660,6 +3693,12 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: neumisťovat do karantény ani neodmítat neautorizované e-maily. Obvykle tuto zásadu lidé používají pouze k diagnostice a odstraňování problémů nebo k testování."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } člena",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů"
       ],
       "${ number } city": [
         "${ number } město",
@@ -4324,9 +4363,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ VPN_APP_NAME }."
       ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        "Jestliže si přejete kombinovat tento účet s dalším, nemažte jej."
-      ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory, nebo si otevřete ${ boldLiveChat } pro podporu na chatu."
       ],
@@ -4608,6 +4644,9 @@
       ],
       "Or select a particular server:": [
         "Nebo vyberte konkrétní server:"
+      ],
+      "Organization --> Groups": [
+        "Organizace --> Skupiny"
       ],
       "Organization size": [
         "Velikost organizace"
@@ -5041,6 +5080,9 @@
       "This will remove SSO for ${ boldDomainName }.": [
         "Tímto se zruší SSO pro ${ boldDomainName }."
       ],
+      "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
+        "Tímto se zruší váš přístup ke všem připojeným službám a smažou se všechna vaše data včetně kontaktů, příloh, událostí, hesel a souborů."
+      ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Toto nahradí vaše dočasné heslo. V budoucnu jej použijete pro přístup k vašemu ${ BRAND_NAME } Účtu."
       ],
@@ -5073,6 +5115,9 @@
       ],
       "to continue to ${ product }": [
         "pro pokračování na ${ product }"
+      ],
+      "To create your first user group, go to": [
+        "Chcete-li vytvořit první skupinu uživatelů, přejděte do"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
@@ -5227,8 +5272,8 @@
       "Warning:": [
         "Upozornění:"
       ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Upozornění: Odstranění nelze vrátit zpět. Tímto úkonem také odeberete přístup ke všem připojeným službám a odstraníte všechny své kontakty."
+      "Warning: deleting your account is permanent.": [
+        "Varování: smazání vašeho účtu je trvalé."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Doporučujeme používat jen oficiální aplikace ${ VPN_APP_NAME }, pokud je to možné."
@@ -5742,6 +5787,9 @@
       "Apply policy to": [
         "Použít zásadu pro"
       ],
+      "Ask members to set up 2FA": [
+        "Požádejte členy, aby si nastavili 2FA"
+      ],
       "Assertion Consumer Service URL": [
         "URL adresa služby Assertion Consumer Service"
       ],
@@ -5949,6 +5997,9 @@
       "Hide password": [
         "Skrýt heslo"
       ],
+      "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
+        "Chápu, že budu muset tuto e-mailovou adresu okamžitě přidat k jinému účtu, aby se předešlo její trvalé ztrátě."
+      ],
       "IBAN": [
         "IBAN"
       ],
@@ -5975,6 +6026,9 @@
       ],
       "Main": [
         "Hlavní"
+      ],
+      "Members without 2FA": [
+        "Členové bez 2FA"
       ],
       "Metadata file for ${ appName }": [
         "Soubor metadat pro ${ appName }"
@@ -6186,6 +6240,9 @@
       "Thomas": [
         "Thomas"
       ],
+      "To help us improve, please explain why you are leaving.": [
+        "Chcete-li nám pomoci se zlepšit, vysvětlete, proč odcházíte."
+      ],
       "Two-password mode": [
         "Režim dvou hesel"
       ],
@@ -6230,9 +6287,6 @@
       ],
       "Vulnerable password": [
         "Zranitelné heslo"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
       ],
       "Weak": [
         "Slabé"
@@ -6459,14 +6513,6 @@
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Navyšte svůj tarif pro odemknutí podpory pomocí chatu a dalších prémiových funkcí, nebo použijte k nahlášení problému náš bezplatný formulář podpory."
-      ]
-    },
-    "Loading info": {
-      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } člena vaší organizace používá dvoufázové ověření.",
-        "${ twoFAMembers.length }/${ members.length } členů vaší organizace používají dvoufázové ověření.",
-        "${ twoFAMembers.length }/${ members.length } členů vaší organizace používá dvoufázové ověření.",
-        "${ twoFAMembers.length }/${ members.length } členů vaší organizace používá dvoufázové ověření."
       ]
     },
     "locked_state_storage_banner: info": {
@@ -7912,7 +7958,7 @@
         "Možná později"
       ],
       "Offer expires ${ formattedDate }.": [
-        "Nabídka vyprší ${ formattedDate }"
+        "Nabídka vyprší ${ formattedDate }."
       ],
       "Pay annually, secure our best offer": [
         "Plaťte ročně, zajistěte si naši nejlepší nabídku"
@@ -7928,6 +7974,9 @@
       ],
       "Save big when you pay annually": [
         "Při roční platbě můžete výrazně ušetřit"
+      ],
+      "Special offer": [
+        "Speciální nabídka"
       ],
       "This offer won't be shown again.": [
         "Tato nabídka se již nezobrazí."
@@ -7991,6 +8040,9 @@
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Používám jiný účet ${ BRAND_NAME }"
+      ],
+      "I'd like to merge this account into another one": [
+        "Rád bych tento účet sloučil(a) s jiným účtem"
       ],
       "iOS": [
         "iOS"
@@ -8178,18 +8230,6 @@
       ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpečné sdílení trezoru (${ n } trezor)",
-        "Bezpečné sdílení trezoru (${ n } trezory)",
-        "Bezpečné sdílení trezoru (${ n } trezorů)",
-        "Bezpečné sdílení trezoru (${ n } trezorů)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpečné sdílení trezoru (${ n } trezor) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
-        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9802,6 +9842,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Účtováno každé 2 roky"
+      ],
+      "Billed every 6 months": [
+        "Účtováno každých 6 měsíců"
       ],
       "Billed for 15 months": [
         "Účtováno za 15 měsíců"
@@ -11490,6 +11533,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL adresa endpointu od poskytovatele identity (např. https://idp.example.com/sso/saml)"
       ],
+      "Excluding single sign-on users whose 2FA is handled by your identity provider": [
+        "Vyloučení uživatelů jednotného přihlášení, jejichž 2FA zpracovává váš poskytovatel identity"
+      ],
       "Feature in early access": [
         "Funkce v předběžném přístupu"
       ],
@@ -11502,8 +11548,8 @@
       "IP address (Internet Service Provider)": [
         "IP adresa (poskytovatel internetových služeb)"
       ],
-      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Členové, kteří 2FA nepoužívají, obdrží e-mail s výzvou, aby 2FA co nejdříve povolili."
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Členové, kteří 2FA nepoužívají, dostanou e-mail s výzvou, aby si ho co nejdříve aktivovali. Uživatelé s jednotným přihlášením nebudou dostávat e-mailové připomenutí."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Zásady sdílených serverů lze použít pro samostatné uživatele nebo skupiny"
@@ -11552,8 +11598,8 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ],
-      "External address - disables end-to-end email encryption for this group": [
-        "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu"
+      "Disables end-to-end email encryption for this group": [
+        "Deaktivuje koncové šifrování e-mailů pro tuto skupinu"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Externí adresa - deaktivuje koncové šifrování e-mailů pro tuto skupinu a s tímto uživatelem nebudou sdíleny žádné šifrované zdroje"
