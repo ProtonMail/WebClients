@@ -29,7 +29,7 @@ import {
     itemTrash,
     shareLeaveIntent,
 } from '@proton/pass/store/actions';
-import { selectAliasTrashAcknowledged, selectLoginItemByEmail } from '@proton/pass/store/selectors';
+import { selectAliasTrashAcknowledged, selectItemsByEmail } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ItemMoveIntent } from '@proton/pass/types';
 import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '@proton/pass/types';
@@ -134,7 +134,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 if (isAliasItem(item.data)) {
                     const state = store.getState();
                     const aliasEmail = item.aliasEmail!;
-                    const relatedLogin = selectLoginItemByEmail(aliasEmail)(state);
+                    const relatedLogin = selectItemsByEmail(aliasEmail)(state);
                     const ack = selectAliasTrashAcknowledged(state);
                     if ((isDisabledAlias(item) || ack) && !relatedLogin) trashItem.call(item);
                     else trashItem.prompt(item);
