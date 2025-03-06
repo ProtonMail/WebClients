@@ -50,7 +50,7 @@ export const PhotosWithAlbumsContext = createContext<{
     isAlbumPhotosLoading: boolean;
     photos: Photo[];
     albumPhotos: AlbumPhoto[];
-    albums: DecryptedAlbum[];
+    albums: Map<string, DecryptedAlbum>;
     loadPhotos: (abortSignal: AbortSignal) => Promise<void>;
     addAlbumPhotos: (
         abortSignal: AbortSignal,
@@ -82,7 +82,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const [albumPhotosLoading, setIsAlbumPhotosLoading] = useState<boolean>(true);
     const [userAddressEmail, setUserAddressEmail] = useState<string>();
     const [photos, setPhotos] = useState<Photo[]>([]);
-    const [albums, setAlbums] = useState<DecryptedAlbum[]>([]);
+    const [albums, setAlbums] = useState<Map<string, DecryptedAlbum>>(new Map());
     const [currentAlbumLinkId, setCurrentAlbumLinkId] = useState<string>();
     const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
     const { getShareWithKey, getShareCreatorKeys, getShare } = useShare();
@@ -253,7 +253,17 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                             }
                         })
                     );
-                    setAlbums(() => [...newDecryptedAlbums.filter((a) => a !== undefined)]);
+
+                    setAlbums((prevAlbums) => {
+                        const newAlbums = new Map(prevAlbums);
+                        newDecryptedAlbums.forEach((album) => {
+                            if (album !== undefined) {
+                                newAlbums.set(album.linkId, album);
+                            }
+                        });
+
+                        return newAlbums;
+                    });
                     // there is a limit of 500 albums so should actually never happen technically
                     if (More) {
                         void albumCall(AnchorID);
@@ -307,7 +317,16 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                             }
                         })
                     );
-                    setAlbums(() => [...newDecryptedAlbums.filter((a) => a !== undefined)]);
+                    setAlbums((prevAlbums) => {
+                        const newAlbums = new Map(prevAlbums);
+                        newDecryptedAlbums.forEach((album) => {
+                            if (album !== undefined) {
+                                newAlbums.set(album.linkId, album);
+                            }
+                        });
+
+                        return newAlbums;
+                    });
                     if (More) {
                         void sharedWithMeCall(AnchorID);
                     }
@@ -431,7 +450,11 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 return;
             }
             await request(queryDeleteAlbum(volumeId, albumLinkId, { DeleteAlbumPhotos: force ? 1 : 0 }), abortSignal);
-            setAlbums((prevAlbums) => prevAlbums.filter((album) => album.linkId !== albumLinkId));
+            setAlbums((prevAlbums) => {
+                const newAlbums = new Map(prevAlbums);
+                newAlbums.delete(albumLinkId);
+                return newAlbums;
+            });
         },
         [request, volumeId]
     );
