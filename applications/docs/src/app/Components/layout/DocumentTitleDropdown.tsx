@@ -146,14 +146,18 @@ const DocumentTitleDropdown = ({
     [authenticatedController, editorController],
   )
 
+  const printAsPDF = useCallback(() => {
+    editorController.printAsPDF().catch(console.error)
+  }, [editorController])
+
   const onExportPDF = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       event.preventDefault()
       event.stopPropagation()
 
-      void openPdfModal({ onClose: () => editorController.printAsPDF() })
+      void openPdfModal({ onClose: printAsPDF })
     },
-    [openPdfModal, editorController],
+    [openPdfModal, printAsPDF],
   )
 
   useEffect(() => {
@@ -418,13 +422,7 @@ const DocumentTitleDropdown = ({
           )}
           <hr className="my-1 min-h-px" />
 
-          <DropdownMenuButton
-            className="flex items-center text-left"
-            onClick={() => {
-              void editorController.printAsPDF()
-            }}
-            data-testid="dropdown-print"
-          >
+          <DropdownMenuButton className="flex items-center text-left" onClick={printAsPDF} data-testid="dropdown-print">
             <Icon name="printer" className="color-weak mr-2" />
             {c('Action').t`Print`}
           </DropdownMenuButton>
