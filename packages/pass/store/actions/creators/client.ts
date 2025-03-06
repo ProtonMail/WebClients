@@ -3,15 +3,17 @@ import { c } from 'ttag';
 
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
+import { withStreamableAction } from '@proton/pass/store/actions/enhancers/client';
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
-import { withRequest, withRequestSuccess } from '@proton/pass/store/request/enhancers';
+import { bootRequest, syncRequest } from '@proton/pass/store/actions/requests';
+import { withRequest } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import type { Chunk } from '@proton/pass/utils/object/chunk';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
 
@@ -20,7 +22,12 @@ export const stopEventPolling = createAction('events::polling::stop');
 
 export const stateDestroy = createAction('state::destroy');
 export const stateHydrate = createAction('state::hydrate', (state: any, options?: EndpointOptions) =>
-    options ? withReceiver(options)({ payload: { state } }) : { payload: { state } }
+    pipe(
+        withStreamableAction,
+        options ? withReceiver(options) : identity
+    )({
+        payload: { state },
+    })
 );
 
 export const cacheRequest = createAction('cache::request', (options: Omit<CacheMeta, 'cache'>) =>
@@ -29,16 +36,13 @@ export const cacheRequest = createAction('cache::request', (options: Omit<CacheM
 
 export const cacheCancel = createAction('cache::cancel');
 
-export const wakeupIntent = createAction(
-    'wakeup::intent',
-    (payload: { status: AppStatus }, receiver: EndpointOptions) =>
-        pipe(withReceiver(receiver), withRequest({ id: wakeupRequest(receiver), status: 'start' }))({ payload })
-);
-
-export const wakeupSuccess = createAction(
-    'wakeup::success',
-    withRequestSuccess((receiver: EndpointOptions) => withReceiver(receiver)({ payload: {} }))
-);
+export const clientInit = requestActionsFactory<{ status: AppStatus } & EndpointOptions, EndpointOptions>(
+    'client::init'
+)({
+    key: ({ tabId, endpoint }: EndpointOptions) => `${endpoint}::${tabId}`,
+    intent: { prepare: (payload) => withReceiver(payload)({ payload }) },
+    success: { prepare: (payload) => withReceiver(payload)({ payload }) },
+});
 
 export const bootIntent = createAction(
     'boot::intent',
@@ -61,7 +65,14 @@ export const bootFailure = createAction('boot::failure', (error?: unknown) =>
 );
 
 export const bootSuccess = createAction('boot::success', (payload?: SynchronizationResult) =>
-    pipe(withRequest({ id: bootRequest(), status: 'success' }), withSettings)({ payload })
+    pipe(
+        withRequest({
+            id: bootRequest(),
+            status: 'success',
+        }),
+        withStreamableAction,
+        withSettings
+    )({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', (type: SyncType) =>
@@ -80,6 +91,7 @@ export const syncIntent = createAction('sync::intent', (type: SyncType) =>
 export const syncSuccess = createAction('sync::success', (payload: SynchronizationResult) =>
     pipe(
         withCache,
+        withStreamableAction,
         withRequest({ id: syncRequest(), status: 'success' }),
         withNotification({ type: 'info', text: c('Info').t`Successfully synced all vaults` })
     )({ payload })
@@ -93,3 +105,10 @@ export const syncFailure = createAction('sync::failure', (error: unknown) =>
 );
 
 export const offlineResume = requestActionsFactory<{ localID?: number }, void, void>('offline::resume')();
+
+/** Represents an action object streamed through chunks.
+ * This is only to be used in the extension when action
+ * payloads may be too large for port/sendMessage messages */
+export const actionStream = createAction('action::stream', (chunk: Chunk, options?: EndpointOptions) =>
+    withReceiver(options ?? {})({ payload: { chunk } })
+);
