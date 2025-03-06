@@ -123,7 +123,6 @@ enum DocsFeatureFlag {
 
 enum MailFeatureFlag {
     AttachmentThumbnails = 'AttachmentThumbnails',
-    WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
     PasswordNudge = 'PasswordNudge',
