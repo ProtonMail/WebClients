@@ -1,5 +1,4 @@
 import { type FC, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -18,7 +17,7 @@ import noop from '@proton/utils/noop';
 
 export const ConfirmDeleteItem: FC<ConfirmationPromptHandles & { item: ItemRevision }> = (props) => {
     const { shareId, itemId } = props.item;
-    const shared = useSelector(selectItemShared(shareId, itemId));
+    const shared = useMemoSelector(selectItemShared, [shareId, itemId]);
 
     return isAliasItem(props.item.data) ? (
         <ConfirmDeleteAlias {...props} />
@@ -51,7 +50,7 @@ export const ConfirmMoveItem: FC<ConfirmationPromptHandles & ItemMoveIntent> = (
 }) => {
     const secureLinks = useMemoSelector(selectItemSecureLinks, [shareId, itemId]);
     const hasLinks = Boolean(secureLinks.length);
-    const shared = useSelector(selectItemShared(shareId, itemId));
+    const shared = useMemoSelector(selectItemShared, [shareId, itemId]);
 
     /** Auto-confirm on mount if no warnings should
      * be shown in the confirmation prompt */

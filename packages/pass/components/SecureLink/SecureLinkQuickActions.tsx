@@ -7,10 +7,10 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { secureLinksRemoveInactive } from '@proton/pass/store/actions';
-import { selectInactiveSecureLinks } from '@proton/pass/store/selectors';
+import { selectInactiveSecureLinksCount } from '@proton/pass/store/selectors';
 
 export const SecureLinkQuickActions: FC = () => {
-    const inactiveLinkCount = useSelector(selectInactiveSecureLinks).length;
+    const inactiveLinkCount = useSelector(selectInactiveSecureLinksCount);
     const { loading, dispatch } = useRequest(secureLinksRemoveInactive, { initial: true });
 
     return (

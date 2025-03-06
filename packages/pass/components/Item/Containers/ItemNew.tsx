@@ -13,6 +13,7 @@ import { useNavigationFilters } from '@proton/pass/components/Navigation/Navigat
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { type ItemNewRouteParams, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemCreate } from '@proton/pass/store/actions';
 import {
@@ -46,7 +47,7 @@ export const ItemNew: FC = () => {
 
     const defaultVault = useSelector(selectDefaultVault);
     const mostRecentVaultShareID = useSelector(selectMostRecentVaultShareID);
-    const selectedVault = useSelector(selectShare(selectedShareId));
+    const selectedVault = useMemoSelector(selectShare, [selectedShareId]);
 
     const shareId = (() => {
         /**  if user downgraded : always auto-select the default vault id */

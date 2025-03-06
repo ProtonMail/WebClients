@@ -5,7 +5,7 @@ import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { type AddressBreachDTO, AddressType } from '@proton/pass/lib/monitor/types';
 import { getAliasBreach, getCustomBreach, getProtonBreach } from '@proton/pass/store/actions';
-import { selectLoginsByUserIdentifier } from '@proton/pass/store/selectors';
+import { selectItemsByUserIdentifier } from '@proton/pass/store/selectors';
 import type { LoginItem } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
 
@@ -31,7 +31,7 @@ export const useAddressBreaches = <T extends AddressType>(dto: AddressBreachDTO<
     const [request, initial] = getRequest(dto);
     const [breaches, setBreaches] = useState<FetchedBreaches[]>([]);
     const req = useRequest(request, { initial, onSuccess: setBreaches });
-    const usages = useMemoSelector(selectLoginsByUserIdentifier, [email]);
+    const usages = useMemoSelector(selectItemsByUserIdentifier, [email]);
 
     useEffect(() => {
         switch (dto.type) {
