@@ -76,7 +76,7 @@ export const usePhotosWithAlbumsView = () => {
             ? getCachedLinksWithoutMeta(
                   abortSignal,
                   shareId,
-                  albums.map((album) => album.cover?.linkId || '')
+                  Array.from(albums.values()).map((album) => album.cover?.linkId || '')
               )
             : undefined;
     const cachedAlbumsCover = useMemoArrayNoMatterTheOrder(cachedAlbums?.links || []);
@@ -228,9 +228,9 @@ export const usePhotosWithAlbumsView = () => {
 
     const albumsView = useMemo(() => {
         if (!shareId || !linkId || !cachedAlbumsCover) {
-            return albums;
+            return Array.from(albums.values());
         }
-        const albumsView = albums.map((album) => {
+        const albumsView = Array.from(albums.values()).map((album) => {
             const cachedAlbumCover = cachedAlbumsCover.find((link) => album.cover?.linkId === link.linkId);
             return {
                 ...album,
@@ -386,10 +386,7 @@ export const usePhotosWithAlbumsView = () => {
         );
 
         // if on album page and all links are selected, download the zip as the album name
-        const album =
-            albumLinkId && links.length === albumPhotos.length
-                ? albums.find((album) => album.linkId === albumLinkId)
-                : undefined;
+        const album = albumLinkId && links.length === albumPhotos.length ? albums.get(albumLinkId) : undefined;
 
         await download(links, {
             zipName: album?.name,
