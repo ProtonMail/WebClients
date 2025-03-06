@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Info } from '@proton/components';
+import { Info, Tooltip } from '@proton/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -90,7 +90,9 @@ export const ShareMember: FC<Props> = ({
             <ShareMemberAvatar value={initials} loading={loading} />
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
-                    <div className="text-ellipsis">{email}</div>
+                    <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
+                        <div className="text-ellipsis">{email}</div>
+                    </Tooltip>
                     {me && <span className="color-primary text-sm">({c('Info').t`me`})</span>}
                 </div>
 
