@@ -377,6 +377,8 @@ export enum CYCLE {
 export const DEFAULT_CYCLE = CYCLE.YEARLY;
 
 export enum COUPON_CODES {
+    PORKBUN = 'PORKBUN',
+
     // Valentine day 2025 coupons
     LOVEPRIVACY25 = 'LOVEPRIVACY25',
     LOVEPRIVACY225 = 'LOVEPRIVACY-225',
