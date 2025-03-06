@@ -13,9 +13,9 @@ import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/clie
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
-import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
+import { bootIntent, clientInit } from '@proton/pass/store/actions';
 import { selectFeatureFlags, selectFilters, selectItem, selectTabState } from '@proton/pass/store/selectors';
-import type { MaybeNull, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
+import type { ClientInitMessage, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
@@ -165,8 +165,8 @@ export const createActivationService = () => {
      * saga while immediately resolving the worker state so the UI can respond to state
      * changes as soon as possible. Regarding the content-script, we simply wait for a
      * ready state as its less "critical" */
-    const handleWakeup = withContext<MessageHandlerCallback<WorkerMessageType.WORKER_WAKEUP>>(
-        async (ctx, message: WorkerMessageWithSender<WorkerWakeUpMessage>) => {
+    const handleClientInit = withContext<MessageHandlerCallback<WorkerMessageType.CLIENT_INIT>>(
+        async (ctx, message: WorkerMessageWithSender<ClientInitMessage>) => {
             const { sender: endpoint, payload } = message;
             const { tabId } = payload;
             const { status } = ctx.getState();
@@ -205,9 +205,13 @@ export const createActivationService = () => {
              * tracking the wakeup's request metadata can be consumed
              * in the UI to infer wakeup result - see `wakeup.saga.ts`
              * no need for any redux operations on content-script wakeup
-             * as it doesn't hold any store. */
+             * as it doesn't hold any state. */
             if (message.sender === 'popup' || message.sender === 'page') {
-                ctx.service.store.dispatch(wakeupIntent({ status }, { endpoint, tabId }));
+                await ctx.service.store.dispatchAsyncRequest(clientInit, {
+                    status,
+                    endpoint,
+                    tabId,
+                });
             }
 
             if (message.sender === 'popup') {
@@ -315,7 +319,7 @@ export const createActivationService = () => {
     browser.permissions.onRemoved.addListener(checkPermissionsUpdate);
     browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.CLIENT_INIT, handleClientInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.TABS_QUERY, handleResolveTab);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_RELOAD, reload);
