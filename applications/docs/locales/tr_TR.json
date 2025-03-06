@@ -2344,7 +2344,7 @@
     },
     "driveplus2024: Deal details": {
       "Extended version history": [
-        "Genişletilmiş sürüm geçmişi"
+        "Ayrıntılı sürüm geçmişi"
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -4436,7 +4436,7 @@
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME geçerli oluşturucu kipinde iletiyi otomatik olarak gönderir."
+        "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
       ],
       "Please authenticate your card in the verification tab.": [
         "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
@@ -4855,7 +4855,7 @@
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
-        "Şu anda bu belgeyi yalnızca görüntüleme kipinde görüyorsunuz. Düzenleme ve yorumlama isteğinde bulunmak için sahibine ulaşın."
+        "Şu anda bu belgeye yalnızca görüntüleme izniyle erişiyorsunuz. Düzenleme ve yorumlama isteğinde bulunmak için sahibine ulaşın."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } tarifesinin depolama alanından fazlasını kullanıyorsunuz. Tarifeyi düşürebilmek için lütfen bazı verileri silin ya da taşıyın."
@@ -6770,7 +6770,7 @@
         "Wi-Fi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
+        "Ailenizi zararlı sitelerden koruyun ve sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
@@ -7178,7 +7178,7 @@
         "Teklifin geçerliliği ${ formattedDate } tarihinde sona erecek."
       ],
       "Pay annually, secure our best offer": [
-        "Yıllık ödeme yapın en iyi teklifimizi güvence altına alın"
+        "Yıllık ödeme yapın, en iyi teklifimizi değerlendirin"
       ],
       "Save": [
         "İndirim"
@@ -7191,6 +7191,9 @@
       ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
+      ],
+      "Special offer": [
+        "Özel teklif"
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
@@ -7267,14 +7270,6 @@
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Güvenli kasa paylaşımı (${ n } kasa)",
-        "Güvenli kasa paylaşımı (${ n } kasa)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8240,6 +8235,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
+      ],
+      "Billed every 6 months": [
+        "6 ayda bir faturalanır"
       ],
       "Billed for 15 months": [
         "15 aylık olarak faturalanır"
