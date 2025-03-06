@@ -13,15 +13,19 @@ import { getSharedWithMeMembership } from './utils';
  */
 
 export const useDirectSharingInfo = () => {
-    const { getDefaultShare } = useDefaultShare();
+    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { getShare, getShareWithKey } = useShare();
     const { isReadOnlyMode } = useDriveSharingFlags();
 
-    const isSharedWithMe = async (abortSignal: AbortSignal, shareId: string) => {
-        const [defaultShare, share] = await Promise.all([getDefaultShare(abortSignal), getShare(abortSignal, shareId)]);
+    const isSharedWithMe = async (abortSignal: AbortSignal, shareId: string): Promise<boolean> => {
+        const [defaultShare, photoShare, share] = await Promise.all([
+            getDefaultShare(abortSignal),
+            getDefaultPhotosShare(),
+            getShare(abortSignal, shareId),
+        ]);
 
-        // If volume is not the same as the main one, we can consider that it's a shared share
-        return defaultShare.volumeId !== share.volumeId;
+        // If volume is not the same as the main one and not the photo share (if album enabled), we can consider that it's a shared share
+        return defaultShare.volumeId !== share.volumeId && (photoShare ? photoShare.volumeId !== share.volumeId : true);
     };
 
     const getSharePermissions = async (abortSignal: AbortSignal, shareId: string) => {
