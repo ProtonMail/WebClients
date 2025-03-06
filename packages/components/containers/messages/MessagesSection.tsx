@@ -15,7 +15,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import { useFlag } from '@proton/unleash';
 
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -45,7 +44,6 @@ const MessagesSection = () => {
     const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
     const { createNotification } = useNotifications();
     const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
-    const isPageSizeSettingEnabled = useFlag('WebMailPageSizeSetting');
     const dispatch = useDispatch();
     const api = useApi();
 
@@ -208,23 +206,20 @@ const MessagesSection = () => {
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
-
-            {isPageSizeSettingEnabled && (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="pageSizeSelector" className="text-semibold" id="label-pageSizeSelector">
-                            <span className="mr-2">
-                                {ViewMode === VIEW_MODE.GROUP
-                                    ? c('Label').t`Conversations per page`
-                                    : c('Label').t`Messages per page`}
-                            </span>
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight>
-                        <PageSizeSelector id="pageSizeSelector" />
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            )}
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="pageSizeSelector" className="text-semibold" id="label-pageSizeSelector">
+                        <span className="mr-2">
+                            {ViewMode === VIEW_MODE.GROUP
+                                ? c('Label').t`Conversations per page`
+                                : c('Label').t`Messages per page`}
+                        </span>
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight>
+                    <PageSizeSelector id="pageSizeSelector" />
+                </SettingsLayoutRight>
+            </SettingsLayout>
         </>
     );
 };
