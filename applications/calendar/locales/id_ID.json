@@ -2512,6 +2512,20 @@
         "Berdasarkan zona waktu Anda"
       ]
     },
+    "Custom frequency option": {
+      "Don't end": [
+        "Jangan akhiri"
+      ],
+      "End after": [
+        "Akhiri setelah"
+      ],
+      "End on": [
+        "Akhiri pada"
+      ],
+      "event": [
+        "acara"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/bulan"
@@ -3945,6 +3959,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "Repeat event": [
+        "Ulangi acara"
       ],
       "Search": [
         "Pencarian"
@@ -5405,6 +5422,14 @@
         "Anda dapat memperbarui kueri pencarian Anda atau menutup panel pencarian untuk kembali ke tampilan kalender"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Bagaimana cara mengirim pembayaran tunai?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Silakan ikuti instruksi yang tertera pada artikel berikut: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info message": {
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -5723,6 +5748,9 @@
       "Event title": [
         "Judul acara"
       ],
+      "Every": [
+        "Setiap"
+      ],
       "Expiration (${ patternExpiration })": [
         "Kedaluwarsa (${ patternExpiration })"
       ],
@@ -5824,6 +5852,9 @@
       ],
       "Notifications": [
         "Notifikasi"
+      ],
+      "On": [
+        "Aktif"
       ],
       "Operating system": [
         "Sistem operasi"
@@ -6341,6 +6372,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "pada ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "pada hari Jumat pertama"
       ],
@@ -7571,6 +7605,12 @@
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Penawaran akan berakhir pada ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Bayar per tahun, kantongi penawaran terbaik kami"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -7583,11 +7623,20 @@
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
       ],
+      "Special offer": [
+        "Penawaran spesial"
+      ],
       "This offer won't be shown again.": [
         "Penawaran ini tidak akan lagi ditampilkan."
       ],
+      "When you switch from a monthly to annual subscription.": [
+        "Pada saat Anda beralih dari langganan bulanan ke langganan tahunan."
+      ],
       "You currently pay": [
         "Anda saat ini membayar"
+      ],
+      "Your subscription renews soon": [
+        "Langganan Anda akan segera diperbarui"
       ]
     },
     "Offer feature": {
@@ -7671,6 +7720,9 @@
       "Custom": [
         "Sesuaikan"
       ],
+      "Custom...": [
+        "Sesuaikan..."
+      ],
       "Day": [
         "Hari"
       ],
@@ -7679,6 +7731,15 @@
       ],
       "Every day": [
         "Setiap hari"
+      ],
+      "Every month ${ description }": [
+        "Setiap bulan ${ description }"
+      ],
+      "Every week ${ everyWeekDescription }": [
+        "Setiap minggu ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "Setiap hari ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Setiap tahun"
@@ -7734,12 +7795,6 @@
       ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Pembagian brankas aman (${ n } brankas)"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8777,6 +8832,9 @@
       "Billed every 2 years": [
         "Ditagihkan setiap 2 tahun"
       ],
+      "Billed every 6 months": [
+        "Ditagih setiap 6 bulan"
+      ],
       "Billed for 15 months": [
         "Tertagih selama 15 bulan"
       ],
@@ -9660,6 +9718,9 @@
       "Details": [
         "Rincian"
       ],
+      "Does not repeat": [
+        "Tidak berulang"
+      ],
       "Downgrade account": [
         "Turunkan jenis akun"
       ],
@@ -9710,6 +9771,21 @@
       ],
       "Event is happening on defined time slot": [
         "Acara berlangsung pada jatah waktu yang telah ditentukan"
+      ],
+      "Every day": [
+        "Setiap hari"
+      ],
+      "Every month ${ option.text }": [
+        "Setiap bulan ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Setiap minggu pada ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Setiap hari ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Setiap tahun"
       ],
       "Exporting contacts": [
         "Mengekspor kontak"
