@@ -47,14 +47,14 @@ export const readSigned = async (
         if (!Signature) {
             throw new Error(c('Error').t`Missing signature`);
         }
-        const { verified, signatureTimestamp } = await CryptoProxy.verifyMessage({
+        const { verificationStatus, signatureTimestamp } = await CryptoProxy.verifyMessage({
             textData: Data,
             stripTrailingSpaces: true,
             verificationKeys: publicKeys,
             armoredSignature: Signature,
         });
 
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             return {
                 data: Data,
                 type: SIGNATURE_NOT_VERIFIED,
@@ -75,7 +75,7 @@ export const readSigned = async (
 
 export const decryptSigned = async ({ Data, Signature }: ContactCard, { publicKeys, privateKeys }: KeysPair) => {
     try {
-        const { data, verified } = await CryptoProxy.decryptMessage({
+        const { data, verificationStatus } = await CryptoProxy.decryptMessage({
             armoredMessage: Data,
             decryptionKeys: privateKeys,
             verificationKeys: publicKeys,
@@ -86,7 +86,7 @@ export const decryptSigned = async ({ Data, Signature }: ContactCard, { publicKe
             throw new Error('Unknown data');
         }
 
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             return { data, type: SIGNATURE_NOT_VERIFIED, error: new Error(c('Error').t`Signature not verified`) };
         }
 

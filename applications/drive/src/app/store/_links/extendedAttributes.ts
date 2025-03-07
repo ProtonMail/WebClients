@@ -225,9 +225,9 @@ export async function decryptExtendedAttributes(
     encryptedXAttr: string,
     nodePrivateKey: PrivateKeyReference,
     addressPublicKey: PublicKeyReference | PublicKeyReference[]
-): Promise<{ xattrs: ParsedExtendedAttributes; verified: VERIFICATION_STATUS }> {
+): Promise<{ xattrs: ParsedExtendedAttributes; verificationStatus: VERIFICATION_STATUS }> {
     try {
-        const { data: xattrString, verified } = await decryptSigned({
+        const { data: xattrString, verificationStatus } = await decryptSigned({
             armoredMessage: encryptedXAttr,
             privateKey: nodePrivateKey,
             publicKey: addressPublicKey,
@@ -235,7 +235,7 @@ export async function decryptExtendedAttributes(
 
         return {
             xattrs: parseExtendedAttributes(xattrString),
-            verified,
+            verificationStatus,
         };
     } catch (e) {
         throw new EnrichedError('Failed to decrypt extended attributes', {

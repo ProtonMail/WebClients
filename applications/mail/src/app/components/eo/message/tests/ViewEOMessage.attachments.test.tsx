@@ -37,7 +37,7 @@ describe('Encrypted Outside message attachments', () => {
             data: [],
             filename: 'preview',
             signatures: [],
-            verified: VERIFICATION_STATUS.NOT_SIGNED,
+            verificationStatus: VERIFICATION_STATUS.NOT_SIGNED,
         },
         nameSplitStart: 'attachment-name-p',
         nameSplitEnd: 'ng.png',

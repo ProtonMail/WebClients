@@ -56,18 +56,18 @@ export const decryptMessage = async (pack: any, privateKeys: PrivateKeyReference
  * @return {Promise<{getBody: (function(): Promise<{body, mimetype}>), getAttachments: (function(): Promise<any>), getEncryptedSubject: (function(): Promise<any>), verify: (function(): Promise<any>), errors: (function(): Promise<any>), stop: stop}>}
  */
 export async function decryptMIMEMessage(options: WorkerDecryptionOptions) {
-    const { data: rawData, verified, signatures } = await CryptoProxy.decryptMessage({ ...options, format: 'utf8' });
+    const { data: rawData, verificationStatus, signatures } = await CryptoProxy.decryptMessage({ ...options, format: 'utf8' });
 
     const {
         body,
         mimeType,
-        verified: pgpMimeVerified,
+        verificationStatus: pgpMimeVerified,
         attachments,
         encryptedSubject,
         signatures: pgpMimeSignatures,
     } = await CryptoProxy.processMIME({ ...options, data: rawData });
 
-    const combinedVerified = verified === VERIFICATION_STATUS.NOT_SIGNED ? pgpMimeVerified : verified;
+    const combinedVerified = verificationStatus === VERIFICATION_STATUS.NOT_SIGNED ? pgpMimeVerified : verificationStatus;
 
     return {
         getBody: () => Promise.resolve(body ? { body, mimeType } : undefined),

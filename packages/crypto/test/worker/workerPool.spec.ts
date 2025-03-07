@@ -47,7 +47,7 @@ describe('Worker Pool', () => {
         expect(textDecryptionResult.data).to.equal('hello world');
         expect(textDecryptionResult.signatures).to.have.length(1);
         expect(textDecryptionResult.verificationErrors).to.not.exist;
-        expect(textDecryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(textDecryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
 
         const { message: encryptedBinaryMessage } = await CryptoWorkerPool.encryptMessage({
             binaryData: new Uint8Array([1, 2, 3]),
@@ -65,7 +65,7 @@ describe('Worker Pool', () => {
         expect(binaryDecryptionResult.data).to.deep.equal(new Uint8Array([1, 2, 3]));
         expect(binaryDecryptionResult.signatures).to.have.length(1);
         expect(binaryDecryptionResult.verificationErrors).to.not.exist;
-        expect(binaryDecryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(binaryDecryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
     });
 
     it('computeHashStream - the hash instance should not be disrupted with multiple workers', async () => {

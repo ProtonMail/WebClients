@@ -60,14 +60,14 @@ export async function decryptLockedSharePassphrase(
         privateKeys: oldPrivateKey,
     });
 
-    const { data: shareDecryptedPassphrase, verified } = await CryptoProxy.decryptMessage({
+    const { data: shareDecryptedPassphrase, verificationStatus } = await CryptoProxy.decryptMessage({
         armoredMessage: lockedShare.passphrase,
         armoredSignature: lockedShare.passphraseSignature,
         sessionKeys: shareSessionKey,
         verificationKeys: oldPrivateKey,
     });
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;

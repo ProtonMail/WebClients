@@ -15,7 +15,7 @@ export interface Download {
     attachment: Attachment;
     data: Uint8Array;
     isError?: boolean;
-    verified: VERIFICATION_STATUS;
+    verificationStatus: VERIFICATION_STATUS;
 }
 
 /**
@@ -31,7 +31,7 @@ export const formatDownload = async (
     messageFlags?: number
 ): Promise<Download> => {
     try {
-        const { data, verified } = await getAndVerify(
+        const { data, verificationStatus } = await getAndVerify(
             attachment,
             verification,
             messageKeys,
@@ -43,7 +43,7 @@ export const formatDownload = async (
         return {
             attachment,
             data: data as Uint8Array,
-            verified,
+            verificationStatus,
         };
     } catch (error: any) {
         // If the decryption fails we download the encrypted version
@@ -56,7 +56,7 @@ export const formatDownload = async (
                 },
                 data: error.binary,
                 isError: true,
-                verified: VERIFICATION_STATUS.NOT_VERIFIED,
+                verificationStatus: VERIFICATION_STATUS.NOT_VERIFIED,
             };
         }
         throw error;

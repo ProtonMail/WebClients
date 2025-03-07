@@ -23,7 +23,7 @@ export const getDecryptedSessionKey = async ({
 interface DecryptionResult {
     decryptedPassphrase: string;
     sessionKey: SessionKey;
-    verified: VERIFICATION_STATUS;
+    verificationStatus: VERIFICATION_STATUS;
 }
 
 type CommonKeys<T, U> = {
@@ -52,27 +52,27 @@ export const decryptPassphrase = async ({
     let decryptionResult!: DecryptionResult;
 
     if (publicKeysCallbackList.length === 0) {
-        const { data, verified } = await CryptoProxy.decryptMessage({
+        const { data, verificationStatus } = await CryptoProxy.decryptMessage({
             armoredMessage: armoredPassphrase,
             armoredSignature,
             sessionKeys: sessionKey,
             verificationKeys: [],
         });
-        decryptionResult = { decryptedPassphrase: data, sessionKey, verified };
+        decryptionResult = { decryptedPassphrase: data, sessionKey, verificationStatus };
     }
 
     for (const verificationKeysCallback of publicKeysCallbackList) {
         const verificationKeys = await verificationKeysCallback();
 
-        const { data, verified } = await CryptoProxy.decryptMessage({
+        const { data, verificationStatus } = await CryptoProxy.decryptMessage({
             armoredMessage: armoredPassphrase,
             armoredSignature,
             sessionKeys: sessionKey,
             verificationKeys,
         });
 
-        decryptionResult = { decryptedPassphrase: data, sessionKey, verified };
-        if (verified === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        decryptionResult = { decryptedPassphrase: data, sessionKey, verificationStatus };
+        if (verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
             // if the signature is valid, we return the decryption result directly, no need to fallback
             break;
         }

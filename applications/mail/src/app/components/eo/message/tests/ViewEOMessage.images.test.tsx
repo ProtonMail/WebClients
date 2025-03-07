@@ -19,7 +19,7 @@ const embeddedAttachment = {
         data: new Uint8Array([1, 2]),
         filename: 'preview',
         signatures: [],
-        verified: VERIFICATION_STATUS.NOT_SIGNED,
+        verificationStatus: VERIFICATION_STATUS.NOT_SIGNED,
     },
     KeyPackets: [],
     nameSplitStart: 'attachment-name-p',

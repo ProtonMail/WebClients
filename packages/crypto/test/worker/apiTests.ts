@@ -58,7 +58,7 @@ tBiO7HKQxoGj3FnUTJnI52Y0pIg=
         expect(decryptionResult.data).to.equal('hello world');
         expect(decryptionResult.signatures).to.have.length(0);
         expect(decryptionResult.verificationErrors).to.not.exist;
-        expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(decryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
 
         const decryptWithWrongPassword = CryptoApiImplementation.decryptMessage({
             armoredMessage,
@@ -88,7 +88,7 @@ GzGRkb+Rzb42pnKcuihith40374=
         expect(decryptionResult.signatures).to.have.length(1);
         expect(decryptionResult.verificationErrors![0]).instanceOf(Error); // Errors should be automatically reconstructed by comlink
         expect(decryptionResult.verificationErrors![0]).to.match(/Could not find signing key/);
-        expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
+        expect(decryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
     });
 
     it('decryptMessage - output binary data should be transferred', async () => {
@@ -106,7 +106,7 @@ tBiO7HKQxoGj3FnUTJnI52Y0pIg=
         expect(decryptionResult.data).to.deep.equal(stringToUtf8Array('hello world'));
         expect(decryptionResult.signatures).to.have.length(0);
         expect(decryptionResult.verificationErrors).to.not.exist;
-        expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(decryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
     });
 
     it('decryptMessage - supports decrypting e2ee forwarded message', async () => {
@@ -170,7 +170,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         });
         expect(decryptionResult.signatures).to.have.length(0);
         expect(decryptionResult.verificationErrors).to.not.exist;
-        expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(decryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
     });
 
     it('encryptMessage - should compress with zlib only if given `compress: true`', async () => {
@@ -235,7 +235,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         expect(textDecryptionResult.data).to.equal('hello world');
         expect(textDecryptionResult.signatures).to.have.length(0);
         expect(textDecryptionResult.verificationErrors).to.not.exist;
-        expect(textDecryptionResult.verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(textDecryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
 
         const { message: encryptedBinaryMessage } = await CryptoApiImplementation.encryptMessage({
             binaryData: new Uint8Array([1, 2, 3]),
@@ -251,7 +251,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         expect(binaryDecryptionResult.data).to.deep.equal(new Uint8Array([1, 2, 3]));
         expect(binaryDecryptionResult.signatures).to.have.length(0);
         expect(binaryDecryptionResult.verificationErrors).to.not.exist;
-        expect(binaryDecryptionResult.verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(binaryDecryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
     });
 
     it('encryptMessage/decryptMessage - with elgamal key', async () => {
@@ -272,7 +272,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         expect(textDecryptionResult.data).to.equal('hello world');
         expect(textDecryptionResult.signatures).to.have.length(0);
         expect(textDecryptionResult.verificationErrors).to.not.exist;
-        expect(textDecryptionResult.verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(textDecryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
     });
 
     it('signMessage/verifyMessage - output binary signature and data should be transferred', async () => {
@@ -295,7 +295,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         expect(verificationResult.data).to.equal('hello world');
         expect(verificationResult.signatures).to.have.length(1);
         expect(verificationResult.errors).to.not.exist;
-        expect(verificationResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
 
         const invalidVerificationResult = await CryptoApiImplementation.verifyMessage({
             textData: 'not signed data',
@@ -306,7 +306,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
         expect(invalidVerificationResult.data).to.deep.equal(stringToUtf8Array('not signed data'));
         expect(invalidVerificationResult.signatures).to.have.length(1);
         expect(invalidVerificationResult.errors).to.have.length(1);
-        expect(invalidVerificationResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
+        expect(invalidVerificationResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
     });
 
     it('signMessage/verifyMessage - with context', async () => {
@@ -335,8 +335,8 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
             verificationKeys: privateKeyRef,
         });
 
-        expect(verificationValidContext.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
-        expect(verificationMissingContext.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
+        expect(verificationValidContext.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationMissingContext.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
         // check errors
         expect(verificationValidContext.errors).to.be.undefined;
         expect(verificationMissingContext.errors).to.have.length(1);
@@ -370,14 +370,14 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
             date: tenSecondsInTheFuture,
             detached: true,
         });
-        const { data: signed, verified } = await CryptoApiImplementation.verifyMessage({
+        const { data: signed, verificationStatus } = await CryptoApiImplementation.verifyMessage({
             textData: data,
             armoredSignature,
             verificationKeys: privateKeyRef,
         });
 
         expect(signed).to.equal(data);
-        expect(await verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
     });
 
     it('verifyCleartextMessage - output binary signature should be transferred', async () => {
@@ -409,7 +409,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(verificationResult.data).to.equal('hello world');
         expect(verificationResult.signatures).to.have.length(1);
         expect(verificationResult.errors).to.not.exist;
-        expect(verificationResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
 
         const invalidVerificationResult = await CryptoApiImplementation.verifyCleartextMessage({
             armoredCleartextMessage,
@@ -417,7 +417,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         });
         expect(invalidVerificationResult.signatures).to.have.length(1);
         expect(invalidVerificationResult.errors).to.have.length(1);
-        expect(invalidVerificationResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
+        expect(invalidVerificationResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
     });
 
     it('should encrypt/sign and decrypt/verify text and binary data', async () => {
@@ -442,7 +442,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(textDecryptionResult.data).to.equal('hello world');
         expect(textDecryptionResult.signatures).to.have.length(1);
         expect(textDecryptionResult.verificationErrors).to.not.exist;
-        expect(textDecryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(textDecryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
 
         const { message: encryptedBinaryMessage } = await CryptoApiImplementation.encryptMessage({
             binaryData: new Uint8Array([1, 2, 3]),
@@ -460,7 +460,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(binaryDecryptionResult.data).to.deep.equal(new Uint8Array([1, 2, 3]));
         expect(binaryDecryptionResult.signatures).to.have.length(1);
         expect(binaryDecryptionResult.verificationErrors).to.not.exist;
-        expect(binaryDecryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(binaryDecryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
     });
 
     it('should encrypt/sign and decrypt/verify binary data with detached signatures', async () => {
@@ -494,7 +494,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(decryptionResult.data).to.deep.equal(plaintext);
         expect(decryptionResult.signatures).to.have.length(1);
         expect(decryptionResult.verificationErrors).to.not.exist;
-        expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(decryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
 
         const decryptionResultWithEncryptedSignature = await CryptoApiImplementation.decryptMessage({
             binaryMessage: encryptedBinaryMessage,
@@ -506,7 +506,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(decryptionResultWithEncryptedSignature.data).to.deep.equal(plaintext);
         expect(decryptionResultWithEncryptedSignature.signatures).to.have.length(1);
         expect(decryptionResultWithEncryptedSignature.verificationErrors).to.not.exist;
-        expect(decryptionResultWithEncryptedSignature.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(decryptionResultWithEncryptedSignature.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
     });
 
     it('should encrypt/sign and decrypt/verify with context', async () => {
@@ -560,7 +560,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(decryptionResult.data).to.deep.equal(plaintext);
         expect(decryptionResult.signatures).to.have.length(1);
         expect(decryptionResult.verificationErrors).to.not.exist;
-        expect(decryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(decryptionResult.verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
     });
 
     it('should support encrypting/decrypting using argon2', async () => {
@@ -664,21 +664,21 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
 
     it('processMIME - it can process multipart/signed mime messages and verify the signature', async () => {
         const mimeKeyRef = await CryptoApiImplementation.importPublicKey({ armoredKey: mimeKey });
-        const { body, verified, signatures } = await CryptoApiImplementation.processMIME({
+        const { body, verificationStatus, signatures } = await CryptoApiImplementation.processMIME({
             data: multipartSignedMessage,
             verificationKeys: mimeKeyRef,
         });
-        expect(verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationStatus).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
         expect(signatures.length).to.equal(1);
         expect(signatures[0].length > 0).to.be.true; // check that serialized signature is transferred
         expect(body).to.equal(multipartSignedMessageBody);
     });
 
     it('processMIME - it can parse message with text attachment', async () => {
-        const { verified, body, signatures, attachments } = await CryptoApiImplementation.processMIME({
+        const { verificationStatus, body, signatures, attachments } = await CryptoApiImplementation.processMIME({
             data: multipartMessageWithAttachment,
         });
-        expect(verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
         expect(signatures.length).to.equal(0);
         expect(body).to.equal('this is the body text\n');
         expect(attachments.length).to.equal(1);
@@ -691,10 +691,10 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
     });
 
     it('processMIME - it can parse message with empty signature', async () => {
-        const { body, signatures, verified, attachments } = await CryptoApiImplementation.processMIME({
+        const { body, signatures, verificationStatus, attachments } = await CryptoApiImplementation.processMIME({
             data: messageWithEmptySignature,
         });
-        expect(verified).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(verificationStatus).to.equal(VERIFICATION_STATUS.NOT_SIGNED);
         expect(signatures).to.have.length(0);
         expect(body).to.equal('<div>Hello</div>\n');
         expect(attachments).to.have.length(1); // signature part that failed to parse
