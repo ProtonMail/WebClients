@@ -1,8 +1,9 @@
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import type { ThumbnailType } from './media';
 
-export type OnFileUploadSuccessCallbackData = { fileId: string; fileName: string } | void;
+export type OnFileUploadSuccessCallbackData = { fileId: string; fileName: string; photo?: PhotoUpload } | void;
 export type OnFolderUploadSuccessCallbackData = { folderId: string; folderName: string };
 export interface UploadFileControls {
     start: (progressCallbacks?: UploadFileProgressCallbacks) => Promise<OnFileUploadSuccessCallbackData>;
@@ -122,6 +123,7 @@ export type PhotoUpload = {
     encryptedExif?: string;
     captureTime: number;
     contentHash?: string;
+    tags?: PhotoTag[];
 };
 
 export enum TransferConflictStrategy {

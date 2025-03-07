@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
 import { Icon, type IconName, UncontainedWrapper } from '@proton/components/index';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import clsx from '@proton/utils/clsx';
 
-import { AlbumTag, PhotoTag, type Tag } from '../../../store';
+import { AlbumTag, type Tag } from '../../../store';
 
 export interface TagsProps<T extends Tag> {
     selectedTags: T[];
