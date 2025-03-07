@@ -4,7 +4,7 @@ import { getImage } from '@proton/shared/lib/api/images';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { encodeImageUri } from '@proton/shared/lib/helpers/image';
 
-import { get } from '../../../helpers/attachment/attachmentLoader';
+import { getAndVerifyAttachment } from '../../../helpers/attachment/attachmentLoader';
 import { createBlob } from '../../../helpers/message/messageEmbeddeds';
 import type {
     LoadEmbeddedParams,
@@ -21,7 +21,7 @@ export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedPa
     async ({ attachments, api, messageVerification, messageKeys, getAttachment, onUpdateAttachment, messageFlags }) => {
         return Promise.all(
             attachments.map(async (attachment) => {
-                const buffer = await get(
+                const buffer = await getAndVerifyAttachment(
                     attachment,
                     messageVerification,
                     messageKeys,
