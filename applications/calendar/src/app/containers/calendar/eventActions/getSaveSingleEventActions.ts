@@ -6,6 +6,7 @@ import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 import unary from '@proton/utils/unary';
 
@@ -33,6 +34,8 @@ import { createIntermediateEvent } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 
+// import { getAuthorPublicKeysMap } from '@proton/shared/lib/calendar/author';
+
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT } = INVITE_ACTION_TYPES;
 
 interface SaveEventHelperArguments {
@@ -44,6 +47,7 @@ interface SaveEventHelperArguments {
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
     getCalendarKeys: GetCalendarKeys;
+    getAddressKeys: GetAddressKeys;
     sendIcs: SendIcs;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: OnSendPrefsErrors;
@@ -62,6 +66,7 @@ const getSaveSingleEventActions = async ({
     canEditOnlyPersonalPart,
     isAttendee,
     inviteActions,
+    getAddressKeys,
     getCalendarKeys,
     onSaveConfirmation,
     sendIcs,
@@ -171,6 +176,8 @@ const getSaveSingleEventActions = async ({
                 reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                 sendIcs,
                 reencryptSharedEvent,
+                getAddressKeys,
+                getCalendarKeys,
             });
         }
 
@@ -199,6 +206,7 @@ const getSaveSingleEventActions = async ({
         let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
 
         if (isSendType) {
+            // TODO: Sounds that sending external invite is there
             await onSaveConfirmation({
                 type: SAVE_CONFIRMATION_TYPES.SINGLE,
                 inviteActions,
