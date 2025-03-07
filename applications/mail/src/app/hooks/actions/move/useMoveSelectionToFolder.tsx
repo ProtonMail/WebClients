@@ -197,7 +197,10 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     if (!undoing) {
                         start();
                         // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
-                        // await call();
+                        // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                        if (isES) {
+                            await call();
+                        }
                     }
                 }
                 return tokens;
