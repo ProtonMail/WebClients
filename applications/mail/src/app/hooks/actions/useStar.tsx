@@ -10,6 +10,7 @@ import useListTelemetry, {
     type SOURCE_ACTION,
     numberSelectionElements,
 } from 'proton-mail/components/list/useListTelemetry';
+import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
@@ -19,10 +20,11 @@ import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels
 
 export const useStar = () => {
     const api = useApi();
-    const { stop, start } = useEventManager();
+    const { stop, start, call } = useEventManager();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const dispatch = useMailDispatch();
     const { sendSimpleActionReport } = useListTelemetry();
+    const isES = useIsEncryptedSearch();
 
     const star = useCallback(
         async (elements: Element[], value: boolean, labelID: string, sourceAction: SOURCE_ACTION) => {
@@ -62,10 +64,14 @@ export const useStar = () => {
             } finally {
                 dispatch(backendActionFinished());
                 start();
-                // await call();
+                // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                if (isES) {
+                    await call();
+                }
             }
         },
-        []
+        [isES]
     );
 
     return star;
