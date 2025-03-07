@@ -61,7 +61,7 @@ export const VaultMenu: FC<Props> = ({ dense = false, render, onAction = noop })
                         canMove={isWritableVault(vault) && vault.count > 0}
                         canDelete={vault.owner && ownedVaultCount > 1}
                         canInvite={!vault.shared}
-                        canManage={vault.shared}
+                        canManage={isShareManageable(vault)}
                         canLeave={vault.shared && !vault.owner}
                         dense={dense}
                         onAction={onAction}
