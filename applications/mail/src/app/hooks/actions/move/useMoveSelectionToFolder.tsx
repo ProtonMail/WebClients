@@ -226,7 +226,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                 });
             }
         },
-        []
+        [isES]
     );
 
     return { moveSelectionToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal };

@@ -25,9 +25,11 @@ import type { MailState } from '../store';
 import type { ElementsStateParams } from './elementsTypes';
 import { getTotal } from './helpers/elementTotal';
 
+export const params = (state: MailState) => state.elements.params;
+export const paramsSelector = createSelector([params], (params) => params);
+
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: MailState) => state.elements.elements;
-export const params = (state: MailState) => state.elements.params;
 const page = (state: MailState) => state.elements.page;
 export const pageSize = (state: MailState) => state.elements.pageSize;
 const pages = (state: MailState) => state.elements.pages;
