@@ -25,6 +25,7 @@ import type { ExtensionForkResultPayload } from '@proton/shared/lib/authenticati
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
 
+import type { MonitorCheckOptions } from '@proton/pass/lib/monitor/service';
 import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, AliasOptions, ItemContent, SelectedItem, UniqueItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
@@ -168,8 +169,8 @@ export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SC
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
-export type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
-export type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
+export type Monitor2FAsMessage = WithPayload<WorkerMessageType.MONITOR_2FAS, MonitorCheckOptions>;
+export type MonitorWeakPasswordsMessage = WithPayload<WorkerMessageType.MONITOR_WEAK_PASSWORDS, MonitorCheckOptions>;
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type PassCoreRPCMessage = WithPayload<WorkerMessageType.PASS_CORE_RPC, PassCoreRPC<PassCoreMethod>>;
