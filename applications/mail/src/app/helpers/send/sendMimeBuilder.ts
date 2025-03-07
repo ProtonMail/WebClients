@@ -1,6 +1,5 @@
 import mimemessage from '@protontech/mimemessage';
 
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -18,6 +17,7 @@ import { formatDownload } from '../attachment/attachmentDownloader';
 import { getPlainText } from '../message/messageContent';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
 import { prepareExport } from '../message/messageExport';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // Reference: Angular/src/app/composer/services/mimeMessageBuilder.js
 
@@ -163,8 +163,8 @@ const build = (
 const fetchMimeDependencies = async (
     message: MessageState,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    getAttachment: (ID: string) => DecryptedAttachment | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api
 ): Promise<Download[]> => {
     return Promise.all(
@@ -185,8 +185,8 @@ const fetchMimeDependencies = async (
 export const constructMime = async (
     message: MessageState,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    getAttachment: (ID: string) => DecryptedAttachment | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api,
     downconvert = true
 ) => {
@@ -200,8 +200,8 @@ export const constructMime = async (
 export const constructMimeFromSource = async (
     message: MessageState,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    getAttachment: (ID: string) => DecryptedAttachment | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api
 ) => {
     const isDecryptionError = !!message.errors?.decryption?.length;

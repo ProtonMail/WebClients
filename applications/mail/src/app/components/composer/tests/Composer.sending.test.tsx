@@ -3,7 +3,6 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
-import type { WorkerDecryptionResult } from '@proton/crypto/lib';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
@@ -38,6 +37,7 @@ import {
 } from '../../../helpers/test/helper';
 import { addAttachment } from '../../../store/attachments/attachmentsActions';
 import { ID, clickSend, getMessage, renderComposer, send } from './Composer.test.helpers';
+import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 
 loudRejection();
 
@@ -470,7 +470,7 @@ describe('Composer sending', () => {
                     store.dispatch(
                         addAttachment({
                             ID: attachment.ID as string,
-                            attachment: { data: attachment.data } as WorkerDecryptionResult<Uint8Array>,
+                            attachment: { data: attachment.data } as DecryptedAttachment,
                         })
                     );
                 },

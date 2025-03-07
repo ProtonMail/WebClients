@@ -1,4 +1,3 @@
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { CryptoProxy, KeyCompatibilityLevel } from '@proton/crypto';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
@@ -8,8 +7,9 @@ import { getParsedAutocryptHeader } from '@proton/shared/lib/mail/autocrypt';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { LARGE_KEY_SIZE } from '../../constants';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import type { MessageKeys } from '../../store/messages/messagesTypes';
-import { get } from '../attachment/attachmentLoader';
+import { getAndVerifyAttachment } from '../attachment/attachmentLoader';
 
 /**
  * Look through a message attachments if there are keys
@@ -17,8 +17,8 @@ import { get } from '../attachment/attachmentLoader';
 export const extractKeysFromAttachments = async (
     attachments: Attachment[] | undefined = [],
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    getAttachment: (ID: string) => DecryptedAttachment | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api,
     supportV6Keys: boolean,
     messageFlags?: number
@@ -30,7 +30,7 @@ export const extractKeysFromAttachments = async (
         await Promise.all(
             keyAttachments.map(async (attachment) => {
                 try {
-                    const { data } = await get(
+                    const { data } = await getAndVerifyAttachment(
                         attachment,
                         undefined,
                         messageKeys,

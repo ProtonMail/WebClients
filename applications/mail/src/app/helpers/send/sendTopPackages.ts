@@ -1,4 +1,3 @@
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Package, PackageStatus, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
@@ -11,6 +10,7 @@ import type { MessageKeys, MessageState } from '../../store/messages/messagesTyp
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
 import { constructMime } from './sendMimeBuilder';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // Reference: Angular/src/app/composer/services/encryptMessage.js
 // Reference: Angular/src/app/composer/services/generateTopPackages.js
@@ -24,8 +24,8 @@ const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
 const generateMimePackage = async (
     message: MessageState,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    getAttachment: (ID: string) => DecryptedAttachment | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api
 ): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
@@ -58,8 +58,8 @@ export const generateTopPackages = async (
     message: MessageState,
     messageKeys: MessageKeys,
     mapSendPrefs: SimpleMap<SendPreferences>,
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    getAttachment: (ID: string) => DecryptedAttachment | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api
 ): Promise<Packages> => {
     const packagesStatus: PackageStatus = Object.values(mapSendPrefs)

@@ -4,21 +4,24 @@ import type {
     WorkerProcessMIMEResult as MimeProcessResult,
     PrivateKeyReference,
     PublicKeyReference,
-    WorkerDecryptionResult,
+    VERIFICATION_STATUS,
 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, getSender, isAutoForwardee, isMIME } from '@proton/shared/lib/mail/messages';
+import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
+
+import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 
 import type { MessageErrors } from '../../store/messages/messagesTypes';
 import { convert } from '../attachment/attachmentConverter';
 
-const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
+const { NOT_VERIFIED, NOT_SIGNED } = MAIL_VERIFICATION_STATUS;
 
 const binaryToString = (data: Uint8Array) =>
     utf8ArrayToString(data)
@@ -39,7 +42,7 @@ export interface DecryptMessageResult {
 const decryptMimeMessage = async (
     message: Message,
     privateKeys: PrivateKeyReference[],
-    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
+    onUpdateAttachment?: (ID: string, attachment: DecryptedAttachment) => void
 ): Promise<DecryptMessageResult> => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
@@ -69,9 +72,7 @@ const decryptMimeMessage = async (
         return {
             decryptedBody: processing.body,
             decryptedRawContent,
-            attachments: onUpdateAttachment
-                ? convert(message, processing.attachments, 0, onUpdateAttachment)
-                : undefined,
+            attachments: onUpdateAttachment ? convert(message, processing.attachments, onUpdateAttachment) : undefined,
             decryptedSubject: processing.encryptedSubject,
             signature: decryption.signatures[0],
             mimetype: processing.mimeType as MIME_TYPES,
@@ -96,7 +97,7 @@ const decryptMimeMessage = async (
 export const decryptMessage = async (
     message: Message,
     privateKeys: PrivateKeyReference[],
-    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    onUpdateAttachment?: (ID: string, attachment: DecryptedAttachment) => void,
     password?: string
 ): Promise<DecryptMessageResult> => {
     if (isMIME(message)) {
@@ -147,7 +148,7 @@ export const verifyMessage = async (
     message: Message,
     publicKeys: PublicKeyReference[]
 ): Promise<{
-    verificationStatus: VERIFICATION_STATUS;
+    verificationStatus: MAIL_VERIFICATION_STATUS;
     signature?: Uint8Array;
     verificationErrors?: Error[];
 }> => {
@@ -185,11 +186,11 @@ export const verifyMessage = async (
         }
 
         if (cryptoSignature) {
-            return { verificationStatus: cryptoVerified as VERIFICATION_STATUS, signature: cryptoSignature };
+            return { verificationStatus: getMailVerificationStatus(cryptoVerified!), signature: cryptoSignature };
         }
 
         // mimeSignature can't be undefined at this point
-        return { verificationStatus: mimeVerified as VERIFICATION_STATUS, signature: mimeSignature };
+        return { verificationStatus: getMailVerificationStatus(mimeVerified!), signature: mimeSignature };
     } catch (error: any) {
         return {
             verificationStatus: NOT_VERIFIED,
