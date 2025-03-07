@@ -5,11 +5,10 @@
     "sideEffects": false,
     "scripts": {
         "check-types": "tsc",
-        "docs": "docsify serve ./docs",
         "generate:api-types": "./utils/openapi/index.ts 'https://proton.black/api/internal/doc?page=pass' > ./types/api/pass.ts",
         "generate:proto": "scripts/generate-protos.sh",
         "i18n:validate": "proton-i18n validate lint-functions",
-        "install:additional-tools": "npm i docsify-cli@latest @redux-devtools/cli@latest -g",
+        "install:additional-tools": "npm i @redux-devtools/cli@latest -g",
         "lint": "eslint . --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "proton-pack dev-server --appMode=standalone",
