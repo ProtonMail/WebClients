@@ -1,13 +1,15 @@
 import { useEffect } from 'react'
-import { useDocsNotifications } from '../../../../../Containers/DocsNotificationsProvider'
-import { useApplication } from '../../../../../Containers/ApplicationProvider'
+import { useDocsNotifications } from '../../../Containers/DocsNotificationsProvider'
+import { useApplication } from '../../../Containers/ApplicationProvider'
 import type { UserState } from '@proton/docs-core'
 import type { SyncedEditorState } from '@proton/docs-shared'
 import { useContactEmails } from '@proton/mail/contactEmails/hooks'
 import { useUser } from '@proton/account/user/hooks'
 
 /**
- * Ensures that hook changes are published to the event bus so classes can react to them.
+ * Render this component somewhere so that hook changes are published to the event bus so classes can react to them.
+ *
+ * Only usable by the private app.
  */
 export function PrivateHookChangesToEvents() {
   const { userState, syncedEditorState } = useApplication()
@@ -17,7 +19,7 @@ export function PrivateHookChangesToEvents() {
   return null
 }
 
-function usePrivateHooksToEvents({
+export function usePrivateHooksToEvents({
   userState,
   syncedEditorState,
 }: {

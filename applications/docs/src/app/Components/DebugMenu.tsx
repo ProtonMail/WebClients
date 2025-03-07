@@ -11,13 +11,15 @@ export const useDebug = () => {
   return Boolean(debug)
 }
 
-export type DebugMenuProps = {
+const DebugMenu = ({
+  docController,
+  editorController,
+  documentState,
+}: {
   docController: AuthenticatedDocControllerInterface
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
-}
-
-export function DebugMenu({ docController, editorController, documentState }: DebugMenuProps) {
+}) => {
   const application = useApplication()
 
   const [isOpen, setIsOpen] = useState(false)
@@ -123,3 +125,5 @@ export function DebugMenu({ docController, editorController, documentState }: De
     </div>
   )
 }
+
+export default DebugMenu
