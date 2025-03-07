@@ -45,11 +45,16 @@ import {
     ThirdPartySection,
     TwoFactorSection,
     UsernameSection,
+    VpnAlsoInYourPlanSection,
+    VpnBlogSection,
+    VpnDownloadAndInfoSection,
     YourPlanSection,
+    YourPlanSectionV2,
+    YourPlanUpsellsSectionV2,
     YourStorageSection,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { type APP_NAMES } from '@proton/shared/lib/constants';
 
 import { recoveryIds } from './recoveryIds';
 import type { getAccountAppRoutes } from './routes';
@@ -67,6 +72,8 @@ const AccountSettingsRouter = ({
 }) => {
     const {
         routes: {
+            dashboardV2,
+            subscription,
             dashboard,
             upgrade,
             easySwitch,
@@ -82,6 +89,46 @@ const AccountSettingsRouter = ({
 
     return (
         <Switch>
+            {getIsSectionAvailable(dashboardV2) && (
+                <Route path={getSectionPath(path, dashboardV2)}>
+                    <AutomaticSubscriptionModal />
+                    <PrivateMainSettingsArea
+                        config={dashboardV2}
+                        mainAreaClass="bg-lowered"
+                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+                        style={{ '--max-w-custom': '1500px' }}
+                    >
+                        <YourPlanSectionV2 app={app} />
+                        <YourPlanUpsellsSectionV2 app={app} />
+                        <VpnDownloadAndInfoSection app={app} />
+                        <VpnAlsoInYourPlanSection app={app} />
+                        <VpnBlogSection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(subscription) && (
+                <Route path={getSectionPath(path, subscription)}>
+                    <AutomaticSubscriptionModal />
+                    <PrivateMainSettingsArea
+                        config={subscription}
+                        mainAreaClass="bg-lowered"
+                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+                        style={{ '--max-w-custom': '1500px' }}
+                    >
+                        <YourPlanSectionV2 app={app} editBillingCycle={true} />
+                        <AssistantToggle />
+                        <SubscriptionsSection />
+                        <PaymentMethodsSection />
+                        <CreditsSection />
+                        <GiftCodeSection />
+                        <InvoicesSection />
+                        <EmailSubscriptionSection />
+                        <CancelSubscriptionSection app={app} />
+                        <CancelSubscriptionViaSupportSection />
+                        <DowngradeSubscriptionSection app={app} />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
             {getIsSectionAvailable(dashboard) && (
                 <Route path={getSectionPath(path, dashboard)}>
                     <AutomaticSubscriptionModal />

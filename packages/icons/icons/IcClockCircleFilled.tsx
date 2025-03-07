@@ -40,7 +40,7 @@ export const IcClockCircleFilled = ({
 
                 <path
                     fillRule="evenodd"
-                    d="M14 7A7 7 0 1 1 0 7a7 7 0 0 1 14 0ZM9.15 9.85a.5.5 0 0 0 .7-.7L7.5 6.79V3a.5.5 0 0 0-1 0v4c0 .13.05.26.15.35l2.5 2.5Z"
+                    d="M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0ZM10.15 10.85a.5.5 0 0 0 .7-.7L8.5 7.79V4a.5.5 0 0 0-1 0v4c0 .13.05.26.15.35l2.5 2.5Z"
                 ></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}

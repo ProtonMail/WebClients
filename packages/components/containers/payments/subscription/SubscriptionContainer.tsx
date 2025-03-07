@@ -25,6 +25,7 @@ import type {
     BillingAddress,
     CheckWithAutomaticOptions,
     MultiCheckSubscriptionData,
+    PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PlainPaymentMethodType,
 } from '@proton/payments';
@@ -180,6 +181,7 @@ export interface SubscriptionContainerProps {
     metrics: {
         source: Source;
     };
+    flow?: PaymentMethodFlows;
     render: (renderProps: RenderProps) => ReactNode;
     subscription: Subscription;
     organization: Organization;
@@ -217,6 +219,7 @@ const SubscriptionContainer = ({
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
     metrics: outerMetricsProps,
+    flow = 'subscription',
     render,
     subscription,
     organization,
@@ -546,7 +549,7 @@ const SubscriptionContainer = ({
         },
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
         onCurrencyChange: (currency, context) => handleChangeCurrency(currency, context),
-        flow: 'subscription',
+        flow,
         user,
         subscription,
         planIDs: model.planIDs,

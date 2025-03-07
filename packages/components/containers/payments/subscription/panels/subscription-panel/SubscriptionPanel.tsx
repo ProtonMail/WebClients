@@ -480,7 +480,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 return getDefault();
             })()}
             <SubscriptionPanelManageUserButton />
-            {showActionButtons ? <ActionButtons user={user} subscription={subscription} /> : null}
+            {showActionButtons ? <ActionButtons app={app} user={user} subscription={subscription} /> : null}
         </Panel>
     );
 };

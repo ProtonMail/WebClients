@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
+import type { PaymentMethodFlows } from '@proton/payments';
 import { CYCLE, type Currency, type FullPlansMap, PLANS } from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -99,7 +100,7 @@ import { SUBSCRIPTION_STEPS } from '../constants';
 import VpnEnterpriseAction from './VpnEnterpriseAction';
 import { getAllowedCycles } from './getAllowedCycles';
 
-const defaultUpsellCycleB2C = CYCLE.YEARLY;
+export const defaultUpsellCycleB2C = CYCLE.YEARLY;
 const defaultUpsellCycleB2B = CYCLE.YEARLY;
 
 export interface UpsellFeature extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
@@ -142,6 +143,7 @@ export interface Upsell {
     title: string;
     description: string;
     isRecommended?: boolean;
+    highlightPrice?: boolean;
     features: UpsellFeature[];
     /**
      * If there is a fully custom plan, like VPN Enterprise, then there is no need for price.
@@ -157,9 +159,10 @@ export interface Upsell {
      * The default CTA won't be rendered at all if this is true.
      */
     ignoreDefaultCta?: boolean;
+    customCycle?: CYCLE;
 }
 
-type MaybeUpsell = Upsell | null;
+export type MaybeUpsell = Upsell | null;
 
 type GetUpsellArgs = {
     freePlan: FreePlanDefault;
@@ -169,9 +172,10 @@ type GetUpsellArgs = {
     upsellPath: DASHBOARD_UPSELL_PATHS;
     serversCount: VPNServersCountData;
     customCycle?: CYCLE;
+    paymentFlow: PaymentMethodFlows;
 } & Partial<Upsell>;
 
-type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
+export type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
     hasPaidMail?: boolean;
     hasVPN: boolean;
     hasUsers?: boolean;
@@ -194,7 +198,7 @@ const exploreAllPlansCTA = (openSubscriptionModal: OpenSubscriptionModalCallback
     };
 };
 
-const getUpsell = ({
+export const getUpsell = ({
     plan,
     plansMap,
     serversCount,
@@ -236,6 +240,7 @@ const getUpsell = ({
     const cycle = allowedCycles.includes(preferredCycle) ? preferredCycle : allowedCycles[0];
 
     return {
+        app,
         plan,
         planKey: plan,
         title: upsellFields.isTrialEnding ? c('new_plans: Title').t`${shortPlan.title} Trial` : shortPlan.title,
@@ -245,6 +250,7 @@ const getUpsell = ({
         features: (upsellFields.features ?? shortPlan.features).filter((item) => isTruthy(item)),
         otherCtas: [],
         currency,
+        customCycle,
         ...upsellFields,
         onUpgrade: () => upsellFields.onUpgrade?.(cycle),
     };
@@ -255,6 +261,7 @@ const getMailPlusUpsell = ({
     openSubscriptionModal,
     isTrialEnding,
     freePlan,
+    app,
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const mailPlusPlan = plansMap[PLANS.MAIL];
@@ -271,6 +278,7 @@ const getMailPlusUpsell = ({
     return getUpsell({
         plan: PLANS.MAIL,
         plansMap,
+        app,
         upsellPath: DASHBOARD_UPSELL_PATHS.MAILPLUS,
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
         freePlan,
@@ -284,15 +292,17 @@ const getMailPlusUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
+                flow: rest.paymentFlow,
             }),
         ...rest,
     });
 };
 
-const getDriveUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+const getDriveUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     return getUpsell({
         plan: PLANS.DRIVE,
         plansMap,
+        app,
         upsellPath: DASHBOARD_UPSELL_PATHS.DRIVE,
         onUpgrade: () =>
             openSubscriptionModal({
@@ -303,17 +313,19 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUps
                 metrics: {
                     source: 'upsells',
                 },
+                flow: rest.paymentFlow,
             }),
         ...rest,
     });
 };
 
-const getVPNUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+const getVPNUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     const plan = PLANS.VPN2024;
 
     return getUpsell({
         plan,
         plansMap,
+        app,
         upsellPath: DASHBOARD_UPSELL_PATHS.VPN,
         onUpgrade: () =>
             openSubscriptionModal({
@@ -324,15 +336,17 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsel
                 metrics: {
                     source: 'upsells',
                 },
+                flow: rest.paymentFlow,
             }),
         ...rest,
     });
 };
 
-const getLumoUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+const getLumoUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     return getUpsell({
         plan: PLANS.LUMO,
         plansMap,
+        app,
         upsellPath: DASHBOARD_UPSELL_PATHS.LUMO,
         onUpgrade: () =>
             openSubscriptionModal({
@@ -343,15 +357,17 @@ const getLumoUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpse
                 metrics: {
                     source: 'upsells',
                 },
+                flow: rest.paymentFlow,
             }),
         ...rest,
     });
 };
 
-const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+const getPassUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     return getUpsell({
         plan: PLANS.PASS,
         plansMap,
+        app,
         upsellPath: DASHBOARD_UPSELL_PATHS.PASS,
         onUpgrade: (cycle) =>
             openSubscriptionModal({
@@ -362,12 +378,13 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpse
                 metrics: {
                     source: 'upsells',
                 },
+                flow: rest.paymentFlow,
             }),
         ...rest,
     });
 };
 
-const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     const features: MaybeUpsellFeature[] = [
         getPassUsers(FAMILY_MAX_USERS),
         getPassAdminPanel(),
@@ -388,6 +405,7 @@ const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPl
         plan: PLANS.PASS_FAMILY,
         plansMap,
         upsellPath: DASHBOARD_UPSELL_PATHS.PASS,
+        app,
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
         onUpgrade: (cycle) =>
             openSubscriptionModal({
@@ -398,6 +416,7 @@ const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPl
                 metrics: {
                     source: 'upsells',
                 },
+                flow: rest.paymentFlow,
             }),
         ...rest,
     });
@@ -409,6 +428,7 @@ const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPl
 const getBundleUpsell = ({
     plansMap,
     openSubscriptionModal,
+    app,
     freePlan,
     isTrialEnding,
     hasUsers,
@@ -432,6 +452,7 @@ const getBundleUpsell = ({
         plan: PLANS.BUNDLE,
         plansMap,
         freePlan,
+        app,
         upsellPath: DASHBOARD_UPSELL_PATHS.UNLIMITED,
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
         onUpgrade: () =>
@@ -443,6 +464,7 @@ const getBundleUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
+                flow: rest.paymentFlow,
             }),
         otherCtas: isTrialEnding ? [exploreAllPlansCTA(openSubscriptionModal)] : [],
         isTrialEnding,
@@ -492,6 +514,7 @@ const getDuoUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
+                flow: rest.paymentFlow,
             }),
         ...rest,
     });
@@ -539,6 +562,7 @@ const getFamilyUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
+                flow: rest.paymentFlow,
             }),
         ...rest,
     });
@@ -686,6 +710,7 @@ export const resolveUpsellsToDisplay = ({
     isFree,
     canAccessDuoPlan,
     user,
+    paymentFlow,
     ...rest
 }: {
     app: APP_NAMES;
@@ -699,6 +724,7 @@ export const resolveUpsellsToDisplay = ({
     openSubscriptionModal: OpenSubscriptionModalCallback;
     canAccessDuoPlan?: boolean;
     user: UserModel;
+    paymentFlow: PaymentMethodFlows;
 }): Upsell[] => {
     const resolve = () => {
         if (!canPay || !subscription) {
@@ -711,6 +737,7 @@ export const resolveUpsellsToDisplay = ({
             hasVPN: getHasConsumerVpnPlan(subscription),
             serversCount,
             freePlan,
+            paymentFlow,
             ...rest,
         };
 

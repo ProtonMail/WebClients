@@ -9,6 +9,7 @@ export const FLAGS_WITH_VARIANT = [
     'InboxNewUpsellModals',
     'DriveWebDownloadMechanismParameters',
     'MailPlusSubscribersNudgeExperiment',
+    'VPNDashboard',
 ] satisfies FeatureFlag[];
 
 /**
@@ -20,6 +21,7 @@ export const FLAGS_WITH_VARIANT = [
 export type InboxNewUpsellModalsVariant = 'old' | 'new';
 export type DriveWebDownloadMechanismParametersVariant = 'low-memory' | 'base-memory' | 'high-memory';
 export type MailPlusSubscribersNudgeExperimentVariants = 'money' | 'percentage';
+export type VPNDashboardVariant = 'Control' | 'A' | 'B';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -41,6 +43,7 @@ type FeatureFlagVariantMap = {
     InboxNewUpsellModals: VariantReturnType<InboxNewUpsellModalsVariant>;
     DriveWebDownloadMechanismParameters: VariantReturnType<DriveWebDownloadMechanismParametersVariant>;
     MailPlusSubscribersNudgeExperiment: VariantReturnType<MailPlusSubscribersNudgeExperimentVariants>;
+    VPNDashboard: VariantReturnType<VPNDashboardVariant>;
 };
 
 /**
