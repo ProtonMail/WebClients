@@ -7,7 +7,7 @@ export const THEME_ID = 'theme-root'
 
 const defaultThemeStyles = getThemeStyle()
 
-export const DocsThemeProvider = ({ children }: { children: ReactNode; appName: APP_NAMES }) => {
+export function DocsThemeProvider({ children }: { children: ReactNode; appName: APP_NAMES }) {
   return (
     <>
       <style id={THEME_ID}>{defaultThemeStyles}</style>
