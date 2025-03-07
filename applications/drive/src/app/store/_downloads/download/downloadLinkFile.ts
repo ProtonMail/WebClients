@@ -60,21 +60,21 @@ export default function initDownloadLinkFile(
         const hash = (await generateContentHash(binaryMessage)).BlockHash;
 
         try {
-            const { data, verified } = await markErrorAsCrypto<{ data: Uint8Array; verified: VERIFICATION_STATUS }>(
+            const { data, verificationStatus } = await markErrorAsCrypto<{ data: Uint8Array; verificationStatus: VERIFICATION_STATUS }>(
                 async () => {
-                    const { data, verified } = await CryptoProxy.decryptMessage({
+                    const { data, verificationStatus } = await CryptoProxy.decryptMessage({
                         binaryMessage,
                         binarySignature: decryptedSignature,
                         sessionKeys: keys.sessionKeys,
                         verificationKeys: keys.addressPublicKeys,
                         format: 'binary',
                     });
-                    return { data, verified };
+                    return { data, verificationStatus };
                 }
             );
 
-            if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verified });
+            if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verificationStatus });
             }
 
             return {
@@ -93,13 +93,13 @@ export default function initDownloadLinkFile(
         }
         const keys = await keysPromise;
         const verificationKeys = link.isAnonymous ? [keys.privateKey] : keys.addressPublicKeys;
-        const { verified } = await CryptoProxy.verifyMessage({
+        const { verificationStatus } = await CryptoProxy.verifyMessage({
             binaryData: hash,
             verificationKeys: verificationKeys || [],
             armoredSignature: signature,
         });
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-            await callbacks.onSignatureIssue?.(abortSignal, link, { manifest: verified });
+        if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            await callbacks.onSignatureIssue?.(abortSignal, link, { manifest: verificationStatus });
         }
     };
 

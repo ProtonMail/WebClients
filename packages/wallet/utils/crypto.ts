@@ -159,12 +159,12 @@ export const verifySignedData = async <T extends string | Uint8Array>(
         return CryptoProxy.verifyMessage({
             textData: data,
             ...common,
-        }).then(({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_VALID);
+        }).then(({ verificationStatus }) => verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID);
     } else {
         return CryptoProxy.verifyMessage({
             binaryData: data as Uint8Array,
             ...common,
-        }).then(({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_VALID);
+        }).then(({ verificationStatus }) => verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID);
     }
 };
 

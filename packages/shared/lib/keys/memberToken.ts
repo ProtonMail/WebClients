@@ -11,13 +11,13 @@ export const decryptMemberToken = async (
     privateKeys: PrivateKeyReference[],
     publicKeys: PublicKeyReference[]
 ) => {
-    const { data: decryptedToken, verified } = await CryptoProxy.decryptMessage({
+    const { data: decryptedToken, verificationStatus } = await CryptoProxy.decryptMessage({
         armoredMessage: token,
         decryptionKeys: privateKeys,
         verificationKeys: publicKeys,
     });
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error('Signature verification failed');
         error.name = 'SignatureError';
         throw error;

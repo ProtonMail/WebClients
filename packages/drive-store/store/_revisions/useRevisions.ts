@@ -24,7 +24,7 @@ const useRevisions = (shareId: string, linkId: string) => {
         try {
             const privateKey = await getLinkPrivateKey(abortSignal, shareId, linkId);
             const publicKeys = revisionSignatureEmail ? await getVerificationKey(revisionSignatureEmail) : privateKey;
-            const { xattrs, verified } = await decryptExtendedAttributes(
+            const { xattrs, verificationStatus } = await decryptExtendedAttributes(
                 revisionEncryptedXattr,
                 privateKey,
                 publicKeys
@@ -32,7 +32,7 @@ const useRevisions = (shareId: string, linkId: string) => {
             return {
                 xattrs,
                 signatureIssues: {
-                    xattrs: verified,
+                    xattrs: verificationStatus,
                 },
             };
         } catch (err) {

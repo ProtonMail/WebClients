@@ -25,7 +25,7 @@ describe('create new user invite signature', () => {
             shareKey,
         });
 
-        const { verified } = await CryptoProxy.verifyMessage({
+        const { verificationStatus } = await CryptoProxy.verifyMessage({
             binaryData: createNewUserSignatureBody({ invitedEmail, shareKey }),
             binarySignature: base64StringToUint8Array(signature),
             verificationKeys: [addressKey.publicKey],
@@ -35,6 +35,6 @@ describe('create new user invite signature', () => {
             },
         });
 
-        expect(verified).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationStatus).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
     });
 });

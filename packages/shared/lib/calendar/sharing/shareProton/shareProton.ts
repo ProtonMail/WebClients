@@ -77,13 +77,13 @@ export const acceptCalendarShareInvitation = async ({
     if (!skipSignatureVerification) {
         const { verifyingPinnedKeys } = await getEncryptionPreferences({ email: senderEmail });
         if (verifyingPinnedKeys.length) {
-            const { verified: sessionKeyVerified, errors } = await CryptoProxy.verifyMessage({
+            const { verificationStatus: sessionKeyVerificationStatus, errors } = await CryptoProxy.verifyMessage({
                 armoredSignature,
                 binaryData: passphraseSessionKey.data,
                 verificationKeys: verifyingPinnedKeys,
                 signatureContext: { required: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
             });
-            if (sessionKeyVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            if (sessionKeyVerificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                 /**
                  * TEMPORARY CODE: needed while there exist old clients not sending signatures with context.
                  * For such clients, the BE gives us a passphrase signature, so we try verifying that
@@ -91,13 +91,13 @@ export const acceptCalendarShareInvitation = async ({
                  * When not needed anymore, substitute by:
                  * throw new ShareCalendarSignatureVerificationError(senderEmail, errors);
                  */
-                const { verified: passphraseVerified } = await CryptoProxy.decryptMessage({
+                const { verificationStatus: passphraseVerificationStatus } = await CryptoProxy.decryptMessage({
                     armoredMessage: armoredPassphrase,
                     armoredSignature,
                     verificationKeys: verifyingPinnedKeys,
                     sessionKeys: passphraseSessionKey,
                 });
-                if (passphraseVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                if (passphraseVerificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                     throw new ShareCalendarSignatureVerificationError(senderEmail, errors);
                 }
             }

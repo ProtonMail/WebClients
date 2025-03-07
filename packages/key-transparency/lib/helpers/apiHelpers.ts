@@ -120,13 +120,13 @@ export const fetchVerifiedEpoch = async (
             getLatestVerifiedEpochRoute({ AddressID: address.ID })
         );
         if (userVerificationKeys?.length) {
-            const { verified } = await CryptoProxy.verifyMessage({
+            const { verificationStatus } = await CryptoProxy.verifyMessage({
                 armoredSignature: Signature,
                 verificationKeys: userVerificationKeys,
                 textData: Data,
                 signatureContext: KT_VE_VERIFICATION_CONTEXT,
             });
-            if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                 console.warn(
                     "Verified epoch's signature could not be verified",
                     'This is expected after a password reset'

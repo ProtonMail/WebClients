@@ -67,7 +67,7 @@ describe('formatDownload', () => {
 
         expect(result.data).toBeDefined();
         expect(result.attachment).toEqual(attachment1);
-        expect(result.verified).toEqual(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(result.verificationStatus).toEqual(VERIFICATION_STATUS.NOT_SIGNED);
     });
 
     it('should return an error while formatting download when attachment is broken', async () => {
@@ -91,7 +91,7 @@ describe('formatDownload', () => {
 
         expect(result.attachment).toEqual(expectedAttachment);
         expect(result.isError).toBeTruthy();
-        expect(result.verified).toEqual(VERIFICATION_STATUS.NOT_VERIFIED);
+        expect(result.verificationStatus).toEqual(VERIFICATION_STATUS.NOT_VERIFIED);
     });
 });
 
@@ -108,7 +108,7 @@ describe('generateDownload', () => {
                 Name: 'attachment1',
             },
             data: stringToUint8Array('download 1 data'),
-            verified: 1,
+            verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
         } as Download;
 
         await generateDownload(download);
@@ -128,7 +128,7 @@ describe('generateDownload', () => {
                 Name: 'attachment1',
             },
             data: stringToUint8Array('download 1 data'),
-            verified: 1,
+            verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
         } as Download;
 
         await generateDownload(download);
@@ -169,7 +169,7 @@ describe('formatDownloadALl', () => {
 
         expect(result[0]?.data).toBeDefined();
         expect(result[0]?.attachment).toEqual(attachment1);
-        expect(result[0]?.verified).toEqual(VERIFICATION_STATUS.NOT_SIGNED);
+        expect(result[0]?.verificationStatus).toEqual(VERIFICATION_STATUS.NOT_SIGNED);
     });
 });
 
@@ -193,14 +193,14 @@ describe('generateDownloadAll', () => {
                     Name: 'attachment1',
                 },
                 data: stringToUint8Array('download 1 data'),
-                verified: 1,
+                verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
             } as Download,
             {
                 attachment: {
                     Name: 'attachment2',
                 },
                 data: stringToUint8Array('download 2 data'),
-                verified: 1,
+                verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
             } as Download,
         ];
 

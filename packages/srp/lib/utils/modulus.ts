@@ -45,12 +45,12 @@ export const getModulusKey = (() => {
  */
 export const verifyModulus = async (publicKey: PublicKeyReference, modulus: string) => {
     try {
-        const { data: modulusData, verified = NOT_SIGNED } = await CryptoProxy.verifyCleartextMessage({
+        const { data: modulusData, verificationStatus = NOT_SIGNED } = await CryptoProxy.verifyCleartextMessage({
             armoredCleartextMessage: modulus,
             verificationKeys: publicKey,
         });
 
-        if (verified !== SIGNED_AND_VALID) {
+        if (verificationStatus !== SIGNED_AND_VALID) {
             throw new Error();
         }
 
