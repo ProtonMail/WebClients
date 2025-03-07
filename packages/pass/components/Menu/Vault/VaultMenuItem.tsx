@@ -111,7 +111,6 @@ export const VaultMenuItem = memo(
                     canManage && (
                         <ButtonLike
                             as="div"
-                            icon
                             pill
                             size="small"
                             color="weak"
@@ -134,6 +133,7 @@ export const VaultMenuItem = memo(
                                 />
                             )}
                             <Icon name="users" alt={c('Action').t`See members`} />
+                            {vault.targetMembers > 1 && <span className="text-sm ml-1">{vault.targetMembers}</span>}
                         </ButtonLike>
                     )
                 }
