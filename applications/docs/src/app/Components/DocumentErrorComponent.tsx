@@ -17,9 +17,7 @@ export type DocumentError = {
   code?: DocsApiErrorCode
 }
 
-export type DocumentErrorFallbackProps = { error: DocumentError }
-
-export function DocumentErrorFallback({ error }: DocumentErrorFallbackProps) {
+export const DocumentErrorComponent = ({ error }: { error: DocumentError }) => {
   const { getLocalID, UID } = useAuthentication()
   const application = useApplication()
 

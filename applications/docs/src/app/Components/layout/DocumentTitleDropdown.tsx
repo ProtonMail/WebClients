@@ -38,7 +38,7 @@ import * as config from '../../config'
 import type { RenameControllerInterface } from '@proton/docs-core'
 import { useDocsContext } from '../../Containers/DocsContextProvider'
 
-export function DocumentTitleDropdown({
+const DocumentTitleDropdown = ({
   authenticatedController,
   renameController,
   editorController,
@@ -50,7 +50,7 @@ export function DocumentTitleDropdown({
   editorController: EditorControllerInterface
   documentState: DocumentState | PublicDocumentState
   action?: DocumentAction['mode']
-}) {
+}) => {
   const application = useApplication()
   const isPublicMode = application.isPublicMode
   const { publicContext, privateContext } = useDocsContext()
@@ -554,3 +554,5 @@ export function DocumentTitleDropdown({
     </>
   )
 }
+
+export default DocumentTitleDropdown
