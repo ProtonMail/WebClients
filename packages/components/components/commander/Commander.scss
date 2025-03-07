@@ -18,4 +18,18 @@
 	&-results-wrapper {
 		padding-inline: var(--space-1);
 	}
+
+	&-results-wrapper {
+		.dropdown-item {
+			[aria-current='true'],
+			&--is-selected {
+				&,
+				&:hover,
+				&:focus,
+				&:active {
+					pointer-events: all;
+				}
+			}
+		}
+	}
 }
