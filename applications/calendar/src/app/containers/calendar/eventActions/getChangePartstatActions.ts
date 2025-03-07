@@ -1,10 +1,15 @@
 import { getUnixTime } from 'date-fns';
 
-import { serverTime } from '@proton/crypto';
+import { CryptoProxy, serverTime } from '@proton/crypto';
 import { toIcsPartstat } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ATTENDEE_COMMENT_TYPE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { SIGNATURE_CONTEXT } from '@proton/shared/lib/calendar/crypto/constants';
+import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getAttendeeToken, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type {
@@ -20,20 +25,26 @@ import { getUpdatePersonalPartOperation } from './getUpdatePersonalPartActions';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
-export const getUpdatePartstatOperation = ({
+export const getUpdatePartstatOperation = async ({
     eventComponent,
     event,
     inviteActions,
     timestamp,
     silence,
+    addressID,
+    getAddressKeys,
+    getCalendarKeys,
 }: {
     eventComponent: VcalVeventComponent;
     event: CalendarEvent;
     inviteActions: InviteActions;
     timestamp: number;
     silence: boolean;
-}): UpdatePartstatOperation | undefined => {
-    const { partstat, selfAttendeeIndex, comment } = inviteActions;
+    addressID: string;
+    getCalendarKeys: GetCalendarKeys;
+    getAddressKeys: GetAddressKeys;
+}): Promise<UpdatePartstatOperation | undefined> => {
+    const { partstat, selfAttendeeIndex, comment: maybeClearComment } = inviteActions;
     if (selfAttendeeIndex === undefined || !partstat || !getHasAttendees(eventComponent)) {
         return;
     }
@@ -42,6 +53,30 @@ export const getUpdatePartstatOperation = ({
     if (!attendeeID) {
         return;
     }
+
+    let comment = maybeClearComment;
+    if (comment?.Message && comment?.Type === ATTENDEE_COMMENT_TYPE.CLEAR) {
+        const sessionKey = await getSharedSessionKey({ calendarEvent: event, getAddressKeys, getCalendarKeys });
+        const [signingKey] = await getAddressKeys(addressID);
+
+        // Signature will be inside message.
+        const encryptResult = await CryptoProxy.encryptMessage({
+            // TODO sanitize the message before
+            textData: comment?.Message,
+            signingKeys: [signingKey.privateKey],
+            signatureContext: { value: SIGNATURE_CONTEXT.ATTENDEE_COMMENT(event.ID), critical: true },
+            sessionKey,
+            format: 'binary',
+        });
+
+        const base64EncryptedComment = uint8ArrayToBase64String(encryptResult.message);
+
+        comment = {
+            Message: base64EncryptedComment,
+            Type: ATTENDEE_COMMENT_TYPE.ENCRYPTED,
+        };
+    }
+
     return {
         data: {
             calendarID: event.CalendarID,
@@ -63,8 +98,13 @@ const getAutoUpdatePersonalPartOperation = ({
     addressID,
     partstat,
 }: {
+    /** Allow to find the attendee Token */
     eventComponent: VcalVeventComponent;
     hasDefaultNotifications: boolean;
+    /**
+     * TODO: Remove or correct this comment.
+     * Seem to be old event
+     */
     event: CalendarEvent;
     inviteActions: InviteActions;
     addressID: string;
@@ -80,6 +120,7 @@ const getAutoUpdatePersonalPartOperation = ({
         return;
     }
     const oldPartstat = toIcsPartstat(oldAttendee.Status);
+
     if (
         oldPartstat === partstat ||
         (partstat === ACCEPTED && oldPartstat === TENTATIVE) ||
@@ -88,6 +129,7 @@ const getAutoUpdatePersonalPartOperation = ({
         // no need to update the notifications in such cases
         return;
     }
+
     return getUpdatePersonalPartOperation({
         eventComponent,
         hasDefaultNotifications,
@@ -105,6 +147,8 @@ interface ChangePartstaActionsArguments {
     reencryptionCalendarID?: string;
     sendIcs: SendIcs;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
+    getCalendarKeys: GetCalendarKeys;
+    getAddressKeys: GetAddressKeys;
 }
 const getChangePartstatActions = async ({
     inviteActions,
@@ -115,6 +159,8 @@ const getChangePartstatActions = async ({
     reencryptionCalendarID,
     sendIcs,
     reencryptSharedEvent,
+    getAddressKeys,
+    getCalendarKeys,
 }: ChangePartstaActionsArguments): Promise<{
     inviteActions: InviteActions;
     multiSyncActions: SyncEventActionOperations[];
@@ -135,12 +181,15 @@ const getChangePartstatActions = async ({
     const timestamp = isProtonProtonInvite
         ? +serverTime()
         : (await sendIcs({ inviteActions, vevent: eventComponent })).timestamp;
-    const partstatOperation = getUpdatePartstatOperation({
+    const partstatOperation = await getUpdatePartstatOperation({
+        addressID,
         eventComponent,
         event,
         inviteActions,
         timestamp,
         silence: false,
+        getAddressKeys,
+        getCalendarKeys,
     });
     if (!partstatOperation) {
         throw new Error('Failed to generate change partstat operation');
