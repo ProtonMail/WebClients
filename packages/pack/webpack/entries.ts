@@ -23,8 +23,8 @@ export const getIndexChunks = (target: string, handleSupportAndErrors: boolean =
 export const getEntries = (
     handleSupportAndErrors: boolean = false
 ): { index: string[] } | { pre: string[]; index: string[]; unsupported: string[] } => {
-    // The client handle the supported browser and the script errors itself
-    // We do not interfer with this client
+    // The client handles the supported browser and the script errors itself
+    // We do not interfere with this client
     if (handleSupportAndErrors) {
         return {
             index: [path.resolve('./src/app/index.tsx')],

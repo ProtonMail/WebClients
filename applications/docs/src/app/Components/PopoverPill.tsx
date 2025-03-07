@@ -1,6 +1,6 @@
 import { usePopper, usePopperAnchor } from '@proton/components'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import Pill from './Pill'
+import { Pill } from './Pill'
 
 const POPOVER_CLOSE_DELAY = 250
 const POPOVER_FOCUS_EVENT_NAME = 'popover:focus'
@@ -29,19 +29,15 @@ const usePopover = () => {
   }
 }
 
-const PopoverPill = ({
-  children,
-  title,
-  content,
-  onToggle,
-  alignment = 'left',
-}: {
+export type PopoverPillProps = {
   children: React.ReactNode
   title: React.ReactNode
   content: React.ReactNode
   onToggle?: (isOpen: boolean) => void
   alignment?: 'left' | 'center'
-}) => {
+}
+
+export function PopoverPill({ children, title, content, onToggle, alignment = 'left' }: PopoverPillProps) {
   const { anchorRef, position, floating, toggle, isOpen } = usePopover()
   const containerRef = useRef<HTMLDivElement>(null)
   const linkRef = useRef<HTMLAnchorElement>(null)
@@ -128,5 +124,3 @@ const PopoverPill = ({
     </div>
   )
 }
-
-export default PopoverPill
