@@ -1495,8 +1495,10 @@ const InteractiveCalendarView = ({
             isSavingEvent.current = true;
             if (isChangePartstat && selfEmail && inviteActions.partstat) {
                 oldPartstat = getCurrentPartstat(uniqueId, selfEmail);
+                // TODO: Update RSVP `comment` in the events cache ?
                 dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: inviteActions.partstat }));
             }
+
             const {
                 syncActions,
                 updatePartstatActions = [],
