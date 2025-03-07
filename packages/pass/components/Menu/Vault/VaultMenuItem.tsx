@@ -105,9 +105,12 @@ export const VaultMenuItem = memo(
                     'pass-vault-submenu-vault-item w-full',
                     !withActions && 'pass-vault-submenu-vault-item--no-actions'
                 )}
-                className={clsx((selected || dragOver) && 'is-selected', !dense && 'py-2')}
+                className={clsx(
+                    (selected || dragOver) && 'is-selected',
+                    !dense && 'py-2',
+                    'group-hover-opacity-container'
+                )}
                 extra={
-                    vault.shared &&
                     canManage && (
                         <ButtonLike
                             as="div"
@@ -117,7 +120,10 @@ export const VaultMenuItem = memo(
                             onClick={handleClickEvent(onManage)}
                             shape="solid"
                             title={c('Action').t`See members`}
-                            className="relative mr-1"
+                            className={clsx(
+                                !(selected || vault.targetMembers > 1) && 'group-hover:opacity-100',
+                                'relative mr-1'
+                            )}
                             style={{ color: 'var(--text-weak)' }}
                         >
                             {notification && (
