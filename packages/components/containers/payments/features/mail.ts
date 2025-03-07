@@ -304,9 +304,7 @@ const getSMTP = (included: boolean): PlanCardFeatureDefinition => {
 
 export const getSMTPToken = (included: boolean): PlanCardFeatureDefinition => {
     return {
-        text: included
-            ? c('new_plans: feature').t`SMTP submission for select organizations`
-            : c('new_plans: feature').t`SMTP submission`,
+        text: c('new_plans: feature').t`SMTP submission`,
         tooltip: c('new_plans: tooltip')
             .t`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}.`,
         included,
