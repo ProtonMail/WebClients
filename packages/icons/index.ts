@@ -55,6 +55,7 @@ export type IconName =
     | 'bolt'
     | 'bolt-filled'
     | 'bookmark'
+    | 'brand-amazon'
     | 'brand-amex'
     | 'brand-android'
     | 'brand-apple'
@@ -446,6 +447,7 @@ export { IcBell } from './icons/IcBell';
 export { IcBolt } from './icons/IcBolt';
 export { IcBoltFilled } from './icons/IcBoltFilled';
 export { IcBookmark } from './icons/IcBookmark';
+export { IcBrandAmazon } from './icons/IcBrandAmazon';
 export { IcBrandAmex } from './icons/IcBrandAmex';
 export { IcBrandAndroid } from './icons/IcBrandAndroid';
 export { IcBrandApple } from './icons/IcBrandApple';

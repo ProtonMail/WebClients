@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { DashboardCard, DashboardCardContent, DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/index';
 import Icon from '@proton/components/components/icon/Icon';
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
@@ -16,11 +17,23 @@ export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'>
     className?: string;
     observer?: IntersectionObserver;
     title?: string;
+    invisibleTitle?: boolean;
     beta?: boolean;
     children: ReactNode;
+    variant?: 'default' | 'card';
 }
 
-const SubSettingsSection = ({ id, observer, title, beta, children, className, ...rest }: SubSettingsSectionProps) => {
+const SubSettingsSection = ({
+    id,
+    observer,
+    title,
+    invisibleTitle,
+    beta,
+    children,
+    className,
+    variant = 'default',
+    ...rest
+}: SubSettingsSectionProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const { createNotification } = useNotifications();
     const location = useLocation();
@@ -54,6 +67,45 @@ const SubSettingsSection = ({ id, observer, title, beta, children, className, ..
         });
     };
 
+    const linkElement = (
+        <Link
+            to={`#${id}`}
+            onClick={handleLinkClick}
+            className="sub-settings-section-anchor absolute group-hover:opacity-100"
+            aria-hidden="true"
+            tabIndex={-1}
+        >
+            <Icon name="link" />
+        </Link>
+    );
+
+    if (variant === 'card') {
+        return (
+            <>
+                <div className="relative">
+                    <div id={id} className="header-height-anchor" />
+                </div>
+                <section
+                    {...rest}
+                    id={id}
+                    ref={ref}
+                    data-target-id={id}
+                    className={clsx([className, 'sub-settings-section'])}
+                >
+                    <div className="group-hover-opacity-container relative">
+                        {linkElement}
+                        <DashboardGrid as="div">
+                            {title && !invisibleTitle && <DashboardGridSectionHeader title={title} />}
+                            <DashboardCard>
+                                <DashboardCardContent>{children}</DashboardCardContent>
+                            </DashboardCard>
+                        </DashboardGrid>
+                    </div>
+                </section>
+            </>
+        );
+    }
+
     return (
         <>
             <div className="relative">
@@ -66,18 +118,10 @@ const SubSettingsSection = ({ id, observer, title, beta, children, className, ..
                 data-target-id={id}
                 className={clsx([className, 'sub-settings-section'])}
             >
-                {title && (
+                {title && !invisibleTitle && (
                     <SettingsSectionTitle className="group-hover-opacity-container relative">
-                        <Link
-                            to={`#${id}`}
-                            onClick={handleLinkClick}
-                            className="sub-settings-section-anchor absolute group-hover:opacity-100"
-                            aria-hidden="true"
-                            tabIndex={-1}
-                        >
-                            <Icon name="link" />
-                        </Link>
-                        {title}
+                        {linkElement}
+                        <span className={clsx(invisibleTitle && 'sr-only')}>{title}</span>
                         {beta && (
                             <ProtonBadge
                                 className="align-middle"
@@ -87,7 +131,15 @@ const SubSettingsSection = ({ id, observer, title, beta, children, className, ..
                         )}
                     </SettingsSectionTitle>
                 )}
-                {children}
+
+                {title && invisibleTitle ? (
+                    <div className="group-hover-opacity-container relative">
+                        {linkElement}
+                        {children}
+                    </div>
+                ) : (
+                    children
+                )}
             </section>
         </>
     );

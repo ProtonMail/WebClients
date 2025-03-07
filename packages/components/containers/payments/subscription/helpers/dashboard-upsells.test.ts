@@ -49,6 +49,7 @@ describe('resolveUpsellsToDisplay', () => {
             openSubscriptionModal: mockedOpenSubscriptionModal,
             plansMap: getPlansMap(getTestPlans('EUR'), 'EUR'),
             user: buildUser(),
+            paymentFlow: 'subscription',
         };
     });
 
@@ -66,6 +67,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -78,6 +80,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
     });
@@ -113,6 +116,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -125,6 +129,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
 
@@ -163,6 +168,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
     });
@@ -201,6 +207,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -213,6 +220,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
 
@@ -260,6 +268,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -272,6 +281,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
     });
@@ -304,6 +314,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
 
@@ -335,6 +346,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -347,6 +359,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
     });
@@ -379,6 +392,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
 
@@ -410,6 +424,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -422,6 +437,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
     });
@@ -478,6 +494,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
     });
@@ -502,6 +519,7 @@ describe('resolveUpsellsToDisplay', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
     });

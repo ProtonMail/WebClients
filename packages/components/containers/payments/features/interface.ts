@@ -14,6 +14,7 @@ export interface PlanCardFeatureDefinition {
     highlight?: boolean;
     icon?: IconName;
     iconUrl?: string;
+    highResIcon?: string;
 }
 
 export interface PlanCardFeature {

@@ -1,35 +1,33 @@
 @import '~@proton/styles/scss/lib';
 
 .tabs {
-	&-list {
-		&-link {
-			transition: 0.15s easing(ease-out-quint);
+	& > &-nav &-link {
+		transition: 0.15s easing(ease-out-quint);
 
-			&[disabled] {
-				opacity: 0.4;
-				cursor: default;
-				pointer-events: none;
-			}
+		&[disabled] {
+			opacity: 0.4;
+			cursor: default;
+			pointer-events: none;
 		}
+	}
 
-		&--fullWidth {
-			inline-size: 100%;
-		}
+	& > &-nav &-list--fullWidth {
+		inline-size: 100%;
 
-		&--fullWidth &-item {
+		.tabs-list-item {
 			flex: 1 1 0;
 		}
 
-		&--fullWidth &-link {
+		.tabs-list-link {
 			inline-size: 100%;
 		}
 	}
 
-	&--underline &-list-item {
+	&--underline > &-nav &-list-item {
 		min-inline-size: auto;
 	}
 
-	&--underline &-list-link {
+	&--underline > &-nav &-list-link {
 		padding-block: var(--space-2);
 		padding-inline: var(--space-3);
 		inset-block-start: 1px;
@@ -45,7 +43,7 @@
 		}
 	}
 
-	&--underline &-indicator {
+	&--underline > &-nav &-indicator {
 		position: absolute;
 		inset-block-end: -1px;
 		inset-inline: 0;
@@ -62,7 +60,7 @@
 		}
 	}
 
-	&--modern &-list {
+	&--modern > &-nav &-list {
 		padding: var(--space-1);
 		gap: var(--space-1);
 		background-color: var(--background-lowered);
@@ -70,7 +68,7 @@
 		z-index: 1;
 	}
 
-	&--modern &-list-item {
+	&--modern > &-nav &-list-item {
 		position: relative;
 
 		&:hover {
@@ -85,7 +83,7 @@
 		}
 	}
 
-	&--modern &-list-link {
+	&--modern > &-nav &-list-link {
 		z-index: 3;
 		padding-block: var(--space-1);
 		padding-inline: var(--space-2);
@@ -94,7 +92,7 @@
 			pointer-events: none;
 		}
 
-		span {
+		> span {
 			&::after {
 				content: attr(data-title);
 				visibility: hidden;
@@ -108,7 +106,7 @@
 		}
 	}
 
-	&--modern &-indicator {
+	&--modern > &-nav &-indicator {
 		position: absolute;
 		inset-block: var(--space-1);
 		inset-inline-start: 0;
