@@ -17,6 +17,7 @@ import {
     getExifInfo,
     getPhotoDimensions,
     getPhotoExtendedAttributes,
+    getPhotoTags,
 } from '../../_photos/exifInfo';
 import type { EncryptedBlock, Link, ThumbnailEncryptedBlock, VerificationData } from '../interface';
 import type { Media, ThumbnailInfo } from '../media';
@@ -185,6 +186,7 @@ async function start(
                 ? {
                       captureTime: Math.max(getUnixTime(getCaptureDateTime(file, exifInfo?.exif)), 0),
                       contentHash: sha1 ? await generateLookupHash(sha1, parentHashKey) : undefined,
+                      tags: exifInfo ? getPhotoTags(exifInfo) : undefined,
                   }
                 : undefined
         );

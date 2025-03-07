@@ -23,6 +23,9 @@
         "test:ci": "jest --coverage=false --runInBand --ci",
         "test:watch": "jest --watch --coverage=false"
     },
+    "resolutions": {
+        "@xmldom/xmldom": "0.9.8"
+    },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@noble/hashes": "^1.7.1",
@@ -47,6 +50,7 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
+        "@xmldom/xmldom": "^0.9.8",
         "client-zip": "^2.4.6",
         "comlink": "^4.4.2",
         "exifreader": "^4.26.1",
@@ -84,10 +88,5 @@
         "pretty-format": "^29.7.0",
         "typescript": "^5.7.3",
         "webpack": "^5.98.0"
-    },
-    "exifreader": {
-        "exclude": {
-            "xmp": true
-        }
     }
 }

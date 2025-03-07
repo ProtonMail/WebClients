@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { PhotoTag } from '../../../store';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+
 import { PhotosTags, type PhotosTagsProps } from './Tags';
 
 describe('PhotosTags', () => {
