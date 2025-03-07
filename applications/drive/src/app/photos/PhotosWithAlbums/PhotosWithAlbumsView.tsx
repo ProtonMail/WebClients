@@ -4,6 +4,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Loader, NavigationControl, TopBanner, useAppTitle, useModalStateObject } from '@proton/components';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
@@ -17,7 +18,7 @@ import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { PhotoLink } from '../../store';
-import { PhotoTag, isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { isDecryptedLink, useThumbnailsDownload } from '../../store';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useCreateAlbum } from '../PhotosActions/Albums';
 import { AddAlbumPhotosModal } from '../PhotosModals/AddAlbumPhotosModal';

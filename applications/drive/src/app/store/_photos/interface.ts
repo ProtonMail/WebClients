@@ -1,3 +1,5 @@
+import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+
 import type { Album, DecryptedAlbum } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import type { DecryptedLink } from '../_links/interface';
 
@@ -14,21 +16,6 @@ export interface Photo {
 export interface AlbumPhoto extends Photo {
     parentLinkId: string; // the album link id
     rootShareId: string; // the album share id
-}
-
-export enum PhotoTag {
-    All = -1,
-    // All these are defined by the BE
-    Favorites = 0,
-    Screenshots = 1,
-    Videos = 2,
-    LivePhotos = 3,
-    MotionPhotos = 4,
-    Selfies = 5,
-    Portraits = 6,
-    Bursts = 7,
-    Panoramas = 8,
-    Raw = 9,
 }
 
 // These are not coming from the BE but can't be equal to the PhotoTag

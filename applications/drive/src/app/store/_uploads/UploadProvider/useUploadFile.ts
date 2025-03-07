@@ -599,6 +599,7 @@ export default function useUploadFile() {
                                               CaptureTime: photo.captureTime || 0,
                                               Exif: photo.encryptedExif,
                                               ContentHash: photo.contentHash,
+                                              Tags: photo.tags,
                                           }
                                         : undefined,
                                 }
@@ -614,7 +615,8 @@ export default function useUploadFile() {
                                 includeCommon: true,
                             });
                         }
-                        return { fileId: createdFileRevision.fileID, fileName: createdFileRevision.filename };
+
+                        return { fileId: createdFileRevision.fileID, fileName: createdFileRevision.filename, photo };
                     },
                     5
                 ),

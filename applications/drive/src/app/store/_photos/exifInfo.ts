@@ -1,3 +1,4 @@
+import { DOMParser, onErrorStopParsing } from '@xmldom/xmldom';
 import ExifReader from 'exifreader';
 import type { ExifTags, ExpandedTags } from 'exifreader';
 
@@ -5,8 +6,21 @@ import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { encodeBase64 } from '@proton/crypto/lib/utils';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import { convertSubjectAreaToSubjectCoordinates, formatExifDateTime } from './utils';
+
+// For usage inside Web Workers, since DOMParser is not available
+// @xmldom/xmldom is a ponyfill of DOMParser
+if (typeof DOMParser !== 'undefined') {
+    class CustomDOMParser extends DOMParser {
+        constructor() {
+            super({ onError: onErrorStopParsing });
+        }
+    }
+    // @ts-ignore
+    self.DOMParser = CustomDOMParser;
+}
 
 export const getExifInfo = async (file: File, mimeType: string): Promise<ExpandedTags | undefined> => {
     if (isSVG(mimeType)) {
@@ -16,7 +30,6 @@ export const getExifInfo = async (file: File, mimeType: string): Promise<Expande
     const buffer = await file.arrayBuffer();
 
     try {
-        // Notes: XMP read is disabled because DOMParser is not available in Worker (package.json > exifreader)
         return ExifReader.load(buffer, { expanded: true });
     } catch (err) {}
 
@@ -101,3 +114,48 @@ export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({
           }
         : undefined,
 });
+
+// TODO: Complete tags assignment for IOS and Windows
+export const getPhotoTags = (exifInfo: ExpandedTags): PhotoTag[] => {
+    // Enable to debug XMP data: console.log('exifInfo', JSON.stringify(exifInfo.xmp));
+
+    const tags: PhotoTag[] = [];
+    if (!exifInfo || !exifInfo.xmp) {
+        return tags;
+    }
+
+    // Tested: MacOS screenshots and IOS screenshots
+    // Untested: Windows screenshots, Linux screenshots, Android screenshots
+    if (exifInfo.xmp.UserComment && exifInfo.xmp.UserComment.value === 'Screenshot') {
+        tags.push(PhotoTag.Screenshots);
+    }
+
+    // Tested: Android
+    // Untested: IOS & other cameras
+    if (exifInfo.xmp.ProjectionType && exifInfo.xmp.ProjectionType.value === 'equirectangular') {
+        tags.push(PhotoTag.Panoramas);
+    }
+
+    // Tested: Android
+    // Untested: IOS & other cameras
+    if (exifInfo.xmp.MotionPhoto && exifInfo.xmp.MotionPhoto.value === '1') {
+        tags.push(PhotoTag.MotionPhotos);
+    }
+
+    // Tested: Android
+    // Untested: IOS & other cameras
+    if (
+        exifInfo.xmp.SpecialTypeID &&
+        exifInfo.xmp.SpecialTypeID.value &&
+        (exifInfo.xmp.SpecialTypeID.value ===
+            'com.google.android.apps.camera.gallery.specialtype.SpecialType-PORTRAIT' ||
+            (Array.isArray(exifInfo.xmp.SpecialTypeID.value) &&
+                exifInfo.xmp.SpecialTypeID.value.some(
+                    (v) => v.value === 'com.google.android.apps.camera.gallery.specialtype.SpecialType-PORTRAIT'
+                )))
+    ) {
+        tags.push(PhotoTag.Portraits);
+    }
+
+    return tags;
+};
