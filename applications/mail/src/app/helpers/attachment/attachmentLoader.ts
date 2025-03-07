@@ -8,21 +8,19 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getEOSessionKey, getSessionKey } from '@proton/shared/lib/mail/send/attachments';
+import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import type { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
-import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
-
-export interface DecryptedAttachment extends Omit<WorkerDecryptionResult<Uint8Array>, 'verificationStatus'> {
-    verificationStatus: MAIL_VERIFICATION_STATUS
-};
 
 export const getVerificationStatusFromKeys = (
     decryptedAttachment: WorkerDecryptionResult<Uint8Array>,
     verifyingKeys: PublicKeyReference[]
 ): MAIL_VERIFICATION_STATUS => {
-    return verifyingKeys.length > 0 ? getMailVerificationStatus(decryptedAttachment.verificationStatus) : MAIL_VERIFICATION_STATUS.NOT_VERIFIED;
+    return verifyingKeys.length > 0
+        ? getMailVerificationStatus(decryptedAttachment.verificationStatus)
+        : MAIL_VERIFICATION_STATUS.NOT_VERIFIED;
 };
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
@@ -77,7 +75,10 @@ export const getDecryptedAttachment = async (
                 verification?.verifyingKeys
             );
 
-            const verificationStatus = getVerificationStatusFromKeys(decryptedAttachment, verification?.verifyingKeys || []);
+            const verificationStatus = getVerificationStatusFromKeys(
+                decryptedAttachment,
+                verification?.verifyingKeys || []
+            );
 
             return {
                 ...decryptedAttachment,
@@ -94,8 +95,8 @@ export const getDecryptedAttachment = async (
         });
         return {
             ...decryptionResult,
-            verificationStatus: getMailVerificationStatus(decryptionResult.verificationStatus)
-        }
+            verificationStatus: getMailVerificationStatus(decryptionResult.verificationStatus),
+        };
     } catch (error: any) {
         traceError(error, {
             extra: {
@@ -116,7 +117,7 @@ export const getDecryptedAttachment = async (
     }
 };
 
-export const getAndVerify = async (
+export const getAndVerifyAttachment = async (
     attachment: Attachment = {},
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
@@ -152,16 +153,4 @@ export const getAndVerify = async (
     }
 
     return attachmentdata;
-};
-
-export const get = (
-    attachment: Attachment = {},
-    verification: MessageVerification | undefined,
-    messageKeys: MessageKeys,
-    api: Api,
-    getAttachment?: (ID: string) => DecryptedAttachment | undefined,
-    onUpdateAttachment?: (ID: string, attachment: DecryptedAttachment) => void,
-    messageFlags?: number
-): Promise<DecryptedAttachment> => {
-    return getAndVerify(attachment, verification, messageKeys, api, getAttachment, onUpdateAttachment, messageFlags);
 };

@@ -7,9 +7,9 @@ import { getParsedAutocryptHeader } from '@proton/shared/lib/mail/autocrypt';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { LARGE_KEY_SIZE } from '../../constants';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import type { MessageKeys } from '../../store/messages/messagesTypes';
-import { get } from '../attachment/attachmentLoader';
-import { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { getAndVerifyAttachment } from '../attachment/attachmentLoader';
 
 /**
  * Look through a message attachments if there are keys
@@ -30,7 +30,7 @@ export const extractKeysFromAttachments = async (
         await Promise.all(
             keyAttachments.map(async (attachment) => {
                 try {
-                    const { data } = await get(
+                    const { data } = await getAndVerifyAttachment(
                         attachment,
                         undefined,
                         messageKeys,
