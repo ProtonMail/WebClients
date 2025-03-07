@@ -10,7 +10,7 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 type UpsellPlanFeatures = {
     features: FeatureType[];
     upsellType: UpsellType;
-    upgradePath: string;
+    upgradePath?: string;
 };
 
 export const useUpsellPlanFeatures = () => {
@@ -25,7 +25,7 @@ export const useUpsellPlanFeatures = () => {
                       upsellType: 'pass-monitor-business',
                       upgradePath: 'pass/signup/business',
                   }
-                : { features: planFeatures.individuals, upsellType: 'pass-monitor', upgradePath: 'pass/signup' };
+                : { features: planFeatures.individuals, upsellType: 'pass-monitor' };
 
         return { plan, features, upsellType, upgradePath };
     }, [plan]);
