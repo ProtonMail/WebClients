@@ -10,7 +10,7 @@ import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getHasOnlyIcsAttachments, getRecipients, isInternal, isScheduled } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
@@ -134,12 +134,12 @@ const HeaderExpanded = ({
         isInternal(message.data) &&
         !isSelfAddress(message.data?.Sender.Address, addresses) &&
         message.verification?.signingPublicKey &&
-        message.verification?.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID;
+        message.verification?.verificationStatus !== MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID;
 
     const hasAttachedPublicKey =
         !isSelfAddress(message.data?.Sender?.Address, addresses) &&
         message.verification?.attachedPublicKeys &&
-        message.verification?.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID;
+        message.verification?.verificationStatus !== MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID;
 
     const showPinPublicKey = hasSigningPublicKey || hasAttachedPublicKey;
 

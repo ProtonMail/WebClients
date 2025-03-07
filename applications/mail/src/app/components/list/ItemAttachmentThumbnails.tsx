@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { FilePreview, NavigationControl, Tooltip } from '@proton/components';
 import Portal from '@proton/components/components/portal/Portal';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import AttachmentThumbnail from 'proton-mail/components/list/AttachmentThumbnail';
@@ -58,7 +58,7 @@ const ItemAttachmentThumbnails = ({
             }
 
             // Don't preview unverified attachment
-            if (download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+            if (download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 return {
                     // Overriding mime type to prevent opening any visualizer with empty data, especially needed for pdfs
                     attachment: { ...attachmentsMetadata, MIMEType: '' },

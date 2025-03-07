@@ -3,7 +3,6 @@ import { useCallback } from 'react';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi, useAuthentication, useProgressiveRollout } from '@proton/components';
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { FeatureCode, useFeature } from '@proton/features';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -53,6 +52,7 @@ import { useBase64Cache } from '../useBase64Cache';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useKeyVerification } from './useKeyVerification';
 import { useGetMessage } from './useMessage';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 export const useInitializeMessage = () => {
     const api = useApi();
@@ -71,7 +71,7 @@ export const useInitializeMessage = () => {
     const isNumAttachmentsWithoutEmbedded = feature?.Value;
     const canCleanUTMTrackers = useProgressiveRollout(FeatureCode.CleanUTMTrackers);
 
-    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
+    const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
