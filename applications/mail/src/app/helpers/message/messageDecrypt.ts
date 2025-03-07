@@ -13,12 +13,13 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, getSender, isAutoForwardee, isMIME } from '@proton/shared/lib/mail/messages';
+import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
+
+import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 
 import type { MessageErrors } from '../../store/messages/messagesTypes';
 import { convert } from '../attachment/attachmentConverter';
-import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
-import { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 
 const { NOT_VERIFIED, NOT_SIGNED } = MAIL_VERIFICATION_STATUS;
 
@@ -71,9 +72,7 @@ const decryptMimeMessage = async (
         return {
             decryptedBody: processing.body,
             decryptedRawContent,
-            attachments: onUpdateAttachment
-                ? convert(message, processing.attachments, 0, onUpdateAttachment)
-                : undefined,
+            attachments: onUpdateAttachment ? convert(message, processing.attachments, onUpdateAttachment) : undefined,
             decryptedSubject: processing.encryptedSubject,
             signature: decryption.signatures[0],
             mimetype: processing.mimeType as MIME_TYPES,

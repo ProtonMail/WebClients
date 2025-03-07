@@ -3,9 +3,10 @@ import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
+import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
+
 import { ENCRYPTED_STATUS } from '../../../constants';
 import { ID_PREFIX, convert, convertSingle, convertToFile, getHeaders, getId } from '../attachmentConverter';
-import { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 
 const fileName = 'fileName';
 const messageID = 'messageID';
@@ -56,7 +57,7 @@ describe('convertSingle', () => {
     it('should convert a single parsed attachment to an attachment', () => {
         const spy = jest.fn();
 
-        const attachment = convertSingle(message, mimeAttachment, 1, 0, spy);
+        const attachment = convertSingle(message, mimeAttachment, 1, spy);
 
         const expectedAttachment = {
             Encrypted: ENCRYPTED_STATUS.PGP_MIME,
@@ -92,7 +93,7 @@ describe('convert', () => {
             content: stringToUint8Array('content-2'),
         } as MIMEAttachment;
 
-        const attachments = convert(message, [mimeAttachment, mimeAttachment2], 0, spy);
+        const attachments = convert(message, [mimeAttachment, mimeAttachment2], spy);
 
         const expectedAttachments = [
             {
