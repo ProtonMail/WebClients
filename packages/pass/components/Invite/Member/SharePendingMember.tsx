@@ -3,7 +3,7 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Info } from '@proton/components';
+import { Info, Tooltip } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
@@ -36,7 +36,9 @@ export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email
         <div className="flex flex-nowrap items-center w-full">
             <ShareMemberAvatar value={email.toUpperCase().slice(0, 2) ?? ''} loading={loading} />
             <div className="flex-1">
-                <div className="text-ellipsis">{email}</div>
+                <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
+                    <div className="text-ellipsis">{email}</div>
+                </Tooltip>
                 <div className="flex items-center gap-1">
                     <span className="color-weak text-sm">{c('Info').t`Invitation sent`}</span>
                     <Info
