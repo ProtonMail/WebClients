@@ -8,6 +8,7 @@ import { useCalendars } from '@proton/calendar/calendars/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
@@ -48,7 +49,7 @@ const YourPlanSection = ({ app }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
-
+    const paymentFlow = useDashboardPaymentFlow(app);
     useLoad();
 
     const loading =
@@ -67,6 +68,7 @@ const YourPlanSection = ({ app }: Props) => {
         openSubscriptionModal,
         canAccessDuoPlan,
         user,
+        paymentFlow,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 

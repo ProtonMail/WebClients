@@ -14,20 +14,130 @@ import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 interface Arguments {
     user: UserModel;
     subscription?: Subscription;
+    showVPNDashboard: boolean;
 }
 
-export const getRoutes = ({ user, subscription }: Arguments) => {
+export const getRoutes = ({ user, subscription, showVPNDashboard }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const cancellablePlan = hasCancellablePlan(subscription, user);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
     return {
+        dashboardV2: <SectionConfig>{
+            text: c('Title').t`Home`,
+            noTitle: true,
+            to: '/dashboardV2',
+            icon: 'house',
+            available:
+                showVPNDashboard && (user.isFree || user.canPay || !user.isMember || (user.isPaid && user.canPay)),
+            subsections: [
+                {
+                    text: c('Title').t`Your plan`,
+                    invisibleTitle: true,
+                    id: 'YourPlanV2',
+                },
+                {
+                    text: c('Title').t`Upgrade your privacy`,
+                    invisibleTitle: true,
+                    id: 'YourPlanUpsellsSectionV2',
+                    available: user.canPay,
+                },
+                {
+                    text: c('Title').t`Downloads`,
+                    invisibleTitle: true,
+                    id: 'VpnDownloadAndInfoSection',
+                },
+                {
+                    text: c('Title').t`Also in your plan`,
+                    invisibleTitle: true,
+                    id: 'VpnAlsoInYourPlanSection',
+                },
+                {
+                    text: c('Title').t`Deep dive into VPN blog posts`,
+                    invisibleTitle: true,
+                    id: 'VpnBlogSection',
+                },
+            ],
+        },
+        subscription: <SectionConfig>{
+            text: c('Title').t`Subscription`,
+            noTitle: true,
+            to: '/subscription',
+            icon: 'credit-card',
+            available:
+                showVPNDashboard && (user.isFree || user.canPay || !user.isMember || (user.isPaid && user.canPay)),
+            subsections: [
+                {
+                    text: c('Title').t`Your plan`,
+                    invisibleTitle: true,
+                    id: 'YourPlanV2',
+                },
+                {
+                    text: c('Title').t`Your subscriptions`,
+                    id: 'your-subscriptions',
+                    available: user.isPaid,
+                    variant: 'card',
+                },
+                {
+                    text: c('Title').t`Payment methods`,
+                    id: 'payment-methods',
+                    variant: 'card',
+                },
+                {
+                    text: c('Title').t`Credits`,
+                    id: 'credits',
+                    variant: 'card',
+                },
+                {
+                    text: c('Title').t`Gift code`,
+                    id: 'gift-code',
+                    variant: 'card',
+                },
+                {
+                    text: c('Title').t`Invoices`,
+                    id: 'invoices',
+                    variant: 'card',
+                },
+                {
+                    text: c('Title').t`Cancel subscription`,
+                    id: 'cancel-subscription',
+                    available:
+                        user.isPaid &&
+                        cancellablePlan &&
+                        subscription?.Renew === Renew.Enabled &&
+                        !cancellableOnlyViaSupport,
+                    variant: 'card',
+                },
+                {
+                    text: c('Title').t`Downgrade account`,
+                    id: 'downgrade-account',
+                    // The !!subscritpion check is essential here to make sure that all the boolean variables
+                    // that depend on subscription are correctly computed before the first rendering.
+                    // Otherwise the component will be mounted and immediately unmounted which can cause memory leaks due
+                    // to async calls that started in a rendering cycle.
+                    available:
+                        !!subscription &&
+                        user.isPaid &&
+                        !cancellablePlan &&
+                        !hasVpnB2BPlan &&
+                        !cancellableOnlyViaSupport,
+                    variant: 'card',
+                },
+                {
+                    text: c('Title').t`Cancel subscription`,
+                    id: 'cancel-via-support',
+                    // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
+                    available: user.isPaid && cancellableOnlyViaSupport,
+                    variant: 'card',
+                },
+            ],
+        },
         dashboard: <SectionConfig>{
             text: c('Title').t`Subscription`,
             to: '/dashboard',
             icon: 'squares-in-square',
-            available: user.canPay,
+            available: !showVPNDashboard && user.canPay,
             subsections: [
                 {
                     text: c('Title').t`Plans`,

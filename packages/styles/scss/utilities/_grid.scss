@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 .grid-auto-fill {
 	display: grid;
 	inline-size: 100%;
@@ -18,3 +20,29 @@
 .grid-align-icon > *:not(svg, .keep-left) {
 	grid-column-start: 2;
 }
+
+@include responsive-classes(
+	(
+		grid-cols-none: (
+			grid-template-columns: none,
+		),
+	)
+);
+
+// Create an empty map to make it reachable outside of loops
+$dummy-map: ();
+
+// Add `grid-cols` utilities to the map
+@each $columns in (2, 3, 4) {
+	$dummy-map: map.merge(
+		$dummy-map,
+		(
+			grid-cols-#{$columns}: (
+					grid-template-columns: repeat($columns, minmax(0, 1fr)),
+				)
+		)
+	);
+}
+
+// Serialize the responsive utilities creation with the map to avoid any cascade ordering issues
+@include responsive-classes($dummy-map);
