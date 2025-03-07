@@ -28,6 +28,21 @@ export interface RevisionManifest {
     }[];
 }
 
+export enum PhotoTag {
+    All = -1,
+    // All these are defined by the BE
+    Favorites = 0,
+    Screenshots = 1,
+    Videos = 2,
+    LivePhotos = 3,
+    MotionPhotos = 4,
+    Selfies = 5,
+    Portraits = 6,
+    Bursts = 7,
+    Panoramas = 8,
+    Raw = 9,
+}
+
 export interface UpdateFileRevision {
     ManifestSignature: string;
     SignatureAddress: string;
@@ -37,6 +52,7 @@ export interface UpdateFileRevision {
         CaptureTime: number;
         Exif?: string;
         ContentHash?: string;
+        Tags?: any[];
     };
 }
 
