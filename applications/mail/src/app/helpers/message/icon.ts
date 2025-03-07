@@ -5,7 +5,7 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { SIGNATURE_START, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { getParsedHeadersFirstValue, hasProtonSender, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 
@@ -17,7 +17,7 @@ import type { MessageState, MessageVerification, MessageWithOptionalBody } from 
 // Encryption status for outgoing and incoming email
 
 const { SEND_PM, SEND_EO, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE_TYPE;
-const { NOT_VERIFIED, NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_AND_VALID } = VERIFICATION_STATUS;
+const { NOT_VERIFIED, NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_AND_VALID } = MAIL_VERIFICATION_STATUS;
 const { PLAIN, CHECKMARK, SIGN, WARNING, FAIL } = STATUS_ICONS_FILLS;
 const {
     NONE,
@@ -306,7 +306,7 @@ export const getSentStatusIconInfo = (message: MessageState): MessageViewIcons =
     return { globalIcon, mapStatusIcon };
 };
 
-const getInternalMessageText = (verificationStatus: VERIFICATION_STATUS | undefined): string => {
+const getInternalMessageText = (verificationStatus: MAIL_VERIFICATION_STATUS | undefined): string => {
     switch (verificationStatus) {
         case NOT_SIGNED:
             return c('loc_nightly: Received email icon').t`End-to-end encrypted message with no signature`;

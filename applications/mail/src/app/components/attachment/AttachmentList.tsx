@@ -7,7 +7,6 @@ import { Icon, Tooltip } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import type { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useHasScroll } from 'proton-mail/hooks/useHasScroll';
@@ -19,6 +18,7 @@ import type { MessageStateWithData, OutsideKey } from '../../store/messages/mess
 import AttachmentItem from './AttachmentItem';
 import type { AttachmentPreviewControls } from './AttachmentPreview';
 import AttachmentPreview from './AttachmentPreview';
+import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 export enum AttachmentAction {
     Download,
@@ -66,7 +66,7 @@ const AttachmentList = ({
 
     const [expanded, setExpanded] = useState(!collapsable);
     const [manuallyExpanded, setManuallyExpanded] = useState(false);
-    const [verifiedAttachments, setVerifiedAttachments] = useState<SimpleMap<VERIFICATION_STATUS>>({});
+    const [verifiedAttachments, setVerifiedAttachments] = useState<SimpleMap<MAIL_VERIFICATION_STATUS>>({});
 
     const previewRef = useRef<AttachmentPreviewControls>();
 
@@ -125,7 +125,7 @@ const AttachmentList = ({
 
     const handlePreview = async (attachment: Attachment) => previewRef.current?.preview(attachment);
 
-    const handlePreviewDownload = (attachment: Attachment, verificationStatus: VERIFICATION_STATUS) => {
+    const handlePreviewDownload = (attachment: Attachment, verificationStatus: MAIL_VERIFICATION_STATUS) => {
         setVerifiedAttachments((verifiedAttachments) => {
             return {
                 ...verifiedAttachments,

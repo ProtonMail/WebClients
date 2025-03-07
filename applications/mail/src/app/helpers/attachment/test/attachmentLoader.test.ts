@@ -11,7 +11,7 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../test/crypto';
-import { get, getAndVerify, getDecryptedAttachment, getRequest } from '../attachmentLoader';
+import { getAndVerifyAttachment, getDecryptedAttachment, getRequest } from '../attachmentLoader';
 
 const me = 'me@pm.me';
 const attachmentID = 'attachmentID';
@@ -101,7 +101,7 @@ describe('getDecryptedAttachment', () => {
     });
 });
 
-describe('getAndVerify', () => {
+describe('getAndVerifyAttachment', () => {
     let toKeys: GeneratedKey;
     let messageKeys: MessageKeys;
 
@@ -121,7 +121,7 @@ describe('getAndVerify', () => {
     });
 
     it('should return the attachment Preview', async () => {
-        const result = await getAndVerify(
+        const result = await getAndVerifyAttachment(
             attachment1,
             {} as MessageVerification,
             messageKeys,
@@ -134,37 +134,4 @@ describe('getAndVerify', () => {
     });
 
     // TODO need to test case where we can get the attachment, for normal and EO attachments
-});
-
-describe('get + reverify', () => {
-    let toKeys: GeneratedKey;
-    let messageKeys: MessageKeys;
-
-    const getAttachment = jest.fn();
-    const onUpdateAttachment = jest.fn();
-
-    beforeAll(async () => {
-        await setupCryptoProxyForTesting();
-
-        toKeys = await generateKeys('me', me);
-
-        messageKeys = fromGeneratedKeysToMessageKeys(toKeys);
-    });
-
-    afterAll(async () => {
-        await releaseCryptoProxy();
-    });
-
-    it('should get the attachment', async () => {
-        const getResult = await get(
-            attachment1,
-            {} as MessageVerification,
-            messageKeys,
-            api,
-            getAttachment,
-            onUpdateAttachment
-        );
-
-        expect(getResult.filename).toEqual('preview');
-    });
 });

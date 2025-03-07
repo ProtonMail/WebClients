@@ -6,17 +6,21 @@ import { getEOAttachment } from '@proton/shared/lib/api/eo';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getEOSessionKey, getSessionKey } from '@proton/shared/lib/mail/send/attachments';
+import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import type { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
 
 export const getVerificationStatusFromKeys = (
     decryptedAttachment: WorkerDecryptionResult<Uint8Array>,
     verifyingKeys: PublicKeyReference[]
-) => {
-    return verifyingKeys.length > 0 ? decryptedAttachment.verificationStatus : VERIFICATION_STATUS.NOT_VERIFIED;
+): MAIL_VERIFICATION_STATUS => {
+    return verifyingKeys.length > 0
+        ? getMailVerificationStatus(decryptedAttachment.verificationStatus)
+        : MAIL_VERIFICATION_STATUS.NOT_VERIFIED;
 };
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
@@ -57,7 +61,7 @@ export const getDecryptedAttachment = async (
     messageKeys: MessageKeys,
     api: Api,
     messageFlags?: number
-): Promise<WorkerDecryptionResult<Uint8Array>> => {
+): Promise<DecryptedAttachment> => {
     const isOutside = messageKeys.type === 'outside';
     const encryptedBinary = await getRequest(attachment, api, messageKeys);
 
@@ -71,22 +75,28 @@ export const getDecryptedAttachment = async (
                 verification?.verifyingKeys
             );
 
-            const verificationStatus = getVerificationStatusFromKeys(decryptedAttachment, verification?.verifyingKeys || []);
+            const verificationStatus = getVerificationStatusFromKeys(
+                decryptedAttachment,
+                verification?.verifyingKeys || []
+            );
 
             return {
                 ...decryptedAttachment,
                 verificationStatus,
-            } as WorkerDecryptionResult<Uint8Array>;
+            };
         }
         const sessionKey = await getEOSessionKey(attachment, messageKeys.password);
-        // eslint-disable-next-line @typescript-eslint/return-await
-        return await CryptoProxy.decryptMessage({
-            // a promise is returned here, just not detected properly by TS
+
+        const decryptionResult = await CryptoProxy.decryptMessage({
             binaryMessage: new Uint8Array(encryptedBinary),
             passwords: [messageKeys.password],
             format: 'binary',
             sessionKeys: [sessionKey],
         });
+        return {
+            ...decryptionResult,
+            verificationStatus: getMailVerificationStatus(decryptionResult.verificationStatus),
+        };
     } catch (error: any) {
         traceError(error, {
             extra: {
@@ -107,17 +117,17 @@ export const getDecryptedAttachment = async (
     }
 };
 
-export const getAndVerify = async (
+export const getAndVerifyAttachment = async (
     attachment: Attachment = {},
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     api: Api,
-    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    getAttachment?: (ID: string) => DecryptedAttachment | undefined,
+    onUpdateAttachment?: (ID: string, attachment: DecryptedAttachment) => void,
     messageFlags?: number
-): Promise<WorkerDecryptionResult<Uint8Array>> => {
+): Promise<DecryptedAttachment> => {
     const isOutside = messageKeys.type === 'outside';
-    let attachmentdata: WorkerDecryptionResult<Uint8Array>;
+    let attachmentdata: DecryptedAttachment;
 
     const attachmentID = attachment.ID || '';
 
@@ -126,8 +136,8 @@ export const getAndVerify = async (
             data: attachment.Preview,
             filename: 'preview',
             signatures: [],
-            verificationStatus: VERIFICATION_STATUS.NOT_SIGNED,
-        } as WorkerDecryptionResult<Uint8Array>;
+            verificationStatus: MAIL_VERIFICATION_STATUS.NOT_SIGNED,
+        };
     }
 
     if (!isOutside && getAttachment && onUpdateAttachment) {
@@ -143,16 +153,4 @@ export const getAndVerify = async (
     }
 
     return attachmentdata;
-};
-
-export const get = (
-    attachment: Attachment = {},
-    verification: MessageVerification | undefined,
-    messageKeys: MessageKeys,
-    api: Api,
-    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
-    messageFlags?: number
-): Promise<WorkerDecryptionResult<Uint8Array>> => {
-    return getAndVerify(attachment, verification, messageKeys, api, getAttachment, onUpdateAttachment, messageFlags);
 };

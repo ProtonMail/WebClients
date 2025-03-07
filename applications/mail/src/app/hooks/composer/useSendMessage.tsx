@@ -4,7 +4,6 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -36,6 +35,7 @@ import useDelaySendSeconds from '../useDelaySendSeconds';
 import type { OnCompose } from './useCompose';
 import { ComposeTypes } from './useCompose';
 import { useSendModifications } from './useSendModifications';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
 
@@ -61,7 +61,7 @@ export const useSendMessage = () => {
     const { createNotification, hideNotification } = useNotifications();
     const sendModification = useSendModifications();
 
-    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
+    const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 

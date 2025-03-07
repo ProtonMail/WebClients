@@ -5,7 +5,7 @@ import { getModelState } from '@proton/account/test';
 import type { PublicKeyReference } from '@proton/crypto';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
@@ -22,7 +22,7 @@ import { message } from '../../../helpers/test/pinKeys';
 import type { MessageVerification } from '../../../store/messages/messagesTypes';
 import ExtraPinKey from './ExtraPinKey';
 
-const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_SIGNED, NOT_VERIFIED } = VERIFICATION_STATUS;
+const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_SIGNED, NOT_VERIFIED } = MAIL_VERIFICATION_STATUS;
 
 const setup = async (
     message: Message,
