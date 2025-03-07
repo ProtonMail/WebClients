@@ -11,13 +11,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import type { LoggerInterface } from '@proton/utils/logs'
 
-type Props = {
-  onFrameReady: (frame: HTMLIFrameElement) => void
-  systemMode: EditorSystemMode
-  logger: LoggerInterface
-}
-
-function GetEditorUrl(systemMode: EditorSystemMode) {
+function getEditorUrl(systemMode: EditorSystemMode) {
   const url = new URL(BridgeOriginProvider.GetEditorOrigin())
 
   url.searchParams.set('mode', systemMode)
@@ -34,13 +28,19 @@ function GetEditorUrl(systemMode: EditorSystemMode) {
  */
 const SANDBOX_OPTIONS = 'allow-scripts allow-same-origin allow-forms allow-downloads allow-modals'
 
-export function EditorFrame({ onFrameReady, systemMode, logger }: Props) {
+export type EditorFrameProps = {
+  onFrameReady: (frame: HTMLIFrameElement) => void
+  systemMode: EditorSystemMode
+  logger: LoggerInterface
+}
+
+export function EditorFrame({ onFrameReady, systemMode, logger }: EditorFrameProps) {
   const [iframe, setIframe] = useState<HTMLIFrameElement | null>(null)
   /**
    * The URL cannot change once initially set, since reloading just the editor iframe is disallowed,
    * as it would require many other classes (like DocController) to re-send the document state
    */
-  const url = useMemo(() => GetEditorUrl(systemMode), [systemMode])
+  const url = useMemo(() => getEditorUrl(systemMode), [systemMode])
   const initialUrlRef = useRef(url)
   const didAlreadyLoad = useRef(false)
 
