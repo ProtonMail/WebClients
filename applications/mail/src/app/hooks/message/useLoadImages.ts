@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 
 import { useApi, useAuthentication } from '@proton/components';
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -26,6 +25,7 @@ import type {
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
+import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 
 export const useLoadRemoteImages = (localID: string) => {
     const dispatch = useMailDispatch();
@@ -70,7 +70,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
     const getMessageKeys = useGetMessageKeys();
     const mailSettings = useMailModel('MailSettings');
 
-    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
+    const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 

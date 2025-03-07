@@ -9,7 +9,7 @@ import useIsMounted from '@proton/hooks/useIsMounted';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { type PendingUpload, isAttachmentUpload } from '../../hooks/composer/useAttachments';
@@ -31,12 +31,12 @@ const getActionTitle = (action: AttachmentAction, attachmentName: string) => {
 
 // Reference: Angular/src/templates/attachments/attachmentElement.tpl.html
 
-const getSenderVerificationString = (verificationStatus?: VERIFICATION_STATUS) => {
-    if (verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+const getSenderVerificationString = (verificationStatus?: MAIL_VERIFICATION_STATUS) => {
+    if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
         const str = c('Attachment signature verification').t`Sender verification failed`;
         return ` - ${str}`;
     }
-    if (verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const str = c('Attachment signature verification').t`Sender verification passed`;
         return ` - ${str}`;
     }
@@ -46,7 +46,7 @@ const getSenderVerificationString = (verificationStatus?: VERIFICATION_STATUS) =
 interface Props {
     attachment?: Attachment;
     pendingUpload?: PendingUpload;
-    attachmentVerified?: VERIFICATION_STATUS;
+    attachmentVerified?: MAIL_VERIFICATION_STATUS;
     primaryAction: AttachmentAction;
     secondaryAction: AttachmentAction;
 

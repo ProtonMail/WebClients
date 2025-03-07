@@ -14,7 +14,7 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 import { isInternal } from '@proton/shared/lib/mail/messages';
 
@@ -25,7 +25,7 @@ import { useContactsMap } from '../../../hooks/contact/useContacts';
 import type { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
-const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
+const { NOT_VERIFIED, SIGNED_AND_INVALID } = MAIL_VERIFICATION_STATUS;
 
 enum PROMPT_KEY_PINNING_TYPE {
     AUTOPROMPT = 1,
@@ -89,7 +89,7 @@ const getPromptKeyPinningType = ({
             return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
         }
     }
-    if (verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
+    if (verificationStatus === MAIL_VERIFICATION_STATUS.NOT_SIGNED) {
         if (!firstAttachedPublicKey || isAttachedKeyPinned) {
             return;
         }

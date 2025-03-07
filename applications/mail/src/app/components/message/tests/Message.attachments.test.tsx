@@ -3,7 +3,7 @@ import { fireEvent, waitFor, within } from '@testing-library/react';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { assertIcon } from '../../../helpers/test/assertion';
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
@@ -47,7 +47,7 @@ const attachment3 = {
         data: [],
         filename: 'preview',
         signatures: [],
-        verificationStatus: VERIFICATION_STATUS.NOT_SIGNED,
+        verificationStatus: MAIL_VERIFICATION_STATUS.NOT_SIGNED,
     },
     nameSplitStart: 'attachment-name-p',
     nameSplitEnd: 'ng.png',
