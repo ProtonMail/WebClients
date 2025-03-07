@@ -4,17 +4,17 @@ import type { ReactNode } from 'react'
 import { DrawerApp, PrivateAppContainer, PrivateMainArea, TopBanners } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 
-import DocsHeader from '../../Components/DocsHeader/DocsHeader'
-import DocsQuickSettings from '../../Components/layout/DocsQuickSettings'
+import DocsHeader from '../Components/DocsHeader/DocsHeader'
+import DocsQuickSettings from '../Components/layout/DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
-import { useDocsContext } from '../../Containers/DocsContextProvider'
+import { useDocsContext } from '../Containers/DocsContextProvider'
 
-export type DocumentLayoutProps = {
+interface Props {
   children: ReactNode
   action?: DocumentAction['mode']
 }
 
-export function DocumentLayout({ children, action }: DocumentLayoutProps) {
+export const SharedLayout = ({ children, action }: Props) => {
   const { privateContext: privateUser } = useDocsContext()
 
   return (
@@ -28,3 +28,5 @@ export function DocumentLayout({ children, action }: DocumentLayoutProps) {
     </PrivateAppContainer>
   )
 }
+
+export default SharedLayout

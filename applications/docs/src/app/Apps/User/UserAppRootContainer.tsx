@@ -1,8 +1,8 @@
 import { GlobalLoader, GlobalLoaderProvider, LocationErrorBoundary } from '@proton/components'
 import { DriveStoreProvider } from '@proton/drive-store'
-import { UserAppContent } from './UserAppContent'
+import UserAppContent from './UserAppContent'
 
-export function UserAppRootContainer() {
+const UserAppRootContainer = () => {
   return (
     <GlobalLoaderProvider>
       <GlobalLoader />
@@ -14,3 +14,5 @@ export function UserAppRootContainer() {
     </GlobalLoaderProvider>
   )
 }
+
+export default UserAppRootContainer

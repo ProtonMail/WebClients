@@ -24,14 +24,14 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces'
 
-import { bootstrapApp } from './__utils/bootstrap'
+import { bootstrapApp } from './UserBootstrap'
 import * as config from '../../config'
 import type { DocsStore } from '../../ReduxStore/store'
 import { extraThunkArguments } from '../../ReduxStore/thunk'
 import type { AvailabilityReport } from '@proton/utils/availability'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
-import { DocsThemeProvider } from './__components/DocsThemeProvider'
-import CustomNotificationsHijack from './__components/CustomNotificationHijacker'
+import { DocsThemeProvider } from '../DocsThemeProvider'
+import CustomNotificationsHijack from './CustomNotificationHijacker'
 
 const HIDDEN_NOTIFICATIONS = ['Requested data does not exist or you do not have permission to access it']
 
@@ -46,18 +46,18 @@ const defaultState: {
   showDrawerSidebar: false,
 }
 
-export default function UserApp() {
+const UserApp = () => {
   const [state, setState] = useState(defaultState)
 
   useEffectOnce(() => {
     void (async () => {
       try {
         /*
-            Availability will report every 5 minutes the user status:
-            - if an error occurred and was reported to Sentry
-            - if an error occurred and was explicitly marked as an error
-            - if an error occurred and was explicitly marked as critical
-        */
+                                          Availability will report every 5 minutes the user status:
+                                          - if an error occured and was reported to Sentry
+                                          - if an error occured and was explicitely marked as an error
+                                          - if an error occurred and was explicitely marked as critical
+                                        */
         Availability.init((report: AvailabilityReport) => {
           metrics.docs_users_success_rate_total.increment({
             plan: state.initialUser?.isFree ? 'free' : 'paid',
@@ -110,8 +110,6 @@ export default function UserApp() {
                         <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
                           <ErrorBoundary big component={<StandardErrorPage big />}>
                             <StandardPrivateApp>
-                              {/* Normally, this will render UserAppRootContainer. Routing
-                              is performed in UserAppContent. */}
                               <state.MainContainer />
                             </StandardPrivateApp>
                           </ErrorBoundary>
@@ -128,3 +126,5 @@ export default function UserApp() {
     </ProtonApp>
   )
 }
+
+export default UserApp
