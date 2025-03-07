@@ -3,24 +3,24 @@ import { Application } from '@proton/docs-core'
 
 import { useApi } from '@proton/components/index'
 import { Route, Switch } from 'react-router-dom'
-import ApplicationProvider from '../../../Containers/ApplicationProvider'
-import { DocumentViewer } from '../../../Components/DocumentViewer'
+import ApplicationProvider from '../../Containers/ApplicationProvider'
+import { DocumentViewer } from '../../Components/DocumentViewer'
 import {
   usePublicDriveCompat,
   type DocumentAction,
   type PublicDriveCompat,
   type PublicNodeMeta,
 } from '@proton/drive-store'
-import { APP_VERSION } from '../../../config'
-import { WordCountContextProvider } from '../../../Components/WordCount/WordCountProvider'
-import { useDocsUrlBar } from '../../../Containers/useDocsUrlBar'
-import { DocumentLayout } from '../../__components/DocumentLayout'
+import { APP_VERSION } from '../../config'
+import { WordCountContextProvider } from '../../Components/WordCount/WordCountProvider'
+import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
+import SharedLayout from '../SharedLayout'
 import { usePublicSessionUser } from '@proton/drive-store/store'
-import DocsContextProvider from '../../../Containers/DocsContextProvider'
+import DocsContextProvider from '../../Containers/DocsContextProvider'
 import { useUnleashClient } from '@proton/unleash'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
-export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: PublicDriveCompat }) {
+function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: PublicDriveCompat }) {
   const api = useApi()
   const unleashClient = useUnleashClient()
 
@@ -81,9 +81,9 @@ export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCom
         <WordCountContextProvider>
           <Switch>
             <Route path={'*'}>
-              <DocumentLayout>
+              <SharedLayout>
                 <Content openAction={openAction} actionMode={action} />
-              </DocumentLayout>
+              </SharedLayout>
             </Route>
           </Switch>
         </WordCountContextProvider>
@@ -116,3 +116,5 @@ function Content({
 
   return <DocumentViewer nodeMeta={nodeMeta} action={actionMode} />
 }
+
+export default PublicApplicationContent
