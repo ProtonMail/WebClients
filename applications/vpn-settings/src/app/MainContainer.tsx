@@ -55,8 +55,13 @@ import {
     UpgradeVpnSection,
     UserDropdown,
     UsernameSection,
+    VpnAlsoInYourPlanSection,
+    VpnBlogSection,
+    VpnDownloadAndInfoSection,
     WireGuardConfigurationSection,
     YourPlanSection,
+    YourPlanSectionV2,
+    YourPlanUpsellsSectionV2,
     useActiveBreakpoint,
     useModalState,
     useToggle,
@@ -69,6 +74,7 @@ import LiveChatZendesk, {
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
+import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -97,10 +103,12 @@ const MainContainer: FunctionComponent = () => {
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const [groups, loadingGroups] = useGroups();
+    const { showVPNDashboard } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
 
     const vpnRoutes = getRoutes({
         user,
         subscription,
+        showVPNDashboard,
     });
 
     const organizationAppRoutes = getOrganizationAppRoutes({
@@ -227,13 +235,21 @@ const MainContainer: FunctionComponent = () => {
     const name = user.DisplayName || user.Name;
     const email = user.Email || userSettings?.Email?.Value;
 
+    const getRedirectPath = () => {
+        if (getIsSectionAvailable(vpnRoutes.dashboardV2)) {
+            return vpnRoutes.dashboardV2.to;
+        }
+        if (getIsSectionAvailable(vpnRoutes.dashboard)) {
+            return vpnRoutes.dashboard.to;
+        }
+        return vpnRoutes.downloads.to;
+    };
+
     const redirect =
         loadingSubscription || loadingOrganization || loadingGroups ? (
             <PrivateMainAreaLoading />
         ) : (
-            <Redirect
-                to={getIsSectionAvailable(vpnRoutes.dashboard) ? vpnRoutes.dashboard.to : vpnRoutes.downloads.to}
-            />
+            <Redirect to={getRedirectPath()} />
         );
 
     const anyOrganizationAppRoute = getRoutePaths('', Object.values(organizationAppRoutes.routes));
@@ -251,6 +267,45 @@ const MainContainer: FunctionComponent = () => {
                 <Route path="*">
                     <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
                         <Switch>
+                            {getIsSectionAvailable(vpnRoutes.dashboardV2) && (
+                                <Route path={vpnRoutes.dashboardV2.to}>
+                                    <AutomaticSubscriptionModal />
+                                    <PrivateMainSettingsArea
+                                        config={vpnRoutes.dashboardV2}
+                                        mainAreaClass="bg-lowered"
+                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+                                        style={{ '--max-w-custom': '1500px' }}
+                                    >
+                                        <YourPlanSectionV2 app={app} />
+                                        <YourPlanUpsellsSectionV2 app={app} />
+                                        <VpnDownloadAndInfoSection app={app} />
+                                        <VpnAlsoInYourPlanSection app={app} />
+                                        <VpnBlogSection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                            )}
+                            {getIsSectionAvailable(vpnRoutes.subscription) && (
+                                <Route path={vpnRoutes.subscription.to}>
+                                    <AutomaticSubscriptionModal />
+                                    <PrivateMainSettingsArea
+                                        config={vpnRoutes.subscription}
+                                        mainAreaClass="bg-lowered"
+                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+                                        style={{ '--max-w-custom': '1500px' }}
+                                    >
+                                        <YourPlanSectionV2 app={app} editBillingCycle={true} />
+                                        <SubscriptionsSection />
+                                        <PaymentMethodsSection />
+                                        <CreditsSection />
+                                        <GiftCodeSection />
+                                        <InvoicesSection />
+                                        <CancelSubscriptionSection app={app} />
+                                        <DowngradeSubscriptionSection app={app} />
+                                        <CancelSubscriptionViaSupportSection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                            )}
+
                             {getIsSectionAvailable(vpnRoutes.dashboard) && (
                                 <Route path={vpnRoutes.dashboard.to}>
                                     <AutomaticSubscriptionModal />

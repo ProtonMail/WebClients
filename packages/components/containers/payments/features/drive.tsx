@@ -206,7 +206,7 @@ const getShareFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getSyncAndBackupFeature = (): PlanCardFeatureDefinition => {
+export const getSyncAndBackupFeature = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Sync and backup all your files across devices`,
         included: true,

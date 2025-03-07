@@ -43,6 +43,7 @@ import { getIsSectionAvailable, getRoutePaths } from '@proton/components/contain
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
+import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -112,6 +113,9 @@ const getDefaultPassRedirect = (
 };
 
 const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account']) => {
+    if (getIsSectionAvailable(accountRoutes.routes.dashboardV2)) {
+        return accountRoutes.routes.dashboardV2.to;
+    }
     if (getIsSectionAvailable(accountRoutes.routes.dashboard)) {
         return accountRoutes.routes.dashboard.to;
     }
@@ -176,6 +180,8 @@ const MainContainer = () => {
     const [memberships, loadingGroupMembership] = useGroupMemberships();
     const [groups, loadingGroups] = useGroups();
 
+    const { showVPNDashboard } = useShowVPNDashboard(app);
+
     const { isB2B: isB2BDrive } = useDrivePlan();
 
     const routes = getRoutes({
@@ -189,6 +195,7 @@ const MainContainer = () => {
         isSessionRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
         isBreachesAccountDashboardEnabled,
+        showVPNDashboard,
         isUserGroupsFeatureEnabled,
         showThemeSelection,
         assistantKillSwitch,

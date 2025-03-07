@@ -33,7 +33,10 @@ type DimensionFlows =
     | 'credit'
     | 'subscription'
     | 'add-card'
-    | 'add-paypal';
+    | 'add-paypal'
+    | 'dashboard-upgrade-control'
+    | 'dashboard-upgrade-A'
+    | 'dashboard-upgrade-B';
 
 function mapFlows(flow: PaymentMethodFlows): DimensionFlows {
     if (flow === 'signup-v2') {
@@ -85,7 +88,6 @@ export const usePaymentsTelemetry = ({
     const api = apiOverride ?? defaultApi;
 
     const chargebeeContext = useChargebeeContext();
-
     const formatDimensions = (
         method: PaymentProcessorType | 'n/a' | undefined,
         { flow: flowOverride, plan: planOverride, cycle: cycleOverride }: Overrides = {}

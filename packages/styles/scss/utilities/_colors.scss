@@ -42,7 +42,7 @@
 	}
 }
 
-@each $color in (norm, weak, strong) {
+@each $color in (norm, weak, strong, elevated, lowered) {
 	.bg-#{$color},
 	.odd\:bg-#{$color} > *:nth-child(odd),
 	.even\:bg-#{$color} > *:nth-child(even) {
@@ -85,6 +85,7 @@
 	}
 }
 
+// TODO: Rename this to .bg-custom
 .custom-bg {
 	background: var(--custom-bg);
 }
