@@ -9,6 +9,22 @@ export const getServersInWithoutPlus = (numberOfServers: string, numberOfCountri
     );
 };
 
+export const getCountriesWithoutPlus = (numberOfCountries: number) => {
+    return c('VPN Plan Feature').ngettext(
+        msgid`${numberOfCountries} country`,
+        `${numberOfCountries} countries`,
+        numberOfCountries
+    );
+};
+
+export const getAutoSelectFromCountries = (numberOfCountries: number) => {
+    return c('VPN Plan Feature').ngettext(
+        msgid`Auto-selects from ${numberOfCountries} country`,
+        `Auto-selects from ${numberOfCountries} countries`,
+        numberOfCountries
+    );
+};
+
 export const getServersIn = (numberOfServers: string, numberOfCountries: number) => {
     // translator: numberOfServers is a string that looks like `1300+ servers`, It has been pluralized earlier.
     return c('VPN Plan Feature').ngettext(
@@ -20,6 +36,10 @@ export const getServersIn = (numberOfServers: string, numberOfCountries: number)
 
 export const getVpnConnections = (n = 0) => {
     return c('VPN Plan Feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n);
+};
+
+export const getVpnDevices = (n = 0) => {
+    return c('VPN Plan Feature').ngettext(msgid`${n} device`, `${n} devices`, n);
 };
 
 export const getVpnServers = (n = 0) => {

@@ -38,13 +38,14 @@ import { recoveryIds } from './recoveryIds';
 export const getAccountAppRoutes = ({
     app,
     user,
+    isSessionRecoveryAvailable,
     subscription,
     isDataRecoveryAvailable,
-    isSessionRecoveryAvailable,
     isReferralProgramEnabled,
     recoveryNotification,
     organization,
     isBreachesAccountDashboardEnabled,
+    showVPNDashboard,
     showThemeSelection,
     assistantKillSwitch,
     isUserGroupsMembershipFeatureEnabled,
@@ -61,6 +62,7 @@ export const getAccountAppRoutes = ({
     recoveryNotification?: ThemeColor;
     organization?: OrganizationWithSettings;
     isBreachesAccountDashboardEnabled: boolean;
+    showVPNDashboard: boolean;
     showThemeSelection: boolean;
     assistantKillSwitch: boolean;
     isUserGroupsMembershipFeatureEnabled: boolean;
@@ -104,11 +106,129 @@ export const getAccountAppRoutes = ({
         available: true,
         header: c('Settings section title').t`Account`,
         routes: {
+            dashboardV2: <SectionConfig>{
+                text: c('Title').t`Home`,
+                noTitle: true,
+                to: '/dashboardV2',
+                icon: 'house',
+                available: showVPNDashboard && (isFree || canPay || !isMember || (isPaid && canPay)),
+                subsections: [
+                    {
+                        text: c('Title').t`Your plan`,
+                        invisibleTitle: true,
+                        id: 'YourPlanV2',
+                    },
+                    {
+                        text: c('Title').t`Upgrade your privacy`,
+                        invisibleTitle: true,
+                        id: 'YourPlanUpsellsSectionV2',
+                        available: canPay,
+                    },
+                    {
+                        text: c('Title').t`Downloads`,
+                        invisibleTitle: true,
+                        id: 'VpnDownloadAndInfoSection',
+                    },
+                    {
+                        text: c('Title').t`Also in your plan`,
+                        invisibleTitle: true,
+                        id: 'VpnAlsoInYourPlanSection',
+                    },
+                    {
+                        text: c('Title').t`Deep dive into VPN blog posts`,
+                        invisibleTitle: true,
+                        id: 'VpnBlogSection',
+                    },
+                ],
+            },
+            subscription: <SectionConfig>{
+                text: c('Title').t`Subscription`,
+                noTitle: true,
+                to: '/subscription',
+                icon: 'credit-card',
+                available: showVPNDashboard && (isFree || canPay || !isMember || (isPaid && canPay)),
+                subsections: [
+                    {
+                        text: c('Title').t`Your plan`,
+                        invisibleTitle: true,
+                        id: 'YourPlanV2',
+                    },
+                    {
+                        id: 'assistant-toggle',
+                        available: !assistantKillSwitch,
+                        variant: 'card',
+                    },
+                    {
+                        text: c('Title').t`Your subscriptions`,
+                        id: 'your-subscriptions',
+                        available: isPaid && canPay,
+                        variant: 'card',
+                    },
+                    {
+                        text: c('Title').t`Payment methods`,
+                        id: 'payment-methods',
+                        available: canPay,
+                        variant: 'card',
+                    },
+                    {
+                        text: c('Title').t`Credits`,
+                        id: 'credits',
+                        available: canPay,
+                        variant: 'card',
+                    },
+                    {
+                        text: c('Title').t`Gift code`,
+                        id: 'gift-code',
+                        available: canPay,
+                        variant: 'card',
+                    },
+                    {
+                        text: c('Title').t`Invoices`,
+                        id: 'invoices',
+                        available: canPay,
+                        variant: 'card',
+                    },
+                    {
+                        text: c('Title').t`Notifications`,
+                        id: 'email-subscription',
+                        available: !isMember,
+                        variant: 'card',
+                    },
+                    {
+                        text: c('Title').t`Cancel subscription`,
+                        id: 'cancel-subscription',
+                        available:
+                            isPaid &&
+                            canPay &&
+                            cancellablePlan &&
+                            subscription?.Renew === Renew.Enabled &&
+                            !cancellableOnlyViaSupport,
+                        variant: 'card',
+                    },
+                    {
+                        text: c('Title').t`Cancel subscription`,
+                        id: 'cancel-via-support',
+                        available: isPaid && canPay && cancellableOnlyViaSupport,
+                        variant: 'card',
+                    },
+                    {
+                        text: c('Title').t`Cancel subscription`,
+                        id: 'downgrade-account',
+                        available:
+                            isPaid &&
+                            canPay &&
+                            !cancellablePlan &&
+                            !hasExternalMemberCapableB2BPlan &&
+                            !cancellableOnlyViaSupport,
+                        variant: 'card',
+                    },
+                ],
+            },
             dashboard: <SectionConfig>{
                 text: c('Title').t`Dashboard`,
                 to: '/dashboard',
                 icon: 'squares-in-square',
-                available: isFree || canPay || !isMember || (isPaid && canPay),
+                available: !showVPNDashboard && (isFree || canPay || !isMember || (isPaid && canPay)),
                 subsections: [
                     // do not show Your Plan section for Pass users
                     {

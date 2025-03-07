@@ -408,6 +408,10 @@ export const getHasInboxB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
 };
 
+export const hasB2BPlan = (subscription: MaybeFreeSubscription) => {
+    return hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription) || getHasDriveB2BPlan(subscription) || getHasPassB2BPlan(subscription) || getHasVpnB2BPlan(subscription);
+}
+
 export const getPrimaryPlan = (subscription: Subscription | undefined) => {
     if (!subscription) {
         return;

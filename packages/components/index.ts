@@ -773,6 +773,8 @@ export type {
 } from './containers/payments/subscription/SubscriptionModalProvider';
 export { default as UpgradeVpnSection } from './containers/payments/subscription/UpgradeVpnSection';
 export { default as YourPlanSection } from './containers/payments/subscription/YourPlanSection';
+export { default as YourPlanSectionV2 } from './containers/payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
+export { default as YourPlanUpsellsSectionV2 } from './containers/payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
 export { default as YourStorageSection } from './containers/payments/subscription/YourStorageSection';
 export { default as SubscriptionsSection } from './containers/payments/SubscriptionsSection';
 export { default as CrashReportsToggle } from './containers/privacy/CrashReportsToggle';
@@ -831,6 +833,11 @@ export { default as GatewaysSection } from './containers/vpn/gateways/GatewaysSe
 export { default as OpenVPNConfigurationSection } from './containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
 export { default as OpenVPNCredentialsSection } from './containers/vpn/OpenVPNCredentialsSection';
 export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNClientsSection/ProtonVPNClientsSection';
+export { default as VpnDownloadSection } from './containers/vpn/VpnDownloadSection/VpnDownloadSection';
+export { default as VpnBlogSection } from './containers/vpn/VpnBlogSection/VpnBlogSection';
+export { default as VpnGetMoreSection } from './containers/vpn/VpnGetMoreSection/VpnGetMoreSection';
+export { default as VpnDownloadAndInfoSection } from './containers/vpn/VpnDownloadAndInfoSection/VpnDownloadAndInfoSection';
+export { default as VpnAlsoInYourPlanSection } from './containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
 export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as SharedServersSection } from './containers/vpn/sharedServers/SharedServersSection';
