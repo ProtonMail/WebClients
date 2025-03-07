@@ -30,6 +30,7 @@ interface Arguments {
     isSessionRecoveryAvailable: boolean;
     recoveryNotification?: ThemeColor;
     isBreachesAccountDashboardEnabled: boolean;
+    showVPNDashboard: boolean;
     isUserGroupsFeatureEnabled: boolean;
     showThemeSelection: boolean;
     assistantKillSwitch: boolean;
@@ -59,6 +60,7 @@ export const getRoutes = ({
     isReferralProgramEnabled,
     recoveryNotification,
     isBreachesAccountDashboardEnabled,
+    showVPNDashboard,
     isUserGroupsFeatureEnabled,
     showThemeSelection,
     assistantKillSwitch,
@@ -88,6 +90,7 @@ export const getRoutes = ({
             recoveryNotification,
             organization,
             isBreachesAccountDashboardEnabled,
+            showVPNDashboard,
             showThemeSelection,
             assistantKillSwitch,
             isUserGroupsMembershipFeatureEnabled,

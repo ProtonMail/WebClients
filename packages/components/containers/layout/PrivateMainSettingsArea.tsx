@@ -20,6 +20,9 @@ interface PrivateMainSettingsAreaBaseProps {
     noTitle?: boolean;
     description?: ReactNode;
     children?: ReactNode;
+    wrapperClass?: string;
+    mainAreaClass?: string;
+    style?: React.CSSProperties;
 }
 
 export const PrivateMainSettingsAreaBase = ({
@@ -28,6 +31,9 @@ export const PrivateMainSettingsAreaBase = ({
     noTitle,
     description,
     children,
+    wrapperClass,
+    mainAreaClass,
+    style,
 }: PrivateMainSettingsAreaBaseProps) => {
     const location = useLocation();
 
@@ -104,8 +110,8 @@ export const PrivateMainSettingsAreaBase = ({
     });
 
     return (
-        <PrivateMainArea ref={mainAreaRef}>
-            <div className="container-section-sticky">
+        <PrivateMainArea ref={mainAreaRef} className={mainAreaClass}>
+            <div className={wrapperClass} style={style}>
                 {breadcrumbs && <div className="mt-6 md:mt-0">{breadcrumbs}</div>}
                 {!noTitle && (
                     <SettingsPageTitle className={clsx('mt-14', description ? 'mb-5' : 'mb-14')}>
@@ -122,10 +128,19 @@ export const PrivateMainSettingsAreaBase = ({
 interface PrivateMainSettingsAreaProps {
     children: ReactNode;
     config: SettingsAreaConfig;
+    wrapperClass?: string;
+    mainAreaClass?: string;
+    style?: React.CSSProperties;
 }
 
-const PrivateMainSettingsArea = ({ children, config }: PrivateMainSettingsAreaProps) => {
-    const { text, title, description, subsections } = config;
+const PrivateMainSettingsArea = ({
+    children,
+    config,
+    wrapperClass = 'container-section-sticky',
+    mainAreaClass,
+    style,
+}: PrivateMainSettingsAreaProps) => {
+    const { text, title, noTitle, description, subsections } = config;
 
     const wrappedSections = Children.toArray(children).map((child, i) => {
         if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
@@ -144,7 +159,9 @@ const PrivateMainSettingsArea = ({ children, config }: PrivateMainSettingsAreaPr
                 key={subsectionConfig.id}
                 id={subsectionConfig.id}
                 title={subsectionConfig.text}
+                invisibleTitle={subsectionConfig.invisibleTitle}
                 beta={subsectionConfig.beta}
+                variant={subsectionConfig.variant}
                 className="container-section-sticky-section"
             >
                 {child}
@@ -153,7 +170,14 @@ const PrivateMainSettingsArea = ({ children, config }: PrivateMainSettingsAreaPr
     });
 
     return (
-        <PrivateMainSettingsAreaBase title={title || text} description={description}>
+        <PrivateMainSettingsAreaBase
+            title={title || text}
+            description={description}
+            wrapperClass={wrapperClass}
+            mainAreaClass={mainAreaClass}
+            style={style}
+            noTitle={noTitle}
+        >
             {wrappedSections}
         </PrivateMainSettingsAreaBase>
     );

@@ -118,7 +118,7 @@ export const Tabs = ({
 
     return (
         <div className={clsx(['tabs', 'tabs--' + variant, className])}>
-            <div className={clsx([navContainerClassName, stickyTabs && 'sticky top-0 bg-norm'])}>
+            <div className={clsx(['tabs-nav', navContainerClassName, stickyTabs && 'sticky top-0 bg-norm'])}>
                 <nav
                     className={clsx([
                         'tabs-container',

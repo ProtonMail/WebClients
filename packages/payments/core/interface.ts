@@ -253,7 +253,10 @@ export type PaymentMethodFlows =
     | 'credit'
     | 'subscription'
     | 'add-card'
-    | 'add-paypal';
+    | 'add-paypal'
+    | 'dashboard-upgrade-control'
+    | 'dashboard-upgrade-A'
+    | 'dashboard-upgrade-B';
 
 export type V5Payments = {
     v: 5;

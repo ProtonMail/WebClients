@@ -2,7 +2,13 @@
 @import '~@proton/styles/scss/specifics/placeholder-loading';
 
 .bg-promotion {
-	background: linear-gradient(85.16deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%);
+	&-gradient-horizontal {
+		background: linear-gradient(85.16deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%);
+	}
+
+	&-gradient-vertical {
+		background: linear-gradient(0deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%);
+	}
 
 	&-loading {
 		&::before {

@@ -1,0 +1,57 @@
+@import '~@proton/styles/scss/lib';
+
+.DashboardGrid {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-6);
+
+	@include media('>large') {
+		display: grid;
+		gap: var(--space-4) var(--space-6);
+		grid-template-columns: auto;
+	}
+
+	&-columns-1 {
+		grid-template: auto / 1fr;
+		grid-template-areas:
+			'header-left'
+			'content-left'
+			'footer-left';
+	}
+
+	&-columns-2 {
+		grid-template: auto auto / 1fr 1fr;
+		grid-template-areas:
+			'header-left header-right'
+			'content-left content-right'
+			'footer-left footer-right';
+	}
+
+	&-columns-3 {
+		@include media('>large') {
+			grid-template: auto auto / 1fr 1fr 1fr;
+			grid-template-areas:
+				'header-left header-center header-right'
+				'content-left content-center content-right'
+				'footer-left footer-center footer-right';
+		}
+	}
+
+	// Span-all classes
+	$sections: (header, content, footer);
+	@each $section in $sections {
+		&-Section-#{$section}-span-all {
+			grid-area: #{$section}-left / #{$section}-left / #{$section}-left / #{$section}-right;
+		}
+	}
+
+	// Individual section positions
+	$positions: (left, center, right);
+	@each $section in $sections {
+		@each $position in $positions {
+			&-Section-#{$section}-#{$position} {
+				grid-area: #{$section}-#{$position};
+			}
+		}
+	}
+}

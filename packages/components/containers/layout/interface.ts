@@ -5,15 +5,18 @@ import { type IconName } from '@proton/components/components/icon/Icon';
 
 export interface SubSectionConfig {
     text?: string;
+    invisibleTitle?: boolean;
     id: string;
     hide?: boolean;
     available?: boolean;
     beta?: boolean;
+    variant?: 'default' | 'card';
 }
 
 export interface SettingsAreaConfig {
     text: string;
     title?: string;
+    noTitle?: boolean;
     description?: ReactNode;
     subsections?: SubSectionConfig[];
 }
