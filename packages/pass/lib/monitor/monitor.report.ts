@@ -1,4 +1,4 @@
-import { selectDuplicatePasswords, selectExcludedItems, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectOwnDuplicatePasswords, selectOwnExcludedItems, selectPassPlan } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import { B2BEventName } from '@proton/pass/types/data/b2b';
@@ -22,10 +22,10 @@ export const createMonitorReport = debounce(
         try {
             if (!isBusinessPlan(selectPassPlan(state))) return;
 
-            const reusedCount = selectDuplicatePasswords(state).length;
-            const excludedCount = selectExcludedItems(state).length;
-            const missing2FAs = await monitor.checkMissing2FAs();
-            const weakPasswords = await monitor.checkWeakPasswords();
+            const reusedCount = selectOwnDuplicatePasswords(state).length;
+            const excludedCount = selectOwnExcludedItems(state).length;
+            const missing2FAs = await monitor.checkMissing2FAs({ ownedOnly: true });
+            const weakPasswords = await monitor.checkWeakPasswords({ ownedOnly: true });
 
             await dispatch(
                 {
