@@ -261,7 +261,7 @@ export const useApplyLabelsToSelection = () => {
                 });
             }
         },
-        []
+        [isES]
     );
 
     return applyLabels;
