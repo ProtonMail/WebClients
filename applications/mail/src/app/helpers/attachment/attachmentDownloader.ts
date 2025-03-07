@@ -7,9 +7,9 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import type { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
-import { getAndVerify } from './attachmentLoader';
-import { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { getAndVerifyAttachment } from './attachmentLoader';
 
 export interface Download {
     attachment: Attachment;
@@ -31,7 +31,7 @@ export const formatDownload = async (
     messageFlags?: number
 ): Promise<Download> => {
     try {
-        const { data, verificationStatus } = await getAndVerify(
+        const { data, verificationStatus } = await getAndVerifyAttachment(
             attachment,
             verification,
             messageKeys,
