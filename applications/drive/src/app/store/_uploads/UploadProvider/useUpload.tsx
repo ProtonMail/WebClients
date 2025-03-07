@@ -312,6 +312,8 @@ function useBaseUpload(
                         );
                     } else if (isTransferSkipError(error)) {
                         queue.updateWithData(nextFileUpload.id, TransferState.Skipped, { error });
+                        // TODO: onFileSkipped callback
+                        // nextFileUpload.callbacks.onFileSkipped?.();
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         sendErrorReport(error);
