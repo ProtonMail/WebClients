@@ -38,7 +38,7 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl, getSupportContactURL } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
+import { getIsSMPTEligible } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -59,7 +59,7 @@ const SMTPSubmissionSection = () => {
     const addressMap = new Map(addresses.map((address) => [address.ID, address.Email]));
     const hasCustomAddress = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
     const [organization, loadingOrganization] = useOrganization();
-    const isB2BOrganization = isOrganizationB2B(organization);
+    const isSMPTEligible = getIsSMPTEligible(organization);
     const [tokenIDToRemove, setTokenIDToRemove] = useState('');
     const [loadingTokens, withLoadingTokens] = useLoading();
     const [loadingTokenEligible, withloadingTokenEligible] = useLoading();
@@ -111,7 +111,7 @@ const SMTPSubmissionSection = () => {
     const getSmtpTokenEligible = async () => {
         let isEligible = submissionTokenAvailable ?? false; // if null then false
         // if not eligible and b2b then check
-        if (!isEligible && isB2BOrganization) {
+        if (!isEligible && isSMPTEligible) {
             isEligible = (await api({ ...isTokenEligible(), silence: true })).IsEligible;
         }
         setTokenEligible(isEligible);
@@ -155,7 +155,7 @@ const SMTPSubmissionSection = () => {
         const createTicket = (
             <Href key="ticket" href={getSupportContactURL(params)}>{c('Link').t`create a ticket`}</Href>
         );
-        if (isB2BOrganization) {
+        if (isSMPTEligible) {
             return (
                 <SettingsSection>
                     <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>

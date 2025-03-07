@@ -18,6 +18,7 @@ import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import type {
     ApiEnvironmentConfig,
     CachedOrganizationKey,
+    Plan,
     ProtonConfig,
     UserModel,
 } from '@proton/shared/lib/interfaces';
@@ -143,15 +144,19 @@ export const withPaymentContext =
             );
         };
 
+type ReduxModelOverrides = Partial<{
+    user: UserModel;
+    plans: Plan[];
+}>;
+
 export type WithReduxStoreProps = {
-    user?: UserModel;
     preloadedState?: Partial<RootState>;
     store?: ReturnType<typeof setupStore>;
-};
+} & ReduxModelOverrides;
 
 export const getPreloadedState = (
     stateOverrides: Partial<RootState> = {},
-    modelOverrides: Partial<{ user: UserModel }> = {}
+    modelOverrides: ReduxModelOverrides = {}
 ) => ({
     user: getModelState(modelOverrides.user ?? buildUser()),
     addresses: getModelState([]),
@@ -164,7 +169,7 @@ export const getPreloadedState = (
     organization: getOrganizationState(),
     organizationKey: getModelState({} as CachedOrganizationKey),
     userInvitations: getModelState([]),
-    plans: getModelState({ plans: [], freePlan: FREE_PLAN }),
+    plans: getModelState({ plans: modelOverrides.plans ?? [], freePlan: FREE_PLAN }),
     features: {},
     importerConfig: getModelState({} as ApiEnvironmentConfig),
     vpnServersCount: getModelState(mockDefaultVPNServersCountData),

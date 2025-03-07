@@ -27,6 +27,7 @@ export interface OpenCallbackProps
         | 'disableCycleSelector'
         | 'defaultSelectedProductPlans'
         | 'metrics'
+        | 'flow'
         | 'upsellRef'
         | 'maximumCycle'
         | 'minimumCycle'

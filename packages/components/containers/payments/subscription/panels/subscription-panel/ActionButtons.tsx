@@ -1,7 +1,8 @@
-import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     getHasPassB2BPlan,
@@ -11,13 +12,23 @@ import {
     hasVPNPassBundle,
 } from '@proton/shared/lib/helpers/subscription';
 import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 
-export const ActionButtons = ({ user, subscription }: { user: UserModel; subscription?: Subscription }) => {
+export const ActionButtons = ({
+    user,
+    subscription,
+    app,
+}: {
+    user: UserModel;
+    subscription?: Subscription;
+    app: APP_NAMES;
+}) => {
     const scheduledDowncycling = useFlag('ScheduledDowncycling');
     const [openSubscriptionModal] = useSubscriptionModal();
+    const paymentFlow = useDashboardPaymentFlow(app);
 
     /**
      * Since all the components here are used in the same context, we can use the same metrics source for all of them.
@@ -31,12 +42,14 @@ export const ActionButtons = ({ user, subscription }: { user: UserModel; subscri
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             metrics,
+            flow: paymentFlow,
         });
     };
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics,
+            flow: paymentFlow,
         });
     };
     const handleEditPayment = () =>
@@ -44,6 +57,7 @@ export const ActionButtons = ({ user, subscription }: { user: UserModel; subscri
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             metrics,
+            flow: paymentFlow,
         });
 
     const hasPassB2B = getHasPassB2BPlan(subscription);

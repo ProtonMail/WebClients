@@ -40,6 +40,22 @@ export const isOrganizationB2B = (organization?: Organization) => {
         PLANS.MAIL_PRO,
         PLANS.MAIL_BUSINESS,
         PLANS.DRIVE_PRO,
+        PLANS.DRIVE_BUSINESS,
+        PLANS.PASS_PRO,
+        PLANS.PASS_BUSINESS,
+        PLANS.VPN_PRO,
+        PLANS.VPN_BUSINESS,
+        PLANS.BUNDLE_PRO,
+        PLANS.BUNDLE_PRO_2024,
+        PLANS.ENTERPRISE,
+    ].includes(organization?.PlanName as PLANS);
+};
+
+export const getIsSMPTEligible = (organization?: Organization) => {
+    return [
+        PLANS.MAIL_PRO,
+        PLANS.MAIL_BUSINESS,
+        PLANS.DRIVE_PRO,
         PLANS.BUNDLE_PRO,
         PLANS.BUNDLE_PRO_2024,
         PLANS.ENTERPRISE,

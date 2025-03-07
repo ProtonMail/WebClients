@@ -27,7 +27,18 @@ $dummy-map: ();
 
 		// Framework
 		@each $sizingname,
-			$size in ('0': 0, 'px': '1px', '2': 8, '4': 16, '6': 20, 'full': 100%, 'auto': 'auto', 'none': 'none')
+			$size
+				in (
+					'0': 0,
+					'px': '1px',
+					'2': 8,
+					'4': 16,
+					'6': 20,
+					'full': 100%,
+					'auto': 'auto',
+					'fit-content': 'fit-content',
+					'none': 'none'
+				)
 		{
 			@if not(($sizingname == 'auto' and $boundary != '') or ($sizingname == 'none' and $boundary == '')) {
 				$classname: dash-join($boundary, $direction, $sizingname);

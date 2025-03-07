@@ -1,4 +1,5 @@
-import { CYCLE, PLANS, type PlanIDs } from '@proton/payments';
+import { CYCLE, PLANS, type PlanIDs, type SelectedPlan } from '@proton/payments';
+import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { External, type Plan, Renew, type Subscription } from '@proton/shared/lib/interfaces';
 
 import { getTestPlans } from '../data';
@@ -35,4 +36,40 @@ export const buildSubscription = (
         External: External.Default,
         ...value,
     };
+};
+
+export const smartBuildSubscription = (selectedPlan: SelectedPlan, override?: Partial<Subscription>) => {
+    const plans = getTestPlans(selectedPlan.currency);
+
+    const plansAndQuantities = Object.entries(selectedPlan.planIDs).map(([planName, quantity]) => ({
+        plan: plans.find((plan) => plan.Name === planName) as Plan,
+        quantity,
+    }));
+
+    const totalPrice = plansAndQuantities.reduce((acc, { plan, quantity }) => {
+        if (!plan) {
+            return acc;
+        }
+
+        return acc + (plan.Pricing[selectedPlan.cycle] ?? 0) * quantity;
+    }, 0);
+
+    const PeriodStart = Date.now() / 1000;
+    const PeriodEnd = addMonths(new Date(), selectedPlan.cycle).getTime() / 1000;
+    const CreateTime = PeriodStart;
+
+    return buildSubscription({
+        Amount: totalPrice,
+        RenewAmount: totalPrice,
+        Currency: selectedPlan.currency,
+        Cycle: selectedPlan.cycle,
+        Plans: plansAndQuantities.map(({ plan, quantity }) => ({
+            ...plan,
+            Quantity: quantity,
+        })),
+        PeriodStart,
+        PeriodEnd,
+        CreateTime,
+        ...override,
+    });
 };
