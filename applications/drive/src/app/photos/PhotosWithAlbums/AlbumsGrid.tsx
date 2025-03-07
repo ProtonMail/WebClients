@@ -155,7 +155,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
     }, [data, dimensions, scrollPosition, onItemClick, onItemRender, onItemRenderLoadedLink, onItemShare]);
 
     return (
-        <div className="mt-4 pt-4 px-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
+        <div className="mt-6 pt-4 px-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
