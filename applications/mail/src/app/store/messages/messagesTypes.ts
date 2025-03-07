@@ -364,7 +364,7 @@ export interface VerificationParams {
     ID: string;
     verificationPreferences?: VerificationPreferences;
     verification?: {
-        verified: VERIFICATION_STATUS;
+        verificationStatus: VERIFICATION_STATUS;
         signature?: Uint8Array;
         verificationErrors?: Error[];
     };

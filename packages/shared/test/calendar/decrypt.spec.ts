@@ -245,12 +245,12 @@ Y3X/iRfq/cJoDMJYtiKGdUFF6yH96xE5vSs=
          * and verifyMessage is going to check the signature type and normalize the EOLs in the text before verifying.
          * So no fallback verification is needed in this case.
          */
-        const { verified: verifiedBinarySigned } = await CryptoProxy.verifyMessage({
+        const { verificationStatus: verificationStatusBinarySigned } = await CryptoProxy.verifyMessage({
             binaryData: stringToUtf8Array(signedCard),
             verificationKeys: verifyingKey,
             armoredSignature: signatureSignedCard,
         });
-        expect(verifiedBinarySigned).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationStatusBinarySigned).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
 
         const encryptedAndSignedCard =
             '0sC0AVhc/TD0qVsq3nUgOiPnU4BGfbSI7U2RzjnxjUhokCEuq+Sn+XQKdR+F71keN6zUvgImIImJK8lngOiTqCW810VmLPwokvH3f7CiPsYT3v99HEgoskhv38nsxDmI1hQFAzEqanGSWkRWotwsW8gPdgK7v5Ps8Eb9qmhjnGoT4WVVahexiA5S3wHvmZczENJA3Mas419P+ff6XVt7Cx4lr24FSphjl/7U90eAePFbTEkjMKtMn2km4a2CP3nI1seaL9pWOPCca4Inn221nxFAugmvILxSn01ZQsM5OX38ZcAyeAsIi+UGDxHKqg9BBMtsLL1PVq79ayf9kQcXuZACrlVHcQ4rkz++1pRx8UbNBdN+B4OJPVNM2hRDSSo/8nkh8ztwcop4BEz+bmeupk6/YJnUbo+cO9Df4fi1DytjSQIaC7bQPuDBSCRtKYCfxlHyrhDoPS+T8dZmYfOUru1X5WCSMScXkreSTviF8VkBePJqRmrE';
@@ -288,13 +288,13 @@ uS98JFYRm7dxVWDkdLoOtCk6IC5vuDvapZ4=
         expect(verificationStatusEncryptedAndSignedCard).toEqual(EVENT_VERIFICATION_STATUS.SUCCESSFUL);
 
         // this legacy signature is verified in binary as expected since legacy Web signed encrypted cards in binary already. No need of fallback
-        const { verified: verifiedBinaryEncrypted } = await CryptoProxy.decryptMessage({
+        const { verificationStatus: verificationStatusBinaryEncrypted } = await CryptoProxy.decryptMessage({
             binaryMessage: base64StringToUint8Array(encryptedAndSignedCard),
             verificationKeys: verifyingKey,
             armoredSignature: signatureEncryptedAndSignedCard,
             sessionKeys: sessionKey,
         });
-        expect(verifiedBinaryEncrypted).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationStatusBinaryEncrypted).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
     });
 
     it('should verify RFC-compliant events with trailing spaces signed as text (legacy Android)', async () => {
@@ -327,13 +327,13 @@ kUoztkcHA+E9tez5X7KdhUMMHPr7gnAlf10XGVGT/s8DaJ96lg0=
         expect(verificationStatusSignedCard).toEqual(EVENT_VERIFICATION_STATUS.SUCCESSFUL);
 
         // this legacy signature is verified in binary without need of fallback
-        const { verified: verifiedBinarySigned } = await CryptoProxy.verifyMessage({
+        const { verificationStatus: verificationStatusBinarySigned } = await CryptoProxy.verifyMessage({
             binaryData: stringToUtf8Array(signedCard),
             verificationKeys: verifyingKey,
             armoredSignature: signatureSignedCard,
         });
-        expect(verifiedBinarySigned).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
-        expect(getNeedsLegacyVerification(verifiedBinarySigned, signatureSignedCard)).toEqual(false);
+        expect(verificationStatusBinarySigned).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(getNeedsLegacyVerification(verificationStatusBinarySigned, signatureSignedCard)).toEqual(false);
 
         const encryptedAndSignedCard =
             '0sC2AePHfQWired3Wj7qHXXSU/x4K1Det1Wtd57YiGK+H8Ed6t5NSPvjx9AOGHLRUuv93KPj1e2G/aZyPGzEEmT6HkXxR9q9PxBvwhWwu0mev5buiMpLqWPVC5ryNrnyLjqJjB+NwcUAs43uZsuYvR4xGNEVcu9UvWUKOoiYt5CWnOFnXnOZx//5/ZG+Xd8e2zwJOriJfu5eDkosIwFvr9hmI3mQahNGb64yqd7KQsIHJv29RhG5v7DluOK3rQMxdKZ3RxGpbbjIOjMLdB7Vuiku7snwmCHHVpaXKmNZOMv6VFdsHIKwtBf712++7o6tMzyGgBGc2rNgdGPCXEzSc892ZDxcrhX3JjcZhUOMGsCs7svr7RtETOXZXQFUnFWD58CpiGct5c0LN/5vcNYrMULqjGShtDHYTK3u4mDU6BFMrtT7gTHqYTEW7gpwNeM+d7GDMt2kHfTLgZQxOpRRsdgq3+2Bh4yGd8OskmwP81Y6p9twWDOZkrc=';
@@ -372,14 +372,14 @@ p6UwLlBEdbtqT8YixITK1QU+Owmk/GmWADOyVzN/hXKg0zJVTc0=
         expect(verificationStatusEncryptedAndSignedCard).toEqual(EVENT_VERIFICATION_STATUS.SUCCESSFUL);
 
         // this legacy signature is NOT verified in binary. It needs the fallback
-        const { data: decryptedData, verified: verifiedBinaryEncrypted } = await CryptoProxy.decryptMessage({
+        const { data: decryptedData, verificationStatus: verificationStatusBinaryEncrypted } = await CryptoProxy.decryptMessage({
             binaryMessage: base64StringToUint8Array(encryptedAndSignedCard),
             format: 'binary',
             verificationKeys: verifyingKey,
             armoredSignature: signatureEncryptedAndSignedCard,
             sessionKeys: sessionKey,
         });
-        expect(verifiedBinaryEncrypted).toEqual(VERIFICATION_STATUS.SIGNED_AND_INVALID);
-        expect(getNeedsLegacyVerification(verifiedBinaryEncrypted, utf8ArrayToString(decryptedData))).toEqual(true);
+        expect(verificationStatusBinaryEncrypted).toEqual(VERIFICATION_STATUS.SIGNED_AND_INVALID);
+        expect(getNeedsLegacyVerification(verificationStatusBinaryEncrypted, utf8ArrayToString(decryptedData))).toEqual(true);
     });
 });

@@ -31,12 +31,12 @@ const getActionTitle = (action: AttachmentAction, attachmentName: string) => {
 
 // Reference: Angular/src/templates/attachments/attachmentElement.tpl.html
 
-const getSenderVerificationString = (verified?: VERIFICATION_STATUS) => {
-    if (verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+const getSenderVerificationString = (verificationStatus?: VERIFICATION_STATUS) => {
+    if (verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
         const str = c('Attachment signature verification').t`Sender verification failed`;
         return ` - ${str}`;
     }
-    if (verified === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const str = c('Attachment signature verification').t`Sender verification passed`;
         return ` - ${str}`;
     }

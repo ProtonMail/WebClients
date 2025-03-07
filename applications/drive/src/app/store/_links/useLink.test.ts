@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { VERIFICATION_STATUS } from '@proton/crypto';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
@@ -81,14 +82,14 @@ describe('useLink', () => {
 
         // @ts-ignore
         decryptSigned.mockImplementation(({ armoredMessage }) =>
-            Promise.resolve({ data: `dec:${armoredMessage}`, verified: 1 })
+            Promise.resolve({ data: `dec:${armoredMessage}`, verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID })
         );
         // @ts-ignore
         decryptPassphrase.mockImplementation(({ armoredPassphrase }) =>
             Promise.resolve({
                 decryptedPassphrase: `decPass:${armoredPassphrase}`,
                 sessionKey: `sessionKey:${armoredPassphrase}`,
-                verified: 1,
+                verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
             })
         );
         mockGetSharePrivateKey.mockImplementation((_, shareId) => `privateKey:${shareId}`);
@@ -273,7 +274,7 @@ describe('useLink', () => {
         const downloadCallbackMock = jest.fn().mockReturnValue(
             Promise.resolve({
                 contents: Promise.resolve(undefined),
-                verifiedPromise: Promise.resolve(1),
+                verificationStatusPromise: Promise.resolve(VERIFICATION_STATUS.SIGNED_AND_VALID),
             })
         );
         mockLinksState.getLink.mockReturnValue({
@@ -306,7 +307,7 @@ describe('useLink', () => {
                 ? Promise.reject('token expired')
                 : Promise.resolve({
                       contents: Promise.resolve(undefined),
-                      verifiedPromise: Promise.resolve(1),
+                      verificationStatusPromise: Promise.resolve(VERIFICATION_STATUS.SIGNED_AND_VALID),
                   })
         );
         mockLinksState.getLink.mockReturnValue({
@@ -338,7 +339,7 @@ describe('useLink', () => {
         const downloadCallbackMock = jest.fn().mockReturnValue(
             Promise.resolve({
                 contents: Promise.resolve(undefined),
-                verifiedPromise: Promise.resolve(1),
+                verificationStatusPromise: Promise.resolve(VERIFICATION_STATUS.SIGNED_AND_VALID),
             })
         );
         mockLinksState.getLink.mockReturnValue({
@@ -385,7 +386,7 @@ describe('useLink', () => {
         const downloadCallbackMock = jest.fn().mockReturnValue(
             Promise.resolve({
                 contents: Promise.resolve(undefined),
-                verifiedPromise: Promise.resolve(2),
+                verificationStatusPromise: Promise.resolve(VERIFICATION_STATUS.SIGNED_AND_INVALID),
             })
         );
 
@@ -431,7 +432,7 @@ describe('useLink', () => {
                 Promise.resolve({
                     decryptedPassphrase: `decPass:${armoredPassphrase}`,
                     sessionKey: `sessionKey:${armoredPassphrase}`,
-                    verified: 2,
+                    verificationStatus: VERIFICATION_STATUS.SIGNED_AND_INVALID,
                 })
             );
             mockGetShare.mockImplementation((_, shareId) =>
@@ -466,7 +467,7 @@ describe('useLink', () => {
                 Promise.resolve({
                     decryptedPassphrase: `decPass:${armoredPassphrase}`,
                     sessionKey: `sessionKey:${armoredPassphrase}`,
-                    verified: 2,
+                    verificationStatus: VERIFICATION_STATUS.SIGNED_AND_INVALID,
                 })
             );
             mockGetShare.mockImplementation((_, shareId) =>
@@ -488,7 +489,10 @@ describe('useLink', () => {
             decryptSigned.mockReset();
             // @ts-ignore
             decryptSigned.mockImplementation(({ armoredMessage }) =>
-                Promise.resolve({ data: `dec:${armoredMessage}`, verified: 2 })
+                Promise.resolve({
+                    data: `dec:${armoredMessage}`,
+                    verificationStatus: VERIFICATION_STATUS.SIGNED_AND_INVALID,
+                })
             );
             mockGetVerificationKey.mockReturnValue([]);
             mockGetShare.mockImplementation((_, shareId) =>
@@ -517,7 +521,10 @@ describe('useLink', () => {
             decryptSigned.mockReset();
             // @ts-ignore
             decryptSigned.mockImplementation(({ armoredMessage }) =>
-                Promise.resolve({ data: `dec:${armoredMessage}`, verified: 2 })
+                Promise.resolve({
+                    data: `dec:${armoredMessage}`,
+                    verificationStatus: VERIFICATION_STATUS.SIGNED_AND_INVALID,
+                })
             );
             mockGetShare.mockImplementation((_, shareId) =>
                 Promise.resolve({

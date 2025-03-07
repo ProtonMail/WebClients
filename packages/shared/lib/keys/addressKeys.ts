@@ -121,7 +121,7 @@ export const decryptAddressKeyToken = async ({
     publicKeys,
     signatureContext,
 }: DecryptAddressKeyTokenArguments) => {
-    const { data: decryptedToken, verified } = await CryptoProxy.decryptMessage({
+    const { data: decryptedToken, verificationStatus } = await CryptoProxy.decryptMessage({
         armoredMessage: Token,
         armoredSignature: Signature,
         decryptionKeys: privateKeys,
@@ -129,7 +129,7 @@ export const decryptAddressKeyToken = async ({
         signatureContext,
     });
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;
@@ -149,14 +149,14 @@ export const decryptAddressKeyUsingOrgKeyToken = async ({
     organizationKey,
     Signature,
 }: DectyptAddressKeyUsingOrgKeyTokenArguments) => {
-    const { data: decryptedToken, verified } = await CryptoProxy.decryptMessage({
+    const { data: decryptedToken, verificationStatus } = await CryptoProxy.decryptMessage({
         armoredMessage: Token,
         armoredSignature: Signature,
         decryptionKeys: [organizationKey],
         verificationKeys: [organizationKey],
     });
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;

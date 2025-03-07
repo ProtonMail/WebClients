@@ -101,7 +101,7 @@ export default function useShare() {
                     decryptWithLinkPrivateKey ? [linkPrivateKey] : undefined
                 );
 
-                if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                if (result.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                     const options = {
                         plan: userPlan,
                         createTime: share.createTime,

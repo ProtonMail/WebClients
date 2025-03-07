@@ -54,7 +54,7 @@ async function verifyMessageWithFallback<
 
     const { textData, stripTrailingSpaces } = options;
     if (
-        verificationResult.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID &&
+        verificationResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID &&
         stripTrailingSpaces &&
         textData &&
         verificationResult.data !== textData // detect whether some normalisation was applied
@@ -65,7 +65,7 @@ async function verifyMessageWithFallback<
             stripTrailingSpaces: false,
         });
 
-        if (fallbackverificationResult.verified === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        if (fallbackverificationResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
             captureMessage('Fallback verification needed', {
                 level: 'info',
             });
