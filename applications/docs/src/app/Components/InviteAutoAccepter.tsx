@@ -2,13 +2,12 @@ import { useEffect, useRef } from 'react'
 import { type NodeMeta } from '@proton/drive-store'
 import { useDocInvites } from '@proton/drive-store'
 
-export function InviteAutoAccepter({
-  nodeMeta,
-  onResult,
-}: {
+export type InviteAutoAccepterProps = {
   nodeMeta: NodeMeta
   onResult: (result: boolean) => void
-}) {
+}
+
+export function InviteAutoAccepter({ nodeMeta, onResult }: InviteAutoAccepterProps) {
   const { acceptInvite, inviteForNodeMeta, isLoading } = useDocInvites()
   const acceptRequestInProgress = useRef(false)
   const invite = inviteForNodeMeta(nodeMeta)
