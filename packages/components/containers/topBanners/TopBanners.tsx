@@ -31,7 +31,7 @@ const TopBanners = ({ children, app }: Props) => {
             <DesktopNotificationTopBanner />
             <ReferralTopBanner fromApp={app} />
             <PendingInvitationTopBanner />
-            <SubscriptionEndsBanner />
+            <SubscriptionEndsBanner app={app} />
             <SessionRecoveryBanners />
             {children}
         </>

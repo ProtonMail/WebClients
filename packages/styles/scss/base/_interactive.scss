@@ -83,11 +83,13 @@
 .interactive-pseudo {
 	@extend %interactive;
 
+	z-index: 1;
+
 	&::after {
 		content: '';
 		position: absolute;
 		inset: 0;
-		z-index: 1;
+		z-index: -1;
 		border-radius: var(--border-radius-sm);
 		border: 1px solid transparent;
 		pointer-events: none;
@@ -159,6 +161,21 @@
 .interactive-pseudo-protrude {
 	@extend %interactive;
 	@extend .interactive-pseudo;
+
+	&:hover,
+	&:focus,
+	&:focus-visible,
+	&:focus-within,
+	&:active,
+	&.is-active,
+	&.active,
+	&[aria-expanded='true'] {
+		background-color: inherit;
+	}
+
+	&:hover::after {
+		background-color: var(--interaction-default-hover);
+	}
 
 	&::after {
 		inset: -$focus-ring-size;

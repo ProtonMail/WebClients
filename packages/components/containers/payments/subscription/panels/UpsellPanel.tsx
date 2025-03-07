@@ -50,7 +50,10 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
     return (
-        <Panel className={clsx(isRecommended ? 'border-primary border-recommended' : 'border-strong')} title={title}>
+        <Panel
+            className={clsx(isRecommended ? 'border-primary border-recommended' : 'border-strong', 'UpsellPanel')}
+            title={title}
+        >
             {/* `Recommended` label */}
             {isRecommended && (
                 <label className="recommended-label absolute color-invert bg-primary rounded-full px-2 py-1 flex items-center">

@@ -145,6 +145,7 @@ describe('YourPlanSection', () => {
                 metrics: {
                     source: 'upsells',
                 },
+                flow: 'subscription',
             });
         });
     });

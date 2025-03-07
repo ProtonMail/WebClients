@@ -1,0 +1,52 @@
+@use 'sass:map';
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.UpsellMultiBox {
+	&-style {
+		&-promotionGradient {
+			background: linear-gradient(0deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%);
+		}
+	}
+
+	&-gradient-vpn {
+		background: linear-gradient(0deg, transparent 0%, rgba(1 225 183 / 0.15) 84.85%);
+	}
+
+	&-gradient-unlimited {
+		background: linear-gradient(0deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%);
+	}
+
+	&-gradient-unlimited-to-white {
+		background: linear-gradient(0deg, transparent 0%, var(--promotion-background-start) 100%);
+	}
+
+	&-popover {
+		position: fixed;
+		z-index: map.get($z-indexes, 'up');
+		min-inline-size: rem(200);
+		transform: scale(1);
+		animation: 0.15s ease-out both anime-upsell-multibox-popover-in;
+	}
+
+	&-product-cards {
+		background-color: rgb(255 255 255 / 0.5);
+		transition: background-color 0.15s ease-out;
+
+		&:hover {
+			background-color: rgb(255 255 255 / 1);
+		}
+	}
+}
+
+@keyframes anime-upsell-multibox-popover-in {
+	from {
+		transform: translate(0, 2rem) scale(0.75);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate(0, 0) scale(1);
+		opacity: 1;
+	}
+}

@@ -11,7 +11,7 @@ import './PromotionBanner.scss';
 
 interface Props {
     className?: string;
-    rounded?: boolean;
+    rounded?: boolean | 'md' | 'lg' | 'xl';
     icon?: ReactNode;
     description?: ReactNode;
     cta?: ReactNode;
@@ -19,6 +19,7 @@ interface Props {
     hasDismissAction?: boolean;
     contentCentered?: boolean;
     mode?: 'row' | 'banner';
+    gradient?: 'horizontal' | 'vertical';
     onClose?: () => void;
     ['data-testid']?: string;
 }
@@ -29,6 +30,7 @@ export const PromotionBanner = ({
     loading = false,
     contentCentered = true,
     mode = 'row',
+    gradient = 'horizontal',
     description,
     cta,
     icon,
@@ -40,12 +42,29 @@ export const PromotionBanner = ({
         onClose?.();
     };
 
+    const roundedClass = (() => {
+        switch (true) {
+            case rounded === true:
+                return 'rounded';
+            case rounded === 'md':
+                return 'rounded';
+            case rounded === 'lg':
+                return 'rounded-lg';
+            case rounded === 'xl':
+                return 'rounded-xl';
+            default:
+                return '';
+        }
+    })();
+
     return (
         <div
             className={clsx(
                 'flex flex-nowrap shrink-0 bg-promotion relative',
+                gradient === 'horizontal' && 'bg-promotion-gradient-horizontal',
+                gradient === 'vertical' && 'bg-promotion-gradient-vertical',
                 contentCentered && 'text-left lg:text-center p-0-5',
-                rounded && 'rounded',
+                roundedClass,
                 className
             )}
             data-testid={dataTestId}
