@@ -3,7 +3,7 @@ import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Mes
 import { ATTACHMENT_DISPOSITION, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { ENCRYPTED_STATUS } from '../../constants';
-import { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // This prefix is really useful to distinguish 'real' attachments from pgp attachments.
 export const ID_PREFIX = 'PGPAttachment';
@@ -41,7 +41,6 @@ export const convertSingle = (
     message: Message,
     parsedAttachment: MIMEAttachment,
     number: number,
-    verified: number, // TODO remove this variable?
     onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void
 ): Attachment => {
     const ID = getId(message, parsedAttachment, number);
@@ -63,7 +62,7 @@ export const convertSingle = (
         verificationStatus: MAIL_VERIFICATION_STATUS.NOT_SIGNED,
     };
 
-    onUpdateAttachment(ID, attachmentData /* , verified */);
+    onUpdateAttachment(ID, attachmentData);
     // invalidSignature.askAgain(message, attachment, false);
     return attachment;
 };
@@ -74,12 +73,9 @@ export const convertSingle = (
 export const convert = (
     message: Message,
     attachments: MIMEAttachment[],
-    verified: number,
     onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void
 ): Attachment[] => {
-    return attachments.map((attachment, number) =>
-        convertSingle(message, attachment, number, verified, onUpdateAttachment)
-    );
+    return attachments.map((attachment, number) => convertSingle(message, attachment, number, onUpdateAttachment));
 };
 
 /**
