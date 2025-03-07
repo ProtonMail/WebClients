@@ -147,7 +147,6 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                                     onClose();
                                                 }}
                                                 isSelected={active === index}
-                                                makeSelectedCliquable
                                                 className="w-full flex items-center justify-space-between text-left p-3"
                                             >
                                                 <span className="flex items-center text-left text-pre">

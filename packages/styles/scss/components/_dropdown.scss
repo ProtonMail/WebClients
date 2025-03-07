@@ -245,10 +245,7 @@
 
 				background-color: var(--selection-background-color);
 				color: var(--selection-text-color);
-
-				&:not(.dropdown-item--is-selected-cliquable) {
-					pointer-events: none;
-				}
+				pointer-events: none;
 			}
 
 			@supports not selector(:focus-visible) {
