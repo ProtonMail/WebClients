@@ -1,6 +1,7 @@
 import { forwardRef } from 'react'
 
-const Pill = forwardRef<HTMLButtonElement, React.ComponentPropsWithoutRef<'button'>>((props, ref) => {
+// TODO: remove forwardRef once we upgrade to React 19
+export const Pill = forwardRef<HTMLButtonElement, React.ComponentPropsWithoutRef<'button'>>(function Pill(props, ref) {
   return (
     <button
       ref={ref}
@@ -9,5 +10,3 @@ const Pill = forwardRef<HTMLButtonElement, React.ComponentPropsWithoutRef<'butto
     />
   )
 })
-
-export default Pill

@@ -5,7 +5,7 @@ import { Button, CircleLoader } from '@proton/atoms'
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components'
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 
-type TrashedDocumentModalProps = {
+export type TrashedDocumentModalProps = {
   controller: AuthenticatedDocControllerInterface
   documentState: DocumentState
   documentTitle: string

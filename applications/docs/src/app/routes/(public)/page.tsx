@@ -21,8 +21,8 @@ import noop from '@proton/utils/noop'
 import * as config from '../../config'
 import type { DocsStore } from '../../ReduxStore/store'
 import { extraThunkArguments } from '../../ReduxStore/thunk'
-import { bootstrapPublicApp } from './PublicBootstrap'
-import PublicAppRootContainer from './PublicAppRootContainer'
+import { bootstrapPublicApp } from './__utils/bootstrap'
+import { PublicAppRootContainer } from './__components/PublicAppRootContainer'
 
 const defaultState: {
   store?: DocsStore
@@ -33,7 +33,7 @@ const defaultState: {
   showDrawerSidebar: false,
 }
 
-const PublicApp = () => {
+export default function PublicApp() {
   const [state, setState] = useState(defaultState)
 
   useEffectOnce(() => {
@@ -82,5 +82,3 @@ const PublicApp = () => {
     </ProtonApp>
   )
 }
-
-export default PublicApp

@@ -1,15 +1,15 @@
-import type { FC, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { useContext } from 'react'
 
 import type { CreateNotificationOptions } from '@proton/components'
 import { NotificationsContext, type NotificationsContextValue } from '@proton/components'
 
-interface CustomNotificationsHijackProps {
+export type CustomNotificationsHijackProps = {
   ignoredNotifications: string[]
   children?: ReactNode
 }
 
-const CustomNotificationsHijack: FC<CustomNotificationsHijackProps> = ({ children, ignoredNotifications }) => {
+export default function CustomNotificationsHijack({ children, ignoredNotifications }: CustomNotificationsHijackProps) {
   const parentContext = useContext(NotificationsContext)
 
   const hijackedCreateNotification = (options: CreateNotificationOptions) => {
@@ -27,5 +27,3 @@ const CustomNotificationsHijack: FC<CustomNotificationsHijackProps> = ({ childre
 
   return <NotificationsContext.Provider value={context}>{children}</NotificationsContext.Provider>
 }
-
-export default CustomNotificationsHijack
