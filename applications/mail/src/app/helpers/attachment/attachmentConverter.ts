@@ -1,9 +1,9 @@
-import type { MIMEAttachment, WorkerDecryptionResult } from '@proton/crypto';
-import { VERIFICATION_STATUS } from '@proton/crypto';
+import type { MIMEAttachment } from '@proton/crypto';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+import { ATTACHMENT_DISPOSITION, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { ENCRYPTED_STATUS } from '../../constants';
+import { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // This prefix is really useful to distinguish 'real' attachments from pgp attachments.
 export const ID_PREFIX = 'PGPAttachment';
@@ -42,7 +42,7 @@ export const convertSingle = (
     parsedAttachment: MIMEAttachment,
     number: number,
     verified: number, // TODO remove this variable?
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void
 ): Attachment => {
     const ID = getId(message, parsedAttachment, number);
 
@@ -56,11 +56,11 @@ export const convertSingle = (
         Encrypted: ENCRYPTED_STATUS.PGP_MIME,
     };
 
-    const attachmentData: WorkerDecryptionResult<Uint8Array> = {
+    const attachmentData: DecryptedAttachment = {
         data: parsedAttachment.content,
         filename: '',
         signatures: [],
-        verificationStatus: VERIFICATION_STATUS.NOT_SIGNED,
+        verificationStatus: MAIL_VERIFICATION_STATUS.NOT_SIGNED,
     };
 
     onUpdateAttachment(ID, attachmentData /* , verified */);
@@ -75,7 +75,7 @@ export const convert = (
     message: Message,
     attachments: MIMEAttachment[],
     verified: number,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void
 ): Attachment[] => {
     return attachments.map((attachment, number) =>
         convertSingle(message, attachment, number, verified, onUpdateAttachment)
@@ -88,7 +88,7 @@ export const convert = (
  */
 export const convertToFile = (
     attachments: Attachment[],
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined
+    getAttachment: (ID: string) => DecryptedAttachment | undefined
 ) => {
     return attachments.reduce<[Attachment[], File[]]>(
         (acc, attachment) => {

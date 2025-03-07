@@ -18,7 +18,6 @@ import {
     useModalState,
     useNotifications,
 } from '@proton/components';
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { useFolders } from '@proton/mail';
@@ -65,6 +64,7 @@ import MessagePrintModal from '../modals/MessagePrintModal';
 import type { DropdownRender } from './HeaderDropdown';
 import HeaderDropdown from './HeaderDropdown';
 import { MESSAGE_FILTER_DROPDOWN_ID, MESSAGE_FOLDER_DROPDOWN_ID, MESSAGE_LABEL_DROPDOWN_ID } from './constants';
+import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
@@ -162,7 +162,7 @@ const HeaderMoreDropdown = ({
         });
     };
 
-    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
+    const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 

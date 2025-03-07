@@ -1,6 +1,6 @@
 import { findByRole, findByText, fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { EOBody, EOClearAll, EOSubject } from '../../../../helpers/test/eo/helpers';
@@ -19,7 +19,7 @@ const embeddedAttachment = {
         data: new Uint8Array([1, 2]),
         filename: 'preview',
         signatures: [],
-        verificationStatus: VERIFICATION_STATUS.NOT_SIGNED,
+        verificationStatus: MAIL_VERIFICATION_STATUS.NOT_SIGNED,
     },
     KeyPackets: [],
     nameSplitStart: 'attachment-name-p',

@@ -1,7 +1,6 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -31,6 +30,7 @@ import {
 import { render } from 'proton-mail/helpers/test/render';
 import type { Conversation } from 'proton-mail/models/conversation';
 import { addAttachment } from 'proton-mail/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests
 const mockDownloadFile = downloadFile as jest.MockedFunction<typeof downloadFile>;
@@ -346,7 +346,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 ID: attachment.ID as string,
                 attachment: {
                     data: attachment.data,
-                } as WorkerDecryptionResult<Uint8Array>,
+                } as DecryptedAttachment,
             })
         );
 
@@ -412,7 +412,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 ID: attachment1.ID as string,
                 attachment: {
                     data: attachment1.data,
-                } as WorkerDecryptionResult<Uint8Array>,
+                } as DecryptedAttachment,
             })
         );
 
@@ -421,7 +421,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 ID: attachment2.ID as string,
                 attachment: {
                     data: attachment2.data,
-                } as WorkerDecryptionResult<Uint8Array>,
+                } as DecryptedAttachment,
             })
         );
 
@@ -521,7 +521,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 ID: attachment.ID as string,
                 attachment: {
                     data: attachment.data,
-                } as WorkerDecryptionResult<Uint8Array>,
+                } as DecryptedAttachment,
             })
         );
 

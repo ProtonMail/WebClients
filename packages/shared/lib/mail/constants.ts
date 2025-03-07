@@ -28,7 +28,7 @@ export const MESSAGE_FLAGS = {
     FLAG_AUTO_FORWARDEE: BigInt(Math.pow(2, 35)), // Message is auto-forwarded
 };
 
-export enum VERIFICATION_STATUS {
+export enum MAIL_VERIFICATION_STATUS {
     NOT_VERIFIED = -1,
     NOT_SIGNED, // same as @proton/crypto's VERIFICATION_STATUS.NOT_SIGNED
     SIGNED_AND_VALID,  // same as @proton/crypto's VERIFICATION_STATUS.SIGNED_AND_VALID

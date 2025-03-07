@@ -4,7 +4,7 @@ import { forwardRef, useEffect, useRef, useState } from 'react';
 import { FilePreview, NavigationControl } from '@proton/components';
 import Portal from '@proton/components/components/portal/Portal';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useDownload, usePreview } from '../../hooks/attachments/useDownload';
 import type { MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
@@ -21,7 +21,7 @@ interface Preview {
 interface Props {
     attachments: Attachment[];
     message: MessageStateWithData;
-    onDownload: (attachment: Attachment, verificationStatus: VERIFICATION_STATUS) => void;
+    onDownload: (attachment: Attachment, verificationStatus: MAIL_VERIFICATION_STATUS) => void;
     outsideKey?: OutsideKey;
 }
 
@@ -48,7 +48,7 @@ const AttachmentPreview = (
             }
 
             // Don't preview unverified attachment
-            if (download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+            if (download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 return {
                     // Overriding mime type to prevent opening any visualizer with empty data, especially needed for pdfs
                     attachment: { ...attachment, MIMEType: '' },

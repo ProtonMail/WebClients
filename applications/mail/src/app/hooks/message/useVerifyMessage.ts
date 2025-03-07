@@ -2,9 +2,8 @@ import { useCallback } from 'react';
 
 import { useGetUserSettings } from '@proton/account';
 import { useApi, useGetVerificationPreferences } from '@proton/components';
-import type { PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 import { getMatchingSigningKey } from '@proton/crypto';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -18,6 +17,8 @@ import { useGetAttachment } from '../attachments/useAttachment';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
@@ -29,7 +30,7 @@ export const useVerifyMessage = (localID: string) => {
     const contactsMap = useContactsMap();
     const getUserSettings = useGetUserSettings();
 
-    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
+    const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
@@ -50,7 +51,7 @@ export const useVerifyMessage = (localID: string) => {
                     verificationComplete({
                         ID: localID,
                         verification: {
-                            verificationStatus: VERIFICATION_STATUS.SIGNED_AND_INVALID,
+                            verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID,
                             verificationErrors: [new Error('message decryption failure')],
                         },
                     })
@@ -105,7 +106,7 @@ export const useVerifyMessage = (localID: string) => {
                     ...autocryptKeys,
                 ];
 
-                const signed = verification.verificationStatus !== VERIFICATION_STATUS.NOT_SIGNED;
+                const signed = verification.verificationStatus !== MAIL_VERIFICATION_STATUS.NOT_SIGNED;
                 signingPublicKey =
                     signed && verification.signature
                         ? await getMatchingSigningKey({
