@@ -7,13 +7,13 @@ import { c } from 'ttag'
 import useLoading from '@proton/hooks/useLoading'
 import type { Result } from '@proton/docs-shared'
 
-type Props = {
+export type DocumentConverterProps = {
   lookup: NodeMeta
   onSuccess: (result: FileToDocConversionResult) => void
   getNodeContents: (meta: NodeMeta) => Promise<{ contents: Uint8Array; node: DecryptedNode }>
 }
 
-export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Props) {
+export function DocumentConverter({ lookup, onSuccess, getNodeContents }: DocumentConverterProps) {
   const application = useApplication()
 
   const [isConverting, setIsConverting] = useState(false)
