@@ -8,7 +8,7 @@ import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import removeExifMetadata from '@proton/shared/lib/helpers/exif';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { ATTACHMENT_DISPOSITION, ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
+import { ATTACHMENT_DISPOSITION, ATTACHMENT_MAX_COUNT, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -32,7 +32,6 @@ import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
 import { usePromise } from '../usePromise';
-import { VERIFICATION_STATUS } from '@proton/crypto';
 
 type AttachmentUpload = {
     file: File;
@@ -130,7 +129,7 @@ export const useAttachments = ({
                 dispatch(
                     addAttachment({
                         ID: upload?.attachment.ID || '',
-                        attachment: { data, verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID, filename, signatures: [] },
+                        attachment: { data, verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID, filename, signatures: [] },
                     })
                 );
 

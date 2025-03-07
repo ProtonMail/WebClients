@@ -2,10 +2,8 @@ import { useCallback } from 'react';
 
 import { useApi } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -24,6 +22,8 @@ import type { MessageKeys, MessageStateWithData, OutsideKey } from '../../store/
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useGetAttachment } from './useAttachment';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 /**
  * Returns the keys from the sender of the message version in cache
@@ -47,7 +47,7 @@ export const useDownload = () => {
     const getMessageKeys = useSyncedMessageKeys();
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
-    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
+    const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
@@ -77,7 +77,7 @@ export const useDownload = () => {
                 );
             }
 
-            if (download.isError || download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+            if (download.isError || download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 await handleShowModal({ downloads: [download] });
             }
 
@@ -98,7 +98,7 @@ export const useDownloadAll = () => {
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
-    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
+    const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
@@ -133,7 +133,7 @@ export const useDownloadAll = () => {
 
             const isError = list.some(({ isError }) => isError);
             const senderVerificationFailed = list.some(
-                ({ verificationStatus }) => verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID
+                ({ verificationStatus }) => verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID
             );
 
             if (isError || senderVerificationFailed) {
@@ -155,7 +155,7 @@ export const usePreview = () => {
     const getMessageKeys = useSyncedMessageKeys();
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
-    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
+    const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
@@ -186,7 +186,7 @@ export const usePreview = () => {
                 );
             }
 
-            if (download.isError || download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+            if (download.isError || download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 const handleError = async () => {
                     await handleShowModal({ downloads: [download] });
                     await generateDownload(download);

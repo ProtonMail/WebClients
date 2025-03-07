@@ -1,9 +1,8 @@
 import { useApi, useGetVerificationPreferences, useModalTwo } from '@proton/components';
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { bigIntToNumber } from '@proton/crypto/lib/bigInteger';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
 import type { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
-import { MESSAGE_FLAGS, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MESSAGE_FLAGS, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import ConfirmDownloadAttachments from 'proton-mail/components/attachment/modals/ConfirmDownloadAttachments';
@@ -14,6 +13,7 @@ import { useGetAttachment } from 'proton-mail/hooks/attachments/useAttachment';
 import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
 import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
 import { updateAttachment } from 'proton-mail/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 const enum DOWNLOAD_TYPE {
@@ -36,7 +36,7 @@ export const useAttachmentThumbnailDownload = () => {
 
     const downloadAttachment = async (type: DOWNLOAD_TYPE, attachmentsMetadata: AttachmentsMetadata) => {
         let download: Download;
-        let attachment: WorkerDecryptionResult<Uint8Array>;
+        let attachment: DecryptedAttachment;
         const { ID } = attachmentsMetadata;
 
         const attachmentInState = getAttachment(ID);
@@ -106,7 +106,7 @@ export const useAttachmentThumbnailDownload = () => {
                 attachment = {
                     ...decryptedAttachment,
                     verificationStatus,
-                } as WorkerDecryptionResult<Uint8Array>;
+                } as DecryptedAttachment;
 
                 download = {
                     // Add MIMEType and Name so that we can build the file when user wants to download the file
@@ -133,7 +133,7 @@ export const useAttachmentThumbnailDownload = () => {
                         Size: attachmentsMetadata.Size,
                     },
                     data: new Uint8Array([]),
-                    verificationStatus: VERIFICATION_STATUS.NOT_VERIFIED,
+                    verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED,
                 };
             } else {
                 // When downloading, if an error occurs while decrypting, download the encrypted version
@@ -145,7 +145,7 @@ export const useAttachmentThumbnailDownload = () => {
                         ID: attachmentsMetadata.ID,
                     },
                     data: error.binary,
-                    verificationStatus: VERIFICATION_STATUS.NOT_VERIFIED,
+                    verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED,
                 };
             }
         }
@@ -156,7 +156,7 @@ export const useAttachmentThumbnailDownload = () => {
     const handleThumbnailPreview = async (attachmentsMetadata: AttachmentsMetadata) => {
         const download = await downloadAttachment(DOWNLOAD_TYPE.PREVIEW, attachmentsMetadata);
 
-        if (download.isError || download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+        if (download.isError || download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
             const handleError = async () => {
                 await handleShowModal({ downloads: [download] });
                 await generateDownload(download);
@@ -171,7 +171,7 @@ export const useAttachmentThumbnailDownload = () => {
     const handleThumbnailDownload = async (attachmentsMetadata: AttachmentsMetadata) => {
         const download = await downloadAttachment(DOWNLOAD_TYPE.DOWNLOAD, attachmentsMetadata);
 
-        if (download.isError || download.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+        if (download.isError || download.verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
             await handleShowModal({ downloads: [download] });
         }
 

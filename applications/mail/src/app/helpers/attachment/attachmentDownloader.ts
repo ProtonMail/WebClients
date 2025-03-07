@@ -1,21 +1,21 @@
 import JSZip from 'jszip';
 
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import type { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
 import { getAndVerify } from './attachmentLoader';
+import { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 export interface Download {
     attachment: Attachment;
     data: Uint8Array;
     isError?: boolean;
-    verificationStatus: VERIFICATION_STATUS;
+    verificationStatus: MAIL_VERIFICATION_STATUS;
 }
 
 /**
@@ -25,9 +25,9 @@ export const formatDownload = async (
     attachment: Attachment,
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api,
-    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    getAttachment?: (ID: string) => DecryptedAttachment | undefined,
     messageFlags?: number
 ): Promise<Download> => {
     try {
@@ -56,7 +56,7 @@ export const formatDownload = async (
                 },
                 data: error.binary,
                 isError: true,
-                verificationStatus: VERIFICATION_STATUS.NOT_VERIFIED,
+                verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED,
             };
         }
         throw error;
@@ -86,9 +86,9 @@ export const formatDownloadAll = async (
     attachments: Attachment[],
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api,
-    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    getAttachment?: (ID: string) => DecryptedAttachment | undefined,
     messageFlags?: number
 ): Promise<Download[]> => {
     const { list }: { list: Attachment[] } = attachments.reduce(

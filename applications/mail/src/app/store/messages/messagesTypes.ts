@@ -1,14 +1,15 @@
-import type { PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import type { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
-import type { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import type { MESSAGE_ACTIONS } from '../../constants';
 import type { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
 import type { Preparation } from '../../helpers/transforms/transforms';
+import type { DecryptedAttachment } from '../attachments/attachmentsTypes';
 
 export interface OutsideKey {
     type: 'outside';
@@ -45,7 +46,7 @@ export interface MessageVerification {
     /**
      * Signatures verification status flag
      */
-    verificationStatus: VERIFICATION_STATUS | undefined;
+    verificationStatus: MAIL_VERIFICATION_STATUS | undefined;
 
     /**
      * Signature verification errors, if any
@@ -364,7 +365,7 @@ export interface VerificationParams {
     ID: string;
     verificationPreferences?: VerificationPreferences;
     verification?: {
-        verificationStatus: VERIFICATION_STATUS;
+        verificationStatus: MAIL_VERIFICATION_STATUS;
         signature?: Uint8Array;
         verificationErrors?: Error[];
     };
@@ -379,8 +380,8 @@ export interface LoadEmbeddedParams {
     api: Api;
     messageVerification?: MessageVerification;
     messageKeys: MessageKeys;
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined;
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void;
+    getAttachment: (ID: string) => DecryptedAttachment | undefined;
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void;
     messageFlags: number;
     isDraft?: boolean;
 }

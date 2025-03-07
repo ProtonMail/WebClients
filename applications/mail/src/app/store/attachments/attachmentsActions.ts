@@ -1,11 +1,10 @@
 import { createAction } from '@reduxjs/toolkit';
+import type { DecryptedAttachment } from './attachmentsTypes';
 
-import type { WorkerDecryptionResult } from '@proton/crypto';
-
-export const addAttachment = createAction<{ ID: string; attachment: WorkerDecryptionResult<Uint8Array> }>(
+export const addAttachment = createAction<{ ID: string; attachment: DecryptedAttachment }>(
     'attachments/add'
 );
 
-export const updateAttachment = createAction<{ ID: string; attachment: WorkerDecryptionResult<Uint8Array> }>(
+export const updateAttachment = createAction<{ ID: string; attachment: DecryptedAttachment }>(
     'attachments/update'
 );
