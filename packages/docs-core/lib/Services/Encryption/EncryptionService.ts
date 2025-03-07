@@ -133,7 +133,7 @@ export class EncryptionService<C extends EncryptionContext> {
   ): Promise<Result<VERIFICATION_STATUS>> {
     try {
       const contextString = this.getContext(associatedData)
-      const { verified } = await CryptoProxy.verifyMessage({
+      const { verificationStatus } = await CryptoProxy.verifyMessage({
         binaryData: data,
         binarySignature: signature,
         verificationKeys,
@@ -141,7 +141,7 @@ export class EncryptionService<C extends EncryptionContext> {
         format: 'binary',
       })
 
-      return Result.ok(verified)
+      return Result.ok(verificationStatus)
     } catch (error) {
       return Result.fail(`Failed to verify data ${error}`)
     }

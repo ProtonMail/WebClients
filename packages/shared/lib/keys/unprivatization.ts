@@ -104,7 +104,7 @@ const getDecryptedOrganizationActivationToken = async ({
     verificationKeys: PublicKeyReference[] | null;
     decryptionKeys: PrivateKeyReference[];
 }) => {
-    const { data: decryptedToken, verified } = await CryptoProxy.decryptMessage({
+    const { data: decryptedToken, verificationStatus } = await CryptoProxy.decryptMessage({
         armoredMessage,
         decryptionKeys,
         // No verification in Global SSO case
@@ -119,7 +119,7 @@ const getDecryptedOrganizationActivationToken = async ({
             : {}),
     });
 
-    if (verificationKeys !== null && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (verificationKeys !== null && verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;
@@ -162,7 +162,7 @@ export const validateInvitationData = async ({
         signatureContext: { value: MEMBER_SIGNATURE_CONTEXT.INVITATION_DATA_SIGNATURE_CONTEXT, required: true },
     });
 
-    if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (result.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;

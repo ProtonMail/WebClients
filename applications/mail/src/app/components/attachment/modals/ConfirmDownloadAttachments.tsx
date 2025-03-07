@@ -17,7 +17,7 @@ interface Props extends ModalProps {
 const ConfirmDownloadAttachments = ({ downloads, onResolve, onReject, ...rest }: Props) => {
     const total = downloads.length;
     const senderVerificationFailed = downloads.some(
-        ({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_INVALID
+        ({ verificationStatus }) => verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID
     );
 
     const title = senderVerificationFailed ? c('Title').t`Verification error` : c('Title').t`Decryption error`;

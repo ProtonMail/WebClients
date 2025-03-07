@@ -79,14 +79,14 @@ export const resignAllContacts = async (
             continue;
         }
 
-        const { verified } = await CryptoProxy.verifyMessage({
+        const { verificationStatus } = await CryptoProxy.verifyMessage({
             textData: signedCard.Data,
             stripTrailingSpaces: true,
             verificationKeys: publicKeys,
             armoredSignature: signedCard.Signature,
         });
 
-        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             updated++;
             const Cards = await resignCards({
                 contactCards: Contact.Cards,

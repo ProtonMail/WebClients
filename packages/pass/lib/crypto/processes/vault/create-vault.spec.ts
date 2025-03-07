@@ -24,14 +24,14 @@ describe('createVault crypto process', () => {
 
         const vault = await createVault({ content, addressId: address.ID, userKey });
 
-        const { data, verified } = await CryptoProxy.decryptMessage({
+        const { data, verificationStatus } = await CryptoProxy.decryptMessage({
             binaryMessage: base64StringToUint8Array(vault.EncryptedVaultKey),
             decryptionKeys: [userKey.privateKey],
             verificationKeys: [userKey.privateKey],
             format: 'binary',
         });
 
-        expect(verified).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationStatus).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID);
 
         const vaultKey = await importSymmetricKey(data);
         const decryptedContent = await decryptData(

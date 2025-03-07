@@ -331,12 +331,12 @@ const auditAddressImplementation = async ({
             signatureWasInTheFuture = true;
         }
     } else {
-        const verified = await verifySKLSignature({
+        const verificationTimestamp = await verifySKLSignature({
             verificationKeys: addressVerificationKeys,
             signedKeyListData: inputSKL.Data,
             signedKeyListSignature: inputSKL.Signature,
         });
-        if (verified === null) {
+        if (verificationTimestamp === null) {
             const primaryAddressKeyV4 = addressKeys[0].privateKey;
             if (!primaryAddressKeyV4.isPrivateKeyV4()) {
                 throw new Error('Unexpected v6 key');

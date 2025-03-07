@@ -60,7 +60,7 @@ export const convertSingle = (
         data: parsedAttachment.content,
         filename: '',
         signatures: [],
-        verified: VERIFICATION_STATUS.NOT_SIGNED,
+        verificationStatus: VERIFICATION_STATUS.NOT_SIGNED,
     };
 
     onUpdateAttachment(ID, attachmentData /* , verified */);

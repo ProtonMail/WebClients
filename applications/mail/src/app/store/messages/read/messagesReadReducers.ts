@@ -189,7 +189,7 @@ export const verificationComplete = (
             signingPublicKey,
             attachedPublicKeys,
             pinnedKeysVerified: verificationPreferences?.pinnedKeysVerified,
-            verificationStatus: verification?.verified,
+            verificationStatus: verification?.verificationStatus,
             verificationErrors: verification?.verificationErrors,
             ktVerificationResult: verificationPreferences?.ktVerificationResult,
             signingPublicKeyIsPinned,
