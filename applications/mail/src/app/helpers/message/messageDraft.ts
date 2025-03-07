@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -34,6 +33,7 @@ import { getExpiresIn } from '../expiration';
 import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
 import { getEmbeddedImages, getRemoteImages, restoreImages, updateImages } from './messageImages';
 import { insertSignature } from './messageSignature';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -262,7 +262,7 @@ export const createNewDraft = (
     mailSettings: MailSettings,
     userSettings: UserSettings,
     addresses: Address[],
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    getAttachment: (ID: string) => DecryptedAttachment | undefined,
     isOutside = false,
     isQuickReply = false
 ): PartialMessageState => {

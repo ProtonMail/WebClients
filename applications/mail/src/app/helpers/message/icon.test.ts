@@ -2,7 +2,7 @@ import type { PublicKeyReference } from '@proton/crypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { SIGNATURE_START, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import {
     ENCRYPTION_PREFERENCES_ERROR_TYPES,
     EncryptionPreferencesError,
@@ -20,7 +20,7 @@ import {
     getStatusIconName,
 } from './icon';
 
-const { NOT_SIGNED, NOT_VERIFIED, SIGNED_AND_VALID, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
+const { NOT_SIGNED, NOT_VERIFIED, SIGNED_AND_VALID, SIGNED_AND_INVALID } = MAIL_VERIFICATION_STATUS;
 
 const fakeKey1: PublicKeyReference = {
     getFingerprint() {

@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
@@ -22,6 +22,7 @@ import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { getPlainTextContent } from './messageContent';
 import { insertActualEmbeddedImages } from './messageEmbeddeds';
 import { replaceProxyWithOriginalURLAttributes } from './messageImages';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     Password: undefined,
@@ -181,8 +182,8 @@ export const updateMessage = async (
 export const exportBlob = async (
     message: MessageState,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    getAttachment: (ID: string) => DecryptedAttachment | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
     api: Api
 ) => {
     const mimeMessage = await constructMimeFromSource(message, messageKeys, getAttachment, onUpdateAttachment, api);

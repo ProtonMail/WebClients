@@ -4,7 +4,7 @@ import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { PrimaryButton, Prompt } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import type { Download } from '../../../helpers/attachment/attachmentDownloader';
 
@@ -17,7 +17,7 @@ interface Props extends ModalProps {
 const ConfirmDownloadAttachments = ({ downloads, onResolve, onReject, ...rest }: Props) => {
     const total = downloads.length;
     const senderVerificationFailed = downloads.some(
-        ({ verificationStatus }) => verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID
+        ({ verificationStatus }) => verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID
     );
 
     const title = senderVerificationFailed ? c('Title').t`Verification error` : c('Title').t`Decryption error`;

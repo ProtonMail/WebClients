@@ -1,7 +1,7 @@
 import { fireEvent, waitFor, within } from '@testing-library/react';
 
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { assertIcon } from '../../../../helpers/test/assertion';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
@@ -37,7 +37,7 @@ describe('Encrypted Outside message attachments', () => {
             data: [],
             filename: 'preview',
             signatures: [],
-            verificationStatus: VERIFICATION_STATUS.NOT_SIGNED,
+            verificationStatus: MAIL_VERIFICATION_STATUS.NOT_SIGNED,
         },
         nameSplitStart: 'attachment-name-p',
         nameSplitEnd: 'ng.png',

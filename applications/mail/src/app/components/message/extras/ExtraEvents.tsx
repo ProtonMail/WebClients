@@ -8,7 +8,6 @@ import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSetting
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { useApi, useEventManager, useGetCalendarEventRaw, useGetCalendarInfo } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
-import type { WorkerDecryptionResult } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, arrayToHexString, decodeUtf8 } from '@proton/crypto/lib/utils';
 import { useLoading } from '@proton/hooks';
@@ -61,6 +60,7 @@ import { updateAttachment } from '../../../store/attachments/attachmentsActions'
 import type { MessageErrors, MessageStateWithData } from '../../../store/messages/messagesTypes';
 import { errors as errorsAction } from '../../../store/messages/read/messagesReadActions';
 import ExtraEvent from './calendar/ExtraEvent';
+import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 
 interface Props {
     message: MessageStateWithData;
@@ -165,7 +165,7 @@ const ExtraEvents = ({ message }: Props) => {
                         return 0;
                     });
 
-                    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
+                    const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
                         dispatch(updateAttachment({ ID, attachment }));
                     };
 
