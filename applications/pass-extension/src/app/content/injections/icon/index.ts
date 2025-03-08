@@ -60,7 +60,11 @@ const getOverlayShift = (options: {
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
             if (!form.contains(el)) continue; /* Skip elements outside form */
             if (el.matches('svg *')) continue; /* Skip SVG subtrees */
-            if (el.innerText.length > 0 && el.offsetWidth >= maxWidth * 0.8) continue; /* Skip large text elements */
+
+            /** Skip large text elements. NOTE: The `isHTMLElement` check is loose in order to
+             * avoid heavy `instanceof` checks. In most cases it will correctly match an `HTMLElement`
+             * but can end-up flagging elements which lack `innerText` or `offsetWidth` properties */
+            if ((el.innerText?.length ?? 0) > 0 && (el.offsetWidth ?? 0) >= maxWidth * 0.8) continue;
 
             const style = getComputedStyle(el);
             if (style.display === 'none' || style.visibility === 'hidden') continue; /* Skip hidden elements */
