@@ -1,3 +1,21 @@
+### Version 1.29.9
+
+- Fix injected icon overlay detection edge-case
+
+### Version 1.29.8
+
+- Fix popover stylesheet defaults causing unnecessary padding in autofill dropdown
+- Fix multi-select dropdown blocking unselect action
+
+### Version 1.29.7
+
+- Avoid websites tampering with injected icon interactivity
+- Ensure pass injection backdrops cannot be styled
+
+### Version 1.29.6
+
+- Improve tree-shaking
+
 ### Version 1.29.5
 
 - Support coupons from in-app notifications
