@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { ContactEmailsProvider, useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import {
     type EncryptedLink,
@@ -90,7 +90,7 @@ const SORT_FIELDS: SharedWithMeSortFields[] = [SortField.name, SortField.sharedB
 const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink } = useDriveNavigation();
 
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();

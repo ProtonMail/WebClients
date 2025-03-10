@@ -1,21 +1,17 @@
 import type { FC } from 'react';
-import { Redirect, Route, type RouteComponentProps, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
 import { AlbumsView } from './PhotosWithAlbums/AlbumsView';
 import { PhotosWithAlbumsInsideAlbumView } from './PhotosWithAlbums/PhotosWithAlbumsInsideAlbumView';
 import { PhotosWithAlbumsView } from './PhotosWithAlbums/PhotosWithAlbumsView';
 
-export const PhotosWithAlbumsContainer: FC<RouteComponentProps> = ({ match }) => {
+export const PhotosWithAlbumsContainer: FC = () => {
     return (
-        <Switch>
-            <Route path={match.url} exact component={PhotosWithAlbumsView} />
-            <Route path={`${match.url}/albums`} exact component={AlbumsView} />
-            <Route
-                path={`${match.url}/album/:albumShareId/:albumLinkId`}
-                exact
-                component={PhotosWithAlbumsInsideAlbumView}
-            />
-            <Redirect to="/photos" />
-        </Switch>
+        <Routes>
+            <Route path="" element={<PhotosWithAlbumsView />} />
+            <Route path="albums/*" element={<AlbumsView />} />
+            <Route path="albums/:albumShareId/album/:albumLinkId" element={<PhotosWithAlbumsInsideAlbumView />} />
+            <Route path="*" element={<Navigate to="/photos" replace />} />
+        </Routes>
     );
 };

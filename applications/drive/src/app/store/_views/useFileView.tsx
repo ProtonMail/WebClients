@@ -39,17 +39,17 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
     );
     const navigation = useFileViewNavigation(useNavigation, shareId, link?.parentLinkId, linkId);
 
-    const loadPermissions = async (abortSignal: AbortSignal) => {
+    const loadPermissions = useCallback(async (abortSignal: AbortSignal, shareId: string) => {
         return getSharePermissions(abortSignal, shareId).then(setPermissions);
-    };
+    }, []);
 
     useEffect(() => {
         const ac = new AbortController();
-        void withPermissionsLoading(loadPermissions(ac.signal));
+        void withPermissionsLoading(loadPermissions(ac.signal, shareId));
         return () => {
             ac.abort();
         };
-    }, []);
+    }, [shareId, linkId, revisionId, loadPermissions]);
 
     return {
         permissions,

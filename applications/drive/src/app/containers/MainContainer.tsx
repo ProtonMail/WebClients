@@ -1,15 +1,8 @@
 import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat';
 
-import {
-    GlobalLoader,
-    GlobalLoaderProvider,
-    LoaderPage,
-    LocationErrorBoundary,
-    ModalsChildren,
-    useDrawerWidth,
-} from '@proton/components';
+import { GlobalLoader, GlobalLoaderProvider, LoaderPage, ModalsChildren, useDrawerWidth } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useLoading } from '@proton/hooks';
 import useFlag from '@proton/unleash/useFlag';
@@ -39,6 +32,7 @@ import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpot
 import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
 import { FolderContainerWrapper } from './FolderContainer';
+import LocationErrorBoundary from './LocationErrorBoundary';
 import NoAccessContainer from './NoAccessContainer';
 import { PhotosContainer } from './PhotosContainer';
 import { SearchContainer } from './SearchContainer';
@@ -173,26 +167,37 @@ const InitContainer = () => {
 
     const rootShare = { shareId: defaultShareRoot.shareId, linkId: defaultShareRoot.linkId };
 
+    const routes = (
+        <>
+            <Route path="devices/*" element={<DevicesContainer />} />
+            <Route path="trash/*" element={<TrashContainer />} />
+            <Route path="no-access" element={<NoAccessContainer />} />
+            <Route path="shared-urls/*" element={<SharedURLsContainer />} />
+            {!isDirectSharingDisabled && <Route path="shared-with-me/*" element={<SharedWithMeContainer />} />}
+            {photosEnabled && !photosWithAlbumsEnabled && <Route path="photos/*" element={<PhotosContainer />} />}
+            {photosEnabled && photosWithAlbumsEnabled && (
+                <Route path="photos/*" element={<PhotosWithAlbumsContainer />} />
+            )}
+            {searchEnabled && <Route path="search/*" element={<SearchContainer />} />}
+            <Route path=":volumeId/:linkId/*" element={<VolumeLinkContainer />} />
+            <Route path=":shareId/:type/:linkId/*" element={<FolderContainerWrapper />} />
+            <Route
+                path="*"
+                element={
+                    <Navigate to={`${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} replace={true} />
+                }
+            />
+        </>
+    );
     return (
         <ActiveShareProvider defaultShareRoot={rootShare}>
             <ModalsChildren />
             <FloatingElements />
             <DriveWindow>
-                <Switch>
-                    <Route path="/devices" component={DevicesContainer} />
-                    <Route path="/trash" component={TrashContainer} />
-                    <Route path="/no-access" component={NoAccessContainer} />
-                    <Route path="/shared-urls" component={SharedURLsContainer} />
-                    {!isDirectSharingDisabled && <Route path="/shared-with-me" component={SharedWithMeContainer} />}
-                    {photosEnabled && !photosWithAlbumsEnabled && <Route path="/photos" component={PhotosContainer} />}
-                    {photosEnabled && photosWithAlbumsEnabled && (
-                        <Route path="/photos" component={PhotosWithAlbumsContainer} />
-                    )}
-                    {searchEnabled && <Route path="/search" component={SearchContainer} />}
-                    <Route path="/:volumeId/:linkId" exact component={VolumeLinkContainer} />
-                    <Route path="/:shareId?/:type/:linkId?" component={FolderContainerWrapper} />
-                    <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
-                </Switch>
+                <Routes>
+                    <Route path="/u/:clientId">{routes}</Route>
+                    {routes}
+                </Routes>
             </DriveWindow>
             {autoRestoreModal}
         </ActiveShareProvider>
@@ -200,10 +205,11 @@ const InitContainer = () => {
 };
 
 const MainContainer: FunctionComponent = () => {
+    const location = useLocation();
     return (
         <GlobalLoaderProvider>
             <GlobalLoader />
-            <LocationErrorBoundary>
+            <LocationErrorBoundary location={location}>
                 <DriveProvider>
                     <QuickSettingsRemindersProvider>
                         <InitContainer />

@@ -6,7 +6,7 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useFolderView } from '../../../store';
 import DriveBreadcrumbs from '../../DriveBreadcrumbs';
 import { FileBrowserStateProvider } from '../../FileBrowser';
@@ -19,7 +19,7 @@ export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; lin
 
 function DriveView() {
     const { activeFolder } = useActiveShare();
-    const { navigateToRoot, navigateToLink } = useNavigate();
+    const { navigateToRoot, navigateToLink } = useDriveNavigation();
 
     const folderView = useFolderView(activeFolder);
     const isEditor = useMemo(() => getCanWrite(folderView.permissions), [folderView.permissions]);
