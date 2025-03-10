@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
-import { SIGNATURE_CONTEXT } from '@proton/shared/lib/calendar/crypto/constants';
+import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers';
 import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
 import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 
@@ -81,7 +81,7 @@ export const acceptCalendarShareInvitation = async ({
                 armoredSignature,
                 binaryData: passphraseSessionKey.data,
                 verificationKeys: verifyingPinnedKeys,
-                signatureContext: { required: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
+                signatureContext: { required: true, value: getSignatureContext('calendar.sharing.invite') },
             });
             if (sessionKeyVerificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
                 /**
