@@ -3,8 +3,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import * as CONFIG from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { isChromeExtensionRollback } from 'proton-pass-extension/lib/utils/chrome';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
-import { EXTENSION_MANIFEST_VERSION } from 'proton-pass-extension/lib/utils/version';
+import { EXTENSION_BUILD_VERSION, EXTENSION_MANIFEST_VERSION } from 'proton-pass-extension/lib/utils/version';
 import createSagaMiddleware from 'redux-saga';
 
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -54,12 +55,14 @@ const store = configureStore({
     devTools: false,
 });
 
-const options: RootSagaOptions = {
+export const options: RootSagaOptions = {
     endpoint: 'background',
     getAuthStore: withContext((ctx) => ctx.authStore),
     getAuthService: withContext((ctx) => ctx.service.auth),
     getCache: withContext(async (ctx) => {
         const cache = await ctx.service.storage.local.getItems(['state', 'snapshot', 'salt', 'version']);
+
+        if (isChromeExtensionRollback() && cache.version === EXTENSION_BUILD_VERSION) return {};
         return cacheGuard(cache, EXTENSION_MANIFEST_VERSION);
     }),
 
