@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import useNavigate from '../../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../../hooks/drive/useNavigate';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function GoToParent({ shareId, parentLinkId, close }: Props) {
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink } = useDriveNavigation();
 
     return (
         <ContextMenuButton

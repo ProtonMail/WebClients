@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
@@ -8,7 +8,7 @@ import noop from '@proton/utils/noop';
 
 import type { DriveFolder } from '../../hooks/drive/useActiveShare';
 import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
-import useNavigate from '../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { useLinkPath } from '../../store';
 import type { Share } from '../../store/_shares';
 import { ShareType, useShare } from '../../store/_shares';
@@ -23,7 +23,7 @@ interface Props {
 }
 
 const DriveBreadcrumbs = ({ activeFolder }: Props) => {
-    const { navigateToLink, navigateToDevices } = useNavigate();
+    const { navigateToLink, navigateToDevices } = useDriveNavigation();
     const { createNotification } = useNotifications();
     const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
     const { traverseLinksToRoot } = useLinkPath(); // TODO: Get data using useFolderView instead one day.

@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import type { RouteComponentProps } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
@@ -15,15 +14,15 @@ import { useDetailsModal } from '../components/modals/DetailsModal';
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import useIsEditEnabled from '../components/sections/useIsEditEnabled';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
-import useNavigate from '../hooks/drive/useNavigate';
+import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useActions, useFileView } from '../store';
 import { useOpenInDocs } from '../store/_documents';
 // TODO: ideally not use here
 import useSearchResults from '../store/_search/useSearchResults';
 import { getSharedStatus } from '../utils/share';
 
-export default function PreviewContainer({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) {
-    const { shareId, linkId } = match.params;
+export default function PreviewContainer() {
+    const { shareId, linkId } = useParams<{ shareId: string; linkId: string }>() as { shareId: string; linkId: string };
     const {
         navigateToLink,
         navigateToSharedByMe,
@@ -32,7 +31,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         navigateToRoot,
         navigateToNoAccess,
         navigateToSearch,
-    } = useNavigate();
+    } = useDriveNavigation();
     const { setFolder } = useActiveShare();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();

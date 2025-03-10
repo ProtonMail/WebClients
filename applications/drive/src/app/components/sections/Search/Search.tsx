@@ -7,7 +7,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import type { EncryptedLink, LinkShareUrl, useSearchView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
@@ -76,7 +76,7 @@ export const Search = ({ shareId, searchView }: Props) => {
 
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink } = useDriveNavigation();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
