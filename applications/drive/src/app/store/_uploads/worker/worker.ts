@@ -186,7 +186,7 @@ async function start(
                 ? {
                       captureTime: Math.max(getUnixTime(getCaptureDateTime(file, exifInfo?.exif)), 0),
                       contentHash: sha1 ? await generateLookupHash(sha1, parentHashKey) : undefined,
-                      tags: exifInfo ? getPhotoTags(exifInfo) : undefined,
+                      tags: exifInfo ? await getPhotoTags(file, exifInfo) : undefined,
                   }
                 : undefined
         );
