@@ -184,6 +184,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, sessi
         } else {
             setBugReportModal(true);
         }
+        close();
     };
 
     const userVoiceLinks: Partial<{ [key in APP_NAMES]: string }> = {
