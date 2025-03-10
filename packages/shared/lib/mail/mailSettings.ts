@@ -67,6 +67,7 @@ export enum SHORTCUTS {
 export enum PM_SIGNATURE {
     DISABLED = 0,
     ENABLED = 1,
+    LOCKED = 2,
 }
 
 export enum PM_SIGNATURE_REFERRAL {
