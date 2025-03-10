@@ -47,8 +47,7 @@ export const InAppNotificationBanner = WithInAppNotification(
                     <div className={clsx('flex flex-column', dense ? 'gap-1' : 'gap-2')}>
                         {content.imageUrl && (
                             <img
-                                className="max-w-custom pointer-events-none user-select-none"
-                                style={{ '--max-w-custom': '4rem' }}
+                                className="w-full max-w-full pointer-events-none user-select-none"
                                 src={content.imageUrl}
                                 alt=""
                             />
