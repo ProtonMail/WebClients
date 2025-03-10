@@ -23,7 +23,6 @@ export function SidebarDevicesRoot({
             key="devices-root"
             to={'/devices'}
             icon="tv"
-            isActive={(match) => match?.url === '/devices'}
             onDoubleClick={toggleExpand}
             collapsed={collapsed}
         >

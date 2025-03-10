@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { RouteComponentProps } from 'react-router';
-import { Route } from 'react-router';
+import { useParams } from 'react-router-dom-v5-compat';
 
-import { Loader, useAppTitle } from '@proton/components';
+import { Loader } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -14,7 +13,7 @@ import DriveView from '../components/sections/Drive/DriveView';
 import type { DriveFolder } from '../hooks/drive/useActiveShare';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
-import useNavigate from '../hooks/drive/useNavigate';
+import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useContextShareHandler, useDefaultShare, useDriveEventManager } from '../store';
 import { VolumeType, useVolumesState } from '../store/_volumes';
 import PreviewContainer from './PreviewContainer';
@@ -23,8 +22,10 @@ const hasValidLinkType = (type: string) => {
     return type === LinkURLType.FILE || type === LinkURLType.FOLDER;
 };
 
-export default function FolderContainer({ match }: RouteComponentProps<DriveSectionRouteProps>) {
-    const { navigateToRoot, navigateToNoAccess } = useNavigate();
+export default function FolderContainer() {
+    const params = useParams<DriveSectionRouteProps>();
+    const { shareId, type, linkId } = params;
+    const { navigateToRoot, navigateToNoAccess } = useDriveNavigation();
     const { activeFolder, setFolder } = useActiveShare();
     const volumesState = useVolumesState();
     const lastFolderPromise = useRef<Promise<DriveFolder | undefined>>();
@@ -32,11 +33,18 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     const { getDefaultShare, isShareAvailable } = useDefaultShare();
     const driveEventManager = useDriveEventManager();
 
-    useFolderContainerTitle({ params: match.params, setAppTitle: useAppTitle });
+    useFolderContainerTitle(
+        useMemo(
+            () => ({
+                shareId: params.shareId || '',
+                linkId: params.linkId || '',
+                type: params.type,
+            }),
+            [params.shareId, params.linkId, params.type]
+        )
+    );
 
     const folderPromise = useMemo(async () => {
-        const { shareId, type, linkId } = match.params;
-
         if (!shareId && !type && !linkId) {
             const defaultShare = await getDefaultShare();
             if (defaultShare) {
@@ -61,7 +69,7 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
             return { shareId, linkId };
         }
         return lastFolderPromise.current;
-    }, [match.params.shareId, match.params.type, match.params.linkId]);
+    }, [params.shareId, params.type, params.linkId]);
 
     useEffect(() => {
         folderPromise
@@ -116,21 +124,21 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
         <>
             {shouldRenderDriveView ? <DriveView /> : null}
             <DriveStartupModals />
-            <Route path={`/:shareId?/${LinkURLType.FILE}/:linkId?`} component={PreviewContainer} exact />
+            {shareId && linkId && <>{type === LinkURLType.FILE && <PreviewContainer />}</>}
         </>
     );
 }
 
-export const FolderContainerWrapper = ({ match, ...props }: RouteComponentProps<DriveSectionRouteProps>) => {
+export const FolderContainerWrapper = () => {
     const { isShareAvailable } = useDefaultShare();
     const [isLoading, withLoading] = useLoading(true);
-    const { navigateToRoot } = useNavigate();
+    const { navigateToRoot } = useDriveNavigation();
     const { handleContextShare } = useContextShareHandler();
+    const { shareId, type, linkId } = useParams<DriveSectionRouteProps>();
 
     useEffect(() => {
         const abortController = new AbortController();
         void withLoading(async () => {
-            const { shareId, type, linkId } = match.params;
             if (!shareId || !linkId || !type || !hasValidLinkType(type)) {
                 return;
             }
@@ -151,10 +159,10 @@ export const FolderContainerWrapper = ({ match, ...props }: RouteComponentProps<
         return () => {
             abortController.abort();
         };
-    }, [match.params.shareId, match.params.type, match.params.linkId]);
+    }, [shareId, type, linkId]);
 
     if (isLoading) {
         return <Loader size="medium" className="absolute inset-center" />;
     }
-    return <FolderContainer match={match} {...props} />;
+    return <FolderContainer />;
 };

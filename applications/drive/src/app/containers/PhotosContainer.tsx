@@ -1,14 +1,12 @@
-import type { FC } from 'react';
-import type { RouteComponentProps } from 'react-router-dom';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
 import { PhotosView } from '../components/sections/Photos';
 
-export const PhotosContainer: FC<RouteComponentProps> = ({ match }) => {
+export const PhotosContainer = () => {
     return (
-        <Switch>
-            <Route path={match.url} exact component={PhotosView} />
-            <Redirect to="/photos" />
-        </Switch>
+        <Routes>
+            <Route path="" element={<PhotosView />} />
+            <Route path="*" element={<Navigate to="/photos" replace />} />
+        </Routes>
     );
 };

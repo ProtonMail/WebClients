@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom-v5-compat';
 
 import { c, msgid } from 'ttag';
 
@@ -60,7 +60,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useAppTitle(c('Title').t`Album`);
     const updateTitle = useAppTitleUpdate();
     const { createNotification } = useNotifications();
-    let { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
+    const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const {
         shareId,
@@ -101,6 +101,9 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef?: React.MutableRefObject<unknown>) => {
+            if (!albumShareId) {
+                return;
+            }
             incrementItemRenderedCounter();
             loadPhotoLink(albumShareId, itemLinkId, domRef);
         },
@@ -145,7 +148,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
 
     const onPhotoUploadedToAlbum = useCallback(
         async (file: OnFileUploadSuccessCallbackData) => {
-            if (!file) {
+            if (!file || !albumShareId) {
                 return;
             }
             const abortSignal = new AbortController().signal;
@@ -212,7 +215,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 missingPhotosIds?: string[];
             }
         ) => {
-            if (!albumShareId || !linkId) {
+            if (!albumShareId || !linkId || !albumLinkId) {
                 return;
             }
             try {
@@ -276,7 +279,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             abortSignal: AbortSignal,
             { missingPhotosIds, force }: { missingPhotosIds: string[]; force: boolean }
         ) => {
-            if (!albumShareId || !linkId || !albumName) {
+            if (!albumShareId || !linkId || !albumName || !albumLinkId) {
                 return;
             }
             if (missingPhotosIds.length && !force) {
@@ -317,6 +320,9 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     }, [albumPhotosLinkIds, photoLinkIds, handleDeleteAlbum, showDeleteAlbumModal, albumName, navigateToAlbums]);
 
     const onShowDetails = useCallback(async () => {
+        if (!albumShareId || !albumLinkId) {
+            return;
+        }
         showDetailsModal({
             shareId: albumShareId,
             linkId: previewItem ? previewItem.linkId : albumLinkId,

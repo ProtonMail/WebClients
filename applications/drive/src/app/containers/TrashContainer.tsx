@@ -1,14 +1,13 @@
-import type { RouteComponentProps } from 'react-router-dom';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
 import TrashView from '../components/sections/Trash/TrashView';
 
-const TrashContainer = ({ match }: RouteComponentProps) => {
+const TrashContainer = () => {
     return (
-        <Switch>
-            <Route path={match.url} exact component={TrashView} />
-            <Redirect to="/trash" />
-        </Switch>
+        <Routes>
+            <Route path="" element={<TrashView />} />
+            <Route path="*" element={<Navigate to="/trash" replace />} />
+        </Routes>
     );
 };
 

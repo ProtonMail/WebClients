@@ -50,7 +50,6 @@ export const PublicSharing = ({
     const { createNotification } = useNotifications();
     const [driveUpsellModal, showDriveUpsellModal] = useDriveUpsellModal();
     const [user] = useUser();
-
     const goToSettings = useSettingsLink();
     const { APP_NAME } = useConfig();
     const upsellRef = getUpsellRefFromApp({
