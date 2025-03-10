@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -62,6 +62,10 @@ const CalendarInviteButtons = ({
 
     const [selectedAnswer, setSelectedAnswer] = useState(responseTypeMap[partstat]);
 
+    useEffect(() => {
+        setSelectedAnswer(responseTypeMap[partstat]);
+    }, [partstat]);
+
     const onAccept = () => {
         setSelectedAnswer(ATTENDEE_RESPONE_TYPE.ACCEPTED);
         void sendCalendarInviteReport(api, {
@@ -124,6 +128,10 @@ const CalendarInviteButtons = ({
     ];
     const { text } = list.find((ans) => ans.isSelected) || list[0];
     const restList = list.filter((ans) => !ans.isSelected);
+
+    useEffect(() => {
+        console.log('partstat changed', partstat);
+    }, [partstat]);
 
     if (partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
         return (
