@@ -1,9 +1,11 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { type PrivateKeyReference, type PublicKeyReference, type SessionKey } from '@proton/crypto';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressActive, getIsAddressExternal } from '../helpers/address';
 import { canonicalizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
 import type { Address, Nullable } from '../interfaces';
+import type { VerificationPreferences } from '../interfaces/VerificationPreferences';
 import type {
     CalendarEvent,
     CalendarNotificationSettings,
@@ -40,7 +42,7 @@ export const readSessionKey = (
 /**
  * Read the session keys.
  */
-export const readSessionKeys = async ({
+export const readSessionKeys = ({
     calendarEvent,
     decryptedSharedKeyPacket,
     privateKeys,
@@ -235,6 +237,7 @@ interface ReadCalendarEventArguments {
     calendarSettings: CalendarSettings;
     addresses: Address[];
     encryptingAddressID?: string;
+    getAttendeePublicKeys: (attendeeEmail: string) => Promise<VerificationPreferences>;
 }
 
 export const readCalendarEvent = async ({
@@ -255,6 +258,7 @@ export const readCalendarEvent = async ({
     calendarSessionKey,
     calendarSettings,
     encryptingAddressID,
+    getAttendeePublicKeys,
 }: ReadCalendarEventArguments) => {
     const decryptedEventsResults = await Promise.all([
         Promise.all(SharedEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
@@ -285,17 +289,28 @@ export const readCalendarEvent = async ({
         calendarSettings
     );
 
-    const veventAttendees = decryptedAttendeesEvents.reduce<VcalAttendeeProperty[]>((acc, event) => {
-        if (!event) {
-            return acc;
-        }
-        const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
-        if (!getIsEventComponent(parsedComponent)) {
-            return acc;
-        }
+    const veventAttendees = await Promise.all(
+        decryptedAttendeesEvents
+            .map((event) => {
+                if (!event) {
+                    return false;
+                }
+                const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
 
-        return acc.concat(toInternalAttendee(parsedComponent, AttendeesInfo.Attendees));
-    }, []);
+                if (!getIsEventComponent(parsedComponent)) {
+                    return false;
+                }
+
+                return toInternalAttendee(
+                    parsedComponent,
+                    AttendeesInfo.Attendees,
+                    sharedSessionKey,
+                    eventID,
+                    getAttendeePublicKeys
+                );
+            })
+            .filter(isTruthy)
+    ).then((attendees) => attendees.flat());
 
     if (valarmComponents.length) {
         vevent.components = valarmComponents;
