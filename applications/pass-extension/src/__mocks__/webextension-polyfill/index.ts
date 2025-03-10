@@ -3,6 +3,7 @@ import { sender } from 'proton-pass-extension/__mocks__/mocks';
 
 const browser = {
     runtime: {
+        getVersion: jest.fn(() => '0.0.1'),
         getURL: jest.fn((asset: string) => `test://${asset}`),
         sendMessage: jest.fn((_, message) => {
             const handler = mockHandlers.get(message.type);
