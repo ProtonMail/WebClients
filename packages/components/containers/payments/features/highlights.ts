@@ -132,6 +132,14 @@ export const getSentinel = (included: boolean = false): PlanCardFeatureDefinitio
     };
 };
 
+export const getAdvancedAccountProtectionFeature = (included: boolean = true): PlanCardFeatureDefinition => {
+    return {
+        text: c('pass_signup_2024: Info').t`Advanced account protection`,
+        icon: 'lock',
+        included,
+    };
+};
+
 export const getPassMonitor = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`${DARK_WEB_MONITORING_NAME} and ${PROTON_SENTINEL_NAME}`,
@@ -275,4 +283,13 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
             },
         },
     ];
+};
+
+export const getScribeFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
+        icon: 'pen-sparks',
+        included: true,
+        tooltip: c('mail_signup_2024: Info').t`Add-on with free trial`,
+    };
 };
