@@ -17,8 +17,6 @@ import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
-import move from '@proton/utils/move';
-import noop from '@proton/utils/noop';
 
 import { sendCalendarInviteReport } from './CalendarInviteTelemetry';
 import { useCalendarERRTetric } from './metrics/useCalendarERRTMetric';
@@ -29,6 +27,13 @@ interface Props {
     disabled?: boolean;
     className?: string;
 }
+
+enum ATTENDEE_RESPONE_TYPE {
+    ACCEPTED = 0,
+    TENTATIVE = 1,
+    DECLINED = 2,
+}
+
 const CalendarInviteButtons = ({
     actions,
     partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
@@ -47,16 +52,18 @@ const CalendarInviteButtons = ({
 
     const { accept, acceptTentatively, decline } = actions;
 
-    const accepted = partstat === ICAL_ATTENDEE_STATUS.ACCEPTED;
-    const tentative = partstat === ICAL_ATTENDEE_STATUS.TENTATIVE;
-    const declined = partstat === ICAL_ATTENDEE_STATUS.DECLINED;
+    const responseTypeMap = {
+        [ICAL_ATTENDEE_STATUS.NEEDS_ACTION]: undefined,
+        [ICAL_ATTENDEE_STATUS.DELEGATED]: undefined,
+        [ICAL_ATTENDEE_STATUS.ACCEPTED]: ATTENDEE_RESPONE_TYPE.ACCEPTED,
+        [ICAL_ATTENDEE_STATUS.TENTATIVE]: ATTENDEE_RESPONE_TYPE.TENTATIVE,
+        [ICAL_ATTENDEE_STATUS.DECLINED]: ATTENDEE_RESPONE_TYPE.DECLINED,
+    };
 
-    const answerIndex = [accepted, tentative, declined].findIndex((bool) => bool === true);
-
-    const [selectedAnswer, setSelectedAnswer] = useState(answerIndex);
+    const [selectedAnswer, setSelectedAnswer] = useState(responseTypeMap[partstat]);
 
     const onAccept = () => {
-        setSelectedAnswer(0);
+        setSelectedAnswer(ATTENDEE_RESPONE_TYPE.ACCEPTED);
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'yes', plan },
@@ -68,7 +75,7 @@ const CalendarInviteButtons = ({
         return promise;
     };
     const onTentative = () => {
-        setSelectedAnswer(1);
+        setSelectedAnswer(ATTENDEE_RESPONE_TYPE.TENTATIVE);
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'maybe', plan },
@@ -80,7 +87,7 @@ const CalendarInviteButtons = ({
         return promise;
     };
     const onDecline = () => {
-        setSelectedAnswer(2);
+        setSelectedAnswer(ATTENDEE_RESPONE_TYPE.DECLINED);
         void sendCalendarInviteReport(api, {
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'no', plan },
@@ -101,19 +108,22 @@ const CalendarInviteButtons = ({
     const list = [
         {
             text: acceptText,
-            onClick: accepted ? noop : onAccept,
+            onClick: onAccept,
+            isSelected: selectedAnswer === ATTENDEE_RESPONE_TYPE.ACCEPTED,
         },
         {
             text: tentativeText,
-            onClick: tentative ? noop : onTentative,
+            onClick: onTentative,
+            isSelected: selectedAnswer === ATTENDEE_RESPONE_TYPE.TENTATIVE,
         },
         {
             text: declineText,
-            onClick: declined ? noop : onDecline,
+            onClick: onDecline,
+            isSelected: selectedAnswer === ATTENDEE_RESPONE_TYPE.DECLINED,
         },
     ];
-    const orderedList = move(list, selectedAnswer, 0);
-    const [{ text }, ...restList] = orderedList;
+    const { text } = list.find((ans) => ans.isSelected) || list[0];
+    const restList = list.filter((ans) => !ans.isSelected);
 
     if (partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
         return (
