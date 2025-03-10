@@ -1,17 +1,17 @@
 import { LocationErrorBoundary } from '@proton/components'
 import { PublicDriveStoreProvider } from '@proton/drive-store/lib/DriveStoreProvider'
-import PublicApplicationContent from './PublicApplicationContent'
+import { PublicApplicationContent } from './PublicApplicationContent'
 import { usePublicDriveCompat } from '@proton/drive-store/lib'
 import { Button, CircleLoader } from '@proton/atoms/index'
 import { c } from 'ttag'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { useEffect, useRef } from 'react'
-import PasswordPage from './PasswordPage/PasswordPage'
+import PasswordPage from '../../../Apps/Public/PasswordPage/PasswordPage'
 import { UnAuthenticated } from '@proton/components'
 import { PublicCompatProvider } from '@proton/drive-store/lib/usePublicDriveCompat'
 
-const PublicAppRootContainer = () => {
+export function PublicAppRootContainer() {
   return (
     <LocationErrorBoundary>
       <PublicDriveStoreProvider>
@@ -25,7 +25,7 @@ const PublicAppRootContainer = () => {
   )
 }
 
-const RenderApplicationWhenReady = () => {
+function RenderApplicationWhenReady() {
   const publicDriveCompat = usePublicDriveCompat()
 
   const {
@@ -97,5 +97,3 @@ const RenderApplicationWhenReady = () => {
 
   return <PublicApplicationContent publicDriveCompat={publicDriveCompat} />
 }
-
-export default PublicAppRootContainer

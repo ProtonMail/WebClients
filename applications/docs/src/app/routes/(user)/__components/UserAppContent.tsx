@@ -5,17 +5,17 @@ import { useApi, useAuthentication, useConfig } from '@proton/components'
 import { Application } from '@proton/docs-core'
 import { useDriveCompat } from '@proton/drive-store'
 
-import { useLandingPageFeatureFlag } from '../../Components/Homepage/useLandingPageFeatureFlag'
-import { APP_VERSION } from '../../config'
-import ApplicationProvider from '../../Containers/ApplicationProvider'
+import { useLandingPageFeatureFlag } from '../../../Components/Homepage/useLandingPageFeatureFlag'
+import { APP_VERSION } from '../../../config'
+import ApplicationProvider from '../../../Containers/ApplicationProvider'
 import { useUnleashClient } from '@proton/unleash'
-import { DocsNotificationsProvider } from '../../Containers/DocsNotificationsProvider'
+import { DocsNotificationsProvider } from '../../../Containers/DocsNotificationsProvider'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
-const HomepageRoute = lazy(() => import('../../Components/Homepage/HomepageRoute'))
-const SingleDocumentRoute = lazy(() => import('./SingleDocumentRoute'))
+const HomepageRoute = lazy(() => import('../../../Components/Homepage/HomepageRoute'))
+const UserDocumentPage = lazy(() => import('../(document)/doc/page'))
 
-function UserAppContent() {
+export function UserAppContent() {
   const api = useApi()
   const driveCompat = useDriveCompat()
   const { API_URL } = useConfig()
@@ -50,7 +50,7 @@ function UserAppContent() {
         <Switch>
           <Route path={['/doc', '/new']}>
             <Suspense>
-              <SingleDocumentRoute driveCompat={driveCompat} />
+              <UserDocumentPage driveCompat={driveCompat} />
             </Suspense>
           </Route>
           <Route path={['/most-recent', '/owned-by-me', '/owned-by-others']}>
@@ -79,5 +79,3 @@ function UserAppContent() {
     </ApplicationProvider>
   )
 }
-
-export default UserAppContent
