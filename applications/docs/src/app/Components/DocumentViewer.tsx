@@ -17,7 +17,7 @@ import {
   isLocalEnvironment,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
-import DebugMenu, { useDebug } from './DebugMenu'
+import { DebugMenu, useDebug } from './DebugMenu'
 import { useApplication } from '../Containers/ApplicationProvider'
 import type {
   CommentMarkNodeChangeData,
@@ -39,17 +39,16 @@ import { useWelcomeSplashModal } from '../Apps/Public/WelcomeSplashModal/Welcome
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
-import type { DocumentError } from './DocumentErrorComponent'
-import { DocumentErrorComponent } from './DocumentErrorComponent'
+import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { useAppendPublicShareKeyMaterialToTitle } from '../Hooks/usePublicShareUrlKeyMaterial'
 
-type Props = {
+export type DocumentViewerProps = {
   nodeMeta: NodeMeta | PublicNodeMeta
   editorInitializationConfig?: EditorInitializationConfig
   action: DocumentAction['mode'] | undefined
 }
 
-export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }: Props) {
+export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }: DocumentViewerProps) {
   const application = useApplication()
   const getUserSettings = useGetUserSettings()
   const debug = useDebug()
@@ -374,7 +373,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   }
 
   if (error) {
-    return <DocumentErrorComponent error={error} />
+    return <DocumentErrorFallback error={error} />
   }
 
   return (
