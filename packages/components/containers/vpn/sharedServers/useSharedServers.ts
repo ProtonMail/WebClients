@@ -7,7 +7,7 @@ import { queryLocationFilter } from './api';
 export interface VpnLocationFilterPolicy {
     Code: number;
     Groups: SharedServerGroup[];
-    LocationFilterPolicyID: number;
+    LocationFilterPolicyID: number | null;
     Locations: SharedServerLocation[];
     Name: string;
     OrganizationID: number;

@@ -19,3 +19,5 @@ export enum PolicyState {
     Inactive = 0,
     Active = 1,
 }
+
+export type LocalStatus = 'created' | 'edited' | 'deleted' | 'unchanged';
