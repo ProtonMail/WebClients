@@ -108,6 +108,8 @@ export const isSupportedImage = (mimeType: string) =>
 
 export const isSVG = (mimeType: string) => mimeType === SupportedMimeTypes.svg;
 
+export const isHEIC = (mimeType: string) => mimeType === SupportedMimeTypes.heic;
+
 export const isICS = (mimeType: string) =>
     mimeType.startsWith(MIME_TYPES.ICS) || mimeType.includes(MIME_TYPES.APPLICATION_ICS);
 
