@@ -59,7 +59,7 @@ export const useHelpCenterIframeStyles = () => {
             }
             select:disabled { opacity: 0.7 !important; background: ${extractCssVariable('--background-weak')} !important; }
             button.border-purple-500 { border-color: ${extractCssVariable('--primary')} !important; }
-            button.bg-purple-500 { background-color: ${extractCssVariable('--primary')} !important; height: 50px !important; }
+            button.bg-purple-500 { background-color: ${extractCssVariable('--primary')} !important; height: 50px !important; padding-top: 0px !important; }
             button.bg-purple-500:hover { background-color: ${extractCssVariable('--interaction-norm-major-1')} !important; }
             button.bg-purple-500:active { background-color: ${extractCssVariable('--interaction-norm-major-2')} !important; }
             body { color: ${extractCssVariable('--text-norm')} !important; }

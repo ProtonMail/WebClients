@@ -8,7 +8,7 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
-import { type APP_NAMES, OPEN_COMPOSER_WITH_MAILTO_EVENT } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, OPEN_COMPOSER_WITH_MAILTO_EVENT } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl, getProductForSupport, getStaticURL } from '@proton/shared/lib/helpers/url';
 
@@ -107,15 +107,20 @@ const SelfHelpModal = ({ open, onClose, onExit, onBugReportClick, app }: Props) 
                         // For Electron, use the openLinkInBrowser helper
                         openLinkInBrowser(url);
                     } else {
-                        // For web browser
                         if (url.startsWith('mailto:')) {
+                            // For web browser
                             // Use the custom event to open the composer with the mailto link
                             document.dispatchEvent(
                                 new CustomEvent(OPEN_COMPOSER_WITH_MAILTO_EVENT, {
                                     detail: { mailto: url },
                                 })
                             );
-                            onClose?.();
+                            // if app is calendar, we can open in new tab
+                            if (app !== APPS.PROTONMAIL) {
+                                window.open(url, '_blank');
+                            } else {
+                                onClose?.();
+                            }
                         } else {
                             if (url.startsWith('https://')) {
                                 window.open(url, '_blank');
