@@ -33,7 +33,6 @@ export default function DriveSidebarFoldersRoot({
             to={url}
             icon="inbox"
             shareId={shareId}
-            isActive={(match) => match?.url === url}
             onDoubleClick={() => toggleExpand(linkId)}
             collapsed={collapsed}
         >

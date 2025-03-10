@@ -3,11 +3,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import noAccessSvg from '@proton/styles/assets/img/illustrations/no-access.svg';
 
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { DriveEmptyView } from '../../layout/DriveEmptyView';
 
 export const NoAccessView = () => {
-    const { navigateToRoot } = useNavigate();
+    const { navigateToRoot } = useDriveNavigation();
     return (
         <DriveEmptyView
             image={noAccessSvg}

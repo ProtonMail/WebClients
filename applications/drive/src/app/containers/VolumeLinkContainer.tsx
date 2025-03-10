@@ -1,27 +1,26 @@
 import type { FC } from 'react';
 import { useEffect } from 'react';
-import type { RouteComponentProps } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { Loader } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import useNavigate from '../hooks/drive/useNavigate';
+import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useDocumentActions } from '../store/_documents';
 import { useVolumeLinkView } from '../store/_views/useVolumeLinkView';
 
-export const VolumeLinkContainer: FC<RouteComponentProps<{ volumeId: string; linkId: string }>> = ({ match }) => {
+export const VolumeLinkContainer: FC = () => {
+    const { volumeId, linkId } = useParams<{ volumeId: string; linkId: string }>();
     const { search } = useLocation();
     const searchParams = new URLSearchParams(search);
     const invitationId = searchParams.get('invitation');
     const externalInvitationId = searchParams.get('externalInvitationID');
-    const { volumeId, linkId } = match.params;
     const { handleRedirectOrAcceptInvitation, handleConvertExternalInvitation } = useVolumeLinkView();
-    const { navigateToSharedWithMe, navigateToSharedByMe, navigateToLink, navigateToNoAccess } = useNavigate();
+    const { navigateToSharedWithMe, navigateToSharedByMe, navigateToLink, navigateToNoAccess } = useDriveNavigation();
     const { openDocument } = useDocumentActions();
 
     useEffect(() => {
-        if (!invitationId) {
+        if (!invitationId || !volumeId || !linkId) {
             return;
         }
         const abortController = new AbortController();
@@ -50,7 +49,7 @@ export const VolumeLinkContainer: FC<RouteComponentProps<{ volumeId: string; lin
     }, [invitationId, volumeId, linkId]);
 
     useEffect(() => {
-        if (!externalInvitationId) {
+        if (!externalInvitationId || !linkId) {
             return;
         }
         const abortController = new AbortController();
