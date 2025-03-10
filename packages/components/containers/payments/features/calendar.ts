@@ -80,6 +80,14 @@ const getInvitation = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getSecurePersonalAndSharedCalendarFeature = (): PlanCardFeatureDefinition => {
+    return {
+        icon: 'calendar-grid',
+        text: c('Cancellation upsell').t`Secure personal and shared calendar`,
+        included: true,
+    };
+};
+
 const getTeamAvailability = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`See team's availability`,
