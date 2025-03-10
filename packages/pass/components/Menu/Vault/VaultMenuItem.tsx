@@ -163,7 +163,7 @@ export const VaultMenuItem = memo(
                                   onClick={handleClickEvent(onEdit)}
                               />,
 
-                              canManage && (
+                              canManage && vault.shared && (
                                   <DropdownMenuButton
                                       key="vault-manage"
                                       className="flex items-center py-2 px-4"
