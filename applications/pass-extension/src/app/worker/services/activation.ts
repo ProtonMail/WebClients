@@ -3,7 +3,6 @@ import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { checkExtensionPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
-import { EXTENSION_ROLLBACKED } from 'proton-pass-extension/lib/utils/version';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import { type Runtime } from 'webextension-polyfill';
 
@@ -113,7 +112,7 @@ export const createActivationService = () => {
 
             /* clear the cache if the previous cache version does not match
              * this build's minimum cache version validity. FIXME: use migrations */
-            if (!previous || semver(previous) < semver(MIN_CACHE_VERSION) || EXTENSION_ROLLBACKED) {
+            if (!previous || semver(previous) < semver(MIN_CACHE_VERSION)) {
                 logger.info(`[Activation] update requires cache clear [before=${previous},min=${MIN_CACHE_VERSION}]`);
                 await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
             }
