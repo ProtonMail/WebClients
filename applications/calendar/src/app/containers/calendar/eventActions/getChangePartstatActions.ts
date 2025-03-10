@@ -3,7 +3,7 @@ import { getUnixTime } from 'date-fns';
 import { CryptoProxy, serverTime } from '@proton/crypto';
 import { toIcsPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ATTENDEE_COMMENT_TYPE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { SIGNATURE_CONTEXT } from '@proton/shared/lib/calendar/crypto/constants';
+import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers';
 import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getAttendeeToken, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
@@ -64,7 +64,7 @@ export const getUpdatePartstatOperation = async ({
             // TODO sanitize the message before
             textData: comment?.Message,
             signingKeys: [signingKey.privateKey],
-            signatureContext: { value: SIGNATURE_CONTEXT.ATTENDEE_COMMENT(event.ID), critical: true },
+            signatureContext: { value: getSignatureContext('calendar.rsvp.comment', event.ID), critical: true },
             sessionKey,
             format: 'binary',
         });
