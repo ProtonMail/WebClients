@@ -1,15 +1,28 @@
 import { c } from 'ttag';
 
 import { MailLogo } from '@proton/components';
+import { getManageUserPermissionsAndAccessFeature } from '@proton/components/containers/payments/features/b2b';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
-import { getFreeMailStorageFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
-import { getSupport } from '@proton/components/containers/payments/features/highlights';
+import { getSecurePersonalAndSharedCalendarFeature } from '@proton/components/containers/payments/features/calendar';
+import {
+    getCloudStorageAndSharingFeature,
+    getFreeMailStorageFeature,
+    getShortStorageFeatureB2B,
+    getStorageFeature,
+} from '@proton/components/containers/payments/features/drive';
+import {
+    getAdvancedAccountProtectionFeature,
+    getScribeFeature,
+    getSupport,
+} from '@proton/components/containers/payments/features/highlights';
 import {
     getFoldersAndLabelsFeature,
     getNAddressesFeature,
     getNDomainsFeature,
     getNMessagesFeature,
 } from '@proton/components/containers/payments/features/mail';
+import { getPasswordManagerToSecureCredentialsFeature } from '@proton/components/containers/payments/features/pass';
+import { getB2BVPNConnectionsPerUserFeature } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE, PLANS } from '@proton/payments';
 import { APPS, BRAND_NAME, MAIL_APP_NAME, MAIL_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -124,6 +137,27 @@ export const getCustomMailFeatures = (plan: Plan | undefined, freePlan: FreePlan
         getSupport('priority'),
         getCalendarAppFeature(),
     ];
+};
+
+const getPorkbunFeatures = (plan: Plan | undefined) => {
+    if (!plan) {
+        return [];
+    }
+
+    const isMailEssentials = plan.Name === PLANS.MAIL_PRO;
+    const isPBS = plan.Name === PLANS.BUNDLE_PRO_2024;
+
+    return [
+        getShortStorageFeatureB2B(plan.MaxSpace),
+        getNDomainsFeature({ n: plan.MaxDomains, tooltip: false }),
+        getSecurePersonalAndSharedCalendarFeature(),
+        getCloudStorageAndSharingFeature(),
+        !isMailEssentials && getAdvancedAccountProtectionFeature(),
+        !isMailEssentials && getManageUserPermissionsAndAccessFeature(),
+        isPBS && getB2BVPNConnectionsPerUserFeature(),
+        isPBS && getPasswordManagerToSecureCredentialsFeature(),
+        getScribeFeature(),
+    ].filter(isTruthy);
 };
 
 export const getPlanTitle = (plan: Plan | undefined) => {
@@ -300,8 +334,9 @@ export const getMailConfiguration = ({
     }
 
     if (invite?.type === 'porkbun') {
+        audience = Audience.B2B;
         planCards = {
-            [Audience.B2C]: [
+            [Audience.B2B]: [
                 {
                     plan: PLANS.MAIL_PRO,
                     subsection: (
@@ -310,7 +345,9 @@ export const getMailConfiguration = ({
                             features={
                                 <PlanCardFeatureList
                                     {...planCardFeatureProps}
-                                    features={getCustomMailFeatures(plansMap?.[PLANS.MAIL_PRO], freePlan)}
+                                    features={getPorkbunFeatures(plansMap?.[PLANS.MAIL_PRO])}
+                                    icon={true}
+                                    tooltip={true}
                                 />
                             }
                         />
@@ -327,7 +364,9 @@ export const getMailConfiguration = ({
                             features={
                                 <PlanCardFeatureList
                                     {...planCardFeatureProps}
-                                    features={getCustomMailFeatures(plansMap?.[PLANS.MAIL_BUSINESS], freePlan)}
+                                    features={getPorkbunFeatures(plansMap?.[PLANS.MAIL_BUSINESS])}
+                                    icon={true}
+                                    tooltip={true}
                                 />
                             }
                         />
@@ -344,7 +383,9 @@ export const getMailConfiguration = ({
                             features={
                                 <PlanCardFeatureList
                                     {...planCardFeatureProps}
-                                    features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE_PRO_2024], freePlan)}
+                                    features={getPorkbunFeatures(plansMap?.[PLANS.BUNDLE_PRO_2024])}
+                                    icon={true}
+                                    tooltip={true}
                                 />
                             }
                         />
@@ -353,7 +394,7 @@ export const getMailConfiguration = ({
                     guarantee: true,
                 },
             ],
-            [Audience.B2B]: [],
+            [Audience.B2C]: [],
         };
     }
 

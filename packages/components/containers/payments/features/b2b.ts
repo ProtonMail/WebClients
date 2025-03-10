@@ -557,3 +557,11 @@ export const getSupportFeatures = (): PlanCardFeature[] => {
         },
     ];
 };
+
+export const getManageUserPermissionsAndAccessFeature = (included: boolean = true): PlanCardFeatureDefinition => {
+    return {
+        icon: 'users',
+        text: c('new_plans: feature').t`Manage user permissions and access`,
+        included,
+    };
+};
