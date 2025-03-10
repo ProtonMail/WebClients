@@ -79,12 +79,12 @@ const ExtraSpamScore = ({ message }: Props) => {
                 {isSuspiciousFlagged ? (
                     <>
                         {c('Info')
-                            .t`Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.`}
+                            .t`Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.`}
                     </>
                 ) : (
                     <>
                         {c('Info')
-                            .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
+                            .t`Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.`}
                     </>
                 )}
                 <Prompt
