@@ -6,8 +6,8 @@ import { useApplication } from '../../Containers/ApplicationProvider'
 import { c } from 'ttag'
 import CloudSlashIcon from '../../Icons/CloudSlashIcon'
 import ArrowsRotate from '../../Icons/ArrowsRotate'
-import Pill from '../Pill'
-import PopoverPill from '../PopoverPill'
+import { Pill } from '../Pill'
+import { PopoverPill } from '../PopoverPill'
 import { useWebSocketStatus } from '../../Hooks/useWebsocketStatus'
 
 /**
