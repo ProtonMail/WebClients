@@ -18,15 +18,15 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 import noop from '@proton/utils/noop'
 import { sendErrorReport, getRefreshError } from '@proton/drive-store'
 
-import locales from '../../locales'
-import { extendStore, setupStore } from '../../ReduxStore/store'
+import locales from '../../../locales'
+import { extendStore, setupStore } from '../../../ReduxStore/store'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
-import type { DocsState } from '../../ReduxStore/rootReducer'
+import type { DocsState } from '../../../ReduxStore/rootReducer'
 import { appMode } from '@proton/shared/lib/webpack.constants'
 
 const getAppContainer = () =>
-  import(/* webpackChunkName: "MainContainer" */ './UserAppRootContainer')
-    .then((result) => result.default)
+  import(/* webpackChunkName: "MainContainer" */ '../__components/UserAppRootContainer')
+    .then(({ UserAppRootContainer }) => UserAppRootContainer)
     .catch((e) => {
       console.warn(e)
       sendErrorReport(e)
