@@ -8,22 +8,22 @@ import type { DocumentAction, DriveCompat, NodeMeta } from '@proton/drive-store'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { c } from 'ttag'
 
-import { SharedLayout } from '../SharedLayout'
-import { DocumentConverter } from '../../Components/DocumentConverter'
-import { DocumentViewer } from '../../Components/DocumentViewer'
-import { WordCountContextProvider } from '../../Components/WordCount/WordCountProvider'
-import { useApplication } from '../../Containers/ApplicationProvider'
-import { useDocsUrlBar } from '../../Containers/useDocsUrlBar'
+import { DocumentLayout } from '../../../__components/DocumentLayout'
+import { DocumentConverter } from '../../../../Components/DocumentConverter'
+import { DocumentViewer } from '../../../../Components/DocumentViewer'
+import { WordCountContextProvider } from '../../../../Components/WordCount/WordCountProvider'
+import { useApplication } from '../../../../Containers/ApplicationProvider'
+import { useDocsUrlBar } from '../../../../Containers/useDocsUrlBar'
 import { useUser } from '@proton/account/user/hooks'
-import UserProvider from '../../Containers/DocsContextProvider'
-import { PublicDocumentCopier } from '../../Components/PublicDocumentCopier'
+import UserProvider from '../../../../Containers/DocsContextProvider'
+import { PublicDocumentCopier } from '../../../../Components/PublicDocumentCopier'
 import { getUrlPassword } from '@proton/drive-store/utils/url/password'
-import { useEmailOptInModal } from '../../Components/Modals/EmailOptInModal/EmailOptInModal'
-import { useDocsNotifications } from '../../Containers/DocsNotificationsProvider'
-import { PrivateHookChangesToEvents } from './Hooks/PrivateHookChangesToEvents'
+import { useEmailOptInModal } from '../../../../Components/Modals/EmailOptInModal/EmailOptInModal'
+import { useDocsNotifications } from '../../../../Containers/DocsNotificationsProvider'
+import { PrivateHookChangesToEvents } from './__components/PrivateHookChangesToEvents'
 import { useFlag } from '@proton/unleash'
 
-export default function SingleDocumentRoute({ driveCompat }: { driveCompat: DriveCompat }) {
+export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
 
   const [user] = useUser()
@@ -138,7 +138,7 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
   return (
     <WordCountContextProvider>
       <UserProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
-        <SharedLayout action={actionMode}>
+        <DocumentLayout action={actionMode}>
           <PrivateHookChangesToEvents />
           <Content
             onConversionSuccess={onConversionSuccess}
@@ -148,7 +148,7 @@ export default function SingleDocumentRoute({ driveCompat }: { driveCompat: Driv
             getNodeContents={driveCompat.getNodeContents}
             editorInitializationConfig={editorInitializationConfig}
           />
-        </SharedLayout>
+        </DocumentLayout>
       </UserProvider>
     </WordCountContextProvider>
   )
