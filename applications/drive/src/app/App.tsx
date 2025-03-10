@@ -1,6 +1,7 @@
 import { Suspense, useState } from 'react';
 import { lazy } from 'react';
 import { Router } from 'react-router-dom';
+import { CompatRouter } from 'react-router-dom-v5-compat';
 
 import {
     ApiProvider,
@@ -122,31 +123,35 @@ const App = () => {
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
                             <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                                 <Router history={extraThunkArguments.history}>
-                                    <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                        <ApiProvider api={extraThunkArguments.api}>
-                                            <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                    <StandardPrivateApp noModals>
-                                                        <UserSettingsProvider
-                                                            initialUser={state.initialUser}
-                                                            initialDriveUserSettings={state.initialDriveUserSettings}
-                                                        >
-                                                            {typeof state.delinquent !== 'undefined' && (
-                                                                <Suspense fallback={<LoaderPage />}>
-                                                                    {state.delinquent === false && (
-                                                                        <MainContainerLazy />
-                                                                    )}
-                                                                    {state.delinquent === true && (
-                                                                        <DelinquentContainerLazy />
-                                                                    )}
-                                                                </Suspense>
-                                                            )}
-                                                        </UserSettingsProvider>
-                                                    </StandardPrivateApp>
-                                                </ErrorBoundary>
-                                            </DrawerProvider>
-                                        </ApiProvider>
-                                    </EventManagerProvider>
+                                    <CompatRouter>
+                                        <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                            <ApiProvider api={extraThunkArguments.api}>
+                                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        <StandardPrivateApp noModals>
+                                                            <UserSettingsProvider
+                                                                initialUser={state.initialUser}
+                                                                initialDriveUserSettings={
+                                                                    state.initialDriveUserSettings
+                                                                }
+                                                            >
+                                                                {typeof state.delinquent !== 'undefined' && (
+                                                                    <Suspense fallback={<LoaderPage />}>
+                                                                        {state.delinquent === false && (
+                                                                            <MainContainerLazy />
+                                                                        )}
+                                                                        {state.delinquent === true && (
+                                                                            <DelinquentContainerLazy />
+                                                                        )}
+                                                                    </Suspense>
+                                                                )}
+                                                            </UserSettingsProvider>
+                                                        </StandardPrivateApp>
+                                                    </ErrorBoundary>
+                                                </DrawerProvider>
+                                            </ApiProvider>
+                                        </EventManagerProvider>
+                                    </CompatRouter>
                                 </Router>
                             </FlagProvider>
                         </AuthenticationProvider>

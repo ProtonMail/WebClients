@@ -1,8 +1,8 @@
-import useNavigate from '../hooks/drive/useNavigate';
+import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useSpotlight } from './useSpotlight';
 
 const useOpenPreview = () => {
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink } = useDriveNavigation();
     const spotlight = useSpotlight();
 
     const openPreview = (shareId: string, linkId: string) => {

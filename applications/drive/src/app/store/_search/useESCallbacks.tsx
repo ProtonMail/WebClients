@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 import type { PrivateKeyReference } from '@proton/crypto';
 import type { CachedItem, ESCallbacks, ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search';
@@ -35,7 +35,7 @@ export const useESCallbacks = ({
     getSharePrivateKey,
     getLinkPrivateKey,
 }: Props): ESCallbacks<ESLink, ESDriveSearchParams> => {
-    const history = useHistory();
+    const location = useLocation();
 
     const userID = user.ID;
     const queryItemsMetadata = async (signal: AbortSignal) => {
@@ -57,7 +57,7 @@ export const useESCallbacks = ({
         testKeywords(keywords, [itemToSearch.metadata.decryptedName], hasApostrophe);
 
     const getSearchParams = () => {
-        const keyword = extractSearchParameters(history.location);
+        const keyword = extractSearchParameters(location);
         return {
             isSearch: !!keyword,
             esSearchParams: keyword ? { normalisedKeywords: normalizeKeyword(keyword) } : undefined,

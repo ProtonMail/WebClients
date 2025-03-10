@@ -23,7 +23,7 @@ import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecove
 import { usePhotosSelection } from './hooks';
 import { PhotosToolbar } from './toolbar';
 
-export const PhotosView: FC<void> = () => {
+export const PhotosView: FC = () => {
     useAppTitle(c('Title').t`Photos`);
 
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');

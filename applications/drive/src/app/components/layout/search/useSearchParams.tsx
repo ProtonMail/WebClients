@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 // TODO: handle it with containers
 import { extractSearchParameters } from '../../../store/_search/utils';

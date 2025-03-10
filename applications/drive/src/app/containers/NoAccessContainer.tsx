@@ -1,14 +1,13 @@
-import type { RouteComponentProps } from 'react-router-dom';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
 import { NoAccessView } from '../components/sections/Drive/NoAccessView';
 
-const NoAccessContainer = ({ match }: RouteComponentProps) => {
+const NoAccessContainer = () => {
     return (
-        <Switch>
-            <Route path={match.url} exact component={NoAccessView} />
-            <Redirect to="/" />
-        </Switch>
+        <Routes>
+            <Route path="" element={<NoAccessView />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
     );
 };
 
