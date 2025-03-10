@@ -55,7 +55,7 @@ export const getUpdatePartstatOperation = async ({
     }
 
     let comment = maybeClearComment;
-    if (comment?.Message && comment?.Type === ATTENDEE_COMMENT_TYPE.CLEAR) {
+    if (comment?.Message && comment?.Type === ATTENDEE_COMMENT_TYPE.ENCRYPTED) {
         const sessionKey = await getSharedSessionKey({ calendarEvent: event, getAddressKeys, getCalendarKeys });
         const [signingKey] = await getAddressKeys(addressID);
 
