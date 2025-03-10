@@ -42,6 +42,8 @@ const getDeleteSingleEventActionsHelper = async ({
     inviteActions,
     isAttendee,
     sendIcs,
+    getAddressKeys,
+    getCalendarKeys,
 }: {
     oldEventData: CalendarEvent;
     oldEditEventData: EventOldData;
@@ -49,6 +51,8 @@ const getDeleteSingleEventActionsHelper = async ({
     inviteActions: InviteActions;
     isAttendee: boolean;
     sendIcs: SendIcs;
+    getAddressKeys: GetAddressKeys;
+    getCalendarKeys: GetCalendarKeys;
 }) => {
     const { veventComponent: oldVevent, memberID, calendarID, addressID } = oldEditEventData;
     let updatedInviteActions = getUpdatedDeleteInviteActions({
@@ -76,12 +80,15 @@ const getDeleteSingleEventActionsHelper = async ({
         updatedInviteActions = cleanInviteActions;
         // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
         // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
-        const updatePartstatOperation = getUpdatePartstatOperation({
+        const updatePartstatOperation = await getUpdatePartstatOperation({
             eventComponent: oldVevent,
             event: oldEventData,
             timestamp,
             inviteActions: updatedInviteActions,
             silence: true,
+            addressID,
+            getAddressKeys,
+            getCalendarKeys,
         });
         if (updatePartstatOperation) {
             updatePartstatOperations.push(updatePartstatOperation);
@@ -174,6 +181,8 @@ const getDeleteEventActions = async ({
             inviteActions: inviteActionsWithSharedData,
             isAttendee,
             sendIcs,
+            getAddressKeys,
+            getCalendarKeys,
         });
     }
 
@@ -189,6 +198,8 @@ const getDeleteEventActions = async ({
             inviteActions: inviteActionsWithSharedData,
             isAttendee,
             sendIcs,
+            getAddressKeys,
+            getCalendarKeys,
         });
     }
 
@@ -252,6 +263,8 @@ const getDeleteEventActions = async ({
         selfAttendeeToken,
         sendIcs,
         getCalendarEventRaw,
+        getAddressKeys,
+        getCalendarKeys,
     });
     const successText = getRecurringEventDeletedText(deleteType, deleteInviteActions);
     return {
