@@ -4,12 +4,12 @@ import type { Maybe } from '@proton/pass/types/utils';
 
 import { PassCryptoError } from './errors';
 
-// Add webauthn properties missing from PublicKeyCredentialCreationOptions
 type ExtendedPublicKeyCredentialOptions = PublicKeyCredentialCreationOptions & {
-    hints: ('client-device' | 'security-key' | 'hybrid')[];
+    hints?: ('client-device' | 'security-key' | 'hybrid')[];
 };
 
-const firstSalt = new Uint8Array(new Array(32).fill(1)).buffer;
+const FIRST_SALT = Uint8Array.from('proton.pass.webauthn.prf.firstSalt').buffer;
+const HKDF_INFO = Uint8Array.from('me.proton.pass.webauthn');
 
 export async function deriveKeyFromPRFCredential(credential: PublicKeyCredential, exported: true): Promise<string>;
 export async function deriveKeyFromPRFCredential(credential: PublicKeyCredential): Promise<CryptoKey>;
@@ -20,7 +20,7 @@ export async function deriveKeyFromPRFCredential(credential: PublicKeyCredential
 
     const inputKeyMaterial = new Uint8Array(prfBuffer);
 
-    const key = await deriveKey(inputKeyMaterial, new Uint8Array(), new Uint8Array(), { extractable: exported });
+    const key = await deriveKey(inputKeyMaterial, new Uint8Array(), HKDF_INFO, { extractable: exported });
 
     if (exported) {
         const exported = await crypto.subtle.exportKey('raw', key);
@@ -34,6 +34,8 @@ export async function getSerializedCredential(credentialId: Uint8Array) {
     const credential = (await navigator.credentials.get({
         mediation: 'required',
         publicKey: {
+            // dummy challenge, but no server interaction here.
+            // credential used to decrypt a payload.
             challenge: new Uint8Array([1]),
             allowCredentials: [
                 {
@@ -47,7 +49,7 @@ export async function getSerializedCredential(credentialId: Uint8Array) {
             extensions: {
                 prf: {
                     eval: {
-                        first: firstSalt,
+                        first: FIRST_SALT,
                     },
                 },
             },
@@ -60,43 +62,54 @@ export async function getSerializedCredential(credentialId: Uint8Array) {
 }
 
 export async function generateCredential(user: PublicKeyCredentialUserEntity): Promise<PublicKeyCredential> {
-    const credential = (await navigator.credentials.create({
-        publicKey: {
-            rp: {
-                name: window.location.hostname,
-                id: window.location.hostname,
+    const publicKey: ExtendedPublicKeyCredentialOptions = {
+        rp: {
+            name: window.location.hostname,
+            id: window.location.hostname,
+        },
+        user,
+        // dummy challenge, but no server interaction here.
+        // credential used to encrypt a payload.
+        challenge: new Uint8Array([1]),
+        pubKeyCredParams: [
+            {
+                type: 'public-key',
+                alg: -8, // Ed25519
             },
-            user,
-            challenge: new Uint8Array([1]),
-            pubKeyCredParams: [
-                {
-                    type: 'public-key',
-                    alg: -7,
-                },
-                {
-                    type: 'public-key',
-                    alg: -257,
-                },
-            ],
-            timeout: 60000,
-            excludeCredentials: [],
-            authenticatorSelection: {
-                authenticatorAttachment: 'platform',
-                residentKey: 'required',
-                requireResidentKey: true,
-                userVerification: 'required',
+            {
+                type: 'public-key',
+                alg: -7, // ES256
             },
-            hints: ['client-device'],
-            attestation: 'direct',
-            extensions: {
-                prf: {
-                    eval: {
-                        first: firstSalt,
-                    },
+            {
+                type: 'public-key',
+                alg: -257, // RS256
+            },
+        ],
+        timeout: 60_000,
+        excludeCredentials: [],
+        authenticatorSelection: {
+            authenticatorAttachment: 'platform',
+            residentKey: 'required',
+            requireResidentKey: true,
+            userVerification: 'required',
+        },
+        hints: ['client-device'],
+        attestation: 'direct',
+        extensions: {
+            prf: {
+                // Not used, but some browsers throw if not present.
+                eval: {
+                    first: FIRST_SALT,
                 },
             },
-        } as ExtendedPublicKeyCredentialOptions,
-    })) as PublicKeyCredential;
+        },
+    };
+
+    const credential = await navigator.credentials.create({ publicKey });
+
+    if (!(credential instanceof PublicKeyCredential) || !credential.getClientExtensionResults().prf?.enabled) {
+        throw new PassCryptoError('Unable to generate credential');
+    }
 
     return credential;
 }
