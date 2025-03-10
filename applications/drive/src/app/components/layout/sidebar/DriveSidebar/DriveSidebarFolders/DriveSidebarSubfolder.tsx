@@ -1,13 +1,7 @@
-import {
-    FileIcon,
-    FileNameDisplay,
-    Loader,
-    SidebarListItem,
-    SidebarListItemContent,
-    SidebarListItemLink,
-} from '@proton/components';
+import { FileIcon, FileNameDisplay, Loader, SidebarListItem, SidebarListItemContent } from '@proton/components';
 
 import type { TreeItem } from '../../../../../store';
+import SidebarListItemLink from '../../SidebarListItemLink';
 import { generateSidebarItemStyle } from '../utils';
 import ExpandButton from './DriveExpandButton';
 import useSubfolderLoading from './useSubfolderLoading';

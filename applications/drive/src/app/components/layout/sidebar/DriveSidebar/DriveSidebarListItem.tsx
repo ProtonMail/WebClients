@@ -1,25 +1,19 @@
 import * as React from 'react';
 import type { MouseEventHandler } from 'react';
-import type { NavLink } from 'react-router-dom';
 
 import type { IconName } from '@proton/components';
-import {
-    SidebarListItem,
-    SidebarListItemContent,
-    SidebarListItemContentIcon,
-    SidebarListItemLink,
-} from '@proton/components';
+import { SidebarListItem, SidebarListItemContent, SidebarListItemContentIcon } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 
 import { useDriveEventManager } from '../../../../store';
 import { useVolumesState } from '../../../../store/_volumes';
+import SidebarListItemLink from '../SidebarListItemLink';
 
-interface Props {
+interface DriveSidebarListItemProps {
     children: React.ReactNode;
     icon: IconName;
-    isActive: React.ComponentProps<NavLink>['isActive'];
     shareId?: string;
     to: string;
     rightIcon?: React.ReactNode;
@@ -36,7 +30,6 @@ const DriveSidebarListItem = ({
     children,
     icon,
     shareId,
-    isActive,
     rightIcon,
     onDoubleClick,
     style,
@@ -44,7 +37,7 @@ const DriveSidebarListItem = ({
     className,
     forceReload,
     collapsed,
-}: Props) => {
+}: DriveSidebarListItemProps) => {
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
     const [refreshing, withRefreshing] = useLoading(false);
@@ -67,7 +60,7 @@ const DriveSidebarListItem = ({
 
     return (
         <SidebarListItem onClick={onClick}>
-            <SidebarListItemLink to={to} forceReload={forceReload || false} isActive={isActive}>
+            <SidebarListItemLink to={to} forceReload={forceReload || false}>
                 <SidebarListItemContent
                     className={clsx(className, 'flex flex-nowrap', collapsed && 'justify-center')}
                     onDoubleClick={handleDoubleClick}

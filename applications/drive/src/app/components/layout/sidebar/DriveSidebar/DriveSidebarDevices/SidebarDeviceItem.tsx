@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 
-import { useActiveShare } from '../../../../../hooks/drive/useActiveShare';
 import { useFolderTree } from '../../../../../store';
 import type { Device } from '../../../../../store/_devices';
 import ExpandButton from '../DriveSidebarFolders/DriveExpandButton';
@@ -15,7 +14,6 @@ export const SidebarDeviceItem = ({
     device: Device;
     setSidebarLevel: (level: number) => void;
 }) => {
-    const { activeFolder } = useActiveShare();
     const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolderTree(device.shareId, {
         rootLinkId: device.linkId,
     });
@@ -24,15 +22,12 @@ export const SidebarDeviceItem = ({
         setSidebarLevel(deepestOpenedLevel);
     }, [deepestOpenedLevel]);
 
-    const isActive = activeFolder.shareId === device.shareId && activeFolder.linkId === device.linkId;
-
     return (
         <div>
             <DriveSidebarListItem
                 to={`/${device.shareId}/folder/${device.linkId}`}
                 icon="tv"
                 shareId={device.shareId}
-                isActive={() => isActive}
                 style={generateSidebarItemStyle(1)}
                 collapsed={false} // we never show expended devices when collapsed
             >

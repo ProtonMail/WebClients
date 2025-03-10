@@ -3,7 +3,7 @@ import React, { createContext, useContext, useEffect, useMemo, useRef } from 're
 import type { VERIFICATION_STATUS } from '@proton/crypto';
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
 
-import useNavigate from '../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { logError } from '../../utils/errorHandling';
 import { createAsyncQueue } from '../../utils/parallelRunners';
 import { useLink } from '../_links';
@@ -66,7 +66,7 @@ export const ThumbnailsDownloadProvider = ({
     children: React.ReactNode;
 }) => {
     const { loadLinkThumbnail } = useLink();
-    const navigation = useNavigate();
+    const navigation = useDriveNavigation();
 
     const asyncQueue = useMemo(() => createAsyncQueue(MAX_THREADS_PER_DOWNLOAD), []);
     const queueLinkCache = useRef<Set<string>>(new Set());

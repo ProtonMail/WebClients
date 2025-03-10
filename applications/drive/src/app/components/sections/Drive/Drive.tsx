@@ -6,7 +6,7 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues, useFolderView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
@@ -89,7 +89,7 @@ function Drive({ activeFolder, folderView }: Props) {
     const browserContextMenu = useContextMenuControls();
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink } = useDriveNavigation();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
