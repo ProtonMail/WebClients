@@ -27,7 +27,7 @@ import {
     ICAL_ATTENDEE_RSVP,
     ICAL_ATTENDEE_STATUS,
 } from './constants';
-import { SIGNATURE_CONTEXT } from './crypto/constants';
+import { getSignatureContext } from './crypto/helpers';
 import { getAttendeeHasToken, getAttendeePartstat, getAttendeesHaveToken } from './vcalHelper';
 
 export const NO_CANONICAL_EMAIL_ERROR = 'No canonical email provided';
@@ -117,7 +117,7 @@ export const toInternalAttendee = (
                 const binaryMessage = base64StringToUint8Array(extra.Comment?.Message);
                 const publicKey = await getAttendeePublicKeys(attendeeEmail);
                 const decryptedMessageResult = await CryptoProxy.decryptMessage({
-                    signatureContext: { value: SIGNATURE_CONTEXT.ATTENDEE_COMMENT(eventID), required: true },
+                    signatureContext: { value: getSignatureContext('calendar.rsvp.comment', eventID), required: true },
                     sessionKeys: [sharedSessionKey],
                     binaryMessage,
                     // TODO check it's the right public key
