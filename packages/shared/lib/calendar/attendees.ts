@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, type SessionKey } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
@@ -6,8 +6,10 @@ import unary from '@proton/utils/unary';
 
 import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 import { buildMailTo, canonicalizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
+import { base64StringToUint8Array } from '../helpers/encoding';
 import { omit } from '../helpers/object';
 import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
+import type { VerificationPreferences } from '../interfaces/VerificationPreferences';
 import type {
     Attendee,
     AttendeeModel,
@@ -18,7 +20,14 @@ import type {
 } from '../interfaces/calendar';
 import type { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
 import type { RequireSome, SimpleMap } from '../interfaces/utils';
-import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from './constants';
+import {
+    ATTENDEE_COMMENT_TYPE,
+    ATTENDEE_STATUS_API,
+    ICAL_ATTENDEE_ROLE,
+    ICAL_ATTENDEE_RSVP,
+    ICAL_ATTENDEE_STATUS,
+} from './constants';
+import { SIGNATURE_CONTEXT } from './crypto/constants';
 import { getAttendeeHasToken, getAttendeePartstat, getAttendeesHaveToken } from './vcalHelper';
 
 export const NO_CANONICAL_EMAIL_ERROR = 'No canonical email provided';
@@ -77,30 +86,58 @@ export const fromInternalAttendee = ({
 
 export const toInternalAttendee = (
     { attendee: attendees = [] }: Pick<VcalVeventComponent, 'attendee'>,
-    clear: Attendee[] = []
-): VcalAttendeeProperty[] => {
-    return attendees.map((attendee) => {
-        if (!attendee.parameters) {
-            return attendee;
-        }
-        const token = attendee.parameters['x-pm-token'];
-        const extra = clear.find(({ Token }) => Token === token);
-        if (!token || !extra) {
-            return attendee;
-        }
-        const partstat = toIcsPartstat(extra.Status);
-        // TODO: Manage decryption of RSVP note here (comment)
-        // Make helper in calendar/helper/crypto.ts ?
-        const comment = extra.Comment?.Message;
-        return {
-            ...attendee,
-            parameters: {
-                ...attendee.parameters,
-                partstat,
-                comment,
-            },
-        };
-    });
+    clear: Attendee[] = [],
+    sharedSessionKey: SessionKey | undefined,
+    eventID: string,
+    getAttendeePublicKeys: (attendeeEmail: string) => Promise<VerificationPreferences>
+): Promise<VcalAttendeeProperty[]> => {
+    return Promise.all(
+        attendees.map(async (attendee) => {
+            if (!attendee.parameters) {
+                return attendee;
+            }
+            const token = attendee.parameters['x-pm-token'];
+            const extra = clear.find(({ Token }) => Token === token);
+            if (!token || !extra) {
+                return attendee;
+            }
+
+            let comment = extra.Comment?.Message;
+
+            // TODO
+            // - Report decryption errors to sentry
+            // - Handle decryption errors gracefully
+            if (sharedSessionKey && extra.Comment?.Message && extra.Comment?.Type === ATTENDEE_COMMENT_TYPE.ENCRYPTED) {
+                const attendeeEmail = attendee.parameters.cn;
+
+                if (!attendeeEmail) {
+                    return attendee;
+                }
+
+                const binaryMessage = base64StringToUint8Array(extra.Comment?.Message);
+                const publicKey = await getAttendeePublicKeys(attendeeEmail);
+                const decryptedMessageResult = await CryptoProxy.decryptMessage({
+                    signatureContext: { value: SIGNATURE_CONTEXT.ATTENDEE_COMMENT(eventID), required: true },
+                    sessionKeys: [sharedSessionKey],
+                    binaryMessage,
+                    // TODO check it's the right public key
+                    verificationKeys: publicKey.verifyingKeys,
+                });
+
+                comment = decryptedMessageResult.data;
+            }
+
+            const partstat = toIcsPartstat(extra.Status);
+            return {
+                ...attendee,
+                parameters: {
+                    ...attendee.parameters,
+                    partstat,
+                    comment,
+                },
+            };
+        })
+    );
 };
 
 export const getAttendeeEmail = (attendee: VcalAttendeeProperty | VcalOrganizerProperty) => {
