@@ -1,10 +1,10 @@
-import { memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Icon, type IconName } from '@proton/components';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -90,6 +90,36 @@ export const VaultMenuItem = memo(
 
         const { dragOver, dragProps } = useItemDrop(...dropParams);
 
+        const onInviteClick =
+            plan === UserPassPlan.FREE && isMemberLimitReached(vault, access)
+                ? () =>
+                      upsell({
+                          type: 'pass-plus',
+                          upsellRef: UpsellRef.LIMIT_SHARING,
+                      })
+                : handleClickEvent(onInvite);
+
+        const shareButton = (():
+            | { label: string; icon: IconName; action: (evt: React.MouseEvent) => void }
+            | undefined => {
+            if (!canManage) return;
+
+            const opensInvite = !vault.shared && canInvite;
+
+            const label = (() => {
+                if (opensInvite) return c('Action').t`Share`;
+                return vault.shareRoleId === ShareRole.ADMIN
+                    ? c('Action').t`Manage access`
+                    : c('Action').t`See members`;
+            })();
+
+            const icon = opensInvite ? 'user-plus' : 'users';
+
+            const action = opensInvite ? onInviteClick : handleClickEvent(onManage);
+
+            return { label, icon, action };
+        })();
+
         return (
             <DropdownMenuButton
                 onClick={pipe(() => !selected && vaultActions.select(vault.shareId), onAction)}
@@ -111,15 +141,16 @@ export const VaultMenuItem = memo(
                     'group-hover-opacity-container'
                 )}
                 extra={
-                    canManage && (
+                    shareButton && (
                         <ButtonLike
                             as="div"
                             pill
+                            icon={vault.targetMembers <= 1}
                             size="small"
                             color="weak"
-                            onClick={handleClickEvent(onManage)}
+                            onClick={shareButton.action}
                             shape="solid"
-                            title={c('Action').t`See members`}
+                            title={shareButton.label}
                             className={clsx(
                                 !(selected || vault.targetMembers > 1) && 'group-hover:opacity-100',
                                 'relative mr-1'
@@ -138,7 +169,7 @@ export const VaultMenuItem = memo(
                                     }}
                                 />
                             )}
-                            <Icon name="users" alt={c('Action').t`See members`} />
+                            <Icon name={shareButton.icon} />
                             {vault.targetMembers > 1 && <span className="text-sm ml-1">{vault.targetMembers}</span>}
                         </ButtonLike>
                     )
@@ -184,15 +215,7 @@ export const VaultMenuItem = memo(
                                       disabled={!isWritableVault(vault)}
                                       icon="user-plus"
                                       label={c('Action').t`Share`}
-                                      onClick={
-                                          plan === UserPassPlan.FREE && isMemberLimitReached(vault, access)
-                                              ? () =>
-                                                    upsell({
-                                                        type: 'pass-plus',
-                                                        upsellRef: UpsellRef.LIMIT_SHARING,
-                                                    })
-                                              : handleClickEvent(onInvite)
-                                      }
+                                      onClick={onInviteClick}
                                   />
                               ),
 
