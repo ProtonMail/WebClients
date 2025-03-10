@@ -29,8 +29,6 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
 
     const handleResponse = (status: ICAL_ATTENDEE_STATUS) => {
         if (isExpanded) {
-            // record temp selection
-            // send on button click alogn with the note
             setModel({
                 ...model,
                 Status: status,
@@ -54,12 +52,10 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     };
 
     const handleSend = () => {
-        // send response & comment
         return handleChangePartstat(model, true);
     };
 
     const handleCancel = () => {
-        // reset model
         setModel({
             Status: userPartstat,
             Comment: userComment,
@@ -86,7 +82,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                             retryCreateEvent: () => wait(0),
                             retryUpdateEvent: () => wait(0),
                         }}
-                        partstat={userPartstat}
+                        partstat={model.Status}
                         disabled={disabled}
                     />
                 </div>
