@@ -26,7 +26,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
-            <Scroll className="flex flex-column flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
+            <Scroll className="flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
                 <div className="flex flex-column mx-3 gap-5 pb-2">
                     <div className="flex flex-column w-full">
                         <Button
@@ -48,7 +48,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 </div>
             </Scroll>
 
-            <div className="flex flex-column flex-nowrap pb-2">
+            <div className="flex flex-column flex-nowrap pb-2 shrink-0">
                 <hr className="mb-2 mx-4" aria-hidden="true" />
 
                 <OnboardingActions />
