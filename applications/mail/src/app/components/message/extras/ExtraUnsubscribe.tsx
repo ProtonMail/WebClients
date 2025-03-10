@@ -231,19 +231,16 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         createNotification({ text: c('Success').t`Mail list unsubscribed` });
     };
 
-    const handlePassAliasesModalOpen = () => {
+    const handlePassAliasesModalOpen = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
         unsubscribedModalProps.onClose();
         setPassAliasesModalOpen(true);
     };
 
-    const maskMyEmailButton = (
-        <Button key="mask-my-email-button" shape="solid" fullWidth color="norm" onClick={handlePassAliasesModalOpen}>{c(
-            'Action'
-        ).t`About hide-my-email aliases`}</Button>
+    const hideMyEmailAliasesLink = (
+        <Href key="mask-my-email-button" color="norm" className="p-0" onClick={handlePassAliasesModalOpen}>{c('Action')
+            .t`hide-my-email aliases`}</Href>
     );
-
-    const unsubscribeSLtext = c('Info')
-        .t`Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.`;
 
     return (
         <Banner
@@ -278,13 +275,11 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             {renderUnsubscribedModal && (
                 <Prompt
                     title={c('Title').t`Unsubscribe request sent`}
-                    buttons={[
-                        maskMyEmailButton,
-                        <Button onClick={unsubscribedModalProps.onClose}>{c('Action').t`Close`}</Button>,
-                    ]}
+                    buttons={[<Button onClick={unsubscribedModalProps.onClose}>{c('Action').t`Got it`}</Button>]}
                     {...unsubscribedModalProps}
                 >
-                    <p>{unsubscribeSLtext}</p>
+                    <p className="mb-2">{c('Info')
+                        .jt`Protect your email from being leaked to mailing lists or spammers with ${hideMyEmailAliasesLink}.`}</p>
                 </Prompt>
             )}
 
