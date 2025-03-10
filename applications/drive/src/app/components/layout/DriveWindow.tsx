@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 import { useUser } from '@proton/account/user/hooks';
 import {
     CalendarDrawerAppButton,
     ContactDrawerAppButton,
-    DrawerApp,
     DrawerSidebar,
     DrawerVisibilityButton,
     PrivateAppContainer,
@@ -17,6 +16,7 @@ import {
     useOpenDrawerOnLoad,
     useToggle,
 } from '@proton/components';
+import DrawerApp from '@proton/components/components/drawer/DrawerApp';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -35,16 +35,13 @@ interface Props {
 }
 
 const DriveWindow = ({ children }: Props) => {
+    const location = useLocation();
     const [user] = useUser();
     const { state: expanded, toggle: toggleExpanded } = useToggle();
-
     const [recoveryBannerVisible, setRecoveryBannerVisible] = useState(true);
-
     const { isReadOnly } = useIsActiveLinkReadOnly();
-
     useOpenDrawerOnLoad();
     const { appInView, showDrawerSidebar } = useDrawer();
-    const location = useLocation();
 
     const fileRecoveryBanner = recoveryBannerVisible ? (
         <FileRecoveryBanner

@@ -8,7 +8,7 @@ import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry'
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useSearchControl } from '../../../store';
 import { useSearchResults } from '../../../store/_search';
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -25,7 +25,7 @@ export const SearchField = () => {
     const { dbExists } = useSearchResults();
     const { sendClearSearchFieldsReport } = useSearchTelemetry();
 
-    const navigation = useNavigate();
+    const navigation = useDriveNavigation();
     const { searchEnabled, isEnablingEncryptedSearch, isDisabled, disabledReason, prepareSearchData } =
         useSearchControl();
     const [searchParams, setSearchParams] = useSearchParams();

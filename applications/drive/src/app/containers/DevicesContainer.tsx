@@ -1,14 +1,13 @@
-import type { RouteComponentProps } from 'react-router-dom';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
 import DevicesView from '../components/sections/Devices/DevicesView';
 
-const DevicesContainer = ({ match }: RouteComponentProps) => {
+const DevicesContainer = () => {
     return (
-        <Switch>
-            <Route path={match.url} exact component={DevicesView} />
-            <Redirect to="/devices" />
-        </Switch>
+        <Routes>
+            <Route path="" element={<DevicesView />} />
+            <Route path="*" element={<Navigate to="/devices" replace />} />
+        </Routes>
     );
 };
 

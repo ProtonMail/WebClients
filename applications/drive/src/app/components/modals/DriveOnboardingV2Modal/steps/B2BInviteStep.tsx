@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useSettingsLink } from '@proton/components';
+import { useSettingsLink } from '@proton/components/index';
 import { APPS } from '@proton/shared/lib/constants';
 import inviteImg from '@proton/styles/assets/img/onboarding/drive-v2-invite.png';
 
@@ -47,7 +47,7 @@ export const B2BInviteStepButtons = ({ onNext }: OnboardingProps) => {
                 shape="ghost"
                 color="norm"
                 onClick={() => {
-                    countActionWithTelemetry(Actions.OnboardingV2B2BInviteSkip);
+                    void countActionWithTelemetry(Actions.OnboardingV2B2BInviteSkip);
                     onNext();
                 }}
             >
@@ -57,7 +57,7 @@ export const B2BInviteStepButtons = ({ onNext }: OnboardingProps) => {
                 size="large"
                 color="norm"
                 onClick={() => {
-                    countActionWithTelemetry(Actions.OnboardingV2B2BInvite);
+                    void countActionWithTelemetry(Actions.OnboardingV2B2BInvite);
                     goToSettings('/multi-user-support', APPS.PROTONDRIVE, true);
                     onNext();
                 }}
