@@ -5,9 +5,10 @@ import type { ExifTags, ExpandedTags } from 'exifreader';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { encodeBase64 } from '@proton/crypto/lib/utils';
-import { isSVG } from '@proton/shared/lib/helpers/mimetype';
+import { isRAWExtension, isRAWPhoto, isSVG, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
+import { mimetypeFromExtension } from '../_uploads/mimeTypeParser/helpers';
 import { convertSubjectAreaToSubjectCoordinates, formatExifDateTime } from './utils';
 
 // For usage inside Web Workers, since DOMParser is not available
@@ -116,7 +117,7 @@ export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({
 });
 
 // TODO: Complete tags assignment for IOS and Windows
-export const getPhotoTags = (exifInfo: ExpandedTags): PhotoTag[] => {
+export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<PhotoTag[]> => {
     // Enable to debug XMP data: console.log('exifInfo', JSON.stringify(exifInfo.xmp));
 
     const tags: PhotoTag[] = [];
@@ -155,6 +156,15 @@ export const getPhotoTags = (exifInfo: ExpandedTags): PhotoTag[] => {
                 )))
     ) {
         tags.push(PhotoTag.Portraits);
+    }
+
+    const extension = file.name.split('.').pop();
+    if (isRAWPhoto(file.type) || isRAWExtension(extension)) {
+        tags.push(PhotoTag.Raw);
+    }
+
+    if (isVideo(file.type) || isVideo(await mimetypeFromExtension(file.name))) {
+        tags.push(PhotoTag.Videos);
     }
 
     return tags;
