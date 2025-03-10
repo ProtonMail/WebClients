@@ -136,7 +136,6 @@ enum MailFeatureFlag {
     RemoveImageMetadata = 'RemoveImageMetadata',
     MailWebListTelemetry = 'MailWebListTelemetry',
     QuickReply = 'QuickReply',
-    EmailWidgetSkeletonHidden = 'EmailWidgetSkeletonHidden',
     MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     MailPlusSubscribersNudgeExperiment = 'MailPlusSubscribersNudgeExperiment',
