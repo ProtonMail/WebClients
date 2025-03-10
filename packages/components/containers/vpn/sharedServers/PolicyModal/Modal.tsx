@@ -10,23 +10,22 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import CountriesStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/CountriesStep';
+import MembersStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/MembersStep';
+import NameStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/NameStep';
 import { buildExpandedCountriesFromSelectedCities } from '@proton/components/containers/vpn/sharedServers/buildExpandedCountriesFromSelectedCities';
 import { buildSelectedCitiesFromLocations } from '@proton/components/containers/vpn/sharedServers/buildSelectedCitiesFromLocations';
 import { PolicyState, PolicyType } from '@proton/components/containers/vpn/sharedServers/constants';
-import { mapPoliciesToFilterRequest } from '@proton/components/containers/vpn/sharedServers/mapPoliciesToFilterRequest';
-import useApi from '@proton/components/hooks/useApi';
+import { useSharedServers } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
+import type {
+    SharedServerGroup,
+    SharedServerUser,
+    VpnLocationFilterPolicy,
+} from '@proton/components/containers/vpn/sharedServers/useSharedServers';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import { MINUTE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
-
-import type { CreateLocationFilterPayload, FilterPolicyRequest } from '../api';
-import { createLocationFilter } from '../api';
-import { useSharedServers } from '../useSharedServers';
-import type { SharedServerGroup, SharedServerUser, VpnLocationFilterPolicy } from '../useSharedServers';
-import CountriesStep from './CountriesStep';
-import MembersStep from './MembersStep';
-import NameStep from './NameStep';
 
 enum STEP {
     NAME,
@@ -35,15 +34,14 @@ enum STEP {
 }
 
 interface SharedServersModalProps extends ModalProps {
-    onSuccess?: () => void;
+    onSuccess: (policy: VpnLocationFilterPolicy) => void;
     policy?: VpnLocationFilterPolicy;
     isEditing?: boolean;
 }
 
 const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: SharedServersModalProps) => {
-    const api = useApi();
     const { createNotification } = useNotifications();
-    const { locations, policies, users, groups } = useSharedServers(10 * MINUTE);
+    const { locations, users, groups } = useSharedServers(10 * MINUTE);
     const [userSettings] = useUserSettings();
     const countryOptions = getCountryOptions(userSettings);
 
@@ -65,7 +63,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
         const hasUsers = Boolean(policy.Users?.length);
         const hasGroups = Boolean(policy.Groups?.length);
 
-        setApplyPolicyTo((hasGroups && !hasUsers) ? 'groups' : 'users');
+        setApplyPolicyTo(hasGroups && !hasUsers ? 'groups' : 'users');
 
         const map = buildSelectedCitiesFromLocations(policy.Locations || []);
         setSelectedCities(map);
@@ -81,6 +79,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
                 return false;
             }
             uniqueCountries.add(location.Country);
+
             return true;
         });
 
@@ -128,65 +127,24 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
     }, [step]);
 
     const handleSubmit = useCallback(async () => {
-        try {
-            const updatedPolicy: FilterPolicyRequest = {
-                // existing ID if editing, otherwise null for new
-                ID: isEditing && policy ? policy.LocationFilterPolicyID : null,
-                Name: policyName,
-                Type: PolicyType.Custom,
-                State: PolicyState.Active,
-                Locations: Object.entries(selectedCities).flatMap(([country, cityList]) =>
-                    cityList.map((city) => ({ Country: country, City: city }))
-                ),
-                UserIds: applyPolicyTo === 'users' && selectedUsers.length ? selectedUsers.map((u) => u.UserID) : null,
-                GroupIds:
-                    applyPolicyTo === 'groups' && selectedGroups.length ? selectedGroups.map((u) => u.GroupID) : null,
-            };
+        const updatedPolicy: VpnLocationFilterPolicy = {
+            LocationFilterPolicyID: isEditing && policy ? policy.LocationFilterPolicyID : null,
+            Name: policyName,
+            Type: PolicyType.Custom,
+            State: PolicyState.Active,
+            Locations: Object.entries(selectedCities).flatMap(([country, cityList]) =>
+                cityList.map((city) => ({ Country: country, City: city }))
+            ),
+            Users: applyPolicyTo === 'users' ? selectedUsers : [],
+            Groups: applyPolicyTo === 'groups' ? selectedGroups : [],
+            OrganizationID: policy?.OrganizationID ?? 0,
+            Code: policy?.Code ?? 1000, // Default code if missing
+        };
 
-            const FilterPoliciesInput: FilterPolicyRequest[] = mapPoliciesToFilterRequest(
-                policies,
-                true,
-                policy,
-                updatedPolicy
-            );
+        onSuccess(updatedPolicy);
 
-            if (!isEditing) {
-                FilterPoliciesInput.push(updatedPolicy);
-            }
-
-            const payload: CreateLocationFilterPayload = {
-                FilterPoliciesInput,
-            };
-
-            await api(createLocationFilter(payload));
-            onSuccess?.();
-
-            createNotification({
-                text: isEditing
-                    ? c('Success').t`Policy updated successfully!`
-                    : c('Success').t`Policy created successfully!`,
-                type: 'success',
-            });
-
-            rest.onClose?.();
-        } catch (error) {
-            createNotification({
-                text: isEditing ? c('Error').t`Error updating policy.` : c('Error').t`Error creating policy.`,
-                type: 'error',
-            });
-        }
-    }, [
-        api,
-        policies,
-        selectedCities,
-        selectedUsers,
-        createNotification,
-        isEditing,
-        policy,
-        policyName,
-        applyPolicyTo,
-        rest,
-    ]);
+        rest.onClose?.();
+    }, [policy, policyName, selectedUsers, selectedCities, applyPolicyTo, isEditing, onSuccess, rest]);
 
     const handleNext = useCallback(() => {
         if (step === STEP.NAME) {
