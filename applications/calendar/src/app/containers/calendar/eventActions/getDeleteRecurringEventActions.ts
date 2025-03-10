@@ -5,7 +5,9 @@ import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import type { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 import unary from '@proton/utils/unary';
 
 import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
@@ -39,6 +41,8 @@ interface DeleteRecurringArguments {
     selfAttendeeToken?: string;
     sendIcs: SendIcs;
     getCalendarEventRaw: GetCalendarEventRaw;
+    getAddressKeys: GetAddressKeys;
+    getCalendarKeys: GetCalendarKeys;
 }
 
 export const getDeleteRecurringEventActions = async ({
@@ -58,6 +62,8 @@ export const getDeleteRecurringEventActions = async ({
     selfAttendeeToken,
     sendIcs,
     getCalendarEventRaw,
+    getAddressKeys,
+    getCalendarKeys,
 }: DeleteRecurringArguments): Promise<{
     multiSyncActions: SyncEventActionOperations[];
     inviteActions: InviteActions;
@@ -91,13 +97,17 @@ export const getDeleteRecurringEventActions = async ({
             updatedInviteActions = cleanInviteActions;
             // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
             // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
-            const updatePartstatOperation = getUpdatePartstatOperation({
+            const updatePartstatOperation = await getUpdatePartstatOperation({
                 eventComponent: oldVeventComponent,
                 event: oldEvent,
                 timestamp,
                 inviteActions: updatedInviteActions,
                 silence: true,
+                getAddressKeys,
+                getCalendarKeys,
+                addressID: originalAddressID,
             });
+
             if (updatePartstatOperation) {
                 updatePartstatOperations.push(updatePartstatOperation);
             }
@@ -225,12 +235,15 @@ export const getDeleteRecurringEventActions = async ({
             updatedInviteActions = cleanInviteActions;
             // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
             // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
-            const updatePartstatOperation = getUpdatePartstatOperation({
+            const updatePartstatOperation = await getUpdatePartstatOperation({
                 eventComponent: originalVeventComponent,
                 event: originalEvent,
                 timestamp,
                 inviteActions: updatedInviteActions,
                 silence: true,
+                addressID: originalAddressID,
+                getAddressKeys,
+                getCalendarKeys,
             });
             if (updatePartstatOperation) {
                 updatePartstatOperations.push(updatePartstatOperation);
