@@ -172,6 +172,28 @@ export enum SupportedProtonDocsMimeTypes {
     html = 'text/html',
 }
 
+// RAWMimeTypes keys must be the usual extension of the file. It is used in validation, see `isRAWExtension`.
+export enum RAWMimeTypes {
+    dcraw = 'image/x-dcraw',
+    dng = 'image/x-adobe-dng',
+    crw = 'image/x-canon-crw',
+    cr2 = 'image/x-canon-cr2',
+    erf = 'image/x-epson-erf',
+    raf = 'image/x-fuji-raf',
+    dcr = 'image/x-kodak-dcr',
+    k25 = 'image/x-kodak-k25',
+    kdc = 'image/x-kodak-kdc',
+    mrw = 'image/x-minolta-mrw',
+    nef = 'image/x-nikon-nef',
+    orf = 'image/x-olympus-orf',
+    raw = 'image/x-panasonic-raw',
+    pef = 'image/x-pentax-pef',
+    x3f = 'image/x-sigma-x3f',
+    srf = 'image/x-sony-srf',
+    sr2 = 'image/x-sony-sr2',
+    arw = 'image/x-sony-arw',
+}
+
 export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
     py: 'text/x-python',
     ts: 'application/typescript',

@@ -1,7 +1,7 @@
 import { getBrowser, getOS, isAndroid, isDesktop, isIos, isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { MIME_TYPES } from '../constants';
-import { SupportedMimeTypes, SupportedProtonDocsMimeTypes } from '../drive/constants';
+import { RAWMimeTypes, SupportedMimeTypes, SupportedProtonDocsMimeTypes } from '../drive/constants';
 import { Version } from './version';
 
 const isWebpSupported = () => {
@@ -143,3 +143,16 @@ export const isProtonDocsConvertible = (mimeType: string) =>
 
 export const PROTON_DOC_MIMETYPE = 'application/vnd.proton.doc';
 export const isProtonDocument = (mimeType: string) => mimeType === PROTON_DOC_MIMETYPE;
+
+export const isRAWPhoto = (mimeType: string): boolean => {
+    return Object.values(RAWMimeTypes).some((rawType) => rawType === mimeType);
+};
+
+export const isRAWExtension = (extension: string | undefined): boolean => {
+    if (!extension) {
+        return false;
+    }
+
+    const lowerExt = extension.toLowerCase();
+    return Object.keys(RAWMimeTypes).includes(lowerExt);
+};
