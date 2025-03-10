@@ -102,7 +102,10 @@ export const elements = createSelector(
          *
          * Since the cache is only a little subset of user's messages, it is not very costly.
          */
-        const filtered = filterElementsInState({
+        // If the page has not been loaded on this filter, return an empty array of elements so that we
+        // don't show them during loading, preventing the user from creating currency in requests
+        // e.g. applying actions while loading elements
+        const filtered = /*pages.includes(page) ?*/ filterElementsInState({
             elements: elementsArray,
             addresses: addresses?.value,
             bypassFilter,
@@ -110,7 +113,7 @@ export const elements = createSelector(
             filter,
             conversationMode,
             search,
-        });
+        }); /* : []*/
 
         const sorted = sortElements(filtered, finalSort, labelID);
 
@@ -221,11 +224,34 @@ export const shouldResetElementsState = createSelector(
  * It should be true either when `shouldResetElementsState` or
  */
 export const shouldLoadElements = createSelector(
-    [paramsChanged, pendingRequest, retry, needsMoreElements, invalidated, pageCached, shouldResetElementsState],
-    (paramsChanged, pendingRequest, retry, needsMoreElements, invalidated, pageCached, shouldResetElementsState) => {
+    [
+        paramsChanged,
+        pendingRequest,
+        retry,
+        needsMoreElements,
+        invalidated,
+        pageCached,
+        shouldResetElementsState,
+        page,
+        contextPages,
+    ],
+    (
+        paramsChanged,
+        pendingRequest,
+        retry,
+        needsMoreElements,
+        invalidated,
+        pageCached,
+        shouldResetElementsState,
+        page,
+        pages
+    ) => {
+        console.log({ pages, page, paramsChanged, needsMoreElements });
         return (
             shouldResetElementsState ||
-            paramsChanged ||
+            // Do not perform a load elements call if elements in filter have already been loaded
+            // This might not be needed if we can remove params changed
+            paramsChanged /*&&  (!pages.includes(page))*/ ||
             (!pendingRequest &&
                 retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
                 (needsMoreElements || invalidated || !pageCached))
