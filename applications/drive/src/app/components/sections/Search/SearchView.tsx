@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 import { c, msgid } from 'ttag';
 

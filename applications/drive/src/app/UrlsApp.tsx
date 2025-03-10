@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Router } from 'react-router-dom';
+import { CompatRouter } from 'react-router-dom-v5-compat';
 
 import { createBrowserHistory } from 'history';
 
@@ -95,19 +96,21 @@ const UrlsApp = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <Router history={extraThunkArguments.history}>
-                            <AuthenticationProvider store={extraThunkArguments.authentication}>
-                                <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
-                                    <ApiProvider api={extraThunkArguments.api}>
-                                        <ErrorBoundary big component={<StandardErrorPage big />}>
-                                            <div className="h-full">
-                                                <NotificationsChildren />
-                                                <ModalsChildren />
-                                                <PublicSharedLinkContainer />
-                                            </div>
-                                        </ErrorBoundary>
-                                    </ApiProvider>
-                                </FlagProvider>
-                            </AuthenticationProvider>
+                            <CompatRouter>
+                                <AuthenticationProvider store={extraThunkArguments.authentication}>
+                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
+                                        <ApiProvider api={extraThunkArguments.api}>
+                                            <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                <div className="h-full">
+                                                    <NotificationsChildren />
+                                                    <ModalsChildren />
+                                                    <PublicSharedLinkContainer />
+                                                </div>
+                                            </ErrorBoundary>
+                                        </ApiProvider>
+                                    </FlagProvider>
+                                </AuthenticationProvider>
+                            </CompatRouter>
                         </Router>
                     </ProtonStoreProvider>
                 );

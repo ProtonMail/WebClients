@@ -47,35 +47,18 @@ const DriveSidebarList = ({ shareId, userShares, collapsed }: DriveSidebarListPr
             ))}
             <DriveSidebarDevices collapsed={collapsed} setSidebarLevel={setSidebarLevel} />
             {photosEnabled && (
-                <DriveSidebarListItem
-                    to="/photos"
-                    icon="image"
-                    collapsed={collapsed}
-                    isActive={(match) => match?.url === '/photos'}
-                >
+                <DriveSidebarListItem to="/photos" icon="image" collapsed={collapsed}>
                     <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
                     </span>
                 </DriveSidebarListItem>
             )}
-            <DriveSidebarListItem
-                to="/shared-urls"
-                icon="link"
-                shareId={shareId}
-                collapsed={collapsed}
-                isActive={(match) => match?.url === '/shared-urls'}
-            >
+            <DriveSidebarListItem to="/shared-urls" icon="link" shareId={shareId} collapsed={collapsed}>
                 <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Shared`}>{c('Link')
                     .t`Shared`}</span>
             </DriveSidebarListItem>
             {showSharedWithMeSection && (
-                <DriveSidebarListItem
-                    to="/shared-with-me"
-                    icon="users"
-                    shareId={shareId}
-                    collapsed={collapsed}
-                    isActive={(match) => match?.url === '/shared-with-me'}
-                >
+                <DriveSidebarListItem to="/shared-with-me" icon="users" shareId={shareId} collapsed={collapsed}>
                     <span
                         className={clsx('text-ellipsis', collapsed && 'sr-only')}
                         title={c('Link').t`Shared with me`}
@@ -92,13 +75,7 @@ const DriveSidebarList = ({ shareId, userShares, collapsed }: DriveSidebarListPr
                     )}
                 </DriveSidebarListItem>
             )}
-            <DriveSidebarListItem
-                to="/trash"
-                icon="trash"
-                shareId={shareId}
-                collapsed={collapsed}
-                isActive={(match) => match?.url === '/trash'}
-            >
+            <DriveSidebarListItem to="/trash" icon="trash" shareId={shareId} collapsed={collapsed}>
                 <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Trash`}>{c('Link')
                     .t`Trash`}</span>
             </DriveSidebarListItem>

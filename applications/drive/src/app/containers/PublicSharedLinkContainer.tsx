@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
-import { LocationErrorBoundary, useTheme } from '@proton/components';
+import { useTheme } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -27,6 +28,7 @@ import { is4xx, is5xx, isCryptoEnrichedError } from '../utils/errorHandling/apiE
 import { Actions, countActionWithTelemetry } from '../utils/telemetry';
 import type { ErrorTuple } from '../utils/type/ErrorTuple';
 import { deleteStoredUrlPassword } from '../utils/url/password';
+import LocationErrorBoundary from './LocationErrorBoundary';
 
 export const getErrorMetricTypeOnPublicPage = (error: unknown) => {
     const apiError = getApiError(error);
@@ -52,8 +54,9 @@ export const getErrorMetricTypeOnPublicPage = (error: unknown) => {
 };
 
 export default function PublicSharedLinkContainer() {
+    const location = useLocation();
     return (
-        <LocationErrorBoundary>
+        <LocationErrorBoundary location={location}>
             <PublicDriveProvider>
                 <PublicShareLinkInitContainer />
             </PublicDriveProvider>
