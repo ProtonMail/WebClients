@@ -52,6 +52,14 @@ export const getB2BVPNConnectionsText = (n: number) => {
     );
 };
 
+export const getB2BVPNConnectionsDevicesText = (n: number) => {
+    return c('Subscription attribute').ngettext(
+        msgid`VPN connection for ${n} devices per user`,
+        `VPN connection for ${n} devices per user`,
+        n
+    );
+};
+
 export const getHighSpeedVPNConnectionsText = (n: number) => {
     return c('Subscription attribute').ngettext(
         msgid`${n} high-speed VPN connection`,
@@ -432,6 +440,17 @@ export const getPrivateGatewaysVPNFeature = (): PlanCardFeatureDefinition => ({
     tooltip: c('new_plans: tooltip')
         .t`Lock down your company resources from the public internet and make them accessible only via your private gateways`,
 });
+
+export const getB2BVPNConnectionsPerUserFeature = (
+    included: boolean = true,
+    n: number = VPN_CONNECTIONS
+): PlanCardFeatureDefinition => {
+    return {
+        text: getB2BVPNConnectionsDevicesText(n),
+        included,
+        icon: 'pass-shield-ok',
+    };
+};
 
 export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeature[] => {
     const freeServers = getFreeServers(serversCount.free.servers, serversCount.free.countries);

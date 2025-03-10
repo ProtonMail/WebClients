@@ -42,6 +42,14 @@ export const getFreeMailStorageFeature = (freePlan: FreePlanDefault): PlanCardFe
     };
 };
 
+export const getCloudStorageAndSharingFeature = (): PlanCardFeatureDefinition => {
+    return {
+        icon: 'brand-proton-drive',
+        text: c('Cancellation upsell').t`Cloud storage and sharing for large files`,
+        included: true,
+    };
+};
+
 export const getStorageFeature = (
     bytes: number,
     options: {
@@ -126,6 +134,16 @@ export const getStorageFeatureB2B = (
         subtext: options.subtext ? c('storage_split: info').t`For all ${BRAND_NAME} services` : undefined,
         included: true,
         highlight: options.highlight,
+        icon: 'storage',
+    };
+};
+
+export const getShortStorageFeatureB2B = (bytes: number): PlanCardFeatureDefinition => {
+    const size = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
+
+    return {
+        text: c('new_plans: feature').t`${size} storage per user`,
+        included: true,
         icon: 'storage',
     };
 };

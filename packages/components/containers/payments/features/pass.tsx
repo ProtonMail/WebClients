@@ -183,6 +183,14 @@ export const get2FAAuthenticator = (included: boolean = false): PlanCardFeatureD
     };
 };
 
+export const getPasswordManagerToSecureCredentialsFeature = (included: boolean = true): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Password manager to secure credentials`,
+        included,
+        icon: 'key',
+    };
+};
+
 export const getVaults = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
         text:
