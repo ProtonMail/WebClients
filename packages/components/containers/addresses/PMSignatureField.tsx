@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -14,8 +16,10 @@ import { mailSettingsActions } from '@proton/mail/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-img/tools.svg';
 
@@ -37,11 +41,12 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
-    const { state, toggle } = useToggle(!!mailSettings.PMSignature);
+    const { state, toggle } = useToggle(hasBit(mailSettings.PMSignature, PM_SIGNATURE.ENABLED));
     const [user] = useUser();
-
-    const hasPaidMail = user.hasPaidMail;
-
+    const pmSignatureLocked = useMemo(
+        () => hasBit(mailSettings.PMSignature, PM_SIGNATURE.LOCKED),
+        [mailSettings.PMSignature]
+    );
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const handleChange = async (checked: number) => {
@@ -81,7 +86,7 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
     );
 
     return (
-        <div className="flex flex-1">
+        <div className="flex flex-1 align-items-center">
             <div
                 className="border-container flex-1 pr-4 py-2 mb-4"
                 // eslint-disable-next-line react/no-danger
@@ -95,18 +100,23 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
             <div className="ml-0 md:ml-2 pt-2" data-testid="settings:identity-section:signature-toggle">
                 <Toggle
                     loading={loading}
+                    title={
+                        pmSignatureLocked
+                            ? c('Tooltip: PM signature locked').t`This signature cannot be modified`
+                            : undefined
+                    }
+                    disabled={pmSignatureLocked}
                     id={id}
                     checked={state}
                     onChange={({ target }) => {
-                        if (hasPaidMail) {
-                            withLoading(handleChange(+target.checked));
+                        if (user.hasPaidMail) {
+                            void withLoading(handleChange(+target.checked));
                         } else {
                             handleUpsellModalDisplay(true);
                         }
                     }}
                 />
             </div>
-
             {renderUpsellModal && modal}
         </div>
     );
