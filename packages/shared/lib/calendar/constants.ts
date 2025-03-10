@@ -132,8 +132,8 @@ export enum ATTENDEE_STATUS_API {
     ACCEPTED = 3,
 }
 
-export enum ATTENDEE_COMMENT_TYPE {
-    CLEAR = 0,
+export enum ATTENDEE_COMMENT_ENCRYPTION_TYPE {
+    CLEARTEXT = 0,
     ENCRYPTED = 1,
 }
 

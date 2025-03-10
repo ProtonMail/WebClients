@@ -21,7 +21,7 @@ import type {
 import type { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
 import type { RequireSome, SimpleMap } from '../interfaces/utils';
 import {
-    ATTENDEE_COMMENT_TYPE,
+    ATTENDEE_COMMENT_ENCRYPTION_TYPE,
     ATTENDEE_STATUS_API,
     ICAL_ATTENDEE_ROLE,
     ICAL_ATTENDEE_RSVP,
@@ -107,7 +107,11 @@ export const toInternalAttendee = (
             // TODO
             // - Report decryption errors to sentry
             // - Handle decryption errors gracefully
-            if (sharedSessionKey && extra.Comment?.Message && extra.Comment?.Type === ATTENDEE_COMMENT_TYPE.ENCRYPTED) {
+            if (
+                sharedSessionKey &&
+                extra.Comment?.Message &&
+                extra.Comment?.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED
+            ) {
                 const attendeeEmail = attendee.parameters.cn;
 
                 if (!attendeeEmail) {
