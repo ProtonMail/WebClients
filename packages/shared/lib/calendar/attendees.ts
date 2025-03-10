@@ -89,7 +89,7 @@ export const toInternalAttendee = (
     clear: Attendee[] = [],
     sharedSessionKey: SessionKey | undefined,
     eventID: string,
-    getAttendeePublicKeys: (attendeeEmail: string) => Promise<VerificationPreferences>
+    getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>
 ): Promise<VcalAttendeeProperty[]> => {
     return Promise.all(
         attendees.map(async (attendee) => {
@@ -119,7 +119,7 @@ export const toInternalAttendee = (
                 }
 
                 const binaryMessage = base64StringToUint8Array(extra.Comment?.Message);
-                const publicKey = await getAttendeePublicKeys(attendeeEmail);
+                const publicKey = await getAttendeeVerificationPreferences(attendeeEmail);
                 const decryptedMessageResult = await CryptoProxy.decryptMessage({
                     signatureContext: { value: getSignatureContext('calendar.rsvp.comment', eventID), required: true },
                     sessionKeys: [sharedSessionKey],

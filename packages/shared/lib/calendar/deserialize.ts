@@ -237,7 +237,7 @@ interface ReadCalendarEventArguments {
     calendarSettings: CalendarSettings;
     addresses: Address[];
     encryptingAddressID?: string;
-    getAttendeePublicKeys: (attendeeEmail: string) => Promise<VerificationPreferences>;
+    getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>;
 }
 
 export const readCalendarEvent = async ({
@@ -258,7 +258,7 @@ export const readCalendarEvent = async ({
     calendarSessionKey,
     calendarSettings,
     encryptingAddressID,
-    getAttendeePublicKeys,
+    getAttendeeVerificationPreferences,
 }: ReadCalendarEventArguments) => {
     const decryptedEventsResults = await Promise.all([
         Promise.all(SharedEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
@@ -306,7 +306,7 @@ export const readCalendarEvent = async ({
                     AttendeesInfo.Attendees,
                     sharedSessionKey,
                     eventID,
-                    getAttendeePublicKeys
+                    getAttendeeVerificationPreferences
                 );
             })
             .filter(isTruthy)
