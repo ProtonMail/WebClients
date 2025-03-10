@@ -2,7 +2,7 @@ import { getUnixTime } from 'date-fns';
 
 import { CryptoProxy, serverTime } from '@proton/crypto';
 import { toIcsPartstat } from '@proton/shared/lib/calendar/attendees';
-import { ATTENDEE_COMMENT_TYPE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ATTENDEE_COMMENT_ENCRYPTION_TYPE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers';
 import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getAttendeeToken, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
@@ -55,7 +55,7 @@ export const getUpdatePartstatOperation = async ({
     }
 
     let comment = maybeClearComment;
-    if (comment?.Message && comment?.Type === ATTENDEE_COMMENT_TYPE.ENCRYPTED) {
+    if (comment?.Message && comment?.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED) {
         const sessionKey = await getSharedSessionKey({ calendarEvent: event, getAddressKeys, getCalendarKeys });
         const [signingKey] = await getAddressKeys(addressID);
 
@@ -73,7 +73,7 @@ export const getUpdatePartstatOperation = async ({
 
         comment = {
             Message: base64EncryptedComment,
-            Type: ATTENDEE_COMMENT_TYPE.ENCRYPTED,
+            Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED,
         };
     }
 
