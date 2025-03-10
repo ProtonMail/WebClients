@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
-import { ATTENDEE_COMMENT_TYPE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ATTENDEE_COMMENT_ENCRYPTION_TYPE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { AttendeeComment, PartstatData } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
@@ -49,7 +49,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     const handleNote = (note: string) => {
         setModel({
             ...model,
-            Comment: { Message: note, Type: ATTENDEE_COMMENT_TYPE.CLEAR }, // todo enctypted?
+            Comment: { Message: note, Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT }, // todo enctypted?
         });
     };
 

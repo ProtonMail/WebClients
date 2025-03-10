@@ -1,7 +1,7 @@
 import type { CalendarNotificationSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type {
-    ATTENDEE_COMMENT_TYPE,
+    ATTENDEE_COMMENT_ENCRYPTION_TYPE,
     ATTENDEE_MORE_ATTENDEES,
     ATTENDEE_STATUS_API,
     CALENDAR_CARD_TYPE,
@@ -43,7 +43,7 @@ export interface PartstatData {
 
 export interface AttendeeComment {
     Message: string;
-    Type: ATTENDEE_COMMENT_TYPE;
+    Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE;
 }
 
 export interface Attendee {
