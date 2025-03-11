@@ -941,6 +941,9 @@
       ],
       "Version history": [
         "Ιστορικό εκδόσεων"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2181,6 +2184,11 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
@@ -2259,11 +2267,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5697,8 +5700,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Προσθέστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
+      "Add-on with free trial": [
+        "Πρόσθετο με δωρεάν δοκιμή"
       ],
       "for ${ price }": [
         "για ${ price }"
@@ -6117,6 +6126,9 @@
       "${ size } storage": [
         "${ size } αποθηκευτικός χώρος"
       ],
+      "${ size } storage per user": [
+        "${ size } αποθηκευτικός χώρος ανά χρήστη"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Για ${ DRIVE_APP_NAME }"
       ],
@@ -6304,6 +6316,9 @@
       "Limited support": [
         "Περιορισμένη υποστήριξη"
       ],
+      "Manage user permissions and access": [
+        "Διαχείριση αδειών χρηστών και πρόσβασης"
+      ],
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
       ],
@@ -6321,6 +6336,9 @@
       ],
       "Password manager": [
         "Διαχειριστής κωδικών"
+      ],
+      "Password manager to secure credentials": [
+        "Διαχειριστής κωδικών πρόσβασης με δωρεάν δοκιμή"
       ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
@@ -6393,9 +6411,6 @@
       ],
       "SMTP submission": [
         "Υποβολή SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Υποβολή SMTP για επιλεγμένους οργανισμούς"
       ],
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
@@ -7282,6 +7297,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Πίνακας διαχείρισης για τη διαχείριση χρηστών και συνδρομών"
+      ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
       ],
       "Team policies": [
         "Πολιτικές ομάδας"
@@ -8278,6 +8296,10 @@
       "${ n } VPN connection per user": [
         "${ n } σύνδεση VPN ανά χρήστη",
         "${ n } συνδέσεις VPN ανά χρήστη"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Σύνδεση VPN για ${ n } συσκευή ανά χρήστη",
+        "Σύνδεση VPN για ${ n } συσκευές ανά χρήστη"
       ]
     },
     "Subscription change warning": {
@@ -8316,6 +8338,25 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Για ${ totalPrice }"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } διεύθυνση email",
+        "${ planNumberOfEmails } διευθύνσεις email"
+      ],
+      "Folders, labels, and custom filters": [
+        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
       ]
     },
     "subscription reminder": {
@@ -8357,25 +8398,6 @@
       ],
       "Your privacy is our mission": [
         "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλ. ταχυδρομείου",
-        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } διεύθυνση email",
-        "${ planNumberOfEmails } διευθύνσεις email"
-      ],
-      "Folders, labels, and custom filters": [
-        "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
       ]
     },
     "Subscription renewal state": {
@@ -9117,6 +9139,11 @@
         "Σήμερα"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Προσθέστε αυτό το κοινόχρηστο αρχείο στο ${ DRIVE_APP_NAME } για εύκολη πρόσβαση αργότερα."
@@ -9194,11 +9221,6 @@
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
@@ -9227,6 +9249,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } συσκευή",
+        "${ n } συσκευές"
+      ],
       "${ n } server": [
         "${ n } διακομιστής",
         "${ n }+ διακομιστές"
@@ -9235,6 +9261,10 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } χώρα",
+        "${ numberOfCountries } χώρες"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries }+ χώρες"
@@ -9242,6 +9272,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries } χώρες"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρα",
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρες"
       ]
     },
     "vpn_2024: renew": {

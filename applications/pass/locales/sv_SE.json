@@ -940,7 +940,7 @@
         "Misslyckades att ladda intrång för detta e-postalias"
       ],
       "Failed to load domain settings.": [
-        "Misslyckades att läsa in domäninställningar."
+        "Misslyckades att ladda domäninställningar."
       ],
       "Failed to load item history": [
         "Misslyckades att ladda objekthistorik"
@@ -1177,10 +1177,10 @@
         "Du är för närvarande offline. Återuppta anslutning för att låsa upp ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
-        "Din DNS är inte konfigurerad korrekt. MX-posten vi tog emot är:"
+        "Din DNS är inte korrekt inställd. MX-posten vi erhåller är:"
       ],
       "Your DNS is not correctly set. The TXT record we obtain is:": [
-        "Din DNS är inte konfigurerad korrekt. TXT-posten vi tog emot är:"
+        "Din DNS är inte korrekt inställd. TXT-posten vi erhåller är:"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
@@ -2653,9 +2653,6 @@
       "Expired": [
         "Löpt ut"
       ],
-      "Expired link": [
-        "Utgången länk"
-      ],
       "Export": [
         "Exportera"
       ],
@@ -3458,7 +3455,7 @@
         "Visningsnamn uppdaterat"
       ],
       "Domain ownership verified. You can now set up MX record.": [
-        "Domänägarskap verifierat. Du kan nu konfigurera MX-poster."
+        "Domänägarskap verifierat. Du kan nu ställa in MX-post."
       ],
       "Domain successfully deleted": [
         "Domän borttagen"
@@ -3501,10 +3498,10 @@
         "Automatiskt"
       ],
       "Dark": [
-        "Mörkt"
+        "Mörk"
       ],
       "Light": [
-        "Ljust"
+        "Ljus"
       ]
     },
     "Title": {

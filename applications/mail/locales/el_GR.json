@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "About hide-my-email aliases": [
-        "Περί hide-my-email ψευδώνυμα"
-      ],
       "Activate": [
         "Ενεργοποίηση"
       ],
@@ -608,6 +605,9 @@
       ],
       "Hide toolbar": [
         "Απόκρυψη γραμμής εργαλείων"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email ψευδώνυμα"
       ],
       "I like this response": [
         "Μου αρέσει αυτή η απάντηση"
@@ -1791,6 +1791,9 @@
       ],
       "Version history": [
         "Ιστορικό εκδόσεων"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6894,11 +6897,11 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Ελέγξτε ότι είναι νόμιμο."
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "Το σύστημά μας το επισήμανε ως ύποπτο. Εάν δεν πρόκειται για μήνυμα ηλεκτρονικού ψαρέματος (phishing) ή απάτης, επισημάνετέ το ως νόμιμο."
       ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Το σύστημά μας επισήμανε αυτό το μήνυμα ως ύποπτο μήνυμα ηλεκτρονικού ταχυδρομείου. Ελέγξτε ότι είναι νόμιμο πριν κάνετε κλικ σε συνδέσμους ή συνημμένα."
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Παρακαλούμε ελέγξτε το για να βεβαιωθείτε ότι είναι νόμιμο."
       ],
       "password": [
         "κωδικός πρόσβασης"
@@ -7019,8 +7022,8 @@
       "Proofread text": [
         "Διόρθωση κειμένου"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Προστατέψτε τη διεύθυνσή σας από το να διαρρεύσει σε λίστες αλληλογραφίας ή ενοχλητικούς αποστολείς, με hide-my-email ψευδώνυμα"
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Προστατέψτε τη διεύθυνσή σας από το να διαρρεύσει σε λίστες αλληλογραφίας ή ενοχλητικούς αποστολείς, με ${ hideMyEmailAliasesLink }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
@@ -9092,8 +9095,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Προσθέστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
+      "Add-on with free trial": [
+        "Πρόσθετο με δωρεάν δοκιμή"
       ],
       "for ${ price }": [
         "για ${ price }"
@@ -9506,6 +9515,9 @@
       "${ size } storage": [
         "${ size } αποθηκευτικός χώρος"
       ],
+      "${ size } storage per user": [
+        "${ size } αποθηκευτικός χώρος ανά χρήστη"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Για ${ DRIVE_APP_NAME }"
       ],
@@ -9693,6 +9705,9 @@
       "Limited support": [
         "Περιορισμένη υποστήριξη"
       ],
+      "Manage user permissions and access": [
+        "Διαχείριση αδειών χρηστών και πρόσβασης"
+      ],
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
       ],
@@ -9710,6 +9725,9 @@
       ],
       "Password manager": [
         "Διαχειριστής κωδικών"
+      ],
+      "Password manager to secure credentials": [
+        "Διαχειριστής κωδικών πρόσβασης με δωρεάν δοκιμή"
       ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
@@ -9782,9 +9800,6 @@
       ],
       "SMTP submission": [
         "Υποβολή SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Υποβολή SMTP για επιλεγμένους οργανισμούς"
       ],
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
@@ -10713,6 +10728,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Πίνακας διαχείρισης για τη διαχείριση χρηστών και συνδρομών"
+      ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
       ],
       "Team policies": [
         "Πολιτικές ομάδας"
@@ -12059,6 +12077,10 @@
       "${ n } VPN connection per user": [
         "${ n } σύνδεση VPN ανά χρήστη",
         "${ n } συνδέσεις VPN ανά χρήστη"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Σύνδεση VPN για ${ n } συσκευή ανά χρήστη",
+        "Σύνδεση VPN για ${ n } συσκευές ανά χρήστη"
       ]
     },
     "Subscription change warning": {
@@ -13858,6 +13880,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } συσκευή",
+        "${ n } συσκευές"
+      ],
       "${ n } server": [
         "${ n } διακομιστής",
         "${ n }+ διακομιστές"
@@ -13866,6 +13892,10 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } χώρα",
+        "${ numberOfCountries } χώρες"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries }+ χώρες"
@@ -13873,6 +13903,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries } χώρες"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρα",
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρες"
       ]
     },
     "vpn_2024: renew": {

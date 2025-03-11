@@ -136,6 +136,12 @@
       "Close this banner": [
         "Zavřít tento banner"
       ],
+      "Compare all plans": [
+        "Porovnat všechny tarify"
+      ],
+      "Compare plans": [
+        "Porovnat tarify"
+      ],
       "Configure SAML": [
         "Nastavit SAML"
       ],
@@ -241,6 +247,9 @@
       "Discard changes": [
         "Zahodit změny"
       ],
+      "Discover ${ planName }": [
+        "Objevit ${ planName }"
+      ],
       "Dismiss": [
         "Skrýt"
       ],
@@ -316,6 +325,12 @@
       "Enable multi-user support": [
         "Zapnout podporu pro více uživatelů"
       ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "Objevte ${ PLAN_NAMES[plan] }"
+      ],
+      "Explore group plans": [
+        "Prozkoumat skupinové tarify"
+      ],
       "Explore other ${ BRAND_NAME } plans": [
         "Další tarify ${ BRAND_NAME }"
       ],
@@ -362,7 +377,7 @@
         "Získat více serverů"
       ],
       "Get the deal": [
-        "Využijte nabídku"
+        "Využít nabídku"
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
@@ -417,6 +432,9 @@
       ],
       "Make admin": [
         "Nastavit správcem"
+      ],
+      "Manage subscription": [
+        "Spravovat předplatné"
       ],
       "Mark as default": [
         "Označit jako výchozí"
@@ -480,6 +498,9 @@
       ],
       "Previous page": [
         "Předchozí stránka"
+      ],
+      "Publish changes": [
+        "Zveřejnit změny"
       ],
       "Recover data": [
         "Obnovit data"
@@ -1102,6 +1123,9 @@
       ],
       "Version history": [
         "Historie verzí"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1176,6 +1200,65 @@
       ],
       "Two-year": [
         "Dva roky"
+      ]
+    },
+    "Blog": {
+      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
+        "Politika žádných logů ${ BRAND_NAME } VPN potvrzena externím auditem"
+      ],
+      "**Streaming** is included in your subscription.": [
+        "**Streamování** je součástí vašeho předplatného."
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "Může někdo vidět mou historii na internetu, pokud používáme stejnou Wi-Fi?"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "V nastavení VPN povolte Kill Switch a automatické připojení."
+      ],
+      "Get round-the-clock protection": [
+        "Získejte nepřetržitou ochranu"
+      ],
+      "How safe is Telegram?": [
+        "Jak bezpečný je Telegram?"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "V tomto článku se podíváme na to, kdo může vidět vaši historii na internetu při používání Wi-Fi, co může vidět a proč."
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "Zvyšte rychlost VPN až o 400 % pomocí funkce VPN Accelerator"
+      ],
+      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
+        "Nezávislí bezpečnostní experti ověřili, že Proton VPN neukládá data uživatelů do logů a nepoužívá žádné praktiky, které by mohly kompromitovat vaše soukromí."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "Je bezpečné používat Telegram? Jak se dozvíte v tomto článku, velmi záleží na způsobu použití."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "Zjistěte, jak v routeru povolit ${ VPN_APP_NAME }."
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "Chraňte svou společnost před úniky informací a zajistěte bezpečnější práci na dálku pomocí VPN Enterprise."
+      ],
+      "Protect your whole household with 1 device": [
+        "Chraňte celou domácnost pomocí 1 zařízení"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "Streamování ze všech hlavních platforem s ${ PLAN_NAMES[PLANS.VPN] }."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Tento článek byl aktualizován o VPN protokoly WireGuard a Stealth."
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "VPN Accelerator využívá kombinaci pokročilých technologií VPN ke zlepšení stability připojení a zvýšení rychlosti připojení"
+      ],
+      "Watch your favorite movies and TV shows": [
+        "Sledujte oblíbené filmy a seriály"
+      ],
+      "Which VPN protocol is the best?": [
+        "Který VPN protokol je nejlepší?"
+      ],
+      "Working with sensitive data?": [
+        "Pracujete s citlivými údaji?"
       ]
     },
     "Browser": {
@@ -2485,6 +2568,98 @@
         "Vaše předplatné ${ PLAN_NAMES[PLANS.PASS] } je za speciální cenu ${ price } ročně. Snížením na tarif Free trvale ztratíte slevu, a to i v případě, že v budoucnu opět navýšíte tarif."
       ]
     },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "Prohlížeč"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "Desktop"
+      ],
+      "Download for Linux": [
+        "Stáhnout pro Linux"
+      ],
+      "Download for MacOS": [
+        "Stáhnout pro macOS"
+      ],
+      "Download for Windows": [
+        "Stáhnout pro Windows"
+      ],
+      "Download on the Apple App Store": [
+        "Stáhnout z obchodu Apple Store"
+      ],
+      "Download on the Google Play Store": [
+        "Stáhnout z obchodu Google Play"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "Získat aplikaci"
+      ],
+      "Get the extension": [
+        "Získat rozšíření"
+      ],
+      "Installation guide": [
+        "Průvodce instalací"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave nebo starší"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura nebo novější"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "TV": [
+        "TV"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 nebo Windows 32-bit (ARM64)"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozšířená historie verzí"
@@ -2589,14 +2764,8 @@
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
-      "Error creating policy.": [
-        "Chyba vytváření zásady."
-      ],
-      "Error deleting policy.": [
-        "Chyba smazání zásady."
-      ],
-      "Error updating policy.": [
-        "Chyba aktualizace zásady."
+      "Error publishing changes.": [
+        "Chyba zveřejňování změn."
       ],
       "Failed to process the logo": [
         "Logo se nepodařilo zpracovat"
@@ -3214,6 +3383,9 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Vše v ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "Nejrychlejší servery VPN"
       ],
@@ -3228,6 +3400,31 @@
       ],
       "Torrenting support (P2P)": [
         "Podpora Torrentu (P2P)"
+      ]
+    },
+    "Features": {
+      "and more premium features...": [
+        "a další prémiové funkce..."
+      ],
+      "Double VPN": [
+        "Dvojitá VPN"
+      ],
+      "Lightning-fast speeds": [
+        "Blesková rychlost"
+      ],
+      "NetShield Ad-blocker": [
+        "Blokování reklam NetShield"
+      ],
+      "Secure streaming": [
+        "Bezpečné streamování"
+      ],
+      "Select from ${ vpnServers.paid.countries } countries": [
+        "Vyberte z ${ vpnServers.paid.countries } zemí"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
       ]
     },
     "fido2: Action": {
@@ -3601,8 +3798,26 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "Porovnání tarifů"
+      ],
       "Contact us": [
         "Kontaktujte nás"
+      ],
+      "Enjoying ${ planName }?": [
+        "Užíváte si ${ planName }?"
+      ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "Odemkněte další 4 prémiové služby ochrany soukromí za pouhých **${ priceString }** měsíčně navíc"
+      ],
+      "Upgrade your privacy": [
+        "Zvyšte své soukromí"
+      ],
+      "You currently pay": [
+        "V současnosti platíte"
+      ],
+      "Your plan": [
+        "Váš tarif"
       ]
     },
     "Hint": {
@@ -3656,7 +3871,7 @@
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
       ],
       "${ discountPercent }% discount": [
-        "${ discountPercent }% sleva"
+        "${ discountPercent } % sleva"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: obrázek v plné velikosti"
@@ -3720,6 +3935,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } days.": [
+        "${ planName } vyprší za ${ daysLeft } dnů."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } vyprší dnes."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí dedikovaného sledování podezřelých aktivit."
@@ -4057,6 +4278,9 @@
       "Create your first Gateway": [
         "Vytvořte svou první bránu"
       ],
+      "Created (not published)": [
+        "Vytvořeno (nezveřejněno)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Vytváření serveru brány: ${ serverNumber } / ${ total }",
         "Vytváření serverů brány: ${ serverNumber } / ${ total }",
@@ -4102,11 +4326,17 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ${ MAIL_APP_NAME } záznam má nejnižší prioritu."
       ],
+      "Deleted (not published)": [
+        "Smazáno (nezveřejněno)"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Mazání ${ deletedServerCount } serveru brány",
         "Mazání ${ deletedServerCount } serverů brány",
         "Mazání ${ deletedServerCount } serverů brány",
         "Mazání ${ deletedServerCount } serverů brány"
+      ],
+      "Did you know?": [
+        "Věděli jste?"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Deaktivováno ${ formattedDateAndTime }"
@@ -4150,6 +4380,12 @@
         "použitých domén",
         "použitých domén"
       ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "Neztraťte přístup k vašim prémiovým funkcím ${ appName }. Povolte dnes automatické obnovení."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "Neztraťte přístup k vašim prémiovým funkcím. Povolte dnes automatické obnovení."
+      ],
       "Done! We sent a code to ${ destination }.": [
         "Hotovo! Odeslali jsme kód na adresu ${ destination }."
       ],
@@ -4186,6 +4422,9 @@
       "Edit email address": [
         "Upravit e-mailovou adresu"
       ],
+      "Edited (not published)": [
+        "Upraveno (nezveřejněno)"
+      ],
       "eduGAIN configuration saved": [
         "Nastavení eduGain uloženo"
       ],
@@ -4201,6 +4440,12 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "E-maily přesunuté do koše a spamu před více než 30 dny budou automaticky smazány."
       ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Povolte automatické obnovení pro zachování přístupu k serverům a funkcím Plus."
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Povolte automatické obnovení pro zachování přístupu k prémiovým funkcím."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivujte jednotné přihlášení (SSO), aby byla vaše organizace v bezpečí"
       ],
@@ -4209,6 +4454,9 @@
       ],
       "Enabling auto-deletion…": [
         "Povolování automatického mazání..."
+      ],
+      "End date": [
+        "Datum ukončení"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Pro tuto skupinu je koncové šifrování e-mailů deaktivováno kvůli použití externích adres."
@@ -4382,7 +4630,7 @@
         "neaktivní"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Včetně ${ formattedTaxRate }% ${ taxName }: ${ price }"
+        "Včetně ${ formattedTaxRate } % ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Zvyšte zabezpečení svého účtu ověřením vaší e-mailové adresy."
@@ -4588,6 +4836,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Data o nových připojeních VPN se přestanou shromažďovat a zobrazovat."
       ],
+      "Next billing date": [
+        "Datum další fakturace"
+      ],
       "No addresses exist": [
         "Neexistují žádné adresy"
       ],
@@ -4683,6 +4934,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Cena redakce PC Magazine s hodnocením 5 z 5 hvězd"
+      ],
+      "Pending removal": [
+        "Čeká na odebrání"
       ],
       "per month": [
         "měsíčně"
@@ -4927,6 +5181,9 @@
         "Krok ${ step }",
         "Krok ${ step }"
       ],
+      "Storage": [
+        "Úložiště"
+      ],
       "Storage allocated to other users in this organisation": [
         "Úložný prostor přidělený ostatním uživatelům v této organizaci"
       ],
@@ -5169,6 +5426,9 @@
       ],
       "Unable to check gateways monitoring current status.": [
         "Nelze zkontrolovat brány sledující aktuální stav."
+      ],
+      "Unchanged": [
+        "Nezměněno"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Bohužel neexistuje žádná metoda obnovení uložená pro tento účet."
@@ -5419,6 +5679,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "K zajištění správné e-mailové adresy pro ověření můžete tento údaj jednou upravit."
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Všechny naše prémiové služby ochrany soukromí můžete získat v jednom balíčku—a to za pouhých **${ priceString }/měsíc**."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
         "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
@@ -5475,6 +5738,9 @@
       ],
       "You have no transactions.": [
         "Nemáte žádné transakce."
+      ],
+      "You have unpublished changes": [
+        "Máte nezveřejněné změny"
       ],
       "You may be redirected to your bank’s website.": [
         "Můžete být přesměrováni na webové stránky své banky."
@@ -5756,6 +6022,9 @@
       ],
       "Addresses": [
         "Adresy"
+      ],
+      "Advanced": [
+        "Pokročilé"
       ],
       "Allow": [
         "Povolit"
@@ -6550,8 +6819,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Přidat asistenta psaní ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Doplněk s bezplatnou zkušební verzí"
       ],
       "for ${ price }": [
         "za ${ price }"
@@ -6898,6 +7173,9 @@
       "${ size } storage": [
         "${ size } úložiště"
       ],
+      "${ size } storage per user": [
+        "${ size } úložiště na uživatele"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Pro ${ DRIVE_APP_NAME }"
       ],
@@ -6932,7 +7210,7 @@
         "Podpora 24/7"
       ],
       "99.95% SLA": [
-        "99.95% SLA Dostupnost"
+        "99,95 % SLA"
       ],
       "Ad-blocker and malware protection": [
         "Blokování reklam a ochrana před malware"
@@ -7105,6 +7383,9 @@
       "Limited support": [
         "Omezená podpora"
       ],
+      "Manage user permissions and access": [
+        "Správa uživatelských oprávnění a přístupů"
+      ],
       "Multiple admin roles": [
         "Více rolí správce"
       ],
@@ -7125,6 +7406,9 @@
       ],
       "Password manager": [
         "Správce hesel"
+      ],
+      "Password manager to secure credentials": [
+        "Správce hesel pro zabezpečení přihlašovacích údajů"
       ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
@@ -7203,9 +7487,6 @@
       ],
       "SMTP submission": [
         "SMTP odesílání"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP odesílání pro vybrané organizace"
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
@@ -7943,7 +8224,7 @@
         "Získejte nabídku"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Poslední šance získat 80% slevu na první měsíc ${ plan } Plus."
+        "Poslední šance získat 80 % slevu na první měsíc ${ plan } Plus."
       ],
       "Last day to save": [
         "Poslední den, kdy můžete ušetřit"
@@ -7970,7 +8251,7 @@
         "Ušetřete ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
-        "Ušetřete 80% za první měsíc."
+        "Ušetřete 80 % za první měsíc."
       ],
       "Save big when you pay annually": [
         "Při roční platbě můžete výrazně ušetřit"
@@ -8244,6 +8525,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel správce pro správu uživatelů a předplatného"
+      ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
       ],
       "Team policies": [
         "Týmové zásady"
@@ -8642,9 +8926,40 @@
         "Členové"
       ]
     },
+    "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "Šifrované cloudové úložiště pro fotky a soubory"
+      ],
+      "Password manager with identity protection": [
+        "Správce hesel s ochranou identity"
+      ],
+      "Secure email that protects your privacy": [
+        "Zabezpečený e-mail, který chrání vaše soukromí"
+      ],
+      "Your gateway to online freedom": [
+        "Vaše brána ke svobodě na internetu"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "kontaktujte"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } měsíc",
+        "${ cycle } měsíce",
+        "${ cycle } měsíců",
+        "${ cycle } měsíců"
+      ],
+      "${ months } month plan": [
+        "${ months }měsíční tarif",
+        "${ months }měsíční tarif",
+        "${ months }měsíční tarif",
+        "${ months }měsíční tarif"
+      ],
+      "Enjoying ${ planName }?": [
+        "Užíváte si ${ planName }?"
       ]
     },
     "Price": {
@@ -9435,10 +9750,10 @@
         "Využít nabídku"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Obnovení po 1 roce za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount }% sleva)"
+        "Obnovení po 1 roce za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount } % sleva)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Obnovení po 2 letech za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount }% sleva)"
+        "Obnovení po 2 letech za zvýhodněnou cenu ${ discountedAmount } místo ${ regularAmount } (${ discount } % sleva)"
       ],
       "Save ${ discount }%": [
         "Ušetřete ${ discount } %"
@@ -9776,7 +10091,7 @@
         "úložiště ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } je zaplněno z ${ percentage }%"
+        "${ storage } je zaplněno z ${ percentage } %"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Snížením úrovně přijdete o následující výhody. Jste si jisti, že chcete pokračovat?"
@@ -9812,13 +10127,13 @@
         "Vaše ${ appStorage } je plné"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Vaše ${ storage } je z ${ percentage }% plné. ${ cta }."
+        "Vaše ${ storage } je z ${ percentage } % plné. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "Vaše ${ storage } je plné. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Vaše úložiště je z ${ percentage }% plné. ${ cta }."
+        "Vaše úložiště je z ${ percentage } % plné. ${ cta }."
       ],
       "Your storage is full": [
         "Vaše úložiště je plné"
@@ -9964,6 +10279,12 @@
         "Vysokorychlostní VPN na ${ maxVpn } zařízení",
         "Vysokorychlostní VPN na ${ maxVpn } zařízení",
         "Vysokorychlostní VPN na ${ maxVpn } zařízení"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN připojení pro ${ n } zařízení na uživatele",
+        "VPN připojení pro ${ n } zařízení na uživatele",
+        "VPN připojení pro ${ n } zařízení na uživatele",
+        "VPN připojení pro ${ n } zařízení na uživatele"
       ]
     },
     "Subscription change warning": {
@@ -10002,47 +10323,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "and 15 more premium features": [
-        "a 15 dalších prémiových funkcí"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické přesměrování e-mailů ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornění na úniky informací ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikace"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
-      ],
-      "No ads or tracking": [
-        "Žádné reklamy ani sledování"
-      ],
-      "Short @pm.me email address": [
-        "Zkrácená e-mailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podpořte naše poslání"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade your productivity": [
-        "Zvyšte svou produktivitu"
-      ],
-      "We don't sell your data": [
-        "Vaše údaje neprodáváme"
-      ],
-      "Your privacy is our mission": [
-        "Vaše soukromí je naším posláním"
       ]
     },
     "Subscription reminder": {
@@ -10347,6 +10627,47 @@
         "Váš vlastní krátký e-mailový alias @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "and 15 more premium features": [
+        "a 15 dalších prémiových funkcí"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické přesměrování e-mailů ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornění na úniky informací ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikace"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomozte nám udržet internet bezpečný a soukromý pro všechny. Přejděte na placený tarif."
+      ],
+      "No ads or tracking": [
+        "Žádné reklamy ani sledování"
+      ],
+      "Short @pm.me email address": [
+        "Zkrácená e-mailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podpořte naše poslání"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade your productivity": [
+        "Zvyšte svou produktivitu"
+      ],
+      "We don't sell your data": [
+        "Vaše údaje neprodáváme"
+      ],
+      "Your privacy is our mission": [
+        "Vaše soukromí je naším posláním"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Jste si jistý?"
@@ -10409,6 +10730,9 @@
       ],
       "Catch-all address updated": [
         "Záchytná adresa aktualizována"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Změny zveřejněny. Vaše změny budou viditelné pro všechny uživatele během několika následujících hodin."
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
@@ -10490,15 +10814,6 @@
       ],
       "Phone number updated": [
         "Telefonní číslo bylo aktualizováno"
-      ],
-      "Policy created successfully!": [
-        "Zásada úspěšně vytvořena!"
-      ],
-      "Policy deleted": [
-        "Zásada smazána"
-      ],
-      "Policy updated successfully!": [
-        "Zásada úspěšně aktualizována!"
       ],
       "Preference saved": [
         "Nastavení uloženo"
@@ -10805,6 +11120,9 @@
       "Allocate storage": [
         "Přiřadit úložiště"
       ],
+      "Also in your plan": [
+        "Také ve vašem tarifu"
+      ],
       "Amount": [
         "Částka"
       ],
@@ -10898,6 +11216,9 @@
       "Connect organization": [
         "Připojení organizace"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "Připojte se k ${ VPN_CONNECTIONS } zařízení současně s ${ vpnPlus }. ${ upgradeButton }"
+      ],
       "Contact us": [
         "Kontaktujte nás"
       ],
@@ -10957,6 +11278,9 @@
       ],
       "Day theme": [
         "Denní motiv"
+      ],
+      "Deep dive into VPN blog posts": [
+        "Začtěte se do článků o VPN na blogu"
       ],
       "Delete": [
         "Smazat"
@@ -11123,6 +11447,15 @@
       "Get ${ vpnPlus } to access all servers": [
         "Získejte ${ vpnPlus } pro přístup ke všem serverům"
       ],
+      "Get complete privacy coverage": [
+        "Získejte kompletní ochranu soukromí"
+      ],
+      "Get more from your VPN": [
+        "Získejte více ze své VPN"
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "Získejte aplikaci do všech svých zařízení a chraňte až ${ VPN_CONNECTIONS } současně."
+      ],
       "Gift": [
         "Dárek"
       ],
@@ -11134,6 +11467,9 @@
       ],
       "Help center": [
         "Centrum podpory"
+      ],
+      "Home": [
+        "Domovská stránka"
       ],
       "How to choose a good logo": [
         "Jak vybrat správné logo"
@@ -11380,6 +11716,9 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Vylepšete ochranu své sítě pomocí dedikovaných serverů"
+      ],
+      "Upgrade your privacy": [
+        "Zvyšte své soukromí"
       ],
       "Upload CSV file to create multiple accounts": [
         "Nahrajte soubor CSV pro vytvoření více účtů"
@@ -11769,9 +12108,38 @@
         "Chcete-li pokračovat, musíte požádat uživatele o povolení přístupu k jejich datům nebo resetovat jejich heslo."
       ]
     },
+    "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "**Ušetřete až ${ priceString }** při předplatném na delší dobu. Stejné prémiové funkce, nižší cena."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Všechny prémiové služby ${ BRAND_NAME }, jedno snadné předplatné."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Všechny prémiové služby ${ BRAND_NAME }. Od pouhých ${ fallBackString } měsíčně"
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "Všechny prémiové služby ${ BRAND_NAME }. Pouze **${ priceString }** navíc měsíčně."
+      ],
+      "Did you know?": [
+        "Věděli jste?"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "Můžete chránit až ${ FAMILY_MAX_USERS } osob s ${ PLAN_NAMES[plan] }. Již od ${ priceString }/měsíc za jeden účet."
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "Můžete chránit až ${ FAMILY_MAX_USERS } osob s ${ PLAN_NAMES[PLANS.DUO] } nebo ${ PLAN_NAMES[PLANS.FAMILY] }. Již od ${ priceString }/měsíc za jeden účet."
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "Nejlepší nabídka"
+      ],
       "Recommended": [
         "Doporučeno"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Ušetřete ${ totals.discountPercentage }%"
       ]
     },
     "User role": {
@@ -11910,12 +12278,38 @@
         "Ostatní"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Komunikujte a plánujte s koncovým šifrováním."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Získejte více ze svého předplatného ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Udržujte své soubory, fotografie a dokumenty v bezpečí s bezplatným cloudovým úložištěm o velikosti ${ maxDriveSpace }."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Nastavte bezpečná hesla bez potíží."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "S tarifem ${ planTitlePlusMaybeBrand } získáte bezplatný přístup k ${ VPN_APP_NAME } a dalším službám ochrany soukromí."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "S tarifem ${ planTitlePlusMaybeBrand } získáte bezplatný přístup ke všem službám ${ BRAND_NAME }."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, a další."
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } zařízení",
+        "${ n } zařízení",
+        "${ n } zařízení",
+        "${ n } zařízení"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ servery",
@@ -11928,6 +12322,12 @@
         "${ n } VPN připojení",
         "${ n } VPN připojení"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } země",
+        "${ numberOfCountries } země",
+        "${ numberOfCountries } zemí",
+        "${ numberOfCountries } zemí"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } v ${ numberOfCountries } zemi",
         "${ numberOfServers } ve ${ numberOfCountries } zemích",
@@ -11939,6 +12339,12 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automaticky vybírá z ${ numberOfCountries } země",
+        "Automaticky vybírá ze ${ numberOfCountries } zemí",
+        "Automaticky vybírá z ${ numberOfCountries } zemí",
+        "Automaticky vybírá z ${ numberOfCountries } zemí"
       ]
     },
     "vpn_2024: renew": {

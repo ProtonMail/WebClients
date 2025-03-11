@@ -305,6 +305,9 @@
       "Delete version": [
         "Slet version"
       ],
+      "Delete without saving": [
+        "Slet uden at gemme"
+      ],
       "Deselect all": [
         "Fravælg alle"
       ],
@@ -319,6 +322,12 @@
       ],
       "Display navigation bar": [
         "Fremvis navigationsbjælke"
+      ],
+      "Display next": [
+        "Vis næste"
+      ],
+      "Display previous": [
+        "Vis forrige"
       ],
       "Done": [
         "Udført"
@@ -398,6 +407,9 @@
       ],
       "Export contact group": [
         "Eksporter kontaktgruppe"
+      ],
+      "Export selection as .vcf": [
+        "Eksporter valgte som .vcf"
       ],
       "Fit to window": [
         "Tilpas til vinduet"
@@ -696,6 +708,9 @@
       "Remove me": [
         "Fjern mig"
       ],
+      "Remove without saving": [
+        "Fjern uden at gemme"
+      ],
       "Rename": [
         "Omdøb"
       ],
@@ -768,8 +783,14 @@
       "Save": [
         "Gem"
       ],
+      "Save and remove": [
+        "Gem og fjern"
+      ],
       "Save changes": [
         "Gem ændringer"
+      ],
+      "Save photos and remove": [
+        "Gem fotos og slet"
       ],
       "Search": [
         "Søg"
@@ -3353,6 +3374,11 @@
         "Du kan også opfriske siden, eller forsøge igen senere."
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Visningsnavnet kan ikke være tomt"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Intet billede valgt"
@@ -5785,6 +5811,9 @@
       ],
       "Trusted": [
         "Betroet"
+      ],
+      "WKD": [
+        "WKD"
       ]
     },
     "Label": {
@@ -6583,6 +6612,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tilføj ${ BRAND_NAME } Scribe-skriveassistent"
       ],
@@ -7018,6 +7050,9 @@
       "15 GB storage": [
         "15 GB lagerplads"
       ],
+      "200 GB of storage": [
+        "200 GB lagerplads"
+      ],
       "24/7 account management support": [
         "24/7 kontoadministreringssupport"
       ],
@@ -7035,6 +7070,9 @@
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avancerede aliasfunktioner (drevet af SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } produkter og funktioner"
@@ -7104,6 +7142,9 @@
       ],
       "Data breach monitoring": [
         "Overvågning af databrud"
+      ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikerede servere optimeret til streaming"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -7205,6 +7246,9 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Private photo backup": [
+        "Privat sikkerhedskopiering af fotos"
+      ],
       "Proofread and refine your emails": [
         "Korrekturlæs og forfin dine e-mails"
       ],
@@ -7238,6 +7282,9 @@
       "Secure Core servers": [
         "Secure Core servere"
       ],
+      "Secure file storage and sharing": [
+        "Sikker fillagring og deling"
+      ],
       "Secure link sharing": [
         "Sikker link-deling"
       ],
@@ -7256,11 +7303,11 @@
       "SMTP submission": [
         "SMTP-indsendelse"
       ],
-      "SMTP submission for select organizations": [
-        "SMTP-indsendelse for udvalgte organisationer"
-      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
+      ],
+      "SSO integration": [
+        "SSO-integration"
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
@@ -7270,6 +7317,9 @@
       ],
       "Sync and backup all your files across devices": [
         "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
+      ],
+      "Tor over VPN": [
+        "Tor over VPN"
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
@@ -8036,12 +8086,35 @@
         "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Calendar."
       ]
     },
+    "Offer": {
+      "Don’t show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Maybe later": [
+        "Måske senere"
+      ],
+      "Special offer": [
+        "Specialtilbud"
+      ]
+    },
     "Offer feature": {
+      "Custom email domain": [
+        "Tilpasset e-maildomæne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
       "Free": [
         "Gratis"
       ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Storage": [
+        "Lagerplads"
       ]
     },
     "Onboarding": {
@@ -8239,6 +8312,9 @@
       ],
       "Activity log": [
         "Aktivitetslog"
+      ],
+      "Advanced account protection": [
+        "Avanceret kontobeskyttelse"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8360,6 +8436,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -8557,6 +8638,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiel e-mail fra ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Gennemgå kontoens sikkerhed"
       ]
     },
     "Security Center": {
@@ -9170,6 +9256,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
+      ],
+      "Billed every 6 months": [
+        "Faktureret hver 6. måned"
       ],
       "Billed for 15 months": [
         "Faktureret for 15 måneder"
@@ -10603,6 +10692,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } enhed",
+        "${ n } enheder"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ servere"
@@ -10610,6 +10703,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } lande"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } fordelt på ${ numberOfCountries } land",
@@ -10701,6 +10798,9 @@
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Er du sikker på, at du vil slette denne kontakt permanent?"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan ikke indeholde et punktum til sidst"
       ],
       "Contacts could not be merged": [
         "Kontakter kunne ikke flettes"

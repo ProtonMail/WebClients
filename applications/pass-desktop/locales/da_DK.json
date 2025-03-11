@@ -2725,9 +2725,6 @@
       "Expired": [
         "Udløbet"
       ],
-      "Expired link": [
-        "Udløbet link"
-      ],
       "Export": [
         "Eksportér"
       ],
@@ -3360,6 +3357,9 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Kræv 2FA for organisation"
+      ],
+      "SSO integration": [
+        "SSO-integration"
       ]
     },
     "Notification": {
@@ -4139,6 +4139,9 @@
       ],
       "At least one email address is required": [
         "Mindst én e-mailadresse er påkrævet"
+      ],
+      "Cannot contain a dot at the end": [
+        "Kan ikke indeholde et punktum til sidst"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan ikke hente postkasser for dette alias lige nu"

@@ -1248,6 +1248,9 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -5027,7 +5030,7 @@
         "PGP/MIME skickar automatiskt meddelandet med det aktuella kompositörsläget."
       ],
       "Photo is not saved to your library": [
-        "Bilden är inte sparad i ditt bibliotek"
+        "Foto är inte sparat till ditt bibliotek"
       ],
       "Photo is set as album cover": [
         "Foto är inställt som albumomslag"
@@ -6703,8 +6706,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lägg till ${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "Add-on with free trial": [
+        "Utökning med gratis provperiod"
       ],
       "for ${ price }": [
         "för ${ price }"
@@ -7180,6 +7189,9 @@
       "${ size } storage": [
         "${ size } lagringsutrymme"
       ],
+      "${ size } storage per user": [
+        "${ size } lagringsutrymme per användare"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - För ${ DRIVE_APP_NAME }"
       ],
@@ -7367,6 +7379,9 @@
       "Limited support": [
         "Begränsad support"
       ],
+      "Manage user permissions and access": [
+        "Hantera användarbehörigheter och åtkomst"
+      ],
       "Multiple admin roles": [
         "Flera administratörsroller"
       ],
@@ -7384,6 +7399,9 @@
       ],
       "Password manager": [
         "Lösenordshanterare"
+      ],
+      "Password manager to secure credentials": [
+        "Lösenordshanterare för säkra inloggningsuppgifter"
       ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
@@ -7456,9 +7474,6 @@
       ],
       "SMTP submission": [
         "SMTP-inlämning"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-inlämning för valda organisationer"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
@@ -8567,6 +8582,9 @@
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
       ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
       "Team policies": [
         "Policy för team"
       ]
@@ -9595,6 +9613,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-anslutning per användare",
         "${ n } VPN-anslutningar per användare"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-anslutning för ${ n } enheter per användare",
+        "VPN-anslutning för ${ n } enheter per användare"
       ]
     },
     "Subscription change warning": {
@@ -10269,6 +10291,9 @@
       ],
       "Album": [
         "Album"
+      ],
+      "Album details": [
+        "Albumdetaljer"
       ],
       "Albums": [
         "Album"
@@ -11016,6 +11041,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } enhet",
+        "${ n } enheter"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ servrar"
@@ -11024,6 +11053,10 @@
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } länder"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries }+ länder"
@@ -11031,6 +11064,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } länder"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Väljer automatiskt från ${ numberOfCountries } land",
+        "Väljer automatiskt från ${ numberOfCountries } länder"
       ]
     },
     "vpn_2024: renew": {
