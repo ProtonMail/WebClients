@@ -30,6 +30,7 @@ enum CommonFeatureFlag {
     WalletFullSync = 'WalletFullSync',
     InboxDesktopDefaultEmailSetupHelper = 'InboxDesktopDefaultEmailSetupHelper',
     InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
+    UserDropdownRedesign = 'UserDropdownRedesign',
 }
 
 enum AccountFlag {
