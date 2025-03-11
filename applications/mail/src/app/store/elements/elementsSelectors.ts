@@ -4,7 +4,6 @@ import type { ESStatus } from '@proton/encrypted-search';
 import { ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
@@ -22,7 +21,6 @@ import {
 import { expectedPageLength, isPageConsecutive } from '../../helpers/paging';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { MailState } from '../store';
-import type { ElementsStateParams } from './elementsTypes';
 import { getTotal } from './helpers/elementTotal';
 
 export const params = (state: MailState) => state.elements.params;
@@ -44,8 +42,6 @@ export const addresses = (state: MailState) => state.addresses;
 
 const currentPage = (_: MailState, { page }: { page: number }) => page;
 const currentSearch = (_: MailState, { search }: { search: SearchParameters }) => search;
-// currentParams corresponds to the parameters set by the user from the interface
-const currentParams = (_: MailState, { params }: { params: ElementsStateParams }) => params;
 const currentESDBStatus = (
     _: MailState,
     {
@@ -105,15 +101,17 @@ export const elements = createSelector(
         // If the page has not been loaded on this filter, return an empty array of elements so that we
         // don't show them during loading, preventing the user from creating currency in requests
         // e.g. applying actions while loading elements
-        const filtered = /*pages.includes(page) ?*/ filterElementsInState({
-            elements: elementsArray,
-            addresses: addresses?.value,
-            bypassFilter,
-            labelID,
-            filter,
-            conversationMode,
-            search,
-        }); /* : []*/
+        const filtered = pages.includes(page)
+            ? filterElementsInState({
+                  elements: elementsArray,
+                  addresses: addresses?.value,
+                  bypassFilter,
+                  labelID,
+                  filter,
+                  conversationMode,
+                  search,
+              })
+            : [];
 
         const sorted = sortElements(filtered, finalSort, labelID);
 
@@ -171,17 +169,6 @@ export const needsMoreElements = createSelector(
     }
 );
 
-export const paramsChanged = createSelector([params, currentParams], (params, currentParams) => {
-    const paramsChanged =
-        currentParams.labelID !== params.labelID ||
-        currentParams.conversationMode !== params.conversationMode ||
-        currentParams.sort !== params.sort ||
-        currentParams.filter !== params.filter ||
-        currentParams.search !== params.search ||
-        (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search));
-    return paramsChanged;
-});
-
 /**
  * @returns a boolean specifying whether the current page is in the cache or not.
  */
@@ -203,58 +190,16 @@ export const pageIsConsecutive = createSelector([contextPages, currentPage], (pa
 );
 
 /**
- * @returns a boolean specifying whether the elements state should be reset, including `elements` cache.
- * It should be `true` whenever one of the search params changes or when a page jump occurs (e.g: users from page 2 to page 7)
- */
-export const shouldResetElementsState = createSelector(
-    [params, currentParams, pageIsConsecutive],
-    (params, currentParams, pageIsConsecutive) => {
-        return (
-            currentParams.search.keyword !== params.search.keyword || // Reset the cache since we do not support client search (filtering)
-            (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search)) ||
-            !pageIsConsecutive ||
-            // Reset the cache when sort changes to ensure correct ordering
-            !isDeepEqual(currentParams.sort, params.sort)
-        );
-    }
-);
-
-/**
  * @returns a boolean specifying whether or elements should be loading (either fetched or loaded with ES).
  * It should be true either when `shouldResetElementsState` or
  */
 export const shouldLoadElements = createSelector(
-    [
-        paramsChanged,
-        pendingRequest,
-        retry,
-        needsMoreElements,
-        invalidated,
-        pageCached,
-        shouldResetElementsState,
-        page,
-        contextPages,
-    ],
-    (
-        paramsChanged,
-        pendingRequest,
-        retry,
-        needsMoreElements,
-        invalidated,
-        pageCached,
-        shouldResetElementsState,
-        page,
-        pages
-    ) => {
-        console.log({ pages, page, paramsChanged, needsMoreElements });
+    [pendingRequest, retry, needsMoreElements, invalidated, pageCached],
+    (pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
         return (
-            shouldResetElementsState ||
-            // Do not perform a load elements call if elements in filter have already been loaded
-            // This might not be needed if we can remove params changed
-            paramsChanged /*&&  (!pages.includes(page))*/ ||
-            (!pendingRequest &&
-                retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
-                (needsMoreElements || invalidated || !pageCached))
+            !pendingRequest &&
+            retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
+            (needsMoreElements || invalidated || !pageCached)
         );
     }
 );

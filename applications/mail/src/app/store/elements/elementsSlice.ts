@@ -80,6 +80,7 @@ export const newElementsState = ({
         sort: { sort: 'Time', desc: true },
         search: {},
         esEnabled: false,
+        isSearching: false,
     };
 
     return {
