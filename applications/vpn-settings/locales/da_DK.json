@@ -388,6 +388,9 @@
       "Make admin": [
         "Gør til admin"
       ],
+      "Manage subscription": [
+        "Administrer abonnement"
+      ],
       "Mark as default": [
         "Markér som standard"
       ],
@@ -4080,6 +4083,9 @@
       "Invite rejected": [
         "Invitation afvist"
       ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "Det tager 10 dage at ændre en servers land, så vær sikker på dit valg er korrekt."
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Element autoudfyldt i ${ vaultLink }"
       ],
@@ -5669,6 +5675,10 @@
       "Security code (${ codeName })": [
         "Sikkerhedskode (${ codeName })"
       ],
+      "Show ${ n } administrator": [
+        "Vis ${ n } administrator",
+        "Show ${ n } administratorer"
+      ],
       "Single sign-on URL": [
         "Single sign-on URL"
       ],
@@ -5971,6 +5981,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tilføj ${ BRAND_NAME } Scribe-skriveassistent"
       ],
@@ -6291,6 +6304,9 @@
       "15 GB storage": [
         "15 GB lagerplads"
       ],
+      "200 GB of storage": [
+        "200 GB lagerplads"
+      ],
       "24/7 account management support": [
         "24/7 kontoadministreringssupport"
       ],
@@ -6311,6 +6327,9 @@
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avancerede aliasfunktioner (drevet af SimpleLogin)"
       ],
       "Advanced network security": [
         "Avanceret netværkssikkerhed"
@@ -6389,6 +6408,9 @@
       ],
       "Dedicated servers and IP": [
         "Dedikerede servere og IP"
+      ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikerede servere optimeret til streaming"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -6493,6 +6515,9 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Private photo backup": [
+        "Privat sikkerhedskopiering af fotos"
+      ],
       "Proofread and refine your emails": [
         "Korrekturlæs og forfin dine e-mails"
       ],
@@ -6526,6 +6551,9 @@
       "Secure Core servers": [
         "Secure Core servere"
       ],
+      "Secure file storage and sharing": [
+        "Sikker fillagring og deling"
+      ],
       "Secure link sharing": [
         "Sikker link-deling"
       ],
@@ -6548,11 +6576,11 @@
       "SMTP submission": [
         "SMTP-indsendelse"
       ],
-      "SMTP submission for select organizations": [
-        "SMTP-indsendelse for udvalgte organisationer"
-      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
+      ],
+      "SSO integration": [
+        "SSO-integration"
       ],
       "Start protecting your organization": [
         "Begynd at beskytte din organisation"
@@ -6565,6 +6593,9 @@
       ],
       "Sync and backup all your files across devices": [
         "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
+      ],
+      "Tor over VPN": [
+        "Tor over VPN"
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
@@ -7210,12 +7241,35 @@
         "Nogle billeder blev ikke uploadet grundet duplikerede filnavne i det nuværende valg."
       ]
     },
+    "Offer": {
+      "Don’t show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Maybe later": [
+        "Måske senere"
+      ],
+      "Special offer": [
+        "Specialtilbud"
+      ]
+    },
     "Offer feature": {
+      "Custom email domain": [
+        "Tilpasset e-maildomæne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
       "Free": [
         "Gratis"
       ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Storage": [
+        "Lagerplads"
       ]
     },
     "Onboarding": {
@@ -7407,6 +7461,9 @@
       ],
       "Activity log": [
         "Aktivitetslog"
+      ],
+      "Advanced account protection": [
+        "Avanceret kontobeskyttelse"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7622,6 +7679,11 @@
         "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Permission": {
       "No permission": [
         "Ingen tilladelse"
@@ -7756,6 +7818,12 @@
         "kontakt"
       ]
     },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } måned",
+        "${ cycle } måneder"
+      ]
+    },
     "Price": {
       "Free": [
         "Gratis"
@@ -7853,6 +7921,11 @@
       ],
       "User": [
         "Bruger"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Gennemgå kontoens sikkerhed"
       ]
     },
     "saml: Action": {
@@ -8546,6 +8619,10 @@
       "Contact administrator": [
         "Kontakt administrator"
       ],
+      "Delete ${ n } inactive user?": [
+        "Slet ${ n } inaktiv bruger?",
+        "Slet ${ n } inaktive brugere?"
+      ],
       "Delete ${ n } user": [
         "Slet ${ n } bruger",
         "Slet ${ n } brugere"
@@ -8730,6 +8807,9 @@
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
       ],
+      "Billed every 6 months": [
+        "Faktureret hver 6. måned"
+      ],
       "Billed for 15 months": [
         "Faktureret for 15 måneder"
       ],
@@ -8858,47 +8938,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Til ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription reminder": {
@@ -9177,6 +9216,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -10311,6 +10391,9 @@
     "Tor out of date": {
       "stable release": [
         "stabil udgave"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denne version af Tor Browser er ikke understøttet. Opdater venligst til den seneste ${ stableRelease }"
       ]
     },
     "Transaction state display as badge": {
@@ -10556,6 +10639,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } enhed",
+        "${ n } enheder"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ servere"
@@ -10563,6 +10650,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } lande"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } fordelt på ${ numberOfCountries } land",

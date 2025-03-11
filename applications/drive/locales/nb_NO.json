@@ -1248,6 +1248,9 @@
       ],
       "Version history": [
         "Versjonshistorikk"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6700,8 +6703,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Legg til ${ BRAND_NAME } Scribe skriveassistent"
+      ],
+      "Add-on with free trial": [
+        "Tillegg med gratis prøveperiode"
       ],
       "for ${ price }": [
         "for ${ price }"
@@ -7177,6 +7186,9 @@
       "${ size } storage": [
         "${ size } lagringsplass"
       ],
+      "${ size } storage per user": [
+        "${ size } lagringsplass per bruker"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - for ${ DRIVE_APP_NAME }"
       ],
@@ -7364,6 +7376,9 @@
       "Limited support": [
         "Begrenset støtte"
       ],
+      "Manage user permissions and access": [
+        "Administrere brukertillatelser og -tilgang"
+      ],
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
@@ -7381,6 +7396,9 @@
       ],
       "Password manager": [
         "Passordbehandler"
+      ],
+      "Password manager to secure credentials": [
+        "Passordbehandling for å sikre legitimasjon"
       ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
@@ -7453,9 +7471,6 @@
       ],
       "SMTP submission": [
         "SMTP-innsending"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-innsending for utvalgte organisasjoner"
       ],
       "Split tunneling (Android and Windows)": [
         "Delt tunnelering (Android og Windows)"
@@ -8559,6 +8574,9 @@
       "Admin panel to manage users and subscription": [
         "Administrasjonspanel for å administrere brukere og abonnement"
       ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
+      ],
       "Team policies": [
         "Retningslinjer for teamet"
       ]
@@ -9581,6 +9599,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-tilkobling per bruker",
         "${ n } VPN-tilkoblinger per bruker"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-tilkobling for ${ n } enheter per bruker",
+        "VPN-tilkobling for ${ n } enheter per bruker"
       ]
     },
     "Subscription change warning": {
@@ -10255,6 +10277,9 @@
       ],
       "Album": [
         "Album"
+      ],
+      "Album details": [
+        "Albumdetaljer"
       ],
       "Albums": [
         "Album"
@@ -11002,6 +11027,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } enhet",
+        "${ n } enheter"
+      ],
       "${ n } server": [
         "${ n } tjener",
         "${ n }+ tjenere"
@@ -11010,6 +11039,10 @@
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } land"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } over ${ numberOfCountries } land",
         "${ numberOfServers } over ${ numberOfCountries }+ land"
@@ -11017,6 +11050,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } land"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Velger automatisk fra ${ numberOfCountries } land",
+        "Velger automatisk fra ${ numberOfCountries } land"
       ]
     },
     "vpn_2024: renew": {

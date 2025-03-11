@@ -769,6 +769,9 @@
       "Manage labels": [
         "Управление ярлыками"
       ],
+      "Manage subscription": [
+        "Управление подпиской"
+      ],
       "Mark as default": [
         "Установить по умолчанию"
       ],
@@ -4586,17 +4589,8 @@
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
       ],
-      "Error creating policy.": [
-        "Ошибка создания политики."
-      ],
-      "Error deleting policy.": [
-        "Ошибка при удалении политики."
-      ],
       "Error in one of the conditions": [
         "Ошибка в одном из условий"
-      ],
-      "Error updating policy.": [
-        "Ошибка изменения политики."
       ],
       "Expired": [
         "Срок действия истёк"
@@ -12996,9 +12990,6 @@
       "SMTP submission": [
         "Отправки через SMTP"
       ],
-      "SMTP submission for select organizations": [
-        "Отправка по SMTP для отдельных организаций"
-      ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
       ],
@@ -13153,17 +13144,6 @@
         "Управление командами"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ trialPlanName } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, заканчивающаяся на ${ last4 }"
@@ -13272,6 +13252,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ trialPlanName } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -17791,15 +17782,6 @@
       "Phone number updated": [
         "Номер телефона обновлён"
       ],
-      "Policy created successfully!": [
-        "Политика успешно создана!"
-      ],
-      "Policy deleted": [
-        "Политика удалена"
-      ],
-      "Policy updated successfully!": [
-        "Политика успешно обновлена!"
-      ],
       "Port copied to clipboard": [
         "Порт скопирован в буфер обмена"
       ],
@@ -18620,6 +18602,9 @@
       "Download the mobile apps": [
         "Скачать мобильные приложения"
       ],
+      "Downloads": [
+        "Загрузки"
+      ],
       "Edit billing address": [
         "Изменить платежный адрес"
       ],
@@ -19300,6 +19285,9 @@
       ],
       "Status": [
         "Состояние"
+      ],
+      "Subscription": [
+        "Подписка"
       ],
       "Success": [
         "Успешно"

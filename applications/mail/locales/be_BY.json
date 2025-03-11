@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "About hide-my-email aliases": [
-        "Аб псеўданімах hide-my-email"
-      ],
       "Activate": [
         "Актываваць"
       ],
@@ -397,7 +394,7 @@
         "Адхіліць"
       ],
       "Dismiss": [
-        "Закрыць"
+        "Адхіліць"
       ],
       "Display navigation bar": [
         "Адлюстраваць панэль навігацыі"
@@ -615,6 +612,9 @@
       "Hide toolbar": [
         "Схаваць панэль інструментаў"
       ],
+      "hide-my-email aliases": [
+        "псеўданімаў Hide-my-email"
+      ],
       "I like this response": [
         "Мне падабаецца гэты адказ"
       ],
@@ -622,10 +622,10 @@
         "Не атрымалася загрузіць відарыс з уключанай абаронай ад праграм сачэння."
       ],
       "Image will be loaded without a proxy": [
-        "Відарыс будзе загружаны без проксі-сервера"
+        "Відарыс будзе загружаны без проксі"
       ],
       "Images will be loaded without a proxy": [
-        "Відарысы будуць загружаны без проксі-сервера"
+        "Відарысы будуць загружаны без проксі"
       ],
       "Import": [
         "Імпартаваць"
@@ -1809,6 +1809,9 @@
       ],
       "Version history": [
         "Гісторыя версій"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6188,7 +6191,7 @@
         "(Фільтраваць, калі выканана ЛЮБАЯ з наступных умоў)"
       ],
       "(No Recipient)": [
-        "(Няма атрымальніка)"
+        "(Без атрымальніка)"
       ],
       "**${ elementsFoundCount }** result found in ${ labelName }": [
         "**${ elementsFoundCount }** вынік знойдзены ў ${ labelName }",
@@ -6410,7 +6413,7 @@
         "Не знайшлі тое, што шукалі? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам ігнараваць гэту абвестку."
+        "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам адхіліць гэту абвестку."
       ],
       "Center": [
         "Па цэнтры"
@@ -7114,11 +7117,11 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Наша сістэма пазначыла гэта паведамленне як спробу фішынгу. Праверце яго надзейнасць"
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "Наша сістэма пазначыла гэта як падазроны. Калі гэта не фішынгавы або падманны ліст, то пазначце яго як дапушчальны."
       ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Наша сістэма пазначыла гэта паведамленне як падазроны ліст. Праверце яго надзейнасць перад тым, як пераходзіць па нейкіх спасылках у лісце або адкрываць прымацаваныя да яго далучэнні."
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Наша сістэма пазначыла гэта паведамленне як спробу фішынгу. Пераканайце ў яго надзейнасці."
       ],
       "password": [
         "пароль"
@@ -7243,8 +7246,8 @@
       "Proofread text": [
         "Вычытаць тэкст"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Абараняйце сваю электронную пошту ад уцечкі ў спіс рассылкі або спамераў з дапамогай псеўданімаў hide-my-email."
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Абараняйце сваю электронную пошту ад уцечкі ў спіс рассылкі або спамераў з дапамогай ${ hideMyEmailAliasesLink }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
@@ -8457,7 +8460,7 @@
         "${ n } месяцаў"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Часова недаступны. Паспрабуйце яшчэ раз пазней.)"
+        "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
       "/month": [
         "/месяц"
@@ -9376,8 +9379,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Дадаванне памочніка ў напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Дадатак з бясплатным пробным перыядам"
       ],
       "for ${ price }": [
         "за ${ price }"
@@ -9830,6 +9839,9 @@
       "${ size } storage": [
         "${ size } сховішча"
       ],
+      "${ size } storage per user": [
+        "${ size } сховішча на карыстальніка"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - для ${ DRIVE_APP_NAME }"
       ],
@@ -10019,6 +10031,9 @@
       "Limited support": [
         "Абмежаваная падтрымка"
       ],
+      "Manage user permissions and access": [
+        "Кіраваць дазволамі карыстальніка і доступам"
+      ],
       "Multiple admin roles": [
         "Некалькі роляў адміністратара"
       ],
@@ -10036,6 +10051,9 @@
       ],
       "Password manager": [
         "Менеджар пароляў"
+      ],
+      "Password manager to secure credentials": [
+        "Менеджар пароляў для бяспекі ўліковых даных"
       ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
@@ -10108,9 +10126,6 @@
       ],
       "SMTP submission": [
         "Адпраўка па SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Адпраўка па SMTP для выбраных арганізацый"
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android і Windows)"
@@ -10882,7 +10897,7 @@
         "Будзьце ў курсе ў выпадку, калі ваш пароль будзе скампраметаваны."
       ],
       "Industry-leading spam protection": [
-        "Адна з лепшых абарон ад спаму"
+        "Адна з лепшых абарон ад спаму ў прамысловай галіне"
       ],
       "Let's get started": [
         "Давайце пачнём"
@@ -11057,6 +11072,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Панэль адміністратара для кіравання карыстальнікамі і падпіскай"
+      ],
+      "Advanced account protection": [
+        "Пашыраная абарона ўліковага запісу"
       ],
       "Team policies": [
         "Палітыка каманды"
@@ -12469,6 +12487,12 @@
         "${ n } падключэнні па VPN на карыстальніка",
         "${ n } падключэнняў па VPN на карыстальніка",
         "${ n } падключэнняў па VPN на карыстальніка"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Падключэнне па VPN для ${ n } прылады на карыстальніка",
+        "Падключэнне па VPN для ${ n } прылад на карыстальніка",
+        "Падключэнне па VPN для ${ n } прылад на карыстальніка",
+        "Падключэнне па VPN для ${ n } прылад на карыстальніка"
       ]
     },
     "Subscription change warning": {
@@ -13410,7 +13434,7 @@
         "${ unreads } непрачытаныя паведамленні"
       ],
       "(active)": [
-        "(актыўная)"
+        "(актыўна)"
       ],
       "A filter name is required": [
         "Патрабуецца назва фільтра"
@@ -14304,7 +14328,7 @@
         "Не атрымалася загрузіць відарыс"
       ],
       "The image could not be loaded using proxy": [
-        "Не атрымалася загрузіць відарыс з выкарыстаннем проксі-сервера"
+        "Не атрымалася загрузіць відарыс з выкарыстаннем проксі"
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
@@ -14370,6 +14394,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } прылада",
+        "${ n } прылады",
+        "${ n } прылад",
+        "${ n } прылад"
+      ],
       "${ n } server": [
         "${ n } сервер",
         "${ n } серверы",
@@ -14382,6 +14412,12 @@
         "${ n } падключэнняў па VPN",
         "${ n } падключэнняў па VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } краіна",
+        "${ numberOfCountries } краіны",
+        "${ numberOfCountries } краін",
+        "${ numberOfCountries } краін"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } у ${ numberOfCountries } краіне",
         "${ numberOfServers } у больш чым ${ numberOfCountries } краінах",
@@ -14393,6 +14429,12 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Аўтаматычны выбар з ${ numberOfCountries } краіны",
+        "Аўтаматычны выбар з ${ numberOfCountries } краін",
+        "Аўтаматычны выбар з ${ numberOfCountries } краін",
+        "Аўтаматычны выбар з ${ numberOfCountries } краін"
       ]
     },
     "vpn_2024: renew": {
@@ -14529,7 +14571,7 @@
         "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Калі вы не памятаеце свой пароль, то немагчыма паўторна актываваць ваш ключ. Мы можам дапамагчы вам ігнараваць банер папярэджання, але ў працэсе вы незваротна страціце доступ да ўсіх даных, якія зашыфраваны гэтым ключом."
+        "Калі вы не памятаеце свой пароль, то немагчыма паўторна актываваць ваш ключ. Мы можам дапамагчы вам адхіліць банер папярэджання, але ў працэсе вы незваротна страціце доступ да ўсіх даных, якія зашыфраваны гэтым ключом."
       ],
       "Invalid alias prefix": [
         "Памылковы прэфікс псеўданіма"

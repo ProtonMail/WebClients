@@ -300,6 +300,9 @@
       "Delete version": [
         "バージョンを削除"
       ],
+      "Delete without saving": [
+        "保存せずに削除"
+      ],
       "Deselect all": [
         "すべての選択を解除"
       ],
@@ -314,6 +317,12 @@
       ],
       "Display navigation bar": [
         "ナビゲーションバーを表示する"
+      ],
+      "Display next": [
+        "次を表示"
+      ],
+      "Display previous": [
+        "以前のものを表示"
       ],
       "Done": [
         "完了"
@@ -696,6 +705,9 @@
       "Remove me": [
         "削除"
       ],
+      "Remove without saving": [
+        "保存せずに削除"
+      ],
       "Rename": [
         "名前を変更"
       ],
@@ -768,8 +780,14 @@
       "Save": [
         "保存"
       ],
+      "Save and remove": [
+        "保存して削除"
+      ],
       "Save changes": [
         "変更を保存"
+      ],
+      "Save photos and remove": [
+        "写真を保存して削除"
       ],
       "Search": [
         "検索"
@@ -1219,6 +1237,9 @@
       ],
       "Version history": [
         "バージョン履歴"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -3685,6 +3706,9 @@
       "Create new album": [
         "新しいアルバムを作る"
       ],
+      "Rename": [
+        "名前を変更"
+      ],
       "Security Center": [
         "セキュリティセンター"
       ]
@@ -4046,6 +4070,9 @@
       "${ album.photoCount } item": [
         "${ album.photoCount } 個のアイテム"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } は正常に削除されました"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
@@ -4096,6 +4123,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store での ${ DRIVE_APP_NAME }"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } があなたを **${ albumName }** に招待しました"
       ],
       "${ errorCount } failed": [
         "失敗 ${ errorCount } 件"
@@ -5165,6 +5195,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "アクセスできなくなったファイルがあります。復元を開始を押すと、復元します。${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "このアルバムの一部の写真はあなたのタイムラインに保存されません。このアルバムを削除するとそれらの写真は完全に削除されます。"
+      ],
       "Something went wrong, please try again later.": [
         "問題が発生しました。後ほど再度お試しください。"
       ],
@@ -5252,6 +5285,9 @@
       "This item already exists in your library": [
         "このアイテムはすでにライブラリに存在します"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "選択したアイテムのいくつかは写真ライブラリに保存されていません。このアルバムから削除すると、それらへのアクセスが永久に失われます。"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
@@ -5263,6 +5299,9 @@
       ],
       "This month": [
         "今月"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "これはアルバムのみを削除します。あなたの写真はタイムラインに残ります。この操作は元に戻せません。"
       ],
       "This will permanently delete the file you uploaded.": [
         "アップロードしたファイルは完全に削除されます。"
@@ -5503,6 +5542,12 @@
       ],
       "Would you like to restore your files?": [
         "ファイルを復元しますか？"
+      ],
+      "Would you like to save it before removing?": [
+        "削除する前に保存しますか？"
+      ],
+      "Would you like to save them before removing?": [
+        "削除する前に保存しますか？"
       ],
       "Writing assistant": [
         "執筆アシスタント"
@@ -6558,6 +6603,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
       ],
@@ -7237,9 +7285,6 @@
       "SMTP submission": [
         "SMTP送信"
       ],
-      "SMTP submission for select organizations": [
-        "一部の組織向けのSMTP送信"
-      ],
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
       ],
@@ -7843,6 +7888,12 @@
       "Access updated and shared": [
         "アクセスは更新され共有されました"
       ],
+      "Album failed to be renamed": [
+        "アルバムの名前を変更できませんでした"
+      ],
+      "Album renamed successfully": [
+        "アルバムの名前を正常に変更しました"
+      ],
       "All items will soon be permanently deleted from trash": [
         "すべてのアイテムはまもなくごみ箱から完全に削除されます"
       ],
@@ -8308,6 +8359,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "ユーザーとサブスクリプションを管理するための管理者パネル"
+      ],
+      "Advanced account protection": [
+        "高度なアカウント保護"
       ],
       "Team policies": [
         "チームポリシー"
@@ -9268,6 +9322,9 @@
       "Billed every 2 years": [
         "2年ごとに請求"
       ],
+      "Billed every 6 months": [
+        "6 ヵ月ごとに請求"
+      ],
       "Billed for 15 months": [
         "15 か月分の請求"
       ],
@@ -9956,6 +10013,9 @@
       "Album": [
         "アルバム"
       ],
+      "Album details": [
+        "アルバムの詳細"
+      ],
       "Albums": [
         "アルバム"
       ],
@@ -10099,6 +10159,9 @@
       ],
       "Delete ${ links.length } items?": [
         "${ links.length }個のアイテムを削除しますか？"
+      ],
+      "Delete ${ name }?": [
+        "${ name } を削除しますか？"
       ],
       "Delete ${ value }": [
         "${ value } を削除"
@@ -10363,6 +10426,9 @@
       ],
       "Remove device?": [
         "デバイスを削除しますか？"
+      ],
+      "Remove item?": [
+        "アイテムを削除しますか？"
       ],
       "Rename a file": [
         "ファイル名の変更"
@@ -10687,17 +10753,26 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } 台のデバイス"
+      ],
       "${ n } server": [
         "${ n } 台のサーバー"
       ],
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ヶ国"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries } か国以上で ${ numberOfServers } 台"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries }ヶ国から自動選択"
       ]
     },
     "vpn_2024: renew": {

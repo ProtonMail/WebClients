@@ -659,7 +659,7 @@
         "S ostatnými ${ BRAND_NAME } používateľmi"
       ],
       "Write us on X/Twitter": [
-        "Napíšte nam na X/Twitteri"
+        "Napíšte nám na X/Twitter"
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
@@ -1383,7 +1383,7 @@
         "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše záložné heslo"
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
-        "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše doplnkové heslo"
+        "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše dodatočné heslo"
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
@@ -1479,7 +1479,7 @@
         "Zabudovaný 2FA autentifikátor"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
-        "Pridaním domény môžete vytvoriť aliasy, ako napríklad ahoj@moja-domena.sk."
+        "Pridaním svojej domény môžete vytvoriť aliasy, ako napríklad ahoj@moja-domena.sk."
       ],
       "Can be viewed": [
         "Môže byť zobrazené"
@@ -1491,7 +1491,7 @@
         "Môže vytvárať, upravovať a mazať túto položku."
       ],
       "Can grant and revoke access to this item, and delete it.": [
-        "Môže udeliť alebo zrušiť prístup k tejto položke a vymazať ho."
+        "Môže udeliť alebo zrušiť prístup k tejto položke a vymazať ju."
       ],
       "Can grant and revoke access to this item.": [
         "Môže udeliť alebo zrušiť prístup k tejto položke."
@@ -1650,7 +1650,7 @@
         "Vyprší o ${ remainingTime }"
       ],
       "Exporting your data...": [
-        "Exportujeme vaše dáta..."
+        "Exportujeme vaše údaje..."
       ],
       "Extra password successfully created": [
         "Dodatočné heslo bolo úspešne vytvorené"
@@ -1680,7 +1680,7 @@
         "Z bezpečnostných dôvodov musí byť váš prístup potvrdený"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Adresa preposlania skopírovaná do schránky. Odošlite email na túto adresu a ${ Email } ho dostane."
+        "Adresa preposlania skopírovaná do schránky. Odošlite email na túto adresu a ${ Email } ho prijme."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňa.",
@@ -1974,7 +1974,7 @@
         "Potvrďte, prosím, vaše záložné heslo pre zrušenie vášho aktuálneho zámku."
       ],
       "Please confirm your backup password in order to update the auto-lock time.": [
-        "Pre aktualizovanie času automatického uzamknutia potvrďte svoje záložné heslo, prosím."
+        "Potvrďte, prosím, vaše záložné heslo pre aktualizovanie času automatického uzamknutia."
       ],
       "Please confirm your extra password": [
         "Potvrďte vaše dodatočné heslo, prosím"
@@ -1986,10 +1986,10 @@
         "Pre automatické uzamknutie pomocou dodatočného hesla potvrďte svoje dodatočné heslo, prosím."
       ],
       "Please confirm your extra password in order to disable offline mode": [
-        "Potvrďte svoje doplnkové heslo na deaktiváciu offline režimu"
+        "Potvrďte svoje dodatočné heslo na deaktiváciu offline režimu"
       ],
       "Please confirm your extra password in order to enable offline mode": [
-        "Potvrďte svoje doplnkové heslo na povolenie offline režimu"
+        "Potvrďte svoje dodatočné heslo na povolenie offline režimu"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte, prosím, vaše dodatočné heslo, aby ste mohli exportovať vaše údaje z ${ PASS_APP_NAME }"
@@ -2742,9 +2742,6 @@
       ],
       "Expired": [
         "Vypršal"
-      ],
-      "Expired link": [
-        "Odkaz s vypršanou platnosťou"
       ],
       "Export": [
         "Export"
@@ -4280,7 +4277,7 @@
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."
       ],
       "Some items are currently shared. Deleting them will remove access for all other users.": [
-        "Niektoré položky sú v súčasnosti spoločné. Ich odstránením sa zruší prístup pre všetkých ostatných používateľov."
+        "Niektoré položky sú v súčasnosti zdieľané. Ich odstránením sa zruší prístup pre všetkých ostatných používateľov."
       ],
       "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
         "Niektoré položky sú v súčasnosti zdieľané. Ich presunutím do iného trezora sa zruší prístup pre všetkých ostatných používateľov."

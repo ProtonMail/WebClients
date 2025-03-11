@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "About hide-my-email aliases": [
-        "Sobre els àlies de hide-my-email"
-      ],
       "Activate": [
         "Activa"
       ],
@@ -1791,6 +1788,9 @@
       ],
       "Version history": [
         "Historial de versions"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6894,12 +6894,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "El nostre sistema ha marcat aquest missatge com un intent de suplantació d'identitat. Comproveu que sigui legítim."
-      ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "El nostre sistema ha marcat aquest missatge com a correu electrònic sospitós. Comproveu que és legítim abans de clicar en cap enllaç o arxiu adjunt."
-      ],
       "password": [
         "contrasenya"
       ],
@@ -7018,9 +7012,6 @@
       ],
       "Proofread text": [
         "Revisa el text"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Protegiu el vostre correu electrònic de filtracions a llistes de correu o generadors de correu brossa amb àlies de hide-my-email."
       ],
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
@@ -9095,6 +9086,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
@@ -9785,9 +9779,6 @@
       ],
       "SMTP submission": [
         "Tramesa SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Enviament SMTP per a les organitzacions seleccionades"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelització dividida (Android i Windows)"
@@ -10722,6 +10713,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panell d'administració per gestionar usuaris i subscripció"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
       ],
       "Team policies": [
         "Regles d'equip"
@@ -13867,6 +13861,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispositiu",
+        "${ n } dispositius"
+      ],
       "${ n } server": [
         "${ n } servidor",
         "${ n }+ servidors"
@@ -13874,6 +13872,10 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } països"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",

@@ -305,6 +305,9 @@
       "Delete version": [
         "संस्करण मिटाएं"
       ],
+      "Delete without saving": [
+        "सहेजे बिना मिटा दें"
+      ],
       "Deselect all": [
         "सब चुने में से हटाएं"
       ],
@@ -319,6 +322,12 @@
       ],
       "Display navigation bar": [
         "नेविगेशन बार दिखाएं"
+      ],
+      "Display next": [
+        "अगला दिखाएँ"
+      ],
+      "Display previous": [
+        "पिछला दिखाएँ"
       ],
       "Done": [
         "पूरा हुआ"
@@ -702,6 +711,9 @@
       "Remove me": [
         "मुझे हटाएं"
       ],
+      "Remove without saving": [
+        "सहेजें बिना हटाएं"
+      ],
       "Rename": [
         "नाम बदलें"
       ],
@@ -774,8 +786,14 @@
       "Save": [
         "सेव करें"
       ],
+      "Save and remove": [
+        "सहेजें और हटाएं"
+      ],
       "Save changes": [
         "बदलाव सहेजें"
+      ],
+      "Save photos and remove": [
+        "फोटो सहेजें और हटाएं"
       ],
       "Search": [
         "खोजें"
@@ -1230,6 +1248,9 @@
       ],
       "Version history": [
         "संस्करण इतिहास"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -3716,6 +3737,9 @@
       "Create new album": [
         "नया एल्बम बनाएं"
       ],
+      "Rename": [
+        "नाम बदलें"
+      ],
       "Security Center": [
         "सुरक्षा केंद्र"
       ]
@@ -4091,6 +4115,9 @@
         "${ album.photoCount } आइटम",
         "${ album.photoCount } आइटम"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } सफलतापूर्वक मिटाया गया"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
       ],
@@ -4151,6 +4178,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store पर ${ DRIVE_APP_NAME }"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } ने आपको **${ albumName }** में शामिल होने के लिए आमंत्रित किया"
       ],
       "${ errorCount } failed": [
         "${ errorCount } असफल",
@@ -4999,6 +5029,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME चालू रचनाजगह मोड इस्तेमाल करके अपनेआप संदेश भेजता है।"
       ],
+      "Photo is not saved to your library": [
+        "फोटो आपकी लाइब्रेरी में सहेजा नहीं गया"
+      ],
       "Photo is set as album cover": [
         "फ़ोटो एल्बम कवर के रूप में सेट किया गया है"
       ],
@@ -5244,6 +5277,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "अब आप अपनी कुछ फ़ाइलों तक नहीं पहुंच सकते। अपनी फ़ाइलों तक पहुंच पुनर्स्थापित करें। ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "इस एल्बम में कुछ फोटो आपके टाइमलाइन में सहेजे नहीं गए हैं। इस एल्बम को मिटाने से उन फोटो को हमेशा के लिए मिटा दिया जाएगा।"
+      ],
       "Something went wrong, please try again later.": [
         "कुछ गलत हो गया है, कृपया बाद में दोबारा प्रयास करें।"
       ],
@@ -5331,6 +5367,10 @@
       "This item already exists in your library": [
         "यह मद पहले से ही आपकी संग्रहण में मौजूद है"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "यह आइटम आपकी Photos लाइब्रेरी में सहेजा नहीं गया है। अगर आप इसे इस एल्बम से हटाते हैं, तो आपको इसकी पहुँच हमेशा के लिए खो जाएगी।",
+        "इस एल्बम में चयनित कुछ आइटम आपकी Photos लाइब्रेरी में सहेजे नहीं गए हैं। अगर आप इन्हें इस एल्बम से हटाते हैं, तो आपको इनकी पहुँच हमेशा के लिए खो जाएगी।"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "यह लिंक एक ऐसी वेबसाइट की ओर ले जाता है जो पासवर्ड और क्रेडिट कार्ड विवरण जैसी आपकी जानकारी चुराने का प्रयास कर सकती है।"
       ],
@@ -5342,6 +5382,9 @@
       ],
       "This month": [
         "इस महीने"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "यह केवल एल्बम मिटा देगा। आपके फोटो आपके टाइमलाइन में बने रहेंगे। इस क्रिया को पूर्ववत नहीं किया जा सकता।"
       ],
       "This will permanently delete the file you uploaded.": [
         "यह आपके द्वारा अपलोड की गई फाइल को स्थायी रूप से मिटा देगा।"
@@ -5582,6 +5625,13 @@
       ],
       "Would you like to restore your files?": [
         "क्या आप अपनी फ़ाइलें पुनर्स्थापित करना चाहते हैं?"
+      ],
+      "Would you like to save it before removing?": [
+        "क्या आप इसे हटाने से पहले सहेजना चाहेंगे?",
+        "क्या आप उन्हें हटाने से पहले सहेजना चाहेंगे?"
+      ],
+      "Would you like to save them before removing?": [
+        "क्या आप उन्हें हटाने से पहले सहेजना चाहेंगे?"
       ],
       "Writing assistant": [
         "लेखन सहायक"
@@ -6653,6 +6703,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe लेखन सहायक"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe लेखन सहायक जोड़ें"
       ],
@@ -7350,9 +7403,6 @@
       "SMTP submission": [
         "SMTP सबमिशन"
       ],
-      "SMTP submission for select organizations": [
-        "चुनिंदा संगठनों के लिए SMTP सबमिशन"
-      ],
       "Split tunneling (Android and Windows)": [
         "स्प्लिट टनलिंग (Android और Windows)"
       ],
@@ -7975,6 +8025,12 @@
       "Access updated and shared": [
         "पहुंच अपडेट और साझा की गई।"
       ],
+      "Album failed to be renamed": [
+        "एल्बम का नाम बदलने में असफल"
+      ],
+      "Album renamed successfully": [
+        "एल्बम का नाम सफलतापूर्वक बदला गया"
+      ],
       "All items will soon be permanently deleted from trash": [
         "सभी चीज़ जल्द ही कचरे से हमेशा के लिए मिटा दी जाएंगी"
       ],
@@ -8448,6 +8504,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "एडमिन पैनल से यूज़र और सदस्यता को संभाले"
+      ],
+      "Advanced account protection": [
+        "उन्नत खाता सुरक्षा"
       ],
       "Team policies": [
         "टीम नीतियाँ"
@@ -9429,6 +9488,9 @@
       "Billed every 2 years": [
         "बिल हर 2 साल पे"
       ],
+      "Billed every 6 months": [
+        "बिल हर 6 महीने पे"
+      ],
       "Billed for 15 months": [
         "15 महीने के लिए बिल किया गया"
       ],
@@ -10143,6 +10205,9 @@
       "Album": [
         "एल्बम"
       ],
+      "Album details": [
+        "एल्बम की जानकारी"
+      ],
       "Albums": [
         "एल्बम"
       ],
@@ -10289,6 +10354,9 @@
       ],
       "Delete ${ links.length } items?": [
         "${ links.length } आइटम मिटाएं?"
+      ],
+      "Delete ${ name }?": [
+        "${ name } मिटाएं?"
       ],
       "Delete ${ value }": [
         "${ value } मिटाएं"
@@ -10555,6 +10623,10 @@
       ],
       "Remove device?": [
         "डिवाइस हटाएं?"
+      ],
+      "Remove item?": [
+        "आइटम हटाएं?",
+        "आइटम हटाएं?"
       ],
       "Rename a file": [
         "फाइल का नाम बदलें"
@@ -10882,6 +10954,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } डिवाइस",
+        "${ n } डिवाइस"
+      ],
       "${ n } server": [
         "${ n } सर्वर",
         "${ n }+ सर्वर"
@@ -10890,6 +10966,10 @@
         "${ n } वीपीएन कनेक्शन",
         "${ n } वीपीएन कनेक्शन"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } देश",
+        "${ numberOfCountries } देशे"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries } देशों में ${ numberOfServers }",
         "${ numberOfCountries }+ देशों में ${ numberOfServers }"
@@ -10897,6 +10977,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } देश में ${ numberOfServers }",
         "${ numberOfCountries } देशों में ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries } देश से स्वतः चयनित",
+        "${ numberOfCountries } देशों से स्वतः चयनित"
       ]
     },
     "vpn_2024: renew": {
