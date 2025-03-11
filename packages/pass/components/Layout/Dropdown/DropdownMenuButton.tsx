@@ -132,7 +132,7 @@ const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, Dropdow
     },
     ref
 ) => {
-    const extraPadding = quickActions !== undefined ? 'pr-3' : '';
+    const extraPadding = quickActions !== undefined ? 'pr-4' : '';
 
     return (
         <div className={clsx('relative shrink-0', parentClassName)} style={style} ref={ref}>
@@ -161,7 +161,7 @@ const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, Dropdow
                 />
             </DropdownMenuButtonCore>
 
-            <div className={clsx('absolute flex items-center h-full right-0 top-0', quickActionsClassname)}>
+            <div className={clsx('absolute flex items-center h-full right-0 top-0 mr-1', quickActionsClassname)}>
                 {quickActions && (
                     <QuickActionsDropdown originalPlacement={quickActionsPlacement}>
                         {quickActions}

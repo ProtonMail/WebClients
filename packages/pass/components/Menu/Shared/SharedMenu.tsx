@@ -21,12 +21,11 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
 type Props = {
-    dense?: boolean;
     onAction?: () => void;
     heading?: ReactNode;
 };
 
-export const SharedMenuContent: FC<Props> = ({ heading, dense, onAction }) => {
+export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
     const scope = useItemScope();
 
     const sharedWithMeCount = useSelector(selectSharedWithMeCount);
@@ -46,7 +45,6 @@ export const SharedMenuContent: FC<Props> = ({ heading, dense, onAction }) => {
                     to="shared-with-me"
                     icon="user-arrow-left"
                     onAction={onAction}
-                    dense={dense}
                 />
             </FeatureFlag>
         ),
@@ -61,7 +59,6 @@ export const SharedMenuContent: FC<Props> = ({ heading, dense, onAction }) => {
                     to="shared-by-me"
                     icon="user-arrow-right"
                     onAction={onAction}
-                    dense={dense}
                 />
             </FeatureFlag>
         ),
@@ -75,7 +72,6 @@ export const SharedMenuContent: FC<Props> = ({ heading, dense, onAction }) => {
                 to="secure-links"
                 icon="link"
                 onAction={onAction}
-                dense={dense}
             />
         ),
     ].filter(truthy);
