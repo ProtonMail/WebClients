@@ -80,6 +80,14 @@
         "Usa il tuo dominio di posta personalizzato"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Archiviazione e condivisione nel cloud per file di grandi dimensioni"
+      ],
+      "Secure personal and shared calendar": [
+        "Calendario personale e condiviso sicuro"
+      ]
+    },
     "color": {
       "carrot": [
         "carota"
@@ -1289,6 +1297,9 @@
       "${ size } storage": [
         "${ size } di archiviazione"
       ],
+      "${ size } storage per user": [
+        "${ size } di spazio di archiviazione per utente"
+      ],
       "1 TB secure storage": [
         "1 TB di archiviazione sicura"
       ],
@@ -1429,9 +1440,6 @@
       ],
       "SMTP submission": [
         "Inoltro tramite SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Inoltro tramite SMTP per organizzazioni selezionate"
       ],
       "Support for up to 2 users": [
         "Supporto per un massimo di 2 utenti"

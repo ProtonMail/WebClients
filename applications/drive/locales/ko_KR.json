@@ -300,6 +300,9 @@
       "Delete version": [
         "버전 삭제"
       ],
+      "Delete without saving": [
+        "저장하지 않고 삭제하기"
+      ],
       "Deselect all": [
         "선택 해제"
       ],
@@ -314,6 +317,12 @@
       ],
       "Display navigation bar": [
         "네비게이션 바 보이기"
+      ],
+      "Display next": [
+        "다음 항목 표시"
+      ],
+      "Display previous": [
+        "이전 항목 표시"
       ],
       "Done": [
         "완료"
@@ -696,6 +705,9 @@
       "Remove me": [
         "나 제거하기"
       ],
+      "Remove without saving": [
+        "저장 없이 삭제"
+      ],
       "Rename": [
         "이름 바꾸기"
       ],
@@ -768,8 +780,14 @@
       "Save": [
         "저장"
       ],
+      "Save and remove": [
+        "저장 및 삭제"
+      ],
       "Save changes": [
         "변경 사항 저장"
+      ],
+      "Save photos and remove": [
+        "사진 저장 및 삭제"
       ],
       "Search": [
         "검색"
@@ -1219,6 +1237,9 @@
       ],
       "Version history": [
         "버전 기록"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -3685,6 +3706,9 @@
       "Create new album": [
         "새로운 앨범 생성"
       ],
+      "Rename": [
+        "이름 변경"
+      ],
       "Security Center": [
         "보안 센터"
       ]
@@ -4046,6 +4070,9 @@
       "${ album.photoCount } item": [
         "${ album.photoCount }개 항목"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName }이(가) 성공적으로 삭제되었습니다"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
@@ -4096,6 +4123,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store에서 ${ DRIVE_APP_NAME } 받기"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email }님이 **${ albumName }**에 참가하도록 초대했습니다."
       ],
       "${ errorCount } failed": [
         "${ errorCount }개 실패"
@@ -4919,6 +4949,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME이 현재 작성 모드를 사용하여 자동으로 메시지를 보냅니다."
       ],
+      "Photo is not saved to your library": [
+        "사진이 라이브러리에 저장되지 않았습니다"
+      ],
       "Photo is set as album cover": [
         "해당 사진이 앨범 커버로서 설정되었습니다."
       ],
@@ -5162,6 +5195,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "일부 파일들에 더 이상 접근할 수 없습니다. 파일 액세스를 복구하세요. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "이 앨범 내의 일부 사진이 타임라인에 저장되지 않았습니다. 앨범에서 사진을 삭제하면 해당 사진 또한 영구적으로 삭제됩니다."
+      ],
       "Something went wrong, please try again later.": [
         "문제가 발생했습니다, 나중에 다시 시도해 주세요."
       ],
@@ -5249,6 +5285,9 @@
       "This item already exists in your library": [
         "이 항목은 이미 라이브러리에 존재합니다."
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "일부 항목이 사진 라이브러리에 저장되지 않았습니다. 앨범에서 삭제하면 해당 항목에 영구적으로 접근할 수 없게 됩니다."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
       ],
@@ -5260,6 +5299,9 @@
       ],
       "This month": [
         "이번 달"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "사진이 앨범에 한하여 삭제됩니다. 사진이 여전히 타임라인에 유지됩니다. 이 작업을 실행 취소할 수 없습니다."
       ],
       "This will permanently delete the file you uploaded.": [
         "이 작업은 업로드한 파일을 영구적으로 삭제합니다."
@@ -5500,6 +5542,12 @@
       ],
       "Would you like to restore your files?": [
         "파일을 복원하시겠습니까?"
+      ],
+      "Would you like to save it before removing?": [
+        "삭제 전 항목을 저장하시겠어요?"
+      ],
+      "Would you like to save them before removing?": [
+        "삭제 전 항목을 저장하시겠어요?"
       ],
       "Writing assistant": [
         "글쓰기 도우미"
@@ -6555,6 +6603,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
       ],
@@ -7234,9 +7285,6 @@
       "SMTP submission": [
         "SMTP 세부 사항"
       ],
-      "SMTP submission for select organizations": [
-        "선택한 조직의 SMTP 세부 사항"
-      ],
       "Split tunneling (Android and Windows)": [
         "분할 터널링 (Android 및 Windows)"
       ],
@@ -7840,6 +7888,12 @@
       "Access updated and shared": [
         "접근을 업데이트 및 공유했습니다."
       ],
+      "Album failed to be renamed": [
+        "앨범 이름 변경에 실패했습니다"
+      ],
+      "Album renamed successfully": [
+        "앨범의 이름이 성공적으로 변경되었습니다"
+      ],
       "All items will soon be permanently deleted from trash": [
         "휴지통의 모든 항목이 영구적으로 삭제됩니다"
       ],
@@ -8305,6 +8359,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "사용자 및 구독을 관리할 수 있는 관리자 패널"
+      ],
+      "Advanced account protection": [
+        "고급 계정 보호"
       ],
       "Team policies": [
         "팀 정책"
@@ -9265,6 +9322,9 @@
       "Billed every 2 years": [
         "2년마다 청구"
       ],
+      "Billed every 6 months": [
+        "6개월마다 청구"
+      ],
       "Billed for 15 months": [
         "15개월 마다 결제됨"
       ],
@@ -9953,6 +10013,9 @@
       "Album": [
         "앨범"
       ],
+      "Album details": [
+        "앨범 상세 정보"
+      ],
       "Albums": [
         "앨범"
       ],
@@ -10096,6 +10159,9 @@
       ],
       "Delete ${ links.length } items?": [
         "${ links.length }개 항목을 삭제할까요?"
+      ],
+      "Delete ${ name }?": [
+        "${ name }을(를) 삭제할까요?"
       ],
       "Delete ${ value }": [
         "${ value }을(를) 삭제"
@@ -10360,6 +10426,9 @@
       ],
       "Remove device?": [
         "기기를 삭제할까요?"
+      ],
+      "Remove item?": [
+        "항목을 제거하시겠어요?"
       ],
       "Rename a file": [
         "파일 이름 변경"
@@ -10684,17 +10753,26 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n }개 기기"
+      ],
       "${ n } server": [
         "서버 ${ n }개 이상"
       ],
       "${ n } VPN connection": [
         "${ n }개 VPN 연결"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries }개 국가"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries }개 국가에서 자동 선택됨"
       ]
     },
     "vpn_2024: renew": {

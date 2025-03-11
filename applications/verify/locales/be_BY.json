@@ -18,7 +18,7 @@
         "Працягнуць"
       ],
       "Dismiss": [
-        "Закрыць"
+        "Адхіліць"
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
@@ -78,6 +78,14 @@
       ],
       "Use your own email domain": [
         "Выкарыстоўвайце ўласны дамен электроннай пошты"
+      ]
+    },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Воблачнае сховішча і абагульванне для вялікіх файлаў"
+      ],
+      "Secure personal and shared calendar": [
+        "Бяспечны асабісты і абагулены каляндар"
       ]
     },
     "color": {
@@ -1323,6 +1331,9 @@
       "${ size } storage": [
         "${ size } сховішча"
       ],
+      "${ size } storage per user": [
+        "${ size } сховішча на карыстальніка"
+      ],
       "1 TB secure storage": [
         "1 ТБ бяспечнага сховішча"
       ],
@@ -1463,9 +1474,6 @@
       ],
       "SMTP submission": [
         "Адпраўка па SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Адпраўка па SMTP для выбраных арганізацый"
       ],
       "Support for up to 2 users": [
         "Падтрымка да 2 карыстальнікаў"

@@ -80,6 +80,14 @@
         "Bruk ditt eget e-postdomene"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Skylagring og deling for store filer"
+      ],
+      "Secure personal and shared calendar": [
+        "Sikker personlig og delt kalender"
+      ]
+    },
     "color": {
       "carrot": [
         "gulrot"
@@ -1289,6 +1297,9 @@
       "${ size } storage": [
         "${ size } lagringsplass"
       ],
+      "${ size } storage per user": [
+        "${ size } lagringsplass per bruker"
+      ],
       "1 TB secure storage": [
         "1 TB sikker lagring"
       ],
@@ -1429,9 +1440,6 @@
       ],
       "SMTP submission": [
         "SMTP-innsending"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-innsending for utvalgte organisasjoner"
       ],
       "Support for up to 2 users": [
         "Støtte for opptil 2 brukere"

@@ -1248,6 +1248,9 @@
       ],
       "Version history": [
         "Historique des versions"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1266,7 +1269,7 @@
         "Accédez aux contenus des services de streaming, dont Netflix, Disney+, Prime Video et plus encore, où que vous soyez."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Connexions sécurisées sur tous vos appareils. Comprends un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
+        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
@@ -6706,6 +6709,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
@@ -7459,9 +7465,6 @@
       ],
       "SMTP submission": [
         "Soumission SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Soumission SMTP pour les organisations sélectionnées"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android et Windows)"
@@ -8564,6 +8567,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panneau d'administration pour gérer l'abonnement et les utilisateurs"
+      ],
+      "Advanced account protection": [
+        "Protection avancée des comptes"
       ],
       "Team policies": [
         "Règles d'équipe"
@@ -10262,6 +10268,9 @@
       "Album": [
         "Album"
       ],
+      "Album details": [
+        "Informations de l'album"
+      ],
       "Albums": [
         "Albums"
       ],
@@ -11131,6 +11140,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } appareil",
+        "${ n } appareils"
+      ],
       "${ n } server": [
         "${ n } serveur",
         "Plus de ${ n } serveurs"
@@ -11139,6 +11152,10 @@
         "${ n } connexion VPN",
         "${ n } connexions VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } pays",
+        "${ numberOfCountries } pays"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } répartis dans plus de ${ numberOfCountries } pays"
@@ -11146,6 +11163,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Sélection automatique depuis ${ numberOfCountries } pays",
+        "Sélection automatique depuis ${ numberOfCountries } pays"
       ]
     },
     "vpn_2024: renew": {

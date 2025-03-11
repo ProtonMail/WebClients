@@ -933,6 +933,9 @@
       ],
       "Version history": [
         "버전 기록"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2169,6 +2172,11 @@
         "기한이 지난 청구서"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2247,11 +2255,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5625,6 +5628,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
       ],
@@ -6303,9 +6309,6 @@
       ],
       "SMTP submission": [
         "SMTP 세부 사항"
-      ],
-      "SMTP submission for select organizations": [
-        "선택한 조직의 SMTP 세부 사항"
       ],
       "Split tunneling (Android and Windows)": [
         "분할 터널링 (Android 및 Windows)"
@@ -7171,6 +7174,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "사용자 및 구독을 관리할 수 있는 관리자 패널"
+      ],
+      "Advanced account protection": [
+        "고급 계정 보호"
       ],
       "Team policies": [
         "팀 정책"
@@ -8104,6 +8110,9 @@
       "Billed every 2 years": [
         "2년마다 청구"
       ],
+      "Billed every 6 months": [
+        "6개월마다 청구"
+      ],
       "Billed for 15 months": [
         "15개월 마다 결제됨"
       ],
@@ -8178,6 +8187,23 @@
         "${ totalPrice }용"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "사용자 당 ${ planMaxSpace } 스토리지"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }개 이메일 주소"
+      ],
+      "Folders, labels, and custom filters": [
+        "폴더, 라벨, 커스텀 필터"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "저장공간 15GB"
@@ -8217,23 +8243,6 @@
       ],
       "Your privacy is our mission": [
         "당신의 프라이버시는 저희의 사명입니다"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "사용자 당 ${ planMaxSpace } 스토리지"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails }개 이메일 주소"
-      ],
-      "Folders, labels, and custom filters": [
-        "폴더, 라벨, 커스텀 필터"
       ]
     },
     "Subscription renewal state": {
@@ -8961,6 +8970,11 @@
         "오늘"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "추후 간편하게 접근할 수 있도록 내 ${ DRIVE_APP_NAME }에 공유된 파일을 추가하세요."
@@ -9038,11 +9052,6 @@
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
@@ -9068,17 +9077,26 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n }개 기기"
+      ],
       "${ n } server": [
         "서버 ${ n }개 이상"
       ],
       "${ n } VPN connection": [
         "${ n }개 VPN 연결"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries }개 국가"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries }개 국가에서 자동 선택됨"
       ]
     },
     "vpn_2024: renew": {

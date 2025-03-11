@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
-      "About hide-my-email aliases": [
-        "Tietoa Hide-my-email-aliaksista"
-      ],
       "Activate": [
         "Aktivoi"
       ],
@@ -602,6 +599,9 @@
       ],
       "Hide messages": [
         "Piilota viestit"
+      ],
+      "Hide my email": [
+        "Piilota sähköpostiosoitteeni"
       ],
       "Hide toolbar": [
         "Piilota työkalurivi"
@@ -1920,6 +1920,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Sulje"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
       ],
@@ -6013,6 +6016,9 @@
       "Activation in progress": [
         "Aktivointi on käynnissä"
       ],
+      "Active": [
+        "Aktiivinen"
+      ],
       "Add image URL": [
         "Lisää kuvan URL"
       ],
@@ -6750,6 +6756,9 @@
       "Monthly ${ onDayString }": [
         "Joka kuukauden ${ onDayString }"
       ],
+      "More infos": [
+        "Lisätietoja"
+      ],
       "More refine actions": [
         "Lisää parannusehdotuksia"
       ],
@@ -6827,12 +6836,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
-      ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Järjestelmämme on merkinnyt viestin tietojenkalasteluyritykseksi. Tarkista sen aitous."
-      ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Järjestelmämme merkitsi tämän viestin epäilyttäväksi sähköpostiksi. Vahvista sen aitous, ennen kuin avaat linkkejä tai liitteitä."
       ],
       "password": [
         "salasana"
@@ -8276,6 +8279,9 @@
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
+      "Don't show this suggestion": [
+        "Älä näytä tätä ehdotusta"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "esim. Amazon, eBay, Etsy"
       ],
@@ -8988,6 +8994,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lisää ${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
@@ -9673,11 +9682,11 @@
       "SMTP submission": [
         "SMTP-lähetys"
       ],
-      "SMTP submission for select organizations": [
-        "SMTP-llähetys valituille organisaatioille"
-      ],
       "Split tunneling (Android and Windows)": [
         "Jaettu tunnelointi (Android ja Windows)"
+      ],
+      "SSO integration": [
+        "SSO-integraatio"
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
@@ -10246,6 +10255,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } tarjous päättyy tänään!"
       ],
+      "Don’t show this offer again": [
+        "Älä näytä tätä tarjousta uudelleen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hanki Drive Plus hintaan ${ pricingTitle }"
       ],
@@ -10261,8 +10273,26 @@
       "Maybe later": [
         "Ehkä myöhemmin"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Tarjous vanhenee ${ formattedDate }"
+      ],
+      "Save": [
+        "Säästä"
+      ],
       "Save 80% on your first month.": [
         "Säästä 80 % ensimmäisestä kuukaudestasi."
+      ],
+      "Special offer": [
+        "Erikoistarjous"
+      ],
+      "This offer won't be shown again.": [
+        "Tätä tarjousta ei näytetä uudelleen"
+      ],
+      "You currently pay": [
+        "Maksat tällä hetkellä"
+      ],
+      "Your subscription renews soon": [
+        "Tilauksesi uusiutuu pian"
       ]
     },
     "Offer feature": {
@@ -10538,6 +10568,9 @@
       "Admin panel to manage users and subscription": [
         "Ylläpitopaneeli käyttäjien ja tilauksen hallintaan"
       ],
+      "Advanced account protection": [
+        "Edistynyt tilin suojaus"
+      ],
       "Team policies": [
         "Ryhmäkäytännöt"
       ]
@@ -10744,6 +10777,9 @@
       ],
       "Filter labels": [
         "Suodata tunnisteita"
+      ],
+      "Filter quick actions": [
+        "Suodata pikatoimintoja"
       ],
       "First name": [
         "Etunimi"

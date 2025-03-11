@@ -136,6 +136,12 @@
       "Close this banner": [
         "Închidere norificare"
       ],
+      "Compare all plans": [
+        "Comparare planuri"
+      ],
+      "Compare plans": [
+        "Comparare planuri"
+      ],
       "Configure SAML": [
         "Configurare SAML"
       ],
@@ -241,6 +247,9 @@
       "Discard changes": [
         "Anulare modificări"
       ],
+      "Discover ${ planName }": [
+        "Descoperiți ${ planName }"
+      ],
       "Dismiss": [
         "Renunțare"
       ],
@@ -315,6 +324,12 @@
       ],
       "Enable multi-user support": [
         "Activare suport utilizatori multipli"
+      ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "Explorare ${ PLAN_NAMES[plan] }"
+      ],
+      "Explore group plans": [
+        "Explorare planuri de grup"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explorare alte planuri ${ BRAND_NAME }"
@@ -417,6 +432,9 @@
       ],
       "Make admin": [
         "Stabilire administrator"
+      ],
+      "Manage subscription": [
+        "Gestionare abonament"
       ],
       "Mark as default": [
         "Setare ca implicită"
@@ -1097,6 +1115,9 @@
       ],
       "Version history": [
         "Istoric versiuni"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1168,6 +1189,65 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "Blog": {
+      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
+        "Politica fără jurnalizare a ${ BRAND_NAME } VPN confirmată de un audit extern"
+      ],
+      "**Streaming** is included in your subscription.": [
+        "**Redarea în flux** este inclusă în abonamentul actual."
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "Îmi poate vedea cineva istoricul de navigare pe internet dacă folosim același Wi-Fi?"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "Activați întrerupătorul de conexiune și conectarea automată în setările pentru VPN."
+      ],
+      "Get round-the-clock protection": [
+        "Obțineți protecție permanentă"
+      ],
+      "How safe is Telegram?": [
+        "Cât de sigur este Telegram?"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "În acest articol, analizăm cine vă poate vedea istoricul navigării pe internet atunci când utilizați o rețea Wi-Fi, ce poate vedea și de ce ar putea face acest lucru."
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "Creșteți vitezele VPN cu până la 400% cu VPN Accelerator"
+      ],
+      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
+        "Experții independenți în securitate au verificat dacă Proton VPN nu înregistrează datele utilizatorilor și nu se angajează în nicio posibilă practică de compromitere a confidențialității utilizatorilor."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "Telegram este sigur de utilizat? După cum vom discuta în acest articol, asta depinde foarte mult de modul în care îl utilizați."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "Aflați cum să activați ${ VPN_APP_NAME } pe ruterul personal."
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "Protejați-vă compania împotriva breșelor de date și lucrați de la distanță mai sigur cu un VPN corporativ."
+      ],
+      "Protect your whole household with 1 device": [
+        "Protejați-vă întreaga casă cu un singur dispozitiv"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "Vizionați de pe toate platformele cu redare în flux cu ${ PLAN_NAMES[PLANS.VPN] }."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Acest articol a fost actualizat pentru a include protocoalele WireGuard și Stealth VPN."
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "VPN Accelerator folosește o combinație de tehnologii VPN avansate pentru a îmbunătăți stabilitatea și a crește viteza conexiunii"
+      ],
+      "Watch your favorite movies and TV shows": [
+        "Vizionați filmele și emisiunile TV favorite"
+      ],
+      "Which VPN protocol is the best?": [
+        "Care protocol VPN este cel mai bun?"
+      ],
+      "Working with sensitive data?": [
+        "Lucrați cu date confidențiale?"
       ]
     },
     "Browser": {
@@ -2475,6 +2555,98 @@
         "Abonamentul pentru ${ PLAN_NAMES[PLANS.PASS] } este la un preț special de ${ price } pe an. Dacă treceți la un plan gratuit, veți pierde definitiv reducerea, chiar dacă reveniți la acest tip de plan în viitor."
       ]
     },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "Navigator web"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "Desktop"
+      ],
+      "Download for Linux": [
+        "Descărcare pentru Linux"
+      ],
+      "Download for MacOS": [
+        "Descărcare pentru macOS"
+      ],
+      "Download for Windows": [
+        "Descărcare pentru Windows"
+      ],
+      "Download on the Apple App Store": [
+        "Descărcare din App Store Apple"
+      ],
+      "Download on the Google Play Store": [
+        "Descărcare din Play Store Google"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "Luați aplicația"
+      ],
+      "Get the extension": [
+        "Luați extensia"
+      ],
+      "Installation guide": [
+        "Ghid de instalare"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave sau anterioară"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura sau ulterioară"
+      ],
+      "Mobile": [
+        "Dispozitive mobile"
+      ],
+      "TV": [
+        "TV"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 sau Windows 32-bit (ARM64)"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Istoric extins versiuni"
@@ -2578,15 +2750,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
-      ],
-      "Error creating policy.": [
-        "Eroare creare regulă."
-      ],
-      "Error deleting policy.": [
-        "Eroare la ștergerea regulei."
-      ],
-      "Error updating policy.": [
-        "Eroare la actualizarea regulei."
       ],
       "Failed to process the logo": [
         "Procesarea fișierului pentru logo a eșuat."
@@ -3198,6 +3361,9 @@
       "Continue": [
         "Continuare"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Toate din ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "Cele mai rapide servere VPN"
       ],
@@ -3212,6 +3378,31 @@
       ],
       "Torrenting support (P2P)": [
         "Suport torente (P2P)"
+      ]
+    },
+    "Features": {
+      "and more premium features...": [
+        "și alte funcții premium..."
+      ],
+      "Double VPN": [
+        "VPN dublu"
+      ],
+      "Lightning-fast speeds": [
+        "Viteză foarte mare"
+      ],
+      "NetShield Ad-blocker": [
+        "Blocare reclame cu NetShield"
+      ],
+      "Secure streaming": [
+        "Transmisii în flux securizate"
+      ],
+      "Select from ${ vpnServers.paid.countries } countries": [
+        "Selectare din ${ vpnServers.paid.countries } țări"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney +, Prime Video și altele."
       ]
     },
     "fido2: Action": {
@@ -3577,8 +3768,26 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "Comparare planuri"
+      ],
       "Contact us": [
         "Contactați-ne"
+      ],
+      "Enjoying ${ planName }?": [
+        "Vă bucurați de ${ planName }?"
+      ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "Deblocați încă patru servicii premium de confidențialitate cu doar **${ priceString }** lunar"
+      ],
+      "Upgrade your privacy": [
+        "Îmbunătățiți-vă confidențialitatea"
+      ],
+      "You currently pay": [
+        "Acum plătiți"
+      ],
+      "Your plan": [
+        "Planul actual"
       ]
     },
     "Hint": {
@@ -3687,6 +3896,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } days.": [
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expiră astăzi."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
@@ -4062,6 +4277,9 @@
         "Se șterg ${ deletedServerCount } servere poartă de acces",
         "Se șterg ${ deletedServerCount } de servere poartă de acces"
       ],
+      "Did you know?": [
+        "Știați că?"
+      ],
       "Disabled on ${ formattedDateAndTime }": [
         "Dezactivat de la ${ formattedDateAndTime }"
       ],
@@ -4102,6 +4320,12 @@
         "domeniu utilizat",
         "domenii utilizate",
         "de domenii utilizate"
+      ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "Nu pierdeți accesul la funcțiile premium din ${ appName }. Activați reînnoirea automată astăzi."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "Nu pierdeți accesul la funcțiile premium. Activați reînnoirea automată astăzi."
       ],
       "Done! We sent a code to ${ destination }.": [
         "Gata! S-a trimis un cod către ${ destination }."
@@ -4154,6 +4378,12 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Mesajele mutate în folderele «Gunoi» și «Nedorite» care au stat mai mult de 30 de zile acolo vor fi șterse automat."
       ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Activați reînnoirea automată pentru a vă păstra accesul la serverele și funcțiile Plus."
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Activați reînnoirea automată pentru a vă păstra accesul funcțiile premium."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Activați autentificarea unică pentru a vă menține organizația în siguranță."
       ],
@@ -4162,6 +4392,9 @@
       ],
       "Enabling auto-deletion…": [
         "Se activează ștergerea automată…"
+      ],
+      "End date": [
+        "Data de sfârșit"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Pentru acest grup este dezactivată criptarea bilaterală a mesajelor pe e-mail deoarece se utilizează o adresă externe."
@@ -4541,6 +4774,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Noile date de conectare prin VPN vor înceta să fie colectate și afișate."
       ],
+      "Next billing date": [
+        "Data facturii următoare"
+      ],
       "No addresses exist": [
         "Nu există adrese"
       ],
@@ -4872,6 +5108,9 @@
         "Pasul ${ step }",
         "Pasul ${ step }",
         "Pasul ${ step }"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
       ],
       "Storage allocated to other users in this organisation": [
         "Spațiu alocat altor utilizatori din această organizație"
@@ -5358,6 +5597,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Puteți obține toate serviciile noastre de confidențialitate premium într-un singur pachet – și costă doar **${ priceString }/lună**."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -5688,6 +5930,9 @@
       ],
       "Addresses": [
         "Adrese"
+      ],
+      "Advanced": [
+        "Avansat"
       ],
       "Allow": [
         "Adrese permise"
@@ -6481,6 +6726,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
@@ -7115,9 +7363,6 @@
       ],
       "SMTP submission": [
         "Trimitere SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Trimiteri SMTP pentru organizații selectate"
       ],
       "Split tunneling (Android and Windows)": [
         "Trafic divizat (Android și Windows)"
@@ -8145,6 +8390,9 @@
       "Admin panel to manage users and subscription": [
         "Panou de administrare pentru a gestiona utilizatorii și abonamentul"
       ],
+      "Advanced account protection": [
+        "Protecție avansată a contului"
+      ],
       "Team policies": [
         "Politicile echipei"
       ]
@@ -8542,9 +8790,38 @@
         "Membri"
       ]
     },
+    "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "Stocare în cloud criptată pentru fotografii și fișiere"
+      ],
+      "Password manager with identity protection": [
+        "Manager de parole cu protejarea identității"
+      ],
+      "Secure email that protects your privacy": [
+        "E-mail securizat care vă protejează confidențialitatea"
+      ],
+      "Your gateway to online freedom": [
+        "Poarta dvs. către libertatea online"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "contactați"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } lună",
+        "${ cycle } luni",
+        "${ cycle } de luni"
+      ],
+      "${ months } month plan": [
+        "Plan ${ months } lună",
+        "Plan ${ months } luni",
+        "Plan ${ months } de luni"
+      ],
+      "Enjoying ${ planName }?": [
+        "Vă bucurați de ${ planName }?"
       ]
     },
     "Price": {
@@ -9861,47 +10138,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -10198,6 +10434,47 @@
         "Propriul alias de e-mail scurt @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Confirmați?"
@@ -10341,15 +10618,6 @@
       ],
       "Phone number updated": [
         "Număr de telefon actualizat"
-      ],
-      "Policy created successfully!": [
-        "Regula a fost creată!"
-      ],
-      "Policy deleted": [
-        "Regula a fost ștearsă."
-      ],
-      "Policy updated successfully!": [
-        "Regula a fost actualizată!"
       ],
       "Preference saved": [
         "Preferințe salvate"
@@ -10655,6 +10923,9 @@
       "Allocate storage": [
         "Alocare spațiu"
       ],
+      "Also in your plan": [
+        "Disponibil și în planul actual"
+      ],
       "Amount": [
         "Suma"
       ],
@@ -10748,6 +11019,9 @@
       "Connect organization": [
         "Conectare organizație"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "Conectați-vă la ${ VPN_CONNECTIONS } dispozitive simultan cu ${ vpnPlus }. ${ upgradeButton }"
+      ],
       "Contact us": [
         "Contactați-ne"
       ],
@@ -10806,6 +11080,9 @@
       ],
       "Day theme": [
         "Temă zi"
+      ],
+      "Deep dive into VPN blog posts": [
+        "Aprofundați publicările despre VPN"
       ],
       "Delete": [
         "Ștergere"
@@ -10970,6 +11247,15 @@
       "Get ${ vpnPlus } to access all servers": [
         "Obțineți ${ vpnPlus } pentru a accesa toate serverele"
       ],
+      "Get complete privacy coverage": [
+        "Obțineți o acoperire completă a intimității"
+      ],
+      "Get more from your VPN": [
+        "Obțineți mai mult de la VPN"
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "Luați aplicația pe toate dispozitivele și protejați până la ${ VPN_CONNECTIONS } dispozitive simultan."
+      ],
       "Gift": [
         "Cadou"
       ],
@@ -10981,6 +11267,9 @@
       ],
       "Help center": [
         "Centru de ajutor"
+      ],
+      "Home": [
+        "Început"
       ],
       "How to choose a good logo": [
         "Cum să alegeți un logo bun"
@@ -11226,6 +11515,9 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Îmbunătățiți-vă protecția rețelei cu servere dedicate"
+      ],
+      "Upgrade your privacy": [
+        "Îmbunătățiți-vă confidențialitatea"
       ],
       "Upload CSV file to create multiple accounts": [
         "Încărcare fișier CSV pentru a crea conturi multiple"
@@ -11614,9 +11906,38 @@
         "Pentru a continua, va trebui să solicitați permisiunea utilizatorului de a-i putea accesa datele sau de a-i reseta parola."
       ]
     },
+    "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "**Economisiți până la ${ priceString }** cu un abonament de durată mai mare. Aceleași funcții premium, preț mai mic."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Toate serviciile ${ BRAND_NAME } premium, un singur abonament simplu."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Toate serviciile ${ BRAND_NAME } premium. De la doar ${ fallBackString } lunar."
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "Toate serviciile ${ BRAND_NAME } premium. Doar încă **${ priceString }** lunar."
+      ],
+      "Did you know?": [
+        "Știați că?"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "Puteți proteja până la ${ FAMILY_MAX_USERS } persoane cu ${ PLAN_NAMES[plan] }. Începând de la doar ${ priceString }/lună per cont."
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "Puteți proteja până la ${ FAMILY_MAX_USERS } persoane cu ${ PLAN_NAMES[PLANS.DUO] } sau ${ PLAN_NAMES[PLANS.FAMILY] }. Începând de la doar ${ priceString }/lună per cont."
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "Cea mai rentabilă"
+      ],
       "Recommended": [
         "Recomandat"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Economisiți ${ totals.discountPercentage }%"
       ]
     },
     "User role": {
@@ -11753,12 +12074,37 @@
         "Alt motiv"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Comunicați și faceți programări folosind criptarea bilaterală."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Obțineți mai mult din abonamentul ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Păstrați-vă fișierele, fotografiile și documentele în siguranță cu ${ maxDriveSpace } spațiu de stocare gratuit în cloud."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Setați parole sigure fără efort."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Cu ${ planTitlePlusMaybeBrand }, obțineți acces gratuit la ${ VPN_APP_NAME } și alte servicii de confidențialitate."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Cu ${ planTitlePlusMaybeBrand }, obțineți acces gratuit la toate serviciile de confidențialitate ${ BRAND_NAME }."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now şi multe altele."
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispozitiv",
+        "${ n } dispozitive",
+        "${ n } de dispozitive"
+      ],
       "${ n } server": [
         "Un server",
         "Peste ${ n } servere",
@@ -11769,6 +12115,11 @@
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } țară",
+        "${ numberOfCountries } țări",
+        "${ numberOfCountries } de țări"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } în ${ numberOfCountries } țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
@@ -11778,6 +12129,11 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Autoselectare din ${ numberOfCountries } țară",
+        "Autoselectare din ${ numberOfCountries } țări",
+        "Autoselectare din ${ numberOfCountries } de țări"
       ]
     },
     "vpn_2024: renew": {
