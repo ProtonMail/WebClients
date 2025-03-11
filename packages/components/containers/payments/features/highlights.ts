@@ -3,18 +3,21 @@ import { c, msgid } from 'ttag';
 import { PLANS } from '@proton/payments';
 import {
     BRAND_NAME,
-    DARK_WEB_MONITORING_NAME,
     DRIVE_APP_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
+    MAIL_APP_NAME,
+    PASS_APP_NAME,
     PROTON_SENTINEL_NAME,
     VISIONARY_MAX_USERS,
+    VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { getStorage } from './drive';
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import { getPassMonitorText } from './pass';
 
 export const getNUsersAdminText = ({ n, admins, users }: { n: number; admins: number; users: number }) => {
     const adminsText = c('new_plans: feature highlight').ngettext(msgid`${admins} admin`, `${admins} admins`, admins);
@@ -49,6 +52,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.MAIL]: null,
             [PLANS.VPN]: null,
             [PLANS.PASS]: null,
+            [PLANS.PASS_LIFETIME]: null,
             [PLANS.DRIVE]: null,
             [PLANS.DRIVE_BUSINESS]: null,
             [PLANS.WALLET]: null,
@@ -93,25 +97,35 @@ export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-export const getSupport = (type: 'limited' | 'priority', product?: 'drive' | 'all'): PlanCardFeatureDefinition => {
-    const textType =
+export const getSupport = (
+    type: 'limited' | 'priority',
+    product?: 'drive' | 'mail' | 'pass' | 'vpn' | 'all'
+): PlanCardFeatureDefinition => {
+    const text =
         type === 'limited' ? c('new_plans: feature').t`Limited support` : c('new_plans: feature').t`Priority support`;
 
-    let text = textType;
+    let subtext = undefined;
     switch (product) {
         case 'drive':
-            text = c('new_plans: feature').t`${textType} - For ${DRIVE_APP_NAME}`;
+            subtext = c('customer_support.feature.drive').t`For ${DRIVE_APP_NAME}`;
+            break;
+        case 'mail':
+            subtext = c('customer_support.feature.mail').t`For ${MAIL_APP_NAME}`;
+            break;
+        case 'pass':
+            subtext = c('customer_support.feature.pass').t`For ${PASS_APP_NAME}`;
+            break;
+        case 'vpn':
+            subtext = c('customer_support.feature.vpn').t`For ${VPN_APP_NAME}`;
             break;
         case 'all':
-            text = c('new_plans: feature').t`${textType} - For all ${BRAND_NAME} services`;
-            break;
-        default:
-            text = textType;
+            subtext = c('customer_support.feature.all').t`For all ${BRAND_NAME} services`;
             break;
     }
 
     return {
-        text: text,
+        text,
+        subtext,
         included: true,
         icon: 'life-ring',
     };
@@ -142,7 +156,7 @@ export const getAdvancedAccountProtectionFeature = (included: boolean = true): P
 
 export const getPassMonitor = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`${DARK_WEB_MONITORING_NAME} and ${PROTON_SENTINEL_NAME}`,
+        text: getPassMonitorText(),
         included: included,
         icon: 'shield',
     };
@@ -187,18 +201,19 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.DRIVE]: getSupport('priority'),
                 [PLANS.DRIVE_BUSINESS]: getSupport('priority', 'drive'),
                 [PLANS.PASS]: getSupport('priority'),
+                [PLANS.PASS_LIFETIME]: getSupport('priority'),
                 [PLANS.WALLET]: getSupport('priority'),
                 [PLANS.FAMILY]: getSupport('priority'),
                 [PLANS.DUO]: getSupport('priority'),
-                [PLANS.MAIL_PRO]: getSupport('priority'),
-                [PLANS.MAIL_BUSINESS]: getSupport('priority'),
-                [PLANS.BUNDLE_PRO]: getSupport('priority'),
+                [PLANS.MAIL_PRO]: getSupport('priority', 'mail'),
+                [PLANS.MAIL_BUSINESS]: getSupport('priority', 'mail'),
+                [PLANS.BUNDLE_PRO]: getSupport('priority', 'all'),
                 [PLANS.BUNDLE_PRO_2024]: getSupport('priority', 'all'),
                 [PLANS.PASS_PRO]: get24x7Support(),
                 [PLANS.PASS_FAMILY]: getSupport('priority'),
                 [PLANS.PASS_BUSINESS]: get24x7Support(),
-                [PLANS.VPN_PRO]: getSupport('priority'),
-                [PLANS.VPN_BUSINESS]: getSupport('priority'),
+                [PLANS.VPN_PRO]: getSupport('priority', 'vpn'),
+                [PLANS.VPN_BUSINESS]: getSupport('priority', 'vpn'),
                 [PLANS.LUMO]: getSupport('priority'),
                 [PLANS.VISIONARY]: getSupport('priority'),
             },
@@ -213,6 +228,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.DRIVE]: getSentinel(),
                 [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: getSentinel(true),
+                [PLANS.PASS_LIFETIME]: getSentinel(true),
                 [PLANS.WALLET]: getSentinel(true),
                 [PLANS.FAMILY]: getSentinel(true),
                 [PLANS.DUO]: getSentinel(true),
@@ -240,6 +256,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.DRIVE_BUSINESS]: getCustomBranding(true),
                 [PLANS.WALLET]: null,
                 [PLANS.PASS]: null,
+                [PLANS.PASS_LIFETIME]: null,
                 [PLANS.FAMILY]: null,
                 [PLANS.DUO]: null,
                 [PLANS.MAIL_PRO]: getCustomBranding(false),
@@ -266,6 +283,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.DRIVE]: null,
                 [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: null,
+                [PLANS.PASS_LIFETIME]: null,
                 [PLANS.WALLET]: null,
                 [PLANS.FAMILY]: null,
                 [PLANS.DUO]: null,
