@@ -20,6 +20,5 @@ export const selectOrganizationPasswordGeneratorPolicy = ({
     organization,
 }: State): MaybeNull<OrganizationUpdatePasswordPolicyRequest> => organization?.settings?.PasswordPolicy ?? null;
 
-export const selectOrganizationVaultCreationDisabled = ({ organization, user }: State): boolean =>
-    organization?.settings.VaultCreateMode === BitField.ACTIVE &&
-    (user.user ? !isB2BAdmin(user.user, getPassPlan(user.plan)) : true);
+export const selectOrganizationVaultCreationDisabled = ({ organization, user: { user, plan } }: State): boolean =>
+    organization?.settings.VaultCreateMode === BitField.ACTIVE && user !== null && !isB2BAdmin(user, getPassPlan(plan));
