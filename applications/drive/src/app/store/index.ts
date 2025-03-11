@@ -28,7 +28,7 @@ export * from './_actions/interface';
 export * from './_invitations/interface';
 export * from './_views';
 export { useSearchLibrary } from './_search';
-export { usePhotos, usePhotosRecovery, isDecryptedLink } from './_photos';
+export { usePhotos, usePhotosRecovery, isDecryptedLink, isPhotoGroup } from './_photos';
 export * from './_photos/interface';
 export { useBookmarksActions } from './_bookmarks';
 export { useDocumentActions } from './_documents';
