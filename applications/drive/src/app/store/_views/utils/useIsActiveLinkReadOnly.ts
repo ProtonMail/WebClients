@@ -23,6 +23,7 @@ export const useIsActiveLinkReadOnly = () => {
 
     const [isReadOnly, setIsReadOnly] = useState<boolean | undefined>(undefined);
     const [isRoot, setIsRoot] = useState<boolean | undefined>(undefined);
+    const [isInDeviceShare, setIsInDeviceShare] = useState<boolean | undefined>(undefined);
     const ongoingRequestAc = useRef<AbortController>();
 
     useEffect(() => {
@@ -38,6 +39,7 @@ export const useIsActiveLinkReadOnly = () => {
                 .then((link) => {
                     setIsReadOnly(isLinkReadOnly(link, shareType));
                     setIsRoot(isLinkRoot(link));
+                    setIsInDeviceShare(shareType === ShareType.device);
                 })
                 .catch((e) => {
                     sendErrorReport(e);
@@ -62,5 +64,6 @@ export const useIsActiveLinkReadOnly = () => {
         isLoading: isReadOnly === undefined,
         isReadOnly,
         isRoot,
+        isInDeviceShare,
     };
 };
