@@ -311,7 +311,7 @@
         "如何从${ PROVIDER_INFO_MAP[form.values.provider].title }导出我的数据？"
       ],
       "How to update ${ PASS_APP_NAME } on Linux": [
-        "如何在 Linux 上更新${ PASS_APP_NAME }"
+        "如何在 Linux 上更新 ${ PASS_APP_NAME }"
       ],
       "How to use ${ PASS_APP_NAME }": [
         "如何使用${ PASS_APP_NAME }"
@@ -2679,9 +2679,6 @@
       ],
       "Expired": [
         "已失效"
-      ],
-      "Expired link": [
-        "链接已过期"
       ],
       "Export": [
         "导出"
