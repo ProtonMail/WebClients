@@ -136,6 +136,12 @@
       "Close this banner": [
         "Lukk dette banneret"
       ],
+      "Compare all plans": [
+        "Sammenlign alle planer"
+      ],
+      "Compare plans": [
+        "Sammenlign planer"
+      ],
       "Configure SAML": [
         "Konfigurer SAML"
       ],
@@ -241,6 +247,9 @@
       "Discard changes": [
         "Forkast endringer"
       ],
+      "Discover ${ planName }": [
+        "Oppdag ${ planName }"
+      ],
       "Dismiss": [
         "Avvis"
       ],
@@ -315,6 +324,12 @@
       ],
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
+      ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "Utforsk ${ PLAN_NAMES[plan] }"
+      ],
+      "Explore group plans": [
+        "Utforsk gruppeplaner"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Utforsk andre ${ BRAND_NAME }-planer"
@@ -418,6 +433,9 @@
       "Make admin": [
         "Gjør til administrator"
       ],
+      "Manage subscription": [
+        "Behandle abonnement"
+      ],
       "Mark as default": [
         "Angi som standard"
       ],
@@ -480,6 +498,9 @@
       ],
       "Previous page": [
         "Forrige side"
+      ],
+      "Publish changes": [
+        "Publiser endringer"
       ],
       "Recover data": [
         "Gjenopprett data"
@@ -1092,6 +1113,9 @@
       ],
       "Version history": [
         "Versjonshistorikk"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1160,6 +1184,65 @@
       ],
       "Two-year": [
         "Toårig"
+      ]
+    },
+    "Blog": {
+      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
+        "${ BRAND_NAME } VPN sine retningslinjer mot loggføring bekreftet av en ekstern revisjon"
+      ],
+      "**Streaming** is included in your subscription.": [
+        "**Strømming** er inkludert i abonnementet ditt."
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "Kan noen se internettloggen min hvis vi bruker samme WiFi?"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "Aktiver nødstopp og automatisk tilkobling i VPN-innstillingene dine."
+      ],
+      "Get round-the-clock protection": [
+        "Skaff deg beskyttelse døgnet rundt"
+      ],
+      "How safe is Telegram?": [
+        "Hvor sikker er Telegram?"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "I denne artikkelen ser vi på hvem som kan se internettloggen din når du bruker WiFi, hva de kan se, og hvorfor de kan gjøre dette."
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "Øk VPN-hastighetene dine med opptil 400 % med VPN Accelerator"
+      ],
+      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
+        "Uavhengige sikkerhetseksperter bekreftet at Proton VPN ikke logger brukerdata eller deltar i noen praksis som kan kompromittere personvernet ditt."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "Er Telegram trygt å bruke? Som vi skal diskutere i denne artikkelen, avhenger det veldig av hvordan du bruker det."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "Finn ut hvordan du aktiverer ${ VPN_APP_NAME } på ruteren."
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "Beskytt bedriften din mot datainnbrudd og gjør eksternt arbeid tryggere med et VPN for bedrifter."
+      ],
+      "Protect your whole household with 1 device": [
+        "Beskytt hele husstanden med 1 enhet"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "Strøm fra alle større plattformer med ${ PLAN_NAMES[PLANS.VPN] }."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Denne artikkelen har blitt oppdatert for å inkludere WireGuard og Stealth VPN-protokollene."
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "VPN Accelerator bruker en kombinasjon av avanserte VPN-teknologier for å forbedre tilkoblingsstabiliteten og øke tilkoblingshastigheten din"
+      ],
+      "Watch your favorite movies and TV shows": [
+        "Se favorittfilmene og TV-programmene dine"
+      ],
+      "Which VPN protocol is the best?": [
+        "Hvilken VPN-protokoll er den beste?"
+      ],
+      "Working with sensitive data?": [
+        "Jobber du med sensitive data?"
       ]
     },
     "Browser": {
@@ -2465,6 +2548,98 @@
         "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
       ]
     },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "Nettleser"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "Skrivebord"
+      ],
+      "Download for Linux": [
+        "Last ned for Linux"
+      ],
+      "Download for MacOS": [
+        "Last ned for macOS"
+      ],
+      "Download for Windows": [
+        "Last ned for Windows"
+      ],
+      "Download on the Apple App Store": [
+        "Last ned på Apple App Store"
+      ],
+      "Download on the Google Play Store": [
+        "Last ned på Google Play Store"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "Skaff deg appen"
+      ],
+      "Get the extension": [
+        "Skaff deg utvidelsen"
+      ],
+      "Installation guide": [
+        "Installasjonsveiledning"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave eller tidligere"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura eller senere"
+      ],
+      "Mobile": [
+        "Mobil"
+      ],
+      "TV": [
+        "TV"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 eller Windows 32-bit (ARM64)"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Utvidet versjonshistorikk"
@@ -2569,14 +2744,8 @@
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
       ],
-      "Error creating policy.": [
-        "Feil ved å opprette retningslinje."
-      ],
-      "Error deleting policy.": [
-        "Feil ved å slette retningslinje."
-      ],
-      "Error updating policy.": [
-        "Feil ved å oppdatere retningslinje."
+      "Error publishing changes.": [
+        "Feil ved publisering av endringer."
       ],
       "Failed to process the logo": [
         "Kunne ikke behandle logoen"
@@ -3182,6 +3351,9 @@
       "Continue": [
         "Fortsett"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Alt i ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "Raskeste VPN-tjenere"
       ],
@@ -3196,6 +3368,31 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent-støtte (P2P)"
+      ]
+    },
+    "Features": {
+      "and more premium features...": [
+        "og flere premiumfunksjoner..."
+      ],
+      "Double VPN": [
+        "Dobbel VPN"
+      ],
+      "Lightning-fast speeds": [
+        "Lynraske hastigheter"
+      ],
+      "NetShield Ad-blocker": [
+        "NetShield-annonseblokkerer"
+      ],
+      "Secure streaming": [
+        "Sikker strømming"
+      ],
+      "Select from ${ vpnServers.paid.countries } countries": [
+        "Velg fra ${ vpnServers.paid.countries } land"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Få tilgang til innhold på strømmetjenester inkludert Netflix, Disney+, Prime Video og mer fra hvor som helst."
       ]
     },
     "fido2: Action": {
@@ -3553,8 +3750,26 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "Sammenlign planer"
+      ],
       "Contact us": [
         "Kontakt oss"
+      ],
+      "Enjoying ${ planName }?": [
+        "Liker du ${ planName }?"
+      ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "Lås opp 4 flere premium personverntjenester for bare **${ priceString }** mer hver måned"
+      ],
+      "Upgrade your privacy": [
+        "Oppgrader personvernet"
+      ],
+      "You currently pay": [
+        "Du betaler for øyeblikket"
+      ],
+      "Your plan": [
+        "Din plan"
       ]
     },
     "Hint": {
@@ -3654,6 +3869,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } days.": [
+        "${ planName } utløper om ${ daysLeft } dager."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } utløper i dag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert overvåking av mistenkelig aktivitet."
@@ -3969,6 +4190,9 @@
       "Create your first Gateway": [
         "Opprett din første porttjener"
       ],
+      "Created (not published)": [
+        "Opprettet (ikke publisert)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Oppretter porttjener: ${ serverNumber } / ${ total }",
         "Oppretter porttjenere: ${ serverNumber } / ${ total }"
@@ -4012,9 +4236,15 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
       ],
+      "Deleted (not published)": [
+        "Slettet (ikke publisert)"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } porttjener",
         "Sletter ${ deletedServerCount } porttjenere"
+      ],
+      "Did you know?": [
+        "Visste du at?"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Deaktivert den ${ formattedDateAndTime }"
@@ -4056,6 +4286,12 @@
         "domene brukt",
         "domener brukt"
       ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "Ikke mist tilgangen til dine premium ${ appName }-funksjoner. Aktiver automatisk fornyelse i dag."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "Ikke mist tilgangen til dine premiumfunksjoner. Aktiver automatisk fornyelse i dag."
+      ],
       "Done! We sent a code to ${ destination }.": [
         "Ferdig! Vi sendte en kode til ${ destination }."
       ],
@@ -4092,6 +4328,9 @@
       "Edit email address": [
         "Rediger e-postadresse"
       ],
+      "Edited (not published)": [
+        "Redigert (ikke publisert)"
+      ],
       "eduGAIN configuration saved": [
         "eduGAIN-konfigurasjon lagret"
       ],
@@ -4107,6 +4346,12 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "E-poster flyttet til papirkurv og søppelpost for mer enn 30 dager siden, blir slettet automatisk."
       ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Aktiver automatisk fornyelse for å beholde tilgangen til Plus-tjenere og -funksjoner."
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Aktiver automatisk fornyelse for å beholde tilgangen til dine premiumfunksjoner."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiver enkel pålogging for å holde organisasjonen din trygg"
       ],
@@ -4115,6 +4360,9 @@
       ],
       "Enabling auto-deletion…": [
         "Aktiverer automatisk sletting…"
+      ],
+      "End date": [
+        "Sluttdato"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Ende-til-ende-kryptering av e-post er deaktivert for denne gruppen på grunn av eksterne adresser."
@@ -4494,6 +4742,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Nye VPN-tilkoblingsdata vil slutte å bli samlet inn og vist."
       ],
+      "Next billing date": [
+        "Neste faktureringsdato"
+      ],
       "No addresses exist": [
         "Ingen adresser eksisterer"
       ],
@@ -4585,6 +4836,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine-redaktørens valgpris med en vurdering på 5 av 5 stjerner"
+      ],
+      "Pending removal": [
+        "Venter på fjerning"
       ],
       "per month": [
         "per måned"
@@ -4818,6 +5072,9 @@
       "Step ${ step }": [
         "Trinn ${ step }",
         "Trinn ${ step }"
+      ],
+      "Storage": [
+        "Lagring"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
@@ -5055,6 +5312,9 @@
       ],
       "Unable to check gateways monitoring current status.": [
         "Kan ikke sjekke porttjenere som overvåker gjeldende status."
+      ],
+      "Unchanged": [
+        "Uendret"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Dessverre er det ingen gjenopprettingsmetode lagret for denne kontoen."
@@ -5297,6 +5557,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere den en gang for å sikre riktig e-postadresse for bekreftelse."
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Du kan få alle våre premium personverntjenester i én pakke – og det er bare **${ priceString }/måned**."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
@@ -5345,6 +5608,9 @@
       ],
       "You have no transactions.": [
         "Du har ingen transaksjoner."
+      ],
+      "You have unpublished changes": [
+        "Du har upubliserte endringer"
       ],
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigert til din banks nettside."
@@ -5620,6 +5886,9 @@
       ],
       "Addresses": [
         "Adresser"
+      ],
+      "Advanced": [
+        "Avansert"
       ],
       "Allow": [
         "Tillat"
@@ -6412,8 +6681,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Legg til ${ BRAND_NAME } Scribe skriveassistent"
+      ],
+      "Add-on with free trial": [
+        "Tillegg med gratis prøveperiode"
       ],
       "for ${ price }": [
         "for ${ price }"
@@ -6726,6 +7001,9 @@
       "${ size } storage": [
         "${ size } lagringsplass"
       ],
+      "${ size } storage per user": [
+        "${ size } lagringsplass per bruker"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - for ${ DRIVE_APP_NAME }"
       ],
@@ -6931,6 +7209,9 @@
       "Limited support": [
         "Begrenset støtte"
       ],
+      "Manage user permissions and access": [
+        "Administrere brukertillatelser og -tilgang"
+      ],
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
@@ -6951,6 +7232,9 @@
       ],
       "Password manager": [
         "Passordbehandler"
+      ],
+      "Password manager to secure credentials": [
+        "Passordbehandling for å sikre legitimasjon"
       ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
@@ -7027,9 +7311,6 @@
       ],
       "SMTP submission": [
         "SMTP-innsending"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-innsending for utvalgte organisasjoner"
       ],
       "Split tunneling (Android and Windows)": [
         "Delt tunnelering (Android og Windows)"
@@ -8045,6 +8326,9 @@
       "Admin panel to manage users and subscription": [
         "Administrasjonspanel for å administrere brukere og abonnement"
       ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
+      ],
       "Team policies": [
         "Retningslinjer for teamet"
       ]
@@ -8442,9 +8726,36 @@
         "Medlemmer"
       ]
     },
+    "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "Kryptert skylagring for bilder og filer"
+      ],
+      "Password manager with identity protection": [
+        "Passordbehandler med identitetsbeskyttelse"
+      ],
+      "Secure email that protects your privacy": [
+        "Sikker e-post som beskytter personvernet ditt"
+      ],
+      "Your gateway to online freedom": [
+        "Din inngangsport til frihet på nettet"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "kontakt"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } måneds",
+        "${ cycle } måneders"
+      ],
+      "${ months } month plan": [
+        "${ months } måneds plan",
+        "${ months } måneders plan"
+      ],
+      "Enjoying ${ planName }?": [
+        "Liker du ${ planName }?"
       ]
     },
     "Price": {
@@ -9678,6 +9989,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Høyhastighets VPN på ${ maxVpn } enhet",
         "Høyhastighets VPN på ${ maxVpn } enheter"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-tilkobling for ${ n } enheter per bruker",
+        "VPN-tilkobling for ${ n } enheter per bruker"
       ]
     },
     "Subscription change warning": {
@@ -9716,47 +10031,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "For ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription reminder": {
@@ -10049,6 +10323,47 @@
         "Ditt eget korte @pm.me e-postalias"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
@@ -10111,6 +10426,9 @@
       ],
       "Catch-all address updated": [
         "Catch-all-adresse oppdatert"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Endringer publisert. Endringene dine vil være synlige for alle brukere i løpet av de neste timene."
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
@@ -10192,15 +10510,6 @@
       ],
       "Phone number updated": [
         "Telefonnummer oppdatert"
-      ],
-      "Policy created successfully!": [
-        "Retningslinje vellykket opprettet!"
-      ],
-      "Policy deleted": [
-        "Retningslinje slettet"
-      ],
-      "Policy updated successfully!": [
-        "Retningslinje vellykket oppdatert!"
       ],
       "Preference saved": [
         "Preferanse lagret"
@@ -10502,6 +10811,9 @@
       "Allocate storage": [
         "Tildel lagring"
       ],
+      "Also in your plan": [
+        "Også i planen din"
+      ],
       "Amount": [
         "Beløp"
       ],
@@ -10595,6 +10907,9 @@
       "Connect organization": [
         "Koble organisasjon"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "Koble til ${ VPN_CONNECTIONS } enheter på en gang med ${ vpnPlus }. ${ upgradeButton }"
+      ],
       "Contact us": [
         "Kontakt oss"
       ],
@@ -10652,6 +10967,9 @@
       ],
       "Day theme": [
         "Dag-tema"
+      ],
+      "Deep dive into VPN blog posts": [
+        "Dypdykk i VPN-blogginnlegg"
       ],
       "Delete": [
         "Slett"
@@ -10814,6 +11132,15 @@
       "Get ${ vpnPlus } to access all servers": [
         "Skaff deg ${ vpnPlus } for å få tilgang til alle tjenere"
       ],
+      "Get complete privacy coverage": [
+        "Få fullstendig personverndekning"
+      ],
+      "Get more from your VPN": [
+        "Får mer ut av ditt VPN"
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "Skaff deg appen på alle enhetene dine og beskytt opptil ${ VPN_CONNECTIONS } samtidig."
+      ],
       "Gift": [
         "Gave"
       ],
@@ -10825,6 +11152,9 @@
       ],
       "Help center": [
         "Hjelpesenter"
+      ],
+      "Home": [
+        "Hjem"
       ],
       "How to choose a good logo": [
         "Hvordan velge en god logo"
@@ -11069,6 +11399,9 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Oppgrader nettverksbeskyttelsen med dedikerte tjenere"
+      ],
+      "Upgrade your privacy": [
+        "Oppgrader personvernet"
       ],
       "Upload CSV file to create multiple accounts": [
         "Last opp CSV-fil for å opprette flere kontoer"
@@ -11456,9 +11789,38 @@
         "For å fortsette må du be om brukerens tillatelse til å få tilgang til dataene deres eller tilbakestille passordet."
       ]
     },
+    "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "**Spar opptil ${ priceString }** med et lengre abonnement. Samme premiumfunksjoner, lavere pris."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Alle premium ${ BRAND_NAME }-tjenester, ett enkelt abonnement."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Alle premium ${ BRAND_NAME }-tjenester. Fra bare ${ fallBackString } per måned"
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "Alle premium ${ BRAND_NAME }-tjenester. Bare **${ priceString }** mer hver måned."
+      ],
+      "Did you know?": [
+        "Visste du at?"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "Du kan beskytte opptil ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] } . Fra bare ${ priceString }/måned per konto."
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "Du kan beskytte opptil ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[PLANS.DUO] } eller ${ PLAN_NAMES[PLANS.FAMILY] }. Fra bare ${ priceString }/måned per konto."
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "Beste tilbud"
+      ],
       "Recommended": [
         "Anbefalt"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Spar ${ totals.discountPercentage }%"
       ]
     },
     "User role": {
@@ -11593,12 +11955,36 @@
         "Annen"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Kommuniser og planlegg med ende-til-ende-kryptering."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Dra full nytte av ditt ${ planTitle }-abonnement."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Hold filene, bildene og dokumentene dine trygge med ${ maxDriveSpace } gratis skylagring."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Lag sikre passord på en enkel måte."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Med ${ planTitlePlusMaybeBrand } får du gratis tilgang til ${ VPN_APP_NAME } og andre personverntjenester."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Med ${ planTitlePlusMaybeBrand } får du gratis tilgang til alle ${ BRAND_NAME }-personverntjenester."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now og flere."
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } enhet",
+        "${ n } enheter"
+      ],
       "${ n } server": [
         "${ n } tjener",
         "${ n }+ tjenere"
@@ -11607,6 +11993,10 @@
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } land"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } over ${ numberOfCountries } land",
         "${ numberOfServers } over ${ numberOfCountries }+ land"
@@ -11614,6 +12004,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } land"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Velger automatisk fra ${ numberOfCountries } land",
+        "Velger automatisk fra ${ numberOfCountries } land"
       ]
     },
     "vpn_2024: renew": {

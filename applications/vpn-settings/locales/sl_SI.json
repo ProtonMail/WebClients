@@ -382,6 +382,9 @@
       "Make admin": [
         "Naredite za skrbnika"
       ],
+      "Manage subscription": [
+        "Upravljanje z naročnino"
+      ],
       "Mark as default": [
         "Označi kot privzeto"
       ],
@@ -758,6 +761,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } dodatna domena po meri",
+        "${ domains } dodatni domeni po meri",
+        "${ domains } dodatne domene po meri",
+        "${ domains } dodatnih domen po meri"
+      ],
       "${ ips } server": [
         "${ ips } strežnik",
         "${ ips } strežnika",
@@ -2851,6 +2860,9 @@
       ],
       "You have successfully joined the family group": [
         "Uspešno ste se pridružili družinski skupini"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Imate neplačane račune. Plačajte jih, preden se boste pridružili družinskemu paketu."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred dodajanjem več uporabnikov morate nastaviti domeno po meri."
@@ -5735,6 +5747,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj pomočnika pri pisanju ${ BRAND_NAME } Scribe"
       ],
@@ -6316,9 +6331,6 @@
       ],
       "SMTP submission": [
         "Pošiljanje SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Oddaja SMTP za izbrane organizacije"
       ],
       "Split tunneling (Android and Windows)": [
         "Ločeno usmerjanje (Android in Windows)"
@@ -6963,6 +6975,9 @@
       ]
     },
     "Offer": {
+      "Don’t show this offer again": [
+        "Te ponudbe ne prikazuj več"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Pridobite Drive Plus za samo ${ pricingTitle }"
       ],
@@ -6977,6 +6992,15 @@
       ],
       "Maybe later": [
         "Morda kasneje"
+      ],
+      "Save": [
+        "Prihranite"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Prihranite ${ prices.savedPercentage } %"
+      ],
+      "Special offer": [
+        "Posebna ponudba"
       ]
     },
     "Offer feature": {
@@ -7352,6 +7376,16 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je bila zavrnjena. Prosimo, poskusite z drugo kartico ali se obrnite na banko, da odobri plačilo."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Brezplačno"
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "Ulica, poštna številka in mesto"
       ]
     },
     "Permission": {
@@ -8597,48 +8631,10 @@
         "Za ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "and 15 more premium features": [
-        "in še 15 premijskih funkcij"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Samodejno posredovanje e-pošte ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Namizna aplikacija"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
-      ],
-      "No ads or tracking": [
-        "Brez oglasov ali sledenja"
-      ],
-      "Short @pm.me email address": [
-        "Kratek e-poštni naslov @pm.me"
-      ],
-      "Support our mission": [
-        "Podprite naše poslanstvo"
-      ],
-      "Upgrade": [
-        "Prehod na plačljiv paket"
-      ],
-      "Upgrade your productivity": [
-        "Povečajte svojo storilnost"
-      ],
-      "We don't sell your data": [
-        "Vaših podatkov ne prodajamo"
-      ],
-      "Your privacy is our mission": [
-        "Vaša zasebnost je naše poslanstvo"
-      ]
-    },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME } s premijskimi funkcijami"
+      ],
       "${ dayDiff } day left": [
         "Še ${ dayDiff } dan",
         "Še ${ dayDiff } dneva",
@@ -8824,6 +8820,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
       ]
     },
     "Subscription renewal state": {
@@ -10174,6 +10211,18 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } račun na denarnico",
+        "${ n } računa na denarnico",
+        "${ n } računi na denarnico",
+        "${ n } računov na denarnico"
+      ],
+      "${ n } wallet": [
+        "${ n } denarnica",
+        "${ n } denarnici",
+        "${ n } denarnice",
+        "${ n } denarnic"
+      ],
       "A safer way to hold your Bitcoin": [
         "Varnejši način shranjevanja Bitcoina"
       ],

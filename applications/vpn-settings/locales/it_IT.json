@@ -136,6 +136,12 @@
       "Close this banner": [
         "Chiudi questo banner"
       ],
+      "Compare all plans": [
+        "Confronta tutti i piani"
+      ],
+      "Compare plans": [
+        "Confronta i piani"
+      ],
       "Configure SAML": [
         "Configura SAML"
       ],
@@ -241,6 +247,9 @@
       "Discard changes": [
         "Annulla le modifiche"
       ],
+      "Discover ${ planName }": [
+        "Scopri ${ planName }"
+      ],
       "Dismiss": [
         "Ignora"
       ],
@@ -315,6 +324,12 @@
       ],
       "Enable multi-user support": [
         "Abilita il supporto multi-utente"
+      ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "Esplora ${ PLAN_NAMES[plan] }"
+      ],
+      "Explore group plans": [
+        "Esplora i piani di gruppo"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Esplora gli altri piani di ${ BRAND_NAME }"
@@ -418,6 +433,9 @@
       "Make admin": [
         "Rendi amministratore"
       ],
+      "Manage subscription": [
+        "Gestisci abbonamento"
+      ],
       "Mark as default": [
         "Segna come predefinito"
       ],
@@ -480,6 +498,9 @@
       ],
       "Previous page": [
         "Pagina precedente"
+      ],
+      "Publish changes": [
+        "Pubblica le modifiche"
       ],
       "Recover data": [
         "Recupera dati"
@@ -1092,6 +1113,9 @@
       ],
       "Version history": [
         "Cronologia delle versioni"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1160,6 +1184,65 @@
       ],
       "Two-year": [
         "Due anni"
+      ]
+    },
+    "Blog": {
+      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
+        "La politica no-log di ${ BRAND_NAME } VPN confermata da un audit esterno"
+      ],
+      "**Streaming** is included in your subscription.": [
+        "**Lo streaming** è incluso nel tuo abbonamento."
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "Qualcuno può vedere la mia cronologia Internet se utilizziamo la stessa rete WiFi?"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "Abilita il kill switch e la connessione automatica nelle impostazioni VPN."
+      ],
+      "Get round-the-clock protection": [
+        "Ottieni protezione 24 ore su 24"
+      ],
+      "How safe is Telegram?": [
+        "Quanto è sicuro Telegram?"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "In questo articolo esamineremo chi può vedere la tua cronologia Internet quando utilizzi il WiFi, cosa può vedere e perché potrebbe farlo."
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "Aumenta la velocità della VPN fino al 400% con VPN Accelerator"
+      ],
+      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
+        "Esperti di sicurezza indipendenti hanno verificato che ProtonVPN non registra i dati degli utenti né adotta pratiche che potrebbero compromettere la tua privacy."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "Telegram è sicuro da usare? Come discuteremo in questo articolo, dipende molto da come lo usi."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "Scopri come abilitare ${ VPN_APP_NAME } sul tuo router."
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "Proteggi la tua azienda dalle violazioni dei dati e rendi più sicuro il lavoro da remoto con una VPN aziendale."
+      ],
+      "Protect your whole household with 1 device": [
+        "Proteggi tutta la tua famiglia con un dispositivo"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "Guarda in streaming da tutte le principali piattaforme con ${ PLAN_NAMES[PLANS.VPN] }."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Questo articolo è stato aggiornato per includere i protocolli WireGuard e Stealth VPN."
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "VPN Accelerator utilizza una combinazione di tecnologie VPN avanzate per migliorare la stabilità della connessione e aumentare la velocità della connessione"
+      ],
+      "Watch your favorite movies and TV shows": [
+        "Guarda i tuoi film e le tue serie TV preferite"
+      ],
+      "Which VPN protocol is the best?": [
+        "Qual è il protocollo VPN migliore?"
+      ],
+      "Working with sensitive data?": [
+        "Lavori con dati sensibili?"
       ]
     },
     "Browser": {
@@ -2465,6 +2548,98 @@
         "Il tuo abbonamento ${ PLAN_NAMES[PLANS.PASS] } ha un prezzo speciale di ${ price } all'anno. Effettuando il downgrade a un piano gratuito, perderai definitivamente lo sconto, anche se eseguirai nuovamente l'upgrade in futuro."
       ]
     },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "Desktop"
+      ],
+      "Download for Linux": [
+        "Scarica per Linux"
+      ],
+      "Download for MacOS": [
+        "Scarica per MacOS"
+      ],
+      "Download for Windows": [
+        "Scarica per Windows"
+      ],
+      "Download on the Apple App Store": [
+        "Scarica dall'Apple App Store"
+      ],
+      "Download on the Google Play Store": [
+        "Scarica da Google Play Store"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "Scarica l'app"
+      ],
+      "Get the extension": [
+        "Scarica l'estensione"
+      ],
+      "Installation guide": [
+        "Manuale di installazione"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave o precedente"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura o successivo"
+      ],
+      "Mobile": [
+        "Mobile"
+      ],
+      "TV": [
+        "TV"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 o Windows 32-bit (ARM64)"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Cronologia estesa della versione"
@@ -2569,14 +2744,8 @@
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
-      "Error creating policy.": [
-        "Errore durante la creazione della politica."
-      ],
-      "Error deleting policy.": [
-        "Errore durante l'eliminazione della politica."
-      ],
-      "Error updating policy.": [
-        "Errore durante l'aggiornamento della politica."
+      "Error publishing changes.": [
+        "Errore nella pubblicazione delle modifiche."
       ],
       "Failed to process the logo": [
         "Impossibile elaborare il logo"
@@ -3182,6 +3351,9 @@
       "Continue": [
         "Continua"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Tutto in ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "Server VPN più veloci"
       ],
@@ -3196,6 +3368,31 @@
       ],
       "Torrenting support (P2P)": [
         "Supporto torrenting (P2P)"
+      ]
+    },
+    "Features": {
+      "and more premium features...": [
+        "e altre funzioni premium..."
+      ],
+      "Double VPN": [
+        "Doppia VPN"
+      ],
+      "Lightning-fast speeds": [
+        "Velocità fulminee"
+      ],
+      "NetShield Ad-blocker": [
+        "NetShield Ad-blocker"
+      ],
+      "Secure streaming": [
+        "Streaming sicuro"
+      ],
+      "Select from ${ vpnServers.paid.countries } countries": [
+        "Scegli tra ${ vpnServers.paid.countries } paesi"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
       ]
     },
     "fido2: Action": {
@@ -3553,8 +3750,26 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "Confronta i piani"
+      ],
       "Contact us": [
         "Contattaci"
+      ],
+      "Enjoying ${ planName }?": [
+        "Ti piace ${ planName }?"
+      ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "Sblocca altri 4 servizi premium per la privacy a soli **${ priceString }** in più ogni mese"
+      ],
+      "Upgrade your privacy": [
+        "Migliora la tua privacy"
+      ],
+      "You currently pay": [
+        "Attualmente paghi"
+      ],
+      "Your plan": [
+        "Il tuo piano"
       ]
     },
     "Hint": {
@@ -3654,6 +3869,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } days.": [
+        "${ planName } scade tra ${ daysLeft } giorni."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } scade oggi."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegge il tuo account con uno scrupoloso monitoraggio delle attività sospette."
@@ -3969,6 +4190,9 @@
       "Create your first Gateway": [
         "Crea il tuo primo Gateway"
       ],
+      "Created (not published)": [
+        "Creato (non pubblicato)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Creazione di server gateway: ${ serverNumber }/${ total }",
         "Creazione di server gateway: ${ serverNumber }/${ total }"
@@ -4012,9 +4236,15 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Cancelli ogni altro record MX oppure si assicuri che la priorità di ${ MAIL_APP_NAME } sia il numero minimo."
       ],
+      "Deleted (not published)": [
+        "Eliminato (non pubblicato)"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Eliminazione di ${ deletedServerCount } server gateway",
         "Eliminazione di ${ deletedServerCount } server gateway"
+      ],
+      "Did you know?": [
+        "Lo sapevi?"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Disabilitato il ${ formattedDateAndTime }"
@@ -4056,6 +4286,12 @@
         "dominio utilizzato",
         "domini utilizzati"
       ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "Non perdere l'accesso alle funzionalità premium di ${ appName }. Abilita il rinnovo automatico oggi stesso."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "Non perdere l'accesso alle tue funzionalità premium. Abilita oggi il rinnovo automatico."
+      ],
       "Done! We sent a code to ${ destination }.": [
         "Fatto! Abbiamo inviato un codice a ${ destination }."
       ],
@@ -4092,6 +4328,9 @@
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
+      "Edited (not published)": [
+        "Modificato (non pubblicato)"
+      ],
       "eduGAIN configuration saved": [
         "configurazione eduGAIN salvata"
       ],
@@ -4107,6 +4346,12 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Le email spostate in Cestino e Spam verranno cancellate automaticamente dopo 30 giorni."
       ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Abilita il rinnovo automatico per mantenere l'accesso ai server e alle funzionalità Plus."
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Abilita il rinnovo automatico per mantenere l'accesso alle tue funzionalità premium."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Abilita il Single Sign-On per mantenere la tua organizzazione al sicuro"
       ],
@@ -4115,6 +4360,9 @@
       ],
       "Enabling auto-deletion…": [
         "Attivazione dell'eliminazione automatica…"
+      ],
+      "End date": [
+        "Data di fine"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "La crittografia email end-to-end è disabilitata per questo gruppo a causa di indirizzi esterni."
@@ -4494,6 +4742,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "I nuovi dati della connessione VPN non verranno più raccolti e visualizzati."
       ],
+      "Next billing date": [
+        "Prossima data di fatturazione"
+      ],
       "No addresses exist": [
         "Nessun indirizzo esistente"
       ],
@@ -4585,6 +4836,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Premio della rivista PC Magazine Editors Choice con una valutazione di 5 stelle su 5"
+      ],
+      "Pending removal": [
+        "In attesa di rimozione"
       ],
       "per month": [
         "al mese"
@@ -4818,6 +5072,9 @@
       "Step ${ step }": [
         "Passaggio ${ step }",
         "Passaggio ${ step }"
+      ],
+      "Storage": [
+        "Archiviazione"
       ],
       "Storage allocated to other users in this organisation": [
         "Spazio di archiviazione allocato ad altri utenti in questa organizzazione"
@@ -5055,6 +5312,9 @@
       ],
       "Unable to check gateways monitoring current status.": [
         "Impossibile controllare i gateway che monitorano lo stato attuale."
+      ],
+      "Unchanged": [
+        "Non modificato"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Purtroppo non c'è nessun metodo di recupero salvato per questo account."
@@ -5297,6 +5557,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Puoi modificarlo una volta per garantire l'indirizzo email corretto per la verifica."
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Puoi ottenere tutti i nostri servizi premium per la privacy in un unico pacchetto, al costo di soli **${ priceString }/mese**."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }."
@@ -5345,6 +5608,9 @@
       ],
       "You have no transactions.": [
         "Non hai transazioni."
+      ],
+      "You have unpublished changes": [
+        "Hai modifiche non pubblicate"
       ],
       "You may be redirected to your bank’s website.": [
         "Potresti essere reindirizzato al sito web della tua banca."
@@ -5620,6 +5886,9 @@
       ],
       "Addresses": [
         "Indirizzi"
+      ],
+      "Advanced": [
+        "Avanzato"
       ],
       "Allow": [
         "Consenti"
@@ -6412,8 +6681,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Aggiungi l'assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Componente aggiuntivo con prova gratuita"
       ],
       "for ${ price }": [
         "per ${ price }"
@@ -6726,6 +7001,9 @@
       "${ size } storage": [
         "${ size } di archiviazione"
       ],
+      "${ size } storage per user": [
+        "${ size } di spazio di archiviazione per utente"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Per ${ DRIVE_APP_NAME }"
       ],
@@ -6931,6 +7209,9 @@
       "Limited support": [
         "Assistenza limitata"
       ],
+      "Manage user permissions and access": [
+        "Gestione di autorizzazioni e accesso degli utenti"
+      ],
       "Multiple admin roles": [
         "Ruoli di amministratore multipli"
       ],
@@ -6951,6 +7232,9 @@
       ],
       "Password manager": [
         "Gestore password"
+      ],
+      "Password manager to secure credentials": [
+        "Gestore password per la protezione delle credenziali"
       ],
       "Password-protected Emails": [
         "Email protette da password"
@@ -7027,9 +7311,6 @@
       ],
       "SMTP submission": [
         "Inoltro tramite SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Inoltro tramite SMTP per organizzazioni selezionate"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android e Windows)"
@@ -8048,6 +8329,9 @@
       "Admin panel to manage users and subscription": [
         "Pannello di amministrazione per gestire utenti e abbonamenti"
       ],
+      "Advanced account protection": [
+        "Protezione avanzata dell'account"
+      ],
       "Team policies": [
         "Politiche del Team"
       ]
@@ -8445,9 +8729,36 @@
         "Membri"
       ]
     },
+    "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "Archiviazione cloud crittografata per foto e file"
+      ],
+      "Password manager with identity protection": [
+        "Gestore password con protezione dell'identità"
+      ],
+      "Secure email that protects your privacy": [
+        "Un'email sicura che protegge la tua privacy"
+      ],
+      "Your gateway to online freedom": [
+        "La tua porta di accesso alla libertà online"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "contatto"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mese",
+        "${ cycle } mesi"
+      ],
+      "${ months } month plan": [
+        "piano di ${ months } mese",
+        "piano di ${ months } mesi"
+      ],
+      "Enjoying ${ planName }?": [
+        "Ti piace ${ planName }?"
       ]
     },
     "Price": {
@@ -9681,6 +9992,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN ad alta velocità su ${ maxVpn } dispositivo",
         "VPN ad alta velocità su ${ maxVpn } dispositivi"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Connessione VPN per ${ n } dispositivi per ogni utente",
+        "Connessione VPN per ${ n } dispositivi per ogni utente"
       ]
     },
     "Subscription change warning": {
@@ -9719,47 +10034,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB di spazio di archiviazione"
-      ],
-      "and 15 more premium features": [
-        "e altre 15 funzionalità premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Inoltro automatico delle email ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Avvisi sulle violazioni di dati ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Applicazione desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
-      ],
-      "No ads or tracking": [
-        "Nessun annuncio o tracciamento"
-      ],
-      "Short @pm.me email address": [
-        "Indirizzo email breve @pm.me"
-      ],
-      "Support our mission": [
-        "Sostieni la nostra missione"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Migliora la tua produttività"
-      ],
-      "We don't sell your data": [
-        "Non vendiamo i tuoi dati"
-      ],
-      "Your privacy is our mission": [
-        "La tua privacy è la nostra missione"
       ]
     },
     "Subscription reminder": {
@@ -10052,6 +10326,47 @@
         "Il tuo alias email breve @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
+      ],
+      "and 15 more premium features": [
+        "e altre 15 funzionalità premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Inoltro automatico delle email ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Avvisi sulle violazioni di dati ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Applicazione desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aiutaci a mantenere Internet sicuro e privato per tutti. Passa a un piano a pagamento."
+      ],
+      "No ads or tracking": [
+        "Nessun annuncio o tracciamento"
+      ],
+      "Short @pm.me email address": [
+        "Indirizzo email breve @pm.me"
+      ],
+      "Support our mission": [
+        "Sostieni la nostra missione"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Migliora la tua produttività"
+      ],
+      "We don't sell your data": [
+        "Non vendiamo i tuoi dati"
+      ],
+      "Your privacy is our mission": [
+        "La tua privacy è la nostra missione"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Sei sicuro?"
@@ -10114,6 +10429,9 @@
       ],
       "Catch-all address updated": [
         "Indirizzo catch-all aggiornato"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Modifiche pubblicate. Le tue modifiche saranno visibili a tutti gli utenti nelle prossime ore."
       ],
       "Code sent to ${ methodTo }": [
         "Codice inviato a ${ methodTo }"
@@ -10195,15 +10513,6 @@
       ],
       "Phone number updated": [
         "Numero di telefono aggiornato"
-      ],
-      "Policy created successfully!": [
-        "Politica creata con successo!"
-      ],
-      "Policy deleted": [
-        "Politica eliminata"
-      ],
-      "Policy updated successfully!": [
-        "Politica aggiornata con successo!"
       ],
       "Preference saved": [
         "Preferenza salvata"
@@ -10508,6 +10817,9 @@
       "Allocate storage": [
         "Alloca spazio"
       ],
+      "Also in your plan": [
+        "Anche nel tuo piano"
+      ],
       "Amount": [
         "Importo"
       ],
@@ -10601,6 +10913,9 @@
       "Connect organization": [
         "Connetti l'organizzazione"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "Connettiti a ${ VPN_CONNECTIONS } dispositivi contemporaneamente con ${ vpnPlus }. ${ upgradeButton }"
+      ],
       "Contact us": [
         "Contattaci"
       ],
@@ -10658,6 +10973,9 @@
       ],
       "Day theme": [
         "Tema giorno"
+      ],
+      "Deep dive into VPN blog posts": [
+        "Approfondimento sui post del blog VPN"
       ],
       "Delete": [
         "Elimina"
@@ -10820,6 +11138,15 @@
       "Get ${ vpnPlus } to access all servers": [
         "Ottieni ${ vpnPlus } per accedere a tutti i server"
       ],
+      "Get complete privacy coverage": [
+        "Ottieni una copertura completa della privacy"
+      ],
+      "Get more from your VPN": [
+        "Ottieni di più dalla tua VPN"
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "Scarica l'app su tutti i tuoi dispositivi e proteggi fino a ${ VPN_CONNECTIONS } in una volta."
+      ],
       "Gift": [
         "Regalo"
       ],
@@ -10831,6 +11158,9 @@
       ],
       "Help center": [
         "Centro assistenza"
+      ],
+      "Home": [
+        "Home"
       ],
       "How to choose a good logo": [
         "Come scegliere un buon logo"
@@ -11075,6 +11405,9 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Aggiorna la protezione della tua rete con server dedicati"
+      ],
+      "Upgrade your privacy": [
+        "Migliora la tua privacy"
       ],
       "Upload CSV file to create multiple accounts": [
         "Carica il file CSV per creare più account"
@@ -11462,9 +11795,38 @@
         "Per procedere, dovrai richiedere all'utente il permesso di accedere ai propri dati o reimpostare la password."
       ]
     },
+    "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "**Risparmia fino a ${ priceString }** con un abbonamento più lungo. Stesse funzionalità premium, prezzo più basso."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Tutti i servizi premium di ${ BRAND_NAME }, un semplice abbonamento."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Tutti i servizi premium ${ BRAND_NAME }. A partire da soli ${ fallBackString } al mese"
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "Tutti i servizi premium ${ BRAND_NAME }. Solo **${ priceString }** in più ogni mese."
+      ],
+      "Did you know?": [
+        "Lo sapevi?"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "Puoi proteggere fino a ${ FAMILY_MAX_USERS } persone con ${ PLAN_NAMES[plan] }. A partire da soli ${ priceString }/mese per account."
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "Puoi proteggere fino a ${ FAMILY_MAX_USERS } persone con ${ PLAN_NAMES[PLANS.DUO] } o ${ PLAN_NAMES[PLANS.FAMILY] }. A partire da soli ${ priceString }/mese per account."
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "Miglior offerta"
+      ],
       "Recommended": [
         "Consigliato"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Risparmia ${ totals.discountPercentage }%"
       ]
     },
     "User role": {
@@ -11722,12 +12084,36 @@
         "Altro"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Comunica e pianifica con la crittografia end-to-end."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Ottieni di più dal tuo abbonamento ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Proteggi i tuoi file, foto e documenti con lo spazio di archiviazione cloud gratuito ${ maxDriveSpace }."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Imposta password sicure senza problemi."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Con ${ planTitlePlusMaybeBrand }, ottieni l'accesso gratuito a ${ VPN_APP_NAME } e ad altri servizi per la privacy."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Con ${ planTitlePlusMaybeBrand }, hai accesso gratuito a tutti i servizi sulla privacy di ${ BRAND_NAME }."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, Disney+, Mediaset Infinity, RaiPlay, NOW e altri."
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispositivo",
+        "${ n } dispositivi"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ server"
@@ -11736,6 +12122,10 @@
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } paese",
+        "${ numberOfCountries } paesi"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",
         "${ numberOfServers } in oltre ${ numberOfCountries } paesi"
@@ -11743,6 +12133,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",
         "${ numberOfServers } in ${ numberOfCountries } paesi"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Seleziona automaticamente da ${ numberOfCountries } paese",
+        "Seleziona automaticamente da ${ numberOfCountries } paesi"
       ]
     },
     "vpn_2024: renew": {
