@@ -1,5 +1,6 @@
-import { type ReactElement, useEffect } from 'react';
+import { type ReactElement, useEffect, useState } from 'react';
 
+import { isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -23,7 +24,6 @@ import {
     type Currency,
     type FreeSubscription,
     PLANS,
-    PLAN_TYPES,
     type PaymentMethodStatusExtended,
     type PlanIDs,
     isFreeSubscription as getIsFreeSubscription,
@@ -37,12 +37,15 @@ import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getCanSubscriptionAccessDuoPlan,
     getIpPricePerMonth,
+    getIsB2BAudienceFromPlan,
     getMaximumCycleForApp,
+    getPlan,
     getPricePerCycle,
     hasMaximumCycle,
     hasPass,
     hasPassFamily,
     hasSomeAddonOrPlan,
+    isLifetimePlan,
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
@@ -59,7 +62,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { isFree } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -117,6 +120,10 @@ interface Props {
 }
 
 export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number | null => {
+    if (isLifetimePlan(plan.Name)) {
+        return getPricePerCycle(plan, CYCLE.YEARLY) ?? getPricePerCycle(plan, CYCLE.MONTHLY) ?? null;
+    }
+
     const price = getPricePerCycle(plan, cycle);
     if (price === undefined) {
         return null;
@@ -205,6 +212,7 @@ export type AccessiblePlansHookProps = {
     | 'paymentsStatus'
     | 'plans'
     | 'currency'
+    | 'audience'
 >;
 
 export function useAccessiblePlans({
@@ -218,7 +226,10 @@ export function useAccessiblePlans({
     user,
     plans,
     currency,
+    audience,
 }: AccessiblePlansHookProps) {
+    const passLifetimeFeatureFlag = useFlag('PassLifetimeFrontend');
+
     const plansMap = getPlansMap(plans, currency, false);
 
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
@@ -236,7 +247,7 @@ export function useAccessiblePlans({
 
     const alreadyHasMaxCycle = hasMaximumCycle(subscription);
 
-    const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
+    const currentPlan = getPlan(subscription);
 
     function filterPlans(plans: (Plan | null | undefined)[]): Plan[];
     function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[];
@@ -322,7 +333,22 @@ export function useAccessiblePlans({
         B2BPlans = filterPlans([plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]);
     }
 
-    const accessiblePlans = [...IndividualPlans, ...FamilyPlans, ...B2BPlans, ...enabledProductB2CPlans]
+    const isPassLifetimeEligible =
+        passLifetimeFeatureFlag &&
+        isPassSettingsApp &&
+        !user.hasPassLifetime &&
+        audience === Audience.B2C &&
+        !!plansMap[PLANS.PASS_LIFETIME] &&
+        currentPlan?.Name !== PLANS.PASS_FAMILY &&
+        !getIsB2BAudienceFromPlan(currentPlan?.Name);
+
+    const accessiblePlans = [
+        ...IndividualPlans,
+        ...FamilyPlans,
+        ...B2BPlans,
+        ...enabledProductB2CPlans,
+        ...(isPassLifetimeEligible ? [plansMap[PLANS.PASS_LIFETIME]] : []),
+    ]
         .filter(isTruthy)
         .filter((it): it is Plan => !isShortPlanLike(it));
 
@@ -349,6 +375,7 @@ export function useAccessiblePlans({
         isVpnSettingsApp,
         isVpnB2bPlans,
         availableCurrencies,
+        isPassLifetimeEligible,
     };
 
     return result;
@@ -410,18 +437,22 @@ const PlanSelection = (props: Props) => {
         isVpnSettingsApp,
         isVpnB2bPlans,
         availableCurrencies,
+        isPassLifetimeEligible,
     } = useAccessiblePlans({
         ...props,
         user,
     });
 
     const isFreeSubscription = getIsFreeSubscription(subscription);
-    const renderCycleSelector = isFreeSubscription;
+    // experimentally re-enable the cycle selector in Pass App even for paid users. Previously it was problematic due to
+    // the chargebee migration and inability to do subscription/check for the same plan+cycle as user currently has.
+    // After some changes the subscription/check is no longer triggered at the stage of plan selection, but I want to be
+    // extra carefull and keep it limited to the pass app only for now. If that's ok then renderCycleSelector can be set
+    // to always true.
+    const renderCycleSelector = isFreeSubscription || props.app === APPS.PROTONPASS;
 
     const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
     const { sendStartCancellationPricingReport } = useCancellationTelemetry();
-
-    const canAccessDistributionListFeature = useFlag('UserGroupsPermissionCheck');
 
     const maximumCycle: Cycle | undefined = getMaximumCycle(maybeMaximumCycle, audience, app, currency);
 
@@ -433,12 +464,21 @@ const PlanSelection = (props: Props) => {
         options: cycleSelectorOptions,
     });
 
+    const [lifetimeSelected, setLifetimeSelected] = useState(false);
+    useEffect(
+        function unselectLifetimeTab() {
+            if (audience !== Audience.B2C || user.hasPassLifetime) {
+                setLifetimeSelected(false);
+            }
+        },
+        [audience, user.hasPassLifetime]
+    );
+
     const isSignupMode = mode === 'signup';
     const features = getAllFeatures({
         plansMap,
         serversCount: vpnServers,
         freePlan,
-        canAccessDistributionListFeature,
     });
 
     const b2cRecommendedPlans = [
@@ -521,7 +561,7 @@ const PlanSelection = (props: Props) => {
             mode === 'settings' || mode === 'upsell-modal' || (audience === Audience.B2B && isVpnSettingsApp) ? (
                 <PlanCardFeaturesShort plan={shortPlan} icon />
             ) : (
-                <PlanCardFeatures audience={audience} features={features} planName={shortPlan.plan} />
+                <PlanCardFeatures audience={audience} features={features} planName={shortPlan.plan} app={app} />
             );
 
         return (
@@ -610,20 +650,34 @@ const PlanSelection = (props: Props) => {
         );
     };
 
+    const passLifetimePlan = plansMap[PLANS.PASS_LIFETIME];
+
     const tabs: Tab[] = [
         IndividualPlans.length > 0 && {
             title: c('Tab subscription modal').t`For individuals`,
             content: (
-                <div
-                    className={clsx(
-                        'plan-selection plan-selection--b2c mt-4',
-                        IndividualPlans.length === 1 && 'plan-selection--one-plan'
+                <>
+                    {lifetimeSelected && passLifetimePlan ? (
+                        <div
+                            className="plan-selection plan-selection--b2c mt-4 plan-selection--one-plan-narrow"
+                            style={{ '--plan-selection-number': 3 }}
+                            data-testid="lifetime-plan-cycle"
+                        >
+                            {renderPlanCard(passLifetimePlan, Audience.B2C, [])}
+                        </div>
+                    ) : (
+                        <div
+                            className={clsx(
+                                'plan-selection plan-selection--b2c mt-4',
+                                IndividualPlans.length === 1 && 'plan-selection--one-plan'
+                            )}
+                            style={{ '--plan-selection-number': IndividualPlans.length }}
+                            data-testid="b2c-plan"
+                        >
+                            {IndividualPlans.map((plan) => renderPlanCard(plan, Audience.B2C, b2cRecommendedPlans))}
+                        </div>
                     )}
-                    style={{ '--plan-selection-number': IndividualPlans.length }}
-                    data-testid="b2c-plan"
-                >
-                    {IndividualPlans.map((plan) => renderPlanCard(plan, Audience.B2C, b2cRecommendedPlans))}
-                </div>
+                </>
             ),
             audience: Audience.B2C,
         },
@@ -693,6 +747,7 @@ const PlanSelection = (props: Props) => {
             </div>
         </div>
     );
+
     const currencySelectorRow = (
         <div className="flex justify-space-between flex-column md:flex-row">
             <div className="hidden lg:inline-block visibility-hidden">{currencyItem}</div>
@@ -701,11 +756,47 @@ const PlanSelection = (props: Props) => {
                     <CycleSelector
                         mode="buttons"
                         cycle={restrictedCycle}
-                        onSelect={onChangeCycle}
+                        lifetimeSelected={lifetimeSelected}
+                        onSelect={(cycle) => {
+                            if (cycle === 'lifetime') {
+                                setLifetimeSelected(true);
+                                return;
+                            }
+
+                            setLifetimeSelected(false);
+                            onChangeCycle(cycle);
+                        }}
                         disabled={loading}
                         minimumCycle={maybeMinimumCycle}
                         maximumCycle={maximumCycle}
                         options={cycleSelectorOptions}
+                        additionalOptions={
+                            isPassLifetimeEligible
+                                ? [
+                                      {
+                                          text: c('Billing cycle option').t`Lifetime`,
+                                          value: 'lifetime',
+                                          element: (() => {
+                                              // months are 0-indexed, because why not
+                                              const april15th = new Date(2025, 3, 15);
+                                              // sure thing, feel free to remove this logic after the 15th of April
+                                              const showNew = isBefore(new Date(), april15th);
+
+                                              return (
+                                                  <>
+                                                      {c('Billing cycle option').t`Lifetime`}
+                                                      {showNew && (
+                                                          <span className="badge-label-success ml-2 text-semibold">{c(
+                                                              'Billing cycle option'
+                                                          ).t`New!`}</span>
+                                                      )}
+                                                  </>
+                                              );
+                                          })(),
+                                      },
+                                  ]
+                                : undefined
+                        }
                     />
                 )}
             </div>

@@ -10,8 +10,8 @@ import {
     getPlanByName,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { Audience, type Plan } from '@proton/shared/lib/interfaces';
-import { buildUser } from '@proton/testing/builders';
+import { Audience, type Plan, type Subscription } from '@proton/shared/lib/interfaces';
+import { buildSubscription, buildUser } from '@proton/testing/builders';
 import { PLANS_MAP, getLongTestPlans, getTestPlans } from '@proton/testing/data';
 import { useFlag } from '@proton/unleash';
 
@@ -64,6 +64,12 @@ const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
 describe('useAccessiblePlans', () => {
     beforeEach(() => {
         jest.clearAllMocks();
+
+        mockUseFlag.mockImplementation((flag: string) => {
+            if (flag === 'PassLifetimeFrontend') {
+                return true;
+            }
+        });
     });
 
     it('should return the plans accessible to free users in mail app', () => {
@@ -95,6 +101,7 @@ describe('useAccessiblePlans', () => {
                 VendorStates: {} as any,
             },
             user: buildUser({ Currency: 'CHF' }),
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -161,6 +168,7 @@ describe('useAccessiblePlans', () => {
                 VendorStates: {} as any,
             },
             user: buildUser({ Currency: 'CHF' }),
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -226,6 +234,7 @@ describe('useAccessiblePlans', () => {
                 VendorStates: {} as any,
             },
             user: buildUser({ Currency: 'CHF' }),
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -275,6 +284,7 @@ describe('useAccessiblePlans', () => {
                 VendorStates: {} as any,
             },
             user: buildUser({ Currency: 'CHF' }),
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -340,6 +350,7 @@ describe('useAccessiblePlans', () => {
                 VendorStates: {} as any,
             },
             user: buildUser({ Currency: 'CHF' }),
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -411,6 +422,7 @@ describe('useAccessiblePlans', () => {
             user: buildUser({
                 Currency: 'BRL',
             }),
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -479,6 +491,7 @@ describe('useAccessiblePlans', () => {
             user: buildUser({
                 Currency: 'USD',
             }),
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -547,6 +560,7 @@ describe('useAccessiblePlans', () => {
             user: buildUser({
                 Currency: 'USD',
             }),
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -609,6 +623,7 @@ describe('useAccessiblePlans', () => {
             user: buildUser({
                 Currency: 'USD',
             }),
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -674,6 +689,7 @@ describe('useAccessiblePlans', () => {
                 VendorStates: {} as any,
             },
             user,
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -716,12 +732,110 @@ describe('useAccessiblePlans', () => {
                 VendorStates: {} as any,
             },
             user,
+            audience: Audience.B2C,
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
 
         const b2bPlans = result.current.B2BPlans;
         expect(b2bPlans).toHaveLength(0);
+    });
+
+    describe('isPassLifetimeEligible', () => {
+        const defaultProps: AccessiblePlansHookProps = {
+            selectedProductPlans: {
+                b2c: PLANS.MAIL,
+                b2b: PLANS.MAIL_PRO,
+                family: PLANS.FAMILY,
+            },
+            subscription: FREE_SUBSCRIPTION,
+            plans: getTestPlans('USD'),
+            currency: 'USD',
+            planIDs: {},
+            app: APPS.PROTONPASS,
+            vpnServers: {
+                free: {
+                    servers: 9,
+                    countries: 4,
+                },
+                paid: {
+                    servers: 400,
+                    countries: 50,
+                },
+            },
+            paymentsStatus: {
+                CountryCode: 'CH',
+                VendorStates: {} as any,
+            },
+            user: buildUser(),
+            audience: Audience.B2C,
+        };
+
+        it('should be true when all conditions are met', () => {
+            const { result } = renderHook(() => useAccessiblePlans(defaultProps));
+            expect(result.current.isPassLifetimeEligible).toBe(true);
+        });
+
+        it('should be false when not in Pass Settings app', () => {
+            const props = {
+                ...defaultProps,
+                app: APPS.PROTONMAIL,
+            };
+            const { result } = renderHook(() => useAccessiblePlans(props));
+            expect(result.current.isPassLifetimeEligible).toBe(false);
+        });
+
+        it('should be false when user has Pass Lifetime', () => {
+            const props = {
+                ...defaultProps,
+                user: buildUser({ hasPassLifetime: true }),
+            };
+            const { result } = renderHook(() => useAccessiblePlans(props));
+            expect(result.current.isPassLifetimeEligible).toBe(false);
+        });
+
+        it('should be false when not in B2C audience', () => {
+            const props = {
+                ...defaultProps,
+                audience: Audience.B2B,
+            };
+            const { result } = renderHook(() => useAccessiblePlans(props));
+            expect(result.current.isPassLifetimeEligible).toBe(false);
+        });
+
+        it('should be false when Pass Lifetime plan is not available', () => {
+            const plansWithoutLifetime = getTestPlans('USD').filter((plan) => plan.Name !== PLANS.PASS_LIFETIME);
+            const props = {
+                ...defaultProps,
+                plans: plansWithoutLifetime,
+            };
+            const { result } = renderHook(() => useAccessiblePlans(props));
+            expect(result.current.isPassLifetimeEligible).toBe(false);
+        });
+
+        it('should be false when current plan is Pass Family', () => {
+            const subscription: Subscription = buildSubscription(undefined, {
+                [PLANS.PASS_FAMILY]: 1,
+            });
+            const props = {
+                ...defaultProps,
+                subscription,
+            };
+            const { result } = renderHook(() => useAccessiblePlans(props));
+            expect(result.current.isPassLifetimeEligible).toBe(false);
+        });
+
+        it('should be false when current plan is a B2B plan', () => {
+            const subscription: Subscription = buildSubscription(undefined, {
+                [PLANS.MAIL_BUSINESS]: 1,
+            });
+            const props = {
+                ...defaultProps,
+                subscription,
+            };
+            const { result } = renderHook(() => useAccessiblePlans(props));
+            expect(result.current.isPassLifetimeEligible).toBe(false);
+        });
     });
 });
 
