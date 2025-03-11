@@ -5,6 +5,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat
 import { GlobalLoader, GlobalLoaderProvider, LoaderPage, ModalsChildren, useDrawerWidth } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useLoading } from '@proton/hooks';
+import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import TransferManager from '../components/TransferManager/TransferManager';
@@ -180,8 +181,8 @@ const InitContainer = () => {
             )}
             {searchEnabled && <Route path="search/*" element={<SearchContainer />} />}
             <Route path=":volumeId/:linkId/*" element={<VolumeLinkContainer />} />
-            <Route path=":shareId/file/:linkId/*" element={<FolderContainerWrapper />} />
-            <Route path=":shareId/folder/:linkId/*" element={<FolderContainerWrapper />} />
+            <Route path=":shareId/file/:linkId/*" element={<FolderContainerWrapper type={LinkURLType.FILE} />} />
+            <Route path=":shareId/folder/:linkId/*" element={<FolderContainerWrapper type={LinkURLType.FOLDER} />} />
             <Route
                 path="*"
                 element={
