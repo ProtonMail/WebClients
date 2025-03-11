@@ -125,9 +125,13 @@ export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<
         return tags;
     }
 
-    // Tested: MacOS screenshots and IOS screenshots
-    // Untested: Windows screenshots, Linux screenshots, Android screenshots
-    if (exifInfo.xmp.UserComment && exifInfo.xmp.UserComment.value === 'Screenshot') {
+    // Tested:
+    // MacOS screenshots and IOS screenshots is inside XMP metadata
+    // Android, Linux and Windows it's just within the file name, no metadata available to detect screenshot
+    if (
+        (exifInfo.xmp.UserComment && exifInfo.xmp.UserComment.value === 'Screenshot') ||
+        file.name.toLowerCase().includes('screenshot')
+    ) {
         tags.push(PhotoTag.Screenshots);
     }
 
@@ -157,6 +161,8 @@ export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<
     ) {
         tags.push(PhotoTag.Portraits);
     }
+
+    // TODO: Selfie tag
 
     const extension = file.name.split('.').pop();
     if (isRAWPhoto(file.type) || isRAWExtension(extension)) {
