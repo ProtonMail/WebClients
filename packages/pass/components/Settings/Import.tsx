@@ -20,7 +20,7 @@ import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
 import { itemsImportRequest } from '@proton/pass/store/actions/requests';
-import { selectHasWritableVault } from '@proton/pass/store/selectors';
+import { selectCanCreateItems, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -66,13 +66,15 @@ export const Import: FC = () => {
         },
     });
 
-    const canImport = useSelector(selectHasWritableVault);
+    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
+    const disabled = !useSelector(selectCanCreateItems);
+    const orgDisabled = vaultCreationDisabled && disabled;
 
     const showResultDetails = (result?.ignored.length ?? 0) > 0 || (result?.warnings?.length ?? 0) > 0;
     const totalImportedItems = result?.total ?? 0;
     const totalItems = totalImportedItems + (result?.ignored.length ?? 0);
 
-    if (!canImport) return <ContactAdminWarning />;
+    if (orgDisabled) return <ContactAdminWarning />;
 
     return (
         <>

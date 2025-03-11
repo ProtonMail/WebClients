@@ -17,7 +17,12 @@ import { usePasswordGeneratorAction } from '@proton/pass/components/Password/Pas
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
-import { selectAliasLimits, selectHasWritableVault, selectPassPlan } from '@proton/pass/store/selectors';
+import {
+    selectAliasLimits,
+    selectCanCreateItems,
+    selectOrganizationVaultCreationDisabled,
+    selectPassPlan,
+} from '@proton/pass/store/selectors';
 import type { ItemType, MaybeNull } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -76,19 +81,21 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
         []
     );
 
-    const createDisabled = !useSelector(selectHasWritableVault);
+    const disabled = !useSelector(selectCanCreateItems);
+    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
+    const orgDisabled = disabled && vaultCreationDisabled;
 
     return (
         <>
             <OrganizationPolicyTooltip
-                enforced={createDisabled}
+                enforced={orgDisabled}
                 text={c('Warning').t`Your administrator needs to create a vault for you before you can create items`}
                 placement="bottom"
             >
                 <Button
                     pill
                     color="norm"
-                    disabled={createDisabled}
+                    disabled={disabled}
                     className="flex gap-1.5 text-sm"
                     onClick={toggle}
                     ref={anchorRef}
