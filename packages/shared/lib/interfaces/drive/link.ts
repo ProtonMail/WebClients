@@ -1,5 +1,5 @@
 import type { SORT_DIRECTION } from '../../constants';
-import type { DriveFileRevisionPayload } from './file';
+import type { DriveFileRevisionPayload, PhotoTag } from './file';
 
 export enum LinkType {
     FOLDER = 1,
@@ -44,6 +44,16 @@ interface AlbumProperties {
     Locked: boolean;
 }
 
+interface PhotoProperties {
+    Albums: {
+        AlbumLinkID: string;
+        Hash: string;
+        ContentHash: string;
+        AddedTime: number;
+    }[];
+    Tags: PhotoTag[];
+}
+
 interface DocumentProperties {
     Size: number;
 }
@@ -76,6 +86,7 @@ interface DriveLink {
     FileProperties: FileProperties | null;
     FolderProperties: FolderProperties | null;
     AlbumProperties: AlbumProperties | null;
+    PhotoProperties: PhotoProperties | null;
     DocumentProperties: DocumentProperties | null;
     Shared: number;
     ShareIDs: string[];
@@ -101,6 +112,7 @@ interface FileLinkMeta extends DriveLink {
     Type: LinkType.FILE;
     FileProperties: FileProperties;
     FolderProperties: null;
+    PhotoProperties: PhotoProperties | null;
 }
 
 interface FolderLinkMeta extends DriveLink {

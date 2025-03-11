@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom-v5-compat';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import type { LinkDownload } from '../../store/_downloads';
 import { useDownloadProvider } from '../../store/_downloads';
@@ -64,6 +65,9 @@ export const usePhotosWithAlbumsView = () => {
         removeAlbumPhotos,
         deleteAlbum,
     } = usePhotosWithAlbums();
+
+    const [selectedTags, setSelectedTags] = useState([PhotoTag.All]);
+
     const { addToQueue } = useLinksQueue({ loadThumbnails: true });
     const { download } = useDownloadProvider();
     const [isAlbumsLoading, setIsAlbumsLoading] = useState<boolean>(true);
@@ -160,7 +164,7 @@ export const usePhotosWithAlbumsView = () => {
             photoLinkIdToIndexMap,
             photoLinkIds,
         };
-    }, [photos, cachedLinks, linkId, shareId]);
+    }, [photos, cachedLinks, linkId, shareId, selectedTags]);
 
     const { albumPhotosViewData, albumPhotosLinkIdToIndexMap, albumPhotosLinkIds } = useMemo(() => {
         if (!shareId || !linkId) {
@@ -413,6 +417,17 @@ export const usePhotosWithAlbumsView = () => {
         [addPhotoAsCover, albumLinkId]
     );
 
+    const handleSelectTag = useCallback(
+        async (abortSignal: AbortSignal, tags: PhotoTag[]) => {
+            setSelectedTags(tags);
+            if (!isPhotosLoading || tags.includes(PhotoTag.All)) {
+                return;
+            }
+            void loadPhotos(abortSignal, tags);
+        },
+        [isPhotosLoading, loadPhotos]
+    );
+
     return {
         volumeId,
         shareId,
@@ -440,5 +455,7 @@ export const usePhotosWithAlbumsView = () => {
         setPhotoAsCover,
         removeAlbumPhotos,
         deleteAlbum,
+        selectedTags,
+        handleSelectTag,
     };
 };

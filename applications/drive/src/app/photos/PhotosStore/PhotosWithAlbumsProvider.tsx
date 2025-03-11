@@ -12,6 +12,7 @@ import {
     querySharedWithMeAlbums,
     queryUpdateAlbumCover,
 } from '@proton/shared/lib/api/drive/photos';
+import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
@@ -51,7 +52,7 @@ export const PhotosWithAlbumsContext = createContext<{
     photos: Photo[];
     albumPhotos: AlbumPhoto[];
     albums: Map<string, DecryptedAlbum>;
-    loadPhotos: (abortSignal: AbortSignal) => Promise<void>;
+    loadPhotos: (abortSignal: AbortSignal, tags?: PhotoTag[]) => Promise<void>;
     addAlbumPhotos: (
         abortSignal: AbortSignal,
         albumShareId: string,
@@ -121,7 +122,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         };
     }, [volumeId, driveEventManager.volumes]);
 
-    const loadPhotos = async (abortSignal: AbortSignal) => {
+    const loadPhotos = async (abortSignal: AbortSignal, tags?: PhotoTag[]) => {
         if (!volumeId || !shareId) {
             return;
         }
@@ -129,6 +130,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             const { Photos, Code } = await request<{ Photos: PhotoPayload[]; Code: number }>(
                 queryPhotos(volumeId, {
                     PreviousPageLastLinkID: lastLinkId,
+                    Tags: tags,
                 }),
                 abortSignal
             );

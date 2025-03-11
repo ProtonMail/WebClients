@@ -1,5 +1,7 @@
 import type { LinkState } from '@proton/shared/lib/interfaces/drive/link';
 
+import type { PhotoTag } from './file';
+
 export interface Photo {
     LinkID: string;
     CaptureTime: number;
@@ -8,6 +10,7 @@ export interface Photo {
     Hash: string | null;
     ContentHash: string | null;
     RelatedPhotosLinkIDs?: string[] | null;
+    Tags: PhotoTag[];
 }
 
 export interface DuplicatePhotosHash {
