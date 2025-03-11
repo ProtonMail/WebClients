@@ -12,6 +12,8 @@ import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import { PLANS } from '@proton/payments';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -109,7 +111,8 @@ export const PlanCardFeatureList = ({
                             </span>
                             <span className="flex-1 text-left text-wrap-balance">
                                 <span className="align-middle">
-                                    <span>{feature.text}
+                                    <span>
+                                        {feature.text}
                                         {tooltip && feature.tooltip ? (
                                             <Info
                                                 url={feature.iconUrl}
@@ -139,9 +142,10 @@ interface Props {
     planName: PLANS;
     features: AllFeatures;
     audience: Audience;
+    app: ProductParam;
 }
 
-const PlanCardFeatures = ({ planName, features, audience }: Props) => {
+const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
     const highlightFeatures = (
         <div data-testid={planName}>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.highlight, audience)} />
@@ -208,6 +212,71 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.support, audience)} />
         </div>
     );
+
+    if (app === APPS.PROTONPASS) {
+        return (
+            <>
+                {highlightFeatures}
+                {passFeatures}
+                {mailFeatures}
+                {calendarFeatures}
+                {driveFeatures}
+                {vpnFeatures}
+                {walletFeatures}
+                {teamFeatures}
+                {supportFeatures}
+            </>
+        );
+    }
+
+    if (app === APPS.PROTONVPN_SETTINGS) {
+        return (
+            <>
+                {highlightFeatures}
+                {vpnFeatures}
+                {mailFeatures}
+                {calendarFeatures}
+                {driveFeatures}
+                {passFeatures}
+                {walletFeatures}
+                {teamFeatures}
+                {supportFeatures}
+            </>
+        );
+    }
+
+    if (app === APPS.PROTONDRIVE) {
+        return (
+            <>
+                {highlightFeatures}
+                {driveFeatures}
+                {mailFeatures}
+                {calendarFeatures}
+                {vpnFeatures}
+                {passFeatures}
+                {walletFeatures}
+                {teamFeatures}
+                {supportFeatures}
+            </>
+        );
+    }
+
+    if (app === APPS.PROTONWALLET) {
+        return (
+            <>
+                {highlightFeatures}
+                {walletFeatures}
+                {mailFeatures}
+                {calendarFeatures}
+                {driveFeatures}
+                {vpnFeatures}
+                {passFeatures}
+                {teamFeatures}
+                {supportFeatures}
+            </>
+        );
+    }
+
     return (
         <>
             {highlightFeatures}

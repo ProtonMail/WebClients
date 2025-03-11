@@ -68,6 +68,7 @@ enum PaymentsFlag {
     ScheduledDowncycling = 'ScheduledDowncycling',
     BillingAddressModal = 'BillingAddressModal',
     EditInvoiceDetails = 'EditInvoiceDetails',
+    PassLifetimeFrontend = 'PassLifetimeFrontend',
 }
 
 enum CalendarFeatureFlag {

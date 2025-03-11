@@ -6,6 +6,7 @@ import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Icon from '@proton/components/components/icon/Icon';
 import Price from '@proton/components/components/price/Price';
 import { type Currency, PLANS } from '@proton/payments';
+import { isLifetimePlan } from '@proton/shared/lib/helpers/subscription';
 import type { Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -38,6 +39,7 @@ type Props = Base & Partial<ActionElement> & Partial<Action>;
 const getCycleUnit = (planName: PLANS) => {
     switch (planName) {
         case PLANS.FREE:
+        case PLANS.PASS_LIFETIME:
             return '';
         case PLANS.MAIL_PRO:
         case PLANS.MAIL_BUSINESS:
@@ -121,7 +123,7 @@ const PlanCard = ({
                         <>
                             <span className="mr-2">
                                 <Price large currency={currency}>
-                                    {price / cycle}
+                                    {isLifetimePlan(planName) ? price : price / cycle}
                                 </Price>
                             </span>
                             <span className="color-weak plan-selection-suffix text-left">{getCycleUnit(planName)}</span>

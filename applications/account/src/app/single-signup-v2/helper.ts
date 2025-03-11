@@ -64,6 +64,7 @@ import {
     hasPaidMail,
     hasPaidPass,
     hasPaidWallet,
+    hasPassLifetime,
 } from '@proton/shared/lib/user/helpers';
 
 import { getSubscriptionPrices } from '../signup/helper';
@@ -199,6 +200,7 @@ const getUpsell = ({
     options,
     planParameters,
     toApp,
+    user,
 }: {
     audience: Audience;
     currentPlan?: SubscriptionPlan | undefined;
@@ -208,6 +210,7 @@ const getUpsell = ({
     options: Options;
     planParameters: PlanParameters;
     toApp: APP_NAMES;
+    user: User | undefined;
 }): Upsell => {
     const hasMonthlyCycle = subscription?.Cycle === CYCLE.MONTHLY;
 
@@ -255,12 +258,20 @@ const getUpsell = ({
         };
     };
 
+    if (user && hasPassLifetime(user) && isLifetimePlanSelected(options.planIDs ?? {})) {
+        return noUpsell;
+    }
+
     if (currentPlan && planParameters.defined) {
         if (planParameters.plan.Name === PLANS.VISIONARY) {
             return getUpsellData(planParameters.plan.Name);
         }
 
-        if (isLifetimePlanSelected(options.planIDs ?? {}) && !getIsB2BAudienceFromPlan(currentPlan.Name)) {
+        if (
+            isLifetimePlanSelected(options.planIDs ?? {}) &&
+            !getIsB2BAudienceFromPlan(currentPlan.Name) &&
+            ![PLANS.PASS_FAMILY].includes(currentPlan.Name as PLANS)
+        ) {
             return getBlackFridayUpsellData({ plan: getSafePlan(plansMap, PLANS.PASS_LIFETIME) });
         }
 
@@ -477,7 +488,7 @@ export const getUserInfo = async ({
                 admin: false,
                 access: false,
             },
-            upsell: getUpsell({ audience, plansMap, upsellPlanCard, options, planParameters, toApp }),
+            upsell: getUpsell({ audience, plansMap, upsellPlanCard, options, planParameters, toApp, user }),
         };
     }
 
@@ -527,6 +538,7 @@ export const getUserInfo = async ({
         options,
         planParameters,
         toApp,
+        user,
     });
 
     if (user && hasAccess({ toApp, user, audience, currentPlan })) {
