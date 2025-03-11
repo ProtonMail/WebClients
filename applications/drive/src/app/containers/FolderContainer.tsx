@@ -22,9 +22,9 @@ const hasValidLinkType = (type: string) => {
     return type === LinkURLType.FILE || type === LinkURLType.FOLDER;
 };
 
-export default function FolderContainer() {
+export default function FolderContainer({ type }: { type: LinkURLType }) {
     const params = useParams<DriveSectionRouteProps>();
-    const { shareId, type, linkId } = params;
+    const { shareId, linkId } = params;
     const { navigateToRoot, navigateToNoAccess } = useDriveNavigation();
     const { activeFolder, setFolder } = useActiveShare();
     const volumesState = useVolumesState();
@@ -56,7 +56,7 @@ export default function FolderContainer() {
                 throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
             });
         } else if (!shareId || !hasValidLinkType(type as string) || !linkId) {
-            console.warn('Missing parameters, should be none or shareId/type/linkId');
+            console.warn('Missing parameters, should be none or shareId/type/linkId', { params });
             navigateToRoot();
         } else if (type === LinkURLType.FOLDER) {
             const ac = new AbortController();
@@ -69,7 +69,7 @@ export default function FolderContainer() {
             return { shareId, linkId };
         }
         return lastFolderPromise.current;
-    }, [params.shareId, params.type, params.linkId]);
+    }, [params.linkId, params.shareId, type]);
 
     useEffect(() => {
         folderPromise
@@ -129,12 +129,12 @@ export default function FolderContainer() {
     );
 }
 
-export const FolderContainerWrapper = () => {
+export const FolderContainerWrapper = ({ type }: { type: LinkURLType }) => {
     const { isShareAvailable } = useDefaultShare();
     const [isLoading, withLoading] = useLoading(true);
     const { navigateToRoot } = useDriveNavigation();
     const { handleContextShare } = useContextShareHandler();
-    const { shareId, type, linkId } = useParams<DriveSectionRouteProps>();
+    const { shareId, linkId } = useParams<DriveSectionRouteProps>();
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -164,5 +164,5 @@ export const FolderContainerWrapper = () => {
     if (isLoading) {
         return <Loader size="medium" className="absolute inset-center" />;
     }
-    return <FolderContainer />;
+    return <FolderContainer type={type} />;
 };
