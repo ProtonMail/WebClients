@@ -5,6 +5,7 @@ import loudRejection from 'loud-rejection';
 
 import { serverEvent } from '@proton/account';
 import { getModelState } from '@proton/account/test';
+import { getHumanLabelID } from '@proton/mail/labels/helpers';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
@@ -116,7 +117,14 @@ export const getProps = ({
         urlSearchParams.set('keyword', keywordToString(search.keyword || '') || '');
     }
 
-    return { ...props, labelID, elementID, mailSettings, initialPath: `#${urlSearchParams.toString()}` };
+    const readableLabelID = getHumanLabelID(labelID);
+    return {
+        ...props,
+        labelID,
+        elementID,
+        mailSettings,
+        initialPath: `${labelID ? readableLabelID : ''}#${urlSearchParams.toString()}`,
+    };
 };
 
 export const baseApiMocks = () => {
@@ -161,6 +169,11 @@ export const setup = async ({
                     LabelID: props.labelID,
                     Total: totalConversations,
                     Unread: totalConversations,
+                },
+                {
+                    LabelID: '7',
+                    Total: 0,
+                    Unread: 0,
                 },
             ]),
             ...preloadedState, // TODO merge object instead of overwriting, if needed for new test-cases
