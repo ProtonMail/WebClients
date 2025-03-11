@@ -82,7 +82,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     totalToProcess,
                 }));
 
-                const getAttendeePublicKeys = async (attendeeEmail: string) => {
+                const getAttendeeVerificationPreferences = async (attendeeEmail: string) => {
                     const result = await getVerificationPreferences({
                         email: attendeeEmail,
                         contactEmailsMap,
@@ -102,7 +102,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     weekStartsOn: model.weekStartsOn,
                     calendarSettings,
                     defaultTzid: calendarUserSettings.PrimaryTimezone,
-                    getAttendeePublicKeys,
+                    getAttendeeVerificationPreferences,
                 });
 
                 if (totalToProcess !== totalEventsFetched) {
