@@ -209,7 +209,7 @@ export const useInvitations = () => {
         const linkPrivateKey = await getLinkPrivateKey(abortSignal, rootShareId, linkId);
         const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
         const externalInvitationSignature = await CryptoProxy.signMessage({
-            textData: inviteeEmail.concat('|').concat(uint8ArrayToBase64String(sessionKey.data)),
+            textData: inviteeEmail.concat('|', uint8ArrayToBase64String(sessionKey.data)),
             signingKeys: inviter.addressKey,
             detached: true,
             format: 'binary',
@@ -453,10 +453,11 @@ export const useInvitations = () => {
 
         const linkPrivateKey = await getLinkPrivateKey(abortSignal, contextShareId, linkId);
         const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
-        const { verificationStatus } = await CryptoProxy.verifyMessage({
-            binaryData: sessionKey.data,
-            verificationKeys: inviteePublicKey,
+        const { verificationStatus, errors } = await CryptoProxy.verifyMessage({
+            textData: currentExternalInvitation.inviteeEmail.concat('|', uint8ArrayToBase64String(sessionKey.data)),
+            verificationKeys: inviterAddressKey.publicKey,
             binarySignature: base64StringToUint8Array(currentExternalInvitation.externalInvitationSignature),
+            signatureContext: { required: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_EXTERNAL_INVITATION },
         });
 
         if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -466,6 +467,9 @@ export const useInvitations = () => {
                     shareId: link.shareId,
                     volumeId,
                     externalInvitationId,
+                },
+                extra: {
+                    e: errors,
                 },
             });
         }
