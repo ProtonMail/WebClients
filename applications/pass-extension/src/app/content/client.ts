@@ -11,6 +11,10 @@
  * destruction on tab hiding. A continuous activity probe ensures connection health with the
  * service worker through periodic pings for long-running tabs. */
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import {
+    type CustomElementsRegister,
+    registerCustomElements,
+} from 'proton-pass-extension/app/content/injections/custom-elements/register';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import 'proton-pass-extension/lib/polyfills/shim';
@@ -29,52 +33,11 @@ import { createActivityProbe } from '@proton/pass/utils/time/probe';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-import { ProtonPassControl } from './injections/custom-elements/ProtonPassControl';
-import { ProtonPassRoot } from './injections/custom-elements/ProtonPassRoot';
 import type { ContentScriptClientService } from './services/script';
 import { createContentScriptClient } from './services/script';
 
-type CustomElementsRegister = () => Promise<PassElementsConfig>;
-
 const scriptId = uniqueId(16);
 const mainFrame = isMainFrame();
-
-/** Due to Firefox's limitations in supporting custom elements with content-scripts
- * without disrupting interaction with the injected web page, we employ a workaround :
- * We inject `elements.js` via a script tag to prevent custom elements registration
- * in a privileged realm. Monitor these issues for potential resolution:
- * - https://bugzilla.mozilla.org/show_bug.cgi?id=1492002
- * - https://bugzilla.mozilla.org/show_bug.cgi?id=1836269
- *
- * See: `applications/pass-extension/src/app/worker/services/injection.ts` for injection
- * specifics. For Chromium builds, `elements.js` will be injected in the MAIN world to
- * effectively register the custom elements in a non-isolated realm. */
-const registerCustomElements: CustomElementsRegister = async () => {
-    if (BUILD_TARGET === 'firefox') {
-        await new Promise<void>((resolve, reject) => {
-            const listeners = createListenerStore();
-
-            const script = document.createElement('script');
-            script.src = browser.runtime.getURL('elements.js');
-
-            const destroy = () => {
-                listeners.removeAll();
-                script.remove();
-            };
-
-            listeners.addListener(script, 'load', () => resolve(destroy()));
-            listeners.addListener(script, 'error', () => reject(destroy()));
-            (document.head || document.documentElement).appendChild(script);
-        });
-    }
-
-    const result = await sendMessage(contentScriptMessage({ type: WorkerMessageType.REGISTER_ELEMENTS }));
-    if (result.type === 'error') throw new Error('Custom elements registration failure');
-
-    const root = ProtonPassRoot.getTagName(result.hash);
-    const control = ProtonPassControl.getTagName(result.hash);
-    return { root, control };
-};
 
 const createClientController = (elements: PassElementsConfig) => {
     const controller = {

@@ -2,7 +2,7 @@ import { captureMessage as sentryCaptureMessage } from '@sentry/browser';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-import type { Runtime } from 'webextension-polyfill';
+import type { Runtime, Scripting } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe, TabId } from '@proton/pass/types';
@@ -71,13 +71,16 @@ export const createInjectionService = () => {
      * content-script is re-injected due to events like extension updates or hot
      * -reloads. This re-registration is necessary because custom elements cannot
      * be updated once defined. A random tag name is used to avoid collisions.*/
-    WorkerMessageBroker.registerMessage(WorkerMessageType.REGISTER_ELEMENTS, async (_, { tab }) => {
+    WorkerMessageBroker.registerMessage(WorkerMessageType.REGISTER_ELEMENTS, async (_, { tab, frameId }) => {
         const hash = uniqueId(4);
 
-        const scriptConfig = {
-            target: { tabId: tab?.id!, allFrames: false },
+        const scriptConfig: Scripting.ScriptInjection = {
+            target: { tabId: tab?.id! },
             world: (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari' ? 'MAIN' : undefined) as any,
         };
+
+        if (frameId !== undefined) scriptConfig.target.frameIds = [frameId];
+        else scriptConfig.target.allFrames = false;
 
         if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
             /** In Chrome, we can directly register custom elements via injection in the MAIN
