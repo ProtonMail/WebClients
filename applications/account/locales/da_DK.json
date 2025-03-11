@@ -181,6 +181,9 @@
       "Authenticating": [
         "Autentificerer"
       ],
+      "Auto-delete spam and trash": [
+        "Tøm spam og papirkurv automatisk"
+      ],
       "Back": [
         "Tilbage"
       ],
@@ -502,6 +505,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable ${ darkWebMonitoring }": [
+        "Aktiver ${ darkWebMonitoring }"
+      ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
@@ -723,6 +729,9 @@
       ],
       "Manage labels": [
         "Administrer etiketter"
+      ],
+      "Manage subscription": [
+        "Administrer abonnement"
       ],
       "Mark as default": [
         "Markér som standard"
@@ -1482,7 +1491,7 @@
         "Surf privat på nettet og bloker reklamer"
       ],
       "Keep your schedule private": [
-        "Hold dit skema privat"
+        "Hold din tidsplan privat"
       ],
       "Protect your passwords and identity": [
         "Beskyt dine adgangskoder og identitet"
@@ -1953,6 +1962,9 @@
       ],
       "Invite": [
         "Inviter"
+      ],
+      "Maybe later": [
+        "Måske senere"
       ],
       "Next": [
         "Næste"
@@ -5053,6 +5065,9 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Certifikat ${ name } ikke fundet eller allerede tilbagekaldt"
+      ],
+      "Display name cannot be empty": [
+        "Visningsnavnet kan ikke være tomt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7627,6 +7642,9 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "Det ser ud til, at nogle af dine data er krypteret og låst."
+      ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "Det tager 10 dage at ændre en servers land, så vær sikker på dit valg er korrekt."
       ],
       "Item autofilled in ${ vaultLink }": [
         "Element autoudfyldt i ${ vaultLink }"
@@ -10586,6 +10604,10 @@
       "Send in": [
         "Send på"
       ],
+      "Show ${ n } administrator": [
+        "Vis ${ n } administrator",
+        "Show ${ n } administratorer"
+      ],
       "Show others when I'm busy": [
         "Vis andre, når jeg er optaget"
       ],
@@ -11776,6 +11798,9 @@
       "15 GB storage": [
         "15 GB lagerplads"
       ],
+      "200 GB of storage": [
+        "200 GB lagerplads"
+      ],
       "24/7 account management support": [
         "24/7 kontoadministreringssupport"
       ],
@@ -11796,6 +11821,9 @@
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avancerede aliasfunktioner (drevet af SimpleLogin)"
       ],
       "Advanced network security": [
         "Avanceret netværkssikkerhed"
@@ -11880,6 +11908,9 @@
       ],
       "Dedicated servers and IP": [
         "Dedikerede servere og IP"
+      ],
+      "Dedicated servers optimized for streaming": [
+        "Dedikerede servere optimeret til streaming"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -11984,6 +12015,9 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Private photo backup": [
+        "Privat sikkerhedskopiering af fotos"
+      ],
       "Proofread and refine your emails": [
         "Korrekturlæs og forfin dine e-mails"
       ],
@@ -12017,6 +12051,9 @@
       "Secure Core servers": [
         "Secure Core servere"
       ],
+      "Secure file storage and sharing": [
+        "Sikker fillagring og deling"
+      ],
       "Secure link sharing": [
         "Sikker link-deling"
       ],
@@ -12039,11 +12076,11 @@
       "SMTP submission": [
         "SMTP-indsendelse"
       ],
-      "SMTP submission for select organizations": [
-        "SMTP-indsendelse for udvalgte organisationer"
-      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
+      ],
+      "SSO integration": [
+        "SSO-integration"
       ],
       "Start protecting your organization": [
         "Begynd at beskytte din organisation"
@@ -12059,6 +12096,9 @@
       ],
       "Tailored to your needs": [
         "Skræddersyet til dine behov"
+      ],
+      "Tor over VPN": [
+        "Tor over VPN"
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
@@ -12172,17 +12212,6 @@
         "Brugeradministration"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ trialPlanName } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -12288,6 +12317,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ trialPlanName } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12870,12 +12910,35 @@
         "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Calendar."
       ]
     },
+    "Offer": {
+      "Don’t show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Maybe later": [
+        "Måske senere"
+      ],
+      "Special offer": [
+        "Specialtilbud"
+      ]
+    },
     "Offer feature": {
+      "Custom email domain": [
+        "Tilpasset e-maildomæne"
+      ],
+      "Email addresses": [
+        "E-mailadresser"
+      ],
       "Free": [
         "Gratis"
       ],
       "Plus": [
         "Plus"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Storage": [
+        "Lagerplads"
       ]
     },
     "Onboarding": {
@@ -13818,6 +13881,11 @@
         "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Permission": {
       "No permission": [
         "Ingen tilladelse"
@@ -13993,6 +14061,12 @@
     "plan customizer, users": {
       "contact": [
         "kontakt"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } måned",
+        "${ cycle } måneder"
       ]
     },
     "Price": {
@@ -14266,6 +14340,9 @@
       ],
       "Recovery phone number": [
         "Telefonnummer til gendannelse"
+      ],
+      "Review account safety": [
+        "Gennemgå kontoens sikkerhed"
       ],
       "Safeguard account now": [
         "Beskyt din konto nu"
@@ -15354,6 +15431,10 @@
       "Contact administrator": [
         "Kontakt administrator"
       ],
+      "Delete ${ n } inactive user?": [
+        "Slet ${ n } inaktiv bruger?",
+        "Slet ${ n } inaktive brugere?"
+      ],
       "Delete ${ n } user": [
         "Slet ${ n } bruger",
         "Slet ${ n } brugere"
@@ -15611,6 +15692,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
+      ],
+      "Billed every 6 months": [
+        "Faktureret hver 6. måned"
       ],
       "Billed for 15 months": [
         "Faktureret for 15 måneder"
@@ -16969,6 +17053,9 @@
       "Download the mobile apps": [
         "Download appen til din mobil"
       ],
+      "Downloads": [
+        "Downloads"
+      ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
       ],
@@ -17589,6 +17676,9 @@
       "Status": [
         "Status"
       ],
+      "Subscription": [
+        "Abonnement"
+      ],
       "Success": [
         "Lykkedes"
       ],
@@ -18104,6 +18194,9 @@
     "Tor out of date": {
       "stable release": [
         "stabil udgave"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denne version af Tor Browser er ikke understøttet. Opdater venligst til den seneste ${ stableRelease }"
       ]
     },
     "Transaction state display as badge": {
@@ -18419,6 +18512,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } enhed",
+        "${ n } enheder"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ servere"
@@ -18426,6 +18523,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } lande"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } fordelt på ${ numberOfCountries } land",
