@@ -94,6 +94,7 @@ import { SignupMode, UpsellTypes } from './interface';
 import DriveTrial2024UpsellModal from './modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import { type CheckTrialPriceParams, type CheckTrialPriceResult, checkTrialPrice } from './modals/Trial2024UpsellModal';
+import PassLifetimeFeaturedSection from './pass/PassLifetimeFeaturedSection';
 
 export interface Step1Rref {
     scrollIntoPayment: () => void;
@@ -739,6 +740,16 @@ const Step1 = ({
             );
         }
 
+        if (selectedPlan.Name === PLANS.PASS_LIFETIME && !model.session?.resumedSessionResult.UID) {
+            const lifetimeText = wrap(
+                null,
+                c('pass_lifetime_signup: Info')
+                    .t`Gain lifetime access to all current and future ${PASS_APP_NAME} premium features with a single one-time payment. `
+            );
+
+            return <span className="text-center">{lifetimeText}</span>;
+        }
+
         if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
             return null;
         }
@@ -876,7 +887,7 @@ const Step1 = ({
                                                     mode="buttons"
                                                     cycle={options.cycle}
                                                     options={cycleOptions}
-                                                    onSelect={handleChangeCycle}
+                                                    onSelect={(cycle) => handleChangeCycle(cycle as Cycle)}
                                                     size="small"
                                                     color="norm"
                                                     separators={false}
@@ -1283,6 +1294,9 @@ const Step1 = ({
                                                                     </div>
                                                                 )}
                                                                 {hasSelectedFree && terms}
+                                                                {selectedPlan.Name === PLANS.PASS_LIFETIME && (
+                                                                    <PassLifetimeFeaturedSection className="mt-8" />
+                                                                )}
                                                             </>
                                                         );
                                                     }}

@@ -812,7 +812,18 @@ const SingleSignupContainerV2 = ({
         }
     };
 
-    const handleSignIn = async (authSession: AuthSession, options?: { ignore?: boolean }) => {
+    const handleSignIn = async (
+        authSession: AuthSession,
+        options?: {
+            ignore?: boolean;
+            /**
+             * If true then derives the parameters (planIDs, cycle, currency) for subscription/check endpoint from the
+             * URL parameters instead using the ones cached in the model. It is useful when we want to handle call
+             * handleSignIn function as if it would be called on initial page loading.
+             */
+            restoreParameters: boolean;
+        }
+    ) => {
         if (
             !model.plans.length ||
             (!options?.ignore && accountRef.current.signingIn) ||
@@ -842,6 +853,30 @@ const SingleSignupContainerV2 = ({
 
             const chargebeeEnabled = await isChargebeeEnabled(authSession.UID, async () => user);
 
+            const { cycle, currency, planIDs } = (() => {
+                const modelCycle = model.subscriptionData.cycle;
+                const modelCurrency = model.subscriptionData.currency;
+
+                if (options?.restoreParameters) {
+                    return {
+                        cycle: signupParameters.cycle ?? modelCycle,
+                        currency: signupParameters.currency ?? modelCurrency,
+                        planIDs: getPlanIDsFromParams(
+                            model.plans,
+                            model.subscriptionData.currency,
+                            signupParameters,
+                            signupConfiguration.defaults
+                        ).planIDs,
+                    };
+                } else {
+                    return {
+                        cycle: modelCycle,
+                        currency: modelCurrency,
+                        planIDs: model.subscriptionData.planIDs,
+                    };
+                }
+            })();
+
             const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
                 api: silentApi,
                 audience,
@@ -854,9 +889,9 @@ const SingleSignupContainerV2 = ({
                 signupParameters,
                 options: {
                     plansMap: model.plansMap,
-                    cycle: model.subscriptionData.cycle,
-                    currency: model.subscriptionData.currency,
-                    planIDs: model.subscriptionData.planIDs,
+                    cycle,
+                    currency,
+                    planIDs,
                     coupon: model.subscriptionData.checkResult?.Coupon?.Code,
                     billingAddress: model.subscriptionData.billingAddress,
                 },
@@ -909,7 +944,10 @@ const SingleSignupContainerV2 = ({
                 localID: session.persisted.localID,
             });
             if (resumedSession) {
-                return await handleSignIn(resumedSession, { ignore: true });
+                return await handleSignIn(resumedSession, {
+                    ignore: true,
+                    restoreParameters: true,
+                });
             }
         } finally {
             accountRef.current.signingIn = false;
@@ -1237,6 +1275,7 @@ const SingleSignupContainerV2 = ({
             {renderAccessModal && (
                 <AccessModal
                     {...accessModalProps}
+                    user={model.session?.resumedSessionResult.User}
                     app={product}
                     onSignOut={() => {
                         return handleSignOut(true);

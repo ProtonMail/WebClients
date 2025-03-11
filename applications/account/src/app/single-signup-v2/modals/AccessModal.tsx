@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -16,6 +17,8 @@ import {
     WALLET_APP_NAME,
     WALLET_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
+import { type User } from '@proton/shared/lib/interfaces';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import driveAccess from '../drive/access.svg';
 import mailAccess from '../mail/access.svg';
@@ -26,9 +29,10 @@ interface Props extends ModalProps {
     onContinue: () => void;
     onSignOut: () => Promise<void>;
     app: APP_NAMES;
+    user?: User;
 }
 
-const AccessModal = ({ app, onClose, onContinue, onSignOut, ...rest }: Props) => {
+const AccessModal = ({ app, onClose, onContinue, onSignOut, user, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { svg, appName, shortName } = (() => {
         if (app === APPS.PROTONPASS) {
@@ -45,13 +49,19 @@ const AccessModal = ({ app, onClose, onContinue, onSignOut, ...rest }: Props) =>
         }
         throw new Error('unknown app');
     })();
+
+    const isPassLifetime = user && hasPassLifetime(user);
+
     return (
         <ModalTwo {...rest} disableCloseOnEscape={true} size="small">
             <ModalTwoContent>
                 <div className="text-center">
                     {svg && <img src={svg} alt="" className="mb-4 mt-4" />}
-                    <div className="mb-4 text-bold h3">{c('pass_signup_2023: Info')
-                        .t`Welcome to ${shortName} Plus`}</div>
+                    <div className="mb-4 text-bold h3">
+                        {isPassLifetime
+                            ? c('pass_lifetime_signup: Info').t`Welcome to ${PLAN_NAMES[PLANS.PASS_LIFETIME]}`
+                            : c('pass_signup_2023: Info').t`Welcome to ${shortName} Plus`}
+                    </div>
                     <div className="mb-6 color-weak">
                         {c('pass_signup_2023: Info')
                             .t`You already have access to premium ${appName} features — no need to purchase again.`}

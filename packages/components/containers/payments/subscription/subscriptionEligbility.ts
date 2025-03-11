@@ -96,6 +96,8 @@ export const getEligibility = ({
         return { type: 'sub-user' };
     }
 
+    const currentPlan = getPlan(subscription);
+
     const latest = subscription?.UpcomingSubscription ?? subscription;
     const latestPlan = latest ? getPlan(latest) : undefined;
 
@@ -234,7 +236,10 @@ export const getEligibility = ({
     }
 
     if (offer.plan.Name === PLANS.PASS_LIFETIME) {
-        const isEligibilePlan = !getIsB2BAudienceFromSubscription(subscription) && !user.hasPassLifetime;
+        const isEligibilePlan =
+            !getIsB2BAudienceFromSubscription(subscription) &&
+            ![PLANS.PASS_FAMILY].includes(currentPlan?.Name as PLANS) &&
+            !user.hasPassLifetime;
 
         if (isEligibilePlan) {
             return okResult();

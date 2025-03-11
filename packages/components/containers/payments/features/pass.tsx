@@ -1,7 +1,13 @@
 import { c, msgid } from 'ttag';
 
 import { PLANS } from '@proton/payments';
-import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    DARK_WEB_MONITORING_NAME,
+    PASS_APP_NAME,
+    PASS_SHORT_APP_NAME,
+    PROTON_SENTINEL_NAME,
+} from '@proton/shared/lib/constants';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -144,7 +150,7 @@ export const getNHideMyEmailAliasesText = (n: number) => {
 };
 
 export const getUnlimitedHideMyEmailAliasesText = () => {
-    return c('new_plans: feature').t`Unlimited hide-my-email aliases`;
+    return c('Feature').t`Unlimited hide-my-email aliases`;
 };
 
 export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
@@ -172,7 +178,7 @@ export const getAdvancedAliasFeatures = (included: boolean): PlanCardFeatureDefi
 };
 
 export const get2FAAuthenticatorText = () => {
-    return c('new_plans: feature').t`Integrated 2FA authenticator`;
+    return c('Label').t`Integrated 2FA authenticator`;
 };
 
 export const get2FAAuthenticator = (included: boolean = false): PlanCardFeatureDefinition => {
@@ -275,7 +281,7 @@ export const getVaultSharingB2B = (n: number | 'unlimited'): PlanCardFeatureDefi
 
 export const getSecureSharingText = (link?: boolean) => {
     if (link) {
-        return c('pass_signup_2023: Info').t`Secure vault and link sharing`;
+        return c('pass_signup_2023: Info').t`Secure vault, item and link sharing`;
     }
     return c('pass_signup_2023: Info').t`Secure vault sharing`;
 };
@@ -323,6 +329,18 @@ export const getTeamPoliciesText = () => {
     return c('pass_signup_2024: Info').t`Team policies`;
 };
 
+export const getUnlimitedLoginsAndNotesText = () => {
+    return c('pass_signup_2023: Info').t`Unlimited logins, notes, credit cards and more`;
+};
+
+export const getSecureVaultSharingText = () => {
+    return c('pass_signup_2023: Info').t`Secure vault, item and link sharing`;
+};
+
+export const getPassMonitorText = () => {
+    return c('new_plans: feature').t`${DARK_WEB_MONITORING_NAME} and ${PROTON_SENTINEL_NAME}`;
+};
+
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
 export const PAID_VAULTS = 10;
@@ -352,6 +370,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getLoginsAndNotes('free'),
                 [PLANS.DRIVE_BUSINESS]: getLoginsAndNotes('free'),
                 [PLANS.PASS]: getLoginsAndNotes('paid'),
+                [PLANS.PASS_LIFETIME]: getLoginsAndNotes('paid'),
                 [PLANS.PASS_FAMILY]: getLoginsAndNotes('paid'),
                 [PLANS.WALLET]: getLoginsAndNotes('free'),
                 [PLANS.FAMILY]: getLoginsAndNotes('paid'),
@@ -378,6 +397,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getDevices(),
                 [PLANS.DRIVE_BUSINESS]: getDevices(),
                 [PLANS.PASS]: getDevices(),
+                [PLANS.PASS_LIFETIME]: getDevices(),
                 [PLANS.PASS_FAMILY]: getDevices(),
                 [PLANS.WALLET]: getDevices(),
                 [PLANS.FAMILY]: getDevices(),
@@ -404,6 +424,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getVaults(FREE_VAULTS),
                 [PLANS.DRIVE_BUSINESS]: getVaults(FREE_VAULTS),
                 [PLANS.PASS]: getVaults(PASS_PLUS_VAULTS),
+                [PLANS.PASS_LIFETIME]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.PASS_FAMILY]: getVaults(PASS_PLUS_VAULTS),
                 [PLANS.WALLET]: getVaults(FREE_VAULTS),
                 [PLANS.FAMILY]: getVaults(PASS_PLUS_VAULTS),
@@ -430,6 +451,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.DRIVE_BUSINESS]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.PASS]: getHideMyEmailAliases('unlimited'),
+                [PLANS.PASS_LIFETIME]: getHideMyEmailAliases('unlimited'),
                 [PLANS.PASS_FAMILY]: getHideMyEmailAliases('unlimited'),
                 [PLANS.WALLET]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.FAMILY]: getHideMyEmailAliases('unlimited'),
@@ -456,6 +478,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: null,
                 [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: getAdvancedAliasFeatures(true),
+                [PLANS.PASS_LIFETIME]: getAdvancedAliasFeatures(true),
                 [PLANS.PASS_FAMILY]: getAdvancedAliasFeatures(true),
                 [PLANS.WALLET]: null,
                 [PLANS.FAMILY]: getAdvancedAliasFeatures(true),
@@ -482,6 +505,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getVaultSharing(FREE_VAULT_SHARING),
                 [PLANS.DRIVE_BUSINESS]: getVaultSharing(FREE_VAULT_SHARING),
                 [PLANS.PASS]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
+                [PLANS.PASS_LIFETIME]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
                 [PLANS.PASS_FAMILY]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
                 [PLANS.WALLET]: getVaultSharing(FREE_VAULT_SHARING),
                 [PLANS.FAMILY]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
@@ -508,6 +532,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: null,
                 [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: getLinkSharing(),
+                [PLANS.PASS_LIFETIME]: getLinkSharing(),
                 [PLANS.PASS_FAMILY]: getLinkSharing(),
                 [PLANS.WALLET]: null,
                 [PLANS.FAMILY]: getLinkSharing(),
@@ -534,6 +559,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: get2FAAuthenticator(),
                 [PLANS.DRIVE_BUSINESS]: get2FAAuthenticator(),
                 [PLANS.PASS]: get2FAAuthenticator(true),
+                [PLANS.PASS_LIFETIME]: get2FAAuthenticator(true),
                 [PLANS.PASS_FAMILY]: get2FAAuthenticator(true),
                 [PLANS.WALLET]: get2FAAuthenticator(),
                 [PLANS.FAMILY]: get2FAAuthenticator(true),
@@ -560,6 +586,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getCustomFields(),
                 [PLANS.DRIVE_BUSINESS]: getCustomFields(),
                 [PLANS.PASS]: getCustomFields(true),
+                [PLANS.PASS_LIFETIME]: getCustomFields(true),
                 [PLANS.PASS_FAMILY]: getCustomFields(true),
                 [PLANS.WALLET]: getCustomFields(),
                 [PLANS.FAMILY]: getCustomFields(true),
@@ -586,6 +613,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: null,
                 [PLANS.DRIVE_BUSINESS]: null,
                 [PLANS.PASS]: null,
+                [PLANS.PASS_LIFETIME]: null,
                 [PLANS.PASS_FAMILY]: null,
                 [PLANS.WALLET]: null,
                 [PLANS.FAMILY]: null,
@@ -612,6 +640,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getDataBreachMonitoring(),
                 [PLANS.DRIVE_BUSINESS]: getDataBreachMonitoring(),
                 [PLANS.PASS]: getDataBreachMonitoring(true),
+                [PLANS.PASS_LIFETIME]: getDataBreachMonitoring(true),
                 [PLANS.PASS_FAMILY]: getDataBreachMonitoring(true),
                 [PLANS.WALLET]: getDataBreachMonitoring(),
                 [PLANS.FAMILY]: getDataBreachMonitoring(true),
