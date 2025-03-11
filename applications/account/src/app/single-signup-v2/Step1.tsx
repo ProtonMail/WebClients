@@ -94,6 +94,7 @@ import { SignupMode, UpsellTypes } from './interface';
 import DriveTrial2024UpsellModal from './modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import { type CheckTrialPriceParams, type CheckTrialPriceResult, checkTrialPrice } from './modals/Trial2024UpsellModal';
+import PassLifetimeSpecialOffer from './pass/LifetimeOfferMessage';
 import PassLifetimeFeaturedSection from './pass/PassLifetimeFeaturedSection';
 
 export interface Step1Rref {
@@ -943,6 +944,16 @@ const Step1 = ({
                                 )}
                             </BoxContent>
                         </Box>
+
+                        {app === APPS.PROTONPASS &&
+                            audience === Audience.B2C &&
+                            signupParameters.preSelectedPlan !== PLANS.PASS_LIFETIME && (
+                                <PassLifetimeSpecialOffer
+                                    price={model.plansMap[PLANS.PASS_LIFETIME]?.Pricing?.[CYCLE.YEARLY] ?? null}
+                                    currency={options.currency}
+                                    email={signupParameters.email}
+                                />
+                            )}
                     </>
                 )}
                 {hasUserSelector && (
