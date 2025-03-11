@@ -6,7 +6,8 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import { type DecryptedLink, useActions } from '../../../store';
+import { type DecryptedLink, useActions, useDocumentActions } from '../../../store';
+import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -29,6 +30,7 @@ import {
     UploadFileButton,
     UploadFolderButton,
 } from './ToolbarButtons';
+import { CreateNewDocumentButton } from './ToolbarButtons/CreateNewDocumentButton';
 
 interface Props {
     shareId: string;
@@ -38,6 +40,7 @@ interface Props {
     showOptionsForNoSelection?: boolean;
     isLinkReadOnly?: boolean;
     isLinkRoot?: boolean;
+    isLinkInDeviceShare?: boolean;
 }
 
 const DriveToolbar = ({
@@ -47,6 +50,7 @@ const DriveToolbar = ({
     showOptionsForNoSelection = true,
     isLinkReadOnly,
     isLinkRoot,
+    isLinkInDeviceShare,
     permissions,
 }: Props) => {
     const isDesktop = !getDevice()?.type;
@@ -54,6 +58,8 @@ const DriveToolbar = ({
     const selectionControls = useSelection()!;
     const isEditEnabled = useIsEditEnabled();
     const { createFolder, trashLinks, renameLink } = useActions();
+    const { createDocument } = useDocumentActions();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
@@ -80,6 +86,11 @@ const DriveToolbar = ({
                         <>
                             <CreateNewFolderButton createFolder={createFolder} activeFolder={{ shareId, linkId }} />
                             {isEditEnabled && <CreateNewFileButton />}
+                            {isDocsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
+                                <CreateNewDocumentButton
+                                    onClick={() => createDocument({ shareId, parentLinkId: linkId })}
+                                />
+                            )}
                             <Vr />
                             {isDesktop && <UploadFolderButton />}
                             <UploadFileButton />

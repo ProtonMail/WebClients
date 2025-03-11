@@ -204,6 +204,7 @@ function Drive({ activeFolder, folderView }: Props) {
                 permissions={permissions}
                 isActiveLinkReadOnly={folderView.isActiveLinkReadOnly}
                 isActiveLinkRoot={folderView.isActiveLinkRoot}
+                isActiveLinkInDeviceShare={folderView.isActiveLinkInDeviceShare}
                 shareId={shareId}
                 anchorRef={contextMenuAnchorRef}
                 close={browserContextMenu.close}
