@@ -1,4 +1,4 @@
-import type { FieldType } from '@proton/pass/fathom';
+import type { FieldType } from '@protontech/autofill';
 
 export type AutofillOptions = {
     paste?: boolean;

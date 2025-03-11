@@ -1,4 +1,5 @@
-import { isHidden, isProcessed, selectFormCandidates, selectInputCandidates } from '@proton/pass/fathom';
+import { isHidden, isProcessed, selectFormCandidates, selectInputCandidates } from '@protontech/autofill';
+
 import { isFormElement, isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { not, or } from '@proton/pass/utils/fp/predicates';
 
