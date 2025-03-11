@@ -418,6 +418,9 @@
       "Make admin": [
         "Сделать администратором"
       ],
+      "Manage subscription": [
+        "Управление подпиской"
+      ],
       "Mark as default": [
         "Установить по умолчанию"
       ],
@@ -2588,15 +2591,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
-      ],
-      "Error creating policy.": [
-        "Ошибка создания политики."
-      ],
-      "Error deleting policy.": [
-        "Ошибка при удалении политики."
-      ],
-      "Error updating policy.": [
-        "Ошибка изменения политики."
       ],
       "Failed to process the logo": [
         "Не удалось обработать логотип"
@@ -6544,6 +6538,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Добавить помощника по написанию ${ BRAND_NAME } Scribe"
       ],
@@ -7197,9 +7194,6 @@
       ],
       "SMTP submission": [
         "Отправки через SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Отправка по SMTP для отдельных организаций"
       ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
@@ -8217,6 +8211,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Панель администратора для управления пользователями и подпиской"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
       ],
       "Team policies": [
         "Политики команды"
@@ -9977,47 +9974,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -10320,6 +10276,47 @@
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Вы уверены?"
@@ -10463,15 +10460,6 @@
       ],
       "Phone number updated": [
         "Номер телефона обновлён"
-      ],
-      "Policy created successfully!": [
-        "Политика успешно создана!"
-      ],
-      "Policy deleted": [
-        "Политика удалена"
-      ],
-      "Policy updated successfully!": [
-        "Политика успешно обновлена!"
       ],
       "Preference saved": [
         "Настройки сохранены"

@@ -418,6 +418,9 @@
       "Make admin": [
         "Tornar administrador"
       ],
+      "Manage subscription": [
+        "Gerir subscrição"
+      ],
       "Mark as default": [
         "Marcar como predefinição"
       ],
@@ -1092,6 +1095,9 @@
       ],
       "Version history": [
         "Histórico de versões"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2568,15 +2574,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao ligar à API do Bitcoin."
-      ],
-      "Error creating policy.": [
-        "Erro ao criar a política."
-      ],
-      "Error deleting policy.": [
-        "Erro ao eliminar a política."
-      ],
-      "Error updating policy.": [
-        "Erro ao atualizar a política"
       ],
       "Failed to process the logo": [
         "Erro ao processar o logo"
@@ -6409,6 +6406,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adicionar o assistente de escrita ${ BRAND_NAME } Scribe"
       ],
@@ -7024,9 +7024,6 @@
       ],
       "SMTP submission": [
         "Envio SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Envio de SMTP para as organizações selecionadas"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
@@ -8029,6 +8026,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Painel de administração para gerir utilizadores e subscrição"
+      ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
       ],
       "Team policies": [
         "Regras da equipa"
@@ -9703,47 +9703,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -10034,6 +9993,47 @@
         "O seu próprio alias de e-mail curto @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Tem a certeza?"
@@ -10177,15 +10177,6 @@
       ],
       "Phone number updated": [
         "Número de telefone atualizado"
-      ],
-      "Policy created successfully!": [
-        "A política foi criada."
-      ],
-      "Policy deleted": [
-        "A política foi eliminada."
-      ],
-      "Policy updated successfully!": [
-        "A política foi atualizada."
       ],
       "Preference saved": [
         "Preferência guardada"
