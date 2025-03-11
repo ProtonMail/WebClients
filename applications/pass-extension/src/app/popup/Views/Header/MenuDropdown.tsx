@@ -2,8 +2,6 @@ import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
-import { ExtensionMenuHamburger } from 'proton-pass-extension/app/popup/Views/Header/ExtensionMenuHamburger';
-import { MenuHamburger } from 'proton-pass-extension/app/popup/Views/Header/MenuHamburger';
 import { MenuUser } from 'proton-pass-extension/app/popup/Views/Header/MenuUser';
 import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { useExpandPopup } from 'proton-pass-extension/lib/hooks/useExpandPopup';
@@ -29,6 +27,8 @@ import { selectLockEnabled } from '@proton/pass/store/selectors';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { AppMenuButton, VaultMenuButton } from './MenuButtons';
+
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     height: DropdownSizeUnit.Dynamic,
     maxHeight: '26em',
@@ -48,38 +48,29 @@ export const MenuDropdown: FC = () => {
     const openSettings = useOpenSettingsTab();
     const expandPopup = useExpandPopup();
 
-    const {
-        anchorRef: menuAnchorRef,
-        isOpen: menuIsOpen,
-        toggle: menuToggle,
-        close: menuClose,
-    } = usePopperAnchor<HTMLButtonElement>();
-    const {
-        anchorRef: extensionAnchorRef,
-        isOpen: extensionIsOpen,
-        toggle: extensionToggle,
-        close: extensionClose,
-    } = usePopperAnchor<HTMLButtonElement>();
-    const withMenuClose = withTap(menuClose);
-    const withExtensionClose = withTap(extensionClose);
+    const appMenu = usePopperAnchor<HTMLButtonElement>();
+    const vaultMenu = usePopperAnchor<HTMLButtonElement>();
 
-    const menu = useMenuItems(
+    const withAppMenuClose = withTap(appMenu.close);
+    const withVaultMenuClose = withTap(vaultMenu.close);
+
+    const { advanced, download } = useMenuItems(
         useMemo(
             () => ({
-                onAction: menuClose,
+                onAction: appMenu.close,
                 extra: {
                     advanced: !expanded
                         ? [
                               {
                                   icon: 'arrow-out-square',
                                   label: c('Action').t`Open in a window`,
-                                  onClick: withMenuClose(expandPopup),
+                                  onClick: withAppMenuClose(expandPopup),
                               },
                           ]
                         : [],
                 },
             }),
-            [expanded, expandPopup, menuClose]
+            [expanded, expandPopup, appMenu.close]
         )
     );
 
@@ -101,14 +92,14 @@ export const MenuDropdown: FC = () => {
 
     return (
         <nav className="flex gap-2">
-            <ExtensionMenuHamburger ref={extensionAnchorRef} toggle={extensionToggle} isOpen={extensionIsOpen} />
-            <MenuHamburger ref={menuAnchorRef} toggle={menuToggle} isOpen={menuIsOpen} />
+            <AppMenuButton ref={appMenu.anchorRef} toggle={appMenu.toggle} isOpen={appMenu.isOpen} />
+            <VaultMenuButton ref={vaultMenu.anchorRef} toggle={vaultMenu.toggle} isOpen={vaultMenu.isOpen} />
 
             <Dropdown
-                anchorRef={extensionAnchorRef}
+                anchorRef={appMenu.anchorRef}
                 autoClose={false}
-                isOpen={extensionIsOpen}
-                onClose={extensionClose}
+                isOpen={appMenu.isOpen}
+                onClose={appMenu.close}
                 availablePlacements={verticalPopperPlacements}
                 size={DROPDOWN_SIZE}
                 style={{ '--custom-max-width': DROPDOWN_SIZE.width }}
@@ -119,14 +110,14 @@ export const MenuDropdown: FC = () => {
                     <hr className="mb-2 mx-4" aria-hidden="true" />
 
                     <DropdownMenuButton
-                        onClick={withExtensionClose(() => onLink(getPassWebUrl(API_URL, 'monitor')))}
+                        onClick={withAppMenuClose(() => onLink(getPassWebUrl(API_URL, 'monitor')))}
                         label={c('Label').t`${PASS_SHORT_APP_NAME} Monitor`}
                         icon={'pass-shield-warning'}
                         className="pt-1.5 pb-1.5"
                     />
 
                     <DropdownMenuButton
-                        onClick={withExtensionClose(() => openSettings())}
+                        onClick={withAppMenuClose(() => openSettings())}
                         label={c('Label').t`Settings`}
                         icon={'cog-wheel'}
                         className="pt-1.5 pb-1.5"
@@ -134,7 +125,7 @@ export const MenuDropdown: FC = () => {
 
                     {canLock && (
                         <DropdownMenuButton
-                            onClick={withExtensionClose(lock)}
+                            onClick={withAppMenuClose(lock)}
                             disabled={!interactive}
                             label={c('Action').t`Lock extension`}
                             icon="lock"
@@ -143,38 +134,43 @@ export const MenuDropdown: FC = () => {
                     )}
 
                     <DropdownMenuButton
-                        onClick={withExtensionClose(() => onLink(getPassWebUrl(API_URL)))}
+                        onClick={withAppMenuClose(() => onLink(getPassWebUrl(API_URL)))}
                         label={c('Action').t`Open web app`}
                         icon="arrow-out-square"
                         className="pt-1.5 pb-1.5"
                     />
 
-                    <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={menu.advanced} />
+                    <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={advanced} />
 
                     <hr className="my-2 mx-4" aria-hidden="true" />
 
-                    <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
+                    <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={download} />
                     <Submenu icon="user" label={c('Action').t`Account`} items={accountMenuItems} />
                 </DropdownMenu>
             </Dropdown>
 
             <Dropdown
-                anchorRef={menuAnchorRef}
+                anchorRef={vaultMenu.anchorRef}
                 autoClose={false}
-                isOpen={menuIsOpen}
-                onClose={menuClose}
+                isOpen={vaultMenu.isOpen}
+                onClose={vaultMenu.close}
                 availablePlacements={verticalPopperPlacements}
                 size={DROPDOWN_SIZE}
                 style={{ '--custom-max-width': DROPDOWN_SIZE.width }}
                 contentProps={{ className: 'flex flex-column flex-nowrap' }}
             >
                 <div className="overflow-auto p-2 pb-0">
-                    <VaultMenu onAction={menuClose} />
-                    <SharedMenuContent onAction={menuClose} />
+                    <VaultMenu onAction={vaultMenu.close} />
+                    <SharedMenuContent onAction={vaultMenu.close} />
                 </div>
 
                 <div className="p-2 w-full shrink-0">
-                    <Button className="w-full" color="weak" shape="solid" onClick={withMenuClose(vaultActions.create)}>
+                    <Button
+                        className="w-full"
+                        color="weak"
+                        shape="solid"
+                        onClick={withVaultMenuClose(vaultActions.create)}
+                    >
                         {c('Action').t`Create vault`}
                     </Button>
                 </div>
