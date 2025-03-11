@@ -45,6 +45,12 @@
       "Add": [
         "Dodaj"
       ],
+      "Add ${ photos.length } photo to a new album": [
+        "Dodaj ${ photos.length } sliko v nov album",
+        "Dodaj ${ photos.length } sliki v nov album",
+        "Dodaj ${ photos.length } slike v nov album",
+        "Dodaj ${ photos.length } slik v nov album"
+      ],
       "Add account": [
         "Dodaj račun"
       ],
@@ -78,8 +84,23 @@
       "Add phone number": [
         "Dodaj telefonsko številko"
       ],
+      "Add photos": [
+        "Dodaj fotografije"
+      ],
+      "Add to album": [
+        "Dodaj v album"
+      ],
       "Add to group": [
         "Dodaj v skupino"
+      ],
+      "Add to “${ album.name }” (${ album.photoCount } photo)": [
+        "Dodaj v \"${ album.name }\" (${ album.photoCount } slika)",
+        "Dodaj v \"${ album.name }\" (${ album.photoCount } sliki)",
+        "Dodaj v \"${ album.name }\" (${ album.photoCount } slike)",
+        "Dodaj v \"${ album.name }\" (${ album.photoCount } slik)"
+      ],
+      "Album name": [
+        "Ime albuma"
       ],
       "Apply": [
         "Potrdi"
@@ -192,6 +213,9 @@
       "Continue": [
         "Nadaljuj"
       ],
+      "Continue downloading": [
+        "Nadaljuj prenos"
+      ],
       "Continue import": [
         "Nadaljuj z uvozom"
       ],
@@ -224,6 +248,9 @@
       ],
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
+      ],
+      "Create album": [
+        "Ustvari album"
       ],
       "Create and copy alias": [
         "Ustvari in kopiraj vzdevek"
@@ -270,6 +297,9 @@
         "Izbriši ${ selectedCount } skupine stikov",
         "Izbriši ${ selectedCount } skupin stikov"
       ],
+      "Delete album": [
+        "Izbriši album"
+      ],
       "Delete contact": [
         "Izbriši stik"
       ],
@@ -285,6 +315,9 @@
       "Delete version": [
         "Izbriši različico"
       ],
+      "Delete without saving": [
+        "Izbriši brez shranjevanja"
+      ],
       "Deselect all": [
         "Odznači vse"
       ],
@@ -299,6 +332,12 @@
       ],
       "Display navigation bar": [
         "Prikaži vrstico za krmarjenje"
+      ],
+      "Display next": [
+        "Prikaži naslednje"
+      ],
+      "Display previous": [
+        "Pokaži prejšnje"
       ],
       "Done": [
         "Opravljeno"
@@ -321,6 +360,12 @@
       "Download logs": [
         "Prenesite dnevnike"
       ],
+      "Download photo": [
+        "Prenesi fotografijo",
+        "Prenesi fotografiji",
+        "Prenesi fotografije",
+        "Prenesi fotografije"
+      ],
       "Download without scanning": [
         "Prenesi brez pregledovanja"
       ],
@@ -332,6 +377,9 @@
       ],
       "Edit": [
         "Uredi"
+      ],
+      "Edit album": [
+        "Uredi album"
       ],
       "Edit email address": [
         "Uredi e-poštni naslov"
@@ -426,6 +474,9 @@
       "Hide advanced PGP settings": [
         "Skrij napredne nastavitve PGP"
       ],
+      "Hide download options": [
+        "Skrij možnosti prenosa"
+      ],
       "Image could not be loaded with tracker protection.": [
         "Slika ni bila naložena zaradi zaščite pred sledilniki."
       ],
@@ -458,6 +509,9 @@
       ],
       "Increase": [
         "Povečaj"
+      ],
+      "Join album": [
+        "Pridruži album"
       ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
@@ -501,6 +555,9 @@
       "Manage share": [
         "Upravljanje skupne rabe"
       ],
+      "Mark as favorite": [
+        "Označi kot priljubljeno"
+      ],
       "Mark as resolved": [
         "Označi kot rešeno"
       ],
@@ -540,8 +597,14 @@
       "Move to trash": [
         "Premakni v smetnjak"
       ],
+      "Name your album": [
+        "Poimenujte vaš album"
+      ],
       "New": [
         "Novo"
+      ],
+      "New album": [
+        "Nov album"
       ],
       "New document": [
         "Nov dokument"
@@ -639,6 +702,12 @@
       "Remove device": [
         "Odstrani napravo"
       ],
+      "Remove from album": [
+        "Odstrani iz albuma"
+      ],
+      "Remove from favorites": [
+        "Odstrani iz priljubljenih"
+      ],
       "Remove from this list": [
         "Odstrani s seznama"
       ],
@@ -648,8 +717,14 @@
       "Remove me": [
         "Odstrani me"
       ],
+      "Remove without saving": [
+        "Odstrani brez shranjevanja"
+      ],
       "Rename": [
         "Preimenuj"
+      ],
+      "Rename album": [
+        "Preimenuj album"
       ],
       "Replace file": [
         "Zamenjaj datoteko"
@@ -717,8 +792,14 @@
       "Save": [
         "Shrani"
       ],
+      "Save and remove": [
+        "Shrani in odstrani"
+      ],
       "Save changes": [
         "Shrani spremembe"
+      ],
+      "Save photos and remove": [
+        "Shrani slike in odstrani"
       ],
       "Search": [
         "Iskanje"
@@ -750,6 +831,12 @@
       "Select country": [
         "Izberite državo"
       ],
+      "Set album cover": [
+        "Določi naslovnico albuma"
+      ],
+      "Set as cover": [
+        "Določi za naslovnico"
+      ],
       "Set recovery phrase": [
         "Nastavi obnovitveno frazo"
       ],
@@ -758,6 +845,9 @@
       ],
       "Share": [
         "Deli"
+      ],
+      "Share album": [
+        "Deli album"
       ],
       "Share file": [
         "Dajte datoteko v skupno rabo"
@@ -773,6 +863,9 @@
       ],
       "Show advanced PGP settings": [
         "Prikaži napredne nastavitve PGP"
+      ],
+      "Show more download options": [
+        "Pokaži več možnosti prenosa"
       ],
       "Show navigation bar": [
         "Pokaži vrstico za krmarjenje"
@@ -876,6 +969,9 @@
       "Upload file": [
         "Naloži datoteko"
       ],
+      "Upload files": [
+        "Naloži datoteke"
+      ],
       "Upload folder": [
         "Naloži mapo"
       ],
@@ -955,6 +1051,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } dodatna domena po meri",
+        "${ domains } dodatni domeni po meri",
+        "${ domains } dodatne domene po meri",
+        "${ domains } dodatnih domen po meri"
+      ],
       "${ ips } server": [
         "${ ips } strežnik",
         "${ ips } strežnika",
@@ -3370,6 +3472,9 @@
       "You have successfully joined the family group": [
         "Uspešno ste se pridružili družinski skupini"
       ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Imate neplačane račune. Plačajte jih, preden se boste pridružili družinskemu paketu."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Vaš račun ima več naslovov e-pošte, ko jih je na voljo za ta paket. ${ addressSettingsLink }"
       ],
@@ -3535,6 +3640,14 @@
       ],
       "Security Center": [
         "Varnostno središče"
+      ]
+    },
+    "Heading": {
+      "Add ${ photos.length } photo to": [
+        "Dodaj ${ photos.length } sliko v",
+        "Dodaj ${ photos.length } sliki v",
+        "Dodaj ${ photos.length } slike v",
+        "Dodaj ${ photos.length } slik v"
       ]
     },
     "Hint": {
@@ -3906,6 +4019,12 @@
         "${ addressCount } e-poštna naslova",
         "${ addressCount } e-poštni naslovi",
         "${ addressCount } e-poštnih naslovov"
+      ],
+      "${ album.photoCount } item": [
+        "${ album.photoCount } predmet",
+        "${ album.photoCount } predmeta",
+        "${ album.photoCount } predmeti",
+        "${ album.photoCount } predmetov"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
@@ -5110,6 +5229,12 @@
       "This item already exists in your library": [
         "Ta predmet že obstaja v vaši knjižnici"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Ta predmet ni shranjen v vaši knjižnici s fotografijami. Če jo odstranite iz tega albuma, boste izgubili dostop do nje.",
+        "Nekateri izbrani predmeti niso shranjeni v vaši knjižnici s fotografijami. Če jih odstranite iz tega albuma, boste izgubili dostop do njih.",
+        "Nekateri izbrani predmeti niso shranjeni v vaši knjižnici s fotografijami. Če jih odstranite iz tega albuma, boste izgubili dostop do njih.",
+        "Nekateri izbrani predmeti niso shranjeni v vaši knjižnici s fotografijami. Če jih odstranite iz tega albuma, boste izgubili dostop do njih."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
       ],
@@ -5344,6 +5469,12 @@
       "Would you like to restore your files?": [
         "Ali želite obnoviti svoje datoteke?"
       ],
+      "Would you like to save it before removing?": [
+        "Želite shraniti pred odstranitvijo?",
+        "Želite shraniti pred odstranitvijo?",
+        "Želite shraniti pred odstranitvijo?",
+        "Želite shraniti pred odstranitvijo?"
+      ],
       "Writing assistant": [
         "Pomočnik pri pisanju"
       ],
@@ -5499,6 +5630,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
+      ],
+      "Your photo has been removed from the album": [
+        "Vaša slika je bila odstranjena iz albuma.",
+        "Vaši sliki sta bili odstranjeni iz albuma.",
+        "Vaše slike so bile odstranjene iz albuma.",
+        "Vaše slike so bile odstranjene iz albuma."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Vaš paket je omejen na 10 različic do 7 dni"
@@ -6376,6 +6513,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj pomočnika pri pisanju ${ BRAND_NAME } Scribe"
       ],
@@ -7054,9 +7194,6 @@
       ],
       "SMTP submission": [
         "Pošiljanje SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Oddaja SMTP za izbrane organizacije"
       ],
       "Split tunneling (Android and Windows)": [
         "Ločeno usmerjanje (Android in Windows)"
@@ -7770,6 +7907,12 @@
       "Share invitation declined": [
         "Povabilo k skupni rabi je zavrnjeno."
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Žal ni bilo mogoče izbrisati mape, ker ni prazna.",
+        "Žal ni bilo mogoče izbrisati map, ker nista prazni.",
+        "Žal ni bilo mogoče izbrisati map, ker niso prazne.",
+        "Žal ni bilo mogoče izbrisati map, ker niso prazne."
+      ],
       "Stopping the sharing of this item has failed": [
         "Preklic deljenja za ta predmet ni uspel"
       ],
@@ -7837,6 +7980,9 @@
       ]
     },
     "Offer": {
+      "Don’t show this offer again": [
+        "Te ponudbe ne prikazuj več"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Pridobite Drive Plus za samo ${ pricingTitle }"
       ],
@@ -7851,6 +7997,15 @@
       ],
       "Maybe later": [
         "Morda kasneje"
+      ],
+      "Save": [
+        "Prihranite"
+      ],
+      "Save ${ prices.savedPercentage }%": [
+        "Prihranite ${ prices.savedPercentage } %"
+      ],
+      "Special offer": [
+        "Posebna ponudba"
       ]
     },
     "Offer feature": {
@@ -8067,6 +8222,16 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je bila zavrnjena. Prosimo, poskusite z drugo kartico ali se obrnite na banko, da odobri plačilo."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Brezplačno"
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "Ulica, poštna številka in mesto"
       ]
     },
     "PGP key encryption warning": {
@@ -8991,6 +9156,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME } s premijskimi funkcijami"
+      ],
       "${ dayDiff } day left": [
         "Še ${ dayDiff } dan",
         "Še ${ dayDiff } dneva",
@@ -9925,6 +10093,12 @@
       "Remove device?": [
         "Odstrani napravo?"
       ],
+      "Remove item?": [
+        "Odstrani predmet?",
+        "Odstrani predmeta?",
+        "Odstrani predmete?",
+        "Odstrani predmete?"
+      ],
       "Rename a file": [
         "Preimenuj datoteko"
       ],
@@ -10290,6 +10464,18 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } račun na denarnico",
+        "${ n } računa na denarnico",
+        "${ n } računi na denarnico",
+        "${ n } računov na denarnico"
+      ],
+      "${ n } wallet": [
+        "${ n } denarnica",
+        "${ n } denarnici",
+        "${ n } denarnice",
+        "${ n } denarnic"
+      ],
       "A safer way to hold your Bitcoin": [
         "Varnejši način shranjevanja Bitcoina"
       ],

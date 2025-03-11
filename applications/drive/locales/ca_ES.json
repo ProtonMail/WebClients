@@ -1248,6 +1248,9 @@
       ],
       "Version history": [
         "Historial de versions"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6706,6 +6709,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
@@ -7459,9 +7465,6 @@
       ],
       "SMTP submission": [
         "Tramesa SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Enviament SMTP per a les organitzacions seleccionades"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelització dividida (Android i Windows)"
@@ -8564,6 +8567,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panell d'administració per gestionar usuaris i subscripció"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
       ],
       "Team policies": [
         "Regles d'equip"
@@ -10262,6 +10268,9 @@
       "Album": [
         "Àlbum"
       ],
+      "Album details": [
+        "Detalls de l'àlbum"
+      ],
       "Albums": [
         "Àlbums"
       ],
@@ -11008,6 +11017,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispositiu",
+        "${ n } dispositius"
+      ],
       "${ n } server": [
         "${ n } servidor",
         "${ n }+ servidors"
@@ -11015,6 +11028,10 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } països"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",

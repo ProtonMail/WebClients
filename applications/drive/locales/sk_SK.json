@@ -433,7 +433,7 @@
         "Preposlať ako prílohu"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "Získajte ${ planName } za ${ priceCoupon }"
+        "Získať ${ planName } za ${ priceCoupon }"
       ],
       "Get ${ planOrAppName }": [
         "Získajte ${ planOrAppName }"
@@ -925,7 +925,7 @@
         "Prepnúť alebo pridať účet"
       ],
       "Take a tour": [
-        "Absolvujte prehliadku"
+        "Absolvovať prehliadku"
       ],
       "Toggle Calendar app": [
         "Prepnúť na Kalendár"
@@ -1221,7 +1221,7 @@
         "Blokovač reklám a ochrana pred malvérom"
       ],
       "Admin panel to manage your family": [
-        "Admin panel na správu vašej rodiny"
+        "Panel správcu pre správu vašej rodiny"
       ],
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
@@ -1270,6 +1270,9 @@
       ],
       "Version history": [
         "História verzií"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1288,13 +1291,13 @@
         "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Zabezpečené prihlasovanie na všetkých zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, ${ DARK_WEB_MONITORING_NAME } a ďalšie."
+        "Zabezpečené prihlasovanie na všetkých zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, ${ DARK_WEB_MONITORING_NAME } a ďalšie funkcie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
@@ -1434,16 +1437,16 @@
         "Vytvoriť štítok"
       ],
       "Discover and set up features": [
-        "Spoznajte a nastavte funkcie"
+        "Objaviť a nastaviť funkcie"
       ],
       "Remind me later": [
-        "Pripomeňte mi to neskôr"
+        "Pripomenúť neskôr"
       ],
       "Set up other features": [
-        "Nastavte ďalšie funkcie"
+        "Nastaviť ďalšie funkcie"
       ],
       "Take a tour": [
-        "Absolvujte prehliadku"
+        "Absolvovať prehliadku"
       ]
     },
     "Cancellation reminder": {
@@ -3874,7 +3877,7 @@
         "Chybný čas začiatku"
       ],
       "Only the Gregorian calendar scale is allowed": [
-        "Povolená je len gregoriánska kalendárna sústava"
+        "Povolený je iba gregoriánsky typ kalendára"
       ],
       "Recurring event has no occurrences": [
         "Opakujúca sa udalosť nemá žiadne výskyty"
@@ -4202,6 +4205,9 @@
         "${ album.photoCount } položiek",
         "${ album.photoCount } položiek"
       ],
+      "${ albumName } has been successfully deleted": [
+        "Album ${ albumName } bol úspešne vymazaný"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -4282,6 +4288,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } v Play Store"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } vás pozýva do albumu **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } zlyhal",
@@ -4761,7 +4770,7 @@
         "Prázdny priečinok"
       ],
       "Enabling auto-deletion…": [
-        "Zapínam automatické mazanie…"
+        "Zapínanie automatického mazania…"
       ],
       "Enabling drive search": [
         "Zapínanie vyhľadávania na disku"
@@ -5180,6 +5189,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticky odošle správu pomocou aktuálneho režimu písania správ."
       ],
+      "Photo is not saved to your library": [
+        "Fotografia nie je uložená vo vašej knižnici"
+      ],
       "Photo is set as album cover": [
         "Fotografia je nastavená ako obálka albumu"
       ],
@@ -5429,6 +5441,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Niektoré z vašich súborov už nie sú k dispozícii. Obnovte prístup k vašim súborom. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Niektoré fotografie v tomto albume nie sú uložené na časovej osi. Vymazaním tohto albumu sa tieto fotografie natrvalo odstránia."
+      ],
       "Something went wrong, please try again later.": [
         "Niečo sa pokazilo, skúste znova neskôr, prosím."
       ],
@@ -5533,6 +5548,9 @@
       ],
       "This month": [
         "Tento mesiac"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Týmto sa odstráni iba album. Vaše fotografie zostanú na časovej osi. Túto akciu nemožno vrátiť späť."
       ],
       "This will permanently delete the file you uploaded.": [
         "Týmto sa natrvalo odstráni nahraný súbor."
@@ -5780,6 +5798,9 @@
         "Chcete ich pred odstránením uložiť?",
         "Chcete ich pred odstránením uložiť?"
       ],
+      "Would you like to save them before removing?": [
+        "Chcete ich pred odstránením uložiť?"
+      ],
       "Writing assistant": [
         "Asistent písania"
       ],
@@ -5973,10 +5994,10 @@
         "Vaša predchádzajúca obnovovacia fráza"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Váš naplánovaný plán sa začína od ${ renewalTime } a bude sa automaticky obnovovať každých ${ cycle } mesiacov."
+        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každých ${ cycle } mesiacov."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "Váš naplánovaný plán sa začína od ${ renewalTime } a bude sa automaticky obnovovať každý mesiac."
+        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý mesiac."
       ]
     },
     "info": {
@@ -6571,7 +6592,7 @@
         "Dátum začiatku"
       ],
       "State": [
-        "Krajina"
+        "Štát"
       ],
       "Stolen data": [
         "Ukradnuté dáta"
@@ -6882,8 +6903,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Pridať asistenta písania ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Doplnok s bezplatnou skúšobnou verziou"
       ],
       "for ${ price }": [
         "za ${ price }"
@@ -7183,7 +7210,7 @@
         "Aktualizovať teraz"
       ],
       "Upgrade to ${ planName }": [
-        "Upgradujte na ${ planName }"
+        "Navýšiť na ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -7335,6 +7362,9 @@
       ],
       "${ size } storage": [
         "${ size } úložisko"
+      ],
+      "${ size } storage per user": [
+        "${ size } úložisko na používateľa"
       ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Pre ${ DRIVE_APP_NAME }"
@@ -7525,6 +7555,9 @@
       "Limited support": [
         "Obmedzená podpora"
       ],
+      "Manage user permissions and access": [
+        "Správa používateľských oprávnení a prístupov"
+      ],
       "Multiple admin roles": [
         "Viacero správcovských rolí"
       ],
@@ -7542,6 +7575,9 @@
       ],
       "Password manager": [
         "Správca hesiel"
+      ],
+      "Password manager to secure credentials": [
+        "Správca hesiel na zabezpečenie prihlasovacích údajov"
       ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
@@ -7614,9 +7650,6 @@
       ],
       "SMTP submission": [
         "Odosielanie pomocou SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Odosielanie SMTP pre vybrané organizácie"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android a Windows)"
@@ -7700,10 +7733,10 @@
         "Až ${ totalStorageSize } úložného priestoru"
       ],
       "Use on up to ${ n } device at once": [
-        "Používajte na ${ n } zariadení súčasne",
-        "Používajte až na ${ n } zariadeniach súčasne",
-        "Používajte až na ${ n } zariadeniach súčasne",
-        "Používajte až na ${ n } zariadeniach súčasne"
+        "Používajte na ${ n } zariadení",
+        "Používajte súčasne až na ${ n } zariadeniach",
+        "Používajte súčasne až na ${ n } zariadeniach",
+        "Používajte súčasne až na ${ n } zariadeniach"
       ],
       "User credential management": [
         "Správa používateľských údajov"
@@ -8281,6 +8314,9 @@
       "Album failed to be renamed": [
         "Premenovanie albumu zlyhalo"
       ],
+      "Album renamed successfully": [
+        "Album bol úspešne premenovaný"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Všetky položky budú čoskoro trvalo zmazané z koša"
       ],
@@ -8484,7 +8520,7 @@
         "${ pricingTitle } ponuka končí dnes!"
       ],
       "Don’t show this offer again": [
-        "Nabudúce to už nezobrazovať"
+        "Túto ponuku už nezobrazovať"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Získajte Drive Plus len za ${ pricingTitle }"
@@ -8493,13 +8529,13 @@
         "Získajte Mail Plus len za ${ pricingTitle }"
       ],
       "Get the deal": [
-        "Využite ponuku"
+        "Využiť ponuku"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
         "Posledná šanca ušetriť 80% za prvý mesiac s ${ plan } Plus."
       ],
       "Last day to save": [
-        "Posledný deň na ušetrenie"
+        "Posledný deň, kedy môžete ušetriť"
       ],
       "Limited-time offer": [
         "Časovo obmedzená ponuka"
@@ -8514,7 +8550,7 @@
         "Ponuka skončí ${ formattedDate }."
       ],
       "Pay annually, secure our best offer": [
-        "Plaťte ročne, poistite si našu najlepšiu ponuku"
+        "Plaťte ročne, zaistíte si našu najlepšiu ponuku"
       ],
       "Save": [
         "Ušetrite"
@@ -8541,7 +8577,7 @@
         "V súčasnosti platíte"
       ],
       "Your subscription renews soon": [
-        "Vaše predplatné čoskoro obnoví"
+        "Vaše predplatné sa čoskoro obnoví"
       ]
     },
     "Offer feature": {
@@ -8771,6 +8807,9 @@
       "Admin panel to manage users and subscription": [
         "Panel správcu pre správu užívateľov a predplatného"
       ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
       "Team policies": [
         "Tímové zásady"
       ]
@@ -8878,7 +8917,7 @@
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvých ${ subscriptionLength } mesiacov. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ subscriptionLength } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
+        "Špeciálne zľavnená cena ${ priceWithDiscount } platí počas prvých ${ subscriptionLength } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLength } mesiac. Službu môžete kedykoľvek zrušiť."
@@ -9131,7 +9170,7 @@
     },
     "Safety review": {
       "Review account safety": [
-        "Skontrolujte bezpečnosť účtu"
+        "Skontrolovať bezpečnosť účtu"
       ]
     },
     "saml: Error": {
@@ -9845,6 +9884,12 @@
         "${ n } VPN pripojenia na používateľa",
         "${ n } VPN pripojení na používateľa",
         "${ n } VPN pripojení na používateľa"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN pripojenie pre ${ n } zariadenie na používateľa",
+        "VPN pripojenia pre ${ n } zariadenia na používateľa",
+        "VPN pripojení pre ${ n } zariadení na používateľa",
+        "VPN pripojení pre ${ n } zariadení na používateľa"
       ]
     },
     "Subscription change warning": {
@@ -10562,6 +10607,9 @@
       "Album": [
         "Album"
       ],
+      "Album details": [
+        "Podrobnosti o albume"
+      ],
       "Albums": [
         "Albumy"
       ],
@@ -10714,6 +10762,9 @@
       ],
       "Delete ${ links.length } items?": [
         "Vymazať ${ links.length } položiek?"
+      ],
+      "Delete ${ name }?": [
+        "Vymazať ${ name }?"
       ],
       "Delete ${ value }": [
         "Vymazať ${ value }"
@@ -11323,6 +11374,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } zariadenie",
+        "${ n } zariadenia",
+        "${ n } zariadení",
+        "${ n } zariadení"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n } servery",
@@ -11335,6 +11392,12 @@
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } krajina",
+        "${ numberOfCountries } krajiny",
+        "${ numberOfCountries } krajín",
+        "${ numberOfCountries } krajín"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } v ${ numberOfCountries } krajine",
         "${ numberOfServers } v ${ numberOfCountries } krajinách",
@@ -11346,6 +11409,12 @@
         "${ numberOfServers } v ${ numberOfCountries } krajinách",
         "${ numberOfServers } v ${ numberOfCountries } krajinách",
         "${ numberOfServers } v ${ numberOfCountries } krajinách"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatický výber z ${ numberOfCountries } krajiny",
+        "Automatický výber z ${ numberOfCountries } krajín",
+        "Automatický výber z ${ numberOfCountries } krajín",
+        "Automatický výber z ${ numberOfCountries } krajín"
       ]
     },
     "vpn_2024: renew": {
@@ -11407,7 +11476,7 @@
         "Bitcoin cez email"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Zašifrovaná a bezpečná emailová adresa ${ MAIL_APP_NAME }. Môžete jednoducho odoslať Bitcoin komukoľvek len s ich ${ BRAND_NAME } menom."
+        "Zašifrovaná a bezpečná emailová adresa ${ MAIL_APP_NAME }. Môžete jednoducho odoslať Bitcoin komukoľvek pomocou ich ${ BRAND_NAME } mena."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Bezpečne vymieňajte Bitcoin prostredníctvom emailu namiesto zložitých, 26-znakových bitcoinových adries, ktoré sú náchylné na chybu"

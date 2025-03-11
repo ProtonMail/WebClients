@@ -1248,6 +1248,9 @@
       ],
       "Version history": [
         "Versionsverlauf"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6700,8 +6703,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
+      ],
+      "Add-on with free trial": [
+        "Add-on mit kostenloser Testversion"
       ],
       "for ${ price }": [
         "für ${ price }"
@@ -7177,6 +7186,9 @@
       "${ size } storage": [
         "${ size } Speicherplatz"
       ],
+      "${ size } storage per user": [
+        "${ size } Speicherplatz pro Benutzer"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - für ${ DRIVE_APP_NAME }"
       ],
@@ -7364,6 +7376,9 @@
       "Limited support": [
         "Eingeschränkter Support"
       ],
+      "Manage user permissions and access": [
+        "Benutzerberechtigungen und -zugang verwalten"
+      ],
       "Multiple admin roles": [
         "Mehrere Administratorrollen"
       ],
@@ -7381,6 +7396,9 @@
       ],
       "Password manager": [
         "Passwort-Manager"
+      ],
+      "Password manager to secure credentials": [
+        "Passwortmanager zum Schutz von Anmeldedaten"
       ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
@@ -7453,9 +7471,6 @@
       ],
       "SMTP submission": [
         "SMTP-Übermittlung"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-Übermittlung für ausgewählte Organisationen"
       ],
       "Split tunneling (Android and Windows)": [
         "Split-Tunneling (für Android und Windows)"
@@ -8559,6 +8574,9 @@
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
       ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
+      ],
       "Team policies": [
         "Gruppenrichtlinien"
       ]
@@ -9581,6 +9599,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-Verbindung pro Benutzer",
         "${ n } VPN-Verbindungen pro Benutzer"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-Verbindung für ${ n } Gerät pro Benutzer",
+        "VPN-Verbindung für ${ n } Geräte pro Benutzer"
       ]
     },
     "Subscription change warning": {
@@ -10255,6 +10277,9 @@
       ],
       "Album": [
         "Album"
+      ],
+      "Album details": [
+        "Albumdetails"
       ],
       "Albums": [
         "Alben"
@@ -11125,6 +11150,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } Gerät",
+        "${ n } Geräte"
+      ],
       "${ n } server": [
         "${ n } Server",
         "${ n }+ Server"
@@ -11133,6 +11162,10 @@
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } Land",
+        "${ numberOfCountries } Länder"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
@@ -11140,6 +11173,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Wählt automatisch aus ${ numberOfCountries } Land",
+        "Wählt automatisch aus ${ numberOfCountries } Ländern"
       ]
     },
     "vpn_2024: renew": {

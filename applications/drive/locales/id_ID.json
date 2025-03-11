@@ -1237,6 +1237,9 @@
       ],
       "Version history": [
         "Riwayat versi"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -4121,6 +4124,9 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } di Play Store"
       ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } mengundang Anda untuk bergabung ke **${ albumName }**"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } gagal terproses"
       ],
@@ -4200,7 +4206,7 @@
         "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (yang memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN dalam satu waktu)"
+        "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN)"
       ],
       "30-day money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
@@ -4476,7 +4482,7 @@
         "Turunkan"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
+        "Menurunkan akun akan memutus seluruh koneksi ke server ${ VPN_APP_NAME } berbayar."
       ],
       "Download ${ name } app": [
         "Unduh aplikasi ${ name }"
@@ -4671,13 +4677,13 @@
         "Apabila Anda memiliki salah satunya, tuju menu pengaturan Akun ${ BRAND_NAME } untuk\nmemulai proses pencabutan blokir."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
+        "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
         "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME }, termasuk kuota penyimpanan dan filter pencarian tambahan."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ VPN_APP_NAME }."
+        "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ VPN_APP_NAME }."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
@@ -4950,7 +4956,7 @@
         "Foto dipasang sebagai sampul album"
       ],
       "Photos have been successfully recovered.": [
-        "Foto telah berhasi dipulihkan."
+        "Foto telah berhasil dipulihkan."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Silakan minta pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
@@ -5295,7 +5301,7 @@
         "Bulan ini"
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Ini hanya akan menghapus album. Foto-foto Anda akan tetap di lini masa Anda. Tindakan ini tidak dapat diurungkan."
+        "Tindakan ini hanya akan menghapus album yang bersangkutan. Foto Anda akan tetap tersedia pada lini masa Anda. Tindakan ini tidak dapat diurungkan."
       ],
       "This will permanently delete the file you uploaded.": [
         "Tindakan ini akan menghapus berkas yang telah Anda unggah secara permanen."
@@ -6597,6 +6603,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
@@ -6998,7 +7007,7 @@
         "${ n } domain email khusus"
       ],
       "${ n } email address": [
-        "${ n } alamat email/alias"
+        "${ n } alamat/alias email"
       ],
       "${ n } email address per user": [
         "${ n } alamat email per pengguna"
@@ -7181,7 +7190,7 @@
         "Aplikasi desktop"
       ],
       "DNS leak prevention": [
-        "Perlindungan terhadap kebocoran DNS"
+        "Perlindungan kebocoran DNS"
       ],
       "Double hop": [
         "Double hop"
@@ -7332,9 +7341,6 @@
       ],
       "SMTP submission": [
         "Submisi SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Submisi SMTP untuk organisasi pilihan"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android dan Windows)"
@@ -8410,6 +8416,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel admin untuk mengelola pengguna dan langganan"
+      ],
+      "Advanced account protection": [
+        "Perlindungan akun bertingkat lanjut"
       ],
       "Team policies": [
         "Kebijakan tim"
@@ -10061,6 +10070,9 @@
       "Album": [
         "Album"
       ],
+      "Album details": [
+        "Rincian album"
+      ],
       "Albums": [
         "Album"
       ],
@@ -10798,17 +10810,26 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } perangkat"
+      ],
       "${ n } server": [
         "${ n }+ server"
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } negara"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Terpilih secara otomatis dari ${ numberOfCountries } negara"
       ]
     },
     "vpn_2024: renew": {
