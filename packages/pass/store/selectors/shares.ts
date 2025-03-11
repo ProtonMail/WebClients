@@ -42,6 +42,7 @@ export const selectNonOwnedVaults = createSelector([selectAllVaults], (v) => v.f
 export const selectOwnWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnWritableVault));
 export const selectOwnReadOnlyVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnReadonlyVault));
 export const selectWritableSharedVaults = createSelector([selectAllVaults], (v) => v.filter(isWritableSharedVault));
+export const selectCanCreateItems = createSelector([selectWritableVaults], (v) => v.length > 0);
 
 const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShareItem[]>) =>
     createSelector([vaultSelector, selectItems], (shares, itemsByShareId) =>
@@ -133,5 +134,3 @@ export const isShareLocked =
             return dto && shareId in dto;
         });
     };
-
-export const selectHasWritableVault = createSelector([selectWritableVaults], (v) => v.length > 0);
