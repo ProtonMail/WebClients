@@ -256,8 +256,14 @@
       "Color": [
         "颜色"
       ],
+      "Compare all plans": [
+        "比较所有计划"
+      ],
+      "Compare plans": [
+        "比较计划"
+      ],
       "Configure SAML": [
-        "设置 SAML"
+        "配置 SAML"
       ],
       "Confirm": [
         "确定"
@@ -442,6 +448,9 @@
       "Discard changes": [
         "放弃修改"
       ],
+      "Discover ${ planName }": [
+        "探索 ${ planName }"
+      ],
       "Dismiss": [
         "忽略"
       ],
@@ -549,6 +558,12 @@
       ],
       "Encrypt and export": [
         "加密并导出"
+      ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "探索 ${ PLAN_NAMES[plan] }"
+      ],
+      "Explore group plans": [
+        "探索团体计划"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "浏览其他 ${ BRAND_NAME } 账户等级"
@@ -769,6 +784,9 @@
       "Manage labels": [
         "管理标签"
       ],
+      "Manage subscription": [
+        "管理订阅"
+      ],
       "Mark as default": [
         "标记为默认"
       ],
@@ -914,7 +932,7 @@
         "删除日历"
       ],
       "Remove domain": [
-        "刷新域名"
+        "移除域名"
       ],
       "Remove gift code": [
         "移除礼品码"
@@ -1055,7 +1073,7 @@
         "选择国家/地区"
       ],
       "Select country ${ country }": [
-        "选择国家 ${ country }"
+        "选择国家/地区 ${ country }"
       ],
       "Select file": [
         "选择文件"
@@ -1841,6 +1859,9 @@
       ],
       "Version history": [
         "各版本历史"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1906,6 +1927,65 @@
       ],
       "Two-year": [
         "两年付费"
+      ]
+    },
+    "Blog": {
+      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
+        "${ BRAND_NAME } VPN 的无日志政策经外部审计确认"
+      ],
+      "**Streaming** is included in your subscription.": [
+        "**流媒体服务** 包含在您的订阅中。"
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "如果我们使用相同的 WiFi，别人能看到我的上网记录吗？"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "在 VPN 设置中启用  Kill Switch 和自动连接功能"
+      ],
+      "Get round-the-clock protection": [
+        "获得全天候保护"
+      ],
+      "How safe is Telegram?": [
+        "Telegram 的安全性如何？"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "在本文中，我们将介绍使用 WiFi 时谁可以查看您的上网历史记录、他们能看到什么以及他们为什么会这样做。"
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "使用 VPN 加速器将 VPN 速度提高近 400%"
+      ],
+      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
+        "经独立安全专家验证，ProtonVPN 不会记录用户数据或从事任何可能会损害您隐私的行为。"
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "使用 Telegram 是否安全？正如我们将在本文中讨论的那样，这在很大程度上取决于您如何使用它。"
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "了解如何在路由器上启用 ${ VPN_APP_NAME }。"
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "使用企业 VPN 保护公司免遭数据泄露的威胁，让远程工作更安全。"
+      ],
+      "Protect your whole household with 1 device": [
+        "只需一台设备即可保护整个家庭"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "通过 ${ PLAN_NAMES[PLANS.VPN] } 从所有主要平台进行流媒体播放。"
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "该文章已更新，加入了 WireGuard 和 Stealth VPN 协议。"
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "VPN Accelerator 采用先进的 VPN 技术组合，可提高连接稳定性并加快连接速度"
+      ],
+      "Watch your favorite movies and TV shows": [
+        "观看您喜爱的电影和电视节目"
+      ],
+      "Which VPN protocol is the best?": [
+        "哪种 VPN 协议最好？"
+      ],
+      "Working with sensitive data?": [
+        "正在处理敏感数据？"
       ]
     },
     "breadcrumb": {
@@ -3660,7 +3740,7 @@
         "根据需要创建标签或文件夹，以保持收件箱整洁。"
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
-        "创建策略，决定谁可以连接到每个国家的共享服务器。"
+        "创建策略，决定谁可以连接到每个国家/地区的共享服务器。"
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "开启 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
@@ -3888,6 +3968,98 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "您的 ${ PLAN_NAMES[PLANS.PASS] } 订阅特价为每年 ${ price }。如果降级为免费计划，您将永久失去折扣，即使将来再次升级也是如此。"
+      ]
+    },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "浏览器"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "电脑版"
+      ],
+      "Download for Linux": [
+        "下载 Linux 版"
+      ],
+      "Download for MacOS": [
+        "下载 MacOS 版"
+      ],
+      "Download for Windows": [
+        "下载 Windows 版"
+      ],
+      "Download on the Apple App Store": [
+        "在 Apple App Store 下载"
+      ],
+      "Download on the Google Play Store": [
+        "在 Google Play Store 下载"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "获取应用"
+      ],
+      "Get the extension": [
+        "获取扩展"
+      ],
+      "Installation guide": [
+        "安装指南"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave 或更早版本"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura 或更高版本"
+      ],
+      "Mobile": [
+        "移动版"
+      ],
+      "TV": [
+        "TV"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 或 Windows 32位 (ARM64)"
       ]
     },
     "Download link": {
@@ -4535,17 +4707,8 @@
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
       ],
-      "Error creating policy.": [
-        "创建策略时出错。"
-      ],
-      "Error deleting policy.": [
-        "删除策略时出错。"
-      ],
       "Error in one of the conditions": [
         "条件存在错误"
-      ],
-      "Error updating policy.": [
-        "创建策略时出错。"
       ],
       "Expired": [
         "已失效"
@@ -4575,13 +4738,13 @@
         "IMAP 服务器必须填写"
       ],
       "Impossible to create the gateway": [
-        "网关不可创建"
+        "无法创建网关"
       ],
       "Impossible to edit the gateway": [
-        "网关不可编辑"
+        "无法编辑网关"
       ],
       "Impossible to rename the gateway": [
-        "网关不可重命名"
+        "无法重命名网关"
       ],
       "Incorrect backup password. Please try again.": [
         "备份密码不正确，请重试。"
@@ -4917,7 +5080,7 @@
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unable to upload file": [
-        "文件没上传成"
+        "无法上传文件"
       ],
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
@@ -5652,10 +5815,13 @@
         "添加 (${ totalAddedCount } 台)"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "最多连接 ${ plusVpnConnections } 部设备"
+        "最多可连接 ${ plusVpnConnections } 台设备"
       ],
       "Continue": [
         "继续"
+      ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "一切尽在 ${ PLAN_NAMES[PLANS.VPN2024] }"
       ],
       "Fastest VPN servers": [
         "高速 VPN 服务器"
@@ -5671,6 +5837,31 @@
       ],
       "Torrenting support (P2P)": [
         "支持 BT 下载 (P2P)"
+      ]
+    },
+    "Features": {
+      "and more premium features...": [
+        "更多高级功能..."
+      ],
+      "Double VPN": [
+        "Double VPN"
+      ],
+      "Lightning-fast speeds": [
+        "闪电般的速度"
+      ],
+      "NetShield Ad-blocker": [
+        "NetShield 广告拦截器"
+      ],
+      "Secure streaming": [
+        "安全看视频"
+      ],
+      "Select from ${ vpnServers.paid.countries } countries": [
+        "从 ${ vpnServers.paid.countries } 个地域中选择"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "随时随地访问流媒体服务内容，包括 Netflix、Disney+、Prime Video 等。"
       ]
     },
     "fido2: Action": {
@@ -6308,8 +6499,26 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "比较计划"
+      ],
       "Contact us": [
         "联系我们"
+      ],
+      "Enjoying ${ planName }?": [
+        "喜欢 ${ planName } 吗？"
+      ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "每月只需多支付 **${ priceString }**，即可解锁另外 4 项高级隐私服务"
+      ],
+      "Upgrade your privacy": [
+        "提升隐私保护"
+      ],
+      "You currently pay": [
+        "您目前支付"
+      ],
+      "Your plan": [
+        "您的计划"
       ]
     },
     "Hint": {
@@ -6809,6 +7018,12 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } days.": [
+        "${ planName } 在 ${ daysLeft } 天后到期。"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } 今天到期。"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } 是一项高等级账户保护计划，由精密的人工智能系统和资深专家组成，为您全方位抵御恶意攻击和安全威胁。"
       ],
@@ -6996,13 +7211,13 @@
         "添加您的名称和徽标来为您的组织创建更多个性化的体验。"
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "添加 ${ addedServerCount } 台网关服务器"
+        "正在添加 ${ addedServerCount } 台网关服务器"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "添加外部电子邮件地址将禁用该组内所有电子邮件通信的端到端加密。要继续吗？"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "添加网关服务器：${ serverNumber } / ${ total }"
+        "正在添加网关服务器：${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
@@ -7173,7 +7388,7 @@
         "自动清除 30 天前移至回收站和垃圾邮件的电子邮件。"
       ],
       "Available on macOS, Windows, and Linux.": [
-        "多平台 macOS, Windows, 以及 Linux。"
+        "适用于 macOS、Windows 和 Linux。"
       ],
       "Awaiting transaction": [
         "等待交易"
@@ -7341,7 +7556,7 @@
         "创建于"
       ],
       "Create your first Gateway": [
-        "创建第一个网关"
+        "创建您的第一个网关"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "创建网关服务器：${ serverNumber } / ${ total }"
@@ -7413,7 +7628,10 @@
         "删除链接？"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "删除 ${ deletedServerCount } 台网关服务器"
+        "正在删除 ${ deletedServerCount } 台网关服务器"
+      ],
+      "Did you know?": [
+        "您知道吗？"
       ],
       "Disable recovery by email address": [
         "禁用通过密保邮箱恢复"
@@ -7465,6 +7683,12 @@
       ],
       "domain used": [
         "域名用量"
+      ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "不要失去使用高级 ${ appName } 功能的机会。立即启用自动续订功能。"
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "不要失去使用高级功能的机会。立即启用自动续订。"
       ],
       "Done! We sent a code to ${ destination }.": [
         "搞定！我们向 ${ destination } 发送了一个验证码。"
@@ -7541,6 +7765,12 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "标记为 ${ nameDeleted } 的邮件不会被删除，仍可在相应的文件夹中找到。"
       ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "启用自动更新，以保持对 Plus 服务器和功能的访问权限。"
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "启用自动续订功能，即可继续使用高级功能。"
+      ],
       "Enable email notifications": [
         "启用电子邮件通知"
       ],
@@ -7564,6 +7794,9 @@
       ],
       "Encryption setting updated": [
         "加密设置已更改"
+      ],
+      "End date": [
+        "结束日期"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "该组因存在外部地址而禁用端到端电子邮件加密。"
@@ -7644,7 +7877,7 @@
         "已过期"
       ],
       "expires ${ expirationDate }": [
-        "${ expirationDate } 过期"
+        "于 ${ expirationDate } 过期"
       ],
       "Failed to fetch logs.": [
         "获取日志失败。"
@@ -8133,7 +8366,7 @@
         "只能有字母、数字、连字符 (-)。"
       ],
       "Must not contain spaces.": [
-        "不能有空格。"
+        "不能包含空格。"
       ],
       "Must start with a letter.": [
         "必须以字母开头。"
@@ -8152,6 +8385,9 @@
       ],
       "New VPN connection data will stop being collected and shown.": [
         "将停止收集和显示新的 VPN 连接数据。"
+      ],
+      "Next billing date": [
+        "下一个帐单日期"
       ],
       "No account keys exist": [
         "不存在账户密钥"
@@ -8178,7 +8414,7 @@
         "没有网关"
       ],
       "No Gateways yet": [
-        "网关还没有"
+        "尚无网关"
       ],
       "No imports or forwarding history.": [
         "暂无邮件导入与自动转发记录。"
@@ -8241,10 +8477,10 @@
         "或 ${ selectFileButton }"
       ],
       "or assign to any country in ${ availableAgainAfterDays } day": [
-        "或在 ${ availableAgainAfterDays } 天后分配到任何国家。"
+        "或在 ${ availableAgainAfterDays } 天后分配到任何国家/地区。"
       ],
       "or assign to any country in ${ availableAgainAfterHours } hour": [
-        "或在 ${ availableAgainAfterHours } 小时后分配到任何国家。"
+        "或在 ${ availableAgainAfterHours } 小时后分配到任何国家/地区。"
       ],
       "or discover other features:": [
         "或发现其他功能："
@@ -8589,7 +8825,7 @@
         "SEPA 付款目前尚不可用，请稍后再试。"
       ],
       "Server is currently down": [
-        "服务器当下用不了"
+        "服务器目前不可用"
       ],
       "Server load": [
         "服务器负荷"
@@ -8631,7 +8867,7 @@
         "共享的 ${ vaultLink } 已更新"
       ],
       "Shared server country (${ countriesCount })": [
-        "共享服务器所在的国家（${ countriesCount }）"
+        "共享服务器所在的国家/地区（${ countriesCount }）"
       ],
       "Shared vault deleted": [
         "共享密码库已删除"
@@ -8686,6 +8922,9 @@
       ],
       "Step ${ step }": [
         "步骤 ${ step }"
+      ],
+      "Storage": [
+        "存储"
       ],
       "Storage allocated to other users in this organisation": [
         "此组织其他成员的存储空间分配量"
@@ -9348,7 +9587,7 @@
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
       ],
       "Whole organization": [
-        "整个团体"
+        "整个组织"
       ],
       "Why?": [
         "为什么？"
@@ -9440,6 +9679,9 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "您可以使用下面的切换键在界面上启用照片部分。"
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "您可以一次性获得我们所有的高级隐私服务，而且仅需 **${ priceString }/月**。"
+      ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
       ],
@@ -9492,7 +9734,7 @@
         "您有 ${ availableCount } 个可用的新服务器。"
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "您有 ${ unassignedAvailableCount } 台最近使用的服务器可用。要将这些服务器分配到其他国家，需等待停用过程完成。"
+        "您有 ${ unassignedAvailableCount } 台最近使用的服务器可用。要将这些服务器分配到其他国家/地区，需等待停用过程完成。"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一个试用版 ${ planTitle } 订阅。如果您想在试用期结束后继续订阅，请添加付款方式。"
@@ -10229,6 +10471,9 @@
       "Addresses": [
         "地址"
       ],
+      "Advanced": [
+        "高级"
+      ],
       "ALL": [
         "且"
       ],
@@ -10371,10 +10616,10 @@
         "屏蔽邮件跟踪"
       ],
       "Block malware only": [
-        "仅屏蔽恶意软件"
+        "仅拦截恶意软件"
       ],
       "Block malware, ads and trackers": [
-        "屏蔽恶意软件、广告和追踪脚本"
+        "拦截恶意软件、广告和追踪器"
       ],
       "Browser": [
         "浏览器"
@@ -10500,7 +10745,7 @@
         "您能具体说明一下吗？"
       ],
       "Country": [
-        "国家"
+        "国家/地区"
       ],
       "Create password": [
         "创建密码"
@@ -10557,7 +10802,7 @@
         "说明："
       ],
       "Device/certificate name": [
-        "设备或证书的名称"
+        "设备/证书名称"
       ],
       "Digits": [
         "验证码位数"
@@ -11001,7 +11246,7 @@
         "保护模式"
       ],
       "Public certificate (X.509)": [
-        "公钥认证 (X.509)"
+        "公钥证书 (X.509)"
       ],
       "Purpose": [
         "用途"
@@ -12585,9 +12830,6 @@
       "SMTP submission": [
         "SMTP 投递邮件"
       ],
-      "SMTP submission for select organizations": [
-        "特定机构可通过 SMTP 投递邮件"
-      ],
       "Split tunneling (Android and Windows)": [
         "线路分离（支持 Android 与 Windows）"
       ],
@@ -12724,17 +12966,6 @@
         "团队管理"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ trialPlanName } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的体验期将于 ${ formattedPeriodEndDate } 结束"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -12845,6 +13076,17 @@
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ trialPlanName } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的体验期将于 ${ formattedPeriodEndDate } 结束"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -12946,7 +13188,7 @@
         "每个地址均可独立收发邮件。一位用户可以使用多个地址，但一个地址不能同时分配给多位用户。"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "实现同时接入不同网络，例如既能观看其他国家的电影又能搜索本地新闻"
+        "实现同时接入不同网络，例如既能观看其他国家/地区的电影又能搜索本地新闻"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "可对收到的邮件自动予以回复"
@@ -13317,7 +13559,7 @@
         "输入无效，请搜索电子邮件或 IP 地址。"
       ],
       "IP Address copied to clipboard": [
-        "IP 地址已复制"
+        "IP 地址已复制到剪贴板"
       ],
       "Key copied to the clipboard": [
         "密钥已复制到剪贴板"
@@ -14455,7 +14697,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "计费国家"
+        "计费国家/地区"
       ],
       "Card number": [
         "卡号"
@@ -14485,13 +14727,13 @@
         "请先重新激活您的订阅以减少附加功能。"
       ],
       "Please select billing country": [
-        "请选择您的计费国家"
+        "请选择您的计费国家/地区"
       ],
       "Please select billing state": [
         "请选择账单省（州）"
       ],
       "Please select your billing country first.": [
-        "请先选择您的账单国家。"
+        "请先选择您的账单国家/地区。"
       ],
       "Please select your billing state first.": [
         "请先选择您的账单省（州）。"
@@ -14503,7 +14745,7 @@
         "续订时间为 ${ renewPrice }，可随时取消。"
       ],
       "Select billing country to pay": [
-        "选择要支付的账单国家"
+        "选择要支付的账单国家/地区"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "特别折扣价 ${ priceWithDiscount } 在前 ${ subscriptionLength } 个月有效。优惠券在 ${ couponRedemptions } 续订时有效。之后将以 ${ renewPrice } 价格自动续订 ${ subscriptionLengthCopy } 个月。您可以随时取消。"
@@ -14682,7 +14924,7 @@
         "请先输入链接内容"
       ],
       "Please select a country": [
-        "请选择国家"
+        "请选择国家/地区"
       ],
       "Please select the main reason": [
         "请选择主要原因"
@@ -14750,9 +14992,34 @@
         "成员"
       ]
     },
+    "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "用于照片和文档的加密云存储"
+      ],
+      "Password manager with identity protection": [
+        "具有身份保护功能的密码管理器"
+      ],
+      "Secure email that protects your privacy": [
+        "保护您隐私的安全邮箱"
+      ],
+      "Your gateway to online freedom": [
+        "您通往线上自由的大门"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "联系人"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } 个月"
+      ],
+      "${ months } month plan": [
+        "${ months } 个月计划"
+      ],
+      "Enjoying ${ planName }?": [
+        "喜欢 ${ planName } 吗？"
       ]
     },
     "Price": {
@@ -16546,6 +16813,9 @@
       "Billed every 2 years": [
         "每两年付费"
       ],
+      "Billed every 6 months": [
+        "按 6 个月计费"
+      ],
       "Billed for 15 months": [
         "按 15 个月计费"
       ],
@@ -17176,15 +17446,6 @@
       "Phone number updated": [
         "电话号码已更改"
       ],
-      "Policy created successfully!": [
-        "策略创建成功！"
-      ],
-      "Policy deleted": [
-        "已删除策略"
-      ],
-      "Policy updated successfully!": [
-        "策略更新成功！"
-      ],
       "Port copied to clipboard": [
         "端口号已复制"
       ],
@@ -17639,6 +17900,9 @@
       "Allocate storage": [
         "分配存储空间"
       ],
+      "Also in your plan": [
+        "也在您的计划中"
+      ],
       "Amount": [
         "数额"
       ],
@@ -17777,6 +18041,9 @@
       "Connect organization": [
         "联系群组"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "使用 ${ vpnPlus } 一次连接 ${ VPN_CONNECTIONS } 台设备。${ upgradeButton }"
+      ],
       "Connection status": [
         "连接状况"
       ],
@@ -17882,6 +18149,9 @@
       "Decrypt key": [
         "解密密钥"
       ],
+      "Deep dive into VPN blog posts": [
+        "深入了解 VPN 的博客文章"
+      ],
       "Delete ${ policyName }?": [
         "删除 ${ policyName }？"
       ],
@@ -17977,6 +18247,9 @@
       ],
       "Download the mobile apps": [
         "下载移动应用"
+      ],
+      "Downloads": [
+        "下载"
       ],
       "Edit billing address": [
         "编辑账单地址"
@@ -18161,6 +18434,15 @@
       "Get ${ vpnPlus } to access all servers": [
         "开通 ${ vpnPlus }，任意选择服务器"
       ],
+      "Get complete privacy coverage": [
+        "获取更全面的隐私保护"
+      ],
+      "Get more from your VPN": [
+        "从您的 VPN 获取更多信息"
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "在所有设备上安装该应用程序，一次最多可保护 ${ VPN_CONNECTIONS } 台设备。"
+      ],
       "Get the apps": [
         "下载应用"
       ],
@@ -18187,6 +18469,9 @@
       ],
       "History": [
         "历史记录"
+      ],
+      "Home": [
+        "首页"
       ],
       "How does it work?": [
         "如何操作？"
@@ -18653,6 +18938,9 @@
       "Status": [
         "状态"
       ],
+      "Subscription": [
+        "订阅"
+      ],
       "Success": [
         "成功"
       ],
@@ -18724,6 +19012,9 @@
       ],
       "Upgrade plan": [
         "升级账户"
+      ],
+      "Upgrade your privacy": [
+        "提升隐私保护"
       ],
       "Upload CSV file to create multiple accounts": [
         "上传 CSV 文件以创建多个账户"
@@ -19430,9 +19721,38 @@
         "升级到 ${ MAIL_SHORT_APP_NAME } 付费计划以共享您的日历。"
       ]
     },
+    "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "长期订阅可节省**高达 ${ priceString }** 的费用。同样的高级功能，更低的价格。"
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "一次轻松订阅，享受所有高级 ${ BRAND_NAME } 服务。"
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "每月仅需 ${ fallBackString }，即可享受所有高级 ${ BRAND_NAME } 服务"
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "每月仅需 **${ priceString }**，即可享受所有高级 ${ BRAND_NAME } 服务。"
+      ],
+      "Did you know?": [
+        "您知道吗？"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "您最多可以为 ${ FAMILY_MAX_USERS } 用户提供 ${ PLAN_NAMES[plan] } 保护。每个账户每月仅需 ${ priceString }。"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "您最多可以为 ${ FAMILY_MAX_USERS } 人提供 ${ PLAN_NAMES[PLANS.DUO] } 或 ${ PLAN_NAMES[PLANS.FAMILY] } 保护。每个账户每月仅需 ${ priceString }。"
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "超值特惠"
+      ],
       "Recommended": [
         "推荐"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "节省 ${ totals.discountPercentage }%"
       ]
     },
     "User referee invited via email": {
@@ -19583,23 +19903,52 @@
         "其它"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "使用端到端加密技术进行通信和日程安排。"
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "从您的 ${ planTitle } 订阅中获得更多信息。"
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "使用 ${ maxDriveSpace } 免费云存储，确保您的文件、照片和文档安全。"
+      ],
+      "Set secure passwords without the hassle.": [
+        "轻松设置安全密码"
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "使用 ${ planTitlePlusMaybeBrand }，您可以免费访问 ${ VPN_APP_NAME } 和其他隐私服务。"
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "使用 ${ planTitlePlusMaybeBrand }，您可以免费使用所有 ${ BRAND_NAME } 隐私服务。"
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, 应有尽有。"
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } 台设备"
+      ],
       "${ n } server": [
         "${ n } 台服务器"
       ],
       "${ n } VPN connection": [
         "${ n } 台设备可同时接入 VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } 个国家/地区"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "遍布 ${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } 个国家的 ${ numberOfServers }"
+        "${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "从 ${ numberOfCountries } 个地域中自动选择"
       ]
     },
     "vpn_2024: renew": {
