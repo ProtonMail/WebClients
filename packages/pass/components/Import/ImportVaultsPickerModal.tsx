@@ -37,7 +37,7 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
     const defaultVault = useSelector(selectDefaultVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
     const plan = useSelector(selectPassPlan);
-    const isVaultCreationProhibited = useSelector(selectOrganizationVaultCreationDisabled);
+    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
 
     const handleSubmit = useCallback(
         (values: VaultsPickerFormValues) =>
@@ -71,7 +71,7 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
     );
 
     const vaultsRemaining = vaultLimit - vaultTotalCount - vaultsToCreate;
-    const canCreateVault = !isVaultCreationProhibited && vaultsRemaining > 0;
+    const canCreateVault = !vaultCreationDisabled && vaultsRemaining > 0;
 
     return (
         <ModalTwo open onClose={onClose} onReset={onReset} size={'medium'} className="mt-10">
