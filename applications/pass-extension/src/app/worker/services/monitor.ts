@@ -8,12 +8,12 @@ import { WorkerMessageType } from '@proton/pass/types';
 export const createMonitorService = (core: PassCoreProxy, store: Store) => {
     const service = createCoreMonitorService(core, store);
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.MONITOR_2FAS, async ({ payload }) => ({
-        result: await service.checkMissing2FAs(payload),
+    WorkerMessageBroker.registerMessage(WorkerMessageType.MONITOR_2FAS, async () => ({
+        result: await service.checkMissing2FAs(),
     }));
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.MONITOR_WEAK_PASSWORDS, async ({ payload }) => ({
-        result: await service.checkWeakPasswords(payload),
+    WorkerMessageBroker.registerMessage(WorkerMessageType.MONITOR_WEAK_PASSWORDS, async () => ({
+        result: await service.checkWeakPasswords(),
     }));
 
     return service;

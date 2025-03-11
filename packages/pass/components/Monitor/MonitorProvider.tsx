@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/index';
 import { useInsecurePasswords, useMissing2FAs } from '@proton/pass/hooks/monitor/useAsyncMonitorState';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { intoAliasMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
@@ -40,10 +41,10 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const custom = useSelector(selectCustomBreaches) ?? [];
     const count = useSelector(selectTotalBreaches) ?? 0;
 
-    const duplicates = useSelector(selectDuplicatePasswords);
+    const duplicates = useMemoSelector(selectDuplicatePasswords, []);
+    const excluded = useMemoSelector(selectExcludedItems, []);
     const missing2FAs = useMissing2FAs();
     const insecure = useInsecurePasswords();
-    const excluded = useSelector(selectExcludedItems);
 
     const [action, setAction] = useState<MaybeNull<MonitorAction>>(null);
     const onClose = () => setAction(null);
