@@ -1090,6 +1090,9 @@
       ],
       "Version history": [
         "Sürüm geçmişi"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -4970,7 +4973,7 @@
         "Kuruluşunuzdaki diğer kullanıcılar meşgul zamanlarınızı görecek. Etkinlik bilgileri paylaşılmaz."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Uyarılarımız güvenliğe öncelik verir. Ele geçirilen bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
+        "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
       ],
       "password": [
         "parola"
@@ -5117,7 +5120,7 @@
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
+        "Bilgiler üçüncü taraf bir hizmetten sızdırılmış. ${ BRAND_NAME } hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Değişiklikleriniz şu katılımcılara bildirilemeyecek:"
@@ -5446,10 +5449,10 @@
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
       "Your email address and password were leaked:": [
-        "E-posta adresiniz ve parolanız açığa çıkmış:"
+        "E-posta adresiniz ve parolanız sızdırılmış:"
       ],
       "Your email address was exposed:": [
-        "E-posta adresiniz açığa çıkmış:"
+        "E-posta adresiniz sızdırılmış:"
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -5473,7 +5476,7 @@
         "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
       ],
       "Your password was leaked:": [
-        "Parolanız açığa çıkmış:"
+        "Parolanız sızdırılmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -6313,8 +6316,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
+      "Add-on with free trial": [
+        "Ücretsiz deneme sürümü ile eklenti"
       ],
       "for ${ price }": [
         "${ price }"
@@ -6732,6 +6741,9 @@
       "${ size } storage": [
         "${ size } depolama alanı"
       ],
+      "${ size } storage per user": [
+        "Her kullanıcı için ${ size } depolama alanı"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - ${ DRIVE_APP_NAME } için"
       ],
@@ -6808,7 +6820,7 @@
         "Tüm platformlarda kullanılabilir"
       ],
       "Breach alerts": [
-        "Verilerin ele geçilrilmesi uyarıları"
+        "Veri sızıntısı uyarıları"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -6847,7 +6859,7 @@
         "Özel çalışma alanı markası"
       ],
       "Data breach monitoring": [
-        "Verilerin ele geçirilmesini izleme"
+        "Veri sızıntılarını izleme"
       ],
       "Dedicated servers optimized for streaming": [
         "Yayın akışı izlemek için ayarlanmış özel sunucular"
@@ -6919,6 +6931,9 @@
       "Limited support": [
         "Sınırlı destek"
       ],
+      "Manage user permissions and access": [
+        "Kullanıcı izinleri ve erişimi yönetimi"
+      ],
       "Multiple admin roles": [
         "Birden çok yönetici rolü"
       ],
@@ -6936,6 +6951,9 @@
       ],
       "Password manager": [
         "Parola yöneticisi"
+      ],
+      "Password manager to secure credentials": [
+        "Kimlik bilgilerini korumak için parola yöneticisi"
       ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
@@ -7008,9 +7026,6 @@
       ],
       "SMTP submission": [
         "SMTP gönderimi"
-      ],
-      "SMTP submission for select organizations": [
-        "Seçilmiş kuruluşlar için SMTP gönderimi"
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
@@ -7952,6 +7967,9 @@
       "Admin panel to manage users and subscription": [
         "Kullanıcıları ve aboneliğinizi panonuzdan yönetin"
       ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
       "Team policies": [
         "Ekip ilkeleri"
       ]
@@ -8386,7 +8404,7 @@
         "Olası ${ name } veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın. ${ learnMoreLink }"
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten sızdırıldığında bildirim alın. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
@@ -9041,6 +9059,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN bağlantısı / kullanıcı",
         "${ n } VPN bağlantısı / kullanıcı"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı",
+        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı"
       ]
     },
     "Subscription change warning": {
@@ -9092,7 +9114,7 @@
         "Otomatik e-posta iletme ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+        "Veri sızıntısı uyarıları ${ strongArgument }"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -10049,7 +10071,7 @@
         "Gece teması"
       ],
       "No breaches detected": [
-        "Herhangi bir veri ele geçirilmemiş"
+        "Herhangi bir veri sızıntısı yok"
       ],
       "Notes": [
         "Notlar"
@@ -10256,7 +10278,7 @@
         "Takvim bağlantınız"
       ],
       "Your exposed information": [
-        "Açığa çıkmış bilgileriniz"
+        "Sızdırılmış bilgileriniz"
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
@@ -10519,6 +10541,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } aygıt",
+        "${ n } aygıt"
+      ],
       "${ n } server": [
         "${ n } sunucu",
         "${ n } sunucu"
@@ -10527,6 +10553,10 @@
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ülke",
+        "${ numberOfCountries } ülke"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
@@ -10534,6 +10564,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries } ülke arasından otomatik seçilir",
+        "${ numberOfCountries } ülke arasından otomatik seçilir"
       ]
     },
     "vpn_2024: renew": {
