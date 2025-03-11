@@ -33,6 +33,7 @@ export const DEFAULT_USER_SETTINGS: UserSettings = {
     Sort: SortSetting.ModifiedDesc,
     RevisionRetentionDays: 0,
     B2BPhotosEnabled: false,
+    PhotoTags: [],
 };
 
 export const UPLOAD_TIMEOUT = 90000;

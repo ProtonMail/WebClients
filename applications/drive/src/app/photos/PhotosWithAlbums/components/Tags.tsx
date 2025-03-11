@@ -101,9 +101,9 @@ const getTagLabelWithIcon = (
                 label: c('Label').t`Shared with me`,
                 iconName: 'users',
             };
+        default:
+            throw new Error(`Unhandled tag type: ${tag}`);
     }
-
-    throw new Error(`Unhandled tag type: ${tag}`);
 };
 
 function Tags<T extends Tag>({ selectedTags, tags, onTagSelect }: TagsProps<T>) {
