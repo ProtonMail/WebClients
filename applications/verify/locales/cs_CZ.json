@@ -80,6 +80,14 @@
         "Použijte svou vlastní e-mailovou doménu"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Cloudové úložiště a sdílení velkých souborů"
+      ],
+      "Secure personal and shared calendar": [
+        "Zabezpečený osobní a sdílený kalendář"
+      ]
+    },
     "color": {
       "carrot": [
         "mrkev"
@@ -1323,6 +1331,9 @@
       "${ size } storage": [
         "${ size } úložiště"
       ],
+      "${ size } storage per user": [
+        "${ size } úložiště na uživatele"
+      ],
       "1 TB secure storage": [
         "1 TB bezpečného úložiště"
       ],
@@ -1463,9 +1474,6 @@
       ],
       "SMTP submission": [
         "SMTP odesílání"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP odesílání pro vybrané organizace"
       ],
       "Support for up to 2 users": [
         "Podpora pro až 2 uživatele"

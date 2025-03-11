@@ -80,6 +80,14 @@
         "Gunakan domain email milik Anda sendiri"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Penyimpanan awan dan pembagian untuk berkas besar"
+      ],
+      "Secure personal and shared calendar": [
+        "Kalender personal dan bersama yang aman"
+      ]
+    },
     "color": {
       "carrot": [
         "wortel"
@@ -1240,7 +1248,7 @@
         "${ n } domain email khusus"
       ],
       "${ n } email address": [
-        "${ n } alamat email/alias"
+        "${ n } alamat/alias email"
       ],
       "${ n } email address per user": [
         "${ n } alamat email per pengguna"
@@ -1412,9 +1420,6 @@
       ],
       "SMTP submission": [
         "Submisi SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Submisi SMTP untuk organisasi pilihan"
       ],
       "Support for up to 2 users": [
         "Dukungan hingga 2 pengguna"
