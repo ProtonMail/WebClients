@@ -28,11 +28,13 @@ export function FolderContextMenu({
     permissions,
     isActiveLinkReadOnly,
     isActiveLinkRoot,
+    isActiveLinkInDeviceShare,
 }: ContextMenuProps & {
     shareId: string;
     permissions: SHARE_MEMBER_PERMISSIONS;
     isActiveLinkReadOnly?: boolean;
     isActiveLinkRoot?: boolean;
+    isActiveLinkInDeviceShare?: boolean;
 }) {
     useEffect(() => {
         if (position) {
@@ -90,7 +92,7 @@ export function FolderContextMenu({
                         action={() => showCreateFolderModal({ folder: activeFolder, createFolder })}
                     />
                 )}
-                {isDocsEnabled && !isActiveLinkReadOnly && (
+                {isDocsEnabled && !isActiveLinkReadOnly && !isActiveLinkInDeviceShare && (
                     <CreateNewDocumentButton
                         close={close}
                         action={() => {
