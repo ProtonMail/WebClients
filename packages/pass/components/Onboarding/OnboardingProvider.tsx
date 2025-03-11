@@ -6,13 +6,14 @@ import { B2BProvider } from '@proton/pass/components/Onboarding/Provider/B2BProv
 import { OnboardingContext } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
 import { WelcomeProvider } from '@proton/pass/components/Onboarding/Provider/WelcomeProvider';
 import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
-import { selectPassPlan } from '@proton/pass/store/selectors';
+import { selectCanCreateItems, selectPassPlan } from '@proton/pass/store/selectors';
 
 export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
     const plan = useSelector(selectPassPlan);
+    const canCreateItems = useSelector(selectCanCreateItems);
 
     const Provider = useMemo(() => {
-        if (isBusinessPlan(plan)) return B2BProvider;
+        if (isBusinessPlan(plan)) return canCreateItems ? B2BProvider : Fragment;
         else if (DESKTOP_BUILD) return WelcomeProvider;
         return Fragment;
     }, [plan]);

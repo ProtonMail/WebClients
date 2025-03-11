@@ -12,8 +12,15 @@ import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/clie
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
+import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { bootIntent, clientInit } from '@proton/pass/store/actions';
-import { selectFeatureFlags, selectFilters, selectItem, selectTabState } from '@proton/pass/store/selectors';
+import {
+    selectCanCreateItems,
+    selectFeatureFlags,
+    selectFilters,
+    selectItem,
+    selectTabState,
+} from '@proton/pass/store/selectors';
 import type { ClientInitMessage, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
@@ -221,10 +228,14 @@ export const createActivationService = () => {
                 });
             }
 
+            const state = ctx.service.store.getState();
+            const canCreateItems = selectCanCreateItems(state);
+            const settings = await ctx.service.settings.resolve();
+
             return {
                 state: ctx.getState(),
-                features: selectFeatureFlags(ctx.service.store.getState()) ?? {},
-                settings: await ctx.service.settings.resolve(),
+                features: selectFeatureFlags(state) ?? {},
+                settings: sanitizeSettings(settings, { canCreateItems }),
             };
         }
     );
