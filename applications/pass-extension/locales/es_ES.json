@@ -774,7 +774,7 @@
         "Error con la autenticación. Confirma tu contraseña adicional para continuar con la exportación."
       ],
       "Authentication failure: ${ message }": [
-        "Error de la autenticación: ${ message }"
+        "Error con la autenticación: ${ message }"
       ],
       "Cannot create alias (${ error }).": [
         "No se puede crear el alias (${ error })."
@@ -2635,9 +2635,6 @@
       ],
       "Expired": [
         "Expirado"
-      ],
-      "Expired link": [
-        "Enlace expirado"
       ],
       "Export": [
         "Exportar"
