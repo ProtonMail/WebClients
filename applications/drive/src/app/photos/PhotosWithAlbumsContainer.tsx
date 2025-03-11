@@ -9,7 +9,7 @@ export const PhotosWithAlbumsContainer: FC = () => {
     return (
         <Routes>
             <Route path="" element={<PhotosWithAlbumsView />} />
-            <Route path="albums/*" element={<AlbumsView />} />
+            <Route path="albums" element={<AlbumsView />} />
             <Route path="albums/:albumShareId/album/:albumLinkId" element={<PhotosWithAlbumsInsideAlbumView />} />
             <Route path="*" element={<Navigate to="/photos" replace />} />
         </Routes>
