@@ -45,7 +45,9 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     });
 
     // We want to have metrics from where the user has clicked on the upgrade button
-    const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
+    const displayUpgradeButton =
+        ((user.isFree && !user.hasPassLifetime) || isTrial(subscription)) &&
+        !location.pathname.endsWith(upgradePathname);
     const upgradeText = c('specialoffer: Link').t`Upgrade`;
     const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : 'upgrade';
     const upsellConfig = useUpsellConfig({

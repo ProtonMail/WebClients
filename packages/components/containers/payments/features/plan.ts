@@ -256,7 +256,7 @@ export const getPassLifetimePlan = (plan: Plan): ShortPlan => {
         plan: PLANS.PASS_LIFETIME,
         title: PLAN_NAMES[PLANS.PASS_LIFETIME],
         label: '',
-        description: c('new_plans: info').t`For next-level password management and identity protection.`,
+        description: c('new_plans: info').t`Pay once, secure your passwords and identity forever.`,
         cta: getCTA(plan.Title),
         features: [...getPassPlan(plan).features],
     };

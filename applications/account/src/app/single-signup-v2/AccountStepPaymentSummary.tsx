@@ -47,7 +47,12 @@ const AccountStepPaymentSummary = ({
     showInclusiveTax,
     showTaxCountry,
 }: Props) => {
-    const summaryPlan = getSummaryPlan({ plan: selectedPlan, vpnServersCountData, freePlan: model.freePlan });
+    const summaryPlan = getSummaryPlan({
+        plan: selectedPlan,
+        vpnServersCountData,
+        freePlan: model.freePlan,
+        existingUser: !!model.session?.resumedSessionResult.UID,
+    });
 
     const hasCouponCode = !!model.subscriptionData?.checkResult.Coupon?.Code;
     const currentCheckout = getCheckout({

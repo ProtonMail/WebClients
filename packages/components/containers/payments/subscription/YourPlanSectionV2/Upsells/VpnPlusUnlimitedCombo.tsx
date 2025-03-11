@@ -27,7 +27,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
-import type { FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Cycle, FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getVpnDevices } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -424,7 +424,7 @@ const VpnPlusUnlimitedCombo = ({
                     <CycleSelector
                         mode="buttons"
                         cycle={cycle}
-                        onSelect={setCycle}
+                        onSelect={(cycle) => setCycle(cycle as Cycle)}
                         options={[
                             { text: getMonths(1), value: CYCLE.MONTHLY },
                             { text: getMonths(12), value: CYCLE.YEARLY },
