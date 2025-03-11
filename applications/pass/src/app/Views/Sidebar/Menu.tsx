@@ -36,7 +36,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                             onClick={vaultActions.create}
                             shape="ghost"
                             title={c('Action').t`Create a new vault`}
-                            className="flex items-center justify-space-between flex-nowrap py-2 pl-3 px-2 w-full mb-2"
+                            className="flex items-center justify-space-between flex-nowrap py-2 pl-3 px-2 w-full"
                         >
                             <span className="block text-ellipsis">{c('Label').t`Vaults`}</span>
                             <Icon name="plus" alt={c('Action').t`Create a new vault`} className="shrink-0" />

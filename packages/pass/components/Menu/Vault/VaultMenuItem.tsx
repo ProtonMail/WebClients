@@ -18,7 +18,7 @@ import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectAccess, selectPassPlan } from '@proton/pass/store/selectors';
-import type { UniqueItem } from '@proton/pass/types';
+import type { Maybe, UniqueItem } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -41,6 +41,12 @@ type Props = {
     onAction?: () => void;
 };
 
+type ShareButtonProps = {
+    label: string;
+    icon: IconName;
+    action: (evt: React.MouseEvent) => void;
+};
+
 const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
     evt.preventDefault();
     evt.stopPropagation();
@@ -56,7 +62,6 @@ export const VaultMenuItem = memo(
         canManage,
         canMove,
         count,
-        dense,
         label,
         selected,
         vault,
@@ -99,9 +104,7 @@ export const VaultMenuItem = memo(
                       })
                 : handleClickEvent(onInvite);
 
-        const shareButton = (():
-            | { label: string; icon: IconName; action: (evt: React.MouseEvent) => void }
-            | undefined => {
+        const shareButton = ((): Maybe<ShareButtonProps> => {
             if (!canManage) return;
 
             const opensInvite = !vault.shared && canInvite;
@@ -114,7 +117,6 @@ export const VaultMenuItem = memo(
             })();
 
             const icon = opensInvite ? 'user-plus' : 'users';
-
             const action = opensInvite ? onInviteClick : handleClickEvent(onManage);
 
             return { label, icon, action };
@@ -135,11 +137,7 @@ export const VaultMenuItem = memo(
                     'pass-vault-submenu-vault-item w-full',
                     !withActions && 'pass-vault-submenu-vault-item--no-actions'
                 )}
-                className={clsx(
-                    (selected || dragOver) && 'is-selected',
-                    !dense && 'py-2',
-                    'group-hover-opacity-container'
-                )}
+                className={clsx((selected || dragOver) && 'is-selected', 'pl-2 pr-2', 'group-hover-opacity-container')}
                 extra={
                     shareButton && (
                         <ButtonLike
@@ -177,7 +175,7 @@ export const VaultMenuItem = memo(
                 icon={
                     <VaultIcon
                         background
-                        className="shrink-0"
+                        className="shrink-0 mr-1"
                         size={4}
                         color={vault?.content.display.color}
                         icon={vault?.content.display.icon}
