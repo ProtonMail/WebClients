@@ -747,7 +747,7 @@
         "DMARC ${ WIKIPEDIA_LINK_DMARC }, etki alanını izinsiz kullanılmasından, yaygın olarak e-posta sahteciliği olarak bilinen şeyden korumak için tasarlanmıştır. SPF ve DKIM etrafında oluşturulan bir DMARC ilkesi, alıcı e-posta sunucusuna bu kimlik doğrulama yöntemlerinden hiçbiri geçemezse ne yapacağını söyler."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
-        "E-posta adresiniz, parolanız veya diğer kişisel verileriniz açığa çıktığında bildirim alın."
+        "E-posta adresiniz, parolanız veya diğer kişisel verileriniz sızdırıldığında bildirim alın."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Örneğin ${ subdomainExample } gibi bir alt etki alanı kullanıyorsanız, etki alanı olarak ${ dmarcExampleSubdomain } kullanmanız gerekir."
@@ -777,7 +777,7 @@
         "SPF ${ WIKIPEDIA_LINK_SPF }, e-posta teslimi sırasında sahte gönderici adreslerini bulmak için tasarlanmış bir e-posta kimlik doğrulama yöntemidir. E-postalarınızın alıcının İstenmeyen klasörüne düşme olasılığını azaltmak için SPF kullanılması şiddetle önerilir."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "E-posta adresiniz ve hide-my-email takma adlarınızla oluşturulan hesaplarla ilgili verilerin ele geçirilmesi olaylarını izlemeye başlayın."
+        "E-posta adresiniz ve hide-my-email takma adlarınızla oluşturulan hesaplarla ilgili veri sızıntılarını izlemeye başlayın."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir internet bölümüdür."
@@ -801,10 +801,10 @@
         "${ PASS_SHORT_APP_NAME } izleyici ile kimlik bilgilerinizin ele geçirildiğinde anında uyarı alarak tehditlerin önünde kalın. Çevrim içi varlığınızı korumak için gelişmiş güvenlik özelliklerine ve ayrıntılı günlük kayıtlarına erişin."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
-        "E-posta adresleriniz en az 1 verilerin ele geçirilmesi olayında açığa çıkmış."
+        "E-posta adresleriniz en az 1 veri sızıntısında açığa çıkmış."
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
-        "Kişisel bilgileriniz üçüncü taraf bir hizmetin verilerinin ele geçirilmesi nedeniyle sızdırıldı."
+        "Kişisel bilgileriniz üçüncü taraf bir hizmetin verilerinin sızdırılması nedeniyle ele geçirildi."
       ]
     },
     "Email": {
@@ -966,10 +966,10 @@
         "Kullanıcının erişimi düzenlenemedi."
       ],
       "Failed to load breaches for this address": [
-        "Bu adres için verilerin ele geçirilmesi olayları yüklenemedi"
+        "Bu adres için veri sızıntıları yüklenemedi"
       ],
       "Failed to load breaches for this email alias": [
-        "Bu e-posta takma adı için verilerin ele geçirilmesi olayları yüklenemedi"
+        "Bu e-posta takma adı için veri sızıntıları yüklenemedi"
       ],
       "Failed to load domain settings.": [
         "Etki alanı ayarları yüklenemedi"
@@ -999,7 +999,7 @@
         "Özel e-posta için doğrulama yeniden gönderilemedi"
       ],
       "Failed to resolve breaches for this address": [
-        "Bu adres için verilerin ele geçirilmesi olayları çözümlenemedi"
+        "Bu adres için veri sızıntıları çözümlenemedi"
       ],
       "Failed to restore items from trash": [
         "Ögeler çöpten çıkarılamadı"
@@ -1375,8 +1375,8 @@
         "${ repliedEmailsCount } gönderildi"
       ],
       "${ row.breachCount } breach detected": [
-        "${ row.breachCount } verilerin ele geçirilmesi olayı bulundu",
-        "${ row.breachCount } verilerin ele geçirilmesi olayı bulundu"
+        "${ row.breachCount } veri sızıntısı bulundu",
+        "${ row.breachCount } veri sızıntısı bulundu"
       ],
       "(Empty)": [
         "(Boş)"
@@ -1436,10 +1436,10 @@
         "${ emailJSX } e-posta kutusunu kullanan tüm takma adlar da silinecek."
       ],
       "All breaches for this address were resolved": [
-        "Bu adres için tüm verilerin ele geçirilmesi olayları çözümlendi"
+        "Bu adres için tüm veri sızıntıları çözümlendi"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
-        "Tüm verilerin ele geçirilmesi olayları çözümlenmiş olarak işaretlenecek. Gelecekte ortaya çıkabilecek verilerin ele geçirilmesi olayları size bildirilecek."
+        "Tüm veri sızıntıları çözümlenmiş olarak işaretlenecek. Gelecekte olabilecek veri sızıntıları size bildirilecek."
       ],
       "All inactive secure links were removed": [
         "Etkin olmayan tüm güvenli bağlantılar kaldırıldı"
@@ -1484,7 +1484,7 @@
         "Biyometrik veriler kullanımdan kaldırılacak ve yeniden kullanıma alınması gerekecek."
       ],
       "Breaches detected": [
-        "Veriler ele geçirilmiş"
+        "Veri sızıntısı bulundu"
       ],
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Var olan parolalarınızı ${ BRAND_NAME } üzerine aktarın."
@@ -1804,7 +1804,7 @@
         "Ögenin sabitlemesi kaldırıldı"
       ],
       "Latest breach on ${ formattedDate }": [
-        "Verilerin son ele geçirilmesi: ${ formattedDate }"
+        "Son veri sızıntısı: ${ formattedDate }"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Nasıl ${ staySaferOnlineLink } öğrenin"
@@ -1878,7 +1878,7 @@
         "${ latestVersion } sürümü yayınlanmış."
       ],
       "No breaches detected": [
-        "Herhangi bir veri ele geçirilmemiş"
+        "Herhangi bir veri sızmamış"
       ],
       "No network connection": [
         "Ağ bağlantısı yok"
@@ -1905,7 +1905,7 @@
         "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Uyarılarımız güvenliğe öncelik verir. Ele geçirilen bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
+        "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
       ],
       "Owner": [
         "Sahibi"
@@ -2179,7 +2179,7 @@
         "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
+        "Bilgiler üçüncü taraf bir hizmetten sızdırılmış. ${ BRAND_NAME } hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } kullanmak için ek parola gerekir. ${ BRAND_NAME } parolanıza ek bir parola olarak kullanılır."
@@ -2373,16 +2373,16 @@
         "Oturumunuz kapatılacak ve diğer tüm aygıtlarınızda yeniden oturum açmanız gerekecek."
       ],
       "You will be notified of data breaches for these email addresses.": [
-        "Bu e-posta adresleri için verilerin ele geçirilmesi olayları size bildirilmeyecek."
+        "Bu e-posta adresleri için veri sızıntıları size bildirilecek."
       ],
       "You will be notified of data breaches for this email address.": [
-        "Bu e-posta adresi için verilerin ele geçirilmesi olayları size bildirilmeyecek."
+        "Bu e-posta adresi için veri sızıntıları size bildirilmeyecek."
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
-        "Bu e-posta adresleri için verilerin ele geçirilmesi olayları artık size bildirilmeyecek."
+        "Bu e-posta adresleri için veri sızıntıları artık size bildirilmeyecek."
       ],
       "You will no longer be notified of data breaches for this email address.": [
-        "Bu e-posta adresi için verilerin ele geçirilmesi olayları artık size bildirilmeyecek."
+        "Bu e-posta adresi için veri sızıntıları artık size bildirilmeyecek."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasındaki paylaşım, iki adımlı doğrulama, kredi kartı ve diğer gelişmiş özelliklere artık erişemeyeceksiniz"
@@ -2728,9 +2728,6 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
-      "Expired link": [
-        "Bağlantının geçerlilik süresi geçmiş"
-      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -3062,7 +3059,7 @@
         "Bizi değerlendirin"
       ],
       "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
-        "Kişisel bilgileriniz üçüncü tarafların verilerinin ele geçirilmesi olaylarında ortaya çıkarsa anında uyarı alın. Birden fazla e-posta adresini veya kendi etki alanı adınızı izleyebilirsiniz."
+        "Kişisel bilgileriniz üçüncü taraflardan yapılan veri sızıntılarında ortaya çıkarsa anında uyarı alın. Birden fazla e-posta adresini veya kendi etki alanı adınızı izleyebilirsiniz."
       ],
       "Recent": [
         "Son"
@@ -3697,13 +3694,13 @@
         "Engellenmiş adresler"
       ],
       "Breach detected": [
-        "Veriler ele geçirilmiş"
+        "Veri sızıntısı bulundu"
       ],
       "Breaches": [
-        "Verilerin ele geçirilmesi olayları"
+        "Veri sızıntıları"
       ],
       "Breaches detected for": [
-        "Şunun verileri ele geçirilmiş"
+        "Şunun için veri sızıntıları bulundu"
       ],
       "Cancel changing your email?": [
         "E-posta adresi değişikliği iptal edilsin mi?"
@@ -3863,7 +3860,7 @@
         "Kasayı bırakmak istiyor musunuz?"
       ],
       "Loading breaches...": [
-        "Verilerin ele geçirilmesi olayları yükleniyor..."
+        "Veri sızıntıları yükleniyor..."
       ],
       "Low disk space": [
         "Boş disk alanı azaldı"
@@ -3968,7 +3965,7 @@
         "Güvenli bağlantı kaldırılsın mı?"
       ],
       "Resolved breaches": [
-        "Çözümlenmiş verileri ele geçirme olayları"
+        "Çözümlenmiş veri sızıntıları"
       ],
       "Restore this version?": [
         "Bu sürüm geri yüklensin mi?"
@@ -4086,7 +4083,7 @@
         "${ planName } aboneliğiniz ${ endDate } tarihinde sona erecek"
       ],
       "Your exposed information": [
-        "Açığa çıkmış bilgileriniz"
+        "Sızdırılmış bilgileriniz"
       ],
       "Your vault is empty": [
         "Kasanız boş"
@@ -4310,7 +4307,7 @@
         "Ek parola en az 8 karakter uzunluğunda olmalıdır"
       ],
       "Failed to load breaches.": [
-        "Verilerin ele geçirilmesi olayları yüklenemedi."
+        "Veri sızıntıları yüklenemedi."
       ],
       "Identity could not be confirmed": [
         "Kimlik doğrulanamadı"
@@ -4425,7 +4422,7 @@
         "\"${ aliasEmail }\" takma adı şu anda \"${ relatedLoginName }\" oturumu açmak için kullanılıyor."
       ],
       "This email address will no longer be monitored for data breaches.": [
-        "Bu e-posta adresi artık verilerin ele geçirilmesi olayları için izlenmeyecek."
+        "Bu e-posta adresi artık veri sızıntıları için izlenmeyecek."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
         "Bu öge şu anda paylaşılıyor. Silerseniz diğer kullanıcıların erişimi kaldırılacak."
