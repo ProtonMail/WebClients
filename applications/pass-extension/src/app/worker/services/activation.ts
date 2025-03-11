@@ -12,12 +12,12 @@ import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/clie
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
+import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { bootIntent, clientInit } from '@proton/pass/store/actions';
-import { getFinalProxiedSettings } from '@proton/pass/store/reducers/settings';
 import {
+    selectCanCreateItems,
     selectFeatureFlags,
     selectFilters,
-    selectHasWritableVault,
     selectItem,
     selectTabState,
 } from '@proton/pass/store/selectors';
@@ -228,12 +228,14 @@ export const createActivationService = () => {
                 });
             }
 
-            const canCreateItems = selectHasWritableVault(ctx.service.store.getState());
+            const state = ctx.service.store.getState();
+            const canCreateItems = selectCanCreateItems(state);
+            const settings = await ctx.service.settings.resolve();
 
             return {
                 state: ctx.getState(),
-                features: selectFeatureFlags(ctx.service.store.getState()) ?? {},
-                settings: getFinalProxiedSettings(await ctx.service.settings.resolve(), { canCreateItems }),
+                features: selectFeatureFlags(state) ?? {},
+                settings: sanitizeSettings(settings, { canCreateItems }),
             };
         }
     );
