@@ -143,6 +143,17 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         contentKeyPacketSignature: link.FileProperties?.ContentKeyPacketSignature,
         signatureEmail: link.SignatureEmail,
         xAttr: link.XAttr,
+        photoProperties: link.PhotoProperties
+            ? {
+                  albums: link.PhotoProperties.Albums.map((album) => ({
+                      albumLinkId: album.AlbumLinkID,
+                      hash: album.Hash,
+                      contentHash: album.ContentHash,
+                      addedTime: album.AddedTime,
+                  })),
+                  tags: link.PhotoProperties.Tags,
+              }
+            : undefined,
         volumeId: link.VolumeID,
     };
 }
