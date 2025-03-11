@@ -400,6 +400,9 @@
       "Delete permanently": [
         "Usuń trwale"
       ],
+      "Delete policy": [
+        "Usuń regułę"
+      ],
       "Delete record": [
         "Usuń rekord"
       ],
@@ -760,6 +763,9 @@
       "Manage labels": [
         "Zarządzaj etykietami"
       ],
+      "Manage subscription": [
+        "Zarządzaj subskrypcją"
+      ],
       "Mark as default": [
         "Oznacz jako domyślną"
       ],
@@ -1039,8 +1045,14 @@
       "Select calendar view": [
         "Wybierz widok kalendarza"
       ],
+      "Select city ${ city }": [
+        "Wybierz miasto ${ city }"
+      ],
       "Select country": [
         "Wybierz kraj"
+      ],
+      "Select country ${ country }": [
+        "Wybierz kraj ${ country }"
       ],
       "Select file": [
         "Wybierz plik"
@@ -3683,6 +3695,9 @@
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Utwórz tyle etykiet lub folderów, ile potrzebujesz, aby utrzymać porządek w skrzynce odbiorczej."
       ],
+      "Create policies to decide who can connect to shared servers in each country.": [
+        "Utwórz zasady, aby zdecydować, kto może łączyć się z serwerami współdzielonymi w każdym kraju."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Włącz ${ PROTON_SENTINEL_NAME }, aby uzyskać dostęp do tych funkcji"
       ],
@@ -3694,6 +3709,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
+      ],
+      "Everyone in your organization can connect to shared servers in all countries.": [
+        "Każda osoba w organizacji może łączyć się z serwerami współdzielonymi we wszystkich krajach."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
@@ -3712,6 +3730,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Utwórz stopkę wiadomości — zaprezentuj swoją unikalną markę, nie naszą."
+      ],
+      "No one in your organization can connect to shared servers.": [
+        "Nikt z twojej organizacji nie może łączyć się z serwerami współdzielonymi."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
@@ -4760,6 +4781,12 @@
       "Please select a state": [
         "Wybierz stan"
       ],
+      "Please select at least one location before continuing.": [
+        "Przed kontynuowaniem wybierz co najmniej jedną lokalizację."
+      ],
+      "Please select at least one user or group before continuing.": [
+        "Przed kontynuowaniem wybierz co najmniej jednego użytkownika lub grupę."
+      ],
       "Please set a recovery email first": [
         "Ustaw adres pomocniczy"
       ],
@@ -4885,6 +4912,9 @@
       ],
       "The minimum payment we accept is ${ price }": [
         "Minimalna kwota akceptowanej płatności wynosi ${ price }"
+      ],
+      "The policy name must be between 3 and 40 characters.": [
+        "Nazwa polityki musi zawierać od 3 do 40 znaków."
       ],
       "The sending key is not valid": [
         "Klucz przeznaczony do wysyłania wiadomości nie jest prawidłowy"
@@ -8417,6 +8447,9 @@
       "Or select a particular server:": [
         "Lub wybierz serwer:"
       ],
+      "Organization --> Groups": [
+        "Organizacja --> Grupy"
+      ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Członkowie organizacji będą musieli odblokować ${ PASS_APP_NAME } za pomocą hasła lub kodu PIN itp."
       ],
@@ -9028,6 +9061,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "W zależności od urządzenia, ten proces może potrwać kilka sekund lub minut"
+      ],
+      "This cannot be undone.": [
+        "Operacja nie może zostać cofnięta."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Ten proces może chwile potrwać. Nie zamykaj strony lub nie rozłączaj się z Internetem."
@@ -9895,6 +9931,14 @@
         "Jeśli włączysz tę opcję, kolor folderu nadrzędnego zostanie zastosowany do podfolderów."
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Jak wysłać płatność gotówką?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Znajdź instrukcję w artykule: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info for domain modal": {
       "Add a new address for the existing users of your organization.": [
         "Dodaj nowy adres do istniejących użytkowników organizacji."
@@ -10515,6 +10559,9 @@
       ],
       "Apply filter to existing emails": [
         "Zastosuj filtr do obecnych wiadomości"
+      ],
+      "Apply policy to": [
+        "Zastosuj politykę do"
       ],
       "Assertion Consumer Service URL": [
         "Adres URL usługi ACS"
@@ -11176,6 +11223,9 @@
       "Please share any feedback to help us improve.": [
         "Podziel się opinią, aby pomóc nam ulepszyć usługę."
       ],
+      "Policy name": [
+        "Nazwa polityki"
+      ],
       "Port": [
         "Port"
       ],
@@ -11328,6 +11378,9 @@
       ],
       "Start weekday": [
         "Dzień rozpoczęcia"
+      ],
+      "State": [
+        "Województwo"
       ],
       "Statement": [
         "Kryterium"
@@ -12191,6 +12244,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "w ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "w pierwszy piątek"
       ],
@@ -12857,9 +12913,6 @@
       "SMTP submission": [
         "Poświadczenia SMTP"
       ],
-      "SMTP submission for select organizations": [
-        "Poświadczenia SMTP dla organizacji"
-      ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
       ],
@@ -13014,17 +13067,6 @@
         "Zarządzanie zespołem"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -13133,6 +13175,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13774,6 +13827,9 @@
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Ostatnia szansa, aby uzyskać 80% zniżki na pierwszy miesiąc ${ plan } Plus."
+      ],
       "Last day to save": [
         "Ostatni dzień, aby zaoszczędzić"
       ],
@@ -13785,6 +13841,12 @@
       ],
       "Maybe later": [
         "Może później"
+      ],
+      "Offer expires ${ formattedDate }.": [
+        "Oferta wygasa ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Płać co roku, uzyskaj najlepszą ofertę"
       ],
       "Save": [
         "Zaoszczędź"
@@ -13798,6 +13860,9 @@
       "Save big when you pay annually": [
         "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
       ],
+      "Special offer": [
+        "Specjalna oferta"
+      ],
       "This offer won't be shown again.": [
         "Ta oferta nie pojawi się ponownie."
       ],
@@ -13806,6 +13871,9 @@
       ],
       "You currently pay": [
         "Aktualnie płacisz"
+      ],
+      "Your subscription renews soon": [
+        "Subskrypcja wkrótce się odnowi"
       ]
     },
     "Offer feature": {
@@ -13817,6 +13885,9 @@
       ],
       "Email addresses": [
         "Adresy e-mail"
+      ],
+      "Free": [
+        "Free"
       ],
       "Online document editor": [
         "Edytor dokumentów online"
@@ -14838,6 +14909,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -18326,6 +18402,9 @@
       "Decrypt key": [
         "Odszyfruj klucz"
       ],
+      "Delete ${ policyName }?": [
+        "Usuń ${ policyName }"
+      ],
       "Delete ${ value }": [
         "Usuń ${ value }"
       ],
@@ -18419,8 +18498,14 @@
       "Download the mobile apps": [
         "Pobierz aplikacje mobilne"
       ],
+      "Downloads": [
+        "Pliki do pobrania"
+      ],
       "Edit billing address": [
         "Edytuj adres rozliczeniowy"
+      ],
+      "Edit countries": [
+        "Edytuj kraje"
       ],
       "Edit credit/debit card": [
         "Edytuj kartę płatniczą"
@@ -18439,6 +18524,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Edytuj bramę ${ currentName }"
+      ],
+      "Edit name": [
+        "Edytuj nazwę"
       ],
       "Edit profile": [
         "Edytuj profil"
@@ -19088,6 +19176,9 @@
       "Status": [
         "Status"
       ],
+      "Subscription": [
+        "Subskrypcja"
+      ],
       "Success": [
         "Powodzenie"
       ],
@@ -19495,6 +19586,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Ustawia stopkę w wysyłanych wiadomościach: ${ signature } Link wskazuje na Twój link polecający. Stopka zostanie dodana pod Twoim podpisem. Podpis możesz spersonalizować w ustawieniach."
+      ],
+      "Shared server policies can be applied to individual users or groups": [
+        "Zasady serwera współdzielonego mogą być stosowane do poszczególnych użytkowników lub grup"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Pokazuje zdjęcie każdego nadawcy na liście wiadomości. Jeśli zdjęcie nie jest dostępne, zostaną wyświetlone inicjały nadawcy."

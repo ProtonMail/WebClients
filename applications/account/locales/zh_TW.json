@@ -376,6 +376,9 @@
       "Delete": [
         "刪除"
       ],
+      "Delete account": [
+        "刪除帳號"
+      ],
       "Delete and confirm": [
         "刪除並確認"
       ],
@@ -757,6 +760,9 @@
       "Manage labels": [
         "管理標籤"
       ],
+      "Manage subscription": [
+        "管理訂購授權"
+      ],
       "Mark as default": [
         "標記為預設值"
       ],
@@ -1080,6 +1086,9 @@
       ],
       "Set as default": [
         "設為預設"
+      ],
+      "Set as default mail application": [
+        "設定為預設電子郵件應用程式"
       ],
       "Set catch-all": [
         "設定全部擷取"
@@ -1793,6 +1802,9 @@
       ],
       "Version history": [
         "版本歷史紀錄"
+      ],
+      "VPN Accelerator": [
+        "VPN 加速器"
       ]
     },
     "BF2024: Offers": {
@@ -1818,6 +1830,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "透過端對端加密保護電子郵件及行事曆。包含${ addresses }電子郵件地址,支援自訂電子郵件網域,無限hide-my-email別名及更多"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
@@ -2246,7 +2261,7 @@
         "總共"
       ],
       "Total for ${ n } month": [
-        "總額可用 ${ n } 個月"
+        " ${ n } 個月總計"
       ]
     },
     "Checkout summary": {
@@ -3814,7 +3829,7 @@
     },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
-        "**協作：**線上文件編輯器"
+        "**協作：**多人共用線上文件編輯器"
       ],
       "**Secure:** end-to-end encryption": [
         "**安全：**端到端加密"
@@ -3826,7 +3841,7 @@
         "超越業界標準的進階保護"
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
-        "加入已經受益於 ${ BRAND_NAME } 安全性的 50,000 多個組織的行列。"
+        "已有超過 50,000 間組織受益於 ${ BRAND_NAME } 的高安全性，快加入我們的行列吧。"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4588,7 +4603,7 @@
         "請升級至選用多於 1 位使用者的企業方案，以便享用多使用者支援"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "請升級至商務方案，可享有多使用者帳號與管理多使用者功能。"
+        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
       ],
       "Please upload a square logo": [
         "請上傳正方形標誌"
@@ -5814,7 +5829,7 @@
     },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
-        "已有一個帳號？${ signIn }"
+        "已有帳號？${ signIn }"
       ],
       "Already have an account? ${ signIn } or ${ switchAccount }": [
         "已有帳戶? ${ signIn }或${ switchAccount }"
@@ -5897,7 +5912,7 @@
         "應用程式版本"
       ],
       "Best deal": [
-        "至划算"
+        "最划算"
       ],
       "Checkout": [
         "結帳"
@@ -5945,7 +5960,7 @@
         "請選擇您的優惠"
       ],
       "Select your pricing plan": [
-        "選擇您的定價方案"
+        "選擇您的方案"
       ],
       "Server": [
         "伺服器"
@@ -6683,7 +6698,7 @@
         "加入復原電郵位址"
       ],
       "add a recovery method": [
-        "新增一個備援方式"
+        "加入復原方式"
       ],
       "Add a recovery phone number": [
         "加入復原手機號碼"
@@ -7012,6 +7027,9 @@
       "Copy your referral link": [
         "複製您的推介連結"
       ],
+      "countries enabled": [
+        "國家已啟用"
+      ],
       "Country code": [
         "國家代碼"
       ],
@@ -7069,6 +7087,9 @@
       "Custom monthly": [
         "自訂每月"
       ],
+      "Custom policies": [
+        "自訂政策"
+      ],
       "Custom weekly": [
         "自訂每週"
       ],
@@ -7108,6 +7129,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "正在刪除 ${ deletedServerCount } 台閘道伺服器"
       ],
+      "Did you know?": [
+        "您知道嗎？"
+      ],
       "Disable recovery by email address": [
         "停用備援電子郵件地址"
       ],
@@ -7130,7 +7154,7 @@
         "探索${ planTitle }解鎖的新功能並立即使用!"
       ],
       "Discover ProtectBuy logo": [
-        "Discover ProtectBuy 標誌"
+        "Discover ProtectBuy 商標"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "DKIM 允許 ${ BRAND_NAME } 對電子郵件簽章，可保護郵件不被竄改。確保您已添加下列 CNAME 記錄在您的 DNS 中(通常由您的網域註冊商提供)。"
@@ -7257,6 +7281,9 @@
       ],
       "Encryption setting updated": [
         "加密設定已更新"
+      ],
+      "End date": [
+        "終止日"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "因為外部地址此群組已停用端對端加密電子郵件。"
@@ -7828,6 +7855,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "新VPN連線將不再被收集及顯示。"
       ],
+      "Next billing date": [
+        "下一個結算日期"
+      ],
       "No account keys exist": [
         "無帳號金鑰存在"
       ],
@@ -7921,6 +7951,9 @@
       "Or select a particular server:": [
         "或挑選特定的伺服器："
       ],
+      "Organization --> Groups": [
+        "組織 -->群組"
+      ],
       "Organization size": [
         "組織規模"
       ],
@@ -7982,7 +8015,7 @@
         "每月"
       ],
       "per month, billed at ${ price }": [
-        "每月，付款${ price }"
+        "每月 ${ price }"
       ],
       "per month, billed every 12 months": [
         "每月，每12個月收費"
@@ -8093,7 +8126,7 @@
         "促銷已過期"
       ],
       "Protected by Swiss privacy laws": [
-        "受瑞士隱私法律保障"
+        "由瑞士隱私權相關法律保障"
       ],
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "強烈鼓勵公眾人物、記者、管理人員和其他可能成為網絡攻擊目標的人啟用 ${ PROTON_SENTINEL_NAME }。"
@@ -8186,7 +8219,7 @@
         "SAML設置已儲存"
       ],
       "Save ${ percentage }": [
-        "省下 ${ percentage }"
+        "降價 ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "將您的密碼儲存在其它安全之處。"
@@ -8231,7 +8264,7 @@
         "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆創建一個新的行事曆。"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "傳送電子郵件鼓勵成員使用雙重驗證以保護帳號"
+        "提醒您，請鼓勵您的用戶啟用二步驟驗證 (2FA) 以保護帳號安全。"
       ],
       "Send messages at just the right now": [
         "立即傳送訊息"
@@ -8337,6 +8370,9 @@
       ],
       "Step ${ step }": [
         "步驟 ${ step }"
+      ],
+      "Storage": [
+        "儲存空間"
       ],
       "Storage allocated to other users in this organisation": [
         "儲存空間已分配給這個組織中的其他使用者"
@@ -8485,6 +8521,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "取決於您的裝置，這可能需要幾秒鐘或幾分鐘"
       ],
+      "This cannot be undone.": [
+        "此操作無法復原。"
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "可能需要等候一段時間，請勿關閉此頁面或中斷網路連線。"
       ],
@@ -8619,6 +8658,9 @@
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "為持續精進我們的服務品質，我們有時會蒐集一些資料用以監控應用程式的功能是否正常。此類資訊不會與第三方服務共享。"
+      ],
+      "To create your first user group, go to": [
+        "若要創建您地一個使用者群組，請至"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "為了能在密碼重設後存取加密的資料，選擇帳號復原方法。"
@@ -8879,10 +8921,10 @@
         "我們需要與您的銀行認證您的付款。"
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
-        "我們建議至少兩台伺服器以提供備援。"
+        "我們建議至少需有兩臺伺服器以供復原用。"
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
-        "我們建議在不同的地點擁有多台伺服器以提供備援。"
+        "我們建議在不同的地點擁有多臺伺服器以供復原用。"
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我們建議於強制啟用雙重驗證前通知家庭成員為帳號設定雙重驗證"
@@ -8897,7 +8939,7 @@
         "我們在您信任的裝置上妥善保管復原金鑰，以防發生資料丟失"
       ],
       "We use 3-D Secure to protect your payments": [
-        "我們使用3-D安全來保護你的付款資訊"
+        "我們使用 3D 驗證來保護您的交易安全"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
@@ -9055,6 +9097,9 @@
       "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可以啟用認證記錄，以查看您的帳號何時被存取以及來自哪個 IP。我們將記錄存取帳號所使用的 IP 位址及時間，以及失敗的登入嘗試。"
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "您可於一個組合取得我們全部的頂級隱私服務—且只要**${ priceString }/每月**。"
+      ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
       ],
@@ -9086,7 +9131,7 @@
         "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
-        "在接下來的 24 小時內，您最多只能發送 ${ emailSendLimitNumber } 封電郵邀請"
+        "在接下來的 24 小時內，您最多只能 ${ emailSendLimitNumber } 封電郵邀請"
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "您不能推薦 ${ MAIL_APP_NAME } 使用者"
@@ -9236,7 +9281,7 @@
         "您從匯入 ${ accounts } 的操作被暫時推遲。"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "您的各項資訊在我們安全保護下安全無虞，僅有提供服務前的身分驗證需求時，我們才會使用該資訊與您進行聯繫。"
+        "您可以放心提供資訊，我們只在某些服務要求與您驗證時才會連絡您。"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
@@ -9960,7 +10005,7 @@
         "大寫字首字母"
       ],
       "Card details": [
-        "卡片資訊"
+        "信用卡資訊"
       ],
       "Card holder": [
         "持卡人"
@@ -11355,7 +11400,7 @@
         "忘記您的 ${ BRAND_NAME } 帳號密碼？使用您的備用碼、電子郵件或簡訊找到它，並重新取得對 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的存取權。"
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "忘記您的 ${ BRAND_NAME } 帳號使用者名稱？使用您的備援電子郵件或手機號碼找到它，並重新取得對 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的存取權。"
+        "忘記您的 ${ BRAND_NAME } 帳號使用者名稱？使用您的復原電子郵件或手機號碼找到它，並恢復存取 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } ，以及其它相應處。"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "重設您的 ${ BRAND_NAME } 帳號密碼"
@@ -11381,7 +11426,7 @@
         "取得某個國家的官方公眾假期行事曆。"
       ],
       "How to import calendars from another service": [
-        "如何從其它服務匯入行事曆"
+        "如何從其它郵件服務業者平台匯入行事曆"
       ],
       "How to import calendars from Yahoo": [
         "如何從 Yahoo 匯入行事曆"
@@ -11393,7 +11438,7 @@
         "如何從 Yahoo 匯入聯絡人"
       ],
       "How to import emails from another service": [
-        "如何從其它服務匯入電郵"
+        "如何從其它郵件服務業者平台匯入電郵"
       ],
       "How to import emails from Yahoo": [
         "如何從 Yahoo 匯入電郵"
@@ -11780,7 +11825,7 @@
         "99.95% 服務層級協議"
       ],
       "Ad-blocker and malware protection": [
-        "廣告攔截與惡意程式保護"
+        "廣告攔截器及惡意軟體防護"
       ],
       "Admin console": [
         "管理員主控台"
@@ -11825,7 +11870,7 @@
         "自動郵件轉寄"
       ],
       "Available on all platforms": [
-        "適用於所有平台"
+        "所有平台皆可使用"
       ],
       "Breach alerts": [
         "外洩警告"
@@ -11981,7 +12026,7 @@
         "優先支援"
       ],
       "Priority support & live chat": [
-        "優先支援與即時真人對話"
+        "優先處理您的客服單與線上聊天客服"
       ],
       "Private photo backup": [
         "私人照片備份"
@@ -12042,9 +12087,6 @@
       ],
       "SMTP submission": [
         "SMTP 傳送"
-      ],
-      "SMTP submission for select organizations": [
-        "選定組織的 SMTP 傳送"
       ],
       "Split tunneling (Android and Windows)": [
         "分隔通道(Android 與 Windows)"
@@ -12140,7 +12182,7 @@
         "使用者儲存管理"
       ],
       "Vault sharing (up to ${ n } person)": [
-        "保管共享(每人至多${ n })"
+        "保管庫共享 (至多 ${ n } 人)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
@@ -12174,17 +12216,6 @@
       ],
       "Team management": [
         "團隊管理"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ trialPlanName }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -12291,6 +12322,17 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ trialPlanName }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -12303,7 +12345,7 @@
     },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
-        "按下\"付款\"，代表您同意我們的${ termsAndConditions }."
+        "點擊 \"付款\" 按鈕即代表您同意我們的 ${ termsAndConditions }."
       ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "創建 ${ BRAND_NAME } 帳號，即表示您同意我們的${ terms }"
@@ -13328,10 +13370,10 @@
         "端對端加密"
       ],
       "Open source": [
-        "開原"
+        "開放原始碼"
       ],
       "Protected by Swiss privacy laws": [
-        "受瑞士隱私法律保障"
+        "由瑞士隱私權相關法律保障"
       ],
       "Swiss based": [
         "瑞士為基礎"
@@ -13449,7 +13491,7 @@
         "安裝應用程式及擴充功能"
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "加入超過一億人的行列，選擇 ${ BRAND_NAME } 確保上網安全"
+        "已有超過一億個用戶選擇 ${ BRAND_NAME } 來保障上網的安全，快加入我們吧。"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "切換至 ${ PASS_APP_NAME }"
@@ -13482,7 +13524,7 @@
         "準備復原包"
       ],
       "Protected by Swiss privacy laws": [
-        "受瑞士隱私法律保障"
+        "由瑞士隱私權相關法律保障"
       ],
       "Save your recovery kit to continue": [
         "儲存您的復原包並繼續"
@@ -14397,7 +14439,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "帳號備援不適用於舊的地址金鑰"
+        "帳號復原不適用於舊版位址密鑰組"
       ],
       "Please generate keys before you try to change your password": [
         "請在您試著改變您的密碼前生成金鑰"
@@ -14508,7 +14550,7 @@
     },
     "session_recovery:disable:info": {
       "Make sure you have access to a recovery method.": [
-        "確保您有權存取備援方法。"
+        "確保您已授權存取復原方式。"
       ],
       "You will no longer be able to request a password reset from your account settings.": [
         "您將無法再從帳號設定中要求重設密碼。"
@@ -14580,7 +14622,7 @@
         "需求重設密碼"
       ],
       "Use recovery method": [
-        "使用備援方法"
+        "採用復原方式"
       ]
     },
     "session_recovery:initiation:info": {
@@ -14588,7 +14630,7 @@
         "出於安全因素，您必須等待**72小時**才能變更密碼。"
       ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
-        "若您設定了**備援方法**，請嘗試帳號救援。這將讓您可以立刻變更密碼。"
+        "若您設定了 **復原方式**，請嘗試帳號復原。這將讓您可以立刻變更密碼。"
       ],
       "We will contact you again when the password reset is available.": [
         "當密碼重設可用時，我們會再次聯絡您。"
@@ -14617,7 +14659,7 @@
     },
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
-        "若要停用密碼重設，您必須設定備援方法。"
+        "若要停用密碼重設，您必須設定復原方式。"
       ],
       "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
         "為了增強您帳號的安全性和保護您的資料，您可以在網頁應用程式的帳號設定中請求變更密碼。"
@@ -14813,34 +14855,34 @@
     },
     "Signup: Info": {
       "Advanced security features": [
-        "進階安全功能"
+        "頂尖的安全功能"
       ],
       "Advanced sharing security": [
-        "進階分享安全性"
+        "分享檔案及密碼時提供頂尖的安全性設定"
       ],
       "Apps for all devices": [
         "適用於所有裝置的應用程式"
       ],
       "Built-in encryption": [
-        "內建加密"
+        "預設加密所有資料"
       ],
       "Calendar, password manager, file storage, and VPN included": [
-        "包含行事曆、密碼管理程式、檔案儲存空間與 VPN"
+        "提供行事曆、密碼管理程式、檔案儲存空間、VPN"
       ],
       "Email aliases": [
-        "電子郵件別名"
+        "Email 別名地址"
       ],
       "Email, calendar, password manager, and VPN included": [
         "包含電子郵件、行事曆、密碼管理程式與 VPN"
       ],
       "ISO 27001 certified": [
-        "ISO 27001認證"
+        "已通過 ISO 27001 認證"
       ],
       "Protected by Swiss privacy laws": [
         "受瑞士隱私法律保障"
       ],
       "The only business solution that is:": [
-        "唯一符合以下所有條件的商業解決方案："
+        "符合以下所有條件的唯一企業解決方案："
       ],
       "The only cloud storage with:": [
         "唯一符合以下所有條件的雲端儲存空間："
@@ -15423,6 +15465,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "雙年繳制"
+      ],
+      "Billed every 6 months": [
+        "每 6 個月付款"
       ],
       "Billed for 15 months": [
         "15個月的費用為"
@@ -16368,6 +16413,9 @@
       "Accessibility": [
         "協助工具"
       ],
+      "Accessible vaults": [
+        "可存取的保管庫"
+      ],
       "Account and password": [
         "帳號與密碼"
       ],
@@ -16410,6 +16458,9 @@
       "Add contact group name": [
         "加入聯絡人群組名稱"
       ],
+      "Add countries to \"${ policyName }\"": [
+        "添加國家至\"\"${ policyName }\""
+      ],
       "Add credit/debit card": [
         "加入信用卡/扣帳卡"
       ],
@@ -16451,6 +16502,9 @@
       ],
       "Add users": [
         "新增使用者"
+      ],
+      "Add users to \"${ policyName }\"": [
+        "添加使用至\"\"${ policyName }\""
       ],
       "Address": [
         "地址"
@@ -16623,6 +16677,9 @@
       "Create multiple user accounts": [
         "創建多位使用者帳號"
       ],
+      "Create new policy": [
+        "建立新的政策"
+      ],
       "Create organization key": [
         "建立組織機構金鑰"
       ],
@@ -16694,6 +16751,12 @@
       ],
       "Decrypt key": [
         "解密金鑰"
+      ],
+      "Deep dive into VPN blog posts": [
+        "深度了解VPN部落格貼文"
+      ],
+      "Delete ${ policyName }?": [
+        "刪除 ${ policyName }？"
       ],
       "Delete ${ value }": [
         "刪除 ${ value }"
@@ -16788,8 +16851,14 @@
       "Download the mobile apps": [
         "下載行動 app"
       ],
+      "Downloads": [
+        "下載"
+      ],
       "Edit billing address": [
         "編輯帳單地址"
+      ],
+      "Edit countries": [
+        "編輯國家"
       ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
@@ -16811,6 +16880,9 @@
       ],
       "Edit invoice note": [
         "編輯帳單註記"
+      ],
+      "Edit name": [
+        "編輯名稱"
       ],
       "Edit profile": [
         "編輯個人資料"
@@ -16835,6 +16907,9 @@
       ],
       "Email": [
         "電子郵件"
+      ],
+      "Email breaches": [
+        "電子郵件外洩"
       ],
       "Email composer": [
         "電郵撰寫工具"
@@ -16962,6 +17037,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "選購 ${ vpnPlus } 即可存取所有的伺服器"
       ],
+      "Get more from your VPN": [
+        "從您的VPN取得更多"
+      ],
       "Get the apps": [
         "取得應用程式"
       ],
@@ -16988,6 +17066,9 @@
       ],
       "History": [
         "歷程記錄"
+      ],
+      "Home": [
+        "首頁"
       ],
       "How does it work?": [
         "那是如何運作的？"
@@ -17055,6 +17136,9 @@
       "IP": [
         "IP"
       ],
+      "Items owned": [
+        "擁有項目"
+      ],
       "Keep your inbox organized": [
         "保持收件匣井然有序"
       ],
@@ -17066,6 +17150,12 @@
       ],
       "Language and time": [
         "語言和時間"
+      ],
+      "Last activity": [
+        "最後活動"
+      ],
+      "Last updated": [
+        "最後更新"
       ],
       "Layout": [
         "版面配置"
@@ -17277,6 +17367,9 @@
       "Report a problem": [
         "回報問題"
       ],
+      "Reports": [
+        "報告"
+      ],
       "Request new code": [
         "重新傳送驗證碼"
       ],
@@ -17374,7 +17467,7 @@
         "設定郵件轉寄"
       ],
       "Set up two-factor authentication": [
-        "設立兩步驟驗證"
+        "啟用二步驟驗證 (2FA)"
       ],
       "Set up your family account": [
         "設定您的家庭帳號"
@@ -17442,6 +17535,9 @@
       "Status": [
         "狀態"
       ],
+      "Subscription": [
+        "訂購授權"
+      ],
       "Success": [
         "成功"
       ],
@@ -17500,7 +17596,7 @@
         "執行雙重身分驗證"
       ],
       "Two-factor authentication reminders": [
-        "兩步驟驗證體醒"
+        "雙重驟驗證提醒"
       ],
       "Type": [
         "類型"
@@ -17514,11 +17610,17 @@
       "Upgrade plan": [
         "升級方案"
       ],
+      "Upgrade your privacy": [
+        "升級您的隱私"
+      ],
       "Upload CSV file to create multiple accounts": [
         "上傳CSV檔案以創建多重帳號"
       ],
       "Upload your organization’s logo": [
         "上傳您的組織標誌圖片檔案"
+      ],
+      "Usage Report": [
+        "使用情況報告"
       ],
       "User": [
         "使用者"
@@ -18170,17 +18272,26 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } 臺裝置"
+      ],
       "${ n } server": [
         "${ n } 臺伺服器"
       ],
       "${ n } VPN connection": [
         "${ n } 條VPN連線"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } 個國家"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } 臺伺服器，橫跨 ${ numberOfCountries }+ 個國家"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "從 ${ numberOfCountries } 國家自動選擇"
       ]
     },
     "vpn_2024: renew": {

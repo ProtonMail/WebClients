@@ -256,6 +256,12 @@
       "Color": [
         "Kleur"
       ],
+      "Compare all plans": [
+        "Alle abonnementen vergelijken"
+      ],
+      "Compare plans": [
+        "Abonnementen vergelijken"
+      ],
       "Configure SAML": [
         "SAML configureren"
       ],
@@ -442,6 +448,9 @@
       "Discard changes": [
         "Wijzigingen weggooien"
       ],
+      "Discover ${ planName }": [
+        "Ontdek ${ planName }"
+      ],
       "Dismiss": [
         "Negeren"
       ],
@@ -549,6 +558,12 @@
       ],
       "Encrypt and export": [
         "Versleutel en exporteer"
+      ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "Verken ${ PLAN_NAMES[plan] }"
+      ],
+      "Explore group plans": [
+        "Bekijk groepsabonnementen"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Ontdek andere ${ BRAND_NAME }-abonnementen"
@@ -769,6 +784,9 @@
       "Manage labels": [
         "Labels beheeren"
       ],
+      "Manage subscription": [
+        "Abonnement beheren"
+      ],
       "Mark as default": [
         "Markeren als standaard"
       ],
@@ -864,6 +882,9 @@
       ],
       "Previous page": [
         "Vorige pagina"
+      ],
+      "Publish changes": [
+        "Publiceer wijzigingen"
       ],
       "Quit": [
         "Afsluiten"
@@ -1846,6 +1867,9 @@
       ],
       "Version history": [
         "Versiegeschiedenis"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1914,6 +1938,65 @@
       ],
       "Two-year": [
         "Tweejaarlijks"
+      ]
+    },
+    "Blog": {
+      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
+        "Het geen-logbeleid van ${ BRAND_NAME } VPN is bevestigd door een externe audit."
+      ],
+      "**Streaming** is included in your subscription.": [
+        "**Streaming** is onderdeel van uw abonnement."
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "Kan iemand mijn zoekgeschiedenis zien als we dezelfde WiFi gebruiken?"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "Schakel IP-beveiliging en automatische verbinding in bij uw VPN-instellingen."
+      ],
+      "Get round-the-clock protection": [
+        "Krijg non-stop bescherming"
+      ],
+      "How safe is Telegram?": [
+        "Hoe veilig is Telegram?"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "In dit artikel kijken we naar wie uw internetgeschiedenis kan zien wanneer u wifi gebruikt, wat ze kunnen zien en waarom ze dat zouden doen."
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "Verbeter verbindingssnelheid met tot wel 400% met VPN Accelerator"
+      ],
+      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
+        "Onafhankelijke beveiligingsexperts hebben bevestigd dat ProtonVPN geen gebruikersgegevens logt en geen praktijken hanteert die uw privacy in gevaar kunnen brengen."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "Is Telegram veilig om te gebruiken? Zoals we zullen bespreken in dit artikel, hangt dat af van hoe u het gebruikt."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "Leer hoe u ${ VPN_APP_NAME } kunt inschakelen op uw router"
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "Bescherm uw bedrijf tegen datalekken en maak werken op afstand veiliger met een zakelijke VPN."
+      ],
+      "Protect your whole household with 1 device": [
+        "Bescherm uw hele huishouden met 1 apparaat"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "Stream op alle grote platforms met ${ PLAN_NAMES[PLANS.VPN] }."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Dit artikel is bijgewerkt om de VPN-protocollen voor WireGuard en Stealth toe te voegen."
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "VPN Accelerator gebruikt een combinatie van geavanceerde VPN-technologieën om de stabiliteit van de verbinding te verbeteren en uw verbindingssnelheid te verhogen"
+      ],
+      "Watch your favorite movies and TV shows": [
+        "Bekijk uw favoriete films en tv-series"
+      ],
+      "Which VPN protocol is the best?": [
+        "Welk VPN-protocol is het beste?"
+      ],
+      "Working with sensitive data?": [
+        "Werkt u met gevoelige gegevens?"
       ]
     },
     "breadcrumb": {
@@ -3905,6 +3988,98 @@
         "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
       ]
     },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "Desktop"
+      ],
+      "Download for Linux": [
+        "Downloaden voor Linux"
+      ],
+      "Download for MacOS": [
+        "Downloaden voor macOS"
+      ],
+      "Download for Windows": [
+        "Download voor Windows"
+      ],
+      "Download on the Apple App Store": [
+        "Downloaden via de App Store"
+      ],
+      "Download on the Google Play Store": [
+        "Downloaden via de Play Store"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "Download de app"
+      ],
+      "Get the extension": [
+        "Download de extensie"
+      ],
+      "Installation guide": [
+        "Installatie handleiding"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave of ouder"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura of nieuwer"
+      ],
+      "Mobile": [
+        "Mobiel"
+      ],
+      "TV": [
+        "TV"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 of Windows 32-bit (ARM64)"
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb voor Debian / Ubuntu"
@@ -4552,17 +4727,11 @@
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
-      "Error creating policy.": [
-        "Fout bij aanmaken policy."
-      ],
-      "Error deleting policy.": [
-        "Fout bij verwijderen policy."
-      ],
       "Error in one of the conditions": [
         "Fout in de volgende voorwaarden"
       ],
-      "Error updating policy.": [
-        "Fout bij bijwerken policy."
+      "Error publishing changes.": [
+        "Fout bij publiceren wijzigingen."
       ],
       "Expired": [
         "Verlopen"
@@ -5685,6 +5854,9 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Alles in ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "Snelste VPN-servers"
       ],
@@ -5699,6 +5871,31 @@
       ],
       "Torrenting support (P2P)": [
         "Ondersteuning voor Torrents (P2P)"
+      ]
+    },
+    "Features": {
+      "and more premium features...": [
+        "en meer premium functies..."
+      ],
+      "Double VPN": [
+        "Dubbele VPN"
+      ],
+      "Lightning-fast speeds": [
+        "Hoge snelheden"
+      ],
+      "NetShield Ad-blocker": [
+        "NetShield adblocker"
+      ],
+      "Secure streaming": [
+        "Veilig streamen"
+      ],
+      "Select from ${ vpnServers.paid.countries } countries": [
+        "Selecteer uit ${ vpnServers.paid.countries } landen"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video, en meer, waar u maar wilt."
       ]
     },
     "fido2: Action": {
@@ -6344,8 +6541,26 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "Vergelijk abonnementen"
+      ],
       "Contact us": [
         "Contacteer ons"
+      ],
+      "Enjoying ${ planName }?": [
+        "Tevreden met ${ planName }?"
+      ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "Ontgrendel nog 4 premium privacydiensten voor slechts **${ priceString }** meer per maand"
+      ],
+      "Upgrade your privacy": [
+        "Upgrade uw privacy"
+      ],
+      "You currently pay": [
+        "U betaalt momenteel"
+      ],
+      "Your plan": [
+        "Uw abonnement"
       ]
     },
     "Hint": {
@@ -6863,6 +7078,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } days.": [
+        "${ planName } verloopt in ${ daysLeft } dagen."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } verloopt vandaag."
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } is een geavanceerd programma voor accountbescherming dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om u te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
@@ -7418,6 +7639,9 @@
       "Create your first Gateway": [
         "Uw eerste gateway instellen"
       ],
+      "Created (not published)": [
+        "Gemaakt (niet gepubliceerd)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Gatewayserver wordt opgezet: ${ serverNumber } / ${ total }",
         "Gatewayservers worden opgezet: ${ serverNumber } / ${ total }"
@@ -7488,9 +7712,15 @@
       "Delete link?": [
         "Koppeling verwijderen?"
       ],
+      "Deleted (not published)": [
+        "Verwijderd (niet gepubliceerd)"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } gatewayserver wordt verwijderd",
         "${ deletedServerCount } gatewayservers worden verwijderd"
+      ],
+      "Did you know?": [
+        "Wist u dat?"
       ],
       "Disable recovery by email address": [
         "Herstel via e-mailadres uitschakelen"
@@ -7543,6 +7773,12 @@
       "domain used": [
         "domein gebruikt",
         "domeinen gebruikt"
+      ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "Raak de toegang tot uw premium ${ appName } functies niet kwijt. Schakel vandaag automatisch vernieuwen in."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "Raak de toegang tot uw premium functies niet kwijt. Schakel vandaag automatisch vernieuwen in."
       ],
       "Done! We sent a code to ${ destination }.": [
         "Klaar! We hebben een code verzonden naar ${ destination }."
@@ -7598,6 +7834,9 @@
       "Edit link": [
         "Link bewerken"
       ],
+      "Edited (not published)": [
+        "Bewerkt (niet gepubliceerd)"
+      ],
       "eduGAIN configuration saved": [
         "eduGain-configuratie opgeslagen"
       ],
@@ -7618,6 +7857,12 @@
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Mails getagd met het label ${ nameDeleted } zullen niet verwijderd worden en zijn terug te vinden in hun respectievelijke map."
+      ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Schakel automatisch vernieuwen in om toegang tot Plus servers en functies te behouden."
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Schakel automatisch vernieuwen in om toegang tot premium functies te behouden."
       ],
       "Enable email notifications": [
         "E-mailmelding inschakelen"
@@ -7642,6 +7887,9 @@
       ],
       "Encryption setting updated": [
         "Versleutelingsinstelling bijgewerkt"
+      ],
+      "End date": [
+        "Eind datum"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "End-to-end e-mailversleuteling is uitgeschakeld door externe adressen."
@@ -8233,6 +8481,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Nieuwe VPN-verbindingsgegevens zullen niet langer worden verzameld en getoond."
       ],
+      "Next billing date": [
+        "Volgende factuurdatum"
+      ],
       "No account keys exist": [
         "Er bestaan geen accountsleutels"
       ],
@@ -8400,6 +8651,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Pc Magazine editors keuze met een beoordeling van 5 op 5 sterren"
+      ],
+      "Pending removal": [
+        "In afwachting van verwijdering"
       ],
       "per month": [
         "maandelijks"
@@ -8774,6 +9028,9 @@
       "Step ${ step }": [
         "Stap ${ step }",
         "Stap ${ step }"
+      ],
+      "Storage": [
+        "Opslag"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -9159,6 +9416,9 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan de handtekening van het herstelbestand niet verifiëren. Neem contact op met ondersteuning."
       ],
+      "Unchanged": [
+        "Ongewijzigd"
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
       ],
@@ -9535,6 +9795,9 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "U kunt het gedeelte Foto's inschakelen vanuit de interface met de onderstaande schakelaar."
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "U kunt al onze premium privacy-diensten in één bundel krijgen en het is maar **${ priceString }/maand**."
+      ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
       ],
@@ -9611,6 +9874,9 @@
       ],
       "You have no transactions.": [
         "U heeft geen transacties."
+      ],
+      "You have unpublished changes": [
+        "U heeft wijzigingen die niet gepubliceerd werden"
       ],
       "You may be redirected to your bank’s website.": [
         "U wordt mogelijk doorverwezen naar de website van uw bank."
@@ -10335,6 +10601,9 @@
       ],
       "Addresses": [
         "Adressen"
+      ],
+      "Advanced": [
+        "Geavanceerd"
       ],
       "ALL": [
         "ALLES"
@@ -11820,6 +12089,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
       ],
+      "Add-on with free trial": [
+        "Add-on met gratis proefversie"
+      ],
       "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
         "Alle ${ BRAND_NAME } voor Business apps en premium functies om uw hele bedrijf te beschermen"
       ],
@@ -12414,6 +12686,9 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
+      "${ size } storage per user": [
+        "${ size } opslagruimte per gebruiker"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Voor ${ DRIVE_APP_NAME }"
       ],
@@ -12625,6 +12900,9 @@
       "Limited support": [
         "Beperkte ondersteuning"
       ],
+      "Manage user permissions and access": [
+        "Beheer gebruikersrechten en toegang"
+      ],
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
       ],
@@ -12645,6 +12923,9 @@
       ],
       "Password manager": [
         "Wachtwoordbeheer"
+      ],
+      "Password manager to secure credentials": [
+        "Wachtwoordbeheer om de inloggegevens te beveiligen"
       ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
@@ -12721,9 +13002,6 @@
       ],
       "SMTP submission": [
         "SMTP-indiening"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-indiening voor beperkte organisaties"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
@@ -12867,17 +13145,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -12986,6 +13253,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -14904,9 +15182,36 @@
         "Leden"
       ]
     },
+    "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "Versleutelde cloudopslag voor foto's en documenten"
+      ],
+      "Password manager with identity protection": [
+        "Wachtwoordmanager met identiteitsbescherming"
+      ],
+      "Secure email that protects your privacy": [
+        "Beveiligde e-mail die uw privacy beschermt"
+      ],
+      "Your gateway to online freedom": [
+        "Uw toegangspoort tot online vrijheid"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "neem contact op"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } maand",
+        "${ cycle } maanden"
+      ],
+      "${ months } month plan": [
+        "${ months } maand abonnement",
+        "${ months } maanden abonnement"
+      ],
+      "Enjoying ${ planName }?": [
+        "Tevreden met ${ planName }?"
       ]
     },
     "Price": {
@@ -16823,6 +17128,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Supersnelle VPN op ${ maxVpn } apparaat",
         "Supersnelle VPN op ${ maxVpn } apparaten"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-verbinding voor ${ n } apparaat per gebruiker",
+        "VPN-verbinding voor ${ n } apparaten per gebruiker"
       ]
     },
     "Subscription change warning": {
@@ -17284,6 +17593,9 @@
       "Catch-all address updated": [
         "Catch-all adres bijgewerkt"
       ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Wijzigingen gepubliceerd. Uw wijzigingen zullen, in de komende uren, zichtbaar zijn voor alle gebruikers."
+      ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
@@ -17382,15 +17694,6 @@
       ],
       "Phone number updated": [
         "Telefoonnummer bijgewerkt"
-      ],
-      "Policy created successfully!": [
-        "Policy succesvol aangemaakt!"
-      ],
-      "Policy deleted": [
-        "Policy verwijderd"
-      ],
-      "Policy updated successfully!": [
-        "Policy succesvol bijgewerkt!"
       ],
       "Port copied to clipboard": [
         "Poort gekopieerd naar klembord"
@@ -17856,6 +18159,9 @@
       "Allocate storage": [
         "Opslag toewijzen"
       ],
+      "Also in your plan": [
+        "Ook in uw abonnement"
+      ],
       "Amount": [
         "Bedrag"
       ],
@@ -17994,6 +18300,9 @@
       "Connect organization": [
         "Connecteer organisatie"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "Verbind met ${ VPN_CONNECTIONS } apparaten tegelijk met ${ vpnPlus }. ${ upgradeButton }"
+      ],
       "Connection status": [
         "Verbindingsstatus"
       ],
@@ -18100,6 +18409,9 @@
       "Decrypt key": [
         "Sleutel decoderen"
       ],
+      "Deep dive into VPN blog posts": [
+        "Diep duiken in VPN blog posts"
+      ],
       "Delete ${ policyName }?": [
         "${ policyName } verwijderen?"
       ],
@@ -18196,6 +18508,9 @@
       ],
       "Download the mobile apps": [
         "Download de mobiele apps"
+      ],
+      "Downloads": [
+        "Downloads"
       ],
       "Edit billing address": [
         "Factuuradres bewerken"
@@ -18381,6 +18696,15 @@
       "Get ${ vpnPlus } to access all servers": [
         "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
       ],
+      "Get complete privacy coverage": [
+        "Krijg volledige privacy dekking"
+      ],
+      "Get more from your VPN": [
+        "Haal meer uit uw VPN"
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "Download de app op al uw apparaten en bescherm tot ${ VPN_CONNECTIONS } tegelijk."
+      ],
       "Get the apps": [
         "Verkrijg de apps"
       ],
@@ -18407,6 +18731,9 @@
       ],
       "History": [
         "Geschiedenis"
+      ],
+      "Home": [
+        "Home"
       ],
       "How does it work?": [
         "Hoe werkt het?"
@@ -18874,6 +19201,9 @@
       "Status": [
         "Status"
       ],
+      "Subscription": [
+        "Abonnement"
+      ],
       "Success": [
         "Succes"
       ],
@@ -18946,6 +19276,9 @@
       ],
       "Upgrade plan": [
         "Abonnement upgraden"
+      ],
+      "Upgrade your privacy": [
+        "Upgrade uw privacy"
       ],
       "Upload CSV file to create multiple accounts": [
         "Upload CSV-bestand om meerdere gebruikers aan te maken"
@@ -19438,6 +19771,11 @@
         "Automatisch al uw uitgaande berichten ondertekenen, zodat gebruikers de authenticiteit van uw berichten kunnen verifiëren. Dit wordt gedaan in combinatie met de standaard PGP-instellingen, welke hieronder kunnen worden geconfigureerd."
       ]
     },
+    "Tooltip: PM signature locked": {
+      "This signature cannot be modified": [
+        "Deze handtekening kan niet aangepast worden"
+      ]
+    },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "End-to-end versleuteld gedeeld"
@@ -19654,9 +19992,38 @@
         "Upgrade naar een ${ MAIL_SHORT_APP_NAME } betaald abonnement om uw agenda te delen."
       ]
     },
+    "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "**Bespaar tot ${ priceString }** met een langer abonnement. Dezelfde premium functies, lagere prijs."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Alle premium ${ BRAND_NAME } diensten. Eén simpel abonnement."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Alle premium ${ BRAND_NAME } diensten. Vanaf slechts ${ fallBackString } per maand"
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "Alle premium ${ BRAND_NAME } diensten. Slechts **${ priceString }** meer elke maand."
+      ],
+      "Did you know?": [
+        "Wist u dat?"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "U kunt tot ${ FAMILY_MAX_USERS } mensen beveiligen met ${ PLAN_NAMES[plan] }. Vanaf slechts ${ priceString }/maand per account."
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "U kunt tot ${ FAMILY_MAX_USERS } mensen beveiligen met ${ PLAN_NAMES[PLANS.DUO] } of ${ PLAN_NAMES[PLANS.FAMILY] }. Vanaf slechts ${ priceString }/maand per account."
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "Beste deal"
+      ],
       "Recommended": [
         "Aanbevolen"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Bespaar ${ totals.discountPercentage }%"
       ]
     },
     "User referee invited via email": {
@@ -19932,12 +20299,36 @@
         "Overige"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Communiceer en plan met end-to-end encryptie."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Haal meer uit uw ${ planTitle } abonnement."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Bewaar uw bestanden, foto's en documenten veilig met ${ maxDriveSpace } gratis cloud opslag."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Maak makkelijk gebruik van veilige wachtwoorden."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Met ${ planTitlePlusMaybeBrand } krijgt u gratis toegang tot ${ VPN_APP_NAME } en andere privacydiensten."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Met ${ planTitlePlusMaybeBrand } krijgt u gratis toegang tot alle ${ BRAND_NAME } privacydiensten."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now en meer."
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } apparaat",
+        "${ n } apparaten"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ servers"
@@ -19946,6 +20337,10 @@
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } landen"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries }+ landen"
@@ -19953,6 +20348,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatisch geselecteerd uit ${ numberOfCountries } land",
+        "Automatisch geselecteerd uit ${ numberOfCountries } landen"
       ]
     },
     "vpn_2024: renew": {
