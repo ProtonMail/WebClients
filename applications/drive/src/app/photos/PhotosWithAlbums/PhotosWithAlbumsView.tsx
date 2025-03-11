@@ -4,7 +4,6 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Loader, NavigationControl, TopBanner, useAppTitle, useModalStateObject } from '@proton/components';
-import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
@@ -18,7 +17,7 @@ import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { PhotoLink } from '../../store';
-import { isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { isDecryptedLink, useThumbnailsDownload, useUserSettings } from '../../store';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useCreateAlbum } from '../PhotosActions/Albums';
 import { AddAlbumPhotosModal } from '../PhotosModals/AddAlbumPhotosModal';
@@ -27,7 +26,8 @@ import { EmptyPhotos } from './EmptyPhotos';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
-import { PhotosTags, type PhotosTagsProps } from './components/Tags';
+import { PhotosTags } from './components/Tags';
+import { getTagFilteredPhotos } from './getTagFilteredPhotos';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
@@ -46,10 +46,16 @@ export const PhotosWithAlbumsView: FC = () => {
         photoLinkIds,
         requestDownload,
         addAlbumPhotos,
+        selectedTags,
+        handleSelectTag,
     } = usePhotosWithAlbumsView();
 
+    const tagFilteredPhotos = useMemo(() => getTagFilteredPhotos(photos, selectedTags), [photos, selectedTags]);
+
+    const { photoTags } = useUserSettings();
+
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
-        photos,
+        tagFilteredPhotos,
         photoLinkIdToIndexMap
     );
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
@@ -62,8 +68,6 @@ export const PhotosWithAlbumsView: FC = () => {
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
     const { navigateToAlbum, navigateToAlbums, navigateToPhotos } = useNavigate();
-    // TODO: Move tag selection to specific hook
-    const [selectedTags, setSelectedTags] = useState<PhotosTagsProps['selectedTags']>([PhotoTag.All]);
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -99,8 +103,11 @@ export const PhotosWithAlbumsView: FC = () => {
         [photoLinkIds, previewLinkId]
     );
     const previewItem = useMemo(
-        () => (previewLinkId !== undefined ? (photos[photoLinkIdToIndexMap[previewLinkId]] as PhotoLink) : undefined),
-        [photos, previewLinkId, photoLinkIdToIndexMap]
+        () =>
+            previewLinkId !== undefined
+                ? (tagFilteredPhotos[photoLinkIdToIndexMap[previewLinkId]] as PhotoLink)
+                : undefined,
+        [tagFilteredPhotos, previewLinkId, photoLinkIdToIndexMap]
     );
     const setPreviewIndex = useCallback(
         (index: number) => setPreviewLinkId(photoLinkIds[index]),
@@ -143,7 +150,8 @@ export const PhotosWithAlbumsView: FC = () => {
         [shareId, linkId, createAlbum, navigateToAlbum]
     );
 
-    if (!shareId || !linkId || isPhotosLoading) {
+    // We want to show the view in case they are more page to load, we can start to show what we already have
+    if (!shareId || !linkId || (isPhotosLoading && photos.length === 0)) {
         return <Loader />;
     }
 
@@ -257,20 +265,8 @@ export const PhotosWithAlbumsView: FC = () => {
                 {!isPhotosEmpty && (
                     <PhotosTags
                         selectedTags={selectedTags}
-                        tags={[
-                            PhotoTag.All,
-                            PhotoTag.Favorites,
-                            PhotoTag.Screenshots,
-                            PhotoTag.Videos,
-                            PhotoTag.LivePhotos,
-                            PhotoTag.MotionPhotos,
-                            PhotoTag.Selfies,
-                            PhotoTag.Portraits,
-                            PhotoTag.Bursts,
-                            PhotoTag.Panoramas,
-                            PhotoTag.Raw,
-                        ]}
-                        onTagSelect={setSelectedTags}
+                        tags={photoTags}
+                        onTagSelect={(newTags) => handleSelectTag(new AbortController().signal, newTags)}
                     />
                 )}
 
@@ -278,7 +274,7 @@ export const PhotosWithAlbumsView: FC = () => {
                     <EmptyPhotos shareId={shareId} linkId={linkId} />
                 ) : (
                     <PhotosGrid
-                        data={photos}
+                        data={tagFilteredPhotos}
                         onItemRender={handleItemRender}
                         onItemRenderLoadedLink={handleItemRenderLoadedLink}
                         isLoading={isPhotosLoading}

@@ -1,19 +1,26 @@
 import { PHOTOS_PAGE_SIZE } from '../../drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
+import type { PhotoTag } from '../../interfaces/drive/file';
 
 export const queryPhotos = (
     volumeId: string,
-    params?: {
+    {
+        Tags,
+        ...params
+    }: {
         Desc?: 0 | 1;
         PreviousPageLastLinkID?: string;
         MinimumCaptureTime?: number;
-    }
+        Tags?: PhotoTag[];
+    } = {}
 ) => ({
     method: 'get',
     url: `drive/volumes/${volumeId}/photos`,
     params: {
         PageSize: PHOTOS_PAGE_SIZE,
         ...params,
+        // TODO: For now BE only accept one Tag, but it should support multiple.
+        Tag: Tags?.[0],
     },
 });
 

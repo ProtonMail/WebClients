@@ -1,4 +1,5 @@
 import type { VERIFICATION_STATUS } from '@proton/crypto';
+import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import type { DriveFileRevision } from '../_revisions';
 
@@ -52,6 +53,7 @@ interface Link {
     nameSignatureEmail?: string; // Email used for name signature.
     // If there is no issue, the value should be undefined.
     signatureIssues?: SignatureIssues;
+    photoProperties?: PhotoProperties;
     volumeId: string;
 }
 
@@ -70,6 +72,16 @@ export interface LinkShareUrl {
 interface LinkSharingDetails {
     shareUrl?: LinkShareUrl;
     shareId: string;
+}
+
+interface PhotoProperties {
+    albums: {
+        albumLinkId: string;
+        hash: string;
+        contentHash: string;
+        addedTime: number;
+    }[];
+    tags: PhotoTag[];
 }
 
 export type SignatureIssues = {
