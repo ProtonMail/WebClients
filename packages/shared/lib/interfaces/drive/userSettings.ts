@@ -1,3 +1,5 @@
+import type { PhotoTag } from './file';
+
 export enum SortSetting {
     NameAsc = 1,
     SizeAsc = 2,
@@ -19,6 +21,7 @@ export interface UserSettings {
     Layout: LayoutSetting;
     RevisionRetentionDays: RevisionRetentionDaysSetting;
     B2BPhotosEnabled: boolean;
+    PhotoTags: PhotoTag[];
 }
 
 export interface UserSettingsResponse {
@@ -26,5 +29,6 @@ export interface UserSettingsResponse {
     Defaults: {
         RevisionRetentionDays: UserSettings['RevisionRetentionDays'];
         B2BPhotosEnabled: UserSettings['B2BPhotosEnabled'];
+        PhotoTags: UserSettings['PhotoTags'];
     };
 }
