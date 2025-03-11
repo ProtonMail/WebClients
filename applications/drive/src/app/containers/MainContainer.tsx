@@ -180,7 +180,8 @@ const InitContainer = () => {
             )}
             {searchEnabled && <Route path="search/*" element={<SearchContainer />} />}
             <Route path=":volumeId/:linkId/*" element={<VolumeLinkContainer />} />
-            <Route path=":shareId/:type/:linkId/*" element={<FolderContainerWrapper />} />
+            <Route path=":shareId/file/:linkId/*" element={<FolderContainerWrapper />} />
+            <Route path=":shareId/folder/:linkId/*" element={<FolderContainerWrapper />} />
             <Route
                 path="*"
                 element={
