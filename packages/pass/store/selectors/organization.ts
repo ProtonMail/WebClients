@@ -1,6 +1,8 @@
+import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
+import { getPassPlan } from '@proton/pass/lib/user/user.plan';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { State } from '@proton/pass/store/types';
-import type { MaybeNull, OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
+import { BitField, type MaybeNull, type OrganizationUpdatePasswordPolicyRequest } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
@@ -17,3 +19,6 @@ export const selectCanUpdateOrganization = ({ organization }: State): boolean =>
 export const selectOrganizationPasswordGeneratorPolicy = ({
     organization,
 }: State): MaybeNull<OrganizationUpdatePasswordPolicyRequest> => organization?.settings?.PasswordPolicy ?? null;
+
+export const selectOrganizationVaultCreationDisabled = ({ organization, user: { user, plan } }: State): boolean =>
+    organization?.settings.VaultCreateMode === BitField.ACTIVE && user !== null && !isB2BAdmin(user, getPassPlan(plan));

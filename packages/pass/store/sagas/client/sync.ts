@@ -9,7 +9,7 @@ import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';
 import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
-import { selectAllShares, selectItems } from '@proton/pass/store/selectors';
+import { selectAllShares, selectItems, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe, ShareType } from '@proton/pass/types';
 import { type Share, type ShareGetResponse } from '@proton/pass/types';
@@ -99,19 +99,26 @@ export function* synchronize(type: SyncType) {
     const incomingShareIds = incomingShares.map(prop('shareId'));
     const hasDefaultVault = incomingShares.concat(cachedShares).some(and(isActiveVault, isWritableVault, isOwnVault));
 
-    /* When syncing, if no owned writable vault exists, create it. This
-     * accounts for first login, default vault being disabledl. */
+    /* When syncing, if no owned writable vault exists, create it.
+     * For b2b users, don't create vault if org doesn't allow it.
+     * This accounts for first login, default vault being disabled. */
     if (!hasDefaultVault) {
-        logger.info(`[Sync] No default vault found, creating initial vault..`);
-        const defaultVault: Share<ShareType.Vault> = yield createVault({
-            content: {
-                name: 'Personal',
-                description: 'Personal vault',
-                display: {},
-            },
-        });
+        const canCreateVault = !selectOrganizationVaultCreationDisabled(state);
 
-        incomingShares.push(defaultVault);
+        if (canCreateVault) {
+            logger.info(`[Sync] No default vault found, creating initial vault..`);
+            const defaultVault: Share<ShareType.Vault> = yield createVault({
+                content: {
+                    name: 'Personal',
+                    description: 'Personal vault',
+                    display: {},
+                },
+            });
+
+            incomingShares.push(defaultVault);
+        } else {
+            logger.info(`[Sync] No default vault found, cannot create one due to organization policy.`);
+        }
     }
 
     logger.info(`[Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
