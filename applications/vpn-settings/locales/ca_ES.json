@@ -418,6 +418,9 @@
       "Make admin": [
         "Estableix com a administrador"
       ],
+      "Manage subscription": [
+        "Gestiona la subscripció"
+      ],
       "Mark as default": [
         "Marca per defecte"
       ],
@@ -1092,6 +1095,9 @@
       ],
       "Version history": [
         "Historial de versions"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2568,15 +2574,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
-      ],
-      "Error creating policy.": [
-        "S'ha produït un error en crear la política."
-      ],
-      "Error deleting policy.": [
-        "S'ha produït un error en eliminar la política."
-      ],
-      "Error updating policy.": [
-        "S'ha produït un error en actualitzar la política."
       ],
       "Failed to process the logo": [
         "No s'ha pogut processar el logo"
@@ -6406,6 +6403,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
@@ -7021,9 +7021,6 @@
       ],
       "SMTP submission": [
         "Tramesa SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Enviament SMTP per a les organitzacions seleccionades"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelització dividida (Android i Windows)"
@@ -8017,6 +8014,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panell d'administració per gestionar usuaris i subscripció"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
       ],
       "Team policies": [
         "Regles d'equip"
@@ -9691,47 +9691,6 @@
         "Per ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -10022,6 +9981,47 @@
         "El vostre propi àlies de correu electrònic curt @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "N'esteu segur?"
@@ -10165,15 +10165,6 @@
       ],
       "Phone number updated": [
         "Número de telèfon s'ha actualitzat"
-      ],
-      "Policy created successfully!": [
-        "S'ha creat la política."
-      ],
-      "Policy deleted": [
-        "S'ha eliminat la política."
-      ],
-      "Policy updated successfully!": [
-        "S'ha actualitzat la política."
       ],
       "Preference saved": [
         "S'ha desat la preferència."
@@ -11575,6 +11566,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispositiu",
+        "${ n } dispositius"
+      ],
       "${ n } server": [
         "${ n } servidor",
         "${ n }+ servidors"
@@ -11582,6 +11577,10 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } països"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",

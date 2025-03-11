@@ -136,6 +136,12 @@
       "Close this banner": [
         "이 배너 닫기"
       ],
+      "Compare all plans": [
+        "모든 플랜 비교"
+      ],
+      "Compare plans": [
+        "플랜 비교하기"
+      ],
       "Configure SAML": [
         "SAML 구성"
       ],
@@ -241,6 +247,9 @@
       "Discard changes": [
         "변경사항 취소"
       ],
+      "Discover ${ planName }": [
+        "${ planName } 알아보기"
+      ],
       "Dismiss": [
         "무시"
       ],
@@ -315,6 +324,12 @@
       ],
       "Enable multi-user support": [
         "다중 사용자 지원 활성화"
+      ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "${ PLAN_NAMES[plan] } 알아보기"
+      ],
+      "Explore group plans": [
+        "그룹 플랜 알아보기"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "다른 ${ BRAND_NAME } 플랜 살펴보기"
@@ -417,6 +432,9 @@
       ],
       "Make admin": [
         "관리자 생성"
+      ],
+      "Manage subscription": [
+        "구독 관리"
       ],
       "Mark as default": [
         "기본으로 설정"
@@ -1087,6 +1105,9 @@
       ],
       "Version history": [
         "버전 기록"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1152,6 +1173,62 @@
       ],
       "Two-year": [
         "2년"
+      ]
+    },
+    "Blog": {
+      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
+        "${ BRAND_NAME } VPN의 무로그 정책은 외부 감사에 의해 확인되었습니다."
+      ],
+      "**Streaming** is included in your subscription.": [
+        "**스트리밍**이 회원님의 구독에 포함되어 있습니다."
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "같은 WiFi를 사용한다면 누군가 내 인터넷 기록을 볼 수 있을까요?"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "VPN 설정에서 킬 스위치와 자동 연결을 활성화하세요."
+      ],
+      "How safe is Telegram?": [
+        "Telegram은 얼마나 안전할까요?"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "이 기사에서는 WiFi를 사용할 때 누가 인터넷 기록을 볼 수 있는지, 무엇을 볼 수 있는지, 왜 보는지에 대해 알아봅니다."
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "VPN Accelerator로 연결 속도를 최대 400% 향상하세요"
+      ],
+      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
+        "독립적인 보안 전문가들로부터 ProtonVPN에서 사용자 데이터를 기록하거나 개인 정보를 침해할 수 있는 어떠한 관행에도 관여하지 않는다는 것이 확인되었습니다."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "Telegram은 사용하기에 안전할까요? 이 기사에서 논의할 것처럼, 당신이 어떻게 사용하느냐에 달려 있습니다."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "라우터에 ${ VPN_APP_NAME }를 활성화 하는 법을 알아보세요."
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "기업용 VPN으로 데이터 유출로부터 회사를 보호하고 재택 근무를 더 안전하게 만드세요."
+      ],
+      "Protect your whole household with 1 device": [
+        "한 대의 장치로 가정 전체를 보호하세요"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "${ PLAN_NAMES[PLANS.VPN] }(으)로 모든 주요 스트리밍 플랫폼에서 영상을 시청하세요."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "이 기사는 WireGuard 및 Stealth VPN 프로토콜을 포함하도록 업데이트되었습니다."
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "VPN Accelerator는 향상된 VPN 기술의 조합을 사용해 연결 안정성을 개선하고 연결 속도를 가속합니다."
+      ],
+      "Watch your favorite movies and TV shows": [
+        "선호하는 영화와 TV 쇼를 시청하세요"
+      ],
+      "Which VPN protocol is the best?": [
+        "어떤 VPN 프로토콜이 가장 좋을까요?"
+      ],
+      "Working with sensitive data?": [
+        "민감한 데이터를 다루고 계신가요?"
       ]
     },
     "Browser": {
@@ -2455,6 +2532,98 @@
         "${ PLAN_NAMES[PLANS.PASS] } 구독이 연간 ${ price }의 특별 가격으로 제공됩니다. Free 플랜으로 다운그레이드함으로서 할인을 잃게되며 추후에도 할인된 가격으로 구독할 수 없습니다."
       ]
     },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "브라우저"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "데스크톱"
+      ],
+      "Download for Linux": [
+        "Linux용 다운로드"
+      ],
+      "Download for MacOS": [
+        "macOS용 다운로드"
+      ],
+      "Download for Windows": [
+        "Windows용 다운로드"
+      ],
+      "Download on the Apple App Store": [
+        "Apple App Store에서 다운로드"
+      ],
+      "Download on the Google Play Store": [
+        "Google Play 스토어에서 다운로드"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "앱 다운로드"
+      ],
+      "Get the extension": [
+        "확장 프로그램 설치"
+      ],
+      "Installation guide": [
+        "설치 가이드"
+      ],
+      "iPhone/iPad": [
+        "iPhone 및 iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave 및 이전 버전"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura 및 이후 버전"
+      ],
+      "Mobile": [
+        "모바일"
+      ],
+      "TV": [
+        "TV"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 및 Windows 32비트 (ARM64)"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "연장된 버전 기록"
@@ -2558,15 +2727,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
-      ],
-      "Error creating policy.": [
-        "정책 생성 중 오류."
-      ],
-      "Error deleting policy.": [
-        "정책 삭제 중 오류."
-      ],
-      "Error updating policy.": [
-        "정책 업데이트 중 오류."
       ],
       "Failed to process the logo": [
         "로고를 처리하지 못했습니다"
@@ -3182,6 +3342,31 @@
         "토렌팅 지원 (P2P)"
       ]
     },
+    "Features": {
+      "and more premium features...": [
+        "그리고 더 많은 프리미엄 기능들..."
+      ],
+      "Double VPN": [
+        "더블 VPN"
+      ],
+      "Lightning-fast speeds": [
+        "초고속 속도"
+      ],
+      "NetShield Ad-blocker": [
+        "NetShield 광고 차단기"
+      ],
+      "Secure streaming": [
+        "안전한 영상 스트리밍"
+      ],
+      "Select from ${ vpnServers.paid.countries } countries": [
+        "${ vpnServers.paid.countries }개 국가에서 탐색"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video 등이 포함됩니다."
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "키 삭제"
@@ -3529,8 +3714,26 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "플랜 비교하기"
+      ],
       "Contact us": [
         "문의"
+      ],
+      "Enjoying ${ planName }?": [
+        "${ planName }을(를) 잘 사용하고 계신가요?"
+      ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "매달 **${ priceString }**만 더 결제하여 4가지 이상의 프리미엄 개인정보 보호 서비스를 잠금 해제하세요."
+      ],
+      "Upgrade your privacy": [
+        "프라이버시를 업그레이드하세요"
+      ],
+      "You currently pay": [
+        "현재 결제 금액:"
+      ],
+      "Your plan": [
+        "현재 플랜"
       ]
     },
     "Hint": {
@@ -3621,6 +3824,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } days.": [
+        "${ planName }이(가) ${ daysLeft }일 내로 만료됩니다."
+      ],
+      "${ planName } expires today.": [
+        "${ planName }이(가) 오늘 만료됩니다."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }이 의심스러운 활동에 대한 전담 모니터링으로 계정을 보호합니다."
@@ -3970,6 +4179,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount }개 게이트웨이 서버 삭제 중"
       ],
+      "Did you know?": [
+        "알고 계셨나요?"
+      ],
       "Disabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime }에 비활성화됨"
       ],
@@ -4008,6 +4220,12 @@
       ],
       "domain used": [
         "사용된 도메인"
+      ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "프리미엄 ${ appName } 기능을 놓치지 마세요. 오늘 자동 갱신을 활성화 하세요."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "프리미엄 기능을 놓치지 마세요. 오늘 자동 갱신을 활성화 하세요."
       ],
       "Done! We sent a code to ${ destination }.": [
         "완료! ${ destination } 로 코드를 전송했습니다."
@@ -4060,6 +4278,12 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "휴지통 및 스팸함으로 이동된지 30일이 경과한 이메일이 자동으로 삭제됩니다."
       ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Plus 서버와 기능에 계속 접근하기 위해 자동 갱신을 활성화하세요"
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Plus 서버와 기능에 계속 접근하기 위해 자동 갱신을 활성화하세요"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "회원님의 조직이 안전하도록 통합 인증을 활성화하세요"
       ],
@@ -4068,6 +4292,9 @@
       ],
       "Enabling auto-deletion…": [
         "자동 삭제 활성화 중…"
+      ],
+      "End date": [
+        "종료일"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "외부 주소로 인해 이 그룹에서 이메일 종단간 암호화가 비활성화 되어있습니다."
@@ -4447,6 +4674,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "신규 VPN 연결 데이터 수집이 중단되며 보여지지 않습니다."
       ],
+      "Next billing date": [
+        "다음 청구일"
+      ],
       "No addresses exist": [
         "주소 없음"
       ],
@@ -4764,6 +4994,9 @@
       ],
       "Step ${ step }": [
         "${ step } 단계"
+      ],
+      "Storage": [
+        "저장 공간"
       ],
       "Storage allocated to other users in this organisation": [
         "스토리지가 이 조직의 다른 사용자들에게 할당됨"
@@ -5236,6 +5469,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "인증을 위해 올바른 이메일 주소를 사용할 수 있도록 한 번 편집할 수 있습니다."
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "불과 매달 **${ priceString }**의 가격에 하나의 번들로 모든 프리미엄 개인 정보 보호 서비스를 얻을 수 있어요."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. ${ MAIL_SHORT_APP_NAME } 구독을 취소하기 전에 공유 캘린더 링크와 캘린더를 공유한 ${ BRAND_NAME } 사용자를 제거하십시오."
       ],
@@ -5552,6 +5788,9 @@
       ],
       "Addresses": [
         "주소"
+      ],
+      "Advanced": [
+        "고급"
       ],
       "Allow": [
         "허용"
@@ -6343,6 +6582,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
       ],
@@ -6936,9 +7178,6 @@
       ],
       "SMTP submission": [
         "SMTP 세부 사항"
-      ],
-      "SMTP submission for select organizations": [
-        "선택한 조직의 SMTP 세부 사항"
       ],
       "Split tunneling (Android and Windows)": [
         "분할 터널링 (Android 및 Windows)"
@@ -7942,6 +8181,9 @@
       "Admin panel to manage users and subscription": [
         "사용자 및 구독을 관리할 수 있는 관리자 패널"
       ],
+      "Advanced account protection": [
+        "고급 계정 보호"
+      ],
       "Team policies": [
         "팀 정책"
       ]
@@ -8339,9 +8581,34 @@
         "구성원"
       ]
     },
+    "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "사진 및 파일을 위한 암호화된 클라우드 스토리지"
+      ],
+      "Password manager with identity protection": [
+        "정보 보호 기능이 포함된 비밀번호 관리자"
+      ],
+      "Secure email that protects your privacy": [
+        "프라이버시를 지켜주는 이메일로 보호하세요."
+      ],
+      "Your gateway to online freedom": [
+        "온라인 자유를 위한 안전한 길"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "연락"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle }개월"
+      ],
+      "${ months } month plan": [
+        "${ months }개월 플랜"
+      ],
+      "Enjoying ${ planName }?": [
+        "${ planName }을(를) 잘 사용하고 계신가요?"
       ]
     },
     "Price": {
@@ -9453,6 +9720,9 @@
       "Billed every 2 years": [
         "2년마다 청구"
       ],
+      "Billed every 6 months": [
+        "6개월마다 청구"
+      ],
       "Billed for 15 months": [
         "15개월 마다 결제됨"
       ],
@@ -9567,47 +9837,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }용"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription reminder": {
@@ -9894,6 +10123,47 @@
         "사용자의 @pm.me 이메일 별칭"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "확실한가요?"
@@ -10037,15 +10307,6 @@
       ],
       "Phone number updated": [
         "전화번호가 업데이트됨"
-      ],
-      "Policy created successfully!": [
-        "정책이 성공적으로 생성되었습니다!"
-      ],
-      "Policy deleted": [
-        "정책 삭제됨"
-      ],
-      "Policy updated successfully!": [
-        "정책이 성공적으로 업데이트되었습니다!"
       ],
       "Preference saved": [
         "설정이 저장되었습니다."
@@ -10346,6 +10607,9 @@
       "Allocate storage": [
         "저장공간 할당"
       ],
+      "Also in your plan": [
+        "플랜에 추가로 포함된 항목"
+      ],
       "Amount": [
         "금액"
       ],
@@ -10439,6 +10703,9 @@
       "Connect organization": [
         "조직에 연결"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "${ vpnPlus }로 한 번에 ${ VPN_CONNECTIONS }대의 기기를 동시 연결하세요. ${ upgradeButton }"
+      ],
       "Contact us": [
         "문의"
       ],
@@ -10495,6 +10762,9 @@
       ],
       "Day theme": [
         "주간 테마"
+      ],
+      "Deep dive into VPN blog posts": [
+        "VPN 블로그 게시물에 대한 심층 분석"
       ],
       "Delete": [
         "삭제"
@@ -10655,6 +10925,12 @@
       "Get ${ vpnPlus } to access all servers": [
         "${ vpnPlus }를 얻어 모든 서버에 접근"
       ],
+      "Get complete privacy coverage": [
+        "완전한 개인정보 보호 커버리지 받기"
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "가지고 계신 기기에 앱을 설치하여 최대 ${ VPN_CONNECTIONS }대 기기를 한 번에 보호하세요."
+      ],
       "Gift": [
         "선물"
       ],
@@ -10666,6 +10942,9 @@
       ],
       "Help center": [
         "지원 센터"
+      ],
+      "Home": [
+        "홈"
       ],
       "How to choose a good logo": [
         "최고의 로고를 선택하는 방법"
@@ -10909,6 +11188,9 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "전용 서버로 네트워크 보호를 업그레이드하세요"
+      ],
+      "Upgrade your privacy": [
+        "프라이버시를 업그레이드하세요"
       ],
       "Upload CSV file to create multiple accounts": [
         "다중 사용자를 생성하려면 CSV 파일을 업로드해주세요."
@@ -11295,9 +11577,35 @@
         "계속하려면 데이터 접근을 하거나 비밀번호 재설정을 위해 사용자 권한 요청이 필요합니다."
       ]
     },
+    "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "장기 구독 옵션으로 **최대 ${ priceString } 절약하세요**. 같은 프리미엄 기능이지만 더 저렴하게 누릴 수 있어요."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "한 번의 쉬운 구독으로 모든 프리미엄 ${ BRAND_NAME } 서비스를."
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "매달 **${ priceString }**의 가격으로 모든 프리미엄 ${ BRAND_NAME } 서비스를."
+      ],
+      "Did you know?": [
+        "알고 계셨나요?"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "매월 계정 당 ${ priceString }에 불과한 ${ PLAN_NAMES[plan] }(으)로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 동시에 보호할 수 있습니다."
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "매월 사용자 당 ${ priceString }부터 시작하는 ${ PLAN_NAMES[PLANS.DUO] } 또는 ${ PLAN_NAMES[PLANS.FAMILY] } 플랜으로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 보호하세요."
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "초특가"
+      ],
       "Recommended": [
         "권장"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "${ totals.discountPercentage }% 절약"
       ]
     },
     "User role": {
@@ -11430,23 +11738,49 @@
         "기타"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "종단간 암호화로 소통 및 일정 관리하세요."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "${ maxDriveSpace } 무료 클라우드 스토리지로 파일과 사진 및 문서를 안전하게 보관하세요."
+      ],
+      "Set secure passwords without the hassle.": [
+        "번거로움 없이 안전한 비밀번호를 설정헤 보세요."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "${ planTitlePlusMaybeBrand }(으)로, ${ VPN_APP_NAME } 무료 접근과 다른 개인정보 보호 서비스도 함께 누릴 수 있어요."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "${ planTitlePlusMaybeBrand }(으)로, 모든 ${ BRAND_NAME } 개인정보 보호 서비스를 무료로 접근할 수 있어요."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now 등"
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n }개 기기"
+      ],
       "${ n } server": [
         "서버 ${ n }개 이상"
       ],
       "${ n } VPN connection": [
         "${ n }개 VPN 연결"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries }개 국가"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries }개 국가에서 자동 선택됨"
       ]
     },
     "vpn_2024: renew": {
