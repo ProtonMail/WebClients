@@ -12,12 +12,11 @@ import noop from '@proton/utils/noop';
 
 type Props = {
     count: number;
-    dense?: boolean;
     selected: boolean;
     onAction?: () => void;
 };
 
-export const VaultMenuAll = memo(({ count, dense, selected, onAction = noop }: Props) => {
+export const VaultMenuAll = memo(({ count, selected, onAction = noop }: Props) => {
     const vaultActions = useVaultActions();
 
     return (
@@ -32,8 +31,8 @@ export const VaultMenuAll = memo(({ count, dense, selected, onAction = noop }: P
                 </div>
             }
             parentClassName={clsx('pass-vault-submenu-vault-item w-full')}
-            className={clsx(selected && 'is-selected', !dense && 'py-2')}
-            icon={<VaultIcon className="shrink-0" size={4} background />}
+            className={clsx(selected && 'is-selected', 'pl-2 pr-2')}
+            icon={<VaultIcon className="shrink-0 mr-1" size={4} background />}
         />
     );
 });

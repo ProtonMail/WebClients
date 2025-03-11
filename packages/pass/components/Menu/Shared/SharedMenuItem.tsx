@@ -15,9 +15,6 @@ import noop from '@proton/utils/noop';
 
 type Props = {
     count: number;
-    /** dense is for extension - by default renders
-     * the `SharedMenuItem` as a vault submenu item. */
-    dense?: boolean;
     icon: IconName;
     label?: string;
     selected: boolean;
@@ -26,7 +23,7 @@ type Props = {
     onAction?: () => void;
 };
 
-export const SharedMenuItem = memo(({ to, count, dense, selected, label, icon, upsellRef, onAction = noop }: Props) => {
+export const SharedMenuItem = memo(({ to, count, selected, label, icon, upsellRef, onAction = noop }: Props) => {
     const navigate = useNavigate();
     const upsell = useUpselling();
 
@@ -45,9 +42,9 @@ export const SharedMenuItem = memo(({ to, count, dense, selected, label, icon, u
                     </div>
                 </div>
             }
-            parentClassName={clsx('w-full', !dense && 'pass-vault-submenu-vault-item ')}
-            className={clsx(selected && 'is-selected', dense ? 'pt-1.5 pb-1.5' : 'py-2')}
-            icon={<VaultIcon className="shrink-0" icon={icon} size={4} background />}
+            parentClassName="w-full pass-vault-submenu-vault-item"
+            className={clsx(selected && 'is-selected', 'pl-2 pr-2')}
+            icon={<VaultIcon className="shrink-0 mr-1" icon={icon} size={4} background />}
         />
     );
 });
