@@ -80,6 +80,14 @@
         "Gebruik uw eigen e-maildomein"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Cloud opslag en het delen van grote bestanden"
+      ],
+      "Secure personal and shared calendar": [
+        "Veilige persoonlijke en gedeelde agenda"
+      ]
+    },
     "color": {
       "carrot": [
         "wortel"
@@ -1289,6 +1297,9 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
+      "${ size } storage per user": [
+        "${ size } opslagruimte per gebruiker"
+      ],
       "1 TB secure storage": [
         "1 TB veilige opslag"
       ],
@@ -1429,9 +1440,6 @@
       ],
       "SMTP submission": [
         "SMTP-indiening"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-indiening voor beperkte organisaties"
       ],
       "Support for up to 2 users": [
         "Ondersteuning voor maximaal 2 gebruikers"

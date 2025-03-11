@@ -80,6 +80,14 @@
         "Používajte vlastnú emailovú doménu"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Cloudové úložisko a zdieľanie veľkých súborov"
+      ],
+      "Secure personal and shared calendar": [
+        "Bezpečný osobný a zdieľaný kalendár"
+      ]
+    },
     "color": {
       "carrot": [
         "mrkva"
@@ -1104,7 +1112,7 @@
         "Kód krajiny"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "Vytváranie viacerých bezplatných účtov nie je podľa našich ${ termsLink } povolené."
+        "Vytváranie viacerých bezplatných účtov nepovoľujú naše ${ termsLink }."
       ],
       "Each code can only be used once": [
         "Každý kód je možné použiť iba raz"
@@ -1125,7 +1133,7 @@
         "Zadajte vlastné heslo (ako správca organizácie)."
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Ak chcete získať ďalšie informácie a odstrániť obmedzenia, prihláste sa, prosím, na adrese ${ mailLink }."
+        "Ak chcete získať ďalšie informácie a odstrániť obmedzenia, prihláste sa na adrese ${ mailLink }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
@@ -1241,7 +1249,7 @@
     },
     "new_plans: Action": {
       "Get ${ planTitle }": [
-        "Získajte ${ planTitle }"
+        "Získať ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -1322,6 +1330,9 @@
       ],
       "${ size } storage": [
         "${ size } úložisko"
+      ],
+      "${ size } storage per user": [
+        "${ size } úložisko na používateľa"
       ],
       "1 TB secure storage": [
         "1 TB bezpečného úložiska"
@@ -1463,9 +1474,6 @@
       ],
       "SMTP submission": [
         "Odosielanie pomocou SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Odosielanie SMTP pre vybrané organizácie"
       ],
       "Support for up to 2 users": [
         "Podpora až pre 2 používateľov"
