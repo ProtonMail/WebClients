@@ -1215,11 +1215,13 @@ END:VCALENDAR`;
                             isOrganizerMode,
                             calendarEvent: {
                                 UID: calendarEventUID,
-                                Attendees: [
-                                    {
-                                        Token: await generateAttendeeToken(attendeeAddress, calendarEventUID),
-                                    },
-                                ] as Attendee[],
+                                AttendeesInfo: {
+                                    Attendees: [
+                                        {
+                                            Token: await generateAttendeeToken(attendeeAddress, calendarEventUID),
+                                        },
+                                    ] as Attendee[],
+                                },
                             } as CalendarEvent,
                             message,
                             isPartyCrasherIcs,
@@ -1237,7 +1239,9 @@ END:VCALENDAR`;
                             isOrganizerMode,
                             calendarEvent: {
                                 UID: calendarEventUID,
-                                Attendees: [] as Attendee[],
+                                AttendeesInfo: {
+                                    Attendees: [] as Attendee[],
+                                },
                             } as CalendarEvent,
                             message,
                             isPartyCrasherIcs,

@@ -279,7 +279,7 @@ const useInviteButtons = ({
                 if (!result) {
                     return;
                 }
-                const updateTime = result.savedEvent.Attendees.find(
+                const updateTime = result.savedEvent.AttendeesInfo.Attendees.find(
                     ({ Token }) => Token === attendee?.token
                 )?.UpdateTime;
                 if (!updateTime) {
