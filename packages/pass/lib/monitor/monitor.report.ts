@@ -1,8 +1,14 @@
-import { selectOwnDuplicatePasswords, selectOwnExcludedItems, selectPassPlan } from '@proton/pass/store/selectors';
+import {
+    selectDuplicatePasswords,
+    selectExcludedItems,
+    selectOwnedVaults,
+    selectPassPlan,
+} from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import { B2BEventName } from '@proton/pass/types/data/b2b';
 import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import debounce from '@proton/utils/debounce';
 
@@ -22,10 +28,11 @@ export const createMonitorReport = debounce(
         try {
             if (!isBusinessPlan(selectPassPlan(state))) return;
 
-            const reusedCount = selectOwnDuplicatePasswords(state).length;
-            const excludedCount = selectOwnExcludedItems(state).length;
-            const missing2FAs = await monitor.checkMissing2FAs({ ownedOnly: true });
-            const weakPasswords = await monitor.checkWeakPasswords({ ownedOnly: true });
+            const shareIds = selectOwnedVaults(state).map(prop('shareId'));
+            const reusedCount = selectDuplicatePasswords(shareIds)(state).length;
+            const excludedCount = selectExcludedItems(shareIds)(state).length;
+            const missing2FAs = await monitor.checkMissing2FAs({ shareIds });
+            const weakPasswords = await monitor.checkWeakPasswords({ shareIds });
 
             await dispatch(
                 {
