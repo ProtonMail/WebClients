@@ -59,12 +59,10 @@ export const useApplyEncryptedSearch = ({
 
     const { sendPerformSearchReport } = useSearchTelemetry();
 
-    const params = { labelID, conversationMode, sort, filter, search, esEnabled };
+    const params = { labelID, conversationMode, sort, filter, search, esEnabled, isSearching: isSearch(search) };
 
     const isES = useMailSelector((state: MailState) => isESSelector(state, { search, esStatus }));
-    const shouldLoadElements = useMailSelector((state: MailState) =>
-        shouldSendRequestSelector(state, { page, params })
-    );
+    const shouldLoadElements = useMailSelector((state: MailState) => shouldSendRequestSelector(state, { page }));
     const messagesToLoadMoreES = useMailSelector((state: MailState) =>
         messagesToLoadMoreESSelector(state, { page, search, esStatus })
     );
