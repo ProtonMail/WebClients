@@ -13,8 +13,6 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
-// import { elements as elementsSelector } from 'proton-mail/store/elements/elementsSelectors';
-
 import type { Element } from '../../models/element';
 import type { MailState, MailThunkExtra } from '../store';
 import type {
@@ -38,7 +36,7 @@ export const updatePage = createAction<number>('elements/updatePage');
 
 export const setPageSize = createAction<number>('elements/setPageSize');
 
-export const setParams = createAction<ElementsStateParams>('elements/setParams');
+export const setParams = createAction<Partial<ElementsStateParams>>('elements/setParams');
 
 export const resetByPassFilter = createAction('elements/resetByPassFilter');
 
@@ -73,25 +71,6 @@ export const load = createAsyncThunk<
             result: QueryResults;
             page: number;
         }) => {
-            // const elementsInState = elementsSelector(getState() as MailState);
-            /* When we receive Stale from the api response, we don't want to update the local state.
-             * While Stale = 1, we might receive in the element list elements that are no longer in the location,
-             * which sometimes leads in flickering UI and items re-appearing when they should not.
-             * Instead, we will rely on the cache and the optimistic logic for a while, and when Stale = 0,
-             * we can trust the api results again.
-             *
-             * However, if our state is empty (so we have nothing to display yet),
-             * we might enter a case where the API is returning results while Stale = 1.
-             * If we ignore the API response in such cases, we would display nothing to the user while Stale = 1,
-             * which can sometimes take ~20s.
-             * So, when we have nothing to display to the user and Stale = 1, we actually want to use the API result
-             * so that we can display something to the user quickly.
-             */
-            // if (elementsInState.length > 0 && result.Stale === 1) {
-            //     return;
-            // }
-            // TODO remove
-
             dispatch(
                 showSerializedElements({
                     queryIndex: index,
@@ -101,8 +80,6 @@ export const load = createAsyncThunk<
                 })
             );
         };
-
-        dispatch(setParams(params));
 
         const result = await queryElementsInBatch(
             {
@@ -133,7 +110,6 @@ export const load = createAsyncThunk<
 
         if (result.Stale === 1 && REFRESHES?.[count]) {
             const ms = 1 * SECOND * REFRESHES[count];
-            const isLastRefetch = REFRESHES[count + 1] === undefined;
 
             // Wait few seconds before retrying
             setTimeout(() => {
@@ -146,7 +122,6 @@ export const load = createAsyncThunk<
                             abortController,
                             count: count + 1,
                             refetch: true, // Do not update current page if we refetch,
-                            isLastRefetch,
                         })
                     );
                 }
