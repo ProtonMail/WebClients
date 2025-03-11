@@ -31,7 +31,7 @@ export const PrivateMainSettingsAreaBase = ({
     noTitle,
     description,
     children,
-    wrapperClass,
+    wrapperClass = 'container-section-sticky',
     mainAreaClass,
     style,
 }: PrivateMainSettingsAreaBaseProps) => {
@@ -136,7 +136,7 @@ interface PrivateMainSettingsAreaProps {
 const PrivateMainSettingsArea = ({
     children,
     config,
-    wrapperClass = 'container-section-sticky',
+    wrapperClass,
     mainAreaClass,
     style,
 }: PrivateMainSettingsAreaProps) => {
