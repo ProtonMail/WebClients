@@ -90,58 +90,63 @@ export const toInternalAttendee = (
     sharedSessionKey: SessionKey | undefined,
     eventID: string,
     getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>
-): Promise<VcalAttendeeProperty[]> => {
-    return Promise.all(
-        attendees.map(async (attendee) => {
-            if (!attendee.parameters) {
+): Promise<VcalAttendeeProperty>[] => {
+    return attendees.map(async (attendee) => {
+        if (!attendee.parameters) {
+            return attendee;
+        }
+
+        const token = attendee.parameters['x-pm-token'];
+        const extra = clear.find(({ Token }) => Token === token);
+        if (!token || !extra) {
+            return attendee;
+        }
+
+        let comment = extra.Comment?.Message;
+
+        // TODO
+        // - Report decryption errors to sentry
+        // - Handle decryption errors gracefully
+        if (
+            sharedSessionKey &&
+            extra.Comment?.Message &&
+            extra.Comment?.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED
+        ) {
+            const attendeeEmail = attendee.parameters.cn;
+
+            if (!attendeeEmail) {
                 return attendee;
             }
-            const token = attendee.parameters['x-pm-token'];
-            const extra = clear.find(({ Token }) => Token === token);
-            if (!token || !extra) {
-                return attendee;
-            }
 
-            let comment = extra.Comment?.Message;
+            const binaryMessage = base64StringToUint8Array(extra.Comment?.Message);
+            const publicKey = await getAttendeeVerificationPreferences(attendeeEmail);
+            const decryptedMessageResult = await CryptoProxy.decryptMessage({
+                signatureContext: { value: getSignatureContext('calendar.rsvp.comment', eventID), required: true },
+                sessionKeys: [sharedSessionKey],
+                binaryMessage,
+                // TODO check it's the right public key
+                verificationKeys: publicKey.verifyingKeys,
+            });
 
-            // TODO
-            // - Report decryption errors to sentry
-            // - Handle decryption errors gracefully
-            if (
-                sharedSessionKey &&
-                extra.Comment?.Message &&
-                extra.Comment?.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED
-            ) {
-                const attendeeEmail = attendee.parameters.cn;
+            comment = decryptedMessageResult.data;
+        }
 
-                if (!attendeeEmail) {
-                    return attendee;
-                }
+        const partstat = toIcsPartstat(extra.Status);
 
-                const binaryMessage = base64StringToUint8Array(extra.Comment?.Message);
-                const publicKey = await getAttendeeVerificationPreferences(attendeeEmail);
-                const decryptedMessageResult = await CryptoProxy.decryptMessage({
-                    signatureContext: { value: getSignatureContext('calendar.rsvp.comment', eventID), required: true },
-                    sessionKeys: [sharedSessionKey],
-                    binaryMessage,
-                    // TODO check it's the right public key
-                    verificationKeys: publicKey.verifyingKeys,
-                });
+        const result = {
+            ...attendee,
+            parameters: {
+                ...attendee.parameters,
+                partstat,
+            },
+        };
 
-                comment = decryptedMessageResult.data;
-            }
+        if (comment) {
+            result.parameters.comment = comment;
+        }
 
-            const partstat = toIcsPartstat(extra.Status);
-            return {
-                ...attendee,
-                parameters: {
-                    ...attendee.parameters,
-                    partstat,
-                    comment,
-                },
-            };
-        })
-    );
+        return result;
+    });
 };
 
 export const getAttendeeEmail = (attendee: VcalAttendeeProperty | VcalOrganizerProperty) => {
