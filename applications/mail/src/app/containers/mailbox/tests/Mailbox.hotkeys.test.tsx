@@ -189,7 +189,6 @@ describe('Mailbox hotkeys', () => {
             callTimes++;
             expect(labelSpy).toHaveBeenCalledTimes(callTimes);
             const result = labelSpy.mock.calls[callTimes - 1][0].data;
-            console.log({ result });
             expect(result.LabelID).toBe(LabelID);
 
             expect(result.IDs).toEqual([conversations[conversations.length - 1 * callTimes].ID]);

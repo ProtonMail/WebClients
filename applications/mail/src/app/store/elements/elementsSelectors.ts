@@ -156,7 +156,6 @@ export const needsMoreElements = createSelector(
         if (!total) {
             return false;
         }
-
         const numberOfPages = Math.ceil(total / pageSize);
 
         // currentPage starts from 1
@@ -263,17 +262,14 @@ export const messagesToLoadMoreES = createSelector(
  * labelID - string | undefined - This label ID is the one we use in useElement which is based on the URL value
  * We prefer using this value when present because store one is not immediately up to date when switching labels
  */
-export const dynamicTotal = createSelector(
-    [params, currentCounts, bypassFilter, currentLabelID],
-    (params, props, bypassFilter, labelID) => {
-        const { counts, loading } = props;
-        if (isSearch(params.search) || hasAttachmentsFilter(params.filter) || loading) {
-            return undefined;
-        }
-
-        return getTotal(counts, labelID || params.labelID, params.filter, bypassFilter.length);
+export const dynamicTotal = createSelector([params, currentCounts, bypassFilter], (params, props, bypassFilter) => {
+    const { counts, loading } = props;
+    if (isSearch(params.search) || hasAttachmentsFilter(params.filter) || loading) {
+        return undefined;
     }
-);
+
+    return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
+});
 
 /**
  * Computed up-to-date number of elements on the current page

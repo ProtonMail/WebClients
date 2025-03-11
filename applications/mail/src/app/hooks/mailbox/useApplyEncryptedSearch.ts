@@ -91,7 +91,7 @@ export const useApplyEncryptedSearch = ({
                     dispatch(manualFulfilled());
                     onPage(0);
 
-                    void dispatch(loadAction({ page: 0, pageSize, params, abortController: undefined }));
+                    void dispatch(loadAction({ page: 0, pageSize, abortController: undefined }));
                     sendPerformSearchReport({
                         type: SEARCH_TYPE.BACKEND_SIDE,
                         searchParams: {
@@ -105,7 +105,7 @@ export const useApplyEncryptedSearch = ({
                         hasReachedAPILimit: true,
                     });
                 } else {
-                    void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
+                    void dispatch(loadAction({ page, pageSize, abortController: undefined }));
                     sendPerformSearchReport({
                         type: SEARCH_TYPE.BACKEND_SIDE,
                         searchParams: {
@@ -124,7 +124,7 @@ export const useApplyEncryptedSearch = ({
                 text: c('Error').t`There has been an issue with content search. Default search has been used instead.`,
                 type: 'error',
             });
-            void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
+            void dispatch(loadAction({ page, pageSize, abortController: undefined }));
         }
     };
 

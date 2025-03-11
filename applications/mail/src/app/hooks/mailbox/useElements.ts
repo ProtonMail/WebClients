@@ -53,7 +53,6 @@ import {
     stateInconsistency as stateInconsistencySelector,
     taskRunning,
     totalReturned as totalReturnedSelector,
-    // contextPages,
 } from '../../store/elements/elementsSelectors';
 import { messageByID } from '../../store/messages/messagesSelectors';
 import type { MailState } from '../../store/store';
@@ -135,7 +134,6 @@ export const useElements: UseElements = ({
     const counts = { counts: countValues, loading: countsLoading };
 
     const stateParams = useMailSelector(paramsSelector);
-    // const pages = useMailSelector(contextPages);
     const elementsMap = useMailSelector(elementsMapSelector);
     const pendingActions = useMailSelector(pendingActionsSelector);
     const tasksRunning = useMailSelector(taskRunning);
@@ -147,13 +145,11 @@ export const useElements: UseElements = ({
     );
     const shouldLoadElements = useMailSelector((state: MailState) => shouldLoadElementsSelector(state, { page }));
     const shouldUpdatePage = useMailSelector((state: MailState) => shouldUpdatePageSelector(state, { page }));
-    const dynamicTotal = useMailSelector((state: MailState) => dynamicTotalSelector(state, { counts, labelID }));
-    const placeholderCount = useMailSelector((state: MailState) =>
-        placeholderCountSelector(state, { counts, labelID })
-    );
+    const dynamicTotal = useMailSelector((state: MailState) => dynamicTotalSelector(state, { counts }));
+    const placeholderCount = useMailSelector((state: MailState) => placeholderCountSelector(state, { counts }));
     const loading = useMailSelector((state: MailState) => loadingSelector(state, { page }));
-    const totalReturned = useMailSelector((state: MailState) => totalReturnedSelector(state, { counts, labelID }));
-    const expectingEmpty = useMailSelector((state: MailState) => expectingEmptySelector(state, { counts, labelID }));
+    const totalReturned = useMailSelector((state: MailState) => totalReturnedSelector(state, { counts }));
+    const expectingEmpty = useMailSelector((state: MailState) => expectingEmptySelector(state, { counts }));
     const loadedEmpty = useMailSelector(loadedEmptySelector);
     const partialESSearch = useMailSelector((state: MailState) => partialESSearchSelector(state, { search, esStatus }));
     const stateInconsistency = useMailSelector((state: MailState) =>
@@ -190,36 +186,13 @@ export const useElements: UseElements = ({
         const isSearching = isSearch(search);
         const conversationMode = isConversationMode(labelID, mailSettings, location);
 
-        // const paramsChanged =
-        //     labelID !== stateParams.labelID ||
-        //     conversationMode !== stateParams.conversationMode ||
-        //     sort !== stateParams.sort ||
-        //     filter !== stateParams.filter ||
-        //     search !== stateParams.search ||
-        //     (esEnabled !== stateParams.esEnabled && isSearch(search));
-        //
-        // // If we have actions pending OR select all actions pending, we don't want to load elements because it would cancel our optimistic updates
-        // const hasPendingActions = pendingActions > 0 || tasksRunning.labelIDs.includes(labelID);
-        //
-        // const pageIsAlreadyLoaded = pages.includes(page)
-
-        // if(paramsChanged && !pageIsAlreadyLoaded && !hasPendingActions && !isSearch(search)) {
-        //     void dispatch(
-        //         loadAction({
-        //             abortController: abortControllerRef.current,
-        //             page,
-        //             pageSize,
-        //             params: stateParams,
-        //         })
-        //     )
-        // }
-
         const shouldResetElementsState =
             search.keyword !== stateParams.search.keyword || // Reset the cache since we do not support client search (filtering)
             (esEnabled !== stateParams.esEnabled && isSearch(search)) ||
             !pageIsConsecutive ||
             // Reset the cache when sort changes to ensure correct ordering
-            !isDeepEqual(sort, sort);
+            !isDeepEqual(sort, stateParams.sort);
+
         if (shouldResetElementsState) {
             dispatch(
                 reset({
@@ -252,7 +225,6 @@ export const useElements: UseElements = ({
             );
         }
     }, [location.pathname, location.hash, mailSettings, labelIDs]);
-    // TODO probably need to add more dependencies
 
     // Reset the element state when receiving a setting update for page size or conversation mode
     useEffect(() => {
@@ -304,7 +276,6 @@ export const useElements: UseElements = ({
                     abortController: abortControllerRef.current,
                     page,
                     pageSize,
-                    params: stateParams,
                 })
             );
         }

@@ -62,24 +62,18 @@ export const retry = (
     state.beforeFirstLoad = false;
     state.invalidated = false;
     state.pendingRequest = false;
-    state.retry = newRetry(state.retry, action.payload.queryParameters, action.payload.error);
-};
-
-const hasSameMode = (state: Draft<ElementsState>, arg: QueryParams) => {
-    return state.params.conversationMode === arg.params.conversationMode;
+    state.retry = newRetry(state.retry, state.params, action.payload.error);
 };
 
 export const loadPending = (
     state: Draft<ElementsState>,
     action: PayloadAction<undefined, string, { arg: QueryParams }>
 ) => {
-    if (hasSameMode(state, action.meta.arg)) {
-        const { refetch, page } = action.meta.arg;
+    const { refetch, page } = action.meta.arg;
 
-        if (!refetch) {
-            state.pendingRequest = true;
-            state.page = page;
-        }
+    if (!refetch) {
+        state.pendingRequest = true;
+        state.page = page;
     }
 };
 
@@ -87,23 +81,21 @@ export const loadFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ result: QueryResults; taskRunning: TaskRunningInfo }, string, { arg: QueryParams }>
 ) => {
-    const { page, params, refetch } = action.meta.arg;
+    const { page, refetch } = action.meta.arg;
     const {
         result: { Total },
         taskRunning,
     } = action.payload;
 
-    if (hasSameMode(state, action.meta.arg)) {
-        Object.assign(state, {
-            beforeFirstLoad: false,
-            invalidated: false,
-            pendingRequest: false,
-            total: Total,
-            page: refetch ? state.page : page,
-            retry: newRetry(state.retry, params, undefined),
-            taskRunning,
-        });
-    }
+    Object.assign(state, {
+        beforeFirstLoad: false,
+        invalidated: false,
+        pendingRequest: false,
+        total: Total,
+        page: refetch ? state.page : page,
+        retry: newRetry(state.retry, state.params, undefined),
+        taskRunning,
+    });
 };
 
 /**
