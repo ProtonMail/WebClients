@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "About hide-my-email aliases": [
-        "Acerca de los alias de hide-my-email"
-      ],
       "Activate": [
         "Activar"
       ],
@@ -608,6 +605,9 @@
       ],
       "Hide toolbar": [
         "Ocultar la barra de herramientas"
+      ],
+      "hide-my-email aliases": [
+        "los alias de hide-my-email"
       ],
       "I like this response": [
         "Me gusta esta respuesta"
@@ -1794,6 +1794,9 @@
       ],
       "Version history": [
         "Historial de versiones"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6897,11 +6900,11 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nuestras alertas ponen la seguridad en primer lugar. Si no reconoce la información vulnerada, puede ignorar este informe."
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Nuestro sistema marcó este mensaje como un intento de suplantación. Compruebe que es legítimo."
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "Nuestro sistema marcó este mensaje como sospechoso. Si no es un mail falso o de suplantación, marquelo como legítimo"
       ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Nuestro sistema identificó este mensaje como correo electrónico sospechoso. Revise que es legítimo antes de abrir cualquier enlace o archivo adjunto."
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Nuestro sistema marcó este mensaje como un intento de suplantación. Por favor verifique para asegurar que es legitimo"
       ],
       "password": [
         "contraseña"
@@ -7022,8 +7025,8 @@
       "Proofread text": [
         "Revisar el texto"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Proteja su correo electrónico de ser filtrado a listas de correo o spammers con alias de hide-my-email."
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Proteja el correo de ser filtrado en listas de correo o spammers con ${ hideMyEmailAliasesLink }."
       ],
       "Public sharing of documents is not yet supported.": [
         "El intercambio público de documentos aún no está admitido."
@@ -9098,8 +9101,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Agregar el asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Complemento con prueba gratuita"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -9512,6 +9521,9 @@
       "${ size } storage": [
         "${ size } de almacenamiento"
       ],
+      "${ size } storage per user": [
+        "${ size } de almacenamiento por usuario"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Para ${ DRIVE_APP_NAME }"
       ],
@@ -9699,6 +9711,9 @@
       "Limited support": [
         "Soporte limitado"
       ],
+      "Manage user permissions and access": [
+        "Gestionar permisos y accesos de usuario"
+      ],
       "Multiple admin roles": [
         "Distintos roles de administración"
       ],
@@ -9716,6 +9731,9 @@
       ],
       "Password manager": [
         "Gestor de contraseñas"
+      ],
+      "Password manager to secure credentials": [
+        "Gestor de contraseñas para proteger credenciales"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
@@ -9788,9 +9806,6 @@
       ],
       "SMTP submission": [
         "Envío SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Envío SMTP para organizaciones seleccionadas"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelización dividida (Android y Windows)"
@@ -10725,6 +10740,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel de administración para gestionar usuarios y suscripciones"
+      ],
+      "Advanced account protection": [
+        "Protección de cuentas avanzada"
       ],
       "Team policies": [
         "Políticas de equipo"
@@ -12071,6 +12089,10 @@
       "${ n } VPN connection per user": [
         "${ n } conexión VPN por usuario",
         "${ n } conexiones VPN por usuario"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Conexión VPN para ${ n } dispositivo por usuario",
+        "Conexión VPN para ${ n } dispositivos por usuario"
       ]
     },
     "Subscription change warning": {
@@ -13870,6 +13892,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispositivo",
+        "${ n } dispositivos"
+      ],
       "${ n } server": [
         "${ n } servidor",
         "Más de ${ n } servidores"
@@ -13878,6 +13904,10 @@
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } países"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en más de ${ numberOfCountries } países"
@@ -13885,6 +13915,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en ${ numberOfCountries } países"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Selección automática de ${ numberOfCountries } país",
+        "Selección automática de ${ numberOfCountries } países"
       ]
     },
     "vpn_2024: renew": {

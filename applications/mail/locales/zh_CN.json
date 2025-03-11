@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "About hide-my-email aliases": [
-        "关于 hide-my-email 别名"
-      ],
       "Activate": [
         "启用"
       ],
@@ -605,6 +602,9 @@
       ],
       "Hide toolbar": [
         "隐藏工具栏"
+      ],
+      "hide-my-email aliases": [
+        "Hide-my-email 邮箱别名"
       ],
       "I like this response": [
         "我喜欢这个答复"
@@ -1782,6 +1782,9 @@
       ],
       "Version history": [
         "各版本历史"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6784,12 +6787,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
-      ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "系统检测到此邮件来源可疑，请确认邮件真实性后再打开其中的链接或附件。"
-      ],
       "password": [
         "密码"
       ],
@@ -6907,8 +6904,8 @@
       "Proofread text": [
         "校对文本"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "使用 hide-my-email 别名保护您的电子邮件不被泄露给邮件列表或垃圾邮件发送者。"
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "使用 ${ hideMyEmailAliasesLink } 功能即可防止您的邮箱地址泄露，免受垃圾邮件干扰。"
       ],
       "Public sharing of documents is not yet supported.": [
         "暂不支持公开分享。"
@@ -8205,7 +8202,7 @@
         "您能具体说明一下吗？"
       ],
       "Country": [
-        "国家"
+        "国家/地区"
       ],
       "Date": [
         "日期"
@@ -8950,6 +8947,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 写作助手"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加 ${ BRAND_NAME } Scribe 写作助手"
       ],
@@ -9620,9 +9620,6 @@
       "SMTP submission": [
         "SMTP 投递邮件"
       ],
-      "SMTP submission for select organizations": [
-        "特定机构可通过 SMTP 投递邮件"
-      ],
       "Split tunneling (Android and Windows)": [
         "线路分离（支持 Android 与 Windows）"
       ],
@@ -9878,7 +9875,7 @@
         "每个地址均可独立收发邮件。一位用户可以使用多个地址，但一个地址不能同时分配给多位用户。"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "实现同时接入不同网络，例如既能观看其他国家的电影又能搜索本地新闻"
+        "实现同时接入不同网络，例如既能观看其他国家/地区的电影又能搜索本地新闻"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "可对收到的邮件自动予以回复"
@@ -10542,6 +10539,9 @@
       "Admin panel to manage users and subscription": [
         "管理用户和订阅的管理面板"
       ],
+      "Advanced account protection": [
+        "高级账户保护"
+      ],
       "Team policies": [
         "团队政策"
       ]
@@ -10601,7 +10601,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "计费国家"
+        "计费国家/地区"
       ],
       "Card number": [
         "卡号"
@@ -10628,13 +10628,13 @@
         "请先重新激活您的订阅以减少附加功能。"
       ],
       "Please select billing country": [
-        "请选择您的计费国家"
+        "请选择您的计费国家/地区"
       ],
       "Please select billing state": [
         "请选择账单省（州）"
       ],
       "Please select your billing country first.": [
-        "请先选择您的账单国家。"
+        "请先选择您的账单国家/地区。"
       ],
       "Please select your billing state first.": [
         "请先选择您的账单省（州）。"
@@ -10643,7 +10643,7 @@
         "续订时间为 ${ renewPrice }，可随时取消。"
       ],
       "Select billing country to pay": [
-        "选择要支付的账单国家"
+        "选择要支付的账单国家/地区"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "特别折扣价 ${ priceWithDiscount } 在前 ${ subscriptionLength } 个月有效。优惠券在 ${ couponRedemptions } 续订时有效。之后将以 ${ renewPrice } 价格自动续订 ${ subscriptionLengthCopy } 个月。您可以随时取消。"
@@ -11816,6 +11816,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "每两年付费"
+      ],
+      "Billed every 6 months": [
+        "按 6 个月计费"
       ],
       "Billed for 15 months": [
         "按 15 个月计费"
@@ -13599,17 +13602,26 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } 台设备"
+      ],
       "${ n } server": [
         "${ n } 台服务器"
       ],
       "${ n } VPN connection": [
         "${ n } 台设备可同时接入 VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } 个国家/地区"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "遍布 ${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } 个国家的 ${ numberOfServers }"
+        "${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "从 ${ numberOfCountries } 个地域中自动选择"
       ]
     },
     "vpn_2024: renew": {
