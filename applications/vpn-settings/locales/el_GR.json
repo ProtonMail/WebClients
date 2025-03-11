@@ -136,6 +136,12 @@
       "Close this banner": [
         "Κλείσιμο αυτού του banner"
       ],
+      "Compare all plans": [
+        "Συκρίνετε όλα τα πλάνα"
+      ],
+      "Compare plans": [
+        "Σύγκριση πλάνων"
+      ],
       "Configure SAML": [
         "Διαμόρφωση SAML"
       ],
@@ -241,6 +247,9 @@
       "Discard changes": [
         "Απόρριψη αλλαγών"
       ],
+      "Discover ${ planName }": [
+        "Ανακαλύψτε το ${ planName }"
+      ],
       "Dismiss": [
         "Παράβλεψη"
       ],
@@ -315,6 +324,12 @@
       ],
       "Enable multi-user support": [
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
+      ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "Ανακαλύψτε τα ${ PLAN_NAMES[plan] }"
+      ],
+      "Explore group plans": [
+        "Ανακαλύψτε τα ομαδικά πλάνα"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Εξερεύνηση άλλων προγραμμάτων ${ BRAND_NAME }"
@@ -418,6 +433,9 @@
       "Make admin": [
         "Ορισμός ως διαχειριστή"
       ],
+      "Manage subscription": [
+        "Διαχείριση συνδρομής"
+      ],
       "Mark as default": [
         "Ορισμός ως προεπιλογή"
       ],
@@ -480,6 +498,9 @@
       ],
       "Previous page": [
         "Προηγούμενη σελίδα"
+      ],
+      "Publish changes": [
+        "Δημοσιεύστε τις αλλαγές"
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
@@ -1092,6 +1113,9 @@
       ],
       "Version history": [
         "Ιστορικό εκδόσεων"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1160,6 +1184,65 @@
       ],
       "Two-year": [
         "Δύο έτη"
+      ]
+    },
+    "Blog": {
+      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
+        "Η πολιτική μη καταγραφής του ${ BRAND_NAME } VPN επιβεβαιώνεται από ανεξάρτητο εργαστήριο."
+      ],
+      "**Streaming** is included in your subscription.": [
+        "Η **μετάδωση ροής** περιλαμβάνεται στη συνδρομή σας."
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "Μπορεί κάποιος να δει το ιστορικό περιήγησής μου αν χρησιμοποιούμε το ίδιο WiFi;"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "Ενεργοποιήστε το kill switch και την αυτόματη σύνδεση μέσα από τις ρυθμίσεις VPN σας."
+      ],
+      "Get round-the-clock protection": [
+        "Αποκτήστε διαρκή προστασία"
+      ],
+      "How safe is Telegram?": [
+        "Πόσο ασφαλές είναι το Telegram;"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "Σε αυτό το άρθρο, θα δούμε ποιος μπορεί να δει το ιστορικό περιήγησής σας όταν συνδέεστε με WiFi, τι μπορούν να δουν, και γιατί θα το έκαναν."
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "Αυξήστε τις ταχύτητες σύνδεσης έως και 400% με το VPN Accelerator"
+      ],
+      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
+        "Ανεξάρτητοι ειδικοί ασφάλειας επιβεβαιώνουν ότι το ProtonVPN δεν καταγράφει δεδομένα χρηστών ούτε χρησιμοποιεί πρακτικές που θα μπορούσαν να θέσουν το απόρρητό σας σε κίνδυνο."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "Είναι το Telegram ασφαλές; Όπως θα δούμε σε αυτό το άρθρο, αυτό εξαρτάται από τον τρόπο που το χρησιμοποιείτε."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "Μάθετε πώς θα ενεργοποιήσετε το ${ VPN_APP_NAME } στο router σας."
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "Προστατεύστε την επιχείρησή σας από παραβιάσεις δεδομένων και κάντε την απομακρυσμένη εργασία ασφαλέστερη με ένα εταιρικό VPN."
+      ],
+      "Protect your whole household with 1 device": [
+        "Προστατεύστε όλη την οικογένειά σας με 1 συσκευή."
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "Μεταδώστε ροή από όλες τις μεγάλες πλατφόρμες με ${ PLAN_NAMES[PLANS.VPN] }."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Αυτό το άρθρο έχει ενημερωθεί ώστε να περιλαμβάνει τα πρωτόκολλα WireGuard και Stealth VPN."
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "Το VPN Accelerator χρησιμοποιεί έναν συνδυασμό προηγμένων τεχνολογιών VPN ώστε να βελτιώνει την σταθερότητα της σύνδεσης και να αυξάνει την ταχύτητά της."
+      ],
+      "Watch your favorite movies and TV shows": [
+        "Παρακολουθήστε τις αγαπημένες σας ταινίες και τηλεοπτικές εκπομπές"
+      ],
+      "Which VPN protocol is the best?": [
+        "Ποιο πρωτόκολλο VPN είναι το καλύτερο;"
+      ],
+      "Working with sensitive data?": [
+        "Εργάζεστε με ευαίσθητα δεδομένα;"
       ]
     },
     "Browser": {
@@ -2465,6 +2548,98 @@
         "Η ${ PLAN_NAMES[PLANS.PASS] } συνδρομή είναι σε ειδική τιμή ${ price } ανά έτος. Με την υποβάθμιση στο Free πλάνο, θα χάσετε οριστικά την έκπτωση, ακόμα και αν κάνετε αναβάθμιση ξανά στο μέλλον."
       ]
     },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "Πρόγραμμα περιήγησης"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "Υπολογιστής"
+      ],
+      "Download for Linux": [
+        "Λήψη για Linux"
+      ],
+      "Download for MacOS": [
+        "Λήψη για macOS"
+      ],
+      "Download for Windows": [
+        "Λήψη για Windows"
+      ],
+      "Download on the Apple App Store": [
+        "Λήψη στο Apple App Store"
+      ],
+      "Download on the Google Play Store": [
+        "Λήψη στο Google Play Store"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "Αποκτήστε την εφαρμογή"
+      ],
+      "Get the extension": [
+        "Λήψη της επέκτασης"
+      ],
+      "Installation guide": [
+        "Οδηγός εγκατάστασης"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave ή νεότερο"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura ή νεότερο"
+      ],
+      "Mobile": [
+        "Κινητό"
+      ],
+      "TV": [
+        "Τηλεόραση"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 ή Windows 32-bit (ARM64)"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Εκτεταμένο ιστορικό εκδόσεων"
@@ -2569,14 +2744,8 @@
       "Error connecting to the Bitcoin API.": [
         "Πρόβλημα σύνδεσης με το Bitcoin API."
       ],
-      "Error creating policy.": [
-        "Σφάλμα κατά τη δημιουργία πολιτικής."
-      ],
-      "Error deleting policy.": [
-        "Σφάλμα κατά τη διαγραφή πολιτικής."
-      ],
-      "Error updating policy.": [
-        "Σφάλμα κατά την ενημέρωση πολιτικής."
+      "Error publishing changes.": [
+        "Σφάλμα κατά τη δημοσίευση αλλαγών."
       ],
       "Failed to process the logo": [
         "Αποτυχία επεξεργασίας του λογότυπου"
@@ -3182,6 +3351,9 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Όλα στο ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "Γρηγορότεροι διακομιστές VPN"
       ],
@@ -3196,6 +3368,31 @@
       ],
       "Torrenting support (P2P)": [
         "Υποστήριξη Torrenting (P2P)"
+      ]
+    },
+    "Features": {
+      "and more premium features...": [
+        "και περισσότερες προηγμένες δυνατότητες"
+      ],
+      "Double VPN": [
+        "Διπλό VPN"
+      ],
+      "Lightning-fast speeds": [
+        "Αστραπιαίες ταχύτητες"
+      ],
+      "NetShield Ad-blocker": [
+        "NetShield Ad-blocker"
+      ],
+      "Secure streaming": [
+        "Ασφαλές streaming"
+      ],
+      "Select from ${ vpnServers.paid.countries } countries": [
+        "Επιλέξτε από ${ vpnServers.paid.countries } χώρες"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+, Prime Video, και άλλων, από οπουδήποτε."
       ]
     },
     "fido2: Action": {
@@ -3553,8 +3750,26 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "Σύγκριση πλάνων"
+      ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
+      ],
+      "Enjoying ${ planName }?": [
+        "Απολαμβάνετε το ${ planName };"
+      ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "Ξεκλειδώστε 4 επιπλέον λειτουργίες απορρήτου με μόλις **${ priceString }** επιπλέον κάθε μήνα."
+      ],
+      "Upgrade your privacy": [
+        "Αναβαθμίστε το απόρρητό σας"
+      ],
+      "You currently pay": [
+        "Αυτή τη στιγμή πληρώνετε"
+      ],
+      "Your plan": [
+        "Το πλάνο σας"
       ]
     },
     "Hint": {
@@ -3654,6 +3869,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } days.": [
+        "Το ${ planName } λήγει σε ${ daysLeft } ημέρες."
+      ],
+      "${ planName } expires today.": [
+        "Το ${ planName } λήγει σήμερα."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "Το ${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική παρακολούθηση ύποπτης δραστηριότητας."
@@ -3969,6 +4190,9 @@
       "Create your first Gateway": [
         "Δημιουργήστε την πρώτη Πύλη σας"
       ],
+      "Created (not published)": [
+        "Δημιουργήθηκε (δε δημοσιεύτηκε)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Δημιουργία διακομιστή πύλης: ${ serverNumber } / ${ total }",
         "Δημιουργία διακομιστών πύλης: ${ serverNumber } / ${ total }"
@@ -4012,9 +4236,15 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
       ],
+      "Deleted (not published)": [
+        "Διαγράφηκε (δε δημοσιεύτηκε)"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Διαγραφή ${ deletedServerCount } διακομιστή πύλης",
         "Διαγραφή ${ deletedServerCount } διακομιστών πύλης"
+      ],
+      "Did you know?": [
+        "Το γνωρίζατε;"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Απενεργοποιήθηκε στις ${ formattedDateAndTime }"
@@ -4056,6 +4286,12 @@
         "το domain χρησιμοποιείται",
         "τα domain χρησιμοποιούνται"
       ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "Μη χάσετε την πρόσβαση στις προηγμένες λειτουργίες του ${ appName }. Ενεργοποιήστε σήμερα την αυτόματη ανανέωση."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "Μη χάσετε την πρόσβαση στις προηγμένες λειτουργίες. Ενεργοποιήστε σήμερα την αυτόματη ανανέωση."
+      ],
       "Done! We sent a code to ${ destination }.": [
         "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }."
       ],
@@ -4092,6 +4328,9 @@
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
+      "Edited (not published)": [
+        "Επεξεργάστηκε (δε δημοσιεύτηκε)"
+      ],
       "eduGAIN configuration saved": [
         "Αποθηκεύτηκε η διαμόρφωση eduGAIN"
       ],
@@ -4107,6 +4346,12 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που μεταφέρθηκαν στον Κάδο απορριμμάτων και στα Ανεπιθύμητα πριν από περισσότερες από 30 ημέρες θα διαγραφούν αυτόματα."
       ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Ενεργοποιήστε την αυτόματη ανανέωση για να διατηρήσετε την πρόσβαση στους διακομιστές και τις λειτουργίες του Plus."
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Ενεργοποιήστε την αυτόματη ανανέωση για να διατηρήσετε την πρόσβαση στις προηγμένες λειτουργίες."
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Ενεργοποιήστε την καθολική σύνδεση για να διατηρήσετε τον οργανισμό σας ασφαλή"
       ],
@@ -4115,6 +4360,9 @@
       ],
       "Enabling auto-deletion…": [
         "Ενεργοποίηση αυτόματης διαγραφής…"
+      ],
+      "End date": [
+        "Ημερομηνία λήξης"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Η διατερματική κρυπτογράφηση ηλεκτρονικού ταχυδρομείου είναι απενεργοποιημένη για αυτήν την ομάδα λόγω εξωτερικών διευθύνσεων."
@@ -4494,6 +4742,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Τα δεδομένα νέων συνδέσεων VPN θα πάψουν να συλλέγονται και να εμφανίζονται."
       ],
+      "Next billing date": [
+        "Επόμενη ημερομηνία χρέωσης"
+      ],
       "No addresses exist": [
         "Δεν υπάρχουν διευθύνσεις"
       ],
@@ -4582,6 +4833,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Βραβείο επιλογής συντακτών PC Magazine με βαθμολογία 5 στα 5 αστέρια"
+      ],
+      "Pending removal": [
+        "Αναμονή για αφαίρεση"
       ],
       "per month": [
         "ανά μήνα"
@@ -4815,6 +5069,9 @@
       "Step ${ step }": [
         "Βήμα ${ step }",
         "Βήματα ${ step }"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
       ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
@@ -5052,6 +5309,9 @@
       ],
       "Unable to check gateways monitoring current status.": [
         "Δεν είναι δυνατός ο έλεγχος των πυλών παρακολούθησης της τρέχουσας κατάστασης."
+      ],
+      "Unchanged": [
+        "Αμετάβλητο"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Δυστυχώς δεν έχει αποθηκευτεί μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
@@ -5294,6 +5554,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Μπορείτε να λάβετε όλες τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—με μόνο **${ priceString }/μήνα**"
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας."
@@ -5342,6 +5605,9 @@
       ],
       "You have no transactions.": [
         "Δεν έχετε συναλλαγές."
+      ],
+      "You have unpublished changes": [
+        "Έχετε μη δημοσιευμένες αλλαγές"
       ],
       "You may be redirected to your bank’s website.": [
         "Ενδέχεται να ανακατευθυνθείτε στον ιστότοπο της τράπεζάς σας."
@@ -5617,6 +5883,9 @@
       ],
       "Addresses": [
         "Διευθύνσεις"
+      ],
+      "Advanced": [
+        "Για προχωρημένους"
       ],
       "Allow": [
         "Αποδεκτή"
@@ -6406,8 +6675,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Προσθέστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
+      "Add-on with free trial": [
+        "Πρόσθετο με δωρεάν δοκιμή"
       ],
       "for ${ price }": [
         "για ${ price }"
@@ -6720,6 +6995,9 @@
       "${ size } storage": [
         "${ size } αποθηκευτικός χώρος"
       ],
+      "${ size } storage per user": [
+        "${ size } αποθηκευτικός χώρος ανά χρήστη"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Για ${ DRIVE_APP_NAME }"
       ],
@@ -6925,6 +7203,9 @@
       "Limited support": [
         "Περιορισμένη υποστήριξη"
       ],
+      "Manage user permissions and access": [
+        "Διαχείριση αδειών χρηστών και πρόσβασης"
+      ],
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
       ],
@@ -6945,6 +7226,9 @@
       ],
       "Password manager": [
         "Διαχειριστής κωδικών"
+      ],
+      "Password manager to secure credentials": [
+        "Διαχειριστής κωδικών πρόσβασης με δωρεάν δοκιμή"
       ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
@@ -7021,9 +7305,6 @@
       ],
       "SMTP submission": [
         "Υποβολή SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Υποβολή SMTP για επιλεγμένους οργανισμούς"
       ],
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
@@ -8018,6 +8299,9 @@
       "Admin panel to manage users and subscription": [
         "Πίνακας διαχείρισης για τη διαχείριση χρηστών και συνδρομών"
       ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
       "Team policies": [
         "Πολιτικές ομάδας"
       ]
@@ -8415,9 +8699,36 @@
         "Μέλη"
       ]
     },
+    "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "Κρυπτογραφημένος χώρος αποθήκευσης στο cloud για φωτογραφίες και έγγραφα"
+      ],
+      "Password manager with identity protection": [
+        "Διαχειριστής κωδικών πρόσβασης με προστασία ταυτότητας"
+      ],
+      "Secure email that protects your privacy": [
+        "Ασφαλές ηλεκτρονικό ταχυδρομείο που προστατεύει το απόρρητό σας"
+      ],
+      "Your gateway to online freedom": [
+        "Η είσοδός σας στην διαδικτυακή ελευθερία."
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "επικοινωνήστε"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } μήνας",
+        "${ cycle } μήνες"
+      ],
+      "${ months } month plan": [
+        "πλάνο ${ months } μήνα",
+        "πλάνο ${ months } μηνών"
+      ],
+      "Enjoying ${ planName }?": [
+        "Απολαμβάνετε το ${ planName };"
       ]
     },
     "Price": {
@@ -9651,6 +9962,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN υψηλής ταχύτητας σε ${ maxVpn } συσκευή",
         "VPN υψηλής ταχύτητας σε ${ maxVpn } συσκευές"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Σύνδεση VPN για ${ n } συσκευή ανά χρήστη",
+        "Σύνδεση VPN για ${ n } συσκευές ανά χρήστη"
       ]
     },
     "Subscription change warning": {
@@ -9689,47 +10004,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Για ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερα premium χαρακτηριστικά"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription reminder": {
@@ -10022,6 +10296,47 @@
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Είστε σίγουρος/η;"
@@ -10084,6 +10399,9 @@
       ],
       "Catch-all address updated": [
         "Έγινε ενημέρωση της διεύθυνσης catch-all"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Ο αλλαγές δημοσιεύθηκαν. Οι αλλαγές σας θα είναι ορατές σε όλους τους χρήστες τις επόμενες ώρες."
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
@@ -10165,15 +10483,6 @@
       ],
       "Phone number updated": [
         "Ο αριθμός τηλεφώνου ενημερώθηκε"
-      ],
-      "Policy created successfully!": [
-        "Η πολιτική δημιουργήθηκε επιτυχώς!"
-      ],
-      "Policy deleted": [
-        "Η πολιτική διαγράφηκε"
-      ],
-      "Policy updated successfully!": [
-        "Η πολιτική ενημερώθηκε επιτυχώς!"
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
@@ -10475,6 +10784,9 @@
       "Allocate storage": [
         "Κατανομή αποθηκευτικού χώρου"
       ],
+      "Also in your plan": [
+        "Επιπλέον στο πλάνο σας"
+      ],
       "Amount": [
         "Ποσό"
       ],
@@ -10568,6 +10880,9 @@
       "Connect organization": [
         "Σύνδεση οργανισμού"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "Συνδεθείτε σε ${ VPN_CONNECTIONS } συσκευές ταυτόχρονα με ${ vpnPlus }. ${ upgradeButton }"
+      ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
       ],
@@ -10625,6 +10940,9 @@
       ],
       "Day theme": [
         "Ανοιχτό θέμα"
+      ],
+      "Deep dive into VPN blog posts": [
+        "Περιεκτική ανάλυση στις αναρτήσεις ιστολογίου VPN"
       ],
       "Delete": [
         "Διαγραφή"
@@ -10787,6 +11105,15 @@
       "Get ${ vpnPlus } to access all servers": [
         "Για πρόσβαση σε όλους τους διακομιστές, αποκτήστε το ${ vpnPlus }"
       ],
+      "Get complete privacy coverage": [
+        "Αποκτήστε πλήρη κάλυψη ιδιωτικότητας."
+      ],
+      "Get more from your VPN": [
+        "Αποκτήστε περισσότερα από το VPN σας."
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "Λάβετε την εφαρμογή σε όλες τις συσκευές σας και προστατεύστε μέχρι ${ VPN_CONNECTIONS } ταυτόχρονα."
+      ],
       "Gift": [
         "Δώρο"
       ],
@@ -10798,6 +11125,9 @@
       ],
       "Help center": [
         "Κέντρο βοήθειας"
+      ],
+      "Home": [
+        "Αρχική"
       ],
       "How to choose a good logo": [
         "Πώς να επιλέξετε ένα καλό λογότυπο"
@@ -11042,6 +11372,9 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Αναβαθμίστε την προστασία του δικτύου σας με αποκλειστικούς διακομιστές"
+      ],
+      "Upgrade your privacy": [
+        "Αναβαθμίστε το απόρρητό σας"
       ],
       "Upload CSV file to create multiple accounts": [
         "Ανεβάστε αρχείο CSV για να δημιουργήσετε πολλούς λογαριασμούς"
@@ -11429,9 +11762,38 @@
         "Για να συνεχίσετε, θα πρέπει να ζητήσετε την άδεια του χρήστη για πρόσβαση στα δεδομένα του ή επαναφορά του κωδικού πρόσβασής του."
       ]
     },
+    "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "**Εξοικονομήστε έως ${ priceString }** με μια μεγαλύτερη συνδρομή. ΄Ιδιες προηγμένες δυνατότητες, χαμηλότερη τιμή."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες, μία απλή συνδρομή."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες. Από μόλις ${ fallBackString } το μήνα"
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες. Μόνο **${ priceString }** επιπλέον κάθε μήνα."
+      ],
+      "Did you know?": [
+        "Το γνωρίζατε;"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "Μπορείτε να προστατεύσετε έως ${ FAMILY_MAX_USERS } χρήστες με το ${ PLAN_NAMES[plan] }. Ξεκινά από μόλις ${ priceString }/μήνα ανά λογαριασμό."
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "Μπορείτε να προστατεύσετε έως ${ FAMILY_MAX_USERS } χρήστες με το ${ PLAN_NAMES[PLANS.DUO] } ή το ${ PLAN_NAMES[PLANS.FAMILY] }. Ξεκινά από μόλις ${ priceString }/μήνα ανά λογαριασμό."
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "Η καλύτερη προσφορά"
+      ],
       "Recommended": [
         "Προτεινόμενο"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Εξοικονομήστε ${ totals.discountPercentage }%"
       ]
     },
     "User role": {
@@ -11566,12 +11928,36 @@
         "Άλλο"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Επικοινωνήστε και προγραμματίστε εκδηλώσεις με διατερματική κρυπτογράφηση."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Εκμεταλλευτείτε στο έπακρο την ${ planTitle } συνδρομή σας."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Διατηρήστε ασφαλή τα αρχεία, τις φωτογραφίες, και τα έγγραφά σας με ${ maxDriveSpace } δωρεάν χώρο αποθήκευσης στο cloud."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Δημιουργήστε ασφαλείς κωδικούς χωρίς ταλαιπωρία."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Με το ${ planTitlePlusMaybeBrand }, λαμβάνετε ελεύθερη πρόσβαση στο ${ VPN_APP_NAME } και άλλες υπηρεσίες απορρήτου."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Με το ${ planTitlePlusMaybeBrand }, λαμβάνετε ελεύθερη πρόσβαση σε όλες τις υπηρεσίες απορρήτου του ${ BRAND_NAME }."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, και άλλα."
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } συσκευή",
+        "${ n } συσκευές"
+      ],
       "${ n } server": [
         "${ n } διακομιστής",
         "${ n }+ διακομιστές"
@@ -11580,6 +11966,10 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } χώρα",
+        "${ numberOfCountries } χώρες"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries }+ χώρες"
@@ -11587,6 +11977,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries } χώρες"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρα",
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρες"
       ]
     },
     "vpn_2024: renew": {
