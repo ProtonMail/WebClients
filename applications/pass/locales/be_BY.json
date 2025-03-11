@@ -245,7 +245,7 @@
         "Адхіліць"
       ],
       "Dismiss": [
-        "Закрыць"
+        "Адхіліць"
       ],
       "Download this CSV template": [
         "Спампаваць гэты шаблон CSV"
@@ -730,7 +730,7 @@
         "Вам неабходна выкарыстоўваць ${ domainKeyExampleSubdomain } у якасці дамена, калі вы выкарыстоўваеце паддамен (напрыклад, paddamen.damen.com). Гэта азначае, што калі ў вас ёсць дамен poshta.damen.com, то ў якасці дамена неабходна ўвесці ${ domainKeyExampleMail }."
       ],
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
-        "Пераканайцеся, што не выбраны параметр проксі-сервера, калі вы выкарыстоўваеце Cloudflare."
+        "Пераканайцеся, што не выбраны параметр проксі, калі вы выкарыстоўваеце Cloudflare."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Захоўвайце свае звесткі больш бяспечна і прыватна з дапамогай гэтых дапаможнікаў і парад."
@@ -1272,7 +1272,7 @@
     },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Элемент \"${ payload.item.data.metadata.name }\" быў праігнараваны"
+        "Элемент \"${ payload.item.data.metadata.name }\" быў адхілены"
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
@@ -1323,7 +1323,7 @@
         "${ PASS_APP_NAME } заўсёды будзе даступны"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
+        "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі ананімнага відарыса ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } будзе адпавядаць сістэмнай тэме."
@@ -2742,9 +2742,6 @@
       ],
       "Expired": [
         "Пратэрмінавана"
-      ],
-      "Expired link": [
-        "Пратэрмінаваная спасылка"
       ],
       "Export": [
         "Экспартаванне"
