@@ -1,10 +1,10 @@
-import { memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Icon, type IconName } from '@proton/components';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -18,7 +18,7 @@ import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectAccess, selectPassPlan } from '@proton/pass/store/selectors';
-import type { UniqueItem } from '@proton/pass/types';
+import type { Maybe, UniqueItem } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -41,6 +41,12 @@ type Props = {
     onAction?: () => void;
 };
 
+type ShareButtonProps = {
+    label: string;
+    icon: IconName;
+    action: (evt: React.MouseEvent) => void;
+};
+
 const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
     evt.preventDefault();
     evt.stopPropagation();
@@ -56,7 +62,6 @@ export const VaultMenuItem = memo(
         canManage,
         canMove,
         count,
-        dense,
         label,
         selected,
         vault,
@@ -90,52 +95,88 @@ export const VaultMenuItem = memo(
 
         const { dragOver, dragProps } = useItemDrop(...dropParams);
 
+        const onInviteClick =
+            plan === UserPassPlan.FREE && isMemberLimitReached(vault, access)
+                ? () =>
+                      upsell({
+                          type: 'pass-plus',
+                          upsellRef: UpsellRef.LIMIT_SHARING,
+                      })
+                : handleClickEvent(onInvite);
+
+        const shareButton = ((): Maybe<ShareButtonProps> => {
+            if (!canManage) return;
+
+            const opensInvite = !vault.shared && canInvite;
+
+            const label = (() => {
+                if (opensInvite) return c('Action').t`Share`;
+                return vault.shareRoleId === ShareRole.ADMIN
+                    ? c('Action').t`Manage access`
+                    : c('Action').t`See members`;
+            })();
+
+            const icon = opensInvite ? 'user-plus' : 'users';
+            const action = opensInvite ? onInviteClick : handleClickEvent(onManage);
+
+            return { label, icon, action };
+        })();
+
         return (
             <DropdownMenuButton
                 onClick={pipe(() => !selected && vaultActions.select(vault.shareId), onAction)}
-                label={<span className="block text-ellipsis">{label}</span>}
+                label={
+                    <div>
+                        <div className="text-ellipsis">{label}</div>
+                        <div className="color-weak">
+                            {c('Label').ngettext(msgid`${count} item`, `${count} items`, count)}
+                        </div>
+                    </div>
+                }
                 parentClassName={clsx(
                     'pass-vault-submenu-vault-item w-full',
                     !withActions && 'pass-vault-submenu-vault-item--no-actions'
                 )}
-                className={clsx((selected || dragOver) && 'is-selected', !dense && 'py-3')}
-                style={{ '--max-h-custom': '1.25rem' }}
+                className={clsx((selected || dragOver) && 'is-selected', 'pl-2 pr-2', 'group-hover-opacity-container')}
                 extra={
-                    <>
-                        {canManage && (
-                            <ButtonLike
-                                as="div"
-                                icon
-                                pill
-                                size="small"
-                                color="weak"
-                                onClick={handleClickEvent(onManage)}
-                                shape="ghost"
-                                title={c('Action').t`See members`}
-                                className="relative"
-                            >
-                                {notification && (
-                                    <Icon
-                                        name="exclamation-circle-filled"
-                                        size={3}
-                                        className="absolute top-custom right-custom"
-                                        style={{
-                                            '--top-custom': '-1px',
-                                            '--right-custom': '-1px',
-                                            color: 'var(--signal-danger)',
-                                        }}
-                                    />
-                                )}
-                                <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
-                            </ButtonLike>
-                        )}
-                        <span className="pass-vault--count shrink-0 color-weak mx-1">{count}</span>
-                    </>
+                    shareButton && (
+                        <ButtonLike
+                            as="div"
+                            pill
+                            icon={vault.targetMembers <= 1}
+                            size="small"
+                            color="weak"
+                            onClick={shareButton.action}
+                            shape="solid"
+                            title={shareButton.label}
+                            className={clsx(
+                                !(selected || vault.targetMembers > 1) && 'group-hover:opacity-100',
+                                'relative mr-1'
+                            )}
+                            style={{ color: 'var(--text-weak)' }}
+                        >
+                            {notification && (
+                                <Icon
+                                    name="exclamation-circle-filled"
+                                    size={4}
+                                    className="absolute top-custom right-custom"
+                                    style={{
+                                        '--top-custom': '-1px',
+                                        '--right-custom': '-1px',
+                                        color: 'var(--signal-danger)',
+                                    }}
+                                />
+                            )}
+                            <Icon name={shareButton.icon} />
+                            {vault.targetMembers > 1 && <span className="text-sm ml-1">{vault.targetMembers}</span>}
+                        </ButtonLike>
+                    )
                 }
                 icon={
                     <VaultIcon
-                        className="shrink-0"
-                        size={3.5}
+                        background
+                        className="shrink-0 mr-1"
+                        size={4}
                         color={vault?.content.display.color}
                         icon={vault?.content.display.icon}
                     />
@@ -151,7 +192,7 @@ export const VaultMenuItem = memo(
                                   onClick={handleClickEvent(onEdit)}
                               />,
 
-                              canManage && (
+                              canManage && vault.shared && (
                                   <DropdownMenuButton
                                       key="vault-manage"
                                       className="flex items-center py-2 px-4"
@@ -172,15 +213,7 @@ export const VaultMenuItem = memo(
                                       disabled={!isWritableVault(vault)}
                                       icon="user-plus"
                                       label={c('Action').t`Share`}
-                                      onClick={
-                                          plan === UserPassPlan.FREE && isMemberLimitReached(vault, access)
-                                              ? () =>
-                                                    upsell({
-                                                        type: 'pass-plus',
-                                                        upsellRef: UpsellRef.LIMIT_SHARING,
-                                                    })
-                                              : handleClickEvent(onInvite)
-                                      }
+                                      onClick={onInviteClick}
                                   />
                               ),
 

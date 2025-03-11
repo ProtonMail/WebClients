@@ -1,11 +1,12 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useItemDrop } from '@proton/pass/hooks/useItemDrag';
 import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
 import { selectTrashedItems } from '@proton/pass/store/selectors';
@@ -14,13 +15,14 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { getVaultOptionInfo } from './utils';
+
 type Props = {
-    dense?: boolean;
     selected: boolean;
     onAction?: () => void;
 };
 
-export const VaultMenuTrash = memo(({ dense, selected, onAction = noop }: Props) => {
+export const VaultMenuTrash = memo(({ selected, onAction = noop }: Props) => {
     const count = useSelector(selectTrashedItems).length;
 
     const vaultActions = useVaultActions();
@@ -32,14 +34,30 @@ export const VaultMenuTrash = memo(({ dense, selected, onAction = noop }: Props)
     const onDrop = useCallback((items: UniqueItem[]) => itemActions.trashMany(intoBulkSelection(items)), []);
     const { dragOver, dragProps } = useItemDrop(onDrop);
 
+    const labelOptions = getVaultOptionInfo('trash');
+
     return (
         <DropdownMenuButton
-            label={c('Label').t`Trash`}
-            icon="trash"
+            label={
+                <div>
+                    <div className="text-ellipsis">{labelOptions.label}</div>
+                    <div className="color-weak">
+                        {c('Label').ngettext(msgid`${count} item`, `${count} items`, count)}
+                    </div>
+                </div>
+            }
+            icon={
+                <VaultIcon
+                    icon={labelOptions.icon}
+                    className="shrink-0 mr-1"
+                    size={4}
+                    background
+                    color={labelOptions.color}
+                />
+            }
             onClick={pipe(() => !selected && vaultActions.select('trash'), onAction)}
-            className={clsx((selected || dragOver) && 'is-selected', !dense && 'py-3')}
+            className={clsx((selected || dragOver) && 'is-selected', 'pl-2 pr-2')}
             parentClassName="pass-vault-submenu-vault-item w-full"
-            style={{ '--max-h-custom': '1.25rem' }}
             quickActions={[
                 <DropdownMenuButton
                     key="trash-restore"
@@ -56,7 +74,6 @@ export const VaultMenuTrash = memo(({ dense, selected, onAction = noop }: Props)
                     danger
                 />,
             ]}
-            extra={<span className="pass-vault--count shrink-0 color-weak mx-1">{count}</span>}
             {...dragProps}
         />
     );

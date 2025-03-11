@@ -18,12 +18,11 @@ import { type VaultMenuOption, getVaultOptionInfo } from './utils';
 import './VaultMenu.scss';
 
 type Props = {
-    dense?: boolean;
     onAction?: () => void;
     render?: (selectedVaultOption: VaultMenuOption, menu: ReactElement) => ReactElement;
 };
 
-export const VaultMenu: FC<Props> = ({ dense = false, render, onAction = noop }) => {
+export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
     const { filters } = useNavigationFilters();
     const { selectedShareId } = filters;
     const scope = useItemScope();
@@ -45,7 +44,6 @@ export const VaultMenu: FC<Props> = ({ dense = false, render, onAction = noop })
             <>
                 <VaultMenuAll
                     count={totalItemCount}
-                    dense={dense}
                     selected={scope === 'share' && !selectedShareId}
                     onAction={onAction}
                 />
@@ -61,14 +59,13 @@ export const VaultMenu: FC<Props> = ({ dense = false, render, onAction = noop })
                         canMove={isWritableVault(vault) && vault.count > 0}
                         canDelete={vault.owner && ownedVaultCount > 1}
                         canInvite={!vault.shared}
-                        canManage={vault.shared}
+                        canManage={isShareManageable(vault)}
                         canLeave={vault.shared && !vault.owner}
-                        dense={dense}
                         onAction={onAction}
                     />
                 ))}
 
-                <VaultMenuTrash dense={dense} selected={scope === 'trash'} onAction={onAction} />
+                <VaultMenuTrash selected={scope === 'trash'} onAction={onAction} />
             </>
         );
     }, [vaults, vaultActions, selectedShareId, scope, activeSharedItemCount]);
