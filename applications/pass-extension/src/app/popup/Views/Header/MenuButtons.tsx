@@ -14,7 +14,30 @@ import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 
 type Props = { toggle: () => void; isOpen: boolean };
 
-export const MenuHamburger = memo(
+export const AppMenuButton = memo(
+    forwardRef<HTMLButtonElement, Props>(({ toggle, isOpen }, ref) => {
+        return (
+            <div className="relative">
+                <Button
+                    icon
+                    shape="solid"
+                    color="weak"
+                    pill
+                    ref={ref}
+                    onClick={toggle}
+                    size="small"
+                    title={isOpen ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
+                >
+                    <VaultIcon className="shrink-0" size={4} icon="hamburger" />
+                </Button>
+            </div>
+        );
+    })
+);
+
+AppMenuButton.displayName = 'AppMenuButtonMemo';
+
+export const VaultMenuButton = memo(
     forwardRef<HTMLButtonElement, Props>(({ toggle, isOpen }, ref) => {
         const scope = useItemScope();
         const trash = scope === 'trash';
@@ -60,4 +83,4 @@ export const MenuHamburger = memo(
     })
 );
 
-MenuHamburger.displayName = 'MenuHamburgerMemo';
+VaultMenuButton.displayName = 'VaultMenuButtonMemo';
