@@ -1090,6 +1090,9 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -4664,8 +4667,8 @@
         "standard e-postadress"
       ],
       "Deleting event...": [
-        "Tar bort händelse...",
-        "Tar bort händelser..."
+        "Tar bort händelse …",
+        "Tar bort händelser …"
       ],
       "Discard changes?": [
         "Ignorera ändringar?"
@@ -4772,6 +4775,9 @@
       ],
       "High Priority": [
         "Hög prioritet"
+      ],
+      "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
+        "Om tangentbordsgenvägar är aktiverade kan du använda följande tangenter för snabba åtgärder eller för att hoppa till olika vyer. ${ metaKey } + K är alltid aktiverat."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
@@ -5053,7 +5059,7 @@
         "Borttagna deltagare kommer att meddelas."
       ],
       "Saving event...": [
-        "Sparar händelse...",
+        "Sparar händelse …",
         "Sparar händelser..."
       ],
       "Select a service provider to start": [
@@ -6313,8 +6319,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lägg till ${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "Add-on with free trial": [
+        "Utökning med gratis provperiod"
       ],
       "for ${ price }": [
         "för ${ price }"
@@ -6732,6 +6744,9 @@
       "${ size } storage": [
         "${ size } lagringsutrymme"
       ],
+      "${ size } storage per user": [
+        "${ size } lagringsutrymme per användare"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - För ${ DRIVE_APP_NAME }"
       ],
@@ -6919,6 +6934,9 @@
       "Limited support": [
         "Begränsad support"
       ],
+      "Manage user permissions and access": [
+        "Hantera användarbehörigheter och åtkomst"
+      ],
       "Multiple admin roles": [
         "Flera administratörsroller"
       ],
@@ -6936,6 +6954,9 @@
       ],
       "Password manager": [
         "Lösenordshanterare"
+      ],
+      "Password manager to secure credentials": [
+        "Lösenordshanterare för säkra inloggningsuppgifter"
       ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
@@ -7008,9 +7029,6 @@
       ],
       "SMTP submission": [
         "SMTP-inlämning"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-inlämning för valda organisationer"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
@@ -7956,6 +7974,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
+      ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
       ],
       "Team policies": [
         "Policy för team"
@@ -9052,6 +9073,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-anslutning per användare",
         "${ n } VPN-anslutningar per användare"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-anslutning för ${ n } enheter per användare",
+        "VPN-anslutning för ${ n } enheter per användare"
       ]
     },
     "Subscription change warning": {
@@ -10407,6 +10432,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } enhet",
+        "${ n } enheter"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ servrar"
@@ -10415,6 +10444,10 @@
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } länder"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries }+ länder"
@@ -10422,6 +10455,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } länder"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Väljer automatiskt från ${ numberOfCountries } land",
+        "Väljer automatiskt från ${ numberOfCountries } länder"
       ]
     },
     "vpn_2024: renew": {

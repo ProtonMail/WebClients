@@ -582,6 +582,9 @@
       "Move to trash": [
         "Przenieś do Kosza"
       ],
+      "Name your album": [
+        "Nazwij swój album"
+      ],
       "New": [
         "Nowy"
       ],
@@ -4472,6 +4475,9 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
+      "Automated Recovery ${ formattedDate }": [
+        "Automatyczne odzyskiwanie ${ formattedDate }"
+      ],
       "Available": [
         "Dostępne"
       ],
@@ -5072,6 +5078,9 @@
       "of": [
         "z"
       ],
+      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
+        "Po zakończeniu tego procesu kopia przywróconych danych zostanie umieszczona w nowym folderze o nazwie „Automatyczne odzyskiwanie (dzisiejsza data)”. Ta kopia danych nie będzie wliczana do limitu miejsca na dysku."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Jeden z zaszyfrowanych dysków jest zablokowany. To może być spowodowane zresetowaniem hasła."
       ],
@@ -5095,6 +5104,9 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Priorytetem naszych alertów jest bezpieczeństwo. Jeśli nie rozpoznajesz żadnej informacji, możesz bezpiecznie zignorować ten raport."
+      ],
+      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
+        "Nasze systemy wykryły, że poprzednie odzyskiwanie nie zakończyło się pomyślnie, a niektóre pliki mogły nie zostać w pełni przywrócone. Automatycznie wznowiliśmy proces odzyskiwania, aby upewnić się, że wszystko zostało w pełni przywrócone."
       ],
       "Owner": [
         "Właściciel"
@@ -5333,6 +5345,9 @@
       "Share via link settings": [
         "Ustawienia linku"
       ],
+      "Shared": [
+        "Udostępnij"
+      ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Udostępnione przez ${ rootLink.signatureEmail }"
       ],
@@ -5392,6 +5407,9 @@
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
+      ],
+      "The albums you create are shown here.": [
+        "Utworzone albumy są wyświetlane tutaj."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
@@ -5657,6 +5675,9 @@
       "We need to authenticate your payment with your bank.": [
         "Musimy zweryfikować płatność z Twoim bankiem."
       ],
+      "We sincerely apologize for the inconvenience this may have caused you.": [
+        "Szczerze przepraszamy za niedogodności, które mogły zostać przez to spowodowane."
+      ],
       "We use 3-D Secure to protect your payments": [
         "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności"
       ],
@@ -5876,6 +5897,12 @@
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
       ],
+      "Your photo has been removed from the album": [
+        "Twoje zdjęcie zostało usunięte z albumu",
+        "Twoich zdjęć zostało usuniętych z albumu",
+        "Twoich zdjęć zostało usuniętych z albumu",
+        "Twoje zdjęcia zostały usunięte z albumu"
+      ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Twój plan jest ograniczony do 10 wersji z ostatnich 7 dni"
       ],
@@ -5895,6 +5922,14 @@
     "info": {
       "Selected color:": [
         "Wybrany kolor:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Jak wysłać płatność gotówką?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Znajdź instrukcję w artykule: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -6442,6 +6477,9 @@
       "Share a file": [
         "Udostępnij plik"
       ],
+      "Shared": [
+        "Udostępnione"
+      ],
       "Shared by": [
         "Udostępnione przez"
       ],
@@ -6471,6 +6509,9 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
+      ],
+      "State": [
+        "Województwo"
       ],
       "Stolen data": [
         "Skradzione dane"
@@ -6781,6 +6822,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
@@ -7570,9 +7614,6 @@
       ],
       "SMTP submission": [
         "Poświadczenia SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Poświadczenia SMTP dla organizacji"
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
@@ -8448,6 +8489,9 @@
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Ostatnia szansa, aby uzyskać 80% zniżki na pierwszy miesiąc ${ plan } Plus."
+      ],
       "Last day to save": [
         "Ostatni dzień, aby zaoszczędzić"
       ],
@@ -8459,6 +8503,12 @@
       ],
       "Maybe later": [
         "Może później"
+      ],
+      "Offer expires ${ formattedDate }.": [
+        "Oferta wygasa ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Płać co roku, uzyskaj najlepszą ofertę"
       ],
       "Save": [
         "Zaoszczędź"
@@ -8472,6 +8522,9 @@
       "Save big when you pay annually": [
         "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
       ],
+      "Special offer": [
+        "Specjalna oferta"
+      ],
       "This offer won't be shown again.": [
         "Ta oferta nie pojawi się ponownie."
       ],
@@ -8480,6 +8533,9 @@
       ],
       "You currently pay": [
         "Aktualnie płacisz"
+      ],
+      "Your subscription renews soon": [
+        "Subskrypcja wkrótce się odnowi"
       ]
     },
     "Offer feature": {
@@ -8491,6 +8547,9 @@
       ],
       "Email addresses": [
         "Adresy e-mail"
+      ],
+      "Free": [
+        "Free"
       ],
       "Online document editor": [
         "Edytor dokumentów online"
@@ -8706,6 +8765,9 @@
       "Admin panel to manage users and subscription": [
         "Panel administratora do zarządzania użytkownikami i subskrypcją"
       ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
+      ],
       "Team policies": [
         "Zasady zespołu"
       ]
@@ -8837,6 +8899,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -10506,6 +10573,9 @@
       ],
       "Auto-deletion is active": [
         "Automatyczne usuwanie jest aktywne"
+      ],
+      "Automatic Recovery in Progress": [
+        "Automatyczne odzyskiwanie w toku"
       ],
       "Billing cycle": [
         "Cykl rozliczeniowy"

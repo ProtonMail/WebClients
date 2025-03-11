@@ -1098,6 +1098,9 @@
       ],
       "Version history": [
         "Istoric versiuni"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1713,7 +1716,7 @@
         "Principal"
       ],
       "Mobile": [
-        "Mobil"
+        "Dispozitive mobile"
       ],
       "Other": [
         "Altele"
@@ -6403,6 +6406,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
@@ -7119,9 +7125,6 @@
       ],
       "SMTP submission": [
         "Trimitere SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Trimiteri SMTP pentru organizații selectate"
       ],
       "Split tunneling (Android and Windows)": [
         "Trafic divizat (Android și Windows)"
@@ -8097,6 +8100,9 @@
       "Admin panel to manage users and subscription": [
         "Panou de administrare pentru a gestiona utilizatorii și abonamentul"
       ],
+      "Advanced account protection": [
+        "Protecție avansată a contului"
+      ],
       "Team policies": [
         "Politicile echipei"
       ]
@@ -8437,7 +8443,7 @@
         "Principal"
       ],
       "Mobile": [
-        "Mobil"
+        "Dispozitive mobile"
       ],
       "Other": [
         "Altele"
@@ -10590,6 +10596,11 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispozitiv",
+        "${ n } dispozitive",
+        "${ n } de dispozitive"
+      ],
       "${ n } server": [
         "Un server",
         "Peste ${ n } servere",
@@ -10600,6 +10611,11 @@
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } țară",
+        "${ numberOfCountries } țări",
+        "${ numberOfCountries } de țări"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } în ${ numberOfCountries } țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
@@ -10609,6 +10625,11 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Autoselectare din ${ numberOfCountries } țară",
+        "Autoselectare din ${ numberOfCountries } țări",
+        "Autoselectare din ${ numberOfCountries } de țări"
       ]
     },
     "vpn_2024: renew": {

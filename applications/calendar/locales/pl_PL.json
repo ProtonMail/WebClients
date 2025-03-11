@@ -2551,6 +2551,23 @@
         "Na podstawie strefy czasowej"
       ]
     },
+    "Custom frequency option": {
+      "Don't end": [
+        "Nie kończyć"
+      ],
+      "End after": [
+        "Zakończ po"
+      ],
+      "End on": [
+        "Zakończ na"
+      ],
+      "event": [
+        "wydarzenie",
+        "wydarzenia",
+        "wydarzeń",
+        "wydarzeń"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ miesiąc"
@@ -4059,6 +4076,9 @@
       ],
       "Name": [
         "Nazwa"
+      ],
+      "Repeat event": [
+        "Powtarzaj wydarzenie"
       ],
       "Search": [
         "Szukaj"
@@ -5636,6 +5656,14 @@
         "Możesz zaktualizować zapytanie lub zamknąć wyszukiwanie i wrócić do kalendarza"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Jak wysłać płatność gotówką?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Znajdź instrukcję w artykule: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info message": {
       "No results found": [
         "Nie znaleziono żadnych wyników"
@@ -5966,6 +5994,9 @@
       "Event title": [
         "Tytuł wydarzenia"
       ],
+      "Every": [
+        "Każdy"
+      ],
       "Expiration (${ patternExpiration })": [
         "Data wygaśnięcia (${ patternExpiration })"
       ],
@@ -6068,6 +6099,9 @@
       "Notifications": [
         "Powiadomienia"
       ],
+      "On": [
+        "Wł."
+      ],
       "Operating system": [
         "System operacyjny"
       ],
@@ -6154,6 +6188,9 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
+      ],
+      "State": [
+        "Województwo"
       ],
       "Street address": [
         "Ulica"
@@ -6450,6 +6487,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
@@ -6608,6 +6648,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "w ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "w pierwszy piątek"
       ],
@@ -7184,9 +7227,6 @@
       ],
       "SMTP submission": [
         "Poświadczenia SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Poświadczenia SMTP dla organizacji"
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
@@ -7964,6 +8004,9 @@
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Ostatnia szansa, aby uzyskać 80% zniżki na pierwszy miesiąc ${ plan } Plus."
+      ],
       "Last day to save": [
         "Ostatni dzień, aby zaoszczędzić"
       ],
@@ -7975,6 +8018,12 @@
       ],
       "Maybe later": [
         "Może później"
+      ],
+      "Offer expires ${ formattedDate }.": [
+        "Oferta wygasa ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Płać co roku, uzyskaj najlepszą ofertę"
       ],
       "Save": [
         "Zaoszczędź"
@@ -7988,6 +8037,9 @@
       "Save big when you pay annually": [
         "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
       ],
+      "Special offer": [
+        "Specjalna oferta"
+      ],
       "This offer won't be shown again.": [
         "Ta oferta nie pojawi się ponownie."
       ],
@@ -7996,6 +8048,9 @@
       ],
       "You currently pay": [
         "Aktualnie płacisz"
+      ],
+      "Your subscription renews soon": [
+        "Subskrypcja wkrótce się odnowi"
       ]
     },
     "Offer feature": {
@@ -8007,6 +8062,9 @@
       ],
       "Email addresses": [
         "Adresy e-mail"
+      ],
+      "Free": [
+        "Free"
       ],
       "Online document editor": [
         "Edytor dokumentów online"
@@ -8076,6 +8134,9 @@
       "Custom": [
         "Niestandardowe"
       ],
+      "Custom...": [
+        "Niestandardowe..."
+      ],
       "Day": [
         "dzień",
         "dni",
@@ -8087,6 +8148,15 @@
       ],
       "Every day": [
         "Codziennie"
+      ],
+      "Every month ${ description }": [
+        "Co miesiąc ${ description }"
+      ],
+      "Every week ${ everyWeekDescription }": [
+        "Co tydzień w ${ everyWeekDescription }"
+      ],
+      "Every weekday ${ everyWeekdayDescription }": [
+        "W każdy dzień tygodnia ${ everyWeekdayDescription }"
       ],
       "Every year": [
         "Co rok"
@@ -8165,6 +8235,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel administratora do zarządzania użytkownikami i subskrypcją"
+      ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
       ],
       "Team policies": [
         "Zasady zespołu"
@@ -8297,6 +8370,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -10251,6 +10329,18 @@
       ],
       "Every day": [
         "Codziennie"
+      ],
+      "Every month ${ option.text }": [
+        "Co miesiąc ${ option.text }"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Co tydzień w ${ weekdaysLong[currentDay] }"
+      ],
+      "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
+        "Co weekend ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
+      ],
+      "Every year": [
+        "Co rok"
       ],
       "Exporting contacts": [
         "Eksportowanie kontaktów"

@@ -80,6 +80,14 @@
         "Nutze deine eigene E-Mail-Domain"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Cloud-Speicher und Freigabe großer Dateien"
+      ],
+      "Secure personal and shared calendar": [
+        "Sicherer persönlicher und geteilter Kalender"
+      ]
+    },
     "color": {
       "carrot": [
         "Karotte"
@@ -1289,6 +1297,9 @@
       "${ size } storage": [
         "${ size } Speicherplatz"
       ],
+      "${ size } storage per user": [
+        "${ size } Speicherplatz pro Benutzer"
+      ],
       "1 TB secure storage": [
         "1 TB sicherer Speicher"
       ],
@@ -1429,9 +1440,6 @@
       ],
       "SMTP submission": [
         "SMTP-Übermittlung"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-Übermittlung für ausgewählte Organisationen"
       ],
       "Support for up to 2 users": [
         "Unterstützung für bis zu 2 Benutzer"

@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "About hide-my-email aliases": [
-        "Tentang alias hide-my-email"
-      ],
       "Activate": [
         "Aktifkan"
       ],
@@ -1782,6 +1779,9 @@
       ],
       "Version history": [
         "Riwayat versi"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -5924,7 +5924,7 @@
         "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (yang memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN dalam satu waktu)"
+        "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN)"
       ],
       "30-day money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
@@ -6272,7 +6272,7 @@
         "Turunkan"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
+        "Menurunkan akun akan memutus seluruh koneksi ke server ${ VPN_APP_NAME } berbayar."
       ],
       "Download on the App Store": [
         "Unduh di App Store"
@@ -6479,13 +6479,13 @@
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
+        "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
         "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME }, termasuk kuota penyimpanan dan filter pencarian tambahan."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ VPN_APP_NAME }."
+        "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ VPN_APP_NAME }."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Apabila alias Anda dijual, dibocorkan, atau disalahgunakan, Anda hanya perlu menonaktifkannya untuk dapat berhenti menerima spam."
@@ -6784,12 +6784,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Sistem kami menandai pesan ini sebagai phishing. Mohon periksa keabsahan pesan."
-      ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Sistem kami menandai pesan ini sebagai pesan yang mencurigakan. Silakan periksa keaslian pesan ini sebelum mengeklik tautan atau lampiran apa pun."
-      ],
       "password": [
         "kata sandi"
       ],
@@ -6906,9 +6900,6 @@
       ],
       "Proofread text": [
         "Periksa teks"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Lindungi email Anda agar tidak bocor ke milis atau pengirim spam dengan alias hide-my-email."
       ],
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
@@ -8950,6 +8941,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
@@ -9285,7 +9279,7 @@
         "${ n } domain email khusus"
       ],
       "${ n } email address": [
-        "${ n } alamat email/alias"
+        "${ n } alamat/alias email"
       ],
       "${ n } email address per user": [
         "${ n } alamat email per pengguna"
@@ -9468,7 +9462,7 @@
         "Aplikasi desktop"
       ],
       "DNS leak prevention": [
-        "Perlindungan terhadap kebocoran DNS"
+        "Perlindungan kebocoran DNS"
       ],
       "Double hop": [
         "Double hop"
@@ -9619,9 +9613,6 @@
       ],
       "SMTP submission": [
         "Submisi SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Submisi SMTP untuk organisasi pilihan"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android dan Windows)"
@@ -10541,6 +10532,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel admin untuk mengelola pengguna dan langganan"
+      ],
+      "Advanced account protection": [
+        "Perlindungan akun bertingkat lanjut"
       ],
       "Team policies": [
         "Kebijakan tim"
@@ -13602,17 +13596,26 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } perangkat"
+      ],
       "${ n } server": [
         "${ n }+ server"
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } negara"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Terpilih secara otomatis dari ${ numberOfCountries } negara"
       ]
     },
     "vpn_2024: renew": {

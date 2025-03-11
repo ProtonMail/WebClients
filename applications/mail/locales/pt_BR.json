@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "About hide-my-email aliases": [
-        "Sobre aliases hide-my-email"
-      ],
       "Activate": [
         "Ativar"
       ],
@@ -608,6 +605,9 @@
       ],
       "Hide toolbar": [
         "Ocultar barra de ferramentas"
+      ],
+      "hide-my-email aliases": [
+        "aliases do hide-my-email"
       ],
       "I like this response": [
         "Gostei da resposta"
@@ -1791,6 +1791,9 @@
       ],
       "Version history": [
         "Histórico de versões"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -5800,6 +5803,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "O gerenciador de senhas do ${ BRAND_NAME } permite que você crie, armazene e preencha automaticamente senhas, para que você nunca precise redefini-las."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
         "${ calendarsToBeCreatedCount } novos calendários"
@@ -6329,6 +6335,9 @@
       ],
       "Default email application": [
         "Aplicativo de e-mail padrão"
+      ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "A detecção ocorre no seu dispositivo, portanto nenhum dado dos seus e-mails é enviado para nossos servidores."
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Você sabia que tem armazenamento em nuvem criptografado incluído na sua conta ${ BRAND_NAME }? Vá até ${ DRIVE_APP_NAME } e aproveite ao máximo seu espaço. É gratuito."
@@ -6888,12 +6897,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nossos alertas priorizam a segurança. Se você não reconhecer nenhuma das informações violadas, você pode ignorar este relatório com segurança."
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Verifique se é legítimo."
-      ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Nosso sistema detectou esta mensagem como um e-mail suspeito. Verifique se é legítimo antes de clicar em qualquer link ou anexo."
-      ],
       "password": [
         "senha"
       ],
@@ -7013,8 +7016,8 @@
       "Proofread text": [
         "Revisar texto"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Proteja seu e-mail de vazamento para listas de e-mail ou spammers com aliases do hide-my-email."
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Proteja seu e-mail de vazamento para listas de e-mail ou spammers com ${ hideMyEmailAliasesLink }."
       ],
       "Public sharing of documents is not yet supported.": [
         "O compartilhamento público de documentos ainda não é suportado."
@@ -7397,6 +7400,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "A chave pública deste remetente não é confiável."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Isso foi mostrado a você porque o assunto do seu e-mail contém palavras-chave para redefinição de senha."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
@@ -7904,6 +7910,9 @@
       ]
     },
     "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Como enviar um pagamento em dinheiro?"
+      ],
       "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
         "Encontre as instruções no artigo: ${ howToSendCashArticleUrl }"
       ]
@@ -9083,8 +9092,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adicionar assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Extensão com avaliação gratuita"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -9497,6 +9512,9 @@
       "${ size } storage": [
         "${ size } de armazenamento"
       ],
+      "${ size } storage per user": [
+        "${ size } de armazenamento por usuário"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Para ${ DRIVE_APP_NAME }"
       ],
@@ -9684,6 +9702,9 @@
       "Limited support": [
         "Suporte limitado"
       ],
+      "Manage user permissions and access": [
+        "Gerencie permissões e acesso dos usuários"
+      ],
       "Multiple admin roles": [
         "Múltiplas funções de administração"
       ],
@@ -9701,6 +9722,9 @@
       ],
       "Password manager": [
         "Gerenciador de senhas"
+      ],
+      "Password manager to secure credentials": [
+        "Gerenciador de senhas para proteger credenciais"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
@@ -9773,9 +9797,6 @@
       ],
       "SMTP submission": [
         "Submissão SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Envio de SMTP para organizações selecionadas"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
@@ -10715,6 +10736,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Painel administrativo para gerenciar usuários e assinaturas"
+      ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
       ],
       "Team policies": [
         "Políticas de equipe"
@@ -12067,6 +12091,10 @@
       "${ n } VPN connection per user": [
         "${ n } conexões VPN por usuário",
         "${ n } conexões VPN por usuário"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Um\nConexão VPN para ${ n } dispositivos por usuário\n",
+        "Outro\nConexão VPN para ${ n } dispositivos por usuário"
       ]
     },
     "Subscription change warning": {
@@ -13866,6 +13894,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispositivo",
+        "${ n } dispositivos"
+      ],
       "${ n } server": [
         "${ n } servidor",
         "${ n }+ servidores"
@@ -13874,6 +13906,10 @@
         "${ n } conexão VPN",
         "${ n } conexões VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } países"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
@@ -13881,6 +13917,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Seleciona automaticamente ${ numberOfCountries } país",
+        "Seleciona automaticamente ${ numberOfCountries } países"
       ]
     },
     "vpn_2024: renew": {

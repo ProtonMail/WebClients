@@ -1248,6 +1248,9 @@
       ],
       "Version history": [
         "Ιστορικό εκδόσεων"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6700,8 +6703,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Προσθέστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
+      "Add-on with free trial": [
+        "Πρόσθετο με δωρεάν δοκιμή"
       ],
       "for ${ price }": [
         "για ${ price }"
@@ -7120,6 +7129,9 @@
       "${ size } storage": [
         "${ size } αποθηκευτικός χώρος"
       ],
+      "${ size } storage per user": [
+        "${ size } αποθηκευτικός χώρος ανά χρήστη"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - Για ${ DRIVE_APP_NAME }"
       ],
@@ -7307,6 +7319,9 @@
       "Limited support": [
         "Περιορισμένη υποστήριξη"
       ],
+      "Manage user permissions and access": [
+        "Διαχείριση αδειών χρηστών και πρόσβασης"
+      ],
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
       ],
@@ -7324,6 +7339,9 @@
       ],
       "Password manager": [
         "Διαχειριστής κωδικών"
+      ],
+      "Password manager to secure credentials": [
+        "Διαχειριστής κωδικών πρόσβασης με δωρεάν δοκιμή"
       ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
@@ -7396,9 +7414,6 @@
       ],
       "SMTP submission": [
         "Υποβολή SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Υποβολή SMTP για επιλεγμένους οργανισμούς"
       ],
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
@@ -8502,6 +8517,9 @@
       "Admin panel to manage users and subscription": [
         "Πίνακας διαχείρισης για τη διαχείριση χρηστών και συνδρομών"
       ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
       "Team policies": [
         "Πολιτικές ομάδας"
       ]
@@ -9524,6 +9542,10 @@
       "${ n } VPN connection per user": [
         "${ n } σύνδεση VPN ανά χρήστη",
         "${ n } συνδέσεις VPN ανά χρήστη"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Σύνδεση VPN για ${ n } συσκευή ανά χρήστη",
+        "Σύνδεση VPN για ${ n } συσκευές ανά χρήστη"
       ]
     },
     "Subscription change warning": {
@@ -10198,6 +10220,9 @@
       ],
       "Album": [
         "Άλμπουμ"
+      ],
+      "Album details": [
+        "Λεπτομέρειες άλμπουμ"
       ],
       "Albums": [
         "Άλμπουμ"
@@ -10945,6 +10970,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } συσκευή",
+        "${ n } συσκευές"
+      ],
       "${ n } server": [
         "${ n } διακομιστής",
         "${ n }+ διακομιστές"
@@ -10953,6 +10982,10 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } χώρα",
+        "${ numberOfCountries } χώρες"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries }+ χώρες"
@@ -10960,6 +10993,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries } χώρες"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρα",
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρες"
       ]
     },
     "vpn_2024: renew": {

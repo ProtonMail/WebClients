@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "About hide-my-email aliases": [
-        "hide-my-email エイリアスについて"
-      ],
       "Activate": [
         "有効化"
       ],
@@ -1782,6 +1779,9 @@
       ],
       "Version history": [
         "バージョン履歴"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6784,12 +6784,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "当社のアラートは安全性を優先しています。侵害された情報を認識できない場合は、このレポートを無視してください。"
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "システムはこのメッセージを迷惑メールとしてフラグを立てました。これが正当なものであるか確認してください。"
-      ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "私たちのシステムは、このメッセージを不審なメールとしてフラグを立てました。リンクや添付ファイルをクリックする前に、正当なメールであることをご確認ください。"
-      ],
       "password": [
         "パスワード"
       ],
@@ -6906,9 +6900,6 @@
       ],
       "Proofread text": [
         "テキストを校正する"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "ニュースレターや迷惑メールの配信リストから、hide-my-emailで自分のアドレスを守りましょう。"
       ],
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
@@ -8950,6 +8941,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
       ],
@@ -9619,9 +9613,6 @@
       ],
       "SMTP submission": [
         "SMTP送信"
-      ],
-      "SMTP submission for select organizations": [
-        "一部の組織向けのSMTP送信"
       ],
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
@@ -10541,6 +10532,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "ユーザーとサブスクリプションを管理するための管理者パネル"
+      ],
+      "Advanced account protection": [
+        "高度なアカウント保護"
       ],
       "Team policies": [
         "チームポリシー"
@@ -11816,6 +11810,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "2年ごとに請求"
+      ],
+      "Billed every 6 months": [
+        "6 ヵ月ごとに請求"
       ],
       "Billed for 15 months": [
         "15 か月分の請求"
@@ -13599,17 +13596,26 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } 台のデバイス"
+      ],
       "${ n } server": [
         "${ n } 台のサーバー"
       ],
       "${ n } VPN connection": [
         "${ n } 件の VPN 接続"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ヶ国"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries } か国以上で ${ numberOfServers } 台"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries }ヶ国から自動選択"
       ]
     },
     "vpn_2024: renew": {
