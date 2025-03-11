@@ -1,4 +1,4 @@
-import { CryptoProxy, type SessionKey } from '@proton/crypto';
+import { CryptoProxy, type SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
@@ -121,14 +121,46 @@ export const toInternalAttendee = (
             const binaryMessage = base64StringToUint8Array(extra.Comment?.Message);
             const publicKey = await getAttendeeVerificationPreferences(attendeeEmail);
             const decryptedMessageResult = await CryptoProxy.decryptMessage({
-                signatureContext: { value: getSignatureContext('calendar.rsvp.comment', eventID), required: true },
                 sessionKeys: [sharedSessionKey],
                 binaryMessage,
-                // TODO check it's the right public key
-                verificationKeys: publicKey.verifyingKeys,
+                ...(publicKey.verifyingKeys.length
+                    ? {
+                          verificationKeys: publicKey.verifyingKeys,
+                          signatureContext: {
+                              value: getSignatureContext('calendar.rsvp.comment', eventID),
+                              required: true,
+                          },
+                      }
+                    : {}),
             });
 
-            comment = decryptedMessageResult.data;
+            // TODO: Manage decription signature cases
+            // - No verifying keys
+            // - Signed and valid
+            // - Signed and invalid
+            // - Not signed
+            //
+            // use `getEventVerificationStatus` for mapping the following cases:
+            // VERIFICATION_STATUS.NOT_SIGNED ->  EVENT_VERIFICATION_STATUS.FAILED
+            // VERIFICATION_STATUS.SIGNED_AND_VALID -> EVENT_VERIFICATION_STATUS.SUCCESSFUL
+            // VERIFICATION_STATUS.SIGNED_AND_INVALID -> EVENT_VERIFICATION_STATUS.FAILED
+            // no verification keys -> discard VERIFICATION_STATUS -> return EVENT_VERIFICATION_STATUS.NOT_VERIFIED
+
+            if (!publicKey.verifyingKeys.length) {
+                comment = `No verifying keys for comment: ${decryptedMessageResult.data}`;
+            }
+
+            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                comment = decryptedMessageResult.data;
+            }
+
+            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+                comment = `Invalid signature for comment: ${decryptedMessageResult.data}`;
+            }
+
+            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
+                comment = `Unsigned comment: ${decryptedMessageResult.data}`;
+            }
         }
 
         const partstat = toIcsPartstat(extra.Status);
