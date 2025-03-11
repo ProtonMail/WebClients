@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "About hide-my-email aliases": [
-        "O aliasach hide-my-email"
-      ],
       "Activate": [
         "Aktywuj"
       ],
@@ -1385,6 +1382,9 @@
       ],
       "Use ${ label } theme": [
         "Użyj motywu ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME }": [
+        "Użyj ${ PASS_APP_NAME }"
       ],
       "Use a different card": [
         "Użyj innej karty"
@@ -5893,6 +5893,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
       ],
+      "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
+        "Menedżer haseł ${ BRAND_NAME } umożliwia tworzenie, przechowywanie i automatyczne uzupełnianie haseł, dzięki czemu nigdy nie trzeba ich resetować."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nowy kalendarz",
         "${ calendarsToBeCreatedCount } nowe kalendarze",
@@ -6523,6 +6526,9 @@
       "Default email application": [
         "Domyślna aplikacja pocztowa"
       ],
+      "Detection takes place on your device, so no data from your emails is sent to our servers.": [
+        "Funkcja wykrywania odbywa się na urządzeniu użytkownika, więc żadne dane z wiadomości e-mail nie są przesyłane na nasze serwery."
+      ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Czy wiesz, że na koncie ${ BRAND_NAME } masz szyfrowaną przestrzeń dyskową w chmurze? Przejdź do ${ DRIVE_APP_NAME } i wykorzystaj w pełni swoje miejsce. Usługa jest darmowa."
       ],
@@ -7099,12 +7105,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Priorytetem naszych alertów jest bezpieczeństwo. Jeśli nie rozpoznajesz żadnej informacji, możesz bezpiecznie zignorować ten raport."
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Nasz system oznaczył wiadomość jako próbę wyłudzenia informacji. Upewnij się, że jest ona wiarygodna."
-      ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Nasz system oznaczył wiadomość jako podejrzaną. Przed kliknięciem linków lub załączników, upewnij się, że jest ona wiarygodna."
-      ],
       "password": [
         "hasło"
       ],
@@ -7227,9 +7227,6 @@
       ],
       "Proofread text": [
         "Sprawdź tekst"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Chroń swoją pocztę e-mail przed wyciekiem na listy mailingowe lub spamem, korzystając z aliasów hide-my-email."
       ],
       "Public sharing of documents is not yet supported.": [
         "Publiczne udostępnianie dokumentów nie jest obsługiwane."
@@ -7620,6 +7617,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Ten klucz publiczny nadawcy nie został jeszcze dodany do zaufanych."
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Wiadomość została wyświetlona, ponieważ jej temat zawiera słowa kluczowe związane z resetowaniem hasła."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
@@ -8158,6 +8158,14 @@
         "Wybrany kolor:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Jak wysłać płatność gotówką?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Znajdź instrukcję w artykule: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Kliknij po szczegóły"
@@ -8625,6 +8633,9 @@
       "Don't show this again": [
         "Nie pokazuj ponownie"
       ],
+      "Don't show this suggestion": [
+        "Nie pokazuj tej sugestii"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "np. Amazon, eBay, Etsy"
       ],
@@ -8903,6 +8914,9 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
+      ],
+      "State": [
+        "Województwo"
       ],
       "Statement": [
         "Kryterium"
@@ -9344,6 +9358,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
@@ -9494,6 +9511,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on the ${ shortenedDay }": [
+        "w ${ shortenedDay }"
+      ],
       "on the first Friday": [
         "w pierwszy piątek"
       ],
@@ -10073,9 +10093,6 @@
       ],
       "SMTP submission": [
         "Poświadczenia SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Poświadczenia SMTP dla organizacji"
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
@@ -10690,6 +10707,9 @@
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Ostatnia szansa, aby uzyskać 80% zniżki na pierwszy miesiąc ${ plan } Plus."
+      ],
       "Last day to save": [
         "Ostatni dzień, aby zaoszczędzić"
       ],
@@ -10701,6 +10721,12 @@
       ],
       "Maybe later": [
         "Może później"
+      ],
+      "Offer expires ${ formattedDate }.": [
+        "Oferta wygasa ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Płać co roku, uzyskaj najlepszą ofertę"
       ],
       "Save": [
         "Zaoszczędź"
@@ -10714,6 +10740,9 @@
       "Save big when you pay annually": [
         "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
       ],
+      "Special offer": [
+        "Specjalna oferta"
+      ],
       "This offer won't be shown again.": [
         "Ta oferta nie pojawi się ponownie."
       ],
@@ -10722,6 +10751,9 @@
       ],
       "You currently pay": [
         "Aktualnie płacisz"
+      ],
+      "Your subscription renews soon": [
+        "Subskrypcja wkrótce się odnowi"
       ]
     },
     "Offer feature": {
@@ -10733,6 +10765,9 @@
       ],
       "Email addresses": [
         "Adresy e-mail"
+      ],
+      "Free": [
+        "Free"
       ],
       "Online document editor": [
         "Edytor dokumentów online"
@@ -10987,6 +11022,9 @@
       "Admin panel to manage users and subscription": [
         "Panel administratora do zarządzania użytkownikami i subskrypcją"
       ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
+      ],
       "Team policies": [
         "Zasady zespołu"
       ]
@@ -11118,6 +11156,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -13842,6 +13885,9 @@
       ],
       "Notes": [
         "Notatki"
+      ],
+      "On-device suggestions": [
+        "Sugestie dotyczące urządzeń"
       ],
       "One email, many recipients": [
         "Jeden adres, wiele odbiorców"

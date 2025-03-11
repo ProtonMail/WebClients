@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "About hide-my-email aliases": [
-        "Про псевдоніми hide-my-email"
-      ],
       "Activate": [
         "Активувати"
       ],
@@ -6947,12 +6944,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
-      ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Наша система позначила це повідомлення підозрілим. Перш ніж натискати будь-які посилання чи відкривати вкладення, переконайтеся, що відправнику можна довіряти."
-      ],
       "password": [
         "пароль"
       ],
@@ -7075,9 +7066,6 @@
       ],
       "Proofread text": [
         "Рецензувати текст"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Захистіть свою пошту від витоку до списків розсилки або спамерів за допомогою псевдонімів hide-my-email."
       ],
       "Public sharing of documents is not yet supported.": [
         "Загальнодоступний обмін документами наразі не підтримується."
@@ -9150,6 +9138,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помічник з написання ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Додати помічника з написання ${ BRAND_NAME } Scribe"
       ],
@@ -9861,9 +9852,6 @@
       ],
       "SMTP submission": [
         "Надсилання через SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Надсилання через SMTP для вибраних організацій"
       ],
       "Split tunneling (Android and Windows)": [
         "Розділене тунелювання (Android і Windows)"
@@ -10672,6 +10660,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Адмін панель для керування користувачами та підпискою"
+      ],
+      "Advanced account protection": [
+        "Розширений захист облікового запису"
       ],
       "Team policies": [
         "Правила команди"
