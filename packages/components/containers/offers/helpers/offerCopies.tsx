@@ -20,7 +20,13 @@ import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checko
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
 
-import { getProtonPassFeatureTooltipText } from '../../payments/features/pass';
+import {
+    get2FAAuthenticatorText,
+    getProtonPassFeatureTooltipText,
+    getSecureVaultSharingText,
+    getUnlimitedHideMyEmailAliasesText,
+    getUnlimitedLoginsAndNotesText,
+} from '../../payments/features/pass';
 
 export const getMonthFreeText = (n: number) => {
     return c('specialoffer: Deal').ngettext(msgid`${n} month FREE`, `${n} months FREE`, n);
@@ -191,10 +197,10 @@ export const getMailPlus2024InboxFeatures = (): { name: string }[] => {
 export const getPassPlusFeatures = () => {
     return [
         { name: c('BF2024: Deal details').t`1 user account` },
-        { name: c('BF2024: Deal details').t`Unlimited logins, notes, credit cards` },
-        { name: c('BF2024: Deal details').t`Secure vault and link sharing` },
-        { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
-        { name: c('BF2024: Deal details').t`Integrated 2FA authenticator` },
+        { name: getUnlimitedLoginsAndNotesText() },
+        { name: getSecureVaultSharingText() },
+        { name: getUnlimitedHideMyEmailAliasesText() },
+        { name: get2FAAuthenticatorText() },
         { name: c('BF2024: Deal details').t`Password health alerts` },
         { name: DARK_WEB_MONITORING_NAME },
         { name: c('BF2024: Deal details').t`Advanced account protection` },
@@ -208,10 +214,10 @@ export const getLifetimePassFeatures = () => {
             name: c('BF2024: Deal details').t`One-time payment, lifetime deal`,
             tooltip: getProtonPassFeatureTooltipText(),
         },
-        { name: c('BF2024: Deal details').t`Unlimited logins, notes, credit cards` },
-        { name: c('BF2024: Deal details').t`Secure vault and link sharing` },
-        { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
-        { name: c('BF2024: Deal details').t`Integrated 2FA authenticator` },
+        { name: c('BF2024: Deal details').t`Unlimited logins, credit cards, hide-my-email aliases and more` },
+        { name: getSecureVaultSharingText() },
+        { name: getUnlimitedHideMyEmailAliasesText() },
+        { name: get2FAAuthenticatorText() },
         { name: c('BF2024: Deal details').t`Password health alerts` },
         { name: DARK_WEB_MONITORING_NAME },
         { name: c('BF2024: Deal details').t`Advanced account protection` },
@@ -221,10 +227,10 @@ export const getLifetimePassFeatures = () => {
 export const getFamilyPassFeatures = () => {
     return [
         { name: c('BF2024: Deal details').t`6 user accounts` },
-        { name: c('BF2024: Deal details').t`Unlimited logins, notes, credit cards` },
-        { name: c('BF2024: Deal details').t`Secure vault and link sharing` },
-        { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
-        { name: c('BF2024: Deal details').t`Integrated 2FA authenticator` },
+        { name: getUnlimitedLoginsAndNotesText() },
+        { name: getSecureVaultSharingText() },
+        { name: getUnlimitedHideMyEmailAliasesText() },
+        { name: get2FAAuthenticatorText() },
         { name: c('BF2024: Deal details').t`Password health alerts` },
         { name: DARK_WEB_MONITORING_NAME },
         { name: c('BF2024: Deal details').t`Advanced account protection` },
