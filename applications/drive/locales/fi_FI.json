@@ -1338,6 +1338,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Sulje"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
       ],
@@ -6539,6 +6542,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lisää ${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
@@ -7230,11 +7236,11 @@
       "SMTP submission": [
         "SMTP-lähetys"
       ],
-      "SMTP submission for select organizations": [
-        "SMTP-llähetys valituille organisaatioille"
-      ],
       "Split tunneling (Android and Windows)": [
         "Jaettu tunnelointi (Android ja Windows)"
+      ],
+      "SSO integration": [
+        "SSO-integraatio"
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
@@ -8022,6 +8028,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } tarjous päättyy tänään!"
       ],
+      "Don’t show this offer again": [
+        "Älä näytä tätä tarjousta uudelleen"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Hanki Drive Plus hintaan ${ pricingTitle }"
       ],
@@ -8037,8 +8046,26 @@
       "Maybe later": [
         "Ehkä myöhemmin"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Tarjous vanhenee ${ formattedDate }"
+      ],
+      "Save": [
+        "Säästä"
+      ],
       "Save 80% on your first month.": [
         "Säästä 80 % ensimmäisestä kuukaudestasi."
+      ],
+      "Special offer": [
+        "Erikoistarjous"
+      ],
+      "This offer won't be shown again.": [
+        "Tätä tarjousta ei näytetä uudelleen"
+      ],
+      "You currently pay": [
+        "Maksat tällä hetkellä"
+      ],
+      "Your subscription renews soon": [
+        "Tilauksesi uusiutuu pian"
       ]
     },
     "Offer feature": {
@@ -8265,6 +8292,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Ylläpitopaneeli käyttäjien ja tilauksen hallintaan"
+      ],
+      "Advanced account protection": [
+        "Edistynyt tilin suojaus"
       ],
       "Team policies": [
         "Ryhmäkäytännöt"

@@ -300,6 +300,9 @@
       "Delete version": [
         "删除版本"
       ],
+      "Delete without saving": [
+        "不保存且删除"
+      ],
       "Deselect all": [
         "取消全选"
       ],
@@ -314,6 +317,12 @@
       ],
       "Display navigation bar": [
         "显示导航栏"
+      ],
+      "Display next": [
+        "显示下一个"
+      ],
+      "Display previous": [
+        "显示上一个"
       ],
       "Done": [
         "完成"
@@ -696,6 +705,9 @@
       "Remove me": [
         "删除我"
       ],
+      "Remove without saving": [
+        "不保存且删除"
+      ],
       "Rename": [
         "重命名"
       ],
@@ -768,8 +780,14 @@
       "Save": [
         "保存"
       ],
+      "Save and remove": [
+        "保存并移除"
+      ],
       "Save changes": [
         "保存更改"
+      ],
+      "Save photos and remove": [
+        "保存照片并删除"
       ],
       "Search": [
         "搜索"
@@ -1219,6 +1237,9 @@
       ],
       "Version history": [
         "各版本历史"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -3685,6 +3706,9 @@
       "Create new album": [
         "创建新相册"
       ],
+      "Rename": [
+        "重命名"
+      ],
       "Security Center": [
         "安全中心"
       ]
@@ -4046,6 +4070,9 @@
       "${ album.photoCount } item": [
         "${ album.photoCount } 个项目"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } 已成功删除"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
       ],
@@ -4096,6 +4123,9 @@
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store 上的${ DRIVE_APP_NAME }"
+      ],
+      "${ email } invited you to join **${ albumName }**": [
+        "${ email } 邀请您加入 **${ albumName }**"
       ],
       "${ errorCount } failed": [
         "${ errorCount } 项传输失败"
@@ -4455,7 +4485,7 @@
         "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
       ],
       "Download ${ name } app": [
-        "下载 ${ name } app"
+        "下载 ${ name } 应用"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 的下载进程将被中止"
@@ -4919,6 +4949,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME 可使用编辑器中指定的格式发送邮件。"
       ],
+      "Photo is not saved to your library": [
+        "照片未保存到您的资料库"
+      ],
       "Photo is set as album cover": [
         "照片被设为相册封面"
       ],
@@ -5162,6 +5195,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "本相册中的某些照片不会保存到您的时间轴。删除此相册将永久删除这些照片。"
+      ],
       "Something went wrong, please try again later.": [
         "出错了，请稍后再试。"
       ],
@@ -5249,6 +5285,9 @@
       "This item already exists in your library": [
         "该项目已存在于您的库中"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "某些所选项目未保存在照片资料库中。如果从该相册中删除这些项目，您将永久无法访问它们。"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
@@ -5260,6 +5299,9 @@
       ],
       "This month": [
         "这个月"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "这只会删除相册。您的照片将保留在时间轴中。此操作无法撤销。"
       ],
       "This will permanently delete the file you uploaded.": [
         "这将永久删除您上传的文件。"
@@ -5500,6 +5542,12 @@
       ],
       "Would you like to restore your files?": [
         "想要恢复您的文件吗？"
+      ],
+      "Would you like to save it before removing?": [
+        "您想在删除前保存它们吗？"
+      ],
+      "Would you like to save them before removing?": [
+        "您想在移除前保存它们吗？"
       ],
       "Writing assistant": [
         "写作助手"
@@ -5920,7 +5968,7 @@
         "您能具体说明一下吗？"
       ],
       "Country": [
-        "国家"
+        "国家/地区"
       ],
       "Create ${ BRAND_NAME } account": [
         "创建 ${ BRAND_NAME } 账户"
@@ -6555,6 +6603,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 写作助手"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加 ${ BRAND_NAME } Scribe 写作助手"
       ],
@@ -7234,9 +7285,6 @@
       "SMTP submission": [
         "SMTP 投递邮件"
       ],
-      "SMTP submission for select organizations": [
-        "特定机构可通过 SMTP 投递邮件"
-      ],
       "Split tunneling (Android and Windows)": [
         "线路分离（支持 Android 与 Windows）"
       ],
@@ -7492,7 +7540,7 @@
         "每个地址均可独立收发邮件。一位用户可以使用多个地址，但一个地址不能同时分配给多位用户。"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "实现同时接入不同网络，例如既能观看其他国家的电影又能搜索本地新闻"
+        "实现同时接入不同网络，例如既能观看其他国家/地区的电影又能搜索本地新闻"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "可对收到的邮件自动予以回复"
@@ -7839,6 +7887,12 @@
       ],
       "Access updated and shared": [
         "访问已更新的和共享的"
+      ],
+      "Album failed to be renamed": [
+        "相册重命名失败"
+      ],
+      "Album renamed successfully": [
+        "相册重命名成功"
       ],
       "All items will soon be permanently deleted from trash": [
         "所有项目将很快从回收站永久删除"
@@ -8306,6 +8360,9 @@
       "Admin panel to manage users and subscription": [
         "管理用户和订阅的管理面板"
       ],
+      "Advanced account protection": [
+        "高级账户保护"
+      ],
       "Team policies": [
         "团队政策"
       ]
@@ -8365,7 +8422,7 @@
     },
     "Payments": {
       "Billing Country": [
-        "计费国家"
+        "计费国家/地区"
       ],
       "Card number": [
         "卡号"
@@ -8392,13 +8449,13 @@
         "请先重新激活您的订阅以减少附加功能。"
       ],
       "Please select billing country": [
-        "请选择您的计费国家"
+        "请选择您的计费国家/地区"
       ],
       "Please select billing state": [
         "请选择账单省（州）"
       ],
       "Please select your billing country first.": [
-        "请先选择您的账单国家。"
+        "请先选择您的账单国家/地区。"
       ],
       "Please select your billing state first.": [
         "请先选择您的账单省（州）。"
@@ -8407,7 +8464,7 @@
         "续订时间为 ${ renewPrice }，可随时取消。"
       ],
       "Select billing country to pay": [
-        "选择要支付的账单国家"
+        "选择要支付的账单国家/地区"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
         "特别折扣价 ${ priceWithDiscount } 在前 ${ subscriptionLength } 个月有效。优惠券在 ${ couponRedemptions } 续订时有效。之后将以 ${ renewPrice } 价格自动续订 ${ subscriptionLengthCopy } 个月。您可以随时取消。"
@@ -9265,6 +9322,9 @@
       "Billed every 2 years": [
         "每两年付费"
       ],
+      "Billed every 6 months": [
+        "按 6 个月计费"
+      ],
       "Billed for 15 months": [
         "按 15 个月计费"
       ],
@@ -9953,6 +10013,9 @@
       "Album": [
         "相册"
       ],
+      "Album details": [
+        "相册详细信息"
+      ],
       "Albums": [
         "相册"
       ],
@@ -10096,6 +10159,9 @@
       ],
       "Delete ${ links.length } items?": [
         "删除 ${ links.length } 项目？"
+      ],
+      "Delete ${ name }?": [
+        "刪除 ${ name }？"
       ],
       "Delete ${ value }": [
         "删除 ${ value }"
@@ -10360,6 +10426,9 @@
       ],
       "Remove device?": [
         "移除设备？"
+      ],
+      "Remove item?": [
+        "删除项目？"
       ],
       "Rename a file": [
         "重命名文件"
@@ -10684,17 +10753,26 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } 台设备"
+      ],
       "${ n } server": [
         "${ n } 台服务器"
       ],
       "${ n } VPN connection": [
         "${ n } 台设备可同时接入 VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } 个国家/地区"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "遍布 ${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } 个国家的 ${ numberOfServers }"
+        "${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "从 ${ numberOfCountries } 个地域中自动选择"
       ]
     },
     "vpn_2024: renew": {
