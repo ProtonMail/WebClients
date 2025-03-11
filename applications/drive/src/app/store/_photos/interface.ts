@@ -39,6 +39,7 @@ export type PhotoLink =
           activeRevision: {
               photo: Photo;
           };
+          photoProperties?: DecryptedLink['photoProperties'];
       };
 
 export type AlbumLink =
