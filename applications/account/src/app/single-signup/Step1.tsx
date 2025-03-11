@@ -1031,18 +1031,6 @@ const Step1 = ({
                         })()}
                     </h1>
                 </div>
-                {(() => {
-                    if (!getHasValentinesCoupon(options.checkResult.Coupon?.Code)) {
-                        return null;
-                    }
-
-                    return (
-                        <DiscountBanner
-                            discountPercent={actualCheckout.discountPercent}
-                            selectedPlanTitle={selectedPlan.Title}
-                        />
-                    );
-                })()}
                 {(mode === 'pricing' || mode === 'vpn-pass-promotion') && !isB2bPlan && (
                     <div
                         className={clsx(
@@ -1062,6 +1050,18 @@ const Step1 = ({
                         })}
                     </div>
                 )}
+                {(() => {
+                    if (!actualCheckout.discountPercent) {
+                        return;
+                    }
+
+                    return (
+                        <DiscountBanner
+                            discountPercent={actualCheckout.discountPercent}
+                            selectedPlanTitle={selectedPlan.Title}
+                        />
+                    );
+                })()}
                 {showCycleAndSelectors && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
