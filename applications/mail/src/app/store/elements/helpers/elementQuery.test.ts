@@ -18,6 +18,7 @@ const baseElementsStateParams: ElementsStateParams = {
     filter: {},
     search: {},
     esEnabled: false,
+    isSearching: false,
 };
 
 const mockElementsApiCall = (

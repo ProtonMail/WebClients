@@ -1,16 +1,23 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/counts/conversationCounts';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/counts/messageCounts';
+import { useFolders, useLabels } from '@proton/mail/labels/hooks';
 import { CacheType } from '@proton/redux-utilities';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
+import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import { extractSearchParameters, filterFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -24,6 +31,7 @@ import {
     reset,
     resetByPassFilter,
     setPageSize,
+    setParams,
     updatePage,
 } from '../../store/elements/elementsActions';
 import {
@@ -35,21 +43,40 @@ import {
     loadedEmpty as loadedEmptySelector,
     loading as loadingSelector,
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
+    pageIsConsecutive as pageIsConsecutiveSelector,
     params as paramsSelector,
     partialESSearch as partialESSearchSelector,
     pendingActions as pendingActionsSelector,
     placeholderCount as placeholderCountSelector,
     shouldLoadElements as shouldLoadElementsSelector,
-    shouldResetElementsState as shouldResetElementsStateSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
     stateInconsistency as stateInconsistencySelector,
     taskRunning,
     totalReturned as totalReturnedSelector,
+    // contextPages,
 } from '../../store/elements/elementsSelectors';
 import { messageByID } from '../../store/messages/messagesSelectors';
 import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
 import { useExpirationCheck } from '../useExpirationCheck';
+
+const getParametersFromPath = (pathname: string) => {
+    const pathSegments = pathname.split('/').filter(Boolean);
+
+    return {
+        rawLabelID: pathSegments[0] || undefined,
+        elementID: pathSegments[1] || undefined,
+        messageID: pathSegments[2] || undefined,
+    };
+};
+
+const getLabelIDFromRawID = (labelIDs: string[], rawID?: string) => {
+    if (!rawID) {
+        rawID = LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX];
+    }
+
+    return HUMAN_TO_LABEL_IDS[rawID] || (labelIDs.includes(rawID) ? rawID : undefined);
+};
 
 interface Options {
     conversationMode: boolean;
@@ -92,6 +119,10 @@ export const useElements: UseElements = ({
     const canReactToSettingsUpdate = useRef(false);
 
     const abortControllerRef = useRef<AbortController>();
+    const history = useHistory();
+    const location = useLocation();
+    const [labels = []] = useLabels();
+    const [folders = []] = useFolders();
 
     const [conversationCounts = [], loadingConversationCounts] = useConversationCounts();
     const [messageCounts = [], loadingMessageCounts] = useMessageCounts();
@@ -101,37 +132,26 @@ export const useElements: UseElements = ({
     const { esStatus } = useEncryptedSearchContext();
     const { esEnabled } = esStatus;
 
-    const params = {
-        labelID,
-        conversationMode,
-        sort,
-        filter,
-        search,
-        esEnabled,
-    };
     const counts = { counts: countValues, loading: countsLoading };
 
     const stateParams = useMailSelector(paramsSelector);
+    // const pages = useMailSelector(contextPages);
     const elementsMap = useMailSelector(elementsMapSelector);
     const pendingActions = useMailSelector(pendingActionsSelector);
     const tasksRunning = useMailSelector(taskRunning);
     const elements = useMailSelector(elementsSelector);
     const elementIDs = useMailSelector(elementIDsSelector);
+    const pageIsConsecutive = useMailSelector((state: MailState) => pageIsConsecutiveSelector(state, { page }));
     const messagesToLoadMoreES = useMailSelector((state: MailState) =>
         messagesToLoadMoreESSelector(state, { page, search, esStatus })
     );
-    const shouldResetElementsState = useMailSelector((state: MailState) =>
-        shouldResetElementsStateSelector(state, { page, params })
-    );
-    const shouldLoadElements = useMailSelector((state: MailState) =>
-        shouldLoadElementsSelector(state, { page, params })
-    );
+    const shouldLoadElements = useMailSelector((state: MailState) => shouldLoadElementsSelector(state, { page }));
     const shouldUpdatePage = useMailSelector((state: MailState) => shouldUpdatePageSelector(state, { page }));
     const dynamicTotal = useMailSelector((state: MailState) => dynamicTotalSelector(state, { counts, labelID }));
     const placeholderCount = useMailSelector((state: MailState) =>
         placeholderCountSelector(state, { counts, labelID })
     );
-    const loading = useMailSelector((state: MailState) => loadingSelector(state, { page, params }));
+    const loading = useMailSelector((state: MailState) => loadingSelector(state, { page }));
     const totalReturned = useMailSelector((state: MailState) => totalReturnedSelector(state, { counts, labelID }));
     const expectingEmpty = useMailSelector((state: MailState) => expectingEmptySelector(state, { counts, labelID }));
     const loadedEmpty = useMailSelector(loadedEmptySelector);
@@ -152,7 +172,54 @@ export const useElements: UseElements = ({
         getMessageCounts({ cache: CacheType.None }).catch(noop);
     });
 
-    useEffect(() => {
+    const labelIDs = useMemo(() => {
+        return [...labels, ...folders].map(({ ID }: Label) => ID);
+    }, [labels.length, folders.length]);
+
+    useMemo(() => {
+        const { rawLabelID, elementID, messageID } = getParametersFromPath(location.pathname);
+
+        if (!rawLabelID) {
+            history.replace(location.pathname + LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]);
+        }
+
+        const labelID = getLabelIDFromRawID(labelIDs, rawLabelID);
+        const sort = sortFromUrl(location, labelID);
+        const filter = filterFromUrl(location);
+        const search = extractSearchParameters(location);
+        const isSearching = isSearch(search);
+        const conversationMode = isConversationMode(labelID, mailSettings, location);
+
+        // const paramsChanged =
+        //     labelID !== stateParams.labelID ||
+        //     conversationMode !== stateParams.conversationMode ||
+        //     sort !== stateParams.sort ||
+        //     filter !== stateParams.filter ||
+        //     search !== stateParams.search ||
+        //     (esEnabled !== stateParams.esEnabled && isSearch(search));
+        //
+        // // If we have actions pending OR select all actions pending, we don't want to load elements because it would cancel our optimistic updates
+        // const hasPendingActions = pendingActions > 0 || tasksRunning.labelIDs.includes(labelID);
+        //
+        // const pageIsAlreadyLoaded = pages.includes(page)
+
+        // if(paramsChanged && !pageIsAlreadyLoaded && !hasPendingActions && !isSearch(search)) {
+        //     void dispatch(
+        //         loadAction({
+        //             abortController: abortControllerRef.current,
+        //             page,
+        //             pageSize,
+        //             params: stateParams,
+        //         })
+        //     )
+        // }
+
+        const shouldResetElementsState =
+            search.keyword !== stateParams.search.keyword || // Reset the cache since we do not support client search (filtering)
+            (esEnabled !== stateParams.esEnabled && isSearch(search)) ||
+            !pageIsConsecutive ||
+            // Reset the cache when sort changes to ensure correct ordering
+            !isDeepEqual(sort, sort);
         if (shouldResetElementsState) {
             dispatch(
                 reset({
@@ -160,16 +227,32 @@ export const useElements: UseElements = ({
                     pageSize,
                     params: {
                         labelID,
-                        conversationMode,
+                        elementID,
+                        messageID,
                         sort,
                         filter,
-                        esEnabled,
                         search,
+                        conversationMode,
+                        isSearching,
                     },
                 })
             );
+        } else {
+            dispatch(
+                setParams({
+                    labelID,
+                    elementID,
+                    messageID,
+                    sort,
+                    filter,
+                    search,
+                    conversationMode,
+                    isSearching,
+                })
+            );
         }
-    }, [shouldResetElementsState]);
+    }, [location.pathname, location.hash, mailSettings, labelIDs]);
+    // TODO probably need to add more dependencies
 
     // Reset the element state when receiving a setting update for page size or conversation mode
     useEffect(() => {
@@ -190,6 +273,7 @@ export const useElements: UseElements = ({
                     filter,
                     esEnabled,
                     search,
+                    isSearching: isSearch(search),
                 },
             })
         );
@@ -220,7 +304,7 @@ export const useElements: UseElements = ({
                     abortController: abortControllerRef.current,
                     page,
                     pageSize,
-                    params,
+                    params: stateParams,
                 })
             );
         }
@@ -285,6 +369,7 @@ export const useElements: UseElements = ({
                         esEnabled,
                         search,
                         conversationMode,
+                        isSearching: isSearch(search),
                     },
                     beforeFirstLoad: !esEnabled && !!search.keyword,
                 })

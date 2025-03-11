@@ -8,11 +8,14 @@ import type { LabelIDsChanges } from '../../models/event';
 
 export interface ElementsStateParams {
     labelID: string;
+    elementID?: string;
+    messageID?: string;
     conversationMode: boolean;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
     esEnabled: boolean;
+    isSearching: boolean;
 }
 
 export interface RetryData {
@@ -105,7 +108,6 @@ export interface QueryParams {
     params: ElementsStateParams;
     count?: number;
     refetch?: boolean;
-    isLastRefetch?: boolean;
 }
 
 export interface QueryResults {

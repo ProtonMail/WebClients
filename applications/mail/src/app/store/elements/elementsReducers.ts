@@ -87,9 +87,9 @@ export const loadFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ result: QueryResults; taskRunning: TaskRunningInfo }, string, { arg: QueryParams }>
 ) => {
-    const { page, params, refetch /*, isLastRefetch*/ } = action.meta.arg;
+    const { page, params, refetch } = action.meta.arg;
     const {
-        result: { Total /*, Stale*/ },
+        result: { Total },
         taskRunning,
     } = action.payload;
 
@@ -97,26 +97,12 @@ export const loadFulfilled = (
         Object.assign(state, {
             beforeFirstLoad: false,
             invalidated: false,
+            pendingRequest: false,
+            total: Total,
             page: refetch ? state.page : page,
             retry: newRetry(state.retry, params, undefined),
+            taskRunning,
         });
-
-        /* If the request in "on stale", do not update the total and pending request status.
-         * Otherwise, we would run into a scenario where part of the state is updated,
-         * E.g. total is updated but not elements
-         * This inconsistency would trigger another load action.
-         *
-         * When Stale = 1, we are making additional fetches to get the proper data.
-         * But sometimes, the last fetch that we are making is still on Stale = 1
-         * In that case, we want to update the state, and especially the pendingRequest,
-         * so that the UI does not stay in a loading state forever.
-         */
-        // if (Stale !== 1 || isLastRefetch) {
-        state.pendingRequest = false;
-        state.total = Total;
-        // }
-
-        state.taskRunning = taskRunning;
     }
 };
 
@@ -228,7 +214,7 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
         total,
         elements: toMap(action.payload.elements, 'ID'),
         retry: { payload: undefined, count: MAX_ELEMENT_LIST_LOAD_RETRIES, error: undefined },
-        params,
+        params, // TODO we probably should differently, so that we don't erase params
     });
     state.pages[contextFilter] = state.pages[contextFilter]
         ? unique([...state.pages[contextFilter], ...pages]).sort()
@@ -404,6 +390,9 @@ export const expireElementsRejected = (
     });
 };
 
-export const setParams = (state: Draft<ElementsState>, action: PayloadAction<ElementsStateParams>) => {
-    state.params = action.payload;
+export const setParams = (state: Draft<ElementsState>, action: PayloadAction<Partial<ElementsStateParams>>) => {
+    state.params = {
+        ...state.params,
+        ...action.payload,
+    };
 };
