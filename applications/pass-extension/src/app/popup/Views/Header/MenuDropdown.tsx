@@ -32,7 +32,7 @@ import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     height: DropdownSizeUnit.Dynamic,
     maxHeight: '26em',
-    width: `18em`,
+    width: `22em`,
 };
 
 export const MenuDropdown: FC = () => {

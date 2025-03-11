@@ -5,5 +5,14 @@
 
 	> button {
 		border-radius: var(--border-radius-md);
+
+		&.is-selected {
+			&,
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: var(--navigation-current-item-background-color);
+			}
+		}
 	}
 }
