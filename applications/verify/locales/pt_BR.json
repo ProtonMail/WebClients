@@ -80,6 +80,14 @@
         "Use o seu próprio domínio de e-mail"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Armazenamento em nuvem e compartilhamento de arquivos grandes"
+      ],
+      "Secure personal and shared calendar": [
+        "Calendário pessoal e compartilhado seguro"
+      ]
+    },
     "color": {
       "carrot": [
         "cenoura"
@@ -1289,6 +1297,9 @@
       "${ size } storage": [
         "${ size } de armazenamento"
       ],
+      "${ size } storage per user": [
+        "${ size } de armazenamento por usuário"
+      ],
       "1 TB secure storage": [
         "1 TB de armazenamento seguro"
       ],
@@ -1429,9 +1440,6 @@
       ],
       "SMTP submission": [
         "Submissão SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Envio de SMTP para organizações selecionadas"
       ],
       "Support for up to 2 users": [
         "Suporte para até 2 usuários"

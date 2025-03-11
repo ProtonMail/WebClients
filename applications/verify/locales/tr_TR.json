@@ -80,6 +80,14 @@
         "Kendi e-posta etki alanınızı kullanın"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Büyük dosyalar için paylaşım ve bulut depolama"
+      ],
+      "Secure personal and shared calendar": [
+        "Güvenli kişisel ve paylaşımlı takvim"
+      ]
+    },
     "color": {
       "carrot": [
         "havuç"
@@ -1289,6 +1297,9 @@
       "${ size } storage": [
         "${ size } depolama alanı"
       ],
+      "${ size } storage per user": [
+        "Her kullanıcı için ${ size } depolama alanı"
+      ],
       "1 TB secure storage": [
         "1 TB güvenli depolama alanı"
       ],
@@ -1332,7 +1343,7 @@
         "Otomatik e-posta iletme"
       ],
       "Breach alerts": [
-        "Verilerin ele geçilrilmesi uyarıları"
+        "Veri sızıntısı uyarıları"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -1429,9 +1440,6 @@
       ],
       "SMTP submission": [
         "SMTP gönderimi"
-      ],
-      "SMTP submission for select organizations": [
-        "Seçilmiş kuruluşlar için SMTP gönderimi"
       ],
       "Support for up to 2 users": [
         "2 kullanıcıya kadar destek"

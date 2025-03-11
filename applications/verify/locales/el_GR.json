@@ -80,6 +80,14 @@
         "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
       ]
     },
+    "Cancellation upsell": {
+      "Cloud storage and sharing for large files": [
+        "Αποθήκευση και κοινή χρήση στο cloud για μεγάλα αρχεία"
+      ],
+      "Secure personal and shared calendar": [
+        "Ασφαλές προσωπικό και κοινόχρηστο ημερολόγιο"
+      ]
+    },
     "color": {
       "carrot": [
         "καρότο"
@@ -1289,6 +1297,9 @@
       "${ size } storage": [
         "${ size } αποθηκευτικός χώρος"
       ],
+      "${ size } storage per user": [
+        "${ size } αποθηκευτικός χώρος ανά χρήστη"
+      ],
       "1 TB secure storage": [
         "Ασφαλής χώρος αποθήκευσης 1 TB"
       ],
@@ -1429,9 +1440,6 @@
       ],
       "SMTP submission": [
         "Υποβολή SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Υποβολή SMTP για επιλεγμένους οργανισμούς"
       ],
       "Support for up to 2 users": [
         "Υποστήριξη για έως 2 χρήστες"

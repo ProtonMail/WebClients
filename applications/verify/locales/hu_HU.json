@@ -1062,6 +1062,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -1070,6 +1073,9 @@
       ],
       "No verification method available": [
         "Nincs elérhető ellenőrzési módszer"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -1271,6 +1277,9 @@
       "15 GB storage": [
         "15 GB tárhely"
       ],
+      "200 GB of storage": [
+        "200 GB tároló"
+      ],
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
       ],
@@ -1351,9 +1360,6 @@
       ],
       "SMTP submission": [
         "SMTP beküldés"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP beküldése kiválasztott szervezeteknek"
       ],
       "Unlimited filters": [
         "Korlátlan számú szűrő"
