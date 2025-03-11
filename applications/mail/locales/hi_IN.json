@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
-      "About hide-my-email aliases": [
-        "hide-my-email नकली-नामों के बारे में"
-      ],
       "Activate": [
         "सक्रिय"
       ],
@@ -1794,6 +1791,9 @@
       ],
       "Version history": [
         "संस्करण इतिहास"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -6897,12 +6897,6 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "हमारे अलर्ट सुरक्षा को प्राथमिकता देते हैं। यदि आपको लीक हुई किसी भी जानकारी की पहचान नहीं होती, तो आप इस रिपोर्ट को सुरक्षित रूप से नजरअंदाज कर सकते हैं।"
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "हमारे सिस्टम ने इस संदेश को फ़िशिंग प्रयास के रूप में चिह्नित किया। कृपया जाँच लें कि यह वैध है।"
-      ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "हमारे सिस्टम ने इस संदेश को एक संदिग्ध ईमेल के रूप में चिह्नित किया है। कृपया किसी भी लिंक या अनुलग्नक पर क्लिक करने से पहले जांच लें कि यह वैध है या नहीं।"
-      ],
       "password": [
         "पासवर्ड"
       ],
@@ -7021,9 +7015,6 @@
       ],
       "Proofread text": [
         "टेक्स्ट का प्रूफरीड करें"
-      ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "अपने ईमेल को मेल सूची या स्पैमर्स को लीक होने से बचाएं hide-my-email नकली-नामों के साथ."
       ],
       "Public sharing of documents is not yet supported.": [
         "दस्तावेजों का सार्वजनिक साझा करना अभी तक समर्थित नहीं है।"
@@ -9095,6 +9086,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe लेखन सहायक"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe लेखन सहायक जोड़ें"
       ],
@@ -9785,9 +9779,6 @@
       ],
       "SMTP submission": [
         "SMTP सबमिशन"
-      ],
-      "SMTP submission for select organizations": [
-        "चुनिंदा संगठनों के लिए SMTP सबमिशन"
       ],
       "Split tunneling (Android and Windows)": [
         "स्प्लिट टनलिंग (Android और Windows)"
@@ -10716,6 +10707,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "एडमिन पैनल से यूज़र और सदस्यता को संभाले"
+      ],
+      "Advanced account protection": [
+        "उन्नत खाता सुरक्षा"
       ],
       "Team policies": [
         "टीम नीतियाँ"
@@ -12019,6 +12013,9 @@
     "Subscription": {
       "Billed every 2 years": [
         "बिल हर 2 साल पे"
+      ],
+      "Billed every 6 months": [
+        "बिल हर 6 महीने पे"
       ],
       "Billed for 15 months": [
         "15 महीने के लिए बिल किया गया"
@@ -13858,6 +13855,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } डिवाइस",
+        "${ n } डिवाइस"
+      ],
       "${ n } server": [
         "${ n } सर्वर",
         "${ n }+ सर्वर"
@@ -13866,6 +13867,10 @@
         "${ n } वीपीएन कनेक्शन",
         "${ n } वीपीएन कनेक्शन"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } देश",
+        "${ numberOfCountries } देशे"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries } देशों में ${ numberOfServers }",
         "${ numberOfCountries }+ देशों में ${ numberOfServers }"
@@ -13873,6 +13878,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } देश में ${ numberOfServers }",
         "${ numberOfCountries } देशों में ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries } देश से स्वतः चयनित",
+        "${ numberOfCountries } देशों से स्वतः चयनित"
       ]
     },
     "vpn_2024: renew": {

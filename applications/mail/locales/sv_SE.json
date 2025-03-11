@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "About hide-my-email aliases": [
-        "Om hide-my-email-alias"
-      ],
       "Activate": [
         "Aktivera"
       ],
@@ -608,6 +605,9 @@
       ],
       "Hide toolbar": [
         "Dölj verktygsfält"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email-alias"
       ],
       "I like this response": [
         "Jag gillar detta svar"
@@ -1791,6 +1791,9 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -5339,7 +5342,7 @@
         "Använd din mobila enhet, skanna denna QR-kod eller besök iOS- eller Android-butiken."
       ],
       "We stop advertisers and data collectors from profiling you.": [
-        "Vi hindrar annonsörer och datainsamlare från att profilera dig."
+        "Vi stoppar annonsörer och datainsamlare från att profilera dig."
       ],
       "You've unlocked 1 GB": [
         "Du har låst upp 1 GB"
@@ -5347,7 +5350,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Vidarebefordra automatiskt"
+        "Automatiskt vidarebefordrad"
       ],
       "Gmail messages to your inbox": [
         "Gmail-meddelanden till din inkorg"
@@ -6894,11 +6897,11 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
       ],
-      "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Vårt system flaggade detta meddelande som ett nätfiskeförsök. Kontrollera att det är betrott."
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "Vårt system flaggade detta som misstänkt. Om det inte är ett nätfiske eller bedrägerimeddelande, markera som legitimt."
       ],
-      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Vårt system flaggade detta meddelande som ett misstänkt e-postmeddelande. Kontrollera att det är legitimt innan du klickar på några länkar eller bilagor."
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Vårt system flaggade detta meddelande som ett nätfiskeförsök. Kontrollera för att säkerställa att det är legitimt."
       ],
       "password": [
         "lösenord"
@@ -7019,8 +7022,8 @@
       "Proofread text": [
         "Korrekturläs text"
       ],
-      "Protect your email from being leaked to mailing lists or spammers with hide-my-email aliases.": [
-        "Skydda din e-post från att läcka ut till e-postlistor eller skräppostare med hide-my-email-alias."
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Skydda din e-post från att läcka ut till e-postlistor eller skräppostare med ${ hideMyEmailAliasesLink }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
@@ -9095,8 +9098,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lägg till ${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "Add-on with free trial": [
+        "Utökning med gratis provperiod"
       ],
       "for ${ price }": [
         "för ${ price }"
@@ -9509,6 +9518,9 @@
       "${ size } storage": [
         "${ size } lagringsutrymme"
       ],
+      "${ size } storage per user": [
+        "${ size } lagringsutrymme per användare"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - För ${ DRIVE_APP_NAME }"
       ],
@@ -9696,6 +9708,9 @@
       "Limited support": [
         "Begränsad support"
       ],
+      "Manage user permissions and access": [
+        "Hantera användarbehörigheter och åtkomst"
+      ],
       "Multiple admin roles": [
         "Flera administratörsroller"
       ],
@@ -9713,6 +9728,9 @@
       ],
       "Password manager": [
         "Lösenordshanterare"
+      ],
+      "Password manager to secure credentials": [
+        "Lösenordshanterare för säkra inloggningsuppgifter"
       ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
@@ -9785,9 +9803,6 @@
       ],
       "SMTP submission": [
         "SMTP-inlämning"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-inlämning för valda organisationer"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
@@ -10545,7 +10560,7 @@
         "För åtkomst när som helst till e-post och en optimerad mobil upplevelse ladda ner vår ${ mobileAppAppStoreLink }- eller ${ mobileAppGooglePlayLink }-app."
       ],
       "Get notified if your password is compromised.": [
-        "Bli aviserad när ditt lösenord avslöjats."
+        "Bli aviserad om ditt lösenord är avslöjat."
       ],
       "Industry-leading spam protection": [
         "Branschledande skräppostskydd"
@@ -10721,6 +10736,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
+      ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
       ],
       "Team policies": [
         "Policy för team"
@@ -12073,6 +12091,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-anslutning per användare",
         "${ n } VPN-anslutningar per användare"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-anslutning för ${ n } enheter per användare",
+        "VPN-anslutning för ${ n } enheter per användare"
       ]
     },
     "Subscription change warning": {
@@ -13847,7 +13869,7 @@
         "Idag är en bra dag att skriva e-post"
       ],
       "Update default font and size": [
-        "Uppdatera standardtypsnitt och -storlek"
+        "Uppdatera standardtypsnitt och storlek"
       ],
       "Your default font will look like following:": [
         "Ditt standardtypsnitt kommer att se ut som följande:"
@@ -13872,6 +13894,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } enhet",
+        "${ n } enheter"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ servrar"
@@ -13880,6 +13906,10 @@
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } länder"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries }+ länder"
@@ -13887,6 +13917,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } länder"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Väljer automatiskt från ${ numberOfCountries } land",
+        "Väljer automatiskt från ${ numberOfCountries } länder"
       ]
     },
     "vpn_2024: renew": {
