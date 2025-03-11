@@ -1,13 +1,14 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isActiveMonitored, isExcluded } from '@proton/pass/lib/items/item.predicates';
+import { belongsToShares, isActiveMonitored, isExcluded } from '@proton/pass/lib/items/item.predicates';
 import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
 import { getDuplicatePasswords } from '@proton/pass/lib/monitor/monitor.utils';
 import type { MonitorDomain } from '@proton/pass/lib/monitor/types';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import type { State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe, ShareId } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
+import { and } from '@proton/pass/utils/fp/predicates';
 
 import { selectLoginItems } from './items';
 
@@ -19,13 +20,16 @@ export const selectCustomBreaches = (state: State) => state.monitor?.custom;
 export const selectProtonBreaches = (state: State) => state.monitor?.proton;
 export const selectMonitorPreview = (state: State): Maybe<MonitorDomain> => first(state.monitor?.preview ?? []);
 
-export const selectMonitoredLogins = createSelector(selectLoginItems, (items) => items.filter(isActiveMonitored));
+export const selectMonitoredLogins = (shareIds?: ShareId[]) =>
+    createSelector(selectLoginItems, (items) => items.filter(and(isActiveMonitored, belongsToShares(shareIds))));
 
-export const selectDuplicatePasswords = createSelector(selectMonitoredLogins, getDuplicatePasswords);
+export const selectDuplicatePasswords = (shareIds?: ShareId[]) =>
+    createSelector(selectMonitoredLogins(shareIds), getDuplicatePasswords);
 
-export const selectExcludedItems = createSelector(selectLoginItems, (items) =>
-    items.filter(isExcluded).map(intoSelectedItem)
-);
+export const selectExcludedItems = (shareIds?: ShareId[]) =>
+    createSelector(selectLoginItems, (items) =>
+        items.filter(and(isExcluded, belongsToShares(shareIds))).map(intoSelectedItem)
+    );
 
 export const selectMonitorSettingByType = (type: AddressType) =>
     createSelector(selectMonitorSettings, (settings) => {
