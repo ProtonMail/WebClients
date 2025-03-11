@@ -108,54 +108,63 @@ describe('getHasUpdatedAttendees', function () {
     });
 
     it('updates attendees (but only the ones with new update times) when there are new attendees', () => {
-        const oldEventData = {
+        const oldEventData: CalendarEvent = {
             ...dummyEventData,
         };
-        const newEventData = {
+        const newEventData: CalendarEvent = {
             ...oldEventData,
-            Attendees: [
-                {
-                    ...dummyAttendee,
-                    // status changed
-                    Status: ATTENDEE_STATUS_API.ACCEPTED,
-                },
-                {
-                    ID: 'attendee-2',
-                    Token: 'token-2',
-                    Status: ATTENDEE_STATUS_API.TENTATIVE,
-                    UpdateTime: dummyModifyTime + 1,
-                },
-            ],
+            AttendeesInfo: {
+                Attendees: [
+                    {
+                        ...dummyAttendee,
+                        // status changed
+                        Status: ATTENDEE_STATUS_API.ACCEPTED,
+                    },
+                    {
+                        ID: 'attendee-2',
+                        Token: 'token-2',
+                        Status: ATTENDEE_STATUS_API.TENTATIVE,
+                        UpdateTime: dummyModifyTime + 1,
+                    },
+                ],
+                MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+            },
         };
 
         expect(getHasUpdatedAttendees(newEventData, oldEventData)).toEqual({
             hasUpdatedAttendees: true,
-            attendees: [dummyAttendee, newEventData.Attendees[1]],
+            attendees: [dummyAttendee, newEventData.AttendeesInfo.Attendees[1]],
         });
     });
 
     it('updates attendees (but only the ones with new update times) when some attendees got removed', () => {
-        const oldEventData = {
+        const oldEventData: CalendarEvent = {
             ...dummyEventData,
-            Attendees: [
-                dummyAttendee,
-                {
-                    ID: 'attendee-2',
-                    Token: 'token-2',
-                    Status: ATTENDEE_STATUS_API.TENTATIVE,
-                    UpdateTime: dummyModifyTime,
-                },
-            ],
+            AttendeesInfo: {
+                Attendees: [
+                    dummyAttendee,
+                    {
+                        ID: 'attendee-2',
+                        Token: 'token-2',
+                        Status: ATTENDEE_STATUS_API.TENTATIVE,
+                        UpdateTime: dummyModifyTime,
+                    },
+                ],
+                MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+            },
         };
-        const newEventData = {
+        const newEventData: CalendarEvent = {
             ...oldEventData,
-            Attendees: [
-                {
-                    ...dummyAttendee,
-                    // status changed
-                    Status: ATTENDEE_STATUS_API.ACCEPTED,
-                },
-            ],
+            AttendeesInfo: {
+                Attendees: [
+                    {
+                        ...dummyAttendee,
+                        // status changed
+                        Status: ATTENDEE_STATUS_API.ACCEPTED,
+                    },
+                ],
+                MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+            },
         };
 
         expect(getHasUpdatedAttendees(newEventData, oldEventData)).toEqual({
@@ -167,36 +176,42 @@ describe('getHasUpdatedAttendees', function () {
     it('updates the attendees with new update times', () => {
         const oldEventData = {
             ...dummyEventData,
-            Attendees: [
-                dummyAttendee,
-                {
-                    ID: 'attendee-2',
-                    Token: 'token-2',
-                    Status: ATTENDEE_STATUS_API.TENTATIVE,
-                    UpdateTime: dummyModifyTime,
-                },
-            ],
+            AttendeesInfo: {
+                Attendees: [
+                    dummyAttendee,
+                    {
+                        ID: 'attendee-2',
+                        Token: 'token-2',
+                        Status: ATTENDEE_STATUS_API.TENTATIVE,
+                        UpdateTime: dummyModifyTime,
+                    },
+                ],
+                MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+            },
         };
         const newEventData = {
             ...oldEventData,
-            Attendees: [
-                {
-                    ...dummyAttendee,
-                    // status changed
-                    Status: ATTENDEE_STATUS_API.ACCEPTED,
-                },
-                {
-                    ID: 'attendee-2',
-                    Token: 'token-2',
-                    Status: ATTENDEE_STATUS_API.TENTATIVE,
-                    UpdateTime: dummyModifyTime + 1,
-                },
-            ],
+            AttendeesInfo: {
+                Attendees: [
+                    {
+                        ...dummyAttendee,
+                        // status changed
+                        Status: ATTENDEE_STATUS_API.ACCEPTED,
+                    },
+                    {
+                        ID: 'attendee-2',
+                        Token: 'token-2',
+                        Status: ATTENDEE_STATUS_API.TENTATIVE,
+                        UpdateTime: dummyModifyTime + 1,
+                    },
+                ],
+                MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+            },
         };
 
         expect(getHasUpdatedAttendees(newEventData, oldEventData)).toEqual({
             hasUpdatedAttendees: true,
-            attendees: [dummyAttendee, newEventData.Attendees[1]],
+            attendees: [dummyAttendee, newEventData.AttendeesInfo.Attendees[1]],
         });
     });
 });
@@ -291,27 +306,13 @@ describe('getHasUpdatedEventData', () => {
             ...dummyEventData,
             // isOrganizer changed
             IsOrganizer: 1 as const,
-            Attendees: [
-                {
-                    ...dummyAttendee,
-                    // status changed
-                    Status: ATTENDEE_STATUS_API.ACCEPTED,
-                },
-                {
-                    ID: 'attendee-2',
-                    Token: 'token-2',
-                    Status: ATTENDEE_STATUS_API.TENTATIVE,
-                    UpdateTime: dummyModifyTime + 1,
-                },
-            ],
-        };
-
-        expect(getHasUpdatedEventData(newEventData, oldEventData)).toEqual({
-            hasUpdatedEventData: true,
-            eventData: {
-                ...oldEventData,
+            AttendeesInfo: {
                 Attendees: [
-                    dummyAttendee,
+                    {
+                        ...dummyAttendee,
+                        // status changed
+                        Status: ATTENDEE_STATUS_API.ACCEPTED,
+                    },
                     {
                         ID: 'attendee-2',
                         Token: 'token-2',
@@ -319,6 +320,26 @@ describe('getHasUpdatedEventData', () => {
                         UpdateTime: dummyModifyTime + 1,
                     },
                 ],
+                MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+            },
+        };
+
+        expect(getHasUpdatedEventData(newEventData, oldEventData)).toEqual({
+            hasUpdatedEventData: true,
+            eventData: {
+                ...oldEventData,
+                AttendeesInfo: {
+                    Attendees: [
+                        dummyAttendee,
+                        {
+                            ID: 'attendee-2',
+                            Token: 'token-2',
+                            Status: ATTENDEE_STATUS_API.TENTATIVE,
+                            UpdateTime: dummyModifyTime + 1,
+                        },
+                    ],
+                    MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+                },
             },
         });
     });
@@ -330,20 +351,26 @@ describe('getHasUpdatedEventData', () => {
             // isOrganizer changed
             IsOrganizer: 1 as const,
             ModifyTime: dummyModifyTime + 1,
-            Attendees: [
-                {
-                    ...dummyAttendee,
-                    // status changed
-                    Status: ATTENDEE_STATUS_API.ACCEPTED,
-                },
-            ],
+            AttendeesInfo: {
+                Attendees: [
+                    {
+                        ...dummyAttendee,
+                        // status changed
+                        Status: ATTENDEE_STATUS_API.ACCEPTED,
+                    },
+                ],
+                MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+            },
         };
 
         expect(getHasUpdatedEventData(newEventData, oldEventData)).toEqual({
             hasUpdatedEventData: true,
             eventData: {
                 ...newEventData,
-                Attendees: oldEventData.AttendeesInfo.Attendees,
+                AttendeesInfo: {
+                    Attendees: oldEventData.AttendeesInfo.Attendees,
+                    MoreAttendees: ATTENDEE_MORE_ATTENDEES.NO,
+                },
             },
         });
     });
