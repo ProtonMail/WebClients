@@ -19,7 +19,7 @@ const getQueryElementsParameters = ({
     page,
     pageSize,
     params: { labelID, sort, search, filter },
-}: Pick<QueryParams, 'page' | 'params' | 'pageSize'>): MailboxItemsQueryParams => ({
+}: Pick<QueryParams, 'page' | 'pageSize'> & { params: ElementsStateParams }): MailboxItemsQueryParams => ({
     Page: page,
     PageSize: pageSize,
     Limit: pageSize,

@@ -105,7 +105,6 @@ export interface QueryParams {
     abortController: AbortController | undefined;
     page: number;
     pageSize: MAIL_PAGE_SIZE;
-    params: ElementsStateParams;
     count?: number;
     refetch?: boolean;
 }
