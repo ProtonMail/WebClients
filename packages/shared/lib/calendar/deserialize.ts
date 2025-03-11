@@ -289,28 +289,30 @@ export const readCalendarEvent = async ({
         calendarSettings
     );
 
-    const veventAttendees = await Promise.all(
-        decryptedAttendeesEvents
-            .map((event) => {
-                if (!event) {
-                    return false;
-                }
-                const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
+    const veventAttendeesPromises = decryptedAttendeesEvents
+        .map((event) => {
+            if (!event) {
+                return false;
+            }
 
-                if (!getIsEventComponent(parsedComponent)) {
-                    return false;
-                }
+            const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
 
-                return toInternalAttendee(
-                    parsedComponent,
-                    AttendeesInfo.Attendees,
-                    sharedSessionKey,
-                    eventID,
-                    getAttendeeVerificationPreferences
-                );
-            })
-            .filter(isTruthy)
-    ).then((attendees) => attendees.flat());
+            if (!getIsEventComponent(parsedComponent)) {
+                return false;
+            }
+
+            return toInternalAttendee(
+                parsedComponent,
+                AttendeesInfo?.Attendees || [],
+                sharedSessionKey,
+                eventID,
+                getAttendeeVerificationPreferences
+            );
+        })
+        .filter(isTruthy)
+        .flat();
+
+    const veventAttendees = await Promise.all(veventAttendeesPromises);
 
     if (valarmComponents.length) {
         vevent.components = valarmComponents;
