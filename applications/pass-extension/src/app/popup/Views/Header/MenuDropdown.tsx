@@ -18,12 +18,13 @@ import { SharedMenuContent } from '@proton/pass/components/Menu/Shared/SharedMen
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { getPassWebUrl } from '@proton/pass/components/Navigation/routing';
+import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { selectLockEnabled } from '@proton/pass/store/selectors';
+import { selectLockEnabled, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -53,6 +54,8 @@ export const MenuDropdown: FC = () => {
 
     const withAppMenuClose = withTap(appMenu.close);
     const withVaultMenuClose = withTap(vaultMenu.close);
+
+    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
 
     const { advanced, download } = useMenuItems(
         useMemo(
@@ -165,14 +168,20 @@ export const MenuDropdown: FC = () => {
                 </div>
 
                 <div className="p-2 w-full shrink-0">
-                    <Button
-                        className="w-full"
-                        color="weak"
-                        shape="solid"
-                        onClick={withVaultMenuClose(vaultActions.create)}
+                    <OrganizationPolicyTooltip
+                        enforced={vaultCreationDisabled}
+                        text={c('Warning').t`Your organization does not allow creating a vault`}
                     >
-                        {c('Action').t`Create vault`}
-                    </Button>
+                        <Button
+                            className="w-full"
+                            color="weak"
+                            shape="solid"
+                            onClick={withVaultMenuClose(vaultActions.create)}
+                            disabled={vaultCreationDisabled}
+                        >
+                            {c('Action').t`Create vault`}
+                        </Button>
+                    </OrganizationPolicyTooltip>
                 </div>
             </Dropdown>
         </nav>

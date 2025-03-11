@@ -42,6 +42,7 @@ export const selectNonOwnedVaults = createSelector([selectAllVaults], (v) => v.f
 export const selectOwnWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnWritableVault));
 export const selectOwnReadOnlyVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnReadonlyVault));
 export const selectWritableSharedVaults = createSelector([selectAllVaults], (v) => v.filter(isWritableSharedVault));
+export const selectCanCreateItems = createSelector([selectWritableVaults], (v) => v.length > 0);
 
 const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShareItem[]>) =>
     createSelector([vaultSelector, selectItems], (shares, itemsByShareId) =>
@@ -84,18 +85,27 @@ export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
             share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(isActive).length : null
     );
 
-/* The default vault should be the oldest vault I own and can write to */
+/** The default vault should be the oldest vault I own and can write to.
+ * If no own writable vault exists (due to organization policy disabling vault creation),
+ * then return the oldest writable vault */
 export const selectDefaultVault = createSelector(
-    selectOwnWritableVaults,
-    (ownWritableVaults): Maybe<VaultShareItem> => first(ownWritableVaults.sort(sortOn('createTime', 'ASC')))
+    [selectOwnWritableVaults, selectWritableVaults],
+    (ownWritableVaults, writableVaults): Maybe<VaultShareItem> => {
+        const vaults = ownWritableVaults.length > 0 ? ownWritableVaults : writableVaults;
+        return first(vaults.sort(sortOn('createTime', 'ASC')));
+    }
 );
 
 /** Resolves the most recently used vault:
  * - Returns shareId of the latest item in user's writable vaults, sorted by creation time
  * - Falls back to user's default vault shareId if no writable items found */
 export const selectMostRecentVaultShareID = createSelector(
-    [selectOwnWritableVaults, selectAllItems, selectDefaultVault],
-    (vaults, items, defaultVault): Maybe<string> => {
+    [selectOwnWritableVaults, selectWritableVaults, selectAllItems, selectDefaultVault],
+    (ownWritableVaults, writableVaults, items, defaultVault): Maybe<string> => {
+        /** Only *own* writable vaults should be considered,
+         * unless there are none (due to organization policy disabling vault creation),
+         * in which case non-owned writable vaults can also be considered */
+        const vaults = ownWritableVaults.length > 0 ? ownWritableVaults : writableVaults;
         const shareIds = new Set(vaults.map(prop('shareId')));
         return (
             items.filter((item) => shareIds.has(item.shareId)).sort(sortOn('createTime'))?.[0]?.shareId ??

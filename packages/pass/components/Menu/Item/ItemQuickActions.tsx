@@ -12,11 +12,17 @@ import { SubTheme, itemTypeToSubThemeClassName } from '@proton/pass/components/L
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
+import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { usePasswordGeneratorAction } from '@proton/pass/components/Password/PasswordGeneratorAction';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
-import { selectAliasLimits, selectPassPlan } from '@proton/pass/store/selectors';
+import {
+    selectAliasLimits,
+    selectCanCreateItems,
+    selectOrganizationVaultCreationDisabled,
+    selectPassPlan,
+} from '@proton/pass/store/selectors';
 import type { ItemType, MaybeNull } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -25,13 +31,12 @@ import noop from '@proton/utils/noop';
 type QuickAction = { label: string; type: ItemType };
 
 type Props = {
-    disabled?: boolean;
     /** Current origin if in the extension to hydrate the generated
      * password origin on save */
     origin?: MaybeNull<string>;
 };
 
-export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null }) => {
+export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
     const scope = useItemScope();
     const navigate = useNavigate();
     const passwordHistory = usePasswordHistoryActions();
@@ -76,21 +81,31 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null })
         []
     );
 
+    const disabled = !useSelector(selectCanCreateItems);
+    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
+    const orgDisabled = disabled && vaultCreationDisabled;
+
     return (
         <>
-            <Button
-                pill
-                color="norm"
-                disabled={disabled}
-                className="flex gap-1.5 text-sm"
-                onClick={toggle}
-                ref={anchorRef}
-                size="small"
-                title={c('Action').t`Add new item`}
+            <OrganizationPolicyTooltip
+                enforced={orgDisabled}
+                text={c('Warning').t`Your administrator needs to create a vault for you before you can create items`}
+                placement="bottom"
             >
-                <Icon size={3.5} name="plus" alt={c('Action').t`Add new item`} />
-                <span className="hidden md:block">{c('Action').t`Create item`}</span>
-            </Button>
+                <Button
+                    pill
+                    color="norm"
+                    disabled={disabled}
+                    className="flex gap-1.5 text-sm"
+                    onClick={toggle}
+                    ref={anchorRef}
+                    size="small"
+                    title={c('Action').t`Add new item`}
+                >
+                    <Icon size={3.5} name="plus" alt={c('Action').t`Add new item`} />
+                    <span className="hidden md:block">{c('Action').t`Create item`}</span>
+                </Button>
+            </OrganizationPolicyTooltip>
             <Dropdown
                 isOpen={isOpen}
                 anchorRef={anchorRef}
