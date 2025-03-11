@@ -941,6 +941,9 @@
       ],
       "Version history": [
         "Sürüm geçmişi"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2181,6 +2184,11 @@
         "Süresi geçmiş fatura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2259,11 +2267,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4412,7 +4415,7 @@
         "Kuruluş boyutu"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Uyarılarımız güvenliğe öncelik verir. Ele geçirilen bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
+        "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
       ],
       "Owned by me": [
         "Benim olan"
@@ -4627,7 +4630,7 @@
         "Sayısal imza kısmen doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kimliği doğrulanamıyor."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
+        "Bilgiler üçüncü taraf bir hizmetten sızdırılmış. ${ BRAND_NAME } hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
@@ -4962,10 +4965,10 @@
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
       "Your email address and password were leaked:": [
-        "E-posta adresiniz ve parolanız açığa çıkmış:"
+        "E-posta adresiniz ve parolanız sızdırılmış:"
       ],
       "Your email address was exposed:": [
-        "E-posta adresiniz açığa çıkmış:"
+        "E-posta adresiniz sızdırılmış:"
       ],
       "Your email address will be visible as the link's owner on the share page": [
         "E-posta adresiniz paylaşım sayfasında bağlantının sahibi olarak görünecektir"
@@ -4989,7 +4992,7 @@
         "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
       ],
       "Your password was leaked:": [
-        "Parolanız açığa çıkmış:"
+        "Parolanız sızdırılmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -5697,8 +5700,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
+      "Add-on with free trial": [
+        "Ücretsiz deneme sürümü ile eklenti"
       ],
       "for ${ price }": [
         "${ price }"
@@ -6117,6 +6126,9 @@
       "${ size } storage": [
         "${ size } depolama alanı"
       ],
+      "${ size } storage per user": [
+        "Her kullanıcı için ${ size } depolama alanı"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - ${ DRIVE_APP_NAME } için"
       ],
@@ -6193,7 +6205,7 @@
         "Tüm platformlarda kullanılabilir"
       ],
       "Breach alerts": [
-        "Verilerin ele geçilrilmesi uyarıları"
+        "Veri sızıntısı uyarıları"
       ],
       "Calendar sharing": [
         "Takvim paylaşımı"
@@ -6232,7 +6244,7 @@
         "Özel çalışma alanı markası"
       ],
       "Data breach monitoring": [
-        "Verilerin ele geçirilmesini izleme"
+        "Veri sızıntılarını izleme"
       ],
       "Dedicated servers optimized for streaming": [
         "Yayın akışı izlemek için ayarlanmış özel sunucular"
@@ -6304,6 +6316,9 @@
       "Limited support": [
         "Sınırlı destek"
       ],
+      "Manage user permissions and access": [
+        "Kullanıcı izinleri ve erişimi yönetimi"
+      ],
       "Multiple admin roles": [
         "Birden çok yönetici rolü"
       ],
@@ -6321,6 +6336,9 @@
       ],
       "Password manager": [
         "Parola yöneticisi"
+      ],
+      "Password manager to secure credentials": [
+        "Kimlik bilgilerini korumak için parola yöneticisi"
       ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
@@ -6393,9 +6411,6 @@
       ],
       "SMTP submission": [
         "SMTP gönderimi"
-      ],
-      "SMTP submission for select organizations": [
-        "Seçilmiş kuruluşlar için SMTP gönderimi"
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
@@ -7283,6 +7298,9 @@
       "Admin panel to manage users and subscription": [
         "Kullanıcıları ve aboneliğinizi panonuzdan yönetin"
       ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
       "Team policies": [
         "Ekip ilkeleri"
       ]
@@ -7689,7 +7707,7 @@
         "Olası ${ name } veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten açığa çıkarsa bildirim alın. ${ learnMoreLink }"
+        "Parolanız veya diğer verileriniz üçüncü taraf bir hizmetten sızdırıldığında bildirim alın. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
@@ -8278,6 +8296,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN bağlantısı / kullanıcı",
         "${ n } VPN bağlantısı / kullanıcı"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı",
+        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı"
       ]
     },
     "Subscription change warning": {
@@ -8318,6 +8340,25 @@
         "${ totalPrice } için"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -8329,7 +8370,7 @@
         "Otomatik e-posta iletme ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+        "Veri sızıntısı uyarıları ${ strongArgument }"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -8357,25 +8398,6 @@
       ],
       "Your privacy is our mission": [
         "Amacımız gizliliğinizi sağlamaktır"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "Folders, labels, and custom filters": [
-        "Klasörler, etiketler ve özel süzgeçler"
       ]
     },
     "Subscription renewal state": {
@@ -8926,7 +8948,7 @@
         "Gece teması"
       ],
       "No breaches detected": [
-        "Herhangi bir veri ele geçirilmemiş"
+        "Herhangi bir veri sızıntısı yok"
       ],
       "Notes": [
         "Notlar"
@@ -9106,7 +9128,7 @@
         "İndirmenizde bir ${ DOCS_APP_NAME } dosyası var"
       ],
       "Your exposed information": [
-        "Açığa çıkmış bilgileriniz"
+        "Sızdırılmış bilgileriniz"
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
@@ -9115,6 +9137,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Bugün"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Tooltip": {
@@ -9192,11 +9219,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Valentine_2025": {
@@ -9350,6 +9372,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } aygıt",
+        "${ n } aygıt"
+      ],
       "${ n } server": [
         "${ n } sunucu",
         "${ n } sunucu"
@@ -9358,6 +9384,10 @@
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ülke",
+        "${ numberOfCountries } ülke"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
@@ -9365,6 +9395,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries } ülke arasından otomatik seçilir",
+        "${ numberOfCountries } ülke arasından otomatik seçilir"
       ]
     },
     "vpn_2024: renew": {

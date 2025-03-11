@@ -941,6 +941,9 @@
       ],
       "Version history": [
         "Versionsverlauf"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2181,6 +2184,11 @@
         "Überfällige Rechnung"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2259,11 +2267,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5697,8 +5700,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
+      ],
+      "Add-on with free trial": [
+        "Add-on mit kostenloser Testversion"
       ],
       "for ${ price }": [
         "für ${ price }"
@@ -6174,6 +6183,9 @@
       "${ size } storage": [
         "${ size } Speicherplatz"
       ],
+      "${ size } storage per user": [
+        "${ size } Speicherplatz pro Benutzer"
+      ],
       "${ textType } - For ${ DRIVE_APP_NAME }": [
         "${ textType } - für ${ DRIVE_APP_NAME }"
       ],
@@ -6361,6 +6373,9 @@
       "Limited support": [
         "Eingeschränkter Support"
       ],
+      "Manage user permissions and access": [
+        "Benutzerberechtigungen und -zugang verwalten"
+      ],
       "Multiple admin roles": [
         "Mehrere Administratorrollen"
       ],
@@ -6378,6 +6393,9 @@
       ],
       "Password manager": [
         "Passwort-Manager"
+      ],
+      "Password manager to secure credentials": [
+        "Passwortmanager zum Schutz von Anmeldedaten"
       ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
@@ -6450,9 +6468,6 @@
       ],
       "SMTP submission": [
         "SMTP-Übermittlung"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP-Übermittlung für ausgewählte Organisationen"
       ],
       "Split tunneling (Android and Windows)": [
         "Split-Tunneling (für Android und Windows)"
@@ -7339,6 +7354,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
       ],
       "Team policies": [
         "Gruppenrichtlinien"
@@ -8335,6 +8353,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-Verbindung pro Benutzer",
         "${ n } VPN-Verbindungen pro Benutzer"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-Verbindung für ${ n } Gerät pro Benutzer",
+        "VPN-Verbindung für ${ n } Geräte pro Benutzer"
       ]
     },
     "Subscription change warning": {
@@ -8373,6 +8395,25 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Für ${ totalPrice }"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } Speicherplatz pro Benutzer"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "Folders, labels, and custom filters": [
+        "Ordner, Kategorien und benutzerdefinierte Filter"
       ]
     },
     "subscription reminder": {
@@ -8414,25 +8455,6 @@
       ],
       "Your privacy is our mission": [
         "Deine Privatsphäre ist unsere Mission"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } Speicherplatz pro Benutzer"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Mit ${ planName } erhältst du alle Anwendungen, alle Funktionen, frühen Zugriff auf neue Versionen und alles, was du brauchst, um die Kontrolle über deine Daten und deren Sicherheit zu behalten."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigene E-Mail-Domain",
-        "${ planNumberOfDomains } eigene E-Mail-Domains"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } E-Mail-Adresse",
-        "${ planNumberOfEmails } E-Mail-Adressen"
-      ],
-      "Folders, labels, and custom filters": [
-        "Ordner, Kategorien und benutzerdefinierte Filter"
       ]
     },
     "Subscription renewal state": {
@@ -9174,6 +9196,11 @@
         "Heute"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Füge diese gemeinsame Datei zu deinem ${ DRIVE_APP_NAME } hinzu, damit du später leicht darauf zugreifen kannst."
@@ -9249,11 +9276,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wir haben der Person eine Einladung zum Zugreifen auf den Eintrag gesendet."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Valentine_2025": {
@@ -9407,6 +9429,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } Gerät",
+        "${ n } Geräte"
+      ],
       "${ n } server": [
         "${ n } Server",
         "${ n }+ Server"
@@ -9415,6 +9441,10 @@
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } Land",
+        "${ numberOfCountries } Länder"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
@@ -9422,6 +9452,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Wählt automatisch aus ${ numberOfCountries } Land",
+        "Wählt automatisch aus ${ numberOfCountries } Ländern"
       ]
     },
     "vpn_2024: renew": {

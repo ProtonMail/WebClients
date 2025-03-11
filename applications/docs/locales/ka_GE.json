@@ -938,6 +938,9 @@
       ],
       "Version history": [
         "ვერსიის ისტორია"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2174,6 +2177,11 @@
         "ინვოისი გადაცილებულია"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2252,11 +2260,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5666,6 +5669,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "დააატეთ წერის დამხმარე ${ BRAND_NAME } Scribe"
       ],
@@ -6362,9 +6368,6 @@
       ],
       "SMTP submission": [
         "SMTP-ის მორგება"
-      ],
-      "SMTP submission for select organizations": [
-        "SMTP მორგება არჩეული ორგანიზაციებისთვის"
       ],
       "Split tunneling (Android and Windows)": [
         "დაყოფილი ტუნელირება (Android-ზე და Windows-ზე)"
@@ -7251,6 +7254,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "ადმინის პანელ მომხმარებლებისა და გამოწერების სამართავად"
+      ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვა"
       ],
       "Team policies": [
         "გუნდის პოლიტიკა"
@@ -8281,6 +8287,25 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace }/მომხმარებელი"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ელფოსტის მისამართი",
+        "${ planNumberOfEmails } ელფოსტის მისამართი"
+      ],
+      "Folders, labels, and custom filters": [
+        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
@@ -8320,25 +8345,6 @@
       ],
       "Your privacy is our mission": [
         "თქვენი კონფიდენციალობა ჩვენი მისიაა"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace }/მომხმარებელი"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
-        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } ელფოსტის მისამართი",
-        "${ planNumberOfEmails } ელფოსტის მისამართი"
-      ],
-      "Folders, labels, and custom filters": [
-        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
       ]
     },
     "Subscription renewal state": {
@@ -9080,6 +9086,11 @@
         "დღეს"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "დაამატეთ ეს გაზიარებული ფაილი თქვენს ${ DRIVE_APP_NAME }-ზე მოგვიანებით იოლი წვდომისთვის."
@@ -9157,11 +9168,6 @@
         "ჩვენ მათ მოწვევა გავუგზავნეთ ელემენტთან წვდომისთვის."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
@@ -9190,6 +9196,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } მოწყობილობა",
+        "${ n } მოწყობილობა"
+      ],
       "${ n } server": [
         "${ n } სერვერი",
         "${ n } სერვერი"
@@ -9198,6 +9208,10 @@
         "${ n } VPN კავშირი",
         "${ n } VPN კავშირი"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ქვეყანა",
+        "${ numberOfCountries } ქვეყანა"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } ${ numberOfCountries } ქვეყანაში",
         "${ numberOfServers } ${ numberOfCountries } ქვეყანაში"
@@ -9205,6 +9219,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში",
         "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან",
+        "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან"
       ]
     },
     "vpn_2024: renew": {

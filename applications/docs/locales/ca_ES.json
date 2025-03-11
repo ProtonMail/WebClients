@@ -944,6 +944,9 @@
       ],
       "Version history": [
         "Historial de versions"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -2184,6 +2187,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb una vigilància dedicada les 24 hores del dia, els 7 dies de la setmana, d'activitats sospitoses, inclosa la intervenció d'especialistes en seguretat."
@@ -2262,11 +2270,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5703,6 +5706,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
@@ -6456,9 +6462,6 @@
       ],
       "SMTP submission": [
         "Tramesa SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Enviament SMTP per a les organitzacions seleccionades"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelització dividida (Android i Windows)"
@@ -7345,6 +7348,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panell d'administració per gestionar usuaris i subscripció"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
       ],
       "Team policies": [
         "Regles d'equip"
@@ -8381,6 +8387,25 @@
         "Per ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'emmagatzematge per usuari"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -8420,25 +8445,6 @@
       ],
       "Your privacy is our mission": [
         "La vostra privacitat és la nostra missió"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'emmagatzematge per usuari"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
-        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adreça de correu electrònic",
-        "${ planNumberOfEmails } adreces de correu electrònic"
-      ],
-      "Folders, labels, and custom filters": [
-        "Carpetes, etiquetes i filtres personalitzats"
       ]
     },
     "Subscription renewal state": {
@@ -9180,6 +9186,11 @@
         "Avui"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Afegiu aquest fitxer compartit al vostre ${ DRIVE_APP_NAME } per accedir-hi fàcilment més endavant."
@@ -9257,11 +9268,6 @@
         "Els hem enviat una invitació per accedir a l'element."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
@@ -9290,6 +9296,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispositiu",
+        "${ n } dispositius"
+      ],
       "${ n } server": [
         "${ n } servidor",
         "${ n }+ servidors"
@@ -9297,6 +9307,10 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } països"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",

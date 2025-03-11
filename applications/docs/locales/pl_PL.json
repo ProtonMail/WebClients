@@ -2187,6 +2187,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2265,11 +2270,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5107,6 +5107,14 @@
         "Wybrany kolor:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Jak wysłać płatność gotówką?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Znajdź instrukcję w artykule: ${ howToSendCashArticleUrl }"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Kliknij po szczegóły"
@@ -5571,6 +5579,9 @@
       "Start date": [
         "Data rozpoczęcia"
       ],
+      "State": [
+        "Województwo"
+      ],
       "Stop sharing": [
         "Zatrzymaj udostępnianie"
       ],
@@ -5803,6 +5814,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
@@ -6592,9 +6606,6 @@
       ],
       "SMTP submission": [
         "Poświadczenia SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Poświadczenia SMTP dla organizacji"
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
@@ -7398,6 +7409,9 @@
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Ostatnia szansa, aby uzyskać 80% zniżki na pierwszy miesiąc ${ plan } Plus."
+      ],
       "Last day to save": [
         "Ostatni dzień, aby zaoszczędzić"
       ],
@@ -7409,6 +7423,12 @@
       ],
       "Maybe later": [
         "Może później"
+      ],
+      "Offer expires ${ formattedDate }.": [
+        "Oferta wygasa ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Płać co roku, uzyskaj najlepszą ofertę"
       ],
       "Save": [
         "Zaoszczędź"
@@ -7422,6 +7442,9 @@
       "Save big when you pay annually": [
         "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
       ],
+      "Special offer": [
+        "Specjalna oferta"
+      ],
       "This offer won't be shown again.": [
         "Ta oferta nie pojawi się ponownie."
       ],
@@ -7430,6 +7453,9 @@
       ],
       "You currently pay": [
         "Aktualnie płacisz"
+      ],
+      "Your subscription renews soon": [
+        "Subskrypcja wkrótce się odnowi"
       ]
     },
     "Offer feature": {
@@ -7441,6 +7467,9 @@
       ],
       "Email addresses": [
         "Adresy e-mail"
+      ],
+      "Free": [
+        "Free"
       ],
       "Online document editor": [
         "Edytor dokumentów online"
@@ -7505,6 +7534,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel administratora do zarządzania użytkownikami i subskrypcją"
+      ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
       ],
       "Team policies": [
         "Zasady zespołu"
@@ -7637,6 +7669,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Payments.Sepa": {
@@ -8573,6 +8610,29 @@
         "Za ${ totalPrice }"
       ]
     },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } niestandardowa domena",
+        "${ planNumberOfDomains } niestandardowe domeny",
+        "${ planNumberOfDomains } niestandardowych domen",
+        "${ planNumberOfDomains } niestandardowych domen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adres e-mail",
+        "${ planNumberOfEmails } adresy e-mail",
+        "${ planNumberOfEmails } adresów e-mail",
+        "${ planNumberOfEmails } adresów e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Foldery, etykiety i filtry niestandardowe"
+      ]
+    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB przestrzeni dyskowej"
@@ -8612,29 +8672,6 @@
       ],
       "Your privacy is our mission": [
         "Prywatność to nasza misja"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } niestandardowa domena",
-        "${ planNumberOfDomains } niestandardowe domeny",
-        "${ planNumberOfDomains } niestandardowych domen",
-        "${ planNumberOfDomains } niestandardowych domen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adres e-mail",
-        "${ planNumberOfEmails } adresy e-mail",
-        "${ planNumberOfEmails } adresów e-mail",
-        "${ planNumberOfEmails } adresów e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Foldery, etykiety i filtry niestandardowe"
       ]
     },
     "Subscription renewal state": {
@@ -9401,6 +9438,11 @@
         "Dzisiaj"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Dodaj udostępniony plik do ${ DRIVE_APP_NAME }, aby mieć do niego łatwy dostęp."
@@ -9476,11 +9518,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wysłaliśmy zaproszenie do elementu."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Valentine_2025": {
