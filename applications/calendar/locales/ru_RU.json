@@ -6493,6 +6493,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Добавить помощника по написанию ${ BRAND_NAME } Scribe"
       ],
@@ -7230,9 +7233,6 @@
       ],
       "SMTP submission": [
         "Отправки через SMTP"
-      ],
-      "SMTP submission for select organizations": [
-        "Отправка по SMTP для отдельных организаций"
       ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
@@ -8241,6 +8241,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Панель администратора для управления пользователями и подпиской"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
       ],
       "Team policies": [
         "Политики команды"
