@@ -27,9 +27,9 @@ export const VaultPlaceholder: FC = () => {
     const hasSearch = Boolean(search.trim());
     const showUpgrade = isOwnedReadOnly && totalCount === 0 && didDowngrade;
 
-    /** May only happen if the organization doesn't allow vault creation and default vault is not automatically created */
+    /** May only happen if the organization doesn't allow vault creation
+     * and default vault is not automatically created */
     const hasNoVault = useSelector(selectAllVaults).length === 0;
-
     if (hasNoVault) return <NoVaultPlaceholder />;
 
     if (showUpgrade) {
