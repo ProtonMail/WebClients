@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import CycleSelector from '@proton/components/containers/payments/CycleSelector';
 import { CYCLE } from '@proton/payments';
+import { type Cycle } from '@proton/shared/lib/interfaces';
 
 import type { OfferProps } from '../../../interface';
 import Deal from './Deal';
@@ -29,7 +30,7 @@ const DealsWithCycleSelector = (props: OfferProps) => {
                 <CycleSelector
                     mode="buttons"
                     cycle={cycle}
-                    onSelect={setCycle}
+                    onSelect={(newCycle) => setCycle(newCycle as Cycle)}
                     options={[
                         { text: c('summer2023: Billing cycle option').t`1 year`, value: CYCLE.YEARLY },
                         { text: c('summer2023: Billing cycle option').t`2 years`, value: CYCLE.TWO_YEARS },
