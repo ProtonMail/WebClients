@@ -11,6 +11,8 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import './UserDropdownButton.scss';
+
 export interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;
     className?: string;
