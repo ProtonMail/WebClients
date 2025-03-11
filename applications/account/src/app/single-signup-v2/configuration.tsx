@@ -44,11 +44,7 @@ import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
 import bundleVpnPass from './bundle-vpn-pass.svg';
 import bundle from './bundle.svg';
-import {
-    getCustomPassFamilyFeatures,
-    getCustomPassFeatures,
-    getCustomPassLifetimeFeatures,
-} from './pass/configuration';
+import { getCustomPassFamilyFeatures, getCustomPassFeatures } from './pass/configuration';
 
 export type SummaryPlan =
     | {
@@ -64,10 +60,12 @@ export const getSummaryPlan = ({
     plan,
     vpnServersCountData,
     freePlan,
+    existingUser,
 }: {
     plan: Plan | undefined;
     vpnServersCountData: VPNServersCountData;
     freePlan: FreePlanDefault;
+    existingUser: boolean;
 }): SummaryPlan => {
     const iconSize: IconSize = 6;
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
@@ -98,7 +96,8 @@ export const getSummaryPlan = ({
             logo: <PassLogo variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
-            features: getCustomPassLifetimeFeatures(),
+            // product requirement to hide the benefits for the new users. They are displayed in another card during the signup.
+            features: existingUser ? getCustomPassFeatures({ isLifetime: true }) : [],
             isLifetime: true,
         };
     }

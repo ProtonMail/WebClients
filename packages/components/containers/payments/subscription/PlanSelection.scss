@@ -160,6 +160,14 @@
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
+
+	&--one-plan-narrow {
+		@include media('>=large') {
+			.plan-selection-plan:first-child {
+				grid-column-start: 2;
+			}
+		}
+	}
 }
 
 .subscriptionCheckout {

@@ -13,12 +13,15 @@ import {
     getDevicesAndAliases,
     getLoginsAndNotes,
     getLoginsAndNotesText,
+    getPassMonitorText,
     getPassUsers,
     getPassUsersText,
     getSecureSharingText,
     getSecureVaultSharing,
+    getSecureVaultSharingText,
     getTeamPoliciesText,
     getUnlimitedHideMyEmailAliasesText,
+    getUnlimitedLoginsAndNotesText,
     getVaultSharing,
 } from '@proton/components/containers/payments/features/pass';
 import {
@@ -169,6 +172,76 @@ const getEncryptionBenefit = (): BenefitItem => {
     };
 };
 
+const getCustomDomainForAliasesBenefit = (): BenefitItem => {
+    return {
+        key: `custom-domain-for-aliases`,
+        text: c('pass_signup_2024: Info').t`Your custom domain for aliases`,
+        icon: {
+            name: 'brand-simple-login',
+        },
+    };
+};
+
+const getAdditionalMailboxesForAliasesBenefit = (): BenefitItem => {
+    return {
+        key: `additional-mailboxes-for-aliases`,
+        text: c('pass_signup_2024: Info').t`Additional mailboxes for aliases`,
+        icon: {
+            name: 'envelope',
+        },
+    };
+};
+
+const getFileAttachmentsBenefit = (): BenefitItem => {
+    return {
+        key: `file-attachments`,
+        text: c('pass_signup_2024: Info').t`File attachments (coming soon)`,
+        icon: {
+            name: 'file-pdf',
+        },
+    };
+};
+
+export const getUnlimitedLoginsAndNotesBenefit = (): BenefitItem => {
+    return {
+        key: `unlimited-passwords`,
+        text: getUnlimitedLoginsAndNotesText(),
+        icon: {
+            name: 'key',
+        },
+    };
+};
+
+export const getHideMyEmailAliasesBenefit = (): BenefitItem => {
+    return {
+        key: `hide-my-email-aliases`,
+        text: getUnlimitedHideMyEmailAliasesText(),
+        icon: {
+            name: 'alias',
+        },
+    };
+};
+
+export const getSecureVaultSharingBenefit = (): BenefitItem => {
+    return {
+        key: `secure-vault-sharing`,
+        text: getSecureVaultSharingText(),
+        icon: {
+            name: 'lock',
+        },
+    };
+};
+
+export const getPassMonitorBenefit = (): BenefitItem => {
+    return {
+        key: `pass-monitor`,
+        text: getPassMonitorText(),
+        icon: {
+            name: 'lock',
+        },
+    };
+};
+
 const getAdvancedAliasBenefit = (): BenefitItem => {
     return {
         key: `advanced-alias`,
@@ -303,19 +376,17 @@ export const getPassBenefits = (
     if (isPaidPass) {
         return [
             getWorksOnAllDevicesBenefit(),
-            getAliasesBenefit(),
-            getAdvancedAliasBenefit(),
-            getSecureLinkAndVaultSharingBenefit(),
+            getUnlimitedLoginsAndNotesBenefit(),
+            getHideMyEmailAliasesBenefit(),
             get2FABenefit(),
-            {
-                key: 'alerts-for-compromised-emails-and-vulnerable-passwords',
-                text: c('pass_signup_2023: Info').t`Alerts for compromised emails and vulnerable passwords`,
-                icon: {
-                    name: 'shield' as const,
-                },
-            },
+            getSecureVaultSharingBenefit(),
+            getPassMonitorBenefit(),
             getPasskeysBenefit(),
             getEncryptionBenefit(),
+            getCustomDomainForAliasesBenefit(),
+            getAdditionalMailboxesForAliasesBenefit(),
+            getFileAttachmentsBenefit(),
+            getAdvancedAliasBenefit(),
         ];
     }
 
@@ -332,28 +403,24 @@ export const getFreePassFeatures = () => {
     return [getPassUsers(1), getLoginsAndNotes('free'), getDevices(), getPassKeys(true), getSecureVaultSharing()];
 };
 
-export const getCustomPassFeatures = () => {
+export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } = {}) => {
     return [
-        getPassUsers(1),
+        isLifetime
+            ? {
+                  key: 'pass-lifetime-one-time-payment',
+                  text: c('pass_signup_2024: Info').t`One-time payment, lifetime deal`,
+                  included: true,
+              }
+            : null,
+        isLifetime ? null : getPassUsers(1),
         getLoginsAndNotes('paid'),
+        get2FAAuthenticator(true),
         getDevicesAndAliases(),
         getAdvancedAliasFeatures(true),
         getPassKeys(true),
         getSecureVaultSharing(true),
         getPassMonitor(true),
-        get2FAAuthenticator(true),
-    ];
-};
-
-export const getCustomPassLifetimeFeatures = () => {
-    return [
-        {
-            key: 'pass-lifetime-one-time-payment',
-            text: c('pass_signup_2024: Info').t`One-time payment, lifetime deal`,
-            included: true,
-        },
-        ...getCustomPassFeatures(),
-    ];
+    ].filter(isTruthy);
 };
 
 export const getCustomPassFamilyFeatures = () => {
