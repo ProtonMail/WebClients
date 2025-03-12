@@ -945,7 +945,8 @@ const Step1 = ({
                             </BoxContent>
                         </Box>
 
-                        {app === APPS.PROTONPASS &&
+                        {!model.loadingDependencies &&
+                            app === APPS.PROTONPASS &&
                             audience === Audience.B2C &&
                             signupParameters.preSelectedPlan !== PLANS.PASS_LIFETIME && (
                                 <PassLifetimeSpecialOffer
