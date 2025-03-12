@@ -138,20 +138,25 @@ export const PhotosCard: FC<Props> = ({
                     c('Info').t`Select item`
                 }
             ></Checkbox>
-
-            <Tooltip title={isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`}>
-                <button
-                    type="button"
-                    className="absolute top-0 right-0 mr-2 mt-2 scale-fade-in photos-card-favorite-button"
-                    aria-pressed={isFavorite}
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        setisFavorite(!isFavorite); // TO DO, really put it in favorite
-                    }}
-                >
-                    <Icon name={isFavorite ? 'heart-filled' : 'heart'} size={5} alt={c('Action').t`Mark as favorite`} />
-                </button>
-            </Tooltip>
+            {!showCheckbox && (
+                <Tooltip title={isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`}>
+                    <button
+                        type="button"
+                        className="absolute top-0 right-0 mr-2 mt-2 scale-fade-in photos-card-favorite-button"
+                        aria-pressed={isFavorite}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setisFavorite(!isFavorite); // TO DO, really put it in favorite
+                        }}
+                    >
+                        <Icon
+                            name={isFavorite ? 'heart-filled' : 'heart'}
+                            size={5}
+                            alt={c('Action').t`Mark as favorite`}
+                        />
+                    </button>
+                </Tooltip>
+            )}
 
             {isLoaded ? (
                 <div className="w-full h-full relative">

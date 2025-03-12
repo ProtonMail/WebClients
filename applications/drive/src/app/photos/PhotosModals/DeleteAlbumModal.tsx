@@ -14,8 +14,6 @@ import {
 import useLoading from '@proton/hooks/useLoading';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { sendErrorReport } from '../../utils/errorHandling';
-
 export const DeleteAlbumModal = ({
     missingPhotosCount,
     deleteAlbum,
@@ -55,8 +53,6 @@ export const DeleteAlbumModal = ({
             ) {
                 setChildLinkIds(error.data.Details?.ChildLinkIDs);
             } else {
-                sendErrorReport(e);
-                onDeleted?.();
                 modalProps.onClose();
             }
         }
