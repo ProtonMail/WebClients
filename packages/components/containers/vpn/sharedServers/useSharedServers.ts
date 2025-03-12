@@ -24,6 +24,7 @@ export interface SharedServerLocation {
 export interface SharedServerUser {
     UserID: number;
     Name: string;
+    Email: string;
 }
 
 export interface SharedServerGroup {
