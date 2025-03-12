@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import type { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
 import type {
+    OnFileSkippedSuccessCallbackData,
     OnFileUploadSuccessCallbackData,
     OnFolderUploadSuccessCallbackData,
     TransferConflictStrategy,
@@ -34,6 +35,7 @@ export interface FileUpload extends LinkUpload {
     originalIsFolder?: boolean;
     callbacks: {
         onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+        onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     };
 }
 
