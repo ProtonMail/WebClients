@@ -12,6 +12,7 @@ import {
     querySharedWithMeAlbums,
     queryUpdateAlbumCover,
 } from '@proton/shared/lib/api/drive/photos';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
@@ -217,7 +218,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             setIsAlbumPhotosLoading(true);
             void albumPhotosCall();
         },
-        [request, currentAlbumLinkId, volumeId]
+        [request, currentAlbumLinkId, volumeId, shareId]
     );
 
     const loadAlbums = useCallback(
@@ -275,7 +276,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
             return albumCall();
         },
-        [getLink, request, shareId, volumeId, albums]
+        [getLink, request, shareId, volumeId]
     );
 
     const loadSharedWithMeAlbums = useCallback(
@@ -337,7 +338,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
             return sharedWithMeCall();
         },
-        [getLink, request, shareId, volumeId, albums]
+        [getLink, request, shareId, volumeId]
     );
 
     const addAlbumPhotos = useCallback(
@@ -395,7 +396,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     throw new Error('Photo(s) could not be added to album');
                 }
                 for (const { Response } of Responses) {
-                    if (Response.Code !== 1000) {
+                    if (Response.Code !== 1000 && Response.Code !== API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
                         throw new Error(`Photo(s) could not be added to album: ${Response.Error || 'unknown'}`);
                     }
                 }
