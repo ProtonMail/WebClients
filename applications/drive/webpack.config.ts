@@ -72,6 +72,23 @@ const result = (env: any): webpack.Configuration => {
         };
     }
 
+    if (config.module?.rules) {
+        config.module?.rules.push({
+            test: /\.wasm$/,
+            type: 'webassembly/async',
+        });
+    }
+
+    // Suppress the warning "Critical dependency: require function is used
+    // in a way in which dependencies cannot be statically extracted" when
+    // Upstream issue, which currently doesn't have a workaround.
+    // https://github.com/catdad-experiments/libheif-js/issues/23
+    if (!config.ignoreWarnings) {
+        config.ignoreWarnings = [{ module: /libheif-js/ }];
+    } else if (Array.isArray(config.ignoreWarnings)) {
+        config.ignoreWarnings.push({ module: /libheif-js/ });
+    }
+
     return {
         ...config,
         resolve: {
@@ -89,6 +106,9 @@ const result = (env: any): webpack.Configuration => {
                 Buffer: [require.resolve('buffer'), 'Buffer'],
             }),
         ],
+        experiments: {
+            asyncWebAssembly: true,
+        },
     };
 };
 
