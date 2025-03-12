@@ -25,6 +25,14 @@ export const getAutoSelectFromCountries = (numberOfCountries: number) => {
     );
 };
 
+export const getSelectFromNCountries = (numberOfCountries: number) => {
+    return c('VPN Plan Feature').ngettext(
+        msgid`Servers in ${numberOfCountries}+ country`,
+        `Servers in ${numberOfCountries}+ countries`,
+        numberOfCountries
+    );
+};
+
 export const getServersIn = (numberOfServers: string, numberOfCountries: number) => {
     // translator: numberOfServers is a string that looks like `1300+ servers`, It has been pluralized earlier.
     return c('VPN Plan Feature').ngettext(
