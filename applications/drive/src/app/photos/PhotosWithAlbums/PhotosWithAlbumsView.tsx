@@ -4,6 +4,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Loader, NavigationControl, TopBanner, useAppTitle, useModalStateObject } from '@proton/components';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
@@ -265,7 +266,7 @@ export const PhotosWithAlbumsView: FC = () => {
                 {!isPhotosEmpty && (
                     <PhotosTags
                         selectedTags={selectedTags}
-                        tags={photoTags}
+                        tags={[PhotoTag.All, ...photoTags]}
                         onTagSelect={(newTags) => handleSelectTag(new AbortController().signal, newTags)}
                     />
                 )}
