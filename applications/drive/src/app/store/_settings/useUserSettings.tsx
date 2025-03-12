@@ -5,7 +5,7 @@ import { useApi, useDrivePlan } from '@proton/components';
 import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type {
     LayoutSetting,
     RevisionRetentionDaysSetting,
@@ -58,20 +58,6 @@ export function UserSettingsProvider({
             }
             return {
                 ...settings,
-                // TODO: Remove when BE will implement PhotoTags settings property
-                PhotoTags: [
-                    PhotoTag.All,
-                    PhotoTag.Favorites,
-                    PhotoTag.Screenshots,
-                    PhotoTag.Videos,
-                    PhotoTag.LivePhotos,
-                    PhotoTag.MotionPhotos,
-                    PhotoTag.Selfies,
-                    PhotoTag.Portraits,
-                    PhotoTag.Bursts,
-                    PhotoTag.Panoramas,
-                    PhotoTag.Raw,
-                ],
                 [key]:
                     value ??
                     (Defaults[key as keyof UserSettingsResponse['Defaults']] ||
