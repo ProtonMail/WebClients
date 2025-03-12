@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -26,6 +26,10 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
         Status: userPartstat,
         Comment: userComment,
     });
+
+    useEffect(() => {
+        console.log('partstat changed', userPartstat);
+    }, [userPartstat]);
 
     const handleResponse = (status: ICAL_ATTENDEE_STATUS) => {
         if (isExpanded) {
@@ -82,6 +86,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                             retryCreateEvent: () => wait(0),
                             retryUpdateEvent: () => wait(0),
                         }}
+                        originalPatstat={userPartstat}
                         partstat={model.Status}
                         disabled={disabled}
                     />
