@@ -95,7 +95,6 @@ const MembersStep = ({
                     <TableBody>
                         {filteredUsers.map((user) => {
                             const checked = selectedUsers.some((selectedUser) => selectedUser.UserID === user.UserID);
-                            // TODO add email
                             const initials = getInitials(user.Name || '');
 
                             return (
@@ -115,6 +114,7 @@ const MembersStep = ({
                                             </span>
                                             <div className="flex flex-column">
                                                 <span>{user.Name}</span>
+                                                <span className="text-sm color-weak">{user.Email}</span>
                                             </div>
                                         </div>
                                     </TableCell>
