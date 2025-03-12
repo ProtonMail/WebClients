@@ -15,4 +15,8 @@ declare global {
     interface Window {
         ctxBridge?: ContextBridgeApi;
     }
+
+    interface PublicKeyCredentialCreationOptions {
+        hints?: ('client-device' | 'security-key' | 'hybrid')[];
+    }
 }
