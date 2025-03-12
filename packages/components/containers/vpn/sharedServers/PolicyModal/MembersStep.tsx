@@ -24,6 +24,7 @@ interface SharedServersMembersStepProps {
     selectedGroups: SharedServerGroup[];
     onSelectUser: (user: SharedServerUser) => void;
     onSelectGroup: (group: SharedServerGroup) => void;
+    onSelectAll: () => void;
     applyPolicyTo: 'users' | 'groups';
     onChangeApplyPolicyTo: (val: 'users' | 'groups') => void;
 }
@@ -37,6 +38,7 @@ const MembersStep = ({
     selectedGroups,
     onSelectUser,
     onSelectGroup,
+    onSelectAll,
     applyPolicyTo,
     onChangeApplyPolicyTo,
 }: SharedServersMembersStepProps) => {
@@ -93,6 +95,17 @@ const MembersStep = ({
             {applyPolicyTo === 'users' && (
                 <Table responsive="stacked" hasActions>
                     <TableBody>
+                        <TableRow>
+                            <TableCell>
+                                <div className="flex gap-4 w-full items-center">
+                                    <Checkbox checked={users.length <= selectedUsers.length} onChange={onSelectAll} />
+                                    <span className="text-bold">Users</span>
+                                    {selectedUsers.length > 0 && (
+                                        <span className="text-sm color-weak">{selectedUsers.length} selected</span>
+                                    )}
+                                </div>
+                            </TableCell>
+                        </TableRow>
                         {filteredUsers.map((user) => {
                             const checked = selectedUsers.some((selectedUser) => selectedUser.UserID === user.UserID);
                             const initials = getInitials(user.Name || '');

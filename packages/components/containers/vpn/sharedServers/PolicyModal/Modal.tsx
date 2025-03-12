@@ -231,6 +231,11 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
                         selectedUsers={selectedUsers}
                         groups={groups}
                         selectedGroups={selectedGroups}
+                        onSelectAll={() => {
+                            setSelectedUsers((previouslySelectedUsers) =>
+                                previouslySelectedUsers.length < users.length ? [...users] : []
+                            );
+                        }}
                         onSelectUser={(user) => {
                             setSelectedUsers((previouslySelectedUsers) => {
                                 const exists = previouslySelectedUsers.some((u) => u.UserID === user.UserID);
