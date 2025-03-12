@@ -9,6 +9,7 @@ import { isRAWExtension, isRAWPhoto, isSVG, isVideo } from '@proton/shared/lib/h
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import { mimetypeFromExtension } from '../_uploads/mimeTypeParser/helpers';
+import { detectPortraitFromMakerNote, detectSelfieFromMakerNote, isAppleMakerNote } from './appleMakerNote';
 import { convertSubjectAreaToSubjectCoordinates, formatExifDateTime } from './utils';
 
 // For usage inside Web Workers, since DOMParser is not available
@@ -116,14 +117,17 @@ export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({
         : undefined,
 });
 
-// TODO: Complete tags assignment for IOS and Windows
+// TODO: Complete tags assignment
 export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<PhotoTag[]> => {
-    // Enable to debug XMP data: console.log('exifInfo', JSON.stringify(exifInfo.xmp));
+    // Enable to debug XMP data:
+    // console.log('exifInfo', JSON.stringify(exifInfo.exif));
 
     const tags: PhotoTag[] = [];
     if (!exifInfo || !exifInfo.xmp) {
         return tags;
     }
+
+    const appleMakerNote = isAppleMakerNote(exifInfo.exif?.MakerNote);
 
     // Tested:
     // MacOS screenshots and IOS screenshots is inside XMP metadata
@@ -148,8 +152,8 @@ export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<
     }
 
     // Tested: Android
-    // Untested: IOS & other cameras
-    if (
+    // Untested: IOS
+    const isAndroidPortrait =
         exifInfo.xmp.SpecialTypeID &&
         exifInfo.xmp.SpecialTypeID.value &&
         (exifInfo.xmp.SpecialTypeID.value ===
@@ -157,12 +161,17 @@ export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<
             (Array.isArray(exifInfo.xmp.SpecialTypeID.value) &&
                 exifInfo.xmp.SpecialTypeID.value.some(
                     (v) => v.value === 'com.google.android.apps.camera.gallery.specialtype.SpecialType-PORTRAIT'
-                )))
-    ) {
+                )));
+
+    if (isAndroidPortrait || (appleMakerNote && detectPortraitFromMakerNote(appleMakerNote))) {
         tags.push(PhotoTag.Portraits);
     }
 
-    // TODO: Selfie tag
+    // Tested: IOS Selfies
+    // Untested: Android Selfies
+    if (appleMakerNote && detectSelfieFromMakerNote(appleMakerNote)) {
+        tags.push(PhotoTag.Selfies);
+    }
 
     const extension = file.name.split('.').pop();
     if (isRAWPhoto(file.type) || isRAWExtension(extension)) {
