@@ -3,7 +3,14 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Loader, NavigationControl, TopBanner, useAppTitle, useModalStateObject } from '@proton/components';
+import {
+    Loader,
+    NavigationControl,
+    TopBanner,
+    useAppTitle,
+    useModalStateObject,
+    useNotifications,
+} from '@proton/components';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash';
@@ -68,6 +75,7 @@ export const PhotosWithAlbumsView: FC = () => {
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
+    const { createNotification } = useNotifications();
     const { navigateToAlbum, navigateToAlbums, navigateToPhotos } = useNavigate();
 
     const handleItemRender = useCallback(
@@ -126,11 +134,14 @@ export const PhotosWithAlbumsView: FC = () => {
                 await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
                 navigateToAlbum(shareId, albumLinkId);
             } catch (e) {
+                if (e instanceof Error && e.message) {
+                    createNotification({ text: e.message, type: 'error' });
+                }
                 sendErrorReport(e);
                 console.error('photos addition failed', e);
             }
         },
-        [shareId, linkId, createAlbum, navigateToAlbum]
+        [volumeId, shareId, linkId, navigateToAlbum, addAlbumPhotos]
     );
 
     const onCreateAlbumWithPhotos = useCallback(
@@ -144,11 +155,14 @@ export const PhotosWithAlbumsView: FC = () => {
                 await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
                 navigateToAlbum(shareId, albumLinkId);
             } catch (e) {
+                if (e instanceof Error && e.message) {
+                    createNotification({ text: e.message, type: 'error' });
+                }
                 sendErrorReport(e);
                 console.error('album creation failed', e);
             }
         },
-        [shareId, linkId, createAlbum, navigateToAlbum]
+        [volumeId, shareId, linkId, createAlbum, navigateToAlbum, addAlbumPhotos]
     );
 
     // We want to show the view in case they are more page to load, we can start to show what we already have
