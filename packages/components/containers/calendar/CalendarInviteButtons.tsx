@@ -23,6 +23,7 @@ import { useCalendarERRTetric } from './metrics/useCalendarERRTMetric';
 
 interface Props {
     actions: PartstatActions;
+    originalPatstat?: ICAL_ATTENDEE_STATUS;
     partstat?: ICAL_ATTENDEE_STATUS;
     disabled?: boolean;
     className?: string;
@@ -36,6 +37,7 @@ enum ATTENDEE_RESPONE_TYPE {
 
 const CalendarInviteButtons = ({
     actions,
+    originalPatstat,
     partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
     disabled,
     className = '',
@@ -63,6 +65,7 @@ const CalendarInviteButtons = ({
     const [selectedAnswer, setSelectedAnswer] = useState(responseTypeMap[partstat]);
 
     useEffect(() => {
+        console.log('temp partstat', partstat);
         setSelectedAnswer(responseTypeMap[partstat]);
     }, [partstat]);
 
@@ -129,18 +132,15 @@ const CalendarInviteButtons = ({
     const { text } = list.find((ans) => ans.isSelected) || list[0];
     const restList = list.filter((ans) => !ans.isSelected);
 
-    useEffect(() => {
-        console.log('partstat changed', partstat);
-    }, [partstat]);
-
-    if (partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
+    if (originalPatstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
         return (
-            <ButtonGroup className={className}>
+            <ButtonGroup className={className} color="weak">
                 <Button
                     onClick={onAccept}
                     disabled={loadingAnswer || disabled}
                     loading={isCalendarApp ? false : loadingAccept}
                     title={acceptText}
+                    selected={selectedAnswer === ATTENDEE_RESPONE_TYPE.ACCEPTED}
                 >
                     {c('Action').t`Yes`}
                 </Button>
@@ -149,6 +149,7 @@ const CalendarInviteButtons = ({
                     disabled={loadingAnswer || disabled}
                     loading={isCalendarApp ? false : loadingTentative}
                     title={tentativeText}
+                    selected={selectedAnswer === ATTENDEE_RESPONE_TYPE.TENTATIVE}
                 >
                     {c('Action').t`Maybe`}
                 </Button>
@@ -157,6 +158,7 @@ const CalendarInviteButtons = ({
                     disabled={loadingAnswer || disabled}
                     loading={isCalendarApp ? false : loadingDecline}
                     title={declineText}
+                    selected={selectedAnswer === ATTENDEE_RESPONE_TYPE.DECLINED}
                 >
                     {c('Action').t`No`}
                 </Button>
