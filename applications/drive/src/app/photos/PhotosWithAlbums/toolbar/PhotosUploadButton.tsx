@@ -7,18 +7,24 @@ import { Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
-import { type OnFileUploadSuccessCallbackData, useFileUploadInput } from '../../../store';
+import {
+    type OnFileSkippedSuccessCallbackData,
+    type OnFileUploadSuccessCallbackData,
+    useFileUploadInput,
+} from '../../../store';
 
 interface PhotosUploadButtonProps {
     shareId: string;
     linkId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     type?: 'toolbar' | 'norm';
 }
 export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
     shareId,
     linkId,
     onFileUpload,
+    onFileSkipped,
     type = 'toolbar',
 }) => {
     const { inputRef: fileInput, handleClick, handleChange } = useFileUploadInput(shareId, linkId, true);
@@ -33,7 +39,7 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
                 ref={fileInput}
                 className="hidden"
                 onChange={(e) => {
-                    handleChange(e, onFileUpload);
+                    handleChange(e, onFileUpload, onFileSkipped);
                 }}
                 accept={PHOTOS_ACCEPTED_INPUT}
             />
