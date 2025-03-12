@@ -160,7 +160,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     await addAlbumPhoto(abortSignal, albumShareId, file.fileId);
                 }
             } catch (e) {
-                if (e instanceof Error) {
+                if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
                 }
                 sendErrorReport(e);
@@ -176,7 +176,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 await setPhotoAsCover(abortSignal, linkId);
                 createNotification({ text: c('Info').t`Photo is set as album cover` });
             } catch (e) {
-                if (e instanceof Error) {
+                if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
                 }
                 sendErrorReport(e);
@@ -236,10 +236,13 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     ),
                 });
             } catch (e) {
+                if (e instanceof Error && e.message) {
+                    createNotification({ text: e.message, type: 'error' });
+                }
                 sendErrorReport(e);
             }
         },
-        [albumShareId, linkId, moveLinks, removeAlbumPhotos, albumLinkId, createNotification]
+        [albumShareId, linkId, moveLinks, removeAlbumPhotos, albumLinkId]
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {
@@ -282,20 +285,27 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             if (!albumShareId || !linkId || !albumName || !albumLinkId) {
                 return;
             }
-            if (missingPhotosIds.length && !force) {
-                await moveLinks(abortSignal, {
-                    shareId: albumShareId,
-                    linkIds: missingPhotosIds,
-                    newShareId: shareId,
-                    newParentLinkId: linkId,
-                });
+            try {
+                if (missingPhotosIds.length && !force) {
+                    await moveLinks(abortSignal, {
+                        shareId: albumShareId,
+                        linkIds: missingPhotosIds,
+                        newShareId: shareId,
+                        newParentLinkId: linkId,
+                    });
+                }
+                await deleteAlbum(abortSignal, albumLinkId, force);
+            } catch (e) {
+                if (e instanceof Error && e.message) {
+                    createNotification({ text: e.message, type: 'error' });
+                }
+                sendErrorReport(e);
             }
-            await deleteAlbum(abortSignal, albumLinkId, force);
             createNotification({
                 text: c('Info').t`${albumName} has been successfully deleted`,
             });
         },
-        [albumShareId, linkId, moveLinks, deleteAlbum, albumLinkId, createNotification, albumName]
+        [albumShareId, linkId, shareId, moveLinks, deleteAlbum, albumLinkId, albumName]
     );
 
     // For delete album we do the happy path and just compare with photos you have in cache.

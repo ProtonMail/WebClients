@@ -316,7 +316,7 @@ export const usePhotosWithAlbumsView = () => {
             const abortController = new AbortController();
             void loadAlbumPhotos(abortController.signal, albumShareId, albumLinkId);
         },
-        [volumeId, shareId, loadAlbumPhotos]
+        [volumeId, shareId, albumShareId, loadAlbumPhotos]
     );
 
     const refreshPhotos = () => {
