@@ -117,6 +117,7 @@ export default function useUploadHelper() {
         filename: string;
         hash: string;
         draftLinkId?: string;
+        duplicateLinkId?: string;
         clientUid?: string;
         isDuplicatePhotos?: boolean;
     }> => {
@@ -170,6 +171,7 @@ export default function useUploadHelper() {
                 filename: file.name,
                 hash,
                 isDuplicatePhotos: true,
+                duplicateLinkId: duplicatePhotoHashActive.LinkID,
             };
         }
 

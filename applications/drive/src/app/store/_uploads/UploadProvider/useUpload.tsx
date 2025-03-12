@@ -10,7 +10,7 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
-import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
+import { TransferCancel, TransferSkipped, TransferState } from '../../../components/TransferManager/transfer';
 import type { FileThresholdModalType } from '../../../components/modals/FileThresholdModal';
 import { useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -30,6 +30,7 @@ import { useTransferLog } from '../../_transfer';
 import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import type {
+    OnFileSkippedSuccessCallbackData,
     OnFileUploadSuccessCallbackData,
     OnFolderUploadSuccessCallbackData,
     UploadFileControls,
@@ -135,6 +136,7 @@ function useBaseUpload(
         list: UploadFileList,
         isForPhotos: boolean = false,
         onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void,
+        onFileSkipped?: (folder: OnFileSkippedSuccessCallbackData) => void,
         onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
     ) => {
         const total = getTotalFileList(list);
@@ -169,7 +171,7 @@ function useBaseUpload(
         }
 
         await queue
-            .add(shareId, parentId, list, isForPhotos, isSharedWithMe, onFileUpload, onFolderUpload)
+            .add(shareId, parentId, list, isForPhotos, isSharedWithMe, onFileUpload, onFileSkipped, onFolderUpload)
             .catch((err: any) => {
                 const errors = Array.isArray(err) ? err : [err];
                 errors.forEach((err) => {
@@ -312,8 +314,12 @@ function useBaseUpload(
                         );
                     } else if (isTransferSkipError(error)) {
                         queue.updateWithData(nextFileUpload.id, TransferState.Skipped, { error });
-                        // TODO: onFileSkipped callback
-                        // nextFileUpload.callbacks.onFileSkipped?.();
+                        if (error instanceof TransferSkipped && error.file && error.duplicateLinkId) {
+                            nextFileUpload.callbacks.onFileSkipped?.({
+                                fileId: error.duplicateLinkId,
+                                fileName: error.file.name,
+                            });
+                        }
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         sendErrorReport(error);
