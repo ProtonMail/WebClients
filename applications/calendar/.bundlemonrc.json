@@ -2,6 +2,12 @@
     "baseDir": "../../applications/calendar",
     "files": [
         {
+            "path": "dist/assets/static/*.<hash>.css"
+        },
+        {
+            "path": "dist/assets/static/*.<hash>.ltr.css"
+        },
+        {
             "path": "dist/assets/static/*.<hash>.chunk.js"
         },
         {
