@@ -18,8 +18,7 @@ import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectAccess, selectPassPlan } from '@proton/pass/store/selectors';
-import type { Maybe, UniqueItem } from '@proton/pass/types';
-import { ShareRole } from '@proton/pass/types';
+import type { UniqueItem } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -104,16 +103,12 @@ export const VaultMenuItem = memo(
                       })
                 : handleClickEvent(onInvite);
 
-        const shareButton = ((): Maybe<ShareButtonProps> => {
-            if (!canManage) return;
-
-            const opensInvite = !vault.shared && canInvite;
+        const shareButton = ((): ShareButtonProps => {
+            const opensInvite = !vault.shared;
 
             const label = (() => {
                 if (opensInvite) return c('Action').t`Share`;
-                return vault.shareRoleId === ShareRole.ADMIN
-                    ? c('Action').t`Manage access`
-                    : c('Action').t`See members`;
+                return canManage ? c('Action').t`Manage access` : c('Action').t`See members`;
             })();
 
             const icon = opensInvite ? 'user-plus' : 'users';
@@ -139,38 +134,36 @@ export const VaultMenuItem = memo(
                 )}
                 className={clsx((selected || dragOver) && 'is-selected', 'pl-2 pr-2', 'group-hover-opacity-container')}
                 extra={
-                    shareButton && (
-                        <ButtonLike
-                            as="div"
-                            pill
-                            icon={vault.targetMembers <= 1}
-                            size="small"
-                            color="weak"
-                            onClick={shareButton.action}
-                            shape="solid"
-                            title={shareButton.label}
-                            className={clsx(
-                                !(selected || vault.targetMembers > 1) && 'group-hover:opacity-100',
-                                'relative mr-1'
-                            )}
-                            style={{ color: 'var(--text-weak)' }}
-                        >
-                            {notification && (
-                                <Icon
-                                    name="exclamation-circle-filled"
-                                    size={4}
-                                    className="absolute top-custom right-custom"
-                                    style={{
-                                        '--top-custom': '-1px',
-                                        '--right-custom': '-1px',
-                                        color: 'var(--signal-danger)',
-                                    }}
-                                />
-                            )}
-                            <Icon name={shareButton.icon} />
-                            {vault.targetMembers > 1 && <span className="text-sm ml-1">{vault.targetMembers}</span>}
-                        </ButtonLike>
-                    )
+                    <ButtonLike
+                        as="div"
+                        pill
+                        icon={vault.targetMembers <= 1}
+                        size="small"
+                        color="weak"
+                        onClick={shareButton.action}
+                        shape="solid"
+                        title={shareButton.label}
+                        className={clsx(
+                            !(selected || vault.targetMembers > 1) && 'group-hover:opacity-100',
+                            'relative mr-1'
+                        )}
+                        style={{ color: 'var(--text-weak)' }}
+                    >
+                        {notification && (
+                            <Icon
+                                name="exclamation-circle-filled"
+                                size={4}
+                                className="absolute top-custom right-custom"
+                                style={{
+                                    '--top-custom': '-1px',
+                                    '--right-custom': '-1px',
+                                    color: 'var(--signal-danger)',
+                                }}
+                            />
+                        )}
+                        <Icon name={shareButton.icon} />
+                        {vault.targetMembers > 1 && <span className="text-sm ml-1">{vault.targetMembers}</span>}
+                    </ButtonLike>
                 }
                 icon={
                     <VaultIcon
@@ -192,16 +185,12 @@ export const VaultMenuItem = memo(
                                   onClick={handleClickEvent(onEdit)}
                               />,
 
-                              canManage && vault.shared && (
+                              vault.shared && (
                                   <DropdownMenuButton
                                       key="vault-manage"
                                       className="flex items-center py-2 px-4"
                                       icon="users"
-                                      label={
-                                          vault.shareRoleId === ShareRole.ADMIN
-                                              ? c('Action').t`Manage access`
-                                              : c('Action').t`See members`
-                                      }
+                                      label={canManage ? c('Action').t`Manage access` : c('Action').t`See members`}
                                       onClick={handleClickEvent(onManage)}
                                   />
                               ),
