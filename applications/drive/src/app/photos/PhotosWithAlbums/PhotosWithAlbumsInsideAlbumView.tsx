@@ -402,6 +402,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 shareId={albumShareId}
                 parentLinkId={uploadLinkId}
                 onFileUpload={onPhotoUploadedToAlbum}
+                onFileSkipped={onPhotoUploadedToAlbum}
                 className="flex flex-column flex-nowrap flex-1"
             >
                 <ToolbarRow
@@ -451,6 +452,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             tabSelection={'albums-gallery'}
                             createAlbumModal={createAlbumModal}
                             onFileUpload={onPhotoUploadedToAlbum}
+                            onFileSkipped={onPhotoUploadedToAlbum}
                             removeAlbumPhotos={onRemoveAlbumPhotos}
                             onSelectCover={onSelectCoverToolbar}
                             onDeleteAlbum={onDeleteAlbum}
@@ -465,6 +467,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             shareId={albumShareId}
                             linkId={uploadLinkId}
                             onFileUpload={onPhotoUploadedToAlbum}
+                            onFileSkipped={onPhotoUploadedToAlbum}
                             album={album}
                             onShare={() => {
                                 showLinkSharingModal({ shareId: albumShareId, linkId });
@@ -480,6 +483,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             album={album}
                             shareId={albumShareId}
                             onFileUpload={onPhotoUploadedToAlbum}
+                            onFileSkipped={onPhotoUploadedToAlbum}
                             linkId={uploadLinkId}
                             onShare={() => {
                                 showLinkSharingModal({ shareId: albumShareId, linkId: album.linkId });

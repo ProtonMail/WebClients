@@ -7,7 +7,7 @@ import { Icon } from '@proton/components/index';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import type { OnFileUploadSuccessCallbackData } from '../../../store';
+import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData } from '../../../store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosUploadButton } from '../toolbar/PhotosUploadButton';
 
@@ -17,9 +17,17 @@ interface AlbumCoverHeaderProps {
     shareId: string;
     linkId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
 }
 
-export const AlbumCoverHeader = ({ album, shareId, linkId, onFileUpload, onShare }: AlbumCoverHeaderProps) => {
+export const AlbumCoverHeader = ({
+    album,
+    shareId,
+    linkId,
+    onFileUpload,
+    onFileSkipped,
+    onShare,
+}: AlbumCoverHeaderProps) => {
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
     }).format(fromUnixTime(album.createTime));
@@ -79,7 +87,13 @@ export const AlbumCoverHeader = ({ album, shareId, linkId, onFileUpload, onShare
                         {c('Action').t`Share`}
                     </Button>
 
-                    <PhotosUploadButton type="norm" shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />
+                    <PhotosUploadButton
+                        type="norm"
+                        shareId={shareId}
+                        linkId={linkId}
+                        onFileUpload={onFileUpload}
+                        onFileSkipped={onFileSkipped}
+                    />
                 </div>
             </div>
         </div>
