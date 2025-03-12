@@ -190,7 +190,7 @@ const SearchableSelect = <V extends any>({
                 ])}
             >
                 <div onKeyDown={handleDropdownContentKeyDown}>
-                    <div className="dropdown-search" ref={searchContainerRef}>
+                    <div className="dropdown-search z-up" ref={searchContainerRef}>
                         <SearchInput
                             onKeyDown={(e) => {
                                 if (searchValue) {
