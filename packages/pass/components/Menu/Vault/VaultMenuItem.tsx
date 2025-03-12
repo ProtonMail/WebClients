@@ -143,10 +143,7 @@ export const VaultMenuItem = memo(
                         onClick={shareButton.action}
                         shape="solid"
                         title={shareButton.label}
-                        className={clsx(
-                            !(selected || vault.targetMembers > 1) && 'group-hover:opacity-100',
-                            'relative mr-1'
-                        )}
+                        className={clsx(!(selected || vault.shared) && 'group-hover:opacity-100', 'relative mr-1')}
                         style={{ color: 'var(--text-weak)' }}
                     >
                         {notification && (
