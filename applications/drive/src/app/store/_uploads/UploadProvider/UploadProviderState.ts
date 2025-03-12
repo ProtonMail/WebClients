@@ -1,5 +1,10 @@
 import type { TransferProgresses } from '../../../components/TransferManager/transfer';
-import type { OnFileUploadSuccessCallbackData, OnFolderUploadSuccessCallbackData, UploadFileList } from '../interface';
+import type {
+    OnFileSkippedSuccessCallbackData,
+    OnFileUploadSuccessCallbackData,
+    OnFolderUploadSuccessCallbackData,
+    UploadFileList,
+} from '../interface';
 import type { FileUpload, FolderUpload, UpdateFilter } from './interface';
 
 export interface UploadProviderState {
@@ -11,6 +16,7 @@ export interface UploadProviderState {
         list: UploadFileList,
         isForPhotos?: boolean,
         onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void,
+        onFileSkipped?: (folder: OnFileSkippedSuccessCallbackData) => void,
         onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
     ) => Promise<void>;
     pauseUploads: (idOrFilter: UpdateFilter) => void;

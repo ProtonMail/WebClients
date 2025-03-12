@@ -331,14 +331,9 @@ export default function useUploadFile() {
                     filename: newName,
                     hash,
                     draftLinkId,
+                    duplicateLinkId,
                     clientUid,
                     isDuplicatePhotos = false,
-                }: {
-                    filename: string;
-                    hash: string;
-                    clientUid?: string;
-                    draftLinkId?: string;
-                    isDuplicatePhotos?: boolean;
                 } = await findDuplicateContentHash(abortSignal, {
                     file,
                     volumeId,
@@ -362,6 +357,8 @@ export default function useUploadFile() {
                 if (isDuplicatePhotos) {
                     throw new TransferSkipped({
                         message: c('Info').t`This item already exists in your library`,
+                        file,
+                        duplicateLinkId,
                     });
                 }
 
