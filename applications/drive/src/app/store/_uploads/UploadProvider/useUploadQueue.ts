@@ -13,6 +13,7 @@ import {
     isTransferPending,
 } from '../../../utils/transfer';
 import type {
+    OnFileSkippedSuccessCallbackData,
     OnFileUploadSuccessCallbackData,
     OnFolderUploadSuccessCallbackData,
     UploadFileItem,
@@ -84,6 +85,7 @@ export default function useUploadQueue(log: LogCallback) {
             isForPhotos: boolean = false,
             isSharedWithMe: boolean = false,
             onFileUpload?: (folder: OnFileUploadSuccessCallbackData) => void,
+            onFileSkipped?: (folder: OnFileSkippedSuccessCallbackData) => void,
             onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
         ): Promise<void> => {
             return new Promise((resolve, reject) => {
@@ -115,6 +117,7 @@ export default function useUploadQueue(log: LogCallback) {
                                     isForPhotos,
                                     isSharedWithMe,
                                     onFileUpload,
+                                    onFileSkipped,
                                     onFolderUpload
                                 );
                             } catch (err: any) {
@@ -338,6 +341,7 @@ export function addItemToQueue(
     isForPhotos: boolean = false,
     isSharedWithMe: boolean = false,
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void,
+    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void,
     onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
 ) {
     const name = (item as UploadFileItem).file ? (item as UploadFileItem).file.name : (item as UploadFolderItem).folder;
@@ -374,6 +378,7 @@ export function addItemToQueue(
             numberOfErrors: 0,
             callbacks: {
                 onFileUpload,
+                onFileSkipped,
             },
         });
         log(

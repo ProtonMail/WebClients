@@ -8,6 +8,7 @@ import { isImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { mimeTypeFromFile, useUpload } from '../../store/_uploads';
 import type {
+    OnFileSkippedSuccessCallbackData,
     OnFileUploadSuccessCallbackData,
     OnFolderUploadSuccessCallbackData,
     UploadFileList,
@@ -36,12 +37,14 @@ export const useFileDrop = ({
     parentLinkId,
     onFileUpload,
     onFolderUpload,
+    onFileSkipped,
 }: {
     isForPhotos?: boolean;
     shareId: string;
     parentLinkId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void;
+    onFileSkipped?: (folder: OnFileSkippedSuccessCallbackData) => void;
 }) => {
     const { createNotification } = useNotifications();
     const { uploadFiles } = useUpload();
@@ -177,13 +180,19 @@ export const useFileDrop = ({
                 console.error(errors);
             }
 
-            uploadFiles(shareId, parentLinkId, filesToUpload, isForPhotos, onFileUpload, onFolderUpload).catch(
-                (err) => {
-                    if (!isTransferCancelError(err)) {
-                        console.error(err);
-                    }
+            uploadFiles(
+                shareId,
+                parentLinkId,
+                filesToUpload,
+                isForPhotos,
+                onFileUpload,
+                onFileSkipped,
+                onFolderUpload
+            ).catch((err) => {
+                if (!isTransferCancelError(err)) {
+                    console.error(err);
                 }
-            );
+            });
         },
         [isForPhotos, shareId, parentLinkId]
     );
