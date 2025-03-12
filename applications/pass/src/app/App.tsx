@@ -48,6 +48,7 @@ import {
     deriveKeyFromPRFCredential,
     generateCredential,
     getSerializedCredential,
+    isPRFSupported,
 } from '@proton/pass/lib/crypto/utils/prf';
 import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
@@ -59,7 +60,6 @@ import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
-import { isChromiumBased, isMinimumSafariVersion } from '@proton/shared/lib/helpers/browser';
 import { decodeBase64URL, stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -146,12 +146,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         prepareImport,
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
 
-        supportsBiometrics: async () => {
-            const platformCapability = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
-
-            // Until PRF is more widely adopted, we additionaly restrict this to Safari >= 18 and Chromium-based browsers
-            return platformCapability && (isChromiumBased() || isMinimumSafariVersion(18));
-        },
+        supportsBiometrics: isPRFSupported,
 
         getBiometricsKey: async (store) => {
             const { storageKey } = inferBiometricsStorageKey(store);
@@ -162,17 +157,15 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         },
 
         generateBiometricsKey: async () => {
-            const credential = await generateCredential({
-                displayName: authStore.getUserDisplayName()!,
-                name: authStore.getUserEmail()!,
-                id: new Uint8Array([authStore.getLocalID()!]),
-            });
+            const credential = await generateCredential(authStore);
+            const key = await deriveKeyFromPRFCredential(credential);
 
-            // Store the Passkey ID that can be used to derive this key
+            /* Store the Passkey ID that can be used to derive this
+             * key once we've successfully derived it */
             const storageKey = getBiometricsStorageKey(authStore.getLocalID()!);
             localStorage.setItem(storageKey, credential.id);
 
-            return deriveKeyFromPRFCredential(credential);
+            return key;
         },
     };
 };
