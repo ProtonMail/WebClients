@@ -1,5 +1,5 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Banner, ButtonLike } from '@proton/atoms';
@@ -29,8 +29,13 @@ const SubscriptionEndsBannerV2 = ({ app }: { app: APP_NAMES }) => {
 
     const daysLeft = differenceInDays(fromUnixTime(expirationDate), new Date());
 
-    const daysLeftString =
-        daysLeft > 0 ? c('Info').t`${planName} expires in ${daysLeft} days.` : c('Info').t`${planName} expires today.`;
+    const daysLeftPluralString = c('Info').ngettext(
+        msgid`${planName} expires in ${daysLeft} day.`,
+        `${planName} expires in ${daysLeft} days.`,
+        daysLeft
+    );
+
+    const daysLeftString = daysLeft > 0 ? daysLeftPluralString : c('Info').t`${planName} expires today.`;
 
     const urgent = daysLeft < 10;
 

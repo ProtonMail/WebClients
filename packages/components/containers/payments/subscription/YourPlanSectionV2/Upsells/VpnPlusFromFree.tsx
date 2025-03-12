@@ -8,7 +8,7 @@ import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getHasConsumerVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { getVpnServers } from '@proton/shared/lib/vpn/features';
+import { getSelectFromNCountries, getVpnServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
@@ -32,7 +32,7 @@ import UpsellMultiBox from './UpsellMultiBox';
 const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinition[] => {
     return [
         {
-            text: c('Features').t`Select from ${vpnServers.paid.countries} countries`,
+            text: getSelectFromNCountries(vpnServers.paid.countries),
             included: true,
             highResIcon: countriesIcon,
         },
