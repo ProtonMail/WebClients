@@ -18,7 +18,12 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
-import type { OnFileUploadSuccessCallbackData, PhotoGridItem, PhotoLink } from '../../../store';
+import type {
+    OnFileSkippedSuccessCallbackData,
+    OnFileUploadSuccessCallbackData,
+    PhotoGridItem,
+    PhotoLink,
+} from '../../../store';
 import { isPhotoGroup } from '../../../store/_photos';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
@@ -185,6 +190,7 @@ interface ToolbarRightActionsGalleryProps {
     shareId: string;
     linkId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
 }
 
 interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGalleryProps {
@@ -211,6 +217,7 @@ const ToolbarRightActionsAlbumGallery = ({
     shareId,
     linkId,
     onFileUpload,
+    onFileSkipped,
     requestDownload,
     album,
     data,
@@ -221,7 +228,14 @@ const ToolbarRightActionsAlbumGallery = ({
 
     return (
         <>
-            {!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} onFileUpload={onFileUpload} />}
+            {!uploadDisabled && (
+                <PhotosUploadButton
+                    shareId={shareId}
+                    linkId={linkId}
+                    onFileUpload={onFileUpload}
+                    onFileSkipped={onFileSkipped}
+                />
+            )}
             {data.length > 0 && (
                 <ToolbarButton
                     onClick={() => {
@@ -275,6 +289,7 @@ interface PhotosWithAlbumToolbarProps {
     addAlbumPhotosModal?: ModalStateReturnObj;
     removeAlbumPhotos?: () => Promise<void>;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
     onSelectCover?: () => Promise<void>;
     album?: DecryptedAlbum;
     onDeleteAlbum?: () => void;
@@ -294,6 +309,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     addAlbumPhotosModal,
     removeAlbumPhotos,
     onFileUpload,
+    onFileSkipped,
     onSelectCover,
     album,
     onDeleteAlbum,
@@ -318,6 +334,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         requestDownload={requestDownload}
                         data={data}
                         onFileUpload={onFileUpload}
+                        onFileSkipped={onFileSkipped}
                         album={album}
                         onDeleteAlbum={onDeleteAlbum}
                         onShowDetails={onShowDetails}

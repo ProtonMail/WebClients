@@ -8,6 +8,7 @@ import { useNotifications } from '@proton/components';
 import { logError } from '../../utils/errorHandling';
 import { useUploadProvider } from './UploadProvider';
 import type {
+    OnFileSkippedSuccessCallbackData,
     OnFileUploadSuccessCallbackData,
     OnFolderUploadSuccessCallbackData,
     UploadFileItem,
@@ -84,6 +85,7 @@ function useUploadInput(shareId: string, linkId: string, forFolders?: boolean, i
     const handleChange = (
         e: ChangeEvent<HTMLInputElement>,
         onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void,
+        onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void,
         onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
     ) => {
         const { files } = e.target;
@@ -97,7 +99,9 @@ function useUploadInput(shareId: string, linkId: string, forFolders?: boolean, i
             filesToUpload = filesToUpload.filter((item) => !!(item as UploadFileItem).file);
         }
 
-        uploadFiles(shareId, linkId, filesToUpload, isForPhotos, onFileUpload, onFolderUpload).catch(logError);
+        uploadFiles(shareId, linkId, filesToUpload, isForPhotos, onFileUpload, onFileSkipped, onFolderUpload).catch(
+            logError
+        );
     };
 
     return { inputRef, handleClick, handleChange };
