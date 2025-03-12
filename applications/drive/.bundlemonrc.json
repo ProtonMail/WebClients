@@ -6,6 +6,12 @@
         },
         {
             "path": "dist/assets/static/*.<hash>.js"
+        },
+        {
+            "path": "dist/assets/static/*.<hash>.css"
+        },
+        {
+            "path": "dist/downloadSW.js"
         }
     ],
     "reportOutput": ["json"],
