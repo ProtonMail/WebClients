@@ -14,11 +14,26 @@ interface Props {
   onSearchTextChange: (searchText: string) => void
 }
 
+function InternalPageNotice() {
+  return (
+    <div aria-hidden className="bg-[red]/80 p-2 text-center text-[white]">
+      <p className="m-0">
+        This page is <b>internal</b>. It's a work in progress - expect missing, incomplete and broken features.
+      </p>
+    </div>
+  )
+}
+
 export const HomepageLayout = ({ children, onSearchTextChange }: Props) => {
   const { state: expanded, toggle: toggleExpanded } = useToggle()
   return (
     <PrivateAppContainer
-      top={<TopBanners app={APPS.PROTONDOCS} />}
+      top={
+        <>
+          <InternalPageNotice />
+          <TopBanners app={APPS.PROTONDOCS} />
+        </>
+      }
       header={
         <HomepageHeader
           toggleHeaderExpanded={toggleExpanded}
