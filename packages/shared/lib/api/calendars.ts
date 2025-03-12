@@ -241,6 +241,12 @@ export const updatePersonalEventPart = (calendarID: string, eventID: string, dat
     data,
 });
 
+export const getPaginatedAttendeesInfo = (calendarID: string, eventID: string, Page = 0) => ({
+    url: `${CALENDAR_V1}/${calendarID}/events/${eventID}/attendees`,
+    method: 'get',
+    params: { Page },
+});
+
 export const updateAttendeePartstat = (
     calendarID: string,
     eventID: string,
