@@ -15,8 +15,10 @@ import { type SimpleMap } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 import generateUID from '@proton/utils/generateUID';
 import type { IWasmApiWalletData } from '@proton/wallet';
+import { getYesterday, useWalletApiClients } from '@proton/wallet';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet';
 import { useGetBitcoinNetwork } from '@proton/wallet/store';
+import { getWalletAccountMetrics, updateWalletAccountActivityMetrics } from '@proton/wallet/utils/cache';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useMirroredRef } from '../../hooks/useMirrorredRef';
@@ -114,6 +116,7 @@ export const getWalletsChainDataInit = async ({
  */
 export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     const blockchainClient = useBlockchainClient();
+    const walletApi = useWalletApiClients();
 
     const isWalletFullSync = useFlag('WalletFullSync');
 
@@ -270,6 +273,19 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                         const stopGap = getDefaultStopGap() + account.poolSize;
                         await wasmWalletSync.fullSync(stopGap);
                         await wasmWalletSync.partialSync();
+                    }
+
+                    const balance = await wasmAccount.getBalance();
+                    const hasConfirmedFunds = balance.data.trusted_pending > 0;
+                    const metrics = getWalletAccountMetrics(accountId);
+                    if (
+                        !metrics ||
+                        metrics.hasPositiveBalance !== hasConfirmedFunds ||
+                        (metrics.hasPositiveBalance === hasConfirmedFunds &&
+                            metrics.lastBalanceActivityTime < getYesterday().getTime())
+                    ) {
+                        updateWalletAccountActivityMetrics(accountId, hasConfirmedFunds);
+                        void walletApi.wallet.sendWalletAccountMetrics(walletId, accountId, hasConfirmedFunds);
                     }
 
                     incrementSyncKey(walletId, accountId);
