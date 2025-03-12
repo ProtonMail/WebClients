@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
@@ -20,7 +22,17 @@ import './AlbumPhotoSelection.scss';
 const getAltText = ({ mimeType, name }: DecryptedLink) =>
     `${c('Label').t`Album`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
 
-const AlbumSquare = ({ album, onClick }: { album: DecryptedAlbum; onClick: (linkId: string) => void }) => {
+const AlbumSquare = ({
+    album,
+    loading,
+    disabled,
+    onClick,
+}: {
+    album: DecryptedAlbum;
+    loading: boolean;
+    disabled: boolean;
+    onClick: (linkId: string) => void;
+}) => {
     const isDecrypted = isDecryptedLink(album);
     const isCoverDecrypted = isDecryptedLink(album.cover);
     const thumbUrl =
@@ -29,12 +41,14 @@ const AlbumSquare = ({ album, onClick }: { album: DecryptedAlbum; onClick: (link
     return (
         <li key={album.linkId}>
             <Button
-                className="relative w-full flex items-center justify-start gap-2 pl-0 album-photo-selection"
+                className="relative w-full flex flex-nowrap items-center justify-start gap-2 pl-0 album-photo-selection"
                 onClick={() => onClick(album.linkId)}
+                disabled={disabled}
+                loading={loading}
                 shape="ghost"
                 aria-label={c('Action').ngettext(
-                    msgid`Add to “${album.name}” (${album.photoCount} photo)`,
-                    `Add to “${album.name}” (${album.photoCount} photos)`,
+                    msgid`Add to "${album.name}" (${album.photoCount} photo)`,
+                    `Add to "${album.name}" (${album.photoCount} photos)`,
                     album.photoCount
                 )}
             >
@@ -43,7 +57,7 @@ const AlbumSquare = ({ album, onClick }: { album: DecryptedAlbum; onClick: (link
                         data-testid="album-card-thumbnail"
                         src={thumbUrl}
                         alt={getAltText(album)}
-                        className="w-custom h-custom rounded overflow-hidden"
+                        className="object-cover w-custom h-custom rounded overflow-hidden"
                         style={{
                             '--w-custom': '2.5rem',
                             '--h-custom': '2.5rem',
@@ -51,7 +65,7 @@ const AlbumSquare = ({ album, onClick }: { album: DecryptedAlbum; onClick: (link
                     />
                 ) : (
                     <div
-                        className="w-custom h-custom rounded overflow-hidden flex items-center bg-strong p-1"
+                        className="object-cover w-custom h-custom rounded overflow-hidden flex items-center bg-strong p-1"
                         style={{
                             '--w-custom': '2.5rem',
                             '--h-custom': '2.5rem',
@@ -60,8 +74,8 @@ const AlbumSquare = ({ album, onClick }: { album: DecryptedAlbum; onClick: (link
                         <Icon name="image" size={10} />
                     </div>
                 )}
-                <span className="grow-2 text-left">{album.name}</span>
-                <span className="color-weak text-tabular-nums">{album.photoCount}</span>
+                <span className="grow-2 text-left text-ellipsis">{album.name}</span>
+                {!loading && <span className="color-weak text-tabular-nums">{album.photoCount}</span>}
             </Button>
         </li>
     );
@@ -86,9 +100,13 @@ export const AddAlbumPhotosModal = ({
     const sortedAlbums = albums.sort((a, b) => b.createTime - a.createTime);
     const [latestAlbum, secondLatestAlbum, ...restAlbums] = sortedAlbums;
 
-    const handleSelectAlbum = (linkId: string) => {
+    const [activeAlbumId, setActiveAlbumId] = useState<string | undefined>();
+
+    const handleSelectAlbum = async (linkId: string) => {
+        setActiveAlbumId(linkId);
         const photosLinkIds = photos.map((photo) => photo.linkId);
-        void onAddAlbumPhotos(linkId, photosLinkIds);
+        await onAddAlbumPhotos(linkId, photosLinkIds);
+        setActiveAlbumId(undefined);
     };
 
     return (
@@ -96,6 +114,9 @@ export const AddAlbumPhotosModal = ({
             {render && (
                 <ModalTwo {...modalProps} as="form" size="small">
                     <ModalTwoHeader
+                        closeButtonProps={{
+                            disabled: !!activeAlbumId,
+                        }}
                         title={c('Heading').ngettext(
                             msgid`Add ${photos.length} photo to`,
                             `Add ${photos.length} photos to`,
@@ -104,6 +125,7 @@ export const AddAlbumPhotosModal = ({
                     />
                     <ModalTwoContent className="max-h-custom" style={{ '--max-h-custom': '21.25rem' }}>
                         <Button
+                            disabled={!!activeAlbumId}
                             className="relative w-full flex items-center gap-2 pl-0 album-photo-selection"
                             onClick={() => {
                                 createAlbumModal.openModal(true);
@@ -131,9 +153,21 @@ export const AddAlbumPhotosModal = ({
                             <>
                                 <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`Recent`}</h2>
                                 <ul className="unstyled mt-0">
-                                    {latestAlbum && <AlbumSquare album={latestAlbum} onClick={handleSelectAlbum} />}
+                                    {latestAlbum && (
+                                        <AlbumSquare
+                                            loading={activeAlbumId === latestAlbum.linkId}
+                                            disabled={!!activeAlbumId && activeAlbumId !== latestAlbum.linkId}
+                                            album={latestAlbum}
+                                            onClick={handleSelectAlbum}
+                                        />
+                                    )}
                                     {secondLatestAlbum && (
-                                        <AlbumSquare album={secondLatestAlbum} onClick={handleSelectAlbum} />
+                                        <AlbumSquare
+                                            loading={activeAlbumId === secondLatestAlbum.linkId}
+                                            disabled={!!activeAlbumId && activeAlbumId !== secondLatestAlbum.linkId}
+                                            album={secondLatestAlbum}
+                                            onClick={handleSelectAlbum}
+                                        />
                                     )}
                                 </ul>
                                 {!!restAlbums.length && (
@@ -141,7 +175,13 @@ export const AddAlbumPhotosModal = ({
                                         <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`All albums`}</h2>
                                         <ul className="unstyled mt-0">
                                             {restAlbums.map((album) => (
-                                                <AlbumSquare album={album} onClick={handleSelectAlbum} />
+                                                <AlbumSquare
+                                                    key={`album-${album.linkId}-${album.rootShareId}`}
+                                                    loading={activeAlbumId === album.linkId}
+                                                    disabled={!!activeAlbumId && activeAlbumId !== album.linkId}
+                                                    album={album}
+                                                    onClick={handleSelectAlbum}
+                                                />
                                             ))}
                                         </ul>
                                     </>
