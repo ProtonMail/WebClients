@@ -28,7 +28,7 @@ import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants'
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Cycle, FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { getVpnDevices } from '@proton/shared/lib/vpn/features';
+import { getSelectFromNCountries, getVpnDevices } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
 
 import CycleSelector from '../../../CycleSelector';
@@ -58,7 +58,7 @@ import vpnImage from '../images/vpn.jpg';
 const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinition[] => {
     return [
         {
-            text: c('Features').t`Select from ${vpnServers.paid.countries} countries`,
+            text: getSelectFromNCountries(vpnServers.paid.countries),
             included: true,
             highResIcon: countriesIcon,
         },
