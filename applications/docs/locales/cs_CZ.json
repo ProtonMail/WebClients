@@ -51,6 +51,9 @@
       "Add address": [
         "Přidat adresu"
       ],
+      "Add another account": [
+        "Přidat další účet"
+      ],
       "Add birthday": [
         "Přidat datum narození"
       ],
@@ -330,6 +333,12 @@
       "Help": [
         "Pomoc"
       ],
+      "Help and feedback": [
+        "Nápověda a zpětná vazba"
+      ],
+      "Help and resources": [
+        "Nápověda a zdroje"
+      ],
       "Hide advanced PGP settings": [
         "Skrýt pokročilé nastavení PGP"
       ],
@@ -413,9 +422,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
-      ],
-      "More options": [
-        "Více možností"
       ],
       "Move to trash": [
         "Přesunout do koše"
@@ -919,9 +925,6 @@
       "High speed streaming": [
         "Vysokorychlostní streamování"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrované ověřování 2FA"
-      ],
       "One-time payment, lifetime deal": [
         "Jednorázová platba, doživotní přístup"
       ],
@@ -940,17 +943,11 @@
       "Secure file storage & sharing": [
         "Bezpečné ukládání souborů a sdílení"
       ],
-      "Secure vault and link sharing": [
-        "Zabezpečený trezor a sdílení odkazů"
-      ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Neomezený počet aliasů hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Neomezený počet přihlášení, poznámek a platebních karet"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Neomezený počet přihlášení, platebních karet, aliasů hide-my-email a další"
       ],
       "Use your own email domain": [
         "Použijte svou vlastní e-mailovou doménu"
@@ -1018,8 +1015,14 @@
       "Annually": [
         "Ročně"
       ],
+      "Lifetime": [
+        "Doživotní"
+      ],
       "Monthly": [
         "Měsíčně"
+      ],
+      "New!": [
+        "Nové!"
       ],
       "Two-year": [
         "Dva roky"
@@ -2180,6 +2183,31 @@
         "Ålandské ostrovy"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Pro všechny služby ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Pro ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Pro ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Pro ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Pro ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/měsíčně"
@@ -2206,11 +2234,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Faktura po splatnosti"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description": {
@@ -2291,6 +2314,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3301,6 +3329,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Neomezený počet aliasů Hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -4534,6 +4567,9 @@
       "Organization size": [
         "Velikost organizace"
       ],
+      "Other accounts": [
+        "Další účty"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Prioritou našich upozornění je bezpečnost. Pokud nepoznáváte žádné z uniklých informací, můžete tuto zprávu bez obav ignorovat."
       ],
@@ -4731,9 +4767,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Přepnout na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -5461,6 +5494,9 @@
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrované ověřování 2FA"
       ],
       "Keep both": [
         "Ponechat obě"
@@ -6307,12 +6343,6 @@
       "${ size } storage per user": [
         "${ size } úložiště na uživatele"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Pro ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pro všechny služby ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB bezpečného úložiště"
       ],
@@ -6487,9 +6517,6 @@
       "HTML signatures": [
         "HTML podpisy"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrované ověřování 2FA"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/trvalá síť VPN"
       ],
@@ -6627,9 +6654,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Neomezený počet složek, štítků a filtrů"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neomezený počet aliasů Hide-my-email"
       ],
       "Unlimited labels": [
         "Neomezeně štítků"
@@ -6779,6 +6803,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Náš tarif ${ visionary } již není k dispozici novým předplatitelům, protože se jedná o speciální plán pro původní uživatele ${ BRAND_NAME } se speciálními funkcemi a výhodami."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Zaplaťte jednou a navždy zabezpečte svá hesla a identitu."
       ],
       "Popular": [
         "Oblíbené"
@@ -7500,11 +7527,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Bezpečné sdílení trezoru a odkazu"
-      ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
+      ],
+      "Secure vault, item and link sharing": [
+        "Zabezpečený trezor, položka a sdílení odkazů"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Neomezený počet přihlášení, poznámek, platebních karet a další"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8616,29 +8646,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } úložiště na uživatele"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastní e-mailová doména",
-        "${ planNumberOfDomains } vlastní e-mailové domény",
-        "${ planNumberOfDomains } vlastních e-mailových domén",
-        "${ planNumberOfDomains } vlastních e-mailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailová adresa",
-        "${ planNumberOfEmails } e-mailové adresy",
-        "${ planNumberOfEmails } e-mailových adres",
-        "${ planNumberOfEmails } e-mailových adres"
-      ],
-      "Folders, labels, and custom filters": [
-        "Složky, štítky a vlastní filtry"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB úložiště"
@@ -8678,6 +8685,29 @@
       ],
       "Your privacy is our mission": [
         "Vaše soukromí je naším posláním"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } úložiště na uživatele"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastní e-mailová doména",
+        "${ planNumberOfDomains } vlastní e-mailové domény",
+        "${ planNumberOfDomains } vlastních e-mailových domén",
+        "${ planNumberOfDomains } vlastních e-mailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailová adresa",
+        "${ planNumberOfEmails } e-mailové adresy",
+        "${ planNumberOfEmails } e-mailových adres",
+        "${ planNumberOfEmails } e-mailových adres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Složky, štítky a vlastní filtry"
       ]
     },
     "Subscription renewal state": {
@@ -9192,6 +9222,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "Help and feedback": [
+        "Nápověda a zpětná vazba"
+      ],
       "Help center": [
         "Centrum podpory"
       ],
@@ -9447,11 +9480,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Přidejte tento sdílený soubor na svůj ${ DRIVE_APP_NAME } pro pozdější snadný přístup."
@@ -9529,6 +9557,11 @@
         "Poslali jsme jim pozvánku k přístupu k položce."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
@@ -9604,6 +9637,12 @@
         "Automaticky vybírá ze ${ numberOfCountries } zemí",
         "Automaticky vybírá z ${ numberOfCountries } zemí",
         "Automaticky vybírá z ${ numberOfCountries } zemí"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servery v ${ numberOfCountries }+ zemi",
+        "Servery ve ${ numberOfCountries }+ zemích",
+        "Servery v ${ numberOfCountries }+ zemích",
+        "Servery v ${ numberOfCountries }+ zemích"
       ]
     },
     "vpn_2024: renew": {
