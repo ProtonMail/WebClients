@@ -11,13 +11,21 @@ import type { IWasmApiWalletData } from '@proton/wallet';
 import { encryptWalletDataWithWalletKey, useWalletApiClients } from '@proton/wallet';
 import { useFiatCurrencies, useWalletDispatch, walletAccountDeletion, walletAccountUpdate } from '@proton/wallet/store';
 
+import { useBitcoinBlockchainContext } from '../../contexts';
 import { useEmailIntegration } from '../../hooks/useEmailIntegration';
+import { getAccountWithChainDataFromManyWallets } from '../../utils';
 
 export const useAccountPreferences = (
     wallet: IWasmApiWalletData,
     walletAccount: WasmApiWalletAccount,
     otherWallets: IWasmApiWalletData[]
 ) => {
+    const { walletsChainData } = useBitcoinBlockchainContext();
+    const wasmAccount = getAccountWithChainDataFromManyWallets(
+        walletsChainData,
+        walletAccount.WalletID,
+        walletAccount.ID
+    )?.account;
     const [label, setLabel] = useState(walletAccount.Label);
     const [currencies, loadingCurrencies] = useFiatCurrencies();
     const [isLoadingFiatCurrencyUpdate, withLoadingFiatCurrencyUpdate] = useLoading();
@@ -126,11 +134,17 @@ export const useAccountPreferences = (
         void withLoadingFiatCurrencyUpdate(promise());
     };
 
+    const getXpub = () => {
+        return wasmAccount?.getXpub();
+    };
+
     return {
         label,
         isLoadingLabelUpdate,
         onChangeLabel,
         updateWalletAccountLabel,
+
+        getXpub,
 
         deleteWalletAccount,
 
