@@ -119,6 +119,7 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
             navigationRef={navigationRef}
             collapsed={collapsed}
             showStorage={showSideBar}
+            className="overflow-x-none"
         >
             <SidebarNav className="flex *:min-size-auto">
                 <div>
@@ -130,9 +131,9 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
                     className={clsx(
                         'mt-auto',
                         !collapsed && 'absolute bottom-0 right-0',
-                        !collapsed && showStorage && 'sidebar-collapse-button-container--not-collapsed',
-                        !collapsed && !showStorage && 'sidebar-collapse-button-container--not-collapsed-no-storage',
-                        isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
+                        (isScrollPresent || (!collapsed && showStorage)) &&
+                            'sidebar-collapse-button-container--above-scroll mb-2', // if scroll is present or if we show storage
+                        !collapsed && !showStorage && 'sidebar-collapse-button-container--not-collapsed-no-storage'
                     )}
                 >
                     {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
@@ -147,7 +148,8 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
                                 'hidden md:flex sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
                                 !showSideBar && 'sidebar-collapse-button--collapsed',
                                 collapsed ? 'mx-auto' : 'mr-2 ml-auto',
-                                isScrollPresent && 'sidebar-collapse-button--above-scroll'
+                                (isScrollPresent || (!collapsed && showStorage)) &&
+                                    'sidebar-collapse-button--above-scroll'
                             )}
                             onClick={() => onClickExpandNav()}
                             aria-pressed={showSideBar}
