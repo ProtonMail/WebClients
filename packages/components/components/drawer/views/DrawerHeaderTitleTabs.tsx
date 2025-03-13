@@ -12,7 +12,7 @@ interface Props {
 const DrawerHeaderTitleTabs = ({ title, options, onClickOption }: Props) => {
     return (
         <div className="drawer-contact-tabs tabs tabs--underline relative">
-            <nav className="tabs-container">
+            <nav className="tabs-container tabs-nav">
                 <ul className="tabs-list unstyled flex flex-nowrap relative m-0 p-0">
                     {options.map((option, index) => {
                         const selected = option.text === title;
