@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { SharedMenuItem } from '@proton/pass/components/Menu/Shared/SharedMenuItem';
@@ -64,6 +64,11 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
                 label={c('Action').t`Secure links`}
                 count={secureLinksCount}
                 selected={scope === 'secure-links'}
+                subLabel={c('Label').ngettext(
+                    msgid`${secureLinksCount} secure link`,
+                    `${secureLinksCount} secure links`,
+                    secureLinksCount
+                )}
                 to="secure-links"
                 icon="link"
                 onAction={onAction}
