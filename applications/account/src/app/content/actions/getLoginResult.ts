@@ -1,7 +1,5 @@
-import type { OnLoginCallbackArguments } from '@proton/components/containers/app/interface';
 import type { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { UNPAID_STATE } from '@proton/payments';
-import { getOrganization as getOrganizationConfig } from '@proton/shared/lib/api/organization';
 import { getAppHref, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -10,14 +8,14 @@ import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication
 import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { joinPaths } from '@proton/shared/lib/helpers/url';
-import type { Api, Organization } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import { getReAuthState } from '../../public/ReAuthContainer';
+import { getOrganization } from '../../public/organization';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
@@ -127,15 +125,6 @@ const getRedirectUrl = ({
     }
 
     return url;
-};
-
-const getOrganization = async ({ session, api }: { session: OnLoginCallbackArguments; api: Api }) => {
-    if (!session.User.Subscribed) {
-        return undefined;
-    }
-    return api<{
-        Organization: Organization;
-    }>(withUIDHeaders(session.UID, getOrganizationConfig())).then(({ Organization }) => Organization);
 };
 
 export const getLoginResult = async ({

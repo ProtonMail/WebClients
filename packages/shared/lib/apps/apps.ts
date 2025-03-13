@@ -1,8 +1,7 @@
-import type { APP_NAMES } from '../constants';
-import { APPS } from '../constants';
+import { APPS, APPS_CONFIGURATION, type APP_NAMES, USER_ROLES } from '../constants';
 import { isElectronApp } from '../helpers/desktop';
-import type { User } from '../interfaces';
-import { getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
+import type { OrganizationSettingsAllowedProduct, OrganizationWithSettings, User } from '../interfaces';
+import { getIsGlobalSSOAccount, getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
 
 type AppContext = 'dropdown' | 'app';
 
@@ -21,11 +20,21 @@ export const getSSOVPNOnlyAccountApps = (): APP_NAMES[] => {
     return [APPS.PROTONVPN_SETTINGS];
 };
 
-export const getAvailableApps = (options: { user?: User; context: AppContext; isLumoAvailable: boolean }) => {
+export interface GetAvailableAppsByUserTypeArguments {
+    user?: User;
+    context: AppContext;
+    isLumoAvailable: boolean;
+}
+
+export const getAvailableAppsByUserType = (options: GetAvailableAppsByUserTypeArguments) => {
     if (getIsSSOVPNOnlyAccount(options.user)) {
         return getSSOVPNOnlyAccountApps();
     }
     if (getIsPublicUserWithoutProtonAddress(options.user)) {
+        if (getIsGlobalSSOAccount(options.user)) {
+            // Drive is blocked for Global SSO users as of 22.02.2025
+            return [APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS];
+        }
         return getPublicUserProtonAddressApps(options.context);
     }
     if (isElectronApp) {
@@ -46,4 +55,43 @@ export const getAvailableApps = (options: { user?: User; context: AppContext; is
     }
 
     return apps;
+};
+
+const all: Set<'All'> = new Set(['All']);
+
+interface GetOrganizationAllowedProductsArguments {
+    user?: User;
+    organization?: OrganizationWithSettings;
+    isAccessControlEnabled: boolean;
+}
+
+const getAvailableAppsByOrganization = ({
+    user,
+    organization,
+    isAccessControlEnabled,
+}: GetOrganizationAllowedProductsArguments): Set<OrganizationSettingsAllowedProduct> => {
+    // Admins can always access all
+    if (!isAccessControlEnabled || !user || !organization || (user && user.Role === USER_ROLES.ADMIN_ROLE)) {
+        return all;
+    }
+    const allowedProducts = organization.Settings?.AllowedProducts;
+    // Backwards compatibility, the API might not be ready, if it doesn't exist, fall back to all
+    if (allowedProducts) {
+        return new Set(allowedProducts);
+    }
+    return all;
+};
+
+export const getAvailableApps = (
+    options: GetAvailableAppsByUserTypeArguments & GetOrganizationAllowedProductsArguments
+) => {
+    const availableAppsByUserType = getAvailableAppsByUserType(options);
+    const availableAppsByOrganization = getAvailableAppsByOrganization(options);
+    if (availableAppsByOrganization.has('All')) {
+        return availableAppsByUserType;
+    }
+    return availableAppsByUserType.filter((app) => {
+        const product = APPS_CONFIGURATION[app].product;
+        return availableAppsByOrganization.has(product as OrganizationSettingsAllowedProduct);
+    });
 };
