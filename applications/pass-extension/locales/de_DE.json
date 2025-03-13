@@ -1925,6 +1925,9 @@
       "Please consider leaving a review.": [
         "Bitte ziehe in Erwägung, eine Bewertung zu schreiben."
       ],
+      "Please contact your administrator": [
+        "Bitte kontaktiere deinen Administrator"
+      ],
       "Please do not close this window": [
         "Bitte schließe dieses Fenster nicht."
       ],
@@ -2341,6 +2344,10 @@
         "${ config.options.wordCount } Wort",
         "${ config.options.wordCount } Wörter"
       ],
+      "${ count } item": [
+        "${ count } Eintrag",
+        "${ count } Einträge"
+      ],
       "${ days } day": [
         "${ days } Tag",
         "${ days } Tage"
@@ -2364,7 +2371,7 @@
         "${ months } Monat",
         "${ months } Monate"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
+      "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
@@ -2956,6 +2963,9 @@
       ],
       "Save passkeys": [
         "Passkeys speichern"
+      ],
+      "Secure links": [
+        "Sichere Links"
       ],
       "Security": [
         "Sicherheit"
@@ -3816,6 +3826,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Was ist der Unterschied zwischen einer ${ PASS_SHORT_APP_NAME }-Notiz und einer SimpleLogin-Notiz?"
       ],
+      "You don't have any vault": [
+        "Du hast keinen Tresor"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Dein ${ planName }-Abonnement endet am ${ endDate }"
       ],
@@ -4110,6 +4123,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du hast dann keinen Zugang mehr zu diesem Tresor. Um ihm wieder beizutreten, benötigst du eine neue Einladung."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Dein Administrator muss einen Tresor für dich anlegen, bevor du Einträge erstellen kannst"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Eine Organisation erlaubt das Erstellen eines Tresors nicht"
       ],
       "Your organization does not allow sharing individual items": [
         "Deine Organisation erlaubt keine Freigabe einzelner Elemente"
