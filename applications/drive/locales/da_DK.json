@@ -91,10 +91,6 @@
       "Add to group": [
         "Føj til gruppe"
       ],
-      "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "Tilføj til “${ album.name }” (${ album.photoCount } foto)",
-        "Tilføj til “${ album.name }” (${ album.photoCount } fotos)"
-      ],
       "Album name": [
         "Albumnavn"
       ],
@@ -1198,9 +1194,6 @@
       "High speed streaming": [
         "Streaming ved høj hastighed"
       ],
-      "Integrated 2FA authenticator": [
-        "Integreret 2FA-godkendelsesværktøj"
-      ],
       "Online document editor": [
         "Online dokumentredigering"
       ],
@@ -1216,17 +1209,8 @@
       "Secure file storage & sharing": [
         "Sikker fildeling og lagring"
       ],
-      "Secure vault and link sharing": [
-        "Sikker boks- og linkdeling"
-      ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænsede hide-my-email-aliasser"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Ubegrænsede logins, noter og betalingskort"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -3593,6 +3577,9 @@
       ],
       "Share privately and securely": [
         "Del privat og sikkert"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrænsede hide-my-email-aliasser"
       ]
     },
     "fido2: Error": {
@@ -5232,9 +5219,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Skift til"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
@@ -6111,6 +6095,9 @@
       ],
       "Include message and file name in invite email": [
         "Medtag besked og filnavn i invitationsmail"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integreret 2FA-godkendelsesværktøj"
       ],
       "Keep both": [
         "Behold begge"
@@ -7026,12 +7013,6 @@
       "${ size } storage": [
         "${ size } lagerplads"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Til ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
-      ],
       "1 TB secure storage": [
         "1 TB sikker lagerplads"
       ],
@@ -7204,9 +7185,6 @@
       "HTML signatures": [
         "HTML signatur"
       ],
-      "Integrated 2FA authenticator": [
-        "Integreret 2FA-godkendelse"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/always-on VPN"
       ],
@@ -7338,9 +7316,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænsede hide-my-email-aliasser"
       ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
@@ -8298,9 +8273,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Sikker boks- og linkdeling"
-      ],
       "Secure vault sharing": [
         "Sikker deling af boks"
       ]

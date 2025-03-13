@@ -1119,9 +1119,6 @@
       "High speed streaming": [
         "Високошвидкісний потокова трансляція"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтегрований автентифікатор 2FA"
-      ],
       "One-time payment, lifetime deal": [
         "Одноразовий платіж, довічна пропозиція"
       ],
@@ -1140,17 +1137,8 @@
       "Secure file storage & sharing": [
         "Безпечне сховище файлів та обмін ними"
       ],
-      "Secure vault and link sharing": [
-        "Безпечний спільний доступ до сховища та обмін посиланнями"
-      ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Необмежена кількість псевдонімів hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Необмежена кількість записів входу, нотаток, банківських карток"
       ],
       "Use your own email domain": [
         "Використовуйте свій власний домен електронної пошти"
@@ -3503,6 +3491,11 @@
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Необмежена кількість псевдонімів Hide-my-email"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
@@ -5186,9 +5179,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Перейти до"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
@@ -6039,6 +6029,9 @@
       ],
       "Include message and file name in invite email": [
         "Додайте повідомлення та ім'я файлу до листа-запрошення"
+      ],
+      "Integrated 2FA authenticator": [
+        "Інтегрований автентифікатор 2FA"
       ],
       "Keep both": [
         "Зберегти обидва"
@@ -6983,12 +6976,6 @@
       "${ size } storage": [
         "${ size } сховища"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Для ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Для всіх ${ BRAND_NAME } сервісів"
-      ],
       "1 TB secure storage": [
         "1 ТБ безпечного сховища"
       ],
@@ -7157,9 +7144,6 @@
       "HTML signatures": [
         "HTML-підписи"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтегрований автентифікатор 2FA"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Постійна VPN"
       ],
@@ -7279,9 +7263,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Необмежена кількість псевдонімів Hide-my-email"
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
@@ -8260,9 +8241,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Безпечний спільний доступ до сховища та обмін посиланнями"
-      ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
       ]
