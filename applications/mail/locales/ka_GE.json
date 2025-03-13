@@ -51,6 +51,9 @@
       "Add address": [
         "მისამართის დამატება"
       ],
+      "Add another account": [
+        "სხვა ანგარიშის დამატება"
+      ],
       "Add Bcc recipients": [
         "Bcc მიმღებების დამატება"
       ],
@@ -582,6 +585,12 @@
       "Help": [
         "დახმარება"
       ],
+      "Help and feedback": [
+        "დახმარება და გამოხმაურება"
+      ],
+      "Help and resources": [
+        "დახმარება და რესურსები"
+      ],
       "Hide": [
         "დამალვა"
       ],
@@ -605,6 +614,9 @@
       ],
       "Hide toolbar": [
         "ხელსაწყოების პანელის დამალვა"
+      ],
+      "hide-my-email aliases": [
+        "hide-my-email-ის ფსევდონიმები"
       ],
       "I like this response": [
         "მე მომწონს ეს პასუხი"
@@ -798,9 +810,6 @@
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
-      ],
-      "More options": [
-        "მეტი პარამეტრი"
       ],
       "More refine actions": [
         "მეტი დახვეწის ქმედებები"
@@ -1105,10 +1114,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -1747,9 +1756,6 @@
       "High speed streaming": [
         "ჩქაროსნული სტრიმინგი"
       ],
-      "Integrated 2FA authenticator": [
-        "ჩაშენებული 2FA ავთენტიკატორი"
-      ],
       "One-time payment, lifetime deal": [
         "ერთჯერადი გადართვა,  სამუდამო შეთანხმება"
       ],
@@ -1768,17 +1774,11 @@
       "Secure file storage & sharing": [
         "დაცული ფაილების საცავი და გაზიარება"
       ],
-      "Secure vault and link sharing": [
-        "დაცული საცავი და ბმულის გაზიარება"
-      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
-      "Unlimited hide-my-email aliases": [
-        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "უსაზღვრო შესვლის დეტალები, საკრედიტო ბარათები, hide-my-email-ის ფსევდონიმები და სხვა"
       ],
       "Use your own email domain": [
         "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
@@ -1838,8 +1838,14 @@
       "Annually": [
         "წელიწადში ერთხელ"
       ],
+      "Lifetime": [
+        "სამუდამოდ"
+      ],
       "Monthly": [
         "თვეში ერთხელ"
+      ],
+      "New!": [
+        "ახალი!"
       ],
       "Two-year": [
         "ორი წლით"
@@ -3499,6 +3505,31 @@
         "ალანდის კუნძულები"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }-სთვის"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }-თვის"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-სთვის"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }-Სთვის"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "მიმაგრება"
@@ -4955,6 +4986,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
       ]
     },
     "fido2: Error": {
@@ -6627,6 +6663,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
+        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -6869,8 +6906,14 @@
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
+      "Other accounts": [
+        "სხვა ანგარიშები"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "სისტემამ ეს ელ-ფოსტა ფიშინგის მცდელობად მონიშნა. გადაამოწმეთ, სიმართლეა თუ არა."
       ],
       "password": [
         "პაროლი"
@@ -6990,6 +7033,9 @@
       ],
       "Proofread text": [
         "ტექსტის კორექცია"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "დაიცავით თქვენი ელფოსტა გაჟონვისგან და სპამერებისგან ${ hideMyEmailAliasesLink }-ით."
       ],
       "Public sharing of documents is not yet supported.": [
         "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
@@ -7186,9 +7232,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "გადართვა"
       ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
@@ -8427,6 +8470,9 @@
       "Import to:": [
         "შემოტანა:"
       ],
+      "Integrated 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "კლავიატურის მალსახმობი: ${ shortcut }"
       ],
@@ -9055,6 +9101,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "დააატეთ წერის დამხმარე ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "დამატება უფასო გამოსაცდელი ვადით"
+      ],
       "for ${ price }": [
         "${ price }-თვის"
       ]
@@ -9466,11 +9515,8 @@
       "${ size } storage": [
         "${ size } საცავი"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME }-სთვის"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - ყველა ${ BRAND_NAME } სერვისისთვის"
+      "${ size } storage per user": [
+        "${ size }/მომხმარებელი"
       ],
       "1 TB secure storage": [
         "1 ტბ დაცული საცავი"
@@ -9644,14 +9690,14 @@
       "HTML signatures": [
         "HTML ხელმოწერები"
       ],
-      "Integrated 2FA authenticator": [
-        "ჩაშენებული 2FA ავთენტიკატორი"
-      ],
       "Kill switch/always-on VPN": [
         "ხელით გათიშვა / ყოველთვის ჩართული VPN"
       ],
       "Limited support": [
         "შეზღუდული მხარდაჭერა"
+      ],
+      "Manage user permissions and access": [
+        "მომხმარებლის წვდომებისა და უფლებების მართვა"
       ],
       "Multiple admin roles": [
         "მრავალი ადმინის როლი"
@@ -9670,6 +9716,9 @@
       ],
       "Password manager": [
         "პაროლების მმართველი"
+      ],
+      "Password manager to secure credentials": [
+        "პაროლების მმართველი ავტორიზაციის დეტალების დასაცავად"
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
@@ -9778,9 +9827,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "განუსაზღვრელი რაოდენობის მეტსახელი Hide My Email-სთვის"
       ],
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
@@ -9918,6 +9964,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "ჩვენი სატარიფო გეგმა ${ visionary } ახალი გამომწერებისთვის ხელმისაწვდომი აღარაა, რადგან ის სპეციალური გეგმაა ${ BRAND_NAME }-ის მომხმარებლებისთვის, სპეციალური ფუნქციებით და ბენეფიტებით."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "გადაიხადეთ ერთხელ და დაიცავით თქვენი მონაცემები და პაროლები სამუდამოდ."
       ],
       "Popular": [
         "პოპულარული"
@@ -10650,11 +10699,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "დაცული საცავი და ბმულის გაზიარება"
-      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
+      ],
+      "Secure vault, item and link sharing": [
+        "დაცული საცავის, ელემენტების და ბმულის გაზიარება"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "შეუზღუდავი შესვლის დეტალები, შენიშვნები, საკრედიტო ბარათები და სხვა"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12010,6 +12062,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN კავშირი თითოეული მომხმარებლისთვის",
         "${ n } VPN კავშირი თითოეული მომხმარებლისთვის"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის",
+        "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის"
       ]
     },
     "Subscription change warning": {
@@ -13203,6 +13259,9 @@
       "Groups": [
         "ჯგუფები"
       ],
+      "Help and feedback": [
+        "დახმარება და გამოხმაურება"
+      ],
       "Help center": [
         "დახმარების ცენტრი"
       ],
@@ -13680,11 +13739,6 @@
         "დღეს"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "ავტომატური ნიშნავს ფორმატს, რომლითაც ელფოსტა ამ მომხმარებელთან იგზავნება. უბრალო ტექსტი ნიშნავს, რომ შეტყობინების ტექსტი გაგზავნის წინ მაინც გარდაიქმება უბრალო ტექსტად."
@@ -13768,6 +13822,11 @@
         "ამ ელფოსტიდან გამჭოლი შიფრაციით დაშიფრული ელფოსტების გასაგზავნად ატვირთეთ საჯარო გასაღები"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "სტაბილური რელიზი"
@@ -13833,6 +13892,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან",
         "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "სერვერები ${ numberOfCountries }+ ქვეყანაში",
+        "სერვერები ${ numberOfCountries }+ ქვეყანაში"
       ]
     },
     "vpn_2024: renew": {

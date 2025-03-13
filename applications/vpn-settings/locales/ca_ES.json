@@ -484,6 +484,9 @@
       "Previous page": [
         "Pàgina anterior"
       ],
+      "Publish changes": [
+        "Publica els canvis"
+      ],
       "Recover data": [
         "Recuperar dades"
       ],
@@ -1057,9 +1060,6 @@
       "High speed streaming": [
         "Estríming d'alta velocitat"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador de doble factor (2FA) integrat"
-      ],
       "One-time payment, lifetime deal": [
         "Pagament únic, oferta per a tota la vida"
       ],
@@ -1078,17 +1078,8 @@
       "Secure file storage & sharing": [
         "Emmagatzematge i ús compartit de fitxers segurs"
       ],
-      "Secure vault and link sharing": [
-        "Compartició segura de caixes fortes i enllaços"
-      ],
       "Unlimited folders, labels and filters": [
         "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre il·limitat d'àlies hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit"
       ],
       "Use your own email domain": [
         "Utilitzeu el vostre propi domini de correu electrònic"
@@ -1161,8 +1152,14 @@
       "Annually": [
         "Cada any"
       ],
+      "Lifetime": [
+        "Oferta de per vida"
+      ],
       "Monthly": [
         "Mensual"
+      ],
+      "New!": [
+        "Nou"
       ],
       "Two-year": [
         "Bianual"
@@ -2471,6 +2468,47 @@
         "La vostra subscripció de ${ PLAN_NAMES[PLANS.PASS] } té un preu especial de ${ price } per any. En passar a un pla gratuït, perdreu el descompte permanentment, fins i tot si torneu a millorar el pla en el futur."
       ]
     },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "Escriptori"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Mobile": [
+        "Mòbil"
+      ],
+      "TV": [
+        "TV"
+      ],
+      "Windows": [
+        "Windows"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Historial de versions ampliat"
@@ -3193,6 +3231,14 @@
       ],
       "Torrenting support (P2P)": [
         "Suport torrent (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre il·limitat d'àlies hide-my-email"
+      ]
+    },
+    "Features": {
+      "Double VPN": [
+        "VPN doble"
       ]
     },
     "fido2: Action": {
@@ -3552,6 +3598,9 @@
     "Headline": {
       "Contact us": [
         "Contacteu amb nosaltres"
+      ],
+      "Your plan": [
+        "El vostre pla"
       ]
     },
     "Hint": {
@@ -4112,6 +4161,9 @@
       ],
       "Enabling auto-deletion…": [
         "S'està activant la supressió automàtica…"
+      ],
+      "End date": [
+        "Data de fi"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "El xifratge de correu electrònic d'extrem a extrem està desactivat per a aquest grup a causa d'adreces externes."
@@ -4813,6 +4865,9 @@
         "Pas ${ step }",
         "Passes ${ step }"
       ],
+      "Storage": [
+        "Emmagatzematge"
+      ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
       ],
@@ -4845,9 +4900,6 @@
       ],
       "Swiss based": [
         "Amb seu a Suïssa"
-      ],
-      "Switch to": [
-        "Canvia a"
       ],
       "Symbols (#$&)": [
         "Símbols (#$&)"
@@ -5049,6 +5101,9 @@
       ],
       "Unable to check gateways monitoring current status.": [
         "No es pot comprovar l'estat actual de la supervisió de les passarel·les."
+      ],
+      "Unchanged": [
+        "Sense canvis"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Malauradament no hi ha cap mètode de recuperació establert per a aquest compte."
@@ -5615,6 +5670,9 @@
       "Addresses": [
         "Adreces"
       ],
+      "Advanced": [
+        "Avançat"
+      ],
       "Allow": [
         "Adreces permeses"
       ],
@@ -5860,6 +5918,9 @@
       ],
       "IBAN": [
         "IBAN"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador de doble factor (2FA) integrat"
       ],
       "Interval": [
         "Interval"
@@ -6720,12 +6781,6 @@
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Per a ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Per a tots els serveis de ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB d'emmagatzematge segur"
       ],
@@ -6916,9 +6971,6 @@
       "HTML signatures": [
         "Signatures HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrat"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch /VPN sempre activa"
       ],
@@ -7063,9 +7115,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre il·limitat d'àlies hide-my-email"
       ],
       "Unlimited labels": [
         "Etiquetes il·limitades"
@@ -7997,9 +8046,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Compartició segura de caixes fortes i enllaços"
-      ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
       ]
@@ -10793,6 +10839,9 @@
       "Help center": [
         "Centre d'ajuda"
       ],
+      "Home": [
+        "Inici"
+      ],
       "How to choose a good logo": [
         "Com triar un bon logo"
       ],
@@ -11424,6 +11473,9 @@
       ]
     },
     "upsell panel": {
+      "Best deal": [
+        "Millor oferta"
+      ],
       "Recommended": [
         "Recomanat"
       ]

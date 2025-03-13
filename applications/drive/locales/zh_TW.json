@@ -87,9 +87,6 @@
       "Add to group": [
         "加入至群組"
       ],
-      "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "添加至\"\"${ album.name }\"(${ album.photoCount }照片)"
-      ],
       "Album name": [
         "相簿名稱"
       ],
@@ -1193,9 +1190,6 @@
       "High speed streaming": [
         "高速串流"
       ],
-      "Integrated 2FA authenticator": [
-        "整合了雙重驗證的驗證器"
-      ],
       "One-time payment, lifetime deal": [
         "一次付款，終身方案"
       ],
@@ -1214,17 +1208,8 @@
       "Secure file storage & sharing": [
         "安全檔案儲存與共享"
       ],
-      "Secure vault and link sharing": [
-        "安全保管庫和共享連結"
-      ],
       "Unlimited folders, labels and filters": [
         "無上限資料夾、標籤與篩選器"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無上限 hide-my-email 別名"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "無限登入，筆記，信用卡"
       ],
       "Use your own email domain": [
         "使用您自己的電子郵件網域"
@@ -3589,6 +3574,9 @@
       ],
       "Share privately and securely": [
         "隱私,安全地共享"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無限制的 hide-my-email 別名"
       ]
     },
     "fido2: Error": {
@@ -5177,9 +5165,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
       ],
-      "Switch to": [
-        "切換至"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
       ],
@@ -6053,6 +6038,9 @@
       ],
       "Include message and file name in invite email": [
         "在邀請電子郵件中包含訊息與檔案名稱"
+      ],
+      "Integrated 2FA authenticator": [
+        "整合雙重驗證"
       ],
       "Keep both": [
         "兩者皆保留"
@@ -6946,12 +6934,6 @@
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType }-於${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType }-於全部${ BRAND_NAME }服務"
-      ],
       "1 TB secure storage": [
         "1TB安全儲存空間"
       ],
@@ -7123,9 +7105,6 @@
       "HTML signatures": [
         "HTML簽名"
       ],
-      "Integrated 2FA authenticator": [
-        "整合式 2FA 驗證器"
-      ],
       "Kill switch/always-on VPN": [
         "緊急開關 / 永久連線的 VPN"
       ],
@@ -7257,9 +7236,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "資料夾、標籤和篩選器無上限"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無限制的 hide-my-email別名"
       ],
       "Unlimited labels": [
         "無限制標籤"
@@ -8247,9 +8223,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "安全保管庫和共享連結"
-      ],
       "Secure vault sharing": [
         "安全分享保管庫"
       ]

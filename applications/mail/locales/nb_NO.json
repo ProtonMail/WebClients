@@ -51,6 +51,9 @@
       "Add address": [
         "Legg til adresse"
       ],
+      "Add another account": [
+        "Legg til en annen konto"
+      ],
       "Add Bcc recipients": [
         "Legg til mottakere (blind kopi)"
       ],
@@ -582,6 +585,12 @@
       "Help": [
         "Hjelp"
       ],
+      "Help and feedback": [
+        "Hjelp og tilbakemelding"
+      ],
+      "Help and resources": [
+        "Hjelp og ressurser"
+      ],
       "Hide": [
         "Skjul"
       ],
@@ -801,9 +810,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
-      ],
-      "More options": [
-        "Flere valg"
       ],
       "More refine actions": [
         "Flere finjusteringshandlinger"
@@ -1108,10 +1114,10 @@
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Velg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Velg alle"
       ],
       "Select all messages": [
@@ -1753,9 +1759,6 @@
       "High speed streaming": [
         "Strømming med høy hastighet"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrert 2FA-autentisering"
-      ],
       "One-time payment, lifetime deal": [
         "Engangsbetaling, livstidsavtale"
       ],
@@ -1774,17 +1777,11 @@
       "Secure file storage & sharing": [
         "Sikker fillagring og -deling"
       ],
-      "Secure vault and link sharing": [
-        "Sikker hvelv og deling av koblinger"
-      ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Ubegrenset antall pålogginger, notater, kredittkort"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Ubegrenset antall pålogginger, kredittkort, hide-my-email-aliaser og mer"
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
@@ -1848,8 +1845,14 @@
       "Annually": [
         "Årlig"
       ],
+      "Lifetime": [
+        "Livstid"
+      ],
       "Monthly": [
         "Månedlig"
+      ],
+      "New!": [
+        "Ny!"
       ],
       "Two-year": [
         "Toårig"
@@ -3509,6 +3512,31 @@
         "Åland"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "For alle ${ BRAND_NAME }-tjenester"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "For ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "For ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "For ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "For ${ VPN_APP_NAME }"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Vedlegg"
@@ -4968,6 +4996,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Ubegrenset antall hide-my-email-aliaser"
       ]
     },
     "fido2: Error": {
@@ -6652,7 +6685,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -6893,6 +6927,9 @@
       ],
       "Organization size": [
         "Organisasjonsstørrelse"
+      ],
+      "Other accounts": [
+        "Andre kontoer"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
@@ -7223,9 +7260,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnementet avsluttes: aktiver på nytt innen ${ byDate } for å beholde fordelene med ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Bytt til"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opprett og del dokumenter i ${ DOCS_APP_NAME } og oppbevar dem sikkert. Alt på ${ ios }, ${ android } og ${ desktop }."
@@ -8473,6 +8507,9 @@
       "Import to:": [
         "Importer til:"
       ],
+      "Integrated 2FA authenticator": [
+        "Integrert 2FA-autentisering"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastatursnarvei: ${ shortcut }"
       ],
@@ -9518,12 +9555,6 @@
       "${ size } storage per user": [
         "${ size } lagringsplass per bruker"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - for ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - for alle ${ BRAND_NAME }-tjenester"
-      ],
       "1 TB secure storage": [
         "1 TB sikker lagring"
       ],
@@ -9696,9 +9727,6 @@
       "HTML signatures": [
         "HTML-signaturer"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrert 2FA-autentisering"
-      ],
       "Kill switch/always-on VPN": [
         "Nødstopp/alltid på-VPN"
       ],
@@ -9837,9 +9865,6 @@
       "Unlimited folders, labels, and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
-      ],
       "Unlimited labels": [
         "Ubegrenset antall etiketter"
       ],
@@ -9976,6 +10001,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Vår ${ visionary }-plan er ikke lenger tilgjengelig for nye abonnenter da det er en spesiell plan for originale ${ BRAND_NAME }-brukere med spesielle funksjoner og fordeler."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Betal én gang, sikre passordene og identiteten din for alltid."
       ],
       "Popular": [
         "Populær"
@@ -10711,11 +10739,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Sikker hvelv og deling av koblinger"
-      ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
+      ],
+      "Secure vault, item and link sharing": [
+        "Sikker deling av hvelv, elementer og koblinger"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Ubegrenset antall pålogginger, notater, kredittkort og mer"
       ]
     },
     "pass_signup_2024: Info": {
@@ -13277,6 +13308,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help and feedback": [
+        "Hjelp og tilbakemelding"
+      ],
       "Help center": [
         "Hjelpesenter"
       ],
@@ -13754,11 +13788,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk angir at formatet i skrivevinduet brukes til å sende til denne brukeren. Ren tekst indikerer at meldingen alltid konverteres til ren tekst ved sending."
@@ -13840,6 +13869,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Last opp en offentlig nøkkel for å aktivere sending av ende-til-ende-krypterte e-postmeldinger til denne e-posten."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ]
     },
     "Tor out of date": {

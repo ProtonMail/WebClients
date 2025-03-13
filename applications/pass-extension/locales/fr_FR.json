@@ -1925,6 +1925,9 @@
       "Please consider leaving a review.": [
         "N'hésitez pas à laisser un avis."
       ],
+      "Please contact your administrator": [
+        "Contactez votre administrateur."
+      ],
       "Please do not close this window": [
         "Veuillez ne pas fermer cette fenêtre."
       ],
@@ -2341,6 +2344,10 @@
         "${ config.options.wordCount } mot",
         "${ config.options.wordCount } mots"
       ],
+      "${ count } item": [
+        "${ count } élément",
+        "${ count } éléments"
+      ],
       "${ days } day": [
         "${ days } jour",
         "${ days } jours"
@@ -2364,7 +2371,7 @@
         "${ months } mois",
         "${ months } mois"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
+      "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
@@ -2956,6 +2963,9 @@
       ],
       "Save passkeys": [
         "Enregistrer les clés d'accès"
+      ],
+      "Secure links": [
+        "Liens sécurisés"
       ],
       "Security": [
         "Sécurité"
@@ -3816,6 +3826,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Quelle est la différence entre une note ${ PASS_SHORT_APP_NAME } et une note SimpleLogin ?"
       ],
+      "You don't have any vault": [
+        "Vous n'avez aucun coffre-fort."
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Votre abonnement ${ planName } se terminera le ${ endDate }."
       ],
@@ -4110,6 +4123,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Vous n'aurez plus accès à ce coffre-fort. Pour le rejoindre à nouveau, il vous faudra une nouvelle invitation."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Votre administrateur doit créer un coffre-fort pour vous avant que vous puissiez créer des éléments."
+      ],
+      "Your organization does not allow creating a vault": [
+        "Votre organisation ne permet pas de créer un coffre-fort."
       ],
       "Your organization does not allow sharing individual items": [
         "Votre organisation ne permet pas le partage d'éléments individuels."

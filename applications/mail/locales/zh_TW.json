@@ -792,9 +792,6 @@
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
-      "More options": [
-        "更多選項"
-      ],
       "More refine actions": [
         "更多改進動作"
       ],
@@ -1098,11 +1095,11 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select all": [
-        "全選"
-      ],
       "Select All": [
         "選擇全部"
+      ],
+      "Select all": [
+        "全選"
       ],
       "Select all messages": [
         "選取所有郵件"
@@ -1738,9 +1735,6 @@
       "High speed streaming": [
         "高速串流"
       ],
-      "Integrated 2FA authenticator": [
-        "整合了雙重驗證的驗證器"
-      ],
       "One-time payment, lifetime deal": [
         "一次付款，終身方案"
       ],
@@ -1759,17 +1753,8 @@
       "Secure file storage & sharing": [
         "安全檔案儲存與共享"
       ],
-      "Secure vault and link sharing": [
-        "安全保管庫和共享連結"
-      ],
       "Unlimited folders, labels and filters": [
         "無上限資料夾、標籤與篩選器"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無上限 hide-my-email 別名"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "無限登入，筆記，信用卡"
       ],
       "Use your own email domain": [
         "使用您自己的電子郵件網域"
@@ -4931,6 +4916,11 @@
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "無限制的 hide-my-email 別名"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
@@ -6536,7 +6526,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入圖片"
       ],
       "Insert link": [
         "插入連結"
@@ -7095,9 +7085,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
-      ],
-      "Switch to": [
-        "切換至"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用${ DRIVE_APP_NAME }應用程式同步和管理檔案。於${ DOCS_APP_NAME }創建和共享文件，並安全存放。全部於${ ios },${ android }和${ desktop }。"
@@ -8321,6 +8308,9 @@
       "Import to:": [
         "匯入到："
       ],
+      "Integrated 2FA authenticator": [
+        "整合雙重驗證"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "鍵盤快速鍵: ${ shortcut }"
       ],
@@ -9335,12 +9325,6 @@
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType }-於${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType }-於全部${ BRAND_NAME }服務"
-      ],
       "1 TB secure storage": [
         "1TB安全儲存空間"
       ],
@@ -9512,9 +9496,6 @@
       "HTML signatures": [
         "HTML簽名"
       ],
-      "Integrated 2FA authenticator": [
-        "整合式 2FA 驗證器"
-      ],
       "Kill switch/always-on VPN": [
         "緊急開關 / 永久連線的 VPN"
       ],
@@ -9646,9 +9627,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "資料夾、標籤和篩選器無上限"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無限制的 hide-my-email別名"
       ],
       "Unlimited labels": [
         "無限制標籤"
@@ -10495,9 +10473,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "安全保管庫和共享連結"
-      ],
       "Secure vault sharing": [
         "安全分享保管庫"
       ]
@@ -13419,11 +13394,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
@@ -13505,6 +13475,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ]
     },
     "Tor out of date": {

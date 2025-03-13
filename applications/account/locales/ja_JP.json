@@ -1821,9 +1821,6 @@
       "High speed streaming": [
         "高速ストリーミング"
       ],
-      "Integrated 2FA authenticator": [
-        "統合された 2FA 認証システム"
-      ],
       "One-time payment, lifetime deal": [
         "一度きりの支払いで、一生涯のアクセス"
       ],
@@ -1842,17 +1839,8 @@
       "Secure file storage & sharing": [
         "安全なファイルストレージと共有"
       ],
-      "Secure vault and link sharing": [
-        "安全な保管庫とリンクの共有"
-      ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無制限の hide-my-email エイリアス"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "無制限のログイン、メモ、クレジットカード"
       ],
       "Use your own email domain": [
         "独自のメールドメインを使用する"
@@ -2416,7 +2404,7 @@
         "黒"
       ],
       "blanched almond": [
-        "かなり白い黄"
+        "クリームイエロー"
       ],
       "blue-gray": [
         "ややグレーな青"
@@ -2437,7 +2425,7 @@
         "コバルト"
       ],
       "copper": [
-        "カッパー"
+        "赤錆色"
       ],
       "cyan-blue azure": [
         "グレーな青"
@@ -2449,19 +2437,19 @@
         "黒い青"
       ],
       "dark midnight blue": [
-        "ダークミッドナイトブルー"
+        "紺色"
       ],
       "dim gray": [
         "やや黒いグレー"
       ],
       "enzian": [
-        "リンドウ"
+        "濃藍"
       ],
       "fern": [
-        "シダ"
+        "緑"
       ],
       "field drab": [
-        "フィールドドラブ"
+        "露紅茶"
       ],
       "forest": [
         "フォレスト"
@@ -2470,7 +2458,7 @@
         "かなり白いグレー"
       ],
       "japanese laurel": [
-        "黒い緑"
+        "濃い緑"
       ],
       "kiwi": [
         "キウイ"
@@ -2482,16 +2470,16 @@
         "かなり赤いピンク"
       ],
       "light moss green": [
-        "ライトモスグリーン"
+        "若葉色"
       ],
       "light red": [
-        "ライトレッド"
+        "薄い赤"
       ],
       "maize": [
-        "やや黒い黄"
+        "あさき"
       ],
       "mughal green": [
-        "かなり黒い緑"
+        "深緑"
       ],
       "ocean": [
         "オーシャン"
@@ -2512,7 +2500,7 @@
         "やや白い青"
       ],
       "pastel gray": [
-        "パステルグレー"
+        "パールグレー"
       ],
       "persian plum": [
         "かなり黒い赤"
@@ -2527,7 +2515,7 @@
         "やや白いグレー"
       ],
       "pickle": [
-        "ピクルス"
+        "璃寛茶"
       ],
       "pine": [
         "パイン"
@@ -2536,7 +2524,7 @@
         "ピンク"
       ],
       "pistachio": [
-        "ピスタチオ"
+        "わさびいろ"
       ],
       "plum": [
         "プラム"
@@ -2554,7 +2542,7 @@
         "サハラ"
       ],
       "satin sheen gold": [
-        "サテンシーンゴールド"
+        "オリーブ"
       ],
       "slateblue": [
         "スレートブルー"
@@ -4201,7 +4189,7 @@
     },
     "Email body for invitation (event details part)": {
       "Removed": [
-        "削除"
+        "削除済み"
       ]
     },
     "Email body for invitation (location part)": {
@@ -5186,7 +5174,7 @@
         "ファイル${ formattedFilename }はメソッドが正しくなく、インポートできません。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "ファイル${ formattedFilename }にはインポートする連絡先がありません。"
+        "ファイル${ formattedFilename }にはインポートする予定がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
         "ファイル${ formattedFilename }が空です。"
@@ -5837,6 +5825,9 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent 対応 (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無制限の Hide-my-email エイリアス"
       ]
     },
     "Features": {
@@ -5854,9 +5845,6 @@
       ],
       "Secure streaming": [
         "安全なストリーミング"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "${ vpnServers.paid.countries }ヶ国から選択"
       ]
     },
     "Features: Tooltip": {
@@ -6551,7 +6539,7 @@
     },
     "ICS event error": {
       "Calendar time zone not supported": [
-        "カレンダーのタイムゾーンはサポートされていません"
+        "カレンダーのタイムゾーンがサポートされていません"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -6584,7 +6572,7 @@
         "定期的な予定に繰り返しがありません"
       ],
       "Recurring rule not supported": [
-        "繰り返しルールはサポートされていません"
+        "繰り返しルールがサポートされていません"
       ],
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
@@ -7017,9 +7005,6 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } には少なくとも 1 つの専用サーバー ${ serverPricePerMonth } が必要です"
-      ],
-      "${ planName } expires in ${ daysLeft } days.": [
-        "${ planName } は ${ daysLeft } 日後に期限切れになります。"
       ],
       "${ planName } expires today.": [
         "${ planName } の有効期限は本日です。"
@@ -7814,7 +7799,7 @@
         "ネットワークセキュリティの強化"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "デスクトップアプリを使って、より速く、集中したメール送信をお楽しみください。"
+        "デスクトップアプリで、より速く、集中できるメール送信をお楽しみください。"
       ],
       "Enter key manually instead": [
         "代わりに手動で鍵を入力"
@@ -8970,9 +8955,6 @@
       ],
       "Swiss based": [
         "スイス拠点"
-      ],
-      "Switch to": [
-        "切り替え"
       ],
       "Symbols (#$&)": [
         "記号 (#$&)"
@@ -10984,6 +10966,9 @@
       "Inherit color from parent folder": [
         "親フォルダーの色を継承"
       ],
+      "Integrated 2FA authenticator": [
+        "2要素認証システムの統合"
+      ],
       "Interval": [
         "間隔"
       ],
@@ -11691,7 +11676,7 @@
         "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有料の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有料の${ MAIL_SHORT_APP_NAME } プランへアップグレードしてください。"
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "このプランで利用できるカレンダーの最大数に達しました。"
@@ -12524,12 +12509,6 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME }のための"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - 全ての${ BRAND_NAME }サービスのための"
-      ],
       "1 TB secure storage": [
         "1 TBの安全なストレージ"
       ],
@@ -12725,9 +12704,6 @@
       "HTML signatures": [
         "HTML 署名"
       ],
-      "Integrated 2FA authenticator": [
-        "統合された2要素認証機能"
-      ],
       "Kill switch/always-on VPN": [
         "キルスイッチ / 常時接続 VPN"
       ],
@@ -12874,9 +12850,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無制限の Hide-my-email エイリアス"
       ],
       "Unlimited labels": [
         "ラベル制限なし"
@@ -14449,9 +14422,6 @@
       ],
       "Save your recovery kit to continue": [
         "続行するにはリカバリ キットを保存してください"
-      ],
-      "Secure vault and link sharing": [
-        "安全な保管庫とリンク共有"
       ],
       "Secure vault sharing": [
         "安全な保管庫共有"
@@ -17239,7 +17209,7 @@
         "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。無料プランでは追加ユーザーがサポートされていないため、チームの作業が中断されます。"
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME }Freeにダウングレードされます。"
+        "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME } Freeにダウングレードされます。"
       ],
       "Yearly free storage bonuses": [
         "年間無料ストレージボーナス"
@@ -17748,7 +17718,7 @@
         "${ appName } Free"
       ],
       "${ appName } keyboard shortcuts": [
-        "${ appName } キーボードショートカット"
+        "${ appName } のキーボードショートカット"
       ],
       "${ BRAND_NAME } Scribe": [
         "${ BRAND_NAME }Scribe"
@@ -18984,7 +18954,7 @@
         "このフィールドは空欄にできません"
       ],
       "This field cannot contain only spaces": [
-        "このフィールドにはスペースのみを含めることはできません"
+        "このフィールドに空白のみを入れることはできません"
       ],
       "Time zone": [
         "タイムゾーン"

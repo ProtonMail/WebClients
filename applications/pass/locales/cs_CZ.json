@@ -2024,6 +2024,9 @@
       "Please consider leaving a review.": [
         "Zvažte prosím zanechání hodnocení."
       ],
+      "Please contact your administrator": [
+        "Kontaktujte prosím svého správce"
+      ],
       "Please do not close this window": [
         "Nezavírejte prosím toto okno"
       ],
@@ -2121,7 +2124,7 @@
         "Nastavení bylo úspěšně aktualizováno"
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
-        "Sdílejte aliasy s ostatními přidáním jejich doručené pošty jako e-mailové schránky pro přeposílání."
+        "Sdílejte aliasy s ostatními přidáním jejich e-mailu, na který bude pošta přeposílána."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Sdílení přihlašovacích údajů a zabezpečených poznámek až s 10 lidmi"
@@ -2445,6 +2448,12 @@
         "${ config.options.wordCount } slova",
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
+      ],
+      "${ count } item": [
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položek",
+        "${ count } položek"
       ],
       "${ days } day": [
         "${ days } den",
@@ -3054,6 +3063,9 @@
       ],
       "Reveal password": [
         "Zobrazit heslo"
+      ],
+      "Secure links": [
+        "Bezpečné odkazy"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Bezpečně sdílejte a ukládejte hesla a přihlašujte se ke svým účtům pomocí koncově šifrovaného ${ PASS_APP_NAME }, kterému důvěřují miliony lidí."
@@ -4032,6 +4044,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Jaký je rozdíl mezi poznámkou ${ PASS_SHORT_APP_NAME } a poznámkou SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "Nemáte žádný trezor"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Vaše předplatné ${ planName } skončí ${ endDate }"
       ],
@@ -4347,6 +4362,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "K tomuto trezoru již nebudete mít přístup. Chcete-li do něj znovu vstoupit, budete potřebovat novou pozvánku."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Než budete moci vytvářet položky, musí vám váš správce vytvořit trezor"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Vaše organizace nedovoluje vytvoření trezoru"
       ],
       "Your organization does not allow sharing individual items": [
         "Vaše organizace nepovoluje sdílení samostatných položek"

@@ -718,7 +718,7 @@
         "読み込み中${ ellipsis }"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
-        "${ MAIL_APP_NAME } をデフォルトのメールアプリケーションとして設定する"
+        "${ MAIL_APP_NAME } をデフォルトのメールアプリにする"
       ],
       "Make it friendly": [
         "フレンドリーにする"
@@ -794,9 +794,6 @@
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
-      ],
-      "More options": [
-        "詳細設定を表示"
       ],
       "More refine actions": [
         "その他の修正操作"
@@ -1101,10 +1098,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
       ],
-      "Select all": [
+      "Select All": [
         "すべて選択"
       ],
-      "Select All": [
+      "Select all": [
         "すべて選択"
       ],
       "Select all messages": [
@@ -1741,9 +1738,6 @@
       "High speed streaming": [
         "高速ストリーミング"
       ],
-      "Integrated 2FA authenticator": [
-        "統合された 2FA 認証システム"
-      ],
       "One-time payment, lifetime deal": [
         "一度きりの支払いで、一生涯のアクセス"
       ],
@@ -1762,17 +1756,8 @@
       "Secure file storage & sharing": [
         "安全なファイルストレージと共有"
       ],
-      "Secure vault and link sharing": [
-        "安全な保管庫とリンクの共有"
-      ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無制限の hide-my-email エイリアス"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "無制限のログイン、メモ、クレジットカード"
       ],
       "Use your own email domain": [
         "独自のメールドメインを使用する"
@@ -2320,7 +2305,7 @@
         "黒"
       ],
       "blanched almond": [
-        "かなり白い黄"
+        "クリームイエロー"
       ],
       "blue-gray": [
         "ややグレーな青"
@@ -2341,7 +2326,7 @@
         "コバルト"
       ],
       "copper": [
-        "カッパー"
+        "赤錆色"
       ],
       "cyan-blue azure": [
         "グレーな青"
@@ -2353,19 +2338,19 @@
         "黒い青"
       ],
       "dark midnight blue": [
-        "ダークミッドナイトブルー"
+        "紺色"
       ],
       "dim gray": [
         "やや黒いグレー"
       ],
       "enzian": [
-        "リンドウ"
+        "濃藍"
       ],
       "fern": [
-        "シダ"
+        "緑"
       ],
       "field drab": [
-        "フィールドドラブ"
+        "露紅茶"
       ],
       "forest": [
         "フォレスト"
@@ -2374,7 +2359,7 @@
         "かなり白いグレー"
       ],
       "japanese laurel": [
-        "黒い緑"
+        "濃い緑"
       ],
       "kiwi": [
         "キウイ"
@@ -2386,16 +2371,16 @@
         "かなり赤いピンク"
       ],
       "light moss green": [
-        "ライトモスグリーン"
+        "若葉色"
       ],
       "light red": [
-        "ライトレッド"
+        "薄い赤"
       ],
       "maize": [
-        "やや黒い黄"
+        "あさき"
       ],
       "mughal green": [
-        "かなり黒い緑"
+        "深緑"
       ],
       "ocean": [
         "オーシャン"
@@ -2416,7 +2401,7 @@
         "やや白い青"
       ],
       "pastel gray": [
-        "パステルグレー"
+        "パールグレー"
       ],
       "persian plum": [
         "かなり黒い赤"
@@ -2431,7 +2416,7 @@
         "やや白いグレー"
       ],
       "pickle": [
-        "ピクルス"
+        "璃寛茶"
       ],
       "pine": [
         "パイン"
@@ -2440,7 +2425,7 @@
         "ピンク"
       ],
       "pistachio": [
-        "ピスタチオ"
+        "わさびいろ"
       ],
       "plum": [
         "プラム"
@@ -2458,7 +2443,7 @@
         "サハラ"
       ],
       "satin sheen gold": [
-        "サテンシーンゴールド"
+        "オリーブ"
       ],
       "slateblue": [
         "スレートブルー"
@@ -3888,7 +3873,7 @@
     },
     "Email body for invitation (event details part)": {
       "Removed": [
-        "削除"
+        "削除済み"
       ]
     },
     "Email body for invitation (location part)": {
@@ -3977,7 +3962,7 @@
         "${ BRAND_NAME } から外部アカウントに接続できません"
       ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "<${ email }> で次のエラーが発生しました${ error.message } この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
+        "<${ email }> で次のエラーが発生しました: ${ error.message }。この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
@@ -4571,7 +4556,7 @@
         "ファイル${ formattedFilename }はメソッドが正しくなく、インポートできません。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "ファイル${ formattedFilename }にはインポートする連絡先がありません。"
+        "ファイル${ formattedFilename }にはインポートする予定がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
         "ファイル${ formattedFilename }が空です。"
@@ -4932,6 +4917,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "無制限の Hide-my-email エイリアス"
       ]
     },
     "fido2: Error": {
@@ -5414,7 +5404,7 @@
     },
     "ICS event error": {
       "Calendar time zone not supported": [
-        "カレンダーのタイムゾーンはサポートされていません"
+        "カレンダーのタイムゾーンがサポートされていません"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -5447,7 +5437,7 @@
         "定期的な予定に繰り返しがありません"
       ],
       "Recurring rule not supported": [
-        "繰り返しルールはサポートされていません"
+        "繰り返しルールがサポートされていません"
       ],
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
@@ -5750,7 +5740,7 @@
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
-        "${ BRAND_NAME }のパスワードマネージャーは、パスワードを作成、保存、自動入力することができ流ので、パスワードをリセットする必要はもうありません。"
+        "${ BRAND_NAME }のパスワードマネージャーは、パスワードを作成、保存、自動入力することができるので、パスワードをリセットする必要がなくなります。"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
@@ -6359,7 +6349,7 @@
         "メッセージを暗号化"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "デスクトップアプリを使って、より速く、集中したメール送信をお楽しみください。"
+        "デスクトップアプリで、より速く、集中できるメール送信をお楽しみください。"
       ],
       "Enter the code from your authenticator app": [
         "認証アプリのコードを入力してください"
@@ -6539,7 +6529,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -6701,7 +6691,7 @@
         "毎月 ${ onDayString }"
       ],
       "More infos": [
-        "もっと詳しく"
+        "詳細"
       ],
       "More refine actions": [
         "その他の修正操作"
@@ -7098,9 +7088,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
-      ],
-      "Switch to": [
-        "切り替え"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "${ DRIVE_APP_NAME }アプリでファイルを同期して管理します。${ DOCS_APP_NAME }でドキュメントを作成して共有し、安全に保存します。すべて${ ios }、${ android }、${ desktop }で利用可能です。"
@@ -8232,7 +8219,7 @@
         "次回から表示しない"
       ],
       "Don't show this suggestion": [
-        "この提案を表示しない"
+        "今後このメッセージを表示しない"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "Amazon、eBay、Etsyなど"
@@ -8323,6 +8310,9 @@
       ],
       "Import to:": [
         "インポート先："
+      ],
+      "Integrated 2FA authenticator": [
+        "2要素認証システムの統合"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "キーボードショートカット: ${ shortcut }"
@@ -8680,7 +8670,7 @@
         "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有料の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有料の${ MAIL_SHORT_APP_NAME } プランへアップグレードしてください。"
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "このプランで利用できるカレンダーの最大数に達しました。"
@@ -9338,12 +9328,6 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME }のための"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - 全ての${ BRAND_NAME }サービスのための"
-      ],
       "1 TB secure storage": [
         "1 TBの安全なストレージ"
       ],
@@ -9515,9 +9499,6 @@
       "HTML signatures": [
         "HTML 署名"
       ],
-      "Integrated 2FA authenticator": [
-        "統合された2要素認証機能"
-      ],
       "Kill switch/always-on VPN": [
         "キルスイッチ / 常時接続 VPN"
       ],
@@ -9649,9 +9630,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無制限の Hide-my-email エイリアス"
       ],
       "Unlimited labels": [
         "ラベル制限なし"
@@ -10516,9 +10494,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "安全な保管庫とリンク共有"
-      ],
       "Secure vault sharing": [
         "安全な保管庫共有"
       ]
@@ -12127,7 +12102,7 @@
         "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。無料プランでは追加ユーザーがサポートされていないため、チームの作業が中断されます。"
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME }Freeにダウングレードされます。"
+        "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME } Freeにダウングレードされます。"
       ],
       "Yearly free storage bonuses": [
         "年間無料ストレージボーナス"
@@ -12657,7 +12632,7 @@
     },
     "Title": {
       "${ appName } keyboard shortcuts": [
-        "${ appName } キーボードショートカット"
+        "${ appName } のキーボードショートカット"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } 件のメールアドレス"
@@ -13383,7 +13358,7 @@
         "このフィールドは空欄にできません"
       ],
       "This field cannot contain only spaces": [
-        "このフィールドにはスペースのみを含めることはできません"
+        "このフィールドに空白のみを入れることはできません"
       ],
       "To": [
         "宛先"
@@ -13472,11 +13447,6 @@
         "今日"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
@@ -13558,6 +13528,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛のメールをエンドツーエンド暗号化することができます"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Tor out of date": {

@@ -55,6 +55,9 @@
       "Add address": [
         "Lägg till adress"
       ],
+      "Add another account": [
+        "Lägg till ett annat konto"
+      ],
       "Add birthday": [
         "Lägg till födelsedag"
       ],
@@ -85,15 +88,15 @@
       "Add photos": [
         "Lägg till foton"
       ],
+      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
+        "Lägg till “${ album.name }” (${ album.photoCount } foto)",
+        "Lägg till “${ album.name }” (${ album.photoCount } foton)"
+      ],
       "Add to album": [
         "Lägg till i album"
       ],
       "Add to group": [
         "Lägg till i grupp"
-      ],
-      "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "Lägg till “${ album.name }” (${ album.photoCount } foto)",
-        "Lägg till “${ album.name }” (${ album.photoCount } foton)"
       ],
       "Album name": [
         "Albumnamn"
@@ -464,6 +467,12 @@
       ],
       "Help": [
         "Hjälp"
+      ],
+      "Help and feedback": [
+        "Hjälp och feedback"
+      ],
+      "Help and resources": [
+        "Hjälp och resurser"
       ],
       "Hide advanced PGP settings": [
         "Dölj avancerade PGP-inställningar"
@@ -1210,9 +1219,6 @@
       "High speed streaming": [
         "Höghastighetsstreaming"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrerad 2FA-autentiserare"
-      ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
       ],
@@ -1231,17 +1237,11 @@
       "Secure file storage & sharing": [
         "Säker fillagring och delning"
       ],
-      "Secure vault and link sharing": [
-        "Säker valv- och länkdelning"
-      ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsat antal hide-my-email-alias"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Obegränsat antal inloggningar, anteckningar, kreditkort"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Obegränsade inloggningar, kreditkort, hide-my-email-alias och mer"
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
@@ -1305,8 +1305,14 @@
       "Annually": [
         "Årligen"
       ],
+      "Lifetime": [
+        "Livstid"
+      ],
       "Monthly": [
         "Månadsvis"
+      ],
+      "New!": [
+        "Nytt!"
       ],
       "Two-year": [
         "Tvåårig"
@@ -2474,6 +2480,31 @@
         "Åland"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "För alla ${ BRAND_NAME }-tjänster"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "För ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "För ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "För ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "För ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/månad"
@@ -3623,6 +3654,9 @@
       ],
       "Share privately and securely": [
         "Dela privat och säkert"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Obegränsat antal hide-my-email-alias"
       ]
     },
     "fido2: Error": {
@@ -4999,6 +5033,9 @@
       "Organization size": [
         "Organisationens storlek"
       ],
+      "Other accounts": [
+        "Andra konton"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
       ],
@@ -5297,9 +5334,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Prenumeration slutar: Återaktivera senast ${ byDate } för att behålla dina ${ planName }-förmåner. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Byt till"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
@@ -6202,6 +6236,9 @@
       ],
       "Include message and file name in invite email": [
         "Inkludera meddelande och filnamn i e-postinbjudan"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrerad 2FA-autentisering"
       ],
       "Keep both": [
         "Behåll båda"
@@ -7192,12 +7229,6 @@
       "${ size } storage per user": [
         "${ size } lagringsutrymme per användare"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - För ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - För alla ${ BRAND_NAME }-tjänster"
-      ],
       "1 TB secure storage": [
         "1 TB säkert lagringsutrymme"
       ],
@@ -7370,9 +7401,6 @@
       "HTML signatures": [
         "HTML-signaturer"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrerad 2FA-autentisering"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/Alltid-på VPN"
       ],
@@ -7511,9 +7539,6 @@
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsat antal hide-my-email-alias"
-      ],
       "Unlimited labels": [
         "Obegränsade etiketter"
       ],
@@ -7650,6 +7675,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Vårt ${ visionary }-paket är inte längre tillgänglig för nya prenumeranter eftersom det är ett specialpaket för ursprungliga ${ BRAND_NAME }-användare med specialfunktioner och fördelar."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Betala en gång, säkra dina lösenord och din identitet för alltid."
       ],
       "Popular": [
         "Populär"
@@ -8564,11 +8592,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Säker valv- och länkdelning"
-      ],
       "Secure vault sharing": [
         "Säker valvdelning"
+      ],
+      "Secure vault, item and link sharing": [
+        "Säker delning av valv, objekt och länk"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Obegränsade inloggningar, anteckningar, kreditkort och mer"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9615,7 +9646,7 @@
         "${ n } VPN-anslutningar per användare"
       ],
       "VPN connection for ${ n } devices per user": [
-        "VPN-anslutning för ${ n } enheter per användare",
+        "VPN-anslutning för ${ n } enhet per användare",
         "VPN-anslutning för ${ n } enheter per användare"
       ]
     },
@@ -10557,6 +10588,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help and feedback": [
+        "Hjälp och feedback"
+      ],
       "Help center": [
         "Hjälpcenter"
       ],
@@ -11068,6 +11102,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Väljer automatiskt från ${ numberOfCountries } land",
         "Väljer automatiskt från ${ numberOfCountries } länder"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servrar i ${ numberOfCountries }+ land",
+        "Servrar i ${ numberOfCountries }+ länder"
       ]
     },
     "vpn_2024: renew": {

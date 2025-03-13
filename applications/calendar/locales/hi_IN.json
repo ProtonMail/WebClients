@@ -1052,9 +1052,6 @@
       "High speed streaming": [
         "तेज़ स्ट्रीमिंग"
       ],
-      "Integrated 2FA authenticator": [
-        "एकीकृत 2-एफए सत्यापन"
-      ],
       "One-time payment, lifetime deal": [
         "एक बार का भुगतान, लाइफटाइम सौदा"
       ],
@@ -1073,17 +1070,8 @@
       "Secure file storage & sharing": [
         "सुरक्षित फ़ाइल स्टोरेज और शेयरिंग"
       ],
-      "Secure vault and link sharing": [
-        "सुरक्षित तिजोरी और लिंक शेयरिंग"
-      ],
       "Unlimited folders, labels and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "असीमित hide-my-email नकली-नाम"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "असीमित लॉगिन, नोट्स, क्रेडिट कार्ड"
       ],
       "Use your own email domain": [
         "अपना खुद का ईमेल डोमेन इस्तेमाल करें"
@@ -3872,6 +3860,11 @@
         "अपनी फाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। इसमें स्वचालित सिंक, एन्क्रिप्टेड फाइल शेयर और बहुत कुछ शामिल है।"
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "असीमित Hide-my-email नकलीनाम"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "आपकी सुरक्षा चाबी सत्यापित करते वक्त कुछ गलती हो गई। वापस कोशिश करें।"
@@ -5113,9 +5106,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "सदस्यता समाप्त हो रही है: अपने ${ planName } फायदे बनाए रखने के लिए ${ byDate } तक पुनः सक्रिय करें। ${ reactivateLink }"
       ],
-      "Switch to": [
-        "इसमें स्विच करें"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।"
       ],
@@ -5879,6 +5869,9 @@
       ],
       "Import to:": [
         "इधर आयात करें:"
+      ],
+      "Integrated 2FA authenticator": [
+        "एकीकृत 2-एफए सत्यापन"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "कीबोर्ड शॉर्टकट: ${ shortcut }"
@@ -6738,12 +6731,6 @@
       "${ size } storage": [
         "${ size } स्टोरेज"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME } के लिए"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - सभी ${ BRAND_NAME } सेवाओं के लिए"
-      ],
       "1 TB secure storage": [
         "1 टीबी सुरक्षित स्टोरेज"
       ],
@@ -6916,9 +6903,6 @@
       "HTML signatures": [
         "HTML हस्ताक्षर"
       ],
-      "Integrated 2FA authenticator": [
-        "2-एफए करनेवाला शामिल"
-      ],
       "Kill switch/always-on VPN": [
         "किल स्विच/हमेशा-चालू वीपीएन"
       ],
@@ -7050,9 +7034,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "असीमित Hide-my-email नकलीनाम"
       ],
       "Unlimited labels": [
         "असीमित लेबल"
@@ -7937,9 +7918,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "सुरक्षित तिजोरी और लिंक साझाकरण"
-      ],
       "Secure vault sharing": [
         "सुरक्षित वॉल्ट साझाकरण"
       ]
