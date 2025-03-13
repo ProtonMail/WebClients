@@ -1,19 +1,14 @@
 import { getAllAddresses } from '../../api/addresses';
 import { queryMemberUnprivatizationInfo } from '../../api/members';
-import {
-    getOrganization,
-    getOrganizationIdentity,
-    getOrganizationLogo,
-    getOrganizationSettings,
-} from '../../api/organization';
+import { getOrganizationIdentity, getOrganizationLogo } from '../../api/organization';
 import type {
     Address,
     Api,
     MemberUnprivatizationOutput,
     Organization,
     OrganizationIdentityOutput,
-    OrganizationSettings,
 } from '../../interfaces';
+import { getOrganization, getOrganizationSettings } from '../../organization/api';
 
 export interface OrganizationData {
     organization: Organization;
@@ -29,7 +24,7 @@ export interface UnprivatizationContextData {
 
 export const getOrganizationData = async ({ api }: { api: Api }): Promise<OrganizationData> => {
     const [organization, organizationIdentity, organizationLogo] = await Promise.all([
-        api<{ Organization: Organization }>(getOrganization()).then(({ Organization }) => Organization),
+        getOrganization({ api }),
         api<OrganizationIdentityOutput>(getOrganizationIdentity())
             .then((output) => output)
             .catch((): OrganizationIdentityOutput => {
@@ -39,7 +34,7 @@ export const getOrganizationData = async ({ api }: { api: Api }): Promise<Organi
                     FingerprintSignatureAddress: null,
                 };
             }),
-        api<OrganizationSettings>(getOrganizationSettings())
+        getOrganizationSettings({ api })
             .then(async ({ LogoID }): Promise<OrganizationData['organizationLogo']> => {
                 if (!LogoID) {
                     return null;

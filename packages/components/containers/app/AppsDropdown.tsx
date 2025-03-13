@@ -3,6 +3,7 @@ import { Fragment, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Icon from '@proton/components/components/icon/Icon';
@@ -12,7 +13,7 @@ import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { OrganizationWithSettings, UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
 import { InboxDesktopAppSwitcher } from '../desktop/InboxDesktopAppSwitcher';
@@ -23,19 +24,27 @@ interface AppsDropdownProps {
     onDropdownClick?: () => void;
     app?: APP_NAMES;
     user?: UserModel;
+    organization?: OrganizationWithSettings;
     title?: string;
     reloadDocument?: AppLinkProps['reloadDocument'];
 }
 
 const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     (
-        { onDropdownClick, app, user, title, reloadDocument, ...rest }: AppsDropdownProps,
+        { onDropdownClick, app, user, organization, title, reloadDocument, ...rest }: AppsDropdownProps,
         ref: ForwardedRef<HTMLButtonElement>
     ) => {
         const { APP_NAME } = useConfig();
         const isLumoAvailable = useFlag('LumoInProductSwitcher');
+        const isAccessControlEnabled = useFlag('AccessControl');
 
-        const availableApps = getAvailableApps({ user, context: 'dropdown', isLumoAvailable });
+        const availableApps = getAvailableApps({
+            context: 'dropdown',
+            user,
+            organization,
+            isLumoAvailable,
+            isAccessControlEnabled,
+        });
 
         if (availableApps.length <= 1) {
             return null;
@@ -91,6 +100,7 @@ export const UnAuthenticatedAppsDropdown = AppsDropdown;
 const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     (props: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const [user] = useUser();
+        const [organization] = useOrganization();
         const { APP_NAME } = useConfig();
         const isInboxCustomAppSwitcher = useFlag('InboxDesktopWinLinNewAppSwitcher');
 
@@ -99,7 +109,7 @@ const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProp
             return <InboxDesktopAppSwitcher appToLinkTo={props.app} />;
         }
 
-        return <AppsDropdown ref={ref} {...props} user={user} />;
+        return <AppsDropdown ref={ref} {...props} user={user} organization={organization} />;
     }
 );
 

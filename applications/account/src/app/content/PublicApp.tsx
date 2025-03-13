@@ -17,7 +17,6 @@ import {
     UnauthenticatedApiProvider,
 } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import { AuthType } from '@proton/components/containers/login/interface';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
@@ -88,7 +87,6 @@ import ExternalSSOConsumer from './ExternalSSOConsumer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
 import { getActiveSessionLoginResult } from './actions/getActiveSessionLoginResult';
 import { getLoginResult } from './actions/getLoginResult';
-import { getProduceForkLoginResult } from './actions/getProduceForkLoginResult';
 import type { LoginLocationState, LoginResult } from './actions/interface';
 import { handleOAuthFork } from './fork/handleOAuthFork';
 import { handleProtonFork } from './fork/handleProtonFork';
@@ -276,16 +274,6 @@ const BasePublicApp = () => {
         return handleLoginResult(result);
     };
 
-    const handleProduceFork = async (data: ProduceForkData, session: AuthSession): Promise<OnLoginCallbackResult> => {
-        const result = await getProduceForkLoginResult({
-            api: silentApi,
-            session,
-            data,
-            paths,
-        });
-        return handleLoginResult(result);
-    };
-
     const handleInvalidFork = () => {
         history.replace(paths.login);
     };
@@ -370,7 +358,7 @@ const BasePublicApp = () => {
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
                     <AccountEffect
                         onEffect={async () => {
-                            const result = await handleOAuthFork({ api: silentApi });
+                            const result = await handleOAuthFork({ api: silentApi, paths });
                             if (result.type === 'invalid') {
                                 handleInvalidFork();
                                 return;
@@ -379,7 +367,7 @@ const BasePublicApp = () => {
                                 await handleActiveSessions(result.payload.activeSessionsResult, result.payload.fork);
                                 return;
                             }
-                            await handleProduceFork(result.payload.fork, result.payload.session);
+                            await handleLoginResult(result.payload);
                             return;
                         }}
                     >
@@ -389,7 +377,7 @@ const BasePublicApp = () => {
                 <Route path={SSO_PATHS.AUTHORIZE}>
                     <AccountEffect
                         onEffect={async () => {
-                            const result = await handleProtonFork({ api: silentApi });
+                            const result = await handleProtonFork({ api: silentApi, paths });
                             if (result.type === 'invalid') {
                                 handleInvalidFork();
                                 return;
@@ -398,7 +386,7 @@ const BasePublicApp = () => {
                                 await handleActiveSessions(result.payload.activeSessionsResult, result.payload.fork);
                                 return;
                             }
-                            await handleProduceFork(result.payload.fork, result.payload.session);
+                            await handleLoginResult(result.payload);
                             return;
                         }}
                     >
