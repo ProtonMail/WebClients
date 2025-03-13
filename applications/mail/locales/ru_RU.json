@@ -807,9 +807,6 @@
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
-      "More options": [
-        "Дополнительные параметры"
-      ],
       "More refine actions": [
         "Более точные действия"
       ],
@@ -1113,11 +1110,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select all": [
-        "Выделить все"
-      ],
       "Select All": [
         "Выбрать все"
+      ],
+      "Select all": [
+        "Выделить все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -1768,9 +1765,6 @@
       "High speed streaming": [
         "Высокоскоростной стриминг"
       ],
-      "Integrated 2FA authenticator": [
-        "Интегрированная двухфакторная аутентификация"
-      ],
       "One-time payment, lifetime deal": [
         "Единовременная оплата, пожизненное предложение"
       ],
@@ -1789,17 +1783,8 @@
       "Secure file storage & sharing": [
         "Безопасное хранение и обмен файлами"
       ],
-      "Secure vault and link sharing": [
-        "Защищённое хранилище и обмен ссылками"
-      ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество псевдонимов hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Неограниченное количество имён пользователей, заметок и кредитных карт"
       ],
       "Use your own email domain": [
         "Используйте свой собственный домен электронной почты"
@@ -5030,6 +5015,11 @@
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
@@ -6865,9 +6855,6 @@
       "Initializing…": [
         "Инициализация…"
       ],
-      "Insert image": [
-        "Вставить изображение"
-      ],
       "Insert link": [
         "Вставить ссылку"
       ],
@@ -7434,9 +7421,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Переключиться на"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Синхронизируйте и управляйте файлами с приложением ${ DRIVE_APP_NAME }. Создавайте и делитесь документами в ${ DOCS_APP_NAME } и безопасно храните их. Все на ${ ios }, ${ android } и ${ desktop }."
@@ -8732,6 +8716,9 @@
       "Import to:": [
         "Импортировать в:"
       ],
+      "Integrated 2FA authenticator": [
+        "Интегрированная двухфакторная аутентификация"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбинация клавиш: ${ shortcut }"
       ],
@@ -9821,12 +9808,6 @@
       "${ size } storage": [
         "${ size } хранилища"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } — для ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } — для всех сервисов ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 ТБ защищенного хранения"
       ],
@@ -10001,9 +9982,6 @@
       "HTML signatures": [
         "Подписи HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Встроенная двухфакторная аутентификация"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch и VPN постоянно вкл."
       ],
@@ -10135,9 +10113,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество скрытых псевдонимов для скрытия своей электронной почты"
       ],
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
@@ -11026,9 +11001,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Защищенное хранилище и обмен ссылками"
-      ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
       ]
@@ -14231,11 +14203,6 @@
         "Сегодня"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
@@ -14317,6 +14284,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Tor out of date": {

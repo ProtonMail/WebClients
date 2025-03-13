@@ -774,9 +774,6 @@
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
-      "More options": [
-        "Додаткові параметри"
-      ],
       "More refine actions": [
         "Більше вдосконалень"
       ],
@@ -1080,10 +1077,10 @@
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Вибрати все"
       ],
-      "Select All": [
+      "Select all": [
         "Вибрати все"
       ],
       "Select all messages": [
@@ -1726,9 +1723,6 @@
       "High speed streaming": [
         "Високошвидкісний потокова трансляція"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтегрований автентифікатор 2FA"
-      ],
       "One-time payment, lifetime deal": [
         "Одноразовий платіж, довічна пропозиція"
       ],
@@ -1747,17 +1741,8 @@
       "Secure file storage & sharing": [
         "Безпечне сховище файлів та обмін ними"
       ],
-      "Secure vault and link sharing": [
-        "Безпечний спільний доступ до сховища та обмін посиланнями"
-      ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Необмежена кількість псевдонімів hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Необмежена кількість записів входу, нотаток, банківських карток"
       ],
       "Use your own email domain": [
         "Використовуйте свій власний домен електронної пошти"
@@ -4946,6 +4931,11 @@
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Необмежена кількість псевдонімів Hide-my-email"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Щось пішло не так під час автентифікації за допомогою вашого ключа безпеки. Будь ласка, повторіть спробу."
@@ -6713,9 +6703,6 @@
       "Initializing…": [
         "Ініціалізація…"
       ],
-      "Insert image": [
-        "Вставити зображення"
-      ],
       "Insert link": [
         "Вставити посилання"
       ],
@@ -7243,9 +7230,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Перейти до"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
@@ -8512,6 +8496,9 @@
       "Import to:": [
         "Імпортувати до:"
       ],
+      "Integrated 2FA authenticator": [
+        "Інтегрований автентифікатор 2FA"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбінація клавіш: ${ shortcut }"
       ],
@@ -9586,12 +9573,6 @@
       "${ size } storage": [
         "${ size } сховища"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Для ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Для всіх ${ BRAND_NAME } сервісів"
-      ],
       "1 TB secure storage": [
         "1 ТБ безпечного сховища"
       ],
@@ -9760,9 +9741,6 @@
       "HTML signatures": [
         "HTML-підписи"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтегрований автентифікатор 2FA"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Постійна VPN"
       ],
@@ -9882,9 +9860,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Необмежена кількість псевдонімів Hide-my-email"
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
@@ -10641,9 +10616,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Безпечний спільний доступ до сховища та обмін посиланнями"
-      ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
       ]
@@ -13761,11 +13733,6 @@
         "Сьогодні"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Автоматично означає, що для надсилання цьому користувачу використовується формат редактора. Звичайний текст означає, що повідомлення завжди перетворюватиметься у звичайний текст під час надсилання."
@@ -13847,6 +13814,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
       ]
     },
     "Tor out of date": {
