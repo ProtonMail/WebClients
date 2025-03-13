@@ -138,6 +138,7 @@ const EventPopover = ({
         isCancelled,
         isUnanswered,
         userPartstat,
+        userComment,
         isSelfAddressActive,
         color,
     } = getEventInformation(targetEvent, model, hasPaidMail);
@@ -378,14 +379,14 @@ const EventPopover = ({
                 </PopoverFooter>
             )}
             {canReplyToEvent && rsvpCommentEnabled && (
-                <PopoverFooter className="shrink-0" key={targetEvent.uniqueId}>
-                    <div className="ml-0 md:ml-auto">
-                        <RsvpSection
-                            handleChangePartstat={handleChangePartstat}
-                            userPartstat={userPartstat}
-                            disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
-                        />
-                    </div>
+                <PopoverFooter className="shrink-0 flex-column" key={targetEvent.uniqueId}>
+                    <RsvpSection
+                        handleChangePartstat={handleChangePartstat}
+                        userPartstat={userPartstat}
+                        userComment={userComment}
+                        disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
+                        isSearchView={isSearchView}
+                    />
                 </PopoverFooter>
             )}
         </PopoverContainer>

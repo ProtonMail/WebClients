@@ -38,6 +38,7 @@ const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventM
         isRecurring,
         isSingleEdit,
         userPartstat: selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+        userComment: selfAttendee?.comment,
         isSelfAddressActive: selfAddress ? getIsAddressActive(selfAddress) : true,
     };
 };
