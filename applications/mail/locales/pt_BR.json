@@ -51,6 +51,9 @@
       "Add address": [
         "Adicionar endereço"
       ],
+      "Add another account": [
+        "Adicionar outra conta"
+      ],
       "Add Bcc recipients": [
         "Adicionar destinatários Cco"
       ],
@@ -582,6 +585,12 @@
       "Help": [
         "Ajuda"
       ],
+      "Help and feedback": [
+        "Ajuda e comentários"
+      ],
+      "Help and resources": [
+        "Ajuda e recursos"
+      ],
       "Hide": [
         "Ocultar"
       ],
@@ -801,9 +810,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
-      ],
-      "More options": [
-        "Mais opções"
       ],
       "More refine actions": [
         "Ações mais refinadas"
@@ -1108,11 +1114,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select all": [
-        "Selecionar tudo"
-      ],
       "Select All": [
         "Selecionar todos"
+      ],
+      "Select all": [
+        "Selecionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1753,9 +1759,6 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
       "One-time payment, lifetime deal": [
         "Pagamento único, "
       ],
@@ -1774,17 +1777,11 @@
       "Secure file storage & sharing": [
         "Armazenamento e compartilhamento de arquivos seguros"
       ],
-      "Secure vault and link sharing": [
-        "Compartilhamento seguro de cofre e link"
-      ],
       "Unlimited folders, labels and filters": [
         "Pastas, marcadores e filtros ilimitados"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Alíases ilimitados do hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Logins ilimitados, notas, cartões de crédito"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Inícios de sessão ilimitados, cartões de crédito, alias do ide-my-email e mais"
       ],
       "Use your own email domain": [
         "Use o seu próprio domínio de e-mail"
@@ -1848,8 +1845,14 @@
       "Annually": [
         "Anualmente"
       ],
+      "Lifetime": [
+        "Acesso vitalício"
+      ],
       "Monthly": [
         "Mensalmente"
+      ],
+      "New!": [
+        "Novo!"
       ],
       "Two-year": [
         "Dois anos"
@@ -3509,6 +3512,31 @@
         "Ilhas Åland"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Para todos os serviços da ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Para ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Para ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Para ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Para ${ VPN_APP_NAME }"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Anexo"
@@ -4968,6 +4996,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Aliases do Hide-my-email ilimitados"
       ]
     },
     "fido2: Error": {
@@ -6652,7 +6685,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -6894,8 +6928,14 @@
       "Organization size": [
         "Tamanho da organização"
       ],
+      "Other accounts": [
+        "Outras contas"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nossos alertas priorizam a segurança. Se você não reconhecer nenhuma das informações violadas, você pode ignorar este relatório com segurança."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Nosso sistema identificou esta mensagem como uma tentativa de golpe. Verifique se é legítimo."
       ],
       "password": [
         "senha"
@@ -7217,9 +7257,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Mudar para"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronize e gerencie arquivos com o aplicativo ${ DRIVE_APP_NAME }. Crie e compartilhe documentos no ${ DOCS_APP_NAME } e armazene-os com segurança. Tudo no ${ ios }, ${ android } e ${ desktop }."
@@ -8470,6 +8507,9 @@
       "Import to:": [
         "Importar para:"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticador A2F integrado"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalho de teclado: ${ shortcut }"
       ],
@@ -9515,12 +9555,6 @@
       "${ size } storage per user": [
         "${ size } de armazenamento por usuário"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Para ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Para todos os serviços da ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB de armazenamento seguro"
       ],
@@ -9693,9 +9727,6 @@
       "HTML signatures": [
         "Assinaturas HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/VPN sempre ativa"
       ],
@@ -9834,9 +9865,6 @@
       "Unlimited folders, labels, and filters": [
         "Pastas ilimitadas, marcadores e filtros"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases do Hide-my-email ilimitados"
-      ],
       "Unlimited labels": [
         "Marcadores ilimitados"
       ],
@@ -9973,6 +10001,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Nosso plano ${ visionary } não está mais disponível para novos assinantes, pois é um plano para usuários originais da ${ BRAND_NAME }, com recursos e benefícios especiais."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Pague uma vez, proteja suas senhas e identidade para sempre."
       ],
       "Popular": [
         "Popular"
@@ -10719,11 +10750,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Compartilhamento seguro de cofre e link"
-      ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
+      ],
+      "Secure vault, item and link sharing": [
+        "Compartilhamento seguro de item, cofre e link"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Inícios de sessão ilimitados, notas, cartões de crédito e muito mais"
       ]
     },
     "pass_signup_2024: Info": {
@@ -13291,6 +13325,9 @@
       "Groups": [
         "Grupos"
       ],
+      "Help and feedback": [
+        "Ajuda e comentários"
+      ],
       "Help center": [
         "Central de ajuda"
       ],
@@ -13768,11 +13805,6 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indica automaticamente o formato no compositor que é usado para enviar para este usuário. Texto simples indica que a mensagem será sempre convertida em texto simples (sem formatação) no envio."
@@ -13856,6 +13888,11 @@
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "versão estável"
@@ -13921,6 +13958,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Seleciona automaticamente ${ numberOfCountries } país",
         "Seleciona automaticamente ${ numberOfCountries } países"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servidores em ${ numberOfCountries }+ país",
+        "Servidores em ${ numberOfCountries }+ países"
       ]
     },
     "vpn_2024: renew": {

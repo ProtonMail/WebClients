@@ -51,6 +51,9 @@
       "Add address": [
         "Adres ekle"
       ],
+      "Add another account": [
+        "Başka bir hesap ekle"
+      ],
       "Add Bcc recipients": [
         "Gizli kopya alıcıları ekle"
       ],
@@ -582,6 +585,12 @@
       "Help": [
         "Yardım"
       ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
+      "Help and resources": [
+        "Yardım ve kaynaklar"
+      ],
       "Hide": [
         "Gizle"
       ],
@@ -801,9 +810,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
-      ],
-      "More options": [
-        "Diğer seçenekler"
       ],
       "More refine actions": [
         "Diğer düzeltme işlemleri"
@@ -1070,7 +1076,7 @@
         "Özgün görünüme geri dön"
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "${ BRAND_NAME } sunucularında çalıştır"
+        "${ BRAND_NAME } sunucularında çalışsın"
       ],
       "Save": [
         "Kaydet"
@@ -1108,10 +1114,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -1307,7 +1313,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güven anahtarı"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1627,13 +1633,13 @@
         "Gizliliğinizi korumak için herhangi bir kayıt tutulmaz. İşlemler daha hızlı yapılır."
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "${ BRAND_NAME } sunucularında çalıştır"
+        "${ BRAND_NAME } sunucularında çalışsın"
       ],
       "Run on device": [
         "Aygıt üzerinde çalışsın"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
-        "${ BRAND_NAME } sunucularında güvende kalarak çalıştırın"
+        "${ BRAND_NAME } sunucularında güvenle çalışsın"
       ],
       "Securely run on device": [
         "Aygıt üzerinde güvenli kalarak çalıştırın"
@@ -1756,9 +1762,6 @@
       "High speed streaming": [
         "Yüksek hızda yayın akışı izleme"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
-      ],
       "One-time payment, lifetime deal": [
         "Bir kez ödemeli ömür boyu kullanım fırsatı"
       ],
@@ -1777,17 +1780,11 @@
       "Secure file storage & sharing": [
         "Güvenli dosya depolama alanı ve paylaşımı"
       ],
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı paylaşımı"
-      ],
       "Unlimited folders, labels and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adları"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Sınırsız sayıda oturum açma, not ve kredi kartı kaydı"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Sınırsız sayıda oturum açma, kredi kartı, hide-my-email takma adları ve diğer kayıtlar"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
@@ -1851,8 +1848,14 @@
       "Annually": [
         "Yıllık"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Aylık"
+      ],
+      "New!": [
+        "Yeni!"
       ],
       "Two-year": [
         "Iki yıllık"
@@ -3512,6 +3515,31 @@
         "Aland Adaları"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetleri için"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } için"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Ek dosya"
@@ -4126,7 +4154,7 @@
         "Bir sorun nedeniyle metin oluşturma işlemi iptal edilemedi"
       ],
       "Email address disabled": [
-        "E-posta adresi kullanım dışı"
+        "E-posta adresi kullanımdan kaldırılmış"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -4971,6 +4999,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
       ]
     },
     "fido2: Error": {
@@ -6085,7 +6118,7 @@
         "Bu etiket ile kaydedilmiş tüm iletiler kalıcı olarak silinecek."
       ],
       "All your calendars are disabled.": [
-        "Tüm takvimleriniz kullanım dışı bırakılmış."
+        "Tüm takvimleriniz kullanımdan kaldırılmış."
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
@@ -6655,7 +6688,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -6896,6 +6930,9 @@
       ],
       "Organization size": [
         "Kuruluş boyutu"
+      ],
+      "Other accounts": [
+        "Diğer hesaplar"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
@@ -7227,9 +7264,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Şuna geç"
-      ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Dosyalarınızı ${ DRIVE_APP_NAME } uygulamasıyla eşitleyin ve yönetin. ${ DOCS_APP_NAME } ile belgeler oluşturun, paylaşın ve güvenle saklayın. Tüm bunları ${ ios }, ${ android } ve ${ desktop } üzerinde yapın."
       ],
@@ -7301,7 +7335,7 @@
         "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. hide-my-email takma adları ile e-posta kutunuzu koruyun."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
+        "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
@@ -7329,7 +7363,7 @@
         "Bu dosya ön izleme için çok büyük"
       ],
       "This invitation is saved in a disabled calendar.": [
-        "Bu davet, kullanım dışı bırakılmış bir takvime kaydedilmiş."
+        "Bu davet, kullanımdan kaldırılmış bir takvime kaydedilmiş."
       ],
       "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
         "Bu bir yazma yardımcısı olarak tasarlanmıştır. Önerilen metnin doğruluğunu kontrol edin. ${ learnMoreResult }"
@@ -7651,7 +7685,7 @@
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
-        "Bir bültene abone olurken e-posta adresiniz yerine takma ad kullanabilirsiniz. Böylece hem kimliğiniz gizli kalır hem de istediğiniz zaman takma adı kullanım dışı bırakabilirsiniz."
+        "Bir bültene abone olurken e-posta adresiniz yerine takma ad kullanabilirsiniz. Böylece hem kimliğiniz gizli kalır hem de istediğiniz zaman takma adı kullanımdan kaldırabilirsiniz."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Seyahat ederken veya herkese açık Wi-Fi ağlarını kullanırken, çevrim içi etkinliğinizin izlenmesini veya verilerinizin çalınmasını önlemek için bağlantınızı ${ VPN_APP_NAME } ile kurun. Ücretsizdir."
@@ -8476,6 +8510,9 @@
       "Import to:": [
         "Şunun içine aktar:"
       ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı kimlik doğrulayıcı"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
       ],
@@ -8876,10 +8913,10 @@
         "Takvimlerinizden birine bağlı bir e-posta adresini kullanıma alın."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Etkinliği iptal etmek için kullanım dışı bırakılmış takvime bağlı e-posta adresini kullanıma alın."
+        "Etkinliği iptal etmek için kullanımdan kaldırılmış takvime bağlı e-posta adresini kullanıma alın."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Yanıtınızı değiştirmek için kullanım dışı bırakılmış takvime bağlı e-posta adresini kullanıma alın."
+        "Yanıtınızı değiştirmek için kullanımdan kaldırılmış takvime bağlı e-posta adresini kullanıma alın."
       ],
       "Enable your address again to modify your answer.": [
         "Yanıtınızı değiştirmek için adresinizi yeniden kullanıma alın."
@@ -9521,12 +9558,6 @@
       "${ size } storage per user": [
         "Her kullanıcı için ${ size } depolama alanı"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME } için"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
-      ],
       "1 TB secure storage": [
         "1 TB güvenli depolama alanı"
       ],
@@ -9699,9 +9730,6 @@
       "HTML signatures": [
         "HTML imzalar"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik iki adımlı kimlik doğrulayıcı"
-      ],
       "Kill switch/always-on VPN": [
         "Bağlantı kesici / Hep açık VPN"
       ],
@@ -9840,9 +9868,6 @@
       "Unlimited folders, labels, and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
@@ -9979,6 +10004,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bir kez ödeyin, parolalarınızı ve kimliğinizi sonsuza kadar koruyun."
       ],
       "Popular": [
         "Beğenilen"
@@ -10714,11 +10742,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı ile paylaşım"
-      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault, item and link sharing": [
+        "Güvenli kasa, öge ve bağlantı paylaşımı"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Sınırsız sayıda oturum açma, not, kredi kartı ve diğer kayıtlar"
       ]
     },
     "pass_signup_2024: Info": {
@@ -13280,6 +13311,9 @@
       "Groups": [
         "Gruplar"
       ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
       "Help center": [
         "Yardım merkezi"
       ],
@@ -13722,7 +13756,7 @@
         "Sizi ${ trackersCount } izleyiciden koruduk"
       ],
       "Welcome": [
-        "Hoş geldin"
+        "Hoş geldiniz"
       ],
       "Welcome ${ userName }": [
         "Hoş geldin, ${ userName }"
@@ -13755,11 +13789,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Bugün"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Tooltip": {
@@ -13845,6 +13874,11 @@
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
@@ -13910,6 +13944,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } ülke arasından otomatik seçilir",
         "${ numberOfCountries } ülke arasından otomatik seçilir"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkede sunucular",
+        "${ numberOfCountries } üzerinde ülkede sunucular"
       ]
     },
     "vpn_2024: renew": {
