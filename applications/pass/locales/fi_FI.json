@@ -100,6 +100,9 @@
       "Cancel": [
         "Peruuta"
       ],
+      "Cancel email change": [
+        "Peruuta sähköpostiosoitteen vaihtaminen"
+      ],
       "Change": [
         "Muuta"
       ],
@@ -867,6 +870,12 @@
       "Failed to block the contact": [
         "Yhteystiedon estäminen epäonnistui"
       ],
+      "Failed to cancel mailbox change": [
+        "Postilaatikon vaihtamisen peruminen epäonnistui"
+      ],
+      "Failed to change mailbox": [
+        "Postilaatikon vaihtaminen epäonnistui"
+      ],
       "Failed to create domain": [
         "Verkkotunnuksen luominen epäonnistui"
       ],
@@ -1121,6 +1130,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Ongelma käynnistettäessä ${ PASS_SHORT_APP_NAME }ia. Jos ongelma jatkuu, ota yhteyttä asiakaspalveluun saadaksesi apua."
+      ],
+      "Wrong backup password": [
+        "Väärä varasalasana"
       ],
       "Wrong extra password": [
         "Väärä lisäsalasana"
@@ -1865,6 +1877,9 @@
       "Please consider leaving a review.": [
         "Harkitse arvostelun kirjoittamista."
       ],
+      "Please contact your administrator": [
+        "Ota yhteyttä ylläpitäjääsi"
+      ],
       "Please do not close this window": [
         "Älä sulje tätä ikkunaa"
       ],
@@ -2256,6 +2271,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } sana",
         "${ config.options.wordCount } sanaa"
+      ],
+      "${ count } item": [
+        "${ count } kohde",
+        "${ count } kohdetta"
       ],
       "${ days } day": [
         "${ days } vuorokausi",
@@ -2850,6 +2869,9 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Secure links": [
+        "Suojatut linkit"
+      ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "${ PASS_APP_NAME }illa pidät kirjautumistietosi tallessa, jaat niitä muille ja kirjaudut tileillesi automaattisesti, miljoonien käyttäjien luottaman päästä päähän -salauksen suojaamana."
       ],
@@ -3415,11 +3437,20 @@
       "Breaches detected for": [
         "Havaittua tietomurtoa osoitteelle"
       ],
+      "Cancel changing your email?": [
+        "Perutaanko sähköpostiosoitteesi vaihtaminen?"
+      ],
+      "Change mailbox email": [
+        "Vaihda postilaatikon sähköpostiosoitetta"
+      ],
       "Change your lock method": [
         "Vaihda lukitustapaasi"
       ],
       "Confirm extra password": [
         "Vahvista lisäsalasana"
+      ],
+      "Confirm identity": [
+        "Vahvista identiteetti"
       ],
       "Confirm PIN code": [
         "Vahvista PIN-koodi"
@@ -3783,6 +3814,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Mitä eroa on ${ PASS_SHORT_APP_NAME }- ja SimpleLogin-muistiinpanoilla?"
       ],
+      "You don't have any vault": [
+        "Sinulla ei ole holveja"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } -tilauksesi päättyy ${ endDate }"
       ],
@@ -3832,6 +3866,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-salasana vaaditaan"
+      ],
+      "2 consecutive dots are not allowed": [
+        "Kahta peräkkäistä pistettä ei sallita"
       ],
       "A description of the problem is required": [
         "Ongelman kuvaus vaaditaan"
