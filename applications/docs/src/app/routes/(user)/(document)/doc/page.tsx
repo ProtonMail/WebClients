@@ -8,17 +8,17 @@ import type { DocumentAction, DriveCompat, NodeMeta } from '@proton/drive-store'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { c } from 'ttag'
 
-import { DocumentLayout } from '../../../__components/DocumentLayout'
-import { DocumentConverter } from '../../../../Components/DocumentConverter'
-import { DocumentViewer } from '../../../../Components/DocumentViewer'
-import { WordCountContextProvider } from '../../../../Components/WordCount/WordCountProvider'
+import { DocumentLayout } from '../../../../components/document/DocumentLayout/DocumentLayout'
+import { DocumentConverter } from './__components/DocumentConverter'
+import { DocumentViewer } from '../../../../components/document/DocumentViewer/DocumentViewer'
+import { WordCountProvider } from '../../../../components/document/WordCount'
 import { useApplication } from '../../../../Containers/ApplicationProvider'
 import { useDocsUrlBar } from '../../../../Containers/useDocsUrlBar'
 import { useUser } from '@proton/account/user/hooks'
 import UserProvider from '../../../../Containers/DocsContextProvider'
-import { PublicDocumentCopier } from '../../../../Components/PublicDocumentCopier'
+import { PublicDocumentCopier } from '../../../../components/document/PublicDocumentCopier'
 import { getUrlPassword } from '@proton/drive-store/utils/url/password'
-import { useEmailOptInModal } from '../../../../Components/Modals/EmailOptInModal/EmailOptInModal'
+import { useEmailOptInModal } from './__components/EmailOptInModal/EmailOptInModal'
 import { useDocsNotifications } from '../../../../Containers/DocsNotificationsProvider'
 import { PrivateHookChangesToEvents } from './__components/PrivateHookChangesToEvents'
 import { useFlag } from '@proton/unleash'
@@ -136,7 +136,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
   }, [contentToInject, didCreateNewDocument])
 
   return (
-    <WordCountContextProvider>
+    <WordCountProvider>
       <UserProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
         <DocumentLayout action={actionMode}>
           <PrivateHookChangesToEvents />
@@ -150,7 +150,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
           />
         </DocumentLayout>
       </UserProvider>
-    </WordCountContextProvider>
+    </WordCountProvider>
   )
 }
 
