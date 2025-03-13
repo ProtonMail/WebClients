@@ -2022,6 +2022,9 @@
       "Please consider leaving a review.": [
         "Considera di lasciare una recensione."
       ],
+      "Please contact your administrator": [
+        "Si prega di contattare il Vostro amministratore."
+      ],
       "Please do not close this window": [
         "Non chiudere questa finestra"
       ],
@@ -2425,6 +2428,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } parola",
         "${ config.options.wordCount } parole"
+      ],
+      "${ count } item": [
+        "${ count } elemento",
+        "${ count } elementi"
       ],
       "${ days } day": [
         "${ days } giorno",
@@ -3078,6 +3085,9 @@
       ],
       "Reveal password": [
         "Mostra la password"
+      ],
+      "Secure links": [
+        "Link sicuri"
       ],
       "Secure password sharing": [
         "Condivisione sicura delle password"
@@ -4079,6 +4089,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Qual è la differenza tra la nota ${ PASS_SHORT_APP_NAME } e la nota SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "Non hai nessuna cassaforte"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Il tuo abbonamento a ${ planName } terminerà il ${ endDate }"
       ],
@@ -4477,6 +4490,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Non avrai più accesso a questa cassaforte. Per unirti nuovamente avrai bisogno di un nuovo invito."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Il Vostro amministratore deve creare una cassaforte per Voi prima che Voi possiate creare oggetti."
+      ],
+      "Your organization does not allow creating a vault": [
+        "La tua organizzazione non consente la creazione di casseforti"
       ],
       "Your organization does not allow sharing individual items": [
         "La tua organizzazione non consente la condivisione di singoli elementi."
