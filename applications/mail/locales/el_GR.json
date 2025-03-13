@@ -51,6 +51,9 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
+      "Add another account": [
+        "Προσθήκη επιπλέον λογαριασμού"
+      ],
       "Add Bcc recipients": [
         "Προσθήκη παραληπτών κρυφής κοινοποίησης"
       ],
@@ -582,6 +585,12 @@
       "Help": [
         "Βοήθεια"
       ],
+      "Help and feedback": [
+        "Βοήθεια και σχόλια"
+      ],
+      "Help and resources": [
+        "Βοήθεια και πληροφορίες"
+      ],
       "Hide": [
         "Απόκρυψη"
       ],
@@ -801,9 +810,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
-      ],
-      "More options": [
-        "Περισσότερες επιλογές"
       ],
       "More refine actions": [
         "Περισσότερες ενέργειες βελτίωσης"
@@ -1108,11 +1114,11 @@
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
       ],
-      "Select all": [
-        "Επιλογή όλων"
-      ],
       "Select All": [
         "Επιλογή Όλων"
+      ],
+      "Select all": [
+        "Επιλογή όλων"
       ],
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
@@ -1753,9 +1759,6 @@
       "High speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
-      "Integrated 2FA authenticator": [
-        "Ενσωματωμένος ελεγκτής 2FA"
-      ],
       "One-time payment, lifetime deal": [
         "Εφάπαξ πληρωμή, συμφωνία εφ' όρου ζωής"
       ],
@@ -1774,17 +1777,11 @@
       "Secure file storage & sharing": [
         "Ασφαλής αποθήκευση & κοινή χρήση αρχείων"
       ],
-      "Secure vault and link sharing": [
-        "Ασφαλής κρύπτη και κοινή χρήση συνδέσμων"
-      ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Απεριόριστα hide-my-email ψευδώνυμα"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Unlimited logins, notes, credit cards"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Απεριόριστες συνδέσεις, πιστωτικές κάρτες, hide-my-email ψευδώνυμα και πολλά άλλα"
       ],
       "Use your own email domain": [
         "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
@@ -1848,8 +1845,14 @@
       "Annually": [
         "Ετησίως"
       ],
+      "Lifetime": [
+        "Εφ' όρου ζωής"
+      ],
       "Monthly": [
         "Μηνιαία"
+      ],
+      "New!": [
+        "Νέο!"
       ],
       "Two-year": [
         "Δύο έτη"
@@ -3509,6 +3512,31 @@
         "Νήσοι Άλαντ"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Για ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Για ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Για ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Για ${ VPN_APP_NAME }"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Συνημμένο"
@@ -4968,6 +4996,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
     "fido2: Error": {
@@ -6652,7 +6685,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -6893,6 +6927,9 @@
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
+      ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
@@ -7223,9 +7260,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Λήξη συνδρομής: Ενεργοποιήστε ξανά έως τις ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Αλλάξτε σε"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Συγχρονίστε και διαχειριστείτε αρχεία με την εφαρμογή ${ DRIVE_APP_NAME }. Δημιουργήστε και μοιραστείτε έγγραφα στο ${ DOCS_APP_NAME } και αποθηκεύστε τα με ασφάλεια. Όλα σε ${ ios }, ${ android } και ${ desktop }."
@@ -8473,6 +8507,9 @@
       "Import to:": [
         "Εισαγωγή σε:"
       ],
+      "Integrated 2FA authenticator": [
+        "Ενσωματωμένος ελεγκτής 2FA"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Συντόμευση πληκτρολογίου: ${ shortcut }"
       ],
@@ -9518,12 +9555,6 @@
       "${ size } storage per user": [
         "${ size } αποθηκευτικός χώρος ανά χρήστη"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Για ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Για όλες τις ${ BRAND_NAME } υπηρεσίες"
-      ],
       "1 TB secure storage": [
         "Ασφαλής χώρος αποθήκευσης 1 TB"
       ],
@@ -9696,9 +9727,6 @@
       "HTML signatures": [
         "Υπογραφές HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Ενσωματωμένος ελεγκτής 2FA"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/πάντα ενεργό VPN"
       ],
@@ -9837,9 +9865,6 @@
       "Unlimited folders, labels, and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Απεριόριστα hide-my-email ψευδώνυμα"
-      ],
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
       ],
@@ -9976,6 +10001,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Το ${ visionary } πλάνο μας δεν είναι πλέον διαθέσιμο σε νέους συνδρομητές, καθώς είναι ένα ειδικό πρόγραμμα για αρχικούς χρήστες ${ BRAND_NAME } με ειδικά χαρακτηριστικά και οφέλη."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Πληρώστε μία φορά, ασφαλίστε τους κωδικούς πρόσβασης και την ταυτότητά σας για πάντα."
       ],
       "Popular": [
         "Δημοφιλές"
@@ -10711,11 +10739,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Ασφαλής κρύπτη και κοινή χρήση συνδέσμων"
-      ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
+      ],
+      "Secure vault, item and link sharing": [
+        "Ασβαλής κρύπτη, στοιχεία και κοινοποίηση συνδέσμων"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Απεριόριστες συνδέσεις, σημειώσεις, πιστωτικές κάρτες και πολλά άλλα"
       ]
     },
     "pass_signup_2024: Info": {
@@ -13277,6 +13308,9 @@
       "Groups": [
         "Ομάδες"
       ],
+      "Help and feedback": [
+        "Βοήθεια και σχόλια"
+      ],
       "Help center": [
         "Κέντρο βοήθειας"
       ],
@@ -13754,11 +13788,6 @@
         "Σήμερα"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
@@ -13842,6 +13871,11 @@
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "ευσταθή έκδοση"
@@ -13907,6 +13941,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Αυτόματη επιλογή από ${ numberOfCountries } χώρα",
         "Αυτόματη επιλογή από ${ numberOfCountries } χώρες"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Διακομιστές σε ${ numberOfCountries }+ χώρα",
+        "Διακομιστές σε ${ numberOfCountries }+ χώρες"
       ]
     },
     "vpn_2024: renew": {

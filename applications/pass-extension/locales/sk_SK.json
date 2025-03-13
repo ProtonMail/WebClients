@@ -1981,6 +1981,9 @@
       "Please consider leaving a review.": [
         "Zvážte napísanie recenzie, prosím."
       ],
+      "Please contact your administrator": [
+        "Kontaktujte svojho správcu, prosím"
+      ],
       "Please do not close this window": [
         "Nezatvárajte toto okno, prosím"
       ],
@@ -2415,6 +2418,12 @@
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
       ],
+      "${ count } item": [
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položiek",
+        "${ count } položiek"
+      ],
       "${ days } day": [
         "${ days } deň",
         "${ days } dni",
@@ -2448,8 +2457,8 @@
         "${ months } mesiacov",
         "${ months } mesiacov"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } monitor"
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Verzia ${ PASS_SHORT_APP_NAME }"
@@ -3044,6 +3053,9 @@
       ],
       "Save passkeys": [
         "Uložiť prístupové kľúče"
+      ],
+      "Secure links": [
+        "Bezpečné odkazy"
       ],
       "Security": [
         "Zabezpečenie"
@@ -3920,6 +3932,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Aký je rozdiel medzi poznámkou v ${ PASS_SHORT_APP_NAME } a poznámkou v SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "Nemáte žiadny trezor"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Vaše predplatné ${ planName } skončí dňa ${ endDate }"
       ],
@@ -4214,6 +4229,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "K tomuto trezoru už nebudete mať prístup. Ak sa do neho chcete opäť pripojiť, budete potrebovať novú pozvánku."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Predtým, ako budete môcť vytvárať položky, musí váš správca pre vás vytvoriť trezor."
+      ],
+      "Your organization does not allow creating a vault": [
+        "Vaša organizácia neumožňuje vytváranie trezoru"
       ],
       "Your organization does not allow sharing individual items": [
         "Vaša organizácia neumožňuje zdieľanie jednotlivých položiek"

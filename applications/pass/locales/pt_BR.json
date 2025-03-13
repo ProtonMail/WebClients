@@ -1968,6 +1968,9 @@
       "Please consider leaving a review.": [
         "Considere deixar uma avaliação"
       ],
+      "Please contact your administrator": [
+        "Contate seu administrador"
+      ],
       "Please do not close this window": [
         "Não feche esta janela."
       ],
@@ -2371,6 +2374,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } palavra",
         "${ config.options.wordCount } palavras"
+      ],
+      "${ count } item": [
+        "${ count } item",
+        "${ count } itens"
       ],
       "${ days } day": [
         "${ days } dia",
@@ -2967,6 +2974,9 @@
       ],
       "Reveal password": [
         "Mostrar senha"
+      ],
+      "Secure links": [
+        "Links seguros"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Armazene, compartilhe e faça login automático com segurança em suas contas com o ${ PASS_APP_NAME }, usando criptografia de ponta a ponta confiável por milhões de pessoas."
@@ -3927,6 +3937,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Qual é a diferença entre a nota ${ PASS_SHORT_APP_NAME } e a nota do SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "Você não tem nenhum cofre"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Sua assinatura do ${ planName } terminará em ${ endDate }"
       ],
@@ -4325,6 +4338,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Você não terá mais acesso a este cofre. Para participar novamente, você precisará de um novo convite."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Seu administrador precisa criar um cofre para você ante de criar itens"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Sua organização não permite a criação de um cofre"
       ],
       "Your organization does not allow sharing individual items": [
         "Sua organização não permite compartilhar itens individuais."

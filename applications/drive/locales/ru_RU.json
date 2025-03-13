@@ -93,12 +93,6 @@
       "Add to group": [
         "Добавить в группу"
       ],
-      "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
-        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
-        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
-        "Добавить в “${ album.name }” (${ album.photoCount } фото)"
-      ],
       "Album name": [
         "Название альбома"
       ],
@@ -1229,9 +1223,6 @@
       "High speed streaming": [
         "Высокоскоростной стриминг"
       ],
-      "Integrated 2FA authenticator": [
-        "Интегрированная двухфакторная аутентификация"
-      ],
       "One-time payment, lifetime deal": [
         "Единовременная оплата, пожизненное предложение"
       ],
@@ -1250,17 +1241,8 @@
       "Secure file storage & sharing": [
         "Безопасное хранение и обмен файлами"
       ],
-      "Secure vault and link sharing": [
-        "Защищённое хранилище и обмен ссылками"
-      ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество псевдонимов hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Неограниченное количество имён пользователей, заметок и кредитных карт"
       ],
       "Use your own email domain": [
         "Используйте свой собственный домен электронной почты"
@@ -3661,6 +3643,9 @@
       ],
       "Share privately and securely": [
         "Делитесь приватно и безопасно"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -5447,9 +5432,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Переключиться на"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
@@ -6353,6 +6335,9 @@
       ],
       "Include message and file name in invite email": [
         "Включите сообщение и имя файла в приглашение по электронной почте"
+      ],
+      "Integrated 2FA authenticator": [
+        "Интегрированная двухфакторная аутентификация"
       ],
       "Keep both": [
         "Оставить оба"
@@ -7321,12 +7306,6 @@
       "${ size } storage": [
         "${ size } хранилища"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } — для ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } — для всех сервисов ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 ТБ защищенного хранения"
       ],
@@ -7501,9 +7480,6 @@
       "HTML signatures": [
         "Подписи HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Встроенная двухфакторная аутентификация"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch и VPN постоянно вкл."
       ],
@@ -7635,9 +7611,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество скрытых псевдонимов для скрытия своей электронной почты"
       ],
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
@@ -8733,9 +8706,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Защищенное хранилище и обмен ссылками"
-      ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
       ]

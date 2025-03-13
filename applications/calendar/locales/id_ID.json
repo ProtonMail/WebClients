@@ -1044,9 +1044,6 @@
       "High speed streaming": [
         "Streaming berkecepatan tinggi"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentikator 2FA terintegrasi"
-      ],
       "One-time payment, lifetime deal": [
         "Satu kali pembayaran, untuk selamanya"
       ],
@@ -1065,17 +1062,11 @@
       "Secure file storage & sharing": [
         "Penyimpanan & pembagian berkas aman"
       ],
-      "Secure vault and link sharing": [
-        "Pembagian brankas dan tautan aman"
-      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Tanpa batasan jumlah entri masuk, kartu kredit, alias hide-my-email, dan masih banyak lagi"
       ],
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
@@ -1137,8 +1128,14 @@
       "Annually": [
         "Tahunan"
       ],
+      "Lifetime": [
+        "Seumur hidup"
+      ],
       "Monthly": [
         "Bulanan"
+      ],
+      "New!": [
+        "Baru!"
       ],
       "Two-year": [
         "Dua tahun"
@@ -2529,6 +2526,31 @@
         "acara"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Untuk seluruh layanan ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Untuk ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Untuk ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Untuk ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Untuk ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/bulan"
@@ -3837,6 +3859,11 @@
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian berkas terenkripsi, dan masih banyak lagi."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Tanpa batasan jumlah alias hide-my-email"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
@@ -5036,9 +5063,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Beralih ke"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
       ],
@@ -5796,6 +5820,9 @@
       "Import to:": [
         "Impor ke:"
       ],
+      "Integrated 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
       ],
@@ -6232,6 +6259,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Tambahan dengan uji coba gratis"
+      ],
       "for ${ price }": [
         "untuk ${ price }"
       ]
@@ -6628,11 +6658,8 @@
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Untuk ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Untuk semua layanan ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "Ruang penyimpanan ${ size } per pengguna"
       ],
       "1 TB secure storage": [
         "Ruang penyimpanan aman 1 TB"
@@ -6805,14 +6832,14 @@
       "HTML signatures": [
         "Tanda tangan HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentikator 2FA yang terintegrasi"
-      ],
       "Kill switch/always-on VPN": [
         "Fitur kill switch/always-on VPN"
       ],
       "Limited support": [
         "Dukungan terbatas"
+      ],
+      "Manage user permissions and access": [
+        "Kelola izin dan akses pengguna"
       ],
       "Multiple admin roles": [
         "Jabatan admin berangkap"
@@ -6831,6 +6858,9 @@
       ],
       "Password manager": [
         "Pengelola kata sandi"
+      ],
+      "Password manager to secure credentials": [
+        "Pengelola kata sandi untuk menyimpan informasi kredensial"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
@@ -6939,9 +6969,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias Hide My Email"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
@@ -7073,6 +7100,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Paket ${ visionary } kami tidak lagi tersedia kepada pengguna baru karena paket tersebut merupakan paket khusus yang hanya tersedia bagi para pengguna ${ BRAND_NAME } lama dengan berbagai fitur dan manfaat spesial."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bayar satu kali, amankan kata sandi dan identitas Anda selamanya"
       ],
       "Popular": [
         "Populer"
@@ -7793,11 +7823,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Pembagian brankas dan tautan aman"
-      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
+      ],
+      "Secure vault, item and link sharing": [
+        "Pembagian brankas, item, dan tautan yang aman"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Tanpa batasan jumlah entri masuk, catatan, kartu kredit, dan masih banyak lagi"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8875,6 +8908,9 @@
       ],
       "${ n } VPN connection per user": [
         "${ n } koneksi VPN per pengguna"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Koneksi VPN untuk ${ n } perangkat per pengguna"
       ]
     },
     "Subscription change warning": {

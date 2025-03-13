@@ -100,6 +100,9 @@
       "Add address or domain": [
         "Adres of domein toevoegen"
       ],
+      "Add another account": [
+        "Voeg een account toe"
+      ],
       "Add calendar from URL": [
         "Agenda toevoegen vanaf URL"
       ],
@@ -681,6 +684,12 @@
       ],
       "Help": [
         "Hulp"
+      ],
+      "Help and feedback": [
+        "Hulp en feedback"
+      ],
+      "Help and resources": [
+        "Hulp en bronnen"
       ],
       "Hide": [
         "Verbergen"
@@ -1829,9 +1838,6 @@
       "High speed streaming": [
         "Streamen met hoge snelheid"
       ],
-      "Integrated 2FA authenticator": [
-        "Geïntegreerde 2FA-authenticator"
-      ],
       "One-time payment, lifetime deal": [
         "Eenmalige betaling, levenslange deal"
       ],
@@ -1850,17 +1856,11 @@
       "Secure file storage & sharing": [
         "Veilig bestanden opslaan en delen"
       ],
-      "Secure vault and link sharing": [
-        "Veilig delen van kluis en links"
-      ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal hide-my-email-aliassen"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Onbeperkt aantal logins, notities en creditcards"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Onbeperkt logins, creditcards, hide-my-email aliassen en meer"
       ],
       "Use your own email domain": [
         "Gebruik uw eigen e-maildomein"
@@ -1933,8 +1933,14 @@
       "Annually": [
         "Jaarlijks"
       ],
+      "Lifetime": [
+        "Levenslang"
+      ],
       "Monthly": [
         "Maandelijks"
+      ],
+      "New!": [
+        "Nieuw!"
       ],
       "Two-year": [
         "Tweejaarlijks"
@@ -3583,6 +3589,31 @@
     "cta": {
       "Learn more": [
         "Lees meer"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Voor alle ${ BRAND_NAME }-diensten"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Voor ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Voor ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Voor ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Voor ${ VPN_APP_NAME }"
       ]
     },
     "Cycle": {
@@ -5871,6 +5902,9 @@
       ],
       "Torrenting support (P2P)": [
         "Ondersteuning voor Torrents (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
       ]
     },
     "Features": {
@@ -5888,9 +5922,6 @@
       ],
       "Secure streaming": [
         "Veilig streamen"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Selecteer uit ${ vpnServers.paid.countries } landen"
       ]
     },
     "Features: Tooltip": {
@@ -7079,8 +7110,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
-        "${ planName } verloopt in ${ daysLeft } dagen."
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vervalt binnen ${ daysLeft } dag.",
+        "${ planName } vervalt binnen ${ daysLeft } dagen."
       ],
       "${ planName } expires today.": [
         "${ planName } verloopt vandaag."
@@ -7978,6 +8010,24 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Snel en gericht. E-mail en agenda, direct op uw bureaublad."
       ],
+      "Featured in": [
+        "Uitgelicht in"
+      ],
+      "Featured in Clubic": [
+        "Uitgelicht in Clubic"
+      ],
+      "Featured in Digital Trends": [
+        "Uitgelicht in Digital Trends"
+      ],
+      "Featured in PC Magazine": [
+        "Uitgelicht in PC Magazine"
+      ],
+      "Featured in TechRadar": [
+        "Uitgelicht in TechRadar"
+      ],
+      "Featured in ZDNet": [
+        "Uitgelicht in ZDNet"
+      ],
       "Fill in user details": [
         "Vul gebruikersgegevens in"
       ],
@@ -8597,6 +8647,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Orden uw toegewijde servers in Gateways en bepaal welke gebruikers er toegang toe hebben."
       ],
+      "Other accounts": [
+        "Andere accounts"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Er zijn andere beheerders in uw organisatie aanwezig, u bent verantwoordelijk om het nieuwe wachtwoord met hen te delen."
       ],
@@ -9076,9 +9129,6 @@
       ],
       "Swiss based": [
         "Gevestigd in Zwitserland"
-      ],
-      "Switch to": [
-        "Wissel naar"
       ],
       "Symbols (#$&)": [
         "Symbolen (#$&)"
@@ -11115,6 +11165,9 @@
       "Inherit color from parent folder": [
         "Kleur van bovenliggende map overnemen"
       ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde tweestapsverificatie"
+      ],
       "Interval": [
         "Interval"
       ],
@@ -12689,12 +12742,6 @@
       "${ size } storage per user": [
         "${ size } opslagruimte per gebruiker"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Voor ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Voor alle ${ BRAND_NAME } diensten"
-      ],
       "1 TB secure storage": [
         "1 TB veilige opslag"
       ],
@@ -12891,9 +12938,6 @@
       "HTML signatures": [
         "HTML-handtekeningen"
       ],
-      "Integrated 2FA authenticator": [
-        "Geïntegreerde 2FA-authenticator"
-      ],
       "Kill switch/always-on VPN": [
         "IP-beveiliging/altijd-actieve VPN"
       ],
@@ -13047,9 +13091,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Ongelimiteerde mappen, labels en filters"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal Hide-My-Email-alliassen"
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
@@ -13211,6 +13252,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ons ${ visionary }-abonnement is niet meer beschikbaar voor nieuwe gebruikers; dit is een speciaal abonnement voor originele ${ BRAND_NAME }-gebruikers met speciale functies en voordelen."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Eenmaal betalen, beveilig uw wachtwoorden en identiteit voor altijd."
       ],
       "Popular": [
         "Populair"
@@ -14383,7 +14427,18 @@
         "Begin met ${ PASS_APP_NAME }"
       ]
     },
+    "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
+        "Krijg levenslang toegang tot alle huidige en toekomstige ${ PASS_APP_NAME } premiumfuncties met één enkele betaling. "
+      ],
+      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
+        "Welkom bij ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ]
+    },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Nu kopen"
+      ],
       "Continue": [
         "Doorgaan"
       ],
@@ -14639,11 +14694,11 @@
       "Save your recovery kit to continue": [
         "Sla uw herstelkit op om verder te gaan"
       ],
-      "Secure vault and link sharing": [
-        "Veilige kluis en het delen van links"
-      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
+      ],
+      "Secure vault, item and link sharing": [
+        "Veilig delen van kluizen, items en links"
       ],
       "Secure your family’s passwords and online identities": [
         "Beveilig wachtwoorden en online identiteiten van uw familie"
@@ -14660,6 +14715,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Uitzonderlijke introductiepromotie: krijg levenslang ${ title } aan ${ price }!"
       ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "Speciaal: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } voor ${ priceString }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Begin met ${ PASS_APP_NAME }"
       ],
@@ -14671,6 +14729,9 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "om ${ PASS_APP_NAME } te beginnen gebruiken op uw telefoon"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Onbeperkt aantal logins, notities, creditcards, en meer"
       ],
       "Updating your account": [
         "Uw account wordt bijgewerkt"
@@ -14730,6 +14791,9 @@
       "Activity log": [
         "Activiteitenlog"
       ],
+      "Additional mailboxes for aliases": [
+        "Extra postvakken voor aliassen"
+      ],
       "Admin panel to manage users and subscription": [
         "Beheerpaneel om gebruikers en abonnement te beheren"
       ],
@@ -14739,11 +14803,17 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Geavanceerde alias functies (mogelijk gemaakt door SimpleLogin)"
       ],
+      "File attachments (coming soon)": [
+        "Bestandsbijlagen (binnenkort)"
+      ],
       "One-time payment, lifetime deal": [
         "Eenmalige betaling, levenslange deal"
       ],
       "Team policies": [
         "Team beleid"
+      ],
+      "Your custom domain for aliases": [
+        "Uw aangepaste domein voor aliassen"
       ]
     },
     "PassFamilyPlan2024": {
@@ -18726,6 +18796,9 @@
       "Groups": [
         "Groepen"
       ],
+      "Help and feedback": [
+        "Hulp en feedback"
+      ],
       "Help center": [
         "Helpcentrum"
       ],
@@ -20352,6 +20425,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Automatisch geselecteerd uit ${ numberOfCountries } land",
         "Automatisch geselecteerd uit ${ numberOfCountries } landen"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servers in ${ numberOfCountries }+ land",
+        "Servers in ${ numberOfCountries }+ landen"
       ]
     },
     "vpn_2024: renew": {

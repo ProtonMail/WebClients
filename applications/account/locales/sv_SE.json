@@ -100,6 +100,9 @@
       "Add address or domain": [
         "Lägg till adress eller domän"
       ],
+      "Add another account": [
+        "Lägg till ett annat konto"
+      ],
       "Add calendar from URL": [
         "Lägg till kalender från URL"
       ],
@@ -681,6 +684,12 @@
       ],
       "Help": [
         "Hjälp"
+      ],
+      "Help and feedback": [
+        "Hjälp och feedback"
+      ],
+      "Help and resources": [
+        "Hjälp och resurser"
       ],
       "Hide": [
         "Dölj"
@@ -1829,9 +1838,6 @@
       "High speed streaming": [
         "Höghastighetsstreaming"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrerad 2FA-autentiserare"
-      ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
       ],
@@ -1850,17 +1856,11 @@
       "Secure file storage & sharing": [
         "Säker fillagring och delning"
       ],
-      "Secure vault and link sharing": [
-        "Säker valv- och länkdelning"
-      ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsat antal hide-my-email-alias"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Obegränsat antal inloggningar, anteckningar, kreditkort"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Obegränsade inloggningar, kreditkort, hide-my-email-alias och mer"
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
@@ -1933,8 +1933,14 @@
       "Annually": [
         "Årligen"
       ],
+      "Lifetime": [
+        "Livstid"
+      ],
       "Monthly": [
         "Månadsvis"
+      ],
+      "New!": [
+        "Nytt!"
       ],
       "Two-year": [
         "Tvåårig"
@@ -3580,6 +3586,31 @@
     "cta": {
       "Learn more": [
         "Lär dig mer"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "För alla ${ BRAND_NAME }-tjänster"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "För ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "För ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "För ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "För ${ VPN_APP_NAME }"
       ]
     },
     "Cycle": {
@@ -5871,6 +5902,9 @@
       ],
       "Torrenting support (P2P)": [
         "Stöd för Torrenting (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Obegränsat antal hide-my-email-alias"
       ]
     },
     "Features": {
@@ -5888,9 +5922,6 @@
       ],
       "Secure streaming": [
         "Säker streaming"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Välj från ${ vpnServers.paid.countries } länder"
       ]
     },
     "Features: Tooltip": {
@@ -7076,7 +7107,8 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } löper ut om ${ daysLeft } dagar.",
         "${ planName } löper ut om ${ daysLeft } dagar."
       ],
       "${ planName } expires today.": [
@@ -7972,6 +8004,9 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator."
       ],
+      "Featured in": [
+        "Som sett i"
+      ],
       "Fill in user details": [
         "Fyll i användaruppgifter"
       ],
@@ -8588,6 +8623,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organisera dina dedikerade servrar i gateways och bestäm vilka medlemmar som kan komma åt dem."
       ],
+      "Other accounts": [
+        "Andra konton"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Andra administratörer finns i din organisation, du är ansvarig för att kommunicera det nya lösenordet till dem."
       ],
@@ -9063,9 +9101,6 @@
       ],
       "Swiss based": [
         "Baserat i Schweiz"
-      ],
-      "Switch to": [
-        "Byt till"
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
@@ -11099,6 +11134,9 @@
       "Inherit color from parent folder": [
         "Ärv färg från överordnad mapp"
       ],
+      "Integrated 2FA authenticator": [
+        "Integrerad 2FA-autentisering"
+      ],
       "Interval": [
         "Intervall"
       ],
@@ -12679,12 +12717,6 @@
       "${ size } storage per user": [
         "${ size } lagringsutrymme per användare"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - För ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - För alla ${ BRAND_NAME }-tjänster"
-      ],
       "1 TB secure storage": [
         "1 TB säkert lagringsutrymme"
       ],
@@ -12878,9 +12910,6 @@
       "HTML signatures": [
         "HTML-signaturer"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrerad 2FA-autentisering"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/Alltid-på VPN"
       ],
@@ -13034,9 +13063,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsat antal hide-my-email-alias"
       ],
       "Unlimited labels": [
         "Obegränsade etiketter"
@@ -13198,6 +13224,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Vårt ${ visionary }-paket är inte längre tillgänglig för nya prenumeranter eftersom det är ett specialpaket för ursprungliga ${ BRAND_NAME }-användare med specialfunktioner och fördelar."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Betala en gång, säkra dina lösenord och din identitet för alltid."
       ],
       "Popular": [
         "Populär"
@@ -14394,7 +14423,15 @@
         "Börja använda ${ PASS_APP_NAME }"
       ]
     },
+    "pass_lifetime_signup: Info": {
+      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
+        "Välkommen till ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ]
+    },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Köp nu"
+      ],
       "Continue": [
         "Fortsätt"
       ],
@@ -14650,11 +14687,11 @@
       "Save your recovery kit to continue": [
         "Spara ditt återställningskit för att fortsätta"
       ],
-      "Secure vault and link sharing": [
-        "Säker valv- och länkdelning"
-      ],
       "Secure vault sharing": [
         "Säker valvdelning"
+      ],
+      "Secure vault, item and link sharing": [
+        "Säker delning av valv, objekt och länk"
       ],
       "Secure your family’s passwords and online identities": [
         "Säkra din familjs lösenord och identiteter online"
@@ -14671,6 +14708,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Speciallanseringserbjudande: Få ${ title } för ${ price } för alltid!"
       ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } till ${ priceString }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Börja använda ${ PASS_APP_NAME }"
       ],
@@ -14682,6 +14722,9 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "för att börja använda ${ PASS_APP_NAME } på din telefon"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Obegränsade inloggningar, anteckningar, kreditkort och mer"
       ],
       "Updating your account": [
         "Uppdaterar ditt konto"
@@ -14741,6 +14784,9 @@
       "Activity log": [
         "Aktivitetslogg"
       ],
+      "Additional mailboxes for aliases": [
+        "Ytterligare brevlådor för alias"
+      ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
       ],
@@ -14750,11 +14796,17 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Avancerade funktioner för alias (drivs av SimpleLogin)"
       ],
+      "File attachments (coming soon)": [
+        "Filbilagor (kommer snart)"
+      ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
       ],
       "Team policies": [
         "Policy för team"
+      ],
+      "Your custom domain for aliases": [
+        "Din anpassade domän för alias"
       ]
     },
     "PassFamilyPlan2024": {
@@ -17140,7 +17192,7 @@
         "Höghastighets-VPN på ${ maxVpn } enheter"
       ],
       "VPN connection for ${ n } devices per user": [
-        "VPN-anslutning för ${ n } enheter per användare",
+        "VPN-anslutning för ${ n } enhet per användare",
         "VPN-anslutning för ${ n } enheter per användare"
       ]
     },
@@ -18739,6 +18791,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help and feedback": [
+        "Hjälp och feedback"
+      ],
       "Help center": [
         "Hjälpcenter"
       ],
@@ -20233,6 +20288,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Väljer automatiskt från ${ numberOfCountries } land",
         "Väljer automatiskt från ${ numberOfCountries } länder"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servrar i ${ numberOfCountries }+ land",
+        "Servrar i ${ numberOfCountries }+ länder"
       ]
     },
     "vpn_2024: renew": {

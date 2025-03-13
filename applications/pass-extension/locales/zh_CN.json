@@ -1897,6 +1897,9 @@
       "Please consider leaving a review.": [
         "请考虑留下评论。"
       ],
+      "Please contact your administrator": [
+        "请与您的管理员联系"
+      ],
       "Please do not close this window": [
         "请勿关闭此窗口"
       ],
@@ -2304,6 +2307,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } 个词"
       ],
+      "${ count } item": [
+        "${ count } 项"
+      ],
       "${ days } day": [
         "${ days } 天"
       ],
@@ -2322,7 +2328,7 @@
       "${ months } month": [
         "${ months } 个月"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
+      "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } 监视器"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
@@ -2909,6 +2915,9 @@
       ],
       "Save passkeys": [
         "保存通行密钥"
+      ],
+      "Secure links": [
+        "安全链接"
       ],
       "Security": [
         "安全"
@@ -3761,6 +3770,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } 笔记和 SimpleLogin 笔记之间有什么区别？"
       ],
+      "You don't have any vault": [
+        "您没有任何保险库"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "您的 ${ planName } 订阅将在 ${ endDate } 结束"
       ],
@@ -4043,6 +4055,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "您将不再拥有该保险库的访问权。若要重新加入，您需要获得新的邀请。"
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "在创建项目之前，您的管理员需要为您创建一个保险库"
+      ],
+      "Your organization does not allow creating a vault": [
+        "您的组织不允许创建保险库"
       ],
       "Your organization does not allow sharing individual items": [
         "您的组织不允许共享单个项目"

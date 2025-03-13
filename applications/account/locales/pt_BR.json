@@ -100,6 +100,9 @@
       "Add address or domain": [
         "Adicionar endereço ou domínio"
       ],
+      "Add another account": [
+        "Adicionar outra conta"
+      ],
       "Add calendar from URL": [
         "Adicionar calendário de uma URL"
       ],
@@ -681,6 +684,12 @@
       ],
       "Help": [
         "Ajuda"
+      ],
+      "Help and feedback": [
+        "Ajuda e comentários"
+      ],
+      "Help and resources": [
+        "Ajuda e recursos"
       ],
       "Hide": [
         "Ocultar"
@@ -1829,9 +1838,6 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
       "One-time payment, lifetime deal": [
         "Pagamento único, "
       ],
@@ -1850,17 +1856,11 @@
       "Secure file storage & sharing": [
         "Armazenamento e compartilhamento de arquivos seguros"
       ],
-      "Secure vault and link sharing": [
-        "Compartilhamento seguro de cofre e link"
-      ],
       "Unlimited folders, labels and filters": [
         "Pastas, marcadores e filtros ilimitados"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Alíases ilimitados do hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Logins ilimitados, notas, cartões de crédito"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Inícios de sessão ilimitados, cartões de crédito, alias do ide-my-email e mais"
       ],
       "Use your own email domain": [
         "Use o seu próprio domínio de e-mail"
@@ -1933,8 +1933,14 @@
       "Annually": [
         "Anualmente"
       ],
+      "Lifetime": [
+        "Acesso vitalício"
+      ],
       "Monthly": [
         "Mensalmente"
+      ],
+      "New!": [
+        "Novo!"
       ],
       "Two-year": [
         "Dois anos"
@@ -1979,6 +1985,9 @@
       ],
       "Protect your whole household with 1 device": [
         "Proteja toda a sua casa com 1 dispositivo"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "Faça streaming para todas as grandes plataformas com ${ PLAN_NAMES[PLANS.VPN] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Este artigo foi atualizado para incluir os protocolos WireGuard e Stealth VPN."
@@ -3580,6 +3589,31 @@
     "cta": {
       "Learn more": [
         "Saiba mais"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Para todos os serviços da ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Para ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Para ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Para ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Para ${ VPN_APP_NAME }"
       ]
     },
     "Cycle": {
@@ -5871,6 +5905,9 @@
       ],
       "Torrenting support (P2P)": [
         "Suporte para torrents (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases do Hide-my-email ilimitados"
       ]
     },
     "Features": {
@@ -5888,9 +5925,6 @@
       ],
       "Secure streaming": [
         "Streaming seguro"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Selecione em ${ vpnServers.paid.countries } países"
       ]
     },
     "Features: Tooltip": {
@@ -7079,7 +7113,8 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira em ${ daysLeft } dia.",
         "${ planName } expira em ${ daysLeft } dias."
       ],
       "${ planName } expires today.": [
@@ -7978,6 +8013,24 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Veloz e poderoso. E-mail e calendário, direto no seu desktop."
       ],
+      "Featured in": [
+        "Em destaque em"
+      ],
+      "Featured in Clubic": [
+        "Em destaque no Clubic"
+      ],
+      "Featured in Digital Trends": [
+        "Em destaque no Digital Trends"
+      ],
+      "Featured in PC Magazine": [
+        "Em destaque no PC Magazine"
+      ],
+      "Featured in TechRadar": [
+        "Em destaque no TechRadar"
+      ],
+      "Featured in ZDNet": [
+        "Em destaque no ZDNet"
+      ],
       "Fill in user details": [
         "Preencha os detalhes do usuário"
       ],
@@ -8597,6 +8650,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organize seus servidores dedicados em Gateways e decida quais membros podem acessá-los."
       ],
+      "Other accounts": [
+        "Outras contas"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existem outros administradores na sua organização. Você é responsável por informar a nova senha."
       ],
@@ -9079,9 +9135,6 @@
       ],
       "Swiss based": [
         "Sediado na Suíça"
-      ],
-      "Switch to": [
-        "Mudar para"
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
@@ -11118,6 +11171,9 @@
       "Inherit color from parent folder": [
         "Cor herdada da pasta pai"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticador A2F integrado"
+      ],
       "Interval": [
         "Intervalo"
       ],
@@ -12698,12 +12754,6 @@
       "${ size } storage per user": [
         "${ size } de armazenamento por usuário"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Para ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Para todos os serviços da ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB de armazenamento seguro"
       ],
@@ -12900,9 +12950,6 @@
       "HTML signatures": [
         "Assinaturas HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/VPN sempre ativa"
       ],
@@ -13056,9 +13103,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Pastas ilimitadas, marcadores e filtros"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases do Hide-my-email ilimitados"
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
@@ -13220,6 +13264,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Nosso plano ${ visionary } não está mais disponível para novos assinantes, pois é um plano para usuários originais da ${ BRAND_NAME }, com recursos e benefícios especiais."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Pague uma vez, proteja suas senhas e identidade para sempre."
       ],
       "Popular": [
         "Popular"
@@ -14416,7 +14463,15 @@
         "Começar a usar o ${ PASS_APP_NAME }"
       ]
     },
+    "pass_lifetime_signup: Info": {
+      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
+        "Bem-vindo ao ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ]
+    },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Comprar agora"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -14672,11 +14727,11 @@
       "Save your recovery kit to continue": [
         "Salve o seu kit de recuperação para continuar"
       ],
-      "Secure vault and link sharing": [
-        "Compartilhamento seguro de cofre e link"
-      ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
+      ],
+      "Secure vault, item and link sharing": [
+        "Compartilhamento seguro de item, cofre e link"
       ],
       "Secure your family’s passwords and online identities": [
         "Proteja as senha e identidades de on-line da sua família"
@@ -14693,6 +14748,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Oferta especial de lançamento: obtenha ${ title } por ${ price } para sempre!"
       ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "Especial: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Começar a usar o ${ PASS_APP_NAME }"
       ],
@@ -14704,6 +14762,9 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "para começar a usar o ${ PASS_APP_NAME } em seu telefone"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Inícios de sessão ilimitados, notas, cartões de crédito e muito mais"
       ],
       "Updating your account": [
         "Atualizando sua conta"
@@ -14763,6 +14824,9 @@
       "Activity log": [
         "Registro de atividade"
       ],
+      "Additional mailboxes for aliases": [
+        "Caixas de correio adicionais para aliases"
+      ],
       "Admin panel to manage users and subscription": [
         "Painel administrativo para gerenciar usuários e assinaturas"
       ],
@@ -14772,11 +14836,17 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Recursos avançados de alias (Com tecnologia do SimpleLogin)"
       ],
+      "File attachments (coming soon)": [
+        "Anexos de arquivo (em breve)"
+      ],
       "One-time payment, lifetime deal": [
         "Pagamento único, contrato vitalício"
       ],
       "Team policies": [
         "Políticas de equipe"
+      ],
+      "Your custom domain for aliases": [
+        "Seu domínio personalizado para aliases"
       ]
     },
     "PassFamilyPlan2024": {
@@ -18765,6 +18835,9 @@
       "Groups": [
         "Grupos"
       ],
+      "Help and feedback": [
+        "Ajuda e comentários"
+      ],
       "Help center": [
         "Central de ajuda"
       ],
@@ -20400,6 +20473,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Seleciona automaticamente ${ numberOfCountries } país",
         "Seleciona automaticamente ${ numberOfCountries } países"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servidores em ${ numberOfCountries }+ país",
+        "Servidores em ${ numberOfCountries }+ países"
       ]
     },
     "vpn_2024: renew": {

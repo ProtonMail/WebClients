@@ -408,9 +408,6 @@
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
       ],
-      "More options": [
-        "Več možnosti"
-      ],
       "Move to trash": [
         "Premakni v smetnjak"
       ],
@@ -904,9 +901,6 @@
       "High speed streaming": [
         "Pretočne storitve z visoko hitrostjo"
       ],
-      "Integrated 2FA authenticator": [
-        "Vgrajen modul za preverjanje pristnosti 2FA"
-      ],
       "Online document editor": [
         "Spletni urejevalnik dokumentov"
       ],
@@ -922,17 +916,8 @@
       "Secure file storage & sharing": [
         "Varna shramba in skupna raba datotek"
       ],
-      "Secure vault and link sharing": [
-        "Varna skupna raba trezorjev in povezav"
-      ],
       "Unlimited folders, labels and filters": [
         "Neomejeno število map, oznak in filtrov"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neomejeno število vzdevkov hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Neomejeno število prijav, zapiskov, plačilnih kartic"
       ],
       "Use your own email domain": [
         "Uporabite svojo e-poštno domeno"
@@ -2154,11 +2139,6 @@
         "Zapadel račun"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
@@ -2213,6 +2193,11 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "uporabite pomočnika za uvoz Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3179,6 +3164,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Neomejeno število vzdevkov hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -4522,9 +4512,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Konec naročnine: znova aktivirajte do ${ byDate }, da obdržite ugodnosti ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Preklopite na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Začasno ni na voljo. Poskusite znova pozneje."
@@ -5980,12 +5967,6 @@
       "${ size } storage": [
         "${ size } shrambe"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } – Za ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } – Za vse storitve ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB varnega prostora za shranjevanje"
       ],
@@ -6142,9 +6123,6 @@
       "HTML signatures": [
         "HTML podpisi"
       ],
-      "Integrated 2FA authenticator": [
-        "Vgrajen modul za preverjanje pristnosti 2FA"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/vedno vključen VPN"
       ],
@@ -6255,9 +6233,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Neomejeno število map, oznak in filtrov"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neomejeno število vzdevkov hide-my-email"
       ],
       "Unlimited labels": [
         "Neomejeno število oznak"
@@ -8021,26 +7996,6 @@
         "Za ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } shrambe na uporabnika"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } e-poštna domena po meri",
-        "${ planNumberOfDomains } e-poštni domeni po meri",
-        "${ planNumberOfDomains } e-poštne domene po meri",
-        "${ planNumberOfDomains } e-poštnih domen po meri"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-poštni naslov",
-        "${ planNumberOfEmails } e-poštna naslova",
-        "${ planNumberOfEmails } e-poštni naslovi",
-        "${ planNumberOfEmails } e-poštnih naslovov"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB prostora za shranjevanje"
@@ -8080,6 +8035,26 @@
       ],
       "Your privacy is our mission": [
         "Vaša zasebnost je naše poslanstvo"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } shrambe na uporabnika"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vam nudi vse aplikacije, vse funkcije, zgodnji dostop do novih izdaj in vse potrebno za nadzor nad svojimi podatki in njihovo varnostjo."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } e-poštna domena po meri",
+        "${ planNumberOfDomains } e-poštni domeni po meri",
+        "${ planNumberOfDomains } e-poštne domene po meri",
+        "${ planNumberOfDomains } e-poštnih domen po meri"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-poštni naslov",
+        "${ planNumberOfEmails } e-poštna naslova",
+        "${ planNumberOfEmails } e-poštni naslovi",
+        "${ planNumberOfEmails } e-poštnih naslovov"
       ]
     },
     "Subscription renewal state": {
@@ -8813,11 +8788,6 @@
         "Danes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Dodaj to datoteko v skupni rabi v vaš ${ DRIVE_APP_NAME } za lažji dostop."
@@ -8893,6 +8863,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali smo jim povabilo za dostop do predmeta."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
       ]
     },
     "Validation": {

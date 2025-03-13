@@ -603,6 +603,9 @@
       "Hide toolbar": [
         "Sembunyikan bilah alat"
       ],
+      "hide-my-email aliases": [
+        "alias hide-my-email"
+      ],
       "I like this response": [
         "Saya menyukai respons ini"
       ],
@@ -794,9 +797,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
-      ],
-      "More options": [
-        "Opsi lainnya"
       ],
       "More refine actions": [
         "Tindakan perbaikan lainnya"
@@ -1101,11 +1101,11 @@
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
-      "Select all": [
-        "Pilih semua"
-      ],
       "Select All": [
         "Pilih Semua"
+      ],
+      "Select all": [
+        "Pilih semua"
       ],
       "Select all messages": [
         "Pilih semua pesan"
@@ -1741,9 +1741,6 @@
       "High speed streaming": [
         "Streaming berkecepatan tinggi"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentikator 2FA terintegrasi"
-      ],
       "One-time payment, lifetime deal": [
         "Satu kali pembayaran, untuk selamanya"
       ],
@@ -1762,17 +1759,11 @@
       "Secure file storage & sharing": [
         "Penyimpanan & pembagian berkas aman"
       ],
-      "Secure vault and link sharing": [
-        "Pembagian brankas dan tautan aman"
-      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Tanpa batasan jumlah entri masuk, kartu kredit, alias hide-my-email, dan masih banyak lagi"
       ],
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
@@ -1834,8 +1825,14 @@
       "Annually": [
         "Tahunan"
       ],
+      "Lifetime": [
+        "Seumur hidup"
+      ],
       "Monthly": [
         "Bulanan"
+      ],
+      "New!": [
+        "Baru!"
       ],
       "Two-year": [
         "Dua tahun"
@@ -3493,6 +3490,31 @@
         "Kepulauan Åland"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Untuk seluruh layanan ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Untuk ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Untuk ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Untuk ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Untuk ${ VPN_APP_NAME }"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Lampiran"
@@ -4932,6 +4954,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian berkas terenkripsi, dan masih banyak lagi."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Tanpa batasan jumlah alias hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -6784,6 +6811,12 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "Sistem kami menandai pesan ini sebagai pesan yang mencurigakan. Apabila pesan ini bukan merupakan bentuk upaya phishing atau penipuan, tandai pesan ini sebagai pesan yang sah."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Sistem kami menandai pesan ini sebagai bentuk upaya phishing. Mohon periksa keabsahan pesan ini."
+      ],
       "password": [
         "kata sandi"
       ],
@@ -6900,6 +6933,9 @@
       ],
       "Proofread text": [
         "Periksa teks"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Lindungi email Anda agar tidak sampai bocor ke tangan milis atau spammer dengan ${ hideMyEmailAliasesLink }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
@@ -7098,9 +7134,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Beralih ke"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sinkronkan dan kelola berkas dengan aplikasi ${ DRIVE_APP_NAME }. Buat dan bagikan dokumen di ${ DOCS_APP_NAME }, dan simpan dokumen ini secara aman. Semuanya tersedia di ${ ios }, ${ android }, dan ${ desktop }."
@@ -8324,6 +8357,9 @@
       "Import to:": [
         "Impor ke:"
       ],
+      "Integrated 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
       ],
@@ -8947,6 +8983,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Tambahan dengan uji coba gratis"
+      ],
       "for ${ price }": [
         "untuk ${ price }"
       ]
@@ -9338,11 +9377,8 @@
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Untuk ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Untuk semua layanan ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "Ruang penyimpanan ${ size } per pengguna"
       ],
       "1 TB secure storage": [
         "Ruang penyimpanan aman 1 TB"
@@ -9515,14 +9551,14 @@
       "HTML signatures": [
         "Tanda tangan HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentikator 2FA yang terintegrasi"
-      ],
       "Kill switch/always-on VPN": [
         "Fitur kill switch/always-on VPN"
       ],
       "Limited support": [
         "Dukungan terbatas"
+      ],
+      "Manage user permissions and access": [
+        "Kelola izin dan akses pengguna"
       ],
       "Multiple admin roles": [
         "Jabatan admin berangkap"
@@ -9541,6 +9577,9 @@
       ],
       "Password manager": [
         "Pengelola kata sandi"
+      ],
+      "Password manager to secure credentials": [
+        "Pengelola kata sandi untuk menyimpan informasi kredensial"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
@@ -9649,9 +9688,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias Hide My Email"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
@@ -9783,6 +9819,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Paket ${ visionary } kami tidak lagi tersedia kepada pengguna baru karena paket tersebut merupakan paket khusus yang hanya tersedia bagi para pengguna ${ BRAND_NAME } lama dengan berbagai fitur dan manfaat spesial."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bayar satu kali, amankan kata sandi dan identitas Anda selamanya"
       ],
       "Popular": [
         "Populer"
@@ -10516,11 +10555,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Pembagian brankas dan tautan aman"
-      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
+      ],
+      "Secure vault, item and link sharing": [
+        "Pembagian brankas, item, dan tautan yang aman"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Tanpa batasan jumlah entri masuk, catatan, kartu kredit, dan masih banyak lagi"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11848,6 +11890,9 @@
       ],
       "${ n } VPN connection per user": [
         "${ n } koneksi VPN per pengguna"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Koneksi VPN untuk ${ n } perangkat per pengguna"
       ]
     },
     "Subscription change warning": {
@@ -13472,11 +13517,6 @@
         "Hari ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
@@ -13558,6 +13598,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
       ]
     },
     "Tor out of date": {

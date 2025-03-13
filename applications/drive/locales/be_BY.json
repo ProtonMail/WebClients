@@ -57,6 +57,9 @@
       "Add address": [
         "Дадаць адрас"
       ],
+      "Add another account": [
+        "Дадайце іншы ўліковы запіс"
+      ],
       "Add birthday": [
         "Дадаць дзень нараджэння"
       ],
@@ -87,17 +90,17 @@
       "Add photos": [
         "Дадаць фатаграфіі"
       ],
+      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
+        "Дадаць у \"${ album.name }\" (${ album.photoCount } фота)",
+        "Дадаць у \"${ album.name }\" (${ album.photoCount } фота)",
+        "Дадаць у \"${ album.name }\" (${ album.photoCount } фота)",
+        "Дадаць у \"${ album.name }\" (${ album.photoCount } фота)"
+      ],
       "Add to album": [
         "Дадаць у альбом"
       ],
       "Add to group": [
         "Дадаць у групу"
-      ],
-      "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфія)",
-        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфіі)",
-        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфій)",
-        "Дадаць у “${ album.name }” (${ album.photoCount } фатаграфій)"
       ],
       "Album name": [
         "Назва альбома"
@@ -476,6 +479,12 @@
       ],
       "Help": [
         "Даведка"
+      ],
+      "Help and feedback": [
+        "Даведка і зваротная сувязь"
+      ],
+      "Help and resources": [
+        "Даведка і рэсурсы"
       ],
       "Hide advanced PGP settings": [
         "Схаваць дадатковыя налады PGP"
@@ -1232,9 +1241,6 @@
       "High speed streaming": [
         "Высакахуткасныя трансляцыі"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтэграваны аўтэнтыфікатар 2ФА"
-      ],
       "One-time payment, lifetime deal": [
         "Аднаразовая аплата, пажыццёвы доступ"
       ],
@@ -1253,17 +1259,11 @@
       "Secure file storage & sharing": [
         "Бяспечнае файлавае сховішча і абагульванне"
       ],
-      "Secure vault and link sharing": [
-        "Бяспечнае сховішча і абагульванне спасылкі"
-      ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Неабмежаваная колькасць псеўданімаў hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Неабмежаваная колькасць запісаў уваходу, крэдытных картак, псеўданімаў hide-my-email і іншых функцый"
       ],
       "Use your own email domain": [
         "Выкарыстоўвайце ўласны дамен электроннай пошты"
@@ -1331,8 +1331,14 @@
       "Annually": [
         "Штогод"
       ],
+      "Lifetime": [
+        "Пажыццёва"
+      ],
       "Monthly": [
         "Штомесяц"
+      ],
+      "New!": [
+        "Новае!"
       ],
       "Two-year": [
         "Кожныя два гады"
@@ -2504,12 +2510,37 @@
         "Аландскія астравы"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "За ўсе сэрвісы ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "За ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "За ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "За ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "За ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/месяц"
       ],
       "/user per month": [
-        "/карыстальнікаў у месяц"
+        "/карыстальніка ў месяц"
       ]
     },
     "Default display name vcard": {
@@ -3673,6 +3704,9 @@
       ],
       "Share privately and securely": [
         "Прыватнае і бяспечнае абагульванне"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -5159,6 +5193,9 @@
       "Organization size": [
         "Памер арганізацыі"
       ],
+      "Other accounts": [
+        "Іншыя ўліковыя запісы"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
       ],
@@ -5461,9 +5498,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Пераключыцца на"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
@@ -6389,6 +6423,9 @@
       ],
       "Include message and file name in invite email": [
         "Уключаць паведамленне і назву файла ў запрашальны ліст"
+      ],
+      "Integrated 2FA authenticator": [
+        "Інтэграваны аўтэнтыфікатар 2ФА"
       ],
       "Keep both": [
         "Пакінуць абодва"
@@ -7417,12 +7454,6 @@
       "${ size } storage per user": [
         "${ size } сховішча на карыстальніка"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - для ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - для ўсіх сэрвісаў ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 ТБ бяспечнага сховішча"
       ],
@@ -7597,9 +7628,6 @@
       "HTML signatures": [
         "Подпісы HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтэграваная аўтэнтыфікацыя 2ФА"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Пастаянны VPN"
       ],
@@ -7737,9 +7765,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неабмежаваная колькасць псеўданімаў Hide-my-email"
       ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
@@ -7889,6 +7914,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Наш тарыфны план ${ visionary } больш недаступны для новых падпісчыкаў і зараз ён з'яўляецца спецыяльным тарыфным планам для карыстальнікаў ${ BRAND_NAME } і прадугледжвае для іх спецыяльныя функцыі і перавагі."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Заплаціце адзін раз, засцеражыце свае паролі і ідэнтычнасць назаўжды."
       ],
       "Popular": [
         "Папулярны"
@@ -8119,7 +8147,7 @@
         "Бяспечнае абагульванне індывідуальных элементаў з любой асобай (у тым ліку з тымі, хто не карыстаецца ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
+        "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнняў і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
         "Прагляд даступнасці ўдзельнікаў сустрэчы і эканомія часу пры планаванні сустрэч"
@@ -8838,11 +8866,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Бяспечнае сховішча і абагульванне спасылкі"
-      ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
+      ],
+      "Secure vault, item and link sharing": [
+        "Бяспечнае сховішча, элементы і абагульванне спасылак"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Неабмежаваная колькасць запісаў уваходу, нататак, крэдытных картак і іншых функцый"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10431,7 +10462,7 @@
         "/месяц"
       ],
       "/user per month": [
-        "/карыстальнікаў у месяц"
+        "/карыстальніка ў месяц"
       ]
     },
     "Suffix for price": {
@@ -10930,6 +10961,9 @@
       ],
       "Groups": [
         "Групы"
+      ],
+      "Help and feedback": [
+        "Даведка і зваротная сувязь"
       ],
       "Help center": [
         "Цэнтр дапамогі"
@@ -11466,6 +11500,12 @@
         "Аўтаматычны выбар з ${ numberOfCountries } краін",
         "Аўтаматычны выбар з ${ numberOfCountries } краін",
         "Аўтаматычны выбар з ${ numberOfCountries } краін"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Серверы ў больш, чым ${ numberOfCountries } краіне",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах"
       ]
     },
     "vpn_2024: renew": {

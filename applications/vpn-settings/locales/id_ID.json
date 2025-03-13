@@ -499,6 +499,9 @@
       "Previous page": [
         "Halaman sebelumnya"
       ],
+      "Publish changes": [
+        "Terbitkan perubahan"
+      ],
       "Recover data": [
         "Pulihkan data"
       ],
@@ -1067,9 +1070,6 @@
       "High speed streaming": [
         "Streaming berkecepatan tinggi"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentikator 2FA terintegrasi"
-      ],
       "One-time payment, lifetime deal": [
         "Satu kali pembayaran, untuk selamanya"
       ],
@@ -1088,17 +1088,11 @@
       "Secure file storage & sharing": [
         "Penyimpanan & pembagian berkas aman"
       ],
-      "Secure vault and link sharing": [
-        "Pembagian brankas dan tautan aman"
-      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Tanpa batasan jumlah entri masuk, kartu kredit, alias hide-my-email, dan masih banyak lagi"
       ],
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
@@ -1168,8 +1162,14 @@
       "Annually": [
         "Tahunan"
       ],
+      "Lifetime": [
+        "Seumur hidup"
+      ],
       "Monthly": [
         "Bulanan"
+      ],
+      "New!": [
+        "Baru!"
       ],
       "Two-year": [
         "Dua tahun"
@@ -2336,6 +2336,31 @@
         "Pelajari lebih lanjut"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Untuk seluruh layanan ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Untuk ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Untuk ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Untuk ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Untuk ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/bulan"
@@ -2730,6 +2755,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
+      ],
+      "Error publishing changes.": [
+        "Terdapat kesalahan dalam menerbitkan perubahan."
       ],
       "Failed to process the logo": [
         "Logo gagal diproses"
@@ -3346,6 +3374,9 @@
       ],
       "Torrenting support (P2P)": [
         "Dukungan torrent (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Tanpa batasan jumlah alias hide-my-email"
       ]
     },
     "Features": {
@@ -3363,9 +3394,6 @@
       ],
       "Secure streaming": [
         "Streaming aman"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Pilih dari ${ vpnServers.paid.countries } negara"
       ]
     },
     "Features: Tooltip": {
@@ -3831,9 +3859,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
-        "${ planName } akan kedaluwarsa dalam ${ daysLeft } hari."
-      ],
       "${ planName } expires today.": [
         "${ planName } akan kedaluwarsa hari ini."
       ],
@@ -4140,6 +4165,9 @@
       "Create your first Gateway": [
         "Buat Gateway pertama Anda"
       ],
+      "Created (not published)": [
+        "Telah dibuat (belum diterbitkan)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Membuat server gateway: ${ serverNumber } / ${ total }"
       ],
@@ -4181,6 +4209,9 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Hapus rekaman data MX lainnya atau pastikan Proritas ${ MAIL_APP_NAME } berada pada tingkatan terendah."
+      ],
+      "Deleted (not published)": [
+        "Telah dihapus (belum diterbitkan)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Menghapus ${ deletedServerCount } server gateway"
@@ -4268,6 +4299,9 @@
       ],
       "Edit email address": [
         "Sunting alamat email"
+      ],
+      "Edited (not published)": [
+        "Telah disunting (belum diterbitkan)"
       ],
       "eduGAIN configuration saved": [
         "Konfigurasi eduGAIN disimpan"
@@ -4770,6 +4804,9 @@
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Penghargaan pilihan editor PC Magazine dengan rating 5 dari 5 bintang"
       ],
+      "Pending removal": [
+        "Menunggu penghapusan"
+      ],
       "per month": [
         "per bulan"
       ],
@@ -5034,9 +5071,6 @@
       "Swiss based": [
         "Berbasis di Swiss"
       ],
-      "Switch to": [
-        "Beralih ke"
-      ],
       "Symbols (#$&)": [
         "Simbol (#$&)"
       ],
@@ -5234,6 +5268,9 @@
       ],
       "Unable to check gateways monitoring current status.": [
         "Tidak dapat memeriksa status pemantauan gateway saat ini."
+      ],
+      "Unchanged": [
+        "Tidak diubah"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
@@ -5519,6 +5556,9 @@
       ],
       "You have no transactions.": [
         "Anda tidak memiliki transaksi."
+      ],
+      "You have unpublished changes": [
+        "Anda memiliki perubahan yang belum diterbitkan"
       ],
       "You may be redirected to your bank’s website.": [
         "Anda akan dapat dialihkan ke situs web milik bank Anda."
@@ -6040,6 +6080,9 @@
       ],
       "IBAN": [
         "IBAN"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
       ],
       "Interval": [
         "Interval"
@@ -6585,6 +6628,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Tambahan dengan uji coba gratis"
+      ],
       "for ${ price }": [
         "untuk ${ price }"
       ],
@@ -6879,11 +6925,8 @@
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Untuk ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Untuk semua layanan ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "Ruang penyimpanan ${ size } per pengguna"
       ],
       "1 TB secure storage": [
         "Ruang penyimpanan aman 1 TB"
@@ -7074,14 +7117,14 @@
       "HTML signatures": [
         "Tanda tangan HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentikator 2FA yang terintegrasi"
-      ],
       "Kill switch/always-on VPN": [
         "Fitur kill switch/always-on VPN"
       ],
       "Limited support": [
         "Dukungan terbatas"
+      ],
+      "Manage user permissions and access": [
+        "Kelola izin dan akses pengguna"
       ],
       "Multiple admin roles": [
         "Jabatan admin berangkap"
@@ -7103,6 +7146,9 @@
       ],
       "Password manager": [
         "Pengelola kata sandi"
+      ],
+      "Password manager to secure credentials": [
+        "Pengelola kata sandi untuk menyimpan informasi kredensial"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
@@ -7220,9 +7266,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias Hide My Email"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
@@ -7371,6 +7414,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Paket ${ visionary } kami tidak lagi tersedia kepada pengguna baru karena paket tersebut merupakan paket khusus yang hanya tersedia bagi para pengguna ${ BRAND_NAME } lama dengan berbagai fitur dan manfaat spesial."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bayar satu kali, amankan kata sandi dan identitas Anda selamanya"
       ],
       "Popular": [
         "Populer"
@@ -8143,11 +8189,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Pembagian brankas dan tautan aman"
-      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
+      ],
+      "Secure vault, item and link sharing": [
+        "Pembagian brankas, item, dan tautan yang aman"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Tanpa batasan jumlah entri masuk, catatan, kartu kredit, dan masih banyak lagi"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9778,6 +9827,9 @@
       ],
       "High-speed VPN on ${ maxVpn } device": [
         "VPN berkecepatan tinggi pada ${ maxVpn } perangkat"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Koneksi VPN untuk ${ n } perangkat per pengguna"
       ]
     },
     "Subscription change warning": {
@@ -10205,6 +10257,9 @@
       ],
       "Catch-all address updated": [
         "Alamat catch-all diperbarui"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Perubahan diterbitkan. Perubahan Anda akan terlihat oleh seluruh pengguna dalam beberapa jam ke depan."
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"

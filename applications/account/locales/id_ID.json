@@ -883,6 +883,9 @@
       "Previous page": [
         "Halaman sebelumnya"
       ],
+      "Publish changes": [
+        "Terbitkan perubahan"
+      ],
       "Quit": [
         "Keluar"
       ],
@@ -1821,9 +1824,6 @@
       "High speed streaming": [
         "Streaming berkecepatan tinggi"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentikator 2FA terintegrasi"
-      ],
       "One-time payment, lifetime deal": [
         "Satu kali pembayaran, untuk selamanya"
       ],
@@ -1842,17 +1842,11 @@
       "Secure file storage & sharing": [
         "Penyimpanan & pembagian berkas aman"
       ],
-      "Secure vault and link sharing": [
-        "Pembagian brankas dan tautan aman"
-      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Tanpa batasan jumlah entri masuk, kartu kredit, alias hide-my-email, dan masih banyak lagi"
       ],
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
@@ -1922,8 +1916,14 @@
       "Annually": [
         "Tahunan"
       ],
+      "Lifetime": [
+        "Seumur hidup"
+      ],
       "Monthly": [
         "Bulanan"
+      ],
+      "New!": [
+        "Baru!"
       ],
       "Two-year": [
         "Dua tahun"
@@ -3571,6 +3571,31 @@
         "Pelajari lebih lanjut"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Untuk seluruh layanan ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Untuk ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Untuk ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Untuk ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Untuk ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/bulan"
@@ -4710,6 +4735,9 @@
       "Error in one of the conditions": [
         "Kesalahan pada salah satu kondisi"
       ],
+      "Error publishing changes.": [
+        "Terdapat kesalahan dalam menerbitkan perubahan."
+      ],
       "Expired": [
         "Kedaluwarsa"
       ],
@@ -5837,6 +5865,9 @@
       ],
       "Torrenting support (P2P)": [
         "Dukungan torrent (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Tanpa batasan jumlah alias hide-my-email"
       ]
     },
     "Features": {
@@ -5854,9 +5885,6 @@
       ],
       "Secure streaming": [
         "Streaming aman"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Pilih dari ${ vpnServers.paid.countries } negara"
       ]
     },
     "Features: Tooltip": {
@@ -7018,9 +7046,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
-        "${ planName } akan kedaluwarsa dalam ${ daysLeft } hari."
-      ],
       "${ planName } expires today.": [
         "${ planName } akan kedaluwarsa hari ini."
       ],
@@ -7558,6 +7583,9 @@
       "Create your first Gateway": [
         "Buat Gateway pertama Anda"
       ],
+      "Created (not published)": [
+        "Telah dibuat (belum diterbitkan)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Membuat server gateway: ${ serverNumber } / ${ total }"
       ],
@@ -7626,6 +7654,9 @@
       ],
       "Delete link?": [
         "Hapus tautan?"
+      ],
+      "Deleted (not published)": [
+        "Telah dihapus (belum diterbitkan)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Menghapus ${ deletedServerCount } server gateway"
@@ -7743,6 +7774,9 @@
       ],
       "Edit link": [
         "Sunting tautan"
+      ],
+      "Edited (not published)": [
+        "Telah disunting (belum diterbitkan)"
       ],
       "eduGAIN configuration saved": [
         "Konfigurasi eduGAIN disimpan"
@@ -7884,6 +7918,24 @@
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Cepat dan terfokus. Email dan kalender, tersedia langsung pada desktop Anda."
+      ],
+      "Featured in": [
+        "Terliput di"
+      ],
+      "Featured in Clubic": [
+        "Terliput di Clubic"
+      ],
+      "Featured in Digital Trends": [
+        "Terliput di Digital Trends"
+      ],
+      "Featured in PC Magazine": [
+        "Terliput di PC Magazine"
+      ],
+      "Featured in TechRadar": [
+        "Terliput di TechRadar"
+      ],
+      "Featured in ZDNet": [
+        "Terliput di ZDNet"
       ],
       "Fill in user details": [
         "Isi rincian pengguna"
@@ -8554,6 +8606,9 @@
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Penghargaan pilihan editor PC Magazine dengan rating 5 dari 5 bintang"
       ],
+      "Pending removal": [
+        "Menunggu penghapusan"
+      ],
       "per month": [
         "per bulan"
       ],
@@ -8971,9 +9026,6 @@
       "Swiss based": [
         "Berbasis di Swiss"
       ],
-      "Switch to": [
-        "Beralih ke"
-      ],
       "Symbols (#$&)": [
         "Simbol (#$&)"
       ],
@@ -9306,6 +9358,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Tidak dapat memverifikasi tanda tangan berkas pemulihan. Silakan hubungi layanan dukungan."
+      ],
+      "Unchanged": [
+        "Tidak diubah"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
@@ -9753,6 +9808,9 @@
       ],
       "You have no transactions.": [
         "Anda tidak memiliki transaksi."
+      ],
+      "You have unpublished changes": [
+        "Anda memiliki perubahan yang belum diterbitkan"
       ],
       "You may be redirected to your bank’s website.": [
         "Anda akan dapat dialihkan ke situs web milik bank Anda."
@@ -10984,6 +11042,9 @@
       "Inherit color from parent folder": [
         "Ikuti warna folder induk"
       ],
+      "Integrated 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
       "Interval": [
         "Interval"
       ],
@@ -11949,6 +12010,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Tambahan dengan uji coba gratis"
+      ],
       "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
         "Seluruh aplikasi ${ BRAND_NAME } for Business dan berbagai fitur premium untuk melindungi seantero bisnis Anda"
       ],
@@ -12521,11 +12585,8 @@
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Untuk ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Untuk semua layanan ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "Ruang penyimpanan ${ size } per pengguna"
       ],
       "1 TB secure storage": [
         "Ruang penyimpanan aman 1 TB"
@@ -12722,14 +12783,14 @@
       "HTML signatures": [
         "Tanda tangan HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentikator 2FA yang terintegrasi"
-      ],
       "Kill switch/always-on VPN": [
         "Fitur kill switch/always-on VPN"
       ],
       "Limited support": [
         "Dukungan terbatas"
+      ],
+      "Manage user permissions and access": [
+        "Kelola izin dan akses pengguna"
       ],
       "Multiple admin roles": [
         "Jabatan admin berangkap"
@@ -12751,6 +12812,9 @@
       ],
       "Password manager": [
         "Pengelola kata sandi"
+      ],
+      "Password manager to secure credentials": [
+        "Pengelola kata sandi untuk menyimpan informasi kredensial"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
@@ -12871,9 +12935,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Tanpa batasan jumlah alias Hide My Email"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
@@ -13029,6 +13090,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Paket ${ visionary } kami tidak lagi tersedia kepada pengguna baru karena paket tersebut merupakan paket khusus yang hanya tersedia bagi para pengguna ${ BRAND_NAME } lama dengan berbagai fitur dan manfaat spesial."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bayar satu kali, amankan kata sandi dan identitas Anda selamanya"
       ],
       "Popular": [
         "Populer"
@@ -14191,6 +14255,14 @@
         "Mulai gunakan ${ PASS_APP_NAME }"
       ]
     },
+    "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
+        "Dapatkan akses seumur hidup ke seluruh fitur premium ${ PASS_APP_NAME } yang ada saat ini dan yang akan datang dengan satu kali pembayaran. "
+      ],
+      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
+        "Selamat datang di ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Continue": [
         "Lanjut"
@@ -14447,11 +14519,11 @@
       "Save your recovery kit to continue": [
         "Simpan kit pemulihan Anda untuk melanjutkan"
       ],
-      "Secure vault and link sharing": [
-        "Pembagian brankas dan tautan aman"
-      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
+      ],
+      "Secure vault, item and link sharing": [
+        "Pembagian brankas, item, dan tautan yang aman"
       ],
       "Secure your family’s passwords and online identities": [
         "Amankan kata sandi dan identitas online keluarga Anda"
@@ -14479,6 +14551,9 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "untuk mulai menggunakan ${ PASS_APP_NAME } pada ponsel Anda"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Tanpa batasan jumlah entri masuk, catatan, kartu kredit, dan masih banyak lagi"
       ],
       "Updating your account": [
         "Memperbarui akun Anda"
@@ -16889,6 +16964,9 @@
       ],
       "High-speed VPN on ${ maxVpn } device": [
         "VPN berkecepatan tinggi pada ${ maxVpn } perangkat"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Koneksi VPN untuk ${ n } perangkat per pengguna"
       ]
     },
     "Subscription change warning": {
@@ -17343,6 +17421,9 @@
       ],
       "Catch-all address updated": [
         "Alamat catch-all diperbarui"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Perubahan diterbitkan. Perubahan Anda akan terlihat oleh seluruh pengguna dalam beberapa jam ke depan."
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
@@ -19505,6 +19586,11 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Tanda tangani seluruh pesan yang Anda kirim secara otomatis agar pengguna lainnya dapat memverifikasi keaslian pesan Anda. Proses ini dilangsungkan melalui pengaturan PGP bawaan yang dapat Anda sesuaikan pada menu di bawah ini."
+      ]
+    },
+    "Tooltip: PM signature locked": {
+      "This signature cannot be modified": [
+        "Tanda tangan ini tidak dapat diubah"
       ]
     },
     "Tooltip; share calendar modal ": {

@@ -1072,9 +1072,6 @@
       "High speed streaming": [
         "तेज़ स्ट्रीमिंग"
       ],
-      "Integrated 2FA authenticator": [
-        "एकीकृत 2-एफए सत्यापन"
-      ],
       "One-time payment, lifetime deal": [
         "एक बार का भुगतान, लाइफटाइम सौदा"
       ],
@@ -1093,17 +1090,8 @@
       "Secure file storage & sharing": [
         "सुरक्षित फ़ाइल स्टोरेज और शेयरिंग"
       ],
-      "Secure vault and link sharing": [
-        "सुरक्षित तिजोरी और लिंक शेयरिंग"
-      ],
       "Unlimited folders, labels and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "असीमित hide-my-email नकली-नाम"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "असीमित लॉगिन, नोट्स, क्रेडिट कार्ड"
       ],
       "Use your own email domain": [
         "अपना खुद का ईमेल डोमेन इस्तेमाल करें"
@@ -3362,6 +3350,9 @@
       ],
       "Torrenting support (P2P)": [
         "टोरेंटिंग सपोर्ट (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "असीमित Hide-my-email नकलीनाम"
       ]
     },
     "Features": {
@@ -3379,9 +3370,6 @@
       ],
       "Secure streaming": [
         "सुरक्षित स्ट्रीमिंग"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "${ vpnServers.paid.countries } देशों में से चुनें"
       ]
     },
     "Features: Tooltip": {
@@ -3860,9 +3848,6 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } को कम से कम 1 विशेष सर्वर ${ serverPricePerMonth } की आवश्यकता है"
-      ],
-      "${ planName } expires in ${ daysLeft } days.": [
-        "${ planName } ${ daysLeft } दिनों में समाप्त हो जाएगा।"
       ],
       "${ planName } expires today.": [
         "${ planName } आज समाप्त हो रहा है।"
@@ -5085,9 +5070,6 @@
       "Swiss based": [
         "स्विस आधारित"
       ],
-      "Switch to": [
-        "इसमें स्विच करें"
-      ],
       "Symbols (#$&)": [
         "प्रतीक (#$&)"
       ],
@@ -6103,6 +6085,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Integrated 2FA authenticator": [
+        "एकीकृत 2-एफए सत्यापन"
+      ],
       "Interval": [
         "अंतराल"
       ],
@@ -6962,12 +6947,6 @@
       "${ size } storage": [
         "${ size } स्टोरेज"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME } के लिए"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - सभी ${ BRAND_NAME } सेवाओं के लिए"
-      ],
       "1 TB secure storage": [
         "1 टीबी सुरक्षित स्टोरेज"
       ],
@@ -7158,9 +7137,6 @@
       "HTML signatures": [
         "HTML हस्ताक्षर"
       ],
-      "Integrated 2FA authenticator": [
-        "2-एफए करनेवाला शामिल"
-      ],
       "Kill switch/always-on VPN": [
         "किल स्विच/हमेशा-चालू वीपीएन"
       ],
@@ -7305,9 +7281,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "असीमित Hide-my-email नकलीनाम"
       ],
       "Unlimited labels": [
         "असीमित लेबल"
@@ -8239,9 +8212,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "सुरक्षित तिजोरी और लिंक साझाकरण"
-      ],
       "Secure vault sharing": [
         "सुरक्षित वॉल्ट साझाकरण"
       ]
