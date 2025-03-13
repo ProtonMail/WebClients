@@ -6,9 +6,7 @@ import { type IconName } from '@proton/components/components/icon/Icon';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getInitialFilters, getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import type { UpsellRef } from '@proton/pass/constants';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -19,17 +17,12 @@ type Props = {
     label?: string;
     selected: boolean;
     to: string;
-    upsellRef?: UpsellRef;
     onAction?: () => void;
 };
 
-export const SharedMenuItem = memo(({ to, count, selected, label, icon, upsellRef, onAction = noop }: Props) => {
+export const SharedMenuItem = memo(({ to, count, selected, label, icon, onAction = noop }: Props) => {
     const navigate = useNavigate();
-    const upsell = useUpselling();
-
-    const onSelect = upsellRef
-        ? () => upsell({ type: 'pass-plus', upsellRef })
-        : () => navigate(getLocalPath(to), { filters: getInitialFilters() });
+    const onSelect = () => navigate(getLocalPath(to), { filters: getInitialFilters() });
 
     return (
         <DropdownMenuButton
