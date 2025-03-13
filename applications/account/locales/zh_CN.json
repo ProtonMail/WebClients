@@ -100,6 +100,9 @@
       "Add address or domain": [
         "添加邮箱地址或域名"
       ],
+      "Add another account": [
+        "添加其他账户"
+      ],
       "Add calendar from URL": [
         "通过链接添加日历"
       ],
@@ -682,6 +685,12 @@
       "Help": [
         "帮助"
       ],
+      "Help and feedback": [
+        "帮助和反馈"
+      ],
+      "Help and resources": [
+        "帮助和资源"
+      ],
       "Hide": [
         "隐藏"
       ],
@@ -882,6 +891,9 @@
       ],
       "Previous page": [
         "上一页"
+      ],
+      "Publish changes": [
+        "发布更改"
       ],
       "Quit": [
         "退出"
@@ -1821,9 +1833,6 @@
       "High speed streaming": [
         "高速看视频"
       ],
-      "Integrated 2FA authenticator": [
-        "内置双重验证器"
-      ],
       "One-time payment, lifetime deal": [
         "一次性付款，终身有效"
       ],
@@ -1842,17 +1851,11 @@
       "Secure file storage & sharing": [
         "安全文件存储与共享"
       ],
-      "Secure vault and link sharing": [
-        "安全保险库和链接共享"
-      ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
       ],
-      "Unlimited hide-my-email aliases": [
-        "无限 hide-my-email 别名"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "无限登录、笔记、信用卡"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "无限制登录、信用卡、hide-my-email 别名等功能"
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
@@ -1922,8 +1925,14 @@
       "Annually": [
         "按年付费"
       ],
+      "Lifetime": [
+        "终身"
+      ],
       "Monthly": [
         "月费"
+      ],
+      "New!": [
+        "新！"
       ],
       "Two-year": [
         "两年付费"
@@ -3571,6 +3580,31 @@
         "了解更多信息"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "适用于所有 ${ BRAND_NAME } 服务"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "适用于 ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "适用于 ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "适用于 ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "适用于 ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/月"
@@ -4710,6 +4744,9 @@
       "Error in one of the conditions": [
         "条件存在错误"
       ],
+      "Error publishing changes.": [
+        "发布更改时出错。"
+      ],
       "Expired": [
         "已失效"
       ],
@@ -5837,6 +5874,9 @@
       ],
       "Torrenting support (P2P)": [
         "支持 BT 下载 (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "无限制地 hide-my-email"
       ]
     },
     "Features": {
@@ -5854,9 +5894,6 @@
       ],
       "Secure streaming": [
         "安全看视频"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "从 ${ vpnServers.paid.countries } 个地域中选择"
       ]
     },
     "Features: Tooltip": {
@@ -7018,9 +7055,6 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
-        "${ planName } 在 ${ daysLeft } 天后到期。"
-      ],
       "${ planName } expires today.": [
         "${ planName } 今天到期。"
       ],
@@ -7558,6 +7592,9 @@
       "Create your first Gateway": [
         "创建您的第一个网关"
       ],
+      "Created (not published)": [
+        "已创建 (未发布)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "创建网关服务器：${ serverNumber } / ${ total }"
       ],
@@ -7626,6 +7663,9 @@
       ],
       "Delete link?": [
         "删除链接？"
+      ],
+      "Deleted (not published)": [
+        "已删除 (未发布)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "正在删除 ${ deletedServerCount } 台网关服务器"
@@ -7743,6 +7783,9 @@
       ],
       "Edit link": [
         "修改链接"
+      ],
+      "Edited (not published)": [
+        "已编辑 (未发布)"
       ],
       "eduGAIN configuration saved": [
         "已保存 eduGAIN 配置"
@@ -7884,6 +7927,24 @@
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
+      ],
+      "Featured in": [
+        "推荐"
+      ],
+      "Featured in Clubic": [
+        "Clubic 推荐"
+      ],
+      "Featured in Digital Trends": [
+        "Digital Trends 推荐"
+      ],
+      "Featured in PC Magazine": [
+        "PC Magazine 推荐"
+      ],
+      "Featured in TechRadar": [
+        "TechRadar 推荐"
+      ],
+      "Featured in ZDNet": [
+        "ZDNet 推荐"
       ],
       "Fill in user details": [
         "填写用户详细信息"
@@ -8500,6 +8561,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "以专用服务器组成网关，设置能访问它们的成员。"
       ],
+      "Other accounts": [
+        "其他账户"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的机构中还有其他管理员，您需要将新密码告知他们。"
       ],
@@ -8553,6 +8617,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine 编辑选择奖，评分 5 星 ( 满分 5 星 )"
+      ],
+      "Pending removal": [
+        "待移除"
       ],
       "per month": [
         "每月"
@@ -8971,9 +9038,6 @@
       "Swiss based": [
         "立足瑞士"
       ],
-      "Switch to": [
-        "切换为"
-      ],
       "Symbols (#$&)": [
         "符号 (#$&)"
       ],
@@ -9306,6 +9370,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "无法验证恢复文件签名，请联系支持人员。"
+      ],
+      "Unchanged": [
+        "未更改"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很不幸，此账户没有设置恢复密码的方式。"
@@ -9753,6 +9820,9 @@
       ],
       "You have no transactions.": [
         "您还没有任何交易记录。"
+      ],
+      "You have unpublished changes": [
+        "您有未发布的更改"
       ],
       "You may be redirected to your bank’s website.": [
         "您可能将转至银行网站。"
@@ -10984,6 +11054,9 @@
       "Inherit color from parent folder": [
         "颜色与上层文件夹一致"
       ],
+      "Integrated 2FA authenticator": [
+        "内置 2FA 验证器"
+      ],
       "Interval": [
         "验证码更新周期"
       ],
@@ -11952,6 +12025,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加 ${ BRAND_NAME } Scribe 写作助手"
       ],
+      "Add-on with free trial": [
+        "免费试用附加组件"
+      ],
       "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
         "所有适用商业化 ${ BRAND_NAME } 的应用程序和高级功能，为您的整个业务提供保护"
       ],
@@ -12524,11 +12600,8 @@
       "${ size } storage": [
         "${ size } 存储空间"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - 用于 ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - 用于所有 ${ BRAND_NAME } 服务"
+      "${ size } storage per user": [
+        "每位用户 ${ size } 存储空间"
       ],
       "1 TB secure storage": [
         "1 TB安全储存空间"
@@ -12725,14 +12798,14 @@
       "HTML signatures": [
         "HTML 落款"
       ],
-      "Integrated 2FA authenticator": [
-        "集成了双重身份验证"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/始终开启 VPN"
       ],
       "Limited support": [
         "有限的客户服务"
+      ],
+      "Manage user permissions and access": [
+        "管理用户权限和访问权限"
       ],
       "Multiple admin roles": [
         "多管理员机制"
@@ -12754,6 +12827,9 @@
       ],
       "Password manager": [
         "密码管理器"
+      ],
+      "Password manager to secure credentials": [
+        "密码管理器可确保凭证安全"
       ],
       "Password-protected Emails": [
         "邮件密码保护"
@@ -12874,9 +12950,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "不限量文件夹、标签和筛选规则"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "无限制地 hide-my-email"
       ],
       "Unlimited labels": [
         "标签数量不限"
@@ -13032,6 +13105,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我们的 ${ visionary } 套餐已不再适用于新订阅者，因为它是针对原始 ${ BRAND_NAME } 用户的特殊套餐，具有特殊功能和优势。"
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "仅需一次支付，即可永久保护您的密码和身份。"
       ],
       "Popular": [
         "流行的"
@@ -14194,7 +14270,18 @@
         "开始使用 ${ PASS_APP_NAME }"
       ]
     },
+    "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
+        "只需一次性付款，即可终身使用当前和未来的所有 ${ PASS_APP_NAME } 高级功能。"
+      ],
+      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
+        "欢迎使用 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ]
+    },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "立即购买"
+      ],
       "Continue": [
         "继续"
       ],
@@ -14450,11 +14537,11 @@
       "Save your recovery kit to continue": [
         "保存您的恢复套件以继续"
       ],
-      "Secure vault and link sharing": [
-        "安全保险库和链接共享"
-      ],
       "Secure vault sharing": [
         "安全保险库共享"
+      ],
+      "Secure vault, item and link sharing": [
+        "安全保险库、项目和链接共享"
       ],
       "Secure your family’s passwords and online identities": [
         "保护家人的密码和在线身份安全"
@@ -14471,6 +14558,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "新品特惠：${ price } 终身优惠价开通 ${ title }！"
       ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "特别优惠：${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 仅需 ${ priceString }。"
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "开始使用 ${ PASS_APP_NAME }"
       ],
@@ -14482,6 +14572,9 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "在您的手机上开始使用 ${ PASS_APP_NAME }"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "无限制登录、备注、信用卡等功能"
       ],
       "Updating your account": [
         "正在更新您的帐户"
@@ -14540,6 +14633,9 @@
       "Activity log": [
         "活动日志"
       ],
+      "Additional mailboxes for aliases": [
+        "用于别名的附加邮箱"
+      ],
       "Admin panel to manage users and subscription": [
         "管理用户和订阅的管理面板"
       ],
@@ -14549,11 +14645,17 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "高级别名功能 ( 由 SimpleLogin 提供 )"
       ],
+      "File attachments (coming soon)": [
+        "文件附件 (即将推出)"
+      ],
       "One-time payment, lifetime deal": [
         "一次性付款，终身有效"
       ],
       "Team policies": [
         "团队政策"
+      ],
+      "Your custom domain for aliases": [
+        "用于别名的自定义域名"
       ]
     },
     "PassFamilyPlan2024": {
@@ -16892,6 +16994,9 @@
       ],
       "High-speed VPN on ${ maxVpn } device": [
         "${ maxVpn } 台设备可同时接入高速 VPN"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "其他 VPN 连接，每个用户可连接 ${ n } 台设备"
       ]
     },
     "Subscription change warning": {
@@ -17346,6 +17451,9 @@
       ],
       "Catch-all address updated": [
         "通配邮箱已更改"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "更改已发布。在接下来的几个小时内，所有用户都将看到您的更改。"
       ],
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
@@ -18464,6 +18572,9 @@
       "Groups": [
         "群组"
       ],
+      "Help and feedback": [
+        "帮助和反馈"
+      ],
       "Help center": [
         "帮助中心"
       ],
@@ -19505,6 +19616,11 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "自动对向外发送的邮件予以数字签名，以便对方验证邮件真实性。签名采用的默认 PGP 格式可在下方设置。"
+      ]
+    },
+    "Tooltip: PM signature locked": {
+      "This signature cannot be modified": [
+        "此签名不可修改"
       ]
     },
     "Tooltip; share calendar modal ": {
