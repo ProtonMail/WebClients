@@ -55,6 +55,9 @@
       "Add address": [
         "Adresse hinzufügen"
       ],
+      "Add another account": [
+        "Weiteres Konto hinzufügen"
+      ],
       "Add birthday": [
         "Geburtstag hinzufügen"
       ],
@@ -85,15 +88,15 @@
       "Add photos": [
         "Fotos hinzufügen"
       ],
+      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
+        "Hinzufügen zu \"${ album.name }\" (${ album.photoCount } Foto)",
+        "Hinzufügen zu \"${ album.name }\" (${ album.photoCount } Fotos)"
+      ],
       "Add to album": [
         "Zum Album hinzufügen"
       ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
-      ],
-      "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "Hinzufügen zu „${ album.name }“ (${ album.photoCount } Foto)",
-        "Hinzufügen zu „${ album.name }“ (${ album.photoCount } Fotos)"
       ],
       "Album name": [
         "Albumname"
@@ -464,6 +467,12 @@
       ],
       "Help": [
         "Hilfe"
+      ],
+      "Help and feedback": [
+        "Hilfe und Feedback"
+      ],
+      "Help and resources": [
+        "Hilfe und Ressourcen"
       ],
       "Hide advanced PGP settings": [
         "Erweiterte PGP-Einstellungen ausblenden"
@@ -1210,9 +1219,6 @@
       "High speed streaming": [
         "Hochgeschwindigkeits-Streaming"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
-      ],
       "One-time payment, lifetime deal": [
         "Einmalige Zahlung, lebenslanges Angebot"
       ],
@@ -1231,17 +1237,11 @@
       "Secure file storage & sharing": [
         "Sichere Dateispeicherung und -freigabe"
       ],
-      "Secure vault and link sharing": [
-        "Sichere Tresor- und Linkfreigabe"
-      ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide-my-email-Aliasse"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Unbegrenzte Logins, Notizen, Kreditkarten"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Unbegrenzte Logins, Kreditkarten, Hide-my-email-Aliasse und mehr"
       ],
       "Use your own email domain": [
         "Nutze deine eigene E-Mail-Domain"
@@ -1305,8 +1305,14 @@
       "Annually": [
         "Jährlich"
       ],
+      "Lifetime": [
+        "Lebenslang"
+      ],
       "Monthly": [
         "Monatlich"
+      ],
+      "New!": [
+        "Neu!"
       ],
       "Two-year": [
         "Zwei Jahre"
@@ -2474,6 +2480,31 @@
         "Åland‐Inseln"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Für alle ${ BRAND_NAME }-Dienste"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Für ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Für ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Für ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Für ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/Monat"
@@ -3623,6 +3654,9 @@
       ],
       "Share privately and securely": [
         "Privates und sicheres Teilen"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
     "fido2: Error": {
@@ -4999,6 +5033,9 @@
       "Organization size": [
         "Organisationsgröße"
       ],
+      "Other accounts": [
+        "Andere Konten"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
@@ -5297,9 +5334,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Wechseln zu"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
@@ -6199,6 +6233,9 @@
       ],
       "Include message and file name in invite email": [
         "Nachricht und Dateiname in die Einladungs-E-Mail einfügen"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
       ],
       "Keep both": [
         "Beide behalten"
@@ -7189,12 +7226,6 @@
       "${ size } storage per user": [
         "${ size } Speicherplatz pro Benutzer"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - für ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - für alle ${ BRAND_NAME }-Dienste"
-      ],
       "1 TB secure storage": [
         "1 TB sicherer Speicher"
       ],
@@ -7367,9 +7398,6 @@
       "HTML signatures": [
         "HTML-Signaturen"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Always-On-VPN"
       ],
@@ -7508,9 +7536,6 @@
       "Unlimited folders, labels, and filters": [
         "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern."
       ],
-      "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide-my-email-Aliasse"
-      ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
       ],
@@ -7647,6 +7672,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Unser ${ visionary }-Abonnement steht neuen Benutzern nicht länger zur Verfügung, da es ein spezielles Abonnement für Originalbenutzer von ${ BRAND_NAME } ist und besondere Funktionen und Vorteile umfasst."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Einmal bezahlen, Passwörter und Identität für immer sichern."
       ],
       "Popular": [
         "Beliebt"
@@ -8556,11 +8584,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Sichere Tresor- und Linkfreigabe"
-      ],
       "Secure vault sharing": [
         "Sicheres Teilen von Tresoren"
+      ],
+      "Secure vault, item and link sharing": [
+        "Sicherer Tresor, gemeinsame Nutzung von Einträgen und Links"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Unbegrenzte Anzahl von Logins, Notizen, Kreditkarten und mehr"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10543,6 +10574,9 @@
       "Groups": [
         "Gruppen"
       ],
+      "Help and feedback": [
+        "Hilfe und Feedback"
+      ],
       "Help center": [
         "Hilfecenter"
       ],
@@ -11177,6 +11211,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Wählt automatisch aus ${ numberOfCountries } Land",
         "Wählt automatisch aus ${ numberOfCountries } Ländern"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Server in mehr als ${ numberOfCountries } Land",
+        "Server in mehr als ${ numberOfCountries } Ländern"
       ]
     },
     "vpn_2024: renew": {
