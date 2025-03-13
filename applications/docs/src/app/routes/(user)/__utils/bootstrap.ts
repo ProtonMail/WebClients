@@ -19,9 +19,9 @@ import noop from '@proton/utils/noop'
 import { sendErrorReport, getRefreshError } from '@proton/drive-store'
 
 import locales from '../../../locales'
-import { extendStore, setupStore } from '../../../ReduxStore/store'
+import { extendStore, setupStore } from '../../../redux-store/store'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
-import type { DocsState } from '../../../ReduxStore/rootReducer'
+import type { DocsState } from '../../../redux-store/rootReducer'
 import { appMode } from '@proton/shared/lib/webpack.constants'
 
 const getAppContainer = () =>
