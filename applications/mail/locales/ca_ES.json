@@ -799,9 +799,6 @@
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
-      "More options": [
-        "Més opcions"
-      ],
       "More refine actions": [
         "Accions més optimitzades"
       ],
@@ -1105,10 +1102,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1750,9 +1747,6 @@
       "High speed streaming": [
         "Estríming d'alta velocitat"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador de doble factor (2FA) integrat"
-      ],
       "One-time payment, lifetime deal": [
         "Pagament únic, oferta per a tota la vida"
       ],
@@ -1771,17 +1765,8 @@
       "Secure file storage & sharing": [
         "Emmagatzematge i ús compartit de fitxers segurs"
       ],
-      "Secure vault and link sharing": [
-        "Compartició segura de caixes fortes i enllaços"
-      ],
       "Unlimited folders, labels and filters": [
         "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre il·limitat d'àlies hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit"
       ],
       "Use your own email domain": [
         "Utilitzeu el vostre propi domini de correu electrònic"
@@ -1845,8 +1830,14 @@
       "Annually": [
         "Cada any"
       ],
+      "Lifetime": [
+        "Oferta de per vida"
+      ],
       "Monthly": [
         "Mensual"
+      ],
+      "New!": [
+        "Nou"
       ],
       "Two-year": [
         "Bianual"
@@ -4967,6 +4958,11 @@
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Nombre il·limitat d'àlies hide-my-email"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
@@ -6649,7 +6645,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7211,9 +7208,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La subscripció està finalitzant: Reactiveu-la abans de ${ byDate } per a mantenir els beneficis de ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Canvia a"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creeu i compartiu documents a ${ DOCS_APP_NAME } i deseu-los de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
@@ -8464,6 +8458,9 @@
       "Import to:": [
         "Importar a:"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticador de doble factor (2FA) integrat"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
       ],
@@ -9503,12 +9500,6 @@
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Per a ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Per a tots els serveis de ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB d'emmagatzematge segur"
       ],
@@ -9681,9 +9672,6 @@
       "HTML signatures": [
         "Signatures HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrat"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch /VPN sempre activa"
       ],
@@ -9815,9 +9803,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre il·limitat d'àlies hide-my-email"
       ],
       "Unlimited labels": [
         "Etiquetes il·limitades"
@@ -10696,9 +10681,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Compartició segura de caixes fortes i enllaços"
-      ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
       ]
@@ -13735,11 +13717,6 @@
         "Avui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
@@ -13821,6 +13798,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
     "Tor out of date": {

@@ -51,6 +51,9 @@
       "Add address": [
         "Дадаць адрас"
       ],
+      "Add another account": [
+        "Дадайце іншы ўліковы запіс"
+      ],
       "Add Bcc recipients": [
         "Дадаць атрымальнікаў схаванай копіі"
       ],
@@ -588,6 +591,12 @@
       "Help": [
         "Даведка"
       ],
+      "Help and feedback": [
+        "Даведка і зваротная сувязь"
+      ],
+      "Help and resources": [
+        "Даведка і рэсурсы"
+      ],
       "Hide": [
         "Схаваць"
       ],
@@ -809,9 +818,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
-      ],
-      "More options": [
-        "Дадатковыя параметры"
       ],
       "More refine actions": [
         "Больш дзеянняў па ўдасканаленні"
@@ -1116,10 +1122,10 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Выбраць усе"
       ],
-      "Select All": [
+      "Select all": [
         "Выбраць усе"
       ],
       "Select all messages": [
@@ -1771,9 +1777,6 @@
       "High speed streaming": [
         "Высакахуткасныя трансляцыі"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтэграваны аўтэнтыфікатар 2ФА"
-      ],
       "One-time payment, lifetime deal": [
         "Аднаразовая аплата, пажыццёвы доступ"
       ],
@@ -1792,17 +1795,11 @@
       "Secure file storage & sharing": [
         "Бяспечнае файлавае сховішча і абагульванне"
       ],
-      "Secure vault and link sharing": [
-        "Бяспечнае сховішча і абагульванне спасылкі"
-      ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Неабмежаваная колькасць псеўданімаў hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Неабмежаваная колькасць запісаў уваходу, крэдытных картак, псеўданімаў hide-my-email і іншых функцый"
       ],
       "Use your own email domain": [
         "Выкарыстоўвайце ўласны дамен электроннай пошты"
@@ -1870,8 +1867,14 @@
       "Annually": [
         "Штогод"
       ],
+      "Lifetime": [
+        "Пажыццёва"
+      ],
       "Monthly": [
         "Штомесяц"
+      ],
+      "New!": [
+        "Новае!"
       ],
       "Two-year": [
         "Кожныя два гады"
@@ -3535,6 +3538,31 @@
         "Аландскія астравы"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "За ўсе сэрвісы ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "За ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "За ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "За ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "За ${ VPN_APP_NAME }"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Далучэнне"
@@ -3560,7 +3588,7 @@
         "/месяц"
       ],
       "/user per month": [
-        "/карыстальнікаў у месяц"
+        "/карыстальніка ў месяц"
       ]
     },
     "Daily recurring event, frequency": {
@@ -5034,6 +5062,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -6872,7 +6905,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7113,6 +7149,9 @@
       ],
       "Organization size": [
         "Памер арганізацыі"
+      ],
+      "Other accounts": [
+        "Іншыя ўліковыя запісы"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
@@ -7449,9 +7488,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Пераключыцца на"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Сінхранізуйце і кіруйце файламі з дапамогай праграмы ${ DRIVE_APP_NAME }. Стварайце і абагульвайце дакументы ў ${ DOCS_APP_NAME }, а потым бяспечна захоўвайце іх. Праграмы даступны для ${ ios }, ${ android } і ${ desktop }."
@@ -8747,6 +8783,9 @@
       "Import to:": [
         "Імпартаваць у:"
       ],
+      "Integrated 2FA authenticator": [
+        "Інтэграваны аўтэнтыфікатар 2ФА"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Спалучэнні клавіш: ${ shortcut }"
       ],
@@ -9842,12 +9881,6 @@
       "${ size } storage per user": [
         "${ size } сховішча на карыстальніка"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - для ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - для ўсіх сэрвісаў ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 ТБ бяспечнага сховішча"
       ],
@@ -10022,9 +10055,6 @@
       "HTML signatures": [
         "Подпісы HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтэграваная аўтэнтыфікацыя 2ФА"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Пастаянны VPN"
       ],
@@ -10162,9 +10192,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неабмежаваная колькасць псеўданімаў Hide-my-email"
       ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
@@ -10314,6 +10341,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Наш тарыфны план ${ visionary } больш недаступны для новых падпісчыкаў і зараз ён з'яўляецца спецыяльным тарыфным планам для карыстальнікаў ${ BRAND_NAME } і прадугледжвае для іх спецыяльныя функцыі і перавагі."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Заплаціце адзін раз, засцеражыце свае паролі і ідэнтычнасць назаўжды."
       ],
       "Popular": [
         "Папулярны"
@@ -10544,7 +10574,7 @@
         "Бяспечнае абагульванне індывідуальных элементаў з любой асобай (у тым ліку з тымі, хто не карыстаецца ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
+        "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнняў і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
         "Прагляд даступнасці ўдзельнікаў сустрэчы і эканомія часу пры планаванні сустрэч"
@@ -11053,11 +11083,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Бяспечнае сховішча і абагульванне спасылкі"
-      ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
+      ],
+      "Secure vault, item and link sharing": [
+        "Бяспечнае сховішча, элементы і абагульванне спасылак"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Неабмежаваная колькасць запісаў уваходу, нататак, крэдытных картак і іншых функцый"
       ]
     },
     "pass_signup_2024: Info": {
@@ -13240,7 +13273,7 @@
         "/месяц"
       ],
       "/user per month": [
-        "/карыстальнікаў у месяц"
+        "/карыстальніка ў месяц"
       ]
     },
     "Suffix for price": {
@@ -13781,6 +13814,9 @@
       "Groups": [
         "Групы"
       ],
+      "Help and feedback": [
+        "Даведка і зваротная сувязь"
+      ],
       "Help center": [
         "Цэнтр дапамогі"
       ],
@@ -14264,11 +14300,6 @@
         "Сёння"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“Аўтаматычна” азначае, што для адпраўкі гэтаму карыстальніку выкарыстоўваецца фармат рэдактара. “Звычайны тэкст” азначае, што пры адпраўцы паведамленне заўсёды будзе ператварацца ў звычайны тэкст."
@@ -14350,6 +14381,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ]
     },
     "Tor out of date": {
@@ -14435,6 +14471,12 @@
         "Аўтаматычны выбар з ${ numberOfCountries } краін",
         "Аўтаматычны выбар з ${ numberOfCountries } краін",
         "Аўтаматычны выбар з ${ numberOfCountries } краін"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Серверы ў больш, чым ${ numberOfCountries } краіне",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах"
       ]
     },
     "vpn_2024: renew": {

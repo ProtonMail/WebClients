@@ -1944,6 +1944,9 @@
       "Please consider leaving a review.": [
         "სჯობს, გახვიდეთ მიმოხილვიდან."
       ],
+      "Please contact your administrator": [
+        "დაუკავშირდით ადმინისტრატორს"
+      ],
       "Please do not close this window": [
         "არ დახუროთ ეს ფანჯარა"
       ],
@@ -2338,6 +2341,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } სიტყვა",
         "${ config.options.wordCount } სიტყვა"
+      ],
+      "${ count } item": [
+        "${ count } ელემენტი",
+        "${ count } ელემენტი"
       ],
       "${ days } day": [
         "${ days } დღე",
@@ -2931,6 +2938,9 @@
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Secure links": [
+        "დაცული ბმულები"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "უსაფრთხოდ შეინახეთ, გააზიარეთ და შედით უსაფრთხოდ თქვენს ანგარიშებში ${ PASS_APP_NAME }-ით, რომელიც იყენებს გამჭოლ დაშიფვრას, რომელსაც მილიონობით ადამიანი ენდობა."
@@ -3891,6 +3901,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "რა სხვაობაა ${ PASS_SHORT_APP_NAME }-ის შენიშვნასა და SimpleLogin-ის შენიშვნას შორის?"
       ],
+      "You don't have any vault": [
+        "საცავები არ გაქვთ"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "თქვვენი ${ planName } გამოწერის დასრულების თარიღია ${ endDate }"
       ],
@@ -4198,6 +4211,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "საცავთან წვდომა აღარ გექნებათ. თავიდან მისაერთებლად, ახალი მოსაწვევი დაგჭირდებათ."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "სანამ ელემენტებს შექმნით, თქვენმა ადმინისტრატორმა, ჯერ, საცავი უნდა შექმნას"
+      ],
+      "Your organization does not allow creating a vault": [
+        "თქვენი ორგანიზაცია არ გაძლევთ საცავის შექმნის უფლებას"
       ],
       "Your organization does not allow sharing individual items": [
         "თქვენი ორგანიზაცია არ გაძლევთ ინდივიდუალური ელემენტების გაზიარების უფლებას"

@@ -100,6 +100,9 @@
       "Add address or domain": [
         "Adres ya da etki alanı ekle"
       ],
+      "Add another account": [
+        "Başka bir hesap ekle"
+      ],
       "Add calendar from URL": [
         "Adresten takvim ekle"
       ],
@@ -681,6 +684,12 @@
       ],
       "Help": [
         "Yardım"
+      ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
+      "Help and resources": [
+        "Yardım ve kaynaklar"
       ],
       "Hide": [
         "Gizle"
@@ -1597,7 +1606,7 @@
         "Hızlı ve güvenli. Herhangi bir kayıt tutulmaz."
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "${ BRAND_NAME } sunucularında çalıştır"
+        "${ BRAND_NAME } sunucularında çalışsın"
       ],
       "Run on device": [
         "Aygıt üzerinde çalışsın"
@@ -1829,9 +1838,6 @@
       "High speed streaming": [
         "Yüksek hızda yayın akışı izleme"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
-      ],
       "One-time payment, lifetime deal": [
         "Bir kez ödemeli ömür boyu kullanım fırsatı"
       ],
@@ -1850,17 +1856,11 @@
       "Secure file storage & sharing": [
         "Güvenli dosya depolama alanı ve paylaşımı"
       ],
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı paylaşımı"
-      ],
       "Unlimited folders, labels and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adları"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Sınırsız sayıda oturum açma, not ve kredi kartı kaydı"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Sınırsız sayıda oturum açma, kredi kartı, hide-my-email takma adları ve diğer kayıtlar"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
@@ -1933,8 +1933,14 @@
       "Annually": [
         "Yıllık"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Aylık"
+      ],
+      "New!": [
+        "Yeni!"
       ],
       "Two-year": [
         "Iki yıllık"
@@ -3585,6 +3591,31 @@
         "Ayrıntılı bilgi alın"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetleri için"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } için"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ay"
@@ -3866,7 +3897,7 @@
         "Bize bildirdiğiniz için teşekkür ederiz"
       ],
       "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
-        "Bu durumdan genellikle endişelenmek gerekmez. Bu ${ BRAND_NAME } hesabının sizin olmadığını onaylamak için aşağıya tıklamanız yeterlidir. Biz de hesabı kullanım dışı bırakırız."
+        "Bu durumdan genellikle endişelenmek gerekmez. Bu ${ BRAND_NAME } hesabının sizin olmadığını onaylamak için aşağıya tıklamanız yeterlidir. Biz de hesabı kullanımdan kaldırırız."
       ],
       "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
         "Bu hesabın size ait olmadığı bilgisini aldık. Konuyu soruşturup gerekli işlemleri yapacağız."
@@ -4704,7 +4735,7 @@
         "Fatura adresi şu anda düzenlenemiyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Email address disabled": [
-        "E-posta adresi kullanım dışı"
+        "E-posta adresi kullanımdan kaldırılmış"
       ],
       "Email address is invalid": [
         "E-posta adresi geçersiz"
@@ -5871,6 +5902,9 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent desteği (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
       ]
     },
     "Features": {
@@ -5888,9 +5922,6 @@
       ],
       "Secure streaming": [
         "Güvenli yayın akışı"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "${ vpnServers.paid.countries } ülke arasından seçin"
       ]
     },
     "Features: Tooltip": {
@@ -7079,7 +7110,8 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor.",
         "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor."
       ],
       "${ planName } expires today.": [
@@ -7978,6 +8010,24 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Hızlı ve odaklanmış. E-posta ve takvim, doğrudan bilgisayarınızda."
       ],
+      "Featured in": [
+        "Değerlendirmeler"
+      ],
+      "Featured in Clubic": [
+        "Clubic değerlendirmesi"
+      ],
+      "Featured in Digital Trends": [
+        "Digital Trends değerlendirmesi"
+      ],
+      "Featured in PC Magazine": [
+        "PC Magazine değerlendirmesi"
+      ],
+      "Featured in TechRadar": [
+        "TechRadar değerlendirmesi"
+      ],
+      "Featured in ZDNet": [
+        "ZDNet değerlendirmesi"
+      ],
       "Fill in user details": [
         "Kullanıcı bilgilerini yazın"
       ],
@@ -8597,6 +8647,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Özel sunucularınızı ağ geçitleri olarak düzenleyin ve hangi üyelerin bunlara erişebileceğini belirleyin."
       ],
+      "Other accounts": [
+        "Diğer hesaplar"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmek sizin sorumluluğunuzdur."
       ],
@@ -9076,9 +9129,6 @@
       ],
       "Swiss based": [
         "İsviçre merkezli"
-      ],
-      "Switch to": [
-        "Şuna geç"
       ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
@@ -11115,6 +11165,9 @@
       "Inherit color from parent folder": [
         "Üst klasörün rengi devralınsın"
       ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı kimlik doğrulayıcı"
+      ],
       "Interval": [
         "Aralık"
       ],
@@ -12689,12 +12742,6 @@
       "${ size } storage per user": [
         "Her kullanıcı için ${ size } depolama alanı"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME } için"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
-      ],
       "1 TB secure storage": [
         "1 TB güvenli depolama alanı"
       ],
@@ -12891,9 +12938,6 @@
       "HTML signatures": [
         "HTML imzalar"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik iki adımlı kimlik doğrulayıcı"
-      ],
       "Kill switch/always-on VPN": [
         "Bağlantı kesici / Hep açık VPN"
       ],
@@ -13047,9 +13091,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
@@ -13212,6 +13253,9 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
       ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bir kez ödeyin, parolalarınızı ve kimliğinizi sonsuza kadar koruyun."
+      ],
       "Popular": [
         "Beğenilen"
       ],
@@ -13257,7 +13301,7 @@
     },
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
       ],
       "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
         "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
@@ -13719,7 +13763,7 @@
         "${ reason } özelliği açıldı"
       ],
       "A disabled address cannot be default": [
-        "Kullanım dışı bırakılmış bir adres varsayılan olamaz"
+        "Kullanımdan kaldırlmış bir adres varsayılan olamaz"
       ],
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
@@ -14383,7 +14427,18 @@
         "${ PASS_APP_NAME } ile başla"
       ]
     },
+    "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
+        "Tek seferlik ödeme ile var olan ve gelecekteki tüm ${ PASS_APP_NAME } ücretli özelliklere ömür boyu erişim kazanın. "
+      ],
+      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } tarifesine hoş geldiniz"
+      ]
+    },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Satın al"
+      ],
       "Continue": [
         "İlerle"
       ],
@@ -14639,11 +14694,11 @@
       "Save your recovery kit to continue": [
         "İlerlemek için kurtarma paketinizi kaydedin"
       ],
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı ile paylaşım"
-      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault, item and link sharing": [
+        "Güvenli kasa, öge ve bağlantı paylaşımı"
       ],
       "Secure your family’s passwords and online identities": [
         "Ailenizin parolalarını ve çevrim içi kimliklerini koruyun"
@@ -14660,6 +14715,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Özel açılış teklifi: Sonsuza dek ${ title } için ${ price } ödeyin!"
       ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "Özel teklif: ${ priceString } ile ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ile başla"
       ],
@@ -14671,6 +14729,9 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "telefonunuzda ${ PASS_APP_NAME } kullanmaya başlayın"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Sınırsız sayıda oturum açma, not, kredi kartı ve diğer kayıtlar"
       ],
       "Updating your account": [
         "Hesabınız güncelleniyor"
@@ -14730,6 +14791,9 @@
       "Activity log": [
         "İşlem günlüğü"
       ],
+      "Additional mailboxes for aliases": [
+        "Takma adlar için ek e-posta kutuları"
+      ],
       "Admin panel to manage users and subscription": [
         "Kullanıcıları ve aboneliğinizi panonuzdan yönetin"
       ],
@@ -14739,11 +14803,17 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Gelişmiş takma ad özellikleri (SimpleLogin tarafından sağlanır)"
       ],
+      "File attachments (coming soon)": [
+        "Ek dosyalar (yakında)"
+      ],
       "One-time payment, lifetime deal": [
         "Bir kez ödemeli ömür boyu kullanım fırsatı"
       ],
       "Team policies": [
         "Ekip ilkeleri"
+      ],
+      "Your custom domain for aliases": [
+        "Takma adlar için özel etki alanınız"
       ]
     },
     "PassFamilyPlan2024": {
@@ -15706,10 +15776,10 @@
         "SCIM yapılandırması"
       ],
       "Disable SCIM": [
-        "SCIM kullanım dışı bırakılsın"
+        "SCIM kullanımdan kaldırılsın"
       ],
       "Disable SCIM integration": [
-        "SCIM bütünleştirmesi kullanım dışı bırakılsın mı"
+        "SCIM bütünleştirmesi kullanımdan kaldırılsın mı"
       ],
       "Generate new token": [
         "Yeni kod oluştur"
@@ -15778,7 +15848,7 @@
     },
     "scim: Title": {
       "Disable SCIM integration?": [
-        "SCIM bütünleştirmesi kullanım dışı bırakılsın mı?"
+        "SCIM bütünleştirmesi kullanımdan kaldırılsın mı?"
       ],
       "Generate new SCIM token?": [
         "Yeni SCIM kodu oluşturulsun mu?"
@@ -17800,7 +17870,7 @@
         "Adres silindi"
       ],
       "Address disabled": [
-        "Adres kullanım dışı"
+        "Adres kullanımdan kaldırılmış"
       ],
       "Address enabled": [
         "Adres kullanıma alındı"
@@ -18725,6 +18795,9 @@
       ],
       "Groups": [
         "Gruplar"
+      ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
       ],
       "Help center": [
         "Yardım merkezi"
@@ -19656,7 +19729,7 @@
         "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "This address has been disabled": [
-        "Bu adres kullanım dışı bırakılmış"
+        "Bu adres kullanımdan kaldırılmış"
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Bu durum, şifrenin sıfırlanmış veya kullanıcının henüz oturum açmamış olmasından kaynaklanabilir."
@@ -20352,6 +20425,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } ülke arasından otomatik seçilir",
         "${ numberOfCountries } ülke arasından otomatik seçilir"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkede sunucular",
+        "${ numberOfCountries } üzerinde ülkede sunucular"
       ]
     },
     "vpn_2024: renew": {

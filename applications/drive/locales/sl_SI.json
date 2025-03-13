@@ -93,12 +93,6 @@
       "Add to group": [
         "Dodaj v skupino"
       ],
-      "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "Dodaj v \"${ album.name }\" (${ album.photoCount } slika)",
-        "Dodaj v \"${ album.name }\" (${ album.photoCount } sliki)",
-        "Dodaj v \"${ album.name }\" (${ album.photoCount } slike)",
-        "Dodaj v \"${ album.name }\" (${ album.photoCount } slik)"
-      ],
       "Album name": [
         "Ime albuma"
       ],
@@ -1209,9 +1203,6 @@
       "High speed streaming": [
         "Pretočne storitve z visoko hitrostjo"
       ],
-      "Integrated 2FA authenticator": [
-        "Vgrajen modul za preverjanje pristnosti 2FA"
-      ],
       "Online document editor": [
         "Spletni urejevalnik dokumentov"
       ],
@@ -1227,17 +1218,8 @@
       "Secure file storage & sharing": [
         "Varna shramba in skupna raba datotek"
       ],
-      "Secure vault and link sharing": [
-        "Varna skupna raba trezorjev in povezav"
-      ],
       "Unlimited folders, labels and filters": [
         "Neomejeno število map, oznak in filtrov"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neomejeno število vzdevkov hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Neomejeno število prijav, zapiskov, plačilnih kartic"
       ],
       "Use your own email domain": [
         "Uporabite svojo e-poštno domeno"
@@ -3517,6 +3499,11 @@
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Neomejeno število vzdevkov hide-my-email"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
@@ -5171,9 +5158,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Konec naročnine: znova aktivirajte do ${ byDate }, da obdržite ugodnosti ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Preklopite na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Začasno ni na voljo. Poskusite znova pozneje."
@@ -6949,12 +6933,6 @@
       "${ size } storage": [
         "${ size } shrambe"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } – Za ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } – Za vse storitve ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB varnega prostora za shranjevanje"
       ],
@@ -7111,9 +7089,6 @@
       "HTML signatures": [
         "HTML podpisi"
       ],
-      "Integrated 2FA authenticator": [
-        "Vgrajen modul za preverjanje pristnosti 2FA"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/vedno vključen VPN"
       ],
@@ -7224,9 +7199,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Neomejeno število map, oznak in filtrov"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neomejeno število vzdevkov hide-my-email"
       ],
       "Unlimited labels": [
         "Neomejeno število oznak"

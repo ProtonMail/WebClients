@@ -1821,9 +1821,6 @@
       "High speed streaming": [
         "고속 스트리밍"
       ],
-      "Integrated 2FA authenticator": [
-        "2단계 인증기 내장"
-      ],
       "One-time payment, lifetime deal": [
         "일회성 결제, 평생 이용"
       ],
@@ -1842,17 +1839,8 @@
       "Secure file storage & sharing": [
         "안전한 파일 저장 공간 및 공유"
       ],
-      "Secure vault and link sharing": [
-        "안전한 금고 및 링크 공유"
-      ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "무제한 hide-my-email 별칭"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "무제한 로그인, 메모 및 신용 카드"
       ],
       "Use your own email domain": [
         "나만의 이메일 주소 사용"
@@ -5831,6 +5819,9 @@
       ],
       "Torrenting support (P2P)": [
         "토렌팅 지원 (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭"
       ]
     },
     "Features": {
@@ -5848,9 +5839,6 @@
       ],
       "Secure streaming": [
         "안전한 영상 스트리밍"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "${ vpnServers.paid.countries }개 국가에서 탐색"
       ]
     },
     "Features: Tooltip": {
@@ -7011,9 +6999,6 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
-      ],
-      "${ planName } expires in ${ daysLeft } days.": [
-        "${ planName }이(가) ${ daysLeft }일 내로 만료됩니다."
       ],
       "${ planName } expires today.": [
         "${ planName }이(가) 오늘 만료됩니다."
@@ -8967,9 +8952,6 @@
       ],
       "Swiss based": [
         "스위스에 위치"
-      ],
-      "Switch to": [
-        "다음으로 전환:"
       ],
       "Symbols (#$&)": [
         "기호 (#$&)"
@@ -10981,6 +10963,9 @@
       "Inherit color from parent folder": [
         "상위폴더의 색상 따르기"
       ],
+      "Integrated 2FA authenticator": [
+        "2단계 인증기 내장"
+      ],
       "Interval": [
         "유효시간"
       ],
@@ -12524,12 +12509,6 @@
       "${ size } storage": [
         "${ size } 저장공간"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME }용"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - 전체 ${ BRAND_NAME } 서비스용"
-      ],
       "1 TB secure storage": [
         "1 TB 보안 저장공간"
       ],
@@ -12722,9 +12701,6 @@
       "HTML signatures": [
         "HTML 서명"
       ],
-      "Integrated 2FA authenticator": [
-        "통합된 2단계 인증기"
-      ],
       "Kill switch/always-on VPN": [
         "킬 스위치/상시 VPN"
       ],
@@ -12871,9 +12847,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "무제한 hide-my-email 별칭"
       ],
       "Unlimited labels": [
         "무제한 라벨"
@@ -14467,9 +14440,6 @@
       ],
       "Save your recovery kit to continue": [
         "계속하려면 복구 키트를 저장해주세요"
-      ],
-      "Secure vault and link sharing": [
-        "안전한 금고 및 링크 공유"
       ],
       "Secure vault sharing": [
         "안전한 금고 공유"

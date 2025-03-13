@@ -753,7 +753,7 @@
         "Палітыка DMARC ${ WIKIPEDIA_LINK_DMARC } распрацавана для абароны дамена ад неаўтарызаванага выкарыстання. Яна таксама вядома пад назвай падробка электроннай пошты. Дадзеная тэхналогія пабудавана на аснове SPF і DKIM і дае ўказанні паштоваму серверу, што рабіць, калі ні адзін з гэтых метадаў аўтэнтыфікацыі не праходзіць."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
-        "Атрымліваць апавяшчэнне, калі адбываецца ўцечка вашай электроннай пошты, пароля або іншых асабістых даных."
+        "Атрымлівайце апавяшчэнне, калі адбываецца ўцечка вашай электроннай пошты, пароля або іншых асабістых даных."
       ],
       "If you are using a subdomain, e.g. ${ subdomainExample }, you need to use ${ dmarcExampleSubdomain } as the domain instead.": [
         "Вам неабходна замест гэтага выкарыстоўваць ${ dmarcExampleSubdomain } у якасці дамена, калі вы выкарыстоўваеце паддамен (напрыклад, ${ subdomainExample })."
@@ -2078,6 +2078,9 @@
       "Please consider leaving a review.": [
         "Падумайце пра тое, каб пакінуць водгук."
       ],
+      "Please contact your administrator": [
+        "Калі ласка, звярніцеся да адміністратара"
+      ],
       "Please do not close this window": [
         "Не закрывайце акно"
       ],
@@ -2292,7 +2295,7 @@
         "Перанясіце гэтыя псеўданімы ў іншую паштовую скрыню, каб працягваць атрымліваць лісты:"
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
-        "Вы можаце стварыць кантакт псеўданіма, які замаскіруе ваш адрас. Гэта дазволіць захаваць ваш персанальны адрас электроннай пошты схаваным."
+        "Вы можаце стварыць кантакт псеўданіма, які замаскіруе ваш адрас. Гэта дазволіць захаваць ваш асабісты адрас электроннай пошты схаваным."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Для пераносу даных з іншага менеджара пароляў вам неабходна перайсці ў яго і экспартаваць свае даныя, а потым запампаваць іх у ${ PASS_APP_NAME }. Пасля завяршэння працэсу імпартавання, выдаліце экспартаваны файл."
@@ -2499,6 +2502,12 @@
         "${ config.options.wordCount } словы",
         "${ config.options.wordCount } слоў",
         "${ config.options.wordCount } слоў"
+      ],
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элементы",
+        "${ count } элементаў",
+        "${ count } элементы"
       ],
       "${ days } day": [
         "${ days } дзень",
@@ -3168,6 +3177,9 @@
       ],
       "Reveal password": [
         "Паказаць пароль"
+      ],
+      "Secure links": [
+        "Бяспечныя спасылкі"
       ],
       "Secure password sharing": [
         "Бяспечнае абагульванне пароля"
@@ -4187,6 +4199,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Якая розніца паміж нататкамі ${ PASS_SHORT_APP_NAME } і SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "У вас няма сховішчаў"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Ваша падпіска ${ planName } завершыцца ${ endDate }"
       ],
@@ -4502,6 +4517,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "У вас больш не будзе доступу да гэтага сховішча. Каб паўторна далучыцца да яго, вам неабходна будзе атрымаць новае запрашэнне."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Ваш адміністратар павінен стварыць для вас сховішча, перш чым вы зможаце ствараць элементы"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Ваша арганізацыя не дазваляе ствараць сховішча"
       ],
       "Your organization does not allow sharing individual items": [
         "Вашай арганізацыі забаронена абагульваць індывідуальныя элементы"
