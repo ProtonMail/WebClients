@@ -35,7 +35,7 @@ export const updatePage = createAction<number>('elements/updatePage');
 
 export const setPageSize = createAction<number>('elements/setPageSize');
 
-export const setParams = createAction<Partial<ElementsStateParams>>('elements/setParams');
+export const setParams = createAction<Partial<ElementsStateParams> & { total?: number }>('elements/setParams');
 
 export const resetByPassFilter = createAction('elements/resetByPassFilter');
 

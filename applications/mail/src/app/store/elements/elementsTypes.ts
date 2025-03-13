@@ -130,6 +130,7 @@ export interface NewStateParams {
     params?: Partial<ElementsStateParams>;
     retry?: RetryData;
     beforeFirstLoad?: boolean;
+    total?: number;
 }
 
 export interface EventUpdates {
