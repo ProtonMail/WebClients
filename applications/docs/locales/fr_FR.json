@@ -51,6 +51,9 @@
       "Add address": [
         "Ajouter une adresse"
       ],
+      "Add another account": [
+        "Ajouter un autre compte"
+      ],
       "Add birthday": [
         "Ajouter une date de naissance"
       ],
@@ -324,6 +327,12 @@
       "Help": [
         "Aide"
       ],
+      "Help and feedback": [
+        "Aide et commentaires"
+      ],
+      "Help and resources": [
+        "Aide et ressources"
+      ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
@@ -410,9 +419,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
-      ],
-      "More options": [
-        "Plus d'options"
       ],
       "Move to trash": [
         "Déplacer dans le dossier Corbeille"
@@ -906,9 +912,6 @@
       "High speed streaming": [
         "Streaming ultra rapide"
       ],
-      "Integrated 2FA authenticator": [
-        "Authentification à deux facteurs (A2F) intégrée"
-      ],
       "One-time payment, lifetime deal": [
         "Paiement unique, offre à vie"
       ],
@@ -927,17 +930,11 @@
       "Secure file storage & sharing": [
         "Stockage de fichiers sécurisé et partage de liens"
       ],
-      "Secure vault and link sharing": [
-        "Coffre-fort sécurisé et partage de liens"
-      ],
       "Unlimited folders, labels and filters": [
         "Nombre illimité de dossiers, labels et filtres"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nombre illimité de connexions, de notes et de cartes de paiement"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Connexions, cartes de crédit, alias « hide-my-email » illimités et plus encore"
       ],
       "Use your own email domain": [
         "Utilisez vos propres domaines de messagerie"
@@ -1001,8 +998,14 @@
       "Annually": [
         "Annuel"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Mensuel"
+      ],
+      "New!": [
+        "Nouveau"
       ],
       "Two-year": [
         "Tous les deux ans"
@@ -2159,6 +2162,31 @@
         "Îles d'Åland"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Pour tous les services ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Pour ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Pour ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Pour ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Pour ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mois"
@@ -2185,11 +2213,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Facture impayée"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description": {
@@ -2270,6 +2293,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3262,6 +3290,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
       ]
     },
     "fido2: Error": {
@@ -4417,6 +4450,9 @@
       "Organization size": [
         "Taille de l’organisation"
       ],
+      "Other accounts": [
+        "Autres comptes"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nos alertes privilégient la sécurité. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
       ],
@@ -4610,9 +4646,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Basculer vers"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -5334,6 +5367,9 @@
       "Include message and file name in invite email": [
         "Inclure le message et le nom du fichier dans l'e-mail d'invitation"
       ],
+      "Integrated 2FA authenticator": [
+        "Authentification à deux facteurs (A2F) intégrée"
+      ],
       "Keep both": [
         "Garder les deux"
       ],
@@ -5711,6 +5747,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Module complémentaire avec essai gratuit"
       ],
       "for ${ price }": [
         "pour ${ price }"
@@ -6186,11 +6225,8 @@
       "${ size } storage": [
         "${ size } d'espace de stockage"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Pour ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pour tous les services ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "${ size } d'espace de stockage par utilisateur"
       ],
       "1 TB secure storage": [
         "1 To d'espace de stockage sécurisé"
@@ -6364,14 +6400,14 @@
       "HTML signatures": [
         "Signatures HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Authentification à deux facteurs (A2F) intégrée"
-      ],
       "Kill switch/always-on VPN": [
         "Arrêt d'urgence (kill switch)/VPN permanent"
       ],
       "Limited support": [
         "Support limité"
+      ],
+      "Manage user permissions and access": [
+        "Gestion des autorisations et accès des utilisateurs"
       ],
       "Multiple admin roles": [
         "Plusieurs rôles d'administrateur"
@@ -6390,6 +6426,9 @@
       ],
       "Password manager": [
         "Gestionnaire de mots de passe"
+      ],
+      "Password manager to secure credentials": [
+        "Gestionnaire de mots de passe pour sécuriser vos identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -6498,9 +6537,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Nombre illimité de dossiers, de labels et de filtres"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
       ],
       "Unlimited labels": [
         "Nombre illimité de labels"
@@ -6638,6 +6674,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Notre abonnement ${ visionary } n'est plus disponible pour les nouveaux abonnés, il s'agit d'un abonnement spécial destiné aux utilisateurs ${ BRAND_NAME } initiaux offrant des caractéristiques et des avantages particuliers."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Payez une fois et sécurisez vos mots de passe et votre identité pour toujours."
       ],
       "Popular": [
         "Populaire"
@@ -7331,11 +7370,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Coffre-fort sécurisé et partage de liens"
-      ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
+      ],
+      "Secure vault, item and link sharing": [
+        "Partage de coffre-forts, éléments et liens sécurisés"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Nombre illimité de connexions, de notes et de cartes de paiement et plus encore"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8347,6 +8389,10 @@
       "${ n } VPN connection per user": [
         "${ n } connexion VPN par utilisateur",
         "${ n } connexions VPN par utilisateur"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Connexion VPN pour ${ n } appareil par utilisateur",
+        "Connexion VPN pour ${ n } appareils par utilisateur"
       ]
     },
     "Subscription change warning": {
@@ -8385,25 +8431,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Pour ${ totalPrice }"
-      ]
-    },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "${ planMaxSpace } d'espace de stockage par utilisateur"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domaine de messagerie personnalisé",
-        "${ planNumberOfDomains } domaines de messagerie personnalisés"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adresse e-mail",
-        "${ planNumberOfEmails } adresses e-mail"
-      ],
-      "Folders, labels, and custom filters": [
-        "Dossiers, labels et filtres personnalisés"
       ]
     },
     "subscription reminder": {
@@ -8445,6 +8472,25 @@
       ],
       "Your privacy is our mission": [
         "La protection de votre vie privée est notre priorité."
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } d'espace de stockage par utilisateur"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domaine de messagerie personnalisé",
+        "${ planNumberOfDomains } domaines de messagerie personnalisés"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresse e-mail",
+        "${ planNumberOfEmails } adresses e-mail"
+      ],
+      "Folders, labels, and custom filters": [
+        "Dossiers, labels et filtres personnalisés"
       ]
     },
     "Subscription renewal state": {
@@ -8933,6 +8979,9 @@
       "Groups": [
         "Groupes"
       ],
+      "Help and feedback": [
+        "Aide et commentaires"
+      ],
       "Help center": [
         "Aide & Support"
       ],
@@ -9186,11 +9235,6 @@
         "Aujourd'hui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Ajoutez ce fichier partagé à votre ${ DRIVE_APP_NAME } pour y accéder facilement plus tard."
@@ -9266,6 +9310,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
     "Valentine_2025": {
@@ -9446,6 +9495,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Sélection automatique depuis ${ numberOfCountries } pays",
         "Sélection automatique depuis ${ numberOfCountries } pays"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Serveurs dans plus de ${ numberOfCountries } pays",
+        "Serveurs dans plus de ${ numberOfCountries } pays"
       ]
     },
     "vpn_2024: renew": {
