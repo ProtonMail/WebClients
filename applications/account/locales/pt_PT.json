@@ -100,6 +100,9 @@
       "Add address or domain": [
         "Adicionar um endereço ou domínio"
       ],
+      "Add another account": [
+        "Adicionar outra conta"
+      ],
       "Add calendar from URL": [
         "Adicionar um calendário a partir de uma URL"
       ],
@@ -255,6 +258,12 @@
       ],
       "Color": [
         "Cor"
+      ],
+      "Compare all plans": [
+        "Compare todos os planos"
+      ],
+      "Compare plans": [
+        "Comparar os planos"
       ],
       "Configure SAML": [
         "Configurar SAML"
@@ -442,6 +451,9 @@
       "Discard changes": [
         "Descartar alterações"
       ],
+      "Discover ${ planName }": [
+        "Descubra o ${ planName }"
+      ],
       "Dismiss": [
         "Descartar"
       ],
@@ -549,6 +561,12 @@
       ],
       "Encrypt and export": [
         "Encriptar e exportar"
+      ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "Descubra ${ PLAN_NAMES[plan] }"
+      ],
+      "Explore group plans": [
+        "Explore os planos de grupo"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explorar outros planos ${ BRAND_NAME }"
@@ -666,6 +684,12 @@
       ],
       "Help": [
         "Ajuda"
+      ],
+      "Help and feedback": [
+        "Ajuda e comentários"
+      ],
+      "Help and resources": [
+        "Ajuda e recursos"
       ],
       "Hide": [
         "Ocultar"
@@ -867,6 +891,9 @@
       ],
       "Previous page": [
         "Página anterior"
+      ],
+      "Publish changes": [
+        "Publicar as alterações"
       ],
       "Quit": [
         "Sair"
@@ -1811,9 +1838,6 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
       "One-time payment, lifetime deal": [
         "Pagamento único, oferta vitalícia"
       ],
@@ -1832,17 +1856,8 @@
       "Secure file storage & sharing": [
         "Armazenamento e partilha de ficheiros seguros"
       ],
-      "Secure vault and link sharing": [
-        "Partilha segura de cofre e ligações"
-      ],
       "Unlimited folders, labels and filters": [
         "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases ilimitados do hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Inícios de sessão, notas e cartões de crédito ilimitados"
       ],
       "Use your own email domain": [
         "Utilize o seu próprio domínio de e-mail"
@@ -1915,11 +1930,31 @@
       "Annually": [
         "Anualmente"
       ],
+      "Lifetime": [
+        "Acesso vitalício"
+      ],
       "Monthly": [
         "Mensalmente"
       ],
+      "New!": [
+        "Novo"
+      ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "Blog": {
+      "Get round-the-clock protection": [
+        "Obtenha proteção 24 horas por dia"
+      ],
+      "How safe is Telegram?": [
+        "Quão seguro é o Telegram?"
+      ],
+      "Which VPN protocol is the best?": [
+        "Qual é o melhor protocolo VPN?"
+      ],
+      "Working with sensitive data?": [
+        "Trabalha com dados confidenciais?"
       ]
     },
     "breadcrumb": {
@@ -3508,6 +3543,31 @@
         "Saiba mais"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Para todos os serviços da ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Para o ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Para o ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Para o ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Para o ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mês"
@@ -3909,6 +3969,95 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "A sua subscrição do ${ PLAN_NAMES[PLANS.PASS] } está a um preço especial de ${ price } por ano. Ao optar por um plano gratuito, perderá permanentemente o desconto, mesmo que melhore o plano novamente no futuro."
+      ]
+    },
+    "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "TV Apple"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Desktop": [
+        "Desktop"
+      ],
+      "Download for Linux": [
+        "Transferir para Linux"
+      ],
+      "Download for MacOS": [
+        "Transferir para Mac OS"
+      ],
+      "Download for Windows": [
+        "Transferir para Windows"
+      ],
+      "Download on the Apple App Store": [
+        "Transferir na Apple App Store"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Get the app": [
+        "Obter a aplicação"
+      ],
+      "Get the extension": [
+        "Obter a extensão"
+      ],
+      "Installation guide": [
+        "Guia de instalação"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave ou mais recente"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura o superior"
+      ],
+      "Mobile": [
+        "Móvel"
+      ],
+      "TV": [
+        "TV"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 ou Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
@@ -4560,6 +4709,9 @@
       ],
       "Error in one of the conditions": [
         "Erro numa das condições"
+      ],
+      "Error publishing changes.": [
+        "Erro ao publicar as alterações."
       ],
       "Expired": [
         "Expirado"
@@ -5696,6 +5848,26 @@
       ],
       "Torrenting support (P2P)": [
         "Suporte a torrents (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases ilimitados do Hide-my-email"
+      ]
+    },
+    "Features": {
+      "and more premium features...": [
+        "e mais funcionalidades premium..."
+      ],
+      "Double VPN": [
+        "VPN dupla"
+      ],
+      "Lightning-fast speeds": [
+        "Velocidades ultrarrápidas"
+      ],
+      "NetShield Ad-blocker": [
+        "Bloqueador de anúncios NetShield"
+      ],
+      "Secure streaming": [
+        "Streaming seguro"
       ]
     },
     "fido2: Action": {
@@ -6341,8 +6513,23 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "Comparar os planos"
+      ],
       "Contact us": [
         "Contacte-nos"
+      ],
+      "Enjoying ${ planName }?": [
+        "Está a gostar do ${ planName }?"
+      ],
+      "Upgrade your privacy": [
+        "Melhorar a sua privacidade"
+      ],
+      "You currently pay": [
+        "Atualmente paga"
+      ],
+      "Your plan": [
+        "O seu plano"
       ]
     },
     "Hint": {
@@ -6860,6 +7047,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires today.": [
+        "${ planName } expira hoje."
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "O ${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas que trabalham ininterruptamente para o proteger de pessoas mal-intencionadas e ameaças à segurança."
@@ -7415,6 +7605,9 @@
       "Create your first Gateway": [
         "Criar a sua primeira porta de entrada"
       ],
+      "Created (not published)": [
+        "Criado (não publicado)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "A criar um servidor de porta de entrada: ${ serverNumber } / ${ total }",
         "A criar servidores de porta de entrada: ${ serverNumber } / ${ total }"
@@ -7485,9 +7678,15 @@
       "Delete link?": [
         "Eliminar ligação?"
       ],
+      "Deleted (not published)": [
+        "Eliminado (não publicado)"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "A eliminar ${ deletedServerCount } servidor de porta de entrada",
         "A eliminar ${ deletedServerCount } servidores de porta de entrada"
+      ],
+      "Did you know?": [
+        "Sabia?"
       ],
       "Disable recovery by email address": [
         "Desativar a recuperação por endereço de e-mail"
@@ -7595,6 +7794,9 @@
       "Edit link": [
         "Editar ligação"
       ],
+      "Edited (not published)": [
+        "Editado (não publicado)"
+      ],
       "eduGAIN configuration saved": [
         "A configuração do eduGAIN foi guardada."
       ],
@@ -7639,6 +7841,9 @@
       ],
       "Encryption setting updated": [
         "Definição de encriptação atualizada"
+      ],
+      "End date": [
+        "Data final"
       ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "A encriptação de ponta a ponta de e-mail está desativada neste grupo devido a endereços externos."
@@ -7726,6 +7931,24 @@
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rápido e focado. E-mail e calendário, diretamente no seu ambiente de trabalho."
+      ],
+      "Featured in": [
+        "Em destaque em"
+      ],
+      "Featured in Clubic": [
+        "Em destaque no Clubic"
+      ],
+      "Featured in Digital Trends": [
+        "Em destaque no Digital Trends"
+      ],
+      "Featured in PC Magazine": [
+        "Em destaque no PC Magazine"
+      ],
+      "Featured in TechRadar": [
+        "Em destaque no TechRadar"
+      ],
+      "Featured in ZDNet": [
+        "Em destaque no ZDNet"
       ],
       "Fill in user details": [
         "Preencher dados de utilizador"
@@ -8230,6 +8453,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Os dados da nova conexão VPN deixarão de ser coletados e mostrados."
       ],
+      "Next billing date": [
+        "Próxima data de faturação"
+      ],
       "No account keys exist": [
         "Não existem chaves de conta."
       ],
@@ -8343,6 +8569,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organize os seus servidores dedicados em portas de entrada e decida que membros os podem aceder."
       ],
+      "Other accounts": [
+        "Outras contas"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "A sua organização tem mais administradores. Deve comunicar-lhes a nova palavra-passe."
       ],
@@ -8400,6 +8629,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Prémio PC Magazine Editors' Choice com classificação de 5 de 5"
+      ],
+      "Pending removal": [
+        "Remoção pendente"
       ],
       "per month": [
         "por mês"
@@ -8775,6 +9007,9 @@
         "Passo ${ step }",
         "Passos ${ step }"
       ],
+      "Storage": [
+        "Armazenamento"
+      ],
       "Storage allocated to other users in this organisation": [
         "Armazenamento atribuído a outros utilizadores desta organização"
       ],
@@ -8819,9 +9054,6 @@
       ],
       "Swiss based": [
         "Baseado na suíça"
-      ],
-      "Switch to": [
-        "Mudar para"
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
@@ -9158,6 +9390,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Não foi possível verificar a assinatura do ficheiro de recuperação. Contacte o suporte."
+      ],
+      "Unchanged": [
+        "Inalterado"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
@@ -10336,6 +10571,9 @@
       "Addresses": [
         "Endereços"
       ],
+      "Advanced": [
+        "Avançado"
+      ],
       "ALL": [
         "TUDO"
       ],
@@ -10845,6 +11083,9 @@
       ],
       "Inherit color from parent folder": [
         "Herdar cor da pasta principal"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador A2F integrado"
       ],
       "Interval": [
         "Intervalo"
@@ -11820,6 +12061,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adicionar o assistente de escrita ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Complemento com avaliação gratuita"
+      ],
       "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
         "Todas as aplicações e funcionalidades premium da ${ BRAND_NAME } for Business para proteger a sua empresa"
       ],
@@ -12414,11 +12658,8 @@
       "${ size } storage": [
         "${ size } de armazenamento"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Para ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Para todos os serviços da ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "${ size } de armazenamento por utilizador"
       ],
       "1 TB secure storage": [
         "1 TB de armazenamento seguro"
@@ -12616,14 +12857,14 @@
       "HTML signatures": [
         "Assinaturas HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/VPN sempre ligada"
       ],
       "Limited support": [
         "Apoio ao cliente limitado"
+      ],
+      "Manage user permissions and access": [
+        "Gerir as permissões e acesso dos utilizadores"
       ],
       "Multiple admin roles": [
         "Múltiplas funções de administrador"
@@ -12766,9 +13007,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases ilimitados do Hide-my-email"
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
@@ -14111,7 +14349,15 @@
         "Começar a utilizar o ${ PASS_APP_NAME }"
       ]
     },
+    "pass_lifetime_signup: Info": {
+      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
+        "Boas-vindas ao ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ]
+    },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Comprar agora"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -14367,9 +14613,6 @@
       "Save your recovery kit to continue": [
         "Guarde o seu kit de recuperação para continuar"
       ],
-      "Secure vault and link sharing": [
-        "Armazenamento seguro e partilha de ligações"
-      ],
       "Secure vault sharing": [
         "Partilha segura de cofre"
       ],
@@ -14458,6 +14701,9 @@
       "Activity log": [
         "Registo de atividades"
       ],
+      "Additional mailboxes for aliases": [
+        "Caixas de correio adicionais para aliases"
+      ],
       "Admin panel to manage users and subscription": [
         "Painel de administração para gerir utilizadores e subscrição"
       ],
@@ -14467,11 +14713,17 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Funcionalidades avançadas de alias (desenvolvido por SimpleLogin)"
       ],
+      "File attachments (coming soon)": [
+        "Anexos de ficheiro (em breve)"
+      ],
       "One-time payment, lifetime deal": [
         "Pagamento único, oferta vitalícia"
       ],
       "Team policies": [
         "Regras da equipa"
+      ],
+      "Your custom domain for aliases": [
+        "O seu domínio personalizado para aliases"
       ]
     },
     "PassFamilyPlan2024": {
@@ -14910,9 +15162,27 @@
         "Membros"
       ]
     },
+    "Plan card": {
+      "Your gateway to online freedom": [
+        "A sua porta de entrada para a liberdade online"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "contacto"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mês",
+        "${ cycle } meses"
+      ],
+      "${ months } month plan": [
+        "plano de ${ months } mês",
+        "plano de ${ months } meses"
+      ],
+      "Enjoying ${ planName }?": [
+        "Está a gostar do ${ planName }?"
       ]
     },
     "Price": {
@@ -17850,6 +18120,9 @@
       "Allocate storage": [
         "Alocar armazenamento"
       ],
+      "Also in your plan": [
+        "Também no seu plano"
+      ],
       "Amount": [
         "Quantia"
       ],
@@ -18093,6 +18366,9 @@
       ],
       "Decrypt key": [
         "Desencriptar chave"
+      ],
+      "Deep dive into VPN blog posts": [
+        "Análise aprofundada dos nossos artigos de blog sobre VPN"
       ],
       "Delete ${ policyName }?": [
         "Eliminar ${ policyName }?"
@@ -18378,6 +18654,12 @@
       "Get ${ vpnPlus } to access all servers": [
         "Obtenha o ${ vpnPlus } para aceder a todos os servidores"
       ],
+      "Get complete privacy coverage": [
+        "Obtenha cobertura de privacidade completa"
+      ],
+      "Get more from your VPN": [
+        "Obtenha mais da sua VPN"
+      ],
       "Get the apps": [
         "Obter as aplicações"
       ],
@@ -18399,11 +18681,17 @@
       "Groups": [
         "Grupos"
       ],
+      "Help and feedback": [
+        "Ajuda e comentários"
+      ],
       "Help center": [
         "Centro de ajuda"
       ],
       "History": [
         "Histórico"
+      ],
+      "Home": [
+        "Início"
       ],
       "How does it work?": [
         "Como funciona?"
@@ -18947,6 +19235,9 @@
       "Upgrade plan": [
         "Atualizar o plano"
       ],
+      "Upgrade your privacy": [
+        "Melhorar a sua privacidade"
+      ],
       "Upload CSV file to create multiple accounts": [
         "Envie um ficheiro CSV para criar múltiplas contas."
       ],
@@ -19438,6 +19729,11 @@
         "Assinar automaticamente todas as suas mensagens de saída para que os utilizadores possam verificar a sua autenticidade. Isto é feito em combinação com as predefinições PGP selecionadas abaixo."
       ]
     },
+    "Tooltip: PM signature locked": {
+      "This signature cannot be modified": [
+        "Esta assinatura não pode ser modificada."
+      ]
+    },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "Partilhado com encriptação de ponta a ponta"
@@ -19654,7 +19950,15 @@
         "Subscreva um plano pago ${ MAIL_SHORT_APP_NAME } para partilhar o seu calendário."
       ]
     },
+    "Upsell": {
+      "Did you know?": [
+        "Sabia?"
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "Melhor oferta"
+      ],
       "Recommended": [
         "Recomendado"
       ]
@@ -19815,6 +20119,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispositivo",
+        "${ n } dispositivos"
+      ],
       "${ n } server": [
         "${ n } servidor",
         "${ n }+ servidores"
@@ -19822,6 +20130,10 @@
       "${ n } VPN connection": [
         "${ n } ligação VPN",
         "${ n } ligações VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } países"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",

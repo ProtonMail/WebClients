@@ -100,6 +100,9 @@
       "Add address or domain": [
         "Ajouter une adresse ou un domaine"
       ],
+      "Add another account": [
+        "Ajouter un autre compte"
+      ],
       "Add calendar from URL": [
         "Ajouter un calendrier depuis une URL"
       ],
@@ -682,6 +685,12 @@
       "Help": [
         "Aide"
       ],
+      "Help and feedback": [
+        "Aide et commentaires"
+      ],
+      "Help and resources": [
+        "Aide et ressources"
+      ],
       "Hide": [
         "Masquer"
       ],
@@ -882,6 +891,9 @@
       ],
       "Previous page": [
         "Page précédente"
+      ],
+      "Publish changes": [
+        "Publier les modifications"
       ],
       "Quit": [
         "Quitter"
@@ -1826,9 +1838,6 @@
       "High speed streaming": [
         "Streaming ultra rapide"
       ],
-      "Integrated 2FA authenticator": [
-        "Authentification à deux facteurs (A2F) intégrée"
-      ],
       "One-time payment, lifetime deal": [
         "Paiement unique, offre à vie"
       ],
@@ -1847,17 +1856,11 @@
       "Secure file storage & sharing": [
         "Stockage de fichiers sécurisé et partage de liens"
       ],
-      "Secure vault and link sharing": [
-        "Coffre-fort sécurisé et partage de liens"
-      ],
       "Unlimited folders, labels and filters": [
         "Nombre illimité de dossiers, labels et filtres"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nombre illimité de connexions, de notes et de cartes de paiement"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Connexions, cartes de crédit, alias « hide-my-email » illimités et plus encore"
       ],
       "Use your own email domain": [
         "Utilisez vos propres domaines de messagerie"
@@ -1930,8 +1933,14 @@
       "Annually": [
         "Annuel"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Mensuel"
+      ],
+      "New!": [
+        "Nouveau"
       ],
       "Two-year": [
         "Tous les deux ans"
@@ -3582,6 +3591,31 @@
         "En savoir plus"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Pour tous les services ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Pour ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Pour ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Pour ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Pour ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mois"
@@ -4727,6 +4761,9 @@
       "Error in one of the conditions": [
         "Il y a une erreur dans l'une des conditions."
       ],
+      "Error publishing changes.": [
+        "Une erreur est survenue lors de la publication des modifications."
+      ],
       "Expired": [
         "Expiré"
       ],
@@ -5868,6 +5905,9 @@
       ],
       "Torrenting support (P2P)": [
         "Prise en charge des torrents (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
       ]
     },
     "Features": {
@@ -5885,9 +5925,6 @@
       ],
       "Secure streaming": [
         "Streaming sécurisé"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Sélection depuis ${ vpnServers.paid.countries } pays"
       ]
     },
     "Features: Tooltip": {
@@ -7076,7 +7113,8 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } arrive à expiration dans ${ daysLeft } jour.",
         "${ planName } arrive à expiration dans ${ daysLeft } jours."
       ],
       "${ planName } expires today.": [
@@ -7636,6 +7674,9 @@
       "Create your first Gateway": [
         "Créez votre première Passerelle"
       ],
+      "Created (not published)": [
+        "Créé (non publié)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Création d'un serveur de passerelle : ${ serverNumber } sur ${ total }",
         "Création de serveurs de passerelle : ${ serverNumber } sur ${ total }"
@@ -7705,6 +7746,9 @@
       ],
       "Delete link?": [
         "Supprimer le lien ?"
+      ],
+      "Deleted (not published)": [
+        "Supprimé (non publié)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Suppression de ${ deletedServerCount } serveur de Passerelle",
@@ -7824,6 +7868,9 @@
       ],
       "Edit link": [
         "Modifier le lien"
+      ],
+      "Edited (not published)": [
+        "Édité (non publié)"
       ],
       "eduGAIN configuration saved": [
         "La configuration EduGain a été enregistrée."
@@ -7965,6 +8012,24 @@
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rapide et efficace : vos e-mails et calendriers directement sur votre bureau."
+      ],
+      "Featured in": [
+        "Ils en parlent"
+      ],
+      "Featured in Clubic": [
+        "Ils en parlent dans Clubic"
+      ],
+      "Featured in Digital Trends": [
+        "Ils en parlent dans Digital Trends"
+      ],
+      "Featured in PC Magazine": [
+        "Ils en parlent dans PC Magazine"
+      ],
+      "Featured in TechRadar": [
+        "Ils en parlent dans TechRadar"
+      ],
+      "Featured in ZDNet": [
+        "Ils en parlent dans ZDNet"
       ],
       "Fill in user details": [
         "Renseignez les informations de l'utilisateur."
@@ -8585,6 +8650,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organisez vos serveurs dédiés en Passerelles et décidez des membres y ayant accès."
       ],
+      "Other accounts": [
+        "Autres comptes"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Il y a d'autres administrateurs dans votre organisation, vous devez leur communiquer le nouveau mot de passe."
       ],
@@ -9065,9 +9133,6 @@
       "Swiss based": [
         "Basé en Suisse"
       ],
-      "Switch to": [
-        "Basculer vers"
-      ],
       "Symbols (#$&)": [
         "Symboles (#$&)"
       ],
@@ -9403,6 +9468,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "La signature du fichier de récupération ne peut pas être vérifiée. Nous vous invitons à contacter le support."
+      ],
+      "Unchanged": [
+        "Non modifié"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Il n'y a malheureusement pas de méthode de récupération enregistrée pour ce compte."
@@ -9859,6 +9927,9 @@
       ],
       "You have no transactions.": [
         "Vous n'avez aucune transaction."
+      ],
+      "You have unpublished changes": [
+        "Vous avez des modifications non publiées."
       ],
       "You may be redirected to your bank’s website.": [
         "Vous serez peut-être redirigé vers le site internet de votre banque."
@@ -11097,6 +11168,9 @@
       "Inherit color from parent folder": [
         "Appliquer la couleur du dossier principal"
       ],
+      "Integrated 2FA authenticator": [
+        "Authentification à deux facteurs (A2F) intégrée"
+      ],
       "Interval": [
         "Intervalle"
       ],
@@ -12071,6 +12145,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Module complémentaire avec essai gratuit"
+      ],
       "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
         "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
       ],
@@ -12665,11 +12742,8 @@
       "${ size } storage": [
         "${ size } d'espace de stockage"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Pour ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pour tous les services ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "${ size } d'espace de stockage par utilisateur"
       ],
       "1 TB secure storage": [
         "1 To d'espace de stockage sécurisé"
@@ -12867,14 +12941,14 @@
       "HTML signatures": [
         "Signatures HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Authentification à deux facteurs (A2F) intégrée"
-      ],
       "Kill switch/always-on VPN": [
         "Arrêt d'urgence (kill switch)/VPN permanent"
       ],
       "Limited support": [
         "Support limité"
+      ],
+      "Manage user permissions and access": [
+        "Gestion des autorisations et accès des utilisateurs"
       ],
       "Multiple admin roles": [
         "Plusieurs rôles d'administrateur"
@@ -12896,6 +12970,9 @@
       ],
       "Password manager": [
         "Gestionnaire de mots de passe"
+      ],
+      "Password manager to secure credentials": [
+        "Gestionnaire de mots de passe pour sécuriser vos identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -13017,9 +13094,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Nombre illimité de dossiers, de labels et de filtres"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
       ],
       "Unlimited labels": [
         "Nombre illimité de labels"
@@ -13181,6 +13255,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Notre abonnement ${ visionary } n'est plus disponible pour les nouveaux abonnés, il s'agit d'un abonnement spécial destiné aux utilisateurs ${ BRAND_NAME } initiaux offrant des caractéristiques et des avantages particuliers."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Payez une fois et sécurisez vos mots de passe et votre identité pour toujours."
       ],
       "Popular": [
         "Populaire"
@@ -14353,7 +14430,18 @@
         "Commencer à utiliser ${ PASS_APP_NAME }"
       ]
     },
+    "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
+        "Bénéficiez d'un accès à vie à toutes les fonctionnalités premium actuelles et futures de ${ PASS_APP_NAME } avec un seul paiement."
+      ],
+      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
+        "Bienvenue dans ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ]
+    },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Acheter"
+      ],
       "Continue": [
         "Continuer"
       ],
@@ -14609,11 +14697,11 @@
       "Save your recovery kit to continue": [
         "Enregistrez votre kit de récupération pour continuer."
       ],
-      "Secure vault and link sharing": [
-        "Coffre-fort sécurisé et partage de liens"
-      ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
+      ],
+      "Secure vault, item and link sharing": [
+        "Partage de coffre-forts, éléments et liens sécurisés"
       ],
       "Secure your family’s passwords and online identities": [
         "Protégez les mots de passe et les identités en ligne de votre famille."
@@ -14630,6 +14718,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Offre spéciale de lancement : profitez de ${ title } à ${ price }, à vie !"
       ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "Offre spéciale :${ PLAN_NAMES[PLANS.PASS_LIFETIME] } pour ${ priceString }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Commencer à utiliser ${ PASS_APP_NAME }"
       ],
@@ -14641,6 +14732,9 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "pour utiliser ${ PASS_APP_NAME } sur votre téléphone."
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Nombre illimité de connexions, de notes et de cartes de paiement et plus encore"
       ],
       "Updating your account": [
         "Mise à jour de votre compte"
@@ -14700,6 +14794,9 @@
       "Activity log": [
         "Journal d'activités"
       ],
+      "Additional mailboxes for aliases": [
+        "Messageries supplémentaires pour les alias"
+      ],
       "Admin panel to manage users and subscription": [
         "Panneau d'administration pour gérer l'abonnement et les utilisateurs"
       ],
@@ -14709,11 +14806,17 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Fonctionnalités avancées des alias (fournies par SimpleLogin)"
       ],
+      "File attachments (coming soon)": [
+        "Fichiers joints (bientôt disponible)"
+      ],
       "One-time payment, lifetime deal": [
         "Paiement unique, offre à vie"
       ],
       "Team policies": [
         "Règles d'équipe"
+      ],
+      "Your custom domain for aliases": [
+        "Votre domaine personnalisé pour les alias"
       ]
     },
     "PassFamilyPlan2024": {
@@ -17101,6 +17204,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN haut débit sur ${ maxVpn } appareil",
         "VPN haut débit sur ${ maxVpn } appareils"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Connexion VPN pour ${ n } appareil par utilisateur",
+        "Connexion VPN pour ${ n } appareils par utilisateur"
       ]
     },
     "Subscription change warning": {
@@ -17561,6 +17668,9 @@
       ],
       "Catch-all address updated": [
         "L'adresse catch-all a été mise à jour."
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Les modifications ont été publiées. Vos modifications seront visibles par tous les utilisateurs dans les prochaines heures."
       ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
@@ -18691,6 +18801,9 @@
       ],
       "Groups": [
         "Groupes"
+      ],
+      "Help and feedback": [
+        "Aide et commentaires"
       ],
       "Help center": [
         "Aide & Support"
@@ -20318,6 +20431,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Sélection automatique depuis ${ numberOfCountries } pays",
         "Sélection automatique depuis ${ numberOfCountries } pays"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Serveurs dans plus de ${ numberOfCountries } pays",
+        "Serveurs dans plus de ${ numberOfCountries } pays"
       ]
     },
     "vpn_2024: renew": {
