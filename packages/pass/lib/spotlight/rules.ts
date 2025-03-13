@@ -3,6 +3,7 @@ import type { Store } from 'redux';
 import { ITEM_COUNT_RATING_PROMPT } from '@proton/pass/constants';
 import {
     selectAliasItems,
+    selectCanCreateItems,
     selectCreatedItemsCount,
     selectHasPendingShareAccess,
     selectLockEnabled,
@@ -120,8 +121,9 @@ export const createAliasSyncEnableRule = (store: Store<State>) =>
         when: (previous) => {
             const state = store.getState();
             const { pendingAliasToSync } = selectUserData(state);
+            const canCreateItems = selectCanCreateItems(state);
 
-            return !previous && pendingAliasToSync > 0;
+            return !previous && pendingAliasToSync > 0 && canCreateItems;
         },
     });
 
