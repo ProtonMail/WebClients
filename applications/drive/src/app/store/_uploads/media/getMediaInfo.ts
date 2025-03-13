@@ -1,3 +1,4 @@
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { isCompatibleCBZ, isHEIC, isSVG, isSupportedImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -16,6 +17,11 @@ interface CheckerThumbnailCreatorPair {
     creator: ThumbnailGenerator;
 }
 
+// On Safari, it supports WebP thumbnail but NOT WebP thumbnails + quality reduction with .toBlob()
+// The size will remain the same and no error will be thrown
+// Which means if the image is above a certain size it won't generate thumbnail
+// For safety we fallback to JPEG for Safari
+const thumbnailFormat = isSafari() ? 'image/jpeg' : 'image/webp';
 // This is a standardised (using interface) list of function pairs - for checking mimeType and creating a thumbnail.
 // This way we don't have to write separate 'if' statements for every type we handle.
 // Instead, we look for the first pair where the checker returns true, and then we use the creator to generate the thumbnail.
@@ -25,7 +31,7 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
     {
         checker: isSupportedImage,
         creator: async (file: File) =>
-            scaleImageFile({ file }, 'image/webp').catch((err) => {
+            scaleImageFile({ file }, thumbnailFormat).catch((err) => {
                 // Corrupted images cannot be loaded which we don't care about.
                 if (err === imageCannotBeLoadedError) {
                     return undefined;
@@ -38,7 +44,7 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
         creator: async (file: File) => {
             // is HEIC is not supported by browser we need to generate the thumbnails by decoding the file ourselves
             const blob = await heicToBlob(file);
-            return scaleImageFile({ file: blob }, 'image/webp').catch((err) => {
+            return scaleImageFile({ file: blob }, thumbnailFormat).catch((err) => {
                 // Corrupted images cannot be loaded which we don't care about.
                 if (err === imageCannotBeLoadedError) {
                     return undefined;
@@ -58,7 +64,7 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
                     {
                         file,
                     },
-                    'image/webp'
+                    thumbnailFormat
                 ).catch((err) => {
                     // Corrupted images cannot be loaded which we don't care about.
                     if (err === imageCannotBeLoadedError) {
