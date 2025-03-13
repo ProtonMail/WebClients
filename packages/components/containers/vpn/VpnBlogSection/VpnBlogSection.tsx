@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { DashboardGrid, DashboardGridSection, DashboardGridSectionHeader } from '@proton/atoms/index';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import changeIpAddress from './illustrations/change-ip-address.jpg';
 import internetHistory from './illustrations/internet-history.jpg';
@@ -19,10 +19,10 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
     {
-        title: () => c('Blog').t`${BRAND_NAME} VPN's no-logs policy confirmed by an external audit`,
+        title: () => c('Blog').t`${VPN_APP_NAME}'s no-logs policy confirmed by an external audit`,
         description: () =>
             c('Blog')
-                .t`Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.`,
+                .t`Independent security experts verified that ${VPN_APP_NAME} does not log user data or engage in any practices that might compromise your privacy.`,
         image: noLogs,
         link: 'https://protonvpn.com/blog/no-logs-audit',
     },
