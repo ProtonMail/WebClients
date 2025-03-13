@@ -351,6 +351,7 @@ export const SSO_PATHS = {
     JOIN_MAGIC_LINK: '/join',
     PORKBUN_SIGNUP: '/partner/porkbun/signup',
     PORKBUN_SIGN_IN: '/partner/porkbun/login',
+    SIGN_IN_WITH_ANOTHER_DEVICE: '/sign-in-with-another-device',
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 

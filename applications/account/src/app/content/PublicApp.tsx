@@ -73,6 +73,7 @@ import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
 import { readForkState } from '../public/persistedForkState';
+import SignInWithAnotherDeviceContainer from '../public/signInWithAnotherDevice/SignInWithAnotherDeviceContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { type ProductParams, getProductParams, getThemeFromLocation } from '../signup/searchParams';
@@ -557,6 +558,27 @@ const BasePublicApp = () => {
                                                 <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
                                                     <UnAuthenticated>
                                                         <JoinMagicLinkContainer
+                                                            api={extraThunkArguments.api}
+                                                            unauthenticatedApi={extraThunkArguments.unauthenticatedApi}
+                                                            onPreload={handlePreload}
+                                                            onPreSubmit={handlePreSubmit}
+                                                            onLogin={handleLogin}
+                                                            productParam={productParam}
+                                                            toAppName={toAppName}
+                                                            toApp={maybePreAppIntent}
+                                                            onUsed={() => {
+                                                                history.replace(
+                                                                    (activeSessions || []).length >= 1
+                                                                        ? SSO_PATHS.SWITCH
+                                                                        : paths.login
+                                                                );
+                                                            }}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route path={SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}>
+                                                    <UnAuthenticated>
+                                                        <SignInWithAnotherDeviceContainer
                                                             api={extraThunkArguments.api}
                                                             unauthenticatedApi={extraThunkArguments.unauthenticatedApi}
                                                             onPreload={handlePreload}
