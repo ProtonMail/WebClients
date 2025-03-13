@@ -49,6 +49,9 @@
       "Add address or domain": [
         "Adres ya da etki alanı ekle"
       ],
+      "Add another account": [
+        "Başka bir hesap ekle"
+      ],
       "Add credit / debit card": [
         "Kredi ya da banka kartı ekle"
       ],
@@ -393,6 +396,12 @@
       ],
       "Help": [
         "Yardım"
+      ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
+      "Help and resources": [
+        "Yardım ve kaynaklar"
       ],
       "Hide": [
         "Gizle"
@@ -1075,9 +1084,6 @@
       "High speed streaming": [
         "Yüksek hızda yayın akışı izleme"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
-      ],
       "One-time payment, lifetime deal": [
         "Bir kez ödemeli ömür boyu kullanım fırsatı"
       ],
@@ -1096,17 +1102,11 @@
       "Secure file storage & sharing": [
         "Güvenli dosya depolama alanı ve paylaşımı"
       ],
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı paylaşımı"
-      ],
       "Unlimited folders, labels and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adları"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Sınırsız sayıda oturum açma, not ve kredi kartı kaydı"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Sınırsız sayıda oturum açma, kredi kartı, hide-my-email takma adları ve diğer kayıtlar"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
@@ -1179,8 +1179,14 @@
       "Annually": [
         "Yıllık"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Aylık"
+      ],
+      "New!": [
+        "Yeni!"
       ],
       "Two-year": [
         "Iki yıllık"
@@ -2349,6 +2355,31 @@
         "Ayrıntılı bilgi alın"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetleri için"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } için"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ay"
@@ -3368,6 +3399,9 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent desteği (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
       ]
     },
     "Features": {
@@ -3385,9 +3419,6 @@
       ],
       "Secure streaming": [
         "Güvenli yayın akışı"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "${ vpnServers.paid.countries } ülke arasından seçin"
       ]
     },
     "Features: Tooltip": {
@@ -3870,7 +3901,8 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor.",
         "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor."
       ],
       "${ planName } expires today.": [
@@ -4807,6 +4839,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Özel sunucularınızı ağ geçitleri olarak düzenleyin ve hangi üyelerin bunlara erişebileceğini belirleyin."
       ],
+      "Other accounts": [
+        "Diğer hesaplar"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmek sizin sorumluluğunuzdur."
       ],
@@ -5105,9 +5140,6 @@
       ],
       "Swiss based": [
         "İsviçre merkezli"
-      ],
-      "Switch to": [
-        "Şuna geç"
       ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
@@ -6133,6 +6165,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı kimlik doğrulayıcı"
+      ],
       "Interval": [
         "Aralık"
       ],
@@ -6998,12 +7033,6 @@
       "${ size } storage per user": [
         "Her kullanıcı için ${ size } depolama alanı"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME } için"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
-      ],
       "1 TB secure storage": [
         "1 TB güvenli depolama alanı"
       ],
@@ -7194,9 +7223,6 @@
       "HTML signatures": [
         "HTML imzalar"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik iki adımlı kimlik doğrulayıcı"
-      ],
       "Kill switch/always-on VPN": [
         "Bağlantı kesici / Hep açık VPN"
       ],
@@ -7348,9 +7374,6 @@
       "Unlimited folders, labels, and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
@@ -7447,7 +7470,7 @@
     },
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
       ],
       "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
         "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
@@ -7504,6 +7527,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bir kez ödeyin, parolalarınızı ve kimliğinizi sonsuza kadar koruyun."
       ],
       "Popular": [
         "Beğenilen"
@@ -7959,7 +7985,7 @@
         "${ reason } özelliği açıldı"
       ],
       "A disabled address cannot be default": [
-        "Kullanım dışı bırakılmış bir adres varsayılan olamaz"
+        "Kullanımdan kaldırlmış bir adres varsayılan olamaz"
       ],
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
@@ -8281,11 +8307,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı ile paylaşım"
-      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault, item and link sharing": [
+        "Güvenli kasa, öge ve bağlantı paylaşımı"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Sınırsız sayıda oturum açma, not, kredi kartı ve diğer kayıtlar"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8895,10 +8924,10 @@
         "SCIM yapılandırması"
       ],
       "Disable SCIM": [
-        "SCIM kullanım dışı bırakılsın"
+        "SCIM kullanımdan kaldırılsın"
       ],
       "Disable SCIM integration": [
-        "SCIM bütünleştirmesi kullanım dışı bırakılsın mı"
+        "SCIM bütünleştirmesi kullanımdan kaldırılsın mı"
       ],
       "Generate new token": [
         "Yeni kod oluştur"
@@ -8967,7 +8996,7 @@
     },
     "scim: Title": {
       "Disable SCIM integration?": [
-        "SCIM bütünleştirmesi kullanım dışı bırakılsın mı?"
+        "SCIM bütünleştirmesi kullanımdan kaldırılsın mı?"
       ],
       "Generate new SCIM token?": [
         "Yeni SCIM kodu oluşturulsun mu?"
@@ -10540,7 +10569,7 @@
         "Adres silindi"
       ],
       "Address disabled": [
-        "Adres kullanım dışı"
+        "Adres kullanımdan kaldırılmış"
       ],
       "Address enabled": [
         "Adres kullanıma alındı"
@@ -11125,6 +11154,9 @@
       ],
       "Groups": [
         "Gruplar"
+      ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
       ],
       "Help center": [
         "Yardım merkezi"
@@ -12107,6 +12139,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } ülke arasından otomatik seçilir",
         "${ numberOfCountries } ülke arasından otomatik seçilir"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkede sunucular",
+        "${ numberOfCountries } üzerinde ülkede sunucular"
       ]
     },
     "vpn_2024: renew": {

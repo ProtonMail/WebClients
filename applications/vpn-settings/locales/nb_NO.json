@@ -49,6 +49,9 @@
       "Add address or domain": [
         "Legg til adresse eller domene"
       ],
+      "Add another account": [
+        "Legg til en annen konto"
+      ],
       "Add credit / debit card": [
         "Legg til kreditt-/debetkort"
       ],
@@ -393,6 +396,12 @@
       ],
       "Help": [
         "Hjelp"
+      ],
+      "Help and feedback": [
+        "Hjelp og tilbakemelding"
+      ],
+      "Help and resources": [
+        "Hjelp og ressurser"
       ],
       "Hide": [
         "Skjul"
@@ -1075,9 +1084,6 @@
       "High speed streaming": [
         "Strømming med høy hastighet"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrert 2FA-autentisering"
-      ],
       "One-time payment, lifetime deal": [
         "Engangsbetaling, livstidsavtale"
       ],
@@ -1096,17 +1102,11 @@
       "Secure file storage & sharing": [
         "Sikker fillagring og -deling"
       ],
-      "Secure vault and link sharing": [
-        "Sikker hvelv og deling av koblinger"
-      ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Ubegrenset antall pålogginger, notater, kredittkort"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Ubegrenset antall pålogginger, kredittkort, hide-my-email-aliaser og mer"
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
@@ -1179,8 +1179,14 @@
       "Annually": [
         "Årlig"
       ],
+      "Lifetime": [
+        "Livstid"
+      ],
       "Monthly": [
         "Månedlig"
+      ],
+      "New!": [
+        "Ny!"
       ],
       "Two-year": [
         "Toårig"
@@ -2349,6 +2355,31 @@
         "Lær mer"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "For alle ${ BRAND_NAME }-tjenester"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "For ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "For ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "For ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "For ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/måned"
@@ -3368,6 +3399,9 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent-støtte (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrenset antall hide-my-email-aliaser"
       ]
     },
     "Features": {
@@ -3385,9 +3419,6 @@
       ],
       "Secure streaming": [
         "Sikker strømming"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Velg fra ${ vpnServers.paid.countries } land"
       ]
     },
     "Features: Tooltip": {
@@ -3869,9 +3900,6 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
-      ],
-      "${ planName } expires in ${ daysLeft } days.": [
-        "${ planName } utløper om ${ daysLeft } dager."
       ],
       "${ planName } expires today.": [
         "${ planName } utløper i dag."
@@ -4807,6 +4835,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organiser dine dedikerte tjenere i porttjenere og bestem hvilke medlemmer som kan få tilgang til dem."
       ],
+      "Other accounts": [
+        "Andre kontoer"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Andre administratorer finnes i organisasjonen din, du er ansvarlig for å kommunisere det nye passordet til dem."
       ],
@@ -5108,9 +5139,6 @@
       ],
       "Swiss based": [
         "Sveitsisk basert"
-      ],
-      "Switch to": [
-        "Bytt til"
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
@@ -6136,6 +6164,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Integrated 2FA authenticator": [
+        "Integrert 2FA-autentisering"
+      ],
       "Interval": [
         "Intervall"
       ],
@@ -7004,12 +7035,6 @@
       "${ size } storage per user": [
         "${ size } lagringsplass per bruker"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - for ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - for alle ${ BRAND_NAME }-tjenester"
-      ],
       "1 TB secure storage": [
         "1 TB sikker lagring"
       ],
@@ -7200,9 +7225,6 @@
       "HTML signatures": [
         "HTML-signaturer"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrert 2FA-autentisering"
-      ],
       "Kill switch/always-on VPN": [
         "Nødstopp/alltid på-VPN"
       ],
@@ -7353,9 +7375,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrenset antall hide-my-email-aliaser"
       ],
       "Unlimited labels": [
         "Ubegrenset antall etiketter"
@@ -7510,6 +7529,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Vår ${ visionary }-plan er ikke lenger tilgjengelig for nye abonnenter da det er en spesiell plan for originale ${ BRAND_NAME }-brukere med spesielle funksjoner og fordeler."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Betal én gang, sikre passordene og identiteten din for alltid."
       ],
       "Popular": [
         "Populær"
@@ -8308,11 +8330,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Sikker hvelv og deling av koblinger"
-      ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
+      ],
+      "Secure vault, item and link sharing": [
+        "Sikker deling av hvelv, elementer og koblinger"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Ubegrenset antall pålogginger, notater, kredittkort og mer"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11149,6 +11174,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Help and feedback": [
+        "Hjelp og tilbakemelding"
       ],
       "Help center": [
         "Hjelpesenter"

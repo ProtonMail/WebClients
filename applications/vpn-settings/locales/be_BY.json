@@ -49,6 +49,9 @@
       "Add address or domain": [
         "Дадаць адрас або дамен"
       ],
+      "Add another account": [
+        "Дадайце іншы ўліковы запіс"
+      ],
       "Add credit / debit card": [
         "Дадаць крэдытную/плацежную картку"
       ],
@@ -393,6 +396,12 @@
       ],
       "Help": [
         "Даведка"
+      ],
+      "Help and feedback": [
+        "Даведка і зваротная сувязь"
+      ],
+      "Help and resources": [
+        "Даведка і рэсурсы"
       ],
       "Hide": [
         "Схаваць"
@@ -1085,9 +1094,6 @@
       "High speed streaming": [
         "Высакахуткасныя трансляцыі"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтэграваны аўтэнтыфікатар 2ФА"
-      ],
       "One-time payment, lifetime deal": [
         "Аднаразовая аплата, пажыццёвы доступ"
       ],
@@ -1106,17 +1112,11 @@
       "Secure file storage & sharing": [
         "Бяспечнае файлавае сховішча і абагульванне"
       ],
-      "Secure vault and link sharing": [
-        "Бяспечнае сховішча і абагульванне спасылкі"
-      ],
       "Unlimited folders, labels and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Неабмежаваная колькасць псеўданімаў hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Неабмежаваная колькасць запісаў уваходу, крэдытных картак, псеўданімаў hide-my-email і іншых функцый"
       ],
       "Use your own email domain": [
         "Выкарыстоўвайце ўласны дамен электроннай пошты"
@@ -1195,8 +1195,14 @@
       "Annually": [
         "Штогод"
       ],
+      "Lifetime": [
+        "Пажыццёва"
+      ],
       "Monthly": [
         "Штомесяц"
+      ],
+      "New!": [
+        "Новае!"
       ],
       "Two-year": [
         "Кожныя два гады"
@@ -2369,12 +2375,37 @@
         "Даведацца больш"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "За ўсе сэрвісы ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "За ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "За ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "За ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "За ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/месяц"
       ],
       "/user per month": [
-        "/карыстальнікаў у месяц"
+        "/карыстальніка ў месяц"
       ]
     },
     "Delete address prompt": {
@@ -3400,6 +3431,9 @@
       ],
       "Torrenting support (P2P)": [
         "Падтрымка торэнтаў (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ]
     },
     "Features": {
@@ -3417,9 +3451,6 @@
       ],
       "Secure streaming": [
         "Бяспечная трансляцыя"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Выбірайце з ${ vpnServers.paid.countries } краін"
       ]
     },
     "Features: Tooltip": {
@@ -3936,7 +3967,10 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } міне праз ${ daysLeft } дзень.",
+        "${ planName } міне праз ${ daysLeft } дні.",
+        "${ planName } міне праз ${ daysLeft } дзён.",
         "${ planName } міне праз ${ daysLeft } дзён."
       ],
       "${ planName } expires today.": [
@@ -4905,6 +4939,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Арганізуйце свае вылучаныя серверы ў шлюзы і вырашыце, якія ўдзельнікі змогуць атрымаць доступ да іх."
       ],
+      "Other accounts": [
+        "Іншыя ўліковыя запісы"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашай арганізацыі існуюць іншыя ўліковыя запісы са статусам адміністратар. Вы адказваеце за тое, каб паведаміць ім новы пароль."
       ],
@@ -5213,9 +5250,6 @@
       ],
       "Swiss based": [
         "Знаходзіцца ў Швейцарыі"
-      ],
-      "Switch to": [
-        "Пераключыцца на"
       ],
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
@@ -6269,6 +6303,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Integrated 2FA authenticator": [
+        "Інтэграваны аўтэнтыфікатар 2ФА"
+      ],
       "Interval": [
         "Інтэрвал"
       ],
@@ -7170,12 +7207,6 @@
       "${ size } storage per user": [
         "${ size } сховішча на карыстальніка"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - для ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - для ўсіх сэрвісаў ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 ТБ бяспечнага сховішча"
       ],
@@ -7368,9 +7399,6 @@
       "HTML signatures": [
         "Подпісы HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Інтэграваная аўтэнтыфікацыя 2ФА"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Пастаянны VPN"
       ],
@@ -7523,9 +7551,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неабмежаваная колькасць псеўданімаў Hide-my-email"
       ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
@@ -7692,6 +7717,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Наш тарыфны план ${ visionary } больш недаступны для новых падпісчыкаў і зараз ён з'яўляецца спецыяльным тарыфным планам для карыстальнікаў ${ BRAND_NAME } і прадугледжвае для іх спецыяльныя функцыі і перавагі."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Заплаціце адзін раз, засцеражыце свае паролі і ідэнтычнасць назаўжды."
       ],
       "Popular": [
         "Папулярны"
@@ -7948,7 +7976,7 @@
         "Бяспечнае абагульванне індывідуальных элементаў з любой асобай (у тым ліку з тымі, хто не карыстаецца ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнні і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
+        "Бяспечна захоўвайце кантактныя звесткі, такія як нумары тэлефонаў, адрасы, дні нараджэнняў і іншыя асабістыя нататкі. Шыфраванне з нулявым доступам гарантуе, што даныя не будуць даступны нікому, нават супрацоўнікам ${ BRAND_NAME }."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
         "Прагляд даступнасці ўдзельнікаў сустрэчы і эканомія часу пры планаванні сустрэч"
@@ -8479,11 +8507,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Бяспечнае сховішча і абагульванне спасылкі"
-      ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
+      ],
+      "Secure vault, item and link sharing": [
+        "Бяспечнае сховішча, элементы і абагульванне спасылак"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Неабмежаваная колькасць запісаў уваходу, нататак, крэдытных картак і іншых функцый"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9115,10 +9146,10 @@
     },
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
-        "**Неабходная ўмова:** аўтэнтыфікацыя SAML павінна быць сканфігуравана для ўключэння падрыхтоўкі SCIM."
+        "**Абавязковая ўмова:** аўтэнтыфікацыя SAML павінна быць сканфігуравана для ўключэння падрыхтоўкі SCIM."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Абавязковая ўмова:** для падрыхтоўкі SCIM, вам неабходна пацвердзіць права ўласнасці на дамен **${ domainName }**. Гэта праверка можа заняць да адной гадзіны."
+        "**Абавязковая ўмова:** вам неабходна праверыць права ўласнасці на дамен **${ domainName }** для ўключэння падрыхтоўкі SCIM. Гэта праверка можа заняць да адной гадзіны."
       ],
       "Enter the token into your identity provider": [
         "Увядзіце токен у свайго пастаўшчыка пасведчанняў"
@@ -10882,7 +10913,7 @@
         "/месяц"
       ],
       "/user per month": [
-        "/карыстальнікаў у месяц"
+        "/карыстальніка ў месяц"
       ]
     },
     "Suffix for price": {
@@ -11437,6 +11468,9 @@
       ],
       "Groups": [
         "Групы"
+      ],
+      "Help and feedback": [
+        "Даведка і зваротная сувязь"
       ],
       "Help center": [
         "Цэнтр дапамогі"
@@ -12318,6 +12352,12 @@
         "Аўтаматычны выбар з ${ numberOfCountries } краін",
         "Аўтаматычны выбар з ${ numberOfCountries } краін",
         "Аўтаматычны выбар з ${ numberOfCountries } краін"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Серверы ў больш, чым ${ numberOfCountries } краіне",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах"
       ]
     },
     "vpn_2024: renew": {
