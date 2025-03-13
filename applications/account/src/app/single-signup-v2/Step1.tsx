@@ -970,8 +970,11 @@ const Step1 = ({
                                 <RightSummary
                                     variant={isDarkBg ? 'gradientBorder' : 'gradient'}
                                     className={clsx(
-                                        'p-6 hidden md:flex rounded-xl',
-                                        !hasBenefits && 'visibility-hidden'
+                                        'p-6 md:flex rounded-xl',
+                                        !hasBenefits && 'visibility-hidden',
+                                        // By default this section is hidden for small screens.
+                                        // However we want to make an exception for the Pass Lifetime.
+                                        selectedPlan.Name !== PLANS.PASS_LIFETIME && 'hidden'
                                     )}
                                 >
                                     {hasBenefits ? benefits : null}
