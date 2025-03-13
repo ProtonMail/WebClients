@@ -31,14 +31,11 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
     const sharedWithMeCount = useSelector(selectSharedWithMeCount);
     const sharedByMeCount = useSelector(selectSharedByMeCount);
     const secureLinksCount = useSelector(selectSecureLinksCount);
-    const passPlan = useSelector(selectPassPlan);
-    const free = passPlan === UserPassPlan.FREE;
     const elements = [
         sharedWithMeCount > 0 && (
             <FeatureFlag feature={PassFeature.PassItemSharingV1}>
                 <SharedMenuItem
                     key="shared-with-me"
-                    upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
                     label={c('Label').t`Shared with me`}
                     count={sharedWithMeCount}
                     selected={scope === 'shared-with-me'}
@@ -52,7 +49,6 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
             <FeatureFlag feature={PassFeature.PassItemSharingV1}>
                 <SharedMenuItem
                     key="shared-by-me"
-                    upsellRef={free ? UpsellRef.ITEM_SHARING : undefined}
                     label={c('Label').t`Shared by me`}
                     count={sharedByMeCount}
                     selected={scope === 'shared-by-me'}
@@ -65,7 +61,6 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
         secureLinksCount > 0 && (
             <SharedMenuItem
                 key="secure-links"
-                upsellRef={free ? UpsellRef.SECURE_LINKS : undefined}
                 label={c('Action').t`Secure links`}
                 count={secureLinksCount}
                 selected={scope === 'secure-links'}
