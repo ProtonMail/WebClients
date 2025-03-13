@@ -34,6 +34,7 @@ enum CommonFeatureFlag {
 }
 
 enum AccountFlag {
+    AccountSessions = 'AccountSessions',
     MagicLink = 'MagicLink',
     MailTrialOffer = 'MailTrialOffer',
     DriveTrialOffer = 'DriveTrialOffer',
