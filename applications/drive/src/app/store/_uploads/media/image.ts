@@ -26,7 +26,7 @@ export function scaleImageFile(
     }: {
         file: Blob;
     },
-    thumbnailFormatMimeType: 'image/webp' = 'image/webp'
+    thumbnailFormatMimeType: 'image/webp' | 'image/jpeg' = 'image/webp'
 ): Promise<ReturnProps> {
     return new Promise((resolve, reject) => {
         const img = new Image();
@@ -57,7 +57,7 @@ export function scaleImageFile(
 async function scaleImage(
     img: HTMLImageElement,
     thumbnailType: ThumbnailType = ThumbnailType.PREVIEW,
-    mimeType: 'image/webp' = 'image/webp'
+    mimeType: 'image/webp' | 'image/jpeg' = 'image/webp'
 ): Promise<ThumbnailInfo> {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
