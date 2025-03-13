@@ -1968,6 +1968,9 @@
       "Please consider leaving a review.": [
         "Overweeg om een review te schrijven."
       ],
+      "Please contact your administrator": [
+        "Neem contact op met uw beheerder"
+      ],
       "Please do not close this window": [
         "Sluit dit venster niet"
       ],
@@ -2371,6 +2374,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } woord",
         "${ config.options.wordCount } woorden"
+      ],
+      "${ count } item": [
+        "${ count } item",
+        "${ count } items"
       ],
       "${ days } day": [
         "${ days } dag",
@@ -2964,6 +2971,9 @@
       ],
       "Reveal password": [
         "Wachtwoord tonen"
+      ],
+      "Secure links": [
+        "Beveiligde links"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Uw accounts met ${ PASS_APP_NAME } worden veilig opgeslagen, gedeeld en automatisch ingelogd, met behulp van end-to-end versleuteling die door miljoenen wordt vertrouwd."
@@ -3924,6 +3934,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Wat is het verschil tussen ${ PASS_SHORT_APP_NAME } notitie en SimpleLogin notitie?"
       ],
+      "You don't have any vault": [
+        "U heeft geen kluis"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Uw ${ planName } abonnement zal eindigen op ${ endDate }"
       ],
@@ -4322,6 +4335,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "U zult geen toegang meer hebben tot deze kluis. Om opnieuw deel te nemen, heeft u een nieuwe uitnodiging nodig."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Uw beheerder moet een kluis aanmaken voor u voordat u items kunt aanmaken"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Uw organisatie staat het aanmaken van een kluis niet toe"
       ],
       "Your organization does not allow sharing individual items": [
         "Uw organisatie verbiedt het delen van individuele items"

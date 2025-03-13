@@ -1968,6 +1968,9 @@
       "Please consider leaving a review.": [
         "Överväg att lämna en recension."
       ],
+      "Please contact your administrator": [
+        "Kontakta din administratör"
+      ],
       "Please do not close this window": [
         "Stäng inte detta fönster"
       ],
@@ -2150,7 +2153,7 @@
         "Denna brevlåda kommer använda din tidigare e-post."
       ],
       "This operation is irreversible.": [
-        "Åtgärden går ej att ångra."
+        "Denna åtgärd är oåterkallelig."
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Åtgärden går ej att ångra. Alla alias som använder domänen ${ domainTextBold } kommer att tas bort. Notera att efter att de tagits bort så kan inte alias återställas."
@@ -2371,6 +2374,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
+      ],
+      "${ count } item": [
+        "${ count } objekt",
+        "${ count } objekt"
       ],
       "${ days } day": [
         "${ days } dag",
@@ -2967,6 +2974,9 @@
       ],
       "Reveal password": [
         "Visa lösenord"
+      ],
+      "Secure links": [
+        "Säkra länkar"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Lagra, dela och logga in automatiskt på dina konton med ${ PASS_APP_NAME } på ett säkert sätt med hjälp av end-to-end-kryptering som är betrodd av miljontals."
@@ -3927,6 +3937,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Vad är skillnaden mellan en ${ PASS_SHORT_APP_NAME }-anteckning och en SimpleLogin-anteckning?"
       ],
+      "You don't have any vault": [
+        "Du har inget valv"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Din ${ planName }-prenumeration kommer avslutas den ${ endDate }"
       ],
@@ -4234,6 +4247,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du kommer inte längre att ha åtkomst till detta valv. För att gå med igen behöver du en ny inbjudan."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Din administratör måste skapa ett valv åt dig innan du kan skapa objekt"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Din organisation tillåter inte att skapa ett valv"
       ],
       "Your organization does not allow sharing individual items": [
         "Din organisation tillåter inte delning av enskilda objekt"
