@@ -7,7 +7,7 @@ import clsx from '@proton/utils/clsx';
 
 import './QRCode.scss';
 
-interface Props extends ComponentPropsWithoutRef<'svg'> {
+interface Props extends ComponentPropsWithoutRef<typeof QRCodeSVG> {
     size?: number;
     value: string;
 }
