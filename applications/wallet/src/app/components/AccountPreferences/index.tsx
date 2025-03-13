@@ -1,7 +1,16 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, DropdownSizeUnit } from '@proton/components';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
+    DropdownSizeUnit,
+    useModalState,
+} from '@proton/components';
 import { usePopperAnchor } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
@@ -9,6 +18,7 @@ import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Input } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
+import { ExtendedPublicKeyModal } from '../ExtendedPublicKeyModal';
 import { EmailIntegrationInput } from './EmailIntegrationInput';
 import { useAccountPreferences } from './useAccountPreferences';
 
@@ -19,9 +29,10 @@ interface Props {
     walletAccount: WasmApiWalletAccount;
     otherWallets: IWasmApiWalletData[];
     shouldShowBvEWarning: boolean;
+    index: number;
 }
 
-export const AccountPreferences = ({ wallet, walletAccount, otherWallets, shouldShowBvEWarning }: Props) => {
+export const AccountPreferences = ({ wallet, walletAccount, otherWallets, shouldShowBvEWarning, index }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const {
@@ -29,6 +40,8 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
         isLoadingLabelUpdate,
         onChangeLabel,
         updateWalletAccountLabel,
+
+        getXpub,
 
         deleteWalletAccount,
 
@@ -45,6 +58,10 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
         onRemoveEmailAddress,
         onReplaceEmailAddress,
     } = useAccountPreferences(wallet, walletAccount, otherWallets);
+
+    const [extendedPublicKeyModalState, setExtendedPublicKeyModalState, renderExtendedPublicKeyModalState] =
+        useModalState();
+    const [xpub, setXpub] = useState<string | undefined>(undefined);
 
     return (
         <InputFieldStackedGroup>
@@ -86,6 +103,19 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
                             className="bg-weak"
                         >
                             <DropdownMenu>
+                                <DropdownMenuButton
+                                    className="text-left flex flex-row items-center"
+                                    disabled={isLoadingLabelUpdate}
+                                    onClick={async () => {
+                                        setXpub(await getXpub());
+                                        setExtendedPublicKeyModalState(true);
+                                    }}
+                                >
+                                    {c('Wallet preference').t`Show public key (XPUB)`}
+                                    <div className="flex ml-2">
+                                        <Icon name="key" />
+                                    </div>
+                                </DropdownMenuButton>
                                 <DropdownMenuButton
                                     className="text-left flex flex-row items-center"
                                     actionType="delete"
@@ -137,6 +167,15 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
                     void onReplaceEmailAddress(oldAddress, address);
                 }}
             />
+
+            {renderExtendedPublicKeyModalState && xpub && (
+                <ExtendedPublicKeyModal
+                    accountLabel={walletAccount.Label}
+                    xpub={xpub}
+                    index={index}
+                    {...extendedPublicKeyModalState}
+                />
+            )}
         </InputFieldStackedGroup>
     );
 };
