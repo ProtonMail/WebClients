@@ -1,4 +1,3 @@
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { OAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork';
@@ -10,9 +9,13 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
+import type { LoginResult } from '../actions/interface';
+import type { Paths } from '../helper';
+
 type OAuthForkResult =
     | { type: 'invalid' }
-    | { type: 'produce'; payload: { fork: OAuthForkData; session: AuthSession } }
+    | { type: 'login'; payload: LoginResult }
     | { type: 'switch'; payload: { fork: OAuthForkData; activeSessionsResult: GetActiveSessionsResult } };
 
 const getProduceOAuthForkParameters = () => {
@@ -28,7 +31,7 @@ const getProduceOAuthForkParameters = () => {
     };
 };
 
-export const handleOAuthFork = async ({ api }: { api: Api }): Promise<OAuthForkResult> => {
+export const handleOAuthFork = async ({ api, paths }: { api: Api; paths: Paths }): Promise<OAuthForkResult> => {
     const { clientID, oaSession, email } = getProduceOAuthForkParameters();
     if (!clientID || !oaSession) {
         return {
@@ -50,16 +53,13 @@ export const handleOAuthFork = async ({ api }: { api: Api }): Promise<OAuthForkR
     const { session, type } = activeSessionsResult;
 
     if (type === GetActiveSessionType.AutoPick) {
-        return {
-            type: 'produce',
-            payload: {
-                fork: {
-                    type: SSOType.OAuth,
-                    payload: { oauthData },
-                },
-                session,
-            },
-        };
+        const loginResult = await getProduceForkLoginResult({
+            api,
+            session,
+            data: { type: SSOType.OAuth, payload: { oauthData } },
+            paths,
+        });
+        return { type: 'login', payload: loginResult };
     }
 
     return {
