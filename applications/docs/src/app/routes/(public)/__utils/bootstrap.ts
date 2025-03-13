@@ -3,7 +3,7 @@ import createApi from '@proton/shared/lib/api/createApi'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 
 import locales from '../../../locales'
-import { extendStore, setupStore } from '../../../ReduxStore/store'
+import { extendStore, setupStore } from '../../../redux-store/store'
 import { createBrowserHistory } from 'history'
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig'
 import { requestFork } from '@proton/shared/lib/authentication/fork'

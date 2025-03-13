@@ -4,7 +4,7 @@ import { Application } from '@proton/docs-core'
 import { useApi } from '@proton/components/index'
 import { Route, Switch } from 'react-router-dom'
 import ApplicationProvider from '../../../Containers/ApplicationProvider'
-import { DocumentViewer } from '../../../Components/DocumentViewer'
+import { DocumentViewer } from '../../../components/document/DocumentViewer/DocumentViewer'
 import {
   usePublicDriveCompat,
   type DocumentAction,
@@ -12,9 +12,9 @@ import {
   type PublicNodeMeta,
 } from '@proton/drive-store'
 import { APP_VERSION } from '../../../config'
-import { WordCountContextProvider } from '../../../Components/WordCount/WordCountProvider'
+import { WordCountProvider } from '../../../components/document/WordCount'
 import { useDocsUrlBar } from '../../../Containers/useDocsUrlBar'
-import { DocumentLayout } from '../../__components/DocumentLayout'
+import { DocumentLayout } from '../../../components/document/DocumentLayout/DocumentLayout'
 import { usePublicSessionUser } from '@proton/drive-store/store'
 import DocsContextProvider from '../../../Containers/DocsContextProvider'
 import { useUnleashClient } from '@proton/unleash'
@@ -78,7 +78,7 @@ export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCom
         publicContext={{ user, localID, compat: publicDriveCompat, openParams: openAction }}
         privateContext={undefined}
       >
-        <WordCountContextProvider>
+        <WordCountProvider>
           <Switch>
             <Route path={'*'}>
               <DocumentLayout>
@@ -86,7 +86,7 @@ export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCom
               </DocumentLayout>
             </Route>
           </Switch>
-        </WordCountContextProvider>
+        </WordCountProvider>
       </DocsContextProvider>
     </ApplicationProvider>
   )
