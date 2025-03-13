@@ -119,12 +119,10 @@ export const queryElementsInBatch = async (
                 const elements = conversationMode ? result.Conversations : result.Messages;
                 const lastElement = elements[pageSize - 1];
 
-                const newElements = [...previousResult.Elements, ...elements];
-
                 const queryResult = {
                     abortController: newAbortController,
                     More: elements.length >= pageSize,
-                    Elements: newElements,
+                    Elements: elements,
                     ...(lastElement && {
                         AnchorID: lastElement.ID,
                         Anchor: lastElement[queryParameters.Sort ?? 'Time'],
