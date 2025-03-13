@@ -1925,6 +1925,9 @@
       "Please consider leaving a review.": [
         "Considere deixar uma avaliação"
       ],
+      "Please contact your administrator": [
+        "Contate seu administrador"
+      ],
       "Please do not close this window": [
         "Não feche esta janela."
       ],
@@ -2341,6 +2344,10 @@
         "${ config.options.wordCount } palavra",
         "${ config.options.wordCount } palavras"
       ],
+      "${ count } item": [
+        "${ count } item",
+        "${ count } itens"
+      ],
       "${ days } day": [
         "${ days } dia",
         "${ days } dias"
@@ -2364,8 +2371,8 @@
         "${ months } mês",
         "${ months } meses"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } monitor"
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versão do ${ PASS_SHORT_APP_NAME }"
@@ -2959,6 +2966,9 @@
       ],
       "Save passkeys": [
         "Salvar chaves de acesso"
+      ],
+      "Secure links": [
+        "Links seguros"
       ],
       "Security": [
         "Segurança"
@@ -3819,6 +3829,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Qual é a diferença entre a nota ${ PASS_SHORT_APP_NAME } e a nota do SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "Você não tem nenhum cofre"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Sua assinatura do ${ planName } terminará em ${ endDate }"
       ],
@@ -4113,6 +4126,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Você não terá mais acesso a este cofre. Para participar novamente, você precisará de um novo convite."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Seu administrador precisa criar um cofre para você ante de criar itens"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Sua organização não permite a criação de um cofre"
       ],
       "Your organization does not allow sharing individual items": [
         "Sua organização não permite compartilhar itens individuais."

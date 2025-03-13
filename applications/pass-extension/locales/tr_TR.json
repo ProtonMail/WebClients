@@ -1925,6 +1925,9 @@
       "Please consider leaving a review.": [
         "Lütfen bir yorum yazmayı değerlendirin."
       ],
+      "Please contact your administrator": [
+        "Lütfen yöneticinizle görüşün"
+      ],
       "Please do not close this window": [
         "Lütfen bu pencereyi kapatmayın"
       ],
@@ -2341,6 +2344,10 @@
         "${ config.options.wordCount } sözcük",
         "${ config.options.wordCount } sözcük"
       ],
+      "${ count } item": [
+        "${ count } öge",
+        "${ count } öge"
+      ],
       "${ days } day": [
         "${ days } gün",
         "${ days } gün"
@@ -2364,7 +2371,7 @@
         "${ months } ay",
         "${ months } ay"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
+      "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } izleyici"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
@@ -2956,6 +2963,9 @@
       ],
       "Save passkeys": [
         "Geçiş anahtarlarını kaydet"
+      ],
+      "Secure links": [
+        "Güvenli bağlantılar"
       ],
       "Security": [
         "Güvenlik"
@@ -3816,6 +3826,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } notu ile SimpleLogin notu arasındaki fark nedir?"
       ],
+      "You don't have any vault": [
+        "Henüz bir kasanız yok"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } aboneliğiniz ${ endDate } tarihinde sona erecek"
       ],
@@ -4110,6 +4123,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Bu kasaya artık erişemeyeceksiniz. Yeniden katılabilmek için yeni bir davet almanız gerekecek."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Ögeler ekleyebilmeniz için önce yöneticiniz sizin için bir kasa oluşturmalıdır"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Kuruluşunuz kasa oluşturmanıza izin vermiyor"
       ],
       "Your organization does not allow sharing individual items": [
         "Kuruluşunuz tekil ögelerin paylaşılmasına izin vermiyor"
