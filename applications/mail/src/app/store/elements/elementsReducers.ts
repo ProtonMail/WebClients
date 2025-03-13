@@ -35,6 +35,7 @@ export const globalReset = (state: Draft<ElementsState>) => {
 export const reset = (state: Draft<ElementsState>, action: PayloadAction<NewStateParams>) => {
     const { total, ...payload } = action.payload;
     Object.assign(
+        state,
         newElementsState({
             total: total !== undefined ? total : state.total,
             ...payload,
