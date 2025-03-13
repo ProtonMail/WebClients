@@ -54,7 +54,10 @@ jest.mock('../../_shares/useShare', () => {
 
 jest.mock('../../_shares/useDefaultShare', () => {
     const useDefaultShare = () => {
-        return {};
+        return {
+            getDefaultShare: jest.fn(),
+            getDefaultPhotosShare: jest.fn(),
+        };
     };
     return useDefaultShare;
 });
