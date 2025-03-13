@@ -771,9 +771,6 @@
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
       ],
-      "More options": [
-        "Več možnosti"
-      ],
       "More refine actions": [
         "Več dejanj"
       ],
@@ -1074,11 +1071,11 @@
       "Select ${ planTitle }": [
         "Izberite ${ planTitle }"
       ],
-      "Select all": [
-        "Označi vse"
-      ],
       "Select All": [
         "Izberi vse"
+      ],
+      "Select all": [
+        "Označi vse"
       ],
       "Select all messages": [
         "Izberi vsa sporočila"
@@ -1682,9 +1679,6 @@
       "High speed streaming": [
         "Pretočne storitve z visoko hitrostjo"
       ],
-      "Integrated 2FA authenticator": [
-        "Vgrajen modul za preverjanje pristnosti 2FA"
-      ],
       "Online document editor": [
         "Spletni urejevalnik dokumentov"
       ],
@@ -1700,17 +1694,8 @@
       "Secure file storage & sharing": [
         "Varna shramba in skupna raba datotek"
       ],
-      "Secure vault and link sharing": [
-        "Varna skupna raba trezorjev in povezav"
-      ],
       "Unlimited folders, labels and filters": [
         "Neomejeno število map, oznak in filtrov"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neomejeno število vzdevkov hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Neomejeno število prijav, zapiskov, plačilnih kartic"
       ],
       "Use your own email domain": [
         "Uporabite svojo e-poštno domeno"
@@ -4783,6 +4768,11 @@
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Neomejeno število vzdevkov hide-my-email"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
@@ -6511,9 +6501,6 @@
       "Initializing…": [
         "Zagon …"
       ],
-      "Insert image": [
-        "Vstavi sliko"
-      ],
       "Insert link": [
         "Vstavi povezavo"
       ],
@@ -7002,9 +6989,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Konec naročnine: znova aktivirajte do ${ byDate }, da obdržite ugodnosti ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Preklopite na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Začasno ni na voljo. Poskusite znova pozneje."
@@ -9270,12 +9254,6 @@
       "${ size } storage": [
         "${ size } shrambe"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } – Za ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } – Za vse storitve ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB varnega prostora za shranjevanje"
       ],
@@ -9432,9 +9410,6 @@
       "HTML signatures": [
         "HTML podpisi"
       ],
-      "Integrated 2FA authenticator": [
-        "Vgrajen modul za preverjanje pristnosti 2FA"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/vedno vključen VPN"
       ],
@@ -9545,9 +9520,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Neomejeno število map, oznak in filtrov"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neomejeno število vzdevkov hide-my-email"
       ],
       "Unlimited labels": [
         "Neomejeno število oznak"
@@ -13134,11 +13106,6 @@
         "Danes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Samodejno pomeni, da se za pošiljanje temu uporabniku uporablja oblika iz privzete nastavitve. Navadno besedilo pomeni, da se sporočilo ob pošiljanju vedno pretvori v navadno besedilo."
@@ -13217,6 +13184,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Za pošiljanje od konca do konca šifriranih sporočil na ta naslov naložite javni ključ"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
       ]
     },
     "Tor out of date": {
