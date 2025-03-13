@@ -26,6 +26,7 @@ import {
     VPNEvents,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import AccessControl from '@proton/components/containers/organization/accessControl/AccessControl';
 import OrganizationScribeSection from '@proton/components/containers/organization/scribe/OrganizationScribeSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -60,6 +61,7 @@ const OrganizationSettingsRouter = ({
             connectionEvents,
             groups,
             scribe,
+            accessControl,
             videoConf,
             sharedServers,
         },
@@ -160,6 +162,13 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, connectionEvents)}>
                     <PrivateMainSettingsArea config={connectionEvents}>
                         <VPNEvents />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(accessControl) && (
+                <Route path={getSectionPath(path, accessControl)}>
+                    <PrivateMainSettingsArea config={accessControl}>
+                        <AccessControl />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

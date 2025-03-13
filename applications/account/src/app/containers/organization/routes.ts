@@ -33,6 +33,7 @@ interface Props {
     isScribeEnabled?: boolean;
     isZoomIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
+    isAccessControlEnabled: boolean;
 }
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
@@ -49,6 +50,7 @@ export const getOrganizationAppRoutes = ({
     isScribeEnabled,
     isZoomIntegrationEnabled,
     isSharedServerFeatureEnabled,
+    isAccessControlEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -107,6 +109,8 @@ export const getOrganizationAppRoutes = ({
         (hasActiveOrganizationKey || (isPartOfFamily && hasOrganization)) &&
         user.hasPaidMail &&
         videoConferenceValidApplications.has(app);
+
+    const canShowAccessControl = isAccessControlEnabled && (hasSubUsers || hasOrganization || hasOrganizationKey);
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -298,6 +302,17 @@ export const getOrganizationAppRoutes = ({
                     (planSupportsSSO(organization?.PlanName) || upsellPlanSSO(organization?.PlanName)) &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
+            },
+            accessControl: <SectionConfig>{
+                text: c('Title').t`Access control`,
+                to: '/access-control',
+                icon: 'sliders',
+                available: canShowAccessControl,
+                subsections: [
+                    {
+                        id: 'application-access',
+                    },
+                ],
             },
             videoConf: <SectionConfig>{
                 text: c('Title').t`Video conferencing`,

@@ -1,3 +1,4 @@
+import type { OrganizationSettings } from '../interfaces/Organization';
 import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '../keys/organizationKeyDto';
 
 export const getOrganization = () => ({
@@ -42,18 +43,15 @@ export const deleteOrganizationLogo = () => ({
     method: 'delete',
 });
 
-export const updateOrganizationSettings = ({
-    ShowName,
-    ShowScribeWritingAssistant,
-    VideoConferencingEnabled,
-}: {
+export const updateOrganizationSettings = (data: {
     ShowName?: boolean;
     ShowScribeWritingAssistant?: boolean;
     VideoConferencingEnabled?: boolean;
+    AllowedProducts?: OrganizationSettings['AllowedProducts'];
 }) => ({
     url: 'core/v4/organizations/settings',
     method: 'put',
-    data: { ShowName, ShowScribeWritingAssistant, VideoConferencingEnabled },
+    data,
 });
 
 export const getOrganizationSettings = () => ({

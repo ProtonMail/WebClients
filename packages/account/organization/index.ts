@@ -12,12 +12,12 @@ import {
     previousSelector,
 } from '@proton/redux-utilities';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getOrganization, getOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { Organization, OrganizationSettings, OrganizationWithSettings, User } from '@proton/shared/lib/interfaces';
+import type { OrganizationWithSettings, User } from '@proton/shared/lib/interfaces';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces';
+import { getOrganizationWithSettings } from '@proton/shared/lib/organization/api';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
@@ -144,39 +144,10 @@ const modelThunk = (options?: {
             }
 
             try {
-                const defaultSettings = {
-                    ShowName: false,
-                    LogoID: null,
-                    ShowScribeWritingAssistant: true,
-                    VideoConferencingEnabled: false,
-                };
-
-                const [Organization, OrganizationSettings] = await Promise.all([
-                    extraArgument
-                        .api<{
-                            Organization: Organization;
-                        }>(getOrganization())
-                        .then(({ Organization }) => Organization),
-                    extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE
-                        ? defaultSettings
-                        : extraArgument
-                              .api<OrganizationSettings>(getOrganizationSettings())
-                              .then(({ ShowName, LogoID, ShowScribeWritingAssistant, VideoConferencingEnabled }) => ({
-                                  ShowName,
-                                  LogoID,
-                                  ShowScribeWritingAssistant,
-                                  VideoConferencingEnabled,
-                              }))
-                              .catch(() => {
-                                  return defaultSettings;
-                              }),
-                ]);
-
-                const value = {
-                    ...Organization,
-                    Settings: OrganizationSettings,
-                };
-
+                const value = await getOrganizationWithSettings({
+                    api: extraArgument.api,
+                    defaultSettings: extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE,
+                });
                 return {
                     value: value,
                     type: ValueType.complete,

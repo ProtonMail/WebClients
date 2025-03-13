@@ -14,7 +14,6 @@ import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { User } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
-import isTruthy from '@proton/utils/isTruthy';
 
 interface App {
     name: APP_NAMES;
@@ -25,14 +24,12 @@ interface App {
 
 export const getExploreApps = ({
     subscribed,
-    user,
-    isLumoAvailable,
+    ...options
 }: {
     subscribed?: User['Subscribed'];
-    user: User | undefined;
-    isLumoAvailable: boolean;
-}) => {
-    const availableApps = getAvailableApps({ user, context: 'dropdown', isLumoAvailable });
+} & Omit<Parameters<typeof getAvailableApps>[0], 'context'>) => {
+    const user = options.user;
+    const availableApps = getAvailableApps({ ...options, context: 'dropdown' });
     return [
         {
             name: APPS.PROTONMAIL,
@@ -77,13 +74,12 @@ export const getExploreApps = ({
                 return c('wallet_signup_2024:app-switcher').t`A safer way to hold Bitcoin`;
             },
         },
-        isLumoAvailable && {
+        {
             name: APPS.PROTONLUMO,
             bit: PRODUCT_BIT.LUMO,
             description: () => '',
         },
     ]
-        .filter(isTruthy)
         .sort((a, b) => {
             if (
                 (hasBit(subscribed, a.bit) && !hasBit(subscribed, b.bit)) ||

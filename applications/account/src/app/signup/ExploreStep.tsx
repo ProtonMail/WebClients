@@ -7,7 +7,7 @@ import metrics from '@proton/metrics';
 import { type PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { OrganizationWithSettings, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
 import Content from '../public/Content';
@@ -19,13 +19,15 @@ import { getSignupApplication } from './helper';
 interface Props {
     onExplore: (app: APP_NAMES) => Promise<void>;
     user?: User;
+    organization?: OrganizationWithSettings;
     plan?: PLANS;
 }
 
-const ExploreStep = ({ onExplore, user, plan }: Props) => {
+const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
     const { APP_NAME } = useConfig();
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
+    const isAccessControlEnabled = useFlag('AccessControl');
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -42,7 +44,7 @@ const ExploreStep = ({ onExplore, user, plan }: Props) => {
             <Content>
                 <ExploreAppsList
                     subscription={{ subscribed, plan }}
-                    apps={getExploreApps({ subscribed, user, isLumoAvailable })}
+                    apps={getExploreApps({ subscribed, user, organization, isLumoAvailable, isAccessControlEnabled })}
                     onExplore={onExplore}
                 />
             </Content>
