@@ -1953,6 +1953,9 @@
       "Please consider leaving a review.": [
         "Luați în considerare scrierea unei recenzii."
       ],
+      "Please contact your administrator": [
+        "Vă rugăm să vă contactați administratorul."
+      ],
       "Please do not close this window": [
         "Nu închideți această fereastră."
       ],
@@ -2378,6 +2381,11 @@
         "${ config.options.wordCount } cuvinte",
         "${ config.options.wordCount } de cuvinte"
       ],
+      "${ count } item": [
+        "${ count } articol",
+        "${ count } articole",
+        "${ count } de articole"
+      ],
       "${ days } day": [
         "${ days } zi",
         "${ days } zile",
@@ -2406,7 +2414,7 @@
         "${ months } luni",
         "${ months } de luni"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
+      "${ PASS_SHORT_APP_NAME } Monitor": [
         "Monitorizare ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
@@ -3000,6 +3008,9 @@
       ],
       "Save passkeys": [
         "Salvare chei de acces"
+      ],
+      "Secure links": [
+        "Legături web securizate"
       ],
       "Security": [
         "Securitate"
@@ -3868,6 +3879,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Care este diferența dintre o notiță din ${ PASS_SHORT_APP_NAME } și o notiță din SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "Nu aveți seifuri"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Abonamentul pentru ${ planName } se va încheia ${ endDate }"
       ],
@@ -4158,6 +4172,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Nu veți mai avea acces la acest seif. Pentru a vă realătura, veți avea nevoie de o nouă invitație."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Administratorul trebuie să vă creeze un seif înainte să puteți crea articole."
+      ],
+      "Your organization does not allow creating a vault": [
+        "Organizația nu permite crearea unui seif."
       ],
       "Your organization does not allow sharing individual items": [
         "Organizația nu vă permite partajarea individuală a articolelor"
