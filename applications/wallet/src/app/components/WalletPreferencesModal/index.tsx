@@ -2,7 +2,7 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalOwnProps} from '@proton/components';
+import type { ModalOwnProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import {
     Collapsible,
@@ -112,6 +112,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
                                 return (
                                     <div key={index}>
                                         <AccountPreferences
+                                            index={index}
                                             key={walletAccount.ID}
                                             wallet={wallet}
                                             walletAccount={walletAccount}
