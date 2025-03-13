@@ -49,6 +49,9 @@
       "Add address or domain": [
         "Ajouter une adresse ou un domaine"
       ],
+      "Add another account": [
+        "Ajouter un autre compte"
+      ],
       "Add credit / debit card": [
         "Ajouter une carte de paiement"
       ],
@@ -394,6 +397,12 @@
       "Help": [
         "Aide"
       ],
+      "Help and feedback": [
+        "Aide et commentaires"
+      ],
+      "Help and resources": [
+        "Aide et ressources"
+      ],
       "Hide": [
         "Masquer"
       ],
@@ -498,6 +507,9 @@
       ],
       "Previous page": [
         "Page précédente"
+      ],
+      "Publish changes": [
+        "Publier les modifications"
       ],
       "Recover data": [
         "Récupérer les données"
@@ -1072,9 +1084,6 @@
       "High speed streaming": [
         "Streaming ultra rapide"
       ],
-      "Integrated 2FA authenticator": [
-        "Authentification à deux facteurs (A2F) intégrée"
-      ],
       "One-time payment, lifetime deal": [
         "Paiement unique, offre à vie"
       ],
@@ -1093,17 +1102,11 @@
       "Secure file storage & sharing": [
         "Stockage de fichiers sécurisé et partage de liens"
       ],
-      "Secure vault and link sharing": [
-        "Coffre-fort sécurisé et partage de liens"
-      ],
       "Unlimited folders, labels and filters": [
         "Nombre illimité de dossiers, labels et filtres"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nombre illimité de connexions, de notes et de cartes de paiement"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Connexions, cartes de crédit, alias « hide-my-email » illimités et plus encore"
       ],
       "Use your own email domain": [
         "Utilisez vos propres domaines de messagerie"
@@ -1176,8 +1179,14 @@
       "Annually": [
         "Annuel"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Mensuel"
+      ],
+      "New!": [
+        "Nouveau"
       ],
       "Two-year": [
         "Tous les deux ans"
@@ -2346,6 +2355,31 @@
         "En savoir plus"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Pour tous les services ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Pour ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Pour ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Pour ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Pour ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mois"
@@ -2740,6 +2774,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Une erreur s'est produite lors de la connexion à l'API Bitcoin."
+      ],
+      "Error publishing changes.": [
+        "Une erreur est survenue lors de la publication des modifications."
       ],
       "Failed to process the logo": [
         "Le traitement du logo n'a pas abouti."
@@ -3362,6 +3399,9 @@
       ],
       "Torrenting support (P2P)": [
         "Prise en charge des torrents (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
       ]
     },
     "Features": {
@@ -3379,9 +3419,6 @@
       ],
       "Secure streaming": [
         "Streaming sécurisé"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Sélection depuis ${ vpnServers.paid.countries } pays"
       ]
     },
     "Features: Tooltip": {
@@ -3864,7 +3901,8 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } arrive à expiration dans ${ daysLeft } jour.",
         "${ planName } arrive à expiration dans ${ daysLeft } jours."
       ],
       "${ planName } expires today.": [
@@ -4184,6 +4222,9 @@
       "Create your first Gateway": [
         "Créez votre première Passerelle"
       ],
+      "Created (not published)": [
+        "Créé (non publié)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Création d'un serveur de passerelle : ${ serverNumber } sur ${ total }",
         "Création de serveurs de passerelle : ${ serverNumber } sur ${ total }"
@@ -4226,6 +4267,9 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Supprimez les autres enregistrements MX ou assurez-vous que la priorité de ${ MAIL_APP_NAME } est le nombre le plus bas."
+      ],
+      "Deleted (not published)": [
+        "Supprimé (non publié)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Suppression de ${ deletedServerCount } serveur de Passerelle",
@@ -4315,6 +4359,9 @@
       ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
+      ],
+      "Edited (not published)": [
+        "Édité (non publié)"
       ],
       "eduGAIN configuration saved": [
         "La configuration EduGain a été enregistrée."
@@ -4792,6 +4839,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organisez vos serveurs dédiés en Passerelles et décidez des membres y ayant accès."
       ],
+      "Other accounts": [
+        "Autres comptes"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Il y a d'autres administrateurs dans votre organisation, vous devez leur communiquer le nouveau mot de passe."
       ],
@@ -5091,9 +5141,6 @@
       "Swiss based": [
         "Basé en Suisse"
       ],
-      "Switch to": [
-        "Basculer vers"
-      ],
       "Symbols (#$&)": [
         "Symboles (#$&)"
       ],
@@ -5294,6 +5341,9 @@
       ],
       "Unable to check gateways monitoring current status.": [
         "L'état actuel de la surveillance des passerelles ne peut actuellement pas être vérifié."
+      ],
+      "Unchanged": [
+        "Non modifié"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Il n'y a malheureusement pas de méthode de récupération enregistrée pour ce compte."
@@ -5587,6 +5637,9 @@
       ],
       "You have no transactions.": [
         "Vous n'avez aucune transaction."
+      ],
+      "You have unpublished changes": [
+        "Vous avez des modifications non publiées."
       ],
       "You may be redirected to your bank’s website.": [
         "Vous serez peut-être redirigé vers le site internet de votre banque."
@@ -6111,6 +6164,9 @@
       ],
       "IBAN": [
         "IBAN"
+      ],
+      "Integrated 2FA authenticator": [
+        "Authentification à deux facteurs (A2F) intégrée"
       ],
       "Interval": [
         "Intervalle"
@@ -6660,6 +6716,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Module complémentaire avec essai gratuit"
+      ],
       "for ${ price }": [
         "pour ${ price }"
       ],
@@ -6971,11 +7030,8 @@
       "${ size } storage": [
         "${ size } d'espace de stockage"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Pour ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pour tous les services ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "${ size } d'espace de stockage par utilisateur"
       ],
       "1 TB secure storage": [
         "1 To d'espace de stockage sécurisé"
@@ -7167,14 +7223,14 @@
       "HTML signatures": [
         "Signatures HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Authentification à deux facteurs (A2F) intégrée"
-      ],
       "Kill switch/always-on VPN": [
         "Arrêt d'urgence (kill switch)/VPN permanent"
       ],
       "Limited support": [
         "Support limité"
+      ],
+      "Manage user permissions and access": [
+        "Gestion des autorisations et accès des utilisateurs"
       ],
       "Multiple admin roles": [
         "Plusieurs rôles d'administrateur"
@@ -7196,6 +7252,9 @@
       ],
       "Password manager": [
         "Gestionnaire de mots de passe"
+      ],
+      "Password manager to secure credentials": [
+        "Gestionnaire de mots de passe pour sécuriser vos identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -7314,9 +7373,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Nombre illimité de dossiers, de labels et de filtres"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
       ],
       "Unlimited labels": [
         "Nombre illimité de labels"
@@ -7471,6 +7527,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Notre abonnement ${ visionary } n'est plus disponible pour les nouveaux abonnés, il s'agit d'un abonnement spécial destiné aux utilisateurs ${ BRAND_NAME } initiaux offrant des caractéristiques et des avantages particuliers."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Payez une fois et sécurisez vos mots de passe et votre identité pour toujours."
       ],
       "Popular": [
         "Populaire"
@@ -8248,11 +8307,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Coffre-fort sécurisé et partage de liens"
-      ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
+      ],
+      "Secure vault, item and link sharing": [
+        "Partage de coffre-forts, éléments et liens sécurisés"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Nombre illimité de connexions, de notes et de cartes de paiement et plus encore"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9929,6 +9991,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN haut débit sur ${ maxVpn } appareil",
         "VPN haut débit sur ${ maxVpn } appareils"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Connexion VPN pour ${ n } appareil par utilisateur",
+        "Connexion VPN pour ${ n } appareils par utilisateur"
       ]
     },
     "Subscription change warning": {
@@ -10362,6 +10428,9 @@
       ],
       "Catch-all address updated": [
         "L'adresse catch-all a été mise à jour."
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Les modifications ont été publiées. Vos modifications seront visibles par tous les utilisateurs dans les prochaines heures."
       ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
@@ -11085,6 +11154,9 @@
       ],
       "Groups": [
         "Groupes"
+      ],
+      "Help and feedback": [
+        "Aide et commentaires"
       ],
       "Help center": [
         "Aide & Support"
@@ -12067,6 +12139,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Sélection automatique depuis ${ numberOfCountries } pays",
         "Sélection automatique depuis ${ numberOfCountries } pays"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Serveurs dans plus de ${ numberOfCountries } pays",
+        "Serveurs dans plus de ${ numberOfCountries } pays"
       ]
     },
     "vpn_2024: renew": {
