@@ -33,10 +33,11 @@ export const globalReset = (state: Draft<ElementsState>) => {
 };
 
 export const reset = (state: Draft<ElementsState>, action: PayloadAction<NewStateParams>) => {
+    const { total, ...payload } = action.payload;
     Object.assign(
-        state,
         newElementsState({
-            ...action.payload,
+            total: total !== undefined ? total : state.total,
+            ...payload,
             taskRunning: { labelIDs: state.taskRunning.labelIDs, timeoutID: state.taskRunning.timeoutID },
         })
     );
@@ -381,9 +382,16 @@ export const expireElementsRejected = (
     });
 };
 
-export const setParams = (state: Draft<ElementsState>, action: PayloadAction<Partial<ElementsStateParams>>) => {
+export const setParams = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<Partial<ElementsStateParams> & { total?: number }>
+) => {
+    const { total, ...params } = action.payload;
     state.params = {
         ...state.params,
-        ...action.payload,
+        ...params,
     };
+    if (total !== undefined) {
+        state.total = total;
+    }
 };

@@ -17,7 +17,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import { extractSearchParameters, filterFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
+import { extractSearchParameters, filterFromUrl, filterToString, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -193,6 +193,11 @@ export const useElements: UseElements = ({
             // Reset the cache when sort changes to ensure correct ordering
             !isDeepEqual(sort, stateParams.sort);
 
+        // If we can update the total directly on params update, do it.
+        // In some cases we cannot predict the total, for example when applying the has file filter
+        const locationTotal = !filterToString(filter)
+            ? countValues.find((label) => label.LabelID === labelID)?.Total
+            : undefined;
         if (shouldResetElementsState) {
             dispatch(
                 reset({
@@ -208,6 +213,7 @@ export const useElements: UseElements = ({
                         conversationMode,
                         isSearching,
                     },
+                    total: locationTotal,
                 })
             );
         } else {
@@ -221,6 +227,7 @@ export const useElements: UseElements = ({
                     search,
                     conversationMode,
                     isSearching,
+                    total: locationTotal,
                 })
             );
         }
