@@ -56,6 +56,9 @@
       "Add address": [
         "Ajouter une adresse"
       ],
+      "Add another account": [
+        "Ajouter un autre compte"
+      ],
       "Add birthday": [
         "Ajouter une date de naissance"
       ],
@@ -346,6 +349,12 @@
       ],
       "Help": [
         "Aide"
+      ],
+      "Help and feedback": [
+        "Aide et commentaires"
+      ],
+      "Help and resources": [
+        "Aide et ressources"
       ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
@@ -1052,9 +1061,6 @@
       "High speed streaming": [
         "Streaming ultra rapide"
       ],
-      "Integrated 2FA authenticator": [
-        "Authentification à deux facteurs (A2F) intégrée"
-      ],
       "One-time payment, lifetime deal": [
         "Paiement unique, offre à vie"
       ],
@@ -1073,17 +1079,11 @@
       "Secure file storage & sharing": [
         "Stockage de fichiers sécurisé et partage de liens"
       ],
-      "Secure vault and link sharing": [
-        "Coffre-fort sécurisé et partage de liens"
-      ],
       "Unlimited folders, labels and filters": [
         "Nombre illimité de dossiers, labels et filtres"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nombre illimité de connexions, de notes et de cartes de paiement"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Connexions, cartes de crédit, alias « hide-my-email » illimités et plus encore"
       ],
       "Use your own email domain": [
         "Utilisez vos propres domaines de messagerie"
@@ -1147,8 +1147,14 @@
       "Annually": [
         "Annuel"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Mensuel"
+      ],
+      "New!": [
+        "Nouveau"
       ],
       "Two-year": [
         "Tous les deux ans"
@@ -2545,6 +2551,31 @@
         "événements"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Pour tous les services ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Pour ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Pour ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Pour ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Pour ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mois"
@@ -3872,6 +3903,11 @@
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Veuillez réessayer."
@@ -4969,6 +5005,9 @@
       "Organization size": [
         "Taille de l’organisation"
       ],
+      "Other accounts": [
+        "Autres comptes"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Les autres utilisateurs de votre organisation verront vos créneaux horaires occupés. Aucune information sur les événements n'est partagée."
       ],
@@ -5112,9 +5151,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Basculer vers"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -5883,6 +5919,9 @@
       "Import to:": [
         "Importer dans :"
       ],
+      "Integrated 2FA authenticator": [
+        "Authentification à deux facteurs (A2F) intégrée"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Raccourci clavier : ${ shortcut }"
       ],
@@ -6325,6 +6364,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Module complémentaire avec essai gratuit"
+      ],
       "for ${ price }": [
         "pour ${ price }"
       ]
@@ -6741,11 +6783,8 @@
       "${ size } storage": [
         "${ size } d'espace de stockage"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Pour ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pour tous les services ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "${ size } d'espace de stockage par utilisateur"
       ],
       "1 TB secure storage": [
         "1 To d'espace de stockage sécurisé"
@@ -6919,14 +6958,14 @@
       "HTML signatures": [
         "Signatures HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Authentification à deux facteurs (A2F) intégrée"
-      ],
       "Kill switch/always-on VPN": [
         "Arrêt d'urgence (kill switch)/VPN permanent"
       ],
       "Limited support": [
         "Support limité"
+      ],
+      "Manage user permissions and access": [
+        "Gestion des autorisations et accès des utilisateurs"
       ],
       "Multiple admin roles": [
         "Plusieurs rôles d'administrateur"
@@ -6945,6 +6984,9 @@
       ],
       "Password manager": [
         "Gestionnaire de mots de passe"
+      ],
+      "Password manager to secure credentials": [
+        "Gestionnaire de mots de passe pour sécuriser vos identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -7053,9 +7095,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Nombre illimité de dossiers, de labels et de filtres"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
       ],
       "Unlimited labels": [
         "Nombre illimité de labels"
@@ -7193,6 +7232,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Notre abonnement ${ visionary } n'est plus disponible pour les nouveaux abonnés, il s'agit d'un abonnement spécial destiné aux utilisateurs ${ BRAND_NAME } initiaux offrant des caractéristiques et des avantages particuliers."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Payez une fois et sécurisez vos mots de passe et votre identité pour toujours."
       ],
       "Popular": [
         "Populaire"
@@ -7940,11 +7982,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Coffre-fort sécurisé et partage de liens"
-      ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
+      ],
+      "Secure vault, item and link sharing": [
+        "Partage de coffre-forts, éléments et liens sécurisés"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Nombre illimité de connexions, de notes et de cartes de paiement et plus encore"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9050,6 +9095,10 @@
       "${ n } VPN connection per user": [
         "${ n } connexion VPN par utilisateur",
         "${ n } connexions VPN par utilisateur"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Connexion VPN pour ${ n } appareil par utilisateur",
+        "Connexion VPN pour ${ n } appareils par utilisateur"
       ]
     },
     "Subscription change warning": {
@@ -10005,6 +10054,9 @@
       "Groups": [
         "Groupes"
       ],
+      "Help and feedback": [
+        "Aide et commentaires"
+      ],
       "Help center": [
         "Aide & Support"
       ],
@@ -10555,6 +10607,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Sélection automatique depuis ${ numberOfCountries } pays",
         "Sélection automatique depuis ${ numberOfCountries } pays"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Serveurs dans plus de ${ numberOfCountries } pays",
+        "Serveurs dans plus de ${ numberOfCountries } pays"
       ]
     },
     "vpn_2024: renew": {

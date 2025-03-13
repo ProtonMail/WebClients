@@ -56,6 +56,9 @@
       "Add address": [
         "Adres ekle"
       ],
+      "Add another account": [
+        "Başka bir hesap ekle"
+      ],
       "Add birthday": [
         "Doğum günü ekle"
       ],
@@ -346,6 +349,12 @@
       ],
       "Help": [
         "Yardım"
+      ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
+      "Help and resources": [
+        "Yardım ve kaynaklar"
       ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
@@ -1052,9 +1061,6 @@
       "High speed streaming": [
         "Yüksek hızda yayın akışı izleme"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
-      ],
       "One-time payment, lifetime deal": [
         "Bir kez ödemeli ömür boyu kullanım fırsatı"
       ],
@@ -1073,17 +1079,11 @@
       "Secure file storage & sharing": [
         "Güvenli dosya depolama alanı ve paylaşımı"
       ],
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı paylaşımı"
-      ],
       "Unlimited folders, labels and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adları"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Sınırsız sayıda oturum açma, not ve kredi kartı kaydı"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Sınırsız sayıda oturum açma, kredi kartı, hide-my-email takma adları ve diğer kayıtlar"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
@@ -1147,8 +1147,14 @@
       "Annually": [
         "Yıllık"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Aylık"
+      ],
+      "New!": [
+        "Yeni!"
       ],
       "Two-year": [
         "Iki yıllık"
@@ -2545,6 +2551,31 @@
         "etkinlik"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetleri için"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } için"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ay"
@@ -2755,7 +2786,7 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        "Etkinlik, kullanım dışı bırakılmış bir takvimde bulunuyor."
+        "Etkinlik, kullanımdan kaldırılmış bir takvimde bulunuyor."
       ]
     },
     "Don't ask to update timezone checkbox label": {
@@ -3071,7 +3102,7 @@
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Email address disabled": [
-        "E-posta adresi kullanım dışı"
+        "E-posta adresi kullanımdan kaldırılmış"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -3870,6 +3901,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
       ]
     },
     "fido2: Error": {
@@ -4969,6 +5005,9 @@
       "Organization size": [
         "Kuruluş boyutu"
       ],
+      "Other accounts": [
+        "Diğer hesaplar"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Kuruluşunuzdaki diğer kullanıcılar meşgul zamanlarınızı görecek. Etkinlik bilgileri paylaşılmaz."
       ],
@@ -5113,9 +5152,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Şuna geç"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
@@ -5156,7 +5192,7 @@
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
+        "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Bu etkinlik düzenleyici tarafından güncellendi. Yanıtınızı yalnızca bu dizideki bu etkinlik için değiştirmek ister misiniz?"
@@ -5440,10 +5476,10 @@
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Adresiniz kullanım dışı bırakılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu dizideki tüm etkinlikleri silmek ister misiniz?"
+        "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu dizideki tüm etkinlikleri silmek ister misiniz?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Adresiniz kullanım dışı bırakılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
+        "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
@@ -5879,6 +5915,9 @@
       ],
       "Import to:": [
         "Şunun içine aktar:"
+      ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı kimlik doğrulayıcı"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
@@ -6744,12 +6783,6 @@
       "${ size } storage per user": [
         "Her kullanıcı için ${ size } depolama alanı"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME } için"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
-      ],
       "1 TB secure storage": [
         "1 TB güvenli depolama alanı"
       ],
@@ -6922,9 +6955,6 @@
       "HTML signatures": [
         "HTML imzalar"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik iki adımlı kimlik doğrulayıcı"
-      ],
       "Kill switch/always-on VPN": [
         "Bağlantı kesici / Hep açık VPN"
       ],
@@ -7063,9 +7093,6 @@
       "Unlimited folders, labels, and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
@@ -7202,6 +7229,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bir kez ödeyin, parolalarınızı ve kimliğinizi sonsuza kadar koruyun."
       ],
       "Popular": [
         "Beğenilen"
@@ -7949,11 +7979,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı ile paylaşım"
-      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault, item and link sharing": [
+        "Güvenli kasa, öge ve bağlantı paylaşımı"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Sınırsız sayıda oturum açma, not, kredi kartı ve diğer kayıtlar"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10018,6 +10051,9 @@
       "Groups": [
         "Gruplar"
       ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
       "Help center": [
         "Yardım merkezi"
       ],
@@ -10568,6 +10604,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } ülke arasından otomatik seçilir",
         "${ numberOfCountries } ülke arasından otomatik seçilir"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkede sunucular",
+        "${ numberOfCountries } üzerinde ülkede sunucular"
       ]
     },
     "vpn_2024: renew": {
@@ -10742,7 +10782,7 @@
         "Bu paylaşılan takvime erişebilmek için bu adresi kullanıma alın ya da ${ boldCalendarOwnerEmail } ile görüşerek bir adrese yeni bir davet göndermesini isteyin."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "Davet edildiğiniz e-posta adresi (${ boldInvitedAddress }) kullanım dışı bırakılmış olduğundan bu takvime katılamazsınız."
+        "Davet edildiğiniz e-posta adresi (${ boldInvitedAddress }) kullanımdan kaldırılmış olduğundan bu takvime katılamazsınız."
       ]
     },
     "Weekly recurring event, frequency": {
