@@ -7,7 +7,7 @@ import { c } from 'ttag'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { useEffect, useRef } from 'react'
-import PasswordPage from '../../../Apps/Public/PasswordPage/PasswordPage'
+import { PasswordPage } from './PasswordPage'
 import { UnAuthenticated } from '@proton/components'
 import { PublicCompatProvider } from '@proton/drive-store/lib/usePublicDriveCompat'
 

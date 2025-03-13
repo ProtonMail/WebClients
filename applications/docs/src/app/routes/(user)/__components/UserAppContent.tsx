@@ -5,14 +5,14 @@ import { useApi, useAuthentication, useConfig } from '@proton/components'
 import { Application } from '@proton/docs-core'
 import { useDriveCompat } from '@proton/drive-store'
 
-import { useLandingPageFeatureFlag } from '../../../Components/Homepage/useLandingPageFeatureFlag'
+import { useLandingPageFeatureFlag } from '../../../components/Homepage/useLandingPageFeatureFlag'
 import { APP_VERSION } from '../../../config'
 import ApplicationProvider from '../../../Containers/ApplicationProvider'
 import { useUnleashClient } from '@proton/unleash'
 import { DocsNotificationsProvider } from '../../../Containers/DocsNotificationsProvider'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
-const HomepageRoute = lazy(() => import('../../../Components/Homepage/HomepageRoute'))
+const HomepageRoute = lazy(() => import('../../../components/Homepage/HomepageRoute'))
 const UserDocumentPage = lazy(() => import('../(document)/doc/page'))
 
 export function UserAppContent() {
