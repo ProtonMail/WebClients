@@ -16,11 +16,12 @@ type Props = {
     icon: IconName;
     label?: string;
     selected: boolean;
+    subLabel?: string;
     to: string;
     onAction?: () => void;
 };
 
-export const SharedMenuItem = memo(({ to, count, selected, label, icon, onAction = noop }: Props) => {
+export const SharedMenuItem = memo(({ to, count, selected, label, subLabel, icon, onAction = noop }: Props) => {
     const navigate = useNavigate();
     const onSelect = () => navigate(getLocalPath(to), { filters: getInitialFilters() });
 
@@ -30,8 +31,8 @@ export const SharedMenuItem = memo(({ to, count, selected, label, icon, onAction
             label={
                 <div>
                     <div className="text-ellipsis">{label}</div>
-                    <div className="color-weak">
-                        {c('Label').ngettext(msgid`${count} item`, `${count} items`, count)}
+                    <div className="text-ellipsis color-weak">
+                        {subLabel ? subLabel : c('Label').ngettext(msgid`${count} item`, `${count} items`, count)}
                     </div>
                 </div>
             }
