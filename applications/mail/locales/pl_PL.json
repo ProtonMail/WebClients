@@ -807,9 +807,6 @@
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
       ],
-      "More options": [
-        "Więcej opcji"
-      ],
       "More refine actions": [
         "Więcej akcji"
       ],
@@ -1113,10 +1110,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -1765,9 +1762,6 @@
       "High speed streaming": [
         "Szybki streaming"
       ],
-      "Integrated 2FA authenticator": [
-        "Zintegrowana aplikacja uwierzytelniająca 2FA"
-      ],
       "One-time payment, lifetime deal": [
         "Płatność jednorazowa, dożywotni dostęp"
       ],
@@ -1786,17 +1780,8 @@
       "Secure file storage & sharing": [
         "Bezpieczne przechowywanie i udostępnianie plików"
       ],
-      "Secure vault and link sharing": [
-        "Bezpieczne udostępnianie sejfu i linków"
-      ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nieograniczona liczba danych logowania, notatek, kart płatniczych"
       ],
       "Use your own email domain": [
         "Użyj własnej domeny e-mail"
@@ -5024,6 +5009,11 @@
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Nieograniczona liczba aliasów hide-my-email"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
@@ -6860,7 +6850,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -7428,9 +7421,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Przełącz na konto"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i bezpiecznie je przechowuj. Wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
@@ -8726,6 +8716,9 @@
       "Import to:": [
         "Importuj do:"
       ],
+      "Integrated 2FA authenticator": [
+        "Zintegrowana aplikacja uwierzytelniająca 2FA"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Skrót klawiszowy: ${ shortcut }"
       ],
@@ -9815,12 +9808,6 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } dla ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } do wszystkich usług ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB bezpiecznej przestrzeni dyskowej"
       ],
@@ -9995,9 +9982,6 @@
       "HTML signatures": [
         "Podpisy HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Zintegrowana aplikacja uwierzytelniająca"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch / stale aktywny VPN"
       ],
@@ -10129,9 +10113,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów hide-my-email"
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
@@ -11002,9 +10983,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Bezpieczne udostępnianie sejfu i linków"
-      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
       ]
@@ -14180,11 +14158,6 @@
         "Dzisiaj"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Format automatyczny wyśle do tego użytkownika wiadomość w formacie użytym w edytorze. Format zwykłego tekstu oznacza, że wiadomość przed wysłaniem zostanie przekonwertowana do zwykłego tekstu."
@@ -14266,6 +14239,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Tor out of date": {

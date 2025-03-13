@@ -51,6 +51,9 @@
       "Add address": [
         "Adăugare adresă"
       ],
+      "Add another account": [
+        "Adăugare alt cont"
+      ],
       "Add Bcc recipients": [
         "Adăugare destinatari copie ascunsă"
       ],
@@ -585,6 +588,12 @@
       "Help": [
         "Ajutor"
       ],
+      "Help and feedback": [
+        "Ajutor și feedback"
+      ],
+      "Help and resources": [
+        "Ajutor și resurse"
+      ],
       "Hide": [
         "Ascundere"
       ],
@@ -608,6 +617,9 @@
       ],
       "Hide toolbar": [
         "Ascundere bară de instrumente"
+      ],
+      "hide-my-email aliases": [
+        "aliasuri hide-my-email"
       ],
       "I like this response": [
         "Îmi place acest răspuns"
@@ -802,9 +814,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
-      ],
-      "More options": [
-        "Mai multe opțiuni"
       ],
       "More refine actions": [
         "Mai multe acțiuni de cizelare"
@@ -1109,10 +1118,10 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Selectare toate"
       ],
-      "Select All": [
+      "Select all": [
         "Selectare toate"
       ],
       "Select all messages": [
@@ -1759,9 +1768,6 @@
       "High speed streaming": [
         "Transmisii în flux de mare viteză"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentificator A2F integrat"
-      ],
       "One-time payment, lifetime deal": [
         "O singură plată, ofertă pe viață"
       ],
@@ -1780,17 +1786,11 @@
       "Secure file storage & sharing": [
         "Stocare și partajare securizată fișiere"
       ],
-      "Secure vault and link sharing": [
-        "Partajare sigură seif și legături web"
-      ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Aliasuri hide-my-email nelimitate"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Date de autentificare, note și carduri de plată nelimitate"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Date de autentificare, carduri de plată, aliasuri hide-my-email nelimitate și altele"
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
@@ -1856,8 +1856,14 @@
       "Annually": [
         "Anual"
       ],
+      "Lifetime": [
+        "Pe viață"
+      ],
       "Monthly": [
         "Lunar"
+      ],
+      "New!": [
+        "Nou!"
       ],
       "Two-year": [
         "Bianual"
@@ -3519,6 +3525,31 @@
         "Insulele Åland"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Pentru toate serviciile ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Pentru ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Pentru ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Pentru ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Pentru ${ VPN_APP_NAME }"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Atașament"
@@ -4998,6 +5029,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Aliasuri hide-my-email nelimitate"
       ]
     },
     "fido2: Error": {
@@ -6759,7 +6795,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7001,8 +7039,17 @@
       "Organization size": [
         "Mărime organizație"
       ],
+      "Other accounts": [
+        "Alte conturi"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Alertele noastre au ca prioritate siguranța. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
+      ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "Sistemul nostru a marcat acest mesaj ca suspect. Dacă nu este un mesaj înșelător sau fraudulos, marcați-l ca legitim."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
       ],
       "password": [
         "parola"
@@ -7124,6 +7171,9 @@
       ],
       "Proofread text": [
         "Corectare text"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Împiedicați divulgarea adresei de e-mail către listele de mesagerie sau indivizii răuvoitori cu ${ hideMyEmailAliasesLink }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
@@ -7324,9 +7374,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Comutare la"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronizați și gestionați mesajele cu aplicația ${ DRIVE_APP_NAME }. Creați și partajați documente în ${ DOCS_APP_NAME } și stocați-le în siguranță. Disponibile pe ${ ios }, ${ android } și ${ desktop }."
@@ -8598,6 +8645,9 @@
       "Import to:": [
         "Importare în:"
       ],
+      "Integrated 2FA authenticator": [
+        "Autentificator A2F integrat"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Combinații taste: ${ shortcut }"
       ],
@@ -9231,6 +9281,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Modul cu încercare gratuită"
+      ],
       "for ${ price }": [
         "cu ${ price }"
       ]
@@ -9662,11 +9715,8 @@
       "${ size } storage": [
         "${ size } spațiu"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Pentru ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pentru toate serviciile ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "${ size } spațiu per utilizator"
       ],
       "1 TB secure storage": [
         "1 TiB stocare securizată"
@@ -9841,14 +9891,14 @@
       "HTML signatures": [
         "Semnături HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autentificator A2F integrat"
-      ],
       "Kill switch/always-on VPN": [
         "Întrerupător de conexiune/VPN permanent"
       ],
       "Limited support": [
         "Asistență limitată"
+      ],
+      "Manage user permissions and access": [
+        "Gestionare acces și permisiuni utilizatori"
       ],
       "Multiple admin roles": [
         "Mai multe roluri de administrare"
@@ -9867,6 +9917,9 @@
       ],
       "Password manager": [
         "Manager de parole"
+      ],
+      "Password manager to secure credentials": [
+        "Manager de parole pentru securizarea datelor de autentificare"
       ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
@@ -9975,9 +10028,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliasuri nelimitate „Hide-my-email”"
       ],
       "Unlimited labels": [
         "Etichete nelimitate"
@@ -10121,6 +10171,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Planul nostru ${ visionary } nu mai este disponibil noilor abonați deoarece un plan special pentru utilizatorii originali ai ${ BRAND_NAME } cu funcții și beneficii speciale."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Plătiți o dată, vă securizați parolele și identitatea permanent."
       ],
       "Popular": [
         "Popular"
@@ -10858,11 +10911,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Partajare sigură seif și legături web"
-      ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
+      ],
+      "Secure vault, item and link sharing": [
+        "Partajare sigură seif, articole și legături web"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Date de autentificare, notițe și carduri de plată nelimitate și altele"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12258,6 +12314,11 @@
         "O conexiune VPN per utilizator",
         "${ n } conexiuni VPN per utilizator",
         "${ n } de conexiuni VPN per utilizator"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Conexiune VPN pentru ${ n } dispozitiv per utilizator",
+        "Conexiuni VPN pentru ${ n } dispozitive per utilizator",
+        "Conexiuni VPN pentru ${ n } de dispozitive per utilizator"
       ]
     },
     "Subscription change warning": {
@@ -13500,6 +13561,9 @@
       "Groups": [
         "Grupuri"
       ],
+      "Help and feedback": [
+        "Ajutor și feedback"
+      ],
       "Help center": [
         "Centru de ajutor"
       ],
@@ -13980,11 +14044,6 @@
         "Astăzi"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
@@ -14066,6 +14125,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Tor out of date": {
