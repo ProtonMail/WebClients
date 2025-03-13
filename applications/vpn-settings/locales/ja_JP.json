@@ -1067,9 +1067,6 @@
       "High speed streaming": [
         "高速ストリーミング"
       ],
-      "Integrated 2FA authenticator": [
-        "統合された 2FA 認証システム"
-      ],
       "One-time payment, lifetime deal": [
         "一度きりの支払いで、一生涯のアクセス"
       ],
@@ -1088,17 +1085,8 @@
       "Secure file storage & sharing": [
         "安全なファイルストレージと共有"
       ],
-      "Secure vault and link sharing": [
-        "安全な保管庫とリンクの共有"
-      ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無制限の hide-my-email エイリアス"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "無制限のログイン、メモ、クレジットカード"
       ],
       "Use your own email domain": [
         "独自のメールドメインを使用する"
@@ -1433,13 +1421,13 @@
         "コバルト"
       ],
       "copper": [
-        "カッパー"
+        "赤錆色"
       ],
       "enzian": [
-        "リンドウ"
+        "濃藍"
       ],
       "fern": [
-        "シダ"
+        "緑"
       ],
       "forest": [
         "フォレスト"
@@ -1454,7 +1442,7 @@
         "パシフィック"
       ],
       "pickle": [
-        "ピクルス"
+        "璃寛茶"
       ],
       "pine": [
         "パイン"
@@ -3346,6 +3334,9 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent 対応 (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無制限の Hide-my-email エイリアス"
       ]
     },
     "Features": {
@@ -3363,9 +3354,6 @@
       ],
       "Secure streaming": [
         "安全なストリーミング"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "${ vpnServers.paid.countries }ヶ国から選択"
       ]
     },
     "Features: Tooltip": {
@@ -3830,9 +3818,6 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } には少なくとも 1 つの専用サーバー ${ serverPricePerMonth } が必要です"
-      ],
-      "${ planName } expires in ${ daysLeft } days.": [
-        "${ planName } は ${ daysLeft } 日後に期限切れになります。"
       ],
       "${ planName } expires today.": [
         "${ planName } の有効期限は本日です。"
@@ -5034,9 +5019,6 @@
       "Swiss based": [
         "スイス拠点"
       ],
-      "Switch to": [
-        "切り替え"
-      ],
       "Symbols (#$&)": [
         "記号 (#$&)"
       ],
@@ -6041,6 +6023,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Integrated 2FA authenticator": [
+        "2要素認証システムの統合"
+      ],
       "Interval": [
         "間隔"
       ],
@@ -6882,12 +6867,6 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME }のための"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - 全ての${ BRAND_NAME }サービスのための"
-      ],
       "1 TB secure storage": [
         "1 TBの安全なストレージ"
       ],
@@ -7077,9 +7056,6 @@
       "HTML signatures": [
         "HTML 署名"
       ],
-      "Integrated 2FA authenticator": [
-        "統合された2要素認証機能"
-      ],
       "Kill switch/always-on VPN": [
         "キルスイッチ / 常時接続 VPN"
       ],
@@ -7223,9 +7199,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "無制限の Hide-my-email エイリアス"
       ],
       "Unlimited labels": [
         "ラベル制限なし"
@@ -8146,9 +8119,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "安全な保管庫とリンク共有"
-      ],
       "Secure vault sharing": [
         "安全な保管庫共有"
       ]
@@ -10087,7 +10057,7 @@
         "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。無料プランでは追加ユーザーがサポートされていないため、チームの作業が中断されます。"
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME }Freeにダウングレードされます。"
+        "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME } Freeにダウングレードされます。"
       ],
       "Yearly free storage bonuses": [
         "年間無料ストレージボーナス"

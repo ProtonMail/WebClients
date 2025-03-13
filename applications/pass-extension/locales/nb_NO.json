@@ -1925,6 +1925,9 @@
       "Please consider leaving a review.": [
         "Vurder å legge igjen en anmeldelse."
       ],
+      "Please contact your administrator": [
+        "Ta kontakt med din administrator"
+      ],
       "Please do not close this window": [
         "Ikke lukk dette vinduet"
       ],
@@ -2341,6 +2344,10 @@
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
       ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementer"
+      ],
       "${ days } day": [
         "${ days } dag",
         "${ days } dager"
@@ -2364,7 +2371,7 @@
         "${ months } måned",
         "${ months } måneder"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
+      "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
@@ -2956,6 +2963,9 @@
       ],
       "Save passkeys": [
         "Lagre tilgangsnøkler"
+      ],
+      "Secure links": [
+        "Sikre koblinger"
       ],
       "Security": [
         "Sikkerhet"
@@ -3816,6 +3826,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Hva er foskjellen mellom ${ PASS_SHORT_APP_NAME }-notat og SimpleLogin-notat?"
       ],
+      "You don't have any vault": [
+        "Du har ikke noe hvelv"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName }-abonnementet avsluttes den ${ endDate }"
       ],
@@ -4102,6 +4115,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke lenger ha tilgang til dette hvelvet. For å bli med i det igjen, trenger du en ny invitasjon."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Administratoren må opprette et hvelv for deg før du kan opprette elementer"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Organisasjonen tillater ikke oppretting av hvelv"
       ],
       "Your organization does not allow sharing individual items": [
         "Organisasjonen tillater ikke deling av enkeltelementer"

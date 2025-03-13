@@ -1925,6 +1925,9 @@
       "Please consider leaving a review.": [
         "Παρακαλούμε εξετάστε το ενδεχόμενο να αφήσετε μια κριτική."
       ],
+      "Please contact your administrator": [
+        "Επικοινωνήστε με τον διαχειριστή σας"
+      ],
       "Please do not close this window": [
         "Παρακαλούμε μην κλείσετε αυτό το παράθυρο"
       ],
@@ -2341,6 +2344,10 @@
         "${ config.options.wordCount } λέξη",
         "${ config.options.wordCount } λέξεις"
       ],
+      "${ count } item": [
+        "${ count } στοιχείο",
+        "${ count } στοιχεία"
+      ],
       "${ days } day": [
         "${ days } ημέρα",
         "${ days } ημέρες"
@@ -2364,8 +2371,8 @@
         "${ months } μήνα",
         "${ months } μήνες"
       ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "${ PASS_SHORT_APP_NAME } παρακολούθηση"
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "Παρακολούθηση ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } έκδοση"
@@ -2956,6 +2963,9 @@
       ],
       "Save passkeys": [
         "Αποθήκευση κλειδιών πρόσβασης"
+      ],
+      "Secure links": [
+        "Ασφαλείς σύνδεσμοι"
       ],
       "Security": [
         "Ασφάλεια"
@@ -3816,6 +3826,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Ποια είναι η διαφορά μεταξύ της σημείωσης ${ PASS_SHORT_APP_NAME } και της σημείωσης SimpleLogin;"
       ],
+      "You don't have any vault": [
+        "Δεν έχετε καμία κρύπτη"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Η ${ planName } συνδρομή σας θα λήξει στις ${ endDate }"
       ],
@@ -4102,6 +4115,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Δε θα έχετε πλέον πρόσβαση σε αυτή την κρύπτη. Για να συμμετάσχετε ξανά, θα χρειαστείτε μια νέα πρόσκληση."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Ο διαχειριστής σας πρέπει να δημιουργήσει μια κρύπτη για εσάς για να μπορέσετε να δημιουργήσετε στοιχεία"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Ο οργανισμός σας δεν επιτρέπει τη δημιουργία κρύπτης"
       ],
       "Your organization does not allow sharing individual items": [
         "Ο οργανισμός σας δεν επιτρέπει τον διαμοιρασμό μεμονωμένων στοιχείων"

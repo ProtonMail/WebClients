@@ -49,6 +49,9 @@
       "Add address or domain": [
         "დააამატეთ მისამართი ან დომენი"
       ],
+      "Add another account": [
+        "სხვა ანგარიშის დამატება"
+      ],
       "Add credit / debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათის დამატება"
       ],
@@ -394,6 +397,12 @@
       "Help": [
         "დახმარება"
       ],
+      "Help and feedback": [
+        "დახმარება და გამოხმაურება"
+      ],
+      "Help and resources": [
+        "დახმარება და რესურსები"
+      ],
       "Hide": [
         "დამალვა"
       ],
@@ -498,6 +507,9 @@
       ],
       "Previous page": [
         "წინა გვერდი"
+      ],
+      "Publish changes": [
+        "ცვლილებების გამოცემა"
       ],
       "Recover data": [
         "მონაცემების აღდგენა"
@@ -1069,9 +1081,6 @@
       "High speed streaming": [
         "ჩქაროსნული სტრიმინგი"
       ],
-      "Integrated 2FA authenticator": [
-        "ჩაშენებული 2FA ავთენტიკატორი"
-      ],
       "One-time payment, lifetime deal": [
         "ერთჯერადი გადართვა,  სამუდამო შეთანხმება"
       ],
@@ -1090,17 +1099,11 @@
       "Secure file storage & sharing": [
         "დაცული ფაილების საცავი და გაზიარება"
       ],
-      "Secure vault and link sharing": [
-        "დაცული საცავი და ბმულის გაზიარება"
-      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
       ],
-      "Unlimited hide-my-email aliases": [
-        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "უსაზღვრო შესვლის დეტალები, საკრედიტო ბარათები, hide-my-email-ის ფსევდონიმები და სხვა"
       ],
       "Use your own email domain": [
         "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
@@ -1169,8 +1172,14 @@
       "Annually": [
         "წელიწადში ერთხელ"
       ],
+      "Lifetime": [
+        "სამუდამოდ"
+      ],
       "Monthly": [
         "თვეში ერთხელ"
+      ],
+      "New!": [
+        "ახალი!"
       ],
       "Two-year": [
         "ორი წლით"
@@ -1200,6 +1209,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "ისწავლეთ, როგორ ჩართოთ ${ VPN_APP_NAME } თქვენს რაუტერზე."
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "დაიცავით თქვენი კომპანია მონაცემების გაჟონვისგან და გახადეთ დისტანციურად მუსაობა უსაფრთხო საწარმოო VPN-თან ერთად."
       ],
       "Protect your whole household with 1 device": [
         "დაიცავით მთელი ოჯახი ერთი მოწყობილობით"
@@ -2324,6 +2336,31 @@
         "გაიგეთ მეტი"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }-სთვის"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }-თვის"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-სთვის"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }-Სთვის"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/თვე"
@@ -2707,6 +2744,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin-ის API-თან მიერთების შეცდომა."
+      ],
+      "Error publishing changes.": [
+        "ცვლილებების გამოცემის შეცდომა."
       ],
       "Failed to process the logo": [
         "ლოგოს დამუშავება ჩავარდა"
@@ -3329,6 +3369,9 @@
       ],
       "Torrenting support (P2P)": [
         "ტორენტების მხარდაჭერა (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
       ]
     },
     "Features": {
@@ -3346,9 +3389,6 @@
       ],
       "Secure streaming": [
         "დაცული სტრიმინგი"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "აირჩიეთ ${ vpnServers.paid.countries } ქვეყნიდან"
       ]
     },
     "fido2: Action": {
@@ -3811,7 +3851,8 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში.",
         "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში."
       ],
       "${ planName } expires today.": [
@@ -4128,6 +4169,9 @@
       "Create your first Gateway": [
         "შექმენით თქვენი პირველი რაუტერი"
       ],
+      "Created (not published)": [
+        "შექმნილია (გამოცემული არაა)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "რაუტერი სერვერის შექმნა: ${ serverNumber } / ${ total }",
         "რაუტერი სერვერის შექმნა: ${ serverNumber } / ${ total }"
@@ -4170,6 +4214,9 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "წაშალეთ ყველა სხვა MX ჩანაწერი ან დარწმუნდით, რომ ${ MAIL_APP_NAME }-ის პრიორიტეტი ყველაზე ნაკლებია."
+      ],
+      "Deleted (not published)": [
+        "წაშლილია (გამოცემული არაა)"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } რაუტერი სერვერის წაშლა",
@@ -4259,6 +4306,9 @@
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
+      ],
+      "Edited (not published)": [
+        "ჩასწორებულია (გამოცემული არაა)"
       ],
       "eduGAIN configuration saved": [
         "eduGAIN-ის კონფიგურაცია შენახულია"
@@ -4736,6 +4786,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "დაალაგეთ თქვენი გამოყოფილი სერვერები რაუტერებში და გადაწყვიტეთ, რომელ წევრს აქვს მასთან წვდომა."
       ],
+      "Other accounts": [
+        "სხვა ანგარიშები"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "თქვენს ორგანიზაციას სხვა ადმინისტრატორებიც გყავს. თქვენ მათთვის ახალი პაროლის გადაცემაზე პასუხისმგებელი ბრძანდებით."
       ],
@@ -4762,6 +4815,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine-ის რედაქტორების არჩევნის ჯილდო 5 რეიტინგიტ 5-დან"
+      ],
+      "Pending removal": [
+        "წაშლის მოლოდინში"
       ],
       "per month": [
         "თვეში"
@@ -5032,9 +5088,6 @@
       "Swiss based": [
         "ბაზირებულია შვეიცარიაში"
       ],
-      "Switch to": [
-        "გადართვა"
-      ],
       "Symbols (#$&)": [
         "სიმბოლოები (#$&)"
       ],
@@ -5229,6 +5282,9 @@
       ],
       "Unable to check gateways monitoring current status.": [
         "კარიბჭეების მონიტორინგის მიმდინარე სტატუსის შემოწმება შეუძლებელია."
+      ],
+      "Unchanged": [
+        "უცვლელი"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "ამ ანგარიშისთვის აღდგენის მეთოდი დაყენებული არაა."
@@ -5516,6 +5572,9 @@
       ],
       "You have no transactions.": [
         "ტრანზაქციები არ გაქვთ."
+      ],
+      "You have unpublished changes": [
+        "გაქვთ გამოუქვეყნებელი ცვლილებები"
       ],
       "You may be redirected to your bank’s website.": [
         "შეიძლება, თქვენი ბანკის ვებგვერდზე გადამისამართდეთ."
@@ -6029,6 +6088,9 @@
       ],
       "IBAN": [
         "IBAN"
+      ],
+      "Integrated 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
       ],
       "Interval": [
         "შუალედი"
@@ -6578,6 +6640,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "დააატეთ წერის დამხმარე ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "დამატება უფასო გამოსაცდელი ვადით"
+      ],
       "for ${ price }": [
         "${ price }-თვის"
       ],
@@ -6889,11 +6954,8 @@
       "${ size } storage": [
         "${ size } საცავი"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME }-სთვის"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - ყველა ${ BRAND_NAME } სერვისისთვის"
+      "${ size } storage per user": [
+        "${ size }/მომხმარებელი"
       ],
       "1 TB secure storage": [
         "1 ტბ დაცული საცავი"
@@ -7085,14 +7147,14 @@
       "HTML signatures": [
         "HTML ხელმოწერები"
       ],
-      "Integrated 2FA authenticator": [
-        "ჩაშენებული 2FA ავთენტიკატორი"
-      ],
       "Kill switch/always-on VPN": [
         "ხელით გათიშვა / ყოველთვის ჩართული VPN"
       ],
       "Limited support": [
         "შეზღუდული მხარდაჭერა"
+      ],
+      "Manage user permissions and access": [
+        "მომხმარებლის წვდომებისა და უფლებების მართვა"
       ],
       "Multiple admin roles": [
         "მრავალი ადმინის როლი"
@@ -7114,6 +7176,9 @@
       ],
       "Password manager": [
         "პაროლების მმართველი"
+      ],
+      "Password manager to secure credentials": [
+        "პაროლების მმართველი ავტორიზაციის დეტალების დასაცავად"
       ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
@@ -7232,9 +7297,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "განუსაზღვრელი რაოდენობის მეტსახელი Hide My Email-სთვის"
       ],
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
@@ -7389,6 +7451,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "ჩვენი სატარიფო გეგმა ${ visionary } ახალი გამომწერებისთვის ხელმისაწვდომი აღარაა, რადგან ის სპეციალური გეგმაა ${ BRAND_NAME }-ის მომხმარებლებისთვის, სპეციალური ფუნქციებით და ბენეფიტებით."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "გადაიხადეთ ერთხელ და დაიცავით თქვენი მონაცემები და პაროლები სამუდამოდ."
       ],
       "Popular": [
         "პოპულარული"
@@ -8166,11 +8231,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "დაცული საცავი და ბმულის გაზიარება"
-      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
+      ],
+      "Secure vault, item and link sharing": [
+        "დაცული საცავის, ელემენტების და ბმულის გაზიარება"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "შეუზღუდავი შესვლის დეტალები, შენიშვნები, საკრედიტო ბარათები და სხვა"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9835,6 +9903,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "მაღალგამტარუნარიანი VPN ${ maxVpn } მოწყობილობაზე",
         "მაღალგამტარუნარიანი VPN ${ maxVpn } მოწყობილობაზე"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის",
+        "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის"
       ]
     },
     "Subscription change warning": {
@@ -10265,6 +10337,9 @@
       ],
       "Catch-all address updated": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი განახლებულია"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "ცვლილებები გამოქვეყნდა. თქვენი ცვლილებები ხილული იქნება ყველა მომხმარებლისთვის რამდენიმე საათში."
       ],
       "Code sent to ${ methodTo }": [
         "კოდი გაგზავნილია ${ methodTo }-თან"
@@ -10988,6 +11063,9 @@
       ],
       "Groups": [
         "ჯგუფები"
+      ],
+      "Help and feedback": [
+        "დახმარება და გამოხმაურება"
       ],
       "Help center": [
         "დახმარების ცენტრი"
@@ -11786,6 +11864,9 @@
       "Get more from your ${ planTitle } subscription.": [
         "მიიღეთ მეტი თქენი ${ planTitle } გამოწერისგან."
       ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "იქონიეთ თქვენი ფაილები, სურათები და დოკუმენტები დაცულად ${ maxDriveSpace } უფასო ღრუბლოვან საცავთან ერთად."
+      ],
       "Set secure passwords without the hassle.": [
         "დააყენეთ დაცული პაროლები პრობლემის გარეშე."
       ]
@@ -11823,6 +11904,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან",
         "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "სერვერები ${ numberOfCountries }+ ქვეყანაში",
+        "სერვერები ${ numberOfCountries }+ ქვეყანაში"
       ]
     },
     "vpn_2024: renew": {

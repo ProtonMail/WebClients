@@ -414,9 +414,6 @@
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
-      "More options": [
-        "Дополнительные параметры"
-      ],
       "Move to trash": [
         "Переместить в Корзину"
       ],
@@ -919,9 +916,6 @@
       "High speed streaming": [
         "Высокоскоростной стриминг"
       ],
-      "Integrated 2FA authenticator": [
-        "Интегрированная двухфакторная аутентификация"
-      ],
       "One-time payment, lifetime deal": [
         "Единовременная оплата, пожизненное предложение"
       ],
@@ -940,17 +934,8 @@
       "Secure file storage & sharing": [
         "Безопасное хранение и обмен файлами"
       ],
-      "Secure vault and link sharing": [
-        "Защищённое хранилище и обмен ссылками"
-      ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество псевдонимов hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Неограниченное количество имён пользователей, заметок и кредитных карт"
       ],
       "Use your own email domain": [
         "Используйте свой собственный домен электронной почты"
@@ -2205,11 +2190,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2285,6 +2265,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3295,6 +3280,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -4705,9 +4695,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Переключиться на"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
@@ -5416,6 +5403,9 @@
       ],
       "Include message and file name in invite email": [
         "Включите сообщение и имя файла в приглашение по электронной почте"
+      ],
+      "Integrated 2FA authenticator": [
+        "Интегрированная двухфакторная аутентификация"
       ],
       "Keep both": [
         "Оставить оба"
@@ -6253,12 +6243,6 @@
       "${ size } storage": [
         "${ size } хранилища"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } — для ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } — для всех сервисов ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 ТБ защищенного хранения"
       ],
@@ -6433,9 +6417,6 @@
       "HTML signatures": [
         "Подписи HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Встроенная двухфакторная аутентификация"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch и VPN постоянно вкл."
       ],
@@ -6567,9 +6548,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество скрытых псевдонимов для скрытия своей электронной почты"
       ],
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
@@ -7437,9 +7415,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Защищенное хранилище и обмен ссылками"
-      ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
       ]
@@ -8544,29 +8519,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Объем хранилища на пользователя: ${ planMaxSpace }"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } пользовательский домен электронной почты",
-        "${ planNumberOfDomains } пользовательских домена электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адрес электронной почты",
-        "${ planNumberOfEmails } адреса электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты"
-      ],
-      "Folders, labels, and custom filters": [
-        "Папки, ярлыки и пользовательские фильтры"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 ГБ хранилища"
@@ -8606,6 +8558,29 @@
       ],
       "Your privacy is our mission": [
         "Ваша приватность является нашей задачей"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Объем хранилища на пользователя: ${ planMaxSpace }"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "Folders, labels, and custom filters": [
+        "Папки, ярлыки и пользовательские фильтры"
       ]
     },
     "Subscription renewal state": {
@@ -9366,11 +9341,6 @@
         "Сегодня"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Добавьте этот общий файл к вашему ${ DRIVE_APP_NAME } для легкого доступа к нему в дальнейшем."
@@ -9443,6 +9413,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы отправили им приглашение получить доступ к этому элементу."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Valentine_2025": {

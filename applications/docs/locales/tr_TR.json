@@ -51,6 +51,9 @@
       "Add address": [
         "Adres ekle"
       ],
+      "Add another account": [
+        "Başka bir hesap ekle"
+      ],
       "Add birthday": [
         "Doğum günü ekle"
       ],
@@ -324,6 +327,12 @@
       "Help": [
         "Yardım"
       ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
+      "Help and resources": [
+        "Yardım ve kaynaklar"
+      ],
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
       ],
@@ -407,9 +416,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
-      ],
-      "More options": [
-        "Diğer seçenekler"
       ],
       "Move to trash": [
         "Çöpe at"
@@ -903,9 +909,6 @@
       "High speed streaming": [
         "Yüksek hızda yayın akışı izleme"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
-      ],
       "One-time payment, lifetime deal": [
         "Bir kez ödemeli ömür boyu kullanım fırsatı"
       ],
@@ -924,17 +927,11 @@
       "Secure file storage & sharing": [
         "Güvenli dosya depolama alanı ve paylaşımı"
       ],
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı paylaşımı"
-      ],
       "Unlimited folders, labels and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adları"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Sınırsız sayıda oturum açma, not ve kredi kartı kaydı"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Sınırsız sayıda oturum açma, kredi kartı, hide-my-email takma adları ve diğer kayıtlar"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
@@ -998,8 +995,14 @@
       "Annually": [
         "Yıllık"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Aylık"
+      ],
+      "New!": [
+        "Yeni!"
       ],
       "Two-year": [
         "Iki yıllık"
@@ -2156,6 +2159,31 @@
         "Aland Adaları"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetleri için"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } için"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ay"
@@ -2182,11 +2210,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Süresi geçmiş fatura"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description": {
@@ -2267,6 +2290,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3259,6 +3287,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
       ]
     },
     "fido2: Error": {
@@ -4414,6 +4447,9 @@
       "Organization size": [
         "Kuruluş boyutu"
       ],
+      "Other accounts": [
+        "Diğer hesaplar"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
       ],
@@ -4608,9 +4644,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Şuna geç"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
@@ -4654,7 +4687,7 @@
         "Bu işlem seçilmiş ögeleri kalıcı olarak silecek."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
+        "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "Bu belgede çok sayıda işlem yapılmış. Bazı özellikler geçici olarak kullanılamayabilir."
@@ -5327,6 +5360,9 @@
       ],
       "Include message and file name in invite email": [
         "Davet e-postasına bir ileti ve dosya adı eklensin"
+      ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı kimlik doğrulayıcı"
       ],
       "Keep both": [
         "İkisi de tutulsun"
@@ -6129,12 +6165,6 @@
       "${ size } storage per user": [
         "Her kullanıcı için ${ size } depolama alanı"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME } için"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
-      ],
       "1 TB secure storage": [
         "1 TB güvenli depolama alanı"
       ],
@@ -6307,9 +6337,6 @@
       "HTML signatures": [
         "HTML imzalar"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik iki adımlı kimlik doğrulayıcı"
-      ],
       "Kill switch/always-on VPN": [
         "Bağlantı kesici / Hep açık VPN"
       ],
@@ -6448,9 +6475,6 @@
       "Unlimited folders, labels, and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
-      ],
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
@@ -6587,6 +6611,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bir kez ödeyin, parolalarınızı ve kimliğinizi sonsuza kadar koruyun."
       ],
       "Popular": [
         "Beğenilen"
@@ -7280,11 +7307,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı ile paylaşım"
-      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault, item and link sharing": [
+        "Güvenli kasa, öge ve bağlantı paylaşımı"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Sınırsız sayıda oturum açma, not, kredi kartı ve diğer kayıtlar"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8340,25 +8370,6 @@
         "${ totalPrice } için"
       ]
     },
-    "Subscription reminder": {
-      "${ planMaxSpace } storage per user": [
-        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
-      ],
-      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "Folders, labels, and custom filters": [
-        "Klasörler, etiketler ve özel süzgeçler"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB depolama alanı"
@@ -8398,6 +8409,25 @@
       ],
       "Your privacy is our mission": [
         "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
+      ],
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "Folders, labels, and custom filters": [
+        "Klasörler, etiketler ve özel süzgeçler"
       ]
     },
     "Subscription renewal state": {
@@ -8886,6 +8916,9 @@
       "Groups": [
         "Gruplar"
       ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
       "Help center": [
         "Yardım merkezi"
       ],
@@ -9139,11 +9172,6 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Bu paylaşılan dosyayı daha sonra kolayca erişebilmek için ${ DRIVE_APP_NAME } depolama alanınıza ekleyin"
@@ -9219,6 +9247,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Valentine_2025": {
@@ -9399,6 +9432,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } ülke arasından otomatik seçilir",
         "${ numberOfCountries } ülke arasından otomatik seçilir"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkede sunucular",
+        "${ numberOfCountries } üzerinde ülkede sunucular"
       ]
     },
     "vpn_2024: renew": {

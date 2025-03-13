@@ -256,6 +256,12 @@
       "Color": [
         "Kolor"
       ],
+      "Compare all plans": [
+        "Porównaj wszystkie plany"
+      ],
+      "Compare plans": [
+        "Porównaj plany"
+      ],
       "Configure SAML": [
         "Skonfiguruj SAML"
       ],
@@ -543,6 +549,9 @@
       ],
       "Encrypt and export": [
         "Zaszyfruj i eksportuj"
+      ],
+      "Explore group plans": [
+        "Poznaj plany dla zespołów"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Pokaż inne plany ${ BRAND_NAME }"
@@ -861,6 +870,9 @@
       ],
       "Previous page": [
         "Poprzednia strona"
+      ],
+      "Publish changes": [
+        "Opublikuj zmiany"
       ],
       "Quit": [
         "Zakończ"
@@ -1812,9 +1824,6 @@
       "High speed streaming": [
         "Szybki streaming"
       ],
-      "Integrated 2FA authenticator": [
-        "Zintegrowana aplikacja uwierzytelniająca 2FA"
-      ],
       "One-time payment, lifetime deal": [
         "Płatność jednorazowa, dożywotni dostęp"
       ],
@@ -1833,17 +1842,8 @@
       "Secure file storage & sharing": [
         "Bezpieczne przechowywanie i udostępnianie plików"
       ],
-      "Secure vault and link sharing": [
-        "Bezpieczne udostępnianie sejfu i linków"
-      ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nieograniczona liczba danych logowania, notatek, kart płatniczych"
       ],
       "Use your own email domain": [
         "Użyj własnej domeny e-mail"
@@ -5734,6 +5734,9 @@
       ],
       "Torrenting support (P2P)": [
         "Wsparcie dla torrentów (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nieograniczona liczba aliasów hide-my-email"
       ]
     },
     "fido2: Action": {
@@ -8942,9 +8945,6 @@
       "Swiss based": [
         "Ulokowany w Szwajcarii"
       ],
-      "Switch to": [
-        "Przełącz na konto"
-      ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
       ],
@@ -10986,6 +10986,9 @@
       "Inherit color from parent folder": [
         "Zastosuj kolor folderu nadrzędnego"
       ],
+      "Integrated 2FA authenticator": [
+        "Zintegrowana aplikacja uwierzytelniająca 2FA"
+      ],
       "Interval": [
         "Częstotliwość"
       ],
@@ -12601,12 +12604,6 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } dla ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } do wszystkich usług ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB bezpiecznej przestrzeni dyskowej"
       ],
@@ -12805,9 +12802,6 @@
       "HTML signatures": [
         "Podpisy HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Zintegrowana aplikacja uwierzytelniająca"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch / stale aktywny VPN"
       ],
@@ -12957,9 +12951,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów hide-my-email"
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
@@ -14574,9 +14565,6 @@
       ],
       "Save your recovery kit to continue": [
         "Zapisz zestaw odzyskiwania, aby kontynuować"
-      ],
-      "Secure vault and link sharing": [
-        "Bezpieczne udostępnianie sejfu i linków"
       ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"

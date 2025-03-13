@@ -2022,6 +2022,9 @@
       "Please consider leaving a review.": [
         "Considere dejar una reseña."
       ],
+      "Please contact your administrator": [
+        "Contáctese con el administrador"
+      ],
       "Please do not close this window": [
         "No cierre esta ventana"
       ],
@@ -2425,6 +2428,10 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } palabra",
         "${ config.options.wordCount } palabras"
+      ],
+      "${ count } item": [
+        "${ count } elemento",
+        "${ count } elementos"
       ],
       "${ days } day": [
         "${ days } día",
@@ -3078,6 +3085,9 @@
       ],
       "Reveal password": [
         "Mostrar contraseña"
+      ],
+      "Secure links": [
+        "Enlaces seguros"
       ],
       "Secure password sharing": [
         "Intercambio de contraseñas seguro"
@@ -4079,6 +4089,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "¿Cuál es la diferencia entre una nota de ${ PASS_SHORT_APP_NAME } y una nota de SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "No tiene ninguna bóveda"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Su suscripción a ${ planName } finalizará el ${ endDate }."
       ],
@@ -4477,6 +4490,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ya no tendrá acceso a esta bóveda. Para unirse de nuevo necesitará una invitación."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "El administrador necesita crear una bóveda para usted antes de que pueda crear elementos"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Su organización no permite crear una bóveda."
       ],
       "Your organization does not allow sharing individual items": [
         "Su organización no permite compartir elementos individuales."

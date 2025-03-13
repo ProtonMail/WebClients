@@ -90,9 +90,6 @@
       "Add to group": [
         "그룹에 추가"
       ],
-      "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "\"${ album.name }\"에 추가 (${ album.photoCount }개 사진)"
-      ],
       "Album name": [
         "앨범 이름"
       ],
@@ -1199,9 +1196,6 @@
       "High speed streaming": [
         "고속 스트리밍"
       ],
-      "Integrated 2FA authenticator": [
-        "2단계 인증기 내장"
-      ],
       "One-time payment, lifetime deal": [
         "일회성 결제, 평생 이용"
       ],
@@ -1220,17 +1214,8 @@
       "Secure file storage & sharing": [
         "안전한 파일 저장 공간 및 공유"
       ],
-      "Secure vault and link sharing": [
-        "안전한 금고 및 링크 공유"
-      ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "무제한 hide-my-email 별칭"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "무제한 로그인, 메모 및 신용 카드"
       ],
       "Use your own email domain": [
         "나만의 이메일 주소 사용"
@@ -3598,6 +3583,9 @@
       ],
       "Share privately and securely": [
         "비공개로 안전하게 공유"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭"
       ]
     },
     "fido2: Error": {
@@ -5216,9 +5204,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "구독 종료 예정: ${ planName }의 혜택을 계속 이용하려면 ${ byDate }까지 재활성화해주세요. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "다음으로 전환:"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
       ],
@@ -6104,6 +6089,9 @@
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
+      ],
+      "Integrated 2FA authenticator": [
+        "2단계 인증기 내장"
       ],
       "Keep both": [
         "둘 다 유지"
@@ -7009,12 +6997,6 @@
       "${ size } storage": [
         "${ size } 저장공간"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME }용"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - 전체 ${ BRAND_NAME } 서비스용"
-      ],
       "1 TB secure storage": [
         "1 TB 보안 저장공간"
       ],
@@ -7186,9 +7168,6 @@
       "HTML signatures": [
         "HTML 서명"
       ],
-      "Integrated 2FA authenticator": [
-        "통합된 2단계 인증기"
-      ],
       "Kill switch/always-on VPN": [
         "킬 스위치/상시 VPN"
       ],
@@ -7320,9 +7299,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "무제한 hide-my-email 별칭"
       ],
       "Unlimited labels": [
         "무제한 라벨"
@@ -8343,9 +8319,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "안전한 금고 및 링크 공유"
-      ],
       "Secure vault sharing": [
         "안전한 금고 공유"
       ]

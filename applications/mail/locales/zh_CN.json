@@ -51,6 +51,9 @@
       "Add address": [
         "添加地址"
       ],
+      "Add another account": [
+        "添加其他账户"
+      ],
       "Add Bcc recipients": [
         "添加密送人"
       ],
@@ -579,6 +582,12 @@
       "Help": [
         "帮助"
       ],
+      "Help and feedback": [
+        "帮助和反馈"
+      ],
+      "Help and resources": [
+        "帮助和资源"
+      ],
       "Hide": [
         "隐藏"
       ],
@@ -797,9 +806,6 @@
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
-      ],
-      "More options": [
-        "更多选项"
       ],
       "More refine actions": [
         "更多改进操作"
@@ -1104,10 +1110,10 @@
       "Select ${ planTitle }": [
         "开通 ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "全选"
       ],
-      "Select All": [
+      "Select all": [
         "全选"
       ],
       "Select all messages": [
@@ -1744,9 +1750,6 @@
       "High speed streaming": [
         "高速看视频"
       ],
-      "Integrated 2FA authenticator": [
-        "内置双重验证器"
-      ],
       "One-time payment, lifetime deal": [
         "一次性付款，终身有效"
       ],
@@ -1765,17 +1768,11 @@
       "Secure file storage & sharing": [
         "安全文件存储与共享"
       ],
-      "Secure vault and link sharing": [
-        "安全保险库和链接共享"
-      ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
       ],
-      "Unlimited hide-my-email aliases": [
-        "无限 hide-my-email 别名"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "无限登录、笔记、信用卡"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "无限制登录、信用卡、hide-my-email 别名等功能"
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
@@ -1837,8 +1834,14 @@
       "Annually": [
         "按年付费"
       ],
+      "Lifetime": [
+        "终身"
+      ],
       "Monthly": [
         "月费"
+      ],
+      "New!": [
+        "新！"
       ],
       "Two-year": [
         "两年付费"
@@ -3496,6 +3499,31 @@
         "奥兰群岛"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "适用于所有 ${ BRAND_NAME } 服务"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "适用于 ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "适用于 ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "适用于 ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "适用于 ${ VPN_APP_NAME }"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "上传为附件"
@@ -4935,6 +4963,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "无限制地 hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -6542,7 +6575,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -6784,8 +6817,17 @@
       "Organization size": [
         "组织的规模"
       ],
+      "Other accounts": [
+        "其他账户"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
+      ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "我们的系统将此标记为可疑。如果不是网络钓鱼或诈骗邮件，请标记为合法邮件。"
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "我们的系统将此信息标记为网络钓鱼。请检查以确保其合法性。"
       ],
       "password": [
         "密码"
@@ -7104,9 +7146,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
-      ],
-      "Switch to": [
-        "切换为"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用 ${ DRIVE_APP_NAME } 应用程序同步和管理文件。在 ${ DOCS_APP_NAME } 中创建和共享文档，并安全存储。一切尽在 ${ ios }、${ android } 和 ${ desktop }。"
@@ -8330,6 +8369,9 @@
       "Import to:": [
         "导入到："
       ],
+      "Integrated 2FA authenticator": [
+        "内置 2FA 验证器"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "快捷键：${ shortcut }"
       ],
@@ -8953,6 +8995,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加 ${ BRAND_NAME } Scribe 写作助手"
       ],
+      "Add-on with free trial": [
+        "免费试用附加组件"
+      ],
       "for ${ price }": [
         "时长 ${ price }"
       ]
@@ -9344,11 +9389,8 @@
       "${ size } storage": [
         "${ size } 存储空间"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - 用于 ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - 用于所有 ${ BRAND_NAME } 服务"
+      "${ size } storage per user": [
+        "每位用户 ${ size } 存储空间"
       ],
       "1 TB secure storage": [
         "1 TB安全储存空间"
@@ -9521,14 +9563,14 @@
       "HTML signatures": [
         "HTML 落款"
       ],
-      "Integrated 2FA authenticator": [
-        "集成了双重身份验证"
-      ],
       "Kill switch/always-on VPN": [
         "Kill Switch/始终开启 VPN"
       ],
       "Limited support": [
         "有限的客户服务"
+      ],
+      "Manage user permissions and access": [
+        "管理用户权限和访问权限"
       ],
       "Multiple admin roles": [
         "多管理员机制"
@@ -9547,6 +9589,9 @@
       ],
       "Password manager": [
         "密码管理器"
+      ],
+      "Password manager to secure credentials": [
+        "密码管理器可确保凭证安全"
       ],
       "Password-protected Emails": [
         "邮件密码保护"
@@ -9655,9 +9700,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "不限量文件夹、标签和筛选规则"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "无限制地 hide-my-email"
       ],
       "Unlimited labels": [
         "标签数量不限"
@@ -9789,6 +9831,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我们的 ${ visionary } 套餐已不再适用于新订阅者，因为它是针对原始 ${ BRAND_NAME } 用户的特殊套餐，具有特殊功能和优势。"
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "仅需一次支付，即可永久保护您的密码和身份。"
       ],
       "Popular": [
         "流行的"
@@ -10522,11 +10567,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "安全保险库和链接共享"
-      ],
       "Secure vault sharing": [
         "安全保险库共享"
+      ],
+      "Secure vault, item and link sharing": [
+        "安全保险库、项目和链接共享"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "无限制登录、备注、信用卡等功能"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11854,6 +11902,9 @@
       ],
       "${ n } VPN connection per user": [
         "每位用户可通过 ${ n } 台设备同时接入 VPN"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "其他 VPN 连接，每个用户可连接 ${ n } 台设备"
       ]
     },
     "Subscription change warning": {
@@ -13004,6 +13055,9 @@
       "Groups": [
         "群组"
       ],
+      "Help and feedback": [
+        "帮助和反馈"
+      ],
       "Help center": [
         "帮助中心"
       ],
@@ -13478,11 +13532,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
@@ -13564,6 +13613,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
       ]
     },
     "Tor out of date": {

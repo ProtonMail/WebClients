@@ -799,9 +799,6 @@
       "More info: ${ safeTitle }": [
         "और जानकारी: ${ safeTitle }"
       ],
-      "More options": [
-        "अधिक विकल्प"
-      ],
       "More refine actions": [
         "और परिष्कृत क्रियाएं"
       ],
@@ -1105,10 +1102,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -1753,9 +1750,6 @@
       "High speed streaming": [
         "तेज़ स्ट्रीमिंग"
       ],
-      "Integrated 2FA authenticator": [
-        "एकीकृत 2-एफए सत्यापन"
-      ],
       "One-time payment, lifetime deal": [
         "एक बार का भुगतान, लाइफटाइम सौदा"
       ],
@@ -1774,17 +1768,8 @@
       "Secure file storage & sharing": [
         "सुरक्षित फ़ाइल स्टोरेज और शेयरिंग"
       ],
-      "Secure vault and link sharing": [
-        "सुरक्षित तिजोरी और लिंक शेयरिंग"
-      ],
       "Unlimited folders, labels and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "असीमित hide-my-email नकली-नाम"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "असीमित लॉगिन, नोट्स, क्रेडिट कार्ड"
       ],
       "Use your own email domain": [
         "अपना खुद का ईमेल डोमेन इस्तेमाल करें"
@@ -4970,6 +4955,11 @@
         "अपनी फाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। इसमें स्वचालित सिंक, एन्क्रिप्टेड फाइल शेयर और बहुत कुछ शामिल है।"
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "असीमित Hide-my-email नकलीनाम"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "आपकी सुरक्षा चाबी सत्यापित करते वक्त कुछ गलती हो गई। वापस कोशिश करें।"
@@ -6652,7 +6642,8 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें"
+        "तस्वीर डालें",
+        "तस्वीरें डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -7214,9 +7205,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "सदस्यता समाप्त हो रही है: अपने ${ planName } फायदे बनाए रखने के लिए ${ byDate } तक पुनः सक्रिय करें। ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "इसमें स्विच करें"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "${ DRIVE_APP_NAME } ऐप के साथ फाइलों को सिंक करें और संभाले। ${ DOCS_APP_NAME } में दस्तावेज़ बनाएं और साझा करें, और उन्हें सुरक्षित रूप से स्टोर करें। यह ${ ios }, ${ android } और ${ desktop } पर उपलब्ध है।"
@@ -8464,6 +8452,9 @@
       "Import to:": [
         "इधर आयात करें:"
       ],
+      "Integrated 2FA authenticator": [
+        "एकीकृत 2-एफए सत्यापन"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "कीबोर्ड शॉर्टकट: ${ shortcut }"
       ],
@@ -9503,12 +9494,6 @@
       "${ size } storage": [
         "${ size } स्टोरेज"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME } के लिए"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - सभी ${ BRAND_NAME } सेवाओं के लिए"
-      ],
       "1 TB secure storage": [
         "1 टीबी सुरक्षित स्टोरेज"
       ],
@@ -9681,9 +9666,6 @@
       "HTML signatures": [
         "HTML हस्ताक्षर"
       ],
-      "Integrated 2FA authenticator": [
-        "2-एफए करनेवाला शामिल"
-      ],
       "Kill switch/always-on VPN": [
         "किल स्विच/हमेशा-चालू वीपीएन"
       ],
@@ -9815,9 +9797,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "असीमित Hide-my-email नकलीनाम"
       ],
       "Unlimited labels": [
         "असीमित लेबल"
@@ -10690,9 +10669,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "सुरक्षित तिजोरी और लिंक साझाकरण"
-      ],
       "Secure vault sharing": [
         "सुरक्षित वॉल्ट साझाकरण"
       ]
@@ -13729,11 +13705,6 @@
         "आज"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: आपके सभी डिवाइसों पर सुरक्षित लॉगिन। इसमें असीमित नकली-नाम, साझा करना, एकीकृत 2-एफए, और अधिक शामिल हैं"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "स्वचालित इंगित करता है कि इस उपयोगकर्ता को भेजने के लिए संगीतकार में प्रारूप का उपयोग किया जाता है। सादा पाठ इंगित करता है कि संदेश भेजने पर संदेश हमेशा सादे पाठ में परिवर्तित हो जाएगा।"
@@ -13815,6 +13786,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "इस ईमेल पर एंड-टू-एंड एन्क्रिप्टेड ईमेल भेजने को सक्षम करने के लिए एक सार्वजनिक कुंजी अपलोड करें"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: आपके सभी डिवाइसों पर सुरक्षित लॉगिन। इसमें असीमित नकली-नाम, साझा करना, एकीकृत 2-एफए, और अधिक शामिल हैं"
       ]
     },
     "Tor out of date": {

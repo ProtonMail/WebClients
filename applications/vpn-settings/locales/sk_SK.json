@@ -49,6 +49,9 @@
       "Add address or domain": [
         "Pridať adresu alebo doménu"
       ],
+      "Add another account": [
+        "Pridať ďalší účet"
+      ],
       "Add credit / debit card": [
         "Pridať platobnú kartu"
       ],
@@ -393,6 +396,12 @@
       ],
       "Help": [
         "Nápoveda"
+      ],
+      "Help and feedback": [
+        "Pomoc a spätná väzba"
+      ],
+      "Help and resources": [
+        "Nápoveda a podporné materiály"
       ],
       "Hide": [
         "Skryť"
@@ -1085,9 +1094,6 @@
       "High speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrovaný 2FA autentifikátor"
-      ],
       "One-time payment, lifetime deal": [
         "Jednorazová platba, doživotný prístup"
       ],
@@ -1106,17 +1112,11 @@
       "Secure file storage & sharing": [
         "Zabezpečené úložisko a zdieľanie súborov"
       ],
-      "Secure vault and link sharing": [
-        "Zabezpečený trezor a zdieľanie odkazov"
-      ],
       "Unlimited folders, labels and filters": [
         "Neobmedzený počet priečinkov, štítkov a filtrov"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Neobmedzený počet hide-my-email aliasov"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Neobmedzené prihlásenia, poznámky a platobné karty"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Neobmedzené prihlásenia, hide-my-email aliasy a oveľa viac"
       ],
       "Use your own email domain": [
         "Používajte vlastnú emailovú doménu"
@@ -1195,8 +1195,14 @@
       "Annually": [
         "Ročne"
       ],
+      "Lifetime": [
+        "Doživotne"
+      ],
       "Monthly": [
         "Mesačne"
+      ],
+      "New!": [
+        "Nové!"
       ],
       "Two-year": [
         "Dva roky"
@@ -2369,6 +2375,31 @@
         "Zistiť viac"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Za všetky ${ BRAND_NAME } služby"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Za ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Za ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Za ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Za ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mesiac"
@@ -3400,6 +3431,9 @@
       ],
       "Torrenting support (P2P)": [
         "Podpora Torrentu (P2P)"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neobmedzený počet hide-my-email aliasov"
       ]
     },
     "Features": {
@@ -3417,9 +3451,6 @@
       ],
       "Secure streaming": [
         "Bezpečné streamovanie"
-      ],
-      "Select from ${ vpnServers.paid.countries } countries": [
-        "Vyberajte z ${ vpnServers.paid.countries } krajín"
       ]
     },
     "Features: Tooltip": {
@@ -3936,7 +3967,10 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } days.": [
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } skončí o ${ daysLeft } deň.",
+        "${ planName } skončí o ${ daysLeft } dni.",
+        "${ planName } skončí o ${ daysLeft } dní.",
         "${ planName } skončí o ${ daysLeft } dní."
       ],
       "${ planName } expires today.": [
@@ -4905,6 +4939,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Usporiadajte dedikované servery do brán a rozhodnite, ktorí členovia k nim môžu pristupovať."
       ],
+      "Other accounts": [
+        "Ďalšie účty"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Vo vašej organizácii existujú ďalší správcovia, vašou povinnosťou je oznámiť im nové heslo."
       ],
@@ -5213,9 +5250,6 @@
       ],
       "Swiss based": [
         "So sídlom vo Švajčiarsku"
-      ],
-      "Switch to": [
-        "Prepnúť na"
       ],
       "Symbols (#$&)": [
         "Znaky (#$&)"
@@ -6269,6 +6303,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Integrated 2FA authenticator": [
+        "Integrovaný 2FA autentifikátor"
+      ],
       "Interval": [
         "Interval"
       ],
@@ -7170,12 +7207,6 @@
       "${ size } storage per user": [
         "${ size } úložisko na používateľa"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Pre ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pre všetky ${ BRAND_NAME } služby"
-      ],
       "1 TB secure storage": [
         "1 TB bezpečného úložiska"
       ],
@@ -7368,9 +7399,6 @@
       "HTML signatures": [
         "HTML podpisy"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrovaný 2FA autentifikátor"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/Trvalá sieť VPN"
       ],
@@ -7523,9 +7551,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Neobmedzené množstvo priečinkov, štítkov a filtrov"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neobmedzený počet hide-my-email aliasov"
       ],
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
@@ -7692,6 +7717,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Náš ${ visionary } plán už nie je k dispozícii pre nových predplatiteľov, pretože ide o špeciálny plán pre pôvodných používateľov ${ BRAND_NAME } so špeciálnymi funkciami a výhodami."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Zaplaťte raz a zabezpečte svoje heslá a identity navždy."
       ],
       "Popular": [
         "Populárne"
@@ -8479,11 +8507,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Zabezpečený trezor a zdieľanie odkazov"
-      ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
+      ],
+      "Secure vault, item and link sharing": [
+        "Zabezpečený trezor, položky a zdieľanie odkazov"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Neobmedzené prihlásenia, poznámky, platobné karty a oveľa viac"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11438,6 +11469,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "Help and feedback": [
+        "Pomoc a spätná väzba"
+      ],
       "Help center": [
         "Centrum pomoci"
       ],
@@ -12318,6 +12352,12 @@
         "Automatický výber z ${ numberOfCountries } krajín",
         "Automatický výber z ${ numberOfCountries } krajín",
         "Automatický výber z ${ numberOfCountries } krajín"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servery v ${ numberOfCountries }+ krajine",
+        "Servery v ${ numberOfCountries }+ krajinách",
+        "Servery v ${ numberOfCountries }+ krajinách",
+        "Servery v ${ numberOfCountries }+ krajinách"
       ]
     },
     "vpn_2024: renew": {

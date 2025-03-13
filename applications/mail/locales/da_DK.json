@@ -793,9 +793,6 @@
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
-      "More options": [
-        "Flere muligheder"
-      ],
       "More refine actions": [
         "Mere præcise handlinger"
       ],
@@ -1099,10 +1096,10 @@
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Vælg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Vælg alle"
       ],
       "Select all messages": [
@@ -1735,9 +1732,6 @@
       "High speed streaming": [
         "Streaming ved høj hastighed"
       ],
-      "Integrated 2FA authenticator": [
-        "Integreret 2FA-godkendelsesværktøj"
-      ],
       "Online document editor": [
         "Online dokumentredigering"
       ],
@@ -1753,17 +1747,8 @@
       "Secure file storage & sharing": [
         "Sikker fildeling og lagring"
       ],
-      "Secure vault and link sharing": [
-        "Sikker boks- og linkdeling"
-      ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænsede hide-my-email-aliasser"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Ubegrænsede logins, noter og betalingskort"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -4934,6 +4919,11 @@
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Ubegrænsede hide-my-email-aliasser"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
@@ -6578,7 +6568,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7140,9 +7131,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Skift til"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opret og del dokumenter i ${ DOCS_APP_NAME } og opbevar dem sikkert. Alt sammen på ${ ios }, ${ android } og ${ desktop }."
@@ -8382,6 +8370,9 @@
       "Import to:": [
         "Importer til:"
       ],
+      "Integrated 2FA authenticator": [
+        "Integreret 2FA-godkendelsesværktøj"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturgenvej: ${ shortcut }"
       ],
@@ -9406,12 +9397,6 @@
       "${ size } storage": [
         "${ size } lagerplads"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Til ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
-      ],
       "1 TB secure storage": [
         "1 TB sikker lagerplads"
       ],
@@ -9584,9 +9569,6 @@
       "HTML signatures": [
         "HTML signatur"
       ],
-      "Integrated 2FA authenticator": [
-        "Integreret 2FA-godkendelse"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/always-on VPN"
       ],
@@ -9718,9 +9700,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænsede hide-my-email-aliasser"
       ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
@@ -10462,9 +10441,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Sikker boks- og linkdeling"
-      ],
       "Secure vault sharing": [
         "Sikker deling af boks"
       ]
@@ -13379,11 +13355,6 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk betyder, at formatet i skrivesessionen benyttes ved afsendelse til denne bruger. Simpel tekst indikerer, at beskeden altid konverteres til simpel tekst ved afsendelse."
@@ -13462,6 +13433,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
     },
     "Tor out of date": {

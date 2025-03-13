@@ -51,6 +51,9 @@
       "Add address": [
         "Lägg till adress"
       ],
+      "Add another account": [
+        "Lägg till ett annat konto"
+      ],
       "Add Bcc recipients": [
         "Lägg till mottagare av hemlig kopia"
       ],
@@ -582,6 +585,12 @@
       "Help": [
         "Hjälp"
       ],
+      "Help and feedback": [
+        "Hjälp och feedback"
+      ],
+      "Help and resources": [
+        "Hjälp och resurser"
+      ],
       "Hide": [
         "Dölj"
       ],
@@ -801,9 +810,6 @@
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
-      ],
-      "More options": [
-        "Fler alternativ"
       ],
       "More refine actions": [
         "Fler finjusterande åtgärder"
@@ -1108,11 +1114,11 @@
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
       ],
-      "Select all": [
-        "Markera alla"
-      ],
       "Select All": [
         "Välj alla"
+      ],
+      "Select all": [
+        "Markera alla"
       ],
       "Select all messages": [
         "Markera alla meddelanden"
@@ -1753,9 +1759,6 @@
       "High speed streaming": [
         "Höghastighetsstreaming"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrerad 2FA-autentiserare"
-      ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
       ],
@@ -1774,17 +1777,11 @@
       "Secure file storage & sharing": [
         "Säker fillagring och delning"
       ],
-      "Secure vault and link sharing": [
-        "Säker valv- och länkdelning"
-      ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsat antal hide-my-email-alias"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Obegränsat antal inloggningar, anteckningar, kreditkort"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Obegränsade inloggningar, kreditkort, hide-my-email-alias och mer"
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
@@ -1848,8 +1845,14 @@
       "Annually": [
         "Årligen"
       ],
+      "Lifetime": [
+        "Livstid"
+      ],
       "Monthly": [
         "Månadsvis"
+      ],
+      "New!": [
+        "Nytt!"
       ],
       "Two-year": [
         "Tvåårig"
@@ -3509,6 +3512,31 @@
         "Åland"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "För alla ${ BRAND_NAME }-tjänster"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "För ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "För ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "För ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "För ${ VPN_APP_NAME }"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "Bilaga"
@@ -4968,6 +4996,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Obegränsat antal hide-my-email-alias"
       ]
     },
     "fido2: Error": {
@@ -6652,7 +6685,8 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -6893,6 +6927,9 @@
       ],
       "Organization size": [
         "Organisationens storlek"
+      ],
+      "Other accounts": [
+        "Andra konton"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
@@ -7223,9 +7260,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Prenumeration slutar: Återaktivera senast ${ byDate } för att behålla dina ${ planName }-förmåner. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Byt till"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronisera och hantera filer med ${ DRIVE_APP_NAME }-appen. Skapa och dela dokument i ${ DOCS_APP_NAME } och lagra dem säkert. Allt på ${ ios }, ${ android } och ${ desktop }."
@@ -8476,6 +8510,9 @@
       "Import to:": [
         "Importera till:"
       ],
+      "Integrated 2FA authenticator": [
+        "Integrerad 2FA-autentisering"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
       ],
@@ -9521,12 +9558,6 @@
       "${ size } storage per user": [
         "${ size } lagringsutrymme per användare"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - För ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - För alla ${ BRAND_NAME }-tjänster"
-      ],
       "1 TB secure storage": [
         "1 TB säkert lagringsutrymme"
       ],
@@ -9699,9 +9730,6 @@
       "HTML signatures": [
         "HTML-signaturer"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrerad 2FA-autentisering"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/Alltid-på VPN"
       ],
@@ -9840,9 +9868,6 @@
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Obegränsat antal hide-my-email-alias"
-      ],
       "Unlimited labels": [
         "Obegränsade etiketter"
       ],
@@ -9979,6 +10004,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Vårt ${ visionary }-paket är inte längre tillgänglig för nya prenumeranter eftersom det är ett specialpaket för ursprungliga ${ BRAND_NAME }-användare med specialfunktioner och fördelar."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Betala en gång, säkra dina lösenord och din identitet för alltid."
       ],
       "Popular": [
         "Populär"
@@ -10719,11 +10747,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Säker valv- och länkdelning"
-      ],
       "Secure vault sharing": [
         "Säker valvdelning"
+      ],
+      "Secure vault, item and link sharing": [
+        "Säker delning av valv, objekt och länk"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Obegränsade inloggningar, anteckningar, kreditkort och mer"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12093,7 +12124,7 @@
         "${ n } VPN-anslutningar per användare"
       ],
       "VPN connection for ${ n } devices per user": [
-        "VPN-anslutning för ${ n } enheter per användare",
+        "VPN-anslutning för ${ n } enhet per användare",
         "VPN-anslutning för ${ n } enheter per användare"
       ]
     },
@@ -13291,6 +13322,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help and feedback": [
+        "Hjälp och feedback"
+      ],
       "Help center": [
         "Hjälpcenter"
       ],
@@ -13768,11 +13802,6 @@
         "Idag"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
@@ -13856,6 +13885,11 @@
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "stabil utgåva"
@@ -13921,6 +13955,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Väljer automatiskt från ${ numberOfCountries } land",
         "Väljer automatiskt från ${ numberOfCountries } länder"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servrar i ${ numberOfCountries }+ land",
+        "Servrar i ${ numberOfCountries }+ länder"
       ]
     },
     "vpn_2024: renew": {
