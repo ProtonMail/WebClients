@@ -56,6 +56,9 @@
       "Add address": [
         "Pridať adresu"
       ],
+      "Add another account": [
+        "Pridať ďalší účet"
+      ],
       "Add birthday": [
         "Pridať narodeniny"
       ],
@@ -352,6 +355,12 @@
       ],
       "Help": [
         "Nápoveda"
+      ],
+      "Help and feedback": [
+        "Pomoc a spätná väzba"
+      ],
+      "Help and resources": [
+        "Nápoveda a podporné materiály"
       ],
       "Hide advanced PGP settings": [
         "Skryť pokročilé nastavenia PGO"
@@ -1068,9 +1077,6 @@
       "High speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrovaný 2FA autentifikátor"
-      ],
       "One-time payment, lifetime deal": [
         "Jednorazová platba, doživotný prístup"
       ],
@@ -1089,17 +1095,11 @@
       "Secure file storage & sharing": [
         "Zabezpečené úložisko a zdieľanie súborov"
       ],
-      "Secure vault and link sharing": [
-        "Zabezpečený trezor a zdieľanie odkazov"
-      ],
       "Unlimited folders, labels and filters": [
         "Neobmedzený počet priečinkov, štítkov a filtrov"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Neobmedzený počet hide-my-email aliasov"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Neobmedzené prihlásenia, poznámky a platobné karty"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Neobmedzené prihlásenia, hide-my-email aliasy a oveľa viac"
       ],
       "Use your own email domain": [
         "Používajte vlastnú emailovú doménu"
@@ -1167,8 +1167,14 @@
       "Annually": [
         "Ročne"
       ],
+      "Lifetime": [
+        "Doživotne"
+      ],
       "Monthly": [
         "Mesačne"
+      ],
+      "New!": [
+        "Nové!"
       ],
       "Two-year": [
         "Dva roky"
@@ -2577,6 +2583,31 @@
         "udalostí"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Za všetky ${ BRAND_NAME } služby"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Za ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Za ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Za ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Za ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mesiac"
@@ -3942,6 +3973,11 @@
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Neobmedzený počet hide-my-email aliasov"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
@@ -5117,6 +5153,9 @@
       "Organization size": [
         "Veľkosť organizácie"
       ],
+      "Other accounts": [
+        "Ďalšie účty"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Ostatní používatelia vo vašej organizácii uvidia vaše obsadené sloty. Žiadne podrobnosti o udalosti sa nezdieľajú."
       ],
@@ -5266,9 +5305,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Koniec predplatného: Znova aktivujte do ${ byDate }, aby ste si ponechali výhody ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Prepnúť na"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
@@ -6047,6 +6083,9 @@
       ],
       "Import to:": [
         "Importovať do:"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrovaný 2FA autentifikátor"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová skratka: ${ shortcut }"
@@ -6964,12 +7003,6 @@
       "${ size } storage per user": [
         "${ size } úložisko na používateľa"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Pre ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pre všetky ${ BRAND_NAME } služby"
-      ],
       "1 TB secure storage": [
         "1 TB bezpečného úložiska"
       ],
@@ -7144,9 +7177,6 @@
       "HTML signatures": [
         "HTML podpisy"
       ],
-      "Integrated 2FA authenticator": [
-        "Integrovaný 2FA autentifikátor"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/Trvalá sieť VPN"
       ],
@@ -7284,9 +7314,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Neobmedzené množstvo priečinkov, štítkov a filtrov"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Neobmedzený počet hide-my-email aliasov"
       ],
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
@@ -7436,6 +7463,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Náš ${ visionary } plán už nie je k dispozícii pre nových predplatiteľov, pretože ide o špeciálny plán pre pôvodných používateľov ${ BRAND_NAME } so špeciálnymi funkciami a výhodami."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Zaplaťte raz a zabezpečte svoje heslá a identity navždy."
       ],
       "Popular": [
         "Populárne"
@@ -8237,11 +8267,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Zabezpečený trezor a zdieľanie odkazov"
-      ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
+      ],
+      "Secure vault, item and link sharing": [
+        "Zabezpečený trezor, položky a zdieľanie odkazov"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Neobmedzené prihlásenia, poznámky, platobné karty a oveľa viac"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10402,6 +10435,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "Help and feedback": [
+        "Pomoc a spätná väzba"
+      ],
       "Help center": [
         "Centrum pomoci"
       ],
@@ -10849,6 +10885,12 @@
         "Automatický výber z ${ numberOfCountries } krajín",
         "Automatický výber z ${ numberOfCountries } krajín",
         "Automatický výber z ${ numberOfCountries } krajín"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servery v ${ numberOfCountries }+ krajine",
+        "Servery v ${ numberOfCountries }+ krajinách",
+        "Servery v ${ numberOfCountries }+ krajinách",
+        "Servery v ${ numberOfCountries }+ krajinách"
       ]
     },
     "vpn_2024: renew": {
