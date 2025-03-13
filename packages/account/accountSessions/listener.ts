@@ -27,6 +27,11 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                 return;
             }
 
+            if (!listenerApi.extra.unleashClient.isEnabled('AccountSessions')) {
+                listenerApi.dispatch(accountSessionsSlice.actions.disabled());
+                return;
+            }
+
             const cache = {
                 value: state.value,
                 support: state.meta.support,
@@ -78,6 +83,10 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
             listenerApi.unsubscribe();
 
             if (!isDocumentVisible()) {
+                return;
+            }
+
+            if (!listenerApi.extra.unleashClient.isEnabled('AccountSessions')) {
                 return;
             }
 
