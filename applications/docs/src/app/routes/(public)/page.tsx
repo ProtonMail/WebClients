@@ -19,8 +19,8 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
 import noop from '@proton/utils/noop'
 
 import * as config from '../../config'
-import type { DocsStore } from '../../ReduxStore/store'
-import { extraThunkArguments } from '../../ReduxStore/thunk'
+import type { DocsStore } from '../../redux-store/store'
+import { extraThunkArguments } from '../../redux-store/thunk'
 import { bootstrapPublicApp } from './__utils/bootstrap'
 import { PublicAppRootContainer } from './__components/PublicAppRootContainer'
 
