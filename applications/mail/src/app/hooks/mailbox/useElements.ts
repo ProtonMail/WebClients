@@ -196,7 +196,7 @@ export const useElements: UseElements = ({
         // If we can update the total directly on params update, do it.
         // In some cases we cannot predict the total, for example when applying the has file filter
         const locationTotal =
-            !filterToString(filter) && isSearching
+            !filterToString(filter) && !isSearching
                 ? countValues.find((label) => label.LabelID === labelID)?.Total
                 : undefined;
         if (shouldResetElementsState) {
