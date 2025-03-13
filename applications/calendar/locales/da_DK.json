@@ -1043,9 +1043,6 @@
       "High speed streaming": [
         "Streaming ved høj hastighed"
       ],
-      "Integrated 2FA authenticator": [
-        "Integreret 2FA-godkendelsesværktøj"
-      ],
       "Online document editor": [
         "Online dokumentredigering"
       ],
@@ -1061,17 +1058,8 @@
       "Secure file storage & sharing": [
         "Sikker fildeling og lagring"
       ],
-      "Secure vault and link sharing": [
-        "Sikker boks- og linkdeling"
-      ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænsede hide-my-email-aliasser"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Ubegrænsede logins, noter og betalingskort"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -3845,6 +3833,11 @@
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Ubegrænsede hide-my-email-aliasser"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
@@ -5059,9 +5052,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Skift til"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
@@ -5817,6 +5807,9 @@
       ],
       "Import to:": [
         "Importer til:"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integreret 2FA-godkendelsesværktøj"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturgenvej: ${ shortcut }"
@@ -6658,12 +6651,6 @@
       "${ size } storage": [
         "${ size } lagerplads"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Til ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
-      ],
       "1 TB secure storage": [
         "1 TB sikker lagerplads"
       ],
@@ -6836,9 +6823,6 @@
       "HTML signatures": [
         "HTML signatur"
       ],
-      "Integrated 2FA authenticator": [
-        "Integreret 2FA-godkendelse"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/always-on VPN"
       ],
@@ -6970,9 +6954,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Ubegrænsede hide-my-email-aliasser"
       ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
@@ -7774,9 +7755,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Sikker boks- og linkdeling"
-      ],
       "Secure vault sharing": [
         "Sikker deling af boks"
       ]

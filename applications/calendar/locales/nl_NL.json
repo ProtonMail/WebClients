@@ -56,6 +56,9 @@
       "Add address": [
         "Adres toevoegen"
       ],
+      "Add another account": [
+        "Voeg een account toe"
+      ],
       "Add birthday": [
         "Verjaardag toevoegen"
       ],
@@ -346,6 +349,12 @@
       ],
       "Help": [
         "Hulp"
+      ],
+      "Help and feedback": [
+        "Hulp en feedback"
+      ],
+      "Help and resources": [
+        "Hulp en bronnen"
       ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
@@ -1052,9 +1061,6 @@
       "High speed streaming": [
         "Streamen met hoge snelheid"
       ],
-      "Integrated 2FA authenticator": [
-        "Geïntegreerde 2FA-authenticator"
-      ],
       "One-time payment, lifetime deal": [
         "Eenmalige betaling, levenslange deal"
       ],
@@ -1073,17 +1079,11 @@
       "Secure file storage & sharing": [
         "Veilig bestanden opslaan en delen"
       ],
-      "Secure vault and link sharing": [
-        "Veilig delen van kluis en links"
-      ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal hide-my-email-aliassen"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Onbeperkt aantal logins, notities en creditcards"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Onbeperkt logins, creditcards, hide-my-email aliassen en meer"
       ],
       "Use your own email domain": [
         "Gebruik uw eigen e-maildomein"
@@ -1147,8 +1147,14 @@
       "Annually": [
         "Jaarlijks"
       ],
+      "Lifetime": [
+        "Levenslang"
+      ],
       "Monthly": [
         "Maandelijks"
+      ],
+      "New!": [
+        "Nieuw!"
       ],
       "Two-year": [
         "Tweejaarlijks"
@@ -2545,6 +2551,31 @@
         "gebeurtenissen"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Voor alle ${ BRAND_NAME }-diensten"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Voor ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Voor ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Voor ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Voor ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/maand"
@@ -3872,6 +3903,11 @@
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
@@ -4969,6 +5005,9 @@
       "Organization size": [
         "Grootte van de organisatie"
       ],
+      "Other accounts": [
+        "Andere accounts"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andere gebruikers binnen uw organisatie zien uw bezette slots. Er worden geen details over het event gedeeld."
       ],
@@ -5112,9 +5151,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Wissel naar"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
@@ -5879,6 +5915,9 @@
       ],
       "Import to:": [
         "Importeren naar:"
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde tweestapsverificatie"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Toetsenbordsneltoets: ${ shortcut }"
@@ -6744,12 +6783,6 @@
       "${ size } storage per user": [
         "${ size } opslagruimte per gebruiker"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Voor ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Voor alle ${ BRAND_NAME } diensten"
-      ],
       "1 TB secure storage": [
         "1 TB veilige opslag"
       ],
@@ -6922,9 +6955,6 @@
       "HTML signatures": [
         "HTML-handtekeningen"
       ],
-      "Integrated 2FA authenticator": [
-        "Geïntegreerde 2FA-authenticator"
-      ],
       "Kill switch/always-on VPN": [
         "IP-beveiliging/altijd-actieve VPN"
       ],
@@ -7063,9 +7093,6 @@
       "Unlimited folders, labels, and filters": [
         "Ongelimiteerde mappen, labels en filters"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal Hide-My-Email-alliassen"
-      ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
       ],
@@ -7202,6 +7229,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ons ${ visionary }-abonnement is niet meer beschikbaar voor nieuwe gebruikers; dit is een speciaal abonnement voor originele ${ BRAND_NAME }-gebruikers met speciale functies en voordelen."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Eenmaal betalen, beveilig uw wachtwoorden en identiteit voor altijd."
       ],
       "Popular": [
         "Populair"
@@ -7949,11 +7979,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Veilige kluis en het delen van links"
-      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
+      ],
+      "Secure vault, item and link sharing": [
+        "Veilig delen van kluizen, items en links"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Onbeperkt aantal logins, notities, creditcards, en meer"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10018,6 +10051,9 @@
       "Groups": [
         "Groepen"
       ],
+      "Help and feedback": [
+        "Hulp en feedback"
+      ],
       "Help center": [
         "Helpcentrum"
       ],
@@ -10568,6 +10604,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Automatisch geselecteerd uit ${ numberOfCountries } land",
         "Automatisch geselecteerd uit ${ numberOfCountries } landen"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servers in ${ numberOfCountries }+ land",
+        "Servers in ${ numberOfCountries }+ landen"
       ]
     },
     "vpn_2024: renew": {

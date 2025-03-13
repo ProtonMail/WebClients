@@ -56,6 +56,9 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
+      "Add another account": [
+        "Προσθήκη επιπλέον λογαριασμού"
+      ],
       "Add birthday": [
         "Προσθήκη γενεθλίων"
       ],
@@ -346,6 +349,12 @@
       ],
       "Help": [
         "Βοήθεια"
+      ],
+      "Help and feedback": [
+        "Βοήθεια και σχόλια"
+      ],
+      "Help and resources": [
+        "Βοήθεια και πληροφορίες"
       ],
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
@@ -1052,9 +1061,6 @@
       "High speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
-      "Integrated 2FA authenticator": [
-        "Ενσωματωμένος ελεγκτής 2FA"
-      ],
       "One-time payment, lifetime deal": [
         "Εφάπαξ πληρωμή, συμφωνία εφ' όρου ζωής"
       ],
@@ -1073,17 +1079,11 @@
       "Secure file storage & sharing": [
         "Ασφαλής αποθήκευση & κοινή χρήση αρχείων"
       ],
-      "Secure vault and link sharing": [
-        "Ασφαλής κρύπτη και κοινή χρήση συνδέσμων"
-      ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Απεριόριστα hide-my-email ψευδώνυμα"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Unlimited logins, notes, credit cards"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Απεριόριστες συνδέσεις, πιστωτικές κάρτες, hide-my-email ψευδώνυμα και πολλά άλλα"
       ],
       "Use your own email domain": [
         "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
@@ -1147,8 +1147,14 @@
       "Annually": [
         "Ετησίως"
       ],
+      "Lifetime": [
+        "Εφ' όρου ζωής"
+      ],
       "Monthly": [
         "Μηνιαία"
+      ],
+      "New!": [
+        "Νέο!"
       ],
       "Two-year": [
         "Δύο έτη"
@@ -2545,6 +2551,31 @@
         "εκδηλώσεις"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Για ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Για ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Για ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Για ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/μήνα"
@@ -3872,6 +3903,11 @@
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Απεριόριστα hide-my-email ψευδώνυμα"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
@@ -4969,6 +5005,9 @@
       "Organization size": [
         "Μέγεθος οργανισμού"
       ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Οι άλλοι χρήστες εντός του οργανισμού σας θα βλέπουν τις απασχολημένες υποδοχές σας. Δεν κοινοποιούνται λεπτομέρειες συμβάντος."
       ],
@@ -5112,9 +5151,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Λήξη συνδρομής: Ενεργοποιήστε ξανά έως τις ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
-      ],
-      "Switch to": [
-        "Αλλάξτε σε"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -5879,6 +5915,9 @@
       ],
       "Import to:": [
         "Εισαγωγή σε:"
+      ],
+      "Integrated 2FA authenticator": [
+        "Ενσωματωμένος ελεγκτής 2FA"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Συντόμευση πληκτρολογίου: ${ shortcut }"
@@ -6744,12 +6783,6 @@
       "${ size } storage per user": [
         "${ size } αποθηκευτικός χώρος ανά χρήστη"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Για ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Για όλες τις ${ BRAND_NAME } υπηρεσίες"
-      ],
       "1 TB secure storage": [
         "Ασφαλής χώρος αποθήκευσης 1 TB"
       ],
@@ -6922,9 +6955,6 @@
       "HTML signatures": [
         "Υπογραφές HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Ενσωματωμένος ελεγκτής 2FA"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch/πάντα ενεργό VPN"
       ],
@@ -7063,9 +7093,6 @@
       "Unlimited folders, labels, and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Απεριόριστα hide-my-email ψευδώνυμα"
-      ],
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
       ],
@@ -7202,6 +7229,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Το ${ visionary } πλάνο μας δεν είναι πλέον διαθέσιμο σε νέους συνδρομητές, καθώς είναι ένα ειδικό πρόγραμμα για αρχικούς χρήστες ${ BRAND_NAME } με ειδικά χαρακτηριστικά και οφέλη."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Πληρώστε μία φορά, ασφαλίστε τους κωδικούς πρόσβασης και την ταυτότητά σας για πάντα."
       ],
       "Popular": [
         "Δημοφιλές"
@@ -7949,11 +7979,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Ασφαλής κρύπτη και κοινή χρήση συνδέσμων"
-      ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
+      ],
+      "Secure vault, item and link sharing": [
+        "Ασβαλής κρύπτη, στοιχεία και κοινοποίηση συνδέσμων"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Απεριόριστες συνδέσεις, σημειώσεις, πιστωτικές κάρτες και πολλά άλλα"
       ]
     },
     "pass_signup_2024: Info": {
@@ -10018,6 +10051,9 @@
       "Groups": [
         "Ομάδες"
       ],
+      "Help and feedback": [
+        "Βοήθεια και σχόλια"
+      ],
       "Help center": [
         "Κέντρο βοήθειας"
       ],
@@ -10445,6 +10481,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Αυτόματη επιλογή από ${ numberOfCountries } χώρα",
         "Αυτόματη επιλογή από ${ numberOfCountries } χώρες"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Διακομιστές σε ${ numberOfCountries }+ χώρα",
+        "Διακομιστές σε ${ numberOfCountries }+ χώρες"
       ]
     },
     "vpn_2024: renew": {
