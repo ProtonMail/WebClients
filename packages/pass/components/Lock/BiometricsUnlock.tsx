@@ -71,7 +71,7 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
             /* Trigger unlock automatically on first render if the app is
              * focused and the current lock was not user initiated */
             if (!visible || biometricsUnlock.loading || !document.hasFocus()) return;
-            if (!userInitiatedLock) onUnlock().catch(noop);
+            if (!userInitiatedLock && DESKTOP_BUILD) onUnlock().catch(noop);
         },
         [biometricsUnlock.loading]
     );
