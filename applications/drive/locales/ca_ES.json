@@ -91,10 +91,6 @@
       "Add to group": [
         "Afegeix al grup"
       ],
-      "Add to “${ album.name }” (${ album.photoCount } photo)": [
-        "Afegeix a «${ album.name }» (${ album.photoCount } foto)",
-        "Afegeix a «${ album.name }» (${ album.photoCount } fotos)"
-      ],
       "Album name": [
         "Nom de l'àlbum"
       ],
@@ -1210,9 +1206,6 @@
       "High speed streaming": [
         "Estríming d'alta velocitat"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador de doble factor (2FA) integrat"
-      ],
       "One-time payment, lifetime deal": [
         "Pagament únic, oferta per a tota la vida"
       ],
@@ -1231,17 +1224,8 @@
       "Secure file storage & sharing": [
         "Emmagatzematge i ús compartit de fitxers segurs"
       ],
-      "Secure vault and link sharing": [
-        "Compartició segura de caixes fortes i enllaços"
-      ],
       "Unlimited folders, labels and filters": [
         "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre il·limitat d'àlies hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit"
       ],
       "Use your own email domain": [
         "Utilitzeu el vostre propi domini de correu electrònic"
@@ -1305,8 +1289,14 @@
       "Annually": [
         "Cada any"
       ],
+      "Lifetime": [
+        "Oferta de per vida"
+      ],
       "Monthly": [
         "Mensual"
+      ],
+      "New!": [
+        "Nou"
       ],
       "Two-year": [
         "Bianual"
@@ -3623,6 +3613,9 @@
       ],
       "Share privately and securely": [
         "Comparteix de manera privada i segura"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre il·limitat d'àlies hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -5298,9 +5291,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La subscripció està finalitzant: Reactiveu-la abans de ${ byDate } per a mantenir els beneficis de ${ planName }. ${ reactivateLink }"
       ],
-      "Switch to": [
-        "Canvia a"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
       ],
@@ -6205,6 +6195,9 @@
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador de doble factor (2FA) integrat"
       ],
       "Keep both": [
         "Mantén tots dos"
@@ -7189,12 +7182,6 @@
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Per a ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Per a tots els serveis de ${ BRAND_NAME }"
-      ],
       "1 TB secure storage": [
         "1 TB d'emmagatzematge segur"
       ],
@@ -7367,9 +7354,6 @@
       "HTML signatures": [
         "Signatures HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrat"
-      ],
       "Kill switch/always-on VPN": [
         "Kill switch /VPN sempre activa"
       ],
@@ -7501,9 +7485,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre il·limitat d'àlies hide-my-email"
       ],
       "Unlimited labels": [
         "Etiquetes il·limitades"
@@ -8550,9 +8531,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Compartició segura de caixes fortes i enllaços"
-      ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
       ]
