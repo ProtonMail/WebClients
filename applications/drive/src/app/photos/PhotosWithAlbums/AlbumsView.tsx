@@ -202,6 +202,7 @@ export const AlbumsView: FC = () => {
                         setRenameAlbumLinkId(linkId);
                         renameAlbumModal.openModal(true);
                     }}
+                    userAddressEmail={userAddressEmail}
                 />
             )}
 

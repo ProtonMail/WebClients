@@ -27,6 +27,7 @@ type Props = {
     onClick: () => void;
     onRename: () => void;
     onShare: () => void;
+    isOwner: boolean;
 };
 
 const getAltText = ({ mimeType, name }: DecryptedLink) =>
@@ -35,9 +36,10 @@ const getAltText = ({ mimeType, name }: DecryptedLink) =>
 interface AlbumDropdownButtonprops {
     onRename: () => void;
     onShare: () => void;
+    isOwner: boolean;
 }
 
-export const AlbumDropdownButton = ({ onShare, onRename }: AlbumDropdownButtonprops) => {
+export const AlbumDropdownButton = ({ onShare, onRename, isOwner }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -68,16 +70,18 @@ export const AlbumDropdownButton = ({ onShare, onRename }: AlbumDropdownButtonpr
                         <Icon className="mr-2" name="pencil" />
                         {c('Action').t`Rename album`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            onShare();
-                        }}
-                        className="text-left flex items-center flex-nowrap"
-                    >
-                        <Icon className="mr-2" name="user-plus" />
-                        {c('Action').t`Share album`}
-                    </DropdownMenuButton>
+                    {isOwner && (
+                        <DropdownMenuButton
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onShare();
+                            }}
+                            className="text-left flex items-center flex-nowrap"
+                        >
+                            <Icon className="mr-2" name="user-plus" />
+                            {c('Action').t`Share album`}
+                        </DropdownMenuButton>
+                    )}
                     {/* TODO: Add delete album logic from album grid view */}
                     {/* <DropdownMenuButton className="text-left flex items-center flex-nowrap">
                         <Icon className="mr-2" name="trash" />
@@ -89,7 +93,16 @@ export const AlbumDropdownButton = ({ onShare, onRename }: AlbumDropdownButtonpr
     );
 };
 
-export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, album, onClick, onShare, onRename }) => {
+export const AlbumsCard: FC<Props> = ({
+    style,
+    onRender,
+    onRenderLoadedLink,
+    album,
+    onClick,
+    onShare,
+    onRename,
+    isOwner,
+}) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
@@ -221,7 +234,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
                             </div>
                         </div>
                         <div className="shrink-0 mb-2">
-                            <AlbumDropdownButton onShare={onShare} onRename={onRename} />
+                            <AlbumDropdownButton onShare={onShare} onRename={onRename} isOwner={isOwner} />
                         </div>
                     </div>
                 </>
