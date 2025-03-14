@@ -1,4 +1,4 @@
-import type { KeyboardEvent } from 'react';
+import type { KeyboardEvent, MutableRefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
@@ -16,6 +16,7 @@ interface Props {
     selection: ComposerAssistantSelection;
     prompt: string;
     setPrompt: (value: string) => void;
+    previousPrompt: MutableRefObject<string>;
     onSubmit: () => void;
     disabled?: boolean;
     onCloseSpotlight: () => void;
@@ -26,6 +27,7 @@ const ComposerAssistantCustomInput = ({
     selection,
     prompt,
     setPrompt,
+    previousPrompt,
     onSubmit,
     disabled,
     onCloseSpotlight,
@@ -78,6 +80,7 @@ const ComposerAssistantCustomInput = ({
 
     const handleSubmit = async () => {
         onSubmit();
+        previousPrompt.current = prompt;
         setShowPopover(false);
     };
 
@@ -105,6 +108,18 @@ const ComposerAssistantCustomInput = ({
     }, []);
 
     const handleClickToggle = () => {
+        // Previous prompt ref should be reset when closing the assistant or inserting a result.
+        // However, when closing the assistant using a shortcut, it's not.
+        // Composer hotkeys are managed higher (useComposerContent), and from there we cannot reset the ref.
+        // So before opening the popover, if the assistant is not expanded, reset it
+        if (!isAssistantExpanded) {
+            previousPrompt.current = '';
+        }
+
+        // Before opening the input popover, we want to pre-fill the input with the original prompt
+        if (!showPopover && previousPrompt.current) {
+            setPrompt(previousPrompt.current);
+        }
         setShowPopover(!showPopover);
         onCloseSpotlight();
     };
