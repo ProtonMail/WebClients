@@ -322,12 +322,9 @@ export const loading = createSelector(
         (beforeFirstLoad || pendingRequest || shouldLoadElements) && !invalidated
 );
 
-export const totalReturned = createSelector(
-    [params, contextTotal, dynamicTotal],
-    (params, contextTotal, dynamicTotal) => {
-        return dynamicTotal || contextTotal;
-    }
-);
+export const totalReturned = createSelector([contextTotal, dynamicTotal], (contextTotal, dynamicTotal) => {
+    return dynamicTotal || contextTotal;
+});
 
 export const expectingEmpty = createSelector([dynamicPageLength], (dynamicPageLength) => dynamicPageLength === 0);
 
