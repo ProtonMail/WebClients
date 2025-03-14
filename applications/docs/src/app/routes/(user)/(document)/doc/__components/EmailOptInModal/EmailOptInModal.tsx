@@ -86,10 +86,14 @@ export function EmailOptInModal({ onClose, open, ...modalProps }: ModalStateProp
 
       <ModalTwoFooter>
         <div className="flex w-full flex-col gap-2">
-          <PrimaryButton loading={isLoading} onClick={() => withLoading(handleSavePreferences())}>
+          <PrimaryButton
+            loading={isLoading}
+            onClick={() => withLoading(handleSavePreferences())}
+            data-testid="close-email-opt-in-modal"
+          >
             {c('Action').t`Save preferences`}
           </PrimaryButton>
-          <Button shape="ghost" color="norm" data-testid="close-email-opt-in-modal" onClick={close}>
+          <Button shape="ghost" color="norm" onClick={close}>
             {c('Action').t`Ask me next time`}
           </Button>
         </div>
