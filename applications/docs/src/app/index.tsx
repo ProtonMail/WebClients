@@ -7,7 +7,7 @@ import PublicApp from './routes/(public)/page'
 
 // Import this before ./style so that style takes precedence
 import './tailwind.scss'
-import './style'
+import './app.scss'
 
 const isPublicApp = ['open-url', 'open-url-download'].includes(
   new URL(window.location.href).searchParams.get('mode') || '',

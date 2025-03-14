@@ -2,7 +2,6 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { ButtonLike, CircleLoader } from '@proton/atoms'
 import { RecentDocumentsTable } from './RecentDocumentsTable'
 import { useRecentDocuments } from '../utils/recent-documents'
-import { useApplication } from '../../../Containers/ApplicationProvider'
 import { InvitesTable } from './InvitesTable'
 import { ContextMenuProvider } from './DocContextMenu/context'
 import emptyStateImage from './empty-state.svg'
@@ -10,6 +9,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { Icon } from '@proton/components'
 import { c } from 'ttag'
+import { useApplication } from '../../../utils/application-context'
 
 export function HomepageContent() {
   let children: ReactNode
