@@ -1,3 +1,4 @@
+import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
@@ -25,6 +26,7 @@ interface Props {
     selection: ComposerAssistantSelection;
     prompt: string;
     setPrompt: (value: string) => void;
+    previousPrompt: MutableRefObject<string>;
     onExpandAssistant: () => void;
     onGenerate: (props: GenerateResultProps) => Promise<void>;
     canUseRefineButtons: boolean;
@@ -37,6 +39,7 @@ const ComposerAssistantToolbar = ({
     selection,
     prompt,
     setPrompt,
+    previousPrompt,
     onExpandAssistant,
     onGenerate,
     canUseRefineButtons,
@@ -124,6 +127,7 @@ const ComposerAssistantToolbar = ({
                             isAssistantExpanded={isAssistantExpanded}
                             prompt={prompt}
                             setPrompt={setPrompt}
+                            previousPrompt={previousPrompt}
                             onSubmit={() => handleGenerate(isAssistantExpanded ? 'customRefine' : undefined)}
                             disabled={disableActions}
                             onCloseSpotlight={() => composerAssistantInitialSetupSpotlightRef.current?.hideSpotlight()}
