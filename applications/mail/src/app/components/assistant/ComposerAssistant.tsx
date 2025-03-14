@@ -67,7 +67,11 @@ const ComposerAssistant = ({
     setAssistantStateRef,
     messageID,
 }: Props) => {
+    // Prompt that is currently in the input
     const [prompt, setPrompt] = useState('');
+    // Previous prompt of the user request.
+    // We want to show it again to the user by default in the input when improving generated text
+    const previousPrompt = useRef<string>('');
     const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
 
     const assistantResultChildRef = useRef<HTMLDivElement>(null);
@@ -174,6 +178,11 @@ const ComposerAssistant = ({
     const canUseRefineButtons =
         !!selection.generationSelectedText || (!isAssistantExpanded && hasComposerContent) || !!generationResult;
 
+    const handleResetPrompt = () => {
+        previousPrompt.current = '';
+        setPrompt('');
+    };
+
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
@@ -187,6 +196,7 @@ const ComposerAssistant = ({
                 assistantID={assistantID}
                 prompt={prompt}
                 setPrompt={setPrompt}
+                previousPrompt={previousPrompt}
                 selection={selection}
                 isAssistantExpanded={isAssistantExpanded}
                 onExpandAssistant={expandAssistant}
@@ -210,7 +220,7 @@ const ComposerAssistant = ({
                     submittedPrompt={submittedPrompt}
                     feedbackSubmitted={feedbackSubmitted}
                     setFeedbackSubmitted={setFeedbackSubmitted}
-                    onResetPrompt={() => setPrompt('')}
+                    onResetPrompt={handleResetPrompt}
                     onResetGeneration={handleResetGeneration}
                     showReplaceButton={hasComposerContent}
                     messageID={messageID}
