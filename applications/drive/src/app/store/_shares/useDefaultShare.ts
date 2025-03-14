@@ -19,34 +19,87 @@ import useVolume from './useVolume';
 export function useDefaultShare() {
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
+
     const sharesState = useSharesStore((state) => ({
         setShares: state.setShares,
         getDefaultShareId: state.getDefaultShareId,
         getDefaultPhotosShareId: state.getDefaultPhotosShareId,
+        loadUserSharesPromise: state.loadUserSharesPromise,
+        defaultSharePromise: state.defaultSharePromise,
+        defaultPhotosSharePromise: state.defaultPhotosSharePromise,
+        isLoadingShares: state.isLoadingShares,
+        setLoadUserSharesPromise: state.setLoadUserSharesPromise,
+        setDefaultSharePromise: state.setDefaultSharePromise,
+        setDefaultPhotosSharePromise: state.setDefaultPhotosSharePromise,
+        setIsLoadingShares: state.setIsLoadingShares,
     }));
+
     const { getShare, getShareWithKey } = useShare();
     const { createVolume } = useVolume();
     const volumesState = useVolumesState();
     const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
 
     const loadUserShares = useCallback(async (): Promise<Share[]> => {
-        const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
-        // We have to ignore the deleted shares until BE stop to return them
-        const shares = Shares.map(shareMetaShortToShare).filter((share) => share.state !== ShareState.deleted);
+        if (sharesState.loadUserSharesPromise) {
+            return sharesState.loadUserSharesPromise;
+        }
 
-        shares.forEach(({ volumeId, shareId }) => {
-            volumesState.setVolumeShareIds(volumeId, [shareId]);
-        });
-        sharesState.setShares(shares);
-        return shares;
+        // Wait if another component is in the process of loading shares
+        // If we go in that condition that means another component is already loading user shares
+        // so we're just waiting for the Zustand to update with the promise
+        if (sharesState.isLoadingShares) {
+            await new Promise<void>((resolve) => {
+                const unsubscribe = useSharesStore.subscribe((state) => {
+                    if (!state.isLoadingShares) {
+                        unsubscribe();
+                        resolve();
+                    }
+                });
+
+                if (!useSharesStore.getState().isLoadingShares) {
+                    unsubscribe();
+                    resolve();
+                }
+            });
+
+            const cachedPromise = useSharesStore.getState().loadUserSharesPromise;
+            if (cachedPromise) {
+                return cachedPromise;
+            }
+        }
+
+        sharesState.setIsLoadingShares(true);
+
+        try {
+            const sharesPromise = (async () => {
+                const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
+                // We have to ignore the deleted shares until BE stop to return them
+                const shares = Shares.map(shareMetaShortToShare).filter((share) => share.state !== ShareState.deleted);
+                shares.forEach(({ volumeId, shareId }) => {
+                    volumesState.setVolumeShareIds(volumeId, [shareId]);
+                });
+                sharesState.setShares(shares);
+                return shares;
+            })();
+
+            sharesState.setLoadUserSharesPromise(sharesPromise);
+
+            const shares = await sharesPromise;
+            return shares;
+        } finally {
+            sharesState.setIsLoadingShares(false);
+        }
     }, []);
 
     const getDefaultShare = useCallback(
         async (abortSignal?: AbortSignal): Promise<ShareWithKey> => {
-            return debouncedFunction(
+            if (sharesState.defaultSharePromise) {
+                return sharesState.defaultSharePromise;
+            }
+
+            const promise = debouncedFunction(
                 async (abortSignal: AbortSignal) => {
                     let defaultShareId = sharesState.getDefaultShareId();
-
                     // First try to load fresh list of shares from API to make sure
                     // we don't create second default share.
                     if (!defaultShareId) {
@@ -56,21 +109,24 @@ export function useDefaultShare() {
                         // not be set just yet.
                         defaultShareId = findDefaultShareId(shares);
                     }
-
                     if (!defaultShareId) {
                         const { shareId } = await createVolume();
                         defaultShareId = shareId;
                         // Load shares to the cache.
                         await loadUserShares();
                     }
-
-                    return getShareWithKey(abortSignal || new AbortController().signal, defaultShareId);
+                    const share = await getShareWithKey(abortSignal || new AbortController().signal, defaultShareId);
+                    return share;
                 },
                 ['getDefaultShare'],
                 abortSignal
             );
+
+            sharesState.setDefaultSharePromise(promise);
+
+            return promise;
         },
-        [sharesState.getDefaultShareId, getShareWithKey]
+        [sharesState.getDefaultShareId, getShareWithKey, loadUserShares]
     );
 
     const getDefaultShareAddressEmail = useCallback(
@@ -84,10 +140,13 @@ export function useDefaultShare() {
 
     const getDefaultPhotosShare = useCallback(
         async (abortSignal?: AbortSignal): Promise<ShareWithKey | undefined> => {
-            return debouncedFunction(
+            if (sharesState.defaultPhotosSharePromise) {
+                return sharesState.defaultPhotosSharePromise;
+            }
+
+            const promise = debouncedFunction(
                 async (abortSignal: AbortSignal) => {
                     let defaultPhotosShareId = sharesState.getDefaultPhotosShareId();
-
                     // First try to load fresh list of shares from API
                     if (!defaultPhotosShareId) {
                         const shares = await loadUserShares();
@@ -96,17 +155,21 @@ export function useDefaultShare() {
                         // not be set just yet.
                         defaultPhotosShareId = findDefaultPhotosShareId(shares);
                     }
-
                     // We currently don't support photos share creation on web
-                    return defaultPhotosShareId
-                        ? getShareWithKey(abortSignal || new AbortController().signal, defaultPhotosShareId)
+                    const share = defaultPhotosShareId
+                        ? await getShareWithKey(abortSignal || new AbortController().signal, defaultPhotosShareId)
                         : undefined;
+                    return share;
                 },
                 ['getDefaultPhotosShare'],
                 abortSignal
             );
+
+            sharesState.setDefaultPhotosSharePromise(promise);
+
+            return promise;
         },
-        [sharesState.getDefaultPhotosShareId, getShareWithKey]
+        [sharesState.getDefaultPhotosShareId, getShareWithKey, loadUserShares]
     );
 
     const isShareAvailable = useCallback(
