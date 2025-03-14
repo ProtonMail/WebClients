@@ -33,12 +33,10 @@ export const globalReset = (state: Draft<ElementsState>) => {
 };
 
 export const reset = (state: Draft<ElementsState>, action: PayloadAction<NewStateParams>) => {
-    const { total, ...payload } = action.payload;
     Object.assign(
         state,
         newElementsState({
-            total: total !== undefined ? total : state.total,
-            ...payload,
+            ...action.payload,
             taskRunning: { labelIDs: state.taskRunning.labelIDs, timeoutID: state.taskRunning.timeoutID },
         })
     );
@@ -82,34 +80,11 @@ export const loadFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ result: QueryResults; taskRunning: TaskRunningInfo }, string, { arg: QueryParams }>
 ) => {
+    const params = state.params;
     const { page, refetch } = action.meta.arg;
     const {
         result: { Total },
         taskRunning,
-    } = action.payload;
-
-    Object.assign(state, {
-        beforeFirstLoad: false,
-        invalidated: false,
-        pendingRequest: false,
-        total: Total,
-        page: refetch ? state.page : page,
-        retry: newRetry(state.retry, state.params, undefined),
-        taskRunning,
-    });
-};
-
-/**
- * This reducer is used to set first loaded elements while loading remaining ones in series
- */
-export const showSerializedElements = (
-    state: Draft<ElementsState>,
-    action: PayloadAction<{ result: QueryResults; page: number; params: ElementsStateParams }, string>
-) => {
-    const {
-        result: { Total, Elements },
-        page,
-        params,
     } = action.payload;
 
     const contextFilter = getElementContextIdentifier({
@@ -126,9 +101,47 @@ export const showSerializedElements = (
     });
 
     Object.assign(state, {
-        total: Total,
+        beforeFirstLoad: false,
+        invalidated: false,
+        pendingRequest: false,
+        page: refetch ? state.page : page,
+        retry: newRetry(state.retry, state.params, undefined),
+        taskRunning,
+    });
+
+    state.total[contextFilter] = Total;
+};
+
+/**
+ * This reducer is used to set first loaded elements while loading remaining ones in series
+ */
+export const showSerializedElements = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<{ result: QueryResults; page: number }, string>
+) => {
+    const params = state.params;
+    const {
+        result: { Total, Elements },
+        page,
+    } = action.payload;
+
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
+
+    Object.assign(state, {
         elements: { ...state.elements, ...toMap(Elements, 'ID') },
     });
+    state.total[contextFilter] = Total;
     state.pages[contextFilter] = state.pages[contextFilter]
         ? unique([...state.pages[contextFilter], page]).sort()
         : [page];
@@ -204,11 +217,11 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
         invalidated: false,
         pendingRequest: false,
         page: action.payload.page,
-        total,
         elements: { ...state.elements, ...toMap(action.payload.elements, 'ID') },
         retry: { payload: undefined, count: 0, error: undefined },
         params,
     });
+    state.total[contextFilter] = total;
     state.pages[contextFilter] = state.pages[contextFilter]
         ? unique([...state.pages[contextFilter], ...pages]).sort()
         : [...pages];
@@ -226,7 +239,22 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
 
         // Can update total only if move and is removing item from the current location (not all sent/all drafts/all mail)
         if (action.payload.elementTotalAdjustment && state.total) {
-            state.total = state.total + action.payload.elementTotalAdjustment;
+            const params = state.params;
+
+            const contextFilter = getElementContextIdentifier({
+                labelID: params.labelID,
+                conversationMode: params.conversationMode,
+                filter: params.filter,
+                sort: params.sort,
+                from: params.search.from,
+                to: params.search.to,
+                address: params.search.address,
+                begin: params.search.begin,
+                end: params.search.end,
+                keyword: params.search.keyword,
+            });
+
+            state.total[contextFilter] = (state.total[contextFilter] || 0) + action.payload.elementTotalAdjustment;
         }
     }
 
@@ -269,7 +297,22 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
         delete state.elements[elementID];
     });
     if (state.total) {
-        state.total = state.total - action.payload.elementIDs.length;
+        const params = state.params;
+
+        const contextFilter = getElementContextIdentifier({
+            labelID: params.labelID,
+            conversationMode: params.conversationMode,
+            filter: params.filter,
+            sort: params.sort,
+            from: params.search.from,
+            to: params.search.to,
+            address: params.search.address,
+            begin: params.search.begin,
+            end: params.search.end,
+            keyword: params.search.keyword,
+        });
+
+        state.total[contextFilter] = (state.total[contextFilter] || 0) - action.payload.elementIDs.length;
     }
 };
 
@@ -393,6 +436,19 @@ export const setParams = (
         ...params,
     };
     if (total !== undefined) {
-        state.total = total;
+        const params = state.params;
+        const contextFilter = getElementContextIdentifier({
+            labelID: params.labelID,
+            conversationMode: params.conversationMode,
+            filter: params.filter,
+            sort: params.sort,
+            from: params.search?.from,
+            to: params.search?.to,
+            address: params.search?.address,
+            begin: params.search?.begin,
+            end: params.search?.end,
+            keyword: params.search?.keyword,
+        });
+        state.total[contextFilter] = total;
     }
 };

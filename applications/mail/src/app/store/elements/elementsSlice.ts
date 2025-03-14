@@ -91,7 +91,7 @@ export const newElementsState = ({
         params: { ...defaultParams, ...params },
         page,
         pageSize,
-        total: undefined,
+        total: {},
         elements: {},
         pages: {},
         bypassFilter: [],

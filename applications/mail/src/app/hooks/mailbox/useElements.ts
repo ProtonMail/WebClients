@@ -214,7 +214,6 @@ export const useElements: UseElements = ({
                         conversationMode,
                         isSearching,
                     },
-                    total: locationTotal,
                 })
             );
         } else {
