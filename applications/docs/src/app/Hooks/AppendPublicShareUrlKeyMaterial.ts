@@ -7,6 +7,8 @@ import { useRef, useEffect, useCallback } from 'react'
 import { useDocsUrlBar } from '../Containers/useDocsUrlBar'
 import { useApplication } from '../Containers/ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
+import { useAuthentication } from '@proton/components/index'
+import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 
 /**
  * Will append the key material from the public share url to the document title:
@@ -31,6 +33,7 @@ export function AppendPublicShareKeyMaterialToTitle({
 
   const { linkId, volumeId } = nodeMeta
 
+  const { getLocalID } = useAuthentication()
   const { changeURLVisually } = useDocsUrlBar()
 
   const resetURLToNormalLink = useCallback(() => {
@@ -51,6 +54,12 @@ export function AppendPublicShareKeyMaterialToTitle({
 
       const sharedLink = compat.getSharedLinkFromShareUrl(shareUrl)
       const token = shareUrl.token
+
+      const localID = getLocalID()
+      if (localID !== undefined) {
+        CacheService.setLocalIDForDocumentInCache({ token }, localID)
+      }
+
       if (!sharedLink) {
         application.logger.info('Could not get shared link')
         resetURLToNormalLink()
@@ -65,7 +74,7 @@ export function AppendPublicShareKeyMaterialToTitle({
         urlPassword,
       })
     },
-    [application.logger, changeURLVisually, compat, linkId, resetURLToNormalLink],
+    [application.logger, changeURLVisually, compat, getLocalID, linkId, resetURLToNormalLink],
   )
 
   const linkStateChangeInProgress = useRef(false)

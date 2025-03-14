@@ -20,9 +20,10 @@ import type {
   PublicDocumentState,
   RenameControllerInterface,
 } from '@proton/docs-core'
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 
 function getWindowLocationExcludingDomain() {
-  return window.location.pathname + window.location.search + window.location.hash
+  return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
 }
 
 export type DocsHeaderProps = { action?: DocumentAction['mode'] }

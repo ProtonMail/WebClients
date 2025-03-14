@@ -23,6 +23,9 @@ import { extendStore, setupStore } from '../../../redux-store/store'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
 import type { DocsState } from '../../../redux-store/rootReducer'
 import { appMode } from '@proton/shared/lib/webpack.constants'
+import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
+import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
+import { handleInvalidSession } from '@proton/shared/lib/authentication/logout'
 
 const getAppContainer = () =>
   import(/* webpackChunkName: "MainContainer" */ '../__components/UserAppRootContainer')
@@ -35,9 +38,15 @@ const getAppContainer = () =>
     })
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
-  const appName = config.APP_NAME
+  let localID: number | undefined
+
   const pathname = window.location.pathname
+  const localIDFromPathname = getLocalIDFromPathname(pathname)
   const searchParams = new URLSearchParams(window.location.search)
+  const volumeId = searchParams.get('volumeId')
+  const linkId = searchParams.get('linkId')
+
+  const appName = config.APP_NAME
   const api = createApi({ config })
   const silentApi = getSilentApi(api)
   const authentication = bootstrap.createAuthentication()
@@ -47,9 +56,29 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
   initSafariFontFixClassnames()
   startLogoutListener()
 
+  if (volumeId && linkId) {
+    if (localIDFromPathname !== undefined) {
+      localID = localIDFromPathname
+    } else {
+      const localIDFromCache = CacheService.getLocalIDForDocumentFromCache({
+        volumeId,
+        linkId,
+      })
+      localID = localIDFromCache
+    }
+
+    // Could not find local ID in pathname or cache
+    if (localID === undefined) {
+      handleInvalidSession({
+        appName,
+        authentication,
+      })
+    }
+  }
+
   const run = async () => {
     const appContainerPromise = getAppContainer()
-    const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams })
+    const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams, localID })
     const history = bootstrap.createHistory({ sessionResult, pathname })
     const unleashClient = bootstrap.createUnleash({ api: silentApi })
 
