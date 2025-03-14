@@ -309,6 +309,13 @@ export function getCurrencyRate(currency: Currency): number {
     return 1;
 }
 
+/**
+ * Report to Sentry that the plan name is incorrect.
+ *
+ * @param planName - The plan name to report.
+ * @param context - The context of the plan name. In other words, in what context the plan name is used.
+ * This is helpful for debugging.
+ */
 export function captureWrongPlanName(
     planName: string | undefined,
     context: {
@@ -326,6 +333,13 @@ export function captureWrongPlanName(
     } catch {}
 }
 
+/**
+ * Report to Sentry that the plan IDs are incorrect. Sister function to `captureWrongPlanName`.
+ *
+ * @param planIDs - The plan IDs to report.
+ * @param context - The context of the plan IDs. In other words, in what context the plan IDs are used.
+ * This is helpful for debugging.
+ */
 export function captureWrongPlanIDs(
     planIDs: PlanIDs | undefined,
     context: {
@@ -345,6 +359,14 @@ export function captureWrongPlanIDs(
     } catch {}
 }
 
+/**
+ * Correct outdated plan names to the relevant ones.
+ *
+ * @param planName - The plan name to correct.
+ * @param source - The source of the plan name. In other words, in what context the plan name is used.
+ * This is helpful for debugging.
+ * @returns The corrected plan name.
+ */
 export function fixPlanName(planName: PLANS, source: string): PLANS;
 export function fixPlanName(planName: string, source: string): string;
 export function fixPlanName(planName: PLANS | undefined, source: string): PLANS | undefined;
@@ -359,6 +381,14 @@ export function fixPlanName(planName: string | null | undefined, source: string)
     return planName;
 }
 
+/**
+ * Correct outdated plan IDs to the relevant ones. A sister function to `fixPlanName`.
+ *
+ * @param planIDs - The plan IDs to correct.
+ * @param source - The source of the plan IDs. In other words, in what context the plan IDs are used.
+ * This is helpful for debugging.
+ * @returns The corrected plan IDs.
+ */
 export function fixPlanIDs(planIDs: PlanIDs | undefined, source: string): PlanIDs | undefined {
     try {
         if (!planIDs || !planIDs[PLANS.VPN]) {
