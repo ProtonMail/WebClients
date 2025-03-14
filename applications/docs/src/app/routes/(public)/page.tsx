@@ -23,11 +23,13 @@ import type { DocsStore } from '../../redux-store/store'
 import { extraThunkArguments } from '../../redux-store/thunk'
 import { bootstrapPublicApp } from './__utils/bootstrap'
 import { PublicAppRootContainer } from './__components/PublicAppRootContainer'
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper'
 
 const defaultState: {
   store?: DocsStore
   error?: { message: string } | undefined
   showDrawerSidebar?: boolean
+  session?: ResumedSessionResult
 } = {
   error: undefined,
   showDrawerSidebar: false,
@@ -39,8 +41,8 @@ export default function PublicApp() {
   useEffectOnce(() => {
     ;(async () => {
       try {
-        const { store } = await bootstrapPublicApp({ config })
-        setState({ store })
+        const { store, session } = await bootstrapPublicApp({ config })
+        setState({ store, session })
       } catch (error: any) {
         setState({
           error: getNonEmptyErrorMessage(error),
@@ -69,7 +71,7 @@ export default function PublicApp() {
                       <div className="h-full">
                         <NotificationsChildren />
                         <ModalsChildren />
-                        <PublicAppRootContainer />
+                        <PublicAppRootContainer session={state.session} />
                       </div>
                     </ErrorBoundary>
                   </ApiProvider>

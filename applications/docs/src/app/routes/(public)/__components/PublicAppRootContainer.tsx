@@ -10,13 +10,14 @@ import { useEffect, useRef } from 'react'
 import { PasswordPage } from './PasswordPage'
 import { UnAuthenticated } from '@proton/components'
 import { PublicCompatProvider } from '@proton/drive-store/lib/usePublicDriveCompat'
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper'
 
-export function PublicAppRootContainer() {
+export function PublicAppRootContainer({ session }: { session?: ResumedSessionResult }) {
   return (
     <LocationErrorBoundary>
       <PublicDriveStoreProvider>
         <UnAuthenticated>
-          <PublicCompatProvider>
+          <PublicCompatProvider session={session}>
             <RenderApplicationWhenReady />
           </PublicCompatProvider>
         </UnAuthenticated>

@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { receiveCustomPasswordFromDriveWindow } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { getAuthHeaders } from '@proton/shared/lib/fetch/headers';
 
 import { usePublicAuth, usePublicSession } from '../../store/_api';
 import { getUrlPassword } from '../../utils/url/password';
 
-export const usePublicDocsToken = () => {
+export const usePublicDocsToken = (session?: ResumedSessionResult) => {
     /**
      * Run this to update the window location hash value,
      * in case we are coming back from signup/signin and needing to get the hash from local storage.
@@ -21,7 +22,11 @@ export const usePublicDocsToken = () => {
     const linkIdParam = params.get('linkId') || undefined;
     const urlPassword = hash.substring(1);
 
-    const { isLoading, isPasswordNeeded, submitPassword, error, customPassword } = usePublicAuth(token, urlPassword);
+    const { isLoading, isPasswordNeeded, submitPassword, error, customPassword } = usePublicAuth(
+        token,
+        urlPassword,
+        session
+    );
     const { getSessionInfo } = usePublicSession();
 
     const isHandlingCustomPassword = useRef(false);
