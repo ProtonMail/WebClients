@@ -231,7 +231,6 @@ export const render = async (
 ): Promise<RenderResult> => {
     mockDomApi();
     registerFeatureFlagsApiMock();
-
     const history = createMemoryHistory({ initialEntries });
     const { Wrapper, store } = getStoreWrapper({ preloadedState, history });
     onStore?.(store);

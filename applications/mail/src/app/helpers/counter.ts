@@ -1,4 +1,4 @@
-import { isAutoRead, isUnmodifiableByUser } from '@proton/mail/labels/helpers';
+import { isAutoRead } from '@proton/mail/labels/helpers';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 
@@ -20,9 +20,6 @@ const fromMapToArray = (countersMap: { [labelID: string]: LabelCount }) =>
 export const updateCounters = (element: Element, counters: LabelCount[], changes: LabelChanges) => {
     const countersMap = Object.entries(changes).reduce(
         (acc, [labelID, action]) => {
-            if (isUnmodifiableByUser(labelID)) {
-                return acc;
-            }
             acc[labelID] = { Total: 0, Unread: 0, LabelID: labelID, ...acc[labelID] };
 
             const isUnread = testIsUnread(element, labelID);

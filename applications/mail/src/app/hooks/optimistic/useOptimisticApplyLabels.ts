@@ -5,15 +5,18 @@ import {
     selectConversationCounts,
     selectMessageCounts,
     useFolders,
+    useLabels,
 } from '@proton/mail';
+import { isCustomLabel } from '@proton/mail/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { updateCounters } from '../../helpers/counter';
-import { getCurrentFolderIDs, hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
+import { getCurrentFolderIDs, getLabelIDs, hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
 import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import {
     applyLabelChangesOnConversation,
@@ -31,7 +34,7 @@ import { optimisticApplyLabels as optimisticApplyLabelsMessageAction } from '../
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
-const { SENT, DRAFTS } = MAILBOX_LABEL_IDS;
+const { SENT, DRAFTS, ALL_DRAFTS, ALL_SENT, ALL_MAIL, ALMOST_ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) => {
     const rollbackChange = {} as LabelChanges;
@@ -48,11 +51,48 @@ const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) =>
     return rollbackChange;
 };
 
+// Helper used to determine whether moving an element will remove it from the current label
+export const getIsElementMovingOutFromLabel = ({
+    currentLabelID,
+    inputChanges,
+    labels,
+}: {
+    currentLabelID?: string;
+    inputChanges: LabelChanges | LabelChanges[];
+    labels: Label[];
+}) => {
+    // Under the following conditions:
+    // - Current label is not defined
+    // - Current label is all drafts, all sent or all mail
+    const shouldStayInLocation =
+        !!currentLabelID && [ALL_DRAFTS, ALL_SENT, ALL_MAIL].includes(currentLabelID as MAILBOX_LABEL_IDS);
+    // - Current label is a custom label and not moving the item to trash or spam
+    const shouldStayInCustomLabel =
+        !!currentLabelID &&
+        isCustomLabel(currentLabelID, labels) &&
+        !Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.TRASH) &&
+        !Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.SPAM);
+    // - Current label is almost all mail and moving the item to a location that is not TRASH or SPAN
+    const shouldStayInAlmostAllMail =
+        !!currentLabelID &&
+        currentLabelID === ALMOST_ALL_MAIL &&
+        !Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.TRASH) &&
+        !Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.SPAM);
+
+    // => A move should not change the total, since the element will stay in the current location
+    // Else, the total needs to be updated because the item will move
+    const shouldStayInCurrentLocation =
+        !currentLabelID || shouldStayInLocation || shouldStayInCustomLabel || shouldStayInAlmostAllMail;
+
+    return !shouldStayInCurrentLocation;
+};
+
 export const useOptimisticApplyLabels = () => {
     const store = useMailStore();
     const dispatch = useMailDispatch();
     const getElementByID = useGetElementByID();
     const [folders = []] = useFolders();
+    const [labels = []] = useLabels();
     const getConversation = useGetConversation();
 
     /**
@@ -65,13 +105,25 @@ export const useOptimisticApplyLabels = () => {
      * @returns a rollback function to undo all changes
      */
     const optimisticApplyLabels = useHandler(
-        (
-            elements: Element[],
-            inputChanges: LabelChanges | LabelChanges[],
+        ({
+            elements,
+            inputChanges,
             isMove = false,
-            unreadStatuses?: UnreadStatus[],
-            currentLabelID?: string
-        ) => {
+            unreadStatuses,
+            currentLabelID,
+            isRollback,
+            inputElementTotalAdjustment,
+            isUnstarringElement = false,
+        }: {
+            elements: Element[];
+            inputChanges: LabelChanges | LabelChanges[];
+            isMove?: boolean;
+            unreadStatuses?: UnreadStatus[];
+            currentLabelID?: string;
+            isRollback?: boolean;
+            inputElementTotalAdjustment?: number;
+            isUnstarringElement?: boolean;
+        }) => {
             const rollbackChanges = [] as { element: Element; changes: LabelChanges }[];
             const updatedElements = [] as Element[];
             const elementsUnreadStatuses = [] as UnreadStatus[];
@@ -79,11 +131,17 @@ export const useOptimisticApplyLabels = () => {
             let { value: messageCounters = [] } = selectMessageCounts(store.getState());
             let { value: conversationCounters = [] } = selectConversationCounts(store.getState());
 
+            // We need to update the element total optimistically as well.
+            // If the action is a rollback, use the input value,
+            // else we need to check for each element whether it needs to be removed from the total.
+            let elementTotalAdjustment = inputElementTotalAdjustment || 0;
+
             // Updates in message cache
             elements.forEach((element, index) => {
                 const changes = Array.isArray(inputChanges) ? { ...inputChanges[index] } : { ...inputChanges };
 
-                if (isMove) {
+                // No need to trigger this action during rollback since we already know where to put the element back
+                if ((isMove || isUnstarringElement) && !isRollback) {
                     const currentFolderIDs = ([SENT, DRAFTS] as string[]).includes(currentLabelID || '')
                         ? [currentLabelID as string]
                         : getCurrentFolderIDs(element, folders);
@@ -91,7 +149,7 @@ export const useOptimisticApplyLabels = () => {
                     const isMoveToCurrentFolder = currentFolderIDs.every((folderID) => changes[folderID]);
 
                     if (isMoveToCurrentFolder) {
-                        // It's a move to the folder where the elements is already, so nothing to do or undo
+                        // It's a move to the folder where the elements already are, so nothing to do or undo
                         return;
                     }
 
@@ -112,9 +170,46 @@ export const useOptimisticApplyLabels = () => {
                         }
                     }
 
-                    currentFolderIDs.forEach((folderID) => {
-                        changes[folderID] = false;
+                    // When an item is un-starred, we want to update the counters,
+                    // so we need to pass in the parent "if" condition
+                    // However, in case of a "true" move action, we need to move the item from other location,
+                    // Which we shouldn't do when un-starring an item
+                    // e.g. a starred element in inbox should be moved out from starred but not from inbox when un-starring it
+                    if (!isUnstarringElement) {
+                        currentFolderIDs.forEach((folderID) => {
+                            changes[folderID] = false;
+                        });
+                    }
+
+                    // If moving an element to spam or trash, we can remove it from almost all mail and custom labels too
+                    if (
+                        Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.TRASH) ||
+                        Object.keys(inputChanges).includes(MAILBOX_LABEL_IDS.SPAM)
+                    ) {
+                        changes[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL] = false;
+
+                        // Remove from starred when moving to trash or spam
+                        if (hasLabel(element, MAILBOX_LABEL_IDS.STARRED)) {
+                            changes[MAILBOX_LABEL_IDS.STARRED] = false;
+                        }
+
+                        // Remove the item from all custom label ids
+                        const elementLabels = getLabelIDs(element, currentLabelID);
+                        Object.keys(elementLabels).forEach((label) => {
+                            if (isCustomLabel(label, labels)) {
+                                changes[label] = false;
+                            }
+                        });
+                    }
+
+                    // Check if the action will remove the element from the current location.
+                    // If so, we can increase the amount that needs to be removed on the elements total.
+                    const isMovingOutFromLabel = getIsElementMovingOutFromLabel({
+                        currentLabelID,
+                        inputChanges,
+                        labels,
                     });
+                    elementTotalAdjustment = isMovingOutFromLabel ? elementTotalAdjustment - 1 : elementTotalAdjustment;
                 }
 
                 rollbackChanges.push({ element, changes: computeRollbackLabelChanges(element, changes) });
@@ -191,7 +286,13 @@ export const useOptimisticApplyLabels = () => {
             });
 
             if (updatedElements.length) {
-                dispatch(optimisticApplyLabelsElementsAction({ elements: updatedElements, isMove }));
+                dispatch(
+                    optimisticApplyLabelsElementsAction({
+                        elements: updatedElements,
+                        isMove: isMove || isUnstarringElement,
+                        elementTotalAdjustment,
+                    })
+                );
             }
 
             store.dispatch(messageCountsActions.set(messageCounters));
@@ -211,7 +312,18 @@ export const useOptimisticApplyLabels = () => {
                     { elements: [], inputChanges: [] }
                 );
 
-                optimisticApplyLabels(elements, inputChanges, false, elementsUnreadStatuses);
+                optimisticApplyLabels({
+                    elements,
+                    inputChanges,
+                    isMove,
+                    unreadStatuses: elementsUnreadStatuses,
+                    currentLabelID,
+                    isRollback: true,
+                    // When doing a rollback, we are not computing the updated total.
+                    // We can add back to the total what we just removed
+                    inputElementTotalAdjustment: elementTotalAdjustment * -1,
+                    isUnstarringElement,
+                });
             };
         }
     );

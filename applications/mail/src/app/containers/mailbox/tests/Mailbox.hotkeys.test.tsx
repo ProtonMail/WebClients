@@ -200,19 +200,16 @@ describe('Mailbox hotkeys', () => {
         await tick();
         expectLabelCall(MAILBOX_LABEL_IDS.ARCHIVE);
 
-        down();
         space();
         i();
         await tick();
         expectLabelCall(MAILBOX_LABEL_IDS.INBOX);
 
-        down();
         space();
         s();
         await tick();
         expectLabelCall(MAILBOX_LABEL_IDS.SPAM);
 
-        down();
         space();
         t();
         await tick();

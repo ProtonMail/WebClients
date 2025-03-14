@@ -26,8 +26,10 @@ import {
     pollTaskRunning,
     removeExpired,
     reset,
+    resetByPassFilter,
     retry,
     setPageSize,
+    setParams,
     showSerializedElements as showSerializedElementsAction,
     updatePage,
 } from './elementsActions';
@@ -52,10 +54,12 @@ import {
     optimisticUpdates,
     pollTaskRunningFulfilled,
     removeExpired as removeExpiredReducer,
+    resetByPassFilter as resetByPassFilterReducer,
     reset as resetReducer,
     retry as retryReducer,
     selectAllFulfilled,
     setPageSize as setPageSizeReducer,
+    setParams as setParamsReducer,
     showSerializedElements as showSerializedElementsReducer,
     updatePage as updatePageReducer,
 } from './elementsReducers';
@@ -76,6 +80,7 @@ export const newElementsState = ({
         sort: { sort: 'Time', desc: true },
         search: {},
         esEnabled: false,
+        isSearching: false,
     };
 
     return {
@@ -86,9 +91,9 @@ export const newElementsState = ({
         params: { ...defaultParams, ...params },
         page,
         pageSize,
-        total: undefined,
+        total: {},
         elements: {},
-        pages: [],
+        pages: {},
         bypassFilter: [],
         retry,
         taskRunning,
@@ -113,6 +118,7 @@ const elementsSlice = createSlice({
         builder.addCase(reset, resetReducer);
         builder.addCase(updatePage, updatePageReducer);
         builder.addCase(setPageSize, setPageSizeReducer);
+        builder.addCase(resetByPassFilter, resetByPassFilterReducer);
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
         builder.addCase(retry, retryReducer);
@@ -145,6 +151,8 @@ const elementsSlice = createSlice({
         builder.addCase(expireMessages.rejected, expireElementsRejected);
 
         builder.addCase(showSerializedElementsAction, showSerializedElementsReducer);
+
+        builder.addCase(setParams, setParamsReducer);
     },
 });
 

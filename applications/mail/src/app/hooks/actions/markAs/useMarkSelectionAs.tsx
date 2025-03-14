@@ -13,6 +13,7 @@ import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-m
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { isElementReminded } from 'proton-mail/helpers/snooze';
 import type { MarkAsParams } from 'proton-mail/hooks/actions/markAs/useMarkAs';
+import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
@@ -70,11 +71,12 @@ interface MarkSelectionAsParams extends MarkAsParams {
  */
 export const useMarkSelectionAs = () => {
     const api = useApi();
-    const { call, start, stop } = useEventManager();
+    const { start, stop, call } = useEventManager();
     const optimisticMarkAs = useOptimisticMarkAs();
     const { createNotification } = useNotifications();
     const dispatch = useMailDispatch();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
+    const isES = useIsEncryptedSearch();
 
     const { sendSimpleActionReport } = useListTelemetry();
 
@@ -103,7 +105,11 @@ export const useMarkSelectionAs = () => {
                     }
                 } finally {
                     start();
-                    await call();
+                    // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                    // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                    if (isES) {
+                        await call();
+                    }
                 }
             };
 
@@ -139,7 +145,11 @@ export const useMarkSelectionAs = () => {
                 } finally {
                     dispatch(backendActionFinished());
                     start();
-                    // await call();
+                    // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                    // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                    if (isES) {
+                        await call();
+                    }
                 }
                 return tokens;
             };
@@ -166,7 +176,7 @@ export const useMarkSelectionAs = () => {
                 });
             }
         },
-        []
+        [isES]
     );
 
     return markAs;
