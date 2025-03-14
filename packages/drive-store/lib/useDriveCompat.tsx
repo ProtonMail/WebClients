@@ -99,7 +99,11 @@ export interface DriveCompat {
     /**
      * Opens a document's sharing modal.
      */
-    openDocumentSharingModal: (meta: NodeMeta) => void;
+    openDocumentSharingModal: (props: {
+        linkId: string;
+        volumeId: string;
+        onPublicLinkToggle?: (enabled: boolean) => void;
+    }) => void;
 
     /**
      * Opens a document in a new window.
@@ -170,6 +174,19 @@ export const useDriveCompat = (): DriveCompat => {
         return { keys, address: email };
     };
 
+    const openShareModal = async (props: {
+        linkId: string;
+        volumeId: string;
+        onPublicLinkToggle?: (enabled: boolean) => void;
+    }) => {
+        const fnToWrap = ({ shareId, linkId }: { shareId: string; linkId: string }) =>
+            showLinkSharingModal({ shareId, linkId, onPublicLinkToggle: props.onPublicLinkToggle });
+
+        const wrappedFn = withResolveShareId(fnToWrap);
+
+        wrappedFn(props);
+    };
+
     return {
         isDocsEnabled,
         createDocumentNode: withResolveShareId(createDocumentNode),
@@ -192,7 +209,7 @@ export const useDriveCompat = (): DriveCompat => {
         getDocumentUrl,
         openDocument,
         openDocumentWindow,
-        openDocumentSharingModal: withResolveShareId(showLinkSharingModal),
+        openDocumentSharingModal: openShareModal,
         getMyFilesNodeMeta,
         getVerificationKey,
         // This should be changed to a fragment if more modals are added

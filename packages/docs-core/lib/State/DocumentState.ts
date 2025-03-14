@@ -60,6 +60,12 @@ export type DocumentEvent =
       name: 'EditorIsReadyToBeShown'
       payload: undefined
     }
+  | {
+      name: 'PublicLinkToggleStateChanged'
+      payload: {
+        enabled: boolean
+      }
+    }
 
 export interface DocumentStateValues {
   documentName: string
