@@ -460,7 +460,7 @@ describe('SelectedPlan', () => {
         expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalScribes()).toEqual(40);
 
-        const newSelectedPlan = selectedPlan.applyRules();
+        const newSelectedPlan = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
         expect(newSelectedPlan.getTotalScribes()).toEqual(4);
 
         expect(newSelectedPlan.planIDs).toEqual({
@@ -567,7 +567,7 @@ describe('SelectedPlan', () => {
         expect(selectedPlan.getTotalUsers()).toEqual(4);
         expect(selectedPlan.getTotalLumos()).toEqual(40);
 
-        const newSelectedPlan = selectedPlan.applyRules();
+        const newSelectedPlan = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
         expect(newSelectedPlan.getTotalLumos()).toEqual(4);
 
         expect(newSelectedPlan.planIDs).toEqual({
@@ -722,6 +722,157 @@ describe('SelectedPlan', () => {
         expect(newSelectedPlan.planIDs).toEqual({
             [PLANS.MAIL_PRO]: 1,
             [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+        });
+    });
+
+    describe('balancing scribes and lumos', () => {
+        it('should balance scribes and lumos when total exceeds members (prefer-scribes)', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3, // Total members: 4
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 3,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 3, // Total scribes + lumos: 6
+            };
+
+            const selectedPlan = SelectedPlan.createNormalized(
+                planIDs,
+                PLANS_MAP,
+                CYCLE.MONTHLY,
+                'EUR',
+                'prefer-scribes'
+            );
+
+            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalScribes()).toBe(3);
+            expect(selectedPlan.getTotalLumos()).toBe(1); // Lumos reduced by 2 to balance
+            expect(selectedPlan.planIDs).toEqual({
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 3,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 1,
+            });
+        });
+
+        it('should balance scribes and lumos when total exceeds members (prefer-lumos)', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3, // Total members: 4
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 3,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 3, // Total scribes + lumos: 6
+            };
+
+            const selectedPlan = SelectedPlan.createNormalized(
+                planIDs,
+                PLANS_MAP,
+                CYCLE.MONTHLY,
+                'EUR',
+                'prefer-lumos'
+            );
+
+            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalScribes()).toBe(1); // Scribes reduced by 2 to balance
+            expect(selectedPlan.getTotalLumos()).toBe(3);
+            expect(selectedPlan.planIDs).toEqual({
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 3,
+            });
+        });
+
+        it('should balance scribes and lumos when total exceeds members (default prefer-lumos)', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3, // Total members: 4
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 3,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 3, // Total scribes + lumos: 6
+            };
+
+            const selectedPlan = SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalScribes()).toBe(1); // Scribes reduced by 2 to balance
+            expect(selectedPlan.getTotalLumos()).toBe(3);
+            expect(selectedPlan.planIDs).toEqual({
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 3,
+            });
+        });
+
+        it('should not balance when total scribes and lumos equal members', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3, // Total members: 4
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 2,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 2, // Total scribes + lumos: 4
+            };
+
+            const selectedPlan = SelectedPlan.createNormalized(
+                planIDs,
+                PLANS_MAP,
+                CYCLE.MONTHLY,
+                'EUR',
+                'prefer-scribes'
+            );
+
+            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalScribes()).toBe(2); // Unchanged
+            expect(selectedPlan.getTotalLumos()).toBe(2); // Unchanged
+            expect(selectedPlan.planIDs).toEqual(planIDs);
+        });
+
+        it('should not balance when total scribes and lumos less than members', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3, // Total members: 4
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 1, // Total scribes + lumos: 2
+            };
+
+            const selectedPlan = SelectedPlan.createNormalized(
+                planIDs,
+                PLANS_MAP,
+                CYCLE.MONTHLY,
+                'EUR',
+                'prefer-scribes'
+            );
+
+            expect(selectedPlan.getTotalMembers()).toBe(4);
+            expect(selectedPlan.getTotalScribes()).toBe(1); // Unchanged
+            expect(selectedPlan.getTotalLumos()).toBe(1); // Unchanged
+            expect(selectedPlan.planIDs).toEqual(planIDs);
+        });
+
+        it('should handle balancing when setting scribe count', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3, // Total members: 4
+                [ADDON_NAMES.LUMO_MAIL_BUSINESS]: 3,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const updatedPlan = selectedPlan.setScribeCount(3); // Adding 3 scribes when already have 3 lumos
+
+            expect(updatedPlan.getTotalMembers()).toBe(4);
+            expect(updatedPlan.getTotalScribes()).toBe(3);
+            expect(updatedPlan.getTotalLumos()).toBe(1); // Lumos reduced to maintain balance
+        });
+
+        it('should handle balancing when setting lumo count', () => {
+            const planIDs = {
+                [PLANS.MAIL_BUSINESS]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 3, // Total members: 4
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: 3,
+            };
+
+            const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+            const updatedPlan = selectedPlan.setLumoCount(3); // Adding 3 lumos when already have 3 scribes
+
+            expect(updatedPlan.getTotalMembers()).toBe(4);
+            expect(updatedPlan.getTotalScribes()).toBe(1); // Scribes reduced to maintain balance
+            expect(updatedPlan.getTotalLumos()).toBe(3);
         });
     });
 });

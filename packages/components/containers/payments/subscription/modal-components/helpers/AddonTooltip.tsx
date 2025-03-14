@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import Info from '@proton/components/components/link/Info';
 import Price from '@proton/components/components/price/Price';
 import { type Currency } from '@proton/payments';
-import { isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
+import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import type { AddonDescription } from '@proton/shared/lib/helpers/checkout';
 
 export const AddonTooltip = ({
@@ -20,14 +20,21 @@ export const AddonTooltip = ({
     const price = <Price currency={currency}>{pricePerAddon}</Price>;
 
     let text: ReactNode;
-    if (isDomainAddon(addon.name)) {
-        text = c('Addon').jt`${price} per domain`;
-    } else if (isMemberAddon(addon.name)) {
-        text = c('Addon').jt`${price} per user`;
-    } else if (isIpAddon(addon.name)) {
-        text = c('Addon').jt`${price} per dedicated server`;
-    } else {
-        return null;
+    switch (true) {
+        case isDomainAddon(addon.name):
+            text = c('Addon').jt`${price} per domain`;
+            break;
+        case isMemberAddon(addon.name):
+            text = c('Addon').jt`${price} per user`;
+            break;
+        case isIpAddon(addon.name):
+            text = c('Addon').jt`${price} per dedicated server`;
+            break;
+        case isLumoAddon(addon.name):
+            text = c('Addon').jt`${price} per seat`;
+            break;
+        default:
+            return null;
     }
 
     return <Info title={text} className="ml-2" />;
