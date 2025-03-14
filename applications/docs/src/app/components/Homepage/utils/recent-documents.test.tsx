@@ -1,8 +1,7 @@
-import { filterItems } from './Utils/filterItems'
-import { getDisplayName } from './Utils/getDisplayName'
 import { RecentDocumentItem } from '@proton/docs-core'
 import { ServerTime } from '@proton/docs-shared'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
+import { filterDocuments, getDocumentOwnerDisplayName } from './recent-documents'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
@@ -50,7 +49,7 @@ describe('useRecentDocuments', () => {
           [],
         ),
       ]
-      expect(filterItems(items, undefined, 'owned-by-me')).toEqual([items[0], items[1]])
+      expect(filterDocuments(items, undefined, 'owned-by-me')).toEqual([items[0], items[1]])
     })
 
     test('if filter is set to "owned-by-others" will return items that are shared with the user', () => {
@@ -95,7 +94,7 @@ describe('useRecentDocuments', () => {
           [],
         ),
       ]
-      expect(filterItems(items, undefined, 'owned-by-others')).toEqual([items[2]])
+      expect(filterDocuments(items, undefined, 'owned-by-others')).toEqual([items[2]])
     })
 
     test('if filter is not populated return all items', () => {
@@ -140,7 +139,7 @@ describe('useRecentDocuments', () => {
           [],
         ),
       ]
-      expect(filterItems(items, undefined, undefined)).toEqual(items)
+      expect(filterDocuments(items, undefined, undefined)).toEqual(items)
     })
 
     test('filter items starting with search term', () => {
@@ -185,7 +184,7 @@ describe('useRecentDocuments', () => {
           [],
         ),
       ]
-      expect(filterItems(items, 'name', undefined)).toEqual([items[1], items[2]])
+      expect(filterDocuments(items, 'name', undefined)).toEqual([items[1], items[2]])
     })
 
     test('filter items ending with search term', () => {
@@ -230,7 +229,7 @@ describe('useRecentDocuments', () => {
           [],
         ),
       ]
-      expect(filterItems(items, '2', undefined)).toEqual([items[0], items[1]])
+      expect(filterDocuments(items, '2', undefined)).toEqual([items[0], items[1]])
     })
 
     test('filter items with term in the middle', () => {
@@ -275,7 +274,7 @@ describe('useRecentDocuments', () => {
           [],
         ),
       ]
-      expect(filterItems(items, 'am', undefined)).toEqual([items[1], items[2]])
+      expect(filterDocuments(items, 'am', undefined)).toEqual([items[1], items[2]])
     })
   })
 
@@ -294,7 +293,7 @@ describe('useRecentDocuments', () => {
         true,
         ['folder1', 'subfolder', 'doc2'],
       )
-      expect(getDisplayName(recentDocument)).toBe('Me')
+      expect(getDocumentOwnerDisplayName(recentDocument)).toBe('Me')
     })
 
     test('Will return the user if name is populated and the document is owned by the user', () => {
@@ -311,7 +310,7 @@ describe('useRecentDocuments', () => {
         true,
         ['folder1', 'subfolder', 'doc2'],
       )
-      expect(getDisplayName(recentDocument)).toBe('Me')
+      expect(getDocumentOwnerDisplayName(recentDocument)).toBe('Me')
     })
 
     test('Will return the contact display name if it is present and the document is shared with the user', () => {
@@ -329,7 +328,7 @@ describe('useRecentDocuments', () => {
         ['shared', 'doc2'],
       )
       const contacts = [{ Name: 'Joe Bloggs', Email: 'joe@proton.ch' }] as unknown as ContactEmail[]
-      expect(getDisplayName(recentDocument, contacts)).toBe('Joe Bloggs')
+      expect(getDocumentOwnerDisplayName(recentDocument, contacts)).toBe('Joe Bloggs')
     })
 
     test('Will return the contact email if there is no name and the document is shared with the user', () => {
@@ -347,7 +346,7 @@ describe('useRecentDocuments', () => {
         ['shared', 'doc2'],
       )
       const contacts = [{ Email: 'joe@proton.ch' }] as unknown as ContactEmail[]
-      expect(getDisplayName(recentDocument, contacts)).toBe('joe@proton.ch')
+      expect(getDocumentOwnerDisplayName(recentDocument, contacts)).toBe('joe@proton.ch')
     })
 
     test('Will return the createdBy email if no contact matches the createdBy field due to incorrect filtering', () => {
@@ -369,7 +368,7 @@ describe('useRecentDocuments', () => {
         { Name: 'Jane Doe', Email: 'jane@proton.ch' },
       ] as unknown as ContactEmail[]
 
-      expect(getDisplayName(recentDocument, contacts)).toBe('unknown@proton.ch')
+      expect(getDocumentOwnerDisplayName(recentDocument, contacts)).toBe('unknown@proton.ch')
     })
 
     test('Will return the contact name if the contact matches the createdBy field', () => {
@@ -391,7 +390,7 @@ describe('useRecentDocuments', () => {
         { Name: 'Jane Doe', Email: 'jane@proton.ch' },
       ] as unknown as ContactEmail[]
 
-      expect(getDisplayName(recentDocument, contacts)).toBe('Jane Doe')
+      expect(getDocumentOwnerDisplayName(recentDocument, contacts)).toBe('Jane Doe')
     })
   })
 })
