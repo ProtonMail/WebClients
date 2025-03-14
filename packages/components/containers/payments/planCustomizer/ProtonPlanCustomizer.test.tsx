@@ -353,3 +353,60 @@ it('should allow input of members through text field', async () => {
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 10,
     });
 });
+
+it('should balance scribes and lumos when total exceeds members', () => {
+    const planIDs: PlanIDs = {
+        [PLANS.MAIL_PRO]: 1, // 1 member
+        [ADDON_NAMES.MEMBER_MAIL_PRO]: 3, // 3 members (so makes 4 members in total)
+        [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 4, // 4 scribes
+    };
+
+    const props: Props = {
+        ...defaultProps,
+        planIDs,
+        currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
+        latestSubscription: buildSubscription({}, planIDs),
+    };
+
+    const { rerender } = render(<ProtonPlanCustomizer {...props} />);
+
+    // the banner Add Lumo button replaces all scribes with lumos
+    const lumoBannerAddButton = screen.getByTestId(`lumo-addon-banner-add-button`);
+    fireEvent.click(lumoBannerAddButton);
+    const newPlanIDs = {
+        [PLANS.MAIL_PRO]: 1,
+        [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+        [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
+    };
+    expect(onChangePlanIDsMock).toHaveBeenCalledWith(newPlanIDs);
+    rerender(<ProtonPlanCustomizer {...props} planIDs={newPlanIDs} />);
+
+    // at this point we have max number of lumos so addon add button is disabled
+    expect(screen.getByTestId(`increase-addon-${ADDON_NAMES.LUMO_MAIL_PRO}`)).toBeDisabled();
+
+    // when we increase the number of scribes, the number of lumos should be reduced
+    const increaseScribeButton = screen.getByTestId(`increase-addon-${ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO}`);
+    fireEvent.click(increaseScribeButton);
+    expect(onChangePlanIDsMock).toHaveBeenCalledWith({
+        [PLANS.MAIL_PRO]: 1,
+        [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+        [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1,
+        [ADDON_NAMES.LUMO_MAIL_PRO]: 3,
+    });
+
+    // when we increase the number of lumos then it should decrease the number of scribes
+    const newPlanIDs2 = {
+        [PLANS.MAIL_PRO]: 1,
+        [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+        [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1,
+        [ADDON_NAMES.LUMO_MAIL_PRO]: 3,
+    };
+    rerender(<ProtonPlanCustomizer {...props} planIDs={newPlanIDs2} />);
+    const increaseLumoButton = screen.getByTestId(`increase-addon-${ADDON_NAMES.LUMO_MAIL_PRO}`);
+    fireEvent.click(increaseLumoButton);
+    expect(onChangePlanIDsMock).toHaveBeenCalledWith({
+        [PLANS.MAIL_PRO]: 1,
+        [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+        [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
+    });
+});
