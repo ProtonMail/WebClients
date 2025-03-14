@@ -168,6 +168,7 @@ const AddonCustomizer = ({
             const newValue = (newQuantity - min) / addonMultiplier;
             let newPlanIDs = setQuantity(planIDs, addon.Name, newValue);
             const scribeAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isScribeAddon);
+            const lumoAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isLumoAddon);
 
             if (isMemberAddon(addonNameKey) && scribeAddonKey) {
                 const membersValue = value;
@@ -177,6 +178,29 @@ const AddonCustomizer = ({
                     newPlanIDs = setQuantity(newPlanIDs, scribeAddonKey, newQuantity);
                 }
             }
+
+            if (isLumoAddon(addonNameKey) && scribeAddonKey) {
+                const newSelectedPlan = SelectedPlan.createNormalized(
+                    newPlanIDs,
+                    plansMap,
+                    cycle,
+                    currency,
+                    'prefer-lumos'
+                );
+                newPlanIDs = newSelectedPlan.planIDs;
+            }
+
+            if (isScribeAddon(addonNameKey) && lumoAddonKey) {
+                const newSelectedPlan = SelectedPlan.createNormalized(
+                    newPlanIDs,
+                    plansMap,
+                    cycle,
+                    currency,
+                    'prefer-scribes'
+                );
+                newPlanIDs = newSelectedPlan.planIDs;
+            }
+
             onChangePlanIDs(newPlanIDs);
         },
         step: addonMultiplier,

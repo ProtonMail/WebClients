@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
@@ -21,7 +21,7 @@ const LumoAddonBanner = ({ onClick }: { onClick: () => void; price: ReactElement
         </div>
         <Button color="norm" shape="outline" className="shrink-0 flex items-center gap-1" pill onClick={onClick}>
             <Icon name="plus" className="shrink-0" />
-            <span>{c('Action').t`Add`}</span>
+            <span data-testid="lumo-addon-banner-add-button">{c('Action').t`Add`}</span>
         </Button>
     </div>
 );
@@ -48,7 +48,15 @@ const LumoAddon = ({ price, onAddLumo, value, ...rest }: LumoAddonProps) => {
             </div>
         );
     }
-    return <NumberCustomiser label={LUMO_APP_NAME} value={value} {...rest} />;
+
+    return (
+        <NumberCustomiser
+            label={LUMO_APP_NAME}
+            value={value}
+            tooltip={c('Info').t`${LUMO_APP_NAME} includes ${BRAND_NAME} Scribe writing assistant`}
+            {...rest}
+        />
+    );
 };
 
 export default LumoAddon;
