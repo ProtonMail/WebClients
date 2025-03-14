@@ -59,18 +59,16 @@ export const useApplyEncryptedSearch = ({
 
     const { sendPerformSearchReport } = useSearchTelemetry();
 
-    const params = { labelID, conversationMode, sort, filter, search, esEnabled };
+    const params = { labelID, conversationMode, sort, filter, search, esEnabled, isSearching: isSearch(search) };
 
     const isES = useMailSelector((state: MailState) => isESSelector(state, { search, esStatus }));
-    const shouldLoadElements = useMailSelector((state: MailState) =>
-        shouldSendRequestSelector(state, { page, params })
-    );
+    const shouldLoadElements = useMailSelector((state: MailState) => shouldSendRequestSelector(state, { page }));
     const messagesToLoadMoreES = useMailSelector((state: MailState) =>
         messagesToLoadMoreESSelector(state, { page, search, esStatus })
     );
 
     const setEncryptedSearchResults = (elements: Element[]) => {
-        dispatch(addESResults({ elements, page: parseSearchParams(history.location).page }));
+        dispatch(addESResults({ elements, page: parseSearchParams(history.location).page, params }));
     };
 
     const executeSearch = async () => {
@@ -93,7 +91,7 @@ export const useApplyEncryptedSearch = ({
                     dispatch(manualFulfilled());
                     onPage(0);
 
-                    void dispatch(loadAction({ page: 0, pageSize, params, abortController: undefined }));
+                    void dispatch(loadAction({ page: 0, pageSize, abortController: undefined }));
                     sendPerformSearchReport({
                         type: SEARCH_TYPE.BACKEND_SIDE,
                         searchParams: {
@@ -107,7 +105,7 @@ export const useApplyEncryptedSearch = ({
                         hasReachedAPILimit: true,
                     });
                 } else {
-                    void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
+                    void dispatch(loadAction({ page, pageSize, abortController: undefined }));
                     sendPerformSearchReport({
                         type: SEARCH_TYPE.BACKEND_SIDE,
                         searchParams: {
@@ -126,7 +124,7 @@ export const useApplyEncryptedSearch = ({
                 text: c('Error').t`There has been an issue with content search. Default search has been used instead.`,
                 type: 'error',
             });
-            void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
+            void dispatch(loadAction({ page, pageSize, abortController: undefined }));
         }
     };
 

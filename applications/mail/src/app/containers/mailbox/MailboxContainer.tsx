@@ -168,6 +168,7 @@ const MailboxContainer = ({
         filter,
         search: searchParameters,
         onPage: handlePage,
+        mailSettings,
     };
 
     const { labelID, elements, elementIDs, loading, placeholderCount, total } = useElements(elementsParams);
@@ -212,8 +213,8 @@ const MailboxContainer = ({
         allIDs: elementIDs,
         rowMode: !columnMode,
         messageID,
-        // Using inputLabelID and page as dependency to reset checkedIDs on page or location change
-        resetDependencies: [columnMode ? elementID : undefined, inputLabelID, page],
+        // Using inputLabelID, page, filter, sort, and searchParameters as dependency to reset checkedIDs on any list-changing parameter
+        resetDependencies: [columnMode ? elementID : undefined, inputLabelID, page, filter, sort, searchParameters],
         onCheck,
     });
 
@@ -251,6 +252,11 @@ const MailboxContainer = ({
 
     const handleSort = useCallback(
         (sort: Sort) => {
+            // Reset selections when sort changes
+            setSelectAll(false);
+            handleCheckAll(false);
+
+            // Then update the URL
             history.push(setSortInUrl(history.location, sort));
         },
         [history]
@@ -258,6 +264,11 @@ const MailboxContainer = ({
 
     const handleFilter = useCallback(
         (filter: Filter) => {
+            // Reset selections when filter changes
+            setSelectAll(false);
+            handleCheckAll(false);
+
+            // Then update the URL
             history.push(setFilterInUrl(history.location, filter));
         },
         [history]
@@ -310,6 +321,18 @@ const MailboxContainer = ({
             setSelectAll(false);
         }
     }, [location.pathname, location.hash]);
+
+    // Track filter changes that might happen through URL manipulation or browser navigation
+    const prevFilterStringRef = useRef(JSON.stringify(filter));
+    useEffect(() => {
+        const currentFilterString = JSON.stringify(filter);
+        // Only reset if the filter has actually changed
+        if (prevFilterStringRef.current !== currentFilterString) {
+            setSelectAll(false);
+            handleCheckAll(false);
+            prevFilterStringRef.current = currentFilterString;
+        }
+    }, [filter]);
 
     // Set the ref so that we can uncheck all elements from the list when performing select all action with drag and drop
     useEffect(() => {

@@ -62,7 +62,11 @@ const useSnooze = () => {
         try {
             stop();
             dispatch(backendActionStarted());
-            rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.SNOOZED]: snooze }, true);
+            rollback = optimisticApplyLabels({
+                elements,
+                inputChanges: { [MAILBOX_LABEL_IDS.SNOOZED]: snooze },
+                isMove: true,
+            });
 
             if (snooze && data) {
                 const { duration, snoozeTime } = data;

@@ -4,7 +4,7 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
 import { clearAll } from '../../../helpers/test/helper';
 import * as useStarModule from '../../../hooks/actions/useStar';
-import { getElements, sendEvent, setup } from './Mailbox.test.helpers';
+import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
 jest.spyOn(useStarModule, 'useStar');
 
@@ -29,10 +29,11 @@ describe('Mailbox performance loss check', () => {
      * We're spying on the useStar hook to count the number of render
      */
     it('should not render ItemStar on a conversation events nor a location change', async () => {
+        const { labelID } = props;
         const total = 3;
         const SomeNonMatchingID = 'SomeNonMatchingID';
 
-        const conversations = getElements(total);
+        const conversations = getElements(total, labelID);
         const { getItems, store, history } = await setup({ conversations });
         const items = getItems();
 
@@ -43,15 +44,21 @@ describe('Mailbox performance loss check', () => {
         // Send event though the event manager + change location to trigger common app change
         await sendEvent(store, {
             Conversations: [
-                { ID: SomeNonMatchingID, Action: EVENT_ACTIONS.CREATE, Conversation: { ID: SomeNonMatchingID } },
+                {
+                    ID: SomeNonMatchingID,
+                    Action: EVENT_ACTIONS.CREATE,
+                    Conversation: {
+                        ID: SomeNonMatchingID,
+                    },
+                },
             ],
         });
 
         act(() => {
-            history.push('/elsewhere');
+            history.push('/sent');
         });
 
-        // There will be a few more call but it has to be in limited amount
+        // There will be a few more calls, but it has to be in limited amount
         expect(useStar.mock.calls.length).toBeLessThan(callsAfterInitialization + 6);
     });
 });

@@ -12,6 +12,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useListTelemetry, { ACTION_TYPE, numberSelectionElements } from 'proton-mail/components/list/useListTelemetry';
 import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
+import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { isConversation } from '../../../helpers/elements';
@@ -149,6 +150,7 @@ export const usePermanentDeleteSelection = (labelID: string) => {
     const dispatch = useMailDispatch();
     const { sendSimpleActionReport } = useListTelemetry();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
+    const isES = useIsEncryptedSearch();
 
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
     const [deleteModalProps, setDeleteModalOpen] = useModalState();
@@ -200,7 +202,11 @@ export const usePermanentDeleteSelection = (labelID: string) => {
         } finally {
             dispatch(backendActionFinished());
         }
-        await call();
+        // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+        // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+        if (isES) {
+            await call();
+        }
     };
 
     const deleteSelectionModal = (
