@@ -5,12 +5,15 @@ import { useApi, useAuthentication, useConfig } from '@proton/components'
 import { Application } from '@proton/docs-core'
 import { useDriveCompat } from '@proton/drive-store'
 
-import { useLandingPageFeatureFlag } from '../../../components/Homepage/useLandingPageFeatureFlag'
 import { APP_VERSION } from '../../../config'
 import ApplicationProvider from '../../../Containers/ApplicationProvider'
-import { useUnleashClient } from '@proton/unleash'
+import { useFlag, useUnleashClient } from '@proton/unleash'
 import { DocsNotificationsProvider } from '../../../Containers/DocsNotificationsProvider'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+
+function useHomepageFeatureFlag() {
+  return useFlag('DriveDocsLandingPageEnabled')
+}
 
 const HomepageRoute = lazy(() => import('../../../components/Homepage/HomepageRoute'))
 const UserDocumentPage = lazy(() => import('../(document)/doc/page'))
@@ -20,7 +23,7 @@ export function UserAppContent() {
   const driveCompat = useDriveCompat()
   const { API_URL } = useConfig()
   const { UID } = useAuthentication()
-  const isLandingPageEnabled = useLandingPageFeatureFlag()
+  const isHomepageEnabled = useHomepageFeatureFlag()
 
   const unleashClient = useUnleashClient()
 
@@ -54,7 +57,7 @@ export function UserAppContent() {
             </Suspense>
           </Route>
           <Route path={['/most-recent', '/owned-by-me', '/owned-by-others']}>
-            {isLandingPageEnabled ? (
+            {isHomepageEnabled ? (
               <Suspense>
                 <HomepageRoute />
               </Suspense>
@@ -66,7 +69,7 @@ export function UserAppContent() {
             path="*"
             render={(props) => {
               const isOpenDocumentLink = props.location.search.includes('mode=open')
-              return isLandingPageEnabled && !isOpenDocumentLink ? (
+              return isHomepageEnabled && !isOpenDocumentLink ? (
                 <Redirect to="/most-recent" />
               ) : (
                 <Redirect to={{ pathname: '/doc', search: props.location.search }} />

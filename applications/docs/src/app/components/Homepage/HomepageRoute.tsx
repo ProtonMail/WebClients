@@ -1,20 +1,17 @@
 import { useState } from 'react'
-import { HomepageContent } from './HomepageContent'
-import HomepageLayout from './HomepageLayout'
+import { HomepageContent } from './HomepageContent/HomepageContent'
+import { HomepageLayout } from './HomepageLayout'
 import { useRouteMatch } from 'react-router-dom'
-import { RecentDocumentsProvider } from './useRecentDocuments'
+import { RecentDocumentsProvider } from './utils/recent-documents'
 
 export default function HomepageRoute() {
   const [searchText, setSearchText] = useState('')
-  const isOwnedByMe = useRouteMatch('/owned-by-me')
-  const isOwnedByOthers = useRouteMatch('/owned-by-others')
 
   let filter = ''
-
-  if (isOwnedByMe) {
+  if (useRouteMatch('/owned-by-me')) {
     filter = 'owned-by-me'
   }
-  if (isOwnedByOthers) {
+  if (useRouteMatch('/owned-by-others')) {
     filter = 'owned-by-others'
   }
 
