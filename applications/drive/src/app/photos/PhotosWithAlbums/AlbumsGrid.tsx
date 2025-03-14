@@ -15,6 +15,7 @@ type AlbumsGridProps = {
     onItemClick: (shareId: string, linkId: string) => void;
     onItemShare: (linkId: string) => void;
     onItemRename: (linkId: string) => void;
+    userAddressEmail?: string;
 };
 
 export const AlbumsGrid: FC<AlbumsGridProps> = ({
@@ -25,6 +26,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
     onItemClick,
     onItemShare,
     onItemRename,
+    userAddressEmail,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
@@ -136,6 +138,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
                             left: `${x}px`,
                             animationDelay: `${Math.round(((i % animationOffset) / (animationOffset / 2)) * 10) / 10}s`,
                         }}
+                        isOwner={item.signatureEmail === userAddressEmail}
                     />
                 );
             }
