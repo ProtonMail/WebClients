@@ -1,7 +1,7 @@
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants'
 import { replaceUrl } from '@proton/shared/lib/helpers/browser'
-import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
+import { getPathFromLocation, getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
 import { PLANS } from '@proton/payments'
 import { Actions, countActionWithTelemetry, traceTelemetry } from '@proton/drive-store/utils/telemetry'
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window'
@@ -12,16 +12,17 @@ import {
 } from '@proton/drive-store/hooks/util/useRedirectToPublicPage'
 import { saveUrlPasswordForRedirection } from '@proton/drive-store/utils/url/password'
 import { useOpenDocument, type RedirectAction } from '@proton/drive-store/store/_documents/useOpenDocument'
-import type { PublicContextType } from '../../../Containers/DocsContextProvider'
+import type { PublicContextValue } from '../context'
 import type { EditorControllerInterface, PublicDocumentState } from 'packages/docs-core'
 import { useCallback } from 'react'
+import { getParsedPathWithoutLocalIDBasename } from '@proton/shared/lib/authentication/pathnameHelper'
 
 function openUrl(url: string, openInNewTab: boolean) {
   const tab = openInNewTab ? getNewWindow() : getCurrentTab()
   tab.handle.location.assign(url)
 }
 
-export const redirectToAccountSwitcher = (token: string, linkId: string | undefined, urlPassword: string) => {
+export function redirectToAccountSwitcher(token: string, linkId: string | undefined, urlPassword: string) {
   const accountSwitchUrl = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT))
   accountSwitchUrl.searchParams.append('product', 'docs')
 
@@ -49,7 +50,7 @@ export const redirectToAccountSwitcher = (token: string, linkId: string | undefi
   replaceUrl(urlWithReturnUrl)
 }
 
-export const redirectToSignUp = async ({
+export async function redirectToSignUp({
   action,
   token,
   email,
@@ -63,7 +64,7 @@ export const redirectToSignUp = async ({
   linkId: string | undefined
   urlPassword: string
   openInNewTab: boolean
-}) => {
+}) {
   await Promise.all([
     countActionWithTelemetry(Actions.SignUpFlowModal),
     traceTelemetry(Actions.SignUpFlowAndRedirectCompleted).start(),
@@ -97,7 +98,7 @@ export const redirectToSignUp = async ({
   openUrl(urlWithReturnUrl.toString(), openInNewTab)
 }
 
-export const redirectToSignIn = async ({
+export async function redirectToSignIn({
   action,
   token,
   email,
@@ -111,8 +112,8 @@ export const redirectToSignIn = async ({
   linkId: string | undefined
   urlPassword: string
   openInNewTab: boolean
-}) => {
-  countActionWithTelemetry(Actions.SignInFlowModal)
+}) {
+  void countActionWithTelemetry(Actions.SignInFlowModal)
 
   const returnUrlSearchParams = new URLSearchParams()
   returnUrlSearchParams.append('mode', 'open-url-reauth')
@@ -160,7 +161,7 @@ export type PublicDocumentPostMessageDataForCopying = {
 }
 
 export type PublicDocumentCopyingOptions = {
-  context: PublicContextType
+  context: PublicContextValue
   editorController: EditorControllerInterface
   documentState: PublicDocumentState
 }
@@ -198,7 +199,7 @@ export function usePublicDocumentCopying({ context, editorController, documentSt
     [handleCopierReady],
   )
 
-  const createCopy = () => {
+  function createCopy() {
     if (!user) {
       throw new Error('Attempted to create a copy without a user')
     }
@@ -213,4 +214,17 @@ export function usePublicDocumentCopying({ context, editorController, documentSt
   }
 
   return { createCopy }
+}
+
+export function redirectToAccountSwitcherFromUserApp() {
+  const accountSwitchUrl = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT))
+  accountSwitchUrl.searchParams.append('product', 'docs')
+
+  const returnUrl = `/${getParsedPathWithoutLocalIDBasename(getPathFromLocation(window.location))}`
+  const urlWithReturnUrl = getUrlWithReturnUrl(accountSwitchUrl.toString(), {
+    returnUrl: returnUrl,
+    context: 'private',
+  })
+
+  replaceUrl(urlWithReturnUrl)
 }

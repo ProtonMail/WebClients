@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { Button } from '@proton/atoms/index'
 import Hero from './hero.svg'
 import useLoading from '@proton/hooks/useLoading'
-import { useDocsNotifications } from '../../../../../../Containers/DocsNotificationsProvider'
+import { useDocsNotifications } from '../../../../__utils/notifications-context'
 
 export function EmailOptInModal({ onClose, open, ...modalProps }: ModalStateProps) {
   const { updateNotificationSettings, emailTitleEnabled, emailNotificationsEnabled } = useDocsNotifications()

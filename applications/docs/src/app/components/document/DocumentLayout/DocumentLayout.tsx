@@ -7,7 +7,7 @@ import { APPS } from '@proton/shared/lib/constants'
 import { DocumentHeader } from './DocumentHeader/DocumentHeader'
 import { DocsQuickSettings } from '../../DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
-import { useDocsContext } from '../../../Containers/DocsContextProvider'
+import { useDocsContext } from '../context'
 
 export type DocumentLayoutProps = {
   children: ReactNode

@@ -18,7 +18,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 import noop from '@proton/utils/noop'
 import { sendErrorReport, getRefreshError } from '@proton/drive-store'
 
-import locales from '../../../locales'
+import { locales } from '../../../utils/locales'
 import { extendStore, setupStore } from '../../../redux-store/store'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
 import type { DocsState } from '../../../redux-store/rootReducer'
