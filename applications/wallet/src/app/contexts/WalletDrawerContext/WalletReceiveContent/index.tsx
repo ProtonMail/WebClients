@@ -15,13 +15,15 @@ import { Button, Select } from '../../../atoms';
 import { WalletAccountItem } from '../../../components/WalletAccountSelector';
 import { getAccountWithChainDataFromManyWallets } from '../../../utils';
 import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';
+import { WalletReceiveExtraContent } from '../WalletReceiveExtraContent';
 
 interface Props {
     wallet: IWasmApiWalletData;
     account?: WasmApiWalletAccount;
+    onClose?: () => void;
 }
 
-export const WalletReceiveContent = ({ wallet, account }: Props) => {
+export const WalletReceiveContent = ({ wallet, account, onClose }: Props) => {
     const { createNotification } = useNotifications();
 
     const defaultAccount = wallet.WalletAccounts.at(0);
@@ -161,6 +163,9 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                         </span>
                     </Button>
                 </div>
+                {selectedAccount && !isDisabled && (
+                    <WalletReceiveExtraContent account={selectedAccount} onClose={onClose}></WalletReceiveExtraContent>
+                )}
             </div>
         </div>
     );

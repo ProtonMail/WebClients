@@ -77,6 +77,7 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
             updateWalletAccountsOrder: mockedValue?.wallet?.updateWalletAccountsOrder ?? vi.fn(),
             updateWalletAccountLastUsedIndex: mockedValue?.wallet?.updateWalletAccountLastUsedIndex ?? vi.fn(),
             getWalletAccountAddresses: mockedValue?.wallet?.getWalletAccountAddresses ?? vi.fn(),
+            sendWalletAccountMetrics: mockedValue?.wallet?.sendWalletAccountMetrics ?? vi.fn(),
         }),
         bitcoin_address: freeable({
             getBitcoinAddresses: mockedValue?.bitcoin_address?.getBitcoinAddresses ?? vi.fn(),
