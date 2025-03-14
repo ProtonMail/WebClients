@@ -67,16 +67,14 @@ export interface ElementsState {
     pageSize: MAIL_PAGE_SIZE;
 
     /**
-     * List of page number currently in the cache
+     * List of pages number currently in the cache, per "context filter"
      */
     pages: SimpleMap<number[]>;
 
     /**
-     * Total of elements returned by the current request
-     * Undefined before the request return
-     * Warning, if the user perform move actions, this value can be hugely outdated
+     * List of total of elements currently in the cache, per "context filter"
      */
-    total: number | undefined;
+    total: SimpleMap<number>;
 
     /**
      * Actual cache of elements indexed by there ids
@@ -130,7 +128,6 @@ export interface NewStateParams {
     params?: Partial<ElementsStateParams>;
     retry?: RetryData;
     beforeFirstLoad?: boolean;
-    total?: number;
 }
 
 export interface EventUpdates {

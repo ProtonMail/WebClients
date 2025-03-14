@@ -79,7 +79,7 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
                     // Long tasks trigger too much element update to be able to load them all
                     toLoad.push(element);
                 } else {
-                    // We can't loose the element, so we create it
+                    // We can't lose the element, so we create it
                     toCreate.push(element);
                 }
 

@@ -24,7 +24,7 @@ import { isSearch as testIsSearch } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { total as totalSelector } from '../../store/elements/elementsSelectors';
+import { contextTotal as contextTotalSelector } from '../../store/elements/elementsSelectors';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
@@ -49,7 +49,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const { selectAll, setSelectAll, getBannerTextWithLocation } = useSelectAll({ labelID });
 
     // We display 50 elements maximum in the list. To know how much results are matching a search, we store it in Redux, in elements.total
-    const elementsFoundCount = useMailSelector(totalSelector) || 0;
+    const elementsFoundCount = useMailSelector(contextTotalSelector) || 0;
 
     const [labels] = useLabels();
     const [folders] = useFolders();
