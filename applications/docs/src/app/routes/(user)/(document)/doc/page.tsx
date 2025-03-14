@@ -12,14 +12,14 @@ import { DocumentLayout } from '../../../../components/document/DocumentLayout/D
 import { DocumentConverter } from './__components/DocumentConverter'
 import { DocumentViewer } from '../../../../components/document/DocumentViewer/DocumentViewer'
 import { WordCountProvider } from '../../../../components/document/WordCount'
-import { useApplication } from '../../../../Containers/ApplicationProvider'
-import { useDocsUrlBar } from '../../../../Containers/useDocsUrlBar'
+import { useApplication } from '../../../../utils/application-context'
+import { useDocsUrlBar } from '../../../../utils/docs-url-bar'
 import { useUser } from '@proton/account/user/hooks'
-import UserProvider from '../../../../Containers/DocsContextProvider'
+import { DocsProvider } from '../../../../components/document/context'
 import { PublicDocumentCopier } from '../../../../components/document/PublicDocumentCopier'
 import { getUrlPassword } from '@proton/drive-store/utils/url/password'
 import { useEmailOptInModal } from './__components/EmailOptInModal/EmailOptInModal'
-import { useDocsNotifications } from '../../../../Containers/DocsNotificationsProvider'
+import { useDocsNotifications } from '../../__utils/notifications-context'
 import { PrivateHookChangesToEvents } from './__components/PrivateHookChangesToEvents'
 import { useFlag } from '@proton/unleash'
 
@@ -137,7 +137,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
 
   return (
     <WordCountProvider>
-      <UserProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
+      <DocsProvider publicContext={undefined} privateContext={{ user, compat: driveCompat }}>
         <DocumentLayout action={actionMode}>
           <PrivateHookChangesToEvents />
           <Content
@@ -149,7 +149,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
             editorInitializationConfig={editorInitializationConfig}
           />
         </DocumentLayout>
-      </UserProvider>
+      </DocsProvider>
     </WordCountProvider>
   )
 }
