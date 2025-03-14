@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext } from 'react';
 import type { ReactNode } from 'react';
 
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
@@ -109,7 +110,7 @@ export interface PublicDriveCompat {
     linkId: string | undefined;
 }
 
-export const usePublicDriveCompatValue = (): PublicDriveCompat => {
+export const usePublicDriveCompatValue = (session?: ResumedSessionResult): PublicDriveCompat => {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
@@ -125,7 +126,7 @@ export const usePublicDriveCompatValue = (): PublicDriveCompat => {
         isWaitingForPasswordFromDriveWindow,
         isPasswordNeeded,
         submitPassword,
-    } = usePublicDocsToken();
+    } = usePublicDocsToken(session);
 
     const {
         rootLinkId,
@@ -210,8 +211,14 @@ export const usePublicDriveCompat = () => {
     return context;
 };
 
-export const PublicCompatProvider = ({ children }: { children: ReactNode }) => {
-    const value = usePublicDriveCompatValue();
+export const PublicCompatProvider = ({
+    children,
+    session,
+}: {
+    children: ReactNode;
+    session?: ResumedSessionResult;
+}) => {
+    const value = usePublicDriveCompatValue(session);
 
     return <PublicCompatContext.Provider value={value}>{children}</PublicCompatContext.Provider>;
 };

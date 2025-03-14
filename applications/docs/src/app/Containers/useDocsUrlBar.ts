@@ -7,6 +7,7 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { parseOpenAction } from './parseOpenAction'
 import { replaceLastPathSegment } from './UrlReplacer'
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 
 export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = { isDocsEnabled: true }) {
   const { getLocalID } = useAuthentication()
@@ -102,6 +103,12 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = {
     history.replaceState(null, '', newUrl.toString())
   }, [])
 
+  const removeLocalIDFromUrl = useCallback(() => {
+    const newUrl = new URL(location.href)
+    newUrl.pathname = stripLocalBasenameFromPathname(newUrl.pathname)
+    history.replaceState(null, '', newUrl.toString())
+  }, [])
+
   useEffectOnce(() => {
     const action = parseOpenAction(searchParams)
 
@@ -118,5 +125,6 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = {
     navigateToAction,
     linkId: openAction && 'linkId' in openAction ? openAction.linkId : undefined,
     changeURLVisually,
+    removeLocalIDFromUrl,
   }
 }

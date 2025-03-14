@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -16,7 +17,7 @@ import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './us
  * In case custom password is set, it will be set in `isPasswordNeeded` and
  * then `submitPassword` callback should be used.
  */
-export default function usePublicAuth(token: string, urlPassword: string) {
+export default function usePublicAuth(token: string, urlPassword: string, session?: ResumedSessionResult) {
     const { createNotification } = useNotifications();
 
     const { hasSession, initHandshake, initSession } = usePublicSession();
@@ -68,7 +69,7 @@ export default function usePublicAuth(token: string, urlPassword: string) {
         }
 
         void withLoading(
-            initHandshake(token)
+            initHandshake(token, session)
                 .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
                     if (isLegacySharedUrl) {
                         setIsLegacy(true);
