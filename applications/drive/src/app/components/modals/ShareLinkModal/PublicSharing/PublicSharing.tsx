@@ -31,10 +31,11 @@ interface Props {
     publicSharedLink: string;
     publicSharedLinkPermissions: SHARE_URL_PERMISSIONS;
     onChangePermissions: (permissions: number) => Promise<void>;
-    createSharedLink: () => void;
-    deleteSharedLink: () => void;
+    createSharedLink: () => Promise<void>;
+    deleteSharedLink: () => Promise<void>;
     isLoading: boolean;
     viewOnly: boolean;
+    onPublicLinkToggle?: (enabled: boolean) => void;
 }
 export const PublicSharing = ({
     publicSharedLink,
@@ -44,6 +45,7 @@ export const PublicSharing = ({
     deleteSharedLink,
     isLoading,
     viewOnly,
+    onPublicLinkToggle,
 }: Props) => {
     const contentRef = useRef<HTMLDivElement>(null);
     const [isPermissionsLoading, withPermissionsLoading] = useLoading(false);
@@ -100,9 +102,9 @@ export const PublicSharing = ({
 
     const handleToggle = () => {
         if (publicSharedLink) {
-            deleteSharedLink();
+            void deleteSharedLink().then(() => onPublicLinkToggle?.(false));
         } else {
-            createSharedLink();
+            void createSharedLink().then(() => onPublicLinkToggle?.(true));
         }
     };
 

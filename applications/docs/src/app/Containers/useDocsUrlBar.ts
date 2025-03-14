@@ -23,9 +23,11 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = {
     if (action.mode !== 'open' && action.mode !== 'open-url') {
       return
     }
+
     const newURL = new URL(location.href)
     newURL.search = ''
     newURL.hash = ''
+
     if (action.mode === 'open') {
       newURL.searchParams.set('mode', 'open')
       newURL.searchParams.set('volumeId', action.volumeId)
@@ -38,6 +40,7 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = {
       }
       newURL.hash = action.urlPassword
     }
+
     history.replaceState(null, '', newURL)
   }, [])
 
