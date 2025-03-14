@@ -4,14 +4,71 @@ import { DateFormatter } from '@proton/docs-core'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useState } from 'react'
-import { useApplication } from '../../Containers/ApplicationProvider'
+import { useApplication } from '../../../Containers/ApplicationProvider'
 import type { RecentDocumentItem } from '@proton/docs-core/lib/Services/RecentDocuments/RecentDocumentItem'
-import { getDisplayName } from './Utils/getDisplayName'
-import { filterItems } from './Utils/filterItems'
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
+import { c } from 'ttag'
+
+// filter documents
+// ----------------
+
+function applyFilter(item: RecentDocumentItem, filter?: string) {
+  if (filter === 'owned-by-me') {
+    return !item.isSharedWithMe
+  }
+
+  if (filter === 'owned-by-others') {
+    return item.isSharedWithMe
+  }
+
+  return true
+}
+
+export function filterDocuments(items?: RecentDocumentItem[], searchText?: string, filter?: string) {
+  if (!items || items.length === 0 || !(searchText || filter)) {
+    return items || []
+  }
+
+  let outputItems = items
+
+  if (searchText) {
+    outputItems = outputItems.filter((data) => data.name.toLowerCase().includes(searchText.toLowerCase()))
+  }
+
+  if (filter) {
+    outputItems = outputItems.filter((item) => applyFilter(item, filter))
+  }
+
+  return outputItems
+}
+
+// document owner display name
+// ---------------------------
+
+export function getDocumentOwnerDisplayName(recentDocument: RecentDocumentItem, contactEmails?: ContactEmail[]) {
+  if (!recentDocument.isSharedWithMe) {
+    return c('Info').t`Me`
+  }
+
+  if (!recentDocument.createdBy) {
+    return undefined
+  }
+
+  const foundContact = contactEmails?.find((contactEmail) => contactEmail.Email === recentDocument.createdBy)
+
+  if (foundContact) {
+    return foundContact.Name ?? foundContact.Email
+  }
+
+  return recentDocument.createdBy
+}
+
+// recent documents value
+// ----------------------
 
 const dateFormatter = new DateFormatter()
 
-export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: string; filter?: string }) => {
+export function useRecentDocumentsValue({ searchText, filter }: { searchText?: string; filter?: string }) {
   const application = useApplication()
   const state = application.recentDocumentsService.state
   const [recents, setRecents] = useState<RecentDocumentItem[]>([])
@@ -26,7 +83,7 @@ export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: s
   }, [application, state])
 
   useEffect(() => {
-    setFilteredItems(filterItems(recents, searchText, filter))
+    setFilteredItems(filterDocuments(recents, searchText, filter))
   }, [searchText, filter, recents])
 
   useEffect(() => {
@@ -57,7 +114,8 @@ export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: s
   )
 
   const getDisplayNameForRecentDocument = useCallback(
-    (recentDocument: RecentDocumentItem): string | undefined => getDisplayName(recentDocument, contactEmails),
+    (recentDocument: RecentDocumentItem): string | undefined =>
+      getDocumentOwnerDisplayName(recentDocument, contactEmails),
     [contactEmails],
   )
 
@@ -78,28 +136,29 @@ export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: s
   }
 }
 
+// recent documents context
+// ------------------------
+
 export const RecentDocumentsContext = createContext<ReturnType<typeof useRecentDocumentsValue> | null>(null)
 
-export const RecentDocumentsProvider = ({
-  children,
-  searchText,
-  filter,
-}: {
+export type RecentDocumentsProviderProps = {
   children: ReactNode
   searchText?: string
   filter?: string
-}) => (
-  <RecentDocumentsContext.Provider value={useRecentDocumentsValue({ searchText, filter })}>
-    {children}
-  </RecentDocumentsContext.Provider>
-)
+}
 
-export const useRecentDocuments = () => {
+export function RecentDocumentsProvider({ children, searchText, filter }: RecentDocumentsProviderProps) {
+  return (
+    <RecentDocumentsContext.Provider value={useRecentDocumentsValue({ searchText, filter })}>
+      {children}
+    </RecentDocumentsContext.Provider>
+  )
+}
+
+export function useRecentDocuments() {
   const context = useContext(RecentDocumentsContext)
-
   if (!context) {
-    throw new Error('No provider for context')
+    throw new Error('Missing RecentDocuments context')
   }
-
   return context
 }
