@@ -1,5 +1,6 @@
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey'
 import { uint8ArrayToBase64String, base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib'
 import { nodeMetaUniqueId, type AnyNodeMeta } from '@proton/drive-store/lib'
 import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
 import type { EncryptionContext } from './Encryption/EncryptionContext'
@@ -15,6 +16,8 @@ type CachedValue = {
   encryptedValue: string
   expirationTime?: number
 }
+
+type DocumentIdentifier = Pick<PublicNodeMeta, 'token'> | NodeMeta
 
 /**
  * The cache service is only usable in private user contexts and not available for public contexts.
@@ -165,4 +168,37 @@ export class CacheService {
       return Result.fail(`Failed to load cached commit ${dto.commitId}: ${error}`)
     }
   }
+
+  static getLocalIDForDocumentFromCache(nodeMeta: DocumentIdentifier): number | undefined {
+    try {
+      const key = keyForDocument(nodeMeta)
+      const cache = localStorage.getItem(key)
+      if (!cache) {
+        return undefined
+      }
+      const localId = JSON.parse(cache)
+      if (typeof localId === 'number' && !Number.isNaN(localId)) {
+        return localId
+      }
+      return undefined
+    } catch (_) {
+      return undefined
+    }
+  }
+
+  static setLocalIDForDocumentInCache(nodeMeta: DocumentIdentifier, localID: number) {
+    try {
+      const key = keyForDocument(nodeMeta)
+      localStorage.setItem(key, JSON.stringify(localID))
+    } catch (_) {
+      return
+    }
+  }
+}
+
+function keyForDocument(nodeMeta: DocumentIdentifier) {
+  if ('volumeId' in nodeMeta) {
+    return `local-id:${nodeMeta.volumeId}&${nodeMeta.linkId}`
+  }
+  return `local-id:${nodeMeta.token}`
 }
