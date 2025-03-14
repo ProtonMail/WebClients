@@ -7,6 +7,7 @@ export enum PassFeature {
     PassItemSharingV1 = 'PassItemSharingV1',
     PassContentScriptPopoverKillSwitch = 'PassContentScriptPopoverKillSwitch',
     PassSecureLinkCryptoChangeV1 = 'PassSecureLinkCryptoChangeV1',
+    PassWebPrfUnlock = 'PassWebPrfUnlock',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);

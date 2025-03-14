@@ -368,7 +368,7 @@ export const createAuthService = ({
                                 case ReauthAction.SSO_BIOMETRICS: {
                                     const { current, ttl } = fork.reauth.data;
                                     if (current) await auth.deleteLock(authStore.getLockMode(), current);
-                                    const encryptedOfflineKD = await generateBiometricsKey(localID!, offlineKD);
+                                    const encryptedOfflineKD = await generateBiometricsKey(core, offlineKD);
                                     authStore.setEncryptedOfflineKD(encryptedOfflineKD);
                                     authStore.setLockMode(LockMode.BIOMETRICS);
                                     authStore.setLockTTL(ttl);
@@ -564,7 +564,7 @@ export const createAuthService = ({
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
-    if (DESKTOP_BUILD) auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth));
+    if (!EXTENSION_BUILD) auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth, core));
 
     return auth;
 };

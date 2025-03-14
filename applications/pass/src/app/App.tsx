@@ -40,9 +40,16 @@ import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
+import { getBiometricsStorageKey, inferBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import {
+    deriveKeyFromPRFCredential,
+    generateCredential,
+    getSerializedCredential,
+    isPRFSupported,
+} from '@proton/pass/lib/crypto/utils/prf';
 import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
@@ -53,6 +60,7 @@ import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
+import { decodeBase64URL, stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
@@ -137,6 +145,28 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
 
         prepareImport,
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
+
+        supportsBiometrics: isPRFSupported,
+
+        getBiometricsKey: async (store) => {
+            const { storageKey } = inferBiometricsStorageKey(store);
+            const encodedId = localStorage.getItem(storageKey) ?? '';
+            const credentialId = stringToUint8Array(decodeBase64URL(encodedId));
+
+            return getSerializedCredential(credentialId);
+        },
+
+        generateBiometricsKey: async () => {
+            const credential = await generateCredential(authStore);
+            const key = await deriveKeyFromPRFCredential(credential);
+
+            /* Store the Passkey ID that can be used to derive this
+             * key once we've successfully derived it */
+            const storageKey = getBiometricsStorageKey(authStore.getLocalID()!);
+            localStorage.setItem(storageKey, credential.id);
+
+            return key;
+        },
     };
 };
 
