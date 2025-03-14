@@ -1,3 +1,4 @@
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
@@ -7,11 +8,14 @@ import type { LabelIDsChanges } from '../../models/event';
 
 export interface ElementsStateParams {
     labelID: string;
+    elementID?: string;
+    messageID?: string;
     conversationMode: boolean;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
     esEnabled: boolean;
+    isSearching: boolean;
 }
 
 export interface RetryData {
@@ -63,16 +67,14 @@ export interface ElementsState {
     pageSize: MAIL_PAGE_SIZE;
 
     /**
-     * List of page number currently in the cache
+     * List of pages number currently in the cache, per "context filter"
      */
-    pages: number[];
+    pages: SimpleMap<number[]>;
 
     /**
-     * Total of elements returned by the current request
-     * Undefined before the request return
-     * Warning, if the user perform move actions, this value can be hugely outdated
+     * List of total of elements currently in the cache, per "context filter"
      */
-    total: number | undefined;
+    total: SimpleMap<number>;
 
     /**
      * Actual cache of elements indexed by there ids
@@ -101,7 +103,6 @@ export interface QueryParams {
     abortController: AbortController | undefined;
     page: number;
     pageSize: MAIL_PAGE_SIZE;
-    params: ElementsStateParams;
     count?: number;
     refetch?: boolean;
 }
@@ -140,6 +141,7 @@ export interface EventUpdates {
 export interface ESResults {
     page: number;
     elements: Element[];
+    params: ElementsStateParams;
 }
 
 export interface OptimisticUpdates {
@@ -148,6 +150,7 @@ export interface OptimisticUpdates {
     bypass?: boolean;
     conversationMode?: boolean;
     markAsStatus?: MARK_AS_STATUS;
+    elementTotalAdjustment?: number;
 }
 
 export interface OptimisticDelete {

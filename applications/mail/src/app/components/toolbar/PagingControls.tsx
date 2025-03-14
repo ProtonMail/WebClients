@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 
 import { isPageConsecutive } from 'proton-mail/helpers/paging';
 import useTelemetryPagingControls from 'proton-mail/hooks/useTelemetryPagingControls';
-import { pages } from 'proton-mail/store/elements/elementsSelectors';
+import { contextPages } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -34,7 +34,7 @@ const PagingControls = ({
     total: inputTotal,
     onPage: inputOnPage,
 }: Props) => {
-    const pagesState = useMailSelector(pages);
+    const pagesState = useMailSelector(contextPages);
 
     const location = useLocation();
     const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputPageSize, inputTotal, inputOnPage);

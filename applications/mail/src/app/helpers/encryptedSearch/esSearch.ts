@@ -57,7 +57,8 @@ export const testMetadata = (
         (end && Time > end) ||
         (from && !sender.some((string) => string.includes(from))) ||
         (to && !recipients.some((string) => string.includes(to))) ||
-        (filter?.Attachments && NumAttachments === 0) ||
+        // In some cases NumAttachment is undefined for some reason, and are returned in search results.
+        (filter?.Attachments && (NumAttachments ?? 0) === 0) ||
         (typeof filter?.Unread !== 'undefined' && filter?.Unread !== Unread)
     ) {
         return false;

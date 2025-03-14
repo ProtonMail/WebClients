@@ -13,6 +13,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/useApplyLabels';
+import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -106,13 +107,14 @@ export class ApplyLabelsError extends Error {
  */
 export const useApplyLabelsToSelection = () => {
     const api = useApi();
-    const { call, stop, start } = useEventManager();
+    const { stop, start, call } = useEventManager();
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const dispatch = useMailDispatch();
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
+    const isES = useIsEncryptedSearch();
 
     const applyLabels = useCallback(
         async ({
@@ -156,7 +158,12 @@ export const useApplyLabelsToSelection = () => {
                         ]);
                     }
                 } finally {
-                    await call();
+                    start();
+                    // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                    // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                    if (isES) {
+                        await call();
+                    }
                 }
             };
 
@@ -171,7 +178,10 @@ export const useApplyLabelsToSelection = () => {
                     const [apiResults] = await Promise.all([
                         Promise.all(
                             changesKeys.map(async (LabelID) => {
-                                rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
+                                rollbacks[LabelID] = optimisticApplyLabels({
+                                    elements,
+                                    inputChanges: { [LabelID]: changes[LabelID] },
+                                });
                                 try {
                                     const action = changes[LabelID] ? labelAction : unlabelAction;
                                     return await runParallelChunkedActions({
@@ -214,7 +224,11 @@ export const useApplyLabelsToSelection = () => {
                     dispatch(backendActionFinished());
                     if (!undoing) {
                         start();
-                        await call();
+                        // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                        // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                        if (isES) {
+                            await call();
+                        }
                     }
                 }
                 return tokens;
@@ -250,7 +264,7 @@ export const useApplyLabelsToSelection = () => {
                 });
             }
         },
-        []
+        [isES]
     );
 
     return applyLabels;

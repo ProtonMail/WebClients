@@ -29,6 +29,7 @@ import {
 import type { MoveParams } from 'proton-mail/hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
+import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Element } from 'proton-mail/models/element';
 import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
@@ -46,7 +47,7 @@ interface MoveSelectionParams extends MoveParams {
  */
 export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
-    const { call, stop, start } = useEventManager();
+    const { stop, start, call } = useEventManager();
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
     const getFolders = useGetFolders();
@@ -55,6 +56,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const dispatch = useMailDispatch();
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
+    const isES = useIsEncryptedSearch();
 
     const [canUndo, setCanUndo] = useState(true); // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
@@ -147,7 +149,11 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     }
                 } finally {
                     start();
-                    await call();
+                    // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                    // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                    if (isES) {
+                        await call();
+                    }
                 }
             };
 
@@ -160,14 +166,14 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     // Stop the event manager to prevent race conditions
                     stop();
                     dispatch(backendActionStarted());
-                    rollback = optimisticApplyLabels(
-                        authorizedToMove,
-                        { [destinationLabelID]: true },
-                        true,
-                        [],
+                    rollback = optimisticApplyLabels({
+                        elements: authorizedToMove,
+                        inputChanges: { [destinationLabelID]: true },
+                        isMove: true,
+                        unreadStatuses: [],
                         // We need to pass a "real" folder to perform optimistic on custom labels
-                        isCustomLabel(sourceLabelID, labels) ? INBOX : sourceLabelID
-                    );
+                        currentLabelID: isCustomLabel(sourceLabelID, labels) ? INBOX : sourceLabelID,
+                    });
 
                     [tokens] = await Promise.all([
                         await runParallelChunkedActions({
@@ -190,7 +196,11 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     dispatch(backendActionFinished());
                     if (!undoing) {
                         start();
-                        await call();
+                        // Removed to avoid state conflicts (e.g. items being moved optimistically and re-appearing directly with API data)
+                        // However, if on ES, because there is no optimistic in the ES cache, so we want to get api updates as soon as possible
+                        if (isES) {
+                            await call();
+                        }
                     }
                 }
                 return tokens;
@@ -219,7 +229,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                 });
             }
         },
-        []
+        [isES]
     );
 
     return { moveSelectionToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal };

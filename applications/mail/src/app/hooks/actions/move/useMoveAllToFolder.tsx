@@ -105,14 +105,14 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
         dispatch(backendActionStarted());
         let rollback;
         if (canUseOptimistic) {
-            rollback = optimisticApplyLabels(
+            rollback = optimisticApplyLabels({
                 elements,
-                { [destinationLabelID]: true },
-                true,
-                [],
+                inputChanges: { [destinationLabelID]: true },
+                isMove: true,
+                unreadStatuses: [],
                 // We need to pass a "real" folder to perform optimistic on custom labels
-                isCustomLabel(sourceLabelID, labels) ? INBOX : sourceLabelID
-            );
+                currentLabelID: isCustomLabel(sourceLabelID, labels) ? INBOX : sourceLabelID,
+            });
         }
 
         void dispatch(moveAll({ SourceLabelID: sourceLabelID, DestinationLabelID: destinationLabelID, rollback }));

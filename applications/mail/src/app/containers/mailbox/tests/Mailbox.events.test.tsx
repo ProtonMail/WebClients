@@ -9,7 +9,17 @@ import { addApiResolver, api, clearAll, render } from '../../../helpers/test/hel
 import type { Conversation } from '../../../models/conversation';
 import type { MessageEvent } from '../../../models/event';
 import MailboxContainer from '../MailboxContainer';
-import { baseApiMocks, expectElements, getElements, getProps, props, sendEvent, setup } from './Mailbox.test.helpers';
+import {
+    baseApiMocks,
+    expectElements,
+    folders,
+    getElements,
+    getProps,
+    labels,
+    props,
+    sendEvent,
+    setup,
+} from './Mailbox.test.helpers';
 
 jest.setTimeout(20000);
 
@@ -25,7 +35,7 @@ describe('Mailbox elements list reacting to events', () => {
     beforeEach(clearAll);
 
     it('should add to the cache a message which is not existing yet', async () => {
-        // Usefull to receive incoming mail or draft without having to reload the list
+        // Useful to receive incoming mail or draft without having to reload the list
 
         const total = 3;
         const { getItems, store } = await setup({ conversations: getElements(total) });
@@ -198,11 +208,12 @@ describe('Mailbox elements list reacting to events', () => {
 
         const { resolve } = addApiResolver('mail/v4/messages');
 
-        const { initialPath, ...props } = getProps({ search });
+        const { initialPath, ...props } = getProps({ search, labelID });
 
         const view = await render(<MailboxContainer {...props} />, {
             preloadedState: {
                 messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
+                categories: getModelState([...labels, ...folders]),
             },
             initialPath,
         });
@@ -249,11 +260,12 @@ describe('Mailbox elements list reacting to events', () => {
 
         let { resolve } = addApiResolver('mail/v4/messages');
 
-        const { initialPath, ...props } = getProps({ search });
+        const { initialPath, ...props } = getProps({ search, labelID });
         const { rerender, getAllByTestId, history } = await render(<MailboxContainer {...props} />, {
             preloadedState: {
                 conversationCounts: getModelState([]),
                 messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
+                categories: getModelState([...labels, ...folders]),
             },
             initialPath,
         });
