@@ -8,7 +8,6 @@ import {
     queryMessageMetadata,
 } from '@proton/shared/lib/api/messages';
 import { DEFAULT_MAIL_PAGE_SIZE, SECOND } from '@proton/shared/lib/constants';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
@@ -17,6 +16,7 @@ import type { Element } from '../../models/element';
 import type { MailState, MailThunkExtra } from '../store';
 import type {
     ESResults,
+    ElementsStateParams,
     EventUpdates,
     NewStateParams,
     OptimisticDelete,
@@ -34,6 +34,10 @@ export const reset = createAction<NewStateParams>('elements/reset');
 export const updatePage = createAction<number>('elements/updatePage');
 
 export const setPageSize = createAction<number>('elements/setPageSize');
+
+export const setParams = createAction<Partial<ElementsStateParams> & { total?: number }>('elements/setParams');
+
+export const resetByPassFilter = createAction('elements/resetByPassFilter');
 
 export const retry = createAction<{
     queryParameters: unknown;
@@ -53,9 +57,10 @@ export const load = createAsyncThunk<
 >(
     'elements/load',
     async (
-        { page, pageSize = DEFAULT_MAIL_PAGE_SIZE, params, abortController, count = 1 }: QueryParams,
+        { page, pageSize = DEFAULT_MAIL_PAGE_SIZE, abortController, count = 1 }: QueryParams,
         { dispatch, getState, extra }
     ) => {
+        const params = (getState() as MailState).elements.params;
         const onSerializedResponse = ({
             index,
             result,
@@ -106,18 +111,15 @@ export const load = createAsyncThunk<
 
             // Wait few seconds before retrying
             setTimeout(() => {
-                if (isDeepEqual((getState() as MailState).elements.params, params)) {
-                    void dispatch(
-                        load({
-                            page,
-                            pageSize,
-                            params,
-                            abortController,
-                            count: count + 1,
-                            refetch: true, // Do not update current page if we refetch
-                        })
-                    );
-                }
+                void dispatch(
+                    load({
+                        page,
+                        pageSize,
+                        abortController,
+                        count: count + 1,
+                        refetch: true, // Do not update current page if we refetch,
+                    })
+                );
             }, ms);
         }
 

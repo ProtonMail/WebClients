@@ -18,6 +18,7 @@ const baseElementsStateParams: ElementsStateParams = {
     filter: {},
     search: {},
     esEnabled: false,
+    isSearching: false,
 };
 
 const mockElementsApiCall = (
@@ -140,7 +141,7 @@ describe('elementQuery.ts', () => {
 
                     expect(result).toHaveProperty('More', false);
                     expect(result).toHaveProperty('Total', 82);
-                    expect(result).toHaveProperty('Elements', buildFiftyItems(0, 82));
+                    expect(result).toHaveProperty('Elements', buildFiftyItems(settingsPageSize, 82 - settingsPageSize));
                     expect(result).toHaveProperty('Stale', false);
                     expect(result).toHaveProperty('TasksRunning', false);
 
@@ -204,7 +205,7 @@ describe('elementQuery.ts', () => {
 
                 // expect(result).toHaveProperty('More', true);
                 expect(result).toHaveProperty('Total', 200);
-                expect(result).toHaveProperty('Elements', buildFiftyItems(0, 200));
+                expect(result).toHaveProperty('Elements', buildFiftyItems(settingsPageSize, 200 - settingsPageSize));
                 expect(result).toHaveProperty('Stale', false);
                 expect(result).toHaveProperty('TasksRunning', false);
 
@@ -236,7 +237,7 @@ describe('elementQuery.ts', () => {
 
                 // expect(result).toHaveProperty('More', true);
                 expect(result).toHaveProperty('Total', 400);
-                expect(result).toHaveProperty('Elements', buildFiftyItems(0, 400));
+                expect(result).toHaveProperty('Elements', buildFiftyItems(settingsPageSize, 400 - settingsPageSize));
                 expect(result).toHaveProperty('Stale', false);
                 expect(result).toHaveProperty('TasksRunning', false);
 

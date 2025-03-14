@@ -1,13 +1,18 @@
-import { format, formatRelative } from 'date-fns';
+import { format, formatRelative, fromUnixTime } from 'date-fns';
 import type { Location } from 'history';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getSender, hasAttachments as messageHasAttachments } from '@proton/shared/lib/mail/messages';
+import {
+    getSender,
+    getRecipients as messageGetRecipients,
+    hasAttachments as messageHasAttachments,
+} from '@proton/shared/lib/mail/messages';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
@@ -27,7 +32,7 @@ import {
 import { isConversationMode } from './mailSettings';
 import { getSnoozeDate } from './snooze';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, SENT, DRAFTS, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
 
 export interface TypeParams {
     labelID?: string;
@@ -188,6 +193,8 @@ export const getCurrentFolderIDs = (element: Element | undefined, customFoldersL
         [INBOX]: true,
         [TRASH]: true,
         [SPAM]: true,
+        [SENT]: true,
+        [DRAFTS]: true,
         [ARCHIVE]: true,
         [SCHEDULED]: true,
         [SNOOZED]: true,
@@ -201,6 +208,13 @@ export const getSenders = (element: Element) => {
         return [getSender(element as Message)];
     }
     return conversationGetSenders(element as Conversation);
+};
+
+export const getRecipients = (element: Element) => {
+    if (isMessage(element)) {
+        return messageGetRecipients(element as Message);
+    }
+    return (element as Conversation).Recipients || [];
 };
 
 export const getFirstSenderAddress = (element: Element) => {
@@ -222,4 +236,112 @@ export const getLocationElementsCount = (
         return messagesCount.find((messageCount) => labelID === messageCount.LabelID)?.Total || 0;
     }
     return 0;
+};
+
+export const matchFrom = (element: Element, from: string) => {
+    const senders = getSenders(element);
+    return senders.some((sender) => canonicalizeEmailByGuess(sender?.Address || '') === canonicalizeEmailByGuess(from));
+};
+
+export const matchTo = (element: Element, to: string) => {
+    const recipients = getRecipients(element);
+    return recipients.some(
+        (recipient) => canonicalizeEmailByGuess(recipient?.Address || '') === canonicalizeEmailByGuess(to)
+    );
+};
+
+export const matchBegin = (element: Element, labelID: string, begin: number) => {
+    return getDate(element, labelID) >= fromUnixTime(begin);
+};
+
+export const matchEnd = (element: Element, labelID: string, end: number) => {
+    return getDate(element, labelID) <= fromUnixTime(end);
+};
+
+export const matchEmailAddress = (element: Element, emailAddress: string) => {
+    return matchFrom(element, emailAddress) || matchTo(element, emailAddress);
+};
+
+export const filterElementsInState = ({
+    elements,
+    addresses,
+    bypassFilter,
+    labelID,
+    filter,
+    conversationMode,
+    search,
+}: {
+    elements: Element[];
+    addresses?: Address[];
+    bypassFilter: string[];
+    labelID: string;
+    filter: Filter;
+    conversationMode: boolean;
+    search: SearchParameters;
+}) => {
+    const bypassFilterSet = new Set(bypassFilter);
+    const address = search.address ? addresses?.find((address) => address.ID === search.address) : undefined;
+    return elements.filter((element) => {
+        // Check ID and label first (cheapest operations)
+
+        // If unread status is correct OR the element can bypass filters, continue
+        // Else, we can filter out the item
+        const elementUnread = isUnread(element, labelID);
+        const elementCorrectUnreadStatus =
+            filter.Unread === undefined || (filter.Unread === 1 ? elementUnread : !elementUnread);
+        const elementCanBypassFilter = bypassFilterSet.has(element.ID || '');
+        if (!(elementCorrectUnreadStatus || elementCanBypassFilter)) {
+            return false;
+        }
+
+        if (!hasLabel(element, labelID)) {
+            return false;
+        }
+
+        // Check element type (cheap operation)
+        if (conversationMode ? !isConversation(element) : !isMessage(element)) {
+            return false;
+        }
+
+        // Check simple filters
+        if (filter.Attachments === 1 && !hasAttachments(element)) {
+            return false;
+        }
+
+        // More expensive email address checks
+        if (search.from && !matchFrom(element, search.from)) {
+            return false;
+        }
+        if (search.to && !matchTo(element, search.to)) {
+            return false;
+        }
+        if (address && !matchEmailAddress(element, address.Email)) {
+            return false;
+        }
+
+        // Date checks last (usually most expensive due to date operations)
+        if (search.end && !matchEnd(element, labelID, search.end)) {
+            return false;
+        }
+        if (search.begin && !matchBegin(element, labelID, search.begin)) {
+            return false;
+        }
+
+        return true;
+    });
+};
+
+export const getElementContextIdentifier = (contextFilter: {
+    labelID: string;
+    conversationMode: boolean;
+    filter?: Filter;
+    sort?: Sort;
+    from?: string;
+    to?: string;
+    address?: string;
+    begin?: number;
+    end?: number;
+    keyword?: string;
+}) => {
+    return JSON.stringify(contextFilter);
 };

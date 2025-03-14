@@ -24,6 +24,28 @@
 	min-block-size: 100%;
 }
 
+.loader-indicator::before {
+	content: '';
+	position: absolute;
+	z-index: 2;
+	inset-inline: 0;
+	inset-block-start: 0;
+	block-size: max(1px, rem(1));
+	background: linear-gradient(90deg, var(--signal-info), var(--signal-info-minor-1), var(--signal-info));
+	background-size: 200% 100%;
+	animation: gradientAnimation 3s infinite alternate linear;
+}
+
+@keyframes gradientAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
 html:not(.feature-scrollbars-off) .items-column-list-container {
 	@supports selector(::-webkit-scrollbar) {
 		&::-webkit-scrollbar-track {

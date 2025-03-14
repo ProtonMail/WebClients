@@ -69,7 +69,7 @@ export const useApplyLabelsToAll = (setContainFocus?: Dispatch<SetStateAction<bo
 
             let rollback;
             if (canUseOptimistic) {
-                rollback = optimisticApplyLabels(elements, changes);
+                rollback = optimisticApplyLabels({ elements, inputChanges: changes });
             }
 
             void dispatch(

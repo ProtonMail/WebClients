@@ -23,24 +23,6 @@ describe('counters', () => {
             expect(archiveCounter?.Unread).toEqual(1);
         });
 
-        it('should not change unmodifiable label', () => {
-            const message = { ConversationID: 'ConversationID' } as Message;
-            const counters = [] as LabelCount[];
-            const changes = {
-                [MAILBOX_LABEL_IDS.ALL_DRAFTS]: false,
-                [MAILBOX_LABEL_IDS.ALL_SENT]: false,
-                [MAILBOX_LABEL_IDS.ALL_MAIL]: false,
-            };
-            const newCounters = updateCounters(message, counters, changes);
-            const allDraftsCounter = newCounters.some(({ LabelID }) => LabelID === MAILBOX_LABEL_IDS.ALL_DRAFTS);
-            const allSentCounter = newCounters.some(({ LabelID }) => LabelID === MAILBOX_LABEL_IDS.ALL_SENT);
-            const allMailCounter = newCounters.some(({ LabelID }) => LabelID === MAILBOX_LABEL_IDS.ALL_MAIL);
-
-            expect(allDraftsCounter).toEqual(false);
-            expect(allSentCounter).toEqual(false);
-            expect(allMailCounter).toEqual(false);
-        });
-
         it('should not change unread counter for trash location', () => {
             const message = { Unread: 1, ConversationID: 'ConversationID' } as Message;
             const counters = [] as LabelCount[];

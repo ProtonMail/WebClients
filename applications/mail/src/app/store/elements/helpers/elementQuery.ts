@@ -19,7 +19,7 @@ const getQueryElementsParameters = ({
     page,
     pageSize,
     params: { labelID, sort, search, filter },
-}: Pick<QueryParams, 'page' | 'params' | 'pageSize'>): MailboxItemsQueryParams => ({
+}: Pick<QueryParams, 'page' | 'pageSize'> & { params: ElementsStateParams }): MailboxItemsQueryParams => ({
     Page: page,
     PageSize: pageSize,
     Limit: pageSize,
@@ -119,12 +119,10 @@ export const queryElementsInBatch = async (
                 const elements = conversationMode ? result.Conversations : result.Messages;
                 const lastElement = elements[pageSize - 1];
 
-                const newElements = [...previousResult.Elements, ...elements];
-
                 const queryResult = {
                     abortController: newAbortController,
                     More: elements.length >= pageSize,
-                    Elements: newElements,
+                    Elements: elements,
                     ...(lastElement && {
                         AnchorID: lastElement.ID,
                         Anchor: lastElement[queryParameters.Sort ?? 'Time'],

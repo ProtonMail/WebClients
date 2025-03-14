@@ -9,14 +9,14 @@ import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 import unique from '@proton/utils/unique';
 
-import { MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
-import { parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
+import { getElementContextIdentifier, parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import { newElementsState } from './elementsSlice';
 import type {
     ESResults,
     ElementsState,
+    ElementsStateParams,
     EventUpdates,
     NewStateParams,
     OptimisticDelete,
@@ -50,6 +50,10 @@ export const setPageSize = (state: Draft<ElementsState>, action: PayloadAction<M
     state.pageSize = action.payload;
 };
 
+export const resetByPassFilter = (state: Draft<ElementsState>) => {
+    state.bypassFilter = [];
+};
+
 export const retry = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ queryParameters: unknown; error: Error | undefined }>
@@ -57,24 +61,18 @@ export const retry = (
     state.beforeFirstLoad = false;
     state.invalidated = false;
     state.pendingRequest = false;
-    state.retry = newRetry(state.retry, action.payload.queryParameters, action.payload.error);
-};
-
-const hasSameMode = (state: Draft<ElementsState>, arg: QueryParams) => {
-    return state.params.conversationMode === arg.params.conversationMode;
+    state.retry = newRetry(state.retry, state.params, action.payload.error);
 };
 
 export const loadPending = (
     state: Draft<ElementsState>,
     action: PayloadAction<undefined, string, { arg: QueryParams }>
 ) => {
-    if (hasSameMode(state, action.meta.arg)) {
-        const { refetch, page } = action.meta.arg;
+    const { refetch, page } = action.meta.arg;
 
-        if (!refetch) {
-            state.pendingRequest = true;
-            state.page = page;
-        }
+    if (!refetch) {
+        state.pendingRequest = true;
+        state.page = page;
     }
 };
 
@@ -82,43 +80,71 @@ export const loadFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ result: QueryResults; taskRunning: TaskRunningInfo }, string, { arg: QueryParams }>
 ) => {
-    const { page, params, refetch } = action.meta.arg;
+    const params = state.params;
+    const { page, refetch } = action.meta.arg;
     const {
         result: { Total },
         taskRunning,
     } = action.payload;
 
-    if (hasSameMode(state, action.meta.arg)) {
-        Object.assign(state, {
-            beforeFirstLoad: false,
-            invalidated: false,
-            pendingRequest: refetch ? state.pendingRequest : false,
-            page: refetch ? state.page : page,
-            total: Total,
-            retry: newRetry(state.retry, params, undefined),
-        });
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
 
-        state.taskRunning = taskRunning;
-    }
+    Object.assign(state, {
+        beforeFirstLoad: false,
+        invalidated: false,
+        pendingRequest: false,
+        page: refetch ? state.page : page,
+        retry: newRetry(state.retry, state.params, undefined),
+        taskRunning,
+    });
+
+    state.total[contextFilter] = Total;
 };
 
 /**
- * This reducer is used to set first loaded elements while loading remaining ones in serie
+ * This reducer is used to set first loaded elements while loading remaining ones in series
  */
 export const showSerializedElements = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ result: QueryResults; page: number }, string>
 ) => {
+    const params = state.params;
     const {
         result: { Total, Elements },
         page,
     } = action.payload;
 
-    Object.assign(state, {
-        total: Total,
-        elements: { ...state.elements, ...toMap(Elements, 'ID') },
-        pages: unique([...state.pages, page]).sort(),
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
     });
+
+    Object.assign(state, {
+        elements: { ...state.elements, ...toMap(Elements, 'ID') },
+    });
+    state.total[contextFilter] = Total;
+    state.pages[contextFilter] = state.pages[contextFilter]
+        ? unique([...state.pages[contextFilter], page]).sort()
+        : [page];
 };
 
 export const manualPending = (state: Draft<ElementsState>) => {
@@ -168,6 +194,21 @@ export const eventUpdatesFulfilled = (
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
     const total = action.payload.elements.length;
     const pages = range(0, Math.ceil(total / state.pageSize));
+
+    const params = action.payload.params;
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
+
     // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
     // when there are no results
     Object.assign(state, {
@@ -176,11 +217,14 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
         invalidated: false,
         pendingRequest: false,
         page: action.payload.page,
-        total,
-        pages,
-        elements: toMap(action.payload.elements, 'ID'),
-        retry: { payload: undefined, count: MAX_ELEMENT_LIST_LOAD_RETRIES, error: undefined },
+        elements: { ...state.elements, ...toMap(action.payload.elements, 'ID') },
+        retry: { payload: undefined, count: 0, error: undefined },
+        params,
     });
+    state.total[contextFilter] = total;
+    state.pages[contextFilter] = state.pages[contextFilter]
+        ? unique([...state.pages[contextFilter], ...pages]).sort()
+        : [...pages];
 };
 
 export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAction<OptimisticUpdates>) => {
@@ -192,6 +236,26 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
     if (action.payload.isMove) {
         const elementIDs = action.payload.elements.map(({ ID }) => ID || '');
         state.bypassFilter = diff(state.bypassFilter, elementIDs);
+
+        // Can update total only if move and is removing item from the current location (not all sent/all drafts/all mail)
+        if (action.payload.elementTotalAdjustment && state.total) {
+            const params = state.params;
+
+            const contextFilter = getElementContextIdentifier({
+                labelID: params.labelID,
+                conversationMode: params.conversationMode,
+                filter: params.filter,
+                sort: params.sort,
+                from: params.search.from,
+                to: params.search.to,
+                address: params.search.address,
+                begin: params.search.begin,
+                end: params.search.end,
+                keyword: params.search.keyword,
+            });
+
+            state.total[contextFilter] = (state.total[contextFilter] || 0) + action.payload.elementTotalAdjustment;
+        }
     }
 
     // If there is a filter applied when marking elements as read or unread, elements might need to bypass filters
@@ -232,6 +296,24 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
     action.payload.elementIDs.forEach((elementID) => {
         delete state.elements[elementID];
     });
+    if (state.total) {
+        const params = state.params;
+
+        const contextFilter = getElementContextIdentifier({
+            labelID: params.labelID,
+            conversationMode: params.conversationMode,
+            filter: params.filter,
+            sort: params.sort,
+            from: params.search.from,
+            to: params.search.to,
+            address: params.search.address,
+            begin: params.search.begin,
+            end: params.search.end,
+            keyword: params.search.keyword,
+        });
+
+        state.total[contextFilter] = (state.total[contextFilter] || 0) - action.payload.elementIDs.length;
+    }
 };
 
 export const optimisticEmptyLabel = (state: Draft<ElementsState>) => {
@@ -342,4 +424,31 @@ export const expireElementsRejected = (
             delete previousExpiration[ID];
         }
     });
+};
+
+export const setParams = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<Partial<ElementsStateParams> & { total?: number }>
+) => {
+    const { total, ...params } = action.payload;
+    state.params = {
+        ...state.params,
+        ...params,
+    };
+    if (total !== undefined) {
+        const params = state.params;
+        const contextFilter = getElementContextIdentifier({
+            labelID: params.labelID,
+            conversationMode: params.conversationMode,
+            filter: params.filter,
+            sort: params.sort,
+            from: params.search?.from,
+            to: params.search?.to,
+            address: params.search?.address,
+            begin: params.search?.begin,
+            end: params.search?.end,
+            keyword: params.search?.keyword,
+        });
+        state.total[contextFilter] = total;
+    }
 };

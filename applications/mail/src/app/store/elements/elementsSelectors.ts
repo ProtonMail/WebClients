@@ -10,12 +10,10 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_PLACEHOLDERS_COUNT, MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
 import {
-    hasAttachments,
+    filterElementsInState,
+    getElementContextIdentifier,
     hasAttachmentsFilter,
-    hasLabel,
-    isConversation,
     isEmpty,
-    isMessage,
     isSearch,
     isUnread,
     sort as sortElements,
@@ -23,26 +21,27 @@ import {
 import { expectedPageLength, isPageConsecutive } from '../../helpers/paging';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { MailState } from '../store';
-import type { ElementsStateParams } from './elementsTypes';
 import { getTotal } from './helpers/elementTotal';
+
+export const params = (state: MailState) => state.elements.params;
+export const paramsSelector = createSelector([params], (params) => params);
 
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: MailState) => state.elements.elements;
-export const params = (state: MailState) => state.elements.params;
 const page = (state: MailState) => state.elements.page;
 export const pageSize = (state: MailState) => state.elements.pageSize;
-export const pages = (state: MailState) => state.elements.pages;
+const pages = (state: MailState) => state.elements.pages;
 const bypassFilter = (state: MailState) => state.elements.bypassFilter;
-const pendingRequest = (state: MailState) => state.elements.pendingRequest;
+export const pendingRequest = (state: MailState) => state.elements.pendingRequest;
 export const pendingActions = (state: MailState) => state.elements.pendingActions;
 const retry = (state: MailState) => state.elements.retry;
 const invalidated = (state: MailState) => state.elements.invalidated;
 export const total = (state: MailState) => state.elements.total;
 export const taskRunning = (state: MailState) => state.elements.taskRunning;
+export const addresses = (state: MailState) => state.addresses;
 
 const currentPage = (_: MailState, { page }: { page: number }) => page;
 const currentSearch = (_: MailState, { search }: { search: SearchParameters }) => search;
-const currentParams = (_: MailState, { params }: { params: ElementsStateParams }) => params;
 const currentESDBStatus = (
     _: MailState,
     {
@@ -54,14 +53,48 @@ const currentESDBStatus = (
 const currentCounts = (_: MailState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 const currentLabelID = (_: MailState, { labelID }: { labelID: string }) => labelID;
 
+export const contextPages = createSelector([params, pages], (params, pages) => {
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
+
+    return pages[contextFilter] || [];
+});
+
+export const contextTotal = createSelector([params, total], (params, total) => {
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
+
+    return total[contextFilter];
+});
+
 export const elements = createSelector(
-    [elementsMap, params, page, pageSize, pages, bypassFilter],
-    (elements, params, page, pageSize, pages, bypassFilter) => {
+    [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses],
+    (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
         // Getting all params from the cache and not from scoped params
-        // To prevent any desynchronization between cache and the output of the memo
-        const { labelID, sort, filter, conversationMode } = params;
+        // To prevent any de-synchronization between cache and the output of the memo
+        const { labelID, sort, filter, conversationMode, search } = params;
         let finalSort = { ...sort };
-        // The default sorting needs to be override when in inbox or snooze to display snoozed emails on top
+        // The default sorting needs to be overridden when in inbox or snooze to display snoozed emails on top
         const isInSnoozeOrInbox = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;
         if (isInSnoozeOrInbox && sort.sort === 'Time') {
             finalSort = {
@@ -78,32 +111,25 @@ export const elements = createSelector(
 
         /**
          * Here we do a client-side filtering because of fake-unread:
-         * when a user click on a message, it is set as read but we don't it to disappear until page refresh
+         * when a user click on a message, it is set as read, but we don't it to disappear until page refresh
          *
          * Since the cache is only a little subset of user's messages, it is not very costly.
          */
-        const filtered = elementsArray.filter((element) => {
-            if (!hasLabel(element, labelID)) {
-                return false;
-            }
-            if (conversationMode && !isConversation(element)) {
-                return false;
-            }
-            if (!conversationMode && !isMessage(element)) {
-                return false;
-            }
-            if (isEmpty(filter)) {
-                return true;
-            }
-            if (filter.Attachments) {
-                return hasAttachments(element);
-            }
-            if (bypassFilter.includes(element.ID || '')) {
-                return true;
-            }
-            const elementUnread = isUnread(element, labelID);
-            return filter.Unread ? elementUnread : !elementUnread;
-        });
+        // If the page has not been loaded on this filter, return an empty array of elements so that we
+        // don't show them during loading, preventing the user from creating currency in requests
+        // e.g. applying actions while loading elements
+        const filtered = pages.includes(page)
+            ? filterElementsInState({
+                  elements: elementsArray,
+                  addresses: addresses?.value,
+                  bypassFilter,
+                  labelID,
+                  filter,
+                  conversationMode,
+                  search,
+              })
+            : [];
+
         const sorted = sortElements(filtered, finalSort, labelID);
 
         // We only keep a slice of the cached elements: the ones we want to display in the current List view
@@ -115,7 +141,10 @@ export const elementIDs = createSelector(elements, (elements): string[] =>
     elements.map((element) => element.ID).filter(isTruthy)
 );
 
-export const elementsLength = createSelector(elements, (elements) => elements.length);
+export const elementsLength = createSelector([elements], (elements) => {
+    // no need for additional filters since elements selector is already applying filters
+    return elements.length;
+});
 
 export const elementsAreUnread = createSelector([params, elements], (params, elements) => {
     return elements.reduce<{ [elementID: string]: boolean }>((acc, element) => {
@@ -139,58 +168,41 @@ export const expiringElements = createSelector([params, elements], (params, elem
  * It doesn't rely at all on the optimistic counter logic
  */
 export const needsMoreElements = createSelector(
-    [total, page, pageSize, elementsLength],
+    [contextTotal, page, pageSize, elementsLength],
     (total, page, pageSize, elementsLength) => {
         if (!total) {
             return false;
         }
-
         const numberOfPages = Math.ceil(total / pageSize);
 
         // currentPage starts from 1
-        const expectedElementsInPage = page + 1 === numberOfPages ? total % pageSize : pageSize;
+        // If there is only one page left of pageSize elements, the modulo won't work (50%50 = 0).
+        // Meaning that if we have no element in the cache, the selector will be false, and we won't trigger a load
+        // To avoid that, we can return the total (or pageSize, since it will be the same) to trigger a load.
+        const expectedElementsInPage =
+            page + 1 === numberOfPages ? (total % pageSize === 0 ? pageSize : total % pageSize) : pageSize;
         return elementsLength < expectedElementsInPage;
     }
 );
 
-export const paramsChanged = createSelector([params, currentParams], (params, currentParams) => {
-    const paramsChanged =
-        currentParams.labelID !== params.labelID ||
-        currentParams.conversationMode !== params.conversationMode ||
-        currentParams.sort !== params.sort ||
-        currentParams.filter !== params.filter ||
-        currentParams.search !== params.search ||
-        (currentParams.esEnabled !== params.esEnabled && isSearch(currentParams.search));
-    return paramsChanged;
-});
-
 /**
- * @returns a boolean specifying whether or not the current page is in the cache or not.
+ * @returns a boolean specifying whether the current page is in the cache or not.
  */
-export const pageCached = createSelector([pages, currentPage], (pages, currentPage) => pages.includes(currentPage));
+export const pageCached = createSelector([contextPages, currentPage], (pages, currentPage) =>
+    pages.includes(currentPage)
+);
 
 /**
- * @returns a boolean specifying whether or not the current page is the one set in the store or not.
+ * @returns a boolean specifying whether the current page is the one set in the store or not.
  */
 export const pageChanged = createSelector([page, currentPage], (page, currentPage) => page !== currentPage);
 
 /**
- * @returns a boolean specifying whether or not the cache contains a page that is +/-1 the current page.
+ * @returns a boolean specifying whether the cache contains a page that is +/-1 the current page.
  * It is useful to check if there is page jump and refetch accordingly
  */
-export const pageIsConsecutive = createSelector([pages, currentPage], (pages, currentPage) =>
+export const pageIsConsecutive = createSelector([contextPages, currentPage], (pages, currentPage) =>
     isPageConsecutive(pages, currentPage)
-);
-
-/**
- * @returns a boolean specifying whether or not the elements state should be reset, including `elements` cache.
- * It should be `true` whenever one of the search params changes or when a page jump occurs (e.g: users from page 2 to page 7)
- */
-export const shouldResetElementsState = createSelector(
-    [paramsChanged, pageIsConsecutive],
-    (paramsChanged, pageIsConsecutive) => {
-        return paramsChanged || !pageIsConsecutive;
-    }
 );
 
 /**
@@ -198,23 +210,22 @@ export const shouldResetElementsState = createSelector(
  * It should be true either when `shouldResetElementsState` or
  */
 export const shouldLoadElements = createSelector(
-    [shouldResetElementsState, pendingRequest, retry, needsMoreElements, invalidated, pageCached],
-    (shouldResetElementsState, pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
+    [pendingRequest, retry, needsMoreElements, invalidated, pageCached],
+    (pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
         return (
-            shouldResetElementsState ||
-            (!pendingRequest &&
-                retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
-                (needsMoreElements || invalidated || !pageCached))
+            !pendingRequest &&
+            retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
+            (needsMoreElements || invalidated || !pageCached)
         );
     }
 );
 
 /**
- * @returns true when user is in a unpredicable context because we don't have enough conversations/message metadata infos
+ * @returns true when user is in an unpredictable context because we don't have enough conversations/message metadata infos
  */
 export const shouldInvalidateElementsState = createSelector(
-    [params, pages],
-    (params, pages) => isSearch(params.search) || hasAttachmentsFilter(params.filter) || !pages.includes(0)
+    [params, contextPages],
+    (params, pages) => !!params.search.keyword || !pages.includes(0)
 );
 
 export const shouldUpdatePage = createSelector(
@@ -243,7 +254,7 @@ export const isES = createSelector(
  *    at least the current and the subsequent pages
  */
 export const messagesToLoadMoreES = createSelector(
-    [currentESDBStatus, isES, pageChanged, total, currentPage],
+    [currentESDBStatus, isES, pageChanged, contextTotal, currentPage],
     ({ getCacheStatus, isSearchPartial }, useES, pageChanged, total, currentPage) => {
         const { isCacheLimited } = getCacheStatus();
 
@@ -261,29 +272,26 @@ export const messagesToLoadMoreES = createSelector(
 );
 
 /**
- * Computed up to date total of elements for the current parameters
+ * Computed up-to-date total of elements for the current parameters
  * Warning: this value has been proved not to be 100% consistent
- * Has to be used only for non sensitive behaviors
+ * Has to be used only for non-sensitive behaviors
  *
  * labelID - string | undefined - This label ID is the one we use in useElement which is based on the URL value
  * We prefer using this value when present because store one is not immediately up to date when switching labels
  */
-export const dynamicTotal = createSelector(
-    [params, currentCounts, bypassFilter, currentLabelID],
-    (params, props, bypassFilter, labelID) => {
-        const { counts, loading } = props;
-        if (isSearch(params.search) || hasAttachmentsFilter(params.filter) || loading) {
-            return undefined;
-        }
-
-        return getTotal(counts, labelID || params.labelID, params.filter, bypassFilter.length);
+export const dynamicTotal = createSelector([params, currentCounts, bypassFilter], (params, props, bypassFilter) => {
+    const { counts, loading } = props;
+    if (isSearch(params.search) || hasAttachmentsFilter(params.filter) || loading) {
+        return undefined;
     }
-);
+
+    return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
+});
 
 /**
- * Computed up to date number of elements on the current page
+ * Computed up-to-date number of elements on the current page
  * Warning: this value has been proved not to be 100% consistent
- * Has to be used only for non sensitive behaviors
+ * Has to be used only for non-sensitive behaviors
  */
 export const dynamicPageLength = createSelector(
     [page, pageSize, dynamicTotal, params, bypassFilter],
@@ -296,13 +304,13 @@ export const dynamicPageLength = createSelector(
 );
 
 export const placeholderCount = createSelector(
-    [page, pageSize, total, params, dynamicPageLength],
-    (page, pageSize, total, params, dynamicPageLength) => {
+    [page, pageSize, contextTotal, params, dynamicPageLength, bypassFilter],
+    (page, pageSize, total, params, dynamicPageLength, bypassFilter) => {
         if (dynamicPageLength !== undefined) {
             return dynamicPageLength;
         }
         if (total !== undefined) {
-            return expectedPageLength(page, pageSize, total, isEmpty(params.filter) ? bypassFilter.length : 0);
+            return expectedPageLength(page, pageSize, total, isEmpty(params.filter) ? 0 : bypassFilter.length);
         }
         return DEFAULT_PLACEHOLDERS_COUNT;
     }
@@ -314,12 +322,14 @@ export const loading = createSelector(
         (beforeFirstLoad || pendingRequest || shouldLoadElements) && !invalidated
 );
 
-export const totalReturned = createSelector([dynamicTotal, total], (dynamicTotal, total) => dynamicTotal || total);
+export const totalReturned = createSelector([contextTotal, dynamicTotal], (contextTotal, dynamicTotal) => {
+    return dynamicTotal || contextTotal;
+});
 
 export const expectingEmpty = createSelector([dynamicPageLength], (dynamicPageLength) => dynamicPageLength === 0);
 
 export const loadedEmpty = createSelector(
-    [beforeFirstLoad, pendingRequest, total],
+    [beforeFirstLoad, pendingRequest, contextTotal],
     (beforeFirstLoad, pendingRequest, total) => !beforeFirstLoad && pendingRequest === false && total === 0
 );
 
