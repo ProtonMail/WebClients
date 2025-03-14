@@ -70,6 +70,23 @@ export const contextPages = createSelector([params, pages], (params, pages) => {
     return pages[contextFilter] || [];
 });
 
+export const contextTotal = createSelector([params, total], (params, total) => {
+    const contextFilter = getElementContextIdentifier({
+        labelID: params.labelID,
+        conversationMode: params.conversationMode,
+        filter: params.filter,
+        sort: params.sort,
+        from: params.search.from,
+        to: params.search.to,
+        address: params.search.address,
+        begin: params.search.begin,
+        end: params.search.end,
+        keyword: params.search.keyword,
+    });
+
+    return total[contextFilter];
+});
+
 export const elements = createSelector(
     [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses],
     (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
@@ -151,7 +168,7 @@ export const expiringElements = createSelector([params, elements], (params, elem
  * It doesn't rely at all on the optimistic counter logic
  */
 export const needsMoreElements = createSelector(
-    [total, page, pageSize, elementsLength],
+    [contextTotal, page, pageSize, elementsLength],
     (total, page, pageSize, elementsLength) => {
         if (!total) {
             return false;
@@ -237,7 +254,7 @@ export const isES = createSelector(
  *    at least the current and the subsequent pages
  */
 export const messagesToLoadMoreES = createSelector(
-    [currentESDBStatus, isES, pageChanged, total, currentPage],
+    [currentESDBStatus, isES, pageChanged, contextTotal, currentPage],
     ({ getCacheStatus, isSearchPartial }, useES, pageChanged, total, currentPage) => {
         const { isCacheLimited } = getCacheStatus();
 
@@ -287,7 +304,7 @@ export const dynamicPageLength = createSelector(
 );
 
 export const placeholderCount = createSelector(
-    [page, pageSize, total, params, dynamicPageLength, bypassFilter],
+    [page, pageSize, contextTotal, params, dynamicPageLength, bypassFilter],
     (page, pageSize, total, params, dynamicPageLength, bypassFilter) => {
         if (dynamicPageLength !== undefined) {
             return dynamicPageLength;
@@ -305,12 +322,17 @@ export const loading = createSelector(
         (beforeFirstLoad || pendingRequest || shouldLoadElements) && !invalidated
 );
 
-export const totalReturned = createSelector([dynamicTotal, total], (dynamicTotal, total) => dynamicTotal || total);
+export const totalReturned = createSelector(
+    [params, contextTotal, dynamicTotal],
+    (params, contextTotal, dynamicTotal) => {
+        return dynamicTotal || contextTotal;
+    }
+);
 
 export const expectingEmpty = createSelector([dynamicPageLength], (dynamicPageLength) => dynamicPageLength === 0);
 
 export const loadedEmpty = createSelector(
-    [beforeFirstLoad, pendingRequest, total],
+    [beforeFirstLoad, pendingRequest, contextTotal],
     (beforeFirstLoad, pendingRequest, total) => !beforeFirstLoad && pendingRequest === false && total === 0
 );
 
