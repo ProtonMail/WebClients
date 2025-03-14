@@ -57,7 +57,7 @@ interface LockSetup {
 }
 
 export const useLockSetup = (): LockSetup => {
-    const { getBiometricsKey } = usePassCore();
+    const { getBiometricsKey, supportsBiometrics } = usePassCore();
     const { createNotification } = useNotifications();
 
     const confirmPin = usePinUnlock();
@@ -161,6 +161,10 @@ export const useLockSetup = (): LockSetup => {
             }
         });
 
+        /** Bail if currentLockMode required 
+        /* verification, and it hasn't succeeeded. */
+        if (currentLockMode !== LockMode.NONE && !current) return;
+
         switch (mode) {
             case LockMode.SESSION:
                 return confirmPin({
@@ -262,8 +266,8 @@ export const useLockSetup = (): LockSetup => {
 
     useEffect(() => {
         (async () => {
-            if (!DESKTOP_BUILD || currentLockMode === LockMode.BIOMETRICS) return;
-            const canCheckPresence = (await window.ctxBridge?.canCheckPresence?.()) ?? false;
+            if (currentLockMode === LockMode.BIOMETRICS) return;
+            const canCheckPresence = (await supportsBiometrics?.()) ?? false;
             setBiometricsEnabled(canCheckPresence);
         })().catch(noop);
     }, [currentLockMode]);
