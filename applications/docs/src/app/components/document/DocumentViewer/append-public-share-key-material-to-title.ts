@@ -4,17 +4,19 @@ import { VolumeType } from '@proton/drive-store/store/_volumes'
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants'
 import { type DocumentState } from '@proton/docs-core'
 import { useRef, useEffect, useCallback } from 'react'
-import { useDocsUrlBar } from '../Containers/useDocsUrlBar'
-import { useApplication } from '../Containers/ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useAuthentication } from '@proton/components/index'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
+import { useApplication } from '../../../utils/application-context'
+import { useDocsUrlBar } from '../../../utils/docs-url-bar'
 
 /**
  * Will append the key material from the public share url to the document title:
- * - if the document has been publicly shared already when loaded
- * - when public sharing is turned on for a document
- * Only does this if the current user is the admin of the document
+ *
+ * - If the document has been publicly shared already when loaded.
+ * - When public sharing is turned on for a document.
+ *
+ * Only does this if the current user is the admin of the document.
  */
 export function AppendPublicShareKeyMaterialToTitle({
   nodeMeta,
