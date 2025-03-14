@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import type { InitialConfigType } from '@lexical/react/LexicalComposer'
 import DocumentEditorTheme from '../../Theme/Theme'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
@@ -7,6 +7,9 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { SafeLexicalComposer } from '../../Tools/SafeLexicalComposer'
 import { sanitizeLexicalState } from '../../Utils/SanitizeLexicalState'
+import { CommentLexicalNodes } from './CommentLexicalNodes'
+import { ReadonlyLinkFixPlugin } from '../Link/ReadonlyLinkFixPlugin'
+import { useCommentsContext } from './CommentsContext'
 
 interface CommentViewerProps {
   content: string
@@ -14,9 +17,11 @@ interface CommentViewerProps {
 }
 
 export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className }) => {
+  const { controller } = useCommentsContext()
+
   const initialConfig: InitialConfigType = {
     namespace: 'CommentViewer',
-    nodes: [],
+    nodes: CommentLexicalNodes,
     onError: (error: Error) => {
       reportErrorToSentry(error)
     },
@@ -25,6 +30,13 @@ export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className
     editable: false,
   }
 
+  const openLink = useCallback(
+    (url: string) => {
+      void controller.openLink(url).catch(reportErrorToSentry)
+    },
+    [controller],
+  )
+
   return (
     <SafeLexicalComposer initialConfig={initialConfig}>
       <RichTextPlugin
@@ -32,6 +44,7 @@ export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className
         placeholder={null}
         ErrorBoundary={LexicalErrorBoundary}
       />
+      <ReadonlyLinkFixPlugin openLink={openLink} />
     </SafeLexicalComposer>
   )
 }
