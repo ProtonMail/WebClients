@@ -6,7 +6,6 @@ import {
   $createTextNode,
   $getSelection,
   $insertNodes,
-  $isElementNode,
   $isRangeSelection,
   COMMAND_PRIORITY_LOW,
   COMMAND_PRIORITY_NORMAL,
@@ -86,17 +85,14 @@ export function ProtonLinkPlugin() {
           if (sanitizedURL.isFailed()) {
             return false
           }
-          if (!selection.getNodes().some((node) => $isElementNode(node))) {
-            editor.dispatchCommand(LINK_CHANGE_COMMAND, {
-              url: clipboardText,
-              linkNode: null,
-              linkTextNode: null,
-              text: null,
-            })
-            event.preventDefault()
-            return true
-          }
-          return false
+          editor.dispatchCommand(LINK_CHANGE_COMMAND, {
+            url: clipboardText,
+            linkNode: null,
+            linkTextNode: null,
+            text: null,
+          })
+          event.preventDefault()
+          return true
         },
         COMMAND_PRIORITY_LOW,
       ),
