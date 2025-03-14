@@ -26217,6 +26217,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"heic-to@npm:^1.1.10":
+  version: 1.1.10
+  resolution: "heic-to@npm:1.1.10"
+  checksum: 10c0/eb0c35ffd1aa7dff7f7b08d4f55ebea52fd03d049c167ef6d167508858bb518812d7cd4a7df5e6ef41f2191e56f5d1d8e8f611e20e0b1d663da7c2cc2e9c46e9
+  languageName: node
+  linkType: hard
+
 "highlight.js@npm:^10.4.1, highlight.js@npm:~10.7.0":
   version: 10.7.3
   resolution: "highlight.js@npm:10.7.3"
@@ -30153,13 +30160,6 @@ __metadata:
     0gentesthtml: bin/gentesthtml.js
     0serve: bin/0serve.js
   checksum: 10c0/074097bcb90a002449cfddaa11552f11d088e38233f0a20a3358b08d7d1952b2f5a491fb63e63ccf66a8ec037e16d82d40a27601bbacf5ded0d2ec810bdf550e
-  languageName: node
-  linkType: hard
-
-"libheif-js@npm:^1.18.2":
-  version: 1.18.2
-  resolution: "libheif-js@npm:1.18.2"
-  checksum: 10c0/82d3f12ab730ca2737c50e473bfbf7b6ae37c300296f6ab8e25ce6ec5bc88615f210e684ca7315aa970b1bd87b3b62c607dfb52d126596ed06a46441f2a5a379
   languageName: node
   linkType: hard
 
@@ -36460,10 +36460,10 @@ __metadata:
     ejs-webpack-loader: "npm:^2.2.2"
     eslint: "npm:^8.57.1"
     exifreader: "npm:^4.26.1"
+    heic-to: "npm:^1.1.10"
     jest: "npm:^29.7.0"
     jest-junit: "npm:^16.0.0"
     jest-when: "npm:3.7.0"
-    libheif-js: "npm:^1.18.2"
     mime-types: "npm:^2.1.35"
     path-browserify: "npm:^1.0.1"
     prettier: "npm:^3.5.1"
