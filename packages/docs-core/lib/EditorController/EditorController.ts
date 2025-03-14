@@ -28,6 +28,7 @@ export interface EditorControllerInterface {
   initializeEditor(editorInitializationConfig: EditorInitializationConfig | undefined, userAddress: string): void
 }
 
+/** Allows the UI to invoke methods on the editor. */
 export class EditorController implements EditorControllerInterface {
   editorInvoker?: ClientRequiresEditorMethods
 
