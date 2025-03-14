@@ -102,7 +102,13 @@ export const getVideoInfo = async (file: Blob) => {
                                 duration: video.duration,
                                 thumbnails: [
                                     {
-                                        thumbnailData: new Uint8Array(await canvasToThumbnail(canvas)),
+                                        thumbnailData: new Uint8Array(
+                                            await canvasToThumbnail(
+                                                canvas,
+                                                ThumbnailType.PREVIEW,
+                                                isSafari() ? 'image/jpeg' : 'image/webp'
+                                            )
+                                        ),
                                         thumbnailType: ThumbnailType.PREVIEW,
                                     },
                                 ],
