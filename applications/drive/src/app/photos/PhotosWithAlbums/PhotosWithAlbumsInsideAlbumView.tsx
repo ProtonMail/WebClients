@@ -457,6 +457,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onSelectCover={onSelectCoverToolbar}
                             onDeleteAlbum={onDeleteAlbum}
                             onShowDetails={onShowDetails}
+                            isOwner={isOwner}
                         />
                     }
                 />
@@ -472,6 +473,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onShare={() => {
                                 showLinkSharingModal({ shareId: albumShareId, linkId });
                             }}
+                            isOwner={isOwner}
                         />
                     </div>
                 ) : (
@@ -488,6 +490,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onShare={() => {
                                 showLinkSharingModal({ shareId: albumShareId, linkId: album.linkId });
                             }}
+                            isOwner={isOwner}
                         />
                         <PhotosInsideAlbumsGrid
                             data={albumPhotos}
