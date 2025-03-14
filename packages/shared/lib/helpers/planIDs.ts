@@ -268,6 +268,17 @@ export const getPlanCurrencyFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs 
     return plan?.Currency;
 };
 
+/**
+ * Get the plan name from the planIDs object. Useful when you have object like { [PLANS.MAIL]: 1 }.
+ *
+ * Examples:
+ * - { [PLANS.MAIL]: 1 } -> PLANS.MAIL
+ * - { [PLANS.MAIL]: 1, [PLANS.BUNDLE]: 1 } -> PLANS.MAIL
+ * - { [PLANS.MAIL]: 0, [PLANS.BUNDLE]: 1 } -> PLANS.BUNDLE
+ *
+ * @param planIDs - The planIDs object.
+ * @returns The plan name.
+ */
 export function getPlanNameFromIDs(planIDs: PlanIDs): PLANS | undefined {
     return Object.values(PLANS).find((key) => {
         // If the planIDs object has non-zero value for the plan, then it exists.

@@ -41,10 +41,11 @@ export class SelectedPlan {
         planIDs: PlanIDs,
         plans: PlansMap | Plan[],
         cycle: CYCLE,
-        currency: Currency
+        currency: Currency,
+        preferred: 'prefer-scribes' | 'prefer-lumos' = 'prefer-lumos'
     ): SelectedPlan {
         const plan = new SelectedPlan(planIDs, plans, cycle, currency);
-        return plan.applyRules();
+        return plan.applyRules(preferred);
     }
 
     get planIDs(): PlanIDs {
@@ -178,7 +179,7 @@ export class SelectedPlan {
         }
     }
 
-    setScribeCount(newCount: number): SelectedPlan {
+    setScribeCount(newCount: number, balance = true): SelectedPlan {
         const scribeAddonName = getScribeAddonNameByPlan(this.getPlanName());
         if (!scribeAddonName) {
             return this;
@@ -200,10 +201,15 @@ export class SelectedPlan {
         }
 
         const updatedPlan = this.selectedPlanWithNewIds(planIDs);
-        return updatedPlan.capScribes();
+        const result = updatedPlan.capScribes();
+        if (balance) {
+            return result.balanceScribesAndLumos('prefer-scribes');
+        }
+
+        return result;
     }
 
-    setLumoCount(newCount: number): SelectedPlan {
+    setLumoCount(newCount: number, balance = true): SelectedPlan {
         const lumoAddonName = getLumoAddonNameByPlan(this.getPlanName());
         if (!lumoAddonName) {
             return this;
@@ -224,12 +230,16 @@ export class SelectedPlan {
             delete planIDs[lumoAddonName];
         }
 
-        const updatedPlan = this.selectedPlanWithNewIds(planIDs);
-        return updatedPlan.capLumos();
+        const updatedPlan = this.selectedPlanWithNewIds(planIDs).capLumos();
+        if (balance) {
+            return updatedPlan.balanceScribesAndLumos('prefer-lumos');
+        }
+
+        return updatedPlan;
     }
 
-    applyRules(): SelectedPlan {
-        return this.capScribes().capLumos();
+    private applyRules(preferred: 'prefer-scribes' | 'prefer-lumos'): SelectedPlan {
+        return this.capScribes().capLumos().balanceScribesAndLumos(preferred);
     }
 
     getPlanName(): PLANS {
@@ -261,7 +271,7 @@ export class SelectedPlan {
     private capScribes(): SelectedPlan {
         const maxScribes = this.getMaxScribes();
         if (this.getTotalScribes() > maxScribes) {
-            return this.setScribeCount(maxScribes);
+            return this.setScribeCount(maxScribes, false);
         }
 
         return this;
@@ -270,7 +280,27 @@ export class SelectedPlan {
     private capLumos(): SelectedPlan {
         const maxLumos = this.getMaxLumos();
         if (this.getTotalLumos() > maxLumos) {
-            return this.setLumoCount(maxLumos);
+            return this.setLumoCount(maxLumos, false);
+        }
+
+        return this;
+    }
+
+    private balanceScribesAndLumos(preferred: 'prefer-scribes' | 'prefer-lumos'): SelectedPlan {
+        const members = this.getTotalMembers();
+        const lumos = this.getTotalLumos();
+        const scribes = this.getTotalScribes();
+
+        const difference = lumos + scribes - members;
+
+        if (difference > 0) {
+            if (preferred === 'prefer-scribes') {
+                // We prefer scribes over lumos, so we remove lumos
+                return this.setLumoCount(lumos - difference, false);
+            } else {
+                // We prefer lumos over scribes, so we remove scribes
+                return this.setScribeCount(scribes - difference, false);
+            }
         }
 
         return this;

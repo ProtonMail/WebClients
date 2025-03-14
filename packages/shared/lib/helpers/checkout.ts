@@ -23,11 +23,12 @@ import {
     SubscriptionMode,
 } from '../interfaces';
 import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './addons';
-import { getPlanFromPlanIDs } from './planIDs';
+import { getPlanFromPlanIDs, getPlanNameFromIDs } from './planIDs';
 import {
     INCLUDED_IP_PRICING,
     customCycles,
     getAddonMultiplier,
+    getIsB2BAudienceFromPlan,
     getMembersFromPlanIDs,
     getPricePerCycle,
     getPricingPerMember,
@@ -81,8 +82,10 @@ export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs:
         return c('Addon').ngettext(msgid`${ips} server`, `${ips} servers`, ips);
     }
 
+    const plan = getPlanNameFromIDs(planIDs);
+    const isB2C = !getIsB2BAudienceFromPlan(plan);
+
     if (isScribeAddon(addonName)) {
-        const isB2C = planIDs[PLANS.MAIL] || planIDs[PLANS.BUNDLE];
         if (isB2C) {
             return c('Info').t`Writing assistant`;
         }
@@ -92,7 +95,12 @@ export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs:
     }
 
     if (isLumoAddon(addonName)) {
-        return LUMO_APP_NAME;
+        if (isB2C) {
+            return LUMO_APP_NAME;
+        }
+
+        const seats = quantity;
+        return c('Addon').ngettext(msgid`${seats} ${LUMO_APP_NAME} seat`, `${seats} ${LUMO_APP_NAME} seats`, seats);
     }
 
     return '';
