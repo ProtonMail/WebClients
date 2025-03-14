@@ -363,7 +363,16 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   }
 
   public openDocumentSharingModal(): void {
-    void this.driveCompat.openDocumentSharingModal(this.documentState.getProperty('entitlements').nodeMeta)
+    void this.driveCompat.openDocumentSharingModal({
+      linkId: this.documentState.getProperty('entitlements').nodeMeta.linkId,
+      volumeId: this.documentState.getProperty('entitlements').nodeMeta.volumeId,
+      onPublicLinkToggle: (enabled) => {
+        this.documentState.emitEvent({
+          name: 'PublicLinkToggleStateChanged',
+          payload: { enabled },
+        })
+      },
+    })
   }
 
   deinit() {}

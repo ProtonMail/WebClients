@@ -138,7 +138,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
     );
 
     const createSharedLink = () => {
-        void withCreating(async () => {
+        return withCreating(async () => {
             const abortController = new AbortController();
             const { shareId: linkShareId, sessionKey } = await getShareIdWithSessionkey(
                 abortController.signal,

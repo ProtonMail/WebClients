@@ -31,6 +31,7 @@ interface Props {
     modalTitleID?: string;
     shareId: string;
     linkId: string;
+    onPublicLinkToggle?: (enabled: boolean) => void;
 }
 
 export function SharingModal(props: Props & ModalStateProps) {
@@ -43,6 +44,7 @@ function SharingModalInner({
     linkId,
     onClose,
     shareMemberList,
+    onPublicLinkToggle,
     ...modalProps
 }: Props & ModalStateProps & { shareMemberList: ReturnType<typeof useShareMemberView> }) {
     const {
@@ -246,6 +248,7 @@ function SharingModalInner({
                                         publicSharedLinkPermissions={sharedLinkPermissions}
                                         onChangePermissions={updateSharedLinkPermissions}
                                         deleteSharedLink={handleDeleteLink}
+                                        onPublicLinkToggle={onPublicLinkToggle}
                                     />
                                 </ModalTwoFooter>
                             </>
