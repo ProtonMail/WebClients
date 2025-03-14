@@ -13,20 +13,24 @@ import {
     Toolbar,
     ToolbarButton,
     useActiveBreakpoint,
+    useConfirmActionModal,
     usePopperAnchor,
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
-import type {
-    OnFileSkippedSuccessCallbackData,
-    OnFileUploadSuccessCallbackData,
-    PhotoGridItem,
-    PhotoLink,
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
+import {
+    type OnFileSkippedSuccessCallbackData,
+    type OnFileUploadSuccessCallbackData,
+    type PhotoGridItem,
+    type PhotoLink,
+    useSharedWithMeActions,
 } from '../../../store';
 import { isPhotoGroup } from '../../../store/_photos';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
+import { PhotosAlbumShareButton } from './PhotosAlbumShareButton';
 import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosMakeCoverButton } from './PhotosMakeCoverButton';
@@ -52,9 +56,11 @@ interface TabOption {
 interface AlbumGalleryDropdownButtonProps {
     onDelete: () => void;
     onShowDetails: () => void;
+    onLeave: () => void;
+    isOwner: boolean;
 }
 
-const AlbumGalleryDropdownButton = ({ onDelete, onShowDetails }: AlbumGalleryDropdownButtonProps) => {
+const AlbumGalleryDropdownButton = ({ onDelete, onShowDetails, onLeave, isOwner }: AlbumGalleryDropdownButtonProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     return (
         <>
@@ -81,10 +87,19 @@ const AlbumGalleryDropdownButton = ({ onDelete, onShowDetails }: AlbumGalleryDro
                         <Icon className="mr-2" name="info-circle" />
                         {c('Action').t`Details`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onDelete}>
-                        <Icon className="mr-2" name="trash" />
-                        {c('Action').t`Delete album`}
-                    </DropdownMenuButton>
+
+                    {isOwner && (
+                        <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onDelete}>
+                            <Icon className="mr-2" name="trash" />
+                            {c('Action').t`Delete album`}
+                        </DropdownMenuButton>
+                    )}
+                    {!isOwner && (
+                        <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onLeave}>
+                            <Icon className="mr-2" name="cross-big" />
+                            {c('Action').t`Leave album`}
+                        </DropdownMenuButton>
+                    )}
                 </DropdownMenu>
             </Dropdown>
         </>
@@ -199,6 +214,7 @@ interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGaller
     album: DecryptedAlbum;
     onDeleteAlbum: () => void;
     onShowDetails: () => void;
+    isOwner: boolean;
 }
 
 const ToolbarRightActionsGallery = ({
@@ -223,8 +239,12 @@ const ToolbarRightActionsAlbumGallery = ({
     data,
     onDeleteAlbum,
     onShowDetails,
+    isOwner,
 }: ToolbarRightActionsAlbumGalleryProps) => {
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const { removeMe } = useSharedWithMeActions();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
+    const { navigateToAlbums } = useDriveNavigation();
 
     return (
         <>
@@ -258,20 +278,33 @@ const ToolbarRightActionsAlbumGallery = ({
                     {c('Action').t`Download`}
                 </ToolbarButton>
             )}
-            <ToolbarButton
-                onClick={() => {
-                    // TODO: avoid the data loop and just execute callback
-                    showLinkSharingModal({ shareId: album.rootShareId, linkId: album.linkId });
+            {isOwner && (
+                <PhotosAlbumShareButton
+                    onClick={() => {
+                        // TODO: avoid the data loop and just execute callback
+                        showLinkSharingModal({ shareId: album.rootShareId, linkId: album.linkId });
+                    }}
+                />
+            )}
+
+            <AlbumGalleryDropdownButton
+                onDelete={onDeleteAlbum}
+                onShowDetails={onShowDetails}
+                onLeave={() => {
+                    if (!album.sharingDetails?.shareId) {
+                        return;
+                    }
+                    removeMe(
+                        new AbortController().signal,
+                        showConfirmModal,
+                        album.sharingDetails.shareId,
+                        navigateToAlbums
+                    );
                 }}
-                data-testid="toolbar-share-album"
-                title={c('Action').t`Share`}
-                className="inline-flex flex-nowrap flex-row items-center"
-            >
-                <Icon name="user-plus" className="mr-2" alt={c('Action').t`Share`} />
-                {c('Action').t`Share`}
-            </ToolbarButton>
-            <AlbumGalleryDropdownButton onDelete={onDeleteAlbum} onShowDetails={onShowDetails} />
+                isOwner={isOwner}
+            />
             {linkSharingModal}
+            {confirmModal}
         </>
     );
 };
@@ -294,6 +327,7 @@ interface PhotosWithAlbumToolbarProps {
     album?: DecryptedAlbum;
     onDeleteAlbum?: () => void;
     onShowDetails?: () => void;
+    isOwner?: boolean;
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
@@ -314,6 +348,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     album,
     onDeleteAlbum,
     onShowDetails,
+    isOwner = true, // Define to true in case it's not passed
 }) => {
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
@@ -338,6 +373,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         album={album}
                         onDeleteAlbum={onDeleteAlbum}
                         onShowDetails={onShowDetails}
+                        isOwner={isOwner}
                     />
                 )}
 
