@@ -226,14 +226,14 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
         ];
 
         const attendee = attendeesTo.map(({ value, parameters }) => {
-            const { partstat } = parameters || {};
+            const { partstat, comment } = parameters || {};
             if (method === ICAL_METHOD.REPLY) {
                 if (!partstat) {
                     throw new Error('Cannot reply without participant status');
                 }
                 return {
                     value,
-                    parameters: { partstat },
+                    parameters: { partstat, comment },
                 };
             }
             return { value };
