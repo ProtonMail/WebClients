@@ -22,6 +22,8 @@ import clsx from '@proton/utils/clsx'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { SafeLexicalComposer } from '../../Tools/SafeLexicalComposer'
 import { EditorReadonlyPlugin } from '../EditorReadonlyPlugin'
+import { ProtonLinkPlugin } from '../Link/LinkPlugin'
+import { CommentLexicalNodes } from './CommentLexicalNodes'
 
 type Props = {
   initialContent: string | undefined
@@ -93,7 +95,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
       <SafeLexicalComposer
         initialConfig={{
           namespace: 'CommentEditor',
-          nodes: [],
+          nodes: CommentLexicalNodes,
           onError: (e: Error) => reportErrorToSentry(e),
           theme: DocumentEditorTheme,
           editorState: initialContent ? initialContent : undefined,
@@ -124,6 +126,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
         {autoFocus && <AutoFocusPlugin />}
         <HistoryPlugin />
         <ClearEditorPlugin />
+        <ProtonLinkPlugin />
       </SafeLexicalComposer>
     )
   },
