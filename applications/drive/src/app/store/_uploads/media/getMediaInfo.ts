@@ -42,7 +42,7 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
     {
         checker: isHEIC,
         creator: async (file: File) => {
-            // is HEIC is not supported by browser we need to generate the thumbnails by decoding the file ourselves
+            // if HEIC is not supported by browser we need to generate the thumbnails by decoding the file ourselves
             const blob = await heicToBlob(file);
             return scaleImageFile({ file: blob }, thumbnailFormat).catch((err) => {
                 // Corrupted images cannot be loaded which we don't care about.
