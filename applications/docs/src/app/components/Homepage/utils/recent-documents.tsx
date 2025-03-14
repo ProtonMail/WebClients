@@ -4,10 +4,10 @@ import { DateFormatter } from '@proton/docs-core'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useState } from 'react'
-import { useApplication } from '../../../Containers/ApplicationProvider'
 import type { RecentDocumentItem } from '@proton/docs-core/lib/Services/RecentDocuments/RecentDocumentItem'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { c } from 'ttag'
+import { useApplication } from '../../../utils/application-context'
 
 // filter documents
 // ----------------

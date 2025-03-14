@@ -19,7 +19,6 @@ import {
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
 import { DebugMenu, useDebug } from './DebugMenu'
-import { useApplication } from '../../../Containers/ApplicationProvider'
 import type {
   CommentMarkNodeChangeData,
   EditorInitializationConfig,
@@ -35,17 +34,23 @@ import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAler
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import { WordCountOverlay } from '../WordCount'
-import { useSuggestionsFeatureFlag } from '../../../Hooks/useSuggestionsFeatureFlag'
 import { useWelcomeSplashModal } from '../public/WelcomeSplashModal'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
-import { AppendPublicShareKeyMaterialToTitle } from '../../../Hooks/AppendPublicShareUrlKeyMaterial'
-import { useDocsUrlBar } from '../../../Containers/useDocsUrlBar'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useAuthentication } from '@proton/components/index'
+import { useApplication } from '../../../utils/application-context'
+import { useDocsUrlBar } from '../../../utils/docs-url-bar'
+import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
+import useFlag from '@proton/unleash/useFlag'
+
+export function useSuggestionsFeatureFlag() {
+  const isDisabled = useFlag('DocsSuggestionsDisabled')
+  return { isSuggestionsEnabled: !isDisabled }
+}
 
 export type DocumentViewerProps = {
   nodeMeta: NodeMeta | PublicNodeMeta

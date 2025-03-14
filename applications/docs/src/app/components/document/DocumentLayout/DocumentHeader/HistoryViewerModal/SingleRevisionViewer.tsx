@@ -5,7 +5,7 @@ import { EditorFrame } from '../../../EditorFrame'
 import { useCallback } from 'react'
 import { ClientToEditorBridge } from '@proton/docs-core'
 import type { EditorOrchestratorInterface } from '@proton/docs-core'
-import { useApplication } from '../../../../../Containers/ApplicationProvider'
+import { useApplication } from '../../../../../utils/application-context'
 
 export type SingleRevisionViewerProps = {
   state: YjsState

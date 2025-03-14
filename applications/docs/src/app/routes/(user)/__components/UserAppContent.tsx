@@ -6,9 +6,9 @@ import { Application } from '@proton/docs-core'
 import { useDriveCompat } from '@proton/drive-store'
 
 import { APP_VERSION } from '../../../config'
-import ApplicationProvider from '../../../Containers/ApplicationProvider'
+import { ApplicationProvider } from '../../../utils/application-context'
 import { useFlag, useUnleashClient } from '@proton/unleash'
-import { DocsNotificationsProvider } from '../../../Containers/DocsNotificationsProvider'
+import { DocsNotificationsProvider } from '../__utils/notifications-context'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
 function useHomepageFeatureFlag() {
