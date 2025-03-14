@@ -6,7 +6,7 @@ import pick from 'lodash/pick';
 import set from 'lodash/set';
 import { c } from 'ttag';
 
-import type { WasmNetwork } from '@proton/andromeda';
+import { WasmAccountSyncer, type WasmNetwork } from '@proton/andromeda';
 import { WasmWallet, getDefaultStopGap } from '@proton/andromeda';
 import usePrevious from '@proton/hooks/usePrevious';
 import { MINUTE } from '@proton/shared/lib/constants';
@@ -256,18 +256,20 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
                     addNewSyncing(walletId, accountId);
 
+                    const wasmWalletSync = new WasmAccountSyncer(blockchainClient, wasmAccount);
+
                     // If syncing is manual, we do a full sync
                     if (isWalletFullSync && !fullSyncDone) {
-                        await blockchainClient.fullSync(wasmAccount, 500);
-                        await blockchainClient.partialSync(wasmAccount);
+                        await wasmWalletSync.fullSync(500);
+                        await wasmWalletSync.partialSync();
                         setFullSyncDone(fingerprint, derivationPath);
                     } else if ((await wasmAccount.hasSyncData()) && !manual) {
-                        await blockchainClient.partialSync(wasmAccount);
+                        await wasmWalletSync.partialSync();
                     } else {
                         // before full sync, we check the stop gap
                         const stopGap = getDefaultStopGap() + account.poolSize;
-                        await blockchainClient.fullSync(wasmAccount, stopGap);
-                        await blockchainClient.partialSync(wasmAccount);
+                        await wasmWalletSync.fullSync(stopGap);
+                        await wasmWalletSync.partialSync();
                     }
 
                     incrementSyncKey(walletId, accountId);

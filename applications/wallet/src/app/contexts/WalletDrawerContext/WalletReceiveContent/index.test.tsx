@@ -14,6 +14,10 @@ import {
 import { WalletReceiveContent } from '.';
 import { mockUseBitcoinBlockchainContext } from '../../../tests';
 
+vi.mock('../WalletReceiveExtraContent', () => ({
+    WalletReceiveExtraContent: () => <></>,
+}));
+
 describe('WalletReceiveContent', () => {
     const [testWallet] = apiWalletsData;
     const [testAccount] = testWallet.WalletAccounts;
