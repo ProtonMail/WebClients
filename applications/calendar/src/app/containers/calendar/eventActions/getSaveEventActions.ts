@@ -224,6 +224,22 @@ const getSaveEventActions = async ({
         }
         modelVeventComponent.organizer = buildVcalOrganizer(organizerEmail, organizerEmail);
     }
+
+    // If user commented the event, update his comment in the vevent attendees
+    if (inviteActions.comment && modelVeventComponent.attendee?.length) {
+        modelVeventComponent.attendee = modelVeventComponent.attendee.map((attendee) => {
+            const isCurrentUser = attendee.parameters?.cn === selfAddress.Email;
+            if (isCurrentUser) {
+                attendee.parameters = {
+                    ...attendee.parameters,
+                    comment: inviteActions.comment?.Message,
+                };
+            }
+
+            return attendee;
+        });
+    }
+
     // Also add selfAddress to inviteActions if it doesn't have one
     const inviteActionsWithSelfAddress = { ...inviteActions };
     if (!inviteActions.selfAddress) {

@@ -206,7 +206,6 @@ const getSaveSingleEventActions = async ({
         let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
 
         if (isSendType) {
-            // TODO: Sounds that sending external invite is there
             await onSaveConfirmation({
                 type: SAVE_CONFIRMATION_TYPES.SINGLE,
                 inviteActions,
