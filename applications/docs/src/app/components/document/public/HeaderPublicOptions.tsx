@@ -61,6 +61,8 @@ function UserInfo({ user }: UserInfoProps) {
         redirectToAccountSwitcher(token, linkId, urlPassword)
       }}
       className="user-info interactive-pseudo-protrude interactive--no-background relative ml-0 flex flex-nowrap items-center rounded border-none p-0"
+      data-email={Email}
+      data-testid="public-view-user-info"
     >
       <span className="user-initials relative my-auto flex shrink-0 rounded border p-1" aria-hidden="true">
         <span className="m-auto">{initials}</span>
@@ -279,7 +281,7 @@ export function HeaderPublicOptions({ editorController, documentState }: HeaderP
 
       {user && (
         <>
-          <UserInfo user={user} data-testid="public-view-user-info" />
+          <UserInfo user={user} />
         </>
       )}
 
