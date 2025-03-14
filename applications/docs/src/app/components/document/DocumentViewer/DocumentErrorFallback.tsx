@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Button } from '@proton/atoms'
-import { useApplication } from '../../../Containers/ApplicationProvider'
+import { useApplication } from '../../../utils/application-context'
 import { c } from 'ttag'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -8,7 +8,7 @@ import { useAuthentication } from '@proton/components'
 import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { useUser } from '@proton/account/user/hooks'
 import { getInitials } from '@proton/shared/lib/helpers/string'
-import { redirectToAccountSwitcherFromUserApp } from '../../../Apps/User/Utils/Redirection'
+import { redirectToAccountSwitcherFromUserApp } from '../public/utils'
 
 export type DocumentError = {
   message: string

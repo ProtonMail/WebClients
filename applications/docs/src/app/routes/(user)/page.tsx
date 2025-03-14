@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react'
+import type { FunctionComponent, ReactNode } from 'react'
 import { useState } from 'react'
 import { Router } from 'react-router-dom'
 
@@ -11,6 +11,7 @@ import {
   DrawerProvider,
   ErrorBoundary,
   EventManagerProvider,
+  getThemeStyle,
   LoaderPage,
   ProtonApp,
   StandardErrorPage,
@@ -30,8 +31,8 @@ import type { DocsStore } from '../../redux-store/store'
 import { extraThunkArguments } from '../../redux-store/thunk'
 import type { AvailabilityReport } from '@proton/utils/availability'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
-import { DocsThemeProvider } from './__components/DocsThemeProvider'
 import CustomNotificationsHijack from './__components/CustomNotificationHijacker'
+import type { APP_NAMES } from '@proton/shared/lib/constants'
 
 const HIDDEN_NOTIFICATIONS = ['Requested data does not exist or you do not have permission to access it']
 
@@ -126,5 +127,19 @@ export default function UserApp() {
         )
       })()}
     </ProtonApp>
+  )
+}
+
+const THEME_ID = 'theme-root'
+const defaultThemeStyles = getThemeStyle()
+
+type DocsThemeProviderProps = { children: ReactNode; appName: APP_NAMES }
+
+function DocsThemeProvider({ children }: DocsThemeProviderProps) {
+  return (
+    <>
+      <style id={THEME_ID}>{defaultThemeStyles}</style>
+      {children}
+    </>
   )
 }

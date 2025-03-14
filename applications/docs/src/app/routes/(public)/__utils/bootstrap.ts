@@ -2,7 +2,7 @@ import * as bootstrap from '@proton/account/bootstrap'
 import createApi from '@proton/shared/lib/api/createApi'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 
-import locales from '../../../locales'
+import { locales } from '../../../utils/locales'
 import { extendStore, setupStore } from '../../../redux-store/store'
 import { createBrowserHistory } from 'history'
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig'

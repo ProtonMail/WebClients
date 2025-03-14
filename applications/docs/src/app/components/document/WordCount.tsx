@@ -18,7 +18,7 @@ import {
 } from 'react'
 import { c } from 'ttag'
 import { WordCountEvent } from '@proton/docs-core'
-import { useApplication } from '../../Containers/ApplicationProvider'
+import { useApplication } from '../../utils/application-context'
 
 const DEFAULT_ENABLED = false
 export type WordCountContextValue = WordCountInfoCollection & {

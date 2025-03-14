@@ -7,8 +7,6 @@ import { Button } from '@proton/atoms'
 import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components'
 import { useLoading } from '@proton/hooks'
 
-import './PasswordPage.scss'
-
 export type PasswordPageProps = {
   submitPassword: (password: string) => Promise<void>
 }
@@ -29,7 +27,7 @@ export function PasswordPage({ submitPassword }: PasswordPageProps) {
         style={{ '--max-w-custom': '30rem' }}
       >
         <div className="flex justify-center pb-7">
-          <span className="password-page--icon-container rounded p-4">
+          <span className="rounded bg-[--interaction-norm-minor-1] p-4">
             <Icon name="key-skeleton" className="color-primary" size={7} />
           </span>
         </div>

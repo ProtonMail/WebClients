@@ -1,8 +1,8 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import { useDocsNotifications } from '../../../../../../Containers/DocsNotificationsProvider'
+import { useDocsNotifications } from '../../../../__utils/notifications-context'
 import { EmailOptInModal } from './EmailOptInModal'
 
-jest.mock('../../../../../../Containers/DocsNotificationsProvider')
+jest.mock('../../../../__utils/notifications-context')
 const mockUpdateNotificationSettings = jest.fn()
 
 class MockResizeObserver {
