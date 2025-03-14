@@ -14,7 +14,7 @@ export class LoadLogger {
       throw new Error('LoadMetrics instance not initialized')
     }
     const timeInMs = new Date().getTime() - instance.constructTime.getTime()
-    instance.logger.info(`${eventName} took ${timeInMs}ms from page load`)
+    instance.logger.info(`🕛 ${eventName} took ${timeInMs}ms from page load`)
   }
 
   constructor(private logger: LoggerInterface) {
