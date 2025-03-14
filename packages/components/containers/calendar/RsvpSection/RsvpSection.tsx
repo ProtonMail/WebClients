@@ -88,8 +88,6 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
         ).t`Send`}</Button>
     );
 
-    const noteTitle = <span className="text-bold color-weak">{c('Note').t`Note:`}</span>;
-
     const hasUserComment = !!model.Comment?.Message;
 
     return (
@@ -120,8 +118,10 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             )}
             {!isExpanded && hasUserComment && (
                 <div className="mt-2 flex flex-auto justify-space-between flex-nowrap items-center gap-2">
-                    <label className="text-ellipsis color-weak text-sm">{c('Note')
-                        .jt`${noteTitle} ${userComment}`}</label>
+                    <label className="text-ellipsis color-weak text-sm">
+                        <span className="text-bold color-weak">{c('Note').t`Note:`}</span>
+                        {userComment}
+                    </label>
                     {!isSearchView && (
                         <div className="flex flex-none">
                             <EditNoteButton onEdit={() => setIsExpanded(!isExpanded)} />
