@@ -287,7 +287,11 @@ export const useOptimisticApplyLabels = () => {
 
             if (updatedElements.length) {
                 dispatch(
-                    optimisticApplyLabelsElementsAction({ elements: updatedElements, isMove, elementTotalAdjustment })
+                    optimisticApplyLabelsElementsAction({
+                        elements: updatedElements,
+                        isMove: isMove || isUnstarringElement,
+                        elementTotalAdjustment,
+                    })
                 );
             }
 
@@ -318,6 +322,7 @@ export const useOptimisticApplyLabels = () => {
                     // When doing a rollback, we are not computing the updated total.
                     // We can add back to the total what we just removed
                     inputElementTotalAdjustment: elementTotalAdjustment * -1,
+                    isUnstarringElement,
                 });
             };
         }
