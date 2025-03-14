@@ -147,12 +147,14 @@ export const loadSession = async ({
     pathname,
     searchParams,
     unauthenticatedReturnUrl,
+    localID: localIDParam,
 }: {
     pathname: string;
     authentication: AuthenticationStore;
     api: ApiWithListener;
     searchParams: URLSearchParams;
     unauthenticatedReturnUrl?: string;
+    localID?: number;
 }): Promise<SessionPayloadData> => {
     if (authentication.ready) {
         api.UID = authentication.UID;
@@ -164,7 +166,7 @@ export const loadSession = async ({
         };
     }
 
-    let localID = getLocalIDFromPathname(pathname);
+    let localID = localIDParam ?? getLocalIDFromPathname(pathname);
 
     api.UID = undefined;
 

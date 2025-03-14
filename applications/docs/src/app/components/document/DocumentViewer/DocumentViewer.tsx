@@ -42,6 +42,10 @@ import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { AppendPublicShareKeyMaterialToTitle } from '../../../Hooks/AppendPublicShareUrlKeyMaterial'
+import { useDocsUrlBar } from '../../../Containers/useDocsUrlBar'
+import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
+import useEffectOnce from '@proton/hooks/useEffectOnce'
+import { useAuthentication } from '@proton/components/index'
 
 export type DocumentViewerProps = {
   nodeMeta: NodeMeta | PublicNodeMeta
@@ -51,8 +55,14 @@ export type DocumentViewerProps = {
 
 export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }: DocumentViewerProps) {
   const application = useApplication()
+  const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
   const debug = useDebug()
+
+  const { removeLocalIDFromUrl } = useDocsUrlBar()
+  useEffectOnce(() => {
+    removeLocalIDFromUrl()
+  })
 
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [docController, setDocController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
@@ -314,6 +324,10 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
         setDocController(result.docController)
         setEditorController(result.editorController)
         setReady(true)
+        const localID = getLocalID()
+        if (localID !== undefined) {
+          CacheService.setLocalIDForDocumentInCache(nodeMeta, localID)
+        }
       },
       onError: (errorMessage, code) => {
         setError({ message: errorMessage, userUnderstandableMessage: false, code })
@@ -328,7 +342,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
     }
 
     return disposer
-  }, [application, docOrchestrator, initializing, nodeMeta])
+  }, [application, docOrchestrator, getLocalID, initializing, nodeMeta, removeLocalIDFromUrl])
 
   useEffect(() => {
     if (docOrchestrator && editorFrame && editorController && !bridge) {

@@ -8,9 +8,31 @@ import { createBrowserHistory } from 'history'
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig'
 import { requestFork } from '@proton/shared/lib/authentication/fork'
 import { APPS } from '@proton/shared/lib/constants'
-import { getLocalID } from '@proton/drive-store/utils/url/localid'
 import { getLastUsedLocalID } from '@proton/account/bootstrap/lastUsedLocalID'
 import { readAccountSessions } from '@proton/account/accountSessions/storage'
+import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
+import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
+import { getDecryptedPersistedState } from '@proton/account/persist/helper'
+import type { DocsState } from '../../../redux-store/rootReducer'
+
+function getLocalID(token: string | null) {
+  if (token) {
+    let localID = -1
+    const localIDFromPathname = getLocalIDFromPathname(location.pathname)
+    const localIDFromCache = CacheService.getLocalIDForDocumentFromCache({
+      token,
+    })
+    if (localIDFromPathname !== undefined) {
+      localID = localIDFromPathname
+    } else if (localIDFromCache !== undefined) {
+      localID = localIDFromCache
+    } else {
+      localID = getLastUsedLocalID()
+    }
+    return localID
+  }
+  return -1
+}
 
 export const bootstrapPublicApp = async ({ config }: { config: ProtonConfig }) => {
   const authentication = bootstrap.createAuthentication()
@@ -23,14 +45,29 @@ export const bootstrapPublicApp = async ({ config }: { config: ProtonConfig }) =
   extendStore({ config, api, authentication, history, unleashClient })
 
   const searchParams = new URLSearchParams(location.search)
+  const token = searchParams.get('token')
   await bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' })
 
-  const localId = Number(getLocalID() ?? getLastUsedLocalID())
+  const localId = getLocalID(token)
   const accountSessions = readAccountSessions()
 
   if (localId >= 0 && accountSessions?.some((value) => value.localID === localId)) {
     try {
-      await bootstrap.loadSession({ authentication, api, pathname: location.pathname, searchParams })
+      const sessionResult = await bootstrap.loadSession({
+        authentication,
+        api,
+        pathname: location.pathname,
+        searchParams,
+        localID: localId,
+      })
+
+      const user = sessionResult.session?.User
+      const persistedState = await getDecryptedPersistedState<Partial<DocsState>>({
+        authentication,
+        user,
+      })
+      const store = setupStore({ preloadedState: persistedState?.state, persist: true })
+      return { store, session: sessionResult.session }
       // Session loaded fine
     } catch (error) {
       // This session is invalid, we should go back to account to fork it
