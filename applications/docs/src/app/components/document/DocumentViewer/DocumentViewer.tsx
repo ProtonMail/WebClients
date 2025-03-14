@@ -15,6 +15,7 @@ import {
   SquashVerificationObjectionDecision,
   WebsocketConnectionEvent,
   isLocalEnvironment,
+  isDocumentState,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
 import { DebugMenu, useDebug } from './DebugMenu'
@@ -40,7 +41,7 @@ import type { EditorControllerInterface } from '@proton/docs-core'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
-import { useAppendPublicShareKeyMaterialToTitle } from '../../../Hooks/usePublicShareUrlKeyMaterial'
+import { AppendPublicShareKeyMaterialToTitle } from '../../../Hooks/AppendPublicShareUrlKeyMaterial'
 
 export type DocumentViewerProps = {
   nodeMeta: NodeMeta | PublicNodeMeta
@@ -335,12 +336,6 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
     }
   }, [docOrchestrator, editorFrame, createBridge, bridge, editorController])
 
-  useAppendPublicShareKeyMaterialToTitle(
-    application,
-    nodeMeta,
-    documentState?.getProperty('userRole').canReadPublicShareUrl(),
-  )
-
   const onInviteAutoAcceptResult = useCallback((result: boolean) => {
     if (result) {
       window.location.reload()
@@ -385,6 +380,13 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
       {ready && <WordCountOverlay />}
 
       {(!documentState || !editorController) && Loader}
+
+      {documentState &&
+        isDocumentState(documentState) &&
+        isPrivateNodeMeta(nodeMeta) &&
+        documentState.getProperty('userRole').canReadPublicShareUrl() && (
+          <AppendPublicShareKeyMaterialToTitle nodeMeta={nodeMeta} documentState={documentState} />
+        )}
 
       {renderEditor && (
         <EditorFrame
