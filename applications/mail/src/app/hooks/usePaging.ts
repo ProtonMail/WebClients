@@ -43,7 +43,7 @@ export const usePaging = (
         if (total !== newTotal) {
             setTotal(newTotal);
         }
-    }, [currentPage, currentTotalPages, pageSize]);
+    }, [currentPage, currentTotalPages, pageSize, total]);
 
     return {
         onNext: () => {
