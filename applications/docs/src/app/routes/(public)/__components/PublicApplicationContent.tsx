@@ -3,7 +3,7 @@ import { Application } from '@proton/docs-core'
 
 import { useApi } from '@proton/components/index'
 import { Route, Switch } from 'react-router-dom'
-import ApplicationProvider from '../../../Containers/ApplicationProvider'
+import { ApplicationProvider } from '../../../utils/application-context'
 import { DocumentViewer } from '../../../components/document/DocumentViewer/DocumentViewer'
 import {
   usePublicDriveCompat,
@@ -13,10 +13,10 @@ import {
 } from '@proton/drive-store'
 import { APP_VERSION } from '../../../config'
 import { WordCountProvider } from '../../../components/document/WordCount'
-import { useDocsUrlBar } from '../../../Containers/useDocsUrlBar'
+import { useDocsUrlBar } from '../../../utils/docs-url-bar'
 import { DocumentLayout } from '../../../components/document/DocumentLayout/DocumentLayout'
 import { usePublicSessionUser } from '@proton/drive-store/store'
-import DocsContextProvider from '../../../Containers/DocsContextProvider'
+import { DocsProvider } from '../../../components/document/context'
 import { useUnleashClient } from '@proton/unleash'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
@@ -74,7 +74,7 @@ export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCom
 
   return (
     <ApplicationProvider application={application}>
-      <DocsContextProvider
+      <DocsProvider
         publicContext={{ user, localID, compat: publicDriveCompat, openParams: openAction }}
         privateContext={undefined}
       >
@@ -87,7 +87,7 @@ export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCom
             </Route>
           </Switch>
         </WordCountProvider>
-      </DocsContextProvider>
+      </DocsProvider>
     </ApplicationProvider>
   )
 }

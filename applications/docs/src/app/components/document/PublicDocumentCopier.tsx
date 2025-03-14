@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react'
-import { useApplication } from '../../Containers/ApplicationProvider'
+import { useApplication } from '../../utils/application-context'
 import { PostApplicationError } from '@proton/docs-core'
 import { c } from 'ttag'
 import { CircleLoader } from '@proton/atoms/index'
