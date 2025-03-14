@@ -232,7 +232,7 @@ export const getSupportedOrganizer = (organizer: VcalOrganizerProperty) => {
 };
 
 export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
-    const { parameters: { cn, role, partstat, rsvp, 'x-pm-token': token } = {} } = attendee;
+    const { parameters: { cn, role, partstat, rsvp, 'x-pm-token': token, comment } = {} } = attendee;
     const emailAddress = getAttendeeEmail(attendee);
     const supportedAttendee: RequireSome<VcalAttendeeProperty, 'parameters'> = {
         value: buildMailTo(emailAddress),
@@ -259,6 +259,12 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
 
     if (token?.length === 40) {
         supportedAttendee.parameters['x-pm-token'] = token;
+    }
+
+    // TODO: ensure comment is always sanitized before
+    // reaching this part
+    if (comment) {
+        supportedAttendee.parameters.comment = comment;
     }
 
     return supportedAttendee;

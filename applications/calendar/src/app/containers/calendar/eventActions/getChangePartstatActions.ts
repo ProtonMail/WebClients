@@ -98,13 +98,8 @@ const getAutoUpdatePersonalPartOperation = ({
     addressID,
     partstat,
 }: {
-    /** Allow to find the attendee Token */
     eventComponent: VcalVeventComponent;
     hasDefaultNotifications: boolean;
-    /**
-     * TODO: Remove or correct this comment.
-     * Seem to be old event
-     */
     event: CalendarEvent;
     inviteActions: InviteActions;
     addressID: string;
