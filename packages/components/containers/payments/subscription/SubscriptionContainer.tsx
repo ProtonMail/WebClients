@@ -18,6 +18,7 @@ import useHandler from '@proton/components/hooks/useHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
+import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
@@ -25,7 +26,6 @@ import type {
     BillingAddress,
     CheckWithAutomaticOptions,
     MultiCheckSubscriptionData,
-    PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PlainPaymentMethodType,
 } from '@proton/payments';
@@ -181,7 +181,7 @@ export interface SubscriptionContainerProps {
     metrics: {
         source: Source;
     };
-    flow?: PaymentMethodFlows;
+    telemetryFlow?: TelemetryPaymentFlow;
     render: (renderProps: RenderProps) => ReactNode;
     subscription: Subscription;
     organization: Organization;
@@ -219,7 +219,7 @@ const SubscriptionContainer = ({
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
     metrics: outerMetricsProps,
-    flow = 'subscription',
+    telemetryFlow,
     render,
     subscription,
     organization,
@@ -549,7 +549,8 @@ const SubscriptionContainer = ({
         },
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
         onCurrencyChange: (currency, context) => handleChangeCurrency(currency, context),
-        flow,
+        flow: 'subscription',
+        telemetryFlow,
         user,
         subscription,
         planIDs: model.planIDs,

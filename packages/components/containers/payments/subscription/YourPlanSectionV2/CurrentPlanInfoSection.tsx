@@ -108,7 +108,7 @@ export const CurrentPlanInfoSection = ({
     const [openSubscriptionModal] = useSubscriptionModal();
     const space = getSpace(user);
     const { isFree, canPay, isMember } = user;
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const { UsedSpace = space.usedSpace, MaxSpace = space.maxSpace, MaxMembers = 1 } = organization || {};
 
@@ -135,7 +135,7 @@ export const CurrentPlanInfoSection = ({
             metrics: {
                 source: 'plans',
             },
-            flow: paymentFlow,
+            telemetryFlow,
         });
 
     const cta = (() => {

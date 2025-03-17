@@ -18,7 +18,7 @@ import { useSubscriptionPriceComparison } from './helper';
 const ExploreGroupPlansBanner = ({ subscription, app }: UpsellSectionBaseProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(subscription, PLANS.FAMILY);
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const pricePerMonthPerUser = cheapestMonthlyPrice ? cheapestMonthlyPrice / FAMILY_MAX_USERS : undefined;
 
@@ -27,7 +27,7 @@ const ExploreGroupPlansBanner = ({ subscription, app }: UpsellSectionBaseProps) 
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 
