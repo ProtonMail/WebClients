@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import type { WasmApiCountry } from '@proton/andromeda';
 import { Href } from '@proton/atoms';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
+import { Icon } from '@proton/components/index';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/index';
 import { useCountriesByProvider } from '@proton/wallet/store';
@@ -21,6 +22,7 @@ interface Props {
 export const Location = ({ onConfirm }: Props) => {
     const [countriesByProviders, loadingCountries] = useCountriesByProvider();
     const [country, setCountry] = useState<WasmApiCountry>();
+    const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
 
     const allCountries = uniqBy(Object.values(countriesByProviders ?? {}).flat(), (country) => country.Code);
     const allCountryOptions = allCountries.map((country) => ({ countryCode: country.Code, countryName: country.Name }));
@@ -53,12 +55,19 @@ export const Location = ({ onConfirm }: Props) => {
                 )}
             </ModalParagraph>
 
-            <div className="mb-8 w-full">
+            <div className="flex mb-8 justify-center w-full">
                 <CountrySelect
                     onSelectCountry={(code) => {
+                        setErrorMessage(undefined);
                         const country = allCountries.find((country) => country.Code === code);
                         if (country) {
                             setCountry(country);
+                            if (country.Code === 'GB') {
+                                setErrorMessage(
+                                    c('bitcoin buy')
+                                        .t`Buying BTC through ${WALLET_APP_NAME} is currently unavailable to UK residents due to FCA regulations.`
+                                );
+                            }
                         }
                     }}
                     label={null}
@@ -74,6 +83,14 @@ export const Location = ({ onConfirm }: Props) => {
                     )}
                     assistContainerClassName="empty:hidden"
                 />
+                {errorMessage && (
+                    <div className="field-two--invalid mt-3">
+                        <div className="field-two--invalid field-two-assist flex flex-nowrap items-start">
+                            <Icon name="exclamation-circle-filled" className="color-danger shrink-0 mr-1" size={4} />
+                            <span data-testid="error-country-select">{errorMessage}</span>
+                        </div>
+                    </div>
+                )}
             </div>
 
             <div className="w-full px-8">
@@ -83,7 +100,7 @@ export const Location = ({ onConfirm }: Props) => {
                     shape="solid"
                     color="norm"
                     shadow
-                    disabled={!country}
+                    disabled={!country || !!errorMessage}
                     onClick={() => {
                         if (country) {
                             onConfirm(country);
