@@ -15,7 +15,7 @@ import { useNavigationFilters } from '@proton/pass/components/Navigation/Navigat
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectAllVaults, selectShare } from '@proton/pass/store/selectors';
+import { selectAllVaults, selectCanCreateItems, selectShare } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
@@ -40,6 +40,8 @@ export const QuickActionsPlaceholder: FC = () => {
 
     const selectedShare = useSelector(selectShare(selectedShareId));
     const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
+
+    const canCreate = useSelector(selectCanCreateItems);
 
     const quickActions = useMemo<ItemQuickAction[]>(
         () => [
@@ -109,7 +111,7 @@ export const QuickActionsPlaceholder: FC = () => {
                         key={`quick-action-${type}`}
                         className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
                         onClick={onClick}
-                        disabled={selectedShare && !isWritableVault(selectedShare)}
+                        disabled={(selectedShare && !isWritableVault(selectedShare)) || !canCreate}
                         size={EXTENSION_BUILD ? 'small' : 'medium'}
                     >
                         <Icon
