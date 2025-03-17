@@ -16,7 +16,7 @@ import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wal
 import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { APP_NAME } from '../../../config';
-import { clearWalletData } from '../../../utils/cache';
+import { clearWalletAccountMetricsData, clearWalletData } from '../../../utils/cache';
 import { OtherSidebarListItems } from './OtherSidebarListItems';
 import { WalletsSidebarList } from './WalletsSidebarList';
 
@@ -52,6 +52,10 @@ const WalletSidebar = ({
                 .map((walletData) => walletData.Wallet.Fingerprint)
                 .filter((fingerprint) => fingerprint !== null);
             clearWalletData(fingerprints);
+            const accountIDs = apiWalletsData.flatMap((walletData) =>
+                walletData.WalletAccounts.map((accountData) => accountData.ID)
+            );
+            clearWalletAccountMetricsData(accountIDs);
         });
     }, [apiWalletsData]);
 
