@@ -11,6 +11,10 @@ module.exports = {
     ...(!isFixMode && {
       'react-hooks/exhaustive-deps': 'warn',
     }),
+    // These "import" rules are redundant with TypeScript's errors. Additionally, import aliases
+    // (tsconfig "paths") don't work with our eslint config which causes false positives.
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
     '@typescript-eslint/lines-between-class-members': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-unused-vars': 'off',

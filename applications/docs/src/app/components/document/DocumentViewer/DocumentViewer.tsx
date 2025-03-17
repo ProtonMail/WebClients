@@ -42,8 +42,8 @@ import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallba
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useAuthentication } from '@proton/components/index'
-import { useApplication } from '../../../utils/application-context'
-import { useDocsUrlBar } from '../../../utils/docs-url-bar'
+import { useApplication } from '~/utils/application-context'
+import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
 import useFlag from '@proton/unleash/useFlag'
 

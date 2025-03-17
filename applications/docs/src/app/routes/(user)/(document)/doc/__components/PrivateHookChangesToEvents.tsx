@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDocsNotifications } from '../../../__utils/notifications-context'
-import { useApplication } from '../../../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import type { UserState } from '@proton/docs-core'
 import type { SyncedEditorState } from '@proton/docs-shared'
 import { useContactEmails } from '@proton/mail/contactEmails/hooks'

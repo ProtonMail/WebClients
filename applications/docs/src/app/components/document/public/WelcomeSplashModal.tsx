@@ -79,6 +79,6 @@ export function WelcomeSplashModal({
   )
 }
 
-export const useWelcomeSplashModal = () => {
+export function useWelcomeSplashModal() {
   return useModalTwoStatic(WelcomeSplashModal)
 }

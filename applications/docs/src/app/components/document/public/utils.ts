@@ -13,7 +13,7 @@ import {
 import { saveUrlPasswordForRedirection } from '@proton/drive-store/utils/url/password'
 import { useOpenDocument, type RedirectAction } from '@proton/drive-store/store/_documents/useOpenDocument'
 import type { PublicContextValue } from '../context'
-import type { EditorControllerInterface, PublicDocumentState } from 'packages/docs-core'
+import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
 import { useCallback } from 'react'
 import { getParsedPathWithoutLocalIDBasename } from '@proton/shared/lib/authentication/pathnameHelper'
 

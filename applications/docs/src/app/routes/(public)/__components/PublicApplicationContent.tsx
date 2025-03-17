@@ -3,20 +3,20 @@ import { Application } from '@proton/docs-core'
 
 import { useApi } from '@proton/components/index'
 import { Route, Switch } from 'react-router-dom'
-import { ApplicationProvider } from '../../../utils/application-context'
-import { DocumentViewer } from '../../../components/document/DocumentViewer/DocumentViewer'
+import { ApplicationProvider } from '~/utils/application-context'
+import { DocumentViewer } from '~/components/document/DocumentViewer/DocumentViewer'
 import {
   usePublicDriveCompat,
   type DocumentAction,
   type PublicDriveCompat,
   type PublicNodeMeta,
 } from '@proton/drive-store'
-import { APP_VERSION } from '../../../config'
-import { WordCountProvider } from '../../../components/document/WordCount'
-import { useDocsUrlBar } from '../../../utils/docs-url-bar'
-import { DocumentLayout } from '../../../components/document/DocumentLayout/DocumentLayout'
+import { APP_VERSION } from '~/config'
+import { WordCountProvider } from '~/components/document/WordCount'
+import { useDocsUrlBar } from '~/utils/docs-url-bar'
+import { DocumentLayout } from '~/components/document/DocumentLayout/DocumentLayout'
 import { usePublicSessionUser } from '@proton/drive-store/store'
-import { DocsProvider } from '../../../components/document/context'
+import { DocsProvider } from '~/components/document/context'
 import { useUnleashClient } from '@proton/unleash'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 
