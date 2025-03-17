@@ -49,7 +49,7 @@ const YourPlanSection = ({ app }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
     useLoad();
 
     const loading =
@@ -68,7 +68,7 @@ const YourPlanSection = ({ app }: Props) => {
         openSubscriptionModal,
         canAccessDuoPlan,
         user,
-        paymentFlow,
+        telemetryFlow,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 
