@@ -10,6 +10,7 @@ import { KeyType } from './shared/interface';
 const KeysStatus = ({
     type,
     isPrimary,
+    isPrimaryCompatibility,
     isDecrypted,
     isCompromised,
     isObsolete,
@@ -18,25 +19,30 @@ const KeysStatus = ({
 }: Partial<KeyStatus> & { type: KeyType }) => {
     const list = [
         isPrimary &&
+            !isPrimaryCompatibility &&
             ({
                 tooltip:
                     type === KeyType.User
                         ? c('Tooltip').t`This key is used by ${MAIL_APP_NAME} to encrypt your contact's data`
-                        : c('Tooltip').t`${MAIL_APP_NAME} users will use this key by default for sending`,
+                        : c('Tooltip')
+                              .t`This is the default key used by other ${MAIL_APP_NAME} users to encrypt data they send to you`,
                 title: c('Key state badge').t`Primary`,
                 type: 'primary',
             } as const),
-        isDecrypted
-            ? ({
-                  tooltip: c('Tooltip').t`You have locally decrypted this key`,
-                  title: c('Key state badge').t`Active`,
-                  type: 'success',
-              } as const)
-            : ({
-                  tooltip: c('Tooltip').t`This key is encrypted with an old password`,
-                  title: c('Key state badge').t`Inactive`,
-                  type: 'error',
-              } as const),
+        isPrimaryCompatibility &&
+            ({
+                // no primary-compatibility for user keys
+                tooltip: c('Tooltip')
+                    .t`This is the default key used by other ${MAIL_APP_NAME} users on older mobile apps to encrypt data they send to you`,
+                title: c('Key state badge').t`Compatibility`,
+                type: 'success',
+            } as const),
+        !isDecrypted &&
+            ({
+                tooltip: c('Tooltip').t`This key is encrypted with an old password`,
+                title: c('Key state badge').t`Inactive`,
+                type: 'error',
+            } as const),
         isCompromised &&
             ({
                 tooltip: c('Tooltip')
@@ -76,3 +82,41 @@ const KeysStatus = ({
 };
 
 export default KeysStatus;
+
+export const getKeyFunction = (status: KeyStatus): { label: string; tooltip?: string } => {
+    if (status.isPrimary) {
+        // incl. status.isPrimaryCompatibility
+        return {
+            label: c('Key function description').t`Encryption, decryption, signing, verification`,
+        };
+    } else if (!status.isDecrypted) {
+        return {
+            label: '—',
+            tooltip:
+                status.isForwarding || status.isCompromised
+                    ? c('Inactive key function info').t`If reactivated, the key will be used for decryption`
+                    : c('Inactive key function info')
+                          .t`If reactivated, the key will be used for decryption and verification`,
+        };
+    } else if (status.isAddressDisabled) {
+        return {
+            label: '—',
+        };
+    } else if (status.isForwarding) {
+        return {
+            label: c('Key function description').t`Decryption`,
+        };
+    } else if (status.isCompromised) {
+        return {
+            label: c('Key function description').t`Decryption`,
+        };
+    } else if (status.isObsolete) {
+        return {
+            label: c('Key function description').t`Decryption, verification`,
+        };
+    } else {
+        return {
+            label: c('Key function description').t`Decryption, verification`,
+        };
+    }
+};

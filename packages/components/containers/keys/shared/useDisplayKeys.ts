@@ -18,6 +18,8 @@ interface ParsedKey {
     Key: Key;
     privateKey?: PrivateKeyReference;
     fingerprint: string;
+    creationDate: Date;
+    version: number;
     algorithmInfos: AlgorithmInfo[];
     isDecrypted: boolean;
     isWeak: boolean;
@@ -46,7 +48,9 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
                         (await CryptoProxy.importPublicKey({ armoredKey: Key.PrivateKey }));
                     return {
                         Key,
+                        version: maybePrivateKey.getVersion(),
                         fingerprint: maybePrivateKey.getFingerprint(),
+                        creationDate: maybePrivateKey.getCreationTime(),
                         algorithmInfos: [
                             maybePrivateKey.getAlgorithmInfo(),
                             ...maybePrivateKey.subkeys.map((key) => key.getAlgorithmInfo()),
@@ -78,12 +82,18 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
         const signedKeyListMap = parsedSignedKeyList.mapAddressKeysToSKLItems(
             state.map(({ Key: { ID }, sha256Fingerprints }) => ({ ID, sha256Fingerprints }))
         );
+
+        const existsPrimaryKeyV6 = !!state.find(
+            ({ Key: { ID }, version }) => version === 6 && signedKeyListMap[ID]?.Primary === 1
+        );
+
         return state.map((data) => {
             return getDisplayKey({
                 User,
                 Address,
                 isLoading: loadingKeyID === data.Key.ID,
                 signedKeyListMap,
+                existsPrimaryKeyV6,
                 ...data,
             });
         });
