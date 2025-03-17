@@ -1,4 +1,3 @@
-import { FieldType, flagAsIgnored, removeClassifierFlags } from '@protontech/autofill';
 import { NOTIFICATION_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
@@ -7,6 +6,7 @@ import type { PopoverController } from 'proton-pass-extension/app/content/servic
 import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
+import { FieldType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
