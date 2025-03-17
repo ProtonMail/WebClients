@@ -418,7 +418,7 @@ export const getMailConfiguration = ({
                     search: 'mode=sps',
                 },
                 title: c('mail_signup_2024: title').t`For individuals`,
-                defaultPlan: PLANS.BUNDLE,
+                defaultPlan: PLANS.FREE,
             },
             {
                 value: Audience.B2B,
@@ -461,7 +461,7 @@ export const getMailConfiguration = ({
                 if (audience === Audience.B2B) {
                     return PLANS.BUNDLE_PRO_2024;
                 }
-                return PLANS.BUNDLE;
+                return PLANS.FREE;
             })(),
             cycle: CYCLE.YEARLY,
         },
