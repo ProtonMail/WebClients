@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Button } from '@proton/atoms'
-import { useApplication } from '../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import { c } from 'ttag'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -53,7 +53,7 @@ export function DocumentErrorFallback({ error }: DocumentErrorFallbackProps) {
   )
 }
 
-export const DocumentErrorSignedInAs = () => {
+export function DocumentErrorSignedInAs() {
   const [user] = useUser()
   const initials = getInitials(user.Name || user.Email || '')
 

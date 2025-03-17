@@ -54,6 +54,6 @@ export function ExportToPDFModal({ onClose, open, ...modalProps }: ModalStatePro
   )
 }
 
-export const useExportToPDFModal = () => {
+export function useExportToPDFModal() {
   return useModalTwoStatic(ExportToPDFModal)
 }

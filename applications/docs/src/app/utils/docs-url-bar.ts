@@ -234,7 +234,7 @@ export function parseOpenAction(searchParams: URLSearchParams): DocumentAction |
  * Example: replaceLastPathSegment('/u/1/foo', 'bar') => '/u/1/bar'
  *          replaceLastPathSegment('/foo', 'bar')     => '/bar'
  */
-export const replaceLastPathSegment = (pathname: string, newSegment: string): string => {
+export function replaceLastPathSegment(pathname: string, newSegment: string): string {
   const userPortion = pathname.match(/\/u\/\d+/)?.[0]
   return userPortion ? `${userPortion}/${newSegment}` : `/${newSegment}`
 }

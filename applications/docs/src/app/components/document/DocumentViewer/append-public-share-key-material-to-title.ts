@@ -7,8 +7,8 @@ import { useRef, useEffect, useCallback } from 'react'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useAuthentication } from '@proton/components/index'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useApplication } from '../../../utils/application-context'
-import { useDocsUrlBar } from '../../../utils/docs-url-bar'
+import { useApplication } from '~/utils/application-context'
+import { useDocsUrlBar } from '~/utils/docs-url-bar'
 
 /**
  * Will append the key material from the public share url to the document title:

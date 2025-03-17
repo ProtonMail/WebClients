@@ -4,7 +4,7 @@ import { DocumentTitleDropdown } from './DocumentTitleDropdown/DocumentTitleDrop
 import { DocumentActiveUsers } from './DocumentActiveUsers'
 import { ConnectionStatus } from './ConnectionStatus'
 import { useEffect, useMemo, useState } from 'react'
-import { useApplication } from '../../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import { Button } from '@proton/atoms'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { CommentsButton } from './CommentsButton'
@@ -85,7 +85,9 @@ export function DocumentHeader({ action }: DocsHeaderProps) {
   return null
 }
 
-/** Header shown if there is an error loading a document */
+/**
+ * Header shown if there is an error loading a document.
+ */
 function DocsHeaderNoDocument() {
   const { viewportWidth } = useActiveBreakpoint()
 
@@ -120,7 +122,9 @@ type DocsHeaderForDocumentProps = {
   renameController: RenameControllerInterface | undefined
 }
 
-/** Header shown while a document is present */
+/**
+ * Header shown while a document is present.
+ */
 function DocsHeaderForDocument({
   action,
   editorController,

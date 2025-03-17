@@ -1,8 +1,8 @@
 import { MimeIcon } from '@proton/components'
 
 import { ContextMenuButton } from '../ContextMenuButton'
-import { useRecentDocuments } from '../../../utils/recent-documents'
-import type { RecentDocumentItem } from 'packages/docs-core'
+import { useRecentDocuments } from '../../../../__utils/recent-documents'
+import type { RecentDocumentItem } from '@proton/docs-core'
 import { c } from 'ttag'
 
 export type OpenButtonProps = {
