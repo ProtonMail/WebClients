@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 
 import {
     AppLink,
@@ -10,11 +10,13 @@ import {
     UserDropdown,
     useActiveBreakpoint,
 } from '@proton/components';
+import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { APP_NAME } from '../../../config';
+import { clearWalletData } from '../../../utils/cache';
 import { OtherSidebarListItems } from './OtherSidebarListItems';
 import { WalletsSidebarList } from './WalletsSidebarList';
 
@@ -40,6 +42,18 @@ const WalletSidebar = ({
     onToggleExpand,
 }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
+
+    useEffect(() => {
+        if (!apiWalletsData) {
+            return;
+        }
+        return registerSessionRemovalListener(async () => {
+            const fingerprints = apiWalletsData
+                .map((walletData) => walletData.Wallet.Fingerprint)
+                .filter((fingerprint) => fingerprint !== null);
+            clearWalletData(fingerprints);
+        });
+    }, [apiWalletsData]);
 
     return (
         <Sidebar
