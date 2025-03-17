@@ -28,7 +28,7 @@ export const ActionButtons = ({
 }) => {
     const scheduledDowncycling = useFlag('ScheduledDowncycling');
     const [openSubscriptionModal] = useSubscriptionModal();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     /**
      * Since all the components here are used in the same context, we can use the same metrics source for all of them.
@@ -42,14 +42,14 @@ export const ActionButtons = ({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             metrics,
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics,
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
     const handleEditPayment = () =>
@@ -57,7 +57,7 @@ export const ActionButtons = ({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             metrics,
-            flow: paymentFlow,
+            telemetryFlow,
         });
 
     const hasPassB2B = getHasPassB2BPlan(subscription);
