@@ -33,7 +33,7 @@ import type {
     SSOInfoResponse,
 } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -678,6 +678,13 @@ const LoginForm = ({
                                             >
                                                 <Icon name="user-circle" />
                                                 {c('Link').t`Forgot username?`}
+                                            </Link>
+                                            <Link
+                                                to={SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}
+                                                className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
+                                            >
+                                                <Icon name="qr-code" />
+                                                {c('Link').t`Sign in with another device`}
                                             </Link>
                                         </SupportDropdown>
                                     </div>
