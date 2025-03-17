@@ -39,3 +39,11 @@ export const clearWalletData = (fingerprints: string[]) => {
         })
         .forEach((x) => localStorage.removeItem(x));
 };
+
+export const clearWalletAccountMetricsData = (accountIDs: string[]) => {
+    Object.keys(window.localStorage)
+        .filter((x) => {
+            return accountIDs.some((accountID) => x.startsWith('metrics:wallet_account:' + accountID));
+        })
+        .forEach((x) => localStorage.removeItem(x));
+};
