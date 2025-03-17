@@ -1,3 +1,31 @@
+# March 2025
+
+- HEIC Thumbnail Support
+    -   Thumbnails now support HEIC images, improving compatibility with more file formats.
+
+# February 2025
+
+-   Collapsible Sidebar Navigation
+    -   The sidebar can now be collapsed, providing a more flexible and customizable navigation experience.
+-    WebP Thumbnails for Better Performance
+    -   Switched from JPEG to WebP for thumbnails, delivering the same quality with improved performance.
+
+# January 2025
+
+-   Fixed Photo Upload Issues
+    -   Resolved an issue where uploaded photos had incorrect timestamps, ensuring accurate date information.
+-   More Robust Download Algorithm
+    -   Improved the download process, making it more reliable across browsers, including Safari. Added an extra OPFS version.
+-   Fixed Invitation Listings
+    -   Resolved issues with listing invitations, ensuring all invites are displayed correctly.
+
+# December 2024
+
+-   Video Preview Fixes
+    -   Fixed issues affecting video previews for a smoother viewing experience.
+-   Faster "Shared with Me" Page
+    -   Optimized performance for the "Shared with Me" section, allowing for quicker access to shared content.
+
 # November 2024
 
 -   Updated Folder Icon Design
