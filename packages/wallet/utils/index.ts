@@ -1,4 +1,6 @@
 export * from './array';
+export * from './cache';
+export * from './date';
 export * from './eventLoop';
 export * from './crypto';
 export * from './localStorage';
