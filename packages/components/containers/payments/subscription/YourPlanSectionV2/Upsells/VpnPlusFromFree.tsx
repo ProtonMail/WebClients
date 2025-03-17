@@ -95,7 +95,7 @@ const getVPNUpsell = ({ app, plansMap, openSubscriptionModal, ...rest }: GetPlan
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -113,13 +113,13 @@ const VpnPlusFromFree = ({
 }: UpsellSectionProps) => {
     const plan = PLANS.VPN2024;
     const [openSubscriptionModal] = useSubscriptionModal();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 
@@ -130,7 +130,7 @@ const VpnPlusFromFree = ({
         serversCount,
         freePlan,
         openSubscriptionModal,
-        paymentFlow,
+        telemetryFlow,
         ...rest,
     };
 

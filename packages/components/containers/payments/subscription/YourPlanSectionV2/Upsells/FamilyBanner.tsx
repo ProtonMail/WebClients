@@ -20,7 +20,7 @@ const FamilyBanner = ({ app, subscription }: UpsellSectionBaseProps) => {
     const plan = PLANS.FAMILY;
     const [openSubscriptionModal] = useSubscriptionModal();
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(subscription, plan);
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const pricePerMonthPerUser = cheapestMonthlyPrice ? cheapestMonthlyPrice / FAMILY_MAX_USERS : undefined;
 
@@ -29,7 +29,7 @@ const FamilyBanner = ({ app, subscription }: UpsellSectionBaseProps) => {
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 
@@ -38,7 +38,7 @@ const FamilyBanner = ({ app, subscription }: UpsellSectionBaseProps) => {
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 

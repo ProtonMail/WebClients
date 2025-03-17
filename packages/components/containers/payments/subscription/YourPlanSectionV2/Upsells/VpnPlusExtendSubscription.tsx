@@ -45,7 +45,7 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlan
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -62,7 +62,7 @@ const VpnPlusExtendSubscription = ({
     ...rest
 }: UpsellSectionProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
 
@@ -73,7 +73,7 @@ const VpnPlusExtendSubscription = ({
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 
@@ -84,7 +84,7 @@ const VpnPlusExtendSubscription = ({
         serversCount,
         freePlan,
         openSubscriptionModal,
-        paymentFlow,
+        telemetryFlow,
         ...rest,
     };
 
