@@ -29,7 +29,7 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
     const publicKey = contact.bePinnedPublicKey;
     const fingerprint = publicKey.getFingerprint();
     const creationDate = new Date(publicKey.getCreationTime());
-    const algorithmType = getFormattedAlgorithmName(publicKey.getAlgorithmInfo());
+    const algorithmType = getFormattedAlgorithmName(publicKey.getAlgorithmInfo(), publicKey.getVersion());
 
     useEffect(() => {
         const getExpirationTime = async () => {
