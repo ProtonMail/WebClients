@@ -65,6 +65,7 @@ export const PhotosWithAlbumsContext = createContext<{
     loadAlbums: (abortSignal: AbortSignal) => Promise<void>;
     loadSharedWithMeAlbums: (abortSignal: AbortSignal) => Promise<void>;
     removePhotosFromCache: (linkIds: string[]) => void;
+    updateAlbumsFromCache: (linkIds: string[]) => void;
     deletePhotosShare: () => Promise<void>;
     removeAlbumPhotos: (abortSignal: AbortSignal, albumId: string, linkIds: string[]) => Promise<void>;
     deleteAlbum: (abortSignal: AbortSignal, albumLinkId: string, force: boolean) => Promise<void>;
@@ -242,10 +243,15 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     const newDecryptedAlbums = await Promise.all(
                         Albums.map(async (album) => {
                             try {
-                                const link = await getLink(abortSignal, shareId, album.LinkID);
-                                const cover = album.CoverLinkID
-                                    ? await getLink(abortSignal, shareId, album.CoverLinkID)
-                                    : undefined;
+                                const [link, cover] = await Promise.all([
+                                    getLink(abortSignal, shareId, album.LinkID),
+                                    album.CoverLinkID
+                                        ? getLink(abortSignal, shareId, album.CoverLinkID).catch((e) => {
+                                              sendErrorReport(e);
+                                              return undefined;
+                                          })
+                                        : Promise.resolve(undefined),
+                                ]);
                                 return {
                                     ...link,
                                     cover: cover,
@@ -264,9 +270,9 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                 newAlbums.set(album.linkId, album);
                             }
                         });
-
                         return newAlbums;
                     });
+
                     // there is a limit of 500 albums so should actually never happen technically
                     if (More) {
                         void albumCall(AnchorID);
@@ -300,16 +306,16 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     const newDecryptedAlbums = await Promise.all(
                         Albums.map(async (album) => {
                             try {
-                                const link = await getLink(abortSignal, album.ShareID, album.LinkID);
+                                const [link, cover] = await Promise.all([
+                                    getLink(abortSignal, album.ShareID, album.LinkID),
+                                    album.CoverLinkID
+                                        ? getLink(abortSignal, album.ShareID, album.CoverLinkID).catch((e) => {
+                                              sendErrorReport(e);
+                                              return undefined;
+                                          })
+                                        : Promise.resolve(undefined),
+                                ]);
 
-                                let cover = undefined;
-                                try {
-                                    cover = album.CoverLinkID
-                                        ? await getLink(abortSignal, album.ShareID, album.CoverLinkID)
-                                        : undefined;
-                                } catch (e) {
-                                    sendErrorReport(e);
-                                }
                                 return {
                                     ...link,
                                     cover: cover,
@@ -327,7 +333,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                 newAlbums.set(album.linkId, album);
                             }
                         });
-
                         return newAlbums;
                     });
                     if (More) {
@@ -434,6 +439,67 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         [request, volumeId]
     );
 
+    const updateAlbumsFromCache = useCallback(
+        async (linkIds: string[]) => {
+            if (!shareId) {
+                return;
+            }
+
+            const updatedAlbums = await Promise.all(
+                linkIds.map(async (linkId) => {
+                    try {
+                        const abortSignal = new AbortController().signal;
+                        // Use setState updater to get the latest albums state
+                        // This avoid concurrency issues since this is event based
+                        const album = await new Promise<DecryptedAlbum | undefined>((resolve) => {
+                            setAlbums((currentAlbums) => {
+                                const album = currentAlbums.get(linkId);
+                                resolve(album);
+                                return currentAlbums;
+                            });
+                        });
+
+                        if (!album) {
+                            return undefined;
+                        }
+
+                        const [link, cover] = await Promise.all([
+                            getLink(abortSignal, shareId, linkId),
+                            album.cover?.linkId
+                                ? getLink(abortSignal, shareId, album.cover?.linkId).catch((e) => {
+                                      sendErrorReport(e);
+                                      return undefined;
+                                  })
+                                : Promise.resolve(undefined),
+                        ]);
+
+                        return {
+                            linkId,
+                            update: {
+                                ...link,
+                                cover: cover,
+                                photoCount: album.photoCount,
+                            },
+                        };
+                    } catch (error) {
+                        sendErrorReport(error);
+                    }
+                })
+            );
+
+            setAlbums((currentAlbums) => {
+                const newAlbums = new Map(currentAlbums);
+                updatedAlbums.forEach((result) => {
+                    if (result) {
+                        newAlbums.set(result.linkId, result.update);
+                    }
+                });
+                return newAlbums;
+            });
+        },
+        [shareId, getLink]
+    );
+
     const removePhotosFromCache = useCallback((linkIds: string[]) => {
         setPhotos((prevPhotos) => {
             return prevPhotos.filter((photo) => !linkIds.includes(photo.linkId));
@@ -492,6 +558,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 loadSharedWithMeAlbums,
                 loadPhotos,
                 removePhotosFromCache,
+                updateAlbumsFromCache,
                 deletePhotosShare,
                 removeAlbumPhotos,
                 deleteAlbum,
