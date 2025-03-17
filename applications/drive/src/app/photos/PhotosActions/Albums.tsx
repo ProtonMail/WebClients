@@ -132,10 +132,11 @@ function useAlbumsActions() {
         if (error) {
             throw new ValidationError(error);
         }
+        const link = await getLink(abortSignal, shareId, linkId);
 
         const [parentPrivateKey, parentHashKey, { privateKey: addressKey }] = await Promise.all([
-            getLinkPrivateKey(abortSignal, shareId, linkId),
-            getLinkHashKey(abortSignal, shareId, linkId),
+            getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
+            getLinkHashKey(abortSignal, shareId, link.parentLinkId),
             getShareCreatorKeys(abortSignal, shareId),
         ]);
 
@@ -164,8 +165,6 @@ function useAlbumsActions() {
             ),
         ]);
 
-        const link = await getLink(abortSignal, shareId, linkId);
-
         const { Code } = await preventLeave(
             debouncedRequest<{ Code: number }>(
                 queryUpdateAlbumName(volumeId, linkId, {
@@ -187,6 +186,8 @@ function useAlbumsActions() {
                 },
             });
         }
+
+        await events.pollEvents.volumes(volumeId);
     };
 
     return {
