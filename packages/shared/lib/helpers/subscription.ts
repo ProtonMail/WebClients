@@ -409,8 +409,14 @@ export const getHasInboxB2BPlan = (subscription: MaybeFreeSubscription) => {
 };
 
 export const hasB2BPlan = (subscription: MaybeFreeSubscription) => {
-    return hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription) || getHasDriveB2BPlan(subscription) || getHasPassB2BPlan(subscription) || getHasVpnB2BPlan(subscription);
-}
+    return (
+        hasAnyBundlePro(subscription) ||
+        getHasMailB2BPlan(subscription) ||
+        getHasDriveB2BPlan(subscription) ||
+        getHasPassB2BPlan(subscription) ||
+        getHasVpnB2BPlan(subscription)
+    );
+};
 
 export const getPrimaryPlan = (subscription: Subscription | undefined) => {
     if (!subscription) {
@@ -505,21 +511,6 @@ export const getHas2024OfferCoupon = (coupon: string | undefined | null): boolea
         return false;
     }
     return blackFriday2024Discounts.has(coupon?.toUpperCase());
-};
-
-const valentinesCoupons = new Set<string>([
-    COUPON_CODES.LOVEPRIVACY25,
-    COUPON_CODES.LOVEPRIVACY225,
-    COUPON_CODES.MAILFLASH5025,
-    COUPON_CODES.DRIVEFLASH5025,
-    COUPON_CODES.VPNFLASH6025,
-    COUPON_CODES.PASSFLASH5025,
-]);
-export const getHasValentinesCoupon = (coupon: string | undefined | null): boolean => {
-    if (!coupon) {
-        return false;
-    }
-    return valentinesCoupons.has(coupon?.toUpperCase());
 };
 
 export const allCycles = Object.freeze(
@@ -812,21 +803,6 @@ export const getVPNDedicatedIPs = (subscription: Subscription | FreeSubscription
 
 export const getHasCoupon = (subscription: Subscription | undefined, coupon: string) => {
     return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
-};
-
-const forbiddenCoupon = new Set<string>([
-    COUPON_CODES.LOVEPRIVACY25,
-    COUPON_CODES.LOVEPRIVACY225,
-    COUPON_CODES.MAILFLASH5025,
-    COUPON_CODES.DRIVEFLASH5025,
-    COUPON_CODES.VPNFLASH6025,
-    COUPON_CODES.PASSFLASH5025,
-]);
-export const getHasValentineCoupon = (subscription: Subscription | undefined) => {
-    return (
-        forbiddenCoupon.has(subscription?.CouponCode ?? '') ||
-        forbiddenCoupon.has(subscription?.UpcomingSubscription?.CouponCode ?? '')
-    );
 };
 
 export function isCancellableOnlyViaSupport(subscription: Subscription | undefined) {
