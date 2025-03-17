@@ -1,6 +1,6 @@
-import { FieldType, IdentityFieldType } from '@protontech/autofill';
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
+import { FieldType, IdentityFieldType } from '@proton/pass/fathom';
 import type { ItemContent, Maybe } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
