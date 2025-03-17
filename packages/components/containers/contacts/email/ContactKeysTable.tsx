@@ -98,7 +98,7 @@ const ContactKeysTable = ({ model, setModel, supportV6Keys }: Props) => {
                     publicKey.getAlgorithmInfo(),
                     ...publicKey.subkeys.map((subkey) => subkey.getAlgorithmInfo()),
                 ];
-                const algo = getFormattedAlgorithmNames(algoInfos);
+                const algo = getFormattedAlgorithmNames(algoInfos, publicKey.getVersion());
                 const isExpired = await CryptoProxy.isExpiredKey({ key: publicKey });
                 const isRevoked = await CryptoProxy.isRevokedKey({ key: publicKey });
                 const isTrusted = model.trustedFingerprints.has(fingerprint);

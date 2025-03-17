@@ -21,26 +21,30 @@ const formatCurveName = (curve: AlgorithmInfo['curve']) => {
     }
 };
 
-export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmInfo) => {
+export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmInfo, keyVersion: number) => {
+    const versionSuffix = keyVersion === 6 ? '_V6' : '';
     switch (algorithm) {
         case 'elgamal':
-            return `ElGamal (${bits})`;
+            return `ElGamal${versionSuffix} (${bits})`;
         case 'dsa':
-            return `DSA (${bits})`;
+            return `DSA${versionSuffix} (${bits})`;
         case 'rsaEncrypt':
         case 'rsaEncryptSign':
         case 'rsaSign':
-            return `RSA (${bits})`;
+            return `RSA${versionSuffix} (${bits})`;
         case 'eddsaLegacy':
         case 'ecdsa':
         case 'ecdh':
-            return `ECC (${formatCurveName(curve)})`;
+            return `ECC${versionSuffix} (${formatCurveName(curve)})`;
         case 'ed25519':
         case 'x25519':
-            return `ECC (Curve25519, new format)`;
+            return `ECC${versionSuffix} (Curve25519, new format)`;
         case 'ed448':
         case 'x448':
-            return `ECC (Curve448, new format)`;
+            return `ECC${versionSuffix} (Curve448, new format)`;
+        case 'pqc_mldsa_ed25519':
+        case 'pqc_mlkem_x25519':
+            return `PQC${versionSuffix} (${algorithm.substring(4).toUpperCase()})`;
         default:
             return algorithm.toUpperCase(); // should never get here
     }
@@ -52,8 +56,8 @@ export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmI
  * @returns {String} formatted unique algorithm names. Different curves or key sizes result in separate entries, e.g.
  *      [{ name: 'rsa', bits: 2048 }, { name: 'rsa', bits: 4096 }] returns `RSA (2048), RSA (4096)`.
  */
-export const getFormattedAlgorithmNames = (algorithmInfos: AlgorithmInfo[] = []) => {
-    const formattedAlgos = algorithmInfos.map(getFormattedAlgorithmName);
+export const getFormattedAlgorithmNames = (algorithmInfos: AlgorithmInfo[] = [], keyVersion: number) => {
+    const formattedAlgos = algorithmInfos.map((info) => getFormattedAlgorithmName(info, keyVersion));
     return unique(formattedAlgos).join(', ');
 };
 
