@@ -18,26 +18,27 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 import noop from '@proton/utils/noop'
 import { sendErrorReport, getRefreshError } from '@proton/drive-store'
 
-import { locales } from '../../../utils/locales'
-import { extendStore, setupStore } from '../../../redux-store/store'
+import { locales } from '~/utils/locales'
+import { extendStore, setupStore } from '~/redux-store/store'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
-import type { DocsState } from '../../../redux-store/rootReducer'
+import type { DocsState } from '~/redux-store/rootReducer'
 import { appMode } from '@proton/shared/lib/webpack.constants'
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout'
 
-const getAppContainer = () =>
-  import(/* webpackChunkName: "MainContainer" */ '../__components/UserAppRootContainer')
-    .then(({ UserAppRootContainer }) => UserAppRootContainer)
-    .catch((e) => {
-      console.warn(e)
-      sendErrorReport(e)
+async function getAppContainer() {
+  try {
+    const { AppContainer } = await import(/* webpackChunkName: "MainContainer" */ '../__components/AppContainer')
+    return AppContainer
+  } catch (e) {
+    console.warn(e)
+    sendErrorReport(e)
+    return Promise.reject(getRefreshError())
+  }
+}
 
-      return Promise.reject(getRefreshError())
-    })
-
-export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+export async function bootstrapApp({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) {
   let localID: number | undefined
 
   const pathname = window.location.pathname
@@ -76,7 +77,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     }
   }
 
-  const run = async () => {
+  async function run() {
     const appContainerPromise = getAppContainer()
     const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams, localID })
     const history = bootstrap.createHistory({ sessionResult, pathname })

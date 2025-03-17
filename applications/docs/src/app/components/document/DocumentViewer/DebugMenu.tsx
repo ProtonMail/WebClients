@@ -2,11 +2,11 @@ import { Button } from '@proton/atoms'
 import { Icon, useLocalState } from '@proton/components'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 import { useEffect, useState } from 'react'
-import { useApplication } from '../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 
-export const useDebug = () => {
+export function useDebug() {
   const [debug] = useLocalState(false, DOCS_DEBUG_KEY)
   return Boolean(debug)
 }

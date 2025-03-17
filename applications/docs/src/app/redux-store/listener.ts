@@ -4,13 +4,13 @@ import { startAccountSessionsListener, startPersistListener } from '@proton/acco
 import type { AppStartListening } from './store'
 import type { DocsState } from './rootReducer'
 
-export const start = ({
+export function start({
   startListening,
   persistTransformer,
 }: {
   startListening: AppStartListening
   persistTransformer?: (state: DocsState) => any
-}) => {
+}) {
   startSharedListening(startListening)
   if (persistTransformer) {
     startPersistListener(startListening, persistTransformer)

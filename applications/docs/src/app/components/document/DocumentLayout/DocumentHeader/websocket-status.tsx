@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useApplication } from '../../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import { mergeRegister } from '@lexical/utils'
 import type { WebsocketConnectionEventPayloads, WebsocketConnectionEventStatusChange } from '@proton/docs-core'
 import { WebsocketConnectionEvent } from '@proton/docs-core'

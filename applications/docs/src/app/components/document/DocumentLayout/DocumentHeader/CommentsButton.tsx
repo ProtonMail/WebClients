@@ -1,7 +1,7 @@
 import { Button } from '@proton/atoms'
 import { Icon } from '@proton/components'
 import { useEffect, useState } from 'react'
-import { useApplication } from '../../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import type { CommentsChangedData } from '@proton/docs-shared'
 import { CommentsEvent } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
