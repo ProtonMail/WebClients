@@ -88,11 +88,6 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   const [error, setError] = useState<DocumentError | null>(null)
   const [didLoadTitle, setDidLoadTitle] = useState(false)
   const [didLoadEditorContent, setDidLoadEditorContent] = useState(false)
-  /**
-   * If a document fails to laod with insufficient permissions, we try to see if there's a pending invite for it
-   * and autoaccept it, before showing any error state to the user.
-   */
-  const [didAttemptToAutoAcceptInvite, setDidAttemptToAutoAcceptInvite] = useState(false)
 
   const isPublicViewer = useMemo(() => documentState?.getProperty('userRole').isPublicViewer(), [documentState])
   /**
@@ -355,7 +350,16 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
     }
   }, [docOrchestrator, editorFrame, createBridge, bridge, editorController])
 
+  /**
+   * If a document fails to load with insufficient permissions, we try to see if there's a pending invite for it
+   * and autoaccept it, before showing any error state to the user.
+   */
+  const [didAttemptToAutoAcceptInvite, setDidAttemptToAutoAcceptInvite] = useState(false)
+  const [wasAutoAcceptSuccessful, setWasAutoAcceptSuccessful] = useState(false)
+
   const onInviteAutoAcceptResult = useCallback((result: boolean) => {
+    setWasAutoAcceptSuccessful(result)
+
     if (result) {
       window.location.reload()
     }
@@ -384,6 +388,11 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
         {Loader}
       </>
     )
+  }
+
+  if (wasAutoAcceptSuccessful) {
+    // Prevent flash of "Something went wrong" while page is still reloading.
+    return Loader
   }
 
   if (error) {
