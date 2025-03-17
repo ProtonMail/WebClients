@@ -1,12 +1,3 @@
-import {
-    FieldType,
-    clearDetectionCache,
-    getIgnoredParent,
-    getParentFormPrediction,
-    isPrediction,
-    removeClassifierFlags,
-    removeProcessedFlag,
-} from '@protontech/autofill';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { createFormHandles } from 'proton-pass-extension/app/content/services/handles/form';
 import type { FormHandle } from 'proton-pass-extension/app/content/types';
@@ -19,6 +10,15 @@ import {
     isRemovedNodeOfInterest,
 } from 'proton-pass-extension/app/content/utils/nodes';
 
+import {
+    FieldType,
+    clearDetectionCache,
+    getIgnoredParent,
+    getParentFormPrediction,
+    isPrediction,
+    removeClassifierFlags,
+    removeProcessedFlag,
+} from '@proton/pass/fathom';
 import { type MaybeNull } from '@proton/pass/types';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { debounceBuffer } from '@proton/pass/utils/fp/control';

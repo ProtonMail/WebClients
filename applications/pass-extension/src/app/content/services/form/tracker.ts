@@ -1,4 +1,3 @@
-import { FieldType, kButtonSubmitSelector } from '@protontech/autofill';
 import { FORM_TRACKER_CONFIG } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type {
@@ -12,6 +11,7 @@ import { DropdownAction } from 'proton-pass-extension/app/content/types';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 
+import { FieldType, kButtonSubmitSelector } from '@proton/pass/fathom';
 import { matchExtensionMessage } from '@proton/pass/lib/extension/message/utils';
 import browser from '@proton/pass/lib/globals/browser';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
