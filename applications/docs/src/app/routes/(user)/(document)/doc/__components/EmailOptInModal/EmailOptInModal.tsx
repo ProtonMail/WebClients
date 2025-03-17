@@ -102,6 +102,6 @@ export function EmailOptInModal({ onClose, open, ...modalProps }: ModalStateProp
   )
 }
 
-export const useEmailOptInModal = () => {
+export function useEmailOptInModal() {
   return useModalTwoStatic(EmailOptInModal)
 }
