@@ -1,4 +1,3 @@
-import { FieldType, type FormType, buttonSelector, isVisibleForm, removeClassifierFlags } from '@protontech/autofill';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/form/autofill.identity.sections';
 import { createFormTracker } from 'proton-pass-extension/app/content/services/form/tracker';
@@ -7,6 +6,7 @@ import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap'
 import { canAutosave } from 'proton-pass-extension/app/content/utils/autosave';
 import { hasProcessableFields } from 'proton-pass-extension/app/content/utils/nodes';
 
+import { FieldType, type FormType, buttonSelector, isVisibleForm, removeClassifierFlags } from '@proton/pass/fathom';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { findScrollableParent } from '@proton/pass/utils/dom/scroll';
 import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';

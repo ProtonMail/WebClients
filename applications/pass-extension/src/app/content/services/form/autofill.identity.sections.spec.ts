@@ -1,5 +1,6 @@
-import { FieldType, IdentityFieldType } from '@protontech/autofill';
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
+
+import { FieldType, IdentityFieldType } from '@proton/pass/fathom';
 
 import { resolveIdentitySections } from './autofill.identity.sections';
 

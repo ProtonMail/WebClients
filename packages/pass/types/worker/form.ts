@@ -1,6 +1,6 @@
+import type { FormType } from '@proton/pass/fathom';
 import type { MaybeNull, RequiredNonNull } from '@proton/pass/types/utils';
 import type { URLComponents } from '@proton/pass/utils/url/types';
-import type { FormType } from '@protontech/autofill';
 
 import type { WithAutosavePrompt } from './autosave';
 import type { TabId } from './runtime';
