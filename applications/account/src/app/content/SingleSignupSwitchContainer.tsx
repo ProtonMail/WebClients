@@ -18,7 +18,6 @@ import type { Paths } from './helper';
 
 interface Props {
     hasBFCoupon: boolean;
-    hasValentinesCoupon: boolean;
     maybePreAppIntent: APP_NAMES | undefined;
     searchParams: URLSearchParams;
     initialSearchParams?: URLSearchParams;
@@ -57,7 +56,6 @@ const singlePageSignupPlans = new Set([PLANS.VISIONARY, PLANS.DUO]);
 
 const SingleSignupSwitchContainer = ({
     hasBFCoupon,
-    hasValentinesCoupon,
     maybePreAppIntent,
     searchParams,
     initialSearchParams,
@@ -79,7 +77,6 @@ const SingleSignupSwitchContainer = ({
 
     const renderSingleSignup =
         hasBFCoupon ||
-        hasValentinesCoupon ||
         singlePageSignupApps.has(maybePreAppIntent as any) ||
         singlePageSignupPaths.has(location.pathname as any) ||
         singlePageSignupPlans.has(searchParams.get('plan') as any) ||

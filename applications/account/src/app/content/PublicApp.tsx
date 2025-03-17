@@ -41,7 +41,7 @@ import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { getHas2024OfferCoupon, getHasValentinesCoupon } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
@@ -336,7 +336,6 @@ const BasePublicApp = () => {
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
     const hasBFCoupon = getHas2024OfferCoupon(searchParams.get('coupon')?.toUpperCase());
-    const hasValentinesCoupon = getHasValentinesCoupon(searchParams.get('coupon')?.toUpperCase());
 
     const theme = getThemeFromLocation(location, searchParams);
     const loader = theme ? (
@@ -592,7 +591,6 @@ const BasePublicApp = () => {
                                                     <SingleSignupSwitchContainer
                                                         initialSessionsLength={initialSessionsLengthBool}
                                                         hasBFCoupon={hasBFCoupon}
-                                                        hasValentinesCoupon={hasValentinesCoupon}
                                                         maybePreAppIntent={maybePreAppIntent}
                                                         initialSearchParams={initialSearchParams}
                                                         paths={paths}
