@@ -46,7 +46,7 @@ const getBundleUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetP
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -72,14 +72,14 @@ const UnlimitedBannerExtendSubscription = ({
 
     const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
     const [openSubscriptionModal] = useSubscriptionModal();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.B2C,
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 
@@ -90,7 +90,7 @@ const UnlimitedBannerExtendSubscription = ({
         serversCount,
         freePlan,
         openSubscriptionModal,
-        paymentFlow,
+        telemetryFlow,
         ...rest,
     };
 

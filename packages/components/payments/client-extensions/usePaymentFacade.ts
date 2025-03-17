@@ -43,7 +43,7 @@ import { getThemeCode } from './helpers';
 import { useChargebeeEnabledCache } from './useChargebeeContext';
 import { useChargebeeKillSwitch } from './useChargebeeKillSwitch';
 import { wrapMethods } from './useMethods';
-import { usePaymentsTelemetry } from './usePaymentsTelemetry';
+import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
     getDefaultVerifyPayment,
     getDefaultVerifyPaypal,
@@ -59,6 +59,7 @@ type PaymentFacadeProps = {
      * The flow parameter can modify the list of available payment methods and modify their behavior in certain cases.
      */
     flow: PaymentMethodFlows;
+    telemetryFlow?: TelemetryPaymentFlow;
     /**
      * The main callback that will be called when the payment is ready to be charged
      * after the payment token is fetched and verified with 3DS or other confirmation from the user.
@@ -130,6 +131,7 @@ export const usePaymentFacade = ({
     onChargeable,
     coupon,
     flow,
+    telemetryFlow,
     onMethodChanged,
     paymentMethods,
     paymentMethodStatusExtended,
@@ -173,7 +175,7 @@ export const usePaymentFacade = ({
     const telemetry = usePaymentsTelemetry({
         apiOverride: api,
         plan: selectedPlanName,
-        flow,
+        flow: telemetryFlow ?? flow,
         amount,
         cycle: checkResult?.Cycle,
     });
@@ -342,17 +344,10 @@ export const usePaymentFacade = ({
             canUseChargebee(isChargebeeEnabled());
 
         const isMethodTaxCountry = isNewMethod || isSavedExternalMethod || isSavedInternalMethod;
-        const flowsWithTaxCountry: PaymentMethodFlows[] = [
-            'signup',
-            'signup-pass',
-            'signup-pass-upgrade',
-            'signup-vpn',
-            'subscription',
-            'signup-v2',
-            'signup-v2-upgrade',
-        ];
 
-        const showTaxCountry = isMethodTaxCountry && flowsWithTaxCountry.includes(flow);
+        const flowsWithoutTaxCountry: PaymentMethodFlows[] = ['invoice', 'credit', 'add-card', 'add-paypal'];
+
+        const showTaxCountry = isMethodTaxCountry && !flowsWithoutTaxCountry.includes(flow);
         return showTaxCountry;
     };
 

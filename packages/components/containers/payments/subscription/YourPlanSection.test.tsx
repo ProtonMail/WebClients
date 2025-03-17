@@ -145,7 +145,7 @@ describe('YourPlanSection', () => {
                 metrics: {
                     source: 'upsells',
                 },
-                flow: 'subscription',
+                telemetryFlow: 'subscription',
             });
         });
     });
