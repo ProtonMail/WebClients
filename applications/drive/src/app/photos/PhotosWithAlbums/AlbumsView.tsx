@@ -56,7 +56,6 @@ export const AlbumsView: FC = () => {
         userAddressEmail,
         loadPhotoLink,
         requestDownload,
-        refreshAlbums,
     } = usePhotosWithAlbumsView();
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
@@ -124,10 +123,10 @@ export const AlbumsView: FC = () => {
             try {
                 const abortSignal = new AbortController().signal;
                 await renameAlbum(abortSignal, volumeId, shareId, renameAlbumLinkId, name);
-                setRenameAlbumLinkId('');
-                refreshAlbums();
             } catch (e) {
                 sendErrorReport(e);
+            } finally {
+                setRenameAlbumLinkId('');
             }
         },
         [shareId, volumeId, renameAlbumLinkId, renameAlbum]

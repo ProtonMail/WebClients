@@ -25,6 +25,7 @@ export function updateByEvents(
     { events, eventId }: DriveEvents,
     shareId: string,
     removePhotosFromCache: (linkIds: string[]) => void,
+    updateAlbumsCache: (linkIds: string[]) => void,
     processedEventCounter: (eventId: string, event: DriveEvent) => void
 ) {
     const linksToRemove = events
@@ -39,6 +40,15 @@ export function updateByEvents(
         });
 
     removePhotosFromCache(linksToRemove);
+
+    const albumsToBeUpdated = events
+        .filter((event) => event.eventType === EVENT_TYPES.UPDATE_METADATA && event.encryptedLink.mimeType === 'Album')
+        .map((event) => {
+            processedEventCounter(eventId, event);
+            return event.encryptedLink.linkId;
+        });
+
+    updateAlbumsCache(albumsToBeUpdated);
 }
 
 export const usePhotosWithAlbumsView = () => {
@@ -61,6 +71,7 @@ export const usePhotosWithAlbumsView = () => {
         addAlbumPhotos,
         loadAlbumPhotos,
         removePhotosFromCache,
+        updateAlbumsFromCache,
         addPhotoAsCover,
         removeAlbumPhotos,
         deleteAlbum,
@@ -274,7 +285,7 @@ export const usePhotosWithAlbumsView = () => {
 
         const callbackId = eventsManager.eventHandlers.register((eventVolumeId, events, processedEventCounter) => {
             if (eventVolumeId === volumeId) {
-                updateByEvents(events, shareId, removePhotosFromCache, processedEventCounter);
+                updateByEvents(events, shareId, removePhotosFromCache, updateAlbumsFromCache, processedEventCounter);
             }
         });
 
