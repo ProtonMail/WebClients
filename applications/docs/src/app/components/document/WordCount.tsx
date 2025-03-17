@@ -18,7 +18,7 @@ import {
 } from 'react'
 import { c } from 'ttag'
 import { WordCountEvent } from '@proton/docs-core'
-import { useApplication } from '../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 
 const DEFAULT_ENABLED = false
 export type WordCountContextValue = WordCountInfoCollection & {
@@ -43,7 +43,7 @@ export function WordCountProvider({ children }: { children: ReactNode }) {
   )
   return <WordCountContext.Provider value={{ ...data, enabled, setEnabled }}>{children}</WordCountContext.Provider>
 }
-export const useWordCount = () => {
+export function useWordCount() {
   const wordCountContext = useContext(WordCountContext)
   if (!wordCountContext) {
     throw new Error('Missing WordCount context')

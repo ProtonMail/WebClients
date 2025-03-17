@@ -2,12 +2,12 @@ import { Icon } from '@proton/components'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { WebsocketConnectionEvent } from '@proton/docs-core'
-import { useApplication } from '../../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import { c } from 'ttag'
 import { Pill } from './Pill'
 import { PopoverPill } from './PopoverPill'
 import { useWebSocketStatus } from './websocket-status'
-import { ArrowsRotate, CloudSlashIcon } from '../../../icons'
+import { ArrowsRotate, CloudSlashIcon } from './icons'
 
 /**
  * @TODO DRVDOC-842

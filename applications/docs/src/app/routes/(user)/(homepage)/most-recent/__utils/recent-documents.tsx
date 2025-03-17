@@ -7,7 +7,7 @@ import { createContext, type ReactNode, useCallback, useContext, useEffect, useS
 import type { RecentDocumentItem } from '@proton/docs-core/lib/Services/RecentDocuments/RecentDocumentItem'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { c } from 'ttag'
-import { useApplication } from '../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 
 // filter documents
 // ----------------

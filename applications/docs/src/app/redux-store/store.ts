@@ -8,13 +8,13 @@ import { type DocsState, persistReducer, rootReducer } from './rootReducer'
 import { type DocsThunkArguments, extraThunkArguments } from './thunk'
 import { getPersistedState } from '@proton/redux-shared-store/persist'
 
-export const setupStore = ({
+export function setupStore({
   preloadedState,
   persist,
 }: {
   preloadedState?: Partial<DocsState>
   persist?: boolean
-} = {}) => {
+} = {}) {
   const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments })
 
   const store = configureStore({
@@ -50,7 +50,7 @@ export const setupStore = ({
   })
 }
 
-export const extendStore = (newThunkArguments: Partial<DocsThunkArguments>) => {
+export function extendStore(newThunkArguments: Partial<DocsThunkArguments>) {
   Object.assign(extraThunkArguments, newThunkArguments)
 }
 
