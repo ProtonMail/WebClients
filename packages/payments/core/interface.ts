@@ -241,6 +241,10 @@ export interface AvailablePaymentMethod {
     readonly isSaved: boolean;
 }
 
+/**
+ * Important: Do not change this without contacting the payments team. Do not add new flows, do not remove existing
+ * ones. The payment flow has an important role of displaying the payment methods and the tax country selector.
+ */
 export type PaymentMethodFlows =
     | 'invoice'
     | 'signup'
@@ -253,10 +257,7 @@ export type PaymentMethodFlows =
     | 'credit'
     | 'subscription'
     | 'add-card'
-    | 'add-paypal'
-    | 'dashboard-upgrade-control'
-    | 'dashboard-upgrade-A'
-    | 'dashboard-upgrade-B';
+    | 'add-paypal';
 
 export type V5Payments = {
     v: 5;
