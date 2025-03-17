@@ -21,7 +21,7 @@ import {
 } from '@proton/components'
 import { APPS } from '@proton/shared/lib/constants'
 
-import { DocsQuickSettings } from '../DocsQuickSettings'
+import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
 import { c } from 'ttag'
 import { ButtonLike, Input } from '@proton/atoms'

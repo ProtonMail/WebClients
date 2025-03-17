@@ -25,17 +25,17 @@ import type { DocumentAction } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
-import { useApplication } from '../../../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import { AutoGrowingInput } from './AutoGrowingInput'
 import { useHistoryViewerModal } from '../HistoryViewerModal/HistoryViewerModal'
 import { TrashedDocumentModal } from './TrashedDocumentModal'
 import { useWordCount } from '../../../WordCount'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { useExportToPDFModal } from './ExportToPDFModal'
-import * as config from '../../../../../config'
+import { APP_VERSION } from '~/config'
 import type { RenameControllerInterface } from '@proton/docs-core'
 import { useDocsContext } from '../../../context'
-import { WordCountIcon } from '../../../../icons'
+import { WordCountIcon } from '../icons'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -505,7 +505,7 @@ export function DocumentTitleDropdown({
           >
             <Icon name="info-circle" className="color-weak mr-2" />
             {c('Action').t`Help`}
-            {showVersionNumber && <span className="ml-auto text-[--text-hint]">v{config.APP_VERSION}</span>}
+            {showVersionNumber && <span className="ml-auto text-[--text-hint]">v{APP_VERSION}</span>}
           </DropdownMenuButton>
 
           <DropdownMenuButton

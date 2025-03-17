@@ -2,13 +2,13 @@ import '@testing-library/jest-dom'
 import { cleanup, render, screen, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
 import { RecentDocumentItem } from '@proton/docs-core'
-import { RecentDocumentsContext } from '../utils/recent-documents'
+import { RecentDocumentsContext } from '../../__utils/recent-documents'
 import { ServerTime } from '@proton/docs-shared'
 import { type ReactNode, useEffect, useState } from 'react'
 import type { Application, RecentDocumentServiceState } from '@proton/docs-core'
 import type { LoggerInterface } from '@proton/utils/logs'
 import userEvent from '@testing-library/user-event'
-import { ApplicationProvider } from '../../../utils/application-context'
+import { ApplicationProvider } from '~/utils/application-context'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 

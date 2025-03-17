@@ -97,6 +97,6 @@ export function SignatureCheckFailedModal({
   )
 }
 
-export const useSignatureCheckFailedModal = () => {
+export function useSignatureCheckFailedModal() {
   return useModalTwoStatic(SignatureCheckFailedModal)
 }

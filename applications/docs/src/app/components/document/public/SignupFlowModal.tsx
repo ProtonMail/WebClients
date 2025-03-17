@@ -136,6 +136,6 @@ export function SignupFlowModal({
   )
 }
 
-export const useSignupFlowModal = () => {
+export function useSignupFlowModal() {
   return useModalTwoStatic(SignupFlowModal)
 }
