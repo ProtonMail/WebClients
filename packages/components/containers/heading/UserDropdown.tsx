@@ -160,7 +160,7 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
             } else {
                 setBugReportModal(true);
             }
-            close();
+            closeUserDropdown();
         },
         onOpenSignoutAll: () => setOpenSignOutAllPrompt(true),
         onOpenHelpModal: () => setHelpModal(true),
