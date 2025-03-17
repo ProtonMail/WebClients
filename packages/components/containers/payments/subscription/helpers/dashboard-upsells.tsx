@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
-import type { PaymentMethodFlows } from '@proton/payments';
+import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { CYCLE, type Currency, type FullPlansMap, PLANS } from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -172,7 +172,7 @@ type GetUpsellArgs = {
     upsellPath: DASHBOARD_UPSELL_PATHS;
     serversCount: VPNServersCountData;
     customCycle?: CYCLE;
-    paymentFlow: PaymentMethodFlows;
+    telemetryFlow: TelemetryPaymentFlow;
 } & Partial<Upsell>;
 
 export type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
@@ -292,7 +292,7 @@ const getMailPlusUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -313,7 +313,7 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPl
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -336,7 +336,7 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlan
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -357,7 +357,7 @@ const getLumoUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -378,7 +378,7 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -416,7 +416,7 @@ const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: 
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -464,7 +464,7 @@ const getBundleUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         otherCtas: isTrialEnding ? [exploreAllPlansCTA(openSubscriptionModal)] : [],
         isTrialEnding,
@@ -514,7 +514,7 @@ const getDuoUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -562,7 +562,7 @@ const getFamilyUpsell = ({
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -710,7 +710,7 @@ export const resolveUpsellsToDisplay = ({
     isFree,
     canAccessDuoPlan,
     user,
-    paymentFlow,
+    telemetryFlow,
     ...rest
 }: {
     app: APP_NAMES;
@@ -724,7 +724,7 @@ export const resolveUpsellsToDisplay = ({
     openSubscriptionModal: OpenSubscriptionModalCallback;
     canAccessDuoPlan?: boolean;
     user: UserModel;
-    paymentFlow: PaymentMethodFlows;
+    telemetryFlow: TelemetryPaymentFlow;
 }): Upsell[] => {
     const resolve = () => {
         if (!canPay || !subscription) {
@@ -737,7 +737,7 @@ export const resolveUpsellsToDisplay = ({
             hasVPN: getHasConsumerVpnPlan(subscription),
             serversCount,
             freePlan,
-            paymentFlow,
+            telemetryFlow,
             ...rest,
         };
 

@@ -169,7 +169,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const plan = PLANS.BUNDLE;
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     useLoad();
 
@@ -228,7 +228,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             metrics: { source: 'upsells' },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 

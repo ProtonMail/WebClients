@@ -11,7 +11,7 @@ import { type CalledKillSwitchString, useChargebeeContext } from './useChargebee
 
 interface Overrides {
     plan?: PLANS | undefined;
-    flow?: PaymentMethodFlows;
+    flow?: TelemetryPaymentFlow;
     amount?: number;
     cycle?: Cycle;
 }
@@ -22,6 +22,12 @@ export interface PaymentsTelemetry {
     reportPaymentSuccess: (method: PaymentProcessorType | 'n/a', override?: Overrides) => void;
     reportPaymentFailure: (method: PaymentProcessorType | 'n/a', override?: Overrides) => void;
 }
+
+export type TelemetryPaymentFlow =
+    | PaymentMethodFlows
+    | 'dashboard-upgrade-control'
+    | 'dashboard-upgrade-A'
+    | 'dashboard-upgrade-B';
 
 // since it's telemetry, the types from the main app should not be reused
 type DimensionFlows =
@@ -38,7 +44,7 @@ type DimensionFlows =
     | 'dashboard-upgrade-A'
     | 'dashboard-upgrade-B';
 
-function mapFlows(flow: PaymentMethodFlows): DimensionFlows {
+function mapFlows(flow: TelemetryPaymentFlow): DimensionFlows {
     if (flow === 'signup-v2') {
         return 'signup-pass';
     }
@@ -55,7 +61,7 @@ function mapFlows(flow: PaymentMethodFlows): DimensionFlows {
 }
 
 type Dimensions = {
-    flow: PaymentMethodFlows;
+    flow: TelemetryPaymentFlow;
     plan: PLANS | ADDON_NAMES | 'n/a';
     calledKillSwitch: CalledKillSwitchString;
     chargebeeEnabled: ChargebeeEnabledString;
@@ -80,7 +86,7 @@ export const usePaymentsTelemetry = ({
 }: {
     apiOverride?: Api;
     plan?: PLANS | ADDON_NAMES | undefined;
-    flow: PaymentMethodFlows;
+    flow: TelemetryPaymentFlow;
     amount?: number;
     cycle?: Cycle;
 }): PaymentsTelemetry => {
