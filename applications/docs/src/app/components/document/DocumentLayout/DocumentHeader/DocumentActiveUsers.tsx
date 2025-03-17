@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Tooltip } from '@proton/components'
 import clsx from '@proton/utils/clsx'
-import { useApplication } from '../../../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import type { DocsAwarenessStateChangeData, SafeDocsUserState } from '@proton/docs-shared'
 import { DocAwarenessEvent, UserAvatar } from '@proton/docs-shared'
 

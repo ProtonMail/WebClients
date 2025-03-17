@@ -1,12 +1,12 @@
 import { useEffect, useCallback } from 'react'
-import { useApplication } from '../../utils/application-context'
+import { useApplication } from '~/utils/application-context'
 import { PostApplicationError } from '@proton/docs-core'
 import { c } from 'ttag'
 import { CircleLoader } from '@proton/atoms/index'
 import { APPS } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import type { PublicDocumentPostMessageDataForCopying } from './public/utils'
-import type { PublicDocumentPostMessageEvent } from './public/utils'
+import type { PublicDocumentPostMessageDataForCopying } from '~/components/document/public/utils'
+import type { PublicDocumentPostMessageEvent } from '~/components/document/public/utils'
 
 /**
  * A processing component that duplicates a document received from the tab opener. Once duplication completes,

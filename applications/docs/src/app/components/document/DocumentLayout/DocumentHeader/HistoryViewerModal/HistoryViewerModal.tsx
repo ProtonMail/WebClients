@@ -284,6 +284,6 @@ function HistoryViewerModal({
   )
 }
 
-export const useHistoryViewerModal = () => {
+export function useHistoryViewerModal() {
   return useModalTwoStatic(HistoryViewerModal)
 }
