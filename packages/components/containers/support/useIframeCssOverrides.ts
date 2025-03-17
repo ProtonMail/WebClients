@@ -35,7 +35,6 @@ export const useHelpCenterIframeStyles = () => {
             .shadow-s { box-shadow: none !important; }
             .focus-within\\:ring-purple-200:focus-within { --tw-ring-color: ${extractCssVariable('--border-weak')} !important; }
             .md\\:flex-row { flex-direction: row !important; }
-            [class*="hover\\:bg-purple-"]:hover { background-color: transparent !important; }
             .p-8 { padding: 0 !important; }
             .px-2 { padding-left: 0 !important; padding-right: 0 !important; }
             .px-4 { padding-left: 0 !important; padding-right: 0 !important; }
@@ -53,15 +52,13 @@ export const useHelpCenterIframeStyles = () => {
             [class*="!text-purple-500"] { 
                 color: ${extractCssVariable('--primary')} !important; 
             }
-            [class*="hover:!bg-purple-500"]:hover {
-                background-color: ${extractCssVariable('--primary')} !important;
-                color: ${extractCssVariable('--interaction-norm-contrast')} !important;
-            }
             select:disabled { opacity: 0.7 !important; background: ${extractCssVariable('--background-weak')} !important; }
             button.border-purple-500 { border-color: ${extractCssVariable('--primary')} !important; }
-            button.bg-purple-500 { background-color: ${extractCssVariable('--primary')} !important; height: 50px !important; padding-top: 0px !important; }
-            button.bg-purple-500:hover { background-color: ${extractCssVariable('--interaction-norm-major-1')} !important; }
-            button.bg-purple-500:active { background-color: ${extractCssVariable('--interaction-norm-major-2')} !important; }
+            button[class*="bg-purple-"] { background-color: ${extractCssVariable('--primary')} !important; height: 50px !important; padding-top: 0px !important; color: ${extractCssVariable('--primary-contrast')} !important; }
+            button[class*="bg-purple-"]:hover { background-color: ${extractCssVariable('--interaction-norm-major-1')} !important; }
+            button[class*="bg-purple-"]:active { background-color: ${extractCssVariable('--interaction-norm-major-2')} !important; }
+            button[class*="bg-purple-"][class*="shadow-"] { background-color: ${extractCssVariable('--primary-contrast')} !important; color: ${extractCssVariable('--primary')} !important; }
+            button[class*="bg-purple-"][class*="shadow-"]:hover { background-color: ${extractCssVariable('--primary')} !important; color: ${extractCssVariable('--primary-contrast')} !important; }
             body { color: ${extractCssVariable('--text-norm')} !important; }
         `.trim();
 
