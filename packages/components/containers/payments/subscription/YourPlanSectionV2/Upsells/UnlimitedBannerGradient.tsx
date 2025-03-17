@@ -71,7 +71,7 @@ const getBundleUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetP
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -231,7 +231,7 @@ const UnlimitedBannerGradient = ({
 }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const [plansResult] = usePlans();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const plan = PLANS.BUNDLE;
     const planName = PLAN_NAMES[plan];
@@ -240,7 +240,7 @@ const UnlimitedBannerGradient = ({
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 
@@ -253,7 +253,7 @@ const UnlimitedBannerGradient = ({
             metrics: {
                 source: 'upsells',
             },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 
@@ -264,7 +264,7 @@ const UnlimitedBannerGradient = ({
         serversCount,
         freePlan,
         openSubscriptionModal,
-        paymentFlow,
+        telemetryFlow,
         ...rest,
     };
 

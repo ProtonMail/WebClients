@@ -46,7 +46,7 @@ const getFamilyUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetP
                 metrics: {
                     source: 'upsells',
                 },
-                flow: rest.paymentFlow,
+                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -69,7 +69,7 @@ const FamilyBannerExtendSubscription = ({
 }: Props) => {
     const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
     const [openSubscriptionModal] = useSubscriptionModal();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const plan = PLANS.FAMILY;
     const planName = PLAN_NAMES[plan];
@@ -79,7 +79,7 @@ const FamilyBannerExtendSubscription = ({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.FAMILY,
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 
@@ -90,7 +90,7 @@ const FamilyBannerExtendSubscription = ({
         serversCount,
         freePlan,
         openSubscriptionModal,
-        paymentFlow,
+        telemetryFlow,
         ...rest,
     };
 

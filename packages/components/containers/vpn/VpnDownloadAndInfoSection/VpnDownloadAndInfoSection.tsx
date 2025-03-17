@@ -16,7 +16,7 @@ import VpnGetMoreSection from '../VpnGetMoreSection/VpnGetMoreSection';
 export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = PLANS.VPN2024;
 
     const handleExplorePlans = () => {
@@ -24,7 +24,7 @@ export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 

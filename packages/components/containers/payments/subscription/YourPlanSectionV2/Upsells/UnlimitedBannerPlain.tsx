@@ -17,7 +17,7 @@ import { useSubscriptionPriceComparison } from './helper';
 
 const UnlimitedBannerPlain = ({ app, subscription }: UpsellSectionBaseProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const plan = PLANS.BUNDLE;
     const { priceDifference, priceFallbackPerMonth, showPriceDifference } = useSubscriptionPriceComparison(
@@ -30,7 +30,7 @@ const UnlimitedBannerPlain = ({ app, subscription }: UpsellSectionBaseProps) => 
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             metrics: { source: 'upsells' },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 

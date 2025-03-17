@@ -388,14 +388,14 @@ const VpnPlusUnlimitedCombo = ({
     show24MonthPlan,
 }: UpsellSectionProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
     const [cycle, setCycle] = useState(CYCLE.YEARLY);
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 
@@ -408,7 +408,7 @@ const VpnPlusUnlimitedCombo = ({
             metrics: {
                 source: 'upsells',
             },
-            flow: paymentFlow,
+            telemetryFlow,
         });
     };
 

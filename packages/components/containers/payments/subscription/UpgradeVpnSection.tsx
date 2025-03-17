@@ -29,7 +29,7 @@ const UpgradeVpnSection = ({ app }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const [serversCount, serversCountLoading] = useVPNServersCount();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
-    const paymentFlow = useDashboardPaymentFlow(app);
+    const telemetryFlow = useDashboardPaymentFlow(app);
 
     useLoad();
 
@@ -47,7 +47,7 @@ const UpgradeVpnSection = ({ app }: Props) => {
         serversCount,
         openSubscriptionModal,
         user,
-        paymentFlow,
+        telemetryFlow,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 
