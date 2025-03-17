@@ -1,4 +1,8 @@
-import type { FieldType } from '@protontech/autofill';
+import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
+import type { CSFeatures } from 'proton-pass-extension/app/content/context/types';
+import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/types';
+
+import type { FieldType } from '@proton/pass/fathom';
 import {
     FormType,
     clearDetectionCache,
@@ -9,12 +13,8 @@ import {
     prepass,
     rulesetMaker,
     shouldRunClassifier,
-} from '@protontech/autofill';
-import type { Fnode } from '@protontech/fathom';
-import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
-import type { CSFeatures } from 'proton-pass-extension/app/content/context/types';
-import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/types';
-
+} from '@proton/pass/fathom';
+import type { Fnode } from '@proton/pass/fathom/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { type ExclusionRules, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
