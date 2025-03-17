@@ -1,9 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
-export function setPanicHook(): void;
-export function getDefaultStopGap(): number;
-export function getWordsAutocomplete(word_start: string): string[];
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
+export function getWordsAutocomplete(word_start: string): string[];
+export function getDefaultStopGap(): number;
+export function setPanicHook(): void;
 export enum WasmChangeSpendPolicy {
   ChangeAllowed = 0,
   OnlyChange = 1,
@@ -255,39 +255,20 @@ export interface WasmMigratedWalletTransaction {
     Label: string | null;
 }
 
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
-
-export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
-
-export interface WasmExchangeRateOrTransactionTime {
-    key: WasmExchangeRateOrTransactionTimeEnum;
-    value: string;
-}
-
-export interface WasmTransactionData {
-    label: string | null;
-    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
-}
-
-export interface WasmBroadcastMessage {
-    data_packet: string;
-    key_packets: Record<string, string>;
-}
-
-export interface WasmEmailIntegrationData {
-    address_id: string | null;
-    body: string | null;
-    message: WasmBroadcastMessage | null;
-    recipients: Record<string, string> | null;
-    is_anonymous: number | null;
-}
-
 export interface WasmBalance {
     immature: number;
     trusted_pending: number;
     untrusted_pending: number;
     confirmed: number;
+    trusted_spendable: number;
 }
+
+export interface WasmApiWalletBitcoinAddressLookup {
+    BitcoinAddress: string | null;
+    BitcoinAddressSignature: string | null;
+}
+
+export type WasmInviteNotificationType = "Newcomer" | "EmailIntegration" | "Unsupported";
 
 export interface WasmTxOut {
     value: number;
@@ -314,24 +295,12 @@ export interface WasmTransactionTime {
     last_seen: number | null;
 }
 
-export type WasmInviteNotificationType = "Newcomer" | "EmailIntegration" | "Unsupported";
-
-export interface WasmApiWalletBitcoinAddressLookup {
-    BitcoinAddress: string | null;
-    BitcoinAddressSignature: string | null;
-}
-
 export interface WasmAddressDetails {
     index: number;
     address: string;
     transactions: WasmTransactionDetails[];
     balance: WasmBalance;
     keychain: WasmKeychainKind;
-}
-
-export interface WasmPagination {
-    skip: number;
-    take: number;
 }
 
 export type WasmGatewayProvider = "Banxa" | "Ramp" | "MoonPay" | "Azteco" | "Unsupported";
@@ -383,6 +352,38 @@ export interface WasmAddressInfo {
     address: string;
     keychain: WasmKeychainKind;
 }
+
+export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
+
+export interface WasmExchangeRateOrTransactionTime {
+    key: WasmExchangeRateOrTransactionTimeEnum;
+    value: string;
+}
+
+export interface WasmTransactionData {
+    label: string | null;
+    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
+}
+
+export interface WasmBroadcastMessage {
+    data_packet: string;
+    key_packets: Record<string, string>;
+}
+
+export interface WasmEmailIntegrationData {
+    address_id: string | null;
+    body: string | null;
+    message: WasmBroadcastMessage | null;
+    recipients: Record<string, string> | null;
+    is_anonymous: number | null;
+}
+
+export interface WasmPagination {
+    skip: number;
+    take: number;
+}
+
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
 export class WasmAccount {
   free(): void;

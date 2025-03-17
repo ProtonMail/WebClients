@@ -238,8 +238,11 @@ function _assertClass(instance, klass) {
     }
 }
 
-export function setPanicHook() {
-    wasm.setPanicHook();
+function passArray8ToWasm0(arg, malloc) {
+    const ptr = malloc(arg.length * 1, 1) >>> 0;
+    getUint8ArrayMemory0().set(arg, ptr / 1);
+    WASM_VECTOR_LEN = arg.length;
+    return ptr;
 }
 
 function takeFromExternrefTable0(idx) {
@@ -248,11 +251,15 @@ function takeFromExternrefTable0(idx) {
     return value;
 }
 /**
- * @returns {number}
+ * @param {WasmPsbt} psbt
+ * @param {WasmAccount} account
+ * @returns {Promise<WasmTransactionDetailsData>}
  */
-export function getDefaultStopGap() {
-    const ret = wasm.getDefaultStopGap();
-    return ret >>> 0;
+export function createTransactionFromPsbt(psbt, account) {
+    _assertClass(psbt, WasmPsbt);
+    _assertClass(account, WasmAccount);
+    const ret = wasm.createTransactionFromPsbt(psbt.__wbg_ptr, account.__wbg_ptr);
+    return ret;
 }
 
 /**
@@ -268,26 +275,20 @@ export function getWordsAutocomplete(word_start) {
     return v2;
 }
 
-function passArray8ToWasm0(arg, malloc) {
-    const ptr = malloc(arg.length * 1, 1) >>> 0;
-    getUint8ArrayMemory0().set(arg, ptr / 1);
-    WASM_VECTOR_LEN = arg.length;
-    return ptr;
-}
 /**
- * @param {WasmPsbt} psbt
- * @param {WasmAccount} account
- * @returns {Promise<WasmTransactionDetailsData>}
+ * @returns {number}
  */
-export function createTransactionFromPsbt(psbt, account) {
-    _assertClass(psbt, WasmPsbt);
-    _assertClass(account, WasmAccount);
-    const ret = wasm.createTransactionFromPsbt(psbt.__wbg_ptr, account.__wbg_ptr);
-    return ret;
+export function getDefaultStopGap() {
+    const ret = wasm.getDefaultStopGap();
+    return ret >>> 0;
+}
+
+export function setPanicHook() {
+    wasm.setPanicHook();
 }
 
 function __wbg_adapter_40(arg0, arg1, arg2) {
-    wasm.closure2029_externref_shim(arg0, arg1, arg2);
+    wasm.closure2027_externref_shim(arg0, arg1, arg2);
 }
 
 function __wbg_adapter_43(arg0, arg1) {
@@ -295,7 +296,7 @@ function __wbg_adapter_43(arg0, arg1) {
 }
 
 function __wbg_adapter_661(arg0, arg1, arg2, arg3) {
-    wasm.closure2134_externref_shim(arg0, arg1, arg2, arg3);
+    wasm.closure2132_externref_shim(arg0, arg1, arg2, arg3);
 }
 
 /**
@@ -4352,7 +4353,7 @@ export class WasmRecipient {
     set 1(arg0) {
         const ptr0 = passStringToWasm0(arg0, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.__wbg_set_wasmauthdata_refresh(this.__wbg_ptr, ptr0, len0);
+        wasm.__wbg_set_wasmrecipient_1(this.__wbg_ptr, ptr0, len0);
     }
     /**
      * @returns {bigint}
@@ -5270,14 +5271,14 @@ export class WasmUtxo {
      * @returns {bigint}
      */
     get value() {
-        const ret = wasm.__wbg_get_wasmpsbt_total_fees(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmutxo_value(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
      * @param {bigint} arg0
      */
     set value(arg0) {
-        wasm.__wbg_set_wasmpsbt_total_fees(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmutxo_value(this.__wbg_ptr, arg0);
     }
     /**
      * @returns {WasmOutPoint}
@@ -6812,13 +6813,13 @@ export function __wbindgen_cb_drop(arg0) {
     return ret;
 };
 
-export function __wbindgen_closure_wrapper11626(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 2030, __wbg_adapter_40);
+export function __wbindgen_closure_wrapper11639(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 2028, __wbg_adapter_40);
     return ret;
 };
 
-export function __wbindgen_closure_wrapper12268(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 2104, __wbg_adapter_43);
+export function __wbindgen_closure_wrapper12281(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 2102, __wbg_adapter_43);
     return ret;
 };
 
