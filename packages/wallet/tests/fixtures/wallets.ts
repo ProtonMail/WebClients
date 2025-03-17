@@ -76,7 +76,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 account: getMockedWasmAccount({
                     getBalance: vi.fn(async () =>
                         freeable({
-                            data: { confirmed: 100067, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                            data: { confirmed: 100067, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                         })
                     ),
                     getTransactions: vi.fn(async () =>
@@ -93,7 +93,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 account: getMockedWasmAccount({
                     getBalance: vi.fn(async () =>
                         freeable({
-                            data: { confirmed: 11783999, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                            data: { confirmed: 11783999, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                         })
                     ),
                     getTransactions: vi.fn(async () =>
@@ -115,7 +115,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 account: getMockedWasmAccount({
                     getBalance: vi.fn(async () =>
                         freeable({
-                            data: { confirmed: 8287263, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                            data: { confirmed: 8287263, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                         })
                     ),
                     getTransactions: vi.fn(async () =>
@@ -132,7 +132,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 account: getMockedWasmAccount({
                     getBalance: vi.fn(async () =>
                         freeable({
-                            data: { confirmed: 97536, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                            data: { confirmed: 97536, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                         })
                     ),
                     getTransactions: vi.fn(async () =>
@@ -154,7 +154,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                 account: getMockedWasmAccount({
                     getBalance: vi.fn(async () =>
                         freeable({
-                            data: { confirmed: 2612374, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                            data: { confirmed: 2612374, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                         })
                     ),
                     getTransactions: vi.fn(async () =>
@@ -179,7 +179,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
         wallet: getMockedWallet({
             getBalance: vi.fn(async () =>
                 freeable({
-                    data: { confirmed: 100067 + 11783999, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                    data: { confirmed: 100067 + 11783999, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                 })
             ),
             getTransactions: vi.fn(async () =>
@@ -195,7 +195,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                                 confirmed: 100067,
                                 immature: 0,
                                 trusted_pending: 0,
-                                untrusted_pending: 0,
+                                untrusted_pending: 0, trusted_spendable: 0,
                             },
                         })
                     ),
@@ -213,7 +213,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                 account: getMockedWasmAccount({
                     getBalance: vi.fn(async () =>
                         freeable({
-                            data: { confirmed: 11783999, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                            data: { confirmed: 11783999, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                         })
                     ),
                     getTransactions: vi.fn(async () =>
@@ -232,7 +232,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
         wallet: getMockedWallet({
             getBalance: vi.fn(async () =>
                 freeable({
-                    data: { confirmed: 8287263 + 97536, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                    data: { confirmed: 8287263 + 97536, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                 })
             ),
             getTransactions: vi.fn(async () =>
@@ -244,7 +244,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                 account: getMockedWasmAccount({
                     getBalance: vi.fn(async () =>
                         freeable({
-                            data: { confirmed: 8287263, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                            data: { confirmed: 8287263, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                         })
                     ),
                     getTransactions: vi.fn(async () =>
@@ -261,7 +261,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                 account: getMockedWasmAccount({
                     getBalance: vi.fn(async () =>
                         freeable({
-                            data: { confirmed: 97536, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                            data: { confirmed: 97536, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                         })
                     ),
                     getTransactions: vi.fn(async () =>
@@ -280,7 +280,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
         wallet: getMockedWallet({
             getBalance: vi.fn(async () =>
                 freeable({
-                    data: { confirmed: 2612374, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                    data: { confirmed: 2612374, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                 })
             ),
             getTransactions: vi.fn(async () =>
@@ -292,7 +292,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                 account: getMockedWasmAccount({
                     getBalance: vi.fn(async () =>
                         freeable({
-                            data: { confirmed: 2612374, immature: 0, trusted_pending: 0, untrusted_pending: 0 },
+                            data: { confirmed: 2612374, immature: 0, trusted_pending: 0, untrusted_pending: 0, trusted_spendable: 0 },
                         })
                     ),
                     getTransactions: vi.fn(async () =>
