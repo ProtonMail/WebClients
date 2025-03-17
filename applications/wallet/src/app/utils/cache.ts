@@ -1,6 +1,6 @@
 import { CHANGESET_KEY_PREFIX, FULLSYNC } from '../constants/cache';
 
-export const clearChangeSet = (fingerprint: String) => {
+export const clearChangeSet = (fingerprint: string) => {
     Object.keys(window.localStorage)
         .filter((x) => x.startsWith(CHANGESET_KEY_PREFIX + fingerprint + '_'))
         .forEach((x) => localStorage.removeItem(x));
@@ -25,4 +25,17 @@ export const isFullSyncDone = (fingerprint: string, derivationPath: string): boo
  */
 export const setFullSyncDone = (fingerprint: string, derivationPath: string) => {
     localStorage.setItem(FULLSYNC + fingerprint + '_' + derivationPath, 'true');
+};
+
+export const clearWalletData = (fingerprints: string[]) => {
+    Object.keys(window.localStorage)
+        .filter((x) => {
+            return fingerprints.some(
+                (fingerprint) =>
+                    x.startsWith(CHANGESET_KEY_PREFIX + fingerprint) ||
+                    x.startsWith(FULLSYNC + fingerprint) ||
+                    x.startsWith('passphrase_' + fingerprint)
+            );
+        })
+        .forEach((x) => localStorage.removeItem(x));
 };
