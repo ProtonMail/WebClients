@@ -4,7 +4,7 @@ import type { SectionConfig } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { hasBundlePro2024, hasPassBusiness } from '@proton/shared/lib/helpers/subscription';
+import { hasAnyBundlePro, hasPassBusiness } from '@proton/shared/lib/helpers/subscription';
 import type { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -28,8 +28,8 @@ export const getPassAppRoutes = ({
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
-    const hasPassBusinessPlan = hasPassBusiness(subscription);
-    const hasPassOrBundleB2B = hasPassBusinessPlan || hasBundlePro2024(subscription); //passbiz2024 and bundlepro2024
+    // passbiz2024 or bundlepro2024 or bundlepro2022
+    const hasPassOrBundleB2B = hasPassBusiness(subscription) || hasAnyBundlePro(subscription);
 
     return <const>{
         available: app === APPS.PROTONPASS,
