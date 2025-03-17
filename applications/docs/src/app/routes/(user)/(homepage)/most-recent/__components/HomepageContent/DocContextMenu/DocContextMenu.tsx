@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import { ContextMenu, DropdownSizeUnit } from '@proton/components'
 import { OpenButton } from './buttons/OpenButton'
-import type { RecentDocumentItem } from 'packages/docs-core'
+import type { RecentDocumentItem } from '@proton/docs-core'
 import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu'
 import { OpenFolder } from './buttons/OpenFolder'
 

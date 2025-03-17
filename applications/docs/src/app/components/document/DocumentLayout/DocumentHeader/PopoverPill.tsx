@@ -8,7 +8,7 @@ const POPOVER_FOCUS_EVENT = new Event(POPOVER_FOCUS_EVENT_NAME)
 
 const MAGIC_OFFSET_FOR_PERFECT_CENTERING = 44
 
-const usePopover = () => {
+function usePopover() {
   const { anchorRef, isOpen, toggle } = usePopperAnchor<HTMLButtonElement>()
   const { floating, position } = usePopper({
     isOpen,
