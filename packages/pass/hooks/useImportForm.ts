@@ -1,5 +1,4 @@
-import type { ComponentProps } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { type ComponentProps, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FormikContextType, FormikErrors } from 'formik';
@@ -9,7 +8,9 @@ import { c } from 'ttag';
 import type { Dropzone, FileInput } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { useFileImporter } from '@proton/pass/hooks/files/useFileImporter';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import { ExportFormat } from '@proton/pass/lib/export/types';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { extractFileExtension, fileReader } from '@proton/pass/lib/import/reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
@@ -40,6 +41,7 @@ export type ImportFormContext = {
         onAttach: FileInputProps['onChange'];
         setSupportedFileTypes: (fileTypes: string[]) => void;
     };
+    fileProgress: number;
 };
 
 export type UseImportFormBeforeSubmitValue = { ok: true; payload: ImportPayload } | { ok: false };
@@ -49,8 +51,6 @@ export type UseImportFormOptions = {
     beforeSubmit?: UseImportFormBeforeSubmit;
     onSubmit?: (payload: ImportPayload) => void;
 };
-
-export const SUPPORTED_IMPORT_FILE_TYPES = ['json', '1pif', '1pux', 'pgp', 'zip', 'csv', 'xml'];
 
 const createFileValidator = (allow: string[]) =>
     pipe(
@@ -72,8 +72,11 @@ const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): F
 
     if (file && provider === ImportProvider.PROTONPASS) {
         const fileExtension = extractFileExtension(file.name);
-        if (fileExtension === 'pgp' && !Boolean(passphrase)) {
+        if (fileExtension === ExportFormat.PGP && !Boolean(passphrase)) {
             errors.passphrase = c('Warning').t`PGP encrypted export file requires passphrase`;
+        }
+        if (fileExtension === ExportFormat.EPEX && !Boolean(passphrase)) {
+            errors.passphrase = c('Warning').t`EPEX encrypted export file requires passphrase`;
         }
     }
 
@@ -89,6 +92,7 @@ export const useImportForm = ({
 }: UseImportFormOptions): ImportFormContext => {
     const { prepareImport } = usePassCore();
     const { createNotification } = useNotifications();
+    const { fileProgress, uploadFiles } = useFileImporter();
 
     const [busy, setBusy] = useState(false);
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
@@ -144,6 +148,7 @@ export const useImportForm = ({
                 const result = await beforeSubmit(importPayload);
 
                 if (result.ok) {
+                    result.payload.vaults = await uploadFiles(result.payload.vaults);
                     onSubmit?.(result.payload);
                     importItems.dispatch({ data: result.payload, provider: values.provider });
                 }
@@ -168,7 +173,7 @@ export const useImportForm = ({
 
     const onDrop = (files: File[]) => {
         setDropzoneHovered(false);
-        onAddFiles([...files]);
+        onAddFiles(files);
     };
 
     const onAttach: FileInputProps['onChange'] = (event) => onAddFiles((event.target.files as File[] | null) ?? []);
@@ -183,5 +188,6 @@ export const useImportForm = ({
         dropzone: { hovered: dropzoneHovered, onAttach, onDrop, setSupportedFileTypes },
         form,
         result,
+        fileProgress,
     };
 };
