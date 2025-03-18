@@ -64,6 +64,8 @@ export const isHealthCheckSkipped = hasItemFlag(ItemFlag.SkipHealthCheck);
 export const isBreached = hasItemFlag(ItemFlag.EmailBreached);
 export const isMonitored = not(isHealthCheckSkipped);
 export const isDisabledAlias = hasItemFlag(ItemFlag.AliasDisabled);
+export const hasAttachments = hasItemFlag(ItemFlag.HasAttachments);
+export const hasHadAttachments = hasItemFlag(ItemFlag.HasHadAttachments);
 export const isDisabledAliasItem = (item: ItemRevision) => isAliasItem(item.data) && isDisabledAlias(item);
 
 export const isActiveMonitored = and(isActive, isMonitored);
