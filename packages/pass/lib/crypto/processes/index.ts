@@ -1,3 +1,7 @@
+export * from './file/create-file-chunk';
+export * from './file/create-file-descriptor';
+export * from './file/open-file-chunk';
+export * from './file/open-file-descriptor';
 export * from './invite/create-invite-keys';
 export * from './invite/create-new-user-signature';
 export * from './invite/open-invite-key';
@@ -11,6 +15,7 @@ export * from './item/update-item';
 export * from './secure-link/create-secure-link';
 export * from './secure-link/open-link-key';
 export * from './secure-link/open-secure-link';
+export * from './secure-link/open-secure-link-file-descriptor';
 export * from './share/open-share';
 export * from './share/open-share-key';
 export * from './vault/create-vault';
