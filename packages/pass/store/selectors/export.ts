@@ -1,4 +1,5 @@
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
+import type { ExportedFile } from '@proton/pass/lib/export/types';
 import { type ExportData, ExportFormat, type ExportedVault } from '@proton/pass/lib/export/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
@@ -7,13 +8,21 @@ import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/trans
 import { selectShare } from '@proton/pass/store/selectors/shares';
 import { selectPassPlan, selectUser } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
+import type { FileItemExport, MaybeNull } from '@proton/pass/types';
 import { BitField } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 
 import { SelectorError } from './errors';
 import { selectOrganizationSettings } from './organization';
 
+type ExportDataOptions = {
+    config: PassConfig;
+    format: ExportFormat;
+    files: MaybeNull<FileItemExport>;
+};
+
 export const selectExportData =
-    ({ config, format }: { config: PassConfig; format: ExportFormat }) =>
+    ({ config, format, files }: ExportDataOptions) =>
     (state: State): ExportData => {
         const user = selectUser(state);
         const plan = selectPassPlan(state);
@@ -47,6 +56,7 @@ export const selectExportData =
                                 modifyTime: item.modifyTime,
                                 pinned: item.pinned,
                                 shareCount: item.shareCount,
+                                files: files?.[item.shareId]?.[item.itemId]?.map(prop('id')) ?? [],
                             })),
                         },
                     ]);
@@ -57,9 +67,16 @@ export const selectExportData =
         );
 
         return {
-            encrypted: format === ExportFormat.PGP,
+            encrypted: format === ExportFormat.EPEX,
             userId: user?.ID,
             vaults,
             version: config.APP_VERSION,
+            files: files
+                ? Object.values(files).reduce<ExportedFile[]>((acc, byItemID) => {
+                      const files = Object.values(byItemID).flat();
+                      acc.push(...files);
+                      return acc;
+                  }, [])
+                : [],
         };
     };

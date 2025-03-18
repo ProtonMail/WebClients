@@ -42,10 +42,12 @@ const EXPORT_TEST_PAYLOAD: ExportData = {
                     createTime: getEpoch(),
                     modifyTime: getEpoch() + 100,
                     shareCount: 0,
+                    files: [],
                 },
             ],
         },
     },
+    files: [],
 };
 const EXPORT_TEST_PASSPHRASE = 'p4ssphr4se';
 

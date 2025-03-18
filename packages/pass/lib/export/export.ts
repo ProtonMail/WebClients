@@ -8,17 +8,26 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import type { ExportCSVItem } from './types';
+import type { ExportCSVItem, ExportedFile } from './types';
 import { type ExportData, ExportFormat, type ExportOptions } from './types';
 
 const EXPORT_AS_JSON_TYPES = ['creditCard', 'identity'];
 
+export const EXPORT_FILES_PATH = `${PASS_APP_NAME}/files/`;
+
+/** Rebuild the File from ArrayBuffer */
+export const createFileFromArrayBuffer = ({ content, fileName, mimeType }: ExportedFile): File => {
+    const blob = new Blob([content], { type: mimeType });
+    return new File([blob], fileName, { type: mimeType });
+};
+
 /** Exporting data from the extension uses the .zip format
  * for future-proofing : we will support integrating additional
  * files when exporting */
-export const createPassExportZip = async (payload: ExportData): Promise<Uint8Array> => {
+export const createPassExportZip = async ({ files, ...payload }: ExportData): Promise<Uint8Array> => {
     const zip = new JSZip();
     zip.file(`${PASS_APP_NAME}/data.json`, JSON.stringify(payload));
+    files.forEach((file) => zip.file(`${EXPORT_FILES_PATH}${file.fileName}`, createFileFromArrayBuffer(file)));
     return zip.generateAsync({ type: 'uint8array' });
 };
 
@@ -85,7 +94,9 @@ export const decryptPassExport = async (base64: string, passphrase: string): Pro
 const getMimeType = (format: ExportFormat) => {
     switch (format) {
         case ExportFormat.ZIP:
+        case ExportFormat.PEX:
             return 'application/zip';
+        case ExportFormat.EPEX:
         case ExportFormat.PGP:
             return 'application/pgp-encrypted';
         case ExportFormat.CSV:
@@ -95,8 +106,10 @@ const getMimeType = (format: ExportFormat) => {
 
 const createBase64Export = async (payload: ExportData, options: ExportOptions): Promise<string> => {
     switch (options.format) {
+        case ExportFormat.PEX:
         case ExportFormat.ZIP:
             return uint8ArrayToBase64String(await createPassExportZip(payload));
+        case ExportFormat.EPEX:
         case ExportFormat.PGP:
             return encryptPassExport(await createPassExportZip(payload), options.passphrase);
         case ExportFormat.CSV:
@@ -104,7 +117,7 @@ const createBase64Export = async (payload: ExportData, options: ExportOptions): 
     }
 };
 
-/** If data is encrypted, will export as PGP file instead of a ZIP.
+/** If data is encrypted, will export as EPEX file instead of a PEX.
  * Returns a `TransferableFile` in case the data must be passed around
  * different contexts (ie: from extension component to service worker) */
 export const createPassExport = async (payload: ExportData, options: ExportOptions): Promise<TransferableFile> => {
