@@ -1,11 +1,15 @@
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
-import type { AliasMailbox, DeobfuscatedItemExtraField, ItemContent } from '@proton/pass/types/data';
+import type {
+    AliasMailbox,
+    DeobfuscatedItemExtraField,
+    FileAttachmentValues,
+    ItemContent,
+} from '@proton/pass/types/data';
 import type { ExtractKeysOfType } from '@proton/pass/types/utils';
 
 import type { ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
-export type BaseItemValues = { name: string; note: string; shareId: string };
-
+export type BaseItemValues = { name: string; note: string; shareId: string } & FileAttachmentValues;
 export type NoteFormValues = BaseItemValues;
 
 export type LoginItemFormValues = BaseItemValues & {
@@ -42,3 +46,14 @@ export type IdentityItemFormValues = { shareId: string } & BaseItemValues & Iden
 export type IdentitySectionFormValues = { sectionName: string };
 export type IdentityFieldName = ExtractKeysOfType<IdentityValues, string>;
 export type IdentityExtraFieldsKey = ExtractKeysOfType<IdentityValues, DeobfuscatedItemExtraField[]>;
+
+export type CreditCardItemFormValues = BaseItemValues & {
+    shareId: string;
+    name: string;
+    cardholderName: string;
+    number: string;
+    expirationDate: string;
+    verificationNumber: string;
+    pin: string;
+    note: string;
+};
