@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import { authStore } from '@proton/pass/lib/auth/store';
+import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { serializeShareManagers } from '@proton/pass/lib/crypto/utils/seralize';
 import type {
     PassCryptoManagerContext,
@@ -11,11 +12,12 @@ import type {
     ShareManager,
     TypedOpenedShare,
 } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import { PassEncryptionTag, ShareType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { unwrap } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { entriesMap } from '@proton/pass/utils/object/map';
+import { uint8ArrayToBlob } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
@@ -24,6 +26,7 @@ import { createShareManager } from './share-manager';
 import { getSupportedAddresses } from './utils/addresses';
 import {
     PassCryptoError,
+    PassCryptoFileError,
     PassCryptoHydrationError,
     PassCryptoNotHydratedError,
     PassCryptoShareError,
@@ -51,6 +54,7 @@ export const createPassCrypto = (): PassCryptoWorker => {
         primaryUserKey: undefined,
         primaryAddress: undefined,
         shareManagers: new Map(),
+        fileKeys: new Map(),
     };
 
     const hasShareManager = (shareId: string): boolean => context.shareManagers.has(shareId);
@@ -428,6 +432,70 @@ export const createPassCrypto = (): PassCryptoWorker => {
             });
         },
 
+        registerFileKey: ({ fileKey, fileID }) => {
+            /** Do not assert context here, so it can be used in Secure Links */
+            context.fileKeys.set(fileID, fileKey);
+        },
+
+        /** FIXME: Handle ItemShares
+         * This should return the filekey encrypted with the itemkey.
+         * FIXME: Handle ItemKey caching.
+         * FIXME: We might not need the shareID when using ItemKey caching
+         * as the key will already be decrypted */
+        async getFileKey({ latestItemKey, shareId, fileID }) {
+            const shareKey = getShareManager(shareId).getVaultShareKey(latestItemKey.KeyRotation);
+
+            const fileKey = context.fileKeys.get(fileID);
+            if (!fileKey) throw new PassCryptoFileError(`Could not resolve file key for ${fileID}`);
+
+            const itemKey = await processes.openItemKey({ encryptedItemKey: latestItemKey, shareKey });
+            return encryptData(itemKey.key, fileKey, PassEncryptionTag.FileKey);
+        },
+
+        async createFileDescriptor({ metadata, fileID }) {
+            assertHydrated(context);
+
+            const fileKey = fileID ? context.fileKeys.get(fileID) : undefined;
+            if (fileID && !fileKey) throw new PassCryptoFileError(`Could not resolve file key for ${fileID}`);
+
+            return processes.createFileDescriptor(metadata, fileKey);
+        },
+
+        async openFileDescriptor({ shareId, file, latestItemKey }) {
+            assertHydrated(context);
+
+            const manager = getShareManager(shareId);
+            const shareKey = manager.getVaultShareKey(file.ItemKeyRotation);
+
+            const itemKey = await processes.openItemKey({ encryptedItemKey: latestItemKey, shareKey });
+            const { fileKey, metadata } = await processes.openFileDescriptor(file.Metadata, file.FileKey, itemKey);
+
+            worker.registerFileKey({ fileKey, fileID: file.FileID });
+            return metadata;
+        },
+
+        async createFileChunk({ fileID, chunk }) {
+            assertHydrated(context);
+
+            if (chunk.byteLength === 0) throw new PassCryptoFileError('File cannot be empty');
+
+            const fileKey = context.fileKeys.get(fileID);
+            if (!fileKey) throw new PassCryptoFileError(`Could not resolve file key for ${fileID}`);
+
+            const blob = uint8ArrayToBlob(new Uint8Array(chunk));
+            return processes.createFileChunk(blob, fileKey);
+        },
+
+        async openFileChunk({ fileID, chunk }) {
+            /** Do not assert context here, so it can be used in Secure Links */
+            if (chunk.byteLength === 0) throw new PassCryptoFileError('Encrypted chunk cannot be empty');
+
+            const fileKey = context.fileKeys.get(fileID);
+            if (!fileKey) throw new PassCryptoFileError(`Could not resolve file key for ${fileID}`);
+
+            return processes.openFileChunk(chunk, fileKey);
+        },
+
         async createSecureLink({ itemKey, shareId }) {
             assertHydrated(context);
 
@@ -460,6 +528,19 @@ export const createPassCrypto = (): PassCryptoWorker => {
                 content: publicLinkContent.Contents,
                 linkKey,
             });
+        },
+
+        async openSecureLinkFileDescriptor({ encryptedItemKey, encryptedFileKey, encryptedMetadata, fileID, linkKey }) {
+            const { fileKey, metadata } = await processes.openSecureLinkFileDescriptor({
+                encryptedItemKey,
+                encryptedFileKey,
+                linkKey,
+                encryptedMetadata,
+            });
+
+            worker.registerFileKey({ fileKey, fileID });
+
+            return metadata;
         },
 
         async openLinkKey({ encryptedLinkKey, linkKeyShareKeyRotation, shareId, itemId, linkKeyEncryptedWithItemKey }) {
