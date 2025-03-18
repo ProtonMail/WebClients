@@ -115,6 +115,8 @@ describe('should get checkout result', () => {
                     Coupon: null,
                     Currency: 'USD',
                     SubscriptionMode: SubscriptionMode.Regular,
+                    BaseRenewAmount: null,
+                    RenewCycle: null,
                 },
                 plansMap: {
                     [PLANS.VPN]: getPlan(vpnPlan),
@@ -152,6 +154,8 @@ describe('should get checkout result', () => {
                     Coupon: null,
                     Currency: 'USD',
                     SubscriptionMode: SubscriptionMode.Regular,
+                    BaseRenewAmount: null,
+                    RenewCycle: null,
                 },
                 plansMap: {
                     [PLANS.VPN]: {
@@ -209,6 +213,8 @@ describe('should get checkout result', () => {
                     Coupon: null,
                     Currency: 'USD',
                     SubscriptionMode: SubscriptionMode.Regular,
+                    BaseRenewAmount: null,
+                    RenewCycle: null,
                 },
                 plansMap: {
                     [PLANS.VPN]: {
@@ -269,6 +275,8 @@ describe('should get checkout result', () => {
                     },
                     Currency: 'USD',
                     SubscriptionMode: SubscriptionMode.Regular,
+                    BaseRenewAmount: null,
+                    RenewCycle: null,
                 },
                 plansMap: {
                     [PLANS.VISIONARY]: getPlan(visionaryPlan),
@@ -310,6 +318,8 @@ describe('should get checkout result', () => {
                 },
                 Currency: 'USD',
                 SubscriptionMode: SubscriptionMode.Regular,
+                BaseRenewAmount: null,
+                RenewCycle: null,
             },
             plansMap: {
                 [PLANS.VPN]: getPlan(vpnPlan),
@@ -364,6 +374,8 @@ describe('should get checkout result', () => {
                     Coupon: null,
                     Currency: 'USD',
                     SubscriptionMode: SubscriptionMode.Regular,
+                    BaseRenewAmount: null,
+                    RenewCycle: null,
                 },
                 plansMap: {
                     [PLANS.BUNDLE_PRO]: getPlan(bundleProPlan),
@@ -426,6 +438,8 @@ describe('should get checkout result', () => {
                     Coupon: null,
                     Currency: 'USD',
                     SubscriptionMode: SubscriptionMode.Regular,
+                    BaseRenewAmount: null,
+                    RenewCycle: null,
                 },
                 plansMap: {
                     [PLANS.VPN_PRO]: getPlan(vpnProPlan),
@@ -476,6 +490,8 @@ describe('should get checkout result', () => {
                     Coupon: null,
                     Currency: 'USD',
                     SubscriptionMode: SubscriptionMode.Regular,
+                    BaseRenewAmount: null,
+                    RenewCycle: null,
                 },
                 plansMap: {
                     [PLANS.VPN_BUSINESS]: getPlan(vpnBusinessPlan),
@@ -529,6 +545,8 @@ describe('should get checkout result', () => {
                     },
                     Currency: 'USD',
                     SubscriptionMode: SubscriptionMode.Regular,
+                    BaseRenewAmount: null,
+                    RenewCycle: null,
                 },
                 plansMap: {
                     [PLANS.VISIONARY]: getPlan(visionaryPlan),

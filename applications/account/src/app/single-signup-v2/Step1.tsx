@@ -11,7 +11,7 @@ import {
     CycleSelector,
     Icon,
     SkeletonLoader,
-    getCheckoutRenewNoticeText,
+    getCheckoutRenewNoticeTextFromCheckResult,
     useErrorHandler,
     useHandler,
     useModalState,
@@ -382,8 +382,8 @@ const Step1 = ({
 
         if (model.session?.subscription && model.session.organization && model.plansMap[planName]) {
             const switchedPlanIds = switchPlan({
-                planIDs: getPlanIDs(model.session.subscription),
-                planID: planName,
+                currentPlanIDs: getPlanIDs(model.session.subscription),
+                newPlan: planName,
                 organization: model.session.organization,
                 plans: model.plans,
                 user: model.session.resumedSessionResult.User,
@@ -490,14 +490,12 @@ const Step1 = ({
     const renewalNotice = showRenewalNotice && (
         <div className="w-full text-sm color-norm opacity-70">
             *
-            {getCheckoutRenewNoticeText({
-                coupon: options.checkResult.Coupon,
-                cycle: options.cycle,
+            {getCheckoutRenewNoticeTextFromCheckResult({
+                checkResult: options.checkResult,
                 plansMap: model.plansMap,
                 planIDs: options.planIDs,
-                checkout,
-                currency: options.currency,
                 subscription: model.session?.subscription,
+                app,
             })}
         </div>
     );

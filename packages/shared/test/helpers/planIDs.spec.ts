@@ -125,12 +125,12 @@ describe('switchPlan', () => {
     } as User;
 
     it('should remove previous plan', () => {
-        const planIDs = { [PLANS.MAIL]: 1 };
-        const planID = PLANS.VISIONARY;
+        const currentPlanIDs = { [PLANS.MAIL]: 1 };
+        const newPlan = PLANS.VISIONARY;
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
@@ -141,12 +141,12 @@ describe('switchPlan', () => {
     });
 
     it('should transfer domain addons', () => {
-        const planIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 5 };
-        const planID = PLANS.BUNDLE_PRO_2024;
+        const currentPlanIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 5 };
+        const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
@@ -158,12 +158,12 @@ describe('switchPlan', () => {
     });
 
     it('should transfer member addons', () => {
-        const planIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 5 };
-        const planID = PLANS.BUNDLE_PRO_2024;
+        const currentPlanIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 5 };
+        const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
@@ -175,13 +175,13 @@ describe('switchPlan', () => {
     });
 
     it('should transfer IP addons when switching from vpn biz to bundle pro', () => {
-        const planIDs = { [PLANS.VPN_BUSINESS]: 1, [ADDON_NAMES.IP_VPN_BUSINESS]: 5 };
-        const planID = PLANS.BUNDLE_PRO_2024;
+        const currentPlanIDs = { [PLANS.VPN_BUSINESS]: 1, [ADDON_NAMES.IP_VPN_BUSINESS]: 5 };
+        const newPlan = PLANS.BUNDLE_PRO_2024;
 
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
@@ -193,12 +193,12 @@ describe('switchPlan', () => {
     });
 
     it('should transfer IP addons when switching from vpn biz to bundle pro when no IP addons have been included', () => {
-        const planIDs = { [PLANS.VPN_BUSINESS]: 1 };
-        const planID = PLANS.BUNDLE_PRO_2024;
+        const currentPlanIDs = { [PLANS.VPN_BUSINESS]: 1 };
+        const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
@@ -210,12 +210,12 @@ describe('switchPlan', () => {
     });
 
     it('should transfer IP addons when switching from bundle pro to vpn biz', () => {
-        const planIDs = { [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 5 };
-        const planID = PLANS.VPN_BUSINESS;
+        const currentPlanIDs = { [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 5 };
+        const newPlan = PLANS.VPN_BUSINESS;
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
@@ -227,12 +227,12 @@ describe('switchPlan', () => {
     });
 
     it('should not transfer addons', () => {
-        const planIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 5 };
-        const planID = PLANS.MAIL;
+        const currentPlanIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 5 };
+        const newPlan = PLANS.MAIL;
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
@@ -243,13 +243,13 @@ describe('switchPlan', () => {
     });
 
     it('should transfer addons based on organization usage', () => {
-        const planIDs = { [PLANS.ENTERPRISE]: 1 };
+        const currentPlanIDs = { [PLANS.ENTERPRISE]: 1 };
         const organization = { UsedAddresses: 16, UsedDomains: 11 } as Organization;
-        const planID = PLANS.BUNDLE_PRO;
+        const newPlan = PLANS.BUNDLE_PRO;
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization,
                 user,
@@ -262,12 +262,12 @@ describe('switchPlan', () => {
     });
 
     it('should transfer scribe addons', () => {
-        const planIDs = {
+        const currentPlanIDs = {
             [PLANS.BUNDLE_PRO_2024]: 1,
             [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 6,
             [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 7,
         };
-        const planId = PLANS.MAIL_PRO;
+        const newPlan = PLANS.MAIL_PRO;
 
         const organization = {
             UsedAI: 0,
@@ -275,8 +275,8 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
-                planIDs,
-                planID: planId,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization,
                 user,
@@ -289,11 +289,11 @@ describe('switchPlan', () => {
     });
 
     it('should not transfer scribe addons if user is not chargebee eligible', () => {
-        const planIDs = {
+        const currentPlanIDs = {
             [PLANS.VISIONARY]: 1,
         };
 
-        const planId = PLANS.BUNDLE_PRO_2024;
+        const newPlan = PLANS.BUNDLE_PRO_2024;
 
         const organization = {
             UsedAI: 6,
@@ -305,8 +305,8 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
-                planIDs,
-                planID: planId,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization,
                 user,
@@ -317,12 +317,12 @@ describe('switchPlan', () => {
     });
 
     it('should transfer lumo addons', () => {
-        const planIDs = {
+        const currentPlanIDs = {
             [PLANS.BUNDLE_PRO_2024]: 1,
             [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 6,
             [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 7,
         };
-        const planId = PLANS.MAIL_PRO;
+        const newPlan = PLANS.MAIL_PRO;
 
         const organization = {
             UsedLumo: 1,
@@ -331,8 +331,8 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
-                planIDs,
-                planID: planId,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization,
                 user,
@@ -345,10 +345,10 @@ describe('switchPlan', () => {
     });
 
     it('should not transfer too many lumo addons - Mail Plus', () => {
-        const planIDs = {
+        const currentPlanIDs = {
             [PLANS.VISIONARY]: 1,
         };
-        const planID = PLANS.MAIL;
+        const newPlan = PLANS.MAIL;
 
         const organization = {
             UsedLumo: 0,
@@ -357,8 +357,8 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization,
                 user,
@@ -370,10 +370,10 @@ describe('switchPlan', () => {
     });
 
     it('should not transfer too many lumo addons - Duo', () => {
-        const planIDs = {
+        const currentPlanIDs = {
             [PLANS.VISIONARY]: 1,
         };
-        const planID = PLANS.DUO;
+        const newPlan = PLANS.DUO;
 
         const organization = {
             UsedLumo: 0,
@@ -382,8 +382,8 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization,
                 user,
@@ -395,8 +395,8 @@ describe('switchPlan', () => {
     });
 
     it('should not transfer lumo addons if they are already included in the new plan', () => {
-        const planIDs = { [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 };
-        const planID = PLANS.VISIONARY;
+        const currentPlanIDs = { [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 1 };
+        const newPlan = PLANS.VISIONARY;
         const organization = {
             UsedLumo: 2,
             MaxLumo: 2,
@@ -404,8 +404,8 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
-                planIDs,
-                planID,
+                currentPlanIDs,
+                newPlan,
                 plans: getLongTestPlans(),
                 organization,
                 user,
@@ -1301,6 +1301,8 @@ describe('getTotalFromPricing', () => {
                             },
                         ],
                         PeriodEnd: 0,
+                        BaseRenewAmount: null,
+                        RenewCycle: null,
                     },
                     {
                         Amount: 8388,
@@ -1327,6 +1329,8 @@ describe('getTotalFromPricing', () => {
                             },
                         ],
                         PeriodEnd: 0,
+                        BaseRenewAmount: null,
+                        RenewCycle: null,
                     },
                 ],
                 selectedPlan
@@ -1407,6 +1411,8 @@ describe('getTotalFromPricing', () => {
                         Amount: 67,
                     },
                 ],
+                BaseRenewAmount: null,
+                RenewCycle: null,
             },
             {
                 PeriodEnd: 0,
@@ -1433,6 +1439,8 @@ describe('getTotalFromPricing', () => {
                         Amount: 673,
                     },
                 ],
+                BaseRenewAmount: null,
+                RenewCycle: null,
             },
         ];
         const selectedPlan = new SelectedPlan(
