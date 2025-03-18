@@ -1114,10 +1114,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar todo"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar todo"
       ],
       "Select all messages": [
@@ -1535,8 +1535,15 @@
       "${ price } per domain": [
         "${ price } por dominio"
       ],
+      "${ price } per seat": [
+        "${ price } por licencia"
+      ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licencia ${ LUMO_APP_NAME }",
+        "${ seats } licencias ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } asiento del asistente de escritura",
@@ -5928,6 +5935,9 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } también puede proteger tu negocio."
       ],
@@ -6685,8 +6695,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7073,6 +7082,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
+      ],
+      "Refining email list in progress": [
+        "Refinado de la lista de correo en progreso"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
@@ -10752,7 +10764,7 @@
         "Compartición segura de cajas fuertes"
       ],
       "Secure vault, item and link sharing": [
-        "Caja de seguridad, elemento y enlace compartido"
+        "Uso compartido seguro de cajas fuertes, enlaces y elementos"
       ],
       "Unlimited logins, notes, credit cards and more": [
         "Inicios de sesión ilimitados, notas, tarjetas de crédito y más"
@@ -13797,6 +13809,11 @@
         "Hoy"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático: indica que formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
@@ -13878,11 +13895,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Tor out of date": {

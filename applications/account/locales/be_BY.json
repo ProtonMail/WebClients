@@ -1455,8 +1455,17 @@
       "${ price } per domain": [
         "${ price } за дамен"
       ],
+      "${ price } per seat": [
+        "${ price } за ліцэнзію"
+      ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзія",
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзіі",
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзій",
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзій"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -1963,8 +1972,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Палітыка адсутнасці журналаў актыўнасці ${ BRAND_NAME } VPN пацверджана знешнім аўдытам."
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Палітыка адсутнасці журналаў актыўнасці ў ${ VPN_APP_NAME } пацверджана знешнім аўдытам"
       ],
       "**Streaming** is included in your subscription.": [
         "**Трансляцыі** ўключаны ў вашу падпіску."
@@ -1987,8 +1996,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Павялічце хуткасць VPN да 400% з дапамогай VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Незалежныя эксперты ў галіне бяспекі пацвердзілі, што ProtonVPN не запісвае даныя карыстальнікаў і не ўдзельнічае ў любых дзеяннях, якія могуць паставіць пад пагрозу вашу прыватнасць."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Незалежныя эксперты па бяспецы пацвердзілі, што ${ VPN_APP_NAME } не рэгіструе карыстальніцкія даныя і не ўжывае ніякіх метадаў, якія могуць паставіць пад пагрозу вашу прыватнасць."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Ці з'яўляецца Telegram бяспечным для выкарыстання? З гэтага артыкула вы даведаецеся, што ўсё вельмі залежыць ад спосабаў яго выкарыстання."
@@ -5550,10 +5559,10 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "Падзей экспартавана: ${ totalProcessed }/${ totalToProcess }",
-        "Падзей экспартавана: ${ totalProcessed }/${ totalToProcess }",
-        "Падзей экспартавана: ${ totalProcessed }/${ totalToProcess }",
-        "Падзей экспартавана: ${ totalProcessed }/${ totalToProcess }"
+        "${ totalProcessed } падзея з ${ totalToProcess } экспартавана",
+        "${ totalProcessed } падзеі з ${ totalToProcess } экспартаваны",
+        "${ totalProcessed } падзей з ${ totalToProcess } экспартаваны",
+        "${ totalProcessed } падзей з ${ totalToProcess } экспартаваны"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Каляндар паспяхова экспартаваны. Цяпер вы можаце захаваць файл ICS."
@@ -6743,10 +6752,10 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } падзея зашыфравана і дададзена ў ваш каляндар",
-        "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дадзены ў ваш каляндар",
-        "${ totalImported }/${ totalToImport } падзей зашыфраваны і дададзены ў ваш каляндар",
-        "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дададзены ў ваш каляндар"
+        "${ totalImported } падзея з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар",
+        "${ totalImported } падзеі з ${ totalToImport } зашыфраваны і дададзена ў ваш каляндар",
+        "${ totalImported } падзей з ${ totalToImport } зашыфраваны і дададзена ў ваш каляндар",
+        "${ totalImported } падзей з ${ totalToImport } зашыфраваны і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
@@ -6806,10 +6815,10 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } кантакт зашыфраваны і дададзены ў ваш спіс кантактаў",
-        "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў",
-        "${ totalImported }/${ totalToImport } кантактаў зашыфраваны і дадзены ў ваш спіс кантактаў",
-        "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў"
+        "${ totalImported } кантакт з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported } кантакты з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Адбылася памылка падчас шыфравання і дадавання вашага кантакту. Ніводны кантакт не быў імпартаваны."
@@ -7169,6 +7178,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } хоча абагуліць даныя з вамі ў ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме аднаго пароля, які замяняе сабой пароль ад уваходу і другі пароль. Для пераключэння ў рэжым аднаго пароля, увядзіце адзіны пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
@@ -7272,10 +7284,10 @@
         "яшчэ ${ remainingAddresses.length } адрасоў"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календара",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў"
+        "${ selectedCalendarsTotal } каляндар з ${ providerCalendars.length }",
+        "${ selectedCalendarsTotal } календары з ${ providerCalendars.length }",
+        "${ selectedCalendarsTotal } календароў з ${ providerCalendars.length }",
+        "${ selectedCalendarsTotal } календароў з ${ providerCalendars.length }"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",
@@ -7333,6 +7345,9 @@
       ],
       "* No credit card required.": [
         "* Крэдытная картка не патрабуецца."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "**${ appName }** не падтрымліваецца ў вашай арганізацыі **${ organizationName }**."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
@@ -7712,6 +7727,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары, вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Каляндар, інтэграваны з ${ MAIL_APP_NAME } і ${ CONTACTS_APP_NAME }"
+      ],
       "Cancel anytime": [
         "Скасаваць можна ў любы час"
       ],
@@ -7730,9 +7748,6 @@
       "Check the status of imports and forwarding.": [
         "Праверыць статус імпартавання і перасылкі."
       ],
-      "Choose an app to get started": [
-        "Выберыце праграму, каб пачаць"
-      ],
       "Choose an Entity ID to continue.": [
         "Выберыце Entity ID для працягу."
       ],
@@ -7741,6 +7756,9 @@
       ],
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Воблачнае сховішча, інтэграванае з ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Узнагарода \"Выбар рэдакцыі CNET\" з рэйтынгам 8,4 з 10"
@@ -8038,6 +8056,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Сэрвіс электроннай пошты, інтэграваны з ${ CALENDAR_APP_NAME } і ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Параметры адпраўкі пошты захаваны"
@@ -8630,6 +8651,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Пераканайцеся, што ў вас ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Кіруйце тым, да якіх праграм ${ BRAND_NAME } маюць доступ члены вашай арганізацыі. Калі выключана, толькі адміністратары будуць мець доступ."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Кіраванне вашымі параметрамі апавяшчэнняў па электроннай пошце для ${ DOCS_APP_NAME }"
       ],
@@ -8863,6 +8887,9 @@
       ],
       "Password generator rules successfully saved": [
         "Правілы генератара пароляў паспяхова захаваны"
+      ],
+      "Password manager with extra account security": [
+        "Менеджэр пароляў з дадатковай абаронай уліковага запісу"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Мінімальная даўжыня пароля складае наступную колькасць сімвалаў або больш: ${ MIN_PASSWORD_LENGTH }"
@@ -9128,6 +9155,9 @@
       "Select a service provider to start": [
         "Выберыце пастаўшчыка паслуг, каб пачаць"
       ],
+      "Select a service to continue": [
+        "Выберыце паслугу, каб працягнуць"
+      ],
       "Select one or multiple user affiliations": [
         "Выберыце адну або некалькі прыналежнасцей карыстальніка"
       ],
@@ -9142,6 +9172,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
+      ],
+      "Self-custodial crypto wallet": [
+        "Крыптакашалёк з самастойным захоўваннем"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Адпраўляйце лісты, каб заахвоціць сваіх удзельнікаў абараняць свае ўліковыя запісы з дапамогай 2ФА."
@@ -9811,6 +9844,9 @@
       ],
       "Visa Secure logo": [
         "Лагатып Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN з выдзеленымі серверамі і IP-адрасамі"
       ],
       "Want to learn more?": [
         "Хочаце даведацца больш?"
@@ -15589,10 +15625,10 @@
         "${ cycle } месяцаў"
       ],
       "${ months } month plan": [
-        "Тарыфны плана на ${ months } месяц",
-        "Тарыфны плана на ${ months } месяцы",
-        "Тарыфны плана на ${ months } месяцаў",
-        "Тарыфны плана на ${ months } месяцаў"
+        "Тарыфны план на ${ months } месяц",
+        "Тарыфны план на ${ months } месяцы",
+        "Тарыфны план на ${ months } месяцаў",
+        "Тарыфны план на ${ months } месяцаў"
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
@@ -18547,6 +18583,9 @@
       ],
       "A filter with this name already exists": [
         "Фільтр з такой назвай ужо існуе"
+      ],
+      "Access control": [
+        "Кантроль доступу"
       ],
       "Accessibility": [
         "Спецыяльныя магчымасці"

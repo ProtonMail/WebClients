@@ -1451,8 +1451,15 @@
       "${ price } per domain": [
         "${ price }/დომენი"
       ],
+      "${ price } per seat": [
+        "${ price }/ლიცენზია"
+      ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } წერის დამხმარის ლიცენზია",
@@ -1769,6 +1776,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ discountedPrice }-სთვის პირველ ${ cycle } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასდაკლებული ფასით ${ nextPrice } ${ renewalLength } თვით. გაუქმება ყოველთვის შეგიძლიათ."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ discountedPrice }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ nextPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ]
@@ -1940,8 +1950,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "${ BRAND_NAME } VPN-ის პოლიტიკა 'არა ჟურნალს' დადასტურებულია გარე აუდიტის მიერ"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "${ VPN_APP_NAME }-ის პოლიტიკა 'არა ჟურნალს' დადასტურებულია გარე აუდიტის მიერ"
       ],
       "**Streaming** is included in your subscription.": [
         "თქვენი გამოწერა **სტრიმინგს** შეიცავს."
@@ -7022,6 +7032,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }-ს უნდა, მონაცემები გაგიზიაროთ ${ PASS_APP_NAME }-ში"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } შეიცავს ${ BRAND_NAME } Scribe წერის დამხმარეს"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და მეორე პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
       ],
@@ -7145,6 +7158,9 @@
       ],
       "* No credit card required.": [
         "* საკრედიტო ბარათი საჭირო არაა."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "**${ appName }** მხარდაჭერილი არაა თქვენს ორგანიზაციაში **${ organizationName }**."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**მიიღეთ ${ BRAND_NAME }-ის მისამართი** ${ BRAND_NAME_TWO }-ის ყველა სერვისის, ${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ჩათვლით, გამოსაყენებლად."
@@ -7502,6 +7518,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "ამ კალენდრის მოვლენის სრული დეტალების გაზიარებით თქვენ ეთანხმებით იმას, რომ ${ BRAND_NAME }-ს მის დაშიფრულ შიგთავსთან წვდომა ეძლევა."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "კალენდარი, ინტეგრირებულია ${ MAIL_APP_NAME }-სთან და ${ CONTACTS_APP_NAME }-სთან"
+      ],
       "Cancel anytime": [
         "გააუქმეთ ნებისმიერ დროს"
       ],
@@ -7520,9 +7539,6 @@
       "Check the status of imports and forwarding.": [
         "შემოტანისა და გადაგზავნის მდგომარეობის შემოწმება."
       ],
-      "Choose an app to get started": [
-        "აირჩიეთ აპი დასაწყებად"
-      ],
       "Choose an Entity ID to continue.": [
         "გასაგრძელებლად აირჩიეთ ობიექტის ID."
       ],
@@ -7531,6 +7547,9 @@
       ],
       "Close this screen to exit.": [
         "გასასვლელად დახურეთ ეს ეკრანი."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "ღრუბლოვანი საცავი, ინტეგრირებულია ${ DOCS_APP_NAME }-სთან"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-ის რედაქტორების არჩევნის ჯილდო 8.4 რეიტინგიტ 10-დან"
@@ -7818,6 +7837,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "ელფოსტის ჰოსტინგი ხელმისაწვდომია, მხოლოდ, იმ დომენებისთვის, რომლებსაც უკვე ფლობთ. დომენის რეგისტრაცია, ამჟამად, არ არის ხელმისაწვდომი ${ BRAND_NAME }-ის საშუალებით. დომენის შეძენა ნებისმიერ რეგისტრატორთან შეგიძლიათ."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "ელფოსტის სერვისები, ინტეგრირებულია ${ CALENDAR_APP_NAME }-სთან და ${ CONTACTS_APP_NAME }-სთან"
       ],
       "Emailing preference saved": [
         "დაგზავნის მორგება შენახულია"
@@ -8628,6 +8650,9 @@
       "Password generator rules successfully saved": [
         "პაროლების გენერატორის წესები წარმატებით იქნა შენახული"
       ],
+      "Password manager with extra account security": [
+        "პაროლების მმართველი დამატებითი ანგარიშის უსაფრთხოებით"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } ან მეტი სიმბოლოსგან უნდა შედგებოდეს."
       ],
@@ -8886,6 +8911,9 @@
       "Select a service provider to start": [
         "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
       ],
+      "Select a service to continue": [
+        "გასაგრძელებლად აირჩიეთ სერვისი"
+      ],
       "Select one or multiple user affiliations": [
         "აიჩიეთ ერთი ან მეტი მომხმარებლის წევრობა"
       ],
@@ -8900,6 +8928,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
+      ],
+      "Self-custodial crypto wallet": [
+        "თვითმართვადი კრიპტოსაფულე"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "გააგზავნეთ ელფოსტები, რომ დაარწმუნოთ თქვენი წევრები, 2FA ჩართონ."
@@ -9547,6 +9578,9 @@
       ],
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN გამოყოფილი სერვერებითა და IP მისამართებით"
       ],
       "Want to learn more?": [
         "გნებავთ, მეტი გაიგოთ?"
@@ -18005,6 +18039,9 @@
       "A filter with this name already exists": [
         "ამ სახელის მქონე ფილტრი უკვე არსებობს"
       ],
+      "Access control": [
+        "წვდომის მართვა"
+      ],
       "Accessibility": [
         "წვდომადობა"
       ],
@@ -20131,6 +20168,9 @@
       ],
       "Set secure passwords without the hassle.": [
         "დააყენეთ დაცული პაროლები პრობლემის გარეშე."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "${ planTitlePlusMaybeBrand }-ით იღებთ უფასო წვდომას ყველა ${ BRAND_NAME }-ის კონფიდენციალობის სერვისტან."
       ]
     },
     "VPN info": {

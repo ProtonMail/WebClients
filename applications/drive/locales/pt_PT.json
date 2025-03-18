@@ -88,6 +88,10 @@
       "Add photos": [
         "Adicionar fotos"
       ],
+      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
+        "Adicionar a «${ album.name }» ( ${ album.photoCount } foto)",
+        "Adicionar a «${ album.name }» ( ${ album.photoCount } fotos)"
+      ],
       "Add to album": [
         "Adicionar ao álbum"
       ],
@@ -526,6 +530,9 @@
       ],
       "Leave": [
         "Deixar"
+      ],
+      "Leave album": [
+        "Sair do álbum"
       ],
       "Let's talk": [
         "Vamos conversar"
@@ -1076,8 +1083,15 @@
       "${ price } per domain": [
         "${ price } por domínio"
       ],
+      "${ price } per seat": [
+        "${ price } por licença"
+      ],
       "${ price } per user": [
         "${ price } por utilizador"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -1236,6 +1250,9 @@
       "Unlimited folders, labels and filters": [
         "Pastas, etiquetas e filtros ilimitados"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Inícios de sessão, cartões de crédito, alias do ide-my-email ilimitados e mais"
+      ],
       "Use your own email domain": [
         "Utilize o seu próprio domínio de e-mail"
       ],
@@ -1265,8 +1282,8 @@
         "Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases do hide-my-email ilimitados, partilha, A2F integrada, o ${ DARK_WEB_MONITORING_NAME } e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteja seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais.",
-        "Proteja seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais."
+        "Proteja os seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais.",
+        "Proteja os seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteja os seus e-mails e agendamentos com encriptação ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte a domínios de e-mail personalizados, aliases de hide-my-email ilimitados e mais.",
@@ -4226,6 +4243,9 @@
       "${ invitations.length } pending invitation": [
         "${ invitations.length } convite pendente",
         "${ invitations.length } convites pendentes"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação. É um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
@@ -7361,6 +7381,9 @@
       "Password manager": [
         "Gestor de palavras-passe"
       ],
+      "Password manager to secure credentials": [
+        "Gestor de palavras-passe para proteger credenciais"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
@@ -7605,6 +7628,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "O nosso plano ${ visionary } já não está disponível para novos subscritores, pois se trata de um plano especial para utilizadores originais da ${ BRAND_NAME } com caraterísticas e vantagens especiais."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Pague uma vez, proteja as suas palavras-passe e identidades para sempre."
       ],
       "Popular": [
         "Popular"
@@ -8516,6 +8542,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Partilha segura de cofre"
+      ],
+      "Secure vault, item and link sharing": [
+        "Cofres, partilha de ligações e itens seguros"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Número ilimitado de inícios de sessão, notas, cartões de crédito e muito mais"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9554,6 +9586,10 @@
       "${ n } VPN connection per user": [
         "${ n } ligação VPN por utilizador",
         "${ n } ligações VPN por utilizador"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Conexão VPN para ${ n } dispositivos por utilizador",
+        "Conexão VPN para ${ n } dispositivos por utilizador"
       ]
     },
     "Subscription change warning": {
@@ -10311,8 +10347,8 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirme a perda dos bónus ${ BRAND_NAME }"
       ],
-      "Confirmation required?": [
-        "Confirmação necessária?"
+      "Confirmation required": [
+        "Confirmação necessária"
       ],
       "Contact Details": [
         "Detalhes do contacto"
@@ -11004,6 +11040,14 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Seleção automática de ${ numberOfCountries } país",
+        "Seleção automática de ${ numberOfCountries } países"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servidores em ${ numberOfCountries } país",
+        "Servidores em mais de ${ numberOfCountries } países"
       ]
     },
     "vpn_2024: renew": {

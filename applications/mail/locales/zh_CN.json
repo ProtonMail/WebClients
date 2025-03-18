@@ -1110,10 +1110,10 @@
       "Select ${ planTitle }": [
         "开通 ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "全选"
       ],
-      "Select all": [
+      "Select All": [
         "全选"
       ],
       "Select all messages": [
@@ -1528,8 +1528,14 @@
       "${ price } per domain": [
         "${ price } 每个域名"
       ],
+      "${ price } per seat": [
+        "${ price } 每位用户"
+      ],
       "${ price } per user": [
         "${ price } 每位用户"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } 席位"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } 个写作助手许可证"
@@ -5857,6 +5863,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
       ],
@@ -6575,7 +6584,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -6960,6 +6969,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
+      ],
+      "Refining email list in progress": [
+        "正在优化邮件列表中"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${ link }来解决。"
@@ -13532,6 +13544,11 @@
         "今天"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
@@ -13615,11 +13632,6 @@
         "上传公钥后方可向此地址发送端到端加密邮件"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "稳定版"
@@ -13676,6 +13688,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "从 ${ numberOfCountries } 个地域中自动选择"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } 个国家/地区的服务器"
       ]
     },
     "vpn_2024: renew": {

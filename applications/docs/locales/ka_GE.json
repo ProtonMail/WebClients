@@ -775,8 +775,15 @@
       "${ price } per domain": [
         "${ price }/დომენი"
       ],
+      "${ price } per seat": [
+        "${ price }/ლიცენზია"
+      ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } წერის დამხმარის ლიცენზია",
@@ -845,6 +852,9 @@
       ]
     },
     "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ discountedPrice }-სთვის პირველ ${ cycle } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასდაკლებული ფასით ${ nextPrice } ${ renewalLength } თვით. გაუქმება ყოველთვის შეგიძლიათ."
+      ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ discountedPrice }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ nextPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ]
@@ -2257,8 +2267,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
-        "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME }${ planName }-მდე, რომ ჩართოთ საჯარო ფაილის გაზიარება ჩასწორების წვდომით. გააგრძელეთ კოლაბორაცია შეუმჩნევლად და დაცულად."
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } ${ planName }-ზე, რომ შეინარჩუნოთ გაზიარებული ფაილები ჩასწორების წვდომით"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "ასწიეთ თქვენი სატარიფო გეგმა, რომ გაააქტიუროთ ${ PROTON_SENTINEL_NAME }, ჩვენი უახლესი AI-ზე დაფუძნებული უსაფრთხოების გადაწყვეტილება თავისი საკუთარი 24/7 პროფესიონალური მხარდაჭერით."
@@ -3780,6 +3790,9 @@
       "${ groupCounts } group found": [
         "ნაპოვნია ${ groupCounts } ჯგუფი",
         "ნაპოვნია ${ groupCounts } ჯგუფი"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } შეიცავს ${ BRAND_NAME } Scribe წერის დამხმარეს"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } სამუდამო გეგმას განახლების ფასი არ გააჩნია. ის ერთჯერადი გადასახადია და ${ PASS_SHORT_APP_NAME }-თან სამუდამო წვდომას მოგცემთ."
@@ -8937,6 +8950,9 @@
       "Need more aliases?": [
         "მეტი ფსევდონიმი გჭირდებათ?"
       ],
+      "Need to share more files with edit access?": [
+        "გჭირდებათ, მეტი ფაილი გააზიაროთ ჩასწორების წვდომით?"
+      ],
       "Network error": [
         "ქსელის შეცდომა"
       ],
@@ -9038,9 +9054,6 @@
       ],
       "Share ${ name }": [
         "${ name }-ის გაზიარება"
-      ],
-      "Share files with full edit access": [
-        "ფაილების გაზიარება სრული წვდომის ჩასწორებაზე"
       ],
       "Sign in and grant access": [
         "შესვლა და წვდომის მინიჭება"

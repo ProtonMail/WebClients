@@ -2453,6 +2453,11 @@
         "Răspunsuri: ${ repliedCount }",
         "Răspunsuri: ${ repliedCount }"
       ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } legătură securizată",
+        "${ secureLinksCount } legături securizate",
+        "${ secureLinksCount } de legături securizate"
+      ],
       "${ usageCount } login": [
         "${ usageCount } autentificare",
         "${ usageCount } autentificări",

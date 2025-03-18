@@ -56,6 +56,9 @@
       "Add address": [
         "주소 추가"
       ],
+      "Add another account": [
+        "다른 계정 추가"
+      ],
       "Add birthday": [
         "생일 추가"
       ],
@@ -343,6 +346,12 @@
       ],
       "Help": [
         "도움말"
+      ],
+      "Help and feedback": [
+        "도움말 및 의견"
+      ],
+      "Help and resources": [
+        "지원 및 도움말"
       ],
       "Hide advanced PGP settings": [
         "고급 PGP 설정 숨기기"
@@ -1065,6 +1074,9 @@
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "무제한 로그인, 신용 카드, hide-my-email 별칭 등"
+      ],
       "Use your own email domain": [
         "나만의 이메일 주소 사용"
       ],
@@ -1125,8 +1137,14 @@
       "Annually": [
         "연간"
       ],
+      "Lifetime": [
+        "평생"
+      ],
       "Monthly": [
         "매월"
+      ],
+      "New!": [
+        "신규!"
       ],
       "Two-year": [
         "2년"
@@ -2515,6 +2533,31 @@
       ],
       "event": [
         "이벤트"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "모든 ${ BRAND_NAME } 서비스에서 사용"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }용"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }용"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }용"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }용"
       ]
     },
     "Cycle": {
@@ -4336,6 +4379,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME }에 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
       ],
@@ -4887,6 +4933,9 @@
       ],
       "Organization size": [
         "조직 크기"
+      ],
+      "Other accounts": [
+        "다른 계정"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "조직 내 다른 사용자들은 나의 바쁜 시간대를 확인할 수 있습니다. 이벤트의 세부 정보는 공유되지 않습니다."
@@ -6621,6 +6670,9 @@
       "${ size } storage": [
         "${ size } 저장공간"
       ],
+      "${ size } storage per user": [
+        "사용자 당 ${ size } 저장 공간"
+      ],
       "1 TB secure storage": [
         "1 TB 보안 저장공간"
       ],
@@ -6798,6 +6850,9 @@
       "Limited support": [
         "제한된 지원"
       ],
+      "Manage user permissions and access": [
+        "사용자 권한 및 접근 관리"
+      ],
       "Multiple admin roles": [
         "다중 관리자 역할"
       ],
@@ -6815,6 +6870,9 @@
       ],
       "Password manager": [
         "비밀번호 관리자"
+      ],
+      "Password manager to secure credentials": [
+        "자격 증명 보호를 위한 비밀번호 관리자"
       ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
@@ -7054,6 +7112,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 업습니다."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "한 번만 결제하여 평생 비밀번호와 신원 정보를 보호하세요."
       ],
       "Popular": [
         "인기"
@@ -7776,6 +7837,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "안전한 금고 공유"
+      ],
+      "Secure vault, item and link sharing": [
+        "안전한 금고, 항목 및 링크 공유"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "무제한 로그인, 메모 및 신용 카드 등등"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8853,6 +8920,9 @@
       ],
       "${ n } VPN connection per user": [
         "사용자 당 ${ n }개 VPN 연결"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "사용자 당 ${ n }개 기기에 대한 VPN 연결"
       ]
     },
     "Subscription change warning": {
@@ -9789,6 +9859,9 @@
       "Groups": [
         "그룹"
       ],
+      "Help and feedback": [
+        "도움말 및 의견"
+      ],
       "Help center": [
         "지원 센터"
       ],
@@ -10206,6 +10279,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가에서 자동 선택됨"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }개 이상 국가 내 서버"
       ]
     },
     "vpn_2024: renew": {

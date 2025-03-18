@@ -857,8 +857,17 @@
       "${ price } per domain": [
         "${ price } za doménu"
       ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
+      ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
@@ -1209,8 +1218,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Zásada neukladania záznamov v ${ BRAND_NAME } VPN potvrdená externým auditom"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Zásada neukladania záznamov v ${ VPN_APP_NAME } VPN potvrdená externým auditom"
       ],
       "**Streaming** is included in your subscription.": [
         "**Streamovanie** je súčasťou vášho predpolatného."
@@ -1233,8 +1242,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Zvýšte rýchlosť VPN až o 400 % pomocou funkcie VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Nezávislí bezpečnostní experti overili, že Proton VPN nezaznamenáva údaje používateľov ani nevykonáva žiadne úkony, ktoré by mohli ohroziť vaše súkromie."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Nezávislí bezpečnostní experti overili, že ${ VPN_APP_NAME } nezaznamenáva údaje používateľov ani nevykonáva žiadne úkony, ktoré by mohli ohroziť vaše súkromie."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Je používanie aplikácie Telegram bezpečné? Ako si povieme v tomto článku, veľmi to závisí od toho, ako ho používate."
@@ -3928,6 +3937,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete aktivovať režim jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
       ],
@@ -4240,6 +4252,9 @@
       "By leaving now, changes may not be saved": [
         "Pokiaľ teraz opustíte stránku, zmeny nemusia byť uložené"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalendár integrovaný s ${ MAIL_APP_NAME } a ${ CONTACTS_APP_NAME }"
+      ],
       "Can’t access your recovery email?": [
         "Nemáte prístup k emailu na obnovenie?"
       ],
@@ -4254,6 +4269,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Cloudové úložisko integrované s ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Ocenenie CNET editors choice s hodnotením 8,4 z 10"
@@ -4467,6 +4485,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Emailová služba integrovaná s ${ CALENDAR_APP_NAME } a ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Nastavenie emailu uložené"
@@ -4825,6 +4846,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Uistite sa, že ste ${ addARecoveryMethod }, aby ste sa mohli dostať späť do svojho účtu, ak zabudnete heslo."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Manuálne zadajte túto informáciu do vášho zariadenia určeného pre dvojstupňové overenie a nastavte svoj účet. ${ switchButton }."
       ],
@@ -4959,6 +4983,9 @@
       ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
+      ],
+      "Password manager with extra account security": [
+        "Správca hesiel s dodatočným zabezpečením účtu"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Heslo musí mať ${ MIN_PASSWORD_LENGTH } a viac znakov."
@@ -5148,6 +5175,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Vyberte príslušnosť používateľov z ${ getFormattedOrganization }, ktorú chcete povoliť vo vašej organizácii ${ BRAND_NAME }:"
+      ],
+      "Self-custodial crypto wallet": [
+        "Vlastná kryptopeňaženka"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Posielajte emaily, aby ste povzbudili svojich členov k ochrane ich účtov pomocou 2FA."
@@ -5559,6 +5589,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN s vyhradenými servermi a IP adresami"
       ],
       "Warning:": [
         "Upozornenie:"
@@ -10329,6 +10362,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -10629,47 +10703,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -11051,6 +11084,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Vyberte server, ku ktorému sa chcete pripojiť"
+      ],
+      "Access control": [
+        "Kontrola prístupu"
       ],
       "Account": [
         "Účet"
@@ -11500,7 +11536,7 @@
         "Minikalendár"
       ],
       "Multi-user support": [
-        "Podpora pre viac uživateľov"
+        "Podpora viacerých používateľov"
       ],
       "Network error": [
         "Chyba siete"

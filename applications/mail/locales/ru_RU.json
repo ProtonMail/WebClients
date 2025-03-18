@@ -1110,11 +1110,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select All": [
-        "Выбрать все"
-      ],
       "Select all": [
         "Выделить все"
+      ],
+      "Select All": [
+        "Выбрать все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -6854,6 +6854,9 @@
       ],
       "Initializing…": [
         "Инициализация…"
+      ],
+      "Insert image": [
+        "Вставить изображение"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -14203,6 +14206,11 @@
         "Сегодня"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
@@ -14286,11 +14294,6 @@
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "стабильная версия"
@@ -14344,6 +14347,12 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } страны",
+        "${ numberOfCountries } стран",
+        "${ numberOfCountries } стран",
+        "${ numberOfCountries } стран"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } в ${ numberOfCountries } стране",

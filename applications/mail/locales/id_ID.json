@@ -51,6 +51,9 @@
       "Add address": [
         "Tambah alamat"
       ],
+      "Add another account": [
+        "Tambah akun lainnya"
+      ],
       "Add Bcc recipients": [
         "Tambah penerima Bcc"
       ],
@@ -579,6 +582,12 @@
       "Help": [
         "Bantuan"
       ],
+      "Help and feedback": [
+        "Bantuan dan saran"
+      ],
+      "Help and resources": [
+        "Bantuan dan sumber daya"
+      ],
       "Hide": [
         "Sembunyikan"
       ],
@@ -1101,11 +1110,11 @@
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
-      "Select All": [
-        "Pilih Semua"
-      ],
       "Select all": [
         "Pilih semua"
+      ],
+      "Select All": [
+        "Pilih Semua"
       ],
       "Select all messages": [
         "Pilih semua pesan"
@@ -1519,8 +1528,14 @@
       "${ price } per domain": [
         "${ price } per domain"
       ],
+      "${ price } per seat": [
+        "${ price } per kuota"
+      ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } kuota ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kuota asisten penulisan"
@@ -5848,6 +5863,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } juga dapat digunakan untuk melindungi bisnis Anda."
       ],
@@ -6808,6 +6826,9 @@
       "Organization size": [
         "Ukuran organisasi"
       ],
+      "Other accounts": [
+        "Akun lainnya"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
@@ -6948,6 +6969,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap tersimpan pada perangkat ini kecuali Anda memilih untuk menghapusnya."
+      ],
+      "Refining email list in progress": [
+        "Proses penyempurnaan daftar email sedang berlangsung"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
@@ -13043,6 +13067,9 @@
       "Groups": [
         "Grup"
       ],
+      "Help and feedback": [
+        "Bantuan dan saran"
+      ],
       "Help center": [
         "Pusat bantuan"
       ],
@@ -13517,6 +13544,11 @@
         "Hari ini"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
@@ -13600,11 +13632,6 @@
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
@@ -13661,6 +13688,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "Terpilih secara otomatis dari ${ numberOfCountries } negara"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Server di ${ numberOfCountries }+ negara"
       ]
     },
     "vpn_2024: renew": {

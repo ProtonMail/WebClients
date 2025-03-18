@@ -853,8 +853,15 @@
       "${ price } per domain": [
         "${ price } per domene"
       ],
+      "${ price } per seat": [
+        "${ price } per lisens"
+      ],
       "${ price } per user": [
         "${ price } per bruker"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } lisens",
+        "${ seats } ${ LUMO_APP_NAME } lisenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentlisens",
@@ -1193,8 +1200,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "${ BRAND_NAME } VPN sine retningslinjer mot loggføring bekreftet av en ekstern revisjon"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "${ VPN_APP_NAME }s retningslinjer mot loggføring bekreftet av en ekstern revisjon"
       ],
       "**Streaming** is included in your subscription.": [
         "**Strømming** er inkludert i abonnementet ditt."
@@ -1217,8 +1224,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Øk VPN-hastighetene dine med opptil 400 % med VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Uavhengige sikkerhetseksperter bekreftet at Proton VPN ikke logger brukerdata eller deltar i noen praksis som kan kompromittere personvernet ditt."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Uavhengige sikkerhetseksperter bekreftet at ${ VPN_APP_NAME } ikke logger brukerdata eller deltar i noen praksis som kan kompromittere personvernet ditt."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Er Telegram trygt å bruke? Som vi skal diskutere i denne artikkelen, avhenger det veldig av hvordan du bruker det."
@@ -3870,6 +3877,9 @@
         "${ hasTwoFAMembersLength }${ canHaveTwoFAMembersLength } av ikke-SSO-medlemmene bruker tofaktorautentisering for å logge på organisasjonen.",
         "${ hasTwoFAMembersLength }${ canHaveTwoFAMembersLength } av ikke-SSO-medlemmene bruker tofaktorautentisering for å logge på organisasjonen."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og det andre passordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
       ],
@@ -3900,6 +3910,10 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } utløper om ${ daysLeft } dag.",
+        "${ planName } utløper om ${ daysLeft } dager."
       ],
       "${ planName } expires today.": [
         "${ planName } utløper i dag."
@@ -4148,6 +4162,9 @@
       "By leaving now, changes may not be saved": [
         "Ved å forlate nå, kan det hende at endringer ikke lagres"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalender, integrert med ${ MAIL_APP_NAME } og ${ CONTACTS_APP_NAME }"
+      ],
       "Can’t access your recovery email?": [
         "Får du ikke tilgang til gjenopprettings-e-posten din?"
       ],
@@ -4162,6 +4179,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Skylagring, integrert med ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktørens valgpris med en vurdering på 8.4 av 10"
@@ -4367,6 +4387,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjeneste, integrert med ${ CALENDAR_APP_NAME } og ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferanse for sending av e-post lagret"
@@ -4725,6 +4748,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for at du ${ addARecoveryMethod } slik at du kan få komme inn på kontoen din igjen hvis du glemmer passordet."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Administrer hvilke ${ BRAND_NAME }-applikasjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Angi denne informasjonen manuelt i tofaktorautentiseringsenheten for å konfigurere kontoen din. ${ switchButton }."
       ],
@@ -4858,6 +4884,9 @@
       ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
+      ],
+      "Password manager with extra account security": [
+        "Passordbehandling med ekstra kontosikkerhet"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Passordet må være ${ MIN_PASSWORD_LENGTH } tegn eller mer."
@@ -5041,6 +5070,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Velg brukertilknytningene fra ${ getFormattedOrganization } som du vil tillate inn i ${ BRAND_NAME }-organisasjonen din:"
+      ],
+      "Self-custodial crypto wallet": [
+        "Selvforvaltet kryptolommebok"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Send e-poster for å oppmuntre dine medlemmer til å beskytte deres kontoer med 2FA."
@@ -5442,6 +5474,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN med dedikerte tjenere og IP-adresser"
       ],
       "Warning:": [
         "Advarsel:"
@@ -10016,7 +10051,7 @@
         "Høyhastighets VPN på ${ maxVpn } enheter"
       ],
       "VPN connection for ${ n } devices per user": [
-        "VPN-tilkobling for ${ n } enheter per bruker",
+        "VPN-tilkobling for ${ n } enhet per bruker",
         "VPN-tilkobling for ${ n } enheter per bruker"
       ]
     },
@@ -10056,6 +10091,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "For ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription reminder": {
@@ -10346,47 +10422,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -10765,6 +10800,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Velg en tjener å koble til"
+      ],
+      "Access control": [
+        "Adgangskontroll"
       ],
       "Account": [
         "Konto"
@@ -12036,6 +12074,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Velger automatisk fra ${ numberOfCountries } land",
         "Velger automatisk fra ${ numberOfCountries } land"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Tjenere i ${ numberOfCountries }+ land",
+        "Tjenere i ${ numberOfCountries }+ land"
       ]
     },
     "vpn_2024: renew": {

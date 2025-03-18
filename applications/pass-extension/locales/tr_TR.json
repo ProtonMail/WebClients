@@ -2381,6 +2381,10 @@
         "${ repliedCount } yanıt",
         "${ repliedCount } yanıt"
       ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } güvenli bağlantı",
+        "${ secureLinksCount } güvenli bağlantı"
+      ],
       "${ years } year": [
         "${ years } yıl",
         "${ years } yıl"
@@ -3841,14 +3845,6 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
-      ]
-    },
-    "Valentine_2025": {
-      "VALENTINE'S DEAL": [
-        "SEVGİLİLER GÜNÜ FIRSATI"
-      ],
-      "Valentine's deal: ${ planName } 50% off for you": [
-        "Sevgililer Günü fırsatı: ${ planName } için %50 indirim"
       ]
     },
     "Validation": {
