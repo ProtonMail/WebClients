@@ -2381,6 +2381,10 @@
         "${ repliedCount } antwoord",
         "${ repliedCount } antwoorden"
       ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } beveiligde link",
+        "${ secureLinksCount } beveiligde links"
+      ],
       "${ years } year": [
         "${ years } jaar",
         "${ years } jaren"
@@ -3841,14 +3845,6 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
-      ]
-    },
-    "Valentine_2025": {
-      "VALENTINE'S DEAL": [
-        "VALENTIJNSDEAL"
-      ],
-      "Valentine's deal: ${ planName } 50% off for you": [
-        "Valentijnsaanbieding: ${ planName } 50% korting voor u"
       ]
     },
     "Validation": {

@@ -1451,8 +1451,15 @@
       "${ price } per domain": [
         "${ price } por domínio"
       ],
+      "${ price } per seat": [
+        "${ price } por licença"
+      ],
       "${ price } per user": [
         "${ price } por utilizador"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -1859,6 +1866,9 @@
       "Unlimited folders, labels and filters": [
         "Pastas, etiquetas e filtros ilimitados"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Inícios de sessão, cartões de crédito, alias do ide-my-email ilimitados e mais"
+      ],
       "Use your own email domain": [
         "Utilize o seu próprio domínio de e-mail"
       ],
@@ -1888,8 +1898,8 @@
         "Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases do hide-my-email ilimitados, partilha, A2F integrada, o ${ DARK_WEB_MONITORING_NAME } e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteja seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais.",
-        "Proteja seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais."
+        "Proteja os seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais.",
+        "Proteja os seus e-mails e agende com encriptação ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escrita ${ BRAND_NAME } Scribe, aliases ilimitados do hide-my-email e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Proteja os seus e-mails e agendamentos com encriptação ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte a domínios de e-mail personalizados, aliases de hide-my-email ilimitados e mais.",
@@ -1944,11 +1954,56 @@
       ]
     },
     "Blog": {
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Política sem registos do ${ VPN_APP_NAME } confirmada por uma auditoria externa"
+      ],
+      "**Streaming** is included in your subscription.": [
+        "O **Streaming** está incluído na sua subscrição."
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "Alguém pode ver o meu histórico de internet se usarmos o mesmo WiFi?"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "Ative o kill switch e a ligação automática nas configurações da VPN."
+      ],
       "Get round-the-clock protection": [
         "Obtenha proteção 24 horas por dia"
       ],
       "How safe is Telegram?": [
         "Quão seguro é o Telegram?"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "Neste artigo, analisamos quem pode ver o seu histórico de internet quando utiliza Wi-Fi, o que podem ver e por que motivo poderiam fazer isso."
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "Aumente as velocidades de VPN em até 400% com VPN Accelerator."
+      ],
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Especialistas independentes em segurança verificaram que o ${ VPN_APP_NAME } não regista dados de utilizador nem se envolve em práticas que possam comprometer a sua privacidade."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "O Telegram é seguro de usar? Como vamos discutir neste artigo, isso depende bastante de como o utiliza."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "Saiba como ativar ${ VPN_APP_NAME } no seu router."
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "Proteja a sua empresa contra violações de dados e torne o trabalho remoto mais seguro com uma VPN empresarial."
+      ],
+      "Protect your whole household with 1 device": [
+        "Proteja toda a sua casa com 1 dispositivo"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "Aproveite todas as principais plataformas de streaming com o ${ PLAN_NAMES[PLANS.VPN] }."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Este artigo foi atualizado para incluir os protocolos WireGuard e Stealth VPN."
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "O VPN Accelerator utiliza uma combinação de tecnologias avançadas de VPN para melhorar a estabilidade da conexão e aumentar a sua velocidade."
+      ],
+      "Watch your favorite movies and TV shows": [
+        "Veja os seus filmes e programas de TV favoritos"
       ],
       "Which VPN protocol is the best?": [
         "Qual é o melhor protocolo VPN?"
@@ -3994,13 +4049,16 @@
         "Transferir para Linux"
       ],
       "Download for MacOS": [
-        "Transferir para Mac OS"
+        "Transferir para macOS"
       ],
       "Download for Windows": [
         "Transferir para Windows"
       ],
       "Download on the Apple App Store": [
         "Transferir na Apple App Store"
+      ],
+      "Download on the Google Play Store": [
+        "Transferir na Google Play Store"
       ],
       "Fire TV": [
         "Fire TV"
@@ -5834,6 +5892,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Tudo no ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "Servidores VPN mais rápidos"
       ],
@@ -5868,6 +5929,11 @@
       ],
       "Secure streaming": [
         "Streaming seguro"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Aceda a conteúdo em serviços de streaming, incluindo Netflix, Disney+, Prime Video e muito mais, de qualquer lugar."
       ]
     },
     "fido2: Action": {
@@ -6522,6 +6588,9 @@
       "Enjoying ${ planName }?": [
         "Está a gostar do ${ planName }?"
       ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "Desbloqueie 4 serviços premium de privacidade adicionais por apenas **${ priceString }** a mais por mês."
+      ],
       "Upgrade your privacy": [
         "Melhorar a sua privacidade"
       ],
@@ -7007,6 +7076,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quer partilhar dados consigo em ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ${ MAIL_APP_NAME } também pode ser utilizado com uma palavra-passe única que substitui a palavra-passe de início de sessão e da caixa de correio e a segunda palavra-passe. Para mudar para o modo de palavra-passe única, introduza a palavra-passe única que pretende utilizar e clique em Guardar."
       ],
@@ -7047,6 +7119,10 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "O ${ planName } expira em ${ daysLeft } dia.",
+        "O ${ planName } expira em ${ daysLeft } dias."
       ],
       "${ planName } expires today.": [
         "${ planName } expira hoje."
@@ -7135,6 +7211,9 @@
       ],
       "* No credit card required.": [
         "* Não é necessário cartão de crédito."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "O **${ appName }** não é suportado na sua organização **${ organizationName }**."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obtenha um endereço ${ BRAND_NAME } ** para utilizar todos os serviços ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
@@ -7498,6 +7577,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ao partilhar todos os detalhes de evento deste calendário, aceita conceder acesso ao ${ BRAND_NAME } à informação encriptada neste calendário."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendário, integrado com o ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
+      ],
       "Cancel anytime": [
         "Cancele a qualquer momento"
       ],
@@ -7516,9 +7598,6 @@
       "Check the status of imports and forwarding.": [
         "Verificar o estado das importações e do reencaminhamento."
       ],
-      "Choose an app to get started": [
-        "Escolha uma aplicação para começar"
-      ],
       "Choose an Entity ID to continue.": [
         "Escolha um ID da entidade para continuar."
       ],
@@ -7527,6 +7606,9 @@
       ],
       "Close this screen to exit.": [
         "Feche este ecrã para sair."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Armazenamento em nuvem, integrado com o ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Prémio CNET Editors' Choice com classificação de 8,4 de 10"
@@ -7740,6 +7822,12 @@
         "domínio utilizado",
         "domínios utilizados"
       ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "Não perca o acesso às suas funcionalidades do ${ appName }. Ative a renovação automática hoje mesmo."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "Não perca o acesso às suas funcionalidades premium. Ative a renovação automática hoje mesmo."
+      ],
       "Done! We sent a code to ${ destination }.": [
         "Já está! Enviámos um código para ${ destination }."
       ],
@@ -7809,6 +7897,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "O alojamento de e-mail está apenas disponível para domínios que já possui. O registo de domínio não está atualmente disponível através da ${ BRAND_NAME }. No entanto, pode alojar o e-mail para domínios registados em qualquer registador de domínios."
       ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Serviço de e-mail, integrado com o ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
+      ],
       "Emailing preference saved": [
         "Preferências de e-mail guardadas"
       ],
@@ -7817,6 +7908,12 @@
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Os emails marcados com a etiqueta ${ nameDeleted } não serão eliminados e ainda podem ser encontrados na respetiva pasta."
+      ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Ative a renovação automática para manter o acesso às funcionalidades e aos servidores Plus."
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Ative a renovação automática para manter o acesso às suas funcionalidades premium."
       ],
       "Enable email notifications": [
         "Ativar as notificações por email"
@@ -8390,6 +8487,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Certifique-se de que ${ addARecoveryMethod } para que possa voltar à sua conta se se esquecer da palavra-passe."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Gere quais aplicações da ${ BRAND_NAME } os membros da sua organização podem aceder. Se desativado, apenas os administradores terão acesso."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gere as suas preferências de notificação por e-mail para o ${ DOCS_APP_NAME }."
       ],
@@ -8620,6 +8720,9 @@
       ],
       "Password generator rules successfully saved": [
         "As regras do gerador de palavra-passe foram guardadas."
+      ],
+      "Password manager with extra account security": [
+        "Gestor de palavras-passe com segurança extra para contas"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "A palavra-passe deve ter ${ MIN_PASSWORD_LENGTH } caracteres ou mais."
@@ -8879,6 +8982,9 @@
       "Select a service provider to start": [
         "Selecione um provedor de serviços para iniciar"
       ],
+      "Select a service to continue": [
+        "Selecione um serviço para continuar"
+      ],
       "Select one or multiple user affiliations": [
         "Selecione uma ou várias afiliações para o utilizador."
       ],
@@ -8893,6 +8999,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione os calendários a importar. Um novo calendário será criado por cada calendário importado, de acordo com o número de calendários disponível no seu plano."
+      ],
+      "Self-custodial crypto wallet": [
+        "Carteira de criptomoedas de autocustódia"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envie mensagens por e-mail para incentivar os seus membros a protegerem as suas contas com A2F."
@@ -9553,6 +9662,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN com servidores e endereços IP dedicados"
+      ],
       "Want to learn more?": [
         "Quer saber mais?"
       ],
@@ -9770,6 +9882,9 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "Pode ativar a secção de fotos a partir da interface com a opção abaixo."
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Pode obter todos os nossos serviços premium de privacidade num único pacote — e custa apenas **${ priceString }/mês**."
+      ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
       ],
@@ -9846,6 +9961,9 @@
       ],
       "You have no transactions.": [
         "Não tem transações."
+      ],
+      "You have unpublished changes": [
+        "Tem alterações não publicadas."
       ],
       "You may be redirected to your bank’s website.": [
         "Pode ser redirecionado para o sítio Web do seu banco."
@@ -12887,6 +13005,9 @@
       "Password manager": [
         "Gestor de palavras-passe"
       ],
+      "Password manager to secure credentials": [
+        "Gestor de palavras-passe para proteger credenciais"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
@@ -13168,6 +13289,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "O nosso plano ${ visionary } já não está disponível para novos subscritores, pois se trata de um plano especial para utilizadores originais da ${ BRAND_NAME } com caraterísticas e vantagens especiais."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Pague uma vez, proteja as suas palavras-passe e identidades para sempre."
       ],
       "Popular": [
         "Popular"
@@ -14350,6 +14474,9 @@
       ]
     },
     "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
+        "Obtenha acesso vitalício a todas as funcionalidades premium atuais e futuras do ${ PASS_APP_NAME } com um único pagamento. "
+      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Boas-vindas ao ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
@@ -14616,6 +14743,9 @@
       "Secure vault sharing": [
         "Partilha segura de cofre"
       ],
+      "Secure vault, item and link sharing": [
+        "Cofres, partilha de ligações e itens seguros"
+      ],
       "Secure your family’s passwords and online identities": [
         "Proteja as palavras-passe e as identidades on-line da sua família"
       ],
@@ -14631,6 +14761,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Oferta especial de lançamento: obtenha ${ title } por ${ price } para sempre!"
       ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "Oferta especial: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Começar a utilizar o ${ PASS_APP_NAME }"
       ],
@@ -14642,6 +14775,9 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "para começar a utilizar o ${ PASS_APP_NAME } no seu telemóvel"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Número ilimitado de inícios de sessão, notas, cartões de crédito e muito mais"
       ],
       "Updating your account": [
         "A atualizar a sua conta"
@@ -15163,6 +15299,15 @@
       ]
     },
     "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "Armazenamento na nuvem encriptado para fotografias e ficheiros"
+      ],
+      "Password manager with identity protection": [
+        "Gestor de palavras-passe com proteção de identidade"
+      ],
+      "Secure email that protects your privacy": [
+        "O e-mail seguro que protege a sua privacidade"
+      ],
       "Your gateway to online freedom": [
         "A sua porta de entrada para a liberdade online"
       ]
@@ -17099,6 +17244,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN de alta velocidade em ${ maxVpn } dispositivo",
         "VPN de alta velocidade em ${ maxVpn } dispositivos"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Conexão VPN para ${ n } dispositivos por utilizador",
+        "Conexão VPN para ${ n } dispositivos por utilizador"
       ]
     },
     "Subscription change warning": {
@@ -17560,6 +17709,9 @@
       "Catch-all address updated": [
         "Endereço Catch-all atualizado"
       ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "As alterações foram publicadas. As suas alterações estarão visíveis para todos os utilizadores nas próximas horas."
+      ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
       ],
@@ -18011,6 +18163,9 @@
       "A filter with this name already exists": [
         "Já existe um filtro com este nome"
       ],
+      "Access control": [
+        "Controlo de acesso"
+      ],
       "Accessibility": [
         "Acessibilidade"
       ],
@@ -18260,6 +18415,9 @@
       ],
       "Connect organization": [
         "Conectar a organização"
+      ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo, com o ${ vpnPlus }. ${ upgradeButton }"
       ],
       "Connection status": [
         "Estado da ligação"
@@ -18659,6 +18817,9 @@
       ],
       "Get more from your VPN": [
         "Obtenha mais da sua VPN"
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "Instale a aplicação em todos os seus dispositivos e proteja até ${ VPN_CONNECTIONS } de uma só vez."
       ],
       "Get the apps": [
         "Obter as aplicações"
@@ -19951,8 +20112,26 @@
       ]
     },
     "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "**Poupe até ${ priceString }** com uma subscrição mais longa. As mesmas funcionalidades premium a um preço mais baixo."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Todos os serviços da ${ BRAND_NAME } premiu com uma subscrição fácil."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Todos os serviços premium de ${ BRAND_NAME }. A partir de apenas ${ fallBackString } por mês."
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "Todos os serviços premium de ${ BRAND_NAME } . Apenas **${ priceString }** a mais por mês."
+      ],
       "Did you know?": [
         "Sabia?"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "Pode proteger até ${ FAMILY_MAX_USERS } pessoas com o ${ PLAN_NAMES[plan] }. A partir de apenas ${ priceString }/mês por conta."
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "Pode proteger até ${ FAMILY_MAX_USERS } pessoas com o ${ PLAN_NAMES[PLANS.DUO] } ou ${ PLAN_NAMES[PLANS.FAMILY] }. A partir de apenas ${ priceString }/mês por conta."
       ]
     },
     "upsell panel": {
@@ -19961,6 +20140,9 @@
       ],
       "Recommended": [
         "Recomendado"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Poupe ${ totals.discountPercentage }%"
       ]
     },
     "User referee invited via email": {
@@ -20113,6 +20295,26 @@
         "Outro"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Comunique e agende com encriptação de ponta a ponta."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Obtenha mais da sua assinatura de ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Mantenha os seus ficheiros, fotos e documentos seguros com ${ maxDriveSpace } de armazenamento na nuvem gratuito."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Defina palavras-passe seguras sem complicações."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Com o ${ planTitlePlusMaybeBrand }, obtém acesso gratuito ao ${ VPN_APP_NAME } e outros serviços de privacidade."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Com o ${ planTitlePlusMaybeBrand }, tem acesso gratuito a todos os serviços de privacidade da${ BRAND_NAME }."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Vídeo, BBC iPlayer, ESPN+, Disney+, HBO Now e muito mais."
@@ -20142,6 +20344,14 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Seleção automática de ${ numberOfCountries } país",
+        "Seleção automática de ${ numberOfCountries } países"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servidores em ${ numberOfCountries } país",
+        "Servidores em mais de ${ numberOfCountries } países"
       ]
     },
     "vpn_2024: renew": {

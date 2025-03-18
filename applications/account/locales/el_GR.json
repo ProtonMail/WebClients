@@ -1451,8 +1451,15 @@
       "${ price } per domain": [
         "${ price } ανά τομέα"
       ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
+      ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } θέση",
+        "${ seats } ${ LUMO_APP_NAME } θέσεις"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } άδεια βοηθού γραφής",
@@ -1947,8 +1954,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Η πολιτική μη καταγραφής του ${ BRAND_NAME } VPN επιβεβαιώνεται από ανεξάρτητο εργαστήριο."
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Η πολιτική μη τήρησης αρχείων καταγραφής του ${ VPN_APP_NAME } επιβεβαιώθηκε από εξωτερικό έλεγχο"
       ],
       "**Streaming** is included in your subscription.": [
         "Η **μετάδωση ροής** περιλαμβάνεται στη συνδρομή σας."
@@ -1971,8 +1978,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Αυξήστε τις ταχύτητες σύνδεσης έως και 400% με το VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Ανεξάρτητοι ειδικοί ασφάλειας επιβεβαιώνουν ότι το ProtonVPN δεν καταγράφει δεδομένα χρηστών ούτε χρησιμοποιεί πρακτικές που θα μπορούσαν να θέσουν το απόρρητό σας σε κίνδυνο."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Ανεξάρτητοι ειδικοί ασφάλειας επιβεβαιώνουν ότι το ${ VPN_APP_NAME } δεν καταγράφει δεδομένα χρηστών ούτε χρησιμοποιεί πρακτικές που θα μπορούσαν να θέσουν το απόρρητό σας σε κίνδυνο."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Είναι το Telegram ασφαλές; Όπως θα δούμε σε αυτό το άρθρο, αυτό εξαρτάται από τον τρόπο που το χρησιμοποιείτε."
@@ -7069,6 +7076,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "Ο ${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης που αντικαθιστά τόσο τον κωδικό σύνδεσης όσο και τον δεύτερο κωδικό πρόσβασης. Για να μεταβείτε στη λειτουργία ενός κωδικού πρόσβασης, πληκτρολογήστε τον μοναδικό κωδικό πρόσβασης που θέλετε να χρησιμοποιήσετε και κάντε κλικ στην επιλογή Αποθήκευση."
       ],
@@ -7201,6 +7211,9 @@
       ],
       "* No credit card required.": [
         "* Δεν απαιτείται πιστωτική κάρτα."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "Το **${ appName }** δεν υποστηρίζεται στον οργανισμό σας **${ organizationName }**."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένων των ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
@@ -7564,6 +7577,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Κοινοποιώντας όλες τις λεπτομέρειες των εκδηλώσεων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στην ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Ημερολόγιο, ενοποιημένο με ${ MAIL_APP_NAME } και ${ CONTACTS_APP_NAME }"
+      ],
       "Cancel anytime": [
         "Ακυρώστε ανά πάσα στιγμή"
       ],
@@ -7582,9 +7598,6 @@
       "Check the status of imports and forwarding.": [
         "Ελέγξτε την κατάσταση των εισαγωγών και της προώθησης."
       ],
-      "Choose an app to get started": [
-        "Επιλέξτε μια εφαρμογή για να ξεκινήσετε"
-      ],
       "Choose an Entity ID to continue.": [
         "Επιλέξτε ένα Entity ID για να συνεχίσετε."
       ],
@@ -7593,6 +7606,9 @@
       ],
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Χώρος αποθήκευσης στο cloud, ενοποιημένος με ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Βραβείο επιλογής συντακτών CNET με βαθμολογία 8,4 στα 10"
@@ -7880,6 +7896,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Υπηρεσία e-mail, ενοποιημένη με ${ CALENDAR_APP_NAME } και ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Η προτίμηση email αποθηκεύτηκε"
@@ -8468,6 +8487,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Βεβαιωθείτε ότι έχετε ${ addARecoveryMethod }, ώστε να μπορείτε να αποκτήσετε ξανά πρόσβαση στο λογαριασμό σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Ελέγξτε ποιες εφαρμογές ${ BRAND_NAME } είναι προσβάσιμες από τα μέλη του οργανισμού σας. Αν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Διαχειριστείτε τις προτιμήσεις ειδοποιήσεων ηλεκτρονικού ταχυδρομείου για ${ DOCS_APP_NAME }."
       ],
@@ -8695,6 +8717,9 @@
       ],
       "Password generator rules successfully saved": [
         "Οι κανόνες δημιουργίας κωδικών πρόσβασης αποθηκεύτηκαν με επιτυχία"
+      ],
+      "Password manager with extra account security": [
+        "Διαχειριστής κωδικών πρόσβασης με επιπλέον ασφάλεια λογαριασμού"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Ο κωδικός πρόσβασης πρέπει να είναι ${ MIN_PASSWORD_LENGTH } χαρακτήρες ή περισσότεροι."
@@ -8954,6 +8979,9 @@
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
       ],
+      "Select a service to continue": [
+        "Επιλέξτε μία υπηρεσία για να συνεχίσετε"
+      ],
       "Select one or multiple user affiliations": [
         "Επιλέξτε μία ή περισσότερες συνεργασίες χρηστών"
       ],
@@ -8968,6 +8996,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
+      ],
+      "Self-custodial crypto wallet": [
+        "Crypto Wallet αυτοφύλαξης"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Στείλτε email για να ενθαρρύνετε τα μέλη σας να προστατεύσουν τους λογαριασμούς τους με το 2FA."
@@ -9627,6 +9658,9 @@
       ],
       "Visa Secure logo": [
         "λογότυπο Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN με αποκλειστικούς διακομιστές και διευθύνσεις IP"
       ],
       "Want to learn more?": [
         "Θέλετε να μάθετε περισσότερα;"
@@ -18116,6 +18150,9 @@
       ],
       "A filter with this name already exists": [
         "Υπάρχει ήδη ένα φίλτρο με αυτό το όνομα"
+      ],
+      "Access control": [
+        "Έλεγχος πρόσβασης"
       ],
       "Accessibility": [
         "Προσβασιμότητα"

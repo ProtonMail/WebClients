@@ -1994,6 +1994,9 @@
       "Please consider leaving a review.": [
         "리뷰 쓰는 것을 고려해 보세요."
       ],
+      "Please contact your administrator": [
+        "관리자에게 문의하세요."
+      ],
       "Please do not close this window": [
         "이 창을 닫지 마세요."
       ],
@@ -2386,6 +2389,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount }단어"
       ],
+      "${ count } item": [
+        "${ count }개 항목"
+      ],
       "${ days } day": [
         "${ days }일"
       ],
@@ -2412,6 +2418,9 @@
       ],
       "${ repliedCount } reply": [
         "${ repliedCount }개 답장"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } 안전한 링크"
       ],
       "${ usageCount } login": [
         "${ usageCount }개 로그인"
@@ -3030,6 +3039,9 @@
       ],
       "Reveal password": [
         "비밀번호 표시"
+      ],
+      "Secure links": [
+        "안전한 링크"
       ],
       "Secure password sharing": [
         "안전한 비밀번호 공유"
@@ -4022,6 +4034,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } 메모와 SimpleLogin 메모와의 차이점이 무엇인가요?"
       ],
+      "You don't have any vault": [
+        "금고가 아무 것도 없네요"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } 구독이 ${ endDate }에 종료됩니다."
       ],
@@ -4325,6 +4340,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "이 금고에 대한 접근 권한이 더 이상 없습니다. 다시 확인하려면, 새 초대가 필요합니다."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "사용자의 관리자가 항목을 추가하기 전에 금고를 우선 생성해야 합니다."
+      ],
+      "Your organization does not allow creating a vault": [
+        "사용자의 조직이 금고의 생성을 허용하지 않습니다."
       ],
       "Your organization does not allow sharing individual items": [
         "사용자의 조직이 개인 항목의 공유를 허용하지 않습니다."

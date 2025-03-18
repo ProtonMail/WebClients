@@ -867,8 +867,14 @@
       "${ price } per domain": [
         "${ price } 每个域名"
       ],
+      "${ price } per seat": [
+        "${ price } 每位用户"
+      ],
       "${ price } per user": [
         "${ price } 每位用户"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } 席位"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } 个写作助手许可证"
@@ -4378,6 +4384,9 @@
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
@@ -10279,6 +10288,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "从 ${ numberOfCountries } 个地域中自动选择"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } 个国家/地区的服务器"
       ]
     },
     "vpn_2024: renew": {

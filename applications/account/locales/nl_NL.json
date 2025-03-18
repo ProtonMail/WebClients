@@ -1451,8 +1451,15 @@
       "${ price } per domain": [
         "${ price } per domein"
       ],
+      "${ price } per seat": [
+        "${ price } per zitplaats"
+      ],
       "${ price } per user": [
         "${ price } per gebruiker"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } zitplaats",
+        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -1947,8 +1954,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Het geen-logbeleid van ${ BRAND_NAME } VPN is bevestigd door een externe audit."
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "${ VPN_APP_NAME }'s no-logs beleid bevestigd door een externe audit"
       ],
       "**Streaming** is included in your subscription.": [
         "**Streaming** is onderdeel van uw abonnement."
@@ -1971,8 +1978,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Verbeter verbindingssnelheid met tot wel 400% met VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Onafhankelijke beveiligingsexperts hebben bevestigd dat ProtonVPN geen gebruikersgegevens logt en geen praktijken hanteert die uw privacy in gevaar kunnen brengen."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Onafhankelijke beveiligingsexperts hebben bevestigd dat ${ VPN_APP_NAME } geen gebruikersgegevens logt en geen praktijken hanteert die uw privacy in gevaar kunnen brengen."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Is Telegram veilig om te gebruiken? Zoals we zullen bespreken in dit artikel, hangt dat af van hoe u het gebruikt."
@@ -7069,6 +7076,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } wil data met u delen in ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat zowel de login als het tweede wachtwoord vervangt. Om over te schakelen naar één wachtwoord modus vult u een enkel wachtwoord naar keuze in en klikt u op Opslaan."
       ],
@@ -7201,6 +7211,9 @@
       ],
       "* No credit card required.": [
         "* Green kredietkaart vereist."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "**${ appName }** wordt niet ondersteund in uw organisatie **${ organizationName }**."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Kies een ${ BRAND_NAME } e-mailadres** om gebruik te maken van alle ${ BRAND_NAME_TWO } diensten met inbegrip van ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }."
@@ -7564,6 +7577,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Door de volledige agendadetails van deze agenda te delen, gaat u akkoord om ${ BRAND_NAME } toegang te verlenen tot versleutelde informatie van deze agenda."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Agenda, geïntegreerd met ${ MAIL_APP_NAME } en ${ CONTACTS_APP_NAME }"
+      ],
       "Cancel anytime": [
         "Op elk moment opzeggen"
       ],
@@ -7582,9 +7598,6 @@
       "Check the status of imports and forwarding.": [
         "Controleer de status van uw import- en doorstuuropdrachten."
       ],
-      "Choose an app to get started": [
-        "Kies een app om te beginnen"
-      ],
       "Choose an Entity ID to continue.": [
         "Kies een entiteits-ID om door te gaan."
       ],
@@ -7593,6 +7606,9 @@
       ],
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Cloud opslag, geïntegreerd met ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors keuze met een beoordeling van 8,4 van de 10"
@@ -7880,6 +7896,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-mailservice, geïntegreerd met ${ CALENDAR_APP_NAME } en ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"
@@ -8468,6 +8487,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Beheer welke ${ BRAND_NAME } applicaties toegankelijk zijn voor de leden van uw organisatie. Indien uitgeschakeld, hebben alleen beheerders toegang."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Beheer uw e-mailvoorkeuren voor ${ DOCS_APP_NAME }."
       ],
@@ -8695,6 +8717,9 @@
       ],
       "Password generator rules successfully saved": [
         "Wachtwoordgeneratorregels succesvol bijgewerkt"
+      ],
+      "Password manager with extra account security": [
+        "Wachtwoordmanager met extra accountbeveiliging"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Wachtwoord moet ${ MIN_PASSWORD_LENGTH } tekens of meer bevatten."
@@ -8954,6 +8979,9 @@
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
       ],
+      "Select a service to continue": [
+        "Selecteer een service om door te gaan"
+      ],
       "Select one or multiple user affiliations": [
         "Selecteer één of meerdere gebruikers affiliaties"
       ],
@@ -8968,6 +8996,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
+      ],
+      "Self-custodial crypto wallet": [
+        "Crypto portemonnee in eigen bewaarneming"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "E-mails verzenden om uw leden aan te moedigen om hun accounts te beschermen met 2FA."
@@ -9627,6 +9658,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN met toegewijde servers en IP-adressen"
       ],
       "Want to learn more?": [
         "Wilt u meer weten?"
@@ -18120,6 +18154,9 @@
       "A filter with this name already exists": [
         "Er bestaat al een filter met deze naam"
       ],
+      "Access control": [
+        "Toegangsbeheer"
+      ],
       "Accessibility": [
         "Toegankelijkheid"
       ],
@@ -20215,129 +20252,6 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
-      ]
-    },
-    "Valentine_2025": {
-      "+ free gift": [
-        "+ gratis cadeau"
-      ],
-      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Een cadeaucode voor ${ discountPercentAbsolute }% korting op ${ planTitle } voor 1 jaar"
-      ],
-      "Valentine's deal": [
-        "Valentijnsdeal"
-      ],
-      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Uw gratis cadeau om te delen, ter waarde van ${ price }﻿: "
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "${ salePercentage }% korting"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "${ salePercentage }% korting voor u +1"
-      ],
-      "10 email addresses for you": [
-        "10 e-mailadressen voor u"
-      ],
-      "10,000+ servers in 110+ countries": [
-        "Meer dan 10.000 servers in meer dan 110 landen"
-      ],
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "200 GB storage": [
-        "200 GB opslagruimte"
-      ],
-      "500 GB total storage": [
-        "500 GB totale opslagruimte"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
-      ],
-      "Advanced account protection": [
-        "Geavanceerde accountbeveiliging"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Alle premiumfuncties van Mail, VPN, Pass en Drive"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
-      ],
-      "Double the love, half the price": [
-        "Meer liefde, minder betalen"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Ontvang 1 jaar ${ dealName } met ${ salePercentage }% korting — plus een cadeaucode om dezelfde deal met een vriend te delen"
-      ],
-      "Get the deal": [
-        "Kies deze deal"
-      ],
-      "High-speed streaming": [
-        "Streamen op hoge snelheid"
-      ],
-      "Integrated 2FA authenticator": [
-        "Geïntegreerde tweestapsverificatie"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Biedt eersteklas accountbeveiliging en deskundige ondersteuning. ${ DARK_WEB_MONITORING_NAME } doorzoekt de verborgen delen van het internet op ${ MAIL_APP_NAME } e-mailadressen die in illegale datamarkten zijn beland. Als een datalek wordt gedetecteerd, ontvangt u een melding in het Security Center met stappen om uw account te beschermen."
-      ],
-      "Protect 10 devices at a time": [
-        "Bescherm 10 apparaten tegelijkertijd"
-      ],
-      "Recover previous file versions": [
-        "Herstel vorige bestandsversies"
-      ],
-      "Secure file storage & sharing": [
-        "Veilig bestanden opslaan en delen"
-      ],
-      "Secure vault sharing": [
-        "Veilig delen van kluis"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte wordt gedeeld tussen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal hide-my-email-aliassen"
-      ],
-      "Use your own email domain": [
-        "Gebruik uw eigen e-maildomein"
-      ],
-      "Valentine's deal:": [
-        "Valentijnsdeal:"
-      ]
-    },
-    "Valentine_2025: offer": {
-      "Valentine's deal": [
-        "Valentijnsdeal"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "/ month": [
-        "/ maand"
-      ],
-      "12 months": [
-        "12 maanden"
-      ],
-      "15 months": [
-        "15 maanden"
-      ],
-      "24 months": [
-        "24 maanden"
-      ],
-      "30 months": [
-        "30 maanden"
-      ],
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
       ]
     },
     "Validation": {
