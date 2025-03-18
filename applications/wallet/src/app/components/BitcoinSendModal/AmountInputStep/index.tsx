@@ -3,12 +3,14 @@ import { c } from 'ttag';
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import type { AccountWithChainData } from '../../../types';
 import { EmailListItem } from '../../EmailListItem';
+import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 import type { BtcAddressMap } from '../useEmailAndBtcAddressesMaps';
 import { BitcoinAmountInputWithBalanceAndCurrencySelect } from './BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { useAmountInputStep } from './useAmountInputStep';
@@ -44,6 +46,8 @@ export const AmountInputStep = ({ txBuilderHelpers, btcAddressMap, onBack, accou
         txBuilderHelpers,
         onReview,
     });
+
+    const theme = useWalletTheme();
 
     return (
         <div className="flex flex-column max-w-full">
@@ -162,7 +166,7 @@ export const AmountInputStep = ({ txBuilderHelpers, btcAddressMap, onBack, accou
                             color="norm"
                             shape="solid"
                             size="large"
-                            shadow
+                            shadow={theme === WalletThemeOption.WalletLight}
                             fullWidth
                             onClick={handleReviewTransaction}
                             disabled={!!recipientBelowMinAmountError || loadingCreatePsbt}

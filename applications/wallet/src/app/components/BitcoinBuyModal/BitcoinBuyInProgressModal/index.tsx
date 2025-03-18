@@ -4,10 +4,13 @@ import { Href } from '@proton/atoms/index';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import walletSendingPlane from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
+import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
+import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../../atoms';
 import { ModalParagraph } from '../../../atoms/ModalParagraph';
+import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 
 interface Props extends ModalOwnProps {
     onBuyMoreBitcoin: () => void;
@@ -25,6 +28,8 @@ const support = (
 );
 
 export const BitcoinBuyInProgressModal = ({ onBuyMoreBitcoin, open, onDone }: Props) => {
+    const theme = useWalletTheme();
+
     return (
         <Prompt
             open={open}
@@ -54,7 +59,7 @@ export const BitcoinBuyInProgressModal = ({ onBuyMoreBitcoin, open, onDone }: Pr
             <div className="flex flex-column items-center">
                 <img
                     className="h-custom w-custom"
-                    src={walletSendingPlane}
+                    src={theme === WalletThemeOption.WalletDark ? walletBitcoinDark : walletBitcoin}
                     alt=""
                     style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                 />

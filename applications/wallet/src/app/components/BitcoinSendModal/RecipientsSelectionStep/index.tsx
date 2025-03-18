@@ -8,12 +8,14 @@ import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { useBitcoinNetwork } from '@proton/wallet/store';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../../atoms';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { isUndefined } from '../../../utils';
 import { EmailOrBitcoinAddressInput } from '../../EmailOrBitcoinAddressInput';
 import { InviteSentConfirmModal } from '../../InviteSentConfirmModal';
+import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 import { RecipientDetailsModal } from '../../RecipientDetailsModal';
 import { WalletNotFoundError } from '../WalletNotFoundError/WalletNotFoundErrorDropdown';
 import { WalletNotFoundErrorModal } from '../WalletNotFoundError/WalletNotFoundErrorModal';
@@ -113,6 +115,7 @@ export const RecipientsSelectionStep = ({
     txBuilderHelpers,
     onRecipientsConfirm,
 }: Props) => {
+    const theme = useWalletTheme();
     const { recipientEmailMap, checkHasSentInvite } = recipientHelpers;
 
     const { txBuilder } = txBuilderHelpers;
@@ -184,7 +187,7 @@ export const RecipientsSelectionStep = ({
                             color="norm"
                             shape="solid"
                             size="large"
-                            shadow
+                            shadow={theme === WalletThemeOption.WalletLight}
                             fullWidth
                             onClick={() => {
                                 onRecipientsConfirm();

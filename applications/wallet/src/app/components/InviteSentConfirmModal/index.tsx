@@ -3,10 +3,13 @@ import { c } from 'ttag';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import walletSendingPlane from '@proton/styles/assets/img/wallet/wallet-paper-plane.jpg';
+import walletPaperPlaneDark from '@proton/styles/assets/img/wallet/wallet-paper-plane-dark.jpg';
+import walletPaperPlane from '@proton/styles/assets/img/wallet/wallet-paper-plane.jpg';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
+import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 interface InviteSentConfirmModalOwnProps {
     email: string;
@@ -15,6 +18,8 @@ interface InviteSentConfirmModalOwnProps {
 type Props = ModalOwnProps & InviteSentConfirmModalOwnProps;
 
 export const InviteSentConfirmModal = ({ email, ...modalProps }: Props) => {
+    const theme = useWalletTheme();
+
     return (
         <Prompt
             {...modalProps}
@@ -31,9 +36,12 @@ export const InviteSentConfirmModal = ({ email, ...modalProps }: Props) => {
         >
             <div className="flex flex-column">
                 <div className="flex items-center flex-column mb-4">
-                    <div className="shrink-0 mb-4">
-                        <img src={walletSendingPlane} alt="" />
-                    </div>
+                    <img
+                        className="h-custom w-custom"
+                        src={theme === WalletThemeOption.WalletDark ? walletPaperPlaneDark : walletPaperPlane}
+                        alt=""
+                        style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
+                    />
                     <div className="flex flex-column items-center">
                         <span className="block text-4xl text-semibold text-center">{c('Wallet invite')
                             .t`Invitation sent to ${email}`}</span>
