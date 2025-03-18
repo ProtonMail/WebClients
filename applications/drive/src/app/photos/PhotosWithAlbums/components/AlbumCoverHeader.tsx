@@ -18,7 +18,6 @@ interface AlbumCoverHeaderProps {
     linkId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
-    isOwner: boolean;
 }
 
 export const AlbumCoverHeader = ({
@@ -28,7 +27,6 @@ export const AlbumCoverHeader = ({
     onFileUpload,
     onFileSkipped,
     onShare,
-    isOwner,
 }: AlbumCoverHeaderProps) => {
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
@@ -78,7 +76,7 @@ export const AlbumCoverHeader = ({
                 </p>
                 <div className="flex flex-wrap flex-row gap-2">
                     <Avatar color="weak">{initials}</Avatar>
-                    {isOwner && (
+                    {album.permissions.isOwner && (
                         <Button
                             color="weak"
                             shape="solid"
