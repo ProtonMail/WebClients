@@ -31,6 +31,7 @@ import type { ItemEditIntent, ItemRevision, ItemType } from '@proton/pass/types'
 import { prop } from '@proton/pass/utils/fp/lens';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
+import { CustomContent } from '../Custom/Custom.content';
 import { useItemHistory } from './ItemHistoryContext';
 
 const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
@@ -39,15 +40,10 @@ const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     alias: AliasContent,
     creditCard: CreditCardContent,
     identity: IdentityContent,
-    sshKey: () => {
-        throw new Error('FIXME');
-    },
-    wifi: () => {
-        throw new Error('FIXME');
-    },
-    custom: () => {
-        throw new Error('FIXME');
-    },
+    // TODO(@djankovic): FIXME
+    sshKey: CustomContent as any,
+    wifi: CustomContent as any,
+    custom: CustomContent,
 };
 
 export const RevisionDiff: FC = () => {

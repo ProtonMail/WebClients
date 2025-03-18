@@ -7,7 +7,7 @@ import type {
     MaybeNull,
     Metadata,
 } from '@proton/pass/types';
-import type { PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
+import { type PlatformSpecific, WifiSecurity } from '@proton/pass/types/protobuf/item-v1';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { type ObjectHandler, objectHandler } from '@proton/pass/utils/object/handler';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -84,6 +84,24 @@ export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<Deobfus
                 extraContactDetails: [],
                 extraWorkDetails: [],
                 extraPersonalDetails: [],
+            }) as R;
+        }
+        case 'sshKey':
+            return objectHandler<DeobfuscatedItemContent<'sshKey'>>({
+                privateKey: '',
+                publicKey: '',
+                sections: [],
+            }) as R;
+        case 'wifi':
+            return objectHandler<DeobfuscatedItemContent<'wifi'>>({
+                password: '',
+                security: WifiSecurity.UnspecifiedWifiSecurity,
+                ssid: '',
+                sections: [],
+            }) as R;
+        case 'custom': {
+            return objectHandler<DeobfuscatedItemContent<'custom'>>({
+                sections: [],
             }) as R;
         }
     }

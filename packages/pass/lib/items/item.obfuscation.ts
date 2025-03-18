@@ -3,11 +3,16 @@ import type { DeobfuscateMode } from '@proton/pass/types/data/obfuscation';
 import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 export const obfuscateExtraFields = (extraFields?: DeobfuscatedItemExtraField[]): ItemExtraField[] =>
-    extraFields?.map((field) =>
-        field.type === 'totp'
-            ? { ...field, data: { totpUri: obfuscate(field.data.totpUri) } }
-            : { ...field, data: { content: obfuscate(field.data.content) } }
-    ) ?? [];
+    extraFields?.map((field) => {
+        switch (field.type) {
+            case 'totp':
+                return { ...field, data: { totpUri: obfuscate(field.data.totpUri) } };
+            case 'timestamp':
+                return { ...field, data: { timestamp: obfuscate(field.data.timestamp) } };
+            default:
+                return { ...field, data: { content: obfuscate(field.data.content) } };
+        }
+    }) ?? [];
 
 export const deobfuscateExtraFields = (extraFields?: ItemExtraField[]): DeobfuscatedItemExtraField[] =>
     extraFields?.map((extraField): DeobfuscatedItemExtraField => {
@@ -16,6 +21,11 @@ export const deobfuscateExtraFields = (extraFields?: ItemExtraField[]): Deobfusc
                 return {
                     ...extraField,
                     data: { totpUri: deobfuscate(extraField.data.totpUri) },
+                };
+            case 'timestamp':
+                return {
+                    ...extraField,
+                    data: { timestamp: deobfuscate(extraField.data.timestamp) },
                 };
             default:
                 return {
@@ -62,10 +72,13 @@ export const obfuscateItem = <T extends ItemType = ItemType>(item: DeobfuscatedI
             return { ...item, ...base } satisfies Item<'alias'> as Item<T>;
         case 'identity':
             return { ...item, ...base } satisfies Item<'identity'> as Item<T>;
+        // TODO(@djankovic): Unobfuscated
         case 'sshKey':
+            return { ...item, ...base } satisfies Item<'sshKey'> as Item<T>;
         case 'wifi':
+            return { ...item, ...base } satisfies Item<'wifi'> as Item<T>;
         case 'custom':
-            throw new Error('FIXME');
+            return { ...item, ...base } satisfies Item<'custom'> as Item<T>;
     }
 };
 
@@ -107,9 +120,11 @@ export const deobfuscateItem = <T extends ItemType>(item: Item): DeobfuscatedIte
         case 'identity':
             return { ...item, ...base } satisfies DeobfuscatedItem<'identity'> as DeobfuscatedItem<T>;
         case 'sshKey':
+            return { ...item, ...base } satisfies DeobfuscatedItem<'sshKey'> as DeobfuscatedItem<T>;
         case 'wifi':
+            return { ...item, ...base } satisfies DeobfuscatedItem<'wifi'> as DeobfuscatedItem<T>;
         case 'custom':
-            throw new Error('FIXME');
+            return { ...item, ...base } satisfies DeobfuscatedItem<'custom'> as DeobfuscatedItem<T>;
     }
 };
 
@@ -142,8 +157,10 @@ export const deobfuscateItemPartial = <T extends ItemType, R = DeobfuscatedItem<
         case 'identity':
             return { ...item, ...base } satisfies DeobfuscatedItem<'identity', DeobfuscateMode.AUTO> as R;
         case 'sshKey':
+            return { ...item, ...base } satisfies DeobfuscatedItem<'sshKey', DeobfuscateMode.AUTO> as R;
         case 'wifi':
+            return { ...item, ...base } satisfies DeobfuscatedItem<'wifi', DeobfuscateMode.AUTO> as R;
         case 'custom':
-            throw new Error('FIXME');
+            return { ...item, ...base } satisfies DeobfuscatedItem<'custom', DeobfuscateMode.AUTO> as R;
     }
 };
