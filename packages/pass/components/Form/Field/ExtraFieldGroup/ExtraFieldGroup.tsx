@@ -21,6 +21,8 @@ export const createExtraField = <T extends ExtraFieldType>(type: T): Deobfuscate
             return { type, fieldName: '', data: { content: '' } };
         case 'totp':
             return { type, fieldName: '', data: { totpUri: '' } };
+        case 'timestamp':
+            return { type, fieldName: '', data: { timestamp: '' } };
         default:
             throw new Error('Unsupported field type');
     }

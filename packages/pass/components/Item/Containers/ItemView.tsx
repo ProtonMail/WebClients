@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
+import { CustomView } from '@proton/pass/components/Item/Custom/Custom.view';
 import { IdentityView } from '@proton/pass/components/Item/Identity/Identity.view';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
@@ -37,15 +38,10 @@ const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     alias: AliasView,
     creditCard: CreditCardView,
     identity: IdentityView,
-    sshKey: () => {
-        throw new Error('FIXME');
-    },
-    wifi: () => {
-        throw new Error('FIXME');
-    },
-    custom: () => {
-        throw new Error('FIXME');
-    },
+    // TODO(@djankovic): FIXME
+    sshKey: CustomView as any,
+    wifi: CustomView as any,
+    custom: CustomView,
 };
 
 export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {

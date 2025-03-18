@@ -31,7 +31,7 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
-type QuickAction = { label: string; type: ItemType };
+type QuickAction = { label: string; type: ItemType; locked?: boolean };
 
 type Props = {
     /** Current origin if in the extension to hydrate the generated
@@ -78,9 +78,10 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
         () => [
             { label: c('Label').t`Login`, type: 'login' },
             { label: c('Label').t`Alias`, type: 'alias' },
-            { label: c('Label').t`Card`, type: 'creditCard' },
+            { label: c('Label').t`Card`, type: 'creditCard', locked: isFreePlan },
             { label: c('Label').t`Note`, type: 'note' },
             { label: c('Label').t`Identity`, type: 'identity' },
+            { label: c('Label').t`More`, type: 'custom', locked: isFreePlan },
         ],
         []
     );
@@ -131,12 +132,12 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
                 originalPlacement="bottom-start"
             >
                 <DropdownMenu listRef={listRef}>
-                    {quickActions.map(({ type, label }) => (
+                    {quickActions.map(({ type, label, locked }) => (
                         <DropdownMenuButton
                             key={`item-type-dropdown-button-${type}`}
                             className={itemTypeToSubThemeClassName[type]}
                             onClick={withClose(() => onCreate(type))}
-                            disabled={isFreePlan && type === 'creditCard'}
+                            disabled={locked}
                         >
                             <DropdownMenuButtonLabel
                                 label={label}
@@ -156,7 +157,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
                                         );
                                     }
 
-                                    if (type === 'creditCard' && isFreePlan) {
+                                    if (locked) {
                                         return <Icon name="pass-lock" size={3.5} className="mr-1.5" />;
                                     }
                                 })()}

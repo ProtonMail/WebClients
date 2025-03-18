@@ -10,7 +10,17 @@ type IdentitySectionField = Omit<IdentityFormField, 'name' | 'placeholder'> & { 
 
 const presentExtraField = (field: DeobfuscatedItemExtraField): IdentitySectionField => ({
     label: field.fieldName,
-    value: field.type !== 'totp' ? field.data.content : '',
+    value: (() => {
+        switch (field.type) {
+            case 'hidden':
+            case 'text':
+                return field.data.content;
+            case 'totp':
+                return field.data.totpUri;
+            case 'timestamp':
+                return field.data.timestamp;
+        }
+    })(),
     hidden: field.type === 'hidden',
 });
 

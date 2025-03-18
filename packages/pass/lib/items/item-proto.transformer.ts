@@ -11,7 +11,15 @@ import type {
     SafeProtobufItem,
 } from '@proton/pass/types';
 import { ProtobufItem } from '@proton/pass/types';
-import type { ItemCreditCard, ItemIdentity } from '@proton/pass/types/protobuf/item-v1';
+import { Timestamp } from '@proton/pass/types/protobuf/google/protobuf/timestamp';
+import type {
+    CustomSection,
+    ItemCreditCard,
+    ItemCustom,
+    ItemIdentity,
+    ItemSSHKey,
+    ItemWifi,
+} from '@proton/pass/types/protobuf/item-v1';
 import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
 import { omit } from '@proton/shared/lib/helpers/object';
 
@@ -36,6 +44,16 @@ const protobufSafeToExtraField = ({ fieldName, ...field }: SafeProtobufExtraFiel
                 fieldName,
                 type: field.content.oneofKind,
                 data: { totpUri: field.content.totp.totpUri },
+            };
+        case 'timestamp':
+            return {
+                fieldName,
+                type: field.content.oneofKind,
+                data: {
+                    timestamp: field.content.timestamp.timestamp
+                        ? Timestamp.toDate(field.content.timestamp.timestamp).toISOString().split('T')[0]
+                        : '',
+                },
             };
         default:
             throw new Error('Unsupported extra field type');
@@ -66,6 +84,26 @@ const protobufToIdentityContent = (identity: ItemIdentity): DeobfuscatedItem<'id
     })),
 });
 
+const parseExtraSections = (sections: CustomSection[]) =>
+    sections.map((section) => ({
+        ...section,
+        sectionFields: section.sectionFields.map(parseUnsafeExtraField(protobufSafeToExtraField)),
+    }));
+
+const protobufToSshContent = (sshKey: ItemSSHKey): DeobfuscatedItem<'sshKey'>['content'] => ({
+    ...sshKey,
+    sections: parseExtraSections(sshKey.sections),
+});
+
+const protobufToWifiContent = (wifi: ItemWifi): DeobfuscatedItem<'wifi'>['content'] => ({
+    ...wifi,
+    sections: parseExtraSections(wifi.sections),
+});
+
+const protobufToCustomContent = (custom: ItemCustom): DeobfuscatedItem<'custom'>['content'] => ({
+    sections: parseExtraSections(custom.sections),
+});
+
 export const protobufToItem = (item: SafeProtobufItem): DeobfuscatedItem => {
     const { platformSpecific, metadata, content: itemContent } = item;
 
@@ -92,6 +130,12 @@ export const protobufToItem = (item: SafeProtobufItem): DeobfuscatedItem => {
             return { ...base, type: 'creditCard', content: protobufToCreditCardContent(data.creditCard) };
         case 'identity':
             return { ...base, type: 'identity', content: protobufToIdentityContent(data.identity) };
+        case 'sshKey':
+            return { ...base, type: 'sshKey', content: protobufToSshContent(data.sshKey) };
+        case 'wifi':
+            return { ...base, type: 'wifi', content: protobufToWifiContent(data.wifi) };
+        case 'custom':
+            return { ...base, type: 'custom', content: protobufToCustomContent(data.custom) };
         default:
             throw new Error('Unsupported item type');
     }
@@ -123,6 +167,21 @@ const extraFieldToProtobuf = ({ fieldName, ...extraField }: DeobfuscatedItemExtr
                     totp: { ...extraField.data, totpUri: extraField.data.totpUri },
                 },
             };
+        case 'timestamp':
+            const parsedDate = new Date(extraField.data.timestamp);
+            return {
+                fieldName,
+                content: {
+                    oneofKind: 'timestamp',
+                    timestamp: {
+                        ...extraField.data,
+                        timestamp:
+                            parsedDate instanceof Date && isFinite(+parsedDate)
+                                ? Timestamp.fromDate(parsedDate)
+                                : undefined,
+                    },
+                },
+            };
         default:
             throw new Error('Unsupported extra field type');
     }
@@ -145,6 +204,32 @@ const identityContentToProtobuf = (identity: DeobfuscatedItem<'identity'>['conte
     extraSections: identity.extraSections.map((extraSections) => ({
         ...extraSections,
         sectionFields: extraSections.sectionFields.map(extraFieldToProtobuf),
+    })),
+});
+
+const sshKeyContentToProtobuf = (sshKey: DeobfuscatedItem<'sshKey'>['content']): ItemSSHKey => ({
+    privateKey: sshKey.privateKey,
+    publicKey: sshKey.publicKey,
+    sections: sshKey.sections.map((section) => ({
+        ...section,
+        sectionFields: section.sectionFields.map(extraFieldToProtobuf),
+    })),
+});
+
+const wifiContentToProtobuf = (wifi: DeobfuscatedItem<'wifi'>['content']): ItemWifi => ({
+    ssid: wifi.ssid,
+    password: wifi.password,
+    security: wifi.security,
+    sections: wifi.sections.map((section) => ({
+        ...section,
+        sectionFields: section.sectionFields.map(extraFieldToProtobuf),
+    })),
+});
+
+const customContentToProtobuf = (custom: DeobfuscatedItem<'custom'>['content']): ItemCustom => ({
+    sections: custom.sections.map((section) => ({
+        ...section,
+        sectionFields: section.sectionFields.map(extraFieldToProtobuf),
     })),
 });
 
@@ -191,6 +276,33 @@ const itemToProtobuf = (item: DeobfuscatedItem): SafeProtobufItem => {
                 ...base,
                 content: {
                     content: { oneofKind: 'identity', identity: identityContentToProtobuf(item.content) },
+                },
+            };
+        case 'sshKey':
+            return {
+                ...base,
+                content: {
+                    content: {
+                        oneofKind: 'sshKey',
+                        sshKey: sshKeyContentToProtobuf(item.content),
+                    },
+                },
+            };
+        case 'wifi':
+            return {
+                ...base,
+                content: {
+                    content: {
+                        oneofKind: 'wifi',
+                        wifi: wifiContentToProtobuf(item.content),
+                    },
+                },
+            };
+        case 'custom':
+            return {
+                ...base,
+                content: {
+                    content: { oneofKind: 'custom', custom: customContentToProtobuf(item.content) },
                 },
             };
         default:

@@ -1,10 +1,11 @@
-import { type FC, useCallback } from 'react';
+import React, { type FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasNew } from '@proton/pass/components/Item/Alias/Alias.new';
 import { CreditCardNew } from '@proton/pass/components/Item/CreditCard/CreditCard.new';
+import { CustomNew } from '@proton/pass/components/Item/Custom/Custom.new';
 import { IdentityNew } from '@proton/pass/components/Item/Identity/Identity.new';
 import { LoginNew } from '@proton/pass/components/Item/Login/Login.new';
 import { NoteNew } from '@proton/pass/components/Item/Note/Note.new';
@@ -12,7 +13,6 @@ import { useNavigationActions } from '@proton/pass/components/Navigation/Navigat
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { type ItemNewRouteParams, getLocalPath } from '@proton/pass/components/Navigation/routing';
-import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemCreate } from '@proton/pass/store/actions';
@@ -24,21 +24,16 @@ import {
 } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
-const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
+const itemNewMap: { [T in ItemType]: FC<any> } = {
     login: LoginNew,
     note: NoteNew,
     alias: AliasNew,
     creditCard: CreditCardNew,
     identity: IdentityNew,
-    sshKey: () => {
-        throw new Error('FIXME');
-    },
-    wifi: () => {
-        throw new Error('FIXME');
-    },
-    custom: () => {
-        throw new Error('FIXME');
-    },
+    // TODO(@djankovic): FIXME
+    sshKey: CustomNew as any,
+    wifi: CustomNew as any,
+    custom: CustomNew,
 };
 
 export const ItemNew: FC = () => {
