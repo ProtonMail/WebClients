@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+
 import usePublicToken from '../../../../hooks/drive/usePublicToken';
 import { type DecryptedLink, usePublicActions } from '../../../../store';
 import { type useRenameModal } from '../../../modals/RenameModal';
@@ -23,6 +25,7 @@ export const RenameButton = ({ link, showRenameModal, close }: Props) => {
                 showRenameModal({
                     isFile: link.isFile,
                     name: link.name,
+                    isDoc: isProtonDocument(link.mimeType),
                     onSubmit: (formattedName) =>
                         renameLink(new AbortController().signal, {
                             token,
