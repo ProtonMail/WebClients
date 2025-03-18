@@ -1455,8 +1455,17 @@
       "${ price } per domain": [
         "${ price } za doménu"
       ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
+      ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
@@ -1963,8 +1972,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Zásada neukladania záznamov v ${ BRAND_NAME } VPN potvrdená externým auditom"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Zásada neukladania záznamov v ${ VPN_APP_NAME } VPN potvrdená externým auditom"
       ],
       "**Streaming** is included in your subscription.": [
         "**Streamovanie** je súčasťou vášho predpolatného."
@@ -1987,8 +1996,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Zvýšte rýchlosť VPN až o 400 % pomocou funkcie VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Nezávislí bezpečnostní experti overili, že Proton VPN nezaznamenáva údaje používateľov ani nevykonáva žiadne úkony, ktoré by mohli ohroziť vaše súkromie."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Nezávislí bezpečnostní experti overili, že ${ VPN_APP_NAME } nezaznamenáva údaje používateľov ani nevykonáva žiadne úkony, ktoré by mohli ohroziť vaše súkromie."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Je používanie aplikácie Telegram bezpečné? Ako si povieme v tomto článku, veľmi to závisí od toho, ako ho používate."
@@ -7169,6 +7178,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } s vami chce zdieľať údaje v ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete aktivovať režim jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
       ],
@@ -7333,6 +7345,9 @@
       ],
       "* No credit card required.": [
         "* Nie je potrebná platobná karta."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "**${ appName }** nie je vo vašej organizácii **${ organizationName }** podporovaný."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Získajte ${ BRAND_NAME }** adresu, ak chcete využívať všetky služby ${ BRAND_NAME_TWO } vrátane služieb ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
@@ -7712,6 +7727,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Zdieľaním úplných údajov o udalosti tohto kalendára súhlasíte s udelením prístupu ${ BRAND_NAME } k zašifrovaným informáciám tohto kalendára."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalendár integrovaný s ${ MAIL_APP_NAME } a ${ CONTACTS_APP_NAME }"
+      ],
       "Cancel anytime": [
         "Môžete zrušiť kedykoľvek"
       ],
@@ -7730,9 +7748,6 @@
       "Check the status of imports and forwarding.": [
         "Skontrolujte stav importov a preposielania."
       ],
-      "Choose an app to get started": [
-        "Vyberte si aplikáciu a začnite"
-      ],
       "Choose an Entity ID to continue.": [
         "Pre pokračovanie vyberte ID subjektu."
       ],
@@ -7741,6 +7756,9 @@
       ],
       "Close this screen to exit.": [
         "Pre ukončenie zatvorte túto obrazovku."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Cloudové úložisko integrované s ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Ocenenie CNET editors choice s hodnotením 8,4 z 10"
@@ -8038,6 +8056,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Emailová služba integrovaná s ${ CALENDAR_APP_NAME } a ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Nastavenie emailu uložené"
@@ -8630,6 +8651,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Uistite sa, že ste ${ addARecoveryMethod }, aby ste sa mohli dostať späť do svojho účtu, ak zabudnete heslo."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Spravujte svoje preferencie emailových notifikácií pre ${ DOCS_APP_NAME }."
       ],
@@ -8863,6 +8887,9 @@
       ],
       "Password generator rules successfully saved": [
         "Pravidlá generovania hesiel boli úspešne uložené"
+      ],
+      "Password manager with extra account security": [
+        "Správca hesiel s dodatočným zabezpečením účtu"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Heslo musí mať ${ MIN_PASSWORD_LENGTH } a viac znakov."
@@ -9128,6 +9155,9 @@
       "Select a service provider to start": [
         "Vyberte poskytovateľa služieb a začnite"
       ],
+      "Select a service to continue": [
+        "Pre pokračovanie vyberte službu"
+      ],
       "Select one or multiple user affiliations": [
         "Vyberte jednu alebo viacero používateľských príslušností"
       ],
@@ -9142,6 +9172,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte, ktoré kalendáre chcete importovať. Pre každý importovaný kalendár sa vytvorí nový kalendár podľa počtu kalendárov dostupných vo vašom pláne."
+      ],
+      "Self-custodial crypto wallet": [
+        "Vlastná kryptopeňaženka"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Posielajte emaily, aby ste povzbudili svojich členov k ochrane ich účtov pomocou 2FA."
@@ -9811,6 +9844,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN s vyhradenými servermi a IP adresami"
       ],
       "Want to learn more?": [
         "Chcete sa dozvedieť viac?"
@@ -18548,6 +18584,9 @@
       "A filter with this name already exists": [
         "Filter s týmto názvom už existuje"
       ],
+      "Access control": [
+        "Kontrola prístupu"
+      ],
       "Accessibility": [
         "Zjednodušenie prístupu"
       ],
@@ -19359,7 +19398,7 @@
         "Minikalendár"
       ],
       "Multi-user support": [
-        "Podpora pre viac uživateľov"
+        "Podpora viacerých používateľov"
       ],
       "My addresses": [
         "Moje adresy"
