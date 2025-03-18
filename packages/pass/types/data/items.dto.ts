@@ -1,4 +1,4 @@
-import type { MaybeNull, ShareId, UniqueItem } from '@proton/pass/types';
+import type { FileAttachmentsDTO, FileDescriptor, MaybeNull, ShareId, UniqueItem } from '@proton/pass/types';
 
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
@@ -13,7 +13,9 @@ export type AliasCreationDTO = {
     aliasEmail: string;
 };
 
-export type LoginWithAliasCreationDTO = { withAlias: true; alias: ItemCreateIntent<'alias'> } | { withAlias: false };
+export type LoginWithAliasCreationDTO =
+    | { withAlias: true; alias: Omit<ItemCreateIntent<'alias'>, 'files'> }
+    | { withAlias: false };
 /**
  * Item creation DTO indexed on ItemType keys
  * - alias specifics : extra parameters required for alias creation
@@ -45,14 +47,16 @@ export type ItemImportIntentDTO = {
     note: never;
 };
 
-/* Intent payloads */
-export type ItemCreateIntent<T extends ItemType = ItemType> = OptimisticItem & Item<T, ItemCreateIntentDTO>;
+export type ItemCreateIntent<T extends ItemType = ItemType> = OptimisticItem &
+    Item<T, ItemCreateIntentDTO> & { files: FileAttachmentsDTO };
+
 export type ItemCreateSuccess = OptimisticItem & { item: ItemRevision; alias?: ItemRevision };
 
 export type ItemEditIntent<T extends ItemType = ItemType> = Item<T, ItemEditIntentDTO> & {
     itemId: string;
     shareId: string;
     lastRevision: number;
+    files: FileAttachmentsDTO;
 };
 
 export type ItemMoveIntent = SelectedItem & { targetShareId: ShareId };
@@ -61,6 +65,7 @@ export type ItemImportIntent<T extends ItemType = ItemType> = Item<T, ItemImport
     trashed: boolean;
     createTime?: number;
     modifyTime?: number;
+    files?: (File | string)[];
 };
 
 export type ItemMoveDTO = { before: ItemRevision; after: ItemRevision };
@@ -83,12 +88,19 @@ export type ItemRevisionsSuccess = {
     total: number;
 };
 
-export type SecureLinkItem = { item: Item; expirationDate: number; readCount?: number };
+export type SecureLinkItem = {
+    item: Item;
+    expirationDate: number;
+    readCount?: number;
+    files: MaybeNull<{ content: FileDescriptor[]; token: string }>;
+};
+
 export type SecureLinkOptions = {
     expirationTime: number;
     maxReadCount: MaybeNull<number>;
     linkKeyEncryptedWithItemKey: boolean;
 };
+
 export type SecureLinkCreationDTO = UniqueItem & SecureLinkOptions;
 export type SecureLinkDeleteDTO = UniqueItem & { linkId: string };
 export type SecureLinkQuery = { token: string; linkKey: string };
@@ -101,3 +113,5 @@ export type SecureLink = UniqueItem & {
     linkId: string;
     secureLink: string;
 };
+
+export type ItemLinkPendingFiles = UniqueItem & { revision: number; files: FileAttachmentsDTO };
