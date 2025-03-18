@@ -3,6 +3,7 @@ import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import { c } from 'ttag';
 
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { hasUserIdentifier, matchesLoginPassword, matchesLoginURL } from '@proton/pass/lib/items/item.predicates';
 import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
@@ -125,6 +126,7 @@ export const createAutoSaveService = () => {
                         extraData: { withAlias: false },
                         optimisticId: uniqueId(),
                         shareId: payload.shareId,
+                        files: filesFormInitializer(),
                     })
                     .then((res) => res.type === 'success');
             }
@@ -160,6 +162,7 @@ export const createAutoSaveService = () => {
                         lastRevision: currentItem.revision,
                         itemId,
                         shareId,
+                        files: filesFormInitializer(),
                     })
                     .then((res) => res.type === 'success');
             }
