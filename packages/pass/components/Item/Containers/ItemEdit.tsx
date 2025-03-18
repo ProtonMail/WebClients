@@ -5,6 +5,7 @@ import { Redirect, useParams } from 'react-router-dom';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasEdit } from '@proton/pass/components/Item/Alias/Alias.edit';
 import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCard.edit';
+import { CustomEdit } from '@proton/pass/components/Item/Custom/Custom.edit';
 import { IdentityEdit } from '@proton/pass/components/Item/Identity/Identity.edit';
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
 import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
@@ -23,15 +24,10 @@ const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
     alias: AliasEdit,
     creditCard: CreditCardEdit,
     identity: IdentityEdit,
-    sshKey: () => {
-        throw new Error('FIXME');
-    },
-    wifi: () => {
-        throw new Error('FIXME');
-    },
-    custom: () => {
-        throw new Error('FIXME');
-    },
+    // TODO(@djankovic): FIXME
+    sshKey: CustomEdit as any,
+    wifi: CustomEdit as any,
+    custom: CustomEdit,
 };
 
 export const ItemEdit: FC = () => {
