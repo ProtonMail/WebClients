@@ -144,7 +144,7 @@ export const PopoverViewButton = ({
         <Tooltip title={viewText}>
             {isSearchView ? (
                 <ButtonLike data-testid="event-popover:open" shape="ghost" onClick={onViewClick} icon size="small">
-                    <Icon name="arrow-out-square" size={3.5} alt={viewText} />
+                    <Icon name="arrow-within-square" size={3.5} alt={viewText} />
                 </ButtonLike>
             ) : (
                 <AppLink
@@ -153,7 +153,7 @@ export const PopoverViewButton = ({
                     reloadDocument
                     className="mr-2 button button-small button-ghost-weak button-for-icon"
                 >
-                    <Icon name="arrow-out-square" size={3.5} alt={viewText} />
+                    <Icon name="arrow-within-square" size={3.5} alt={viewText} />
                 </AppLink>
             )}
         </Tooltip>

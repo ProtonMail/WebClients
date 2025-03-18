@@ -1,17 +1,17 @@
 import type { LinkNode } from '@lexical/link'
 import { $isAutoLinkNode } from '@lexical/link'
+import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { mergeRegister } from '@lexical/utils'
+import { Button } from '@proton/atoms'
+import { Icon, Tooltip } from '@proton/components'
+import clsx from '@proton/utils/clsx'
 import type { LexicalEditor } from 'lexical'
 import { COMMAND_PRIORITY_EDITOR, COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
-import clsx from '@proton/utils/clsx'
-import { Icon, Tooltip } from '@proton/components'
-import { Button } from '@proton/atoms'
 import { createPortal } from 'react-dom'
 import { c } from 'ttag'
-import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
+import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { LINK_CHANGE_COMMAND } from './LinkPlugin'
@@ -130,7 +130,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
           }}
           data-testid="hyperlink-link"
         >
-          <Icon name="arrow-out-square" className="ml-1 flex-shrink-0" />
+          <Icon name="arrow-within-square" className="ml-1 flex-shrink-0" />
           <div className="max-w-[35ch] overflow-hidden text-ellipsis">{linkUrl}</div>
         </a>
         <Tooltip title={c('Action').t`Copy link`}>

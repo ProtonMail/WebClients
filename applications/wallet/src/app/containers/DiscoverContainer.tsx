@@ -34,7 +34,7 @@ export const DiscoverContainer = () => {
                                 {c('Action').t`Visit knowledge base`}
                                 <Icon
                                     alt={c('Action').t`Visit knowledge base`}
-                                    name="arrow-out-square"
+                                    name="arrow-within-square"
                                     className="ml-2"
                                 />
                             </ButtonLike>

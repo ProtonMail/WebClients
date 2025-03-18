@@ -131,7 +131,7 @@ const TabContent = memo(({ selectedCategory }: { selectedCategory: Category }) =
                             pill={viewportWidth.xsmall}
                         >
                             {viewportWidth.xsmall ? (
-                                <Icon name="arrow-out-square" alt={c('Action').t`Change email`} />
+                                <Icon name="arrow-within-square" alt={c('Action').t`Change email`} />
                             ) : (
                                 c('Action').t`Change email`
                             )}
