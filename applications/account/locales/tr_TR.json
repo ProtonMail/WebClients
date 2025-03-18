@@ -1451,8 +1451,15 @@
       "${ price } per domain": [
         "her etki alanı için ${ price }"
       ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
+      ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } koltuk",
+        "${ seats } ${ LUMO_APP_NAME } koltuk"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
@@ -1947,8 +1954,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "${ BRAND_NAME } VPN kayıt tutmama ilkesi bir dış denetimle onaylandı"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "${ VPN_APP_NAME } hizmetinin kayıt tutmama ilkesi bağımsız bir dış denetimle onaylandı"
       ],
       "**Streaming** is included in your subscription.": [
         "Abone olarak **yayın akışı** izleyebilirsiniz."
@@ -1971,8 +1978,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "VPN Accelerator ile VPN hızını %400 oranına kadar artırın"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Bağımsız güvenlik uzmanları, Proton VPN hizmetinin kullanıcı verilerini kaydetmediğini veya gizliliğinizi tehlikeye atabilecek herhangi bir şey yapmadığını doğruladı."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Bağımsız güvenlik uzmanları ${ VPN_APP_NAME } hizmetinin kullanıcıların verilerini kaydetmediğini veya gizliğinizi tehlike atabilecek herhangi bir şey yapmadığını doğruladı."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Telegram kullanmak güvenli mi? Bu yazıda tartışacağımız gibi, bu büyük ölçüde onu nasıl kullandığınızla ilişkili."
@@ -7069,6 +7076,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, kullanıcı adı ve ikinci parola yerine tek bir parola ile de kullanılabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
@@ -7201,6 +7211,9 @@
       ],
       "* No credit card required.": [
         "* Kredi kartı gerekmez."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "**${ organizationName }** kuruluşunuzda **${ appName }** desteklenmiyor."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME_TWO } hizmetlerini kullanabilmek için **bir ${ BRAND_NAME } adresi edinin**."
@@ -7564,6 +7577,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Bu takvimin tüm etkinlik bilgilerini paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ MAIL_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan takvim"
+      ],
       "Cancel anytime": [
         "İstediğiniz zaman iptal edin"
       ],
@@ -7582,9 +7598,6 @@
       "Check the status of imports and forwarding.": [
         "İçe aktarma ve iletme durumunu denetleyin."
       ],
-      "Choose an app to get started": [
-        "Başlamak için bir uygulama seçin"
-      ],
       "Choose an Entity ID to continue.": [
         "İlerlemek için bir varlık kimliği seçin"
       ],
@@ -7593,6 +7606,9 @@
       ],
       "Close this screen to exit.": [
         "Çıkmak için bu ekranı kapatın."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME } ile birlikte çalışan bulut depolama alanı"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editörün Seçimi ödülünü 10 üzerinden 8,4 puanla kazandı"
@@ -7880,6 +7896,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan e-posta hizmeti"
       ],
       "Emailing preference saved": [
         "E-posta ayarı kaydedildi"
@@ -8468,6 +8487,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "${ DOCS_APP_NAME } için e-posta bildirimi tercihlerinizi ayarlayın."
       ],
@@ -8695,6 +8717,9 @@
       ],
       "Password generator rules successfully saved": [
         "Parola oluşturucu kuralları kaydedildi"
+      ],
+      "Password manager with extra account security": [
+        "Ek hesap güvenliği ile parola yöneticisi"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır."
@@ -8954,6 +8979,9 @@
       "Select a service provider to start": [
         "Başlamak için bir hizmet sağlayıcı seçin"
       ],
+      "Select a service to continue": [
+        "İlerlemek için bir hizmet seçin"
+      ],
       "Select one or multiple user affiliations": [
         "Bir ya da birkaç kullanıcı ilişkisi seçin"
       ],
@@ -8968,6 +8996,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
+      ],
+      "Self-custodial crypto wallet": [
+        "Kendinden korumalı kripto cüzdanı"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Üyelerinize hesaplarını iki adımlı doğrulama ile korumaya özendiren e-postalar gönderin."
@@ -9627,6 +9658,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logosu"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "Size ayrılmış sunucular ve IP adresleri ile VPN"
       ],
       "Want to learn more?": [
         "Ayrıntılı bilgi almak ister misiniz?"
@@ -18120,6 +18154,9 @@
       "A filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
       ],
+      "Access control": [
+        "Erişim denetimi"
+      ],
       "Accessibility": [
         "Erişilebilirlik"
       ],
@@ -20215,129 +20252,6 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
-      ]
-    },
-    "Valentine_2025": {
-      "+ free gift": [
-        "+ ücretsiz hediye"
-      ],
-      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "1 yıl boyunca ${ planTitle } tarifesinde yüzde ${ discountPercentAbsolute } oranında indirim sağlayan hediye kodu"
-      ],
-      "Valentine's deal": [
-        "Sevgililer günü fırsatı"
-      ],
-      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 ${ price } değerindeki paylaşması ücretsiz hediyeniz: "
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "%${ salePercentage } indirim"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "Siz ve 1 kişiye %${ salePercentage } indirim"
-      ],
-      "10 email addresses for you": [
-        "Sizin için 10 ek e-posta adresi"
-      ],
-      "10,000+ servers in 110+ countries": [
-        "10.000+ sunucu, 110+ ülkede"
-      ],
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "200 GB storage": [
-        "200 GB depolama alanı"
-      ],
-      "500 GB total storage": [
-        "500 GB toplam depolama alanı"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Netflix, Disney+, Prime Video ve diğer internet yayın akışı içeriklerine herhangi bir yerden erişin."
-      ],
-      "Advanced account protection": [
-        "Gelişmiş hesap koruması"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Tüm Mail, VPN, Pass ve Drive ücretli özellikleri"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "İndirimler, standart aylık fiyatlandırmaya dayanmaktadır. Fatura dönemi sonunda, aboneliğiniz standart yıllık ücrete göre yenilenecektir."
-      ],
-      "Double the love, half the price": [
-        "Kalpler bir, fiyatlar yarım"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Bir yıllık ${ dealName } aboneliğini %${ salePercentage } indirimle edinin — aynı fırsatı bir arkadaşınızla paylaşmanız için bir hediye kodu da alın"
-      ],
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "High-speed streaming": [
-        "Yüksek hızlı yayın akışı izleme"
-      ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Üst düzey hesap güvenliği ve uzman desteği sunar. ${ DARK_WEB_MONITORING_NAME } internetin gizli bölgelerini tarayarak yasadışı veri piyasalarına düşmüş ${ MAIL_APP_NAME } e-posta adreslerini tespit eder. Bir ihlal tespit edilirse, hesabınızı korumak için gerekli adımları içeren bir Güvenlik Merkezi uyarısı alacaksınız."
-      ],
-      "Protect 10 devices at a time": [
-        "Aynı anda 10 aygıtı koruyun"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükle"
-      ],
-      "Secure file storage & sharing": [
-        "Güvenli dosya depolama alanı ve paylaşımı"
-      ],
-      "Secure vault sharing": [
-        "Güvenli kasa paylaşımı"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adları"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ],
-      "Valentine's deal:": [
-        "Sevgililer günü fırsatı:"
-      ]
-    },
-    "Valentine_2025: offer": {
-      "Valentine's deal": [
-        "Sevgililer günü fırsatı"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } ay",
-        "${ n } ay"
-      ],
-      "/ month": [
-        "/ ay"
-      ],
-      "12 months": [
-        "12 ay"
-      ],
-      "15 months": [
-        "15 ay"
-      ],
-      "24 months": [
-        "24 ay"
-      ],
-      "30 months": [
-        "30 ay"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal } için"
       ]
     },
     "Validation": {

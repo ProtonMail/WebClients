@@ -73,6 +73,9 @@
       "Add phone number": [
         "Dodajte telefonski broj"
       ],
+      "Add public holidays": [
+        "Dodaj javne praznike"
+      ],
       "Add sieve filter": [
         "Dodaj Sieve filtar"
       ],
@@ -457,6 +460,9 @@
       "Mark as default": [
         "Postavi kao zadano"
       ],
+      "Mark as resolved": [
+        "Označi kao riješeno"
+      ],
       "mark emails as": [
         "označi e-poštu kao"
       ],
@@ -595,6 +601,9 @@
       "Report a problem": [
         "Prijavi problem"
       ],
+      "Request a call": [
+        "Zatraži poziv"
+      ],
       "Request a feature": [
         "Zatraži značajku"
       ],
@@ -648,6 +657,9 @@
       ],
       "Search": [
         "Pretraga"
+      ],
+      "Search countries": [
+        "Pretraži države"
       ],
       "Search settings": [
         "Postavke pretraživanja"
@@ -1254,6 +1266,12 @@
       ]
     },
     "Button": {
+      "Continue using ${ planTitle }": [
+        "Nastavi koristiti ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Nastavi svoju pretplatu"
+      ],
       "Copy": [
         "Kopiraj"
       ],
@@ -1279,6 +1297,11 @@
         "Dozvole"
       ]
     },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Već imate pristup ovom kalendaru"
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "Podijeli kalendar"
@@ -1299,6 +1322,20 @@
       ],
       "Syncing": [
         "Sinkronizacija"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is too big": [
+        "Kalendar je prevelik"
+      ],
+      "Failed to sync calendar": [
+        "Sinkronizacija kalendara nije uspjela"
+      ],
+      "More than 12 hours passed since last update": [
+        "Od zadnjeg ažuriranja proteklo je više od 12 sati"
+      ],
+      "Unsupported calendar format": [
+        "Nepodržani format kalendara"
       ]
     },
     "Calendar view": {
@@ -2358,6 +2395,11 @@
         "Ålandski otoci"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Temeljeno na Vašoj vremenskoj zoni"
+      ]
+    },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(putem ${ entryCountryName })"
@@ -2659,11 +2701,17 @@
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
       ],
+      "Account does not exist": [
+        "Račun ne postoji"
+      ],
       "Address primary private key not found": [
         "Primarni privatni ključ adrese nije pronađen"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
+      ],
+      "Already a member of this calendar": [
+        "Već je član ovog kalendara"
       ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
@@ -2779,6 +2827,9 @@
       "No image selected": [
         "Nije odabrana nijedna slika"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Nije ${ BRAND_NAME } račun"
+      ],
       "Not a valid number": [
         "Broj telefona nije važeći"
       ],
@@ -2814,6 +2865,11 @@
       ],
       "Process aborted": [
         "Proces je prekinut"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Uklonjen duplicirani primatelj: ${ joinedRecipients }",
+        "Uklonjeni duplicirani primatelji: ${ joinedRecipients }",
+        "Uklonjeni duplicirani primatelji: ${ joinedRecipients }"
       ],
       "Signature not verified": [
         "Potpis nije ovjeren"
@@ -2895,6 +2951,9 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Pogrešan kôd za provjeru. Provjerite jeste li ispravno kopirali kôd za provjeru i pokušajte ponovo. Može potrajati do 24 sata kako bi promjene stupile na snagu."
+      ],
+      "You already added this holidays calendar": [
+        "Već ste dodali ovaj kalendar praznika"
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste maksimalan broj kalendara."
@@ -3947,6 +4006,9 @@
       "Background color": [
         "Pozadinska boja"
       ],
+      "Based on your time zone": [
+        "Temeljeno na Vašoj vremenskoj zoni"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
       ],
@@ -4201,6 +4263,9 @@
       "Labels:": [
         "Oznake:"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Saznajte kako ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Saznajte više"
       ],
@@ -4209,6 +4274,12 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Pokažite svojim kontaktima da vam je stalo do njihove privatnosti."
+      ],
+      "Link copied to clipboard": [
+        "Poveznica kopirana u međuspremnik"
+      ],
+      "Link created": [
+        "Poveznica je stvorena"
       ],
       "Link type": [
         "Vrsta poveznice"
@@ -4539,6 +4610,9 @@
       "Week": [
         "Tjedan"
       ],
+      "Week and month views only apply to desktop.": [
+        "Tjedni i mjesečni prikazi primjenjuju se samo na radnu površinu."
+      ],
       "Welcome": [
         "Dobrodošli"
       ],
@@ -4667,6 +4741,11 @@
         "${ selectedFoldersCount } oznaka odabrano"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Samo za prikaz"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Dodaj oznaku"
@@ -4770,6 +4849,12 @@
       "Close draft": [
         "Zatvori skicu"
       ],
+      "Create new event": [
+        "Stvori novi događaj"
+      ],
+      "Day view": [
+        "Dnevni prikaz"
+      ],
       "Delete permanently": [
         "Trajno izbriši"
       ],
@@ -4836,6 +4921,9 @@
       "Minimize / maximize composer": [
         "Smanji / povećaj prozor za novu poruku"
       ],
+      "Month view": [
+        "Mjesečni prikaz"
+      ],
       "Move down": [
         "Premjesti dolje"
       ],
@@ -4866,14 +4954,23 @@
       "New message": [
         "Nova poruka"
       ],
+      "Next period": [
+        "Sljedeće razdoblje"
+      ],
       "Open next message": [
         "Otvori sljedeću poruku"
       ],
       "Open previous message": [
         "Otvori prethodnu poruku"
       ],
+      "Open quick actions menu": [
+        "Otvori izbornik brzih radnji"
+      ],
       "Open this modal": [
         "Otvori ovaj modal"
+      ],
+      "Previous period": [
+        "Prethodno razdoblje"
       ],
       "Reply": [
         "Odgovor"
@@ -4886,6 +4983,9 @@
       ],
       "Search": [
         "Pretraga"
+      ],
+      "Search events": [
+        "Traži događaje"
       ],
       "Select / unselect": [
         "Odaberi / poništi odabir"
@@ -4907,6 +5007,12 @@
       ],
       "Star": [
         "Zvjezdica"
+      ],
+      "Today": [
+        "Danas"
+      ],
+      "Week view": [
+        "Tjedni prikaz"
       ]
     },
     "Keyboard shortcut section name": {
@@ -4930,6 +5036,9 @@
       ],
       "Message shortcuts": [
         "Prečaci poruke"
+      ],
+      "View options": [
+        "Opcije prikaza"
       ]
     },
     "Keys actions": {
@@ -4971,6 +5080,9 @@
       ]
     },
     "Knowledge base link label": {
+      "Here's how": [
+        "Evo kako"
+      ],
       "Learn more": [
         "Saznajte više"
       ]
@@ -5427,6 +5539,9 @@
       ],
       "Navigation": [
         "Navigacija"
+      ],
+      "New display name": [
+        "Novi zaslonski naziv"
       ],
       "New email": [
         "Nova e-pošta"
@@ -5949,8 +6064,14 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Dodaj javne praznike"
+      ],
       "Edit calendar": [
         "Uredi kalendar"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Dodajte službene državne kalendare javnih praznika."
       ]
     },
     "Modal title and action": {
@@ -6394,8 +6515,21 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Dodavanje kalendara praznika nije uspjelo"
+      ],
+      "Calendar added": [
+        "Kalendar je dodan"
+      ],
       "Calendar updated": [
         "Kalendar je ažuriran"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Član dodan",
+        "Članovi dodani",
+        "Članovi dodani"
       ]
     },
     "Notification time input": {
@@ -6423,7 +6557,7 @@
       "hour before": [
         "sat prije",
         "sata prije",
-        "sata prije"
+        "sati prije"
       ],
       "minute before": [
         "minuta prije",
@@ -6737,6 +6871,9 @@
       ],
       "per month": [
         "mjesečno"
+      ],
+      "Secure vault sharing": [
+        "Sigurno dijeljenje trezora"
       ]
     },
     "pass_signup_2023: Title": {
@@ -7112,6 +7249,11 @@
         "Poništi ponovno postavljanje lozinke"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Ponovno postavljanje lozinke otkazano"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Poništiti ponovno postavljanje lozinke?"
@@ -7195,6 +7337,11 @@
         "Organizacija"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Ažuriranje postavki nije uspjelo"
+      ]
+    },
     "Settings/filters": {
       "Filters": [
         "Filtri"
@@ -7227,6 +7374,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "Dodaj oznaku"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Dijeli ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -7411,6 +7563,14 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL kalendara"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Da biste se pretplatili na vanjski ili javni kalendar i njihova ažuriranja, morate unijeti njihov URL. Ti će se kalendari dodati među Vaše ostale kalendare i moći ćete ih samo pregledavati, ali ne i uređivati.\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Saznajte kako dohvatiti poveznicu privatnog kalendara."
       ]
     },
     "Subscription": {
@@ -7577,6 +7737,9 @@
       ],
       "Default calendar updated": [
         "Zadani kalendar je ažuriran"
+      ],
+      "Display name updated": [
+        "Zaslonski naziv je ažuriran"
       ],
       "Domain verified": [
         "Domena je potvrđena"
@@ -7971,6 +8134,9 @@
       ],
       "Create Gateway": [
         "Stvori pristupnik"
+      ],
+      "Create public link": [
+        "Stvori javnu poveznicu"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Stvorite svoj ${ BRAND_NAME } račun"
@@ -8369,7 +8535,7 @@
         "Upravljanje sesijama"
       ],
       "Set a display name": [
-        "Postavite ime za prikaz"
+        "Postavi zaslonski naziv"
       ],
       "Set new password": [
         "Postavi novu lozinku"
@@ -8484,6 +8650,9 @@
       ],
       "Warning: suspected fake website": [
         "Upozorenje: sumnja na lažnu web-stranicu"
+      ],
+      "Your calendar link": [
+        "Poveznica vašeg kalendara"
       ],
       "Your plan": [
         "Vaš plan"
@@ -8675,6 +8844,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli provjeriti autentičnost vaših poruka. To se radi u kombinaciji sa zadanim PGP postavkama koje su postavljene ispod."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Dijeljeno u end-to-end šifriranom obliku"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Dijeljeno je u end-to-end šifriranom obliku s potvrđenim kontaktom"
       ]
     },
     "unprivatization": {
