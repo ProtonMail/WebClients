@@ -65,7 +65,7 @@ export const MenuDropdown: FC = () => {
                     advanced: !expanded
                         ? [
                               {
-                                  icon: 'arrow-out-square',
+                                  icon: 'arrow-within-square',
                                   label: c('Action').t`Open in a window`,
                                   onClick: withAppMenuClose(expandPopup),
                               },
@@ -82,7 +82,7 @@ export const MenuDropdown: FC = () => {
             {
                 onClick: navigateToAccount,
                 label: c('Action').t`Account settings`,
-                icon: 'arrow-out-square',
+                icon: 'arrow-within-square',
             },
             {
                 onClick: () => logout({ soft: false }),
@@ -139,7 +139,7 @@ export const MenuDropdown: FC = () => {
                     <DropdownMenuButton
                         onClick={withAppMenuClose(() => onLink(getPassWebUrl(API_URL)))}
                         label={c('Action').t`Open web app`}
-                        icon="arrow-out-square"
+                        icon="arrow-within-square"
                         className="pt-1.5 pb-1.5"
                     />
 

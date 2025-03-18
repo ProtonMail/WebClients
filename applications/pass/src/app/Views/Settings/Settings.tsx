@@ -28,13 +28,13 @@ const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
     { hash: 'security', title: c('Label').t`Security`, content: <Security /> },
     { hash: 'import', title: c('Label').t`Import`, content: <Import /> },
     { hash: 'export', title: c('Label').t`Export`, content: <Export /> },
-    { hash: 'account', title: c('Label').t`Account`, icon: 'arrow-out-square', content: <></> },
+    { hash: 'account', title: c('Label').t`Account`, icon: 'arrow-within-square', content: <></> },
     ...(orgEnabled
         ? [
               {
                   hash: 'organization',
                   title: c('Label').t`Organization`,
-                  icon: 'arrow-out-square',
+                  icon: 'arrow-within-square',
                   content: <></>,
               } as const,
           ]
