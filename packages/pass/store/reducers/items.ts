@@ -11,6 +11,7 @@ import {
     draftSave,
     draftsGarbageCollect,
     emptyTrashProgress,
+    fileLinkPending,
     importItemsProgress,
     inviteAccept,
     itemAutofilled,
@@ -202,6 +203,8 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             const { shareId, itemId, item } = action.payload;
             return fullMerge(state, { [shareId]: { [itemId]: item } });
         }
+
+        if (fileLinkPending.success.match(action)) return updateItem(action.payload)(state);
 
         if (itemsEditSync.match(action)) {
             const { items } = action.payload;
