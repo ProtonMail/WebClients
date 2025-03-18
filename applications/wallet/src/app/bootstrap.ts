@@ -16,6 +16,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { createDrawerApi } from '@proton/shared/lib/drawer/createDrawerApi';
 import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
@@ -24,6 +25,7 @@ import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronC
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
+import { clearSettings } from '@proton/wallet';
 import { extendStore, setupStore } from '@proton/wallet/store';
 
 import locales from './locales';
@@ -141,6 +143,11 @@ export const bootstrapApp = async ({
         });
 
         dispatch(bootstrapEvent({ type: 'complete' }));
+
+        // Register callback to clear settings entries on logout
+        registerSessionRemovalListener(async () => {
+            clearSettings();
+        });
 
         return {
             ...userData,
