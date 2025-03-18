@@ -49,7 +49,7 @@ export const Import: FC = () => {
         []
     );
 
-    const { form, dropzone, busy, result } = useImportForm({
+    const { form, dropzone, busy, result, fileProgress } = useImportForm({
         beforeSubmit,
         onSubmit: (payload) => {
             const total = payload.vaults.reduce((count, vault) => count + vault.items.length, 0);
@@ -151,7 +151,7 @@ export const Import: FC = () => {
             >
                 <FormikProvider value={form}>
                     <Form>
-                        <ImportForm form={form} dropzone={dropzone} busy={busy} />
+                        <ImportForm form={form} dropzone={dropzone} busy={busy} fileProgress={fileProgress} />
                         {form.values.provider && (
                             <Button
                                 className="w-full mt-2"
