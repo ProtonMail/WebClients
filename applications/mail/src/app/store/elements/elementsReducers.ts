@@ -201,7 +201,10 @@ export const eventUpdatesFulfilled = (
 
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
     const total = action.payload.elements.length;
-    const pages = range(0, Math.ceil(total / state.pageSize));
+    const pagesArray = range(0, Math.ceil(total / state.pageSize));
+    // If the resulting array is empty because no results have been found,
+    // cache the page 0, so that we do not trigger additional searches.
+    const pages = pagesArray.length === 0 ? [0] : pagesArray;
 
     const params = action.payload.params;
     const contextFilter = getElementContextIdentifier({
