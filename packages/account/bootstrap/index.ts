@@ -50,6 +50,7 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { telemetry } from '@proton/shared/lib/telemetry';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import { createCustomFetch, getUnleashConfig } from '@proton/unleash';
 import { EVENTS, UnleashClient } from '@proton/unleash';
@@ -89,6 +90,7 @@ export const maybeConsumeFork = async ({ api, mode }: Pick<Parameters<typeof con
 const handleUID = (UID: string | undefined) => {
     setSentryUID(UID);
     metrics.setAuthHeaders(UID || '');
+    telemetry.setAuthHeaders(UID || '');
 };
 
 export const createAuthentication = (args?: Partial<Parameters<typeof createAuthenticationStore>[0]>) => {
@@ -112,6 +114,8 @@ export const init = ({
     authentication: AuthenticationStore;
     locales: TtagLocaleMap;
 }) => {
+    telemetry.init({ config, uid: authentication.UID });
+
     metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
     if (isElectronMail) {
         storeAppVersion(config.APP_NAME, config.APP_VERSION);
