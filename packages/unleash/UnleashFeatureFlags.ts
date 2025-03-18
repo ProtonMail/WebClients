@@ -123,8 +123,6 @@ enum DocsFeatureFlag {
     DriveDocsPublicSharingDisabled = 'DriveDocsPublicSharingDisabled',
     // Suggestions
     DocsSuggestionsDisabled = 'DocsSuggestionsDisabled',
-    // Url stripping
-    DocsUrlStrippingEnabled = 'DocsUrlStrippingEnabled',
 }
 
 enum MailFeatureFlag {
