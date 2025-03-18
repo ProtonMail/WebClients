@@ -1,5 +1,6 @@
 import fs from 'fs';
 
+import { read1PasswordZipData } from '@proton/pass/lib/import/providers/1password/zip.reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
@@ -8,20 +9,33 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { read1Password1PifData } from './1pif.reader';
 
-describe('Import 1password 1pif', () => {
-    let sourceData: string;
+describe.each([
+    {
+        name: 'Import 1password 1pif',
+        filePath: '/mocks/1password.private.1pif',
+        readFunction: async (data: string) => read1Password1PifData({ data }),
+        invalidData: 'not-a-1pif-file',
+    },
+    {
+        name: 'Import 1password zip',
+        filePath: '/mocks/1password.private.zip',
+        readFunction: async (data: Buffer) => read1PasswordZipData({ data: data.buffer as ArrayBuffer }),
+        invalidData: new ArrayBuffer(1),
+    },
+])('$name', ({ filePath, readFunction, invalidData }) => {
+    let sourceData: string | Buffer;
     let payload: ImportPayload;
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/1password.private.1pif', 'utf8');
-        payload = await read1Password1PifData({ data: sourceData });
+        sourceData = await fs.promises.readFile(__dirname + filePath, filePath.endsWith('.zip') ? undefined : 'utf8');
+        payload = await readFunction(sourceData as any);
     });
 
     test('should throw on invalid file content', async () => {
-        await expect(read1Password1PifData({ data: 'not-a-1pif-file' })).rejects.toThrow();
+        await expect(readFunction(invalidData as any)).rejects.toThrow();
     });
 
-    it('should correctly parse items', () => {
+    test('should correctly parse items', () => {
         const [vaultData] = payload.vaults;
         expect(vaultData.items.length).toEqual(8);
 
@@ -177,4 +191,6 @@ describe('Import 1password 1pif', () => {
         expect(creditCardItem.content.cardholderName).toEqual('A B');
         expect(creditCardItem.content.expirationDate).toEqual('012025');
     });
+
+    // Add the remaining shared tests here
 });
