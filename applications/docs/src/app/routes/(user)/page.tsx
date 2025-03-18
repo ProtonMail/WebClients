@@ -1,6 +1,7 @@
 import type { FunctionComponent, ReactNode } from 'react'
 import { useContext, useState } from 'react'
 import { Router } from 'react-router-dom'
+import { CompatRouter } from 'react-router-dom-v5-compat'
 
 import { FlagProvider } from '@proton/unleash'
 
@@ -135,16 +136,18 @@ function OuterContainer({ store, showDrawerSidebar, children }: OuterContainerPr
         <AuthenticationProvider store={extraThunkArguments.authentication}>
           <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
             <Router history={extraThunkArguments.history}>
-              <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                <ApiProvider api={extraThunkArguments.api}>
-                  {/* TODO: fix typo globally */}
-                  <DrawerProvider defaultShowDrawerSidear={showDrawerSidebar}>
-                    <ErrorBoundary big component={<StandardErrorPage big />}>
-                      <StandardPrivateApp>{children}</StandardPrivateApp>
-                    </ErrorBoundary>
-                  </DrawerProvider>
-                </ApiProvider>
-              </EventManagerProvider>
+              <CompatRouter>
+                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                  <ApiProvider api={extraThunkArguments.api}>
+                    {/* TODO: fix typo globally */}
+                    <DrawerProvider defaultShowDrawerSidear={showDrawerSidebar}>
+                      <ErrorBoundary big component={<StandardErrorPage big />}>
+                        <StandardPrivateApp>{children}</StandardPrivateApp>
+                      </ErrorBoundary>
+                    </DrawerProvider>
+                  </ApiProvider>
+                </EventManagerProvider>
+              </CompatRouter>
             </Router>
           </FlagProvider>
         </AuthenticationProvider>

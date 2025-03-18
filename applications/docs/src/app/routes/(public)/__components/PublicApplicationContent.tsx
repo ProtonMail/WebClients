@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { Application } from '@proton/docs-core'
 
 import { useApi } from '@proton/components/index'
-import { Route, Switch } from 'react-router-dom'
 import { ApplicationProvider } from '~/utils/application-context'
 import { DocumentViewer } from '~/components/document/DocumentViewer/DocumentViewer'
 import {
@@ -19,6 +18,7 @@ import { usePublicSessionUser } from '@proton/drive-store/store'
 import { DocsProvider } from '~/components/document/context'
 import { useUnleashClient } from '@proton/unleash'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
+import { Route, Routes } from 'react-router-dom-v5-compat'
 
 export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: PublicDriveCompat }) {
   const api = useApi()
@@ -79,13 +79,16 @@ export function PublicApplicationContent({ publicDriveCompat }: { publicDriveCom
         privateContext={undefined}
       >
         <WordCountProvider>
-          <Switch>
-            <Route path={'*'}>
-              <DocumentLayout>
-                <Content openAction={openAction} actionMode={action} />
-              </DocumentLayout>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route
+              path="*"
+              element={
+                <DocumentLayout>
+                  <Content openAction={openAction} actionMode={action} />
+                </DocumentLayout>
+              }
+            />
+          </Routes>
         </WordCountProvider>
       </DocsProvider>
     </ApplicationProvider>
