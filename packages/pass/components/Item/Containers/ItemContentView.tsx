@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCard.content';
@@ -21,7 +21,7 @@ const itemContentViewMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     identity: IdentityContent,
 };
 
-export const ItemContentView: FC<ItemContentProps> = ({ revision, secureLinkItem }) => {
+export const ItemContentView: FC<PropsWithChildren<ItemContentProps>> = ({ children, revision }) => {
     const item = revision.data as Item;
     const Component = itemContentViewMap[item.type] as FC<ItemContentProps>;
     const { heading } = presentListItem(revision);
@@ -30,7 +30,8 @@ export const ItemContentView: FC<ItemContentProps> = ({ revision, secureLinkItem
         <Card className="border border-weak">
             <section className={clsx('text-left', itemTypeToSubThemeClassName[item.type])}>
                 <h3 className="text-bold mb-4 text-break">{capitalize(heading)}</h3>
-                <Component revision={revision} secureLinkItem={secureLinkItem} />
+                <Component revision={revision} secureLinkItem />
+                {children}
             </section>
         </Card>
     );

@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
 import { Icon } from '@proton/components/index';
+import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -24,6 +25,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/p
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import { type MaybeNull, type NewAliasFormValues, SpotlightMessage } from '@proton/pass/types';
@@ -70,6 +72,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             shareId,
             aliasPrefix: '',
             aliasSuffix: undefined,
+            files: filesFormInitializer(),
             mailboxes: [],
             ...defaults,
         };
@@ -80,7 +83,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
     const form = useFormik<NewAliasFormValues>({
         initialValues,
         initialErrors,
-        onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes }) => {
+        onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes, files }) => {
             if (needsUpgrade) return;
 
             if (aliasPrefix !== undefined && aliasSuffix !== undefined) {
@@ -95,6 +98,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                         note: obfuscate(note),
                         itemUuid: optimisticId,
                     },
+                    files,
                     content: {},
                     extraFields: [],
                     extraData: {
@@ -165,7 +169,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             handleCancelClick={onCancel}
             submitButton={needsUpgrade && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_ALIAS} />}
             type="alias"
-            valid={ready && form.isValid && !unverified && !needsUpgrade}
+            valid={ready && form.isValid && !unverified && !needsUpgrade && !form.status?.isBusy}
             actions={ParentPortal}
         >
             {({ didEnter }) => (
@@ -245,6 +249,10 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                 form={form}
                                 showAdvanced={showAdvanced}
                             />
+
+                            <FieldsetCluster>
+                                <Field name="files" component={FileAttachmentsField} />
+                            </FieldsetCluster>
 
                             <FieldsetCluster>
                                 <Field
