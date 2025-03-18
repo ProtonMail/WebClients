@@ -78,13 +78,19 @@ export const loadPending = (
 
 export const loadFulfilled = (
     state: Draft<ElementsState>,
-    action: PayloadAction<{ result: QueryResults; taskRunning: TaskRunningInfo }, string, { arg: QueryParams }>
+    action: PayloadAction<
+        { result: QueryResults; taskRunning: TaskRunningInfo; params: ElementsStateParams },
+        string,
+        { arg: QueryParams }
+    >
 ) => {
-    const params = state.params;
     const { page, refetch } = action.meta.arg;
     const {
         result: { Total },
         taskRunning,
+        // Always use params from the request, and do not use params from the state
+        // Otherwise, concurrent requests will update the wrong "context filter"
+        params,
     } = action.payload;
 
     const contextFilter = getElementContextIdentifier({
@@ -117,9 +123,11 @@ export const loadFulfilled = (
  */
 export const showSerializedElements = (
     state: Draft<ElementsState>,
-    action: PayloadAction<{ result: QueryResults; page: number }, string>
+    action: PayloadAction<{ result: QueryResults; page: number; params: ElementsStateParams }, string>
 ) => {
-    const params = state.params;
+    // Always use params from the request, and do not use params from the state
+    // Otherwise, concurrent requests will update the wrong "context filter"
+    const params = action.payload.params;
     const {
         result: { Total, Elements },
         page,
