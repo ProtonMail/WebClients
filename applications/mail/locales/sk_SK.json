@@ -1122,10 +1122,10 @@
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrať všetko"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrať všetko"
       ],
       "Select all messages": [
@@ -1549,8 +1549,17 @@
       "${ price } per domain": [
         "${ price } za doménu"
       ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
+      ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
@@ -6070,6 +6079,9 @@
         "${ groupCounts } nájdených skupín",
         "${ groupCounts } nájdených skupín"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } môže chrániť aj vašu spoločnosť."
       ],
@@ -6905,10 +6917,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7299,6 +7308,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
+      ],
+      "Refining email list in progress": [
+        "Prebieha spresnenie zoznamu emailov"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
@@ -14300,6 +14312,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editore bude použitý na odoslanie užívateľovi. Jednoduchý text znamená, že správa bude pri odoslaní vždy prevedená na obyčajný text."
@@ -14381,11 +14398,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Tor out of date": {
