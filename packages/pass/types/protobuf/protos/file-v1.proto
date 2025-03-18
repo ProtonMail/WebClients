@@ -6,7 +6,3 @@ message FileMetadata {
 	// MIME-Type (lowercase)
 	string mime_type = 2;
 }
-
-message File {
-	FileMetadata metadata = 1;
-}
