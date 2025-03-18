@@ -77,3 +77,10 @@ export const updateWalletAccountActivityMetrics = (walletAccountID: string, hasU
         JSON.stringify({ ...metrics, ...updatedMetrics })
     );
 };
+
+/**
+ * Clear Wallet local settings.
+ */
+export const clearSettings = () => {
+    localStorage.removeItem(getLocalSettingsKey());
+};
