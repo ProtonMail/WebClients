@@ -853,8 +853,15 @@
       "${ price } per domain": [
         "${ price } ανά τομέα"
       ],
+      "${ price } per seat": [
+        "${ price } ανά θέση"
+      ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } θέση",
+        "${ seats } ${ LUMO_APP_NAME } θέσεις"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } άδεια βοηθού γραφής",
@@ -1193,8 +1200,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Η πολιτική μη καταγραφής του ${ BRAND_NAME } VPN επιβεβαιώνεται από ανεξάρτητο εργαστήριο."
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Η πολιτική μη τήρησης αρχείων καταγραφής του ${ VPN_APP_NAME } επιβεβαιώθηκε από εξωτερικό έλεγχο"
       ],
       "**Streaming** is included in your subscription.": [
         "Η **μετάδωση ροής** περιλαμβάνεται στη συνδρομή σας."
@@ -1217,8 +1224,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Αυξήστε τις ταχύτητες σύνδεσης έως και 400% με το VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Ανεξάρτητοι ειδικοί ασφάλειας επιβεβαιώνουν ότι το ProtonVPN δεν καταγράφει δεδομένα χρηστών ούτε χρησιμοποιεί πρακτικές που θα μπορούσαν να θέσουν το απόρρητό σας σε κίνδυνο."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Ανεξάρτητοι ειδικοί ασφάλειας επιβεβαιώνουν ότι το ${ VPN_APP_NAME } δεν καταγράφει δεδομένα χρηστών ούτε χρησιμοποιεί πρακτικές που θα μπορούσαν να θέσουν το απόρρητό σας σε κίνδυνο."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Είναι το Telegram ασφαλές; Όπως θα δούμε σε αυτό το άρθρο, αυτό εξαρτάται από τον τρόπο που το χρησιμοποιείτε."
@@ -3870,6 +3877,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης που αντικαθιστά τόσο τον κωδικό σύνδεσης όσο και τον δεύτερο κωδικό πρόσβασης. Για να μεταβείτε στη λειτουργία ενός κωδικού πρόσβασης, πληκτρολογήστε τον μοναδικό κωδικό πρόσβασης που θέλετε να χρησιμοποιήσετε και κάντε κλικ στην επιλογή Αποθήκευση."
       ],
@@ -4152,6 +4162,9 @@
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Ημερολόγιο, ενοποιημένο με ${ MAIL_APP_NAME } και ${ CONTACTS_APP_NAME }"
+      ],
       "Can’t access your recovery email?": [
         "Δεν μπορείτε να αποκτήσετε πρόσβαση στο email ανάκτησης;"
       ],
@@ -4166,6 +4179,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Χώρος αποθήκευσης στο cloud, ενοποιημένος με ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Βραβείο επιλογής συντακτών CNET με βαθμολογία 8,4 στα 10"
@@ -4371,6 +4387,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Υπηρεσία e-mail, ενοποιημένη με ${ CALENDAR_APP_NAME } και ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Η προτίμηση email αποθηκεύτηκε"
@@ -4729,6 +4748,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Βεβαιωθείτε ότι έχετε ${ addARecoveryMethod }, ώστε να μπορείτε να αποκτήσετε ξανά πρόσβαση στο λογαριασμό σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Ελέγξτε ποιες εφαρμογές ${ BRAND_NAME } είναι προσβάσιμες από τα μέλη του οργανισμού σας. Αν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε τον λογαριασμό σας. ${ switchButton }."
       ],
@@ -4859,6 +4881,9 @@
       ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Password manager with extra account security": [
+        "Διαχειριστής κωδικών πρόσβασης με επιπλέον ασφάλεια λογαριασμού"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Ο κωδικός πρόσβασης πρέπει να είναι ${ MIN_PASSWORD_LENGTH } χαρακτήρες ή περισσότεροι."
@@ -5042,6 +5067,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Επιλέξτε τις συνεργασίες χρηστών από ${ getFormattedOrganization } που θέλετε να επιτρέψετε στον ${ BRAND_NAME } οργανισμό σας:"
+      ],
+      "Self-custodial crypto wallet": [
+        "Crypto Wallet αυτοφύλαξης"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Στείλτε email για να ενθαρρύνετε τα μέλη σας να προστατεύσουν τους λογαριασμούς τους με το 2FA."
@@ -5443,6 +5471,9 @@
       ],
       "Visa Secure logo": [
         "λογότυπο Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN με αποκλειστικούς διακομιστές και διευθύνσεις IP"
       ],
       "Warning:": [
         "Προειδοποίηση:"
@@ -10035,6 +10066,47 @@
         "Για ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium χαρακτηριστικά"
@@ -10323,47 +10395,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερα premium χαρακτηριστικά"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -10742,6 +10773,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Επιλέξτε διακομιστή σύνδεσης"
+      ],
+      "Access control": [
+        "Έλεγχος πρόσβασης"
       ],
       "Account": [
         "Λογαριασμός"

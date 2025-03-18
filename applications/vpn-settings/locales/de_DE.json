@@ -853,8 +853,15 @@
       "${ price } per domain": [
         "${ price } pro Domain"
       ],
+      "${ price } per seat": [
+        "${ price } pro Benutzer"
+      ],
       "${ price } per user": [
         "${ price } pro Benutzer"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } Benutzer",
+        "${ seats } ${ LUMO_APP_NAME } Benutzer"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } Lizenz für den Schreibassistenten",
@@ -1193,8 +1200,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "No Logs-Richtlinie von ${ BRAND_NAME } VPN unabhängig überprüft"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "${ VPN_APP_NAME }s No Logs-Richtlinie bestätigt durch eine externe Prüfung"
       ],
       "**Streaming** is included in your subscription.": [
         "**Streaming** ist in deinem Abonnement enthalten"
@@ -1217,8 +1224,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Erhöhe die VPN-Geschwindigkeit um bis zu 400% mit VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Unabhängige Sicherheitsexperten überprüften, dass Proton VPN keine Nutzerdaten protokolliert und keine Praktiken anwendet, die deine Sicherheit gefährden könnten."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Unabhängige Sicherheitsexperten überprüften, dass ${ VPN_APP_NAME } keine Nutzerdaten protokolliert und keine Praktiken anwendet, die deine Sicherheit gefährden könnten."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Ist es sicher, Telegram zu nutzen? Wie wir in diesem Artikel erläutern, hängt es sehr davon ab, wie du es nutzt."
@@ -3870,6 +3877,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Nicht-SSO-Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Nicht-SSO-Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das zweite Passwort ersetzt. Um in den Einzelpasswortmodus zu wechseln, gib das gewünschte Einzelpasswort ein und klicke auf Speichern."
       ],
@@ -4152,6 +4162,9 @@
       "By leaving now, changes may not be saved": [
         "Beim Verlassen werden Änderungen möglicherweise nicht gespeichert"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalender integriert mit ${ MAIL_APP_NAME } und ${ CONTACTS_APP_NAME }"
+      ],
       "Can’t access your recovery email?": [
         "Du hast keinen Zugriff auf deine Wiederherstellungs-E-Mail-Adresse?"
       ],
@@ -4166,6 +4179,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Cloud-Speicher integriert mit ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editors Choice Award mit einer Bewertung von 8,4 von 10"
@@ -4371,6 +4387,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-Mail-Dienst integriert mit ${ CALENDAR_APP_NAME } und ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "E-Mail-Einstellungen gespeichert"
@@ -4729,6 +4748,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Stelle sicher, dass du ${ addARecoveryMethod }, damit du wieder Zugriff auf dein Konto erhältst, wenn du dein Passwort vergessen hast."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Verwalte, auf welche ${ BRAND_NAME }-Anwendungen die Mitglieder deiner Organisation zugreifen können. Wenn deaktiviert, haben nur Administratoren Zugriff."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Gib diese Informationen manuell in dein Zwei‐Faktor‐Authentifizierungsgerät ein, um dein Konto einzurichten. ${ switchButton }."
       ],
@@ -4859,6 +4881,9 @@
       ],
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert"
+      ],
+      "Password manager with extra account security": [
+        "Passwortmanager mit zusätzlicher Kontosicherheit"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen lang sein."
@@ -5042,6 +5067,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Wähle die Benutzerzugehörigkeiten aus ${ getFormattedOrganization }, die du in deiner ${ BRAND_NAME }-Organisation zulassen möchtest:"
+      ],
+      "Self-custodial crypto wallet": [
+        "Selbstverwaltete Krypto-Wallet"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Versende E-Mails, um deine Mitglieder zu ermutigen, ihre Konten mit 2FA zu schützen."
@@ -5443,6 +5471,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure Logo"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN mit eigenen Servern und IP-Adressen"
       ],
       "Warning:": [
         "Warnung:"
@@ -10035,6 +10066,47 @@
         "Für ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "and 15 more premium features": [
+        "und 15 weitere Premium-Funktionen"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatische E-Mail-Weiterleitung ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Warnungen vor Datenlecks ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-App"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
+      ],
+      "No ads or tracking": [
+        "Keine Werbung oder Tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kurze @pm.me-E-Mail-Adresse"
+      ],
+      "Support our mission": [
+        "Unterstütze unsere Mission"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Steigere deine Produktivität"
+      ],
+      "We don't sell your data": [
+        "Wir verkaufen deine Daten nicht"
+      ],
+      "Your privacy is our mission": [
+        "Deine Privatsphäre ist unsere Mission"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
@@ -10323,47 +10395,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "and 15 more premium features": [
-        "und 15 weitere Premium-Funktionen"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatische E-Mail-Weiterleitung ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Warnungen vor Datenlecks ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-App"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hilf uns, das Internet für alle sicher und privat zu halten. Upgrade auf ein kostenpflichtiges Abonnement."
-      ],
-      "No ads or tracking": [
-        "Keine Werbung oder Tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kurze @pm.me-E-Mail-Adresse"
-      ],
-      "Support our mission": [
-        "Unterstütze unsere Mission"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Steigere deine Produktivität"
-      ],
-      "We don't sell your data": [
-        "Wir verkaufen deine Daten nicht"
-      ],
-      "Your privacy is our mission": [
-        "Deine Privatsphäre ist unsere Mission"
       ]
     },
     "Subscription renewal state": {
@@ -10745,6 +10776,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Wähle einen Server aus, mit dem du dich verbinden möchtest"
+      ],
+      "Access control": [
+        "Zutrittskontrolle"
       ],
       "Account": [
         "Konto"
@@ -11937,129 +11971,6 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
-      ]
-    },
-    "Valentine_2025": {
-      "+ free gift": [
-        "+ Gratisgeschenk"
-      ],
-      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Ein Geschenkcode für ${ discountPercentAbsolute } % Rabatt auf ${ planTitle } für 1 Jahr"
-      ],
-      "Valentine's deal": [
-        "Angebot zum Valentinstag"
-      ],
-      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Dein Gratisgeschenk zum Teilen, im Wert von ${ price }: "
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "${ salePercentage } % Rabatt"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "${ salePercentage } % Rabatt für dich +1"
-      ],
-      "10 email addresses for you": [
-        "10 E-Mail-Adressen für dich"
-      ],
-      "10,000+ servers in 110+ countries": [
-        "Mehr als 10.000 Server in über 110 Ländern"
-      ],
-      "15 GB storage": [
-        "15 GB Speicherplatz"
-      ],
-      "200 GB storage": [
-        "200 GB Speicherplatz"
-      ],
-      "500 GB total storage": [
-        "500 GB Speicherplatz insgesamt"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
-      ],
-      "Advanced account protection": [
-        "Erweiterter Kontoschutz"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Alle Premium-Funktionen von Mail, VPN, Pass und Drive"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Alle Premium-Dienste von ${ BRAND_NAME }. Ein einfaches Abonnement."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Rabatte basieren auf den Standardpreisen für Monatsabonnements. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum regulären Jahrespreis."
-      ],
-      "Double the love, half the price": [
-        "Doppelte Liebe, halber Preis"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Sichere dir 1 Jahr ${ dealName } mit ${ salePercentage } % Rabatt – plus einen Geschenkcode, um dasselbe Angebot mit einer Freundin oder einem Freund zu teilen"
-      ],
-      "Get the deal": [
-        "Jetzt zugreifen"
-      ],
-      "High-speed streaming": [
-        "Hochgeschwindigkeits-Steaming"
-      ],
-      "Integrated 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Bietet erstklassige Kontosicherheit und fachkundigen Support. ${ DARK_WEB_MONITORING_NAME } durchforstet versteckte Bereiche des Internets nach ${ MAIL_APP_NAME }-E-Mail-Adressen, die in illegalen Datenmärkten gelandet sind. Wenn eine Sicherheitslücke erkannt wird, erhältst du eine Benachrichtigung vom Security Center mit einer Anleitung zum Schutz deines Kontos."
-      ],
-      "Protect 10 devices at a time": [
-        "Schütze 10 Geräte gleichzeitig"
-      ],
-      "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
-      ],
-      "Secure file storage & sharing": [
-        "Sichere Dateispeicherung und -freigabe"
-      ],
-      "Secure vault sharing": [
-        "Sicheres Teilen von Tresoren"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Unbegrenzte Hide-my-email-Aliasse"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ],
-      "Valentine's deal:": [
-        "Angebot zum Valentinstag:"
-      ]
-    },
-    "Valentine_2025: offer": {
-      "Valentine's deal": [
-        "Angebot zum Valentinstag"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
-      "/ month": [
-        "/ Monat"
-      ],
-      "12 months": [
-        "12 Monate"
-      ],
-      "15 months": [
-        "15 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
-      ],
-      "30 months": [
-        "30 Monate"
-      ],
-      "for ${ durationDeal }": [
-        "für ${ durationDeal }"
       ]
     },
     "Validation": {
