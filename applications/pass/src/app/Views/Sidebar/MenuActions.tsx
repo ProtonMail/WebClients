@@ -45,7 +45,7 @@ export const MenuActions: FC = () => {
             { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-down-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-up-line' },
-            { key: 'account', label: c('Label').t`Account`, icon: 'arrow-out-square', onClick: navigateToAccount },
+            { key: 'account', label: c('Label').t`Account`, icon: 'arrow-within-square', onClick: navigateToAccount },
             ...(orgEnabled
                 ? [
                       {
