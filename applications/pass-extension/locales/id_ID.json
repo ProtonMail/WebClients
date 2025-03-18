@@ -1897,6 +1897,9 @@
       "Please consider leaving a review.": [
         "Mohon pertimbangkan untuk memberikan ulasan."
       ],
+      "Please contact your administrator": [
+        "Silakan hubungi administrator Anda"
+      ],
       "Please do not close this window": [
         "Mohon untuk tidak menutup jendela ini"
       ],
@@ -2304,6 +2307,9 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } kata"
       ],
+      "${ count } item": [
+        "${ count } item"
+      ],
       "${ days } day": [
         "${ days } hari"
       ],
@@ -2330,6 +2336,9 @@
       ],
       "${ repliedCount } reply": [
         "${ repliedCount } balasan"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } tautan aman"
       ],
       "${ years } year": [
         "${ years } tahun"
@@ -2912,6 +2921,9 @@
       ],
       "Save passkeys": [
         "Simpan passkey"
+      ],
+      "Secure links": [
+        "Tautan aman"
       ],
       "Security": [
         "Keamanan"
@@ -3764,6 +3776,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Apa perbedaan antara catatan ${ PASS_SHORT_APP_NAME } dan catatan SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "Anda tidak memiliki brankas"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Langganan ${ planName } Anda akan berakhir pada ${ endDate }"
       ],
@@ -4046,6 +4061,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Anda tidak akan lagi memiliki akses ke brankas ini. Untuk dapat kembali bergabung dengan brankas ini, Anda akan memerlukan undangan baru."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Administrator Anda harus membuatkan brankas bagi Anda sebelum Anda dapat membuat item"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Organisasi Anda tidak mengizinkan pembuatan brankas"
       ],
       "Your organization does not allow sharing individual items": [
         "Organisasi Anda tidak mengizinkan pembagian item secara satu per satu"
