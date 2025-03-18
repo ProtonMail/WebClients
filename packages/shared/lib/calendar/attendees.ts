@@ -1,4 +1,4 @@
-import { CryptoProxy, type SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, type SessionKey } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
@@ -146,21 +146,7 @@ export const toInternalAttendee = (
             // VERIFICATION_STATUS.SIGNED_AND_INVALID -> EVENT_VERIFICATION_STATUS.FAILED
             // no verification keys -> discard VERIFICATION_STATUS -> return EVENT_VERIFICATION_STATUS.NOT_VERIFIED
 
-            if (!publicKey.verifyingKeys.length) {
-                comment = `No verifying keys for comment: ${decryptedMessageResult.data}`;
-            }
-
-            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                comment = decryptedMessageResult.data;
-            }
-
-            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
-                comment = `Invalid signature for comment: ${decryptedMessageResult.data}`;
-            }
-
-            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
-                comment = `Unsigned comment: ${decryptedMessageResult.data}`;
-            }
+            comment = decryptedMessageResult.data;
         }
 
         const partstat = toIcsPartstat(extra.Status);
