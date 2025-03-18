@@ -219,7 +219,7 @@ export const useMailboxHotkeys = (
         [
             ['Meta', 'A'],
             (e) => {
-                if (Shortcuts) {
+                if (Shortcuts && !elementID) {
                     e.preventDefault();
                     e.stopPropagation();
                     const allChecked = elementIDs.length === checkedIDs.length;
