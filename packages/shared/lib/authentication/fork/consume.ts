@@ -1,4 +1,5 @@
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import type { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { ForkState } from '@proton/shared/lib/authentication/fork/forkState';
 import { getCurrentUrl, getForkStateData, setForkStateData } from '@proton/shared/lib/authentication/fork/forkState';
 import getRandomString from '@proton/utils/getRandomString';
@@ -129,16 +130,17 @@ export const consumeForkSelector = async ({ api, selector }: { api: Api; selecto
 export const finalizeConsumeFork = async ({
     api,
     pullForkResponse,
-    payload: { keyPassword, forkedOfflineKey, persistent, trusted, mode },
+    payload: { keyPassword, forkedOfflineKey, persistent, trusted, mode, source },
 }: {
     api: Api;
     pullForkResponse: PullForkResponse;
     payload: {
         persistent: boolean;
         trusted: boolean;
-        keyPassword?: string;
+        keyPassword: string;
         forkedOfflineKey?: OfflineKey;
         mode?: 'sso' | 'standalone';
+        source: SessionSource;
     };
 }): Promise<ResumedSessionResult> => {
     const { UID, AccessToken, RefreshToken, LocalID } = pullForkResponse;
@@ -157,12 +159,13 @@ export const finalizeConsumeFork = async ({
         RefreshToken,
     };
 
-    const { clientKey, offlineKey, persistedAt } = await persistSession({
+    const { clientKey, offlineKey, persistedSession } = await persistSession({
         api: authApi,
         ...result,
         clearKeyPassword: '',
         offlineKey: forkedOfflineKey,
         mode,
+        source,
     });
     await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
 
@@ -170,7 +173,7 @@ export const finalizeConsumeFork = async ({
         ...result,
         clientKey,
         offlineKey,
-        persistedAt,
+        persistedSession,
     } as const;
 };
 
@@ -190,7 +193,7 @@ const resolveForkPasswords = async ({
     if (payload) {
         try {
             const data = await getForkDecryptedBlob(await importKey(key), payload, payloadVersion);
-            keyPassword = data?.keyPassword || '';
+            keyPassword = data?.keyPassword ?? '';
             if (data?.type === 'offline') {
                 forkedOfflineKey = {
                     password: data.offlineKeyPassword,
@@ -212,7 +215,7 @@ export const consumeFork = async ({
     api,
     mode,
     parameters,
-    parameters: { selector, state: stateKey, key, persistent, trusted, payloadVersion },
+    parameters: { selector, state: stateKey, key, persistent, trusted, payloadVersion, source },
 }: ConsumeForkArguments): Promise<{
     session: ResumedSessionResult;
     forkState: ForkState;
@@ -237,7 +240,7 @@ export const consumeFork = async ({
     const result = await finalizeConsumeFork({
         api,
         pullForkResponse: selectorResult.response,
-        payload: { persistent, trusted, keyPassword, forkedOfflineKey, mode },
+        payload: { persistent, trusted, keyPassword, forkedOfflineKey, mode, source },
     });
 
     return {

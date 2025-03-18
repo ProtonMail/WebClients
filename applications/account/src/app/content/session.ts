@@ -7,16 +7,16 @@ export const addSession = (previousSessions: ActiveSession[] | undefined, sessio
         return undefined;
     }
     const sessionExists = previousSessions.some((previousSession) => {
-        return previousSession.remote.LocalID === session.LocalID;
+        return previousSession.remote.LocalID === session.data.LocalID;
     });
     if (sessionExists) {
         return previousSessions;
     }
-    const persisted = getPersistedSession(session.LocalID);
-    if (!persisted) {
+    const persistedSession = getPersistedSession(session.data.LocalID);
+    if (!persistedSession) {
         return previousSessions;
     }
-    const { LocalID, User, UID } = session;
+    const { LocalID, User, UID } = session.data;
     const activeSession: ActiveSession = {
         remote: {
             LocalID,
@@ -27,7 +27,7 @@ export const addSession = (previousSessions: ActiveSession[] | undefined, sessio
             PrimaryEmail: User.Email,
         },
         persisted: {
-            ...persisted,
+            ...persistedSession,
             localID: LocalID,
         },
     };

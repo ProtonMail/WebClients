@@ -1,5 +1,6 @@
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
+import { type PersistedSession, SessionSource } from '../authentication/SessionInterface';
 import type { ResumedSessionResult } from '../authentication/persistedSessionHelper';
 import type { APP_NAMES } from '../constants';
 import { SECOND } from '../constants';
@@ -25,7 +26,7 @@ export const resumeSessionDrawerApp = ({
             if (event.data.type === DRAWER_EVENTS.SESSION) {
                 const {
                     UID,
-                    keyPassword,
+                    keyPassword = '',
                     User,
                     localID,
                     clientKey,
@@ -33,13 +34,28 @@ export const resumeSessionDrawerApp = ({
                     persistent,
                     trusted,
                     tag,
-                    persistedAt,
+                    // Backwards compatiblity while both apps are being updated
+                    persistedSession: maybePersistedSession,
                 } = event.data.payload;
                 window.removeEventListener('message', handler);
 
                 if (timeout) {
                     clearTimeout(timeout);
                 }
+
+                const persistedSession: PersistedSession = maybePersistedSession ?? {
+                    // This is a mock of the persisted session since the drawer isn't fully using it anyway.
+                    UID,
+                    payloadType: 'default',
+                    payloadVersion: 1,
+                    localID,
+                    UserID: User.ID,
+                    isSelf: false,
+                    source: SessionSource.Proton,
+                    persistent,
+                    persistedAt: Date.now(),
+                    trusted,
+                };
 
                 resolve({
                     tag,
@@ -51,7 +67,7 @@ export const resumeSessionDrawerApp = ({
                     persistent,
                     trusted,
                     LocalID: localID ?? parentLocalID,
-                    persistedAt: persistedAt ?? Date.now(), // Backwards compatibility. Can be removed once Mail+Calendar are deployed
+                    persistedSession,
                 });
             }
         };

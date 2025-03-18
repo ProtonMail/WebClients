@@ -1,15 +1,11 @@
 import type { OfflineKey } from '../../authentication/offlineKey';
 import { type ExtensionApp, type ExtensionMessageResponse, sendExtensionMessage } from '../../browser/extension';
+import type { ResumedSessionResult } from '../persistedSessionHelper';
 import type { ProduceForkParameters } from './produce';
 
 interface ExtensionForkPayloadArguments {
     selector: string;
-    session: {
-        keyPassword?: string | undefined;
-        offlineKey: OfflineKey | undefined;
-        persistent: boolean;
-        trusted: boolean;
-    };
+    session: ResumedSessionResult;
     forkParameters: ProduceForkParameters;
 }
 

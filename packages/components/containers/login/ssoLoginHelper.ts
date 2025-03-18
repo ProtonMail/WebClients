@@ -1,6 +1,7 @@
 import { syncAddresses, syncUser } from '@proton/components/containers/login/syncCache';
 import { activateAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Api, User } from '@proton/shared/lib/interfaces';
@@ -18,16 +19,17 @@ import type {
     DeviceSecretData,
     DeviceSecretUser,
 } from '@proton/shared/lib/keys/device';
-import { deleteAuthDevice, getAllAuthDevices } from '@proton/shared/lib/keys/device';
-import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 import {
     AuthDeviceInactiveError,
     AuthDeviceInvalidError,
     AuthDeviceNonExistingError,
+    AuthDeviceState,
     type DeviceData,
     createAuthDevice,
     createAuthDeviceToActivate,
+    deleteAuthDevice,
     encryptAuthDeviceSecret,
+    getAllAuthDevices,
     getAuthDeviceDataByUser,
     setPersistedAuthDeviceDataByUser,
 } from '@proton/shared/lib/keys/device';
@@ -84,6 +86,7 @@ export const handleSSODeviceConfirmed = async ({
         loginPassword: '',
         clearKeyPassword: '',
         keyPassword: deviceSecretUser.keyPassword,
+        source: SessionSource.Saml,
     });
 };
 
@@ -128,6 +131,7 @@ export const handleUnlockSSO = async ({
         loginPassword: '',
         clearKeyPassword,
         keyPassword,
+        source: SessionSource.Saml,
     });
 };
 
@@ -190,6 +194,7 @@ export const handleSetupSSOUserKeys = async ({
         loginPassword: '',
         keyPassword: passphrase,
         clearKeyPassword: newPassword,
+        source: SessionSource.Saml,
     });
 };
 
@@ -224,6 +229,7 @@ export const handleChangeSSOUserKeysPassword = async ({
         keyPassword,
         clearKeyPassword: newBackupPassword,
         attemptResume: false,
+        source: SessionSource.Saml,
     });
 };
 
@@ -466,7 +472,11 @@ export const handlePrepareSSOData = async ({ cache }: { cache: AuthCacheResult }
         const ssoData = await getSSOSetupData({ user, cache });
         // When ssoData is null, it means that the organization is not yet setup for global SSO, and it proceeds with the regular VPN SSO flow
         if (ssoData === null) {
-            return finalizeLogin({ cache, loginPassword: '' });
+            return finalizeLogin({
+                cache,
+                loginPassword: '',
+                source: SessionSource.Saml,
+            });
         }
         cache.data.ssoData = ssoData;
         return {
@@ -490,6 +500,7 @@ export const handlePrepareSSOData = async ({ cache }: { cache: AuthCacheResult }
             loginPassword: '',
             clearKeyPassword: '',
             keyPassword: deviceSecretUser.keyPassword,
+            source: SessionSource.Saml,
         });
     } catch (e) {
         if (e instanceof AuthDeviceInactiveError) {

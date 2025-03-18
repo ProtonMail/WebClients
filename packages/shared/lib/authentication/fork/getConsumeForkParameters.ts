@@ -1,3 +1,4 @@
+import { SessionSource } from '../SessionInterface';
 import { getReturnUrlParameter } from '../returnUrl';
 import { ForkSearchParameters, type ForkType } from './constants';
 import { getValidatedForkType, getValidatedRawKey } from './validation';
@@ -7,12 +8,25 @@ export interface ConsumeForkParameters {
     state: string;
     key: Uint8Array;
     persistent: boolean;
+    source: SessionSource;
     trusted: boolean;
     payloadVersion: 1 | 2;
     payloadType: 'offline' | 'default';
     forkType: ForkType | undefined;
     returnUrl?: string;
 }
+
+const getValidatedSource = (string: string | null): SessionSource => {
+    if (!string) {
+        return SessionSource.Proton;
+    }
+    const number = Number(string);
+    const validSources = [SessionSource.Saml, SessionSource.Oauth, SessionSource.Proton];
+    if (validSources.some((source) => source === number)) {
+        return number;
+    }
+    return SessionSource.Proton;
+};
 
 export const getConsumeForkParameters = (searchParams: URLSearchParams): ConsumeForkParameters | null => {
     const selector = searchParams.get(ForkSearchParameters.Selector) || '';
@@ -23,6 +37,7 @@ export const getConsumeForkParameters = (searchParams: URLSearchParams): Consume
     const trusted = searchParams.get(ForkSearchParameters.Trusted) || '';
     const payloadVersion = searchParams.get(ForkSearchParameters.PayloadVersion) || '';
     const payloadType = searchParams.get(ForkSearchParameters.PayloadType) || '';
+    const source = getValidatedSource(searchParams.get(ForkSearchParameters.Source));
 
     const state = unparsedState.slice(0, 100);
     const key = base64StringKey.length ? getValidatedRawKey(base64StringKey) : undefined;
@@ -35,6 +50,7 @@ export const getConsumeForkParameters = (searchParams: URLSearchParams): Consume
         state,
         selector,
         key,
+        source,
         forkType: getValidatedForkType(type),
         persistent: persistent === '1',
         trusted: trusted === '1',

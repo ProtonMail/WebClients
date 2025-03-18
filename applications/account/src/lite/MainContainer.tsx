@@ -38,6 +38,15 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
                 <PrivacySecuritySettings layout={layout} loader={loader} />
             )}
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
+            {action === SupportedActions.VPNLite && (
+                <SubscribeAccount
+                    app={app}
+                    redirect={redirect}
+                    searchParams={searchParams}
+                    loader={loader}
+                    layout={layout}
+                />
+            )}
             {(action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) && (
                 <SubscribeAccount
                     app={app}

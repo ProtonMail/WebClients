@@ -17,6 +17,7 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
+import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
@@ -218,11 +219,21 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
             return;
         }
 
+        const localIdParam = Number(searchParams.get('u'));
+        if (localIdParam >= 0) {
+            const persistedSession = getPersistedSession(localIdParam);
+            if (persistedSession) {
+                setupApp(persistedSession.UID).catch(handleSetupError);
+                return;
+            }
+        }
+
         // Old clients not supporting auto-sign in receive upgrade notifications to the lite app.
         if (fallbackUrl) {
             replaceUrl(fallbackUrl);
             return;
         }
+
         setError({
             message: 'No selector or JWT token found',
         });

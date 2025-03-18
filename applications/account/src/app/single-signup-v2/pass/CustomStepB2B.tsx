@@ -134,7 +134,7 @@ const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters 
                             const api = cache.setupData.api;
                             const user = cache.setupData.user;
                             const password = cache.accountData.password;
-                            const keyPassword = cache.setupData?.keyPassword || '';
+                            const keyPassword = cache.setupData?.keyPassword ?? '';
 
                             await handleSetupOrg({ api, user, password, keyPassword, orgName }).catch(noop);
 

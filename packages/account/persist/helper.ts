@@ -1,5 +1,6 @@
 import deepFreeze from 'deep-freeze';
 
+import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
@@ -10,13 +11,15 @@ import { deleteStore, readStore, writeStore } from './db';
 
 export const getDecryptedPersistedState = async <T>({
     authentication,
+    persistedSession: maybePersistedSession,
     user,
 }: {
     authentication: AuthenticationStore;
+    persistedSession?: PersistedSession;
     user: User | undefined;
 }) => {
     const localID = authentication.localID;
-    const persistedSession = getPersistedSession(localID);
+    const persistedSession = maybePersistedSession ?? getPersistedSession(localID);
     const clientKey = authentication.getClientKey();
 
     if (!persistedSession?.UserID || !clientKey) {

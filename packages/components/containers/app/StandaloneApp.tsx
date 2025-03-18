@@ -46,7 +46,7 @@ const Component = () => {
                                         <MinimalLoginContainer
                                             onStartAuth={() => unauthenticatedApi.startUnAuthFlow()}
                                             onLogin={async (args) => {
-                                                replaceUrl(authentication.login(args));
+                                                replaceUrl(authentication.login(args.data));
                                                 return { state: 'complete' };
                                             }}
                                         />
