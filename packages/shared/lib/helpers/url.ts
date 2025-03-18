@@ -2,8 +2,7 @@ import { stripLeadingSlash, stripTrailingSlash } from '@proton/shared/lib/helper
 
 import { type ReturnUrlContext, type ReturnUrlTarget, appendReturnUrlParams } from '../authentication/returnUrl';
 import type { APP_NAMES } from '../constants';
-import { VPN_HOSTNAME } from '../constants';
-import { APPS, APPS_CONFIGURATION, DOH_DOMAINS, LINK_TYPES } from '../constants';
+import { APPS, APPS_CONFIGURATION, DOH_DOMAINS, LINK_TYPES, VPN_HOSTNAME } from '../constants';
 import window from '../window';
 
 const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {

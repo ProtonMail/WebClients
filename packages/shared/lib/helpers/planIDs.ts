@@ -88,34 +88,34 @@ export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
  * @returns
  */
 export const switchPlan = ({
-    planIDs,
-    planID,
+    currentPlanIDs,
+    newPlan,
     organization,
     plans,
     user,
 }: {
-    planIDs: PlanIDs;
-    planID?: PLANS | ADDON_NAMES;
+    currentPlanIDs: PlanIDs;
+    newPlan?: PLANS | ADDON_NAMES;
     organization?: Organization;
     plans: Plan[];
     user: User | undefined;
 }): PlanIDs => {
-    if (planID === undefined) {
+    if (newPlan === undefined) {
         return {};
     }
 
-    const newPlanIDs = { [planID]: 1 };
+    const newPlanIDs = { [newPlan]: 1 };
     const supportedAddons = getSupportedAddons(newPlanIDs);
 
     // Transfer addons
     (Object.keys(supportedAddons) as ADDON_NAMES[]).forEach((addon) => {
-        const quantity = planIDs[addon as keyof PlanIDs];
+        const quantity = currentPlanIDs[addon as keyof PlanIDs];
 
         if (quantity) {
             newPlanIDs[addon] = quantity;
         }
 
-        const plan = plans.find(({ Name }) => Name === planID);
+        const plan = plans.find(({ Name }) => Name === newPlan);
 
         // Transfer member addons
         if (isMemberAddon(addon) && plan && organization) {
@@ -159,7 +159,7 @@ export const switchPlan = ({
                 let memberAddons = 0;
                 for (const addonName of Object.values(ADDON_NAMES)) {
                     if (isMemberAddon(addonName)) {
-                        memberAddons += planIDs[addonName] ?? 0;
+                        memberAddons += currentPlanIDs[addonName] ?? 0;
                     }
                 }
 
@@ -182,7 +182,8 @@ export const switchPlan = ({
             if (domainAddon) {
                 newPlanIDs[addon] = Math.max(
                     diffDomains > 0 && domainAddon.MaxDomains ? Math.ceil(diffDomains / domainAddon.MaxDomains) : 0,
-                    (planIDs[ADDON_NAMES.DOMAIN_ENTERPRISE] || 0) + (planIDs[ADDON_NAMES.DOMAIN_BUNDLE_PRO] || 0)
+                    (currentPlanIDs[ADDON_NAMES.DOMAIN_ENTERPRISE] || 0) +
+                        (currentPlanIDs[ADDON_NAMES.DOMAIN_BUNDLE_PRO] || 0)
                 );
             }
         }
@@ -206,7 +207,7 @@ export const switchPlan = ({
                 let gptAddons = 0;
                 for (const addonName of Object.values(ADDON_NAMES)) {
                     if (isScribeAddon(addonName)) {
-                        gptAddons += planIDs[addonName] ?? 0;
+                        gptAddons += currentPlanIDs[addonName] ?? 0;
                     }
                 }
 
@@ -218,13 +219,19 @@ export const switchPlan = ({
             const lumoAddon = plans.find(({ Name }) => Name === addon);
 
             if (lumoAddon) {
-                newPlanIDs[addon] = getLumoWithEnoughSeats({ planIDs, lumoAddon, organization, toPlan: plan, plans });
+                newPlanIDs[addon] = getLumoWithEnoughSeats({
+                    planIDs: currentPlanIDs,
+                    lumoAddon,
+                    organization,
+                    toPlan: plan,
+                    plans,
+                });
             }
         }
 
         if (isIpAddon(addon) && plan && organization) {
             // cycle and currency don't matter in this case
-            const currentPlan = new SelectedPlan(planIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
+            const currentPlan = new SelectedPlan(currentPlanIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
             const newPlan = new SelectedPlan(newPlanIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
 
             const totalIPs = currentPlan.getTotalIPs();

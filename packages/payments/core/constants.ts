@@ -164,10 +164,18 @@ export enum PLANS {
     MAIL = 'mail2022',
     MAIL_PRO = 'mailpro2022',
     MAIL_BUSINESS = 'mailbiz2024',
+    /**
+     * @deprecated.
+     * Unless you know exactly what you are doing, don't use this plan. The new VPN plan is VPN2024.
+     */
     VPN = 'vpn2022',
     VPN2024 = 'vpn2024',
     WALLET = 'wallet2024',
     BUNDLE = 'bundle2022',
+    /**
+     * @deprecated.
+     * Unless you know exactly what you are doing, don't use this plan. The new bundle pro plan is BUNDLE_PRO_2024.
+     */
     BUNDLE_PRO = 'bundlepro2022',
     BUNDLE_PRO_2024 = 'bundlepro2024',
     ENTERPRISE = 'enterprise2022',

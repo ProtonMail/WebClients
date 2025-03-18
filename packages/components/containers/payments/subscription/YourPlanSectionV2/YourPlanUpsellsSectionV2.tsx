@@ -11,7 +11,7 @@ import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import type { FullPlansMap } from '@proton/payments';
 import { CYCLE } from '@proton/payments';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { hasBundle, hasDuo, hasFamily, hasVPN, hasVPN2024 } from '@proton/shared/lib/helpers/subscription';
+import { hasBundle, hasDeprecatedVPN, hasDuo, hasFamily, hasVPN2024 } from '@proton/shared/lib/helpers/subscription';
 import type { FreePlanDefault, Subscription, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
@@ -95,7 +95,7 @@ const getUpsellSection = ({
         );
     }
 
-    if ((hasVPN(subscription) || hasVPN2024(subscription)) && subscription.Cycle === CYCLE.YEARLY) {
+    if ((hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription.Cycle === CYCLE.YEARLY) {
         return (
             <UnlimitedBannerGradient
                 user={user}
@@ -112,7 +112,7 @@ const getUpsellSection = ({
         );
     }
 
-    if ((hasVPN(subscription) || hasVPN2024(subscription)) && subscription.Cycle === CYCLE.TWO_YEARS) {
+    if ((hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription.Cycle === CYCLE.TWO_YEARS) {
         return (
             <UnlimitedBannerGradient
                 user={user}
@@ -131,7 +131,7 @@ const getUpsellSection = ({
     }
 
     // Catch all cycles except yearly or two years
-    if (hasVPN(subscription) || hasVPN2024(subscription)) {
+    if (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) {
         return (
             <>
                 <VpnPlusExtendSubscription

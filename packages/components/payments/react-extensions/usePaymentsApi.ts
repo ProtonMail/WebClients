@@ -490,6 +490,8 @@ export const usePaymentsApiWithCheckFallback = () => {
             Coupon: null,
             PeriodEnd: Math.floor(+addMonths(new Date(), Cycle) / 1000),
             SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
             __fallback: true,
         };
 

@@ -14,7 +14,7 @@ import {
     SkeletonLoader,
     StyledPayPalButton,
     Toggle,
-    getCheckoutRenewNoticeText,
+    getCheckoutRenewNoticeTextFromCheckResult,
     isBlackFridayPeriod as getIsBlackFridayPeriod,
     isCyberWeekPeriod as getIsCyberWeekPeriod,
     useApi,
@@ -777,13 +777,11 @@ const Step1B = ({
         <div className="w-full text-sm color-norm opacity-70 text-center">
             <div className="mx-auto w-full md:w-7/10">
                 *
-                {getCheckoutRenewNoticeText({
-                    coupon: options.checkResult.Coupon,
-                    cycle: options.cycle,
+                {getCheckoutRenewNoticeTextFromCheckResult({
+                    checkResult: options.checkResult,
                     plansMap: model.plansMap,
                     planIDs: options.planIDs,
-                    checkout: actualCheckout,
-                    currency: options.currency,
+                    app: APPS.PROTONVPN_SETTINGS,
                 })}
             </div>
         </div>

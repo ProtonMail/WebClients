@@ -17,6 +17,7 @@ import {
     type PaymentsApi,
     type PlanIDs,
 } from '@proton/payments';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { type Cycle, type PlansMap } from '@proton/shared/lib/interfaces';
 
 import SaveLabel from '../SaveLabel';
@@ -215,6 +216,13 @@ const Trial2024UpsellModal = ({
                         plansMap,
                         planIDs,
                         short: true,
+                        app: ((): APP_NAMES => {
+                            if (planName === PLANS.DRIVE) {
+                                return APPS.PROTONDRIVE;
+                            }
+
+                            return APPS.PROTONMAIL;
+                        })(),
                     })}
                 </div>
                 <Button
