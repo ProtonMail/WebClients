@@ -51,6 +51,9 @@
       "Add address": [
         "Dodaj naslov"
       ],
+      "Add another account": [
+        "Dodaj drug račun"
+      ],
       "Add Bcc recipients": [
         "Dodaj prejemnike skrite kopije"
       ],
@@ -557,6 +560,9 @@
       ],
       "Help": [
         "Pomoč"
+      ],
+      "Help and resources": [
+        "Pomoč in viri"
       ],
       "Hide": [
         "Skrij"
@@ -1071,11 +1077,11 @@
       "Select ${ planTitle }": [
         "Izberite ${ planTitle }"
       ],
-      "Select All": [
-        "Izberi vse"
-      ],
       "Select all": [
         "Označi vse"
+      ],
+      "Select All": [
+        "Izberi vse"
       ],
       "Select all messages": [
         "Izberi vsa sporočila"
@@ -1115,6 +1121,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Nastavi ${ MAIL_APP_NAME } kot privzeto aplikacijo za e-pošto"
+      ],
+      "Set as album cover": [
+        "Nastavi kot naslovnico albuma"
       ],
       "Set as default": [
         "Nastavi kot privzeto"
@@ -1480,6 +1489,12 @@
       "${ price } per user": [
         "${ price } na uporabnika"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } sedež ${ LUMO_APP_NAME }",
+        "${ seats } sedeža ${ LUMO_APP_NAME }",
+        "${ seats } sedeži ${ LUMO_APP_NAME }",
+        "${ seats } sedežev ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licenca za pomočnika pri pisanju",
         "${ seats } licenci za pomočnika pri pisanju",
@@ -1750,6 +1765,9 @@
       ],
       "Monthly": [
         "Mesečno"
+      ],
+      "New!": [
+        "Novo!"
       ],
       "Two-year": [
         "Dve leti"
@@ -3390,6 +3408,31 @@
       ],
       "Åland Islands": [
         "Alandski otoki"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Za vse storitve ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Za ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Za ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Za ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Za ${ VPN_APP_NAME }"
       ]
     },
     "CustomFilter": {
@@ -6501,6 +6544,9 @@
       "Initializing…": [
         "Zagon …"
       ],
+      "Insert image": [
+        "Vstavi sliko"
+      ],
       "Insert link": [
         "Vstavi povezavo"
       ],
@@ -8120,6 +8166,9 @@
       "Don't show this again": [
         "Ne prikazuj več"
       ],
+      "Don't show this suggestion": [
+        "Ne prikazuj tega predloga"
+      ],
       "e.g., Amazon, eBay, Etsy": [
         "npr. Amazon, eBay, Etsy"
       ],
@@ -8827,6 +8876,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj pomočnika pri pisanju ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Dodatek z brezplačno preizkusno dobo"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -9501,7 +9553,7 @@
         "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
       "Tor over VPN": [
-        "Tor preko VPN"
+        "Tor prek VPN"
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
@@ -10053,6 +10105,12 @@
       ],
       "Special offer": [
         "Posebna ponudba"
+      ],
+      "This offer won't be shown again.": [
+        "Ta ponudba se ne bo več prikazovala."
+      ],
+      "Your subscription renews soon": [
+        "Vaša naročnina se bo kmalu obnovila"
       ]
     },
     "Offer feature": {
@@ -10653,6 +10711,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Ponovno šifriranje vabila ni uspelo. Poskusite znova."
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Preglejte varnost računa"
       ]
     },
     "Search - no results": {
@@ -12668,6 +12731,12 @@
       "Groups": [
         "Skupine"
       ],
+      "Help and feedback": [
+        "Pomoč in povratne informacije"
+      ],
+      "Help center": [
+        "Središče za pomoč"
+      ],
       "Human verification": [
         "Ali si človek"
       ],
@@ -13106,6 +13175,11 @@
         "Danes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Samodejno pomeni, da se za pošiljanje temu uporabniku uporablja oblika iz privzete nastavitve. Navadno besedilo pomeni, da se sporočilo ob pošiljanju vedno pretvori v navadno besedilo."
@@ -13186,11 +13260,6 @@
         "Za pošiljanje od konca do konca šifriranih sporočil na ta naslov naložite javni ključ"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "izdajno različico"
@@ -13233,6 +13302,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } naprava",
+        "${ n } napravi",
+        "${ n } naprave",
+        "${ n } naprav"
+      ],
       "${ n } server": [
         "${ n } strežnik",
         "${ n } strežnika",
@@ -13244,6 +13319,12 @@
         "${ n } VPN povezavi",
         "${ n } VPN povezave",
         "${ n } VPN povezav"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } država",
+        "${ numberOfCountries } državi",
+        "${ numberOfCountries } države",
+        "${ numberOfCountries } držav"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } v ${ numberOfCountries } državi.",

@@ -51,6 +51,9 @@
       "Add address": [
         "Afegeix una adreça"
       ],
+      "Add another account": [
+        "Afegeix un altre compte"
+      ],
       "Add Bcc recipients": [
         "Afegeix destinatari CCO"
       ],
@@ -582,6 +585,12 @@
       "Help": [
         "Ajuda"
       ],
+      "Help and feedback": [
+        "Ajuda i comentaris"
+      ],
+      "Help and resources": [
+        "Ajuda i recurs"
+      ],
       "Hide": [
         "Amaga"
       ],
@@ -605,6 +614,9 @@
       ],
       "Hide toolbar": [
         "Amaga la barra d'eines"
+      ],
+      "hide-my-email aliases": [
+        "els àlies de hide-my-email"
       ],
       "I like this response": [
         "M'agrada aquesta resposta"
@@ -1102,10 +1114,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1523,8 +1535,15 @@
       "${ price } per domain": [
         "${ price } per domini"
       ],
+      "${ price } per seat": [
+        "${ price } per llicència"
+      ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } llicència ${ LUMO_APP_NAME }",
+        "${ seats } llicències ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } llicència de l'assistent d'escriptura",
@@ -1767,6 +1786,9 @@
       ],
       "Unlimited folders, labels and filters": [
         "Nombre il·limitat de carpetes, etiquetes i filtres"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Nombre il·limitat d'inicis de sessió, targetes de crèdit, àlies de hide-my-email i més."
       ],
       "Use your own email domain": [
         "Utilitzeu el vostre propi domini de correu electrònic"
@@ -3495,6 +3517,31 @@
       ],
       "Åland Islands": [
         "Illes Aland"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Per a tots els serveis de ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Per a ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Per a ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Per a ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Per a ${ VPN_APP_NAME }"
       ]
     },
     "CustomFilter": {
@@ -5888,6 +5935,9 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } pot protegir també la vostra empresa."
       ],
@@ -6645,8 +6695,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -6888,8 +6937,17 @@
       "Organization size": [
         "Mida de l'organització"
       ],
+      "Other accounts": [
+        "Altres comptes"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
+      ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "El nostre sistema ha marcat això com a sospitós. Si no es tracta d'un correu electrònic de pesca o frau, marqueu-lo com a legítim."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "El nostre sistema ha marcat aquest missatge com a intent de suplantació d'identitat. Comproveu que sigui legítim."
       ],
       "password": [
         "contrasenya"
@@ -7010,6 +7068,9 @@
       "Proofread text": [
         "Revisa el text"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Protegiu el vostre correu electrònic de filtracions a llistes de correu o generadors de correu brossa amb ${ hideMyEmailAliasesLink }."
+      ],
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
       ],
@@ -7021,6 +7082,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
+      ],
+      "Refining email list in progress": [
+        "S'està refinant la llista de correus electrònics."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -9089,6 +9153,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Complement amb prova gratuïta"
+      ],
       "for ${ price }": [
         "per ${ price }"
       ]
@@ -9500,6 +9567,9 @@
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
+      "${ size } storage per user": [
+        "${ size } d'emmagatzematge per usuari"
+      ],
       "1 TB secure storage": [
         "1 TB d'emmagatzematge segur"
       ],
@@ -9678,6 +9748,9 @@
       "Limited support": [
         "Suport limitat"
       ],
+      "Manage user permissions and access": [
+        "Gestiona els permisos i l'accés dels usuaris"
+      ],
       "Multiple admin roles": [
         "Múltiples rols d'administració"
       ],
@@ -9695,6 +9768,9 @@
       ],
       "Password manager": [
         "Gestor de contrasenyes"
+      ],
+      "Password manager to secure credentials": [
+        "Gestor de contrasenyes per a assegurar les credencials"
       ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
@@ -9940,6 +10016,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "El nostre pla ${ visionary } ja no està disponible per als nous subscriptors, ja que és un pla especial per als usuaris originals de ${ BRAND_NAME } amb característiques i beneficis especials."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Pagueu una vegada i protegiu les vostres contrasenyes i identitat per sempre."
       ],
       "Popular": [
         "Popular"
@@ -10683,6 +10762,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
+      ],
+      "Secure vault, item and link sharing": [
+        "Compartició segura de caixes fortes, elements i enllaços"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit i més"
       ]
     },
     "pass_signup_2024: Info": {
@@ -12044,6 +12129,10 @@
       "${ n } VPN connection per user": [
         "${ n } connexió VPN per usuari",
         "${ n } connexions VPN per usuari"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Connexió VPN per a ${ n } dispositiu per usuari",
+        "Connexió VPN per a ${ n } dispositius per usuari"
       ]
     },
     "Subscription change warning": {
@@ -13240,6 +13329,9 @@
       "Groups": [
         "Grups"
       ],
+      "Help and feedback": [
+        "Ajuda i comentaris"
+      ],
       "Help center": [
         "Centre d'ajuda"
       ],
@@ -13717,6 +13809,11 @@
         "Avui"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
@@ -13800,11 +13897,6 @@
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "versió estable"
@@ -13866,6 +13958,14 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } a ${ numberOfCountries } país",
         "${ numberOfServers } a ${ numberOfCountries } països"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Seleccionat automàticament des d'${ numberOfCountries } país",
+        "Seleccionat automàticament des de ${ numberOfCountries } països"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servidors en més d'${ numberOfCountries } país",
+        "Servidors en més de ${ numberOfCountries } països"
       ]
     },
     "vpn_2024: renew": {
