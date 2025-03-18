@@ -4,17 +4,20 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import type { ExportContextValue } from '@proton/pass/components/Export/ExportProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
+import type { MaybeNull } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 const REAUTH_KEY = 'notification:reauth';
 
+let UNSAFE_EXPORT_CTX: MaybeNull<ExportContextValue> = null;
+export const setUnsafeExportContext = (ctx: ExportContextValue) => (UNSAFE_EXPORT_CTX = ctx);
+
 export const useReauthActionHandler = () => {
-    const core = usePassCore();
     const authStore = useAuthStore();
 
     const { createNotification } = useNotifications();
@@ -33,7 +36,7 @@ export const useReauthActionHandler = () => {
                     })
                 );
 
-                const data = await core.exportData(reauth.data).catch(() => null);
+                const data = await (UNSAFE_EXPORT_CTX?.export(reauth.data).catch(() => null) ?? null);
                 const ok = data !== null;
 
                 return setTimeout(() => {

@@ -16,7 +16,7 @@ import { selectNonOwnedVaults } from '@proton/pass/store/selectors';
 import { BitField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
-type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boolean };
+export type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boolean };
 
 export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const online = useConnectivity();
@@ -30,15 +30,15 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
             [
                 /* Safari ZIP warning */
                 BUILD_TARGET === 'safari' &&
-                    form.values.format === ExportFormat.ZIP &&
+                    form.values.format === ExportFormat.PEX &&
                     c('Info')
                         .t`Before exporting your data with this format, please open Safari settings -> "General" tab -> disable the option "Open safe files after downloading". This will prevent Safari from incorrectly extracting the exported file.`,
 
-                /* Safari PGP warning */
+                /* Safari EPEX warning */
                 BUILD_TARGET === 'safari' &&
-                    form.values.format === ExportFormat.PGP &&
+                    form.values.format === ExportFormat.EPEX &&
                     c('Info')
-                        .t`Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing ".pgp". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.`,
+                        .t`Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing ".epp". Please rename the file to include the .epex extension (e.g file.epp) after exporting.`,
 
                 /* CSV warning */
                 form.values.format === ExportFormat.CSV &&
@@ -46,7 +46,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                         .t`CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.`,
 
                 /* non-encrypted warning */
-                form.values.format !== ExportFormat.PGP &&
+                form.values.format !== ExportFormat.EPEX &&
                     c('Info')
                         .t`This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.`,
 
@@ -66,11 +66,11 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                         component={RadioGroupField}
                         options={[
                             {
-                                value: ExportFormat.PGP,
+                                value: ExportFormat.EPEX,
                                 label: c('Label').t`PGP-encrypted JSON (recommended)`,
                             },
                             {
-                                value: ExportFormat.ZIP,
+                                value: ExportFormat.PEX,
                                 label: c('Label').t`JSON`,
                             },
                             {
@@ -95,7 +95,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     </Card>
                 )}
 
-                {form.values.format === ExportFormat.PGP && (
+                {form.values.format === ExportFormat.EPEX && (
                     <>
                         <hr className="mt-2 mb-4 border-weak shrink-0" />
 
