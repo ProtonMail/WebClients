@@ -8,6 +8,8 @@ export enum PassEncryptionTag {
     VaultContent = 'vaultcontent',
     LinkKey = 'linkkey',
     BiometricOfflineKD = 'biometricofflinekd',
+    FileData = 'filedata',
+    FileKey = 'filekey',
 }
 
 export enum PassSignatureContext {
@@ -23,6 +25,7 @@ export enum ContentFormatVersion {
 /* type aliases */
 export type Rotation = number;
 export type ShareId = string;
+export type ItemId = string;
 
 export type RotationKey = {
     key: CryptoKey;
