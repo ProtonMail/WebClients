@@ -778,8 +778,15 @@
       "${ price } per domain": [
         "${ price } par domaine"
       ],
+      "${ price } per seat": [
+        "${ price } par siège"
+      ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } accès ${ LUMO_APP_NAME }",
+        "${ seats } accès ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -2267,8 +2274,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
-        "Passez à l'abonnement ${ BRAND_NAME } ${ planName } pour activer le partage de fichiers publics avec droits d'écriture. Continuez à collaborer de manière fluide et sécurisée."
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Passez à l'abonnement ${ BRAND_NAME } ${ planName } pour continuer à partager des fichiers avec droits d'écriture."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe reposant sur l'IA et une assistance d'experts dédiée 24h/24 et 7j/7."
@@ -3799,6 +3806,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'offre à vie de ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
@@ -7374,7 +7384,7 @@
         "Partage sécurisé de coffre-fort"
       ],
       "Secure vault, item and link sharing": [
-        "Partage de coffre-forts, éléments et liens sécurisés"
+        "Partage sécurisé de coffre-forts, éléments et liens"
       ],
       "Unlimited logins, notes, credit cards and more": [
         "Nombre illimité de connexions, de notes et de cartes de paiement et plus encore"
@@ -9037,6 +9047,9 @@
       "Need more aliases?": [
         "Besoin de plus d'alias ?"
       ],
+      "Need to share more files with edit access?": [
+        "Vous avez besoin de partager plus de fichiers avec droits d'écriture ?"
+      ],
       "Network error": [
         "Erreur réseau"
       ],
@@ -9138,9 +9151,6 @@
       ],
       "Share ${ name }": [
         "Partager ${ name }"
-      ],
-      "Share files with full edit access": [
-        "Partager des fichiers avec droits d'écriture complets"
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
@@ -9315,129 +9325,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
-      ]
-    },
-    "Valentine_2025": {
-      "+ free gift": [
-        "+ cadeau gratuit"
-      ],
-      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Un code cadeau pour une réduction de ${ discountPercentAbsolute } % sur ${ planTitle } pendant 1 an"
-      ],
-      "Valentine's deal": [
-        "Offre de Saint-Valentin"
-      ],
-      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Votre cadeau gratuit à partager, d'une valeur de ${ price } : "
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "- ${ salePercentage } %"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "${ salePercentage } % de réduction pour vous +1"
-      ],
-      "10 email addresses for you": [
-        "10 adresses e-mail pour vous"
-      ],
-      "10,000+ servers in 110+ countries": [
-        "Plus de 10 000 serveurs dans plus de 110 pays"
-      ],
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "200 GB storage": [
-        "200 Go d'espace de stockage"
-      ],
-      "500 GB total storage": [
-        "500 Go d'espace de stockage total"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accédez aux contenus des services de streaming, dont Netflix, Disney+, Prime Video et plus encore, où que vous soyez."
-      ],
-      "Advanced account protection": [
-        "Protection avancée des comptes"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Toutes les fonctionnalités premium de Mail, VPN, Pass et Drive"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Tous les services premium de ${ BRAND_NAME } avec un seul abonnement."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Les réductions sont basées sur les tarifs mensuels standard. À la fin du cycle de facturation, votre abonnement sera renouvelé au tarif annuel standard."
-      ],
-      "Double the love, half the price": [
-        "Deux fois plus d'amour, à moitié prix"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Obtenez 1 an de ${ dealName } avec ${ salePercentage } % de réduction, plus un code cadeau pour partager la même offre avec un ami"
-      ],
-      "Get the deal": [
-        "Je profite de l'offre"
-      ],
-      "High-speed streaming": [
-        "Streaming haut débit"
-      ],
-      "Integrated 2FA authenticator": [
-        "Authentification A2F intégrée"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Offre une sécurité de compte de premier ordre et une assistance experte. ${ DARK_WEB_MONITORING_NAME } scrute les zones cachées d'internet à la recherche d'adresses e-mail ${ MAIL_APP_NAME } ayant atterri sur des marchés de données illégaux. En cas de détection d'une violation, vous recevrez une alerte du Centre de sécurité avec des instructions pour protéger votre compte."
-      ],
-      "Protect 10 devices at a time": [
-        "Protégez 10 appareils en même temps"
-      ],
-      "Recover previous file versions": [
-        "Récupérer les versions précédentes des fichiers"
-      ],
-      "Secure file storage & sharing": [
-        "Stockage de fichiers sécurisé et partage de liens"
-      ],
-      "Secure vault sharing": [
-        "Partage sécurisé de coffre-fort"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nombre illimité d'alias « hide-my-email »"
-      ],
-      "Use your own email domain": [
-        "Utilisez vos propres domaines de messagerie"
-      ],
-      "Valentine's deal:": [
-        "Offre de Saint-Valentin :"
-      ]
-    },
-    "Valentine_2025: offer": {
-      "Valentine's deal": [
-        "Offre de Saint-Valentin"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
-      "/ month": [
-        "/mois"
-      ],
-      "12 months": [
-        "12 mois"
-      ],
-      "15 months": [
-        "15 mois"
-      ],
-      "24 months": [
-        "24 mois"
-      ],
-      "30 months": [
-        "30 mois"
-      ],
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
       ]
     },
     "Validation": {

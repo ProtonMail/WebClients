@@ -775,8 +775,15 @@
       "${ price } per domain": [
         "${ price } per domein"
       ],
+      "${ price } per seat": [
+        "${ price } per zitplaats"
+      ],
       "${ price } per user": [
         "${ price } per gebruiker"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } zitplaats",
+        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -2264,8 +2271,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
-        "Upgrade naar ${ BRAND_NAME } ${ planName } om openbare bestanden te delen met bewerking. Blijf naadloos en veilig samenwerken."
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Upgrade naar ${ BRAND_NAME } ${ planName } om bestanden te blijven delen met bewerkingstoegang"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Upgrade uw account om ${ PROTON_SENTINEL_NAME } te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
@@ -3796,6 +3803,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
@@ -8974,6 +8984,9 @@
       "Need more aliases?": [
         "Meer aliassen nodig?"
       ],
+      "Need to share more files with edit access?": [
+        "Wilt u meer bestanden met bewerkingstoegang delen?"
+      ],
       "Network error": [
         "Netwerkfout"
       ],
@@ -9075,9 +9088,6 @@
       ],
       "Share ${ name }": [
         "Deel ${ name }"
-      ],
-      "Share files with full edit access": [
-        "Deel bestanden met volledige bewerk toegang"
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
@@ -9252,129 +9262,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ]
-    },
-    "Valentine_2025": {
-      "+ free gift": [
-        "+ gratis cadeau"
-      ],
-      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Een cadeaucode voor ${ discountPercentAbsolute }% korting op ${ planTitle } voor 1 jaar"
-      ],
-      "Valentine's deal": [
-        "Valentijnsdeal"
-      ],
-      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Uw gratis cadeau om te delen, ter waarde van ${ price }﻿: "
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "${ salePercentage }% korting"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "${ salePercentage }% korting voor u +1"
-      ],
-      "10 email addresses for you": [
-        "10 e-mailadressen voor u"
-      ],
-      "10,000+ servers in 110+ countries": [
-        "Meer dan 10.000 servers in meer dan 110 landen"
-      ],
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "200 GB storage": [
-        "200 GB opslagruimte"
-      ],
-      "500 GB total storage": [
-        "500 GB totale opslagruimte"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
-      ],
-      "Advanced account protection": [
-        "Geavanceerde accountbeveiliging"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Alle premiumfuncties van Mail, VPN, Pass en Drive"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
-      ],
-      "Double the love, half the price": [
-        "Meer liefde, minder betalen"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Ontvang 1 jaar ${ dealName } met ${ salePercentage }% korting — plus een cadeaucode om dezelfde deal met een vriend te delen"
-      ],
-      "Get the deal": [
-        "Kies deze deal"
-      ],
-      "High-speed streaming": [
-        "Streamen op hoge snelheid"
-      ],
-      "Integrated 2FA authenticator": [
-        "Geïntegreerde tweestapsverificatie"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Biedt eersteklas accountbeveiliging en deskundige ondersteuning. ${ DARK_WEB_MONITORING_NAME } doorzoekt de verborgen delen van het internet op ${ MAIL_APP_NAME } e-mailadressen die in illegale datamarkten zijn beland. Als een datalek wordt gedetecteerd, ontvangt u een melding in het Security Center met stappen om uw account te beschermen."
-      ],
-      "Protect 10 devices at a time": [
-        "Bescherm 10 apparaten tegelijkertijd"
-      ],
-      "Recover previous file versions": [
-        "Herstel vorige bestandsversies"
-      ],
-      "Secure file storage & sharing": [
-        "Veilig bestanden opslaan en delen"
-      ],
-      "Secure vault sharing": [
-        "Veilig delen van kluis"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte wordt gedeeld tussen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal hide-my-email-aliassen"
-      ],
-      "Use your own email domain": [
-        "Gebruik uw eigen e-maildomein"
-      ],
-      "Valentine's deal:": [
-        "Valentijnsdeal:"
-      ]
-    },
-    "Valentine_2025: offer": {
-      "Valentine's deal": [
-        "Valentijnsdeal"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "/ month": [
-        "/ maand"
-      ],
-      "12 months": [
-        "12 maanden"
-      ],
-      "15 months": [
-        "15 maanden"
-      ],
-      "24 months": [
-        "24 maanden"
-      ],
-      "30 months": [
-        "30 maanden"
-      ],
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
       ]
     },
     "Validation": {

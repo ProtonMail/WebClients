@@ -2197,8 +2197,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
-        "Opgrader til ${ BRAND_NAME } ${ planName } for at aktivere offentlig fildeling med redigeringsadgang. Fortsæt med at samarbejde problemfrit og sikkert."
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Opgrader til ${ BRAND_NAME } ${ planName } for at fortsætte med at dele filer med redigeringsadgang"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Opgrader din konto for at aktivere ${ PROTON_SENTINEL_NAME }, vores banebrydende AI-dreven sikkerhedsløsning med ekspert døgn support."
@@ -8701,6 +8701,9 @@
       "Need more aliases?": [
         "Brug for flere aliasser?"
       ],
+      "Need to share more files with edit access?": [
+        "Har du brug for at dele flere filer med redigeringsadgang?"
+      ],
       "Network error": [
         "Netværksfejl"
       ],
@@ -8802,9 +8805,6 @@
       ],
       "Share ${ name }": [
         "Del ${ name }"
-      ],
-      "Share files with full edit access": [
-        "Del filer med fuld redigeringsadgang"
       ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
