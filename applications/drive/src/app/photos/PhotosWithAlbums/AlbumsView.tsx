@@ -25,38 +25,23 @@ import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/Ph
 
 import './BannerInvite.scss';
 
-const filterAlbums = (albums: DecryptedAlbum[], userAddress: string | undefined, tag: AlbumTag): DecryptedAlbum[] => {
-    if (!userAddress) {
-        if (albums.length) {
-            sendErrorReport(new Error('Attempting to filter without owner address'));
-        }
-        return albums;
-    }
+const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[] => {
     if (tag === AlbumTag.Shared) {
-        return albums.filter((album) => album.isShared && album.signatureEmail === userAddress);
+        return albums.filter((album) => album.sharingDetails?.shareId && album.permissions.isOwner);
     }
     if (tag === AlbumTag.MyAlbums) {
-        return albums.filter((album) => album.signatureEmail === userAddress);
+        return albums.filter((album) => album.permissions.isOwner);
     }
     if (tag === AlbumTag.SharedWithMe) {
-        return albums.filter((album) => album.isShared && album.signatureEmail !== userAddress);
+        return albums.filter((album) => album.sharingDetails?.shareId && !album.permissions.isOwner);
     }
     return albums;
 };
 
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
-    const {
-        volumeId,
-        shareId,
-        linkId,
-        albums,
-        isPhotosLoading,
-        isAlbumsLoading,
-        userAddressEmail,
-        loadPhotoLink,
-        requestDownload,
-    } = usePhotosWithAlbumsView();
+    const { volumeId, shareId, linkId, albums, isPhotosLoading, isAlbumsLoading, loadPhotoLink, requestDownload } =
+        usePhotosWithAlbumsView();
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const createAlbumModal = useModalStateObject();
@@ -133,7 +118,7 @@ export const AlbumsView: FC = () => {
     );
 
     const isAlbumsEmpty = albums.length === 0;
-    const filteredAlbums = filterAlbums(albums, userAddressEmail, selectedTags[0]);
+    const filteredAlbums = filterAlbums(albums, selectedTags[0]);
 
     if (!shareId || !linkId || isPhotosLoading || isAlbumsLoading) {
         return <Loader />;
@@ -201,7 +186,6 @@ export const AlbumsView: FC = () => {
                         setRenameAlbumLinkId(linkId);
                         renameAlbumModal.openModal(true);
                     }}
-                    userAddressEmail={userAddressEmail}
                 />
             )}
 
