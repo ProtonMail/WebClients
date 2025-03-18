@@ -19,7 +19,7 @@ import {
   UserDropdown,
   useToggle,
 } from '@proton/components'
-import { APPS } from '@proton/shared/lib/constants'
+import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 
 import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
@@ -132,6 +132,9 @@ function Search({ onSearchTextChange }: SearchProps) {
 // sidebar
 // -------
 
+const FAVORITES_ENABLED = false
+const RECENTLY_DELETED_ENABLED = false
+
 type SidebarProps = { expanded: boolean; onToggle: () => void }
 
 function Sidebar({ expanded, onToggle }: SidebarProps) {
@@ -163,30 +166,45 @@ function Sidebar({ expanded, onToggle }: SidebarProps) {
         <SidebarList>
           <SidebarListItem>
             <SidebarListItemLink
-              to="/most-recent"
+              to="/recents"
               exact={true}
               className="hover flex items-center gap-2"
               activeClassName="text-bold "
             >
-              <Icon name="house" /> {c('Info').t`Most recent`}
+              <Icon name="house" /> {c('Info').t`Recents`}
             </SidebarListItemLink>
           </SidebarListItem>
+          {FAVORITES_ENABLED && (
+            <SidebarListItem>
+              <SidebarListItemLink
+                to="/favorites"
+                exact={true}
+                className="hover flex items-center gap-2"
+                activeClassName="text-bold "
+              >
+                <Icon name="star" /> {c('Info').t`Favorites`}
+              </SidebarListItemLink>
+            </SidebarListItem>
+          )}
+          {RECENTLY_DELETED_ENABLED && (
+            <SidebarListItem>
+              <SidebarListItemLink
+                to="/recently-deleted"
+                exact={true}
+                className="hover flex items-center gap-2"
+                activeClassName="text-bold "
+              >
+                <Icon name="trash" /> {c('Info').t`Recently deleted`}
+              </SidebarListItemLink>
+            </SidebarListItem>
+          )}
           <SidebarListItem>
             <SidebarListItemLink
-              to="/owned-by-me"
+              to={getAppHref('/', APPS.PROTONDRIVE, getLocalID())}
               className="hover flex items-center gap-2"
-              activeClassName="text-bold "
+              target="_blank"
             >
-              <Icon name="user" /> {c('Info').t`Owned by me`}
-            </SidebarListItemLink>
-          </SidebarListItem>
-          <SidebarListItem>
-            <SidebarListItemLink
-              to="/owned-by-others"
-              className="hover flex items-center gap-2"
-              activeClassName="text-bold "
-            >
-              <Icon name="users" /> {c('Info').t`Owned by others`}
+              <Icon name="brand-proton-drive" /> {c('Info').t`Go to ${DRIVE_APP_NAME}`}
             </SidebarListItemLink>
           </SidebarListItem>
         </SidebarList>

@@ -91,8 +91,16 @@ function useHomepageFeatureFlag() {
   return useFlag('DriveDocsLandingPageEnabled')
 }
 
-const HomepagePage = lazy(() => import('../(homepage)/most-recent/page'))
+const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
+
+const DOCUMENT_DEFAULT_PATH = '/doc'
+const DOCUMENT_NEW_PATH = '/new'
+const DOCUMENT_PATHS = [DOCUMENT_DEFAULT_PATH, DOCUMENT_NEW_PATH]
+const HOMEPAGE_DEFAULT_PATH = '/recents'
+const HOMEPAGE_FAVORITES_PATH = '/favorites'
+const HOMEPAGE_RECENTLY_DELETED_PATH = '/recently-deleted'
+const HOMEPAGE_PATHS = [HOMEPAGE_DEFAULT_PATH, HOMEPAGE_FAVORITES_PATH, HOMEPAGE_RECENTLY_DELETED_PATH]
 
 type AppRoutesProps = { driveCompat: DriveCompat }
 
@@ -105,23 +113,24 @@ function AppRoutes({ driveCompat }: AppRoutesProps) {
     </Suspense>
   )
 
-  const homepage = isHomepageEnabled ? (
+  const homepagePage = isHomepageEnabled ? (
     <Suspense>
       <HomepagePage />
     </Suspense>
   ) : (
-    <Navigate to="/new" replace />
+    <Navigate to={DOCUMENT_NEW_PATH} replace />
   )
 
   return (
     <Routes>
       {/* document */}
-      <Route path="/doc" element={documentPage} />
-      <Route path="/new" element={documentPage} />
+      {DOCUMENT_PATHS.map((path) => (
+        <Route key={path} path={path} element={documentPage} />
+      ))}
       {/* homepage */}
-      <Route path="/most-recent" element={homepage} />
-      <Route path="/owned-by-me" element={homepage} />
-      <Route path="/owned-by-others" element={homepage} />
+      {HOMEPAGE_PATHS.map((path) => (
+        <Route key={path} path={path} element={homepagePage} />
+      ))}
       {/* catch-all redirect: ?mode=open -> document, else -> homepage */}
       <Route path="*" element={<WildcardRoute isHomepageEnabled={isHomepageEnabled} />} />
     </Routes>
@@ -138,8 +147,8 @@ function WildcardRoute({ isHomepageEnabled }: WildcardRouteProps) {
   const isOpenDocumentLink = searchParams.get('mode')?.includes('open')
 
   if (isHomepageEnabled && !isOpenDocumentLink) {
-    return <Navigate to="/most-recent" replace />
+    return <Navigate to={HOMEPAGE_DEFAULT_PATH} replace />
   }
 
-  return <Navigate to={{ pathname: '/doc', search: searchParams.toString() }} replace />
+  return <Navigate to={{ pathname: DOCUMENT_DEFAULT_PATH, search: searchParams.toString() }} replace />
 }
