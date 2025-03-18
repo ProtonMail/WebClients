@@ -2,6 +2,7 @@ import jszip from 'jszip';
 import { c } from 'ttag';
 
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
+import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -18,11 +19,13 @@ import { logger } from '@proton/pass/utils/logger';
 
 import {
     extract1PasswordExtraFields,
+    extract1PasswordFiles,
     extract1PasswordIdentity,
     extract1PasswordLoginField,
     extract1PasswordNote,
     extract1PasswordURLs,
     format1PasswordMonthYear,
+    intoFilesFrom1PasswordItem,
     is1PasswordCCField,
 } from './1p.utils';
 import type { OnePass1PuxData, OnePassCreditCardFields, OnePassItem } from './1pux.types';
@@ -126,6 +129,8 @@ export const read1Password1PuxData = async ({ data }: { data: ArrayBuffer }): Pr
         const parsedData = JSON.parse(content) as OnePass1PuxData;
         const ignored: string[] = [];
 
+        const filesToUpload = await extract1PasswordFiles(zipFile.files);
+
         const vaults = parsedData.accounts.flatMap((account) =>
             account.vaults.map(
                 (vault): ImportVault => ({
@@ -137,19 +142,23 @@ export const read1Password1PuxData = async ({ data }: { data: ArrayBuffer }): Pr
                             const category = item?.categoryUuid;
                             const type = (category ? OnePasswordTypeMap[category] : null) ?? c('Label').t`Unknown`;
                             const title = item?.overview?.title ?? item?.overview?.subtitle ?? '';
+                            const filesInItem = intoFilesFrom1PasswordItem(item.details.sections);
+                            const files = filesInItem.map((file) => filesToUpload.get(file)).filter(truthy);
 
                             try {
                                 switch (item.categoryUuid) {
                                     case OnePassCategory.LOGIN:
-                                        return processLoginItem(item);
+                                        return attachFilesToItem(processLoginItem(item), files);
                                     case OnePassCategory.NOTE:
-                                        return processNoteItem(item);
+                                        return attachFilesToItem(processNoteItem(item), files);
                                     case OnePassCategory.CREDIT_CARD:
-                                        return processCreditCardItem(item);
+                                        return attachFilesToItem(processCreditCardItem(item), files);
                                     case OnePassCategory.PASSWORD:
-                                        return processPasswordItem(item);
+                                        const passwordItem = processPasswordItem(item);
+                                        return passwordItem ? attachFilesToItem(passwordItem, files) : passwordItem;
                                     case OnePassCategory.IDENTITY:
-                                        return processIdentityItem(item);
+                                        const identityItem = processIdentityItem(item);
+                                        return identityItem ? attachFilesToItem(identityItem, files) : identityItem;
                                     default:
                                         ignored.push(`[${type}] ${title}`);
                                 }

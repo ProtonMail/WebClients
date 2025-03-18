@@ -26,7 +26,7 @@ import { OnePassLoginDesignation } from './1pux.types';
 
 const ENTRY_SEPARATOR_1PIF = '***';
 
-const processLoginItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> => {
+export const processLoginItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> => {
     const fields = item.secureContents.fields;
 
     return importLoginItem({
@@ -43,7 +43,7 @@ const processLoginItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> =>
     });
 };
 
-const processNoteItem = (item: OnePassLegacyItem): ItemImportIntent<'note'> =>
+export const processNoteItem = (item: OnePassLegacyItem): ItemImportIntent<'note'> =>
     importNoteItem({
         name: item.title,
         note: extract1PasswordLegacyNote(item),
@@ -51,7 +51,7 @@ const processNoteItem = (item: OnePassLegacyItem): ItemImportIntent<'note'> =>
         modifyTime: item.updatedAt,
     });
 
-const processPasswordItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> =>
+export const processPasswordItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.title,
         note: item.secureContents?.notesPlain,
@@ -62,7 +62,7 @@ const processPasswordItem = (item: OnePassLegacyItem): ItemImportIntent<'login'>
         modifyTime: item.updatedAt,
     });
 
-const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent<'creditCard'> => {
+export const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent<'creditCard'> => {
     const expirationDate =
         item.secureContents.expiry_mm && item.secureContents.expiry_yy
             ? `${String(item.secureContents.expiry_mm).padStart(2, '0')}${item.secureContents.expiry_yy}`
@@ -79,7 +79,7 @@ const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent<'credi
     });
 };
 
-const processIdentityItem = (item: OnePassLegacyItem): ItemImportIntent<'identity'> =>
+export const processIdentityItem = (item: OnePassLegacyItem): ItemImportIntent<'identity'> =>
     importIdentityItem({
         name: item.title,
         note: item.secureContents.notesPlain,

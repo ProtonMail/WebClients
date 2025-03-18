@@ -2,6 +2,7 @@ import capitalize from 'lodash/capitalize';
 import { c } from 'ttag';
 
 import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
+import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
 import {
     getImportedVaultName,
     importCreditCardItem,
@@ -14,8 +15,9 @@ import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { isObject } from '@proton/pass/utils/object/is-object';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import type { EnpassItem } from './enpass.types';
+import type { EnpassAttachment, EnpassItem } from './enpass.types';
 import { EnpassCategory, type EnpassData } from './enpass.types';
 import {
     ENPASS_FIELD_TYPES,
@@ -101,6 +103,9 @@ const processIdentityItem = (item: EnpassItem<EnpassCategory.IDENTITY>): ItemImp
 const validateEnpassData = (data: any): data is EnpassData =>
     isObject(data) && 'items' in data && Array.isArray(data.items);
 
+const extractEnpassFiles = (attachments: EnpassAttachment[]): File[] =>
+    attachments.map(({ data, kind, name }) => new File([base64StringToUint8Array(data)], name, { type: kind }));
+
 export const readEnpassData = ({ data }: { data: string }): ImportPayload => {
     try {
         const result = JSON.parse(data);
@@ -116,21 +121,23 @@ export const readEnpassData = ({ data }: { data: string }): ImportPayload => {
                 name: getImportedVaultName(),
                 shareId: null,
                 items: items
-                    .flatMap((item): Maybe<ItemImportIntent | ItemImportIntent[]> => {
+                    .flatMap<Maybe<ItemImportIntent>>((item) => {
                         const type = capitalize(item?.category ?? c('Label').t`Unknown`);
                         const title = item?.title ?? '';
+                        const files = extractEnpassFiles(item.attachments ?? []);
 
                         try {
                             switch (item.category) {
                                 case EnpassCategory.LOGIN:
                                 case EnpassCategory.PASSWORD:
-                                    return processLoginItem(item);
+                                    return attachFilesToItem(processLoginItem(item), files);
                                 case EnpassCategory.NOTE:
-                                    return processNoteItem(item);
+                                    return attachFilesToItem(processNoteItem(item), files);
                                 case EnpassCategory.CREDIT_CARD:
-                                    return processCreditCardItem(item);
+                                    const [cardItem, loginItem] = processCreditCardItem(item);
+                                    return [attachFilesToItem(cardItem, files), loginItem];
                                 case EnpassCategory.IDENTITY:
-                                    return processIdentityItem(item);
+                                    return attachFilesToItem(processIdentityItem(item), files);
                                 default:
                                     ignored.push(`[${type}] ${title}`);
                                     return;
