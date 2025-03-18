@@ -226,7 +226,7 @@ const getSaveEventActions = async ({
     }
 
     // If user commented the event, update his comment in the vevent attendees
-    if (inviteActions.comment && modelVeventComponent.attendee?.length) {
+    if (inviteActions.comment?.Message && modelVeventComponent.attendee?.length) {
         modelVeventComponent.attendee = modelVeventComponent.attendee.map((attendee) => {
             const isCurrentUser = attendee.parameters?.cn === selfAddress.Email;
             if (isCurrentUser) {
