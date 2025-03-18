@@ -26,10 +26,11 @@ interface Props {
     onClose?: () => void;
     onSubmit: (formattedName: string) => Promise<void>;
     isFile: boolean;
+    isDoc: boolean;
     name: string;
 }
 
-const RenameModal = ({ isFile, name: linkName, onClose, onSubmit, ...modalProps }: Props & ModalStateProps) => {
+const RenameModal = ({ isFile, isDoc, name: linkName, onClose, onSubmit, ...modalProps }: Props & ModalStateProps) => {
     const [name, setName] = useState(linkName);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
@@ -40,7 +41,7 @@ const RenameModal = ({ isFile, name: linkName, onClose, onSubmit, ...modalProps 
         }
         setAutofocusDone(true);
         const [namePart] = splitLinkName(linkName);
-        if (!namePart || !isFile) {
+        if (!namePart || !isFile || isDoc) {
             return e.target.select();
         }
         e.target.setSelectionRange(0, namePart.length);
