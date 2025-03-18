@@ -57,36 +57,39 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
   initSafariFontFixClassnames()
   startLogoutListener()
 
-  if (volumeId && linkId) {
-    if (localIDFromPathname !== undefined) {
-      localID = localIDFromPathname
-    } else {
-      const localIDFromCache = CacheService.getLocalIDForDocumentFromCache({
-        volumeId,
-        linkId,
-      })
-      localID = localIDFromCache
-    }
-
-    // Could not find local ID in pathname or cache
-    if (localID === undefined) {
-      handleInvalidSession({
-        appName,
-        authentication,
-      })
-    }
-  }
-
   async function run() {
+    const unleashClient = bootstrap.createUnleash({ api: silentApi })
+    const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop)
+    await unleashPromise
+
+    const shouldUseCachedLocalID = unleashClient.isEnabled('DocsUrlStrippingEnabled')
+
+    if (volumeId && linkId && shouldUseCachedLocalID) {
+      if (localIDFromPathname !== undefined) {
+        localID = localIDFromPathname
+      } else {
+        const localIDFromCache = CacheService.getLocalIDForDocumentFromCache({
+          volumeId,
+          linkId,
+        })
+        localID = localIDFromCache
+      }
+
+      // Could not find local ID in pathname or cache
+      if (localID === undefined) {
+        handleInvalidSession({
+          appName,
+          authentication,
+        })
+      }
+    }
+
     const appContainerPromise = getAppContainer()
     const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams, localID })
     const history = bootstrap.createHistory({ sessionResult, pathname })
-    const unleashClient = bootstrap.createUnleash({ api: silentApi })
 
     const user = sessionResult.session?.User
     extendStore({ config, api, authentication, unleashClient, history })
-
-    const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop)
 
     const persistedState = await getDecryptedPersistedState<Partial<DocsState>>({
       authentication,
