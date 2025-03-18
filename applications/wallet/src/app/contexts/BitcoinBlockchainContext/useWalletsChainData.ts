@@ -276,7 +276,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                     }
 
                     const balance = await wasmAccount.getBalance();
-                    const hasConfirmedFunds = balance.data.trusted_pending > 0;
+                    const hasConfirmedFunds = balance.data.trusted_spendable > 0;
                     const metrics = getWalletAccountMetrics(accountId);
                     if (
                         !metrics ||
