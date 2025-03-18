@@ -87,6 +87,7 @@ const getPassCoreProviderProps = (
             getInitialTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
         }),
 
+        /** FIXME: support file export for extension */
         exportData: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {
                 if (res.type === 'error') throw new Error(res.error);
