@@ -15,12 +15,15 @@ export const selectCachableState = (state: State) => {
     whiteListedState.user = partialMerge(whiteListedState.user, { devices: [] });
     whiteListedState.access = {};
     whiteListedState.alias = { aliasDetails: {}, aliasOptions: null, mailboxes: null };
+    whiteListedState.files = {};
 
     /** Filter stale request metadata and optimisticIds */
     whiteListedState.items.byOptimisticId = {};
     whiteListedState.request = objectFilter(
         whiteListedState.request,
-        (_, request) => request.status === 'success' && request.maxAge !== undefined
+        (requestId, request) =>
+            // FIXME: add non-cachable flag on request metadata
+            request.status === 'success' && request.maxAge !== undefined && !requestId.startsWith('files::')
     );
 
     return whiteListedState;
