@@ -18,7 +18,7 @@ import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blo
 import {
     ExtraSessionForkSearchParameters,
     ForkSearchParameters,
-    type ForkType,
+    ForkType,
 } from '@proton/shared/lib/authentication/fork/constants';
 import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/fork/validation';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
@@ -102,6 +102,10 @@ export const requestFork = ({
     if (localID !== undefined) searchParams.append(ForkSearchParameters.LocalID, `${localID}`);
     if (localID === undefined && email) searchParams.append(ExtraSessionForkSearchParameters.Email, email);
     if (forkType) searchParams.append(ForkSearchParameters.ForkType, forkType);
+
+    if (BUILD_TARGET === 'safari' && forkType === ForkType.SIGNUP) {
+        searchParams.append(ForkSearchParameters.Plan, 'free');
+    }
 
     return { state, url: `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}` };
 };
