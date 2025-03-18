@@ -53,7 +53,7 @@ export const calendarSettingsHeartbeatListener = (startListening: AppStartListen
                 subscription,
                 userSettings,
                 api: listenerApi.extra.api,
-                measurementGroup: TelemetryMeasurementGroups.settingsHeartBeat,
+                measurementGroup: TelemetryMeasurementGroups.calendarSettingsHeartBeat,
                 event: TelemetryHeartbeatEvents.calendar_heartbeat,
                 dimensions: {
                     lightThemeName: PROTON_THEMES_MAP[LightTheme].label,
