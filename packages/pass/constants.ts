@@ -110,6 +110,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassInAppMessages]: false,
     [PassFeature.PassItemSharingV1]: false,
     [PassFeature.PassWebPrfUnlock]: false,
+    [PassFeature.PassFileAttachments]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
@@ -118,3 +119,6 @@ export const RUNTIME_RELOAD_TIMEOUT = 2_000; /* ms */
 export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 
 export const PASS_DEFAULT_THEME = PassThemeOption.PassDark;
+
+export const FILE_UNIQUE_ID_LENGTH = 16;
+export const FILE_CHUNK_SIZE = 10 * 1024 * 1024; // 10MB
