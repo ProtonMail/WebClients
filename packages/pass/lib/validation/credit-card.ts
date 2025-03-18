@@ -1,18 +1,9 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { validateItemErrors } from './item';
+import type { CreditCardItemFormValues } from '@proton/pass/types';
 
-export type CreditCardItemFormValues = {
-    shareId: string;
-    name: string;
-    cardholderName: string;
-    number: string;
-    expirationDate: string;
-    verificationNumber: string;
-    pin: string;
-    note: string;
-};
+import { validateItemErrors } from './item';
 
 /** Returns a tuple `[MM, YY|YYYY]` from a raw expiration date string.
  * Supported date formats for extraction :

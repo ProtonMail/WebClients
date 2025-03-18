@@ -14,6 +14,7 @@ import type {
     ItemCreateIntent,
     ItemEditIntent,
     ItemImportIntent,
+    ItemLatestKeyResponse,
     ItemMoveIndividualToShareRequest,
     ItemMoveMultipleToShareRequest,
     ItemRevision,
@@ -22,6 +23,7 @@ import type {
     ItemType,
     ItemUpdateFlagsRequest,
     Maybe,
+    SelectedItem,
     SelectedRevision,
 } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -33,12 +35,6 @@ import identity from '@proton/utils/identity';
 import { serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
 import { batchByShareId, intoRevisionID } from './item.utils';
-
-/** FIXME: we should start caching the item keys */
-export const getLatestItemKey = async (shareId: string, itemId: string): Promise<EncodedItemKeyRotation> => {
-    const result = await api({ url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`, method: 'get' });
-    return result.Key;
-};
 
 export const getItemKeys = async (shareId: string, itemId: string): Promise<EncodedItemKeyRotation[]> => {
     const { Keys: result } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}/key`, method: 'get' });
@@ -118,6 +114,15 @@ export const createItemWithAlias = async (
 
     return [Bundle.Item, Bundle.Alias];
 };
+
+/** FIXME: we should start caching the item keys */
+export const getLatestItemKey = async ({ shareId, itemId }: SelectedItem): Promise<ItemLatestKeyResponse> =>
+    (
+        await api({
+            url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`,
+            method: 'get',
+        })
+    ).Key!;
 
 export const editItem = async (
     editIntent: ItemEditIntent,
@@ -216,6 +221,9 @@ export const restoreItems = async (
         )
     ).flatMap(({ Items }) => Items);
 
+export const deleteItemRevisions = async ({ shareId, itemId }: SelectedItem) =>
+    api({ url: `pass/v1/share/${shareId}/item/${itemId}/revisions`, method: 'delete' });
+
 export const deleteItems = async (
     items: SelectedRevision[],
     onBatch?: (data: BatchItemRevisionIDs, progress: number) => void,
@@ -224,6 +232,8 @@ export const deleteItems = async (
     (
         await Promise.all(
             batchByShareId(items, intoRevisionID).map(async ({ shareId, items: Items }) => {
+                await Promise.all(items.map(deleteItemRevisions));
+
                 await api({
                     url: `pass/v1/share/${shareId}/item`,
                     method: 'delete',
