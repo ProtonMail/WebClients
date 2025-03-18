@@ -50,7 +50,7 @@ const HelpModal = ({ APP_NAME, onOpenBugModal, ...rest }: Props) => {
                         >
                             <Icon name="lightbulb" className="shrink-0" />
                             <span>{c('Action').t`Request a feature`}</span>
-                            <Icon name="arrow-out-square" className="ml-auto shrink-0 color-hint" />
+                            <Icon name="arrow-within-square" className="ml-auto shrink-0 color-hint" />
                         </ButtonLike>
                     </li>
                     <li className="py-2">
@@ -69,7 +69,7 @@ const HelpModal = ({ APP_NAME, onOpenBugModal, ...rest }: Props) => {
                         >
                             <Icon name="question-circle" className="shrink-0" />
                             {c('Action').t`Help and resources`}
-                            <Icon name="arrow-out-square" className="ml-auto shrink-0 color-hint" />
+                            <Icon name="arrow-within-square" className="ml-auto shrink-0 color-hint" />
                         </ButtonLike>
                     </li>
                 </ul>
