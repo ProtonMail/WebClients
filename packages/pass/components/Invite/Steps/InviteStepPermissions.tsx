@@ -32,7 +32,7 @@ export const InviteStepPermissions = ({ heading, members, target, onStep, onUpda
                 onRoleChange={(role) => onUpdate(members.map(({ id, value }) => ({ id, value: { ...value, role } })))}
             />
         </div>
-        <div>
+        <div className="max-w-full">
             {members.map((member) => (
                 <InviteMember
                     {...member}
