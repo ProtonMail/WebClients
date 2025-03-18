@@ -1947,6 +1947,9 @@
       ]
     },
     "Blog": {
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "${ VPN_APP_NAME }:s policy om att inte logga bekräftas av en extern revision"
+      ],
       "**Streaming** is included in your subscription.": [
         "**Streaming** är inkluderat i din prenumeration."
       ],
@@ -1968,8 +1971,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Öka VPN-hastigheterna med upp till 400 % med VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Oberoende säkerhetsexperter har verifierat att ProtonVPN inte loggar användardata eller deltar i någon praxis som kan avslöja din integritet."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Oberoende säkerhetsexperter verifierade att ${ VPN_APP_NAME } inte loggar användardata eller deltar i några metoder som kan äventyra din integritet."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Är Telegram säkert att använda? Som vi kommer att diskutera i denna artikel beror det mycket på hur du använder det."
@@ -7108,7 +7111,7 @@
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
       "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } löper ut om ${ daysLeft } dagar.",
+        "${ planName } löper ut om ${ daysLeft } dag.",
         "${ planName } löper ut om ${ daysLeft } dagar."
       ],
       "${ planName } expires today.": [
@@ -7198,6 +7201,9 @@
       ],
       "* No credit card required.": [
         "* Inget kreditkort krävs."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "**${ appName }** stöds inte i din organisation **${ organizationName }**."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
@@ -7561,6 +7567,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Genom att dela all information om händelser i denna kalender, accepterar du att ge ${ BRAND_NAME } åtkomst till denna kalenders krypterade information."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjänst, integrerad med ${ MAIL_APP_NAME } och ${ CONTACTS_APP_NAME }"
+      ],
       "Cancel anytime": [
         "Avbryt när som helst"
       ],
@@ -7579,9 +7588,6 @@
       "Check the status of imports and forwarding.": [
         "Kontrollera status för importer och vidarebefordran."
       ],
-      "Choose an app to get started": [
-        "Välj en app för att komma igång"
-      ],
       "Choose an Entity ID to continue.": [
         "Välj ett entitets-ID för att fortsätta."
       ],
@@ -7590,6 +7596,9 @@
       ],
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Molnlagring, integrerad med ${ DOCS_APP_NAME }"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör (IdP). Detta kommer att aktivera SAML för hela organisationen."
@@ -7874,6 +7883,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjänst, integrerad med ${ CALENDAR_APP_NAME } och ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "E-postpreferenser sparade"
@@ -8444,6 +8456,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Säkerställ att du ${ addARecoveryMethod } så du kan komma åt ditt konto ifall du glömmer ditt lösenord."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Hantera vilka ${ BRAND_NAME }-applikationer som medlemmarna i din organisation har åtkomst till. Om funktionen är inaktiverad har endast administratörer åtkomst."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Hantera dina preferenser för e-postavisering för ${ DOCS_APP_NAME }."
       ],
@@ -8674,6 +8689,9 @@
       ],
       "Password generator rules successfully saved": [
         "Lösenordsgeneratorregler sparade"
+      ],
+      "Password manager with extra account security": [
+        "Lösenordshanterare med extra kontosäkerhet"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
@@ -8930,6 +8948,9 @@
       "Select a service provider to start": [
         "Välj en tjänsteleverantör för att starta"
       ],
+      "Select a service to continue": [
+        "Välj en tjänst för att fortsätta"
+      ],
       "Select one or multiple user affiliations": [
         "Välj en eller flera användartillhörigheter"
       ],
@@ -8944,6 +8965,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
+      ],
+      "Self-custodial crypto wallet": [
+        "Självförvaltande kryptoplånbok"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Skicka e-post för att uppmuntra dina medlemmar att skydda sina konton med 2FA."
@@ -9599,6 +9623,9 @@
       ],
       "Visa Secure logo": [
         "Logga för Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN med dedikerade servrar och IP-adresser"
       ],
       "Want to learn more?": [
         "Vill du lära dig mer?"
@@ -18114,6 +18141,9 @@
       ],
       "A filter with this name already exists": [
         "Ett filter med detta namn finns redan"
+      ],
+      "Access control": [
+        "Åtkomstkontroll"
       ],
       "Accessibility": [
         "Tillgänglighet"
