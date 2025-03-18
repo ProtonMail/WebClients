@@ -8,6 +8,7 @@ import type { Maybe } from '@proton/pass/types';
 
 import access from './access';
 import alias from './alias';
+import files from './files';
 import filters from './filters';
 import importReducer from './import';
 import invites from './invites';
@@ -22,6 +23,7 @@ import user from './user';
 
 export * from './access';
 export * from './alias';
+export * from './files';
 export * from './filters';
 export * from './import';
 export * from './invites';
@@ -34,6 +36,7 @@ export * from './user';
 export const reducerMap = {
     access,
     alias,
+    files,
     filters,
     import: importReducer,
     invites,
