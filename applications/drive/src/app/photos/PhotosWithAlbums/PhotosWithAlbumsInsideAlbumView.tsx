@@ -66,7 +66,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         shareId,
         linkId,
         albums,
-        userAddressEmail,
         loadPhotoLink,
         requestDownload,
         albumPhotos,
@@ -117,7 +116,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     };
 
     const album = albumLinkId ? albums.find((album) => album.linkId === albumLinkId) : undefined;
-    const isOwner = album?.signatureEmail === userAddressEmail;
     const photoCount = albumPhotos.length;
     const selectedCount = selectedItems.length;
 
@@ -148,7 +146,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
 
     const onPhotoUploadedToAlbum = useCallback(
         async (file: OnFileUploadSuccessCallbackData) => {
-            if (!file || !albumShareId) {
+            if (!file || !album || !albumShareId) {
                 return;
             }
             const abortSignal = new AbortController().signal;
@@ -156,7 +154,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 // If you're not the owner of the album
                 // you just upload directly in the album
                 // so you don't add afterwards to add the photo to the album
-                if (isOwner) {
+                if (album.permissions.isOwner) {
                     await addAlbumPhoto(abortSignal, albumShareId, file.fileId);
                 }
             } catch (e) {
@@ -166,7 +164,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 sendErrorReport(e);
             }
         },
-        [createNotification, addAlbumPhoto, albumShareId, isOwner]
+        [createNotification, addAlbumPhoto, albumShareId, album]
     );
 
     const onSelectCover = useCallback(
@@ -354,7 +352,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const hasPreview = !!previewItem;
     // If you own the root photo share, your uploads always goes to the root (photo stream) and then we add the photos to the album
     // If you don't own it (shared album), you upload directly in the album as a folder, it won't appear in photo stream
-    const uploadLinkId = isOwner ? linkId : albumLinkId || linkId;
+    const uploadLinkId = album.permissions.isOwner ? linkId : albumLinkId || linkId;
 
     return (
         <>
@@ -457,7 +455,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onSelectCover={onSelectCoverToolbar}
                             onDeleteAlbum={onDeleteAlbum}
                             onShowDetails={onShowDetails}
-                            isOwner={isOwner}
                         />
                     }
                 />
@@ -473,7 +470,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onShare={() => {
                                 showLinkSharingModal({ shareId: albumShareId, linkId });
                             }}
-                            isOwner={isOwner}
                         />
                     </div>
                 ) : (
@@ -490,7 +486,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onShare={() => {
                                 showLinkSharingModal({ shareId: albumShareId, linkId: album.linkId });
                             }}
-                            isOwner={isOwner}
                         />
                         <PhotosInsideAlbumsGrid
                             data={albumPhotos}

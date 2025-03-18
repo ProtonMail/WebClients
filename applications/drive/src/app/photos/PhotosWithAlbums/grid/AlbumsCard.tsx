@@ -27,7 +27,6 @@ type Props = {
     onClick: () => void;
     onRename: () => void;
     onShare: () => void;
-    isOwner: boolean;
 };
 
 const getAltText = ({ mimeType, name }: DecryptedLink) =>
@@ -93,16 +92,7 @@ export const AlbumDropdownButton = ({ onShare, onRename, isOwner }: AlbumDropdow
     );
 };
 
-export const AlbumsCard: FC<Props> = ({
-    style,
-    onRender,
-    onRenderLoadedLink,
-    album,
-    onClick,
-    onShare,
-    onRename,
-    isOwner,
-}) => {
+export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, album, onClick, onShare, onRename }) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
@@ -234,7 +224,11 @@ export const AlbumsCard: FC<Props> = ({
                             </div>
                         </div>
                         <div className="shrink-0 mb-2">
-                            <AlbumDropdownButton onShare={onShare} onRename={onRename} isOwner={isOwner} />
+                            <AlbumDropdownButton
+                                onShare={onShare}
+                                onRename={onRename}
+                                isOwner={album.permissions.isOwner}
+                            />
                         </div>
                     </div>
                 </>
