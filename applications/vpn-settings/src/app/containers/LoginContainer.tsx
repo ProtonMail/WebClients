@@ -40,17 +40,17 @@ const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit
             externalRedirect={initialLocation?.pathname || ''}
             onPreSubmit={onPreSubmit}
             onStartAuth={onStartAuth}
-            onLogin={async (data) => {
+            onLogin={async (session) => {
                 if (vpnTestflight) {
                     document.location.assign('https://testflight.apple.com/join/3yl2MSbw');
                     return { state: 'complete' };
                 }
-                const { User } = data;
+                const { User } = session.data;
                 const previousHash = initialLocation?.hash || '';
                 const previousSearch = initialLocation?.search || '';
                 const path = initialLocation?.pathname || (User && isMember(User) ? '/account-password' : '/dashboard');
                 const pathWithSearch = `${path}${previousSearch}${previousHash}`;
-                return onLogin({ ...data, path: pathWithSearch });
+                return onLogin({ ...session, path: pathWithSearch });
             }}
         />
     );

@@ -6,12 +6,13 @@ import noop from '@proton/utils/noop';
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import createListeners from '../helpers/listeners';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import type {
-    DefaultPersistedSession,
-    OfflinePersistedSession,
-    PersistedSession,
-    PersistedSessionBlob,
-    PersistedSessionLite,
+import {
+    type DefaultPersistedSession,
+    type OfflinePersistedSession,
+    type PersistedSession,
+    type PersistedSessionBlob,
+    type PersistedSessionLite,
+    SessionSource,
 } from './SessionInterface';
 import { InvalidPersistentSessionError } from './error';
 import { getValidatedLocalID } from './fork/validation';
@@ -55,6 +56,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             UserID: parsedValue.UserID || '',
             UID: parsedValue.UID || '',
             blob: parsedValue.blob || '',
+            source: parsedValue.source ?? SessionSource.Proton, // Default to Proton since we can't determine it properly
             isSelf,
             persistent: typeof parsedValue.persistent === 'boolean' ? parsedValue.persistent : true, // Default to true (old behavior)
             trusted: parsedValue.trusted || false,
@@ -137,8 +139,8 @@ export const getMinimalPersistedSession = ({ localID, isSelf }: PersistedSession
 export const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | undefined => {
     try {
         const parsedValue = JSON.parse(blob);
-        const keyPassword = parsedValue.keyPassword || '';
-        const offlineKeyPassword = parsedValue.offlineKeyPassword || '';
+        const keyPassword = parsedValue.keyPassword ?? '';
+        const offlineKeyPassword = parsedValue.offlineKeyPassword ?? '';
 
         if (parsedValue.offlineKeyPassword) {
             return {
@@ -175,8 +177,7 @@ export const getDecryptedPersistedSessionBlob = async (
     }
     return parsedBlob;
 };
-
-export const setPersistedSessionWithBlob = async (
+export const getPersistedSessionData = async (
     localID: number,
     key: CryptoKey,
     data: {
@@ -188,8 +189,9 @@ export const setPersistedSessionWithBlob = async (
         persistent: boolean;
         trusted: boolean;
         persistedAt: number;
+        source: PersistedSession['source'];
     }
-) => {
+): Promise<PersistedSession> => {
     const payloadVersion =
         1 as PersistedSession['payloadVersion']; /* Update to 2 when all clients understand it (safe for rollback) */
 
@@ -222,13 +224,14 @@ export const setPersistedSessionWithBlob = async (
         } as const;
     })();
 
-    const persistedSession: PersistedSession = {
+    return {
         localID,
         UserID: data.UserID,
         UID: data.UID,
         isSelf: data.isSelf,
         persistent: data.persistent,
         trusted: data.trusted,
+        source: data.source,
         payloadVersion,
         ...clearTextPayloadData,
         blob: await getEncryptedBlob(
@@ -238,7 +241,10 @@ export const setPersistedSessionWithBlob = async (
         ),
         persistedAt: data.persistedAt,
     };
-    setItem(getKey(localID), JSON.stringify(omit(persistedSession, ['localID'])));
+};
+
+export const setPersistedSession = async (persistedSession: PersistedSession) => {
+    setItem(getKey(persistedSession.localID), JSON.stringify(omit(persistedSession, ['localID'])));
 
     if (sessionCreateListeners.length()) {
         await Promise.all(sessionCreateListeners.notify(persistedSession)).catch(noop);

@@ -13,6 +13,7 @@ import {
 import Logo from '@proton/components/components/logo/Logo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
@@ -24,8 +25,14 @@ import Layout from './Layout';
 import Main from './Main';
 import PublicUserItem from './PublicUserItem';
 
+interface EnhancedAuthSession extends OnLoginCallbackArguments {
+    data: OnLoginCallbackArguments['data'] & {
+        Organization: OrganizationWithSettings | undefined;
+    };
+}
+
 export type AppSwitcherState = {
-    session: OnLoginCallbackArguments & { Organization: OrganizationWithSettings | undefined };
+    session: EnhancedAuthSession;
     error?: {
         type: 'unsupported-app';
         app: APP_NAMES;
@@ -80,7 +87,7 @@ interface Props {
 const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const session = state.session;
     const error = state.error;
-    const { User, Organization } = session;
+    const { User, Organization, persistedSession } = session.data;
 
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isAccessControlEnabled = useFlag('AccessControl');
@@ -129,6 +136,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                             organization: Organization,
                             isLumoAvailable,
                             isAccessControlEnabled,
+                            oauth: persistedSession.source === SessionSource.Oauth,
                         })}
                         onExplore={async (app) => {
                             await onLogin({

@@ -15,6 +15,7 @@ import { authMember } from '@proton/shared/lib/api/members';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -56,7 +57,12 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
             const memberApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
             const User = await memberApi<{ User: User }>(getUser()).then(({ User }) => User);
 
-            const validatedSession = await maybeResumeSessionByUser({ api: silentApi, User });
+            const validatedSession = await maybeResumeSessionByUser({
+                api: silentApi,
+                User,
+                // During proton login, ignore resuming an oauth session
+                options: { source: [SessionSource.Proton, SessionSource.Saml] },
+            });
             if (validatedSession) {
                 memberApi(revoke()).catch(noop);
                 return validatedSession.LocalID;
@@ -75,6 +81,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
                 offlineKey: undefined,
                 persistent: authentication.getPersistent(),
                 trusted: false,
+                source: SessionSource.Proton,
             });
 
             return LocalID;

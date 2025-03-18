@@ -1,6 +1,6 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse, AuthVersion, InfoResponse } from '@proton/shared/lib/authentication/interface';
-import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type {
     Address,
@@ -8,7 +8,6 @@ import type {
     KeyMigrationKTVerifier,
     KeyTransparencyActivation,
     PreAuthKTVerifier,
-    Address as tsAddress,
     KeySalt as tsKeySalt,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
@@ -138,22 +137,12 @@ export interface AppIntent {
 }
 
 export interface AuthSession {
-    UID: string;
-    EventID?: string;
-    LocalID: number;
-    User: tsUser;
-    Addresses?: tsAddress[];
-    keyPassword?: string;
     loginPassword?: string;
     path?: string;
     flow?: AuthFlows;
     prompt?: 'login' | null;
     appIntent?: AppIntent;
-    persistent: boolean;
-    trusted: boolean;
-    clientKey: string;
-    offlineKey: OfflineKey | undefined;
-    persistedAt: number;
+    data: ResumedSessionResult;
 }
 
 export type AuthActionResponse =

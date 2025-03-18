@@ -2,9 +2,11 @@ import type { AppIntent, AuthSession } from '@proton/components/containers/login
 import { UNPAID_STATE } from '@proton/payments';
 import { getAppHref, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { getShouldReAuth } from '@proton/shared/lib/authentication/fork';
 import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
+import { getOAuthSettingsUrl } from '@proton/shared/lib/authentication/fork/oauth2SettingsUrl';
 import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -101,7 +103,7 @@ const getRedirectUrl = ({
     initialSearchParams: URLSearchParams;
     toApp: APP_NAMES;
 }) => {
-    const localID = session.LocalID;
+    const localID = session.data.LocalID;
 
     const localRedirect = getLocalRedirectWithApp({ localRedirect: maybeLocalRedirect, session, toApp });
     if (localRedirect) {
@@ -144,7 +146,11 @@ export const getLoginResult = async ({
     preAppIntent?: APP_NAMES;
     paths: Paths;
 }): Promise<LoginResult> => {
-    const { loginPassword, clientKey, User: user, appIntent } = session;
+    const {
+        loginPassword,
+        data: { User: user, clientKey, persistedSession },
+        appIntent,
+    } = session;
 
     invokeInboxDesktopIPC({ type: 'userLogin' }).catch(noop);
 
@@ -154,7 +160,7 @@ export const getLoginResult = async ({
     if (!maybeToApp && !forkState) {
         const organization = await getOrganization({ session, api }).catch(noop);
         const appSwitcherState: AppSwitcherState = {
-            session: { ...session, Organization: organization },
+            session: { ...session, data: { ...session.data, Organization: organization } },
         };
         return {
             type: 'app-switcher',
@@ -179,6 +185,18 @@ export const getLoginResult = async ({
 
     const toApp = getToApp(maybeToApp, user);
 
+    // OAuth session are only allowed for the VPN browser extension at the moment. Go to the restricted settings view.
+    if (persistedSession.source === SessionSource.Oauth && toApp !== APPS.PROTONVPNBROWSEREXTENSION) {
+        const url = getOAuthSettingsUrl(session.data.LocalID);
+        return {
+            type: 'done',
+            payload: {
+                session,
+                url,
+            },
+        };
+    }
+
     if (
         getRequiresAddressSetup(toApp, user) &&
         !maybeLocalRedirect?.location.pathname.includes(SETUP_ADDRESS_PATH) &&
@@ -190,7 +208,7 @@ export const getLoginResult = async ({
         params.set('to', toApp);
         params.set('from', 'switch');
         const path = `${SETUP_ADDRESS_PATH}?${params.toString()}#${blob || ''}`;
-        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.LocalID));
+        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.data.LocalID));
         return {
             type: 'done',
             payload: {
@@ -203,7 +221,7 @@ export const getLoginResult = async ({
     // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
     if (user.Delinquent >= UNPAID_STATE.DELINQUENT) {
         const path = joinPaths(getSlugFromApp(toApp), getInvoicesPathname());
-        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.LocalID));
+        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.data.LocalID));
         return {
             type: 'done',
             payload: {

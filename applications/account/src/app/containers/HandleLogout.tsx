@@ -4,7 +4,7 @@ import { registerSessionListener } from '@proton/account/accountSessions/registe
 import useApi from '@proton/components/hooks/useApi';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
+import { type PersistedSession, SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { parseLogoutURL } from '@proton/shared/lib/authentication/logoutUrl';
 import { findPersistedSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
@@ -55,7 +55,14 @@ const clear = ({ api }: { api: Api }) => {
     const silentApi = getSilentApi(api);
     const persistedSessions = getPersistedSessions();
     params.sessions.forEach(({ id, isSelf }) => {
-        const session = findPersistedSession({ persistedSessions, UserID: id, isSelf });
+        const session = findPersistedSession({
+            persistedSessions,
+            UserID: id,
+            isSelf,
+            // Ignore oauth sessions, they are only used in BEX.
+            // This is to avoid signing out the oauth session if the same user has signed out with srp.
+            source: [SessionSource.Proton, SessionSource.Saml],
+        });
         if (session) {
             clearSession({ session, api: silentApi, revokeSession });
         }
