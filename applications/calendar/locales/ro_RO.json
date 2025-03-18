@@ -879,8 +879,16 @@
       "${ price } per domain": [
         "${ price } per domeniu"
       ],
+      "${ price } per seat": [
+        "${ price } per licență"
+      ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licență ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licență asistent de scriere",
@@ -4492,6 +4500,9 @@
         "S-a găsit un grup",
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
@@ -10683,6 +10694,11 @@
         "Autoselectare din ${ numberOfCountries } țară",
         "Autoselectare din ${ numberOfCountries } țări",
         "Autoselectare din ${ numberOfCountries } de țări"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servere în peste ${ numberOfCountries } țară",
+        "Servere în peste ${ numberOfCountries } țări",
+        "Servere în peste ${ numberOfCountries } de țări"
       ]
     },
     "vpn_2024: renew": {
