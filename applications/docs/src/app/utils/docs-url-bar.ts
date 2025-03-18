@@ -1,6 +1,5 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useAuthentication } from '@proton/components'
-import { useLocation } from 'react-router-dom'
 import type { DocumentAction } from '@proton/drive-store'
 import { APPS } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
@@ -8,12 +7,13 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import type { RedirectAction } from '@proton/drive-store/store/_documents'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { isDevOrBlack } from '@proton/docs-core'
+import { useLocation } from 'react-router-dom-v5-compat'
 
 export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolean } = {}) {
   const { getLocalID } = useAuthentication()
 
   const { search } = useLocation()
-  const searchParams = new URLSearchParams(search)
+  const searchParams = useMemo(() => new URLSearchParams(search), [search])
   const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams))
 
   /**
@@ -114,15 +114,14 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
   }, [])
 
   useEffectOnce(() => {
-    const action = parseOpenAction(searchParams)
-
-    if (!action && isDocsEnabled === false) {
+    if (isDocsEnabled === false) {
       window.location.assign(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
       return
     }
   })
 
   return {
+    searchParams,
     openAction,
     updateParameters,
     removeActionFromUrl,
