@@ -42,7 +42,7 @@ import type {
 } from '@proton/shared/lib/interfaces';
 
 import Checkout from '../../Checkout';
-import { getCheckoutRenewNoticeText } from '../../RenewalNotice';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { getTotalBillingText } from '../helpers';
@@ -195,15 +195,12 @@ const SubscriptionCheckout = ({
             user={user}
             renewNotice={
                 displayRenewNotice
-                    ? getCheckoutRenewNoticeText({
-                          cycle,
+                    ? getCheckoutRenewNoticeTextFromCheckResult({
+                          checkResult,
                           plansMap,
                           planIDs,
-                          checkout,
-                          currency,
                           subscription,
-                          coupon: checkResult.Coupon,
-                          ...checkoutModifiers,
+                          app: APP_NAME,
                       })
                     : undefined
             }

@@ -15,6 +15,8 @@ describe('getCheckoutModifiers', () => {
             Cycle: CYCLE.MONTHLY,
             PeriodEnd: Math.floor(Date.now() / 1000 + 30 * 24 * 60 * 60),
             SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
         };
     });
 

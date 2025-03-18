@@ -140,7 +140,7 @@ export const isManagedExternally = (
 };
 
 export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VISIONARY);
-export const hasVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
+export const hasDeprecatedVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
 export const hasVPN2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN2024);
 export const hasVPNPassBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
 export const hasMail = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL);
@@ -368,7 +368,7 @@ export const upsellPlanSSO = (planName?: PLANS) => {
 
 export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
     return (
-        hasVPN(subscription) ||
+        hasDeprecatedVPN(subscription) ||
         hasVPN2024(subscription) ||
         hasVPNPassBundle(subscription) ||
         hasVpnPro(subscription) ||
@@ -377,7 +377,7 @@ export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
 };
 
 export const getHasConsumerVpnPlan = (subscription: MaybeFreeSubscription) => {
-    return hasVPN(subscription) || hasVPN2024(subscription) || hasVPNPassBundle(subscription);
+    return hasDeprecatedVPN(subscription) || hasVPN2024(subscription) || hasVPNPassBundle(subscription);
 };
 
 export const getHasPassB2BPlan = (subscription: MaybeFreeSubscription) => {

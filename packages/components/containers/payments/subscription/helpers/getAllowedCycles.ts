@@ -6,34 +6,58 @@ import {
     PLANS,
     type PlanIDs,
     hasCycle,
+    isFreeSubscription,
 } from '@proton/payments';
+import { type ProductParam } from '@proton/shared/lib/apps/product';
+import { APPS } from '@proton/shared/lib/constants';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
-import { isRegularCycle, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { hasDeprecatedVPN, hasVPN2024, isRegularCycle, isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
 
+type CycleCapper = (
+    subscription: Subscription | FreeSubscription | undefined,
+    app: ProductParam | undefined,
+    planIDs: PlanIDs
+) => CYCLE;
+
 export type PlanCapRule = {
     plan: PLANS | ADDON_NAMES;
-    cycle: CYCLE;
+    cycle: CYCLE | CycleCapper;
     currencyPredicate?: Currency | ((currency: Currency) => boolean);
+};
+
+const cycleCapper: CycleCapper = (subscription, app) => {
+    const userHasLongSubscription =
+        !!subscription &&
+        !isFreeSubscription(subscription) &&
+        (subscription.Cycle > CYCLE.YEARLY || (subscription.UpcomingSubscription?.Cycle ?? 0) > CYCLE.YEARLY);
+
+    const isVpnApp = app === APPS.PROTONVPN_SETTINGS;
+
+    if (userHasLongSubscription || hasDeprecatedVPN(subscription) || hasVPN2024(subscription) || isVpnApp) {
+        return CYCLE.TWO_YEARS;
+    }
+
+    return CYCLE.YEARLY;
 };
 
 const defaultRules: PlanCapRule[] = [
     { plan: PLANS.MAIL, cycle: CYCLE.YEARLY },
     { plan: PLANS.VPN, cycle: CYCLE.YEARLY },
-    { plan: PLANS.VPN2024, cycle: CYCLE.YEARLY },
+    { plan: PLANS.VPN2024, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
     { plan: PLANS.WALLET, cycle: CYCLE.YEARLY },
     { plan: PLANS.LUMO, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_FAMILY, cycle: CYCLE.YEARLY },
 
-    { plan: PLANS.BUNDLE, cycle: CYCLE.YEARLY },
-    { plan: PLANS.DUO, cycle: CYCLE.YEARLY },
-    { plan: PLANS.FAMILY, cycle: CYCLE.YEARLY },
-    { plan: PLANS.VISIONARY, cycle: CYCLE.YEARLY },
+    { plan: PLANS.BUNDLE, cycle: cycleCapper },
+    { plan: PLANS.DUO, cycle: cycleCapper },
+    { plan: PLANS.FAMILY, cycle: cycleCapper },
+    { plan: PLANS.VISIONARY, cycle: cycleCapper },
 
     { plan: PLANS.PASS_PRO, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_BUSINESS, cycle: CYCLE.YEARLY },
@@ -72,6 +96,7 @@ function capMaximumCycle({
     subscription,
     cycleParam,
     rules = defaultRules,
+    app,
 }: {
     maximumCycle: CYCLE;
     planIDs: PlanIDs;
@@ -80,6 +105,7 @@ function capMaximumCycle({
     subscription: Subscription | FreeSubscription | undefined;
     cycleParam?: CYCLE;
     rules?: PlanCapRule[];
+    app?: ProductParam;
 }): CYCLE {
     const currencyMatches = (rule: PlanCapRule) => {
         if (!rule.currencyPredicate) {
@@ -93,19 +119,31 @@ function capMaximumCycle({
         return rule.currencyPredicate === currency;
     };
 
+    const getCycle = (rule: PlanCapRule) => {
+        if (typeof rule.cycle === 'function') {
+            return rule.cycle(subscription, app, planIDs);
+        }
+
+        return rule.cycle;
+    };
+
     // filter a capped plan from the list of capped plans if it is present in planIDs
     const planCapRule = rules.find((cappedPlan) => planIDs[cappedPlan.plan]);
 
     let result: CYCLE = maximumCycle;
     if (planCapRule && currencyMatches(planCapRule)) {
-        result = Math.min(maximumCycle, planCapRule.cycle);
+        result = Math.min(maximumCycle, getCycle(planCapRule));
     }
 
     // if user already has a subscription or upcoming subscription with higher cycle, then we let user see it
+    const isSamePlan = isSamePlanCheckout(subscription, planIDs);
+    const subscriptionCycle = isSamePlan
+        ? Math.max(subscription?.Cycle ?? 0, subscription?.UpcomingSubscription?.Cycle ?? 0)
+        : 0;
+
     result = Math.max(
         result,
-        subscription?.Cycle ?? 0,
-        subscription?.UpcomingSubscription?.Cycle ?? 0,
+        subscriptionCycle,
         cycleParam &&
             isSupportedCycle({
                 cycle: cycleParam,
@@ -132,6 +170,7 @@ export const getAllowedCycles = ({
     allowDowncycling,
     rules,
     cycleParam,
+    app,
 }: {
     subscription: Subscription | FreeSubscription | undefined;
     minimumCycle?: CYCLE;
@@ -144,6 +183,7 @@ export const getAllowedCycles = ({
     allowDowncycling?: boolean;
     rules?: PlanCapRule[];
     cycleParam?: CYCLE;
+    app?: ProductParam;
 }): CYCLE[] => {
     const plan = getPlanFromIDs(planIDs, plansMap);
     if (!plan) {
@@ -167,6 +207,7 @@ export const getAllowedCycles = ({
         subscription,
         rules,
         cycleParam,
+        app,
     });
 
     const result = availableCycles.filter((cycle) => {
