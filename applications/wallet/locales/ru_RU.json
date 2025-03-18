@@ -470,9 +470,6 @@
       "High speed streaming": [
         "Высокоскоростной стриминг"
       ],
-      "Integrated 2FA authenticator": [
-        "Интегрированная двухфакторная аутентификация"
-      ],
       "One-time payment, lifetime deal": [
         "Единовременная оплата, пожизненное предложение"
       ],
@@ -491,17 +488,8 @@
       "Secure file storage & sharing": [
         "Безопасное хранение и обмен файлами"
       ],
-      "Secure vault and link sharing": [
-        "Защищённое хранилище и обмен ссылками"
-      ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество псевдонимов hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Неограниченное количество имён пользователей, заметок и кредитных карт"
       ],
       "Use your own email domain": [
         "Используйте свой собственный домен электронной почты"
@@ -866,6 +854,9 @@
       ]
     },
     "Button": {
+      "Close": [
+        "Закрыть"
+      ],
       "Create label": [
         "Создать ярлык"
       ],
@@ -2000,8 +1991,8 @@
       ]
     },
     "Error": {
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } — ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Сообщения и написание писем > Короткий домен (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } - это ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Идентификация и адреса > Короткий домен (pm.me)"
       ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
@@ -2223,6 +2214,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
       ]
     },
     "fido2: Error": {
@@ -2695,9 +2691,6 @@
       "Subscription auto-renews every month.": [
         "Подписка автоматически обновляется каждый месяц."
       ],
-      "Switch to": [
-        "Переключиться на"
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
       ],
@@ -2861,8 +2854,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Пожалуйста, свяжитесь с нами по ${ email } для получения инструкций по оплате наличными."
+      "How to send a cash payment?": [
+        "Как отправить оплату наличными?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Найдите инструкции в статье: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -2984,6 +2980,9 @@
       ],
       "IBAN": [
         "IBAN"
+      ],
+      "Integrated 2FA authenticator": [
+        "Интегрированная двухфакторная аутентификация"
       ],
       "Last name": [
         "Фамилия"
@@ -3146,6 +3145,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Добавить помощника по написанию ${ BRAND_NAME } Scribe"
       ],
@@ -3330,12 +3332,6 @@
       "${ size } storage": [
         "${ size } хранилища"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } — для ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } — для всех сервисов ${ BRAND_NAME }"
-      ],
       "1 user": [
         "1 пользователь"
       ],
@@ -3417,6 +3413,9 @@
       "Data breach monitoring": [
         "Отслеживание утечек данных"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Выделенные серверы, оптимизированные для трансляций"
+      ],
       "Desktop app": [
         "Приложение для настольного компьютера"
       ],
@@ -3473,9 +3472,6 @@
       ],
       "HTML signatures": [
         "Подписи HTML"
-      ],
-      "Integrated 2FA authenticator": [
-        "Встроенная двухфакторная аутентификация"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch и VPN постоянно вкл."
@@ -3552,17 +3548,20 @@
       "SMTP submission": [
         "Отправки через SMTP"
       ],
-      "SMTP submission for select organizations": [
-        "Отправка по SMTP для отдельных организаций"
-      ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
+      ],
+      "SSO integration": [
+        "Интеграция с SSO"
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
+      ],
+      "Tor over VPN": [
+        "Tor через VPN"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -3581,9 +3580,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Неограниченное количество скрытых псевдонимов для скрытия своей электронной почты"
       ],
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
@@ -3626,6 +3622,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Используйте одновременно до ${ n } устройства",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств"
       ],
       "User credential management": [
         "Управление учетными данными пользователя"
@@ -4059,23 +4061,8 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Защищенное хранилище и обмен ссылками"
-      ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищу и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
-        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
       ]
     },
     "pass_signup_2024: Info": {
@@ -4090,6 +4077,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Панель администратора для управления пользователями и подпиской"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
       ],
       "Team policies": [
         "Политики команды"
@@ -4219,6 +4209,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Подтверждая этот платеж, вы уполномочиваете ${ BRAND_NAME } и Stripe, нашего поставщика платежных услуг, дать указание вашему банку списать средства с вашего счета. Вы можете получить деньги обратно в течение 8 недель с момента списания, в соответствии с условиями вашего договора с банком."
+      ],
       "Street address, postal code, and city": [
         "Адрес улицы, почтовый индекс и город"
       ]
@@ -4599,6 +4592,9 @@
       "Billed every 2 years": [
         "Оплата каждые 2 года"
       ],
+      "Billed every 6 months": [
+        "Списано каждые 6 месяцев"
+      ],
       "Billed for 15 months": [
         "Оплата за 15 месяцев."
       ],
@@ -4882,6 +4878,9 @@
       "Go to settings and recovery keys": [
         "Перейдите к настройкам и восстановите ключи"
       ],
+      "Help center": [
+        "Справочный центр"
+      ],
       "Human verification": [
         "Проверка пользователя"
       ],
@@ -5024,6 +5023,12 @@
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } страны",
+        "${ numberOfCountries } стран",
+        "${ numberOfCountries } стран",
+        "${ numberOfCountries } стран"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } в ${ numberOfCountries } стране",
         "${ numberOfServers } в более чем ${ numberOfCountries } странах",
@@ -5040,6 +5045,12 @@
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
       ],
       "Your scheduled plan starts on ${ renewalTime }.": [
         "Ваш запланированный тариф начинается с ${ renewalTime }."
@@ -5239,6 +5250,9 @@
     "Wallet information": {
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
         "Кодовая фраза — это дополнительный пароль, который вы создаёте, чтобы повысить защиту своего криптокошелька. Её можно использовать вместе с мнемонической фразой. Храните её в надёжном месте, поскольку без неё вы не получите доступ к кошельку."
+      ],
+      "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
+        "Начальная фраза кошелька - это последовательность из 12-24 слов, сгенерированная вашим кошельком. Она действует как мастер-ключ, позволяющий восстановить ваши средства. Храните его в безопасности и никогда не сообщайте, так как он открывает доступ к вашим средствам."
       ],
       "What’s a wallet passphrase?": [
         "Что такое кодовая фраза для кошелька?"
@@ -5714,6 +5728,9 @@
       "Add a passphrase (optional)": [
         "Добавьте кодовую фразу (необязательно)"
       ],
+      "Bitcoin via Email": [
+        "Bitcoin по электронной почте"
+      ],
       "Choose a name and default currency.": [
         "Выберите имя и валюту по умолчанию."
       ],
@@ -5776,6 +5793,9 @@
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Перенесите ваши биткойны в другой кошелёк перед удалением. Удаление этого кошелька удалит все его данные с серверов ${ BRAND_NAME }. Вы сможете восстановить этот кошелёк позже, используя мнемоническую фразу."
+      ],
+      "Primary account": [
+        "Основной аккаунт"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
         "Сид-фраза (12 или 24 слова, разделенные пробелом)"
@@ -5865,6 +5885,11 @@
       ],
       "Wallets": [
         "Кошельки"
+      ]
+    },
+    "Wallet sidebar": {
+      "Add account": [
+        "Добавить аккаунт"
       ]
     },
     "Wallet terms and conditions": {
@@ -6037,6 +6062,9 @@
       ],
       "Upgrade your privacy": [
         "Улучшите свою конфиденциальность"
+      ],
+      "You have reached your limit": [
+        "Вы достигли предела"
       ]
     },
     "Wallet upgrade": {
@@ -6049,6 +6077,15 @@
       "Unlock more email addresses": [
         "Разблокировать больше адресов электронной почты"
       ],
+      "You have reached the maximum number of accounts supported by your current plan.": [
+        "Вы достигли максимального количества аккаунтов, поддерживаемых вашим текущим тарифом."
+      ],
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Вы достигли максимального количества аккаунтов, поддерживаемых вашим текущим тарифом. Обновите тариф, чтобы создать больше. Ваша поддержка также будет необходима для нашей борьбы за защиту финансовой тайны и свободы."
+      ],
+      "You have reached the maximum number of wallets supported by your current plan.": [
+        "Вы достигли максимального количества кошельков, поддерживаемых вашим текущим тарифом."
+      ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Вы создали максимальное количество кошельков, поддерживаемое вашим тарифом. Чтобы создать больше, улучшите тариф. Ваша поддержка поможет в нашей борьбе за защиту свободы и конфиденциальности финансовых данных."
       ]
@@ -6059,6 +6096,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "адрес электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } счёт на один кошелёк",
         "${ n } счёта на один кошелёк",
@@ -6106,9 +6149,6 @@
       ]
     },
     "Warning": {
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Обратите внимание, что при выборе этого способа оплаты тип вашего аккаунта не может быть изменен сразу. Мы обновим ваш аккаунт, как только будет произведена оплата."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
       ],
