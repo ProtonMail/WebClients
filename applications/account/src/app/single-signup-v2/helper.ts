@@ -573,8 +573,8 @@ export const getUserInfo = async ({
                 ...optionsWithSubscriptionDefaults,
                 ...upsell.subscriptionOptions,
                 planIDs: switchPlan({
-                    planIDs: getPlanIDs(subscription),
-                    planID: upsell.plan.Name,
+                    currentPlanIDs: getPlanIDs(subscription),
+                    newPlan: upsell.plan.Name,
                     organization,
                     plans,
                     user,

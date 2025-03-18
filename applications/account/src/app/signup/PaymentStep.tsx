@@ -11,7 +11,7 @@ import {
     StyledPayPalButton,
     SubscriptionCheckoutCycleItem,
     SubscriptionCycleSelector,
-    getCheckoutRenewNoticeText,
+    getCheckoutRenewNoticeTextFromCheckResult,
     useConfig,
     useHandler,
 } from '@proton/components';
@@ -39,7 +39,7 @@ import {
 } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
-import { getCheckout, getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
+import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
@@ -187,12 +187,6 @@ const PaymentStep = ({
     const isChargebeeCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     const isChargebeePaypal = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
 
-    const checkout = getCheckout({
-        planIDs: subscriptionData.planIDs,
-        plansMap,
-        checkResult: subscriptionData.checkResult,
-    });
-
     const isB2bAudience = getIsB2BAudienceFromPlan(getPlanNameFromIDs(subscriptionData.planIDs));
     const defaultCycles = isB2bAudience ? [CYCLE.YEARLY, CYCLE.MONTHLY] : undefined;
 
@@ -277,13 +271,11 @@ const PaymentStep = ({
                         />
                     )}
                     <div className="text-sm color-weak">
-                        {getCheckoutRenewNoticeText({
-                            coupon: subscriptionData.checkResult.Coupon,
-                            cycle: subscriptionData.cycle,
-                            plansMap: plansMap,
+                        {getCheckoutRenewNoticeTextFromCheckResult({
+                            checkResult: subscriptionData.checkResult,
+                            plansMap,
                             planIDs: subscriptionData.planIDs,
-                            checkout,
-                            currency: subscriptionData.currency,
+                            app: APP_NAME,
                         })}
                     </div>
                     {paymentFacade.showTaxCountry && (

@@ -22,6 +22,7 @@ import {
     getIsB2BAudienceFromPlan,
     getPricePerCycle,
     hasBundle,
+    hasDeprecatedVPN,
     hasDrive,
     hasDriveBusiness,
     hasDuo,
@@ -30,7 +31,6 @@ import {
     hasMailPro,
     hasPass,
     hasPassFamily,
-    hasVPN,
     hasVPN2024,
     hasVPNPassBundle,
     hasVpnBusiness,
@@ -694,7 +694,7 @@ const hasOnePlusSubscription = (subscription: Subscription) => {
         hasDrive(subscription) ||
         hasPass(subscription) ||
         hasWallet(subscription) ||
-        hasVPN(subscription) ||
+        hasDeprecatedVPN(subscription) ||
         hasVPNPassBundle(subscription) ||
         hasVPN2024(subscription)
     );
