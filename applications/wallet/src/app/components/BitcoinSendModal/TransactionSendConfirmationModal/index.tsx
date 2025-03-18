@@ -3,11 +3,14 @@ import { c } from 'ttag';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import walletSendingPlane from '@proton/styles/assets/img/wallet/wallet-paper-plane.jpg';
+import walletPaperPlaneDark from '@proton/styles/assets/img/wallet/wallet-paper-plane-dark.jpg';
+import walletPaperPlane from '@proton/styles/assets/img/wallet/wallet-paper-plane.jpg';
 import clsx from '@proton/utils/clsx';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../../atoms';
 import type { SubTheme } from '../../../utils';
+import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 
 interface TransactionSendConfirmationModalOwnProps {
     theme?: SubTheme;
@@ -23,6 +26,8 @@ export const TransactionSendConfirmationModal = ({
     onClickInviteAFriend,
     ...modalProps
 }: Props) => {
+    const walletTheme = useWalletTheme();
+
     return (
         <Prompt
             className={theme}
@@ -51,7 +56,7 @@ export const TransactionSendConfirmationModal = ({
             <div className="flex flex-column items-center">
                 <img
                     className="h-custom w-custom"
-                    src={walletSendingPlane}
+                    src={walletTheme === WalletThemeOption.WalletDark ? walletPaperPlaneDark : walletPaperPlane}
                     alt=""
                     style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                 />

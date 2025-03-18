@@ -5,9 +5,12 @@ import { c } from 'ttag';
 import { Button, Step, Stepper } from '@proton/atoms';
 import { AppLink, Icon, Tooltip } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import protonWalletLogoDark from '@proton/styles/assets/img/illustrations/proton-wallet-logo-dark.svg';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { APP_NAME } from '../../config';
+import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 export type Steps<T extends string> = { key: T; label: string }[];
 
@@ -24,6 +27,8 @@ export const ModalHeaderWithStepper = <T extends string>({
     onClickStep,
     steps,
 }: ModalHeaderProps<T>) => {
+    const theme = useWalletTheme();
+
     return (
         <div className="modal-two-header">
             <AppLink
@@ -32,7 +37,11 @@ export const ModalHeaderWithStepper = <T extends string>({
                 target="_self"
                 className="relative interactive-pseudo-protrude interactive--no-background flex justify-center modal-logo"
             >
-                <img src={protonWalletLogo} alt={WALLET_APP_NAME} className="w-full" />
+                <img
+                    src={theme === WalletThemeOption.WalletDark ? protonWalletLogoDark : protonWalletLogo}
+                    alt={WALLET_APP_NAME}
+                    className="w-full"
+                />
             </AppLink>
 
             <Stepper position="center" activeStep={steps.findIndex((s) => s.key === currentStep)}>
