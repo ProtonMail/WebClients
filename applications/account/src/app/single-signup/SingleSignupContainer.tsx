@@ -159,7 +159,7 @@ const SingleSignupContainer = ({
 
     useMetaTags(metaTags);
 
-    const isVariantB = getSearchParams().get('v') === 'b';
+    const isVariantB = getSearchParams().get('v') === 'b' || getSearchParams().get('v') === 'aff';
 
     const [signupParameters, setSignupParameters] = useState(() => {
         const result = getSignupSearchParams(location.pathname, getSearchParams());
