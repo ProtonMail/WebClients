@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -42,7 +43,7 @@ export const useInvitationsView = () => {
     useEffect(() => {
         const abortController = new AbortController();
         const unsubscribe = driveEventManager.eventHandlers.subscribeToCore((event) => {
-            if (event.DriveShareRefresh?.Action === 2) {
+            if (event.DriveShareRefresh?.Action === EVENT_ACTIONS.UPDATE) {
                 loadInvitations(abortController.signal).catch(sendErrorReport);
             }
         });

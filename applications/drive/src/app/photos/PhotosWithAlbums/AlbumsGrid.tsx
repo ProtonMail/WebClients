@@ -15,7 +15,6 @@ type AlbumsGridProps = {
     onItemClick: (shareId: string, linkId: string) => void;
     onItemShare: (linkId: string) => void;
     onItemRename: (linkId: string) => void;
-    userAddressEmail?: string;
 };
 
 export const AlbumsGrid: FC<AlbumsGridProps> = ({
@@ -26,7 +25,6 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
     onItemClick,
     onItemShare,
     onItemRename,
-    userAddressEmail,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
@@ -138,7 +136,6 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
                             left: `${x}px`,
                             animationDelay: `${Math.round(((i % animationOffset) / (animationOffset / 2)) * 10) / 10}s`,
                         }}
-                        isOwner={item.signatureEmail === userAddressEmail}
                     />
                 );
             }
@@ -155,7 +152,16 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
         };
 
         return [items, innerStyle];
-    }, [data, dimensions, scrollPosition, onItemClick, onItemRender, onItemRenderLoadedLink, onItemShare]);
+    }, [
+        data,
+        dimensions,
+        scrollPosition,
+        onItemClick,
+        onItemRender,
+        onItemRenderLoadedLink,
+        onItemShare,
+        onItemRename,
+    ]);
 
     return (
         <div className="mt-6 pt-4 px-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
