@@ -25,15 +25,26 @@ export const getOptimisticRenewCycleAndPrice = ({
     plansMap,
     cycle,
     currency,
+    renewAmount,
+    renewCycle,
 }: {
     cycle: Cycle;
     planIDs: PlanIDs;
     plansMap: PlansMap;
     currency: Currency;
+    renewAmount?: number | null;
+    renewCycle?: CYCLE | null;
 }): {
     renewPrice: number;
     renewalLength: CYCLE;
 } => {
+    if (!!renewAmount && !!renewCycle) {
+        return {
+            renewPrice: renewAmount,
+            renewalLength: renewCycle,
+        };
+    }
+
     const nextCycle = getRenewCycle(cycle, planIDs);
     const latestCheckout = getCheckout({
         plansMap,

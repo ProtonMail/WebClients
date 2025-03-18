@@ -1,4 +1,4 @@
-import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { type RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 
 export interface CheckoutModifiers {
@@ -9,7 +9,7 @@ export interface CheckoutModifiers {
     isCustomBilling: boolean;
 }
 
-export const getCheckoutModifiers = (checkResult: SubscriptionCheckResponse): CheckoutModifiers => {
+export const getCheckoutModifiers = (checkResult: RequiredCheckResponse): CheckoutModifiers => {
     if (checkResult.optimistic) {
         return {
             isProration: false,

@@ -114,6 +114,8 @@ beforeEach(() => {
                 Gift: 0,
                 PeriodEnd: 1622505600,
                 SubscriptionMode: SubscriptionMode.Regular,
+                BaseRenewAmount: null,
+                RenewCycle: null,
             },
             billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
         },
