@@ -17,6 +17,9 @@
       "Add account": [
         "Account toevoegen"
       ],
+      "Add another account": [
+        "Voeg een account toe"
+      ],
       "Add credit / debit card": [
         "Krediet / debietkaart toevoegen"
       ],
@@ -61,6 +64,9 @@
       ],
       "Copy address": [
         "Adres kopiëren"
+      ],
+      "Copy public key (XPUB)": [
+        "Kopieer publieke sleutel (XPUB)"
       ],
       "Copy version number to clipboard": [
         "Kopieer versienummer naar klembord"
@@ -121,6 +127,12 @@
       ],
       "Help": [
         "Hulp"
+      ],
+      "Help and feedback": [
+        "Hulp en feedback"
+      ],
+      "Help and resources": [
+        "Hulp en bronnen"
       ],
       "Increase": [
         "Verhogen"
@@ -318,8 +330,15 @@
       "${ price } per domain": [
         "${ price } per domein"
       ],
+      "${ price } per seat": [
+        "${ price } per zitplaats"
+      ],
       "${ price } per user": [
         "${ price } per gebruiker"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } zitplaats",
+        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -462,9 +481,6 @@
       "High speed streaming": [
         "Streamen met hoge snelheid"
       ],
-      "Integrated 2FA authenticator": [
-        "Geïntegreerde 2FA-authenticator"
-      ],
       "One-time payment, lifetime deal": [
         "Eenmalige betaling, levenslange deal"
       ],
@@ -483,23 +499,20 @@
       "Secure file storage & sharing": [
         "Veilig bestanden opslaan en delen"
       ],
-      "Secure vault and link sharing": [
-        "Veilig delen van kluis en links"
-      ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal hide-my-email-aliassen"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Onbeperkt aantal logins, notities en creditcards"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Onbeperkt logins, creditcards, hide-my-email aliassen en meer"
       ],
       "Use your own email domain": [
         "Gebruik uw eigen e-maildomein"
       ],
       "Version history": [
         "Versiegeschiedenis"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -554,8 +567,14 @@
       "Annually": [
         "Jaarlijks"
       ],
+      "Lifetime": [
+        "Levenslang"
+      ],
       "Monthly": [
         "Maandelijks"
+      ],
+      "New!": [
+        "Nieuw!"
       ],
       "Two-year": [
         "Tweejaarlijks"
@@ -1859,6 +1878,31 @@
         "Populair"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Voor alle ${ BRAND_NAME }-diensten"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Voor ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Voor ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Voor ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Voor ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/maand"
@@ -1987,8 +2031,8 @@
       ]
     },
     "Error": {
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken, ga naar Instellingen > Berichten en opstellen > Kort domein (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
@@ -2154,6 +2198,11 @@
         "Geen afbeelding geselecteerd"
       ]
     },
+    "Extended public key": {
+      "Public key (XPUB) copied to clipboard": [
+        "Publieke sleutel (XPUB) gekopieerd naar klembord"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB opslagruimte"
@@ -2210,6 +2259,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
       ]
     },
     "fido2: Error": {
@@ -2366,6 +2420,9 @@
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
@@ -2601,6 +2658,9 @@
       "Organization size": [
         "Grootte van de organisatie"
       ],
+      "Other accounts": [
+        "Andere accounts"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
       ],
@@ -2661,9 +2721,6 @@
       ],
       "Subscription auto-renews every month.": [
         "Abonnement vernieuwt automatisch elke maand."
-      ],
-      "Switch to": [
-        "Wissel naar"
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
@@ -2824,8 +2881,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Neem contact met ons op via ${ email } voor instructies hoe u ons met contant geld kunt betalen."
+      "How to send a cash payment?": [
+        "Hoe een contante betaling versturen?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Instructies kan u vinden in het artikel: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -2945,6 +3005,9 @@
       ],
       "IBAN": [
         "IBAN"
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde tweestapsverificatie"
       ],
       "Last name": [
         "Achternaam"
@@ -3107,8 +3170,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
+      ],
+      "Add-on with free trial": [
+        "Add-on met gratis proefversie"
       ],
       "for ${ price }": [
         "voor ${ price }"
@@ -3257,11 +3326,8 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Voor ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Voor alle ${ BRAND_NAME } diensten"
+      "${ size } storage per user": [
+        "${ size } opslagruimte per gebruiker"
       ],
       "1 user": [
         "1 gebruiker"
@@ -3402,14 +3468,14 @@
       "HTML signatures": [
         "HTML-handtekeningen"
       ],
-      "Integrated 2FA authenticator": [
-        "Geïntegreerde 2FA-authenticator"
-      ],
       "Kill switch/always-on VPN": [
         "IP-beveiliging/altijd-actieve VPN"
       ],
       "Limited support": [
         "Beperkte ondersteuning"
+      ],
+      "Manage user permissions and access": [
+        "Beheer gebruikersrechten en toegang"
       ],
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
@@ -3428,6 +3494,9 @@
       ],
       "Password manager": [
         "Wachtwoordbeheer"
+      ],
+      "Password manager to secure credentials": [
+        "Wachtwoordbeheer om de inloggegevens te beveiligen"
       ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
@@ -3480,9 +3549,6 @@
       "SMTP submission": [
         "SMTP-indiening"
       ],
-      "SMTP submission for select organizations": [
-        "SMTP-indiening voor beperkte organisaties"
-      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
       ],
@@ -3515,9 +3581,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Ongelimiteerde mappen, labels en filters"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal Hide-My-Email-alliassen"
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
@@ -3641,6 +3704,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ons ${ visionary }-abonnement is niet meer beschikbaar voor nieuwe gebruikers; dit is een speciaal abonnement voor originele ${ BRAND_NAME }-gebruikers met speciale functies en voordelen."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Eenmaal betalen, beveilig uw wachtwoorden en identiteit voor altijd."
       ],
       "Popular": [
         "Populair"
@@ -3983,19 +4049,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Veilige kluis en het delen van links"
-      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ],
-      "Secure vault sharing (${ n } vault)": [
-        "Veilig delen van kluis (${ n } kluis)",
-        "Veilig delen van kluis (${ n } kluizen)"
+      "Secure vault, item and link sharing": [
+        "Veilig delen van kluizen, items en links"
       ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Veilig delen van kluis (${ n } kluis) en het delen van links",
-        "Veilig delen van kluis (${ n } kluizen) en het delen van links"
+      "Unlimited logins, notes, credit cards and more": [
+        "Onbeperkt aantal logins, notities, creditcards, en meer"
       ]
     },
     "pass_signup_2024: Info": {
@@ -4008,6 +4069,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Beheerpaneel om gebruikers en abonnement te beheren"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
       ],
       "Team policies": [
         "Team beleid"
@@ -4138,7 +4202,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw rekening naar behoren in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsserviceprovider, om uw bank opdracht te geven om uw factuur naar behoren in rekening te brengen. U kunt een restitutie ontvangen binnen 8 weken van de betaaldatum, onder de voorwaarden van uw overeenkomst met uw bank."
       ],
       "Street address, postal code, and city": [
         "Straatnaam, postcode en plaats"
@@ -4196,6 +4260,9 @@
       ]
     },
     "QRCode Reader": {
+      "Could not find an available camera on your device": [
+        "Kan geen beschikbare camera vinden op uw apparaat"
+      ],
       "Could not run QR code reader": [
         "Kan QR-codelezer niet uitvoeren"
       ],
@@ -4225,6 +4292,9 @@
       ],
       "External recipient": [
         "Externe ontvanger"
+      ],
+      "Public key (XPUB)": [
+        "Publieke sleutel (XPUB)"
       ]
     },
     "Safety review": {
@@ -4512,6 +4582,9 @@
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
       ],
+      "Billed every 6 months": [
+        "Elke 6 maanden gefactureerd"
+      ],
       "Billed for 15 months": [
         "U betaalt voor 15 maanden"
       ],
@@ -4551,6 +4624,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-verbinding voor ${ n } apparaat per gebruiker",
+        "VPN-verbinding voor ${ n } apparaten per gebruiker"
       ]
     },
     "Subscription change warning": {
@@ -4700,6 +4777,44 @@
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
       ]
     },
+    "Sweep paper wallet": {
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Cannot use QRCode scanner. Please check browser compatibility": [
+        "QR-code scanner kan niet worden gebruikt. Controleer de browser compatibiliteit"
+      ],
+      "Confirm and import": [
+        "Bevestigen en importeren"
+      ],
+      "Continue": [
+        "Doorgaan"
+      ],
+      "Import paper wallet": [
+        "Importeer papieren portemonnee"
+      ],
+      "Invalid private key": [
+        "Ongeldige privé-sleutel"
+      ],
+      "No funds available": [
+        "Geen geld beschikbaar"
+      ],
+      "Paper wallet funds was successfully imported": [
+        "Papieren portemonnee saldo is succesvol geïmporteerd"
+      ],
+      "Please grant camera permission to use QRCode scanner": [
+        "Geef toestemming voor de camera om de QR-code scanner te gebruiken"
+      ],
+      "You receive": [
+        "U ontvangt"
+      ],
+      "Your paper wallet has no funds available": [
+        "Uw papieren portemonnee heeft geen geld beschikbaar"
+      ],
+      "Your paper wallet is not valid. Please check your private key and try again": [
+        "Uw papieren portemonnee is niet geldig. Controleer uw privé-sleutel en probeer het opnieuw"
+      ]
+    },
     "Tab subscription modal": {
       "For businesses": [
         "Voor bedrijven"
@@ -4780,6 +4895,9 @@
       ],
       "Go to settings and recovery keys": [
         "Ga naar instellingen en herstel sleutels"
+      ],
+      "Help and feedback": [
+        "Hulp en feedback"
       ],
       "Help center": [
         "Helpcentrum"
@@ -4910,6 +5028,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } apparaat",
+        "${ n } apparaten"
+      ],
       "${ n } server": [
         "${ n } server",
         "${ n }+ servers"
@@ -4918,6 +5040,10 @@
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } landen"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries }+ landen"
@@ -4925,6 +5051,14 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatisch geselecteerd uit ${ numberOfCountries } land",
+        "Automatisch geselecteerd uit ${ numberOfCountries } landen"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servers in ${ numberOfCountries }+ land",
+        "Servers in ${ numberOfCountries }+ landen"
       ]
     },
     "vpn_2024: renew": {
@@ -5275,6 +5409,9 @@
       "Not now": [
         "Niet nu"
       ],
+      "Show public key (XPUB)": [
+        "Toon publieke sleutel (XPUB)"
+      ],
       "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
         "De Bitcoin-blockchain is openbaar, wat betekent dat elke transactie openbaar zichtbaar is. Bitcoin-adressen zijn echter pseudoniem, wat betekent dat de identiteit van de afzender en ontvanger over het algemeen onbekend is."
       ],
@@ -5323,6 +5460,12 @@
       ],
       "Generate new address": [
         "Genereer nieuw adres"
+      ],
+      "Import paper wallet": [
+        "Importeer papieren portemonnee"
+      ],
+      "More options": [
+        "Meer opties"
       ],
       "Receive to": [
         "Ontvangen op"
@@ -5690,6 +5833,9 @@
       "This wallet seems to still have assets.": [
         "Deze portemonnee lijkt nog actieve activa te hebben."
       ],
+      "Transfer your paper wallet funds to your account. Paste your private key or scan your QR code.": [
+        "Zet de tegoeden van uw papieren portemonnee naar uw account. Plak uw privé-sleutel of scan uw QR-code."
+      ],
       "View wallet seed phrase": [
         "Seed-phrase van portemonnee bekijken"
       ],
@@ -5712,10 +5858,10 @@
         "De portefeuille herstelzin is ongeldig. Deze moet tussen 128 en 256 bits lang zijn."
       ],
       "Wallet seed phrase is incorrect. Please check it and try again.": [
-        "De wallet seed phrase is onjuist. Controleer het en probeer het opnieuw."
+        "De seed phrase voor de portefeuille is onjuist. Controleer het en probeer het opnieuw."
       ],
       "Wallet seed phrase language is not supported.": [
-        "De taal van de wallet seed phrase wordt niet ondersteund."
+        "De taal van de portefeuille seed phrase wordt niet ondersteund."
       ],
       "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
         "De lengte van de portefeuille herstelzin is ongeldig. Deze moet tussen 12 en 24 woorden zijn."
@@ -5734,6 +5880,9 @@
       ],
       "Your keys, your coins.": [
         "Uw sleutels, uw coins."
+      ],
+      "Your private key": [
+        "Uw privé-sleutel"
       ]
     },
     "Wallet Sidebar": {
@@ -6024,9 +6173,6 @@
       ]
     },
     "Warning": {
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],

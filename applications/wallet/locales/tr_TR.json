@@ -17,6 +17,9 @@
       "Add account": [
         "Hesap ekle"
       ],
+      "Add another account": [
+        "Başka bir hesap ekle"
+      ],
       "Add credit / debit card": [
         "Kredi ya da banka kartı ekle"
       ],
@@ -61,6 +64,9 @@
       ],
       "Copy address": [
         "Adresi kopyala"
+      ],
+      "Copy public key (XPUB)": [
+        "Herkese açık anahtarı (XPUB) kopyala"
       ],
       "Copy version number to clipboard": [
         "Sürüm numarasını kopyala"
@@ -121,6 +127,12 @@
       ],
       "Help": [
         "Yardım"
+      ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
+      ],
+      "Help and resources": [
+        "Yardım ve kaynaklar"
       ],
       "Increase": [
         "Artır"
@@ -318,8 +330,15 @@
       "${ price } per domain": [
         "her etki alanı için ${ price }"
       ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
+      ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } koltuk",
+        "${ seats } ${ LUMO_APP_NAME } koltuk"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
@@ -462,9 +481,6 @@
       "High speed streaming": [
         "Yüksek hızda yayın akışı izleme"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
-      ],
       "One-time payment, lifetime deal": [
         "Bir kez ödemeli ömür boyu kullanım fırsatı"
       ],
@@ -483,23 +499,20 @@
       "Secure file storage & sharing": [
         "Güvenli dosya depolama alanı ve paylaşımı"
       ],
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı paylaşımı"
-      ],
       "Unlimited folders, labels and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adları"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Sınırsız sayıda oturum açma, not ve kredi kartı kaydı"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Sınırsız sayıda oturum açma, kredi kartı, hide-my-email takma adları ve diğer kayıtlar"
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
       ],
       "Version history": [
         "Sürüm geçmişi"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -554,8 +567,14 @@
       "Annually": [
         "Yıllık"
       ],
+      "Lifetime": [
+        "Lifetime"
+      ],
       "Monthly": [
         "Aylık"
+      ],
+      "New!": [
+        "Yeni!"
       ],
       "Two-year": [
         "Iki yıllık"
@@ -1859,6 +1878,31 @@
         "Beğenilen"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetleri için"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } için"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } için"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ay"
@@ -1980,15 +2024,15 @@
     },
     "driveplus2024: Deal details": {
       "Extended version history": [
-        "Genişletilmiş sürüm geçmişi"
+        "Ayrıntılı sürüm geçmişi"
       ],
       "Priority support": [
         "Öncelikli destek"
       ]
     },
     "Error": {
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > İletiler ve ileti oluşturma > Kısa etki alanı (pm.me) bölümüne gidin"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } kullanıcı adınızdır. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
@@ -2154,6 +2198,11 @@
         "Herhangi bir görsel seçilmemiş"
       ]
     },
+    "Extended public key": {
+      "Public key (XPUB) copied to clipboard": [
+        "Herkese açık anahtar (XPUB) panoya kopyalandı"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3TB toplam depolama alanı"
@@ -2210,6 +2259,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
       ]
     },
     "fido2: Error": {
@@ -2366,6 +2420,9 @@
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
@@ -2601,6 +2658,9 @@
       "Organization size": [
         "Kuruluş boyutu"
       ],
+      "Other accounts": [
+        "Diğer hesaplar"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
@@ -2661,9 +2721,6 @@
       ],
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
-      ],
-      "Switch to": [
-        "Şuna geç"
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
@@ -2824,8 +2881,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Nakit ödemenin nasıl yapılacağı ile ilgili bilgi almak için bizimle ${ email } adresinden görüşün."
+      "How to send a cash payment?": [
+        "Nakit ödeme nasıl yapılır?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Lütfen yönerge için şu yazıya bakın: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -2945,6 +3005,9 @@
       ],
       "IBAN": [
         "IBAN"
+      ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı kimlik doğrulayıcı"
       ],
       "Last name": [
         "Soyad"
@@ -3107,8 +3170,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
+      "Add-on with free trial": [
+        "Ücretsiz deneme sürümü ile eklenti"
       ],
       "for ${ price }": [
         "${ price }"
@@ -3257,11 +3326,8 @@
       "${ size } storage": [
         "${ size } depolama alanı"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - ${ DRIVE_APP_NAME } için"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
+      "${ size } storage per user": [
+        "Her kullanıcı için ${ size } depolama alanı"
       ],
       "1 user": [
         "1 kullanıcı"
@@ -3342,7 +3408,7 @@
         "Özel çalışma alanı markası"
       ],
       "Data breach monitoring": [
-        "Verilerin ele geçirilmesini izleme"
+        "Veri sızıntılarını izleme"
       ],
       "Dedicated servers optimized for streaming": [
         "Yayın akışı izlemek için ayarlanmış özel sunucular"
@@ -3402,14 +3468,14 @@
       "HTML signatures": [
         "HTML imzalar"
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik iki adımlı kimlik doğrulayıcı"
-      ],
       "Kill switch/always-on VPN": [
         "Bağlantı kesici / Hep açık VPN"
       ],
       "Limited support": [
         "Sınırlı destek"
+      ],
+      "Manage user permissions and access": [
+        "Kullanıcı izinleri ve erişimi yönetimi"
       ],
       "Multiple admin roles": [
         "Birden çok yönetici rolü"
@@ -3428,6 +3494,9 @@
       ],
       "Password manager": [
         "Parola yöneticisi"
+      ],
+      "Password manager to secure credentials": [
+        "Kimlik bilgilerini korumak için parola yöneticisi"
       ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
@@ -3480,9 +3549,6 @@
       "SMTP submission": [
         "SMTP gönderimi"
       ],
-      "SMTP submission for select organizations": [
-        "Seçilmiş kuruluşlar için SMTP gönderimi"
-      ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
       ],
@@ -3515,9 +3581,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adı"
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
@@ -3641,6 +3704,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Bir kez ödeyin, parolalarınızı ve kimliğinizi sonsuza kadar koruyun."
       ],
       "Popular": [
         "Beğenilen"
@@ -3831,7 +3897,7 @@
         "Wi-Fi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
+        "Ailenizi zararlı sitelerden koruyun ve sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
         "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
@@ -3983,19 +4049,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Güvenli kasa ve bağlantı ile paylaşım"
-      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
       ],
-      "Secure vault sharing (${ n } vault)": [
-        "Güvenli kasa paylaşımı (${ n } kasa)",
-        "Güvenli kasa paylaşımı (${ n } kasa)"
+      "Secure vault, item and link sharing": [
+        "Güvenli kasa, öge ve bağlantı paylaşımı"
       ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
-        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
+      "Unlimited logins, notes, credit cards and more": [
+        "Sınırsız sayıda oturum açma, not, kredi kartı ve diğer kayıtlar"
       ]
     },
     "pass_signup_2024: Info": {
@@ -4008,6 +4069,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Kullanıcıları ve aboneliğinizi panonuzdan yönetin"
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
       ],
       "Team policies": [
         "Ekip ilkeleri"
@@ -4196,6 +4260,9 @@
       ]
     },
     "QRCode Reader": {
+      "Could not find an available camera on your device": [
+        "Aygıtınızda kullanılabilecek bir kamera bulunamadı"
+      ],
       "Could not run QR code reader": [
         "Kare kod okuyucu çalıştırılamadı"
       ],
@@ -4225,6 +4292,9 @@
       ],
       "External recipient": [
         "Dış alıcı"
+      ],
+      "Public key (XPUB)": [
+        "Herkese açık anahtar (XPUB)"
       ]
     },
     "Safety review": {
@@ -4512,6 +4582,9 @@
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
       ],
+      "Billed every 6 months": [
+        "6 ayda bir faturalanır"
+      ],
       "Billed for 15 months": [
         "15 aylık olarak faturalanır"
       ],
@@ -4551,6 +4624,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN bağlantısı / kullanıcı",
         "${ n } VPN bağlantısı / kullanıcı"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı",
+        "Her kullanıcıya ${ n } aygıt ile VPN bağlantısı"
       ]
     },
     "Subscription change warning": {
@@ -4700,6 +4777,44 @@
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ]
     },
+    "Sweep paper wallet": {
+      "Cancel": [
+        "İptal"
+      ],
+      "Cannot use QRCode scanner. Please check browser compatibility": [
+        "Kare kod tarayıcı kullanılamıyor. Lütfen tarayıcı uyumluluğunu denetleyin"
+      ],
+      "Confirm and import": [
+        "Onaylayın ve içe aktarın"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Import paper wallet": [
+        "Kağıt cüzdanı içe aktar"
+      ],
+      "Invalid private key": [
+        "Kişisel anahtar geçersiz"
+      ],
+      "No funds available": [
+        "Kullanılabilecek bir birikim yok"
+      ],
+      "Paper wallet funds was successfully imported": [
+        "Kağıt cüzdan birikimleri içe aktarıldı"
+      ],
+      "Please grant camera permission to use QRCode scanner": [
+        "Lütfen kare kod tarayıcıyı kullanmak için kamerayı kullanma izni verin"
+      ],
+      "You receive": [
+        "Aldığınız tutar"
+      ],
+      "Your paper wallet has no funds available": [
+        "Kağıt cüzdanınızda kullanılabilecek bir birikim yok"
+      ],
+      "Your paper wallet is not valid. Please check your private key and try again": [
+        "Kağıt cüzdanınız geçerli değil. Lütfen kişisel anahtarınızı denetleyip yeniden deneyin"
+      ]
+    },
     "Tab subscription modal": {
       "For businesses": [
         "Kurumlar için"
@@ -4780,6 +4895,9 @@
       ],
       "Go to settings and recovery keys": [
         "Ayarlarda kurtarma anahtarları bölümüne gidin"
+      ],
+      "Help and feedback": [
+        "Yardım ve geri bildirim"
       ],
       "Help center": [
         "Yardım merkezi"
@@ -4910,6 +5028,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } aygıt",
+        "${ n } aygıt"
+      ],
       "${ n } server": [
         "${ n } sunucu",
         "${ n } sunucu"
@@ -4918,6 +5040,10 @@
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ülke",
+        "${ numberOfCountries } ülke"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
@@ -4925,6 +5051,14 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries } ülke arasından otomatik seçilir",
+        "${ numberOfCountries } ülke arasından otomatik seçilir"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkede sunucular",
+        "${ numberOfCountries } üzerinde ülkede sunucular"
       ]
     },
     "vpn_2024: renew": {
@@ -5133,7 +5267,7 @@
         "Cüzdan parola ifadesi, kripto para cüzdanınızın güvenliğini artırmak için oluşturduğunuz bir ek paroladır. Bu parola, kurtarma ifadenizle birlikte kullanılır. Kaybederseniz cüzdanınıza erişmenizi engelleyebileceğinden bu parolayı güvenli bir yerde saklayın."
       ],
       "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Cüzdan tohumlama ifadesi, cüzdanınız tarafından oluşturulan ve 12 ile 24 arasında sözcükten oluşan bir sözcük grubudur. Bu ifade, birikimlerinizi kurtarmanızı sağlayan bir anahtar görevi görür. Birikimlerinize erişim sağlayacağından bu ifadeyi güvende tutun ve asla kimseyle paylaşmayın."
+        "Cüzdan tohum ifadesi, cüzdanınız tarafından oluşturulan ve 12 ile 24 arasında sözcükten oluşan bir sözcük grubudur. Bu ifade, birikimlerinizi kurtarmanızı sağlayan bir anahtar görevi görür. Birikimlerinize erişim sağlayacağından bu ifadeyi güvende tutun ve asla kimseyle paylaşmayın."
       ],
       "What’s a wallet passphrase?": [
         "Cüzdan parola ifadesi nedir?"
@@ -5275,6 +5409,9 @@
       "Not now": [
         "Şimdi değil"
       ],
+      "Show public key (XPUB)": [
+        "Herkese açık anahtarı (XPUB) görüntüle"
+      ],
       "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
         "Bitcoin blok zinciri herkese açıktır. Yani her işlem herkese açık olarak görülebilir. Ancak, Bitcoin adresleri olarak takma adlar kullanılır, yani gönderici ve alıcı kimlikleri genellikle bilinmez."
       ],
@@ -5323,6 +5460,12 @@
       ],
       "Generate new address": [
         "Yeni adres oluştur"
+      ],
+      "Import paper wallet": [
+        "Kağıt cüzdanı içe aktar"
+      ],
+      "More options": [
+        "Diğer seçenekler"
       ],
       "Receive to": [
         "Şu adrese al"
@@ -5679,7 +5822,7 @@
         "Birincil hesap"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
-        "Tohumlama ifadesi (boşluk ile ayrılmış 12 ile 24 sözcük arasında)"
+        "Tohum ifadesi (boşluk ile ayrılmış 12 ile 24 sözcük arasında)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Bu 12 sözcük yalnızca bu cüzdanın varlıklarını kurtarmak için son çare olarak kullanılmalıdır. Örneğin ${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz."
@@ -5689,6 +5832,9 @@
       ],
       "This wallet seems to still have assets.": [
         "Bu cüzdanda hala varlıklar var gibi görünüyor."
+      ],
+      "Transfer your paper wallet funds to your account. Paste your private key or scan your QR code.": [
+        "Kağıt cüzdan birikimlerinizi hesabınıza aktarın. Kişisel anahtarınızı yapıştırın ya da kare kodunuzu tarayın."
       ],
       "View wallet seed phrase": [
         "Cüzdan tohumlama ifadesini görüntüle"
@@ -5700,25 +5846,25 @@
         "Cüzdan tohumlama ifadesi"
       ],
       "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
-        "Cüzdan tohumlama ifadesi sağlama toplamı geçersiz. Yalnızca BIP39 tohumlama ifadelerini kabul ediyoruz ve Electrum tohumlama ifadelerini desteklemiyoruz."
+        "Cüzdan tohum ifadesinin sağlama toplamı geçersiz. Yalnızca BIP39 tohumlama ifadelerini kabul ediyoruz ve Electrum tohumlama ifadelerini desteklemiyoruz."
       ],
       "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
-        "Cüzdan tohumlama ifadesinde bilinmeyen bir sözcük var: ${ word }. Yalnızca BIP39 İngilizce sözcükler listesini destekliyoruz."
+        "Cüzdan tohum ifadesinde bilinmeyen bir sözcük var: ${ word }. Yalnızca BIP39 İngilizce sözcükler listesini destekliyoruz."
       ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
         "Cüzdan tohumlama ifadesi, dijital varlıklarınızı yöneten özel anahtarı kodlar."
       ],
       "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
-        "Cüzdan tohumlama ifadesi entropi değeri geçersiz. İfade uzunluğu 128 ile 256 bit arasında olmalıdır."
+        "Cüzdan tohum ifadesinin entropi değeri geçersiz. İfade uzunluğu 128 ile 256 bit arasında olmalıdır."
       ],
       "Wallet seed phrase is incorrect. Please check it and try again.": [
-        "Cüzdan tohumlama ifadesi yanlış. Lütfen denetleyip yeniden deneyin."
+        "Cüzdan tohum ifadesi yanlış. Lütfen denetleyip yeniden deneyin."
       ],
       "Wallet seed phrase language is not supported.": [
-        "Cüzdan tohumlama ifadesi dili desteklenmiyor."
+        "Cüzdan tohum ifadesi dili desteklenmiyor."
       ],
       "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
-        "Cüzdan tohumlama ifadesinin uzunluğu geçersiz. 12 ile 24 sözcük arasında olmalıdır."
+        "Cüzdan tohum ifadesinin uzunluğu geçersiz. 12 ile 24 sözcük arasında olmalıdır."
       ],
       "Wallet setup": [
         "Cüzdan kurulumu"
@@ -5734,6 +5880,9 @@
       ],
       "Your keys, your coins.": [
         "Anahtarlar sizinse, kripto paralar sizindir."
+      ],
+      "Your private key": [
+        "Kişisel anahtarınız"
       ]
     },
     "Wallet Sidebar": {
@@ -6024,9 +6173,6 @@
       ]
     },
     "Warning": {
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],

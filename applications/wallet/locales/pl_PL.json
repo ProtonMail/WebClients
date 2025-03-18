@@ -467,9 +467,6 @@
       "High speed streaming": [
         "Szybki streaming"
       ],
-      "Integrated 2FA authenticator": [
-        "Zintegrowana aplikacja uwierzytelniająca 2FA"
-      ],
       "One-time payment, lifetime deal": [
         "Płatność jednorazowa, dożywotni dostęp"
       ],
@@ -488,17 +485,8 @@
       "Secure file storage & sharing": [
         "Bezpieczne przechowywanie i udostępnianie plików"
       ],
-      "Secure vault and link sharing": [
-        "Bezpieczne udostępnianie sejfu i linków"
-      ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Nieograniczona liczba danych logowania, notatek, kart płatniczych"
       ],
       "Use your own email domain": [
         "Użyj własnej domeny e-mail"
@@ -1997,8 +1985,8 @@
       ]
     },
     "Error": {
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Wiadomości i edytor > Krótka domena (pm.me)"
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } to nazwa użytkownika. Aby utworzyć ${ emailAddress }, przejdź do Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)."
       ],
       "Amount above the maximum.": [
         "Kwota powyżej maksimum."
@@ -2222,6 +2210,11 @@
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Nieograniczona liczba aliasów hide-my-email"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
@@ -2398,6 +2391,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu monitorowaniu podejrzanej aktywności."
+      ],
       "${ storage } storage": [
         "${ storage } przestrzeni dyskowej"
       ],
@@ -2433,6 +2429,9 @@
       ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Asystent sztucznej inteligencji, który pomaga tworzyć lepsze wiadomości, szybko i bez wysiłku."
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -2520,6 +2519,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez ${ BRAND_NAME } nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "Wiadomości e-mail przeniesione do Kosza i Spamu ponad 30 dni temu zostaną automatycznie wyczyszczone."
       ],
       "Enabling auto-deletion…": [
         "Włączanie automatycznego usuwania…"
@@ -2683,9 +2685,6 @@
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
       ],
-      "Switch to": [
-        "Przełącz na konto"
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien."
       ],
@@ -2791,6 +2790,9 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
       ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Otrzymasz powiadomienie, jeśli Twoje hasło lub inne dane wyciekły z usługi zewnętrznej."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Masz wersję próbną subskrypcji ${ planTitle }. Jeśli chcesz kontynuować subskrypcję po zakończeniu wersji próbnej, dodaj metodę płatności."
       ],
@@ -2846,8 +2848,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
+      "How to send a cash payment?": [
+        "Jak wysłać płatność gotówką?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Znajdź instrukcję w artykule: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -2970,6 +2975,9 @@
       "IBAN": [
         "Numer IBAN"
       ],
+      "Integrated 2FA authenticator": [
+        "Zintegrowana aplikacja uwierzytelniająca 2FA"
+      ],
       "Last name": [
         "Nazwisko"
       ],
@@ -3026,6 +3034,9 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
+      ],
+      "State": [
+        "Województwo"
       ],
       "Subscription options": [
         "Opcje subskrypcji"
@@ -3128,6 +3139,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
@@ -3312,12 +3326,6 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } dla ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } do wszystkich usług ${ BRAND_NAME }"
-      ],
       "1 user": [
         "1 użytkownik"
       ],
@@ -3399,6 +3407,9 @@
       "Data breach monitoring": [
         "Monitoring wycieku danych"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Dedykowane serwery zoptymalizowane pod kątem streamingu"
+      ],
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
@@ -3455,9 +3466,6 @@
       ],
       "HTML signatures": [
         "Podpisy HTML"
-      ],
-      "Integrated 2FA authenticator": [
-        "Zintegrowana aplikacja uwierzytelniająca"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch / stale aktywny VPN"
@@ -3534,11 +3542,11 @@
       "SMTP submission": [
         "Poświadczenia SMTP"
       ],
-      "SMTP submission for select organizations": [
-        "Poświadczenia SMTP dla organizacji"
-      ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
+      ],
+      "SSO integration": [
+        "Logowanie SSO"
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
@@ -3566,9 +3574,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Nieograniczona liczba aliasów hide-my-email"
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
@@ -3611,6 +3616,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Używanie na maksymalnie ${ n } urządzeniu",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
+        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -4044,23 +4055,8 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Bezpieczne udostępnianie sejfu i linków"
-      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
-      ],
-      "Secure vault sharing (${ n } vault)": [
-        "Bezpieczne udostępnianie ${ n } sejfu",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów"
-      ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Bezpieczne udostępnianie ${ n } sejfu i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków",
-        "Bezpieczne udostępnianie ${ n } sejfów i linków"
       ]
     },
     "pass_signup_2024: Info": {
@@ -4075,6 +4071,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel administratora do zarządzania użytkownikami i subskrypcją"
+      ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
       ],
       "Team policies": [
         "Zasady zespołu"
@@ -4189,7 +4188,15 @@
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
       ]
     },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
+      ]
+    },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potwierdzając tę płatność, użytkownik upoważnia ${ BRAND_NAME } i Stripe, naszego dostawcę usług płatniczych, do zlecenia bankowi odpowiedniego obciążenia jego konta. Użytkownik może otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z warunkami umowy z bankiem."
+      ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
       ]
@@ -4853,6 +4860,9 @@
       "Go to settings and recovery keys": [
         "Idź do ustawień i kluczy odzyskiwania"
       ],
+      "Help center": [
+        "Centrum pomocy"
+      ],
       "Human verification": [
         "Weryfikacja antyspamowa"
       ],
@@ -4906,6 +4916,9 @@
       ],
       "Wallet": [
         "Portfel"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
@@ -5691,6 +5704,9 @@
       "Add a passphrase (optional)": [
         "Dodaj hasło (opcjonalnie)"
       ],
+      "Bitcoin via Email": [
+        "Bitcoin na adres e-mail"
+      ],
       "Choose a name and default currency.": [
         "Wybierz nazwę i domyślną walutę."
       ],
@@ -5753,6 +5769,9 @@
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
         "Przenieś swoje bitcoiny do innego portfela przed usunięciem. Usunięcie tego portfela usunie wszystkie jego dane z serwerów ${ BRAND_NAME }. Możesz odzyskać ten portfel na późniejszym etapie, używając frazy seed."
+      ],
+      "Primary account": [
+        "Konto główne"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
         "Fraza seed (12 do 24 słów, oddzielonych spacją)"
@@ -5842,6 +5861,11 @@
       ],
       "Wallets": [
         "Portfele"
+      ]
+    },
+    "Wallet sidebar": {
+      "Add account": [
+        "Dodaj konto"
       ]
     },
     "Wallet terms and conditions": {
@@ -6101,9 +6125,6 @@
       ]
     },
     "Warning": {
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
       ],
