@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useLoading } from '@proton/hooks';
-import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { EVENT_ACTIONS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import type { SortParams } from '../../components/FileBrowser';
@@ -73,7 +73,7 @@ export default function useSharedWithMeView(shareId: string) {
     useEffect(() => {
         const abortController = new AbortController();
         const unsubscribe = driveEventManager.eventHandlers.subscribeToCore((event) => {
-            if (event.DriveShareRefresh?.Action === 2) {
+            if (event.DriveShareRefresh?.Action === EVENT_ACTIONS.UPDATE) {
                 loadSharedWithMeLinks(abortController.signal).catch(sendErrorReport);
             }
         });

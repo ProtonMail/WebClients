@@ -40,11 +40,15 @@ export default function useShare() {
      * getShareWithKey returns share with keys. That is not available after
      * listing user's shares and thus needs extra API call. Use wisely.
      */
-    const getShareWithKey = async (abortSignal: AbortSignal, shareId: string): Promise<ShareWithKey> => {
+    const getShareWithKey = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        refresh: boolean = false
+    ): Promise<ShareWithKey> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal) => {
                 const cachedShare = sharesState.getShare(shareId);
-                if (cachedShare && 'key' in cachedShare) {
+                if (cachedShare && 'key' in cachedShare && !refresh) {
                     return cachedShare;
                 }
 
@@ -60,12 +64,12 @@ export default function useShare() {
     /**
      * getShare returns share from cache or it fetches the full share from API.
      */
-    const getShare = async (abortSignal: AbortSignal, shareId: string): Promise<Share> => {
+    const getShare = async (abortSignal: AbortSignal, shareId: string, refresh: boolean = false): Promise<Share> => {
         const cachedShare = sharesState.getShare(shareId);
-        if (cachedShare) {
+        if (cachedShare && !refresh) {
             return cachedShare;
         }
-        return getShareWithKey(abortSignal, shareId);
+        return getShareWithKey(abortSignal, shareId, refresh);
     };
 
     const getShareKeys = async (
