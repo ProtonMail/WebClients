@@ -1,7 +1,8 @@
 import JSZip from 'jszip';
 import { c } from 'ttag';
 
-import { decryptPassExport } from '@proton/pass/lib/export/export';
+import { FILE_UNIQUE_ID_LENGTH } from '@proton/pass/constants';
+import { EXPORT_FILES_PATH, decryptPassExport } from '@proton/pass/lib/export/export';
 import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
 import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import type { ImportPayload, ImportReaderPayload, ImportVault } from '@proton/pass/lib/import/types';
@@ -10,6 +11,7 @@ import { type ItemImportIntent, ItemState } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { semver } from '@proton/pass/utils/string/semver';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -21,6 +23,31 @@ type ProtonPassReaderPayload = {
     /** list of current email aliases so we don't import them again if they are present in the data file, otherwise BE will throw an error */
     currentAliases: string[];
     userId?: string;
+};
+
+/**
+ * Filename structure is {UniqueId}-{Filename}
+ * UniqueId length is fixed to 16 chars.
+ * eg.: ab12cd34ab12cd34-my-picture_name.jpg
+ */
+const intoFilesToUpload = (files: JSZip['files']) => {
+    const uniqueIdPosition = EXPORT_FILES_PATH.length + FILE_UNIQUE_ID_LENGTH;
+
+    return Object.entries(files).reduce<Promise<Map<string, File>>>(async (accPromise, [fileName, file]) => {
+        const acc = await accPromise;
+        if (fileName === `${PASS_APP_NAME}/data.json`) return acc;
+        const uniqueId = fileName.slice(EXPORT_FILES_PATH.length, uniqueIdPosition);
+        const name = fileName.slice(uniqueIdPosition + 1);
+
+        if (uniqueId.length !== FILE_UNIQUE_ID_LENGTH || !name) return acc;
+
+        try {
+            const blob = await file.async('blob');
+            acc.set(uniqueId, new File([blob], name, { type: blob.type }));
+        } catch {}
+
+        return acc;
+    }, Promise.resolve(new Map()));
 };
 
 export const decryptProtonPassImport = async (payload: ImportReaderPayload): Promise<TransferableFile> => {
@@ -60,6 +87,8 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
         const aliasOwnedByUser = (item: ExportedItem) =>
             item.data.type === 'alias' ? userId === payload.userId : true;
 
+        const filesToUpload = await intoFilesToUpload(zipFile.files);
+
         const vaults = Object.values(parsedExport.vaults).map<{ vault: ImportVault; ignored: string[] }>(
             ({ name, items }) => {
                 const [itemsToImport, ignoredAliases] = partition(items, aliasOwnedByUser);
@@ -98,6 +127,9 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
                                 trashed: item.state === ItemState.Trashed,
                                 createTime: item.createTime,
                                 modifyTime: item.modifyTime,
+                                files: [...new Set(item.files)]
+                                    .map((uniqueId) => filesToUpload.get(uniqueId))
+                                    .filter(truthy),
                             } as ItemImportIntent);
 
                             return acc;

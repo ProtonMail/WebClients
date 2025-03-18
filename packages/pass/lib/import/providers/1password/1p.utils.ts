@@ -1,3 +1,4 @@
+import type JSZip from 'jszip';
 import { c } from 'ttag';
 
 import { type ItemBuilder, itemBuilder } from '@proton/pass/lib/items/item.builder';
@@ -285,3 +286,46 @@ export const extract1PasswordLegacyIdentity = identityBuilderFactory<OnePassLega
         if (fieldName) item.set('content', (content) => content.set(fieldName, format1PasswordLegacyFieldValue(field)));
     }
 );
+
+export const extract1PasswordLegacyFiles = async (zip: MaybeNull<JSZip>, folderId: string) => {
+    if (!zip) return [];
+
+    return Object.entries(zip.files).reduce<Promise<File[]>>(async (accPromise, [filePath, file]) => {
+        const acc = await accPromise;
+
+        if (!filePath.startsWith(folderId) || file.dir) return acc;
+
+        const fileName = file.name.substring(folderId.length + 1);
+        const blob = await file.async('blob');
+        return [...acc, new File([blob], fileName, { type: blob.type })];
+    }, Promise.resolve([]));
+};
+
+export const extract1PasswordFiles = async (files: JSZip['files']) => {
+    const BASE_PATH = 'files';
+    const SEPARATOR = '__';
+
+    return Object.entries(files).reduce<Promise<Map<string, File>>>(async (accPromise, [filePath, file]) => {
+        const acc = await accPromise;
+
+        if (!filePath.startsWith(BASE_PATH) || file.dir) return acc;
+
+        const [itemId, ...rest] = filePath.replace(`${BASE_PATH}/`, '').split(SEPARATOR);
+        const fileName = rest.join('');
+
+        if (!itemId || !fileName) return acc;
+
+        const blob = await file.async('blob');
+        acc.set(itemId, new File([blob], fileName, { type: blob.type }));
+        return acc;
+    }, Promise.resolve(new Map()));
+};
+
+export const intoFilesFrom1PasswordItem = (sections: Maybe<OnePassSection[]>): string[] => {
+    if (!sections) return [];
+
+    return sections.reduce<string[]>(
+        (acc, section) => [...acc, ...section.fields.map((field) => field.value?.file?.documentId).filter(truthy)],
+        []
+    );
+};

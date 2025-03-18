@@ -45,6 +45,7 @@ export enum OnePassFieldKey {
     STRING = 'string',
     TOTP = 'totp',
     URL = 'url',
+    FILE = 'file',
 }
 
 export type OnePassFieldValue<K extends OnePassFieldKey> = {
@@ -56,6 +57,7 @@ export type OnePassFieldValue<K extends OnePassFieldKey> = {
     [OnePassFieldKey.STRING]?: string;
     [OnePassFieldKey.TOTP]?: string;
     [OnePassFieldKey.URL]?: string;
+    [OnePassFieldKey.FILE]?: { documentId: string };
 }[K];
 
 export type OnePassFields = { [K in OnePassFieldKey]?: OnePassFieldValue<K> };
