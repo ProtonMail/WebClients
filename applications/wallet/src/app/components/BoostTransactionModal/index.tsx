@@ -12,10 +12,12 @@ import { Slider } from '@proton/atoms/index';
 import { type ModalStateProps, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { type Address } from '@proton/shared/lib/interfaces';
+import walletClockDark from '@proton/styles/assets/img/wallet/wallet-clock-dark.jpg';
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, PriorityTargetBlock, type TransactionData, useWalletApiClients } from '@proton/wallet';
 import { DEFAULT_FEE_SETTINGS, useNetworkFees, useUserWalletSettings } from '@proton/wallet/store';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, Modal } from '../../atoms';
 import { Price } from '../../atoms/Price';
@@ -29,6 +31,7 @@ import {
     getLabelByUnit,
     signAndBroadcastPsbt,
 } from '../../utils';
+import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 interface Props extends ModalStateProps {
     transaction: TransactionData;
@@ -36,6 +39,7 @@ interface Props extends ModalStateProps {
 }
 
 export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: Props) => {
+    const theme = useWalletTheme();
     const [loading, withLoading] = useLoading();
     const blockchainClient = useBlockchainClient();
     const { network, walletsChainData, walletMap, syncSingleWalletAccount } = useBitcoinBlockchainContext();
@@ -221,7 +225,12 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
     return (
         <Modal {...modalProps} className="prompt" size="small">
             <div className="flex flex-column items-center gap-4">
-                <img className="w-custom" style={{ '--w-custom': '15rem' }} src={walletClock} alt="" />
+                <img
+                    className="w-custom"
+                    style={{ '--w-custom': '15rem' }}
+                    src={theme === WalletThemeOption.WalletDark ? walletClockDark : walletClock}
+                    alt=""
+                />
                 <h1 className={clsx('text-semibold text-break text-3xl')}>{c('Wallet send')
                     .t`Boost transaction priority`}</h1>
                 <p className="text-center color-weak m-0">{c('Wallet send')

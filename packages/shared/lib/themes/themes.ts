@@ -1,5 +1,10 @@
 import { c } from 'ttag';
 
+import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+
+import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
+import { isElectronApp } from '../helpers/desktop';
+
 // @ts-ignore
 import carbonTheme from '@proton/colors/themes/dist/carbon.theme.css';
 // @ts-ignore
@@ -26,11 +31,9 @@ import storefrontWalletTheme from '@proton/colors/themes/dist/storefront-wallet.
 // @ts-ignore
 import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
 // @ts-ignore
-import walletLightTheme from '@proton/colors/themes/dist/wallet.theme.css';
-import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
-
-import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
-import { isElectronApp } from '../helpers/desktop';
+import walletDarkTheme from '@proton/colors/themes/dist/wallet-dark.theme.css';
+// @ts-ignore
+import walletLightTheme from '@proton/colors/themes/dist/wallet-light.theme.css';
 
 // Update the allowed values in the settings heartbeat
 export enum ThemeTypes {
@@ -47,6 +50,7 @@ export enum ThemeTypes {
     WalletLight = 10,
     StorefrontWallet = 11,
     PassLight = 12,
+    WalletDark = 13,
 }
 
 export const DESKTOP_THEME_TYPES = {
@@ -211,10 +215,10 @@ export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
         identifier: ThemeTypes.WalletLight,
         themeColorMeta: '#f3f5f6',
         thumbColors: {
-            prominent: '#16141C',
-            standard: '#2A2833',
-            primary: '#6D4AFF',
-            weak: '#6c6b70',
+            prominent: '#191C32',
+            standard: '#535964',
+            primary: '#767DFF',
+            weak: '#535964',
         },
         theme: walletLightTheme.toString(),
     },
@@ -242,6 +246,18 @@ export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
         },
         theme: passLightTheme.toString(),
     },
+    [ThemeTypes.WalletDark]: {
+        label: 'WalletDark',
+        identifier: ThemeTypes.WalletDark,
+        themeColorMeta: '#222247',
+        thumbColors: {
+            prominent: '#FFFFFF',
+            standard: '#BFBFD0',
+            primary: '#7474FF',
+            weak: '#A6A6B5',
+        },
+        theme: walletDarkTheme.toString(),
+    },
 } as const;
 
 export const getDarkThemes = () => [
@@ -249,6 +265,7 @@ export const getDarkThemes = () => [
     ThemeTypes.Monokai,
     ThemeTypes.ContrastDark,
     ThemeTypes.PassDark,
+    ThemeTypes.WalletDark,
 ];
 
 export const getProminentHeaderThemes = () => [ThemeTypes.Classic, ThemeTypes.Legacy];
@@ -455,7 +472,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
 };
 
 const getValidatedThemeType = (themeType: number): ThemeTypes | undefined => {
-    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.StorefrontWallet) {
+    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.WalletDark) {
         return themeType;
     }
 };

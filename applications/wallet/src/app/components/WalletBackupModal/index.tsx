@@ -8,13 +8,16 @@ import { AuthModal, Prompt } from '@proton/components';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import accessKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';
+import walletKeyDark from '@proton/styles/assets/img/wallet/wallet-key-dark.jpg';
+import walletKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, ButtonLike } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import type { SubTheme } from '../../utils';
+import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 export interface WalletBackupModalOwnProps {
     apiWalletData: IWasmApiWalletData;
@@ -24,6 +27,7 @@ export interface WalletBackupModalOwnProps {
 type Props = ModalOwnProps & WalletBackupModalOwnProps;
 
 export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props) => {
+    const walletTheme = useWalletTheme();
     const [viewMnemonic, setViewMnemonic] = useState(false);
     const [hasPassword, setHasPassword] = useState(false);
 
@@ -126,7 +130,7 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
             <div className="flex flex-column items-center">
                 <img
                     className="my-3 h-custom w-custom"
-                    src={accessKey}
+                    src={walletTheme === WalletThemeOption.WalletDark ? walletKeyDark : walletKey}
                     alt=""
                     style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                 />

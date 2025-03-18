@@ -10,12 +10,15 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user.jpg';
+import walletUserDark from '@proton/styles/assets/img/wallet/wallet-user-dark.jpg';
+import walletUser from '@proton/styles/assets/img/wallet/wallet-user.jpg';
 import { useWalletApiClients } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, Input } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { EmailSelect } from '../EmailSelect';
+import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 interface InviteModalOwnProps {
     onInviteSent: (email: string) => void;
@@ -25,6 +28,7 @@ interface InviteModalOwnProps {
 type Props = ModalOwnProps & InviteModalOwnProps;
 
 export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalProps }: Props) => {
+    const theme = useWalletTheme();
     const [selectedInviterId, setSelectedInviterId] = useState<string>();
 
     useEffect(() => {
@@ -105,7 +109,7 @@ export const InviteModal = ({ defaultInviterAddressID, onInviteSent, ...modalPro
             <div className="flex flex-column">
                 <div className="flex items-center flex-column">
                     <img
-                        src={walletExclusiveInvites}
+                        src={theme === WalletThemeOption.WalletDark ? walletUserDark : walletUser}
                         alt=""
                         className="w-custom h-custom"
                         style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
