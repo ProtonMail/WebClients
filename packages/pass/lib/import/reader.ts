@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { ExportFormat } from '@proton/pass/lib/export/types';
+import { read1PasswordZipData } from '@proton/pass/lib/import/providers/1password/zip.reader';
 import { readKasperskyData } from '@proton/pass/lib/import/providers/kaspersky/kaspersky.reader';
 import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.reader';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
@@ -28,7 +30,8 @@ export const extractFileExtension = (fileName: string): string => {
 };
 
 export const isProtonPassEncryptedImport = (payload: ImportReaderPayload): boolean =>
-    payload.provider === ImportProvider.PROTONPASS && extractFileExtension(payload.file.name) === 'pgp';
+    payload.provider === ImportProvider.PROTONPASS &&
+    [ExportFormat.PGP, ExportFormat.EPEX].includes(extractFileExtension(payload.file.name) as ExportFormat);
 
 export const prepareImport = async (payload: ImportReaderPayload): Promise<ImportReaderPayload> =>
     isProtonPassEncryptedImport(payload) ? { ...payload, file: await decryptProtonPassImport(payload) } : payload;
@@ -64,6 +67,8 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
             switch (fileExtension) {
                 case '1pif':
                     return read1Password1PifData({ data: await file.text() });
+                case 'zip':
+                    return read1PasswordZipData({ data: await file.arrayBuffer() });
                 case '1pux':
                     return read1Password1PuxData({ data: await file.arrayBuffer() });
                 default:
@@ -73,10 +78,12 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
 
         case ImportProvider.PROTONPASS: {
             switch (fileExtension) {
-                case 'csv':
+                case ExportFormat.CSV:
                     return readProtonPassCSV({ data: await file.text() });
-                case 'pgp':
-                case 'zip':
+                case ExportFormat.PEX:
+                case ExportFormat.EPEX:
+                case ExportFormat.PGP:
+                case ExportFormat.ZIP:
                     return readProtonPassZIP({
                         data: await file.arrayBuffer(),
                         userId: payload.userId,
