@@ -2409,6 +2409,10 @@
         "${ repliedCount } risposta",
         "${ repliedCount } risposte"
       ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } collegamento sicuro",
+        "${ secureLinksCount } collegamenti sicuri"
+      ],
       "${ usageCount } login": [
         "${ usageCount } login",
         "${ usageCount } login"
@@ -3952,97 +3956,6 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
-      ]
-    },
-    "Valentine_2025": {
-      "VALENTINE'S DEAL": [
-        "OFFERTA DI SAN VALENTINO"
-      ],
-      "Valentine's deal: ${ planName } 50% off for you": [
-        "Offerta di San Valentino: ${ planName } al 50% di sconto"
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "${ salePercentage }% di sconto"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "${ salePercentage }% di sconto per te +1"
-      ],
-      "50% off": [
-        "50% di sconto"
-      ],
-      "50% off for you +1": [
-        "50% di sconto per te +1"
-      ],
-      "500 GB total storage": [
-        "500 GB di archiviazione totale"
-      ],
-      "Advanced account protection": [
-        "Protezione avanzata dell'account"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Tutte le funzionalità premium di Mail, VPN, Pass e Drive"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Gli sconti si basano sul prezzo mensile standard. Al termine del ciclo di fatturazione, il tuo abbonamento si rinnoverà al costo annuale standard."
-      ],
-      "Double the love, half the price": [
-        "Raddoppia l'amore a metà prezzo"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Ottieni 1 anno di ${ dealName } al ${ salePercentage }% di sconto, più un codice regalo per condividere la stessa offerta con un'altra persona"
-      ],
-      "Get 1 year of ${ dealName } at 50% off — plus a gift code to share the same deal with a friend": [
-        "Ottieni 1 anno di ${ dealName } al 50% di sconto, più un codice regalo per condividere la stessa offerta con un'altra persona"
-      ],
-      "Get the deal": [
-        "Approfitta dell'offerta"
-      ],
-      "Integrated 2FA authenticator": [
-        "Autenticatore 2FA integrato"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Offre una sicurezza di alto livello per l'account e l'assistenza dei nostri esperti. ${ DARK_WEB_MONITORING_NAME } scansiona le parti nascoste di Internet alla ricerca di indirizzi email ${ MAIL_APP_NAME } che sono finiti in mercati di dati illegali. Se viene rilevata una violazione, riceverai un avviso dal Security Center con le istruzioni da seguire per proteggere il tuo account."
-      ],
-      "Secure vault sharing": [
-        "Condivisione sicura tramite cassaforte"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Alias hide-my-email illimitati"
-      ],
-      "Valentine's deal:": [
-        "Offerta di San Valentino:"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } mese",
-        "${ n } mesi"
-      ],
-      "/ month": [
-        "/mese"
-      ],
-      "12 months": [
-        "12 mesi"
-      ],
-      "15 months": [
-        "15 mesi"
-      ],
-      "24 months": [
-        "24 mesi"
-      ],
-      "30 months": [
-        "30 mesi"
-      ],
-      "for ${ durationDeal }": [
-        "per ${ durationDeal }"
       ]
     },
     "Validation": {
