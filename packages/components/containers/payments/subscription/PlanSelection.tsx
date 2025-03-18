@@ -611,8 +611,8 @@ const PlanSelection = (props: Props) => {
 
                     onChangePlanIDs(
                         switchPlan({
-                            planIDs,
-                            planID: isFree ? undefined : planName,
+                            currentPlanIDs: planIDs,
+                            newPlan: isFree ? undefined : planName,
                             organization,
                             plans,
                             user,

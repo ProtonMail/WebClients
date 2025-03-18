@@ -9,7 +9,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasVPN } from '@proton/shared/lib/helpers/subscription';
+import { hasDeprecatedVPN } from '@proton/shared/lib/helpers/subscription';
 import { hasVPN2024 } from '@proton/shared/lib/helpers/subscription';
 
 import { subscriptionExpires } from '../payments/subscription/helpers';
@@ -43,7 +43,7 @@ const SubscriptionEndsBannerV2 = ({ app }: { app: APP_NAMES }) => {
 
     const getBannerCopy = () => {
         switch (true) {
-            case Boolean(hasVPN(subscription) || hasVPN2024(subscription)):
+            case Boolean(hasDeprecatedVPN(subscription) || hasVPN2024(subscription)):
                 return urgent
                     ? c('Info').t`Don't lose access to your premium ${appName} features. Enable auto-renew today.`
                     : c('Info').t`Enable auto-renew to keep access to Plus servers and features.`;

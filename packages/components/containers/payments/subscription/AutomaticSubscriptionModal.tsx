@@ -27,9 +27,9 @@ import {
     DEFAULT_CYCLE,
     type PaymentMethodStatusExtended,
     SelectedPlan,
+    fixPlanName,
     getPlansMap,
 } from '@proton/payments';
-import { fixPlanName } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPlanName, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -90,10 +90,22 @@ const getParameters = (
         plan = plansMap?.[getPlanName(subscription) as PLANS];
     }
 
+    const cycle = (() => {
+        if (parsedCycle) {
+            return parsedCycle;
+        }
+
+        if (subscription?.Cycle) {
+            return Math.min(subscription.Cycle, DEFAULT_CYCLE);
+        }
+
+        return DEFAULT_CYCLE;
+    })();
+
     return {
         plan,
         coupon,
-        cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
+        cycle,
         currency: parsedCurrency,
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: type === 'offer' || edit === 'disable' || addon === 'lumo',
@@ -284,6 +296,7 @@ const AutomaticSubscriptionModal = () => {
                     goToApp('/', APPS.PROTONLUMO, false);
                 };
             }
+
             openSubscriptionModal(openProps);
         }
     }, [loadingPlans, loadingSubscription, loadingModal, loadingLastSubscriptionEnd, location.search]);

@@ -197,6 +197,8 @@ export interface SubscriptionCheckResponse {
      * It's added by the frontend and echoes the same property from the request.
      */
     ProrationMode?: ProrationMode;
+    BaseRenewAmount: number | null;
+    RenewCycle: Cycle | null;
 }
 
 export enum Audience {

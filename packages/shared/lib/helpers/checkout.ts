@@ -130,6 +130,8 @@ export type RequiredCheckResponse = Pick<
     | 'optimistic'
     | 'Currency'
     | 'SubscriptionMode'
+    | 'BaseRenewAmount'
+    | 'RenewCycle'
 >;
 
 export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
@@ -322,6 +324,8 @@ export const getOptimisticCheckResult = ({
         optimistic: true,
         Currency: currency,
         SubscriptionMode: SubscriptionMode.Regular,
+        BaseRenewAmount: null,
+        RenewCycle: null,
     };
 };
 
@@ -348,6 +352,8 @@ export const getCheckResultFromSubscription = (
         Gift: 0,
         Currency,
         SubscriptionMode: SubscriptionMode.Regular,
+        BaseRenewAmount: null,
+        RenewCycle: null,
     };
 };
 

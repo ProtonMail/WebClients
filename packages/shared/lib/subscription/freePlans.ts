@@ -68,5 +68,7 @@ export const getFreeCheckResult = (
         PeriodEnd: 0,
         optimistic: true,
         SubscriptionMode: SubscriptionMode.Regular,
+        BaseRenewAmount: null,
+        RenewCycle: null,
     };
 };

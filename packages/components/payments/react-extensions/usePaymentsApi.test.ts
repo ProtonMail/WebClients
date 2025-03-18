@@ -218,6 +218,8 @@ describe('usePaymentsApi', () => {
             Cycle: 12,
             PeriodEnd: +addMonths(Date.now(), 1) / 1000,
             SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
         };
 
         const { result } = renderHook(() => usePaymentsApi(undefined, () => fallbackValue), {
