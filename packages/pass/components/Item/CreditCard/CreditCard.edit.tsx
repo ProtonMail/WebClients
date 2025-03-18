@@ -3,6 +3,7 @@ import { type FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
@@ -19,8 +20,9 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
+import type { CreditCardItemFormValues } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
@@ -38,11 +40,13 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
             expirationDate: formatExpirationDateMMYY(content.expirationDate),
             name: metadata.name,
             note: metadata.note,
+            files: filesFormInitializer(),
             shareId,
         },
-        onSubmit: ({ name, note, ...creditCardValues }) => {
+        onSubmit: ({ name, note, files, ...creditCardValues }) => {
             onSubmit({
                 ...uneditable,
+                files,
                 content: {
                     ...creditCardValues,
                     cardType: CardType.Unspecified,
@@ -74,7 +78,7 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
         <ItemEditPanel
             type="creditCard"
             formId={FORM_ID}
-            valid={form.isValid && form.dirty}
+            valid={form.isValid && form.dirty && !form.status?.isBusy}
             discardable={!form.dirty}
             handleCancelClick={onCancel}
         >
@@ -147,6 +151,16 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ share, rev
                                 component={TextAreaField}
                                 icon="note"
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
+                            />
+                        </FieldsetCluster>
+
+                        <FieldsetCluster>
+                            <Field
+                                name="files"
+                                component={FileAttachmentsFieldEdit}
+                                shareId={shareId}
+                                itemId={itemId}
+                                revision={lastRevision}
                             />
                         </FieldsetCluster>
                     </Form>
