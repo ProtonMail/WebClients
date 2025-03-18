@@ -14,11 +14,11 @@ import {
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
     getIsSentinelPlan,
+    hasDeprecatedVPN,
     hasDriveBusiness,
     hasLumo,
     hasPass,
     hasPassFamily,
-    hasVPN,
     hasVPNPassBundle,
     hasVisionary,
     hasVpnBusiness,
@@ -449,7 +449,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
                     return getVpnAppFree();
                 }
-                if (hasVPN(subscription)) {
+                if (hasDeprecatedVPN(subscription)) {
                     return getVpnPlus();
                 }
                 if (hasVPNPassBundle(subscription)) {

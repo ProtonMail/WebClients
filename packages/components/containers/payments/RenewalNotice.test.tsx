@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { type PlansMap, type Subscription, SubscriptionMode } from '@proton/shared/lib/interfaces';
@@ -196,7 +197,7 @@ const getProps = (
     }
 ): Pick<
     Parameters<typeof getCheckoutRenewNoticeText>[0],
-    'planIDs' | 'checkout' | 'plansMap' | 'coupon' | 'currency'
+    'planIDs' | 'checkout' | 'plansMap' | 'coupon' | 'currency' | 'app'
 > => {
     const checkout = getCheckout({ planIDs, plansMap, checkResult });
     return {
@@ -205,6 +206,7 @@ const getProps = (
         plansMap,
         coupon: checkResult?.Coupon || null,
         currency: 'CHF' as const,
+        app: APPS.PROTONMAIL,
     };
 };
 
@@ -229,6 +231,8 @@ describe('<RenewalNotice />', () => {
                     isCustomBilling={false}
                     isScheduledChargedImmediately={false}
                     subscription={undefined}
+                    renewAmount={null}
+                    renewCycle={null}
                     {...getProps()}
                 />
             );
@@ -245,6 +249,8 @@ describe('<RenewalNotice />', () => {
                     isCustomBilling={false}
                     isScheduledChargedImmediately={false}
                     subscription={undefined}
+                    renewAmount={null}
+                    renewCycle={null}
                     {...getProps()}
                 />
             );
@@ -268,6 +274,8 @@ describe('<RenewalNotice />', () => {
                             PeriodEnd: +new Date(2025, 7, 11) / 1000,
                         } as any
                     }
+                    renewAmount={null}
+                    renewCycle={null}
                     {...getProps()}
                 />
             );
@@ -289,6 +297,8 @@ describe('<RenewalNotice />', () => {
                             PeriodEnd: +new Date(2024, 1, 3) / 1000, // the current subscription period ends on 02/03/2024 (3rd of February 2024)
                         } as any
                     }
+                    renewAmount={null}
+                    renewCycle={null}
                     {...getProps()}
                 />
             );
@@ -562,6 +572,8 @@ describe('<RenewalNotice />', () => {
                     isProration={false}
                     planIDs={{ bundlepro2024: 1, '1domain-bundlepro2024': 5, '1member-bundlepro2024': 5 }}
                     subscription={subscription}
+                    renewAmount={null}
+                    renewCycle={null}
                 />
             );
 
@@ -582,6 +594,8 @@ describe('<RenewalNotice />', () => {
                     <RenewalNotice
                         {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
                         cycle={cycle}
+                        renewAmount={null}
+                        renewCycle={null}
                     />
                 );
 
@@ -596,6 +610,8 @@ describe('<RenewalNotice />', () => {
                 <RenewalNotice
                     {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
                     cycle={CYCLE.MONTHLY}
+                    renewAmount={null}
+                    renewCycle={null}
                 />
             );
 
@@ -609,6 +625,8 @@ describe('<RenewalNotice />', () => {
                 <RenewalNotice
                     {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
                     cycle={CYCLE.THREE}
+                    renewAmount={null}
+                    renewCycle={null}
                 />
             );
 
@@ -649,9 +667,13 @@ describe('<RenewalNotice />', () => {
                                 ],
                                 Currency: 'CHF',
                                 SubscriptionMode: SubscriptionMode.Regular,
+                                BaseRenewAmount: null,
+                                RenewCycle: null,
                             },
                         })}
                         cycle={cycle}
+                        renewAmount={null}
+                        renewCycle={null}
                     />
                 );
 
@@ -664,6 +686,8 @@ describe('<RenewalNotice />', () => {
         it(`should apply it for 12m vpnpass bundle`, () => {
             const { container } = render(
                 <RenewalNotice
+                    renewAmount={null}
+                    renewCycle={null}
                     {...getProps({
                         planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 },
                         checkResult: {
@@ -689,6 +713,8 @@ describe('<RenewalNotice />', () => {
                             ],
                             Currency: 'CHF',
                             SubscriptionMode: SubscriptionMode.Regular,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
                         },
                     })}
                     cycle={CYCLE.YEARLY}
@@ -728,9 +754,13 @@ describe('<RenewalNotice />', () => {
                             ],
                             Currency: 'CHF',
                             SubscriptionMode: SubscriptionMode.Regular,
+                            BaseRenewAmount: null,
+                            RenewCycle: null,
                         },
                     })}
                     cycle={CYCLE.MONTHLY}
+                    renewAmount={null}
+                    renewCycle={null}
                 />
             );
             expect(container).toHaveTextContent(
@@ -744,6 +774,8 @@ describe('getPassLifetimeRenewNoticeText', () => {
     it('should show basic lifetime message when no subscription exists', () => {
         const { container } = render(
             <RenewalNotice
+                renewAmount={null}
+                renewCycle={null}
                 {...getProps()}
                 cycle={CYCLE.YEARLY}
                 subscription={undefined}
@@ -771,6 +803,8 @@ describe('getPassLifetimeRenewNoticeText', () => {
                 cycle={CYCLE.YEARLY}
                 subscription={subscription}
                 planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+                renewAmount={null}
+                renewCycle={null}
             />
         );
 
@@ -795,6 +829,8 @@ describe('getPassLifetimeRenewNoticeText', () => {
                 cycle={CYCLE.YEARLY}
                 subscription={subscription}
                 planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+                renewAmount={null}
+                renewCycle={null}
             />
         );
 
@@ -820,6 +856,8 @@ describe('getPassLifetimeRenewNoticeText', () => {
                 cycle={CYCLE.YEARLY}
                 subscription={subscription}
                 planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+                renewAmount={null}
+                renewCycle={null}
             />
         );
 
