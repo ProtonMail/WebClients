@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components';
-import { Icon } from '@proton/components';
-import { AuthModal, Prompt } from '@proton/components';
+import { AuthModal, Icon, Prompt } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useConfig from '@proton/components/hooks/useConfig';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -64,7 +63,7 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                         color="info"
                     >
                         {c('Title').t`Go to settings and recovery keys`}
-                        <Icon alt={c('Action').t`Go to settings`} name="arrow-out-square" className="ml-2" />
+                        <Icon alt={c('Action').t`Go to settings`} name="arrow-within-square" className="ml-2" />
                     </ButtonLike>
                 ) : (
                     <Button

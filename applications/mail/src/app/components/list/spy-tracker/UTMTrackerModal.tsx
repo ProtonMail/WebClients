@@ -60,7 +60,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                                 size="small"
                                                 onClick={() => handleOpenLink(tracker.originalURL)}
                                             >
-                                                <Icon name="arrow-out-square" alt={c('Label').t`Open in a new tab`} />
+                                                <Icon name="arrow-within-square" alt={c('Label').t`Open in a new tab`} />
                                             </Button>
                                         </Tooltip>
                                     </div>
@@ -84,7 +84,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                                 size="small"
                                                 onClick={() => handleOpenLink(tracker.cleanedURL)}
                                             >
-                                                <Icon name="arrow-out-square" alt={c('Label').t`Open in a new tab`} />
+                                                <Icon name="arrow-within-square" alt={c('Label').t`Open in a new tab`} />
                                             </Button>
                                         </Tooltip>
                                     </div>
