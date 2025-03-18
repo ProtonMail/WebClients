@@ -2,7 +2,7 @@ import { GlobalLoader, GlobalLoaderProvider, LocationErrorBoundary } from '@prot
 import type { DriveCompat } from '@proton/drive-store'
 import { DriveStoreProvider } from '@proton/drive-store'
 import { Suspense, lazy, useEffect, useMemo } from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
 import { useApi, useAuthentication, useConfig } from '@proton/components'
 import { Application } from '@proton/docs-core'
@@ -98,36 +98,48 @@ type AppRoutesProps = { driveCompat: DriveCompat }
 
 function AppRoutes({ driveCompat }: AppRoutesProps) {
   const isHomepageEnabled = useHomepageFeatureFlag()
-  return (
-    <Switch>
-      {/* document */}
-      <Route path={['/doc', '/new']}>
-        <Suspense>
-          <DocumentPage driveCompat={driveCompat} />
-        </Suspense>
-      </Route>
-      {/* homepage */}
-      <Route path={['/most-recent', '/owned-by-me', '/owned-by-others']}>
-        {isHomepageEnabled ? (
-          <Suspense>
-            <HomepagePage />
-          </Suspense>
-        ) : (
-          <Redirect to="/new" />
-        )}
-      </Route>
-      {/* catch-all redirect: ?mode=open -> document, else -> homepage */}
-      <Route
-        path="*"
-        render={(props) => {
-          const isOpenDocumentLink = props.location.search.includes('mode=open')
-          return isHomepageEnabled && !isOpenDocumentLink ? (
-            <Redirect to="/most-recent" />
-          ) : (
-            <Redirect to={{ pathname: '/doc', search: props.location.search }} />
-          )
-        }}
-      />
-    </Switch>
+
+  const documentPage = (
+    <Suspense>
+      <DocumentPage driveCompat={driveCompat} />
+    </Suspense>
   )
+
+  const homepage = isHomepageEnabled ? (
+    <Suspense>
+      <HomepagePage />
+    </Suspense>
+  ) : (
+    <Navigate to="/new" replace />
+  )
+
+  return (
+    <Routes>
+      {/* document */}
+      <Route path="/doc" element={documentPage} />
+      <Route path="/new" element={documentPage} />
+      {/* homepage */}
+      <Route path="/most-recent" element={homepage} />
+      <Route path="/owned-by-me" element={homepage} />
+      <Route path="/owned-by-others" element={homepage} />
+      {/* catch-all redirect: ?mode=open -> document, else -> homepage */}
+      <Route path="*" element={<WildcardRoute isHomepageEnabled={isHomepageEnabled} />} />
+    </Routes>
+  )
+}
+
+type WildcardRouteProps = {
+  isHomepageEnabled: boolean
+}
+
+function WildcardRoute({ isHomepageEnabled }: WildcardRouteProps) {
+  const [searchParams] = useSearchParams()
+
+  const isOpenDocumentLink = searchParams.get('mode')?.includes('open')
+
+  if (isHomepageEnabled && !isOpenDocumentLink) {
+    return <Navigate to="/most-recent" replace />
+  }
+
+  return <Navigate to={{ pathname: '/doc', search: searchParams.toString() }} replace />
 }

@@ -22,13 +22,19 @@ import { useEmailOptInModal } from './__components/EmailOptInModal/EmailOptInMod
 import { useDocsNotifications } from '../../__utils/notifications-context'
 import { PrivateHookChangesToEvents } from './__components/PrivateHookChangesToEvents'
 import { useFlag } from '@proton/unleash'
+import useEffectOnce from '@proton/hooks/useEffectOnce'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
 
   const [user] = useUser()
 
-  const { openAction, updateParameters, navigateToAction } = useDocsUrlBar({ isDocsEnabled: driveCompat.isDocsEnabled })
+  const { openAction, searchParams, updateParameters, navigateToAction, removeLocalIDFromUrl } = useDocsUrlBar({
+    isDocsEnabled: driveCompat.isDocsEnabled,
+  })
+  useEffectOnce(() => {
+    removeLocalIDFromUrl()
+  })
 
   const [actionMode, setActionMode] = useState<DocumentAction['mode']>()
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
@@ -46,6 +52,8 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
   }, [application.logger, openAction])
 
   const createNewDocInRoot = useCallback(async () => {
+    application.logger.info('Creating new document in root')
+
     const date = getPlatformFriendlyDateForFileName()
     const name = c('Title').t`Untitled document ${date}`
 
@@ -59,14 +67,14 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
     const result = await driveCompat.createDocumentNode(root, name)
 
     return result
-  }, [driveCompat, openAction])
+  }, [application.logger, driveCompat, openAction])
 
   useEffect(() => {
     if (isCreatingNewDocument) {
       return
     }
 
-    const isOpeningDocsAtRootPage = !openAction
+    const isOpeningDocsAtRootPage = !openAction && searchParams.size === 0
     const isOpeningDocsWithCreateAction = openAction && openAction.mode === 'create'
     const isUsingNewRoute = openAction && openAction.mode === 'new'
     const shouldCreateNewRootDoc = isOpeningDocsAtRootPage || isOpeningDocsWithCreateAction || isUsingNewRoute
@@ -110,7 +118,15 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
       setActionMode('download')
       updateParameters({ newVolumeId: openAction.volumeId, newLinkId: openAction.linkId })
     }
-  }, [application.logger, createNewDocInRoot, isCreatingNewDocument, navigateToAction, openAction, updateParameters])
+  }, [
+    application.logger,
+    createNewDocInRoot,
+    isCreatingNewDocument,
+    navigateToAction,
+    openAction,
+    searchParams.size,
+    updateParameters,
+  ])
 
   const onConversionSuccess = useCallback(
     (result: FileToDocConversionResult) => {
@@ -233,7 +249,7 @@ function Content({
     !nodeMeta
   ) {
     return (
-      <div className="m-auto">{c('Info')
+      <div className="m-auto" data-testid="invalid-openaction-error">{c('Info')
         .jt`No document supplied in URL. Return to ${DRIVE_APP_NAME} and select a document.`}</div>
     )
   }
