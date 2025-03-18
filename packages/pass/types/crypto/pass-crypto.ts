@@ -1,9 +1,11 @@
-import type { CreateSecureLinkData } from '@proton/pass/lib/crypto/processes';
+import type { CreateSecureLinkData, FileDescriptorProcessResult } from '@proton/pass/lib/crypto/processes';
 import type {
     EncodedItemKeyRotation,
     InviteAcceptRequest,
     InviteCreateRequest,
     ItemCreateRequest,
+    ItemFileOutput,
+    ItemLatestKeyResponse,
     ItemMoveIndividualToShareRequest,
     ItemRevisionContentsResponse,
     ItemUpdateRequest,
@@ -38,6 +40,7 @@ export type PassCryptoManagerContext = {
     primaryUserKey?: DecryptedKey;
     primaryAddress?: Address;
     shareManagers: Map<ShareId, ShareManager>;
+    fileKeys: Map<string, Uint8Array>;
 };
 
 export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers'>;
@@ -99,6 +102,24 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         inviteKey: KeyRotationKeyPair;
         inviterPublicKeys: string[];
     }) => Promise<Uint8Array>;
+
+    createFileDescriptor: (data: { metadata: Uint8Array; fileID?: string }) => Promise<FileDescriptorProcessResult>;
+    openFileDescriptor: (data: {
+        shareId: string;
+        file: ItemFileOutput;
+        latestItemKey: ItemLatestKeyResponse;
+    }) => Promise<Uint8Array>;
+
+    createFileChunk: (data: { chunk: ArrayBuffer; fileID: string }) => Promise<Blob>;
+    openFileChunk: (data: { chunk: Uint8Array; fileID: string }) => Promise<Uint8Array>;
+    registerFileKey: (data: { fileKey: Uint8Array; fileID: string }) => void;
+
+    getFileKey: (data: {
+        fileID: string;
+        shareId: string;
+        latestItemKey: ItemLatestKeyResponse;
+    }) => Promise<Uint8Array>;
+
     createSecureLink: (data: { itemKey: ItemKey; shareId?: string }) => Promise<CreateSecureLinkData>;
     openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array>;
     openLinkKey: (data: {
@@ -109,6 +130,13 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         linkKeyEncryptedWithItemKey: boolean;
     }) => Promise<Uint8Array>;
     openItemKey: (data: { encryptedItemKey: EncodedItemKeyRotation; shareId: string }) => Promise<ItemKey>;
+    openSecureLinkFileDescriptor: (data: {
+        encryptedItemKey: string;
+        encryptedFileKey: string;
+        encryptedMetadata: string;
+        fileID: string;
+        linkKey: string;
+    }) => Promise<Uint8Array>;
 }
 
 export type ShareContext<T extends ShareType = ShareType> = {
