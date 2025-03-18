@@ -134,13 +134,12 @@ const ThemeProvider = ({ children, appName }: Props) => {
     });
 
     const constrainedThemeSettings: ThemeSetting = useMemo(() => {
-        // We want to protonwallet to inherit from all theme settings except styles
+        // We want to Proton Wallet to inherit from all theme settings except styles
         if (appName === APPS.PROTONWALLET) {
             return {
                 ...themeSetting,
                 LightTheme: ThemeTypes.WalletLight,
-                // TOOD: move to wallet dark once theme is ready
-                DarkTheme: ThemeTypes.WalletLight,
+                DarkTheme: ThemeTypes.WalletDark,
             };
         }
 

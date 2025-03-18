@@ -1,0 +1,84 @@
+:root,
+.ui-standard {
+    --primary-minor-3: #e0e2ff;
+    --primary-minor-2: #9f9df3;
+    --primary-minor-1: #8b8df9;
+    --primary: #767dff;
+    --primary-major-1: #6367d7;
+    --primary-major-2: #3e3c88;
+    --primary-major-3: #2b2661;
+    --primary-contrast: #191927;
+
+    --signal-danger: #ed4349;
+    --signal-danger-contrast: #191927;
+    --signal-warning: #fe9964;
+    --signal-success: #6ac06b;
+    --signal-info: #767dff;
+
+    --text-norm: #191c32;
+    --text-weak: #535964;
+    --text-hint: #9395a4;
+    --text-disabled: #ced0de;
+    --text-invert: #ffffff;
+
+    --background-norm: #f3f5f6;
+    --background-weak: #ffffff;
+    --background-strong: #e6e8ec;
+    --background-invert: #191927;
+    --background-blur: #8b8df9;
+
+    --border-weak: #f3f5f6;
+    --border-norm: #e6e8ec;
+    --border-strong: #e2e2e2;
+
+    --interaction-norm-minor-3: #e0e2ff;
+    --interaction-norm-minor-2: #9f9df3;
+    --interaction-norm-minor-1: #8b8df9;
+    --interaction-norm: #767dff;
+    --interaction-norm-major-1: #6367d7;
+    --interaction-norm-major-2: #3e3c88;
+    --interaction-norm-major-3: #2b2661;
+    --interaction-norm-contrast: #ffffff;
+
+    --interaction-weak-minor-3: #ffffff;
+    --interaction-weak-minor-2: #f3f5f6;
+    --interaction-weak-minor-1: #e6e8ec;
+    --interaction-weak: #e2e2e2;
+    --interaction-weak-major-1: #ced0de;
+    --interaction-weak-major-2: #9395a4;
+    --interaction-weak-major-3: #535964;
+    --interaction-weak-contrast: #191927;
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(132 142 163 / 0.2);
+    --interaction-default-active: rgb(99 109 127 / 0.2);
+
+    --shadow-norm-opacity: 0.26;
+    --shadow-raised-opacity: 0.22;
+    --shadow-lifted-opacity: 0.16;
+
+    --backdrop-norm: rgb(25 28 50 / 0.4);
+
+    --bg-overlay: #e2e2e277;
+
+    --field-background-color: #ffffff;
+    --field-hover-background-color: #ffffff;
+    --field-focus-background-color: #ffffff;
+    --field-norm: #e6e8ec;
+    --field-hover: #e2e2e2;
+    --field-disabled: #ced0de;
+
+    --font-weight-weak: 400;
+    --font-weight-normal: 500;
+
+    --focus-outline: #5e64cc;
+    --focus-ring: #e4e5ff;
+
+    --button-darker-default-background-color: #191927;
+    --button-darker-hover-background-color: #2b2661;
+    --button-darker-active-background-color: #8b8df9;
+
+    --button-lighter-default-background-color: #ffffff;
+    --button-lighter-hover-background-color: #e2e2e2;
+    --button-lighter-active-background-color: #f3f5f6;
+}

@@ -12,11 +12,14 @@ import {
 } from '@proton/components';
 import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import protonWalletLogoDark from '@proton/styles/assets/img/illustrations/proton-wallet-logo-dark.svg';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
 import type { IWasmApiWalletData } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { APP_NAME } from '../../../config';
 import { clearWalletAccountMetricsData, clearWalletData } from '../../../utils/cache';
+import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 import { OtherSidebarListItems } from './OtherSidebarListItems';
 import { WalletsSidebarList } from './WalletsSidebarList';
 
@@ -42,6 +45,7 @@ const WalletSidebar = ({
     onToggleExpand,
 }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
+    const theme = useWalletTheme();
 
     useEffect(() => {
         if (!apiWalletsData) {
@@ -72,7 +76,10 @@ const WalletSidebar = ({
                     target="_self"
                     className="wallet-logo p-1 relative interactive-pseudo-protrude interactive--no-background"
                 >
-                    <img src={protonWalletLogo} alt={WALLET_APP_NAME} />
+                    <img
+                        src={theme === WalletThemeOption.WalletDark ? protonWalletLogoDark : protonWalletLogo}
+                        alt={WALLET_APP_NAME}
+                    />
                 </AppLink>
             }
             version={<AppVersion />}

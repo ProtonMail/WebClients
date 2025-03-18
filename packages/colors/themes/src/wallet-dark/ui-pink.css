@@ -1,0 +1,17 @@
+.ui-pink {
+    --interaction-norm-minor-2: #581049;
+    --interaction-norm-minor-1: #c33aa5;
+    --interaction-norm: #ff99e9;
+    --interaction-norm-major-1: #f558d2;
+    --interaction-norm-major-2: #da35b6;
+    --interaction-norm-major-3: #c52ab3;
+
+    --focus-outline: var(--interaction-norm-major-2);
+    --focus-ring: var(--interaction-norm-minor-1);
+
+    --interaction-norm-hover: var(--interaction-norm-major-1);
+    --interaction-norm-active: var(--interaction-norm-major-2);
+    --interaction-weak-hover: var(--interaction-weak-major-1);
+
+    --background-blur: #3e3c88;
+}

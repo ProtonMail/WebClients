@@ -8,11 +8,14 @@ import type { WasmApiExchangeRate } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms';
 import { Tooltip } from '@proton/components';
 import { SECOND } from '@proton/shared/lib/constants';
+import arrowReceiveDarkSvg from '@proton/styles/assets/img/illustrations/arrow-receive-dark.svg';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
+import arrowSendDarkSvg from '@proton/styles/assets/img/illustrations/arrow-send-dark.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { MaybeHiddenAmount } from '../../../atoms/MaybeHiddenAmount';
 import { Price } from '../../../atoms/Price';
@@ -30,6 +33,7 @@ import {
     isSentTransaction,
 } from '../../../utils';
 import { DataListItem } from '../../DataList';
+import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 
 export interface TxDataListItemProps {
     tx?: TransactionData;
@@ -42,6 +46,7 @@ export interface TxDataWithExchangeRateListItemProps extends TxDataListItemProps
 }
 
 export const ConfirmationTimeDataListItem = ({ tx, loadingLabel, loading }: TxDataListItemProps) => {
+    const theme = useWalletTheme();
     const { isNarrow } = useResponsiveContainerContext();
     const now = useMemo(() => new Date(), []);
     const value = getTransactionValue(tx);
@@ -90,9 +95,19 @@ export const ConfirmationTimeDataListItem = ({ tx, loadingLabel, loading }: TxDa
                     placeholder={<div className={imgClassName} style={imgStyle} />}
                 >
                     {value >= 0 ? (
-                        <img className={imgClassName} src={arrowReceiveSvg} alt="" style={imgStyle} />
+                        <img
+                            className={imgClassName}
+                            src={theme === WalletThemeOption.WalletDark ? arrowReceiveDarkSvg : arrowReceiveSvg}
+                            alt=""
+                            style={imgStyle}
+                        />
                     ) : (
-                        <img className={imgClassName} src={arrowSendSvg} alt="" style={imgStyle} />
+                        <img
+                            className={imgClassName}
+                            src={theme === WalletThemeOption.WalletDark ? arrowSendDarkSvg : arrowSendSvg}
+                            alt=""
+                            style={imgStyle}
+                        />
                     )}
                 </Skeleton>
             }
