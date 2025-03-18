@@ -7,6 +7,7 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import type { RedirectAction } from '@proton/drive-store/store/_documents'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
+import useFlag from '@proton/unleash/useFlag'
 
 export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolean } = {}) {
   const { getLocalID } = useAuthentication()
@@ -14,6 +15,7 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
   const { search } = useLocation()
   const searchParams = new URLSearchParams(search)
   const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams))
+  const isUrlStrippingEnabled = useFlag('DocsUrlStrippingEnabled')
 
   /**
    * Changes the URL of the page only visually, without causing any navigation or changing
@@ -103,10 +105,13 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
   }, [])
 
   const removeLocalIDFromUrl = useCallback(() => {
+    if (!isUrlStrippingEnabled) {
+      return
+    }
     const newUrl = new URL(location.href)
     newUrl.pathname = stripLocalBasenameFromPathname(newUrl.pathname)
     history.replaceState(null, '', newUrl.toString())
-  }, [])
+  }, [isUrlStrippingEnabled])
 
   useEffectOnce(() => {
     const action = parseOpenAction(searchParams)
