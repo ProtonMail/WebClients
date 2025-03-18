@@ -35,7 +35,7 @@ export const ItemScopes = [
 
 /** Route segments that should only be accessible
  * to paid users - they should redirect otherwise. */
-export const PremiumRoutes = ['secure-links'] as const;
+export const PremiumRoutes = [] as const;
 
 export const history = createBrowserHistory();
 
