@@ -6,14 +6,18 @@ import { c } from 'ttag';
 import { type WasmTransactionDetails } from '@proton/andromeda';
 import { Icon, useModalStateWithData } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import arrowReceiveDarkSvg from '@proton/styles/assets/img/illustrations/arrow-receive-dark.svg';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
+import arrowSendDarkSvg from '@proton/styles/assets/img/illustrations/arrow-send-dark.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useApiWalletTransactionData, useUserWalletSettings } from '@proton/wallet/store';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { CoreButton } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
 import { Price } from '../../atoms/Price';
+import { useWalletTheme } from '../../components/Layout/Theme/WalletThemeProvider';
 import type { RecipientDetailsModalOwnProps } from '../../components/RecipientDetailsModal';
 import { RecipientDetailsModal } from '../../components/RecipientDetailsModal';
 import { convertAmountStr, getLabelByUnit } from '../../utils';
@@ -44,6 +48,7 @@ export const WalletTransactionDataDrawer = ({
     onClickEditSender,
     onClose,
 }: Props) => {
+    const theme = useWalletTheme();
     const [transactionsFromStore] = useApiWalletTransactionData(compact([transactionDataKey]));
     const apiData = transactionsFromStore?.[transactionDataKey] ?? null;
 
@@ -71,9 +76,19 @@ export const WalletTransactionDataDrawer = ({
             <div className="flex flex-column mb-10">
                 <div className="flex flex-row items-center">
                     {isSender ? (
-                        <img src={arrowSendSvg} alt="" className="mr-3" style={{ width: '1.4rem' }} />
+                        <img
+                            src={theme === WalletThemeOption.WalletDark ? arrowSendDarkSvg : arrowSendSvg}
+                            alt=""
+                            className="mr-3"
+                            style={{ width: '1.4rem' }}
+                        />
                     ) : (
-                        <img src={arrowReceiveSvg} alt="" className="mr-2" style={{ width: '1.4rem' }} />
+                        <img
+                            src={theme === WalletThemeOption.WalletDark ? arrowReceiveDarkSvg : arrowReceiveSvg}
+                            alt=""
+                            className="mr-2"
+                            style={{ width: '1.4rem' }}
+                        />
                     )}
                     <div className="color-hint block text-ellipsis">
                         {isSender ? c('Wallet transaction').t`You sent` : c('Wallet transaction').t`You received`}

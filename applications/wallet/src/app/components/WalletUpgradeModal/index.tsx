@@ -13,10 +13,13 @@ import {
     hasFamily,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
-import upgradeWalletSrc from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
+import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
+import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../atoms';
-import type { SubTheme } from '../../utils';
+import { type SubTheme } from '../../utils';
+import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 export interface WalletUpgradeModalOwnProps {
     title?: string;
@@ -27,6 +30,7 @@ export interface WalletUpgradeModalOwnProps {
 type Props = WalletUpgradeModalOwnProps & ModalOwnProps;
 
 export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Props) => {
+    const walletTheme = useWalletTheme();
     const [openSubscriptionModal] = useSubscriptionModal();
     const [user] = useUser();
     const [subscription] = useSubscription();
@@ -81,7 +85,7 @@ export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Pro
         >
             <div className="flex flex-column items-center text-center">
                 <img
-                    src={upgradeWalletSrc}
+                    src={walletTheme === WalletThemeOption.WalletDark ? walletBitcoinDark : walletBitcoin}
                     alt=""
                     className="w-custom h-custom"
                     style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}

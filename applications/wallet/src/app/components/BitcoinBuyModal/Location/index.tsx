@@ -10,16 +10,19 @@ import { Icon } from '@proton/components/index';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/index';
 import { useCountriesByProvider } from '@proton/wallet/store';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, SearchableSelect } from '../../../atoms';
 import { ModalParagraph } from '../../../atoms/ModalParagraph';
+import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 
 interface Props {
     onConfirm: (country: WasmApiCountry) => void;
 }
 
 export const Location = ({ onConfirm }: Props) => {
+    const theme = useWalletTheme();
     const [countriesByProviders, loadingCountries] = useCountriesByProvider();
     const [country, setCountry] = useState<WasmApiCountry>();
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
@@ -99,7 +102,7 @@ export const Location = ({ onConfirm }: Props) => {
                     size="large"
                     shape="solid"
                     color="norm"
-                    shadow
+                    shadow={theme === WalletThemeOption.WalletLight}
                     disabled={!country || !!errorMessage}
                     onClick={() => {
                         if (country) {
