@@ -1,15 +1,16 @@
 import { serverTime } from '@proton/crypto';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import type { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
-import type { PushForkResponse } from '../../authentication/interface';
-import type { OfflineKey } from '../../authentication/offlineKey';
 import type { APP_NAMES } from '../../constants';
 import { SSO_PATHS } from '../../constants';
 import { withUIDHeaders } from '../../fetch/headers';
 import { encodeBase64URL, uint8ArrayToString } from '../../helpers/encoding';
 import type { Api, User } from '../../interfaces';
+import type { PushForkResponse } from '../interface';
+import type { ResumedSessionResult } from '../persistedSessionHelper';
 import { getForkEncryptedBlob } from './blob';
 import type { ForkType } from './constants';
 import { ForkSearchParameters } from './constants';
@@ -28,25 +29,20 @@ export interface ProduceForkPayload {
     trusted: boolean;
     forkType: ForkType | undefined;
     forkVersion: number;
+    source: SessionSource;
     app: APP_NAMES;
     encryptedPayload: { payloadVersion: 1 | 2; payloadType: 'offline' | 'default' };
 }
 
 interface ProduceForkArguments {
     api: Api;
-    session: {
-        UID: string;
-        keyPassword?: string;
-        offlineKey: OfflineKey | undefined;
-        persistent: boolean;
-        trusted: boolean;
-    };
+    session: ResumedSessionResult;
     forkParameters: ProduceForkParameters;
 }
 
 export const produceFork = async ({
     api,
-    session: { UID, keyPassword, offlineKey, persistent, trusted },
+    session: { UID, keyPassword, offlineKey, persistent, trusted, persistedSession },
     forkParameters: { state, app, independent, forkType, forkVersion, payloadType, payloadVersion },
 }: ProduceForkArguments): Promise<ProduceForkPayload> => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
@@ -56,12 +52,12 @@ export const produceFork = async ({
             if (payloadType === 'offline' && offlineKey && offlineKey.salt && offlineKey.password) {
                 return {
                     type: 'offline',
-                    keyPassword: keyPassword || '',
+                    keyPassword,
                     offlineKeyPassword: offlineKey.password,
                     offlineKeySalt: offlineKey.salt,
                 } as const;
             }
-            return { type: 'default', keyPassword: keyPassword || '' } as const;
+            return { type: 'default', keyPassword } as const;
         })();
         return {
             blob: await getForkEncryptedBlob(await importKey(rawKey), forkData, payloadVersion),
@@ -90,13 +86,25 @@ export const produceFork = async ({
         trusted,
         forkType,
         forkVersion,
+        source: persistedSession.source,
         app,
         encryptedPayload,
     };
 };
 
 export const produceForkConsumption = (
-    { selector, state, key, persistent, trusted, forkType, forkVersion, encryptedPayload, app }: ProduceForkPayload,
+    {
+        selector,
+        state,
+        key,
+        persistent,
+        trusted,
+        forkType,
+        forkVersion,
+        encryptedPayload,
+        app,
+        source,
+    }: ProduceForkPayload,
     searchParameters?: URLSearchParams
 ) => {
     const fragmentSearchParams = new URLSearchParams();
@@ -118,6 +126,9 @@ export const produceForkConsumption = (
     }
     if (encryptedPayload.payloadType !== undefined) {
         fragmentSearchParams.append(ForkSearchParameters.PayloadType, `${encryptedPayload.payloadType}`);
+    }
+    if (source !== undefined) {
+        fragmentSearchParams.append(ForkSearchParameters.Source, `${source}`);
     }
 
     const searchParamsString = searchParameters?.toString() || '';
@@ -241,24 +252,22 @@ const BYPASS_SESSION_MIN_AGE = 30_000; // 30 seconds
 export const getShouldReAuth = (
     forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'> | undefined,
     authSession: {
-        User: User;
-        offlineKey: OfflineKey | undefined;
+        data: ResumedSessionResult;
         prompt?: 'login' | null;
-        persistedAt: number;
     }
 ) => {
     const shouldReauth = forkParameters?.prompt === 'login' || authSession.prompt === 'login';
     if (!shouldReauth) {
         return false;
     }
-    if (!getCanUserReAuth(authSession.User)) {
+    if (!getCanUserReAuth(authSession.data.User)) {
         return false;
     }
-    if (forkParameters?.promptType === 'offline-bypass' && authSession.offlineKey) {
+    if (forkParameters?.promptType === 'offline-bypass' && authSession.data.offlineKey) {
         /** `offline-bypass` is valid only if session was just persisted (<30seconds).
          * This avoids triggering re-auth during a sign-up flow to pass. In any other
          * scenario, we should avoid processing the by-pass and ask for password. */
-        return +serverTime() - authSession.persistedAt > BYPASS_SESSION_MIN_AGE;
+        return +serverTime() - authSession.data.persistedSession.persistedAt > BYPASS_SESSION_MIN_AGE;
     }
     return true;
 };

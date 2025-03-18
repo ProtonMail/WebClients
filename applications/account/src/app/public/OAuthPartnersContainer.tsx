@@ -2,20 +2,20 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { type OnLoginCallback, StandardLoadErrorPage } from '@proton/components';
-import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
-import { handleNextLogin } from '@proton/components/containers/login/loginActions';
-import { auth } from '@proton/shared/lib/api/auth';
+import type { AuthSession } from '@proton/components/containers/login/interface';
+import { auth, revoke } from '@proton/shared/lib/api/auth';
+import { getUser } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { ProtonForkData } from '@proton/shared/lib/authentication/fork/interface';
 import { oauthAuthorizePartner } from '@proton/shared/lib/authentication/fork/oauth2';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { removePersistedSessionByLocalIDAndUID } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { type APP_NAMES } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
-import type { Api } from '@proton/shared/lib/interfaces';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { Api, User as tsUser } from '@proton/shared/lib/interfaces';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
 
@@ -95,53 +95,62 @@ const handleInitiate = async ({
 const handleCallback = async ({
     state,
     api,
-    toApp,
-    productParam,
 }: {
     state: OAuthPartnersCallbackState;
     api: Api;
     toApp?: APP_NAMES;
     productParam: ProductParam;
-}) => {
+}): Promise<AuthSession> => {
     const oauthPersistedState = readOAuthPersistedState();
     if (!oauthPersistedState) {
         throw new Error('Unexpected oauth state');
     }
 
-    const persistent = false;
+    const persistent = true;
+    const keyPassword = '';
+    const clearKeyPassword = '';
+    const trusted = false;
 
     const authResponse = await api<AuthResponse>(
         withUIDHeaders(oauthPersistedState.uid, auth({ SSOResponseToken: state.payload.token }, persistent))
     );
     clearForkState();
 
-    const result = await handleNextLogin({
-        api,
-        appName: APPS.PROTONACCOUNT,
-        toApp,
-        ignoreUnlock: true,
-        setupVPN: false,
-        ktActivation: KeyTransparencyActivation.DISABLED,
-        username: '',
-        password: '',
-        persistent,
-        authType: AuthType.ExternalSSO,
-        authResponse,
-        authVersion: 4,
-        productParam,
-    });
+    const user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
 
-    if (result.to !== AuthStep.DONE) {
-        throw new Error('Unexpected step');
+    const resumedSessionResult = await maybeResumeSessionByUser({ api, User: user, options: { source: null } });
+    if (resumedSessionResult) {
+        await api(revoke()).catch(noop);
+        return {
+            data: resumedSessionResult,
+            flow: 'login',
+        };
     }
 
-    // In partner oauth the persisted session is removed from storage. This is a workaround for the fact that the
-    // session doesn't have `full` scope and thus it can't fetch for example GET /addresses to be able to set up
-    // a proton address. We are able to do this workaround because these sessions are only used in the VPN extension
-    // currently.
-    await removePersistedSessionByLocalIDAndUID(result.session.LocalID, oauthPersistedState.uid).catch(noop);
+    const { clientKey, offlineKey, persistedSession } = await persistSession({
+        ...authResponse,
+        clearKeyPassword,
+        keyPassword,
+        User: user,
+        api,
+        persistent,
+        trusted,
+        source: SessionSource.Oauth,
+    });
 
-    return { session: result.session };
+    return {
+        data: {
+            ...authResponse,
+            keyPassword,
+            persistedSession,
+            offlineKey,
+            clientKey,
+            User: user,
+            persistent,
+            trusted,
+        },
+        flow: 'login',
+    };
 };
 
 const OAuthPartnersContainer = ({ toApp, productParam, unauthenticatedApi, state, loader, onLogin }: Props) => {
@@ -154,7 +163,7 @@ const OAuthPartnersContainer = ({ toApp, productParam, unauthenticatedApi, state
             }
 
             if (state.type === 'callback') {
-                const { session } = await handleCallback({
+                const session = await handleCallback({
                     state,
                     api: unauthenticatedApi.apiCallback,
                     toApp,

@@ -2,6 +2,7 @@ import type { AuthSession } from '@proton/components/containers/login/interface'
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { type OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getClientID, isExtension } from '@proton/shared/lib/apps/helper';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import {
     produceExtensionFork,
     produceFork,
@@ -10,13 +11,20 @@ import {
 } from '@proton/shared/lib/authentication/fork';
 import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { AuthExtensionState } from '../../public/AuthExtension';
 import type { Paths } from '../helper';
 import type { LoginResult } from './interface';
+
+export class ProductDisallowedError extends Error {
+    constructor(message?: string) {
+        super(message);
+        this.name = 'ProductDisallowedError';
+    }
+}
 
 export const getProduceForkLoginResult = async ({
     api,
@@ -32,11 +40,16 @@ export const getProduceForkLoginResult = async ({
         const { forkParameters, searchParameters } = data.payload;
         const { app } = forkParameters;
 
+        // OAuth session are only allowed for the VPN browser extension at the moment. Throw a disallowed product error if a fork is attempted.
+        if (session.data.persistedSession.source === SessionSource.Oauth && app !== APPS.PROTONVPNBROWSEREXTENSION) {
+            throw new ProductDisallowedError();
+        }
+
         if (isExtension(app)) {
             const childClientID = getClientID(app);
             const { Selector: selector } = await api<PushForkResponse>(
                 withUIDHeaders(
-                    session.UID,
+                    session.data.UID,
                     pushForkSession({
                         ChildClientID: childClientID,
                         Independent: forkParameters.independent ? 1 : 0,
@@ -47,7 +60,7 @@ export const getProduceForkLoginResult = async ({
                 app,
                 payload: {
                     selector,
-                    session,
+                    session: session.data,
                     forkParameters,
                 },
             });
@@ -64,7 +77,7 @@ export const getProduceForkLoginResult = async ({
 
         const produceForkPayload = await produceFork({
             api,
-            session,
+            session: session.data,
             forkParameters,
         });
         const url = new URL(produceForkConsumption(produceForkPayload, searchParameters));
@@ -79,7 +92,7 @@ export const getProduceForkLoginResult = async ({
 
     if (data.type === SSOType.OAuth) {
         const { payload } = data;
-        const UID = session.UID;
+        const UID = session.data.UID;
         const {
             Access: { Accepted },
         } = await api<{

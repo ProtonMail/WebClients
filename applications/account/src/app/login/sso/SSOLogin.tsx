@@ -70,7 +70,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
     };
 
     const handleResult = async (result: AuthActionResponse) => {
-        if (result.to === AuthStep.DONE && result.session.User.Flags['has-temporary-password']) {
+        if (result.to === AuthStep.DONE && result.session.data.User.Flags['has-temporary-password']) {
             sessionDataRef.current = result.session;
             setStep('AdminGranted');
         } else {
@@ -326,7 +326,7 @@ const SSOLogin = ({ toApp, step: authStep, render, cache, onBack, onCancel, onEr
                                             }
                                             const sessionData = sessionDataRef.current;
                                             return {
-                                                keyPassword: sessionData?.keyPassword,
+                                                keyPassword: sessionData?.data.keyPassword,
                                                 deviceSecretData: ssoData.deviceData.deviceSecretData,
                                             };
                                         })();

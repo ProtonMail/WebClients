@@ -1,5 +1,5 @@
+import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getApiError, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     type ProduceForkParametersFull,
@@ -8,21 +8,18 @@ import {
     getShouldReAuth,
 } from '@proton/shared/lib/authentication/fork';
 import { type ProtonForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
-import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
-    GetActiveSessionType,
-    getActiveSessions,
-    getActiveSessionsData,
-    resumeSession,
+    type GetActiveSessionsResult,
+    getActiveSessionsResult,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import { getOrganization } from '../../public/organization';
-import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
+import { ProductDisallowedError, getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
 import type { LoginResult } from '../actions/interface';
 import type { Paths } from '../helper';
 
@@ -58,12 +55,15 @@ export const handleProtonFork = async ({ api, paths }: { api: Api; paths: Paths 
 
     try {
         // Resume session and produce the fork
-        const session = await resumeSession({ api, localID });
+        const resumedSessionResult = await resumeSession({ api, localID });
+        const session: AuthSession = { data: resumedSessionResult };
 
         if (getShouldReAuth(forkParameters, session)) {
-            const persistedSessions = getPersistedSessions();
-            const sessions = await getActiveSessionsData({ api: getUIDApi(session.UID, api), persistedSessions });
-            const activeSessionsResult = { session, sessions, type: GetActiveSessionType.AutoPick };
+            const activeSessionsResult = await getActiveSessionsResult({
+                api,
+                localID: resumedSessionResult.LocalID,
+                session: resumedSessionResult,
+            });
             return await handleActiveSessions(activeSessionsResult, forkParameters);
         }
 
@@ -81,11 +81,12 @@ export const handleProtonFork = async ({ api, paths }: { api: Api; paths: Paths 
             if (
                 [API_CUSTOM_ERROR_CODES.SSO_APPLICATION_INVALID, API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED].some(
                     (errorCode) => errorCode === code
-                )
+                ) ||
+                e instanceof ProductDisallowedError
             ) {
                 const organization = await getOrganization({ session, api }).catch(noop);
                 const appSwitcherState: AppSwitcherState = {
-                    session: { ...session, Organization: organization },
+                    session: { ...session, data: { ...session.data, Organization: organization } },
                     error: {
                         type: 'unsupported-app',
                         app: forkParameters.app,

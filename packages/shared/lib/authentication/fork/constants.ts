@@ -36,6 +36,7 @@ export enum ForkSearchParameters {
     Prompt = 'prompt',
     Independent = 'independent',
     PayloadType = 'pt',
+    Source = 'source',
     Selector = 'selector',
     PayloadVersion = 'pv',
     PromptType = 'promptType',
