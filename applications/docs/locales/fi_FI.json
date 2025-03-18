@@ -330,6 +330,9 @@
       "Help and feedback": [
         "Tuki ja palaute"
       ],
+      "Help and resources": [
+        "Tuki ja resurssit"
+      ],
       "Hide advanced PGP settings": [
         "Piilota PGP-lisäasetukset"
       ],
@@ -592,7 +595,7 @@
         "Valitse maa"
       ],
       "Set recovery phrase": [
-        "Aseta palautuslause"
+        "Aseta palautuslauseke"
       ],
       "Settings": [
         "Asetukset"
@@ -772,8 +775,15 @@
       "${ price } per domain": [
         "${ price }/verkkotunnus"
       ],
+      "${ price } per seat": [
+        "${ price }/lisenssi"
+      ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-lisenssi",
+        "${ seats } ${ LUMO_APP_NAME }-lisenssiä"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kirjoitusavustajalisenssi",
@@ -954,6 +964,9 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Suojaa kirjautumisesi kaikilla laitteillasi. Sisältää rajattomasti Hide-my-email-aliaksia, jakamisen, sisäänrakennetun 2FA:n, ${ DARK_WEB_MONITORING_NAME } ja muuta."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
@@ -2153,6 +2166,31 @@
         "Ahvenanmaa"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Kaikille ${ BRAND_NAME }-palveluille"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }lle"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }ille"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }ille"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }:lle"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/kuukausi"
@@ -2225,7 +2263,7 @@
         "Aseta palautustapa, jottet menetä pääsyä tilillesi."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "Varmista tilillesi korkein mahdollinen suojaus asettamalla palautuslause."
+        "Varmista tilillesi korkein mahdollinen suojaus asettamalla palautuslauseke."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
@@ -2445,6 +2483,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lisäksi voit tarkastaa ${ statusPageLink }."
+      ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Identiteetti ja osoitteet > Lyhytosoite (pm.me)"
       ],
       "A group with this name already exists": [
         "Tämän niminen ryhmä on jo olemassa"
@@ -3757,6 +3798,9 @@
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
@@ -3765,6 +3809,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } suojelee tiliäsi valvomalla epäilyttävää toimintaa."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } kansio löytyi",
@@ -4398,6 +4445,9 @@
       "Opening...": [
         "Avataan..."
       ],
+      "or discover other features:": [
+        "tai tutustu muihin ominaisuuksiin:"
+      ],
       "Organization size": [
         "Organisaation koko"
       ],
@@ -4675,6 +4725,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Suorita maksu lähettämällä ${ btcAmountBold } alla olevaan osoitteeseen."
+      ],
+      "To download the ${ DOCS_APP_NAME } files, open them in ${ DOCS_APP_NAME } and export them.": [
+        "Ladataksesi ${ DOCS_APP_NAME }-tiedostoja, avaa ne ${ DOCS_APP_NAME }issa ja vie ne."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
@@ -4979,6 +5032,14 @@
     "info": {
       "Selected color:": [
         "Valittu väri:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Miten käteismaksu lähetetään?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Löydät ohjeet artikkelista: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info on errors": {
@@ -5670,6 +5731,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lisää ${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
+      "Add-on with free trial": [
+        "Lisäosa ilmaisella kokeilujaksolla"
+      ],
       "for ${ price }": [
         "hintaan ${ price }"
       ]
@@ -5955,6 +6019,9 @@
       "Get started for ${ priceCoupon }": [
         "Aloita hintaan ${ priceCoupon }"
       ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Tilaukset alkaen hintaan ${ priceDrivePlus }"
+      ],
       "Starting from ${ pricing }": [
         "Alkaen ${ pricing }"
       ],
@@ -6198,6 +6265,9 @@
       "Data breach monitoring": [
         "Tietomurtovalvonta"
       ],
+      "Dedicated servers optimized for streaming": [
+        "Suoratoistoon optimoidut palvelimet"
+      ],
       "Desktop app": [
         "Työpöytäsovellus"
       ],
@@ -6261,6 +6331,9 @@
       ],
       "Limited support": [
         "Rajoitettu tuki"
+      ],
+      "Manage user permissions and access": [
+        "Hallinnoi käyttöoikeuksia"
       ],
       "Multiple admin roles": [
         "Useita ylläpitäjien rooleja"
@@ -7103,6 +7176,9 @@
       "Get the deal": [
         "Hyödynnä tarjous"
       ],
+      "Last day to save": [
+        "Viimeisin tallennettava päivä"
+      ],
       "Limited-time offer": [
         "Rajoitetun ajan tarjous"
       ],
@@ -7115,17 +7191,29 @@
       "Offer expires ${ formattedDate }.": [
         "Tarjous vanhenee ${ formattedDate }"
       ],
+      "Pay annually, secure our best offer": [
+        "Maksa vuosittain, hyödynnä paras tarjouksemme"
+      ],
       "Save": [
         "Säästä"
       ],
+      "Save ${ prices.savedPercentage }%": [
+        "Säästä ${ prices.savedPercentage } %"
+      ],
       "Save 80% on your first month.": [
         "Säästä 80 % ensimmäisestä kuukaudestasi."
+      ],
+      "Save big when you pay annually": [
+        "Säästä enemmän, kun maksat vuosittain"
       ],
       "Special offer": [
         "Erikoistarjous"
       ],
       "This offer won't be shown again.": [
         "Tätä tarjousta ei näytetä uudelleen"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Kun vaihdat kuukausittaisesta tilauksesta vuosittaiseen."
       ],
       "You currently pay": [
         "Maksat tällä hetkellä"
@@ -7923,6 +8011,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla, kunnes se perutaan."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Tilauksesi uusiutuu samaan hintaan joka vuosi."
       ]
     },
     "specialoffer: Link": {
@@ -8946,7 +9037,7 @@
         "Valitse linkin erääntymisaika"
       ],
       "Set recovery phrase": [
-        "Aseta palautuslause"
+        "Aseta palautuslauseke"
       ],
       "Settings": [
         "Asetukset"
@@ -9184,6 +9275,10 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Valitsee automaattisesti ${ numberOfCountries } maasta",
         "Valitsee automaattisesti ${ numberOfCountries } maasta"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Palvelimet ${ numberOfCountries }+ maassa",
+        "Palvelimet ${ numberOfCountries }+ maassa"
       ]
     },
     "vpn_2024: renew": {
@@ -9193,6 +9288,9 @@
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Uusi tilauksesi uusitaan automaattisesti ${ cycle } kuukauden kuluttua.",
         "Uusi tilauksesi uusitaan automaattisesti ${ cycle } kuukauden kuluttua."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Tilauksesi uudistuu automaattisesti ${ cycle } kuukauden kuluttua.",
@@ -9271,6 +9369,12 @@
       "Are you sure you want to permanently delete this contact?": [
         "Haluatko varmasti poistaa yhteystiedon pysyvästi?"
       ],
+      "Cannot contain a dot at the beginning": [
+        "Ei voi alkaa pisteellä"
+      ],
+      "Cannot contain a dot at the end": [
+        "Ei voi päättyä pisteeseen"
+      ],
       "Contacts could not be merged": [
         "Yhteystietoja ei voitu yhdistää"
       ],
@@ -9291,6 +9395,9 @@
       ],
       "Name is required": [
         "Nimi vaaditaan"
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Vain aakkosnumeeriset pienet kirjaimet, pisteet, yhdysmerkit ja alaviivat ovat sallittuja"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
