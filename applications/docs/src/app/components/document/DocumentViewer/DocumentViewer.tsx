@@ -40,7 +40,6 @@ import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useAuthentication } from '@proton/components/index'
 import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
@@ -65,9 +64,6 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   const debug = useDebug()
 
   const { removeLocalIDFromUrl } = useDocsUrlBar()
-  useEffectOnce(() => {
-    removeLocalIDFromUrl()
-  })
 
   const [documentState, setDocumentState] = useState<DocumentState | PublicDocumentState | null>(null)
   const [docController, setDocController] = useState<AuthenticatedDocControllerInterface | undefined>(undefined)
