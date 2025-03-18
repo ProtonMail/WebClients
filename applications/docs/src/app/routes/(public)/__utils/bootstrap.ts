@@ -14,6 +14,8 @@ import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathna
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
 import type { DocsState } from '~/redux-store/rootReducer'
+import { getLocalID as _getLocalID } from '@proton/drive-store/utils/url/localid'
+import noop from '@proton/utils/noop'
 
 function getLocalID(token: string | null) {
   if (token) {
@@ -43,12 +45,15 @@ export async function bootstrapPublicApp({ config }: { config: ProtonConfig }) {
   const history = createBrowserHistory()
   const unleashClient = bootstrap.createUnleash({ api: getSilentApi(api) })
   extendStore({ config, api, authentication, history, unleashClient })
+  const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop)
+  await unleashPromise
 
   const searchParams = new URLSearchParams(location.search)
   const token = searchParams.get('token')
   await bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' })
 
-  const localId = getLocalID(token)
+  const shouldUseCachedLocalID = unleashClient.isEnabled('DocsUrlStrippingEnabled')
+  const localId = shouldUseCachedLocalID ? getLocalID(token) : Number(_getLocalID() ?? getLastUsedLocalID())
   const accountSessions = readAccountSessions()
 
   if (localId >= 0 && accountSessions?.some((value) => value.localID === localId)) {
