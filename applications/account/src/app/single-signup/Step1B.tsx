@@ -80,6 +80,7 @@ import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
+import DiscountBanner from '../single-signup-v2/DiscountBanner';
 import { getFreeSubscriptionData, getSubscriptionMapping } from '../single-signup-v2/helper';
 import type { OptimisticOptions } from '../single-signup-v2/interface';
 import { getPaymentMethod } from '../single-signup-v2/measure';
@@ -1152,6 +1153,18 @@ const Step1B = ({
                         })}
                     </div>
                 )}
+                {(() => {
+                    if (!actualCheckout.discountPercent) {
+                        return;
+                    }
+
+                    return (
+                        <DiscountBanner
+                            discountPercent={actualCheckout.discountPercent}
+                            selectedPlanTitle={selectedPlan.Title}
+                        />
+                    );
+                })()}
                 {showCycleAndSelectors && (
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
