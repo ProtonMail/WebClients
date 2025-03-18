@@ -49,6 +49,9 @@
       "Add address or domain": [
         "Afegeix una adreça o domini"
       ],
+      "Add another account": [
+        "Afegeix un altre compte"
+      ],
       "Add credit / debit card": [
         "Afegir targeta de crèdit/dèbit"
       ],
@@ -135,6 +138,12 @@
       ],
       "Close this banner": [
         "Tanca aquest bàner"
+      ],
+      "Compare all plans": [
+        "Compareu tots els plans"
+      ],
+      "Compare plans": [
+        "Compareu els plans"
       ],
       "Configure SAML": [
         "Configura SAML"
@@ -241,6 +250,9 @@
       "Discard changes": [
         "Descarta els canvis"
       ],
+      "Discover ${ planName }": [
+        "Descobriu ${ planName }"
+      ],
       "Dismiss": [
         "Descarta"
       ],
@@ -316,6 +328,12 @@
       "Enable multi-user support": [
         "Activar suport multiusuari"
       ],
+      "Explore ${ PLAN_NAMES[plan] }": [
+        "Descobriu ${ PLAN_NAMES[plan] }"
+      ],
+      "Explore group plans": [
+        "Exploreu els plans de grup"
+      ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explora altres ${ BRAND_NAME } plans"
       ],
@@ -378,6 +396,12 @@
       ],
       "Help": [
         "Ajuda"
+      ],
+      "Help and feedback": [
+        "Ajuda i comentaris"
+      ],
+      "Help and resources": [
+        "Ajuda i recurs"
       ],
       "Hide": [
         "Amaga"
@@ -829,8 +853,15 @@
       "${ price } per domain": [
         "${ price } per domini"
       ],
+      "${ price } per seat": [
+        "${ price } per llicència"
+      ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } llicència ${ LUMO_APP_NAME }",
+        "${ seats } llicències ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } llicència de l'assistent d'escriptura",
@@ -1081,6 +1112,9 @@
       "Unlimited folders, labels and filters": [
         "Nombre il·limitat de carpetes, etiquetes i filtres"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Nombre il·limitat d'inicis de sessió, targetes de crèdit, àlies de hide-my-email i més."
+      ],
       "Use your own email domain": [
         "Utilitzeu el vostre propi domini de correu electrònic"
       ],
@@ -1163,6 +1197,65 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "Blog": {
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Política de no registres de ${ VPN_APP_NAME } VPN confirmada per una auditoria externa."
+      ],
+      "**Streaming** is included in your subscription.": [
+        "L'**estríming** està inclòs a la vostra subscripció."
+      ],
+      "Can someone see my internet history if we use the same WiFi?": [
+        "Algú pot veure el meu historial d'internet si utilitzem el mateix wifi?"
+      ],
+      "Enable kill switch and auto-connect in your VPN settings.": [
+        "Activeu el kill switch i la connexió automàtica a les preferències de la VPN."
+      ],
+      "Get round-the-clock protection": [
+        "Obteniu protecció durant les 24 hores del dia"
+      ],
+      "How safe is Telegram?": [
+        "Què tan segur és Telegram?"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "En aquest article, analitzem qui pot veure el vostre historial d'internet quan utilitzeu WiFi, què poden veure i per què podrien fer-ho."
+      ],
+      "Increase VPN speeds by up to 400% with VPN Accelerator": [
+        "Augmenteu les velocitats de VPN fins a un 400% amb el VPN Accelerator"
+      ],
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Experts independents en seguretat han verificat que ${ VPN_APP_NAME } no registra dades d'usuaris ni participa en pràctiques que puguin comprometre la vostra privadesa."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "És segur utilitzar Telegram? Com discutirem en aquest article, depèn molt de com el feu servir."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "Obteniu informació sobre com activar ${ VPN_APP_NAME } al vostre rúter."
+      ],
+      "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
+        "Protegiu la vostra empresa de les filtracions de dades i feu que el teletreball sigui més segur amb una VPN empresarial."
+      ],
+      "Protect your whole household with 1 device": [
+        "Protegiu tota la vostra casa amb 1 dispositiu"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
+        "Aprofiteu totes les principals plataformes d'estríming amb ${ PLAN_NAMES[PLANS.VPN] }."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Aquest article s'ha actualitzat per incloure els protocols VPN WireGuard i Stealth."
+      ],
+      "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
+        "VPN Accelerator utilitza una combinació de tecnologies avançades de VPN per millorar l'estabilitat de la connexió i augmentar la velocitat de la connexió."
+      ],
+      "Watch your favorite movies and TV shows": [
+        "Mireu les vostres pel·lícules i programes de televisió preferits"
+      ],
+      "Which VPN protocol is the best?": [
+        "Quin protocol VPN és el millor?"
+      ],
+      "Working with sensitive data?": [
+        "Treballeu amb dades sensibles?"
       ]
     },
     "Browser": {
@@ -2269,6 +2362,31 @@
         "Més informació"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Per a tots els serveis de ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Per a ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Per a ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Per a ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Per a ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mes"
@@ -2487,17 +2605,59 @@
       "Desktop": [
         "Escriptori"
       ],
+      "Download for Linux": [
+        "Descarrega per a Linux"
+      ],
+      "Download for MacOS": [
+        "Descarrega per a macOS"
+      ],
+      "Download for Windows": [
+        "Descarrega per a Windows"
+      ],
+      "Download on the Apple App Store": [
+        "Descarrega a l'App Store d'Apple"
+      ],
+      "Download on the Google Play Store": [
+        "Descarrega a Google Play Store"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
       "Firefox": [
         "Firefox"
       ],
+      "Get the app": [
+        "Aconseguiu l'aplicació"
+      ],
+      "Get the extension": [
+        "Obteniu l'extensió"
+      ],
+      "Installation guide": [
+        "Guia d'instal·lació"
+      ],
+      "iPhone/iPad": [
+        "iPhone/iPad"
+      ],
       "Linux": [
         "Linux"
       ],
       "macOS": [
         "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave o anterior"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura o posterior"
       ],
       "Mobile": [
         "Mòbil"
@@ -2507,6 +2667,15 @@
       ],
       "Windows": [
         "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10/11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10/11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8/8.1/7 o Windows 32-bit (ARM64)"
       ]
     },
     "driveplus2024: Deal details": {
@@ -2612,6 +2781,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
+      ],
+      "Error publishing changes.": [
+        "S'ha produït un error en publicar els canvis."
       ],
       "Failed to process the logo": [
         "No s'ha pogut processar el logo"
@@ -3217,6 +3389,9 @@
       "Continue": [
         "Continua"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Tot a ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "Els servidors VPN més ràpids"
       ],
@@ -3237,8 +3412,25 @@
       ]
     },
     "Features": {
+      "and more premium features...": [
+        "i més característiques premium..."
+      ],
       "Double VPN": [
         "VPN doble"
+      ],
+      "Lightning-fast speeds": [
+        "Velocitats ultraràpides"
+      ],
+      "NetShield Ad-blocker": [
+        "Bloquejador d'anuncis NetShield"
+      ],
+      "Secure streaming": [
+        "Estríming segur"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
       ]
     },
     "fido2: Action": {
@@ -3596,8 +3788,23 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "Compareu els plans"
+      ],
       "Contact us": [
         "Contacteu amb nosaltres"
+      ],
+      "Enjoying ${ planName }?": [
+        "Gaudint ${ planName }?"
+      ],
+      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+        "Desbloquegeu 4 serveis de privadesa prèmium més per només **${ priceString }** més al mes."
+      ],
+      "Upgrade your privacy": [
+        "Milloreu la vostra privacitat"
+      ],
+      "You currently pay": [
+        "Actualment pagueu"
       ],
       "Your plan": [
         "El vostre pla"
@@ -3670,6 +3877,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la segona contrasenya. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
       ],
@@ -3700,6 +3910,13 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } caduca en ${ daysLeft } dia.",
+        "${ planName } caduca en ${ daysLeft } dies."
+      ],
+      "${ planName } expires today.": [
+        "${ planName } caduca avui."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
@@ -3945,6 +4162,9 @@
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendari integrat amb ${ MAIL_APP_NAME } i ${ CONTACTS_APP_NAME }"
+      ],
       "Can’t access your recovery email?": [
         "No podeu accedir al vostre correu de recuperació?"
       ],
@@ -3959,6 +4179,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Emmagatzematge al núvol integrat amb ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premi Editors' Choice de CNET amb una puntuació de 8,4 sobre 10"
@@ -4015,6 +4238,9 @@
       "Create your first Gateway": [
         "Creeu la vostra primera passarel·la"
       ],
+      "Created (not published)": [
+        "Creat (no publicat)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "S'està creant un servidor de passarel·la: ${ serverNumber } / ${ total }",
         "S'estan creant servidors de passarel·la: ${ serverNumber } / ${ total }"
@@ -4058,9 +4284,15 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
       ],
+      "Deleted (not published)": [
+        "Eliminat (no publicat)"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "S'està eliminant ${ deletedServerCount } servidor de passarel·la",
         "S'estan eliminant ${ deletedServerCount } servidors de passarel·la"
+      ],
+      "Did you know?": [
+        "Ho sabíeu?"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Desactivació el ${ formattedDateAndTime }"
@@ -4102,6 +4334,12 @@
         "domini utilitzat",
         "dominis utilitzats"
       ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "No perdeu l'accés a les funcions prèmium de ${ appName }. Activeu la renovació automàtica avui mateix."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "No perdeu l'accés a les funcions prèmium. Activeu la renovació automàtica avui mateix."
+      ],
       "Done! We sent a code to ${ destination }.": [
         "Fet! Hem enviat un codi a ${ destination }."
       ],
@@ -4138,6 +4376,9 @@
       "Edit email address": [
         "Edita l'adreça de correu"
       ],
+      "Edited (not published)": [
+        "Editat (no publicat)"
+      ],
       "eduGAIN configuration saved": [
         "S'ha desat la configuració d'EduGain."
       ],
@@ -4147,11 +4388,20 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
       ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Servei de correu electrònic integrat amb ${ CALENDAR_APP_NAME } i ${ CONTACTS_APP_NAME }"
+      ],
       "Emailing preference saved": [
         "Preferència de correu desada"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Els correus electrònics moguts a la paperera i el correu brossa fa més de 30 dies se suprimiran automàticament."
+      ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Activeu la renovació automàtica per mantenir l'accés als servidors i funcions Plus."
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Activeu la renovació automàtica per mantenir l'accés a les característiques prèmium."
       ],
       "Enable single sign-on to keep your organization safe": [
         "Habiliteu l'inici de sessió únic per a mantenir segura la vostra organització"
@@ -4498,6 +4748,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assegureu-vos d'${ addARecoveryMethod } perquè pugueu tornar al vostre compte si oblideu la contrasenya."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Gestioneu a quines aplicacions ${ BRAND_NAME } poden accedir els membres de la teva organització. Si està desactivat, només els administradors tindran accés."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Introduïu manualment aquesta informació al vostre dispositiu d'autenticació de doble factor per a configurar el compte. ${ switchButton }."
       ],
@@ -4542,6 +4795,9 @@
       ],
       "New VPN connection data will stop being collected and shown.": [
         "Les noves dades de connexió VPN deixaran de ser recopilades i mostrades."
+      ],
+      "Next billing date": [
+        "Propera data de facturació"
       ],
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
@@ -4605,6 +4861,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organitzeu els vostres servidors dedicats en Passarel·les i decidiu quins membres hi poden accedir."
       ],
+      "Other accounts": [
+        "Altres comptes"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
       ],
@@ -4623,6 +4882,9 @@
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls"
       ],
+      "Password manager with extra account security": [
+        "Gestor de contrasenyes amb seguretat addicional del compte"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters."
       ],
@@ -4631,6 +4893,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "Premi Editors' Choice de PC Magazine amb una puntuació de 5 sobre 5 estrelles"
+      ],
+      "Pending removal": [
+        "L'eliminació està pendent."
       ],
       "per month": [
         "al mes"
@@ -4802,6 +5067,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Seleccioneu les afiliacions dels usuaris de ${ getFormattedOrganization } que voleu permetre a la vostra organització ${ BRAND_NAME }:"
+      ],
+      "Self-custodial crypto wallet": [
+        "Cartera de criptomonedes autogestionada"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envieu correus electrònics per animar els vostres membres a protegir els seus comptes amb l'A2F."
@@ -5204,6 +5472,9 @@
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN amb adreces IP i servidors dedicats"
+      ],
       "Warning:": [
         "Atenció:"
       ],
@@ -5346,6 +5617,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Podeu editar-ho una vegada per a assegurar-vos que l'adreça de correu electrònic utilitzada per a la verificació és correcta."
       ],
+      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Podeu obtenir tots els nostres serveis de privadesa prèmium en un sol paquet—i només costa **${ priceString }/mes**."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
@@ -5394,6 +5668,9 @@
       ],
       "You have no transactions.": [
         "No teniu cap transacció."
+      ],
+      "You have unpublished changes": [
+        "Teniu canvis sense publicar."
       ],
       "You may be redirected to your bank’s website.": [
         "És possible que se us redirigeixi al lloc web del vostre banc."
@@ -6470,6 +6747,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Complement amb prova gratuïta"
+      ],
       "for ${ price }": [
         "per ${ price }"
       ],
@@ -6781,6 +7061,9 @@
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
+      "${ size } storage per user": [
+        "${ size } d'emmagatzematge per usuari"
+      ],
       "1 TB secure storage": [
         "1 TB d'emmagatzematge segur"
       ],
@@ -6977,6 +7260,9 @@
       "Limited support": [
         "Suport limitat"
       ],
+      "Manage user permissions and access": [
+        "Gestiona els permisos i l'accés dels usuaris"
+      ],
       "Multiple admin roles": [
         "Múltiples rols d'administració"
       ],
@@ -6997,6 +7283,9 @@
       ],
       "Password manager": [
         "Gestor de contrasenyes"
+      ],
+      "Password manager to secure credentials": [
+        "Gestor de contrasenyes per a assegurar les credencials"
       ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
@@ -7269,6 +7558,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "El nostre pla ${ visionary } ja no està disponible per als nous subscriptors, ja que és un pla especial per als usuaris originals de ${ BRAND_NAME } amb característiques i beneficis especials."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Pagueu una vegada i protegiu les vostres contrasenyes i identitat per sempre."
       ],
       "Popular": [
         "Popular"
@@ -8048,6 +8340,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
+      ],
+      "Secure vault, item and link sharing": [
+        "Compartició segura de caixes fortes, elements i enllaços"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit i més"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8461,9 +8759,36 @@
         "Membres"
       ]
     },
+    "Plan card": {
+      "Encrypted cloud storage for photos and files": [
+        "Emmagatzematge xifrat al núvol per a fotos i fitxers"
+      ],
+      "Password manager with identity protection": [
+        "Gestor de contrasenyes amb protecció d'identitat"
+      ],
+      "Secure email that protects your privacy": [
+        "Correu electrònic segur que protegeix la vostra privacitat"
+      ],
+      "Your gateway to online freedom": [
+        "La vostra porta d'entrada a la llibertat en línia"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "contacte"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } mes",
+        "${ cycle } mesos"
+      ],
+      "${ months } month plan": [
+        "Pla d'${ months } mes",
+        "Pla de ${ months } mesos"
+      ],
+      "Enjoying ${ planName }?": [
+        "Gaudint ${ planName }?"
       ]
     },
     "Price": {
@@ -9697,6 +10022,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN d'alta velocitat en ${ maxVpn } dispositiu",
         "VPN d'alta velocitat en ${ maxVpn } dispositius"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Connexió VPN per a ${ n } dispositiu per usuari",
+        "Connexió VPN per a ${ n } dispositius per usuari"
       ]
     },
     "Subscription change warning": {
@@ -9735,6 +10064,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription reminder": {
@@ -10027,47 +10397,6 @@
         "El vostre propi àlies de correu electrònic curt @pm.me"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "N'esteu segur?"
@@ -10130,6 +10459,9 @@
       ],
       "Catch-all address updated": [
         "S'ha actualitzat l'adreça d'arreplega"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "S'han publicat els canvis. Les vostres modificacions seran visibles per a tots els usuaris en les pròximes hores."
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
@@ -10445,6 +10777,9 @@
       "4. Select a server to connect to": [
         "4. Seleccioneu un servidor al qual us voleu connectar"
       ],
+      "Access control": [
+        "Control d'accés"
+      ],
       "Account": [
         "Compte"
       ],
@@ -10514,6 +10849,9 @@
       ],
       "Allocate storage": [
         "Assignar espai"
+      ],
+      "Also in your plan": [
+        "També al vostre pla"
       ],
       "Amount": [
         "Quantitat"
@@ -10608,6 +10946,9 @@
       "Connect organization": [
         "Connecta l'organització"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
+        "Connecteu fins a ${ VPN_CONNECTIONS } dispositius al mateix temps amb ${ vpnPlus }. ${ upgradeButton }"
+      ],
       "Contact us": [
         "Contacteu amb nosaltres"
       ],
@@ -10665,6 +11006,9 @@
       ],
       "Day theme": [
         "Tema de dia"
+      ],
+      "Deep dive into VPN blog posts": [
+        "Anàlisi en profunditat de les nostres publicacions de blog VPN"
       ],
       "Delete": [
         "Elimina"
@@ -10827,6 +11171,15 @@
       "Get ${ vpnPlus } to access all servers": [
         "Obteniu ${ vpnPlus } per accedir a tots els servidors"
       ],
+      "Get complete privacy coverage": [
+        "Obteniu una cobertura de privadesa completa"
+      ],
+      "Get more from your VPN": [
+        "Obteniu més de la vostra VPN"
+      ],
+      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
+        "Obteniu l'aplicació a tots els vostres dispositius i protegiu fins a ${ VPN_CONNECTIONS } al mateix temps."
+      ],
       "Gift": [
         "Regal"
       ],
@@ -10835,6 +11188,9 @@
       ],
       "Groups": [
         "Grups"
+      ],
+      "Help and feedback": [
+        "Ajuda i comentaris"
       ],
       "Help center": [
         "Centre d'ajuda"
@@ -11085,6 +11441,9 @@
       ],
       "Upgrade your network protection with dedicated servers": [
         "Milloreu la vostra protecció de xarxa amb servidors dedicats"
+      ],
+      "Upgrade your privacy": [
+        "Milloreu la vostra privacitat"
       ],
       "Upload CSV file to create multiple accounts": [
         "Carregueu un fitxer CSV per a crear múltiples comptes"
@@ -11472,12 +11831,38 @@
         "Per a continuar, haureu de sol·licitar el permís de l'usuari per a accedir a les seves dades o restablir la seva contrasenya."
       ]
     },
+    "Upsell": {
+      "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
+        "**Estalvieu fins a ${ priceString }** amb una subscripció més llarga. Mateixes funcionalitats prèmium per un preu més baix."
+      ],
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Tots els serveis prèmium de ${ BRAND_NAME } amb una subscripció senzilla."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Tots els serveis prèmium de ${ BRAND_NAME }. Des de només ${ fallBackString } al mes."
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "Tots els serveis prèmium de ${ BRAND_NAME }. Només **${ priceString }** més al mes."
+      ],
+      "Did you know?": [
+        "Ho sabíeu?"
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
+        "Podeu protegir fins a ${ FAMILY_MAX_USERS } persones amb ${ PLAN_NAMES[plan] }. A partir de només ${ priceString }/mes per compte."
+      ],
+      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
+        "Podeu protegir fins a ${ FAMILY_MAX_USERS } persones amb ${ PLAN_NAMES[PLANS.DUO] } o ${ PLAN_NAMES[PLANS.FAMILY] }. A partir de només ${ priceString }/mes per compte."
+      ]
+    },
     "upsell panel": {
       "Best deal": [
         "Millor oferta"
       ],
       "Recommended": [
         "Recomanat"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Estalvieu el ${ totals.discountPercentage }%"
       ]
     },
     "User role": {
@@ -11612,6 +11997,26 @@
         "Altre"
       ]
     },
+    "VPN Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Comuniqueu-vos i planifiqueu amb xifratge d’extrem a extrem."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Obteniu més de la vostra subscripció a ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Manteniu els vostres arxius, fotos i documents segurs amb ${ maxDriveSpace } d'emmagatzematge al núvol gratuït."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Establiu contrasenyes segures sense complicacions"
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Amb ${ planTitlePlusMaybeBrand }, obteniu accés gratuït a ${ VPN_APP_NAME } i els altres serveis de privadesa."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Amb ${ planTitlePlusMaybeBrand }, obteniu accés gratuït a tots els serveis de privadesa de ${ BRAND_NAME }."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i més."
@@ -11641,6 +12046,14 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } a ${ numberOfCountries } país",
         "${ numberOfServers } a ${ numberOfCountries } països"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Seleccionat automàticament des d'${ numberOfCountries } país",
+        "Seleccionat automàticament des de ${ numberOfCountries } països"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servidors en més d'${ numberOfCountries } país",
+        "Servidors en més de ${ numberOfCountries } països"
       ]
     },
     "vpn_2024: renew": {
