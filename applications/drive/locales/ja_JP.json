@@ -54,6 +54,9 @@
       "Add address": [
         "アドレスを追加"
       ],
+      "Add another account": [
+        "別のアカウントを追加する"
+      ],
       "Add birthday": [
         "誕生日を追加"
       ],
@@ -83,6 +86,9 @@
       ],
       "Add photos": [
         "写真を追加"
+      ],
+      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
+        "「${ album.name }」に追加（${ album.photoCount } 枚の写真）"
       ],
       "Add to album": [
         "アルバムに追加"
@@ -455,6 +461,12 @@
       ],
       "Help": [
         "ヘルプ"
+      ],
+      "Help and feedback": [
+        "ヘルプとフィードバック"
+      ],
+      "Help and resources": [
+        "ヘルプとリソース"
       ],
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
@@ -1277,8 +1289,14 @@
       "Annually": [
         "1年払い"
       ],
+      "Lifetime": [
+        "一生涯"
+      ],
       "Monthly": [
         "月額"
+      ],
+      "New!": [
+        "New!"
       ],
       "Two-year": [
         "2年払い"
@@ -2442,6 +2460,31 @@
       ],
       "Åland Islands": [
         "オーランド諸島"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "すべての ${ BRAND_NAME } サービス向け"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } 向け"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } 向け"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 向け"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } 向け"
       ]
     },
     "Cycle": {
@@ -4907,6 +4950,9 @@
       "Organization size": [
         "組織の規模"
       ],
+      "Other accounts": [
+        "その他のアカウント"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "当社のアラートは安全性を優先しています。侵害された情報を認識できない場合は、このレポートを無視してください。"
       ],
@@ -6597,6 +6643,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
       ],
+      "Add-on with free trial": [
+        "無料トライアル付きアドオン"
+      ],
       "for ${ price }": [
         "${ price } の場合"
       ]
@@ -6997,6 +7046,9 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
+      "${ size } storage per user": [
+        "ユーザーあたり ${ size }のストレージ"
+      ],
       "1 TB secure storage": [
         "1 TBの安全なストレージ"
       ],
@@ -7174,6 +7226,9 @@
       "Limited support": [
         "限定的なサポート"
       ],
+      "Manage user permissions and access": [
+        "ユーザー権限とアクセス権限の管理"
+      ],
       "Multiple admin roles": [
         "複数の管理者役職"
       ],
@@ -7191,6 +7246,9 @@
       ],
       "Password manager": [
         "パスワードマネージャー"
+      ],
+      "Password manager to secure credentials": [
+        "認証情報を保護するためのパスワードマネージャー"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -7430,6 +7488,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "${ visionary } プランは、特別な機能と特典を備えた元の ${ BRAND_NAME } ユーザー向けの特別プランであるため、新規加入者は利用できなくなりました。"
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "一度だけの支払いで、パスワードとアイデンティティを永遠に保護します。"
       ],
       "Popular": [
         "人気"
@@ -8321,6 +8382,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全な保管庫共有"
+      ],
+      "Secure vault, item and link sharing": [
+        "安全な保管庫、アイテム、リンク共有"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "無制限のログイン、メモ、クレジットカードなど"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9332,6 +9399,9 @@
       ],
       "${ n } VPN connection per user": [
         "1 ユーザーあたり ${ n } 件の VPN 接続"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "ユーザーごとに ${ n } 台のデバイスへのVPN接続"
       ]
     },
     "Subscription change warning": {
@@ -10067,9 +10137,6 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } ボーナスの損失を確認"
       ],
-      "Confirmation required?": [
-        "確認が必要ですか？"
-      ],
       "Contact Details": [
         "連絡先の詳細"
       ],
@@ -10246,6 +10313,9 @@
       ],
       "Groups": [
         "グループ"
+      ],
+      "Help and feedback": [
+        "ヘルプとフィードバック"
       ],
       "Help center": [
         "ヘルプセンター"
@@ -10746,6 +10816,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries }ヶ国から自動選択"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }ヶ国以上にあるサーバー"
       ]
     },
     "vpn_2024: renew": {
