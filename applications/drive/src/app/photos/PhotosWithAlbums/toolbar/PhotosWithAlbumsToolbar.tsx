@@ -75,6 +75,8 @@ const AlbumGalleryDropdownButton = ({ onDelete, onShowDetails, onLeave, isOwner 
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
+                    {/*
+                    TODO: Missing 2 actions
                     <DropdownMenuButton className="text-left flex items-center flex-nowrap">
                         <Icon className="mr-2" name="window-image" />
                         {c('Action').t`Set album cover`}
@@ -83,6 +85,7 @@ const AlbumGalleryDropdownButton = ({ onDelete, onShowDetails, onLeave, isOwner 
                         <Icon className="mr-2" name="pencil" />
                         {c('Action').t`Edit album`}
                     </DropdownMenuButton>
+                    */}
                     <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onShowDetails}>
                         <Icon className="mr-2" name="info-circle" />
                         {c('Action').t`Details`}
