@@ -67,7 +67,7 @@ export const AutofillIdentity: FC<Props> = ({ domain }) => {
                       state.needsUpgrade && (
                           <ListItem
                               key={'upgrade-autofill'}
-                              icon="arrow-out-square"
+                              icon="arrow-within-square"
                               title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
                               subTitle={c('Warning')
                                   .t`Your plan only allows you to autofill from your first two vaults`}

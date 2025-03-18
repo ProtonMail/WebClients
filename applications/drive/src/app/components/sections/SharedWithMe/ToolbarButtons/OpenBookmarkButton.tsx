@@ -22,7 +22,7 @@ export const OpenBookmarkButton = ({ selectedBrowserItems }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Open`}
-            icon={<Icon name="arrow-out-square" alt={c('Action').t`Open`} />}
+            icon={<Icon name="arrow-within-square" alt={c('Action').t`Open`} />}
             onClick={() =>
                 openBookmark({
                     token: bookmarkDetails.token,
