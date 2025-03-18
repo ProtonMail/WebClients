@@ -44,6 +44,9 @@
       "Add phone number": [
         "Dodajte telefonski broj"
       ],
+      "Add public holidays": [
+        "Dodaj javne praznike"
+      ],
       "Add to group": [
         "Dodaj u grupu"
       ],
@@ -154,6 +157,9 @@
       ],
       "Customize import": [
         "Prilagodi uvoz"
+      ],
+      "Decline invite": [
+        "Odbij pozivnicu"
       ],
       "Decrease": [
         "Smanji"
@@ -270,6 +276,9 @@
       "Import emails": [
         "Uvoz e-pošte"
       ],
+      "Import events": [
+        "Uvezi događaje"
+      ],
       "Import from .csv or vCard": [
         "Uvezite iz .csv ili vCard"
       ],
@@ -308,6 +317,9 @@
       ],
       "Manage labels": [
         "Upravljanje oznakama"
+      ],
+      "Mark as resolved": [
+        "Označi kao riješeno"
       ],
       "Mark for deletion": [
         "Označi za brisanje"
@@ -372,6 +384,9 @@
       "Open navigation": [
         "Otvori navigaciju"
       ],
+      "Pause indexing": [
+        "Pauziraj indeksiranje"
+      ],
       "Pay": [
         "Plati"
       ],
@@ -432,6 +447,9 @@
       "Report a problem": [
         "Prijavi problem"
       ],
+      "Request a call": [
+        "Zatraži poziv"
+      ],
       "Request a feature": [
         "Zatraži značajku"
       ],
@@ -444,6 +462,9 @@
       "Reset to default": [
         "Vrati na zadane postavke"
       ],
+      "Resume indexing": [
+        "Nastavi indeksiranje"
+      ],
       "Retry": [
         "Pokušaj ponovno"
       ],
@@ -452,6 +473,9 @@
       ],
       "Search": [
         "Pretraga"
+      ],
+      "Search countries": [
+        "Pretraži države"
       ],
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
@@ -592,6 +616,22 @@
     "action": {
       "Search messages": [
         "Pretraži poruke"
+      ]
+    },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Bilo tko s poveznicom može vidjeti Vaš kalendar"
+      ],
+      "They can view or edit your calendar": [
+        "Mogu vidjeti ili uređivati Vaš kalendar"
+      ]
+    },
+    "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Dijeli s ${ BRAND_NAME } korisnicima"
+      ],
+      "Share with anyone": [
+        "Dijeljeno s bilo kime"
       ]
     },
     "Actions message": {
@@ -901,6 +941,14 @@
         "Problem s pristupom web stanici"
       ]
     },
+    "Button": {
+      "Continue using ${ planTitle }": [
+        "Nastavi koristiti ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Nastavi svoju pretplatu"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Prisustvujete?"
@@ -937,7 +985,26 @@
         "Dozvole"
       ]
     },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Već imate pristup ovom kalendaru"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Upravljanje poveznicama"
+      ],
+      "Manage members": [
+        "Upravljanje članovima"
+      ],
+      "Unable to create more calendar links": [
+        "Nije moguće stvoriti više poveznica kalendara"
+      ]
+    },
     "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        "Dodaj kalendar iz URL-a"
+      ],
       "More options": [
         "Više opcija"
       ]
@@ -948,6 +1015,20 @@
       ],
       "Syncing": [
         "Sinkronizacija"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is too big": [
+        "Kalendar je prevelik"
+      ],
+      "Failed to sync calendar": [
+        "Sinkronizacija kalendara nije uspjela"
+      ],
+      "More than 12 hours passed since last update": [
+        "Od zadnjeg ažuriranja proteklo je više od 12 sati"
+      ],
+      "Unsupported calendar format": [
+        "Nepodržani format kalendara"
       ]
     },
     "Calendar view": {
@@ -1051,6 +1132,32 @@
       ],
       "strawberry": [
         "jagoda"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Dnevni prikaz"
+      ],
+      "Month view": [
+        "Mjesečni prikaz"
+      ],
+      "New event": [
+        "Novi događaj"
+      ],
+      "Next period": [
+        "Sljedeće razdoblje"
+      ],
+      "Previous period": [
+        "Prethodno razdoblje"
+      ],
+      "Search events": [
+        "Traži događaje"
+      ],
+      "Today": [
+        "Danas"
+      ],
+      "Week view": [
+        "Tjedni prikaz"
       ]
     },
     "Confirm modal title": {
@@ -1922,6 +2029,18 @@
         "Ålandski otoci"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Temeljeno na Vašoj vremenskoj zoni"
+      ]
+    },
+    "Custom frequency option": {
+      "event": [
+        "događaj",
+        "događaja",
+        "događaja"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mjesec"
@@ -2014,6 +2133,9 @@
       ]
     },
     "Description": {
+      "Availability unknown": [
+        "Dostupnost nije poznata"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje kontakata… Ovo može potrajati nekoliko minuta. Nakon dovršetka možete preuzeti datoteku koja sadrži vaše sve kontakte."
       ],
@@ -2022,6 +2144,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Popis kontakata koji uvozite sadrži neke grupe. Pregledajte kako bi ove grupe trebalo uvesti."
+      ],
+      "Loading availability": [
+        "Učitavanje dostupnosti"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Spajanje kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
@@ -2111,16 +2236,32 @@
         "Neki od kontakata nemaju važeću adresu e-pošte: ${ list }",
         "Neki od kontakata nemaju važeću adresu e-pošte: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } nema adresu e-pošte",
+        "Neki kontakti nemaju adresu e-pošte: ${ list }",
+        "Neki kontakti nemaju adresu e-pošte: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } ima nevažeće adrese e-pošte",
         "Neke od grupa imaju nevažeće adrese e-pošte: ${ list }",
         "Neke od grupa imaju nevažeće adrese e-pošte: ${ list }"
       ],
+      "${ list } has no contacts": [
+        "${ list } nema kontakata",
+        "Neke grupe nemaju kontakata: ${ list }",
+        "Neke grupe nemaju kontakata: ${ list }"
+      ],
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
       ],
+      "Account does not exist": [
+        "Račun ne postoji"
+      ],
       "Address primary private key not found": [
         "Primarni privatni ključ adrese nije pronađen"
+      ],
+      "Already a member of this calendar": [
+        "Već je član ovog kalendara"
       ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
@@ -2178,6 +2319,9 @@
       ],
       "Event not found": [
         "Događaj nije pronađen"
+      ],
+      "Failed to create meeting": [
+        "Stvaranje sastanka nije uspjelo"
       ],
       "Failed to get event": [
         "Neuspješno dohvaćanje događaja"
@@ -2239,6 +2383,9 @@
       "Name required": [
         "Naziv je obavezan"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "Nije ${ BRAND_NAME } račun"
+      ],
       "Not a valid number": [
         "Broj telefona nije važeći"
       ],
@@ -2275,6 +2422,11 @@
       ],
       "Process aborted": [
         "Proces je prekinut"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Uklonjen duplicirani primatelj: ${ joinedRecipients }",
+        "Uklonjeni duplicirani primatelji: ${ joinedRecipients }",
+        "Uklonjeni duplicirani primatelji: ${ joinedRecipients }"
       ],
       "Self invitation not allowed": [
         "Nije dopušteno pozivanje samog sebe"
@@ -2357,6 +2509,9 @@
       "Validation error": [
         "Pogreška provjere valjanosti"
       ],
+      "You already added this holidays calendar": [
+        "Već ste dodali ovaj kalendar praznika"
+      ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste maksimalan broj kalendara."
       ],
@@ -2365,6 +2520,16 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Pozvana adresa ne postoji"
+      ]
+    },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Greška kod promjene odgovora"
       ]
     },
     "Error importing calendar": {
@@ -2482,6 +2647,9 @@
       ]
     },
     "esCalendar": {
+      "No result": [
+        "Nema rezultata"
+      ],
       "Results": [
         "Rezultati"
       ]
@@ -2688,6 +2856,9 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Repeat event": [
+        "Ponavljaj događaj"
       ],
       "Search": [
         "Pretraga"
@@ -2973,6 +3144,9 @@
       "Are you sure you want to discard your import?": [
         "Jeste li sigurni da želite odbaciti vaš uvoz?"
       ],
+      "Based on your time zone": [
+        "Temeljeno na Vašoj vremenskoj zoni"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Prelaskom na Free plan, trajno ćete izgubiti ove prednosti, čak i ako nadogradite plan opet u budućnosti."
       ],
@@ -3026,6 +3200,11 @@
       ],
       "Daily": [
         "Dnevno"
+      ],
+      "Deleting event...": [
+        "Brisanje događaja...",
+        "Brisanje događaja...",
+        "Brisanje događaja..."
       ],
       "Discard changes?": [
         "Odbaci promjene?"
@@ -3128,8 +3307,17 @@
       "Labels:": [
         "Oznake:"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Saznajte kako ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Saznajte više"
+      ],
+      "Link copied to clipboard": [
+        "Poveznica kopirana u međuspremnik"
+      ],
+      "Link created": [
+        "Poveznica je stvorena"
       ],
       "Loading": [
         "Učitavanje"
@@ -3227,6 +3415,11 @@
       "Removed participants will be notified.": [
         "Uklonjeni sudionici bit će obaviješteni."
       ],
+      "Saving event...": [
+        "Spremanje događaja...",
+        "Spremanje događaja...",
+        "Spremanje događaja..."
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
       ],
@@ -3314,6 +3507,9 @@
       "Week": [
         "Tjedan"
       ],
+      "Week and month views only apply to desktop.": [
+        "Tjedni i mjesečni prikazi primjenjuju se samo na radnu površinu."
+      ],
       "Which event would you like to delete?": [
         "Koji događaj želite ukloniti?"
       ],
@@ -3350,6 +3546,9 @@
       "You already have a free account": [
         "Već imate besplatan račun"
       ],
+      "You already joined this calendar": [
+        "Već ste se pridružili ovom kalendaru"
+      ],
       "You are about to open another browser tab and visit:": [
         "Otvoriti će te još jednu karticu preglednika i posjetiti:"
       ],
@@ -3367,6 +3566,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom. Ukoliko nemate navedeno na vašem PayPal računu, molimo vas kliknite na dugme ispod."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Prethodno ste odbili ovu pozivnicu. Pitajte vlasnika da Vas ponovno pozove"
       ],
       "You will lose all unsaved changes.": [
         "Izgubit ćete sve nespremljene promjene."
@@ -3404,6 +3606,9 @@
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
       ],
+      "Your events will be encrypted and then saved.": [
+        "Vaši događaji će biti šifrirani i spremljeni."
+      ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke će biti šifrirane i spremljene"
       ],
@@ -3415,6 +3620,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Vremenska zona vašeg sustava promijenjena je u ${ timezone }. Želite li ažurirati svoje postavke vremenske zone?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Možete promijeniti pojam pretraživanja ili zatvoriti tražilicu i vratiti se na prikaz kalendara"
       ]
     },
     "Info message": {
@@ -3437,6 +3647,11 @@
         "${ selectedFoldersCount } oznaka odabrana",
         "${ selectedFoldersCount } oznake odabrane",
         "${ selectedFoldersCount } oznaka odabrano"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Samo za prikaz"
       ]
     },
     "Input placeholder": {
@@ -3465,13 +3680,48 @@
       ]
     },
     "Keyboard shortcut name": {
+      "Create new event": [
+        "Stvori novi događaj"
+      ],
+      "Day view": [
+        "Dnevni prikaz"
+      ],
+      "Month view": [
+        "Mjesečni prikaz"
+      ],
+      "Next period": [
+        "Sljedeće razdoblje"
+      ],
+      "Open quick actions menu": [
+        "Otvori izbornik brzih radnji"
+      ],
       "Open this modal": [
         "Otvori ovaj modal"
+      ],
+      "Previous period": [
+        "Prethodno razdoblje"
+      ],
+      "Search events": [
+        "Traži događaje"
+      ],
+      "Today": [
+        "Danas"
+      ],
+      "Week view": [
+        "Tjedni prikaz"
       ]
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Osnovne radnje"
+      ],
+      "View options": [
+        "Opcije prikaza"
+      ]
+    },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Evo kako"
       ]
     },
     "Label": {
@@ -3963,6 +4213,9 @@
       "Cancel": [
         "Poništi"
       ],
+      "Manage calendars": [
+        "Upravljanje kalendarima"
+      ],
       "Upgrade": [
         "Nadogradi"
       ]
@@ -3970,11 +4223,23 @@
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
         "Pridružite se kalendaru"
+      ],
+      "Unable to join more calendars": [
+        "Nije moguće pridružiti se dodatnim kalendarima"
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "Dodaj javne praznike"
+      ],
+      "Cannot add more calendars": [
+        "Nije moguće dodati više kalendara"
+      ],
       "Edit calendar": [
         "Uredi kalendar"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "Dodajte službene državne kalendare javnih praznika."
       ],
       "Share calendar": [
         "Podijeli kalendar"
@@ -4340,8 +4605,21 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "Dodavanje kalendara praznika nije uspjelo"
+      ],
+      "Calendar added": [
+        "Kalendar je dodan"
+      ],
       "Calendar updated": [
         "Kalendar je ažuriran"
+      ]
+    },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Član dodan",
+        "Članovi dodani",
+        "Članovi dodani"
       ]
     },
     "Notification suffix": {
@@ -4374,7 +4652,7 @@
       "hour before": [
         "sat prije",
         "sata prije",
-        "sata prije"
+        "sati prije"
       ],
       "minute before": [
         "minuta prije",
@@ -4527,6 +4805,9 @@
       "Custom": [
         "Prilagođeno"
       ],
+      "Custom...": [
+        "Prilagođeno..."
+      ],
       "Day": [
         "Dan",
         "Dana",
@@ -4577,6 +4858,11 @@
     "Participant name": {
       "You": [
         "Vi"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Sigurno dijeljenje trezora"
       ]
     },
     "passwordless": {
@@ -4663,6 +4949,9 @@
       ],
       "Image URL": [
         "URL slike"
+      ],
+      "Indexing...": [
+        "Indeksiranje..."
       ],
       "Last name": [
         "Prezime"
@@ -4772,11 +5061,37 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Svi pseudonimi"
+      ],
       "Create alias": [
         "Stvori pseudonim"
       ],
+      "Create an alias": [
+        "Stvori pseudonim"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email pseudonimi"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email pseudonimi omogućuju Vam registraciju na mrežnim servisima bez dijeljenja Vaše adrese e-pošte. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Novi pseudonim"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "Otvori ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Zaštitite svoj mrežni identitet"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Isprobajte ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otvorit će ${ PASS_APP_NAME })"
       ]
     },
     "Select files": {
@@ -4816,6 +5131,11 @@
         "Poništi ponovno postavljanje lozinke"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Ponovno postavljanje lozinke otkazano"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Poništiti ponovno postavljanje lozinke?"
@@ -4852,6 +5172,21 @@
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Poništavanje lozinke"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Ažuriranje postavki nije uspjelo"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Dijeli ${ ownerName }"
+      ]
+    },
+    "Sidebar calendar edit tooltip": {
+      "Manage calendar": [
+        "Upravljanje kalendarima"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -4990,6 +5325,14 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL kalendara"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "Da biste se pretplatili na vanjski ili javni kalendar i njihova ažuriranja, morate unijeti njihov URL. Ti će se kalendari dodati među Vaše ostale kalendare i moći ćete ih samo pregledavati, ali ne i uređivati.\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Saznajte kako dohvatiti poveznicu privatnog kalendara."
       ]
     },
     "Subscription": {
@@ -5076,6 +5419,9 @@
       "Address copied to clipboard": [
         "Adresa je kopirana u međuspremnik"
       ],
+      "Alias copied to clipboard": [
+        "Pseudonim kopiran u međuspremnik"
+      ],
       "All events deleted": [
         "Svi događaji su izbrisani"
       ],
@@ -5133,6 +5479,9 @@
       ],
       "Email address copied to clipboard": [
         "Adresa e-pošte je kopirana u međuspremnik"
+      ],
+      "Event content search enabled": [
+        "Pretraživanje sadržaja događaja je omogućeno"
       ],
       "Event created": [
         "Događaj je stvoren"
@@ -5420,6 +5769,9 @@
       "Create new group": [
         "Stvori novu grupu"
       ],
+      "Create public link": [
+        "Stvori javnu poveznicu"
+      ],
       "Credits": [
         "Kredit"
       ],
@@ -5454,8 +5806,14 @@
       "Details": [
         "Pojedinosti"
       ],
+      "Does not repeat": [
+        "Ne ponavlja se"
+      ],
       "Downgrade account": [
         "Smanjite svoj plan"
+      ],
+      "Drop to upload": [
+        "Ispustite za prijenos"
       ],
       "Edit contact": [
         "Uredi kontakt"
@@ -5486,6 +5844,12 @@
       ],
       "Event is happening on defined time slot": [
         "Događaj se događa u definiranom vremenskom terminu"
+      ],
+      "Every day": [
+        "Svaki dan"
+      ],
+      "Every year": [
+        "Svake godine"
       ],
       "Exporting contacts": [
         "Izvoz kontakata"
@@ -5672,6 +6036,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Pozvali ste sudionike s istom adresom e-pošte"
+      ],
+      "Your calendar link": [
+        "Poveznica vašeg kalendara"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5733,6 +6100,14 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prenesite javni ključ za omogućavanje slanja end-to-end šifriranih e-poruka na ovu adresu e-pošte"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Dijeljeno u end-to-end šifriranom obliku"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Dijeljeno je u end-to-end šifriranom obliku s potvrđenim kontaktom"
       ]
     },
     "Validation": {
@@ -6110,6 +6485,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Godišnje, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Adding conferencing details": [
+        "Dodavanje detalja konferencije"
+      ],
+      "Loading Zoom configuration": [
+        "Učitavanje konfiguracije Zooma"
       ]
     }
   }
