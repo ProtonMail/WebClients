@@ -9,6 +9,7 @@ import { c } from 'ttag';
 
 import { Button, Scroll } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { UserStorage } from '@proton/pass/components/Account/UserStorage';
 import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
 import { SharedMenu } from '@proton/pass/components/Menu/Shared/SharedMenu';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
@@ -96,6 +97,8 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         <AccountActions />
                         <MenuActions />
                     </div>
+
+                    <UserStorage />
                 </div>
             </div>
         </div>
