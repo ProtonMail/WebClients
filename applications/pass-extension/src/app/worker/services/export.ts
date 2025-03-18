@@ -11,7 +11,9 @@ export const createExportService = () => {
         WorkerMessageType.EXPORT_REQUEST,
         onContextReady(async (ctx, { payload: options }) => {
             const state = ctx.service.store.getState();
-            const data = selectExportData({ config, format: options.format })(state);
+            /** NOTE: no files export YET in extension until
+             * transferable files issue is addressed */
+            const data = selectExportData({ config, format: options.format, files: null })(state);
             const file = await createPassExport(data, options);
 
             return { file };
