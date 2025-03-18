@@ -2466,6 +2466,10 @@
         "${ repliedCount } respuesta",
         "${ repliedCount } respuestas"
       ],
+      "${ secureLinksCount } secure link": [
+        "Enlace seguro ${ secureLinksCount }",
+        "Enlaces seguros ${ secureLinksCount }"
+      ],
       "${ usageCount } login": [
         "${ usageCount } inicio de sesión",
         "${ usageCount } inicios de sesión"
@@ -4107,97 +4111,6 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias."
-      ]
-    },
-    "Valentine_2025": {
-      "VALENTINE'S DEAL": [
-        "OFERTA DE SAN VALENTÍN"
-      ],
-      "Valentine's deal: ${ planName } 50% off for you": [
-        "Oferta de San Valentín: ${ planName } al 50% de descuento para ti"
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "${ salePercentage }% de descuento"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "${ salePercentage }% de descuento para ti +1"
-      ],
-      "50% off": [
-        "−50 %"
-      ],
-      "50% off for you +1": [
-        "50% de descuento para ti +1"
-      ],
-      "500 GB total storage": [
-        "500 GB de almacenamiento total"
-      ],
-      "Advanced account protection": [
-        "Protección de cuentas avanzada"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Todas las funciones premium de Mail, VPN, Pass y Drive"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Todos los servicios prémium de ${ BRAND_NAME } en una sola y sencilla suscripción."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Los descuentos se basan en el precio mensual estándar. Al final del ciclo de facturación, tu suscripción se renovará a la tarifa anual estándar."
-      ],
-      "Double the love, half the price": [
-        "El doble de amor, la mitad de precio"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Obtén 1 año de ${ dealName } con un descuento del ${ salePercentage }% — además, un código de regalo para compartir la misma oferta con un amigo"
-      ],
-      "Get 1 year of ${ dealName } at 50% off — plus a gift code to share the same deal with a friend": [
-        "Obtén 1 año de ${ dealName } al 50% de descuento — además, un código de regalo para compartir esa misma oferta con un amigo"
-      ],
-      "Get the deal": [
-        "Aprovecha la oferta"
-      ],
-      "Integrated 2FA authenticator": [
-        "Autenticador 2FA integrado"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Ofrece seguridad de cuenta de primera categoría y soporte experto. ${ DARK_WEB_MONITORING_NAME } escanea partes ocultas de Internet en busca de direcciones de correo electrónico de ${ MAIL_APP_NAME } que han terminado en mercados de datos ilegales. Si se detecta una brecha, recibirás una alerta del Centro de Seguridad con los pasos para proteger tu cuenta."
-      ],
-      "Secure vault sharing": [
-        "Compartición segura de cajas fuertes"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "El espacio de almacenamiento se reparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Número ilimitado de alias de hide-my-email"
-      ],
-      "Valentine's deal:": [
-        "Oferta de San Valentín:"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } meses"
-      ],
-      "/ month": [
-        "/ mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "15 months": [
-        "15 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ],
-      "30 months": [
-        "30 meses"
-      ],
-      "for ${ durationDeal }": [
-        "durante ${ durationDeal }"
       ]
     },
     "Validation": {
