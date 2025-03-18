@@ -775,8 +775,15 @@
       "${ price } per domain": [
         "her etki alanı için ${ price }"
       ],
+      "${ price } per seat": [
+        "${ price } /koltuk"
+      ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } koltuk",
+        "${ seats } ${ LUMO_APP_NAME } koltuk"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
@@ -2264,8 +2271,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
-        "Herkese açık dosya paylaşımını düzenleme erişimi izniyle açmak için ${ BRAND_NAME } ${ planName } tarifesine yükseltin. İşbirliğinizi kesintisiz ve güvenli bir şekilde sürdürün."
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Dosya paylaşmayı sürdürebilmek ve düzenleme erişimi sağlamak için ${ BRAND_NAME } ${ planName } tarifesine yükseltin"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "${ PROTON_SENTINEL_NAME }, 7/24 size özel uzman desteği olan, yapay zeka temelli son teknoloji güvenlik çözümümüzü kullanmak için tarifenizi yükseltin."
@@ -3796,6 +3803,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
@@ -8974,6 +8984,9 @@
       "Need more aliases?": [
         "Daha fazla takma ad mı gerekiyor?"
       ],
+      "Need to share more files with edit access?": [
+        "Düzenleme erişimiyle daha fazla dosya paylaşmanız mı gerekiyor?"
+      ],
       "Network error": [
         "Ağ sorunu"
       ],
@@ -9075,9 +9088,6 @@
       ],
       "Share ${ name }": [
         "${ name } paylaş"
-      ],
-      "Share files with full edit access": [
-        "Dosyaları tam düzenleme erişimi izniyle paylaşın"
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
@@ -9252,129 +9262,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
-    "Valentine_2025": {
-      "+ free gift": [
-        "+ ücretsiz hediye"
-      ],
-      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "1 yıl boyunca ${ planTitle } tarifesinde yüzde ${ discountPercentAbsolute } oranında indirim sağlayan hediye kodu"
-      ],
-      "Valentine's deal": [
-        "Sevgililer günü fırsatı"
-      ],
-      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 ${ price } değerindeki paylaşması ücretsiz hediyeniz: "
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "%${ salePercentage } indirim"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "Siz ve 1 kişiye %${ salePercentage } indirim"
-      ],
-      "10 email addresses for you": [
-        "Sizin için 10 ek e-posta adresi"
-      ],
-      "10,000+ servers in 110+ countries": [
-        "10.000+ sunucu, 110+ ülkede"
-      ],
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "200 GB storage": [
-        "200 GB depolama alanı"
-      ],
-      "500 GB total storage": [
-        "500 GB toplam depolama alanı"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Netflix, Disney+, Prime Video ve diğer internet yayın akışı içeriklerine herhangi bir yerden erişin."
-      ],
-      "Advanced account protection": [
-        "Gelişmiş hesap koruması"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Tüm Mail, VPN, Pass ve Drive ücretli özellikleri"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "İndirimler, standart aylık fiyatlandırmaya dayanmaktadır. Fatura dönemi sonunda, aboneliğiniz standart yıllık ücrete göre yenilenecektir."
-      ],
-      "Double the love, half the price": [
-        "Kalpler bir, fiyatlar yarım"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Bir yıllık ${ dealName } aboneliğini %${ salePercentage } indirimle edinin — aynı fırsatı bir arkadaşınızla paylaşmanız için bir hediye kodu da alın"
-      ],
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "High-speed streaming": [
-        "Yüksek hızlı yayın akışı izleme"
-      ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Üst düzey hesap güvenliği ve uzman desteği sunar. ${ DARK_WEB_MONITORING_NAME } internetin gizli bölgelerini tarayarak yasadışı veri piyasalarına düşmüş ${ MAIL_APP_NAME } e-posta adreslerini tespit eder. Bir ihlal tespit edilirse, hesabınızı korumak için gerekli adımları içeren bir Güvenlik Merkezi uyarısı alacaksınız."
-      ],
-      "Protect 10 devices at a time": [
-        "Aynı anda 10 aygıtı koruyun"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükle"
-      ],
-      "Secure file storage & sharing": [
-        "Güvenli dosya depolama alanı ve paylaşımı"
-      ],
-      "Secure vault sharing": [
-        "Güvenli kasa paylaşımı"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Sınırsız sayıda hide-my-email takma adları"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ],
-      "Valentine's deal:": [
-        "Sevgililer günü fırsatı:"
-      ]
-    },
-    "Valentine_2025: offer": {
-      "Valentine's deal": [
-        "Sevgililer günü fırsatı"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } ay",
-        "${ n } ay"
-      ],
-      "/ month": [
-        "/ ay"
-      ],
-      "12 months": [
-        "12 ay"
-      ],
-      "15 months": [
-        "15 ay"
-      ],
-      "24 months": [
-        "24 ay"
-      ],
-      "30 months": [
-        "30 ay"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal } için"
       ]
     },
     "Validation": {
