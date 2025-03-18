@@ -48,10 +48,11 @@ export const showSerializedElements = createAction<{
     queryIndex: number;
     result: QueryResults;
     page: number;
+    params: ElementsStateParams;
 }>('elements/showSerializedElements');
 
 export const load = createAsyncThunk<
-    { result: QueryResults; taskRunning: TaskRunningInfo },
+    { result: QueryResults; taskRunning: TaskRunningInfo; params: ElementsStateParams },
     QueryParams,
     MailThunkExtra
 >(
@@ -75,6 +76,7 @@ export const load = createAsyncThunk<
                     queryIndex: index,
                     result,
                     page,
+                    params,
                 })
             );
         };
@@ -136,7 +138,7 @@ export const load = createAsyncThunk<
             });
         }
 
-        return { result, taskRunning };
+        return { result, taskRunning, params };
     }
 );
 
