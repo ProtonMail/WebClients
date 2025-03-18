@@ -80,6 +80,13 @@ export const QuickActionsPlaceholder: FC = () => {
                 onClick: () => onCreate('identity'),
             },
             {
+                icon: itemTypeToIconName.custom,
+                label: c('Label').t`Create a custom item`,
+                subTheme: SubTheme.GRAY,
+                type: 'custom',
+                onClick: () => onCreate('custom'),
+            },
+            {
                 type: 'import',
                 icon: 'arrow-up-line',
                 shape: 'outline',

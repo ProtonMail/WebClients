@@ -57,3 +57,11 @@ export type CreditCardItemFormValues = BaseItemValues & {
     pin: string;
     note: string;
 };
+
+export type CustomItemFormValues = BaseItemValues &
+    ExtraFieldGroupValues &
+    (
+        | ({ type: 'wifi' } & ItemContent<'wifi'>)
+        | ({ type: 'sshKey' } & ItemContent<'sshKey'>)
+        | ({ type: 'custom' } & ItemContent<'custom'>)
+    );

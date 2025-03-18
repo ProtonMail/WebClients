@@ -9,6 +9,7 @@ import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { DeobfuscatedItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
+import { formatDate } from '../DateField';
 import { OTPValueControl } from './OTPValueControl';
 import { UpgradeControl } from './UpgradeControl';
 import { ValueControl } from './ValueControl';
@@ -40,9 +41,24 @@ export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, i
                     ) : (
                         <OTPValueControl key={key} label={fieldName} payload={{ totpUri: data.totpUri, type: 'uri' }} />
                     );
+                case 'timestamp':
+                    return isEmptyString(data.timestamp) ? (
+                        <ValueControl icon={icon} key={key} label={fieldName} value={undefined} />
+                    ) : (
+                        <ValueControl
+                            clickToCopy
+                            as={TextAreaReadonly}
+                            key={key}
+                            icon={icon}
+                            label={fieldName}
+                            value={formatDate(new Date(data.timestamp))}
+                        />
+                    );
                 case 'hidden':
                 case 'text':
-                    return (
+                    return isEmptyString(data.content) ? (
+                        <ValueControl icon={icon} key={key} label={fieldName} value={undefined} />
+                    ) : (
                         <ValueControl
                             clickToCopy
                             as={TextAreaReadonly}
