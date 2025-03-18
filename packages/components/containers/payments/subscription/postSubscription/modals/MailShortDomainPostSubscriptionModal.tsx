@@ -38,7 +38,7 @@ const ConfirmationModalContent = ({
     const defaultEmailAddress = <b key="default-email-adress">{c('Info').t`default email address`}</b>;
     const listItems = [
         {
-            icon: 'arrow-out-square',
+            icon: 'arrow-within-square',
             text: c('Info').t`Start sharing it with contacts and use it for online services.`,
         },
         {

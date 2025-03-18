@@ -36,6 +36,7 @@ export type IconName =
     | 'arrow-up-bounce-left'
     | 'arrow-up-from-square'
     | 'arrow-up-line'
+    | 'arrow-within-square'
     | 'arrows-cross'
     | 'arrows-from-center'
     | 'arrows-from-center-horizontal'
@@ -428,6 +429,7 @@ export { IcArrowUpBigLine } from './icons/IcArrowUpBigLine';
 export { IcArrowUpBounceLeft } from './icons/IcArrowUpBounceLeft';
 export { IcArrowUpFromSquare } from './icons/IcArrowUpFromSquare';
 export { IcArrowUpLine } from './icons/IcArrowUpLine';
+export { IcArrowWithinSquare } from './icons/IcArrowWithinSquare';
 export { IcArrowsCross } from './icons/IcArrowsCross';
 export { IcArrowsFromCenter } from './icons/IcArrowsFromCenter';
 export { IcArrowsFromCenterHorizontal } from './icons/IcArrowsFromCenterHorizontal';
