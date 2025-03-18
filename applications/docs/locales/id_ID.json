@@ -51,6 +51,9 @@
       "Add address": [
         "Tambah alamat"
       ],
+      "Add another account": [
+        "Tambah akun lainnya"
+      ],
       "Add birthday": [
         "Tambah ulang tahun"
       ],
@@ -320,6 +323,12 @@
       ],
       "Help": [
         "Bantuan"
+      ],
+      "Help and feedback": [
+        "Bantuan dan saran"
+      ],
+      "Help and resources": [
+        "Bantuan dan sumber daya"
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
@@ -760,8 +769,14 @@
       "${ price } per domain": [
         "${ price } per domain"
       ],
+      "${ price } per seat": [
+        "${ price } per kuota"
+      ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } kuota ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kuota asisten penulisan"
@@ -2243,8 +2258,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
-        "Tingkatkan ke ${ BRAND_NAME } ${ planName } untuk mengaktifkan pembagian berkas secara publik dengan akses sunting menyeluruh. Tetaplah berkolaborasi secara terpadu dan aman."
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Tingkatkan ke ${ BRAND_NAME } ${ planName } untuk tetap dapat membagi berkas dengan akses sunting"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Tingkatkan akun Anda untuk mengaktifkan ${ PROTON_SENTINEL_NAME }, solusi keamanan mutakhir berbasis AI kami dengan dukungan ahli yang tersedia 24/7."
@@ -3745,6 +3760,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4377,6 +4395,9 @@
       ],
       "Organization size": [
         "Ukuran organisasi"
+      ],
+      "Other accounts": [
+        "Akun lainnya"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
@@ -8808,6 +8829,9 @@
       "Groups": [
         "Grup"
       ],
+      "Help and feedback": [
+        "Bantuan dan saran"
+      ],
       "Help center": [
         "Pusat bantuan"
       ],
@@ -8861,6 +8885,9 @@
       ],
       "Need more aliases?": [
         "Butuh lebih banyak alias?"
+      ],
+      "Need to share more files with edit access?": [
+        "Butuh untuk membagikan lebih banyak berkas dengan akses penyuntingan?"
       ],
       "Network error": [
         "Kesalahan jaringan"
@@ -8963,9 +8990,6 @@
       ],
       "Share ${ name }": [
         "Bagikan ${ name }"
-      ],
-      "Share files with full edit access": [
-        "Bagikan berkas dengan akses sunting menyeluruh"
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
@@ -9187,6 +9211,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "Terpilih secara otomatis dari ${ numberOfCountries } negara"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Server di ${ numberOfCountries }+ negara"
       ]
     },
     "vpn_2024: renew": {
