@@ -2,11 +2,13 @@ import { call, put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { type ImportVault } from '@proton/pass/lib/import/types';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import {
+    fileLinkPending,
     importItemsFailure,
     importItemsIntent,
     importItemsProgress,
@@ -19,7 +21,7 @@ import {
 import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import { createVaultWorker } from '@proton/pass/store/sagas/vaults/vault-creation.saga';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
+import type { ItemImportIntent, ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -49,6 +51,27 @@ function* createVaultForImport(vaultName: string) {
 
     if (shareId === undefined) throw new Error(c('Warning').t`Could not create vault "${vaultName}"`);
     return shareId;
+}
+
+function* uploadFiles(importIntent: ItemImportIntent[], items: ItemRevision[]) {
+    for (let index = 0; index < importIntent.length; index++) {
+        const files = importIntent[index].files;
+        if (!files?.length) continue;
+
+        const { shareId, itemId, revision } = items[index];
+
+        // If an item has more than 10 files to import, we need to split the linking into chunks of 10 files
+        for (const toAdd of chunk(files as string[], 10)) {
+            yield put(
+                fileLinkPending.intent({
+                    shareId,
+                    itemId,
+                    revision,
+                    files: filesFormInitializer({ toAdd }),
+                })
+            );
+        }
+    }
 }
 
 function* importWorker(
@@ -87,6 +110,8 @@ function* importWorker(
                         const items: ItemRevision[] = yield Promise.all(
                             revisions.map((revision) => parseItemRevision(shareId, revision))
                         );
+
+                        yield uploadFiles(batch, items);
 
                         totalItems += revisions.length;
                         yield put(importItemsProgress(meta.request.id, totalItems, { shareId, items }));
