@@ -1940,6 +1940,9 @@
       "Please consider leaving a review.": [
         "レビューを残すことを検討してください。"
       ],
+      "Please contact your administrator": [
+        "管理者に連絡してください。"
+      ],
       "Please do not close this window": [
         "このウィンドウを閉じないでください"
       ],
@@ -2334,6 +2337,9 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } 単語"
+      ],
+      "${ count } item": [
+        "${ count } 個のアイテム"
       ],
       "${ days } day": [
         "${ days } 日"
@@ -2919,6 +2925,9 @@
       ],
       "Reveal password": [
         "パスワードを表示する"
+      ],
+      "Secure links": [
+        "安全なリンク"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "数百万人から信頼されているエンドツーエンド暗号化を使用して、 ${ PASS_APP_NAME }はあなたのアカウントを安全に保管、共有し、自動ログイン機能を提供します。"
@@ -3870,6 +3879,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME }メモとSimpleLoginメモの違いはなんですか？"
       ],
+      "You don't have any vault": [
+        "保管庫がありません"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName }サブスクリプションは${ endDate }に終了します"
       ],
@@ -4173,6 +4185,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "あなたはこのフォルダーへのアクセス権を持たなくなります。再度参加するには、新しい招待が必要です。"
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "アイテムを作成する前に、管理者が保管庫を作成する必要があります。"
+      ],
+      "Your organization does not allow creating a vault": [
+        "あなたの組織は保管庫の作成を許可していません"
       ],
       "Your organization does not allow sharing individual items": [
         "あなたの組織では個々のアイテムを共有することを許可していません"
