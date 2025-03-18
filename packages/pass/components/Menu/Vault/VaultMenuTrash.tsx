@@ -57,7 +57,7 @@ export const VaultMenuTrash = memo(({ selected, onAction = noop }: Props) => {
             }
             onClick={pipe(() => !selected && vaultActions.select('trash'), onAction)}
             className={clsx((selected || dragOver) && 'is-selected', 'pl-2 pr-2')}
-            parentClassName="pass-vault-submenu-vault-item w-full"
+            parentClassName="pass-vault-submenu-vault-item pass-vault-submenu-vault-item--trash w-full"
             quickActions={[
                 <DropdownMenuButton
                     key="trash-restore"
