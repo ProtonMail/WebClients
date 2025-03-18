@@ -17,6 +17,9 @@
       "Add account": [
         "Añadir una cuenta"
       ],
+      "Add another account": [
+        "Añadir otra cuenta"
+      ],
       "Add credit / debit card": [
         "Añadir tarjeta de crédito / débito"
       ],
@@ -61,6 +64,9 @@
       ],
       "Copy address": [
         "Copiar dirección"
+      ],
+      "Copy public key (XPUB)": [
+        "Copiar la clave pública (XPUB)"
       ],
       "Copy version number to clipboard": [
         "Copiar el número de versión en el portapapeles"
@@ -121,6 +127,12 @@
       ],
       "Help": [
         "Ayuda"
+      ],
+      "Help and feedback": [
+        "Ayuda y Comentarios "
+      ],
+      "Help and resources": [
+        "Ayuda y Recursos"
       ],
       "Increase": [
         "Aumentar"
@@ -318,8 +330,15 @@
       "${ price } per domain": [
         "${ price } por dominio"
       ],
+      "${ price } per seat": [
+        "${ price } por licencia"
+      ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licencia ${ LUMO_APP_NAME }",
+        "${ seats } licencias ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } asiento del asistente de escritura",
@@ -462,9 +481,6 @@
       "High speed streaming": [
         "Streaming de alta velocidad"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador 2FA integrado"
-      ],
       "One-time payment, lifetime deal": [
         "Un solo pago, una oferta de por vida"
       ],
@@ -483,23 +499,20 @@
       "Secure file storage & sharing": [
         "Almacenamiento y uso compartido seguros de archivos"
       ],
-      "Secure vault and link sharing": [
-        "Intercambio seguro de bóveda y enlaces"
-      ],
       "Unlimited folders, labels and filters": [
         "Número ilimitado de carpetas, etiquetas y filtros"
       ],
-      "Unlimited hide-my-email aliases": [
-        "Número ilimitado de alias de hide-my-email"
-      ],
-      "Unlimited logins, notes, credit cards": [
-        "Número ilimitado de inicios de sesión, notas y tarjetas de crédito"
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Inicios de sesión ilimitados, tarjetas de crédito, alias hide-my-email y más"
       ],
       "Use your own email domain": [
         "Usa tu propio dominio de correo electrónico"
       ],
       "Version history": [
         "Historial de versiones"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -554,8 +567,14 @@
       "Annually": [
         "Anual"
       ],
+      "Lifetime": [
+        "De por vida"
+      ],
       "Monthly": [
         "Mensual"
+      ],
+      "New!": [
+        "¡Nuevo!"
       ],
       "Two-year": [
         "Bienal"
@@ -870,7 +889,7 @@
         "Configura otras funciones"
       ],
       "Take a tour": [
-        "Hacer el recorrido"
+        "Explora ahora"
       ]
     },
     "Buy confirm": {
@@ -1859,6 +1878,31 @@
         "Popular"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Para todos los servicios de ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Por ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Por ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Para ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Para ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/mes"
@@ -1987,8 +2031,8 @@
       ]
     },
     "Error": {
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Configuración > Mensajes y redacción > Dominio corto (pm.me)."
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
       "Amount above the maximum.": [
         "Cantidad por encima del máximo."
@@ -2154,6 +2198,11 @@
         "Ninguna imagen seleccionada"
       ]
     },
+    "Extended public key": {
+      "Public key (XPUB) copied to clipboard": [
+        "Se ha copiado la clave pública (XPUB) al portapapeles."
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB de almacenamiento total"
@@ -2210,6 +2259,11 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "Alias hide-my-email ilimitados"
       ]
     },
     "fido2: Error": {
@@ -2366,6 +2420,9 @@
     "Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
@@ -2601,6 +2658,9 @@
       "Organization size": [
         "Tamaño de la organización"
       ],
+      "Other accounts": [
+        "Otras cuentas"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
@@ -2661,9 +2721,6 @@
       ],
       "Subscription auto-renews every month.": [
         "La suscripción se renueva automáticamente cada mes."
-      ],
-      "Switch to": [
-        "Cambiar a"
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
@@ -2824,8 +2881,11 @@
       ]
     },
     "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Contáctanos a ${ email } para obtener instrucciones sobre cómo pagarnos en efectivo."
+      "How to send a cash payment?": [
+        "¿Cómo enviar un pago en efectivo?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Encuentra las instrucciones en el artículo: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -2945,6 +3005,9 @@
       ],
       "IBAN": [
         "IBAN"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador de 2FA integrado"
       ],
       "Last name": [
         "Apellido"
@@ -3107,8 +3170,14 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Añadir el asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Complemento con prueba gratuita"
       ],
       "for ${ price }": [
         "para ${ price }"
@@ -3257,11 +3326,8 @@
       "${ size } storage": [
         "${ size } de almacenamiento"
       ],
-      "${ textType } - For ${ DRIVE_APP_NAME }": [
-        "${ textType } - Para ${ DRIVE_APP_NAME }"
-      ],
-      "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Para todos los servicios de ${ BRAND_NAME }"
+      "${ size } storage per user": [
+        "${ size } de almacenamiento por usuario"
       ],
       "1 user": [
         "1 usuario"
@@ -3402,14 +3468,14 @@
       "HTML signatures": [
         "Firmas HTML"
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador de 2FA integrado"
-      ],
       "Kill switch/always-on VPN": [
         " Kill switch/VPN siempre activa"
       ],
       "Limited support": [
         "Soporte limitado"
+      ],
+      "Manage user permissions and access": [
+        "Administrar permisos de usuario y acceso"
       ],
       "Multiple admin roles": [
         "Distintos roles de administración"
@@ -3428,6 +3494,9 @@
       ],
       "Password manager": [
         "Gestor de contraseñas"
+      ],
+      "Password manager to secure credentials": [
+        "Gestor de contraseñas para proteger credenciales"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
@@ -3480,9 +3549,6 @@
       "SMTP submission": [
         "Envío SMTP"
       ],
-      "SMTP submission for select organizations": [
-        "Envío SMTP para organizaciones seleccionadas"
-      ],
       "Split tunneling (Android and Windows)": [
         "Túnel dividido (Android y Windows)"
       ],
@@ -3515,9 +3581,6 @@
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Un número ilimitado de alias de Hide-my-email"
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
@@ -3641,6 +3704,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Paga una vez, asegura tus contraseñas e identidad para siempre."
       ],
       "Popular": [
         "Popular"
@@ -3807,7 +3873,7 @@
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Herramienta de gestión de la organización que permite a los administradores agregar y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
+        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrás acceder a tu cuenta cuando lo necesites."
@@ -3983,19 +4049,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure vault and link sharing": [
-        "Intercambio seguro de caja fuerte y enlaces"
-      ],
       "Secure vault sharing": [
         "Compartición segura de cajas fuertes"
       ],
-      "Secure vault sharing (${ n } vault)": [
-        "Intercambio seguro de caja fuerte (${ n } caja fuerte)",
-        "Intercambio seguro de caja fuerte (${ n } cajas fuertes)"
+      "Secure vault, item and link sharing": [
+        "Uso compartido seguro de cajas fuertes, enlaces y elementos"
       ],
-      "Secure vault sharing (${ n } vault) and link sharing": [
-        "Intercambio seguro de caja fuerte (${ n } caja fuerte) e intercambio de enlaces",
-        "Intercambio seguro de caja fuerte (${ n } cajas fuertes) e intercambio de enlaces"
+      "Unlimited logins, notes, credit cards and more": [
+        "Inicios de sesión ilimitados, notas, tarjetas de crédito y más"
       ]
     },
     "pass_signup_2024: Info": {
@@ -4008,6 +4069,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel de administración para gestionar usuarios y suscripciones"
+      ],
+      "Advanced account protection": [
+        "Protección de cuentas avanzada"
       ],
       "Team policies": [
         "Políticas de equipo"
@@ -4196,6 +4260,9 @@
       ]
     },
     "QRCode Reader": {
+      "Could not find an available camera on your device": [
+        "No se ha encontrado una cámara disponible en tu dispositivo."
+      ],
       "Could not run QR code reader": [
         "No se ha podido ejecutar el lector de códigos QR"
       ],
@@ -4225,11 +4292,14 @@
       ],
       "External recipient": [
         "Destinatario externo"
+      ],
+      "Public key (XPUB)": [
+        "Clave pública (XPUB)"
       ]
     },
     "Safety review": {
       "Review account safety": [
-        "Comprueba la seguridad de la cuenta"
+        "Verificar la seguridad de la cuenta"
       ]
     },
     "saml: Error": {
@@ -4512,6 +4582,9 @@
       "Billed every 2 years": [
         "Facturado cada 2 años"
       ],
+      "Billed every 6 months": [
+        "Facturado cada 6 meses"
+      ],
       "Billed for 15 months": [
         "Facturación para 15 meses"
       ],
@@ -4551,6 +4624,10 @@
       "${ n } VPN connection per user": [
         "${ n } conexión VPN por usuario",
         "${ n } conexiones VPN por usuario"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "Conexión VPN para ${ n } dispositivos por usuario",
+        "Conexión VPN para ${ n } dispositivos por usuario"
       ]
     },
     "Subscription change warning": {
@@ -4700,6 +4777,44 @@
         "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye historial de versiones, posibilidad de compartir archivos cifrados, etc."
       ]
     },
+    "Sweep paper wallet": {
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Cannot use QRCode scanner. Please check browser compatibility": [
+        "No se puede usar el escáner de códigos QR. Comprueba la compatibilidad del navegador."
+      ],
+      "Confirm and import": [
+        "Confirmar e importar"
+      ],
+      "Continue": [
+        "Continuar"
+      ],
+      "Import paper wallet": [
+        "Importar una cartera de papel"
+      ],
+      "Invalid private key": [
+        "Clave privada no válida"
+      ],
+      "No funds available": [
+        "No hay fondos disponibles"
+      ],
+      "Paper wallet funds was successfully imported": [
+        "Se han importado los fondos de tu cartera de papel."
+      ],
+      "Please grant camera permission to use QRCode scanner": [
+        "Concede permiso a la cámara para usar el escáner de códigos QR."
+      ],
+      "You receive": [
+        "Recibes"
+      ],
+      "Your paper wallet has no funds available": [
+        "Tu cartera de papel no tiene fondos disponibles."
+      ],
+      "Your paper wallet is not valid. Please check your private key and try again": [
+        "Tu cartera de papel no es válida. Revisa tu clave privada e intenta de nuevo."
+      ]
+    },
     "Tab subscription modal": {
       "For businesses": [
         "Para empresas"
@@ -4780,6 +4895,9 @@
       ],
       "Go to settings and recovery keys": [
         "Ir a los ajustes y a las claves de recuperación"
+      ],
+      "Help and feedback": [
+        "Ayuda y Comentarios "
       ],
       "Help center": [
         "Centro de ayuda"
@@ -4910,6 +5028,10 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } dispositivo",
+        "${ n } dispositivos"
+      ],
       "${ n } server": [
         "${ n } servidor",
         "${ n } servidores"
@@ -4918,6 +5040,10 @@
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } países"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en más de ${ numberOfCountries } países"
@@ -4925,6 +5051,14 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } en ${ numberOfCountries } país",
         "${ numberOfServers } en ${ numberOfCountries } países"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Selección automática desde ${ numberOfCountries } país",
+        "Selección automática desde ${ numberOfCountries } países"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servidores en ${ numberOfCountries }+ país",
+        "Servidores de ${ numberOfCountries }+ países"
       ]
     },
     "vpn_2024: renew": {
@@ -4958,7 +5092,7 @@
     },
     "Wallet": {
       "An error occurred whilst syncing your wallet. Please try again.": [
-        "Ha ocurrido un error inesperado al sincronizar tu cartera. Por favor, inténtalo de nuevo"
+        "Ha ocurrido un error inesperado al sincronizar tu cartera. Inténtalo de nuevo"
       ],
       "Close": [
         "Cerrar"
@@ -5275,6 +5409,9 @@
       "Not now": [
         "Ahora no"
       ],
+      "Show public key (XPUB)": [
+        "Mostrar la clave pública (XPUB)"
+      ],
       "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
         "La cadena de bloques de Bitcoin es pública, lo que significa que cada transacción es visible públicamente. Sin embargo, las direcciones de Bitcoin son seudónimas, lo que significa que las identidades del remitente y del destinatario generalmente son desconocidas."
       ],
@@ -5323,6 +5460,12 @@
       ],
       "Generate new address": [
         "Generar una nueva dirección"
+      ],
+      "Import paper wallet": [
+        "Importar una cartera de papel"
+      ],
+      "More options": [
+        "Más opciones"
       ],
       "Receive to": [
         "Recibir en"
@@ -5690,6 +5833,9 @@
       "This wallet seems to still have assets.": [
         "Parece que esta cartera aún tiene activos."
       ],
+      "Transfer your paper wallet funds to your account. Paste your private key or scan your QR code.": [
+        "Transfiere los fondos de tu cartera de papel a tu cuenta. Pega tu clave privada o escanea tu código QR."
+      ],
       "View wallet seed phrase": [
         "Ver la frase de recuperación de la cartera"
       ],
@@ -5734,6 +5880,9 @@
       ],
       "Your keys, your coins.": [
         "Tus claves, tus monedas."
+      ],
+      "Your private key": [
+        "Su clave privada"
       ]
     },
     "Wallet Sidebar": {
@@ -6024,9 +6173,6 @@
       ]
     },
     "Warning": {
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."
       ],
