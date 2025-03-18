@@ -11,6 +11,7 @@ export enum TelemetryMeasurementGroups {
     calendarVideoConferencing = 'calendar.web.video_conferencing',
     accountCancellation = 'account.web.cancellation',
     settingsHeartBeat = 'any.web.settings_heart_beat',
+    calendarSettingsHeartBeat = 'any.web.calendar_settings_heart_beat',
     /** Not only calendar scope because party crasher on mail and drawer */
     calendarInvite = 'any.web.calendar_invite',
     changelogOpened = 'any.changelog_opened',
