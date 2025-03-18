@@ -5,10 +5,13 @@ import { c } from 'ttag';
 import { type WasmInviteNotificationType } from '@proton/andromeda';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt } from '@proton/components';
+import walletUserDark from '@proton/styles/assets/img/wallet/wallet-user-dark.jpg';
 import walletUser from '@proton/styles/assets/img/wallet/wallet-user.jpg';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../../atoms';
 import { EmailSelect } from '../../EmailSelect';
+import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 
 interface Props extends ModalOwnProps {
     email: string;
@@ -30,6 +33,7 @@ export const WalletNotFoundErrorModal = ({
     checkHasSentInvite,
     ...modalProps
 }: Props) => {
+    const theme = useWalletTheme();
     const [selectedInviterId, setSelectedInviterId] = useState<string>();
 
     useEffect(() => {
@@ -69,7 +73,7 @@ export const WalletNotFoundErrorModal = ({
         >
             <div className="flex flex-column items-center text-center">
                 <img
-                    src={walletUser}
+                    src={theme === WalletThemeOption.WalletDark ? walletUserDark : walletUser}
                     alt=""
                     className="w-custom h-custom"
                     style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}

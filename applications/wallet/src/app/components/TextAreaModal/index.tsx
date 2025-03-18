@@ -44,14 +44,7 @@ export const TextAreaModal = ({
                 disabled={loading}
             />
 
-            <Button
-                color="norm"
-                shape="solid"
-                className="mt-6"
-                fullWidth
-                disabled={loading}
-                onClick={() => onSubmit(value)}
-            >
+            <Button shape="solid" className="mt-6" fullWidth disabled={loading} onClick={() => onSubmit(value)}>
                 {buttonText}
             </Button>
         </Modal>
