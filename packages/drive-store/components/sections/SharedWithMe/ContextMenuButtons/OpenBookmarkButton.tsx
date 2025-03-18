@@ -15,7 +15,7 @@ export const OpenBookmarkButton = ({ token, urlPassword, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Open`}
-            icon="arrow-out-square"
+            icon="arrow-within-square"
             testId="context-menu-open-bookmark"
             action={() => openBookmark({ token, urlPassword })}
             close={close}

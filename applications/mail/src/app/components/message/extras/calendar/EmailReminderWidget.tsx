@@ -261,7 +261,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                                     <ButtonLike as={AppLink} toApp={APPS.PROTONCALENDAR} to="/">
                                         <div className="flex items-center">
                                             <span className="mr-3">{c('Action').t`Open ${CALENDAR_APP_NAME}`}</span>
-                                            <Icon name="arrow-out-square" />
+                                            <Icon name="arrow-within-square" />
                                         </div>
                                     </ButtonLike>
                                 }

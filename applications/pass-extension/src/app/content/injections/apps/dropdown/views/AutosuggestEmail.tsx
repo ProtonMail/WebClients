@@ -196,7 +196,7 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                         );
                     }
                 })()}
-                icon={needsUpgrade ? 'arrow-out-square' : 'alias'}
+                icon={needsUpgrade ? 'arrow-within-square' : 'alias'}
                 subTheme={SubTheme.TEAL}
                 disabled={loadingText !== null}
                 onClick={(() => {

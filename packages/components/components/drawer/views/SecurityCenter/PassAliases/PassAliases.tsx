@@ -87,7 +87,7 @@ const PassAliases = () => {
                         >
                             {c('Security Center').t`All aliases`}
                             <Icon
-                                name="arrow-out-square"
+                                name="arrow-within-square"
                                 className="ml-1"
                                 alt={c('Security Center (link to Pass App)').t`(will open ${PASS_APP_NAME})`}
                             />
