@@ -134,7 +134,7 @@ export async function generateCredential(authStore: AuthStore): Promise<PublicKe
         },
     };
 
-    const credential = await navigator.credentials.create({ publicKey });
+    const credential = await navigator.credentials.create({ publicKey }).catch(() => null);
     if (!assertPRFCredential(credential)) throw new PassCryptoError('Unable to generate credential');
 
     return credential;
