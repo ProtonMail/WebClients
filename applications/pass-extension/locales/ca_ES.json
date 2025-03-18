@@ -1925,6 +1925,9 @@
       "Please consider leaving a review.": [
         "Considereu deixar una ressenya."
       ],
+      "Please contact your administrator": [
+        "Poseu-vos en contacte amb el vostre administrador."
+      ],
       "Please do not close this window": [
         "Si us plau, no tanqueu aquesta finestra"
       ],
@@ -2341,6 +2344,10 @@
         "${ config.options.wordCount } paraula",
         "${ config.options.wordCount } paraules"
       ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elements"
+      ],
       "${ days } day": [
         "${ days } dia",
         "${ days } dies"
@@ -2364,12 +2371,19 @@
         "${ months } mes",
         "${ months } mesos"
       ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versió ${ PASS_SHORT_APP_NAME }"
       ],
       "${ repliedCount } reply": [
         "${ repliedCount } resposta",
         "${ repliedCount } respostes"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } enllaç segur",
+        "${ secureLinksCount } enllaços segurs"
       ],
       "${ years } year": [
         "${ years } any",
@@ -2953,6 +2967,9 @@
       ],
       "Save passkeys": [
         "Desa les claus d'accés"
+      ],
+      "Secure links": [
+        "Enllaços segurs"
       ],
       "Security": [
         "Seguretat"
@@ -3813,6 +3830,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Quina diferència hi ha entre una nota de ${ PASS_SHORT_APP_NAME } i una nota de SimpleLogin?"
       ],
+      "You don't have any vault": [
+        "No teniu cap caixa forta."
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "La vostra subscripció a ${ planName } finalitzarà el ${ endDate }."
       ],
@@ -4099,6 +4119,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ja no tindreu accés a aquesta caixa forta. Per tornar-hi a entrar, necessitareu una nova invitació."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "El vostre administrador ha de crear una caixa forta per a vosaltres abans que pugueu crear elements."
+      ],
+      "Your organization does not allow creating a vault": [
+        "La vostra organització no permet crear una caixa forta."
       ],
       "Your organization does not allow sharing individual items": [
         "La vostra organització no permet compartir elements individuals."

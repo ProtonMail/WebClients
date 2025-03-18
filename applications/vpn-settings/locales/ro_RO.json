@@ -855,8 +855,16 @@
       "${ price } per domain": [
         "${ price } per domeniu"
       ],
+      "${ price } per seat": [
+        "${ price } per licență"
+      ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licență ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licență asistent de scriere",
@@ -1201,8 +1209,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Politica fără jurnalizare a ${ BRAND_NAME } VPN confirmată de un audit extern"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Politica fără jurnalizare a ${ VPN_APP_NAME } este confirmată de un audit extern"
       ],
       "**Streaming** is included in your subscription.": [
         "**Redarea în flux** este inclusă în abonamentul actual."
@@ -1225,8 +1233,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Creșteți vitezele VPN cu până la 400% cu VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Experții independenți în securitate au verificat dacă Proton VPN nu înregistrează datele utilizatorilor și nu se angajează în nicio posibilă practică de compromitere a confidențialității utilizatorilor."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Experții independenți în securitate au verificat dacă ${ VPN_APP_NAME } nu înregistrează datele utilizatorilor și nu se angajează în nicio posibilă practică de compromitere a confidențialității utilizatorilor."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Telegram este sigur de utilizat? După cum vom discuta în acest articol, asta depinde foarte mult de modul în care îl utilizați."
@@ -3899,6 +3907,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
@@ -3933,6 +3944,11 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }."
       ],
       "${ planName } expires today.": [
         "${ planName } expiră astăzi."
@@ -4191,6 +4207,9 @@
       "By leaving now, changes may not be saved": [
         "Dacă ieșiți acum, este posibil ca schimbările să nu fie salvate."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendar, integrat cu ${ MAIL_APP_NAME } și ${ CONTACTS_APP_NAME }"
+      ],
       "Can’t access your recovery email?": [
         "Nu vă puteți accesa adresa de e-mail de recuperare?"
       ],
@@ -4205,6 +4224,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Stocare în cloud, integrată cu ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premiul pentru alegerea editorilor CNET cu o evaluare de 8,4 din 10"
@@ -4414,6 +4436,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Serviciu de e-mail, integrat cu ${ CALENDAR_APP_NAME } și ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferințe e-mail salvate"
@@ -4772,6 +4797,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Gestionați aplicațiile ${ BRAND_NAME } pe care membrii organizației proprii le pot accesa. Dacă este dezactivat, numai administratorii vor avea acces."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Introduceți manual această informație în dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ switchButton }."
       ],
@@ -4907,6 +4935,9 @@
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
+      ],
+      "Password manager with extra account security": [
+        "Manager de parole cu securitate suplimentară a contului"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Parola trebuie să conțină ${ MIN_PASSWORD_LENGTH } caractere sau mai mult."
@@ -5093,6 +5124,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selectați afilierile utilizatorilor din ${ getFormattedOrganization } pe care doriți să le permiteți în organizația din ${ BRAND_NAME }:"
+      ],
+      "Self-custodial crypto wallet": [
+        "Portofel cripto în custodie proprie"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Trimiteți mesaje membrilor pentru a-i încuraja să-ți protejeze contul prin autentificarea cu doi factori."
@@ -5499,6 +5533,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN cu servere și adrese IP dedicate"
       ],
       "Warning:": [
         "Avertizare:"
@@ -10204,6 +10241,47 @@
         "Pentru ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -10498,47 +10576,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -10920,6 +10957,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Selectați un server la care să vă conectați"
+      ],
+      "Access control": [
+        "Controlul accesului"
       ],
       "Account": [
         "Cont"
@@ -12206,6 +12246,11 @@
         "Autoselectare din ${ numberOfCountries } țară",
         "Autoselectare din ${ numberOfCountries } țări",
         "Autoselectare din ${ numberOfCountries } de țări"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servere în peste ${ numberOfCountries } țară",
+        "Servere în peste ${ numberOfCountries } țări",
+        "Servere în peste ${ numberOfCountries } de țări"
       ]
     },
     "vpn_2024: renew": {

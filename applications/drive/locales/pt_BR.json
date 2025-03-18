@@ -531,6 +531,9 @@
       "Leave": [
         "Sair"
       ],
+      "Leave album": [
+        "Sair do álbum"
+      ],
       "Let's talk": [
         "Vamos conversar"
       ],
@@ -1080,8 +1083,15 @@
       "${ price } per domain": [
         "${ price } por domínio"
       ],
+      "${ price } per seat": [
+        "${ price } por licença"
+      ],
       "${ price } per user": [
         "${ price } por usuário"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -4233,6 +4243,9 @@
       "${ invitations.length } pending invitation": [
         "${ invitations.length } convite pendente",
         "${ invitations.length } convites pendentes"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
@@ -10402,8 +10415,8 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar a perda dos benefícios da ${ BRAND_NAME }"
       ],
-      "Confirmation required?": [
-        "Confirmação necessária?"
+      "Confirmation required": [
+        "Confirmação necessária"
       ],
       "Contact Details": [
         "Detalhes do contato"
@@ -11042,129 +11055,6 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviamos um convite para acessar o item."
-      ]
-    },
-    "Valentine_2025": {
-      "+ free gift": [
-        "+ um presente"
-      ],
-      "A gift code for ${ discountPercentAbsolute }% off ${ planTitle } for 1 year": [
-        "Um código de presente de ${ discountPercentAbsolute }% de desconto no ${ planTitle } por 1 ano"
-      ],
-      "Valentine's deal": [
-        "Oferta de Dia dos Namorados"
-      ],
-      "🎁 Your free gift to share, valued at ${ price }﻿: ": [
-        "🎁 Seu presente para compartilhar, no valor de ${ price }﻿: "
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "${ salePercentage }% de desconto"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "${ salePercentage }% de desconto para você e +1"
-      ],
-      "10 email addresses for you": [
-        "10 endereços de e-mail para você"
-      ],
-      "10,000+ servers in 110+ countries": [
-        "Mais de 10.000 servidores em mais de 110 países"
-      ],
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "200 GB storage": [
-        "200 GB de armazenamento"
-      ],
-      "500 GB total storage": [
-        "500 GB de armazenamento total"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Acesse conteúdo em serviços de streaming, incluindo Netflix, Disney+, Prime Video e muito mais, de qualquer lugar."
-      ],
-      "Advanced account protection": [
-        "Proteção avançada de conta"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Todos os recursos premium do Mail, VPN, Pass e Drive"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Os descontos são baseados no preço mensal padrão. Ao final do ciclo de cobrança, sua assinatura será renovada na tarifa anual padrão."
-      ],
-      "Double the love, half the price": [
-        "O dobro do amor, a metade do preço"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Obtenha 1 ano de ${ dealName } com ${ salePercentage }% de desconto — além de um código de presente para compartilhar a mesma oferta com um amigo"
-      ],
-      "Get the deal": [
-        "Aproveitar a oferta"
-      ],
-      "High-speed streaming": [
-        "Streaming em alta velocidade"
-      ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Oferece segurança de conta de alto nível e suporte especializado. ${ DARK_WEB_MONITORING_NAME } verifica partes ocultas da internet em busca de endereços de e-mail do ${ MAIL_APP_NAME } que acabaram em mercados de dados ilegais. Se uma violação for detectada, você receberá um alerta do Security Center com orientações para proteger sua conta."
-      ],
-      "Protect 10 devices at a time": [
-        "Proteja 10 dispositivos simultaneamente"
-      ],
-      "Recover previous file versions": [
-        "Recupere versões anteriores de arquivos"
-      ],
-      "Secure file storage & sharing": [
-        "Armazenamento e compartilhamento de arquivos seguros"
-      ],
-      "Secure vault sharing": [
-        "Compartilhamento seguro de cofres"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "O espaço de armazenamento é compartilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases ilimitados do hide-my-email"
-      ],
-      "Use your own email domain": [
-        "Use o seu próprio domínio de e-mail"
-      ],
-      "Valentine's deal:": [
-        "Oferta de Dia dos Namorados:"
-      ]
-    },
-    "Valentine_2025: offer": {
-      "Valentine's deal": [
-        "Oferta de Dia dos Namorados"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } mês",
-        "${ n } meses"
-      ],
-      "/ month": [
-        "/ mês"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "15 months": [
-        "15 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ],
-      "30 months": [
-        "30 meses"
-      ],
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
       ]
     },
     "Validation": {

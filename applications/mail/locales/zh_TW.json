@@ -1095,11 +1095,11 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select All": [
-        "選擇全部"
-      ],
       "Select all": [
         "全選"
+      ],
+      "Select All": [
+        "選擇全部"
       ],
       "Select all messages": [
         "選取所有郵件"
@@ -6526,7 +6526,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -13394,6 +13394,11 @@
         "今天"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
@@ -13475,11 +13480,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ]
     },
     "Tor out of date": {

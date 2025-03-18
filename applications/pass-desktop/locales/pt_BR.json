@@ -2023,7 +2023,7 @@
         "Considere deixar uma avaliação"
       ],
       "Please contact your administrator": [
-        "Contate seu administrador"
+        "Entre em contato com seu administrador"
       ],
       "Please do not close this window": [
         "Não feche esta janela."
@@ -2465,6 +2465,10 @@
       "${ repliedCount } reply": [
         "${ repliedCount } resposta",
         "${ repliedCount } respostas"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } link seguro",
+        "${ secureLinksCount } links seguros"
       ],
       "${ usageCount } login": [
         "${ usageCount } início de sessão",
@@ -4110,97 +4114,6 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
-      ]
-    },
-    "Valentine_2025": {
-      "VALENTINE'S DEAL": [
-        "OFERTA DO DIA DOS NAMORADOS"
-      ],
-      "Valentine's deal: ${ planName } 50% off for you": [
-        "Oferta do Dia dos Namorados: ${ planName } com 50% de desconto para você"
-      ]
-    },
-    "Valentine_2025: Offer": {
-      "${ salePercentage }% off": [
-        "${ salePercentage }% de desconto"
-      ],
-      "${ salePercentage }% off for you +1": [
-        "${ salePercentage }% de desconto para você e +1"
-      ],
-      "50% off": [
-        "-50%"
-      ],
-      "50% off for you +1": [
-        "50% de desconto para você e +1"
-      ],
-      "500 GB total storage": [
-        "500 GB de armazenamento total"
-      ],
-      "Advanced account protection": [
-        "Proteção avançada de conta"
-      ],
-      "All Mail, VPN, Pass, and Drive premium features": [
-        "Todos os recursos premium do Mail, VPN, Pass e Drive"
-      ],
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil."
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Os descontos são baseados no preço mensal padrão. Ao final do ciclo de cobrança, sua assinatura será renovada na tarifa anual padrão."
-      ],
-      "Double the love, half the price": [
-        "O dobro do amor, a metade do preço"
-      ],
-      "Get 1 year of ${ dealName } at ${ salePercentage }% off — plus a gift code to share the same deal with a friend": [
-        "Obtenha 1 ano de ${ dealName } com ${ salePercentage }% de desconto — além de um código de presente para compartilhar a mesma oferta com um amigo"
-      ],
-      "Get 1 year of ${ dealName } at 50% off — plus a gift code to share the same deal with a friend": [
-        "Obtenha 1 ano de ${ dealName } com 50% de desconto — além de um código de presente para compartilhar a mesma oferta com um amigo"
-      ],
-      "Get the deal": [
-        "Aproveitar a oferta"
-      ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrado"
-      ],
-      "Offers top-tier account security and expert support. ${ DARK_WEB_MONITORING_NAME } scans hidden parts of the internet for ${ MAIL_APP_NAME } email addresses that have ended up in illegal data markets. If a breach is detected, you’ll get a Security Center alert with steps to protect your account.": [
-        "Oferece segurança de conta de alto nível e suporte especializado. ${ DARK_WEB_MONITORING_NAME } verifica partes ocultas da internet em busca de endereços de e-mail do ${ MAIL_APP_NAME } que acabaram em mercados de dados ilegais. Se uma violação for detectada, você receberá um alerta do Security Center com orientações para proteger sua conta."
-      ],
-      "Secure vault sharing": [
-        "Compartilhamento seguro de cofres"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "O espaço de armazenamento é compartilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Aliases ilimitados do hide-my-email"
-      ],
-      "Valentine's deal:": [
-        "Oferta de Dia dos Namorados:"
-      ]
-    },
-    "Valentine_2025: Offers": {
-      "${ n } month": [
-        "${ n } mês",
-        "${ n } meses"
-      ],
-      "/ month": [
-        "/ mês"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "15 months": [
-        "15 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ],
-      "30 months": [
-        "30 meses"
-      ],
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
       ]
     },
     "Validation": {

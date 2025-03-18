@@ -1193,6 +1193,9 @@
       ]
     },
     "Blog": {
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "${ VPN_APP_NAME }:s policy om att inte logga bekräftas av en extern revision"
+      ],
       "**Streaming** is included in your subscription.": [
         "**Streaming** är inkluderat i din prenumeration."
       ],
@@ -1214,8 +1217,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Öka VPN-hastigheterna med upp till 400 % med VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Oberoende säkerhetsexperter har verifierat att ProtonVPN inte loggar användardata eller deltar i någon praxis som kan avslöja din integritet."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Oberoende säkerhetsexperter verifierade att ${ VPN_APP_NAME } inte loggar användardata eller deltar i några metoder som kan äventyra din integritet."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Är Telegram säkert att använda? Som vi kommer att diskutera i denna artikel beror det mycket på hur du använder det."
@@ -3896,7 +3899,7 @@
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
       "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } löper ut om ${ daysLeft } dagar.",
+        "${ planName } löper ut om ${ daysLeft } dag.",
         "${ planName } löper ut om ${ daysLeft } dagar."
       ],
       "${ planName } expires today.": [
@@ -4146,6 +4149,9 @@
       "By leaving now, changes may not be saved": [
         "Genom att lämna nu kan ändringar inte sparas"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjänst, integrerad med ${ MAIL_APP_NAME } och ${ CONTACTS_APP_NAME }"
+      ],
       "Can’t access your recovery email?": [
         "Kan du inte komma åt din e-post för återställning?"
       ],
@@ -4160,6 +4166,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Molnlagring, integrerad med ${ DOCS_APP_NAME }"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör (IdP). Detta kommer att aktivera SAML för hela organisationen."
@@ -4362,6 +4371,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjänst, integrerad med ${ CALENDAR_APP_NAME } och ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "E-postpreferenser sparade"
@@ -4720,6 +4732,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Säkerställ att du ${ addARecoveryMethod } så du kan komma åt ditt konto ifall du glömmer ditt lösenord."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Hantera vilka ${ BRAND_NAME }-applikationer som medlemmarna i din organisation har åtkomst till. Om funktionen är inaktiverad har endast administratörer åtkomst."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att ställa in ditt konto. ${ switchButton }."
       ],
@@ -4853,6 +4868,9 @@
       ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
+      ],
+      "Password manager with extra account security": [
+        "Lösenordshanterare med extra kontosäkerhet"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Lösenord måste vara ${ MIN_PASSWORD_LENGTH } tecken eller mer."
@@ -5033,6 +5051,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Välj användaraffilieringarna från ${ getFormattedOrganization } som du vill släppa in i din ${ BRAND_NAME }-organisation."
+      ],
+      "Self-custodial crypto wallet": [
+        "Självförvaltande kryptoplånbok"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Skicka e-post för att uppmuntra dina medlemmar att skydda sina konton med 2FA."
@@ -5430,6 +5451,9 @@
       ],
       "Visa Secure logo": [
         "Logga för Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN med dedikerade servrar och IP-adresser"
       ],
       "Warning:": [
         "Varning:"
@@ -10042,6 +10066,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -10330,47 +10395,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -10752,6 +10776,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Välj en server att ansluta till"
+      ],
+      "Access control": [
+        "Åtkomstkontroll"
       ],
       "Account": [
         "Konto"

@@ -51,6 +51,9 @@
       "Add address": [
         "Dodaj naslov"
       ],
+      "Add another account": [
+        "Dodaj drug račun"
+      ],
       "Add birthday": [
         "Dodaj rojstni dan"
       ],
@@ -323,6 +326,9 @@
       ],
       "Help": [
         "Pomoč"
+      ],
+      "Help and resources": [
+        "Pomoč in viri"
       ],
       "Hide advanced PGP settings": [
         "Skrij napredne nastavitve PGP"
@@ -769,6 +775,12 @@
       "${ price } per user": [
         "${ price } na uporabnika"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } sedež ${ LUMO_APP_NAME }",
+        "${ seats } sedeža ${ LUMO_APP_NAME }",
+        "${ seats } sedeži ${ LUMO_APP_NAME }",
+        "${ seats } sedežev ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licenca za pomočnika pri pisanju",
         "${ seats } licenci za pomočnika pri pisanju",
@@ -972,6 +984,9 @@
       ],
       "Monthly": [
         "Mesečno"
+      ],
+      "New!": [
+        "Novo!"
       ],
       "Two-year": [
         "Dve leti"
@@ -2109,6 +2124,31 @@
       ],
       "Åland Islands": [
         "Alandski otoki"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Za vse storitve ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Za ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Za ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Za ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Za ${ VPN_APP_NAME }"
       ]
     },
     "Cycle": {
@@ -5537,6 +5577,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj pomočnika pri pisanju ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Dodatek z brezplačno preizkusno dobo"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -6214,7 +6257,7 @@
         "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
       "Tor over VPN": [
-        "Tor preko VPN"
+        "Tor prek VPN"
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
@@ -6940,6 +6983,12 @@
       ],
       "Special offer": [
         "Posebna ponudba"
+      ],
+      "This offer won't be shown again.": [
+        "Ta ponudba se ne bo več prikazovala."
+      ],
+      "Your subscription renews soon": [
+        "Vaša naročnina se bo kmalu obnovila"
       ]
     },
     "Offer feature": {
@@ -7288,6 +7337,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Uradno sporočilo ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "Preglejte varnost računa"
       ]
     },
     "Security Center": {
@@ -8554,6 +8608,12 @@
       "Groups": [
         "Skupine"
       ],
+      "Help and feedback": [
+        "Pomoč in povratne informacije"
+      ],
+      "Help center": [
+        "Središče za pomoč"
+      ],
       "Human verification": [
         "Ali si človek"
       ],
@@ -8904,6 +8964,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } naprava",
+        "${ n } napravi",
+        "${ n } naprave",
+        "${ n } naprav"
+      ],
       "${ n } server": [
         "${ n } strežnik",
         "${ n } strežnika",
@@ -8915,6 +8981,12 @@
         "${ n } VPN povezavi",
         "${ n } VPN povezave",
         "${ n } VPN povezav"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } država",
+        "${ numberOfCountries } državi",
+        "${ numberOfCountries } države",
+        "${ numberOfCountries } držav"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } v ${ numberOfCountries } državi.",

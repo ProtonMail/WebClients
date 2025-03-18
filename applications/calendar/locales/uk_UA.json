@@ -867,8 +867,17 @@
       "${ price } per domain": [
         "${ price } за домен"
       ],
+      "${ price } per seat": [
+        "${ price } за ліцензію"
+      ],
       "${ price } per user": [
         "${ price } за користувача"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } ліцензія",
+        "${ seats } ${ LUMO_APP_NAME } ліцензії",
+        "${ seats } ${ LUMO_APP_NAME } ліцензій",
+        "${ seats } ${ LUMO_APP_NAME } ліцензій"
       ],
       "${ seats } writing assistant seat": [
         "Помічник з написання для ${ seats } користувача",
@@ -1673,6 +1682,9 @@
       ],
       "Work": [
         "Робочий"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Country name": {
@@ -2926,6 +2938,9 @@
         "У деяких групах немає контактів: ${ list }",
         "У деяких групах немає контактів: ${ list }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "${ user.Name } – ваше ім'я користувача. Щоб створити ${ emailAddress }, відкрийте Налаштування > Особистість й адреси > Короткий домен (pm.me)"
+      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -3234,6 +3249,12 @@
       ],
       "Please provide either a first name, a last name or a display name": [
         "Введіть ім'я, прізвище або псевдонім"
+      ],
+      "Please select a country": [
+        "Виберіть країну"
+      ],
+      "Please select a state": [
+        "Виберіть регіон"
       ],
       "Port is required": [
         "Порт обов'язковий"
@@ -5076,6 +5097,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
+      "Registering your subscription…": [
+        "Реєстрація підписки…"
+      ],
       "Removed participants will be notified.": [
         "Вилучені учасники отримають сповіщення."
       ],
@@ -5108,6 +5132,9 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
+      ],
+      "Setting up your new address…": [
+        "Налаштування вашої нової адреси…"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
@@ -5348,6 +5375,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями ${ BRAND_NAME }."
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "Ви можете змінити це будь-коли в ${ settingsLink }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
@@ -7082,6 +7112,12 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Використовується одночасно на ${ n } пристрої",
+        "Використовується одночасно на ${ n } пристроях",
+        "Використовується одночасно на ${ n } пристроях",
+        "Використовується одночасно на ${ n } пристроях"
       ],
       "User credential management": [
         "Керування обліковими даними користувача"
@@ -9011,6 +9047,12 @@
         "${ n } VPN-з'єднання на користувача",
         "${ n } VPN-з'єднань на користувача",
         "${ n } VPN-з'єднання на користувача"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN з'єднання для ${ n } пристрою на користувача",
+        "VPN з'єднання для ${ n } пристроїв на користувача",
+        "VPN з'єднання для ${ n } пристроїв на користувача",
+        "VPN з'єднання для ${ n } пристроїв на користувача"
       ]
     },
     "Subscription change warning": {
@@ -10374,6 +10416,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } пристрій",
+        "${ n } пристрої",
+        "${ n } пристроїв",
+        "${ n } пристроїв"
+      ],
       "${ n } server": [
         "${ n } сервер",
         "${ n } сервери",
@@ -10386,6 +10434,12 @@
         "${ n } VPN-з'єднань",
         "${ n } VPN-з'єднань"
       ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } країна",
+        "${ numberOfCountries } країни",
+        "${ numberOfCountries } країн",
+        "${ numberOfCountries } країн"
+      ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } в ${ numberOfCountries } країні",
         "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах",
@@ -10397,11 +10451,29 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Автовибір з ${ numberOfCountries } країни",
+        "Автовибір з ${ numberOfCountries } країн",
+        "Автовибір з ${ numberOfCountries } країн",
+        "Автовибір з ${ numberOfCountries } країн"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Сервери в ${ numberOfCountries }+ країні",
+        "Сервери в ${ numberOfCountries }+ країнах",
+        "Сервери в ${ numberOfCountries }+ країнах",
+        "Сервери в ${ numberOfCountries }+ країнах"
       ]
     },
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPrice }.": [
         "Потім рахунок виставлятиметься кожні 12 місяців за ціною ${ renewPrice }."
+      ],
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяць.",
+        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяці.",
+        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяців.",
+        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяців."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
@@ -10424,6 +10496,12 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } поштова адреса ${ BRAND_NAME }",
+        "${ n } поштові адреси ${ BRAND_NAME }",
+        "${ n } поштових адрес ${ BRAND_NAME }",
+        "${ n } поштових адрес ${ BRAND_NAME }"
+      ],
       "${ n } account per wallet": [
         "${ n } обліковий запис на гаманець",
         "${ n } облікові записи на гаманець",

@@ -543,6 +543,9 @@
       "Leave": [
         "Opustiť"
       ],
+      "Leave album": [
+        "Opustiť album"
+      ],
       "Let's talk": [
         "Porozprávajme sa"
       ],
@@ -1098,8 +1101,17 @@
       "${ price } per domain": [
         "${ price } za doménu"
       ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
+      ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
@@ -4349,6 +4361,9 @@
         "${ invitations.length } čakajúce pozvánky",
         "${ invitations.length } čakajúcich pozvánok",
         "${ invitations.length } čakajúcich pozvánok"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
@@ -10722,8 +10737,8 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potvrďte stratu bonusov ${ BRAND_NAME }"
       ],
-      "Confirmation required?": [
-        "Je potrebné potvrdenie?"
+      "Confirmation required": [
+        "Je potrebné potvrdenie"
       ],
       "Contact Details": [
         "Kontaktné údaje"

@@ -1118,10 +1118,10 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Selectare toate"
       ],
-      "Select all": [
+      "Select All": [
         "Selectare toate"
       ],
       "Select all messages": [
@@ -1542,8 +1542,16 @@
       "${ price } per domain": [
         "${ price } per domeniu"
       ],
+      "${ price } per seat": [
+        "${ price } per licență"
+      ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licență ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licență asistent de scriere",
@@ -5999,6 +6007,9 @@
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } vă poate proteja și afacerea."
       ],
@@ -6795,9 +6806,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7186,6 +7195,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
+      ],
+      "Refining email list in progress": [
+        "Rafinarea listei de e-mailuri este în desfășurare"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
@@ -14044,6 +14056,11 @@
         "Astăzi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
@@ -14127,11 +14144,6 @@
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
@@ -14206,6 +14218,11 @@
         "Autoselectare din ${ numberOfCountries } țară",
         "Autoselectare din ${ numberOfCountries } țări",
         "Autoselectare din ${ numberOfCountries } de țări"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servere în peste ${ numberOfCountries } țară",
+        "Servere în peste ${ numberOfCountries } țări",
+        "Servere în peste ${ numberOfCountries } de țări"
       ]
     },
     "vpn_2024: renew": {
