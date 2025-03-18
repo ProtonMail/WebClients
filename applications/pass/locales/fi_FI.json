@@ -73,6 +73,9 @@
       "Advanced options": [
         "Lisävalinnat"
       ],
+      "Apply lifetime coupon code": [
+        "Käytä elinikäistä etukoodia"
+      ],
       "Authenticate": [
         "Tunnistaudu"
       ],
@@ -781,6 +784,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Tunnistautuminen epäonnistui. Jatka vientiä vahvistamalla ${ BRAND_NAME } -salasanasi"
       ],
+      "Authentication failed. Confirm your backup password in order to proceed with the export": [
+        "Tunnistautuminen epäonnistui. Vahvista varasalasanasi jatkaaksesi vientiä"
+      ],
+      "Authentication failed. Confirm your extra password in order to proceed with the export": [
+        "Tunnistautuminen epäonnistui. Vahvista lisäsalasanasi jatkaaksesi vientiä"
+      ],
       "Biometric authentication failed": [
         "Biometrinen tunnistautuminen epäonnistui"
       ],
@@ -1309,6 +1318,12 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }in avaus vaatii aina ${ BRAND_NAME }-salasanasi."
       ],
+      "Access to ${ PASS_APP_NAME } will always require your backup password.": [
+        "${ PASS_APP_NAME }in avaus vaatii aina varasalasanasi."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your extra password.": [
+        "${ PASS_APP_NAME }in avaus vaatii aina lisäsalasanasi."
+      ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }:n käyttäminen vaatii sormenjälkesi tai laitteen PIN-koodin"
       ],
@@ -1396,8 +1411,14 @@
       "Bring your existing passwords into ${ BRAND_NAME }.": [
         "Tuo olemassa olevat salasanasi ${ BRAND_NAME }iin."
       ],
+      "Bring your own domain and you don't have to buy yet another email hosting solution.": [
+        "Tuo oma verkkotunnuksesi, eikä sinun tarvitse ostaa taas uutta sähköpostin hosting-palvelua."
+      ],
       "Built in 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
+      "By adding your domain, you can create aliases like hi@my-domain.com.": [
+        "Lisäämällä verkkotunnuksesi voit luoda aliaksia, kuten hei@verkkotunnukseni.fi."
       ],
       "Can be viewed": [
         "Avattavissa:"
@@ -1558,6 +1579,9 @@
       "Enter your PIN code": [
         "Syötä PIN-koodisi"
       ],
+      "Every time your alias receives an email from someone, a new contact is automatically created.": [
+        "Uusi yhteystieto luodaan automaattisesti joka kerta, kun aliaksesi vastaanottaa sähköpostia."
+      ],
       "Expires in": [
         "Erääntymiseen:"
       ],
@@ -1579,12 +1603,21 @@
       "finance": [
         "rahoitus"
       ],
+      "Follow those steps to import your data with a generic CSV:": [
+        "Noudata ohjeita tuodaksesi tietosi yleisellä CSV-tiedostolla:"
+      ],
+      "For security reasons, this action requires identity verification.": [
+        "Tämä toiminto vaatii turvallisuussyistä identiteetin vahvistamista."
+      ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Turvallisuussyistä sinun on vahvistettava pääsy tähän jaettuun holviin",
         "Turvallisuussyistä sinun on vahvistettava pääsy näihin jaettuihin holveihin"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
+      ],
+      "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
+        "Välitysosoite kopioitiin leikepöydälle. Lähetä sähköposti tähän osoitteeseen, ja ${ Email } vastaanottaa sen."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan.",
@@ -1604,6 +1637,9 @@
       ],
       "How does monitoring work?": [
         "Miten valvonta toimii?"
+      ],
+      "Identity confirmed": [
+        "Identiteetti vahvistettiin"
       ],
       "Import in progress:": [
         "Tuonti on käynnissä:"
@@ -1744,6 +1780,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -1826,6 +1866,9 @@
       "Please check your spam folder or try resending the code.": [
         "Tarkasta roskapostikansiosi tai kokeile koodin uudelleenlähetystä."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to disable offline mode": [
+        "Vahvista ${ BRAND_NAME }-salasanasi poistaaksesi yhteydettömän tilan käytöstä"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vahvista yhteydettömän tilan käyttöönotto ${ BRAND_NAME }-salasanallasi."
       ],
@@ -1835,14 +1878,41 @@
       "Please confirm your backup password": [
         "Vahvista varasalasanasi"
       ],
+      "Please confirm your backup password in order to auto-lock with biometrics.": [
+        "Vahvista varasalasanasi käyttääksesi automaattista biometristä lukitusta."
+      ],
+      "Please confirm your backup password in order to auto-lock with your password.": [
+        "Vahvista varasalasanasi käyttääksesi automaattista salasanalukitusta."
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Vahvista varasalasanasi poistaaksesi yhteydettömän tilan käytöstä"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Vahvista varasalasanasi ottaaksesi yhteydettömän tilan käyttöön"
+      ],
+      "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
+        "Vahvista varasalasanasi viedäksesi ${ PASS_APP_NAME }-tietosi"
+      ],
+      "Please confirm your backup password in order to unregister your current lock.": [
+        "Vahvista varasalasanasi poistaaksesi nykyisen lukitustapasi"
+      ],
+      "Please confirm your backup password in order to update the auto-lock time.": [
+        "Vahvista varasalasanasi muuttaaksesi automaattilukituksen viivettä."
+      ],
       "Please confirm your extra password": [
         "Vahvista lisäsalasanasi"
       ],
       "Please confirm your extra password in order to auto-lock with biometrics.": [
-        "Käytä automaattista biometristä avausta vahvistamalla lisäsalasanasi."
+        "Vahvista lisäsalasanasi käyttääksesi automaaattista biometristä avausta."
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Vahvista lisäsalasanasi käyttääksesi automaattista lisäsalasanalukitusta."
+      ],
+      "Please confirm your extra password in order to disable offline mode": [
+        "Vahvista lisäsalasanasi poistaaksesi yhteydettömän tilan käytöstä"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Vahvista lisäsalasanasi ottaaksesi yhteydettömän tilan käyttöön"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti lisäsalasanallasi"
@@ -1857,13 +1927,13 @@
         "Vahvista salasanasi"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Käytä automaattista biometristä avausta vahvistamalla salasanasi."
+        "Vahvista salasanasi käyttääksesi automaaattista biometristä avausta."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Käytä automaattista salasanalukitusta vahvistamalla salasanasi."
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "Poista nykyinen lukitustapa vahvistamalla salasanasi."
+        "Vahvista salasanasi poistaaksesi nykyisen lukitustapasi."
       ],
       "Please confirm your password in order to update the auto-lock time.": [
         "Vahvista salasanasi muuttaaksesi automaattilukituksen viivettä."
@@ -2015,6 +2085,9 @@
       "Syncing your vaults…": [
         "Holvejasi synkronoidaan…"
       ],
+      "Tap the icon ${ gearIcon } to customize the alias the way you want.": [
+        "Napauta kuvaketta ${ gearIcon } mukauttaaksesi aliasta haluamallasi tavalla."
+      ],
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
@@ -2048,6 +2121,12 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Vientitiedosto on salaamaton, eli kuka tahansa sen käsittelijä voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
+      ],
+      "This item is not currently shared with anyone. Invite people to share it with others.": [
+        "Tätä kohdetta ei ole tällä hetkellä jaettu kenellekään. Jaa se muille lähettämällä kutsuja."
+      ],
+      "This mailbox will use your previous email.": [
+        "Tämä postilaatikko käyttää edellistä sähköpostiosoitettasi."
       ],
       "This operation is irreversible.": [
         "Tätä toimintoa ei voi kumota."
@@ -2305,6 +2384,10 @@
       "${ repliedCount } reply": [
         "${ repliedCount } vastaus",
         "${ repliedCount } vastausta"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } suojattu linkki",
+        "${ secureLinksCount } suojattua linkkiä"
       ],
       "${ usageCount } login": [
         "${ usageCount } kirjautumistieto",
@@ -2968,6 +3051,9 @@
       "Theme": [
         "Teema"
       ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Tämä kohde on käytettävissä ${ date } asti, tai kunnes katselurajoitus on saavutettu."
+      ],
       "Title": [
         "Nimi"
       ],
@@ -3221,6 +3307,9 @@
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Etsi ${ pluralItemType } holvista ${ vaultName }"
       ],
+      "Search ${ pluralItemType } in all items": [
+        "Etsi ${ pluralItemType } kaikista kohteista"
+      ],
       "Search in ${ vaultName }": [
         "Etsi holvista ${ vaultName }"
       ],
@@ -3361,6 +3450,13 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Verkkotunnus on vahvistettu. Verkkotunnuksesi voi aloittaa sähköpostien vastaanottamisen ja aliasten luomisen"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Kohteet voivat sisältää enintään ${ share.targetMaxMembers } jäsenen.",
+        "Kohteet voivat sisältää enintään ${ share.targetMaxMembers } jäsentä."
+      ],
+      "Mailbox change successfully cancelled": [
+        "Postilaatikon muutos peruttiin"
+      ],
       "Mailbox successfully deleted": [
         "Postilaatikko poistettiin"
       ],
@@ -3375,6 +3471,10 @@
       ],
       "Random prefix generation successfully enabled": [
         "Satunnaisen etuliitteen luominen on otettu käyttöön"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Holvit voivat sisältää enintään ${ targetMaxMembers } jäsenen.",
+        "Holvit voivat sisältää enintään ${ targetMaxMembers } jäsentä."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Vahvistussähköposti lähetettiin. Tarkista saapuneet vahvistaaksesi postilaatikkosi"
@@ -3899,6 +3999,12 @@
       "At least one email address is required": [
         "Ainakin yksi sähköpostiosoite vaaditaan"
       ],
+      "Cannot contain a dot at the beginning": [
+        "Ei voi alkaa pisteellä"
+      ],
+      "Cannot contain a dot at the end": [
+        "Ei voi päättyä pisteeseen"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Aliaksen postilaatikoiden nouto ei juuri nyt onnistu"
       ],
@@ -3949,6 +4055,9 @@
       ],
       "Failed to load breaches.": [
         "Tietomurtojen lataus epäonnistui."
+      ],
+      "Identity could not be confirmed": [
+        "Identiteettiä ei voitu vahvistaa"
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
@@ -4002,11 +4111,17 @@
       "No secure links matching": [
         "Ei vastaavia suojattuja linkkejä"
       ],
+      "No shared items matching": [
+        "Vastaavia jaettuja kohteita ei ole"
+      ],
       "Offline": [
         "Yhteydetön"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Synkronoinnin jälkeen aliasten poistaminen ${ PASS_SHORT_APP_NAME }ista poistaa ne myös SimpleLoginista."
+      ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Vain aakkosnumeeriset pienet kirjaimet, pisteet, yhdysmerkit ja alaviivat ovat sallittuja"
       ],
       "Passphrase is required": [
         "Salalause vaaditaan"
@@ -4038,6 +4153,12 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
       ],
+      "Some items are currently shared. Deleting them will remove access for all other users.": [
+        "Joitakin kohteita on tällä hetkellä jaettuna. Niiden poistaminen poistaa pääsyn kaikilta muilta käyttäjiltä."
+      ],
+      "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
+        "Joitakin kohteita on tällä hetkellä jaettuna. Niiden siirtäminen toiseen holviin poistaa pääsyn kaikilta muilta käyttäjiltä."
+      ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Jokin meni pieleen ${ PASS_APP_NAME } -laajennusta käynnistettäessä. Yritä päivittää tai ladata se uudelleen"
       ],
@@ -4049,6 +4170,12 @@
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Sähköpostiosoitetta ei enää valvota tietomurtojen varalta."
+      ],
+      "This item is currently shared. Deleting it will remove access for all other users.": [
+        "Tämä kohde on tällä hetkellä jaettuna. Sen poistaminen poistaa pääsyn kaikilta muilta käyttäjiltä."
+      ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "Tämä kohde on tällä hetkellä jaettuna. Sen siirtäminen toiseen holviin poistaa pääsyn kaikilta muilta käyttäjiltä."
       ],
       "Title is required": [
         "Otsikko vaaditaan"
@@ -4074,6 +4201,9 @@
       "You have reached the limit of members who can access this vault.": [
         "Holvin käyttöoikeuden omaavien jäsenten enimmäismäärä on saavutettu."
       ],
+      "You have reached the limit of users for this item. ${ upgradeLink }": [
+        "Olet saavuttanut tämän kohteen käyttäjien enimmäismäärän. ${ upgradeLink }"
+      ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Holvin käyttäjien enimmäismäärä on saavutettu. ${ upgradeLink }"
       ],
@@ -4091,6 +4221,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Sinulla ei ole enää tämän holvin käyttöoikeutta. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Ylläpitäjäsi tulee luoda sinulle holvi, ennen kuin voit luoda kohteita"
+      ],
+      "Your organization does not allow creating a vault": [
+        "Organisaatiosi ei salli holvin luomista"
+      ],
+      "Your organization does not allow sharing individual items": [
+        "Organisaatiosi ei salli yksittäisten kohteiden jakamista"
       ],
       "Your session could not be authorized.": [
         "Istuntoasi ei voitu valtuuttaa."
