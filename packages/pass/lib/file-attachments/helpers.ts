@@ -1,4 +1,4 @@
-import { decodeFileContent } from '@proton/pass/lib/file-attachments/file-proto.transformer';
+import { decodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import type {
     FileAttachmentValues,
     FileDescriptor,
@@ -17,7 +17,7 @@ export const intoFileDescriptor = async (
         await Promise.all(
             files.map<Promise<Maybe<FileDescriptor>>>(async (file) => {
                 try {
-                    const descriptor = decodeFileContent(await decryptDescriptor(file)) ?? {
+                    const descriptor = decodeFileMetadata(await decryptDescriptor(file)) ?? {
                         name: 'Unknown',
                         mimeType: '',
                     };

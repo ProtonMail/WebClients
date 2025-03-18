@@ -11,7 +11,6 @@ import { UnknownFieldHandler } from '@protobuf-ts/runtime';
 import type { PartialMessage } from '@protobuf-ts/runtime';
 import { reflectionMergePartial } from '@protobuf-ts/runtime';
 import { MessageType } from '@protobuf-ts/runtime';
-
 /**
  * @generated from protobuf message FileMetadata
  */
@@ -28,15 +27,6 @@ export interface FileMetadata {
      * @generated from protobuf field: string mime_type = 2;
      */
     mimeType: string;
-}
-/**
- * @generated from protobuf message File
- */
-export interface File {
-    /**
-     * @generated from protobuf field: FileMetadata metadata = 1;
-     */
-    metadata?: FileMetadata;
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class FileMetadata$Type extends MessageType<FileMetadata> {
@@ -97,57 +87,3 @@ class FileMetadata$Type extends MessageType<FileMetadata> {
  * @generated MessageType for protobuf message FileMetadata
  */
 export const FileMetadata = new FileMetadata$Type();
-// @generated message type with reflection information, may provide speed optimized methods
-class File$Type extends MessageType<File> {
-    constructor() {
-        super('File', [{ no: 1, name: 'metadata', kind: 'message', T: () => FileMetadata }]);
-    }
-    create(value?: PartialMessage<File>): File {
-        const message = globalThis.Object.create(this.messagePrototype!);
-        if (value !== undefined) reflectionMergePartial<File>(this, message, value);
-        return message;
-    }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: File): File {
-        let message = target ?? this.create(),
-            end = reader.pos + length;
-        while (reader.pos < end) {
-            let [fieldNo, wireType] = reader.tag();
-            switch (fieldNo) {
-                case /* FileMetadata metadata */ 1:
-                    message.metadata = FileMetadata.internalBinaryRead(
-                        reader,
-                        reader.uint32(),
-                        options,
-                        message.metadata
-                    );
-                    break;
-                default:
-                    let u = options.readUnknownField;
-                    if (u === 'throw')
-                        throw new globalThis.Error(
-                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
-                        );
-                    let d = reader.skip(wireType);
-                    if (u !== false)
-                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
-            }
-        }
-        return message;
-    }
-    internalBinaryWrite(message: File, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* FileMetadata metadata = 1; */
-        if (message.metadata)
-            FileMetadata.internalBinaryWrite(
-                message.metadata,
-                writer.tag(1, WireType.LengthDelimited).fork(),
-                options
-            ).join();
-        let u = options.writeUnknownFields;
-        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
-        return writer;
-    }
-}
-/**
- * @generated MessageType for protobuf message File
- */
-export const File = new File$Type();

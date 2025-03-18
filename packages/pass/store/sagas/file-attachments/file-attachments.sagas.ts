@@ -13,7 +13,7 @@ import {
     updatePendingFileMetadata,
     uploadFileChunk,
 } from '@proton/pass/lib/file-attachments/file-attachments.requests';
-import { encodeFileContent } from '@proton/pass/lib/file-attachments/file-proto.transformer';
+import { encodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import { intoFileDescriptor } from '@proton/pass/lib/file-attachments/helpers';
 import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
 import {
@@ -34,7 +34,7 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 const initiateUpload = createRequestSaga({
     actions: fileUploadInitiate,
     call: async ({ totalChunks, ...metadata }) => {
-        const encodedMetadata = encodeFileContent(metadata);
+        const encodedMetadata = encodeFileMetadata(metadata);
         const fileDescriptor = await PassCrypto.createFileDescriptor({ metadata: encodedMetadata });
         const fileID = await createPendingFile(uint8ArrayToBase64String(fileDescriptor.metadata), totalChunks);
         PassCrypto.registerFileKey({ fileID, fileKey: fileDescriptor.fileKey });
@@ -92,7 +92,7 @@ const updateMetadata = createRequestSaga({
     actions: fileUpdateMetadata,
     call: async (descriptor) => {
         const { fileID, shareId, itemId } = descriptor;
-        const encodedMetadata = encodeFileContent(descriptor);
+        const encodedMetadata = encodeFileMetadata(descriptor);
         const fileDescriptor = await PassCrypto.createFileDescriptor({ metadata: encodedMetadata, fileID });
         const metadata = uint8ArrayToBase64String(fileDescriptor.metadata);
 

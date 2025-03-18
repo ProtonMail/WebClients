@@ -5,7 +5,6 @@
  * types.
  */
 import type { FileMetadata } from './file-v1';
-import { File } from './file-v1';
 import type { ExtraField, ExtraIdentitySection, PlatformSpecific } from './item-v1';
 import {
     Content,
@@ -20,11 +19,10 @@ import {
 import { Vault } from './vault-v1';
 
 export {
-    File,
-    FileMetadata,
     Content,
     ExtraField,
     ExtraIdentitySection,
+    FileMetadata,
     Metadata,
     ProtobufItem,
     ProtobufItemAlias,
