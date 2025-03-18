@@ -79,14 +79,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             user,
         });
 
-        const store = setupStore({
-            preloadedState: persistedState?.state,
-            features: {
-                accountPersist: true,
-                accountSecurity: true,
-                accountSessions: true,
-            },
-        });
+        const store = setupStore({ preloadedState: persistedState?.state });
         const dispatch = store.dispatch;
 
         if (user) {
