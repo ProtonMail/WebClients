@@ -4,7 +4,7 @@ import { all, put, takeEvery } from 'redux-saga/effects';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { itemCreate } from '@proton/pass/store/actions';
+import { fileLinkPending, itemCreate } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
@@ -32,6 +32,17 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
 
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item }));
+
+        if (createIntent.files.toAdd.length) {
+            yield put(
+                fileLinkPending.intent({
+                    shareId,
+                    itemId: item.itemId,
+                    revision: item.revision,
+                    files: createIntent.files,
+                })
+            );
+        }
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] })
@@ -61,6 +72,17 @@ function* withAliasCreationWorker(
         const aliasItem: ItemRevision = yield parseItemRevision(shareId, encryptedAliasItem);
 
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item: loginItem, alias: aliasItem }));
+
+        if (createIntent.files.toAdd.length) {
+            yield put(
+                fileLinkPending.intent({
+                    shareId,
+                    itemId: loginItem.itemId,
+                    revision: loginItem.revision,
+                    files: createIntent.files,
+                })
+            );
+        }
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] })
