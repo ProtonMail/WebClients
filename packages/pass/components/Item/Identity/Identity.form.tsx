@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
+import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
+import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
@@ -14,24 +16,24 @@ import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { useIdentityForm } from '@proton/pass/hooks/identity/useIdentityForm';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
-import type { IdentityItemFormValues } from '@proton/pass/types';
+import type { IdentityItemFormValues, ItemRevision } from '@proton/pass/types';
 
 import { IdentityCustomSections } from './Form/IdentityCustomSections';
 import { IdentitySection } from './Form/IdentitySection';
 
 type IdentityFormType = {
     form: FormikContextType<IdentityItemFormValues>;
-    editing?: boolean;
+    revision?: ItemRevision<'identity'>;
     onCancel: () => void;
 };
 
-export const IdentityForm: FC<IdentityFormType> = ({ form, editing = false, onCancel }) => {
+export const IdentityForm: FC<IdentityFormType> = ({ form, revision, onCancel }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
-    const { sections, addOptionalField } = useIdentityForm(form.values, editing);
+    const { sections, addOptionalField } = useIdentityForm(form.values, !!revision);
     const { ParentPortal, openPortal } = usePortal();
     const [ItemPanel, formId] = useMemo(
-        () => (editing ? [ItemEditPanel, 'edit-identity'] : [ItemCreatePanel, 'new-identity']),
-        [editing]
+        () => (revision ? [ItemEditPanel, 'edit-identity'] : [ItemCreatePanel, 'new-identity']),
+        [revision]
     );
 
     return (
@@ -40,14 +42,14 @@ export const IdentityForm: FC<IdentityFormType> = ({ form, editing = false, onCa
             formId={formId}
             handleCancelClick={onCancel}
             type="identity"
-            valid={form.isValid && form.dirty}
+            valid={form.isValid && form.dirty && !form.status?.isBusy}
             actions={ParentPortal}
         >
             {({ didEnter }) => (
                 <FormikProvider value={form}>
                     <Form id={formId}>
                         <FieldsetCluster>
-                            {!editing &&
+                            {!revision &&
                                 vaultTotalCount > 1 &&
                                 openPortal(<Field component={VaultPickerField} name="shareId" dense />)}
                             <Field
@@ -70,6 +72,20 @@ export const IdentityForm: FC<IdentityFormType> = ({ form, editing = false, onCa
                                 {...section}
                             />
                         ))}
+
+                        <FieldsetCluster>
+                            {revision ? (
+                                <Field
+                                    name="files"
+                                    component={FileAttachmentsFieldEdit}
+                                    shareId={revision.shareId}
+                                    itemId={revision.itemId}
+                                    revision={revision.revision}
+                                />
+                            ) : (
+                                <Field name="files" component={FileAttachmentsField} />
+                            )}
+                        </FieldsetCluster>
 
                         <IdentityCustomSections form={form} />
                     </Form>

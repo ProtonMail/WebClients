@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
+import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
@@ -12,8 +14,8 @@ import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 
 export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
-    const { revision } = itemViewProps;
-    const { shareId, itemId } = revision;
+    const { revision, handleHistoryClick } = itemViewProps;
+    const { shareId, itemId, lastUseTime, modifyTime, createTime } = revision;
 
     const note = useDeobfuscatedValue(revision.data.metadata.note);
     const copyToClipboard = useCopyToClipboard();
@@ -44,6 +46,13 @@ export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
         >
             <SecureLinkCardList shareId={shareId} itemId={itemId} />
             <NoteContent revision={revision} />
+            <FileAttachmentsContentView revision={revision} />
+            <ItemHistoryStats
+                lastUseTime={lastUseTime}
+                createTime={createTime}
+                modifyTime={modifyTime}
+                handleHistoryClick={handleHistoryClick}
+            />
         </ItemViewPanel>
     );
 };
