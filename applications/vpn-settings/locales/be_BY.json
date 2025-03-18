@@ -857,8 +857,17 @@
       "${ price } per domain": [
         "${ price } за дамен"
       ],
+      "${ price } per seat": [
+        "${ price } за ліцэнзію"
+      ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзія",
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзіі",
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзій",
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзій"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -1209,8 +1218,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Палітыка адсутнасці журналаў актыўнасці ${ BRAND_NAME } VPN пацверджана знешнім аўдытам."
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Палітыка адсутнасці журналаў актыўнасці ў ${ VPN_APP_NAME } пацверджана знешнім аўдытам"
       ],
       "**Streaming** is included in your subscription.": [
         "**Трансляцыі** ўключаны ў вашу падпіску."
@@ -1233,8 +1242,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Павялічце хуткасць VPN да 400% з дапамогай VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Незалежныя эксперты ў галіне бяспекі пацвердзілі, што ProtonVPN не запісвае даныя карыстальнікаў і не ўдзельнічае ў любых дзеяннях, якія могуць паставіць пад пагрозу вашу прыватнасць."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Незалежныя эксперты па бяспецы пацвердзілі, што ${ VPN_APP_NAME } не рэгіструе карыстальніцкія даныя і не ўжывае ніякіх метадаў, якія могуць паставіць пад пагрозу вашу прыватнасць."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Ці з'яўляецца Telegram бяспечным для выкарыстання? З гэтага артыкула вы даведаецеся, што ўсё вельмі залежыць ад спосабаў яго выкарыстання."
@@ -3928,6 +3937,9 @@
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме аднаго пароля, які замяняе сабой пароль ад уваходу і другі пароль. Для пераключэння ў рэжым аднаго пароля, увядзіце адзіны пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
@@ -4240,6 +4252,9 @@
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Каляндар, інтэграваны з ${ MAIL_APP_NAME } і ${ CONTACTS_APP_NAME }"
+      ],
       "Can’t access your recovery email?": [
         "Не можаце атрымаць доступ да электроннай пошты для аднаўлення доступу?"
       ],
@@ -4254,6 +4269,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Воблачнае сховішча, інтэграванае з ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Узнагарода \"Выбар рэдакцыі CNET\" з рэйтынгам 8,4 з 10"
@@ -4467,6 +4485,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Сэрвіс электроннай пошты, інтэграваны з ${ CALENDAR_APP_NAME } і ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Параметры адпраўкі пошты захаваны"
@@ -4825,6 +4846,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Пераканайцеся, што ў вас ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Кіруйце тым, да якіх праграм ${ BRAND_NAME } маюць доступ члены вашай арганізацыі. Калі выключана, толькі адміністратары будуць мець доступ."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Для налады свайго ўліковага запісу ўвядзіце гэту інфармацыю ўручную ў сваю прыладу двухфактарнай аўтэнтыфікацыі. ${ switchButton }."
       ],
@@ -4959,6 +4983,9 @@
       ],
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
+      ],
+      "Password manager with extra account security": [
+        "Менеджэр пароляў з дадатковай абаронай уліковага запісу"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Мінімальная даўжыня пароля складае наступную колькасць сімвалаў або больш: ${ MIN_PASSWORD_LENGTH }"
@@ -5148,6 +5175,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Выберыце прыналежнасці карыстальніка з ${ getFormattedOrganization }, якому вы хочаце дазволіць ўвайсці ў сваю арганізацыю ${ BRAND_NAME }:"
+      ],
+      "Self-custodial crypto wallet": [
+        "Крыптакашалёк з самастойным захоўваннем"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Адпраўляйце лісты, каб заахвоціць сваіх удзельнікаў абараняць свае ўліковыя запісы з дапамогай 2ФА."
@@ -5559,6 +5589,9 @@
       ],
       "Visa Secure logo": [
         "Лагатып Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN з выдзеленымі серверамі і IP-адрасамі"
       ],
       "Warning:": [
         "Папярэджанне:"
@@ -8957,10 +8990,10 @@
         "${ cycle } месяцаў"
       ],
       "${ months } month plan": [
-        "Тарыфны плана на ${ months } месяц",
-        "Тарыфны плана на ${ months } месяцы",
-        "Тарыфны плана на ${ months } месяцаў",
-        "Тарыфны плана на ${ months } месяцаў"
+        "Тарыфны план на ${ months } месяц",
+        "Тарыфны план на ${ months } месяцы",
+        "Тарыфны план на ${ months } месяцаў",
+        "Тарыфны план на ${ months } месяцаў"
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
@@ -10329,6 +10362,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -10629,47 +10703,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -11051,6 +11084,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Выберыце сервер для падключэння"
+      ],
+      "Access control": [
+        "Кантроль доступу"
       ],
       "Account": [
         "Уліковы запіс"

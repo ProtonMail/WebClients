@@ -347,6 +347,9 @@
       "Report a problem": [
         "Prijavi problem"
       ],
+      "Request a call": [
+        "Zatraži poziv"
+      ],
       "Request a feature": [
         "Zatraži značajku"
       ],
@@ -388,6 +391,9 @@
       ],
       "Search": [
         "Pretraga"
+      ],
+      "Search countries": [
+        "Pretraži države"
       ],
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
@@ -818,6 +824,14 @@
       ],
       "Website access problem": [
         "Problem s pristupom web stanici"
+      ]
+    },
+    "Button": {
+      "Continue using ${ planTitle }": [
+        "Nastavi koristiti ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Nastavi svoju pretplatu"
       ]
     },
     "Checkout row": {
@@ -2491,6 +2505,9 @@
       "Learn more": [
         "Saznajte više"
       ],
+      "Link copied to clipboard": [
+        "Poveznica kopirana u međuspremnik"
+      ],
       "Loading": [
         "Učitavanje"
       ],
@@ -2779,6 +2796,11 @@
         "Da biste izbjegli bilo kakve prekide u usluzi zbog neplaćenih faktura, molimo vas da u bilo kojem trenutku imate barem 1 valjani način plaćanja."
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Samo za prikaz"
+      ]
+    },
     "invitation status": {
       "Paused": [
         "Pauzirano"
@@ -3031,6 +3053,9 @@
       ],
       "Navigation": [
         "Navigacija"
+      ],
+      "New display name": [
+        "Novi zaslonski naziv"
       ],
       "New email": [
         "Nova e-pošta"
@@ -3639,6 +3664,11 @@
         "Započnite koristiti ${ appName }"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Sigurno dijeljenje trezora"
+      ]
+    },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
         "Pristup odbijen, administratorske ovlasti su ograničene."
@@ -3882,6 +3912,11 @@
         "Poništi ponovno postavljanje lozinke"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Ponovno postavljanje lozinke otkazano"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Poništiti ponovno postavljanje lozinke?"
@@ -3950,6 +3985,11 @@
     "Settings section title": {
       "Organization": [
         "Organizacija"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Dijeli ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -4165,6 +4205,17 @@
         "Razumijem"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } prostora za pohranu po korisniku"
@@ -4189,17 +4240,6 @@
       ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -4232,6 +4272,9 @@
       ],
       "Credits added": [
         "Nadodan je kredit"
+      ],
+      "Display name updated": [
+        "Zaslonski naziv je ažuriran"
       ],
       "Domain verified": [
         "Domena je potvrđena"
