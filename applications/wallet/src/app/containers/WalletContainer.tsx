@@ -15,6 +15,7 @@ import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
 import { InvitesButton } from '../components/InvitesButton';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
+import ThemeButton from '../components/ThemeButton';
 import { WalletMainContent } from '../components/WalletMainContent';
 import { WalletPreferencesModal } from '../components/WalletPreferencesModal';
 import { useBitcoinBlockchainContext } from '../contexts';
@@ -127,6 +128,7 @@ export const WalletContainer = () => {
                                 <Icon alt={c('Action').t`Secure your wallet`} name="chevron-right" className="ml-2" />
                             </Button>
                             <InvitesButton walletAccount={firstWalletAccount} />
+                            <ThemeButton />
                         </div>
                     </div>
 

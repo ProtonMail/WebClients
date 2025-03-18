@@ -1,0 +1,17 @@
+.ui-orange {
+    --interaction-norm-minor-2: #523a2e;
+    --interaction-norm-minor-1: #b56f2e;
+    --interaction-norm: #ffb35f;
+    --interaction-norm-major-1: #ff8336;
+    --interaction-norm-major-2: #ff683a;
+    --interaction-norm-major-3: #ff5b32;
+
+    --focus-outline: var(--interaction-norm-major-2);
+    --focus-ring: var(--interaction-norm-minor-1);
+
+    --interaction-norm-hover: var(--interaction-norm-major-1);
+    --interaction-norm-active: var(--interaction-norm-major-2);
+    --interaction-weak-hover: var(--interaction-weak-major-1);
+
+    --background-blur: #3e3c88;
+}

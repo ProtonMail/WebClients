@@ -1,0 +1,17 @@
+.ui-blue {
+    --interaction-norm-minor-2: #094a62;
+    --interaction-norm-minor-1: #399bbe;
+    --interaction-norm: #7bdcff;
+    --interaction-norm-major-1: #00bbff;
+    --interaction-norm-major-2: #00a9e7;
+    --interaction-norm-major-3: #0080a8;
+
+    --focus-outline: var(--interaction-norm-major-2);
+    --focus-ring: var(--interaction-norm-minor-1);
+
+    --interaction-norm-hover: var(--interaction-norm-major-1);
+    --interaction-norm-active: var(--interaction-norm-major-2);
+    --interaction-weak-hover: var(--interaction-weak-major-1);
+
+    --background-blur: #3e3c88;
+}

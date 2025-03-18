@@ -1,0 +1,12 @@
+.ui-blue {
+    --interaction-norm: #66b6ff;
+
+    --focus-outline: var(--interaction-norm-major-2);
+    --focus-ring: var(--interaction-norm-minor-1);
+
+    --interaction-norm-hover: var(--interaction-norm-major-1);
+    --interaction-norm-active: var(--interaction-norm-major-2);
+    --interaction-weak-hover: var(--interaction-weak-major-1);
+
+    --background-blur: var(--interaction-norm-minor-1);
+}
