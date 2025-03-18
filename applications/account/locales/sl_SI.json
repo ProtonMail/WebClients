@@ -100,6 +100,9 @@
       "Add address or domain": [
         "Dodaj naslov ali domeno"
       ],
+      "Add another account": [
+        "Dodaj drug račun"
+      ],
       "Add calendar from URL": [
         "Dodajanje koledarja iz URL"
       ],
@@ -616,6 +619,9 @@
       "Help": [
         "Pomoč"
       ],
+      "Help and resources": [
+        "Pomoč in viri"
+      ],
       "Hide": [
         "Skrij"
       ],
@@ -1033,6 +1039,9 @@
       "Send reminder": [
         "Pošlji opomnik"
       ],
+      "Set as album cover": [
+        "Nastavi kot naslovnico albuma"
+      ],
       "Set as default": [
         "Nastavi kot privzeto"
       ],
@@ -1355,6 +1364,12 @@
       ],
       "${ price } per user": [
         "${ price } na uporabnika"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } sedež ${ LUMO_APP_NAME }",
+        "${ seats } sedeža ${ LUMO_APP_NAME }",
+        "${ seats } sedeži ${ LUMO_APP_NAME }",
+        "${ seats } sedežev ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licenca za pomočnika pri pisanju",
@@ -1810,6 +1825,9 @@
       ],
       "Monthly": [
         "Mesečno"
+      ],
+      "New!": [
+        "Novo!"
       ],
       "Two-year": [
         "Dve leti"
@@ -3384,6 +3402,31 @@
     "cta": {
       "Learn more": [
         "Več informacij"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Za vse storitve ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Za ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Za ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Za ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Za ${ VPN_APP_NAME }"
       ]
     },
     "Cycle": {
@@ -6954,9 +6997,6 @@
       ],
       "Check the status of imports and forwarding.": [
         "Preverite stanje uvozov in posredovanja."
-      ],
-      "Choose an app to get started": [
-        "Izberite aplikacijo in začnite"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
@@ -10807,6 +10847,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj pomočnika pri pisanju ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Dodatek z brezplačno preizkusno dobo"
+      ],
       "Encrypted email and calendar to get you started": [
         "Šifriran poštni predal in koledar za začetek"
       ],
@@ -11665,7 +11708,7 @@
         "Varno kopirajte vse svoje datoteke in jih sinhronizirajte v vseh napravah."
       ],
       "Tor over VPN": [
-        "Tor preko VPN"
+        "Tor prek VPN"
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
@@ -12485,6 +12528,12 @@
       ],
       "Special offer": [
         "Posebna ponudba"
+      ],
+      "This offer won't be shown again.": [
+        "Ta ponudba se ne bo več prikazovala."
+      ],
+      "Your subscription renews soon": [
+        "Vaša naročnina se bo kmalu obnovila"
       ]
     },
     "Offer feature": {
@@ -13821,6 +13870,9 @@
       ],
       "Recovery phone number": [
         "Telefonska številka za obnovitev"
+      ],
+      "Review account safety": [
+        "Preglejte varnost računa"
       ],
       "Safeguard account now": [
         "Zavarujte račun zdaj"
@@ -16484,6 +16536,12 @@
       "Groups": [
         "Skupine"
       ],
+      "Help and feedback": [
+        "Pomoč in povratne informacije"
+      ],
+      "Help center": [
+        "Središče za pomoč"
+      ],
       "History": [
         "Zgodovina"
       ],
@@ -17627,6 +17685,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } naprava",
+        "${ n } napravi",
+        "${ n } naprave",
+        "${ n } naprav"
+      ],
       "${ n } server": [
         "${ n } strežnik",
         "${ n } strežnika",
@@ -17638,6 +17702,12 @@
         "${ n } VPN povezavi",
         "${ n } VPN povezave",
         "${ n } VPN povezav"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } država",
+        "${ numberOfCountries } državi",
+        "${ numberOfCountries } države",
+        "${ numberOfCountries } držav"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } v ${ numberOfCountries } državi.",
