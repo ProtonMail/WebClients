@@ -12,6 +12,7 @@ import {
     querySharedWithMeAlbums,
     queryUpdateAlbumCover,
 } from '@proton/shared/lib/api/drive/photos';
+import { getCanAdmin, getCanWrite, getIsOwner } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
@@ -20,6 +21,7 @@ import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDri
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
 import { useShare } from '../../store/_shares';
+import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import { VolumeType, useVolumesState } from '../../store/_volumes';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
@@ -37,6 +39,11 @@ export interface Album {
 export interface DecryptedAlbum extends DecryptedLink {
     cover?: DecryptedLink;
     photoCount: number;
+    permissions: {
+        isOwner: boolean;
+        isAdmin: boolean;
+        isEditor: boolean;
+    };
 }
 
 /**
@@ -83,12 +90,12 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const driveEventManager = useDriveEventManager();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [albumPhotosLoading, setIsAlbumPhotosLoading] = useState<boolean>(true);
-    const [userAddressEmail, setUserAddressEmail] = useState<string>();
     const [photos, setPhotos] = useState<Photo[]>([]);
     const [albums, setAlbums] = useState<Map<string, DecryptedAlbum>>(new Map());
     const [currentAlbumLinkId, setCurrentAlbumLinkId] = useState<string>();
     const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
-    const { getShareWithKey, getShareCreatorKeys, getShare } = useShare();
+    const { getShareWithKey, getShare } = useShare();
+    const { getSharePermissions } = useDirectSharingInfo();
     const { getLink } = useLink();
     const { setVolumeShareIds } = useVolumesState();
 
@@ -102,13 +109,9 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 const share = await getShareWithKey(signal, createdPhotos.shareId);
                 setPhotosShare(share);
                 setVolumeShareIds(share.volumeId, [share.shareId]);
-                const { address } = await getShareCreatorKeys(signal, share);
-                setUserAddressEmail(address.Email);
             } else {
                 // use old photo share
                 setPhotosShare(defaultPhotosShare);
-                const { address } = await getShareCreatorKeys(signal, defaultPhotosShare);
-                setUserAddressEmail(address.Email);
             }
         });
     }, []);
@@ -252,10 +255,16 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                           })
                                         : Promise.resolve(undefined),
                                 ]);
+                                const permissions = await getSharePermissions(abortSignal, album.ShareID);
                                 return {
                                     ...link,
                                     cover: cover,
                                     photoCount: album.PhotoCount,
+                                    permissions: {
+                                        isOwner: getIsOwner(permissions),
+                                        isAdmin: getCanAdmin(permissions),
+                                        isEditor: getCanWrite(permissions),
+                                    },
                                 };
                             } catch (e) {
                                 sendErrorReport(e);
@@ -282,11 +291,11 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
             return albumCall();
         },
-        [getLink, request, shareId, volumeId]
+        [getLink, request, shareId, volumeId, getSharePermissions]
     );
 
     const loadSharedWithMeAlbums = useCallback(
-        async (abortSignal: AbortSignal) => {
+        async (abortSignal: AbortSignal, refresh?: boolean) => {
             const sharedWithMeCall = async (anchorID?: string) => {
                 if (!volumeId || !shareId) {
                     return;
@@ -306,6 +315,10 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     const newDecryptedAlbums = await Promise.all(
                         Albums.map(async (album) => {
                             try {
+                                // Update share cache
+                                if (refresh) {
+                                    await getShare(abortSignal, album.ShareID, refresh);
+                                }
                                 const [link, cover] = await Promise.all([
                                     getLink(abortSignal, album.ShareID, album.LinkID),
                                     album.CoverLinkID
@@ -315,11 +328,16 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                           })
                                         : Promise.resolve(undefined),
                                 ]);
-
+                                const permissions = await getSharePermissions(abortSignal, link.rootShareId);
                                 return {
                                     ...link,
                                     cover: cover,
                                     photoCount: album.PhotoCount,
+                                    permissions: {
+                                        isOwner: getIsOwner(permissions),
+                                        isAdmin: getCanAdmin(permissions),
+                                        isEditor: getCanWrite(permissions),
+                                    },
                                 };
                             } catch (e) {
                                 sendErrorReport(e);
@@ -343,8 +361,22 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
             return sharedWithMeCall();
         },
-        [getLink, request, shareId, volumeId]
+        [getLink, request, shareId, volumeId, getSharePermissions]
     );
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        const unsubscribe = driveEventManager.eventHandlers.subscribeToCore((event) => {
+            if (event.DriveShareRefresh?.Action === 2) {
+                loadSharedWithMeAlbums(abortController.signal, true).catch(sendErrorReport);
+            }
+        });
+
+        return () => {
+            unsubscribe();
+            abortController.abort();
+        };
+    }, [loadSharedWithMeAlbums, driveEventManager.eventHandlers]);
 
     const addAlbumPhotos = useCallback(
         async (
@@ -473,12 +505,19 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                 : Promise.resolve(undefined),
                         ]);
 
+                        const permissions = await getSharePermissions(abortSignal, link.rootShareId);
+
                         return {
                             linkId,
                             update: {
                                 ...link,
                                 cover: cover,
                                 photoCount: album.photoCount,
+                                permissions: {
+                                    isOwner: getIsOwner(permissions),
+                                    isAdmin: getCanAdmin(permissions),
+                                    isEditor: getCanWrite(permissions),
+                                },
                             },
                         };
                     } catch (error) {
@@ -497,7 +536,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 return newAlbums;
             });
         },
-        [shareId, getLink]
+        [shareId, getLink, getSharePermissions]
     );
 
     const removePhotosFromCache = useCallback((linkIds: string[]) => {
@@ -545,7 +584,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 shareId: photosShare?.shareId,
                 linkId: photosShare?.rootLinkId,
                 volumeId: photosShare?.volumeId,
-                userAddressEmail: userAddressEmail,
                 isPhotosLoading: photosLoading,
                 isAlbumPhotosLoading: albumPhotosLoading,
                 photos,

@@ -217,7 +217,6 @@ interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGaller
     album: DecryptedAlbum;
     onDeleteAlbum: () => void;
     onShowDetails: () => void;
-    isOwner: boolean;
 }
 
 const ToolbarRightActionsGallery = ({
@@ -242,7 +241,6 @@ const ToolbarRightActionsAlbumGallery = ({
     data,
     onDeleteAlbum,
     onShowDetails,
-    isOwner,
 }: ToolbarRightActionsAlbumGalleryProps) => {
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { removeMe } = useSharedWithMeActions();
@@ -281,7 +279,7 @@ const ToolbarRightActionsAlbumGallery = ({
                     {c('Action').t`Download`}
                 </ToolbarButton>
             )}
-            {isOwner && (
+            {album.permissions.isOwner && (
                 <PhotosAlbumShareButton
                     onClick={() => {
                         // TODO: avoid the data loop and just execute callback
@@ -304,7 +302,7 @@ const ToolbarRightActionsAlbumGallery = ({
                         navigateToAlbums
                     );
                 }}
-                isOwner={isOwner}
+                isOwner={album.permissions.isOwner}
             />
             {linkSharingModal}
             {confirmModal}
@@ -330,7 +328,6 @@ interface PhotosWithAlbumToolbarProps {
     album?: DecryptedAlbum;
     onDeleteAlbum?: () => void;
     onShowDetails?: () => void;
-    isOwner?: boolean;
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
@@ -351,7 +348,6 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     album,
     onDeleteAlbum,
     onShowDetails,
-    isOwner = true, // Define to true in case it's not passed
 }) => {
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
@@ -376,7 +372,6 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         album={album}
                         onDeleteAlbum={onDeleteAlbum}
                         onShowDetails={onShowDetails}
-                        isOwner={isOwner}
                     />
                 )}
 
