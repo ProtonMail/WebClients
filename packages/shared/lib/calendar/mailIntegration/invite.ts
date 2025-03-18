@@ -231,9 +231,18 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
                 if (!partstat) {
                     throw new Error('Cannot reply without participant status');
                 }
+
+                const parameters: Record<string, string> = {};
+
+                parameters.partstat = partstat;
+
+                if (comment !== undefined) {
+                    parameters.comment = comment;
+                }
+
                 return {
                     value,
-                    parameters: { partstat, comment },
+                    parameters,
                 };
             }
             return { value };
