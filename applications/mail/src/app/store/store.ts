@@ -3,20 +3,14 @@ import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
-import { type StartListeningFeatures, start } from './listener';
+import { start } from './listener';
 import { type MailState, rootReducer } from './rootReducer';
 import { mailIgnoredActionPaths, mailIgnoredPaths } from './serializable';
 import { type MailThunkArguments, extraThunkArguments } from './thunk';
 
 export type { MailState };
 
-export const setupStore = ({
-    preloadedState,
-    features,
-}: {
-    preloadedState?: Partial<MailState>;
-    features?: StartListeningFeatures;
-} = {}) => {
+export const setupStore = ({ preloadedState }: { preloadedState?: Partial<MailState> } = {}) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
     const store = configureStore({
@@ -41,13 +35,13 @@ export const setupStore = ({
     });
 
     const startListening = listenerMiddleware.startListening as AppStartListening;
-    start({ startListening, features });
+    start({ startListening });
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
         module.hot.accept('./listener', () => {
             listenerMiddleware.clearListeners();
-            start({ startListening, features });
+            start({ startListening });
         });
     }
 
