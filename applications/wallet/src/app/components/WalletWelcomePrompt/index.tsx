@@ -4,13 +4,16 @@ import type { ModalOwnProps } from '@proton/components';
 import { Prompt, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import walletPlaneImg from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
+import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
+import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
 import { useWalletApiClients } from '@proton/wallet';
 import { acceptTermsAndConditions, useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { getTermAndConditionsSentence } from '../../utils/legal';
+import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 interface WalletWelcomePromptProps {
     email?: string;
@@ -19,6 +22,7 @@ interface WalletWelcomePromptProps {
 type Props = ModalOwnProps & WalletWelcomePromptProps;
 
 export const WalletWelcomePrompt = ({ email, ...modalProps }: Props) => {
+    const theme = useWalletTheme();
     const walletApi = useWalletApiClients();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -70,7 +74,7 @@ export const WalletWelcomePrompt = ({ email, ...modalProps }: Props) => {
         >
             <div className="flex flex-column items-center text-center">
                 <img
-                    src={walletPlaneImg}
+                    src={theme === WalletThemeOption.WalletDark ? walletBitcoinDark : walletBitcoin}
                     alt=""
                     className="w-custom h-custom"
                     style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}

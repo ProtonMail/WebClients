@@ -6,6 +6,7 @@ import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/com
 import useLoading from '@proton/hooks/useLoading';
 import { COMPUTE_BITCOIN_UNIT, type IWasmApiWalletData, PriorityTargetBlock } from '@proton/wallet';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
@@ -18,6 +19,7 @@ import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { convertAmount, isUndefined } from '../../../utils';
 import { EmailListItem } from '../../EmailListItem';
 import { EmailSelect } from '../../EmailSelect';
+import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 import type { RecipientDetailsModalOwnProps } from '../../RecipientDetailsModal';
 import { RecipientDetailsModal } from '../../RecipientDetailsModal';
 import { TextAreaModal } from '../../TextAreaModal';
@@ -52,6 +54,7 @@ export const TransactionReviewStep = ({
     onSent,
     getFeesByBlockTarget,
 }: Props) => {
+    const theme = useWalletTheme();
     const [accountExchangeRate] = useExchangeRate(account.FiatCurrency);
 
     const [settings] = useUserWalletSettings();
@@ -95,7 +98,7 @@ export const TransactionReviewStep = ({
             {loadingSend && (
                 <div
                     className="fixed top-0 left-0 w-full h-full flex flex-column items-center justify-center"
-                    style={{ background: 'var(--bg-overlay)', zIndex: 100 }}
+                    style={{ background: 'var(--bg-overlay)', opacity: 0.6, zIndex: 100 }}
                 >
                     <CircleLoader size="medium" className="color-primary" />
                 </div>
@@ -371,7 +374,7 @@ export const TransactionReviewStep = ({
                     color="norm"
                     shape="solid"
                     size="large"
-                    shadow
+                    shadow={theme === WalletThemeOption.WalletLight}
                     className="mt-6"
                     fullWidth
                     disabled={!hasFeeEstimations}

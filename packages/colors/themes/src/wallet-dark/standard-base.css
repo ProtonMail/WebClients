@@ -1,0 +1,84 @@
+:root,
+.ui-standard {
+    --primary-minor-3: #41419f;
+    --primary-minor-2: #6060ff;
+    --primary-minor-1: #7474ff;
+    --primary: #9494ff;
+    --primary-major-1: #afafff;
+    --primary-major-2: #bcbcff;
+    --primary-major-3: #d7d7ff;
+    --primary-contrast: #ffffff;
+
+    --signal-danger: #fb7878;
+    --signal-danger-contrast: #ffffff;
+    --signal-warning: #ff9761;
+    --signal-success: #88f189;
+    --signal-info: #767dff;
+
+    --text-norm: #ffffff;
+    --text-weak: #bfbfd0;
+    --text-hint: #a6a6b5;
+    --text-disabled: #646481;
+    --text-invert: #1a1a28;
+
+    --background-norm: #222247;
+    --background-weak: #191c32;
+    --background-strong: #31334a;
+    --background-invert: #ffffff;
+    --background-blur: #3e3c88;
+
+    --border-weak: #222247;
+    --border-norm: #31334a;
+    --border-strong: #56566d;
+
+    --interaction-norm-minor-3: #332f62;
+    --interaction-norm-minor-2: #4e4c8c;
+    --interaction-norm-minor-1: #7e7be0;
+    --interaction-norm: #9494ff;
+    --interaction-norm-major-1: #ababf8;
+    --interaction-norm-major-2: #bcbcff;
+    --interaction-norm-major-3: #d7d7ff;
+    --interaction-norm-contrast: #1a1a28;
+
+    --interaction-weak-minor-3: #1a1a28;
+    --interaction-weak-minor-2: #222247;
+    --interaction-weak-minor-1: #454554;
+    --interaction-weak: #56566d;
+    --interaction-weak-major-1: #646481;
+    --interaction-weak-major-2: #a6a6b5;
+    --interaction-weak-major-3: #bfbfd0;
+    --interaction-weak-contrast: #ffffff;
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(132 142 163 / 0.2);
+    --interaction-default-active: rgb(99 109 127 / 0.2);
+
+    --shadow-norm-opacity: 0.26;
+    --shadow-raised-opacity: 0.22;
+    --shadow-lifted-opacity: 0.16;
+
+    --backdrop-norm: rgb(0 0 0 / 0.6);
+
+    --bg-overlay: #04050a;
+
+    --field-background-color: #191c32;
+    --field-hover-background-color: #191c32;
+    --field-focus-background-color: #191c32;
+    --field-norm: #e6e8ec;
+    --field-hover: #e2e2e2;
+    --field-disabled: #646481;
+
+    --font-weight-weak: 400;
+    --font-weight-normal: 500;
+
+    --focus-outline: #5e64cc;
+    --focus-ring: #e4e5ff;
+
+    --button-darker-default-background-color: #d7d7ff;
+    --button-darker-hover-background-color: #7e7be0;
+    --button-darker-active-background-color: #191927;
+
+    --button-lighter-default-background-color: #191c32;
+    --button-lighter-hover-background-color: #31334a;
+    --button-lighter-active-background-color: #4e4c8c;
+}

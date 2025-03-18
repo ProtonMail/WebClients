@@ -8,16 +8,19 @@ import { c } from 'ttag';
 
 import type { WasmApiWalletAccount, WasmPriceGraph } from '@proton/andromeda';
 import { Tooltip } from '@proton/components';
+import btcDarkSvg from '@proton/styles/assets/img/illustrations/btc-dark.svg';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
 import { BITCOIN, DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData } from '@proton/wallet';
 import { usePriceGraphData, useWalletAccountExchangeRate } from '@proton/wallet/store';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, CoreButton } from '../../atoms/Button';
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useBalance } from '../Balance/useBalance';
+import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 import './MetricsAndCtas.scss';
 
@@ -57,6 +60,7 @@ export const MetricsAndCtas = ({
     onClickReceive,
     onClickBuy,
 }: Props) => {
+    const theme = useWalletTheme();
     const account = apiAccount ?? apiWalletData.WalletAccounts.at(0);
     const localDisabled = !account || disabled;
     const { isNarrow } = useResponsiveContainerContext();
@@ -95,7 +99,10 @@ export const MetricsAndCtas = ({
         >
             <div className="flex flex-row gap-6 max-w-custom my-2 items-center" style={{ '--max-w-custom': '50rem' }}>
                 <div className="flex gap-4 flex-nowrap items-center">
-                    <img src={btcSvg} alt={c('Info').t`Bitcoin`} />
+                    <img
+                        src={theme === WalletThemeOption.WalletDark ? btcDarkSvg : btcSvg}
+                        alt={c('Info').t`Bitcoin`}
+                    />
                     <span className="metrics-and-ctas-btc-text">
                         <span>{c('Info').t`Bitcoin`}</span> <span className="color-weak">BTC</span>
                     </span>

@@ -171,31 +171,60 @@ const config: ThemeConfig[] = [
         ],
     },
     {
-        output: './themes/dist/wallet.theme.css',
+        output: './themes/dist/wallet-light.theme.css',
         files: [
             {
-                path: './themes/src/wallet/light-base.css',
+                path: './themes/src/wallet-light/standard-base.css',
                 type: 'light',
             },
             {
-                path: './themes/src/wallet/ui-blue.css',
+                path: './themes/src/wallet-light/ui-blue.css',
                 type: 'light',
             },
             {
-                path: './themes/src/wallet/ui-green.css',
+                path: './themes/src/wallet-light/ui-green.css',
                 type: 'light',
             },
             {
-                path: './themes/src/wallet/ui-orange.css',
+                path: './themes/src/wallet-light/ui-orange.css',
                 type: 'light',
             },
             {
-                path: './themes/src/wallet/ui-pink.css',
+                path: './themes/src/wallet-light/ui-pink.css',
                 type: 'light',
             },
             {
-                path: './themes/src/wallet/ui-purple.css',
+                path: './themes/src/wallet-light/ui-purple.css',
                 type: 'light',
+            },
+        ],
+    },
+    {
+        output: './themes/dist/wallet-dark.theme.css',
+        files: [
+            {
+                path: './themes/src/wallet-dark/standard-base.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/wallet-dark/ui-blue.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/wallet-dark/ui-green.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/wallet-dark/ui-orange.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/wallet-dark/ui-pink.css',
+                type: 'dark',
+            },
+            {
+                path: './themes/src/wallet-dark/ui-purple.css',
+                type: 'dark',
             },
         ],
     },

@@ -41,6 +41,7 @@ import { extraThunkArguments } from '@proton/wallet/store/thunk';
 import { isWasmSupported } from '@proton/wallet/utils/wasm';
 
 import { type bootstrapApp } from './bootstrap';
+import { WalletThemeProvider } from './components/Layout/Theme/WalletThemeProvider';
 import * as config from './config';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, Title, Filler);
@@ -104,7 +105,9 @@ const AppInner = () => {
                                 <ExtendedApiProvider walletApi={extraThunkArguments.walletApi}>
                                     <ErrorBoundary big component={<StandardErrorPage big />}>
                                         <StandardPrivateApp>
-                                            <state.MainContainer />
+                                            <WalletThemeProvider>
+                                                <state.MainContainer />
+                                            </WalletThemeProvider>
                                         </StandardPrivateApp>
                                     </ErrorBoundary>
                                 </ExtendedApiProvider>
