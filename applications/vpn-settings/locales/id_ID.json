@@ -49,6 +49,9 @@
       "Add address or domain": [
         "Tambah alamat atau domain"
       ],
+      "Add another account": [
+        "Tambah akun lainnya"
+      ],
       "Add credit / debit card": [
         "Tambah kartu kredit / debit"
       ],
@@ -393,6 +396,12 @@
       ],
       "Help": [
         "Bantuan"
+      ],
+      "Help and feedback": [
+        "Bantuan dan saran"
+      ],
+      "Help and resources": [
+        "Bantuan dan sumber daya"
       ],
       "Hide": [
         "Sembunyikan"
@@ -842,8 +851,14 @@
       "${ price } per domain": [
         "${ price } per domain"
       ],
+      "${ price } per seat": [
+        "${ price } per kuota"
+      ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } kuota ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kuota asisten penulisan"
@@ -1176,8 +1191,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Kebijakan tanpa log ${ BRAND_NAME } VPN telah dibuktikan oleh hasil audit eksternal"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Kebijakan tanpa log ${ VPN_APP_NAME } VPN telah dibuktikan oleh hasil audit eksternal"
       ],
       "**Streaming** is included in your subscription.": [
         "**Dukungan streaming** terliput pada paket langganan Anda."
@@ -1200,8 +1215,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Tingkatkan kecepatan koneksi VPN hingga 400% dengan VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Para pakar keamanan independen telah memastikan bahwa Proton VPN tidak mencatat data pengguna atau terlibat dalam praktik apa pun yang dapat membahayakan privasi Anda."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Para pakar keamanan independen telah memastikan bahwa ${ VPN_APP_NAME } tidak mencatat data pengguna atau terlibat dalam praktik apa pun yang dapat membahayakan privasi Anda."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Apakah Telegram aman untuk digunakan? Seperti yang akan kita bahas pada artikel ini, segala sesuatunya sangat tergantung dari bagaimana Anda menggunakan Telegram."
@@ -3832,6 +3847,9 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dari anggota non-SSO menggunakan autentikasi dua faktor untuk masuk ke organisasi Anda."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } juga dapat digunakan dengan kata sandi tunggal, yang akan menggantikan baik kata sandi masuk maupun kata sandi kedua. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang ingin Anda gunakan dan klik Simpan."
       ],
@@ -3858,6 +3876,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } akan kedaluwarsa dalam ${ daysLeft } hari."
       ],
       "${ planName } expires today.": [
         "${ planName } akan kedaluwarsa hari ini."
@@ -4096,6 +4117,9 @@
       "By leaving now, changes may not be saved": [
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalender, terintegrasi dengan ${ MAIL_APP_NAME } dan ${ CONTACTS_APP_NAME }"
+      ],
       "Can’t access your recovery email?": [
         "Tidak dapat mengakses email pemulihan Anda?"
       ],
@@ -4110,6 +4134,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Penyimpanan cloud, terintegrasi dengan ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Penghargaan pilihan editor CNET dengan rating 8.4 dari 10"
@@ -4311,6 +4338,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Hosting email hanya tersedia untuk domain yang telah Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak tersedia. Anda dapat meng-host email untuk domain yang terdaftar pada pendaftar domain mana pun."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Layanan email, terintegrasi dengan ${ CALENDAR_APP_NAME } dan ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferensi pengiriman email disimpan"
@@ -4669,6 +4699,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Pastikan Anda ${ addARecoveryMethod } agar Anda dapat kembali mengakses akun apabila Anda lupa kata sandi."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Kelola aplikasi ${ BRAND_NAME } mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, aplikasi hanya akan dapat diakses oleh administrator."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
       ],
@@ -4777,6 +4810,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Kelola server khusus Anda sebagai Gateway dan tentukan anggota organisasi mana saja yang dapat mengaksesnya."
       ],
+      "Other accounts": [
+        "Akun lainnya"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Berhubung terdapat admin-admin lain pada organisasi Anda, Anda bertanggung jawab untuk memberitahu kata sandi baru ini kepada mereka."
       ],
@@ -4794,6 +4830,9 @@
       ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
+      ],
+      "Password manager with extra account security": [
+        "Pengelola kata sandi dengan keamanan akun ekstra"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Kata sandi harus mengandung ${ MIN_PASSWORD_LENGTH } karakter atau lebih."
@@ -4974,6 +5013,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Pilih afiliasi pengguna dari ${ getFormattedOrganization } yang ingin Anda izinkan masuk ke dalam organisasi ${ BRAND_NAME } milik Anda:"
+      ],
+      "Self-custodial crypto wallet": [
+        "Dompet kripto mandiri"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Kirim email pengingat agar anggota organisasi Anda terdorong untuk melindungi akun mereka dengan 2FA."
@@ -5370,6 +5412,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN dengan server dan alamat IP khusus"
       ],
       "Warning:": [
         "Peringatan:"
@@ -9870,6 +9915,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -10152,47 +10238,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -10574,6 +10619,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Pilih sebuah server untuk disambungkan"
+      ],
+      "Access control": [
+        "Kontrol akses"
       ],
       "Account": [
         "Akun"
@@ -10979,6 +11027,9 @@
       ],
       "Groups": [
         "Grup"
+      ],
+      "Help and feedback": [
+        "Bantuan dan saran"
       ],
       "Help center": [
         "Pusat bantuan"
@@ -11827,6 +11878,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "Terpilih secara otomatis dari ${ numberOfCountries } negara"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Server di ${ numberOfCountries }+ negara"
       ]
     },
     "vpn_2024: renew": {

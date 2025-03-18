@@ -2381,6 +2381,10 @@
         "${ repliedCount } réponse",
         "${ repliedCount } réponses"
       ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } lien sécurisé",
+        "${ secureLinksCount } liens sécurisés"
+      ],
       "${ years } year": [
         "${ years } an",
         "${ years } ans"
@@ -3841,14 +3845,6 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
-      ]
-    },
-    "Valentine_2025": {
-      "VALENTINE'S DEAL": [
-        "OFFRE DE SAINT-VALENTIN"
-      ],
-      "Valentine's deal: ${ planName } 50% off for you": [
-        "Offre de Saint-Valentin : ${ planName } 50 % de réduction pour vous"
       ]
     },
     "Validation": {

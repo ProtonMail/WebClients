@@ -787,8 +787,17 @@
       "${ price } per domain": [
         "${ price } za doménu"
       ],
+      "${ price } per seat": [
+        "${ price } za licenciu"
+      ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
@@ -2288,8 +2297,8 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
       ],
-      "Upgrade to ${ BRAND_NAME } ${ planName } to enable public file sharing with edit access. Keep collaborating seamlessly and securely.": [
-        "Upgradujte na ${ BRAND_NAME } ${ planName }, ak chcete povoliť verejné zdieľanie súborov s prístupom k úpravám. Pokračujte v bezproblémovej a bezpečnej spolupráci."
+      "Upgrade to ${ BRAND_NAME } ${ planName } to keep sharing files with edit access": [
+        "Upgradujte na ${ BRAND_NAME } ${ planName } pre zachovanie zdieľania súborov s oprávnením na úpravu"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "Aktualizujte si svoj účet a aktivujte si ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostné riešenie založené na umelej inteligencii (AI) s vyhradenou nepretržitou (24/7) odbornou podporou."
@@ -3882,6 +3891,9 @@
         "${ groupCounts } nájdené skupiny",
         "${ groupCounts } nájdených skupín",
         "${ groupCounts } nájdených skupín"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
@@ -9282,6 +9294,9 @@
       "Need more aliases?": [
         "Potrebujete viac aliasov?"
       ],
+      "Need to share more files with edit access?": [
+        "Potrebujete zdieľať viac súborov s oprávnením na úpravy?"
+      ],
       "Network error": [
         "Chyba siete"
       ],
@@ -9383,9 +9398,6 @@
       ],
       "Share ${ name }": [
         "Zdieľa ${ name }"
-      ],
-      "Share files with full edit access": [
-        "Zdieľať súbory s plným prístupom k úpravám"
       ],
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"

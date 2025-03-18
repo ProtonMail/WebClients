@@ -530,6 +530,9 @@
       "Mark as read": [
         "Označi kao pročitano"
       ],
+      "Mark as resolved": [
+        "Označi kao riješeno"
+      ],
       "Mark as unread": [
         "Označi kao nepročitano"
       ],
@@ -770,6 +773,9 @@
       "Report phishing": [
         "Prijavi krađu identiteta"
       ],
+      "Request a call": [
+        "Zatraži poziv"
+      ],
       "Request a feature": [
         "Zatraži značajku"
       ],
@@ -806,16 +812,19 @@
       "Search": [
         "Pretraga"
       ],
+      "Search countries": [
+        "Pretraži države"
+      ],
       "Search message content": [
         "Pretraži sadržaj poruka"
       ],
       "Select ${ planTitle }": [
         "Odaberite ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Odaberi sve"
       ],
-      "Select all": [
+      "Select All": [
         "Odaberi sve"
       ],
       "Select all messages": [
@@ -1377,6 +1386,14 @@
       ],
       "Website access problem": [
         "Problem s pristupom web stanici"
+      ]
+    },
+    "Button": {
+      "Continue using ${ planTitle }": [
+        "Nastavi koristiti ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Nastavi svoju pretplatu"
       ]
     },
     "Calendar invite buttons label": {
@@ -4121,6 +4138,9 @@
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
       ],
+      "Insert image": [
+        "Umetni sliku"
+      ],
       "Insert link": [
         "Umetni poveznicu"
       ],
@@ -4141,6 +4161,9 @@
       ],
       "Labels:": [
         "Oznake:"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Saznajte kako ${ staySaferOnlineLink }"
       ],
       "Learn more": [
         "Saznajte više"
@@ -4587,6 +4610,11 @@
         "${ selectedFoldersCount } oznaka odabrana",
         "${ selectedFoldersCount } oznake odabrane",
         "${ selectedFoldersCount } oznaka odabrano"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Samo za prikaz"
       ]
     },
     "Key badge": {
@@ -5965,6 +5993,11 @@
         "Vi"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Sigurno dijeljenje trezora"
+      ]
+    },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
         "Pristup odbijen, administratorske ovlasti su ograničene."
@@ -6234,11 +6267,37 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Svi pseudonimi"
+      ],
       "Create alias": [
         "Stvori pseudonim"
       ],
+      "Create an alias": [
+        "Stvori pseudonim"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email pseudonimi"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email pseudonimi omogućuju Vam registraciju na mrežnim servisima bez dijeljenja Vaše adrese e-pošte. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Novi pseudonim"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "Otvori ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Zaštitite svoj mrežni identitet"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Isprobajte ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otvorit će ${ PASS_APP_NAME })"
       ]
     },
     "Select files": {
@@ -6350,6 +6409,11 @@
         "Poništi ponovno postavljanje lozinke"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Ponovno postavljanje lozinke otkazano"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Poništiti ponovno postavljanje lozinke?"
@@ -6386,6 +6450,11 @@
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Poništavanje lozinke"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Dijeli ${ ownerName }"
       ]
     },
     "Signature verification warning": {
@@ -6717,6 +6786,9 @@
       ],
       "Address verification disabled": [
         "Onemogućena provjera valjanosti adrese"
+      ],
+      "Alias copied to clipboard": [
+        "Pseudonim kopiran u međuspremnik"
       ],
       "Code sent to ${ methodTo }": [
         "Kôd je poslan na ${ methodTo }"

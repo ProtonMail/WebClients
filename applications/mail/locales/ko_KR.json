@@ -51,6 +51,9 @@
       "Add address": [
         "주소 추가"
       ],
+      "Add another account": [
+        "다른 계정 추가"
+      ],
       "Add Bcc recipients": [
         "숨은참조 수신인 추가"
       ],
@@ -579,6 +582,12 @@
       "Help": [
         "도움말"
       ],
+      "Help and feedback": [
+        "도움말 및 의견"
+      ],
+      "Help and resources": [
+        "지원 및 도움말"
+      ],
       "Hide": [
         "숨기기"
       ],
@@ -602,6 +611,9 @@
       ],
       "Hide toolbar": [
         "도구 모음 숨기기"
+      ],
+      "hide-my-email aliases": [
+        "Hide-my-email 별칭"
       ],
       "I like this response": [
         "이 결과물이 마음에 듭니다"
@@ -1098,11 +1110,11 @@
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
       ],
-      "Select All": [
-        "모두 선택"
-      ],
       "Select all": [
         "전체 선택"
+      ],
+      "Select All": [
+        "모두 선택"
       ],
       "Select all messages": [
         "모든 메시지 선택"
@@ -1759,6 +1771,9 @@
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "무제한 로그인, 신용 카드, hide-my-email 별칭 등"
+      ],
       "Use your own email domain": [
         "나만의 이메일 주소 사용"
       ],
@@ -1819,8 +1834,14 @@
       "Annually": [
         "연간"
       ],
+      "Lifetime": [
+        "평생"
+      ],
       "Monthly": [
         "매월"
+      ],
+      "New!": [
+        "신규!"
       ],
       "Two-year": [
         "2년"
@@ -3476,6 +3497,31 @@
       ],
       "Åland Islands": [
         "올란드 제도"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "모든 ${ BRAND_NAME } 서비스에서 사용"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }용"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }용"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }용"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }용"
       ]
     },
     "CustomFilter": {
@@ -5811,6 +5857,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME }에 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME }이 회원님의 비즈니스를 잘 보호해줍니다."
       ],
@@ -6771,8 +6820,17 @@
       "Organization size": [
         "조직 크기"
       ],
+      "Other accounts": [
+        "다른 계정"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
+      ],
+      "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
+        "시스템이 이 메시지를 의심스러운 항목으로 확인했습니다. 해당 메일이 피싱, 스캠이 아니라면 합법으로 표시하세요."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "시스템이 이 메시지를 피싱 시도로 확인했습니다. 해당 메일이 합법적인 내용인지 확인해 주세요."
       ],
       "password": [
         "비밀번호"
@@ -6891,6 +6949,9 @@
       "Proofread text": [
         "문장 교정"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "${ hideMyEmailAliasesLink }로 메일링 리스트나 스패머로 이메일이 유출되지 않도록 보호하세요."
+      ],
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
@@ -6902,6 +6963,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "복구 정보는 삭제하도록 설정하지 않는 한 이 장치에 남아있어요."
+      ],
+      "Refining email list in progress": [
+        "이메일 목록 다듬기 진행 중"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
@@ -9328,6 +9392,9 @@
       "${ size } storage": [
         "${ size } 저장공간"
       ],
+      "${ size } storage per user": [
+        "사용자 당 ${ size } 저장 공간"
+      ],
       "1 TB secure storage": [
         "1 TB 보안 저장공간"
       ],
@@ -9505,6 +9572,9 @@
       "Limited support": [
         "제한된 지원"
       ],
+      "Manage user permissions and access": [
+        "사용자 권한 및 접근 관리"
+      ],
       "Multiple admin roles": [
         "다중 관리자 역할"
       ],
@@ -9522,6 +9592,9 @@
       ],
       "Password manager": [
         "비밀번호 관리자"
+      ],
+      "Password manager to secure credentials": [
+        "자격 증명 보호를 위한 비밀번호 관리자"
       ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
@@ -9761,6 +9834,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "${ visionary } 플랜은 특별한 기능과 혜택이 있는 기존 ${ BRAND_NAME } 사용자를 위한 플랜입니다. 따라서, 새로운 사용자가 구독할 수 업습니다."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "한 번만 결제하여 평생 비밀번호와 신원 정보를 보호하세요."
       ],
       "Popular": [
         "인기"
@@ -10496,6 +10572,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "안전한 금고 공유"
+      ],
+      "Secure vault, item and link sharing": [
+        "안전한 금고, 항목 및 링크 공유"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "무제한 로그인, 메모 및 신용 카드 등등"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11823,6 +11905,9 @@
       ],
       "${ n } VPN connection per user": [
         "사용자 당 ${ n }개 VPN 연결"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "사용자 당 ${ n }개 기기에 대한 VPN 연결"
       ]
     },
     "Subscription change warning": {
@@ -12973,6 +13058,9 @@
       "Groups": [
         "그룹"
       ],
+      "Help and feedback": [
+        "도움말 및 의견"
+      ],
       "Help center": [
         "지원 센터"
       ],
@@ -13447,6 +13535,11 @@
         "오늘"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "자동은 작성기의 형식이 이 사용자에게 보내는 데 사용됨을 나타냅니다. 일반 텍스트는 발송 시 메시지가 항상 일반 텍스트로 변환됨을 나타냅니다."
@@ -13530,11 +13623,6 @@
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "안정 배포판"
@@ -13591,6 +13679,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가에서 자동 선택됨"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }개 이상 국가 내 서버"
       ]
     },
     "vpn_2024: renew": {

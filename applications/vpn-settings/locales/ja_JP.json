@@ -49,6 +49,9 @@
       "Add address or domain": [
         "メールアドレスかドメインを追加"
       ],
+      "Add another account": [
+        "別のアカウントを追加する"
+      ],
       "Add credit / debit card": [
         "クレジット/デビットカードを追加"
       ],
@@ -394,6 +397,12 @@
       "Help": [
         "ヘルプ"
       ],
+      "Help and feedback": [
+        "ヘルプとフィードバック"
+      ],
+      "Help and resources": [
+        "ヘルプとリソース"
+      ],
       "Hide": [
         "非表示"
       ],
@@ -498,6 +507,9 @@
       ],
       "Previous page": [
         "前のページ"
+      ],
+      "Publish changes": [
+        "変更を公開"
       ],
       "Recover data": [
         "データを復元する"
@@ -1156,16 +1168,22 @@
       "Annually": [
         "1年払い"
       ],
+      "Lifetime": [
+        "一生涯"
+      ],
       "Monthly": [
         "月額"
+      ],
+      "New!": [
+        "New!"
       ],
       "Two-year": [
         "2年払い"
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "${ BRAND_NAME } VPNのノーログポリシーが外部監査により確認されました"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "${ VPN_APP_NAME }のノーログポリシーが外部監査により確認されました"
       ],
       "**Streaming** is included in your subscription.": [
         "**ストリーミング** はサブスクリプションに含まれています。"
@@ -1188,8 +1206,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "VPN AcceleratorでVPN速度を最大 400 %向上。"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "独立したセキュリティ専門家は、ProtonVPNがユーザーデータを記録したり、プライバシーを侵害する可能性のある行為に関与したりしないことを確認しました。"
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "独立したセキュリティ専門家は、${ VPN_APP_NAME }がユーザーデータを記録したり、プライバシーを侵害する可能性のある行為に関与したりしないことを確認しました。"
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Telegramは安全ですか? この記事で説明するように、それはあなたがどのように使用するかによって非常に大きく異なります。"
@@ -2324,6 +2342,31 @@
         "もっと詳しく知る"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "すべての ${ BRAND_NAME } サービス向け"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } 向け"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } 向け"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 向け"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } 向け"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/月"
@@ -2718,6 +2761,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin APIへの接続中にエラーが発生しました。"
+      ],
+      "Error publishing changes.": [
+        "変更の公開中にエラーが発生しました。"
       ],
       "Failed to process the logo": [
         "ロゴの処理に失敗しました"
@@ -3819,6 +3865,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } には少なくとも 1 つの専用サーバー ${ serverPricePerMonth } が必要です"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } は ${ daysLeft } 日後に期限切れになります。"
+      ],
       "${ planName } expires today.": [
         "${ planName } の有効期限は本日です。"
       ],
@@ -4056,6 +4105,9 @@
       "By leaving now, changes may not be saved": [
         "今すぐ退出すると、変更が保存されない場合があります"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ MAIL_APP_NAME }と${ CONTACTS_APP_NAME }が統合したカレンダー"
+      ],
       "Can’t access your recovery email?": [
         "回復用メールアドレスにアクセスできませんか？"
       ],
@@ -4070,6 +4122,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME }と統合したクラウドストレージ"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors choice賞で 10 段階中 8.4 の評価"
@@ -4125,6 +4180,9 @@
       "Create your first Gateway": [
         "最初のゲートウェイを作成する"
       ],
+      "Created (not published)": [
+        "作成されました (非公開)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "ゲートウェイ サーバーの作成: ${ serverNumber } / ${ total }"
       ],
@@ -4166,6 +4224,9 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
+      ],
+      "Deleted (not published)": [
+        "削除（非公開）"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
@@ -4254,6 +4315,9 @@
       "Edit email address": [
         "メールアドレスを編集"
       ],
+      "Edited (not published)": [
+        "編集済み (非公開)"
+      ],
       "eduGAIN configuration saved": [
         "eduGAIN構成が保存されました"
       ],
@@ -4262,6 +4326,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "メール ホスティングはあなたがお持ちのドメインでのみ利用できます。ドメインの登録は現在、${ BRAND_NAME } 経由では取り扱っていません。ドメイン レジストラーからドメインを登録することでメールのホストが可能になります。"
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }と${ CONTACTS_APP_NAME }が統合したメールサービス"
       ],
       "Emailing preference saved": [
         "メール設定が保存されました"
@@ -4620,6 +4687,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "パスワードを忘れた場合、アカウントに戻ることができるように ${ addARecoveryMethod } を確認してください。"
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "組織のメンバーがアクセスできる ${ BRAND_NAME } アプリケーションを管理します。無効にすると、管理者のみがアクセスできます。"
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "アカウント設定のために、2 要素認証デバイスに手動でこの情報を入力してください。${ switchButton }。"
       ],
@@ -4728,6 +4798,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "専用サーバーをゲートウェイに編成し、どのメンバーがアクセスできるかを決定します。"
       ],
+      "Other accounts": [
+        "その他のアカウント"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "組織に他の管理者がいる場合、あなたの責任で新しいパスワードを伝えてください。"
       ],
@@ -4746,6 +4819,9 @@
       "Password copied to clipboard": [
         "クリップボードにコピーされたパスワード"
       ],
+      "Password manager with extra account security": [
+        "追加のアカウントセキュリティを備えたパスワードマネージャー"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "パスワードは${ MIN_PASSWORD_LENGTH }文字かそれ以上である必要があります。"
       ],
@@ -4754,6 +4830,9 @@
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
         "PC Magazine editors賞で星 5 つ中の星 5 の評価"
+      ],
+      "Pending removal": [
+        "保留中の削除"
       ],
       "per month": [
         "月あたり"
@@ -4922,6 +5001,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ getFormattedOrganization } から ${ BRAND_NAME } 組織に許可したいユーザー所属を選択してください："
+      ],
+      "Self-custodial crypto wallet": [
+        "自己管理型暗号通貨ウォレット"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "メンバーに2要素認証でアカウントを保護するよう促すメールを送る。"
@@ -5217,6 +5299,9 @@
       "Unable to check gateways monitoring current status.": [
         "ゲートウェイモニタリングの現在の状態を確認できません。"
       ],
+      "Unchanged": [
+        "未変更"
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "残念ながら、このアカウントに回復手段は設定されていません。"
       ],
@@ -5315,6 +5400,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "専用サーバーとIPアドレス付きのVPN"
       ],
       "Warning:": [
         "警告:"
@@ -5501,6 +5589,9 @@
       ],
       "You have no transactions.": [
         "取引がありません。"
+      ],
+      "You have unpublished changes": [
+        "未公開の変更があります"
       ],
       "You may be redirected to your bank’s website.": [
         "銀行のウェブサイトに移動する場合があります。"
@@ -6573,6 +6664,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
       ],
+      "Add-on with free trial": [
+        "無料トライアル付きアドオン"
+      ],
       "for ${ price }": [
         "${ price } の場合"
       ],
@@ -6867,6 +6961,9 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
+      "${ size } storage per user": [
+        "ユーザーあたり ${ size }のストレージ"
+      ],
       "1 TB secure storage": [
         "1 TBの安全なストレージ"
       ],
@@ -7062,6 +7159,9 @@
       "Limited support": [
         "限定的なサポート"
       ],
+      "Manage user permissions and access": [
+        "ユーザー権限とアクセス権限の管理"
+      ],
       "Multiple admin roles": [
         "複数の管理者役職"
       ],
@@ -7082,6 +7182,9 @@
       ],
       "Password manager": [
         "パスワードマネージャー"
+      ],
+      "Password manager to secure credentials": [
+        "認証情報を保護するためのパスワードマネージャー"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -7347,6 +7450,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "${ visionary } プランは、特別な機能と特典を備えた元の ${ BRAND_NAME } ユーザー向けの特別プランであるため、新規加入者は利用できなくなりました。"
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "一度だけの支払いで、パスワードとアイデンティティを永遠に保護します。"
       ],
       "Popular": [
         "人気"
@@ -8121,6 +8227,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全な保管庫共有"
+      ],
+      "Secure vault, item and link sharing": [
+        "安全な保管庫、アイテム、リンク共有"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "無制限のログイン、メモ、クレジットカードなど"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9751,6 +9863,9 @@
       ],
       "High-speed VPN on ${ maxVpn } device": [
         "${ maxVpn } 台のデバイスでの高速 VPN"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "ユーザーごとに ${ n } 台のデバイスへのVPN接続"
       ]
     },
     "Subscription change warning": {
@@ -9789,6 +9904,47 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } の場合"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription reminder": {
@@ -10075,47 +10231,6 @@
         "独自の短い @pm.me メール エイリアス"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
-      ]
-    },
     "Subscription renewal state": {
       "Are you sure?": [
         "よろしいですか?"
@@ -10178,6 +10293,9 @@
       ],
       "Catch-all address updated": [
         "Catch-All アドレスが更新されました"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "変更が公開されました。変更は数時間以内にすべてのユーザーに表示されます。"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
@@ -10492,6 +10610,9 @@
       ],
       "4. Select a server to connect to": [
         "4. 接続したいサーバーを選択"
+      ],
+      "Access control": [
+        "アクセス管理"
       ],
       "Account": [
         "アカウント"
@@ -10897,6 +11018,9 @@
       ],
       "Groups": [
         "グループ"
+      ],
+      "Help and feedback": [
+        "ヘルプとフィードバック"
       ],
       "Help center": [
         "ヘルプセンター"
@@ -11745,6 +11869,9 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries }ヶ国から自動選択"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }ヶ国以上にあるサーバー"
       ]
     },
     "vpn_2024: renew": {

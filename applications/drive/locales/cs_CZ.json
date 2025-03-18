@@ -91,7 +91,7 @@
         "Přidat fotky"
       ],
       "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Přidat do \"${ album.name }\" (${ album.photoCount } fotku)",
+        "Přidat do \"${ album.name }\" (${ album.photoCount } fotka)",
         "Přidat do \"${ album.name }\" (${ album.photoCount } fotky)",
         "Přidat do \"${ album.name }\" (${ album.photoCount } fotek)",
         "Přidat do \"${ album.name }\" (${ album.photoCount } fotek)"
@@ -542,6 +542,9 @@
       ],
       "Leave": [
         "Opustit"
+      ],
+      "Leave album": [
+        "Opustit album"
       ],
       "Let's talk": [
         "Promluvme si"
@@ -1098,8 +1101,17 @@
       "${ price } per domain": [
         "${ price } za doménu"
       ],
+      "${ price } per seat": [
+        "${ price } za licenci"
+      ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licence asistenta psaní",
@@ -4349,6 +4361,9 @@
         "${ invitations.length } čekající pozvánky",
         "${ invitations.length } čekajících pozvánek",
         "${ invitations.length } čekajících pozvánek"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
@@ -10722,8 +10737,8 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potvrdit ztrátu bonusů ${ BRAND_NAME }"
       ],
-      "Confirmation required?": [
-        "Je vyžadováno potvrzení?"
+      "Confirmation required": [
+        "Vyžadováno potvrzení"
       ],
       "Contact Details": [
         "Kontaktní údaje"

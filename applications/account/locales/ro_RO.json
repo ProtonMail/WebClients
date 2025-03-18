@@ -1453,8 +1453,16 @@
       "${ price } per domain": [
         "${ price } per domeniu"
       ],
+      "${ price } per seat": [
+        "${ price } per licență"
+      ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licență ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licență asistent de scriere",
@@ -1955,8 +1963,8 @@
       ]
     },
     "Blog": {
-      "${ BRAND_NAME } VPN's no-logs policy confirmed by an external audit": [
-        "Politica fără jurnalizare a ${ BRAND_NAME } VPN confirmată de un audit extern"
+      "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
+        "Politica fără jurnalizare a ${ VPN_APP_NAME } este confirmată de un audit extern"
       ],
       "**Streaming** is included in your subscription.": [
         "**Redarea în flux** este inclusă în abonamentul actual."
@@ -1979,8 +1987,8 @@
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Creșteți vitezele VPN cu până la 400% cu VPN Accelerator"
       ],
-      "Independent security experts verified that ProtonVPN does not log user data or engage in any practices that might compromise your privacy.": [
-        "Experții independenți în securitate au verificat dacă Proton VPN nu înregistrează datele utilizatorilor și nu se angajează în nicio posibilă practică de compromitere a confidențialității utilizatorilor."
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Experții independenți în securitate au verificat dacă ${ VPN_APP_NAME } nu înregistrează datele utilizatorilor și nu se angajează în nicio posibilă practică de compromitere a confidențialității utilizatorilor."
       ],
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Telegram este sigur de utilizat? După cum vom discuta în acest articol, asta depinde foarte mult de modul în care îl utilizați."
@@ -7119,6 +7127,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
@@ -7164,6 +7175,11 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }."
       ],
       "${ planName } expires today.": [
         "${ planName } expiră astăzi."
@@ -7262,6 +7278,9 @@
       ],
       "* No credit card required.": [
         "* Nu trebuie card de credit."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "**${ appName }** nu este suportată în organizația **${ organizationName }**."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obțineți o adresă ${ BRAND_NAME }** pentru a utiliza toate serviciile ${ BRAND_NAME_TWO }, inclusiv ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }."
@@ -7633,6 +7652,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Partajând toate detaliile evenimentului din acest calendar, sunteți de acord să permiteți accesul ${ BRAND_NAME } la aceste informații criptate din calendar."
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendar, integrat cu ${ MAIL_APP_NAME } și ${ CONTACTS_APP_NAME }"
+      ],
       "Cancel anytime": [
         "Anulați oricând"
       ],
@@ -7651,9 +7673,6 @@
       "Check the status of imports and forwarding.": [
         "Verificați starea importărilor și redirecționărilor."
       ],
-      "Choose an app to get started": [
-        "Alegeți o aplicație pentru a începe"
-      ],
       "Choose an Entity ID to continue.": [
         "Alegeți un ID de entitate pentru a continua."
       ],
@@ -7662,6 +7681,9 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Stocare în cloud, integrată cu ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premiul pentru alegerea editorilor CNET cu o evaluare de 8,4 din 10"
@@ -7954,6 +7976,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Serviciu de e-mail, integrat cu ${ CALENDAR_APP_NAME } și ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferințe e-mail salvate"
@@ -8544,6 +8569,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
       ],
+      "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
+        "Gestionați aplicațiile ${ BRAND_NAME } pe care membrii organizației proprii le pot accesa. Dacă este dezactivat, numai administratorii vor avea acces."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestionați preferințele notificărilor pe e-mail pentru ${ DOCS_APP_NAME }."
       ],
@@ -8777,6 +8805,9 @@
       ],
       "Password generator rules successfully saved": [
         "Regulile generatorului de parole s-au salvat."
+      ],
+      "Password manager with extra account security": [
+        "Manager de parole cu securitate suplimentară a contului"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Parola trebuie să conțină ${ MIN_PASSWORD_LENGTH } caractere sau mai mult."
@@ -9039,6 +9070,9 @@
       "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
       ],
+      "Select a service to continue": [
+        "Selectați un serviciu pentru a continua"
+      ],
       "Select one or multiple user affiliations": [
         "Selectați una sau mai multe afilieri pentru utilizatori."
       ],
@@ -9053,6 +9087,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
+      ],
+      "Self-custodial crypto wallet": [
+        "Portofel cripto în custodie proprie"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Trimiteți mesaje membrilor pentru a-i încuraja să-ți protejeze contul prin autentificarea cu doi factori."
@@ -9717,6 +9754,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN cu servere și adrese IP dedicate"
       ],
       "Want to learn more?": [
         "Doriți să aflați mai multe?"
@@ -10798,7 +10838,7 @@
         "Permitere recuperare prin fraza de recuperare"
       ],
       "Allow recovery using a trusted device": [
-        "Permitere recuperare folosind un dispozitiv de încredere."
+        "Permitere recuperare folosind un dispozitiv de încredere"
       ],
       "Allow sharing outside the organization": [
         "Permitere partajare în afara organizației"
@@ -11832,7 +11872,7 @@
         "Parola dvs. (administrator)"
       ],
       "Your referral link": [
-        "legătură web de recomandare"
+        "Legătură web de recomandare"
       ],
       "ZIP code": [
         "Cod poștal"
@@ -18356,6 +18396,9 @@
       "A filter with this name already exists": [
         "Un filtru cu același nume există deja"
       ],
+      "Access control": [
+        "Controlul accesului"
+      ],
       "Accessibility": [
         "Accesibilitate"
       ],
@@ -18816,7 +18859,7 @@
         "Descărcați aplicația desktop"
       ],
       "Download the mobile apps": [
-        "Descărcați aplicațiile pentru mobile"
+        "Descărcați aplicațiile pentru dispozitive mobile"
       ],
       "Downloads": [
         "Descărcări"
@@ -20555,6 +20598,11 @@
         "Autoselectare din ${ numberOfCountries } țară",
         "Autoselectare din ${ numberOfCountries } țări",
         "Autoselectare din ${ numberOfCountries } de țări"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servere în peste ${ numberOfCountries } țară",
+        "Servere în peste ${ numberOfCountries } țări",
+        "Servere în peste ${ numberOfCountries } de țări"
       ]
     },
     "vpn_2024: renew": {

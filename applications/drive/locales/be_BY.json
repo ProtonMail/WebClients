@@ -543,6 +543,9 @@
       "Leave": [
         "Выйсці"
       ],
+      "Leave album": [
+        "Выйсці з альбома"
+      ],
       "Let's talk": [
         "Звяжыцеся з намі"
       ],
@@ -1098,8 +1101,17 @@
       "${ price } per domain": [
         "${ price } за дамен"
       ],
+      "${ price } per seat": [
+        "${ price } за ліцэнзію"
+      ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзія",
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзіі",
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзій",
+        "${ seats } ${ LUMO_APP_NAME } ліцэнзій"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -3928,10 +3940,10 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } падзея зашыфравана і дададзена ў ваш каляндар",
-        "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дадзены ў ваш каляндар",
-        "${ totalImported }/${ totalToImport } падзей зашыфраваны і дададзены ў ваш каляндар",
-        "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дададзены ў ваш каляндар"
+        "${ totalImported } падзея з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар",
+        "${ totalImported } падзеі з ${ totalToImport } зашыфраваны і дададзена ў ваш каляндар",
+        "${ totalImported } падзей з ${ totalToImport } зашыфраваны і дададзена ў ваш каляндар",
+        "${ totalImported } падзей з ${ totalToImport } зашыфраваны і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
@@ -3991,10 +4003,10 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } кантакт зашыфраваны і дададзены ў ваш спіс кантактаў",
-        "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў",
-        "${ totalImported }/${ totalToImport } кантактаў зашыфраваны і дадзены ў ваш спіс кантактаў",
-        "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў"
+        "${ totalImported } кантакт з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported } кантакты з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Адбылася памылка падчас шыфравання і дадавання вашага кантакту. Ніводны кантакт не быў імпартаваны."
@@ -4350,6 +4362,9 @@
         "${ invitations.length } у чаканні запрашэнняў",
         "${ invitations.length } у чаканні запрашэнняў"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4387,10 +4402,10 @@
         "${ scanErrorCount } сканаванняў не ўдаліся"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календара",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў"
+        "${ selectedCalendarsTotal } каляндар з ${ providerCalendars.length }",
+        "${ selectedCalendarsTotal } календары з ${ providerCalendars.length }",
+        "${ selectedCalendarsTotal } календароў з ${ providerCalendars.length }",
+        "${ selectedCalendarsTotal } календароў з ${ providerCalendars.length }"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "Выбраны ${ selectedContactsLength } кантакт з ${ contactsLength }",
@@ -4837,10 +4852,10 @@
         "Увядзіце свой пароль (адміністратара арганізацыі)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Засталося часу: ${ estimatedMinutes } хвіліна",
-        "Засталося часу: ${ estimatedMinutes } хвіліны",
-        "Засталося часу: ${ estimatedMinutes } хвілін",
-        "Засталося часу: ${ estimatedMinutes } хвіліны"
+        "Прыблізна засталося часу: ${ estimatedMinutes } хвіліна",
+        "Прыблізна засталося часу: ${ estimatedMinutes } хвіліны",
+        "Прыблізна засталося часу: ${ estimatedMinutes } хвілін",
+        "Прыблізна засталося часу: ${ estimatedMinutes } хвіліны"
       ],
       "Estimated time remaining: Less than a minute": [
         "Прыблізна засталося часу: менш за хвіліну"
@@ -5272,10 +5287,10 @@
         "Выберыце папкі для імпартавання:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupCount } групу.",
-        "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupCount } групы.",
-        "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupCount } груп.",
-        "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupCount } групы."
+        "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } групу.",
+        "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } групы.",
+        "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } груп.",
+        "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } груп."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupName }."
@@ -10773,8 +10788,8 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Пацвердзіць страту бонусаў ${ BRAND_NAME }"
       ],
-      "Confirmation required?": [
-        "Патрабуецца пацвярджэнне?"
+      "Confirmation required": [
+        "Патрабуецца пацвярджэнне"
       ],
       "Contact Details": [
         "Кантактныя звесткі"
