@@ -94,6 +94,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                             optimisticId: itemUuid,
                             shareId,
                             type: 'alias',
+                            files: { toAdd: [], toRemove: [] },
                         });
 
                         const item = (await parseItemRevision(shareId, encryptedItem)) as ItemRevision<'alias'>;
