@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { getShareRoleDefinition } from '@proton/pass/components/Invite/Member/ShareRoleOptions';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -29,7 +29,9 @@ export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, o
             </IconBox>
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
-                    <div className="text-ellipsis">{email}</div>
+                    <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
+                        <div className="text-ellipsis">{email}</div>
+                    </Tooltip>
                 </div>
                 <div className="flex items-center gap-1">
                     <span className="color-weak">{roleLabel}</span>
