@@ -19,19 +19,23 @@ const getValue = (value?: string | number | null) => {
     return 0;
 };
 
-interface Props extends TimeHTMLAttributes<HTMLTimeElement> {
-    children?: string | number | null;
+type OwnProps = {
+    value?: string | number | null;
     sameDayFormat?: Options['sameDayFormat'];
     format?: Options['format'];
     options?: Options;
+};
+
+interface Props extends TimeHTMLAttributes<HTMLTimeElement>, OwnProps {
+    children: OwnProps['value'];
 }
 
+export const getReadableTime = ({ format, value, sameDayFormat, options }: OwnProps) => {
+    return readableTime(getValue(value), { locale: dateLocale, sameDayFormat, format, ...options });
+};
+
 const Time = ({ children, sameDayFormat, format, options, ...rest }: Props) => {
-    return (
-        <time {...rest}>
-            {readableTime(getValue(children), { locale: dateLocale, sameDayFormat, format, ...options })}
-        </time>
-    );
+    return <time {...rest}>{getReadableTime({ value: children, sameDayFormat, format, options })}</time>;
 };
 
 export default Time;

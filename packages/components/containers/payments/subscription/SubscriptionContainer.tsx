@@ -68,6 +68,7 @@ import {
     getIsVpnPlan,
     getMaximumCycleForApp,
     getPlanIDs,
+    hasDeprecatedVPN,
 } from '@proton/shared/lib/helpers/subscription';
 import type {
     Cycle,
@@ -302,10 +303,17 @@ const SubscriptionContainer = ({
     const planIDs = useMemo(() => {
         const subscriptionPlanIDs = getPlanIDs(latestSubscription);
 
-        if (plan) {
+        // we don't let existing users of the deprecated VPN plan to modify their subscription
+        // and stay on the same plan. If they want to do manual action then we change them to the new VPN plan.
+        let newPlan = plan;
+        if (hasDeprecatedVPN(latestSubscription) && !plan) {
+            newPlan = PLANS.VPN2024;
+        }
+
+        if (newPlan) {
             return switchPlan({
-                planIDs: subscriptionPlanIDs,
-                planID: plansMap[plan].Name,
+                currentPlanIDs: subscriptionPlanIDs,
+                newPlan,
                 organization,
                 plans,
                 user,
@@ -589,6 +597,7 @@ const SubscriptionContainer = ({
             plansMap,
             allowDowncycling: scheduledDowncycling,
             cycleParam: maybeCycle,
+            app,
         });
 
     const runAdditionalChecks = async (
