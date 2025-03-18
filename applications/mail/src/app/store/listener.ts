@@ -6,31 +6,13 @@ import { mailSettingsHeartbeatListener, startSharedListening } from '@proton/red
 import { getMailPersistedState } from './persistReducer';
 import type { AppStartListening } from './store';
 
-export interface StartListeningFeatures {
-    accountPersist?: boolean;
-    accountSessions?: boolean;
-    accountSecurity?: boolean;
-}
-
-export const start = ({
-    startListening,
-    features,
-}: {
-    startListening: AppStartListening;
-    features?: StartListeningFeatures;
-}) => {
+export const start = ({ startListening }: { startListening: AppStartListening }) => {
     startSharedListening(startListening);
     startCalendarEventListener(startListening);
     startHolidaysDirectoryListener(startListening);
-    if (features?.accountSecurity) {
-        startAccountSecurityListener(startListening);
-    }
+    startAccountSecurityListener(startListening);
     startListeningToPlanNameChange(startListening);
     mailSettingsHeartbeatListener(startListening);
-    if (features?.accountPersist) {
-        startPersistListener(startListening, getMailPersistedState);
-    }
-    if (features?.accountSessions) {
-        startAccountSessionsListener(startListening);
-    }
+    startPersistListener(startListening, getMailPersistedState);
+    startAccountSessionsListener(startListening);
 };
