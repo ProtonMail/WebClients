@@ -4,7 +4,7 @@ import { syncAliasMailboxes, syncAliasName, syncAliasSLNote } from '@proton/pass
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { editItem } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { aliasDetailsSync, itemEdit } from '@proton/pass/store/actions';
+import { aliasDetailsSync, fileLinkPending, itemEdit } from '@proton/pass/store/actions';
 import type { AliasDetailsState, AliasState } from '@proton/pass/store/reducers';
 import {
     selectAliasDetails,
@@ -80,6 +80,17 @@ function* itemEditWorker(
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
 
         yield put(itemEdit.success(meta.request.id, { item, itemId, shareId }));
+
+        if (editIntent.files.toAdd.length || editIntent.files.toRemove.length || editIntent.files.toRestore?.length) {
+            yield put(
+                fileLinkPending.intent({
+                    shareId,
+                    itemId: item.itemId,
+                    revision: item.revision,
+                    files: editIntent.files,
+                })
+            );
+        }
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: TelemetryItemType[item.data.type] })
