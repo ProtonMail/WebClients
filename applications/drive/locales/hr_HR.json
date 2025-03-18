@@ -348,6 +348,9 @@
       "Manage labels": [
         "Upravljanje oznakama"
       ],
+      "Mark as resolved": [
+        "Označi kao riješeno"
+      ],
       "Mark for deletion": [
         "Označi za brisanje"
       ],
@@ -489,6 +492,9 @@
       "Report an issue": [
         "Prijavite problem"
       ],
+      "Request a call": [
+        "Zatraži poziv"
+      ],
       "Request a feature": [
         "Zatraži značajku"
       ],
@@ -533,6 +539,9 @@
       ],
       "Search": [
         "Pretraga"
+      ],
+      "Search countries": [
+        "Pretraži države"
       ],
       "Search drive": [
         "Pretraži dysk"
@@ -945,6 +954,14 @@
       ],
       "Website access problem": [
         "Problem s pristupom web stanici"
+      ]
+    },
+    "Button": {
+      "Continue using ${ planTitle }": [
+        "Nastavi koristiti ${ planTitle }"
+      ],
+      "Continue your subscription": [
+        "Nastavi svoju pretplatu"
       ]
     },
     "Checkout row": {
@@ -1975,6 +1992,9 @@
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
       ],
+      "Account does not exist": [
+        "Račun ne postoji"
+      ],
       "Address primary private key not found": [
         "Primarni privatni ključ adrese nije pronađen"
       ],
@@ -2926,8 +2946,14 @@
       "Last week": [
         "Prošli tjedan"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "Saznajte kako ${ staySaferOnlineLink }"
+      ],
       "Learn more": [
         "Saznajte više"
+      ],
+      "Link copied to clipboard": [
+        "Poveznica kopirana u međuspremnik"
       ],
       "Loading": [
         "Učitavanje"
@@ -3212,6 +3238,11 @@
         "${ selectedFoldersCount } oznaka odabrana",
         "${ selectedFoldersCount } oznake odabrane",
         "${ selectedFoldersCount } oznaka odabrano"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Samo za prikaz"
       ]
     },
     "Item": {
@@ -4070,6 +4101,11 @@
         "Vi"
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault sharing": [
+        "Sigurno dijeljenje trezora"
+      ]
+    },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
         "Pristup odbijen, administratorske ovlasti su ograničene."
@@ -4243,11 +4279,37 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Svi pseudonimi"
+      ],
       "Create alias": [
         "Stvori pseudonim"
       ],
+      "Create an alias": [
+        "Stvori pseudonim"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email pseudonimi"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email pseudonimi omogućuju Vam registraciju na mrežnim servisima bez dijeljenja Vaše adrese e-pošte. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Novi pseudonim"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "Otvori ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Zaštitite svoj mrežni identitet"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Isprobajte ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otvorit će ${ PASS_APP_NAME })"
       ]
     },
     "Select files": {
@@ -4287,6 +4349,11 @@
         "Poništi ponovno postavljanje lozinke"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "Ponovno postavljanje lozinke otkazano"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Poništiti ponovno postavljanje lozinke?"
@@ -4323,6 +4390,11 @@
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Poništavanje lozinke"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Dijeli ${ ownerName }"
       ]
     },
     "Signing preference for emails": {
@@ -4538,6 +4610,9 @@
     "Success": {
       "Address copied to clipboard": [
         "Adresa je kopirana u međuspremnik"
+      ],
+      "Alias copied to clipboard": [
+        "Pseudonim kopiran u međuspremnik"
       ],
       "Code sent to ${ methodTo }": [
         "Kôd je poslan na ${ methodTo }"
@@ -4839,6 +4914,9 @@
       ],
       "Download ${ date }": [
         "Preuzmi ${ date }"
+      ],
+      "Drop to upload": [
+        "Ispustite za prijenos"
       ],
       "Duplicate file found": [
         "Pronađen je duplikat datoteke"
