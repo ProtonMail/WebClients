@@ -16,7 +16,7 @@ import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
-import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
+import type { ApiState, ClientEndpoint, FileItemExport, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
 import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
@@ -42,7 +42,7 @@ export type PassCoreContextValue = {
     /** Theme manager */
     theme: PassThemeService;
     /** Resolves a users */
-    exportData: (options: ExportOptions) => Promise<File>;
+    exportData: (options: ExportOptions, files: MaybeNull<FileItemExport>) => Promise<File>;
     /** In the extension: leverage worker communication to generate
      * a token. In the web-app: use the OTP utils in-place */
     generateOTP: UsePeriodOtpCodeOptions['generate'];

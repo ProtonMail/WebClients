@@ -32,6 +32,7 @@ import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
+import { ExportProvider } from '@proton/pass/components/Export/ExportProvider';
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -82,9 +83,9 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     spotlight,
     theme: createPassThemeManager({ getInitialTheme }),
 
-    exportData: async (options) => {
+    exportData: async (options, files) => {
         const state = store.getState();
-        const data = selectExportData({ config: PASS_CONFIG, format: options.format })(state);
+        const data = selectExportData({ config: PASS_CONFIG, format: options.format, files })(state);
         return transferableToFile(await createPassExport(data, options));
     },
 
@@ -156,14 +157,16 @@ export const App = () => {
                                             <AuthSwitchProvider>
                                                 <AuthServiceProvider>
                                                     <StoreProvider>
-                                                        <ThemeConnect />
-                                                        <Localized>
-                                                            {showWelcome ? <WelcomeScreen /> : <AppGuard />}
-                                                        </Localized>
-                                                        <Portal>
-                                                            <ModalsChildren />
-                                                            <NotificationsChildren />
-                                                        </Portal>
+                                                        <ExportProvider>
+                                                            <ThemeConnect />
+                                                            <Localized>
+                                                                {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                            </Localized>
+                                                            <Portal>
+                                                                <ModalsChildren />
+                                                                <NotificationsChildren />
+                                                            </Portal>
+                                                        </ExportProvider>
                                                     </StoreProvider>
                                                 </AuthServiceProvider>
                                             </AuthSwitchProvider>
