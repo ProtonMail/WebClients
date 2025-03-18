@@ -835,7 +835,7 @@ const SingleSignupContainerV2 = ({
         if (signupParameters.invite?.type === 'porkbun') {
             window.location.replace(
                 getPorkbunPaymentUrl({
-                    data: { ...signupParameters.invite.data, invitee: authSession.User.Email },
+                    data: { ...signupParameters.invite.data, invitee: authSession.data.User.Email },
                 })
             );
             // Promise that never resolves
@@ -845,13 +845,13 @@ const SingleSignupContainerV2 = ({
         try {
             accountRef.current.signingIn = true;
             // Override the silentApi to not use the one with the UID as we prepare the state
-            const silentApi = getSilentApi(getUIDApi(authSession.UID, unauthApi));
+            const silentApi = getSilentApi(getUIDApi(authSession.data.UID, unauthApi));
 
             const [user] = await Promise.all([
-                authSession.User || silentApi<{ User: User }>(getUser()).then(({ User }) => User),
+                authSession.data.User || silentApi<{ User: User }>(getUser()).then(({ User }) => User),
             ]);
 
-            const chargebeeEnabled = await isChargebeeEnabled(authSession.UID, async () => user);
+            const chargebeeEnabled = await isChargebeeEnabled(authSession.data.UID, async () => user);
 
             const { cycle, currency, planIDs } = (() => {
                 const modelCycle = model.subscriptionData.cycle;
@@ -900,7 +900,7 @@ const SingleSignupContainerV2 = ({
             });
 
             const session: SessionData = {
-                resumedSessionResult: authSession,
+                resumedSessionResult: authSession.data,
                 ...userInfo,
             };
 
@@ -944,10 +944,13 @@ const SingleSignupContainerV2 = ({
                 localID: session.persisted.localID,
             });
             if (resumedSession) {
-                return await handleSignIn(resumedSession, {
-                    ignore: true,
-                    restoreParameters: true,
-                });
+                return await handleSignIn(
+                    { data: resumedSession },
+                    {
+                        ignore: true,
+                        restoreParameters: true,
+                    }
+                );
             }
         } finally {
             accountRef.current.signingIn = false;
@@ -974,7 +977,7 @@ const SingleSignupContainerV2 = ({
                 // If it's porkbun signup, we reload this page to show the "signed in payment mode"
                 window.location.replace(
                     getPorkbunPaymentUrl({
-                        data: { ...signupParameters.invite.data, invitee: result.session.User.Email },
+                        data: { ...signupParameters.invite.data, invitee: result.session.data.User.Email },
                     })
                 );
                 // Promise that never resolves
@@ -1011,7 +1014,7 @@ const SingleSignupContainerV2 = ({
             }
 
             await onLogin({
-                ...cache.session.resumedSessionResult,
+                data: cache.session.resumedSessionResult,
                 flow: 'login',
             });
 

@@ -1,4 +1,4 @@
-import type { PersistedSessionLite } from '@proton/shared/lib/authentication/SessionInterface';
+import { type PersistedSessionLite, SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import {
     getMinimalPersistedSession,
     getPersistedSessions,
@@ -64,7 +64,10 @@ const from = (value: string | undefined): PersistedSessionLite[] | undefined => 
 };
 
 export const writeAccountSessions = () => {
-    const sessions = getPersistedSessions().map(getMinimalPersistedSession);
+    const sessions = getPersistedSessions()
+        // Remove oauth sessions, we don't want them to be visible in the in-app account switcher
+        .filter((session) => session.source !== SessionSource.Oauth)
+        .map(getMinimalPersistedSession);
     syncToCookie(to(sessions));
 };
 

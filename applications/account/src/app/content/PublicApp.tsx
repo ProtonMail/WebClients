@@ -727,7 +727,7 @@ const BasePublicApp = () => {
                                                                         oauthData:
                                                                             locationState.payload.data.payload
                                                                                 .oauthData,
-                                                                        UID: locationState.payload.session.UID,
+                                                                        UID: locationState.payload.session.data.UID,
                                                                     });
                                                                     replaceUrl(url);
                                                                 }}

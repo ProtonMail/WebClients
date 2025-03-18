@@ -609,7 +609,7 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
             clientKey: setupData.clientKey,
             offlineKey: setupData.offlineKey,
             keyPassword: setupData.keyPassword,
-            persistedAt: setupData.persistedAt,
+            persistedSession: setupData.persistedSession,
             persistent: cache.persistent,
             trusted: cache.trusted,
         },

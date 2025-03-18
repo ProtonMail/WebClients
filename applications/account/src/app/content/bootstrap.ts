@@ -14,6 +14,9 @@ import { initMainHost } from '@proton/cross-storage';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import { getOAuthSettingsUrl } from '@proton/shared/lib/authentication/fork/oauth2SettingsUrl';
+import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
@@ -59,10 +62,19 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, history, unleashClient });
 
+        const persistedSession = sessionResult.session?.persistedSession || getPersistedSession(authentication.localID);
         const persistedState = await getDecryptedPersistedState<Partial<AccountState>>({
+            persistedSession,
             authentication,
             user,
         });
+
+        // OAuth sessions are taken straight to the lite app
+        if (persistedSession?.source === SessionSource.Oauth) {
+            document.location.assign(getOAuthSettingsUrl(persistedSession.localID));
+            // Promise that never resolves
+            await new Promise<void>(() => {});
+        }
 
         const store = setupStore({ preloadedState: persistedState?.state, mode: 'default' });
         const dispatch = store.dispatch;

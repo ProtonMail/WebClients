@@ -46,7 +46,7 @@ const App = () => {
                                     <PublicApp
                                         api={extraThunkArguments.api}
                                         onLogin={(args) => {
-                                            const url = extraThunkArguments.authentication.login(args);
+                                            const url = extraThunkArguments.authentication.login(args.data);
                                             replaceUrl(url);
                                         }}
                                         locales={locales}
