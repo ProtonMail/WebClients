@@ -1926,7 +1926,7 @@
         "Considere deixar uma avaliação"
       ],
       "Please contact your administrator": [
-        "Contate seu administrador"
+        "Entre em contato com seu administrador"
       ],
       "Please do not close this window": [
         "Não feche esta janela."
@@ -2380,6 +2380,10 @@
       "${ repliedCount } reply": [
         "${ repliedCount } resposta",
         "${ repliedCount } respostas"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } link seguro",
+        "${ secureLinksCount } links seguros"
       ],
       "${ years } year": [
         "${ years } ano",
@@ -3844,14 +3848,6 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
-      ]
-    },
-    "Valentine_2025": {
-      "VALENTINE'S DEAL": [
-        "OFERTA DO DIA DOS NAMORADOS"
-      ],
-      "Valentine's deal: ${ planName } 50% off for you": [
-        "Oferta do Dia dos Namorados: ${ planName } com 50% de desconto para você"
       ]
     },
     "Validation": {
