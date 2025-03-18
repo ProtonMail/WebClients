@@ -236,7 +236,8 @@ export const UserDropdownV2 = () => {
     } = useContext(UserDropdownContext);
 
     const showSettingsButton =
-        viewportWidth['<=small'] && APP_NAME !== APPS.PROTONACCOUNT && APP_NAME !== APPS.PROTONVPN_SETTINGS;
+        (viewportWidth['<=small'] && APP_NAME !== APPS.PROTONACCOUNT && APP_NAME !== APPS.PROTONVPN_SETTINGS) ||
+        APP_NAME === APPS.PROTONDOCS;
 
     return (
         <Dropdown
@@ -278,14 +279,6 @@ export const UserDropdownV2 = () => {
                 <UserSection info={info} upgrade={upgrade} />
 
                 <div className="mb-4 px-4 flex flex-column gap-2">
-                    {showSwitchAccountButton && !accountSessions.hasList ? (
-                        accountSessions.hasAddAccount ? (
-                            <AddAccountButton showAsButton cta={c('Action').t`Add another account`} />
-                        ) : (
-                            <SwitchAccountButton />
-                        )
-                    ) : null}
-
                     {showSettingsButton ? (
                         <ButtonLike
                             as={SettingsLink}
@@ -296,6 +289,14 @@ export const UserDropdownV2 = () => {
                             data-testid="userdropdown:button:settings"
                         >{c('Action').t`Settings`}</ButtonLike>
                     ) : undefined}
+
+                    {showSwitchAccountButton && !accountSessions.hasList ? (
+                        accountSessions.hasAddAccount ? (
+                            <AddAccountButton showAsButton cta={c('Action').t`Add another account`} />
+                        ) : (
+                            <SwitchAccountButton />
+                        )
+                    ) : null}
 
                     <Button
                         shape="outline"
