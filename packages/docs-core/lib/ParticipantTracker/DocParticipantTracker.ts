@@ -1,7 +1,7 @@
 import type { SafeDocsUserState } from '@proton/docs-shared'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 
-const MAX_USER_STATES_FOR_LOCKING_EDITOR = 10
+export const MAX_USER_STATES_FOR_LOCKING_EDITOR = 20
 
 export class DocParticipantTracker {
   private totalParticipants = 0
