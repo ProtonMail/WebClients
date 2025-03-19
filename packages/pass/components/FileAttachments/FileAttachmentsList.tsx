@@ -32,7 +32,7 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
 
     const handleDownload = async (file: FileDescriptor) => {
         const fileBlob = await downloadFile(file, { shareId, itemId });
-        if (fileBlob) download(fileBlob);
+        if (fileBlob) download(fileBlob, file.name);
     };
 
     return (

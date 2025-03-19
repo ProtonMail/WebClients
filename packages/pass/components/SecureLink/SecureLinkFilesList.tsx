@@ -13,7 +13,7 @@ export const SecureLinkFilesList: FC<Props> = ({ files, filesToken }) => {
 
     const handleDownload = async (file: FileDescriptor) => {
         const fileBlob = await downloadFile(file, { filesToken });
-        if (fileBlob) download(fileBlob);
+        if (fileBlob) download(fileBlob, file.name);
     };
 
     return (

@@ -5,7 +5,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 /** Safari browser extensions don't properly support the
  * HTML download attribute or `createObjectURL` */
-export const download = (file: File) => {
+export const download = (file: File, filename?: string) => {
     if (BUILD_TARGET === 'safari') {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -20,12 +20,12 @@ export const download = (file: File) => {
             link.href = base64data;
             /* currently ignored by Safari extensions and the filename will be "Unknown"
             /* but hopefully a future Safari update will fix this */
-            link.download = file.name;
+            link.download = filename ?? file.name;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         };
     } else {
-        downloadFile(file, file.name);
+        downloadFile(file, filename ?? file.name);
     }
 };
