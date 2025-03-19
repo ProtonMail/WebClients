@@ -4,8 +4,8 @@ import { intoFileDescriptor } from '@proton/pass/lib/file-attachments/helpers';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
 import type {
-    FileDownloadDTO,
-    FileDownloadPublicDTO,
+    FileDownloadChunk,
+    FileDownloadPublicChunk,
     FileID,
     FileRestoreDTO,
     ItemFileOutput,
@@ -38,7 +38,7 @@ export const uploadFileChunk = async (fileId: string, chunkIndex: number, chunkD
         method: 'post',
     });
 
-export const downloadFileChunk = async (dto: FileDownloadDTO): Promise<ReadableStream> =>
+export const downloadFileChunk = async (dto: FileDownloadChunk): Promise<ReadableStream> =>
     api({
         url: `pass/v1/share/${dto.shareId}/item/${dto.itemId}/file/${dto.fileID}/chunk/${dto.chunkID}`,
         method: 'get',
@@ -46,7 +46,7 @@ export const downloadFileChunk = async (dto: FileDownloadDTO): Promise<ReadableS
         headers: { 'Content-Type': 'application/octet-stream' },
     });
 
-export const downloadPublicFileChunk = async (dto: FileDownloadPublicDTO): Promise<ReadableStream> =>
+export const downloadPublicFileChunk = async (dto: FileDownloadPublicChunk): Promise<ReadableStream> =>
     api({
         url: `pass/v1/public_link/files/${dto.filesToken}/${dto.fileID}/${dto.chunkID}`,
         method: 'get',

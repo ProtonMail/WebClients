@@ -26,8 +26,16 @@ export type FileChunkUploadDTO = { fileID: FileID; index: number } & (
 );
 export type FileAttachmentsDTO = { toAdd: FileID[]; toRemove: FileID[]; toRestore?: FileID[] };
 export type FileMetadataDTO = BaseFileDescriptor & Partial<SelectedItem>;
-export type FileDownloadDTO = { fileID: FileID; chunkID: string } & SelectedItem;
-export type FileDownloadPublicDTO = { fileID: FileID; chunkID: string; filesToken: string };
+
+type FileDownloadChunkBase = { fileID: FileID; chunkID: string };
+type FileDownloadDTOBase = { fileID: FileID; chunkIDs: string[] };
+
+export type FileDownloadDTO = FileDownloadDTOBase & SelectedItem;
+export type FileDownloadChunk = FileDownloadChunkBase & SelectedItem;
+
+export type FileDownloadPublicDTO = FileDownloadDTOBase & { filesToken: string };
+export type FileDownloadPublicChunk = FileDownloadChunkBase & { filesToken: string };
+
 export type FileResolveDTO = SelectedRevision & { history?: boolean };
 export type FileRestoreDTO = { fileId: FileID } & SelectedItem;
 export type FileAttachmentValues = { files: FileAttachmentsDTO };
