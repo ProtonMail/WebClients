@@ -83,9 +83,12 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     const cancelButton = <Button shape="ghost" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>;
 
     const sendButton = (
-        <Button color="norm" onClick={handleSend} loading={loadingSend} disabled={isExpanded && !model.Comment}>{c(
-            'Action'
-        ).t`Send`}</Button>
+        <Button
+            color="norm"
+            onClick={handleSend}
+            loading={loadingSend}
+            disabled={isExpanded && (!model.Comment || model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)}
+        >{c('Action').t`Send`}</Button>
     );
 
     const hasUserComment = !!model.Comment?.Message;
