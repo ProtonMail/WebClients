@@ -7136,19 +7136,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/add-test-tags-to-mr@workspace:utilities/add-test-tags-to-mr":
-  version: 0.0.0-use.local
-  resolution: "@proton/add-test-tags-to-mr@workspace:utilities/add-test-tags-to-mr"
-  dependencies:
-    "@proton/ci-tools": "workspace:^"
-    "@types/jest": "npm:^29.5.14"
-    jest: "npm:^29.7.0"
-    ts-jest: "npm:^29.2.6"
-    ts-node: "npm:^10.9.2"
-    tsx: "npm:^4.19.2"
-  languageName: unknown
-  linkType: soft
-
 "@proton/ai-assistant@workspace:packages/ai-assistant":
   version: 0.0.0-use.local
   resolution: "@proton/ai-assistant@workspace:packages/ai-assistant"
@@ -8174,6 +8161,19 @@ __metadata:
     stylelint-config-standard-scss: "npm:^10.0.0"
     stylelint-use-logical-spec: "npm:^5.0.1"
     svgo: "npm:^3.3.2"
+  languageName: unknown
+  linkType: soft
+
+"@proton/test-tags-mr@workspace:utilities/test-tags-mr":
+  version: 0.0.0-use.local
+  resolution: "@proton/test-tags-mr@workspace:utilities/test-tags-mr"
+  dependencies:
+    "@proton/ci-tools": "workspace:^"
+    "@types/jest": "npm:^29.5.14"
+    jest: "npm:^29.7.0"
+    ts-jest: "npm:^29.2.6"
+    ts-node: "npm:^10.9.2"
+    tsx: "npm:^4.19.2"
   languageName: unknown
   linkType: soft
 
