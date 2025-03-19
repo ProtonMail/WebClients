@@ -73,3 +73,10 @@ ErrorDocument 404 /assets/404.html
 <FilesMatch ".(js|css)$"> 
   Header set Cache-Control "max-age=1209600, public" 
 </FilesMatch>
+
+# Browser should cache wasm for 30 days
+# We force application/wasm type for .wasm extensions
+<FilesMatch "\.wasm$">
+    Header set Cache-Control "max-age=2592000, public"
+    AddType application/wasm .wasm
+</FilesMatch>
