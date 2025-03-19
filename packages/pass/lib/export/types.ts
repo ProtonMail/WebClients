@@ -43,3 +43,5 @@ export type ExportOptions =
     | { format: Exclude<ExportFormat, ExportFormat.EPEX | ExportFormat.PGP> };
 
 export type ExportFormValues = { format: ExportFormat; passphrase: string };
+
+export type FilenamePayload = { filename: string };

@@ -168,7 +168,7 @@ export const Import: FC = () => {
 
                 {importData !== null && (
                     <ImportVaultsPickerModal
-                        onClose={() => beforeSubmitResolver.current?.({ ok: false })}
+                        onClose={async () => beforeSubmitResolver.current?.({ ok: false })}
                         payload={importData}
                         onSubmit={(payload) =>
                             beforeSubmitResolver?.current?.(

@@ -1,7 +1,6 @@
 import JSZip from 'jszip';
 
 import { CryptoProxy } from '@proton/crypto';
-import { decodeBase64 } from '@proton/crypto/lib/utils';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { ContentFormatVersion, ItemState } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -70,10 +69,10 @@ describe('Pass export', () => {
 
     test('encryptZip should encrypt zip file to binary format', async () => {
         const uint8Zip = crypto.getRandomValues(new Uint8Array(32));
-        const base64Encrypted = await encryptPassExport(uint8Zip, EXPORT_TEST_PASSPHRASE);
+        const encrypted = await encryptPassExport(uint8Zip, EXPORT_TEST_PASSPHRASE);
 
         const decrypted = await CryptoProxy.decryptMessage({
-            armoredMessage: decodeBase64(base64Encrypted),
+            armoredMessage: encrypted,
             passwords: [EXPORT_TEST_PASSPHRASE],
             format: 'binary',
         });

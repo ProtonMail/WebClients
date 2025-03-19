@@ -57,7 +57,6 @@ import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectExportData } from '@proton/pass/store/selectors/export';
 import type { Maybe } from '@proton/pass/types';
-import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
@@ -102,14 +101,8 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
 
         exportData: async (options, files) => {
             const state = store.getState();
-            const data = selectExportData({
-                config: PASS_CONFIG,
-                format: options.format,
-                files,
-            })(state);
-
-            /** FIXME: no need for transferable here */
-            return transferableToFile(await createPassExport(data, options));
+            const data = selectExportData({ config: PASS_CONFIG, format: options.format, files })(state);
+            return createPassExport(data, options);
         },
 
         generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),

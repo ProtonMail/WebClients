@@ -10,6 +10,7 @@ import { useExporter } from '@proton/pass/components/Export/ExportProvider';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
 import type { MaybePromise } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
@@ -64,8 +65,10 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         onAbort: () => throwError({ name: 'AuthConfirmAbortError' }),
                     });
 
-                    download(await exporter.export(values));
+                    const file = await exporter.export(values);
+                    download(file);
 
+                    void fileStorage.deleteFile(file.name);
                     form.resetForm({ values: { ...form.values, passphrase: '' } });
                     void form.validateForm();
 

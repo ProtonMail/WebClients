@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
-import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export enum ImportProvider {
@@ -121,13 +120,11 @@ export const ImportProviderValues = Object.values(ImportProvider).sort((a, b) =>
 });
 
 export type ImportReaderPayload = {
-    file: TransferableFile;
+    file: File;
     provider: ImportProvider;
     userId?: string;
     passphrase?: string;
-    options?: {
-        currentAliases?: string[];
-    };
+    options?: { currentAliases?: string[] };
 };
 
 export type ImportVault = {
@@ -137,4 +134,4 @@ export type ImportVault = {
 };
 
 export type ImportPayload = { vaults: ImportVault[]; ignored: string[]; warnings: string[] };
-export type ImportDecryptPayload = { data: string; passphrase: string };
+export type ImportDecryptPayload = { filename: string; passphrase?: string };
