@@ -179,6 +179,7 @@ export enum RAWMimeTypes {
     dng = 'image/x-adobe-dng',
     crw = 'image/x-canon-crw',
     cr2 = 'image/x-canon-cr2',
+    cr3 = 'image/x-canon-cr3',
     erf = 'image/x-epson-erf',
     raf = 'image/x-fuji-raf',
     dcr = 'image/x-kodak-dcr',
@@ -186,13 +187,34 @@ export enum RAWMimeTypes {
     kdc = 'image/x-kodak-kdc',
     mrw = 'image/x-minolta-mrw',
     nef = 'image/x-nikon-nef',
+    nrw = 'image/x-nikon-nrw',
     orf = 'image/x-olympus-orf',
     raw = 'image/x-panasonic-raw',
+    rw2 = 'image/x-panasonic-rw2',
     pef = 'image/x-pentax-pef',
+    ptx = 'image/x-pentax-ptx',
     x3f = 'image/x-sigma-x3f',
     srf = 'image/x-sony-srf',
     sr2 = 'image/x-sony-sr2',
     arw = 'image/x-sony-arw',
+    iiq = 'image/x-phaseone-iiq',
+    mef = 'image/x-mamiya-mef',
+    rwl = 'image/x-leica-rwl',
+    '3fr' = 'image/x-hasselblad-3fr',
+    fff = 'image/x-hasselblad-fff',
+}
+
+export enum RAWThumbnailExtractionSupported {
+    dng = 'image/x-adobe-dng',
+    arw = 'image/x-sony-arw',
+    erf = 'image/x-epson-erf',
+    mrw = 'image/x-minolta-mrw',
+    nrw = 'image/x-nikon-nrw',
+    orf = 'image/x-olympus-orf',
+    raf = 'image/x-fuji-raf',
+    rw2 = 'image/x-panasonic-rw2',
+    cr2 = 'image/x-canon-cr2',
+    heic = 'image/heic',
 }
 
 export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
@@ -213,9 +235,6 @@ export enum SHARE_EXTERNAL_INVITATION_STATE {
 }
 
 export const DS_STORE = '.DS_Store';
-
-// Delete once sharing between members is fully implemented.
-export const MEMBER_SHARING_ENABLED = false;
 
 export const PHOTOS_PAGE_SIZE = 500;
 
