@@ -5,12 +5,12 @@ import { Form, FormikProvider } from 'formik';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useNotifications } from '@proton/components';
+import { Icon, useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ImportForm } from '@proton/pass/components/Import/ImportForm';
 import { ImportProgress } from '@proton/pass/components/Import/ImportProgress';
 import { ImportVaultsPickerModal } from '@proton/pass/components/Import/ImportVaultsPickerModal';
-import { ContactAdminWarning } from '@proton/pass/components/Item/List/Placeholder/ContactAdminWarning';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import {
     type UseImportFormBeforeSubmit,
     type UseImportFormBeforeSubmitValue,
@@ -20,7 +20,7 @@ import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
 import { itemsImportRequest } from '@proton/pass/store/actions/requests';
-import { selectCanCreateItems, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
+import { selectCanCreateItems } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -66,15 +66,20 @@ export const Import: FC = () => {
         },
     });
 
-    const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
-    const disabled = !useSelector(selectCanCreateItems);
-    const orgDisabled = vaultCreationDisabled && disabled;
+    const canCreateItem = useSelector(selectCanCreateItems);
 
     const showResultDetails = (result?.ignored.length ?? 0) > 0 || (result?.warnings?.length ?? 0) > 0;
     const totalImportedItems = result?.total ?? 0;
     const totalItems = totalImportedItems + (result?.ignored.length ?? 0);
 
-    if (orgDisabled) return <ContactAdminWarning />;
+    if (!canCreateItem) {
+        return (
+            <Card className="flex items-center flex-nowrap w-full gap-3" type="primary">
+                <Icon name="info-circle-filled" size={5} className="shrink-0 mt-0.5" />
+                <span>{c('Info').t`You need a vault with edit permission before you can import items.`}</span>
+            </Card>
+        );
+    }
 
     return (
         <>
