@@ -4,7 +4,7 @@ import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import { isProtonDocument, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocument, isRAWThumbnailExtractionSupported, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { isIgnoredError } from '../../utils/errorHandling';
@@ -158,8 +158,22 @@ function useFileViewBase(
             abortSignal.removeEventListener('abort', onAbort);
             // Fallback is only available for photos in private context
         } else if (!!link.activeRevision?.photo && !isVideo(link.mimeType)) {
-            // We force jpg type as thumbnails are always jpg for photos
-            setContentsMimeType(SupportedMimeTypes.jpg);
+            // it actually does not matter what we set for the preview
+            // thumbnail will be either jpg or webp
+            // most recent will be webp
+            setContentsMimeType(SupportedMimeTypes.webp);
+            setIsFallbackContents(true);
+            try {
+                const previewThumbnail = await getPreviewThumbnail(abortSignal, shareId, linkId);
+                setContents(previewThumbnail);
+            } catch {
+                setContents(undefined);
+            }
+        } else if (isRAWThumbnailExtractionSupported(link.mimeType, link.name.split('.').pop())) {
+            // it actually does not matter what we set for the preview
+            // thumbnail will be either jpg or webp
+            // most recent will be webp
+            setContentsMimeType(SupportedMimeTypes.webp);
             setIsFallbackContents(true);
             try {
                 const previewThumbnail = await getPreviewThumbnail(abortSignal, shareId, linkId);
