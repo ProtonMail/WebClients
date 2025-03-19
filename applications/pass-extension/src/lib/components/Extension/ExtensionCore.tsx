@@ -8,6 +8,7 @@ import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
+import { c } from 'ttag';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
@@ -25,6 +26,7 @@ import { createPassCoreProxy } from '@proton/pass/lib/core/proxy';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { getExtensionLocalStorage } from '@proton/pass/lib/extension/storage';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
 import { createI18nService } from '@proton/pass/lib/i18n/service';
 import { isProtonPassEncryptedImport } from '@proton/pass/lib/import/reader';
@@ -32,7 +34,6 @@ import { createSettingsService } from '@proton/pass/lib/settings/service';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { LocalStoreData } from '@proton/pass/types';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
-import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
@@ -87,11 +88,14 @@ const getPassCoreProviderProps = (
             getInitialTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
         }),
 
-        /** FIXME: support file export for extension */
-        exportData: (payload) =>
-            sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {
+        exportData: async (payload) =>
+            sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), async (res) => {
                 if (res.type === 'error') throw new Error(res.error);
-                return transferableToFile(res.file);
+
+                const exportFile = await fileStorage.readFile(res.filename);
+                if (!exportFile) throw new Error(c('Error').t`Could not resolve export file.`);
+
+                return exportFile;
             }),
 
         generateOTP: (payload) =>
@@ -137,17 +141,31 @@ const getPassCoreProviderProps = (
 
         getRatingURL: getWebStoreUrl,
 
-        /* CryptoProxy is only initalized in the worker execution
-         * context. Send a pageMessage (as of now the importer is
-         * handled in the settings page) to decrypt the payload
-         * before reading the .zip file contents */
-        prepareImport: async (payload) =>
-            isProtonPassEncryptedImport(payload)
-                ? sendMessage.on(messageFactory({ type: WorkerMessageType.IMPORT_DECRYPT, payload }), (res) => {
-                      if (res.type === 'error') throw new Error(res.error);
-                      return res.payload;
-                  })
-                : payload,
+        /* CryptoProxy is only initalized in the worker execution context.
+         * If the file is encrypted, write it to disk, then send a pageMessage
+         * that will take care of decrypting the file and overwriting it on disk.
+         * Finally, return that decrypted file. */
+        prepareImport: async (payload) => {
+            if (!isProtonPassEncryptedImport(payload)) return payload;
+
+            const filename = payload.file.name;
+            await fileStorage.writeFile(filename, payload.file);
+
+            return sendMessage.on(
+                messageFactory({
+                    type: WorkerMessageType.IMPORT_DECRYPT,
+                    payload: { filename, passphrase: payload.passphrase },
+                }),
+                async (res) => {
+                    if (res.type === 'error') throw new Error(res.error);
+
+                    const decryptedFile = await fileStorage.readFile(filename);
+                    if (!decryptedFile) throw new Error(c('Error').t`Could not import decrypted file.`);
+
+                    return { ...payload, file: decryptedFile };
+                }
+            );
+        },
 
         promptForPermissions,
 
