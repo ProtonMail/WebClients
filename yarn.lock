@@ -7966,6 +7966,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/raw-images@workspace:^, @proton/raw-images@workspace:packages/raw-images":
+  version: 0.0.0-use.local
+  resolution: "@proton/raw-images@workspace:packages/raw-images"
+  languageName: unknown
+  linkType: soft
+
 "@proton/react-polymorphic-types@workspace:^, @proton/react-polymorphic-types@workspace:packages/react-polymorphic-types":
   version: 0.0.0-use.local
   resolution: "@proton/react-polymorphic-types@workspace:packages/react-polymorphic-types"
@@ -35802,6 +35808,7 @@ __metadata:
     "@proton/metrics": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/polyfill": "workspace:^"
+    "@proton/raw-images": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
