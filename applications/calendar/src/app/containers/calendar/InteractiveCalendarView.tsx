@@ -53,6 +53,7 @@ import {
     getIsOwnedCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import {
+    ATTENDEE_MORE_ATTENDEES,
     DELETE_CONFIRMATION_TYPES,
     ICAL_ATTENDEE_STATUS,
     MAXIMUM_DATE_UTC,
@@ -182,6 +183,7 @@ import {
     upsertUpdateEventPartResponses,
 } from './eventStore/cache/upsertResponsesArray';
 import type { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
+import { getPaginatedAttendeesInfo } from './eventStore/useCalendarsEventsReader';
 import getAttendeeDeleteSingleEditPayload from './getAttendeeDeleteSingleEditPayload';
 import type { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
 import getSyncMultipleEventsPayload from './getSyncMultipleEventsPayload';
@@ -1375,8 +1377,8 @@ const InteractiveCalendarView = ({
         }
         const getRequest =
             ({ data: { eventID, calendarID, attendeeID, updateTime, partstat, comment } }: UpdatePartstatOperation) =>
-            () =>
-                api<UpdateEventPartApiResponse>({
+            async () => {
+                const { Event, ...rest } = await api<UpdateEventPartApiResponse>({
                     ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
                         Status: toApiPartstat(partstat),
                         UpdateTime: updateTime,
@@ -1384,6 +1386,16 @@ const InteractiveCalendarView = ({
                     }),
                     silence: true,
                 });
+
+                if (Event.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
+                    await getPaginatedAttendeesInfo(calendarID, eventID, api, Event);
+                }
+
+                return {
+                    ...rest,
+                    Event,
+                };
+            };
         const noisyRequests = operations.filter(({ silence }) => !silence).map(getRequest);
         const silentRequests = operations.filter(({ silence }) => silence).map(getRequest);
         // the routes called in these requests do not have any specific jail limit
@@ -1422,10 +1434,19 @@ const InteractiveCalendarView = ({
                         hasDefaultNotifications,
                         color,
                     });
-                    return api<UpdateEventPartApiResponse>({
+                    const { Event, ...rest } = await api<UpdateEventPartApiResponse>({
                         ...updatePersonalEventPart(calendarID, eventID, payload),
                         silence: true,
                     });
+
+                    if (Event.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
+                        await getPaginatedAttendeesInfo(calendarID, eventID, api, Event);
+                    }
+
+                    return {
+                        ...rest,
+                        Event,
+                    };
                 }
         );
         // Catch errors silently
