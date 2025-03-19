@@ -167,12 +167,14 @@ async function prepareShareForRestore(
             linkDecryptedPassphrase: result.linkDecryptedPassphrase,
         };
     } catch (e: unknown) {
-        const errorMessage = e instanceof Error ? e.message : 'Failed to prepare lockedShare for restore';
-        sendErrorReport(
-            new EnrichedError(errorMessage, {
-                tags: { shareId: share.shareId, volumeId: share.volumeId, isLocked: true, forASV: share.forASV },
-            })
-        );
+        if (share.forASV) {
+            const errorMessage = e instanceof Error ? e.message : 'Failed to prepare lockedShare for restore';
+            sendErrorReport(
+                new EnrichedError(errorMessage, {
+                    tags: { shareId: share.shareId, volumeId: share.volumeId, isLocked: true, forASV: share.forASV },
+                })
+            );
+        }
         return undefined;
     }
 }
