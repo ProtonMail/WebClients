@@ -30,6 +30,11 @@ export const openPassFileDB = async (): Promise<IDBPDatabase<PassFileDB>> => {
     }
 };
 
+/** Turns a chunked IDB file into a readable stream.
+ * We're currently consuming it as a raw buffer, but once
+ * we implement a proper stream-saver service worker, this
+ * will allow streaming downloads from IDB without loading
+ * the entire file into memory. */
 export const createIDBFileReadableStream = (filename: string): ReadableStream<Blob> => {
     let db: MaybeNull<IDBPDatabase<PassFileDB>> = null;
     let currentChunk = 0;
@@ -104,14 +109,16 @@ export class FileStorageIDB implements FileStorage {
             const db = await openPassFileDB();
             if (!db) throw new Error('No database found');
 
-            const tx = db.transaction(['files', 'metadata'], 'readwrite');
-
             /** When dealing with a blob : store the file
              * as a single database entry. */
             if (file instanceof Blob) {
+                const tx = db.transaction(['files', 'metadata'], 'readwrite');
                 const fileKey = getFileChunkName(filename, 0);
-                await tx.objectStore('metadata').put({ totalChunks: 1 }, filename);
-                await tx.objectStore('files').put(file, fileKey);
+                await Promise.all([
+                    await tx.objectStore('metadata').put({ totalChunks: 1 }, filename),
+                    await tx.objectStore('files').put(file, fileKey),
+                    await tx.done,
+                ]);
             }
 
             /** If we're dealing with a readable stream append
@@ -125,15 +132,19 @@ export class FileStorageIDB implements FileStorage {
                     const { done, value } = await reader.read();
                     if (done) break;
 
+                    const fileTx = db.transaction('files', 'readwrite');
                     const fileKey = getFileChunkName(filename, chunkIndex);
-                    await tx.objectStore('files').put(value, fileKey);
+                    await Promise.all([fileTx.objectStore('files').put(value, fileKey), fileTx.done]);
                     chunkIndex++;
                 }
 
-                await tx.objectStore('metadata').put({ totalChunks: chunkIndex }, filename);
+                const metaTx = db.transaction('metadata', 'readwrite');
+                await Promise.all([
+                    metaTx.objectStore('metadata').put({ totalChunks: chunkIndex }, filename),
+                    metaTx.done,
+                ]);
             }
 
-            await tx.done;
             db.close();
         } catch (err) {
             logger.warn('[fs:IDB] Could not write file', err);
