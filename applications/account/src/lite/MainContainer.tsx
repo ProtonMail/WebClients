@@ -10,6 +10,7 @@ import LabelsSettings from './actions/LabelsSettings';
 import PrivacySecuritySettings from './actions/PrivacySecuritySettings';
 import SpamFiltersSettings from './actions/SpamFiltersSettings';
 import SubscribeAccount from './actions/SubscribeAccount';
+import VPNLite from './actions/VPNLite';
 import WalletSettings from './actions/WalletSettings';
 import { SupportedActions } from './helper';
 
@@ -39,13 +40,7 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
             )}
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
             {action === SupportedActions.VPNLite && (
-                <SubscribeAccount
-                    app={app}
-                    redirect={redirect}
-                    searchParams={searchParams}
-                    loader={loader}
-                    layout={layout}
-                />
+                <VPNLite app={app} redirect={redirect} searchParams={searchParams} loader={loader} layout={layout} />
             )}
             {(action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) && (
                 <SubscribeAccount
