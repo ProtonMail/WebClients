@@ -206,7 +206,7 @@ export const PhotosWithAlbumsView: FC = () => {
                     navigationControls={
                         <NavigationControl
                             current={previewIndex + 1}
-                            total={photoCount}
+                            total={photoCount - 1}
                             rootRef={previewRef}
                             onPrev={() => setPreviewIndex(previewIndex - 1)}
                             onNext={() => setPreviewIndex(previewIndex + 1)}
