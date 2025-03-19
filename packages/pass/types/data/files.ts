@@ -20,7 +20,10 @@ export type FileDescriptor = BaseFileDescriptor & {
 };
 
 export type FileInitiateUploadDTO = FileMetadata & { totalChunks: number };
-export type FileChunkUploadDTO = { fileID: FileID; chunk: ArrayBuffer; index: number };
+export type FileChunkUploadDTO = { fileID: FileID; index: number } & (
+    | { type: 'blob'; blob: Blob }
+    | { type: 'fs'; ref: string }
+);
 export type FileAttachmentsDTO = { toAdd: FileID[]; toRemove: FileID[]; toRestore?: FileID[] };
 export type FileMetadataDTO = BaseFileDescriptor & Partial<SelectedItem>;
 export type FileDownloadDTO = { fileID: FileID; chunkID: string } & SelectedItem;
