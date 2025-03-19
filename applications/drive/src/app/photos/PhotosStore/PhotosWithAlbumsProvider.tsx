@@ -33,7 +33,7 @@ export interface Album {
     PhotoCount: number;
     LinkID: string;
     VolumeID: string;
-    ShareID: string;
+    ShareID: string | null;
 }
 
 export interface DecryptedAlbum extends DecryptedLink {
@@ -255,15 +255,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                           })
                                         : Promise.resolve(undefined),
                                 ]);
-                                const permissions = await getSharePermissions(abortSignal, album.ShareID);
                                 return {
                                     ...link,
                                     cover: cover,
                                     photoCount: album.PhotoCount,
                                     permissions: {
-                                        isOwner: getIsOwner(permissions),
-                                        isAdmin: getCanAdmin(permissions),
-                                        isEditor: getCanWrite(permissions),
+                                        isOwner: true,
+                                        isAdmin: true,
+                                        isEditor: true,
                                     },
                                 };
                             } catch (e) {
@@ -291,7 +290,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
             return albumCall();
         },
-        [getLink, request, shareId, volumeId, getSharePermissions]
+        [getLink, request, shareId, volumeId]
     );
 
     const loadSharedWithMeAlbums = useCallback(
@@ -315,6 +314,9 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     const newDecryptedAlbums = await Promise.all(
                         Albums.map(async (album) => {
                             try {
+                                if (album.ShareID === null) {
+                                    return;
+                                }
                                 // Update share cache
                                 if (refresh) {
                                     await getShare(abortSignal, album.ShareID, refresh);
