@@ -30,6 +30,8 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingSend, withLoadingSend] = useLoading();
 
+    const isUnchanged = model.Status === userPartstat && model.Comment?.Message === userComment;
+
     const handleResponse = (status: ICAL_ATTENDEE_STATUS) => {
         if (isExpanded) {
             setModel({
@@ -40,7 +42,6 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
 
         return handleChangePartstat(
             {
-                ...model,
                 Status: status,
             },
             !isExpanded
@@ -87,7 +88,9 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             color="norm"
             onClick={handleSend}
             loading={loadingSend}
-            disabled={isExpanded && (!model.Comment || model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)}
+            disabled={
+                isExpanded && (isUnchanged || !model.Comment || model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
+            }
         >{c('Action').t`Send`}</Button>
     );
 
