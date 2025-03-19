@@ -54,9 +54,7 @@ export const getActiveSessionLoginResult = async ({
             };
         }
 
-        // The oauth partner flow is only used in case there are no valid sessions that already exist in proton
-        // Otherwise, a proton session takes precedence
-        if (forkParameters.partnerId && !sessionsResult.sessions.length) {
+        if (forkParameters.partnerId) {
             const payload: OAuthPartnersInitiateState = {
                 type: 'initiate',
                 payload: {
