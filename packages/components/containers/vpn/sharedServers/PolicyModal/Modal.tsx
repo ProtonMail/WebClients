@@ -231,7 +231,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
                         selectedUsers={selectedUsers}
                         groups={groups}
                         selectedGroups={selectedGroups}
-                        onSelectAll={() => {
+                        onSelectAllUsers={() => {
                             setSelectedUsers((previouslySelectedUsers) =>
                                 previouslySelectedUsers.length < users.length ? [...users] : []
                             );
@@ -251,6 +251,11 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
                                     ? previouslySelectedGroups.filter((g) => g.GroupID !== group.GroupID)
                                     : [...previouslySelectedGroups, group];
                             });
+                        }}
+                        onSelectAllGroups={() => {
+                            setSelectedGroups((previouslySelectedGroups) =>
+                                previouslySelectedGroups.length < groups.length ? [...groups] : []
+                            );
                         }}
                         applyPolicyTo={applyPolicyTo}
                         onChangeApplyPolicyTo={setApplyPolicyTo}
