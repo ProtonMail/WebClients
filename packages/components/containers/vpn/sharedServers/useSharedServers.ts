@@ -30,6 +30,7 @@ export interface SharedServerUser {
 export interface SharedServerGroup {
     GroupID: number;
     Name: string;
+    UserCount: number;
 }
 
 interface ApiResponse {

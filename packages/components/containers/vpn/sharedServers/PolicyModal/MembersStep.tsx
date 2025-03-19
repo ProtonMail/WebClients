@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -15,6 +15,62 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import ApplyPolicyButton from '../ApplyPolicyButton';
 import type { SharedServerGroup, SharedServerUser } from '../useSharedServers';
 
+interface TableHeaderProps {
+    entities: SharedServerUser[] | SharedServerGroup[];
+    selectedEntities: SharedServerUser[] | SharedServerGroup[];
+    onSelectAllEntities: () => void;
+    label: 'Users' | 'Groups';
+}
+
+const TableHeader = ({ label, entities, selectedEntities, onSelectAllEntities }: TableHeaderProps) => (
+    <TableRow>
+        <TableCell>
+            <div className="flex gap-4 w-full items-center">
+                <Checkbox checked={entities.length <= selectedEntities.length} onChange={onSelectAllEntities} />
+                <span className="text-bold">{c('Label').t`${label}`}</span>
+                {selectedEntities.length > 0 && (
+                    <span className="text-sm color-weak">
+                        {c('Info').ngettext(
+                            msgid`${selectedEntities.length} selected`,
+                            `${selectedEntities.length} selected`,
+                            selectedEntities.length
+                        )}
+                    </span>
+                )}
+            </div>
+        </TableCell>
+    </TableRow>
+);
+
+interface AddEntitiesTableRowProps {
+    id: string | number;
+    checked: boolean;
+    onSelectEntity: ((entity: SharedServerUser) => void) | ((entity: SharedServerGroup) => void);
+    entity: SharedServerUser | SharedServerGroup;
+    avatar: React.ReactNode;
+    description: React.ReactNode;
+}
+
+const EntityTableRow = ({ id, checked, onSelectEntity, entity, avatar, description }: AddEntitiesTableRowProps) => (
+    <TableRow key={id}>
+        <TableCell>
+            <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full">
+                <Checkbox id={`user-${id}`} checked={checked} onChange={() => onSelectEntity(entity as any)} />
+                <span
+                    className="my-auto text-sm rounded border p-1 inline-block relative flex shrink-0 user-initials"
+                    aria-hidden="true"
+                >
+                    <span className="m-auto">{avatar}</span>
+                </span>
+                <div className="flex flex-column">
+                    <span>{entity.Name}</span>
+                    <span className="text-sm color-weak">{description}</span>
+                </div>
+            </div>
+        </TableCell>
+    </TableRow>
+);
+
 interface SharedServersMembersStepProps {
     isEditing: boolean;
     policyName: string;
@@ -24,7 +80,8 @@ interface SharedServersMembersStepProps {
     selectedGroups: SharedServerGroup[];
     onSelectUser: (user: SharedServerUser) => void;
     onSelectGroup: (group: SharedServerGroup) => void;
-    onSelectAll: () => void;
+    onSelectAllUsers: () => void;
+    onSelectAllGroups: () => void;
     applyPolicyTo: 'users' | 'groups';
     onChangeApplyPolicyTo: (val: 'users' | 'groups') => void;
 }
@@ -38,7 +95,8 @@ const MembersStep = ({
     selectedGroups,
     onSelectUser,
     onSelectGroup,
-    onSelectAll,
+    onSelectAllUsers,
+    onSelectAllGroups,
     applyPolicyTo,
     onChangeApplyPolicyTo,
 }: SharedServersMembersStepProps) => {
@@ -95,43 +153,25 @@ const MembersStep = ({
             {applyPolicyTo === 'users' && (
                 <Table responsive="stacked" hasActions>
                     <TableBody>
-                        <TableRow>
-                            <TableCell>
-                                <div className="flex gap-4 w-full items-center">
-                                    <Checkbox checked={users.length <= selectedUsers.length} onChange={onSelectAll} />
-                                    <span className="text-bold">Users</span>
-                                    {selectedUsers.length > 0 && (
-                                        <span className="text-sm color-weak">{selectedUsers.length} selected</span>
-                                    )}
-                                </div>
-                            </TableCell>
-                        </TableRow>
+                        <TableHeader
+                            label="Users"
+                            entities={users}
+                            selectedEntities={selectedUsers}
+                            onSelectAllEntities={onSelectAllUsers}
+                        />
                         {filteredUsers.map((user) => {
                             const checked = selectedUsers.some((selectedUser) => selectedUser.UserID === user.UserID);
                             const initials = getInitials(user.Name || '');
 
                             return (
-                                <TableRow key={user.UserID}>
-                                    <TableCell>
-                                        <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full">
-                                            <Checkbox
-                                                id={`user-${user.UserID}`}
-                                                checked={checked}
-                                                onChange={() => onSelectUser(user)}
-                                            />
-                                            <span
-                                                className="my-auto text-sm rounded border p-1 inline-block relative flex shrink-0 user-initials"
-                                                aria-hidden="true"
-                                            >
-                                                <span className="m-auto">{initials}</span>
-                                            </span>
-                                            <div className="flex flex-column">
-                                                <span>{user.Name}</span>
-                                                <span className="text-sm color-weak">{user.Email}</span>
-                                            </div>
-                                        </div>
-                                    </TableCell>
-                                </TableRow>
+                                <EntityTableRow
+                                    id={user.UserID}
+                                    onSelectEntity={onSelectUser}
+                                    checked={checked}
+                                    entity={user}
+                                    avatar={initials}
+                                    description={user.Email}
+                                />
                             );
                         })}
                     </TableBody>
@@ -150,35 +190,30 @@ const MembersStep = ({
             {applyPolicyTo === 'groups' && filteredGroups.length > 0 && (
                 <Table responsive="stacked" hasActions>
                     <TableBody>
+                        <TableHeader
+                            label="Groups"
+                            entities={groups}
+                            selectedEntities={selectedGroups}
+                            onSelectAllEntities={onSelectAllGroups}
+                        />
                         {filteredGroups.length > 0 &&
                             filteredGroups.map((group) => {
                                 const checked = selectedGroups.some(
                                     (selectedGroup) => selectedGroup.GroupID === group.GroupID
                                 );
-
                                 return (
-                                    <TableRow key={group.GroupID}>
-                                        <TableCell>
-                                            <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full">
-                                                <Checkbox
-                                                    id={`group-${group.GroupID}`}
-                                                    checked={checked}
-                                                    onChange={() => onSelectGroup(group)}
-                                                />
-                                                <span
-                                                    className="my-auto text-sm rounded border p-1 inline-block relative flex shrink-0"
-                                                    aria-hidden="true"
-                                                >
-                                                    <span className="m-auto">
-                                                        <Icon name="users-filled"></Icon>
-                                                    </span>
-                                                </span>
-                                                <div className="flex flex-column">
-                                                    <span>{group.Name}</span>
-                                                </div>
-                                            </div>
-                                        </TableCell>
-                                    </TableRow>
+                                    <EntityTableRow
+                                        id={group.GroupID}
+                                        onSelectEntity={onSelectGroup}
+                                        checked={checked}
+                                        entity={group}
+                                        avatar={<Icon name="users-filled"></Icon>}
+                                        description={
+                                            <>
+                                                {group.UserCount} {c('Label').t`Users`}
+                                            </>
+                                        }
+                                    />
                                 );
                             })}
                     </TableBody>
