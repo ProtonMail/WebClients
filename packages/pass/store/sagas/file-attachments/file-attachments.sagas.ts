@@ -18,8 +18,8 @@ import { intoFileDescriptor } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
 import {
-    fileDownloadChunk,
-    fileDownloadPublicChunk,
+    fileDownload,
+    fileDownloadPublic,
     fileLinkPending,
     fileRestore,
     fileUpdateMetadata,
@@ -29,7 +29,7 @@ import {
 } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import type { ItemRevision } from '@proton/pass/types';
+import type { FileID, ItemRevision } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 const initiateUpload = createRequestSaga({
@@ -82,21 +82,65 @@ const consumeStream = async (
     )[0];
 };
 
-const downloadChunk = createRequestSaga({
-    actions: fileDownloadChunk,
-    call: async (item) => {
-        const stream = await downloadFileChunk(item);
-        const chunk = await consumeStream(stream.getReader());
-        return uint8ArrayToBase64String(await PassCrypto.openFileChunk({ chunk, fileID: item.fileID }));
+const createDownloadStream = (
+    fileID: FileID,
+    chunkIDs: string[],
+    getChunkStream: (chunkID: string) => Promise<ReadableStream>
+): ReadableStream<Blob> => {
+    let current = 0;
+
+    return new ReadableStream<Blob>({
+        async pull(controller) {
+            if (current >= chunkIDs.length) {
+                controller.close();
+                return;
+            }
+
+            try {
+                const stream = await getChunkStream(chunkIDs[current]);
+                const encryptedChunk = await consumeStream(stream.getReader());
+                const chunk = await PassCrypto.openFileChunk({ chunk: encryptedChunk, fileID });
+
+                controller.enqueue(new Blob([chunk]));
+                current++;
+            } catch (error) {
+                controller.error(error);
+            }
+        },
+    });
+};
+
+const downloadFile = createRequestSaga({
+    actions: fileDownload,
+    call: async (file) => {
+        const { chunkIDs, fileID } = file;
+
+        const downloadStream = createDownloadStream(fileID, chunkIDs, (chunkID) =>
+            downloadFileChunk({
+                ...file,
+                chunkID,
+            })
+        );
+
+        await fileStorage.writeFile(fileID, downloadStream);
+        return fileID;
     },
 });
 
 const downloadPublicChunk = createRequestSaga({
-    actions: fileDownloadPublicChunk,
+    actions: fileDownloadPublic,
     call: async (file) => {
-        const stream = await downloadPublicFileChunk(file);
-        const chunk = await consumeStream(stream.getReader());
-        return uint8ArrayToBase64String(await PassCrypto.openFileChunk({ chunk, fileID: file.fileID }));
+        const { chunkIDs, fileID } = file;
+
+        const downloadStream = createDownloadStream(fileID, chunkIDs, (chunkID) =>
+            downloadPublicFileChunk({
+                ...file,
+                chunkID,
+            })
+        );
+
+        await fileStorage.writeFile(fileID, downloadStream);
+        return fileID;
     },
 });
 
@@ -162,7 +206,7 @@ const restore = createRequestSaga({
 });
 
 export default [
-    downloadChunk,
+    downloadFile,
     downloadPublicChunk,
     initiateUpload,
     linkPending,
