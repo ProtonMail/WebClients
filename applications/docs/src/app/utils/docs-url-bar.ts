@@ -6,7 +6,6 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import type { RedirectAction } from '@proton/drive-store/store/_documents'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
-import { isDevOrBlack } from '@proton/docs-core'
 import { useLocation } from 'react-router-dom-v5-compat'
 
 export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolean } = {}) {
@@ -104,10 +103,6 @@ export function useDocsUrlBar({ isDocsEnabled = true }: { isDocsEnabled?: boolea
   }, [])
 
   const removeLocalIDFromUrl = useCallback(() => {
-    const isUrlStrippingEnabled = isDevOrBlack()
-    if (!isUrlStrippingEnabled) {
-      return
-    }
     const newUrl = new URL(location.href)
     newUrl.pathname = stripLocalBasenameFromPathname(newUrl.pathname)
     history.replaceState(null, '', newUrl.toString())
