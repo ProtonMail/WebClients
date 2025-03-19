@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+
 import { type DecryptedLink, useActions } from '../../../../store';
 import type { useRenameModal } from '../../../modals/RenameModal';
 import ContextMenuButton from '../ContextMenuButton';
@@ -20,6 +22,7 @@ const RenameButton = ({ link, showRenameModal, close }: Props) => {
             action={() =>
                 showRenameModal({
                     isFile: link.isFile,
+                    isDoc: isProtonDocument(link.mimeType),
                     name: link.name,
                     onSubmit: (formattedName) =>
                         renameLink(new AbortController().signal, link.rootShareId, link.linkId, formattedName),
