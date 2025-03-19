@@ -355,7 +355,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
             <div className="gap-2 flex items-center">
-                {tabSelection === 'gallery' && (
+                {tabSelection === 'gallery' && !hasSelection && (
                     <ToolbarRightActionsGallery uploadDisabled={uploadDisabled} shareId={shareId} linkId={linkId} />
                 )}
                 {tabSelection === 'albums' && <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />}
