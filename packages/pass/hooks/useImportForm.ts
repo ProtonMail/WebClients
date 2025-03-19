@@ -11,6 +11,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useFileImporter } from '@proton/pass/hooks/files/useFileImporter';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { ExportFormat } from '@proton/pass/lib/export/types';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { extractFileExtension, fileReader } from '@proton/pass/lib/import/reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
@@ -21,7 +22,6 @@ import type { ImportState } from '@proton/pass/store/reducers';
 import { selectAliasItems, selectLatestImport, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
-import { fileToTransferable } from '@proton/pass/utils/file/transferable-file';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import identity from '@proton/utils/identity';
@@ -125,7 +125,7 @@ export const useImportForm = ({
             try {
                 const importPayload = await fileReader(
                     await prepareImport({
-                        file: await fileToTransferable(values.file!),
+                        file: values.file!,
                         provider: values.provider,
                         passphrase: values.passphrase,
                         userId: user?.ID,
@@ -157,6 +157,8 @@ export const useImportForm = ({
                     createNotification({ type: 'error', text: e.message });
                 }
             } finally {
+                // clear imported file in case it was written to storage
+                await fileStorage.clearAll();
                 setBusy(false);
             }
         },

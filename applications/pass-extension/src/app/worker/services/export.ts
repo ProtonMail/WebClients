@@ -3,6 +3,7 @@ import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady } from 'proton-pass-extension/app/worker/context/inject';
 
 import { createPassExport } from '@proton/pass/lib/export/export';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { selectExportData } from '@proton/pass/store/selectors/export';
 import { WorkerMessageType } from '@proton/pass/types';
 
@@ -15,8 +16,9 @@ export const createExportService = () => {
              * transferable files issue is addressed */
             const data = selectExportData({ config, format: options.format, files: null })(state);
             const file = await createPassExport(data, options);
+            await fileStorage.writeFile(file.name, file);
 
-            return { file };
+            return { filename: file.name };
         })
     );
 

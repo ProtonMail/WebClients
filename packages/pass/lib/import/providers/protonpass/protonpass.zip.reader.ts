@@ -5,17 +5,15 @@ import { FILE_UNIQUE_ID_LENGTH } from '@proton/pass/constants';
 import { EXPORT_FILES_PATH, decryptPassExport } from '@proton/pass/lib/export/export';
 import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
 import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
-import type { ImportPayload, ImportReaderPayload, ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { type ItemImportIntent, ItemState } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
-import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { semver } from '@proton/pass/utils/string/semver';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type ProtonPassReaderPayload = {
     /** unencrypted zip file as ArrayBuffer  */
@@ -50,11 +48,9 @@ const intoFilesToUpload = (files: JSZip['files']) => {
     }, Promise.resolve(new Map()));
 };
 
-export const decryptProtonPassImport = async (payload: ImportReaderPayload): Promise<TransferableFile> => {
+export const decryptProtonPassImport = async (data: Blob, passphrase?: string): Promise<Uint8Array> => {
     try {
-        const decrypted = await decryptPassExport(payload.file.base64, payload.passphrase ?? '');
-        const base64 = uint8ArrayToBase64String(decrypted);
-        return { ...payload.file, base64 };
+        return await decryptPassExport(data, passphrase ?? '');
     } catch (err: unknown) {
         if (err instanceof Error) {
             const errorDetail = err.message.includes('Error decrypting message')
