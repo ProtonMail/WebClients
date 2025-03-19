@@ -29,13 +29,17 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWi
 
     return (
         <TableCell className="m-0 flex items-center flex-nowrap flex-1" data-testid="column-name">
-            {item.cachedThumbnailUrl ? (
+            {item.albumProperties && (
+                <Icon name="album" alt={c('Label').t`Album`} className="file-browser-list-item--icon mr-2" />
+            )}
+            {item.cachedThumbnailUrl && !item.albumProperties && (
                 <img
                     src={item.cachedThumbnailUrl}
                     alt={iconText}
                     className="file-browser-list-item--thumbnail shrink-0 mr-2"
                 />
-            ) : (
+            )}
+            {!item.cachedThumbnailUrl && !item.albumProperties && (
                 <FileIcon
                     mimeType={item.isFile ? item.mimeType : 'Folder'}
                     alt={iconText}
