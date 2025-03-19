@@ -7,7 +7,6 @@ export class FileStorageOPFS implements FileStorage {
         try {
             const root = await navigator.storage.getDirectory();
             const fileHandle = await root.getFileHandle(filename);
-
             return await fileHandle.getFile();
         } catch (err) {
             logger.warn('[fs:OPFS] Could not resolve file', err);
