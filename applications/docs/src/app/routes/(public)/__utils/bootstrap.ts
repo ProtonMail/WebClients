@@ -15,7 +15,6 @@ import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
 import type { DocsState } from '~/redux-store/rootReducer'
 import { getLocalID as _getLocalID } from '@proton/drive-store/utils/url/localid'
-import { isDevOrBlack } from '@proton/docs-core'
 
 function getLocalID(token: string | null) {
   if (token) {
@@ -50,8 +49,7 @@ export async function bootstrapPublicApp({ config }: { config: ProtonConfig }) {
   const token = searchParams.get('token')
   await bootstrap.publicApp({ app: config.APP_NAME, locales, searchParams, pathLocale: '' })
 
-  const isUrlStrippingEnabled = isDevOrBlack()
-  const localId = isUrlStrippingEnabled ? getLocalID(token) : Number(_getLocalID() ?? getLastUsedLocalID())
+  const localId = getLocalID(token)
 
   const accountSessions = readAccountSessions()
 
