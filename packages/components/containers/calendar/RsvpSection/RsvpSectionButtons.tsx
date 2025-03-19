@@ -34,7 +34,7 @@ export const DeleteNoteButton = ({ loading, onDelete }: DeleteButtonProps) => {
                 icon
                 size="small"
             >
-                <Icon name="cross-big" alt={c('Remove note button tooltip').t`Remove note`} />
+                <Icon name="cross" alt={c('Remove note button tooltip').t`Remove note`} />
             </ButtonLike>
         </Tooltip>
     );
