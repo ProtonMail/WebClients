@@ -17,7 +17,6 @@ import { first } from '@proton/pass/utils/array/first';
 import { unwrap } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { entriesMap } from '@proton/pass/utils/object/map';
-import { uint8ArrayToBlob } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
@@ -477,13 +476,12 @@ export const createPassCrypto = (): PassCryptoWorker => {
         async createFileChunk({ fileID, chunk }) {
             assertHydrated(context);
 
-            if (chunk.byteLength === 0) throw new PassCryptoFileError('File cannot be empty');
+            if (chunk.size === 0) throw new PassCryptoFileError('File cannot be empty');
 
             const fileKey = context.fileKeys.get(fileID);
             if (!fileKey) throw new PassCryptoFileError(`Could not resolve file key for ${fileID}`);
 
-            const blob = uint8ArrayToBlob(new Uint8Array(chunk));
-            return processes.createFileChunk(blob, fileKey);
+            return processes.createFileChunk(chunk, fileKey);
         },
 
         async openFileChunk({ fileID, chunk }) {

@@ -110,7 +110,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         latestItemKey: ItemLatestKeyResponse;
     }) => Promise<Uint8Array>;
 
-    createFileChunk: (data: { chunk: ArrayBuffer; fileID: string }) => Promise<Blob>;
+    createFileChunk: (data: { chunk: Blob; fileID: string }) => Promise<Blob>;
     openFileChunk: (data: { chunk: Uint8Array; fileID: string }) => Promise<Uint8Array>;
     registerFileKey: (data: { fileKey: Uint8Array; fileID: string }) => void;
 
