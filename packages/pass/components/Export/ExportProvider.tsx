@@ -10,7 +10,7 @@ import { setUnsafeExportContext } from '@proton/pass/hooks/auth/useReauthActionH
 import { useFileExporter } from '@proton/pass/hooks/files/useFileExporter';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { ExportOptions } from '@proton/pass/lib/export/types';
+import type { ExportFormValues } from '@proton/pass/lib/export/types';
 import { selectUserStorageUsed } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { FileItemExport, MaybeNull } from '@proton/pass/types';
@@ -21,7 +21,7 @@ import noop from '@proton/utils/noop';
 const SIZE_ALLOWED_TO_EXPORT = 100 * sizeUnits.MB;
 
 export interface ExportContextValue {
-    export: (options: ExportOptions) => Promise<File>;
+    export: (options: ExportFormValues) => Promise<File>;
 }
 
 const ExportContext = createContext<MaybeNull<ExportContextValue>>(null);
@@ -89,7 +89,7 @@ export const ExportProvider: FC<PropsWithChildren> = ({ children }) => {
         () =>
             setUnsafeExportContext({
                 export: async (options) => {
-                    const files = await doDownload();
+                    const files = options.fileAttachments ? await doDownload() : null;
                     return core.exportData(options, files);
                 },
             }),

@@ -29,7 +29,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
     const online = useConnectivity();
     const exporter = useExporter();
 
-    const initialValues: ExportFormValues = { format: ExportFormat.EPEX, passphrase: '' };
+    const initialValues: ExportFormValues = { format: ExportFormat.EPEX, passphrase: '', fileAttachments: false };
     const [loading, setLoading] = useState(false);
 
     const confirmPassword = usePasswordUnlock();
