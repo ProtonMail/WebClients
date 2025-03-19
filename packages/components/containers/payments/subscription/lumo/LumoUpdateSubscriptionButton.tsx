@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -10,8 +8,12 @@ const LumoUpdateSubscriptionButton = () => {
     const [subscription] = useSubscription();
 
     return (
+        // When it's time then simply uncomment the below code and remove the add button above;
+        // <SettingsLink target="_blank" path={getUpgradePath({ user, subscription, target: 'checkout' })}>
+        //     {c('Link').t`Add to your subscription`}
+        // </SettingsLink>
         <SettingsLink target="_blank" path={getUpgradePath({ user, subscription, target: 'checkout' })}>
-            {c('Link').t`Add to your subscription`}
+            Add to your subscription
         </SettingsLink>
     );
 };
