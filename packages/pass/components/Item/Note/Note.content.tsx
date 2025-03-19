@@ -6,5 +6,5 @@ import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 
 export const NoteContent: FC<ItemContentProps<'note'>> = ({ revision }) => {
     const note = useDeobfuscatedValue(revision.data.metadata.note);
-    return note ? <TextAreaReadonly>{note}</TextAreaReadonly> : null;
+    return note ? <TextAreaReadonly className="mb-2">{note}</TextAreaReadonly> : null;
 };
