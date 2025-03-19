@@ -27,7 +27,7 @@
 		&:hover,
 		&:active,
 		&:focus {
-			color: initial;
+			color: var(--text-norm);
 			text-decoration: underline;
 
 			img {
