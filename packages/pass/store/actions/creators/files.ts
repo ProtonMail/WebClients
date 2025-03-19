@@ -26,13 +26,11 @@ export const fileUploadChunk = requestActionsFactory<FileChunkUploadDTO, boolean
     key: ({ fileID, index }) => `${fileID}::${index}`,
 });
 
-export const fileDownloadChunk = requestActionsFactory<FileDownloadDTO, string>('file::download::chunk')({
+export const fileDownload = requestActionsFactory<FileDownloadDTO, string>('file::download')({
     key: ({ shareId, itemId, fileID }) => `${shareId}::${itemId}::${fileID}`,
 });
 
-export const fileDownloadPublicChunk = requestActionsFactory<FileDownloadPublicDTO, string>(
-    'file::download::public-chunk'
-)({
+export const fileDownloadPublic = requestActionsFactory<FileDownloadPublicDTO, string>('file::download::public')({
     key: ({ filesToken, fileID }) => `${filesToken}::${fileID}`,
 });
 
