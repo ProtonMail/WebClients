@@ -90,7 +90,7 @@ const SORT_FIELDS: SharedWithMeSortFields[] = [SortField.name, SortField.sharedB
 const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
-    const { navigateToLink } = useDriveNavigation();
+    const { navigateToLink, navigateToAlbum } = useDriveNavigation();
 
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();
@@ -137,9 +137,13 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
 
                 return;
             }
+            if (item.albumProperties) {
+                navigateToAlbum(item.rootShareId, item.linkId);
+                return;
+            }
             navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
-        [navigateToLink, items, isDocsEnabled, openDocument]
+        [navigateToLink, navigateToAlbum, items, isDocsEnabled, openDocument]
     );
 
     const handleItemRender = useCallback(
