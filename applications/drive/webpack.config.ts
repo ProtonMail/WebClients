@@ -1,3 +1,4 @@
+import CopyPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack from 'webpack';
@@ -104,6 +105,18 @@ const result = (env: any): webpack.Configuration => {
             ...config.plugins,
             new webpack.ProvidePlugin({
                 Buffer: [require.resolve('buffer'), 'Buffer'],
+            }),
+            new CopyPlugin({
+                patterns: [
+                    {
+                        from: path.resolve(__dirname, '../../packages/raw-images/dist/dcraw.wasm'),
+                        to: 'assets/static/dcraw.wasm',
+                    },
+                    {
+                        from: path.resolve(__dirname, '../../packages/raw-images/dist/dcraw.js'),
+                        to: 'assets/static/dcraw.js',
+                    },
+                ],
             }),
         ],
         experiments: {

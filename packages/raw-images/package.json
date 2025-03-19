@@ -1,0 +1,18 @@
+{
+    "name": "@proton/raw-images",
+    "version": "1.0.0",
+    "description": "Processing RAW Images with WASM",
+    "repository": "git@gitlab.protontech.ch:drive/raw-images.git",
+    "author": "Gregory Linford <gregory.linford@proton.ch>",
+    "main": "src/index.ts",
+    "types": "src/index.ts",
+    "files": [
+        "src",
+        "build.sh",
+        "dist/dcraw.js",
+        "dist/dcraw.wasm"
+    ],
+    "scripts": {
+        "build": "bash ./build.sh"
+    }
+}
