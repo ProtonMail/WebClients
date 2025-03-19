@@ -19,7 +19,7 @@ interface TableHeaderProps {
     entities: SharedServerUser[] | SharedServerGroup[];
     selectedEntities: SharedServerUser[] | SharedServerGroup[];
     onSelectAllEntities: () => void;
-    label: 'Users' | 'Groups';
+    label: string;
 }
 
 const TableHeader = ({ label, entities, selectedEntities, onSelectAllEntities }: TableHeaderProps) => (
@@ -27,7 +27,7 @@ const TableHeader = ({ label, entities, selectedEntities, onSelectAllEntities }:
         <TableCell>
             <div className="flex gap-4 w-full items-center">
                 <Checkbox checked={entities.length <= selectedEntities.length} onChange={onSelectAllEntities} />
-                <span className="text-bold">{c('Label').t`${label}`}</span>
+                <span className="text-bold">{label}</span>
                 {selectedEntities.length > 0 && (
                     <span className="text-sm color-weak">
                         {c('Info').ngettext(
@@ -154,7 +154,7 @@ const MembersStep = ({
                 <Table responsive="stacked" hasActions>
                     <TableBody>
                         <TableHeader
-                            label="Users"
+                            label={c('Label').t`Users`}
                             entities={users}
                             selectedEntities={selectedUsers}
                             onSelectAllEntities={onSelectAllUsers}
@@ -191,7 +191,7 @@ const MembersStep = ({
                 <Table responsive="stacked" hasActions>
                     <TableBody>
                         <TableHeader
-                            label="Groups"
+                            label={c('Label').t`Groups`}
                             entities={groups}
                             selectedEntities={selectedGroups}
                             onSelectAllEntities={onSelectAllGroups}
