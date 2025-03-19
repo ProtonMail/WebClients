@@ -30,6 +30,8 @@ import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AppMenuButton, VaultMenuButton } from './MenuButtons';
 
+import './MenuDropdown.scss';
+
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     height: DropdownSizeUnit.Dynamic,
     maxHeight: '26em',
@@ -163,8 +165,10 @@ export const MenuDropdown: FC = () => {
                 contentProps={{ className: 'flex flex-column flex-nowrap' }}
             >
                 <div className="overflow-auto p-2 pb-0">
-                    <VaultMenu onAction={vaultMenu.close} />
-                    <SharedMenuContent onAction={vaultMenu.close} />
+                    <div className="flex flex-column">
+                        <VaultMenu onAction={vaultMenu.close} />
+                        <SharedMenuContent onAction={vaultMenu.close} />
+                    </div>
                 </div>
 
                 <div className="p-2 w-full shrink-0">
