@@ -1,4 +1,5 @@
 import { Icon } from '@proton/components';
+import useFlag from '@proton/unleash/useFlag';
 import { themeChange, useWalletDispatch } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
@@ -8,6 +9,11 @@ import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 const ThemeButton = () => {
     const dispatch = useWalletDispatch();
     const theme = useWalletTheme();
+
+    const hasDarkMode = useFlag('WalletDarkMode');
+    if (!hasDarkMode) {
+        return <></>;
+    }
 
     return (
         <CoreButton
