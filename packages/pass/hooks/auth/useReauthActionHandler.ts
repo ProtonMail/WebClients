@@ -8,6 +8,7 @@ import type { ExportContextValue } from '@proton/pass/components/Export/ExportPr
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import type { MaybeNull } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -39,7 +40,7 @@ export const useReauthActionHandler = () => {
                 const data = await (UNSAFE_EXPORT_CTX?.export(reauth.data).catch(() => null) ?? null);
                 const ok = data !== null;
 
-                return setTimeout(() => {
+                return setTimeout(async () => {
                     createNotification({
                         type: ok ? 'success' : 'error',
                         text: ok
@@ -48,7 +49,10 @@ export const useReauthActionHandler = () => {
                         key: REAUTH_KEY,
                     });
 
-                    if (ok) download(data);
+                    if (ok) {
+                        download(data);
+                        await fileStorage.deleteFile(data.name);
+                    }
                 }, 1_500);
 
             case ReauthAction.SSO_PW_LOCK:

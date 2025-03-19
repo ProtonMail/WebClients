@@ -4,7 +4,6 @@ import { ExportFormat } from '@proton/pass/lib/export/types';
 import { read1PasswordZipData } from '@proton/pass/lib/import/providers/1password/zip.reader';
 import { readKasperskyData } from '@proton/pass/lib/import/providers/kaspersky/kaspersky.reader';
 import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.reader';
-import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { read1Password1PifData } from './providers/1password/1pif.reader';
@@ -33,11 +32,18 @@ export const isProtonPassEncryptedImport = (payload: ImportReaderPayload): boole
     payload.provider === ImportProvider.PROTONPASS &&
     [ExportFormat.PGP, ExportFormat.EPEX].includes(extractFileExtension(payload.file.name) as ExportFormat);
 
-export const prepareImport = async (payload: ImportReaderPayload): Promise<ImportReaderPayload> =>
-    isProtonPassEncryptedImport(payload) ? { ...payload, file: await decryptProtonPassImport(payload) } : payload;
+export const prepareImport = async (payload: ImportReaderPayload): Promise<ImportReaderPayload> => {
+    if (isProtonPassEncryptedImport(payload)) {
+        const decrypted = await decryptProtonPassImport(payload.file, payload.passphrase);
+        const file = new File([decrypted], payload.file.name, { type: payload.file.type });
+        return { ...payload, file };
+    }
+
+    return payload;
+};
 
 export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPayload> => {
-    const file = transferableToFile(payload.file);
+    const file = payload.file;
     const fileExtension = extractFileExtension(payload.file.name);
 
     switch (payload.provider) {
