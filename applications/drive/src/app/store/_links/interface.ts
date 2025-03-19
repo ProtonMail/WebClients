@@ -54,6 +54,7 @@ interface Link {
     // If there is no issue, the value should be undefined.
     signatureIssues?: SignatureIssues;
     photoProperties?: PhotoProperties;
+    albumProperties?: AlbumProperties;
     volumeId: string;
 }
 
@@ -74,7 +75,7 @@ interface LinkSharingDetails {
     shareId: string;
 }
 
-interface PhotoProperties {
+export interface PhotoProperties {
     albums: {
         albumLinkId: string;
         hash: string;
@@ -82,6 +83,14 @@ interface PhotoProperties {
         addedTime: number;
     }[];
     tags: PhotoTag[];
+}
+
+export interface AlbumProperties {
+    nodeHashKey: string;
+    coverLinkId: string;
+    photoCount: number;
+    lastActivityTime: number;
+    locked: boolean;
 }
 
 export type SignatureIssues = {

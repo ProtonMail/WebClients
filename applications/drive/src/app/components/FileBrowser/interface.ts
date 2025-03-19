@@ -2,6 +2,8 @@ import type React from 'react';
 
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
+import type { AlbumProperties, PhotoProperties } from '../../store';
+
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
     handleDrop: (e: React.DragEvent<HTMLTableRowElement>) => void;
@@ -40,6 +42,8 @@ export interface FileBrowserBaseItem {
     isBookmark?: boolean;
     itemRowStyle?: React.CSSProperties;
     isAnonymous?: boolean;
+    albumProperties?: AlbumProperties;
+    photoProperties?: PhotoProperties;
 }
 
 export enum HeaderCellsPresets {
