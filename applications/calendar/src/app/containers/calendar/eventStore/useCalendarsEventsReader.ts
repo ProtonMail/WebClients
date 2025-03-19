@@ -42,7 +42,7 @@ const EVENTS_RACE_MS = 300;
  * @param Event - The event we overwrite with the attendees info.
  * @param page - The page number. Default to 1 as page 0 is already fetched with the getEvent call.
  */
-const getPaginatedAttendeesInfo = async (
+export const getPaginatedAttendeesInfo = async (
     calendarID: string,
     eventID: string,
     api: Api,
