@@ -73,7 +73,9 @@ export const IdentityForm: FC<IdentityFormType> = ({ form, revision, onCancel })
                             />
                         ))}
 
-                        <FieldsetCluster>
+                        <IdentityCustomSections form={form} />
+
+                        <FieldsetCluster className="mt-4">
                             {revision ? (
                                 <Field
                                     name="files"
@@ -86,8 +88,6 @@ export const IdentityForm: FC<IdentityFormType> = ({ form, revision, onCancel })
                                 <Field name="files" component={FileAttachmentsField} />
                             )}
                         </FieldsetCluster>
-
-                        <IdentityCustomSections form={form} />
                     </Form>
                 </FormikProvider>
             )}
