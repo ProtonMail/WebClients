@@ -154,6 +154,15 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                   tags: link.PhotoProperties.Tags,
               }
             : undefined,
+        albumProperties: link.AlbumProperties
+            ? {
+                  nodeHashKey: link.AlbumProperties.NodeHashKey,
+                  coverLinkId: link.AlbumProperties.CoverLinkID,
+                  photoCount: link.AlbumProperties.PhotoCount,
+                  lastActivityTime: link.AlbumProperties.LastActivityTime,
+                  locked: link.AlbumProperties.Locked,
+              }
+            : undefined,
         volumeId: link.VolumeID,
     };
 }
