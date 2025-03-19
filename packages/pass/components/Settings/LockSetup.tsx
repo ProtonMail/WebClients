@@ -31,6 +31,18 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
         password.enabled &&
         (DESKTOP_BUILD || (!EXTENSION_BUILD && prfFeatureFlag) || lock.mode === LockMode.BIOMETRICS);
 
+    const biometricsHint = (() => {
+        if (biometrics.enabled) {
+            return c('Info').t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`;
+        }
+
+        if (DESKTOP_BUILD) {
+            return c('Info').t`This option is currently not available on your device.`;
+        }
+
+        return c('Info').t`This option is currently not available on your browser.`;
+    })();
+
     return (
         <>
             <RadioGroup<LockMode>
@@ -94,13 +106,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                                       <span className="flex w-full justify-space-between items-center">
                                           <span className="block">
                                               {c('Label').t`Biometrics`}
-                                              <span className="block color-weak text-sm">
-                                                  {biometrics.enabled
-                                                      ? c('Info')
-                                                            .t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`
-                                                      : c('Info')
-                                                            .t`This option is currently not available on your device.`}
-                                              </span>
+                                              <span className="block color-weak text-sm">{biometricsHint}</span>
                                           </span>
                                           {biometrics.needsUpgrade && <PassPlusPromotionButton />}
                                       </span>
