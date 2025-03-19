@@ -1,7 +1,12 @@
 import { getBrowser, getOS, isAndroid, isDesktop, isIos, isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { MIME_TYPES } from '../constants';
-import { RAWMimeTypes, SupportedMimeTypes, SupportedProtonDocsMimeTypes } from '../drive/constants';
+import {
+    RAWMimeTypes,
+    RAWThumbnailExtractionSupported,
+    SupportedMimeTypes,
+    SupportedProtonDocsMimeTypes,
+} from '../drive/constants';
 import { Version } from './version';
 
 const isWebpSupported = () => {
@@ -157,4 +162,16 @@ export const isRAWExtension = (extension: string | undefined): boolean => {
 
     const lowerExt = extension.toLowerCase();
     return Object.keys(RAWMimeTypes).includes(lowerExt);
+};
+
+export const isRAWThumbnailExtractionSupported = (mimeType: string, extension: string | undefined): boolean => {
+    if (!extension) {
+        return false;
+    }
+
+    const keys = Object.keys(RAWThumbnailExtractionSupported);
+    const values = Object.values(RAWThumbnailExtractionSupported);
+    const lowerExt = extension.toLowerCase();
+
+    return keys.includes(lowerExt) || values.some((rawType) => rawType === mimeType);
 };
