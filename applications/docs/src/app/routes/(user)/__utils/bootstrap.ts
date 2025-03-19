@@ -26,7 +26,6 @@ import { appMode } from '@proton/shared/lib/webpack.constants'
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout'
-import { isDevOrBlack } from '@proton/docs-core'
 
 async function getAppContainer() {
   try {
@@ -58,8 +57,7 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
   initSafariFontFixClassnames()
   startLogoutListener()
 
-  const isUrlStrippingEnabled = isDevOrBlack()
-  if (volumeId && linkId && isUrlStrippingEnabled) {
+  if (volumeId && linkId) {
     if (localIDFromPathname !== undefined) {
       localID = localIDFromPathname
     } else {
