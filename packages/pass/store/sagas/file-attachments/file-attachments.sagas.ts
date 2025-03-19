@@ -15,6 +15,7 @@ import {
 } from '@proton/pass/lib/file-attachments/file-attachments.requests';
 import { encodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import { intoFileDescriptor } from '@proton/pass/lib/file-attachments/helpers';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
 import {
     fileDownloadChunk,
@@ -46,8 +47,19 @@ const initiateUpload = createRequestSaga({
 const uploadChunk = createRequestSaga({
     actions: fileUploadChunk,
     call: async (payload) => {
-        const blob = await PassCrypto.createFileChunk(payload);
-        await uploadFileChunk(payload.fileID, payload.index, blob);
+        const chunk = await (async () => {
+            switch (payload.type) {
+                case 'blob':
+                    return payload.blob;
+                case 'fs':
+                    return fileStorage.readFile(payload.ref);
+            }
+        })();
+
+        if (!chunk) throw new Error('Missing file blob');
+
+        const encryptedChunk = await PassCrypto.createFileChunk({ chunk, fileID: payload.fileID });
+        await uploadFileChunk(payload.fileID, payload.index, encryptedChunk);
 
         return true;
     },
