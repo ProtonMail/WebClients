@@ -231,7 +231,7 @@ export const PhotosWithAlbumsView: FC = () => {
                     titleArea={
                         <>
                             {selectedCount > 0 && (
-                                <span className="flex items-center text-strong pl-1">
+                                <span className="flex items-center pl-1">
                                     <div className="flex gap-2" data-testid="photos-selected-count">
                                         <PhotosClearSelectionButton onClick={clearSelection}>
                                             {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
