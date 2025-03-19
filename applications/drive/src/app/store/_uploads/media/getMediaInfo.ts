@@ -1,5 +1,15 @@
+import { createWorker } from '@proton/raw-images';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
-import { isCompatibleCBZ, isHEIC, isSVG, isSupportedImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import {
+    isCompatibleCBZ,
+    isHEIC,
+    isRAWExtension,
+    isRAWPhoto,
+    isRAWThumbnailExtractionSupported,
+    isSVG,
+    isSupportedImage,
+    isVideo,
+} from '@proton/shared/lib/helpers/mimetype';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { heicToBlob } from './heic';
@@ -9,7 +19,7 @@ import { scaleSvgFile } from './svg';
 import { getVideoInfo } from './video';
 
 interface ThumbnailGenerator {
-    (file: File): Promise<(Media & { thumbnails?: ThumbnailInfo[] }) | undefined>;
+    (file: File, name?: string): Promise<(Media & { thumbnails?: ThumbnailInfo[] }) | undefined>;
 }
 
 interface CheckerThumbnailCreatorPair {
@@ -54,6 +64,39 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
         },
     },
     {
+        checker: (mimeType: string, name?: string) => {
+            const extension = (name || '').split('.').pop();
+            return (
+                (isRAWPhoto(mimeType) || isRAWExtension(extension)) &&
+                isRAWThumbnailExtractionSupported(mimeType, extension)
+            );
+        },
+        creator: async (file: File, name?: string) => {
+            try {
+                const processor = await createWorker();
+                await processor.initialize();
+                const buffer = await file.arrayBuffer();
+                const data = new Uint8Array(buffer);
+                const result = await processor.extractThumbnail(data, name);
+                if (result) {
+                    const blob = new Blob([result], { type: 'image/jpeg' });
+                    const props = await scaleImageFile({ file: blob }, thumbnailFormat).catch((err) => {
+                        if (err === imageCannotBeLoadedError) {
+                            return undefined;
+                        }
+                        throw err;
+                    });
+                    return props;
+                } else {
+                    return undefined;
+                }
+            } catch (e) {
+                sendErrorReport(e);
+                return undefined;
+            }
+        },
+    },
+    {
         checker: (mimeType: string, name?: string) => isCompatibleCBZ(mimeType, name || ''),
         creator: async (cbz: Blob) => {
             const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
@@ -82,7 +125,7 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
 export const getMediaInfo = (mimeTypePromise: Promise<string>, file: File) =>
     mimeTypePromise.then(async (mimeType) => {
         const mediaInfo = CHECKER_CREATOR_LIST.find(({ checker }) => checker(mimeType, file.name))
-            ?.creator(file)
+            ?.creator(file, file.name)
             .catch((err) => {
                 sendErrorReport(err);
                 return undefined;
