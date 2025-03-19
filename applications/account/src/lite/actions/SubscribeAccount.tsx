@@ -53,6 +53,7 @@ import {
     getValidCycle,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -73,6 +74,8 @@ interface Props {
     app: ProductParam;
     loader: ReactNode;
     layout: (children: ReactNode, props: any) => ReactNode;
+    onSubscribed?: () => void;
+    childOverride?: ReactNode;
 }
 
 const plusPlans = [
@@ -86,13 +89,44 @@ const plusPlans = [
     PLANS.LUMO,
 ];
 
-const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props) => {
+export const SubscribeAccountHeader = ({
+    title,
+    user,
+    onClose,
+}: {
+    title: ReactNode;
+    user: UserModel;
+    onClose?: () => void;
+}) => {
+    const { Email, DisplayName, Name } = user;
+    const nameToDisplay = Email || DisplayName || Name;
+    return (
+        <div className="flex flex-nowrap shrink-0 items-start justify-space-between" data-testid="lite:account-header">
+            <div>
+                {title && (
+                    <>
+                        <h1 className="text-bold text-4xl">{title}</h1>
+                        <div className="color-weak text-break" data-testid="lite:account-info">
+                            {nameToDisplay}
+                        </div>
+                    </>
+                )}
+            </div>
+            {onClose && (
+                <Tooltip title={c('Action').t`Close`}>
+                    <Button className="shrink-0" icon shape="ghost" onClick={onClose}>
+                        <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                    </Button>
+                </Tooltip>
+            )}
+        </div>
+    );
+};
+
+const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOverride, onSubscribed }: Props) => {
     const onceCloseRef = useRef(false);
     const topRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
-
-    const { Email, DisplayName, Name } = user;
-    const nameToDisplay = Email || DisplayName || Name;
 
     const [type, setType] = useState<SubscribeType | undefined>(undefined);
 
@@ -244,6 +278,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
 
     const handleSuccess = () => {
         handleNotify(SubscribeType.Subscribed);
+        onSubscribed?.();
     };
 
     const bf2023IsExpired = coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
@@ -311,7 +346,9 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
                         {logo}
                     </div>
                     <div className="flex justify-center">
-                        {type === SubscribeType.Subscribed || type === SubscribeType.Closed ? (
+                        {childOverride ? (
+                            <LiteBox>{childOverride}</LiteBox>
+                        ) : type === SubscribeType.Subscribed || type === SubscribeType.Closed ? (
                             <LiteBox>
                                 <SubscribeAccountDone type={type} />
                             </LiteBox>
@@ -389,40 +426,11 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
                                 render={({ onSubmit, title, content, footer, step }) => {
                                     return (
                                         <LiteBox maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}>
-                                            <div
-                                                className="flex flex-nowrap shrink-0 items-start justify-space-between"
-                                                data-testid="lite:account-header"
-                                            >
-                                                <div>
-                                                    {title && (
-                                                        <>
-                                                            <h1 className="text-bold text-4xl">{title}</h1>
-                                                            <div
-                                                                className="color-weak text-break"
-                                                                data-testid="lite:account-info"
-                                                            >
-                                                                {nameToDisplay}
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                </div>
-                                                {!hideClose && (
-                                                    <Tooltip title={c('Action').t`Close`}>
-                                                        <Button
-                                                            className="shrink-0"
-                                                            icon
-                                                            shape="ghost"
-                                                            onClick={handleClose}
-                                                        >
-                                                            <Icon
-                                                                className="modal-close-icon"
-                                                                name="cross-big"
-                                                                alt={c('Action').t`Close`}
-                                                            />
-                                                        </Button>
-                                                    </Tooltip>
-                                                )}
-                                            </div>
+                                            <SubscribeAccountHeader
+                                                user={user}
+                                                title={title}
+                                                onClose={hideClose ? undefined : handleClose}
+                                            />
                                             <form onSubmit={onSubmit}>
                                                 <div>{content}</div>
                                                 {footer && <div className="mt-8">{footer}</div>}

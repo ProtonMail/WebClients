@@ -27,6 +27,7 @@ import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons';
 import { CYCLE, PLANS, PLAN_NAMES, getPlanByName, getPlansMap } from '@proton/payments';
 import { getSubscriptionPlanTitleAndName } from '@proton/payments';
+import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -310,7 +311,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
                                     className="flex items-center gap-1 flex-nowrap"
                                     onClick={handleGetPlan}
                                 >
-                                    {c('Action').t`Explore ${PLAN_NAMES[plan]}`}
+                                    {getExploreText(PLAN_NAMES[plan])}
                                     <IcArrowRight className="shrink-0" />
                                 </Button>
                             }

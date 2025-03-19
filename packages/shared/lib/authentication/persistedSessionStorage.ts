@@ -129,6 +129,11 @@ export const getPersistedSessions = (): PersistedSession[] => {
         .filter(isTruthy);
 };
 
+export const getPersistedSessionByUID = (UID: string) => {
+    const persistedSessions = getPersistedSessions();
+    return persistedSessions.find((session) => session.UID === UID);
+};
+
 export const getMinimalPersistedSession = ({ localID, isSelf }: PersistedSession): PersistedSessionLite => {
     return {
         localID,
