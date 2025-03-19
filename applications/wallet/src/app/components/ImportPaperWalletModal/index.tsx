@@ -11,9 +11,11 @@ import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/com
 import { Prompt } from '@proton/components';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, CoreButton, Input } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
@@ -32,6 +34,7 @@ import {
     signAndBroadcastPsbt,
 } from '../../utils';
 import { SecondaryAmount } from '../BitcoinSendModal/SecondaryAmount';
+import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
 import type { RecipientDetailsModalOwnProps } from '../RecipientDetailsModal';
 import { RecipientDetailsModal } from '../RecipientDetailsModal';
@@ -44,6 +47,7 @@ interface Props extends ModalStateProps {
 }
 
 export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...modalProps }: Props) => {
+    const theme = useWalletTheme();
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
     const [qrCodeModal, setQrCodeModal, renderQrCodeModal] = useModalState();
     const [recipientDetailsModal, setRecipientDetailsModal] = useModalStateWithData<RecipientDetailsModalOwnProps>();
@@ -239,7 +243,7 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
                 <div className="flex flex-column items-center">
                     <img
                         className="h-custom w-custom"
-                        src={walletBitcoin}
+                        src={theme === WalletThemeOption.WalletDark ? walletBitcoinDark : walletBitcoin}
                         alt=""
                         style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
                     />
