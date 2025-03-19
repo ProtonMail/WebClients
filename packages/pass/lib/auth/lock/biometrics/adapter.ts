@@ -70,8 +70,6 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
             const verified = await auth.confirmPassword(secret);
             if (!verified) throw new Error(getInvalidPasswordString(authStore));
 
-            await onBeforeCreate?.();
-
             if (!authStore.hasOfflinePassword()) {
                 const { offlineConfig, offlineKD, offlineVerifier } = await getOfflineComponents(secret);
                 authStore.setOfflineConfig(offlineConfig);
@@ -83,6 +81,8 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
             if (!offlineKD) throw new Error('Missing offline KD');
 
             const encryptedOfflineKD = await generateBiometricsKey(core, offlineKD);
+
+            await onBeforeCreate?.();
 
             authStore.setEncryptedOfflineKD(encryptedOfflineKD);
             authStore.setLockMode(adapter.type);
