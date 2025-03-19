@@ -16,12 +16,14 @@ import {
     getIgnoredParent,
     getParentFormPrediction,
     isPrediction,
+    isProcessed,
     removeClassifierFlags,
     removeProcessedFlag,
 } from '@proton/pass/fathom';
 import { type MaybeNull } from '@proton/pass/types';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { debounceBuffer } from '@proton/pass/utils/fp/control';
+import { not } from '@proton/pass/utils/fp/predicates';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
@@ -302,8 +304,15 @@ export const createFormManager = (options: FormManagerOptions) => {
         if (!state.active) {
             state.active = true;
             state.observer = listeners.addObserver(document.body, onMutation, getObserverConfig(ATTRIBUTES_FILTER));
+
             listeners.addListener(document.body, 'transitionend', onTransitionEnd);
             listeners.addListener(document.body, 'animationend', onTransitionEnd);
+
+            listeners.addListener(document.body, 'focusin', ({ target }) => {
+                if (target && isInputElement(target) && not(isProcessed)(target)) {
+                    void detect({ reason: 'FocusIn' });
+                }
+            });
         }
     };
 
