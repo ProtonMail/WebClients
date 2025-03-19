@@ -1,4 +1,4 @@
-import { DocParticipantTracker } from './DocParticipantTracker'
+import { DocParticipantTracker, MAX_USER_STATES_FOR_LOCKING_EDITOR } from './DocParticipantTracker'
 import type { DocumentState } from '../State/DocumentState'
 import type { SafeDocsUserState } from '@proton/docs-shared'
 
@@ -18,7 +18,7 @@ describe('DocParticipantTracker', () => {
   describe('updateParticipantsFromUserStates', () => {
     it('should update shared state if the limit is reached', () => {
       mockSharedState.getProperty.mockReturnValue(false)
-      const states = new Array(10).fill({}) as SafeDocsUserState[]
+      const states = new Array(MAX_USER_STATES_FOR_LOCKING_EDITOR).fill({}) as SafeDocsUserState[]
 
       tracker.updateParticipantsFromUserStates(states)
 
@@ -27,7 +27,7 @@ describe('DocParticipantTracker', () => {
 
     it('should update shared state if the limit is unbreached', () => {
       mockSharedState.getProperty.mockReturnValue(true)
-      const states = new Array(9).fill({}) as SafeDocsUserState[]
+      const states = new Array(MAX_USER_STATES_FOR_LOCKING_EDITOR - 1).fill({}) as SafeDocsUserState[]
 
       tracker.updateParticipantsFromUserStates(states)
 
@@ -36,7 +36,7 @@ describe('DocParticipantTracker', () => {
 
     it('should not update shared state if the limit status has not changed', () => {
       mockSharedState.getProperty.mockReturnValue(true)
-      const states = new Array(10).fill({}) as SafeDocsUserState[]
+      const states = new Array(MAX_USER_STATES_FOR_LOCKING_EDITOR).fill({}) as SafeDocsUserState[]
 
       tracker.updateParticipantsFromUserStates(states)
 
