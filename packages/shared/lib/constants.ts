@@ -631,7 +631,6 @@ export enum MAIL_UPSELL_PATHS {
     ONE_DOLLAR_LAST_REMINDER = 'one-dollar-last-reminder',
     // Monthly subscriber upsell
     PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY = 'plus_monthly-subscriber-nudge-variant-money',
-    PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_PERCENTAGE = 'plus_monthly-subscriber-nudge-variant-percentage',
 }
 
 export enum MAIL_UPSELL_BANNER_LINK_ID_REF_PATH {
