@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -33,6 +35,7 @@ import SettingsLink from './SettingsLink';
 
 interface Props {
     app: APP_NAMES;
+    storageRef: React.RefObject<any>;
 }
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-sidebar-storage-upsell';
@@ -124,7 +127,7 @@ const getStorageUpsell = ({ app, user }: { app: APP_NAMES; user: UserModel }) =>
     return null;
 };
 
-const SidebarStorageUpsell = ({ app }: Props) => {
+const SidebarStorageUpsell = ({ app, storageRef }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useLocalState(false, `${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`);
@@ -138,6 +141,7 @@ const SidebarStorageUpsell = ({ app }: Props) => {
 
     const upsellButton = (
         <ButtonLike
+            ref={storageRef}
             className="my-2 w-full flex gap-2 items-center justify-center"
             as={SettingsLink}
             color="norm"
