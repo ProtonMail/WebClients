@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1692,14 +1692,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 天體驗不滿意退款服務"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "享受特惠折扣 ${ discountedPrice } ${ cycle } 個月。而後將以每 ${ renewalLength } 月 ${ nextPrice } 的優惠價格自動續約。您可以在任何時候取消訂閱。"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "${ discountedPrice } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ nextPrice } 續約。您可以在任何時候取消。"
       ]
     },
     "bf2023: Title": {
@@ -6676,10 +6668,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "選擇至少一種帳號復原方法，以確保一旦忘記密碼時，您仍可存取 ${ BRAND_NAME } 帳號。"
       ],
-      "Active": [
+      "active": [
         "啟用"
       ],
-      "active": [
+      "Active": [
         "啟用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -8383,9 +8375,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "每${ cycle }個月自動續訂。"
-      ],
       "Subscription auto-renews every month.": [
         "每月自動續購授權"
       ],
@@ -9300,9 +9289,6 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "您的復原短語是按特定順序排列的一系列 12 個隨機生成單字。"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "您的方案開始於${ renewalTime }及於每月重新開始。"
@@ -13740,23 +13726,8 @@
       "Processing payment": [
         "正在處理付款"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "更新價 ${ renewPrice }，任何時間都可取消。"
-      ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "享受特惠折扣 ${ priceWithDiscount } ${ subscriptionLength } 個月。此優惠券對${ couponRedemptions }續約為有效。而後將以每 ${ subscriptionLengthCopy } 月 ${ renewPrice } 的價格自動續約。您可以在任何時候取消訂閱。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "享受特惠折扣 ${ priceWithDiscount } ${ subscriptionLength } 個月。而後將以每 ${ subscriptionLengthCopy } 月 ${ renewPrice } 的價格自動續約。您可以在任何時候取消訂閱。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "首月限定折扣價為${ priceWithDiscount }。優惠券可使用${ couponRedemptions }次，之後後將以 ${ renewPrice } 的價格自動續約 ${ subscriptionLength } 個月，您可以隨時取消。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPrice } 續約。您可以在任何時候取消。"
       ],
       "Timeout exceeded": [
         "已經逾時"
@@ -15558,47 +15529,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "and 15 more premium features": [
-        "還有額外的15個的加值功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動郵件轉寄${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "資料外洩警告 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面應用程式"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
-      ],
-      "No ads or tracking": [
-        "無廣告或追蹤"
-      ],
-      "Short @pm.me email address": [
-        "縮短電子郵件地址@pm.me"
-      ],
-      "Support our mission": [
-        "支援我們的計畫"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade your productivity": [
-        "提升您的生產力"
-      ],
-      "We don't sell your data": [
-        "我們不銷售您的資料"
-      ],
-      "Your privacy is our mission": [
-        "您的隱私是我們責任"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
@@ -15857,6 +15787,47 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "and 15 more premium features": [
+        "還有額外的15個的加值功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動郵件轉寄${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "資料外洩警告 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "加入我們一起為所有人守護著網路安全以及個人隱私。即刻升級至付費方案。"
+      ],
+      "No ads or tracking": [
+        "無廣告或追蹤"
+      ],
+      "Short @pm.me email address": [
+        "縮短電子郵件地址@pm.me"
+      ],
+      "Support our mission": [
+        "支援我們的計畫"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade your productivity": [
+        "提升您的生產力"
+      ],
+      "We don't sell your data": [
+        "我們不銷售您的資料"
+      ],
+      "Your privacy is our mission": [
+        "您的隱私是我們責任"
       ]
     },
     "Subscription renewal state": {

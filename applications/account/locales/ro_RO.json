@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -497,7 +497,7 @@
         "Editare adresă de facturare"
       ],
       "Edit billing cycle": [
-        "Editare clicu de facturare"
+        "Editare ciclu de facturare"
       ],
       "Edit display name": [
         "Editare nume afișat"
@@ -1459,11 +1459,6 @@
       "${ price } per user": [
         "${ price } per utilizator"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } licență ${ LUMO_APP_NAME }",
-        "${ seats } licențe ${ LUMO_APP_NAME }",
-        "${ seats } de licență ${ LUMO_APP_NAME }"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } licență asistent de scriere",
         "${ seats } licențe asistent de scriere",
@@ -1779,14 +1774,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garanție de returnare a banilor de 30 de zile"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Prețul cu reducerea specială de ${ discountedPrice } este valabil pentru primele ${ cycle } luni. Apoi va fi reînnoit automat la prețul redus de ${ nextPrice } pentru ${ renewalLength } luni. Puteți anula oricând."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ discountedPrice } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ nextPrice } în fiecare lună. Puteți anula oricând."
       ]
     },
     "bf2023: Title": {
@@ -7127,9 +7114,6 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
@@ -7225,6 +7209,11 @@
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
+      ],
+      "${ selectedEntities.length } selected": [
+        "Selectate: ${ selectedEntities.length }",
+        "Selectate: ${ selectedEntities.length }",
+        "Selectate: ${ selectedEntities.length }"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Foldere selectate: ${ selectedFoldersCountLocalized }",
@@ -7356,11 +7345,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activați cel puțin o metodă de recuperare a datelor pentru a vă asigura că puteți accesa conținutul din contul ${ BRAND_NAME } dacă vă pierdeți parola."
       ],
-      "Active": [
-        "Activ"
-      ],
       "active": [
         "activă"
+      ],
+      "Active": [
+        "Activ"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
@@ -9230,8 +9219,10 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Abonamentul se autoreînnoiește la fiecare ${ cycle } luni."
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonamentul se autoreînnoiește la fiecare ${ cycle } lună.",
+        "Abonamentul se autoreînnoiește la fiecare ${ cycle } luni.",
+        "Abonamentul se autoreînnoiește la fiecare ${ cycle } de luni."
       ],
       "Subscription auto-renews every month.": [
         "Abonamentul se reînnoiește automat în fiecare lună."
@@ -10124,6 +10115,11 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate. Aceasta va dezactiva și recuperarea pe bază de dispozitiv."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Plata va fi apoi la ${ renewCycle } lună cu ${ renewAmountStr }.",
+        "Plata va fi apoi la ${ renewCycle } luni cu ${ renewAmountStr }.",
+        "Plata va fi apoi la ${ renewCycle } de luni cu ${ renewAmountStr }."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Reducerea de ${ boldDiscountPercent } pentru ${ boldPlanTitle } a fost aplicată."
       ],
@@ -10216,11 +10212,16 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Fraza de recuperare este o serie de 12 cuvinte generate aleatoriu într-o anumită ordine."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } luni."
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } lună.",
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } luni.",
+        "Planul programat începe ${ renewalTime } și se va reînnoi automat la ${ cycle } de luni."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Abonamentu se va reînnoi automat la ${ renewalTime }."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tichetul de asistență a fost închis. Vă mulțumim că ați contactat asistența de la ${ BRAND_NAME }."
@@ -12052,7 +12053,7 @@
         "Calendare"
       ],
       "clearing your browser cache": [
-        "golind bufferul navigatorului"
+        "golind bufferul navigatorului web"
       ],
       "click here": [
         "apăsați aici"
@@ -15218,26 +15219,43 @@
       "Processing payment": [
         "Se procesează plata"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Reînnoiți cu ${ renewPrice }, anulați oricând."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Reînnoire cu ${ renewPriceStr }, anulați oricând."
       ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      "terms & conditions": [
+        "termeni și condiții"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele ${ subscriptionLength } luni. Apoi va fi reînnoit automat cu ${ renewPrice } pentru ${ subscriptionLengthCopy } luni. Puteți anula oricând."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Cuponul este valid pentru ${ couponRedemptions } reînnoire.",
+        "Cuponul este valid pentru ${ couponRedemptions } reînnoiri.",
+        "Cuponul este valid pentru ${ couponRedemptions } de reînnoiri."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru primele prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ renewPrice } pentru ${ subscriptionLength } lună. Puteți anula oricând."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Prețul redus special de ${ priceWithDiscount } este valid pentru ${ subscriptionLength } lună.",
+        "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } luni.",
+        "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } de luni."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPrice } în fiecare lună. Puteți anula oricând."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Tranzacția a fost detectată cu succes. Creditele vor fi adăugate în contul personal după ce tranzacția este pe deplin confirmată."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } lună. Puteți anula oricând.",
+        "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
+        "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
@@ -17506,47 +17524,6 @@
         "Pentru ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -17841,6 +17818,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -20147,7 +20165,7 @@
         "versiune stabilă"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Această versiune a navigatorului web Tor nu este suportată. Actualizați la cea mai recentă versiune ${ stableRelease }."
+        "Această versiune a navigatorului web Tor nu este suportată. Actualizați-l la cea mai recentă versiune ${ stableRelease }."
       ]
     },
     "Transaction state display as badge": {
@@ -20606,8 +20624,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Vi se va emite factura la fiecare 12 luni cu ${ renewPrice }."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Vi se va emite factura de ${ renewPriceStr } la fiecare 12 luni."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Noul abonament vi se va reînnoi automat peste ${ cycle } lună.",
