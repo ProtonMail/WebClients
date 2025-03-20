@@ -62,7 +62,7 @@ export const WithInAppNotification = <P extends InAppNotificationRenderProps>(
                         onTelemetry(TelemetryEventName.PassNotificationCTAClick, {}, { notificationKey });
                         handles.setNotificationState(InAppNotificationState.READ);
 
-                        if (type === InAppNotificationCtaType.EXTERNAL_LINK) return onLink(ref, { replace: true });
+                        if (type === InAppNotificationCtaType.EXTERNAL_LINK) return onLink(ref);
                         else if (!EXTENSION_BUILD) return history.push(getLocalPath(subPath));
                         else {
                             /** Avoid redirecting to web-app for extension upgrades */
