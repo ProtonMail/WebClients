@@ -52,7 +52,7 @@ export interface IFrameApp<A = any> {
     getPosition: () => IFramePosition;
     ensureLoaded: () => Promise<void>;
     ensureReady: () => Promise<void>;
-    init: (port: Runtime.Port, payload: IFrameInitPayload) => void;
+    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => void;
     open: (action: A, scrollRef?: HTMLElement) => void;
     registerMessageHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
     sendPortMessage: (message: IFrameMessage) => void;
@@ -63,7 +63,7 @@ export interface IFrameAppService<T extends { action: any }> {
     close: () => IFrameAppService<T>;
     destroy: () => void;
     getState: () => IFrameState<T['action']>;
-    init: (port: Runtime.Port, payload: IFrameInitPayload) => IFrameAppService<T>;
+    init: (port: Runtime.Port, getPayload: () => IFrameInitPayload) => IFrameAppService<T>;
     open: (options: T) => IFrameAppService<T>;
     sendMessage: (message: IFrameMessage) => void;
 }
