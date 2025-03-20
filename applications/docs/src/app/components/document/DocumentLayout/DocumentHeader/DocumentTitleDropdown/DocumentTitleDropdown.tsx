@@ -21,7 +21,7 @@ import {
 import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { isDocumentState, PostApplicationError } from '@proton/docs-core'
 import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
-import type { DocumentAction } from '@proton/drive-store'
+import { isPrivateNodeMeta, type DocumentAction } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
@@ -207,6 +207,31 @@ export function DocumentTitleDropdown({
     }
   }, [])
 
+  const openProtonDrive = useCallback(
+    (to = '/', target = '_blank') => {
+      window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()), target)
+    },
+    [getLocalID],
+  )
+
+  const openDriveFolderForDocument = useCallback(async () => {
+    const node = documentState.getProperty('decryptedNode')
+    const nodeMeta = documentState.getProperty('entitlements').nodeMeta
+    let to: string | undefined
+    if (!!privateContext && isPrivateNodeMeta(nodeMeta)) {
+      const { compat } = privateContext
+      if (isPrivateNodeMeta(nodeMeta)) {
+        // Drive is share-based and not volume-based so we need
+        // to get and use the shareId (and not volumeId)
+        const shareId = await compat.getShareId(nodeMeta)
+        if (node.parentNodeId) {
+          to = `/${shareId}/folder/${node.parentNodeId}`
+        }
+      }
+    }
+    openProtonDrive(to)
+  }, [documentState, openProtonDrive, privateContext])
+
   if (isRenaming) {
     return (
       <div className="flex items-center px-1.5">
@@ -231,10 +256,6 @@ export function DocumentTitleDropdown({
 
   if (!title) {
     return
-  }
-
-  const openProtonDrive = (to = '/', target = '_blank') => {
-    window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()), target)
   }
 
   return (
@@ -510,7 +531,7 @@ export function DocumentTitleDropdown({
 
           <DropdownMenuButton
             className="flex items-center text-left"
-            onClick={() => openProtonDrive()}
+            onClick={openDriveFolderForDocument}
             data-testid="dropdown-open-drive"
           >
             <Icon name="brand-proton-drive" className="color-weak mr-2" />
