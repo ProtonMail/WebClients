@@ -1,11 +1,11 @@
 import { useUser } from '@proton/account/user/hooks';
 
 export const UserNameCell = ({ signatureEmail }: { signatureEmail: string }) => {
-    const [{ Name, Email }] = useUser();
+    const [{ Email, DisplayName }] = useUser();
 
-    const nameToDisplay = Email === signatureEmail ? Name : signatureEmail;
+    const nameToDisplay = Email === signatureEmail && DisplayName ? DisplayName : signatureEmail;
     return (
-        <div key="userName" title={Name} className="text-ellipsis">
+        <div key="userName" title={nameToDisplay} className="text-ellipsis">
             <span className="text-pre">{nameToDisplay}</span>
         </div>
     );

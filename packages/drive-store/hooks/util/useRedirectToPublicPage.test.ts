@@ -1,4 +1,4 @@
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 import { act, renderHook } from '@testing-library/react-hooks';
 import { when } from 'jest-when';
@@ -9,11 +9,17 @@ import { getSharedLink } from '../../store/_shares';
 import { getUrlPassword } from '../../utils/url/password';
 import { drivePublicRedirectionReasonKey, useRedirectToPublicPage } from './useRedirectToPublicPage';
 
-jest.mock('react-router-dom', () => ({
-    useHistory: jest.fn(),
-    useLocation: jest.fn(),
-}));
-const mockedUseHistory = jest.mocked(useHistory);
+const mockHistoryReplace = jest.fn();
+
+jest.mock('react-router-dom-v5-compat', () => {
+    const actual = jest.requireActual('react-router-dom-v5-compat');
+    return {
+        ...actual,
+        useNavigate: jest.fn().mockImplementation(() => mockHistoryReplace),
+        useLocation: jest.fn(),
+    };
+});
+
 const mockedUseLocation = jest.mocked(useLocation);
 
 jest.mock('@proton/shared/lib/helpers/browser');
@@ -26,13 +32,11 @@ jest.mock('../../utils/url/password');
 const mockedGetUrlPassword = jest.mocked(getUrlPassword);
 
 describe('useRedirectToPublicPage', () => {
-    const mockHistoryReplace = jest.fn();
     const mockToken = 'mockToken';
     const mockPassword = 'mockPassword';
 
     beforeEach(() => {
         jest.clearAllMocks();
-        mockedUseHistory.mockReturnValue({ replace: mockHistoryReplace } as any);
     });
 
     it('should redirect if account switch redirection reason is passed and is signin or accountSwitch', () => {
@@ -55,7 +59,12 @@ describe('useRedirectToPublicPage', () => {
 
         result.current.cleanupUrl();
 
-        expect(mockHistoryReplace).toHaveBeenCalledWith({ search: '' });
+        expect(mockHistoryReplace).toHaveBeenCalledWith(
+            {
+                search: '',
+            },
+            { replace: true }
+        );
     });
 
     it('should not redirect if urlPassword is empty', () => {

@@ -1,6 +1,5 @@
 // @ts-ignore missing `toStream` TS defs
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
-import type { ReadableStream } from 'web-streams-polyfill';
 
 import { CryptoProxy, type VERIFICATION_STATUS } from '@proton/crypto';
 

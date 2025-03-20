@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
@@ -13,7 +13,7 @@ export enum RedirectionReason {
 }
 export const useRedirectToPublicPage = () => {
     const location = useLocation();
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const redirectionReason = useMemo(() => {
         const urlSearchParams = new URLSearchParams(location.search);
@@ -29,9 +29,12 @@ export const useRedirectToPublicPage = () => {
         newUrlSearchParams.delete(drivePublicRedirectionReasonKey);
         newUrlSearchParams.delete('token');
         deleteStoredUrlPassword();
-        history.replace({
-            search: newUrlSearchParams.toString(),
-        });
+        navigate(
+            {
+                search: newUrlSearchParams.toString(),
+            },
+            { replace: true }
+        );
     };
 
     const redirectToPublicPage = (token: string) => {

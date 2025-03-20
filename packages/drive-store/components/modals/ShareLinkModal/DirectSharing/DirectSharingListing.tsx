@@ -3,14 +3,13 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Avatar, CircleLoader } from '@proton/atoms';
+import { CircleLoader, UserAvatar } from '@proton/atoms';
 import { useSortedList } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import {
@@ -85,10 +84,8 @@ const MemberItem = ({
             className="flex my-4 justify-space-between items-center"
             data-testid="share-accepted-members"
         >
-            <div className={'flex items-center'}>
-                <Avatar color="weak" className="mr-2">
-                    {getInitials(contactName || contactEmail)}
-                </Avatar>
+            <div className="flex items-center gap-2">
+                <UserAvatar name={contactName || contactEmail} />
                 <p className="flex flex-column p-0 m-0">
                     <span className="text-semibold">{contactName ? contactName : contactEmail}</span>
                     {contactName && <span className="color-weak">{contactEmail}</span>}
@@ -145,19 +142,19 @@ export const DirectSharingListing = ({
     }
     return (
         <>
-            <div className="flex my-4 justify-space-between items-center" data-testid="share-owner">
-                <div className={'flex items-center'}>
-                    <Avatar color="weak" className="mr-2">
-                        {getInitials(displayName || user.Email)}
-                    </Avatar>
-                    <p className="flex flex-column p-0 m-0">
+            <div className="flex flex-nowrap my-4 items-center" data-testid="share-owner">
+                <div className="flex-1 flex flex-nowrap items-center gap-2">
+                    <UserAvatar name={displayName || user.Email} className="shrink-0" />
+                    <p className="flex-1 flex flex-column flex-nowrap p-0 m-0">
                         <span className="text-semibold">
                             {displayName} ({c('Info').t`you`})
                         </span>
-                        <span className="color-weak">{user.Email}</span>
+                        <span className="color-weak block max-w-full text-ellipsis" title={user.Email}>
+                            {user.Email}
+                        </span>
                     </p>
                 </div>
-                <div className="mr-8">{c('Info').t`Owner`}</div>
+                <div className="mx-2 shrink-0">{c('Info').t`Owner`}</div>
             </div>
 
             {volumeId &&

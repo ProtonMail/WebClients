@@ -8,12 +8,13 @@ import { hasValidAnonymousSignature } from './hasValidAnonymousSignature';
 interface Props {
     signatureIssues?: SignatureIssues;
     isFile: boolean;
+    mimeType?: string;
     isAnonymous?: boolean;
     className?: string;
 }
 
-export default function SignatureIcon({ isFile, isAnonymous = false, signatureIssues, className }: Props) {
-    if (!signatureIssues || (isAnonymous && hasValidAnonymousSignature(signatureIssues))) {
+export default function SignatureIcon({ isFile, mimeType, isAnonymous = false, signatureIssues, className }: Props) {
+    if (!signatureIssues || (isAnonymous && hasValidAnonymousSignature(signatureIssues, { mimeType, isFile }))) {
         return null;
     }
 

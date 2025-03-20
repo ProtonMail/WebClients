@@ -30,6 +30,7 @@
       "@proton/payments/*": ["./packages/payments/*"],
       "@proton/payments/ui/*": ["./packages/payments/components/*"],
       "@proton/polyfill/*": ["./packages/polyfill/*"],
+      "@proton/raw-images/*": ["./packages/raw-images/*"],
       "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
       "@proton/redux-shared-store/*": ["./packages/redux-shared-store/*"],
       "@proton/shared/*": ["./packages/shared/*"],
