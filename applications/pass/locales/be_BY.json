@@ -2025,7 +2025,7 @@
         "Падумайце пра тое, каб пакінуць водгук."
       ],
       "Please contact your administrator": [
-        "Калі ласка, звярніцеся да адміністратара"
+        "Звярніцеся да адміністратара"
       ],
       "Please do not close this window": [
         "Не закрывайце акно"
@@ -2216,6 +2216,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Гэта аперацыя з'яўляецца незваротнай. Усе псеўданімы, якія выкарыстоўвае дамен ${ domainTextBold } будуць выдалены. Звярніце ўвагу, што пасля выдалення псеўданімы немагчыма аднавіць."
       ],
+      "This option is currently not available on your browser.": [
+        "Гэты параметр у цяперашні час недаступны ў вашым браўзеры."
+      ],
       "This option is currently not available on your device.": [
         "Гэты параметр у цяперашні час недаступны на вашай прыладзе."
       ],
@@ -2381,6 +2384,9 @@
       "You may close this tab.": [
         "Вы можаце закрыць гэту ўкладку."
       ],
+      "You need a vault with edit permission before you can import items.": [
+        "Вам патрабуецца сховішча з правамі рэдагавання перад тым, каб вы маглі імпартаваць элементы."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "У вас ёсць магчымасць наладзіць дамен пад свае патрабаванні (адпраўляць усе лісты псеўданімаў ва ўсю пошту дамена, задаць прадвызначанае бачнае імя для псеўданімаў і г.д.) пасля таго, як ён будзе правераны."
       ],
@@ -2499,9 +2505,9 @@
       ],
       "${ secureLinksCount } secure link": [
         "${ secureLinksCount } бяспечная спасылка",
-        "${ secureLinksCount } бяспечных спасылкі",
+        "${ secureLinksCount } бяспечныя спасылкі",
         "${ secureLinksCount } бяспечных спасылак",
-        "${ secureLinksCount } бяспечныя спасылкі"
+        "${ secureLinksCount } бяспечных спасылак"
       ],
       "${ usageCount } login": [
         "${ usageCount } запіс уваходу",
@@ -4050,7 +4056,7 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Якая розніца паміж нататкамі ${ PASS_SHORT_APP_NAME } і SimpleLogin?"
       ],
-      "You don't have any vault": [
+      "You don't have any vaults": [
         "У вас няма сховішчаў"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
@@ -4373,7 +4379,7 @@
         "Ваш адміністратар павінен стварыць для вас сховішча, перш чым вы зможаце ствараць элементы"
       ],
       "Your organization does not allow creating a vault": [
-        "Ваша арганізацыя не дазваляе ствараць сховішча"
+        "У вашай арганізацыі забаронена ствараць сховішчы"
       ],
       "Your organization does not allow sharing individual items": [
         "Вашай арганізацыі забаронена абагульваць індывідуальныя элементы"
