@@ -1,6 +1,7 @@
 import {
     canReceive,
     canSend,
+    canUpdateSignature,
     getPermission,
     getReceivePermission,
     getSendPermission,
@@ -12,6 +13,8 @@ import {
     setupIncompletePermissionMap,
 } from '@proton/components/containers/addresses/helper';
 import { ADDRESS_PERMISSIONS, ADDRESS_PERMISSION_TYPE } from '@proton/shared/lib/constants';
+import type { MailSettings, UserModel } from '@proton/shared/lib/interfaces';
+import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
 describe('addresses helper functions', () => {
     describe('canReceive', () => {
@@ -349,6 +352,58 @@ describe('addresses helper functions', () => {
                     ADDRESS_PERMISSION_TYPE.SEND
                 )
             ).toEqual('No permission');
+        });
+    });
+
+    describe('canUpdateSignature', () => {
+        const freeUser = {
+            hasPaidMail: false,
+        } as unknown as UserModel;
+
+        const paidUser = {
+            hasPaidMail: true,
+        } as unknown as UserModel;
+
+        it('Should return true for free users regardless of signature status', () => {
+            expect(
+                canUpdateSignature(freeUser, {
+                    PMSignature: PM_SIGNATURE.DISABLED,
+                } as unknown as MailSettings)
+            ).toBeTruthy();
+
+            expect(
+                canUpdateSignature(freeUser, {
+                    PMSignature: PM_SIGNATURE.ENABLED,
+                } as unknown as MailSettings)
+            ).toBeTruthy();
+
+            expect(
+                canUpdateSignature(freeUser, {
+                    PMSignature: PM_SIGNATURE.LOCKED,
+                } as unknown as MailSettings)
+            ).toBeTruthy();
+        });
+
+        it('Should return false if the address is locked', () => {
+            expect(
+                canUpdateSignature(paidUser, {
+                    PMSignature: PM_SIGNATURE.LOCKED,
+                } as unknown as MailSettings)
+            ).toBeFalsy();
+        });
+
+        it('Should return true if the address is not locked', () => {
+            expect(
+                canUpdateSignature(paidUser, {
+                    PMSignature: PM_SIGNATURE.DISABLED,
+                } as unknown as MailSettings)
+            ).toBeTruthy();
+
+            expect(
+                canUpdateSignature(paidUser, {
+                    PMSignature: PM_SIGNATURE.ENABLED,
+                } as unknown as MailSettings)
+            ).toBeTruthy();
         });
     });
 });
