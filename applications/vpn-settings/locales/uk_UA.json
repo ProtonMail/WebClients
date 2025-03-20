@@ -800,12 +800,6 @@
       "${ price } per user": [
         "${ price } за користувача"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } ліцензія",
-        "${ seats } ${ LUMO_APP_NAME } ліцензії",
-        "${ seats } ${ LUMO_APP_NAME } ліцензій",
-        "${ seats } ${ LUMO_APP_NAME } ліцензій"
-      ],
       "${ seats } writing assistant seat": [
         "Помічник з написання для ${ seats } користувача",
         "Помічник з написання для ${ seats } користувачів",
@@ -968,14 +962,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Гарантія повернення коштів протягом 30 днів"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Спеціальна ціна зі знижкою ${ discountedPrice } діє протягом перших ${ cycle } місяців. Потім вона буде автоматично продовжена за зниженою ціною ${ nextPrice } на ${ renewalLength } місяців. Ви можете скасувати в будь-який момент."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Спеціальна знижена ціна ${ discountedPrice } діє протягом першого місяця. Після цього автоматично поновлюватиметься за ціною ${ nextPrice } щомісяця. Ви можете скасувати коли завгодно."
       ]
     },
     "bf2023: Title": {
@@ -4737,9 +4723,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Передплата автоматично поновлюється кожні ${ cycle } місяців."
-      ],
       "Subscription auto-renews every month.": [
         "Передплата автоматично поновлюється щомісяця."
       ],
@@ -5330,9 +5313,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися кожні ${ cycle } місяців."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
@@ -7949,23 +7929,8 @@
       "Processing payment": [
         "Обробка платежу"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Поновлюється за ціною ${ renewPrice }, скасувати можна будь-коли."
-      ],
       "Select billing country to pay": [
         "Оберіть країну виставлення рахунку для оплати"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє на перші ${ subscriptionLength } місяці. Купон дійсний для поновлень ${ couponRedemptions }. Потім він буде автоматично продовжений за ціною ${ renewPrice } на ${ subscriptionLengthCopy } місяців. Ви можете скасувати підписку в будь-який час."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом перших ${ subscriptionLength } місяців. Потім її буде автоматично поновлено за ціною ${ renewPrice } на ${ subscriptionLengthCopy } місяців. Ви можете скасувати підписку в будь-який час."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом першого місяця. Купон дійсний для поновлення підписки за ціною ${ couponRedemptions }. Потім він буде автоматично продовжений за ціною ${ renewPrice } на ${ subscriptionLength } місяць. Ви можете скасувати підписку в будь-який час."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом першого місяця. Потім вона буде автоматично поновлюватися за ціною ${ renewPrice } щомісяця. Ви можете скасувати її в будь-який момент."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Транзакція успішно виявлена. Кредити будуть зараховані на ваш рахунок після повного підтвердження транзакції."
@@ -10923,6 +10888,26 @@
         "Сьогодні"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи, і жодні зашифровані ресурси не будуть доступні цьому користувачеві."
+      ],
+      "Group membership paused": [
+        "Членство в групі призупинено"
+      ],
+      "Sending member invitation": [
+        "Надсилання запрошення учаснику"
+      ],
+      "User declined invitation": [
+        "Користувач відхилив запрошення"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Очікування на прийняття користувачем запрошення"
+      ]
+    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратори можуть керувати обліковими записами користувачів і надавати права адміністратора іншим користувачам. Тільки головний адміністратор може редагувати план організації."
@@ -11004,26 +10989,6 @@
       ],
       "Your DKIM signing is working.": [
         "Підписування DKIM працює."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Зовнішня адреса - вимикає наскрізне шифрування електронної пошти для цієї групи, і жодні зашифровані ресурси не будуть доступні цьому користувачеві."
-      ],
-      "Group membership paused": [
-        "Членство в групі призупинено"
-      ],
-      "Sending member invitation": [
-        "Надсилання запрошення учаснику"
-      ],
-      "User declined invitation": [
-        "Користувач відхилив запрошення"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Очікування на прийняття користувачем запрошення"
       ]
     },
     "Tor out of date": {
@@ -11369,9 +11334,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Потім рахунок виставлятиметься кожні 12 місяців за ціною ${ renewPrice }."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяць.",
         "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяці.",
