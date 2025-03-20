@@ -64,13 +64,13 @@ export const createIFrameService = (elements: PassElementsConfig) => {
         if (url && port && app.getState().port !== port) {
             const settings = ctx.getSettings();
 
-            app.init(port, {
+            app.init(port, () => ({
                 appState: ctx.getState(),
                 domain: resolveDomain(url) ?? '',
                 features: ctx.getFeatureFlags(),
                 settings: ctx.getSettings(),
                 theme: getIFrameTheme(settings.theme),
-            });
+            }));
         }
     });
 
