@@ -213,6 +213,8 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
         const propertiesToKeep: (keyof VcalVeventComponent)[] = [
             'uid',
             'dtstart',
+            // TODO: Should we keep or remove it ?
+            'comment',
             'dtend',
             'sequence',
             'recurrence-id',
@@ -226,7 +228,7 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
         ];
 
         const attendee = attendeesTo.map(({ value, parameters }) => {
-            const { partstat, comment } = parameters || {};
+            const { partstat } = parameters || {};
             if (method === ICAL_METHOD.REPLY) {
                 if (!partstat) {
                     throw new Error('Cannot reply without participant status');
@@ -235,10 +237,6 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
                 const parameters: Record<string, string> = {};
 
                 parameters.partstat = partstat;
-
-                if (comment !== undefined) {
-                    parameters.comment = comment;
-                }
 
                 return {
                     value,
