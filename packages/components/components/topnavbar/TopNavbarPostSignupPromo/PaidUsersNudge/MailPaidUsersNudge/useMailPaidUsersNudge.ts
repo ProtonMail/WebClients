@@ -1,28 +1,30 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import useConfig from '@proton/components/hooks/useConfig';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { PLANS } from '@proton/payments/index';
 import { domIsBusy } from '@proton/shared/lib/busy';
-import useFlag from '@proton/unleash/useFlag';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { type OfferHookReturnValue } from '../../common/interface';
-import { HIDE_OFFER } from '../components/interface';
 import { shouldOpenReminder } from '../components/paidUserNudgeHelper';
-import { getIsElligibleForNudge } from './mailPaidUserNudgeHelper';
+import { useMonthlyUpsellEligibility } from '../helpers/useMonthlyUpsellEligibility';
 
 export const useMailPaidUsersNudge = (): OfferHookReturnValue => {
-    const protonConfig = useConfig();
     const [subscription, subscriptionLoading] = useSubscription();
-
-    // One flag to control the offer
-    const mailMonthlynudge = useFlag('SubscriberNudgeMailMonthly');
 
     const { feature } = useFeature<number>(FeatureCode.MailPaidUserNudgeTimestamp);
 
+    const isEligible = useMonthlyUpsellEligibility({
+        eligiblePlan: PLANS.MAIL,
+        allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
+        offerFlag: 'SubscriberNudgeMailMonthly',
+        offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
+    });
+
     if (!subscription) {
         return {
-            isLoading: false,
             isEligible: false,
+            isLoading: false,
             openSpotlight: false,
         };
     }
@@ -31,12 +33,7 @@ export const useMailPaidUsersNudge = (): OfferHookReturnValue => {
     const isDomBusy = domIsBusy();
 
     return {
-        isEligible: getIsElligibleForNudge({
-            config: protonConfig,
-            flag: mailMonthlynudge,
-            subscription,
-            hideOffer: feature?.Value === HIDE_OFFER,
-        }),
+        isEligible,
         isLoading: subscriptionLoading,
         openSpotlight: !isDomBusy && shouldShowReminder,
     };
