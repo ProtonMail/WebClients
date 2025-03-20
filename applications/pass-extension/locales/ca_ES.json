@@ -2124,6 +2124,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Aquesta operació és irreversible. Se suprimiran tots els àlies que utilitzin el domini ${ domainTextBold }.Un cop suprimits, els àlies no es poden restaurar."
       ],
+      "This option is currently not available on your browser.": [
+        "Aquesta opció no està disponible actualment al vostre navegador."
+      ],
       "This option is currently not available on your device.": [
         "Aquesta opció no està disponible actualment al vostre dispositiu."
       ],
@@ -3829,9 +3832,6 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Quina diferència hi ha entre una nota de ${ PASS_SHORT_APP_NAME } i una nota de SimpleLogin?"
-      ],
-      "You don't have any vault": [
-        "No teniu cap caixa forta."
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "La vostra subscripció a ${ planName } finalitzarà el ${ endDate }."

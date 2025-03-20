@@ -2124,6 +2124,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Questa operazione è irreversibile. Tutti gli alias che utilizzano il dominio ${ domainTextBold } verranno eliminati. Tieni presente che una volta eliminati, gli alias non possono essere ripristinati."
       ],
+      "This option is currently not available on your browser.": [
+        "Questa opzione non è attualmente disponibile sul tuo browser."
+      ],
       "This option is currently not available on your device.": [
         "Questa opzione non è attualmente disponibile sul tuo dispositivo."
       ],
@@ -2292,6 +2295,9 @@
       ],
       "You may close this tab.": [
         "Puoi chiudere questa scheda."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Hai bisogno di una cassaforte con permessi per modificare prima che tu possa importare oggetti."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Potrai personalizzare le impostazioni del tuo dominio (alias email catch-all, nome visualizzato predefinito per gli alias ecc...) dopo aver verificato il tuo dominio."
@@ -3830,8 +3836,8 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Qual è la differenza tra la nota ${ PASS_SHORT_APP_NAME } e la nota SimpleLogin?"
       ],
-      "You don't have any vault": [
-        "Non hai nessuna cassaforte"
+      "You don't have any vaults": [
+        "Non hai alcune casseforti"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Il tuo abbonamento a ${ planName } terminerà il ${ endDate }"
