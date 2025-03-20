@@ -859,10 +859,6 @@
       "${ price } per user": [
         "${ price } per gebruiker"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } zitplaats",
-        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
         "${ seats } plaatsen voor schrijfassistent"
@@ -1019,14 +1015,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste ${ cycle } maanden. Daarna wordt uw abonnement automatisch vernieuwd tegen de gereduceerde prijs van ${ nextPrice } voor ${ renewalLength } maanden. U kunt op ieder moment annuleren."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ nextPrice } per maand. U kunt opzeggen wanneer u wilt."
       ]
     },
     "bf2023: Title": {
@@ -3877,9 +3865,6 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie."
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat zowel de login als het tweede wachtwoord vervangt. Om over te schakelen naar één wachtwoord modus vult u een enkel wachtwoord naar keuze in en klikt u op Opslaan."
       ],
@@ -5151,7 +5136,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
         "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
       ],
       "Subscription auto-renews every month.": [
@@ -5708,6 +5694,10 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "U kunt deze servers niet meer toewijzen aan een ander land gedurende 10 dagen."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
+        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Uw ${ boldDiscountPercent } naar ${ boldPlanTitle } is toegepast"
       ],
@@ -5765,11 +5755,15 @@
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd."
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "U kunt deze servers onmiddellijk aan een andere Gateway toevoegen."
@@ -8551,26 +8545,39 @@
       "Processing payment": [
         "Betaling wordt verwerkt"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Wordt verlengd voor ${ renewPrice }, altijd opzegbaar."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
       ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLengthCopy } maanden. U kunt op ieder moment annuleren."
+      "terms & conditions": [
+        "algemene voorwaarden"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLengthCopy } maanden. U kunt op ieder moment annuleren."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "De korting is geldig voor ${ couponRedemptions } verlenging.",
+        "De korting is geldig voor ${ couponRedemptions } verlengingen."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLength } maand. U kunt op ieder moment annuleren."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } per maand. U kunt opzeggen wanneer u wilt."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elke moment annuleren"
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "De transactie is succesvol gedetecteerd. Het tegoed wordt aan uw account toegevoegd zodra de transactie volledig is bevestigd."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
+        "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
@@ -11566,6 +11573,29 @@
         "Vandaag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ],
+      "Disables end-to-end email encryption for this group": [
+        "Schakelt end-to-end e-mailversleuteling voor deze groep uit"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
+      ],
+      "Group membership paused": [
+        "Groepslidmaatschap gepauzeerd"
+      ],
+      "Sending member invitation": [
+        "Uitnodiging aan het versturen"
+      ],
+      "User declined invitation": [
+        "Gebruiker weigerde uitnodiging"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Wachten tot gebruiker de uitnodiging accepteert"
+      ]
+    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het abonnement van de organisatie bewerken."
@@ -11656,29 +11686,6 @@
       ],
       "Your DKIM signing is working.": [
         "Ondertekenen met DKIM werkt."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ],
-      "Disables end-to-end email encryption for this group": [
-        "Schakelt end-to-end e-mailversleuteling voor deze groep uit"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
-      ],
-      "Group membership paused": [
-        "Groepslidmaatschap gepauzeerd"
-      ],
-      "Sending member invitation": [
-        "Uitnodiging aan het versturen"
-      ],
-      "User declined invitation": [
-        "Gebruiker weigerde uitnodiging"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Wachten tot gebruiker de uitnodiging accepteert"
       ]
     },
     "Tor out of date": {
@@ -12057,8 +12064,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "U wordt vervolgens elke 12 maanden ${ renewPrice } aangerekend."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "U wordt vervolgens elke 12 maanden ${ renewPriceStr } gefactureerd."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",

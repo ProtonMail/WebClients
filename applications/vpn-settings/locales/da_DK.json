@@ -935,11 +935,6 @@
         "30 dages tilbagebetalingsgaranti"
       ]
     },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Den særligt nedsatte pris på ${ discountedPrice } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ nextPrice } hver måned. Du kan til enhver tid opsige."
-      ]
-    },
     "bf2023: Title": {
       "Offer unavailable": [
         "Tilbud ikke tilgængeligt"
@@ -4531,9 +4526,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Abonnementet fornys automatisk hver ${ cycle } måned."
-      ],
       "Subscription auto-renews every month.": [
         "Abonnementet auto-fornyer hver måned."
       ],
@@ -5080,9 +5072,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
@@ -7607,23 +7596,8 @@
       "Processing payment": [
         "Behandler betaling"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Fornyes til ${ renewPrice }, annuller når som helst."
-      ],
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måneder. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ renewPrice } i ${ subscriptionLengthCopy } måneder. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måneder. Derefter fornys den automatisk til ${ renewPrice } i ${ subscriptionLengthCopy } måneder. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder forden første måned. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ renewPrice } i ${ subscriptionLength } måned. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første måned. Derefter vil den automatisk blive fornyet til ${ renewPrice } hver måned. Du kan annullere når som helst."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaktionen er registreret korrekt. Beløbet bliver overført til din konto, når transaktionen er blevet bekræftet."
@@ -10279,6 +10253,23 @@
         "I dag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ],
+      "Group membership paused": [
+        "Gruppemedlemskab sat på pause"
+      ],
+      "Sending member invitation": [
+        "Sender medlemsinvitation"
+      ],
+      "User declined invitation": [
+        "Bruger afviste invitation"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Venter på, at brugeren accepterer invitationen"
+      ]
+    },
     "Tooltip": {
       "An approximate location of the IP address": [
         "En omtrentlig placering af IP-adressen"
@@ -10345,23 +10336,6 @@
       ],
       "Your DKIM signing is working.": [
         "Din DKIM-signering fungerer."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
-      ],
-      "Group membership paused": [
-        "Gruppemedlemskab sat på pause"
-      ],
-      "Sending member invitation": [
-        "Sender medlemsinvitation"
-      ],
-      "User declined invitation": [
-        "Bruger afviste invitation"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Venter på, at brugeren accepterer invitationen"
       ]
     },
     "Tor out of date": {
@@ -10641,9 +10615,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Du vil blive faktureret ${ renewPrice } hver 12. måned."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."
