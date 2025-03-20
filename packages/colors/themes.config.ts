@@ -126,6 +126,10 @@ const config: ThemeConfig[] = [
                 path: './themes/src/pass-dark/lime-base.css',
                 type: 'dark',
             },
+            {
+                path: './themes/src/pass-dark/gray-base.css',
+                type: 'dark',
+            },
         ],
     },
     {
@@ -153,6 +157,10 @@ const config: ThemeConfig[] = [
             },
             {
                 path: './themes/src/pass-light/lime-base.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/pass-light/gray-base.css',
                 type: 'light',
             },
         ],
