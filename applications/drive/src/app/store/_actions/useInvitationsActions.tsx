@@ -1,8 +1,11 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components/index';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -94,14 +97,39 @@ export const useInvitationsActions = () => {
             invitationId: string;
         }
     ) => {
+        const invitation = await getInvitation(abortSignal, invitationId);
+        const invitationName = invitation.decryptedLinkName ? (
+            <strong>{`${invitation.decryptedLinkName} `}</strong>
+        ) : (
+            ''
+        );
+
+        let message: ReactNode;
+
+        switch (invitation.link.type) {
+            case LinkType.ALBUM:
+                // translator: the variable is the name of a file/folder/album that the user declines the invitations too
+                message = c('Info')
+                    .jt`You're about to decline the invitation to join the ${invitationName}album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?`;
+                break;
+            case LinkType.FOLDER:
+                // translator: the variable is the name of a file/folder/album that the user declines the invitations too
+                message = c('Info')
+                    .jt`You're about to decline the invitation to join the ${invitationName}folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?`;
+                break;
+            default:
+                // translator: the variable is the name of a file/folder/album that the user declines the invitations too
+                message = c('Info')
+                    .jt`You're about to decline the invitation to join the ${invitationName}item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?`;
+        }
+
         showConfirmModal({
-            title: c('Title')
-                .t`You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.`,
-            message: c('Info').t`Are you sure you want to proceed?`,
-            submitText: c('Action').t`Confirm`,
+            title: c('Title').t`Decline invitation?`,
+            message,
+            submitText: c('Action').t`Decline invite`,
+            cancelText: c('Action').t`Go back`,
             onSubmit: async () => {
                 // When rejecting an invitation, we can optimistically remove it, and if any issue occurs, we add it back.
-                const invitation = await getInvitation(abortSignal, invitationId);
                 if (!invitation) {
                     return;
                 }
