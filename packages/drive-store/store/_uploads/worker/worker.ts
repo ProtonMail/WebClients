@@ -17,6 +17,7 @@ import {
     getExifInfo,
     getPhotoDimensions,
     getPhotoExtendedAttributes,
+    getPhotoTags,
 } from '../../_photos/exifInfo';
 import type { EncryptedBlock, Link, ThumbnailEncryptedBlock, VerificationData } from '../interface';
 import type { Media, ThumbnailInfo } from '../media';
@@ -29,7 +30,7 @@ import { createVerifier } from './verifier';
 
 declare const self: Worker;
 
-const uploadWorker = new UploadWorker(self, { generateKeys, start, createdBlocks, pause, resume });
+export const uploadWorker = new UploadWorker(self, { generateKeys, start, createdBlocks, pause, resume });
 
 const pauser = new Pauser();
 const buffer = new UploadWorkerBuffer();
@@ -185,6 +186,7 @@ async function start(
                 ? {
                       captureTime: Math.max(getUnixTime(getCaptureDateTime(file, exifInfo?.exif)), 0),
                       contentHash: sha1 ? await generateLookupHash(sha1, parentHashKey) : undefined,
+                      tags: exifInfo ? await getPhotoTags(file, exifInfo) : undefined,
                   }
                 : undefined
         );

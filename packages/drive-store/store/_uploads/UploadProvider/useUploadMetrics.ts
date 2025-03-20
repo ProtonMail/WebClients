@@ -12,9 +12,10 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
+import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
-import type { UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
+import type { MetricUserPlan, UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
 import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
 import { useSharesStore } from '../../../zustand/share/shares.store';
 import type { Share } from '../../_shares/interface';
@@ -46,7 +47,7 @@ export const getFailedUploadMetadata = (nextFileUpload: FileUploadReady, progres
     roundedUnencryptedFileSize: Math.max(Math.round(nextFileUpload.file.size / ROUND_BYTES) * ROUND_BYTES, ROUND_BYTES),
 });
 
-export default function useUploadMetrics(isPaid: boolean, metricsModule = metrics) {
+export default function useUploadMetrics(plan: MetricUserPlan, metricsModule = metrics) {
     const lastErroringUserReport = useRef(0);
 
     // Hack: ideally we should use useShare. But that adds complexity with
@@ -61,7 +62,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
     };
 
     const uploadSucceeded = (shareId: string, numberOfErrors = 0) => {
-        const shareType = getShareIdType(shareId);
+        const shareType = getIsPublicContext() ? 'shared_public' : getShareIdType(shareId);
         const retry = numberOfErrors > 0;
 
         metricsModule.drive_upload_success_rate_total.increment({
@@ -73,7 +74,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
     };
 
     const uploadFailed = (failedUploadMetadata: FailedUploadMetadata, error: any) => {
-        const shareType = getShareIdType(failedUploadMetadata.shareId);
+        const shareType = getIsPublicContext() ? 'shared_public' : getShareIdType(failedUploadMetadata.shareId);
         const errorCategory = getErrorCategory(error);
         const retry = failedUploadMetadata.numberOfErrors > 1;
 
@@ -89,7 +90,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
 
             if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
                 metricsModule.drive_upload_erroring_users_total.increment({
-                    plan: isPaid ? 'paid' : 'free',
+                    plan,
                     shareType,
                     initiator: 'explicit',
                 });

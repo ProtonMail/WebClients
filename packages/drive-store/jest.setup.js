@@ -33,6 +33,10 @@ jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
 
+jest.mock('@proton/raw-images', () => ({
+    __esModule: true,
+}));
+
 jest.mock('./store/_downloads/fileSaver/download.ts', () => {
     return {
         initDownloadSW: jest.fn().mockResolvedValue(true),
@@ -53,3 +57,15 @@ jest.mock('./utils/metrics/userSuccessMetrics.ts', () => {
         },
     };
 });
+
+
+// Mock VPN flag to prevent those issues
+// TypeError: require.context is not a function
+// > 1 | const flags = require.context('@proton/styles/assets/img/flags', true, /.svg$/);
+jest.mock('@proton/components/containers/vpn/flag', () => ({
+    getFlagSvg: jest.fn().mockImplementation((it) => it),
+}));
+
+jest.mock('@proton/components/components/v2/phone/flagSvgs', () => ({
+    getFlagSvg: jest.fn().mockImplementation((it) => it),
+}));

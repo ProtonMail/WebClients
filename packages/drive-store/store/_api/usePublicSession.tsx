@@ -23,6 +23,7 @@ import {
     useDefaultShare,
     useShare,
 } from '../_shares';
+import { getMetricsUserPlan } from '../_user/getMetricsUserPlan';
 import useDebouncedRequest from './useDebouncedRequest';
 
 export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -80,7 +81,7 @@ function usePublicSessionProvider() {
         }
         const user = formatUser(session.User);
         setUser(user);
-        await userSuccessMetrics.setLocalUser(session.UID, user.isPaid);
+        await userSuccessMetrics.setLocalUser(session.UID, getMetricsUserPlan({ user, isPublicContext: true }));
     };
 
     const initHandshake = async (

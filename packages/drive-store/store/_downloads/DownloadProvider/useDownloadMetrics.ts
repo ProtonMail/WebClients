@@ -21,7 +21,8 @@ import { MetricSharePublicType } from '../../../utils/type/MetricTypes';
 import { DownloadErrorCategory } from '../../../utils/type/MetricTypes';
 import { useSharesStore } from '../../../zustand/share/shares.store';
 import { getShareType } from '../../_uploads/UploadProvider/useUploadMetrics';
-import { selectMechanismForDownload } from '../fileSaver/fileSaver';
+import { getMetricsUserPlan } from '../../_user/getMetricsUserPlan';
+import fileSaver from '../fileSaver/fileSaver';
 import type { Download } from './interface';
 
 const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes
@@ -88,7 +89,7 @@ export const useDownloadMetrics = (
         });
 
         // Web only metric
-        selectMechanismForDownload(size).then((mechanism) => {
+        void fileSaver.instance.selectMechanismForDownload(size).then((mechanism) => {
             metrics.drive_download_mechanism_success_rate_total.increment({
                 status: state === TransferState.Done ? 'success' : 'failure',
                 retry: retry ? 'true' : 'false',
@@ -101,7 +102,7 @@ export const useDownloadMetrics = (
         if (isError && !isIgnoredErrorForReporting(error)) {
             if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
                 metrics.drive_download_erroring_users_total.increment({
-                    plan: user ? (user.isPaid ? 'paid' : 'free') : 'unknown',
+                    plan: getMetricsUserPlan({ user, isPublicContext: getIsPublicContext() }),
                     shareType,
                 });
                 lastErroringUserReport.current = Date.now();
@@ -128,7 +129,8 @@ export const useDownloadMetrics = (
      */
     const observe = (downloads: Download[]) => {
         for (const download of downloads) {
-            if (isAbortError(download.error)) {
+            // Ignore metrics in case we passed the buffer to the download as we already validated the download process
+            if (isAbortError(download.error) || download.hasFullBuffer) {
                 continue;
             }
             // shareType is infered from the download rootShareId (each links are LinkDownload type)

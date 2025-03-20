@@ -1,10 +1,11 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
+import { VERIFICATION_STATUS } from '@proton/crypto';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
+import { MetricUserPlan } from '../../utils/type/MetricTypes';
 import { tokenIsValid } from '../../utils/url/token';
 import type { IntegrityMetrics } from '../_crypto';
 import { ShareType } from '../_shares';
@@ -60,7 +61,7 @@ describe('useLink', () => {
     const mockIntegrityMetricsDecryptionError = jest.fn();
     const mockIntegrityMetricsSignatureVerificationError = jest.fn();
 
-    const isPaid = false;
+    const plan = MetricUserPlan.Paid;
     const abortSignal = new AbortController().signal;
 
     let hook: {
@@ -104,7 +105,7 @@ describe('useLink', () => {
                 mockGetShare,
                 mockGetDefaultShareAddressEmail,
                 mockGetDirectSharingInfo,
-                isPaid,
+                plan,
                 {
                     nodeDecryptionError: mockIntegrityMetricsDecryptionError,
                     signatureVerificationError: mockIntegrityMetricsSignatureVerificationError,
@@ -396,7 +397,7 @@ describe('useLink', () => {
             expect.objectContaining({
                 encrypted: expect.objectContaining({
                     linkId: 'link',
-                    signatureIssues: { thumbnail: VERIFICATION_STATUS.SIGNED_AND_INVALID },
+                    signatureIssues: { thumbnail: 2 },
                 }),
             }),
         ]);
