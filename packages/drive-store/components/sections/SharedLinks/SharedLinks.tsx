@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues, useSharedLinksView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
@@ -88,7 +88,7 @@ const SORT_FIELDS: SharedLinksSortFields[] = [
 const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink } = useDriveNavigation();
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();

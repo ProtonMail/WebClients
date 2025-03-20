@@ -33,6 +33,10 @@ jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
   __esModule: true,
 }))
 
+jest.mock('@proton/raw-images', () => ({
+  __esModule: true,
+}))
+
 jest.mock('@proton/drive-store/store/_downloads/fileSaver/download.ts', () => {
   return {
     initDownloadSW: jest.fn().mockResolvedValue(true),

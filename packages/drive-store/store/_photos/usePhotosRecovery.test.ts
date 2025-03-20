@@ -3,9 +3,11 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
+import { useSharesStore } from '../../zustand/share/shares.store';
 import type { DecryptedLink } from '../_links';
 import { useLinksActions, useLinksListing } from '../_links';
-import { usePhotos } from './PhotosProvider';
+import { ShareState, ShareType } from '../_shares';
+import { usePhotosOrPhotosWithAlbums } from './PhotosOrPhotosWithAlbumsProvider';
 import { usePhotosRecovery } from './usePhotosRecovery';
 
 function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
@@ -50,60 +52,9 @@ jest.mock('../_links', () => {
     return { useLinksActions, useLinksListing };
 });
 
-jest.mock('../../zustand/share/shares.store', () => {
-    const actual = jest.requireActual('../../zustand/share/shares.store');
-
+jest.mock('./PhotosOrPhotosWithAlbumsProvider', () => {
     return {
-        ...actual,
-        useSharesStore: (cb: any) => {
-            const state = actual.useSharesStore();
-            if (cb) {
-                return cb({
-                    ...state,
-                    getRestoredPhotosShares: () => [
-                        {
-                            addressId: 'addressId',
-                            shareId: 'shareId',
-                            rootLinkId: 'rootLinkId',
-                            volumeId: 'volumeId',
-                            creator: 'creator',
-                            isLocked: false,
-                            isDefault: false,
-                            isVolumeSoftDeleted: false,
-                            possibleKeyPackets: ['dsad'],
-                            type: 4,
-                            state: 1,
-                            createTime: 1234,
-                        },
-                    ],
-                });
-            }
-            return {
-                ...state,
-                getRestoredPhotosShares: () => [
-                    {
-                        addressId: 'addressId',
-                        shareId: 'shareId',
-                        rootLinkId: 'rootLinkId',
-                        volumeId: 'volumeId',
-                        creator: 'creator',
-                        isLocked: false,
-                        isDefault: false,
-                        isVolumeSoftDeleted: false,
-                        possibleKeyPackets: ['dsad'],
-                        type: 4,
-                        state: 1,
-                        createTime: 1234,
-                    },
-                ],
-            };
-        },
-    };
-});
-
-jest.mock('./PhotosProvider', () => {
-    return {
-        usePhotos: jest.fn(),
+        usePhotosOrPhotosWithAlbums: jest.fn(),
     };
 });
 
@@ -127,7 +78,7 @@ const mockedSetItem = jest.mocked(setItem);
 
 describe('usePhotosRecovery', () => {
     const links = [generateDecryptedLink('linkId1'), generateDecryptedLink('linkId2')];
-    const mockedUsePhotos = jest.mocked(usePhotos);
+    const mockedUsePhotos = jest.mocked(usePhotosOrPhotosWithAlbums);
     const mockedUseLinksListing = jest.mocked(useLinksListing);
     const mockedUseLinksActions = jest.mocked(useLinksActions);
     const mockedGetCachedChildren = jest.fn();
@@ -163,6 +114,26 @@ describe('usePhotosRecovery', () => {
         // @ts-ignore
         mockedUseLinksActions.mockReturnValue({
             moveLinks: mockedMoveLinks,
+        });
+
+        const { result } = renderHook(() => useSharesStore());
+        act(() => {
+            result.current.setShares([
+                {
+                    addressId: 'addressId',
+                    shareId: 'shareId',
+                    rootLinkId: 'rootLinkId',
+                    volumeId: 'volumeId',
+                    creator: 'creator',
+                    isLocked: false,
+                    isDefault: false,
+                    isVolumeSoftDeleted: false,
+                    possibleKeyPackets: ['dsad'],
+                    type: ShareType.photos,
+                    state: ShareState.restored,
+                    createTime: 1234,
+                },
+            ]);
         });
     });
 

@@ -1,5 +1,4 @@
 import { sha1 } from '@noble/hashes/sha1';
-import type { ReadableStream } from 'web-streams-polyfill';
 
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { queryCheckAvailableHashes } from '@proton/shared/lib/api/drive/link';
@@ -19,7 +18,7 @@ const HASH_CHECK_AMOUNT = 10;
 
 export default function useUploadHelper() {
     const debouncedRequest = useDebouncedRequest();
-    const { getLinkHashKey } = useLink();
+    const { getLinkHashKey, getLink } = useLink();
     const { loadChildren, getCachedChildren } = useLinksListing();
 
     const findAvailableName = async (
@@ -118,6 +117,7 @@ export default function useUploadHelper() {
         filename: string;
         hash: string;
         draftLinkId?: string;
+        duplicateLinkId?: string;
         clientUid?: string;
         isDuplicatePhotos?: boolean;
     }> => {
@@ -125,7 +125,15 @@ export default function useUploadHelper() {
         if (!parentHashKey) {
             throw Error('Missing hash key on folder link');
         }
+        const parentLink = await getLink(abortSignal, shareId, parentLinkId);
         const hash = await generateLookupHash(file.name, parentHashKey);
+
+        if (parentLink.mimeType === 'Album') {
+            return {
+                filename: file.name,
+                hash,
+            };
+        }
 
         const { DuplicateHashes } = await debouncedRequest<{ DuplicateHashes: DuplicatePhotosHash[] }>(
             queryPhotosDuplicates(volumeId, {
@@ -142,8 +150,7 @@ export default function useUploadHelper() {
             };
         }
 
-        // Force polyfill type for ReadableStream
-        const fileStream = file.stream() as ReadableStream<Uint8Array>;
+        const fileStream = file.stream();
         const sha1Instance = sha1.create();
         await untilStreamEnd<Uint8Array>(fileStream, async (chunk) => {
             if (chunk?.buffer) {
@@ -164,6 +171,7 @@ export default function useUploadHelper() {
                 filename: file.name,
                 hash,
                 isDuplicatePhotos: true,
+                duplicateLinkId: duplicatePhotoHashActive.LinkID,
             };
         }
 

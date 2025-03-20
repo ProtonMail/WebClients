@@ -3,6 +3,7 @@ import { CryptoProxy, serverTime, updateServerTime } from '@proton/crypto';
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
+import type { ConfigData } from '../../config';
 import { convertSafeError } from '../../utils/errorHandling/EnrichedError';
 import { RefreshError, getRefreshError } from '../../utils/errorHandling/RefreshError';
 import { HEARTBEAT_INTERVAL, HEARTBEAT_WAIT_TIME, WORKER_INIT_WAIT_TIME } from './constants';
@@ -58,12 +59,24 @@ type CloseMessage = {
     command: 'close';
 };
 
+type ConfigMessage = {
+    command: 'config';
+    data: ConfigData;
+};
+
 /**
  * WorkerControllerEvent contains all possible events which can come from
  * the main thread to the upload web worker.
  */
 type WorkerControllerEvent = {
-    data: GenerateKeysMessage | StartMessage | CreatedBlocksMessage | PauseMessage | ResumeMessage | CloseMessage;
+    data:
+        | GenerateKeysMessage
+        | StartMessage
+        | CreatedBlocksMessage
+        | PauseMessage
+        | ResumeMessage
+        | CloseMessage
+        | ConfigMessage;
 };
 
 /**
@@ -201,6 +214,8 @@ export class UploadWorker {
 
     heartbeatInterval?: NodeJS.Timeout;
 
+    config?: ConfigData;
+
     constructor(worker: Worker, { generateKeys, start, createdBlocks, pause, resume }: WorkerHandlers) {
         // Before the worker termination, we want to release securely crypto
         // proxy. That might need a bit of time, and we allow up to few seconds
@@ -226,12 +241,14 @@ export class UploadWorker {
 
         worker.addEventListener('message', ({ data }: WorkerControllerEvent) => {
             switch (data.command) {
+                case 'config':
+                    this.config = data.data;
+                    break;
                 case 'generate_keys':
                     (async (data) => {
                         let module;
                         // Dynamic import is needed since we want pmcrypto (incl. openpgpjs) to be loaded
                         // inside the worker, not in the main thread.
-                        // Warning: Do not rename the "crypto-worker-api" naming as this is also used in the initDriveWorker.ts file
                         try {
                             module = await import(
                                 /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
@@ -448,7 +465,7 @@ export class UploadWorkerController {
 
     onCancel: () => void;
 
-    heartbeatTimeout?: NodeJS.Timeout;
+    heartbeatTimeout?: ReturnType<typeof setTimeout>;
 
     /**
      * On Chrome, there is no way to know if a worker fails to load.
@@ -458,7 +475,7 @@ export class UploadWorkerController {
      * it's not particularly great UX. So instead we run a localized timeout, with a
      * quicker turn-around time in case of failure.
      */
-    workerTimeout?: NodeJS.Timeout;
+    workerTimeout?: ReturnType<typeof setTimeout>;
 
     constructor(
         worker: Worker,
@@ -485,10 +502,10 @@ export class UploadWorkerController {
         }, WORKER_INIT_WAIT_TIME);
 
         worker.addEventListener('message', ({ data }: WorkerEvent) => {
+            clearTimeout(this.workerTimeout);
             switch (data.command) {
                 case 'alive':
                     log('Worker alive');
-                    clearTimeout(this.workerTimeout);
                     break;
                 case 'keys_generated':
                     log('File keys generated');

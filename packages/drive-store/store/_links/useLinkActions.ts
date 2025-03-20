@@ -216,8 +216,95 @@ export default function useLinkActions() {
         }
     };
 
+    // This is so photos from photo-stream can be added to an album (without re-uploading content)
+    // Creates new nodepasphrases based on the album node (and not the photos root share)
+    // Re-encrypt name with album node key
+    const getPhotoCloneForAlbum = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        parentLinkId: string,
+        name: string
+    ) => {
+        const error = validateLinkName(name);
+        if (error) {
+            throw new ValidationError(error);
+        }
+
+        const [parentPrivateKey, parentHashKey, { privateKey: addressKey, address }] = await Promise.all([
+            getLinkPrivateKey(abortSignal, shareId, parentLinkId),
+            getLinkHashKey(abortSignal, shareId, parentLinkId),
+            getShareCreatorKeys(abortSignal, shareId),
+        ]);
+
+        const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] =
+            await Promise.all([
+                generateLookupHash(name, parentHashKey).catch((e) =>
+                    Promise.reject(
+                        new EnrichedError('Failed to generate folder link lookup hash during folder creation', {
+                            tags: {
+                                shareId,
+                                parentLinkId,
+                            },
+                            extra: { e },
+                        })
+                    )
+                ),
+                generateNodeKeys(parentPrivateKey, addressKey).catch((e) =>
+                    Promise.reject(
+                        new EnrichedError('Failed to generate folder link node keys during folder creation', {
+                            tags: {
+                                shareId,
+                                parentLinkId,
+                            },
+                            extra: { e },
+                        })
+                    )
+                ),
+                encryptName(name, parentPrivateKey, addressKey).catch((e) =>
+                    Promise.reject(
+                        new EnrichedError('Failed to encrypt folder link name during folder creation', {
+                            tags: {
+                                shareId,
+                                parentLinkId,
+                            },
+                            extra: { e },
+                        })
+                    )
+                ),
+            ]);
+
+        const { NodeHashKey } = await generateNodeHashKey(privateKey, privateKey).catch((e) =>
+            Promise.reject(
+                new EnrichedError('Failed to encrypt node hash key during folder creation', {
+                    tags: {
+                        shareId,
+                        parentLinkId,
+                    },
+                    extra: { e },
+                })
+            )
+        );
+
+        const volumeId = volumeState.findVolumeId(shareId);
+        if (volumeId) {
+            await events.pollEvents.volumes(volumeId);
+        }
+
+        return {
+            Hash,
+            NodeHashKey,
+            Name: encryptedName,
+            NodeKey,
+            NodePassphrase,
+            NodePassphraseSignature,
+            SignatureAddress: address.Email,
+            ParentLinkID: parentLinkId,
+        };
+    };
+
     return {
         createFolder,
         renameLink,
+        getPhotoCloneForAlbum,
     };
 }

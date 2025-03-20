@@ -76,7 +76,6 @@
 		gap: 1em;
 		align-items: center;
 		block-size: 5em; // To avoid height blinking on status changing
-		@extend .border-bottom;
 
 		@include media('<=small') {
 			grid-template-columns: 4fr minmax(5em, 2fr) 2.5em minmax(4.5em, 1fr);
@@ -134,14 +133,16 @@
 			}
 		}
 
-		.transfers-manager-list-item-controls-button {
-			opacity: 0;
-			will-change: opacity;
-		}
-
-		&:hover {
+		@media (hover: hover) and (pointer: fine) {
 			.transfers-manager-list-item-controls-button {
-				opacity: 1;
+				opacity: 0;
+				will-change: opacity;
+			}
+
+			&:hover {
+				.transfers-manager-list-item-controls-button {
+					opacity: 1;
+				}
 			}
 		}
 	}

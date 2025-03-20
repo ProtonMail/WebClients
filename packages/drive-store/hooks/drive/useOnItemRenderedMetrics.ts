@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
@@ -29,19 +29,32 @@ export const useOnItemRenderedMetrics = (layout: LayoutSetting, isLoading: boole
     useEffect(() => {
         if (firstItemIsSet === false && count > 0) {
             setFirstItemIsSet(true);
-            logPerformanceMarker('drive_performance_clicktofirstitemrendered_histogram', view);
+            logPerformanceMarker('drive_performance_clicktofirstitemrendered_histogram', {
+                view,
+                includeLoadType: true,
+            });
         }
 
         if (firstPageIsSet === false && count >= PAGE_RENDERED_ON_THE_DOM_ITEM_COUNT) {
             setFirstPageIsSet(true);
-            logPerformanceMarker('drive_performance_clicktofirstpagerendered_histogram', view);
+            logPerformanceMarker('drive_performance_clicktofirstpagerendered_histogram', {
+                view,
+                includeLoadType: true,
+            });
         }
 
         if (isLoading === false && lastPageIsSet === false && count > 0) {
             setLastPageIsSet(true);
-            const totalTime = logPerformanceMarker('drive_performance_clicktolastitemrendered_histogram', view);
+            const totalTime = logPerformanceMarker('drive_performance_clicktolastitemrendered_histogram', {
+                view,
+                includeLoadType: true,
+            });
             if (totalTime) {
-                logPerformanceMarker('drive_performance_averagetimeperitem_histogram', view, totalTime / count);
+                logPerformanceMarker('drive_performance_averagetimeperitem_histogram', {
+                    view,
+                    timeInMs: totalTime / count,
+                    includeLoadType: true,
+                });
             }
         }
 
