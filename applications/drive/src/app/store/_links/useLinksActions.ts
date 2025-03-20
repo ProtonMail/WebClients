@@ -62,7 +62,7 @@ export function useLinksActions({
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey, getLinkHashKey } = useLink();
     const { getLinks } = useLinks();
     const { lockLinks, lockTrash, unlockLinks } = useLinksState();
-    const { getDefaultShare } = useDefaultShare();
+    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
 
     const { getShareCreatorKeys, getShare } = useShare();
     const volumeState = useVolumesState();
@@ -441,10 +441,14 @@ export function useLinksActions({
 
     const emptyTrash = async (abortSignal: AbortSignal) => {
         const { volumeId } = await getDefaultShare();
+        const photosShare = await getDefaultPhotosShare();
         lockTrash();
         await debouncedRequest(queryVolumeEmptyTrash(volumeId), abortSignal);
-
         await events.pollEvents.volumes(volumeId);
+        if (photosShare && volumeId !== photosShare.volumeId) {
+            await debouncedRequest(queryVolumeEmptyTrash(photosShare.volumeId), abortSignal);
+            await events.pollEvents.volumes(photosShare.volumeId);
+        }
     };
 
     return {
