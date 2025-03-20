@@ -1114,10 +1114,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -1313,7 +1313,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1544,10 +1545,6 @@
       "${ price } per user": [
         "her kullanıcı için ${ price }"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } koltuk",
-        "${ seats } ${ LUMO_APP_NAME } koltuk"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
         "${ seats } yazma yardımcısı koltuğu"
@@ -1702,14 +1699,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 gün içinde ücreti geri ödeme garantisi"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "İlk ${ cycle } ay için özel indirimli ${ discountedPrice } fiyatı geçerlidir. Ardından aylık ${ nextPrice } indirimli tutarıyla ${ renewalLength } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "İlk ay için ${ discountedPrice } özel indirimli fiyat geçerlidir. Ardından aylık ${ nextPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "bf2023: Tooltip": {
@@ -5938,9 +5927,6 @@
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
-      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME }, kuruluşunuzu da koruyabilir."
       ],
@@ -6698,7 +6684,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7267,8 +7254,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Abonelik ${ cycle } ayda bir otomatik olarak yenilenir."
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonelik her ${ cycle } ayda bir otomatik olarak yenilenir.",
+        "Abonelik her ${ cycle } ayda bir otomatik olarak yenilenir."
       ],
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
@@ -7869,6 +7857,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” yazdınız ama bir dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Daha sonra her ${ renewCycle } ayda bir ${ renewAmountStr } tutarında faturalandırılacaksınız.",
+        "Daha sonra her ${ renewCycle } ayda bir ${ renewAmountStr } tutarında faturalandırılacaksınız."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Kişi gruplarında bulunabilecek en fazla adres sayısına ulaştınız:"
       ],
@@ -7945,11 +7937,15 @@
       "Your private writing assistant": [
         "Kişisel yazma yardımcınız"
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve ${ cycle } ayda bir otomatik olarak yenilenecek."
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Planlanmış tarifeniz ${ renewalTime } tarihinde başlar ve her ${ cycle } ayda bir otomatik olarak yenilenir.",
+        "Planlanmış tarifeniz ${ renewalTime } tarihinde başlar ve her ${ cycle } ayda bir otomatik olarak yenilenir."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecektir."
       ]
     },
     "info": {
@@ -10875,23 +10871,36 @@
       "Please select your billing state first.": [
         "Lütfen önce faturanın kesileceği ili seçin."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "${ renewPrice } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Yenileme fiyatlandırması ${ termsAndConditionsLink } koşullarına göre değişebilir."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "${ renewPriceStr } üzerinden yenilenir, istediğiniz zaman iptal edin."
       ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "İlk ${ subscriptionLength } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLengthCopy } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      "terms & conditions": [
+        "şartlar & koşullar"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "İlk ${ subscriptionLength } ay için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLengthCopy } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon ${ couponRedemptions } yenileme için geçerlidir.",
+        "Kupon ${ couponRedemptions } yenileme için geçerlidir."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "İlk ay için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ renewPrice } tutarla ${ subscriptionLength } ay süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Özel olarak indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
+        "Özel olarak indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ renewPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, ${ renewPriceStr } fiyatıyla 1 ay boyunca otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
+        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, ${ renewPriceStr } fiyatıyla 1 ay boyunca otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Daha sonra her ay otomatik olarak ${ renewPriceStr } üzerinden yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
@@ -13803,11 +13812,6 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
@@ -13891,6 +13895,11 @@
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
@@ -13963,8 +13972,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Daha sonra her 12 ayda bir ${ renewPriceStr } üzerinden faturalandırılacaksınız."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
