@@ -851,14 +851,6 @@
         "Гарантия возврата средств в течение 30 дней"
       ]
     },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Специально сниженная цена ${ discountedPrice } действует в течение первых ${ cycle } месяцев. Затем она будет автоматически продляться ${ renewalLength } месяцев по сниженной цене ${ nextPrice }. Отменить можно в любое время."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
-      ]
-    },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
@@ -4443,9 +4435,6 @@
       "Monitor accounts": [
         "Отслеживать аккаунты"
       ],
-      "Most recent": [
-        "Самые новые"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
@@ -4508,12 +4497,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
-      ],
-      "Owned by me": [
-        "Принадлежащие мне"
-      ],
-      "Owned by others": [
-        "Принадлежащие другим"
       ],
       "Owner": [
         "Владелец"
@@ -4685,9 +4668,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
-      ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Подписка обновляется каждые ${ cycle } месяцев."
       ],
       "Subscription auto-renews every month.": [
         "Подписка автоматически обновляется каждый месяц."
@@ -5066,9 +5046,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
@@ -7532,23 +7509,8 @@
       "Please select your billing state first.": [
         "Сначала выберите государство для выставления счета."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Затем стоимость подписки составит ${ renewPrice }. Отменить её можно в любое время."
-      ],
       "Select billing country to pay": [
         "Для оплаты, пожалуйста выберите страну"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Затем она будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLength } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Специальная цена в ${ priceWithDiscount } действует первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ renewPrice } каждый месяц. Отменить подписку можно в любой момент."
       ],
       "Timeout exceeded": [
         "Превышено время ожидания"
@@ -9489,9 +9451,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
