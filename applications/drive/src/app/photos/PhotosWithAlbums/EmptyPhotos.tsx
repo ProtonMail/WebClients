@@ -63,7 +63,7 @@ export const EmptyPhotos: FC<EmptyPhotosProps> = ({ shareId, linkId }) => {
                     className="w-full"
                     color="norm"
                     onClick={handleClick}
-                    data-testid="toolbar-photos-upload"
+                    data-testid="main-photos-upload"
                     title={c('Action').t`Upload photos`}
                 >
                     <Icon className="mr-2" name="arrow-up-line" alt={c('Action').t`Upload photos`} />
