@@ -20,7 +20,6 @@ import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { type Subscriber, createPubSub } from '@proton/pass/utils/pubsub/factory';
 
@@ -48,7 +47,7 @@ const acceptPortInjection = (
 ): event is MessageEvent<IFrameMessageWithSender<IFramePortMessageType.IFRAME_INJECT_PORT>> =>
     event.data && event.data.sender === 'contentscript' && event.data.type === IFramePortMessageType.IFRAME_INJECT_PORT;
 
-export const createIFrameAppController = (endpoint: IFrameEndpoint) => {
+export const createIFrameAppController = (endpoint: IFrameEndpoint, onMessage: (message: unknown) => void) => {
     const connection = objectHandler<PortContext>({ port: null, forwardTo: null });
     const pubsub = createPubSub<Runtime.Port>();
 
@@ -77,15 +76,16 @@ export const createIFrameAppController = (endpoint: IFrameEndpoint) => {
                 payload: { framePort: port.name, id: endpoint },
             });
 
+            port.onMessage.addListener(onMessage);
+
             port.onDisconnect.addListener(() => {
+                port.onMessage.removeListener(onMessage);
                 connection.set('port', null);
                 connection.set('forwardTo', null);
             });
         },
 
         disconnect: () => {
-            logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
-
             const port = connection.get('port');
             connection.set('port', null);
             connection.set('forwardTo', null);

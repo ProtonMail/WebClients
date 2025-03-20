@@ -49,7 +49,6 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
 
     const authStore = useAuthStore();
     const activityProbe = useExtensionActivityProbe();
-    const controller = useInstance(() => createIFrameAppController(endpoint));
 
     const [state, setIFrameAppState] = useState<IFrameAppState>(getInitialIFrameAppState);
 
@@ -58,16 +57,8 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
         []
     );
 
-    useEffect(() => {
-        setTtagLocales(locales);
-        controller.subscribe((port) => setState({ connectionID: port.name }));
-        return controller.init();
-    }, []);
-
-    useEffect(() => {
-        const port = controller.getPort();
-
-        return port?.onMessage.addListener((message: unknown) => {
+    const controller = useInstance(() =>
+        createIFrameAppController(endpoint, (message: unknown) => {
             if (isIFrameMessage(message)) {
                 switch (message?.type) {
                     case IFramePortMessageType.IFRAME_INIT:
@@ -104,8 +95,14 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                         return AppStateManager.setState(message.payload.state);
                 }
             }
-        });
-    }, [state.connectionID]);
+        })
+    );
+
+    useEffect(() => {
+        setTtagLocales(locales);
+        controller.subscribe((port) => setState({ connectionID: port.name }));
+        return controller.init();
+    }, []);
 
     useEffect(() => {
         if (state.visible) activityProbe.start();
