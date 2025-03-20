@@ -10,6 +10,11 @@ export const useSharesStore = create<SharesState>()(
         shares: {},
         lockedVolumesForRestore: [],
 
+        loadUserSharesPromise: null,
+        defaultSharePromise: null,
+        defaultPhotosSharePromise: null,
+        isLoadingShares: false,
+
         setShares: (newShares) =>
             set((state) => {
                 const updatedShares = { ...state.shares };
@@ -18,20 +23,17 @@ export const useSharesStore = create<SharesState>()(
                 });
                 return { shares: updatedShares };
             }),
-
         removeShares: (shareIds) =>
             set((state) => ({
                 shares: Object.fromEntries(
                     Object.entries(state.shares).filter(([shareId]) => !shareIds.includes(shareId))
                 ),
             })),
-
         getShare: (shareId) => get().shares[shareId],
-
         getLockedShares: () => {
             const { shares } = get();
             return Object.values(shares)
-                .filter((share) => share.isLocked && share.isDefault && !share.isVolumeSoftDeleted)
+                .filter((share) => share.isLocked && share.isDefault && !share.isVolumeSoftDeleted && !share.forASV)
                 .map((defaultShare) => ({
                     defaultShare,
                     devices: Object.values(shares).filter(
@@ -48,27 +50,40 @@ export const useSharesStore = create<SharesState>()(
                     ),
                 }));
         },
-
         getDefaultShareId: () => {
             const { shares } = get();
             return findDefaultShareId(Object.values(shares));
         },
-
         getDefaultPhotosShareId: () => {
             const { shares } = get();
             return findDefaultPhotosShareId(Object.values(shares));
         },
-
         getRestoredPhotosShares: () => {
             const { shares } = get();
             return Object.values(shares).filter(
                 (share) => share.state === ShareState.restored && !share.isLocked && share.type === ShareType.photos
             );
         },
-
+        getDefaultShareEmail: () => {
+            const { shares } = get();
+            const share = findDefaultShare(Object.values(shares));
+            return share ? share.creator : undefined;
+        },
         setLockedVolumesForRestore: (volumes) => set({ lockedVolumesForRestore: volumes }),
+        setLoadUserSharesPromise: (promise) => set({ loadUserSharesPromise: promise }),
+        clearLoadUserSharesPromise: () => set({ loadUserSharesPromise: null }),
+        setDefaultSharePromise: (promise) => set({ defaultSharePromise: promise }),
+        clearDefaultSharePromise: () => set({ defaultSharePromise: null }),
+        setDefaultPhotosSharePromise: (promise) => set({ defaultPhotosSharePromise: promise }),
+        clearDefaultPhotosSharePromise: () => set({ defaultPhotosSharePromise: null }),
+        setIsLoadingShares: (isLoading) => set({ isLoadingShares: isLoading }),
     }))
 );
+
+function findDefaultShare(shares: (Share | ShareWithKey)[]) {
+    const share = shares.find((share) => share.isDefault && !share.isLocked && !share.isVolumeSoftDeleted);
+    return share;
+}
 
 export function findDefaultShareId(shares: (Share | ShareWithKey)[]) {
     const share = shares.find((share) => share.isDefault && !share.isLocked && !share.isVolumeSoftDeleted);

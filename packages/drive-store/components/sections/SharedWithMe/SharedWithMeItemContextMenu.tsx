@@ -40,6 +40,8 @@ export function SharedWithMeContextMenu({
     const { removeMe } = useSharedWithMeActions();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
 
+    const hasAlbumSelected = selectedBrowserItems.some((item) => !!item.albumProperties);
+
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -55,14 +57,16 @@ export function SharedWithMeContextMenu({
                         {isOnlyOneFileItem && showOpenInDocs && (
                             <OpenInDocsButton selectedBrowserItem={selectedBrowserItem} close={close} />
                         )}
-                        <DownloadButton selectedBrowserItems={selectedBrowserItems} close={close} />
+                        {!hasAlbumSelected && (
+                            <DownloadButton selectedBrowserItems={selectedBrowserItems} close={close} />
+                        )}
                         <DetailsButton
                             selectedBrowserItems={selectedBrowserItems}
                             showDetailsModal={showDetailsModal}
                             showFilesDetailsModal={showFilesDetailsModal}
                             close={close}
                         />
-                        {!!selectedBrowserItem && (
+                        {!!selectedBrowserItem && isOnlyOneItem && (
                             <>
                                 <ContextSeparator />
                                 <RemoveMeButton

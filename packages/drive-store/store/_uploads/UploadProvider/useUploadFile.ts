@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import {
@@ -37,6 +36,7 @@ import type { DecryptedLink } from '../../_links';
 import { useLink, useLinksActions, validateLinkName } from '../../_links';
 import type { ShareTypeString } from '../../_shares';
 import { getShareTypeString, useShare } from '../../_shares';
+import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import { useVolumesState } from '../../_volumes';
 import { MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
@@ -59,6 +59,7 @@ type LogCallback = (message: string) => void;
 interface FileRevision {
     isNewFile: boolean;
     filename: string;
+    // this is the file linkID
     fileID: string;
     revisionID: string;
     previousRevisionID?: string;
@@ -71,7 +72,7 @@ interface FileRevision {
 }
 
 export default function useUploadFile() {
-    const [user] = useUser();
+    const userPlan = useGetMetricsUserPlan();
     const debouncedRequest = useDebouncedRequest();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
@@ -166,17 +167,16 @@ export default function useUploadFile() {
                     }
                     throw err;
                 });
-            const createFile = retryOnError<CreateFileResult>({
+
+            const { File: createdFile } = await retryOnError<CreateFileResult>({
                 fn: () => createFilePromise(),
                 shouldRetryBasedOnError: (error: unknown) => isPhotosDisabledUploadError(error as Error),
                 maxRetriesNumber: 3,
                 backoff: true,
-            });
-
-            const { File: createdFile } = await createFile();
+            })();
 
             return {
-                fileID: createdFile.ID,
+                fileID: createdFile.ID, // this is the encrypted linkId for the new File
                 filename,
                 isNewFile: true,
                 privateKey: keys.privateKey,
@@ -331,14 +331,9 @@ export default function useUploadFile() {
                     filename: newName,
                     hash,
                     draftLinkId,
+                    duplicateLinkId,
                     clientUid,
                     isDuplicatePhotos = false,
-                }: {
-                    filename: string;
-                    hash: string;
-                    clientUid?: string;
-                    draftLinkId?: string;
-                    isDuplicatePhotos?: boolean;
                 } = await findDuplicateContentHash(abortSignal, {
                     file,
                     volumeId,
@@ -362,6 +357,8 @@ export default function useUploadFile() {
                 if (isDuplicatePhotos) {
                     throw new TransferSkipped({
                         message: c('Info').t`This item already exists in your library`,
+                        file,
+                        duplicateLinkId,
                     });
                 }
 
@@ -599,6 +596,7 @@ export default function useUploadFile() {
                                               CaptureTime: photo.captureTime || 0,
                                               Exif: photo.encryptedExif,
                                               ContentHash: photo.contentHash,
+                                              Tags: photo.tags,
                                           }
                                         : undefined,
                                 }
@@ -614,6 +612,8 @@ export default function useUploadFile() {
                                 includeCommon: true,
                             });
                         }
+
+                        return { fileId: createdFileRevision.fileID, fileName: createdFileRevision.filename, photo };
                     },
                     5
                 ),
@@ -652,7 +652,7 @@ export default function useUploadFile() {
                     }
                 },
                 notifyVerificationError: (retryHelped: boolean) => {
-                    getShare(new AbortController().signal, shareId)
+                    void getShare(new AbortController().signal, shareId)
                         .then(getShareTypeString)
                         // getShare should be fast call as share is already cached by this time.
                         // In case of failure, fallback 'shared' is good assumption as it might
@@ -661,7 +661,7 @@ export default function useUploadFile() {
                         .catch(() => 'shared' as ShareTypeString)
                         .then((shareType: ShareTypeString) => {
                             const options = {
-                                isPaid: user ? user.isPaid : false,
+                                plan: userPlan,
                                 retryHelped,
                             };
                             integrityMetrics.nodeBlockVerificationError(shareType, file.size, options);

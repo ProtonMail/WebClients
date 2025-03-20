@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom-v5-compat';
 
 import generateUID from '@proton/utils/generateUID';
 
@@ -12,12 +12,12 @@ interface NavigationEvenListener {
 
 let listeners: NavigationEvenListener[] = [];
 
-function useNavigate() {
-    const history = useHistory();
+function useDriveNavigation() {
+    const navigate = useNavigate();
     const location = useLocation();
 
     const pushToHistory = (path: string) => {
-        history.push(path);
+        navigate(path);
         listeners.forEach((listener) => {
             listener.run();
         });
@@ -27,54 +27,59 @@ function useNavigate() {
         (shareId: string, linkId: string, isFile: boolean, rPath?: string) => {
             pushToHistory(`/${shareId}/${toLinkURLType(isFile)}/${linkId}?r=${rPath || location.pathname}`);
         },
-        [history, location.pathname]
+        [location.pathname]
     );
 
-    const redirectToLink = useCallback(
-        (shareId: string, linkId: string, isFile: boolean) => {
-            history.replace(`/${shareId}/${toLinkURLType(isFile)}/${linkId}`);
-        },
-        [history]
-    );
+    const redirectToLink = useCallback((shareId: string, linkId: string, isFile: boolean) => {
+        navigate(`/${shareId}/${toLinkURLType(isFile)}/${linkId}`, { replace: true });
+    }, []);
 
     const navigateToRoot = useCallback(() => {
-        pushToHistory(`/`);
-    }, [history]);
+        pushToHistory('/');
+    }, []);
 
     const navigateToNoAccess = useCallback(() => {
-        pushToHistory(`/no-access`);
-    }, [history]);
+        pushToHistory('/no-access');
+    }, []);
 
     const navigateToSharedByMe = useCallback(() => {
-        pushToHistory(`/shared-urls`);
-    }, [history]);
+        pushToHistory('/shared-urls');
+    }, []);
 
     const navigateToTrash = useCallback(() => {
-        pushToHistory(`/trash`);
-    }, [history]);
+        pushToHistory('/trash');
+    }, []);
 
-    const navigateToDevices = () => {
+    const navigateToDevices = useCallback(() => {
         pushToHistory('/devices');
-    };
+    }, []);
 
-    const navigateToSharedWithMe = () => {
-        pushToHistory(`/shared-with-me`);
-    };
+    const navigateToSharedWithMe = useCallback(() => {
+        pushToHistory('/shared-with-me');
+    }, []);
 
-    const navigateToSearch = useCallback(
-        (searchTerm: string) => {
-            history.push({
-                pathname: '/search',
-                hash: `q=${searchTerm}`,
-            });
-        },
-        [history]
-    );
+    const navigateToAlbum = useCallback((shareId: string, linkId: string) => {
+        pushToHistory(`/photos/albums/${shareId}/album/${linkId}`);
+    }, []);
+
+    const navigateToPhotos = useCallback(() => {
+        pushToHistory('/photos');
+    }, []);
+
+    const navigateToAlbums = useCallback(() => {
+        pushToHistory(`/photos/albums`);
+    }, []);
+
+    const navigateToSearch = useCallback((searchTerm: string) => {
+        navigate({
+            pathname: '/search',
+            hash: `q=${searchTerm}`,
+        });
+    }, []);
 
     const addListener = (listener: () => void) => {
         const listenerId = generateUID('drive-navigation-event');
         listeners.push({ id: listenerId, run: listener });
-
         return listenerId;
     };
 
@@ -94,7 +99,10 @@ function useNavigate() {
         navigateToDevices,
         navigateToSharedWithMe,
         redirectToLink,
+        navigateToAlbum,
+        navigateToPhotos,
+        navigateToAlbums,
     };
 }
 
-export default useNavigate;
+export default useDriveNavigation;

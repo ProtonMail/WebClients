@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 import { getUrlPassword } from '../../utils/url/password';
 
@@ -12,7 +12,7 @@ export default function usePublicToken() {
         }
         return '';
     }, [pathname]);
-    const urlPassword = getUrlPassword();
+    const urlPassword = useMemo(() => getUrlPassword(), []);
 
     return {
         token,

@@ -9,7 +9,7 @@ import type { DecryptedLink } from '../_links';
 import { useLinksActions, useLinksListing } from '../_links';
 import type { Share, ShareWithKey } from '../_shares';
 import { waitFor } from '../_utils';
-import { usePhotos } from './PhotosProvider';
+import { usePhotosOrPhotosWithAlbums } from './PhotosOrPhotosWithAlbumsProvider';
 
 export type RECOVERY_STATE =
     | 'READY'
@@ -27,7 +27,7 @@ export type RECOVERY_STATE =
 const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 
 export const usePhotosRecovery = () => {
-    const { shareId, linkId, deletePhotosShare } = usePhotos();
+    const { shareId, linkId, deletePhotosShare } = usePhotosOrPhotosWithAlbums();
     const getRestoredPhotosShares = useSharesStore((state) => state.getRestoredPhotosShares);
     const { getCachedChildren, getCachedTrashed, loadChildren } = useLinksListing();
     const { moveLinks } = useLinksActions();

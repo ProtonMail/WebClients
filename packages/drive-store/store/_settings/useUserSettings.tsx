@@ -5,6 +5,7 @@ import { useApi, useDrivePlan } from '@proton/components';
 import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type {
     LayoutSetting,
     RevisionRetentionDaysSetting,
@@ -20,6 +21,7 @@ const UserSettingsContext = createContext<{
     sort: UserSortParams;
     layout: LayoutSetting;
     revisionRetentionDays: RevisionRetentionDaysSetting;
+    photoTags: PhotoTag[];
     photosEnabled: boolean;
     photosWithAlbumsEnabled: boolean;
     changeSort: (sortParams: UserSortParams) => Promise<void>;
@@ -40,8 +42,8 @@ export function UserSettingsProvider({
     const api = useApi();
     const driveB2BPhotosUpload = useFlag('DriveB2BPhotosUpload');
     const driveAlbumsRollout = useFlag('DriveAlbums');
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled')
-    const driveAlbumsEnabled = driveAlbumsRollout && !driveAlbumsDisabled
+    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
+    const driveAlbumsEnabled = driveAlbumsRollout && !driveAlbumsDisabled;
 
     const [userSettings, setUserSettings] = useState<UserSettings>(() => {
         const { UserSettings, Defaults } = initialDriveUserSettings;
@@ -104,6 +106,7 @@ export function UserSettingsProvider({
         sort,
         layout: userSettings.Layout,
         revisionRetentionDays: userSettings.RevisionRetentionDays,
+        photoTags: userSettings.PhotoTags,
         photosEnabled: isPhotosEnabled,
         photosWithAlbumsEnabled: isPhotosWithAlbumsEnabled,
         changeSort,

@@ -2,7 +2,7 @@ import { useCallback, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
 
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { useDevicesView } from '../../../store';
 import FileBrowser, { Cells, useItemContextMenu, useSelection } from '../../FileBrowser';
@@ -36,7 +36,7 @@ const headerItemsSmallScreen: ListViewHeaderItem[] = [headerCells.name, headerCe
 function Devices({ view }: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink } = useDriveNavigation();
     const browserItemContextMenu = useItemContextMenu();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();

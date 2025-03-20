@@ -1,12 +1,25 @@
 import { usePreventLeave } from '@proton/components';
 import { queryPublicDeleteChildrenLinks } from '@proton/shared/lib/api/drive/link';
+import { API_CODES } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import chunk from '@proton/utils/chunk';
 
 import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
 import { usePublicSession } from '../_api';
 import useLinksState from './useLinksState';
+
+interface BatchResponsePayload {
+    Code: number;
+    Responses: {
+        LinkID: string;
+        Response: {
+            Code: number;
+            Error?: string;
+        };
+    }[];
+}
 
 /**
  * usePublicLinksActions provides actions for manipulating with links in batches in a public context.
@@ -36,7 +49,7 @@ export function usePublicLinksActions() {
      * batches to make sure API can handle it (to not send thousands of links
      * in one request), all run in parallel (up to a reasonable limit).
      */
-    const batchHelper = async <T>(
+    const batchHelper = async (
         abortSignal: AbortSignal,
         token: string,
         linkIds: string[],
@@ -44,18 +57,31 @@ export function usePublicLinksActions() {
         maxParallelRequests = MAX_THREADS_PER_REQUEST
     ) => {
         return withLinkLock(token, linkIds, async () => {
-            const responses: { batchLinkIds: string[]; response: T }[] = [];
+            const responses: {
+                batchLinkIds: string[];
+                response: BatchResponsePayload;
+            }[] = [];
             const successes: string[] = [];
             const failures: { [linkId: string]: any } = {};
+            let notAllowedErrorCount = 0;
 
             const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
 
             const queue = batches.map(
                 (batchLinkIds) => () =>
-                    publicDebouncedRequest<T>(query(batchLinkIds, token), abortSignal)
+                    publicDebouncedRequest<BatchResponsePayload>(query(batchLinkIds, token), abortSignal)
                         .then((response) => {
+                            response.Responses.forEach((link) => {
+                                if (link.Response.Code !== API_CODES.SINGLE_SUCCESS) {
+                                    if (link.Response.Code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED) {
+                                        notAllowedErrorCount += 1;
+                                    }
+                                    failures[link.LinkID] = link.Response.Error;
+                                } else {
+                                    successes.push(link.LinkID);
+                                }
+                            });
                             responses.push({ batchLinkIds, response });
-                            batchLinkIds.forEach((linkId) => successes.push(linkId));
                         })
                         .catch((error) => {
                             batchLinkIds.forEach((linkId) => (failures[linkId] = error));
@@ -66,6 +92,7 @@ export function usePublicLinksActions() {
                 responses,
                 successes,
                 failures,
+                notAllowedErrorCount,
             };
         });
     };

@@ -1,7 +1,5 @@
 import { makeZip } from 'client-zip';
 import { fromUnixTime } from 'date-fns';
-import type { ReadableStream } from 'web-streams-polyfill';
-import { TransformStream } from 'web-streams-polyfill';
 
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 

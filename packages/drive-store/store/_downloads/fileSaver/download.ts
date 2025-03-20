@@ -1,5 +1,3 @@
-import { WritableStream } from 'web-streams-polyfill';
-
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
