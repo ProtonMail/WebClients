@@ -981,11 +981,6 @@
         "30 dages tilbagebetalingsgaranti"
       ]
     },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Den særligt nedsatte pris på ${ discountedPrice } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ nextPrice } hver måned. Du kan til enhver tid opsige."
-      ]
-    },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
@@ -5043,9 +5038,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Abonnementet fornys automatisk hver ${ cycle } måned."
-      ],
       "Subscription auto-renews every month.": [
         "Abonnementet auto-fornyer hver måned."
       ],
@@ -5416,9 +5408,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
@@ -7847,23 +7836,8 @@
       "Please select your billing state first.": [
         "Vælg venligst dit faktureringsstat først."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Fornyes til ${ renewPrice }, annuller når som helst."
-      ],
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måneder. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ renewPrice } i ${ subscriptionLengthCopy } måneder. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måneder. Derefter fornys den automatisk til ${ renewPrice } i ${ subscriptionLengthCopy } måneder. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder forden første måned. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ renewPrice } i ${ subscriptionLength } måned. Du kan annullere når som helst."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første måned. Derefter vil den automatisk blive fornyet til ${ renewPrice } hver måned. Du kan annullere når som helst."
       ],
       "Timeout exceeded": [
         "Timeout overskredet"
@@ -10174,9 +10148,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Du vil blive faktureret ${ renewPrice } hver 12. måned."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."
