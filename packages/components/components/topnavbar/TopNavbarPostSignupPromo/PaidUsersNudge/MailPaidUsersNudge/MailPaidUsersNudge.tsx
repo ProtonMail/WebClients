@@ -4,10 +4,12 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import Price from '@proton/components/components/price/Price';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
@@ -15,24 +17,15 @@ import { TelemetryPaidUsersNudge } from '@proton/shared/lib/api/telemetry';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import mailOfferSpotlight from '@proton/styles/assets/img/permanent-offer/mail_offer_spotlight.svg';
-import { useVariant } from '@proton/unleash';
 
 import { SpotlightWithPromo } from '../../common/SpotlightWithPromo';
-import { NudeOfferCTA } from '../components/NudeOfferCTA';
 import { NudgeOfferContent } from '../components/NudgeOfferContent';
 import { NudgeOfferSpotlight } from '../components/NudgeOfferSpotlight';
-import { HIDE_OFFER, VariantsValues } from '../components/interface';
+import { HIDE_OFFER } from '../components/interface';
 import { isLastDayOfWindow } from '../components/paidUserNudgeHelper';
 import { useGetPlanPriceWithCoupon } from '../components/useGetPlanPriceWithCoupon';
 import { usePaidUsersNudgeTelemetry } from '../components/usePaidUsersNudgeTelemetry';
 import { useMailPaidUsersNudge } from './useMailPaidUsersNudge';
-
-const getUpsellFeature = (variant?: string) => {
-    if (variant === VariantsValues.money) {
-        return MAIL_UPSELL_PATHS.PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY;
-    }
-    return MAIL_UPSELL_PATHS.PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_PERCENTAGE;
-};
 
 const upsellConfig = {
     step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -52,9 +45,10 @@ export const MailPaidUsersNudge = () => {
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
 
+    const [currency] = useAutomaticCurrency();
+
     const subscriptionAge = differenceInDays(Date.now(), fromUnixTime(subscription?.PeriodStart ?? 0));
 
-    const variant = useVariant('MailPlusSubscribersNudgeExperiment');
     const { update } = useFeature(FeatureCode.MailPaidUserNudgeTimestamp);
 
     const upsellRef = useMemo(
@@ -62,7 +56,7 @@ export const MailPaidUsersNudge = () => {
             getUpsellRef({
                 app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
                 component: UPSELL_COMPONENT.MODAL,
-                feature: getUpsellFeature(variant!.name),
+                feature: MAIL_UPSELL_PATHS.PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY,
             }),
         []
     );
@@ -70,7 +64,7 @@ export const MailPaidUsersNudge = () => {
     const handleSubscribed = () => {
         sendMailPlusPaidUsersNudgeReport({
             event: TelemetryPaidUsersNudge.userSubscribed,
-            dimensions: { subscriptionAge, variant: variant.name ?? 'unknown' },
+            dimensions: { subscriptionAge },
         });
 
         // We set the flag to "hide offer" when the user subscribed so they don't see the offer again
@@ -100,7 +94,7 @@ export const MailPaidUsersNudge = () => {
     const handleClick = () => {
         sendMailPlusPaidUsersNudgeReport({
             event: TelemetryPaidUsersNudge.clickUpsellButton,
-            dimensions: { subscriptionAge, variant: variant.name ?? 'unknown' },
+            dimensions: { subscriptionAge },
         });
 
         if (onUpgrade) {
@@ -120,7 +114,7 @@ export const MailPaidUsersNudge = () => {
     const handleHideOffer = () => {
         sendMailPlusPaidUsersNudgeReport({
             event: TelemetryPaidUsersNudge.clickHideOffer,
-            dimensions: { subscriptionAge, variant: variant.name ?? 'unknown' },
+            dimensions: { subscriptionAge },
         });
 
         createNotification({
@@ -146,7 +140,7 @@ export const MailPaidUsersNudge = () => {
                 } else {
                     sendMailPlusPaidUsersNudgeReport({
                         event: TelemetryPaidUsersNudge.clickTopNavbar,
-                        dimensions: { subscriptionAge, variant: variant.name ?? 'unknown' },
+                        dimensions: { subscriptionAge },
                     });
 
                     setSpotlightState((val) => !val);
@@ -155,13 +149,21 @@ export const MailPaidUsersNudge = () => {
             promoIconName="light-lightbulb"
             promoColor="norm"
             promoChildren={
-                <span className="color-primary">{<NudeOfferCTA variant={variant.name} prices={prices} />}</span>
+                <span className="color-primary">
+                    {prices?.savedAmount ? (
+                        <Price currency={currency} prefix={c('Offer').t`Save`} isDisplayedInSentence>
+                            {prices.savedAmount}
+                        </Price>
+                    ) : (
+                        c('Offer').t`Get the deal`
+                    )}
+                </span>
             }
             onClose={() => {
                 setSpotlightState(false);
                 sendMailPlusPaidUsersNudgeReport({
                     event: TelemetryPaidUsersNudge.closeOffer,
-                    dimensions: { subscriptionAge, variant: variant.name ?? 'unknown' },
+                    dimensions: { subscriptionAge },
                 });
             }}
             promoLoading={loading || loadingSubscription || isLoading}
@@ -172,7 +174,6 @@ export const MailPaidUsersNudge = () => {
                 ) : (
                     <NudgeOfferContent
                         imgSrc={mailOfferSpotlight}
-                        variant={variant.name}
                         onClick={handleClick}
                         prices={prices}
                         onNeverShow={handleHideOffer}
