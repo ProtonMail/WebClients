@@ -381,9 +381,6 @@
       "Edit": [
         "Upraviť"
       ],
-      "Edit album": [
-        "Upraviť album"
-      ],
       "Edit email address": [
         "Upraviť emailovú adresu"
       ],
@@ -849,9 +846,6 @@
       "Select country": [
         "Vyberte krajinu"
       ],
-      "Set album cover": [
-        "Nastaviť obal albumu"
-      ],
       "Set as album cover": [
         "Nastaviť ako obal albumu"
       ],
@@ -1107,12 +1101,6 @@
       "${ price } per user": [
         "${ price } za používateľa"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats }${ LUMO_APP_NAME } licencia",
-        "${ seats }${ LUMO_APP_NAME } licencie",
-        "${ seats }${ LUMO_APP_NAME } licencií",
-        "${ seats }${ LUMO_APP_NAME } licencií"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
         "${ seats } licencie asistentov písania",
@@ -1186,14 +1174,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dňová záruka vrátenia peňazí"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ discountedPrice } platí počas prvých ${ cycle } mesiacov. Potom sa automaticky obnoví za zľavnenú cenu ${ nextPrice } na ${ renewalLength } mesiacov. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
       ]
     },
     "bf2023: Tooltip": {
@@ -4362,9 +4342,6 @@
         "${ invitations.length } čakajúcich pozvánok",
         "${ invitations.length } čakajúcich pozvánok"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
       ],
@@ -5505,9 +5482,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Predplatné sa obnovuje automaticky každých ${ cycle } mesiacov."
-      ],
       "Subscription auto-renews every month.": [
         "Predplatné sa obnovuje automaticky každý mesiac."
       ],
@@ -6041,9 +6015,6 @@
       ],
       "Your previous recovery phrase": [
         "Vaša predchádzajúca obnovovacia fráza"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každých ${ cycle } mesiacov."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý mesiac."
@@ -8953,23 +8924,8 @@
       "Please select your billing state first.": [
         "Najprv vyberte fakturačný štát, prosím."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Obnovuje sa za ${ renewPrice }, zrušiť môžete kedykoľvek."
-      ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvých ${ subscriptionLength } mesiacov. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí počas prvých ${ subscriptionLength } mesiacov. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLengthCopy } mesiacov. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPrice } na ${ subscriptionLength } mesiac. Službu môžete kedykoľvek zrušiť."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPrice }. Službu môžete kedykoľvek zrušiť."
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
@@ -11473,9 +11429,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Potom vám bude každých 12 mesiacov vystavená faktúra vo výške ${ renewPrice }."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiac",
         "Vaše nové predplatné bude automaticky obnovené o ${ cycle } mesiace",
