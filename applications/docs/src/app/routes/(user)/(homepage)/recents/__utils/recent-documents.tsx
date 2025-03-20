@@ -100,7 +100,10 @@ export function useRecentDocumentsValue({ searchText, filter }: { searchText?: s
 
   const handleOpenFolder = useCallback(
     (recentDocument: RecentDocumentItem) => {
-      const to = `/${recentDocument.volumeId}/folder/${recentDocument.parentLinkId}`
+      let to = '/'
+      if (recentDocument.parentLinkId) {
+        to = `/${recentDocument.shareId}/folder/${recentDocument.parentLinkId}`
+      }
       window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()))
     },
     [getLocalID],
