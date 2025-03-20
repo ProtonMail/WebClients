@@ -879,10 +879,6 @@
       "${ price } per user": [
         "${ price } per utente"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } posto ${ LUMO_APP_NAME }",
-        "${ seats } posti ${ LUMO_APP_NAME }"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } posto dell'assistente alla scrittura",
         "${ seats } posti dell'assistente alla scrittura"
@@ -1001,14 +997,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garanzia 30 giorni soddisfatti o rimborsati"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Il prezzo scontato di ${ discountedPrice } è valido per i primi ${ cycle } mesi. Successivamente verrà rinnovato automaticamente al prezzo scontato di ${ nextPrice } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ discountedPrice }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ nextPrice } al mese. Puoi annullare in qualsiasi momento."
       ]
     },
     "bf2023: Tooltip": {
@@ -4422,8 +4410,8 @@
         "${ contactCount } contatti contengono più indirizzi email."
       ],
       "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Membro",
-        "${ contactEmailsLength } Membri"
+        "${ contactEmailsLength } membro",
+        "${ contactEmailsLength } membri"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } contiene più indirizzi email."
@@ -4442,9 +4430,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
-      ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } include l'assistente di scrittura ${ BRAND_NAME } Scribe."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
@@ -5153,7 +5138,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "L'abbonamento si rinnova automaticamente ogni ${ cycle } mese.",
         "L'abbonamento si rinnova automaticamente ogni ${ cycle } mesi."
       ],
       "Subscription auto-renews every month.": [
@@ -5461,6 +5447,10 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Aggiornerai tutti gli eventi di questa serie. I partecipanti rimossi saranno avvisati."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese.",
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mesi."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Hai raggiunto il numero massimo d'indirizzi nel gruppo o gruppi di contatti:"
       ],
@@ -5527,11 +5517,15 @@
       "Your phone number will only be used for this one-time verification.": [
         "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese.",
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Il fuso orario di sistema sembra essere cambiato a ${ timezone }. Vuoi aggiornare la tua preferenza di fuso orario?"
@@ -8118,23 +8112,36 @@
       "Please select your billing state first.": [
         "Seleziona prima lo stato di fatturazione."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Rinnova a ${ renewPrice }, annulla in qualsiasi momento."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "I prezzi di rinnovo sono soggetti a modifiche in base a ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
       ],
       "Select billing country to pay": [
         "Seleziona il paese di fatturazione per il pagamento"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } ogni ${ subscriptionLengthCopy }. Puoi annullare in qualsiasi momento."
+      "terms & conditions": [
+        "termini e condizioni"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } per ${ subscriptionLengthCopy } mesi. Puoi annullare in qualsiasi momento."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Il coupon è valido per ${ couponRedemptions } rinnovo.",
+        "Il coupon è valido per ${ couponRedemptions } rinnovi."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPrice } per ${ subscriptionLength } mese. Puoi annullare in qualsiasi momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo ${ subscriptionLength } mese.",
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per i primi ${ subscriptionLength } mesi."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ renewPrice } al mese. Puoi annullare in qualsiasi momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovo. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "La tariffa scontata, con prezzo speciale di ${ priceWithDiscount } è valida per il primo mese. Il piano si rinnoverà poi automaticamente al prezzo di ${ renewPriceStr } per mese. Puoi disdire quando vuoi."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
+        "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
@@ -10506,8 +10513,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Ti verrà addebitato un importo pari a ${ renewPrice } ogni 12 mesi."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Ti verrà addebitato un importo pari a ${ renewPriceStr } ogni 12 mesi."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Il tuo nuovo abbonamento si rinnoverà automaticamente tra ${ cycle } mese.",
