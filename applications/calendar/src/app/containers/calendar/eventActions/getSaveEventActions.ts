@@ -1,5 +1,6 @@
 import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
+import { ATTENDEE_COMMENT_ENCRYPTION_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
@@ -225,28 +226,20 @@ const getSaveEventActions = async ({
         modelVeventComponent.organizer = buildVcalOrganizer(organizerEmail, organizerEmail);
     }
 
-    // If user commented the event, update his comment in the vevent attendees
-    if (inviteActions.comment?.Message && modelVeventComponent.attendee?.length) {
-        modelVeventComponent.attendee = modelVeventComponent.attendee.map((attendee) => {
-            const isCurrentUser = attendee.parameters?.cn === selfAddress.Email;
-            if (isCurrentUser) {
-                attendee.parameters = {
-                    ...attendee.parameters,
-                    comment: inviteActions.comment?.Message,
-                };
-            }
-
-            return attendee;
-        });
-    }
-
     // Also add selfAddress to inviteActions if it doesn't have one
     const inviteActionsWithSelfAddress = { ...inviteActions };
     if (!inviteActions.selfAddress) {
         inviteActionsWithSelfAddress.selfAddress = selfAddress;
     }
+
+    // If user commented the event, update his comment in the vevent attendees
+    if (inviteActions.comment?.Message && inviteActions.comment.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT) {
+        modelVeventComponent.comment = [{ value: inviteActions.comment.Message }];
+    }
+
     // Handle duplicate attendees if any
     const newVeventComponent = await withPmAttendees(modelVeventComponent, getCanonicalEmailsMap);
+
     const handleEquivalentAttendees = async (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
         const equivalentAttendees = getEquivalentAttendeesSend(vevent, inviteActions);
         if (equivalentAttendees) {
