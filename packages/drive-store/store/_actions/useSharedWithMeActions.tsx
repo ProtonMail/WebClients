@@ -17,10 +17,11 @@ export const useSharedWithMeActions = () => {
     const removeMe = (
         abortSignal: AbortSignal,
         showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
-        shareId: string
+        shareId: string,
+        onRemoved?: () => void
     ) => {
         showConfirmModal({
-            title: c('Title').t`Confirmation required?`,
+            title: c('Title').t`Confirmation required`,
             message: (
                 <>
                     <p>
@@ -46,6 +47,7 @@ export const useSharedWithMeActions = () => {
                     createNotification({
                         text: c('Notification').t`File removed`,
                     });
+                    onRemoved?.();
                 } catch (e) {
                     showErrorNotification(e, c('Notification').t`Failed to remove the file`);
                     throw e;

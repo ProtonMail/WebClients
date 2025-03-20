@@ -138,11 +138,31 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         nodeKey: link.NodeKey,
         nodePassphrase: link.NodePassphrase,
         nodePassphraseSignature: link.NodePassphraseSignature,
-        nodeHashKey: link.FolderProperties?.NodeHashKey,
+        nodeHashKey: link.FolderProperties?.NodeHashKey || link.AlbumProperties?.NodeHashKey,
         contentKeyPacket: link.FileProperties?.ContentKeyPacket,
         contentKeyPacketSignature: link.FileProperties?.ContentKeyPacketSignature,
         signatureEmail: link.SignatureEmail,
         xAttr: link.XAttr,
+        photoProperties: link.PhotoProperties
+            ? {
+                  albums: link.PhotoProperties.Albums.map((album) => ({
+                      albumLinkId: album.AlbumLinkID,
+                      hash: album.Hash,
+                      contentHash: album.ContentHash,
+                      addedTime: album.AddedTime,
+                  })),
+                  tags: link.PhotoProperties.Tags,
+              }
+            : undefined,
+        albumProperties: link.AlbumProperties
+            ? {
+                  nodeHashKey: link.AlbumProperties.NodeHashKey,
+                  coverLinkId: link.AlbumProperties.CoverLinkID,
+                  photoCount: link.AlbumProperties.PhotoCount,
+                  lastActivityTime: link.AlbumProperties.LastActivityTime,
+                  locked: link.AlbumProperties.Locked,
+              }
+            : undefined,
         volumeId: link.VolumeID,
     };
 }
@@ -198,7 +218,8 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
 export function shareMetaToShareWithKey(share: ShareMeta): ShareWithKey {
     return {
         ...shareMetaShortToShare(share),
-        addressId: share.AddressID,
+        addressId: share.AddressID || share.Memberships[0].AddressID,
+        forASV: share.ForASV,
         key: share.Key,
         passphrase: share.Passphrase,
         passphraseSignature: share.PassphraseSignature,
@@ -364,6 +385,7 @@ export const shareInvitationDetailsPayloadToShareInvitationDetails = (
             name: shareInvitationDetails.Link.Name,
             mimeType: shareInvitationDetails.Link.MIMEType,
             isFile: shareInvitationDetails.Link.Type === LinkType.FILE,
+            type: shareInvitationDetails.Link.Type,
         },
     };
 };

@@ -17,7 +17,7 @@ const ShareButton = ({ shareId, isSharedWithMe, showFileSharingModal, showLinkSh
         <ContextMenuButton
             name={c('Action').t`Share`}
             icon={isSharedWithMe ? 'users' : 'user-plus'}
-            testId="context-menu-folder"
+            testId="context-menu-share-file-selection"
             action={() => showFileSharingModal({ shareId, showLinkSharingModal })}
             close={close}
         />

@@ -1,0 +1,86 @@
+diff --git a/packages/drive-store/store/_api/usePublicSession.tsx b/packages/drive-store/store/_api/usePublicSession.tsx
+index 2024d34b18..7a67b0737c 100644
+--- a/packages/drive-store/store/_api/usePublicSession.tsx
++++ b/packages/drive-store/store/_api/usePublicSession.tsx
+@@ -4,6 +4,7 @@ import { useApi, useAuthentication } from '@proton/components';
+ import metrics from '@proton/metrics';
+ import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api/drive/sharing';
+ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
++import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+ import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+ import { getUIDHeaders, withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+@@ -62,37 +63,52 @@ function usePublicSessionProvider() {
+         return getShareCreatorKeys(abortSignal, defaultShare);
+     };
+ 
+-    const initHandshake = async (token: string) => {
++    /**
++     * Sets all auth-related properties from a given resumed session before the
++     * initHandshake request is run.
++     */
++    const handleHandshakeInitSession = async (session: ResumedSessionResult) => {
++        auth.setPassword(session.keyPassword);
++        auth.setUID(session.UID);
++        auth.setLocalID(session.LocalID);
++        // This hack is needed to have authenticated requests
++        (api as any).UID = session.UID;
++        // In case user is logged-in we can preload default share.
++        // This will be used to get info for users actions (Rename, Delete, etc..)
++        const addressKeyInfo = await getAddressKeyInfo(new AbortController().signal);
++        if (addressKeyInfo) {
++            setUserAddressEmail(addressKeyInfo.address.Email);
++        }
++        const user = formatUser(session.User);
++        setUser(user);
++        await userSuccessMetrics.setLocalUser(session.UID, getMetricsUserPlan({ user, isPublicContext: true }));
++    };
++
++    const initHandshake = async (
++        token: string,
++        /** An already resumed session can be passed in when available. For e.g., if local id is available during bootstrap, loadSession will give you a resumed session which can be used instead of looking for the last active persisted user session. */
++        session?: ResumedSessionResult
++    ) => {
+         /*
+             initHandshake is the first request, which can fail, so we set the auth headers for the metrics.
+             Metrics to be authenticated either needs a persisted session (default, as below) or an access token set in initSession().
+             In case you neither have persisted session or access token, you will be 401 Unauthorized to call metrics.
+         */
++
+         const persistedSession = getLastActivePersistedUserSession();
+-        if (persistedSession) {
++        if (session) {
++            try {
++                metrics.setAuthHeaders(session.UID);
++                await handleHandshakeInitSession(session);
++            } catch (e) {
++                console.warn('Cannot resume session');
++            }
++        } else if (persistedSession) {
+             try {
+                 metrics.setAuthHeaders(persistedSession.UID);
+                 // We need to silence reponse, in case the token is invalid we just want to show not logged-in page instead of have error notification
+                 const resumedSession = await resumeSession({ api: silentApi, localID: persistedSession.localID });
+-                if (resumedSession) {
+-                    auth.setPassword(resumedSession.keyPassword);
+-                    auth.setUID(persistedSession.UID);
+-                    auth.setLocalID(persistedSession.localID);
+-                    // This hack is needed to have authenticated requests
+-                    (api as any).UID = persistedSession.UID;
+-                    // In case user is logged-in we can preload default share.
+-                    // This will be used to get info for users actions (Rename, Delete, etc..)
+-                    const addressKeyInfo = await getAddressKeyInfo(new AbortController().signal);
+-                    if (addressKeyInfo) {
+-                        setUserAddressEmail(addressKeyInfo.address.Email);
+-                    }
+-                }
+-                const user = formatUser(resumedSession.User);
+-                setUser(user);
+-                await userSuccessMetrics.setLocalUser(
+-                    persistedSession.UID,
+-                    getMetricsUserPlan({ user, isPublicContext: true })
+-                );
++                await handleHandshakeInitSession(resumedSession);
+             } catch (e) {
+                 // TODO: Probably getLastPersistedLocalID is the source of issue
+                 // Investigate why later

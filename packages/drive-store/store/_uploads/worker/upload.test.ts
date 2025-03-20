@@ -4,6 +4,12 @@ import { Pauser } from './pauser';
 import { createUploadingBlockControl } from './testHelpers';
 import startUploadJobs, { XHRError } from './upload';
 
+jest.mock('./worker', () => {
+    return {
+        uploadWorker: undefined,
+    };
+});
+
 describe('upload jobs', () => {
     const mockUploadBlockFinishCallback = jest.fn();
     const mockUploadBlockExpiredCallback = jest.fn();

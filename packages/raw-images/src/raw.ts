@@ -17,6 +17,7 @@ interface DCRawModule {
 declare global {
     interface Window {
         Module: DCRawModule;
+        importScripts(...urls: string[]): void;
     }
 
     interface WorkerGlobalScope {

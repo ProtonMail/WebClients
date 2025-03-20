@@ -35,6 +35,7 @@ describe('useUploadConflict', () => {
                 mimeType: 'txt',
             },
             numberOfErrors: 0,
+            callbacks: {},
         }));
         const folderUploads: FolderUpload[] = [];
         const wrapper = ({ children }: { children: ReactNode }) => <ModalsProvider>{children}</ModalsProvider>;

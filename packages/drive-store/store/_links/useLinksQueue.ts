@@ -66,7 +66,8 @@ export const useLinksQueue = ({ loadThumbnails }: Props = {}) => {
         });
 
     const addToQueue = (shareId: string, linkId: string, domRef?: React.MutableRefObject<unknown>) => {
-        if (linksState.getLink(shareId, linkId) || queue.current.has(linkId)) {
+        const link = linksState.getLink(shareId, linkId);
+        if (link || queue.current.has(linkId)) {
             return;
         }
 

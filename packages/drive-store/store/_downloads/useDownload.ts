@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import type { ReadableStream } from 'web-streams-polyfill';
 
 import { useApi } from '@proton/components';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';

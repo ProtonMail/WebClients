@@ -10,6 +10,12 @@ export enum MetricSharePublicType {
 }
 
 export type MetricShareTypeWithPublic = MetricSharePublicType | MetricShareType;
+export enum MetricUserPlan {
+    Paid = 'paid',
+    Free = 'free',
+    Anonymous = 'anonymous',
+    Unknown = 'unknown',
+}
 
 enum BaseErrorCategory {
     NetworkError = 'network_error',

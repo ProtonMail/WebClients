@@ -1,7 +1,5 @@
-import type { ReadableStream } from 'web-streams-polyfill';
-
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
@@ -12,13 +10,14 @@ import { sendErrorReport } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { isValidationError } from '../../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../../utils/stream';
-import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { LogCallback } from '../interface';
 import { initDownloadSW, isServiceWorkersUnsupported, openDownloadStream } from './download';
 
-const isOPFSSupported = () => !!(navigator.storage && navigator.storage.getDirectory);
+const isOPFSSupported = () => {
+    return !isSafari() && !isMobile() && !!(navigator.storage && navigator.storage.getDirectory);
+};
 
 const DOWNLOAD_SW_INIT_TIMEOUT = 15 * 1000;
 const MB = 1024 * 1024;
@@ -61,41 +60,41 @@ const getRemovalTimeout = (size?: number): number => {
     return 4e4; // 40 seconds, same default as the file-saver package we use https://github.com/eligrey/FileSaver.js/blob/master/src/FileSaver.js#L106
 };
 
-export const selectMechanismForDownload = async (
-    size?: number
-): Promise<'memory' | 'opfs' | 'sw' | 'memory_fallback'> => {
-    /** For E2E usage we need to enforce a certain mechanism and test all mechanism without any limits */
-    const cookie = getCookie('DriveE2EDownloadMechanism');
-    if (cookie && ['memory', 'opfs', 'sw'].includes(cookie)) {
-        return cookie as 'memory' | 'opfs' | 'sw';
-    }
-
-    const limit = getMemoryLimit();
-    if (size && size < limit) {
-        return 'memory';
-    }
-
-    // https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system
-    if (isOPFSSupported() && (await hasEnoughOPFSStorage(size))) {
-        return 'opfs';
-    }
-
-    if (isServiceWorkersUnsupported()) {
-        return 'memory_fallback';
-    }
-
-    return 'sw';
-};
-
 // FileSaver provides functionality to start download to file. This class does
 // not deal with API or anything else. Files which fit the memory (see
 // MEMORY_DOWNLOAD_LIMIT constant) are buffered in browser and then saved in
 // one go. Bigger files are streamed and user can see the progress almost like
 // it would be normal file. See saveViaDownload for more info.
-class FileSaver {
-    private useBlobFallback = false;
+export class FileSaver {
+    useBlobFallback: boolean = false;
+
+    useSWFallback: boolean = false;
 
     private isSWReady: boolean = false;
+
+    async selectMechanismForDownload(size?: number): Promise<'memory' | 'opfs' | 'sw' | 'memory_fallback'> {
+        /** For E2E usage we need to enforce a certain mechanism and test all mechanism without any limits */
+        const cookie = getCookie('DriveE2EDownloadMechanism');
+        if (cookie && ['memory', 'opfs', 'sw'].includes(cookie)) {
+            return cookie as 'memory' | 'opfs' | 'sw';
+        }
+
+        const limit = getMemoryLimit();
+        if (size && size < limit) {
+            return 'memory';
+        }
+
+        // https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system
+        if (isOPFSSupported() && this.useSWFallback === false && (await hasEnoughOPFSStorage(size))) {
+            return 'opfs';
+        }
+
+        if (this.useBlobFallback === true || isServiceWorkersUnsupported()) {
+            return 'memory_fallback';
+        }
+
+        return 'sw';
+    }
 
     // saveViaDownload uses service workers to download file without need to
     // buffer the whole content in memory and open the download in browser as
@@ -110,11 +109,32 @@ class FileSaver {
     // be great if we could merge this to the same worker (but note the
     // difference between web and service worker) to reduce data exchanges.
     private async saveViaDownload(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+        if (!this.isSWReady) {
+            if (isServiceWorkersUnsupported()) {
+                this.useBlobFallback = true;
+            } else {
+                // Always wait for Service Worker initialization to complete
+                try {
+                    await promiseWithTimeout({
+                        timeoutMs: DOWNLOAD_SW_INIT_TIMEOUT,
+                        promise: initDownloadSW(),
+                    });
+                } catch (error: unknown) {
+                    this.useBlobFallback = true;
+                    if (error instanceof Error) {
+                        console.warn('Saving file will fallback to in-memory downloads:', error.message);
+                        log(`Service worker fail reason: ${error.message}`);
+                    } else {
+                        log(`Service worker throw not an Error: ${typeof error} ${String(error)}`);
+                    }
+                } finally {
+                    this.isSWReady = true;
+                }
+            }
+        }
+
         if (this.useBlobFallback) {
-            void countActionWithTelemetry(Actions.DownloadFallback);
             return this.saveViaBuffer(stream, meta, log);
-        } else {
-            void countActionWithTelemetry(Actions.DownloadUsingSW);
         }
 
         log('Saving via service worker');
@@ -135,14 +155,36 @@ class FileSaver {
     }
 
     private async saveViaOPFS(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+        if (this.useSWFallback) {
+            return this.saveViaDownload(stream, meta, log);
+        }
+
         log('Saving via OPFS');
         try {
-            // Get the OPFS root directory
-            const root = await navigator.storage.getDirectory();
-            // Create or open the file in the OPFS
-            const fileHandle = await root.getFileHandle(meta.filename, { create: true });
-            // Create a writable stream to the file
-            const writable = await fileHandle.createWritable();
+            let root: FileSystemDirectoryHandle;
+            let fileHandle: FileSystemFileHandle;
+            let writable: FileSystemWritableFileStream;
+
+            try {
+                // Get the OPFS root directory
+                // Firefox has a bug where sometimes it fails to getDirectoy
+                // DOMException: Security error when calling GetDirectory
+                // Considered we haven't started the download yet, we fallback to SW download
+                // https://webcompat.com/issues/128011
+                // https://bugzilla.mozilla.org/show_bug.cgi?id=1875283
+                // https://bugzilla.mozilla.org/show_bug.cgi?id=1942530
+                root = await navigator.storage.getDirectory();
+                // Create or open the file in the OPFS
+                fileHandle = await root.getFileHandle(meta.filename, { create: true });
+                // Create a writable stream to the file
+                writable = await fileHandle.createWritable();
+            } catch (e: unknown) {
+                log(`Failed to initiate OPFS: ${e instanceof Error ? e.message : String(e)}`);
+                log('Fallback to SW download');
+                this.useSWFallback = true;
+                return await this.saveViaDownload(stream, meta, log);
+            }
+
             // Manually read from the incoming stream and write to the OPFS file
             const reader = stream.getReader();
             try {
@@ -211,39 +253,16 @@ class FileSaver {
     }
 
     async saveAsFile(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
-        const mechanism = await selectMechanismForDownload(meta.size);
+        const mechanism = await this.selectMechanismForDownload(meta.size);
 
         log(`Saving file. meta size: ${meta.size}, mechanism: ${mechanism}`);
 
         if (mechanism === 'memory' || mechanism === 'memory_fallback') {
-            if (mechanism === 'memory_fallback') {
-                void countActionWithTelemetry(Actions.DownloadFallback);
-            }
             return this.saveViaBuffer(stream, meta, log);
         }
 
         if (mechanism === 'opfs') {
             return this.saveViaOPFS(stream, meta, log);
-        }
-
-        if (!this.isSWReady) {
-            // Always wait for Service Worker initialization to complete
-            try {
-                await promiseWithTimeout({
-                    timeoutMs: DOWNLOAD_SW_INIT_TIMEOUT,
-                    promise: initDownloadSW(),
-                });
-            } catch (error: unknown) {
-                this.useBlobFallback = true;
-                if (error instanceof Error) {
-                    console.warn('Saving file will fallback to in-memory downloads:', error.message);
-                    log(`Service worker fail reason: ${error.message}`);
-                } else {
-                    log(`Service worker throw not an Error: ${typeof error} ${String(error)}`);
-                }
-            } finally {
-                this.isSWReady = true;
-            }
         }
 
         return this.saveViaDownload(stream, meta, log);

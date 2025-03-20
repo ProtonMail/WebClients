@@ -31,9 +31,8 @@ import { useAnonymousUploadAuthStore } from '../../../zustand/upload/anonymous-a
 import { usePublicSession } from '../../_api';
 import { integrityMetrics } from '../../_crypto';
 import { useLink, usePublicLinksActions, usePublicLinksListing, validateLinkName } from '../../_links';
-import type { ShareTypeString } from '../../_shares';
-import { getShareTypeString, useDefaultShare, useShare } from '../../_shares';
-import { useIsPaid } from '../../_user';
+import { useDefaultShare, useShare } from '../../_shares';
+import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import { MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
 import type {
@@ -65,13 +64,12 @@ interface FileRevision {
 }
 
 export default function usePublicUploadFile() {
-    const isPaidUser = useIsPaid();
+    const userPlan = useGetMetricsUserPlan();
     const setUploadToken = useAnonymousUploadAuthStore((state) => state.setUploadToken);
     const { request: publicDebouncedRequest, user } = usePublicSession();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
     const { deleteLinks } = usePublicLinksActions();
-    const { getShare } = useShare();
     const { findHash, findAvailableName } = usePublicUploadHelper();
     const publicLinksListing = usePublicLinksListing();
 
@@ -619,20 +617,11 @@ export default function usePublicUploadFile() {
                     }
                 },
                 notifyVerificationError: (retryHelped: boolean) => {
-                    getShare(new AbortController().signal, token)
-                        .then(getShareTypeString)
-                        // getShare should be fast call as share is already cached by this time.
-                        // In case of failure, fallback 'shared' is good assumption as it might
-                        // mean some edge case for sharing.
-                        // After refactor, this should be handled better.
-                        .catch(() => 'shared' as ShareTypeString)
-                        .then((shareType: ShareTypeString) => {
-                            const options = {
-                                isPaid: isPaidUser,
-                                retryHelped,
-                            };
-                            integrityMetrics.nodeBlockVerificationError(shareType, file.size, options);
-                        });
+                    const options = {
+                        plan: userPlan,
+                        retryHelped,
+                    };
+                    integrityMetrics.nodeBlockVerificationError('shared_public', file.size, options);
                 },
             },
             (message) => log(`worker: ${message}`)

@@ -1,14 +1,15 @@
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
 import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import { useSharesStore } from '../../zustand/share/shares.store';
 import { shareMetaToShareWithKey, useDebouncedRequest } from '../_api';
 import { integrityMetrics, useDriveCrypto } from '../_crypto';
-import { useIsPaid } from '../_user';
+import { useGetMetricsUserPlan } from '../_user/useGetMetricsUserPlan';
 import { useDebouncedFunction } from '../_utils';
 import type { Share, ShareWithKey } from './interface';
 import { getShareTypeString } from './shareType';
@@ -16,7 +17,7 @@ import type { ShareKeys } from './useSharesKeys';
 import useSharesKeys from './useSharesKeys';
 
 export default function useShare() {
-    const isPaid = useIsPaid();
+    const userPlan = useGetMetricsUserPlan();
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
     const driveCrypto = useDriveCrypto();
@@ -24,6 +25,7 @@ export default function useShare() {
     const sharesState = useSharesStore((state) => ({
         getShare: state.getShare,
         setShares: state.setShares,
+        getDefaultShareEmail: state.getDefaultShareEmail,
     }));
 
     const fetchShare = async (abortSignal: AbortSignal, shareId: string): Promise<ShareWithKey> => {
@@ -38,11 +40,15 @@ export default function useShare() {
      * getShareWithKey returns share with keys. That is not available after
      * listing user's shares and thus needs extra API call. Use wisely.
      */
-    const getShareWithKey = async (abortSignal: AbortSignal, shareId: string): Promise<ShareWithKey> => {
+    const getShareWithKey = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        refresh: boolean = false
+    ): Promise<ShareWithKey> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal) => {
                 const cachedShare = sharesState.getShare(shareId);
-                if (cachedShare && 'key' in cachedShare) {
+                if (cachedShare && 'key' in cachedShare && !refresh) {
                     return cachedShare;
                 }
 
@@ -58,12 +64,12 @@ export default function useShare() {
     /**
      * getShare returns share from cache or it fetches the full share from API.
      */
-    const getShare = async (abortSignal: AbortSignal, shareId: string): Promise<Share> => {
+    const getShare = async (abortSignal: AbortSignal, shareId: string, refresh: boolean = false): Promise<Share> => {
         const cachedShare = sharesState.getShare(shareId);
-        if (cachedShare) {
+        if (cachedShare && !refresh) {
             return cachedShare;
         }
-        return getShareWithKey(abortSignal, shareId);
+        return getShareWithKey(abortSignal, shareId, refresh);
     };
 
     const getShareKeys = async (
@@ -93,10 +99,23 @@ export default function useShare() {
             }).then((messageInfo) => messageInfo.encryptionKeyIDs.length > 1);
             const decryptWithLinkPrivateKey = !!linkPrivateKey && !fallback && haveMultipleEncryptionKey;
             try {
-                return await driveCrypto.decryptSharePassphrase(
+                const email = await sharesState.getDefaultShareEmail();
+                const result = await driveCrypto.decryptSharePassphrase(
                     share,
                     decryptWithLinkPrivateKey ? [linkPrivateKey] : undefined
                 );
+
+                if (result.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    const options = {
+                        plan: userPlan,
+                        createTime: share.createTime,
+                        addressMatchingDefaultShare: share.creator === email,
+                    };
+                    const shareType = getIsPublicContext() ? 'shared_public' : getShareTypeString(share);
+                    integrityMetrics.signatureVerificationError(share.rootLinkId, shareType, 'SignatureEmail', options);
+                }
+
+                return result;
             } catch (e) {
                 if (decryptWithLinkPrivateKey) {
                     sendErrorReport(
@@ -108,9 +127,9 @@ export default function useShare() {
                     return decryptSharePassphrase(true);
                 }
 
-                const shareType = getShareTypeString(share);
+                const shareType = getIsPublicContext() ? 'shared_public' : getShareTypeString(share);
                 const options = {
-                    isPaid: isPaid,
+                    plan: userPlan,
                     createTime: share.createTime,
                 };
                 integrityMetrics.shareDecryptionError(shareId, shareType, options);
@@ -127,6 +146,7 @@ export default function useShare() {
         };
 
         const { decryptedPassphrase, sessionKey } = await decryptSharePassphrase();
+
         const privateKey = await CryptoProxy.importPrivateKey({
             armoredKey: share.key,
             passphrase: decryptedPassphrase,

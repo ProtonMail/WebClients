@@ -15,16 +15,13 @@ import type {
 } from '@proton/shared/lib/interfaces/drive/file';
 import type { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
-import type {
-    VerificationKeysCallback} from '@proton/shared/lib/keys/drivePassphrase';
-import {
-    decryptPassphrase,
-    getDecryptedSessionKey,
-} from '@proton/shared/lib/keys/drivePassphrase';
+import type { VerificationKeysCallback } from '@proton/shared/lib/keys/drivePassphrase';
+import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getIsPublicContext } from '../../utils/getIsPublicContext';
+import type { MetricUserPlan } from '../../utils/type/MetricTypes';
 import { tokenIsValid } from '../../utils/url/token';
 import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
 import type { IntegrityMetrics, VerificationKey } from '../_crypto';
@@ -32,14 +29,14 @@ import { integrityMetrics, useDriveCrypto } from '../_crypto';
 import {
     type Share,
     ShareType,
-    type ShareTypeString,
+    type ShareTypeStringWithPublic,
     type ShareWithKey,
     getShareTypeString,
     useDefaultShare,
     useShare,
 } from '../_shares';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
-import { useIsPaid } from '../_user';
+import { useGetMetricsUserPlan } from '../_user/useGetMetricsUserPlan';
 import { useDebouncedFunction } from '../_utils';
 import { decryptExtendedAttributes } from './extendedAttributes';
 import type { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
@@ -86,7 +83,7 @@ export default function useLink() {
     const { getDefaultShareAddressEmail } = useDefaultShare();
     const { getDirectSharingInfo } = useDirectSharingInfo();
 
-    const isPaid = useIsPaid();
+    const userPlan = useGetMetricsUserPlan();
 
     const debouncedRequest = useDebouncedRequest();
     const fetchLink = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<EncryptedLink> => {
@@ -115,7 +112,7 @@ export default function useLink() {
         getShare,
         getDefaultShareAddressEmail,
         getDirectSharingInfo,
-        isPaid,
+        userPlan,
         integrityMetrics,
         CryptoProxy.importPrivateKey
     );
@@ -142,7 +139,7 @@ export function useLinkInner(
     getShare: ReturnType<typeof useShare>['getShare'],
     getDefaultShareAddressEmail: ReturnType<typeof useDefaultShare>['getDefaultShareAddressEmail'],
     getDirectSharingInfo: ReturnType<typeof useDirectSharingInfo>['getDirectSharingInfo'],
-    userIsPaid: boolean,
+    userPlan: MetricUserPlan,
     integrityMetrics: IntegrityMetrics,
     importPrivateKey: typeof CryptoProxy.importPrivateKey // passed as arg for easier mocking when testing
 ) {
@@ -175,7 +172,10 @@ export function useLinkInner(
         });
     };
 
-    const loadShareTypeString = async (shareId: string): Promise<ShareTypeString> => {
+    const loadShareTypeString = async (shareId: string): Promise<ShareTypeStringWithPublic> => {
+        if (getIsPublicContext()) {
+            return 'shared_public';
+        }
         return (
             getShare(new AbortController().signal, shareId)
                 .then(getShareTypeString)
@@ -188,9 +188,9 @@ export function useLinkInner(
     };
 
     const handleDecryptionError = (shareId: string, encryptedLink: EncryptedLink) => {
-        loadShareTypeString(shareId).then((shareType) => {
+        void loadShareTypeString(shareId).then((shareType) => {
             const options = {
-                isPaid: userIsPaid,
+                plan: userPlan,
                 createTime: encryptedLink.createTime,
             };
             integrityMetrics.nodeDecryptionError(encryptedLink.linkId, shareType, options);
@@ -205,7 +205,7 @@ export function useLinkInner(
         if (tokenIsValid(shareId)) {
             return;
         }
-        loadShareTypeString(shareId).then(async (shareType) => {
+        void loadShareTypeString(shareId).then(async (shareType) => {
             const email = await getDefaultShareAddressEmail();
             const verificationKey = {
                 passphrase: 'SignatureEmail',
@@ -219,7 +219,7 @@ export function useLinkInner(
             }[location] as VerificationKey;
 
             const options = {
-                isPaid: userIsPaid,
+                plan: userPlan,
                 createTime: encryptedLink.createTime,
                 addressMatchingDefaultShare: encryptedLink.signatureEmail === email,
             };
@@ -461,7 +461,7 @@ export function useLinkInner(
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
             if (!encryptedLink.nodeHashKey) {
                 // This is dev error, should not happen in the wild.
-                throw new Error('Hash key is available only in folder context');
+                throw new Error('Hash key is available only in folder or albums context');
             }
 
             const [privateKey, addressPrivateKey] = await Promise.all([
@@ -730,12 +730,7 @@ export function useLinkInner(
      */
     const getLink = debouncedFunctionDecorator(
         'getLink',
-        async (
-            abortSignal: AbortSignal,
-            shareId: string,
-            linkId: string,
-            share?: ShareWithKey | Share
-        ): Promise<DecryptedLink> => {
+        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink> => {
             const cachedLink = linksState.getLink(shareId, linkId);
             if (cachedLink && cachedLink.decrypted && !cachedLink.decrypted.isStale) {
                 return cachedLink.decrypted;
@@ -744,7 +739,7 @@ export function useLinkInner(
             const encrypted = await getEncryptedLink(abortSignal, shareId, linkId);
 
             try {
-                const decrypted = await decryptLink(abortSignal, shareId, encrypted, undefined, share);
+                const decrypted = await decryptLink(abortSignal, shareId, encrypted);
 
                 linksState.setLinks(shareId, [{ encrypted, decrypted }]);
 
@@ -818,13 +813,11 @@ export function useLinkInner(
         if (link.cachedThumbnailUrl || !link.hasThumbnail || !link.activeRevision) {
             return link.cachedThumbnailUrl;
         }
-
         let downloadInfo = {
             isFresh: false,
             downloadUrl: link.activeRevision.thumbnail?.bareUrl,
             downloadToken: link.activeRevision.thumbnail?.token,
         };
-
         const loadDownloadUrl = async (activeRevisionId: string) => {
             const res = (await debouncedRequest(
                 queryFileRevisionThumbnail(shareId, linkId, activeRevisionId)
@@ -917,6 +910,7 @@ export function useLinkInner(
         getLinkSessionKey,
         getLinkHashKey,
         decryptLink,
+        getEncryptedLink,
         getLink,
         loadFreshLink,
         loadLinkThumbnail,

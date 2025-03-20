@@ -67,7 +67,7 @@ export function SharedLinksItemContextMenu({
                     <ShareLinkButton
                         shareId={selectedLink.rootShareId}
                         showLinkSharingModal={showLinkSharingModal}
-                        link={selectedLink}
+                        linkId={selectedLink.linkId}
                         close={close}
                     />
                 )}

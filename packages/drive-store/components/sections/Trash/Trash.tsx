@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import useNavigate from '../../../hooks/drive/useNavigate';
+import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
@@ -79,7 +79,7 @@ const SORT_FIELDS: TrashSortFields[] = [SortField.name, SortField.trashed, SortF
 function Trash({ trashView, shareId }: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink } = useDriveNavigation();
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();

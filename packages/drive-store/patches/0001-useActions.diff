@@ -1,13 +1,13 @@
 diff --git a/packages/drive-store/store/_actions/useActions.tsx b/packages/drive-store/store/_actions/useActions.tsx
-index dbb96e801c..c610abda85 100644
+index 04361d9c1f..4392fbc363 100644
 --- a/packages/drive-store/store/_actions/useActions.tsx
 +++ b/packages/drive-store/store/_actions/useActions.tsx
 @@ -8,7 +8,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
  import { ValidationError } from '../../utils/errorHandling/ValidationError';
  import useDevicesActions from '../_devices/useDevicesActions';
  import { useLinkActions, useLinksActions } from '../_links';
--import { usePhotos } from '../_photos';
-+// import { usePhotos } from '../_photos';
+-import { usePhotosOrPhotosWithAlbums } from '../_photos/PhotosOrPhotosWithAlbumsProvider';
++// import { usePhotosOrPhotosWithAlbums } from '../_photos/PhotosOrPhotosWithAlbumsProvider';
  import { useShareActions, useShareUrl } from '../_shares';
  import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
  import { TransferConflictStrategy } from '../_uploads/interface';
@@ -15,8 +15,8 @@ index dbb96e801c..c610abda85 100644
      const shareUrl = useShareUrl();
      const shareActions = useShareActions();
      const devicesActions = useDevicesActions();
--    const { removePhotosFromCache } = usePhotos();
-+    // const { removePhotosFromCache } = usePhotos();
+-    const { removePhotosFromCache } = usePhotosOrPhotosWithAlbums();
++    // const { removePhotosFromCache } = usePhotosOrPhotosWithAlbums();
  
      const createFolder = async (
          abortSignal: AbortSignal,
@@ -29,46 +29,46 @@ index dbb96e801c..c610abda85 100644
  
          const undoAction = async () => {
              const linkIdsPerParentId = Object.entries(result.originalParentIds).reduce(
-@@ -206,7 +206,10 @@ export default function useActions() {
+@@ -206,7 +206,11 @@ export default function useActions() {
          createMovedItemsNotifications(linksToMove, result.successes, result.failures, undoAction);
      };
  
 -    const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[]) => {
 +    /**
-+     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled
++     * @param [notify] - whether notification popover should be displayed upon
++     * successful trash. Disabled on Docs
 +     */
 +    const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[], notify = true) => {
          if (!linksToTrash.length) {
              return;
          }
-@@ -220,9 +223,13 @@ export default function useActions() {
-             }))
-         );
+@@ -222,7 +226,11 @@ export default function useActions() {
  
-+        if (!notify) {
-+            return;
-+        }
-+
          // This is a bit ugly, but the photo linkId cache is not connected
          // very well to the rest of our state.
 -        removePhotosFromCache(result.successes);
 +        // removePhotosFromCache(result.successes);
++
++        if (!notify) {
++            return;
++        }
  
          const undoAction = async () => {
              const linksToUndo = result.successes
-@@ -237,7 +244,10 @@ export default function useActions() {
+@@ -237,7 +245,11 @@ export default function useActions() {
          createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
      };
  
 -    const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[]) => {
 +    /**
-+     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled on Docs
++     * @param [notify] - whether notification popover should be displayed upon
++     * successful trash. Disabled on Docs
 +     */
 +    const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[], notify = true) => {
          if (!linksToRestore.length) {
              return;
          }
-@@ -247,6 +257,10 @@ export default function useActions() {
+@@ -247,6 +259,10 @@ export default function useActions() {
              linksToRestore.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
          );
  

@@ -23,7 +23,6 @@ export const createKeysCache = (rootKey: PrivateKeyReference): KeyCache => {
         return keyCache.get(linkId);
     };
 
-    // XXX: move to a worker some time in the future
     const decryptAndCacheLink: DecryptAndCacheLink = async (linkMeta, parentPrivateKey) => {
         /*
          * If link is a folder, we need to decrypt its NodeKey in order to be able

@@ -1,4 +1,4 @@
-import { HD_THUMBNAIL_MAX_SIDE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { HD_THUMBNAIL_MAX_SIDE, HD_THUMBNAIL_MAX_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { canvasToThumbnail } from './canvasUtil';
 import type { ThumbnailInfo } from './interface';
@@ -13,27 +13,29 @@ interface ReturnProps {
     thumbnails?: ThumbnailInfo[];
 }
 
-const shouldGenerateHDPreview = ({ width, mimeType }: { width: number; mimeType: string }) =>
-    mimeType == SupportedMimeTypes.jpg && width && width <= HD_THUMBNAIL_MAX_SIDE;
+const getLongestEdge = (width: number, height: number) => (width > height ? width : height);
+
+export const shouldGenerateHDPreview = (size: number, width: number, height: number): boolean => {
+    const edge = getLongestEdge(width, height);
+    return edge > HD_THUMBNAIL_MAX_SIDE && size > HD_THUMBNAIL_MAX_SIZE;
+};
 
 export function scaleImageFile(
     {
         file,
-        mimeType,
-        thumbnailTypes = [ThumbnailType.PREVIEW],
     }: {
         file: Blob;
-        mimeType: string;
-        thumbnailTypes?: ThumbnailType[];
     },
-    thumbnailFormatMimeType: 'image/webp' = 'image/webp'
+    thumbnailFormatMimeType: 'image/webp' | 'image/jpeg' = 'image/webp'
 ): Promise<ReturnProps> {
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.addEventListener('load', async () => {
-            const thumbnailTypesToGenerate = shouldGenerateHDPreview({ width: img.width, mimeType })
-                ? [ThumbnailType.PREVIEW]
-                : thumbnailTypes;
+            const thumbnailTypesToGenerate: ThumbnailType[] = [ThumbnailType.PREVIEW];
+
+            if (thumbnailTypesToGenerate.length && shouldGenerateHDPreview(file.size, img.width, img.height)) {
+                thumbnailTypesToGenerate.push(ThumbnailType.HD_PREVIEW);
+            }
 
             Promise.all(
                 thumbnailTypesToGenerate.map((thumbnailType) => scaleImage(img, thumbnailType, thumbnailFormatMimeType))
@@ -55,7 +57,7 @@ export function scaleImageFile(
 async function scaleImage(
     img: HTMLImageElement,
     thumbnailType: ThumbnailType = ThumbnailType.PREVIEW,
-    mimeType: 'image/webp' = 'image/webp'
+    mimeType: 'image/webp' | 'image/jpeg' = 'image/webp'
 ): Promise<ThumbnailInfo> {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');

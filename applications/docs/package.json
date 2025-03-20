@@ -5,17 +5,17 @@
   "author": "",
   "main": "index.ts",
   "scripts": {
-    "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
+    "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --handleSupportAndErrors --optimizeAssets",
     "check-types": "tsc",
     "i18n:extract:web": "proton-i18n extract",
     "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
     "i18n:validate": "proton-i18n validate lint-functions",
     "i18n:validate:context:web": "proton-i18n validate",
-    "postinstall": "proton-pack config && cp ./src/app/config.ts ../../packages/drive-store/",
+    "postinstall": "proton-pack config --optimizeAssets && cp ./src/app/config.ts ../../packages/drive-store/",
     "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
     "lint:warning": "eslint src --ext .js,.ts,.tsx",
     "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-    "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
+    "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --optimizeAssets",
     "test": "jest --coverage=false",
     "test:ci": "jest --runInBand --ci",
     "test:watch": "jest --watch --coverage=false"
@@ -74,6 +74,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-require-context": "^0.1.1",
     "cross-env": "^7.0.3",
+    "ejs-webpack-loader": "^2.2.2",
     "eslint": "^8.57.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.19",
@@ -84,6 +85,7 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "sass": "1.79.5",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "webpack": "^5.98.0"
   }
 }
