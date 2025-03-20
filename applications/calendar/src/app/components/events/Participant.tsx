@@ -44,7 +44,8 @@ const Participant = ({
     return (
         <div
             className={clsx([
-                'participant flex flex-nowrap items-center w-full relative interactive-pseudo interactive--no-background text-left',
+                'participant flex flex-nowrap w-full relative interactive-pseudo interactive--no-background text-left',
+                !!comment ? 'items-start' : 'items-center',
                 className,
             ])}
             data-testid="participant-in-popover"
@@ -65,7 +66,7 @@ const Participant = ({
                         {extraText}
                     </div>
                 )}
-                {comment}
+                <div className="max-w-full participant-extra-text color-weak text-break text-sm m-0">{comment}</div>
             </div>
             <Button
                 shape="ghost"
@@ -75,7 +76,7 @@ const Participant = ({
                 onClick={() => {
                     toggle();
                 }}
-                className="ml-1"
+                className={clsx(['ml-1', !!comment && 'mt-1'])}
                 title={c('Action').t`More options`}
             >
                 <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
