@@ -2124,6 +2124,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Αυτή η λειτουργία είναι μη αναστρέψιμη. Όλα τα ψευδώνυμα που χρησιμοποιούν τον τομέα ${ domainTextBold } θα διαγραφούν. Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά των ψευδωνύμων."
       ],
+      "This option is currently not available on your browser.": [
+        "Αυτή η επιλογή δεν είναι προς το παρόν διαθέσιμη στο πρόγραμμα περιήγησής σας."
+      ],
       "This option is currently not available on your device.": [
         "Αυτή η επιλογή δεν είναι προς το παρόν διαθέσιμη στη συσκευή σας."
       ],
@@ -2292,6 +2295,9 @@
       ],
       "You may close this tab.": [
         "Μπορείτε να κλείσετε αυτήν την καρτέλα."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Χρειάζεστε μια θυρίδα αποθήκευσης με δικαίωμα επεξεργασίας για να μπορέσετε να εισαγάγετε στοιχεία."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Θα μπορείτε να προσαρμόσετε τις ρυθμίσεις του τομέα σας (ψευδώνυμα ηλεκτρονικού ταχυδρομείου, προεπιλεγμένο εμφανιζόμενο όνομα για ψευδώνυμα κλπ.) αφού επαληθεύσετε τον τομέα σας."
@@ -3830,8 +3836,8 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Ποια είναι η διαφορά μεταξύ της σημείωσης ${ PASS_SHORT_APP_NAME } και της σημείωσης SimpleLogin;"
       ],
-      "You don't have any vault": [
-        "Δεν έχετε καμία κρύπτη"
+      "You don't have any vaults": [
+        "Δεν έχετε κρύπτες"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Η ${ planName } συνδρομή σας θα λήξει στις ${ endDate }"
