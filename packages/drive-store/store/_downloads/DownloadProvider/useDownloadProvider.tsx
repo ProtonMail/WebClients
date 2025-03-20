@@ -61,7 +61,10 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
      * same files are not currently already downloading, and it adds transfer
      * to the queue.
      */
-    const download = async (links: LinkDownload[], options?: { virusScan?: boolean }): Promise<void> => {
+    const download = async (
+        links: LinkDownload[],
+        options?: { virusScan?: boolean; zipName?: string }
+    ): Promise<void> => {
         await queue.add(links, options).catch((err: any) => {
             if ((err as Error).name === 'DownloadUserError') {
                 createNotification({
@@ -104,7 +107,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                 fileSaver.instance.saveAsFile(stream, nextDownload.meta, (message) => log(nextDownload.id, message))
             ).catch(logError);
 
-            queue.updateState(nextDownload.id, TransferState.Done);
+            queue.updateWithData(nextDownload.id, TransferState.Done, { hasFullBuffer: true });
             return;
         }
 
@@ -156,7 +159,15 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                 ) => {
                     // If we are in viewOnly mode on public page we ignore signature as we can't check
                     // Disable signature error if anonymous view of the public page
-                    if (!user || viewOnly || (link.isAnonymous && hasValidAnonymousSignature(signatureIssues))) {
+                    if (
+                        !user ||
+                        viewOnly ||
+                        (link.isAnonymous &&
+                            hasValidAnonymousSignature(signatureIssues, {
+                                mimeType: link.mimeType,
+                                isFile: link.isFile,
+                            }))
+                    ) {
                         return;
                     }
                     log(nextDownload.id, `signature issue: ${JSON.stringify(signatureIssues)}`);

@@ -1,8 +1,10 @@
 import { TransferCancel } from '../../components/TransferManager/transfer';
+import { getConfigData } from '../../config';
 import { sendErrorReport } from '../../utils/errorHandling';
 import type {
     FileKeys,
     FileRequestBlock,
+    OnFileUploadSuccessCallbackData,
     PhotoUpload,
     ThumbnailRequestBlock,
     UploadCallbacks,
@@ -44,18 +46,25 @@ export function initUploadFileWorker(
     // need to wait for creation of revision on API.
     const mimeTypePromise = mimeTypeFromFile(file);
 
-    const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
+    const startUpload = async ({
+        onInit,
+        onProgress,
+        onNetworkError,
+        onFinalize,
+    }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const mediaInfoPromise = getMediaInfo(mimeTypePromise, file, isForPhotos);
+        const mediaInfoPromise = getMediaInfo(mimeTypePromise, file);
 
-        return new Promise<void>((resolve, reject) => {
+        return new Promise<OnFileUploadSuccessCallbackData>((resolve, reject) => {
             const worker = new Worker(
                 /* webpackChunkName: "drive-worker" */
                 /* webpackPrefetch: true */
                 /* webpackPreload: true */
                 new URL('./worker/worker.ts', import.meta.url)
             );
+
+            worker.postMessage({ command: 'config', data: getConfigData() });
 
             workerApi = new UploadWorkerController(worker, log, {
                 keysGenerated: (keys: FileKeys) => {
@@ -104,7 +113,11 @@ export function initUploadFileWorker(
                 },
                 finalize: (signature: string, signatureEmail: string, xattr: string, photo?: PhotoUpload) => {
                     onFinalize?.();
-                    finalize(signature, signatureEmail, xattr, photo).then(resolve).catch(reject);
+                    finalize(signature, signatureEmail, xattr, photo)
+                        .then((file) => {
+                            resolve(file);
+                        })
+                        .catch(reject);
                 },
                 onNetworkError: (error: Error) => {
                     onNetworkError?.(error);
@@ -149,7 +162,7 @@ export function initUploadFileWorker(
 
     return {
         start: (progressCallbacks?: UploadFileProgressCallbacks) =>
-            start(progressCallbacks)
+            startUpload(progressCallbacks)
                 .catch((err) => {
                     abortController.abort();
                     onError?.(err);

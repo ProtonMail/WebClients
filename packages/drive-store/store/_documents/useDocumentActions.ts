@@ -3,9 +3,12 @@ import { c } from 'ttag';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { useShare } from '../_shares';
-import { useAbortSignal } from '../_views/utils';
-import { useVolumesState } from '../_volumes';
+/**
+ * @DRIVE-STORE: Direct import from files required by drive-store. Do not import from index.
+ */
+import useShare from '../_shares/useShare';
+import useAbortSignal from '../_views/utils/useAbortSignal';
+import useVolumesState from '../_volumes/useVolumesState';
 import { useOpenDocument } from './useOpenDocument';
 
 export const useDocumentActions = () => {

@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { useSharesStore } from '../../zustand/share/shares.store';
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import useDefaultShare from './useDefaultShare';
 
@@ -7,13 +8,6 @@ const mockRequest = jest.fn();
 const mockCreateVolume = jest.fn();
 const mockGetShare = jest.fn();
 const mockGetShareWithKey = jest.fn();
-
-jest.mock('../_api/useDebouncedRequest', () => {
-    const useDebouncedRequest = () => {
-        return mockRequest;
-    };
-    return useDebouncedRequest;
-});
 
 jest.mock('../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
@@ -69,6 +63,14 @@ describe('useDefaultShare', () => {
 
     beforeEach(() => {
         jest.resetAllMocks();
+
+        // Reset the Zustand store state
+        useSharesStore.setState({
+            defaultSharePromise: null,
+            loadUserSharesPromise: null,
+            defaultPhotosSharePromise: null,
+            isLoadingShares: false,
+        });
 
         mockCreateVolume.mockImplementation(async () => {
             return { shareId: defaultShareId };

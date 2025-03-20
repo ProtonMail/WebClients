@@ -32,29 +32,32 @@ export default function useDownloadQueue(log: LogCallback) {
         return downloads.find((download) => isTransferPending(download));
     }, [downloads]);
 
-    const add = useCallback(async (links: LinkDownload[], options?: { virusScan?: boolean }): Promise<void> => {
-        return new Promise((resolve, reject) => {
-            setDownloads((downloads) => {
-                if (isAlreadyDownloading(downloads, links)) {
-                    reject(new DownloadUserError(generateAlreadyDownloadingError(links)));
-                    return downloads;
-                }
-                const download = generateDownload(links, options);
-                log(
-                    download.id,
-                    `Added item to the queue (type: ${download.meta.mimeType}, size: ${download.meta.size} bytes)`
-                );
-                resolve();
-                return [...downloads, download];
+    const add = useCallback(
+        async (links: LinkDownload[], options?: { virusScan?: boolean; zipName?: string }): Promise<void> => {
+            return new Promise((resolve, reject) => {
+                setDownloads((downloads) => {
+                    if (isAlreadyDownloading(downloads, links)) {
+                        reject(new DownloadUserError(generateAlreadyDownloadingError(links)));
+                        return downloads;
+                    }
+                    const download = generateDownload(links, options);
+                    log(
+                        download.id,
+                        `Added item to the queue (type: ${download.meta.mimeType}, size: ${download.meta.size} bytes)`
+                    );
+                    resolve();
+                    return [...downloads, download];
+                });
             });
-        });
-    }, []);
+        },
+        []
+    );
 
     const update = useCallback(
         (
             idOrFilter: UpdateFilter,
             newStateOrCallback: UpdateState,
-            { size, error, signatureIssueLink, signatureStatus, retry }: UpdateData = {},
+            { size, error, signatureIssueLink, signatureStatus, retry, hasFullBuffer }: UpdateData = {},
             callback?: UpdateCallback
         ) => {
             const filter = convertFilterToFunction(idOrFilter);
@@ -90,6 +93,7 @@ export default function useDownloadQueue(log: LogCallback) {
                     download.signatureStatus = signatureStatus;
                     // download is always marked as retried after being set to true once
                     download.retries = downloadIsARetry ? (download.retries || 0) + 1 : download.retries || 0;
+                    download.hasFullBuffer = hasFullBuffer;
 
                     log(
                         download.id,
@@ -187,19 +191,19 @@ function generateAlreadyDownloadingError(links: LinkDownload[]): string {
     return c('Error').t`File "${name}" is already downloading`;
 }
 
-function generateDownload(links: LinkDownload[], options?: { virusScan?: boolean }): Download {
+function generateDownload(links: LinkDownload[], options?: { virusScan?: boolean; zipName?: string }): Download {
     return {
         id: generateUID(),
         startDate: new Date(),
         state: TransferState.Pending,
         links,
-        meta: generateDownloadMeta(links),
+        meta: generateDownloadMeta(links, options),
         options,
         retries: 0,
     };
 }
 
-function generateDownloadMeta(links: LinkDownload[]): TransferMeta {
+function generateDownloadMeta(links: LinkDownload[], options?: { zipName?: string }): TransferMeta {
     if (links.length === 1) {
         const link = links[0];
         if (link.isFile) {
@@ -216,7 +220,7 @@ function generateDownloadMeta(links: LinkDownload[]): TransferMeta {
         };
     }
     return {
-        filename: generateMyFilesName(),
+        filename: options?.zipName || generateMyFilesName(),
         mimeType: SupportedMimeTypes.zip,
     };
 }

@@ -2,6 +2,7 @@ import type { Remote } from 'comlink';
 import { wrap } from 'comlink';
 import { v4 as uuidv4 } from 'uuid';
 
+import type { MetricUserPlan } from '../type/MetricTypes';
 import { getLocalID } from '../url/localid';
 import type { MetricSharedWorkerInterface } from './types/userSuccessMetricsTypes';
 import { UserAvailabilityTypes } from './types/userSuccessMetricsTypes';
@@ -11,7 +12,7 @@ let metricSharedWorker: Remote<MetricSharedWorkerInterface> | undefined = undefi
 let connectionId: string;
 
 export const userSuccessMetrics = {
-    init: async () => {
+    init: () => {
         // It appears certain Mobile browsers do not support SharedWorker
         // Since these are marginal we simply omit them for now
         // Plan is to fallback to simple Workers
@@ -43,8 +44,8 @@ export const userSuccessMetrics = {
     setVersionHeaders: async (clientID: string, appVersion: string) => {
         await metricSharedWorker?.setVersionHeaders(connectionId, clientID, appVersion);
     },
-    setLocalUser: async (uid: string, isPaid: boolean) => {
+    setLocalUser: async (uid: string, plan: MetricUserPlan) => {
         void metricSharedWorker?.setAuthHeaders(connectionId, uid);
-        void metricSharedWorker?.setLocalUser(connectionId, uid, isPaid ? 'paid' : 'free');
+        void metricSharedWorker?.setLocalUser(connectionId, uid, plan);
     },
 };

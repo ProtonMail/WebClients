@@ -81,7 +81,7 @@ function PublicShareLinkInitContainer() {
         isLegacy,
         isPasswordNeeded,
         submitPassword,
-    } = usePublicAuth(token, urlPassword);
+    } = usePublicAuth(token, urlPassword, 'drive');
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const isDriveWebShareUrlSignupModalEnabled = useDriveWebShareURLSignupModal();
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);

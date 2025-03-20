@@ -12,6 +12,7 @@ type WithSRPPayload<T extends any> = T & {
 
 // Share type string used in metrics context, do not confuse with ShareType enum.
 export type ShareTypeString = 'main' | 'device' | 'photo' | 'shared';
+export type ShareTypeStringWithPublic = ShareTypeString | 'shared_public';
 
 export enum ShareType {
     default = 1,
@@ -38,6 +39,8 @@ export interface Share {
     type: ShareType;
     state: ShareState;
     createTime: number;
+    // Will tell us if the locked share is for auto-restore process
+    forASV?: boolean;
 }
 
 export interface ShareWithKey extends Share {
@@ -172,6 +175,7 @@ interface ShareInvitationLink {
     name: string;
     mimeType: string;
     isFile: boolean;
+    type: LinkType;
 }
 
 export interface ShareInvitationDetails {
