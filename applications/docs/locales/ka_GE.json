@@ -781,10 +781,6 @@
       "${ price } per user": [
         "${ price }/მომხმარებელი"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
-        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } წერის დამხმარის ლიცენზია",
         "${ seats } წერის დამხმარის ლიცენზია"
@@ -849,14 +845,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 დღიანი გარანტირებული ფულის დაბრუნება"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ discountedPrice }-სთვის პირველ ${ cycle } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასდაკლებული ფასით ${ nextPrice } ${ renewalLength } თვით. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ discountedPrice }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ nextPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ]
     },
     "bf2023: Tooltip": {
@@ -3791,9 +3779,6 @@
         "ნაპოვნია ${ groupCounts } ჯგუფი",
         "ნაპოვნია ${ groupCounts } ჯგუფი"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } შეიცავს ${ BRAND_NAME } Scribe წერის დამხმარეს"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } სამუდამო გეგმას განახლების ფასი არ გააჩნია. ის ერთჯერადი გადასახადია და ${ PASS_SHORT_APP_NAME }-თან სამუდამო წვდომას მოგცემთ."
       ],
@@ -4178,6 +4163,9 @@
       "Failing signatures will be re-signed by you": [
         "ჩავარდნილი ხელმოწერები თავიდან იქნება ხელმოწერილი თქვენს მიერ"
       ],
+      "Favorites": [
+        "რჩეულები"
+      ],
       "File \"${ name }\" was deleted during download": [
         "ფაილი \"${ name }\" წაიშალა გადმოწერის დროს"
       ],
@@ -4216,6 +4204,9 @@
       ],
       "Get Notified About Comments": [
         "გაფრთხილება კომენტარების შესახებ"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }-ზე გადასვლა"
       ],
       "here": [
         "აქ"
@@ -4378,9 +4369,6 @@
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
       ],
-      "Most recent": [
-        "უახლესი"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
       ],
@@ -4446,12 +4434,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
-      ],
-      "Owned by me": [
-        "ჩემი საკუთრება"
-      ],
-      "Owned by others": [
-        "მფლობელი სხვაა"
       ],
       "Owner": [
         "მფლობელი"
@@ -4538,6 +4520,12 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "საჯარო დოკუმენტები თქვენი ორგანიზაციისთვის, ჯერ, ჩართული არაა."
+      ],
+      "Recently deleted": [
+        "ახლახან წაშლილი"
+      ],
+      "Recents": [
+        "ახლახან გამოყენებულები"
       ],
       "recommended browser": [
         "რეკომენდებული ბრაუზერი"
@@ -4629,7 +4617,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "გამოწერა ყოველ ${ cycle } თვეში განახლდება.",
         "გამოწერა ყოველ ${ cycle } თვეში განახლდება."
       ],
       "Subscription auto-renews every month.": [
@@ -5011,9 +5000,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
@@ -7410,20 +7396,14 @@
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "განახლების დრო ${ renewPrice }. გააუქმეთ ნებისმიერ დროს."
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount }-ის სპეციალური ფასდაკლება სწორია პირველი ${ subscriptionLength } თვე. კუპონი ვარგისია ${ couponRedemptions } განახლებისთვის. შემდეგ ის ავტომატურად გადავა ${ renewPrice }-ზე ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ ${ subscriptionLength } თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ფასით ${ renewPrice } ${ subscriptionLengthCopy } თვით. გაუქმება ყოველთვის შეგიძლიათ."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ renewPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
+      "terms & conditions": [
+        "პირობები და წესები"
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -9292,9 +9272,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPrice }"
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
         "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."
