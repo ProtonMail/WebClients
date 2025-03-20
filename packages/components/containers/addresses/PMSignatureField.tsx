@@ -1,7 +1,6 @@
-import { useMemo } from 'react';
-
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -13,20 +12,21 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/mailSettings';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-img/tools.svg';
 
+import { canUpdateSignature } from './helper';
+
 interface Props {
     id: string;
-    mailSettings?: Partial<MailSettings>;
-    userSettings?: Partial<UserSettings>;
 }
 
 const upsellRef = getUpsellRef({
@@ -36,18 +36,20 @@ const upsellRef = getUpsellRef({
     isSettings: true,
 });
 
-const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
+const PMSignature = ({ id }: Props) => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const dispatch = useDispatch();
-    const [loading, withLoading] = useLoading();
-    const { state, toggle } = useToggle(hasBit(mailSettings.PMSignature, PM_SIGNATURE.ENABLED));
+
     const [user] = useUser();
-    const pmSignatureLocked = useMemo(
-        () => hasBit(mailSettings.PMSignature, PM_SIGNATURE.LOCKED),
-        [mailSettings.PMSignature]
-    );
+    const [mailSettings] = useMailSettings();
+    const [userSettings] = useUserSettings();
+
+    const [loading, withLoading] = useLoading();
+    const { state, toggle } = useToggle(hasBit(mailSettings?.PMSignature, PM_SIGNATURE.ENABLED));
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
+
+    const pmSignatureEnabled = canUpdateSignature(user, mailSettings);
 
     const handleChange = async (checked: number) => {
         const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePMSignature(checked));
@@ -92,7 +94,7 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                     __html: getProtonMailSignature({
-                        isReferralProgramLinkEnabled: !!mailSettings.PMSignatureReferralLink,
+                        isReferralProgramLinkEnabled: !!mailSettings?.PMSignatureReferralLink,
                         referralProgramUserLink: userSettings.Referral?.Link,
                     }),
                 }}
@@ -101,11 +103,11 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
                 <Toggle
                     loading={loading}
                     title={
-                        pmSignatureLocked
-                            ? c('Tooltip: PM signature locked').t`This signature cannot be modified`
-                            : undefined
+                        pmSignatureEnabled
+                            ? undefined
+                            : c('Tooltip: PM signature locked').t`This signature cannot be modified`
                     }
-                    disabled={pmSignatureLocked}
+                    disabled={!pmSignatureEnabled}
                     id={id}
                     checked={state}
                     onChange={({ target }) => {
