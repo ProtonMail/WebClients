@@ -2158,6 +2158,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Cette opération est irréversible. Tous les alias utilisant le domaine ${ domainTextBold } seront supprimés. Une fois supprimés, les alias ne peuvent pas être restaurés."
       ],
+      "This option is currently not available on your browser.": [
+        "Cette fonction n'est actuellement pas disponible sur votre navigateur."
+      ],
       "This option is currently not available on your device.": [
         "Cette fonction n'est actuellement pas disponible sur votre appareil."
       ],
@@ -2314,6 +2317,9 @@
       ],
       "You may close this tab.": [
         "Vous pouvez fermer cet onglet."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Vous devez disposer d'un coffre-fort avec des droits d'édition pour pouvoir importer des éléments."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Vous pourrez personnaliser les paramètres de votre domaine (alias d'e-mail catch-all, nom d'affichage par défaut pour les alias, etc.) après avoir vérifié votre domaine."
@@ -3938,8 +3944,8 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Quelle est la différence entre une note ${ PASS_SHORT_APP_NAME } et une note SimpleLogin ?"
       ],
-      "You don't have any vault": [
-        "Vous n'avez aucun coffre-fort."
+      "You don't have any vaults": [
+        "Vous n'avez aucun coffre-forts."
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Votre abonnement ${ planName } se terminera le ${ endDate }."
@@ -4250,7 +4256,7 @@
         "Vous n'aurez plus accès à ce coffre-fort. Pour le rejoindre à nouveau, il vous faudra une nouvelle invitation."
       ],
       "Your administrator needs to create a vault for you before you can create items": [
-        "Votre administrateur doit créer un coffre-fort pour vous avant que vous puissiez créer des éléments."
+        "Votre administrateur doit créer un coffre-fort pour vous avant que vous ne puissiez créer des éléments."
       ],
       "Your organization does not allow creating a vault": [
         "Votre organisation ne permet pas de créer un coffre-fort."

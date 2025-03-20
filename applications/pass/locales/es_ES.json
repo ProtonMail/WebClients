@@ -2158,6 +2158,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Esta operación es irreversible. Se eliminarán todos los alias que utilicen el dominio ${ domainTextBold }. Una vez eliminados, los alias no se pueden restaurar."
       ],
+      "This option is currently not available on your browser.": [
+        "Esta opción no está disponible en tu navegador."
+      ],
       "This option is currently not available on your device.": [
         "Esta opción no está disponible en tu dispositivo."
       ],
@@ -3938,7 +3941,7 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "¿Cuál es la diferencia entre una nota de ${ PASS_SHORT_APP_NAME } y una nota de SimpleLogin?"
       ],
-      "You don't have any vault": [
+      "You don't have any vaults": [
         "No tienes ninguna bóveda"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
