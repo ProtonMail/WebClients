@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -1461,7 +1461,7 @@
         "Vásároljon most"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Emeld új szintre az e-mailes produktivitást. Hagyd, hogy a ${ BRAND_NAME } Scribe segítsen megírni, válaszolni és lektorálni az e-mailjeidet."
+        "Emelje új szintre az e-mailes produktivitást. Hagyja, hogy a ${ BRAND_NAME } Scribe segítsen megírni, válaszolni és lektorálni az e-mailjeit."
       ]
     },
     "Attached ics file error": {
@@ -1713,7 +1713,7 @@
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz 15 e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnév és további lehetőségeket tartalmaz."
+        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnevet és további lehetőségeket tartalmaz."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait titkosított felhőtárhelyen. Online dokumentum szerkesztő, fotók biztonsági mentése, verziótörténet, titkosított fájlmegosztás és további lehetőségek."
@@ -6443,11 +6443,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiváljon legalább egy helyreállítási módszert, hogy abban az esetben is visszaszerezhesse a hozzáférést a ${ BRAND_NAME } fiókjában tárolt adataihoz, ha elfelejtené a jelszavát."
       ],
-      "Active": [
-        "Aktív"
-      ],
       "active": [
         "aktív"
+      ],
+      "Active": [
+        "Aktív"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
@@ -7951,9 +7951,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Küldje el a befizetést az alábbi címre, vagy olvassa be a QR-kódot. A befizetés a megerősítést követően megjelenik a számláján."
-      ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Az előfizetés automatikusan megújul minden ${ cycle } hónapban."
       ],
       "Subscription auto-renews every month.": [
         "Az előfizetés minden hónapban automatikusan megújul."
@@ -12987,9 +12984,6 @@
       "Processing payment": [
         "Fizetés feldolgozása"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Előfizetés megújul ${ renewPrice }, bármikor lemondhatja."
-      ],
       "Timeout exceeded": [
         "Időtúllépés"
       ],
@@ -14793,32 +14787,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -14905,7 +14873,7 @@
         "Korai hozzáférés az új alkalmazásokhoz és funkciókhoz"
       ],
       "Email productivity features": [
-        "Email hatékonysági funciók"
+        "E-mail hatékonysági funciók"
       ],
       "Extra storage and users": [
         "Extra tárhely és további felhasználók"
@@ -14999,6 +14967,32 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -17345,7 +17339,7 @@
         "Bitcoin küldés e-mailben"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Titkosított és biztonságos ${ MAIL_APP_NAME } e-mail cím. Egyszerűen küldhetsz Bitcoint bárkinek csupán a ${ BRAND_NAME } nevét."
+        "Titkosított és biztonságos ${ MAIL_APP_NAME } e-mail cím. Egyszerűen küldhet Bitcoint bárkinek csupán a ${ BRAND_NAME } nevét ismerve."
       ],
       "Encrypted cloud storage for photos and documents": [
         "Titkosított felhő tárhely fényképekhez és dokumentumokhoz"
@@ -17360,7 +17354,7 @@
         "Legexkluzívabb Csomagunk. Szerezz korai hozzáférést az új funkciókhoz és az összes prémium ${ BRAND_NAME } szolgáltatáshoz."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Biztonságosan cserélj Bitcoint e-mailen keresztül, ahelyett, hogy összetett, 26 karakteres és hibára hajlamos Bitcoin címeket használnál"
+        "Biztonságosan cserélhet Bitcoint e-mailen keresztül, ahelyett, hogy összetett, 26 karakteres és hibára hajlamos Bitcoin címeket használna"
       ],
       "Securely hold and transact Bitcoin for free.": [
         "Biztonságosan tárolja és intézze a Bitcoin tranzakciókat ingyenesen."

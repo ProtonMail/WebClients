@@ -1009,14 +1009,6 @@
         "30 日間返金保証"
       ]
     },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "${ discountedPrice }の特別な割引価格は最初の${ cycle }ヶ月のみ適用されます。そのあとは${ renewalLength }ヶ月${ nextPrice }の割引価格で自動更新されます。いつでもキャンセル可能です。"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "特別割引価格 ${ discountedPrice } は最初の 1 か月間有効です。 その後、毎月 ${ nextPrice } で自動的に更新されます。 いつでもキャンセルできます。"
-      ]
-    },
     "bf2023: Title": {
       "Offer unavailable": [
         "オファーは利用できません"
@@ -5083,9 +5075,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "サブスクリプションは ${ cycle } か月ごとに更新されます。"
-      ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
       ],
@@ -5685,9 +5674,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "予定されているプランは ${ renewalTime } から始まり、${ cycle }ヶ月ごとに自動更新されます。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
@@ -8437,23 +8423,8 @@
       "Processing payment": [
         "支払いの処理中"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "${ renewPrice }で更新、いつでもキャンセル可能。"
-      ],
       "Select billing country to pay": [
         "支払い請求先の国を選択してください"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の${ subscriptionLength }ヶ月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは${ subscriptionLengthCopy }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の${ subscriptionLength }ヶ月のみ適用されます。そのあとは${ subscriptionLengthCopy }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは${ subscriptionLength }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。そのあとは毎月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "トランザクションが正常に検出されました。トランザクションが完全に確認され次第、クレジットがあなたのアカウントに追加されます。"
@@ -11395,6 +11366,29 @@
         "今日"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ],
+      "Disables end-to-end email encryption for this group": [
+        "このグループのエンドツーエンドのメール暗号化を無効"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
+      ],
+      "Group membership paused": [
+        "グループのメンバーシップは一時停止されました"
+      ],
+      "Sending member invitation": [
+        "メンバー招待を送信中"
+      ],
+      "User declined invitation": [
+        "ユーザーが招待を拒否しました"
+      ],
+      "Waiting for user to accept the invitation": [
+        "ユーザーが招待を受けるのを待っています"
+      ]
+    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
@@ -11485,29 +11479,6 @@
       ],
       "Your DKIM signing is working.": [
         "DKIM 署名が機能しています。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ],
-      "Disables end-to-end email encryption for this group": [
-        "このグループのエンドツーエンドのメール暗号化を無効"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
-      ],
-      "Group membership paused": [
-        "グループのメンバーシップは一時停止されました"
-      ],
-      "Sending member invitation": [
-        "メンバー招待を送信中"
-      ],
-      "User declined invitation": [
-        "ユーザーが招待を拒否しました"
-      ],
-      "Waiting for user to accept the invitation": [
-        "ユーザーが招待を受けるのを待っています"
       ]
     },
     "Tor out of date": {
@@ -11875,9 +11846,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "その後、12 か月ごとに ${ renewPrice } が請求されます。"
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
       ],

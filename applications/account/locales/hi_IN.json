@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1754,14 +1754,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 दिन की पैसे-वापस गारंटी"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "${ discountedPrice } की विशेष रियायती कीमत पहले ${ cycle } महीनों के लिए मान्य है। फिर इसे ${ renewalLength } महीनों के लिए ${ nextPrice } की रियायती कीमत पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "${ discountedPrice } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ nextPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
     },
     "bf2023: Title": {
@@ -7213,10 +7205,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "कम-से-कम एक रिक्वरी तरीका सेट करे ताकि आप अपना ${ BRAND_NAME } खाता इस्तेमाल करना जारी रख सके जब भी आपका पासवर्ड खो जाए।"
       ],
-      "Active": [
+      "active": [
         "सक्रिय"
       ],
-      "active": [
+      "Active": [
         "सक्रिय"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -9008,9 +9000,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "सदस्यता हर ${ cycle } महीने में स्वतः नवीनीकृत हो जाती है।"
-      ],
       "Subscription auto-renews every month.": [
         "सदस्यता स्वचालित रूप से हर महीने नवीनीकृत होती है।"
       ],
@@ -9968,9 +9957,6 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "आपका रिकवरी वाक्यांश 12 यादृच्छिक रूप से उत्पन्न शब्दों की एक श्रंखला है जो एक विशिष्ट क्रम में हैं।"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "आपकी निर्धारित योजना ${ renewalTime } से शुरू होती है और हर ${ cycle } महीनों में ऑटो-नवीनीकरण होगी।"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "आपकी निर्धारित योजना ${ renewalTime } से शुरू होती है और हर महीने ऑटो-नवीनीकरण होगी।"
@@ -14850,23 +14836,8 @@
       "Processing payment": [
         "भुगतान की प्रक्रिया जारी है"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "हर महीने ${ renewPrice } पर नवीनीकरण होता है, आप किसी भी समय रद्द कर सकते हैं।"
-      ],
       "Select billing country to pay": [
         "भुगतान के लिए बिलिंग देश चुनें"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले ${ subscriptionLength } महीनों के लिए वैध है। कूपन ${ couponRedemptions } नवीनीकरणों के लिए मान्य है। फिर इसे ${ subscriptionLengthCopy } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले ${ subscriptionLength } महीनों के लिए वैध है। फिर इसे ${ subscriptionLengthCopy } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। कूपन ${ couponRedemptions } नवीनीकरणों के लिए मान्य है। फिर इसे ${ subscriptionLength } महीने के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "लेन-देन सफलतापूर्वक पहचाना गया है। लेन-देन पूरी तरह से पुष्टि होने पर आपके खाते में क्रेडिट जोड़ दिए जाएंगे।"
@@ -17087,47 +17058,6 @@
         "के लिए ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -17416,6 +17346,47 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {
@@ -20133,9 +20104,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "फिर आपको हर 12 महीने में ${ renewPrice } पर बिल किया जाएगा।"
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "आपकी नई सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीनीकृत होगी।",
         "आपकी नई सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीनीकृत होगी।"

@@ -859,10 +859,6 @@
       "${ price } per user": [
         "${ price } por usuario"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } licencia ${ LUMO_APP_NAME }",
-        "${ seats } licencias ${ LUMO_APP_NAME }"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
         "${ seats } licencias del asistente de escritura"
@@ -1019,14 +1015,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantía de reembolso durante 30 días"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "La oferta especial de ${ discountedPrice } es válida durante los primeros ${ cycle } meses. Una vez transcurrido ese plazo, se renovará automáticamente al precio rebajado de ${ nextPrice } durante ${ renewalLength } meses. Puede cancelarla en cualquier momento."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "La oferta especial de ${ discountedPrice } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ nextPrice } cada mes. Puede cancelarla en cualquier momento."
       ]
     },
     "bf2023: Title": {
@@ -3877,9 +3865,6 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usa autenticación de dos factores para iniciar sesión en su organización.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usan autenticación de dos factores para iniciar sesión en su organización."
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } también puede usarse con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la segunda contraseña. Para cambiar al modo de contraseña única, ingrese la contraseña única que quiere usar y haga clic en Guardar."
       ],
@@ -3938,6 +3923,10 @@
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } dirección más",
         "${ remainingAddresses.length } direcciones más"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } seleccionado",
+        "${ selectedEntities.length } seleccionado"
       ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
@@ -5151,7 +5140,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envíe un depósito usando la siguiente dirección o escanee el código QR. El depósito aparecerá en la cuenta después de la confirmación."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "La suscripción se renueva automáticamente cada ${ cycle } mes.",
         "La suscripción se renueva automáticamente cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
@@ -5708,6 +5698,10 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "No podrá reasignar estos servidores a otro país durante 10 días."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Después se le facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
+        "Después se le facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Se aplicó su ${ boldDiscountPercent } a ${ boldPlanTitle }."
       ],
@@ -5765,11 +5759,15 @@
       "Your phone number will only be used for this one-time verification.": [
         "El número de teléfono sólo se usará para esta verificación única."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } mes.",
         "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } meses."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Su suscripción se renovará automáticamente en ${ renewalTime }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Podrá agregar estos servidores a otra puerta de enlace inmediatamente."
@@ -8551,26 +8549,39 @@
       "Processing payment": [
         "Procesando el pago"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Se renueva por ${ renewPrice }, cancele cuando desee."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Precio de renovación sujeta a cambios de acuerdo a ${ termsAndConditionsLink }"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Se renueva por ${ renewPriceStr }, cancele en cualquier momento."
       ],
       "Select billing country to pay": [
         "Seleccione el país de facturación para pagar"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante los primeros ${ subscriptionLength } meses. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Puede cancelarla en cualquier momento."
+      "terms & conditions": [
+        "los términos y condiciones"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante los primeros ${ subscriptionLength } meses. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } durante ${ subscriptionLengthCopy } meses. Puede cancelarla en cualquier momento."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "El cupón es válido por ${ couponRedemptions } renovación.",
+        "El cupón es válido por ${ couponRedemptions } renovaciones."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ renewPrice } por ${ subscriptionLength } mes. Puede cancelarla en cualquier momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial de descuento de ${ priceWithDiscount } es válido para el primer ${ subscriptionLength } mes",
+        "El precio especial de descuento de ${ priceWithDiscount } es válido para los primeros ${ subscriptionLength } meses"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "La oferta especial de ${ priceWithDiscount } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ renewPrice } cada mes. Puede cancelarla en cualquier momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "La oferta especial por ${ priceWithDiscount } es válida para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento.",
+        "La oferta especial por ${ priceWithDiscount } es válida para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "La oferta especial por ${ priceWithDiscount } es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puede cancelarla en cualquier momento."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "La transacción se detectó. Los créditos se agregarán a la cuenta una vez que se confirme la transacción por completo."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puede cancelar en cualquier momento.",
+        "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puede cancelar en cualquier momento."
       ],
       "Timeout exceeded": [
         "Tiempo de espera agotado"
@@ -11566,6 +11577,29 @@
         "Hoy"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ],
+      "Disables end-to-end email encryption for this group": [
+        "Desactiva el cifrado de correo electrónico de extremo a extremo para este grupo"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
+      ],
+      "Group membership paused": [
+        "Se pausó la membresía del grupo."
+      ],
+      "Sending member invitation": [
+        "Enviando invitación al miembro"
+      ],
+      "User declined invitation": [
+        "El usuario rechazó la invitación."
+      ],
+      "Waiting for user to accept the invitation": [
+        "Se está esperando que el usuario acepte la invitación."
+      ]
+    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
@@ -11656,29 +11690,6 @@
       ],
       "Your DKIM signing is working.": [
         "La firma DKIM está funcionando."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
-      ],
-      "Disables end-to-end email encryption for this group": [
-        "Desactiva el cifrado de correo electrónico de extremo a extremo para este grupo"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
-      ],
-      "Group membership paused": [
-        "Se pausó la membresía del grupo."
-      ],
-      "Sending member invitation": [
-        "Enviando invitación al miembro"
-      ],
-      "User declined invitation": [
-        "El usuario rechazó la invitación."
-      ],
-      "Waiting for user to accept the invitation": [
-        "Se está esperando que el usuario acepte la invitación."
       ]
     },
     "Tor out of date": {
@@ -12057,8 +12068,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Se le facturará cada 12 meses por ${ renewPrice }."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Se le facturará cada 12 meses por ${ renewPriceStr }."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Su nueva suscripción se renovará automáticamente en ${ cycle } mes.",

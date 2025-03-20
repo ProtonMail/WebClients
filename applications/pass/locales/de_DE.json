@@ -2158,6 +2158,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Dieser Vorgang ist nicht umkehrbar. Alle Aliase, die die Domäne ${ domainTextBold } verwenden, werden gelöscht. Bitte beachte, dass einmal gelöschte Aliase nicht wiederhergestellt werden können."
       ],
+      "This option is currently not available on your browser.": [
+        "Diese Option ist zurzeit in deinem Browser nicht verfügbar."
+      ],
       "This option is currently not available on your device.": [
         "Diese Option ist zurzeit auf deinem Gerät nicht verfügbar."
       ],
@@ -2314,6 +2317,9 @@
       ],
       "You may close this tab.": [
         "Du kannst diesen Tab schließen."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Du benötigst einen Tresor mit Bearbeitungsberechtigung, bevor du Einträge importieren kannst."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Nachdem du deine Domain verifiziert hast, kannst du deine Domain-Einstellungen anpassen (Catch-All-E-Mail-Aliasse, Standard-Anzeigename für Aliasse usw.)."
@@ -3938,8 +3944,8 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Was ist der Unterschied zwischen einer ${ PASS_SHORT_APP_NAME }-Notiz und einer SimpleLogin-Notiz?"
       ],
-      "You don't have any vault": [
-        "Du hast keinen Tresor"
+      "You don't have any vaults": [
+        "Du hast keine Tresore"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Dein ${ planName }-Abonnement endet am ${ endDate }"

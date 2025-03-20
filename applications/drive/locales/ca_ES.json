@@ -369,9 +369,6 @@
       "Edit": [
         "Edita"
       ],
-      "Edit album": [
-        "Edita l'àlbum"
-      ],
       "Edit email address": [
         "Edita l'adreça de correu"
       ],
@@ -837,9 +834,6 @@
       "Select country": [
         "Seleccioneu el país"
       ],
-      "Set album cover": [
-        "Estableix la portada de l'àlbum"
-      ],
       "Set as album cover": [
         "Estableix com a portada de l'àlbum"
       ],
@@ -1089,10 +1083,6 @@
       "${ price } per user": [
         "${ price } per usuari"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } llicència ${ LUMO_APP_NAME }",
-        "${ seats } llicències ${ LUMO_APP_NAME }"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } llicència de l'assistent d'escriptura",
         "${ seats } llicències de l'assistent d'escriptura"
@@ -1162,14 +1152,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantia de reemborsament de 30 dies"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant els primers ${ cycle } mesos. Després es renovarà automàticament al preu rebaixat de ${ nextPrice } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ discountedPrice } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ nextPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
       ]
     },
     "bf2023: Tooltip": {
@@ -4244,9 +4226,6 @@
         "${ invitations.length } invitació pendent",
         "${ invitations.length } invitacions pendents"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5339,7 +5318,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "La subscripció es renova automàticament cada ${ cycle } mes.",
         "La subscripció es renova automàticament cada ${ cycle } mesos."
       ],
       "Subscription auto-renews every month.": [
@@ -5780,6 +5760,10 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "A continuació, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
+        "A continuació, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
       ],
@@ -5862,11 +5846,15 @@
       "Your previous recovery phrase": [
         "La vostra frase de recuperació anterior"
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mes.",
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mesos."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
       ]
     },
     "info": {
@@ -8724,23 +8712,36 @@
       "Please select your billing state first.": [
         "Seleccioneu primer el vostre estat per a la facturació."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Es renova per ${ renewPrice } i ho podeu cancel·lar en qualsevol moment."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "El preu de la renovació està subjecte a canvis segons ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Es renova per ${ renewPriceStr } i ho podeu cancel·lar en qualsevol moment."
       ],
       "Select billing country to pay": [
         "Seleccioneu el país de facturació per pagar"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar-ho en qualsevol moment."
+      "terms & conditions": [
+        "els termes i condicions"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos. Després es renovarà automàticament al preu de ${ renewPrice } durant ${ subscriptionLengthCopy } mesos. Podeu cancel·lar-ho en qualsevol moment."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "El cupó és vàlid per ${ couponRedemptions } renovació.",
+        "El cupó és vàlid per ${ couponRedemptions } renovacions."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPrice } durant ${ subscriptionLength } mes. Podeu cancel·lar-ho en qualsevol moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPrice } cada mes. Podeu cancel·lar-ho en qualsevol moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per ${ couponRedemptions } renovació. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPriceStr } cada mes. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mes. Podeu cancel·lar-ho en qualsevol moment.",
+        "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
@@ -11114,8 +11115,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Després se us facturarà cada 12 mesos a ${ renewPrice }."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Després se us facturarà cada 12 mesos a ${ renewPriceStr }."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "La vostra nova subscripció es renovarà automàticament en ${ cycle } mes.",

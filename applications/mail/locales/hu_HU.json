@@ -1004,7 +1004,7 @@
         "Folytatás"
       ],
       "Resume downloading": [
-        "letöltés "
+        "Letöltés folytatása"
       ],
       "Retry": [
         "Újra"
@@ -1048,10 +1048,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } választása"
       ],
-      "Select all": [
+      "Select All": [
         "Összes kijelölése"
       ],
-      "Select All": [
+      "Select all": [
         "Összes kijelölése"
       ],
       "Select all messages": [
@@ -1221,6 +1221,10 @@
       ],
       "Trust": [
         "Megbízható"
+      ],
+      "Trust key": [
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1522,7 +1526,7 @@
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Emeld új szintre az e-mailes produktivitást. Hagyd, hogy a ${ BRAND_NAME } Scribe segítsen megírni, válaszolni és lektorálni az e-mailjeidet."
+        "Emelje új szintre az e-mailes produktivitást. Hagyja, hogy a ${ BRAND_NAME } Scribe segítsen megírni, válaszolni és lektorálni az e-mailjeit."
       ]
     },
     "Attached ics file error": {
@@ -1678,7 +1682,7 @@
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz 15 e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnév és további lehetőségeket tartalmaz."
+        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnevet és további lehetőségeket tartalmaz."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait titkosított felhőtárhelyen. Online dokumentum szerkesztő, fotók biztonsági mentése, verziótörténet, titkosított fájlmegosztás és további lehetőségek."
@@ -2428,7 +2432,7 @@
         "E-mail"
       ],
       "Enter a display name or nickname": [
-        "Írja be a megejelnítendő nevét vagy becenevét"
+        "Írjon be egy megjelenítendő nevet vagy becenevet"
       ],
       "First name": [
         "Keresztnév"
@@ -5698,7 +5702,7 @@
         "és"
       ],
       "Another tip will be displayed next time you open Mail": [
-        "Még egy tipp ki lesz írva amikor legközelebb megnyitja a Proton Mail-t."
+        "Még egy tipp ki lesz írva, amikor legközelebb megnyitja a Proton Mail-t."
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Minden időzített vagy némított üzenet le lesz mondva"
@@ -6210,6 +6214,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -6736,9 +6741,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Küldje el a befizetést az alábbi címre, vagy olvassa be a QR-kódot. A befizetés a megerősítést követően megjelenik a számláján."
-      ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Az előfizetés automatikusan megújul minden ${ cycle } hónapban."
       ],
       "Subscription auto-renews every month.": [
         "Az előfizetés minden hónapban automatikusan megújul."
@@ -9820,9 +9822,6 @@
       "MM/YY": [
         "HH/ÉÉ"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Előfizetés megújul ${ renewPrice }, bármikor lemondhatja."
-      ],
       "Timeout exceeded": [
         "Időtúllépés"
       ],
@@ -9985,7 +9984,7 @@
         "Mondd meg az írósegédnek, hogy mit írjon. Példa: \"Mondja le az edzőtermi tagságomat.\""
       ],
       "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
-        "Mondd meg az írósegédnek, hogy mit írjon. Példa: \"Hívd meg Jant a bulimra.\""
+        "Mondja meg az írósegédnek, hogy mit írjon. Példa: \"Hívd meg Jane-t a bulimra.\""
       ],
       "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
         "Mondd meg az írósegédnek, hogy mit írjon. Példa: \"Köszönd meg a kollégámnak a segítséget a projekten.\""
@@ -9994,7 +9993,7 @@
         "Mondd meg az írósegédnek, hogy mit írjon. Példa: \"Írj egy kísérőlevelet egy gyakornoki pozícióhoz.\""
       ],
       "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
-        "Mondd meg az írósegédnek, hogy mit írjon. Példa: \"Írj egy utánkövető e-mailt egy kliensnek.\""
+        "Mondja meg az írósegédnek, hogy mit írjon. Példa: \"Írj egy utánkövető e-mailt egy kliensnek.\""
       ],
       "Text": [
         "Szöveg"
@@ -11004,7 +11003,7 @@
         "Korai hozzáférés az új alkalmazásokhoz és funkciókhoz"
       ],
       "Email productivity features": [
-        "Email hatékonysági funciók"
+        "E-mail hatékonysági funciók"
       ],
       "Extra storage and users": [
         "Extra tárhely és további felhasználók"
@@ -12503,10 +12502,10 @@
         "Bitcoin küldés e-mailben"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Titkosított és biztonságos ${ MAIL_APP_NAME } e-mail cím. Egyszerűen küldhetsz Bitcoint bárkinek csupán a ${ BRAND_NAME } nevét."
+        "Titkosított és biztonságos ${ MAIL_APP_NAME } e-mail cím. Egyszerűen küldhet Bitcoint bárkinek csupán a ${ BRAND_NAME } nevét ismerve."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Biztonságosan cserélj Bitcoint e-mailen keresztül, ahelyett, hogy összetett, 26 karakteres és hibára hajlamos Bitcoin címeket használnál"
+        "Biztonságosan cserélhet Bitcoint e-mailen keresztül, ahelyett, hogy összetett, 26 karakteres és hibára hajlamos Bitcoin címeket használna"
       ]
     },
     "wallet_signup_2024:Action": {

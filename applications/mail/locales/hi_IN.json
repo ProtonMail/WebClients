@@ -1102,10 +1102,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -1301,7 +1301,8 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "विश्वसनीय चाबी"
+        "ट्रस्ट कुंजी",
+        "ट्रस्ट कुंजी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -1683,14 +1684,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 दिन की पैसे-वापस गारंटी"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "${ discountedPrice } की विशेष रियायती कीमत पहले ${ cycle } महीनों के लिए मान्य है। फिर इसे ${ renewalLength } महीनों के लिए ${ nextPrice } की रियायती कीमत पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "${ discountedPrice } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ nextPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
     },
     "bf2023: Tooltip": {
@@ -6642,7 +6635,8 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें"
+        "तस्वीर डालें",
+        "तस्वीरें डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -7195,9 +7189,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
-      ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "सदस्यता हर ${ cycle } महीने में स्वतः नवीनीकृत हो जाती है।"
       ],
       "Subscription auto-renews every month.": [
         "सदस्यता स्वचालित रूप से हर महीने नवीनीकृत होती है।"
@@ -7873,9 +7864,6 @@
       ],
       "Your private writing assistant": [
         "आपका निजी लिखने वाला सहायक"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "आपकी निर्धारित योजना ${ renewalTime } से शुरू होती है और हर ${ cycle } महीनों में ऑटो-नवीनीकरण होगी।"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "आपकी निर्धारित योजना ${ renewalTime } से शुरू होती है और हर महीने ऑटो-नवीनीकरण होगी।"
@@ -10783,23 +10771,8 @@
       "Please select your billing state first.": [
         "कृपया पहले अपना बिलिंग स्टेट चुनें।"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "हर महीने ${ renewPrice } पर नवीनीकरण होता है, आप किसी भी समय रद्द कर सकते हैं।"
-      ],
       "Select billing country to pay": [
         "भुगतान के लिए बिलिंग देश चुनें"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले ${ subscriptionLength } महीनों के लिए वैध है। कूपन ${ couponRedemptions } नवीनीकरणों के लिए मान्य है। फिर इसे ${ subscriptionLengthCopy } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले ${ subscriptionLength } महीनों के लिए वैध है। फिर इसे ${ subscriptionLengthCopy } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। कूपन ${ couponRedemptions } नवीनीकरणों के लिए मान्य है। फिर इसे ${ subscriptionLength } महीने के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
       ],
       "Timeout exceeded": [
         "Timeout exceeded"
@@ -13704,11 +13677,6 @@
         "आज"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: आपके सभी डिवाइसों पर सुरक्षित लॉगिन। इसमें असीमित नकली-नाम, साझा करना, एकीकृत 2-एफए, और अधिक शामिल हैं"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "स्वचालित इंगित करता है कि इस उपयोगकर्ता को भेजने के लिए संगीतकार में प्रारूप का उपयोग किया जाता है। सादा पाठ इंगित करता है कि संदेश भेजने पर संदेश हमेशा सादे पाठ में परिवर्तित हो जाएगा।"
@@ -13792,6 +13760,11 @@
         "इस ईमेल पर एंड-टू-एंड एन्क्रिप्टेड ईमेल भेजने को सक्षम करने के लिए एक सार्वजनिक कुंजी अपलोड करें"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: आपके सभी डिवाइसों पर सुरक्षित लॉगिन। इसमें असीमित नकली-नाम, साझा करना, एकीकृत 2-एफए, और अधिक शामिल हैं"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "स्थिर निस्तार"
@@ -13860,9 +13833,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "फिर आपको हर 12 महीने में ${ renewPrice } पर बिल किया जाएगा।"
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "आपकी नई सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीनीकृत होगी।",
         "आपकी नई सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीनीकृत होगी।"

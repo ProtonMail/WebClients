@@ -853,10 +853,6 @@
       "${ price } per user": [
         "${ price }/käyttäjä"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME }-lisenssi",
-        "${ seats } ${ LUMO_APP_NAME }-lisenssiä"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } kirjoitusavustajalisenssi",
         "${ seats } kirjoitusavustajalisenssiä"
@@ -1013,14 +1009,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 päivän rahat takaisin -takuu"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Erityishinta ${ discountedPrice } on voimassa vain ensimmäisten ${ cycle } kuukauden ajan, jonka jälkeen tilaus uudistuu automaattisesti alennettuun hintaan ${ nextPrice } ${ renewalLength } kuukaudeksi. Voit perua sen milloin tahansa."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Erityishinta ${ discountedPrice } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ nextPrice } kuukausihintaan. Voit peruuttaa milloin tahansa."
       ]
     },
     "bf2023: Title": {
@@ -3792,9 +3780,6 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } ei-SSO-jäsenistäsi käyttää kaksivaiheista tunnistautumista organisaatioosi kirjautumiseen.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } ei-SSO-jäsenistäsi käyttää kaksivaiheista tunnistautumista organisaatioosi kirjautumiseen."
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }ia voidaan käyttää myös yhdellä salasanalla, joka korvaa sekä kirjautumisen, että toisen salasanan. Vaihda yhden salasanan tilaan syöttämällä haluamasi yksittäinen salasana ja painamalla Tallenna."
       ],
@@ -5020,9 +5005,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Tilaus uudistuu automaattisesti ${ cycle } kuukauden välein."
-      ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
       ],
@@ -5618,9 +5600,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
@@ -8359,23 +8338,8 @@
       "Processing payment": [
         "Käsitellään maksua"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Uusitaan hintaan ${ renewPrice }, peru milloin tahansa."
-      ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ subscriptionLength } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus uudistuu automaattisesti hintaan ${ renewPrice } ${ subscriptionLengthCopy } kuukaudeksi. Voit perua sen milloin tahansa."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ subscriptionLength } kuukauden ajan, jonka jälkeen tilaus uudistuu automaattisesti hintaan ${ renewPrice } ${ subscriptionLengthCopy } kuukaudeksi. Voit perua sen milloin tahansa."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus uudistuu automaattisesti hintaan ${ renewPrice } ${ subscriptionLength } kuukaudeksi. Voit perua sen milloin tahansa."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPrice } kuukausihintaan. Voit perua milloin tahansa."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Siirto on havaittu. Krediitit lisätään tilillesi, kun siirto on täysin vahvistettu."
@@ -11347,6 +11311,29 @@
         "Tänään"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
+      ],
+      "Disables end-to-end email encryption for this group": [
+        "Poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä, eikä mitään salattuja tietoja jaeta tälle käyttäjälle."
+      ],
+      "Group membership paused": [
+        "Ryhmän jäsenyys on pysäytetty"
+      ],
+      "Sending member invitation": [
+        "Jäsenkutsua lähetetään"
+      ],
+      "User declined invitation": [
+        "Käyttäjä hylkäsi kutsun"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Odotetaan, että käyttäjä hyväksyy kutsun"
+      ]
+    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Ylläpitäjät voivat hallita käyttäjätilejä ja antaa ylläpito-oikeuksia muille käyttäjille. Vain ensisijainen ylläpitäjä voi muokata organisaation tilausta."
@@ -11428,29 +11415,6 @@
       ],
       "Your DKIM signing is working.": [
         "DKIM-allekirjoituksesi toimii."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
-      ],
-      "Disables end-to-end email encryption for this group": [
-        "Poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Ulkoinen osoite - poistaa päästä päähän -sähköpostisalauksen käytöstä tältä ryhmältä, eikä mitään salattuja tietoja jaeta tälle käyttäjälle."
-      ],
-      "Group membership paused": [
-        "Ryhmän jäsenyys on pysäytetty"
-      ],
-      "Sending member invitation": [
-        "Jäsenkutsua lähetetään"
-      ],
-      "User declined invitation": [
-        "Käyttäjä hylkäsi kutsun"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Odotetaan, että käyttäjä hyväksyy kutsun"
       ]
     },
     "Tor out of date": {
@@ -11793,9 +11757,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Silloin sinulta laskutetaan ${ renewPrice } vuoden välein."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Uusi tilauksesi uusitaan automaattisesti ${ cycle } kuukauden kuluttua.",
         "Uusi tilauksesi uusitaan automaattisesti ${ cycle } kuukauden kuluttua."
