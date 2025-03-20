@@ -8,6 +8,7 @@ import {
     isNodeOfInterest,
     isParentOfInterest,
     isRemovedNodeOfInterest,
+    isUnprocessed,
 } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
@@ -16,14 +17,12 @@ import {
     getIgnoredParent,
     getParentFormPrediction,
     isPrediction,
-    isProcessed,
     removeClassifierFlags,
     removeProcessedFlag,
 } from '@proton/pass/fathom';
 import { type MaybeNull } from '@proton/pass/types';
-import { isInputElement } from '@proton/pass/utils/dom/predicates';
+import { isInputElement, isValidInputElement } from '@proton/pass/utils/dom/predicates';
 import { debounceBuffer } from '@proton/pass/utils/fp/control';
-import { not } from '@proton/pass/utils/fp/predicates';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
@@ -300,6 +299,15 @@ export const createFormManager = (options: FormManagerOptions) => {
         { leading: true }
     );
 
+    const onFocusIn = ({ target }: Event) => {
+        /** Fallback detection trigger for inputs missed by other detection triggers
+         * (page load, DOM mutations, transitions). Only processes valid, unprocessed
+         * inputs that aren't explicitly ignored. */
+        if (target && isValidInputElement(target) && isUnprocessed(target)) {
+            void detect({ reason: 'FocusIn' });
+        }
+    };
+
     const observe = () => {
         if (!state.active) {
             state.active = true;
@@ -307,12 +315,7 @@ export const createFormManager = (options: FormManagerOptions) => {
 
             listeners.addListener(document.body, 'transitionend', onTransitionEnd);
             listeners.addListener(document.body, 'animationend', onTransitionEnd);
-
-            listeners.addListener(document.body, 'focusin', ({ target }) => {
-                if (target && isInputElement(target) && not(isProcessed)(target)) {
-                    void detect({ reason: 'FocusIn' });
-                }
-            });
+            listeners.addListener(document.body, 'focusin', onFocusIn);
         }
     };
 
