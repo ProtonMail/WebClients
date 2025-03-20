@@ -1,3 +1,5 @@
+import type { AlbumProperties } from '../../../store';
+
 export function noSelection(selectedItems: any[]): boolean {
     return selectedItems.length === 0;
 }
@@ -16,4 +18,8 @@ export function hasBookmarkSelected(selectedItems: { isBookmark?: boolean }[]): 
 
 export function hasInvitationSelected(selectedItems: { isInvitation?: boolean }[]): boolean {
     return selectedItems.some((item) => item.isInvitation);
+}
+
+export function hasAlbumSelected(selectedItems: { albumProperties?: AlbumProperties }[]): boolean {
+    return selectedItems.some((item) => !!item.albumProperties);
 }

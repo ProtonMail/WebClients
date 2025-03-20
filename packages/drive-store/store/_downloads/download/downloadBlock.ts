@@ -1,6 +1,3 @@
-import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
-import { ReadableStream } from 'web-streams-polyfill';
-
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
@@ -11,11 +8,8 @@ import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
 import { APP_NAME, APP_VERSION } from '../../../config';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
+import { loadCreateReadableStreamWrapper } from '../../../utils/webStreamsPolyfill';
 import { MAX_TOO_MANY_REQUESTS_WAIT } from '../constants';
-
-// Stream wrapper has outdated types
-// @ts-expect-error
-const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
 export default async function downloadBlock(
     abortController: AbortController,
@@ -91,5 +85,5 @@ export default async function downloadBlock(
         );
     }
 
-    return toPolyfillReadable(response.body) as ReadableStream<Uint8Array>;
+    return loadCreateReadableStreamWrapper(response.body);
 }

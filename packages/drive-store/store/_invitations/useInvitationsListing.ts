@@ -2,7 +2,8 @@ import { useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { PrivateKeyReference } from '@proton/crypto/lib';
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { queryInvitationDetails, queryListPendingInvitations } from '@proton/shared/lib/api/drive/invitation';
 import type { ShareInvitationDetailsPayload } from '@proton/shared/lib/interfaces/drive/invitation';
 import type { ListDrivePendingInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -10,14 +11,13 @@ import type { ListDrivePendingInvitationsPayload } from '@proton/shared/lib/inte
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { shareInvitationDetailsPayloadToShareInvitationDetails, useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
+import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import {
     DEFAULT_SORTING,
     type FetchMeta,
     type SortParams,
     useLinksListingHelpers,
 } from '../_links/useLinksListing/useLinksListingHelpers';
-import { useDefaultShare } from '../_shares';
 import { useInvitations } from './useInvitations';
 import { useInvitationsState } from './useInvitationsState';
 
@@ -32,11 +32,11 @@ interface FetchInvitationsMeta extends FetchMeta {
  */
 export function useInvitationsListing() {
     const debouncedRequest = useDebouncedRequest();
-    const { getDefaultShare } = useDefaultShare();
-    const { getPrivateAddressKeys } = useDriveCrypto();
     const { loadFullListingWithAnchor } = useLinksListingHelpers();
     const { decryptInvitationLinkName } = useInvitations();
     const { setInvitations, getAllInvitations, getInvitation, removeInvitations } = useInvitationsState();
+    const getAddresses = useGetAddresses();
+    const getAddressKeys = useGetAddressKeys();
     const invitationsIdsState = useRef<Set<string>>(new Set());
 
     const setInvitationsIdsState = (invitationIds: Set<string> | string[]) => {
@@ -65,10 +65,7 @@ export function useInvitationsListing() {
         obseleteInvitationsIds: new Set(),
     });
 
-    const loadInvitationsDetails = async (
-        invitations: ListDrivePendingInvitationsPayload['Invitations'],
-        privateKeys: PrivateKeyReference[]
-    ) => {
+    const loadInvitationsDetails = async (invitations: ListDrivePendingInvitationsPayload['Invitations']) => {
         for (let invitation of invitations) {
             const cachedInvitation = getInvitation(invitation.InvitationID);
 
@@ -76,10 +73,27 @@ export function useInvitationsListing() {
                 cachedInvitation ||
                 (await debouncedRequest<ShareInvitationDetailsPayload>(queryInvitationDetails(invitation.InvitationID))
                     .then(shareInvitationDetailsPayloadToShareInvitationDetails)
-                    .then(async (invitationDetails) => ({
-                        ...invitationDetails,
-                        decryptedLinkName: await decryptInvitationLinkName(invitationDetails, privateKeys),
-                    }))
+                    .then(async (invitationDetails) => {
+                        const keys = await getOwnAddressKeysWithEmailAsync(
+                            invitationDetails.invitation.inviteeEmail,
+                            getAddresses,
+                            getAddressKeys
+                        );
+                        if (!keys) {
+                            throw new EnrichedError('Address key to list invitation is not available', {
+                                tags: {
+                                    invitationId: invitationDetails.invitation.invitationId,
+                                    shareId: invitationDetails.share.shareId,
+                                    linkId: invitationDetails.link.linkId,
+                                    volumeId: invitationDetails.share.volumeId,
+                                },
+                            });
+                        }
+                        return {
+                            ...invitationDetails,
+                            decryptedLinkName: await decryptInvitationLinkName(invitationDetails, keys?.privateKeys),
+                        };
+                    })
                     .catch((error) => {
                         // Invitation does not exist
                         if (error.data?.Code === 2501) {
@@ -112,7 +126,6 @@ export function useInvitationsListing() {
 
     const fetchInvitationsNextPage = async (
         signal: AbortSignal,
-        privateKeys: PrivateKeyReference[],
         AnchorID?: string
     ): Promise<{ AnchorID: string; More: boolean }> => {
         if (fetchMeta.current.isEverythingFetched) {
@@ -132,7 +145,7 @@ export function useInvitationsListing() {
 
         fetchMeta.current.obseleteInvitationsIds = findObseleteInvitationIds(new Set(invitationsIds));
 
-        await loadInvitationsDetails(response.Invitations, privateKeys);
+        await loadInvitationsDetails(response.Invitations);
         fetchMeta.current.isEverythingFetched = !response.More;
 
         // Clean up obsolete invitations when all invitations are fetched
@@ -152,12 +165,10 @@ export function useInvitationsListing() {
      * Loads shared with me links.
      */
     const loadInvitations = async (signal: AbortSignal): Promise<{ Count?: number } | void> => {
-        const { addressId } = await getDefaultShare();
-        const privateKeys = await getPrivateAddressKeys(addressId);
         // This function (loadSharedWithMeLinks) will be called only once (in useEffect of useSharedWithMeView).
         // We reset the state of fetchMeta to allow fetching new items in case of tab change for exemple
         fetchMeta.current.isEverythingFetched = false;
-        const callback = (AnchorID?: string) => fetchInvitationsNextPage(signal, privateKeys, AnchorID);
+        const callback = (AnchorID?: string) => fetchInvitationsNextPage(signal, AnchorID);
         return loadFullListingWithAnchor(callback);
     };
 

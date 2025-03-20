@@ -12,6 +12,9 @@
         "test:ci": "jest --coverage --runInBand --ci",
         "test:watch": "jest --watch"
     },
+    "resolutions": {
+        "@xmldom/xmldom": "0.9.8"
+    },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@noble/hashes": "^1.7.1",
@@ -28,6 +31,7 @@
         "@proton/metrics": "workspace:^",
         "@proton/pack": "workspace:^",
         "@proton/polyfill": "workspace:^",
+        "@proton/raw-images": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/redux-shared-store": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
@@ -36,16 +40,20 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
+        "@xmldom/xmldom": "^0.9.8",
         "client-zip": "^2.4.6",
         "comlink": "^4.4.2",
         "exifreader": "^4.26.1",
+        "heic-to": "^1.1.10",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "react-router": "^5.3.4",
         "react-router-dom": "^5.3.4",
+        "react-router-dom-v5-compat": "^6.29.0",
         "react-window": "^1.8.11",
         "ttag": "^1.8.7",
-        "web-streams-polyfill": "^3.3.3",
+        "web-streams-polyfill": "^4.1.0",
         "zustand": "^4.5.6"
     },
     "devDependencies": {

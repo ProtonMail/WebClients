@@ -7,10 +7,10 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { serializeFormData } from '@proton/shared/lib/fetch/serialize';
 
-import { APP_NAME, APP_VERSION } from '../../../config';
 import { MAX_RETRIES_BEFORE_FAIL, MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_JOBS } from '../constants';
 import type { UploadingBlockControl } from './interface';
 import type { Pauser } from './pauser';
+import { uploadWorker } from './worker';
 
 type LogCallback = (message: string) => void;
 
@@ -281,7 +281,11 @@ async function uploadBlockData(
         xhr.setRequestHeader('pm-storage-token', token);
         xhr.setRequestHeader('Cache-Control', 'no-cache, no-store, max-age=0');
 
-        const appVersionHeaders = getAppVersionHeaders(getClientID(APP_NAME), APP_VERSION);
+        // the default values are for type safety, it should never occur, if it does, we have a problem
+        const appVersionHeaders = getAppVersionHeaders(
+            getClientID(uploadWorker.config?.APP_NAME || 'proton-drive'),
+            uploadWorker.config?.APP_VERSION || '0.0.0+wrong123'
+        );
         Object.keys(appVersionHeaders).forEach((header) => {
             xhr.setRequestHeader(header, appVersionHeaders[header as keyof typeof appVersionHeaders]);
         });

@@ -407,6 +407,18 @@ export function useLinksListingProvider() {
         [linksState.getLink]
     );
 
+    const getCachedLinksWithoutMeta = useCallback(
+        (
+            abortSignal: AbortSignal,
+            shareId: string,
+            linkIds: string[]
+        ): { links: DecryptedLink[]; isDecrypting: boolean } => {
+            const links = linkIds.map((linkId) => linksState.getLink(shareId, linkId)).filter(isTruthy);
+            return getDecryptedLinksAndDecryptRest(abortSignal, shareId, links);
+        },
+        [linksState.getLink]
+    );
+
     return {
         fetchChildrenNextPage,
         loadChildren,
@@ -435,6 +447,7 @@ export function useLinksListingProvider() {
         getCachedBookmarksLinks: bookmarksLinksListing.getCachedBookmarksLinks,
         getCachedBookmarkDetails: bookmarksLinksListing.getCachedBookmarkDetails,
         getCachedLinks,
+        getCachedLinksWithoutMeta,
 
         // TODO: Remove this with Invitation section refactor
         setShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,

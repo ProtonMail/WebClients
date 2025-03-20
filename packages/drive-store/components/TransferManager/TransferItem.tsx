@@ -49,7 +49,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, on
     return (
         <div
             className={clsx([
-                'transfers-manager-list-item p-4',
+                'transfers-manager-list-item border-bottom p-4',
                 (isCanceled || isSkipped) && 'transfers-manager-list-item--canceled',
                 className,
             ])}

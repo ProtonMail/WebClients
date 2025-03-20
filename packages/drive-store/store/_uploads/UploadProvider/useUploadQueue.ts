@@ -12,7 +12,14 @@ import {
     isTransferInitializing,
     isTransferPending,
 } from '../../../utils/transfer';
-import type { UploadFileItem, UploadFileList, UploadFolderItem } from '../interface';
+import type {
+    OnFileSkippedSuccessCallbackData,
+    OnFileUploadSuccessCallbackData,
+    OnFolderUploadSuccessCallbackData,
+    UploadFileItem,
+    UploadFileList,
+    UploadFolderItem,
+} from '../interface';
 import type {
     FileUpload,
     FileUploadReady,
@@ -76,47 +83,72 @@ export default function useUploadQueue(log: LogCallback) {
             parentId: string,
             list: UploadFileList,
             isForPhotos: boolean = false,
-            isSharedWithMe: boolean = false
+            isSharedWithMe: boolean = false,
+            onFileUpload?: (folder: OnFileUploadSuccessCallbackData) => void,
+            onFileSkipped?: (folder: OnFileSkippedSuccessCallbackData) => void,
+            onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
         ): Promise<void> => {
             return new Promise((resolve, reject) => {
-                setQueue((queue) => {
-                    const errors: Error[] = [];
-                    const conflictErrors: UploadConflictError[] = [];
+                const errors: Error[] = [];
+                const conflictErrors: UploadConflictError[] = [];
 
-                    const queueItem = queue.find((item) => item.shareId === shareId && item.linkId === parentId) || {
+                setQueue((prevQueue) => {
+                    const queueItem = prevQueue.find(
+                        (item) => item.shareId === shareId && item.linkId === parentId
+                    ) || {
                         shareId,
                         linkId: parentId,
                         files: [],
                         folders: [],
                     };
-                    for (const item of list) {
-                        if ((item as UploadFileItem).file?.name === DS_STORE) {
-                            continue;
-                        }
-                        try {
-                            addItemToQueue(log, shareId, queueItem, item, isForPhotos, isSharedWithMe);
-                        } catch (err: any) {
-                            if ((err as Error).name === 'UploadConflictError') {
-                                conflictErrors.push(err);
-                            } else {
-                                errors.push(err);
+
+                    try {
+                        for (const item of list) {
+                            if ((item as UploadFileItem).file?.name === DS_STORE) {
+                                continue;
+                            }
+
+                            try {
+                                addItemToQueue(
+                                    log,
+                                    shareId,
+                                    queueItem,
+                                    item,
+                                    isForPhotos,
+                                    isSharedWithMe,
+                                    onFileUpload,
+                                    onFileSkipped,
+                                    onFolderUpload
+                                );
+                            } catch (err: any) {
+                                if ((err as Error).name === 'UploadConflictError') {
+                                    conflictErrors.push(err);
+                                } else {
+                                    errors.push(err);
+                                }
                             }
                         }
-                    }
-                    const newQueue = [
-                        ...queue.filter((item) => item.shareId !== shareId || item.linkId !== parentId),
-                        queueItem,
-                    ];
 
-                    if (conflictErrors.length > 0) {
-                        errors.push(new UploadConflictError(conflictErrors[0].filename, conflictErrors.length - 1));
+                        if (conflictErrors.length > 0) {
+                            errors.push(new UploadConflictError(conflictErrors[0].filename, conflictErrors.length - 1));
+                        }
+
+                        const newQueue = [
+                            ...prevQueue.filter((item) => item.shareId !== shareId || item.linkId !== parentId),
+                            queueItem,
+                        ];
+
+                        if (errors.length > 0) {
+                            reject(errors);
+                        } else {
+                            resolve();
+                        }
+
+                        return newQueue;
+                    } catch (error) {
+                        reject(error);
+                        return prevQueue;
                     }
-                    if (errors.length > 0) {
-                        reject(errors);
-                    } else {
-                        resolve();
-                    }
-                    return newQueue;
                 });
             });
         },
@@ -307,7 +339,10 @@ export function addItemToQueue(
     newQueue: UploadQueue,
     item: UploadFileItem | UploadFolderItem,
     isForPhotos: boolean = false,
-    isSharedWithMe: boolean = false
+    isSharedWithMe: boolean = false,
+    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void,
+    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void,
+    onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
 ) {
     const name = (item as UploadFileItem).file ? (item as UploadFileItem).file.name : (item as UploadFolderItem).folder;
     if (!name) {
@@ -341,6 +376,10 @@ export function addItemToQueue(
                 mimeType: fileItem.file.type,
             },
             numberOfErrors: 0,
+            callbacks: {
+                onFileUpload,
+                onFileSkipped,
+            },
         });
         log(
             id,
@@ -360,6 +399,9 @@ export function addItemToQueue(
                 mimeType: 'Folder',
             },
             numberOfErrors: 0,
+            callbacks: {
+                onFolderUpload,
+            },
         });
         log(id, `Added folder to the queue (state: ${state}, parent: ${part.id})`);
     }

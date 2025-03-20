@@ -8,7 +8,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDevicesActions from '../_devices/useDevicesActions';
 import { useLinkActions, useLinksActions } from '../_links';
-// import { usePhotos } from '../_photos';
+// import { usePhotosOrPhotosWithAlbums } from '../_photos/PhotosOrPhotosWithAlbumsProvider';
 import { useShareActions, useShareUrl } from '../_shares';
 import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
 import { TransferConflictStrategy } from '../_uploads/interface';
@@ -38,7 +38,7 @@ export default function useActions() {
     const shareUrl = useShareUrl();
     const shareActions = useShareActions();
     const devicesActions = useDevicesActions();
-    // const { removePhotosFromCache } = usePhotos();
+    // const { removePhotosFromCache } = usePhotosOrPhotosWithAlbums();
 
     const createFolder = async (
         abortSignal: AbortSignal,
@@ -207,7 +207,8 @@ export default function useActions() {
     };
 
     /**
-     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled
+     * @param [notify] - whether notification popover should be displayed upon
+     * successful trash. Disabled on Docs
      */
     const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[], notify = true) => {
         if (!linksToTrash.length) {
@@ -223,13 +224,13 @@ export default function useActions() {
             }))
         );
 
-        if (!notify) {
-            return;
-        }
-
         // This is a bit ugly, but the photo linkId cache is not connected
         // very well to the rest of our state.
         // removePhotosFromCache(result.successes);
+
+        if (!notify) {
+            return;
+        }
 
         const undoAction = async () => {
             const linksToUndo = result.successes
@@ -245,7 +246,8 @@ export default function useActions() {
     };
 
     /**
-     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled on Docs
+     * @param [notify] - whether notification popover should be displayed upon
+     * successful trash. Disabled on Docs
      */
     const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[], notify = true) => {
         if (!linksToRestore.length) {

@@ -10,7 +10,7 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
-import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
+import { TransferCancel, TransferSkipped, TransferState } from '../../../components/TransferManager/transfer';
 import type { FileThresholdModalType } from '../../../components/modals/FileThresholdModal';
 import { useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -27,9 +27,17 @@ import {
 import { type LogCallback } from '../../_downloads';
 import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useTransferLog } from '../../_transfer';
-import { useIsPaid } from '../../_user';
+import { useGetMetricsUserPlan } from '../../_user/useGetMetricsUserPlan';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
-import type { UploadFileControls, UploadFileItem, UploadFileList, UploadFolderControls } from '../interface';
+import type {
+    OnFileSkippedSuccessCallbackData,
+    OnFileUploadSuccessCallbackData,
+    OnFolderUploadSuccessCallbackData,
+    UploadFileControls,
+    UploadFileItem,
+    UploadFileList,
+    UploadFolderControls,
+} from '../interface';
 import type { UploadModalContainer } from './UploadModalContainer';
 import type { UploadProviderState } from './UploadProviderState';
 import type { ConflictStrategyHandler, UpdateFilter } from './interface';
@@ -67,13 +75,13 @@ function useBaseUpload(
 ): [UploadProviderState, UploadModalContainer] {
     const onlineStatus = useOnline();
     const getUser = useGetUser();
-    const isPaidUser = useIsPaid();
+    const plan = useGetMetricsUserPlan();
     const isPublicContext = getIsPublicContext();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
     const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
 
-    const metrics = useUploadMetrics(isPaidUser);
+    const metrics = useUploadMetrics(plan);
     const { log, downloadLogs, clearLogs } = useTransferLog('upload');
     const queue = useUploadQueue((id, message) => log(id, `queue: ${message}`));
     const control = useUploadControl(queue.fileUploads, queue.updateWithCallback, queue.remove, queue.clear);
@@ -126,7 +134,10 @@ function useBaseUpload(
         shareId: string,
         parentId: string,
         list: UploadFileList,
-        isForPhotos: boolean = false
+        isForPhotos: boolean = false,
+        onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void,
+        onFileSkipped?: (folder: OnFileSkippedSuccessCallbackData) => void,
+        onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void
     ) => {
         const total = getTotalFileList(list);
         // We check if item is upload into a shared with me share as we don't check for space on external volumes
@@ -159,23 +170,25 @@ function useBaseUpload(
             });
         }
 
-        await queue.add(shareId, parentId, list, isForPhotos, isSharedWithMe).catch((err: any) => {
-            const errors = Array.isArray(err) ? err : [err];
-            errors.forEach((err) => {
-                if ((err as Error).name === 'UploadUserError' || (err as Error).name === 'UploadConflictError') {
-                    createNotification({
-                        text: err.message,
-                        type: 'error',
-                    });
-                } else {
-                    createNotification({
-                        text: c('Notification').t`Failed to upload files: ${err}`,
-                        type: 'error',
-                    });
-                    console.error(err);
-                }
+        await queue
+            .add(shareId, parentId, list, isForPhotos, isSharedWithMe, onFileUpload, onFileSkipped, onFolderUpload)
+            .catch((err: any) => {
+                const errors = Array.isArray(err) ? err : [err];
+                errors.forEach((err) => {
+                    if ((err as Error).name === 'UploadUserError' || (err as Error).name === 'UploadConflictError') {
+                        createNotification({
+                            text: err.message,
+                            type: 'error',
+                        });
+                    } else {
+                        createNotification({
+                            text: c('Notification').t`Failed to upload files: ${err}`,
+                            type: 'error',
+                        });
+                        console.error(err);
+                    }
+                });
             });
-        });
     };
 
     const restartUploads = useCallback(
@@ -226,6 +239,7 @@ function useBaseUpload(
                 .start()
                 .then(({ folderId, folderName }) => {
                     queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId, name: folderName });
+                    nextFolderUpload.callbacks.onFolderUpload?.({ folderId, folderName });
                 })
                 .catch((error) => {
                     if (isTransferCancelError(error)) {
@@ -284,9 +298,10 @@ function useBaseUpload(
                         queue.updateState(nextFileUpload.id, TransferState.Finalizing);
                     },
                 })
-                .then(() => {
+                .then((file) => {
                     queue.updateState(nextFileUpload.id, TransferState.Done);
                     metrics.uploadSucceeded(nextFileUpload.shareId, nextFileUpload.numberOfErrors);
+                    nextFileUpload.callbacks.onFileUpload?.(file);
                 })
                 .catch((error) => {
                     if (isPhotosDisabledUploadError(error)) {
@@ -299,6 +314,12 @@ function useBaseUpload(
                         );
                     } else if (isTransferSkipError(error)) {
                         queue.updateWithData(nextFileUpload.id, TransferState.Skipped, { error });
+                        if (error instanceof TransferSkipped && error.file && error.duplicateLinkId) {
+                            nextFileUpload.callbacks.onFileSkipped?.({
+                                fileId: error.duplicateLinkId,
+                                fileName: error.file.name,
+                            });
+                        }
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         sendErrorReport(error);
