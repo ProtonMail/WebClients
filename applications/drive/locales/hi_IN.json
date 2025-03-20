@@ -362,9 +362,6 @@
       "Edit": [
         "बदलें"
       ],
-      "Edit album": [
-        "एल्बम संपादित करें"
-      ],
       "Edit email address": [
         "ईमेल पता बदलें"
       ],
@@ -821,9 +818,6 @@
       "Select country": [
         "देश चुनें"
       ],
-      "Set album cover": [
-        "एल्बम कवर सेट करें"
-      ],
       "Set as album cover": [
         "एल्बम कवर के रूप में सेट करें"
       ],
@@ -1139,14 +1133,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 दिन की पैसे-वापस गारंटी"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "${ discountedPrice } की विशेष रियायती कीमत पहले ${ cycle } महीनों के लिए मान्य है। फिर इसे ${ renewalLength } महीनों के लिए ${ nextPrice } की रियायती कीमत पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "${ discountedPrice } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ nextPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
     },
     "bf2023: Tooltip": {
@@ -5276,9 +5262,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "सदस्यता हर ${ cycle } महीने में स्वतः नवीनीकृत हो जाती है।"
-      ],
       "Subscription auto-renews every month.": [
         "सदस्यता स्वचालित रूप से हर महीने नवीनीकृत होती है।"
       ],
@@ -5798,9 +5781,6 @@
       ],
       "Your previous recovery phrase": [
         "आपका पिछला पुनर्प्राप्ति वाक्यांश"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "आपकी निर्धारित योजना ${ renewalTime } से शुरू होती है और हर ${ cycle } महीनों में ऑटो-नवीनीकरण होगी।"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "आपकी निर्धारित योजना ${ renewalTime } से शुरू होती है और हर महीने ऑटो-नवीनीकरण होगी।"
@@ -8577,23 +8557,8 @@
       "Please select your billing state first.": [
         "कृपया पहले अपना बिलिंग स्टेट चुनें।"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "हर महीने ${ renewPrice } पर नवीनीकरण होता है, आप किसी भी समय रद्द कर सकते हैं।"
-      ],
       "Select billing country to pay": [
         "भुगतान के लिए बिलिंग देश चुनें"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले ${ subscriptionLength } महीनों के लिए वैध है। कूपन ${ couponRedemptions } नवीनीकरणों के लिए मान्य है। फिर इसे ${ subscriptionLengthCopy } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले ${ subscriptionLength } महीनों के लिए वैध है। फिर इसे ${ subscriptionLengthCopy } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। कूपन ${ couponRedemptions } नवीनीकरणों के लिए मान्य है। फिर इसे ${ subscriptionLength } महीने के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ renewPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय रद्द कर सकते हैं।"
       ],
       "Timeout exceeded": [
         "Timeout exceeded"
@@ -10953,9 +10918,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "फिर आपको हर 12 महीने में ${ renewPrice } पर बिल किया जाएगा।"
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "आपकी नई सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीनीकृत होगी।",
         "आपकी नई सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीनीकृत होगी।"

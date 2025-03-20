@@ -870,12 +870,6 @@
       "${ price } per user": [
         "${ price } na uporabnika"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } sedež ${ LUMO_APP_NAME }",
-        "${ seats } sedeža ${ LUMO_APP_NAME }",
-        "${ seats } sedeži ${ LUMO_APP_NAME }",
-        "${ seats } sedežev ${ LUMO_APP_NAME }"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } licenca za pomočnika pri pisanju",
         "${ seats } licenci za pomočnika pri pisanju",
@@ -998,11 +992,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dnevno jamstvo z vračilom denarja"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Izredno znižana cena ${ discountedPrice } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ nextPrice }. Naročnino lahko kadarkoli prekinete."
       ]
     },
     "bf2023: Tooltip": {
@@ -5041,9 +5030,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
-      ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Naročnina se samodejno podaljša vsakih ${ cycle } mesecev."
       ],
       "Subscription auto-renews every month.": [
         "Naročnina se samodejno podaljša vsak mesec."
@@ -10093,9 +10079,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Nato boste vsakih 12 mesecev prejeli račun v znesku ${ renewPrice }."
-      ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Vaša naročnina bo samodejno obnovljena v ${ cycle } mesecu.",
         "Vaša naročnina bo samodejno obnovljena v ${ cycle } mesecih.",

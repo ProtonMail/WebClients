@@ -2158,6 +2158,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Deze bewerking is onomkeerbaar. Alle aliassen die het domein ${ domainTextBold } gebruiken worden verwijderd. Let op: aliassen kunnen niet hersteld worden zodra ze verwijderd zijn."
       ],
+      "This option is currently not available on your browser.": [
+        "Deze optie is momenteel niet beschikbaar in uw browser."
+      ],
       "This option is currently not available on your device.": [
         "Deze optie is momenteel niet beschikbaar op uw apparaat."
       ],
@@ -2314,6 +2317,9 @@
       ],
       "You may close this tab.": [
         "U kunt dit tabblad nu sluiten."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "U hebt een kluis nodig met editeer toelatingen om items te kunnen importeren"
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "U kunt uw domein instellingen aanpassen (catch-all e-mail aliassen, standaard weergavenaam voor aliassen enz...) na het verifiëren van uw domein."
@@ -3938,8 +3944,8 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Wat is het verschil tussen ${ PASS_SHORT_APP_NAME } notitie en SimpleLogin notitie?"
       ],
-      "You don't have any vault": [
-        "U heeft geen kluis"
+      "You don't have any vaults": [
+        "U heeft geen kluizen"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Uw ${ planName } abonnement zal eindigen op ${ endDate }"

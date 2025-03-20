@@ -988,14 +988,6 @@
         "30일 무료체험"
       ]
     },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "특별 할인가 ${ discountedPrice }는 첫 ${ cycle }개월간 적용됩니다. 이후 매월 할인된 가격인 ${ nextPrice }(으)로 ${ renewalLength }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
-      ]
-    },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
@@ -4379,9 +4371,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME }에 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
       ],
@@ -5069,9 +5058,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "구독이 ${ cycle }개월 마다 갱신됩니다."
-      ],
       "Subscription auto-renews every month.": [
         "구독이 매달 갱신됩니다."
       ],
@@ -5440,9 +5426,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
@@ -7955,23 +7938,8 @@
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "${ renewPrice }에 갱신되며 언제나 취소할 수 있습니다."
-      ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 ${ subscriptionLength }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPrice }로 ${ subscriptionLengthCopy }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 ${ subscriptionLength }개월간 적용됩니다. 이후 매월 ${ renewPrice }로 ${ subscriptionLengthCopy }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 1개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPrice }로 ${ subscriptionLength }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPrice }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
@@ -10285,9 +10253,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "12개월마다 ${ renewPrice }가 결제됩니다."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],

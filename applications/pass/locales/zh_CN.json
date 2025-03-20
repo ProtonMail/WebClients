@@ -2129,6 +2129,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "此操作不可逆转。所有使用 ${ domainTextBold } 域名的别名都将被删除。请注意，别名一旦删除将无法恢复。"
       ],
+      "This option is currently not available on your browser.": [
+        "该选项在您当前的浏览器中暂不可用。"
+      ],
       "This option is currently not available on your device.": [
         "您的设备目前无法使用此选项。"
       ],
@@ -3879,8 +3882,8 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } 笔记和 SimpleLogin 笔记之间有什么区别？"
       ],
-      "You don't have any vault": [
-        "您没有任何保险库"
+      "You don't have any vaults": [
+        "您还没有任何保险库"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "您的 ${ planName } 订阅将在 ${ endDate } 结束"

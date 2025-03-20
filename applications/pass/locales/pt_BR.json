@@ -2158,6 +2158,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Essa operação é irreversível. Todos os aliases que usam o domínio ${ domainTextBold } serão excluídos. Observe que, uma vez excluídos, os aliases não podem ser restaurados."
       ],
+      "This option is currently not available on your browser.": [
+        "Essa opção não está disponível atualmente no seu navegador."
+      ],
       "This option is currently not available on your device.": [
         "Essa opção não está disponível atualmente no seu dispositivo."
       ],
@@ -2314,6 +2317,9 @@
       ],
       "You may close this tab.": [
         "Você pode fechar esta guia."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Você precisa de um cofre com permissão de edição antes de importar itens."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Você poderá personalizar as configurações do seu domínio (aliases de e-mail, nome de exibição padrão para aliases etc.) após verificar seu domínio."
@@ -3941,7 +3947,7 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Qual é a diferença entre a nota ${ PASS_SHORT_APP_NAME } e a nota do SimpleLogin?"
       ],
-      "You don't have any vault": [
+      "You don't have any vaults": [
         "Você não tem nenhum cofre"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
@@ -4027,10 +4033,10 @@
         "É obrigatório pelo menos um endereço de e-mail"
       ],
       "Cannot contain a dot at the beginning": [
-        "Não pode começar por um ponto."
+        "Não pode começar por um ponto"
       ],
       "Cannot contain a dot at the end": [
-        "Não pode conter um ponto no final."
+        "Não pode conter um ponto no final"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Não é possível recuperar caixas de correio para este alias no momento"
@@ -4148,7 +4154,7 @@
         "Após a sincronização, a exclusão de aliases no ${ PASS_SHORT_APP_NAME } também os excluirá no SimpleLogin."
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
+        "Somente caracteres alfanuméricos minúsculos, pontos, hifens e sublinhados são permitidos"
       ],
       "Passphrase is required": [
         "Frase secreta é obrigatória"
