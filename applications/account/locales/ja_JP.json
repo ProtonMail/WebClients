@@ -70,11 +70,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -1761,14 +1761,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 日間返金保証"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "${ discountedPrice }の特別な割引価格は最初の${ cycle }ヶ月のみ適用されます。そのあとは${ renewalLength }ヶ月${ nextPrice }の割引価格で自動更新されます。いつでもキャンセル可能です。"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "特別割引価格 ${ discountedPrice } は最初の 1 か月間有効です。 その後、毎月 ${ nextPrice } で自動的に更新されます。 いつでもキャンセルできます。"
       ]
     },
     "bf2023: Title": {
@@ -7208,11 +7200,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "パスワードがわからなくなっても、${ BRAND_NAME } アカウントのコンテンツにアクセスできるように、少なくとも一つのデータ回復方法を有効にしてください。"
       ],
-      "Active": [
-        "有効"
-      ],
       "active": [
         "アクティブ"
+      ],
+      "Active": [
+        "有効"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "@pm.me メール アドレスをアカウントに追加します。 このシンプルで短いドメインは、「${ MAIL_APP_NAME } me」または「Private Message me」を表します。"
@@ -9035,9 +9027,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "サブスクリプションは ${ cycle } か月ごとに更新されます。"
-      ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
       ],
@@ -9994,9 +9983,6 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "あなたの回復フレーズは、特定の順序でランダムに生成された 12 の単語のシリーズです。"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "予定されているプランは ${ renewalTime } から始まり、${ cycle }ヶ月ごとに自動更新されます。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
@@ -14867,23 +14853,8 @@
       "Processing payment": [
         "支払いの処理中"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "${ renewPrice }で更新、いつでもキャンセル可能。"
-      ],
       "Select billing country to pay": [
         "支払い請求先の国を選択してください"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の${ subscriptionLength }ヶ月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは${ subscriptionLengthCopy }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の${ subscriptionLength }ヶ月のみ適用されます。そのあとは${ subscriptionLengthCopy }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは${ subscriptionLength }ヶ月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。そのあとは毎月${ renewPrice }で自動更新されます。いつでもキャンセル可能です。"
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "トランザクションが正常に検出されました。トランザクションが完全に確認され次第、クレジットがあなたのアカウントに追加されます。"
@@ -17061,47 +17032,6 @@
         "${ totalPrice } の場合"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -17384,6 +17314,47 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -20101,9 +20072,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "その後、12 か月ごとに ${ renewPrice } が請求されます。"
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
       ],

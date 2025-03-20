@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -1457,10 +1457,6 @@
       "${ price } per user": [
         "${ price } ανά χρήστη"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } θέση",
-        "${ seats } ${ LUMO_APP_NAME } θέσεις"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } άδεια βοηθού γραφής",
         "${ seats } άδειες βοηθού γραφής"
@@ -1773,14 +1769,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ discountedPrice } ισχύει για τους πρώτους ${ cycle } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ nextPrice } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή ${ discountedPrice } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ nextPrice } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
     },
     "bf2023: Title": {
@@ -7076,9 +7064,6 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "Ο ${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης που αντικαθιστά τόσο τον κωδικό σύνδεσης όσο και τον δεύτερο κωδικό πρόσβασης. Για να μεταβείτε στη λειτουργία ενός κωδικού πρόσβασης, πληκτρολογήστε τον μοναδικό κωδικό πρόσβασης που θέλετε να χρησιμοποιήσετε και κάντε κλικ στην επιλογή Αποθήκευση."
       ],
@@ -7162,6 +7147,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } επιλεγμένο",
+        "${ selectedEntities.length } επιλεγμένα"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } επιλεγμένος φάκελος",
@@ -7288,11 +7277,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ενεργοποιήστε τουλάχιστον μία μέθοδο ανάκτησης δεδομένων για να βεβαιωθείτε ότι μπορείτε να συνεχίσετε να έχετε πρόσβαση στα περιεχόμενα του λογαριασμού σας ${ BRAND_NAME } εάν χάσετε τον κωδικό πρόσβασής σας."
       ],
-      "Active": [
-        "Ενεργό"
-      ],
       "active": [
         "ενεργό"
+      ],
+      "Active": [
+        "Ενεργό"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Προσθέστε μια @pm.me διεύθυνση ηλεκτρονικού ταχυδρομείου στον λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"${ MAIL_APP_NAME } me\" ή \"Private Message me.\" (Στείλε μου Προσωπικό Μήνυμα)"
@@ -9137,7 +9126,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
         "Η συνδρομή ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
       ],
       "Subscription auto-renews every month.": [
@@ -10019,6 +10009,10 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Δεν θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα αρχεία ανάκτησης που λάβατε. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση βάσει συσκευής."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Το ${ boldDiscountPercent } έως ${ boldPlanTitle } έχει εφαρμοστεί"
       ],
@@ -10110,11 +10104,15 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Η φράση ανάκτησης είναι μια σειρά από 12 τυχαία δημιουργημένες λέξεις με συγκεκριμένη σειρά."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Το εισιτήριο υποστήριξής σας έχει κλείσει. Σας ευχαριστούμε που επικοινωνήσατε με την υποστήριξη ${ BRAND_NAME }."
@@ -15035,26 +15033,39 @@
       "Processing payment": [
         "Επεξεργασία πληρωμής"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Ανανεώνει σε ${ renewPrice }, ακυρώστε ανά πάσα στιγμή."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Η τιμολόγηση ανανέωσης υπόκειται σε αλλαγές σύμφωνα με τους ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
       ],
       "Select billing country to pay": [
         "Επιλέξτε χώρα χρέωσης για πληρωμή"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } για ${ subscriptionLengthCopy } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      "terms & conditions": [
+        "όροι και προϋποθέσεις"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } για ${ subscriptionLengthCopy } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση.",
+        "Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } για ${ subscriptionLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο ${ subscriptionLength } μήνα.",
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } το μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } το μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Η συναλλαγή εντοπίζεται με επιτυχία. Οι πιστώσεις θα προστεθούν στον λογαριασμό σας μόλις επιβεβαιωθεί πλήρως η συναλλαγή."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
@@ -17276,47 +17287,6 @@
         "Για ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερα premium χαρακτηριστικά"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium χαρακτηριστικά"
@@ -17605,6 +17575,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερα premium χαρακτηριστικά"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -20343,8 +20354,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Στη συνέχεια, θα χρεώνεστε κάθε 12 μήνες με ${ renewPrice }."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε 12 μήνες με ${ renewPriceStr }."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Η νέα συνδρομή σας θα ανανεωθεί αυτόματα σε ${ cycle } μήνα.",
