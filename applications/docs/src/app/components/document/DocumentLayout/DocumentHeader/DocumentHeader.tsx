@@ -150,7 +150,7 @@ function DocsHeaderForDocument({
           data-testid="status-container"
         >
           <ConnectionStatus documentState={documentState} />
-          <div className="flex-none head-max-479:![display:none]">{role?.isPublicViewer() && <ViewOnlyPill />}</div>
+          <div className="flex-none head-max-479:![display:none]">{!role.canEdit() && <ViewOnlyPill />}</div>
         </div>
       </div>
 
