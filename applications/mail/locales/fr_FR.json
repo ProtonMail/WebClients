@@ -1114,10 +1114,10 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Tout sélectionner"
       ],
-      "Select All": [
+      "Select all": [
         "Tout sélectionner"
       ],
       "Select all messages": [
@@ -1311,6 +1311,10 @@
       ],
       "Trust": [
         "Faire confiance"
+      ],
+      "Trust key": [
+        "Approuver la clé",
+        "Approuver les clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1541,10 +1545,6 @@
       "${ price } per user": [
         "${ price } par utilisateur"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } accès ${ LUMO_APP_NAME }",
-        "${ seats } accès ${ LUMO_APP_NAME }"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
         "${ seats } accès à l'assistant d'écriture"
@@ -1699,14 +1699,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantie satisfait ou remboursé pendant 30 jours"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Le tarif réduit de ${ discountedPrice } est valable pendant les ${ cycle } premiers mois. Ensuite, il sera automatiquement renouvelé à ${ nextPrice } pour ${ renewalLength } mois. Vous pouvez annuler quand vous le voulez."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Le tarif exceptionnellement réduit de ${ discountedPrice } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ nextPrice } chaque mois. Vous pouvez annuler quand vous le voulez."
       ]
     },
     "bf2023: Tooltip": {
@@ -5935,9 +5927,6 @@
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
-      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } peut également protéger votre entreprise."
       ],
@@ -6695,7 +6684,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7084,7 +7074,7 @@
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Refining email list in progress": [
-        "Affinage de la liste d’e-mails en cours"
+        "Affinement de la liste d’e-mails en cours"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
@@ -7264,7 +7254,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "L'abonnement est renouvelé automatiquement tous les ${ cycle } mois.",
         "L'abonnement est renouvelé automatiquement tous les ${ cycle } mois."
       ],
       "Subscription auto-renews every month.": [
@@ -7866,6 +7857,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Vous avez écrit « ${ attachmentsFoundKeyword } », mais il n'y aucune pièce jointe. Voulez-vous quand même envoyer votre message ?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
+        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Vous avez atteint le nombre maximum d'adresses dans le ou les groupes de contacts :"
       ],
@@ -7942,11 +7937,15 @@
       "Your private writing assistant": [
         "Votre assistant d'écriture privé"
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois.",
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
       ]
     },
     "info": {
@@ -10881,23 +10880,36 @@
       "Please select your billing state first.": [
         "Veuillez d'abord sélectionner votre état pour la facturation."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Renouvellement au prix de ${ renewPrice } avec possibilité de résiliation à tout moment."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Renouvellement au prix de ${ renewPriceStr } avec possibilité de résiliation à tout moment."
       ],
       "Select billing country to pay": [
         "Veuillez sélectionner l'état pour la facture à payer."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable les premiers ${ subscriptionLength } mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPrice } pendant ${ subscriptionLengthCopy }. Vous pouvez annuler à tout moment."
+      "terms & conditions": [
+        "les conditions générales d’utilisation"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique pendant les premiers ${ subscriptionLength } mois. Puis, il sera renouvelé automatiquement à ${ renewPrice } pendant ${ subscriptionLengthCopy } mois. Vous pouvez annuler à tout moment."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",
+        "Le code cadeau est valide pour ${ couponRedemptions } renouvellements."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPrice } pendant ${ subscriptionLength } mois. Vous pouvez annuler à tout moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant le premier ${ subscriptionLength } mois.",
+        "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant les premiers ${ subscriptionLength } mois."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ renewPrice } chaque mois. Vous pouvez annuler à tout moment."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellement. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment.",
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ renewPriceStr } par mois. Vous pouvez résilier l'abonnement à tout moment."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment.",
+        "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
@@ -13809,11 +13821,6 @@
         "Aujourd'hui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatique : le format utilisé dans l'éditeur est utilisé pour l'envoi à cet utilisateur. Texte brut : le message sera toujours converti en texte brut lors de l'envoi."
@@ -13897,6 +13904,11 @@
         "Chargez une clé publique pour activer l'envoi de messages chiffrés de bout en bout à destination de cette adresse e-mail."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "version stable"
@@ -13969,8 +13981,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Vous serez ensuite facturé ${ renewPrice } tous les 12 mois."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Vous serez ensuite facturé ${ renewPriceStr } tous les 12 mois."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Votre nouvel abonnement sera automatiquement renouvelé dans ${ cycle } mois.",

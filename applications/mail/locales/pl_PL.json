@@ -1110,10 +1110,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -1307,6 +1307,12 @@
       ],
       "Trust": [
         "Zaufaj"
+      ],
+      "Trust key": [
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1698,11 +1704,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dniowa gwarancja zwrotu pieniędzy"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ nextPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ]
     },
     "bf2023: Tooltip": {
@@ -6850,7 +6851,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -7409,9 +7413,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
-      ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Subskrypcja automatycznie odnawiana w okresach ${ cycle }-miesięcznych."
       ],
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
@@ -8123,9 +8124,6 @@
       ],
       "Your private writing assistant": [
         "Twój prywatny asystent pisania"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
@@ -11097,14 +11095,8 @@
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Odnowienie za ${ renewPrice }. Anuluj w dowolnym momencie."
-      ],
       "Select billing country to pay": [
         "Wybierz kraj"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
@@ -14155,11 +14147,6 @@
         "Dzisiaj"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Format automatyczny wyśle do tego użytkownika wiadomość w formacie użytym w edytorze. Format zwykłego tekstu oznacza, że wiadomość przed wysłaniem zostanie przekonwertowana do zwykłego tekstu."
@@ -14243,6 +14230,11 @@
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "wersji stabilnej"
@@ -14311,9 +14303,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Następnie zapłacisz co 12 miesięcy ${ renewPrice }."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",

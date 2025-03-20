@@ -1110,10 +1110,10 @@
       "Select ${ planTitle }": [
         "开通 ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "全选"
       ],
-      "Select All": [
+      "Select all": [
         "全选"
       ],
       "Select all messages": [
@@ -1307,6 +1307,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任此密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -1534,9 +1537,6 @@
       "${ price } per user": [
         "${ price } 每位用户"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } 席位"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } 个写作助手许可证"
       ],
@@ -1689,14 +1689,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 天退款保证"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "特别折扣价 ${ discountedPrice } 在前 ${ cycle } 个月有效。之后将以 ${ nextPrice } 折扣价自动续订 ${ renewalLength } 个月。您可以随时取消。"
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "特别折扣价 ${ discountedPrice } 仅首月有效，之后将以每月 ${ nextPrice } 的价格自动续订，您可随时取消。"
       ]
     },
     "bf2023: Tooltip": {
@@ -5863,9 +5855,6 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
-      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
       ],
@@ -6584,7 +6573,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -7150,8 +7139,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "订阅将每${ cycle }个月自动续期。"
+      "Subscription auto-renews every ${ cycle } month.": [
+        "订阅服务每 ${ cycle } 个月自动续费。"
       ],
       "Subscription auto-renews every month.": [
         "订阅将每月自动续期。"
@@ -7735,6 +7724,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您提到了“${ attachmentsFoundKeyword }”，但没有添加附件。是否仍要发送邮件？"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "以下群组中的邮箱地址数量已达上限："
       ],
@@ -7810,11 +7802,14 @@
       "Your private writing assistant": [
         "您的私人写作助手"
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "您的预定计划从 ${ renewalTime } 开始，每 ${ cycle } 个月自动续订一次。"
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "您订阅的方案将于${ renewalTime }开始生效，并且每隔${ cycle }个月自动续订。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "您的预定计划从 ${ renewalTime } 开始，每月自动续订。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "您的订阅将于${ renewalTime }自动续订。"
       ]
     },
     "info": {
@@ -10699,23 +10694,32 @@
       "Please select your billing state first.": [
         "请先选择您的账单省（州）。"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "续订时间为 ${ renewPrice }，可随时取消。"
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "续费价格会根据${ termsAndConditionsLink }进行调整。"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "续费价格是${ renewPriceStr }，可随时取消。"
       ],
       "Select billing country to pay": [
         "选择要支付的账单国家/地区"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "特别折扣价 ${ priceWithDiscount } 在前 ${ subscriptionLength } 个月有效。优惠券在 ${ couponRedemptions } 续订时有效。之后将以 ${ renewPrice } 价格自动续订 ${ subscriptionLengthCopy } 个月。您可以随时取消。"
+      "terms & conditions": [
+        "服务条款"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "特别折扣价 ${ priceWithDiscount } 在前 ${ subscriptionLength } 个月有效。之后将以 ${ renewPrice } 价格自动续订 ${ subscriptionLengthCopy } 个月。您可以随时取消。"
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "该优惠券适用于${ couponRedemptions }次续费升级。"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "特别折扣价 ${ priceWithDiscount } 在第一个月有效。优惠券在 ${ couponRedemptions } 续订时有效。之后将以 ${ renewPrice } 价格自动续订 ${ subscriptionLength } 个月。您可以随时取消。"
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "${ priceWithDiscount } 的特别折扣价在第一个月有效。之后每月将以 ${ renewPrice } 的价格自动续订。您可以随时取消。"
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "专享折扣价${ priceWithDiscount }仅限首月有效。本优惠券适用于${ couponRedemptions }次续费周期。之后将自动以1个月${ renewPriceStr }的价格续费，您可随时取消。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "首月特别优惠价为${ priceWithDiscount }，之后将自动按每月${ renewPriceStr }续订。您可以随时取消。"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
       ],
       "Timeout exceeded": [
         "超时"
@@ -13544,11 +13548,6 @@
         "今天"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“自动”表示使用编辑区中指定的格式，“纯文本”则表示向此人发送的邮件一律使用纯文本。"
@@ -13632,6 +13631,11 @@
         "上传公钥后方可向此地址发送端到端加密邮件"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "稳定版"
@@ -13694,8 +13698,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "然后每 12 个月向您收取 ${ renewPrice }。"
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "此后，系统将按每12个月${ renewPriceStr }的价格自动续费扣款。"
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "您的新订阅将在 ${ cycle } 个月后自动续订。"
