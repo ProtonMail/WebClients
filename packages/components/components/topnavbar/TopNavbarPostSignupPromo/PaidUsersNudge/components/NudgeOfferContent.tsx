@@ -8,7 +8,6 @@ import { useAutomaticCurrency } from '@proton/components/payments/client-extensi
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { NudeOfferCTA } from './NudeOfferCTA';
 import { type PriceData } from './interface';
 import { getWindowEndDate } from './paidUserNudgeHelper';
 
@@ -16,11 +15,10 @@ interface Props {
     imgSrc: string;
     onClick: () => void;
     onNeverShow: () => void;
-    variant?: string;
     prices?: PriceData;
 }
 
-export const NudgeOfferContent = ({ imgSrc, variant, onClick, onNeverShow, prices }: Props) => {
+export const NudgeOfferContent = ({ imgSrc, onClick, onNeverShow, prices }: Props) => {
     const [currency] = useAutomaticCurrency();
     const [subscription] = useSubscription();
 
@@ -63,7 +61,13 @@ export const NudgeOfferContent = ({ imgSrc, variant, onClick, onNeverShow, price
             </div>
             <div className="text-center">
                 <Button color="norm" className="mb-4" onClick={onClick} fullWidth>
-                    <NudeOfferCTA prices={prices} variant={variant} />
+                    {prices?.savedAmount ? (
+                        <Price currency={currency} prefix={c('Offer').t`Save`} isDisplayedInSentence>
+                            {prices.savedAmount}
+                        </Price>
+                    ) : (
+                        c('Offer').t`Get the deal`
+                    )}
                 </Button>
                 <div className="flex gap-1 text-sm flex-column">
                     {offerEndDate ? (

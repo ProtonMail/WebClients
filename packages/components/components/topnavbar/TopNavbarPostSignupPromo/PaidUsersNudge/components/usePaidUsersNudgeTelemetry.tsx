@@ -50,7 +50,6 @@ export const usePaidUsersNudgeTelemetry = () => {
             dimensions: {
                 subscriptionAge: getSubscriptionAgeGroup(options.dimensions.subscriptionAge),
                 plan: PLANS.MAIL,
-                variant: options.dimensions.variant,
             },
         });
     };
@@ -63,21 +62,21 @@ export const usePaidUsersNudgeTelemetry = () => {
 type TelemetryOptions =
     | {
           event: TelemetryPaidUsersNudge.clickTopNavbar;
-          dimensions: { subscriptionAge: number; variant: string };
+          dimensions: { subscriptionAge: number };
       }
     | {
           event: TelemetryPaidUsersNudge.clickUpsellButton;
-          dimensions: { subscriptionAge: number; variant: string };
+          dimensions: { subscriptionAge: number };
       }
     | {
           event: TelemetryPaidUsersNudge.closeOffer;
-          dimensions: { subscriptionAge: number; variant: string };
+          dimensions: { subscriptionAge: number };
       }
     | {
           event: TelemetryPaidUsersNudge.userSubscribed;
-          dimensions: { subscriptionAge: number; variant: string };
+          dimensions: { subscriptionAge: number };
       }
     | {
           event: TelemetryPaidUsersNudge.clickHideOffer;
-          dimensions: { subscriptionAge: number; variant: string };
+          dimensions: { subscriptionAge: number };
       };
