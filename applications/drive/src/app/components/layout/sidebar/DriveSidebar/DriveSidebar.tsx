@@ -60,12 +60,15 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
     const [showSideBar, setShowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONDRIVE}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
     const api = useApi();
+    const [storageHeight, setStorageHeight] = useState<number>(0);
     const navigationRef = useRef<HTMLDivElement>(null);
+    const storageRef = useRef<HTMLDivElement>(null);
     // This is same logic is in SidebarStorageUpsell to determine if we show the storage button
     const showStorage =
         getCanAddStorage({ user, subscription }) && (user.Subscribed === PRODUCT_BIT.DRIVE || user.Subscribed === 0);
 
     const collapsed = !showSideBar && !viewportWidth['<=small'];
+    const currentStorage = storageRef.current;
 
     const { isScrollPresent } = useLeftSidebarButton({
         navigationRef,
@@ -84,6 +87,12 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
             }
         });
     }, [getDefaultShare]);
+
+    useEffect(() => {
+        if (currentStorage && currentStorage.clientHeight) {
+            setStorageHeight(currentStorage.clientHeight);
+        }
+    }, [currentStorage, collapsed]);
 
     const displayContactsInHeader = useDisplayContactsWidget();
 
@@ -115,11 +124,10 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
                 <ActionMenuButton className="hidden md:flex" collapsed={collapsed} disabled={isNewUploadDisabled} />
             }
             version={<DriveSidebarFooter />}
-            postFooter={showStorage ? <SidebarStorageUpsell app={APPS.PROTONDRIVE} /> : null}
+            postFooter={showStorage ? <SidebarStorageUpsell storageRef={storageRef} app={APPS.PROTONDRIVE} /> : null}
             navigationRef={navigationRef}
             collapsed={collapsed}
             showStorage={showSideBar}
-            className="overflow-x-none"
         >
             <SidebarNav className="flex *:min-size-auto">
                 <div>
@@ -131,35 +139,42 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
                     className={clsx(
                         'mt-auto',
                         !collapsed && 'absolute bottom-0 right-0',
-                        (isScrollPresent || (!collapsed && showStorage)) &&
-                            'sidebar-collapse-button-container--above-scroll mb-2', // if scroll is present or if we show storage
-                        !collapsed && !showStorage && 'sidebar-collapse-button-container--not-collapsed-no-storage'
+                        !collapsed && !showStorage && 'sidebar-collapse-button-container--not-collapsed-no-storage',
+                        isScrollPresent && 'sidebar-collapse-button-container--above-scroll'
                     )}
+                    style={{
+                        ...(!collapsed && showStorage
+                            ? { marginBlockEnd: `calc(var(--space-16) + ${storageHeight}px)` }
+                            : {}),
+                    }}
                 >
                     {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
-                    <Tooltip
-                        title={
-                            showSideBar ? c('Action').t`Collapse navigation bar` : c('Action').t`Display navigation bar`
-                        }
-                        originalPlacement="right"
-                    >
-                        <button
-                            className={clsx(
-                                'hidden md:flex sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
-                                !showSideBar && 'sidebar-collapse-button--collapsed',
-                                collapsed ? 'mx-auto' : 'mr-2 ml-auto',
-                                (isScrollPresent || (!collapsed && showStorage)) &&
-                                    'sidebar-collapse-button--above-scroll'
-                            )}
-                            onClick={() => onClickExpandNav()}
-                            aria-pressed={showSideBar}
+                    {(!showStorage || (showStorage && storageHeight > 0)) && (
+                        <Tooltip
+                            title={
+                                showSideBar
+                                    ? c('Action').t`Collapse navigation bar`
+                                    : c('Action').t`Display navigation bar`
+                            }
+                            originalPlacement="right"
                         >
-                            <Icon
-                                name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
-                                alt={c('Action').t`Show navigation bar`}
-                            />
-                        </button>
-                    </Tooltip>
+                            <button
+                                className={clsx(
+                                    'hidden md:flex sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
+                                    !showSideBar && 'sidebar-collapse-button--collapsed',
+                                    collapsed ? 'mx-auto' : 'mr-2 ml-auto',
+                                    isScrollPresent && 'sidebar-collapse-button--above-scroll'
+                                )}
+                                onClick={() => onClickExpandNav()}
+                                aria-pressed={showSideBar}
+                            >
+                                <Icon
+                                    name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
+                                    alt={c('Action').t`Show navigation bar`}
+                                />
+                            </button>
+                        </Tooltip>
+                    )}
                 </span>
             </SidebarNav>
             {debug ? <button onClick={createDevice}>Create device</button> : null}
