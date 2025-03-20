@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import Option from '@proton/components/components/option/Option';
@@ -15,7 +14,6 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -26,8 +24,6 @@ import PMSignature from './PMSignatureField';
 
 const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
-    const [mailSettings] = useMailSettings();
-    const [userSettings] = useUserSettings();
     const [user] = useUser();
 
     const [addressID, setAddressID] = useState<string>();
@@ -94,11 +90,7 @@ const IdentitySection = () => {
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight>
                             <div className={clsx([hasPaidMail && 'pt-0.5'])}>
-                                <PMSignature
-                                    id="pmSignatureToggle"
-                                    mailSettings={mailSettings}
-                                    userSettings={userSettings}
-                                />
+                                <PMSignature id="pmSignatureToggle" />
                             </div>
                         </SettingsLayoutRight>
                     </SettingsLayout>
