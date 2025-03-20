@@ -18,7 +18,13 @@ describe('EventDispatcher', () => {
     const key = 'test-key';
 
     beforeEach(() => {
-        storage = { setItem: jest.fn(), getItem: jest.fn(), removeItem: jest.fn() };
+        localStorage.clear();
+
+        const getItem = jest.fn((key: string) => localStorage.getItem(key));
+        const setItem = jest.fn((key: string, value: string) => localStorage.setItem(key, value));
+        const removeItem = jest.fn((key: string) => localStorage.removeItem(key));
+
+        storage = { setItem, getItem, removeItem };
         alarm = { set: jest.fn(), reset: jest.fn(), when: jest.fn() };
         getEnabled = jest.fn().mockReturnValue(true);
         dispatch = jest.fn().mockImplementation(async () => {});
@@ -41,15 +47,14 @@ describe('EventDispatcher', () => {
     });
 
     describe('push', () => {
-        it('should add an event to the buffer when enabled', async () => {
-            storage.getItem.mockResolvedValue(null);
+        test('should add an event to the buffer when enabled', async () => {
             const result = await dispatcher.push('evt_1');
 
             expect(result).toBe(true);
             expect(storage.setItem).toHaveBeenCalledWith(key, expect.stringContaining('"events":["evt_1"]'));
         });
 
-        it('should not add an event when disabled', async () => {
+        test('should not add an event when disabled', async () => {
             getEnabled.mockReturnValue(false);
             const result = await dispatcher.push('evt_1');
 
@@ -57,7 +62,7 @@ describe('EventDispatcher', () => {
             expect(storage.setItem).not.toHaveBeenCalled();
         });
 
-        it('should set an alarm if no alarm is currently set', async () => {
+        test('should set an alarm if no alarm is currently set', async () => {
             storage.getItem.mockResolvedValue(nonEmptyBundle);
             alarm.when.mockResolvedValue(undefined);
             await dispatcher.push('evt_1');
@@ -65,7 +70,7 @@ describe('EventDispatcher', () => {
             expect(alarm.set).toHaveBeenCalled();
         });
 
-        it('should set an alarm if no alarm is currently set', async () => {
+        test('should set an alarm if no alarm is currently set', async () => {
             storage.getItem.mockResolvedValue(nonEmptyBundle);
             alarm.when.mockResolvedValue(Date.now() + 30000);
             await dispatcher.push('evt_2');
@@ -73,24 +78,37 @@ describe('EventDispatcher', () => {
             expect(alarm.set).not.toHaveBeenCalled();
         });
 
-        it('should append to existing bundle if one exists', async () => {
+        test('should append to existing bundle if one exists', async () => {
             storage.getItem.mockResolvedValue(nonEmptyBundle);
             await dispatcher.push('evt_2');
 
             expect(storage.setItem).toHaveBeenCalledWith(key, expect.stringContaining('"events":["evt_1","evt_2"]'));
         });
 
-        it('should use prepare function if provided', async () => {
+        test('should use prepare function if provided', async () => {
             storage.getItem.mockResolvedValue(null);
             prepare.mockImplementation((event) => event.toUpperCase());
             await dispatcher.push('evt_1');
 
             expect(storage.setItem).toHaveBeenCalledWith(key, expect.stringContaining('"events":["EVT_1"]'));
         });
+
+        test('should support concurrent push calls', async () => {
+            await Promise.all([
+                dispatcher.push('evt_1'),
+                dispatcher.push('evt_2'),
+                dispatcher.push('evt_3'),
+                dispatcher.push('evt_4'),
+            ]);
+
+            const data = JSON.parse(storage.getItem(key));
+            expect(storage.setItem).toHaveBeenCalledTimes(4);
+            expect(data.events).toEqual(['evt_1', 'evt_2', 'evt_3', 'evt_4']);
+        });
     });
 
     describe('start', () => {
-        it('should set up an alarm if events are in the buffer', async () => {
+        test('should set up an alarm if events are in the buffer', async () => {
             storage.getItem.mockResolvedValue(nonEmptyBundle);
             alarm.when.mockResolvedValue(undefined);
             await dispatcher.start();
@@ -98,14 +116,14 @@ describe('EventDispatcher', () => {
             expect(alarm.set).toHaveBeenCalled();
         });
 
-        it('should not set up an alarm if the buffer is empty', async () => {
+        test('should not set up an alarm if the buffer is empty', async () => {
             storage.getItem.mockResolvedValue(null);
             await dispatcher.start();
 
             expect(alarm.set).not.toHaveBeenCalled();
         });
 
-        it('should not set up an alarm if one is already set', async () => {
+        test('should not set up an alarm if one is already set', async () => {
             storage.getItem.mockResolvedValue(nonEmptyBundle);
             alarm.when.mockResolvedValue(Date.now() + 30000);
             await dispatcher.start();
@@ -113,7 +131,7 @@ describe('EventDispatcher', () => {
             expect(alarm.set).not.toHaveBeenCalled();
         });
 
-        it('should stop the dispatcher if not enabled', async () => {
+        test('should stop the dispatcher if not enabled', async () => {
             getEnabled.mockReturnValue(false);
             alarm.when.mockResolvedValue(Date.now() + 30000);
             await dispatcher.start();
@@ -124,19 +142,19 @@ describe('EventDispatcher', () => {
     });
 
     describe('stop', () => {
-        it('should clear the alarm', () => {
+        test('should clear the alarm', () => {
             dispatcher.stop();
             expect(alarm.reset).toHaveBeenCalled();
         });
 
-        it('should clear the buffer', () => {
+        test('should clear the buffer', () => {
             dispatcher.stop();
             expect(storage.removeItem).toHaveBeenCalledWith(key);
         });
     });
 
     describe('send', () => {
-        it('should dispatch events when the send time has passed', async () => {
+        test('should dispatch events when the send time has passed', async () => {
             storage.getItem.mockResolvedValue(pastBundle);
             dispatch.mockResolvedValue(undefined);
             await dispatcher.send();
@@ -145,7 +163,7 @@ describe('EventDispatcher', () => {
             expect(storage.removeItem).toHaveBeenCalledWith(key);
         });
 
-        it('should not dispatch events when the send time has not passed', async () => {
+        test('should not dispatch events when the send time has not passed', async () => {
             storage.getItem.mockResolvedValue(nonEmptyBundle);
             await dispatcher.send();
 
@@ -153,7 +171,7 @@ describe('EventDispatcher', () => {
             expect(storage.removeItem).not.toHaveBeenCalled();
         });
 
-        it('should increase retry count on failed dispatch', async () => {
+        test('should increase retry count on failed dispatch', async () => {
             storage.getItem.mockResolvedValue(pastBundle);
             dispatch.mockRejectedValue(new Error('Dispatch failed'));
             await dispatcher.send();
@@ -161,7 +179,7 @@ describe('EventDispatcher', () => {
             expect(storage.setItem).toHaveBeenCalledWith(key, expect.stringContaining('"retryCount":1'));
         });
 
-        it('should not retry after reaching max retries', async () => {
+        test('should not retry after reaching max retries', async () => {
             const maxRetriesBundle = JSON.stringify({
                 sendTime: msToEpoch(Date.now() - 1000),
                 events: ['evt_1'],
