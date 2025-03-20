@@ -1,6 +1,6 @@
 import type { AnyStorage, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Maybe } from '@proton/pass/types';
-import { asyncLock } from '@proton/pass/utils/fp/promises';
+import { asyncLock, asyncQueue } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -139,7 +139,8 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
         } catch {}
     };
 
-    const push = async (event: Event, options?: EventPushOptions<Event>): Promise<boolean> => {
+    /** Use an `asyncQueue` to allow saving events concurrently */
+    const push = asyncQueue(async (event: Event, options?: EventPushOptions<Event>): Promise<boolean> => {
         try {
             if (!getEnabled()) return false;
 
@@ -161,7 +162,7 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
         } catch {
             return false;
         }
-    };
+    });
 
     return { stop, start, push, send };
 };
