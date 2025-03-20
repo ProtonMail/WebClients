@@ -859,10 +859,6 @@
       "${ price } per user": [
         "${ price } ανά χρήστη"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } θέση",
-        "${ seats } ${ LUMO_APP_NAME } θέσεις"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } άδεια βοηθού γραφής",
         "${ seats } άδειες βοηθού γραφής"
@@ -1019,14 +1015,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ discountedPrice } ισχύει για τους πρώτους ${ cycle } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ nextPrice } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή ${ discountedPrice } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεώνεται αυτόματα σε ${ nextPrice } κάθε μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ]
     },
     "bf2023: Title": {
@@ -3877,9 +3865,6 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας."
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης που αντικαθιστά τόσο τον κωδικό σύνδεσης όσο και τον δεύτερο κωδικό πρόσβασης. Για να μεταβείτε στη λειτουργία ενός κωδικού πρόσβασης, πληκτρολογήστε τον μοναδικό κωδικό πρόσβασης που θέλετε να χρησιμοποιήσετε και κάντε κλικ στην επιλογή Αποθήκευση."
       ],
@@ -3938,6 +3923,10 @@
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } επιπλέον διεύθυνση",
         "${ remainingAddresses.length } επιπλέον διευθύνσεις"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } επιλεγμένο",
+        "${ selectedEntities.length } επιλεγμένα"
       ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
@@ -5151,7 +5140,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
         "Η συνδρομή ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
       ],
       "Subscription auto-renews every month.": [
@@ -5708,6 +5698,10 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Δε θα μπορείτε να αντιστοιχίσετε εκ νέου αυτούς τους διακομιστές σε άλλη χώρα για 10 ημέρες."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Το ${ boldDiscountPercent } έως ${ boldPlanTitle } έχει εφαρμοστεί"
       ],
@@ -5765,11 +5759,15 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Θα μπορείτε να προσθέσετε αυτούς τους διακομιστές σε άλλη πύλη αμέσως."
@@ -8551,26 +8549,39 @@
       "Processing payment": [
         "Επεξεργασία πληρωμής"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Ανανεώνει σε ${ renewPrice }, ακυρώστε ανά πάσα στιγμή."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Η τιμολόγηση ανανέωσης υπόκειται σε αλλαγές σύμφωνα με τους ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
       ],
       "Select billing country to pay": [
         "Επιλέξτε χώρα χρέωσης για πληρωμή"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } για ${ subscriptionLengthCopy } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      "terms & conditions": [
+        "όροι και προϋποθέσεις"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } για ${ subscriptionLengthCopy } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση.",
+        "Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } για ${ subscriptionLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο ${ subscriptionLength } μήνα.",
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPrice } το μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή των ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } το μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Η συναλλαγή εντοπίζεται με επιτυχία. Οι πιστώσεις θα προστεθούν στον λογαριασμό σας μόλις επιβεβαιωθεί πλήρως η συναλλαγή."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
@@ -11563,6 +11574,29 @@
         "Σήμερα"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ],
+      "Disables end-to-end email encryption for this group": [
+        "Απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα και δε θα γίνει κοινή χρήση κρυπτογραφημένων πόρων με αυτόν τον χρήστη."
+      ],
+      "Group membership paused": [
+        "Η συμμετοχή στην ομάδα τέθηκε σε παύση"
+      ],
+      "Sending member invitation": [
+        "Αποστολή πρόσκλησης μέλους"
+      ],
+      "User declined invitation": [
+        "Ο χρήστης απέρριψε την πρόσκληση"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
+      ]
+    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
@@ -11653,29 +11687,6 @@
       ],
       "Your DKIM signing is working.": [
         "Η υπογραφή σας DKIM λειτουργεί."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
-      ],
-      "Disables end-to-end email encryption for this group": [
-        "Απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα και δε θα γίνει κοινή χρήση κρυπτογραφημένων πόρων με αυτόν τον χρήστη."
-      ],
-      "Group membership paused": [
-        "Η συμμετοχή στην ομάδα τέθηκε σε παύση"
-      ],
-      "Sending member invitation": [
-        "Αποστολή πρόσκλησης μέλους"
-      ],
-      "User declined invitation": [
-        "Ο χρήστης απέρριψε την πρόσκληση"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
       ]
     },
     "Tor out of date": {
@@ -12054,8 +12065,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Στη συνέχεια, θα χρεώνεστε κάθε 12 μήνες με ${ renewPrice }."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε 12 μήνες με ${ renewPriceStr }."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Η νέα συνδρομή σας θα ανανεωθεί αυτόματα σε ${ cycle } μήνα.",

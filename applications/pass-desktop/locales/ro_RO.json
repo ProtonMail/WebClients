@@ -2244,6 +2244,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Această operație nu este reversibilă. Toate aliasurile care utilizează domeniul ${ domainTextBold } vor fi șterse. După ștergere aliasurile nu pot fi restaurate."
       ],
+      "This option is currently not available on your browser.": [
+        "Această opțiune nu este disponibilă pe acest navigator web."
+      ],
       "This option is currently not available on your device.": [
         "Această opțiune nu este disponibilă pe acest dispozitiv."
       ],
@@ -2272,7 +2275,7 @@
         "Pentru a migra datele dintr-un alt manager de parole, accesați managerul de parole, exportați datele, apoi încărcați-le în ${ PASS_APP_NAME }. După ce datele v-au fost importate, puteți șterge fișierul exportat."
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
-        "Pentru a revizui datele importate, faceți clic pe pictograma ${ PASS_APP_NAME } din bara de utilitare a navigatorului."
+        "Pentru a revizui datele importate, faceți clic pe pictograma ${ PASS_APP_NAME } din bara de utilitare a navigatorului web."
       ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
@@ -2401,6 +2404,9 @@
       ],
       "You may close this tab.": [
         "Puteți închide această filă."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Aveți nevoie de un seif cu permisiune de editare înainte de a putea importa articole."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Veți putea să vă personalizați setările domeniului (alias e-mail de agregare mesaje, numele afișat implicit pentru aliasuri etc...) după verificarea domeniului."
@@ -4149,7 +4155,7 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Care este diferența dintre o notiță din ${ PASS_SHORT_APP_NAME } și o notiță din SimpleLogin?"
       ],
-      "You don't have any vault": [
+      "You don't have any vaults": [
         "Nu aveți seifuri"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [

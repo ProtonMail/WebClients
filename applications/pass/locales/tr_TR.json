@@ -2158,6 +2158,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Bu işlem geri alınamaz. ${ domainTextBold } etki alanını kullanan tüm takma adlar silinecek. Lütfen takma adların silindikten sonrageri yüklenemeyeceğini unutmayın."
       ],
+      "This option is currently not available on your browser.": [
+        "Bu seçenek şu anda tarayıcınızda mevcut değil."
+      ],
       "This option is currently not available on your device.": [
         "Bu seçenek şu anda aygıtınızda kullanılamıyor."
       ],
@@ -3938,8 +3941,8 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } notu ile SimpleLogin notu arasındaki fark nedir?"
       ],
-      "You don't have any vault": [
-        "Henüz bir kasanız yok"
+      "You don't have any vaults": [
+        "Hiç kasanız yok."
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } aboneliğiniz ${ endDate } tarihinde sona erecek"
