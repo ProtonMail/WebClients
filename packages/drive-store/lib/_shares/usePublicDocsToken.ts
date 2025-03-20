@@ -25,6 +25,7 @@ export const usePublicDocsToken = (session?: ResumedSessionResult) => {
     const { isLoading, isPasswordNeeded, submitPassword, error, customPassword } = usePublicAuth(
         token,
         urlPassword,
+        'docs',
         session
     );
     const { getSessionInfo } = usePublicSession();

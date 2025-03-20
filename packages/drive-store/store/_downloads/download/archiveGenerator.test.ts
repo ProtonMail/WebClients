@@ -1,5 +1,4 @@
 import { fromUnixTime } from 'date-fns';
-import { ReadableStream } from 'web-streams-polyfill';
 
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
 import ArchiveGenerator from './archiveGenerator';

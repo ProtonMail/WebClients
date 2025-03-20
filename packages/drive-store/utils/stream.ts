@@ -1,10 +1,7 @@
-import type { ReadableStreamDefaultReadResult } from 'web-streams-polyfill';
-import { ReadableStream, TransformStream } from 'web-streams-polyfill';
-
 export const untilStreamEnd = async <T>(stream: ReadableStream<T>, action?: (data: T) => Promise<void>) => {
     const reader = stream.getReader();
 
-    const processResponse = async (result: ReadableStreamDefaultReadResult<T>): Promise<any> => {
+    const processResponse = async (result: ReadableStreamReadResult<T>): Promise<any> => {
         if (result.done) {
             return;
         }
@@ -33,14 +30,3 @@ export const bufferToStream = (buffer: Uint8Array[]): ReadableStream<Uint8Array>
         },
     });
 };
-
-export class ObserverStream extends TransformStream<Uint8Array, Uint8Array> {
-    constructor(fn?: (chunk: Uint8Array) => void) {
-        super({
-            transform(chunk, controller) {
-                fn?.(chunk);
-                controller.enqueue(chunk);
-            },
-        });
-    }
-}

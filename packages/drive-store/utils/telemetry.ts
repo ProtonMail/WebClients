@@ -22,6 +22,17 @@ export enum ExperimentGroup {
 
 export enum Features {
     mountToFirstItemRendered = 'mountToFirstItemRendered',
+    globalBootstrapApp = 'globalBootstrapApp',
+    globalBootstrapAppUrls = 'globalBootstrapAppUrls',
+    globalBootstrapAppUserSettings = 'globalBootstrapAppUserSettings',
+    globalBootstrapAppUserInit = 'globalBootstrapAppUserInit',
+    globalBootstrapAppLoadUser = 'globalBootstrapAppLoadUser',
+    globalBootstrapAppUnleash = 'globalBootstrapAppUnleash',
+    globalBootstrapAppCrypto = 'globalBootstrapAppCrypto',
+    globalBootstrapAppUserData = 'globalBootstrapAppUserData',
+    globalBootstrapAppPostLoad = 'globalBootstrapAppPostLoad',
+    globalBootstrapAppUserSettingsAddress = 'globalBootstrapAppUserSettingsAddress',
+    globalBootstrapAppLoadSession = 'globalBootstrapAppLoadSession',
 }
 
 /**
@@ -54,10 +65,6 @@ export enum Actions {
     OnboardingV2UploadFile = 'onboardingV2UploadFile',
     OnboardingV2UploadFolder = 'onboardingV2UploadFolder',
     OnboardingV2UploadSkip = 'onboardingV2UploadSkip',
-
-    // Download info on what system will be used for file with size above MEMORY_DOWNLOAD_LIMIT
-    DownloadUsingSW = 'downloadUsingSW',
-    DownloadFallback = 'downloadFallback',
 }
 
 type PerformanceTelemetryAdditionalValues = {
@@ -183,11 +190,19 @@ export const measureFeaturePerformance = (api: Api, feature: Features, experimen
                 performance.mark(startMark);
             }
         },
-        end: (additionalValues?: PerformanceTelemetryAdditionalValues) => {
+        end: (additionalValues?: PerformanceTelemetryAdditionalValues, differentApi?: Api) => {
             if (!ended && started) {
                 ended = true;
                 performance.mark(endMark);
-                measureAndReport(api, feature, experimentGroup, measureName, startMark, endMark, additionalValues);
+                measureAndReport(
+                    differentApi || api,
+                    feature,
+                    experimentGroup,
+                    measureName,
+                    startMark,
+                    endMark,
+                    additionalValues
+                );
                 clear();
             }
         },

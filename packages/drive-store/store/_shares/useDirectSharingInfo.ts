@@ -1,5 +1,9 @@
+import { useRef } from 'react';
+
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
+import { getIsPublicContext } from '../../utils/getIsPublicContext';
+import type { ShareWithKey } from './interface';
 import useDefaultShare from './useDefaultShare';
 import { useDriveSharingFlags } from './useDriveSharingFlags';
 import useShare from './useShare';
@@ -13,15 +17,31 @@ import { getSharedWithMeMembership } from './utils';
  */
 
 export const useDirectSharingInfo = () => {
-    const { getDefaultShare } = useDefaultShare();
+    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { getShare, getShareWithKey } = useShare();
     const { isReadOnlyMode } = useDriveSharingFlags();
+    const isPublicContext = getIsPublicContext();
+    const defaultSharePromiseRef = useRef<Promise<ShareWithKey>>();
+    const photoSharePromiseRef = useRef<Promise<ShareWithKey | undefined>>();
 
-    const isSharedWithMe = async (abortSignal: AbortSignal, shareId: string) => {
-        const [defaultShare, share] = await Promise.all([getDefaultShare(abortSignal), getShare(abortSignal, shareId)]);
+    if (!defaultSharePromiseRef.current && !isPublicContext) {
+        defaultSharePromiseRef.current = getDefaultShare();
+    }
 
-        // If volume is not the same as the main one, we can consider that it's a shared share
-        return defaultShare.volumeId !== share.volumeId;
+    if (!photoSharePromiseRef.current && !isPublicContext) {
+        photoSharePromiseRef.current = getDefaultPhotosShare();
+    }
+
+    const isSharedWithMe = async (abortSignal: AbortSignal, shareId: string): Promise<boolean> => {
+        const [defaultShare, photoShare, share] = await Promise.all([
+            defaultSharePromiseRef.current,
+            photoSharePromiseRef.current,
+            getShare(abortSignal, shareId),
+        ]);
+
+        return (
+            defaultShare?.volumeId !== share.volumeId && (photoShare ? photoShare.volumeId !== share.volumeId : true)
+        );
     };
 
     const getSharePermissions = async (abortSignal: AbortSignal, shareId: string) => {

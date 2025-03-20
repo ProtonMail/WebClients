@@ -1,20 +1,13 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { useSharesStore } from '../../zustand/share/shares.store';
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import useDefaultShare from './useDefaultShare';
 
 const mockRequest = jest.fn();
 const mockCreateVolume = jest.fn();
-const mockGetDefaultShareId = jest.fn();
 const mockGetShare = jest.fn();
 const mockGetShareWithKey = jest.fn();
-
-jest.mock('../_api/useDebouncedRequest', () => {
-    const useDebouncedRequest = () => {
-        return mockRequest;
-    };
-    return useDebouncedRequest;
-});
 
 jest.mock('../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
@@ -38,22 +31,6 @@ jest.mock('../_utils/useDebouncedFunction', () => {
         return (wrapper: any) => wrapper();
     };
     return useDebouncedFunction;
-});
-
-jest.mock('../../zustand/share/shares.store', () => {
-    const actual = jest.requireActual('../../zustand/share/shares.store');
-
-    return {
-        ...actual,
-        useSharesStore: () => {
-            const state = actual.useSharesStore();
-            return {
-                ...state,
-                setShares: () => {},
-                getDefaultShareId: mockGetDefaultShareId,
-            };
-        },
-    };
 });
 
 jest.mock('../_shares/useShare', () => {
@@ -87,6 +64,14 @@ describe('useDefaultShare', () => {
     beforeEach(() => {
         jest.resetAllMocks();
 
+        // Reset the Zustand store state
+        useSharesStore.setState({
+            defaultSharePromise: null,
+            loadUserSharesPromise: null,
+            defaultPhotosSharePromise: null,
+            isLoadingShares: false,
+        });
+
         mockCreateVolume.mockImplementation(async () => {
             return { shareId: defaultShareId };
         });
@@ -104,11 +89,6 @@ describe('useDefaultShare', () => {
     });
 
     it('creates a volume if existing shares are locked/soft deleted', async () => {
-        mockGetDefaultShareId.mockImplementation(() => {
-            // no valid shares were found
-            return undefined;
-        });
-
         await act(async () => {
             await hook.current.getDefaultShare();
         });

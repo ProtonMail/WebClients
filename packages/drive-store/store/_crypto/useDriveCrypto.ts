@@ -10,8 +10,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
-import type { VerificationKeysCallback } from '@proton/shared/lib/keys/drivePassphrase';
-import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
+import { type VerificationKeysCallback, decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
 import type { ShareWithKey } from '../_shares';
 import { useGetPublicKeysForEmail } from '../_user';

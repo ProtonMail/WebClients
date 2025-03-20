@@ -15,8 +15,10 @@ import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './us
  * needed, it also continues automatically with initiating session.
  * In case custom password is set, it will be set in `isPasswordNeeded` and
  * then `submitPassword` callback should be used.
+ *
+ * @param client - whether the consumer of this hook is the drive client or docs client
  */
-export default function usePublicAuth(token: string, urlPassword: string) {
+export default function usePublicAuth(token: string, urlPassword: string, client: 'drive' | 'docs') {
     const { createNotification } = useNotifications();
     const { openDocumentWindow } = useOpenDocument();
 
@@ -70,7 +72,7 @@ export default function usePublicAuth(token: string, urlPassword: string) {
         setIsLoading(true);
         initHandshake(token)
             .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
-                if (handshakeInfo.IsDoc) {
+                if (handshakeInfo.IsDoc && client === 'drive') {
                     openDocumentWindow({
                         mode: 'open-url',
                         token,

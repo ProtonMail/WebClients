@@ -26,7 +26,7 @@ import { type DriveFileRevision, type SignatureIssues, useLinkPath } from '../..
 import { useLinkDetailsView } from '../../store';
 import { usePublicSession } from '../../store/_api';
 import { useDownload } from '../../store/_downloads';
-import { useLinksListing, usePublicLinksListing } from '../../store/_links';
+import { type DecryptedLink, useLinksListing, usePublicLinksListing } from '../../store/_links';
 import type { ParsedExtendedAttributes } from '../../store/_links/extendedAttributes';
 import useRevisions from '../../store/_revisions/useRevisions';
 import { useLinkPathPublic } from '../../store/_views/useLinkPath';
@@ -141,11 +141,17 @@ const getFileModifyTime = ({
     return '-';
 };
 
-function getTitle(isFile?: boolean) {
-    if (isFile === undefined) {
+function getTitle(link?: DecryptedLink) {
+    if (link === undefined) {
         return c('Title').t`Item details`;
     }
-    return isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
+    if (link.isFile) {
+        return c('Title').t`File details`;
+    }
+    if (link.mimeType === 'Album') {
+        return c('Title').t`Album details`;
+    }
+    return c('Title').t`Folder details`;
 }
 
 const DetailsModalContent = ({
@@ -187,6 +193,7 @@ const DetailsModalContent = ({
                     signatureEmail={signatureIssuesEmail}
                     isAnonymous={isAnonymous}
                     corruptedLink={corruptedLink}
+                    mimeType={mimeType}
                     isFile={isFile}
                     name={name}
                     className="mb-4"
@@ -444,7 +451,7 @@ export function BaseDetailsModal({
 
     return (
         <ModalTwo onClose={onClose} size="large" {...modalProps}>
-            <ModalTwoHeader title={getTitle(link?.isFile)} />
+            <ModalTwoHeader title={getTitle(link)} />
             {renderModalState()}
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Close`}</Button>

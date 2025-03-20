@@ -1,12 +1,28 @@
+import { DOMParser, onErrorStopParsing } from '@xmldom/xmldom';
 import ExifReader from 'exifreader';
 import type { ExifTags, ExpandedTags } from 'exifreader';
 
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { encodeBase64 } from '@proton/crypto/lib/utils';
-import { isSVG } from '@proton/shared/lib/helpers/mimetype';
+import { isRAWExtension, isRAWPhoto, isSVG, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
+import { mimetypeFromExtension } from '../_uploads/mimeTypeParser/helpers';
+import { detectPortraitFromMakerNote, detectSelfieFromMakerNote, isAppleMakerNote } from './appleMakerNote';
 import { convertSubjectAreaToSubjectCoordinates, formatExifDateTime } from './utils';
+
+// For usage inside Web Workers, since DOMParser is not available
+// @xmldom/xmldom is a ponyfill of DOMParser
+if (typeof DOMParser !== 'undefined') {
+    class CustomDOMParser extends DOMParser {
+        constructor() {
+            super({ onError: onErrorStopParsing });
+        }
+    }
+    // @ts-ignore
+    self.DOMParser = CustomDOMParser;
+}
 
 export const getExifInfo = async (file: File, mimeType: string): Promise<ExpandedTags | undefined> => {
     if (isSVG(mimeType)) {
@@ -16,7 +32,6 @@ export const getExifInfo = async (file: File, mimeType: string): Promise<Expande
     const buffer = await file.arrayBuffer();
 
     try {
-        // Notes: XMP read is disabled because DOMParser is not available in Worker (package.json > exifreader)
         return ExifReader.load(buffer, { expanded: true });
     } catch (err) {}
 
@@ -101,3 +116,71 @@ export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({
           }
         : undefined,
 });
+
+// TODO: Complete tags assignment
+export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<PhotoTag[]> => {
+    // Enable to debug XMP data:
+    // console.log('exifInfo', JSON.stringify(exifInfo.exif));
+
+    const tags: PhotoTag[] = [];
+    if (!exifInfo || !exifInfo.xmp) {
+        return tags;
+    }
+
+    const appleMakerNote = isAppleMakerNote(exifInfo.exif?.MakerNote);
+
+    // Tested:
+    // MacOS screenshots and IOS screenshots is inside XMP metadata
+    // Android, Linux and Windows it's just within the file name, no metadata available to detect screenshot
+    if (
+        (exifInfo.xmp.UserComment && exifInfo.xmp.UserComment.value === 'Screenshot') ||
+        file.name.toLowerCase().includes('screenshot')
+    ) {
+        tags.push(PhotoTag.Screenshots);
+    }
+
+    // Tested: Android
+    // Untested: IOS & other cameras
+    if (exifInfo.xmp.ProjectionType && exifInfo.xmp.ProjectionType.value === 'equirectangular') {
+        tags.push(PhotoTag.Panoramas);
+    }
+
+    // Tested: Android
+    // Untested: IOS & other cameras
+    if (exifInfo.xmp.MotionPhoto && exifInfo.xmp.MotionPhoto.value === '1') {
+        tags.push(PhotoTag.MotionPhotos);
+    }
+
+    // Tested: Android
+    // Untested: IOS
+    const isAndroidPortrait =
+        exifInfo.xmp.SpecialTypeID &&
+        exifInfo.xmp.SpecialTypeID.value &&
+        (exifInfo.xmp.SpecialTypeID.value ===
+            'com.google.android.apps.camera.gallery.specialtype.SpecialType-PORTRAIT' ||
+            (Array.isArray(exifInfo.xmp.SpecialTypeID.value) &&
+                exifInfo.xmp.SpecialTypeID.value.some(
+                    (v) => v.value === 'com.google.android.apps.camera.gallery.specialtype.SpecialType-PORTRAIT'
+                )));
+
+    if (isAndroidPortrait || (appleMakerNote && detectPortraitFromMakerNote(appleMakerNote))) {
+        tags.push(PhotoTag.Portraits);
+    }
+
+    // Tested: IOS Selfies
+    // Untested: Android Selfies
+    if (appleMakerNote && detectSelfieFromMakerNote(appleMakerNote)) {
+        tags.push(PhotoTag.Selfies);
+    }
+
+    const extension = file.name.split('.').pop();
+    if (isRAWPhoto(file.type) || isRAWExtension(extension)) {
+        tags.push(PhotoTag.Raw);
+    }
+
+    if (isVideo(file.type) || isVideo(await mimetypeFromExtension(file.name))) {
+        tags.push(PhotoTag.Videos);
+    }
+
+    return tags;
+};

@@ -115,28 +115,36 @@ export function useTrashedLinksListing() {
      * Gets trashed links that have already been fetched and cached.
      */
     const getCachedTrashed = useCallback(
-        (abortSignal: AbortSignal, volumeId?: string): { links: DecryptedLink[]; isDecrypting: boolean } => {
-            if (!volumeId) {
+        (
+            abortSignal: AbortSignal,
+            volumeIds?: string | string[]
+        ): { links: DecryptedLink[]; isDecrypting: boolean } => {
+            if (!volumeIds) {
                 return {
                     links: [],
                     isDecrypting: false,
                 };
             }
-            const associatedShareIds = volumesState.getVolumeShareIds(volumeId);
-            const result = associatedShareIds.map((shareId) => {
-                return getDecryptedLinksAndDecryptRest(
-                    abortSignal,
-                    shareId,
-                    linksState.getTrashed(shareId),
-                    getTrashFetchState(volumeId)
-                );
+
+            const volumeIdArray = Array.isArray(volumeIds) ? volumeIds : [volumeIds];
+
+            const allResults = volumeIdArray.flatMap((volumeId) => {
+                const associatedShareIds = volumesState.getVolumeShareIds(volumeId);
+                return associatedShareIds.map((shareId) => {
+                    return getDecryptedLinksAndDecryptRest(
+                        abortSignal,
+                        shareId,
+                        linksState.getTrashed(shareId),
+                        getTrashFetchState(volumeId)
+                    );
+                });
             });
 
-            const links = result.reduce<DecryptedLink[]>((acc, element) => {
+            const links = allResults.reduce<DecryptedLink[]>((acc, element) => {
                 return [...acc, ...element.links];
             }, []);
 
-            const isDecrypting = result.some((element) => {
+            const isDecrypting = allResults.some((element) => {
                 return element.isDecrypting;
             });
 

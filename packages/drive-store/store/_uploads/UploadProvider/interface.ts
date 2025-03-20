@@ -1,7 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import type { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
-import type { TransferConflictStrategy } from '../interface';
+import type {
+    OnFileSkippedSuccessCallbackData,
+    OnFileUploadSuccessCallbackData,
+    OnFolderUploadSuccessCallbackData,
+    TransferConflictStrategy,
+} from '../interface';
 
 interface LinkUpload {
     // ID of the upload for referencing (such as pausing and so on).
@@ -28,6 +33,10 @@ export interface FileUpload extends LinkUpload {
     file: File;
     meta: TransferMeta; // To be compatible with Upload of TransferManager.
     originalIsFolder?: boolean;
+    callbacks: {
+        onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+        onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
+    };
 }
 
 export interface FileUploadReady extends FileUpload {
@@ -43,6 +52,9 @@ export interface FolderUpload extends LinkUpload {
 
     files: FileUpload[];
     folders: FolderUpload[];
+    callbacks: {
+        onFolderUpload?: (folder: OnFolderUploadSuccessCallbackData) => void;
+    };
 }
 
 export interface FolderUploadReady extends FolderUpload {

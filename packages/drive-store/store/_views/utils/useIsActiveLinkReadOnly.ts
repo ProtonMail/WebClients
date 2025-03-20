@@ -7,9 +7,12 @@ import type { DecryptedLink } from '../../_links';
 import { useLink } from '../../_links';
 import { useShareType } from './useShareType';
 
+export const isLinkRoot = (link: DecryptedLink) => {
+    return !link.parentLinkId;
+};
+
 export const isLinkReadOnly = (link: DecryptedLink, shareType: ShareType) => {
-    const isRootLink = !link.parentLinkId;
-    return shareType === ShareType.device && isRootLink;
+    return shareType === ShareType.device && isLinkRoot(link);
 };
 
 export const useIsActiveLinkReadOnly = () => {
@@ -19,6 +22,8 @@ export const useIsActiveLinkReadOnly = () => {
     const link = useLink();
 
     const [isReadOnly, setIsReadOnly] = useState<boolean | undefined>(undefined);
+    const [isRoot, setIsRoot] = useState<boolean | undefined>(undefined);
+    const [isInDeviceShare, setIsInDeviceShare] = useState<boolean | undefined>(undefined);
     const ongoingRequestAc = useRef<AbortController>();
 
     useEffect(() => {
@@ -33,6 +38,8 @@ export const useIsActiveLinkReadOnly = () => {
             link.getLink(ac.signal, shareId, linkId)
                 .then((link) => {
                     setIsReadOnly(isLinkReadOnly(link, shareType));
+                    setIsRoot(isLinkRoot(link));
+                    setIsInDeviceShare(shareType === ShareType.device);
                 })
                 .catch((e) => {
                     sendErrorReport(e);
@@ -56,5 +63,7 @@ export const useIsActiveLinkReadOnly = () => {
     return {
         isLoading: isReadOnly === undefined,
         isReadOnly,
+        isRoot,
+        isInDeviceShare,
     };
 };
