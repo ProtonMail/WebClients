@@ -39,6 +39,7 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useEditorStateValues } from '../Lib/useEditorStateValues'
 import { useEditorState } from './EditorStateProvider'
 import { IS_CHROME } from '../Shared/environment'
+import { useStateRef } from '../Hooks/useStateRef'
 
 type AppProps = {
   systemMode: EditorSystemMode
@@ -50,6 +51,7 @@ export function App({ systemMode, bridgeState }: AppProps) {
   const { suggestionsEnabled } = useSyncedState()
   const { editorState } = useEditorState()
   const { userMode } = useEditorStateValues()
+  const userModeRef = useStateRef(userMode)
 
   const [editorError, setEditorError] = useState<Error | undefined>(undefined)
   const [editorHidden, setEditorHidden] = useState(true)
@@ -296,6 +298,11 @@ export function App({ systemMode, bridgeState }: AppProps) {
 
         application.logger.info('Initialized editor with role', role, 'config', editorInitializationConfig)
 
+        const userCanEdit = application.getRole().canEdit()
+        if (!userCanEdit) {
+          editorState.userMode = EditorUserMode.Preview
+        }
+
         if (editorInitializationConfig) {
           setEditorConfig({ documentId, userAddress, editorInitializationConfig: editorInitializationConfig })
           if (editorInitializationConfig.mode === 'conversion') {
@@ -356,6 +363,7 @@ export function App({ systemMode, bridgeState }: AppProps) {
       },
     }
 
+    application.logger.info('Setting request handler for bridge')
     bridge.setClientRequestHandler(requestHandler)
 
     notifyParentEditorIsReady()
@@ -367,6 +375,8 @@ export function App({ systemMode, bridgeState }: AppProps) {
     notifyParentEditorIsReady,
     setEditorConfig,
     applyBeforePrintFixesForChrome,
+    userModeRef,
+    editorState,
   ])
 
   const onUserModeChange = useCallback(
