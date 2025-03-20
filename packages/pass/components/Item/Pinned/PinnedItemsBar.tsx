@@ -121,12 +121,18 @@ export const PinnedItemsBar: FC = () => {
             return 'share';
         })();
 
+        const { type, selectedShareId } = filtersRef?.current ?? {};
+
         selectItem(shareId, itemId, {
             scope,
             filters:
                 trashed || sharedWithMe
                     ? getInitialFilters()
-                    : { search: '', selectedShareId: filtersRef.current.selectedShareId !== null ? shareId : null },
+                    : {
+                          search: '',
+                          selectedShareId: selectedShareId !== null ? shareId : null,
+                          type: type !== '*' && type !== item.data.type ? '*' : type,
+                      },
         });
     }, []);
 
