@@ -10,7 +10,11 @@ import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
-import { selectUserStorageQuota, selectUserStorageUsed } from '@proton/pass/store/selectors';
+import {
+    selectUserStorageMaxFileSize,
+    selectUserStorageQuota,
+    selectUserStorageUsed,
+} from '@proton/pass/store/selectors';
 import type { BaseFileDescriptor, FileAttachmentValues, FileID } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { isIos } from '@proton/shared/lib/helpers/browser';
@@ -20,23 +24,23 @@ import { FileAttachmentsSummary } from './FileAttachmentsSummary';
 
 type Props = FieldProps<{}, FileAttachmentValues> &
     PropsWithChildren<{
-        maxFiles?: number;
         filesCount?: number /* Optional: When item is new, there are no previous files */;
         onDeleteAllFiles?: () => void;
     }>;
 
 export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
-    WithPaidUser(({ children, form, maxFiles = 10, filesCount = 0, onDeleteAllFiles }) => {
+    WithPaidUser(({ children, form, filesCount = 0, onDeleteAllFiles }) => {
         const dispatch = useDispatch();
         const { uploadFile, cancelUpload } = useFileUpload();
         const [loading, setLoading] = useState(false);
         const [files, setFiles] = useState<Omit<BaseFileDescriptor, 'fileID'>[]>([]);
         const usedStorage = useSelector(selectUserStorageUsed);
         const maxStorage = useSelector(selectUserStorageQuota);
+        const maxFileSize = useSelector(selectUserStorageMaxFileSize);
         const { createNotification } = useNotifications();
         const online = useConnectivity();
 
-        const disableUploader = form.values.files.toAdd.length >= maxFiles || loading || !online;
+        const disableUploader = loading || !online;
 
         const uploadFiles = async (newFiles: File[]) => {
             const filesIds: FileID[] = [];
@@ -50,7 +54,17 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
         };
 
         const onAddFiles = async (newFiles: File[]) => {
-            const totalNewFilesSize = newFiles.reduce((acc, file) => acc + file.size, 0);
+            const validFiles = newFiles.filter((file) => file.size <= maxFileSize);
+
+            // Let the user know that some files will not be uploaded
+            if (validFiles.length < newFiles.length) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Some files were not uploaded because they exceed the maximum allowed file size.`,
+                });
+            }
+
+            const totalNewFilesSize = validFiles.reduce((acc, file) => acc + file.size, 0);
 
             // Prevent users from exceeding the maximum storage limit
             if (usedStorage + totalNewFilesSize > maxStorage) {
@@ -60,24 +74,13 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 });
             }
 
-            const filteredFiles: File[] = (() => {
-                if (form.values.files.toAdd.length + newFiles.length <= maxFiles) return newFiles;
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`The maximum allowed quantity of files to add per action is ${maxFiles}`,
-                });
-                return newFiles.slice(0, maxFiles - form.values.files.toAdd.length);
-            })();
-
-            if (!filteredFiles.length) return;
-
-            setFiles((f) => f.concat(filteredFiles.map(({ name, type, size }) => ({ name, size, mimeType: type }))));
+            setFiles((f) => f.concat(validFiles.map(({ name, type, size }) => ({ name, size, mimeType: type }))));
 
             try {
                 setLoading(true);
-                await uploadFiles(filteredFiles);
+                await uploadFiles(validFiles);
             } catch {
-                setFiles((f) => f.slice(0, f.length - filteredFiles.length));
+                setFiles((f) => f.slice(0, f.length - validFiles.length));
             } finally {
                 setLoading(false);
             }

@@ -14,11 +14,13 @@ import type {
     ItemRevision,
     ItemRevisionContentsResponse,
     LinkFileToItemInput,
+    MaybeNull,
     SecureLinkItem,
     SelectedItem,
     UniqueItem,
 } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import chunk from '@proton/utils/chunk';
 
 export const createPendingFile = async (metadata: string, totalChunks: number): Promise<string> =>
     (
@@ -118,27 +120,43 @@ export const linkPendingFiles = async (dto: ItemLinkPendingFiles): Promise<ItemR
                 }))
             );
 
-            const result = await api({
-                url: `pass/v1/share/${shareId}/item/${itemId}/link_files`,
-                data: {
-                    ItemRevision: revision,
-                    FilesToAdd,
-                    FilesToRemove: files.toRemove,
-                } satisfies LinkFileToItemInput,
-                method: 'post',
-            });
+            /** Max simultaneous files to add/remove per action are 10/100 */
+            const addChunks = chunk(FilesToAdd, 10);
+            const removeChunks = chunk(files.toRemove, 100);
+
+            let maxCalls = Math.max(addChunks.length, removeChunks.length);
+            let result = null;
+
+            for (let i = 0; i < maxCalls; i++) {
+                const currentFilesToAdd = addChunks[i] ?? [];
+                const currentFilesToRemove = removeChunks[i] ?? [];
+
+                result = await api({
+                    url: `pass/v1/share/${shareId}/item/${itemId}/link_files`,
+                    data: {
+                        ItemRevision: revision,
+                        FilesToAdd: currentFilesToAdd,
+                        FilesToRemove: currentFilesToRemove,
+                    } satisfies LinkFileToItemInput,
+                    method: 'post',
+                });
+            }
 
             /** If no files to restore we can early return */
-            if (!files.toRestore?.length) return result.Item;
+            if (!files.toRestore?.length && result) return result.Item;
         }
 
         if (files.toRestore?.length) {
-            return restoreRevisionFiles({
-                shareId,
-                itemId,
-                toRestore: files.toRestore,
-                latestItemKey,
-            });
+            /** Max simultaneous files to restore per action are 50 */
+            const restoreChunks = chunk(files.toRestore, 50);
+            let result = null;
+
+            for (let i = 0; i < restoreChunks.length; i++) {
+                const toRestore = restoreChunks[i] ?? [];
+                result = await restoreRevisionFiles({ shareId, itemId, toRestore, latestItemKey });
+            }
+
+            return result!;
         }
 
         throw new Error('Invalid file link operation');
@@ -147,11 +165,38 @@ export const linkPendingFiles = async (dto: ItemLinkPendingFiles): Promise<ItemR
     return parseItemRevision(dto.shareId, encryptedItem);
 };
 
+const resolvePaginatedFiles = async ({
+    shareId,
+    itemId,
+    from,
+    lastId = null,
+    files = [],
+}: UniqueItem & {
+    from: 'files' | 'revisions';
+    lastId?: MaybeNull<string>;
+    files?: ItemFileOutput[];
+}): Promise<ItemFileOutput[]> => {
+    const queryParams = lastId ? `?Since=${lastId}` : '';
+    const endpoints = {
+        files: `pass/v1/share/${shareId}/item/${itemId}/files${queryParams}`,
+        revisions: `pass/v1/share/${shareId}/item/${itemId}/revisions/files${queryParams}`,
+    };
+
+    const response = (await api({ url: endpoints[from], method: 'get' })).Files;
+    const allFiles = [...files, ...response.Files];
+
+    if (response.Files.length === 100) {
+        return resolvePaginatedFiles({ shareId, itemId, lastId: response.LastID, from, files: allFiles });
+    }
+
+    return allFiles;
+};
+
 export const resolveItemFiles = async ({ shareId, itemId }: UniqueItem): Promise<ItemFileOutput[]> =>
-    (await api({ url: `pass/v1/share/${shareId}/item/${itemId}/files`, method: 'get' })).Files!.Files;
+    resolvePaginatedFiles({ shareId, itemId, from: 'files' });
 
 export const resolveItemFilesRevision = async ({ shareId, itemId }: UniqueItem): Promise<ItemFileOutput[]> =>
-    (await api({ url: `pass/v1/share/${shareId}/item/${itemId}/revisions/files`, method: 'get' })).Files!.Files;
+    resolvePaginatedFiles({ shareId, itemId, from: 'revisions' });
 
 export const resolvePublicItemFiles = async (
     filesToken: string,

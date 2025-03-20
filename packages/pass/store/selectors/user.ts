@@ -35,6 +35,7 @@ export const selectAddresses = ({ user }: State) => user.addresses;
 export const selectAuthDevices = (state: State) => state.user.devices;
 export const selectUserStorageUsed = ({ user }: State) => user.plan?.StorageUsed ?? 0;
 export const selectUserStorageQuota = ({ user }: State) => user.plan?.StorageQuota ?? 0;
+export const selectUserStorageMaxFileSize = ({ user }: State) => user.plan?.StorageMaxFileSize ?? 0;
 export const selectUserStorageAllowed = ({ user }: State) => user.plan?.StorageAllowed;
 
 /* Specification for pass specific plans in `/user/access` response :
