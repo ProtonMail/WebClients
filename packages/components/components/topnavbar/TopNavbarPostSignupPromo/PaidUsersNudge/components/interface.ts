@@ -11,11 +11,6 @@ export const ReminderDates: Record<string, number> = {
     day170: 170,
 } as const;
 
-export enum VariantsValues {
-    money = 'money',
-    percentage = 'percentage',
-}
-
 export interface PriceData {
     yearlyPrice: number;
     discountedPrice: number;
