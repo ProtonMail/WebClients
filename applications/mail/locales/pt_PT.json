@@ -1114,11 +1114,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select all": [
-        "Seleccionar tudo"
-      ],
       "Select All": [
         "Selecionar tudo"
+      ],
+      "Select all": [
+        "Seleccionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1311,6 +1311,10 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1541,10 +1545,6 @@
       "${ price } per user": [
         "${ price } por utilizador"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } licença do ${ LUMO_APP_NAME }",
-        "${ seats } licenças do ${ LUMO_APP_NAME }"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
         "${ seats } licenças de assistente de escrita"
@@ -1699,14 +1699,6 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantia de devolução do seu dinheiro em até 30 dias"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "O preço com desconto especial de ${ discountedPrice } é válido pelos primeiros ${ cycle } meses. Após esse período, será renovado automaticamente com o preço de ${ nextPrice } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Após este período, será automaticamente renovado a cada mês por ${ nextPrice } . Pode cancelar a qualquer momento."
       ]
     },
     "bf2023: Tooltip": {
@@ -5935,9 +5927,6 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
-      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } também pode proteger a sua empresa."
       ],
@@ -6695,7 +6684,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -7264,8 +7254,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito utilizando o seguinte endereço ou digitalize o código QR. O seu depósito será apresentado na sua conta após confirmação."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "A assinatura é renovada automaticamente a cada ${ cycle } meses."
+      "Subscription auto-renews every ${ cycle } month.": [
+        "A subscrição é renovada automaticamente a cada ${ cycle } mês.",
+        "A subscrição é renovada automaticamente a cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
         "Renovações automáticas de subscrição todos os meses."
@@ -7866,6 +7857,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escreveu \"${ attachmentsFoundKeyword }\", mas não adicionou nenhum anexo. Ainda quer enviar esta mensagem?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Será então cobrado a cada ${ renewCycle } mês no valor de ${ renewAmountStr }.",
+        "Será então cobrado a cada ${ renewCycle } meses no valor de ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Atingiu o número máximo de endereços no(s) grupo(s) de contactos:"
       ],
@@ -7942,11 +7937,15 @@
       "Your private writing assistant": [
         "O seu assistente de escrita privado"
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "O seu plano agendado começa a ${ renewalTime } e será renovado automaticamente a cada ${ cycle } mês.",
         "O seu plano agendado começa a ${ renewalTime } e será renovado automaticamente a cada ${ cycle } meses."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "O seu plano agendado começa a ${ renewalTime } e será renovado automaticamente a cada mês."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "A sua subscrição será renovada automaticamente em ${ renewalTime }."
       ]
     },
     "info": {
@@ -10872,23 +10871,36 @@
       "Please select your billing state first.": [
         "Selecione primeiro o seu estado de faturação."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Renovação por ${ renewPrice }, com possibilidade de cancelar a qualquer momento."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "O preço da renovação está sujeito a alterações de acordo com ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Renovação por ${ renewPriceStr } com possibilidade de cancelar a qualquer momento."
       ],
       "Select billing country to pay": [
         "Selecione o país de faturação para pagar"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido pelos primeiros ${ subscriptionLength } meses. O cupão é válido para ${ couponRedemptions } renovações. Após esse período, será automaticamente renovado em ${ renewPrice } durante ${ subscriptionLengthCopy } meses. Pode cancelar a qualquer momento."
+      "terms & conditions": [
+        "os termos e condições"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido pelos primeiros ${ subscriptionLength } meses. Após esse período, será renovado automaticamente por ${ renewPrice } durante ${ subscriptionLengthCopy } meses. Pode cancelar a qualquer momento."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "O cupão é válido para ${ couponRedemptions } renovação.",
+        "O cupão é válido para ${ couponRedemptions } renovações."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupão é válido para ${ couponRedemptions } renovações. Após esse período, será renovado automaticamente por ${ renewPrice } durante ${ subscriptionLength } mês. Pode cancelar a qualquer momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "O preço especialmente descontado de ${ priceWithDiscount } é válido para o primeiro ${ subscriptionLength } mês.",
+        "O preço especialmente descontado de ${ priceWithDiscount } é válido para os primeiros ${ subscriptionLength } meses."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido pelo primeiro mês. Após esse período, será automaticamente renovado a cada mês por ${ renewPrice } . Pode cancelar a qualquer momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupão é válido para ${ couponRedemptions } renovação. Após esse período, será renovado automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento.",
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupão é válido para ${ couponRedemptions } renovações. Após esse período, será renovado automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Após este período, será automaticamente renovado a cada mês por ${ renewPriceStr } . Pode cancelar a qualquer momento."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } mês. Pode cancelar a qualquer momento.",
+        "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
@@ -13800,11 +13812,6 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é utilizado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
@@ -13888,6 +13895,11 @@
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "lançamento estável"
@@ -13960,8 +13972,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Será faturado a cada 12 meses no valor de ${ renewPrice }."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Será faturado a cada 12 meses no valor de ${ renewPriceStr }."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "A sua nova subscrição será renovada automaticamente dentro de ${ cycle } mês.",

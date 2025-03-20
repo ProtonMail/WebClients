@@ -1114,11 +1114,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select all": [
-        "Selecionar tudo"
-      ],
       "Select All": [
         "Selecionar todos"
+      ],
+      "Select all": [
+        "Selecionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1311,6 +1311,10 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1541,10 +1545,6 @@
       "${ price } per user": [
         "${ price } por usuário"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } licença do ${ LUMO_APP_NAME }",
-        "${ seats } licenças do ${ LUMO_APP_NAME }"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
         "${ seats } licenças de assistente de escrita"
@@ -1701,14 +1701,6 @@
         "Garantia de devolução do seu dinheiro por até 30 dias"
       ]
     },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "O preço com desconto especial de ${ discountedPrice } é válido nos primeiros ${ cycle } meses. Em seguida, será renovado automaticamente pelo preço com desconto de ${ nextPrice } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ nextPrice } todo mês. Você pode cancelar a qualquer momento."
-      ]
-    },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
@@ -1788,7 +1780,7 @@
         "Pastas, marcadores e filtros ilimitados"
       ],
       "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Inícios de sessão ilimitados, cartões de crédito, alias do ide-my-email e mais"
+        "Inícios de sessão ilimitados, cartões de crédito, alias do hide-my-email e mais"
       ],
       "Use your own email domain": [
         "Use o seu próprio domínio de e-mail"
@@ -4041,7 +4033,7 @@
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > \nIdentidade e endereços > Domínio curto (pm.me)"
+        "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Identidade e endereços > Domínio curto (pm.me)"
       ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
@@ -5844,7 +5836,7 @@
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
-        "O gerenciador de senhas do ${ BRAND_NAME } permite que você crie, armazene e preencha automaticamente senhas, para que você nunca precise redefini-las."
+        "O gerenciador de senhas da ${ BRAND_NAME } permite que você crie, armazene e preencha automaticamente senhas, para que você nunca precise redefini-las."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
@@ -5934,9 +5926,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
-      ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } tambem pode proteger seus negócios."
@@ -6695,7 +6684,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -6857,7 +6847,7 @@
         "Mensal ${ onDayString }"
       ],
       "More infos": [
-        "Mais informação"
+        "Mais informações"
       ],
       "More refine actions": [
         "Ações mais refinadas"
@@ -6944,10 +6934,10 @@
         "Nossos alertas priorizam a segurança. Se você não reconhecer nenhuma das informações violadas, você pode ignorar este relatório com segurança."
       ],
       "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
-        "Nosso sistema assinalou isto como suspeito. Se não for um e-mail de phishing ou fraudulento, marque como legítimo."
+        "Nosso sistema sinalizou isso como suspeito. Se não for um e-mail de phishing ou fraudulento, marque como legítimo."
       ],
       "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
-        "Nosso sistema identificou esta mensagem como uma tentativa de golpe. Verifique se é legítimo."
+        "Nosso sistema identificou esta mensagem como uma tentativa de golpe. Por favor, verifique se é legítimo."
       ],
       "password": [
         "senha"
@@ -7264,7 +7254,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "A assinatura é renovada automaticamente a cada ${ cycle } mês.",
         "A assinatura é renovada automaticamente a cada ${ cycle } meses."
       ],
       "Subscription auto-renews every month.": [
@@ -7866,6 +7857,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Você escreveu \"${ attachmentsFoundKeyword }\", mas nenhum anexo foi adicionado. Quer enviar a mensagem assim mesmo?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }.",
+        "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Você alcançou o número máximo de endereços no grupo ou grupo de contatos"
       ],
@@ -7942,11 +7937,15 @@
       "Your private writing assistant": [
         "Seu assistente de escrita privado"
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Seu plano começa em ${ renewalTime } e será renovado automaticamente a cada ${ cycle } mês.",
         "Seu plano começa em ${ renewalTime } e será renovado automaticamente a cada ${ cycle } meses."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Seu plano começa em ${ renewalTime } e será renovado automaticamente todo mês."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Sua assinatura será renovada automaticamente em ${ renewalTime }."
       ]
     },
     "info": {
@@ -9298,7 +9297,7 @@
     },
     "Monthly recurring event, repeats on": {
       "on the ${ shortenedDay }": [
-        "no dia ${ shortenedDay }"
+        "no(a) ${ shortenedDay }"
       ],
       "on the first Friday": [
         "na primeira Sexta-feira"
@@ -9749,7 +9748,7 @@
         "Suporte limitado"
       ],
       "Manage user permissions and access": [
-        "Gerencie permissões e acesso dos usuários"
+        "Gerenciar permissões e acesso do usuário"
       ],
       "Multiple admin roles": [
         "Múltiplas funções de administração"
@@ -10062,7 +10061,7 @@
     },
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "O preço com desconto de ${ priceCoupon } é válido no primeiro mês. Em seguida, será renovado automaticamente por ${ priceLine } meses. Você pode cancelar a qualquer momento."
+        "O preço com desconto de ${ priceCoupon } é válido no primeiro mês. Em seguida, será renovado automaticamente por ${ priceLine }. Você pode cancelar a qualquer momento."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
@@ -10386,7 +10385,7 @@
         "Link copiado para área de transferência"
       ],
       "Meeting host copied to clipboard": [
-        "O organizador da reunião foi copiado para área de transferência."
+        "O organizador da reunião foi copiado para área de transferência"
       ],
       "Meeting ID copied to clipboard": [
         "O ID da reunião foi copiado para área de transferência"
@@ -10450,7 +10449,7 @@
         "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan } Plus."
       ],
       "Last day to save": [
-        "Último dia para eocnomizar"
+        "Último dia para economizar"
       ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
@@ -10462,7 +10461,7 @@
         "Talvez mais tarde"
       ],
       "Offer expires ${ formattedDate }.": [
-        "A oferta expira a ${ formattedDate }."
+        "A oferta expira em ${ formattedDate }."
       ],
       "Pay annually, secure our best offer": [
         "Pague anualmente e assegure nossa melhor oferta"
@@ -10892,23 +10891,36 @@
       "Please select your billing state first.": [
         "Selecione primeiro seu estado de cobrança."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Renova por ${ renewPrice }, cancele a qualquer momento."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "O preço da renovação está sujeito a alterações de acordo com os ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Renova por ${ renewPriceStr }, cancele a qualquer momento."
       ],
       "Select billing country to pay": [
         "Selecione o país de cobrança para pagar"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      "terms & conditions": [
+        "termos e condições"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido nos primeiros ${ subscriptionLength } meses. Depois, ele será renovado automaticamente por ${ renewPrice } por ${ subscriptionLengthCopy } meses. Você pode cancelar a qualquer momento."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "O cupom é válido para ${ couponRedemptions } renovação.",
+        "O cupom é válido para ${ couponRedemptions } renovações."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovações de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPrice } por ${ subscriptionLength } mês. Você pode cancelar a qualquer momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro ${ subscriptionLength } mês.",
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para os primeiros ${ subscriptionLength } meses."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. Depois, ele será renovado automaticamente por ${ renewPrice } todo mês. Você pode cancelar a qualquer momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovação de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento.",
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. O cupom é válido para renovações de ${ couponRedemptions }. Em seguida, ele será renovado automaticamente a ${ renewPriceStr } por 1 mês. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
+        "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
@@ -12142,8 +12154,8 @@
         "${ n } conexões VPN por usuário"
       ],
       "VPN connection for ${ n } devices per user": [
-        "Um\nConexão VPN para ${ n } dispositivos por usuário\n",
-        "Outro\nConexão VPN para ${ n } dispositivos por usuário"
+        "Conexão VPN para ${ n } dispositivo por usuário",
+        "Conexão VPN para ${ n } dispositivos por usuário"
       ]
     },
     "Subscription change warning": {
@@ -13820,11 +13832,6 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indica automaticamente o formato no compositor que é usado para enviar para este usuário. Texto simples indica que a mensagem será sempre convertida em texto simples (sem formatação) no envio."
@@ -13908,6 +13915,11 @@
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "versão estável"
@@ -13971,8 +13983,8 @@
         "${ numberOfServers } em ${ numberOfCountries } países"
       ],
       "Auto-selects from ${ numberOfCountries } country": [
-        "Seleciona automaticamente ${ numberOfCountries } país",
-        "Seleciona automaticamente ${ numberOfCountries } países"
+        "Seleciona automaticamente de ${ numberOfCountries } país",
+        "Seleciona automaticamente de ${ numberOfCountries } países"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servidores em ${ numberOfCountries }+ país",
@@ -13980,8 +13992,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Você será cobrado a cada 12 meses no valor de ${ renewPrice }."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Você será cobrado a cada 12 meses no valor de ${ renewPriceStr }."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Sua nova assinatura será renovada automaticamente em ${ cycle } mês.",
@@ -14089,10 +14101,10 @@
         "Você tem certeza que deseja excluir este contato permanentemente?"
       ],
       "Cannot contain a dot at the beginning": [
-        "Não pode começar por um ponto."
+        "Não pode começar por um ponto"
       ],
       "Cannot contain a dot at the end": [
-        "Não pode conter um ponto no final."
+        "Não pode conter um ponto no final"
       ],
       "Contacts could not be merged": [
         "Não foi possível mesclar os contatos."
@@ -14116,7 +14128,7 @@
         "Nome é obrigatório"
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
-        "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
+        "Somente caracteres alfanuméricos minúsculos, pontos, hifens e sublinhados são permitidos"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
