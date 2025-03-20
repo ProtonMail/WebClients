@@ -182,6 +182,7 @@ export interface ShareInvitationDetails {
     invitation: ShareInvitation;
     share: ShareInvitationShare;
     link: ShareInvitationLink;
+    decryptedLinkName?: string;
 }
 
 export interface ShareExternalInvitation {
