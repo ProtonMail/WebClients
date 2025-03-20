@@ -214,7 +214,10 @@ export const createIFrameApp = <A>({
     const onMessageHandler = (message: unknown) =>
         isIFrameMessage(message) && portMessageHandlers.get(message.type)?.(message);
 
-    const init = async (port: Runtime.Port, payload: IFrameInitPayload) => {
+    /** `IFrameInitPayload` should be resolved once the port has been
+     * injected or we could hit a race-condition where the init payload
+     * does not reflect the most recent content-script state. */
+    const init = async (port: Runtime.Port, getPayload: () => IFrameInitPayload) => {
         state.port?.disconnect();
         state.port = port;
         state.port.onMessage.addListener(onMessageHandler);
@@ -226,7 +229,7 @@ export const createIFrameApp = <A>({
         }).then(() =>
             sendPortMessage({
                 type: IFramePortMessageType.IFRAME_INIT,
-                payload,
+                payload: getPayload(),
             })
         );
     };
