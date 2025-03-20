@@ -5,12 +5,14 @@
  * any bundled code that runs immediately when the file is loaded. This includes
  * side-effects such as directly executed statements and exported constants. */
 import * as config from 'proton-pass-extension/app/config';
+import { checkChromeRuntimeError } from 'proton-pass-extension/lib/utils/chrome';
 import 'proton-pass-extension/lib/utils/polyfills';
 import { devReload } from 'proton-pass-extension/lib/utils/reload';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from './channel';
@@ -28,13 +30,13 @@ if (typeof browser !== 'undefined') {
         const cryptoChunks = ['chunk.crypto-worker-api.js', 'chunk.crypto-argon2.js', 'chunk.pass-core.worker.js'];
         const chunks = localeChunks.concat(cryptoChunks);
 
-        globalScope.oninstall = async () => {
-            importScripts(...chunks.map((path) => browser.runtime.getURL(path)));
+        globalScope.oninstall = () => {
+            safeCall(() => importScripts(...chunks.map((path) => browser.runtime.getURL(path))))();
             /* In order to alleviate MV3 service worker potentially ending up
              * in a broken state after an update or a manual refresh, force the
              * incoming service worker to skip its waiting state
              * https://bugs.chromium.org/p/chromium/issues/detail?id=1271154#c66 */
-            if (BUILD_TARGET === 'chrome') return globalScope.skipWaiting();
+            if (BUILD_TARGET === 'chrome') return globalScope.skipWaiting().catch(checkChromeRuntimeError);
         };
     }
 

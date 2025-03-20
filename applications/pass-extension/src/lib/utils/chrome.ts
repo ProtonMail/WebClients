@@ -7,3 +7,7 @@ import { EXTENSION_BUILD_VERSION, EXTENSION_MANIFEST_VERSION } from 'proton-pass
  * `1.25.1` manifest version while serving the `1.24.1` build */
 export const isChromeExtensionRollback = (): boolean =>
     BUILD_TARGET === 'chrome' && EXTENSION_BUILD_VERSION !== EXTENSION_MANIFEST_VERSION;
+
+export const checkChromeRuntimeError = () => {
+    void chrome?.runtime?.lastError;
+};
