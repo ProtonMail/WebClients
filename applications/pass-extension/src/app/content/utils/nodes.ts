@@ -1,4 +1,4 @@
-import { isHidden, isProcessed, selectFormCandidates, selectInputCandidates } from '@proton/pass/fathom';
+import { isHidden, isIgnored, isProcessed, selectFormCandidates, selectInputCandidates } from '@proton/pass/fathom';
 import { isFormElement, isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { not, or } from '@proton/pass/utils/fp/predicates';
 
@@ -23,13 +23,13 @@ export const IGNORED_TAGS = new Set([
 
 export const IGNORED_ROLES = new Set(['button', 'link', 'menuitem', 'checkbox', 'radio', 'switch']);
 
-const unprocessed = not(isProcessed);
+export const isUnprocessed = not(or(isProcessed, isIgnored));
 
 export const hasProcessableForms = (target?: Document | HTMLElement) =>
-    selectFormCandidates(target).some(or(unprocessed, isHidden));
+    selectFormCandidates(target).some(or(isUnprocessed, isHidden));
 
 export const hasProcessableFields = (target?: Document | HTMLElement) =>
-    selectInputCandidates(target).some(or(unprocessed, isHidden));
+    selectInputCandidates(target).some(or(isUnprocessed, isHidden));
 
 export const hasProcessableNodes = or(hasProcessableForms, hasProcessableFields);
 
