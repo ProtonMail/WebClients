@@ -94,7 +94,8 @@
   --vault-mercury: 230 230 230;
   --vault-water-leaf: 158 226 230;
   --pass-scroll-shadow-color: rgb(14 14 14 / 0.35);
-  --pass-lobby-background-color: radial-gradient(
+  --pass-lobby-background-color:
+    radial-gradient(
       61.86% 61.86% at 50% 0%,
       rgb(255 255 255 / 0.16) 0%,
       rgb(255 255 255 / 0) 100%
@@ -190,5 +191,22 @@
   --interaction-weak-major-1: #475853;
   --interaction-weak-major-2: #5c6a66;
   --interaction-weak-major-3: #707d79;
+  --interaction-weak-contrast: #ffffff;
+}
+
+.ui-gray {
+  --interaction-norm-minor-2: #4d4d4d;
+  --interaction-norm-minor-1: #808080;
+  --interaction-norm: #ffffff;
+  --interaction-norm-major-1: #ffffff;
+  --interaction-norm-major-2: #ffffff;
+  --interaction-norm-major-3: #ffffff;
+  --interaction-norm-contrast: #000000;
+  --interaction-weak-minor-2: #111117;
+  --interaction-weak-minor-1: #1c1c26;
+  --interaction-weak: #38384c;
+  --interaction-weak-major-1: #4c4c5e;
+  --interaction-weak-major-2: #606070;
+  --interaction-weak-major-3: #747482;
   --interaction-weak-contrast: #ffffff;
 }
