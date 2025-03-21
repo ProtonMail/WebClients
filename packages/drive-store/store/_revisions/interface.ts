@@ -1,12 +1,20 @@
 import type { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 
-import type { Photo } from '../_photos';
-
 export type Thumbnail = { id: String; size: Number; type: Number; hash: String };
 
 export interface ThumbnailURLInfo {
     bareUrl: string;
     token: string;
+}
+
+export interface DriveFileRevisionPhoto {
+    linkId: string;
+    captureTime: number;
+    mainPhotoLinkId?: string;
+    exif?: string;
+    hash?: string;
+    contentHash?: string;
+    relatedPhotosLinkIds?: string[];
 }
 
 export interface DriveFileRevision {
@@ -19,6 +27,6 @@ export interface DriveFileRevision {
     blocs: DriveFileBlock[];
     thumbnail?: ThumbnailURLInfo;
     thumbnails: Thumbnail[];
-    photo?: Photo;
+    photo?: DriveFileRevisionPhoto;
     xAttr?: string;
 }

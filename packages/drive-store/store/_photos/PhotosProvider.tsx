@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 import { queryDeletePhotosShare, queryPhotos } from '@proton/shared/lib/api/drive/photos';
-import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { photoPayloadToPhotos, useDebouncedRequest } from '../_api';
 import type { ShareWithKey } from '../_shares';
