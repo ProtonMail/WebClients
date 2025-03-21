@@ -1,4 +1,5 @@
 import { c } from 'ttag';
 
-export const billedUserWarning = c('Payments')
-    .t`We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.`;
+export const getBilledUserWarning = () =>
+    c('Payments')
+        .t`During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.`;
