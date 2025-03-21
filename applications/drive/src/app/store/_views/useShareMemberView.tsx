@@ -147,13 +147,13 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         }
     }, [members, invitations, rootShareId]);
 
-    const updateStoredMembers = async (member: ShareMember) => {
+    const updateStoredMembers = async (member: ShareMember, remove: boolean = false) => {
         if (!sharingShareId) {
             throw new Error('No details for sharing link');
         }
         const updatedMembers = members.reduce<ShareMember[]>((acc, item) => {
             if (item.memberId === member.memberId) {
-                if (!member) {
+                if (remove) {
                     return acc;
                 }
                 return [...acc, member];
@@ -300,7 +300,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         const abortSignal = new AbortController().signal;
 
         await removeShareMember(abortSignal, { shareId: sharingShareId, memberId: member.memberId });
-        await updateStoredMembers(member);
+        await updateStoredMembers(member, true);
         createNotification({ type: 'info', text: c('Notification').t`Access for the member removed` });
     };
 
