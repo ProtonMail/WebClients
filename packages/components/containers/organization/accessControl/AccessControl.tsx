@@ -3,7 +3,6 @@ import { type Dispatch, type SetStateAction, useState } from 'react';
 import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
-import { useOrganization } from '@proton/account/organization/hooks';
 import Logo from '@proton/components/components/logo/Logo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
@@ -11,20 +10,8 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { Product } from '@proton/shared/lib/ProductEnum';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
-import {
-    APPS,
-    type APP_NAMES,
-    BRAND_NAME,
-    CALENDAR_APP_NAME,
-    DOCS_APP_NAME,
-    DRIVE_APP_NAME,
-    MAIL_APP_NAME,
-    PASS_APP_NAME,
-    VPN_APP_NAME,
-    WALLET_APP_NAME,
-} from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type {
     Api,
     OrganizationSettingsAllowedProduct,
@@ -32,70 +19,13 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-interface Application {
-    title: string;
-    appName: APP_NAMES;
-    description: string;
-    product: OrganizationSettingsAllowedProduct;
-}
-
-const CONTACTS_APP_NAME = `${BRAND_NAME} Contacts`;
-
-const getApplications = (): Application[] => {
-    return [
-        {
-            title: MAIL_APP_NAME,
-            description: c('Info').t`Email service, integrated with ${CALENDAR_APP_NAME} and ${CONTACTS_APP_NAME}`,
-            appName: APPS.PROTONMAIL,
-            product: Product.Mail,
-        },
-        {
-            title: CALENDAR_APP_NAME,
-            description: c('Info').t`Calendar, integrated with ${MAIL_APP_NAME} and ${CONTACTS_APP_NAME}`,
-            appName: APPS.PROTONCALENDAR,
-            product: Product.Calendar,
-        },
-        {
-            title: DRIVE_APP_NAME,
-            description: c('Info').t`Cloud storage, integrated with ${DOCS_APP_NAME}`,
-            appName: APPS.PROTONDRIVE,
-            product: Product.Drive,
-        },
-        {
-            title: VPN_APP_NAME,
-            description: c('Info').t`VPN with dedicated servers and IP addresses`,
-            appName: APPS.PROTONVPN_SETTINGS,
-            product: Product.VPN,
-        },
-        {
-            title: PASS_APP_NAME,
-            description: c('Info').t`Password manager with extra account security`,
-            appName: APPS.PROTONPASS,
-            product: Product.Pass,
-        },
-        {
-            title: WALLET_APP_NAME,
-            description: c('Info').t`Self-custodial crypto wallet`,
-            appName: APPS.PROTONWALLET,
-            product: Product.Wallet,
-        },
-    ];
-};
-
-const getAllowedProductsSet = (
-    applications: ReturnType<typeof getApplications>,
-    allowedProducts: OrganizationSettingsAllowedProducts = ['All']
-): Set<OrganizationSettingsAllowedProduct> => {
-    const value = new Set(allowedProducts);
-    if (value.has('All')) {
-        return new Set(applications.map((application) => application.product));
-    }
-    return value;
-};
+import getAccessControlApplications from './getAccessControlApplications';
+import type { AccessControlApplication } from './types';
+import useAllowedProducts from './useAllowedProducts';
 
 const getSerializedProducts = (
-    applications: ReturnType<typeof getApplications>,
-    products: ReturnType<typeof getAllowedProductsSet>
+    applications: AccessControlApplication[],
+    products: Set<OrganizationSettingsAllowedProduct>
 ): OrganizationSettingsAllowedProducts => {
     if (applications.some((application) => !products.has(application.product))) {
         return [...products.values()];
@@ -127,20 +57,19 @@ const handleChange = async (
     };
 
     setLoadingMapDiff(id, true);
-    run(update).finally(() => {
+    void run(update).finally(() => {
         setLoadingMapDiff(id, false);
     });
 };
 
 const AccessControl = () => {
-    const [organization] = useOrganization();
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
     const api = useApi();
     const [loadingMap, setLoadingMap] = useState<{ [key: string]: boolean }>({});
 
-    const applications = getApplications();
-    const allowedProducts = getAllowedProductsSet(applications, organization?.Settings?.AllowedProducts);
+    const applications = getAccessControlApplications();
+    const [allowedProducts] = useAllowedProducts();
 
     const getUpdatedProducts = (id: OrganizationSettingsAllowedProduct, value: boolean) => {
         const updatedSet = new Set(allowedProducts);
