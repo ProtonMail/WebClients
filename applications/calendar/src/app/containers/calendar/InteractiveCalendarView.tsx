@@ -45,6 +45,7 @@ import {
     updatePersonalEventPart,
 } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { fetchPaginatedAttendeesInfo } from '@proton/shared/lib/calendar/attendeeInfos';
 import { NO_CANONICAL_EMAIL_ERROR, toApiPartstat } from '@proton/shared/lib/calendar/attendees';
 import {
     getIsCalendarDisabled,
@@ -183,7 +184,6 @@ import {
     upsertUpdateEventPartResponses,
 } from './eventStore/cache/upsertResponsesArray';
 import type { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
-import { getPaginatedAttendeesInfo } from './eventStore/useCalendarsEventsReader';
 import getAttendeeDeleteSingleEditPayload from './getAttendeeDeleteSingleEditPayload';
 import type { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
 import getSyncMultipleEventsPayload from './getSyncMultipleEventsPayload';
@@ -1388,7 +1388,7 @@ const InteractiveCalendarView = ({
                 });
 
                 if (Event.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
-                    await getPaginatedAttendeesInfo(calendarID, eventID, api, Event);
+                    await fetchPaginatedAttendeesInfo(api, Event);
                 }
 
                 return {
@@ -1440,7 +1440,7 @@ const InteractiveCalendarView = ({
                     });
 
                     if (Event.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
-                        await getPaginatedAttendeesInfo(calendarID, eventID, api, Event);
+                        await fetchPaginatedAttendeesInfo(api, Event);
                     }
 
                     return {
