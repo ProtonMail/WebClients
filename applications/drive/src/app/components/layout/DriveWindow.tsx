@@ -17,6 +17,8 @@ import {
     useToggle,
 } from '@proton/components';
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
+import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
+import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -42,6 +44,8 @@ const DriveWindow = ({ children }: Props) => {
     const { isReadOnly } = useIsActiveLinkReadOnly();
     useOpenDrawerOnLoad();
     const { appInView, showDrawerSidebar } = useDrawer();
+
+    const [allowedProducts, loadingAllowedProducts] = useAllowedProducts();
 
     const fileRecoveryBanner = recoveryBannerVisible ? (
         <FileRecoveryBanner
@@ -71,7 +75,12 @@ const DriveWindow = ({ children }: Props) => {
         permissions.contacts && (
             <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />
         ),
-        permissions.calendar && <CalendarDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)} />,
+        permissions.calendar && allowedProducts.has(Product.Calendar) && (
+            <CalendarDrawerAppButton
+                aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
+                disabled={loadingAllowedProducts}
+            />
+        ),
     ].filter(isTruthy);
 
     const isNewUploadDisabled = location.pathname === '/devices' || isReadOnly;
