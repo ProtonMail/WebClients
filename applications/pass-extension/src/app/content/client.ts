@@ -79,10 +79,9 @@ const createClientController = (elements: PassElementsConfig) => {
         probe: createActivityProbe(),
         listeners: createListenerStore(),
 
-        /** Debounced with leading execution to handle rapid tab switches while
-         * maintaining quick initial load. The 1000ms delay prevents thrashing
-         * during fast visibility changes while the leading: true option ensures
-         * responsive startup on first visibility. */
+        /** Debounced with trailing-only execution to coalesce rapid tab switches.
+         * The 350ms delay with trailing: true ensures final visibility state is
+         * captured while preventing thrashing during quick changes in Safari. */
         startClient: debounce(
             async () => {
                 if (!controller.instance) {
@@ -101,8 +100,8 @@ const createClientController = (elements: PassElementsConfig) => {
                     return controller.instance.start();
                 }
             },
-            1_000,
-            { leading: true }
+            350,
+            { leading: false, trailing: true }
         ),
 
         stopClient: (reason: string) => {
@@ -162,7 +161,12 @@ export const run = async (getCustomElements: CustomElementsRegister) => {
     const controller = createClientController(elements);
     const activePage = document.visibilityState === 'visible';
 
-    if (activePage) await controller.startClient().catch(controller.destroyClient);
+    if (activePage) {
+        /* Start client immediately for active pages by calling and
+         * flushing the debounced function with error handling. */
+        controller.startClient()?.catch(controller.destroyClient);
+        controller.startClient.flush()?.catch(controller.destroyClient);
+    }
 
     return controller;
 };
