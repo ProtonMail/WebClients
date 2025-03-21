@@ -70,6 +70,7 @@ import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
 import OAuthPartnersContainer, { type OAuthPartnersCallbackState } from '../public/OAuthPartnersContainer';
 import ReAuthContainer from '../public/ReAuthContainer';
 import RemoveEmailContainer from '../public/RemoveEmailContainer';
+import SigninHelpContainer from '../public/SigninHelpContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
 import { readForkState } from '../public/persistedForkState';
@@ -694,6 +695,11 @@ const BasePublicApp = () => {
                                                             }
                                                             onInvalid={() => history.push(paths.signup)}
                                                         />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route path={SSO_PATHS.SIGNIN_HELP}>
+                                                    <UnAuthenticated>
+                                                        <SigninHelpContainer toApp={maybePreAppIntent} paths={paths} />
                                                     </UnAuthenticated>
                                                 </Route>
                                                 <Route path={SSO_PATHS.RESET_PASSWORD}>

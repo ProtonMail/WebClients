@@ -384,6 +384,7 @@ const LoginForm = ({
     };
 
     const usernameParams = username ? `?username=${username}` : '';
+    const signinHelpPath = `${paths.signinHelp}${usernameParams}`;
     const resetPath = `${paths.reset}${usernameParams}`;
     const forgotUsernamePath = `${paths.forgotUsername}${usernameParams}`;
 
@@ -540,7 +541,7 @@ const LoginForm = ({
                                 <input id="username" readOnly value={username} hidden />
                                 {passwordEl()}
                                 <div className="mb-4">
-                                    <Link to={resetPath}>{c('Link').t`Forgot password?`}</Link>
+                                    <Link to={signinHelpPath}>{c('Link').t`Forgot password?`}</Link>
                                 </div>
                                 {errorEl && <div className="mt-4">{errorEl}</div>}
                                 <Button
