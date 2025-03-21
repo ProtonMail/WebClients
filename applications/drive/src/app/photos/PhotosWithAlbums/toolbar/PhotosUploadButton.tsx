@@ -50,7 +50,7 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
                     title={c('Action').t`Upload photos`}
                     className="inline-flex flex-nowrap flex-row items-center"
                 >
-                    <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />{' '}
+                    <Icon name="plus" className={clsx(!viewportWidth.xsmall && 'mr-2')} />
                     <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`Upload photos`}</span>
                 </ToolbarButton>
             )}

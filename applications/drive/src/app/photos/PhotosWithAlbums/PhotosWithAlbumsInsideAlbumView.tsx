@@ -78,6 +78,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         removeAlbumPhotos,
         photoLinkIds,
         deleteAlbum,
+        userAddressEmail,
     } = usePhotosWithAlbumsView();
 
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
@@ -354,6 +355,12 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     // If you don't own it (shared album), you upload directly in the album as a folder, it won't appear in photo stream
     const uploadLinkId = album.permissions.isOwner ? linkId : albumLinkId || linkId;
 
+    const canRemoveSelectedPhotos =
+        album.permissions.isAdmin ||
+        selectedItems.every((item) => item.activeRevision?.signatureEmail === userAddressEmail);
+
+    const viewOnly = isUploadDisabled || !album.permissions.isEditor;
+
     return (
         <>
             {detailsModal}
@@ -395,7 +402,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 />
             )}
             <UploadDragDrop
-                disabled={isUploadDisabled}
+                disabled={viewOnly}
                 isForPhotos={true}
                 shareId={albumShareId}
                 parentLinkId={uploadLinkId}
@@ -446,12 +453,12 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onPreview={handleToolbarPreview}
                             requestDownload={requestDownload}
                             data={albumPhotos}
-                            uploadDisabled={isUploadDisabled}
+                            uploadDisabled={viewOnly}
                             tabSelection={'albums-gallery'}
                             createAlbumModal={createAlbumModal}
                             onFileUpload={onPhotoUploadedToAlbum}
                             onFileSkipped={onPhotoUploadedToAlbum}
-                            removeAlbumPhotos={onRemoveAlbumPhotos}
+                            removeAlbumPhotos={canRemoveSelectedPhotos ? onRemoveAlbumPhotos : undefined}
                             onSelectCover={onSelectCoverToolbar}
                             onDeleteAlbum={onDeleteAlbum}
                             onShowDetails={onShowDetails}

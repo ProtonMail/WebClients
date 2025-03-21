@@ -76,7 +76,7 @@ export const AlbumCoverHeader = ({
                 </p>
                 <div className="flex flex-wrap flex-row gap-2">
                     <Avatar color="weak">{initials}</Avatar>
-                    {album.permissions.isOwner && (
+                    {album.permissions.isAdmin && (
                         <Button
                             color="weak"
                             shape="solid"
@@ -89,13 +89,15 @@ export const AlbumCoverHeader = ({
                         </Button>
                     )}
 
-                    <PhotosUploadButton
-                        type="norm"
-                        shareId={shareId}
-                        linkId={linkId}
-                        onFileUpload={onFileUpload}
-                        onFileSkipped={onFileSkipped}
-                    />
+                    {album.permissions.isEditor && (
+                        <PhotosUploadButton
+                            type="norm"
+                            shareId={shareId}
+                            linkId={linkId}
+                            onFileUpload={onFileUpload}
+                            onFileSkipped={onFileSkipped}
+                        />
+                    )}
                 </div>
             </div>
         </div>

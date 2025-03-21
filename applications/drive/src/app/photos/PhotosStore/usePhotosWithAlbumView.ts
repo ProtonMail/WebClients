@@ -74,6 +74,7 @@ export const usePhotosWithAlbumsView = () => {
         addPhotoAsCover,
         removeAlbumPhotos,
         deleteAlbum,
+        userAddressEmail,
     } = usePhotosWithAlbums();
 
     const [selectedTags, setSelectedTags] = useState([PhotoTag.All]);
@@ -466,5 +467,6 @@ export const usePhotosWithAlbumsView = () => {
         deleteAlbum,
         selectedTags,
         handleSelectTag,
+        userAddressEmail,
     };
 };
