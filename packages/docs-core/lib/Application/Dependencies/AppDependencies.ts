@@ -105,7 +105,7 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.MetricService, () => {
-      return new MetricService(api)
+      return new MetricService(api, compatWrapper.getCompatType())
     })
 
     this.bind(App_TYPES.RealtimeEncryptionService, () => {
