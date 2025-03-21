@@ -24,7 +24,6 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
     },
 };
 
-// TODO: Here we can add attendees comments to the model used for displaying the evnet
 const useReadEvent = (
     targetEventData: CalendarViewEventData,
     tzid: string,
