@@ -44,10 +44,15 @@ const SuggestionTypeToMetricSuggestionType: Record<SuggestionSummaryType, Metric
 
 type SuggestionResolution = 'accepted' | 'rejected'
 
+type DocType = Parameters<(typeof metrics.docs_open_documents_heartbeat_total)['increment']>[0]['docType']
+
 export class MetricService {
   private heartbeatInterval: NodeJS.Timeout | null = null
 
-  constructor(private readonly api: Api) {}
+  constructor(
+    private readonly api: Api,
+    private docType: DocType,
+  ) {}
 
   initialize(): void {
     this.heartbeat()
@@ -60,6 +65,7 @@ export class MetricService {
   heartbeat(): void {
     metrics.docs_open_documents_heartbeat_total.increment({
       browser: getBrowserForMetrics(),
+      docType: this.docType,
     })
   }
 
