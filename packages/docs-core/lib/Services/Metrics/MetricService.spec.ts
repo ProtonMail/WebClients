@@ -10,7 +10,7 @@ describe('MetricService', () => {
   beforeEach(() => {
     const api = {} as unknown as Api
 
-    metricService = new MetricService(api)
+    metricService = new MetricService(api, 'private')
 
     jest.useFakeTimers()
   })
