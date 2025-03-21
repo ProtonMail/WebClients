@@ -159,7 +159,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements, onErr
                 });
 
                 logger.debug(`[ContentScript::${scriptId}] Starting content-script service`);
-                await handleStart(extensionContext);
+                if (!context.getState().stale) await handleStart(extensionContext);
             } catch {}
         },
         /** Full destruction of the content-script and extension
