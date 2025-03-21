@@ -35,10 +35,9 @@ const getAltText = ({ mimeType, name }: DecryptedLink) =>
 interface AlbumDropdownButtonprops {
     onRename: () => void;
     onShare: () => void;
-    isOwner: boolean;
 }
 
-export const AlbumDropdownButton = ({ onShare, onRename, isOwner }: AlbumDropdownButtonprops) => {
+export const AlbumDropdownButton = ({ onShare, onRename }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -69,18 +68,17 @@ export const AlbumDropdownButton = ({ onShare, onRename, isOwner }: AlbumDropdow
                         <Icon className="mr-2" name="pencil" />
                         {c('Action').t`Rename album`}
                     </DropdownMenuButton>
-                    {isOwner && (
-                        <DropdownMenuButton
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                onShare();
-                            }}
-                            className="text-left flex items-center flex-nowrap"
-                        >
-                            <Icon className="mr-2" name="user-plus" />
-                            {c('Action').t`Share album`}
-                        </DropdownMenuButton>
-                    )}
+                    <DropdownMenuButton
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onShare();
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
+                        <Icon className="mr-2" name="user-plus" />
+                        {c('Action').t`Share album`}
+                    </DropdownMenuButton>
+
                     {/* TODO: Add delete album logic from album grid view */}
                     {/* <DropdownMenuButton className="text-left flex items-center flex-nowrap">
                         <Icon className="mr-2" name="trash" />
@@ -223,13 +221,11 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
                                 {album.isShared && <span className="ml-1">⋅ {c('Info').t`Shared`}</span>}
                             </div>
                         </div>
-                        <div className="shrink-0 mb-2">
-                            <AlbumDropdownButton
-                                onShare={onShare}
-                                onRename={onRename}
-                                isOwner={album.permissions.isOwner}
-                            />
-                        </div>
+                        {album.permissions.isAdmin && (
+                            <div className="shrink-0 mb-2">
+                                <AlbumDropdownButton onShare={onShare} onRename={onRename} />
+                            </div>
+                        )}
                     </div>
                 </>
             ) : null}

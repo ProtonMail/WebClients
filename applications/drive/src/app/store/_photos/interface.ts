@@ -38,6 +38,7 @@ export type PhotoLink =
           isFile: boolean;
           activeRevision: {
               photo: Photo;
+              signatureEmail?: string;
           };
           photoProperties?: DecryptedLink['photoProperties'];
       };
