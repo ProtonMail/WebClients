@@ -23,7 +23,7 @@ import type { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from 
 import type { HttpsProtonMeDocsDocumentUpdatesSaveErrorTotalV1SchemaJson } from './types/docs_document_updates_save_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson } from './types/docs_document_updates_total_v1.schema';
 import type { HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson } from './types/docs_failed_websocket_connections_total_v1.schema';
-import type { HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV1SchemaJson } from './types/docs_open_documents_heartbeat_total_v1.schema';
+import type { HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV2SchemaJson } from './types/docs_open_documents_heartbeat_total_v2.schema';
 import type { HttpsProtonMeDocsPublicSharingCustomPasswordSuccessRateTotalV1SchemaJson } from './types/docs_public_sharing_custom_password_success_rate_total_v1.schema';
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from './types/docs_readonly_mode_documents_total_v1.schema';
 import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson } from './types/docs_realtime_disconnect_error_total_v1.schema';
@@ -49,6 +49,7 @@ import type { HttpsProtonMeDriveSyncEventTotalV2SchemaJson } from './types/drive
 import type { HttpsProtonMeDriveSyncEventUnecessaryTotalV2SchemaJson } from './types/drive_sync_event_unecessary_total_v2.schema';
 import type { HttpsProtonMeDriveSyncItemsTotalV1SchemaJson } from './types/drive_sync_items_total_v1.schema';
 import type { HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson } from './types/drive_sync_resync_items_total_v1.schema';
+import type { HttpsProtonMeDriveSyncResyncSuccessTotalV1SchemaJson } from './types/drive_sync_resync_success_total_v1.schema';
 import type { HttpsProtonMeDriveSyncResyncTotalV1SchemaJson } from './types/drive_sync_resync_total_v1.schema';
 import type { HttpsProtonMeDriveUploadErroringUsersTotalV2SchemaJson } from './types/drive_upload_erroring_users_total_v2.schema';
 import type { HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_upload_errors_file_size_histogram_v1.schema';
@@ -172,7 +173,7 @@ class Metrics extends MetricsBase {
 
     public docs_failed_websocket_connections_total: Counter<HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson>;
 
-    public docs_open_documents_heartbeat_total: Counter<HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV1SchemaJson>;
+    public docs_open_documents_heartbeat_total: Counter<HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV2SchemaJson>;
 
     public docs_public_sharing_custom_password_success_rate_total: Counter<HttpsProtonMeDocsPublicSharingCustomPasswordSuccessRateTotalV1SchemaJson>;
 
@@ -223,6 +224,8 @@ class Metrics extends MetricsBase {
     public drive_sync_items_total: Counter<HttpsProtonMeDriveSyncItemsTotalV1SchemaJson>;
 
     public drive_sync_resync_items_total: Counter<HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson>;
+
+    public drive_sync_resync_success_total: Counter<HttpsProtonMeDriveSyncResyncSuccessTotalV1SchemaJson>;
 
     public drive_sync_resync_total: Counter<HttpsProtonMeDriveSyncResyncTotalV1SchemaJson>;
 
@@ -489,8 +492,8 @@ class Metrics extends MetricsBase {
             );
 
         this.docs_open_documents_heartbeat_total =
-            new Counter<HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV1SchemaJson>(
-                { name: 'docs_open_documents_heartbeat_total', version: 1 },
+            new Counter<HttpsProtonMeDocsOpenDocumentsHeartbeatTotalV2SchemaJson>(
+                { name: 'docs_open_documents_heartbeat_total', version: 2 },
                 this.requestService
             );
 
@@ -625,6 +628,11 @@ class Metrics extends MetricsBase {
 
         this.drive_sync_resync_items_total = new Counter<HttpsProtonMeDriveSyncResyncItemsTotalV1SchemaJson>(
             { name: 'drive_sync_resync_items_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sync_resync_success_total = new Counter<HttpsProtonMeDriveSyncResyncSuccessTotalV1SchemaJson>(
+            { name: 'drive_sync_resync_success_total', version: 1 },
             this.requestService
         );
 
