@@ -70,15 +70,13 @@ export const handleDone = ({
     appIntent?: AppIntent;
 }): SignupActionDoneResponse => {
     const {
-        persistent,
-        trusted,
         setupData,
         accountData: { password },
     } = cache;
     if (!setupData?.authResponse) {
         throw new Error('Missing auth response');
     }
-    const { authResponse, user, keyPassword, clientKey, offlineKey, persistedSession } = setupData;
+    const { session } = setupData;
 
     // Users that creates an account after a logout don't have appIntent, foring forcing it here
     if (isElectronMail) {
@@ -90,16 +88,7 @@ export const handleDone = ({
     return {
         cache,
         session: {
-            data: {
-                ...authResponse,
-                keyPassword,
-                persistent,
-                trusted,
-                User: user,
-                clientKey,
-                offlineKey,
-                persistedSession,
-            },
+            data: session,
             loginPassword: password,
             flow: 'signup',
             appIntent: appIntent,
@@ -186,7 +175,7 @@ export const handleSetPassword = async ({
         throw new Error('Missing user');
     }
 
-    const userKeys = await getDecryptedUserKeysHelper(user, setupData.keyPassword);
+    const userKeys = await getDecryptedUserKeysHelper(user, setupData.session.keyPassword);
     const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(newPassword);
     const updateKeysPayload = await getUpdateKeysPayload({
         addressesKeys: [],
@@ -212,7 +201,7 @@ export const handleSetPassword = async ({
         config: updatePrivateKeyRoute(updateKeysPayload),
     });
 
-    const { clientKey, offlineKey, persistedSession } = await persistSession({
+    const sessionResult = await persistSession({
         api,
         clearKeyPassword: newPassword,
         keyPassword,
@@ -235,10 +224,7 @@ export const handleSetPassword = async ({
             },
             setupData: {
                 ...setupData,
-                persistedSession,
-                offlineKey,
-                clientKey,
-                keyPassword,
+                session: { ...sessionResult, User: updatedUser },
                 user: updatedUser,
             },
         },
@@ -549,10 +535,10 @@ export const handleSetupUser = async ({
     const { keySetupData, user, addresses } = await setupKeys({ api, ktActivation, password, productParam });
 
     const trusted = false;
-    const { clientKey, offlineKey, persistedSession } = await persistSession({
+    const sessionResult = await persistSession({
         ...authResponse,
-        keyPassword: keySetupData.keyPassword,
         clearKeyPassword: keySetupData.clearKeyPassword,
+        keyPassword: keySetupData.keyPassword,
         User: user,
         api,
         persistent,
@@ -573,10 +559,7 @@ export const handleSetupUser = async ({
         trusted,
         setupData: {
             user,
-            keyPassword: keySetupData.keyPassword,
-            persistedSession,
-            clientKey,
-            offlineKey,
+            session: sessionResult,
             addresses,
             authResponse,
             mnemonicData,

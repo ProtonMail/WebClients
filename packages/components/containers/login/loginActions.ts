@@ -166,18 +166,22 @@ export const handleReAuthKeyPassword = async ({
         }
         throw getUnlockError();
     }
-    const newAuthSession = {
-        ...authSession.data,
+    const keyPassword = unlockResult.keyPassword;
+    const sessionResult = await persistSession({
         User,
-        keyPassword: unlockResult.keyPassword,
-    };
-    const { clientKey, offlineKey, persistedSession } = await persistSession({
-        ...newAuthSession,
+        LocalID: authSession.data.localID,
+        UID: authSession.data.UID,
+        persistent: authSession.data.persistedSession.persistent,
+        trusted: authSession.data.persistedSession.trusted,
+        keyPassword,
         clearKeyPassword,
         api,
         source,
     });
-    return { data: { ...newAuthSession, persistedSession, clientKey, offlineKey }, prompt: null };
+    return {
+        data: sessionResult,
+        prompt: null,
+    };
 };
 
 export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthCacheResult; newPassword: string }) => {

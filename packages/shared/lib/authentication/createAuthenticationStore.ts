@@ -1,8 +1,9 @@
 import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 
 import { appMode } from '../webpack.constants';
-import { getBasename, getLocalIDFromPathname, getParsedPathWithoutLocalIDBasename } from './pathnameHelper';
+import { getBasename, getLocalIDFromPathname } from './pathnameHelper';
 import { getPersistedSession } from './persistedSessionStorage';
 
 const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
@@ -12,13 +13,6 @@ const PERSIST_SESSION_KEY = 'proton:persistSession';
 const TRUST_SESSION_KEY = 'proton:trustSession';
 const CLIENT_KEY_KEY = 'proton:clientKey';
 const OFFLINE_KEY_KEY = 'proton:offlineKey';
-
-const getPath = (basename: string | undefined, oldUrl: string, requestedPath?: string) => {
-    return [
-        basename || '',
-        `/${getParsedPathWithoutLocalIDBasename(requestedPath || '/') || getParsedPathWithoutLocalIDBasename(oldUrl)}`,
-    ].join('');
-};
 
 interface AuthData {
     UID: string | undefined;
@@ -121,22 +115,11 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
     const login = ({
         UID: newUID,
         keyPassword,
-        LocalID: newLocalID,
-        persistent,
-        trusted,
-        path,
+        localID: newLocalID,
+        persistedSession: { persistent, trusted },
         clientKey,
         offlineKey,
-    }: {
-        UID: string;
-        keyPassword?: string;
-        LocalID: number;
-        persistent: boolean;
-        trusted: boolean;
-        path?: string;
-        clientKey: string;
-        offlineKey: OfflineKey | undefined;
-    }) => {
+    }: ResumedSessionResult) => {
         setUID(newUID);
         setPassword(keyPassword);
         setPersistent(persistent);
@@ -151,8 +134,6 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
             setLocalID(undefined);
             basename = undefined;
         }
-
-        return getPath(basename, window.location.href, path);
     };
 
     const logout = () => {
