@@ -72,6 +72,22 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
         }
     }
 
+    // Event containing a description field with a supported video conferencing link
+    // We first parse the description as it contains more information than the location field
+    if (description) {
+        if (description.includes('zoom.us')) {
+            const data = getZoomFromDescription(description);
+            sendTelemetryReport(VideoConferenceSource.zoom_desc);
+            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+        }
+
+        if (description.includes('meet.google.com')) {
+            const data = getGoogleMeetDataFromDescription(description);
+            sendTelemetryReport(VideoConferenceSource.google_meet_desc);
+            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+        }
+    }
+
     // Event containing a location field with a supported video conferencing link
     if (location) {
         if (location.includes('zoom.us')) {
@@ -83,20 +99,6 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
         if (location.includes('meet.google.com')) {
             const data = getGoogleMeetDataFromLocation(location);
             sendTelemetryReport(VideoConferenceSource.google_meet_loc);
-            return <VideoConferencingWidget location={widgetLocation} data={data} />;
-        }
-    }
-
-    if (description) {
-        if (description.includes('zoom.us')) {
-            const data = getZoomFromDescription(description);
-            sendTelemetryReport(VideoConferenceSource.zoom_desc);
-            return <VideoConferencingWidget location={widgetLocation} data={data} />;
-        }
-
-        if (description.includes('meet.google.com')) {
-            const data = getGoogleMeetDataFromDescription(description);
-            sendTelemetryReport(VideoConferenceSource.google_meet_desc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
     }
