@@ -25,7 +25,7 @@ export const propertiesToAttendeeModel = (attendee?: VcalAttendeeProperty[]): At
                 partstat: getAttendeePartstat(attendee),
                 role: getAttendeeRole(attendee),
                 token: attendee?.parameters?.['x-pm-token'],
-                comment: attendee?.parameters?.comment,
+                comment: attendee?.parameters?.['x-pm-comment'],
             };
             return result;
         })
