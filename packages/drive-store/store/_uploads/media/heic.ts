@@ -12,24 +12,16 @@ interface HeicToBlobOptions {
  */
 export async function heicToBlob(heicFile: File | Blob, options: HeicToBlobOptions = {}): Promise<Blob> {
     const format = options.format || 'image/webp';
-    try {
-        const { heicTo } = await import(
-            /* webpackMode: "lazy" */
-            /* webpackChunkName: "heic-to-js" */
-            'heic-to/csp'
-        );
+    const { heicTo } = await import(
+        /* webpackMode: "lazy" */
+        /* webpackChunkName: "heic-to-js" */
+        'heic-to/csp'
+    );
 
-        try {
-            const image = await heicTo({
-                blob: heicFile,
-                type: isSafari() ? 'image/jpeg' : format,
-                quality: 1,
-            });
-            return image;
-        } catch (error) {
-            throw new Error(`HEIC to Blob conversion failed: ${(error as Error).message}`);
-        }
-    } catch (error) {
-        throw new Error(`Failed to import libheif-js: ${(error as Error).message}`);
-    }
+    const image = await heicTo({
+        blob: heicFile,
+        type: isSafari() ? 'image/jpeg' : format,
+        quality: 1,
+    });
+    return image;
 }

@@ -15,7 +15,7 @@ import {
 import { getCanAdmin, getCanWrite, getIsOwner } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
@@ -90,11 +90,12 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const driveEventManager = useDriveEventManager();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [albumPhotosLoading, setIsAlbumPhotosLoading] = useState<boolean>(true);
+    const [userAddressEmail, setUserAddressEmail] = useState<string>();
     const [photos, setPhotos] = useState<Photo[]>([]);
     const [albums, setAlbums] = useState<Map<string, DecryptedAlbum>>(new Map());
     const [currentAlbumLinkId, setCurrentAlbumLinkId] = useState<string>();
     const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
-    const { getShareWithKey, getShare } = useShare();
+    const { getShareWithKey, getShare, getShareCreatorKeys } = useShare();
     const { getSharePermissions } = useDirectSharingInfo();
     const { getLink } = useLink();
     const { setVolumeShareIds } = useVolumesState();
@@ -109,9 +110,13 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 const share = await getShareWithKey(signal, createdPhotos.shareId);
                 setPhotosShare(share);
                 setVolumeShareIds(share.volumeId, [share.shareId]);
+                const { address } = await getShareCreatorKeys(signal, share);
+                setUserAddressEmail(address.Email);
             } else {
                 // use old photo share
                 setPhotosShare(defaultPhotosShare);
+                const { address } = await getShareCreatorKeys(signal, defaultPhotosShare);
+                setUserAddressEmail(address.Email);
             }
         });
     }, []);
@@ -331,6 +336,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                         : Promise.resolve(undefined),
                                 ]);
                                 const permissions = await getSharePermissions(abortSignal, link.rootShareId);
+                                setVolumeShareIds(album.VolumeID, [album.ShareID]);
                                 return {
                                     ...link,
                                     cover: cover,
@@ -602,6 +608,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 deletePhotosShare,
                 removeAlbumPhotos,
                 deleteAlbum,
+                userAddressEmail,
             }}
         >
             {children}

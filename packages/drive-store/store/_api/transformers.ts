@@ -14,7 +14,7 @@ import type {
 import type { LinkMeta, LinkSharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
-import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
@@ -316,9 +316,15 @@ export const photoPayloadToPhotos = (photo: PhotoPayload): Photo => {
     return {
         linkId: photo.LinkID,
         captureTime: photo.CaptureTime,
-        mainPhotoLinkId: photo.MainPhotoLinkID ?? undefined,
         hash: photo.Hash ?? undefined,
         contentHash: photo.ContentHash ?? undefined,
+        tags: photo.Tags,
+        relatedPhotos: photo.RelatedPhotos?.map((relatedPhoto) => ({
+            linkId: relatedPhoto.LinkID,
+            captureTime: relatedPhoto.CaptureTime,
+            hash: relatedPhoto.Hash ?? undefined,
+            contentHash: relatedPhoto.ContentHash ?? undefined,
+        })),
     };
 };
 
