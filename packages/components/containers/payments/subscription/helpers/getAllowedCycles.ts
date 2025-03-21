@@ -11,7 +11,16 @@ import {
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
-import { hasDeprecatedVPN, hasVPN2024, isRegularCycle, isTrial } from '@proton/shared/lib/helpers/subscription';
+import {
+    hasBundle,
+    hasDeprecatedVPN,
+    hasDuo,
+    hasFamily,
+    hasVPN2024,
+    hasVisionary,
+    isRegularCycle,
+    isTrial,
+} from '@proton/shared/lib/helpers/subscription';
 import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import { isSamePlanCheckout } from './isSamePlanCheckout';
@@ -29,7 +38,7 @@ export type PlanCapRule = {
     currencyPredicate?: Currency | ((currency: Currency) => boolean);
 };
 
-const cycleCapper: CycleCapper = (subscription, app) => {
+const b2cBundlePlanCycleCapper: CycleCapper = (subscription, app) => {
     const userHasLongSubscription =
         !!subscription &&
         !isFreeSubscription(subscription) &&
@@ -37,7 +46,12 @@ const cycleCapper: CycleCapper = (subscription, app) => {
 
     const isVpnApp = app === APPS.PROTONVPN_SETTINGS;
 
-    if (userHasLongSubscription || hasDeprecatedVPN(subscription) || hasVPN2024(subscription) || isVpnApp) {
+    const hasB2CBundlePlan =
+        hasBundle(subscription) || hasFamily(subscription) || hasDuo(subscription) || hasVisionary(subscription);
+
+    const hasVpnPlus = hasDeprecatedVPN(subscription) || hasVPN2024(subscription);
+
+    if (userHasLongSubscription || hasVpnPlus || isVpnApp || hasB2CBundlePlan) {
         return CYCLE.TWO_YEARS;
     }
 
@@ -54,10 +68,10 @@ const defaultRules: PlanCapRule[] = [
     { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_FAMILY, cycle: CYCLE.YEARLY },
 
-    { plan: PLANS.BUNDLE, cycle: cycleCapper },
-    { plan: PLANS.DUO, cycle: cycleCapper },
-    { plan: PLANS.FAMILY, cycle: cycleCapper },
-    { plan: PLANS.VISIONARY, cycle: cycleCapper },
+    { plan: PLANS.BUNDLE, cycle: b2cBundlePlanCycleCapper },
+    { plan: PLANS.DUO, cycle: b2cBundlePlanCycleCapper },
+    { plan: PLANS.FAMILY, cycle: b2cBundlePlanCycleCapper },
+    { plan: PLANS.VISIONARY, cycle: b2cBundlePlanCycleCapper },
 
     { plan: PLANS.PASS_PRO, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_BUSINESS, cycle: CYCLE.YEARLY },
