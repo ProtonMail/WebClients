@@ -15,7 +15,7 @@ import {
 import { getCanAdmin, getCanWrite, getIsOwner } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';

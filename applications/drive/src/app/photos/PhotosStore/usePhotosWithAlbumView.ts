@@ -132,7 +132,17 @@ export const usePhotosWithAlbumsView = () => {
                 parentLinkId: linkId,
                 isFile: true,
                 activeRevision: {
-                    photo,
+                    photo: {
+                        linkId: photo.linkId,
+                        captureTime: photo.captureTime,
+                        hash: photo.hash,
+                        contentHash: photo.contentHash,
+                        relatedPhotosLinkIds: photo.relatedPhotos.map((relatedPhoto) => relatedPhoto.linkId),
+                    },
+                },
+                photoProperties: {
+                    tags: photo.tags,
+                    albums: [],
                 },
             };
         });
@@ -175,7 +185,7 @@ export const usePhotosWithAlbumsView = () => {
             photoLinkIdToIndexMap,
             photoLinkIds,
         };
-    }, [photos, cachedLinks, linkId, shareId, selectedTags]);
+    }, [photos, cachedLinks, linkId, shareId]);
 
     const { albumPhotosViewData, albumPhotosLinkIdToIndexMap, albumPhotosLinkIds } = useMemo(() => {
         if (!shareId || !linkId) {

@@ -1,5 +1,3 @@
-import type { Photo } from './photos';
-
 export enum FileRevisionState {
     Draft = 0,
     Active = 1,
@@ -95,6 +93,16 @@ export interface ThumbnailURLInfo {
     Token: string;
 }
 
+export interface DriveFileRevisionPhotoPayload {
+    LinkID: string;
+    CaptureTime: number;
+    MainPhotoLinkID: string | null;
+    Exif: string | null;
+    Hash: string | null;
+    ContentHash: string | null;
+    RelatedPhotosLinkIDs: string[] | null;
+}
+
 export interface DriveFileRevisionPayload {
     ID: string;
     CreateTime: number;
@@ -111,7 +119,7 @@ export interface DriveFileRevisionPayload {
         Token: string;
         URL: string;
     };
-    Photo: Photo | null;
+    Photo: DriveFileRevisionPhotoPayload | null;
     XAttr: string;
 }
 
