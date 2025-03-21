@@ -6,8 +6,9 @@ import { all, cancel, fork, put, select, take } from 'redux-saga/effects';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
+import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
+import { getShareLatestEventId, requestShare } from '@proton/pass/lib/shares/share.requests';
 import {
     itemsDeleteSync,
     itemsEditSync,
@@ -47,7 +48,14 @@ const onShareEvent = (shareId: string) =>
         if ('error' in event) throw event.error;
 
         const { Events } = event;
-        const { LatestEventID: eventId, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems } = Events;
+        const {
+            LatestEventID: eventId,
+            DeletedItemIDs,
+            UpdatedItems,
+            UpdatedShare,
+            LastUseItems,
+            FullRefresh,
+        } = Events;
         const currentEventId = ((yield select(selectShare(shareId))) as Maybe<ShareItem>)?.eventId;
 
         /* dispatch only if there was a change */
@@ -85,6 +93,14 @@ const onShareEvent = (shareId: string) =>
                 )) as Maybe<ItemRevision>[]
             ).filter(truthy);
 
+            yield put(itemsEditSync(updatedItems));
+        }
+
+        if (FullRefresh) {
+            const updatedShare: Maybe<Share> = yield parseShareResponse(yield requestShare(shareId));
+            if (updatedShare) yield put(shareEventUpdate(updatedShare));
+
+            const updatedItems: ItemRevision[] = yield requestItemsForShareId(shareId);
             yield put(itemsEditSync(updatedItems));
         }
 
