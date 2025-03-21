@@ -57,10 +57,17 @@ interface AlbumGalleryDropdownButtonProps {
     onDelete: () => void;
     onShowDetails: () => void;
     onLeave: () => void;
+    isAdmin: boolean;
     isOwner: boolean;
 }
 
-const AlbumGalleryDropdownButton = ({ onDelete, onShowDetails, onLeave, isOwner }: AlbumGalleryDropdownButtonProps) => {
+const AlbumGalleryDropdownButton = ({
+    onDelete,
+    onShowDetails,
+    onLeave,
+    isAdmin,
+    isOwner,
+}: AlbumGalleryDropdownButtonProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     return (
         <>
@@ -91,7 +98,7 @@ const AlbumGalleryDropdownButton = ({ onDelete, onShowDetails, onLeave, isOwner 
                         {c('Action').t`Details`}
                     </DropdownMenuButton>
 
-                    {isOwner && (
+                    {isAdmin && (
                         <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onDelete}>
                             <Icon className="mr-2" name="trash" />
                             {c('Action').t`Delete album`}
@@ -302,6 +309,7 @@ const ToolbarRightActionsAlbumGallery = ({
                         navigateToAlbums
                     );
                 }}
+                isAdmin={album.permissions.isAdmin}
                 isOwner={album.permissions.isOwner}
             />
             {linkSharingModal}
@@ -383,10 +391,11 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         {!hasMultipleSelected &&
                             onSelectCover &&
                             album &&
-                            album.cover?.linkId !== selectedItems[0].linkId && (
-                                <PhotosMakeCoverButton onSelectCover={onSelectCover} />
-                            )}
-                        {!hasMultipleSelected && <PhotosShareLinkButton selectedLinks={selectedItems} />}
+                            album.cover?.linkId !== selectedItems[0].linkId &&
+                            album.permissions.isAdmin && <PhotosMakeCoverButton onSelectCover={onSelectCover} />}
+                        {!hasMultipleSelected && album && album.permissions.isAdmin && (
+                            <PhotosShareLinkButton selectedLinks={selectedItems} />
+                        )}
                         <PhotosDetailsButton selectedLinks={selectedItems} />
                         {addAlbumPhotosModal && (
                             <PhotosAddAlbumPhotosButton onClick={() => addAlbumPhotosModal.openModal(true)} />
@@ -394,7 +403,9 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         {/* <Vr />
                         <PhotosDetailsButton selectedLinks={selectedItems} />
                         <Vr />*/}
-                        {album && removeAlbumPhotos && <PhotosRemoveAlbumPhotosButton onClick={removeAlbumPhotos} />}
+                        {album && album.permissions.isEditor && removeAlbumPhotos && (
+                            <PhotosRemoveAlbumPhotosButton onClick={removeAlbumPhotos} />
+                        )}
                         {!album && <PhotosTrashButton selectedLinks={selectedItems} />}
                     </>
                 )}
