@@ -5,8 +5,9 @@ import { c } from 'ttag';
 
 import { useApi, useContactEmailsCache, useGetCalendarEventRaw } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { getEvent, getPaginatedAttendeesInfo as getPaginatedAttendeesInfoApi } from '@proton/shared/lib/api/calendars';
+import { getEvent } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
+import { fetchPaginatedAttendeesInfo } from '@proton/shared/lib/calendar/attendeeInfos';
 import { ATTENDEE_MORE_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -38,36 +39,6 @@ const EVENTS_PER_BATCH_OLD = 5;
 const EVENTS_PER_BATCH = 200;
 const EVENTS_RACE_MS = 300;
 
-/**
- * @param Event - The event we overwrite with the attendees info.
- * @param page - The page number. Default to 1 as page 0 is already fetched with the getEvent call.
- */
-export const getPaginatedAttendeesInfo = async (
-    calendarID: string,
-    eventID: string,
-    api: Api,
-    Event: CalendarEvent,
-    page = 1
-) => {
-    const { Attendees, MoreAttendees } = await api<{
-        Attendees: CalendarEvent['AttendeesInfo']['Attendees'];
-        MoreAttendees: CalendarEvent['AttendeesInfo']['MoreAttendees'];
-    }>({
-        ...getPaginatedAttendeesInfoApi(calendarID, eventID, page),
-        silence: true,
-    });
-
-    Event.AttendeesInfo.Attendees = Event.AttendeesInfo.Attendees.concat(Attendees);
-    Event.AttendeesInfo.MoreAttendees = MoreAttendees;
-
-    // TODO
-    // - Should we limit the number of pages we fetch ?
-    // - Not sure batching is doable here or a even a good idea
-    if (MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
-        await getPaginatedAttendeesInfo(calendarID, eventID, api, Event, page + 1);
-    }
-};
-
 const getEventAndUpsert = async ({
     calendarID,
     eventID,
@@ -88,7 +59,7 @@ const getEventAndUpsert = async ({
         });
 
         if (Event.AttendeesInfo.MoreAttendees === ATTENDEE_MORE_ATTENDEES.YES) {
-            await getPaginatedAttendeesInfo(calendarID, eventID, api, Event);
+            await fetchPaginatedAttendeesInfo(api, Event);
         }
 
         upsertCalendarApiEvent(Event, calendarEventsCache, getOpenedMailEvents);
