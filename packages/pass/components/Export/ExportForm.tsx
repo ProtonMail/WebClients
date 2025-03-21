@@ -97,7 +97,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     </Card>
                 )}
 
-                {usedStorage && form.values.format !== ExportFormat.CSV && (
+                {usedStorage > 0 && form.values.format !== ExportFormat.CSV && (
                     <>
                         <Field
                             name="fileAttachments"
