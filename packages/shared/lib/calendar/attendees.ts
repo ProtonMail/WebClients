@@ -1,4 +1,4 @@
-import { CryptoProxy, type SessionKey } from '@proton/crypto';
+import { CryptoProxy, type SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
@@ -148,6 +148,22 @@ export const toInternalAttendee = (
             // VERIFICATION_STATUS.SIGNED_AND_INVALID -> EVENT_VERIFICATION_STATUS.FAILED
             // no verification keys -> discard VERIFICATION_STATUS -> return EVENT_VERIFICATION_STATUS.NOT_VERIFIED
             comment = decryptedMessageResult.data;
+
+            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
+                console.log(attendeeEmail, 'This note is not SIGNED', decryptedMessageResult.data, {
+                    hasFetchedAttendeeVeficationKey: !!publicKey?.verifyingKeys?.length,
+                });
+            }
+
+            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+                console.log(attendeeEmail, 'note SIGNED and INVALID', decryptedMessageResult.data, {
+                    hasFetchedAttendeeVeficationKey: !!publicKey?.verifyingKeys?.length,
+                });
+            }
+
+            if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                console.log(attendeeEmail, 'This note is SIGNED and VALID', decryptedMessageResult.data);
+            }
         }
 
         const partstat = toIcsPartstat(extra.Status);
