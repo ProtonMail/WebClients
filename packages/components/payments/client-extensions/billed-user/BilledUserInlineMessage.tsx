@@ -1,5 +1,5 @@
-import { billedUserWarning } from './billedUserWarning';
+import { getBilledUserWarning } from './billedUserWarning';
 
 export const BilledUserInlineMessage = () => {
-    return <p>{billedUserWarning}</p>;
+    return <p>{getBilledUserWarning()}</p>;
 };

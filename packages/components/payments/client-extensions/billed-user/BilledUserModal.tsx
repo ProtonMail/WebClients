@@ -11,7 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 
-import { billedUserWarning } from './billedUserWarning';
+import { getBilledUserWarning } from './billedUserWarning';
 
 interface Props extends ModalProps {
     user: User | undefined;
@@ -27,13 +27,13 @@ export const BilledUserModal = ({ user, ...rest }: Props) => {
     }, [shouldClose]);
 
     return (
-        <ModalTwo size="large" {...rest}>
-            <ModalTwoHeader title={c('Payments').t`Payment Processing`}></ModalTwoHeader>
+        <ModalTwo size="xsmall" {...rest}>
+            <ModalTwoHeader title={c('Payments').t`Your payment is still being processed`}></ModalTwoHeader>
             <ModalTwoContent>
-                <p>{billedUserWarning}</p>
+                <p>{getBilledUserWarning()}</p>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button className="mx-auto" color="norm" onClick={rest.onClose} data-testid="BilledUserModal/onClose">
+                <Button className="w-full" color="weak" onClick={rest.onClose} data-testid="BilledUserModal/onClose">
                     {c('Payments').t`Got it`}
                 </Button>
             </ModalTwoFooter>
