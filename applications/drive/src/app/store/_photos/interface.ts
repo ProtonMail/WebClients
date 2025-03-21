@@ -2,15 +2,18 @@ import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import type { Album, DecryptedAlbum } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import type { DecryptedLink } from '../_links/interface';
+import type { DriveFileRevisionPhoto } from '../_revisions';
 
-export interface Photo {
+interface PhotoBase {
     linkId: string;
     captureTime: number;
-    mainPhotoLinkId?: string;
-    exif?: string;
     hash?: string;
     contentHash?: string;
-    relatedPhotosLinkIds?: string[];
+}
+
+export interface Photo extends PhotoBase {
+    tags: PhotoTag[];
+    relatedPhotos: PhotoBase[];
 }
 
 export interface AlbumPhoto extends Photo {
@@ -37,7 +40,7 @@ export type PhotoLink =
           parentLinkId: string;
           isFile: boolean;
           activeRevision: {
-              photo: Photo;
+              photo: DriveFileRevisionPhoto;
               signatureEmail?: string;
           };
           photoProperties?: DecryptedLink['photoProperties'];
