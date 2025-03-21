@@ -140,12 +140,13 @@ export const toInternalAttendee = (
             // - Signed and invalid
             // - Not signed
             //
+            // TODO: Also sanitize from here ?
+            //
             // use `getEventVerificationStatus` for mapping the following cases:
             // VERIFICATION_STATUS.NOT_SIGNED ->  EVENT_VERIFICATION_STATUS.FAILED
             // VERIFICATION_STATUS.SIGNED_AND_VALID -> EVENT_VERIFICATION_STATUS.SUCCESSFUL
             // VERIFICATION_STATUS.SIGNED_AND_INVALID -> EVENT_VERIFICATION_STATUS.FAILED
             // no verification keys -> discard VERIFICATION_STATUS -> return EVENT_VERIFICATION_STATUS.NOT_VERIFIED
-
             comment = decryptedMessageResult.data;
         }
 
@@ -160,7 +161,7 @@ export const toInternalAttendee = (
         };
 
         if (comment) {
-            result.parameters.comment = comment;
+            result.parameters['x-pm-comment'] = comment;
         }
 
         return result;
@@ -218,7 +219,7 @@ export const getSupportedOrganizer = (organizer: VcalOrganizerProperty) => {
 };
 
 export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
-    const { parameters: { cn, role, partstat, rsvp, 'x-pm-token': token, comment } = {} } = attendee;
+    const { parameters: { cn, role, partstat, rsvp, 'x-pm-token': token, 'x-pm-comment': comment } = {} } = attendee;
     const emailAddress = getAttendeeEmail(attendee);
     const supportedAttendee: RequireSome<VcalAttendeeProperty, 'parameters'> = {
         value: buildMailTo(emailAddress),
@@ -247,10 +248,9 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
         supportedAttendee.parameters['x-pm-token'] = token;
     }
 
-    // TODO: ensure comment is always sanitized before
-    // reaching this part
+    // TODO: ensure comment is sanitized before reaching this part
     if (comment) {
-        supportedAttendee.parameters.comment = comment;
+        supportedAttendee.parameters['x-pm-comment'] = comment;
     }
 
     return supportedAttendee;
