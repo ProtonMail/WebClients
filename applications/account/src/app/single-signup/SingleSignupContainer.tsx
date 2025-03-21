@@ -903,7 +903,7 @@ const SingleSignupContainer = ({
                             try {
                                 const password = cache.accountData.password;
                                 const user = cache.setupData.user;
-                                const keyPassword = cache.setupData.keyPassword;
+                                const keyPassword = cache.setupData.session.keyPassword;
                                 const orgName = signupParameters.orgName || '';
 
                                 await handleSetupOrg({

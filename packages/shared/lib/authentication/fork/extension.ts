@@ -29,8 +29,8 @@ export const produceExtensionFork = async (options: {
         selector: options.payload.selector,
         keyPassword: options.payload.session.keyPassword,
         offlineKey: options.payload.session.offlineKey,
-        persistent: options.payload.session.persistent,
-        trusted: options.payload.session.trusted,
+        persistent: options.payload.session.persistedSession.persistent,
+        trusted: options.payload.session.persistedSession.trusted,
         state: options.payload.forkParameters.state,
     };
 

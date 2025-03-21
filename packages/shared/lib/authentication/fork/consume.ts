@@ -148,20 +148,14 @@ export const finalizeConsumeFork = async ({
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
     const User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
 
-    const result = {
+    const sessionResult = await persistSession({
+        api: authApi,
         User,
         UID,
         LocalID,
         keyPassword,
         persistent,
         trusted,
-        AccessToken,
-        RefreshToken,
-    };
-
-    const { clientKey, offlineKey, persistedSession } = await persistSession({
-        api: authApi,
-        ...result,
         clearKeyPassword: '',
         offlineKey: forkedOfflineKey,
         mode,
@@ -169,12 +163,7 @@ export const finalizeConsumeFork = async ({
     });
     await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
 
-    return {
-        ...result,
-        clientKey,
-        offlineKey,
-        persistedSession,
-    } as const;
+    return sessionResult;
 };
 
 const resolveForkPasswords = async ({

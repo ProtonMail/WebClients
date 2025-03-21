@@ -124,7 +124,7 @@ const CustomStepB2C = ({ measure, setupImg, productAppName, fork, onSetup, logo,
                     onSetup={async () => {
                         const localID = (() => {
                             if (model.cache?.type === 'user') {
-                                return model.cache.session.resumedSessionResult.LocalID;
+                                return model.cache.session.resumedSessionResult.localID;
                             } else if (model.cache?.type === 'signup') {
                                 return model.cache.setupData?.authResponse.LocalID;
                             }

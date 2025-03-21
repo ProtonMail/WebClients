@@ -42,7 +42,7 @@ interface ProduceForkArguments {
 
 export const produceFork = async ({
     api,
-    session: { UID, keyPassword, offlineKey, persistent, trusted, persistedSession },
+    session: { UID, keyPassword, offlineKey, persistedSession },
     forkParameters: { state, app, independent, forkType, forkVersion, payloadType, payloadVersion },
 }: ProduceForkArguments): Promise<ProduceForkPayload> => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
@@ -82,8 +82,8 @@ export const produceFork = async ({
         selector,
         state,
         key: base64StringKey,
-        persistent,
-        trusted,
+        persistent: persistedSession.persistent,
+        trusted: persistedSession.trusted,
         forkType,
         forkVersion,
         source: persistedSession.source,

@@ -61,7 +61,7 @@ export const handleProtonFork = async ({ api, paths }: { api: Api; paths: Paths 
         if (getShouldReAuth(forkParameters, session)) {
             const activeSessionsResult = await getActiveSessionsResult({
                 api,
-                localID: resumedSessionResult.LocalID,
+                localID: resumedSessionResult.localID,
                 session: resumedSessionResult,
             });
             return await handleActiveSessions(activeSessionsResult, forkParameters);

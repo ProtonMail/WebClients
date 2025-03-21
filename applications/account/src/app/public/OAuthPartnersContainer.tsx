@@ -127,7 +127,7 @@ const handleCallback = async ({
         };
     }
 
-    const { clientKey, offlineKey, persistedSession } = await persistSession({
+    const sessionResult = await persistSession({
         ...authResponse,
         clearKeyPassword,
         keyPassword,
@@ -139,16 +139,7 @@ const handleCallback = async ({
     });
 
     return {
-        data: {
-            ...authResponse,
-            keyPassword,
-            persistedSession,
-            offlineKey,
-            clientKey,
-            User: user,
-            persistent,
-            trusted,
-        },
+        data: sessionResult,
         flow: 'login',
     };
 };

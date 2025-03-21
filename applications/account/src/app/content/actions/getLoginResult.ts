@@ -103,7 +103,7 @@ const getRedirectUrl = ({
     initialSearchParams: URLSearchParams;
     toApp: APP_NAMES;
 }) => {
-    const localID = session.data.LocalID;
+    const localID = session.data.localID;
 
     const localRedirect = getLocalRedirectWithApp({ localRedirect: maybeLocalRedirect, session, toApp });
     if (localRedirect) {
@@ -187,7 +187,7 @@ export const getLoginResult = async ({
 
     // OAuth session are only allowed for the VPN browser extension at the moment. Go to the restricted settings view.
     if (persistedSession.source === SessionSource.Oauth && toApp !== APPS.PROTONVPNBROWSEREXTENSION) {
-        const url = getOAuthSettingsUrl(session.data.LocalID);
+        const url = getOAuthSettingsUrl(session.data.localID);
         return {
             type: 'done',
             payload: {
@@ -208,7 +208,7 @@ export const getLoginResult = async ({
         params.set('to', toApp);
         params.set('from', 'switch');
         const path = `${SETUP_ADDRESS_PATH}?${params.toString()}#${blob || ''}`;
-        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.data.LocalID));
+        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.data.localID));
         return {
             type: 'done',
             payload: {
@@ -221,7 +221,7 @@ export const getLoginResult = async ({
     // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
     if (user.Delinquent >= UNPAID_STATE.DELINQUENT) {
         const path = joinPaths(getSlugFromApp(toApp), getInvoicesPathname());
-        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.data.LocalID));
+        const url = new URL(getAppHref(path, APPS.PROTONACCOUNT, session.data.localID));
         return {
             type: 'done',
             payload: {

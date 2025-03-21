@@ -64,9 +64,7 @@ export const resumeSessionDrawerApp = ({
                     clientKey,
                     offlineKey,
                     User,
-                    persistent,
-                    trusted,
-                    LocalID: localID ?? parentLocalID,
+                    localID: localID ?? parentLocalID,
                     persistedSession,
                 });
             }
