@@ -114,6 +114,7 @@ export interface Paths {
     appSwitcher: string;
     reset: string;
     forgotUsername: string;
+    signinHelp: string;
 }
 
 export const getPaths = ({
@@ -136,6 +137,7 @@ export const getPaths = ({
         signup: getSignupUrl(prefix, forkState, app, productParam),
         forgotUsername: `${prefix}${SSO_PATHS.FORGOT_USERNAME}`,
         reset: `${prefix}${SSO_PATHS.RESET_PASSWORD}`,
+        signinHelp: `${prefix}${SSO_PATHS.SIGNIN_HELP}`,
     };
 };
 
