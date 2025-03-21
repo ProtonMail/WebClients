@@ -46,7 +46,7 @@ describe('WebsocketService', () => {
       debouncer.destroy()
     }
 
-    metricService = new MetricService(jest.fn())
+    metricService = new MetricService(jest.fn(), 'private')
 
     document = { linkId: 'link-id-123', volumeId: 'volume-id-456' } as NodeMeta
 

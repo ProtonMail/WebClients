@@ -29,7 +29,7 @@ describe('WebsocketConnection', () => {
   beforeEach(() => {
     jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
 
-    metricService = new MetricService({} as Api)
+    metricService = new MetricService({} as Api, 'private')
     documentState = new DocumentState({
       entitlements: {} as DocumentEntitlements,
     } as DocumentStateValues)
