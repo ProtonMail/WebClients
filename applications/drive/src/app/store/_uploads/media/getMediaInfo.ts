@@ -12,6 +12,7 @@ import {
 } from '@proton/shared/lib/helpers/mimetype';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
+import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { heicToBlob } from './heic';
 import { imageCannotBeLoadedError, scaleImageFile } from './image';
 import type { Media, ThumbnailInfo } from './interface';
@@ -54,6 +55,7 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
         creator: async (file: File) => {
             // if HEIC is not supported by browser we need to generate the thumbnails by decoding the file ourselves
             const blob = await heicToBlob(file);
+            void countActionWithTelemetry(Actions.ConvertedHEIC);
             return scaleImageFile({ file: blob }, thumbnailFormat).catch((err) => {
                 // Corrupted images cannot be loaded which we don't care about.
                 if (err === imageCannotBeLoadedError) {
@@ -79,6 +81,7 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
                 const data = new Uint8Array(buffer);
                 const result = await processor.extractThumbnail(data, name);
                 if (result) {
+                    void countActionWithTelemetry(Actions.ExtractedFromRaw);
                     const blob = new Blob([result], { type: 'image/jpeg' });
                     const props = await scaleImageFile({ file: blob }, thumbnailFormat).catch((err) => {
                         if (err === imageCannotBeLoadedError) {
