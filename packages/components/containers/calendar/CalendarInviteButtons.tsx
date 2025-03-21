@@ -132,7 +132,7 @@ const CalendarInviteButtons = ({
     const { text } = list.find((ans) => ans.isSelected) || list[0];
     const restList = list.filter((ans) => !ans.isSelected);
 
-    if (originalPatstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
+    if (!originalPatstat || originalPatstat == ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
         return (
             <ButtonGroup className={className} color="weak">
                 <Button
