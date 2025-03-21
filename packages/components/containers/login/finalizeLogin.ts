@@ -53,7 +53,7 @@ export const finalizeLogin = async ({
         const user = cache.data.user || (await syncUser(cache));
         const trusted = false;
 
-        const { clientKey, offlineKey, persistedSession } = await persistSession({
+        const sessionResult = await persistSession({
             ...authResponse,
             clearKeyPassword,
             keyPassword,
@@ -67,16 +67,7 @@ export const finalizeLogin = async ({
         return {
             to: AuthStep.DONE,
             session: {
-                data: {
-                    ...authResponse,
-                    keyPassword,
-                    clientKey,
-                    offlineKey,
-                    persistent,
-                    persistedSession,
-                    User: user,
-                    trusted,
-                },
+                data: sessionResult,
                 loginPassword,
                 flow: 'login',
             },
@@ -148,7 +139,7 @@ export const finalizeLogin = async ({
         }
     }
 
-    const { clientKey, offlineKey, persistedSession } = await persistSession({
+    const sessionResult = await persistSession({
         ...authResponse,
         clearKeyPassword,
         keyPassword,
@@ -164,16 +155,7 @@ export const finalizeLogin = async ({
     return {
         to: AuthStep.DONE,
         session: {
-            data: {
-                ...authResponse,
-                keyPassword,
-                offlineKey,
-                clientKey,
-                User: user,
-                persistent,
-                trusted,
-                persistedSession,
-            },
+            data: sessionResult,
             loginPassword,
             flow: 'login',
         },
