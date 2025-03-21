@@ -5,17 +5,27 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { ButtonLike } from '../atoms';
+import { useWalletTheme } from '../components/Layout/Theme/WalletThemeProvider';
+import ThemeButton from '../components/ThemeButton';
 import { articles } from '../constants/discover';
 
 import '../styles/discover.scss';
 
 export const DiscoverContainer = () => {
+    const theme = useWalletTheme();
     const discoverArticles = useMemo(() => articles(), []);
 
     return (
-        <div className="wallet-main relative flex flex-row flex-nowrap w-full min-h-full flex-nowrap">
+        <div
+            className={clsx(
+                theme === WalletThemeOption.WalletDark ? 'wallet-main' : 'wallet-main-discover',
+                'relative flex flex-row flex-nowrap w-full min-h-full flex-nowrap'
+            )}
+        >
             <div className="flex flex-column flex-1 flex-nowrap grow p-8 pt-8">
                 <div className="flex flex-column grow">
                     <div className="flex flex-row justify-space-between m-4 items-center">
@@ -38,6 +48,7 @@ export const DiscoverContainer = () => {
                                     className="ml-2"
                                 />
                             </ButtonLike>
+                            <ThemeButton />
                         </div>
                     </div>
 
