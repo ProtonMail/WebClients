@@ -6,10 +6,10 @@ import { type TelemetryPaymentFlow } from '../payments/client-extensions/usePaym
 import useShowVPNDashboard from './useShowVPNDashboard';
 
 const useDashboardPaymentFlow = (app: APP_NAMES): TelemetryPaymentFlow => {
-    const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(app);
+    const { showVPNDashboard, showVPNDashboardVariant, canShowVPNDashboard } = useShowVPNDashboard(app);
 
     return useMemo(() => {
-        if (!showVPNDashboard) {
+        if (!canShowVPNDashboard) {
             return 'subscription';
         }
         switch (showVPNDashboardVariant.name) {
