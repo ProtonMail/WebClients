@@ -39,6 +39,9 @@ export const requestShares = async (): Promise<ShareGetResponse[]> =>
         })
     ).Shares;
 
+export const requestShare = async (shareId: string, EventToken?: string) =>
+    (await api({ url: `pass/v1/share/${shareId}`, method: 'get', params: { EventToken } })).Share;
+
 export const deleteShare = async (shareId: string) => api({ url: `pass/v1/share/${shareId}`, method: 'delete' });
 
 const mapShareMembers = (response: ActiveShareGetResponse[]) =>
