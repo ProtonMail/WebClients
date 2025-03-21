@@ -31,7 +31,6 @@ import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { merge } from '@proton/pass/utils/object/merge';
-import noop from '@proton/utils/noop';
 
 type CreateIFrameAppOptions<A> = {
     animation: 'slidein' | 'fadein';
@@ -41,6 +40,7 @@ type CreateIFrameAppOptions<A> = {
     popover: PopoverController;
     src: string;
     backdropExclude?: () => HTMLElement[];
+    onDestroy?: () => void;
     onError?: (error: unknown) => void;
     onOpen?: (state: IFrameState<A>) => void;
     onClose?: (state: IFrameState<A>, options: IFrameCloseOptions) => void;
@@ -56,9 +56,10 @@ export const createIFrameApp = <A>({
     popover,
     src,
     backdropExclude,
+    onClose,
+    onDestroy,
     onError,
     onOpen,
-    onClose,
     position,
     dimensions,
 }: CreateIFrameAppOptions<A>): IFrameApp<A> => {
@@ -106,12 +107,10 @@ export const createIFrameApp = <A>({
     const sendSecurePostMessage = (message: IFrameMessage) =>
         sendMessage
             .onSuccess(contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }), async ({ key }) =>
-                ensureLoaded()
-                    .then(() => {
-                        const secureMessage: IFrameMessageWithSender = { ...message, key, sender: 'contentscript' };
-                        iframe.contentWindow?.postMessage(secureMessage, src);
-                    })
-                    .catch(noop)
+                ensureLoaded().then(() => {
+                    const secureMessage: IFrameMessageWithSender = { ...message, key, sender: 'contentscript' };
+                    iframe.contentWindow?.postMessage(secureMessage, src);
+                })
             )
             .catch((e) => onError?.(e));
 
@@ -235,6 +234,7 @@ export const createIFrameApp = <A>({
     };
 
     const destroy = () => {
+        onDestroy?.();
         close({ discard: false, refocus: false });
         listeners.removeAll();
         activeListeners.removeAll();
