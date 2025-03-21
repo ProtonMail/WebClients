@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useMemo, useState } from 'react';
+import React, { type ReactNode, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -34,7 +34,9 @@ interface FrequencyOption {
 }
 
 const OptionDescription = (descriptionText: string) => (
-    <span className="pr-4 color-weak text-sm">{descriptionText}</span>
+    <span key={descriptionText} className="pr-4 color-weak text-sm">
+        {descriptionText}
+    </span>
 );
 
 interface Props extends Omit<SelectTwoProps<string>, 'onChange' | 'children'> {
@@ -237,7 +239,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                 <div className="text-left text-sm text-bold text-norm mt-3 mb-1 ml-4">Repeat event</div>
                 {filteredFrequencies.map(({ type, value, title, text }) => {
                     return (
-                        <>
+                        <React.Fragment key={title}>
                             {type === CUSTOM && <hr className="my-2" />}
                             <DropdownMenuButton
                                 className={clsx('text-left flex flex-nowrap items-center', type === CUSTOM && 'mb-1')}
@@ -274,7 +276,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                                     </span>
                                 )}
                             </DropdownMenuButton>
-                        </>
+                        </React.Fragment>
                     );
                 })}
             </Dropdown>
