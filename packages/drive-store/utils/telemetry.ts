@@ -65,6 +65,9 @@ export enum Actions {
     OnboardingV2UploadFile = 'onboardingV2UploadFile',
     OnboardingV2UploadFolder = 'onboardingV2UploadFolder',
     OnboardingV2UploadSkip = 'onboardingV2UploadSkip',
+    // images
+    ConvertedHEIC = 'convertedHEIC',
+    ExtractedFromRaw = 'extractedFromRaw',
 }
 
 type PerformanceTelemetryAdditionalValues = {
