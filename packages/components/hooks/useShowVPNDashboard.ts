@@ -16,16 +16,15 @@ const useShowVPNDashboard = (app: APP_NAMES) => {
 
     const isB2B = hasB2BPlan(subscription) || isOrganizationB2B(organization);
 
-    const showVPNDashboard = useMemo(() => {
-        return (
-            app === APPS.PROTONVPN_SETTINGS &&
-            !isB2B &&
-            isVPNDashboardEnabled &&
-            showVPNDashboardVariant.name !== 'Control'
-        );
-    }, [app, isB2B, isVPNDashboardEnabled, showVPNDashboardVariant]);
+    const canShowVPNDashboard = useMemo(() => {
+        return app === APPS.PROTONVPN_SETTINGS && !isB2B && isVPNDashboardEnabled;
+    }, [app, isB2B, isVPNDashboardEnabled]);
 
-    return { showVPNDashboard, showVPNDashboardVariant };
+    const showVPNDashboard = useMemo(() => {
+        return canShowVPNDashboard && showVPNDashboardVariant.name !== 'Control';
+    }, [canShowVPNDashboard, showVPNDashboardVariant]);
+
+    return { showVPNDashboard, showVPNDashboardVariant, canShowVPNDashboard };
 };
 
 export default useShowVPNDashboard;
