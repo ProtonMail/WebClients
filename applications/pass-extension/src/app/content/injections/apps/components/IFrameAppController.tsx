@@ -17,7 +17,7 @@ import {
     sendMessage,
 } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Callback, Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { objectHandler } from '@proton/pass/utils/object/handler';
@@ -50,6 +50,7 @@ const acceptPortInjection = (
 export const createIFrameAppController = (endpoint: IFrameEndpoint, onMessage: (message: unknown) => void) => {
     const connection = objectHandler<PortContext>({ port: null, forwardTo: null });
     const pubsub = createPubSub<Runtime.Port>();
+    const handlers = new Set<Callback>();
 
     const IFrameBridge: IFrameAppController = {
         getPort: () => connection.get('port'),
@@ -76,16 +77,23 @@ export const createIFrameAppController = (endpoint: IFrameEndpoint, onMessage: (
                 payload: { framePort: port.name, id: endpoint },
             });
 
-            port.onMessage.addListener(onMessage);
+            const onPortMessage = (message: unknown) => {
+                safeCall(() => onMessage(message))();
+                handlers.forEach((handler) => safeCall(() => handler(message))());
+            };
+
+            port.onMessage.addListener(onPortMessage);
 
             port.onDisconnect.addListener(() => {
-                port.onMessage.removeListener(onMessage);
+                port.onMessage.removeListener(onPortMessage);
                 connection.set('port', null);
                 connection.set('forwardTo', null);
             });
         },
 
         disconnect: () => {
+            handlers.clear();
+
             const port = connection.get('port');
             connection.set('port', null);
             connection.set('forwardTo', null);
@@ -145,9 +153,8 @@ export const createIFrameAppController = (endpoint: IFrameEndpoint, onMessage: (
                 }
             };
 
-            const port = IFrameBridge.getPort();
-            port?.onMessage.addListener(onMessageHandler);
-            return () => port?.onMessage.removeListener(onMessageHandler);
+            handlers.add(onMessageHandler);
+            return () => handlers.delete(onMessageHandler);
         },
 
         close: (payload = {}) =>

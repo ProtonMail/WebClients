@@ -123,7 +123,6 @@ export const useRegisterMessageHandler = <M extends IFrameMessageType>(
     type: M,
     handler: IFramePortMessageHandler<M>
 ) => {
-    const state = useIFrameAppState();
     const controller = useIFrameAppController();
-    useEffect(() => controller.registerHandler(type, handler), [type, handler, state.connectionID]);
+    useEffect(() => controller.registerHandler(type, handler), [type, handler]);
 };
