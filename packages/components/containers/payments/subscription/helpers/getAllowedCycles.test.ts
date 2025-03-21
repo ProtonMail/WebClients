@@ -103,11 +103,11 @@ describe('getAllowedCycles', () => {
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
-    it('should return 1, 12 and 24 cycles when user has a 1-month subscription: with default rules', () => {
+    it('should return 1, and 12 cycles when user has a 1-month subscription: with default rules', () => {
         const subscription = getSubscriptionMock();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
-            [PLANS.BUNDLE]: 1,
+            [PLANS.MAIL]: 1,
         };
 
         const minimumCycle = CYCLE.MONTHLY;
@@ -167,7 +167,7 @@ describe('getAllowedCycles', () => {
             currency: DEFAULT_CURRENCY,
         });
 
-        expect(result).toEqual([CYCLE.YEARLY]);
+        expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
 
     it('should return only 24 cycle if user has 24 cycle subscription', () => {
@@ -242,7 +242,7 @@ describe('getAllowedCycles', () => {
             currency: DEFAULT_CURRENCY,
         });
 
-        expect(result).toEqual([CYCLE.YEARLY]);
+        expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
 
     it('should return all cycles if user has referral subscription: with 24m rules', () => {
@@ -274,7 +274,7 @@ describe('getAllowedCycles', () => {
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.CouponCode = COUPON_CODES.REFERRAL;
         const planIDs: PlanIDs = {
-            [PLANS.BUNDLE]: 1,
+            [PLANS.MAIL]: 1,
         };
 
         const minimumCycle = CYCLE.MONTHLY;
@@ -321,7 +321,7 @@ describe('getAllowedCycles', () => {
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.CouponCode = COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
         const planIDs: PlanIDs = {
-            [PLANS.BUNDLE]: 1,
+            [PLANS.MAIL]: 1,
         };
 
         const minimumCycle = CYCLE.MONTHLY;
@@ -368,7 +368,7 @@ describe('getAllowedCycles', () => {
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.IsTrial = true;
         const planIDs: PlanIDs = {
-            [PLANS.BUNDLE]: 1,
+            [PLANS.MAIL]: 1,
         };
 
         const minimumCycle = CYCLE.MONTHLY;
@@ -415,7 +415,7 @@ describe('getAllowedCycles', () => {
         subscription.Cycle = CYCLE.MONTHLY;
         subscription.IsTrial = true;
         const planIDs: PlanIDs = {
-            [PLANS.BUNDLE]: 1,
+            [PLANS.MAIL]: 1,
         };
 
         const minimumCycle = CYCLE.YEARLY;
@@ -825,45 +825,6 @@ describe('getAllowedCycles', () => {
 
     it.each(
         [CYCLE.MONTHLY, CYCLE.YEARLY].flatMap((fromCycle) =>
-            [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO, PLANS.VISIONARY].flatMap((sourcePlan) =>
-                [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO, PLANS.VISIONARY]
-                    .map((targetPlan) => ({
-                        fromCycle,
-                        sourcePlan,
-                        targetPlan,
-                    }))
-                    // If user selects the same plan then it's a different case, so we exclude it from this test
-                    .filter(({ sourcePlan, targetPlan }) => sourcePlan !== targetPlan)
-            )
-        )
-        // In case if you need to debug a test, you can uncomment the following filter
-        // .filter(({ fromCycle, sourcePlan, targetPlan }) => {
-        //     return fromCycle === CYCLE.MONTHLY && sourcePlan === PLANS.BUNDLE && targetPlan === PLANS.FAMILY;
-        // })
-    )(
-        'should show only 1m and 12m cycles when user is on $sourcePlan with $fromCycle cycle and selects $targetPlan',
-        ({ fromCycle, sourcePlan, targetPlan }) => {
-            const subscription = getSubscriptionMock();
-            subscription.Cycle = fromCycle;
-            subscription.Plans[0].Name = sourcePlan;
-
-            const planIDs: PlanIDs = {
-                [targetPlan]: 1,
-            };
-
-            const result = getAllowedCycles({
-                subscription,
-                planIDs,
-                plansMap: PLANS_MAP,
-                currency: DEFAULT_CURRENCY,
-            });
-
-            expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
-        }
-    );
-
-    it.each(
-        [CYCLE.MONTHLY, CYCLE.YEARLY].flatMap((fromCycle) =>
             [PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.WALLET, PLANS.LUMO].map((sourcePlan) => ({
                 fromCycle,
                 sourcePlan,
@@ -1260,6 +1221,63 @@ describe('getAllowedCycles', () => {
             ).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
         }
     );
+
+    // when user has 1m or 12m bundle plan and selects any other bundle plan then they should see 1m, 12m, 24m
+    it.each(
+        b2cBundlePlans
+            .flatMap((targetPlan) =>
+                b2cBundlePlans.flatMap((sourcePlan) =>
+                    [CYCLE.MONTHLY, CYCLE.YEARLY].map((sourceCycle) => ({ sourcePlan, sourceCycle, targetPlan }))
+                )
+            )
+            .filter(({ sourcePlan, targetPlan }) => sourcePlan !== targetPlan)
+    )(
+        'should show 1m, 12m, 24m cycles when user is on $sourcePlan with $sourceCycle cycle and selects $targetPlan',
+        ({ sourcePlan, sourceCycle, targetPlan }) => {
+            const subscription = getSubscriptionMock();
+            subscription.Cycle = sourceCycle;
+            subscription.Plans[0].Name = sourcePlan;
+
+            const planIDs: PlanIDs = {
+                [targetPlan]: 1,
+            };
+
+            const result = getAllowedCycles({
+                subscription,
+                planIDs,
+                plansMap: PLANS_MAP,
+                currency: DEFAULT_CURRENCY,
+            });
+
+            expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
+        }
+    );
+
+    // when user has 1m or 12m bundle plan and selects the same plan then they should see 24m option
+    it.each(
+        b2cBundlePlans.flatMap((plan) => [CYCLE.MONTHLY, CYCLE.YEARLY].map((sourceCycle) => ({ plan, sourceCycle })))
+    )(
+        'should show 24m option when user is on $plan with $sourceCycle cycle and selects the same plan',
+        ({ plan, sourceCycle }) => {
+            const subscription = getSubscriptionMock();
+            subscription.Cycle = sourceCycle;
+            subscription.Plans[0].Name = plan;
+
+            const planIDs: PlanIDs = {
+                [plan]: 1,
+            };
+
+            const result = getAllowedCycles({
+                subscription,
+                planIDs,
+                plansMap: PLANS_MAP,
+                currency: DEFAULT_CURRENCY,
+            });
+
+            const expected = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => cycle >= sourceCycle);
+            expect(result).toEqual(expected);
+        }
+    );
 });
 
 describe('defaultCycles', () => {
@@ -1406,7 +1424,7 @@ describe('downcycling', () => {
         const subscription = getSubscriptionMock();
         subscription.Cycle = CYCLE.YEARLY;
         const planIDs: PlanIDs = {
-            [PLANS.BUNDLE]: 1,
+            [PLANS.MAIL]: 1,
         };
 
         const minimumCycle = CYCLE.MONTHLY;
@@ -1480,7 +1498,7 @@ describe('downcycling', () => {
         const subscription = getSubscriptionMock();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
-            [PLANS.BUNDLE]: 1,
+            [PLANS.MAIL]: 1,
         };
 
         const minimumCycle = CYCLE.MONTHLY;
@@ -1528,6 +1546,29 @@ describe('downcycling', () => {
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
             [PLANS.BUNDLE]: 1,
+        };
+
+        const minimumCycle = CYCLE.YEARLY;
+        const maximumCycle = CYCLE.TWO_YEARS;
+
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            allowDowncycling: true,
+            currency: DEFAULT_CURRENCY,
+        });
+
+        expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
+    });
+
+    it('should return 12 cycle if minimumCycle is 12 and downcyling is allowed: with default rules', () => {
+        const subscription = getSubscriptionMock();
+        subscription.Cycle = CYCLE.MONTHLY;
+        const planIDs: PlanIDs = {
+            [PLANS.MAIL]: 1,
         };
 
         const minimumCycle = CYCLE.YEARLY;
