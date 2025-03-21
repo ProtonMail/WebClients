@@ -628,7 +628,7 @@ const SingleSignupContainerV2 = ({
                 // Once porkbun payment has completed, the next step is to link the domains
                 window.location.replace(
                     getPorkbunClaimUrl({
-                        localID: resumedSession.LocalID,
+                        localID: resumedSession.localID,
                         data: signupParameters.invite.data,
                     })
                 );
@@ -1005,7 +1005,7 @@ const SingleSignupContainerV2 = ({
                 // Once porkbun payment has completed, the next step is to link the domains
                 window.location.replace(
                     getPorkbunClaimUrl({
-                        localID: cache.session.resumedSessionResult.LocalID,
+                        localID: cache.session.resumedSessionResult.localID,
                         data: signupParameters.invite.data,
                     })
                 );

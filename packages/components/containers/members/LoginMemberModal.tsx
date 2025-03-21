@@ -65,7 +65,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
             });
             if (validatedSession) {
                 memberApi(revoke()).catch(noop);
-                return validatedSession.LocalID;
+                return validatedSession.localID;
             }
 
             const token = await dispatch(getOrganizationTokenThunk());
