@@ -2,6 +2,7 @@ import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webe
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import * as client from './client';
 import { createContentScriptClient } from './services/script';
@@ -74,8 +75,42 @@ describe('Client content-script runner', () => {
         setDocumentVisibility('visible');
         document.dispatchEvent(new Event('visibilitychange'));
 
+        await jest.advanceTimersByTimeAsync(350);
+
         expect(registerCustomElementsMock).not.toHaveBeenCalled();
         expect(createContentScriptClient).toHaveBeenCalled();
+
+        destroyClient();
+    });
+
+    test('should debounce quick visibility changes', async () => {
+        setDocumentVisibility('visible');
+        const { destroyClient } = await client.run(registerCustomElementsMock);
+        expect(createContentScriptClient).toHaveBeenCalledTimes(1);
+
+        for (let i = 0; i < 15; i++) {
+            const hide = wait(25).then(() => {
+                setDocumentVisibility('hidden');
+                document.dispatchEvent(new Event('visibilitychange'));
+            });
+
+            await jest.advanceTimersByTimeAsync(25);
+            await hide;
+
+            const show = wait(25).then(() => {
+                setDocumentVisibility('visible');
+                document.dispatchEvent(new Event('visibilitychange'));
+            });
+
+            await jest.advanceTimersByTimeAsync(25);
+            await show;
+        }
+
+        await jest.advanceTimersByTimeAsync(350);
+
+        expect(registerCustomElementsMock).toHaveBeenCalledTimes(1);
+        expect(mockClient.destroy).toHaveBeenCalledTimes(1);
+        expect(createContentScriptClient).toHaveBeenCalledTimes(2);
 
         destroyClient();
     });
