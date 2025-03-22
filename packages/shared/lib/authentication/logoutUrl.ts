@@ -58,8 +58,27 @@ export const parseLogoutURL = (url: URL) => {
     };
 };
 
-export const getStandaloneLogoutURL = () => {
-    return SSO_PATHS.LOGIN;
+const addLogoutUrlParameters = (url: URL, options: SignoutActionOptions) => {
+    if (options.reason) {
+        url.searchParams.set('reason', options.reason);
+    }
+    if (options.clearDeviceRecovery) {
+        url.searchParams.set(clearRecoveryParam, JSON.stringify(true));
+    }
+    if (options.users) {
+        const hashParams = new URLSearchParams();
+        hashParams.set('sessions', serializeSessions(options.users));
+        url.hash = hashParams.toString();
+    }
+    if (options.type) {
+        url.searchParams.set('type', options.type);
+    }
+};
+
+export const getStandaloneLogoutURL = ({ options }: { options: SignoutActionOptions }) => {
+    const url = new URL(SSO_PATHS.LOGIN, window.location.origin);
+    addLogoutUrlParameters(url, options);
+    return url.toString();
 };
 
 const getProduct = (appName: APP_NAMES, pathname: string) => {
@@ -80,23 +99,10 @@ export const getLocalAccountLogoutUrl = ({ localID }: { appName: APP_NAMES; loca
 
 export const getLogoutURL = ({ appName, options }: { appName: APP_NAMES; options: SignoutActionOptions }) => {
     const url = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT));
-    if (options.reason) {
-        url.searchParams.set('reason', options.reason);
-    }
     const product = getProduct(appName, window.location.pathname);
     if (product) {
         url.searchParams.set('product', product);
     }
-    if (options.clearDeviceRecovery) {
-        url.searchParams.set(clearRecoveryParam, JSON.stringify(true));
-    }
-    if (options.users) {
-        const hashParams = new URLSearchParams();
-        hashParams.set('sessions', serializeSessions(options.users));
-        url.hash = hashParams.toString();
-    }
-    if (options.type) {
-        url.searchParams.set('type', options.type);
-    }
+    addLogoutUrlParameters(url, options);
     return url.toString();
 };
