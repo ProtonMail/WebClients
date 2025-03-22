@@ -185,7 +185,6 @@ export const persistSession = async ({
     if (mode === 'sso' && clearKeyPassword && !offlineKey) {
         offlineKey = await generateOfflineKey(clearKeyPassword);
     }
-
     const persistedSession = await getPersistedSessionData(LocalID, key, {
         UID,
         UserID: User.ID,
@@ -198,9 +197,7 @@ export const persistSession = async ({
         source,
     });
 
-    if (mode === 'sso') {
-        await setPersistedSession(persistedSession);
-    }
+    await setPersistedSession(persistedSession);
 
     return {
         clientKey: serializedData,

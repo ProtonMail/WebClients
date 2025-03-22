@@ -43,14 +43,24 @@ import AccountLoaderPage from './AccountLoaderPage';
 import VPNPublicApp from './VPNPublicApp';
 import LoginContainer, { type LoginContainerState } from './containers/LoginContainer';
 
+export const publicRoutes = {
+    reset: '/reset-password',
+    forgotUsername: '/forgot-username',
+    signup: '/signup',
+    pricing: '/pricing',
+    login: SSO_PATHS.LOGIN,
+    sso: SSO_PATHS.EXTERNAL_SSO_LOGIN,
+    ssoReauth: SSO_PATHS.EXTERNAL_SSO_REAUTH,
+};
+
 const getPaths = (maybeLocalePrefix: string): Paths => {
     const localePrefix = maybeLocalePrefix || getLocaleMapping(localeCode);
     const prefix = getLocalePathPrefix(localePrefix);
     return {
-        login: `${prefix}/login`,
-        signup: `${prefix}/signup`,
-        reset: `${prefix}/reset-password`,
-        forgotUsername: `${prefix}/forgot-username`,
+        login: `${prefix}${publicRoutes.login}`,
+        signup: `${prefix}${publicRoutes.signup}`,
+        reset: `${prefix}${publicRoutes.reset}`,
+        forgotUsername: `${prefix}${publicRoutes.forgotUsername}`,
         reauth: '',
         appSwitcher: '',
     };
@@ -120,7 +130,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                             <UnAuthenticated>
                                 <PaymentSwitcher>
                                     <Switch location={location}>
-                                        <Route path="/reset-password">
+                                        <Route path={publicRoutes.reset}>
                                             <AccountResetPasswordContainer
                                                 metaTags={resetPasswordPage()}
                                                 loginUrl={paths.login}
@@ -135,7 +145,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                                 }}
                                             />
                                         </Route>
-                                        <Route path="/forgot-username">
+                                        <Route path={publicRoutes.forgotUsername}>
                                             <AccountForgotUsernameContainer
                                                 toApp={APPS.PROTONVPN_SETTINGS}
                                                 metaTags={forgotUsernamePage()}
@@ -156,7 +166,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                                 onInvalid={() => history.push(paths.signup)}
                                             />
                                         </Route>
-                                        <Route path={['/pricing', '/signup']}>
+                                        <Route path={[publicRoutes.pricing, publicRoutes.signup]}>
                                             <AccountSingleSignupContainer
                                                 metaTags={signupPage()}
                                                 toApp={APPS.PROTONVPN_SETTINGS}
@@ -175,7 +185,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                                 onStartAuth={handleStartAuth}
                                             />
                                         </Route>
-                                        <Route path={[SSO_PATHS.EXTERNAL_SSO_LOGIN, SSO_PATHS.EXTERNAL_SSO_REAUTH]}>
+                                        <Route path={[publicRoutes.sso, publicRoutes.ssoReauth]}>
                                             <UnAuthenticated>
                                                 <ExternalSSOConsumer
                                                     onOAuthLogin={noop}
@@ -196,7 +206,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                                 </ExternalSSOConsumer>
                                             </UnAuthenticated>
                                         </Route>
-                                        <Route path={SSO_PATHS.LOGIN}>
+                                        <Route path={publicRoutes.login}>
                                             <LoginContainer
                                                 initialLocation={initialLocation}
                                                 metaTags={loginPage()}

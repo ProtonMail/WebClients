@@ -36,7 +36,6 @@ const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit
             toApp={APPS.PROTONVPN_SETTINGS}
             productParam={APPS.PROTONVPN_SETTINGS}
             setupVPN={false}
-            hasRemember={false}
             externalRedirect={initialLocation?.pathname || ''}
             onPreSubmit={onPreSubmit}
             onStartAuth={onStartAuth}
