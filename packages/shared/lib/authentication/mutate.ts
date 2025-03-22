@@ -25,10 +25,6 @@ const mutatePassword = async ({
         return;
     }
     const localID = authentication.getLocalID?.();
-    if (authentication.mode !== 'sso' || localID === undefined) {
-        authentication.setPassword(keyPassword);
-        return;
-    }
     try {
         authentication.setPassword(keyPassword);
 

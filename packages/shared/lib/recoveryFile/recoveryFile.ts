@@ -5,7 +5,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import type { APP_NAMES } from '../constants';
-import { APPS, RECOVERY_FILE_FILE_NAME } from '../constants';
+import { RECOVERY_FILE_FILE_NAME } from '../constants';
 import downloadFile from '../helpers/downloadFile';
 import type { Address, DecryptedKey, Key, KeyWithRecoverySecret, User } from '../interfaces';
 import type { ArmoredKeyWithInfo } from '../keys';
@@ -144,7 +144,6 @@ export const getIsRecoveryFileAvailable = ({
     user,
     addresses,
     userKeys,
-    appName,
 }: {
     user: User;
     addresses: Address[];
@@ -156,5 +155,5 @@ export const getIsRecoveryFileAvailable = ({
 
     const isPrivateUser = Boolean(user.Private);
 
-    return !!primaryKey?.privateKey && hasMigratedKeys && isPrivateUser && appName !== APPS.PROTONVPN_SETTINGS;
+    return !!primaryKey?.privateKey && hasMigratedKeys && isPrivateUser;
 };
