@@ -1,4 +1,5 @@
 import { api } from '@proton/pass/lib/api/api';
+import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { intoFileDescriptor } from '@proton/pass/lib/file-attachments/helpers';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
@@ -14,7 +15,6 @@ import type {
     ItemRevision,
     ItemRevisionContentsResponse,
     LinkFileToItemInput,
-    MaybeNull,
     SecureLinkItem,
     SelectedItem,
     UniqueItem,
@@ -165,38 +165,31 @@ export const linkPendingFiles = async (dto: ItemLinkPendingFiles): Promise<ItemR
     return parseItemRevision(dto.shareId, encryptedItem);
 };
 
-const resolvePaginatedFiles = async ({
-    shareId,
-    itemId,
-    from,
-    lastId = null,
-    files = [],
-}: UniqueItem & {
-    from: 'files' | 'revisions';
-    lastId?: MaybeNull<string>;
-    files?: ItemFileOutput[];
-}): Promise<ItemFileOutput[]> => {
-    const queryParams = lastId ? `?Since=${lastId}` : '';
-    const endpoints = {
-        files: `pass/v1/share/${shareId}/item/${itemId}/files${queryParams}`,
-        revisions: `pass/v1/share/${shareId}/item/${itemId}/revisions/files${queryParams}`,
-    };
-
-    const response = (await api({ url: endpoints[from], method: 'get' })).Files;
-    const allFiles = [...files, ...response.Files];
-
-    if (response.Files.length === 100) {
-        return resolvePaginatedFiles({ shareId, itemId, lastId: response.LastID, from, files: allFiles });
-    }
-
-    return allFiles;
-};
-
 export const resolveItemFiles = async ({ shareId, itemId }: UniqueItem): Promise<ItemFileOutput[]> =>
-    resolvePaginatedFiles({ shareId, itemId, from: 'files' });
+    createPageIterator({
+        request: async (Since) => {
+            const { Files } = await api({
+                url: `pass/v1/share/${shareId}/item/${itemId}/files`,
+                method: 'get',
+                params: Since ? { Since } : {},
+            });
+
+            return { data: Files.Files ?? [], cursor: Files.LastID };
+        },
+    })();
 
 export const resolveItemFilesRevision = async ({ shareId, itemId }: UniqueItem): Promise<ItemFileOutput[]> =>
-    resolvePaginatedFiles({ shareId, itemId, from: 'revisions' });
+    createPageIterator({
+        request: async (Since) => {
+            const { Files } = await api({
+                url: `pass/v1/share/${shareId}/item/${itemId}/revisions/files`,
+                method: 'get',
+                params: Since ? { Since } : {},
+            });
+
+            return { data: Files.Files ?? [], cursor: Files.LastID };
+        },
+    })();
 
 export const resolvePublicItemFiles = async (
     filesToken: string,
