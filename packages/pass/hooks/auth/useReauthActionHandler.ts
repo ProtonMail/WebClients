@@ -1,28 +1,28 @@
 import { useCallback } from 'react';
 
+import type { Store } from 'redux';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import type { ExportContextValue } from '@proton/pass/components/Export/ExportProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import type { MaybeNull } from '@proton/pass/types';
+import { exportData } from '@proton/pass/store/actions/creators/transfer';
+import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
+import type { State } from '@proton/pass/store/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 const REAUTH_KEY = 'notification:reauth';
 
-let UNSAFE_EXPORT_CTX: MaybeNull<ExportContextValue> = null;
-export const setUnsafeExportContext = (ctx: ExportContextValue) => (UNSAFE_EXPORT_CTX = ctx);
-
-export const useReauthActionHandler = () => {
+export const useReauthActionHandler = (store: Store<State>) => {
     const authStore = useAuthStore();
 
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
+    const dispatch = asyncRequestDispatcherFactory(store.dispatch);
 
     return useCallback(async (reauth: ReauthActionPayload) => {
         switch (reauth.type) {
@@ -34,11 +34,13 @@ export const useReauthActionHandler = () => {
                         loading: true,
                         key: REAUTH_KEY,
                         expiration: -1,
+                        showCloseButton: false,
                     })
                 );
 
-                const data = await (UNSAFE_EXPORT_CTX?.export(reauth.data).catch(() => null) ?? null);
-                const ok = data !== null;
+                const result = await dispatch(exportData, reauth.data);
+
+                const ok = result.type === 'success';
 
                 return setTimeout(async () => {
                     createNotification({
@@ -50,8 +52,9 @@ export const useReauthActionHandler = () => {
                     });
 
                     if (ok) {
-                        download(data);
-                        await fileStorage.deleteFile(data.name);
+                        const filename = result.data;
+                        const file = await fileStorage.readFile(filename);
+                        if (file) download(file, filename);
                     }
                 }, 1_500);
 

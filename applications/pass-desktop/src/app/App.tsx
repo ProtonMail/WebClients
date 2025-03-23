@@ -5,7 +5,6 @@ import { AppGuard } from 'proton-pass-web/app/AppGuard';
 import { AuthServiceProvider } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { AuthSwitchProvider } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
-import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { core } from 'proton-pass-web/lib/core';
 import { i18n } from 'proton-pass-web/lib/i18n';
@@ -32,7 +31,6 @@ import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { ExportProvider } from '@proton/pass/components/Export/ExportProvider';
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -45,11 +43,9 @@ import { type AuthStore, createAuthStore, exposeAuthStore } from '@proton/pass/l
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { selectExportData } from '@proton/pass/store/selectors/export';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
@@ -81,12 +77,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     settings,
     spotlight,
     theme: createPassThemeManager({ getInitialTheme }),
-
-    exportData: async (options, files) => {
-        const state = store.getState();
-        const data = selectExportData({ config: PASS_CONFIG, format: options.format, files })(state);
-        return createPassExport(data, options);
-    },
 
     generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
@@ -156,16 +146,14 @@ export const App = () => {
                                             <AuthSwitchProvider>
                                                 <AuthServiceProvider>
                                                     <StoreProvider>
-                                                        <ExportProvider>
-                                                            <ThemeConnect />
-                                                            <Localized>
-                                                                {showWelcome ? <WelcomeScreen /> : <AppGuard />}
-                                                            </Localized>
-                                                            <Portal>
-                                                                <ModalsChildren />
-                                                                <NotificationsChildren />
-                                                            </Portal>
-                                                        </ExportProvider>
+                                                        <ThemeConnect />
+                                                        <Localized>
+                                                            {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                        </Localized>
+                                                        <Portal>
+                                                            <ModalsChildren />
+                                                            <NotificationsChildren />
+                                                        </Portal>
                                                     </StoreProvider>
                                                 </AuthServiceProvider>
                                             </AuthSwitchProvider>
