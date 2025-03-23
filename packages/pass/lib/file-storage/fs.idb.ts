@@ -3,12 +3,12 @@ import { type DBSchema, type IDBPDatabase, deleteDB, openDB } from 'idb';
 import type { MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-import type { FileStorage } from './types';
+import type { FileBuffer, FileStorage } from './types';
 
 type IDBFileID = string;
 
 export interface PassFileDB extends DBSchema {
-    files: { key: IDBFileID; value: Blob };
+    files: { key: IDBFileID; value: FileBuffer };
     metadata: { key: IDBFileID; value: { totalChunks: number } };
 }
 
@@ -35,12 +35,12 @@ export const openPassFileDB = async (): Promise<IDBPDatabase<PassFileDB>> => {
  * we implement a proper stream-saver service worker, this
  * will allow streaming downloads from IDB without loading
  * the entire file into memory. */
-export const createIDBFileReadableStream = (filename: string): ReadableStream<Blob> => {
+export const createIDBFileReadableStream = (filename: string): ReadableStream<FileBuffer> => {
     let db: MaybeNull<IDBPDatabase<PassFileDB>> = null;
     let currentChunk = 0;
     let totalChunks = 0;
 
-    return new ReadableStream<Blob>({
+    return new ReadableStream<FileBuffer>({
         async start(controller) {
             try {
                 db = await openPassFileDB();
@@ -88,7 +88,7 @@ export class FileStorageIDB implements FileStorage {
     async readFile(filename: string) {
         try {
             const stream = createIDBFileReadableStream(filename);
-            const blobParts: Blob[] = [];
+            const blobParts: FileBuffer[] = [];
             const reader = stream.getReader();
 
             while (true) {
@@ -104,21 +104,14 @@ export class FileStorageIDB implements FileStorage {
         }
     }
 
-    async writeFile(filename: string, file: Blob | ReadableStream<Blob>) {
+    async writeFile(filename: string, file: FileBuffer | ReadableStream<FileBuffer>, signal?: AbortSignal) {
         try {
             const db = await openPassFileDB();
             if (!db) throw new Error('No database found');
 
-            /** When dealing with a blob : store the file
-             * as a single database entry. */
-            if (file instanceof Blob) {
-                const tx = db.transaction(['files', 'metadata'], 'readwrite');
-                const fileKey = getFileChunkName(filename, 0);
-                await Promise.all([
-                    await tx.objectStore('metadata').put({ totalChunks: 1 }, filename),
-                    await tx.objectStore('files').put(file, fileKey),
-                    await tx.done,
-                ]);
+            if (signal) {
+                if (signal.aborted) db.close();
+                signal.addEventListener('abort', () => db.close());
             }
 
             /** If we're dealing with a readable stream append
@@ -142,6 +135,16 @@ export class FileStorageIDB implements FileStorage {
                 await Promise.all([
                     metaTx.objectStore('metadata').put({ totalChunks: chunkIndex }, filename),
                     metaTx.done,
+                ]);
+            } else {
+                /** When dealing with a blob : store the file
+                 * as a single database entry. */
+                const tx = db.transaction(['files', 'metadata'], 'readwrite');
+                const fileKey = getFileChunkName(filename, 0);
+                await Promise.all([
+                    await tx.objectStore('metadata').put({ totalChunks: 1 }, filename),
+                    await tx.objectStore('files').put(file, fileKey),
+                    await tx.done,
                 ]);
             }
 
