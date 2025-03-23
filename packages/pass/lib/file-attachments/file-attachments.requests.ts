@@ -1,7 +1,7 @@
 import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { intoFileDescriptor } from '@proton/pass/lib/file-attachments/helpers';
+import { intoPublicFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
 import type {
@@ -204,15 +204,7 @@ export const resolvePublicItemFiles = async (
     });
 
     return {
-        content: await intoFileDescriptor(Files, (file) =>
-            PassCrypto.openSecureLinkFileDescriptor({
-                encryptedItemKey: itemKey,
-                encryptedFileKey: file.FileKey,
-                encryptedMetadata: file.Metadata,
-                fileID: file.FileID,
-                linkKey,
-            })
-        ),
+        content: await intoPublicFileDescriptors(Files, itemKey, linkKey),
         token: filesToken,
     };
 };
