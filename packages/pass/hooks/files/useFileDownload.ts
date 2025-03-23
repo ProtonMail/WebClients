@@ -7,7 +7,6 @@ import type { FileDescriptor, FileID, Maybe, SelectedItem } from '@proton/pass/t
 import { prop } from '@proton/pass/utils/fp/lens';
 
 export const useFileDownload = () => {
-    const [downloadedChunks, setDownloadedChunks] = useState(0);
     const dispatch = useAsyncRequestDispatch();
     const abortControllerRef = useRef<Map<FileID, AbortController>>(new Map());
     const [filesDownloading, setFilesDownloading] = useState<FileID[]>([]);
@@ -27,7 +26,6 @@ export const useFileDownload = () => {
                         ? await dispatch(fileDownloadPublic, { fileID: file.fileID, chunkIDs, ...options })
                         : await dispatch(fileDownload, { fileID: file.fileID, chunkIDs, ...options });
 
-                setDownloadedChunks((p) => p + 1); // FIXME: leverage saga
                 if (res.type === 'success') return await fileStorage.readFile(res.data);
             } catch {
             } finally {
@@ -43,22 +41,8 @@ export const useFileDownload = () => {
         abortControllerRef.current.delete(fileID);
     }, []);
 
-    const fileToArrayBuffer = useCallback(
-        (file: File): Promise<ArrayBuffer> =>
-            new Promise((res, rej) => {
-                const reader = new FileReader();
-                reader.onload = () => res(reader.result as ArrayBuffer);
-                reader.onerror = () => rej(reader.error);
-                reader.readAsArrayBuffer(file);
-            }),
-        []
-    );
-
     /** Cancel all downloads on unmount and delete the entries from the AbortController Map */
     useEffect(() => () => abortControllerRef.current.forEach((_, fileId) => cancelDownload(fileId)), []);
 
-    return useMemo(
-        () => ({ downloadFile, cancelDownload, filesDownloading, fileToArrayBuffer, downloadedChunks }),
-        [filesDownloading, downloadedChunks]
-    );
+    return useMemo(() => ({ downloadFile, cancelDownload, filesDownloading }), [filesDownloading]);
 };
