@@ -3,7 +3,6 @@ import type { Action } from 'redux';
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/types';
-import type { ExportOptions, FilenamePayload } from '@proton/pass/lib/export/types';
 import type {
     PasskeyCreatePayload,
     PasskeyCreateResponse,
@@ -82,7 +81,6 @@ export enum WorkerMessageType {
     B2B_EVENT = 'B2B_EVENT',
     CLIENT_INIT = 'CLIENT_INIT',
     DEBUG = 'DEBUG',
-    EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
     FETCH_DOMAINIMAGE = 'FETCH_DOMAINIMAGE',
@@ -153,7 +151,6 @@ export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQU
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId }>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
-export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportOptions>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
 export type FetchDomainImageMessage = WithPayload<WorkerMessageType.FETCH_DOMAINIMAGE, { url: string }>;
@@ -222,7 +219,6 @@ export type WorkerMessage =
     | B2BEventMessage
     | ClientInitMessage
     | DebugMessage
-    | ExportRequestMessage
     | FeatureFlagsUpdateMessage
     | FetchAbortMessage
     | FetchDomainImageMessage
@@ -290,7 +286,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
-    [WorkerMessageType.EXPORT_REQUEST]: FilenamePayload;
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };

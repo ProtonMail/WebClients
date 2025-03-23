@@ -8,7 +8,6 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
-import { ExportProvider } from '@proton/pass/components/Export/ExportProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -29,16 +28,14 @@ export const Settings: FC = () => {
 
     return (
         <ExtensionStore>
-            <ExportProvider>
-                <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
-                <ExtensionClient onWorkerMessage={handleWorkerMessage}>
-                    {(ready) => (
-                        <Localized>
-                            <SettingsRouter ready={ready} />
-                        </Localized>
-                    )}
-                </ExtensionClient>
-            </ExportProvider>
+            <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
+            <ExtensionClient onWorkerMessage={handleWorkerMessage}>
+                {(ready) => (
+                    <Localized>
+                        <SettingsRouter ready={ready} />
+                    </Localized>
+                )}
+            </ExtensionClient>
         </ExtensionStore>
     );
 };

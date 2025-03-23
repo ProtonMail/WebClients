@@ -1,4 +1,5 @@
-import { type FC, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useFormik } from 'formik';
 import { c } from 'ttag';
@@ -6,12 +7,16 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
-import { useExporter } from '@proton/pass/components/Export/ExportProvider';
+import { FileProgressModal } from '@proton/pass/components/FileAttachments/FileProgressModal';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
+import { autoRemove, fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
+import { exportData } from '@proton/pass/store/actions/creators/transfer';
+import { requestCancel } from '@proton/pass/store/request/actions';
+import { selectRequest } from '@proton/pass/store/selectors';
 import type { MaybePromise } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { throwError } from '@proton/pass/utils/fp/throw';
@@ -27,15 +32,28 @@ type Props = {
 export const Exporter: FC<Props> = ({ onConfirm }) => {
     const { createNotification } = useNotifications();
     const online = useConnectivity();
-    const exporter = useExporter();
+    const dispatch = useDispatch();
+    const asyncDispatch = useAsyncRequestDispatch();
 
-    const initialValues: ExportFormValues = { format: ExportFormat.EPEX, passphrase: '', fileAttachments: false };
+    const initialValues: ExportRequestOptions = {
+        format: ExportFormat.PGP,
+        passphrase: '',
+        fileAttachments: false,
+    };
+
     const [loading, setLoading] = useState(false);
+
+    const request = useSelector(selectRequest(exportData.requestID()));
+    const progress = request?.status === 'start' ? request.progress : null;
+
+    const cancelExport = () => {
+        dispatch(requestCancel(exportData.requestID()));
+    };
 
     const confirmPassword = usePasswordUnlock();
     const passwordTypeSwitch = usePasswordTypeSwitch();
 
-    const form = useFormik<ExportFormValues>({
+    const form = useFormik<ExportRequestOptions>({
         initialValues: initialValues,
         initialErrors: validateExportForm(initialValues),
         validateOnChange: true,
@@ -65,14 +83,25 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         onAbort: () => throwError({ name: 'AuthConfirmAbortError' }),
                     });
 
-                    const file = await exporter.export(values);
-                    download(file);
+                    const result = await asyncDispatch(exportData, values);
 
-                    void fileStorage.deleteFile(file.name);
+                    if (result.type === 'success') {
+                        const filename = result.data;
+                        const file = await fileStorage.readFile(filename);
+
+                        if (file) {
+                            download(file, filename);
+                            autoRemove(filename, file.size);
+
+                            createNotification({
+                                type: 'success',
+                                text: c('Info').t`Successfully exported all your items`,
+                            });
+                        }
+                    }
+
                     form.resetForm({ values: { ...form.values, passphrase: '' } });
                     void form.validateForm();
-
-                    createNotification({ type: 'success', text: c('Info').t`Successfully exported all your items` });
                 } catch (error) {
                     const notification = (() => {
                         if (error instanceof Error) {
@@ -103,5 +132,20 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
         },
     });
 
-    return <ExportForm form={form} loading={loading} />;
+    useEffect(() => cancelExport, []);
+
+    return (
+        <>
+            <ExportForm form={form} loading={loading} />
+
+            {form.values.fileAttachments && progress !== null && (
+                <FileProgressModal
+                    title={c('Info').t`Exporting files`}
+                    progress={progress ?? 0}
+                    message={c('Info').t`Please be patient while your files are being downloaded.`}
+                    onCancel={cancelExport}
+                />
+            )}
+        </>
+    );
 };

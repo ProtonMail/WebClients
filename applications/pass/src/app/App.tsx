@@ -30,7 +30,6 @@ import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { ExportProvider } from '@proton/pass/components/Export/ExportProvider';
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
@@ -51,11 +50,9 @@ import {
     getSerializedCredential,
     isPRFSupported,
 } from '@proton/pass/lib/crypto/utils/prf';
-import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { selectExportData } from '@proton/pass/store/selectors/export';
 import type { Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
@@ -70,7 +67,6 @@ import { AuthSwitchProvider } from './Auth/AuthSwitchProvider';
 import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/client/ServiceWorkerProvider';
 import type { ServiceWorkerClient } from './ServiceWorker/client/client';
 import { StoreProvider } from './Store/StoreProvider';
-import { store } from './Store/store';
 import locales from './locales';
 
 const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
@@ -98,12 +94,6 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                 return forceDarkMode ? PassThemeOption.PassDark : getInitialTheme();
             },
         }),
-
-        exportData: async (options, files) => {
-            const state = store.getState();
-            const data = selectExportData({ config: PASS_CONFIG, format: options.format, files })(state);
-            return createPassExport(data, options);
-        },
 
         generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
@@ -192,16 +182,14 @@ export const App = () => (
                                                         <AuthSwitchProvider>
                                                             <AuthServiceProvider>
                                                                 <StoreProvider>
-                                                                    <ExportProvider>
-                                                                        <ThemeConnect />
-                                                                        <Localized>
-                                                                            <AppGuard />
-                                                                        </Localized>
-                                                                        <Portal>
-                                                                            <ModalsChildren />
-                                                                            <NotificationsChildren />
-                                                                        </Portal>
-                                                                    </ExportProvider>
+                                                                    <ThemeConnect />
+                                                                    <Localized>
+                                                                        <AppGuard />
+                                                                    </Localized>
+                                                                    <Portal>
+                                                                        <ModalsChildren />
+                                                                        <NotificationsChildren />
+                                                                    </Portal>
                                                                 </StoreProvider>
                                                             </AuthServiceProvider>
                                                         </AuthSwitchProvider>
