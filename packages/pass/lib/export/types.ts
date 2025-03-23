@@ -42,5 +42,3 @@ export type ExportRequestOptions = {
     passphrase: string;
     fileAttachments: boolean;
 };
-
-export type FilenamePayload = { filename: string };

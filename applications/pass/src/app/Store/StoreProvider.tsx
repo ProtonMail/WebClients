@@ -68,7 +68,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
 
-    const handleReauthAction = useReauthActionHandler();
+    const handleReauthAction = useReauthActionHandler(store);
 
     useEffect(() => {
         const runner = sagaMiddleware.run(

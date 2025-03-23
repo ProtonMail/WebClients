@@ -1,4 +1,4 @@
-import type { ExportOptions } from '@proton/pass/lib/export/types';
+import type { ExportRequestOptions } from '@proton/pass/lib/export/types';
 import type { Maybe } from '@proton/pass/types';
 
 export enum ReauthAction {
@@ -17,7 +17,7 @@ type ReauthLockChange = {
 
 export type ReauthActionPayload =
     | { type: ReauthAction.SSO_BIOMETRICS; data: ReauthLockChange }
-    | { type: ReauthAction.SSO_EXPORT; data: ExportOptions }
+    | { type: ReauthAction.SSO_EXPORT; data: ExportRequestOptions }
     | { type: ReauthAction.SSO_OFFLINE }
     | { type: ReauthAction.SSO_PW_LOCK; data: ReauthLockChange };
 
