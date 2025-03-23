@@ -88,16 +88,6 @@ const getPassCoreProviderProps = (
             getInitialTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
         }),
 
-        exportData: async (payload) =>
-            sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), async (res) => {
-                if (res.type === 'error') throw new Error(res.error);
-
-                const exportFile = await fileStorage.readFile(res.filename);
-                if (!exportFile) throw new Error(c('Error').t`Could not resolve export file.`);
-
-                return exportFile;
-            }),
-
         generateOTP: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.OTP_CODE_GENERATE, payload }), (response) =>
                 response.type === 'success' ? response : null
