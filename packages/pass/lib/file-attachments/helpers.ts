@@ -1,53 +1,67 @@
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import type {
     FileAttachmentValues,
     FileDescriptor,
     ItemFileOutput,
+    ItemLatestKeyResponse,
     Maybe,
-    SelectedItem,
-    ShareId,
+    MaybeNull,
 } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
+import { logger } from '@proton/pass/utils/logger';
 
-export const intoFileDescriptor = async (
+export const isFileForRevision = (revision: number) => (file: FileDescriptor) =>
+    revision >= file.revisionAdded && (!file.revisionRemoved || revision < file.revisionRemoved);
+
+const intoFileDescriptor =
+    (decryptMetadata: (file: ItemFileOutput) => Promise<Uint8Array>) =>
+    async (file: ItemFileOutput): Promise<Maybe<FileDescriptor>> => {
+        try {
+            const descriptor = decodeFileMetadata(await decryptMetadata(file));
+
+            return {
+                ...descriptor,
+                fileID: file.FileID,
+                size: file.Size,
+                chunks: file.Chunks,
+                revisionAdded: file.RevisionAdded,
+                revisionRemoved: file.RevisionRemoved ?? null,
+                fileUID: file.PersistentFileUID,
+            };
+        } catch (err) {
+            logger.warn('File metadata could not be opened', err);
+        }
+    };
+
+const openFileDescriptors =
+    (decryptMetadata: (file: ItemFileOutput) => Promise<Uint8Array>) =>
+    async (files: ItemFileOutput[]): Promise<FileDescriptor[]> =>
+        (await Promise.all(files.map(intoFileDescriptor(decryptMetadata)))).filter(truthy);
+
+export const intoFileDescriptors = async (
     files: ItemFileOutput[],
-    decryptDescriptor: (file: ItemFileOutput) => Promise<Uint8Array>
-): Promise<FileDescriptor[]> =>
-    (
-        await Promise.all(
-            files.map<Promise<Maybe<FileDescriptor>>>(async (file) => {
-                try {
-                    const descriptor = decodeFileMetadata(await decryptDescriptor(file)) ?? {
-                        name: 'Unknown',
-                        mimeType: '',
-                    };
-
-                    return {
-                        ...descriptor,
-                        fileID: file.FileID,
-                        size: file.Size,
-                        chunks: file.Chunks,
-                        revisionAdded: file.RevisionAdded,
-                        revisionRemoved: file.RevisionRemoved ?? null,
-                        fileUID: file.PersistentFileUID,
-                    };
-                } catch (err) {
-                    console.warn(err, file);
-                }
-            })
-        )
-    ).filter(truthy);
-
-export const flattenFilesByItemShare = <T = FileDescriptor>(
-    files: Record<ShareId, Maybe<Record<string, T[]>>>
-): ({ files: T[] } & SelectedItem)[] =>
-    Object.entries(files).flatMap(([shareId, items]) =>
-        Object.entries(items ?? {}).map(([itemId, files]) => ({
+    shareId: string,
+    latestItemKey: ItemLatestKeyResponse
+) =>
+    openFileDescriptors((file) =>
+        PassCrypto.openFileDescriptor({
+            file,
             shareId,
-            itemId,
-            files,
-        }))
-    );
+            latestItemKey,
+        })
+    )(files);
+
+export const intoPublicFileDescriptors = async (files: ItemFileOutput[], itemKey: string, linkKey: string) =>
+    openFileDescriptors((file) =>
+        PassCrypto.openSecureLinkFileDescriptor({
+            encryptedItemKey: itemKey,
+            encryptedFileKey: file.FileKey,
+            encryptedMetadata: file.Metadata,
+            fileID: file.FileID,
+            linkKey,
+        })
+    )(files);
 
 export const filesFormInitializer = ({
     toAdd = [],
@@ -59,17 +73,29 @@ export const filesFormInitializer = ({
     toRestore,
 });
 
-export const reconcileFilename = (renamedFile: string, fileName: string): string => {
-    const extensionRegex = /\.[^/.]+$/;
+const FILE_RE = /(.*)(\.[^.]+$)/;
 
+export const getFileParts = (filename: string): MaybeNull<{ name: string; ext: string }> => {
+    const match = filename.match(FILE_RE);
+    if (!match) return null;
+
+    return { name: match[1], ext: match[2] };
+};
+
+export const reconcileFilename = (next: string, original: string): string => {
     /* If new file has extension, do nothing */
-    const hasExtension = extensionRegex.test(renamedFile);
-    if (hasExtension) return renamedFile;
+    const hasExtension = FILE_RE.test(next);
+    if (hasExtension) return next;
 
     /* If new file has no extension, try to use the previous one */
-    const [previousExtension] = fileName.match(extensionRegex) ?? [];
-    if (previousExtension) return renamedFile + previousExtension;
+    const parts = getFileParts(original);
+    if (parts) return next + parts.ext;
 
-    /* Fallback, set file name with no extension */
-    return renamedFile;
+    return next; /* Fallback, set file name with no extension */
+};
+
+export const getExportFileName = (file: FileDescriptor): string => {
+    const parts = getFileParts(file.name);
+    if (parts) return `${parts.name}.${file.fileUID}${parts.ext}`;
+    return `${file.name}.${file.fileUID}`;
 };
