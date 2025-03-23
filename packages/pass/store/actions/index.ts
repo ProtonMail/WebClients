@@ -13,6 +13,7 @@ export * from './creators/password';
 export * from './creators/report';
 export * from './creators/settings';
 export * from './creators/share';
+export * from './creators/transfer';
 export * from './creators/trash';
 export * from './creators/user';
 export * from './creators/vault';
