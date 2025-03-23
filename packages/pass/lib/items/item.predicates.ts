@@ -22,7 +22,7 @@ export const isPasskeyItem = (item: Item): item is Item<'login'> =>
 
 export const itemEq =
     <T extends UniqueItem>(a: T) =>
-    (b: T): boolean =>
+    <T extends UniqueItem>(b: T): boolean =>
         a.shareId === b.shareId && a.itemId === b.itemId;
 
 export const belongsToShare =

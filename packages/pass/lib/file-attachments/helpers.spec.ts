@@ -1,26 +1,29 @@
-import type { FileDescriptor, ItemFileOutput } from '@proton/pass/types';
+import { exposePassCrypto } from '@proton/pass/lib/crypto';
+import type { ItemFileOutput, ItemLatestKeyResponse } from '@proton/pass/types';
 
-import { filesFormInitializer, flattenFilesByItemShare, intoFileDescriptor, reconcileFilename } from './helpers';
+import { filesFormInitializer, intoFileDescriptors, reconcileFilename } from './helpers';
 
-// Mock for decodeFileContent function
 jest.mock('./file-proto.transformer', () => ({
     ...jest.requireActual('./file-proto.transformer'),
-    decodeFileContent: jest.fn().mockImplementation((data) => {
-        // Mocking different returns based on file
-        if (data[0] === 1) {
-            return { name: 'File 1', mimeType: 'text/plain' };
-        }
-        return null; // This will trigger the fallback
-    }),
+    decodeFileMetadata: jest.fn().mockImplementation((data) => ({
+        name: `File ${data[0]}`,
+        mimeType: 'text/plain',
+    })),
 }));
 
-describe('intoFileDescriptor', () => {
-    beforeEach(jest.clearAllMocks);
+describe('intoFileDescriptors', () => {
+    let openFileDescriptor: jest.Mock;
 
-    it('should transform ItemFileOutput into FileDescriptor', async () => {
+    beforeEach(() => {
+        openFileDescriptor = jest.fn();
+        exposePassCrypto({ openFileDescriptor } as any);
+        jest.clearAllMocks();
+    });
+
+    test('should transform ItemFileOutput into FileDescriptor', async () => {
         const files: ItemFileOutput[] = [
             {
-                FileID: 'file1',
+                FileID: '1',
                 Size: 1024,
                 Chunks: [{ ChunkID: '::chunk-id-0::', Index: 0, Size: 1024 }],
                 RevisionAdded: 1741348049,
@@ -33,7 +36,7 @@ describe('intoFileDescriptor', () => {
                 ItemKeyRotation: 1,
             },
             {
-                FileID: 'file2',
+                FileID: '2',
                 Size: 2048,
                 Chunks: [{ ChunkID: '::chunk-id-0::', Index: 0, Size: 2048 }],
                 RevisionAdded: 1741348049,
@@ -47,87 +50,39 @@ describe('intoFileDescriptor', () => {
             },
         ];
 
-        const decryptDescriptor = jest
-            .fn()
-            .mockImplementation((file) => new Uint8Array(file.FileID === 'file1' ? [1, 2, 3] : [4, 5, 6]));
+        openFileDescriptor.mockImplementation(async ({ file }) => new Uint8Array([parseInt(file.FileID, 10)]));
 
-        const result = await intoFileDescriptor(files, decryptDescriptor);
+        const result = await intoFileDescriptors(files, 'testShareID', {} as ItemLatestKeyResponse);
 
-        expect(result).toHaveLength(2);
-        expect(result[0]).toEqual({
-            name: 'File 1',
-            mimeType: 'text/plain',
-            fileID: 'file1',
-            size: 1024,
-            chunks: [{ ChunkID: '::chunk-id-0::', Index: 0, Size: 1024 }],
-            revisionAdded: 1741348049,
-            revisionRemoved: null,
-            fileUID: 'uid1',
-        });
-        expect(result[1]).toEqual({
-            name: 'Unknown',
-            mimeType: '',
-            fileID: 'file2',
-            size: 2048,
-            chunks: [{ ChunkID: '::chunk-id-0::', Index: 0, Size: 2048 }],
-            revisionAdded: 1741348049,
-            revisionRemoved: null,
-            fileUID: 'uid2',
-        });
-        expect(decryptDescriptor).toHaveBeenCalledTimes(2);
-    });
-});
+        expect(openFileDescriptor).toHaveBeenCalledTimes(2);
 
-describe('flattenFilesByItemShare', () => {
-    it('should flatten files by share and item IDs', () => {
-        const filesByShare = {
-            share1: {
-                item1: [{ name: 'file1.txt' }, { name: 'file2.txt' }] as FileDescriptor[],
-                item2: [{ name: 'file3.txt' }] as FileDescriptor[],
-            },
-            share2: {
-                item3: [{ name: 'file4.txt' }] as FileDescriptor[],
-            },
-        };
-
-        const result = flattenFilesByItemShare(filesByShare);
-
-        expect(result).toHaveLength(3);
         expect(result).toEqual([
-            { shareId: 'share1', itemId: 'item1', files: [{ name: 'file1.txt' }, { name: 'file2.txt' }] },
-            { shareId: 'share1', itemId: 'item2', files: [{ name: 'file3.txt' }] },
-            { shareId: 'share2', itemId: 'item3', files: [{ name: 'file4.txt' }] },
-        ]);
-    });
-
-    it('should handle empty or null records', () => {
-        const filesByShare = { share1: undefined, share2: {} };
-        const result = flattenFilesByItemShare(filesByShare);
-        expect(result).toHaveLength(0);
-    });
-
-    it('should work with custom typed objects', () => {
-        type CustomFile = {
-            id: string;
-            content: string;
-        };
-
-        const filesByShare = {
-            share1: {
-                item1: [{ id: '1', content: 'hello' }] as CustomFile[],
+            {
+                name: 'File 1',
+                mimeType: 'text/plain',
+                fileID: '1',
+                size: 1024,
+                chunks: [{ ChunkID: '::chunk-id-0::', Index: 0, Size: 1024 }],
+                revisionAdded: 1741348049,
+                revisionRemoved: null,
+                fileUID: 'uid1',
             },
-        };
-
-        const result = flattenFilesByItemShare<CustomFile>(filesByShare);
-
-        expect(result).toHaveLength(1);
-        expect(result[0].files[0].id).toBe('1');
-        expect(result[0].files[0].content).toBe('hello');
+            {
+                name: 'File 2',
+                mimeType: 'text/plain',
+                fileID: '2',
+                size: 2048,
+                chunks: [{ ChunkID: '::chunk-id-0::', Index: 0, Size: 2048 }],
+                revisionAdded: 1741348049,
+                revisionRemoved: null,
+                fileUID: 'uid2',
+            },
+        ]);
     });
 });
 
 describe('filesFormInitializer', () => {
-    it('should initialize with empty arrays by default', () => {
+    test('should initialize with empty arrays by default', () => {
         const result = filesFormInitializer();
 
         expect(result).toEqual({
@@ -137,7 +92,7 @@ describe('filesFormInitializer', () => {
         });
     });
 
-    it('should use provided values when specified', () => {
+    test('should use provided values when specified', () => {
         const toAdd = ['1'];
         const toRemove = ['2'];
         const toRestore = ['3'];
@@ -151,11 +106,9 @@ describe('filesFormInitializer', () => {
         });
     });
 
-    it('should handle partial values', () => {
-        // Act
+    test('should handle partial values', () => {
         const result = filesFormInitializer({ toAdd: ['1'] });
 
-        // Assert
         expect(result).toEqual({
             toAdd: ['1'],
             toRemove: [],
@@ -166,7 +119,6 @@ describe('filesFormInitializer', () => {
 
 describe('reconcileFilename NEW', () => {
     test.each([
-        // [newFileName, oldFileName, expectedResult, description]
         ['newfile.txt', 'oldfile.pdf', 'newfile.txt', 'should keep the filename if it already has an extension'],
         ['newfile', 'oldfile.pdf', 'newfile.pdf', 'should add the extension from the old filename if new one has none'],
         ['newfile', 'oldfile', 'newfile', 'should leave the new filename as is if old file has no extension'],
