@@ -6,13 +6,10 @@ export type ExportedItem<T extends ItemType = ItemType> = Omit<
 > & { files?: string[] };
 
 export type ExportedVault = VaultShareContent & { items: ExportedItem[] };
-export type ExportedFile = { id: string; fileName: string; content: ArrayBuffer; mimeType: string };
 
 export type ExportData = {
-    encrypted: boolean;
     userId?: string;
     vaults: Record<string, ExportedVault>;
-    files: ExportedFile[];
     version: string;
 };
 
@@ -34,14 +31,16 @@ export enum ExportFormat {
     CSV = 'csv',
     PGP = 'pgp',
     ZIP = 'zip',
-    EPEX = 'epex',
-    PEX = 'pex',
 }
 
 export type ExportOptions =
-    | { format: ExportFormat.EPEX | ExportFormat.PGP; passphrase: string }
-    | { format: Exclude<ExportFormat, ExportFormat.EPEX | ExportFormat.PGP> };
+    | { format: ExportFormat.PGP; passphrase: string }
+    | { format: Exclude<ExportFormat, ExportFormat.PGP> };
 
-export type ExportFormValues = { format: ExportFormat; passphrase: string; fileAttachments: boolean };
+export type ExportRequestOptions = {
+    format: ExportFormat;
+    passphrase: string;
+    fileAttachments: boolean;
+};
 
 export type FilenamePayload = { filename: string };
