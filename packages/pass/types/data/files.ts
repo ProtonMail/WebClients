@@ -1,13 +1,4 @@
-import type { ExportedFile } from '@proton/pass/lib/export/types';
-import type {
-    FileMetadata,
-    ItemFileChunkOutput,
-    ItemId,
-    MaybeNull,
-    SelectedItem,
-    SelectedRevision,
-    ShareId,
-} from '@proton/pass/types';
+import type { FileMetadata, ItemFileChunkOutput, MaybeNull, SelectedItem, SelectedRevision } from '@proton/pass/types';
 
 export type FileID = string;
 export type BaseFileDescriptor = FileMetadata & { size: number; fileID: FileID };
@@ -41,4 +32,3 @@ export type FileRestoreDTO = { fileId: FileID } & SelectedItem;
 export type FileAttachmentValues = { files: FileAttachmentsDTO };
 export type FilesRequestSuccess = { files: FileDescriptor[]; history?: boolean } & SelectedItem;
 export type FilesMetadataEditSuccess = BaseFileDescriptor & Partial<SelectedItem>;
-export type FileItemExport = Record<ShareId, Record<ItemId, ExportedFile[]>>;

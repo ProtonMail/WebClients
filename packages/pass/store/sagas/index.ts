@@ -1,5 +1,6 @@
 import { all } from 'redux-saga/effects';
 
+import { exportUserData } from '@proton/pass/store/sagas/export/export.saga';
 import type { PassSaga, RootSagaOptions } from '@proton/pass/store/types';
 
 import accessEditRole from './access/access-edit-role.saga';
@@ -84,6 +85,7 @@ const COMMON_SAGAS = [
     cache,
     coupon,
     events,
+    exportUserData,
     featureFlags,
     getOrganizationSettings,
     inviteAccept,
