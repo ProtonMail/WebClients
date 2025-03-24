@@ -10,6 +10,7 @@ import {
     TopBanner,
     useAppTitle,
     useConfig,
+    useConfirmActionModal,
     useModalStateObject,
     useNotifications,
 } from '@proton/components';
@@ -27,7 +28,7 @@ import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../store';
-import { isDecryptedLink, useThumbnailsDownload } from '../../store';
+import { isDecryptedLink, useSharedWithMeActions, useThumbnailsDownload } from '../../store';
 import { useLinksActions } from '../../store/_links';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useDeleteAlbumModal } from '../PhotosModals/DeleteAlbumModal';
@@ -79,8 +80,10 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         photoLinkIds,
         deleteAlbum,
         userAddressEmail,
+        refreshSharedWithMeAlbums,
     } = usePhotosWithAlbumsView();
-
+    const { removeMe } = useSharedWithMeActions();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
         albumPhotos,
         albumPhotosLinkIdToIndexMap
@@ -328,6 +331,18 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         });
     }, [albumPhotosLinkIds, photoLinkIds, handleDeleteAlbum, showDeleteAlbumModal, albumName, navigateToAlbums]);
 
+    const albumSharingShareId = album?.sharingDetails?.shareId;
+    const onLeaveAlbum = useCallback(async () => {
+        if (!albumSharingShareId) {
+            return;
+        }
+        const abortSignal = new AbortController().signal;
+        removeMe(abortSignal, showConfirmModal, albumSharingShareId, async () => {
+            await refreshSharedWithMeAlbums(abortSignal);
+            navigateToAlbums();
+        });
+    }, [albumSharingShareId, navigateToAlbums, refreshSharedWithMeAlbums, removeMe, showConfirmModal]);
+
     const onShowDetails = useCallback(async () => {
         if (!albumShareId || !albumLinkId) {
             return;
@@ -461,6 +476,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             removeAlbumPhotos={canRemoveSelectedPhotos ? onRemoveAlbumPhotos : undefined}
                             onSelectCover={onSelectCoverToolbar}
                             onDeleteAlbum={onDeleteAlbum}
+                            onLeaveAlbum={onLeaveAlbum}
                             onShowDetails={onShowDetails}
                         />
                     }
@@ -512,6 +528,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             </UploadDragDrop>
             {removeAlbumPhotosModal}
             {deleteAlbumModal}
+            {confirmModal}
         </>
     );
 };
