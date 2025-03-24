@@ -25,8 +25,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import { LABEL_IDS_TO_HUMAN, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
@@ -120,6 +119,9 @@ const MailboxContainer = ({
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
     const { selectAll, setSelectAll } = useSelectAll({ labelID: inputLabelID });
     const { setCheckAllRef } = useCheckAllRef();
+
+    const labelDropdownToggleRef = useRef<() => void>(() => {});
+    const moveDropdownToggleRef = useRef<() => void>(() => {});
 
     const { enableResize, resetWidth, scrollBarWidth, isResizing } = useResizeMessageView(
         mainAreaRef,
@@ -369,8 +371,6 @@ const MailboxContainer = ({
 
     const {
         elementRef,
-        labelDropdownToggleRef,
-        moveDropdownToggleRef,
         moveScheduledModal,
         moveSnoozedModal,
         moveToSpamModal,
@@ -391,6 +391,8 @@ const MailboxContainer = ({
             columnLayout,
             isMessageOpening,
             location,
+            labelDropdownToggleRefProps: labelDropdownToggleRef,
+            moveDropdownToggleRefProps: moveDropdownToggleRef,
         },
         {
             focusLastID,

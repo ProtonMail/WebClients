@@ -273,7 +273,7 @@ const List = (
                         !columnLayout && 'border-none',
                         'flex flex-nowrap flex-column relative overflow-hidden h-full'
                     )}
-                    data-testid={`message-list-${loading ? 'loading' : 'loaded'}`}
+                    data-testid={loading ? 'message-list-loading' : 'message-list-loaded'}
                     data-shortcut-target="items-column-list-inner"
                 >
                     <div className="shrink-0">{toolbar}</div>
