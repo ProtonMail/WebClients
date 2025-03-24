@@ -7908,6 +7908,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.5"
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/webextension-polyfill": "npm:^0.12.1"
+    "@zip.js/zip.js": "npm:^2.7.57"
     circular-dependency-plugin: "npm:^5.2.2"
     client-zip: "npm:^2.4.6"
     cross-env: "npm:^7.0.3"
@@ -13682,6 +13683,13 @@ __metadata:
   version: 1.1.0
   resolution: "@yarnpkg/lockfile@npm:1.1.0"
   checksum: 10c0/0bfa50a3d756623d1f3409bc23f225a1d069424dbc77c6fd2f14fb377390cd57ec703dc70286e081c564be9051ead9ba85d81d66a3e68eeb6eb506d4e0c0fbda
+  languageName: node
+  linkType: hard
+
+"@zip.js/zip.js@npm:^2.7.57":
+  version: 2.7.57
+  resolution: "@zip.js/zip.js@npm:2.7.57"
+  checksum: 10c0/fdb25fc5e9a78992ee61dae382a8ea54cdaeefe6d48e583df52218b0316bf8cc0cf91eb02898237cd91d27d417c90f0022b396abf129784306b5dad94da0f49a
   languageName: node
   linkType: hard
 
