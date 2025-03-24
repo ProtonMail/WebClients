@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import { createAuthentication, createUnleash } from '@proton/account/bootstrap';
+import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
@@ -24,10 +25,11 @@ const api = createApi({ config });
 const authentication = createAuthentication();
 const unauthenticatedApi = createUnauthenticatedApi(api);
 const unleashClient = createUnleash({ api: unauthenticatedApi.apiCallback });
+const session = initStandaloneSession({ api });
 
 unleashClient.start().catch(noop);
 
-if (authentication.ready) {
+if (authentication.ready || session) {
     replaceUrl('/');
 }
 
