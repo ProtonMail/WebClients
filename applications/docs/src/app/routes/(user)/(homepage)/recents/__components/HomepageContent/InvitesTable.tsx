@@ -5,7 +5,7 @@ import clsx from '@proton/utils/clsx'
 import { MimeIcon } from '@proton/components/index'
 import { ServerTime } from '@proton/docs-shared'
 import { useDocInvites } from '@proton/drive-store'
-import { Cell, HeadingCell } from './table'
+import * as Table from './table'
 
 const dateFormatter = new DateFormatter()
 
@@ -31,12 +31,12 @@ export function InvitesTable({ className }: InvitesTableProps) {
       <table className="text-rg mb-0 w-full" style={{ borderSpacing: 0 }} data-testid="invites-table">
         <thead className="sticky left-0 top-0">
           <tr className="text-left">
-            <HeadingCell data-testid="invite-column-name">{c('Info').t`Invite`}</HeadingCell>
-            <HeadingCell data-testid="invite-column-date">{c('Info').t`Shared on`}</HeadingCell>
-            <HeadingCell data-testid="invite-column-shared-by">{c('Info').t`Shared by`}</HeadingCell>
-            <HeadingCell data-testid="invite-column-actions">
+            <Table.Header data-testid="invite-column-name">{c('Info').t`Invite`}</Table.Header>
+            <Table.Header data-testid="invite-column-date">{c('Info').t`Shared on`}</Table.Header>
+            <Table.Header data-testid="invite-column-shared-by">{c('Info').t`Shared by`}</Table.Header>
+            <Table.Header data-testid="invite-column-actions">
               <span className="px-2">{c('Info').t`Actions`}</span>
-            </HeadingCell>
+            </Table.Header>
           </tr>
         </thead>
         <tbody>
@@ -44,25 +44,25 @@ export function InvitesTable({ className }: InvitesTableProps) {
             const isRecentlyAccepted = recentlyAcceptedInvites.includes(invite)
             return (
               <tr key={invite.invitation.invitationId} data-testid="invite-row">
-                <Cell>
+                <Table.DataCell>
                   <span className="flex items-center gap-3">
                     <MimeIcon name="proton-doc" size={5} />
                     <span className="text-pre flex-1 text-ellipsis" data-testid="invite-document-name">
                       {invite.decryptedLinkName}
                     </span>
                   </span>
-                </Cell>
-                <Cell>
+                </Table.DataCell>
+                <Table.DataCell>
                   <div className="text-capitalize" data-testid="invite-shared-date">
                     {dateFormatter.formatDate(new ServerTime(invite.invitation.createTime).date)}
                   </div>
-                </Cell>
-                <Cell>
+                </Table.DataCell>
+                <Table.DataCell>
                   <div className="color-weak" data-testid="invite-shared-by">
                     {invite.invitation.inviterEmail}
                   </div>
-                </Cell>
-                <Cell>
+                </Table.DataCell>
+                <Table.DataCell>
                   <div className="flex gap-2">
                     <Button
                       size="small"
@@ -87,7 +87,7 @@ export function InvitesTable({ className }: InvitesTableProps) {
                       </Button>
                     )}
                   </div>
-                </Cell>
+                </Table.DataCell>
               </tr>
             )
           })}
