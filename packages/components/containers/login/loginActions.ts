@@ -6,6 +6,7 @@ import { auth2FA, getInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthResponse, AuthVersion, Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -149,33 +150,38 @@ export const handleReAuthKeyPassword = async ({
     clearKeyPassword,
     salts,
     api,
-    type,
+    source = SessionSource.Proton,
 }: {
     authSession: AuthSession;
     User: tsUser;
     clearKeyPassword: string;
     salts: tsKeySalt[];
     api: Api;
-    type?: 'sso';
-}) => {
+    source?: SessionSource;
+}): Promise<AuthSession> => {
     const unlockResult = await handleUnlockKey(User, salts, clearKeyPassword).catch(() => undefined);
     if (!unlockResult) {
-        if (type === 'sso') {
+        if (source === SessionSource.Saml) {
             throw getBackupPasswordError();
         }
         throw getUnlockError();
     }
-    const newAuthSession = {
-        ...authSession,
+    const keyPassword = unlockResult.keyPassword;
+    const sessionResult = await persistSession({
         User,
-        keyPassword: unlockResult.keyPassword,
-    };
-    const { clientKey, offlineKey } = await persistSession({
-        ...newAuthSession,
+        LocalID: authSession.data.localID,
+        UID: authSession.data.UID,
+        persistent: authSession.data.persistedSession.persistent,
+        trusted: authSession.data.persistedSession.trusted,
+        keyPassword,
         clearKeyPassword,
         api,
+        source,
     });
-    return { ...newAuthSession, clientKey, offlineKey, prompt: null };
+    return {
+        data: sessionResult,
+        prompt: null,
+    };
 };
 
 export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthCacheResult; newPassword: string }) => {

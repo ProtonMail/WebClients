@@ -13,7 +13,7 @@ import { captureMessage } from '../helpers/sentry';
 import type { Api, User as tsUser } from '../interfaces';
 import { isSelf } from '../user/helpers';
 import { appMode } from '../webpack.constants';
-import type { PersistedSession, PersistedSessionLite } from './SessionInterface';
+import { type PersistedSession, type PersistedSessionLite, SessionSource } from './SessionInterface';
 import { generateClientKey, getClientKey } from './clientKey';
 import { InvalidPersistentSessionError } from './error';
 import type { LocalKeyResponse, LocalSessionResponse } from './interface';
@@ -22,9 +22,10 @@ import { generateOfflineKey } from './offlineKey';
 import {
     getDecryptedPersistedSessionBlob,
     getPersistedSession,
+    getPersistedSessionData,
     getPersistedSessions,
     removePersistedSessionByLocalIDAndUID,
-    setPersistedSessionWithBlob,
+    setPersistedSession,
 } from './persistedSessionStorage';
 
 export const compareSessions = (a: ActiveSessionLite, b: ActiveSessionLite) => {
@@ -41,23 +42,23 @@ export const compareSessions = (a: ActiveSessionLite, b: ActiveSessionLite) => {
 };
 
 interface SessionOptions {
-    clearInvalidSession: boolean;
+    clearInvalidSession?: boolean;
+    source?: SessionSource[] | null;
 }
 
-const defaultSessionOptions: SessionOptions = {
+const defaultSessionOptions = {
     clearInvalidSession: true,
-};
+    source: null,
+} satisfies SessionOptions;
 
 export type ResumedSessionResult = {
-    UID: string;
-    LocalID: number;
-    keyPassword?: string;
     User: tsUser;
-    persistent: boolean;
-    trusted: boolean;
+    UID: string;
+    localID: number;
+    keyPassword: string;
     clientKey: string;
     offlineKey: OfflineKey | undefined;
-    persistedAt: number;
+    persistedSession: PersistedSession;
 };
 
 export const logRemoval = (e: any = {}, UID: string, context: string) => {
@@ -76,7 +77,7 @@ export const logRemoval = (e: any = {}, UID: string, context: string) => {
 export const resumeSession = async ({
     api,
     localID,
-    options = defaultSessionOptions,
+    options,
 }: {
     api: Api;
     localID: number;
@@ -90,10 +91,7 @@ export const resumeSession = async ({
         UID: persistedUID,
         UserID: persistedUserID,
         blob: persistedSessionBlobString,
-        persistent,
-        trusted,
         payloadVersion,
-        persistedAt,
     } = persistedSession;
 
     try {
@@ -104,7 +102,7 @@ export const resumeSession = async ({
         if (persistedUserID !== latestUser.ID) {
             throw InactiveSessionError();
         }
-        let keyPassword: undefined | string;
+        let keyPassword = '';
         let offlineKey: undefined | OfflineKey;
         if (persistedSessionBlobString && ClientKey) {
             const key = await getClientKey(ClientKey);
@@ -126,23 +124,22 @@ export const resumeSession = async ({
             }
         }
         return {
-            UID: persistedUID,
-            LocalID: localID,
-            keyPassword,
             User: latestUser,
-            persistent,
-            trusted,
+            UID: persistedUID,
+            localID,
+            keyPassword,
             clientKey: ClientKey,
             offlineKey,
-            persistedAt,
+            persistedSession,
         };
     } catch (e: any) {
-        if (options.clearInvalidSession && getIs401Error(e)) {
+        const clearInvalidSession = options?.clearInvalidSession ?? defaultSessionOptions.clearInvalidSession;
+        if (clearInvalidSession && getIs401Error(e)) {
             logRemoval(e, persistedUID, 'resume 401');
             await removePersistedSessionByLocalIDAndUID(localID, persistedUID).catch(noop);
             throw new InvalidPersistentSessionError('Session invalid');
         }
-        if (options.clearInvalidSession && e instanceof InvalidPersistentSessionError) {
+        if (clearInvalidSession && e instanceof InvalidPersistentSessionError) {
             logRemoval(e, persistedUID, 'invalid blob');
             await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
             await removePersistedSessionByLocalIDAndUID(localID, persistedUID).catch(noop);
@@ -155,7 +152,7 @@ export const resumeSession = async ({
 interface PersistSessionWithPasswordArgs {
     api: Api;
     clearKeyPassword: string;
-    keyPassword: string | undefined;
+    keyPassword: string;
     offlineKey?: OfflineKey;
     User: tsUser;
     UID: string;
@@ -163,12 +160,13 @@ interface PersistSessionWithPasswordArgs {
     persistent: boolean;
     trusted: boolean;
     mode?: 'sso' | 'standalone';
+    source: PersistedSession['source'];
 }
 
 export const persistSession = async ({
     api,
     clearKeyPassword,
-    keyPassword = '',
+    keyPassword,
     offlineKey: maybeOfflineKey,
     User,
     UID,
@@ -176,45 +174,61 @@ export const persistSession = async ({
     persistent,
     trusted,
     mode = appMode,
-}: PersistSessionWithPasswordArgs) => {
+    source,
+}: PersistSessionWithPasswordArgs): Promise<ResumedSessionResult> => {
     const { serializedData, key } = await generateClientKey();
     await api<LocalKeyResponse>(setLocalKey(serializedData));
     const persistedAt = +serverTime();
 
     let offlineKey = maybeOfflineKey;
 
-    if (mode === 'sso') {
-        if (clearKeyPassword && !offlineKey) {
-            offlineKey = await generateOfflineKey(clearKeyPassword);
-        }
-        await setPersistedSessionWithBlob(LocalID, key, {
-            UID,
-            UserID: User.ID,
-            keyPassword,
-            isSelf: isSelf(User),
-            persistent,
-            trusted,
-            offlineKey,
-            persistedAt,
-        });
+    if (mode === 'sso' && clearKeyPassword && !offlineKey) {
+        offlineKey = await generateOfflineKey(clearKeyPassword);
     }
 
-    return { clientKey: serializedData, offlineKey, persistedAt };
+    const persistedSession = await getPersistedSessionData(LocalID, key, {
+        UID,
+        UserID: User.ID,
+        keyPassword,
+        isSelf: isSelf(User),
+        persistent,
+        trusted,
+        offlineKey,
+        persistedAt,
+        source,
+    });
+
+    if (mode === 'sso') {
+        await setPersistedSession(persistedSession);
+    }
+
+    return {
+        clientKey: serializedData,
+        offlineKey,
+        persistedSession,
+        UID,
+        localID: LocalID,
+        User,
+        keyPassword,
+    };
 };
 
 export const findPersistedSession = ({
     persistedSessions,
     UserID,
     isSelf,
+    source,
 }: {
     persistedSessions: PersistedSession[];
     UserID: string;
     isSelf: boolean;
+    source: SessionSource[] | null;
 }) => {
     return persistedSessions.find((persistedSession) => {
         const isSameUserID = persistedSession.UserID === UserID;
         const isSameSelf = persistedSession.isSelf === isSelf;
-        return isSameUserID && isSameSelf;
+        const isSameSource = source === null ? true : source.some((value) => value === persistedSession.source);
+        return isSameUserID && isSameSelf && isSameSource;
     });
 };
 
@@ -359,11 +373,42 @@ const pickSessionByEmail = async ({
         return;
     }
 
-    if (matchingSession.persisted.localID === session?.LocalID) {
+    if (matchingSession.persisted.localID === session?.localID) {
         return session;
     }
 
     return resumeSession({ api, localID: matchingSession.remote.LocalID, options });
+};
+
+const sessionComparator = (
+    a: { localID: number; source: SessionSource },
+    b: {
+        localID: number;
+        source: SessionSource;
+    },
+    localID: number | undefined
+) => {
+    // Prioritise the matching session
+    if (localID !== undefined) {
+        {
+            if (a.localID === localID && b.localID !== localID) {
+                return -1;
+            }
+            if (a.localID !== localID && b.localID === localID) {
+                return 1;
+            }
+        }
+    }
+    // Deprioritise oauth sessions
+    {
+        if (a.source === SessionSource.Oauth && b.source !== SessionSource.Oauth) {
+            return 1;
+        }
+        if (a.source !== SessionSource.Oauth && b.source === SessionSource.Oauth) {
+            return -1;
+        }
+    }
+    return 0;
 };
 
 export const maybePickSessionByEmail = async ({
@@ -371,34 +416,32 @@ export const maybePickSessionByEmail = async ({
     localID,
     email,
     result,
+    sessions,
     options,
 }: {
     api: Api;
     localID?: number;
     email?: string;
     result: GetActiveSessionsResult;
+    // All sessions, including oauth
+    sessions: ActiveSession[];
     options?: SessionOptions;
 }): Promise<GetActiveSessionsResult> => {
-    const { session, sessions } = result;
-
     // The email selector is used in case there's no localID or if the requested localID did not exist
-    if (email && (localID === undefined || localID !== session?.LocalID)) {
+    if (email && (localID === undefined || localID !== result.session?.localID)) {
         // Ignore if it fails, worse case the user will have to pick the account.
         const maybeMatchingResumedSession = await pickSessionByEmail({
             api,
             email,
-            session,
+            session: result.session,
             sessions,
             options,
         }).catch(noop);
 
         if (maybeMatchingResumedSession) {
-            // Increase ordered priority to the requested session
-            const sortedSessions = [
-                ...sessions.filter((a) => a.remote.LocalID === maybeMatchingResumedSession.LocalID),
-                ...sessions.filter((a) => a.remote.LocalID !== maybeMatchingResumedSession.LocalID),
-            ];
-
+            const sortedSessions = [...sessions].sort((a, b) =>
+                sessionComparator(a.persisted, b.persisted, maybeMatchingResumedSession.localID)
+            );
             return {
                 session: maybeMatchingResumedSession,
                 sessions: sortedSessions,
@@ -407,10 +450,76 @@ export const maybePickSessionByEmail = async ({
         }
 
         // If a matching email could not be found, fallback to switch since it's unsure which account the user should use
-        return { session, sessions, type: GetActiveSessionType.Switch };
+        return {
+            ...result,
+            type: GetActiveSessionType.Switch,
+        };
     }
 
     return result;
+};
+
+export const getActiveSessionsResult = async ({
+    api,
+    session,
+    localID,
+    email,
+    options,
+}: {
+    api: Api;
+    session: ResumedSessionResult;
+    localID?: number;
+    email?: string;
+    options?: SessionOptions;
+}): Promise<GetActiveSessionsResult> => {
+    // Refetch to have latest since this is called from a loop and it might get refreshed
+    const persistedSessions = getPersistedSessions().sort((a, b) => {
+        return sessionComparator(a, b, session.localID);
+    });
+    const activeSessions = await getActiveSessionsData({
+        api: getUIDApi(session.UID, api),
+        persistedSessions,
+    });
+    const missingSessions = await getActiveSessionsMissingFromRemoteResponse({
+        api,
+        activeSessions,
+        persistedSessions,
+    });
+    const sessions = [...activeSessions, ...missingSessions].sort((a, b) => {
+        return sessionComparator(a.persisted, b.persisted, session.localID);
+    });
+    // Typically oauth sessions should not be visible in the account picker, and it should not do the auto pick logic when only a single
+    // oauth account exists.
+    // The only time an oauth session needs to be picked is when BEX opens the "manage subscription" view,
+    // the way it does that is by passing an `?email` parameter.
+    // TODO: This should ideally be improved to accurately target the BEX scenario and not confuse it with others.
+    const sessionsExceptOauth = sessions.filter((session) => session.persisted.source !== SessionSource.Oauth);
+
+    const hasOnlyOneSessionAndUnspecifiedLocalID = localID === undefined && sessionsExceptOauth.length === 1;
+    // This is technically incorrect, but users have bookmarked sessions with expired local ids, so in the case of 1 session on account
+    // we still autopick the session even if a specific local id is requested.
+    // TODO: We need to improve this, specifically the scenarios when account has lost a session but the session still exists on subdomains.
+    const hasOnlyOneSession = sessionsExceptOauth.length === 1;
+
+    const type =
+        hasOnlyOneSession || hasOnlyOneSessionAndUnspecifiedLocalID || localID === session.localID
+            ? GetActiveSessionType.AutoPick
+            : GetActiveSessionType.Switch;
+
+    const result: GetActiveSessionsResult = {
+        session,
+        sessions: sessionsExceptOauth,
+        type,
+    };
+
+    return maybePickSessionByEmail({
+        api,
+        localID,
+        email,
+        result,
+        sessions,
+        options,
+    });
 };
 
 export const getActiveSessions = async ({
@@ -424,44 +533,14 @@ export const getActiveSessions = async ({
     email?: string;
     options?: SessionOptions;
 }): Promise<GetActiveSessionsResult> => {
-    let persistedSessions = getPersistedSessions();
-
-    if (localID !== undefined) {
-        // Increase ordered priority to the specified local ID
-        persistedSessions = [
-            ...persistedSessions.filter((a) => a.localID === localID),
-            ...persistedSessions.filter((a) => a.localID !== localID),
-        ];
-    }
+    let persistedSessions = getPersistedSessions().sort((a, b) => {
+        return sessionComparator(a, b, localID);
+    });
 
     for (const persistedSession of persistedSessions) {
         try {
             const session = await resumeSession({ api, localID: persistedSession.localID, options });
-            // Refetch to have latest since we're looping and it might get refreshed
-            const latestPersistedSessions = getPersistedSessions();
-            const activeSessions = await getActiveSessionsData({
-                api: getUIDApi(session.UID, api),
-                persistedSessions: latestPersistedSessions,
-            });
-            const missingSessions = await getActiveSessionsMissingFromRemoteResponse({
-                api,
-                activeSessions,
-                persistedSessions: latestPersistedSessions,
-            });
-            const sessions = [...activeSessions, ...missingSessions];
-
-            const hasOnlyOneSessionAndUnspecifiedLocalID = localID === undefined && sessions.length === 1;
-            // This is technically incorrect, but users have bookmarked sessions with expired local ids, so in the case of 1 session on account
-            // we still autopick the session even if a specific local id is requested.
-            // TODO: We need to improve this, specifically the scenarios when account has lost a session but the session still exists on subdomains.
-            const hasOnlyOneSession = sessions.length === 1;
-
-            const type =
-                session && (hasOnlyOneSession || hasOnlyOneSessionAndUnspecifiedLocalID || localID === session.LocalID)
-                    ? GetActiveSessionType.AutoPick
-                    : GetActiveSessionType.Switch;
-
-            return await maybePickSessionByEmail({ api, localID, email, result: { session, sessions, type }, options });
+            return await getActiveSessionsResult({ api, session, localID, email, options });
         } catch (e: any) {
             if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                 // Session expired, try another session
@@ -486,12 +565,13 @@ export const maybeResumeSessionByUser = async ({
 }: {
     api: Api;
     User: tsUser;
-    options?: SessionOptions;
+    options: SessionOptions;
 }) => {
     const maybePersistedSession = findPersistedSession({
         persistedSessions: getPersistedSessions(),
         UserID: User.ID,
         isSelf: isSelf(User),
+        source: options.source ?? defaultSessionOptions.source,
     });
     if (!maybePersistedSession) {
         return;

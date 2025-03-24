@@ -1,3 +1,4 @@
+import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
 import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
@@ -54,9 +55,7 @@ export const getActiveSessionLoginResult = async ({
             };
         }
 
-        // The oauth partner flow is only used in case there are no valid sessions that already exist in proton
-        // Otherwise, a proton session takes precedence
-        if (forkParameters.partnerId && !sessionsResult.sessions.length) {
+        if (forkParameters.partnerId) {
             const payload: OAuthPartnersInitiateState = {
                 type: 'initiate',
                 payload: {
@@ -81,11 +80,12 @@ export const getActiveSessionLoginResult = async ({
         }
 
         if (autoSignIn && forkParameters.forkType === undefined) {
-            if (getShouldReAuth(forkParameters, sessionsResult.session)) {
+            const session: AuthSession = { data: sessionsResult.session };
+            if (getShouldReAuth(forkParameters, session)) {
                 return {
                     type: 'reauth',
                     location: { pathname: paths.reauth },
-                    payload: getReAuthState(forkParameters, sessionsResult.session),
+                    payload: getReAuthState(forkParameters, session),
                 };
             }
 
@@ -95,7 +95,7 @@ export const getActiveSessionLoginResult = async ({
                     type: SSOType.Proton,
                     payload: { forkParameters },
                 },
-                session: sessionsResult.session,
+                session,
                 paths,
             });
         }
@@ -116,9 +116,10 @@ export const getActiveSessionLoginResult = async ({
     }
 
     if (autoSignIn) {
+        const session: AuthSession = { data: sessionsResult.session };
         return getLoginResult({
             api,
-            session: sessionsResult.session,
+            session,
             localRedirect,
             initialSearchParams,
             forkState: undefined,

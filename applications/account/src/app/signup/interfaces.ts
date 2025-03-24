@@ -12,7 +12,7 @@ import type {
 import { type Currency } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type {
@@ -57,7 +57,7 @@ export const SERVICES: { [key: string]: APP_NAMES } = {
 };
 
 export interface SessionData {
-    resumedSessionResult: AuthSession;
+    resumedSessionResult: ResumedSessionResult;
     paymentMethods: SavedPaymentMethod[] | undefined;
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
     subscription: Subscription | undefined;
@@ -165,13 +165,10 @@ export interface MnemonicData {
 export interface SetupData {
     user: User;
     addresses: Address[];
-    keyPassword: string | undefined;
-    clientKey: string;
-    offlineKey: OfflineKey | undefined;
     authResponse: AuthResponse;
     api: Api;
     mnemonicData?: MnemonicData;
-    persistedAt: number;
+    session: ResumedSessionResult;
 }
 
 export interface UserData {

@@ -1,3 +1,4 @@
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
 import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
@@ -38,6 +39,7 @@ describe('getLastActivePersistedUserSession', () => {
             persistedAt: 123,
             persistent: true,
             trusted: false,
+            source: SessionSource.Proton,
         });
     });
 
@@ -56,6 +58,7 @@ describe('getLastActivePersistedUserSession', () => {
             persistedAt: 0,
             persistent: true,
             trusted: false,
+            source: SessionSource.Proton,
         });
     });
 
@@ -89,6 +92,7 @@ describe('getLastActivePersistedUserSession', () => {
             persistedAt: 567,
             persistent: true,
             trusted: false,
+            source: SessionSource.Proton,
         });
     });
 

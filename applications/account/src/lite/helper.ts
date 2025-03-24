@@ -11,6 +11,7 @@ export enum SupportedActions {
     LabelsSettings = 'labels-settings', // ET
     SpamFiltersSettings = 'spam-filters-settings', // ET
     PrivacySecuritySettings = 'privacy-security-settings', // ET
+    VPNLite = 'vpn-lite',
 }
 
 const list: { value: string; product: ProductParam }[] = [

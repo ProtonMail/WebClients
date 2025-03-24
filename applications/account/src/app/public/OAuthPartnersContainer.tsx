@@ -1,21 +1,35 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import { type OnLoginCallback, StandardLoadErrorPage } from '@proton/components';
-import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
-import { handleNextLogin } from '@proton/components/containers/login/loginActions';
-import { auth } from '@proton/shared/lib/api/auth';
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
+import { type OnLoginCallback } from '@proton/components';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { auth, revoke } from '@proton/shared/lib/api/auth';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getUser } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { ProtonForkData } from '@proton/shared/lib/authentication/fork/interface';
 import { oauthAuthorizePartner } from '@proton/shared/lib/authentication/fork/oauth2';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { removePersistedSessionByLocalIDAndUID } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import {
+    GetActiveSessionType,
+    type GetActiveSessionsResult,
+    type ResumedSessionResult,
+    getActiveSessions,
+    maybeResumeSessionByUser,
+    persistSession,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
-import type { Api } from '@proton/shared/lib/interfaces';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import type { Api, User as tsUser } from '@proton/shared/lib/interfaces';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
 
@@ -41,6 +55,7 @@ interface Props {
     state: OAuthPartnersInitiateState | OAuthPartnersCallbackState;
     loader: ReactNode;
     onLogin: OnLoginCallback;
+    onCredentials: (data: { sessions?: GetActiveSessionsResult; email: string }) => void;
     toApp?: APP_NAMES;
     productParam: ProductParam;
 }
@@ -95,57 +110,92 @@ const handleInitiate = async ({
 const handleCallback = async ({
     state,
     api,
-    toApp,
-    productParam,
 }: {
     state: OAuthPartnersCallbackState;
     api: Api;
     toApp?: APP_NAMES;
     productParam: ProductParam;
-}) => {
+}): Promise<
+    | { type: 'done'; payload: ResumedSessionResult }
+    | {
+          type: 'existing-account';
+          payload: { sessions: GetActiveSessionsResult; email: string };
+      }
+> => {
     const oauthPersistedState = readOAuthPersistedState();
     if (!oauthPersistedState) {
         throw new Error('Unexpected oauth state');
     }
 
-    const persistent = false;
+    const persistent = true;
+    const keyPassword = '';
+    const clearKeyPassword = '';
+    const trusted = false;
 
-    const authResponse = await api<AuthResponse>(
-        withUIDHeaders(oauthPersistedState.uid, auth({ SSOResponseToken: state.payload.token }, persistent))
-    );
-    clearForkState();
-
-    const result = await handleNextLogin({
-        api,
-        appName: APPS.PROTONACCOUNT,
-        toApp,
-        ignoreUnlock: true,
-        setupVPN: false,
-        ktActivation: KeyTransparencyActivation.DISABLED,
-        username: '',
-        password: '',
-        persistent,
-        authType: AuthType.ExternalSSO,
-        authResponse,
-        authVersion: 4,
-        productParam,
-    });
-
-    if (result.to !== AuthStep.DONE) {
-        throw new Error('Unexpected step');
+    let authResponse: AuthResponse;
+    try {
+        authResponse = await api<AuthResponse>(
+            withUIDHeaders(oauthPersistedState.uid, auth({ SSOResponseToken: state.payload.token }, persistent))
+        );
+        clearForkState();
+    } catch (e) {
+        const { code, details } = getApiError(e);
+        if (code === API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
+            const email: string = details.Email || details.email || '';
+            const sessions = await getActiveSessions({ api, email });
+            if (sessions.session && sessions.type === GetActiveSessionType.AutoPick) {
+                return {
+                    type: 'done',
+                    payload: sessions.session,
+                };
+            }
+            return {
+                type: 'existing-account',
+                payload: { sessions, email },
+            };
+        }
+        throw e;
     }
 
-    // In partner oauth the persisted session is removed from storage. This is a workaround for the fact that the
-    // session doesn't have `full` scope and thus it can't fetch for example GET /addresses to be able to set up
-    // a proton address. We are able to do this workaround because these sessions are only used in the VPN extension
-    // currently.
-    await removePersistedSessionByLocalIDAndUID(result.session.LocalID, oauthPersistedState.uid).catch(noop);
+    const user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
 
-    return { session: result.session };
+    const resumedSessionResult = await maybeResumeSessionByUser({ api, User: user, options: { source: null } });
+    if (resumedSessionResult) {
+        await api(revoke()).catch(noop);
+        return {
+            type: 'done',
+            payload: resumedSessionResult,
+        };
+    }
+
+    const sessionResult = await persistSession({
+        ...authResponse,
+        clearKeyPassword,
+        keyPassword,
+        User: user,
+        api,
+        persistent,
+        trusted,
+        source: SessionSource.Oauth,
+    });
+
+    return {
+        type: 'done',
+        payload: sessionResult,
+    };
 };
 
-const OAuthPartnersContainer = ({ toApp, productParam, unauthenticatedApi, state, loader, onLogin }: Props) => {
+const OAuthPartnersContainer = ({
+    toApp,
+    productParam,
+    unauthenticatedApi,
+    state,
+    loader,
+    onLogin,
+    onCredentials,
+}: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
+    const { createNotification } = useNotifications();
 
     useEffect(() => {
         const run = async () => {
@@ -154,13 +204,24 @@ const OAuthPartnersContainer = ({ toApp, productParam, unauthenticatedApi, state
             }
 
             if (state.type === 'callback') {
-                const { session } = await handleCallback({
+                const result = await handleCallback({
                     state,
-                    api: unauthenticatedApi.apiCallback,
+                    api: getSilentApi(unauthenticatedApi.apiCallback),
                     toApp,
                     productParam,
                 });
-                return onLogin(session);
+                if (result.type === 'done') {
+                    return onLogin({ data: result.payload, flow: 'login' });
+                }
+                if (result.type === 'existing-account') {
+                    const email = result.payload.email ? `<${result.payload.email}>` : '';
+                    createNotification({
+                        type: 'info',
+                        text: c('sso')
+                            .t`The email address ${email} already exists in ${BRAND_NAME}. Sign in with your ${BRAND_NAME} credentials to continue.`,
+                    });
+                    return onCredentials(result.payload);
+                }
             }
 
             throw new Error('Unexpected type');
@@ -173,7 +234,16 @@ const OAuthPartnersContainer = ({ toApp, productParam, unauthenticatedApi, state
     }, []);
 
     if (error) {
-        return <StandardLoadErrorPage errorMessage={error.message} />;
+        return (
+            <StandardErrorPage>
+                <div className="text-center">
+                    <div className="mb-4">{error.message}</div>
+                    <Button color="norm" onClick={() => onCredentials({ email: '' })}>
+                        {c('Action').t`Sign in with ${BRAND_NAME}`}
+                    </Button>
+                </div>
+            </StandardErrorPage>
+        );
     }
 
     return loader;
