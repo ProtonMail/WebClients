@@ -142,6 +142,7 @@ enum MailFeatureFlag {
     MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     MailPlusSubscribersNudgeExperiment = 'MailPlusSubscribersNudgeExperiment',
+    MailboxRefactoring = 'MailboxRefactoring',
 }
 
 enum AdminFeatureFlag {
