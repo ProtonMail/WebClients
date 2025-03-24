@@ -164,6 +164,20 @@ export const isRAWExtension = (extension: string | undefined): boolean => {
     return Object.keys(RAWMimeTypes).includes(lowerExt);
 };
 
+export const getFileExtension = (name: string | undefined) => {
+    return (name || '').split('.').pop();
+};
+
+export const getRAWMimeTypeFromName = (name: string): string | undefined => {
+    if (!name) {
+        return undefined;
+    }
+
+    const extension = getFileExtension(name);
+    const lowerExt = (extension || '').toLowerCase();
+    return Object.keys(RAWMimeTypes).find((type) => lowerExt === type);
+};
+
 export const isRAWThumbnailExtractionSupported = (mimeType: string, extension: string | undefined): boolean => {
     if (!extension) {
         return false;
