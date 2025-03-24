@@ -35726,6 +35726,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-docs@workspace:applications/docs"
   dependencies:
+    "@babel/plugin-transform-private-methods": "npm:^7.25.9"
     "@babel/preset-typescript": "npm:^7.26.0"
     "@lexical/utils": "npm:0.24.0"
     "@lexical/yjs": "npm:0.24.0"

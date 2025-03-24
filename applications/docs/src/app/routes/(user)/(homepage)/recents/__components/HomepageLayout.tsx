@@ -26,6 +26,7 @@ import type { DocumentAction } from '@proton/drive-store'
 import { c } from 'ttag'
 import { ButtonLike, Input } from '@proton/atoms'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
+import './HomepageLayout.css'
 
 // layout
 // ------
@@ -92,7 +93,7 @@ function Header({
   const { viewportWidth } = useActiveBreakpoint()
 
   return (
-    <div className="homepage-header items-center justify-center">
+    <div className="homepage-header shrink-0 items-center justify-center">
       <PrivateHeader
         app={APPS.PROTONDRIVE}
         userDropdown={<UserDropdown app={APPS.PROTONDOCS} />}
@@ -115,7 +116,6 @@ function Search({ onSearchTextChange }: SearchProps) {
   return (
     <div className="mt-1 max-w-[490px] md:mt-0">
       <Input
-        className="bg-weak"
         inputClassName="h-[32px] md:h-auto"
         prefix={
           <span>
@@ -123,7 +123,7 @@ function Search({ onSearchTextChange }: SearchProps) {
           </span>
         }
         onChange={(e) => onSearchTextChange(e.target.value)}
-        placeholder={c('Action').t`Search docs`}
+        placeholder={c('Action').t`Search documents`}
       />
     </div>
   )
@@ -157,8 +157,7 @@ function Sidebar({ expanded, onToggle }: SidebarProps) {
           shape="solid"
           className="flex items-center justify-center gap-2 !bg-[--docs-blue-color]"
         >
-          <Icon name="plus" />
-          {c('Action').t`New`}
+          {c('Action').t`New document`}
         </ButtonLike>
       }
     >
@@ -169,7 +168,7 @@ function Sidebar({ expanded, onToggle }: SidebarProps) {
               to="/recents"
               exact={true}
               className="hover flex items-center gap-2"
-              activeClassName="text-bold "
+              activeClassName="!font-semibold"
             >
               <Icon name="house" /> {c('Info').t`Recents`}
             </SidebarListItemLink>
@@ -180,7 +179,7 @@ function Sidebar({ expanded, onToggle }: SidebarProps) {
                 to="/favorites"
                 exact={true}
                 className="hover flex items-center gap-2"
-                activeClassName="text-bold "
+                activeClassName="!font-semibold"
               >
                 <Icon name="star" /> {c('Info').t`Favorites`}
               </SidebarListItemLink>
@@ -192,7 +191,7 @@ function Sidebar({ expanded, onToggle }: SidebarProps) {
                 to="/recently-deleted"
                 exact={true}
                 className="hover flex items-center gap-2"
-                activeClassName="text-bold "
+                activeClassName="!font-semibold"
               >
                 <Icon name="trash" /> {c('Info').t`Recently deleted`}
               </SidebarListItemLink>

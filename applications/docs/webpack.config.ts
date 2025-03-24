@@ -3,7 +3,7 @@ import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 import getConfig from '@proton/pack/webpack.config'
-import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
+import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries'
 
 const result = (env: Record<string, any>): Configuration => {
   const config = getConfig(env)
@@ -54,6 +54,11 @@ const result = (env: Record<string, any>): Configuration => {
   const postCssLoader = scssRule.use.find((use) => use.loader.includes('postcss-loader')) as unknown
   // @ts-expect-error
   postCssLoader.options.postcssOptions.plugins.push(require('tailwindcss')())
+
+  // @ts-expect-error
+  const jsLoader = config.module.rules.find((rule) => rule.test.toString().includes('tsx?'))
+  // @ts-expect-error
+  jsLoader.use.options.plugins.push(require('@babel/plugin-transform-private-methods').default)
 
   return config
 }

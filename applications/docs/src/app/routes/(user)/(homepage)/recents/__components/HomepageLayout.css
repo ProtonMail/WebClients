@@ -1,0 +1,19 @@
+/* TODO: styles are a mess, until we can clean up I'm just hacking these in */
+
+.content-container,
+.content,
+.sidebar,
+.header,
+.main-area,
+.main-area--with-toolbar {
+  background: #f8fafc !important;
+  background-color: #f8fafc !important;
+}
+
+.button-promotion {
+  --upgrade-background-color: #f8fafc !important;
+}
+
+.button-promotion:hover {
+  --upgrade-background-color: #e7e7e7 !important;
+}
