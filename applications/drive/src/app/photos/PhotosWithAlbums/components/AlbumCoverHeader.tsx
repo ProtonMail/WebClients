@@ -40,7 +40,7 @@ export const AlbumCoverHeader = ({
     const initials = getInitials(nameToDisplay || Email || '');
 
     return (
-        <div className="flex shrink-0 flex-row flex-nowrap items-center p-4">
+        <div className="flex shrink-0 flex-row flex-nowrap items-center p-4" data-testid="album-gallery-cover-section">
             {album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl ? (
                 <img
                     src={album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl}
@@ -49,6 +49,7 @@ export const AlbumCoverHeader = ({
                     style={{
                         '--h-custom': '14rem',
                     }}
+                    data-testid="cover-image"
                 />
             ) : (
                 <span
@@ -56,12 +57,13 @@ export const AlbumCoverHeader = ({
                     style={{
                         '--h-custom': '14rem',
                     }}
+                    data-testid="cover-image"
                 >
                     <Icon name="album" className="m-auto" size={6} />
                 </span>
             )}
 
-            <div className="flex flex-column flex-nowrap mx-auto shrink-0 flex-1">
+            <div className="flex flex-column flex-nowrap mx-auto shrink-0 flex-1" data-testid="cover-info">
                 <h1 className="text-bold h2">{album.name}</h1>
                 <p className="color-weak mt-1">
                     {formattedDate}
@@ -74,8 +76,10 @@ export const AlbumCoverHeader = ({
                         )}
                     </span>
                 </p>
-                <div className="flex flex-wrap flex-row gap-2">
-                    <Avatar color="weak">{initials}</Avatar>
+                <div className="flex flex-wrap flex-row gap-2" data-testid="cover-options">
+                    <Avatar color="weak" data-testid="cover-avatar">
+                        {initials}
+                    </Avatar>
                     {album.permissions.isAdmin && (
                         <Button
                             color="weak"
@@ -83,6 +87,7 @@ export const AlbumCoverHeader = ({
                             size="small"
                             className="inline-flex flex-row flex-nowrap items-center"
                             onClick={onShare}
+                            data-testid="cover-share"
                         >
                             <Icon name="user-plus" className="mr-2" />
                             {c('Action').t`Share`}
@@ -96,6 +101,7 @@ export const AlbumCoverHeader = ({
                             linkId={linkId}
                             onFileUpload={onFileUpload}
                             onFileSkipped={onFileSkipped}
+                            data-testid="upload-photos"
                         />
                     )}
                 </div>
