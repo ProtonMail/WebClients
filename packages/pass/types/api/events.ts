@@ -29,9 +29,9 @@ export type UserEvent = {
     AuthDevices?: EventItemUpdate<AuthDeviceOutput, 'AuthDevice'>[];
     EventID: string;
     Invoices?: Invoice;
-    More: 0 | 1;
+    More: boolean;
     Organization?: Organization;
-    Refresh?: number;
+    Refresh?: boolean;
     Subscription?: Subscription;
     User?: User;
     UserSettings?: UserSettings;

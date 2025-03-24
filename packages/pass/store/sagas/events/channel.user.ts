@@ -1,16 +1,19 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
-import { all, fork, put, select } from 'redux-saga/effects';
+import { all, call, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
+import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     getInAppNotifications,
     getUserAccessIntent,
     getUserFeaturesIntent,
     syncIntent,
     userEvent,
+    userRefresh,
 } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import type { HydratedUserState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import {
@@ -34,6 +37,27 @@ import { eventChannelFactory } from './channel.factory';
 import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel } from './types';
 
+/* If we get the user model from the event or triggered or full user refresh,
+ * check if any new active user keys are available. We might be dealing with a
+ * user re-activating a disabled user key in which case we want to trigger a full
+ * data sync in order to access any previously inactive shares */
+function* onUserRefreshed(user: User, keyPassword?: string) {
+    if (!keyPassword) return;
+
+    const localUserKeyIds = (PassCrypto.getContext().userKeys ?? []).map(prop('ID'));
+    const activeUserKeys = user.Keys.filter(({ Active }) => Active === 1);
+
+    const keysUpdated =
+        activeUserKeys.length !== localUserKeyIds.length || activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
+
+    if (keysUpdated && keyPassword) {
+        logger.info(`[ServerEvents::User] Detected user keys update`);
+        const addresses: Address[] = yield select(selectAllAddresses);
+        yield PassCrypto.hydrate({ user, keyPassword, addresses, clear: false });
+        yield put(syncIntent(SyncType.FULL)); /* trigger a full data sync */
+    }
+}
+
 function* onUserEvent(
     event: EventManagerEvent<UserEvent>,
     _: EventChannel<UserEvent>,
@@ -55,6 +79,13 @@ function* onUserEvent(
     }
 
     const { User: user } = event;
+    const keyPassword = getAuthStore().getPassword();
+
+    if (event.Refresh) {
+        const data: HydratedUserState = yield getUserData();
+        yield put(userRefresh(data));
+        yield call(onUserRefreshed, data.user, keyPassword);
+    }
 
     if (event.UserSettings && telemetry) {
         const { Telemetry } = event.UserSettings;
@@ -66,27 +97,7 @@ function* onUserEvent(
         if (Locale !== userSettings?.Locale) yield onLocaleUpdated?.(Locale);
     }
 
-    /* if we get the user model from the event, check if
-     * any new active user keys are available. We might be
-     * dealing with a user re-activating a disabled user key
-     * in which case we want to trigger a full data sync in
-     * order to access any previously inactive shares */
-    if (user) {
-        const localUserKeyIds = (PassCrypto.getContext().userKeys ?? []).map(prop('ID'));
-        const activeUserKeys = user.Keys.filter(({ Active }) => Active === 1);
-        const keyPassword = getAuthStore().getPassword();
-
-        const keysUpdated =
-            activeUserKeys.length !== localUserKeyIds.length ||
-            activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
-
-        if (keysUpdated && keyPassword) {
-            logger.info(`[ServerEvents::User] Detected user keys update`);
-            const addresses = (yield select(selectAllAddresses)) as Address[];
-            yield PassCrypto.hydrate({ user, keyPassword, addresses, clear: false });
-            yield put(syncIntent(SyncType.FULL)); /* trigger a full data sync */
-        }
-    }
+    if (user) yield call(onUserRefreshed, user, keyPassword);
 
     /* Revalidate the user access if we detect a subscription or plan type change. */
     const revalidateUserAccess =
