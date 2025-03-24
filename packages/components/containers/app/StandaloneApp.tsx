@@ -10,7 +10,6 @@ import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import StandardPublicApp from '@proton/components/containers/app/StandardPublicApp';
 import MinimalLoginContainer from '@proton/components/containers/login/MinimalLoginContainer';
 import createApi from '@proton/shared/lib/api/createApi';
-import { getLoginPath } from '@proton/shared/lib/authentication/loginPath';
 import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -25,11 +24,11 @@ const api = createApi({ config });
 const authentication = createAuthentication();
 const unauthenticatedApi = createUnauthenticatedApi(api);
 const unleashClient = createUnleash({ api: unauthenticatedApi.apiCallback });
-const session = initStandaloneSession({ api });
+const session = initStandaloneSession({ api, authentication });
 
 unleashClient.start().catch(noop);
 
-if (authentication.ready || session) {
+if (session) {
     replaceUrl('/');
 }
 
@@ -50,13 +49,7 @@ const Component = () => {
                                             onStartAuth={() => unauthenticatedApi.startUnAuthFlow()}
                                             onLogin={async (args) => {
                                                 authentication.login(args.data);
-                                                replaceUrl(
-                                                    getLoginPath(
-                                                        authentication.basename,
-                                                        window.location.href,
-                                                        args.path
-                                                    )
-                                                );
+                                                window.location.pathname = '/';
                                                 return { state: 'complete' };
                                             }}
                                         />
