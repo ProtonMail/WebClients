@@ -3,6 +3,7 @@ import { BrowserRouter, Redirect, Route, Switch, useHistory } from 'react-router
 
 import type * as H from 'history';
 
+import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
 import { createAuthentication, createUnleash, init, loadCrypto } from '@proton/account/bootstrap';
 import type { OnLoginCallback, OnLoginCallbackResult } from '@proton/components';
 import {
@@ -33,6 +34,7 @@ import {
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
 import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
+import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
@@ -49,7 +51,6 @@ import noop from '@proton/utils/noop';
 import forgotUsernamePage from '../../pages/forgot-username';
 import resetPasswordPage from '../../pages/reset-password';
 import * as config from '../config';
-import HandleLogout from '../containers/HandleLogout';
 import locales from '../locales';
 import LoginContainer, { type LoginContainerState } from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
@@ -96,6 +97,8 @@ import { addSession } from './session';
 
 const bootstrapApp = () => {
     const api = createApi({ config, sendLocaleHeaders: true });
+    registerSessionListener({ type: 'all' });
+    handleLogoutFromURL({ api });
     const authentication = createAuthentication({ initialAuth: false });
     init({ config, authentication, locales });
     initMainHost();
@@ -350,7 +353,6 @@ const BasePublicApp = () => {
 
     return (
         <>
-            <HandleLogout />
             <NotificationsChildren />
             <ModalsChildren />
             <Switch>
