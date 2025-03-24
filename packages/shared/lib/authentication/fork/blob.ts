@@ -24,9 +24,9 @@ export const getForkDecryptedBlob = async (
     payloadVersion: 1 | 2
 ): Promise<ForkEncryptedBlob | undefined> => {
     const string = await getDecryptedBlob(key, data, payloadVersion === 2 ? stringToUtf8Array('fork') : undefined);
-    const parsedValue = JSON.parse(string);
+    const parsedValue: ForkEncryptedBlob = JSON.parse(string);
 
-    const keyPassword = parsedValue.keyPassword || '';
+    const keyPassword = parsedValue.keyPassword ?? '';
 
     if (parsedValue.type === 'offline' && parsedValue.offlineKeyPassword && parsedValue.offlineKeySalt) {
         return {

@@ -1,3 +1,4 @@
+import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { OAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { getEmailSessionForkSearchParameter } from '@proton/shared/lib/authentication/fork';
@@ -53,9 +54,10 @@ export const handleOAuthFork = async ({ api, paths }: { api: Api; paths: Paths }
     const { session, type } = activeSessionsResult;
 
     if (type === GetActiveSessionType.AutoPick) {
+        const authSession: AuthSession = { data: session };
         const loginResult = await getProduceForkLoginResult({
             api,
-            session,
+            session: authSession,
             data: { type: SSOType.OAuth, payload: { oauthData } },
             paths,
         });

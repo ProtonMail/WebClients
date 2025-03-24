@@ -24,9 +24,13 @@ export interface GetAvailableAppsByUserTypeArguments {
     user?: User;
     context: AppContext;
     isLumoAvailable: boolean;
+    oauth?: boolean;
 }
 
 export const getAvailableAppsByUserType = (options: GetAvailableAppsByUserTypeArguments) => {
+    if (options.oauth) {
+        return getSSOVPNOnlyAccountApps();
+    }
     if (getIsSSOVPNOnlyAccount(options.user)) {
         return getSSOVPNOnlyAccountApps();
     }

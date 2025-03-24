@@ -1,6 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import { createPreAuthKTVerifier } from '@proton/key-transparency';
-import { resetSelfAudit } from '@proton/key-transparency';
+import { createPreAuthKTVerifier, resetSelfAudit } from '@proton/key-transparency';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -11,6 +10,7 @@ import type { GetMnemonicResetData } from '@proton/shared/lib/api/settingsMnemon
 import { getMnemonicReset, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
 import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -159,7 +159,7 @@ export const handleNewPassword = async ({
         }
     }
 
-    const { clientKey, offlineKey, persistedAt } = await persistSession({
+    const sessionResult = await persistSession({
         ...authResponse,
         clearKeyPassword: password,
         keyPassword,
@@ -167,6 +167,7 @@ export const handleNewPassword = async ({
         trusted,
         User: user,
         api,
+        source: SessionSource.Proton,
     });
 
     await preAuthKTCommit(user.ID, api);
@@ -175,15 +176,8 @@ export const handleNewPassword = async ({
     return {
         to: STEPS.DONE,
         session: {
-            ...authResponse,
-            persistent,
-            trusted,
-            User: user,
+            data: sessionResult,
             loginPassword: password,
-            keyPassword,
-            persistedAt,
-            clientKey,
-            offlineKey,
             flow: 'reset',
         },
     };
@@ -226,7 +220,7 @@ export const handleNewPasswordMnemonic = async ({
 
     const trusted = false;
     const user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
-    const { clientKey, offlineKey, persistedAt } = await persistSession({
+    const sessionResult = await persistSession({
         ...authResponse,
         clearKeyPassword: password,
         keyPassword,
@@ -234,20 +228,14 @@ export const handleNewPasswordMnemonic = async ({
         trusted,
         User: user,
         api,
+        source: SessionSource.Proton,
     });
 
     return {
         to: STEPS.DONE,
         session: {
-            ...authResponse,
-            persistent,
-            trusted,
-            User: user,
+            data: sessionResult,
             loginPassword: password,
-            keyPassword,
-            clientKey,
-            offlineKey,
-            persistedAt,
             flow: 'reset',
         },
     };

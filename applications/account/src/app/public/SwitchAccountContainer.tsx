@@ -224,9 +224,9 @@ const SwitchAccountContainer = ({
             validRef.current = true;
             const params = new URLSearchParams(location.search);
             setLoadingMap((old) => ({ ...old, [localID]: true }));
-            const validatedSession = await resumeSession({ api: silentApi, localID });
+            const resumedSessionResult = await resumeSession({ api: silentApi, localID });
             await onLogin({
-                ...validatedSession,
+                data: resumedSessionResult,
                 flow: 'switch',
                 prompt: params.get(ForkSearchParameters.Prompt) === 'login' ? 'login' : undefined,
             });

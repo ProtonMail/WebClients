@@ -1,3 +1,4 @@
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
@@ -10,12 +11,14 @@ const mutatePassword = async ({
     clearKeyPassword,
     User,
     api,
+    source = SessionSource.Proton,
 }: {
     authentication: AuthenticationStore;
     keyPassword: string;
     clearKeyPassword: string;
     api: Api;
     User: User;
+    source?: SessionSource;
 }) => {
     // Don't mutate the password when signed in through admin access
     if (!isSelf(User)) {
@@ -39,6 +42,7 @@ const mutatePassword = async ({
             persistent: authentication.getPersistent(),
             trusted: authentication.getTrusted(),
             mode: authentication.mode,
+            source,
         });
 
         authentication.setClientKey(clientKey);

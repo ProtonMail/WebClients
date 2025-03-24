@@ -421,7 +421,7 @@ const BasePublicApp = () => {
                                     },
                                     username,
                                 };
-                                history.replace(SSO_PATHS.LOGIN, state);
+                                history.replace(paths.login, state);
                             }}
                         >
                             {loader}
@@ -492,6 +492,31 @@ const BasePublicApp = () => {
                 {locationState?.type === 'auth-ext' && (
                     <Route path="/auth-ext">
                         <AuthExtension state={locationState.payload} />
+                    </Route>
+                )}
+                {locationState?.type === 'oauth-partners' && (
+                    <Route path={SSO_PATHS.OAUTH_PARTNERS}>
+                        <UnAuthenticated>
+                            <OAuthPartnersContainer
+                                loader={loader}
+                                state={locationState.payload}
+                                unauthenticatedApi={extraThunkArguments.unauthenticatedApi}
+                                onLogin={handleLogin}
+                                onCredentials={({ email, sessions }) => {
+                                    if (sessions?.sessions) {
+                                        setActiveSessions(sessions.sessions);
+                                    }
+                                    const state: LoginContainerState | undefined = email
+                                        ? {
+                                              username: email,
+                                          }
+                                        : undefined;
+                                    history.replace(paths.login, state);
+                                }}
+                                toApp={maybePreAppIntent}
+                                productParam={productParam}
+                            />
+                        </UnAuthenticated>
                     </Route>
                 )}
                 <Route path="/call-scheduled">
@@ -693,22 +718,6 @@ const BasePublicApp = () => {
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
-                                                {locationState?.type === 'oauth-partners' && (
-                                                    <Route path={SSO_PATHS.OAUTH_PARTNERS}>
-                                                        <UnAuthenticated>
-                                                            <OAuthPartnersContainer
-                                                                loader={loader}
-                                                                state={locationState.payload}
-                                                                unauthenticatedApi={
-                                                                    extraThunkArguments.unauthenticatedApi
-                                                                }
-                                                                onLogin={handleLogin}
-                                                                toApp={maybePreAppIntent}
-                                                                productParam={productParam}
-                                                            />
-                                                        </UnAuthenticated>
-                                                    </Route>
-                                                )}
                                                 {locationState?.type === 'confirm-oauth' && (
                                                     <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
                                                         <UnAuthenticated>
@@ -727,7 +736,7 @@ const BasePublicApp = () => {
                                                                         oauthData:
                                                                             locationState.payload.data.payload
                                                                                 .oauthData,
-                                                                        UID: locationState.payload.session.UID,
+                                                                        UID: locationState.payload.session.data.UID,
                                                                     });
                                                                     replaceUrl(url);
                                                                 }}

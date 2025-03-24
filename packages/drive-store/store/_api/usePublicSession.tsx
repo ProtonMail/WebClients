@@ -70,7 +70,7 @@ function usePublicSessionProvider() {
     const handleHandshakeInitSession = async (session: ResumedSessionResult) => {
         auth.setPassword(session.keyPassword);
         auth.setUID(session.UID);
-        auth.setLocalID(session.LocalID);
+        auth.setLocalID(session.localID);
         // This hack is needed to have authenticated requests
         (api as any).UID = session.UID;
         // In case user is logged-in we can preload default share.

@@ -27,6 +27,7 @@ import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -62,7 +63,11 @@ export const getReAuthState = (
 
     // Normalize the reauth type to 'default' (auth with IdP - instead of auth with backup password) for SSO accounts
     // ignoring if the offline key exists or not and 'sso' bypass is requested
-    if (forkParameters?.promptBypass === 'sso' && getIsGlobalSSOAccount(session.User) && reAuthType !== 'default') {
+    if (
+        forkParameters?.promptBypass === 'sso' &&
+        getIsGlobalSSOAccount(session.data.User) &&
+        reAuthType !== 'default'
+    ) {
         reAuthType = 'default';
     }
 
@@ -145,7 +150,7 @@ const ReAuthContainer = ({
     const idpButtonRef = useRef<HTMLButtonElement>(null);
     const normalApi = useApi();
 
-    const { UID, User } = state.session;
+    const { UID, User } = state.session.data;
     const uidApi = getUIDApi(UID, normalApi);
 
     const nameToDisplay = User.DisplayName || User.Name || User.Email || '';
@@ -159,14 +164,14 @@ const ReAuthContainer = ({
         return onLogin({ ...session, prompt: null, flow: 'reauth' });
     };
 
-    const handleSubmitKeyPassword = async (password: string, salts: tsKeySalt[], type?: 'sso') => {
+    const handleSubmitKeyPassword = async (password: string, salts: tsKeySalt[], source?: SessionSource) => {
         const session = await handleReAuthKeyPassword({
             authSession: state.session,
             api: uidApi,
             User,
             clearKeyPassword: password,
             salts,
-            type,
+            source,
         });
         return handleFinalizeLogin(session);
     };
@@ -178,7 +183,7 @@ const ReAuthContainer = ({
             config: { ...queryUnlock(), silence: true },
         });
 
-        if (state.reAuthType === 'default' || !!state.session.offlineKey || !state.session.User.Keys.length) {
+        if (state.reAuthType === 'default' || !!state.session.data.offlineKey || !state.session.data.User.Keys.length) {
             return handleFinalizeLogin(state.session);
         }
 
@@ -224,7 +229,7 @@ const ReAuthContainer = ({
             return;
         }
         setData({ step: 'initial', salts });
-        return handleSubmitKeyPassword(keyPassword, salts, 'sso');
+        return handleSubmitKeyPassword(keyPassword, salts, SessionSource.Saml);
     };
 
     const srpLoginForm = (
@@ -279,7 +284,7 @@ const ReAuthContainer = ({
     };
 
     const ssoLoginForm =
-        state.reAuthType === 'default' || getIsSSOVPNOnlyAccount(state.session.User) ? (
+        state.reAuthType === 'default' || getIsSSOVPNOnlyAccount(state.session.data.User) ? (
             <div className="mt-4">
                 <Button
                     ref={idpButtonRef}
