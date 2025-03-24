@@ -3,11 +3,12 @@ import { Router } from 'react-router-dom';
 import { createBrowserHistory as createHistory } from 'history';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import { initStandaloneSession, removeSessions } from '@proton/account/bootstrap/standaloneSession';
+import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';
 import { ApiProvider, AuthenticationProvider, ErrorBoundary, ProtonApp, StandardErrorPage } from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
+import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import { getLoginPath } from '@proton/shared/lib/authentication/loginPath';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -30,11 +31,19 @@ const bootstrapApp = () => {
     initLogicalProperties();
     initSafariFontFixClassnames();
     extendStore({ authentication, api, history, config });
-    // Remove all sessions if a public route is opened, for example signup or login
-    if (Object.values(publicRoutes).some((value) => location.pathname.endsWith(value))) {
-        removeSessions({ api });
+    let session: PersistedSession | undefined = undefined;
+    // Don't automatically sign in when a public route is opened, for example signup or reset password
+    if (
+        !Object.values(publicRoutes).some((value) => {
+            // Ignore login, let the session get picked automatically
+            if (value === publicRoutes.login) {
+                return false;
+            }
+            return location.pathname.endsWith(value);
+        })
+    ) {
+        session = initStandaloneSession({ authentication, api });
     }
-    const session = initStandaloneSession({ authentication, api });
     const privateApp = Boolean(session);
     return {
         store: setupStore({ mode: privateApp ? 'default' : 'public' }),
