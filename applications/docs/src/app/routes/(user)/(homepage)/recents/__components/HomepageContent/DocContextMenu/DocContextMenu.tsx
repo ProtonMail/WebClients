@@ -2,12 +2,12 @@ import { useEffect } from 'react'
 
 import { ContextMenu, DropdownSizeUnit } from '@proton/components'
 import { OpenButton } from './buttons/OpenButton'
-import type { RecentDocumentItem } from '@proton/docs-core'
+import type { RecentDocumentsItem } from '@proton/docs-core'
 import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu'
 import { OpenFolder } from './buttons/OpenFolder'
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
-  currentDocument: RecentDocumentItem | undefined
+  currentDocument: RecentDocumentsItem | undefined
   // NOTE: copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
   // Unsure why it's necessary if the base ContextMenu doesn't take this prop. Its purpose may
   // be related to the effect below.

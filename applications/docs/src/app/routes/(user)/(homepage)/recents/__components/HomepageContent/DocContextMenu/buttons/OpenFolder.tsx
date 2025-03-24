@@ -2,11 +2,11 @@ import { Icon } from '@proton/components'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useRecentDocuments } from '../../../../__utils/recent-documents'
-import type { RecentDocumentItem } from '@proton/docs-core'
+import type { RecentDocumentsItem } from '@proton/docs-core'
 import { c } from 'ttag'
 
 export type OpenFolderProps = {
-  currentDocument: RecentDocumentItem
+  currentDocument: RecentDocumentsItem
   close: () => void
 }
 
