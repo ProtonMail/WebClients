@@ -21,7 +21,7 @@ import {
 import type { ShareItem } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, ItemRevision, Maybe, PassEventListResponse, Share } from '@proton/pass/types';
+import type { Api, ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -97,14 +97,17 @@ const onShareEvent = (shareId: string) =>
         }
 
         if (FullRefresh) {
-            const updatedShare: Maybe<Share> = yield parseShareResponse(yield requestShare(shareId));
-            if (updatedShare) yield put(shareEventUpdate(updatedShare));
+            const encryptedShare: ShareGetResponse = yield requestShare(shareId);
+            const share: Maybe<Share> = yield parseShareResponse(encryptedShare);
 
-            const updatedItems: ItemRevision[] = yield requestItemsForShareId(shareId);
-            yield put(itemsEditSync(updatedItems));
+            if (share) {
+                yield put(shareEventUpdate(share));
+                const updatedItems: ItemRevision[] = yield requestItemsForShareId(shareId);
+                yield put(itemsEditSync(updatedItems));
+            }
         }
 
-        const itemsMutated = DeletedItemIDs.length > 0 || UpdatedItems.length > 0;
+        const itemsMutated = DeletedItemIDs.length + UpdatedItems.length > 0 || FullRefresh;
         if (itemsMutated) onItemsUpdated?.();
     };
 
