@@ -1,4 +1,4 @@
-import type { RecentDocumentItem } from '@proton/docs-core'
+import type { RecentDocumentsItem } from '@proton/docs-core'
 import type { ReactNode } from 'react'
 import { createContext, useCallback, useContext, useRef, useState } from 'react'
 
@@ -58,14 +58,14 @@ function useContextMenuControls() {
 type Controls = ReturnType<typeof useContextMenuControls>
 
 export type ContextMenuContextValue = Controls & {
-  currentDocument: RecentDocumentItem | undefined
-  setCurrentDocument: (value: RecentDocumentItem) => void
+  currentDocument: RecentDocumentsItem | undefined
+  setCurrentDocument: (value: RecentDocumentsItem) => void
 }
 
 const ContextMenuContext = createContext<ContextMenuContextValue | undefined>(undefined)
 
 export function ContextMenuProvider({ children }: { children: ReactNode }) {
-  const [currentDocument, setCurrentDocument] = useState<RecentDocumentItem>()
+  const [currentDocument, setCurrentDocument] = useState<RecentDocumentsItem>()
   const contextMenuControls = useContextMenuControls()
   const value = { ...contextMenuControls, currentDocument, setCurrentDocument }
   return <ContextMenuContext.Provider value={value}>{children}</ContextMenuContext.Provider>

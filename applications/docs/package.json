@@ -54,6 +54,7 @@
     "yjs": "^13.6.15"
   },
   "devDependencies": {
+    "@babel/plugin-transform-private-methods": "^7.25.9",
     "@babel/preset-typescript": "^7.26.0",
     "@proton/eslint-config-proton": "workspace:^",
     "@proton/i18n": "workspace:^",

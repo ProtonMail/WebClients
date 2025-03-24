@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { ButtonLike, CircleLoader } from '@proton/atoms'
 import { RecentDocumentsTable } from './RecentDocumentsTable'
 import { useRecentDocuments } from '../../__utils/recent-documents'
@@ -18,15 +18,15 @@ export function HomepageContent() {
 
   const { status, items } = useRecentDocuments()
 
-  const [startTime, setStartTime] = useState<number | null>(null)
+  const startTimeRef = useRef<number | null>(null)
 
   useEffect(() => {
     if (status === 'resolving') {
-      setStartTime(Date.now())
-    } else if (status === 'done' && startTime) {
-      const duration = (Date.now() - startTime) / 1000
+      startTimeRef.current = Date.now()
+    } else if (status === 'done' && startTimeRef.current) {
+      const duration = (Date.now() - startTimeRef.current) / 1000
       logger.debug(`Time to render ${items.length} recent documents: ${duration.toFixed(2)}s`)
-      setStartTime(null)
+      startTimeRef.current = null
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status, logger])
@@ -51,7 +51,7 @@ export function HomepageContent() {
     <ContextMenuProvider>
       <div className="flex h-full w-full flex-col px-2 pt-2">
         <InvitesTable className="mb-5" />
-        <div className="bg-norm border-weak shadow-raised flex w-full flex-1 flex-col overflow-auto rounded-t-xl border">
+        <div className="bg-norm border-weak flex w-full flex-1 flex-col overflow-auto rounded-t-xl border">
           {children}
         </div>
       </div>
