@@ -6,6 +6,8 @@ import {
     useDrawer,
 } from '@proton/components';
 import useDisplayFeatureTourDrawerButton from '@proton/components/components/featureTour/useDisplayFeatureTourDrawerButton';
+import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
+import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -22,9 +24,16 @@ const useMailDrawer = () => {
     // TODO: add UserSettings."WalletAccess" condition once available
     const canShowWalletRightSidebarLink = useFlag('WalletRightSidebarLink');
 
+    const [allowedProducts, loadingAllowedProducts] = useAllowedProducts();
+
     const drawerSidebarButtons = [
         <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />,
-        <CalendarDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)} />,
+        allowedProducts.has(Product.Calendar) && (
+            <CalendarDrawerAppButton
+                aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
+                disabled={loadingAllowedProducts}
+            />
+        ),
         canShowWalletRightSidebarLink && !isElectronApp && <WalletDrawerAppButton />,
         <SecurityCenterDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.SECURITY_CENTER, appInView)} />,
         canShowFeatureTourDrawerButton && <FeatureTourDrawerButton />,
