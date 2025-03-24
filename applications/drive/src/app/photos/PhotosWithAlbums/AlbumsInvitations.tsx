@@ -8,7 +8,7 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { useInvitationsActions } from '../../store';
 import { useInvitationsListing } from '../../store/_invitations';
 
-export const AlbumsInvitations = () => {
+export const AlbumsInvitations = ({ refreshSharedWithMeAlbums }: { refreshSharedWithMeAlbums: () => void }) => {
     const { getCachedInvitations } = useInvitationsListing();
     const { acceptInvitation, rejectInvitation } = useInvitationsActions();
     const cachedInvitations = getCachedInvitations();
@@ -52,6 +52,7 @@ export const AlbumsInvitations = () => {
                                                     new AbortController().signal,
                                                     invitation.invitation.invitationId
                                                 );
+                                                void refreshSharedWithMeAlbums();
                                             }}
                                         >
                                             {c('Action').t`Join album`}
