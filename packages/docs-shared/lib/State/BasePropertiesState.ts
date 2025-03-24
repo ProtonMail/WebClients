@@ -6,22 +6,70 @@ import type {
   PropertyCallback,
 } from './BasePropertiesStateInterface'
 
-export abstract class BasePropertiesState<P extends BasePropertyValues, E extends BaseEvent>
+// TODO: rename to StoreBase
+// TODO: use JS private fields (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields) instead of TypeScript private fields
+/**
+ * Abstract class that can be extended to create a store.
+ *
+ * A store provides the following features:
+ *
+ * - Holds a state: a set of reactive properties which supports:
+ *   - Getting or setting the value of a property.
+ *   - Getting the value of all properties (the complete state).
+ *   - Subscribing to changes of a specific property or any property.
+ * - Provides an event system which supports:
+ *   - Emitting events.
+ *   - Subscribing to specific events or any event.
+ *
+ * Note that properties are shallow, and nested values are not reactive. Property values should be treated as immutable.
+ * @example
+ * ```ts
+ * TODO: add example
+ * ```
+ */
+export abstract class BasePropertiesState<P extends BasePropertyValues, E extends BaseEvent = BaseEvent>
   implements BasePropertiesStateInterface<P, E>
 {
+  // reactive properties
+  // -------------------
+
   private values: P
 
   private propertySubscribers: Map<keyof P, Set<PropertyCallback<keyof P, P>>> = new Map()
   private anyPropertySubscribers: Set<(property: keyof P, value: P[keyof P]) => void> = new Set()
 
-  private eventSubscribers: Map<E['name'], Set<(payload: E['payload']) => void>> = new Map()
-  private anyEventSubscribers: Set<(event: E) => void> = new Set()
-
-  constructor(defaultValues: P) {
+  constructor(
+    /**
+     * The default values for the properties.
+     */
+    defaultValues: P,
+  ) {
     this.values = { ...defaultValues }
   }
 
-  subscribeToAnyProperty(callback: (property: keyof P, value: P[keyof P]) => void): () => void {
+  // TODO: rename to `subscribeAny`
+  // TODO: consider overloading `subscribe` to accept "*" or "any" as the first argument,
+  // and remove this method
+  /**
+   * Subscribes to changes of any property.
+   *
+   * @returns A function to unsubscribe.
+   */
+  subscribeToAnyProperty(
+    /**
+     * The callback that will be invoked when the value of any property changes.
+     */
+    callback: (
+      /**
+       * The property which value has changed.
+       */
+      property: keyof P,
+      /**
+       * The new value of the property.
+       */
+      value: P[keyof P],
+    ) => void,
+  ): () => void {
     this.anyPropertySubscribers.add(callback)
 
     // Notify callback immediately of all current values
@@ -38,7 +86,22 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
     }
   }
 
-  subscribeToProperty<T extends keyof P>(property: T, callback: PropertyCallback<T, P>) {
+  // TODO: rename to `subscribe`
+  /**
+   * Subscribes to changes of a specific property.
+   *
+   * @returns A function to unsubscribe.
+   */
+  subscribeToProperty<T extends keyof P>(
+    /**
+     * The property to subscribe to.
+     */
+    property: T,
+    /**
+     * The callback that will be invoked when the value of the property changes.
+     */
+    callback: PropertyCallback<T, P>,
+  ) {
     if (!this.propertySubscribers.has(property)) {
       this.propertySubscribers.set(property, new Set())
     }
@@ -84,22 +147,62 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
     }
   }
 
-  setProperty<T extends keyof P>(property: T, value: P[T]) {
+  // TODO: rename to `set`
+  /**
+   * Sets the value of a property. Subscribers will be notified of the change.
+   */
+  setProperty<T extends keyof P>(
+    /**
+     * The property to set.
+     */
+    property: T,
+    /**
+     * The new value to set for the property.
+     */
+    value: P[T],
+  ) {
     const previousValue = this.values[property]
     this.values[property] = value
 
     this.notifyPropertySubscribers(property, value, previousValue)
   }
 
-  getProperty<T extends keyof P>(property: T): P[T] {
+  // TODO: rename to `get`
+  /**
+   * Gets the value of a property.
+   */
+  getProperty<T extends keyof P>(
+    /**
+     * The property to get.
+     */
+    property: T,
+  ): P[T] {
     return this.values[property]
   }
 
+  /**
+   * Gets all properties.
+   */
   getState(): P {
     return { ...this.values }
   }
 
-  emitEvent(event: E): void {
+  // events
+  // ------
+
+  private eventSubscribers: Map<E['name'], Set<(payload: E['payload']) => void>> = new Map()
+  private anyEventSubscribers: Set<(event: E) => void> = new Set()
+
+  // TODO: rename to `emit`
+  /**
+   * Emits an event.
+   */
+  emitEvent(
+    /**
+     * The event to emit.
+     */
+    event: E,
+  ): void {
     const thisEventSubscribers = this.eventSubscribers.get(event.name)
     if (thisEventSubscribers) {
       thisEventSubscribers.forEach((callback) => {
@@ -114,7 +217,25 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
     this.notifyAnyEventSubscribers(event)
   }
 
-  subscribeToEvent<T extends E['name']>(event: T, callback: (payload: EventPayloadMap<E>[T]) => void): () => void {
+  // TODO: rename to `on`
+  /**
+   * Subscribes to a specific event.
+   */
+  subscribeToEvent<T extends E['name']>(
+    /**
+     * The event to subscribe to.
+     */
+    event: T,
+    /**
+     * The callback that will be invoked when the event occurs.
+     */
+    callback: (
+      /**
+       * The payload of the event.
+       */
+      payload: EventPayloadMap<E>[T],
+    ) => void,
+  ): () => void {
     if (!this.eventSubscribers.has(event)) {
       this.eventSubscribers.set(event, new Set())
     }
@@ -130,7 +251,18 @@ export abstract class BasePropertiesState<P extends BasePropertyValues, E extend
     }
   }
 
-  subscribeToAnyEvent(callback: (event: E) => void): () => void {
+  // TODO: rename to `onAny`
+  // TODO: consider overloading `on` to accept "*" or "any" as the first argument,
+  // and remove this method
+  /**
+   * Subscribes to any event.
+   */
+  subscribeToAnyEvent(
+    /**
+     * The callback that will be invoked when any event occurs.
+     */
+    callback: (event: E) => void,
+  ): () => void {
     this.anyEventSubscribers.add(callback)
     return () => {
       this.anyEventSubscribers.delete(callback)

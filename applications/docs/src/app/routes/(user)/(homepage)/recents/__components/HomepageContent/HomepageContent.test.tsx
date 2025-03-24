@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom'
 import { cleanup, render, screen, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
-import { RecentDocumentItem } from '@proton/docs-core'
+import { RecentDocumentsItem } from '@proton/docs-core'
 import { RecentDocumentsContext } from '../../__utils/recent-documents'
 import { ServerTime } from '@proton/docs-shared'
 import { type ReactNode, useEffect, useState } from 'react'
-import type { Application, RecentDocumentServiceState } from '@proton/docs-core'
+import type { Application, RecentDocumentsItemLocation, RecentDocumentsServiceState } from '@proton/docs-core'
 import type { LoggerInterface } from '@proton/utils/logs'
 import userEvent from '@testing-library/user-event'
 import { ApplicationProvider } from '~/utils/application-context'
@@ -22,45 +22,39 @@ jest.mock('@proton/drive-store', () => ({
 }))
 
 const MOCK_DATA = [
-  new RecentDocumentItem(
-    'Document1',
-    'link1',
-    'parentLink1',
-    'volume1',
-    new ServerTime(1),
-    'Creator',
-    ['location', 'Document1'],
-    false,
-    'share1',
-    false,
-    ['location', 'Document1'],
-  ),
-  new RecentDocumentItem(
-    'Test Document',
-    'link2',
-    'parentLink1',
-    'volume1',
-    new ServerTime(1),
-    'Creator',
-    ['location', 'Document1'],
-    false,
-    'share1',
-    false,
-    ['location', 'Document1'],
-  ),
-  new RecentDocumentItem(
-    'Test Doc',
-    'link3',
-    'parentLink1',
-    'volume1',
-    new ServerTime(1),
-    'Creator',
-    ['location', 'Document1'],
-    false,
-    'share1',
-    false,
-    ['location', 'Document1'],
-  ),
+  RecentDocumentsItem.create({
+    name: 'Document1',
+    linkId: 'link1',
+    parentLinkId: 'parentLink1',
+    volumeId: 'volume1',
+    lastViewed: new ServerTime(1),
+    createdBy: 'Creator',
+    location: { type: 'path', path: ['location', 'Document1'] },
+    isSharedWithMe: false,
+    shareId: 'share1',
+  }),
+  RecentDocumentsItem.create({
+    name: 'Test Document',
+    linkId: 'link2',
+    parentLinkId: 'parentLink1',
+    volumeId: 'volume1',
+    lastViewed: new ServerTime(1),
+    createdBy: 'Creator',
+    location: { type: 'root' },
+    isSharedWithMe: false,
+    shareId: 'share1',
+  }),
+  RecentDocumentsItem.create({
+    name: 'Test Doc',
+    linkId: 'link3',
+    parentLinkId: 'parentLink1',
+    volumeId: 'volume1',
+    lastViewed: new ServerTime(1),
+    createdBy: 'Creator',
+    location: { type: 'shared-with-me' },
+    isSharedWithMe: true,
+    shareId: 'share1',
+  }),
 ]
 
 describe('HomepageContent', () => {
@@ -74,14 +68,14 @@ describe('HomepageContent', () => {
     const table = await screen.findByRole('table')
     // first rowgroup is for the thread second is for tbody
     const tbody = within(table).getAllByRole('rowgroup')[1]
-    const rows = within(tbody).getAllByRole('button', { name: 'Open' })
+    const rows = within(tbody).getAllByRole('row')
     rows.forEach((row, i) => {
       checkRowContents(
         row,
         MOCK_DATA[i].name,
         '' + MOCK_DATA[i].lastViewed,
         MOCK_DATA[i].createdBy ?? '',
-        MOCK_DATA[i].location?.[0] ?? '',
+        MOCK_DATA[i].location,
       )
     })
   })
@@ -112,7 +106,7 @@ describe('HomepageContent', () => {
     expect(mockHandleOpenDocument).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
   })
 
-  const RecentDocumentsMockProvider = ({
+  function RecentDocumentsMockProvider({
     children,
     flow,
     handleTrashDocument,
@@ -124,9 +118,9 @@ describe('HomepageContent', () => {
     handleTrashDocument: jest.Mock
     handleOpenDocument: jest.Mock
     handleOpenFolder: jest.Mock
-  }) => {
-    const [status, setStatus] = useState<RecentDocumentServiceState>('not_fetched')
-    const [items, setItems] = useState<RecentDocumentItem[]>([])
+  }) {
+    const [status, setStatus] = useState<RecentDocumentsServiceState>('not_fetched')
+    const [items, setItems] = useState<RecentDocumentsItem[]>([])
 
     let providerValue = {
       status,
@@ -134,8 +128,8 @@ describe('HomepageContent', () => {
       handleTrashDocument,
       handleOpenDocument,
       handleOpenFolder,
-      getDisplayName: (recentDocument: RecentDocumentItem) => recentDocument.createdBy,
-      getDisplayDate: (recentDocument: RecentDocumentItem) => '' + recentDocument.lastViewed,
+      getDisplayName: (recentDocument: RecentDocumentsItem) => recentDocument.createdBy,
+      getDisplayDate: (recentDocument: RecentDocumentsItem) => '' + recentDocument.lastViewed,
       getLocalID: () => 0,
     }
 
@@ -183,19 +177,27 @@ describe('HomepageContent', () => {
     return { mockHandleOpenDocument, mockHandleOpenFolder, mockHandleTrashDocument }
   }
 
-  const checkRowContents = (
+  function checkRowContents(
     row: HTMLElement,
     documentName: string,
     lastRead: string,
     createdBy: string,
-    location: string,
-  ) => {
+    location?: RecentDocumentsItemLocation,
+  ) {
     const columns = within(row).getAllByRole('cell')
     expect(columns).toHaveLength(4)
     expect(columns[0]).toHaveTextContent(documentName)
     expect(columns[1]).toHaveTextContent(lastRead)
     expect(columns[2]).toHaveTextContent(createdBy)
-    expect(columns[3]).toHaveTextContent(location)
+    let locationText = ''
+    if (location?.type === 'path') {
+      locationText = location.path.at(-1)!
+    } else if (location?.type === 'shared-with-me') {
+      locationText = 'Shared with me'
+    } else {
+      locationText = 'My files'
+    }
+    expect(columns[3]).toHaveTextContent(locationText)
   }
 
   afterEach(cleanup)

@@ -1,12 +1,11 @@
 import { Result, ServerTime } from '@proton/docs-shared'
-import { RecentDocumentsService } from './RecentDocumentsService'
+import { RecentDocumentsItem, RecentDocumentsService } from './recent-documents'
 import type { DecryptedNode, DriveCompat } from '@proton/drive-store/lib'
-import { RecentDocumentItem } from './RecentDocumentItem'
-import type { DocsApi } from '../../Api/DocsApi'
+import type { DocsApi } from './../Api/DocsApi'
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { RecentDocumentAPIItem } from '../../Api/Types/GetRecentsResponse'
+import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces'
-import type { CacheService } from '../CacheService'
+import type { CacheService } from './CacheService'
 
 describe('RecentDocumentsService', () => {
   const mockData: RecentDocumentAPIItem[] = [
@@ -157,37 +156,33 @@ describe('RecentDocumentsService', () => {
 
   describe('trashDocument', () => {
     test('should throw error if document has no parent link ID', async () => {
-      const mockItem = new RecentDocumentItem(
-        'test',
-        'link1',
-        '', // empty parentLinkId
-        'volume1',
-        new ServerTime(1698765432),
-        'test@proton.ch',
-        ['location'],
-        false,
-        'share1',
-        false,
-        ['path'],
-      )
+      const mockItem = RecentDocumentsItem.create({
+        name: 'test',
+        linkId: 'link1',
+        parentLinkId: '', // empty parentLinkId
+        volumeId: 'volume1',
+        lastViewed: new ServerTime(1698765432),
+        createdBy: 'test@proton.ch',
+        location: { type: 'root' },
+        isSharedWithMe: false,
+        shareId: 'share1',
+      })
 
       await expect(service.trashDocument(mockItem)).rejects.toThrow('Node does not have parent link ID')
     })
 
     test('should successfully trash document', async () => {
-      const mockItem = new RecentDocumentItem(
-        'test',
-        'link1',
-        'parent1',
-        'volume1',
-        new ServerTime(1698765432),
-        'test@proton.ch',
-        ['location'],
-        false,
-        'share1',
-        false,
-        ['path'],
-      )
+      const mockItem = RecentDocumentsItem.create({
+        name: 'test',
+        linkId: 'link1',
+        parentLinkId: 'parent1',
+        volumeId: 'volume1',
+        lastViewed: new ServerTime(1698765432),
+        createdBy: 'test@proton.ch',
+        location: { type: 'root' },
+        isSharedWithMe: false,
+        shareId: 'share1',
+      })
 
       await service.trashDocument(mockItem)
 
@@ -198,19 +193,17 @@ describe('RecentDocumentsService', () => {
 
   describe('cacheSnapshot', () => {
     test('should successfully cache snapshot', async () => {
-      const mockItem = new RecentDocumentItem(
-        'test',
-        'link1',
-        'parent1',
-        'volume1',
-        new ServerTime(1698765432),
-        'test@proton.ch',
-        ['location'],
-        false,
-        'share1',
-        false,
-        ['path'],
-      )
+      const mockItem = RecentDocumentsItem.create({
+        name: 'test',
+        linkId: 'link1',
+        parentLinkId: 'parent1',
+        volumeId: 'volume1',
+        lastViewed: new ServerTime(1698765432),
+        createdBy: 'test@proton.ch',
+        location: { type: 'root' },
+        isSharedWithMe: false,
+        shareId: 'share1',
+      })
 
       service.setSnapshotItem(mockItem)
       await service.cacheSnapshot()
