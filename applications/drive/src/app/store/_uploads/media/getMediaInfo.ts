@@ -2,6 +2,7 @@ import type { RawProcessorWorkerInterface } from '@proton/raw-images';
 import { createWorker } from '@proton/raw-images';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import {
+    getFileExtension,
     isCompatibleCBZ,
     isHEIC,
     isRAWExtension,
@@ -68,7 +69,7 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
     },
     {
         checker: (mimeType: string, name?: string) => {
-            const extension = (name || '').split('.').pop();
+            const extension = getFileExtension(name);
             return (
                 (isRAWPhoto(mimeType) || isRAWExtension(extension)) &&
                 isRAWThumbnailExtractionSupported(mimeType, extension)
