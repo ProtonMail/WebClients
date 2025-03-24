@@ -30,7 +30,7 @@ const getInitialState = (mode: 'sso' | 'standalone', oldUID?: string, oldLocalID
     if (mode === 'standalone') {
         return {
             UID: oldUID,
-            localID: undefined,
+            localID: oldLocalID,
             basename: undefined,
         };
     }
