@@ -141,7 +141,7 @@ export const PhotosWithAlbumsView: FC = () => {
                 console.error('photos addition failed', e);
             }
         },
-        [volumeId, shareId, linkId, navigateToAlbum, addAlbumPhotos]
+        [volumeId, shareId, linkId, navigateToAlbum, addAlbumPhotos, createNotification]
     );
 
     const onCreateAlbumWithPhotos = useCallback(
