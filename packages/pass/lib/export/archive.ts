@@ -8,6 +8,7 @@ import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
 import type { ExportThunk } from '@proton/pass/store/selectors';
 import type { FileDescriptor, IndexedByShareIdAndItemId, ItemRevision } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export type ExportFileStream = InputWithoutMeta | InputWithSizeMeta;
@@ -20,7 +21,7 @@ export const archivePath = (filename: string, subpath?: string) => {
 
 export const getArchiveName = (format: string) => {
     const timestamp = new Date().toISOString().split('T')[0];
-    return `${PASS_APP_NAME}_export_${timestamp}.${format}`;
+    return `${PASS_APP_NAME}_export_${timestamp}_${getEpoch()}.${format}`;
 };
 
 export async function* createExportAttachmentsStream(

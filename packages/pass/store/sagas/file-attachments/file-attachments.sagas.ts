@@ -31,6 +31,7 @@ import {
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import type { ItemRevision } from '@proton/pass/types';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 const initiateUpload = createRequestSaga({
@@ -78,8 +79,10 @@ const downloadFile = createRequestSaga({
             })
         );
 
-        await fileStorage.writeFile(fileID, downloadStream);
-        return fileID;
+        const fileRef = uniqueId(32);
+        await fileStorage.writeFile(fileRef, downloadStream);
+
+        return fileRef;
     },
 });
 
@@ -95,8 +98,9 @@ const downloadPublicChunk = createRequestSaga({
             })
         );
 
-        await fileStorage.writeFile(fileID, downloadStream);
-        return fileID;
+        const fileRef = uniqueId(32);
+        await fileStorage.writeFile(fileRef, downloadStream);
+        return fileRef;
     },
 });
 
