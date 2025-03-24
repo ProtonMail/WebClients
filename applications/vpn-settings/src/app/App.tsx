@@ -34,8 +34,8 @@ const bootstrapApp = () => {
     if (Object.values(publicRoutes).some((value) => location.pathname.endsWith(value))) {
         removeSessions({ api });
     }
-    const session = initStandaloneSession({ api });
-    const privateApp = Boolean(authentication.UID || session);
+    const session = initStandaloneSession({ authentication, api });
+    const privateApp = Boolean(session);
     return {
         store: setupStore({ mode: privateApp ? 'default' : 'public' }),
         privateApp,
