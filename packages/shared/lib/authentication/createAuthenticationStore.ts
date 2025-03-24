@@ -30,7 +30,7 @@ const getInitialState = (mode: 'sso' | 'standalone', oldUID?: string, oldLocalID
     if (mode === 'standalone') {
         return {
             UID: oldUID,
-            localID: undefined,
+            localID: oldLocalID,
             basename: undefined,
         };
     }
@@ -127,9 +127,11 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
         setClientKey(clientKey);
         setOfflineKey(offlineKey);
 
-        if (newLocalID !== undefined && mode === 'sso') {
+        if (newLocalID !== undefined) {
             setLocalID(newLocalID);
-            basename = getBasename(newLocalID);
+            if (mode === 'sso') {
+                basename = getBasename(newLocalID);
+            }
         } else {
             setLocalID(undefined);
             basename = undefined;

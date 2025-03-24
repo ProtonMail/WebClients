@@ -1,7 +1,3 @@
-import { useEffect } from 'react';
-
-import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
-import useApi from '@proton/components/hooks/useApi';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type PersistedSession, SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
@@ -15,7 +11,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
 import noop from '@proton/utils/noop';
 
-const clearSession = ({
+export const clearSession = ({
     session,
     api,
     revokeSession,
@@ -25,13 +21,13 @@ const clearSession = ({
     revokeSession?: boolean;
 }) => {
     if (revokeSession) {
-        const uidApi = getUIDApi(session.UID, api);
+        const uidApi = getSilentApi(getUIDApi(session.UID, api));
         uidApi(revoke()).catch(noop);
     }
     removePersistedSession(session).catch(noop);
 };
 
-const clear = ({ api }: { api: Api }) => {
+export const handleLogoutFromURL = ({ api }: { api: Api }) => {
     const params = parseLogoutURL(new URL(window.location.href));
 
     if (!params.logout) {
@@ -68,16 +64,3 @@ const clear = ({ api }: { api: Api }) => {
         }
     });
 };
-
-const HandleLogout = () => {
-    const api = useApi();
-
-    useEffect(() => {
-        registerSessionListener({ type: 'all' });
-        clear({ api });
-    }, []);
-
-    return null;
-};
-
-export default HandleLogout;

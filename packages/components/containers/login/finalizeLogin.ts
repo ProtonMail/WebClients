@@ -49,9 +49,24 @@ export const finalizeLogin = async ({
         });
     }
 
-    if (appName !== APPS.PROTONACCOUNT) {
+    if (appName === APPS.PROTONADMIN) {
         const user = cache.data.user || (await syncUser(cache));
         const trusted = false;
+
+        const validatedSession = attemptResume
+            ? await maybeResumeSessionByUser({
+                  api,
+                  User: user,
+                  options: { source: null },
+              })
+            : null;
+        if (validatedSession) {
+            await api(revoke()).catch(noop);
+            return {
+                to: AuthStep.DONE,
+                session: { data: validatedSession, loginPassword, flow: 'login' },
+            };
+        }
 
         const sessionResult = await persistSession({
             ...authResponse,
