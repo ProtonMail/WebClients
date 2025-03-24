@@ -73,6 +73,8 @@ export const newElementsState = ({
     beforeFirstLoad = true,
     taskRunning = { labelIDs: [], timeoutID: undefined },
 }: NewStateParams & { taskRunning?: TaskRunningInfo } = {}): ElementsState => {
+    // TODO, we could add a default value for elementID and messageID in the future
+    // Once the old MailboxContainer is removed. Adding default value breaks some e2e and unit tests right now
     const defaultParams: ElementsStateParams = {
         labelID: MAILBOX_LABEL_IDS.INBOX,
         conversationMode: true,

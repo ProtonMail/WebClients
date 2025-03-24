@@ -40,6 +40,7 @@ import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/
 
 import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
+import { MailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import type { AttachmentsState } from 'proton-mail/store/attachments/attachmentsTypes';
 import { composersInitialState } from 'proton-mail/store/composers/composersSlice';
 import { mailContactsInitialState } from 'proton-mail/store/contacts/contactsSlice';
@@ -122,7 +123,9 @@ const TestProvider = ({ children, history }: Props) => {
                                                                             <Route path={MAIN_ROUTE_PATH}>
                                                                                 <EncryptedSearchProvider>
                                                                                     <LabelActionsContextProvider>
-                                                                                        {children}
+                                                                                        <MailboxLayoutProvider>
+                                                                                            {children}
+                                                                                        </MailboxLayoutProvider>
                                                                                     </LabelActionsContextProvider>
                                                                                 </EncryptedSearchProvider>
                                                                             </Route>
