@@ -89,7 +89,7 @@ interface Options {
     mailSettings: MailSettings;
 }
 
-interface ReturnValue {
+export interface ElementsStructure {
     labelID: string;
     elements: Element[];
     elementIDs: string[];
@@ -99,7 +99,7 @@ interface ReturnValue {
 }
 
 interface UseElements {
-    (options: Options): ReturnValue;
+    (options: Options): ElementsStructure;
 }
 
 export const useElements: UseElements = ({
@@ -172,7 +172,7 @@ export const useElements: UseElements = ({
         return [...labels, ...folders].map(({ ID }: Label) => ID);
     }, [labels.length, folders.length]);
 
-    useMemo(() => {
+    useEffect(() => {
         const { rawLabelID, elementID, messageID } = getParametersFromPath(location.pathname);
 
         if (!rawLabelID) {

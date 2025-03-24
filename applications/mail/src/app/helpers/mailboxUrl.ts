@@ -31,9 +31,6 @@ export const setParamsInLocation = (location: Location, params: MailUrlParams): 
     pathname: getUrlPathname(params),
 });
 
-export const setParamsInUrl = (location: Location, params: MailUrlParams): string =>
-    getUrlPathname(params) + location.search;
-
 export const getParamsFromPathname = (pathname: string): match<MailUrlParams> =>
     matchPath(pathname, { path: MAIN_ROUTE_PATH }) as match<MailUrlParams>;
 
@@ -135,6 +132,3 @@ export const setSortInUrl = (location: Location, sort: Sort) =>
 
 export const setFilterInUrl = (location: Location, filter: Filter) =>
     changeSearchParams(location.pathname, location.hash, { page: undefined, filter: filterToString(filter) });
-
-export const setKeywordInUrl = (location: Location, keyword: string) =>
-    changeSearchParams(location.pathname, location.hash, { page: undefined, keyword: keywordToString(keyword) });
