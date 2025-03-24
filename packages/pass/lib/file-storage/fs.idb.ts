@@ -1,7 +1,10 @@
+import type { IDBPTransaction } from 'idb';
 import { type DBSchema, type IDBPDatabase, deleteDB, openDB } from 'idb';
 
-import type { MaybeNull } from '@proton/pass/types';
+import { FileStorageGarbageCollector } from '@proton/pass/lib/file-storage/fs.gc';
+import type { AnyStorage, Maybe, MaybeNull, StorageData } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import noop from '@proton/utils/noop';
 
 import type { FileBuffer, FileStorage } from './types';
 
@@ -84,7 +87,26 @@ export const createIDBFileReadableStream = (filename: string): ReadableStream<Fi
     });
 };
 
+/** Removes all stored chunks and metadata for a given file.
+ * Handles cleaning-up partial writes that may have failed. */
+const getFileRemoveTransaction =
+    (tx: IDBPTransaction<PassFileDB, ['files', 'metadata'], 'readwrite'>) => (filename: string, length: number) => [
+        tx.objectStore('metadata').delete(filename).catch(noop),
+        ...Array.from({ length }).map((_, idx) =>
+            tx.objectStore('files').delete(getFileChunkName(filename, idx)).catch(noop)
+        ),
+        tx.done,
+    ];
+
 export class FileStorageIDB implements FileStorage {
+    gc: Maybe<FileStorageGarbageCollector>;
+
+    type: string = 'IDB';
+
+    attachGarbageCollector(storage: AnyStorage<StorageData>) {
+        this.gc = new FileStorageGarbageCollector(this, storage);
+    }
+
     async readFile(filename: string) {
         try {
             const stream = createIDBFileReadableStream(filename);
@@ -99,16 +121,16 @@ export class FileStorageIDB implements FileStorage {
 
             return new File(blobParts, filename);
         } catch (err) {
-            logger.warn('[fs:IDB] Could not resolve file', err);
+            logger.warn('[fs::IDB] Could not resolve file', err);
             return;
         }
     }
 
     async writeFile(filename: string, file: FileBuffer | ReadableStream<FileBuffer>, signal?: AbortSignal) {
-        try {
-            const db = await openPassFileDB();
-            if (!db) throw new Error('No database found');
+        const db = await openPassFileDB();
+        let chunkIndex = 0;
 
+        try {
             if (signal) {
                 if (signal.aborted) db.close();
                 signal.addEventListener('abort', () => db.close());
@@ -118,39 +140,48 @@ export class FileStorageIDB implements FileStorage {
              * chunks until we consume the stream completely
              * and write the appropriate metadata on done */
             if (file instanceof ReadableStream) {
-                let chunkIndex = 0;
                 const reader = file.getReader();
 
                 while (true) {
                     const { done, value } = await reader.read();
                     if (done) break;
 
-                    const fileTx = db.transaction('files', 'readwrite');
+                    const tx = db.transaction(['files', 'metadata'], 'readwrite');
                     const fileKey = getFileChunkName(filename, chunkIndex);
-                    await Promise.all([fileTx.objectStore('files').put(value, fileKey), fileTx.done]);
                     chunkIndex++;
-                }
 
-                const metaTx = db.transaction('metadata', 'readwrite');
-                await Promise.all([
-                    metaTx.objectStore('metadata').put({ totalChunks: chunkIndex }, filename),
-                    metaTx.done,
-                ]);
+                    await Promise.all([
+                        tx.objectStore('files').put(value, fileKey),
+                        tx.objectStore('metadata').put({ totalChunks: chunkIndex }, filename),
+                        tx.done,
+                    ]);
+
+                    this.gc?.push(filename);
+                }
             } else {
                 /** When dealing with a blob : store the file
                  * as a single database entry. */
                 const tx = db.transaction(['files', 'metadata'], 'readwrite');
-                const fileKey = getFileChunkName(filename, 0);
+                const fileKey = getFileChunkName(filename, chunkIndex);
                 await Promise.all([
-                    await tx.objectStore('metadata').put({ totalChunks: 1 }, filename),
-                    await tx.objectStore('files').put(file, fileKey),
-                    await tx.done,
+                    tx.objectStore('metadata').put({ totalChunks: 1 }, filename),
+                    tx.objectStore('files').put(file, fileKey),
+                    tx.done,
                 ]);
             }
 
             db.close();
+            this.gc?.push(filename);
         } catch (err) {
-            logger.warn('[fs:IDB] Could not write file', err);
+            logger.warn('[fs::IDB] Could not write file', err);
+
+            /** Remove any partial data thay may have been written.
+             * Metadata may have not been written, use `chunkIndex`
+             * to remove possible stale chunks. */
+            const tx = db.transaction(['files', 'metadata'], 'readwrite');
+            await Promise.all(getFileRemoveTransaction(tx)(filename, chunkIndex));
+            this.gc?.pop(filename);
+
             throw err;
         }
     }
@@ -165,22 +196,18 @@ export class FileStorageIDB implements FileStorage {
 
             if (metadata) {
                 const { totalChunks } = metadata;
-                await tx.objectStore('metadata').delete(filename);
-
-                /** Delete each chunk sequentially */
-                for (let idx = 0; idx < totalChunks; idx++) {
-                    await tx.objectStore('files').delete(getFileChunkName(filename, idx));
-                }
+                await Promise.all(getFileRemoveTransaction(tx)(filename, totalChunks));
             }
 
-            await tx.done;
             db.close();
-        } catch (err) {
-            logger.warn('[fs:IDB] Could not delete file', err);
-        }
+            this.gc?.pop(filename);
+        } catch {}
     }
 
     async clearAll() {
-        await deleteDB(FILE_DB_NAME).catch((err) => logger.warn('[fs:IDB] Could not clear all files', err));
+        try {
+            await this.gc?.clearLocalQueue();
+            await deleteDB(FILE_DB_NAME);
+        } catch {}
     }
 }
