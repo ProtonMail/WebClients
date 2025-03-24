@@ -330,12 +330,11 @@ export const usePhotosWithAlbumsView = () => {
         void loadAlbums(abortController.signal);
     };
 
-    const refreshSharedWithMeAlbums = () => {
+    const refreshSharedWithMeAlbums = (abortSignal: AbortSignal = new AbortController().signal) => {
         if (!volumeId || !shareId) {
             return;
         }
-        const abortController = new AbortController();
-        void loadSharedWithMeAlbums(abortController.signal);
+        return loadSharedWithMeAlbums(abortSignal);
     };
 
     const refreshAlbumPhotos = useCallback(
