@@ -1,10 +1,9 @@
 import { useAuthentication } from '@proton/components'
 import { useContactEmails } from '@proton/mail/contactEmails/hooks'
-import { DateFormatter } from '@proton/docs-core'
+import { DateFormatter, type RecentDocumentsItem } from '@proton/docs-core'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useState } from 'react'
-import type { RecentDocumentItem } from '@proton/docs-core/lib/Services/RecentDocuments/RecentDocumentItem'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
@@ -12,7 +11,7 @@ import { useApplication } from '~/utils/application-context'
 // filter documents
 // ----------------
 
-function applyFilter(item: RecentDocumentItem, filter?: string) {
+function applyFilter(item: RecentDocumentsItem, filter?: string) {
   if (filter === 'owned-by-me') {
     return !item.isSharedWithMe
   }
@@ -24,7 +23,7 @@ function applyFilter(item: RecentDocumentItem, filter?: string) {
   return true
 }
 
-export function filterDocuments(items?: RecentDocumentItem[], searchText?: string, filter?: string) {
+export function filterDocuments(items?: RecentDocumentsItem[], searchText?: string, filter?: string) {
   if (!items || items.length === 0 || !(searchText || filter)) {
     return items || []
   }
@@ -45,7 +44,7 @@ export function filterDocuments(items?: RecentDocumentItem[], searchText?: strin
 // document owner display name
 // ---------------------------
 
-export function getDocumentOwnerDisplayName(recentDocument: RecentDocumentItem, contactEmails?: ContactEmail[]) {
+export function getDocumentOwnerDisplayName(recentDocument: RecentDocumentsItem, contactEmails?: ContactEmail[]) {
   if (!recentDocument.isSharedWithMe) {
     return c('Info').t`Me`
   }
@@ -71,8 +70,8 @@ const dateFormatter = new DateFormatter()
 export function useRecentDocumentsValue({ searchText, filter }: { searchText?: string; filter?: string }) {
   const application = useApplication()
   const state = application.recentDocumentsService.state
-  const [recents, setRecents] = useState<RecentDocumentItem[]>([])
-  const [filteredItems, setFilteredItems] = useState<RecentDocumentItem[]>([])
+  const [recents, setRecents] = useState<RecentDocumentsItem[]>([])
+  const [filteredItems, setFilteredItems] = useState<RecentDocumentsItem[]>([])
   const [contactEmails] = useContactEmails()
   const { getLocalID } = useAuthentication()
 
@@ -91,18 +90,21 @@ export function useRecentDocumentsValue({ searchText, filter }: { searchText?: s
   }, [application.recentDocumentsService])
 
   const handleOpenDocument = useCallback(
-    (recentDocument: RecentDocumentItem) => {
-      const to = `/doc?mode=open&volumeId=${recentDocument.volumeId}&linkId=${recentDocument.linkId}`
+    ({ volumeId, linkId }: RecentDocumentsItem) => {
+      const to = `/doc?mode=open&volumeId=${volumeId}&linkId=${linkId}`
       window.open(getAppHref(to, APPS.PROTONDOCS, getLocalID()))
     },
     [getLocalID],
   )
 
   const handleOpenFolder = useCallback(
-    (recentDocument: RecentDocumentItem) => {
+    ({ parentLinkId, shareId, isSharedWithMe }: RecentDocumentsItem) => {
       let to = '/'
-      if (recentDocument.parentLinkId) {
-        to = `/${recentDocument.shareId}/folder/${recentDocument.parentLinkId}`
+      if (parentLinkId) {
+        to = `/${shareId}/folder/${parentLinkId}`
+      }
+      if (isSharedWithMe) {
+        to = `/shared-with-me`
       }
       window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()))
     },
@@ -110,20 +112,20 @@ export function useRecentDocumentsValue({ searchText, filter }: { searchText?: s
   )
 
   const handleTrashDocument = useCallback(
-    (recentDocument: RecentDocumentItem) => {
+    (recentDocument: RecentDocumentsItem) => {
       void application.recentDocumentsService.trashDocument(recentDocument)
     },
     [application.recentDocumentsService],
   )
 
   const getDisplayNameForRecentDocument = useCallback(
-    (recentDocument: RecentDocumentItem): string | undefined =>
+    (recentDocument: RecentDocumentsItem): string | undefined =>
       getDocumentOwnerDisplayName(recentDocument, contactEmails),
     [contactEmails],
   )
 
   const getDisplayDateForRecentDocument = useCallback(
-    (recentDocument: RecentDocumentItem): string => dateFormatter.formatDate(recentDocument.lastViewed.date),
+    ({ lastViewed }: RecentDocumentsItem): string => dateFormatter.formatDate(lastViewed.date),
     [],
   )
 
