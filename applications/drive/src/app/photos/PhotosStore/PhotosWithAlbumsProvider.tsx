@@ -1,6 +1,9 @@
 import type { FC, ReactNode } from 'react';
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
+import { c, msgid } from 'ttag';
+
+import { useNotifications } from '@proton/components/index';
 import {
     queryAddAlbumPhotos,
     queryAlbumPhotos,
@@ -22,6 +25,7 @@ import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
 import { useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
+import { useBatchHelper } from '../../store/_utils/useBatchHelper';
 import { VolumeType, useVolumesState } from '../../store/_volumes';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useCreatePhotosWithAlbums } from './useCreatePhotosWithAlbums';
@@ -45,6 +49,8 @@ export interface DecryptedAlbum extends DecryptedLink {
         isEditor: boolean;
     };
 }
+
+export const MAX_ADD_ALBUM_PHOTOS_BATCH = 10;
 
 /**
  *
@@ -87,6 +93,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { getPhotoCloneForAlbum } = useLinkActions();
     const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const request = useDebouncedRequest();
+    const batchHelper = useBatchHelper();
     const driveEventManager = useDriveEventManager();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [albumPhotosLoading, setIsAlbumPhotosLoading] = useState<boolean>(true);
@@ -99,6 +106,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { getSharePermissions } = useDirectSharingInfo();
     const { getLink } = useLink();
     const { setVolumeShareIds } = useVolumesState();
+
+    const { createNotification } = useNotifications();
 
     useEffect(() => {
         const signal = new AbortController().signal;
@@ -396,64 +405,81 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (!shareId || !volumeId) {
                 throw new Error('Photo volume or share not found');
             }
-            const links = await Promise.all(
-                LinkIDs.map(async (linkId) => {
-                    const link = await getLink(abortSignal, albumShareId, linkId);
-                    const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
-                        abortSignal,
-                        albumShareId,
-                        albumLinkId,
-                        link.name
-                    );
-                    return {
-                        LinkID: link.linkId,
-                        Hash: Hash,
-                        Name: Name,
-                        NodePassphrase: NodePassphrase,
-                        NodePassphraseSignature: NodePassphraseSignature,
-                        NameSignatureEmail: link.nameSignatureEmail,
-                        SignatureEmail: link.signatureEmail,
-                        ContentHash: link.activeRevision?.photo?.contentHash,
-                    };
-                })
-            );
 
-            const addAlbumPhotosCall = async () => {
-                const { Code, Responses } = await request<{
-                    Responses: {
-                        LinkID: string;
-                        Response: {
-                            Code: number;
-                            Error: string;
-                            Details: {
-                                NewLinkID: string;
+            const { name: albumName } = await getLink(abortSignal, albumShareId, albumLinkId);
+
+            const result = await batchHelper(abortSignal, {
+                shareId: albumShareId,
+                linkIds: LinkIDs,
+                batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
+                allowedCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
+                query: async (batchLinkIds) => {
+                    const links = await Promise.all(
+                        batchLinkIds.map(async (linkId) => {
+                            const link = await getLink(abortSignal, albumShareId, linkId);
+                            const { Hash, Name, NodePassphrase, NodePassphraseSignature } = await getPhotoCloneForAlbum(
+                                abortSignal,
+                                albumShareId,
+                                albumLinkId,
+                                link.name
+                            );
+                            return {
+                                LinkID: link.linkId,
+                                Hash: Hash,
+                                Name: Name,
+                                NodePassphrase: NodePassphrase,
+                                NodePassphraseSignature: NodePassphraseSignature,
+                                NameSignatureEmail: link.nameSignatureEmail,
+                                SignatureEmail: link.signatureEmail,
+                                ContentHash: link.activeRevision?.photo?.contentHash,
                             };
-                        };
-                    }[];
-                    Code: number;
-                }>(
-                    queryAddAlbumPhotos(volumeId, albumLinkId, {
+                        })
+                    );
+                    return queryAddAlbumPhotos(volumeId, albumLinkId, {
                         AlbumData: links,
-                    }),
-                    abortSignal
-                );
-                if (Code !== 1001) {
-                    throw new Error('Photo(s) could not be added to album');
-                }
-                for (const { Response } of Responses) {
-                    if (Response.Code !== 1000 && Response.Code !== API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
-                        throw new Error(`Photo(s) could not be added to album: ${Response.Error || 'unknown'}`);
-                    }
-                }
-                // refreshing the album is only needed after adding photos for the first time to an album
-                if (albumPhotos.length === 0) {
-                    void loadAlbums(abortSignal);
-                }
-                void loadAlbumPhotos(abortSignal, albumShareId, albumLinkId);
-            };
-            return addAlbumPhotosCall();
+                    });
+                },
+            });
+            // refreshing the album is only needed after adding photos for the first time to an album
+            if (albumPhotos.length === 0) {
+                void loadAlbums(abortSignal);
+            }
+            void loadAlbumPhotos(abortSignal, albumShareId, albumLinkId);
+
+            const nbFailures = Object.keys(result.failures).length;
+            const nbSuccesses = result.successes.length;
+            if (nbFailures) {
+                createNotification({
+                    type: 'error',
+                    text: c('Notification').ngettext(
+                        msgid`${nbFailures} photo failed to be added to "${albumName}"`,
+                        `${nbFailures} photos failed to be added to "${albumName}"`,
+                        nbFailures
+                    ),
+                });
+            }
+            if (nbSuccesses) {
+                createNotification({
+                    type: 'success',
+                    text: c('Notification').ngettext(
+                        msgid`${nbSuccesses} photo added to "${albumName}"`,
+                        `${nbSuccesses} photos added to "${albumName}"`,
+                        nbSuccesses
+                    ),
+                });
+            }
         },
-        [request, loadAlbumPhotos, loadAlbums, getLink, getPhotoCloneForAlbum, volumeId, shareId, albumPhotos]
+        [
+            loadAlbumPhotos,
+            loadAlbums,
+            getLink,
+            getPhotoCloneForAlbum,
+            volumeId,
+            shareId,
+            albumPhotos,
+            batchHelper,
+            createNotification,
+        ]
     );
 
     const addPhotoAsCover = useCallback(
