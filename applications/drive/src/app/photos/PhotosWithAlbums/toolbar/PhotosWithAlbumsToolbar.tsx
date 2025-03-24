@@ -13,19 +13,16 @@ import {
     Toolbar,
     ToolbarButton,
     useActiveBreakpoint,
-    useConfirmActionModal,
     usePopperAnchor,
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
-import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import {
     type OnFileSkippedSuccessCallbackData,
     type OnFileUploadSuccessCallbackData,
     type PhotoGridItem,
     type PhotoLink,
-    useSharedWithMeActions,
 } from '../../../store';
 import { isPhotoGroup } from '../../../store/_photos';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
@@ -222,6 +219,7 @@ interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGaller
     data: PhotoGridItem[];
     album: DecryptedAlbum;
     onDeleteAlbum: () => void;
+    onLeaveAlbum: () => void;
     onShowDetails: () => void;
 }
 
@@ -246,12 +244,10 @@ const ToolbarRightActionsAlbumGallery = ({
     album,
     data,
     onDeleteAlbum,
+    onLeaveAlbum,
     onShowDetails,
 }: ToolbarRightActionsAlbumGalleryProps) => {
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const { removeMe } = useSharedWithMeActions();
-    const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const { navigateToAlbums } = useDriveNavigation();
 
     return (
         <>
@@ -297,22 +293,11 @@ const ToolbarRightActionsAlbumGallery = ({
             <AlbumGalleryDropdownButton
                 onDelete={onDeleteAlbum}
                 onShowDetails={onShowDetails}
-                onLeave={() => {
-                    if (!album.sharingDetails?.shareId) {
-                        return;
-                    }
-                    removeMe(
-                        new AbortController().signal,
-                        showConfirmModal,
-                        album.sharingDetails.shareId,
-                        navigateToAlbums
-                    );
-                }}
+                onLeave={onLeaveAlbum}
                 isAdmin={album.permissions.isAdmin}
                 isOwner={album.permissions.isOwner}
             />
             {linkSharingModal}
-            {confirmModal}
         </>
     );
 };
@@ -358,6 +343,7 @@ interface PhotosWithAlbumToolbarProps {
     onSelectCover?: () => Promise<void>;
     album?: DecryptedAlbum;
     onDeleteAlbum?: () => void;
+    onLeaveAlbum?: () => void;
     onShowDetails?: () => void;
 }
 
@@ -377,6 +363,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onSelectCover,
     album,
     onDeleteAlbum,
+    onLeaveAlbum,
     onShowDetails,
 }) => {
     const { viewportWidth } = useActiveBreakpoint();
@@ -405,20 +392,26 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                 )}
                 {tabSelection === 'albums' && <ToolbarRightActionsAlbums createAlbumModal={createAlbumModal} />}
 
-                {tabSelection === 'albums-gallery' && !hasSelection && album && onDeleteAlbum && onShowDetails && (
-                    <ToolbarRightActionsAlbumGallery
-                        uploadDisabled={uploadDisabled}
-                        shareId={shareId}
-                        linkId={linkId}
-                        requestDownload={requestDownload}
-                        data={data}
-                        onFileUpload={onFileUpload}
-                        onFileSkipped={onFileSkipped}
-                        album={album}
-                        onDeleteAlbum={onDeleteAlbum}
-                        onShowDetails={onShowDetails}
-                    />
-                )}
+                {tabSelection === 'albums-gallery' &&
+                    !hasSelection &&
+                    album &&
+                    onDeleteAlbum &&
+                    onLeaveAlbum &&
+                    onShowDetails && (
+                        <ToolbarRightActionsAlbumGallery
+                            uploadDisabled={uploadDisabled}
+                            shareId={shareId}
+                            linkId={linkId}
+                            requestDownload={requestDownload}
+                            data={data}
+                            onFileUpload={onFileUpload}
+                            onFileSkipped={onFileSkipped}
+                            album={album}
+                            onDeleteAlbum={onDeleteAlbum}
+                            onLeaveAlbum={onLeaveAlbum}
+                            onShowDetails={onShowDetails}
+                        />
+                    )}
 
                 {hasSelection && !showMoreButtonDropdown && (
                     <>
