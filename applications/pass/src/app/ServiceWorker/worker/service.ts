@@ -2,6 +2,7 @@ import { type ServiceWorkerMessage } from 'proton-pass-web/app/ServiceWorker/typ
 import { COMMIT } from 'proton-pass-web/app/config';
 
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -38,6 +39,11 @@ const onConnect = async () => {
     await cacheOfflineAssets(false);
 };
 
+const onFileStorageGC = (filenames: string[]) => {
+    logger.info(`[ServiceWorker] Removing ${filenames.length} file(s)`);
+    filenames.forEach((filename) => fileStorage.deleteFile(filename).catch(noop));
+};
+
 self.addEventListener('install', (event) =>
     event.waitUntil(
         (() => {
@@ -53,6 +59,7 @@ self.addEventListener('activate', async (event) =>
         (() => {
             logger.debug(`[ServiceWorker] Activation in progress..`);
             void cleanCache();
+            void fileStorage.clearAll();
             return onClaim();
         })()
     )
@@ -75,5 +82,6 @@ ServiceWorkerMessageBroker.register('connect', onConnect);
 ServiceWorkerMessageBroker.register('abort', ({ requestId }) => fetchController.abort(requestId));
 ServiceWorkerMessageBroker.register('claim', onClaim);
 ServiceWorkerMessageBroker.register('unauthorized', () => clearCache().then(noop));
+ServiceWorkerMessageBroker.register('fs_gc', ({ filenames }) => onFileStorageGC(filenames));
 
 self.addEventListener('message', ServiceWorkerMessageBroker.onMessage);

@@ -12,7 +12,7 @@ import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/component
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
-import { autoRemove, fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
 import { exportData } from '@proton/pass/store/actions/creators/transfer';
 import { requestCancel } from '@proton/pass/store/request/actions';
@@ -91,8 +91,6 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
 
                         if (file) {
                             download(file, filename);
-                            autoRemove(filename, file.size);
-
                             createNotification({
                                 type: 'success',
                                 text: c('Info').t`Successfully exported all your items`,
