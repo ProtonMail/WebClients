@@ -101,9 +101,15 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
         sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD ||
         sessionRecoveryState === SessionRecoveryState.INSECURE;
 
-    const handleSignOutClick = () => {
+    const handleSignOutClick = (
+        {
+            ignoreSessionRecovery,
+        }: {
+            ignoreSessionRecovery: boolean;
+        } = { ignoreSessionRecovery: false }
+    ) => {
         closeUserDropdown();
-        if (sessionRecoveryInitiated) {
+        if (sessionRecoveryInitiated && !ignoreSessionRecovery) {
             setSessionRecoverySignOutConfirmPrompt(true);
         } else if (shouldShowConfirmSignOutModal({ user, authentication })) {
             setConfirmSignOutModal(true);
@@ -194,7 +200,7 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
             )}
             {renderSessionRecoverySignOutConfirmPrompt && (
                 <SessionRecoverySignOutConfirmPrompt
-                    onSignOut={() => handleSignOut(false)}
+                    onSignOut={() => handleSignOutClick({ ignoreSessionRecovery: true })}
                     {...sessionRecoverySignOutConfirmPrompt}
                 />
             )}
