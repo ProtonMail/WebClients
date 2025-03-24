@@ -92,7 +92,7 @@ export const handleLogout = async ({
     authentication.logout();
 
     if (mode === 'standalone') {
-        replaceUrl(getStandaloneLogoutURL());
+        replaceUrl(getStandaloneLogoutURL({ options }));
         return;
     }
 

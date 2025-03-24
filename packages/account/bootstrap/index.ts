@@ -197,11 +197,11 @@ export const loadSession = async ({
             }
 
             // Having a previously persisted localID potentially avoids a redirect to account.
-            const lastUsedLocaleId = getLastUsedLocalID();
+            const lastUsedLocalID = getLastUsedLocalID();
             // If specifying an email address, ignore the last used local id. We don't know if that local id maps
             // to the email since we don't store all addresses.
-            if (!extra.email && lastUsedLocaleId >= 0) {
-                localID = lastUsedLocaleId;
+            if (!extra.email && lastUsedLocalID >= 0) {
+                localID = lastUsedLocalID;
             } else {
                 throw new InvalidSessionError('Missing localID', extra);
             }
