@@ -125,6 +125,33 @@
 	}
 }
 
+.wallet-main-discover {
+	/* blur */
+	&::after {
+		content: '';
+		position: absolute;
+		inline-size: rem(260);
+		block-size: rem(260);
+		inset-inline-start: 0;
+		inset-block-start: rem(-160);
+		background: var(--interaction-norm-minor-1);
+		opacity: 0.6;
+		filter: blur(rem(50));
+		z-index: -1;
+		animation: blur-fadein 0.2s ease both;
+	}
+
+	@keyframes blur-fadein {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 0.6;
+		}
+	}
+}
+
 .notification {
 	&#{&} {
 		background-color: var(--interaction-norm);
