@@ -3,6 +3,7 @@ import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
 import { getDeviceSecretDataByUser } from '@proton/shared/lib/keys/device';
 import { changeSSOUserKeysPasswordHelper } from '@proton/shared/lib/keys/password';
@@ -37,6 +38,7 @@ export const changeSSOUserBackupPassword = ({
             keyPassword,
             clearKeyPassword: newBackupPassword,
             User: user,
+            source: SessionSource.Saml,
         });
     };
 };

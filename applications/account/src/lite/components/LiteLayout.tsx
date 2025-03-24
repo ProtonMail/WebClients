@@ -20,7 +20,11 @@ const LiteLayout = ({ searchParams, className, children }: Props) => {
         const theme = themeParam && parseInt(themeParam, 10);
 
         const action = searchParams.get('action') || undefined;
-        if (action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) {
+        if (
+            action === SupportedActions.SubscribeAccount ||
+            action === SupportedActions.SubscribeAccountLink ||
+            action === SupportedActions.VPNLite
+        ) {
             return 'lite-layout--dark-bg';
         }
         // needed class to be able to override some Carbon values for ET

@@ -234,7 +234,7 @@ export const DrawerProvider = ({
                                     trusted: authentication.getTrusted(),
                                     clientKey: authentication.getClientKey(),
                                     offlineKey: authentication.getOfflineKey(),
-                                    persistedAt: persistedSession?.persistedAt ?? Date.now(), // Backwards compatibility. Can be removed once Mail+Calendar are deployed
+                                    persistedSession,
                                     User: user,
                                     tag: versionCookieAtLoad,
                                 },

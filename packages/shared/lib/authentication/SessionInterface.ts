@@ -1,5 +1,11 @@
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 
+export enum SessionSource {
+    Proton,
+    Saml,
+    Oauth,
+}
+
 export type PersistedSessionBlob =
     | {
           keyPassword: string;
@@ -22,6 +28,7 @@ export interface DefaultPersistedSession {
     payloadVersion: 2 | 1;
     payloadType: 'default';
     persistedAt: number;
+    source: SessionSource;
 }
 
 export interface OfflinePersistedSession extends Omit<DefaultPersistedSession, 'payloadType'> {
