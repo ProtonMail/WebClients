@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -34,7 +34,6 @@ import { PhotosAlbumShareButton } from './PhotosAlbumShareButton';
 import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosMakeCoverButton } from './PhotosMakeCoverButton';
-import { PhotosPreviewButton } from './PhotosPreviewButton';
 import { PhotosRemoveAlbumPhotosButton } from './PhotosRemoveAlbumPhotosButton';
 import PhotosShareLinkButton from './PhotosShareLinkButton';
 import PhotosTrashButton from './PhotosTrashButton';
@@ -318,6 +317,30 @@ const ToolbarRightActionsAlbumGallery = ({
     );
 };
 
+interface SelectionDropdownButtonProps {
+    children: ReactNode;
+}
+
+const SelectionDropdownButton = ({ children }: SelectionDropdownButtonProps) => {
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    return (
+        <>
+            <DropdownButton
+                shape="ghost"
+                ref={anchorRef}
+                isOpen={isOpen}
+                onClick={toggle}
+                className="inline-flex flex-nowrap flex-row items-center toolbar-button"
+            >
+                <Icon name="three-dots-vertical" className="mr-2" /> {c('Action').t`More`}
+            </DropdownButton>
+            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                <DropdownMenu>{children}</DropdownMenu>
+            </Dropdown>
+        </>
+    );
+};
+
 interface PhotosWithAlbumToolbarProps {
     shareId: string;
     linkId: string;
@@ -343,7 +366,6 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     linkId,
     selectedItems,
     data,
-    onPreview,
     requestDownload,
     uploadDisabled,
     tabSelection,
@@ -357,8 +379,22 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onDeleteAlbum,
     onShowDetails,
 }) => {
+    const { viewportWidth } = useActiveBreakpoint();
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
+    const showMoreButtonDropdown = viewportWidth['<=medium'];
+    const showIconOnly =
+        !viewportWidth['>=large'] || (!hasMultipleSelected && viewportWidth['>=large'] && viewportWidth.large);
+    // Only show set cover button if photo selected is not already the cover
+    const canSelectCover = Boolean(
+        !hasMultipleSelected &&
+            onSelectCover &&
+            album &&
+            album.cover?.linkId !== selectedItems[0].linkId &&
+            album.permissions.isAdmin
+    );
+    const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos);
+    const canShare = !hasMultipleSelected || (album && album.permissions.isAdmin);
 
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
@@ -383,30 +419,81 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                     />
                 )}
 
-                {hasSelection && (
+                {hasSelection && !showMoreButtonDropdown && (
                     <>
-                        {!hasMultipleSelected && <PhotosPreviewButton onClick={() => onPreview?.()} />}
-                        <PhotosDownloadButton requestDownload={requestDownload} selectedLinks={selectedItems} />
-                        {/* Only show set cover button if photo selected is not already the cover */}
-                        {!hasMultipleSelected &&
-                            onSelectCover &&
-                            album &&
-                            album.cover?.linkId !== selectedItems[0].linkId &&
-                            album.permissions.isAdmin && <PhotosMakeCoverButton onSelectCover={onSelectCover} />}
-                        {!hasMultipleSelected && album && album.permissions.isAdmin && (
-                            <PhotosShareLinkButton selectedLinks={selectedItems} />
+                        <PhotosDownloadButton
+                            showIconOnly={showIconOnly}
+                            requestDownload={requestDownload}
+                            selectedLinks={selectedItems}
+                        />
+                        {canSelectCover && (
+                            <PhotosMakeCoverButton showIconOnly={showIconOnly} onSelectCover={onSelectCover!} />
                         )}
-                        <PhotosDetailsButton selectedLinks={selectedItems} />
+                        {canShare && (
+                            <PhotosShareLinkButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />
+                        )}
+                        <PhotosDetailsButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />
                         {addAlbumPhotosModal && (
-                            <PhotosAddAlbumPhotosButton onClick={() => addAlbumPhotosModal.openModal(true)} />
+                            <PhotosAddAlbumPhotosButton
+                                showIconOnly={showIconOnly}
+                                onClick={() => addAlbumPhotosModal.openModal(true)}
+                            />
                         )}
-                        {/* <Vr />
-                        <PhotosDetailsButton selectedLinks={selectedItems} />
-                        <Vr />*/}
-                        {album && album.permissions.isEditor && removeAlbumPhotos && (
-                            <PhotosRemoveAlbumPhotosButton onClick={removeAlbumPhotos} />
+                        {canRemoveAlbum && (
+                            <PhotosRemoveAlbumPhotosButton showIconOnly={showIconOnly} onClick={removeAlbumPhotos!} />
                         )}
-                        {!album && <PhotosTrashButton selectedLinks={selectedItems} />}
+                        {!album && <PhotosTrashButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />}
+                    </>
+                )}
+                {/* Selection Bar that appears when an item is selected (in the photo stream gallery or in album gallery) */}
+                {hasSelection && showMoreButtonDropdown && (
+                    <>
+                        <PhotosDownloadButton
+                            showIconOnly={showIconOnly}
+                            requestDownload={requestDownload}
+                            selectedLinks={selectedItems}
+                        />
+                        {addAlbumPhotosModal && (
+                            <PhotosAddAlbumPhotosButton
+                                showIconOnly={showIconOnly}
+                                onClick={() => addAlbumPhotosModal.openModal(true)}
+                            />
+                        )}
+                        <SelectionDropdownButton>
+                            {canSelectCover && (
+                                <PhotosMakeCoverButton
+                                    dropDownMenuButton={true}
+                                    showIconOnly={false}
+                                    onSelectCover={onSelectCover!}
+                                />
+                            )}
+                            {canShare && (
+                                <PhotosShareLinkButton
+                                    dropDownMenuButton={true}
+                                    showIconOnly={false}
+                                    selectedLinks={selectedItems}
+                                />
+                            )}
+                            <PhotosDetailsButton
+                                dropDownMenuButton={true}
+                                showIconOnly={false}
+                                selectedLinks={selectedItems}
+                            />
+                            {canRemoveAlbum && (
+                                <PhotosRemoveAlbumPhotosButton
+                                    dropDownMenuButton={true}
+                                    showIconOnly={false}
+                                    onClick={removeAlbumPhotos!}
+                                />
+                            )}
+                            {!album && (
+                                <PhotosTrashButton
+                                    dropDownMenuButton={true}
+                                    showIconOnly={false}
+                                    selectedLinks={selectedItems}
+                                />
+                            )}
+                        </SelectionDropdownButton>
                     </>
                 )}
             </div>
