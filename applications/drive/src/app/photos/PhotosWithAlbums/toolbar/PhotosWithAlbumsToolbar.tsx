@@ -390,6 +390,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
         !hasMultipleSelected &&
             onSelectCover &&
             album &&
+            selectedItems.length &&
             album.cover?.linkId !== selectedItems[0].linkId &&
             album.permissions.isAdmin
     );
