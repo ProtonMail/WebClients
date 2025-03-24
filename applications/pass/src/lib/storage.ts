@@ -3,6 +3,7 @@ import { getSessionKey } from 'proton-pass-web/lib/sessions';
 
 import { getBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
@@ -30,6 +31,12 @@ export const clearUserLocalData = (localID: number) => {
     localStorage.removeItem(getB2BEventsStorageKey(localID));
     localStorage.removeItem(getSpotlightStorageKey(localID));
     localStorage.removeItem(getBiometricsStorageKey(localID));
+
+    /** Web app may have multiple tabs opened : avoid
+     * wiping the full storage when clearing user data.
+     * Prefer targetting this client's GC queue */
+    if (DESKTOP_BUILD) void fileStorage.clearAll();
+    else void fileStorage.gc?.clear();
 };
 
 export const localGarbageCollect = async (encryptedSessions: EncryptedAuthSession[]) => {
