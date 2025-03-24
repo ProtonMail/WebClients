@@ -319,6 +319,7 @@ export const usePhotosWithAlbumsView = () => {
         const abortController = new AbortController();
         void loadPhotos(abortController.signal);
         void loadAlbums(abortController.signal);
+        void loadSharedWithMeAlbums(abortController.signal);
     };
 
     const refreshAlbums = () => {
@@ -327,6 +328,14 @@ export const usePhotosWithAlbumsView = () => {
         }
         const abortController = new AbortController();
         void loadAlbums(abortController.signal);
+    };
+
+    const refreshSharedWithMeAlbums = () => {
+        if (!volumeId || !shareId) {
+            return;
+        }
+        const abortController = new AbortController();
+        void loadSharedWithMeAlbums(abortController.signal);
     };
 
     const refreshAlbumPhotos = useCallback(
@@ -468,6 +477,7 @@ export const usePhotosWithAlbumsView = () => {
         isAlbumPhotosLoading,
         refreshAll,
         refreshAlbums,
+        refreshSharedWithMeAlbums,
         refreshPhotos,
         refreshAlbumPhotos,
         addAlbumPhoto,
