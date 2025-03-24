@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import type { PhotoLink } from '../../../store';
@@ -11,9 +12,10 @@ import type { PhotoLink } from '../../../store';
 interface Props {
     selectedLinks: PhotoLink[];
     requestDownload: (linkIds: string[]) => Promise<void>;
+    showIconOnly: boolean;
 }
 
-export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks }) => {
+export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks, showIconOnly }) => {
     const [loading, withLoading] = useLoading();
 
     const onClick = () => {
@@ -30,8 +32,10 @@ export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks
             data-testid="toolbar-download-selection"
             className="inline-flex flex-nowrap flex-row items-center"
         >
-            <Icon name="arrow-down-line" className="mr-2" />
-            {c('Action').ngettext(msgid`Download photo`, `Download photos`, selectedLinks.length)}
+            <Icon name="arrow-down-line" className={clsx(!showIconOnly && 'mr-2')} />
+            <span className={clsx(showIconOnly && 'sr-only')}>
+                {c('Action').ngettext(msgid`Download photo`, `Download photos`, selectedLinks.length)}
+            </span>
         </ToolbarButton>
     );
 };
