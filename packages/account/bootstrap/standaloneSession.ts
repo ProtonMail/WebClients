@@ -33,7 +33,9 @@ export const initStandaloneSession = ({
     authentication: AuthenticationStore;
     api: Api;
 }): PersistedSession | undefined => {
-    const sessions = getPersistedSessions();
+    const sessions = getPersistedSessions().sort((a, b) => {
+        return b.persistedAt - a.persistedAt;
+    });
 
     if (authentication.UID) {
         const session = sessions.find((session) => session.UID === authentication.UID);
