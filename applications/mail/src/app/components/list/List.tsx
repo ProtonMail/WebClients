@@ -30,11 +30,7 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import { usePaging } from '../../hooks/usePaging';
 import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlaceholders';
 import type { Element } from '../../models/element';
-import {
-    pageSize as pageSizeSelector,
-    pendingRequest,
-    showLabelTaskRunningBanner,
-} from '../../store/elements/elementsSelectors';
+import { pageSize as pageSizeSelector, showLabelTaskRunningBanner } from '../../store/elements/elementsSelectors';
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
@@ -150,7 +146,6 @@ const List = (
 
     const pageSize = useMailSelector(pageSizeSelector);
     const canDisplayTaskRunningBanner = useMailSelector((state) => showLabelTaskRunningBanner(state, { labelID }));
-    const showLoadingState = useMailSelector(pendingRequest);
 
     const canShowSelectAllBanner = getCanDisplaySelectAllBanner({
         selectAllFeatureAvailable: selectAllAvailable,
@@ -291,17 +286,6 @@ const List = (
                         esState={{ isESLoading, isSearch, showESSlowToolbar }}
                         canDisplayTaskRunningBanner={canDisplayTaskRunningBanner}
                     />
-
-                    <div
-                        className={clsx('shrink-0 relative', showLoadingState && 'loader-indicator')}
-                        aria-busy={showLoadingState}
-                        aria-live="polite"
-                        aria-atomic="true"
-                    >
-                        {showLoadingState && (
-                            <span className="sr-only">{c('Info').t`Refining email list in progress`}</span>
-                        )}
-                    </div>
 
                     <div
                         ref={ref}
