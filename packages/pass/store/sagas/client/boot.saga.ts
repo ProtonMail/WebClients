@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import {
     aliasSyncStatus,
     bootFailure,
@@ -39,10 +38,6 @@ import { type HydrationResult, hydrate } from './hydrate.saga';
 
 function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSagaOptions) {
     try {
-        /* Clear any file stored during import/export
-         * in case app was exited too early (e.g in the middle of export process) */
-        yield fileStorage.clearAll();
-
         const settings: ProxiedSettings = yield options.getSettings();
         const { offline = false, reauth } = payload ?? {};
 

@@ -9,6 +9,7 @@ import {
     useState,
 } from 'react';
 
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import type { MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -28,8 +29,20 @@ export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
     const unloading = useRef(false);
 
     useEffect(() => {
-        /** Avoids flagging update available during a hard-refresh */
-        window.addEventListener('beforeunload', () => (unloading.current = true), { once: true });
+        const onBeforeUnload = () => {
+            /** Avoids flagging update available during a hard-refresh */
+            unloading.current = true;
+
+            /** Ask service worker for pending files deletion.
+             * These operations are async and cannot be guaranteed
+             * to succeed during the `unload` event */
+            if (client) {
+                const filenames = fileStorage.gc?.queued() ?? [];
+                client.send({ type: 'fs_gc', filenames });
+            }
+        };
+
+        window.addEventListener('beforeunload', onBeforeUnload, { once: true });
         const onUpdateAvailable = () => !unloading.current && setState({ updateAvailable: true });
 
         void client?.register({ onUpdateAvailable });

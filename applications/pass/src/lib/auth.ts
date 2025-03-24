@@ -36,7 +36,6 @@ import type { AuthSwitchService } from '@proton/pass/lib/auth/switch';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -272,7 +271,7 @@ export const createAuthService = ({
             if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
             if (userID) deletePassDB(userID).catch(noop);
             if (localID !== undefined) clearUserLocalData(localID);
-            await fileStorage.clearAll();
+
             await authSwitch.sync({ revalidate: false });
 
             setSentryUID(undefined);
