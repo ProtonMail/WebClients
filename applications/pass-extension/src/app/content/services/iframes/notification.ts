@@ -23,7 +23,8 @@ export const createNotification = ({ popover, onDestroy }: NotificationOptions):
         id: 'notification',
         popover,
         src: NOTIFICATION_IFRAME_SRC,
-        onError: onDestroy,
+        onDestroy,
+        onError: () => iframe.destroy(),
         onClose: withContext((ctx, { action }, options) => {
             switch (action) {
                 /* stash the form submission if the user discarded
@@ -93,7 +94,7 @@ export const createNotification = ({ popover, onDestroy }: NotificationOptions):
 
     const notification: InjectedNotification = {
         close: pipe(iframe.close, () => notification),
-        destroy: pipe(iframe.destroy, onDestroy),
+        destroy: iframe.destroy,
         getState: () => iframe.state,
         init: pipe(iframe.init, () => notification),
         open: pipe(open, () => notification),
