@@ -13,7 +13,6 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -43,6 +42,8 @@ export interface MailboxHotkeysContext {
     columnLayout: boolean;
     isMessageOpening: boolean;
     location: Location;
+    labelDropdownToggleRefProps: React.RefObject<() => void>;
+    moveDropdownToggleRefProps: React.RefObject<() => void>;
 }
 
 export interface MailboxHotkeysHandlers {
@@ -73,6 +74,8 @@ export const useMailboxHotkeys = (
         columnLayout,
         isMessageOpening,
         location,
+        labelDropdownToggleRefProps,
+        moveDropdownToggleRefProps,
     }: MailboxHotkeysContext,
     {
         handleBack,
@@ -99,8 +102,7 @@ export const useMailboxHotkeys = (
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
     const elementIDForList = checkedIDs.length ? undefined : elementID;
     const elementRef = useRef<HTMLDivElement>(null);
-    const labelDropdownToggleRef = useRef<() => void>(noop);
-    const moveDropdownToggleRef = useRef<() => void>(noop);
+
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
     const star = useStar();
@@ -409,7 +411,7 @@ export const useMailboxHotkeys = (
             (e) => {
                 if (Shortcuts && selectedIDs.length) {
                     e.preventDefault();
-                    labelDropdownToggleRef.current?.();
+                    labelDropdownToggleRefProps.current?.();
                 }
             },
         ],
@@ -418,7 +420,7 @@ export const useMailboxHotkeys = (
             (e) => {
                 if (Shortcuts && selectedIDs.length) {
                     e.preventDefault();
-                    moveDropdownToggleRef.current?.();
+                    moveDropdownToggleRefProps.current?.();
                 }
             },
         ],
@@ -485,9 +487,8 @@ export const useMailboxHotkeys = (
 
     return {
         elementRef,
-        labelDropdownToggleRef,
         moveToFolder,
-        moveDropdownToggleRef,
+        selectAll,
         moveScheduledModal,
         moveSnoozedModal,
         deleteAllModal,
