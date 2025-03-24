@@ -40,8 +40,17 @@ const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[]
 
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
-    const { volumeId, shareId, linkId, albums, isPhotosLoading, isAlbumsLoading, loadPhotoLink, requestDownload } =
-        usePhotosWithAlbumsView();
+    const {
+        volumeId,
+        shareId,
+        linkId,
+        albums,
+        isPhotosLoading,
+        isAlbumsLoading,
+        loadPhotoLink,
+        requestDownload,
+        refreshSharedWithMeAlbums,
+    } = usePhotosWithAlbumsView();
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const createAlbumModal = useModalStateObject();
@@ -164,7 +173,7 @@ export const AlbumsView: FC = () => {
                 />
             )}
 
-            <AlbumsInvitations />
+            <AlbumsInvitations refreshSharedWithMeAlbums={refreshSharedWithMeAlbums} />
 
             {isAlbumsEmpty ? (
                 <>
