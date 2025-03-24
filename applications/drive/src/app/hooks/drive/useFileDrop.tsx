@@ -4,7 +4,12 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { DS_STORE } from '@proton/shared/lib/drive/constants';
-import { isImage, isRAWThumbnailExtractionSupported, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import {
+    getFileExtension,
+    isImage,
+    isRAWThumbnailExtractionSupported,
+    isVideo,
+} from '@proton/shared/lib/helpers/mimetype';
 
 import { mimeTypeFromFile, useUpload } from '../../store/_uploads';
 import type {
@@ -76,7 +81,7 @@ export const useFileDrop = ({
                                         (mime) =>
                                             isImage(mime) ||
                                             isVideo(mime) ||
-                                            isRAWThumbnailExtractionSupported(mime, (file.name || '').split('.').pop())
+                                            isRAWThumbnailExtractionSupported(mime, getFileExtension(file.name))
                                     )) &&
                                     file.name !== DS_STORE
                                 ) {
