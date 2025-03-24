@@ -149,7 +149,7 @@ const DriveSidebar = ({ logo, isNewUploadDisabled, isHeaderExpanded, toggleHeade
                     }}
                 >
                     {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
-                    {(!showStorage || (showStorage && storageHeight > 0)) && (
+                    {(!showStorage || (showStorage && storageHeight > 0) || collapsed) && (
                         <Tooltip
                             title={
                                 showSideBar
