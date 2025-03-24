@@ -21,12 +21,13 @@ import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
 
-import { MAIN_ROUTE_PATH } from './constants';
+import { MAIN_ROUTE_PATH, ROUTE_MAIN } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import PageContainer from './containers/PageContainer';
 import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
+import MailAppShell from './router/MailAppShell';
 import { extraThunkArguments } from './store/thunk';
 
 const MainContainer: FunctionComponent = () => {
@@ -50,6 +51,9 @@ const MainContainer: FunctionComponent = () => {
 
     useInboxDesktopHeartbeat();
     useInboxDesktopMetrics();
+
+    // Used to control the refactoring of the mailbox that breaks `MailboxContainer` in smaller components
+    const isRefactoringEnabled = useFlag('MailboxRefactoring');
 
     /**
      * @description React has an issue regarding DOM changed by Gtranslate from Chrome
@@ -105,12 +109,22 @@ const MainContainer: FunctionComponent = () => {
                                             <ModalsChildren />
                                             <ApiModalsHVUpsell api={extraThunkArguments.api} />
                                             <Switch>
-                                                <Route
-                                                    path={MAIN_ROUTE_PATH}
-                                                    render={() => (
-                                                        <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
-                                                    )}
-                                                />
+                                                {isRefactoringEnabled ? (
+                                                    <Route
+                                                        path={ROUTE_MAIN}
+                                                        render={() => <MailAppShell ref={mailContentRef} />}
+                                                    />
+                                                ) : (
+                                                    <Route
+                                                        path={MAIN_ROUTE_PATH}
+                                                        render={() => (
+                                                            <PageContainer
+                                                                ref={mailContentRef}
+                                                                breakpoints={breakpoints}
+                                                            />
+                                                        )}
+                                                    />
+                                                )}
                                             </Switch>
                                         </CheckAllRefProvider>
                                     </ComposerContainer>

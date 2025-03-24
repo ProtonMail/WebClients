@@ -275,7 +275,11 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             {renderUnsubscribedModal && (
                 <Prompt
                     title={c('Title').t`Unsubscribe request sent`}
-                    buttons={[<Button onClick={unsubscribedModalProps.onClose}>{c('Action').t`Got it`}</Button>]}
+                    buttons={[
+                        <Button onClick={unsubscribedModalProps.onClose} data-testid="unsubscribe-banner:close">{c(
+                            'Action'
+                        ).t`Got it`}</Button>,
+                    ]}
                     {...unsubscribedModalProps}
                 >
                     <p className="mb-2">{c('Info')
