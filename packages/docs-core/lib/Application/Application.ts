@@ -10,7 +10,7 @@ import type { WebsocketServiceInterface } from '../Services/Websockets/Websocket
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { ImageProxyParams } from '../Api/Types/ImageProxyParams'
 import type { CustomWindow } from './Window'
-import type { RecentDocumentsInterface } from '../Services/RecentDocuments/RecentDocumentsInterface'
+import type { RecentDocumentsInterface } from '../Services/recent-documents'
 import type { MetricService } from '../Services/Metrics/MetricService'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { PublicDocLoader } from '../Services/DocumentLoader/PublicDocLoader'
