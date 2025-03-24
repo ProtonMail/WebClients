@@ -21,7 +21,7 @@ export const clearSession = ({
     revokeSession?: boolean;
 }) => {
     if (revokeSession) {
-        const uidApi = getUIDApi(session.UID, api);
+        const uidApi = getSilentApi(getUIDApi(session.UID, api));
         uidApi(revoke()).catch(noop);
     }
     removePersistedSession(session).catch(noop);
