@@ -37,7 +37,12 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
         id: 'dropdown',
         popover,
         src: DROPDOWN_IFRAME_SRC,
-        onError: onDestroy,
+        onDestroy: () => {
+            fieldRef.current = null;
+            listeners.removeAll();
+            onDestroy();
+        },
+        onError: () => iframe.destroy(),
         onClose: (_, options) => {
             if (options.refocus) fieldRef.current?.focus();
             else if (fieldRef.current?.element !== document.activeElement) fieldRef.current?.detachIcon();
@@ -194,20 +199,13 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
         })
     );
 
-    const destroy = () => {
-        fieldRef.current = null;
-        listeners.removeAll();
-        iframe.destroy();
-        onDestroy();
-    };
-
     listeners.addListener(window, 'popstate', () => iframe.close({ discard: false }));
     listeners.addListener(window, 'hashchange', () => iframe.close({ discard: false }));
     listeners.addListener(window, 'beforeunload', () => iframe.close({ discard: false }));
 
     const dropdown: InjectedDropdown = {
         close: pipe(iframe.close, () => dropdown),
-        destroy,
+        destroy: iframe.destroy,
         getCurrentField: () => fieldRef.current,
         getState: () => iframe.state,
         init: pipe(iframe.init, () => dropdown),

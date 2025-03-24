@@ -16,4 +16,5 @@ export const store = configureStore({
             thunk: false,
             immutableCheck: false,
         }).concat(cacheMiddleware, requestMiddleware, sagaMiddleware),
+    devTools: ENV !== 'production',
 });
