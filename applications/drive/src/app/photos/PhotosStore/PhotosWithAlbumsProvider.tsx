@@ -239,8 +239,21 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         [request, currentAlbumLinkId, volumeId, shareId]
     );
 
+    const cleanupObsoleteAlbums = (newAlbumsLinkIds: Set<string>) => {
+        setAlbums((prevAlbums) => {
+            const newAlbums = new Map(prevAlbums);
+            prevAlbums.forEach((album) => {
+                if (!newAlbumsLinkIds.has(album.linkId)) {
+                    newAlbums.delete(album.linkId);
+                }
+            });
+            return newAlbums;
+        });
+    };
+
     const loadAlbums = useCallback(
         async (abortSignal: AbortSignal) => {
+            const newAlbumsLinkIds = new Set<string>();
             const albumCall = async (anchorID?: string) => {
                 if (!volumeId || !shareId) {
                     return;
@@ -290,6 +303,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         newDecryptedAlbums.forEach((album) => {
                             if (album !== undefined) {
                                 newAlbums.set(album.linkId, album);
+                                newAlbumsLinkIds.add(album.linkId);
                             }
                         });
                         return newAlbums;
@@ -301,7 +315,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     }
                 }
             };
-
+            cleanupObsoleteAlbums(newAlbumsLinkIds);
             return albumCall();
         },
         [getLink, request, shareId, volumeId]
@@ -309,6 +323,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
     const loadSharedWithMeAlbums = useCallback(
         async (abortSignal: AbortSignal, refresh?: boolean) => {
+            const newAlbumsLinkIds = new Set<string>();
             const sharedWithMeCall = async (anchorID?: string) => {
                 if (!volumeId || !shareId) {
                     return;
@@ -366,6 +381,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         newDecryptedAlbums.forEach((album) => {
                             if (album !== undefined) {
                                 newAlbums.set(album.linkId, album);
+                                newAlbumsLinkIds.add(album.linkId);
                             }
                         });
                         return newAlbums;
@@ -375,7 +391,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     }
                 }
             };
-
+            cleanupObsoleteAlbums(newAlbumsLinkIds);
             return sharedWithMeCall();
         },
         [getLink, request, shareId, volumeId, getSharePermissions]
