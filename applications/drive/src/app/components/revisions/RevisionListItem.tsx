@@ -47,7 +47,7 @@ const RevisionListItem = ({
                 <TimeIntl className="flex-1" options={options}>
                     {revision.createTime}
                 </TimeIntl>
-                <p className="text-ellipsis text-center m-0">{revision.signatureEmail}</p>
+                <p className="text-ellipsis text-center m-0">{revision.signatureEmail || c('Info').t`Anonymous`}</p>
                 <Button
                     className="ml-auto"
                     ref={ref}
