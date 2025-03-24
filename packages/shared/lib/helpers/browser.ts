@@ -1,5 +1,7 @@
 import UAParser from 'ua-parser-js';
 
+import { Version } from '@proton/shared/lib/helpers/version';
+
 const uaParser = new UAParser();
 const ua = uaParser.getResult();
 
@@ -105,7 +107,10 @@ export const isStandaloneApp = () => window.matchMedia('(display-mode: standalon
 export const isDuckDuckGo = () => ua.browser.name === 'DuckDuckGo';
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
 export const isSafari11 = () => isSafari() && ua.browser.major === '11';
-export const isMinimumSafariVersion = (version: number) => isSafari() && Number(ua.browser.version) >= version;
+
+export const isMinimumSafariVersion = (version: number) =>
+    isSafari() && ua.browser.version && new Version(ua.browser.version).isGreaterThanOrEqual(version.toString());
+
 export const isSafariMobile = () => ua.browser.name === 'Mobile Safari';
 export const isEdgeChromium = () => ua.browser.name === 'Edge' && ua.engine.name === 'Blink';
 export const isBrave = () => ua.browser.name === 'Brave';
