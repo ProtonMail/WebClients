@@ -217,6 +217,9 @@
       "Decline": [
         "Rechazar"
       ],
+      "Decline invite": [
+        "Declinar invitación"
+      ],
       "Decrease": [
         "Reducir"
       ],
@@ -315,6 +318,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Go back": [
+        "Regresar"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Ir a ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -328,10 +334,10 @@
         "Ayuda"
       ],
       "Help and feedback": [
-        "Ayuda y Comentarios "
+        "Ayuda y comentarios"
       ],
       "Help and resources": [
-        "Ayuda y Recursos"
+        "Ayuda y recursos"
       ],
       "Hide advanced PGP settings": [
         "Ocultar configuración PGP avanzada"
@@ -422,9 +428,6 @@
       ],
       "Move to trash": [
         "Mover a la papelera"
-      ],
-      "New": [
-        "Nuevo"
       ],
       "New document": [
         "Nuevo documento"
@@ -573,7 +576,7 @@
       "Search countries": [
         "Buscar países"
       ],
-      "Search docs": [
+      "Search documents": [
         "Buscar documentos"
       ],
       "See how": [
@@ -1143,7 +1146,7 @@
         "Gestor de contraseñas cifrado"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Nuestro plan básico y gratuito con correo y almacenamiento encriptado de extremo a extremo. No incluye características prémium."
+        "Nuestro plan básico y gratuito con correo y almacenamiento cifrado de extremo a extremo. No incluye características prémium."
       ],
       "Save ${ upsellSavings }": [
         "Ahorra un ${ upsellSavings }"
@@ -2164,12 +2167,12 @@
     },
     "customer_support.feature.drive": {
       "For ${ DRIVE_APP_NAME }": [
-        "Por ${ DRIVE_APP_NAME }"
+        "Para ${ DRIVE_APP_NAME }"
       ]
     },
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
-        "Por ${ MAIL_APP_NAME }"
+        "Para ${ MAIL_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -3937,9 +3940,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "¿Estás seguro de que quieres eliminar permanentemente los elementos seleccionados de la papelera?"
       ],
-      "Are you sure you want to proceed?": [
-        "¿Estás seguro de que quieres continuar?"
-      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -4676,17 +4676,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Esta acción eliminará permanentemente el archivo cargado."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Esta acción eliminará la carpeta que has cargado de forma permanente. No puedes eliminar una carpeta que contenga archivos que no sean de tu propiedad."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Esta acción eliminará el enlace y revocará el acceso de todos los usuarios."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Esta acción eliminará permanentemente los elementos seleccionados."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para enviar correos esta dirección, el propietario debe en primer lugar activar la dirección."
@@ -4717,6 +4708,15 @@
       ],
       "This message will be presented again later": [
         "Este mensaje se mostrará de nuevo más tarde."
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Esto eliminará permanentemente el archivo cargado."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Esto eliminará permanentemente la carpeta cargada."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Esto eliminará permanentemente los elementos seleccionados cargados."
       ],
       "This will replace the existing file with the folder": [
         "Esto reemplazará el archivo existente con la carpeta"
@@ -4960,6 +4960,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Después se te facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
         "Después se te facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Estás a punto de rechazar la invitación para unirte al álbum ${ invitationName }. Si sigues, no podrás acceder a él a menos que el propietario te vuelva a invitar. ¿Estás seguro de que quieres continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Estás a punto de rechazar la invitación para unirte a la carpeta ${ invitationName }. Si sigues, no podrás acceder a él a menos que el propietario te vuelva a invitar. ¿Estás seguro de que quieres continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Estás a punto de rechazar la invitación para unirte al elemento ${ invitationName }. Si sigues, no podrás acceder a él a menos que el propietario te vuelva a invitar. ¿Estás seguro de que quieres continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Has alcanzado el número máximo de direcciones en el grupo o grupos de contactos:"
@@ -5428,6 +5437,9 @@
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
       ],
+      "My files": [
+        "Mis archivos"
+      ],
       "Navigation": [
         "Navegación"
       ],
@@ -5511,6 +5523,9 @@
       ],
       "Set link password": [
         "Establecer una contraseña para el enlace"
+      ],
+      "Shared with me": [
+        "Compartido conmigo"
       ],
       "Sign emails": [
         "Firmar correos electrónicos"
@@ -6380,7 +6395,7 @@
         "Cifrado de extremo a extremo"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Descaras de P2P/BitTorrent rápidas"
+        "Descargas rápidas de P2P/BitTorrent"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Funciones gratuitas de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }"
@@ -6683,7 +6698,7 @@
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Paga una vez, asegura tus contraseñas e identidad para siempre."
+        "Paga una vez y asegura tus contraseñas e identidad para siempre."
       ],
       "Popular": [
         "Popular"
@@ -7210,6 +7225,10 @@
       "Share invitation declined": [
         "Se ha rechazado la invitación compartida."
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "No se ha podido eliminar la carpeta porque no está vacía.",
+        "No se han podido eliminar la carpeta porque no está vacía."
+      ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
       ],
@@ -7294,9 +7313,6 @@
       ],
       "Save": [
         "Ahorra"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Ahorra un ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Ahorra un 80 % en tu primer mes."
@@ -7471,6 +7487,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -7479,9 +7498,6 @@
       ],
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas"
-      ],
-      "Payment Processing": [
-        "Procesando el pago"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
@@ -7532,8 +7548,8 @@
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos procesando el pago de la factura. Espera hasta que se complete el pago antes de realizar cambios en tu plan o actualizar tus detalles de pago. Gracias por tu paciencia."
+      "Your payment is still being processed": [
+        "Su pago aún está siendo procesado"
       ]
     },
     "Payments.Error": {
@@ -7749,6 +7765,23 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Correo oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "Creado por"
+      ],
+      "Location": [
+        "Ubicación"
+      ],
+      "Modified": [
+        "Modificado"
+      ],
+      "Name": [
+        "Nombre"
+      ],
+      "Viewed": [
+        "Visto"
       ]
     },
     "Safety review": {
@@ -8411,7 +8444,7 @@
         "${ n } conexiones VPN por usuario"
       ],
       "VPN connection for ${ n } devices per user": [
-        "Conexión VPN para ${ n } dispositivos por usuario",
+        "Conexión VPN para ${ n } dispositivo por usuario",
         "Conexión VPN para ${ n } dispositivos por usuario"
       ]
     },
@@ -8883,6 +8916,9 @@
       "Day theme": [
         "Tema de día"
       ],
+      "Decline invitation?": [
+        "¿Rechazar la invitación?"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -8894,11 +8930,11 @@
         "Eliminar ${ count } grupo de contactos",
         "Eliminar ${ count } grupos de contactos"
       ],
-      "Delete ${ item.name }?": [
-        "¿Deseas eliminar ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "¿Deseas eliminar ${ links.length } elementos?"
+      ],
+      "Delete ${ name }?": [
+        "¿Eliminar ${ name }?"
       ],
       "Delete ${ value }": [
         "Eliminar ${ value }"
@@ -9000,7 +9036,7 @@
         "Grupos"
       ],
       "Help and feedback": [
-        "Ayuda y Comentarios "
+        "Ayuda y comentarios"
       ],
       "Help center": [
         "Centro de ayuda"
@@ -9225,9 +9261,6 @@
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
       ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Estás a punto de rechazar la invitación a un elemento compartido. No podrás volver a acceder a él hasta que el propietario lo comparta contigo nuevamente."
-      ],
       "You can now create unlimited folders and labels": [
         "Ahora puedes crear carpetas y etiquetas ilimitadas."
       ],
@@ -9394,8 +9427,8 @@
         "Selección automática desde ${ numberOfCountries } países"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Servidores en ${ numberOfCountries }+ país",
-        "Servidores de ${ numberOfCountries }+ países"
+        "Servidores en ${ numberOfCountries } país",
+        "Servidores en más de ${ numberOfCountries } países"
       ]
     },
     "vpn_2024: renew": {
