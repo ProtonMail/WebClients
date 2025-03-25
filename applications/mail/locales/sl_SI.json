@@ -1077,11 +1077,11 @@
       "Select ${ planTitle }": [
         "Izberite ${ planTitle }"
       ],
-      "Select All": [
-        "Izberi vse"
-      ],
       "Select all": [
         "Označi vse"
+      ],
+      "Select All": [
+        "Izberi vse"
       ],
       "Select all messages": [
         "Izberi vsa sporočila"
@@ -1262,12 +1262,6 @@
       ],
       "Trust": [
         "Zaupaj"
-      ],
-      "Trust key": [
-        "Zaupaj ključu",
-        "Zaupaj ključema",
-        "Zaupaj ključem",
-        "Zaupaj ključem"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -6539,6 +6533,9 @@
       "Initializing…": [
         "Zagon …"
       ],
+      "Insert image": [
+        "Vstavi sliko"
+      ],
       "Insert link": [
         "Vstavi povezavo"
       ],
@@ -10089,9 +10086,6 @@
       "Save": [
         "Prihranite"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Prihranite ${ prices.savedPercentage } %"
-      ],
       "Special offer": [
         "Posebna ponudba"
       ],
@@ -13164,6 +13158,11 @@
         "Danes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Samodejno pomeni, da se za pošiljanje temu uporabniku uporablja oblika iz privzete nastavitve. Navadno besedilo pomeni, da se sporočilo ob pošiljanju vedno pretvori v navadno besedilo."
@@ -13242,11 +13241,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Za pošiljanje od konca do konca šifriranih sporočil na ta naslov naložite javni ključ"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
       ]
     },
     "Tor out of date": {

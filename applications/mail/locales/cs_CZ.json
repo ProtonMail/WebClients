@@ -1122,10 +1122,10 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrat vše"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrat vše"
       ],
       "Select all messages": [
@@ -1319,12 +1319,6 @@
       ],
       "Trust": [
         "Důvěřovat"
-      ],
-      "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -6443,6 +6437,9 @@
       "Calendar side panel": [
         "Postranní panel kalendáře"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalendář integrovaný s ${ MAIL_APP_NAME } a ${ CONTACTS_APP_NAME }"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Nemůžete najít to, co hledáte? ${ displayAllMailButton }"
       ],
@@ -6481,6 +6478,9 @@
       ],
       "Close this screen to exit.": [
         "Pro ukončení zavřete tuto obrazovku."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Cloudové úložiště integrované s ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Potvrzení nahlášení phishingu"
@@ -6679,6 +6679,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "E-mail je přeposílán do vaší schránky, vaše e-mailová adresa zůstává skrytá."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-mailová služba integrovaná s ${ CALENDAR_APP_NAME } a ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "Ochrana před sledovacími prvky v e-mailech je vypnutá"
@@ -6906,10 +6909,7 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7166,6 +7166,9 @@
       "password": [
         "heslo"
       ],
+      "Password manager with extra account security": [
+        "Správce hesel s dodatečným zabezpečením účtu"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
@@ -7301,9 +7304,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
       ],
-      "Refining email list in progress": [
-        "Probíhá zpřesnění seznamu e-mailů"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
@@ -7384,6 +7384,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
+      ],
+      "Self-custodial crypto wallet": [
+        "Peněženka kryptoměny s vlastní úschovu"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Odeslat šifrovanou, heslem chráněnou zprávu pro e-mailovou adresu ${ boldText }."
@@ -7855,6 +7858,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN s dedikovanými servery a IP adresami"
       ],
       "Warning": [
         "Varování"
@@ -10813,9 +10819,6 @@
       "Save": [
         "Ušetřete"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Ušetřete ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Ušetřete 80 % za první měsíc."
       ],
@@ -11198,6 +11201,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -11206,9 +11212,6 @@
       ],
       "More plans are available in other currencies": [
         "Další tarify jsou k dispozici v jiných měnách"
-      ],
-      "Payment Processing": [
-        "Zpracování platby"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
@@ -11267,8 +11270,8 @@
       "Timeout exceeded": [
         "Byl překročen časový limit"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Zpracováváme vaši platbu za vyúčtovanou fakturu. Před provedením změn v tarifu nebo aktualizací platebních údajů vyčkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
+      "Your payment is still being processed": [
+        "Vaše platba se stále zpracovává"
       ]
     },
     "Payments.Error": {
@@ -14340,6 +14343,11 @@
         "Dnes"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editoru bude použit pro odeslání uživateli. Prostý text znamená, že zpráva bude při odeslání vždy převedena na prostý text."
@@ -14421,11 +14429,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "Tor out of date": {
