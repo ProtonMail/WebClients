@@ -2183,6 +2183,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "이 작업은 되돌릴 수 없습니다. 도메인 ${ domainTextBold }을(를) 사용하는 모든 별칭은 삭제됩니다. 일단 삭제되면 별칭을 복원할 수 없다는 점에 유의해 주세요."
       ],
+      "This option is currently not available on your browser.": [
+        "이 옵션은 현재 브라우저에서 사용할 수 없습니다."
+      ],
       "This option is currently not available on your device.": [
         "이 옵션은 현재 기기에서 사용할 수 없습니다."
       ],
@@ -2332,6 +2335,9 @@
       ],
       "You may close this tab.": [
         "이 탭을 닫아도 됩니다."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "항목을 불러오기 전에 금고에 대한 편집 권한이 필요합니다."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "도메인을 확인한 후 도메인 설정(catch-all 이메일 별칭, 별칭의 기본 표시 이름 등)을 사용자 지정할 수 있습니다."
@@ -4033,6 +4039,9 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME } 메모와 SimpleLogin 메모와의 차이점이 무엇인가요?"
+      ],
+      "You don't have any vaults": [
+        "금고가 아무 것도 없네요"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } 구독이 ${ endDate }에 종료됩니다."

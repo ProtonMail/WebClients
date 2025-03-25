@@ -217,6 +217,9 @@
       "Decline": [
         "Kieltäydy"
       ],
+      "Decline invite": [
+        "Kieltäydy kutsusta"
+      ],
       "Decrease": [
         "Vähennä"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "Hanki vahvistuskoodi"
+      ],
+      "Go back": [
+        "Takaisin"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Avaa ${ DRIVE_SHORT_APP_NAME }"
@@ -419,9 +425,6 @@
       ],
       "Move to trash": [
         "Siirrä roskakoriin"
-      ],
-      "New": [
-        "Uusi"
       ],
       "New document": [
         "Uusi dokumentti"
@@ -569,9 +572,6 @@
       ],
       "Search countries": [
         "Etsi maata"
-      ],
-      "Search docs": [
-        "Etsi dokumentteja"
       ],
       "See how": [
         "Katso miten"
@@ -3928,9 +3928,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Haluatko varmasti poistaa valitut kohteet roskakorista pysyvästi?"
       ],
-      "Are you sure you want to proceed?": [
-        "Haluatko varmasti jatkaa?"
-      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -4615,6 +4612,10 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein.",
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
+      ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
       ],
@@ -4645,17 +4646,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Tämä toiminto poistaa lähettämäsi tiedoston pysyvästi."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Tämä toiminto poistaa lähettämäsi kansion pysyvästi. Et voi poistaa kansiota, joka sisältää tiedoston, jota et omista."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Tämä poistaa linkin ja mitätöi kaikki jaetut käyttöoikeudet."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Tämä toiminto poistaa valitut kohteet pysyvästi."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
@@ -4680,6 +4672,15 @@
       ],
       "This message will be presented again later": [
         "Tämä viesti näytetään myöhemmin uudelleen"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Tämä poistaa lähettämäsi tiedoston pysyvästi."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Tämä poistaa lähettämäsi kansion pysyvästi."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Tämä poistaa lähettämäsi valitut kohteet pysyvästi."
       ],
       "This will replace the existing file with the folder": [
         "Tämä korvaa olemassa olevan tiedoston kansiolla"
@@ -4920,6 +4921,10 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Olet saavuttanut yhteystietoryhmien osoitteiden enimmäismäärän:"
       ],
@@ -4994,6 +4999,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein.",
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
@@ -5457,6 +5466,9 @@
       ],
       "Set link password": [
         "Aseta linkin salasana"
+      ],
+      "Shared with me": [
+        "Jaettu minulle"
       ],
       "Sign emails": [
         "Allekirjoita viestit"
@@ -6660,7 +6672,7 @@
         "Poista automaattisesti yli 30 päivää vanhat viestit roskakorista ja roskapostista"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Välitä ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
+        "Ohjaa ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massamainontaa tai ohjelmoitavaa viestien lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään erityisesti tähän tarkoitukseen tarkoitettua sähköpostipalvelua."
@@ -7085,6 +7097,10 @@
       "Share invitation declined": [
         "Kieltäydyit jakokutsusta"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Valitettavasti emme voineet poistaa kansiota, koska se ei ole tyhjä.",
+        "Valitettavasti emme voineet poistaa kansioita, koska ne eivät ole tyhjiä."
+      ],
       "Stopping the sharing of this item has failed": [
         "Kohteen jakamisen lopetus epäonnistui"
       ],
@@ -7166,9 +7182,6 @@
       ],
       "Save": [
         "Säästä"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Säästä ${ prices.savedPercentage } %"
       ],
       "Save 80% on your first month.": [
         "Säästä 80 % ensimmäisestä kuukaudestasi."
@@ -7352,9 +7365,6 @@
       "More plans are available in other currencies": [
         "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
       ],
-      "Payment Processing": [
-        "Maksua käsitellään"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
@@ -7375,9 +7385,6 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Käsittelemme laskua koskevaa maksuasi. Odota maksun suoritusta, ennen kuin teet muutoksia tilaukseesi tai päivität maksutietojasi. Kiitos kärsivällisyydestäsi."
       ]
     },
     "Payments.Error": {
@@ -8735,11 +8742,11 @@
         "Poista ${ count } yhteystietoryhmä",
         "Poista ${ count } yhteystietoryhmää"
       ],
-      "Delete ${ item.name }?": [
-        "Poistetaanko ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Poistetaanko ${ links.length } kohdetta?"
+      ],
+      "Delete ${ name }?": [
+        "Poistetaanko ${ name }?"
       ],
       "Delete ${ value }": [
         "Poista ${ value }"
@@ -9062,9 +9069,6 @@
       ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Olet kieltäytymästä jakokutsusta. Et voi käyttää jaon sisältöä, ennen kuin sen omistaja jakaa sen sinulle uudelleen."
       ],
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"

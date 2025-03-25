@@ -282,6 +282,9 @@
       "Decline": [
         "Адхіліць"
       ],
+      "Decline invite": [
+        "Адхіліць запрашэнне"
+      ],
       "Decrease": [
         "Паменшыць"
       ],
@@ -3724,7 +3727,7 @@
         "байт",
         "байты",
         "байтаў",
-        "байты"
+        "байтаў"
       ],
       "GB": [
         "ГБ"
@@ -3744,25 +3747,25 @@
         "Байт",
         "Байты",
         "Байтаў",
-        "Байты"
+        "Байтаў"
       ],
       "Gigabyte": [
         "Гігабайт",
         "Гігабайты",
         "Гігабайтаў",
-        "Гігабайты"
+        "Гігабайтаў"
       ],
       "Kilobyte": [
         "Кілабайт",
         "Кілабайты",
         "Кілабайтаў",
-        "Кілабайты"
+        "Кілабайтаў"
       ],
       "Megabyte": [
         "Мегабайт",
         "Мегабайты",
         "Мегабайтаў",
-        "Мегабайты"
+        "Мегабайтаў"
       ],
       "Terabyte": [
         "тэрабайт",
@@ -3849,7 +3852,7 @@
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапановы, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
         "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
         "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
       ],
@@ -4373,10 +4376,10 @@
         "У Gmail знойдзены ${ providerFoldersNumLocalized } меткі"
       ],
       "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } сканаванне не ўдалося",
-        "${ scanErrorCount } сканаванні не ўдаліся",
-        "${ scanErrorCount } сканаванняў не ўдаліся",
-        "${ scanErrorCount } сканаванняў не ўдаліся"
+        "Не ўдалося выканаць ${ scanErrorCount } сканіраванне",
+        "Не ўдалося выканаць ${ scanErrorCount } сканіраванні",
+        "Не ўдалося выканаць ${ scanErrorCount } сканіраванняў",
+        "Не ўдалося выканаць ${ scanErrorCount } сканіраванняў"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } каляндар з ${ providerCalendars.length }",
@@ -4588,6 +4591,9 @@
       "Calendar side panel": [
         "Бакавая панэль календара"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Каляндар, які інтэграваны з ${ MAIL_APP_NAME } і ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Скасавана"
       ],
@@ -4629,6 +4635,9 @@
       ],
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Воблачнае сховішча, якое інтэграванае з ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Канфлікт"
@@ -4785,6 +4794,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Сэрвіс электроннай пошты, які інтэграваны з ${ CALENDAR_APP_NAME } і ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
@@ -5200,6 +5212,9 @@
       "password": [
         "пароль"
       ],
+      "Password manager with extra account security": [
+        "Менеджар пароляў з дадатковай абаронай уліковага запісу"
+      ],
       "Paused": [
         "Прыпынена"
       ],
@@ -5409,6 +5424,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
+      ],
+      "Self-custodial crypto wallet": [
+        "Крыптакашалёк з самастойным захоўваннем"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Плацяжы SEPA у дадзены момант недаступныя. Паспрабуйце яшчэ раз пазней."
@@ -5749,6 +5767,9 @@
       "Visa Secure logo": [
         "Лагатып Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN з вылучанымі серверамі і IP-адрасамі"
+      ],
       "Want to sync files faster?": [
         "Хочаце сінхранізаваць файлы хутчэй?"
       ],
@@ -5900,10 +5921,10 @@
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "У вас яшчэ ёсць яшчэ ${ expiresInDays } дзень, каб атрымаць прывітальны бонус у 3 ГБ і ",
-        "У вас яшчэ ёсць яшчэ ${ expiresInDays } дні, каб атрымаць прывітальны бонус у 3 ГБ і ",
-        "У вас яшчэ ёсць яшчэ ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 3 ГБ і ",
-        "У вас яшчэ ёсць яшчэ ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 3 ГБ і "
+        "У вас яшчэ ёсць ${ expiresInDays } дзень, каб атрымаць прывітальны бонус у 3 ГБ і ",
+        "У вас яшчэ ёсць ${ expiresInDays } дні, каб атрымаць прывітальны бонус у 3 ГБ і ",
+        "У вас яшчэ ёсць ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 3 ГБ і ",
+        "У вас яшчэ ёсць ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 3 ГБ і "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. Дадайце спосаб аплаты, калі вы хочаце працягнуць карыстацца ёй пасля завяршэння пробнага перыяду."
@@ -5943,6 +5964,15 @@
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Вы збіраецеся адхіліць запрашэнне на далучэнне да альбома ${ invitationName }. Калі вы працягніце, то ў вас не будзе магчымасці атрымаць да яго доступ, пакуль уладальнік не адправіць запрашэнне яшчэ раз. Вы сапраўды хочаце працягнуць?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Вы збіраецеся адхіліць запрашэнне на далучэнне да папкі ${ invitationName }. Калі вы працягніце, то ў вас не будзе магчымасці атрымаць да яе доступ, пакуль уладальнік не адправіць запрашэнне яшчэ раз. Вы сапраўды хочаце працягнуць?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Вы збіраецеся адхіліць запрашэнне на далучэнне да элемента ${ invitationName }. Калі вы працягніце, то ў вас не будзе магчымасці атрымаць да яго доступ, пакуль уладальнік не адправіць запрашэнне яшчэ раз. Вы сапраўды хочаце працягнуць?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
@@ -7438,10 +7468,10 @@
         "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі"
+        "${ PASS_APP_NAME } з ${ n } псеўданімам hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
@@ -8322,6 +8352,18 @@
         "Не ўдалося расшыфраваць ${ count } элементаў",
         "Не ўдалося расшыфраваць ${ count } элементаў"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "${ nbFailures } фота не атрымалася дадаць у \"${ albumName }\"",
+        "${ nbFailures } фота не атрымалася дадаць у \"${ albumName }\"",
+        "${ nbFailures } фота не атрымалася дадаць у \"${ albumName }\"",
+        "${ nbFailures } фота не атрымалася дадаць у \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } фота дададзена ў \"${ albumName }\"",
+        "${ nbSuccesses } фота дададзена ў \"${ albumName }\"",
+        "${ nbSuccesses } фота дададзена ў \"${ albumName }\"",
+        "${ nbSuccesses } фота дададзена ў \"${ albumName }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } элемент выдалены",
         "${ numberOfItems } элементы выдалены",
@@ -8350,7 +8392,7 @@
         "Не ўдалося перамясціць ${ numberOfItems } элемент",
         "Не ўдалося перамясціць ${ numberOfItems } элементы",
         "Не ўдалося перамясціць ${ numberOfItems } элементаў",
-        "Не ўдалося перамясціць ${ numberOfItems } элементы"
+        "Не ўдалося перамясціць ${ numberOfItems } элементаў"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
         "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элемент",
@@ -8380,7 +8422,7 @@
         "${ numberOfItems } элемент паспяхова перамешчаны",
         "${ numberOfItems } элементы паспяхова перамешчаны",
         "${ numberOfItems } элементаў паспяхова перамешчаны",
-        "${ numberOfItems } элементы паспяхова перамешчана"
+        "${ numberOfItems } элементы паспяхова перамешчаны"
       ],
       "${ reason } has been disabled": [
         "${ reason } было адключана"
@@ -8555,15 +8597,15 @@
       ],
       "This item was not removed from your list": [
         "Гэты элемент не быў выдалены з вашага спіса",
-        "Гэтыя элементы не былі выдалены з вашага спіса",
-        "Гэтыя элементы не былі выдалены з вашага спіса",
-        "Гэтыя элементы не былі выдалены з вашага спіса"
+        "Некаторыя элементы не былі выдалены з вашага спіса",
+        "Некаторыя элементы не былі выдалены з вашага спіса",
+        "Некаторыя элементы не былі выдалены з вашага спіса"
       ],
       "This item was successfully removed from your list": [
         "Гэты элемент быў паспяхова выдалены з вашага спіса",
-        "Гэтыя элементы былі паспяхова выдалены з вашага спіса",
-        "Гэтыя элементы былі паспяхова выдалены з вашага спіса",
-        "Гэтыя элементы былі паспяхова выдалены з вашага спіса"
+        "Усе элементы былі паспяхова выдалены з вашага спіса",
+        "Усе элементы былі паспяхова выдалены з вашага спіса",
+        "Усе элементы былі паспяхова выдалены з вашага спіса"
       ],
       "Trash failed to be emptied": [
         "Не ўдалося ачысціць сметніцу"
@@ -8640,9 +8682,6 @@
       ],
       "Save": [
         "Эканомія"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Эканомія ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Зэканомце 80% у першы месяц."
@@ -8969,6 +9008,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змены. Дзякуй за ваша цярпенне."
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -8977,9 +9019,6 @@
       ],
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
-      ],
-      "Payment Processing": [
-        "Апрацоўка плацяжу"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
@@ -9038,8 +9077,8 @@
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Мы апрацоўваем ваш плацеж за выстаўлены рахунак. Перад тым, як уносіць змены ў свой тарыфны план або абнаўляць рэквізіты плацяжу, дачакайцеся завяршэння плацяжу. Дзякуй за цярпенне."
+      "Your payment is still being processed": [
+        "Ваш плацеж усё яшчэ апрацоўваецца"
       ]
     },
     "Payments.Error": {
@@ -10618,13 +10657,13 @@
         "${ hours } гадз",
         "${ hours } гадз",
         "${ hours } гадз",
-        "${ hours } гадз"
+        "${ hours } г"
       ],
       "${ hoursInt }.5 h": [
-        "${ hoursInt },5 гадз",
-        "${ hoursInt },5 гадз",
-        "${ hoursInt },5 гадз",
-        "${ hoursInt },5 гадз"
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г"
       ],
       "${ minutes } min": [
         "${ minutes } хв",
@@ -10643,8 +10682,8 @@
       "${ hoursInt }.5 hour": [
         "${ hoursInt },5 гадзіны",
         "${ hoursInt },5 гадзіны",
-        "${ hoursInt },5 гадзін",
-        "${ hoursInt },5 гадзін"
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзіны"
       ],
       "${ minutes } minute": [
         "${ minutes } хвіліна",
@@ -10855,6 +10894,9 @@
       "Day theme": [
         "Дзённая тэма"
       ],
+      "Decline invitation?": [
+        "Адхіліць запрашэнне?"
+      ],
       "Delete": [
         "Выдаліць"
       ],
@@ -10862,13 +10904,13 @@
         "Выдаліць ${ count } кантакт",
         "Выдаліць ${ count } кантакты",
         "Выдаліць ${ count } кантактаў",
-        "Выдаліць ${ count } кантакты"
+        "Выдаліць ${ count } кантактаў"
       ],
       "Delete ${ count } contact group": [
         "Выдаліць ${ count } групу кантактаў",
         "Выдаліць ${ count } групы кантактаў",
         "Выдаліць ${ count } груп кантактаў",
-        "Выдаліць ${ count } групы кантактаў"
+        "Выдаліць ${ count } груп кантактаў"
       ],
       "Delete ${ links.length } items?": [
         "Выдаліць ${ links.length } элементы(аў)?"
@@ -10977,9 +11019,9 @@
       ],
       "Found ${ searchView.numberOfResults } result": [
         "Знойдзены ${ searchView.numberOfResults } вынік",
-        "Знойдзены ${ searchView.numberOfResults } вынікі",
+        "Знойдзена ${ searchView.numberOfResults } вынікі",
         "Знойдзена ${ searchView.numberOfResults } вынікаў",
-        "Знойдзены ${ searchView.numberOfResults } вынікі"
+        "Знойдзена ${ searchView.numberOfResults } вынікаў"
       ],
       "Get advanced protection": [
         "Атрыманне дадатковай абароны"
@@ -11317,9 +11359,6 @@
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
       ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Вы збіраецеся адхіліць запрашэнне для абагуленага элемента. Вы не зможаце атрымаць доступ да яго, пакуль уладальнік паўторна не абагуліць яго з вамі."
-      ],
       "You can now create unlimited folders and labels": [
         "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"
       ],
@@ -11464,7 +11503,7 @@
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)"
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
       ]
     },
     "Validation Error": {
@@ -11625,7 +11664,7 @@
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?",
-        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?"
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Вы ўпэўнены, што хочаце незваротна выдаліць гэтыя групы кантактаў?"

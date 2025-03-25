@@ -473,7 +473,7 @@
         "移除访问权"
       ],
       "Remove all expired links (${ inactiveLinkCount })": [
-        "移除所有过期链接 ( ${ inactiveLinkCount } )"
+        "移除所有过期链接 (${ inactiveLinkCount })"
       ],
       "Remove link": [
         "移除链接"
@@ -488,7 +488,7 @@
         "重新发送验证码"
       ],
       "Resend code (in ${ remaining }s)": [
-        "重新发送代码 ( ${ remaining } 秒 )"
+        "重新发送代码 (${ remaining } 秒)"
       ],
       "Resend invitation": [
         "重新发送邀请"
@@ -717,7 +717,7 @@
         "其他 ${ total } 个登录使用相同密码"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
-        "2FA 给您的登录添加了另一层安全。 ${ PASS_APP_NAME } 通过存储和自动自动填充您的两步验证代码使 2FA 更加容易。"
+        "2FA 给您的登录添加了另一层安全。 ${ PASS_APP_NAME } 通过存储并自动填充您的 2FA 验证码，让 2FA 变得更简单。"
       ],
       "Add the following CNAME DNS records to your domain.": [
         "将以下 CNAME DNS 记录添加到您的域。"
@@ -768,7 +768,7 @@
         "某些 DNS 注册商可能需要完整的记录路径，在这种情况下，请使用 ${ domain }  作为域值。"
       ],
       "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
-        "些域名注册商 ( Namecheap、Cloudflare 等 ) 可能使用 @ 作为根域名。"
+        "些域名注册商（Namecheap、Cloudflare 等）可能使用 @ 作为根域名。"
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } 是一种电子邮件验证方法，旨在检测电子邮件发送过程中伪造的发件人地址。强烈建议设置 SPF，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
@@ -789,7 +789,7 @@
         "该服务提供 2FA。启用它可提高账户安全性。"
       ],
       "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
-        "要验证域名的所有权，请添加以下 TXT 记录。某些域名注册商 ( Namecheap、Cloudflare 等 ) 可能使用 @ 作为根域名。"
+        "要验证域名的所有权，请添加以下 TXT 记录。某些域名注册商（Namecheap、Cloudflare 等）可能使用 @ 作为根域名。"
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "解锁高级安全功能和详细日志，保护您的在线形象。"
@@ -1226,7 +1226,7 @@
     },
     "Feature": {
       "Integrated 2FA authenticator": [
-        "集成了双重身份验证"
+        "内置 2FA 验证器"
       ],
       "Unlimited hide-my-email aliases": [
         "无限制地 hide-my-email"
@@ -1335,7 +1335,7 @@
         "${ PASS_APP_NAME } 将遵循您的系统主题。"
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
-        "${ PASS_APP_NAME } 将生成一个转发地址 ( 也称为反向别名 ) ，你可以将其复制到剪贴板。"
+        "${ PASS_APP_NAME } 将生成一个转发地址（也称为反向别名），你可以将其复制到剪贴板。"
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } 只能导入登录、笔记、信用卡和身份信息。"
@@ -1407,7 +1407,7 @@
         "回收站中的别名将继续转发电子邮件。如果您想停止接收该地址的邮件，请禁用它。"
       ],
       "Aliases out of sync (${ aliasCount })": [
-        "别名未同步 ( ${ aliasCount } )"
+        "别名未同步 (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "自定义域名的别名不受监控，请将其添加为自定义电子邮件以便监控。"
@@ -1473,7 +1473,7 @@
         "自带域名，无需再购买其他电子邮件托管解决方案。"
       ],
       "Built in 2FA authenticator": [
-        "内置 2FA 身份验证器"
+        "内置 2FA 验证器"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
         "通过添加域名，您可以创建别名，如 hi@my-domain.com。"
@@ -1527,7 +1527,7 @@
         "已创建 ${ time }。"
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV 为查看数据提供了一种方便的格式。但由于其简单性，某些数据将不包括在内 ( 自定义字段、密码... ) 。如需完整导出，建议使用其他格式。"
+        "CSV 为查看数据提供了一种方便的格式。但由于其简单性，某些数据将不包括在内（自定义字段、密码等）。如需完整导出，建议使用其他格式。"
       ],
       "Current version": [
         "当前版本"
@@ -2339,8 +2339,11 @@
       "You may close this tab.": [
         "您可以关闭此标签页。"
       ],
+      "You need a vault with edit permission before you can import items.": [
+        "在导入项目之前，您需要拥有一个具备编辑权限的加密库。"
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
-        "验证域名后，您就可以自定义域名设置 ( 通配邮箱别名、别名的默认显示名称等... ) 。"
+        "验证域名后，您就可以自定义域名设置（通配邮箱别名、别名的默认显示名称等）。"
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "您将被注销并需要在所有其他设备上重新登录。"
@@ -2462,7 +2465,7 @@
         "2FA 密钥 (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "2FA 密钥 (TOTP)"
+        "2FA 令牌 (TOTP)"
       ],
       "30 days": [
         "30 天"
@@ -2504,7 +2507,7 @@
         "别名地址"
       ],
       "Alias address (disabled)": [
-        "别名地址 ( 已禁用 )"
+        "别名地址 (已禁用)"
       ],
       "Aliases": [
         "別名"
@@ -2666,10 +2669,10 @@
         "邮箱"
       ],
       "Email (alias)": [
-        "电子邮件 ( 别名 )"
+        "电子邮件（别名）"
       ],
       "Email (new alias)": [
-        "电子邮件 ( 新别名 )"
+        "电子邮件 (新别名)"
       ],
       "Email address": [
         "邮箱地址"
@@ -2900,7 +2903,7 @@
         "最近"
       ],
       "Name": [
-        "姓名"
+        "名称"
       ],
       "Name on card": [
         "持卡人姓名"
@@ -2993,7 +2996,7 @@
         "个性化设置"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "PGP 加密的 JSON ( 推荐 )"
+        "PGP 加密的 JSON (推荐)"
       ],
       "Phone number": [
         "电话号码"
@@ -3182,7 +3185,7 @@
         "回收站"
       ],
       "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
-        "双因素身份验证 (2FA) 是保护在线账户的最佳方法之一。${ PASS_APP_NAME } 通过集成的身份验证器存储你的 2FA 代码，并自动显示和自动填充代码，让 2FA 变得更简单。"
+        "双因素身份验证 (2FA) 是保护在线账户的最佳方法之一。${ PASS_APP_NAME } 通过集成的身份验证器存储您的 2FA 验证码，并自动显示和填充验证码，让 2FA 变得更简单。"
       ],
       "Type": [
         "类型"
@@ -3324,7 +3327,7 @@
     },
     "new_plans: feature": {
       "Require 2FA for organization": [
-        "可要求机构全员开启双重验证"
+        "可要求机构全员开启 2FA"
       ],
       "SSO integration": [
         "SSO 集成"
@@ -3610,10 +3613,10 @@
     },
     "Theme": {
       "Automatic": [
-        "自动操作"
+        "跟随系统"
       ],
       "Dark": [
-        "暗色主题"
+        "深色主题"
       ],
       "Light": [
         "浅色主题"
@@ -3747,10 +3750,10 @@
         "放弃更改？"
       ],
       "DKIM (Optional)": [
-        "DKIM ( 可选 )"
+        "DKIM (可选)"
       ],
       "DMARC (Optional)": [
-        "DMARC ( 可选 )"
+        "DMARC (可选)"
       ],
       "Domain": [
         "域名"
@@ -3900,7 +3903,7 @@
         "是否永久移除所有项目？"
       ],
       "Pinned (${ items.length })": [
-        "已固定 ( ${ items.length } )"
+        "已固定 (${ items.length })"
       ],
       "Please note that once deleted, the alias can't be restored.": [
         "请注意，别名一旦删除就无法恢复。"
@@ -3975,7 +3978,7 @@
         "共享方式"
       ],
       "SPF (Optional)": [
-        "SPF ( 可选 )"
+        "SPF (可选)"
       ],
       "Status": [
         "状态"

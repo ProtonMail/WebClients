@@ -351,10 +351,10 @@
         "Ayuda"
       ],
       "Help and feedback": [
-        "Ayuda y Comentarios "
+        "Ayuda y comentarios"
       ],
       "Help and resources": [
-        "Ayuda y Recursos"
+        "Ayuda y recursos"
       ],
       "Hide advanced PGP settings": [
         "Ocultar configuración PGP avanzada"
@@ -1481,7 +1481,7 @@
         "Gestor de contraseñas cifrado"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Nuestro plan básico y gratuito con correo y almacenamiento encriptado de extremo a extremo. No incluye características prémium."
+        "Nuestro plan básico y gratuito con correo y almacenamiento cifrado de extremo a extremo. No incluye características prémium."
       ],
       "Save ${ upsellSavings }": [
         "Ahorra un ${ upsellSavings }"
@@ -2553,12 +2553,12 @@
     },
     "customer_support.feature.drive": {
       "For ${ DRIVE_APP_NAME }": [
-        "Por ${ DRIVE_APP_NAME }"
+        "Para ${ DRIVE_APP_NAME }"
       ]
     },
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
-        "Por ${ MAIL_APP_NAME }"
+        "Para ${ MAIL_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -6935,7 +6935,7 @@
         "Cifrado de extremo a extremo"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Descaras de P2P/BitTorrent rápidas"
+        "Descargas rápidas de P2P/BitTorrent"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Funciones gratuitas de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }"
@@ -7238,7 +7238,7 @@
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Paga una vez, asegura tus contraseñas e identidad para siempre."
+        "Paga una vez y asegura tus contraseñas e identidad para siempre."
       ],
       "Popular": [
         "Popular"
@@ -7806,9 +7806,6 @@
       "Save": [
         "Ahorra"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Ahorra un ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Ahorra un 80 % en tu primer mes."
       ],
@@ -8080,6 +8077,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -8088,9 +8088,6 @@
       ],
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas"
-      ],
-      "Payment Processing": [
-        "Procesando el pago"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
@@ -8141,8 +8138,8 @@
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos procesando el pago de la factura. Espera hasta que se complete el pago antes de realizar cambios en tu plan o actualizar tus detalles de pago. Gracias por tu paciencia."
+      "Your payment is still being processed": [
+        "Su pago aún está siendo procesado"
       ]
     },
     "Payments.Error": {
@@ -9114,7 +9111,7 @@
         "${ n } conexiones VPN por usuario"
       ],
       "VPN connection for ${ n } devices per user": [
-        "Conexión VPN para ${ n } dispositivos por usuario",
+        "Conexión VPN para ${ n } dispositivo por usuario",
         "Conexión VPN para ${ n } dispositivos por usuario"
       ]
     },
@@ -10072,7 +10069,7 @@
         "Grupos"
       ],
       "Help and feedback": [
-        "Ayuda y Comentarios "
+        "Ayuda y comentarios"
       ],
       "Help center": [
         "Centro de ayuda"
@@ -10503,8 +10500,8 @@
         "Selección automática desde ${ numberOfCountries } países"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Servidores en ${ numberOfCountries }+ país",
-        "Servidores de ${ numberOfCountries }+ países"
+        "Servidores en ${ numberOfCountries } país",
+        "Servidores en más de ${ numberOfCountries } países"
       ]
     },
     "vpn_2024: renew": {

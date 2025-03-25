@@ -328,8 +328,8 @@
       "Enable multi-user support": [
         "Ativar suporte para múltiplos usuários"
       ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "Descubra ${ PLAN_NAMES[plan] }"
+      "Explore ${ target }": [
+        "Explore ${ target }"
       ],
       "Explore group plans": [
         "Explore planos de grupo"
@@ -629,7 +629,7 @@
         "Selecionar ciclo de faturamento ${ billingText }"
       ],
       "Select city ${ city }": [
-        "Seleciona a cidade ${ city }"
+        "Selecione a cidade ${ city }"
       ],
       "Select country": [
         "Selecionar país"
@@ -1207,7 +1207,7 @@
         "Quão seguro é o Telegram?"
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
-        "Neste artigo, veremos quem pode ver seu histórico da Internet quando você usa WiFi, o que eles podem ver e por que podem fazer isso"
+        "Neste artigo, veremos quem pode ver seu histórico da Internet quando você usa WiFi, o que eles podem ver e por que podem fazer isso."
       ],
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "Aumente a velocidade de VPN em até 400% com VPN Accelerator"
@@ -2449,10 +2449,10 @@
         "Todos na sua organização podem se conectar a servidores compartilhados em todos os países."
       ],
       "If disabled, only admins will have access.": [
-        "Se desativado, apenas os administradores poderão acessar."
+        "Se desabilitado, somente administradores terão acesso."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
-        "Mantenha as diferentes partes de sua vida separadas e sua caixa de entrada organizada com endereços adicionais."
+        "Mantenha diferentes partes de sua vida separadas e sua caixa de entrada organizada com endereços adicionais."
       ],
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode se conectar a servidores compartilhados."
@@ -2603,10 +2603,10 @@
         "Baixar para Windows"
       ],
       "Download on the Apple App Store": [
-        "Baixar na Apple App Store"
+        "Baixe na Apple App Store"
       ],
       "Download on the Google Play Store": [
-        "Baixar na Google Play Store"
+        "Baixe na Google Play Store"
       ],
       "Fire TV": [
         "Fire TV"
@@ -2897,7 +2897,7 @@
         "Selecione um estado"
       ],
       "Please select at least one location before continuing.": [
-        "Selecione pelo menos um local antes de continuar"
+        "Selecione pelo menos um local antes de continuar."
       ],
       "Please select at least one user or group before continuing.": [
         "Selecione pelo menos um usuário ou grupo antes de continuar."
@@ -3854,16 +3854,16 @@
         "${ fileName }: pré-visualização em baixa resolução"
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } Dos membros da sua família usam autenticação de dois fatores.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } Dos membros da sua família usam autenticação de dois fatores."
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos membros da sua família usam autenticação de dois fatores.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos membros da sua família usam autenticação de dois fatores."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } Dos seus membros usam autenticação de dois fatores para fazer login na sua organização.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } Dos seus membros usam autenticação de dois fatores para fazer login na sua organização."
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros usam autenticação de dois fatores para iniciar sessão na sua organização.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros usam autenticação de dois fatores para iniciar sessão na sua organização."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } Dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } Dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização."
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de início de sessão e de segunda senha. Para ativar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
@@ -4152,7 +4152,7 @@
         "Ao sair agora, as alterações não podem ser salvas"
       ],
       "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendário, integrado com o ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
+        "Calendário, integrado com ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
       ],
       "Can’t access your recovery email?": [
         "Não consegue acessar seu e-mail de recuperação?"
@@ -4170,7 +4170,7 @@
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Armazenamento em nuvem, integrado com o ${ DOCS_APP_NAME }"
+        "Armazenamento em nuvem, integrado com ${ DOCS_APP_NAME }"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editors' Choice Award com classificação de 8,4 de 10"
@@ -4630,7 +4630,7 @@
         "Item preenchido automaticamente em ${ vaultLink }"
       ],
       "Item autofilled in vault": [
-        "Item preenchido automaticamente no cofre"
+        "Item preenchido automaticamente do cofre"
       ],
       "Item created in ${ vaultLink }": [
         "Item criado em ${ vaultLink }"
@@ -4738,7 +4738,7 @@
         "Certifique-se de ${ addARecoveryMethod } para poder voltar à sua conta se esquecer sua senha."
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
-        "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem aceder. Se desativado, apenas os administradores terão acesso."
+        "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
@@ -4875,7 +4875,7 @@
         "Senha copiada para a área de transferências"
       ],
       "Password manager with extra account security": [
-        "Gerenciador de senhas com segurança de conta adiconal"
+        "Gerenciador de senhas com segurança extra para contas"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "A senha deve ter ${ MIN_PASSWORD_LENGTH } caracteres ou mais."
@@ -4884,7 +4884,7 @@
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
-        "PC Magazine Editors' Choice Award com classificação de 5 de 5"
+        "PC Magazine Editors' Choice Award com classificação de 5 de 5 estrelas"
       ],
       "Pending removal": [
         "Aguardando remoção"
@@ -5061,7 +5061,7 @@
         "Selecione as afiliações de usuário de ${ getFormattedOrganization } que você deseja permitir na sua organização ${ BRAND_NAME }:"
       ],
       "Self-custodial crypto wallet": [
-        "Carteira de criptomoeda autocustódia"
+        "Carteira de criptomoeda autocustodial"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envie e-mails para incentivar seus membros a proteger suas contas com A2F."
@@ -5098,7 +5098,7 @@
       ],
       "Shared server country (${ countriesCount })": [
         "País com servidor compartilhado (${ countriesCount })",
-        "Países com servidor partilhado (${ countriesCount })"
+        "Países com servidor compartilhado (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Cofre compartilhado excluído"
@@ -5229,7 +5229,7 @@
         "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
       "This cannot be undone.": [
-        "Não é possível anular esta ação."
+        "Não é possível desfazer esta ação."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Isso pode levar algum tempo. Não feche esta página ou desconecte-se da internet."
@@ -5346,7 +5346,7 @@
         "Conexões VPN adicionais"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
-        "Experimente ${ productName } sem riscos. Se por algum motivo mudar de ideia, receberá um reembolso total. Sem perguntas."
+        "Experimente ${ productName } totalmente sem riscos - se por algum motivo você mudar de ideia, você receberá um reembolso total. Sem perguntas."
       ],
       "Two-factor authentication disabled": [
         "Autenticação de dois fatores desativada"
@@ -5967,7 +5967,7 @@
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite que todos em sua organização adicionem links de videoconferência de forma simples aos convites de calendário."
+        "Permite que todos na sua organização adicionem facilmente links de videoconferência aos seus convites de calendário."
       ],
       "Amount": [
         "Valor"
@@ -5982,7 +5982,7 @@
         "Aplica a política a"
       ],
       "Ask members to set up 2FA": [
-        "Peça aos membros para configurarem 2FA"
+        "Peça aos membros para configurarem A2F"
       ],
       "Assertion Consumer Service URL": [
         "URL de asserção do serviço do consumidor (ACS)"
@@ -6225,7 +6225,7 @@
         "Principal"
       ],
       "Members without 2FA": [
-        "Membros sem 2FA"
+        "Membros sem A2F"
       ],
       "Metadata file for ${ appName }": [
         "Metadados de arquivo para ${ appName }"
@@ -8053,7 +8053,7 @@
         "O lembrete foi enviado"
       ],
       "Too many recent API requests": [
-        "Muitas solicitações da API recentes"
+        "Muitas solicitações de API recentes"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "A autenticação de dois fatores foi imposta para os administradores"
@@ -8112,9 +8112,6 @@
       ],
       "Save": [
         "Economize"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Economize ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Economize 80% no seu primeiro mês"
@@ -8540,6 +8537,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -8548,9 +8548,6 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
-      ],
-      "Payment Processing": [
-        "Processando pagamento"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Adicione um método de pagamento no painel de controle para continuar."
@@ -8601,7 +8598,7 @@
         "O preço com desconto especial de ${ priceWithDiscount } é válido para o primeiro mês. Depois, ele será renovado automaticamente por ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "A transação foi detectada. Os créditos serão adicionados à sua conta assim que a transação for totalmente confirmada."
+        "A transação foi detectada com sucesso. Os créditos serão adicionados à sua conta assim que a transação for totalmente confirmada."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
@@ -8610,11 +8607,11 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
-        "Você será cobrado ${ amountToCharge } do método de pagamento selecionado."
+        "Você será cobrado em ${ amountToCharge } no método de pagamento selecionado."
+      ],
+      "Your payment is still being processed": [
+        "Seu pagamento ainda está sendo processado"
       ]
     },
     "Payments.Error": {
@@ -8726,7 +8723,7 @@
         "Nome do grupo"
       ],
       "Main street 12": [
-        "Rua principal, 12"
+        "Rua Principal, 12"
       ],
       "Other": [
         "Outro"
@@ -10101,47 +10098,6 @@
         "Por ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Armazenamento de 15 GB"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 recursos premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento de e-mail automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerta de violações de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicativo para computador"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie nossa missão"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Faça upgrade da sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos seus dados"
-      ],
-      "Your privacy is our mission": [
-        "Sua privacidade é a nossa missão"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
@@ -10222,7 +10178,7 @@
         "2 usuários"
       ],
       "Add any new files": [
-        "Adicionar qualquer arquivo"
+        "Adicione quaisquer novos arquivos"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura ${ planName } expirar, você fará o downgrade para o ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Você também perderá todos os bônus de armazenamento concedidos anteriormente."
@@ -10432,6 +10388,47 @@
         "Seu próprio alias de e-mail @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerta de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Faça upgrade da sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Você tem certeza?"
@@ -10487,10 +10484,10 @@
         "Privilégios de administrador restaurados"
       ],
       "Backup password updated": [
-        "Senha de backup atualizado"
+        "Senha de backup atualizada"
       ],
       "Billing details updated": [
-        "Os detalhes de faturamento forem atualizados."
+        "Os detalhes de faturamento forem atualizados"
       ],
       "Catch-all address updated": [
         "Endereço catch-all atualizado"
@@ -10556,10 +10553,10 @@
         "Logotipo da organização removido"
       ],
       "Organization logo updated": [
-        "Logotipo da organização atualizada"
+        "Logotipo da organização atualizado"
       ],
       "Organization name updated": [
-        "Nome da organização atualizada"
+        "Nome da organização atualizado"
       ],
       "Password copied to clipboard": [
         "Senha copiada para a área de transferência"
@@ -10665,7 +10662,7 @@
         "Preferências atualizadas"
       ],
       "Resent invitation": [
-        "Reenviar convite"
+        "Convite reenviado"
       ]
     },
     "Suffix": {
@@ -10982,7 +10979,7 @@
         "Conectar organização"
       ],
       "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo, com o ${ vpnPlus }. ${ upgradeButton }"
+        "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo com o ${ vpnPlus }. ${ upgradeButton }"
       ],
       "Contact us": [
         "Fale conosco"
@@ -11107,7 +11104,7 @@
         "Editar o endereço de cobrança"
       ],
       "Edit countries": [
-        "Editar os países"
+        "Editar países"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -11128,7 +11125,7 @@
         "Editar a nota de fatura"
       ],
       "Edit name": [
-        "Editar o nome"
+        "Editar nome"
       ],
       "Edit servers": [
         "Editar servidores"
@@ -11644,19 +11641,19 @@
         "Copie e cole este URL no campo URL ACS (Assertion Consumer Service) do seu provedor de identidade"
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
-        "Copie e cole este URL no campo ID do seu provedor de identidade"
+        "Copie e cole este URL no campo ID de Entidade do seu provedor de identidade"
       ],
       "Device information such as operating system": [
         "Informações do dispositivo, como sistema operacional"
       ],
       "Display name for the entity in the eduGAIN database": [
-        "Nome de exibição para a entidade no banco de dados de eduGAIN"
+        "Nome de exibição para a entidade no banco de dados da eduGAIN"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL do endpoint do provedor de identidade (por exemplo, https://idp.exemplo.com/sso/saml)"
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
-        "Excluindo usuários de logon único cujo 2FA é gerenciado pelo seu provedor de identidade"
+        "Excluindo usuários de logon único cujo A2F é gerenciado pelo seu provedor de identidade"
       ],
       "Feature in early access": [
         "Recurso em acesso antecipado"
@@ -11668,10 +11665,10 @@
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
       ],
       "IP address (Internet Service Provider)": [
-        "Endereço IP (provedor de serviços de Internet)"
+        "Endereço IP (Provedor de Serviços de Internet)"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
-        "Os membros que não usam 2FA receberão um e-mail solicitando que o habilitem o mais rápido possível. Os usuários com logon único não receberão o lembrete por e-mail."
+        "Os membros que não usam A2F receberão um e-mail solicitando que o habilitem o mais rápido possível. Os usuários com logon único não receberão o lembrete por e-mail."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "As políticas de servidor compartilhado podem ser aplicadas a usuários ou grupos individuais"
@@ -11692,7 +11689,7 @@
         "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"claro\""
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
-        "Isso pode ser causado por redefinição de senha ou usuário que não iniciou a sessão ainda."
+        "Isso pode ser causado por uma redefinição de senha ou pelo usuário ainda não ter iniciado a sessão."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Esse endereço de e-mail será mostrado a todos os membros da organização ao realizar operações de gerenciamento de contas."
@@ -11874,10 +11871,10 @@
         "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Todos os serviços premium de ${ BRAND_NAME }. A partir de apenas ${ fallBackString } por mês"
+        "Todos os serviços premium da ${ BRAND_NAME }. A partir de apenas ${ fallBackString } por mês"
       ],
       "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Todos os serviços premium de ${ BRAND_NAME }. Apenas **${ priceString }** a mais por mês."
+        "Todos os serviços premium da ${ BRAND_NAME }. Apenas **${ priceString }** a mais por mês."
       ],
       "Did you know?": [
         "Você sabia?"
@@ -12037,10 +12034,10 @@
         "Comunique-se e agende com criptografia de ponta a ponta."
       ],
       "Get more from your ${ planTitle } subscription.": [
-        "Aproveite ao máximo sua assinatura de ${ planTitle }."
+        "Aproveite ao máximo sua assinatura do ${ planTitle }."
       ],
       "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
-        "Mantenha seus arquivos, fotos e documentos seguros com o armazenamento em nuvem gratuito ${ maxDriveSpace }."
+        "Mantenha seus arquivos, fotos e documentos seguros com o armazenamento em nuvem gratuito de ${ maxDriveSpace }."
       ],
       "Set secure passwords without the hassle.": [
         "Defina senhas seguras sem complicações"
@@ -12049,7 +12046,7 @@
         "Com ${ planTitlePlusMaybeBrand }, você obtém acesso gratuito ao ${ VPN_APP_NAME } e outros serviços de privacidade."
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
-        "Com ${ planTitlePlusMaybeBrand }, você obtém acesso gratuito a todos os serviços de privacidade de ${ BRAND_NAME }."
+        "Com ${ planTitlePlusMaybeBrand }, você obtém acesso gratuito a todos os serviços de privacidade da ${ BRAND_NAME }."
       ]
     },
     "VPN info": {

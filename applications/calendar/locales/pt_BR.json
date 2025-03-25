@@ -7811,9 +7811,6 @@
       "Save": [
         "Economize"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Economize ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Economize 80% no seu primeiro mês"
       ],
@@ -8091,6 +8088,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -8099,9 +8099,6 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
-      ],
-      "Payment Processing": [
-        "Processando pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -8152,8 +8149,8 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
+      "Your payment is still being processed": [
+        "Seu pagamento ainda está sendo processado"
       ]
     },
     "Payments.Error": {
@@ -9288,7 +9285,7 @@
         "2 usuários"
       ],
       "Add any new files": [
-        "Adicionar qualquer arquivo"
+        "Adicione quaisquer novos arquivos"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura ${ planName } expirar, você fará o downgrade para o ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Você também perderá todos os bônus de armazenamento concedidos anteriormente."

@@ -586,10 +586,10 @@
         "Ayuda"
       ],
       "Help and feedback": [
-        "Ayuda y Comentarios "
+        "Ayuda y comentarios"
       ],
       "Help and resources": [
-        "Ayuda y Recursos"
+        "Ayuda y recursos"
       ],
       "Hide": [
         "Ocultar"
@@ -1114,10 +1114,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar todo"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar todo"
       ],
       "Select all messages": [
@@ -1312,10 +1312,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
-      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -1344,7 +1340,7 @@
         "Desmarcar para eliminar"
       ],
       "Unordered list": [
-        "Lista desordenada"
+        "Lista sin orden"
       ],
       "Unsnooze": [
         "Desactivar la pausa"
@@ -2285,7 +2281,7 @@
         "Gestor de contraseñas cifrado"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Nuestro plan básico y gratuito con correo y almacenamiento encriptado de extremo a extremo. No incluye características prémium."
+        "Nuestro plan básico y gratuito con correo y almacenamiento cifrado de extremo a extremo. No incluye características prémium."
       ],
       "Save ${ upsellSavings }": [
         "Ahorra un ${ upsellSavings }"
@@ -3518,12 +3514,12 @@
     },
     "customer_support.feature.drive": {
       "For ${ DRIVE_APP_NAME }": [
-        "Por ${ DRIVE_APP_NAME }"
+        "Para ${ DRIVE_APP_NAME }"
       ]
     },
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
-        "Por ${ MAIL_APP_NAME }"
+        "Para ${ MAIL_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -6243,6 +6239,9 @@
       "Calendar side panel": [
         "Panel lateral del calendario"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendario integrado con ${ MAIL_APP_NAME } y ${ CONTACTS_APP_NAME }"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "¿No encuentras lo que buscas? ${ displayAllMailButton }"
       ],
@@ -6281,6 +6280,9 @@
       ],
       "Close this screen to exit.": [
         "Cierra esta pantalla para salir."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Almacenamiento en la nube integrado con ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Confirmar denuncia de suplantación de identidad"
@@ -6473,6 +6475,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "El correo electrónico se reenvía a tu bandeja de entrada mientras que tu dirección de correo se mantiene oculta."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Servicio de correo electrónico integrado con ${ CALENDAR_APP_NAME } y ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "Protección contra rastreo para el correo electrónico desactivada"
@@ -6684,8 +6689,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -6942,6 +6946,9 @@
       "password": [
         "contraseña"
       ],
+      "Password manager with extra account security": [
+        "Gestor de contraseñas con seguridad de cuenta adicional"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
@@ -7073,9 +7080,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
       ],
-      "Refining email list in progress": [
-        "Refinado de la lista de correo en progreso"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
@@ -7154,6 +7158,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
+      ],
+      "Self-custodial crypto wallet": [
+        "Cartera de criptomonedas en autocustodia"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Enviar un mensaje encriptado y protegido por contraseña a una dirección de correo electrónico que no es de ${ boldText }."
@@ -7617,6 +7624,9 @@
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN con direcciones IP y servidores dedicados"
       ],
       "Warning": [
         "Advertencia"
@@ -9714,7 +9724,7 @@
         "Cifrado de extremo a extremo"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Descaras de P2P/BitTorrent rápidas"
+        "Descargas rápidas de P2P/BitTorrent"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Funciones gratuitas de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }"
@@ -10017,7 +10027,7 @@
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Paga una vez, asegura tus contraseñas e identidad para siempre."
+        "Paga una vez y asegura tus contraseñas e identidad para siempre."
       ],
       "Popular": [
         "Popular"
@@ -10464,9 +10474,6 @@
       "Save": [
         "Ahorra"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Ahorra un ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Ahorra un 80 % en tu primer mes."
       ],
@@ -10567,7 +10574,7 @@
         "Acceso en cualquier momento y en cualquier lugar"
       ],
       "Auto-delete spam and trash": [
-        "Eliminación automática del spam y la papelera"
+        "Eliminación automática del spam y de la papelera"
       ],
       "browser": [
         "navegador"
@@ -10853,6 +10860,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -10861,9 +10871,6 @@
       ],
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas"
-      ],
-      "Payment Processing": [
-        "Procesando el pago"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
@@ -10914,8 +10921,8 @@
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos procesando el pago de la factura. Espera hasta que se complete el pago antes de realizar cambios en tu plan o actualizar tus detalles de pago. Gracias por tu paciencia."
+      "Your payment is still being processed": [
+        "Su pago aún está siendo procesado"
       ]
     },
     "Payments.Error": {
@@ -12143,7 +12150,7 @@
         "${ n } conexiones VPN por usuario"
       ],
       "VPN connection for ${ n } devices per user": [
-        "Conexión VPN para ${ n } dispositivos por usuario",
+        "Conexión VPN para ${ n } dispositivo por usuario",
         "Conexión VPN para ${ n } dispositivos por usuario"
       ]
     },
@@ -12785,7 +12792,7 @@
         "Confirmación de lectura enviada"
       ],
       "Self-destruction removed": [
-        "Se ha eliminado la eliminación automática."
+        "Se ha eliminado la destrucción automática."
       ],
       "Self-destruction set": [
         "Destrucción automatica configurada"
@@ -12800,7 +12807,7 @@
         "Verificación completada"
       ],
       "Writing assistant disabled": [
-        "El asistente de escritura ha sido desactivado."
+        "Se ha desactivado el asistente de escritura."
       ],
       "Writing assistant enabled": [
         "Se ha activado el asistente de escritura."
@@ -13342,7 +13349,7 @@
         "Grupos"
       ],
       "Help and feedback": [
-        "Ayuda y Comentarios "
+        "Ayuda y comentarios"
       ],
       "Help center": [
         "Centro de ayuda"
@@ -13821,6 +13828,11 @@
         "Hoy"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático: indica que formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
@@ -13904,11 +13916,6 @@
         "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "versión estable"
@@ -13976,8 +13983,8 @@
         "Selección automática desde ${ numberOfCountries } países"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Servidores en ${ numberOfCountries }+ país",
-        "Servidores de ${ numberOfCountries }+ países"
+        "Servidores en ${ numberOfCountries } país",
+        "Servidores en más de ${ numberOfCountries } países"
       ]
     },
     "vpn_2024: renew": {

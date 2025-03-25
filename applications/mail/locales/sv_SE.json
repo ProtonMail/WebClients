@@ -1114,11 +1114,11 @@
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
       ],
-      "Select All": [
-        "Välj alla"
-      ],
       "Select all": [
         "Markera alla"
+      ],
+      "Select All": [
+        "Välj alla"
       ],
       "Select all messages": [
         "Markera alla meddelanden"
@@ -1311,10 +1311,6 @@
       ],
       "Trust": [
         "Lita på"
-      ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -6240,6 +6236,9 @@
       "Calendar side panel": [
         "Kalenderns sidopanel"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjänst, integrerad med ${ MAIL_APP_NAME } och ${ CONTACTS_APP_NAME }"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Kan du inte hitta det du letar efter? ${ displayAllMailButton }"
       ],
@@ -6278,6 +6277,9 @@
       ],
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Molnlagring, integrerad med ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Bekräfta nätfiskerapport"
@@ -6470,6 +6472,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "E-post vidarebefordras till din brevlåda, din e-postadress förblir dold."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjänst, integrerad med ${ CALENDAR_APP_NAME } och ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "Spårningsskydd för e-post är inaktiverad"
@@ -6681,8 +6686,7 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -6939,6 +6943,9 @@
       "password": [
         "lösenord"
       ],
+      "Password manager with extra account security": [
+        "Lösenordshanterare med extra kontosäkerhet"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
       ],
@@ -7070,9 +7077,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
       ],
-      "Refining email list in progress": [
-        "Förfining av e-postlistan pågår"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
@@ -7151,6 +7155,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
+      ],
+      "Self-custodial crypto wallet": [
+        "Självförvaltande kryptoplånbok"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Skicka ett krypterat och lösenordsskyddat meddelande till en ${ boldText }e-postadress."
@@ -7417,10 +7424,10 @@
         "Detta meddelande kommer att skickas imorgon kl. ${ formattedTime }"
       ],
       "This message will expire ${ formattedDate }": [
-        "Detta meddelande kommer löpa ut den ${ formattedDate }"
+        "Detta meddelande kommer löpa ut ${ formattedDate }"
       ],
       "This message will expire on ${ value }": [
-        "Detta meddelande kommer löpa ut den ${ value }"
+        "Detta meddelande kommer löpa ut ${ value }"
       ],
       "This message will expire today at ${ value }": [
         "Detta meddelande kommer löpa ut idag kl. ${ value }"
@@ -7610,6 +7617,9 @@
       ],
       "Visa Secure logo": [
         "Logga för Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN med dedikerade servrar och IP-adresser"
       ],
       "Warning": [
         "Varning"
@@ -10451,9 +10461,6 @@
       "Save": [
         "Spara"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Spara ${ prices.savedPercentage } %"
-      ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
       ],
@@ -10840,6 +10847,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
+      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -10848,9 +10858,6 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
-      ],
-      "Payment Processing": [
-        "Betalning behandlas"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
@@ -10876,8 +10883,8 @@
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi behandlar din betalning för den fakturerade fakturan. Vänta tills betalningen är slutförd innan du gör ändringar i ditt paket eller uppdaterar dina betalningsuppgifter. Tack för ditt tålamod."
+      "Your payment is still being processed": [
+        "Din betalning håller fortfarande på att behandlas"
       ]
     },
     "Payments.Error": {
@@ -13783,6 +13790,11 @@
         "Idag"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
@@ -13864,11 +13876,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]
     },
     "Tor out of date": {

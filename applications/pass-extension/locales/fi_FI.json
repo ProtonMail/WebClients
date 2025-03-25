@@ -225,7 +225,7 @@
         "Poista alias käytöstä"
       ],
       "Disable autosave on this website": [
-        "Poista automaattitallennus käytöstä tällä verkkosivustolla"
+        "Älä käytä automaattitallennusta tällä verkkosivustolla"
       ],
       "Disable instead": [
         "Poista käytöstä sen sijaan"
@@ -243,7 +243,7 @@
         "Älä näytä tällä verkkosivustolla"
       ],
       "Do not suggest on this website": [
-        "Älä ehdota tällä verkkosivustolla"
+        "Älä tarjoa tällä verkkosivustolla"
       ],
       "Done": [
         "Valmis"
@@ -306,7 +306,7 @@
         "Miten vien tietoni palvelusta ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "How to use ${ PASS_APP_NAME }": [
-        "Miten ${ PASS_APP_NAME }ia käytetään"
+        "Miten ${ PASS_APP_NAME } toimii"
       ],
       "Import": [
         "Tuo"
@@ -408,7 +408,7 @@
         "OK"
       ],
       "Open in a window": [
-        "Avaa uudessa ikkunassa"
+        "Avaa ikkunassa"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -552,7 +552,7 @@
         "Näytä lisävalinnat"
       ],
       "Sign back in": [
-        "Kirjaudu takaisin sisään"
+        "Kirjaudu uudelleen"
       ],
       "Sign in": [
         "Kirjaudu sisään"
@@ -641,7 +641,7 @@
         "Suojatun linkin välityksellä"
       ],
       "View app logs": [
-        "Näytä sovelluksen lokit"
+        "Tarkastele sovelluksen lokitietoja"
       ],
       "View history": [
         "Näytä historia"
@@ -1058,7 +1058,7 @@
         "Jotain meni pieleen"
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Jotain meni pieleen. Lataa ${ PASS_APP_NAME } -laajennus uudelleen. Ongelma on kirjattu lokiin"
+        "Jotain meni pieleen. Lataa ${ PASS_APP_NAME } -laajennus uudelleen. Ongelma kirjattiin lokiin."
       ],
       "The file you are trying to import is empty": [
         "Tiedosto, jota yrität tuoda, on tyhjä"
@@ -1136,7 +1136,7 @@
         "Olet tällä hetkellä yhteydettömässä tilassa. Palauta yhteys avataksesi ${ PASS_SHORT_APP_NAME }in."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
-        "Selaimellasi on vaikeuksia ottaa ${ PASS_APP_NAME } käyttöön."
+        "Selaimellasi on ongelmia ${ PASS_APP_NAME }in aktivoinnissa."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS:ääsi ei ole asetettu oikein. Saamamme MX-tietue on:"
@@ -1255,13 +1255,13 @@
         "${ PASS_APP_NAME } tarjoaa kirjautumistietojen tallennusta tai päivitystä."
       ],
       "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } tarjoaa tunnistautumista tallennetulla pääsyavaimella."
+        "${ PASS_APP_NAME } tarjoaa tunnistautumista tallennetuilla pääsyavaimilla."
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } tarjoaa sähköpostialiaksen luontia rekisteröitymislomakkeissa."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
-        "${ PASS_APP_NAME } tarjoaa vahvojen salasanojen luontia rekisteröitymislomakkeissa."
+        "${ PASS_APP_NAME } tarjoaa vahvan salasanan luontia rekisteröitymislomakkeissa."
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } tarjoaa pääsyavaimen tallennusta."
@@ -1297,7 +1297,7 @@
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
       ],
       "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Käyttäjätunnuksen \"${ username }\" pääsyavain tallennetaan ja se on käytettävissä laitteissa, joihin ${ PASS_APP_NAME } on asennettu."
+        "Tunnuksen \"${ username }\" pääsyavain tallennetaan ja se on käytettävissä laitteissa, joihin ${ PASS_APP_NAME } on asennettu."
       ],
       "Access successfully confirmed": [
         "Käyttöoikeus vahvistettiin"
@@ -1495,7 +1495,7 @@
         "Yhteydetöntä tilaa poistetaan käytöstä..."
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Tutustu ${ PASS_APP_NAME }-YouTube-videoon"
+        "Tutustu ${ PASS_APP_NAME }in YouTube-videoon"
       ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS-muutoksissa voi kestää jopa 24 tuntia."
@@ -1600,7 +1600,7 @@
         "Noudata ohjeita tuodaksesi tietosi yleisellä CSV-tiedostolla:"
       ],
       "For easy access to your passwords and more.": [
-        "Helppo pääsy salasanoihisi ja muihin tietoihisi."
+        "Tavoita salasanasi ja muut tietosi helposti."
       ],
       "For security reason, your access needs to be confirmed": [
         "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
@@ -1616,7 +1616,7 @@
         "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Välitysosoite kopioitiin leikepöydälle. Lähetä sähköposti tähän osoitteeseen, ja ${ Email } vastaanottaa sen."
+        "Välitysosoite kopioitiin leikepöydälle. Lähetä viesti tähän osoitteeseen, niin ${ Email } vastaanottaa sen."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan.",
@@ -1629,7 +1629,7 @@
         "Hanki rajattomasti aliaksia, nauti ainutlaatuisista ominaisuuksista ja tuet toimintaamme tilaamalla Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
-        "Täältä löydät kaikki tarvittavat tiedot, jotta pääset alkuun."
+        "Täältä löydät kaikki tarvittavat tiedot, joilla pääset alkuun."
       ],
       "Here's how it works:": [
         "Näin se toimii:"
@@ -1824,7 +1824,7 @@
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa vanhemmat salasanat poistetaan historiasta automaattisesti."
       ],
       "Pending access to the shared data": [
-        "Odotetaan käyttöoikeutta jaettuihin tietoihin"
+        "Odotetaan jaettujen tietojen käyttöoikeutta"
       ],
       "Permanently deleting selected items": [
         "Valittuja kohteita poistetaan pysyvästi"
@@ -1920,10 +1920,10 @@
         "Seuraa alla olevia ohjeita verkkotunnuksesi määrittämiseksi."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
-        "Huomaa, että poistettua aliasta ei voi palauttaa. Haluatko sen sijaan poistaa aliaksen käytöstä?"
+        "Huomioi, että et voi palauttaa poistettua aliasta. Haluatko sen sijaan poistaa sen käytöstä?"
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
-        "Huomaa, että poistettua aliasta ei voi palauttaa. Alias on jo poistettu käytöstä, eikä se välitä sähköposteja postilaatikkoosi"
+        "Huomioi, että et voi palauttaa poistettua aliasta. Se on jo poistettu käytöstä, eikä se välitä sähköposteja postilaatikkoosi."
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Käytä koko verkkotunnuksen polkua, esimerkiksi my-domain.com, tai my-subdomain.my-domain.com, jos käytät aliverkkotunnusta."
@@ -2131,7 +2131,7 @@
         "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin ${ PASS_APP_NAME }-kuvaketta."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
-        "Yritä ladata tai asentaa laajennus uudelleen ja varmista, että selaimesi ja ${ PASS_SHORT_APP_NAME } ovat ajan tasalla."
+        "Kokeile auttaako laajennuksen uudelleenlataus tai -asennus ja varmista, että selaimesi ja ${ PASS_SHORT_APP_NAME } ovat ajan tasalla."
       ],
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
@@ -2161,7 +2161,7 @@
         "Avaa ${ PASS_SHORT_APP_NAME } lisäsalasanallasi"
       ],
       "Unlock it with your PIN to access the settings": [
-        "Avaa lukitus PIN-koodillasi päästäksesi asetuksiin."
+        "Avaa se PIN-koodillasi päästäksesi asetuksiin."
       ],
       "Unlock with biometrics": [
         "Avaa biometrialla"
@@ -2912,7 +2912,7 @@
         "Tarjoa automaattitallennusta"
       ],
       "Prompt for auto-save when generating passwords": [
-        "Ehdota automaattitäyttöä salasanojen luonnin yhteydessä"
+        "Ehdota automaattitallennusta salasanojen luonnin yhteydessä"
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Suojaa ${ PASS_APP_NAME } lisäsalasanalla"
@@ -3092,7 +3092,7 @@
         "Päivitä"
       ],
       "Use ${ PASS_APP_NAME } as your browser's default password manager": [
-        "Käytä ${ PASS_APP_NAME } selaimesi oletussovelluksena salasanojen hallintaan"
+        "Käytä ${ PASS_APP_NAME }ia selaimesi oletusarvoisena salasanahallintana"
       ],
       "Useful for permanent sharing": [
         "Hyödyllinen pysyvään jakamiseen"
@@ -3600,7 +3600,7 @@
         "Myönnä käyttöoikeudet"
       ],
       "Hide my email": [
-        "Hide-my-email"
+        "Piilota sähköpostiosoitteeni"
       ],
       "History": [
         "Historia"
@@ -3698,8 +3698,8 @@
         "Kiinnitykset (${ items.length })"
       ],
       "Please note that once deleted, the alias can't be restored.": [
-        "Huomaa, että poistettua aliasta ei voi palauttaa.",
-        "Huomaa, että poistettuja aliaksia ei voi palauttaa."
+        "Huomioi, että et voi palauttaa poistettua aliasta.",
+        "Huomioi, että et voi palauttaa poistettuja aliaksia."
       ],
       "Random Prefix Generation": [
         "Satunnaisen etuliitteen luominen"
@@ -3806,6 +3806,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Mitä eroa on ${ PASS_SHORT_APP_NAME }- ja SimpleLogin-muistiinpanoilla?"
       ],
+      "You don't have any vaults": [
+        "Sinulla ei ole holveja"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } -tilauksesi päättyy ${ endDate }"
       ],
@@ -3872,7 +3875,7 @@
         "Virhe tietojasi vietäessä"
       ],
       "An error occurred while resuming your session": [
-        "Virhe istuntosi jatkamisessa"
+        "Virhe palautettaessa istuntoasi"
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "Haluatko varmasti siirtää ${ trashedItemsCount } kohteen roskakoriin?",

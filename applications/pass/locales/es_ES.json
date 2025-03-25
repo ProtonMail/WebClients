@@ -311,7 +311,7 @@
         "¿Cómo exporto mis datos desde ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "How to use ${ PASS_APP_NAME }": [
-        "Como usar ${ PASS_APP_NAME }"
+        "Cómo usar ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Importar"
@@ -943,7 +943,7 @@
         "Error al cargar los ajustes del dominio"
       ],
       "Failed to load item history": [
-        "Error al cargar historial del elemento"
+        "Error al cargar el historial del elemento"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
@@ -1162,7 +1162,7 @@
         "Hemos encontrado un problema al iniciar ${ PASS_SHORT_APP_NAME }. Si este problema persiste, contacta a nuestro servicio de atención al cliente para obtener ayuda."
       ],
       "Wrong backup password": [
-        "Contraseña de respaldo incorrecta"
+        "La contraseña de respaldo no es correcta."
       ],
       "Wrong extra password": [
         "La contraseña adicional no es correcta."
@@ -1391,7 +1391,7 @@
         "Todos los elementos de \"${ payload.content.name }\" han sido movidos."
       ],
       "All items successfully moved": [
-        "Todos los elementos han sido movidos."
+        "Se han movido todos los elementos."
       ],
       "All trashed items permanently deleted": [
         "Todos los elementos de la papelera han sido eliminados permanentemente."
@@ -1969,7 +1969,7 @@
         "Te invitamos a dejar una reseña."
       ],
       "Please contact your administrator": [
-        "Por favor, contacta con tu administrador"
+        "Contacta con tu administrador."
       ],
       "Please do not close this window": [
         "No cierra esta ventana"
@@ -2318,6 +2318,9 @@
       "You may close this tab.": [
         "Puedes cerrar esta pestaña."
       ],
+      "You need a vault with edit permission before you can import items.": [
+        "Necesitas una caja fuerte con permiso de edición antes de poder importar elementos."
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Podrás personalizar la configuración de tu dominio (alias de correo electrónico catch-all, nombre a mostrar por defecto para los alias, etc.) después de verificar tu dominio."
       ],
@@ -2413,8 +2416,8 @@
         "${ repliedCount } respuestas"
       ],
       "${ secureLinksCount } secure link": [
-        "Enlace seguro ${ secureLinksCount }",
-        "Enlaces seguros ${ secureLinksCount }"
+        "${ secureLinksCount } enlace seguro",
+        "${ secureLinksCount } enlaces seguros"
       ],
       "${ usageCount } login": [
         "${ usageCount } inicio de sesión",
@@ -3402,7 +3405,7 @@
         "Inicio de sesión rechazado"
       ],
       "Sign-in rejection failure": [
-        "Error en rechazar el inicio de sesión"
+        "Error al rechazar el inicio de sesión"
       ],
       "Sign-in requested on another device. Was it you?": [
         "Se ha solicitado un inicio de sesión en un nuevo dispositivo. ¿Has sido tú?"
@@ -3942,7 +3945,7 @@
         "¿Cuál es la diferencia entre una nota de ${ PASS_SHORT_APP_NAME } y una nota de SimpleLogin?"
       ],
       "You don't have any vaults": [
-        "No tienes ninguna bóveda"
+        "No tienes ninguna caja fuerte."
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Tu suscripción a ${ planName } finalizará el ${ endDate }."
@@ -4256,7 +4259,7 @@
         "Tu administrador necesita crear una bóveda antes de que puedas crear elementos"
       ],
       "Your organization does not allow creating a vault": [
-        "Tu organización no permite crear una bóveda"
+        "Tu organización no permite crear una caja fuerte."
       ],
       "Your organization does not allow sharing individual items": [
         "Tu organización no permite compartir elementos individuales."
