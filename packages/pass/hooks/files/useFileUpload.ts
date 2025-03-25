@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
@@ -23,7 +23,6 @@ const getChunkDTO = async (fileID: string, index: number, blob: Blob): Promise<F
 };
 
 export const useFileUpload = () => {
-    const [uploadedChunks, setUploadedChunks] = useState(0);
     const { onTelemetry } = usePassCore();
     const dispatch = useAsyncRequestDispatch();
     const abortControllerRef = useRef<MaybeNull<AbortController>>(null);
@@ -56,8 +55,6 @@ export const useFileUpload = () => {
                             signal.addEventListener('abort', () => reject(new Error('Upload cancelled')))
                         ),
                     ]);
-
-                    setUploadedChunks((p) => p + 1);
                 }
 
                 onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
@@ -77,20 +74,7 @@ export const useFileUpload = () => {
         abortControllerRef.current = null;
     }, []);
 
-    const calculateTotalChunks = useCallback(
-        (filesMap: File[]): number => filesMap.reduce((acc, file) => acc + Math.ceil(file.size / FILE_CHUNK_SIZE), 0),
-        []
-    );
-
     useEffect(() => cancelUpload, []);
 
-    return useMemo(
-        () => ({
-            uploadedChunks,
-            uploadFile,
-            cancelUpload,
-            calculateTotalChunks,
-        }),
-        [uploadedChunks]
-    );
+    return useMemo(() => ({ uploadFile, cancelUpload }), []);
 };

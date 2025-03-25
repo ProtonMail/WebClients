@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
-import { FileProgressModal } from '@proton/pass/components/FileAttachments/FileProgressModal';
+import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
@@ -137,7 +137,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
             <ExportForm form={form} loading={loading} />
 
             {form.values.fileAttachments && progress !== null && (
-                <FileProgressModal
+                <ProgressModal
                     title={c('Info').t`Exporting files`}
                     progress={progress ?? 0}
                     message={c('Info').t`Please be patient while your files are being downloaded.`}
