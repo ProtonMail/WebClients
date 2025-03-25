@@ -1,4 +1,4 @@
-import { isDevOrBlack } from '../Util/isDevOrBlack'
+import { isDevOrBlack } from '@proton/docs-shared'
 
 /** Number of DUs in a commit before we need to squash */
 export function GetCommitDULimit() {
