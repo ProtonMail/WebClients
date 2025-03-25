@@ -71,6 +71,7 @@ export const PhotosWithAlbumsView: FC = () => {
     const createAlbum = useCreateAlbum();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
+    const [isAddModalShared, setIsAddModalShared] = useState<boolean>(false);
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
     const { createNotification } = useNotifications();
@@ -127,7 +128,7 @@ export const PhotosWithAlbumsView: FC = () => {
             try {
                 const abortSignal = new AbortController().signal;
                 await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
-                navigateToAlbum(shareId, albumLinkId);
+                navigateToAlbum(shareId, albumLinkId, isAddModalShared);
             } catch (e) {
                 if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
@@ -136,7 +137,7 @@ export const PhotosWithAlbumsView: FC = () => {
                 console.error('photos addition failed', e);
             }
         },
-        [volumeId, shareId, linkId, navigateToAlbum, addAlbumPhotos, createNotification]
+        [volumeId, shareId, linkId, isAddModalShared, navigateToAlbum, addAlbumPhotos, createNotification]
     );
 
     const onCreateAlbumWithPhotos = useCallback(
@@ -148,7 +149,7 @@ export const PhotosWithAlbumsView: FC = () => {
                 const abortSignal = new AbortController().signal;
                 const albumLinkId = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
                 await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
-                navigateToAlbum(shareId, albumLinkId);
+                navigateToAlbum(shareId, albumLinkId, isAddModalShared);
             } catch (e) {
                 if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
@@ -157,8 +158,18 @@ export const PhotosWithAlbumsView: FC = () => {
                 console.error('album creation failed', e);
             }
         },
-        [volumeId, shareId, linkId, createAlbum, navigateToAlbum, addAlbumPhotos]
+        [volumeId, shareId, linkId, isAddModalShared, createAlbum, navigateToAlbum, addAlbumPhotos, createNotification]
     );
+
+    const openAddPhotosToAlbumModal = useCallback(() => {
+        setIsAddModalShared(false);
+        addAlbumPhotosModal.openModal(true);
+    }, [addAlbumPhotosModal]);
+
+    const openSharePhotosIntoAnAlbumModal = useCallback(() => {
+        setIsAddModalShared(true);
+        addAlbumPhotosModal.openModal(true);
+    }, [addAlbumPhotosModal]);
 
     // We want to show the view in case they are more page to load, we can start to show what we already have
     if (!shareId || !linkId || (isPhotosLoading && photos.length === 0)) {
@@ -267,7 +278,8 @@ export const PhotosWithAlbumsView: FC = () => {
                             uploadDisabled={isUploadDisabled}
                             tabSelection={'gallery'}
                             createAlbumModal={createAlbumModal}
-                            addAlbumPhotosModal={addAlbumPhotosModal}
+                            openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}
+                            openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
                         />
                     }
                 />
@@ -303,6 +315,7 @@ export const PhotosWithAlbumsView: FC = () => {
                     onAddAlbumPhotos={onAddAlbumPhotos}
                     albums={albums}
                     photos={selectedItems}
+                    share={isAddModalShared}
                 />
             </UploadDragDrop>
         </>
