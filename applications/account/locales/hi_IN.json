@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -558,9 +558,6 @@
       ],
       "Encrypt and export": [
         "एन्क्रिप्ट और निर्यात करें"
-      ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "${ PLAN_NAMES[plan] } का अन्वेषण करें"
       ],
       "Explore group plans": [
         "ग्रुप प्लान का अन्वेषण करें"
@@ -1158,6 +1155,9 @@
       ],
       "Sign in": [
         "साइन इन"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } के साथ साइनइन करें"
       ],
       "Sign in with password": [
         "पासवर्ड से साइन इन"
@@ -7205,10 +7205,10 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "कम-से-कम एक रिक्वरी तरीका सेट करे ताकि आप अपना ${ BRAND_NAME } खाता इस्तेमाल करना जारी रख सके जब भी आपका पासवर्ड खो जाए।"
       ],
-      "active": [
+      "Active": [
         "सक्रिय"
       ],
-      "Active": [
+      "active": [
         "सक्रिय"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
@@ -13823,9 +13823,6 @@
       "Save": [
         "सहेजें"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "सहेजें ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "अपने पहले महीने पर 80% की बचत करें।"
       ],
@@ -14812,9 +14809,6 @@
       "More plans are available in other currencies": [
         "अन्य मुद्राओं में और प्लैन उपलब्ध हैं"
       ],
-      "Payment Processing": [
-        "भुगतान प्रक्रिया"
-      ],
       "Please add a payment method in the dashboard to continue.": [
         "कृपया जारी रखने के लिए डैशबोर्ड में एक भुगतान तरीका जोड़ें।"
       ],
@@ -14844,9 +14838,6 @@
       ],
       "Timeout exceeded": [
         "Timeout exceeded"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "हम आपके बिल किए गए चालान के लिए आपका भुगतान संसाधित कर रहे हैं। कृपया अपने प्लैन में बदलाव करने या अपने भुगतान विवरण अपडेट करने से पहले भुगतान पूरा होने तक प्रतीक्षा करें। आपकी सहनशीलता के लिए धन्यवाद।"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "आपके चयनित भुगतान तरीके से ${ amountToCharge } चार्ज किया जाएगा।"
@@ -17058,6 +17049,47 @@
         "के लिए ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -17346,47 +17378,6 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {
