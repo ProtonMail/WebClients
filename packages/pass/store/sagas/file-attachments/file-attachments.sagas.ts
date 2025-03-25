@@ -1,6 +1,7 @@
 import { cancelled, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
 import { createDownloadStream } from '@proton/pass/lib/file-attachments/download';
 import {
     createPendingFile,
@@ -17,7 +18,6 @@ import {
 import { encodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import { intoFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
 import {
     fileDownload,
     fileDownloadPublic,
@@ -31,7 +31,7 @@ import {
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectItem } from '@proton/pass/store/selectors';
-import type { FileDescriptor, ItemFileOutput, ItemLatestKeyResponse, ItemRevision, Maybe } from '@proton/pass/types';
+import type { FileDescriptor, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -139,9 +139,9 @@ const linkPending = createRequestSaga({
 const resolveFiles = createRequestSaga({
     actions: filesResolve,
     call: async (item) => {
-        const latestItemKey = await getLatestItemKey(item);
+        const itemKey = await resolveItemKey(item.shareId, item.itemId);
         const result = item.history ? await resolveItemFilesRevision(item) : await resolveItemFiles(item);
-        const files = await intoFileDescriptors(result, item.shareId, latestItemKey);
+        const files = await intoFileDescriptors(result, itemKey);
 
         return { ...item, files };
     },
@@ -150,10 +150,9 @@ const resolveFiles = createRequestSaga({
 const restore = createRequestSaga({
     actions: fileRestore,
     call: function* (dto) {
-        const { shareId } = dto;
-        const latestItemKey: ItemLatestKeyResponse = yield getLatestItemKey(dto);
-        const result: ItemFileOutput = yield restoreSingleFile(dto, latestItemKey);
-        const files: FileDescriptor[] = yield intoFileDescriptors([result], shareId, latestItemKey);
+        const itemKey: ItemKey = yield resolveItemKey(dto.shareId, dto.itemId);
+        const result: ItemFileOutput = yield restoreSingleFile(dto, itemKey);
+        const files: FileDescriptor[] = yield intoFileDescriptors([result], itemKey);
         return { ...dto, files };
     },
 });
