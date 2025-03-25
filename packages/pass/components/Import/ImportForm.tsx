@@ -5,11 +5,10 @@ import { c } from 'ttag';
 
 import { Href, InlineLinkButton } from '@proton/atoms';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components';
-import { FileProgressModal } from '@proton/pass/components/FileAttachments/FileProgressModal';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import type { ImportFormContext } from '@proton/pass/hooks/useImportForm';
+import type { ImportFormContext } from '@proton/pass/hooks/import/useImportForm';
 import { ExportFormat } from '@proton/pass/lib/export/types';
 import { extractFileExtension } from '@proton/pass/lib/import/reader';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
@@ -33,12 +32,12 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
         ImportProvider.PROTONPASS,
     ].includes(provider);
 
-export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ form, dropzone, busy, fileProgress }) => {
+export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
     const needsPassphrase = useMemo(
         () =>
             form.values.file &&
             form.values.provider === ImportProvider.PROTONPASS &&
-            [ExportFormat.PGP, ExportFormat.EPEX].includes(extractFileExtension(form.values.file.name) as ExportFormat),
+            [ExportFormat.PGP].includes(extractFileExtension(form.values.file.name) as ExportFormat),
         [form.values]
     );
 
@@ -178,9 +177,6 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                         <Card className="mb-4 text-sm" type="primary">
                             {c('Info').t`${PASS_APP_NAME} will only import logins, notes, credit cards and identities.`}
                         </Card>
-                    )}
-                    {fileProgress > 0 && (
-                        <FileProgressModal title={c('Info').t`Uploading files`} progress={fileProgress} />
                     )}
                 </>
             )}

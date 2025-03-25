@@ -13,7 +13,7 @@ type Props = {
     onCancel: () => void;
 };
 
-export const FileProgressModal: FC<Props> = ({ message, progress, title, onCancel }) => (
+export const ProgressModal: FC<Props> = ({ message, progress, title, onCancel }) => (
     <PassModal open size="small">
         <ModalTwoHeader className="text-sm" title={title} hasClose={false} />
         <ModalTwoContent className="flex flex-column gap-6">
