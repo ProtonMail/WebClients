@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -562,8 +562,8 @@
       "Encrypt and export": [
         "Versleutel en exporteer"
       ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "Verken ${ PLAN_NAMES[plan] }"
+      "Explore ${ target }": [
+        "Verken ${ target }"
       ],
       "Explore group plans": [
         "Bekijk groepsabonnementen"
@@ -1039,6 +1039,9 @@
       "Save address": [
         "Adres opslaan"
       ],
+      "Save and continue": [
+        "Opslaan en doorgaan"
+      ],
       "Save changes": [
         "Wijzigingen opslaan"
       ],
@@ -1170,6 +1173,9 @@
       ],
       "Sign in": [
         "Inloggen"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Log in met ${ BRAND_NAME }"
       ],
       "Sign in with password": [
         "Aanmelden met wachtwoord"
@@ -7148,6 +7154,10 @@
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
       ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } geselecteerd",
+        "${ selectedEntities.length } geselecteerd"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } map geselecteerd",
         "${ selectedFoldersCountLocalized } mappen geselecteerd"
@@ -7273,11 +7283,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
       ],
-      "active": [
-        "actief"
-      ],
       "Active": [
         "Actief"
+      ],
+      "active": [
+        "actief"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
@@ -7944,6 +7954,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Geniet van een snellere, doelgerichte e-mailervaring met de desktop app."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Voer een wachtwoord in om uw ${ BRAND_NAME } account af te vervolledigen en ${ VPN_APP_NAME } te gebruiken op al uw apparaten!"
       ],
       "Enter key manually instead": [
         "Sleutel handmatig invoeren"
@@ -9012,6 +9025,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie. ${ MAIL_APP_NAME } opent automatisch wanneer u op een e-maillink klikt."
       ],
+      "Set password": [
+        "Wachtwoord instellen"
+      ],
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
@@ -9170,6 +9186,9 @@
       ],
       "Thank you": [
         "Bedankt"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Bedankt voor het kiezen van ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Bedankt voor het ondersteunen van onze missie om een beter internet te bouwen waar privacy en vrijheid op de eerste plaats staan."
@@ -10115,6 +10134,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "U kunt deze servers onmiddellijk aan een andere Gateway toevoegen."
+      ],
+      "You’re all set": [
+        "U bent helemaal klaar"
       ],
       "Zoom meeting": [
         "Zoom meeting"
@@ -13987,9 +14009,6 @@
       "Save": [
         "Opslaan"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Bespaar ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Bespaar 80% op uw eerste maand."
       ],
@@ -14996,6 +15015,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -15004,9 +15026,6 @@
       ],
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
-      ],
-      "Payment Processing": [
-        "Betaling wordt verwerkt"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Voeg een betaalmethode toe in het dashboard om door te gaan."
@@ -15066,11 +15085,11 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "We verwerken uw betaling voor de factuur. Wacht tot de betaling is voltooid voordat u uw abonnement wijzigt of betalingsgegevens bijwerkt. Dank u voor uw geduld."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Via de geselecteerde betaalmethode wordt ${ amountToCharge } in rekening gebracht."
+      ],
+      "Your payment is still being processed": [
+        "Uw betaling wordt nog verwerkt"
       ]
     },
     "Payments.Error": {
@@ -16928,6 +16947,9 @@
       "Single sign-on removed": [
         "Single sign-on verwijderd"
       ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "Het e-mailadres ${ email } bestaat al in ${ BRAND_NAME }. Log in met uw ${ BRAND_NAME } inloggegevens om door te gaan."
+      ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "De gebruiker ${ user } is nu een single sign-on account. Het vorige wachtwoord is het back-upwachtwoord geworden."
       ],
@@ -17283,6 +17305,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -17571,47 +17634,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
