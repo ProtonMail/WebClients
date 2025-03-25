@@ -33,6 +33,7 @@ import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosMakeCoverButton } from './PhotosMakeCoverButton';
 import { PhotosRemoveAlbumPhotosButton } from './PhotosRemoveAlbumPhotosButton';
 import PhotosShareLinkButton from './PhotosShareLinkButton';
+import { PhotosShareMultipleLinkButton } from './PhotosShareMultipleLinkButton';
 import PhotosTrashButton from './PhotosTrashButton';
 import { PhotosUploadButton } from './PhotosUploadButton';
 
@@ -336,7 +337,8 @@ interface PhotosWithAlbumToolbarProps {
     uploadDisabled: boolean;
     tabSelection: 'albums' | 'gallery' | 'albums-gallery';
     createAlbumModal: ModalStateReturnObj;
-    addAlbumPhotosModal?: ModalStateReturnObj;
+    openAddPhotosToAlbumModal?: () => void;
+    openSharePhotosIntoAnAlbumModal?: () => void;
     removeAlbumPhotos?: () => Promise<void>;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
@@ -356,7 +358,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     uploadDisabled,
     tabSelection,
     createAlbumModal,
-    addAlbumPhotosModal,
+    openAddPhotosToAlbumModal,
+    openSharePhotosIntoAnAlbumModal,
     removeAlbumPhotos,
     onFileUpload,
     onFileSkipped,
@@ -382,7 +385,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
             album.permissions.isAdmin
     );
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos);
-    const canShare = !hasMultipleSelected || (album && album.permissions.isAdmin);
+    const canShare = Boolean(!hasMultipleSelected || (album && album.permissions.isAdmin));
+    const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal);
 
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
@@ -413,6 +417,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         />
                     )}
 
+                {/* Selection Bar that appears when an item is selected (in the photo stream gallery or in album gallery) */}
                 {hasSelection && !showMoreButtonDropdown && (
                     <>
                         <PhotosDownloadButton
@@ -426,11 +431,17 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         {canShare && (
                             <PhotosShareLinkButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />
                         )}
+                        {canShareMultiple && (
+                            <PhotosShareMultipleLinkButton
+                                showIconOnly={showIconOnly}
+                                onClick={openSharePhotosIntoAnAlbumModal!}
+                            />
+                        )}
                         <PhotosDetailsButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />
-                        {addAlbumPhotosModal && (
+                        {openAddPhotosToAlbumModal && (
                             <PhotosAddAlbumPhotosButton
                                 showIconOnly={showIconOnly}
-                                onClick={() => addAlbumPhotosModal.openModal(true)}
+                                onClick={openAddPhotosToAlbumModal}
                             />
                         )}
                         {canRemoveAlbum && (
@@ -439,7 +450,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         {!album && <PhotosTrashButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />}
                     </>
                 )}
-                {/* Selection Bar that appears when an item is selected (in the photo stream gallery or in album gallery) */}
+                {/* Selection Bar that appears when an item is selected (in the photo stream gallery or in album gallery) on small screen */}
                 {hasSelection && showMoreButtonDropdown && (
                     <>
                         <PhotosDownloadButton
@@ -447,10 +458,10 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             requestDownload={requestDownload}
                             selectedLinks={selectedItems}
                         />
-                        {addAlbumPhotosModal && (
+                        {openAddPhotosToAlbumModal && (
                             <PhotosAddAlbumPhotosButton
                                 showIconOnly={showIconOnly}
-                                onClick={() => addAlbumPhotosModal.openModal(true)}
+                                onClick={openAddPhotosToAlbumModal}
                             />
                         )}
                         <SelectionDropdownButton>

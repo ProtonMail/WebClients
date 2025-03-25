@@ -88,7 +88,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
 
     useEffect(() => {
         const abortController = new AbortController();
-        if (volumeId || isLoading) {
+        if (volumeId || isLoading || !linkId) {
             return;
         }
         void withLoading(async () => {
