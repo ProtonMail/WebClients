@@ -9,10 +9,8 @@ import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import {
     fileLinkPending,
-    importItemsFailure,
-    importItemsIntent,
+    importItems,
     importItemsProgress,
-    importItemsSuccess,
     notification,
     startEventPolling,
     stopEventPolling,
@@ -76,7 +74,7 @@ function* uploadFiles(importIntent: ItemImportIntent[], items: ItemRevision[]) {
 
 function* importWorker(
     { onItemsUpdated, getTelemetry }: RootSagaOptions,
-    { payload: { data, provider }, meta }: WithSenderAction<ReturnType<typeof importItemsIntent>>
+    { payload: { data, provider }, meta }: WithSenderAction<ReturnType<typeof importItems.intent>>
 ) {
     const telemetry = getTelemetry();
     yield put(stopEventPolling());
@@ -151,27 +149,26 @@ function* importWorker(
         );
 
         yield put(
-            importItemsSuccess(
-                meta.request.id,
-                {
+            importItems.success(meta.request.id, {
+                data: {
                     provider,
                     ignored,
                     total: totalItems,
                     importedAt: getEpoch(),
                     warnings: data.warnings,
                 },
-                meta.sender?.endpoint
-            )
+                endpoint: meta.sender?.endpoint,
+            })
         );
 
         onItemsUpdated?.();
     } catch (error: any) {
-        yield put(importItemsFailure(meta.request.id, error, meta.sender?.endpoint));
+        yield put(importItems.failure(meta.request.id, error, { endpoint: meta.sender?.endpoint }));
     } finally {
         yield put(startEventPolling());
     }
 }
 
 export default function* watcher(options: RootSagaOptions) {
-    yield takeLeading(importItemsIntent.match, importWorker, options);
+    yield takeLeading(importItems.intent.match, importWorker, options);
 }
