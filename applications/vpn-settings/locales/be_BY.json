@@ -328,8 +328,8 @@
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
       ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "Даследуйце тарыфны план ${ PLAN_NAMES[plan] }"
+      "Explore ${ target }": [
+        "Даследуйце ${ target }"
       ],
       "Explore group plans": [
         "Даследуйце групавыя тарыфныя планы"
@@ -3555,7 +3555,7 @@
         "байт",
         "байты",
         "байтаў",
-        "байты"
+        "байтаў"
       ],
       "GB": [
         "ГБ"
@@ -3575,25 +3575,25 @@
         "Байт",
         "Байты",
         "Байтаў",
-        "Байты"
+        "Байтаў"
       ],
       "Gigabyte": [
         "Гігабайт",
         "Гігабайты",
         "Гігабайтаў",
-        "Гігабайты"
+        "Гігабайтаў"
       ],
       "Kilobyte": [
         "Кілабайт",
         "Кілабайты",
         "Кілабайтаў",
-        "Кілабайты"
+        "Кілабайтаў"
       ],
       "Megabyte": [
         "Мегабайт",
         "Мегабайты",
         "Мегабайтаў",
-        "Мегабайты"
+        "Мегабайтаў"
       ],
       "Terabyte": [
         "тэрабайт",
@@ -3852,7 +3852,7 @@
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапановы, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
         "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
         "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
       ],
@@ -4107,19 +4107,19 @@
         "Дадайце свае назву і лагатып, каб стварыць больш персаналізаванае ўражанне для сваёй арганізацыі."
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "Даданне ${ addedServerCount } сервера шлюза",
-        "Даданне ${ addedServerCount } сервераў шлюза",
-        "Даданне ${ addedServerCount } сервераў шлюза",
-        "Даданне ${ addedServerCount } сервераў шлюза"
+        "Дадаванне ${ addedServerCount } сервера шлюза",
+        "Дадаванне ${ addedServerCount } сервераў шлюза",
+        "Дадаванне ${ addedServerCount } сервераў шлюза",
+        "Дадаванне ${ addedServerCount } сервераў шлюза"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Дадаванне знешніх адрасоў электроннай пошты адключыць скразное шыфраванне для ўсіх зносін па электроннай пошце ў рамках групы. Вы сапраўды хочаце працягнуць?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Даданне сервера шлюза: ${ serverNumber } / ${ total }",
-        "Даданне сервераў шлюза: ${ serverNumber } / ${ total }",
-        "Даданне сервераў шлюза: ${ serverNumber } / ${ total }",
-        "Даданне сервераў шлюза: ${ serverNumber } / ${ total }"
+        "Дадаванне сервера шлюза: ${ serverNumber } / ${ total }",
+        "Дадаванне сервера шлюза: ${ serverNumber } / ${ total }",
+        "Дадаванне сервера шлюза: ${ serverNumber } / ${ total }",
+        "Дадаванне сервера шлюза: ${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
@@ -5700,28 +5700,28 @@
         "Вы ўжо ўвайшлі як ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступнага вам вылучанага сервера.",
-        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў.",
-        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў.",
-        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў."
+        "Цяпер вы выкарыстоўваеце ${ ipCount } вылучаны сервер з ${ ipAddresses } даступных вам.",
+        "Цяпер вы выкарыстоўваеце ${ ipCount } вылучаныя серверы з ${ ipAddresses } даступных вам.",
+        "Цяпер вы выкарыстоўваеце ${ ipCount } вылучаных сервераў з ${ ipAddresses } даступных вам.",
+        "Цяпер вы выкарыстоўваеце ${ ipCount } вылучаных сервераў з ${ ipAddresses } даступных вам."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ usedAI } з ${ maxAI } даступнай ліцэнзіі памочніка ў напісанні.",
-        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных карыстальніцкіх ліцэнзій і ${ usedAI } з ${ maxAI } даступных ліцэнзій памочніка ў напісанні.",
-        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных карыстальніцкіх ліцэнзій і ${ usedAI } з ${ maxAI } даступных ліцэнзій памочніка ў напісанні.",
-        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных карыстальніцкіх ліцэнзій і ${ usedAI } з ${ maxAI } даступных ліцэнзій памочніка ў напісанні."
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступную карыстальніцкую ліцэнзію з ${ maxMembers } і ${ usedAI } даступную ліцэнзію памочніка ў напісанні з ${ maxAI }.",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступныя карыстальніцкія ліцэнзіі з ${ maxMembers } і ${ usedAI } даступныя ліцэнзіі памочніка ў напісанні з ${ maxAI }.",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступных карыстальніцкіх ліцэнзій з ${ maxMembers } і ${ usedAI } даступных ліцэнзій памочніка ў напісанні з ${ maxAI }.",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступных карыстальніцкіх ліцэнзій з ${ maxMembers } і ${ usedAI } даступных ліцэнзій памочніка ў напісанні з ${ maxAI }."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ maxAI } даступную ліцэнзію памочніка ў напісанні.",
-        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ maxAI } даступных ліцэнзій памочніка ў напісанні.",
-        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ maxAI } даступных ліцэнзій памочніка ў напісанні.",
-        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ maxAI } даступных ліцэнзій памочніка ў напісанні."
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступную карыстальніцкую ліцэнзію з ${ maxMembers } і ніводнай ліцэнзіі памочніка ў напісанні (даступна: ${ maxAI }).",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступныя карыстальніцкія ліцэнзіі з ${ maxMembers } і ніводнай ліцэнзіі памочніка ў напісанні (даступна: ${ maxAI }).",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступных карыстальніцкіх ліцэнзій з ${ maxMembers } і ніводнай ліцэнзіі памочніка ў напісанні (даступна: ${ maxAI }).",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступных карыстальніцкіх ліцэнзій з ${ maxMembers } і ніводнай ліцэнзіі памочніка ў напісанні (даступна: ${ maxAI })."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
-        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
-        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
-        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій."
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступную карыстальніцкую ліцэнзію з ${ maxMembers }",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступныя карыстальніцкія ліцэнзіі з ${ maxMembers }",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступных карыстальніцкіх ліцэнзій з ${ maxMembers }",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } даступных карыстальніцкіх ліцэнзій з ${ maxMembers }"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ memberAddress }."
@@ -5775,10 +5775,10 @@
         "Вам даступны ${ availableCount } новых сервераў."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "У вас ёсць ${ unassignedAvailableCount } нядаўна выкарыстаны сервер. Вы павінны дачакацца завяршэння дэактывацыі, каб размеркаваць гэты сервер у іншую краіну.",
-        "У вас ёсць ${ unassignedAvailableCount } нядаўна выкарыстаныя серверы. Вы павінны дачакацца завяршэння дэактывацыі, каб размеркаваць гэтыя серверы ў іншую краіну.",
-        "У вас ёсць ${ unassignedAvailableCount } нядаўна выкарыстаных сервераў. Вы павінны дачакацца завяршэння дэактывацыі, каб размеркаваць гэтыя серверы ў іншую краіну.",
-        "У вас ёсць ${ unassignedAvailableCount } нядаўна выкарыстаных сервераў. Вы павінны дачакацца завяршэння дэактывацыі, каб размеркаваць гэтыя серверы ў іншую краіну."
+        "Вы нядаўна выкарыстоўвалі ${ unassignedAvailableCount } даступны сервер. Дачакайцеся завяршэння дэактывацыі, каб размеркаваць гэты сервер у іншую краіну.",
+        "Вы нядаўна выкарыстоўвалі ${ unassignedAvailableCount } даступныя серверы. Дачакайцеся завяршэння дэактывацыі, каб размеркаваць гэты сервер у іншую краіну.",
+        "Вы нядаўна выкарыстоўвалі ${ unassignedAvailableCount } даступных сервераў. Дачакайцеся завяршэння дэактывацыі, каб размеркаваць гэты сервер у іншую краіну.",
+        "Вы нядаўна выкарыстоўвалі ${ unassignedAvailableCount } даступных сервераў. Дачакайцеся завяршэння дэактывацыі, каб размеркаваць гэты сервер у іншую краіну."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. Дадайце спосаб аплаты, калі вы хочаце працягнуць карыстацца ёй пасля завяршэння пробнага перыяду."
@@ -6065,10 +6065,10 @@
         "${ nbDay } дні"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } з ${ MaxAddresses } адрасы электроннай пошты",
-        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
-        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
-        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты"
+        "${ UsedAddresses } адрас электроннай пошты з ${ MaxAddresses }",
+        "${ UsedAddresses } адрасы электроннай пошты з ${ MaxAddresses }",
+        "${ UsedAddresses } адрасоў электроннай пошты з ${ MaxAddresses }",
+        "${ UsedAddresses } адрасоў электроннай пошты з ${ MaxAddresses }"
       ],
       "Account holder": [
         "Трымальнік уліковага запісу"
@@ -7221,10 +7221,10 @@
         "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі"
+        "${ PASS_APP_NAME } з ${ n } псеўданімам hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
@@ -8306,9 +8306,6 @@
       "Save": [
         "Эканомія"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Эканомія ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Зэканомце 80% у першы месяц."
       ],
@@ -8446,22 +8443,22 @@
         "${ upgradeLink }, каб атрымаць больш сховішча або выдаліце частку файлаў у сховішчы для вызвалення месца."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
-        "Ваш тарыфны план уключае максімум ${ availableAddresses } адрас.",
-        "Ваш тарыфны план уключае максімум ${ availableAddresses } адрасы.",
-        "Ваш тарыфны план уключае максімум ${ availableAddresses } адрасоў.",
-        "Ваш тарыфны план уключае максімум ${ availableAddresses } адрасы."
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableAddresses } адрас.",
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableAddresses } адрасы.",
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableAddresses } адрасоў.",
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableAddresses } адрасоў."
       ],
       "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "Ваш тарыфны план уключае максімум ${ availableNumberOfMembers } карыстальніка арганізацыі.",
-        "Ваш тарыфны план уключае максімум ${ availableNumberOfMembers } карыстальнікі арганізацыі.",
-        "Ваш тарыфны план уключае максімум ${ availableNumberOfMembers } карыстальнікаў арганізацыі.",
-        "Ваш тарыфны план уключае максімум ${ availableNumberOfMembers } карыстальнікі арганізацыі."
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableNumberOfMembers } карыстальніка арганізацыі.",
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableNumberOfMembers } карыстальнікі арганізацыі.",
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableNumberOfMembers } карыстальнікаў арганізацыі.",
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableNumberOfMembers } карыстальнікаў арганізацыі."
       ],
       "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
-        "Ваш тарыфны план уключае максімум ${ availableVPNAccess } уліковы запіс з VPN.",
-        "Ваш тарыфны план уключае максімум ${ availableVPNAccess } уліковыя запісы з VPN.",
-        "Ваш тарыфны план уключае максімум ${ availableVPNAccess } уліковых запісаў з VPN.",
-        "Ваш тарыфны план уключае максімум ${ availableVPNAccess } уліковыя запісы з VPN."
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableVPNAccess } уліковы запіс VPN.",
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableVPNAccess } уліковыя запісы VPN.",
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableVPNAccess } уліковых запісаў VPN.",
+        "Ваш тарыфны план уключае яшчэ максімум ${ availableVPNAccess } уліковых запісаў VPN."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Ваш тарыфны план уключае максімум ${ humanReadableAvailableSpace } сховішча."
@@ -8726,6 +8723,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змены. Дзякуй за ваша цярпенне."
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -8734,9 +8734,6 @@
       ],
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
-      ],
-      "Payment Processing": [
-        "Апрацоўка плацяжу"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Дадайце спосаб аплаты ў панэль кіравання для працягу."
@@ -8804,11 +8801,11 @@
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Мы апрацоўваем ваш плацеж за выстаўлены рахунак. Перад тым, як уносіць змены ў свой тарыфны план або абнаўляць рэквізіты плацяжу, дачакайцеся завяршэння плацяжу. Дзякуй за цярпенне."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
+      ],
+      "Your payment is still being processed": [
+        "Ваш плацеж усё яшчэ апрацоўваецца"
       ]
     },
     "Payments.Error": {
@@ -10298,10 +10295,10 @@
         "${ UsedAddresses } адрасы"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } з ${ MaxAddresses } адрасы электроннай пошты",
-        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
-        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
-        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты"
+        "${ UsedAddresses } адрас электроннай пошты з ${ MaxAddresses }",
+        "${ UsedAddresses } адрасы электроннай пошты з ${ MaxAddresses }",
+        "${ UsedAddresses } адрасоў электроннай пошты з ${ MaxAddresses }",
+        "${ UsedAddresses } адрасоў электроннай пошты з ${ MaxAddresses }"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } каляндар",
@@ -10310,10 +10307,10 @@
         "${ UsedCalendars } календары"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } з ${ MaxDomains } карыстальніцкага дамена",
-        "${ UsedDomains } з ${ MaxDomains } карыстальніцкіх даменаў",
-        "${ UsedDomains } з ${ MaxDomains } карыстальніцкіх даменаў",
-        "${ UsedDomains } з ${ MaxDomains } карыстальніцкіх даменаў"
+        "${ MaxDomains } карыстальніцкі дамен з ${ UsedDomains }",
+        "${ MaxDomains } карыстальніцкія дамены з ${ UsedDomains }",
+        "${ MaxDomains } карыстальніцкіх даменаў з ${ UsedDomains }",
+        "${ MaxDomains } карыстальніцкіх даменаў з ${ UsedDomains }"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } карыстальнік з ${ MaxMembers }",
@@ -10385,47 +10382,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "За ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription reminder": {
@@ -10728,6 +10684,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -12329,7 +12326,7 @@
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)"
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
       ]
     },
     "VPN B2B cancellation reason": {
