@@ -14,7 +14,6 @@ import {
   ApplicationEvent,
   SquashVerificationObjectionDecision,
   WebsocketConnectionEvent,
-  isLocalEnvironment,
   isDocumentState,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
@@ -24,7 +23,13 @@ import type {
   EditorInitializationConfig,
   LiveCommentsTypeStatusChangeData,
 } from '@proton/docs-shared'
-import { CommentsEvent, EditorEvent, EditorSystemMode, LiveCommentsEvent } from '@proton/docs-shared'
+import {
+  CommentsEvent,
+  EditorEvent,
+  EditorSystemMode,
+  isLocalEnvironment,
+  LiveCommentsEvent,
+} from '@proton/docs-shared'
 import { EditorFrame } from '../EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
