@@ -730,7 +730,7 @@
         "Ładowanie${ ellipsis }"
       ],
       "Make ${ MAIL_APP_NAME } your default email application": [
-        "Ustawienie ${ MAIL_APP_NAME } jako domyślnej aplikacji do obsługi poczty e-mail"
+        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową"
       ],
       "Make it friendly": [
         "Zmień na tekst przyjazny"
@@ -1110,10 +1110,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -1307,12 +1307,6 @@
       ],
       "Trust": [
         "Zaufaj"
-      ],
-      "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1784,11 +1778,17 @@
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Nieograniczona liczba danych logowania, karty płatniczych, aliasów hide-my-email i nie tylko"
+      ],
       "Use your own email domain": [
         "Użyj własnej domeny e-mail"
       ],
       "Version history": [
         "Historia wersji"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1822,7 +1822,7 @@
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje 15 adresów e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zabezpiecz swoje e-maile i kalendarz dzięki szyfrowaniu end-to-end. Obejmuje 15 adresów e-mail, wsparcie dla niestandardowych domen e-mail, nieograniczone aliasy hide-my-email i nie tylko."
+        "Zabezpiecz swoje wiadomości i kalendarz za pomocą szyfrowania end-to-end. Zawiera 15 adresów e-mail, wsparcie dla niestandardowych domen, nieograniczona liczba aliasów hide-my-email i nie tylko."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje edytor dokumentów online, kopię zapasową zdjęć, historię wersji, zaszyfrowane udostępnianie plików i wiele więcej."
@@ -1844,8 +1844,14 @@
       "Annually": [
         "Rocznie"
       ],
+      "Lifetime": [
+        "Dożywotni"
+      ],
       "Monthly": [
         "Miesięcznie"
+      ],
+      "New!": [
+        "Nowość!"
       ],
       "Two-year": [
         "Co dwa lata"
@@ -3509,6 +3515,31 @@
         "Wyspy Alandzkie"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Do wykorzystania we wszystkich usługach ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Dla ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Dla ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Dla ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Dla ${ VPN_APP_NAME }"
+      ]
+    },
     "CustomFilter": {
       "Attachment": [
         "załącznik"
@@ -4020,7 +4051,7 @@
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } to nazwa użytkownika. Aby utworzyć ${ emailAddress }, przejdź do Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)."
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)"
       ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
@@ -5885,7 +5916,7 @@
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
-        "Menedżer haseł ${ BRAND_NAME } umożliwia tworzenie, przechowywanie i automatyczne uzupełnianie haseł, dzięki czemu nigdy nie trzeba ich resetować."
+        "Menedżer haseł ${ BRAND_NAME } umożliwia tworzenie, przechowywanie i automatyczne uzupełnianie haseł, dzięki czemu nigdy nie musisz ich resetować."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nowy kalendarz",
@@ -6068,7 +6099,7 @@
         "${ numOccurrences } znalezionych powtórzeń w zawartości wiadomości"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
-        "Aplikacja ${ PASS_APP_NAME } umożliwia przechowywanie haseł, notatek i innych poufnych informacji z szyfrowaniem typu end-to-end. Dostępna na ${ ios }, ${ android } i w twojej przeglądarce ${ browser }."
+        "Aplikacja ${ PASS_APP_NAME } umożliwia przechowywanie haseł, notatek i innych poufnych informacji z szyfrowaniem end-to-end. Dostępna na ${ ios }, ${ android } i w ${ browser }."
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
@@ -6200,7 +6231,7 @@
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
-        "Dostęp do ponad 6 500 szybkich serwerów na maksymalnie 10 urządzeniach, aby zapewnić bezpieczeństwo danych przeglądania. Dostępne na urządzeniach ${ ios }, ${ android }, ${ appleTV } i ${ desktop }."
+        "Uzyskaj dostęp do ponad 6500 szybkich serwerów na maksymalnie 10 urządzeniach, aby bezpiecznie przeglądać Internet. Usługa dostępna na urządzeniach: ${ ios }, ${ android }, ${ appleTV } i ${ desktop }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
@@ -6518,7 +6549,7 @@
         "Domyślna aplikacja pocztowa"
       ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
-        "Funkcja wykrywania odbywa się na urządzeniu użytkownika, więc żadne dane z wiadomości e-mail nie są przesyłane na nasze serwery."
+        "Wykrywanie odbywa się na urządzeniu, więc żadne dane z wiadomości nie są wysyłane na nasze serwery."
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
         "Czy wiesz, że na koncie ${ BRAND_NAME } masz szyfrowaną przestrzeń dyskową w chmurze? Przejdź do ${ DRIVE_APP_NAME } i wykorzystaj w pełni swoje miejsce. Usługa jest darmowa."
@@ -6632,7 +6663,7 @@
         "Wiadomości są automatyczne podpisywane"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Wiadomości e-mail przeniesione do Kosza i Spamu ponad 30 dni temu zostaną automatycznie wyczyszczone."
+        "Wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni, zostaną automatycznie usunięte."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Wiadomości oznaczone etykietą ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w odpowiednim folderze."
@@ -6851,10 +6882,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -6944,7 +6972,7 @@
         "Niski priorytet"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację e-mail."
+        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową."
       ],
       "Manage your folders": [
         "Zarządzaj folderami"
@@ -7349,7 +7377,7 @@
         "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową dla tej przeglądarki. Aplikacja ${ MAIL_APP_NAME } będzie automatycznie otwierać linki wiadomości."
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację e-mail. Aplikacja ${ MAIL_APP_NAME } otworzy się automatycznie po kliknięciu łącza do wiadomości e-mail."
+        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową Aplikacja ${ MAIL_APP_NAME } otworzy się automatycznie po kliknięciu linku do adresu e-mail."
       ],
       "Setting up ${ feature }…": [
         "Konfigurowanie ${ feature }…"
@@ -7544,7 +7572,7 @@
         "Ta wiadomość została wygenerowana automatycznie, jako odpowiedź na poprzednią wiadomość."
       ],
       "This message is from a ${ PASS_APP_NAME } alias.": [
-        "Ta wiadomość pochodzi z aliasu ${ PASS_APP_NAME }."
+        "Wiadomość pochodzi z aliasu ${ PASS_APP_NAME }."
       ],
       "This message is from a mailing list.": [
         "Ta wiadomość pochodzi z listy mailingowej."
@@ -7607,7 +7635,7 @@
         "Ten klucz publiczny nadawcy nie został jeszcze dodany do zaufanych."
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
-        "Wiadomość została wyświetlona, ponieważ jej temat zawiera słowa kluczowe związane z resetowaniem hasła."
+        "Informacja została wyświetlona, ponieważ temat wiadomości zawiera słowa kluczowe związane z resetowaniem hasła."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
@@ -7937,7 +7965,7 @@
         "Nie masz tutaj żadnych wiadomości"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
-        "Otrzymasz powiadomienie, jeśli Twoje hasło lub inne dane wyciekły z usługi zewnętrznej."
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
       ],
       "You have ${ unread } in your inbox.": [
         "Masz ${ unread } w swojej skrzynce odbiorczej."
@@ -8904,7 +8932,7 @@
         "Data rozpoczęcia"
       ],
       "State": [
-        "Województwo"
+        "Stan"
       ],
       "Statement": [
         "Kryterium"
@@ -9803,6 +9831,9 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
+      "${ size } storage per user": [
+        "${ size } przestrzeni dyskowej na użytkownika"
+      ],
       "1 TB secure storage": [
         "1 TB bezpiecznej przestrzeni dyskowej"
       ],
@@ -10001,6 +10032,9 @@
       "Password manager": [
         "Menadżer haseł"
       ],
+      "Password manager to secure credentials": [
+        "Menedżer haseł do zabezpieczenia danych logowania"
+      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
       ],
@@ -10152,10 +10186,10 @@
         "Do ${ totalStorageSize } przestrzeni dyskowej"
       ],
       "Use on up to ${ n } device at once": [
-        "Używanie na maksymalnie ${ n } urządzeniu",
-        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
-        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
-        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie"
+        "Na ${ n } urządzenie jednocześnie",
+        "Na ${ n } urządzenia jednocześnie",
+        "Na ${ n } urządzeń jednocześnie",
+        "Na ${ n } urządzeń jednocześnie"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -10257,6 +10291,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME }, posiadający specjalne funkcje i bonusy."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Zapłać raz, zabezpiecz swoje hasła i tożsamość na zawsze."
       ],
       "Popular": [
         "Popularny"
@@ -10684,7 +10721,7 @@
         "Skorzystaj z oferty"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Ostatnia szansa, aby uzyskać 80% zniżki na pierwszy miesiąc ${ plan } Plus."
+        "Ostatnia szansa, aby uzyskać 80% zniżki na pierwszy miesiąc planu ${ plan } Plus."
       ],
       "Last day to save": [
         "Ostatni dzień, aby zaoszczędzić"
@@ -10702,22 +10739,19 @@
         "Oferta wygasa ${ formattedDate }."
       ],
       "Pay annually, secure our best offer": [
-        "Płać co roku, uzyskaj najlepszą ofertę"
+        "Płać rocznie i uzyskaj najlepszą ofertę"
       ],
       "Save": [
         "Zaoszczędź"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Zaoszczędź ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Zaoszczędź 80% przez pierwszy miesiąc."
       ],
       "Save big when you pay annually": [
-        "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
+        "Zaoszczędź więcej przy płatności rocznej"
       ],
       "Special offer": [
-        "Specjalna oferta"
+        "Oferta specjalna"
       ],
       "This offer won't be shown again.": [
         "Ta oferta nie pojawi się ponownie."
@@ -10726,10 +10760,10 @@
         "Po przejściu z subskrypcji miesięcznej na roczną."
       ],
       "You currently pay": [
-        "Aktualnie płacisz"
+        "Obecnie płacisz"
       ],
       "Your subscription renews soon": [
-        "Subskrypcja wkrótce się odnowi"
+        "Subskrypcja odnowi się wkrótce"
       ]
     },
     "Offer feature": {
@@ -10825,7 +10859,7 @@
         "Pobierz aplikację desktopową"
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
-        "Uzyskaj dostęp do poczty e-mail w dowolnym momencie i zoptymalizuj korzystanie z urządzeń mobilnych, pobierz naszą aplikację ${ mobileAppAppStoreLink } lub ${ mobileAppGooglePlayLink }."
+        "Uzyskaj dostęp do poczty w dowolnym momencie, gdziekolwiek jesteś. Pobierz naszą aplikację ${ mobileAppAppStoreLink } lub ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Otrzymaj powiadomienie, jeśli Twoje hasło zostanie naruszone."
@@ -10980,6 +11014,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
+      ],
+      "Secure vault, item and link sharing": [
+        "Bezpieczny sejf, udostępnianie elementów i linków"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Nieograniczona liczba danych logowania, notatek, kart płatniczych i nie tylko"
       ]
     },
     "pass_signup_2024: Info": {
@@ -11077,9 +11117,6 @@
       "More plans are available in other currencies": [
         "Więcej planów jest dostępnych w innych walutach"
       ],
-      "Payment Processing": [
-        "Przetwarzanie płatności"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
@@ -11100,9 +11137,6 @@
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Przetwarzamy płatność za fakturę. Przed zmianą planu lub zaktualizowaniem szczegółów płatności poczekaj na zakończenie płatności. Dziękujemy za cierpliwość."
       ]
     },
     "Payments.Error": {
@@ -11132,7 +11166,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potwierdzając tę płatność, użytkownik upoważnia ${ BRAND_NAME } i Stripe, naszego dostawcę usług płatniczych, do zlecenia bankowi odpowiedniego obciążenia jego konta. Użytkownik może otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z warunkami umowy z bankiem."
+        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
       ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
@@ -11194,7 +11228,7 @@
         "Filtruj etykiety"
       ],
       "Filter quick actions": [
-        "Filtrowanie szybkich akcji"
+        "Filtr szybkich akcji"
       ],
       "First name": [
         "Imię"
@@ -12336,6 +12370,9 @@
       "Billed every 2 years": [
         "Płatne co 2 lata"
       ],
+      "Billed every 6 months": [
+        "Płatne co 6 miesięcy"
+      ],
       "Billed for 15 months": [
         "Płatne za 15 miesięcy"
       ],
@@ -13308,7 +13345,7 @@
     },
     "Title": {
       "${ appName } keyboard shortcuts": [
-        "${ appName } skróty klawiaturowe"
+        "Skróty klawiszowe ${ appName }"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } adres e-mail",
@@ -13854,7 +13891,7 @@
         "Notatki"
       ],
       "On-device suggestions": [
-        "Sugestie dotyczące urządzeń"
+        "Sugestie na urządzeniu"
       ],
       "One email, many recipients": [
         "Jeden adres, wiele odbiorców"
@@ -14147,6 +14184,11 @@
         "Dzisiaj"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Format automatyczny wyśle do tego użytkownika wiadomość w formacie użytym w edytorze. Format zwykłego tekstu oznacza, że wiadomość przed wysłaniem zostanie przekonwertowana do zwykłego tekstu."
@@ -14230,11 +14272,6 @@
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "wersji stabilnej"
@@ -14300,6 +14337,12 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Serwery w ponad ${ numberOfCountries } kraju",
+        "Serwery w ponad ${ numberOfCountries } krajach",
+        "Serwery w ponad ${ numberOfCountries } krajach",
+        "Serwery w ponad ${ numberOfCountries } krajach"
       ]
     },
     "vpn_2024: renew": {
@@ -14403,7 +14446,7 @@
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
       ],
       "2 consecutive dots are not allowed": [
-        "2 następujące po sobie kropki są niedozwolone"
+        "2 następujące po sobie kropki nie są dozwolone"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Czy na pewno chcesz trwale usunąć kontakt?",
