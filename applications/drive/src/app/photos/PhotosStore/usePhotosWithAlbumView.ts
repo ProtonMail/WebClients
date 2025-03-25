@@ -16,6 +16,7 @@ import { useAbortSignal, useMemoArrayNoMatterTheOrder } from '../../store/_views
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { usePhotosWithAlbums } from './PhotosWithAlbumsProvider';
+import { getTagFilteredPhotos } from './getTagFilteredPhotos';
 
 /**
  * For Photos, we listen for delete and move events
@@ -162,7 +163,7 @@ export const usePhotosWithAlbumsView = () => {
             result[link.linkId] = link;
         });
 
-        const photosViewData = sortWithCategories(Object.values(result));
+        const photosViewData = getTagFilteredPhotos(sortWithCategories(Object.values(result)), selectedTags);
 
         // To improve performance, let's build some maps ahead of time
         // For previews and selection, we need these maps to know where
@@ -185,7 +186,7 @@ export const usePhotosWithAlbumsView = () => {
             photoLinkIdToIndexMap,
             photoLinkIds,
         };
-    }, [photos, cachedLinks, linkId, shareId]);
+    }, [photos, cachedLinks, linkId, shareId, selectedTags]);
 
     const { albumPhotosViewData, albumPhotosLinkIdToIndexMap, albumPhotosLinkIds } = useMemo(() => {
         if (!shareId || !linkId) {
@@ -487,5 +488,6 @@ export const usePhotosWithAlbumsView = () => {
         selectedTags,
         handleSelectTag,
         userAddressEmail,
+        isPhotosEmpty: photos.length === 0,
     };
 };
