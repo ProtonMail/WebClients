@@ -5058,6 +5058,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "구독이 매 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
       "Subscription auto-renews every month.": [
         "구독이 매달 갱신됩니다."
       ],
@@ -5361,6 +5364,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "이 시리즈의 모든 이벤트가 업데이트됩니다. 삭제된 참가자들에게 알람이 전송됩니다."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다:"
       ],
@@ -5427,8 +5433,14 @@
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "시스템 시간대가 ${ timezone } 로 변경된 것 같습니다. 여기의 시간대도 변경하시겠습니까?"
@@ -7642,9 +7654,6 @@
       "Save": [
         "절약되는 가격:"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "${ prices.savedPercentage }% 절약"
-      ],
       "Save 80% on your first month.": [
         "첫 달에 80% 할인 받기"
       ],
@@ -7911,6 +7920,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
+      ],
       "Got it": [
         "확인"
       ],
@@ -7919,9 +7931,6 @@
       ],
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
-      ],
-      "Payment Processing": [
-        "결제 처리중"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -7938,14 +7947,38 @@
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "갱신 가격은 ${ termsAndConditionsLink }에 따라 변경될 수 있습니다."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
+      ],
+      "terms & conditions": [
+        "이용 약관"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "쿠폰이 ${ couponRedemptions } 갱신에 유효합니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }로 개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "그 후 ${ renewalLength }개월 간 ${ renewPriceStr }(으)로 자동 갱신됩니다. 언제든 취소하실 수 있습니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "현재 청구서에 대한 결제를 진행 중입니다. 사용자의 플랜이 변경되거나 결제 상세 정보가 업데이트되기 전까지 잠시 기다려주세요. 깊은 이해에 감사드립니다."
+      "Your payment is still being processed": [
+        "회원님의 결제가 아직 처리 중입니다"
       ]
     },
     "Payments.Error": {
@@ -10253,6 +10286,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "12개월마다 ${ renewPriceStr }가 결제됩니다."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],
