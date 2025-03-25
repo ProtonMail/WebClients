@@ -217,6 +217,9 @@
       "Decline": [
         "Avböj"
       ],
+      "Decline invite": [
+        "Avvisa inbjudan"
+      ],
       "Decrease": [
         "Minska"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "Skaffa verifieringskod"
+      ],
+      "Go back": [
+        "Gå tillbaka"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Gå till ${ DRIVE_SHORT_APP_NAME }"
@@ -419,9 +425,6 @@
       ],
       "Move to trash": [
         "Flytta till papperskorg"
-      ],
-      "New": [
-        "Ny"
       ],
       "New document": [
         "Nytt dokument"
@@ -570,7 +573,7 @@
       "Search countries": [
         "Sök länder"
       ],
-      "Search docs": [
+      "Search documents": [
         "Sök dokument"
       ],
       "See how": [
@@ -3931,9 +3934,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Är du säker på att du vill ta bort markerade objekt permanent från papperskorgen?"
       ],
-      "Are you sure you want to proceed?": [
-        "Är du säker på att du vill fortsätta?"
-      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -4666,17 +4666,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Denna åtgärd kommer att ta bort filen du laddat upp permanent."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Denna åtgärd kommer att ta bort mappen du laddat upp permanent. Du kan inte ta bort en mapp som innehåller en fil du inte äger."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Denna åtgärd kommer ta bort länken och återkalla åtkomst för alla användare."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Denna åtgärd kommer att ta bort de valda objekten permanent."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
@@ -4707,6 +4698,15 @@
       ],
       "This message will be presented again later": [
         "Detta meddelande kommer att presenteras igen senare"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Detta kommer ta bort filen du laddade upp permanent."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Detta kommer ta bort mappen du laddade upp permanent."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Detta kommer ta bort de valda objekten du laddade upp permanent."
       ],
       "This will replace the existing file with the folder": [
         "Detta kommer ersätta den befintliga filen med mappen"
@@ -4946,6 +4946,15 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i ${ invitationName }albumet. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i mappen ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i ${ invitationName }objektet. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
@@ -5407,6 +5416,9 @@
       "Move to Inbox": [
         "Flytta till Inkorg"
       ],
+      "My files": [
+        "Mina filer"
+      ],
       "Navigation": [
         "Navigering"
       ],
@@ -5490,6 +5502,9 @@
       ],
       "Set link password": [
         "Välj länklösenord"
+      ],
+      "Shared with me": [
+        "Delat med mig"
       ],
       "Sign emails": [
         "Signera e-post"
@@ -7194,6 +7209,10 @@
       "Share invitation declined": [
         "Delningsinbjudan avböjd"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Vi kunde inte ta bort mappen eftersom den inte är tom.",
+        "Vi kunde inte ta bort mapparna eftersom de inte är tomma."
+      ],
       "Stopping the sharing of this item has failed": [
         "Misslyckades att stoppa delning av detta objekt"
       ],
@@ -7278,9 +7297,6 @@
       ],
       "Save": [
         "Spara"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Spara ${ prices.savedPercentage } %"
       ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
@@ -7461,6 +7477,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
+      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -7469,9 +7488,6 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
-      ],
-      "Payment Processing": [
-        "Betalning behandlas"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
@@ -7497,8 +7513,8 @@
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi behandlar din betalning för den fakturerade fakturan. Vänta tills betalningen är slutförd innan du gör ändringar i ditt paket eller uppdaterar dina betalningsuppgifter. Tack för ditt tålamod."
+      "Your payment is still being processed": [
+        "Din betalning håller fortfarande på att behandlas"
       ]
     },
     "Payments.Error": {
@@ -7714,6 +7730,23 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiell e-post från ${ BRAND_NAME }"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "Skapad av"
+      ],
+      "Location": [
+        "Plats"
+      ],
+      "Modified": [
+        "Modifierad"
+      ],
+      "Name": [
+        "Namn"
+      ],
+      "Viewed": [
+        "Visade"
       ]
     },
     "Safety review": {
@@ -8848,6 +8881,9 @@
       "Day theme": [
         "Dagstema"
       ],
+      "Decline invitation?": [
+        "Avböj inbjudan?"
+      ],
       "Delete": [
         "Ta bort"
       ],
@@ -8859,11 +8895,11 @@
         "Ta bort ${ count } kontaktgrupp",
         "Ta bort ${ count } kontaktgrupper"
       ],
-      "Delete ${ item.name }?": [
-        "Ta bort ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Ta bort ${ links.length } objekt?"
+      ],
+      "Delete ${ name }?": [
+        "Ta bort ${ name }?"
       ],
       "Delete ${ value }": [
         "Ta bort ${ value }"
@@ -9189,9 +9225,6 @@
       ],
       "What would you like to import?": [
         "Vad vill du importera?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Du är på väg att avböja inbjudan för det delade objektet. Du kommer inte att kunna komma åt det igen förrän ägaren delar det med dig."
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu skapa ett obegränsat antal mappar och etiketter"
