@@ -65,7 +65,7 @@ export type ItemImportIntent<T extends ItemType = ItemType> = Item<T, ItemImport
     trashed: boolean;
     createTime?: number;
     modifyTime?: number;
-    files?: (File | string)[];
+    files?: string[];
 };
 
 export type ItemMoveDTO = { before: ItemRevision; after: ItemRevision };
