@@ -8089,9 +8089,6 @@
       "Save": [
         "Ušetřete"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Ušetřete ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Ušetřete 80 % za první měsíc."
       ],
@@ -8376,6 +8373,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -8384,9 +8384,6 @@
       ],
       "More plans are available in other currencies": [
         "Další tarify jsou k dispozici v jiných měnách"
-      ],
-      "Payment Processing": [
-        "Zpracování platby"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
@@ -8445,8 +8442,8 @@
       "Timeout exceeded": [
         "Byl překročen časový limit"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Zpracováváme vaši platbu za vyúčtovanou fakturu. Před provedením změn v tarifu nebo aktualizací platebních údajů vyčkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
+      "Your payment is still being processed": [
+        "Vaše platba se stále zpracovává"
       ]
     },
     "Payments.Error": {

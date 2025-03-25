@@ -3996,7 +3996,7 @@
         "байт",
         "байты",
         "байтаў",
-        "байты"
+        "байтаў"
       ],
       "GB": [
         "ГБ"
@@ -4016,25 +4016,25 @@
         "Байт",
         "Байты",
         "Байтаў",
-        "Байты"
+        "Байтаў"
       ],
       "Gigabyte": [
         "Гігабайт",
         "Гігабайты",
         "Гігабайтаў",
-        "Гігабайты"
+        "Гігабайтаў"
       ],
       "Kilobyte": [
         "Кілабайт",
         "Кілабайты",
         "Кілабайтаў",
-        "Кілабайты"
+        "Кілабайтаў"
       ],
       "Megabyte": [
         "Мегабайт",
         "Мегабайты",
         "Мегабайтаў",
-        "Мегабайты"
+        "Мегабайтаў"
       ],
       "Terabyte": [
         "тэрабайт",
@@ -4130,7 +4130,7 @@
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапановы, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
         "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
         "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
       ],
@@ -6990,10 +6990,10 @@
         "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі"
+        "${ PASS_APP_NAME } з ${ n } псеўданімам hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
@@ -7938,7 +7938,7 @@
         "${ value } дзень пасля ў ${ time }",
         "${ value } дні пасля ў ${ time }",
         "${ value } дзён пасля ў ${ time }",
-        "${ value } дня пасля ў ${ time }"
+        "${ value } дні пасля ў ${ time }"
       ],
       "${ value } day before": [
         "${ value } дзень да",
@@ -7950,7 +7950,7 @@
         "${ value } дзень да ў ${ time }",
         "${ value } дні да ў ${ time }",
         "${ value } дзён да ў ${ time }",
-        "${ value } дня да ў ${ time }"
+        "${ value } дні да ў ${ time }"
       ],
       "${ value } hour after": [
         "${ value } гадзіна пасля",
@@ -8089,9 +8089,6 @@
       "Save": [
         "Эканомія"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Эканомія ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Зэканомце 80% у першы месяц."
       ],
@@ -8199,10 +8196,10 @@
         "Карыстальніцкае..."
       ],
       "Day": [
-        "Дзень",
-        "Дні",
-        "Дзён",
-        "Дні"
+        "дзень",
+        "дні",
+        "дзён",
+        "дзён"
       ],
       "Does not repeat": [
         "Не паўтараецца"
@@ -8226,10 +8223,10 @@
         "Ігнараваць групу"
       ],
       "Month": [
-        "Месяц",
-        "Месяцы",
-        "Месяцаў",
-        "Месяцы"
+        "месяц",
+        "месяцы",
+        "месяцаў",
+        "месяцы"
       ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
@@ -8241,16 +8238,16 @@
         "Гэта падзея"
       ],
       "Week": [
-        "Тыдзень",
-        "Тыдні",
-        "Тыдняў",
-        "Тыдні"
+        "тыдзень",
+        "тыдні",
+        "тыдняў",
+        "тыдняў"
       ],
       "Year": [
-        "Год",
-        "Гады",
-        "Гадоў",
-        "Гады"
+        "год",
+        "гады",
+        "гадоў",
+        "гады"
       ]
     },
     "Option group label": {
@@ -8373,6 +8370,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змены. Дзякуй за ваша цярпенне."
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -8381,9 +8381,6 @@
       ],
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
-      ],
-      "Payment Processing": [
-        "Апрацоўка плацяжу"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
@@ -8442,8 +8439,8 @@
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Мы апрацоўваем ваш плацеж за выстаўлены рахунак. Перад тым, як уносіць змены ў свой тарыфны план або абнаўляць рэквізіты плацяжу, дачакайцеся завяршэння плацяжу. Дзякуй за цярпенне."
+      "Your payment is still being processed": [
+        "Ваш плацеж усё яшчэ апрацоўваецца"
       ]
     },
     "Payments.Error": {
@@ -10149,13 +10146,13 @@
         "${ hours } гадз",
         "${ hours } гадз",
         "${ hours } гадз",
-        "${ hours } гадз"
+        "${ hours } г"
       ],
       "${ hoursInt }.5 h": [
-        "${ hoursInt },5 гадз",
-        "${ hoursInt },5 гадз",
-        "${ hoursInt },5 гадз",
-        "${ hoursInt },5 гадз"
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г"
       ],
       "${ minutes } min": [
         "${ minutes } хв",
@@ -10174,8 +10171,8 @@
       "${ hoursInt }.5 hour": [
         "${ hoursInt },5 гадзіны",
         "${ hoursInt },5 гадзіны",
-        "${ hoursInt },5 гадзін",
-        "${ hoursInt },5 гадзін"
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзіны"
       ],
       "${ minutes } minute": [
         "${ minutes } хвіліна",
@@ -10356,13 +10353,13 @@
         "Выдаліць ${ count } кантакт",
         "Выдаліць ${ count } кантакты",
         "Выдаліць ${ count } кантактаў",
-        "Выдаліць ${ count } кантакты"
+        "Выдаліць ${ count } кантактаў"
       ],
       "Delete ${ count } contact group": [
         "Выдаліць ${ count } групу кантактаў",
         "Выдаліць ${ count } групы кантактаў",
         "Выдаліць ${ count } груп кантактаў",
-        "Выдаліць ${ count } групы кантактаў"
+        "Выдаліць ${ count } груп кантактаў"
       ],
       "Delete ${ value }": [
         "Выдаліць ${ value }"
@@ -10855,7 +10852,7 @@
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)"
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
       ]
     },
     "Video control": {
@@ -11013,7 +11010,7 @@
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?",
-        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?"
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Вы ўпэўнены, што хочаце незваротна выдаліць гэтыя групы кантактаў?"
@@ -11137,10 +11134,10 @@
         "Кожныя ${ interval } тыдні ў панядзелак"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у панядзелак а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак а ${ timesString }",
-        "Кожных ${ interval } тыдняў у панядзелак а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак а ${ timesString }"
+        "Кожны ${ interval } тыдзень у панядзелак у ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак у ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак у ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак у ${ timesString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Кожны ${ interval } тыдзень у суботу",
@@ -11155,10 +11152,10 @@
         "Кожныя ${ interval } тыдні ў нядзелю"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у нядзелю а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў нядзелю а ${ timesString }",
-        "Кожных ${ interval } тыдняў у нядзелю а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў нядзелю а ${ timesString }"
+        "Кожны ${ interval } тыдзень у нядзелю ў ${ timesString }",
+        "Кожныя ${ interval } тыдні ў нядзелю ў ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю ў ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю ў ${ timesString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Кожны ${ interval } тыдзень у чацвер",
@@ -11173,10 +11170,10 @@
         "Кожныя ${ interval } тыдні ў аўторак"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у аўторак а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак а ${ timesString }",
-        "Кожных ${ interval } тыдняў у аўторак а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак а ${ timesString }"
+        "Кожны ${ interval } тыдзень у аўторак у ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак у ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак у ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак у ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Кожны ${ interval } тыдзень у сераду",
