@@ -1,3 +1,4 @@
+import type { RawProcessorWorkerInterface } from '@proton/raw-images';
 import { createWorker } from '@proton/raw-images';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import {
@@ -74,11 +75,12 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
             );
         },
         creator: async (file: File, name?: string) => {
+            let processor: RawProcessorWorkerInterface | undefined;
             try {
-                const processor = await createWorker();
-                await processor.initialize();
                 const buffer = await file.arrayBuffer();
                 const data = new Uint8Array(buffer);
+                processor = await createWorker(data, name);
+                await processor.initialize();
                 const result = await processor.extractThumbnail(data, name);
                 if (result) {
                     void countActionWithTelemetry(Actions.ExtractedFromRaw);
@@ -96,6 +98,10 @@ const CHECKER_CREATOR_LIST: readonly CheckerThumbnailCreatorPair[] = [
             } catch (e) {
                 sendErrorReport(e);
                 return undefined;
+            } finally {
+                if (processor) {
+                    processor.terminate();
+                }
             }
         },
     },
