@@ -84,7 +84,7 @@
         "Anuluj"
       ],
       "Cancel email change": [
-        "Anulowanie zmiany adresu e-mail"
+        "Anuluj zmianę adresu e-mail"
       ],
       "Change": [
         "Zmień"
@@ -648,7 +648,7 @@
         "Pokaż starszą historię"
       ],
       "With other ${ BRAND_NAME } users": [
-        "Z innymi użytkownikami ${ BRAND_NAME }"
+        "Dla innych użytkowników ${ BRAND_NAME }"
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
@@ -822,7 +822,7 @@
         "Nie udało się anulować zmiany skrzynki pocztowej"
       ],
       "Failed to change mailbox": [
-        "Zmiana skrzynki pocztowej się nie powiodła"
+        "Nie udało się zmienić skrzynki pocztowej"
       ],
       "Failed to create domain": [
         "Nie udało się utworzyć domeny"
@@ -2250,6 +2250,12 @@
         "${ config.options.wordCount } słów",
         "${ config.options.wordCount } słów"
       ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementy",
+        "${ count } elementów",
+        "${ count } elementów"
+      ],
       "${ days } day": [
         "${ days } dzień",
         "${ days } dni",
@@ -2282,6 +2288,9 @@
         "${ months } miesiące",
         "${ months } miesięcy",
         "${ months } miesięca"
+      ],
+      "${ PASS_SHORT_APP_NAME } Monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Wersja ${ PASS_SHORT_APP_NAME }"
@@ -2874,6 +2883,9 @@
       "Save passkeys": [
         "Zapisz klucze dostępu"
       ],
+      "Secure links": [
+        "Linki"
+      ],
       "Security": [
         "Bezpieczeństwo"
       ],
@@ -3022,7 +3034,7 @@
         "Użyj ${ PASS_APP_NAME } jako domyślnego menadżera haseł w przeglądarce"
       ],
       "Useful for permanent sharing": [
-        "Przydatne do stałego udostępniania"
+        "Do stałego udostępniania"
       ],
       "Username": [
         "Nazwa użytkownika"
@@ -3390,7 +3402,7 @@
         "Anulować zmianę adresu e-mail?"
       ],
       "Change mailbox email": [
-        "Zmiana adresu e-mail skrzynki pocztowej"
+        "Zmień adres skrzynki pocztowej"
       ],
       "Change your lock method": [
         "Zmień metodę blokowania"
@@ -3766,7 +3778,7 @@
         "Hasło ${ BRAND_NAME } jest wymagane"
       ],
       "2 consecutive dots are not allowed": [
-        "2 następujące po sobie kropki są niedozwolone"
+        "2 następujące po sobie kropki nie są dozwolone"
       ],
       "A description of the problem is required": [
         "Opis problemu jest wymagany"
