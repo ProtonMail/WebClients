@@ -328,8 +328,8 @@
       "Enable multi-user support": [
         "Aktivera stöd för flera användare"
       ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "Utforska ${ PLAN_NAMES[plan] }"
+      "Explore ${ target }": [
+        "Utforska ${ target }"
       ],
       "Explore group plans": [
         "Utforska gruppaket"
@@ -8072,9 +8072,6 @@
       "Save": [
         "Spara"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Spara ${ prices.savedPercentage } %"
-      ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
       ],
@@ -8511,6 +8508,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
+      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -8519,9 +8519,6 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
-      ],
-      "Payment Processing": [
-        "Betalning behandlas"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Lägg till en betalningsmetod i adminpanelen för att fortsätta."
@@ -8556,11 +8553,11 @@
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi behandlar din betalning för den fakturerade fakturan. Vänta tills betalningen är slutförd innan du gör ändringar i ditt paket eller uppdaterar dina betalningsuppgifter. Tack för ditt tålamod."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du kommer att debiteras ${ amountToCharge } från din valda betalningsmetod."
+      ],
+      "Your payment is still being processed": [
+        "Din betalning håller fortfarande på att behandlas"
       ]
     },
     "Payments.Error": {
@@ -10040,47 +10037,6 @@
         "För ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -10369,6 +10325,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {

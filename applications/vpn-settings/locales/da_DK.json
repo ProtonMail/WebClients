@@ -49,6 +49,9 @@
       "Add address or domain": [
         "Tilføj adresse eller domæne"
       ],
+      "Add another account": [
+        "Tilføj en anden konto"
+      ],
       "Add credit / debit card": [
         "Tilføj kredit/debetkort"
       ],
@@ -310,6 +313,9 @@
       "Generate password": [
         "Generér adgangskode"
       ],
+      "Get ${ planName } for ${ priceCoupon }": [
+        "Få ${ planName } til ${ priceCoupon }"
+      ],
       "Get ${ planOrAppName }": [
         "Få ${ planOrAppName }"
       ],
@@ -348,6 +354,12 @@
       ],
       "Help": [
         "Hjælp"
+      ],
+      "Help and feedback": [
+        "Hjælp og feedback"
+      ],
+      "Help and resources": [
+        "Hjælp og ressourcer"
       ],
       "Hide": [
         "Skjul"
@@ -658,6 +670,9 @@
       "Switch or add account": [
         "Skift eller tilføj konto"
       ],
+      "Take a tour": [
+        "Tag en tour"
+      ],
       "Test": [
         "Test"
       ],
@@ -928,6 +943,10 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement, men du kan spare ${ discountPercentage } på ${ plan.Title }, når du abonnerer for ${ cycle } måned.",
+        "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement, men du kan spare ${ discountPercentage } på ${ plan.Title }, når du abonnerer for ${ cycle } måneder."
       ]
     },
     "bf2023: Offers": {
@@ -1020,6 +1039,9 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1079,6 +1101,9 @@
       ],
       "Monthly": [
         "Månedlig"
+      ],
+      "New!": [
+        "Nyheder"
       ],
       "Two-year": [
         "To-År"
@@ -2185,6 +2210,21 @@
         "Få mere at vide"
       ]
     },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "For ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "For ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "For ${ PASS_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/måned"
@@ -3107,6 +3147,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekræft din identitet med en fysisk U2F eller FIDO2 sikkerhedsnøgle"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Du har nået det maksimale antal af ${ maxSecurityKeyLength } sikkerhedsnøgle.",
+        "Du har nået det maksimale antal af ${ maxSecurityKeyLength } sikkerhedsnøgler."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Din to-faktor-godkendelsesnøgle er klar til brug."
       ]
@@ -3390,6 +3434,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3398,9 +3445,16 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } bruger har i øjeblikket adgang til delte servere.",
+        "${ amountUsers }/${ totalUsers } brugere har i øjeblikket adgang til delte servere"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
@@ -3445,6 +3499,10 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } udløber om ${ daysLeft } dag.",
+        "${ planName } udløber om ${ daysLeft } dage."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med dedikeret overvågning af mistænkelig aktivitet."
@@ -4270,6 +4328,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organiser dine dedikerede servere i gateways, og bestem, hvilke medlemmer der kan få adgang til dem."
       ],
+      "Other accounts": [
+        "Andre konti"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Der findes andre administratorer i din organisation. Du er selv ansvarlig for at formidle den nye adgangskode til dem."
       ],
@@ -4525,6 +4586,10 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonnement fornyes automatisk hver ${ cycle } måned.",
+        "Abonnement fornyes automatisk hver ${ cycle } måned."
       ],
       "Subscription auto-renews every month.": [
         "Abonnementet auto-fornyer hver måned."
@@ -6145,6 +6210,9 @@
       ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
       ]
     },
     "new_plans: action": {
@@ -6259,6 +6327,9 @@
       ],
       "${ size } storage": [
         "${ size } lagerplads"
+      ],
+      "${ size } storage per user": [
+        "${ size } lagerplads pr. bruger"
       ],
       "1 TB secure storage": [
         "1 TB sikker lagerplads"
@@ -6449,6 +6520,9 @@
       ],
       "Limited support": [
         "Begrænset support"
+      ],
+      "Manage user permissions and access": [
+        "Administrér brugeradgang og -tilladelser"
       ],
       "Multiple admin roles": [
         "Flere administratorroller"
@@ -7213,14 +7287,50 @@
       "Don’t show this offer again": [
         "Vis ikke dette tilbud igen"
       ],
+      "Get Drive Plus for only ${ pricingTitle }": [
+        "Få Drive Plus for kun ${ pricingTitle }"
+      ],
+      "Get Mail Plus for only ${ pricingTitle }": [
+        "Få Mail Plus for kun ${ pricingTitle }"
+      ],
+      "Last chance to get 80% off your first month of ${ plan } Plus.": [
+        "Sidste chance for at spare 80% på den første måned af ${ plan } Plus "
+      ],
+      "Mail Plus for 12 months": [
+        "Mail Plus i 12 måneder"
+      ],
       "Maybe later": [
         "Måske senere"
       ],
+      "Offer expires ${ formattedDate }.": [
+        "Tilbud udløber ${ formattedDate }"
+      ],
+      "Save": [
+        "Gem"
+      ],
+      "Save 80% on your first month.": [
+        "Spar 80% på den første måned."
+      ],
       "Special offer": [
         "Specialtilbud"
+      ],
+      "This offer won't be shown again.": [
+        "Dette tilbud vil ikke blive vist igen."
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Når du skifter fra et måndeligt til et årligt abonnement."
+      ],
+      "You currently pay": [
+        "Du betaler lige nu"
+      ],
+      "Your subscription renews soon": [
+        "Dit abonnement fornyes snart"
       ]
     },
     "Offer feature": {
+      "+10 more premium features": [
+        "Mere end +10 førsteklassesfunktioner"
+      ],
       "Custom email domain": [
         "Tilpasset e-maildomæne"
       ],
@@ -7229,6 +7339,9 @@
       ],
       "Free": [
         "Gratis"
+      ],
+      "Online document editor": [
+        "Online tekstbehandler"
       ],
       "Plus": [
         "Plus"
@@ -7417,6 +7530,9 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Sikker deling af boks"
+      ],
+      "Secure vault, item and link sharing": [
+        "Sikker deling af boks, element og link"
       ]
     },
     "pass_signup_2024: Info": {
@@ -7429,6 +7545,9 @@
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
+      ],
+      "Team policies": [
+        "Team-policer"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7572,9 +7691,6 @@
       "More plans are available in other currencies": [
         "Flere abonnementer er tilgængelige i andre valutaer"
       ],
-      "Payment Processing": [
-        "Betalingsbehandling"
-      ],
       "Please add a payment method in the dashboard to continue.": [
         "Tilføj en betalingsmetode i betjeningspanelet for at fortsætte."
       ],
@@ -7599,14 +7715,15 @@
       "Select billing country to pay": [
         "Vælg faktureringsland for at betale"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Den særlige udsalgspris på ${ priceWithDiscount } gælder for den første ${ subscriptionLength } måned.",
+        "Den særlige udsalgspris på ${ priceWithDiscount } gælder for de første ${ subscriptionLength } måneder."
+      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaktionen er registreret korrekt. Beløbet bliver overført til din konto, når transaktionen er blevet bekræftet."
       ],
       "Timeout exceeded": [
         "Timeout overskredet"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi er ved at behandle din betaling for den fremsendte faktura. Vent venligst, indtil betalingen er gennemført, før du foretager ændringer i dit abonnement eller opdaterer dine betalingsoplysninger. Tak for din tålmodighed."
       ]
     },
     "Payments.Error": {
@@ -7632,6 +7749,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "Adresse, postnummer og by"
       ]
     },
     "Permission": {
@@ -7772,6 +7894,10 @@
       "${ cycle } month": [
         "${ cycle } måned",
         "${ cycle } måneder"
+      ],
+      "${ months } month plan": [
+        "${ months }-måneds abonnement",
+        "${ months }-måneders abonnement"
       ]
     },
     "Price": {
@@ -8438,6 +8564,9 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
         "Dette abonnement vil automatisk blive fornyet hvert 2. år til samme pris, indtil det opsiges."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Dit abonnement fornyes til samme pris hvert år."
       ]
     },
     "specialoffer: Link": {
@@ -8551,6 +8680,22 @@
       ]
     },
     "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } medlem har bedt om hjælp til at logge ind",
+        "${ n } medlemmer har bedt om hjælp til at logge ind"
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } bruger konverteret til SSO",
+        "${ n } brugere konverteret til SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } bruger frakoblet SSO",
+        "${ n } brugere frakoblet SSO"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } bruger er inaktiv. Du kan trygt fjerne denne bruger fra din organisation.",
+        "${ n } brugere er inaktive. Du kan trygt fjerne disse brugere fra din organisation."
+      ],
       "Access denied": [
         "Adgang nægtet"
       ],
@@ -8850,6 +8995,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Højhastigheds VPN på ${ maxVpn } enhed",
         "Højhastigheds VPN på ${ maxVpn } enheder"
+      ],
+      "VPN connection for ${ n } devices per user": [
+        "VPN-forbindelse til ${ n } enheder per bruger",
+        "VPN-forbindelse til ${ n } enheder per bruger"
       ]
     },
     "Subscription change warning": {
@@ -8888,47 +9037,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Til ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "and 15 more premium features": [
-        "og 15 andre premium-funktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresendelse af e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om databrud ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
-      ],
-      "No ads or tracking": [
-        "Ingen reklamer eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadresse"
-      ],
-      "Support our mission": [
-        "Støt vores mission"
-      ],
-      "Upgrade": [
-        "Opgradering"
-      ],
-      "Upgrade your productivity": [
-        "Opgrader din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi sælger ikke dine data"
-      ],
-      "Your privacy is our mission": [
-        "Dit privatliv er vores mission"
       ]
     },
     "Subscription reminder": {
@@ -9178,6 +9286,9 @@
       "Users won’t be able to send emails": [
         "Brugere vil ikke kunne sende e-mails"
       ],
+      "Users won’t be able to upload files on their devices": [
+        "Brugere vil ikke være i stand til at uploader filer til deres enheder."
+      ],
       "Version history": [
         "Versionshistorik"
       ],
@@ -9207,6 +9318,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "and 15 more premium features": [
+        "og 15 andre premium-funktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresendelse af e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om databrud ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Vær med til at holde internettet sikkert og privat for alle. Opgrader til en betalingsløsning."
+      ],
+      "No ads or tracking": [
+        "Ingen reklamer eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadresse"
+      ],
+      "Support our mission": [
+        "Støt vores mission"
+      ],
+      "Upgrade": [
+        "Opgradering"
+      ],
+      "Upgrade your productivity": [
+        "Opgrader din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi sælger ikke dine data"
+      ],
+      "Your privacy is our mission": [
+        "Dit privatliv er vores mission"
       ]
     },
     "Subscription renewal state": {
@@ -9530,6 +9682,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
+      "${ feature } is now active": [
+        "${ feature } er nu aktiv"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } klienter"
       ],
@@ -9638,6 +9793,9 @@
       ],
       "Authentication security": [
         "Godkendelses-sikkerhed"
+      ],
+      "Auto-deletion is active": [
+        "Automatisk sletning er aktiv"
       ],
       "Billing cycle": [
         "Faktureringscyklus"
@@ -9902,6 +10060,12 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Help and feedback": [
+        "Hjælp og feedback"
+      ],
+      "Help center": [
+        "Hjælp-center"
       ],
       "How to choose a good logo": [
         "Hvordan vælger man et godt logo"
@@ -10173,6 +10337,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard konfiguration"
+      ],
+      "You can now create unlimited folders and labels": [
+        "Du kan nu oprette ubegrænsede mængder af mapper og etiketter"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"
@@ -10612,6 +10779,10 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } lande"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servere i ${ numberOfCountries }+ land",
+        "Servere i ${ numberOfCountries }+ lande"
       ]
     },
     "vpn_2024: renew": {
