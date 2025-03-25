@@ -116,6 +116,14 @@ const result = (env: any): webpack.Configuration => {
                         from: path.resolve(__dirname, '../../packages/raw-images/dist/dcraw.js'),
                         to: 'assets/static/dcraw.js',
                     },
+                    {
+                        from: path.resolve(__dirname, '../../packages/raw-images/dist/cr3.wasm'),
+                        to: 'assets/static/cr3.wasm',
+                    },
+                    {
+                        from: path.resolve(__dirname, '../../packages/raw-images/dist/cr3.js'),
+                        to: 'assets/static/cr3.js',
+                    },
                 ],
             }),
         ],

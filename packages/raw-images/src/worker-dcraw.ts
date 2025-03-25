@@ -84,7 +84,7 @@ class RawProcessorWorker {
      * Initialize the worker and wait for the WASM module to load
      */
     private async initialize(): Promise<void> {
-        await this.processor.waitForModuleLoaded();
+        await this.processor.waitForDCRawModuleLoaded();
     }
 }
 
