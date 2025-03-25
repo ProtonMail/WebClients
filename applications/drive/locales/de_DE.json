@@ -276,6 +276,9 @@
       "Decline": [
         "Ablehnen"
       ],
+      "Decline invite": [
+        "Einladung ablehnen"
+      ],
       "Decrease": [
         "Verkleinern"
       ],
@@ -3072,7 +3075,7 @@
         "Bitte wähle ein Land"
       ],
       "Please select a state": [
-        "Bitte wähle ein Bundesland."
+        "Bitte wähle ein Bundesland"
       ],
       "Port is required": [
         "Port ist erforderlich"
@@ -4230,7 +4233,7 @@
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "${ PASS_SHORT_APP_NAME } lebenslanges Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung Ihres Abonnements ${ planTitle } bleiben unverändert."
+        "${ PASS_SHORT_APP_NAME } Lifetime Deal hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausiert",
@@ -4440,6 +4443,9 @@
       "Calendar side panel": [
         "Kalender-Seitenleiste"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalender integriert mit ${ MAIL_APP_NAME } und ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Abgebrochen"
       ],
@@ -4481,6 +4487,9 @@
       ],
       "Close this screen to exit.": [
         "Schließe zum Beenden das Fenster."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Cloud-Speicher integriert mit ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Konflikt"
@@ -4631,6 +4640,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-Mail-Dienst integriert mit ${ CALENDAR_APP_NAME } und ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
@@ -5040,6 +5052,9 @@
       "password": [
         "Passwort"
       ],
+      "Password manager with extra account security": [
+        "Passwortmanager mit zusätzlicher Kontosicherheit"
+      ],
       "Paused": [
         "Angehalten"
       ],
@@ -5089,8 +5104,8 @@
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben.",
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
       ],
       "Please open the document to view it.": [
         "Bitte öffne das Dokument, um es anzusehen."
@@ -5187,7 +5202,7 @@
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
       "Registering your subscription…": [
-        "Dein Abonnement wird registriert…"
+        "Registrierung deines Abonnements…"
       ],
       "Report has been sent": [
         "Bericht wurde gesendet"
@@ -5246,6 +5261,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
       ],
+      "Self-custodial crypto wallet": [
+        "Selbstverwaltete Krypto-Wallet"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-Zahlungen sind zurzeit nicht verfügbar. Probiere es später erneut."
       ],
@@ -5262,7 +5280,7 @@
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
       ],
       "Setting up your new address…": [
-        "Deine neue E-Mail-Adresse wird eingerichtet…"
+        "Einrichtung deiner neuen E-Mail-Adresse…"
       ],
       "Share files with links": [
         "Dateien mit Links teilen"
@@ -5581,6 +5599,9 @@
       "Visa Secure logo": [
         "Visa Secure Logo"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN mit eigenen Servern und IP-Adressen"
+      ],
       "Want to sync files faster?": [
         "Möchtest du Dateien schneller synchronisieren?"
       ],
@@ -5764,6 +5785,15 @@
         "Du wirst dann nach ${ renewCycle } Monat zu ${ renewAmountStr } abgerechnet.",
         "Sie werden dann alle ${ renewCycle } Monate zu ${ renewAmountStr } abgerechnet."
       ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du bist dabei, die Beitrittseinladung für das Album ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Album nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du bist dabei, die Beitrittseinladung für den Ordner ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Ordner nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du bist dabei, die Beitrittseinladung für den Eintrag ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Eintrag nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du hast die maximale Anzahl von Adressen in der/den Kontaktgruppe(n) erreicht:"
       ],
@@ -5777,7 +5807,7 @@
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Dein ${ PASS_SHORT_APP_NAME } Plus Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Das übrige Guthaben deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmal Zahlung für Lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
+        "Dein ${ PASS_SHORT_APP_NAME } Plus Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Das übrige Guthaben deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmal Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
@@ -8068,6 +8098,14 @@
         "${ count } Element konnte nicht entschlüsselt werden",
         "${ count } Elemente konnten nicht entschlüsselt werden"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "${ nbFailures } Foto konnte nicht zu „${ albumName }“ hinzugefügt werden",
+        "${ nbFailures } Fotos konnten nicht zu „${ albumName }“ hinzugefügt werden"
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } Foto zu \"${ albumName }\" hinzugefügt",
+        "${ nbSuccesses } Fotos zu \"${ albumName }\" hinzugefügt"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } Eintrag gelöscht",
         "${ numberOfItems } Einträge gelöscht"
@@ -8352,9 +8390,6 @@
       ],
       "Save": [
         "Spare"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Spare ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Spare 80% im ersten Monat."
@@ -8679,6 +8714,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -8687,9 +8725,6 @@
       ],
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
-      ],
-      "Payment Processing": [
-        "Zahlungsabwicklung"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
@@ -8719,8 +8754,8 @@
         "Bedingungen & Konditionen"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Der Gutschein ist gültig für ${ couponRedemptions } Verlängerung.",
-        "Der Gutschein ist gültig für ${ couponRedemptions } Verlängerungen."
+        "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
+        "Der Gutschein ist für ${ couponRedemptions } Verlängerungen gültig."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monat gültig.",
@@ -8740,8 +8775,8 @@
       "Timeout exceeded": [
         "Zeitlimit überschritten"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Wir bearbeiten gerade deine Zahlung für die Rechnung. Bitte warte, bis die Zahlung abgeschlossen ist, bevor du Änderungen an deinem Abonnement vornimmst oder deine Zahlungsdaten aktualisierst. Vielen Dank für deine Geduld."
+      "Your payment is still being processed": [
+        "Deine Zahlung ist noch in Bearbeitung."
       ]
     },
     "Payments.Error": {
@@ -10459,6 +10494,9 @@
       "Day theme": [
         "Helles Design"
       ],
+      "Decline invitation?": [
+        "Einladung ablehnen?"
+      ],
       "Delete": [
         "Löschen"
       ],
@@ -10910,9 +10948,6 @@
       ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Du bist dabei, die Einladung für das freigegebene Element abzulehnen. Du kannst erst wieder darauf zugreifen, wenn der Besitzer es für dich freigibt."
       ],
       "You can now create unlimited folders and labels": [
         "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."
