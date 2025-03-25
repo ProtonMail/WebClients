@@ -16,6 +16,7 @@ import { createUnleash, loadCrypto } from '@proton/account/bootstrap';
 import {
     ModalsChildren,
     NotificationsChildren,
+    type OnLoginCallbackArguments,
     type OnLoginCallbackResult,
     type ProtonLoginCallback,
     UnAuthenticated,
@@ -32,6 +33,7 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
+import { isMember } from '@proton/shared/lib/user/helpers';
 import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
@@ -119,6 +121,15 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
         return unauthenticatedApi.startUnAuthFlow();
     };
 
+    const handleLoginWithDefaultPath = (session: OnLoginCallbackArguments) => {
+        const { User } = session.data;
+        const previousHash = initialLocation?.hash || '';
+        const previousSearch = initialLocation?.search || '';
+        const path = initialLocation?.pathname || (User && isMember(User) ? '/account-password' : '/dashboard');
+        const pathWithSearch = `${path}${previousSearch}${previousHash}`;
+        return onLogin({ ...session, path: pathWithSearch });
+    };
+
     return (
         <>
             <NotificationsChildren />
@@ -139,8 +150,8 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                                 productParam={APPS.PROTONVPN_SETTINGS}
                                                 onPreSubmit={handlePreSubmit}
                                                 onStartAuth={handleStartAuth}
-                                                onLogin={async (...args) => {
-                                                    onLogin(...args);
+                                                onLogin={async (data) => {
+                                                    handleLoginWithDefaultPath(data);
                                                     return completeResult;
                                                 }}
                                             />
@@ -211,7 +222,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                                 initialLocation={initialLocation}
                                                 metaTags={loginPage()}
                                                 onLogin={async (args) => {
-                                                    onLogin(args);
+                                                    handleLoginWithDefaultPath(args);
                                                     return completeResult;
                                                 }}
                                                 onPreSubmit={handlePreSubmit}
