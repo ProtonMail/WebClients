@@ -309,6 +309,16 @@ export default function useShareURLView(shareId: string, linkId: string) {
         });
     };
 
+    const getIsShareUrlEnabled = () => {
+        if (!!link?.albumProperties) {
+            return false;
+        }
+        if (!!link?.mimeType && isProtonDocument(link.mimeType)) {
+            return isDocsPublicSharingEnabled;
+        }
+        return true;
+    };
+
     const loadingMessage =
         isLinkLoading || isShareUrlLoading
             ? getLoadingMessage(isLinkLoading, !!link?.shareUrl, !!link?.isFile)
@@ -325,7 +335,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
         isDeleting,
         isSaving,
         name: link?.name || '', // If the link is not loaded we will return an error message anyway
-        isShareUrlEnabled: !!link?.mimeType && isProtonDocument(link.mimeType) ? isDocsPublicSharingEnabled : true,
+        isShareUrlEnabled: getIsShareUrlEnabled(),
         initialExpiration,
         customPassword,
         sharedLink,
