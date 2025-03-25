@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -562,8 +562,8 @@
       "Encrypt and export": [
         "Cifrar y exportar"
       ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "Descubra ${ PLAN_NAMES[plan] }"
+      "Explore ${ target }": [
+        "Descubra ${ target }"
       ],
       "Explore group plans": [
         "Descubra los planes de grupo"
@@ -1039,6 +1039,9 @@
       "Save address": [
         "Guardar dirección"
       ],
+      "Save and continue": [
+        "Guardar y continuar"
+      ],
       "Save changes": [
         "Guardar los cambios"
       ],
@@ -1170,6 +1173,9 @@
       ],
       "Sign in": [
         "Iniciar sesión"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Iniciar sesión con ${ BRAND_NAME }"
       ],
       "Sign in with password": [
         "Iniciar sesión con contraseña"
@@ -1331,7 +1337,7 @@
         "Use el correo electrónico actual en su lugar"
       ],
       "Use “${ label }” setting": [
-        "Usar ajustes de “${ label }”"
+        "Usar el ajuste de «${ label }»"
       ],
       "User": [
         "Usuario"
@@ -7153,7 +7159,7 @@
       ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } seleccionado",
-        "${ selectedEntities.length } seleccionado"
+        "${ selectedEntities.length } seleccionados"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } carpeta seleccionada",
@@ -7280,11 +7286,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Active al menos un método de recuperación de datos para asegurarse de tener acceso a los contenidos de la cuenta de ${ BRAND_NAME } si pierde la contraseña."
       ],
-      "active": [
-        "activa"
-      ],
       "Active": [
         "Activo"
+      ],
+      "active": [
+        "activa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Agregue una dirección de correo @pm.me a la cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME }\" o \"Mensaje privado\" en inglés."
@@ -7951,6 +7957,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Disfrute de una experiencia de correo electrónico más rápida y centrada con la aplicación de escritorio."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Ingrese una contraseña para finalizar su cuenta de ${ BRAND_NAME } y ¡empezar a usar ${ VPN_APP_NAME } en todos sus dispositivos!"
       ],
       "Enter key manually instead": [
         "Ingrese la clave manualmente"
@@ -9019,6 +9028,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Configure ${ MAIL_APP_NAME } como su aplicación de correo por defecto. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
+      "Set password": [
+        "Definir una contraseña"
+      ],
       "Set recovery phrase": [
         "Establecer frase de recuperación"
       ],
@@ -9177,6 +9189,9 @@
       ],
       "Thank you": [
         "Gracias"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "¡Gracias por elegir ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gracias por apoyar nuestra misión de construir un mejor internet donde la privacidad y la libertad son primero."
@@ -10123,6 +10138,9 @@
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Podrá agregar estos servidores a otra puerta de enlace inmediatamente."
       ],
+      "You’re all set": [
+        "Está todo listo"
+      ],
       "Zoom meeting": [
         "reunión de Zoom"
       ]
@@ -10706,7 +10724,7 @@
         "Permitir exportación de datos a todos los uruarios"
       ],
       "Allow individual item sharing": [
-        "Permitir el intercambio para cada elemento"
+        "Permitir compartir cada elemento"
       ],
       "Allow memorable passwords": [
         "Permitir las contraseñas memorables"
@@ -13994,9 +14012,6 @@
       "Save": [
         "Ahorre"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Ahorre ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Ahorre un 80 % en su primer mes."
       ],
@@ -14751,7 +14766,7 @@
         "¡Oferta especial de lanzamiento: obtenga ${ title } por ${ price } para siempre!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
-        "Especial: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }"
+        "Oferta: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Comenzar con ${ PASS_APP_NAME }"
@@ -15003,6 +15018,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -15011,9 +15029,6 @@
       ],
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
-      ],
-      "Payment Processing": [
-        "Procesando el pago"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Agregue un método de pago en el panel de control para continuar."
@@ -15058,7 +15073,7 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "La oferta especial por ${ priceWithDiscount } es válida para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento.",
-        "La oferta especial por ${ priceWithDiscount } es válida para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento."
+        "La oferta especial por ${ priceWithDiscount } es válida para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "La oferta especial por ${ priceWithDiscount } es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puede cancelarla en cualquier momento."
@@ -15073,11 +15088,11 @@
       "Timeout exceeded": [
         "Tiempo de espera agotado"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos procesando el pago de la factura. Espere hasta que se complete el pago antes de realizar cambios en su plan o actualizar sus detalles de pago. Gracias por su paciencia."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se le cobrará ${ amountToCharge } de su método de pago seleccionado."
+      ],
+      "Your payment is still being processed": [
+        "Su pago aún está siendo procesado"
       ]
     },
     "Payments.Error": {
@@ -16935,6 +16950,9 @@
       "Single sign-on removed": [
         "Se quitó el inicio de sesión único."
       ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "La dirección de correo electrónico ${ email } ya existe en ${ BRAND_NAME }. Inicie sesión con sus credenciales ${ BRAND_NAME } para continuar."
+      ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "El usuario ${ user } ahora tiene una cuenta con inicio de sesión única. Su contraseña anterior se convirtió en su contraseña de respaldo."
       ],
@@ -17290,6 +17308,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "App de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoye nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejore su productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos sus datos."
+      ],
+      "Your privacy is our mission": [
+        "Su privacidad es nuestra misión"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
@@ -17578,47 +17637,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Su alias de correo electrónico @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "App de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdenos a mantener internet seguro y privado para todos. Mejore a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoye nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejore su productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos sus datos."
-      ],
-      "Your privacy is our mission": [
-        "Su privacidad es nuestra misión"
       ]
     },
     "Subscription renewal state": {
