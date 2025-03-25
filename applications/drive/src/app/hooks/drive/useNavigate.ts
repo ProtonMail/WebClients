@@ -58,8 +58,8 @@ function useDriveNavigation() {
         pushToHistory('/shared-with-me');
     }, []);
 
-    const navigateToAlbum = useCallback((shareId: string, linkId: string) => {
-        pushToHistory(`/photos/albums/${shareId}/album/${linkId}`);
+    const navigateToAlbum = useCallback((shareId: string, linkId: string, openShare: boolean = false) => {
+        pushToHistory(`/photos/albums/${shareId}/album/${linkId}${openShare ? '?openShare=true' : ''}`);
     }, []);
 
     const navigateToPhotos = useCallback(() => {

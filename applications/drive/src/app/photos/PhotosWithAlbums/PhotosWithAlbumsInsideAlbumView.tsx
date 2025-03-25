@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom-v5-compat';
+import { useParams, useSearchParams } from 'react-router-dom-v5-compat';
 
 import { c, msgid } from 'ttag';
 
@@ -60,6 +60,7 @@ const useAppTitleUpdate = () => {
 export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useAppTitle(c('Title').t`Album`);
     const updateTitle = useAppTitleUpdate();
+    let [searchParams, setSearchParams] = useSearchParams();
     const { createNotification } = useNotifications();
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
@@ -358,6 +359,19 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             updateTitle(`Album > ${albumName}`);
         }
     }, [albumName, updateTitle]);
+
+    useEffect(() => {
+        if (album && (albumShareId || album.shareId)) {
+            // album.shareId if album is shared already
+            // albumShareId otherwise
+            const validShareId = album.shareId || albumShareId;
+            if (searchParams.has('openShare') && typeof validShareId === 'string') {
+                showLinkSharingModal({ shareId: validShareId, linkId: album.linkId });
+                searchParams.delete('openShare');
+                setSearchParams(searchParams);
+            }
+        }
+    }, [albumShareId, album, searchParams, setSearchParams, showLinkSharingModal]);
 
     if (!albumShareId || !linkId || !album || isAlbumsLoading || isAlbumPhotosLoading) {
         return <Loader />;
