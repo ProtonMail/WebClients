@@ -19,7 +19,14 @@ export const CountryFlagAndName = ({
     return (
         <>
             {flag && (
-                <img width={20} className={clsx(['mx-2 border', className])} src={flag} alt={countryName} {...rest} />
+                <img
+                    width={20}
+                    className={clsx(['mx-2 border', className])}
+                    src={flag}
+                    alt={countryName}
+                    loading="lazy"
+                    {...rest}
+                />
             )}
             {countryName}
         </>

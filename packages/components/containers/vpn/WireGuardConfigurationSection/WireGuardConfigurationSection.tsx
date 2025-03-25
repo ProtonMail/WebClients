@@ -189,7 +189,7 @@ const formatServerName = (bestServerName: string, alt: (code: string) => string 
 
     return (
         <>
-            {flag && <img width={20} className="mx-2 border" src={flag} alt={alt(countryCode)} />}
+            {flag && <img width={20} className="mx-2 border" src={flag} alt={alt(countryCode)} loading="lazy" />}
             <strong className="align-middle">{bestServerName}</strong>
         </>
     );
