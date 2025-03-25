@@ -86,7 +86,6 @@ const getDeleteSingleEventActionsHelper = async ({
             timestamp,
             inviteActions: updatedInviteActions,
             silence: true,
-            addressID,
             getAddressKeys,
             getCalendarKeys,
         });
