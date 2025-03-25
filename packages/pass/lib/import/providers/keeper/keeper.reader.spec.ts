@@ -12,14 +12,15 @@ describe('Import Keeper JSON', () => {
     const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
-        const sourceData = await fs.promises.readFile(__dirname + '/mocks/keeper.json', 'utf8');
-        payload = await readKeeperData({ data: sourceData });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/keeper.json');
+        const file = new File([sourceData], 'keeper.json');
+        payload = await readKeeperData(file);
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should handle corrupted files', async () => {
-        await expect(readKeeperData({ data: '' })).rejects.toThrow();
+        await expect(() => readKeeperData(new File([''], 'corrupted'))).rejects.toThrow();
     });
 
     it('converts Keeper folders to vaults correctly', () => {

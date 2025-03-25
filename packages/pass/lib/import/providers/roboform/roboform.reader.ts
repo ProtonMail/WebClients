@@ -8,7 +8,7 @@ import {
     importLoginItem,
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { Maybe } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -29,11 +29,12 @@ const formatOtpAuthUri = (item: RoboformItem): Maybe<string> => {
     return `otpauth://totp/${item.Name}:none?secret=${secret}`;
 };
 
-export const readRoboformData = async ({ data }: { data: string }): Promise<ImportPayload> => {
+export const readRoboformData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
     try {
+        const data = await file.text();
         const result = await readCSV<RoboformVariadicItem>({
             data,
             onError: (error) => warnings.push(error),

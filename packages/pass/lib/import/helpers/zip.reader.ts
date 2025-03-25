@@ -13,7 +13,7 @@ export const readZIP = async (file: File): Promise<ImportFileReader> => {
             try {
                 const match = entries.find((entry) => entry.filename === filename);
                 return match ? ((await match.getData?.(new zip.BlobWriter())) ?? null) : null;
-            } catch {
+            } catch (err) {
                 return null;
             }
         },
