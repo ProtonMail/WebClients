@@ -135,3 +135,10 @@ export type ImportVault = {
 
 export type ImportPayload = { vaults: ImportVault[]; ignored: string[]; warnings: string[] };
 export type ImportDecryptPayload = { filename: string; passphrase?: string };
+
+export interface ImportFileReader {
+    files: Set<string>;
+    getFile(filename: string): Promise<MaybeNull<Blob>>;
+}
+
+export type ImportReaderResult = ImportPayload & { fileReader?: ImportFileReader };
