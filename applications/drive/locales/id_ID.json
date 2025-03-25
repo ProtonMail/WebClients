@@ -273,6 +273,9 @@
       "Decline": [
         "Tolak"
       ],
+      "Decline invite": [
+        "Tolak undangan"
+      ],
       "Decrease": [
         "Kurangi"
       ],
@@ -4366,6 +4369,9 @@
       "Calendar side panel": [
         "Panel samping kalender"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalender, terintegrasi dengan ${ MAIL_APP_NAME } dan ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Dibatalkan"
       ],
@@ -4407,6 +4413,9 @@
       ],
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Penyimpanan cloud, terintegrasi dengan ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Konflik"
@@ -4554,6 +4563,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Hosting email hanya tersedia untuk domain yang telah Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak tersedia. Anda dapat meng-host email untuk domain yang terdaftar pada pendaftar domain mana pun."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Layanan email, terintegrasi dengan ${ CALENDAR_APP_NAME } dan ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
@@ -4960,6 +4972,9 @@
       "password": [
         "kata sandi"
       ],
+      "Password manager with extra account security": [
+        "Pengelola kata sandi dengan keamanan akun ekstra"
+      ],
       "Paused": [
         "Dijeda"
       ],
@@ -5164,6 +5179,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
       ],
+      "Self-custodial crypto wallet": [
+        "Dompet kripto mandiri"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Pembayaran SEPA tidak tersedia saat ini. Silakan coba lagi nanti."
       ],
@@ -5235,6 +5253,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Langganan diperbarui secara otomatis setiap ${ cycle } bulan."
       ],
       "Subscription auto-renews every month.": [
         "Langganan akan diperbarui secara otomatis setiap bulannya."
@@ -5494,6 +5515,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN dengan server dan alamat IP khusus"
+      ],
       "Want to sync files faster?": [
         "Ingin menyinkronkan berkas secara lebih cepat?"
       ],
@@ -5668,6 +5692,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Anda telah mencapai batas jumlah alamat dalam grup kontak:"
       ],
@@ -5749,8 +5776,14 @@
       "Your previous recovery phrase": [
         "Frasa pemulihan Anda sebelumnya"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
       ]
     },
     "info": {
@@ -7926,6 +7959,12 @@
       "${ count } item failed to be decrypted": [
         "${ count } item gagal didekripsi"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "${ nbFailures } foto gagal ditambahkan ke \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } foto ditambahkan ke \"${ albumName }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item dihapus"
       ],
@@ -8193,9 +8232,6 @@
       ],
       "Save": [
         "Simpan"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Hemat ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Hemat 80% pada bulan pertama Anda."
@@ -8519,6 +8555,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Selama periode ini, Anda tidak akan dapat mengubah atau membatalkan langganan Anda. Silakan tunggu hingga pembayaran Anda rampung sebelum mencoba untuk merubah suatu hal. Terima kasih atas kesabaran Anda."
+      ],
       "Got it": [
         "Mengerti"
       ],
@@ -8527,9 +8566,6 @@
       ],
       "More plans are available in other currencies": [
         "Lebih banyak paket tersedia pada mata uang lainnya"
-      ],
-      "Payment Processing": [
-        "Pembayaran Sedang Diproses"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
@@ -8546,14 +8582,38 @@
       "Please select your billing state first.": [
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Harga pembaruan dapat berubah sewaktu-waktu sesuai dengan ${ termsAndConditionsLink } yang berlaku."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
+      ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
+      ],
+      "terms & conditions": [
+        "syarat & ketentuan"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Kami sedang memproses pembayaran Anda untuk faktur yang tertagih. Silakan tunggu hingga pembayaran selesai sebelum membuat perubahan pada paket Anda atau memperbarui rincian pembayaran Anda. Terima kasih atas kesabaran Anda."
+      "Your payment is still being processed": [
+        "Pembayaran Anda masih diproses"
       ]
     },
     "Payments.Error": {
@@ -10669,9 +10729,6 @@
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
       ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Anda akan menolak undangan untuk item yang dibagikan. Anda tidak akan dapat mengakses lagi sampai pemilik membagikan ulang kepada Anda."
-      ],
       "You can now create unlimited folders and labels": [
         "Anda kini dapat membuat folder dan label tanpa batasan jumlah"
       ],
@@ -10856,6 +10913,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPriceStr }."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Langganan baru Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
       ],

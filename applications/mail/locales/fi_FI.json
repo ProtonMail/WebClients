@@ -1114,10 +1114,10 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Valitse kaikki"
       ],
-      "Select all": [
+      "Select All": [
         "Valitse kaikki"
       ],
       "Select all messages": [
@@ -1311,10 +1311,6 @@
       ],
       "Trust": [
         "Luota"
-      ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -5281,7 +5277,7 @@
         "tilin kirjautumiset"
       ],
       "Auto-forward Gmail": [
-        "Automaattinen edelleenlähetys Gmailiin"
+        "Automaattiohjaus Gmailista"
       ],
       "auto-forwarding": [
         "automaattiohjaus"
@@ -6240,6 +6236,9 @@
       "Calendar side panel": [
         "Calendar-sivupaneeli"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalenteri, integroitu ${ MAIL_APP_NAME } ja ${ CONTACTS_APP_NAME } kanssa"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Etkö löydä etsimääsi? ${ displayAllMailButton }"
       ],
@@ -6278,6 +6277,9 @@
       ],
       "Close this screen to exit.": [
         "Poistu sulkemalla tämä ruutu."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Pilvitallennus, integroitu ${ DOCS_APP_NAME } kanssa"
       ],
       "Confirm phishing report": [
         "Vahvista tietojenkalasteluilmoitus"
@@ -6675,8 +6677,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -6703,7 +6704,7 @@
         "Vahvista vain valintasi niin me teemme loput."
       ],
       "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
-        "Pidä kirjautumis- ja luottokorttitietosi turvassa ja aina käsillä lisäämällä ne ${ PASS_APP_NAME } -palveluun. Saat sen ilmaisesti ${ BRAND_NAME } -tilisi mukana."
+        "Pidä kirjautumis- ja luottokorttitietosi turvassa ja aina käsilläsi lisäämällä ne ${ PASS_APP_NAME }iin. Se on ilmainen ja sisältyy ${ BRAND_NAME }-tiliisi."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Pidä postilaatikkosi siistinä poistamalla roskakorissa ja -postissa yli 30 päivää olleet sähköpostit automaattisesti."
@@ -6930,6 +6931,9 @@
       "password": [
         "salasana"
       ],
+      "Password manager with extra account security": [
+        "Salasanojen hallinta tilin lisäsuojauksella"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
@@ -7060,9 +7064,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
-      ],
-      "Refining email list in progress": [
-        "Sähköpostilistan puhdistus käynnissä"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
@@ -7238,6 +7239,10 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein.",
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -7838,6 +7843,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Kirjoitit \"${ attachmentsFoundKeyword }\", mutta yhtään liitettä ei ole lisätty. Haluatko silti lähettää viestin?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Olet saavuttanut yhteystietoryhmien osoitteiden enimmäismäärän:"
       ],
@@ -7913,6 +7922,10 @@
       ],
       "Your private writing assistant": [
         "Yksityinen kirjoittamisen avustajasi"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein.",
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
@@ -10069,7 +10082,7 @@
         "Poista automaattisesti yli 30 päivää vanhat viestit roskakorista ja roskapostista"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Välitä ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
+        "Ohjaa ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massamainontaa tai ohjelmoitavaa viestien lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään erityisesti tähän tarkoitukseen tarkoitettua sähköpostipalvelua."
@@ -10416,9 +10429,6 @@
       ],
       "Save": [
         "Säästä"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Säästä ${ prices.savedPercentage } %"
       ],
       "Save 80% on your first month.": [
         "Säästä 80 % ensimmäisestä kuukaudestasi."
@@ -10800,9 +10810,6 @@
       "More plans are available in other currencies": [
         "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
       ],
-      "Payment Processing": [
-        "Maksua käsitellään"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
@@ -10823,9 +10830,6 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Käsittelemme laskua koskevaa maksuasi. Odota maksun suoritusta, ennen kuin teet muutoksia tilaukseesi tai päivität maksutietojasi. Kiitos kärsivällisyydestäsi."
       ]
     },
     "Payments.Error": {
@@ -13728,6 +13732,11 @@
         "Tänään"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automaattiasetuksella viestit lähetetään tälle käyttäjälle käyttäen kirjoituksessa käytettyä muotoilua. Käytettäessä pelkkä teksti -asetusta poistetaan viestistä lähetettäessä mahdolliset muotoilut."
@@ -13809,11 +13818,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
       ]
     },
     "Tor out of date": {

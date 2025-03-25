@@ -1122,10 +1122,10 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Выбраць усе"
       ],
-      "Select all": [
+      "Select All": [
         "Выбраць усе"
       ],
       "Select all messages": [
@@ -1319,12 +1319,6 @@
       ],
       "Trust": [
         "Давяраць"
-      ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -4621,7 +4615,7 @@
         "Вы не можаце адкрыць адначасова больш за ${ maxActiveComposer } акно рэдактара",
         "Вы не можаце адкрыць адначасова за ${ maxActiveComposer } акны рэдактара",
         "Вы не можаце адкрыць адначасова больш за ${ maxActiveComposer } вокнаў рэдактара",
-        "Вы не можаце адкрыць адначасова за ${ maxActiveComposer } акны рэдактара"
+        "Вы не можаце адкрыць адначасова больш за ${ maxActiveComposer } вокнаў рэдактара"
       ],
       "You did not provide a file.": [
         "Вы не выбралі файл."
@@ -5093,7 +5087,7 @@
         "байт",
         "байты",
         "байтаў",
-        "байты"
+        "байтаў"
       ],
       "GB": [
         "ГБ"
@@ -5113,25 +5107,25 @@
         "Байт",
         "Байты",
         "Байтаў",
-        "Байты"
+        "Байтаў"
       ],
       "Gigabyte": [
         "Гігабайт",
         "Гігабайты",
         "Гігабайтаў",
-        "Гігабайты"
+        "Гігабайтаў"
       ],
       "Kilobyte": [
         "Кілабайт",
         "Кілабайты",
         "Кілабайтаў",
-        "Кілабайты"
+        "Кілабайтаў"
       ],
       "Megabyte": [
         "Мегабайт",
         "Мегабайты",
         "Мегабайтаў",
-        "Мегабайты"
+        "Мегабайтаў"
       ],
       "Terabyte": [
         "тэрабайт",
@@ -5550,7 +5544,7 @@
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапановы, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
         "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
         "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
       ],
@@ -6443,6 +6437,9 @@
       "Calendar side panel": [
         "Бакавая панэль календара"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Каляндар, які інтэграваны з ${ MAIL_APP_NAME } і ${ CONTACTS_APP_NAME }"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Не знайшлі тое, што шукалі? ${ displayAllMailButton }"
       ],
@@ -6481,6 +6478,9 @@
       ],
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Воблачнае сховішча, якое інтэграванае з ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Пацвердзіць скаргу на фішынг"
@@ -6679,6 +6679,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "Ліст перасылаецца ў вашу паштовую скрыню; ваш адрас электроннай пошты застаецца схаваным."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Сэрвіс электроннай пошты, які інтэграваны з ${ CALENDAR_APP_NAME } і ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "Абарона электроннай пошты ад праграм сачэння адключана"
@@ -6906,10 +6909,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7166,6 +7166,9 @@
       "password": [
         "пароль"
       ],
+      "Password manager with extra account security": [
+        "Менеджар пароляў з дадатковай абаронай уліковага запісу"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
@@ -7301,9 +7304,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
-      "Refining email list in progress": [
-        "Адбываецца ўдакладненне спіса электроннай пошты"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
@@ -7384,6 +7384,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
+      ],
+      "Self-custodial crypto wallet": [
+        "Крыптакашалёк з самастойным захоўваннем"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Адправіць зашыфраванае і абароненае паролем паведамленне на адрас электроннай пошты ${ boldText }."
@@ -7855,6 +7858,9 @@
       ],
       "Visa Secure logo": [
         "Лагатып Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN з вылучанымі серверамі і IP-адрасамі"
       ],
       "Warning": [
         "Папярэджанне"
@@ -9877,10 +9883,10 @@
         "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі"
+        "${ PASS_APP_NAME } з ${ n } псеўданімам hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
@@ -10813,9 +10819,6 @@
       "Save": [
         "Эканомія"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Эканомія ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Зэканомце 80% у першы месяц."
       ],
@@ -11198,6 +11201,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змены. Дзякуй за ваша цярпенне."
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -11206,9 +11212,6 @@
       ],
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
-      ],
-      "Payment Processing": [
-        "Апрацоўка плацяжу"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
@@ -11267,8 +11270,8 @@
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Мы апрацоўваем ваш плацеж за выстаўлены рахунак. Перад тым, як уносіць змены ў свой тарыфны план або абнаўляць рэквізіты плацяжу, дачакайцеся завяршэння плацяжу. Дзякуй за цярпенне."
+      "Your payment is still being processed": [
+        "Ваш плацеж усё яшчэ апрацоўваецца"
       ]
     },
     "Payments.Error": {
@@ -13231,7 +13234,7 @@
         "Перамясціць ${ selectionCount } размову",
         "Перамясціць ${ selectionCount } размовы",
         "Перамясціць ${ selectionCount } размоў",
-        "Перамясціць ${ selectionCount } размовы"
+        "Перамясціць ${ selectionCount } размоў"
       ],
       "Move ${ selectionCount } message": [
         "Перамясціць ${ selectionCount } паведамленне",
@@ -13417,13 +13420,13 @@
         "${ hours } гадз",
         "${ hours } гадз",
         "${ hours } гадз",
-        "${ hours } гадз"
+        "${ hours } г"
       ],
       "${ hoursInt }.5 h": [
-        "${ hoursInt },5 гадз",
-        "${ hoursInt },5 гадз",
-        "${ hoursInt },5 гадз",
-        "${ hoursInt },5 гадз"
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г"
       ],
       "${ minutes } min": [
         "${ minutes } хв",
@@ -13442,8 +13445,8 @@
       "${ hoursInt }.5 hour": [
         "${ hoursInt },5 гадзіны",
         "${ hoursInt },5 гадзіны",
-        "${ hoursInt },5 гадзін",
-        "${ hoursInt },5 гадзін"
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзіны"
       ],
       "${ minutes } minute": [
         "${ minutes } хвіліна",
@@ -13708,31 +13711,31 @@
         "Выдаліць ${ count } кантакт",
         "Выдаліць ${ count } кантакты",
         "Выдаліць ${ count } кантактаў",
-        "Выдаліць ${ count } кантакты"
+        "Выдаліць ${ count } кантактаў"
       ],
       "Delete ${ count } contact group": [
         "Выдаліць ${ count } групу кантактаў",
         "Выдаліць ${ count } групы кантактаў",
         "Выдаліць ${ count } груп кантактаў",
-        "Выдаліць ${ count } групы кантактаў"
+        "Выдаліць ${ count } груп кантактаў"
       ],
       "Delete ${ count } conversation": [
         "Выдаліць ${ count } размову",
         "Выдаліць ${ count } размовы",
         "Выдаліць ${ count } размоў",
-        "Выдаліць ${ count } размовы"
+        "Выдаліць ${ count } размоў"
       ],
       "Delete ${ count } draft": [
         "Выдаліць ${ count } чарнавік",
         "Выдаліць ${ count } чарнавікі",
         "Выдаліць ${ count } чарнавікоў",
-        "Выдаліць ${ count } чарнавікі"
+        "Выдаліць ${ count } чарнавікоў"
       ],
       "Delete ${ count } message": [
         "Выдаліць ${ count } паведамленне",
         "Выдаліць ${ count } паведамленні",
         "Выдаліць ${ count } паведамленняў",
-        "Выдаліць ${ count } паведамленні"
+        "Выдаліць ${ count } паведамленняў"
       ],
       "Delete ${ value }": [
         "Выдаліць ${ value }"
@@ -14340,6 +14343,11 @@
         "Сёння"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“Аўтаматычна” азначае, што для адпраўкі гэтаму карыстальніку выкарыстоўваецца фармат рэдактара. “Звычайны тэкст” азначае, што пры адпраўцы паведамленне заўсёды будзе ператварацца ў звычайны тэкст."
@@ -14423,11 +14431,6 @@
         "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "стабільны выпуск"
@@ -14458,7 +14461,7 @@
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
-        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)"
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
       ]
     },
     "Video control": {
@@ -14629,7 +14632,7 @@
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?",
-        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?"
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Вы ўпэўнены, што хочаце незваротна выдаліць гэтыя групы кантактаў?"
@@ -14762,10 +14765,10 @@
         "Кожныя ${ interval } тыдні ў панядзелак"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у панядзелак а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак а ${ timesString }",
-        "Кожных ${ interval } тыдняў у панядзелак а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак а ${ timesString }"
+        "Кожны ${ interval } тыдзень у панядзелак у ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак у ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак у ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак у ${ timesString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Кожны ${ interval } тыдзень у суботу",
@@ -14780,10 +14783,10 @@
         "Кожныя ${ interval } тыдні ў нядзелю"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у нядзелю а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў нядзелю а ${ timesString }",
-        "Кожных ${ interval } тыдняў у нядзелю а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў нядзелю а ${ timesString }"
+        "Кожны ${ interval } тыдзень у нядзелю ў ${ timesString }",
+        "Кожныя ${ interval } тыдні ў нядзелю ў ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю ў ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю ў ${ timesString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Кожны ${ interval } тыдзень у чацвер",
@@ -14798,10 +14801,10 @@
         "Кожныя ${ interval } тыдні ў аўторак"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у аўторак а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак а ${ timesString }",
-        "Кожных ${ interval } тыдняў у аўторак а ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак а ${ timesString }"
+        "Кожны ${ interval } тыдзень у аўторак у ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак у ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак у ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак у ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Кожны ${ interval } тыдзень у сераду",

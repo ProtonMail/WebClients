@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -683,7 +683,7 @@
         "Залишити логотип"
       ],
       "Keep my subscription": [
-        "Зберегти мою підписку"
+        "Зберегти передплату"
       ],
       "label emails as": [
         "позначати листи міткою"
@@ -1083,6 +1083,9 @@
       ],
       "Sign in": [
         "Увійти"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Увійдіть за допомогою ${ BRAND_NAME }"
       ],
       "Sign in with password": [
         "Увійти за допомогою пароля"
@@ -8436,7 +8439,7 @@
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
       "Registering your subscription…": [
-        "Реєстрація підписки…"
+        "Реєстрація передплати…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Повідомте користувачам їхні дані для входу."
@@ -12234,7 +12237,7 @@
         "Всі базові ${ BRAND_NAME } послуги (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Всі преміумсервіси ${ BRAND_NAME }. Одна проста підписка"
+        "Всі преміальні сервіси ${ BRAND_NAME }. Одна передплата"
       ],
       "Auto-delete Spam and Trash": [
         "Автоматичне видалення спаму та смітника"
@@ -14256,9 +14259,6 @@
       "More plans are available in other currencies": [
         "Більше планів доступно в інших валютах"
       ],
-      "Payment Processing": [
-        "Обробка платежу"
-      ],
       "Please add a payment method in the dashboard to continue.": [
         "Додайте спосіб оплати в головній панелі для продовження."
       ],
@@ -14288,9 +14288,6 @@
       ],
       "Timeout exceeded": [
         "Перевищено час очікування"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Ми обробляємо ваш платіж за виставленим рахунком. Будь ласка, дочекайтеся завершення платежу, перш ніж вносити зміни до вашого тарифного плану або оновлювати платіжні реквізити. Дякуємо за ваше терпіння."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас буде списано ${ amountToCharge } з обраного вами способу оплати."
@@ -16522,6 +16519,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "and 15 more premium features": [
+        "та ще 15 преміальних функцій"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматичне пересилання пошти ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Сповіщення про витоки даних ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Програма для комп'ютера"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
+      ],
+      "No ads or tracking": [
+        "Без реклами і стеження"
+      ],
+      "Short @pm.me email address": [
+        "Коротка адреса електронної пошти @pm.me"
+      ],
+      "Support our mission": [
+        "Підтримайте нашу місію"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade your productivity": [
+        "Вдоскональте свою продуктивність"
+      ],
+      "We don't sell your data": [
+        "Ми не продаємо ваші дані"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватність є нашою місією"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
@@ -16584,22 +16622,22 @@
         "${ planNumberOfCalendars } календарів на користувача"
       ],
       "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } власний поштовий домен",
-        "${ planNumberOfDomains } власні поштові домени",
-        "${ planNumberOfDomains } власних поштових доменів",
-        "${ planNumberOfDomains } власних поштових доменів"
+        "${ planNumberOfDomains } власний домен електронної пошти",
+        "${ planNumberOfDomains } власні домени електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти"
       ],
       "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } поштова адреса",
-        "${ planNumberOfEmails } поштові адреси",
-        "${ planNumberOfEmails } поштових адрес",
-        "${ planNumberOfEmails } поштових адрес"
+        "${ planNumberOfEmails } адреса електронної пошти",
+        "${ planNumberOfEmails } адреси електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти"
       ],
       "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } поштова адреса на користувача",
-        "${ planNumberOfEmails } поштові адреси на користувача",
-        "${ planNumberOfEmails } поштових адрес на користувача",
-        "${ planNumberOfEmails } поштових адрес на користувача"
+        "${ planNumberOfEmails } адреса електронної пошти на користувача",
+        "${ planNumberOfEmails } адреси електронної пошти на користувача",
+        "${ planNumberOfEmails } адрес електронної пошти на користувача",
+        "${ planNumberOfEmails } адрес електронної пошти на користувача"
       ],
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } користувач",
@@ -16822,47 +16860,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш власний короткий псевдонім електронної пошти @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "and 15 more premium features": [
-        "та ще 15 преміальних функцій"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматичне пересилання пошти ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Сповіщення про витоки даних ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Програма для комп'ютера"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Допоможіть нам зберегти інтернет безпечним і приватним для всіх. Передплатіть тарифний план."
-      ],
-      "No ads or tracking": [
-        "Без реклами і стеження"
-      ],
-      "Short @pm.me email address": [
-        "Коротка адреса електронної пошти @pm.me"
-      ],
-      "Support our mission": [
-        "Підтримайте нашу місію"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade your productivity": [
-        "Вдоскональте свою продуктивність"
-      ],
-      "We don't sell your data": [
-        "Ми не продаємо ваші дані"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватність є нашою місією"
       ]
     },
     "Subscription renewal state": {
@@ -19437,10 +19434,10 @@
     },
     "vpn_2024: renew": {
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяць.",
-        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяці.",
-        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяців.",
-        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяців."
+        "Ваша нова передплата автоматично поновиться через ${ cycle } місяць.",
+        "Ваша нова передплата автоматично поновиться через ${ cycle } місяці.",
+        "Ваша нова передплата автоматично поновиться через ${ cycle } місяців.",
+        "Ваша нова передплата автоматично поновиться через ${ cycle } місяців."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
@@ -19527,10 +19524,10 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
-        "${ n } поштова адреса ${ BRAND_NAME }",
-        "${ n } поштові адреси ${ BRAND_NAME }",
-        "${ n } поштових адрес ${ BRAND_NAME }",
-        "${ n } поштових адрес ${ BRAND_NAME }"
+        "${ n } адреса електронної пошти ${ BRAND_NAME }",
+        "${ n } адреси електронної пошти ${ BRAND_NAME }",
+        "${ n } адрес електронної пошти ${ BRAND_NAME }",
+        "${ n } адрес електронної пошти ${ BRAND_NAME }"
       ],
       "${ n } account per wallet": [
         "${ n } обліковий запис на гаманець",

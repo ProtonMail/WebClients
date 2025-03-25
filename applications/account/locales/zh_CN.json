@@ -70,11 +70,11 @@
       "Accept": [
         "接受"
       ],
-      "activate": [
-        "激活"
-      ],
       "Activate": [
         "启用"
+      ],
+      "activate": [
+        "激活"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -561,9 +561,6 @@
       ],
       "Encrypt and export": [
         "加密并导出"
-      ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "探索 ${ PLAN_NAMES[plan] }"
       ],
       "Explore group plans": [
         "探索团体计划"
@@ -1171,6 +1168,9 @@
       "Sign in": [
         "登录"
       ],
+      "Sign in with ${ BRAND_NAME }": [
+        "使用${ BRAND_NAME }登录"
+      ],
       "Sign in with password": [
         "使用密码登录"
       ],
@@ -1740,7 +1740,7 @@
     },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
-        "6 TB 存储空间 (是其他套餐的 2 倍)"
+        "6 TB 存储空间（是其他套餐的 2 倍）"
       ],
       "6 users": [
         "6 位用户"
@@ -3624,7 +3624,7 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "每天, ${ timesString }"
+        "每天，${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "每 ${ interval } 天，${ timesString }"
@@ -3632,7 +3632,7 @@
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
-        "每天, 直到${ untilString }"
+        "每天，直到 ${ untilString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
@@ -3729,7 +3729,7 @@
         "确定要删除这个群组吗？"
       ],
       "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "请注意，如果您删除群组 ${ displayGroupName } ( 含地址 ${ displayGroupAddressEmail } ) ，您将无法再收到使用其地址的电子邮件。"
+        "请注意，如果您删除群组 ${ displayGroupName }（含地址 ${ displayGroupAddressEmail }），您将无法再收到使用其地址的电子邮件。"
       ]
     },
     "Delinquent modal title": {
@@ -3968,7 +3968,7 @@
         "缺失功能"
       ],
       "Other reason (please comment)": [
-        "其他原因 (请评论)"
+        "其他原因（请评论）"
       ],
       "Subscription is too expensive": [
         "费用过高"
@@ -4857,7 +4857,7 @@
         "名称不正确"
       ],
       "Name required": [
-        "姓名 (必填)"
+        "名称（必填）"
       ],
       "No active sessions": [
         "没有已登录的账户"
@@ -5595,7 +5595,7 @@
         "*每个用户只能免费试用一次，之后适用常规定价。"
       ],
       "Accounts with custom domains cannot join a family plan.": [
-        "带有自定义域的账户无法加入家庭计划。"
+        "带有自定义域的账户无法加入家庭套餐。"
       ],
       "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
         "离开后，您将被移动到一个 ${ BRAND_NAME } 免费计划。"
@@ -5628,7 +5628,7 @@
         "离开 Visionary 计划"
       ],
       "Lifetime accounts cannot join a family plan.": [
-        "终身账户无法加入家庭计划。"
+        "终身账户无法加入家庭套餐。"
       ],
       "Manage addresses": [
         "地址管理"
@@ -5640,7 +5640,7 @@
         "在 6 个月内仅允许接受 ${ n } 次邀请。"
       ],
       "Owners of a plan with members cannot join another family plan.": [
-        "有成员的计划所有者无法加入另一个家庭计划。"
+        "有成员的套餐所有者无法加入另一个家庭套餐。"
       ],
       "Pending": [
         "等待"
@@ -5906,7 +5906,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "关闭 TOTP 前请先关闭安全密钥双重验证"
+        "在禁用 TOTP 之前，请通过安全密钥禁用 2FA"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥进行身份验证时出错。请重试。"
@@ -5917,7 +5917,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "安全密钥双重验证已关闭"
+        "禁用通过安全密钥进行的 2FA"
       ],
       "Add a name to identify your security key with.": [
         "填写您的安全密钥名称。"
@@ -5926,7 +5926,7 @@
         "允许使用平台按键"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "允许注册内置安全密钥 ( 如 Windows Hello、Face ID、Touch ID 或内部 TPMs )"
+        "允许注册内置安全密钥（如 Windows Hello、Face ID、Touch ID 或内部 TPMs）"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "确定要删除安全密钥 ${ name } 吗？"
@@ -5950,7 +5950,7 @@
         "此操作将删除您的账户关联的所有安全密钥。"
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "开启身份验证应用后方可启用安全密钥双重验证"
+        "要通过安全密钥打开 2FA，您需要通过验证器应用程序激活 2FA。"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "使用 U2F 或 FIDO2 物理安全密钥验证身份"
@@ -5959,7 +5959,7 @@
         "您已达到最多 ${ maxSecurityKeyLength } 个安全密钥的上限。"
       ],
       "Your two-factor authentication key is ready to use.": [
-        "您的双重验证密钥已就绪，可以使用了。"
+        "您的双因素身份验证密钥已就绪，可以使用了。"
       ]
     },
     "fido2: Label": {
@@ -5975,7 +5975,7 @@
         "删除安全密钥？"
       ],
       "Disable 2FA via security key?": [
-        "关闭安全密钥双重验证？"
+        "通过安全密钥禁用 2FA？"
       ],
       "Name your security key": [
         "安全密钥命名"
@@ -7086,6 +7086,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
       ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } 项已选"
+      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
       ],
@@ -7206,11 +7209,11 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
-      "active": [
-        "启用"
-      ],
       "Active": [
         "已启用"
+      ],
+      "active": [
+        "启用"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -7225,7 +7228,7 @@
         "添加密保手机"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "登录时要求输入双重验证码，为您的账户安全再增设一道防线。"
+        "登录时要求输入 2FA 验证码，为您的账户安全再增设一道防线。"
       ],
       "Add domain": [
         "添加域名"
@@ -7240,7 +7243,7 @@
         "一次性为您的组添加多个用户。"
       ],
       "Add server (${ availableAddedCount } available)": [
-        "添加服务器 (有 ${ availableAddedCount } 台可用)"
+        "添加服务器（有 ${ availableAddedCount } 台可用）"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "添加您的名称和徽标来为您的组织创建更多个性化的体验。"
@@ -7318,7 +7321,7 @@
         "American Express SafeKey 图标"
       ],
       "Amount above maximum (${ amount }).": [
-        "金额高于最高金额 (${ amount })."
+        "金额高于最高金额 (${ amount })。"
       ],
       "Amount below minimum (${ amount }).": [
         "金额 (${ amount }) 过小。"
@@ -7522,10 +7525,10 @@
         "云存储，与 ${ DOCS_APP_NAME } 集成"
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
-        "CNET 编辑选择奖，评分 8.4 分 ( 满分 10 分 )"
+        "CNET 编辑选择奖，评分 8.4 分（满分 10 分）"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
-        "通过身份供应商 ( IdP ) 为组织配置 SAML 身份验证。这将为整个组织启用 SAML。"
+        "通过身份供应商 (IdP) 为组织配置 SAML 身份验证。这将为整个组织启用 SAML。"
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "通过 Okta、Microsoft Azure 或 Google Identity Platform 等身份提供商为组织配置 SAML 身份验证。这将为整个组织启用 SAML。"
@@ -7552,7 +7555,7 @@
         "已复制到剪贴板"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "将此 URL 复制并粘贴到身份供应商的 ACS ( 断言消费者服务 ) URL 字段中"
+        "将此 URL 复制并粘贴到身份供应商的 ACS（断言消费者服务）URL 字段中"
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "将此 URL 复制并粘贴到身份供应商的实体 ID 字段中"
@@ -7858,7 +7861,7 @@
         "此组已启用端到端电子邮件加密。"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
-        "从身份供应商 ( 如 https://idp.example.com/sso/saml ) 收到的终端 URL。"
+        "从身份供应商（如 https://idp.example.com/sso/saml）收到的终端 URL。"
       ],
       "Enhance your network security": [
         "增强网络安全"
@@ -8083,7 +8086,7 @@
         "如果您有礼品码，可以在此处使用。"
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "如果您从未使用过双重验证技术，我们强烈建议您${ guideButton }。"
+        "如果您从未使用过双因素身份验证，我们强烈建议您 ${ guideButton }。"
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "如果您忘记了密码并需要恢复您的帐户，${ boldImperative } 您有一个 ${ boldAccountRecovery }。"
@@ -8092,7 +8095,7 @@
         "如果您忘记了密码并且需要恢复您的账户，${ boldImperative } 请确保您拥有 ${ boldAccountAndRecovery }，否则您可能无法访问您的任何电子邮件、联系人或文件。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "如果您丢失了启用双重认证的设备，可以使用这些代码代替 6 位双重认证代码来登录您的账户。每个代码只能使用一次。"
+        "如果您丢失了启用双因素身份验证的设备，可以使用这些代码代替 6 位双因素身份验证代码来登录您的账户。每个代码只能使用一次。"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
@@ -8140,7 +8143,7 @@
         "重要提示：如果您的 DNS 不允许CNAME值以「.」（英文句点）结尾，您可以移除这个句点。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "注意：请务必妥善保管恢复码，否则一旦丢失双重验证设备，您可能再也无法登录此账户。"
+        "注意：请务必妥善保管恢复码，否则一旦丢失双因素身份验证设备，您可能再也无法登录此账户。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
@@ -8218,7 +8221,7 @@
         "已成功发送邀请"
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
-        "邀请你的伴侣、朋友或任何与你分享 ${ protonDuoPlanName } 计划的人。"
+        "邀请您的伴侣、朋友或任何与您分享 ${ protonDuoPlanName } 套餐的人。"
       ],
       "It appears some of your data is encrypted and locked.": [
         "您的部分数据被加密并锁定。"
@@ -8398,7 +8401,7 @@
         "管理您的 ${ DOCS_APP_NAME } 电子邮件通知首选项。"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "在验证设备上手动输入下列信息完成账户设置，或${ switchButton }。"
+        "在双因素身份验证设备上手动输入下列信息，以便设置您的账户。换一种方式 ${ switchButton }。"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
@@ -8602,10 +8605,10 @@
         "已开通月费账户"
       ],
       "Pass Monitor - custom email confirmed": [
-        "Pass Monitor - 自定义电子邮件已确定"
+        "Pass Monitor - 自定义电子邮件已确认"
       ],
       "Pass Monitor - custom email created": [
-        "密码监视器 - 自定义电子邮件已创建"
+        "Pass Monitor - 自定义电子邮件已创建"
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - 自定义电子邮件已删除"
@@ -8629,7 +8632,7 @@
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
       ],
       "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
-        "PC Magazine 编辑选择奖，评分 5 星 ( 满分 5 星 )"
+        "PC Magazine 编辑选择奖，评分 5 星（满分 5 星）"
       ],
       "Pending removal": [
         "待移除"
@@ -8767,7 +8770,7 @@
         "如需任何帮助，请联系我们 ${ BRAND_NAME }"
       ],
       "read our two-factor authentication guide first": [
-        "首先阅读我们的双重认证指南"
+        "首先请阅读我们的双因素身份验证指南"
       ],
       "Recently used servers:": [
         "近期使用的服务器："
@@ -8857,7 +8860,7 @@
         "扫描二维码"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "使用您的双重验证设备扫描下方二维码进行账户设置，或${ switchButton }。"
+        "使用您的双因素身份验证设备扫描下方二维码，以便设置您的账户。换一种方式 ${ switchButton }。"
       ],
       "SCIM integration disabled": [
         "已禁用 SCIM 集成"
@@ -8899,7 +8902,7 @@
         "自我保管的加密钱包"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "发送电子邮件鼓励您的成员通过双重认证保护他们的账户。"
+        "发送电子邮件鼓励您的成员通过 2FA 保护他们的账户。"
       ],
       "Send messages at just the right now": [
         "立即发送消息"
@@ -9064,7 +9067,7 @@
         "使用 ${ DRIVE_APP_NAME } 应用程序同步和管理文件。在 ${ DOCS_APP_NAME } 中创建和共享文档，并安全存储。一切尽在 ${ ios }、${ android } 和 ${ desktop }。"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
-        "TechRadar Pro 推荐，评分 4.2 星 ( 满分 5 星 )"
+        "TechRadar Pro 推荐，评分 4.2 星（满分 5 星）"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
@@ -9121,7 +9124,7 @@
         "以下地址未被创建。"
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "以下成员将收到一封电子邮件，提示他们尽快启用双重认证。"
+        "以下成员将收到一封电子邮件，提示他们尽快启用双因素身份验证。"
       ],
       "The format of your CSV file is incorrect.": [
         "您的 csv 文件格式错误。"
@@ -9280,10 +9283,10 @@
         "您的所有设备都将退出登录状态，双重验证功能也会关闭。"
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
-        "这将取消设备 **${ name } ( 创建于 ${ date } )** 与您的 ${ BRAND_NAME } 账户的链接。"
+        "这将取消设备 **${ name }（创建于 ${ date }）** 与您的 ${ BRAND_NAME } 账户的链接。"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "此向导将为您的 ${ BRAND_NAME } 账户启用双重认证 (2FA)。双重认证将使您的 ${ BRAND_NAME_TWO } 账户更加安全，因此我们建议启用它。"
+        "此向导将为您的 ${ BRAND_NAME } 账户启用双因素身份验证 (2FA)。双因素身份验证将使您的 ${ BRAND_NAME_TWO } 账户更加安全，因此我们建议启用它。"
       ],
       "to ${ product } Business": [
         "使用 ${ product } Business"
@@ -9373,10 +9376,10 @@
         "试用 ${ productName } 完全无风险 - 如果你因任何原因改变主意，你将获得全额退款。无任何问题。"
       ],
       "Two-factor authentication disabled": [
-        "双重验证已关闭"
+        "已禁用双因素身份验证"
       ],
       "Two-factor authentication enabled": [
-        "双重验证已开启"
+        "已启用双因素身份验证"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "双密码模式需要两个密码：一个用于登录账户，另一个用于解密数据。(高级)"
@@ -9397,7 +9400,7 @@
         "很不幸，此账户没有设置恢复密码的方式。"
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
-        "由身份供应商生成的唯一 ID，通常采用 URL 的形式，其中包含身份供应商的名称 ( 如 https://idp.example.com/XXXXX )"
+        "由身份供应商生成的唯一 ID，通常采用 URL 的形式，其中包含身份供应商的名称（如 https://idp.example.com/XXXXX）。"
       ],
       "Unknown event type": [
         "未知事件类型"
@@ -9466,7 +9469,7 @@
         "使用密码管理器生成并安全存储密码，以确保密码的强度和登录的便捷性。"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
-        "使用恢复方法来禁用双因素身份验证方法。"
+        "使用恢复方法以禁用双因素身份验证方式。"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "使用最优服务器（由系统负荷与当前位置得出）：${ formattedBestServerName }"
@@ -9592,10 +9595,10 @@
         "建议使用在多地的多台服务器，互为冗余。"
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "我们建议在强制使用双重认证之前通知家庭成员并要求他们为其账户设置双重认证。"
+        "我们建议在强制使用 2FA 之前通知家庭成员并要求他们为其账户设置 2FA。"
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "我们建议在强制使用双重认证之前通知组织成员并要求他们为其账户设置双重认证。"
+        "我们建议在强制使用 2FA 之前通知组织成员并要求他们为其账户设置 2FA。"
       ],
       "We recommend using your recovery phrase instead.": [
         "我们建议您改为使用恢复密语。"
@@ -9670,7 +9673,7 @@
         "当您从网关移除服务器时，该服务器将进入为期 10 天的停用期。此服务器可以添加到新网关，但其所在国家/地区无法更改。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
+        "当您设置双因素身份验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
@@ -9973,10 +9976,10 @@
         "您的下一个结算日期是${ renewalTime }。"
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
-        "您的下一个账单日期是 ${ renewalTime }。如果您需要立即更改计划，请联系支持部门。"
+        "您的下一个账单日期是 ${ renewalTime }。如果您需要立即更改套餐，请联系支持部门。"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
-        "您的组织使用单点登录(SSO)。按下登录以使用 SSO 登录。"
+        "您的组织使用单点登录 (SSO)。按下登录以使用 SSO 登录。"
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "您的机构所有邮件都使用机构密钥进行端到端加密，这个指纹可以用于验证所有管理员都拥有相同的密钥。"
@@ -9997,10 +10000,10 @@
         "您的恢复短语由 12 个随机生成的单词按特定顺序组成。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "您订阅的方案将于${ renewalTime }开始生效，并且每隔${ cycle }个月自动续订。"
+        "您订阅的套餐将于 ${ renewalTime } 开始生效，并且每隔 ${ cycle } 个月自动续订。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
-        "您的预定计划从 ${ renewalTime } 开始，每月自动续订。"
+        "您的预定套餐从 ${ renewalTime } 开始，每月自动续订。"
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "您的订阅将于${ renewalTime }自动续订。"
@@ -11164,7 +11167,7 @@
         "最多单词数"
       ],
       "Members without 2FA": [
-        "未使用 2FA 的成员"
+        "未启用 2FA 的成员"
       ],
       "Message": [
         "内容"
@@ -11203,7 +11206,7 @@
         "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
       ],
       "Name": [
-        "姓名"
+        "名称"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP（端口转发）"
@@ -11380,13 +11383,13 @@
         "重复密码"
       ],
       "Reply (ACS) URL": [
-        "回复 ( ACS ) URL"
+        "回复 (ACS) URL"
       ],
       "Require 2FA for administrators": [
-        "要求管理员使用双重身份认证"
+        "要求管理员启用 2FA"
       ],
       "Require 2FA for everyone": [
-        "要求所有人使用双重身份认证"
+        "要求所有人启用 2FA"
       ],
       "Reveal password": [
         "显示密码"
@@ -11635,7 +11638,7 @@
         "您的日历链接"
       ],
       "Your password (admin)": [
-        "您的密码(管理员)"
+        "您的密码（管理员）"
       ],
       "Your referral link": [
         "您的邀请链接"
@@ -12674,7 +12677,7 @@
         "高级账户保护"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
-        "高级别名功能 ( 由 SimpleLogin 提供 )"
+        "高级别名功能（由 SimpleLogin 提供）"
       ],
       "Advanced network security": [
         "高级网络安全"
@@ -12890,7 +12893,7 @@
         "定期检查账户安全。如果您有需要更新的弱密码或重复使用的密码，我们会提醒您的。"
       ],
       "Require 2FA for organization": [
-        "可要求机构全员开启双重验证"
+        "可要求机构全员开启 2FA"
       ],
       "Router support": [
         "支持路由器部署"
@@ -12962,7 +12965,7 @@
         "经 Tor 连接 VPN"
       ],
       "Two-factor authentication": [
-        "双重验证"
+        "双因素身份验证"
       ],
       "Unlimited devices": [
         "无设备数量限制"
@@ -13010,7 +13013,7 @@
         "最多 ${ n } 位用户"
       ],
       "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "最多 ${ n } 位用户 (${ adminsText }，${ usersText } )"
+        "最多 ${ n } 位用户（${ adminsText }，${ usersText }）"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最高 ${ totalStorageSize } 存储空间"
@@ -13406,7 +13409,7 @@
         "保护您的家人免受有害网站的侵扰，并访问我们的高速 VPN 服务器以串流您喜爱的内容"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "使用别名 ( 随机生成的电子邮件地址，可将电子邮件转发到您的主收件箱 ) 保护您的真实电子邮件地址不被泄露。"
+        "使用别名（随机生成的邮箱地址，可将电子邮件转发到您的主收件箱）保护您的真实邮箱地址不被泄露。"
       ],
       "Provides the highest level of account security protection and specialist support": [
         "提供最高级别的账户安全保护和专家支持"
@@ -13421,7 +13424,7 @@
         "需要手机验证码方可登录，即使密码泄露也能确保账户安全。"
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "重置用户的密码与双重验证"
+        "重置用户的密码与双因素身份验证"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "只需点击一下，即可通过 Tor 网络传输互联网流量"
@@ -13430,7 +13433,7 @@
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ],
       "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
-        "与任何人安全共享单个项目 ( 即使他们不使用 ${ PASS_APP_NAME } )"
+        "与任何人安全共享单个项目（即使他们不使用 ${ PASS_APP_NAME }）"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "在通讯录中安全地存储联系人的电话号码、住址、生日、备注等详细信息，全封闭加密技术保证了 ${ BRAND_NAME } 自身也无法解密其内容。"
@@ -13548,7 +13551,7 @@
         "专用网关"
       ],
       "Require 2FA": [
-        "要求使用 2FA"
+        "要求启用 2FA"
       ],
       "Support for ${ n } custom email domains": [
         "支持 ${ n } 个自定义域"
@@ -13690,13 +13693,13 @@
         "试用已开始"
       ],
       "Two-factor authentication has been enforced for administrators": [
-        "已要求管理员开启双重验证"
+        "已要求管理员开启双因素身份验证"
       ],
       "Two-factor authentication has been enforced for all members": [
-        "已要求所有成员开启双重验证"
+        "已要求所有成员开启双因素身份验证"
       ],
       "Two-factor authentication is not required anymore": [
-        "双重验证已设为非必需"
+        "双因素身份验证已设为非必需"
       ],
       "Video conferencing settings have been updated": [
         "视频会议设置已更新"
@@ -13832,9 +13835,6 @@
       ],
       "Save": [
         "节省"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "节省 ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "第一个月可节省 80% 的费用。"
@@ -13995,7 +13995,7 @@
         "添加到已有队列"
       ],
       "Allowed (default)": [
-        "允许 (默认)"
+        "允许（默认）"
       ],
       "Archive": [
         "归档"
@@ -14671,10 +14671,10 @@
         "高级账户保护"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
-        "高级别名功能 ( 由 SimpleLogin 提供 )"
+        "高级别名功能（由 SimpleLogin 提供）"
       ],
       "File attachments (coming soon)": [
-        "文件附件 (即将推出)"
+        "文件附件（即将推出）"
       ],
       "One-time payment, lifetime deal": [
         "一次性付款，终身有效"
@@ -14691,7 +14691,7 @@
         "一次轻松地订阅，即可获得全部高级功能，支持 6 位用户。"
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
-        "每年按 ${ yearlyPrice } 计费。使用 ${ passFamilyPlanName } 可节省 ${ yearlySavedPrice } ( 相对于 6 次单独 ${ passPlusPlanName } 订阅 )"
+        "每年按 ${ yearlyPrice } 计费。使用 ${ passFamilyPlanName } 可节省 ${ yearlySavedPrice }（相对于 6 次单独 ${ passPlusPlanName } 订阅）"
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "仅向 ${ PASS_APP_NAME } 早期支持者提供独家优惠。"
@@ -14708,13 +14708,13 @@
     },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**所有您现有的数据** (电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等) **将被锁定** 并只能使用您的 **旧密码** 解锁。"
+        "**所有您现有的数据**（电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等）**将被锁定** 并只能使用您的 **旧密码** 解锁。"
       ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**所有您现有的数据** (电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等) **将被锁定** 并只能使用您的 **恢复短语** 或您的 **旧密码** 解锁。"
+        "**所有您现有的数据**（电子邮件、事件、联系人、文件、 ${ PASS_APP_NAME } 条目等）**将被锁定** 并只能使用您的 **恢复短语** 或您的 **旧密码** 解锁。"
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
-        "您帐户上的任何 **双因素身份验证 ( 2FA )** 方法都将被禁用。"
+        "您帐户上的任何 **双因素身份验证 (2FA)** 方法都将被禁用。"
       ]
     },
     "passwordless": {
@@ -14822,7 +14822,7 @@
         "使用公司名称"
       ],
       "Use personal name": [
-        "使用个人姓名"
+        "使用个人名称"
       ]
     },
     "Payments": {
@@ -14838,6 +14838,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "在此期间，您将无法修改或取消订阅。请待付款完成后再尝试进行任何操作。感谢您的耐心等待。"
+      ],
       "Got it": [
         "好"
       ],
@@ -14846,9 +14849,6 @@
       ],
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
-      ],
-      "Payment Processing": [
-        "付款处理中"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "请在仪表板中添加付款方式以继续。"
@@ -14904,11 +14904,11 @@
       "Timeout exceeded": [
         "超时"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "我们正在处理您的付款信息。请等待付款完成后再更改您的计划或更新您的付款详细信息。感谢您的耐心等待。"
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "您将从您选定的付款方式收取 ${ amountToCharge } 费用。"
+      ],
+      "Your payment is still being processed": [
+        "您的付款正在处理中"
       ]
     },
     "Payments.Error": {
@@ -15716,7 +15716,7 @@
         "SCIM 基本 URL"
       ],
       "SCIM base URL (or tenant URL)": [
-        "SCIM 基本 URL ( 或租户 URL )"
+        "SCIM 基本 URL（或租户 URL）"
       ],
       "SCIM token": [
         "SCIM 令牌"
@@ -16562,7 +16562,7 @@
         "有 ${ n } 名用户正在请求您的帮助，以使用单点登录（SSO）来登录其 ${ BRAND_NAME } 账户。"
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
-        "**SSO 用户 ( 由身份供应商提供 ) 将被删除**，您必须手动创建这些用户才能将其添加回您的组织。"
+        "**SSO 用户（由身份供应商提供）将被删除**，您必须手动创建这些用户才能将其添加回您的组织。"
       ],
       "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
         "**SSO 用户将脱离身份提供商**，并转换为非 SSO 用户。"
@@ -16685,7 +16685,7 @@
         "不是，那不是我"
       ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
-        "非 SSO 用户 ( 手动创建，非身份供应商提供 ) 仍可登录您的组织。"
+        "非 SSO 用户（手动创建，非身份供应商提供）仍可登录您的组织。"
       ],
       "Once single sign-on is disabled for your organization:": [
         "一旦您的组织禁用了单点登录："
@@ -17074,6 +17074,47 @@
         "总计${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动转发 ${ strongText } 电子邮件"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "短电子邮箱地址 @pm.me"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -17139,7 +17180,7 @@
         "每位用户 ${ planNumberOfEmails } 个邮箱地址"
       ],
       "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers }位用户"
+        "${ planNumberOfUsers } 位用户"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } 高级账户保护"
@@ -17356,47 +17397,6 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己的短 @pm.me 电子邮件别名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动转发 ${ strongText } 电子邮件"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "短电子邮箱地址 @pm.me"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -17835,7 +17835,7 @@
         "标记为"
       ],
       "Name": [
-        "姓名"
+        "名称"
       ],
       "Password": [
         "密码"
@@ -18361,10 +18361,10 @@
         "设备名称"
       ],
       "Disable two-factor authentication": [
-        "关闭双重验证"
+        "禁用双因素身份验证"
       ],
       "Disable two-factor authentication?": [
-        "关闭双重验证?"
+        "禁用双因素身份验证?"
       ],
       "Discard changes?": [
         "放弃更改？"
@@ -18799,7 +18799,7 @@
         "其他日历"
       ],
       "Other features included in your plan": [
-        "您的计划中包含的其他功能"
+        "您的套餐中包含的其他功能"
       ],
       "Other preferences": [
         "其他设置"
@@ -19144,10 +19144,10 @@
         "使用电视登录"
       ],
       "Two-factor authentication": [
-        "双重验证"
+        "双因素身份验证"
       ],
       "Two-factor authentication enforcement": [
-        "执行双重身份验证"
+        "执行双因素身份验证"
       ],
       "Two-factor authentication reminders": [
         "双因素身份验证 (2FA) 提醒"
@@ -19420,7 +19420,7 @@
         "单击此处了解如何使用 HTML 创建自定义签名。"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "将此 URL 复制并粘贴到身份供应商的 ACS ( 断言消费者服务 ) URL 字段中"
+        "将此 URL 复制并粘贴到身份供应商的 ACS（断言消费者服务）URL 字段中"
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "将此 URL 复制并粘贴到身份供应商的实体 ID 字段中"
@@ -19456,7 +19456,7 @@
         "启用详细事件会记录每个事件的 IP 地址。"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
-        "来自身份供应商的端点 ( 如 https://idp.example.com/sso/saml )"
+        "来自身份供应商的端点（如 https://idp.example.com/sso/saml）"
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
         "不包括由身份提供商处理 2FA 的单点登录 (SSO) 用户"
@@ -19480,10 +19480,10 @@
         "若您已购买或从我们的客服团队处获得了礼品码，可以在此输入。"
       ],
       "IP address (Internet Service Provider)": [
-        "IP 地址 ( 互联网服务提供商 )"
+        "IP 地址（互联网服务提供商）"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
-        "未使用 2FA 的成员将收到一封电子邮件，要求他们尽快启用 2FA。单点登录 (SSO) 用户不会收到电子邮件提醒。"
+        "未启用 2FA 的成员将收到一封电子邮件，要求他们尽快启用 2FA。单点登录 (SSO) 用户不会收到电子邮件提醒。"
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "“已发送”和“草稿”文件夹中的邮件始终显示在相应文件夹中，无论移动与否。"
@@ -19617,7 +19617,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成2FA等等。"
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
       ],
       "Disables end-to-end email encryption for this group": [
         "禁用该组的端到端电子邮件加密"
@@ -19763,7 +19763,7 @@
         "${ orgName } 的管理员想要为您的帐户启用管理员权限。"
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
-        "**${ orgName }** 组织 ( **${ adminEmail }** ) 的管理员希望为您的账户启用管理员访问权限。"
+        "**${ orgName }** 组织（**${ adminEmail }**）的管理员希望为您的账户启用管理员访问权限。"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "如果将用户设为私人用户，就无法帮助他们重新获得数据或账户。"
@@ -19996,7 +19996,7 @@
     },
     "Users table: badge": {
       "2FA": [
-        "双重验证"
+        "2FA"
       ],
       "Administrators can't access the data of private users": [
         "管理员无法访问私人用户的数据"
@@ -20174,7 +20174,7 @@
         "${ n } 年"
       ],
       "Includes ${ plan } (free for the first year!)": [
-        "包含 ${ plan } ( 第一年免费！)"
+        "包含 ${ plan }（第一年免费！）"
       ],
       "Includes ${ plan }, our premium password manager, free for the first year!": [
         "包含 ${ plan }，我们的高级密码管理器，第一年免费！"

@@ -3790,6 +3790,10 @@
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: älä merkitse roskapostiksi tai hylkää luvattomia sähköposteja. Tätä politiikkaa käytetään yleensä vianhakuun ja testaamiseen."
       ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } jäsen",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } jäsenet"
+      ],
       "${ number } city": [
         "${ number } kaupungissa",
         "${ number } kaupungissa"
@@ -3834,6 +3838,10 @@
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } lisäosoite",
         "${ remainingAddresses.length } lisäosoitetta"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } valittu",
+        "${ selectedEntities.length } valittu"
       ],
       "${ storage } storage": [
         "${ storage } tallennustilaa"
@@ -4058,6 +4066,9 @@
       "By leaving now, changes may not be saved": [
         "Jos poistut nyt, muutoksia ei tallenneta"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalenteri, integroitu ${ MAIL_APP_NAME } ja ${ CONTACTS_APP_NAME } kanssa"
+      ],
       "Can’t access your recovery email?": [
         "Etkö voi käyttää palautusosoitettasi?"
       ],
@@ -4072,6 +4083,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Pilvitallennus, integroitu ${ DOCS_APP_NAME } kanssa"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Määritä SAML-todennus organisaatiollesi identiteetintarjoajan (IdP) kautta. Tämä mahdollistaa SAML:n koko organisaatiolle."
@@ -4102,6 +4116,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopioi ehdotettu salasana leikepöydälle"
+      ],
+      "countries enabled": [
+        "käytettävää maata"
       ],
       "Country code": [
         "Maakoodi"
@@ -4745,6 +4762,9 @@
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
       ],
+      "Password manager with extra account security": [
+        "Salasanojen hallinta tilin lisäsuojauksella"
+      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH } merkkiä."
       ],
@@ -5004,6 +5024,10 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein.",
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -5547,6 +5571,10 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Et voi määrittää palvelimia uudelleen toiseen maahan 10 päivään."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
@@ -5600,6 +5628,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein.",
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
@@ -5775,6 +5807,9 @@
       "Addresses": [
         "Osoitteet"
       ],
+      "Advanced": [
+        "Edistynyt"
+      ],
       "Allow": [
         "Salli"
       ],
@@ -5801,6 +5836,9 @@
       ],
       "Anderson": [
         "Andersson"
+      ],
+      "Apply policy to": [
+        "Sovella käytäntöä"
       ],
       "Ask members to set up 2FA": [
         "Pyydä jäseniä määrittämään 2FA"
@@ -6042,6 +6080,9 @@
       "Main": [
         "Pää"
       ],
+      "Members without 2FA": [
+        "Jäsenet ilman kaksiosaista todentamismenetelmää"
+      ],
       "Metadata file for ${ appName }": [
         "Metatietotiedosto sovellukselle ${ appName }"
       ],
@@ -6246,6 +6287,9 @@
       ],
       "Thomas": [
         "Tuomas"
+      ],
+      "To help us improve, please explain why you are leaving.": [
+        "Auttaaksesi meitä kehittymään, kertoisitko miksi olet lähdössä."
       ],
       "Two-password mode": [
         "Kahden salasanan tila"
@@ -7481,7 +7525,7 @@
         "Poista automaattisesti yli 30 päivää vanhat viestit roskakorista ja roskapostista"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Välitä ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
+        "Ohjaa ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massamainontaa tai ohjelmoitavaa viestien lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään erityisesti tähän tarkoitukseen tarkoitettua sähköpostipalvelua."
@@ -7854,7 +7898,7 @@
         "Kaksivaiheista tunnistautumista ei enää vaadita"
       ],
       "Video conferencing settings have been updated": [
-        "Videoneuvotteluasetukset on päivitetty"
+        "Videoneuvotteluasetukset päivitettiin"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7898,9 +7942,6 @@
       ],
       "Save": [
         "Säästä"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Säästä ${ prices.savedPercentage } %"
       ],
       "Save 80% on your first month.": [
         "Säästä 80 % ensimmäisestä kuukaudestasi."
@@ -8314,9 +8355,6 @@
       "More plans are available in other currencies": [
         "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
       ],
-      "Payment Processing": [
-        "Maksua käsitellään"
-      ],
       "Please add a payment method in the dashboard to continue.": [
         "Lisää maksutapa hallintapaneelissa jatkaaksesi."
       ],
@@ -8346,9 +8384,6 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Käsittelemme laskua koskevaa maksuasi. Odota maksun suoritusta, ennen kuin teet muutoksia tilaukseesi tai päivität maksutietojasi. Kiitos kärsivällisyydestäsi."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "${ amountToCharge } veloitetaan valitsemaltasi maksutavalta."
@@ -9820,47 +9855,6 @@
         "Hintaan ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
@@ -10151,6 +10145,47 @@
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Oletko varma?"
@@ -10378,7 +10413,7 @@
         "Asetus päivitetty"
       ],
       "Preferences updated": [
-        "Asetukset päivitetty"
+        "Asetukset päivitettiin"
       ],
       "Resent invitation": [
         "Lähetä kutsu uudelleen"

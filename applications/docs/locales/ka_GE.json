@@ -217,6 +217,9 @@
       "Decline": [
         "უარყოფა"
       ],
+      "Decline invite": [
+        "მოწვევის უარყოფა"
+      ],
       "Decrease": [
         "შემცირება"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
+      ],
+      "Go back": [
+        "უკან დაბრუნება"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME }-ზე გადასვლა"
@@ -419,9 +425,6 @@
       ],
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
-      ],
-      "New": [
-        "ახალი"
       ],
       "New document": [
         "ახალი დოკუმენტი"
@@ -569,9 +572,6 @@
       ],
       "Search countries": [
         "ქვეყნების ძებნა"
-      ],
-      "Search docs": [
-        "დოკუმენტების ძებნა"
       ],
       "See how": [
         "იხილეთ, როგორ"
@@ -3918,9 +3918,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, სამუდამოდ წაშალოთ ელემენტები სანაგვე ყუთიდან?"
       ],
-      "Are you sure you want to proceed?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
-      ],
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
@@ -4651,17 +4648,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "გადამოწმების პროცესი ბრაუზერის ახალ ჩანართს გახსნის. გთხოვთ, გამორთოთ მხტუნარა ფანჯრებს მბლოკავები."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "ეს ქმედება თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "ეს ქმედება შეუქცევადად წაშლის საქაღალდეს, რომელიც ატვირთეთ. საქაღალდეს, რომელიც შეიცავს ფაილს, რომლის მფლობელიც თქვენ არ ბრძანდებით, ვერ წაშლით."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "ეს ქმედება წაშლის ბმულს და გააუქმებს წვდომას ყველა მომხმარებლისთვის."
-      ],
-      "This action will delete the selected items permanently.": [
-        "ეს ქმედება მონიშნულ ელემენტებს სამუდამოდ წაშლის."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "ეს მისამართი გათიშულია. ამ მისამართზე გასაგზავნად მისმა მფლობელმა ის ჯერ უნდა ჩართოს."
@@ -4692,6 +4680,15 @@
       ],
       "This message will be presented again later": [
         "ეს შეტყობინება მოგვენებით ისევ იქნება წარმოდგენილი"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "ეს თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "ეს თქვენს ატვირთულ საქაღალდეს სამუდამოდ წაშლის."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "ეს სამუდამოდ წაშლის თქვენს მიერ ატვირთულ ელემენტებს."
       ],
       "This will replace the existing file with the folder": [
         "ეს არსებულ ფაილს საქაღალდით ჩაანაცვლებს"
@@ -4932,6 +4929,10 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
+        "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "მიღწეულია კონტაქტების ჯგუფში არსებული მისამართების მაქსიმალური რაოდენობა):"
       ],
@@ -5001,8 +5002,15 @@
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ.",
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
       ]
     },
     "info": {
@@ -5466,6 +5474,9 @@
       ],
       "Set link password": [
         "ბმულის პაროლის დაყენება"
+      ],
+      "Shared with me": [
+        "ჩემთვის გაზიარებული"
       ],
       "Sign emails": [
         "ელფოსტის ხელმოწერა"
@@ -7108,6 +7119,10 @@
       "Share invitation declined": [
         "გაზიარების მოსაწვევი უარყოფილია"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "უკაცრავად, საქაღალდის წაშლა შეუძლებელია, რადგან ის ცარიელი არაა.",
+        "უკაცრავად, საქაღალდეების წაშლა შეუძლებელია, რადგან ისინი ცარიელი არაა."
+      ],
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
       ],
@@ -7192,9 +7207,6 @@
       ],
       "Save": [
         "შენახვა"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "დაზოგეთ ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "დაზოეთ 80% პირველ თვეს."
@@ -7378,9 +7390,6 @@
       "More plans are available in other currencies": [
         "სხვა სატარიფო გეგმები ხელმისაწვდომია სხვა ვალუტებში"
       ],
-      "Payment Processing": [
-        "გადახდის დამუშავება"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
       ],
@@ -7396,6 +7405,9 @@
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "განახების ფასები იცვლება ${ termsAndConditionsLink }-ის წესებით."
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
@@ -7405,11 +7417,15 @@
       "terms & conditions": [
         "პირობები და წესები"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
+        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "ჩვენ ვამუშავებთ თქვენს გადახდას ამ ინვოისისთვის. მოითმინეთ, სანამ გადახდა დასრულდება თქვენი სატარიფო გეგმის შეცვლამდე ან გადახდის დეტალების განახლებამდე. მადლობა მოთმინებისთვის."
+      "Your payment is still being processed": [
+        "თქვენი გადახდა ჯერ კიდევ მუშავდება"
       ]
     },
     "Payments.Error": {
@@ -8756,6 +8772,9 @@
       "Day theme": [
         "დღის თემა"
       ],
+      "Decline invitation?": [
+        "მოწვევის უარყოფა?"
+      ],
       "Delete": [
         "წაშლა"
       ],
@@ -8767,11 +8786,11 @@
         "${ count } კონტაქტების ჯგუფის წაშლა",
         "${ count } კონტაქტების ჯგუფის წაშლა"
       ],
-      "Delete ${ item.name }?": [
-        "წავშალო ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "წავშალო ${ links.length } ელემენტი?"
+      ],
+      "Delete ${ name }?": [
+        "წავშალო ${ name }?"
       ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"
@@ -9098,9 +9117,6 @@
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
       ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "აპირებთ, უარჰყოთ მოსაწვევი გაზიარებული ელემენტისთვის. მასთან წვდომა აღარ გექნებათ, თუ მფლობელი თავიდან არ გაგიზიარებთ მას."
-      ],
       "You can now create unlimited folders and labels": [
         "ახლა, შეგიძლიათ, განუსაზღვრელი რაოდენობის საქაღალდეები და ჭდეები შექმნათ"
       ],
@@ -9272,6 +9288,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPriceStr }"
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
         "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."

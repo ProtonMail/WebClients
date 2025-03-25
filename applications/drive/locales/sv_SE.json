@@ -276,6 +276,9 @@
       "Decline": [
         "Avböj"
       ],
+      "Decline invite": [
+        "Avvisa inbjudan"
+      ],
       "Decrease": [
         "Minska"
       ],
@@ -4437,6 +4440,9 @@
       "Calendar side panel": [
         "Kalenderns sidopanel"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjänst, integrerad med ${ MAIL_APP_NAME } och ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Avbruten"
       ],
@@ -4478,6 +4484,9 @@
       ],
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Molnlagring, integrerad med ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Konflikt"
@@ -4628,6 +4637,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjänst, integrerad med ${ CALENDAR_APP_NAME } och ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "E-post signeras automatiskt"
@@ -5037,6 +5049,9 @@
       "password": [
         "lösenord"
       ],
+      "Password manager with extra account security": [
+        "Lösenordshanterare med extra kontosäkerhet"
+      ],
       "Paused": [
         "Pausad"
       ],
@@ -5242,6 +5257,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
+      ],
+      "Self-custodial crypto wallet": [
+        "Självförvaltande kryptoplånbok"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalningar är inte tillgängliga för tillfället. Försök igen senare."
@@ -5574,6 +5592,9 @@
       "Visa Secure logo": [
         "Logga för Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN med dedikerade servrar och IP-adresser"
+      ],
       "Want to sync files faster?": [
         "Vill du synkronisera filer snabbare?"
       ],
@@ -5752,6 +5773,15 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i ${ invitationName }albumet. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i mappen ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du är på väg att avböja inbjudan att gå med i ${ invitationName }objektet. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
@@ -8058,6 +8088,14 @@
         "${ count } objekt kunde inte dekrypteras",
         "${ count } objekt kunde inte dekrypteras"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "${ nbFailures } fotot kunde inte läggas till i ”${ albumName }”",
+        "${ nbFailures } foton kunde inte läggas till i ”${ albumName }”"
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } foto läggs till i ”${ albumName }”",
+        "${ nbSuccesses } foton läggs till i ”${ albumName }”"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } objekt borttaget",
         "${ numberOfItems } objekt borttagna"
@@ -8342,9 +8380,6 @@
       ],
       "Save": [
         "Spara"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Spara ${ prices.savedPercentage } %"
       ],
       "Save 80% on your first month.": [
         "Spara 80 % på din första månad."
@@ -8675,6 +8710,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
+      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -8683,9 +8721,6 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
-      ],
-      "Payment Processing": [
-        "Betalning behandlas"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
@@ -8711,8 +8746,8 @@
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi behandlar din betalning för den fakturerade fakturan. Vänta tills betalningen är slutförd innan du gör ändringar i ditt paket eller uppdaterar dina betalningsuppgifter. Tack för ditt tålamod."
+      "Your payment is still being processed": [
+        "Din betalning håller fortfarande på att behandlas"
       ]
     },
     "Payments.Error": {
@@ -10430,6 +10465,9 @@
       "Day theme": [
         "Dagstema"
       ],
+      "Decline invitation?": [
+        "Avböj inbjudan?"
+      ],
       "Delete": [
         "Ta bort"
       ],
@@ -10881,9 +10919,6 @@
       ],
       "What would you like to import?": [
         "Vad vill du importera?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Du är på väg att avböja inbjudan för det delade objektet. Du kommer inte att kunna komma åt det igen förrän ägaren delar det med dig."
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu skapa ett obegränsat antal mappar och etiketter"
