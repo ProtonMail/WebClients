@@ -102,6 +102,9 @@ import type { ToolbarItems } from './ToolbarItems'
 import { OverflowMenuItem } from './OverflowMenuItem'
 import { ToolbarItem } from './ToolbarItem'
 import { useEditorStateValues } from '../Lib/useEditorStateValues'
+import { TableOfContents } from './TableOfContents'
+import { useApplication } from '../Containers/ApplicationProvider'
+import { isDevOrBlack } from '@proton/docs-shared'
 
 export default function DocumentEditorToolbar({
   userMode,
@@ -120,6 +123,7 @@ export default function DocumentEditorToolbar({
   clientInvoker?: EditorRequiresClientMethods
   isEditorHidden?: boolean
 }) {
+  const { application } = useApplication()
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
 
@@ -1195,6 +1199,39 @@ export default function DocumentEditorToolbar({
       showInToolbar: false,
     },
   ]
+
+  const isTableOfContentsEnabled = application.environment === 'alpha' || isDevOrBlack()
+
+  if (isTableOfContentsEnabled) {
+    toolbarItems.unshift({
+      id: 'toc-option',
+      items: [
+        {
+          id: 'toc-button',
+          type: 'dropdown',
+          label: (target) => (
+            <>
+              <Icon name="text-title" />
+              <span className={clsx(target === 'toolbar' && 'sr-only')}>{c('Action').t`Table of contents`}</span>
+            </>
+          ),
+          disabled: false,
+          dropdownProps: DropdownContentProps,
+          overflowBehavior: 'submenu',
+          tooltip: c('Action').t`Table of contents`,
+          menu: (
+            <>
+              <div className="bg-weak color-danger flex items-center gap-2 px-3 py-1 text-sm">
+                <Icon name="info-circle" className="align-middle" />
+                <span className="align-middle">{c('Info').t`Alpha only experimental feature`}</span>
+              </div>
+              <TableOfContents />
+            </>
+          ),
+        },
+      ],
+    })
+  }
 
   return (
     // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
