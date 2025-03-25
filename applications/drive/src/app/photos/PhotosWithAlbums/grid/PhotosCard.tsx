@@ -197,10 +197,15 @@ export const PhotosCard: FC<Props> = ({
                     )}
 
                     {photo.mimeType && isVideo(photo.mimeType) && (
-                        <div className="absolute bottom-0 flex right-0 rounded-full items-center pl-1 mr-2 mb-2 photo-card-video-info">
+                        <div
+                            className={clsx(
+                                'absolute bottom-0 flex right-0 items-center pl-1 mr-2 mb-2',
+                                !!photo.duration && 'rounded-full photo-card-video-info'
+                            )}
+                        >
                             {photo.duration && (
                                 <time
-                                    className="text-semibold pt-0.5 lh100 text-xs text-tabular-nums mr-0.5"
+                                    className="text-semibold lh100 text-xs text-tabular-nums mr-0.5"
                                     dateTime={formatDuration(
                                         { seconds: Math.floor(photo.duration) },
                                         {
