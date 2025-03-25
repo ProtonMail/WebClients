@@ -11,9 +11,9 @@ import type {
     FileRestoreDTO,
     ItemFileOutput,
     ItemLatestKeyResponse,
-    ItemLinkPendingFiles,
     ItemRevision,
     ItemRevisionContentsResponse,
+    ItemRevisionLinkFiles,
     LinkFileToItemInput,
     SecureLinkItem,
     SelectedItem,
@@ -101,7 +101,7 @@ export const restoreRevisionFiles = async (
         })
     ).Result.Item;
 
-export const linkPendingFiles = async (dto: ItemLinkPendingFiles): Promise<ItemRevision> => {
+export const linkPendingFiles = async (dto: ItemRevisionLinkFiles): Promise<ItemRevision> => {
     const { revision, shareId, itemId, files } = dto;
     const latestItemKey = await getLatestItemKey(dto);
 
