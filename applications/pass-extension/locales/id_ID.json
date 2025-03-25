@@ -2095,6 +2095,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Tindakan ini tidak dapat diurungkan. Seluruh alias yang menggunakan domain ${ domainTextBold } akan dihapus. Mohon diperhatikan bahwa setelah dihapus, alias tidak akan lagi dapat dipulihkan."
       ],
+      "This option is currently not available on your browser.": [
+        "Pilihan ini untuk saat ini tidak tersedia pada browser Anda."
+      ],
       "This option is currently not available on your device.": [
         "Pilihan ini untuk saat ini tidak tersedia pada perangkat Anda."
       ],
@@ -2259,6 +2262,9 @@
       ],
       "You may close this tab.": [
         "Anda dapat menutup tab ini."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Anda butuh brankas dengan izin penyuntingan sebelum Anda dapat mengimpor item."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Anda akan dapat menyesuaikan pengaturan domain Anda (alias email catch-all, nama tampilan alias bawaan, dll...) setelah memverifikasi domain Anda."
@@ -3775,6 +3781,9 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Apa perbedaan antara catatan ${ PASS_SHORT_APP_NAME } dan catatan SimpleLogin?"
+      ],
+      "You don't have any vaults": [
+        "Anda tidak memiliki brankas apa pun"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Langganan ${ planName } Anda akan berakhir pada ${ endDate }"
