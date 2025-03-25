@@ -4,7 +4,7 @@ import { ApiResult, type WebsocketConnectionInterface, type WebsocketCallbacks }
 import type { WebsocketStateInterface } from './WebsocketState'
 import { WebsocketState } from './WebsocketState'
 import metrics from '@proton/metrics'
-import { isLocalEnvironment } from '../Util/isDevOrBlack'
+import { isLocalEnvironment } from '@proton/docs-shared'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
 import type { MetricService } from '../Services/Metrics/MetricService'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
