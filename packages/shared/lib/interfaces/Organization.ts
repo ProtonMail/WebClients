@@ -58,18 +58,19 @@ export interface OrganizationIdentityOutput {
     FingerprintSignatureAddress: string | null;
 }
 
-export type OrganizationSettingsAllowedProduct =
-    | Extract<Product, 'Mail' | 'VPN' | 'Pass' | 'Calendar' | 'Drive' | 'Wallet'>
-    | 'All';
+export type OrganizationSettingsAllowedProduct = Extract<
+    Product,
+    'Mail' | 'VPN' | 'Pass' | 'Calendar' | 'Drive' | 'Wallet'
+>;
 
-export type OrganizationSettingsAllowedProducts = OrganizationSettingsAllowedProduct[];
+export type SerializedOrganizationSettingsAllowedProduct = OrganizationSettingsAllowedProduct | 'All';
 
 export interface OrganizationSettings {
     ShowName: boolean;
     LogoID: string | null;
     ShowScribeWritingAssistant: boolean;
     VideoConferencingEnabled: boolean;
-    AllowedProducts: OrganizationSettingsAllowedProducts;
+    AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];
 }
 
 export interface OrganizationWithSettings extends Organization {
