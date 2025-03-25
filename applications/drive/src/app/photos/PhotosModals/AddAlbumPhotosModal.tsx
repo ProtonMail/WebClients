@@ -87,18 +87,24 @@ export const AddAlbumPhotosModal = ({
     onCreateAlbumWithPhotos,
     onAddAlbumPhotos,
     albums,
+    share,
 }: {
     addAlbumPhotosModal: ModalStateReturnObj;
     onCreateAlbumWithPhotos: (name: string, linkIds: string[]) => Promise<void>;
     onAddAlbumPhotos: (albumLinkId: string, linkIds: string[]) => Promise<void>;
     photos: PhotoLink[];
     albums: DecryptedAlbum[];
+    share: boolean;
 }) => {
     const { modalProps, openModal, render } = addAlbumPhotosModal;
     const createAlbumModal = useModalStateObject();
 
     const sortedAlbums = albums.sort((a, b) => b.createTime - a.createTime);
-    const [latestAlbum, secondLatestAlbum, ...restAlbums] = sortedAlbums;
+    const [latestAlbum, secondLatestAlbum, ...otherAlbums] = sortedAlbums;
+
+    const sharedAlbums = sortedAlbums.filter((album) => album.isShared);
+    const notSharedAlbums = sortedAlbums.filter((album) => !album.isShared);
+    const restAlbums = share ? notSharedAlbums : otherAlbums;
 
     const [activeAlbumId, setActiveAlbumId] = useState<string | undefined>();
 
@@ -117,11 +123,19 @@ export const AddAlbumPhotosModal = ({
                         closeButtonProps={{
                             disabled: !!activeAlbumId,
                         }}
-                        title={c('Heading').ngettext(
-                            msgid`Add ${photos.length} photo to`,
-                            `Add ${photos.length} photos to`,
-                            photos.length
-                        )}
+                        title={
+                            share
+                                ? c('Heading').ngettext(
+                                      msgid`Share ${photos.length} photo via`,
+                                      `Share ${photos.length} photos via`,
+                                      photos.length
+                                  )
+                                : c('Heading').ngettext(
+                                      msgid`Add ${photos.length} photo to`,
+                                      `Add ${photos.length} photos to`,
+                                      photos.length
+                                  )
+                        }
                     />
                     <ModalTwoContent className="max-h-custom" style={{ '--max-h-custom': '21.25rem' }}>
                         <Button
@@ -151,25 +165,48 @@ export const AddAlbumPhotosModal = ({
                         </Button>
                         {!!sortedAlbums.length && (
                             <>
-                                <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`Recent`}</h2>
-                                <ul className="unstyled mt-0">
-                                    {latestAlbum && (
-                                        <AlbumSquare
-                                            loading={activeAlbumId === latestAlbum.linkId}
-                                            disabled={!!activeAlbumId && activeAlbumId !== latestAlbum.linkId}
-                                            album={latestAlbum}
-                                            onClick={handleSelectAlbum}
-                                        />
-                                    )}
-                                    {secondLatestAlbum && (
-                                        <AlbumSquare
-                                            loading={activeAlbumId === secondLatestAlbum.linkId}
-                                            disabled={!!activeAlbumId && activeAlbumId !== secondLatestAlbum.linkId}
-                                            album={secondLatestAlbum}
-                                            onClick={handleSelectAlbum}
-                                        />
-                                    )}
-                                </ul>
+                                {!share && (
+                                    <>
+                                        <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`Recent`}</h2>
+                                        <ul className="unstyled mt-0">
+                                            {latestAlbum && (
+                                                <AlbumSquare
+                                                    loading={activeAlbumId === latestAlbum.linkId}
+                                                    disabled={!!activeAlbumId && activeAlbumId !== latestAlbum.linkId}
+                                                    album={latestAlbum}
+                                                    onClick={handleSelectAlbum}
+                                                />
+                                            )}
+                                            {secondLatestAlbum && (
+                                                <AlbumSquare
+                                                    loading={activeAlbumId === secondLatestAlbum.linkId}
+                                                    disabled={
+                                                        !!activeAlbumId && activeAlbumId !== secondLatestAlbum.linkId
+                                                    }
+                                                    album={secondLatestAlbum}
+                                                    onClick={handleSelectAlbum}
+                                                />
+                                            )}
+                                        </ul>
+                                    </>
+                                )}
+                                {share && !!sharedAlbums.length && (
+                                    <>
+                                        <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading')
+                                            .t`Add to shared album`}</h2>
+                                        <ul className="unstyled mt-0">
+                                            {sharedAlbums.map((album) => (
+                                                <AlbumSquare
+                                                    key={`album-${album.linkId}-${album.rootShareId}`}
+                                                    loading={activeAlbumId === album.linkId}
+                                                    disabled={!!activeAlbumId && activeAlbumId !== album.linkId}
+                                                    album={album}
+                                                    onClick={handleSelectAlbum}
+                                                />
+                                            ))}
+                                        </ul>
+                                    </>
+                                )}
                                 {!!restAlbums.length && (
                                     <>
                                         <h2 className="text-rg color-weak mt-4 mb-0">{c('Heading').t`All albums`}</h2>
