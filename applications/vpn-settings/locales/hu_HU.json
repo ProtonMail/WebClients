@@ -2916,6 +2916,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Azonosítsa magát egy fizikai U2F vagy FIDO2 hitelesítési kulccsal"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Elérte a biztonsági kulcsok hosszának maximumát (${ maxSecurityKeyLength }).",
+        "Elérte a biztonsági kulcsok hosszának maximumát (${ maxSecurityKeyLength })."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "A kétlépcsős hitelesítés készen áll a használatra."
       ]
@@ -3486,6 +3490,9 @@
       "Copy the suggested password to clipboard": [
         "A javasolt jelszó másolása a vágólapra"
       ],
+      "countries enabled": [
+        "ország engedélyezve"
+      ],
       "Country code": [
         "Országkód"
       ],
@@ -3967,6 +3974,14 @@
       ],
       "or ${ selectFileButton }": [
         "vagy ${ selectFileButton }"
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "vagy bármely országhoz rendelheti ${ availableAgainAfterDays } napon belül",
+        "vagy bármely országhoz rendelheti ${ availableAgainAfterDays } napon belül"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "vagy bármely országhoz rendelheti ${ availableAgainAfterHours } órán belül",
+        "vagy bármely országhoz rendelheti ${ availableAgainAfterHours } órán belül"
       ],
       "or discover other features:": [
         "vagy fedezzen fel más funkciókat:"
@@ -4600,6 +4615,10 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Ön jelenleg a rendelkezésre álló ${ ipAddresses } dedikált szerverből ennyit használ: ${ ipCount }.",
+        "Ön jelenleg a rendelkezésre álló ${ ipAddresses } dedikált szerverből ennyit használ: ${ ipCount }."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
         "Jelenleg ${ usedMembers } felhasználói licencet használ az elérhető ${ maxMembers } licencből és ${ usedAI } licencet a ${ maxAI } elérhető írási segéd licencből.",
         "Jelenleg ${ usedMembers } felhasználói licencet használ az elérhető ${ maxMembers } licencből és ${ usedAI } licencet a ${ maxAI } elérhető írási segéd licencből."
@@ -4649,6 +4668,14 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Értesítést fog kapni, ha jelszava vagy más adata kiszivárgott harmadik fél szolgáltatása miatt."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "${ availableCount } új szerver áll rendelkezésre.",
+        "${ availableCount } új szerver áll rendelkezésre."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "${ unassignedAvailableCount } nemrégiben használt szerver áll rendelkezésre. Ha ezeket a szervereket egy másik országhoz szeretné hozzárendelni, meg kell várnia, amíg a deaktiválás befejeződik.",
+        "${ unassignedAvailableCount } nemrégiben használt szerver áll rendelkezésre. Ha ezeket a szervereket egy másik országhoz szeretné hozzárendelni, meg kell várnia, amíg a deaktiválás befejeződik."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Önnek próbaverziós ${ planTitle } előfizetése van. Ha szeretné megtartani az előfizetését a próbaidő után is, akkor kérjük adjon hozzá egy fizetési módot."
@@ -6913,9 +6940,6 @@
       ],
       "Timeout exceeded": [
         "Időtúllépés"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "A számla kifizetését feldolgozzuk. Kérjük, várjon a fizetés befejezéséig, mielőtt módosítaná csomagját vagy frissítené fizetési adatait. Köszönjük türelmét."
       ]
     },
     "Payments.Error": {
@@ -7740,6 +7764,22 @@
       ]
     },
     "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } tag kérte az Ön segítségét a bejelentkezéshez.",
+        "${ n } tag kérte az Ön segítségét a bejelentkezéshez."
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } felhasználó csatlakozott a szervezethez az Ön azonosító szolgáltatóján keresztül. Tekintse át a fiókot most:",
+        "${ n } felhasználó csatlakozott a szervezethez az Ön azonosító szolgáltatóján keresztül. Tekintse át a fiókot most:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } felhasználó inaktív. A felhasználót nyugodtan eltávolíthatja a szervezetéből.",
+        "${ n } felhasználó inaktív. A felhasználót nyugodtan eltávolíthatja a szervezetéből."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel.",
+        "${ n } felhasználó kéri az Ön segítségét ${ BRAND_NAME } fiókjához egyszeri bejelentkezéssel."
+      ],
       "Access denied": [
         "Hozzáférés megtagadva"
       ],
@@ -7772,6 +7812,14 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Ha a probléma továbbra is fennáll, forduljon az adminisztrátorhoz."
+      ],
+      "Delete ${ n } inactive user?": [
+        "${ n } inaktív felhasználó törlése?",
+        "${ n } inaktív felhasználó törlése?"
+      ],
+      "Delete ${ n } user": [
+        "${ n } felhasználó törlése",
+        "${ n } felhasználó törlése"
       ],
       "Deny": [
         "Megtagadás"
@@ -8038,32 +8086,6 @@
         "${ totalPrice } áron"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "and 15 more premium features": [
-        "és 15 több prémium funkció"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatikus e-mail továbbítás ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Adatszivárgási figyelmeztetések ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "No ads or tracking": [
-        "Nincsenek reklámok vagy nyomon követés."
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "We don't sell your data": [
-        "Nem adjuk el az adatait."
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -8244,6 +8266,32 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatikus e-mail továbbítás ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -9333,6 +9381,10 @@
     "unprivatization": {
       "Cancel request": [
         "Kérelem törlése"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Nem sikerült automatikusan engedélyezni a rendszergazdai hozzáférést ${ n } felhasználó számára, mert a titkosítási kulcsaik időközben frissítésre kerültek:",
+        "Nem sikerült automatikusan engedélyezni a rendszergazdai hozzáférést ${ n } felhasználó számára, mert a titkosítási kulcsaik időközben frissítésre kerültek:"
       ],
       "Could not enable administrator access: ${ error }": [
         "Nem lehetett az adminisztrátori hozzáférést bekapcsolni: ${ error }"

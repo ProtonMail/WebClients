@@ -328,9 +328,6 @@
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
       ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "Utforsk ${ PLAN_NAMES[plan] }"
-      ],
       "Explore group plans": [
         "Utforsk gruppeplaner"
       ],
@@ -3923,6 +3920,10 @@
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } adresse til",
         "${ remainingAddresses.length } adresser til"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } valgt",
+        "${ selectedEntities.length } valgt"
       ],
       "${ storage } storage": [
         "${ storage } lagringsplass"
@@ -8106,9 +8107,6 @@
       "Save": [
         "Spar"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Spar ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Spar 80% på den første måneden."
       ],
@@ -8539,6 +8537,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
+      ],
       "Got it": [
         "Skjønner"
       ],
@@ -8547,9 +8548,6 @@
       ],
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
-      ],
-      "Payment Processing": [
-        "Betalingsbehandling"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Legg til en betalingsmåte i kontrollpanelet for å fortsette."
@@ -8609,11 +8607,11 @@
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi behandler betalingen din for den fakturerte fakturaen. Vent til betalingen er fullført før du gjør endringer i planen din eller oppdaterer betalingsinformasjonen din. Takk for tålmodigheten."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du vil bli belastet ${ amountToCharge } fra den valgte betalingsmåten."
+      ],
+      "Your payment is still being processed": [
+        "Betalingen din behandles fortsatt"
       ]
     },
     "Payments.Error": {
@@ -10100,47 +10098,6 @@
         "For ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -10429,6 +10386,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
