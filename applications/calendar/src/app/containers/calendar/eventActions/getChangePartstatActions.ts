@@ -31,7 +31,6 @@ export const getUpdatePartstatOperation = async ({
     inviteActions,
     timestamp,
     silence,
-    addressID,
     getAddressKeys,
     getCalendarKeys,
 }: {
@@ -40,7 +39,6 @@ export const getUpdatePartstatOperation = async ({
     inviteActions: InviteActions;
     timestamp: number;
     silence: boolean;
-    addressID: string;
     getCalendarKeys: GetCalendarKeys;
     getAddressKeys: GetAddressKeys;
 }): Promise<UpdatePartstatOperation | undefined> => {
@@ -55,16 +53,24 @@ export const getUpdatePartstatOperation = async ({
     }
 
     let comment = maybeClearComment;
-    if (comment?.Message && comment?.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT) {
+    if (
+        inviteActions.sharedEventID &&
+        inviteActions.selfAddress &&
+        comment?.Message &&
+        comment?.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT
+    ) {
         const sessionKey = await getSharedSessionKey({ calendarEvent: event, getAddressKeys, getCalendarKeys });
-        const [signingKey] = await getAddressKeys(addressID);
+        const [signingKey] = await getAddressKeys(inviteActions.selfAddress.ID);
 
         // Signature will be inside message.
         const encryptResult = await CryptoProxy.encryptMessage({
             // TODO sanitize the message before
             textData: comment?.Message,
             signingKeys: [signingKey.privateKey],
-            signatureContext: { value: getSignatureContext('calendar.rsvp.comment', event.ID), critical: true },
+            signatureContext: {
+                value: getSignatureContext('calendar.rsvp.comment', inviteActions.sharedEventID),
+                critical: true,
+            },
             sessionKey,
             format: 'binary',
         });
@@ -177,7 +183,6 @@ const getChangePartstatActions = async ({
         ? +serverTime()
         : (await sendIcs({ inviteActions, vevent: eventComponent })).timestamp;
     const partstatOperation = await getUpdatePartstatOperation({
-        addressID,
         eventComponent,
         event,
         inviteActions,
