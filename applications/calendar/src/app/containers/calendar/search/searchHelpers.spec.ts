@@ -1,4 +1,5 @@
 import { getUnixTime } from 'date-fns';
+import { default as frLocale } from 'date-fns/locale/fr';
 
 import type { ESItem } from '@proton/encrypted-search/lib';
 import { MAXIMUM_DATE_UTC } from '@proton/shared/lib/calendar/constants';
@@ -130,6 +131,39 @@ describe('expandSearchItem()', () => {
 
             expect(occurrences.length).toBe(10);
             expect(lastOccurrenceUtcStart.getUTCFullYear()).toBe(2022);
+        });
+    });
+});
+
+describe('getEventsDayDateString', () => {
+    let getEventsDayDateString: (date: Date) => string;
+
+    describe('when using the default locale', () => {
+        beforeEach(async () => {
+            getEventsDayDateString = (await import('./searchHelpers')).getEventsDayDateString;
+        });
+
+        it('should return the expected date', () => {
+            const date = new Date('2020-01-01T12:00:00Z');
+            expect(getEventsDayDateString(date)).toBe('Wed, Jan 2020');
+        });
+    });
+
+    describe('when using a custom locale', () => {
+        beforeEach(async () => {
+            const mockLocale = frLocale;
+
+            jest.mock('@proton/shared/lib/i18n', () => ({
+                ...jest.requireActual('@proton/shared/lib/i18n'),
+                dateLocale: mockLocale,
+            }));
+            jest.resetModules();
+            getEventsDayDateString = (await import('./searchHelpers')).getEventsDayDateString;
+        });
+
+        it('should return the expected date', () => {
+            const date = new Date('2020-01-01T12:00:00Z');
+            expect(getEventsDayDateString(date)).toBe('mer., Jan 2020');
         });
     });
 });
