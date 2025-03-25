@@ -1070,6 +1070,9 @@
       ]
     },
     "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -1078,6 +1081,9 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "Info": {
@@ -1290,6 +1296,9 @@
       ],
       "${ size } storage": [
         "${ size } lagerplads"
+      ],
+      "${ size } storage per user": [
+        "${ size } lagerplads pr. bruger"
       ],
       "1 TB secure storage": [
         "1 TB sikker lagerplads"
@@ -1638,6 +1647,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Konto begrænset:"
+      ],
       "Enter 2FA code": [
         "Indtast 2FA-kode"
       ],
