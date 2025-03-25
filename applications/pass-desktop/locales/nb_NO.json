@@ -2215,6 +2215,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Denne operasjonen er irreversibel. Alle aliaser som bruker domenet ${ domainTextBold } vil bli slettet. Vær oppmerksom på at aliaser ikke kan gjenopprettes når de er slettet."
       ],
+      "This option is currently not available on your browser.": [
+        "Dette alternativet er for øyeblikket ikke tilgjengelig på nettleseren din."
+      ],
       "This option is currently not available on your device.": [
         "Dette alternativet er for øyeblikket ikke tilgjengelig på enheten din."
       ],
@@ -2368,6 +2371,9 @@
       ],
       "You may close this tab.": [
         "Du kan lukke denne fanen."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Du må ha et hvelv med redigeringstillatelse før du kan importere elementer."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Du vil kunne tilpasse domeneinnstillingene dine (catch-all e-postaliaser, standard visningsnavn for aliaser osv...) etter å ha bekreftet domenet ditt."
@@ -4092,6 +4098,9 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Hva er foskjellen mellom ${ PASS_SHORT_APP_NAME }-notat og SimpleLogin-notat?"
+      ],
+      "You don't have any vaults": [
+        "Du har ingen hvelv"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName }-abonnementet avsluttes den ${ endDate }"
