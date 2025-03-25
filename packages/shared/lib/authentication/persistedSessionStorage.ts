@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import createListeners from '../helpers/listeners';
-import { getItem, removeItem, setItem } from '../helpers/storage';
+import { getItem, getKeys, removeItem, setItem } from '../helpers/storage';
 import {
     type DefaultPersistedSession,
     type OfflinePersistedSession,
@@ -109,7 +109,7 @@ export const removePersistedSessionByLocalIDAndUID = async (localID: number, UID
 };
 
 export const getPersistedSessions = (): PersistedSession[] => {
-    const localStorageKeys = Object.keys(localStorage);
+    const localStorageKeys = getKeys();
     return localStorageKeys
         .filter((key) => key.startsWith(STORAGE_PREFIX))
         .map((key) => {
