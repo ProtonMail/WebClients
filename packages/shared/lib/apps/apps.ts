@@ -1,6 +1,11 @@
 import { APPS, APPS_CONFIGURATION, type APP_NAMES, USER_ROLES } from '../constants';
 import { isElectronApp } from '../helpers/desktop';
-import type { OrganizationSettingsAllowedProduct, OrganizationWithSettings, User } from '../interfaces';
+import type {
+    OrganizationSettingsAllowedProduct,
+    OrganizationWithSettings,
+    SerializedOrganizationSettingsAllowedProduct,
+    User,
+} from '../interfaces';
 import { getIsGlobalSSOAccount, getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
 
 type AppContext = 'dropdown' | 'app';
@@ -73,7 +78,7 @@ const getAvailableAppsByOrganization = ({
     user,
     organization,
     isAccessControlEnabled,
-}: GetOrganizationAllowedProductsArguments): Set<OrganizationSettingsAllowedProduct> => {
+}: GetOrganizationAllowedProductsArguments): Set<SerializedOrganizationSettingsAllowedProduct> => {
     // Admins can always access all
     if (!isAccessControlEnabled || !user || !organization || (user && user.Role === USER_ROLES.ADMIN_ROLE)) {
         return all;
