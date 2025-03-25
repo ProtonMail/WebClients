@@ -7946,9 +7946,6 @@
       "Save": [
         "Economisiți"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Economisiți ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Economisiți 80% în prima lună."
       ],
@@ -8225,6 +8222,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -8233,9 +8233,6 @@
       ],
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
-      ],
-      "Payment Processing": [
-        "Se procesează plata"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
@@ -8290,8 +8287,8 @@
       "Timeout exceeded": [
         "Limită de timp depășită"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Se procesează plata pentru factura emisă. Așteptați până când plata este finalizată înainte de a face modificări planului sau de a actualiza detaliile de plată. Vă mulțumim pentru răbdare."
+      "Your payment is still being processed": [
+        "Plata este încă în curs de procesare."
       ]
     },
     "Payments.Error": {
