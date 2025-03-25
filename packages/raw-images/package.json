@@ -8,11 +8,14 @@
     "types": "src/index.ts",
     "files": [
         "src",
-        "build.sh",
+        "build-dcraw.sh",
+        "build-cr3.sh",
         "dist/dcraw.js",
-        "dist/dcraw.wasm"
+        "dist/dcraw.wasm",
+        "dist/cr3.js",
+        "dist/cr3.wasm"
     ],
     "scripts": {
-        "build": "bash ./build.sh"
+        "build": "bash ./build-dcraw.sh && bash ./build-cr3.sh"
     }
 }
