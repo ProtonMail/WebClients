@@ -29,7 +29,7 @@ import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMet
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import type { OnFileUploadSuccessCallbackData, PhotoLink } from '../../store';
 import { isDecryptedLink, useSharedWithMeActions, useThumbnailsDownload } from '../../store';
-import { useLinksActions } from '../../store/_links';
+import { useLink, useLinksActions } from '../../store/_links';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useDeleteAlbumModal } from '../PhotosModals/DeleteAlbumModal';
 import { useRemoveAlbumPhotosModal } from '../PhotosModals/RemoveAlbumPhotosModal';
@@ -102,6 +102,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const thumbnails = useThumbnailsDownload();
     const { navigateToAlbums } = useNavigate();
     const { moveLinks } = useLinksActions();
+    const { getLink } = useLink();
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef?: React.MutableRefObject<unknown>) => {
@@ -195,7 +196,12 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             return;
         }
         await onSelectCover(previewItem.linkId);
-    }, [createNotification, onSelectCover, previewItem]);
+        // Optimistic: change the cover manually in memory
+        if (album) {
+            const cover = await getLink(new AbortController().signal, previewItem.rootShareId, previewItem.linkId);
+            album.cover = cover;
+        }
+    }, [createNotification, onSelectCover, getLink, previewItem, album]);
 
     const onSelectCoverToolbar = useCallback(async () => {
         const selectedItem = selectedItems[0];
