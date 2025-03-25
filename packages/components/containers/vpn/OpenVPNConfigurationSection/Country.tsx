@@ -20,7 +20,13 @@ const Country = ({
 
     return (
         <div className="inline-flex *:self-center">
-            <img width={20} className="mr-2 border" src={getFlagSvg(correctExitCountry)} alt={exitCountryName} />
+            <img
+                width={20}
+                className="mr-2 border"
+                src={getFlagSvg(correctExitCountry)}
+                alt={exitCountryName}
+                loading="lazy"
+            />
             <p className="mx-1">{exitCountryName}</p>
             {isRouted && <span className="color-weak">{c('CountryInfo').t`(via ${entryCountryName})`}</span>}
         </div>

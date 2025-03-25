@@ -132,6 +132,7 @@ const VPNEventsTable = ({
                                         className="mr-2 mt-1 self-start"
                                         src={getFlagSvg(countryCode)}
                                         alt={countryCode}
+                                        loading="lazy"
                                     />
                                     <div className="flex flex-column">
                                         <span>{getLocalizedCountryByAbbr(countryCode, countryOptions)}</span>
@@ -144,6 +145,7 @@ const VPNEventsTable = ({
                                         className="mr-2 mt-1 self-start"
                                         src={getFlagSvg(originCountryCode)}
                                         alt={originCountryCode}
+                                        loading="lazy"
                                     />
                                     <div className="flex flex-column mb-1">
                                         <span className="w-full text-ellipsis">
