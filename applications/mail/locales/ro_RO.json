@@ -1118,10 +1118,10 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Selectare toate"
       ],
-      "Select all": [
+      "Select All": [
         "Selectare toate"
       ],
       "Select all messages": [
@@ -1315,11 +1315,6 @@
       ],
       "Trust": [
         "Aprobare"
-      ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Chei de încredere",
-        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -6343,6 +6338,9 @@
       "Calendar side panel": [
         "Panou lateral calendar"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendar, integrat cu ${ MAIL_APP_NAME } și ${ CONTACTS_APP_NAME }"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Nu găsiți ceea ce căutați? ${ displayAllMailButton }"
       ],
@@ -6381,6 +6379,9 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Stocare în cloud, integrată cu ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Confirmare raportare înșelăciune"
@@ -6576,6 +6577,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "Mesajele sunt redirecționate în căsuța poștală; adresa de e-mail rămâne ascunsă."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Serviciu de e-mail, integrat cu ${ CALENDAR_APP_NAME } și ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "Protecția de urmărire a e-mailurilor este dezactivată"
@@ -6795,9 +6799,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7054,6 +7056,9 @@
       "password": [
         "parola"
       ],
+      "Password manager with extra account security": [
+        "Manager de parole cu securitate suplimentară a contului"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
       ],
@@ -7187,9 +7192,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
       ],
-      "Refining email list in progress": [
-        "Rafinarea listei de e-mailuri este în desfășurare"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
@@ -7269,6 +7271,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
+      ],
+      "Self-custodial crypto wallet": [
+        "Portofel cripto în custodie proprie"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Trimitere mesaj criptat, protejat cu parolă, la o adresă de e-mail ${ boldText }."
@@ -7736,6 +7741,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN cu servere și adrese IP dedicate"
       ],
       "Warning": [
         "Avertizare"
@@ -10637,9 +10645,6 @@
       "Save": [
         "Economisiți"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Economisiți ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Economisiți 80% în prima lună."
       ],
@@ -11021,6 +11026,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -11029,9 +11037,6 @@
       ],
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
-      ],
-      "Payment Processing": [
-        "Se procesează plata"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
@@ -11086,8 +11091,8 @@
       "Timeout exceeded": [
         "Limită de timp depășită"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Se procesează plata pentru factura emisă. Așteptați până când plata este finalizată înainte de a face modificări planului sau de a actualiza detaliile de plată. Vă mulțumim pentru răbdare."
+      "Your payment is still being processed": [
+        "Plata este încă în curs de procesare."
       ]
     },
     "Payments.Error": {
@@ -14076,6 +14081,11 @@
         "Astăzi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
@@ -14157,11 +14167,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Tor out of date": {

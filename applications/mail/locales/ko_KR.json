@@ -1110,11 +1110,11 @@
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
       ],
-      "Select All": [
-        "모두 선택"
-      ],
       "Select all": [
         "전체 선택"
+      ],
+      "Select All": [
+        "모두 선택"
       ],
       "Select all messages": [
         "모든 메시지 선택"
@@ -1307,9 +1307,6 @@
       ],
       "Trust": [
         "신뢰"
-      ],
-      "Trust key": [
-        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -6140,6 +6137,9 @@
       "Calendar side panel": [
         "캘린더 사이드 패널"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ MAIL_APP_NAME }과 ${ CONTACTS_APP_NAME }가 통합된 캘린더"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "원하시는 걸 찾지 못하셨나요? ${ displayAllMailButton }"
       ],
@@ -6178,6 +6178,9 @@
       ],
       "Close this screen to exit.": [
         "이 스크린을 닫아 종료합니다."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME }와 통합된 클라우드 스토리지"
       ],
       "Confirm phishing report": [
         "피싱 신고 확인"
@@ -6367,6 +6370,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "이메일이 사용자의 메일함으로 전달됩니다. 사용자의 이메일 주소는 항상 숨겨집니다."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }와 ${ CONTACTS_APP_NAME }가 통합된 이메일 서비스"
       ],
       "Email tracker protection is disabled": [
         "이메일 추적 보호가 비활성화 되었습니다."
@@ -6827,6 +6833,9 @@
       "password": [
         "비밀번호"
       ],
+      "Password manager with extra account security": [
+        "추가적인 계정 보안을 제공하는 비밀번호 관리자"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
@@ -6956,9 +6965,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "복구 정보는 삭제하도록 설정하지 않는 한 이 장치에 남아있어요."
       ],
-      "Refining email list in progress": [
-        "이메일 목록 다듬기 진행 중"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
@@ -7036,6 +7042,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
+      ],
+      "Self-custodial crypto wallet": [
+        "개인 관리형 암호화폐 지갑"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "암호화된 암호로 보호된 메시지를 ${ boldText } 이메일 주소로 보내세요."
@@ -7135,6 +7144,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "구독이 매 ${ cycle }개월마다 자동 갱신됩니다."
       ],
       "Subscription auto-renews every month.": [
         "구독이 매달 갱신됩니다."
@@ -7493,6 +7505,9 @@
       "Visa Secure logo": [
         "Visa Secure 로고"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "지정 서버 및 IP 주소가 포함된 VPN"
+      ],
       "Warning": [
         "경고"
       ],
@@ -7718,6 +7733,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "\"${ attachmentsFoundKeyword }\" 으로 작성하였지만, 추가된 첨부 파일이 없습니다. 이 메시지를 그대로 전송하시겠습니까?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다:"
       ],
@@ -7793,8 +7811,14 @@
       "Your private writing assistant": [
         "나만의 개인 글쓰기 도우미"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
       ]
     },
     "info": {
@@ -10267,9 +10291,6 @@
       "Save": [
         "절약되는 가격:"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "${ prices.savedPercentage }% 절약"
-      ],
       "Save 80% on your first month.": [
         "첫 달에 80% 할인 받기"
       ],
@@ -10649,6 +10670,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
+      ],
       "Got it": [
         "확인"
       ],
@@ -10657,9 +10681,6 @@
       ],
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
-      ],
-      "Payment Processing": [
-        "결제 처리중"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -10676,14 +10697,38 @@
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "갱신 가격은 ${ termsAndConditionsLink }에 따라 변경될 수 있습니다."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
+      ],
+      "terms & conditions": [
+        "이용 약관"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "쿠폰이 ${ couponRedemptions } 갱신에 유효합니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }로 개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "그 후 ${ renewalLength }개월 간 ${ renewPriceStr }(으)로 자동 갱신됩니다. 언제든 취소하실 수 있습니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "현재 청구서에 대한 결제를 진행 중입니다. 사용자의 플랜이 변경되거나 결제 상세 정보가 업데이트되기 전까지 잠시 기다려주세요. 깊은 이해에 감사드립니다."
+      "Your payment is still being processed": [
+        "회원님의 결제가 아직 처리 중입니다"
       ]
     },
     "Payments.Error": {
@@ -13506,6 +13551,11 @@
         "오늘"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "자동은 작성기의 형식이 이 사용자에게 보내는 데 사용됨을 나타냅니다. 일반 텍스트는 발송 시 메시지가 항상 일반 텍스트로 변환됨을 나타냅니다."
@@ -13589,11 +13639,6 @@
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "안정 배포판"
@@ -13656,6 +13701,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "12개월마다 ${ renewPriceStr }가 결제됩니다."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],
