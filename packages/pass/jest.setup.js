@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { Blob, File } from 'buffer';
-import { ReadableStream } from 'stream/web';
+import { ReadableStream, WritableStream } from 'stream/web';
 import { TextDecoder, TextEncoder } from 'util';
 import 'whatwg-fetch';
 
@@ -8,6 +8,7 @@ import 'whatwg-fetch';
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 global.ReadableStream = ReadableStream;
+global.WritableStream = WritableStream;
 global.Blob = Blob;
 global.File = File;
 
@@ -33,6 +34,7 @@ jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
 
 jest.mock('loglevel');
 jest.mock('@proton/pass/lib/core/core.ui');
+jest.mock('@proton/pass/lib/crypto/utils/worker');
 
 // JSDom does not include webcrypto
 const crypto = require('crypto').webcrypto;

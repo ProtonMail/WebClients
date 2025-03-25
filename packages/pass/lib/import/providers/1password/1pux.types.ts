@@ -57,7 +57,7 @@ export type OnePassFieldValue<K extends OnePassFieldKey> = {
     [OnePassFieldKey.STRING]?: string;
     [OnePassFieldKey.TOTP]?: string;
     [OnePassFieldKey.URL]?: string;
-    [OnePassFieldKey.FILE]?: { documentId: string };
+    [OnePassFieldKey.FILE]?: { documentId?: string; fileName: string };
 }[K];
 
 export type OnePassFields = { [K in OnePassFieldKey]?: OnePassFieldValue<K> };

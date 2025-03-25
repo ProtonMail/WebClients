@@ -1,51 +1,27 @@
-import JSZip from 'jszip';
 import { c } from 'ttag';
 
-import { FILE_UNIQUE_ID_LENGTH } from '@proton/pass/constants';
-import { EXPORT_FILES_PATH, decryptPassExport } from '@proton/pass/lib/export/export';
+import { decryptPassExport } from '@proton/pass/lib/crypto/utils/export';
+import { archivePath } from '@proton/pass/lib/export/archive';
 import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
 import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { type ItemImportIntent, ItemState } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { semver } from '@proton/pass/utils/string/semver';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 type ProtonPassReaderPayload = {
-    /** unencrypted zip file as ArrayBuffer  */
-    data: ArrayBuffer;
-    /** list of current email aliases so we don't import them again if they are present in the data file, otherwise BE will throw an error */
+    /** list of current email aliases so we don't import
+     * them again if they are present in the data file,
+     * otherwise BE will throw an error. */
     currentAliases: string[];
+    passphrase?: string;
     userId?: string;
-};
-
-/**
- * Filename structure is {UniqueId}-{Filename}
- * UniqueId length is fixed to 16 chars.
- * eg.: ab12cd34ab12cd34-my-picture_name.jpg
- */
-const intoFilesToUpload = (files: JSZip['files']) => {
-    const uniqueIdPosition = EXPORT_FILES_PATH.length + FILE_UNIQUE_ID_LENGTH;
-
-    return Object.entries(files).reduce<Promise<Map<string, File>>>(async (accPromise, [fileName, file]) => {
-        const acc = await accPromise;
-        if (fileName === `${PASS_APP_NAME}/data.json`) return acc;
-        const uniqueId = fileName.slice(EXPORT_FILES_PATH.length, uniqueIdPosition);
-        const name = fileName.slice(uniqueIdPosition + 1);
-
-        if (uniqueId.length !== FILE_UNIQUE_ID_LENGTH || !name) return acc;
-
-        try {
-            const blob = await file.async('blob');
-            acc.set(uniqueId, new File([blob], name, { type: blob.type }));
-        } catch {}
-
-        return acc;
-    }, Promise.resolve(new Map()));
 };
 
 export const decryptProtonPassImport = async (data: Blob, passphrase?: string): Promise<Uint8Array> => {
@@ -66,13 +42,26 @@ export const decryptProtonPassImport = async (data: Blob, passphrase?: string): 
     }
 };
 
-export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promise<ImportPayload> => {
+export const readProtonPassZIP = async (file: File, payload: ProtonPassReaderPayload): Promise<ImportReaderResult> => {
     try {
-        const zipFile = await JSZip.loadAsync(payload.data);
-        const zipObject = zipFile.file(`${PASS_APP_NAME}/data.json`);
-        const exportData = await zipObject?.async('string');
+        const fileReader = await readZIP(file);
 
-        if (exportData === undefined) throw new Error();
+        const exportData = await (async () => {
+            if (fileReader.files.has(archivePath('data.pgp')) && payload.passphrase) {
+                const encrypted = (await fileReader.getFile(archivePath('data.pgp')))!;
+                const decrypted = await decryptPassExport(encrypted, payload.passphrase);
+                return uint8ArrayToString(decrypted);
+            }
+
+            if (fileReader.files.has(archivePath('data.json'))) {
+                const data = (await fileReader.getFile(archivePath('data.json')))!;
+                return data.text();
+            }
+
+            return '';
+        })();
+
+        if (!exportData) throw new Error('Invalid archive');
 
         const parsedExport = JSON.parse(exportData) as ExportData;
         const { userId } = parsedExport;
@@ -82,8 +71,6 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
          * to re-create the aliases if they're not user-owned */
         const aliasOwnedByUser = (item: ExportedItem) =>
             item.data.type === 'alias' ? userId === payload.userId : true;
-
-        const filesToUpload = await intoFilesToUpload(zipFile.files);
 
         const vaults = Object.values(parsedExport.vaults).map<{ vault: ImportVault; ignored: string[] }>(
             ({ name, items }) => {
@@ -123,9 +110,7 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
                                 trashed: item.state === ItemState.Trashed,
                                 createTime: item.createTime,
                                 modifyTime: item.modifyTime,
-                                files: [...new Set(item.files)]
-                                    .map((uniqueId) => filesToUpload.get(uniqueId))
-                                    .filter(truthy),
+                                files: item.files?.map((filename) => archivePath(filename, 'files')) ?? [],
                             } as ItemImportIntent);
 
                             return acc;
@@ -140,6 +125,7 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
             vaults: vaults.map(prop('vault')),
             ignored: vaults.flatMap(prop('ignored')),
             warnings: [],
+            fileReader,
         };
     } catch (e) {
         logger.warn('[Importer::Proton]', e);

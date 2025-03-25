@@ -10,21 +10,22 @@ import {
     importLoginItem,
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { isObject } from '@proton/pass/utils/object/is-object';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import type { EnpassAttachment, EnpassItem } from './enpass.types';
+import type { EnpassItem } from './enpass.types';
 import { EnpassCategory, type EnpassData } from './enpass.types';
 import {
     ENPASS_FIELD_TYPES,
+    enpassFileReader,
     extractEnpassCC,
     extractEnpassExtraFields,
     extractEnpassIdentity,
     extractEnpassLogin,
+    getUniqueFilename,
     isTrashedEnpassItem,
 } from './enpass.utils';
 
@@ -103,11 +104,9 @@ const processIdentityItem = (item: EnpassItem<EnpassCategory.IDENTITY>): ItemImp
 const validateEnpassData = (data: any): data is EnpassData =>
     isObject(data) && 'items' in data && Array.isArray(data.items);
 
-const extractEnpassFiles = (attachments: EnpassAttachment[]): File[] =>
-    attachments.map(({ data, kind, name }) => new File([base64StringToUint8Array(data)], name, { type: kind }));
-
-export const readEnpassData = ({ data }: { data: string }): ImportPayload => {
+export const readEnpassData = async (file: File): Promise<ImportReaderResult> => {
     try {
+        const data = await file.text();
         const result = JSON.parse(data);
         const valid = validateEnpassData(result);
 
@@ -115,6 +114,7 @@ export const readEnpassData = ({ data }: { data: string }): ImportPayload => {
 
         const items = result.items.map((i) => i);
         const ignored: string[] = [];
+        const fileReader = enpassFileReader();
 
         const vaults: ImportVault[] = [
             {
@@ -124,7 +124,13 @@ export const readEnpassData = ({ data }: { data: string }): ImportPayload => {
                     .flatMap<Maybe<ItemImportIntent>>((item) => {
                         const type = capitalize(item?.category ?? c('Label').t`Unknown`);
                         const title = item?.title ?? '';
-                        const files = extractEnpassFiles(item.attachments ?? []);
+
+                        const files =
+                            item.attachments?.map(({ data, name }) => {
+                                const uniqueFilename = getUniqueFilename(name);
+                                fileReader.registerFile(uniqueFilename, data);
+                                return uniqueFilename;
+                            }) ?? [];
 
                         try {
                             switch (item.category) {
@@ -151,7 +157,7 @@ export const readEnpassData = ({ data }: { data: string }): ImportPayload => {
             },
         ];
 
-        return { vaults, ignored, warnings: [] };
+        return { vaults, ignored, warnings: [], fileReader };
     } catch (e) {
         logger.warn('[Importer::Enpass]', e);
         throw new ImportProviderError('Enpass', e);

@@ -5,7 +5,7 @@ import {
     getImportedVaultName,
     importLoginItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -16,11 +16,12 @@ import type { SafariItem } from './safari.types';
  * so we only expect headers in common and not all of them, to avoid readCSV throwing an error */
 const SAFARI_EXPECTED_HEADERS: (keyof SafariItem)[] = ['Title', 'Username', 'Password'];
 
-export const readSafariData = async ({ data }: { data: string }): Promise<ImportPayload> => {
+export const readSafariData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
     try {
+        const data = await file.text();
         const result = await readCSV<SafariItem>({
             data,
             headers: SAFARI_EXPECTED_HEADERS,

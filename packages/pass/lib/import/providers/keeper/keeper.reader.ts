@@ -9,7 +9,7 @@ import {
     importLoginItem,
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import { formatExpirationDateMMYYYY } from '@proton/pass/lib/validation/credit-card';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
@@ -43,11 +43,12 @@ const addCustomFieldsWarning = (ignored: string[], item: KeeperItem) => {
     } catch {}
 };
 
-export const readKeeperData = async ({ data }: { data: string }): Promise<ImportPayload> => {
+export const readKeeperData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
     try {
+        const data = await file.text();
         const parsedData = JSON.parse(data) as KeeperData;
         const items = parsedData.records;
         const groupedByVault = groupByKey(items, (item) => lastItem(item.folders?.[0].folder?.split('\\') ?? '') ?? '');

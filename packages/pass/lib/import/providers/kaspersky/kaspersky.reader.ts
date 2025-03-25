@@ -10,7 +10,7 @@ import {
     KasperskyItemKey,
     KasperskyItemKeys,
 } from '@proton/pass/lib/import/providers/kaspersky/kaspersky.types';
-import { type ImportPayload } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -62,10 +62,12 @@ const processLine = (state: LineReaderState, line: string): LineReaderState => {
     return state;
 };
 
-export const readKasperskyData = ({ data }: { data: string }): ImportPayload => {
+export const readKasperskyData = async (file: File): Promise<ImportReaderResult> => {
     type KasperskyReaderResult = { items: ItemImportIntent[]; warnings: string[]; ignored: string[] };
 
     try {
+        const data = await file.text();
+
         const reader = data
             .replace(/\n*---\n*/g, '\n---\n') // Normalize separators
             .replace(/\n*---\n*$/, '') // Remove trailing separator

@@ -1,6 +1,5 @@
 import fs from 'fs';
 
-import { read1PasswordZipData } from '@proton/pass/lib/import/providers/1password/zip.reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
@@ -9,30 +8,17 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import { read1Password1PifData } from './1pif.reader';
 
-describe.each([
-    {
-        name: 'Import 1password 1pif',
-        filePath: '/mocks/1password.private.1pif',
-        readFunction: async (data: string) => read1Password1PifData({ data }),
-        invalidData: 'not-a-1pif-file',
-    },
-    {
-        name: 'Import 1password zip',
-        filePath: '/mocks/1password.private.zip',
-        readFunction: async (data: Buffer) => read1PasswordZipData({ data: data.buffer as ArrayBuffer }),
-        invalidData: new ArrayBuffer(1),
-    },
-])('$name', ({ filePath, readFunction, invalidData }) => {
-    let sourceData: string | Buffer;
+describe('Import 1password 1pif', () => {
     let payload: ImportPayload;
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + filePath, filePath.endsWith('.zip') ? undefined : 'utf8');
-        payload = await readFunction(sourceData as any);
+        const sourceData = fs.readFileSync(__dirname + '/mocks/1password.private.1pif');
+        const file = new File([sourceData], '1password.private.1pif');
+        payload = await read1Password1PifData(file);
     });
 
     test('should throw on invalid file content', async () => {
-        await expect(readFunction(invalidData as any)).rejects.toThrow();
+        await expect(() => read1Password1PifData(new File([], 'corrupted'))).rejects.toThrow();
     });
 
     test('should correctly parse items', () => {
@@ -191,6 +177,4 @@ describe.each([
         expect(creditCardItem.content.cardholderName).toEqual('A B');
         expect(creditCardItem.content.expirationDate).toEqual('012025');
     });
-
-    // Add the remaining shared tests here
 });

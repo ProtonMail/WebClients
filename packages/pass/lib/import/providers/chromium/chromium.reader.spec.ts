@@ -6,20 +6,14 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { readChromiumData } from './chromium.reader';
 
 describe('Import Chrome CSV', () => {
-    let chromeExport: string;
-    let chromeExportWindows: string;
-
-    beforeAll(async () => {
-        chromeExport = await fs.promises.readFile(__dirname + '/mocks/chrome.csv', 'utf8');
-        chromeExportWindows = await fs.promises.readFile(__dirname + '/mocks/chrome-windows.csv', 'utf8');
-    });
-
     it('should handle corrupted files', async () => {
-        await expect(readChromiumData({ data: 'not-a-csv-file' })).rejects.toThrow();
+        await expect(readChromiumData(new File([], 'corrupted'))).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {
-        const payload = await readChromiumData({ data: chromeExport });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/chrome.csv');
+        const file = new File([sourceData], 'chrome.csv');
+        const payload = await readChromiumData(file);
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);
@@ -69,7 +63,9 @@ describe('Import Chrome CSV', () => {
     });
 
     it('correctly parse items if .csv has `notes` column', async () => {
-        const payload = await readChromiumData({ data: chromeExportWindows });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/chrome-windows.csv');
+        const file = new File([sourceData], 'chrome.csv');
+        const payload = await readChromiumData(file);
         const [vaultData] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(1);
