@@ -162,6 +162,7 @@ describe('RecentDocumentsService', () => {
         parentLinkId: '', // empty parentLinkId
         volumeId: 'volume1',
         lastViewed: new ServerTime(1698765432),
+        lastModified: new ServerTime(1698765432),
         createdBy: 'test@proton.ch',
         location: { type: 'root' },
         isSharedWithMe: false,
@@ -178,6 +179,7 @@ describe('RecentDocumentsService', () => {
         parentLinkId: 'parent1',
         volumeId: 'volume1',
         lastViewed: new ServerTime(1698765432),
+        lastModified: new ServerTime(1698765432),
         createdBy: 'test@proton.ch',
         location: { type: 'root' },
         isSharedWithMe: false,
@@ -199,6 +201,7 @@ describe('RecentDocumentsService', () => {
         parentLinkId: 'parent1',
         volumeId: 'volume1',
         lastViewed: new ServerTime(1698765432),
+        lastModified: new ServerTime(1698765432),
         createdBy: 'test@proton.ch',
         location: { type: 'root' },
         isSharedWithMe: false,

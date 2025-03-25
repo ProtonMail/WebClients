@@ -7,7 +7,7 @@ import { ContextMenuProvider } from './DocContextMenu/context'
 import emptyStateImage from './empty-state.svg'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
-import { Icon } from '@proton/components'
+import { Icon, useAuthentication } from '@proton/components'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 
@@ -16,32 +16,32 @@ export function HomepageContent() {
 
   const { logger } = useApplication()
 
-  const { status, items } = useRecentDocuments()
+  const { state, items } = useRecentDocuments()
 
   const startTimeRef = useRef<number | null>(null)
 
   useEffect(() => {
-    if (status === 'resolving') {
+    if (state === 'resolving') {
       startTimeRef.current = Date.now()
-    } else if (status === 'done' && startTimeRef.current) {
+    } else if (state === 'done' && startTimeRef.current) {
       const duration = (Date.now() - startTimeRef.current) / 1000
       logger.debug(`Time to render ${items.length} recent documents: ${duration.toFixed(2)}s`)
       startTimeRef.current = null
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status, logger])
+  }, [state, logger])
 
   if (items.length > 0) {
     children = <RecentDocumentsTable />
-  } else if (status === 'not_fetched') {
+  } else if (state === 'not_fetched') {
     children = null
-  } else if (status === 'fetching' || (status === 'resolving' && items.length === 0)) {
+  } else if (state === 'fetching' || (state === 'resolving' && items.length === 0)) {
     children = (
       <div className="flex h-full items-center justify-center">
         <CircleLoader size="large" />
       </div>
     )
-  } else if (items.length === 0 && status === 'done') {
+  } else if (items.length === 0 && state === 'done') {
     children = <EmptyState />
   } else {
     children = <RecentDocumentsTable />
@@ -60,7 +60,7 @@ export function HomepageContent() {
 }
 
 function EmptyState() {
-  const { getLocalID } = useRecentDocuments()
+  const { getLocalID } = useAuthentication()
 
   return (
     <div className="flex h-full items-center justify-center">
