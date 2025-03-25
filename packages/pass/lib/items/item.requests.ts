@@ -232,8 +232,6 @@ export const deleteItems = async (
     (
         await Promise.all(
             batchByShareId(items, intoRevisionID).map(async ({ shareId, items: Items }) => {
-                await Promise.all(items.map(deleteItemRevisions));
-
                 await api({
                     url: `pass/v1/share/${shareId}/item`,
                     method: 'delete',
