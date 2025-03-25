@@ -1102,10 +1102,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } चुनें"
       ],
-      "Select All": [
+      "Select all": [
         "सब चुनें"
       ],
-      "Select all": [
+      "Select All": [
         "सब चुनें"
       ],
       "Select all messages": [
@@ -1301,8 +1301,7 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
+        "विश्वसनीय चाबी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -6635,8 +6634,7 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें",
-        "तस्वीरें डालें"
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -10367,9 +10365,6 @@
       "Save": [
         "सहेजें"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "सहेजें ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "अपने पहले महीने पर 80% की बचत करें।"
       ],
@@ -10753,9 +10748,6 @@
       "More plans are available in other currencies": [
         "अन्य मुद्राओं में और प्लैन उपलब्ध हैं"
       ],
-      "Payment Processing": [
-        "भुगतान प्रक्रिया"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "कृपया अपने सदस्यता को पहले फिर से सक्रिय करें ताकि ऐड-ऑन की संख्या कम हो सके।"
       ],
@@ -10776,9 +10768,6 @@
       ],
       "Timeout exceeded": [
         "Timeout exceeded"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "हम आपके बिल किए गए चालान के लिए आपका भुगतान संसाधित कर रहे हैं। कृपया अपने प्लैन में बदलाव करने या अपने भुगतान विवरण अपडेट करने से पहले भुगतान पूरा होने तक प्रतीक्षा करें। आपकी सहनशीलता के लिए धन्यवाद।"
       ]
     },
     "Payments.Error": {
@@ -13677,6 +13666,11 @@
         "आज"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: आपके सभी डिवाइसों पर सुरक्षित लॉगिन। इसमें असीमित नकली-नाम, साझा करना, एकीकृत 2-एफए, और अधिक शामिल हैं"
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "स्वचालित इंगित करता है कि इस उपयोगकर्ता को भेजने के लिए संगीतकार में प्रारूप का उपयोग किया जाता है। सादा पाठ इंगित करता है कि संदेश भेजने पर संदेश हमेशा सादे पाठ में परिवर्तित हो जाएगा।"
@@ -13758,11 +13752,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "इस ईमेल पर एंड-टू-एंड एन्क्रिप्टेड ईमेल भेजने को सक्षम करने के लिए एक सार्वजनिक कुंजी अपलोड करें"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: आपके सभी डिवाइसों पर सुरक्षित लॉगिन। इसमें असीमित नकली-नाम, साझा करना, एकीकृत 2-एफए, और अधिक शामिल हैं"
       ]
     },
     "Tor out of date": {
