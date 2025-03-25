@@ -1,10 +1,10 @@
 import { type InputWithSizeMeta, type InputWithoutMeta, makeZip } from 'client-zip';
 
 import { encryptPassExport } from '@proton/pass/lib/crypto/utils/export';
+import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
 import { createDownloadStream } from '@proton/pass/lib/file-attachments/download';
 import { downloadFileChunk, resolveItemFiles } from '@proton/pass/lib/file-attachments/file-attachments.requests';
 import { getExportFileName, intoFileDescriptors, isFileForRevision } from '@proton/pass/lib/file-attachments/helpers';
-import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
 import type { ExportThunk } from '@proton/pass/store/selectors';
 import type { FileDescriptor, IndexedByShareIdAndItemId, ItemRevision } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -35,8 +35,8 @@ export async function* createExportAttachmentsStream(
         if (signal.aborted) throw new DOMException('Export aborted', 'AbortError');
 
         const result = await resolveItemFiles(item);
-        const latestItemKey = await getLatestItemKey(item);
-        const itemFiles = await intoFileDescriptors(result, shareId, latestItemKey);
+        const itemKey = await resolveItemKey(item.shareId, item.itemId);
+        const itemFiles = await intoFileDescriptors(result, itemKey);
 
         /** Only export files that match the latest item revision */
         const files = itemFiles.filter(isFileForRevision(revision));

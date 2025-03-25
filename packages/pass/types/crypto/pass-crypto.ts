@@ -5,7 +5,6 @@ import type {
     InviteCreateRequest,
     ItemCreateRequest,
     ItemFileOutput,
-    ItemLatestKeyResponse,
     ItemMoveIndividualToShareRequest,
     ItemRevisionContentsResponse,
     ItemUpdateRequest,
@@ -104,21 +103,11 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     }) => Promise<Uint8Array>;
 
     createFileDescriptor: (data: { metadata: Uint8Array; fileID?: string }) => Promise<FileDescriptorProcessResult>;
-    openFileDescriptor: (data: {
-        shareId: string;
-        file: ItemFileOutput;
-        latestItemKey: ItemLatestKeyResponse;
-    }) => Promise<Uint8Array>;
-
+    openFileDescriptor: (data: { file: ItemFileOutput; itemKey: ItemKey }) => Promise<Uint8Array>;
     createFileChunk: (data: { chunk: Blob; fileID: string }) => Promise<Blob>;
     openFileChunk: (data: { chunk: Uint8Array; fileID: string }) => Promise<Uint8Array>;
     registerFileKey: (data: { fileKey: Uint8Array; fileID: string }) => void;
-
-    getFileKey: (data: {
-        fileID: string;
-        shareId: string;
-        latestItemKey: ItemLatestKeyResponse;
-    }) => Promise<Uint8Array>;
+    getFileKey: (data: { fileID: string; itemKey: ItemKey }) => Promise<Uint8Array>;
 
     createSecureLink: (data: { itemKey: ItemKey; shareId?: string }) => Promise<CreateSecureLinkData>;
     openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array>;

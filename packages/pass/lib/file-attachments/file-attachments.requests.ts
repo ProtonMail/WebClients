@@ -1,16 +1,16 @@
 import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
 import { intoPublicFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
 import type {
     FileDownloadChunk,
     FileDownloadPublicChunk,
     FileID,
     FileRestoreDTO,
     ItemFileOutput,
-    ItemLatestKeyResponse,
+    ItemKey,
     ItemRevision,
     ItemRevisionContentsResponse,
     ItemRevisionLinkFiles,
@@ -67,23 +67,21 @@ export const updatePendingFileMetadata = async (metadata: string, fileID: FileID
 
 export const restoreSingleFile = async (
     { shareId, itemId, fileId }: FileRestoreDTO,
-    latestItemKey: ItemLatestKeyResponse
+    itemKey: ItemKey
 ): Promise<ItemFileOutput> =>
     (
         await api({
             url: `pass/v1/share/${shareId}/item/${itemId}/file/${fileId}/restore`,
             method: 'post',
             data: {
-                FileKey: uint8ArrayToBase64String(
-                    await PassCrypto.getFileKey({ fileID: fileId, shareId, latestItemKey })
-                ),
-                ItemKeyRotation: latestItemKey.KeyRotation,
+                FileKey: uint8ArrayToBase64String(await PassCrypto.getFileKey({ fileID: fileId, itemKey })),
+                ItemKeyRotation: itemKey.rotation,
             },
         })
     ).Result.File;
 
 export const restoreRevisionFiles = async (
-    dto: { toRestore: FileID[]; latestItemKey: ItemLatestKeyResponse } & SelectedItem
+    dto: { toRestore: FileID[]; itemKey: ItemKey } & SelectedItem
 ): Promise<ItemRevisionContentsResponse> =>
     (
         await api({
@@ -96,14 +94,14 @@ export const restoreRevisionFiles = async (
                         FileKey: uint8ArrayToBase64String(await PassCrypto.getFileKey({ ...dto, fileID })),
                     }))
                 ),
-                ItemKeyRotation: dto.latestItemKey.KeyRotation,
+                ItemKeyRotation: dto.itemKey.rotation,
             },
         })
     ).Result.Item;
 
 export const linkPendingFiles = async (dto: ItemRevisionLinkFiles): Promise<ItemRevision> => {
     const { revision, shareId, itemId, files } = dto;
-    const latestItemKey = await getLatestItemKey(dto);
+    const itemKey = await resolveItemKey(shareId, itemId);
 
     const encryptedItem = await (async (): Promise<ItemRevisionContentsResponse> => {
         if (files.toAdd.length || files.toRemove.length) {
@@ -113,8 +111,7 @@ export const linkPendingFiles = async (dto: ItemRevisionLinkFiles): Promise<Item
                     FileKey: uint8ArrayToBase64String(
                         await PassCrypto.getFileKey({
                             fileID: FileID,
-                            shareId,
-                            latestItemKey,
+                            itemKey,
                         })
                     ),
                 }))
@@ -153,7 +150,7 @@ export const linkPendingFiles = async (dto: ItemRevisionLinkFiles): Promise<Item
 
             for (let i = 0; i < restoreChunks.length; i++) {
                 const toRestore = restoreChunks[i] ?? [];
-                result = await restoreRevisionFiles({ shareId, itemId, toRestore, latestItemKey });
+                result = await restoreRevisionFiles({ shareId, itemId, toRestore, itemKey });
             }
 
             return result!;

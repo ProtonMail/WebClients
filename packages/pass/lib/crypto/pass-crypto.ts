@@ -436,18 +436,9 @@ export const createPassCrypto = (): PassCryptoWorker => {
             context.fileKeys.set(fileID, fileKey);
         },
 
-        /** FIXME: Handle ItemShares
-         * This should return the filekey encrypted with the itemkey.
-         * FIXME: Handle ItemKey caching.
-         * FIXME: We might not need the shareID when using ItemKey caching
-         * as the key will already be decrypted */
-        async getFileKey({ latestItemKey, shareId, fileID }) {
-            const shareKey = getShareManager(shareId).getVaultShareKey(latestItemKey.KeyRotation);
-
+        async getFileKey({ itemKey, fileID }) {
             const fileKey = context.fileKeys.get(fileID);
             if (!fileKey) throw new PassCryptoFileError(`Could not resolve file key for ${fileID}`);
-
-            const itemKey = await processes.openItemKey({ encryptedItemKey: latestItemKey, shareKey });
             return encryptData(itemKey.key, fileKey, PassEncryptionTag.FileKey);
         },
 
@@ -460,13 +451,9 @@ export const createPassCrypto = (): PassCryptoWorker => {
             return processes.createFileDescriptor(metadata, fileKey);
         },
 
-        async openFileDescriptor({ shareId, file, latestItemKey }) {
+        async openFileDescriptor({ file, itemKey }) {
             assertHydrated(context);
 
-            const manager = getShareManager(shareId);
-            const shareKey = manager.getVaultShareKey(file.ItemKeyRotation);
-
-            const itemKey = await processes.openItemKey({ encryptedItemKey: latestItemKey, shareKey });
             const { fileKey, metadata } = await processes.openFileDescriptor(file.Metadata, file.FileKey, itemKey);
 
             worker.registerFileKey({ fileKey, fileID: file.FileID });
