@@ -1,4 +1,4 @@
-import { type ComponentProps, useEffect, useRef, useState } from 'react';
+import { type ComponentProps, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FormikContextType, FormikErrors } from 'formik';
@@ -9,15 +9,13 @@ import type { Dropzone, FileInput } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useFileImporter } from '@proton/pass/hooks/files/useFileImporter';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { ExportFormat } from '@proton/pass/lib/export/types';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { extractFileExtension, fileReader } from '@proton/pass/lib/import/reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { ImportProvider } from '@proton/pass/lib/import/types';
-import { importItemsIntent } from '@proton/pass/store/actions';
-import { itemsImportRequest } from '@proton/pass/store/actions/requests';
+import { importItems } from '@proton/pass/store/actions';
 import type { ImportState } from '@proton/pass/store/reducers';
 import { selectAliasItems, selectLatestImport, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
@@ -75,9 +73,6 @@ const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): F
         if (fileExtension === ExportFormat.PGP && !Boolean(passphrase)) {
             errors.passphrase = c('Warning').t`PGP encrypted export file requires passphrase`;
         }
-        if (fileExtension === ExportFormat.EPEX && !Boolean(passphrase)) {
-            errors.passphrase = c('Warning').t`EPEX encrypted export file requires passphrase`;
-        }
     }
 
     return errors;
@@ -97,20 +92,12 @@ export const useImportForm = ({
     const [busy, setBusy] = useState(false);
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
     const [supportedFileTypes, setSupportedFileTypes] = useState<string[]>([]);
-    const formRef = useRef<FormikContextType<ImportFormValues>>();
 
     const result = useSelector(selectLatestImport);
     const user = useSelector(selectUser);
     const aliases = useSelector(selectAliasItems);
 
-    const importItems = useActionRequest(importItemsIntent, {
-        requestId: itemsImportRequest(),
-        onSuccess: () => {
-            setBusy(false);
-            void formRef.current?.setValues(getInitialFormValues());
-        },
-        onFailure: () => setBusy(false),
-    });
+    const dispatch = useAsyncRequestDispatch();
 
     const form = useFormik<ImportFormValues>({
         initialValues: getInitialFormValues(),
@@ -150,15 +137,16 @@ export const useImportForm = ({
                 if (result.ok) {
                     result.payload.vaults = await uploadFiles(result.payload.vaults);
                     onSubmit?.(result.payload);
-                    importItems.dispatch({ data: result.payload, provider: values.provider });
+                    const res = await dispatch(importItems, { data: result.payload, provider: values.provider });
+
+                    setBusy(false);
+                    if (res.type === 'success') void form.setValues(getInitialFormValues());
                 }
             } catch (e) {
                 if (e instanceof Error) {
                     createNotification({ type: 'error', text: e.message });
                 }
             } finally {
-                // clear imported file in case it was written to storage
-                await fileStorage.clearAll();
                 setBusy(false);
             }
         },
@@ -179,11 +167,6 @@ export const useImportForm = ({
     };
 
     const onAttach: FileInputProps['onChange'] = (event) => onAddFiles((event.target.files as File[] | null) ?? []);
-
-    useEffect(() => {
-        /** FIXME: use async dispatch to get rid of form ref */
-        formRef.current = form;
-    });
 
     return {
         busy,
