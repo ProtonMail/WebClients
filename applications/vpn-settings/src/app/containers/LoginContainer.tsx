@@ -9,7 +9,6 @@ import type { MetaTags } from 'proton-account/src/app/useMetaTags';
 
 import type { OnLoginCallback } from '@proton/components';
 import { APPS, VPN_TV_PATHS_MAP } from '@proton/shared/lib/constants';
-import { isMember } from '@proton/shared/lib/user/helpers';
 
 export type LoginContainerState = AccountLoginContainerState;
 
@@ -44,12 +43,7 @@ const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit
                     document.location.assign('https://testflight.apple.com/join/3yl2MSbw');
                     return { state: 'complete' };
                 }
-                const { User } = session.data;
-                const previousHash = initialLocation?.hash || '';
-                const previousSearch = initialLocation?.search || '';
-                const path = initialLocation?.pathname || (User && isMember(User) ? '/account-password' : '/dashboard');
-                const pathWithSearch = `${path}${previousSearch}${previousHash}`;
-                return onLogin({ ...session, path: pathWithSearch });
+                return onLogin(session);
             }}
         />
     );
