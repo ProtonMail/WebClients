@@ -44,7 +44,7 @@ import AutoReplyFormWeekly from './AutoReplyForm/AutoReplyFormWeekly';
 import DurationField from './AutoReplyForm/fields/DurationField';
 import useAutoReplyForm, { getDefaultAutoResponder } from './AutoReplyForm/useAutoReplyForm';
 
-const AUTO_REPLY_MAX_LENGTH = 4096;
+const AUTO_REPLY_MAX_LENGTH = 10_000;
 
 export const AutoReplySection = () => {
     const errorHandler = useErrorHandler();
