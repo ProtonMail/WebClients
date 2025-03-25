@@ -68,7 +68,7 @@ function* itemEditWorker(
     { onItemsUpdated, getTelemetry }: RootSagaOptions,
     { payload: editIntent, meta }: ReturnType<typeof itemEdit.intent>
 ) {
-    const { itemId, shareId, lastRevision } = editIntent;
+    const { itemId, shareId, lastRevision, files } = editIntent;
     const telemetry = getTelemetry();
 
     try {
@@ -81,16 +81,8 @@ function* itemEditWorker(
 
         yield put(itemEdit.success(meta.request.id, { item, itemId, shareId }));
 
-        if (editIntent.files.toAdd.length || editIntent.files.toRemove.length || editIntent.files.toRestore?.length) {
-            yield put(
-                fileLinkPending.intent({
-                    shareId,
-                    itemId: item.itemId,
-                    revision: item.revision,
-                    files: editIntent.files,
-                })
-            );
-        }
+        const shouldLink = files.toAdd.length || files.toRemove.length || files.toRestore?.length;
+        if (shouldLink) yield put(fileLinkPending.intent({ shareId, itemId, files }));
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: TelemetryItemType[item.data.type] })
