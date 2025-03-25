@@ -1,6 +1,9 @@
 import type { EnpassCategory, EnpassItem } from '@proton/pass/lib/import/providers/enpass/enpass.types';
+import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent } from '@proton/pass/types';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import type { EnpassField } from './enpass.types';
 
@@ -82,4 +85,27 @@ export const extractEnpassIdentity = (importItem: EnpassItem<EnpassCategory.IDEN
     });
 
     return item.data.content;
+};
+
+/* FIXME: make sure uniqueId is removed when importing */
+export const getUniqueFilename = (filename: string) => `${uniqueId()}_${filename}`;
+
+interface EnpassFileReader extends ImportFileReader {
+    registerFile: (uniqueFilename: string, data: string) => void;
+}
+
+export const enpassFileReader = (): EnpassFileReader => {
+    const entries = new Map<string, string>();
+
+    return {
+        get files() {
+            return new Set(entries.keys());
+        },
+        getFile: async (filename) => {
+            const match = entries.get(filename);
+            if (!match) return null;
+            return new Blob([base64StringToUint8Array(match)]);
+        },
+        registerFile: (filename: string, data: string) => entries.set(filename, data),
+    };
 };

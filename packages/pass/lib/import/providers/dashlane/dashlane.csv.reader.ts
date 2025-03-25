@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import { getImportedVaultName } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import { logger } from '@proton/pass/utils/logger';
 
 import type { DashlaneItem, DashlaneItemParser } from './dashlane.types';
@@ -48,10 +48,11 @@ const getItemParser = (item: DashlaneItem): DashlaneItemParser => {
     throw new Error(c('Error').t`Unknown item`);
 };
 
-export const readDashlaneDataCSV = async ({ data }: { data: string }): Promise<ImportPayload> => {
+export const readDashlaneDataCSV = async (file: File): Promise<ImportReaderResult> => {
     const warnings: string[] = [];
 
     try {
+        const data = await file.text();
         const { items } = await readCSV<DashlaneItem>({
             data,
             hasHeader: true,

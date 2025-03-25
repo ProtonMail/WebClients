@@ -9,7 +9,7 @@ import {
     importLoginItem,
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -94,8 +94,11 @@ export const parse1PifData = (data: string): OnePassLegacyItem[] =>
         .filter((line) => !line.startsWith(ENTRY_SEPARATOR_1PIF) && Boolean(line))
         .map((rawItem) => JSON.parse(rawItem));
 
-export const read1Password1PifData = async ({ data }: { data: string }): Promise<ImportPayload> => {
+export const read1Password1PifData = async (file: File): Promise<ImportReaderResult> => {
     try {
+        const data = await file.text();
+        if (!data) throw new Error('Unprocessable content');
+
         const ignored: string[] = [];
         const items: ItemImportIntent[] = parse1PifData(data)
             .map((item) => {

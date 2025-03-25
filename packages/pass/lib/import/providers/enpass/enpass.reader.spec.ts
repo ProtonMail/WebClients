@@ -7,19 +7,19 @@ import type { ItemExtraField, ItemImportIntent } from '@proton/pass/types';
 import { readEnpassData } from './enpass.reader';
 
 describe('Import Enpass json', () => {
-    let sourceData: string;
     let payload: ImportPayload;
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/enpass.json', 'utf8');
-        payload = readEnpassData({ data: sourceData });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/enpass.json');
+        const file = new File([sourceData], 'enpass.json');
+        payload = await readEnpassData(file);
     });
 
-    it('should throw on corrupted files', () => {
-        expect(() => readEnpassData({ data: 'not-a-json-body' })).toThrow('Enpass file could not be parsed.');
-        expect(() => readEnpassData({ data: '{ "items": null }' })).toThrow('File does not match expected format');
-        expect(() => readEnpassData({ data: '{ "items": {} }' })).toThrow('File does not match expected format');
-        expect(() => readEnpassData({ data: '{}' })).toThrow('File does not match expected format');
+    it('should throw on corrupted files', async () => {
+        await expect(() => readEnpassData(new File(['not-a-json-body'], 'corrupted'))).rejects.toThrow();
+        await expect(() => readEnpassData(new File(['{ "items": null }'], 'corrupted'))).rejects.toThrow();
+        await expect(() => readEnpassData(new File(['{ "items": {} }'], 'corrupted'))).rejects.toThrow();
+        await expect(() => readEnpassData(new File(['{}'], 'corrupted'))).rejects.toThrow();
     });
 
     test('should correctly parse items', () => {
@@ -27,7 +27,7 @@ describe('Import Enpass json', () => {
 
         const [primary] = payload.vaults;
         expect(primary.name).not.toBeUndefined();
-        expect(primary.items.length).toEqual(10);
+        expect(primary.items.length).toEqual(11);
 
         /* Login */
         const loginItem1 = deobfuscateItem(primary.items[0]) as unknown as ItemImportIntent<'login'>;
@@ -134,6 +134,16 @@ describe('Import Enpass json', () => {
         expect(identityItem.content.firstName).toEqual('John');
         expect(identityItem.content.middleName).toEqual('Jay');
         expect(identityItem.content.lastName).toEqual('Doe');
+
+        /* Login with file attachments */
+        const loginFileAttachments = deobfuscateItem(primary.items[10]) as unknown as ItemImportIntent<'login'>;
+        expect(loginFileAttachments.type).toEqual('login');
+        expect(loginFileAttachments.metadata.name).toEqual('login with 2 file attachments');
+        expect(loginFileAttachments.content.itemEmail).toEqual('john@example.com');
+        expect(loginFileAttachments.content.itemUsername).toEqual('john');
+        expect(loginFileAttachments.files?.length).toEqual(2);
+        expect(loginFileAttachments.files?.[0]).toContain('image.png');
+        expect(loginFileAttachments.files?.[1]).toContain('pass-banner.jpg');
     });
 
     test('correctly keeps a reference to ignored items', () => {

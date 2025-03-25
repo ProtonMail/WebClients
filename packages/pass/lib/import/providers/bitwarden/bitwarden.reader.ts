@@ -11,7 +11,7 @@ import {
     importLoginItem,
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -40,8 +40,9 @@ const addCustomFieldsWarning = (ignored: string[], item: BitwardenItem) => {
     }
 };
 
-export const readBitwardenData = ({ data }: { data: string }): ImportPayload => {
+export const readBitwardenData = async (file: File): Promise<ImportReaderResult> => {
     try {
+        const data = await file.text();
         const parsedData = JSON.parse(data) as BitwardenData;
         const { items, encrypted, folders = [], collections = [] } = parsedData;
         if (encrypted) throw new ImportReaderError(c('Error').t`Encrypted JSON not supported`);

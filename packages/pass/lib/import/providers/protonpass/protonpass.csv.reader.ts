@@ -8,7 +8,7 @@ import {
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import type { ProtonPassCSVItem } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.types';
-import type { ImportPayload } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
 import type { ItemCreditCard } from '@proton/pass/types/protobuf/item-v1';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
@@ -41,17 +41,12 @@ const processIdentityItem = (item: ProtonPassCSVItem): ItemImportIntent<'identit
         ...JSON.parse(item.note as string),
     });
 
-export const readProtonPassCSV = async ({
-    data,
-    isGenericCSV = false,
-}: {
-    data: string;
-    isGenericCSV?: boolean;
-}): Promise<ImportPayload> => {
+export const readProtonPassCSV = async (file: File, isGenericCSV: boolean = false): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
     try {
+        const data = await file.text();
         const result = await readCSV<ProtonPassCSVItem>({
             data,
             /* Don't verify headers of Generic CSV */
