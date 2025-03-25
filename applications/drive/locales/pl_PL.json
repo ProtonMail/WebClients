@@ -87,6 +87,12 @@
       "Add photos": [
         "Dodaj zdjęcia"
       ],
+      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
+        "Dodaj do albumu \"${ album.name }\" (${ album.photoCount } zdjęcie)",
+        "Dodaj do albumu \"${ album.name }\" (${ album.photoCount } zdjęcia)",
+        "Dodaj do albumu \"${ album.name }\" (${ album.photoCount } zdjęć)",
+        "Dodaj do albumu \"${ album.name }\" (${ album.photoCount } zdjęcia)"
+      ],
       "Add to album": [
         "Dodaj do albumu"
       ],
@@ -273,6 +279,9 @@
       "Decline": [
         "Odrzuć"
       ],
+      "Decline invite": [
+        "Odrzuć zaproszenie"
+      ],
       "Decrease": [
         "Zmniejsz"
       ],
@@ -309,6 +318,9 @@
       "Delete version": [
         "Usuń wersję"
       ],
+      "Delete without saving": [
+        "Usuń bez zapisywania"
+      ],
       "Deselect all": [
         "Odznacz wszystkie"
       ],
@@ -323,6 +335,12 @@
       ],
       "Display navigation bar": [
         "Pokaż pasek nawigacji"
+      ],
+      "Display next": [
+        "Pokaż następne"
+      ],
+      "Display previous": [
+        "Pokaż poprzednie"
       ],
       "Done": [
         "Gotowe"
@@ -498,6 +516,9 @@
       "Increase": [
         "Zwiększ"
       ],
+      "Join album": [
+        "Dołącz do albumu"
+      ],
       "Keep my subscription": [
         "Zachowaj subskrypcję"
       ],
@@ -512,6 +533,9 @@
       ],
       "Leave": [
         "Opuść"
+      ],
+      "Leave album": [
+        "Opuść album"
       ],
       "Let's talk": [
         "Porozmawiajmy"
@@ -539,6 +563,9 @@
       ],
       "Manage share": [
         "Zarządzaj udostępnianiem"
+      ],
+      "Mark as favorite": [
+        "Oznacz jako ulubione"
       ],
       "Mark as resolved": [
         "Oznacz jako rozwiązane"
@@ -580,7 +607,7 @@
         "Przenieś do Kosza"
       ],
       "Name your album": [
-        "Nazwij swój album"
+        "Nazwij album"
       ],
       "New": [
         "Nowy"
@@ -687,6 +714,9 @@
       "Remove from album": [
         "Usuń z albumu"
       ],
+      "Remove from favorites": [
+        "Usuń z ulubionych"
+      ],
       "Remove from this list": [
         "Usuń z listy"
       ],
@@ -695,6 +725,9 @@
       ],
       "Remove me": [
         "Usuń mnie"
+      ],
+      "Remove without saving": [
+        "Usuń bez zapisywania"
       ],
       "Rename": [
         "Zmień nazwę"
@@ -768,8 +801,14 @@
       "Save": [
         "Zapisz"
       ],
+      "Save and remove": [
+        "Zapisz i usuń"
+      ],
       "Save changes": [
         "Zapisz zmiany"
+      ],
+      "Save photos and remove": [
+        "Zapisz zdjęcia i usuń"
       ],
       "Search": [
         "Szukaj"
@@ -1206,11 +1245,17 @@
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Nieograniczona liczba danych logowania, karty płatniczych, aliasów hide-my-email i nie tylko"
+      ],
       "Use your own email domain": [
         "Użyj własnej domeny e-mail"
       ],
       "Version history": [
         "Historia wersji"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -1244,7 +1289,7 @@
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje 15 adresów e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zabezpiecz swoje e-maile i kalendarz dzięki szyfrowaniu end-to-end. Obejmuje 15 adresów e-mail, wsparcie dla niestandardowych domen e-mail, nieograniczone aliasy hide-my-email i nie tylko."
+        "Zabezpiecz swoje wiadomości i kalendarz za pomocą szyfrowania end-to-end. Zawiera 15 adresów e-mail, wsparcie dla niestandardowych domen, nieograniczona liczba aliasów hide-my-email i nie tylko."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje edytor dokumentów online, kopię zapasową zdjęć, historię wersji, zaszyfrowane udostępnianie plików i wiele więcej."
@@ -1266,8 +1311,14 @@
       "Annually": [
         "Rocznie"
       ],
+      "Lifetime": [
+        "Dożywotni"
+      ],
       "Monthly": [
         "Miesięcznie"
+      ],
+      "New!": [
+        "Nowość!"
       ],
       "Two-year": [
         "Co dwa lata"
@@ -2439,6 +2490,31 @@
         "Wyspy Alandzkie"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Do wykorzystania we wszystkich usługach ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Dla ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Dla ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Dla ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Dla ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ miesiąc"
@@ -2747,7 +2823,7 @@
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } to nazwa użytkownika. Aby utworzyć ${ emailAddress }, przejdź do Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)."
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)"
       ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
@@ -3737,6 +3813,9 @@
       "Create new album": [
         "Utwórz nowy album"
       ],
+      "Rename": [
+        "Zmień nazwę"
+      ],
       "Security Center": [
         "Centrum zabezpieczeń"
       ]
@@ -4139,6 +4218,9 @@
         "${ album.photoCount } elementy",
         "${ album.photoCount } elementów",
         "${ album.photoCount } elementów"
+      ],
+      "${ albumName } has been successfully deleted": [
+        "Album ${ albumName } został usunięty"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -4687,7 +4769,7 @@
         "Wiadomości są automatyczne podpisywane"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Wiadomości e-mail przeniesione do Kosza i Spamu ponad 30 dni temu zostaną automatycznie wyczyszczone."
+        "Wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni, zostaną automatycznie usunięte."
       ],
       "Empty folder": [
         "Folder jest pusty"
@@ -4765,7 +4847,7 @@
         "Plik nie zostanie zaktualizowany"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Pliki i foldery udostępnione Ci pojawią się tutaj"
+        "Pliki i foldery udostępnione Tobie pojawią się tutaj"
       ],
       "Finalizing": [
         "Finalizowanie"
@@ -5112,6 +5194,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora."
       ],
+      "Photo is not saved to your library": [
+        "Zdjęcie nie jest zapisane w bibliotece"
+      ],
       "Photo is set as album cover": [
         "Zdjęcie jest ustawione jako okładka albumu"
       ],
@@ -5326,7 +5411,7 @@
         "Ustawienia linku"
       ],
       "Shared": [
-        "Udostępnij"
+        "Udostępnione"
       ],
       "Shared by ${ rootLink.signatureEmail }": [
         "Udostępnione przez ${ rootLink.signatureEmail }"
@@ -5383,7 +5468,7 @@
         "Konto może mieć nowy klucz lub poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
       ],
       "The albums you create are shown here.": [
-        "Utworzone albumy są wyświetlane tutaj."
+        "Utworzone albumy pojawią się tutaj."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Podpis cyfrowy został częściowo zweryfikowany. Plik został przesłany z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
@@ -5650,7 +5735,7 @@
         "Musimy zweryfikować płatność z Twoim bankiem."
       ],
       "We sincerely apologize for the inconvenience this may have caused you.": [
-        "Szczerze przepraszamy za niedogodności, które mogły zostać przez to spowodowane."
+        "Przepraszamy za problemy, które mogły zostać spowodowane."
       ],
       "We use 3-D Secure to protect your payments": [
         "Korzystamy z 3-D Secure, aby zabezpieczyć Twoje płatności"
@@ -5693,6 +5778,15 @@
       ],
       "Would you like to restore your files?": [
         "Czy chcesz przywrócić pliki?"
+      ],
+      "Would you like to save it before removing?": [
+        "Czy chcesz zapisać przed usunięciem?",
+        "Czy chcesz zapisać przed usunięciem?",
+        "Czy chcesz zapisać przed usunięciem?",
+        "Czy chcesz zapisać przed usunięciem?"
+      ],
+      "Would you like to save them before removing?": [
+        "Czy chcesz zapisać przed usunięciem?"
       ],
       "Writing assistant": [
         "Asystent pisania"
@@ -5761,7 +5855,7 @@
         "Tej akcji nie można cofnąć."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
-        "Otrzymasz powiadomienie, jeśli Twoje hasło lub inne dane wyciekły z usługi zewnętrznej."
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
       ],
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "Masz ${ expiresInDays } dzień, aby odebrać bonus powitalny 3 GB i ",
@@ -5872,10 +5966,10 @@
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
       ],
       "Your photo has been removed from the album": [
-        "Twoje zdjęcie zostało usunięte z albumu",
-        "Twoich zdjęć zostało usuniętych z albumu",
-        "Twoich zdjęć zostało usuniętych z albumu",
-        "Twoje zdjęcia zostały usunięte z albumu"
+        "Zdjęcie zostało usunięte z albumu",
+        "Zdjęcia zostały usunięte z albumu",
+        "Zdjęcia zostały usunięte z albumu",
+        "Zdjęcia zostały usunięte z albumu"
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Twój plan jest ograniczony do 10 wersji z ostatnich 7 dni"
@@ -6485,7 +6579,7 @@
         "Data rozpoczęcia"
       ],
       "State": [
-        "Województwo"
+        "Stan"
       ],
       "Stolen data": [
         "Skradzione dane"
@@ -7310,6 +7404,9 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
+      "${ size } storage per user": [
+        "${ size } przestrzeni dyskowej na użytkownika"
+      ],
       "1 TB secure storage": [
         "1 TB bezpiecznej przestrzeni dyskowej"
       ],
@@ -7508,6 +7605,9 @@
       "Password manager": [
         "Menadżer haseł"
       ],
+      "Password manager to secure credentials": [
+        "Menedżer haseł do zabezpieczenia danych logowania"
+      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
       ],
@@ -7659,10 +7759,10 @@
         "Do ${ totalStorageSize } przestrzeni dyskowej"
       ],
       "Use on up to ${ n } device at once": [
-        "Używanie na maksymalnie ${ n } urządzeniu",
-        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
-        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
-        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie"
+        "Na ${ n } urządzenie jednocześnie",
+        "Na ${ n } urządzenia jednocześnie",
+        "Na ${ n } urządzeń jednocześnie",
+        "Na ${ n } urządzeń jednocześnie"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -7764,6 +7864,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME }, posiadający specjalne funkcje i bonusy."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Zapłać raz, zabezpiecz swoje hasła i tożsamość na zawsze."
       ],
       "Popular": [
         "Popularny"
@@ -8162,6 +8265,12 @@
         "Odszyfrowanie ${ count } elementów nie powiodło się",
         "Odszyfrowanie ${ count } elementów nie powiodło się"
       ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "Dodano ${ nbSuccesses } zdjęcie do albumu \"${ albumName }\"",
+        "Dodano ${ nbSuccesses } zdjęcia do albumu \"${ albumName }\"",
+        "Dodano ${ nbSuccesses } zdjęć do albumu \"${ albumName }\"",
+        "Dodano ${ nbSuccesses } zdjęć do albumu \"${ albumName }\""
+      ],
       "${ numberOfItems } item deleted": [
         "Usunięto ${ numberOfItems } element",
         "Usunięto ${ numberOfItems } elementy",
@@ -8236,6 +8345,12 @@
       ],
       "Access updated and shared": [
         "Dostęp został zaktualizowany i przyznany"
+      ],
+      "Album failed to be renamed": [
+        "Zmiana nazwy albumu nie powiodła się"
+      ],
+      "Album renamed successfully": [
+        "Nazwa albumu została zmieniona"
       ],
       "All items will soon be permanently deleted from trash": [
         "Wszystkie elementy w Koszu wkrótce zostaną trwale usunięte"
@@ -8452,7 +8567,7 @@
         "Skorzystaj z oferty"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Ostatnia szansa, aby uzyskać 80% zniżki na pierwszy miesiąc ${ plan } Plus."
+        "Ostatnia szansa, aby uzyskać 80% zniżki na pierwszy miesiąc planu ${ plan } Plus."
       ],
       "Last day to save": [
         "Ostatni dzień, aby zaoszczędzić"
@@ -8470,22 +8585,19 @@
         "Oferta wygasa ${ formattedDate }."
       ],
       "Pay annually, secure our best offer": [
-        "Płać co roku, uzyskaj najlepszą ofertę"
+        "Płać rocznie i uzyskaj najlepszą ofertę"
       ],
       "Save": [
         "Zaoszczędź"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Zaoszczędź ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Zaoszczędź 80% przez pierwszy miesiąc."
       ],
       "Save big when you pay annually": [
-        "Dzięki płatnościom rocznym możesz sporo zaoszczędzić"
+        "Zaoszczędź więcej przy płatności rocznej"
       ],
       "Special offer": [
-        "Specjalna oferta"
+        "Oferta specjalna"
       ],
       "This offer won't be shown again.": [
         "Ta oferta nie pojawi się ponownie."
@@ -8494,10 +8606,10 @@
         "Po przejściu z subskrypcji miesięcznej na roczną."
       ],
       "You currently pay": [
-        "Aktualnie płacisz"
+        "Obecnie płacisz"
       ],
       "Your subscription renews soon": [
-        "Subskrypcja wkrótce się odnowi"
+        "Subskrypcja odnowi się wkrótce"
       ]
     },
     "Offer feature": {
@@ -8709,6 +8821,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
+      ],
+      "Secure vault, item and link sharing": [
+        "Bezpieczny sejf, udostępnianie elementów i linków"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Nieograniczona liczba danych logowania, notatek, kart płatniczych i nie tylko"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8806,9 +8924,6 @@
       "More plans are available in other currencies": [
         "Więcej planów jest dostępnych w innych walutach"
       ],
-      "Payment Processing": [
-        "Przetwarzanie płatności"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
@@ -8829,9 +8944,6 @@
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Przetwarzamy płatność za fakturę. Przed zmianą planu lub zaktualizowaniem szczegółów płatności poczekaj na zakończenie płatności. Dziękujemy za cierpliwość."
       ]
     },
     "Payments.Error": {
@@ -8861,7 +8973,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potwierdzając tę płatność, użytkownik upoważnia ${ BRAND_NAME } i Stripe, naszego dostawcę usług płatniczych, do zlecenia bankowi odpowiedniego obciążenia jego konta. Użytkownik może otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z warunkami umowy z bankiem."
+        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
       ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
@@ -9731,6 +9843,9 @@
       "Billed every 2 years": [
         "Płatne co 2 lata"
       ],
+      "Billed every 6 months": [
+        "Płatne co 6 miesięcy"
+      ],
       "Billed for 15 months": [
         "Płatne za 15 miesięcy"
       ],
@@ -10497,6 +10612,9 @@
       "Album": [
         "Album"
       ],
+      "Album details": [
+        "Szczegóły albumu"
+      ],
       "Albums": [
         "Albumy"
       ],
@@ -10578,6 +10696,9 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potwierdź utratę ${ BRAND_NAME } bonusów"
       ],
+      "Confirmation required": [
+        "Potwierdzenie jest wymagane"
+      ],
       "Contact Details": [
         "Szczegóły kontaktu"
       ],
@@ -10629,6 +10750,9 @@
       "Day theme": [
         "Jasny motyw"
       ],
+      "Decline invitation?": [
+        "Odrzucić zaproszenie?"
+      ],
       "Delete": [
         "Usuń"
       ],
@@ -10643,6 +10767,9 @@
         "Usuń ${ count } grupy kontaktów",
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
+      ],
+      "Delete ${ name }?": [
+        "Usunąć ${ name }?"
       ],
       "Delete ${ value }": [
         "Usuń ${ value }"
@@ -10914,6 +11041,12 @@
       "Remove device?": [
         "Usunąć urządzenie?"
       ],
+      "Remove item?": [
+        "Usunąć element?",
+        "Usunąć elementy?",
+        "Usunąć elementy?",
+        "Usunąć elementy?"
+      ],
       "Rename a file": [
         "Zmień nazwę pliku"
       ],
@@ -11075,9 +11208,6 @@
       ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Zamierzasz odrzucić zaproszenie do udostępnionego elementu. Nie będziesz mógł ponownie uzyskać do niego dostępu, dopóki właściciel go nie udostępni."
       ],
       "You can now create unlimited folders and labels": [
         "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"
@@ -11269,6 +11399,12 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Serwery w ponad ${ numberOfCountries } kraju",
+        "Serwery w ponad ${ numberOfCountries } krajach",
+        "Serwery w ponad ${ numberOfCountries } krajach",
+        "Serwery w ponad ${ numberOfCountries } krajach"
       ]
     },
     "vpn_2024: renew": {
@@ -11351,7 +11487,7 @@
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
       ],
       "2 consecutive dots are not allowed": [
-        "2 następujące po sobie kropki są niedozwolone"
+        "2 następujące po sobie kropki nie są dozwolone"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Czy na pewno chcesz trwale usunąć kontakt?",

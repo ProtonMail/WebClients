@@ -276,6 +276,9 @@
       "Decline": [
         "Refuser"
       ],
+      "Decline invite": [
+        "Refuser l'invitation"
+      ],
       "Decrease": [
         "Diminuer"
       ],
@@ -4440,6 +4443,9 @@
       "Calendar side panel": [
         "Panneau latéral du calendrier"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendrier intégré à ${ MAIL_APP_NAME } et ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Annulé"
       ],
@@ -4481,6 +4487,9 @@
       ],
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Espace de stockage cloud intégré à ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Conflit"
@@ -4631,6 +4640,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Service de messagerie intégré à ${ CALENDAR_APP_NAME } et ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
@@ -5040,6 +5052,9 @@
       "password": [
         "mot de passe"
       ],
+      "Password manager with extra account security": [
+        "Gestionnaire de mots de passe avec sécurité de compte supplémentaire"
+      ],
       "Paused": [
         "En pause"
       ],
@@ -5245,6 +5260,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé, en fonction du nombre de calendriers disponibles dans votre abonnement."
+      ],
+      "Self-custodial crypto wallet": [
+        "Portefeuille de cryptomonnaies en autogestion"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Les paiements via SEPA ne sont pas disponibles pour l'instant. Réessayez ultérieurement."
@@ -5581,6 +5599,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN avec adresses IP et serveurs dédiés"
+      ],
       "Want to sync files faster?": [
         "Vous voulez synchroniser vos fichiers plus rapidement ?"
       ],
@@ -5763,6 +5784,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Vous êtes sur le point de refuser l'invitation à rejoindre l'album ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite à nouveau. Voulez-vous vraiment continuer ?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Vous êtes sur le point de refuser l'invitation à rejoindre le dossier ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite à nouveau. Voulez-vous vraiment continuer ?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Vous êtes sur le point de refuser l'invitation à rejoindre l'élément ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite à nouveau. Voulez-vous vraiment continuer ?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Vous avez atteint le nombre maximum d'adresses dans le ou les groupes de contacts :"
@@ -8074,6 +8104,14 @@
         "${ count } élément n'a pas pu être déchiffré.",
         "${ count } éléments n'ont pas pu être déchiffrés."
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "L'ajout d'${ nbFailures } photo à « ${ albumName } » n'a pas abouti.",
+        "L'ajout de ${ nbFailures } photos à « ${ albumName } » n'a pas abouti."
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } photo a été ajoutée à « ${ albumName } ».",
+        "${ nbSuccesses } photos ont été ajoutées à « ${ albumName } »."
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } élément supprimé",
         "${ numberOfItems } éléments supprimés"
@@ -8358,9 +8396,6 @@
       ],
       "Save": [
         "Économisez"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Économisez ${ prices.savedPercentage } %"
       ],
       "Save 80% on your first month.": [
         "Économisez 80 % sur votre premier mois"
@@ -8685,6 +8720,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -8693,9 +8731,6 @@
       ],
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
-      ],
-      "Payment Processing": [
-        "Traitement des paiements"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
@@ -8746,8 +8781,8 @@
       "Timeout exceeded": [
         "Le délai est dépassé."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre abonnement ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+      "Your payment is still being processed": [
+        "Votre paiement est en cours de traitement."
       ]
     },
     "Payments.Error": {
@@ -10465,6 +10500,9 @@
       "Day theme": [
         "Thème jour"
       ],
+      "Decline invitation?": [
+        "Refuser l'invitation ?"
+      ],
       "Delete": [
         "Supprimer"
       ],
@@ -10916,9 +10954,6 @@
       ],
       "What would you like to import?": [
         "Que voulez-vous importer ?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Vous êtes sur le point de refuser l'invitation à l'élément partagé. Vous ne pourrez plus y accéder jusqu'à ce que le propriétaire le partage à nouveau avec vous."
       ],
       "You can now create unlimited folders and labels": [
         "Vous pouvez maintenant créer un nombre illimité de labels et de dossiers."

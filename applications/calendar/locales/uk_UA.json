@@ -405,7 +405,7 @@
         "Лишити поточний часовий пояс"
       ],
       "Keep my subscription": [
-        "Зберегти мою підписку"
+        "Зберегти передплату"
       ],
       "Later": [
         "Пізніше"
@@ -1424,10 +1424,10 @@
         "Повторно активуйте за допомогою ${ formattedEndDate }, щоб зберегти ці можливості:"
       ],
       "Reactivate subscription": [
-        "Відновити підписку"
+        "Відновити передплату"
       ],
       "Your subscription is ending soon": [
-        "Ваша підписка закінчується найближчим часом"
+        "Ваша передплата незабаром завершиться"
       ]
     },
     "Cancellation upsell": {
@@ -5084,7 +5084,7 @@
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
       "Registering your subscription…": [
-        "Реєстрація підписки…"
+        "Реєстрація передплати…"
       ],
       "Removed participants will be notified.": [
         "Вилучені учасники отримають сповіщення."
@@ -6809,7 +6809,7 @@
         "Всі базові ${ BRAND_NAME } послуги (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Всі преміумсервіси ${ BRAND_NAME }. Одна проста підписка"
+        "Всі преміальні сервіси ${ BRAND_NAME }. Одна передплата"
       ],
       "Auto-delete Spam and Trash": [
         "Автоматичне видалення спаму та смітника"
@@ -7988,9 +7988,6 @@
       "More plans are available in other currencies": [
         "Більше планів доступно в інших валютах"
       ],
-      "Payment Processing": [
-        "Обробка платежу"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Будь ласка, спочатку активуйте свою підписку, щоб зменшити кількість доповнень."
       ],
@@ -8011,9 +8008,6 @@
       ],
       "Timeout exceeded": [
         "Перевищено час очікування"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Ми обробляємо ваш платіж за виставленим рахунком. Будь ласка, дочекайтеся завершення платежу, перш ніж вносити зміни до вашого тарифного плану або оновлювати платіжні реквізити. Дякуємо за ваше терпіння."
       ]
     },
     "Payments.Error": {
@@ -9161,22 +9155,22 @@
         "${ planNumberOfCalendars } календарів на користувача"
       ],
       "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } власний поштовий домен",
-        "${ planNumberOfDomains } власні поштові домени",
-        "${ planNumberOfDomains } власних поштових доменів",
-        "${ planNumberOfDomains } власних поштових доменів"
+        "${ planNumberOfDomains } власний домен електронної пошти",
+        "${ planNumberOfDomains } власні домени електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти"
       ],
       "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } поштова адреса",
-        "${ planNumberOfEmails } поштові адреси",
-        "${ planNumberOfEmails } поштових адрес",
-        "${ planNumberOfEmails } поштових адрес"
+        "${ planNumberOfEmails } адреса електронної пошти",
+        "${ planNumberOfEmails } адреси електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти"
       ],
       "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } поштова адреса на користувача",
-        "${ planNumberOfEmails } поштові адреси на користувача",
-        "${ planNumberOfEmails } поштових адрес на користувача",
-        "${ planNumberOfEmails } поштових адрес на користувача"
+        "${ planNumberOfEmails } адреса електронної пошти на користувача",
+        "${ planNumberOfEmails } адреси електронної пошти на користувача",
+        "${ planNumberOfEmails } адрес електронної пошти на користувача",
+        "${ planNumberOfEmails } адрес електронної пошти на користувача"
       ],
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } користувач",
@@ -10432,10 +10426,10 @@
     },
     "vpn_2024: renew": {
       "Your new subscription will automatically renew in ${ cycle } month.": [
-        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяць.",
-        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяці.",
-        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяців.",
-        "Ваша нова підписка буде автоматично поновлена через ${ cycle } місяців."
+        "Ваша нова передплата автоматично поновиться через ${ cycle } місяць.",
+        "Ваша нова передплата автоматично поновиться через ${ cycle } місяці.",
+        "Ваша нова передплата автоматично поновиться через ${ cycle } місяців.",
+        "Ваша нова передплата автоматично поновиться через ${ cycle } місяців."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Ваша підписка буде автоматично поновлюватися через ${ cycle } місяць.",
@@ -10459,10 +10453,10 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } ${ BRAND_NAME } email address": [
-        "${ n } поштова адреса ${ BRAND_NAME }",
-        "${ n } поштові адреси ${ BRAND_NAME }",
-        "${ n } поштових адрес ${ BRAND_NAME }",
-        "${ n } поштових адрес ${ BRAND_NAME }"
+        "${ n } адреса електронної пошти ${ BRAND_NAME }",
+        "${ n } адреси електронної пошти ${ BRAND_NAME }",
+        "${ n } адрес електронної пошти ${ BRAND_NAME }",
+        "${ n } адрес електронної пошти ${ BRAND_NAME }"
       ],
       "${ n } account per wallet": [
         "${ n } обліковий запис на гаманець",

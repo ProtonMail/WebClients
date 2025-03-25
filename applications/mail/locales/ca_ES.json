@@ -1114,10 +1114,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1311,10 +1311,6 @@
       ],
       "Trust": [
         "De confiança"
-      ],
-      "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -6243,6 +6239,9 @@
       "Calendar side panel": [
         "Panell lateral del calendari"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendari integrat amb ${ MAIL_APP_NAME } i ${ CONTACTS_APP_NAME }"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "No podeu trobar el que esteu buscant? ${ displayAllMailButton }"
       ],
@@ -6281,6 +6280,9 @@
       ],
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Emmagatzematge al núvol integrat amb ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Confirmeu l'informe de phishing"
@@ -6473,6 +6475,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "El correu electrònic es reenvia a la vostra bústia de correu. La vostra adreça de correu electrònic resta amagada."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Servei de correu electrònic integrat amb ${ CALENDAR_APP_NAME } i ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "La protecció de rastrejador de correu electrònic està desactivada"
@@ -6684,8 +6689,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -6942,6 +6946,9 @@
       "password": [
         "contrasenya"
       ],
+      "Password manager with extra account security": [
+        "Gestor de contrasenyes amb seguretat addicional del compte"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
       ],
@@ -7073,9 +7080,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
       ],
-      "Refining email list in progress": [
-        "S'està refinant la llista de correus electrònics."
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
@@ -7154,6 +7158,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
+      ],
+      "Self-custodial crypto wallet": [
+        "Cartera de criptomonedes autogestionada"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Envieu un correu xifrat i protegit amb contrasenya a una adreça de correu de ${ boldText }."
@@ -7617,6 +7624,9 @@
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN amb adreces IP i servidors dedicats"
       ],
       "Warning": [
         "Advertència"
@@ -10464,9 +10474,6 @@
       "Save": [
         "Estalvieu"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Estalvieu el ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Estalvieu un 80% en el vostre primer mes."
       ],
@@ -10853,6 +10860,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
+      ],
       "Got it": [
         "Entesos"
       ],
@@ -10861,9 +10871,6 @@
       ],
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
-      ],
-      "Payment Processing": [
-        "Processament de pagaments"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
@@ -10914,8 +10921,8 @@
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estem tramitant el pagament de la factura. Espereu que el pagament s'hagi completat abans de fer canvis al pla o actualitzar les dades del pagament. Gràcies per la vostra paciència."
+      "Your payment is still being processed": [
+        "El vostre pagament encara s'està processant."
       ]
     },
     "Payments.Error": {
@@ -13821,6 +13828,11 @@
         "Avui"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
@@ -13902,11 +13914,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
     "Tor out of date": {

@@ -276,6 +276,9 @@
       "Decline": [
         "Rebutja"
       ],
+      "Decline invite": [
+        "Declina la invitació"
+      ],
       "Decrease": [
         "Redueix"
       ],
@@ -4440,6 +4443,9 @@
       "Calendar side panel": [
         "Panell lateral del calendari"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendari integrat amb ${ MAIL_APP_NAME } i ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Cancel·lat"
       ],
@@ -4481,6 +4487,9 @@
       ],
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Emmagatzematge al núvol integrat amb ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Conflicte"
@@ -4631,6 +4640,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Servei de correu electrònic integrat amb ${ CALENDAR_APP_NAME } i ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "Els correus se signen automàticament"
@@ -5040,6 +5052,9 @@
       "password": [
         "contrasenya"
       ],
+      "Password manager with extra account security": [
+        "Gestor de contrasenyes amb seguretat addicional del compte"
+      ],
       "Paused": [
         "Pausat"
       ],
@@ -5245,6 +5260,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
+      ],
+      "Self-custodial crypto wallet": [
+        "Cartera de criptomonedes autogestionada"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Els pagaments SEPA no estan disponibles en aquest moment. Torneu-ho a provar més tard."
@@ -5581,6 +5599,9 @@
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN amb adreces IP i servidors dedicats"
+      ],
       "Want to sync files faster?": [
         "Voleu sincronitzar fitxers més ràpidament?"
       ],
@@ -5763,6 +5784,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "A continuació, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
         "A continuació, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si continueu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Esteu a punt de rebutjar la invitació per unir-vos a la carpeta ${ invitationName }. Si continueu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Esteu a punt de rebutjar la invitació per unir-vos a l'element ${ invitationName }. Si continueu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
@@ -8074,6 +8104,14 @@
         "No s'ha pogut desxifrar ${ count } element.",
         "No s'han pogut desxifrar ${ count } elements."
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "No s'ha pogut afegir ${ nbFailures } foto a «${ albumName }».",
+        "No s'han pogut afegir ${ nbFailures } fotos a «${ albumName }»."
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "S'ha afegit ${ nbSuccesses } foto a «${ albumName }».",
+        "S'han afegit ${ nbSuccesses } fotos a «${ albumName }»."
+      ],
       "${ numberOfItems } item deleted": [
         "S'ha eliminat ${ numberOfItems } element",
         "S'han eliminat ${ numberOfItems } elements"
@@ -8358,9 +8396,6 @@
       ],
       "Save": [
         "Estalvieu"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Estalvieu el ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Estalvieu un 80% en el vostre primer mes."
@@ -8685,6 +8720,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
+      ],
       "Got it": [
         "Entesos"
       ],
@@ -8693,9 +8731,6 @@
       ],
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
-      ],
-      "Payment Processing": [
-        "Processament de pagaments"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
@@ -8746,8 +8781,8 @@
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estem tramitant el pagament de la factura. Espereu que el pagament s'hagi completat abans de fer canvis al pla o actualitzar les dades del pagament. Gràcies per la vostra paciència."
+      "Your payment is still being processed": [
+        "El vostre pagament encara s'està processant."
       ]
     },
     "Payments.Error": {
@@ -10465,6 +10500,9 @@
       "Day theme": [
         "Tema de dia"
       ],
+      "Decline invitation?": [
+        "Voleu rebutjar la invitació?"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -10916,9 +10954,6 @@
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Esteu a punt de rebutjar la invitació per a l'element compartit. No hi podreu tornar a accedir fins que el propietari el comparteixi amb vosaltres."
       ],
       "You can now create unlimited folders and labels": [
         "Ara podeu crear carpetes i etiquetes il·limitades."

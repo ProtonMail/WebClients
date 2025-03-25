@@ -456,7 +456,7 @@
         "移除访问权"
       ],
       "Remove all expired links (${ inactiveLinkCount })": [
-        "移除所有过期链接 ( ${ inactiveLinkCount } )"
+        "移除所有过期链接 (${ inactiveLinkCount })"
       ],
       "Remove link": [
         "移除链接"
@@ -471,7 +471,7 @@
         "重新发送验证码"
       ],
       "Resend code (in ${ remaining }s)": [
-        "重新发送代码 ( ${ remaining } 秒 )"
+        "重新发送代码 (${ remaining } 秒)"
       ],
       "Resend invitation": [
         "重新发送邀请"
@@ -713,13 +713,13 @@
         "如果使用 Cloudflare，请确保不要选择代理选项。"
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "${ PASS_SHORT_APP_NAME } 中某些自动功能 (自动填写、自动建议、自动保存) 不应运行的域列表。${ infoText }"
+        "${ PASS_SHORT_APP_NAME } 中某些自动功能（自动填写、自动建议、自动保存）不应运行的域列表。${ infoText }"
       ],
       "Some DNS registrar might require a full record path, in this case please use ${ domain } as domain value instead.": [
         "某些 DNS 注册商可能需要完整的记录路径，在这种情况下，请使用 ${ domain }  作为域值。"
       ],
       "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
-        "些域名注册商 ( Namecheap、Cloudflare 等 ) 可能使用 @ 作为根域名。"
+        "些域名注册商（Namecheap、Cloudflare 等）可能使用 @ 作为根域名。"
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } 是一种电子邮件验证方法，旨在检测电子邮件发送过程中伪造的发件人地址。强烈建议设置 SPF，以减少您的电子邮件被收件人放入垃圾邮件文件夹的几率。"
@@ -731,7 +731,7 @@
         "该服务提供 2FA。启用它可提高账户安全性。"
       ],
       "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
-        "要验证域名的所有权，请添加以下 TXT 记录。某些域名注册商 ( Namecheap、Cloudflare 等 ) 可能使用 @ 作为根域名。"
+        "要验证域名的所有权，请添加以下 TXT 记录。某些域名注册商（Namecheap、Cloudflare 等）可能使用 @ 作为根域名。"
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "解锁高级安全功能和详细日志，保护您的在线形象。"
@@ -1247,7 +1247,7 @@
         "${ PASS_APP_NAME } 将遵循您的系统主题。"
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
-        "${ PASS_APP_NAME } 将生成一个转发地址 ( 也称为反向别名 ) ，你可以将其复制到剪贴板。"
+        "${ PASS_APP_NAME } 将生成一个转发地址（也称为反向别名），你可以将其复制到剪贴板。"
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } 只能导入登录、笔记、信用卡和身份信息。"
@@ -1337,7 +1337,7 @@
         "回收站中的别名将继续转发电子邮件。如果您想停止接收该地址的邮件，请禁用它。"
       ],
       "Aliases out of sync (${ aliasCount })": [
-        "别名未同步 ( ${ aliasCount } )"
+        "别名未同步 (${ aliasCount })"
       ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
         "使用邮箱 ${ emailJSX } 的所有别名也将被删除。"
@@ -1397,7 +1397,7 @@
         "自带域名，无需再购买其他电子邮件托管解决方案。"
       ],
       "Built in 2FA authenticator": [
-        "内置 2FA 身份验证器"
+        "内置 2FA 验证器"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
         "通过添加域名，您可以创建别名，如 hi@my-domain.com。"
@@ -1466,7 +1466,7 @@
         "正在生成别名..."
       ],
       "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV 为查看数据提供了一种方便的格式。但由于其简单性，某些数据将不包括在内 ( 自定义字段、密码... ) 。如需完整导出，建议使用其他格式。"
+        "CSV 为查看数据提供了一种方便的格式。但由于其简单性，某些数据将不包括在内（自定义字段、密码等）。如需完整导出，建议使用其他格式。"
       ],
       "Current version": [
         "当前版本"
@@ -1928,7 +1928,7 @@
         "受我们的高等级账户保护计划 ${ PROTON_SENTINEL_LINK } 保护"
       ],
       "Quickly autofill your 2FA tokens.": [
-        "快速自动填充您的两步验证令牌。"
+        "快速自动填充您的 2FA 令牌。"
       ],
       "Quickly autofill your identities.": [
         "快速自动填充您的身份信息。"
@@ -2263,8 +2263,11 @@
       "You may close this tab.": [
         "您可以关闭此标签页。"
       ],
+      "You need a vault with edit permission before you can import items.": [
+        "在导入项目之前，您需要拥有一个具备编辑权限的加密库。"
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
-        "验证域名后，您就可以自定义域名设置 ( 通配邮箱别名、别名的默认显示名称等... ) 。"
+        "验证域名后，您就可以自定义域名设置（通配邮箱别名、别名的默认显示名称等）。"
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "您将被注销并需要在所有其他设备上重新登录。"
@@ -2374,7 +2377,7 @@
         "2FA 密钥 (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "2FA 密钥 (TOTP)"
+        "2FA 令牌 (TOTP)"
       ],
       "30 days": [
         "30 天"
@@ -2416,7 +2419,7 @@
         "别名地址"
       ],
       "Alias address (disabled)": [
-        "别名地址 ( 已禁用 )"
+        "别名地址 (已禁用)"
       ],
       "Aliases": [
         "別名"
@@ -2578,10 +2581,10 @@
         "邮箱"
       ],
       "Email (alias)": [
-        "电子邮件 ( 别名 )"
+        "电子邮件（别名）"
       ],
       "Email (new alias)": [
-        "电子邮件 ( 新别名 )"
+        "电子邮件 (新别名)"
       ],
       "Email aliases": [
         "个邮箱别名"
@@ -2779,7 +2782,7 @@
         "最近"
       ],
       "Name": [
-        "姓名"
+        "名称"
       ],
       "Name on card": [
         "持卡人姓名"
@@ -2866,7 +2869,7 @@
         "个人网站"
       ],
       "PGP-encrypted JSON (recommended)": [
-        "PGP 加密的 JSON ( 推荐 )"
+        "PGP 加密的 JSON (推荐)"
       ],
       "Phone number": [
         "电话号码"
@@ -3412,10 +3415,10 @@
     },
     "Theme": {
       "Automatic": [
-        "自动操作"
+        "跟随系统"
       ],
       "Dark": [
-        "暗色主题"
+        "深色主题"
       ],
       "Light": [
         "浅色主题"
@@ -3525,10 +3528,10 @@
         "放弃更改？"
       ],
       "DKIM (Optional)": [
-        "DKIM ( 可选 )"
+        "DKIM (可选)"
       ],
       "DMARC (Optional)": [
-        "DMARC ( 可选 )"
+        "DMARC (可选)"
       ],
       "Domain": [
         "域名"
@@ -3666,7 +3669,7 @@
         "固定扩展"
       ],
       "Pinned (${ items.length })": [
-        "已固定 ( ${ items.length } )"
+        "已固定 (${ items.length })"
       ],
       "Please note that once deleted, the alias can't be restored.": [
         "请注意，别名一旦删除就无法恢复。"
@@ -3714,7 +3717,7 @@
         "共享方式"
       ],
       "SPF (Optional)": [
-        "SPF ( 可选 )"
+        "SPF (可选)"
       ],
       "Status": [
         "状态"

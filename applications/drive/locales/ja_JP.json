@@ -273,6 +273,9 @@
       "Decline": [
         "拒否する"
       ],
+      "Decline invite": [
+        "招待を断る"
+      ],
       "Decrease": [
         "減少"
       ],
@@ -4357,6 +4360,9 @@
       "Calendar side panel": [
         "カレンダーサイドパネル"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ MAIL_APP_NAME }と${ CONTACTS_APP_NAME }が統合したカレンダー"
+      ],
       "Canceled": [
         "キャンセル"
       ],
@@ -4398,6 +4404,9 @@
       ],
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME }と統合したクラウドストレージ"
       ],
       "Conflict": [
         "競合"
@@ -4545,6 +4554,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "メール ホスティングはあなたがお持ちのドメインでのみ利用できます。ドメインの登録は現在、${ BRAND_NAME } 経由では取り扱っていません。ドメイン レジストラーからドメインを登録することでメールのホストが可能になります。"
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ CALENDAR_APP_NAME }と${ CONTACTS_APP_NAME }が統合したメールサービス"
       ],
       "Emails are automatically signed": [
         "メールは自動的に署名されます"
@@ -4951,6 +4963,9 @@
       "password": [
         "パスワード"
       ],
+      "Password manager with extra account security": [
+        "追加のアカウントセキュリティを備えたパスワードマネージャー"
+      ],
       "Paused": [
         "一時停止"
       ],
@@ -5154,6 +5169,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
+      ],
+      "Self-custodial crypto wallet": [
+        "自己管理型暗号通貨ウォレット"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPAでのお支払は現在一時的に利用できません。後で再試行してください。"
@@ -5484,6 +5502,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "専用サーバーとIPアドレス付きのVPN"
       ],
       "Want to sync files faster?": [
         "ファイルをより速く同期したいですか?"
@@ -8128,9 +8149,6 @@
       "Save": [
         "節約"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "${ prices.savedPercentage }%を節約"
-      ],
       "Save 80% on your first month.": [
         "最初の月は 80 %割引。"
       ],
@@ -8462,9 +8480,6 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
-      "Payment Processing": [
-        "支払い処理中"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
@@ -8485,9 +8500,6 @@
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "請求書の支払いを処理しています。プランの変更や支払い情報の更新を行う前に、支払いが完了するまでお待ちください。ご理解とご協力をありがとうございます。"
       ]
     },
     "Payments.Error": {
@@ -10599,9 +10611,6 @@
       ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "共有アイテムの招待を拒否しようとしています。拒否すると、所有者が再度共有するまでアクセスできなくなります。"
       ],
       "You can now create unlimited folders and labels": [
         "無制限のフォルダとラベルを作成できるようになりました"

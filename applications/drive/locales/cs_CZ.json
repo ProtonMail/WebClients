@@ -282,6 +282,9 @@
       "Decline": [
         "Odmítnout"
       ],
+      "Decline invite": [
+        "Odmítnout pozvánku"
+      ],
       "Decrease": [
         "Snížit"
       ],
@@ -4588,6 +4591,9 @@
       "Calendar side panel": [
         "Postranní panel kalendáře"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalendář integrovaný s ${ MAIL_APP_NAME } a ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Zrušeno"
       ],
@@ -4629,6 +4635,9 @@
       ],
       "Close this screen to exit.": [
         "Pro ukončení zavřete tuto obrazovku."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Cloudové úložiště integrované s ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Konflikt"
@@ -4785,6 +4794,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby ${ BRAND_NAME } k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-mailová služba integrovaná s ${ CALENDAR_APP_NAME } a ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
@@ -5200,6 +5212,9 @@
       "password": [
         "heslo"
       ],
+      "Password manager with extra account security": [
+        "Správce hesel s dodatečným zabezpečením účtu"
+      ],
       "Paused": [
         "Pozastaveno"
       ],
@@ -5409,6 +5424,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
+      ],
+      "Self-custodial crypto wallet": [
+        "Peněženka kryptoměny s vlastní úschovu"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Platby přes SEPA nejsou v tuto chvíli k dispozici. Zkuste to znovu později."
@@ -5749,6 +5767,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN s dedikovanými servery a IP adresami"
+      ],
       "Want to sync files faster?": [
         "Chcete synchronizovat soubory rychleji?"
       ],
@@ -5943,6 +5964,15 @@
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }.",
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Chystáte se odmítnout pozvánku k připojení do alba ${ invitationName }. Pokud budete pokračovat, nebudete k němu mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Chystáte se odmítnout pozvánku k připojení do složky ${ invitationName }. Pokud budete pokračovat, nebudete k ní mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Chystáte se odmítnout pozvánku k připojení k položce ${ invitationName }. Pokud budete pokračovat, nebudete k ní mít přístup, dokud vás vlastník znovu nepozve. Jste si jisti, že chcete pokračovat?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Dosáhli jste maximálního počtu adres ve skupině (skupinách) kontaktů:"
@@ -8271,6 +8301,18 @@
         "${ count } položek se nepodařilo dešifrovat",
         "${ count } položek se nepodařilo dešifrovat"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "${ nbFailures } fotku se nepodařilo přidat do \"${ albumName }\"",
+        "${ nbFailures } fotky se nepodařilo přidat do \"${ albumName }\"",
+        "${ nbFailures } fotek se nepodařilo přidat do \"${ albumName }\"",
+        "${ nbFailures } fotek se nepodařilo přidat do \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } fotka přidána do \"${ albumName }\"",
+        "${ nbSuccesses } fotky přidány do \"${ albumName }\"",
+        "${ nbSuccesses } fotek přidáno do \"${ albumName }\"",
+        "${ nbSuccesses } fotek přidáno do \"${ albumName }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka smazána",
         "${ numberOfItems } položky smazány",
@@ -8589,9 +8631,6 @@
       ],
       "Save": [
         "Ušetřete"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Ušetřete ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Ušetřete 80 % za první měsíc."
@@ -8918,6 +8957,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -8926,9 +8968,6 @@
       ],
       "More plans are available in other currencies": [
         "Další tarify jsou k dispozici v jiných měnách"
-      ],
-      "Payment Processing": [
-        "Zpracování platby"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
@@ -8987,8 +9026,8 @@
       "Timeout exceeded": [
         "Byl překročen časový limit"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Zpracováváme vaši platbu za vyúčtovanou fakturu. Před provedením změn v tarifu nebo aktualizací platebních údajů vyčkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
+      "Your payment is still being processed": [
+        "Vaše platba se stále zpracovává"
       ]
     },
     "Payments.Error": {
@@ -10804,6 +10843,9 @@
       "Day theme": [
         "Denní motiv"
       ],
+      "Decline invitation?": [
+        "Odmítnout pozvánku?"
+      ],
       "Delete": [
         "Smazat"
       ],
@@ -11265,9 +11307,6 @@
       ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Chystáte se odmítnout pozvánku ke sdílené položce. Nebudete k ní mít přístup, dokud ho s vámi nebude vlastník znovu sdílet."
       ],
       "You can now create unlimited folders and labels": [
         "Nyní můžete vytvořit neomezený počet složek a štítků"

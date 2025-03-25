@@ -217,6 +217,9 @@
       "Decline": [
         "Negar"
       ],
+      "Decline invite": [
+        "Recusar convite"
+      ],
       "Decrease": [
         "Diminuir"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "Obter código de verificação"
+      ],
+      "Go back": [
+        "Voltar"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Vá para ${ DRIVE_SHORT_APP_NAME }"
@@ -422,9 +428,6 @@
       ],
       "Move to trash": [
         "Mover para a lixeira"
-      ],
-      "New": [
-        "Novo"
       ],
       "New document": [
         "Novo documento"
@@ -573,7 +576,7 @@
       "Search countries": [
         "Pesquisar países"
       ],
-      "Search docs": [
+      "Search documents": [
         "Pesquisar documentos"
       ],
       "See how": [
@@ -3937,9 +3940,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Você tem certeza de que deseja excluir permanentemente os itens selecionados da lixeira?"
       ],
-      "Are you sure you want to proceed?": [
-        "Tem certeza de que deseja continuar?"
-      ],
       "Attention required": [
         "Atenção necessária"
       ],
@@ -4676,17 +4676,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Esta ação excluirá permanentemente o arquivo que você enviou."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Esta ação excluirá permanentemente a pasta que você enviou. Você não pode excluir uma pasta que contenha um arquivo não pertencente a você."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Essa ação excluirá o link e revogará o acesso para todos os usuários."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Esta ação excluirá permanentemente os itens selecionados."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -4717,6 +4708,15 @@
       ],
       "This message will be presented again later": [
         "Esta mensagem será mostrada novamente mais tarde"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Isso excluirá permanentemente o arquivo que você enviou."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Isso excluirá permanentemente a pasta que você enviou."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Isso excluirá permanentemente os itens selecionados que você enviou."
       ],
       "This will replace the existing file with the folder": [
         "Isso substituirá o arquivo existente pela pasta"
@@ -4960,6 +4960,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }.",
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Você está prestes a recusar o convite para participar do álbum ${ invitationName }. Se você prosseguir, não poderá acessá-lo a menos que o proprietário o convide novamente. Tem certeza de que deseja continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Você está prestes a recusar o convite para participar da pasta ${ invitationName }. Se você prosseguir, não poderá acessá-la a menos que o proprietário o convide novamente. Tem certeza de que deseja continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Você está prestes a recusar o convite para participar do item ${ invitationName }. Se você prosseguir, não poderá acessá-lo a menos que o proprietário o convide novamente. Tem certeza de que deseja continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Você alcançou o número máximo de endereços no grupo ou grupo de contatos"
@@ -5428,6 +5437,9 @@
       "Move to Inbox": [
         "Mover para Caixa de Entrada"
       ],
+      "My files": [
+        "Meus arquivos"
+      ],
       "Navigation": [
         "Navegação"
       ],
@@ -5511,6 +5523,9 @@
       ],
       "Set link password": [
         "Definir senha do link"
+      ],
+      "Shared with me": [
+        "Compartilhado comigo"
       ],
       "Sign emails": [
         "Assinar e-mails"
@@ -7215,6 +7230,10 @@
       "Share invitation declined": [
         "Convite para compartilhamento recusado"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Não foi possível excluir a pasta porque ela não está vazia.",
+        "Não foi possível excluir as pastas porque elas não estão vazias."
+      ],
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
       ],
@@ -7299,9 +7318,6 @@
       ],
       "Save": [
         "Economize"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Economize ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Economize 80% no seu primeiro mês"
@@ -7482,6 +7498,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -7490,9 +7509,6 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
-      ],
-      "Payment Processing": [
-        "Processando pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -7543,8 +7559,8 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
+      "Your payment is still being processed": [
+        "Seu pagamento ainda está sendo processado"
       ]
     },
     "Payments.Error": {
@@ -7760,6 +7776,23 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "E-mail oficial da ${ BRAND_NAME }"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "Criado por"
+      ],
+      "Location": [
+        "Localização"
+      ],
+      "Modified": [
+        "Modificado"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Viewed": [
+        "Visualizado"
       ]
     },
     "Safety review": {
@@ -8894,6 +8927,9 @@
       "Day theme": [
         "Tema diurno"
       ],
+      "Decline invitation?": [
+        "Recusar convite?"
+      ],
       "Delete": [
         "Excluir"
       ],
@@ -8905,11 +8941,11 @@
         "Excluir ${ count } grupo de contatos",
         "Excluir ${ count } grupos de contatos"
       ],
-      "Delete ${ item.name }?": [
-        "Excluir ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Excluir ${ links.length } itens?"
+      ],
+      "Delete ${ name }?": [
+        "Excluir ${ name }?"
       ],
       "Delete ${ value }": [
         "Excluir ${ value }"
@@ -9235,9 +9271,6 @@
       ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Você está prestes a recusar o convite para o item compartilhado. Você não poderá acessá-lo novamente até que o proprietário o compartilhe com você."
       ],
       "You can now create unlimited folders and labels": [
         "Agora você pode criar pastas e etiquetas ilimitadas."

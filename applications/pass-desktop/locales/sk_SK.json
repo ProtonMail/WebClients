@@ -2273,6 +2273,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "Táto operácia je nezvratná. Všetky aliasy používajúce doménu ${ domainTextBold } budú vymazané. Upozorňujeme, že po odstránení nebude možné aliasy obnoviť."
       ],
+      "This option is currently not available on your browser.": [
+        "Táto možnosť nie je vo vašom prehliadači momentálne k dispozícii."
+      ],
       "This option is currently not available on your device.": [
         "Táto možnosť nie je vo vašom zariadení momentálne k dispozícii."
       ],
@@ -2434,6 +2437,9 @@
       ],
       "You may close this tab.": [
         "Túto kartu môžete zatvoriť."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Pred importom položiek potrebujete trezor s oprávnením na úpravu."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Po overení domény si budete môcť prispôsobiť nastavenia domény (aliasy doménových košov, predvolené zobrazované meno pre aliasy atď.)."
@@ -4204,6 +4210,9 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Aký je rozdiel medzi poznámkou v ${ PASS_SHORT_APP_NAME } a poznámkou v SimpleLogin?"
+      ],
+      "You don't have any vaults": [
+        "Nemáte žiadne trezory"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Vaše predplatné ${ planName } skončí dňa ${ endDate }"

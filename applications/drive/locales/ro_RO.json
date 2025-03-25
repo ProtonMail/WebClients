@@ -279,6 +279,9 @@
       "Decline": [
         "Refuzare"
       ],
+      "Decline invite": [
+        "Refuzare invitație"
+      ],
       "Decrease": [
         "Reducere"
       ],
@@ -4514,6 +4517,9 @@
       "Calendar side panel": [
         "Panou lateral calendar"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendar, integrat cu ${ MAIL_APP_NAME } și ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Anulat"
       ],
@@ -4555,6 +4561,9 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Stocare în cloud, integrată cu ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Conflict"
@@ -4708,6 +4717,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Serviciu de e-mail, integrat cu ${ CALENDAR_APP_NAME } și ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
@@ -5120,6 +5132,9 @@
       "password": [
         "parola"
       ],
+      "Password manager with extra account security": [
+        "Manager de parole cu securitate suplimentară a contului"
+      ],
       "Paused": [
         "Suspendat"
       ],
@@ -5327,6 +5342,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
+      ],
+      "Self-custodial crypto wallet": [
+        "Portofel cripto în custodie proprie"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
@@ -5665,6 +5683,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN cu servere și adrese IP dedicate"
+      ],
       "Want to sync files faster?": [
         "Doriți să sincronizați mai rapid fișierele?"
       ],
@@ -5853,6 +5874,15 @@
         "Plata va fi apoi la ${ renewCycle } lună cu ${ renewAmountStr }.",
         "Plata va fi apoi la ${ renewCycle } luni cu ${ renewAmountStr }.",
         "Plata va fi apoi la ${ renewCycle } de luni cu ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Sunteți pe cale să refuzați invitația de a vă alătura albumului ${ invitationName }. Dacă continuați, nu îl veți putea accesa decât dacă proprietarul vă invită din nou. Sigur doriți să continuați?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Sunteți pe cale să refuzați invitația de a vă alătura folderului ${ invitationName }. Dacă continuați, nu îl veți putea accesa decât dacă proprietarul vă invită din nou. Sigur doriți să continuați?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Sunteți pe cale să refuzați invitația de a vă alătura articolului ${ invitationName }. Dacă continuați, nu îl veți putea accesa decât dacă proprietarul vă invită din nou. Sigur doriți să continuați?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Ați atins numărul maxim de adrese din grupul de contacte:"
@@ -8443,9 +8473,6 @@
       "Save": [
         "Economisiți"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Economisiți ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Economisiți 80% în prima lună."
       ],
@@ -8770,6 +8797,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -8778,9 +8808,6 @@
       ],
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
-      ],
-      "Payment Processing": [
-        "Se procesează plata"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
@@ -8835,8 +8862,8 @@
       "Timeout exceeded": [
         "Limită de timp depășită"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Se procesează plata pentru factura emisă. Așteptați până când plata este finalizată înainte de a face modificări planului sau de a actualiza detaliile de plată. Vă mulțumim pentru răbdare."
+      "Your payment is still being processed": [
+        "Plata este încă în curs de procesare."
       ]
     },
     "Payments.Error": {
@@ -10603,6 +10630,9 @@
       "Day theme": [
         "Temă zi"
       ],
+      "Decline invitation?": [
+        "Refuzați invitația?"
+      ],
       "Delete": [
         "Ștergere"
       ],
@@ -11059,9 +11089,6 @@
       ],
       "What would you like to import?": [
         "Ce ați dori să importați?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Sunteți pe cale să refuzați invitația la articolul partajat. Nu îl veți mai putea accesa până când proprietarul nu vi-l va mai partaja."
       ],
       "You can now create unlimited folders and labels": [
         "Acum puteți crea foldere și fișiere nelimitate"

@@ -216,6 +216,9 @@
       "Decline": [
         "Отклонить"
       ],
+      "Decline invite": [
+        "Отклонить приглашение"
+      ],
       "Decrease": [
         "Уменьшить"
       ],
@@ -318,6 +321,9 @@
       "Get verification code": [
         "Получить проверочный код"
       ],
+      "Go back": [
+        "Назад"
+      ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Перейдите в ${ DRIVE_SHORT_APP_NAME }"
       ],
@@ -416,9 +422,6 @@
       ],
       "Move to trash": [
         "Переместить в Корзину"
-      ],
-      "New": [
-        "Новая"
       ],
       "New document": [
         "Новый документ"
@@ -566,9 +569,6 @@
       ],
       "Search countries": [
         "Поиск стран"
-      ],
-      "Search docs": [
-        "Поиск документов"
       ],
       "See how": [
         "Посмотреть, как"
@@ -3991,9 +3991,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?"
       ],
-      "Are you sure you want to proceed?": [
-        "Вы уверены, что хотите продолжить?"
-      ],
       "Attention required": [
         "Требуется внимание"
       ],
@@ -4705,17 +4702,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Загруженный файл будет удалён навсегда"
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Загруженная папка будет удалена навсегда. Вы не можете удалить папку с файлом, не принадлежащим вам."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Это действие удалит ссылку и отменит доступ для всех пользователей."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Выбранные элементы будут удалены навсегда"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы была возможность отправки на него, владелец адреса должен его включить."
@@ -4743,6 +4731,15 @@
       ],
       "This message will be presented again later": [
         "Это сообщение будет представлено снова позже"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Это навсегда удалит загруженный вами файл"
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Это навсегда удалит загруженную вами папку"
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Это навсегда удалит загруженные вами выбранные элементы"
       ],
       "This will replace the existing file with the folder": [
         "Это заменит существующий файл на папку"
@@ -5518,6 +5515,9 @@
       ],
       "Set link password": [
         "Установка пароля ссылки"
+      ],
+      "Shared with me": [
+        "В общем доступе со мной"
       ],
       "Sign emails": [
         "Подписать письма"
@@ -7228,6 +7228,12 @@
       "Share invitation declined": [
         "Приглашение поделиться отклонено"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "К сожалению, мы не можем удалить папку, потому что она не пуста.",
+        "К сожалению, мы не можем удалить папки, потому что они не пусты.",
+        "К сожалению, мы не можем удалить папки, потому что они не пусты.",
+        "К сожалению, мы не можем удалить папки, потому что они не пусты."
+      ],
       "The document failed to be created": [
         "Не удалось создать документ"
       ],
@@ -7309,9 +7315,6 @@
       ],
       "Save": [
         "Сохранить"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Сэкономьте ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Сэкономьте 80% в первый месяц."
@@ -7491,9 +7494,6 @@
       "More plans are available in other currencies": [
         "Другие тарифы доступны в других валютах"
       ],
-      "Payment Processing": [
-        "Обработка платежа"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
@@ -7514,9 +7514,6 @@
       ],
       "Timeout exceeded": [
         "Превышено время ожидания"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Мы обрабатываем ваш платеж по выставленному счету. Дождитесь завершения оплаты, прежде чем вносить изменения в ваш тариф или обновлять платежные реквизиты. Благодарим вас за терпение."
       ]
     },
     "Payments.Error": {
@@ -8952,11 +8949,11 @@
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } группы контактов"
       ],
-      "Delete ${ item.name }?": [
-        "Удалить ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Удалить ${ links.length } объектов?"
+      ],
+      "Delete ${ name }?": [
+        "Удалить ${ name }?"
       ],
       "Delete ${ value }": [
         "Удалить ${ value }"
@@ -9275,9 +9272,6 @@
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Вы собираетесь отклонить приглашение для элемента, находящегося в общем доступе. Вы не сможете получить к нему доступ до тех пор, пока владелец не поделится им с вами."
       ],
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."

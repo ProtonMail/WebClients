@@ -1114,10 +1114,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -1313,8 +1313,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -6243,6 +6242,9 @@
       "Calendar side panel": [
         "Takvim yan panosu"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ MAIL_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan takvim"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Aradığınızı bulamadınız mı? ${ displayAllMailButton }"
       ],
@@ -6281,6 +6283,9 @@
       ],
       "Close this screen to exit.": [
         "Çıkmak için bu ekranı kapatın."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "${ DOCS_APP_NAME } ile birlikte çalışan bulut depolama alanı"
       ],
       "Confirm phishing report": [
         "Kimlik avı girişimi bildirimini onayla"
@@ -6473,6 +6478,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "E-posta, posta kutunuza iletilir. Asıl e-posta adresiniz gizli kalır."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan e-posta hizmeti"
       ],
       "Email tracker protection is disabled": [
         "E-posta izleme koruması kapalı"
@@ -6684,8 +6692,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -6942,6 +6949,9 @@
       "password": [
         "parola"
       ],
+      "Password manager with extra account security": [
+        "Ek hesap güvenliği ile parola yöneticisi"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
@@ -7073,9 +7083,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
-      "Refining email list in progress": [
-        "E-posta listesi düzenleniyor"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
@@ -7154,6 +7161,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
+      ],
+      "Self-custodial crypto wallet": [
+        "Kendinden korumalı kripto cüzdanı"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "${ boldText } e-posta adresine şifrelenmiş ve parola ile korunan bir ileti gönderin."
@@ -7618,6 +7628,9 @@
       "Visa Secure logo": [
         "Visa Secure logosu"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "Size ayrılmış sunucular ve IP adresleri ile VPN"
+      ],
       "Warning": [
         "Uyarı"
       ],
@@ -7858,8 +7871,8 @@
         "“${ attachmentsFoundKeyword }” yazdınız ama bir dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Daha sonra her ${ renewCycle } ayda bir ${ renewAmountStr } tutarında faturalandırılacaksınız.",
-        "Daha sonra her ${ renewCycle } ayda bir ${ renewAmountStr } tutarında faturalandırılacaksınız."
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Kişi gruplarında bulunabilecek en fazla adres sayısına ulaştınız:"
@@ -7938,14 +7951,14 @@
         "Kişisel yazma yardımcınız"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Planlanmış tarifeniz ${ renewalTime } tarihinde başlar ve her ${ cycle } ayda bir otomatik olarak yenilenir.",
-        "Planlanmış tarifeniz ${ renewalTime } tarihinde başlar ve her ${ cycle } ayda bir otomatik olarak yenilenir."
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek.",
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecektir."
+        "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
       ]
     },
     "info": {
@@ -8791,12 +8804,12 @@
     },
     "Label (begin date/advanced search)": {
       "From": [
-        "Kimden"
+        "Başlangıç"
       ]
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Kime"
+        "Son"
       ]
     },
     "Label attach to date input to select a date": {
@@ -10461,9 +10474,6 @@
       "Save": [
         "İndirim"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "%${ prices.savedPercentage } indirim"
-      ],
       "Save 80% on your first month.": [
         "İlk ayınızda % 80 indirim kazanın."
       ],
@@ -10844,6 +10854,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -10852,9 +10865,6 @@
       ],
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
-      ],
-      "Payment Processing": [
-        "Ödeme işleniyor"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
@@ -10872,41 +10882,41 @@
         "Lütfen önce faturanın kesileceği ili seçin."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
-        "Yenileme fiyatlandırması ${ termsAndConditionsLink } koşullarına göre değişebilir."
+        "Yenileme fiyatları ${ termsAndConditionsLink } metnine göre değişebilir."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
-        "${ renewPriceStr } üzerinden yenilenir, istediğiniz zaman iptal edin."
+        "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
       ],
       "terms & conditions": [
-        "şartlar & koşullar"
+        "hükümler ve koşullar"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon ${ couponRedemptions } yenileme için geçerlidir.",
         "Kupon ${ couponRedemptions } yenileme için geçerlidir."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Özel olarak indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
-        "Özel olarak indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
+        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
+        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, ${ renewPriceStr } fiyatıyla 1 ay boyunca otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
-        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, ${ renewPriceStr } fiyatıyla 1 ay boyunca otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
+        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } fiyatıyla otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
+        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } fiyatıyla otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Daha sonra her ay otomatik olarak ${ renewPriceStr } üzerinden yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
-        "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
+        "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Faturanızın ödemesini işliyoruz. Tarifenizde değişiklik yapmadan veya ödeme bilgilerinizi güncellemeden önce lütfen ödeme işleminin tamamlanmasını bekleyin. Sabrınız için teşekkür ederiz."
+      "Your payment is still being processed": [
+        "Ödeme işleminiz sürüyor"
       ]
     },
     "Payments.Error": {
@@ -13812,6 +13822,11 @@
         "Bugün"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
@@ -13895,11 +13910,6 @@
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
@@ -13973,7 +13983,7 @@
     },
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPriceStr }.": [
-        "Daha sonra her 12 ayda bir ${ renewPriceStr } üzerinden faturalandırılacaksınız."
+        "Ardından her 12 ayda bir ${ renewPriceStr } ödeyeceksiniz."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
