@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -309,7 +309,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
         });
     };
 
-    const getIsShareUrlEnabled = () => {
+    const getIsShareUrlEnabled = useMemo(() => {
         if (!!link?.albumProperties) {
             return false;
         }
@@ -317,7 +317,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
             return isDocsPublicSharingEnabled;
         }
         return true;
-    };
+    }, [link, isDocsPublicSharingEnabled]);
 
     const loadingMessage =
         isLinkLoading || isShareUrlLoading
@@ -335,7 +335,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
         isDeleting,
         isSaving,
         name: link?.name || '', // If the link is not loaded we will return an error message anyway
-        isShareUrlEnabled: getIsShareUrlEnabled(),
+        isShareUrlEnabled: getIsShareUrlEnabled,
         initialExpiration,
         customPassword,
         sharedLink,
