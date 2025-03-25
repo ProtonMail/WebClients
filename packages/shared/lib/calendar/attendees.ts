@@ -88,7 +88,7 @@ export const toInternalAttendee = (
     { attendee: attendees = [] }: Pick<VcalVeventComponent, 'attendee'>,
     clear: Attendee[] = [],
     sharedSessionKey: SessionKey | undefined,
-    eventID: string,
+    sharedEventID: string,
     getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>
 ): Promise<VcalAttendeeProperty>[] => {
     return attendees.map(async (attendee) => {
@@ -127,7 +127,7 @@ export const toInternalAttendee = (
                     ? {
                           verificationKeys: publicKey.verifyingKeys,
                           signatureContext: {
-                              value: getSignatureContext('calendar.rsvp.comment', eventID),
+                              value: getSignatureContext('calendar.rsvp.comment', sharedEventID),
                               required: true,
                           },
                       }
@@ -158,6 +158,7 @@ export const toInternalAttendee = (
             if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 console.log(attendeeEmail, 'note SIGNED and INVALID', decryptedMessageResult.data, {
                     hasFetchedAttendeeVeficationKey: !!publicKey?.verifyingKeys?.length,
+                    error: decryptedMessageResult.verificationErrors,
                 });
             }
 

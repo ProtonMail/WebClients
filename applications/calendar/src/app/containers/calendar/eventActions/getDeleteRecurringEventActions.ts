@@ -105,7 +105,6 @@ export const getDeleteRecurringEventActions = async ({
                 silence: true,
                 getAddressKeys,
                 getCalendarKeys,
-                addressID: originalAddressID,
             });
 
             if (updatePartstatOperation) {
@@ -241,7 +240,6 @@ export const getDeleteRecurringEventActions = async ({
                 timestamp,
                 inviteActions: updatedInviteActions,
                 silence: true,
-                addressID: originalAddressID,
                 getAddressKeys,
                 getCalendarKeys,
             });
