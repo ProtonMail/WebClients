@@ -2159,7 +2159,7 @@
         "Bu işlem geri alınamaz. ${ domainTextBold } etki alanını kullanan tüm takma adlar silinecek. Lütfen takma adların silindikten sonrageri yüklenemeyeceğini unutmayın."
       ],
       "This option is currently not available on your browser.": [
-        "Bu seçenek şu anda tarayıcınızda mevcut değil."
+        "Bu seçenek şu anda tarayıcınızda kullanılamıyor."
       ],
       "This option is currently not available on your device.": [
         "Bu seçenek şu anda aygıtınızda kullanılamıyor."
@@ -2317,6 +2317,9 @@
       ],
       "You may close this tab.": [
         "Bu sekmeyi kapatabilirsiniz."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "Ögeleri içe aktarabilmeniz için düzenleme izniniz olan bir kasanız olmalıdır."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Etki alanınızı doğruladıktan sonra etki alanı ayarlarınızı (tümünü toplama e-posta takma adları, takma adlar için varsayılan görüntülenecek ad vb.) özelleştirebileceksiniz."
@@ -3942,7 +3945,7 @@
         "${ PASS_SHORT_APP_NAME } notu ile SimpleLogin notu arasındaki fark nedir?"
       ],
       "You don't have any vaults": [
-        "Hiç kasanız yok."
+        "Henüz bir kasanız yok"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName } aboneliğiniz ${ endDate } tarihinde sona erecek"
