@@ -28,6 +28,10 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
     }
   }, [position?.left, position?.top])
 
+  if (!currentDocument) {
+    return null
+  }
+
   return (
     <>
       <ContextMenu
@@ -37,8 +41,8 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
         size={{ maxHeight: DropdownSizeUnit.Viewport, maxWidth: DropdownSizeUnit.Viewport }}
         anchorRef={anchorRef}
       >
-        {currentDocument ? <OpenButton currentDocument={currentDocument} close={close} /> : null}
-        {currentDocument?.parentLinkId ? <OpenFolder currentDocument={currentDocument} close={close} /> : null}
+        <OpenButton currentDocument={currentDocument} close={close} />
+        <OpenFolder currentDocument={currentDocument} close={close} />
       </ContextMenu>
     </>
   )

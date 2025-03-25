@@ -140,6 +140,8 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
       shareId: apiItem.ContextShareID,
     }
     const lastViewed = new ServerTime(apiItem.LastOpenTime)
+    // TODO: obtain last modified time
+    const lastModified = new ServerTime(apiItem.LastOpenTime)
 
     try {
       const [node, nodePath, isNodeShared] = await Promise.all([
@@ -164,6 +166,7 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
         parentLinkId: node.parentNodeId,
         volumeId: node.volumeId,
         lastViewed,
+        lastModified,
         createdBy: node.signatureAddress,
         location,
         isSharedWithMe: isNodeShared,
@@ -206,6 +209,7 @@ export type RecentDocumentsItemValue = {
   parentLinkId: string | undefined
   volumeId: string
   lastViewed: ServerTime
+  lastModified: ServerTime
   createdBy: string | undefined
   location: RecentDocumentsItemLocation
   isSharedWithMe: boolean
@@ -219,6 +223,7 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
   parentLinkId: string | undefined
   volumeId: string
   lastViewed: ServerTime
+  lastModified: ServerTime
   createdBy: string | undefined
   location: RecentDocumentsItemLocation
   isSharedWithMe: boolean
@@ -231,6 +236,7 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
     this.parentLinkId = value.parentLinkId
     this.volumeId = value.volumeId
     this.lastViewed = value.lastViewed
+    this.lastModified = value.lastModified
     this.createdBy = value.createdBy
     this.location = value.location
     this.isSharedWithMe = value.isSharedWithMe
@@ -245,6 +251,7 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
     return {
       ...this.#value,
       lastViewed: this.lastViewed.date.getTime(),
+      lastModified: this.lastModified.date.getTime(),
     }
   }
 
@@ -252,6 +259,7 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
     return new RecentDocumentsItem({
       ...data,
       lastViewed: new ServerTime(data.lastViewed as number),
+      lastModified: new ServerTime(data.lastModified as number),
     } as RecentDocumentsItemValue)
   }
 
