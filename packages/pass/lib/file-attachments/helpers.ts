@@ -4,7 +4,7 @@ import type {
     FileAttachmentValues,
     FileDescriptor,
     ItemFileOutput,
-    ItemLatestKeyResponse,
+    ItemKey,
     Maybe,
     MaybeNull,
 } from '@proton/pass/types';
@@ -39,18 +39,8 @@ const openFileDescriptors =
     async (files: ItemFileOutput[]): Promise<FileDescriptor[]> =>
         (await Promise.all(files.map(intoFileDescriptor(decryptMetadata)))).filter(truthy);
 
-export const intoFileDescriptors = async (
-    files: ItemFileOutput[],
-    shareId: string,
-    latestItemKey: ItemLatestKeyResponse
-) =>
-    openFileDescriptors((file) =>
-        PassCrypto.openFileDescriptor({
-            file,
-            shareId,
-            latestItemKey,
-        })
-    )(files);
+export const intoFileDescriptors = async (files: ItemFileOutput[], itemKey: ItemKey) =>
+    openFileDescriptors((file) => PassCrypto.openFileDescriptor({ file, itemKey }))(files);
 
 export const intoPublicFileDescriptors = async (files: ItemFileOutput[], itemKey: string, linkKey: string) =>
     openFileDescriptors((file) =>

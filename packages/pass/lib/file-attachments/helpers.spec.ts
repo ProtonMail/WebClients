@@ -1,5 +1,5 @@
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
-import type { ItemFileOutput, ItemLatestKeyResponse } from '@proton/pass/types';
+import type { ItemFileOutput, ItemKey } from '@proton/pass/types';
 
 import { filesFormInitializer, intoFileDescriptors, reconcileFilename } from './helpers';
 
@@ -52,7 +52,7 @@ describe('intoFileDescriptors', () => {
 
         openFileDescriptor.mockImplementation(async ({ file }) => new Uint8Array([parseInt(file.FileID, 10)]));
 
-        const result = await intoFileDescriptors(files, 'testShareID', {} as ItemLatestKeyResponse);
+        const result = await intoFileDescriptors(files, {} as ItemKey);
 
         expect(openFileDescriptor).toHaveBeenCalledTimes(2);
 
