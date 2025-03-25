@@ -5,7 +5,7 @@ import {
     getImportedVaultName,
     importLoginItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { msToEpoch } from '@proton/pass/utils/time/epoch';
@@ -20,11 +20,12 @@ const FIREFOX_EXPECTED_HEADERS: (keyof FirefoxItem)[] = [
     'timePasswordChanged',
 ];
 
-export const readFirefoxData = async ({ data }: { data: string }): Promise<ImportPayload> => {
+export const readFirefoxData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
     try {
+        const data = await file.text();
         const result = await readCSV<FirefoxItem>({
             data,
             headers: FIREFOX_EXPECTED_HEADERS,

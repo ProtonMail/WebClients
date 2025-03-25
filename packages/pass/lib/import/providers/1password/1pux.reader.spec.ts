@@ -9,24 +9,23 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { read1Password1PuxData } from './1pux.reader';
 
 describe('Import 1password 1pux', () => {
-    let sourceData: Buffer;
     let payload: ImportPayload;
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/1password.1pux');
-        payload = await read1Password1PuxData({ data: sourceData.buffer as ArrayBuffer });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/1password.1pux');
+        const file = new File([sourceData], '1password.1pux');
+        payload = await read1Password1PuxData(file);
         payload.vaults = payload.vaults.slice(1); // Remove "Personal" empty vault
     });
 
     test('should throw on invalid file content', async () => {
-        await expect(read1Password1PuxData({ data: new ArrayBuffer(1) })).rejects.toThrow();
+        await expect(read1Password1PuxData(new File([], 'corrupted'))).rejects.toThrow();
     });
 
     test('result should contain the correct number of vaults', () => {
         const [main, secondary, shared] = payload.vaults;
 
         expect(payload.vaults.length).toEqual(3);
-
         expect(main.name).toEqual('Private');
         expect(secondary.name).toEqual('SecondaryVault');
         expect(shared.name).toEqual('Shared');
@@ -34,8 +33,7 @@ describe('Import 1password 1pux', () => {
 
     test('should parse `private` vault items correctly', () => {
         const [main] = payload.vaults;
-
-        expect(main.items.length).toEqual(11);
+        expect(main.items.length).toEqual(12);
 
         /* Note item */
         const noteItemName = 'Note item';

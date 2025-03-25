@@ -10,8 +10,9 @@ describe('Import Kaspersky TXT', () => {
     let payload: ImportPayload;
 
     beforeAll(async () => {
-        const sourceData = await fs.promises.readFile(__dirname + '/mocks/kaspersky.txt', 'utf8');
-        payload = readKasperskyData({ data: sourceData });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/kaspersky.txt');
+        const file = new File([sourceData], 'kaspersky.txt');
+        payload = await readKasperskyData(file);
     });
 
     it('should correctly parse items', async () => {

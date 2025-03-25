@@ -10,7 +10,7 @@ import {
     importLoginItem,
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -57,11 +57,12 @@ const processCreditCardItem = (item: NordPassItem): ItemImportIntent<'creditCard
     });
 };
 
-export const readNordPassData = async ({ data }: { data: string }): Promise<ImportPayload> => {
+export const readNordPassData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
     try {
+        const data = await file.text();
         const result = await readCSV<NordPassItem>({
             data,
             headers: NORDPASS_EXPECTED_HEADERS,
