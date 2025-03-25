@@ -5,7 +5,7 @@ import type { ExifTags, ExpandedTags } from 'exifreader';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { encodeBase64 } from '@proton/crypto/lib/utils';
-import { isRAWExtension, isRAWPhoto, isSVG, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import { getFileExtension, isRAWExtension, isRAWPhoto, isSVG, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import { mimetypeFromExtension } from '../_uploads/mimeTypeParser/helpers';
@@ -173,7 +173,7 @@ export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<
         tags.push(PhotoTag.Selfies);
     }
 
-    const extension = file.name.split('.').pop();
+    const extension = getFileExtension(file.name);
     if (isRAWPhoto(file.type) || isRAWExtension(extension)) {
         tags.push(PhotoTag.Raw);
     }
