@@ -217,6 +217,9 @@
       "Decline": [
         "Ablehnen"
       ],
+      "Decline invite": [
+        "Einladung ablehnen"
+      ],
       "Decrease": [
         "Verkleinern"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
+      ],
+      "Go back": [
+        "Zurück"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Zu ${ DRIVE_SHORT_APP_NAME } gehen"
@@ -419,9 +425,6 @@
       ],
       "Move to trash": [
         "In den Papierkorb verschieben"
-      ],
-      "New": [
-        "Neu"
       ],
       "New document": [
         "Neues Dokument"
@@ -570,7 +573,7 @@
       "Search countries": [
         "Länder durchsuchen"
       ],
-      "Search docs": [
+      "Search documents": [
         "Dokumente durchsuchen"
       ],
       "See how": [
@@ -2743,7 +2746,7 @@
         "Bitte wähle ein Land"
       ],
       "Please select a state": [
-        "Bitte wähle ein Bundesland."
+        "Bitte wähle ein Bundesland"
       ],
       "Port is required": [
         "Port ist erforderlich"
@@ -3796,7 +3799,7 @@
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "${ PASS_SHORT_APP_NAME } lebenslanges Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung Ihres Abonnements ${ planTitle } bleiben unverändert."
+        "${ PASS_SHORT_APP_NAME } Lifetime Deal hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -3933,9 +3936,6 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
-      ],
-      "Are you sure you want to proceed?": [
-        "Möchtest du dich wirklich fortfahren?"
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
@@ -4491,8 +4491,8 @@
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bitte beachten Sie, dass nach dem Klicken auf die Schaltfläche „Bestätigen” auf Ihrem Konto noch ${ creditsRemaining } Guthaben verbleiben.",
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleibt.",
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ creditsRemaining } Guthaben auf deinem Konto verbleiben."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bitte gib einen Namen und eine E-Mail-Adresse an, um eine Gruppe zu erstellen."
@@ -4553,7 +4553,7 @@
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
       "Registering your subscription…": [
-        "Dein Abonnement wird registriert…"
+        "Registrierung deines Abonnements…"
       ],
       "Restored version to": [
         "Wiederhergestellte Version zu"
@@ -4595,7 +4595,7 @@
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
       ],
       "Setting up your new address…": [
-        "Deine neue E-Mail-Adresse wird eingerichtet…"
+        "Einrichtung deiner neuen E-Mail-Adresse…"
       ],
       "Settings update failed": [
         "Fehler beim Aktualisieren der Einstellungen."
@@ -4673,17 +4673,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Mit dieser Aktion wird die hochgeladene Datei endgültig gelöscht."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Mit dieser Aktion wird der von dir hochgeladene Ordner endgültig gelöscht. Du kannst einen Ordner, der keine eigene Datei enthält, nicht löschen."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Diese Aktion löscht den Link und der Zugang für alle Benutzer wird widerrufen."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Mit dieser Aktion werden die ausgewählten Einträge endgültig gelöscht."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
@@ -4714,6 +4705,15 @@
       ],
       "This message will be presented again later": [
         "Diese Nachricht wird später erneut angezeigt"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Dadurch wird die hochgeladene Datei endgültig gelöscht."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Dadurch wird der hochgeladenen Ordner endgültig gelöscht."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Dadurch werden die ausgewählten Einträge, die du hochgeladen hast, endgültig gelöscht."
       ],
       "This will replace the existing file with the folder": [
         "Dadurch wird die vorhandene Datei durch den Ordner ersetzt."
@@ -4958,6 +4958,15 @@
         "Du wirst dann nach ${ renewCycle } Monat zu ${ renewAmountStr } abgerechnet.",
         "Sie werden dann alle ${ renewCycle } Monate zu ${ renewAmountStr } abgerechnet."
       ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du bist dabei, die Beitrittseinladung für das Album ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Album nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du bist dabei, die Beitrittseinladung für den Ordner ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Ordner nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du bist dabei, die Beitrittseinladung für den Eintrag ${ invitationName } abzulehnen. Wenn du fortfährst, wirst du dem Eintrag nicht mehr beitreten können, es sei denn, der Eigentümer lädt dich erneut ein. Bist du dir sicher, dass du fortfahren möchtest?"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du hast die maximale Anzahl von Adressen in der/den Kontaktgruppe(n) erreicht:"
       ],
@@ -4971,7 +4980,7 @@
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Dein ${ PASS_SHORT_APP_NAME } Plus Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Das übrige Guthaben deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmal Zahlung für Lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
+        "Dein ${ PASS_SHORT_APP_NAME } Plus Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Das übrige Guthaben deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmal Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
@@ -5422,6 +5431,9 @@
       "Move to Inbox": [
         "In Posteingang verschieben"
       ],
+      "My files": [
+        "Meine Dateien"
+      ],
       "Navigation": [
         "Navigation"
       ],
@@ -5505,6 +5517,9 @@
       ],
       "Set link password": [
         "Link-Passwort festlegen"
+      ],
+      "Shared with me": [
+        "Mit mir geteilt"
       ],
       "Sign emails": [
         "E-Mails signieren"
@@ -7204,6 +7219,10 @@
       "Share invitation declined": [
         "Einladung zur gemeinsamen Nutzung abgelehnt"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Entschuldige, wir konnten den Ordner nicht löschen, da er nicht leer war.",
+        "Entschuldige, wir konnten die Ordner nicht löschen, da sie nicht leer waren."
+      ],
       "Stopping the sharing of this item has failed": [
         "Das Beenden der Freigabe dieses Eintrags ist fehlgeschlagen"
       ],
@@ -7288,9 +7307,6 @@
       ],
       "Save": [
         "Spare"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Spare ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Spare 80% im ersten Monat."
@@ -7465,6 +7481,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -7473,9 +7492,6 @@
       ],
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
-      ],
-      "Payment Processing": [
-        "Zahlungsabwicklung"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
@@ -7505,8 +7521,8 @@
         "Bedingungen & Konditionen"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Der Gutschein ist gültig für ${ couponRedemptions } Verlängerung.",
-        "Der Gutschein ist gültig für ${ couponRedemptions } Verlängerungen."
+        "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
+        "Der Gutschein ist für ${ couponRedemptions } Verlängerungen gültig."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monat gültig.",
@@ -7526,8 +7542,8 @@
       "Timeout exceeded": [
         "Zeitlimit überschritten"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Wir bearbeiten gerade deine Zahlung für die Rechnung. Bitte warte, bis die Zahlung abgeschlossen ist, bevor du Änderungen an deinem Abonnement vornimmst oder deine Zahlungsdaten aktualisierst. Vielen Dank für deine Geduld."
+      "Your payment is still being processed": [
+        "Deine Zahlung ist noch in Bearbeitung."
       ]
     },
     "Payments.Error": {
@@ -7743,6 +7759,23 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offizielle E-Mail von ${ BRAND_NAME }"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "Erstellt von"
+      ],
+      "Location": [
+        "Standort"
+      ],
+      "Modified": [
+        "Geändert"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Viewed": [
+        "Angesehen"
       ]
     },
     "Safety review": {
@@ -8877,6 +8910,9 @@
       "Day theme": [
         "Helles Design"
       ],
+      "Decline invitation?": [
+        "Einladung ablehnen?"
+      ],
       "Delete": [
         "Löschen"
       ],
@@ -8888,11 +8924,11 @@
         "${ count } Kontaktgruppe löschen",
         "${ count } Kontaktgruppen löschen"
       ],
-      "Delete ${ item.name }?": [
-        "${ item.name } löschen?"
-      ],
       "Delete ${ links.length } items?": [
         "${ links.length } Einträge löschen?"
+      ],
+      "Delete ${ name }?": [
+        "${ name } löschen?"
       ],
       "Delete ${ value }": [
         "${ value } löschen"
@@ -9218,9 +9254,6 @@
       ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Du bist dabei, die Einladung für das freigegebene Element abzulehnen. Du kannst erst wieder darauf zugreifen, wenn der Besitzer es für dich freigibt."
       ],
       "You can now create unlimited folders and labels": [
         "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen."

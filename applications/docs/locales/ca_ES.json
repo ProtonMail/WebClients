@@ -217,6 +217,9 @@
       "Decline": [
         "Rebutja"
       ],
+      "Decline invite": [
+        "Declina la invitació"
+      ],
       "Decrease": [
         "Redueix"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
+      ],
+      "Go back": [
+        "Torna enrere"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Aneu a ${ DRIVE_SHORT_APP_NAME }"
@@ -422,9 +428,6 @@
       ],
       "Move to trash": [
         "Mou a la paperera"
-      ],
-      "New": [
-        "Nou"
       ],
       "New document": [
         "Nou document"
@@ -573,7 +576,7 @@
       "Search countries": [
         "Cerca països"
       ],
-      "Search docs": [
+      "Search documents": [
         "Cerca documents"
       ],
       "See how": [
@@ -3937,9 +3940,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Segur que voleu eliminar completament de la paperera els elements seleccionats?"
       ],
-      "Are you sure you want to proceed?": [
-        "Esteu segur que voleu procedir?"
-      ],
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
@@ -4676,17 +4676,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Aquesta acció suprimirà el fitxer que heu carregat permanentment."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Aquesta acció eliminarà la carpeta que heu carregat permanentment. No podeu eliminar una carpeta que contingui un fitxer del qual no sou propietari."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Aquesta acció eliminarà l'enllaç i revocarà l'accés per a tots els usuaris."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Aquesta acció suprimirà els elements seleccionats permanentment."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
@@ -4717,6 +4708,15 @@
       ],
       "This message will be presented again later": [
         "Aquest missatge es tornarà a presentar més tard"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Això eliminarà permanentment el fitxer que heu carregat."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Això eliminarà permanentment la carpeta que heu carregat."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Això eliminarà permanentment els elements seleccionats que heu carregat."
       ],
       "This will replace the existing file with the folder": [
         "Això substituirà el fitxer existent per la carpeta"
@@ -4960,6 +4960,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "A continuació, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
         "A continuació, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si continueu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Esteu a punt de rebutjar la invitació per unir-vos a la carpeta ${ invitationName }. Si continueu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Esteu a punt de rebutjar la invitació per unir-vos a l'element ${ invitationName }. Si continueu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
@@ -5428,6 +5437,9 @@
       "Move to Inbox": [
         "Mou a la safata d'entrada"
       ],
+      "My files": [
+        "Els meus fitxers"
+      ],
       "Navigation": [
         "Navegació"
       ],
@@ -5511,6 +5523,9 @@
       ],
       "Set link password": [
         "Estableix la contrasenya de l'enllaç"
+      ],
+      "Shared with me": [
+        "Compartit amb mi"
       ],
       "Sign emails": [
         "Signar correu electrònics"
@@ -7210,6 +7225,10 @@
       "Share invitation declined": [
         "S'ha rebutjat la invitació per a compartir."
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "No hem pogut eliminar la carpeta perquè no està buida.",
+        "No hem pogut eliminar les carpetes perquè no estan buides."
+      ],
       "Stopping the sharing of this item has failed": [
         "Error en deixar de compartir aquest element"
       ],
@@ -7294,9 +7313,6 @@
       ],
       "Save": [
         "Estalvieu"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Estalvieu el ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Estalvieu un 80% en el vostre primer mes."
@@ -7471,6 +7487,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
+      ],
       "Got it": [
         "Entesos"
       ],
@@ -7479,9 +7498,6 @@
       ],
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
-      ],
-      "Payment Processing": [
-        "Processament de pagaments"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
@@ -7532,8 +7548,8 @@
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estem tramitant el pagament de la factura. Espereu que el pagament s'hagi completat abans de fer canvis al pla o actualitzar les dades del pagament. Gràcies per la vostra paciència."
+      "Your payment is still being processed": [
+        "El vostre pagament encara s'està processant."
       ]
     },
     "Payments.Error": {
@@ -7749,6 +7765,23 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Missatge oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "Creat per"
+      ],
+      "Location": [
+        "Ubicació"
+      ],
+      "Modified": [
+        "Modificat"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Viewed": [
+        "Visualitzat"
       ]
     },
     "Safety review": {
@@ -8883,6 +8916,9 @@
       "Day theme": [
         "Tema de dia"
       ],
+      "Decline invitation?": [
+        "Voleu rebutjar la invitació?"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -8894,11 +8930,11 @@
         "Eliminar ${ count } grup de contactes",
         "Eliminar ${ count } grups de contactes"
       ],
-      "Delete ${ item.name }?": [
-        "Voleu eliminar ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Voleu eliminar ${ links.length } elements?"
+      ],
+      "Delete ${ name }?": [
+        "Elimina ${ name }?"
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
@@ -9224,9 +9260,6 @@
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Esteu a punt de rebutjar la invitació per a l'element compartit. No hi podreu tornar a accedir fins que el propietari el comparteixi amb vosaltres."
       ],
       "You can now create unlimited folders and labels": [
         "Ara podeu crear carpetes i etiquetes il·limitades."

@@ -219,6 +219,9 @@
       "Decline": [
         "Zavrni"
       ],
+      "Decline invite": [
+        "Zavrnite povabilo"
+      ],
       "Decrease": [
         "Zmanjšaj"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "Pridobi kodo za preverjanje"
+      ],
+      "Go back": [
+        "Pojdi nazaj"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Pojdi na ${ DRIVE_SHORT_APP_NAME }"
@@ -416,9 +422,6 @@
       ],
       "Move to trash": [
         "Premakni v smetnjak"
-      ],
-      "New": [
-        "Novo"
       ],
       "New document": [
         "Nov dokument"
@@ -566,9 +569,6 @@
       ],
       "Search countries": [
         "Iskanje držav"
-      ],
-      "Search docs": [
-        "Išči dokumente"
       ],
       "See how": [
         "Poglejte, kako"
@@ -3891,9 +3891,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Ali ste prepričani, da želite trajno izbrisati izbran predmet iz smeti?"
       ],
-      "Are you sure you want to proceed?": [
-        "Ste prepričani, da želite nadaljevati?"
-      ],
       "Attention required": [
         "Pozornost!"
       ],
@@ -4554,17 +4551,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Postopek preverjanja bo odprl nov zavihek brskalnika. Pred tem onemogočite prepoved pojavnih oken."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "To dejanje bo trajno izbrisalo datoteko, ki ste jo naložili."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "To dejanje bo trajno izbrisalo mapo, ki ste jo naložili. Ne morete izbrisati mape, ki vsebuje datoteko, ki ni v vaši lasti."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "To dejanje bo odstranilo povezavo in preklicalo dostop za vse uporabnike."
-      ],
-      "This action will delete the selected items permanently.": [
-        "To dejanje bo trajno izbrisalo izbrane predmete."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
@@ -6891,6 +6879,12 @@
       "Share invitation declined": [
         "Povabilo k skupni rabi je zavrnjeno."
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Žal ni bilo mogoče izbrisati mape, ker ni prazna.",
+        "Žal ni bilo mogoče izbrisati map, ker nista prazni.",
+        "Žal ni bilo mogoče izbrisati map, ker niso prazne.",
+        "Žal ni bilo mogoče izbrisati map, ker niso prazne."
+      ],
       "Stopping the sharing of this item has failed": [
         "Preklic deljenja za ta predmet ni uspel"
       ],
@@ -6954,9 +6948,6 @@
       ],
       "Save": [
         "Prihranite"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Prihranite ${ prices.savedPercentage } %"
       ],
       "Special offer": [
         "Posebna ponudba"
@@ -8483,9 +8474,6 @@
         "Izbriši ${ count } skupine stikov",
         "Izbriši ${ count } skupin stikov"
       ],
-      "Delete ${ item.name }?": [
-        "Izbrišem ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Izbrišem ${ links.length } predmete?"
       ],
@@ -8803,9 +8791,6 @@
       ],
       "What would you like to import?": [
         "Kaj želite uvoziti?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Zavrnili boste vabilo za skupni dostop do predmeta. Do njega ne boste več mogli dostopati, dokler ga lastnik ne deli z vami."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaš ${ planName } brezplačen preizkus se konča ${ textDate }"
