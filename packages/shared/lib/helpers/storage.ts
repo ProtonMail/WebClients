@@ -32,3 +32,11 @@ export const hasStorage = (key = 'test') => {
         return false;
     }
 };
+
+export const getKeys = () => {
+    try {
+        return Object.keys(window.localStorage);
+    } catch (e: any) {
+        return [];
+    }
+};
