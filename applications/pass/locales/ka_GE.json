@@ -2125,6 +2125,9 @@
       "This operation is irreversible.": [
         "ეს ოპერაცია შეუქცევადია."
       ],
+      "This option is currently not available on your browser.": [
+        "ეს პარამეტრი, ამჟამად, თქვენს ბრაუზერში ხელმისაწვდომი არაა."
+      ],
       "This option is currently not available on your device.": [
         "ეს პარამეტრი ამჟამად თქვენს მოწყობილობაზე ხელმისაწვდომი არაა."
       ],
@@ -2281,6 +2284,9 @@
       ],
       "You may close this tab.": [
         "ახლა ეს ჩანართი შეგიძლიათ, დახუროთ."
+      ],
+      "You need a vault with edit permission before you can import items.": [
+        "ელემენტების შემოტანამდე გჭირდებათ საცავი, რომელზეც ჩასწორების წვდომა გაგაჩნიათ."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "თქვენი დომენის პარამეტრების (ყველას ჩაჭერის ელფოსტის ფსევდონიმები, ნაგულისხმევი საჩვენებელი სახელი ფსევდონიმებისთვის და ა.შ.) მისი გადამოწმების შემდეგ შეგეძლებათ."
@@ -3904,6 +3910,9 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "რა სხვაობაა ${ PASS_SHORT_APP_NAME }-ის შენიშვნასა და SimpleLogin-ის შენიშვნას შორის?"
+      ],
+      "You don't have any vaults": [
+        "საცავები არ გაქვთ"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "თქვვენი ${ planName } გამოწერის დასრულების თარიღია ${ endDate }"
