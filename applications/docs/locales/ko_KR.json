@@ -216,6 +216,9 @@
       "Decline": [
         "거절"
       ],
+      "Decline invite": [
+        "초대 거부"
+      ],
       "Decrease": [
         "감소"
       ],
@@ -311,6 +314,9 @@
       ],
       "Get verification code": [
         "인증코드 전송"
+      ],
+      "Go back": [
+        "뒤로 가기"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME }로 이동"
@@ -416,9 +422,6 @@
       ],
       "Move to trash": [
         "휴지통으로 이동"
-      ],
-      "New": [
-        "신규"
       ],
       "New document": [
         "새 문서"
@@ -566,9 +569,6 @@
       ],
       "Search countries": [
         "국가 검색"
-      ],
-      "Search docs": [
-        "문서 검색"
       ],
       "See how": [
         "방법 보기"
@@ -3875,9 +3875,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "정말 선택한 항목을 휴지통에서 영구적으로 삭제하시겠습니까?"
       ],
-      "Are you sure you want to proceed?": [
-        "계속 진행하겠습니까?"
-      ],
       "Attention required": [
         "주의 필요"
       ],
@@ -4118,6 +4115,9 @@
       "Failing signatures will be re-signed by you": [
         "실패한 서명이 사용자로 재서명됩니다."
       ],
+      "Favorites": [
+        "즐겨찾기"
+      ],
       "File \"${ name }\" was deleted during download": [
         "파일 \"${ name }\"는 다은로드 도중 삭제되었습니다"
       ],
@@ -4156,6 +4156,9 @@
       ],
       "Get Notified About Comments": [
         "댓글 알림 받기"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }로 이동"
       ],
       "here": [
         "여기"
@@ -4466,6 +4469,12 @@
       "Public documents are not yet enabled for your organization.": [
         "공개 문서는 사용자의 조직에 활성화되지 않았습니다."
       ],
+      "Recently deleted": [
+        "최근 삭제됨"
+      ],
+      "Recents": [
+        "최근"
+      ],
       "recommended browser": [
         "권장하는 브라우저"
       ],
@@ -4556,6 +4565,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "구독이 매 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
       "Subscription auto-renews every month.": [
         "구독이 매달 갱신됩니다."
       ],
@@ -4592,17 +4604,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "이 작업은 업로드한 파일을 영구적으로 삭제합니다."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "이 작업은 업로드한 폴더를 영구적으로 삭제합니다. 소유하지 않은 파일이 있는 폴더는 삭제할 수 없습니다."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "이 작업은 링크를 삭제하고 모든 사용자의 접근을 취소합니다."
-      ],
-      "This action will delete the selected items permanently.": [
-        "이 작업은 선택된 항목을 영구적으로 삭제합니다."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
@@ -4633,6 +4636,15 @@
       ],
       "This message will be presented again later": [
         "이 메시지가 나중에 다시 표시됩니다."
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "이 작업은 업로드한 파일을 영구적으로 삭제합니다."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "이 작업은 업로드한 폴더를 영구적으로 삭제합니다."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "이 작업은 선택된 항목을 영구적으로 삭제합니다."
       ],
       "This will replace the existing file with the folder": [
         "이는 기존 파일을 폴더로 대체하게 됩니다"
@@ -4871,6 +4883,18 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "${ renewCycle }개월마다 ${ renewAmountStr }의 가격으로 갱신됩니다."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "${ invitationName } 앨범에 가입하는 초대를 거절하려고 합니다. 계속 진행하면 소유자가 다시 초대하지 않는 한 접근할 수 없습니다. 정말 계속하시겠어요?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "${ invitationName } 폴더에 가입하는 초대를 거절하려고 합니다. 계속 진행하면 소유자가 다시 초대하지 않는 한 접근할 수 없습니다. 정말 계속하시겠어요?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "${ invitationName } 항목에 가입하는 초대를 거절하려고 합니다. 계속 진행하면 소유자가 다시 초대하지 않는 한 접근할 수 없습니다. 정말 계속하시겠어요?"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다:"
       ],
@@ -4946,8 +4970,14 @@
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "예약된 플랜이 ${ renewalTime }에 시작하여 ${ cycle }개월마다 자동 갱신됩니다."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "예약된 플랜이 ${ renewalTime }에 시작하여 매달 자동 갱신됩니다."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
       ]
     },
     "info": {
@@ -5408,6 +5438,9 @@
       ],
       "Set link password": [
         "링크 비밀번호 설정하기"
+      ],
+      "Shared with me": [
+        "나와 공유됨"
       ],
       "Sign emails": [
         "이메일 서명"
@@ -7004,6 +7037,9 @@
       "Share invitation declined": [
         "캘린더 공유 거부됨"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "죄송합니다, 폴더가 비어있지 않아 삭제할 수 없습니다."
+      ],
       "Stopping the sharing of this item has failed": [
         "이 항목에 대한 공유 중단 작업을 수행할 수 없습니다."
       ],
@@ -7088,9 +7124,6 @@
       ],
       "Save": [
         "절약되는 가격:"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "${ prices.savedPercentage }% 절약"
       ],
       "Save 80% on your first month.": [
         "첫 달에 80% 할인 받기"
@@ -7264,6 +7297,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
+      ],
       "Got it": [
         "확인"
       ],
@@ -7272,9 +7308,6 @@
       ],
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
-      ],
-      "Payment Processing": [
-        "결제 처리중"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -7291,14 +7324,38 @@
       "Please select your billing state first.": [
         "결제 청구 주를 먼저 선택하세요"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "갱신 가격은 ${ termsAndConditionsLink }에 따라 변경될 수 있습니다."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
+      ],
+      "terms & conditions": [
+        "이용 약관"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "쿠폰이 ${ couponRedemptions } 갱신에 유효합니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "특별 할인 가격인 ${ priceWithDiscount }은(는) 최초 ${ subscriptionLength }개월에 한해 유효합니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달만 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ renewPriceStr }로 개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "특별 할인가 ${ priceWithDiscount }는 첫 달에만 유효합니다. 이후 매 달 ${ renewPriceStr }에 자동으로 갱신됩니다. 취소는 언제나 가능합니다."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "그 후 ${ renewalLength }개월 간 ${ renewPriceStr }(으)로 자동 갱신됩니다. 언제든 취소하실 수 있습니다."
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "현재 청구서에 대한 결제를 진행 중입니다. 사용자의 플랜이 변경되거나 결제 상세 정보가 업데이트되기 전까지 잠시 기다려주세요. 깊은 이해에 감사드립니다."
+      "Your payment is still being processed": [
+        "회원님의 결제가 아직 처리 중입니다"
       ]
     },
     "Payments.Error": {
@@ -8608,6 +8665,9 @@
       "Day theme": [
         "주간 테마"
       ],
+      "Decline invitation?": [
+        "초대를 거절하시겠어요?"
+      ],
       "Delete": [
         "삭제"
       ],
@@ -8617,11 +8677,11 @@
       "Delete ${ count } contact group": [
         "${ count }개의 그룹 삭제"
       ],
-      "Delete ${ item.name }?": [
-        "${ item.name }을(를) 삭제할까요?"
-      ],
       "Delete ${ links.length } items?": [
         "${ links.length }개 항목을 삭제할까요?"
+      ],
+      "Delete ${ name }?": [
+        "${ name }을(를) 삭제할까요?"
       ],
       "Delete ${ value }": [
         "${ value }을(를) 삭제"
@@ -8947,9 +9007,6 @@
       "What would you like to import?": [
         "무엇을 가져오시겠어요?"
       ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "공유된 항목에 대한 초대를 거절하려고 합니다. 소유자가 나와 공유하지 않는 한 다시 해당 항목에 접근할 수 없습니다."
-      ],
       "You can now create unlimited folders and labels": [
         "무제한 폴더 및 라벨을 생성할 수 있습니다."
       ],
@@ -9110,6 +9167,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "12개월마다 ${ renewPriceStr }가 결제됩니다."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "회원님의 구독이 ${ cycle }개월 후 자동으로 갱신됩니다."
       ],

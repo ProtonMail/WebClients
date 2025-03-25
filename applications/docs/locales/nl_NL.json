@@ -217,6 +217,9 @@
       "Decline": [
         "Afwijzen"
       ],
+      "Decline invite": [
+        "Weiger de uitnodiging"
+      ],
       "Decrease": [
         "Verlagen"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "Krijg verificatie code"
+      ],
+      "Go back": [
+        "Ga terug"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Ga naar ${ DRIVE_SHORT_APP_NAME }"
@@ -419,9 +425,6 @@
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
-      ],
-      "New": [
-        "Nieuw"
       ],
       "New document": [
         "Nieuw document"
@@ -570,8 +573,8 @@
       "Search countries": [
         "Zoek landen"
       ],
-      "Search docs": [
-        "Documenten zoeken"
+      "Search documents": [
+        "Documenten doorzoeken"
       ],
       "See how": [
         "Zie hoe"
@@ -3934,9 +3937,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Weet u zeker dat u de geselecteerde items permanent wilt verwijderen uit de prullenbak?"
       ],
-      "Are you sure you want to proceed?": [
-        "Weet u zeker dat u verder wilt gaan?"
-      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -4673,17 +4673,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Deze actie zal het bestand dat u heeft geüpload definitief verwijderen."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Deze actie zorgt ervoor dat de map die u opgeladen heeft permanent verwijderd zal worden. U kan geen map verwijderen die bestanden bevat waarvan u geen eigenaar bent."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Deze actie verwijdert de link en trekt de toegang voor alle gebruikers in."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Deze actie zal de geselecteerde items definitief verwijderen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -4714,6 +4705,15 @@
       ],
       "This message will be presented again later": [
         "Dit bericht zal later opnieuw worden gepresenteerd"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Deze actie zal het bestand dat u heeft opgeladen definitief verwijderen."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Deze actie zal de folder die u heeft opgeladen definitief verwijderen."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Deze actie zal de geselecteerde items die u heeft opgeladen definitief verwijderen."
       ],
       "This will replace the existing file with the folder": [
         "Dit zal het bestaande bestand vervangen door de map"
@@ -4957,6 +4957,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "U staat op het punt de uitnodiging te weigeren om deel te nemen aan het ${ invitationName }album. Als u doorgaat, zult u niet in staat zijn om er toegang toe te krijgen, tenzij de eigenaar u opnieuw uitnodigt. Weet u zeker dat u wilt doorgaan?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "U staat op het punt de uitnodiging te weigeren om deel te nemen aan het ${ invitationName }folder. Als u doorgaat, zult u niet in staat zijn om er toegang toe te krijgen, tenzij de eigenaar u opnieuw uitnodigt. Weet u zeker dat u wilt doorgaan?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "U staat op het punt de uitnodiging te weigeren om deel te nemen aan het ${ invitationName }item. Als u doorgaat, zult u niet in staat zijn om er toegang toe te krijgen, tenzij de eigenaar u opnieuw uitnodigt. Weet u zeker dat u wilt doorgaan?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "U heeft het maximaal aantal adressen bereikt in de contactgroep(en):"
@@ -5422,6 +5431,9 @@
       "Move to Inbox": [
         "Verplaats naar inbox"
       ],
+      "My files": [
+        "Mijn bestanden"
+      ],
       "Navigation": [
         "Navigatie"
       ],
@@ -5505,6 +5517,9 @@
       ],
       "Set link password": [
         "Wachtwoord voor link instellen"
+      ],
+      "Shared with me": [
+        "Gedeeld met mij"
       ],
       "Sign emails": [
         "E-mails ondertekenen"
@@ -7147,6 +7162,10 @@
       "Share invitation declined": [
         "Deel-uitnodiging afgewezen"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Sorry, we konden de map niet verwijderen omdat deze niet leeg is.",
+        "Sorry, we kunnen de mappen niet verwijderen omdat ze niet leeg zijn."
+      ],
       "Stopping the sharing of this item has failed": [
         "Het stoppen van het delen van dit item is mislukt"
       ],
@@ -7231,9 +7250,6 @@
       ],
       "Save": [
         "Opslaan"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Bespaar ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Bespaar 80% op uw eerste maand."
@@ -7408,6 +7424,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -7416,9 +7435,6 @@
       ],
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
-      ],
-      "Payment Processing": [
-        "Betaling wordt verwerkt"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
@@ -7469,8 +7485,8 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "We verwerken uw betaling voor de factuur. Wacht tot de betaling is voltooid voordat u uw abonnement wijzigt of betalingsgegevens bijwerkt. Dank u voor uw geduld."
+      "Your payment is still being processed": [
+        "Uw betaling wordt nog verwerkt"
       ]
     },
     "Payments.Error": {
@@ -7686,6 +7702,23 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiële e-mail van ${ BRAND_NAME }"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "Gemaakt door"
+      ],
+      "Location": [
+        "Locatie"
+      ],
+      "Modified": [
+        "Gewijzigd"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Viewed": [
+        "Bekeken"
       ]
     },
     "Safety review": {
@@ -8820,6 +8853,9 @@
       "Day theme": [
         "Dag thema"
       ],
+      "Decline invitation?": [
+        "Uitnodiging afwijzen?"
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -8831,11 +8867,11 @@
         "${ count } contactgroep verwijderen",
         "${ count } contactgroepen verwijderen"
       ],
-      "Delete ${ item.name }?": [
-        "Verwijder ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Verwijder ${ links.length } items?"
+      ],
+      "Delete ${ name }?": [
+        "Verwijder ${ name }?"
       ],
       "Delete ${ value }": [
         "Verwijder ${ value }"
@@ -9161,9 +9197,6 @@
       ],
       "What would you like to import?": [
         "Wat zou u willen importeren?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "U staat op het punt de uitnodiging voor het gedeelte item te weigeren. U zal geen toegang meer hebben tot het item tot de eigenaar het met u deelt."
       ],
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
