@@ -272,6 +272,9 @@
       "Decline": [
         "Kieltäydy"
       ],
+      "Decline invite": [
+        "Kieltäydy kutsusta"
+      ],
       "Decrease": [
         "Vähennä"
       ],
@@ -4430,6 +4433,9 @@
       "Calendar side panel": [
         "Calendar-sivupaneeli"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalenteri, integroitu ${ MAIL_APP_NAME } ja ${ CONTACTS_APP_NAME } kanssa"
+      ],
       "Canceled": [
         "Peruttu"
       ],
@@ -4471,6 +4477,9 @@
       ],
       "Close this screen to exit.": [
         "Poistu sulkemalla tämä ruutu."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Pilvitallennus, integroitu ${ DOCS_APP_NAME } kanssa"
       ],
       "Conflict": [
         "Ristiriita"
@@ -5024,6 +5033,9 @@
       "password": [
         "salasana"
       ],
+      "Password manager with extra account security": [
+        "Salasanojen hallinta tilin lisäsuojauksella"
+      ],
       "Paused": [
         "Pysäytetty"
       ],
@@ -5301,6 +5313,10 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein.",
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -5727,6 +5743,10 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Olet saavuttanut yhteystietoryhmien osoitteiden enimmäismäärän:"
       ],
@@ -5808,6 +5828,10 @@
       ],
       "Your previous recovery phrase": [
         "Edellinen palautuslauseesi"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein.",
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
@@ -7659,7 +7683,7 @@
         "Poista automaattisesti yli 30 päivää vanhat viestit roskakorista ja roskapostista"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Välitä ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
+        "Ohjaa ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massamainontaa tai ohjelmoitavaa viestien lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään erityisesti tähän tarkoitukseen tarkoitettua sähköpostipalvelua."
@@ -8232,9 +8256,6 @@
       "Save": [
         "Säästä"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Säästä ${ prices.savedPercentage } %"
-      ],
       "Save 80% on your first month.": [
         "Säästä 80 % ensimmäisestä kuukaudestasi."
       ],
@@ -8567,9 +8588,6 @@
       "More plans are available in other currencies": [
         "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
       ],
-      "Payment Processing": [
-        "Maksua käsitellään"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
@@ -8590,9 +8608,6 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Käsittelemme laskua koskevaa maksuasi. Odota maksun suoritusta, ennen kuin teet muutoksia tilaukseesi tai päivität maksutietojasi. Kiitos kärsivällisyydestäsi."
       ]
     },
     "Payments.Error": {
@@ -10755,9 +10770,6 @@
       ],
       "What would you like to import?": [
         "Mitä haluat tuoda?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Olet kieltäytymästä jakokutsusta. Et voi käyttää jaon sisältöä, ennen kuin sen omistaja jakaa sen sinulle uudelleen."
       ],
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
