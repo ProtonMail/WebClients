@@ -35,7 +35,6 @@ import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { PhotosTags } from './components/Tags';
-import { getTagFilteredPhotos } from './getTagFilteredPhotos';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
@@ -56,14 +55,13 @@ export const PhotosWithAlbumsView: FC = () => {
         addAlbumPhotos,
         selectedTags,
         handleSelectTag,
+        isPhotosEmpty,
     } = usePhotosWithAlbumsView();
-
-    const tagFilteredPhotos = useMemo(() => getTagFilteredPhotos(photos, selectedTags), [photos, selectedTags]);
 
     const { photoTags } = useUserSettings();
 
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
-        tagFilteredPhotos,
+        photos,
         photoLinkIdToIndexMap
     );
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
@@ -112,17 +110,14 @@ export const PhotosWithAlbumsView: FC = () => {
         [photoLinkIds, previewLinkId]
     );
     const previewItem = useMemo(
-        () =>
-            previewLinkId !== undefined
-                ? (tagFilteredPhotos[photoLinkIdToIndexMap[previewLinkId]] as PhotoLink)
-                : undefined,
-        [tagFilteredPhotos, previewLinkId, photoLinkIdToIndexMap]
+        () => (previewLinkId !== undefined ? (photos[photoLinkIdToIndexMap[previewLinkId]] as PhotoLink) : undefined),
+        [photos, previewLinkId, photoLinkIdToIndexMap]
     );
+
     const setPreviewIndex = useCallback(
         (index: number) => setPreviewLinkId(photoLinkIds[index]),
         [setPreviewLinkId, photoLinkIds]
     );
-    const isPhotosEmpty = photos.length === 0;
 
     const onAddAlbumPhotos = useCallback(
         async (albumLinkId: string, linkIds: string[]) => {
@@ -289,7 +284,7 @@ export const PhotosWithAlbumsView: FC = () => {
                     <EmptyPhotos shareId={shareId} linkId={linkId} />
                 ) : (
                     <PhotosGrid
-                        data={tagFilteredPhotos}
+                        data={photos}
                         onItemRender={handleItemRender}
                         onItemRenderLoadedLink={handleItemRenderLoadedLink}
                         isLoading={isPhotosLoading}
