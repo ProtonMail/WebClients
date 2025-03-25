@@ -1,4 +1,4 @@
-import { put } from 'redux-saga/effects';
+import { put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { createDownloadStream } from '@proton/pass/lib/file-attachments/download';
@@ -30,7 +30,8 @@ import {
 } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import type { ItemRevision } from '@proton/pass/types';
+import { selectItem } from '@proton/pass/store/selectors';
+import type { ItemRevision, Maybe } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -123,9 +124,14 @@ const updateMetadata = createRequestSaga({
 const linkPending = createRequestSaga({
     actions: fileLinkPending,
     call: function* (dto) {
-        const item: ItemRevision = yield linkPendingFiles(dto);
-        yield put(withRevalidate(filesResolve.intent(dto)));
-        return item;
+        const item: Maybe<ItemRevision> = yield select(selectItem(dto.shareId, dto.itemId));
+        if (!item) throw new Error('Link failure: unknown item');
+
+        const revisionDTO = { ...dto, revision: item.revision };
+        const linked: ItemRevision = yield linkPendingFiles(revisionDTO);
+        yield put(withRevalidate(filesResolve.intent(revisionDTO)));
+
+        return linked;
     },
 });
 

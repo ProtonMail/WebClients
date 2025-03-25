@@ -114,4 +114,5 @@ export type SecureLink = UniqueItem & {
     secureLink: string;
 };
 
-export type ItemLinkPendingFiles = UniqueItem & { revision: number; files: FileAttachmentsDTO };
+export type ItemLinkFiles = UniqueItem & { files: FileAttachmentsDTO };
+export type ItemRevisionLinkFiles = ItemLinkFiles & { revision: number };

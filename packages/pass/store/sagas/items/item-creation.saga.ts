@@ -21,7 +21,7 @@ const withAliasItemCreation = (action: Action): action is ItemWithAliasCreationA
 
 function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOptions, action: ItemCreationAction) {
     const { payload: createIntent, meta } = action;
-    const { shareId, optimisticId } = createIntent;
+    const { shareId, optimisticId, files } = createIntent;
     const isAlias = createIntent.type === 'alias';
     const telemetry = getTelemetry();
 
@@ -33,16 +33,8 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item }));
 
-        if (createIntent.files.toAdd.length) {
-            yield put(
-                fileLinkPending.intent({
-                    shareId,
-                    itemId: item.itemId,
-                    revision: item.revision,
-                    files: createIntent.files,
-                })
-            );
-        }
+        const shouldLink = files.toAdd.length;
+        if (shouldLink) yield put(fileLinkPending.intent({ shareId, itemId: item.itemId, files }));
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] })
@@ -62,7 +54,7 @@ function* withAliasCreationWorker(
     { onItemsUpdated, getTelemetry }: RootSagaOptions,
     { payload: createIntent, meta }: ItemWithAliasCreationAction
 ) {
-    const { shareId, optimisticId } = createIntent;
+    const { shareId, optimisticId, files } = createIntent;
     const telemetry = getTelemetry();
     try {
         const [encryptedLoginItem, encryptedAliasItem]: ItemRevisionContentsResponse[] =
@@ -73,16 +65,8 @@ function* withAliasCreationWorker(
 
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item: loginItem, alias: aliasItem }));
 
-        if (createIntent.files.toAdd.length) {
-            yield put(
-                fileLinkPending.intent({
-                    shareId,
-                    itemId: loginItem.itemId,
-                    revision: loginItem.revision,
-                    files: createIntent.files,
-                })
-            );
-        }
+        const shouldLink = files.toAdd.length;
+        if (shouldLink) yield put(fileLinkPending.intent({ shareId, itemId: loginItem.itemId, files }));
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] })
