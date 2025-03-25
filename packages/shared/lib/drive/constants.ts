@@ -214,6 +214,7 @@ export enum RAWThumbnailExtractionSupported {
     raf = 'image/x-fuji-raf',
     rw2 = 'image/x-panasonic-rw2',
     cr2 = 'image/x-canon-cr2',
+    cr3 = 'image/x-canon-cr3',
     heic = 'image/heic',
 }
 
