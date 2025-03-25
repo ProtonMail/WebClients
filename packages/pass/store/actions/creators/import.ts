@@ -6,50 +6,43 @@ import { itemsImportRequest } from '@proton/pass/store/actions//requests';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import type { ImportEntry } from '@proton/pass/store/reducers';
-import {
-    withRequest,
-    withRequestFailure,
-    withRequestProgress,
-    withRequestSuccess,
-} from '@proton/pass/store/request/enhancers';
+import { withRequestProgress } from '@proton/pass/store/request/enhancers';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ClientEndpoint, ItemRevision } from '@proton/pass/types';
 
-export const importItemsIntent = createAction(
-    'import::items::intent',
-    (payload: { data: ImportPayload; provider: ImportProvider }) =>
-        withRequest({ status: 'start', id: itemsImportRequest() })({ payload })
-);
+type ImportIntentDTO = { data: ImportPayload; provider: ImportProvider };
+type ImportSuccessDTO = { data: ImportEntry; endpoint?: ClientEndpoint };
+type ImportFailureDTO = { endpoint?: ClientEndpoint };
+type ImportProgressDTO = { shareId: string; items: ItemRevision[] };
 
-export const importItemsSuccess = createAction(
-    'import::items::success',
-    withRequestSuccess((payload: ImportEntry, endpoint?: ClientEndpoint) =>
-        withNotification({
-            type: 'info',
-            endpoint,
-            text: c('Info').ngettext(
-                // translator: ${payload.total} is a number
-                msgid`Imported ${payload.total} item`,
-                `Imported ${payload.total} items`,
-                payload.total
-            ),
-        })({ payload })
-    )
-);
-
-export const importItemsFailure = createAction(
-    'import::items::failure',
-    withRequestFailure((error: unknown, endpoint?: ClientEndpoint) =>
-        withNotification({
-            type: 'error',
-            endpoint,
-            expiration: -1,
-            text: c('Error').t`Importing items failed`,
-            error,
-        })({ payload: {}, error })
-    )
-);
+export const importItems = requestActionsFactory<ImportIntentDTO, ImportSuccessDTO, ImportFailureDTO>('import::items')({
+    key: itemsImportRequest,
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                endpoint: payload.endpoint,
+                text: c('Info').ngettext(
+                    // translator: ${payload.total} is a number
+                    msgid`Imported ${payload.data.total} item`,
+                    `Imported ${payload.data.total} items`,
+                    payload.data.total
+                ),
+            })({ payload }),
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                endpoint: payload.endpoint,
+                expiration: -1,
+                text: c('Error').t`Importing items failed`,
+                error,
+            })({ payload, error }),
+    },
+});
 
 export const importItemsProgress = createAction(
     'import::items::progress',
-    withRequestProgress((payload: { shareId: string; items: ItemRevision[] }) => withCache({ payload }))
+    withRequestProgress((payload: ImportProgressDTO) => withCache({ payload }))
 );
