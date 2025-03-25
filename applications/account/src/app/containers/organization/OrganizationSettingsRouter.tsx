@@ -26,7 +26,7 @@ import {
     VPNEvents,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import AccessControl from '@proton/components/containers/organization/accessControl/AccessControl';
+import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
 import OrganizationScribeSection from '@proton/components/containers/organization/scribe/OrganizationScribeSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -168,7 +168,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(accessControl) && (
                 <Route path={getSectionPath(path, accessControl)}>
                     <PrivateMainSettingsArea config={accessControl}>
-                        <AccessControl />
+                        <AccessControlSettingsSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
