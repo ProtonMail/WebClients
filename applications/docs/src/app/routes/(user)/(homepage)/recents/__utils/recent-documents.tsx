@@ -1,12 +1,10 @@
 import { useAuthentication } from '@proton/components'
-import { useContactEmails } from '@proton/mail/contactEmails/hooks'
-import { DateFormatter, type RecentDocumentsItem } from '@proton/docs-core'
+import { type RecentDocumentsItem } from '@proton/docs-core'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useState } from 'react'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
-import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
+import { useSubscribe } from '~/utils/misc'
 
 // filter documents
 // ----------------
@@ -41,45 +39,16 @@ export function filterDocuments(items?: RecentDocumentsItem[], searchText?: stri
   return outputItems
 }
 
-// document owner display name
-// ---------------------------
-
-export function getDocumentOwnerDisplayName(recentDocument: RecentDocumentsItem, contactEmails?: ContactEmail[]) {
-  if (!recentDocument.isSharedWithMe) {
-    return c('Info').t`Me`
-  }
-
-  if (!recentDocument.createdBy) {
-    return undefined
-  }
-
-  const foundContact = contactEmails?.find((contactEmail) => contactEmail.Email === recentDocument.createdBy)
-
-  if (foundContact) {
-    return foundContact.Name ?? foundContact.Email
-  }
-
-  return recentDocument.createdBy
-}
-
 // recent documents value
 // ----------------------
-
-const dateFormatter = new DateFormatter()
 
 export function useRecentDocumentsValue({ searchText, filter }: { searchText?: string; filter?: string }) {
   const application = useApplication()
   const state = application.recentDocumentsService.state
-  const [recents, setRecents] = useState<RecentDocumentsItem[]>([])
   const [filteredItems, setFilteredItems] = useState<RecentDocumentsItem[]>([])
-  const [contactEmails] = useContactEmails()
   const { getLocalID } = useAuthentication()
 
-  useEffect(() => {
-    return state.subscribeToProperty('recents', (recents) => {
-      setRecents(recents)
-    })
-  }, [application, state])
+  const recents = useSubscribe(state, 'recents', [])
 
   useEffect(() => {
     setFilteredItems(filterDocuments(recents, searchText, filter))
@@ -118,26 +87,12 @@ export function useRecentDocumentsValue({ searchText, filter }: { searchText?: s
     [application.recentDocumentsService],
   )
 
-  const getDisplayNameForRecentDocument = useCallback(
-    (recentDocument: RecentDocumentsItem): string | undefined =>
-      getDocumentOwnerDisplayName(recentDocument, contactEmails),
-    [contactEmails],
-  )
-
-  const getDisplayDateForRecentDocument = useCallback(
-    ({ lastViewed }: RecentDocumentsItem): string => dateFormatter.formatDate(lastViewed.date),
-    [],
-  )
-
   return {
-    status: state.getProperty('state'),
+    state: state.getProperty('state'),
     items: filteredItems,
     handleTrashDocument,
     handleOpenDocument,
     handleOpenFolder,
-    getDisplayName: getDisplayNameForRecentDocument,
-    getDisplayDate: getDisplayDateForRecentDocument,
-    getLocalID,
   }
 }
 
