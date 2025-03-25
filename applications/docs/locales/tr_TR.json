@@ -217,6 +217,9 @@
       "Decline": [
         "Reddet"
       ],
+      "Decline invite": [
+        "Daveti reddet"
+      ],
       "Decrease": [
         "Azalt"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "Doğrulama kodu alın"
+      ],
+      "Go back": [
+        "Geri dön"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } uygulamasına git"
@@ -419,9 +425,6 @@
       ],
       "Move to trash": [
         "Çöpe at"
-      ],
-      "New": [
-        "Yeni"
       ],
       "New document": [
         "Yeni belge"
@@ -570,8 +573,8 @@
       "Search countries": [
         "Ülke ara"
       ],
-      "Search docs": [
-        "Belge ara"
+      "Search documents": [
+        "Belgeleri ara"
       ],
       "See how": [
         "Nasıl yapıldığını görün"
@@ -3934,9 +3937,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Seçilmiş ögeleri çöp kutusundan kalıcı olarak silmek istediğinize emin misiniz?"
       ],
-      "Are you sure you want to proceed?": [
-        "İlerlemek istediğinize emin misiniz?"
-      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -4180,7 +4180,7 @@
         "İmzalanmamış değişiklikler sizin tarafınızdan yeniden imzalanacak"
       ],
       "Favorites": [
-        "Favoriler"
+        "Sık kullanılanlar"
       ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" dosyası indirme sırasında silindi"
@@ -4222,7 +4222,7 @@
         "Yorumlar bildirilsin"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }'a git"
+        "${ DRIVE_APP_NAME } uygulamasına git"
       ],
       "here": [
         "buraya"
@@ -4541,7 +4541,7 @@
         "Son silinenler"
       ],
       "Recents": [
-        "Son Görüntülenenler"
+        "Son kullanılanlar"
       ],
       "recommended browser": [
         "önerilen tarayıcı"
@@ -4673,17 +4673,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Bu işlem yüklediğiniz dosyayı kalıcı olarak silecek."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Bu işlem yüklediğiniz klasörü kalıcı olarak silecek. Sahibi olmadığınız bir dosyanın bulunduğu bir klasörü silemezsiniz."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Bu işlem bağlantıyı silecek ve tüm kullanıcılar için erişimi iptal edecek."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Bu işlem seçilmiş ögeleri kalıcı olarak silecek."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
@@ -4714,6 +4705,15 @@
       ],
       "This message will be presented again later": [
         "Bu ileti daha sonra yeniden görüntülenecek"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Bu işlem yüklediğiniz dosyayı kalıcı olarak silecek."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Bu işlem yüklediğiniz klasörü kalıcı olarak silecek."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Bu işlem yüklediğiniz seçilmiş ögeleri kalıcı olarak silecek."
       ],
       "This will replace the existing file with the folder": [
         "Bu işlem var olan dosyayı klasör ile değiştirir"
@@ -4955,8 +4955,17 @@
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Daha sonra her ${ renewCycle } ayda bir ${ renewAmountStr } tutarında faturalandırılacaksınız.",
-        "Daha sonra her ${ renewCycle } ayda bir ${ renewAmountStr } tutarında faturalandırılacaksınız."
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } tutar ödeyeceksiniz."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "${ invitationName } albümüne katılma davetini reddetmek üzeresiniz. Bunu yaparsanız, sahibi sizi yeniden davet etmediği sürece bu albüme erişemezsiniz. İlerlemek istediğinize emin misiniz?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "${ invitationName } klasörüne katılma davetini reddetmek üzeresiniz. Bunu yaparsanız, sahibi sizi yeniden davet etmediği sürece klasöre erişemezsiniz. İlerlemek istediğinize emin misiniz?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "${ invitationName } ögesine katılma davetini reddetmek üzeresiniz. Bunu yaparsanız, sahibi sizi yeniden davet etmediği sürece bu ögeye erişemezsiniz. İlerlemek istediğinize emin misiniz?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Kişi gruplarında bulunabilecek en fazla adres sayısına ulaştınız:"
@@ -5034,14 +5043,14 @@
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Planlanmış tarifeniz ${ renewalTime } tarihinde başlar ve her ${ cycle } ayda bir otomatik olarak yenilenir.",
-        "Planlanmış tarifeniz ${ renewalTime } tarihinde başlar ve her ${ cycle } ayda bir otomatik olarak yenilenir."
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek.",
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecektir."
+        "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
       ]
     },
     "info": {
@@ -5422,6 +5431,9 @@
       "Move to Inbox": [
         "Gelen kutusuna taşı"
       ],
+      "My files": [
+        "Dosyalarım"
+      ],
       "Navigation": [
         "Gezinme"
       ],
@@ -5505,6 +5517,9 @@
       ],
       "Set link password": [
         "Bağlantı parolası ayarla"
+      ],
+      "Shared with me": [
+        "Benimle paylaşılanlar"
       ],
       "Sign emails": [
         "E-postaları imzala"
@@ -7147,6 +7162,10 @@
       "Share invitation declined": [
         "Paylaşma daveti reddedildi"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Üzgünüz, boş olmadığı için klasörü silemedik.",
+        "Üzgünüz, boş olmadıkları için klasörleri silemedik."
+      ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
       ],
@@ -7231,9 +7250,6 @@
       ],
       "Save": [
         "İndirim"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "%${ prices.savedPercentage } indirim"
       ],
       "Save 80% on your first month.": [
         "İlk ayınızda % 80 indirim kazanın."
@@ -7408,6 +7424,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -7416,9 +7435,6 @@
       ],
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
-      ],
-      "Payment Processing": [
-        "Ödeme işleniyor"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
@@ -7436,41 +7452,41 @@
         "Lütfen önce faturanın kesileceği ili seçin."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
-        "Yenileme fiyatlandırması ${ termsAndConditionsLink } koşullarına göre değişebilir."
+        "Yenileme fiyatları ${ termsAndConditionsLink } metnine göre değişebilir."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
-        "${ renewPriceStr } üzerinden yenilenir, istediğiniz zaman iptal edin."
+        "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Select billing country to pay": [
         "Ödeme için fatura ülkesini seçin"
       ],
       "terms & conditions": [
-        "şartlar & koşullar"
+        "hükümler ve koşullar"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon ${ couponRedemptions } yenileme için geçerlidir.",
         "Kupon ${ couponRedemptions } yenileme için geçerlidir."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Özel olarak indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
-        "Özel olarak indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
+        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
+        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, ${ renewPriceStr } fiyatıyla 1 ay boyunca otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
-        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, ${ renewPriceStr } fiyatıyla 1 ay boyunca otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
+        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } fiyatıyla otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
+        "${ priceWithDiscount } özel indirimli fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } fiyatıyla otomatik olarak yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Daha sonra her ay otomatik olarak ${ renewPriceStr } üzerinden yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
-        "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz."
+        "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Faturanızın ödemesini işliyoruz. Tarifenizde değişiklik yapmadan veya ödeme bilgilerinizi güncellemeden önce lütfen ödeme işleminin tamamlanmasını bekleyin. Sabrınız için teşekkür ederiz."
+      "Your payment is still being processed": [
+        "Ödeme işleminiz sürüyor"
       ]
     },
     "Payments.Error": {
@@ -7686,6 +7702,14 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } tarafından gelen resmi e-posta"
+      ]
+    },
+    "Recent documents table header": {
+      "Location": [
+        "Konum"
+      ],
+      "Name": [
+        "Ad"
       ]
     },
     "Safety review": {
@@ -8820,6 +8844,9 @@
       "Day theme": [
         "Gündüz teması"
       ],
+      "Decline invitation?": [
+        "Davet reddedilsin mi?"
+      ],
       "Delete": [
         "Sil"
       ],
@@ -8831,11 +8858,11 @@
         "${ count } kişi grubunu sil",
         "${ count } kişi grubunu sil"
       ],
-      "Delete ${ item.name }?": [
-        "${ item.name } silinsin mi?"
-      ],
       "Delete ${ links.length } items?": [
         "${ links.length } öge silinsin mi?"
+      ],
+      "Delete ${ name }?": [
+        "${ name } albümü silinsin mi?"
       ],
       "Delete ${ value }": [
         "${ value } sil"
@@ -9162,9 +9189,6 @@
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"
       ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Paylaşılan öge davetini reddetmek üzeresiniz. Sahibi sizinle yeniden paylaşana kadar ona erişemeyeceksiniz."
-      ],
       "You can now create unlimited folders and labels": [
         "Artık sınırsız sayıda klasör ve etiket oluşturabilirsiniz"
       ],
@@ -9337,7 +9361,7 @@
     },
     "vpn_2024: renew": {
       "You'll then be billed every 12 months at ${ renewPriceStr }.": [
-        "Daha sonra her 12 ayda bir ${ renewPriceStr } üzerinden faturalandırılacaksınız."
+        "Ardından her 12 ayda bir ${ renewPriceStr } ödeyeceksiniz."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Yeni aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",

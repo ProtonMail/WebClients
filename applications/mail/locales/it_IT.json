@@ -1114,11 +1114,11 @@
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
       ],
-      "Select All": [
-        "Seleziona tutto"
-      ],
       "Select all": [
         "Seleziona tutti"
+      ],
+      "Select All": [
+        "Seleziona tutto"
       ],
       "Select all messages": [
         "Seleziona tutti i messaggi"
@@ -1311,10 +1311,6 @@
       ],
       "Trust": [
         "Considera attendibile"
-      ],
-      "Trust key": [
-        "Considera attendibile la chiave",
-        "Considera attendibili le chiavi"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -6243,6 +6239,9 @@
       "Calendar side panel": [
         "Pannello laterale del calendario"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendario, integrato con ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Non trovi quello che cerchi? ${ displayAllMailButton }"
       ],
@@ -6281,6 +6280,9 @@
       ],
       "Close this screen to exit.": [
         "Chiudi questa schermata per uscire."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Archiviazione cloud, integrato con ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Conferma la segnalazione di phishing"
@@ -6473,6 +6475,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "L'email viene inoltrata alla tua casella di posta; il tuo indirizzo email rimane nascosto."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Servizio di posta elettronica, integrato con ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "La protezione dai tracker email è disabilitata"
@@ -6684,8 +6689,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -6942,6 +6946,9 @@
       "password": [
         "password"
       ],
+      "Password manager with extra account security": [
+        "Gestore password con sicurezza extra dell'account"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
       ],
@@ -7073,9 +7080,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di recupero rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
       ],
-      "Refining email list in progress": [
-        "In corso l'affinamento dell'elenco email"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
@@ -7154,6 +7158,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleziona i calendari da importare. Verrà creato un nuovo calendario per ogni calendario importato in base al numero di calendari disponibili nel tuo piano."
+      ],
+      "Self-custodial crypto wallet": [
+        "Portafoglio crypto a custodia autonoma"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Invia un messaggio crittografato e protetto da password a un indirizzo email ${ boldText }."
@@ -7617,6 +7624,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN con server dedicati e indirizzi IP"
       ],
       "Warning": [
         "Avviso"
@@ -10469,9 +10479,6 @@
       "Save": [
         "Salva"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Risparmia il ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Salva l'80% nel tuo primo mese."
       ],
@@ -10852,6 +10859,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
+      ],
       "Got it": [
         "Ho capito"
       ],
@@ -10860,9 +10870,6 @@
       ],
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
-      ],
-      "Payment Processing": [
-        "Elaborazione del pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
@@ -10913,8 +10920,8 @@
       "Timeout exceeded": [
         "Limite di tempo superato"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
+      "Your payment is still being processed": [
+        "Il tuo pagamento è ancora in fase di elaborazione."
       ]
     },
     "Payments.Error": {
@@ -13820,6 +13827,11 @@
         "Oggi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "\"Automatico\" indica che ogni messaggio inviato a questo utente userà il formato del compositore. \"Testo semplice\" indica che il messaggio verrà sempre convertito in testo semplice all'invio."
@@ -13901,11 +13913,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
       ]
     },
     "Tor out of date": {

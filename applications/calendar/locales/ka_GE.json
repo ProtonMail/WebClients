@@ -5434,6 +5434,10 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "თქვენ განაახლებთ ამ სერიის ყველა მოვლენას. წაშლილ მონაწილეებს ეცნობებათ."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
+        "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "მიღწეულია კონტაქტების ჯგუფში არსებული მისამართების მაქსიმალური რაოდენობა):"
       ],
@@ -5497,8 +5501,15 @@
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ.",
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "თქვენი სისტემის დროის სარტყელი, როგორც ჩანს, შეიცვალა ${ timezone }-ზე. გსურთ, განაახლოთ თქვენი დროის სარტყელის პარამეტრი?"
@@ -7776,9 +7787,6 @@
       "Save": [
         "შენახვა"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "დაზოგეთ ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "დაზოეთ 80% პირველ თვეს."
       ],
@@ -8059,9 +8067,6 @@
       "More plans are available in other currencies": [
         "სხვა სატარიფო გეგმები ხელმისაწვდომია სხვა ვალუტებში"
       ],
-      "Payment Processing": [
-        "გადახდის დამუშავება"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
       ],
@@ -8077,6 +8082,9 @@
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "განახების ფასები იცვლება ${ termsAndConditionsLink }-ის წესებით."
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
@@ -8086,11 +8094,15 @@
       "terms & conditions": [
         "პირობები და წესები"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
+        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "ჩვენ ვამუშავებთ თქვენს გადახდას ამ ინვოისისთვის. მოითმინეთ, სანამ გადახდა დასრულდება თქვენი სატარიფო გეგმის შეცვლამდე ან გადახდის დეტალების განახლებამდე. მადლობა მოთმინებისთვის."
+      "Your payment is still being processed": [
+        "თქვენი გადახდა ჯერ კიდევ მუშავდება"
       ]
     },
     "Payments.Error": {
@@ -10450,6 +10462,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "გადაიხდით ყოველ 12 თვეში ტარიფით ${ renewPriceStr }"
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში.",
         "თქვენი ახალი გამოწერა ავტომატურად განახლდება ${ cycle } თვეში."

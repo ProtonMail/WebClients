@@ -276,6 +276,9 @@
       "Decline": [
         "Avslå"
       ],
+      "Decline invite": [
+        "Avslå invitasjon"
+      ],
       "Decrease": [
         "Reduser"
       ],
@@ -4440,6 +4443,9 @@
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalender, integrert med ${ MAIL_APP_NAME } og ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Avbrutt"
       ],
@@ -4481,6 +4487,9 @@
       ],
       "Close this screen to exit.": [
         "Lukk dette skjermbildet for å avslutte."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Skylagring, integrert med ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Konflikt"
@@ -4631,6 +4640,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "E-posttjeneste, integrert med ${ CALENDAR_APP_NAME } og ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "E-post signeres automatisk"
@@ -5040,6 +5052,9 @@
       "password": [
         "passord"
       ],
+      "Password manager with extra account security": [
+        "Passordbehandling med ekstra kontosikkerhet"
+      ],
       "Paused": [
         "Satt på pause"
       ],
@@ -5245,6 +5260,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Velg hvilke kalendere du vil importere. En ny kalender opprettes for hver importerte kalender i henhold til antall kalendere som er tilgjengelige i planen din."
+      ],
+      "Self-custodial crypto wallet": [
+        "Selvforvaltet kryptolommebok"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
@@ -5581,6 +5599,9 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN med dedikerte tjenere og IP-adresser"
+      ],
       "Want to sync files faster?": [
         "Ønsker du å synkronisere filer raskere?"
       ],
@@ -5763,6 +5784,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
         "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du er i ferd med å avslå invitasjonen til å bli med i ${ invitationName }-albumet. Hvis du fortsetter, får du ikke tilgang til det med mindre eieren inviterer deg på nytt. Er du sikker på at du vil fortsette?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du er i ferd med å avslå invitasjonen til å bli med i ${ invitationName }-mappen. Hvis du fortsetter, får du ikke tilgang til den med mindre eieren inviterer deg på nytt. Er du sikker på at du vil fortsette?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Du er i ferd med å avslå invitasjonen til å bli med i ${ invitationName }-elementet. Hvis du fortsetter, får du ikke tilgang til det med mindre eieren inviterer deg på nytt. Er du sikker på at du vil fortsette?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nådd maksimalt antall adresser i kontaktgruppen(e):"
@@ -8068,6 +8098,14 @@
         "${ count } element ble ikke dekryptert",
         "${ count } elementer ble ikke dekryptert"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "${ nbFailures } bilde ble ikke lagt til i \"${ albumName }\"",
+        "${ nbFailures } bilder ble ikke lagt til i \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } bilde ble lagt til i \"${ albumName }\"",
+        "${ nbSuccesses } bilder ble lagt til i \"${ albumName }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
         "${ numberOfItems } elementer slettet"
@@ -8352,9 +8390,6 @@
       ],
       "Save": [
         "Spar"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Spar ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Spar 80% på den første måneden."
@@ -8679,6 +8714,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
+      ],
       "Got it": [
         "Skjønner"
       ],
@@ -8687,9 +8725,6 @@
       ],
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
-      ],
-      "Payment Processing": [
-        "Betalingsbehandling"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
@@ -8740,8 +8775,8 @@
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi behandler betalingen din for den fakturerte fakturaen. Vent til betalingen er fullført før du gjør endringer i planen din eller oppdaterer betalingsinformasjonen din. Takk for tålmodigheten."
+      "Your payment is still being processed": [
+        "Betalingen din behandles fortsatt"
       ]
     },
     "Payments.Error": {
@@ -10459,6 +10494,9 @@
       "Day theme": [
         "Dag-tema"
       ],
+      "Decline invitation?": [
+        "Avvise invitasjonen?"
+      ],
       "Delete": [
         "Slett"
       ],
@@ -10910,9 +10948,6 @@
       ],
       "What would you like to import?": [
         "Hva ønsker du å importere?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Du er i ferd med å avslå invitasjonen til det delte elementet. Du vil ikke få tilgang til det igjen før eieren deler det med deg."
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nå opprette ubegrenset antall mapper og etiketter"

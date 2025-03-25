@@ -1110,11 +1110,11 @@
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
-      "Select All": [
-        "Выбрать все"
-      ],
       "Select all": [
         "Выделить все"
+      ],
+      "Select All": [
+        "Выбрать все"
       ],
       "Select all messages": [
         "Выбрать все сообщения"
@@ -1307,12 +1307,6 @@
       ],
       "Trust": [
         "Доверять"
-      ],
-      "Trust key": [
-        "Доверять ключу",
-        "Доверять ключам",
-        "Доверять ключам",
-        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -6853,6 +6847,9 @@
       "Initializing…": [
         "Инициализация…"
       ],
+      "Insert image": [
+        "Вставить изображение"
+      ],
       "Insert link": [
         "Вставить ссылку"
       ],
@@ -10704,9 +10701,6 @@
       "Save": [
         "Сохранить"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Сэкономьте ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Сэкономьте 80% в первый месяц."
       ],
@@ -11092,9 +11086,6 @@
       "More plans are available in other currencies": [
         "Другие тарифы доступны в других валютах"
       ],
-      "Payment Processing": [
-        "Обработка платежа"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
@@ -11115,9 +11106,6 @@
       ],
       "Timeout exceeded": [
         "Превышено время ожидания"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Мы обрабатываем ваш платеж по выставленному счету. Дождитесь завершения оплаты, прежде чем вносить изменения в ваш тариф или обновлять платежные реквизиты. Благодарим вас за терпение."
       ]
     },
     "Payments.Error": {
@@ -14180,6 +14168,11 @@
         "Сегодня"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
@@ -14261,11 +14254,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
       ]
     },
     "Tor out of date": {

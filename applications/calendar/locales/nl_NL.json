@@ -7803,9 +7803,6 @@
       "Save": [
         "Opslaan"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Bespaar ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Bespaar 80% op uw eerste maand."
       ],
@@ -8077,6 +8074,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -8085,9 +8085,6 @@
       ],
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
-      ],
-      "Payment Processing": [
-        "Betaling wordt verwerkt"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
@@ -8138,8 +8135,8 @@
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "We verwerken uw betaling voor de factuur. Wacht tot de betaling is voltooid voordat u uw abonnement wijzigt of betalingsgegevens bijwerkt. Dank u voor uw geduld."
+      "Your payment is still being processed": [
+        "Uw betaling wordt nog verwerkt"
       ]
     },
     "Payments.Error": {

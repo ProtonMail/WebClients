@@ -1114,11 +1114,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select All": [
-        "Selecionar todos"
-      ],
       "Select all": [
         "Selecionar tudo"
+      ],
+      "Select All": [
+        "Selecionar todos"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1313,8 +1313,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -6243,6 +6242,9 @@
       "Calendar side panel": [
         "Painel lateral de calendário"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendário, integrado com ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Não consegue encontrar o que procura? ${ displayAllMailButton }"
       ],
@@ -6281,6 +6283,9 @@
       ],
       "Close this screen to exit.": [
         "Feche esta tela para sair."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Armazenamento em nuvem, integrado com ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Confirmar denúncia de phishing"
@@ -6473,6 +6478,9 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "O e-mail é encaminhado para sua caixa postal; seu endereço de e-mail permanece oculto."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Serviço de e-mail integrado com ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "A proteção do rastreador de e-mail está desativada"
@@ -6684,8 +6692,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -6942,6 +6949,9 @@
       "password": [
         "senha"
       ],
+      "Password manager with extra account security": [
+        "Gerenciador de senhas com segurança extra para contas"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
       ],
@@ -7073,9 +7083,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
       ],
-      "Refining email list in progress": [
-        "Refinando a lista de e-mail em andamento"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
@@ -7154,6 +7161,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
+      ],
+      "Self-custodial crypto wallet": [
+        "Carteira de criptomoeda autocustodial"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Enviar uma mensagem criptografada protegida com senha para um endereço de e-mail ${ boldText }."
@@ -7617,6 +7627,9 @@
       ],
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
+      ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN com servidores e endereço de IP dedicados"
       ],
       "Warning": [
         "Alerta"
@@ -10469,9 +10482,6 @@
       "Save": [
         "Economize"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Economize ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Economize 80% no seu primeiro mês"
       ],
@@ -10864,6 +10874,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -10872,9 +10885,6 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
-      ],
-      "Payment Processing": [
-        "Processando pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -10925,8 +10935,8 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
+      "Your payment is still being processed": [
+        "Seu pagamento ainda está sendo processado"
       ]
     },
     "Payments.Error": {
@@ -12276,7 +12286,7 @@
         "2 usuários"
       ],
       "Add any new files": [
-        "Adicionar qualquer arquivo"
+        "Adicione quaisquer novos arquivos"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura ${ planName } expirar, você fará o downgrade para o ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Você também perderá todos os bônus de armazenamento concedidos anteriormente."
@@ -13832,6 +13842,11 @@
         "Hoje"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indica automaticamente o formato no compositor que é usado para enviar para este usuário. Texto simples indica que a mensagem será sempre convertida em texto simples (sem formatação) no envio."
@@ -13913,11 +13928,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Tor out of date": {

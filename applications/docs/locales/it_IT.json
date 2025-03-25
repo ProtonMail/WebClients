@@ -217,6 +217,9 @@
       "Decline": [
         "Rifiuta"
       ],
+      "Decline invite": [
+        "Rifiuta l'invito"
+      ],
       "Decrease": [
         "Riduci"
       ],
@@ -314,6 +317,9 @@
       ],
       "Get verification code": [
         "Invia il codice di verifica"
+      ],
+      "Go back": [
+        "Torna indietro"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Vai a ${ DRIVE_SHORT_APP_NAME }"
@@ -419,9 +425,6 @@
       ],
       "Move to trash": [
         "Sposta nel cestino"
-      ],
-      "New": [
-        "Nuovo"
       ],
       "New document": [
         "Nuovo documento"
@@ -570,7 +573,7 @@
       "Search countries": [
         "Cerca tra i paesi"
       ],
-      "Search docs": [
+      "Search documents": [
         "Cerca documenti"
       ],
       "See how": [
@@ -3934,9 +3937,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Sei sicuro di voler eliminare definitivamente gli elementi selezionati dal cestino?"
       ],
-      "Are you sure you want to proceed?": [
-        "Sei sicuro di voler procedere?"
-      ],
       "Attention required": [
         "Attenzione"
       ],
@@ -4673,17 +4673,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Questa azione eliminerà definitivamente il file caricato."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Questa azione eliminerà definitivamente la cartella caricata. Non è possibile eliminare una cartella che contiene file non di proprietà."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Questa azione eliminerà il link e revocherà l'accesso a tutti gli utenti."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Questa azione eliminerà definitivamente gli elementi selezionati."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
@@ -4714,6 +4705,15 @@
       ],
       "This message will be presented again later": [
         "Questo messaggio sarà mostrato nuovamente più avanti"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Questo eliminerà definitivamente il file caricato."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Questo eliminerà definitivamente la cartella caricata."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Questo eliminerà definitivamente gli elementi selezionati che hai caricato."
       ],
       "This will replace the existing file with the folder": [
         "Questo sostituirà il file esistente con la cartella."
@@ -4957,6 +4957,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese.",
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mesi."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Stai per rifiutare l'invito a unirti all'album ${ invitationName }. Se procedi, non potrai accedervi a meno che il proprietario non ti inviti di nuovo. Vuoi continuare?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Stai per rifiutare l'invito a unirti alla cartella ${ invitationName }. Se procedi, non potrai accedervi a meno che il proprietario non ti inviti di nuovo. Vuoi continuare?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Stai per rifiutare l'invito a unirti all'elemento ${ invitationName }. Se procedi, non potrai accedervi a meno che il proprietario non ti inviti di nuovo. Vuoi continuare?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Hai raggiunto il numero massimo d'indirizzi nel gruppo o gruppi di contatti:"
@@ -5425,6 +5434,9 @@
       "Move to Inbox": [
         "Sposta nella posta in arrivo"
       ],
+      "My files": [
+        "I miei file"
+      ],
       "Navigation": [
         "Navigazione"
       ],
@@ -5508,6 +5520,9 @@
       ],
       "Set link password": [
         "Imposta la password per il link"
+      ],
+      "Shared with me": [
+        "Condivisi con me"
       ],
       "Sign emails": [
         "Firma email"
@@ -7203,6 +7218,10 @@
       "Share invitation declined": [
         "Invito alla condivisione rifiutato"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Spiacenti, non è stato possibile eliminare la cartella perché non è vuota.",
+        "Spiacenti, non è stato possibile eliminare le cartelle perché non sono vuote."
+      ],
       "Stopping the sharing of this item has failed": [
         "L'interruzione della condivisione di questo elemento non è riuscita"
       ],
@@ -7287,9 +7306,6 @@
       ],
       "Save": [
         "Salva"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Risparmia il ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Salva l'80% nel tuo primo mese."
@@ -7464,6 +7480,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
+      ],
       "Got it": [
         "Ho capito"
       ],
@@ -7472,9 +7491,6 @@
       ],
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
-      ],
-      "Payment Processing": [
-        "Elaborazione del pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
@@ -7525,8 +7541,8 @@
       "Timeout exceeded": [
         "Limite di tempo superato"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
+      "Your payment is still being processed": [
+        "Il tuo pagamento è ancora in fase di elaborazione."
       ]
     },
     "Payments.Error": {
@@ -7742,6 +7758,23 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Email ufficiale da ${ BRAND_NAME }"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "Creato da"
+      ],
+      "Location": [
+        "Localizzazione"
+      ],
+      "Modified": [
+        "Modificato"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Viewed": [
+        "Visto"
       ]
     },
     "Safety review": {
@@ -8876,6 +8909,9 @@
       "Day theme": [
         "Tema giorno"
       ],
+      "Decline invitation?": [
+        "Vuoi rifiutare l'invito?"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -8887,11 +8923,11 @@
         "Elimina ${ count } gruppo di contatti",
         "Elimina ${ count } gruppi di contatti"
       ],
-      "Delete ${ item.name }?": [
-        "Eliminare ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Eliminare ${ links.length } elementi?"
+      ],
+      "Delete ${ name }?": [
+        "Eliminare ${ name }?"
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
@@ -9217,9 +9253,6 @@
       ],
       "What would you like to import?": [
         "Cosa vorresti importare?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Stai per rifiutare l'invito per l'elemento condiviso. Non potrai accedervi nuovamente finché il proprietario non lo condividerà con te."
       ],
       "You can now create unlimited folders and labels": [
         "Adesso puoi creare cartelle ed etichette illimitate"

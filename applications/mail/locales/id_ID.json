@@ -1110,11 +1110,11 @@
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
-      "Select All": [
-        "Pilih Semua"
-      ],
       "Select all": [
         "Pilih semua"
+      ],
+      "Select All": [
+        "Pilih Semua"
       ],
       "Select all messages": [
         "Pilih semua pesan"
@@ -1307,9 +1307,6 @@
       ],
       "Trust": [
         "Percayai"
-      ],
-      "Trust key": [
-        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -6143,6 +6140,9 @@
       "Calendar side panel": [
         "Panel samping kalender"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Kalender, terintegrasi dengan ${ MAIL_APP_NAME } dan ${ CONTACTS_APP_NAME }"
+      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Tidak dapat menemukan apa yang Anda cari? ${ displayAllMailButton }"
       ],
@@ -6181,6 +6181,9 @@
       ],
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Penyimpanan cloud, terintegrasi dengan ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Konfirmasi laporan phishing"
@@ -6371,6 +6374,9 @@
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "Email yang masuk akan diteruskan menuju kotak surat Anda; alamat email asli Anda akan tetap tersembunyi."
       ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Layanan email, terintegrasi dengan ${ CALENDAR_APP_NAME } dan ${ CONTACTS_APP_NAME }"
+      ],
       "Email tracker protection is disabled": [
         "Perlindungan pelacak email dinonakifkan"
       ],
@@ -6525,7 +6531,7 @@
         "Apabila alias Anda dijual, dibocorkan, atau disalahgunakan, Anda hanya perlu menonaktifkannya untuk dapat berhenti menerima spam."
       ],
       "If your password ends up on the dark web, ${ BRAND_NAME } can tell you which service your data was leaked from and how to halt the damage.": [
-        "Apabila kata sandi Anda muncul pada dark web, ${ BRAND_NAME } dapat memberi tahu Anda dari layanan mana kata sandi ini dibocorkan serta bagaimana cara untuk menghentikan dampak kebocoran ini."
+        "Apabila kata sandi Anda muncul di dark web, ${ BRAND_NAME } dapat memberi tahu Anda dari layanan mana kata sandi ini dibocorkan serta bagaimana cara untuk menghentikan dampak kebocoran ini."
       ],
       "Image description": [
         "Keterangan gambar"
@@ -6830,6 +6836,9 @@
       "password": [
         "kata sandi"
       ],
+      "Password manager with extra account security": [
+        "Pengelola kata sandi dengan keamanan akun ekstra"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
@@ -6959,9 +6968,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap tersimpan pada perangkat ini kecuali Anda memilih untuk menghapusnya."
       ],
-      "Refining email list in progress": [
-        "Proses penyempurnaan daftar email sedang berlangsung"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
@@ -7039,6 +7045,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
+      ],
+      "Self-custodial crypto wallet": [
+        "Dompet kripto mandiri"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Kirim pesan yang terenkripsi dan terlindung kata sandi kepada alamat email ${ boldText }."
@@ -7138,6 +7147,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Langganan diperbarui secara otomatis setiap ${ cycle } bulan."
       ],
       "Subscription auto-renews every month.": [
         "Langganan akan diperbarui secara otomatis setiap bulannya."
@@ -7496,6 +7508,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN dengan server dan alamat IP khusus"
+      ],
       "Warning": [
         "Peringatan"
       ],
@@ -7721,6 +7736,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan berkas apa pun. Apakah Anda yakin untuk tetap mengirim pesan ini?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Anda telah mencapai batas jumlah alamat dalam grup kontak:"
       ],
@@ -7796,8 +7814,14 @@
       "Your private writing assistant": [
         "Asisten penulisan pribadi Anda"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
       ]
     },
     "info": {
@@ -10273,9 +10297,6 @@
       "Save": [
         "Simpan"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Hemat ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Hemat 80% pada bulan pertama Anda."
       ],
@@ -10655,6 +10676,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Selama periode ini, Anda tidak akan dapat mengubah atau membatalkan langganan Anda. Silakan tunggu hingga pembayaran Anda rampung sebelum mencoba untuk merubah suatu hal. Terima kasih atas kesabaran Anda."
+      ],
       "Got it": [
         "Mengerti"
       ],
@@ -10663,9 +10687,6 @@
       ],
       "More plans are available in other currencies": [
         "Lebih banyak paket tersedia pada mata uang lainnya"
-      ],
-      "Payment Processing": [
-        "Pembayaran Sedang Diproses"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
@@ -10682,14 +10703,38 @@
       "Please select your billing state first.": [
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Harga pembaruan dapat berubah sewaktu-waktu sesuai dengan ${ termsAndConditionsLink } yang berlaku."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
+      ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
+      ],
+      "terms & conditions": [
+        "syarat & ketentuan"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Kami sedang memproses pembayaran Anda untuk faktur yang tertagih. Silakan tunggu hingga pembayaran selesai sebelum membuat perubahan pada paket Anda atau memperbarui rincian pembayaran Anda. Terima kasih atas kesabaran Anda."
+      "Your payment is still being processed": [
+        "Pembayaran Anda masih diproses"
       ]
     },
     "Payments.Error": {
@@ -13512,6 +13557,11 @@
         "Hari ini"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ]
+    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
@@ -13595,11 +13645,6 @@
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi ujung ke ujung ke alamat ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
@@ -13662,6 +13707,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPriceStr }."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Langganan baru Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
       ],

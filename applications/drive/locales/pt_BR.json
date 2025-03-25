@@ -276,6 +276,9 @@
       "Decline": [
         "Negar"
       ],
+      "Decline invite": [
+        "Recusar convite"
+      ],
       "Decrease": [
         "Diminuir"
       ],
@@ -4440,6 +4443,9 @@
       "Calendar side panel": [
         "Painel lateral de calendário"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendário, integrado com ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Cancelado"
       ],
@@ -4481,6 +4487,9 @@
       ],
       "Close this screen to exit.": [
         "Feche esta tela para sair."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Armazenamento em nuvem, integrado com ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Conflito"
@@ -4631,6 +4640,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através da ${ BRAND_NAME }. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Serviço de e-mail integrado com ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "E-mails são assinados automaticamente"
@@ -5040,6 +5052,9 @@
       "password": [
         "senha"
       ],
+      "Password manager with extra account security": [
+        "Gerenciador de senhas com segurança extra para contas"
+      ],
       "Paused": [
         "Em pausa"
       ],
@@ -5245,6 +5260,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
+      ],
+      "Self-custodial crypto wallet": [
+        "Carteira de criptomoeda autocustodial"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Os pagamentos SEPA não estão disponíveis no momento. Tente novamente mais tarde."
@@ -5581,6 +5599,9 @@
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN com servidores e endereço de IP dedicados"
+      ],
       "Want to sync files faster?": [
         "Quer sincronizar arquivos mais rapidamente?"
       ],
@@ -5763,6 +5784,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }.",
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Você está prestes a recusar o convite para participar do álbum ${ invitationName }. Se você prosseguir, não poderá acessá-lo a menos que o proprietário o convide novamente. Tem certeza de que deseja continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Você está prestes a recusar o convite para participar da pasta ${ invitationName }. Se você prosseguir, não poderá acessá-la a menos que o proprietário o convide novamente. Tem certeza de que deseja continuar?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Você está prestes a recusar o convite para participar do item ${ invitationName }. Se você prosseguir, não poderá acessá-lo a menos que o proprietário o convide novamente. Tem certeza de que deseja continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Você alcançou o número máximo de endereços no grupo ou grupo de contatos"
@@ -8073,6 +8103,14 @@
         "Erro ao descriptografar ${ count } item",
         "Erro ao descriptografar ${ count } itens"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "${ nbFailures } foto não pôde ser adicionada ao \"${ albumName }\"",
+        "${ nbFailures } fotos não foram adicionadas ao \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } foto adicionada para \"${ albumName }\"",
+        "${ nbSuccesses } fotos adicionadas para \"${ albumName }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item excluído",
         "${ numberOfItems } itens excluídos"
@@ -8357,9 +8395,6 @@
       ],
       "Save": [
         "Economize"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Economize ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Economize 80% no seu primeiro mês"
@@ -8690,6 +8725,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -8698,9 +8736,6 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
-      ],
-      "Payment Processing": [
-        "Processando pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
@@ -8751,8 +8786,8 @@
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
+      "Your payment is still being processed": [
+        "Seu pagamento ainda está sendo processado"
       ]
     },
     "Payments.Error": {
@@ -9779,7 +9814,7 @@
         "2 usuários"
       ],
       "Add any new files": [
-        "Adicionar qualquer arquivo"
+        "Adicione quaisquer novos arquivos"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura ${ planName } expirar, você fará o downgrade para o ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Você também perderá todos os bônus de armazenamento concedidos anteriormente."
@@ -10470,6 +10505,9 @@
       "Day theme": [
         "Tema diurno"
       ],
+      "Decline invitation?": [
+        "Recusar convite?"
+      ],
       "Delete": [
         "Excluir"
       ],
@@ -10921,9 +10959,6 @@
       ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Você está prestes a recusar o convite para o item compartilhado. Você não poderá acessá-lo novamente até que o proprietário o compartilhe com você."
       ],
       "You can now create unlimited folders and labels": [
         "Agora você pode criar pastas e etiquetas ilimitadas."

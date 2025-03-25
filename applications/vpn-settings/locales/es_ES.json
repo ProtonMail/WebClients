@@ -328,9 +328,6 @@
       "Enable multi-user support": [
         "Activar soporte multiusuario"
       ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "Descubre ${ PLAN_NAMES[plan] }"
-      ],
       "Explore group plans": [
         "Descubre los planes de grupo"
       ],
@@ -398,10 +395,10 @@
         "Ayuda"
       ],
       "Help and feedback": [
-        "Ayuda y Comentarios "
+        "Ayuda y comentarios"
       ],
       "Help and resources": [
-        "Ayuda y Recursos"
+        "Ayuda y recursos"
       ],
       "Hide": [
         "Ocultar"
@@ -509,7 +506,7 @@
         "Página anterior"
       ],
       "Publish changes": [
-        "Publicar cambios"
+        "Publicar los cambios"
       ],
       "Recover data": [
         "Recuperar datos"
@@ -1243,7 +1240,7 @@
         "¿Cuál es el mejor protocolo VPN?"
       ],
       "Working with sensitive data?": [
-        "¿Trabaja con datos sensibles?"
+        "¿Trabajas con datos sensibles?"
       ]
     },
     "Browser": {
@@ -1383,7 +1380,7 @@
         "Gestor de contraseñas cifrado"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Nuestro plan básico y gratuito con correo y almacenamiento encriptado de extremo a extremo. No incluye características prémium."
+        "Nuestro plan básico y gratuito con correo y almacenamiento cifrado de extremo a extremo. No incluye características prémium."
       ],
       "Save ${ upsellSavings }": [
         "Ahorra un ${ upsellSavings }"
@@ -2357,12 +2354,12 @@
     },
     "customer_support.feature.drive": {
       "For ${ DRIVE_APP_NAME }": [
-        "Por ${ DRIVE_APP_NAME }"
+        "Para ${ DRIVE_APP_NAME }"
       ]
     },
     "customer_support.feature.mail": {
       "For ${ MAIL_APP_NAME }": [
-        "Por ${ MAIL_APP_NAME }"
+        "Para ${ MAIL_APP_NAME }"
       ]
     },
     "customer_support.feature.pass": {
@@ -2713,7 +2710,7 @@
     },
     "Email verification": {
       "Verification email sent to ${ address }": [
-        "El correo electrónico de verificación fue enviado a ${ address }"
+        "Se ha enviado el correo electrónico de verificación a ${ address }."
       ]
     },
     "Empty group name": {
@@ -2918,7 +2915,7 @@
         "Pasa a un plan para empresa con más de 1 usuario para administrar varios usuarios."
       ],
       "Please upload a square logo": [
-        "Cargar un logo cuadrado"
+        "Carga un logo cuadrado"
       ],
       "Please upload an XML file": [
         "Carga un archivo XML."
@@ -3219,7 +3216,7 @@
         "Tienes facturas pendientes de pago. Por favor, págalas antes de unirte a un plan familiar."
       ],
       "You need to configure a custom domain before adding multiple users.": [
-        "Debes configurar un dominio personalizado antes de crear múltiples usuarios."
+        "Debes configurar un dominio personalizado antes de crear varios usuarios."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Debes configurar un dominio personalizado antes de crear un nuevo usuario."
@@ -3924,6 +3921,10 @@
         "${ remainingAddresses.length } dirección más",
         "${ remainingAddresses.length } direcciones más"
       ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } seleccionado",
+        "${ selectedEntities.length } seleccionados"
+      ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
@@ -4365,7 +4366,7 @@
         "Editado (no publicado)"
       ],
       "eduGAIN configuration saved": [
-        "configuración del eduGAIN guardada"
+        "Se ha guardado la configuración de EduGain."
       ],
       "email": [
         "correo electrónico"
@@ -4644,7 +4645,7 @@
         "Se han cambiado los marcadores del elemento en ${ vaultLink }."
       ],
       "Item flags changed in vault": [
-        "Los marcadores del elemento en la caja fuerte han sido cambiados."
+        "Se han cambiado los marcadores del elemento en la caja fuerte."
       ],
       "Item in ${ vaultLink } trashed": [
         "Elemento en ${ vaultLink } eliminado"
@@ -5393,7 +5394,7 @@
         "Letras mayúsculas y minúsculas"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
-        "Utiliza un método de recuperación para desactivar tus métodos de autenticación de dos factores."
+        "Usa un método de recuperación para desactivar tus métodos de autenticación de dos factores."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
@@ -7218,7 +7219,7 @@
         "Cifrado de extremo a extremo"
       ],
       "Fast P2P/BitTorrent downloads": [
-        "Descaras de P2P/BitTorrent rápidas"
+        "Descargas rápidas de P2P/BitTorrent"
       ],
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Funciones gratuitas de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }"
@@ -7554,7 +7555,7 @@
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Paga una vez, asegura tus contraseñas e identidad para siempre."
+        "Paga una vez y asegura tus contraseñas e identidad para siempre."
       ],
       "Popular": [
         "Popular"
@@ -7975,7 +7976,7 @@
         "4 a 6 correos al año"
       ],
       "Application notifications": [
-        "Notificaciones de l'aplicación"
+        "Notificaciones de la aplicación"
       ],
       "Critical account notifications will still be delivered": [
         "Las notificaciones críticas de la cuenta seguirán llegando"
@@ -8099,9 +8100,6 @@
       ],
       "Save": [
         "Ahorra"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Ahorra un ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Ahorra un 80 % en tu primer mes."
@@ -8512,6 +8510,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -8520,9 +8521,6 @@
       ],
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas"
-      ],
-      "Payment Processing": [
-        "Procesando el pago"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Añade un método de pago en el panel de control para continuar."
@@ -8582,11 +8580,11 @@
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estamos procesando el pago de la factura. Espera hasta que se complete el pago antes de realizar cambios en tu plan o actualizar tus detalles de pago. Gracias por tu paciencia."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se te cobrará ${ amountToCharge } a tu método de pago seleccionado."
+      ],
+      "Your payment is still being processed": [
+        "Su pago aún está siendo procesado"
       ]
     },
     "Payments.Error": {
@@ -9700,7 +9698,7 @@
         "Dispositivos disponibles"
       ],
       "Enter the confirmation code we sent to this user.": [
-        "Ingrese el código de confirmación que le enviamos a este usuario."
+        "Ingresa el código de confirmación que le enviamos a este usuario."
       ],
       "Enter your backup password": [
         "Ingresa tu contraseña de respaldo."
@@ -9766,7 +9764,7 @@
         "Iniciar sesión en tu organización"
       ],
       "Sign out and in again to change your backup password": [
-        "Cierra la sesión y vuelva a iniciarla para cambiar su contraseña de respaldo"
+        "Cierra la sesión y vuelva a iniciarla para cambiar tu contraseña de respaldo"
       ],
       "Single sign-on removed": [
         "Se ha quitado el inicio de sesión único."
@@ -10031,7 +10029,7 @@
         "VPN de alta velocidad en ${ maxVpn } dispositivos"
       ],
       "VPN connection for ${ n } devices per user": [
-        "Conexión VPN para ${ n } dispositivos por usuario",
+        "Conexión VPN para ${ n } dispositivo por usuario",
         "Conexión VPN para ${ n } dispositivos por usuario"
       ]
     },
@@ -10071,47 +10069,6 @@
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "and 15 more premium features": [
-        "y 15 funciones premium más"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenvío de correo automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de vulneraciones de datos ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicación de escritorio"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
-      ],
-      "No ads or tracking": [
-        "Sin anuncios ni rastreadores"
-      ],
-      "Short @pm.me email address": [
-        "Dirección de correo corta @pm.me"
-      ],
-      "Support our mission": [
-        "Apoya nuestra misión"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade your productivity": [
-        "Mejora tu productividad"
-      ],
-      "We don't sell your data": [
-        "No vendemos tus datos."
-      ],
-      "Your privacy is our mission": [
-        "Tu privacidad es nuestra misión."
       ]
     },
     "Subscription reminder": {
@@ -10404,6 +10361,47 @@
         "Tu alias de correo electrónico @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "and 15 more premium features": [
+        "y 15 funciones premium más"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenvío de correo automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de vulneraciones de datos ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ayúdanos a mantener internet seguro y privado para todos. Mejora a un plan de pago."
+      ],
+      "No ads or tracking": [
+        "Sin anuncios ni rastreadores"
+      ],
+      "Short @pm.me email address": [
+        "Dirección de correo corta @pm.me"
+      ],
+      "Support our mission": [
+        "Apoya nuestra misión"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade your productivity": [
+        "Mejora tu productividad"
+      ],
+      "We don't sell your data": [
+        "No vendemos tus datos."
+      ],
+      "Your privacy is our mission": [
+        "Tu privacidad es nuestra misión."
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "¿Estás seguro?"
@@ -10564,7 +10562,7 @@
         "Usuario actualizado"
       ],
       "Username copied to clipboard": [
-        "El nombre de usuario ha sido copiado al portapapeles."
+        "Se ha copiado el nombre de usuario al portapapeles."
       ],
       "Value copied to clipboard": [
         "Valor copiado en el portapapeles"
@@ -11197,7 +11195,7 @@
         "Grupos"
       ],
       "Help and feedback": [
-        "Ayuda y Comentarios "
+        "Ayuda y comentarios"
       ],
       "Help center": [
         "Centro de ayuda"
@@ -11664,7 +11662,7 @@
         "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
-        "Esto puede deberse a que se ha restablecido la contraseña o a que el usuario aún no ha iniciado sesión."
+        "Esto puede deberse a un restablecimiento de contraseña o el usuario aún no ha iniciado sesión."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Esta dirección de correo se mostrará a todos los miembros de la organización cuando se ejecute operaciones de gestión de cuentas."
@@ -12059,8 +12057,8 @@
         "Selección automática desde ${ numberOfCountries } países"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Servidores en ${ numberOfCountries }+ país",
-        "Servidores de ${ numberOfCountries }+ países"
+        "Servidores en ${ numberOfCountries } país",
+        "Servidores en más de ${ numberOfCountries } países"
       ]
     },
     "vpn_2024: renew": {

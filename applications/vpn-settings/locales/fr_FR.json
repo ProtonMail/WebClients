@@ -328,9 +328,6 @@
       "Enable multi-user support": [
         "Activer la prise en charge multi-utilisateur"
       ],
-      "Explore ${ PLAN_NAMES[plan] }": [
-        "Découvrez ${ PLAN_NAMES[plan] }"
-      ],
       "Explore group plans": [
         "Découvrez les abonnements groupés"
       ],
@@ -8104,9 +8101,6 @@
       "Save": [
         "Économisez"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Économisez ${ prices.savedPercentage } %"
-      ],
       "Save 80% on your first month.": [
         "Économisez 80 % sur votre premier mois"
       ],
@@ -8516,6 +8510,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -8524,9 +8521,6 @@
       ],
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
-      ],
-      "Payment Processing": [
-        "Traitement des paiements"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Pour continuer, ajoutez un moyen de paiement dans le tableau de bord."
@@ -8586,11 +8580,11 @@
       "Timeout exceeded": [
         "Le délai est dépassé."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre abonnement ou de mettre à jour vos informations de paiement. Merci pour votre patience."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
+      ],
+      "Your payment is still being processed": [
+        "Votre paiement est en cours de traitement."
       ]
     },
     "Payments.Error": {
@@ -10077,47 +10071,6 @@
         "Pour ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
-      ]
-    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -10406,6 +10359,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {

@@ -216,6 +216,9 @@
       "Decline": [
         "Tolak"
       ],
+      "Decline invite": [
+        "Tolak undangan"
+      ],
       "Decrease": [
         "Kurangi"
       ],
@@ -311,6 +314,9 @@
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
+      ],
+      "Go back": [
+        "Kembali"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Tuju ${ DRIVE_SHORT_APP_NAME }"
@@ -416,9 +422,6 @@
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
-      ],
-      "New": [
-        "Berkas/folder baru"
       ],
       "New document": [
         "Dokumen baru"
@@ -566,9 +569,6 @@
       ],
       "Search countries": [
         "Cari negara"
-      ],
-      "Search docs": [
-        "Cari di dokumen"
       ],
       "See how": [
         "Lihat caranya"
@@ -3878,9 +3878,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Apakah Anda yakin untuk menghapus item-item yang terpilih dari sampah secara permanen?"
       ],
-      "Are you sure you want to proceed?": [
-        "Apakah Anda yakin ingin melanjutkan?"
-      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -4121,6 +4118,9 @@
       "Failing signatures will be re-signed by you": [
         "Tanda tangan yang tidak lolos verifikasi akan ditandatangani ulang oleh Anda"
       ],
+      "Favorites": [
+        "Favorit"
+      ],
       "File \"${ name }\" was deleted during download": [
         "Berkas \"${ name }\" telah dihapus pada saat pengunduhan sedang berlangsung"
       ],
@@ -4159,6 +4159,9 @@
       ],
       "Get Notified About Comments": [
         "Beri Tahu Tentang Komentar"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Tuju ${ DRIVE_APP_NAME }"
       ],
       "here": [
         "di sini"
@@ -4469,6 +4472,12 @@
       "Public documents are not yet enabled for your organization.": [
         "Dokumen publik belum diaktifkan untuk organisasi Anda."
       ],
+      "Recently deleted": [
+        "Baru dihapus"
+      ],
+      "Recents": [
+        "Terkini"
+      ],
       "recommended browser": [
         "browser yang disarankan"
       ],
@@ -4559,6 +4568,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Langganan diperbarui secara otomatis setiap ${ cycle } bulan."
+      ],
       "Subscription auto-renews every month.": [
         "Langganan akan diperbarui secara otomatis setiap bulannya."
       ],
@@ -4595,17 +4607,8 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
       ],
-      "This action will delete the file you uploaded permanently.": [
-        "Tindakan ini akan menghapus berkas yang Anda unggah secara permanen."
-      ],
-      "This action will delete the folder you uploaded permanently. You cannot delete a folder that contains not owned file.": [
-        "Tindakan ini akan menghapus folder yang Anda unggah secara permanen. Anda tidak dapat menghapus folder yang berisi berkas yang tidak dimiliki."
-      ],
       "This action will delete the link and revoke access for all users.": [
         "Tindakan ini akan menghapus tautan yang bersangkutan dan mencabut akses bagi seluruh pengguna."
-      ],
-      "This action will delete the selected items permanently.": [
-        "Tindakan ini akan menghapus item yang dipilih secara permanen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
@@ -4636,6 +4639,15 @@
       ],
       "This message will be presented again later": [
         "Pesan ini akan ditampilkan kembali di kemudian waktu"
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "Tindakan ini akan menghapus berkas yang telah Anda unggah secara permanen."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "Tindakan ini akan menghapus folder yang telah Anda unggah secara permanen."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "Tindakan ini akan menghapus item terpilih yang telah Anda unggah secara permanen."
       ],
       "This will replace the existing file with the folder": [
         "Dengan ini, berkas yang telah ada akan diganti dengan folder"
@@ -4874,6 +4886,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Anda telah mencapai batas jumlah alamat dalam grup kontak:"
       ],
@@ -4949,8 +4964,14 @@
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
       ]
     },
     "info": {
@@ -5411,6 +5432,9 @@
       ],
       "Set link password": [
         "Atur kata sandi tautan"
+      ],
+      "Shared with me": [
+        "Dibagikan dengan saya"
       ],
       "Sign emails": [
         "Tanda tangani email"
@@ -7067,6 +7091,9 @@
       "Share invitation declined": [
         "Undangan untuk berbagi ditolak"
       ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Maaf, kami tidak dapat menghapus folder ini karena folder tidak kosong."
+      ],
       "Stopping the sharing of this item has failed": [
         "Pembagian item gagal dihentikan"
       ],
@@ -7151,9 +7178,6 @@
       ],
       "Save": [
         "Simpan"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Hemat ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Hemat 80% pada bulan pertama Anda."
@@ -7327,6 +7351,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Selama periode ini, Anda tidak akan dapat mengubah atau membatalkan langganan Anda. Silakan tunggu hingga pembayaran Anda rampung sebelum mencoba untuk merubah suatu hal. Terima kasih atas kesabaran Anda."
+      ],
       "Got it": [
         "Mengerti"
       ],
@@ -7335,9 +7362,6 @@
       ],
       "More plans are available in other currencies": [
         "Lebih banyak paket tersedia pada mata uang lainnya"
-      ],
-      "Payment Processing": [
-        "Pembayaran Sedang Diproses"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
@@ -7354,14 +7378,38 @@
       "Please select your billing state first.": [
         "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Harga pembaruan dapat berubah sewaktu-waktu sesuai dengan ${ termsAndConditionsLink } yang berlaku."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
+      ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
+      ],
+      "terms & conditions": [
+        "syarat & ketentuan"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Kami sedang memproses pembayaran Anda untuk faktur yang tertagih. Silakan tunggu hingga pembayaran selesai sebelum membuat perubahan pada paket Anda atau memperbarui rincian pembayaran Anda. Terima kasih atas kesabaran Anda."
+      "Your payment is still being processed": [
+        "Pembayaran Anda masih diproses"
       ]
     },
     "Payments.Error": {
@@ -8680,11 +8728,11 @@
       "Delete ${ count } contact group": [
         "Hapus ${ count } grup kontak"
       ],
-      "Delete ${ item.name }?": [
-        "Hapus ${ item.name }?"
-      ],
       "Delete ${ links.length } items?": [
         "Hapus ${ links.length } item?"
+      ],
+      "Delete ${ name }?": [
+        "Hapus ${ name }?"
       ],
       "Delete ${ value }": [
         "Hapus ${ value }"
@@ -9010,9 +9058,6 @@
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
       ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Anda akan menolak undangan untuk item yang dibagikan. Anda tidak akan dapat mengakses lagi sampai pemilik membagikan ulang kepada Anda."
-      ],
       "You can now create unlimited folders and labels": [
         "Anda kini dapat membuat folder dan label tanpa batasan jumlah"
       ],
@@ -9173,6 +9218,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Setelahnya, Anda akan ditagih setiap 12 bulan pada harga ${ renewPriceStr }."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Langganan baru Anda akan diperbarui secara otomatis dalam ${ cycle } bulan."
       ],

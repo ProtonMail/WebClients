@@ -7806,9 +7806,6 @@
       "Save": [
         "Estalvieu"
       ],
-      "Save ${ prices.savedPercentage }%": [
-        "Estalvieu el ${ prices.savedPercentage }%"
-      ],
       "Save 80% on your first month.": [
         "Estalvieu un 80% en el vostre primer mes."
       ],
@@ -8080,6 +8077,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
+      ],
       "Got it": [
         "Entesos"
       ],
@@ -8088,9 +8088,6 @@
       ],
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
-      ],
-      "Payment Processing": [
-        "Processament de pagaments"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
@@ -8141,8 +8138,8 @@
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Estem tramitant el pagament de la factura. Espereu que el pagament s'hagi completat abans de fer canvis al pla o actualitzar les dades del pagament. Gràcies per la vostra paciència."
+      "Your payment is still being processed": [
+        "El vostre pagament encara s'està processant."
       ]
     },
     "Payments.Error": {
