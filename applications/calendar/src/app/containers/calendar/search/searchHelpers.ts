@@ -18,6 +18,7 @@ import {
 import { formatIntlUTCDate } from '@proton/shared/lib/date-utc/formatIntlUTCDate';
 import { convertTimestampToTimezone, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import type { MaybeArray, SimpleMap, UserSettings } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import groupWith from '@proton/utils/groupWith';
@@ -303,7 +304,9 @@ export const getEventsDayDateString = (date: Date) => {
         month: 'short',
         year: 'numeric',
     });
-    const shortWeekDay = formatUTC(date, 'ccc');
+    const shortWeekDay = formatUTC(date, 'ccc', {
+        locale: dateLocale,
+    });
     return `${shortWeekDay}, ${formattedMonthYear}`;
 };
 
