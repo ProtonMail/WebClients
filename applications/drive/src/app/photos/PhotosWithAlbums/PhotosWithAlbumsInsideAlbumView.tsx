@@ -491,7 +491,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onFileSkipped={onPhotoUploadedToAlbum}
                             album={album}
                             onShare={() => {
-                                showLinkSharingModal({ shareId: albumShareId, linkId });
+                                showLinkSharingModal({ shareId: albumShareId, linkId: album.linkId });
                             }}
                         />
                     </div>
