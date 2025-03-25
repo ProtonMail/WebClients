@@ -276,6 +276,9 @@
       "Decline": [
         "Rifiuta"
       ],
+      "Decline invite": [
+        "Rifiuta l'invito"
+      ],
       "Decrease": [
         "Riduci"
       ],
@@ -4440,6 +4443,9 @@
       "Calendar side panel": [
         "Pannello laterale del calendario"
       ],
+      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Calendario, integrato con ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
+      ],
       "Canceled": [
         "Annullato"
       ],
@@ -4481,6 +4487,9 @@
       ],
       "Close this screen to exit.": [
         "Chiudi questa schermata per uscire."
+      ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Archiviazione cloud, integrato con ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Conflitto"
@@ -4631,6 +4640,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
+      ],
+      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
+        "Servizio di posta elettronica, integrato con ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "Le email sono firmate in automatico"
@@ -5040,6 +5052,9 @@
       "password": [
         "password"
       ],
+      "Password manager with extra account security": [
+        "Gestore password con sicurezza extra dell'account"
+      ],
       "Paused": [
         "In pausa"
       ],
@@ -5245,6 +5260,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleziona i calendari da importare. Verrà creato un nuovo calendario per ogni calendario importato in base al numero di calendari disponibili nel tuo piano."
+      ],
+      "Self-custodial crypto wallet": [
+        "Portafoglio crypto a custodia autonoma"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "I pagamenti SEPA non sono disponibili al momento. Si prega di riprovare più tardi."
@@ -5581,6 +5599,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN con server dedicati e indirizzi IP"
+      ],
       "Want to sync files faster?": [
         "Vuoi sincronizzare i file più velocemente?"
       ],
@@ -5763,6 +5784,15 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese.",
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mesi."
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Stai per rifiutare l'invito a unirti all'album ${ invitationName }. Se procedi, non potrai accedervi a meno che il proprietario non ti inviti di nuovo. Vuoi continuare?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Stai per rifiutare l'invito a unirti alla cartella ${ invitationName }. Se procedi, non potrai accedervi a meno che il proprietario non ti inviti di nuovo. Vuoi continuare?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Stai per rifiutare l'invito a unirti all'elemento ${ invitationName }. Se procedi, non potrai accedervi a meno che il proprietario non ti inviti di nuovo. Vuoi continuare?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Hai raggiunto il numero massimo d'indirizzi nel gruppo o gruppi di contatti:"
@@ -8067,6 +8097,14 @@
         "Decrittografia di ${ count } elemento non riuscita",
         "Decrittografia di ${ count } elementi non riuscita"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "Non si è potuto aggiungere ${ nbFailures } foto a «${ albumName }».",
+        "Non si è potuto aggiungere ${ nbFailures } foto a «${ albumName }»."
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } foto è stata aggiunta a «${ albumName }».",
+        "${ nbSuccesses } foto sono state aggiunte a «${ albumName }»."
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminato",
         "${ numberOfItems } elementi eliminati"
@@ -8351,9 +8389,6 @@
       ],
       "Save": [
         "Salva"
-      ],
-      "Save ${ prices.savedPercentage }%": [
-        "Risparmia il ${ prices.savedPercentage }%"
       ],
       "Save 80% on your first month.": [
         "Salva l'80% nel tuo primo mese."
@@ -8678,6 +8713,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
+      ],
       "Got it": [
         "Ho capito"
       ],
@@ -8686,9 +8724,6 @@
       ],
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
-      ],
-      "Payment Processing": [
-        "Elaborazione del pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
@@ -8739,8 +8774,8 @@
       "Timeout exceeded": [
         "Limite di tempo superato"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
+      "Your payment is still being processed": [
+        "Il tuo pagamento è ancora in fase di elaborazione."
       ]
     },
     "Payments.Error": {
@@ -10458,6 +10493,9 @@
       "Day theme": [
         "Tema giorno"
       ],
+      "Decline invitation?": [
+        "Vuoi rifiutare l'invito?"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -10909,9 +10947,6 @@
       ],
       "What would you like to import?": [
         "Cosa vorresti importare?"
-      ],
-      "You are about to decline the invitation for the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Stai per rifiutare l'invito per l'elemento condiviso. Non potrai accedervi nuovamente finché il proprietario non lo condividerà con te."
       ],
       "You can now create unlimited folders and labels": [
         "Adesso puoi creare cartelle ed etichette illimitate"
