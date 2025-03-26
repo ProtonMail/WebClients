@@ -31,7 +31,7 @@ import {
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectItem } from '@proton/pass/store/selectors';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
+import type { FileDescriptor, ItemFileOutput, ItemLatestKeyResponse, ItemRevision, Maybe } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -148,11 +148,11 @@ const resolveFiles = createRequestSaga({
 
 const restore = createRequestSaga({
     actions: fileRestore,
-    call: async (dto) => {
-        const latestItemKey = await getLatestItemKey(dto);
-        const result = await restoreSingleFile(dto, latestItemKey);
-        const files = await intoFileDescriptors([result], dto.shareId, latestItemKey);
-
+    call: function* (dto) {
+        const { shareId } = dto;
+        const latestItemKey: ItemLatestKeyResponse = yield getLatestItemKey(dto);
+        const result: ItemFileOutput = yield restoreSingleFile(dto, latestItemKey);
+        const files: FileDescriptor[] = yield intoFileDescriptors([result], shareId, latestItemKey);
         return { ...dto, files };
     },
 });

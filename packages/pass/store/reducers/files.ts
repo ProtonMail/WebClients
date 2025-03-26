@@ -1,6 +1,6 @@
 import type { Reducer } from 'redux';
 
-import { fileUpdateMetadata, filesResolve } from '@proton/pass/store/actions';
+import { fileRestore, fileUpdateMetadata, filesResolve } from '@proton/pass/store/actions';
 import type { FileDescriptor, ItemId, Maybe, ShareId } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 
@@ -12,6 +12,15 @@ const reducer: Reducer<FilesState> = (state = {}, action) => {
         const existing = state[shareId]?.[itemId];
         if (files.length === 0 && (existing?.length ?? 0) === 0) return state;
         return merge(state, { [shareId]: { [itemId]: files } });
+    }
+
+    /** FIXME: we should optimistically update files when editing/creating
+     * an item as well for immediate feedback in UI */
+    if (fileRestore.success.match(action)) {
+        const { shareId, itemId, files } = action.payload;
+        const existing = state[shareId]?.[itemId];
+        if (!existing) return state;
+        return merge(state, { [shareId]: { [itemId]: [...existing, ...files] } });
     }
 
     if (fileUpdateMetadata.success.match(action)) {
