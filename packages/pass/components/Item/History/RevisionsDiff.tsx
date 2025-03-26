@@ -22,10 +22,13 @@ import { getItemHistoryRoute } from '@proton/pass/components/Navigation/routing'
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useFileRevision } from '@proton/pass/hooks/files/useFileRevision';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
 import { itemEdit } from '@proton/pass/store/actions';
 import { selectShare } from '@proton/pass/store/selectors';
+import { selectItemFilesForRevision } from '@proton/pass/store/selectors/files';
 import type { ItemEditIntent, ItemRevision, ItemType } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 import { useItemHistory } from './ItemHistoryContext';
@@ -56,7 +59,10 @@ export const RevisionDiff: FC = () => {
     const previousItem = useMemo(() => revisions.find((item) => item.revision === previous), [revisions, previous]);
     const selectedItem = (selected === latest ? latestItem : previousItem) ?? latestItem;
 
-    const { files, getFilesToRestore, restoreFile } = useFileRevision({
+    const latestFiles = useMemoSelector(selectItemFilesForRevision, [shareId, itemId, latest]);
+    const latestFileUUIDs = useMemo(() => new Set(latestFiles.map(prop('fileUID'))), [latestFiles]);
+
+    const { files, getFilesToRestore, restoreFile, restoring } = useFileRevision({
         shareId,
         itemId,
         revision: selectedItem.revision,
@@ -135,7 +141,8 @@ export const RevisionDiff: FC = () => {
                         <FileAttachment
                             key={`file-${key}`}
                             file={file}
-                            disabled={selected === latest || !file.revisionRemoved}
+                            loading={restoring.has(file.fileID)}
+                            disabled={selected === latest || !file.revisionRemoved || latestFileUUIDs.has(file.fileUID)}
                             onRestore={() => restoreFile({ shareId, itemId, fileId: file.fileID })}
                         />
                     ))}
