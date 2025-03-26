@@ -50,7 +50,6 @@ import {
     getSerializedCredential,
     isPRFSupported,
 } from '@proton/pass/lib/crypto/utils/prf';
-import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { Maybe } from '@proton/pass/types';
@@ -133,7 +132,6 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                 hash: page,
             }),
 
-        prepareImport,
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
 
         supportsBiometrics: isPRFSupported,

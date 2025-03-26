@@ -133,8 +133,11 @@ export type ImportVault = {
     items: ItemImportIntent[];
 };
 
-export type ImportPayload = { vaults: ImportVault[]; ignored: string[]; warnings: string[] };
-export type ImportDecryptPayload = { filename: string; passphrase?: string };
+export type ImportPayload = {
+    vaults: ImportVault[];
+    ignored: string[];
+    warnings: string[];
+};
 
 export interface ImportFileReader {
     files: Set<string>;
