@@ -25,8 +25,6 @@ const useVideoConferenceSpotlight = ({ isEventCreation }: Props) => {
     const hasAccessToZoomIntegration =
         isZoomIntegrationEnabled && user.hasPaidMail && organization?.Settings.VideoConferencingEnabled;
 
-    const isSmallViewport = viewportWidth['<=small'];
-
     const {
         show: showVideoConferenceSpotlight,
         onDisplayed,
@@ -34,7 +32,7 @@ const useVideoConferenceSpotlight = ({ isEventCreation }: Props) => {
     } = useSpotlightOnFeature(
         FeatureCode.CalendarVideoConferenceSpotlight,
         hasAccessToZoomIntegration &&
-            !isSmallViewport &&
+            !viewportWidth['<=small'] &&
             hasUserFinishedWelcomeFlow &&
             userAccountHasMoreThanTwoDays &&
             isEventCreation

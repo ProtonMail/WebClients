@@ -1,5 +1,6 @@
 import type { CSSProperties, Ref } from 'react';
 
+import { useActiveBreakpoint } from '@proton/components/index';
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -16,7 +17,6 @@ import PopoverContainer from './PopoverContainer';
 import PopoverHeader from './PopoverHeader';
 
 interface Props {
-    isSmallViewport: boolean;
     date: Date;
     now: Date;
     onClose: () => void;
@@ -30,7 +30,6 @@ interface Props {
     tzid: string;
 }
 const MorePopoverEvent = ({
-    isSmallViewport,
     date,
     now,
     onClose,
@@ -44,6 +43,8 @@ const MorePopoverEvent = ({
     tzid,
 }: Props) => {
     const dateString = formatUTC(date, 'cccc PPP', { locale: dateLocale });
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     const eventsContent = events.map((event) => {
         const isSelected = targetEventData?.uniqueId === event.uniqueId;
@@ -77,7 +78,7 @@ const MorePopoverEvent = ({
 
     return (
         <PopoverContainer
-            style={isSmallViewport ? undefined : style}
+            style={viewportWidth['<=small'] ? undefined : style}
             className="eventpopover flex flex-nowrap flex-column py-7 px-5"
             ref={popoverRef}
         >

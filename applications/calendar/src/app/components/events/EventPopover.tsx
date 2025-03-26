@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader } from '@proton/components';
+import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader, useActiveBreakpoint } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import {
     getIsCalendarDisabled,
@@ -75,7 +75,6 @@ interface Props {
     view: VIEWS;
     tzid: string;
     weekStartsOn: WeekStartsOn;
-    isSmallViewport: boolean;
     displayNameEmailMap: SimpleMap<DisplayNameEmail>;
 }
 
@@ -95,7 +94,6 @@ const EventPopover = ({
     view,
     tzid,
     weekStartsOn,
-    isSmallViewport,
     displayNameEmailMap,
 }: Props) => {
     const isDrawerApp = getIsCalendarAppInDrawer(view);
@@ -114,6 +112,8 @@ const EventPopover = ({
     const isOwnedCalendar = getIsOwnedCalendar(calendarData);
     const isUnknownCalendar = getIsUnknownCalendar(calendarData);
     const isCalendarWritable = getIsCalendarWritable(calendarData);
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     const isSearchView = view === VIEWS.SEARCH;
     const model = useReadEvent(targetEventData, tzid, calendarBootstrap?.CalendarSettings);
@@ -197,7 +197,7 @@ const EventPopover = ({
     const showDeleteButton = !isSearchView && getCanDeleteEvent({ isOwnedCalendar, isCalendarWritable, isInvitation });
     const showDuplicateButton = !!canDuplicateEvent;
     const showViewEventButton = isSearchView || isDrawerApp;
-    const mergedStyle = isSmallViewport ? undefined : style;
+    const mergedStyle = viewportWidth['<=small'] ? undefined : style;
 
     const frequencyString = useMemo(() => {
         if (!veventComponent) {
