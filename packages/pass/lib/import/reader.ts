@@ -61,21 +61,21 @@ export const importReader = async (payload: ImportReaderPayload): Promise<Import
             }
 
         case ImportProvider.PROTONPASS:
-            const { passphrase, options, userId } = payload;
+            const { options, userId, onPassphrase } = payload;
             const { currentAliases = [] } = options ?? {};
 
             switch (fileExtension) {
                 case ExportFormat.CSV:
                     return readProtonPassCSV(file);
                 case ExportFormat.PGP:
+                    const passphrase = await onPassphrase();
                     const decrypted = await decryptProtonPassImport(file, passphrase);
                     /** Legacy format: the whole ZIP file has been PGP encrypted.
                      * Decrypt it via the `prepare` function and extract the zip */
                     const zip = new File([decrypted], 'data.zip');
-                    return readProtonPassZIP(zip, { userId, currentAliases });
-
+                    return readProtonPassZIP(zip, { userId, currentAliases, onPassphrase });
                 case ExportFormat.ZIP:
-                    return readProtonPassZIP(file, { userId, currentAliases, passphrase });
+                    return readProtonPassZIP(file, { userId, currentAliases, onPassphrase });
                 default:
                     throw new Error(c('Error').t`Unsupported ${PASS_APP_NAME} file format`);
             }

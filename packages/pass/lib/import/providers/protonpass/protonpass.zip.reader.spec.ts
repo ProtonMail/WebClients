@@ -19,11 +19,13 @@ describe('Import Proton Pass ZIP', () => {
         payload = await readProtonPassZIP(file, {
             userId: 'SWgOUidqAHPDfImlbYvpp__YSOK3YXRAtOckIo_0qmVNjzqVAOWNS2d60OOR15Cv4RTLBCTVaSa43-036nseXg==',
             currentAliases: [],
+            onPassphrase: async () => '',
         });
 
         payloadExcludingCurrentAliases = await readProtonPassZIP(file, {
             userId: 'SWgOUidqAHPDfImlbYvpp__YSOK3YXRAtOckIo_0qmVNjzqVAOWNS2d60OOR15Cv4RTLBCTVaSa43-036nseXg==',
             currentAliases,
+            onPassphrase: async () => '',
         });
 
         const legacyFormat = fs.readFileSync(__dirname + '/mocks/protonpass_1.17.zip');
@@ -32,6 +34,7 @@ describe('Import Proton Pass ZIP', () => {
         oldFormatPayload = await readProtonPassZIP(legacyFile, {
             userId: '5sxjHzI4mlMVq7-ysH-4YxgbEXsNTUlqmVmosbQKL_NgKXe_E0MroEgbKxH2wHTXXtLS3qr1JR_15SWL5kTVOQ==',
             currentAliases: [],
+            onPassphrase: async () => '',
         });
     });
 
