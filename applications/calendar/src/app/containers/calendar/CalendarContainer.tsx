@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import {
+    useActiveBreakpoint,
     useApi,
     useAppTitle,
     useModalState,
@@ -105,7 +106,6 @@ const customReducer = (oldState: { [key: string]: any }, newState: { [key: strin
 interface Props {
     tzid: string;
     setCustomTzid: (tzid: string) => void;
-    isSmallViewport: boolean;
     drawerView?: VIEWS;
     user: UserModel;
     subscription?: Subscription;
@@ -128,7 +128,6 @@ interface Props {
 const CalendarContainer = ({
     tzid,
     setCustomTzid,
-    isSmallViewport,
     drawerView,
     user,
     subscription,
@@ -158,6 +157,8 @@ const CalendarContainer = ({
     const [shareCalendarInvitationModal, setIsSharedCalendarInvitationModalOpen, renderShareCalendarInvitationModal] =
         useModalState();
     useObserveDrawerIframeAppLocation();
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     const interactiveRef = useRef<InteractiveRef>(null);
     const timeGridViewRef = useRef<TimeGridRef>(null);
@@ -293,7 +294,7 @@ const CalendarContainer = ({
             return drawerView;
         }
 
-        if (isSmallViewport) {
+        if (viewportWidth['<=small']) {
             return requestedView === SEARCH ? SEARCH : WEEK;
         }
 
@@ -332,7 +333,7 @@ const CalendarContainer = ({
         }
     }, [view]);
 
-    const range = isSmallViewport ? 0 : getRange(view, customRange);
+    const range = viewportWidth['<=small'] ? 0 : getRange(view, customRange);
     const weekStartsOn = getWeekStartsOn(userSettings);
     const displayWeekNumbers = getDisplayWeekNumbers(calendarUserSettings);
     const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarUserSettings);
@@ -354,8 +355,8 @@ const CalendarContainer = ({
     const timezoneInformation = useMemo(() => {
         const { PrimaryTimezone, SecondaryTimezone } = calendarUserSettings;
         // in responsive mode we display just one day even though the view is WEEK
-        const startDate = isSmallViewport ? utcDate : utcDateRangeInTimezone[0];
-        const endDate = isSmallViewport ? new Date(+utcDate + 24 * HOUR) : utcDateRangeInTimezone[1];
+        const startDate = viewportWidth['<=small'] ? utcDate : utcDateRangeInTimezone[0];
+        const endDate = viewportWidth['<=small'] ? new Date(+utcDate + 24 * HOUR) : utcDateRangeInTimezone[1];
         const noonDateInPrimaryTimeZone = getNoonDateForTimeZoneOffset({
             date: startDate,
             dateTzid: tzid,
@@ -377,7 +378,7 @@ const CalendarContainer = ({
             secondaryTimezone: `${formatGMTOffsetAbbreviation(secondaryOffset)}`,
             secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE,
         };
-    }, [utcDate, utcDateRangeInTimezone, secondaryTzid, tzid, isSmallViewport]);
+    }, [utcDate, utcDateRangeInTimezone, secondaryTzid, tzid, viewportWidth['<=small']]);
 
     useEffect(() => {
         const newRoute = toUrlParams({
@@ -534,7 +535,6 @@ const CalendarContainer = ({
             setTzid={setCustomTzid}
             range={range}
             view={view}
-            isSmallViewport={isSmallViewport}
             utcDateRangeInTimezone={utcDateRangeInTimezone}
             utcDefaultDate={utcDefaultDate}
             utcDate={utcDate}
@@ -574,7 +574,6 @@ const CalendarContainer = ({
             )}
             <InteractiveCalendarView
                 view={view}
-                isSmallViewport={isSmallViewport}
                 isLoading={isLoading}
                 tzid={tzid}
                 {...timezoneInformation}
@@ -586,7 +585,7 @@ const CalendarContainer = ({
                 date={utcDate}
                 dateRange={utcDateRange}
                 events={calendarsEvents}
-                onClickDate={isSmallViewport ? handleChangeDate : handleClickDateWeekView}
+                onClickDate={viewportWidth['<=small'] ? handleChangeDate : handleClickDateWeekView}
                 onChangeDate={handleChangeDate}
                 onChangeDateAndRevertView={handleChangeDateAndRevertView}
                 onClickToday={handleClickToday}
