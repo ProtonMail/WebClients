@@ -1,16 +1,12 @@
-import { type FC, useMemo } from 'react';
+import { type FC } from 'react';
 
-import { Field } from 'formik';
 import { c } from 'ttag';
 
 import { Href, InlineLinkButton } from '@proton/atoms';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components';
-import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import type { ImportFormContext } from '@proton/pass/hooks/import/useImportForm';
-import { ExportFormat } from '@proton/pass/lib/export/types';
-import { extractFileExtension } from '@proton/pass/lib/import/reader';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -33,14 +29,6 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
     ].includes(provider);
 
 export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
-    const needsPassphrase = useMemo(
-        () =>
-            form.values.file &&
-            form.values.provider === ImportProvider.PROTONPASS &&
-            [ExportFormat.PGP].includes(extractFileExtension(form.values.file.name) as ExportFormat),
-        [form.values]
-    );
-
     const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
         if (provider) dropzone.setSupportedFileTypes(PROVIDER_INFO_MAP[provider].fileExtension.split(', '));
         void form.setFieldValue('provider', provider);
@@ -165,14 +153,7 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                             )}
                         </Bordered>
                     </Dropzone>
-                    {needsPassphrase && (
-                        <Field
-                            name="passphrase"
-                            label={c('Label').t`Passphrase`}
-                            component={PasswordField}
-                            autoComplete="new-password"
-                        />
-                    )}
+
                     {providerHasUnsupportedItemTypes(form.values.provider) && (
                         <Card className="mb-4 text-sm" type="primary">
                             {c('Info').t`${PASS_APP_NAME} will only import logins, notes, credit cards and identities.`}

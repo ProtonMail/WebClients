@@ -13,7 +13,6 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { semver } from '@proton/pass/utils/string/semver';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 type ProtonPassReaderPayload = {
     /** list of current email aliases so we don't import
@@ -22,11 +21,12 @@ type ProtonPassReaderPayload = {
     currentAliases: string[];
     passphrase?: string;
     userId?: string;
+    onPassphrase: () => Promise<string>;
 };
 
-export const decryptProtonPassImport = async (data: Blob, passphrase?: string): Promise<Uint8Array> => {
+export const decryptProtonPassImport = async (file: File, passphrase?: string): Promise<Uint8Array> => {
     try {
-        return await decryptPassExport(data, passphrase ?? '');
+        return await decryptPassExport(await file.text(), passphrase ?? '');
     } catch (err: unknown) {
         if (err instanceof Error) {
             const errorDetail = err.message.includes('Error decrypting message')
@@ -47,10 +47,13 @@ export const readProtonPassZIP = async (file: File, payload: ProtonPassReaderPay
         const fileReader = await readZIP(file);
 
         const exportData = await (async () => {
-            if (fileReader.files.has(archivePath('data.pgp')) && payload.passphrase) {
+            if (fileReader.files.has(archivePath('data.pgp'))) {
+                const passphrase = await payload.onPassphrase();
                 const encrypted = (await fileReader.getFile(archivePath('data.pgp')))!;
-                const decrypted = await decryptPassExport(encrypted, payload.passphrase);
-                return uint8ArrayToString(decrypted);
+                const armored = await encrypted.text();
+                const decrypted = await decryptPassExport(armored, passphrase);
+                const decoder = new TextDecoder();
+                return decoder.decode(decrypted);
             }
 
             if (fileReader.files.has(archivePath('data.json'))) {
@@ -62,7 +65,6 @@ export const readProtonPassZIP = async (file: File, payload: ProtonPassReaderPay
         })();
 
         if (!exportData) throw new Error('Invalid archive');
-
         const parsedExport = JSON.parse(exportData) as ExportData;
         const { userId } = parsedExport;
 
