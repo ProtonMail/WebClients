@@ -45,7 +45,7 @@ export const fileLinkPending = requestActionsFactory<ItemLinkFiles, ItemRevision
 });
 
 export const filesResolve = requestActionsFactory<FileResolveDTO, FilesRequestSuccess>('files::resolve')({
-    key: getItemRevisionKey,
+    key: (dto) => (dto.history ? getItemKey(dto) : getItemRevisionKey(dto)),
     success: { config: { maxAge: UNIX_MINUTE } },
 });
 

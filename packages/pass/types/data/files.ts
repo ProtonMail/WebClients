@@ -27,7 +27,7 @@ export type FileDownloadChunk = FileDownloadChunkBase & SelectedItem;
 export type FileDownloadPublicDTO = FileDownloadDTOBase & { filesToken: string };
 export type FileDownloadPublicChunk = FileDownloadChunkBase & { filesToken: string };
 
-export type FileResolveDTO = SelectedRevision & { history?: boolean };
+export type FileResolveDTO = ({ history: true } & SelectedItem) | (SelectedRevision & { history?: false });
 export type FileRestoreDTO = { fileId: FileID } & SelectedItem;
 export type FileAttachmentValues = { files: FileAttachmentsDTO };
 export type FilesRequestSuccess = { files: FileDescriptor[]; history?: boolean } & SelectedItem;
