@@ -69,11 +69,11 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                         options={[
                             {
                                 value: ExportFormat.PGP,
-                                label: c('Label').t`PGP-encrypted JSON (recommended)`,
+                                label: c('Label').t`PGP-encrypted (recommended)`,
                             },
                             {
                                 value: ExportFormat.ZIP,
-                                label: c('Label').t`JSON`,
+                                label: c('Label').t`ZIP`,
                             },
                             {
                                 value: ExportFormat.CSV,
