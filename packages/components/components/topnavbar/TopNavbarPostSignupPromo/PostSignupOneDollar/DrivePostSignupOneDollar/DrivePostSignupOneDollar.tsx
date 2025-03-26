@@ -12,7 +12,7 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
-import { APP_UPSELL_REF_PATH, DRIVE_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, DRIVE_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import clsx from '@proton/utils/clsx';
 
@@ -66,7 +66,7 @@ export const DrivePostSignupOneDollar = () => {
     }, [driveOfferState?.Value]);
 
     const [spotlightState, setSpotlightState] = useState(openSpotlight);
-    const show = useSpotlightShow(spotlightState, 3000);
+    const show = useSpotlightShow(spotlightState, 3 * SECOND);
 
     const { pricingTitle } = usePostSignupOneDollarPromotionPrice({
         offerProduct: 'drive',

@@ -10,7 +10,6 @@ import {
     NewUpsellModal,
     Spotlight,
     UpsellModal,
-    useActiveBreakpoint,
     useMailUpsellConfig,
     useModalState,
     useSpotlightOnFeature,
@@ -37,7 +36,6 @@ const upsellRef = getUpsellRef({
 
 const EventColorSelect = ({ model, setModel, isDrawerApp }: Props) => {
     const [user] = useUser();
-    const { viewportWidth } = useActiveBreakpoint();
 
     const {
         welcomeFlags: { isWelcomeFlow },
@@ -52,7 +50,7 @@ const EventColorSelect = ({ model, setModel, isDrawerApp }: Props) => {
         show: showColorSpotlight,
         onDisplayed,
         onClose,
-    } = useSpotlightOnFeature(FeatureCode.CalendarEventColorSpotlight, !viewportWidth['<=small'] && !isWelcomeFlow);
+    } = useSpotlightOnFeature(FeatureCode.CalendarEventColorSpotlight, !isWelcomeFlow);
     const shouldShowColorSpotlight = useSpotlightShow(showColorSpotlight && user.hasPaidMail);
 
     const handleChangeColor = (color: string) => {
