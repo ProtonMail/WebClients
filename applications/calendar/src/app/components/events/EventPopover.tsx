@@ -223,7 +223,7 @@ const EventPopover = ({
 
             comment = {
                 Message: base64EncryptedComment,
-                Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED,
+                Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED_AND_SIGNED,
             };
         }
 
