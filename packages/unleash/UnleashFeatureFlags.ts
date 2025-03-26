@@ -153,6 +153,7 @@ enum AdminFeatureFlag {
 enum WalletFlag {
     ImportPaperWallet = 'ImportPaperWallet',
     WalletDarkMode = 'WalletDarkMode',
+    WalletMessageSigner = 'WalletMessageSigner',
 }
 
 export type FeatureFlag =
