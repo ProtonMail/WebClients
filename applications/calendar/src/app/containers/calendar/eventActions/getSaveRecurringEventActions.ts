@@ -171,8 +171,6 @@ const getSaveRecurringEventActions = async ({
                     reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                     sendIcs,
                     reencryptSharedEvent,
-                    getAddressKeys,
-                    getCalendarKeys,
                 });
             }
             if (canEditOnlyPersonalPart) {
@@ -462,8 +460,6 @@ const getSaveRecurringEventActions = async ({
                 reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                 sendIcs,
                 reencryptSharedEvent,
-                getAddressKeys,
-                getCalendarKeys,
             });
             const { updatePartstatActions: resetPartstatActions, updatePersonalPartActions: dropAlarmsActions } =
                 getResetPartstatActions(singleEditRecurrences, selfAttendeeToken, invitePartstat);
