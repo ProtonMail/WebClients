@@ -4,7 +4,7 @@ import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { fileLinkPending } from '@proton/pass/store/actions';
-import type { IndexedByShareIdAndItemId } from '@proton/pass/types';
+import { type IndexedByShareIdAndItemId } from '@proton/pass/types';
 import lastItem from '@proton/utils/lastItem';
 import noop from '@proton/utils/noop';
 
@@ -13,14 +13,25 @@ export const useFileImporter = () => {
     const { uploadFile, cancelUpload } = useFileUpload();
     const [progress, setProgress] = useState(0);
 
+    const cancel = useCallback(() => {
+        cancelUpload();
+        setProgress(0);
+    }, []);
+
     const start = useCallback(
-        async (fileReader: ImportFileReader, importFiles: IndexedByShareIdAndItemId<string[]>): Promise<void> => {
+        async (
+            fileReader: ImportFileReader,
+            importFiles: IndexedByShareIdAndItemId<string[]>,
+            signal: AbortSignal
+        ): Promise<void> => {
             try {
                 for (const shareId in importFiles) {
                     for (const itemId in importFiles[shareId]) {
                         const toAdd: string[] = [];
                         for (const filename of importFiles[shareId][itemId]) {
                             const blob = await fileReader.getFile(filename);
+                            if (signal.aborted) throw new Error('Aborted');
+
                             if (blob) {
                                 /** Filename may include full path inside the
                                  * archive when using the zip reader */
@@ -44,13 +55,7 @@ export const useFileImporter = () => {
         []
     );
 
-    useEffect(
-        () => () => {
-            cancelUpload();
-            setProgress(0);
-        },
-        []
-    );
+    useEffect(() => cancel, []);
 
-    return { start, progress };
+    return { start, cancel, progress };
 };

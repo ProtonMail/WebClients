@@ -25,7 +25,7 @@ const getChunkDTO = async (fileID: string, index: number, blob: Blob): Promise<F
 export const useFileUpload = () => {
     const { onTelemetry } = usePassCore();
     const dispatch = useAsyncRequestDispatch();
-    const abortControllerRef = useRef<MaybeNull<AbortController>>(null);
+    const ctrl = useRef<MaybeNull<AbortController>>(null);
 
     const uploadFile = useCallback(async (file: File, chunkSize: number = FILE_CHUNK_SIZE): Promise<Maybe<FileID>> => {
         try {
@@ -38,8 +38,8 @@ export const useFileUpload = () => {
             const res = await dispatch(fileUploadInitiate, { name: file.name, mimeType, totalChunks });
 
             if (res.type === 'success') {
-                abortControllerRef.current = new AbortController();
-                const { signal } = abortControllerRef.current;
+                ctrl.current = new AbortController();
+                const { signal } = ctrl.current;
 
                 const fileID = res.data;
 
@@ -65,13 +65,13 @@ export const useFileUpload = () => {
         } catch (e) {
             throw e;
         } finally {
-            abortControllerRef.current = null;
+            ctrl.current = null;
         }
     }, []);
 
     const cancelUpload = useCallback(() => {
-        abortControllerRef.current?.abort();
-        abortControllerRef.current = null;
+        ctrl.current?.abort();
+        ctrl.current = null;
     }, []);
 
     useEffect(() => cancelUpload, []);
