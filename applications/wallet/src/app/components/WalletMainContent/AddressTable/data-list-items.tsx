@@ -2,7 +2,7 @@ import { type MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import type { WasmAddressDetails, WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmAccount, WasmAddressDetails, WasmApiWalletAccount } from '@proton/andromeda';
 import { Copy, ModalTwo, ModalTwoContent, ModalTwoHeader, useModalState, useNotifications } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import QRCode from '@proton/components/components/image/QRCode';
@@ -14,6 +14,7 @@ import { CoreButtonLike } from '../../../atoms';
 import { Price } from '../../../atoms/Price';
 import { Skeleton } from '../../../atoms/Skeleton';
 import { DataListItem } from '../../DataList';
+import { SignMessageModal } from '../../SignMessageModal';
 
 export const IndexDataListItem = ({ address, loading }: { address?: WasmAddressDetails; loading?: boolean }) => {
     return (
@@ -28,19 +29,28 @@ export const IndexDataListItem = ({ address, loading }: { address?: WasmAddressD
 };
 
 export const AddressDataListItem = ({
+    account,
     address,
     highlighted,
     loading,
+    hasMessageSigner,
 }: {
+    account?: WasmAccount;
     address?: WasmAddressDetails;
     highlighted?: boolean;
     loading?: boolean;
+    hasMessageSigner?: boolean;
 }) => {
     const { createNotification } = useNotifications();
     const [walletQrCodeModal, setWalletQrCodeModal, renderWalletQrCodeModal] = useModalState();
+    const [signMessageModal, setSignMessageModal, renderSignMessageModal] = useModalState();
     const handleOpenQrCode = (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         setWalletQrCodeModal(true);
+    };
+    const handleOpenSignMessage = (e: MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        setSignMessageModal(true);
     };
 
     return (
@@ -70,8 +80,21 @@ export const AddressDataListItem = ({
                             onCopy={() => {
                                 createNotification({ text: c('Address list').t`Address copied` });
                             }}
-                            className={'ml-2'}
+                            className={'ml-2 color-hint'}
                         />
+                        {hasMessageSigner && (
+                            <Tooltip title={c('Label').t`Sign message`}>
+                                <CoreButtonLike
+                                    icon
+                                    disabled={!address}
+                                    className={'ml-2'}
+                                    title={c('Action').t`Sign message`}
+                                    onClick={handleOpenSignMessage}
+                                >
+                                    <Icon name="lock-pen-filled" className="color-hint" />
+                                </CoreButtonLike>
+                            </Tooltip>
+                        )}
                         {renderWalletQrCodeModal && address && (
                             <ModalTwo size={'small'} {...walletQrCodeModal}>
                                 <ModalTwoHeader />
@@ -86,6 +109,9 @@ export const AddressDataListItem = ({
                                     </div>
                                 </ModalTwoContent>
                             </ModalTwo>
+                        )}
+                        {renderSignMessageModal && account && address && (
+                            <SignMessageModal account={account} address={address.address} {...signMessageModal} />
                         )}
                     </div>
                 </Skeleton>

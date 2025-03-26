@@ -2,8 +2,14 @@ import compact from 'lodash/compact';
 import isUndefined from 'lodash/isUndefined';
 import { c } from 'ttag';
 
-import type { WasmAddressDetailsData, WasmApiWalletAccount, WasmApiWalletBitcoinAddress } from '@proton/andromeda';
+import type {
+    WasmAccount,
+    WasmAddressDetailsData,
+    WasmApiWalletAccount,
+    WasmApiWalletBitcoinAddress,
+} from '@proton/andromeda';
 import { WasmKeychainKind } from '@proton/andromeda';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SimplePaginator } from '../../../atoms';
@@ -20,6 +26,7 @@ import {
 } from './data-list-items';
 
 interface Props {
+    account?: WasmAccount;
     apiAccount: WasmApiWalletAccount;
     addresses: WasmAddressDetailsData[];
     loading: boolean;
@@ -67,6 +74,7 @@ const getDummyLoadingColumns = (keychain: WasmKeychainKind): DataColumn<null>[] 
 };
 
 export const AddressTable = ({
+    account,
     apiAccount,
     addresses,
     loading,
@@ -78,6 +86,7 @@ export const AddressTable = ({
 }: Props) => {
     const { isNarrow } = useResponsiveContainerContext();
     const { network } = useBitcoinBlockchainContext();
+    const hasMessageSigner = useFlag('WalletMessageSigner');
 
     if (loading) {
         return (
@@ -103,6 +112,7 @@ export const AddressTable = ({
     const columns: DataColumn<{
         key: string;
         address: WasmAddressDetailsData;
+        account?: WasmAccount;
     }>[] = compact([
         {
             header: <div>{c('Address list').t`Index`}</div>,
@@ -123,10 +133,12 @@ export const AddressTable = ({
             colSpan: '1fr',
             data: (row) => (
                 <AddressDataListItem
+                    account={row.account}
                     address={row.address.Data}
                     highlighted={bitcoinAddressPool?.some(
                         (poolAddress) => poolAddress.BitcoinAddress === row.address.Data.address
                     )}
+                    hasMessageSigner={hasMessageSigner}
                 />
             ),
         },
@@ -160,7 +172,7 @@ export const AddressTable = ({
                     )}
                 >
                     <DataList
-                        rows={addresses.map((address) => ({ key: address.Data.address, address }))}
+                        rows={addresses.map((address) => ({ key: address.Data.address, account, address }))}
                         columns={columns}
                         canClickRow={(address) => !!(url && address)}
                         onClickRow={(address) => openInBlockchainExplorer(address.address.Data.address)}
