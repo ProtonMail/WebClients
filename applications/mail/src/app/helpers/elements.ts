@@ -238,15 +238,17 @@ export const getLocationElementsCount = (
     return 0;
 };
 
-export const matchFrom = (element: Element, from: string) => {
+export const matchFrom = (element: Element, fromInput: string) => {
     const senders = getSenders(element);
-    return senders.some((sender) => canonicalizeEmailByGuess(sender?.Address || '') === canonicalizeEmailByGuess(from));
+    return senders.some((sender) =>
+        canonicalizeEmailByGuess(sender?.Address || '').includes(canonicalizeEmailByGuess(fromInput))
+    );
 };
 
-export const matchTo = (element: Element, to: string) => {
+export const matchTo = (element: Element, toInput: string) => {
     const recipients = getRecipients(element);
-    return recipients.some(
-        (recipient) => canonicalizeEmailByGuess(recipient?.Address || '') === canonicalizeEmailByGuess(to)
+    return recipients.some((recipient) =>
+        canonicalizeEmailByGuess(recipient?.Address || '').includes(canonicalizeEmailByGuess(toInput))
     );
 };
 
