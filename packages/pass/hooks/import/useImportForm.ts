@@ -9,9 +9,8 @@ import type { Dropzone, FileInput } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { useFileImporter } from '@proton/pass/hooks/import/useFileImporter';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { ExportFormat } from '@proton/pass/lib/export/types';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
-import { extractFileExtension, importReader } from '@proton/pass/lib/import/reader';
+import { importReader } from '@proton/pass/lib/import/reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { ImportProvider } from '@proton/pass/lib/import/types';
 import { importItems } from '@proton/pass/store/actions';
@@ -29,7 +28,6 @@ type FileInputProps = ComponentProps<typeof FileInput>;
 export type ImportFormValues = {
     file: MaybeNull<File>;
     provider: MaybeNull<ImportProvider>;
-    passphrase?: string;
 };
 
 type ImportCounts = {
@@ -51,8 +49,15 @@ export type ImportFormContext = {
 };
 
 export type OnWillSubmitImportResult = Result<{ payload: ImportPayload }>;
+export type OnPassphraseImportResult = Result<{ passphrase: string }>;
+
+export type OnPassphraseImport = () => Promise<OnPassphraseImportResult>;
 export type OnWillSubmitImport = (payload: ImportPayload) => Promise<OnWillSubmitImportResult>;
-type UseImportFormOptions = { onWillSubmit?: OnWillSubmitImport };
+
+type UseImportFormOptions = {
+    onPassphrase: OnPassphraseImport;
+    onWillSubmit: OnWillSubmitImport;
+};
 
 const createFileValidator = (allow: string[]) =>
     pipe(
@@ -60,20 +65,12 @@ const createFileValidator = (allow: string[]) =>
         orThrow('Unsupported file type', (file) => allow.includes(splitExtension(file?.name)[1]), identity)
     );
 
-const getInitialFormValues = (): ImportFormValues => ({ file: null, provider: null, passphrase: '' });
+const getInitialFormValues = (): ImportFormValues => ({ file: null, provider: null });
 
-const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): FormikErrors<ImportFormValues> => {
+const validateImportForm = ({ provider, file }: ImportFormValues): FormikErrors<ImportFormValues> => {
     const errors: FormikErrors<ImportFormValues> = {};
-
     if (provider === null) errors.provider = c('Warning').t`No password manager selected`;
     if (!file) errors.file = '';
-
-    if (file && provider === ImportProvider.PROTONPASS) {
-        const fileExtension = extractFileExtension(file.name);
-        if (fileExtension === ExportFormat.PGP && !Boolean(passphrase)) {
-            errors.passphrase = c('Warning').t`PGP encrypted export file requires passphrase`;
-        }
-    }
 
     return errors;
 };
@@ -94,9 +91,7 @@ const getImportCounts = (data: ImportPayload): ImportCounts =>
         { items: 0, files: 0 }
     );
 
-export const useImportForm = ({
-    onWillSubmit: beforeSubmit = (payload) => Promise.resolve({ ok: true, payload }),
-}: UseImportFormOptions): ImportFormContext => {
+export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptions): ImportFormContext => {
     const { createNotification } = useNotifications();
     const importFiles = useFileImporter();
 
@@ -126,7 +121,6 @@ export const useImportForm = ({
             const result = await importReader({
                 file: values.file!,
                 provider: values.provider,
-                passphrase: values.passphrase,
                 userId: user?.ID,
                 options: {
                     currentAliases:
@@ -136,6 +130,11 @@ export const useImportForm = ({
                                   return acc;
                               }, [])
                             : [],
+                },
+                onPassphrase: async () => {
+                    const res = await onPassphrase();
+                    if (res.ok) return res.passphrase;
+                    throw new Error();
                 },
             });
 
@@ -148,7 +147,7 @@ export const useImportForm = ({
 
             /** 2. Prompt the user for vault selection. This
              * can potentially mutate the import payload. */
-            const prepared = await beforeSubmit(data);
+            const prepared = await onWillSubmit(data);
 
             if (prepared.ok) {
                 const data = prepared.payload;
