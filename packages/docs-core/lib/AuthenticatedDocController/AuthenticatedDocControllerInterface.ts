@@ -14,6 +14,7 @@ export interface AuthenticatedDocControllerInterface {
   duplicateDocument(editorYjsState: Uint8Array): Promise<void>
   getVersionHistory(): NativeVersionHistory | undefined
   openDocumentSharingModal(): void
+  openMoveToFolderModal(): void
   restoreRevisionAsCopy(yjsContent: YjsState): Promise<void>
   renameDocument(newName: string): Promise<TranslatedResult<void>>
   restoreDocument(): Promise<void>

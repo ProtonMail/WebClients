@@ -1,5 +1,8 @@
 @import '~@proton/styles/scss/proton-docs';
 
+// Required for "Move to folder" modal
+@import '~@proton/drive-store/components/FolderTree/FolderTree';
+
 :root {
 	--primary-rgb: 109 74 255;
 	--docs-blue-color: #34b8ee;
