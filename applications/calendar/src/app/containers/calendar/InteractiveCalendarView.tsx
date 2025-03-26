@@ -1488,13 +1488,19 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSaveEvent = async (
-        temporaryEvent: CalendarViewEventTemporaryEvent,
-        inviteActions: InviteActions,
+    const handleSaveEvent = async ({
+        temporaryEvent,
+        inviteActions,
         isDuplicatingEvent = false,
         isChangePartstat = false,
-        isModal = false
-    ) => {
+        isModal = false,
+    }: {
+        temporaryEvent: CalendarViewEventTemporaryEvent;
+        inviteActions: InviteActions;
+        isDuplicatingEvent?: boolean;
+        isChangePartstat?: boolean;
+        isModal?: boolean;
+    }) => {
         startNESTMetric(temporaryEvent, isCreatingEvent);
         if (isEditingEvent) {
             startEALMetric('edit');
@@ -2186,7 +2192,7 @@ const InteractiveCalendarView = ({
                                         return Promise.reject(new Error('Undefined behavior'));
                                     }
                                     try {
-                                        await handleSaveEvent(temporaryEvent, inviteActions);
+                                        await handleSaveEvent({ temporaryEvent, inviteActions });
                                         return;
                                     } catch (error) {
                                         return noop();
@@ -2318,7 +2324,12 @@ const InteractiveCalendarView = ({
                                 );
 
                                 if (saveEvent) {
-                                    return handleSaveEvent(newTemporaryEvent, inviteActions, false, true);
+                                    return handleSaveEvent({
+                                        temporaryEvent: newTemporaryEvent,
+                                        inviteActions,
+                                        isDuplicatingEvent: false,
+                                        isChangePartstat: true,
+                                    });
                                 }
                             }}
                             onClose={handleCloseEventPopover}
@@ -2390,7 +2401,13 @@ const InteractiveCalendarView = ({
                         }
 
                         try {
-                            await handleSaveEvent(temporaryEvent, inviteActions, isDuplicatingEvent, false, true);
+                            await handleSaveEvent({
+                                temporaryEvent,
+                                inviteActions,
+                                isDuplicatingEvent,
+                                isChangePartstat: false,
+                                isModal: true,
+                            });
                             closeModal('createEventModal');
                         } catch (error) {
                             return noop();
