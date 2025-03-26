@@ -2,6 +2,7 @@ import {
     CalendarDrawerAppButton,
     ContactDrawerAppButton,
     SecurityCenterDrawerAppButton,
+    VPNDrawerAppButton,
     WalletDrawerAppButton,
     useDrawer,
 } from '@proton/components';
@@ -36,6 +37,7 @@ const useMailDrawer = () => {
         ),
         canShowWalletRightSidebarLink && !isElectronApp && <WalletDrawerAppButton />,
         <SecurityCenterDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.SECURITY_CENTER, appInView)} />,
+        <VPNDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.VPN, appInView)} />,
         canShowFeatureTourDrawerButton && <FeatureTourDrawerButton />,
     ].filter(isTruthy);
 

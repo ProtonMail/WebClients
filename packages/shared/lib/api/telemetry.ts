@@ -34,6 +34,7 @@ export enum TelemetryMeasurementGroups {
     passNudge = 'mail.web.pass_nudge',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
+    vpnDrawer = 'any.web.vpn_drawer',
     paymentsFlow = 'payments.flow',
     /** Drive Web */
     driveWebFeaturePerformance = 'drive.web.feature_performance_unauth',
@@ -214,6 +215,15 @@ export enum TelemetrySecurityCenterEvents {
     proton_sentinel_toggle = 'proton_sentinel_toggle',
 }
 
+export enum TelemetryVPNDrawerEvents {
+    tooltip_displayed = 'tooltip_displayed',
+    tooltip_clicked = 'tooltip_clicked',
+    tooltip_dismissed = 'tooltip_dismissed',
+    drawer_displayed = 'drawer_displayed',
+    download_clicked = 'download_clicked',
+    status_changed = 'status_changed',
+}
+
 export enum TelemetryPaymentsEvents {
     load_payment = 'load_payment',
     payment_attempt = 'payment_attempt',
@@ -317,6 +327,7 @@ export type TelemetryEvents =
     | TelemetryMailPagingControlsEvents
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
+    | TelemetryVPNDrawerEvents
     | TelemetryPaymentsEvents
     | TelemetryAccountOrganizationLogoUploadEvents
     | TelemetryDriveWebFeature
