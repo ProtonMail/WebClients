@@ -1,6 +1,5 @@
 import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
-import { ATTENDEE_COMMENT_ENCRYPTION_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
@@ -232,8 +231,8 @@ const getSaveEventActions = async ({
     }
 
     // If user commented the event, update his comment in the vevent attendees
-    if (inviteActions.comment?.Message && inviteActions.comment.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT) {
-        modelVeventComponent.comment = [{ value: inviteActions.comment.Message }];
+    if (inviteActions.commentClearText) {
+        modelVeventComponent.comment = [{ value: inviteActions.commentClearText }];
     }
 
     // Handle duplicate attendees if any
