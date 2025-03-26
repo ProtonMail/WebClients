@@ -1,7 +1,9 @@
 import type { PropsWithChildren } from 'react';
 
+import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
@@ -11,6 +13,8 @@ import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-star
 
 interface Props extends PropsWithChildren {}
 
+const today = new Date();
+
 const SpotlightContent = () => {
     return (
         <>
@@ -19,7 +23,7 @@ const SpotlightContent = () => {
                     <img alt="" src={spotlightImg} className="w-custom" style={{ '--w-custom': '2.75rem' }} />
                 </div>
                 <div className="flex flex-column flex-nowrap items-start">
-                    <p className="text-lg text-bold m-0 mb-1">{c('Title').t`New! Reply with a note`}</p>
+                    <p className="text-lg text-bold m-0 mb-1">{c('Title').t`Reply with a note`}</p>
                     <p className="m-0">{c('Label')
                         .t`Let others know if you have a conflict, will be late, or can’t wait for the event.`}</p>
                 </div>
@@ -29,11 +33,16 @@ const SpotlightContent = () => {
 };
 
 export const RsvpSpotlight = ({ children }: Props) => {
+    const [user] = useUser();
     const {
         welcomeFlags: { isWelcomeFlow },
     } = useWelcomeFlags();
 
-    const { show, onDisplayed, onClose } = useSpotlightOnFeature(FeatureCode.CalendarRsvpNoteSpotlight, !isWelcomeFlow);
+    const { show, onDisplayed, onClose } = useSpotlightOnFeature(
+        FeatureCode.CalendarRsvpNoteSpotlight,
+        // Accounts that are more than two days old
+        differenceInDays(today, fromUnixTime(user.CreateTime)) >= 2 && !isWelcomeFlow
+    );
 
     const shouldShowSpotlight = useSpotlightShow(show);
 
