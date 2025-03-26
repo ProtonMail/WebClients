@@ -37,6 +37,8 @@ export const AddressTableWrapper = ({ selectorOrTitle, apiWalletData, apiAccount
         handleNext,
         handlePrev,
         sync,
+
+        account,
     } = useAddressTable({
         wallet: apiWalletData,
         walletAccount: apiAccount,
@@ -106,6 +108,7 @@ export const AddressTableWrapper = ({ selectorOrTitle, apiWalletData, apiAccount
 
                 <div className="flex flex-column w-full grow flex-nowrap grow">
                     <AddressTable
+                        account={account}
                         apiAccount={apiAccount}
                         addresses={addresses}
                         loading={loading}
