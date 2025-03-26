@@ -40,7 +40,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                 BUILD_TARGET === 'safari' &&
                     form.values.format === ExportFormat.PGP &&
                     c('Info')
-                        .t`Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing ".epp". Please rename the file to include the .epex extension (e.g file.epp) after exporting.`,
+                        .t`Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing ".zip". Please rename the file to include the .zip extension (e.g file.zip) after exporting.`,
 
                 /* CSV warning */
                 form.values.format === ExportFormat.CSV &&
