@@ -31,6 +31,7 @@ import {
     Tooltip,
     TopBanners,
     UserDropdown,
+    useActiveBreakpoint,
     useDrawer,
     useNotifications,
     useOpenDrawerOnLoad,
@@ -82,7 +83,6 @@ const localToUtcDate = (date: Date) => new Date(Date.UTC(date.getFullYear(), dat
 interface Props {
     calendars: VisualCalendar[];
     isLoading?: boolean;
-    isSmallViewport?: boolean;
     displayWeekNumbers?: boolean;
     weekStartsOn?: WeekStartsOn;
     tzid: string;
@@ -113,7 +113,6 @@ interface Props {
 const CalendarContainerView = ({
     calendars,
     isLoading = false,
-    isSmallViewport = false,
     displayWeekNumbers = false,
     weekStartsOn = 0,
 
@@ -154,6 +153,8 @@ const CalendarContainerView = ({
     const isCalendarEncryptedSearchEnabled = !!useFeature(FeatureCode.CalendarEncryptedSearch).feature?.Value;
     const searchSpotlightAnchorRef = useRef<HTMLButtonElement>(null);
     const [user] = useUser();
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     useOpenDrawerOnLoad();
     const { appInView, showDrawerSidebar } = useDrawer();
@@ -543,9 +544,9 @@ const CalendarContainerView = ({
                 title={c('Title').t`Calendar`}
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
-                isSmallViewport={isSmallViewport}
+                isSmallViewport={viewportWidth['<=small']}
                 actionArea={!isDrawerApp ? toolbar : null}
-                hideUpsellButton={isSmallViewport}
+                hideUpsellButton={viewportWidth['<=small']}
                 settingsButton={drawerSettingsButton}
             />
         </>

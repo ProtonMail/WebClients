@@ -20,6 +20,7 @@ import {
 import {
     Dropzone,
     ImportModal,
+    useActiveBreakpoint,
     useApi,
     useBeforeUnload,
     useCalendarModelEventManager,
@@ -288,7 +289,6 @@ interface Props extends SharedViewProps {
 const InteractiveCalendarView = ({
     view,
     isLoading,
-    isSmallViewport,
     isEventCreationDisabled,
 
     tzid,
@@ -358,6 +358,8 @@ const InteractiveCalendarView = ({
     const cancelClosePopoverRef = useRef(false);
     const { startNESTMetric, stopNESTMetric } = useCalendarNESTMetric();
     const { startEALMetric, stopEALMetric } = useCalendarEALMetric();
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { triggerZoomOAuth } = useZoomOAuth();
     const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
@@ -514,7 +516,9 @@ const InteractiveCalendarView = ({
     }, [temporaryEvent, sortedEvents]);
 
     const changeDate = (start: Date, hasStartChanged = true) => {
-        const isInRange = isSmallViewport ? isSameDay(date, start) : start >= dateRange[0] && dateRange[1] >= start;
+        const isInRange = viewportWidth['<=small']
+            ? isSameDay(date, start)
+            : start >= dateRange[0] && dateRange[1] >= start;
 
         if (!isInRange && hasStartChanged) {
             onChangeDate(start);
@@ -2091,7 +2095,6 @@ const InteractiveCalendarView = ({
                     calendars={calendars}
                     calendarsEventsCacheRef={calendarsEventsCacheRef}
                     view={view}
-                    isSmallViewport={isSmallViewport}
                     isInteractionEnabled={!isLoading}
                     onMouseDown={handleMouseDown}
                     tzid={tzid}
@@ -2143,8 +2146,7 @@ const InteractiveCalendarView = ({
                     if (targetEvent.isTemporary && tmpData) {
                         return (
                             <CreateEventPopover
-                                isDraggingDisabled={isSmallViewport || isDrawerApp}
-                                isSmallViewport={isSmallViewport}
+                                isDraggingDisabled={viewportWidth['<=small'] || isDrawerApp}
                                 isCreateEvent={isCreatingEvent}
                                 isInvitation={isInvitation}
                                 style={style}
@@ -2186,7 +2188,6 @@ const InteractiveCalendarView = ({
                     }
                     return (
                         <EventPopover
-                            isSmallViewport={isSmallViewport}
                             style={style}
                             popoverRef={ref}
                             event={targetEvent}
@@ -2319,7 +2320,6 @@ const InteractiveCalendarView = ({
                     return (
                         <MorePopoverEvent
                             tzid={tzid}
-                            isSmallViewport={isSmallViewport}
                             style={style}
                             popoverRef={ref}
                             now={now}
@@ -2345,7 +2345,6 @@ const InteractiveCalendarView = ({
             />
             {!!tmpData && (
                 <CreateEventModal
-                    isSmallViewport={isSmallViewport}
                     displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     tzid={tzid}
