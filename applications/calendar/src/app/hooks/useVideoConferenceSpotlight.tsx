@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useWelcomeFlags } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useActiveBreakpoint, useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
+import { useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { FeatureCode } from '@proton/features/interface';
 import spotlightVideoConfImg from '@proton/styles/assets/img/illustrations/spotlight-video-conference.svg';
 import useFlag from '@proton/unleash/useFlag';
@@ -15,7 +15,6 @@ interface Props {
 
 const useVideoConferenceSpotlight = ({ isEventCreation }: Props) => {
     const [user] = useUser();
-    const { viewportWidth } = useActiveBreakpoint();
     const [organization] = useOrganization();
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const {
@@ -31,11 +30,7 @@ const useVideoConferenceSpotlight = ({ isEventCreation }: Props) => {
         onClose,
     } = useSpotlightOnFeature(
         FeatureCode.CalendarVideoConferenceSpotlight,
-        hasAccessToZoomIntegration &&
-            !viewportWidth['<=small'] &&
-            hasUserFinishedWelcomeFlow &&
-            userAccountHasMoreThanTwoDays &&
-            isEventCreation
+        hasAccessToZoomIntegration && hasUserFinishedWelcomeFlow && userAccountHasMoreThanTwoDays && isEventCreation
     );
 
     const shouldShowVideoConferenceSpotlight = useSpotlightShow(showVideoConferenceSpotlight);
