@@ -43,7 +43,6 @@ export interface CalendarViewEvent {
 
 export interface SharedViewProps {
     view: VIEWS;
-    isSmallViewport: boolean;
     primaryTimezone: string;
     secondaryTimezone: string;
     secondaryTimezoneOffset: number;

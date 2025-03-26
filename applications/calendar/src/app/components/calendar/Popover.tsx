@@ -32,8 +32,7 @@ const Popover = ({
     const [popoverEl, setPopoverEl] = useState<HTMLElement | null>(null);
     const { viewportWidth } = useActiveBreakpoint();
 
-    const isSmallViewport = viewportWidth['<=small'];
-    const MIN_VIEWPORT_MARGIN = isSmallViewport || isCreateEventPopover ? 0 : 100;
+    const MIN_VIEWPORT_MARGIN = viewportWidth['<=small'] || isCreateEventPopover ? 0 : 100;
 
     const containerRect = useRect(containerEl, isOpen);
     const targetRect = useRect(

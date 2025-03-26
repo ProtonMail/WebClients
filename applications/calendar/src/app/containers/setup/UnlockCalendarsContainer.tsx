@@ -1,6 +1,5 @@
 import type { MutableRefObject } from 'react';
 
-import { useActiveBreakpoint } from '@proton/components/index';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 import DummyCalendarContainerView from '../calendar/DummyCalendarContainerView';
@@ -15,8 +14,6 @@ interface Props {
 }
 
 const UnlockCalendarsContainer = ({ calendarsToAct, onDone, drawerView, hasReactivatedCalendarsRef }: Props) => {
-    const { viewportWidth } = useActiveBreakpoint();
-
     return (
         <>
             <UnlockCalendarsModal
@@ -25,7 +22,7 @@ const UnlockCalendarsContainer = ({ calendarsToAct, onDone, drawerView, hasReact
                 hasReactivatedCalendarsRef={hasReactivatedCalendarsRef}
                 onDone={onDone}
             />
-            <DummyCalendarContainerView drawerView={drawerView} isSmallViewport={viewportWidth['<=small']} />
+            <DummyCalendarContainerView drawerView={drawerView} />
         </>
     );
 };

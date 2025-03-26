@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { ContactEmailsProvider, useActiveBreakpoint, useCalendarsInfoListener } from '@proton/components';
+import { ContactEmailsProvider, useCalendarsInfoListener } from '@proton/components';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getPreferredActiveWritableCalendar,
@@ -49,7 +49,6 @@ const MainContainerSetup = ({
     drawerView,
     hasReactivatedCalendarsRef,
 }: Props) => {
-    const { viewportWidth } = useActiveBreakpoint();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
 
@@ -119,7 +118,6 @@ const MainContainerSetup = ({
                             <CalendarContainer
                                 tzid={tzid}
                                 setCustomTzid={setCustomTzid}
-                                isSmallViewport={viewportWidth['<=small']}
                                 drawerView={drawerView}
                                 user={user}
                                 subscription={subscription}
