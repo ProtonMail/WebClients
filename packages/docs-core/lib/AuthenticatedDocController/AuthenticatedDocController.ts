@@ -375,5 +375,9 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     })
   }
 
+  public openMoveToFolderModal() {
+    void this.driveCompat.openMoveToFolderModal(this.documentState.getProperty('entitlements').nodeMeta)
+  }
+
   deinit() {}
 }

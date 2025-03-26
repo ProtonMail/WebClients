@@ -7,14 +7,17 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
+import { useMoveToFolderModal } from '../components/modals/MoveToFolderModal/MoveToFolderModal';
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import type { ShareURL } from '../store';
 import { useDefaultShare, useShareUrl } from '../store';
 import { useDriveCrypto } from '../store/_crypto';
 import type { DocumentAction } from '../store/_documents';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
+import { useLink } from '../store/_links';
 import { getSharedLink } from '../store/_shares';
 import type { PathItem } from '../store/_views/useLinkPath';
+import { useAbortSignal } from '../store/_views/utils';
 import type { CacheConfig } from './CacheConfig';
 import type { NodeMeta } from './NodeMeta';
 import type { DocumentNodeMeta } from './_documents';
@@ -106,6 +109,11 @@ export interface DriveCompat {
     }) => void;
 
     /**
+     * Opens the "Move to folder" modal for the given link & volume id.
+     */
+    openMoveToFolderModal: (props: { linkId: string; volumeId: string }) => Promise<void>;
+
+    /**
      * Opens a document in a new window.
      */
     openDocument: (meta: NodeMeta) => void;
@@ -151,6 +159,8 @@ export const useDriveCompat = (): DriveCompat => {
 
     const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl, trashDocument, restoreDocument } =
         useDocuments();
+    const abortSignal = useAbortSignal([]);
+    const { getLink } = useLink();
     const { getNode, getLatestNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
     const { getNodes, getNodePaths, getNodesAreShared } = useNodes();
     const { getMyFilesNodeMeta } = useMyFiles();
@@ -158,6 +168,7 @@ export const useDriveCompat = (): DriveCompat => {
     const { getVerificationKey } = useDriveCrypto();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
+    const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { loadShareUrl } = useShareUrl();
     const { getDefaultShare, getDefaultShareAddressEmail } = useDefaultShare();
@@ -187,6 +198,20 @@ export const useDriveCompat = (): DriveCompat => {
         wrappedFn(props);
     };
 
+    const openMoveToFolderModal = async (props: { linkId: string; volumeId: string }) => {
+        const fnToWrap = async ({ shareId, linkId }: { shareId: string; linkId: string }) => {
+            const link = await getLink(abortSignal, shareId, linkId);
+            showMoveToFolderModal({
+                shareId,
+                selectedItems: [link],
+            });
+        };
+
+        const wrappedFn = withResolveShareId(fnToWrap);
+
+        void wrappedFn(props);
+    };
+
     return {
         isDocsEnabled,
         createDocumentNode: withResolveShareId(createDocumentNode),
@@ -210,10 +235,16 @@ export const useDriveCompat = (): DriveCompat => {
         openDocument,
         openDocumentWindow,
         openDocumentSharingModal: openShareModal,
+        openMoveToFolderModal,
         getMyFilesNodeMeta,
         getVerificationKey,
         // This should be changed to a fragment if more modals are added
-        modals: linkSharingModal,
+        modals: (
+            <>
+                {moveToFolderModal}
+                {linkSharingModal}
+            </>
+        ),
         getKeysForLocalStorageEncryption,
         getPrimaryAddressKeys,
     };
