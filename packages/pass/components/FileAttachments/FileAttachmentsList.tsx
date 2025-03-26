@@ -1,12 +1,14 @@
-import { type FC } from 'react';
-import { useDispatch } from 'react-redux';
+import type { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { useFileDownload } from '@proton/pass/hooks/files/useFileDownload';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
+import { selectShare } from '@proton/pass/store/selectors';
 import type { BaseFileDescriptor, FileDescriptor, FileID, SelectedItem } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 
@@ -18,6 +20,8 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
     const dispatch = useDispatch();
     const deleteFile = useAsyncModalHandles<void, { name: string }>({ getInitialModalState: () => ({ name: '' }) });
     const fileDownload = useFileDownload();
+    const share = useSelector(selectShare(shareId));
+    const canRename = share && isShareWritable(share);
 
     const onRename = (descriptor: BaseFileDescriptor, fileName: string) => {
         if (descriptor.name === fileName) return;
@@ -43,7 +47,7 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
                     file={file}
                     onDelete={onDelete ? () => handleDelete(file) : undefined}
                     onCancel={() => fileDownload.cancel(file.fileID)}
-                    onRename={(fileName) => onRename(file, fileName)}
+                    onRename={canRename ? (fileName) => onRename(file, fileName) : undefined}
                     onDownload={() => handleDownload(file)}
                     loading={fileDownload.pending.has(file.fileID)}
                 />
