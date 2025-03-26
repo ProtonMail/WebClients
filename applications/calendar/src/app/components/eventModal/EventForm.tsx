@@ -61,7 +61,6 @@ export interface EventFormProps {
     isOwnedCalendar?: boolean;
     isCalendarWritable?: boolean;
     isDrawerApp?: boolean;
-    isSmallViewport: boolean;
     onDisplayBusySlots?: () => void;
     view: VIEWS;
 }
@@ -83,7 +82,6 @@ const EventForm = ({
     isOwnedCalendar = true,
     isCalendarWritable = true,
     isDrawerApp,
-    isSmallViewport,
     onDisplayBusySlots,
     view,
     ...props
@@ -311,14 +309,7 @@ const EventForm = ({
                 isCreateEvent={isCreateEvent}
                 isColorPerEventEnabled={isColorPerEventEnabled}
             />
-            {isColorPerEventEnabled && (
-                <EventColorSelect
-                    model={model}
-                    setModel={setModel}
-                    isSmallViewport={isSmallViewport}
-                    isDrawerApp={isDrawerApp}
-                />
-            )}
+            {isColorPerEventEnabled && <EventColorSelect model={model} setModel={setModel} isDrawerApp={isDrawerApp} />}
         </IconRow>
     );
 
