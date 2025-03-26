@@ -27,7 +27,7 @@ export const MenuUser = memo(() => {
                 </span>
             </div>
 
-            {!isPaidPlan(passPlan) && (
+            {!isPaidPlan(passPlan) && BUILD_TARGET !== 'safari' && (
                 <div className="pb-2 px-4">
                     <UpgradeButton className="w-full" upsellRef={UpsellRef.MENU} />
                 </div>
