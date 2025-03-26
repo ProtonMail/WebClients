@@ -2309,6 +2309,8 @@ const InteractiveCalendarView = ({
                                 if (!targetEvent || !partstat) {
                                     return;
                                 }
+
+                                // TODO: Should we update model with comment ?
                                 const newTemporaryModel = getUpdateModel({
                                     viewEventData: targetEvent.data,
                                     partstat,
