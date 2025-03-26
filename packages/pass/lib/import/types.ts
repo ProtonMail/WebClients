@@ -62,7 +62,7 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
         },
         [ImportProvider.ONEPASSWORD]: {
             title: '1Password',
-            fileExtension: '1pux, 1pif, zip',
+            fileExtension: '1pux, 1pif',
             tutorialUrl: 'https://proton.me/support/pass-import-1password',
         },
         [ImportProvider.DASHLANE]: {
