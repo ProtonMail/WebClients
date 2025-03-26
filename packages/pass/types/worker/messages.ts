@@ -22,7 +22,6 @@ import type { ExtensionForkResultPayload } from '@proton/shared/lib/authenticati
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import type { ImportDecryptPayload } from '@proton/pass/lib/import/types';
 import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, AliasOptions, ItemContent, SelectedItem, UniqueItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
@@ -89,7 +88,6 @@ export enum WorkerMessageType {
     FORM_ENTRY_STAGE = 'FORM_ENTRY_STAGE',
     FORM_ENTRY_STASH = 'FORM_ENTRY_STASH',
     FORM_STATUS = 'FORM_STATUS',
-    IMPORT_DECRYPT = 'IMPORT_DECRYPT',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
     LOG_EVENT = 'LOG_EVENT',
@@ -159,7 +157,6 @@ export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUE
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, FormSubmitPayload>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
 export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormStatusPayload>;
-export type ImportDecryptMessage = WithPayload<WorkerMessageType.IMPORT_DECRYPT, ImportDecryptPayload>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
@@ -227,7 +224,6 @@ export type WorkerMessage =
     | FormEntryStageMessage
     | FormEntryStashMessage
     | FormStatusMessage
-    | ImportDecryptMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage

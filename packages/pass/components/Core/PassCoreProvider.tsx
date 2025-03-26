@@ -11,7 +11,6 @@ import { type AuthStore } from '@proton/pass/lib/auth/store';
 import { preloadPassCoreUI } from '@proton/pass/lib/core/core.ui';
 import type { PassCoreProxy } from '@proton/pass/lib/core/types';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
-import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
@@ -72,9 +71,6 @@ export type PassCoreContextValue = {
     onForceUpdate?: () => void;
     /** Open the settings view at a particular page */
     openSettings?: (page?: string) => void;
-    /** This allows processing an import reader payload before feeding
-     * it to the import readers. Used to process encrypted import files. */
-    prepareImport: (payload: ImportReaderPayload) => Promise<ImportReaderPayload>;
     /** Prompts for client specific permissions */
     promptForPermissions?: () => void;
     /** Sets the current tab's url - only relevant for extension */

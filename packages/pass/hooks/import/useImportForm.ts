@@ -7,7 +7,6 @@ import { c } from 'ttag';
 
 import type { Dropzone, FileInput } from '@proton/components';
 import { useNotifications } from '@proton/components';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useFileImporter } from '@proton/pass/hooks/import/useFileImporter';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { ExportFormat } from '@proton/pass/lib/export/types';
@@ -98,7 +97,6 @@ const getImportCounts = (data: ImportPayload): ImportCounts =>
 export const useImportForm = ({
     onWillSubmit: beforeSubmit = (payload) => Promise.resolve({ ok: true, payload }),
 }: UseImportFormOptions): ImportFormContext => {
-    const { prepareImport } = usePassCore();
     const { createNotification } = useNotifications();
     const importFiles = useFileImporter();
 
@@ -125,23 +123,21 @@ export const useImportForm = ({
             /** 1. Try to read the imported file. If files are included,
              * `result` will hold a file reader handle to extract files.
              * Import file preparation handles optional decryption. */
-            const result = await importReader(
-                await prepareImport({
-                    file: values.file!,
-                    provider: values.provider,
-                    passphrase: values.passphrase,
-                    userId: user?.ID,
-                    options: {
-                        currentAliases:
-                            values.provider === ImportProvider.PROTONPASS
-                                ? aliases.reduce((acc: string[], { aliasEmail }) => {
-                                      if (aliasEmail) acc.push(aliasEmail);
-                                      return acc;
-                                  }, [])
-                                : [],
-                    },
-                })
-            );
+            const result = await importReader({
+                file: values.file!,
+                provider: values.provider,
+                passphrase: values.passphrase,
+                userId: user?.ID,
+                options: {
+                    currentAliases:
+                        values.provider === ImportProvider.PROTONPASS
+                            ? aliases.reduce((acc: string[], { aliasEmail }) => {
+                                  if (aliasEmail) acc.push(aliasEmail);
+                                  return acc;
+                              }, [])
+                            : [],
+                },
+            });
 
             if (!isNonEmptyImportPayload(result)) {
                 throw new ImportReaderError(c('Error').t`The file you are trying to import is empty`);
