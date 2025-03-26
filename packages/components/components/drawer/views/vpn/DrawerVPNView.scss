@@ -1,0 +1,53 @@
+.drawer-vpn-view {
+	.header--drawer,
+	.footer {
+		background-color: var(--background-lowered, var(--bg-weak));
+	}
+}
+
+.vpn-view-status-unprotected,
+.vpn-view-status-protected {
+	inline-size: 1rem;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: 1rem;
+		background-color: var(--signal-success-minor-2);
+		animation: 2s pulse-animation infinite alternate;
+	}
+
+	&-inner {
+		inline-size: 0.5rem;
+		background-color: var(--signal-success);
+	}
+}
+
+.vpn-view-status-unprotected {
+	inline-size: 1rem;
+
+	&::before {
+		background-color: var(--signal-danger-minor-2);
+	}
+
+	&-inner {
+		background-color: var(--signal-danger);
+	}
+}
+
+.tooltip--vpndrawer-larger {
+	max-inline-size: 20rem;
+}
+
+@keyframes pulse-animation {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}

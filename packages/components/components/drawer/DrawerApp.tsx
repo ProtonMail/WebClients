@@ -19,6 +19,8 @@ import DrawerContactModals from './DrawerContactModals';
 import DrawerSecurityCenterView from './views/DrawerSecurityCenterView';
 import { useGetBreachesCounts } from './views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
+import DrawerVPNView from './views/vpn/DrawerVPNView';
+import useVPNDrawer from './views/vpn/useVPNDrawer';
 
 import './DrawerApp.scss';
 
@@ -45,6 +47,7 @@ interface Props {
 const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomActions, onContainerClick }: Props) => {
     const { appInView, iframeSrcMap } = useDrawer();
     const isSecurityCenterEnabled = useSecurityCenter();
+    const isVPNDrawerEnabled = useVPNDrawer();
     const getBreachesCount = useGetBreachesCounts();
     const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
 
@@ -69,10 +72,12 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
     return (
         <>
             <DrawerContactModals />
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
             <aside
                 className={clsx([
                     'drawer-app border-left border-weak bg-norm overflow-hidden no-print',
                     !appInView && 'hidden',
+                    // eslint-disable-next-line custom-rules/deprecate-responsive-utility-classes
                     !isDisplayedOnMobile && 'drawer-app--hide-on-mobile',
                 ])}
                 onClick={onContainerClick}
@@ -110,6 +115,8 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                         {isSecurityCenterEnabled && appInView === DRAWER_NATIVE_APPS.SECURITY_CENTER && (
                             <DrawerSecurityCenterView />
                         )}
+
+                        {isVPNDrawerEnabled && appInView === DRAWER_NATIVE_APPS.VPN && <DrawerVPNView />}
                     </div>
                 </ErrorBoundary>
             </aside>

@@ -28,6 +28,7 @@ enum CommonFeatureFlag {
     SelfTroubleshoot = 'SelfTroubleshoot',
     WalletAztecoWeb = 'WalletAztecoWeb',
     WalletFullSync = 'WalletFullSync',
+    VPNDrawer = 'VPNDrawer',
     InboxDesktopDefaultEmailSetupHelper = 'InboxDesktopDefaultEmailSetupHelper',
     InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
     UserDropdownRedesign = 'UserDropdownRedesign',
