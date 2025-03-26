@@ -24,9 +24,10 @@ const reducer: Reducer<NotificationReducerState> = (state = getInitialState(), a
             BUILD_TARGET === 'safari'
                 ? {
                       ...action.payload,
-                      notifications: action.payload.notifications.filter((notification) => {
-                          const isUpgradeNotification = notification.content?.cta?.ref?.includes('internal/upgrade');
-                          return !isUpgradeNotification;
+                      notifications: action.payload.notifications.filter(({ content }) => {
+                          if (content.cta?.type === 'external_link') return false;
+                          if (content.cta?.ref?.includes('internal/upgrade')) return false;
+                          return true;
                       }),
                   }
                 : action.payload;
