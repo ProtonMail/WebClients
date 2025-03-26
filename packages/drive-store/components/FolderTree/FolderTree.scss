@@ -1,0 +1,57 @@
+.folder-tree {
+	@extend .border;
+	@extend .overflow-auto;
+
+	border-radius: var(--border-radius-md);
+	block-size: 28em;
+
+	&-table {
+		inline-size: auto;
+		min-inline-size: 100%;
+		max-inline-size: initial;
+	}
+
+	&-list-item {
+		td {
+			padding-block: 0;
+		}
+
+		&-expand {
+			padding: 0.85em;
+
+			&-button {
+				@extend .button;
+				@extend .button-for-icon;
+
+				display: flex;
+				padding: 0;
+			}
+		}
+	}
+
+	&-list-item-indent {
+		padding: 0;
+		border: none;
+		margin: 0;
+	}
+
+	&-list-item-name {
+		min-inline-size: 10em;
+		box-sizing: content-box;
+	}
+
+	&-list-item-selected {
+		justify-content: center;
+		min-inline-size: 3em;
+		opacity: 1;
+
+		&-hidden {
+			opacity: 0;
+		}
+
+		&-check {
+			padding-block: 0.15em;
+			padding-inline: 0.15em 0;
+		}
+	}
+}
