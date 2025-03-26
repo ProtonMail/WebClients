@@ -1343,6 +1343,19 @@ const InteractiveCalendarView = ({
 
                 throw new Error(firstError.Error || 'Unknown error');
             }
+
+            // Fetch paginated attendeesinfos to get all attendee comments
+            await Promise.all(
+                result.Responses.map((result) => {
+                    const event = result?.Response?.Event;
+                    if (result?.Response?.Error || !event) {
+                        return Promise.resolve();
+                    }
+
+                    return fetchPaginatedAttendeesInfo(api, event);
+                })
+            );
+
             multiResponses.push(result);
         }
 
