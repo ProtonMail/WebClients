@@ -192,7 +192,7 @@ const EventPopover = ({
     ) => {
         const selfAddressID = targetEvent.data.eventReadResult?.result?.[0].selfAddressData.selfAddress?.ID;
         // Encrypt comment if provided
-        let comment;
+        let comment, commentClearText;
         if (
             save &&
             partstatData.Comment &&
@@ -225,6 +225,7 @@ const EventPopover = ({
                 Message: base64EncryptedComment,
                 Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED_AND_SIGNED,
             };
+            commentClearText = partstatData.Comment;
         }
 
         await onChangePartstat(
@@ -233,6 +234,7 @@ const EventPopover = ({
                 isProtonProtonInvite: model.isProtonProtonInvite,
                 partstat: partstatData.Status,
                 comment,
+                commentClearText,
                 selfAddress: model.selfAddress,
                 selfAttendeeIndex: model.selfAttendeeIndex,
             },
