@@ -9,7 +9,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features';
 import { PLANS } from '@proton/payments';
@@ -25,7 +24,6 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
     const [subscription] = useSubscription();
     const [user] = useUser();
     const [organization] = useOrganization();
-    const { viewportWidth } = useActiveBreakpoint();
     const {
         welcomeFlags: { isDone },
     } = useWelcomeFlags();
@@ -44,12 +42,9 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
     const hasCustomDomains = organization && organization?.UsedDomains > 0;
     const accountIsOlderThanFourDays = differenceInDays(new Date(), fromUnixTime(user.CreateTime)) >= 4;
 
-    const displaySpotlight =
-        !viewportWidth['<=small'] && isDone && isPlanAllowed && !hasCustomDomains && accountIsOlderThanFourDays;
-
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.SpotlightBreachAlertSecurityCenter,
-        displaySpotlight
+        isDone && isPlanAllowed && !hasCustomDomains && accountIsOlderThanFourDays
     );
 
     const shouldShowSpotlight = useSpotlightShow(show, 3 * SECOND);

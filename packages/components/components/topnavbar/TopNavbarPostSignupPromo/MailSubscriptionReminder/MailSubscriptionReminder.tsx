@@ -11,6 +11,7 @@ import {
     type APP_NAMES,
     APP_UPSELL_REF_PATH,
     MAIL_UPSELL_PATHS,
+    SECOND,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -43,7 +44,7 @@ export const MailSubscriptionReminder = ({ app }: Props) => {
     const { update } = useFeature(FeatureCode.SubscriptionLastReminderDate);
 
     const { isEligible } = useMailSubscriptionReminder();
-    const show = useSpotlightShow(isEligible, 3000);
+    const show = useSpotlightShow(isEligible, 3 * SECOND);
 
     const onUpgradeClick = () => {
         if (onUpgrade) {
