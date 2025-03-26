@@ -22,12 +22,12 @@ function* loadHistoryWorker({ payload, meta: { request } }: ReturnType<typeof it
                     filesResolve.intent({
                         shareId: item.shareId,
                         itemId: item.itemId,
-                        revision: item.revision,
                         history: true,
                     })
                 )
             );
         }
+
         const { RevisionsData, LastToken, Total } = result;
         const revisions = (yield Promise.all(
             RevisionsData.map((revision) => parseItemRevision(payload.shareId, revision))
