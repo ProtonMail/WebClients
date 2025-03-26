@@ -54,7 +54,7 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
                     onCancel={deleteFile.abort}
                     onConfirm={deleteFile.resolver}
                     title={c('Action').t`Delete file: ${deleteFile.state.name}`}
-                    message={c('Info').t`Once deleted, this file cannot be recovered.`}
+                    message={c('Info').t`Once deleted, this file can still be recovered from the item's history.`}
                 />
             )}
         </>
