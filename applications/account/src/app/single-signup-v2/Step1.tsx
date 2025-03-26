@@ -743,7 +743,7 @@ const Step1 = ({
             const lifetimeText = wrap(
                 null,
                 c('pass_lifetime_signup: Info')
-                    .t`Gain lifetime access to all current and future ${PASS_APP_NAME} premium features with a single one-time payment. `
+                    .t`Gain lifetime access to all current and future ${PASS_APP_NAME} premium features with a single one-time payment.`
             );
 
             return <span className="text-center">{lifetimeText}</span>;
