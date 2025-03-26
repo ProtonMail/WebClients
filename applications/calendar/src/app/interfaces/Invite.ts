@@ -28,7 +28,10 @@ export interface InviteActions {
     sharedSessionKey?: string;
     isProtonProtonInvite?: boolean;
     partstat?: ICAL_ATTENDEE_STATUS;
+    /** The encrypted and signed comment for to send to the API */
     comment?: AttendeeComment;
+    /** The clearText comment to insert in the ICS */
+    commentClearText?: string;
     sendCancellationNotice?: boolean;
     resetSingleEditsPartstat?: boolean;
     deleteSingleEdits?: boolean;
