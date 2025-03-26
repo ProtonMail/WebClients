@@ -110,7 +110,7 @@ export const toInternalAttendee = (
         if (
             sharedSessionKey &&
             extra.Comment?.Message &&
-            extra.Comment?.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED
+            extra.Comment?.Type === ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED_AND_SIGNED
         ) {
             const attendeeEmail = attendee.parameters.cn;
 
@@ -141,6 +141,7 @@ export const toInternalAttendee = (
             // - Not signed
             //
             // TODO: Also sanitize from here ?
+            // TODO: REmnove logs
             //
             // use `getEventVerificationStatus` for mapping the following cases:
             // VERIFICATION_STATUS.NOT_SIGNED ->  EVENT_VERIFICATION_STATUS.FAILED

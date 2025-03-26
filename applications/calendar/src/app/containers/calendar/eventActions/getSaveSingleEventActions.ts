@@ -6,7 +6,6 @@ import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 import unary from '@proton/utils/unary';
 
@@ -47,7 +46,6 @@ interface SaveEventHelperArguments {
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
     getCalendarKeys: GetCalendarKeys;
-    getAddressKeys: GetAddressKeys;
     sendIcs: SendIcs;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: OnSendPrefsErrors;
@@ -66,7 +64,6 @@ const getSaveSingleEventActions = async ({
     canEditOnlyPersonalPart,
     isAttendee,
     inviteActions,
-    getAddressKeys,
     getCalendarKeys,
     onSaveConfirmation,
     sendIcs,
@@ -176,8 +173,6 @@ const getSaveSingleEventActions = async ({
                 reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                 sendIcs,
                 reencryptSharedEvent,
-                getAddressKeys,
-                getCalendarKeys,
             });
         }
 

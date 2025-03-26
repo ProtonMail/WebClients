@@ -134,8 +134,7 @@ export enum ATTENDEE_STATUS_API {
 
 export enum ATTENDEE_COMMENT_ENCRYPTION_TYPE {
     CLEARTEXT = 0,
-    // TODO RENAME ENCRYPTED AND SIGNED
-    ENCRYPTED = 1,
+    ENCRYPTED_AND_SIGNED = 1,
 }
 
 /** Whether there are more attendees to display */

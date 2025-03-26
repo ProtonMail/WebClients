@@ -42,8 +42,6 @@ const getDeleteSingleEventActionsHelper = async ({
     inviteActions,
     isAttendee,
     sendIcs,
-    getAddressKeys,
-    getCalendarKeys,
 }: {
     oldEventData: CalendarEvent;
     oldEditEventData: EventOldData;
@@ -51,8 +49,6 @@ const getDeleteSingleEventActionsHelper = async ({
     inviteActions: InviteActions;
     isAttendee: boolean;
     sendIcs: SendIcs;
-    getAddressKeys: GetAddressKeys;
-    getCalendarKeys: GetCalendarKeys;
 }) => {
     const { veventComponent: oldVevent, memberID, calendarID, addressID } = oldEditEventData;
     let updatedInviteActions = getUpdatedDeleteInviteActions({
@@ -86,8 +82,6 @@ const getDeleteSingleEventActionsHelper = async ({
             timestamp,
             inviteActions: updatedInviteActions,
             silence: true,
-            getAddressKeys,
-            getCalendarKeys,
         });
         if (updatePartstatOperation) {
             updatePartstatOperations.push(updatePartstatOperation);
@@ -180,8 +174,6 @@ const getDeleteEventActions = async ({
             inviteActions: inviteActionsWithSharedData,
             isAttendee,
             sendIcs,
-            getAddressKeys,
-            getCalendarKeys,
         });
     }
 
@@ -197,8 +189,6 @@ const getDeleteEventActions = async ({
             inviteActions: inviteActionsWithSharedData,
             isAttendee,
             sendIcs,
-            getAddressKeys,
-            getCalendarKeys,
         });
     }
 
@@ -262,8 +252,6 @@ const getDeleteEventActions = async ({
         selfAttendeeToken,
         sendIcs,
         getCalendarEventRaw,
-        getAddressKeys,
-        getCalendarKeys,
     });
     const successText = getRecurringEventDeletedText(deleteType, deleteInviteActions);
     return {
