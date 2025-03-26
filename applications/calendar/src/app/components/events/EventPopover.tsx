@@ -2,16 +2,12 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import {
-    Badge,
-    CalendarEventDateHeader,
-    CalendarInviteButtons,
-    Loader,
-    RsvpSection,
-    useActiveBreakpoint,
-} from '@proton/components';
+import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
+import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader, useActiveBreakpoint } from '@proton/components';
+import { CryptoProxy } from '@proton/crypto/lib';
 import { useLoading } from '@proton/hooks';
 import {
     getIsCalendarDisabled,
@@ -20,10 +16,13 @@ import {
     getIsSubscribedCalendar,
     getIsUnknownCalendar,
 } from '@proton/shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { ATTENDEE_COMMENT_ENCRYPTION_TYPE, ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type {
@@ -35,6 +34,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import type {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
@@ -48,6 +48,7 @@ import PopoverContainer from './PopoverContainer';
 import PopoverEventContent from './PopoverEventContent';
 import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
+import RsvpSection from './RsvpSection';
 import { getEventErrorMessage } from './error';
 import {
     EventReloadErrorAction,
@@ -108,6 +109,8 @@ const EventPopover = ({
     weekStartsOn,
     displayNameEmailMap,
 }: Props) => {
+    const getAddressKeys = useGetAddressKeys();
+    const getCalendarKeys = useGetCalendarKeys();
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
     const [{ hasPaidMail }] = useUser();
@@ -182,13 +185,54 @@ const EventPopover = ({
         );
     };
 
-    const handleChangePartstat = (partstatData: PartstatData, save: boolean = true) => {
-        return onChangePartstat(
+    const handleChangePartStat = async (
+        type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
+        partstatData: PartstatData,
+        save: boolean = true
+    ) => {
+        const selfAddressID = targetEvent.data.eventReadResult?.result?.[0].selfAddressData.selfAddress?.ID;
+        // Encrypt comment if provided
+        let comment;
+        if (
+            save &&
+            partstatData.Comment &&
+            targetEvent.data.eventData &&
+            getIsCalendarEvent(targetEvent.data.eventData) &&
+            selfAddressID
+        ) {
+            const sessionKey = await getSharedSessionKey({
+                calendarEvent: targetEvent.data.eventData,
+                getAddressKeys,
+                getCalendarKeys,
+            });
+            const [signingKey] = await getAddressKeys(selfAddressID);
+
+            // Signature will be inside message.
+            const encryptResult = await CryptoProxy.encryptMessage({
+                textData: partstatData.Comment,
+                signingKeys: [signingKey.privateKey],
+                signatureContext: {
+                    value: getSignatureContext('calendar.rsvp.comment', targetEvent.data.eventData.SharedEventID),
+                    critical: true,
+                },
+                sessionKey,
+                format: 'binary',
+            });
+
+            const base64EncryptedComment = uint8ArrayToBase64String(encryptResult.message);
+
+            comment = {
+                Message: base64EncryptedComment,
+                Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.ENCRYPTED,
+            };
+        }
+
+        await onChangePartstat(
             {
+                type,
                 isProtonProtonInvite: model.isProtonProtonInvite,
-                type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
                 partstat: partstatData.Status,
-                comment: partstatData.Comment,
+                comment,
                 selfAddress: model.selfAddress,
                 selfAttendeeIndex: model.selfAttendeeIndex,
             },
@@ -365,10 +409,18 @@ const EventPopover = ({
                     <div className="ml-0 md:ml-auto">
                         <CalendarInviteButtons
                             actions={{
-                                accept: () => handleChangePartstat({ Status: ICAL_ATTENDEE_STATUS.ACCEPTED }),
+                                accept: () =>
+                                    handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
+                                        Status: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                                    }),
                                 acceptTentatively: () =>
-                                    handleChangePartstat({ Status: ICAL_ATTENDEE_STATUS.TENTATIVE }),
-                                decline: () => handleChangePartstat({ Status: ICAL_ATTENDEE_STATUS.DECLINED }),
+                                    handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
+                                        Status: ICAL_ATTENDEE_STATUS.TENTATIVE,
+                                    }),
+                                decline: () =>
+                                    handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
+                                        Status: ICAL_ATTENDEE_STATUS.DECLINED,
+                                    }),
                                 retryCreateEvent: () => wait(0),
                                 retryUpdateEvent: () => wait(0),
                             }}
@@ -381,7 +433,7 @@ const EventPopover = ({
             {canReplyToEvent && rsvpCommentEnabled && (
                 <PopoverFooter className="shrink-0" key={targetEvent.uniqueId}>
                     <RsvpSection
-                        handleChangePartstat={handleChangePartstat}
+                        handleChangePartstat={handleChangePartStat}
                         userPartstat={userPartstat}
                         userComment={userComment}
                         disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}

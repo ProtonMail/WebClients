@@ -3,19 +3,27 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { CalendarInviteButtons } from '@proton/components';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import {
+    DeleteNoteButton,
+    EditNoteButton,
+} from '@proton/components/containers/calendar/RsvpSection/RsvpSectionButtons';
 import useLoading from '@proton/hooks/useLoading';
-import { ATTENDEE_COMMENT_ENCRYPTION_TYPE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { PartstatData } from '@proton/shared/lib/interfaces/calendar';
 
-import CalendarInviteButtons from '../CalendarInviteButtons';
-import { DeleteNoteButton, EditNoteButton } from './RsvpSectionButtons';
+import { INVITE_ACTION_TYPES } from '../../interfaces/Invite';
 import { RsvpSpotlight } from './RsvpSpotlight';
 
 interface Props {
-    handleChangePartstat: (partstatData: PartstatData, save: boolean) => Promise<void>;
+    handleChangePartstat: (
+        type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
+        partstatData: PartstatData,
+        save: boolean
+    ) => Promise<void>;
     userPartstat: ICAL_ATTENDEE_STATUS;
     userComment?: string;
     disabled: boolean;
@@ -26,12 +34,12 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     const [isExpanded, setIsExpanded] = useState(false);
     const [model, setModel] = useState<PartstatData>({
         Status: userPartstat,
-        Comment: userComment ? { Message: userComment, Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT } : undefined,
+        Comment: userComment ?? undefined,
     });
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingSend, withLoadingSend] = useLoading();
 
-    const isUnchanged = model.Status === userPartstat && model.Comment?.Message === userComment;
+    const isUnchanged = model.Status === userPartstat && model.Comment === userComment;
 
     const handleResponse = (status: ICAL_ATTENDEE_STATUS) => {
         if (isExpanded) {
@@ -42,6 +50,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
         }
 
         return handleChangePartstat(
+            INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
             {
                 Status: status,
             },
@@ -52,27 +61,35 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     const handleNote = (note: string) => {
         setModel({
             ...model,
-            Comment: { Message: note, Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT }, // type will be overridden after it's being enrypted
+            Comment: note,
         });
     };
 
     const handleSend = () => {
-        return withLoadingSend(handleChangePartstat(model, true));
+        const commentChanged = model.Comment !== userComment;
+        const partStatChanged = model.Status !== userPartstat;
+
+        if (commentChanged && partStatChanged) {
+            return withLoadingSend(handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true));
+        } else if (commentChanged && !partStatChanged) {
+            return withLoadingSend(handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true));
+        } else {
+            return withLoadingSend(handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true));
+        }
     };
 
     const handleCancel = () => {
         setModel({
             Status: userPartstat,
-            Comment: userComment
-                ? { Message: userComment, Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE.CLEARTEXT }
-                : undefined,
+            Comment: userComment ?? undefined,
         });
         setIsExpanded(!isExpanded);
     };
 
-    const handleDelete = () => {
+    const handleDeleteComment = () => {
         return withLoadingDelete(
             handleChangePartstat(
+                INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
                 {
                     ...model,
                     Comment: undefined,
@@ -95,7 +112,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
         >{c('Action').t`Send`}</Button>
     );
 
-    const hasUserComment = !!model.Comment?.Message;
+    const hasUserComment = !!model.Comment;
 
     return (
         <>
@@ -134,7 +151,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                     {!isSearchView && (
                         <div className="flex flex-none">
                             <EditNoteButton onEdit={() => setIsExpanded(!isExpanded)} />
-                            <DeleteNoteButton onDelete={handleDelete} loading={loadingDelete} />
+                            <DeleteNoteButton onDelete={handleDeleteComment} loading={loadingDelete} />
                         </div>
                     )}
                 </div>
@@ -148,7 +165,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         as={TextAreaTwo}
                         rows={5}
                         placeholder={c('Placeholder').t`Leave a note for all participants`}
-                        value={model.Comment?.Message}
+                        value={model.Comment}
                         onValue={handleNote}
                     />
                     <div className="gap-4 flex flex-auto justify-end">
