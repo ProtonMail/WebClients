@@ -1,5 +1,5 @@
 import type { WasmBitcoinUnit } from '@proton/andromeda';
-import { WasmScriptType, WasmWordCount } from '@proton/andromeda';
+import { WasmScriptType, WasmSigningType, WasmWordCount } from '@proton/andromeda';
 
 export const SATOSHI = 1;
 export const BITCOIN = 100000000 * SATOSHI;
@@ -36,6 +36,8 @@ export const SCRIPT_TYPES = [
     WasmScriptType.NativeSegwit,
     WasmScriptType.Taproot,
 ];
+
+export const SIGNING_TYPES = [WasmSigningType.Electrum, WasmSigningType.Bip137];
 
 export const MIN_FEE_RATE = 1;
 
