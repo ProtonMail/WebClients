@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PrimaryButton, useBusySlotsAvailable } from '@proton/components';
+import { PrimaryButton, useActiveBreakpoint, useBusySlotsAvailable } from '@proton/components';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
@@ -27,7 +27,6 @@ import validateEventModel from './eventForm/validateEventModel';
 import { ACTION, useForm } from './hooks/useForm';
 
 interface Props {
-    isSmallViewport: boolean;
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
     model: EventModel;
@@ -58,7 +57,6 @@ const CreateEventPopover = ({
     displayWeekNumbers,
     weekStartsOn,
     addresses,
-    isSmallViewport,
     isCreateEvent,
     isInvitation,
     isDraggingDisabled = false,
@@ -84,6 +82,8 @@ const CreateEventPopover = ({
     });
     const formRect = useRect(formRef.current);
 
+    const { viewportWidth } = useActiveBreakpoint();
+
     const handleMore = () => {
         onEdit(model);
     };
@@ -102,7 +102,7 @@ const CreateEventPopover = ({
     const dragStyle: CSSProperties = {
         transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`,
     };
-    const mergedStyle = isSmallViewport ? dragStyle : { ...style, ...dragStyle };
+    const mergedStyle = viewportWidth['<=small'] ? dragStyle : { ...style, ...dragStyle };
 
     const handleMouseDown: MouseEventHandler<HTMLElement> = (event) => {
         event.preventDefault();
@@ -210,7 +210,6 @@ const CreateEventPopover = ({
                     isCreateEvent={isCreateEvent}
                     isInvitation={isInvitation}
                     setParticipantError={setParticipantError}
-                    isSmallViewport={isSmallViewport}
                     isDrawerApp={isDrawerApp}
                     view={view}
                 />

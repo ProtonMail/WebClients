@@ -10,9 +10,8 @@ import type { TimeGridRef } from './interface';
 
 interface Props {
     drawerView?: VIEWS;
-    isSmallViewport?: boolean;
 }
-const DummyCalendarContainerView = ({ drawerView, isSmallViewport }: Props) => {
+const DummyCalendarContainerView = ({ drawerView }: Props) => {
     const timeGridViewRef = useRef<TimeGridRef>(null);
 
     const now = new Date();
@@ -65,7 +64,6 @@ const DummyCalendarContainerView = ({ drawerView, isSmallViewport }: Props) => {
                 dateRange={dateRange}
                 actionRef={timeGridViewRef}
                 isDrawerApp={!!drawerView}
-                isSmallViewport={isSmallViewport}
             />
         </CalendarContainerView>
     );

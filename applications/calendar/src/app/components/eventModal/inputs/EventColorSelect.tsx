@@ -10,6 +10,7 @@ import {
     NewUpsellModal,
     Spotlight,
     UpsellModal,
+    useActiveBreakpoint,
     useMailUpsellConfig,
     useModalState,
     useSpotlightOnFeature,
@@ -25,7 +26,6 @@ import paintImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pa
 interface Props {
     model: EventModel;
     setModel: (value: EventModel) => void;
-    isSmallViewport: boolean;
     isDrawerApp?: boolean;
 }
 
@@ -35,24 +35,25 @@ const upsellRef = getUpsellRef({
     feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
 });
 
-const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Props) => {
+const EventColorSelect = ({ model, setModel, isDrawerApp }: Props) => {
     const [user] = useUser();
-    const hasPaidMail = user.hasPaidMail;
+    const { viewportWidth } = useActiveBreakpoint();
+
     const {
         welcomeFlags: { isWelcomeFlow },
     } = useWelcomeFlags();
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const color = useMemo(() => {
         // If free user, we always display the calendar color, otherwise we display the event color if set
-        const eventColorToShow = hasPaidMail ? model.color : undefined;
+        const eventColorToShow = user.hasPaidMail ? model.color : undefined;
         return eventColorToShow || model.calendar.color;
-    }, [model.calendar.color, model.color, hasPaidMail]);
+    }, [model.calendar.color, model.color, user.hasPaidMail]);
     const {
         show: showColorSpotlight,
         onDisplayed,
         onClose,
-    } = useSpotlightOnFeature(FeatureCode.CalendarEventColorSpotlight, !isSmallViewport && !isWelcomeFlow);
-    const shouldShowColorSpotlight = useSpotlightShow(showColorSpotlight && hasPaidMail);
+    } = useSpotlightOnFeature(FeatureCode.CalendarEventColorSpotlight, !viewportWidth['<=small'] && !isWelcomeFlow);
+    const shouldShowColorSpotlight = useSpotlightShow(showColorSpotlight && user.hasPaidMail);
 
     const handleChangeColor = (color: string) => {
         setModel({
@@ -67,7 +68,7 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
             onClose();
         }
 
-        if (hasPaidMail) {
+        if (user.hasPaidMail) {
             toggleColorPicker();
         } else {
             // If the user is free, the color picker should not be available. We open an upsell modal instead.
