@@ -205,12 +205,12 @@ const EventPopover = ({
                 getAddressKeys,
                 getCalendarKeys,
             });
-            const [signingKey] = await getAddressKeys(selfAddressID);
+            const [commentAuthorPrimaryKey] = await getAddressKeys(selfAddressID);
 
             // Signature will be inside message.
             const encryptResult = await CryptoProxy.encryptMessage({
                 textData: partstatData.Comment,
-                signingKeys: [signingKey.privateKey],
+                signingKeys: [commentAuthorPrimaryKey.privateKey],
                 signatureContext: {
                     value: getSignatureContext('calendar.rsvp.comment', targetEvent.data.eventData.SharedEventID),
                     critical: true,
