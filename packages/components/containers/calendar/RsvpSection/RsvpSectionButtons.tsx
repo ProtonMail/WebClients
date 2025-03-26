@@ -11,7 +11,7 @@ interface EditButtonProps {
 
 export const EditNoteButton = ({ onEdit }: EditButtonProps) => {
     return (
-        <Tooltip title={c('Edit note button tooltip').t`Edit Note`}>
+        <Tooltip title={c('Edit note button tooltip').t`Edit note`}>
             <ButtonLike className="shrink-0" shape="ghost" onClick={onEdit} icon size="small">
                 <Icon name="pen" alt={c('Edit note button tooltip').t`Edit note`} />
             </ButtonLike>
