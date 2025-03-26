@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { TextAreaTwo } from '@proton/components';
-import { getClientName, getReportInfo } from '@proton/components/helpers/report';
+import { getReportInfo } from '@proton/components/helpers/report';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { reportBugIntent } from '@proton/pass/store/actions';
@@ -20,7 +20,11 @@ import { SettingsPanel } from './SettingsPanel';
 type FormValues = { description: string };
 
 const INITIAL_VALUES: FormValues = { description: '' };
-const REPORT_TITLE = 'Pass extension bug report';
+const REPORT_PLATFORM = (() => {
+    if (DESKTOP_BUILD) return 'Pass Desktop';
+    if (EXTENSION_BUILD) return 'Pass Extension';
+    return 'Pass Web App';
+})();
 
 const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
     const errors: FormikErrors<FormValues> = {};
@@ -44,10 +48,10 @@ export const ReportAProblem: FC = () => {
         onSubmit: async ({ description }) => {
             const payload: BugPayload = {
                 ...getReportInfo(),
-                Client: getClientName(config.APP_NAME),
+                Client: REPORT_PLATFORM,
                 ClientType: config.CLIENT_TYPE,
                 ClientVersion: config.APP_VERSION,
-                Title: REPORT_TITLE,
+                Title: `${REPORT_PLATFORM} Bug Report`,
                 Username: user?.DisplayName || '',
                 Email: user?.Email || '',
                 Description: description,
