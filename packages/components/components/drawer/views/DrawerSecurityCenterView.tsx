@@ -14,7 +14,7 @@ const DrawerSecurityCenterView = () => {
     };
 
     return (
-        <DrawerView tab={tab} id="drawer-app-security-center" className="securityCenter">
+        <DrawerView tab={tab} id="drawer-app-security-center" className="securityCenter bg-lowered">
             <SecurityCenter />
         </DrawerView>
     );

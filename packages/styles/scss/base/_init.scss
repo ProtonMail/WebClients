@@ -208,6 +208,10 @@ details {
 		.summary-caret {
 			@extend .rotateX-180;
 		}
+
+		.summary-triangle {
+			@extend .rotateZ-90;
+		}
 	}
 }
 
