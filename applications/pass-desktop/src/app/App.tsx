@@ -43,7 +43,6 @@ import { type AuthStore, createAuthStore, exposeAuthStore } from '@proton/pass/l
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -120,8 +119,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
             search: location.search,
             hash: page,
         }),
-
-    prepareImport,
 
     writeToClipboard: async (str) => window.ctxBridge?.writeToClipboard(str),
 
