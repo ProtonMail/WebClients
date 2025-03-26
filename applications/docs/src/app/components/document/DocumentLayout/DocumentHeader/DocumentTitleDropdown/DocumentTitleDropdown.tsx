@@ -220,13 +220,11 @@ export function DocumentTitleDropdown({
     let to: string | undefined
     if (!!privateContext && isPrivateNodeMeta(nodeMeta)) {
       const { compat } = privateContext
-      if (isPrivateNodeMeta(nodeMeta)) {
-        // Drive is share-based and not volume-based so we need
-        // to get and use the shareId (and not volumeId)
-        const shareId = await compat.getShareId(nodeMeta)
-        if (node.parentNodeId) {
-          to = `/${shareId}/folder/${node.parentNodeId}`
-        }
+      // Drive is share-based and not volume-based so we need
+      // to get and use the shareId (and not volumeId)
+      const shareId = await compat.getShareId(nodeMeta)
+      if (node.parentNodeId) {
+        to = `/${shareId}/folder/${node.parentNodeId}`
       }
     }
     openProtonDrive(to)
@@ -326,6 +324,17 @@ export function DocumentTitleDropdown({
             </DropdownMenuButton>
           )}
 
+          {!isPublicMode && authenticatedController && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              data-testid="dropdown-move-to-folder"
+              onClick={() => authenticatedController.openMoveToFolderModal()}
+            >
+              <Icon name="arrows-cross" className="color-weak mr-2" />
+              {c('Action').t`Move to folder`}
+            </DropdownMenuButton>
+          )}
+
           {!isPublicMode && (
             <DropdownMenuButton
               className="flex items-center text-left"
@@ -417,6 +426,7 @@ export function DocumentTitleDropdown({
               </DropdownMenu>
             </SimpleDropdown>
           )}
+
           {documentState.getProperty('userRole').canTrash() && (
             <DropdownMenuButton
               disabled={trashState === 'trashing' || trashState === 'trashed'}
