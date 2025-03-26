@@ -312,6 +312,7 @@ export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>)
 
 export enum SentryMailInitiatives {
     DRAWER_SECURITY_CENTER = 'drawer-security-center',
+    DRAWER_VPN = 'drawer-vpn',
     COMPOSER = 'composer',
     ASSISTANT = 'assistant',
     MAIL_ONBOARDING = 'mail-onboarding',
