@@ -181,5 +181,42 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 },
             ],
         },
+        // Wrong usage with test.describe.parallel
+        {
+            code: `
+                test.describe.parallel(
+                    'create a test',
+                    {
+                        tag: '@tag2',
+                    },
+                    () => {}
+                )
+            `,
+            errors: [
+                {
+                    column: 30,
+                    message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
+                    type: 'Literal',
+                },
+            ],
+        },
+        {
+            code: `
+                test.describe.parallel(
+                    'create a test',
+                    {
+                        tag: [TEST_TAGS.TAG, '@tag2'],
+                    },
+                    () => {}
+                )
+            `,
+            errors: [
+                {
+                    column: 46,
+                    message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
+                    type: 'Literal',
+                },
+            ],
+        },
     ],
 });
