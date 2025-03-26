@@ -5,7 +5,7 @@ import { compareAsc } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ButtonGroup, Icon, Tooltip, useElementRect } from '@proton/components';
+import { ButtonGroup, Icon, Tooltip, useActiveBreakpoint, useElementRect } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { addDays, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
@@ -49,7 +49,6 @@ export interface TimeGridActionRef {
 }
 
 interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'onMouseDown'> {
-    isSmallViewport?: boolean;
     displaySecondaryTimezone?: boolean;
     primaryTimezone: string;
     secondaryTimezone?: string;
@@ -78,7 +77,6 @@ interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'onMouseDown'> {
 }
 
 const TimeGrid = ({
-    isSmallViewport = false,
     now,
     date,
     dateRange: [start, end],
@@ -114,6 +112,8 @@ const TimeGrid = ({
     const titleRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
     const partDayEventViewRef = useRef<HTMLDivElement>(null);
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { previous: previousDay, next: nextDay } = getNavigationArrowsText(VIEWS.DAY);
 
@@ -158,11 +158,11 @@ const TimeGrid = ({
     }, [events, attendeeBusySlots]);
 
     const daysRows = useMemo(() => {
-        if (isSmallViewport) {
+        if (viewportWidth['<=small']) {
             return [[date]];
         }
         return [days];
-    }, [days, isSmallViewport, date]);
+    }, [days, viewportWidth['<=small'], date]);
 
     const dayEventHeight = 28;
     const numberOfRows = 3;
@@ -235,7 +235,7 @@ const TimeGrid = ({
             });
         }
 
-        const normalizedDays = isSmallViewport ? [date] : days;
+        const normalizedDays = viewportWidth['<=small'] ? [date] : days;
 
         if (!days[0]) {
             return;
@@ -447,7 +447,7 @@ const TimeGrid = ({
                                 const key = getKey(day);
                                 const isActiveDay = isSameDay(day, date);
                                 const dayFullDetail = formatUTC(day, 'PPPP', { locale: dateLocale });
-                                if (isSmallViewport && !isActiveDay) {
+                                if (viewportWidth['<=small'] && !isActiveDay) {
                                     return null;
                                 }
                                 return (
@@ -463,7 +463,7 @@ const TimeGrid = ({
                                             tzid={tzid}
                                             events={timeEvents}
                                             eventsInDay={eventsPerDay[key]}
-                                            dayIndex={isSmallViewport ? 0 : dayIndex}
+                                            dayIndex={viewportWidth['<=small'] ? 0 : dayIndex}
                                             totalMinutes={totalMinutes}
                                             targetEventData={targetEventData}
                                             targetEventRef={targetEventRef}

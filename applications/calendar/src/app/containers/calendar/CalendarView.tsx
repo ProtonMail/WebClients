@@ -37,7 +37,6 @@ const CalendarView = ({
     calendars,
     calendarsEventsCacheRef,
     view,
-    isSmallViewport,
 
     isInteractionEnabled,
     onMouseDown,
@@ -81,7 +80,6 @@ const CalendarView = ({
     if ([DAY, WEEK, MAIL, DRIVE].includes(view)) {
         return (
             <TimeGrid
-                isSmallViewport={isSmallViewport}
                 tzid={tzid}
                 primaryTimezone={primaryTimezone}
                 secondaryTimezone={secondaryTimezone}

@@ -1,4 +1,3 @@
-import { useActiveBreakpoint } from '@proton/components/index';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';
@@ -10,11 +9,9 @@ interface Props {
 }
 
 const CalendarOnboardingContainer = ({ onDone, drawerView }: Props) => {
-    const { viewportWidth } = useActiveBreakpoint();
-
     return (
         <>
-            <DummyCalendarContainerView drawerView={drawerView} isSmallViewport={viewportWidth['<=small']} />
+            <DummyCalendarContainerView drawerView={drawerView} />
             <CalendarOnboardingModal open onDone={onDone} />
         </>
     );
