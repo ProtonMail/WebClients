@@ -42,6 +42,7 @@ export interface PartstatData {
 }
 
 export interface AttendeeComment {
+    /** either encrypted or cleartext comment, based on `Type` */
     Message: string;
     Type: ATTENDEE_COMMENT_ENCRYPTION_TYPE;
 }
@@ -154,6 +155,7 @@ export interface AttendeeModel {
     role: ICAL_ATTENDEE_ROLE;
     partstat: ICAL_ATTENDEE_STATUS;
     token?: string;
+    /** Comment, in cleartext */
     comment?: string;
 }
 
