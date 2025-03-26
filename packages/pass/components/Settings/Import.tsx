@@ -26,7 +26,6 @@ import { selectCanCreateItems } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
 import { SettingsPanel } from './SettingsPanel';
 
@@ -51,10 +50,10 @@ export const Import: FC = () => {
         []
     );
 
-    const { form, dropzone, busy, result, progress } = useImportForm({
+    const { form, dropzone, busy, result, progress, cancel } = useImportForm({
         onWillSubmit,
         onPassphrase: () =>
-            new Promise((res) => passphraseModal.handler({ onSubmit: res }).catch(() => ({ ok: false }))),
+            new Promise((onSubmit) => passphraseModal.handler({ onSubmit }).catch(() => ({ ok: false }))),
     });
 
     const canCreateItem = useSelector(selectCanCreateItems);
@@ -79,7 +78,7 @@ export const Import: FC = () => {
                     title={c('Title').t`Importing your data`}
                     message={c('Info')
                         .t`Please keep this window open while your data is being imported. This process may take a few minutes.`}
-                    onCancel={noop}
+                    onCancel={cancel}
                 />
             )}
 

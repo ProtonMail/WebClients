@@ -1,5 +1,5 @@
-import { type ComponentProps, useCallback, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { type ComponentProps, useCallback, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import type { FormikContextType, FormikErrors, FormikHelpers } from 'formik';
 import { useFormik } from 'formik';
@@ -8,13 +8,14 @@ import { c } from 'ttag';
 import type { Dropzone, FileInput } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { useFileImporter } from '@proton/pass/hooks/import/useFileImporter';
-import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
+import { useRequestDispatch } from '@proton/pass/hooks/useRequest';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { importReader } from '@proton/pass/lib/import/reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { ImportProvider } from '@proton/pass/lib/import/types';
 import { importItems } from '@proton/pass/store/actions';
 import type { ImportState } from '@proton/pass/store/reducers';
+import { requestCancel } from '@proton/pass/store/request/actions';
 import { selectAliasItems, selectLatestImport, selectRequest, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull, Result } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
@@ -30,10 +31,8 @@ export type ImportFormValues = {
     provider: MaybeNull<ImportProvider>;
 };
 
-type ImportCounts = {
-    items: number;
-    files: number;
-};
+type ImportCounts = { items: number; files: number };
+type ImportProgress = ImportCounts & { step: 'items' | 'files' };
 
 export type ImportFormContext = {
     busy: boolean;
@@ -46,6 +45,7 @@ export type ImportFormContext = {
         onAttach: FileInputProps['onChange'];
         setSupportedFileTypes: (fileTypes: string[]) => void;
     };
+    cancel: () => void;
 };
 
 export type OnWillSubmitImportResult = Result<{ payload: ImportPayload }>;
@@ -93,10 +93,10 @@ const getImportCounts = (data: ImportPayload): ImportCounts =>
 
 export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptions): ImportFormContext => {
     const { createNotification } = useNotifications();
+    const ctrl = useRef<MaybeNull<AbortController>>(null);
     const importFiles = useFileImporter();
 
-    const [counts, setCounts] = useState<ImportCounts>({ items: 0, files: 0 });
-    const [step, setStep] = useState<MaybeNull<'items' | 'files'>>(null);
+    const [progress, setProgress] = useState<MaybeNull<ImportProgress>>(null);
     const req = useSelector(selectRequest(importItems.requestID()));
     const itemProgress = req?.status === 'start' ? (req.progress ?? 0) : 0;
 
@@ -108,9 +108,13 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
     const user = useSelector(selectUser);
     const aliases = useSelector(selectAliasItems);
 
-    const dispatch = useAsyncRequestDispatch();
+    const dispatch = useDispatch();
+    const doImportItems = useRequestDispatch(importItems);
 
     const onSubmit = useCallback(async (values: ImportFormValues, { setValues }: FormikHelpers<ImportFormValues>) => {
+        ctrl.current?.abort();
+        ctrl.current = new AbortController();
+
         if (!values.provider) return setBusy(false);
         setBusy(true);
 
@@ -153,15 +157,14 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
                 const data = prepared.payload;
 
                 /** 3. Start the item import sequence */
-                setCounts(getImportCounts(data));
-                setStep('items');
-                const res = await dispatch(importItems, { data, provider });
+                setProgress({ ...getImportCounts(data), step: 'items' });
+                const res = await doImportItems({ data, provider });
 
                 /** 4. Start the file import sequence */
-                if (res.type === 'success') {
+                if (res.type === 'success' && !ctrl.current.signal?.aborted) {
                     if (fileReader) {
-                        setStep('files');
-                        await importFiles.start(fileReader, res.data.files);
+                        setProgress((prev) => (prev ? { ...prev, step: 'files' } : null));
+                        await importFiles.start(fileReader, res.data.files, ctrl.current.signal);
                     }
 
                     void setValues(getInitialFormValues());
@@ -169,12 +172,13 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
             }
         } catch (e) {
             if (e instanceof Error) {
+                console.warn(e);
                 createNotification({ type: 'error', text: e.message });
             }
         } finally {
-            setCounts({ items: 0, files: 0 });
-            setStep(null);
+            setProgress(null);
             setBusy(false);
+            ctrl.current = null;
         }
     }, []);
 
@@ -203,24 +207,33 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
 
     const onAttach: FileInputProps['onChange'] = (event) => onAddFiles((event.target.files as File[] | null) ?? []);
 
+    const cancel = useCallback(() => {
+        importFiles.cancel();
+        ctrl.current?.abort();
+        dispatch(requestCancel(importItems.requestID()));
+        setProgress(null);
+    }, []);
+
     return {
         busy,
         dropzone: { hovered: dropzoneHovered, onAttach, onDrop, setSupportedFileTypes },
         form,
         result,
         progress: (() => {
-            const total = counts.items + counts.files;
-            switch (step) {
+            if (!progress) return null;
+            const total = progress.items + progress.files;
+            switch (progress.step) {
                 case 'items':
                     /** During items phase, show progress relative to total items + files */
                     return Math.ceil((itemProgress / total) * 100);
                 case 'files':
                     /** During files phase, add completed items count to current file progress
                      * since items are already processed at this point */
-                    return Math.ceil(((counts.items + importFiles.progress) / total) * 100);
+                    return Math.ceil(((progress.items + importFiles.progress) / total) * 100);
                 default:
                     return null;
             }
         })(),
+        cancel,
     };
 };
