@@ -11,11 +11,14 @@ import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressM
 import { ImportForm } from '@proton/pass/components/Import/ImportForm';
 import { ImportVaultsPickerModal } from '@proton/pass/components/Import/ImportVaultsPickerModal';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { PasswordModal } from '@proton/pass/components/Lock/PasswordModal';
+import type { OnPassphraseImportResult } from '@proton/pass/hooks/import/useImportForm';
 import {
     type OnWillSubmitImport,
     type OnWillSubmitImportResult,
     useImportForm,
 } from '@proton/pass/hooks/import/useImportForm';
+import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
@@ -30,16 +33,17 @@ import { SettingsPanel } from './SettingsPanel';
 export const Import: FC = () => {
     const { endpoint } = usePassCore();
     const [importData, setImportData] = useState<MaybeNull<ImportPayload>>(null);
-    const resolver = useRef<(value: OnWillSubmitImportResult) => void>();
+    const willSubmitResolver = useRef<(value: OnWillSubmitImportResult) => void>();
+    const passphraseModal = useAsyncModalHandles<OnPassphraseImportResult>({ getInitialModalState: () => ({}) });
 
     const onWillSubmit = useCallback<OnWillSubmitImport>(
         async (payload) =>
             new Promise((resolve) => {
                 setImportData(payload);
-                resolver.current = pipe(
+                willSubmitResolver.current = pipe(
                     resolve,
                     tap(() => {
-                        resolver.current = undefined;
+                        willSubmitResolver.current = undefined;
                         setImportData(null);
                     })
                 );
@@ -47,7 +51,11 @@ export const Import: FC = () => {
         []
     );
 
-    const { form, dropzone, busy, result, progress } = useImportForm({ onWillSubmit });
+    const { form, dropzone, busy, result, progress } = useImportForm({
+        onWillSubmit,
+        onPassphrase: () =>
+            new Promise((res) => passphraseModal.handler({ onSubmit: res }).catch(() => ({ ok: false }))),
+    });
 
     const canCreateItem = useSelector(selectCanCreateItems);
     const showResultDetails = (result?.ignored.length ?? 0) > 0 || (result?.warnings?.length ?? 0) > 0;
@@ -74,6 +82,19 @@ export const Import: FC = () => {
                     onCancel={noop}
                 />
             )}
+
+            {passphraseModal.state.open && (
+                <PasswordModal
+                    title={c('Title').t`Encrypted import`}
+                    type="current-password"
+                    open
+                    loading={passphraseModal.state.loading}
+                    onSubmit={(passphrase) => passphraseModal.resolver({ ok: true, passphrase })}
+                    onClose={() => passphraseModal.resolver({ ok: false })}
+                    submitLabel={c('Action').t`Confirm`}
+                />
+            )}
+
             {result && (
                 <SettingsPanel title={c('Label').t`Latest import`}>
                     <div className="flex flex-column gap-y-1 text-sm">
@@ -159,10 +180,12 @@ export const Import: FC = () => {
 
                 {importData !== null && (
                     <ImportVaultsPickerModal
-                        onClose={async () => resolver.current?.({ ok: false })}
+                        onClose={async () => willSubmitResolver.current?.({ ok: false })}
                         payload={importData}
                         onSubmit={(payload) =>
-                            resolver?.current?.(payload.vaults.length === 0 ? { ok: false } : { ok: true, payload })
+                            willSubmitResolver?.current?.(
+                                payload.vaults.length === 0 ? { ok: false } : { ok: true, payload }
+                            )
                         }
                     />
                 )}

@@ -123,8 +123,8 @@ export type ImportReaderPayload = {
     file: File;
     provider: ImportProvider;
     userId?: string;
-    passphrase?: string;
     options?: { currentAliases?: string[] };
+    onPassphrase: () => Promise<string>;
 };
 
 export type ImportVault = {
