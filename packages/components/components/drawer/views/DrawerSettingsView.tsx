@@ -25,7 +25,7 @@ const DrawerSettingsView = ({ customAppSettings }: Props) => {
     );
 
     return (
-        <DrawerView tab={tab} id="drawer-app-proton-settings" className="quickSettings">
+        <DrawerView tab={tab} id="drawer-app-proton-settings" className="quickSettings bg-lowered">
             {customAppSettings ? customAppSettings : defaultSettings}
         </DrawerView>
     );

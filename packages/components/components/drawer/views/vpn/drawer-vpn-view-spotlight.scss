@@ -1,0 +1,23 @@
+@import '~@proton/styles/scss/lib';
+
+.drawer-vpn-view-spotlight {
+	max-inline-size: rem(320);
+
+	& &-inner {
+		padding: 0;
+	}
+
+	&-gradient-placeholder {
+		// static colors because same whatever theme it is
+		block-size: rem(113); // size of animation
+		background:
+			linear-gradient(181.59deg, #338c92 0.7%, rgb(23 21 29 / 0) 107.82%), linear-gradient(0deg, #16141c, #16141c);
+	}
+
+	.spotlight-close {
+		position: absolute;
+		color: white; // static colors because above an image, same for all themes
+		background: rgb(12 12 20 / 0.32);
+		border-radius: 1em;
+	}
+}

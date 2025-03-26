@@ -13,7 +13,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features';
 import { PLANS } from '@proton/payments';
-import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
+import { DARK_WEB_MONITORING_NAME, SECOND } from '@proton/shared/lib/constants';
 import spotlightImg from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 
 interface Props {
@@ -52,7 +52,7 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
         displaySpotlight
     );
 
-    const shouldShowSpotlight = useSpotlightShow(show, 3000);
+    const shouldShowSpotlight = useSpotlightShow(show, 3 * SECOND);
 
     return (
         <Spotlight
