@@ -38,7 +38,7 @@ export interface CalendarPersonalEventData extends CalendarEventData {
 
 export interface PartstatData {
     Status: ICAL_ATTENDEE_STATUS;
-    Comment?: AttendeeComment;
+    Comment?: string;
 }
 
 export interface AttendeeComment {
