@@ -2,7 +2,7 @@ import round from 'lodash/round';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmBitcoinUnit, WasmFiatCurrencySymbol, WasmNetwork } from '@proton/andromeda';
-import { WasmAddress, WasmScriptType } from '@proton/andromeda';
+import { WasmAddress, WasmScriptType, WasmSigningType } from '@proton/andromeda';
 import { BITCOIN, CENTS_BY_BITCOIN_UNIT, SATOSHI, mBITCOIN } from '@proton/wallet';
 
 export const getLabelByUnit = (unit: WasmBitcoinUnit) => {
@@ -190,4 +190,23 @@ export const formatNumberForDisplay = (num: number, decimalPlaces: number, digit
         return num.toFixed(digitsAfterDecimalPoint);
     }
     return num;
+};
+
+export const getLabelBySigningType = (type: WasmSigningType) => {
+    switch (type) {
+        case WasmSigningType.Bip137:
+            return c('Bitcoin Signing Type').t`BIP 137`;
+        case WasmSigningType.Electrum:
+            return c('Bitcoin Signing Type').t`Electrum`;
+    }
+};
+
+export const getDescriptionBySigningType = (type: WasmSigningType) => {
+    switch (type) {
+        case WasmSigningType.Bip137:
+            return c('Bitcoin Signing Type Description')
+                .t`Trezor is the standard signature format according to BIP 137`;
+        case WasmSigningType.Electrum:
+            return c('Bitcoin Signing Type Description').t`Electrum is a compatibility signature format`;
+    }
 };

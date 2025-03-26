@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { type WasmAddressDetailsData, type WasmApiWalletAccount, WasmKeychainKind } from '@proton/andromeda';
+import {
+    type WasmAccount,
+    type WasmAddressDetailsData,
+    type WasmApiWalletAccount,
+    WasmKeychainKind,
+} from '@proton/andromeda';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 import { type IWasmApiWalletData } from '@proton/wallet';
@@ -20,6 +25,7 @@ export const useAddressTable = ({
     wallet: IWasmApiWalletData;
     walletAccount: WasmApiWalletAccount;
 }) => {
+    const [account, setAccount] = useState<WasmAccount | undefined>(undefined);
     const [addressSearch, setAddressSearch] = useState('');
     const [addresses, setAddresses] = useState<WasmAddressDetailsData[]>([]);
 
@@ -48,9 +54,12 @@ export const useAddressTable = ({
                 wallet.Wallet.ID,
                 walletAccount.ID
             );
+            setAccount(undefined);
 
             if (account) {
                 const run = async () => {
+                    setAccount(account.account);
+
                     if (addressSearch && !isUndefined(network)) {
                         const address = await account.account
                             .getAddress(network, addressSearch, blockchainClient, force_sync)
@@ -110,5 +119,7 @@ export const useAddressTable = ({
         handleNext,
         handlePrev,
         sync,
+
+        account,
     };
 };
