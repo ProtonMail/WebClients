@@ -12,6 +12,7 @@ import type { PartstatData } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarInviteButtons from '../CalendarInviteButtons';
 import { DeleteNoteButton, EditNoteButton } from './RsvpSectionButtons';
+import { RsvpSpotlight } from './RsvpSpotlight';
 
 interface Props {
     handleChangePartstat: (partstatData: PartstatData, save: boolean) => Promise<void>;
@@ -114,13 +115,15 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                 />
             </div>
             {!isExpanded && !hasUserComment && !isSearchView && (
-                <Button
-                    className="flex flex-auto justify-end text-sm color-weak"
-                    shape="underline"
-                    onClick={() => setIsExpanded(!isExpanded)}
-                >
-                    {c('Action').t`Reply with a note`}
-                </Button>
+                <RsvpSpotlight>
+                    <Button
+                        className="flex flex-auto justify-end text-sm color-weak"
+                        shape="underline"
+                        onClick={() => setIsExpanded(!isExpanded)}
+                    >
+                        {c('Action').t`Reply with a note`}
+                    </Button>
+                </RsvpSpotlight>
             )}
             {!isExpanded && hasUserComment && (
                 <div className="mt-2 flex flex-auto justify-space-between flex-nowrap items-center gap-2">
