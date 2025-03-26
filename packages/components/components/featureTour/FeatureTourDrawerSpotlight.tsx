@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
 
@@ -15,7 +14,6 @@ interface Props {
 
 const FeatureTourDrawerSpotlight = ({ children }: Props) => {
     const anchorRef = useRef<HTMLDivElement>(null);
-    const { viewportWidth } = useActiveBreakpoint();
     const spotlightDisplayDateFlag = useFeature<number>(FeatureCode.FeatureTourDrawerSpotlightDisplayDate);
     const featureTourExpirationDateFlag = useFeature<number>(FeatureCode.FeatureTourExpirationDate);
 
@@ -31,11 +29,9 @@ const FeatureTourDrawerSpotlight = ({ children }: Props) => {
         return !!spotlightValue && isAfter(new Date(), fromUnixTime(spotlightValue));
     }, [spotlightDisplayDateFlag.loading]);
 
-    const displaySpotlight = canDisplaySpotlight && !hasExpired && !viewportWidth['<=small'];
-
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.FeatureTourDrawerSpotlightDisplayDate,
-        displaySpotlight
+        canDisplaySpotlight && !hasExpired
     );
 
     const shouldShowSpotlight = useSpotlightShow(show);

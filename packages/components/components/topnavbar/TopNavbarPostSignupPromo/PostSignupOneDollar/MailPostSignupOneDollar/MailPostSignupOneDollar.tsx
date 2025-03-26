@@ -10,7 +10,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode, useFeature } from '@proton/features';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
 import { SpotlightWithPromo } from '../../common/SpotlightWithPromo';
@@ -76,7 +76,7 @@ export const MailPostSignupOneDollar = () => {
     });
 
     const [spotlightState, setSpotlightState] = useState(openSpotlight);
-    const show = useSpotlightShow(spotlightState, 3000);
+    const show = useSpotlightShow(spotlightState, 3 * SECOND);
 
     const { pricingTitle } = usePostSignupOneDollarPromotionPrice({
         offerProduct: 'mail',

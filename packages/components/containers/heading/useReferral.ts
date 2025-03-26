@@ -10,7 +10,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
 export const useReferral = (location: ReturnType<typeof useLocation>) => {
@@ -30,7 +30,7 @@ export const useReferral = (location: ReturnType<typeof useLocation>) => {
         FeatureCode.ReferralProgramSpotlight,
         !!referralProgramFeature?.Value && !!userSettings?.Referral?.Eligible && subscriptionStartedThirtyDaysAgo
     );
-    const shouldShowSpotlight = useSpotlightShow(showSpotlight, 3000);
+    const shouldShowSpotlight = useSpotlightShow(showSpotlight, 3 * SECOND);
 
     // Show referral dot if the spotlight has been displayed
     useEffect(() => {
