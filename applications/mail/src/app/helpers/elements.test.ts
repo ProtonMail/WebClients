@@ -261,11 +261,20 @@ describe('elements', () => {
         });
 
         it('should not match from address', () => {
-            const addresses = ['sender@otherdomain.com', 'sender@'];
+            const addresses = ['sender@otherdomain.com'];
 
             addresses.forEach((address) => {
                 expect(matchFrom(message, address)).toBeFalsy();
                 expect(matchFrom(conversation, address)).toBeFalsy();
+            });
+        });
+
+        it('should match partial email address', () => {
+            const addresses = ['sender@', 'sender'];
+
+            addresses.forEach((address) => {
+                expect(matchFrom(message, address)).toBeTruthy();
+                expect(matchFrom(conversation, address)).toBeTruthy();
             });
         });
     });
@@ -281,11 +290,20 @@ describe('elements', () => {
         });
 
         it('should not match to address', () => {
-            const addresses = ['recipient@otherdomain.com', 'recipient@'];
+            const addresses = ['recipient@otherdomain.com'];
 
             addresses.forEach((address) => {
                 expect(matchTo(message, address)).toBeFalsy();
                 expect(matchTo(conversation, address)).toBeFalsy();
+            });
+        });
+
+        it('should match partial email address', () => {
+            const addresses = ['recipient@', 'recipient'];
+
+            addresses.forEach((address) => {
+                expect(matchTo(message, address)).toBeTruthy();
+                expect(matchTo(conversation, address)).toBeTruthy();
             });
         });
     });
