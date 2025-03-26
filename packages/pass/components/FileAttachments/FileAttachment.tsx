@@ -17,10 +17,17 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-export type FileAttachedData = Pick<File, 'name' | 'size'>;
+import { FileAttachmentIcon } from './FileAttachmentIcon';
+
+export type FileOrDescriptor = {
+    name: string;
+    size: number;
+    mimeType?: string;
+    type?: string;
+};
 
 type Props = {
-    file: FileAttachedData;
+    file: FileOrDescriptor;
     onDelete?: () => void;
     onRename?: (fileName: string) => void;
     onCancel?: () => void;
@@ -73,7 +80,7 @@ export const FileAttachment: FC<Props> = ({
                 onClick={canDownload ? onDownload : noop}
                 onDoubleClick={canRename ? enableRenaming : noop}
             >
-                <Icon name="file-lines" className="m-auto" />
+                <FileAttachmentIcon mimeType={file?.mimeType ?? file?.type ?? ''} />
             </ClickableDiv>
             <ClickableDiv
                 className={clsx('flex-1 flex-column text-left', canDownload && 'cursor-pointer')}
