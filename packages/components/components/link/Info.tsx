@@ -23,6 +23,7 @@ interface Props extends Omit<IconProps, 'title' | 'name'> {
     filled?: boolean;
     fakeDisabled?: boolean;
     colorPrimary?: boolean;
+    tooltipClassName?: string;
 }
 
 const Info = ({
@@ -36,6 +37,7 @@ const Info = ({
     filled = false,
     colorPrimary = true,
     fakeDisabled = false,
+    tooltipClassName,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
@@ -66,6 +68,7 @@ const Info = ({
             closeDelay={250}
             longTapDelay={0}
             originalPlacement={originalPlacement}
+            tooltipClassName={tooltipClassName}
         >
             <button
                 tabIndex={buttonTabIndex}
