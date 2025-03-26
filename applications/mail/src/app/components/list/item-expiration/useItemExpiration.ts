@@ -4,13 +4,14 @@ import { differenceInDays, differenceInHours, endOfDay, fromUnixTime, isAfter } 
 import { c, msgid } from 'ttag';
 
 import useInterval from '@proton/hooks/useInterval';
+import { MINUTE } from '@proton/shared/lib/constants';
 
 import { formatFullDate } from '../../../helpers/date';
 import { isConversation } from '../../../helpers/elements';
 import type { Conversation } from '../../../models/conversation';
 import type { Element } from '../../../models/element';
 
-const EVERY_MINUTE = 60 * 1000;
+const EVERY_MINUTE = MINUTE;
 
 const getShortMessage = (date: Date, now: Date, expiresInLessThan24Hours: boolean) => {
     const hasEnded = isAfter(now, date);
