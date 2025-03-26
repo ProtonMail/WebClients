@@ -3,7 +3,7 @@ import { type FC, useMemo } from 'react';
 import type { FieldProps } from 'formik';
 
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectItemFilesCount, selectItemFilesForRevision } from '@proton/pass/store/selectors/files';
+import { selectItemFilesForRevision } from '@proton/pass/store/selectors/files';
 import type { FileAttachmentValues, FileID, SelectedRevision } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -16,8 +16,10 @@ type Props = FieldProps<{}, FileAttachmentValues> & SelectedRevision;
 
 export const FileAttachmentsFieldEdit: FC<Props> = (props) => {
     const { shareId, itemId, revision, form } = props;
-    const filesCount = useMemoSelector(selectItemFilesCount, [shareId, itemId]);
+
     const filesForRevision = useMemoSelector(selectItemFilesForRevision, [shareId, itemId, revision]);
+    const filesCount = filesForRevision.length;
+
     const files = useMemo(
         () => filesForRevision.filter(pipe(prop('fileID'), notIn(form.values.files.toRemove))),
         [filesForRevision, form.values.files.toRemove]
