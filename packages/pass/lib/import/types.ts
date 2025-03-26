@@ -72,7 +72,7 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
         },
         [ImportProvider.PROTONPASS]: {
             title: PASS_APP_NAME,
-            fileExtension: 'pex, epex, zip, pgp, csv',
+            fileExtension: 'zip, pgp, csv',
             tutorialUrl: '',
         },
         [ImportProvider.SAFARI]: {
