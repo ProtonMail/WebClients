@@ -30,19 +30,48 @@ interface Props {
     isSearchView: boolean;
 }
 
+const RsvpButtons = ({
+    handleResponse,
+    userPartstat,
+    disabled,
+    attendeeStatus,
+}: {
+    attendeeStatus: ICAL_ATTENDEE_STATUS;
+    handleResponse: (attendeeStatus: ICAL_ATTENDEE_STATUS) => Promise<void>;
+} & Pick<Props, 'userPartstat' | 'disabled'>) => {
+    return (
+        <div className="flex flex-auto items-start md:items-center justify-space-between gap-4 flex-column md:flex-row">
+            <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
+            <CalendarInviteButtons
+                actions={{
+                    accept: () => handleResponse(ICAL_ATTENDEE_STATUS.ACCEPTED),
+                    acceptTentatively: () => handleResponse(ICAL_ATTENDEE_STATUS.TENTATIVE),
+                    decline: () => handleResponse(ICAL_ATTENDEE_STATUS.DECLINED),
+                    retryCreateEvent: () => wait(0),
+                    retryUpdateEvent: () => wait(0),
+                }}
+                originalPatstat={userPartstat}
+                partstat={attendeeStatus}
+                disabled={disabled}
+            />
+        </div>
+    );
+};
+
 const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled, isSearchView }: Props) => {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [displayNoteOverlay, setDisplayNoteOverlay] = useState(false);
     const [model, setModel] = useState<PartstatData>({
         Status: userPartstat,
         Comment: userComment ?? undefined,
     });
+
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingSend, withLoadingSend] = useLoading();
 
     const isUnchanged = model.Status === userPartstat && model.Comment === userComment;
 
     const handleResponse = (status: ICAL_ATTENDEE_STATUS) => {
-        if (isExpanded) {
+        if (displayNoteOverlay) {
             setModel({
                 ...model,
                 Status: status,
@@ -54,7 +83,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             {
                 Status: status,
             },
-            !isExpanded
+            !displayNoteOverlay
         );
     };
 
@@ -83,7 +112,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             Status: userPartstat,
             Comment: userComment ?? undefined,
         });
-        setIsExpanded(!isExpanded);
+        setDisplayNoteOverlay(false);
     };
 
     const handleDeleteComment = () => {
@@ -107,42 +136,39 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             onClick={handleSend}
             loading={loadingSend}
             disabled={
-                isExpanded && (isUnchanged || !model.Comment || model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
+                displayNoteOverlay &&
+                (isUnchanged || !model.Comment || model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
             }
         >{c('Action').t`Send`}</Button>
     );
 
     const hasUserComment = !!model.Comment;
+    const canReplyWithNote = !hasUserComment && !isSearchView;
 
     return (
         <>
-            <div className="flex flex-auto items-start md:items-center justify-space-between gap-4 flex-column md:flex-row">
-                <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
-                <CalendarInviteButtons
-                    actions={{
-                        accept: () => handleResponse(ICAL_ATTENDEE_STATUS.ACCEPTED),
-                        acceptTentatively: () => handleResponse(ICAL_ATTENDEE_STATUS.TENTATIVE),
-                        decline: () => handleResponse(ICAL_ATTENDEE_STATUS.DECLINED),
-                        retryCreateEvent: () => wait(0),
-                        retryUpdateEvent: () => wait(0),
-                    }}
-                    originalPatstat={userPartstat}
-                    partstat={model.Status}
-                    disabled={disabled}
-                />
-            </div>
-            {!isExpanded && !hasUserComment && !isSearchView && (
+            <RsvpButtons
+                handleResponse={handleResponse}
+                userPartstat={userPartstat}
+                disabled={disabled}
+                // As no inner state required for this part i'm
+                // not passing model.Status and rely on parent state
+                attendeeStatus={userPartstat}
+            />
+
+            {canReplyWithNote && (
                 <RsvpSpotlight>
                     <Button
                         className="flex flex-auto justify-end text-sm color-weak"
                         shape="underline"
-                        onClick={() => setIsExpanded(!isExpanded)}
+                        onClick={() => setDisplayNoteOverlay(true)}
                     >
                         {c('Action').t`Reply with a note`}
                     </Button>
                 </RsvpSpotlight>
             )}
-            {!isExpanded && hasUserComment && (
+
+            {hasUserComment && (
                 <div className="mt-2 flex flex-auto justify-space-between flex-nowrap items-center gap-2">
                     <div className="text-ellipsis color-weak text-sm">
                         <span className="text-bold color-weak">{c('Note').t`Note: `}</span>
@@ -150,14 +176,21 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                     </div>
                     {!isSearchView && (
                         <div className="flex flex-none">
-                            <EditNoteButton onEdit={() => setIsExpanded(!isExpanded)} />
+                            <EditNoteButton onEdit={() => setDisplayNoteOverlay(!displayNoteOverlay)} />
                             <DeleteNoteButton onDelete={handleDeleteComment} loading={loadingDelete} />
                         </div>
                     )}
                 </div>
             )}
-            {isExpanded && (
+
+            {displayNoteOverlay && (
                 <>
+                    <RsvpButtons
+                        handleResponse={handleResponse}
+                        userPartstat={userPartstat}
+                        disabled={disabled}
+                        attendeeStatus={model.Status}
+                    />
                     <InputFieldTwo
                         className="mt-4"
                         assistContainerClassName="m-0"
