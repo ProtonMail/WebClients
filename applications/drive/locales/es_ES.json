@@ -3778,11 +3778,18 @@
         "Agregar ${ photos.length } foto a",
         "Añadir ${ photos.length } fotos a"
       ],
+      "Add to shared album": [
+        "Añadir al álbum compartido"
+      ],
       "All albums": [
         "Todos los álbumes"
       ],
       "Recent": [
         "Recientes"
+      ],
+      "Share ${ photos.length } photo via": [
+        "Compartir ${ photos.length } foto mediante",
+        "Compartir ${ photos.length } fotos mediante"
       ]
     },
     "Hint": {
@@ -4329,6 +4336,9 @@
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
+      "Ad targeting": [
+        "Orientación de anuncios"
+      ],
       "Address copied to clipboard": [
         "Se ha copiado la dirección al portapapeles."
       ],
@@ -4443,9 +4453,6 @@
       "Calendar side panel": [
         "Panel lateral del calendario"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendario integrado con ${ MAIL_APP_NAME } y ${ CONTACTS_APP_NAME }"
-      ],
       "Canceled": [
         "Cancelado"
       ],
@@ -4487,9 +4494,6 @@
       ],
       "Close this screen to exit.": [
         "Cierra esta pantalla para salir."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Almacenamiento en la nube integrado con ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Conflicto"
@@ -4641,9 +4645,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para dominios que posees. El registro de dominios no está disponible a través de ${ BRAND_NAME }. Puedes alojar correos electrónicos para dominios registrados en cualquier registrador de dominios."
       ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Servicio de correo electrónico integrado con ${ CALENDAR_APP_NAME } y ${ CONTACTS_APP_NAME }"
-      ],
       "Emails are automatically signed": [
         "Los correos electrónicos son firmados automáticamente."
       ],
@@ -4756,6 +4757,9 @@
       "from the version history?": [
         "del historial de versiones?"
       ],
+      "Geoblocking": [
+        "Geoblocalización"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Descarga la aplicación para hacer una copia de seguridad de las fotos de tu teléfono o cárgalas aquí."
       ],
@@ -4819,6 +4823,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
+      ],
+      "In restrictive countries": [
+        "En países restrictivos"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
@@ -5004,6 +5011,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "No se han transferido todos los archivos. Intenta cargar o descargar los archivos de nuevo."
       ],
+      "Not connected": [
+        "No conectado"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que hayas instalado ${ DRIVE_APP_NAME }."
       ],
@@ -5012,6 +5022,9 @@
       ],
       "of": [
         "de"
+      ],
+      "On public WiFi networks": [
+        "En redes Wi-Fi públicas"
       ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
         "Una vez finalizado el proceso, encontrarás una copia de tus datos restaurados en una nueva carpeta llamada «Recuperación Automatizada (fecha de hoy)». Esta copia de tus datos no contará con tu cuota de almacenamiento."
@@ -5051,9 +5064,6 @@
       ],
       "password": [
         "contraseña"
-      ],
-      "Password manager with extra account security": [
-        "Gestor de contraseñas con seguridad de cuenta adicional"
       ],
       "Paused": [
         "En pausa"
@@ -5261,9 +5271,6 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
       ],
-      "Self-custodial crypto wallet": [
-        "Cartera de criptomonedas en autocustodia"
-      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Los pagos SEPA no están disponibles en este momento. Intenta de nuevo más tarde."
       ],
@@ -5345,6 +5352,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tu suscripción terminará pronto: reactívala antes del ${ byDate } para mantener los beneficios del ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Vigilancia"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
@@ -5503,6 +5513,9 @@
       "Total VPN connections": [
         "Conexiones VPN totales"
       ],
+      "Tracking": [
+        "Seguimiento"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Se ha cancelado la transferencia del archivo \"${ name }\"."
       ],
@@ -5599,8 +5612,8 @@
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN con direcciones IP y servidores dedicados"
+      "VPN IP": [
+        "VPN IP"
       ],
       "Want to sync files faster?": [
         "¿Quieres sincronizar archivos más rápido?"
@@ -5655,6 +5668,9 @@
       ],
       "What would you like to do?": [
         "¿Qué te gustaría hacer?"
+      ],
+      "When working remotely": [
+        "Al trabajar de forma remota"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
@@ -10529,6 +10545,9 @@
       "Deleting contacts": [
         "Eliminando contactos"
       ],
+      "Desktop": [
+        "Escritorio"
+      ],
       "Details": [
         "Detalles"
       ],
@@ -10546,6 +10565,9 @@
       ],
       "Download ${ date }": [
         "Descargar ${ date }"
+      ],
+      "Download the app": [
+        "Descarga la aplicación"
       ],
       "Download unverified file?": [
         "¿Descargar archivo no verificado?"
@@ -10626,6 +10648,9 @@
       "Get advanced protection": [
         "Obtén una protección avanzada."
       ],
+      "Get more from your VPN": [
+        "Obtén más de tu VPN"
+      ],
       "Gift": [
         "Regalo"
       ],
@@ -10643,6 +10668,9 @@
       ],
       "Hm, we couldn't find that one": [
         "¡Vaya! No pudimos encontrar lo que buscas."
+      ],
+      "How does it all work?": [
+        "¿Cómo funciona todo esto?"
       ],
       "Human verification": [
         "Verificación humana"
@@ -10678,6 +10706,9 @@
       "Location": [
         "Ubicación"
       ],
+      "Make a secure connection your default": [
+        "Conéctate a una conexión segura por defecto"
+      ],
       "Manage secure link": [
         "Administrar enlace seguro"
       ],
@@ -10692,6 +10723,9 @@
       ],
       "Minicalendar": [
         "Minicalendario"
+      ],
+      "Mobile": [
+        "Móvil"
       ],
       "Modified": [
         "Modificado"
@@ -10761,6 +10795,9 @@
       ],
       "Preview": [
         "Vista previa"
+      ],
+      "Private browsing vs VPN": [
+        "Navegación privada vs VPN"
       ],
       "Processing...": [
         "Procesando..."
@@ -10946,14 +10983,23 @@
       "Version history": [
         "Historial de versiones"
       ],
+      "VPN explained": [
+        "VPN explicada"
+      ],
       "Warning": [
         "Advertencia"
       ],
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
       ],
+      "What is a VPN?": [
+        "¿Qué es una VPN?"
+      ],
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
+      ],
+      "When is it most important to use a VPN?": [
+        "¿Cuándo es más importante usar una VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Ahora puedes crear carpetas y etiquetas ilimitadas."
@@ -10998,11 +11044,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoy"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Tooltip": {
@@ -11086,6 +11127,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
     "Validation": {
