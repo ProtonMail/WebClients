@@ -72,6 +72,7 @@ export enum UpsellRef {
     FREE_TRIAL = 'free_trial_banner',
     IDENTITY_CUSTOM_FIELDS = 'identity_custom_fields',
     ITEM_SHARING = 'item_sharing',
+    FILE_ATTACHMENTS = 'file_attachments',
     LIMIT_2FA = '2fa_limit',
     LIMIT_ALIAS = 'alias_limit',
     LIMIT_AUTOFILL = 'autofill_limit',

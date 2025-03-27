@@ -4,14 +4,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { type FieldProps } from 'formik';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/index';
 import { Dropzone, FileInput, useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { isAbortError } from '@proton/pass/lib/api/errors';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
 import {
+    selectUserStorageAllowed,
     selectUserStorageMaxFileSize,
     selectUserStorageQuota,
     selectUserStorageUsed,
@@ -41,8 +45,10 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
         const usedStorage = useSelector(selectUserStorageUsed);
         const maxStorage = useSelector(selectUserStorageQuota);
         const maxFileSize = useSelector(selectUserStorageMaxFileSize);
+        const canUseStorage = useSelector(selectUserStorageAllowed);
         const { createNotification } = useNotifications();
         const online = useConnectivity();
+        const upsell = useUpselling();
 
         const [filesMap, setFiles] = useState(new Map<string, FileUploadDescriptor>());
         const [loading, setLoading] = useState(false);
@@ -143,12 +149,20 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
         useEffect(() => form.setStatus({ isBusy: loading }), [loading]);
 
         return (
-            <Dropzone onDrop={onAddFiles} disabled={disableUploader} border={false}>
+            <Dropzone
+                onDrop={(files) =>
+                    canUseStorage
+                        ? onAddFiles(files)
+                        : upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })
+                }
+                disabled={disableUploader}
+                border={false}
+            >
                 <div>
                     <FileAttachmentsSummary
                         filesCount={files.length + filesCount}
                         onDelete={handleDeleteAll}
-                        disabled={disableUploader}
+                        deleteDisabled={disableUploader}
                     >
                         {children}
 
@@ -163,19 +177,34 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                             />
                         ))}
 
-                        <FileInput
-                            /** Disable the "accept" attribute on iOS because the
-                             * "accept" attribute does not support the extension */
-                            {...(isIos() ? {} : { accept: '*' })}
-                            className="m-4 rounded-full"
-                            onChange={({ target }) => onAddFiles([...(target.files ?? [])])}
-                            disabled={disableUploader}
-                            shape="solid"
-                            color="weak"
-                            multiple
-                        >
-                            {c('Action').t`Choose a file or drag it here`}
-                        </FileInput>
+                        {canUseStorage ? (
+                            <FileInput
+                                /** Disable the "accept" attribute on iOS because the
+                                 * "accept" attribute does not support the extension */
+                                {...(isIos() ? {} : { accept: '*' })}
+                                className="m-4 rounded-full"
+                                onChange={({ target }) => onAddFiles([...(target.files ?? [])])}
+                                disabled={disableUploader}
+                                shape="solid"
+                                color="weak"
+                                multiple
+                            >
+                                {c('Action').t`Choose a file or drag it here`}
+                            </FileInput>
+                        ) : (
+                            <div className="m-4">
+                                <Button
+                                    className="rounded-full inline-block"
+                                    disabled={disableUploader}
+                                    shape="solid"
+                                    color="weak"
+                                    onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })}
+                                    fullWidth
+                                >
+                                    {c('Action').t`Choose a file or drag it here`}
+                                </Button>
+                            </div>
+                        )}
                     </FileAttachmentsSummary>
                 </div>
             </Dropzone>
