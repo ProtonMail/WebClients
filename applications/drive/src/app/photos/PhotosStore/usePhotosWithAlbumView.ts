@@ -306,37 +306,22 @@ export const usePhotosWithAlbumsView = () => {
         };
     }, [volumeId, shareId, albumLinkId, albumShareId]);
 
-    const loadPhotoLink = (shareId: string, linkId: string, domRef?: React.MutableRefObject<unknown>) => {
+    const loadPhotoLink = useCallback((shareId: string, linkId: string, domRef?: React.MutableRefObject<unknown>) => {
         if (!shareId || !linkId) {
             return;
         }
         addToQueue(shareId, linkId, domRef);
-    };
+    }, []);
 
-    const refreshAll = () => {
-        if (!volumeId || !shareId) {
-            return;
-        }
-        const abortController = new AbortController();
-        void loadPhotos(abortController.signal);
-        void loadAlbums(abortController.signal);
-        void loadSharedWithMeAlbums(abortController.signal);
-    };
-
-    const refreshAlbums = () => {
-        if (!volumeId || !shareId) {
-            return;
-        }
-        const abortController = new AbortController();
-        void loadAlbums(abortController.signal);
-    };
-
-    const refreshSharedWithMeAlbums = (abortSignal: AbortSignal = new AbortController().signal) => {
-        if (!volumeId || !shareId) {
-            return;
-        }
-        return loadSharedWithMeAlbums(abortSignal);
-    };
+    const refreshSharedWithMeAlbums = useCallback(
+        (abortSignal: AbortSignal = new AbortController().signal) => {
+            if (!volumeId || !shareId) {
+                return;
+            }
+            return loadSharedWithMeAlbums(abortSignal);
+        },
+        [volumeId, shareId, loadSharedWithMeAlbums]
+    );
 
     const refreshAlbumPhotos = useCallback(
         (albumLinkId: string) => {
@@ -349,83 +334,78 @@ export const usePhotosWithAlbumsView = () => {
         [volumeId, shareId, albumShareId, loadAlbumPhotos]
     );
 
-    const refreshPhotos = () => {
-        if (!volumeId || !shareId) {
-            return;
-        }
-        const abortController = new AbortController();
-        void loadPhotos(abortController.signal);
-    };
-
     /**
      * A `PhotoLink` may not be fully loaded, so we need to preload all links in the cache
      * first to request a download.
      *
      * @param linkIds List of Link IDs to preload
      */
-    const requestDownload = async (linkIds: string[]) => {
-        if (!shareId) {
-            return;
-        }
+    const requestDownload = useCallback(
+        async (linkIds: string[]) => {
+            if (!shareId) {
+                return;
+            }
 
-        const ac = new AbortController();
-        const meta = await loadLinksMeta(ac.signal, 'photos-download', shareId, linkIds);
+            const ac = new AbortController();
+            const meta = await loadLinksMeta(ac.signal, 'photos-download', shareId, linkIds);
 
-        if (meta.links.length === 0) {
-            return;
-        }
+            if (meta.links.length === 0) {
+                return;
+            }
 
-        if (meta.errors.length > 0) {
-            sendErrorReport(
-                new EnrichedError('Failed to load links meta for download', {
-                    tags: {
-                        shareId,
-                    },
-                    extra: {
-                        linkIds: linkIds.filter((id) => !meta.links.find((link) => link.linkId === id)),
-                        errors: meta.errors,
-                    },
-                })
+            if (meta.errors.length > 0) {
+                sendErrorReport(
+                    new EnrichedError('Failed to load links meta for download', {
+                        tags: {
+                            shareId,
+                        },
+                        extra: {
+                            linkIds: linkIds.filter((id) => !meta.links.find((link) => link.linkId === id)),
+                            errors: meta.errors,
+                        },
+                    })
+                );
+
+                return;
+            }
+
+            const relatedLinkIds = meta.links.flatMap((link) => link.activeRevision?.photo?.relatedPhotosLinkIds || []);
+
+            const relatedMeta = await loadLinksMeta(ac.signal, 'photos-related-download', shareId, relatedLinkIds);
+
+            if (relatedMeta.errors.length > 0) {
+                sendErrorReport(
+                    new EnrichedError('Failed to load links meta for download', {
+                        tags: {
+                            shareId,
+                        },
+                        extra: {
+                            linkIds: linkIds.filter((id) => !relatedMeta.links.find((link) => link.linkId === id)),
+                            errors: relatedMeta.errors,
+                        },
+                    })
+                );
+
+                return;
+            }
+
+            const links: LinkDownload[] = [...meta.links, ...relatedMeta.links].map(
+                (link) =>
+                    ({
+                        ...link,
+                        shareId: link.rootShareId,
+                    }) satisfies LinkDownload
             );
 
-            return;
-        }
+            // if on album page and all links are selected, download the zip as the album name
+            const album = albumLinkId && links.length === albumPhotos.length ? albums.get(albumLinkId) : undefined;
 
-        const relatedLinkIds = meta.links.flatMap((link) => link.activeRevision?.photo?.relatedPhotosLinkIds || []);
-
-        const relatedMeta = await loadLinksMeta(ac.signal, 'photos-related-download', shareId, relatedLinkIds);
-
-        if (relatedMeta.errors.length > 0) {
-            sendErrorReport(
-                new EnrichedError('Failed to load links meta for download', {
-                    tags: {
-                        shareId,
-                    },
-                    extra: {
-                        linkIds: linkIds.filter((id) => !relatedMeta.links.find((link) => link.linkId === id)),
-                        errors: relatedMeta.errors,
-                    },
-                })
-            );
-
-            return;
-        }
-
-        const links: LinkDownload[] = [...meta.links, ...relatedMeta.links].map(
-            (link) =>
-                ({
-                    ...link,
-                    shareId: link.rootShareId,
-                }) satisfies LinkDownload
-        );
-
-        // if on album page and all links are selected, download the zip as the album name
-        const album = albumLinkId && links.length === albumPhotos.length ? albums.get(albumLinkId) : undefined;
-
-        await download(links, {
-            zipName: album?.name,
-        });
-    };
+            await download(links, {
+                zipName: album?.name,
+            });
+        },
+        [shareId, albumLinkId, albumPhotos.length, albums, download, loadLinksMeta]
+    );
 
     const addAlbumPhoto = useCallback(
         (abortSignal: AbortSignal, albumShareId: string, linkId: string) => {
@@ -475,10 +455,7 @@ export const usePhotosWithAlbumsView = () => {
         isPhotosLoading,
         isAlbumsLoading,
         isAlbumPhotosLoading,
-        refreshAll,
-        refreshAlbums,
         refreshSharedWithMeAlbums,
-        refreshPhotos,
         refreshAlbumPhotos,
         addAlbumPhoto,
         addAlbumPhotos,

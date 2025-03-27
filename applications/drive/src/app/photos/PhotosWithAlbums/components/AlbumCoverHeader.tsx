@@ -16,6 +16,7 @@ interface AlbumCoverHeaderProps {
     onShare: () => void;
     shareId: string;
     linkId: string;
+    photoCount: number;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
 }
@@ -24,6 +25,7 @@ export const AlbumCoverHeader = ({
     album,
     shareId,
     linkId,
+    photoCount,
     onFileUpload,
     onFileSkipped,
     onShare,
@@ -43,6 +45,8 @@ export const AlbumCoverHeader = ({
         <div className="flex shrink-0 flex-row flex-nowrap items-center p-4" data-testid="album-gallery-cover-section">
             {album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl ? (
                 <img
+                    loading="eager"
+                    key={album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl}
                     src={album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl}
                     alt=""
                     className="bg-weak rounded mr-4 w-1/3 flex h-custom object-cover"
@@ -68,12 +72,7 @@ export const AlbumCoverHeader = ({
                 <p className="color-weak mt-1">
                     {formattedDate}
                     <span className="ml-1">
-                        ⋅{' '}
-                        {c('Info').ngettext(
-                            msgid`${album.photoCount} item`,
-                            `${album.photoCount} items`,
-                            album.photoCount
-                        )}
+                        ⋅ {c('Info').ngettext(msgid`${photoCount} item`, `${photoCount} items`, photoCount)}
                     </span>
                 </p>
                 <div className="flex flex-wrap flex-row gap-2" data-testid="cover-options">
