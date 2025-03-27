@@ -1,3 +1,4 @@
+import type { AsyncCallback } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export type UnwrapPromise<T> = T extends any[]
@@ -115,4 +116,34 @@ export const seq = async <T, R>(items: T[], job: (item: T) => Promise<R>): Promi
     }
 
     return results;
+};
+
+export const abortable = <T>(job: () => Promise<T>, signal: AbortSignal, onAbort?: () => void) => {
+    if (signal.aborted) {
+        onAbort?.();
+        throw new DOMException('Aborted', 'AbortError');
+    }
+
+    return Promise.race([
+        job(),
+        new Promise((_, reject) =>
+            signal.addEventListener(
+                'abort',
+                () => {
+                    onAbort?.();
+                    reject(new DOMException('Aborted', 'AbortError'));
+                },
+                { once: true }
+            )
+        ),
+    ]) as Promise<T>;
+};
+
+export const abortableSequence = async (operations: AsyncCallback[], signal: AbortSignal) => {
+    async function* sequence() {
+        for (const operation of operations) yield await abortable(operation, signal);
+    }
+
+    const generator = sequence();
+    while (!(await generator.next()).done) {}
 };

@@ -28,3 +28,5 @@ export enum PassErrorCode {
 }
 
 export class UnverifiedUserError extends Error {}
+
+export const isAbortError = (error: unknown) => error instanceof Error && error.name === 'AbortError';
