@@ -8,7 +8,6 @@ import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
-import * as storage from '@proton/shared/lib/helpers/storage';
 import clsx from '@proton/utils/clsx';
 
 import { usePublicSessionUser } from '../../../store';
@@ -19,7 +18,7 @@ import {
 } from '../../../utils/publicRedirectSpotlight';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useSignupFlowModal } from '../../modals/SignupFlowModal/SignupFlowModal';
-import { SaveForLaterSpotlight, SaveForLaterSpotlightVersion } from './SaveForLaterSpotlight';
+import { SaveForLaterSpotlight } from './SaveForLaterSpotlight';
 
 interface Props {
     onClick: () => Promise<void>;
@@ -29,13 +28,11 @@ interface Props {
     customPassword?: string;
 }
 
-export const PUBLIC_SHARE_BOOKMARK_SPOTLIGHT_KEY = 'public-share-bookmark-spotlight';
-
 export const SaveForLaterButton = ({ className, alreadyBookmarked, customPassword, loading, onClick }: Props) => {
     const [isAdding, withAdding] = useLoading();
     const [signupFlowModal, showSignupFlowModal] = useSignupFlowModal();
     const { user } = usePublicSessionUser();
-    const [spotlightVersion, setSpotlightVersion] = useState(SaveForLaterSpotlightVersion.HIDE);
+    const [showSpotlight, setShowSpotlight] = useState(false);
     const buttonText = alreadyBookmarked
         ? c('drive:action').t`Open in ${DRIVE_SHORT_APP_NAME}`
         : c('drive:action').t`Save for later`;
@@ -43,18 +40,15 @@ export const SaveForLaterButton = ({ className, alreadyBookmarked, customPasswor
     useEffect(() => {
         if (!!user) {
             if (needPublicRedirectSpotlight()) {
-                setSpotlightVersion(SaveForLaterSpotlightVersion.BOOKMARKED);
+                setShowSpotlight(true);
                 setPublicRedirectSpotlightToShown();
             }
-        } else if (!storage.getItem(PUBLIC_SHARE_BOOKMARK_SPOTLIGHT_KEY)) {
-            setSpotlightVersion(SaveForLaterSpotlightVersion.UPSELL);
-            storage.setItem(PUBLIC_SHARE_BOOKMARK_SPOTLIGHT_KEY, 'true');
         }
     }, [user]);
 
     return (
         <>
-            <SaveForLaterSpotlight spotlightVersion={spotlightVersion}>
+            <SaveForLaterSpotlight showSpotlight={showSpotlight}>
                 <Tooltip
                     title={
                         alreadyBookmarked
@@ -75,7 +69,7 @@ export const SaveForLaterButton = ({ className, alreadyBookmarked, customPasswor
                                 await withAdding(onClick);
                                 if (!publicRedirectSpotlightWasShown()) {
                                     setPublicRedirectSpotlightToShown();
-                                    setSpotlightVersion(SaveForLaterSpotlightVersion.BOOKMARKED);
+                                    setShowSpotlight(true);
                                 }
                             }
                         }}
