@@ -3810,11 +3810,19 @@
         "Adăugare ${ photos.length } fotografii în",
         "Adăugare ${ photos.length } de fotografii în"
       ],
+      "Add to shared album": [
+        "Adăugare la album partajat"
+      ],
       "All albums": [
         "Toate albumele"
       ],
       "Recent": [
         "Recente"
+      ],
+      "Share ${ photos.length } photo via": [
+        "Partajare ${ photos.length } fotografie via",
+        "Partajare ${ photos.length } fotografii via",
+        "Partajare ${ photos.length } de fotografii via"
       ]
     },
     "Hint": {
@@ -4391,6 +4399,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "O conexiune securizată este esențială atunci când lucrezi remote. Un VPN protejează datele companiei de amenințările cibernetice și îți menține activitatea privată."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilizator este un cont asociat cu un singur nume de utilizator, căsuță poștală și persoană."
       ],
@@ -4517,9 +4528,6 @@
       "Calendar side panel": [
         "Panou lateral calendar"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendar, integrat cu ${ MAIL_APP_NAME } și ${ CONTACTS_APP_NAME }"
-      ],
       "Canceled": [
         "Anulat"
       ],
@@ -4561,9 +4569,6 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Stocare în cloud, integrată cu ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Conflict"
@@ -4717,9 +4722,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Serviciu de e-mail, integrat cu ${ CALENDAR_APP_NAME } și ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
@@ -5084,6 +5086,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Nu au fost transferate toate fișierele. Încercați să încărcați sau să descărcați din nou fișierele."
       ],
+      "Not connected": [
+        "Nu este conectat"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Observație: este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ DRIVE_APP_NAME }."
       ],
@@ -5092,6 +5097,9 @@
       ],
       "of": [
         "din"
+      ],
+      "On public WiFi networks": [
+        "Pe rețelele WiFi publice"
       ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
         "După ce acest proces este încheiat, veți găsi o copie a datelor restaurate într-un folder nou numit „Recuperare automată (data de astăzi)”. Această copie a datelor nu va fi luată în considerare pentru cota spațiului de stocare."
@@ -5131,9 +5139,6 @@
       ],
       "password": [
         "parola"
-      ],
-      "Password manager with extra account security": [
-        "Manager de parole cu securitate suplimentară a contului"
       ],
       "Paused": [
         "Suspendat"
@@ -5342,9 +5347,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
-      ],
-      "Self-custodial crypto wallet": [
-        "Portofel cripto în custodie proprie"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
@@ -5587,6 +5589,9 @@
       "Total VPN connections": [
         "Total conexiuni VPN"
       ],
+      "Tracking": [
+        "Urmărire"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Transfer anulat pentru fișierul „${ name }”."
       ],
@@ -5683,8 +5688,8 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN cu servere și adrese IP dedicate"
+      "VPN IP": [
+        "IP VPN"
       ],
       "Want to sync files faster?": [
         "Doriți să sincronizați mai rapid fișierele?"
@@ -5739,6 +5744,9 @@
       ],
       "What would you like to do?": [
         "Ce v-ar plăcea să faceți?"
+      ],
+      "When working remotely": [
+        "Când lucrezi remote"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
@@ -5937,6 +5945,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
+      ],
+      "Your IP": [
+        "IP-ul tău"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -6647,6 +6658,9 @@
       ],
       "Your alias": [
         "Aliasuri personale"
+      ],
+      "Your IP": [
+        "IP-ul tău"
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
@@ -8170,6 +8184,16 @@
         "Nu s-a putut decripta un articol.",
         "Nu s-au putut decripta ${ count } articole.",
         "Nu s-au putut decripta ${ count } de articole."
+      ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "Fotografii care nu s-au putut adăuga în „${ albumName }”: ${ nbFailures }",
+        "Fotografii care nu s-au putut adăuga în „${ albumName }”: ${ nbFailures }",
+        "Fotografii care nu s-au putut adăuga în „${ albumName }”: ${ nbFailures }"
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "Fotografii adăugate în „${ albumName }”: ${ nbSuccesses }",
+        "Fotografii adăugate în „${ albumName }”: ${ nbSuccesses }",
+        "Fotografii adăugate în „${ albumName }”: ${ nbSuccesses }"
       ],
       "${ numberOfItems } item deleted": [
         "Articole șterse: ${ numberOfItems }",
@@ -10679,6 +10703,9 @@
       "Download ${ date }": [
         "Descărcare ${ date }"
       ],
+      "Download the app": [
+        "Descarcă aplicația"
+      ],
       "Download unverified file?": [
         "Descărcați un fișier neverificat?"
       ],
@@ -10758,6 +10785,9 @@
       ],
       "Get advanced protection": [
         "Obțineți protecție avansată"
+      ],
+      "Get more from your VPN": [
+        "Obțineți mai mult de la VPN"
       ],
       "Gift": [
         "Cadou"
@@ -11087,6 +11117,9 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
+      "What is a VPN?": [
+        "Ce este un VPN?"
+      ],
       "What would you like to import?": [
         "Ce ați dori să importați?"
       ],
@@ -11133,11 +11166,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Astăzi"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Tooltip": {
@@ -11221,6 +11249,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Validation": {

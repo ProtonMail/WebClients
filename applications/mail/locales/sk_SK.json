@@ -6437,9 +6437,6 @@
       "Calendar side panel": [
         "Bočný panel kalendára"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Kalendár integrovaný s ${ MAIL_APP_NAME } a ${ CONTACTS_APP_NAME }"
-      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Nenašli ste, čo ste hľadali? ${ displayAllMailButton }"
       ],
@@ -6478,9 +6475,6 @@
       ],
       "Close this screen to exit.": [
         "Pre ukončenie zatvorte túto obrazovku."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Cloudové úložisko integrované s ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Potvrdiť nahlásenie phishingu"
@@ -6679,9 +6673,6 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "Email je preposielaný do vašej poštovej schránky a vaša emailová adresa zostáva skrytá."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Emailová služba integrovaná s ${ CALENDAR_APP_NAME } a ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "Ochrana sledovania emailov je vypnutá"
@@ -7166,9 +7157,6 @@
       "password": [
         "heslo"
       ],
-      "Password manager with extra account security": [
-        "Správca hesiel s dodatočným zabezpečením účtu"
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
       ],
@@ -7384,9 +7372,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte, ktoré kalendáre chcete importovať. Pre každý importovaný kalendár sa vytvorí nový kalendár podľa počtu kalendárov dostupných vo vašom pláne."
-      ],
-      "Self-custodial crypto wallet": [
-        "Vlastná kryptopeňaženka"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Odoslať šifrovanú správu chránenú heslom na emailovú adresu ${ boldText }."
@@ -7858,9 +7843,6 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
-      ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN s vyhradenými servermi a IP adresami"
       ],
       "Warning": [
         "Varovanie"
@@ -11252,6 +11234,12 @@
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
       ],
@@ -12603,6 +12591,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB úložného priestoru"
+      ],
+      "and 15 more premium features": [
+        "a ďalších 15 prémiových funkcií"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatické presmerovanie emailu ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Upozornenia na úniky údajov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
+      ],
+      "No ads or tracking": [
+        "Žiadne reklamy alebo sledovanie"
+      ],
+      "Short @pm.me email address": [
+        "Skrátená emailová adresa @pm.me"
+      ],
+      "Support our mission": [
+        "Podporte naše poslanie"
+      ],
+      "Upgrade": [
+        "Prejsť na platený plán"
+      ],
+      "Upgrade your productivity": [
+        "Zlepšite svoju produktivitu"
+      ],
+      "We don't sell your data": [
+        "Nepredávame vaše údaje"
+      ],
+      "Your privacy is our mission": [
+        "Vaše súkromie je naším poslaním"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
@@ -12873,47 +12902,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB úložného priestoru"
-      ],
-      "and 15 more premium features": [
-        "a ďalších 15 prémiových funkcií"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatické presmerovanie emailu ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Upozornenia na úniky údajov ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktopová aplikácia"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomôžte nám udržať bezpečný a súkromný internet pre všetkých. Prejdite na platený tarif."
-      ],
-      "No ads or tracking": [
-        "Žiadne reklamy alebo sledovanie"
-      ],
-      "Short @pm.me email address": [
-        "Skrátená emailová adresa @pm.me"
-      ],
-      "Support our mission": [
-        "Podporte naše poslanie"
-      ],
-      "Upgrade": [
-        "Prejsť na platený plán"
-      ],
-      "Upgrade your productivity": [
-        "Zlepšite svoju produktivitu"
-      ],
-      "We don't sell your data": [
-        "Nepredávame vaše údaje"
-      ],
-      "Your privacy is our mission": [
-        "Vaše súkromie je naším poslaním"
       ]
     },
     "Subscription renewal state": {
@@ -13842,6 +13830,9 @@
       "Get advanced protection": [
         "Získať pokročilú ochranu"
       ],
+      "Get more from your VPN": [
+        "Získajte zo svojej VPN viac"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Získať ${ appName[APP_NAME] } aplikácie"
       ],
@@ -14337,11 +14328,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editore bude použitý na odoslanie užívateľovi. Jednoduchý text znamená, že správa bude pri odoslaní vždy prevedená na obyčajný text."
@@ -14423,6 +14409,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Tor out of date": {

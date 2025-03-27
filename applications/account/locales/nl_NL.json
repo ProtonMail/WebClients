@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "Select file": [
-        "Selecteer bestand"
-      ],
       "select file": [
         "selecteer bestand"
+      ],
+      "Select file": [
+        "Selecteer bestand"
       ],
       "Select files": [
         "Selecteer bestanden"
@@ -7070,6 +7070,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } wil data met u delen in ${ PASS_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat zowel de login als het tweede wachtwoord vervangt. Om over te schakelen naar één wachtwoord modus vult u een enkel wachtwoord naar keuze in en klikt u op Opslaan."
       ],
@@ -7572,9 +7575,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Door de volledige agendadetails van deze agenda te delen, gaat u akkoord om ${ BRAND_NAME } toegang te verlenen tot versleutelde informatie van deze agenda."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Agenda, geïntegreerd met ${ MAIL_APP_NAME } en ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Op elk moment opzeggen"
       ],
@@ -7889,11 +7889,11 @@
       "Email address": [
         "E-mailadres"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-mail en kalender, geïntegreerd met ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "E-mailservice, geïntegreerd met ${ CALENDAR_APP_NAME } en ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"
@@ -14475,8 +14475,8 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Krijg levenslang toegang tot alle huidige en toekomstige ${ PASS_APP_NAME } premiumfuncties met één enkele betaling. "
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Krijg levenslang toegang tot alle huidige en toekomstige ${ PASS_APP_NAME } premiumfuncties met één enkele betaling."
       ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Welkom bij ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"

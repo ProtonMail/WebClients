@@ -3865,6 +3865,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de início de sessão e de segunda senha. Para ativar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
       ],
@@ -4151,9 +4154,6 @@
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendário, integrado com ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
-      ],
       "Can’t access your recovery email?": [
         "Não consegue acessar seu e-mail de recuperação?"
       ],
@@ -4374,11 +4374,11 @@
       "email": [
         "e-mail"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-mail e calendário, integrados com ${ CONTACTS_APP_NAME }."
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através da ${ BRAND_NAME }. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Serviço de e-mail integrado com ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferências de e-mail salvas"

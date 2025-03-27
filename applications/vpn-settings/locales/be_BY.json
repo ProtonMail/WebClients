@@ -3923,6 +3923,9 @@
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме аднаго пароля, які замяняе сабой пароль ад уваходу і другі пароль. Для пераключэння ў рэжым аднаго пароля, увядзіце адзіны пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
@@ -4241,9 +4244,6 @@
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Каляндар, які інтэграваны з ${ MAIL_APP_NAME } і ${ CONTACTS_APP_NAME }"
-      ],
       "Can’t access your recovery email?": [
         "Не можаце атрымаць доступ да электроннай пошты для аднаўлення доступу?"
       ],
@@ -4472,11 +4472,11 @@
       "email": [
         "электронная пошта"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Электронная пошта і каляндар, якія інтэграваныя з ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Сэрвіс электроннай пошты, які інтэграваны з ${ CALENDAR_APP_NAME } і ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Параметры адпраўкі пошты захаваны"

@@ -12033,6 +12033,47 @@
         "के लिए ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -12291,47 +12332,6 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {
@@ -13180,6 +13180,9 @@
       "Get advanced protection": [
         "उन्नत सुरक्षा प्राप्त करें"
       ],
+      "Get more from your VPN": [
+        "अपने VPN से और पाएं"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } ऐप्स प्राप्त करें"
       ],
@@ -13666,11 +13669,6 @@
         "आज"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: आपके सभी डिवाइसों पर सुरक्षित लॉगिन। इसमें असीमित नकली-नाम, साझा करना, एकीकृत 2-एफए, और अधिक शामिल हैं"
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "स्वचालित इंगित करता है कि इस उपयोगकर्ता को भेजने के लिए संगीतकार में प्रारूप का उपयोग किया जाता है। सादा पाठ इंगित करता है कि संदेश भेजने पर संदेश हमेशा सादे पाठ में परिवर्तित हो जाएगा।"
@@ -13752,6 +13750,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "इस ईमेल पर एंड-टू-एंड एन्क्रिप्टेड ईमेल भेजने को सक्षम करने के लिए एक सार्वजनिक कुंजी अपलोड करें"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: आपके सभी डिवाइसों पर सुरक्षित लॉगिन। इसमें असीमित नकली-नाम, साझा करना, एकीकृत 2-एफए, और अधिक शामिल हैं"
       ]
     },
     "Tor out of date": {

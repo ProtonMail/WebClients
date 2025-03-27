@@ -328,6 +328,9 @@
       "Enable multi-user support": [
         "Çok kullanıcı desteğini aç"
       ],
+      "Explore ${ target }": [
+        "${ target } tarifesini keşfedin"
+      ],
       "Explore group plans": [
         "Grup tarifelerine bakın"
       ],
@@ -3862,6 +3865,9 @@
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, kullanıcı adı ve ikinci parola yerine tek bir parola ile de kullanılabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
@@ -4148,9 +4154,6 @@
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ MAIL_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan takvim"
-      ],
       "Can’t access your recovery email?": [
         "Kurtarma e-postanıza erişemiyor musunuz?"
       ],
@@ -4371,11 +4374,11 @@
       "email": [
         "e-posta"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "${ CONTACTS_APP_NAME } ile bütünleşik e-posta ve takvim"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan e-posta hizmeti"
       ],
       "Emailing preference saved": [
         "E-posta ayarı kaydedildi"
