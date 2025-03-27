@@ -17,7 +17,7 @@ type Props = SelectedItem & { files: FileDescriptor[]; onDelete?: (fileID: FileI
 export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelete }) => {
     const dispatch = useDispatch();
     const deleteFile = useAsyncModalHandles<void, { name: string }>({ getInitialModalState: () => ({ name: '' }) });
-    const { downloadFile, cancelDownload, filesDownloading } = useFileDownload();
+    const fileDownload = useFileDownload();
 
     const onRename = (descriptor: BaseFileDescriptor, fileName: string) => {
         if (descriptor.name === fileName) return;
@@ -31,7 +31,7 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
         });
 
     const handleDownload = async (file: FileDescriptor) => {
-        const fileBlob = await downloadFile(file, { shareId, itemId });
+        const fileBlob = await fileDownload.start(file, { shareId, itemId });
         if (fileBlob) download(fileBlob, file.name);
     };
 
@@ -42,10 +42,10 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
                     key={`file-${key}`}
                     file={file}
                     onDelete={onDelete ? () => handleDelete(file) : undefined}
-                    onCancel={() => cancelDownload(file.fileID)}
+                    onCancel={() => fileDownload.cancel(file.fileID)}
                     onRename={(fileName) => onRename(file, fileName)}
                     onDownload={() => handleDownload(file)}
-                    loading={filesDownloading.includes(file.fileID)}
+                    loading={fileDownload.pending.has(file.fileID)}
                 />
             ))}
 

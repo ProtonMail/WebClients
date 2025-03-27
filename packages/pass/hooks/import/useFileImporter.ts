@@ -5,16 +5,17 @@ import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequ
 import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { fileLinkPending } from '@proton/pass/store/actions';
 import { type IndexedByShareIdAndItemId } from '@proton/pass/types';
+import { abortableSequence } from '@proton/pass/utils/fp/promises';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import lastItem from '@proton/utils/lastItem';
-import noop from '@proton/utils/noop';
 
 export const useFileImporter = () => {
     const dispatch = useAsyncRequestDispatch();
-    const { uploadFile, cancelUpload } = useFileUpload();
+    const fileUpload = useFileUpload();
     const [progress, setProgress] = useState(0);
 
     const cancel = useCallback(() => {
-        cancelUpload();
+        fileUpload.cancel('*');
         setProgress(0);
     }, []);
 
@@ -28,28 +29,35 @@ export const useFileImporter = () => {
                 for (const shareId in importFiles) {
                     for (const itemId in importFiles[shareId]) {
                         const toAdd: string[] = [];
-                        for (const filename of importFiles[shareId][itemId]) {
-                            const blob = await fileReader.getFile(filename);
-                            if (signal.aborted) throw new Error('Aborted');
 
-                            if (blob) {
-                                /** Filename may include full path inside the
-                                 * archive when using the zip reader */
-                                const name = lastItem(filename.split('/'))!;
-                                const file = new File([blob], name);
-                                const fileID = await uploadFile(file).catch(noop);
-                                if (fileID) toAdd.push(fileID);
-                                setProgress((progress) => progress + 1);
-                            }
-                        }
-
-                        await dispatch(fileLinkPending, { shareId, itemId, files: { toAdd, toRemove: [] } });
+                        await abortableSequence(
+                            [
+                                ...importFiles[shareId][itemId].map((filename) => async () => {
+                                    const blob = await fileReader.getFile(filename);
+                                    if (blob) {
+                                        /** Filename may include full path inside the
+                                         * archive when using the zip reader */
+                                        const name = lastItem(filename.split('/'))!;
+                                        const file = new File([blob], name);
+                                        const fileID = await fileUpload.start(file, uniqueId());
+                                        if (fileID) toAdd.push(fileID);
+                                        setProgress((progress) => progress + 1);
+                                    }
+                                }),
+                                () =>
+                                    dispatch(fileLinkPending, {
+                                        shareId,
+                                        itemId,
+                                        files: { toAdd, toRemove: [] },
+                                    }),
+                            ],
+                            signal
+                        );
                     }
                 }
             } catch {
-                cancelUpload();
             } finally {
-                setProgress(0);
+                fileUpload.cancel('*');
             }
         },
         []
