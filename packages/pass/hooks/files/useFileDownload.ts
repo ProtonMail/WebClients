@@ -1,48 +1,67 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { fileDownload, fileDownloadPublic } from '@proton/pass/store/actions';
+import { requestCancel } from '@proton/pass/store/request/actions';
 import type { FileDescriptor, FileID, Maybe, SelectedItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { abortable } from '@proton/pass/utils/fp/promises';
+import { updateSet } from '@proton/pass/utils/fp/state';
 
 export const useFileDownload = () => {
-    const dispatch = useAsyncRequestDispatch();
-    const abortControllerRef = useRef<Map<FileID, AbortController>>(new Map());
-    const [filesDownloading, setFilesDownloading] = useState<FileID[]>([]);
+    const dispatch = useDispatch();
+    const asyncDispatch = useAsyncRequestDispatch();
+    const ctrls = useRef<Map<FileID, AbortController>>(new Map());
+    const [pending, setPending] = useState(new Set<string>());
 
-    const downloadFile = useCallback(
+    const cancel = useCallback((fileID: string) => {
+        if (fileID === '*') {
+            ctrls.current.forEach((ctrl) => ctrl.abort());
+            ctrls.current = new Map();
+        } else {
+            ctrls.current.get(fileID)?.abort();
+            ctrls.current.delete(fileID);
+        }
+    }, []);
+
+    const start = useCallback(
         async (file: FileDescriptor, options: { filesToken: string } | SelectedItem): Promise<Maybe<File>> => {
-            try {
-                setFilesDownloading((f) => f.concat(file.fileID));
-                abortControllerRef.current.set(file.fileID, new AbortController());
-                const { signal } = abortControllerRef.current.get(file.fileID)!;
+            const { fileID } = file;
 
-                if (signal.aborted) throw new Error('Download canceled');
+            try {
+                const ctrl = new AbortController();
+                ctrls.current.set(file.fileID, ctrl);
+                setPending(updateSet((next) => next.add(fileID)));
+
                 const chunkIDs = file.chunks.map(prop('ChunkID'));
 
-                const res =
-                    'filesToken' in options
-                        ? await dispatch(fileDownloadPublic, { fileID: file.fileID, chunkIDs, ...options })
-                        : await dispatch(fileDownload, { fileID: file.fileID, chunkIDs, ...options });
+                const res = await (() => {
+                    if ('filesToken' in options) {
+                        const dto = { fileID, chunkIDs, ...options };
+                        const job = () => asyncDispatch(fileDownloadPublic, dto);
+                        const onAbort = () => dispatch(requestCancel(fileDownloadPublic.requestID(dto)));
+                        return abortable(job, ctrl.signal, onAbort);
+                    }
 
-                if (res.type === 'success') return await fileStorage.readFile(res.data);
+                    const dto = { fileID, chunkIDs, ...options };
+                    const job = () => asyncDispatch(fileDownload, dto);
+                    const onAbort = () => dispatch(requestCancel(fileDownload.requestID(dto)));
+                    return abortable(job, ctrl.signal, onAbort);
+                })();
+
+                if (res.type === 'success') return await abortable(() => fileStorage.readFile(res.data), ctrl.signal);
             } catch {
             } finally {
-                abortControllerRef.current.delete(file.fileID);
-                setFilesDownloading((f) => f.filter((id) => id !== file.fileID));
+                cancel(fileID);
+                setPending(updateSet((next) => next.delete(file.fileID)));
             }
         },
         []
     );
 
-    const cancelDownload = useCallback((fileID: FileID) => {
-        abortControllerRef.current.get(fileID)?.abort();
-        abortControllerRef.current.delete(fileID);
-    }, []);
+    useEffect(() => () => cancel('*'), []);
 
-    /** Cancel all downloads on unmount and delete the entries from the AbortController Map */
-    useEffect(() => () => abortControllerRef.current.forEach((_, fileId) => cancelDownload(fileId)), []);
-
-    return useMemo(() => ({ downloadFile, cancelDownload, filesDownloading }), [filesDownloading]);
+    return useMemo(() => ({ start, cancel, pending }), [pending]);
 };

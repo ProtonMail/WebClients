@@ -9,10 +9,10 @@ import { download } from '@proton/pass/utils/dom/download';
 type Props = { files: FileDescriptor[]; filesToken: string };
 
 export const SecureLinkFilesList: FC<Props> = ({ files, filesToken }) => {
-    const { downloadFile, cancelDownload, filesDownloading } = useFileDownload();
+    const fileDownload = useFileDownload();
 
     const handleDownload = async (file: FileDescriptor) => {
-        const fileBlob = await downloadFile(file, { filesToken });
+        const fileBlob = await fileDownload.start(file, { filesToken });
         if (fileBlob) download(fileBlob, file.name);
     };
 
@@ -23,9 +23,9 @@ export const SecureLinkFilesList: FC<Props> = ({ files, filesToken }) => {
                     <FileAttachment
                         key={`file-${key}`}
                         file={file}
-                        onCancel={() => cancelDownload(file.fileID)}
+                        onCancel={() => fileDownload.cancel(file.fileID)}
                         onDownload={() => handleDownload(file)}
-                        loading={filesDownloading.includes(file.fileID)}
+                        loading={fileDownload.pending.has(file.fileID)}
                     />
                 ))}
             </FileAttachmentsView>
