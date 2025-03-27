@@ -1,11 +1,12 @@
 import { type FC } from 'react';
 
 import type { FormikErrors } from 'formik';
-import { Field, Form, FormikProvider, useFormik } from 'formik';
+import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
