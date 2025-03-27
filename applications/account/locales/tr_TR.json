@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Şifrele ve dışa aktar"
       ],
+      "Explore ${ target }": [
+        "${ target } tarifesini keşfedin"
+      ],
       "Explore group plans": [
         "Grup tarifelerine bakın"
       ],
@@ -1087,11 +1090,11 @@
       "Select country ${ country }": [
         "${ country } ülkesini seç"
       ],
-      "Select file": [
-        "Dosya seçin"
-      ],
       "select file": [
         "dosya seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Select files": [
         "Dosyaları seçin"
@@ -7067,6 +7070,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, kullanıcı adı ve ikinci parola yerine tek bir parola ile de kullanılabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
@@ -7569,9 +7575,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Bu takvimin tüm etkinlik bilgilerini paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ MAIL_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan takvim"
-      ],
       "Cancel anytime": [
         "İstediğiniz zaman iptal edin"
       ],
@@ -7886,11 +7889,11 @@
       "Email address": [
         "E-posta adresi"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "${ CONTACTS_APP_NAME } ile bütünleşik e-posta ve takvim"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan e-posta hizmeti"
       ],
       "Emailing preference saved": [
         "E-posta ayarı kaydedildi"
@@ -7953,7 +7956,7 @@
         "Bilgisayar uygulamasıyla daha hızlı ve odaklanmış bir e-posta gönderme deneyimi yaşayın."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
-        "${ BRAND_NAME } Hesabınızı tamamlamak ve ${ VPN_APP_NAME } uygulamasını tüm aygıtlarınızda kullanmak için bir parola yazın."
+        "${ BRAND_NAME } hesabınızı açmayı tamamlamak ve ${ VPN_APP_NAME } uygulamasını tüm aygıtlarınızda kullanmak için bir parola yazın."
       ],
       "Enter key manually instead": [
         "Bunun yerine anahtarı el ile yazın"
@@ -10133,7 +10136,7 @@
         "Bu sunucuları hemen başka bir ağ geçidine ekleyebileceksiniz."
       ],
       "You’re all set": [
-        "Her şey tamam"
+        "Hazırsınız"
       ],
       "Zoom meeting": [
         "Zoom toplantısı"
@@ -14472,8 +14475,8 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Tek seferlik ödeme ile var olan ve gelecekteki tüm ${ PASS_APP_NAME } ücretli özelliklere ömür boyu erişim kazanın. "
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Tek seferlik bir ödeme ile mevcut ve gelecekteki tüm ${ PASS_APP_NAME } özel özelliklerine ömür boyu erişim kazanın."
       ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } tarifesine hoş geldiniz"
@@ -16945,7 +16948,7 @@
         "Tek oturum açma kaldırıldı"
       ],
       "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
-        "${ email } e-posta adresi ${ BRAND_NAME } içinde zaten var. İlerlemek için ${ BRAND_NAME } kimlik doğrulama bilgilerinizle oturum açın."
+        "${ email } e-posta adresi ${ BRAND_NAME } üzerinde zaten var. İlerlemek için ${ BRAND_NAME } kimlik doğrulama bilgilerinizle oturum açın."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "${ user } kullanıcısı tek oturum açma hesabına dönüştürüldü. Önceki parolası yedek parolası olarak kullanılacak."

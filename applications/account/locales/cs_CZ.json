@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Zašifrovat a exportovat"
       ],
+      "Explore ${ target }": [
+        "Objevit ${ target }"
+      ],
       "Explore group plans": [
         "Prozkoumat skupinové tarify"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "Uložit adresu"
       ],
+      "Save and continue": [
+        "Uložit a pokračovat"
+      ],
       "Save changes": [
         "Uložit změny"
       ],
@@ -1084,11 +1090,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "Select file": [
-        "Vybrat soubor"
-      ],
       "select file": [
         "vybrat soubor"
+      ],
+      "Select file": [
+        "Vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -7716,9 +7722,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Sdílením úplných údajů o události tohoto kalendáře souhlasíte s udělením přístupu ${ BRAND_NAME } k šifrovaným informacím tohoto kalendáře."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Kalendář integrovaný s ${ MAIL_APP_NAME } a ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Zrušit můžete kdykoli"
       ],
@@ -8046,9 +8049,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby ${ BRAND_NAME } k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
       ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "E-mailová služba integrovaná s ${ CALENDAR_APP_NAME } a ${ CONTACTS_APP_NAME }"
-      ],
       "Emailing preference saved": [
         "Nastavení e-mailu uloženo"
       ],
@@ -8108,6 +8108,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Dopřejte si rychlejší a soustředěnější správu e-mailů pomocí desktopové aplikace."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Zadejte heslo pro dokončení nastavení svého účtu ${ BRAND_NAME } a začněte používat ${ VPN_APP_NAME } na všech svých zařízeních!"
       ],
       "Enter key manually instead": [
         "Místo toho vložte klíč ručně"
@@ -9195,6 +9198,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
       ],
+      "Set password": [
+        "Nastavte heslo"
+      ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
@@ -9359,6 +9365,9 @@
       ],
       "Thank you": [
         "Děkujeme"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Děkujeme, že jste si vybrali ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Děkujeme za podporu našeho poslání budovat lepší internet, kde jsou soukromí a svoboda na prvním místě."
@@ -10334,6 +10343,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Tyto servery budete moci okamžitě přidat do jiné brány."
+      ],
+      "You’re all set": [
+        "Vše je připraveno"
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
@@ -14800,9 +14812,6 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Získejte jednorázovou platbou doživotní přístup ke všem současným i budoucím prémiovým funkcím ${ PASS_APP_NAME }. "
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Vítejte v ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
@@ -17343,6 +17352,9 @@
       ],
       "Single sign-on removed": [
         "Jednotné přihlášení zrušeno"
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "E-mailová adresa ${ email } již existuje v ${ BRAND_NAME }. Pro pokračování se přihlaste pomocí přihlašovacích údajů ${ BRAND_NAME }."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "Uživatel ${ user } má nyní účet s jednotným přihlášením. Jeho předchozí heslo se stalo záložním heslem."

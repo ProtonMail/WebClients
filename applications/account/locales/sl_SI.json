@@ -1003,11 +1003,11 @@
       "Select country": [
         "Izberite državo"
       ],
-      "Select file": [
-        "Izberite datoteko"
-      ],
       "select file": [
         "izberite datoteko"
+      ],
+      "Select file": [
+        "Izberite datoteko"
       ],
       "Select files": [
         "Izberi datoteke"
@@ -12931,6 +12931,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Kupi zdaj"
+      ],
       "Continue": [
         "Nadaljuj"
       ],
@@ -13188,6 +13191,9 @@
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Posebna otvoritvena ponudba: pridobite ${ title } za ${ price } za vedno!"
+      ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "Posebna ponudba: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }"
       ],
       "Tailored made solutions for larger organizations with custom needs.": [
         "Prilagojene rešitve za večje organizacije, ki potrebujejo storitve po meri."

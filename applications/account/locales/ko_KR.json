@@ -1084,10 +1084,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
       "Select files": [
@@ -7488,9 +7488,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "이 캘린더의 구체적인 일정 내용을 공유하면서 ${ BRAND_NAME } 이 달력의 암호화된 정보를 접근할 수 있는 권한을 제공하는 것을 허용합니다."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ MAIL_APP_NAME }과 ${ CONTACTS_APP_NAME }가 통합된 캘린더"
-      ],
       "Cancel anytime": [
         "언제든지 취소하세요"
       ],
@@ -7802,9 +7799,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ CALENDAR_APP_NAME }와 ${ CONTACTS_APP_NAME }가 통합된 이메일 서비스"
       ],
       "Emailing preference saved": [
         "이메일 환경 설정이 저장됨"
@@ -14317,9 +14311,6 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "한 번의 일회성 결제로 지금부터 모든 ${ PASS_APP_NAME } 프리미엄 기능에 평생 접근하세요. "
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }에 오신 것을 환영합니다"
       ]
