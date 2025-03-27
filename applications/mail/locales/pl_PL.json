@@ -51,6 +51,9 @@
       "Add address": [
         "Dodaj adres"
       ],
+      "Add another account": [
+        "Dodaj inne konto"
+      ],
       "Add Bcc recipients": [
         "Dodaj odbiorców UDW"
       ],
@@ -588,6 +591,12 @@
       "Help": [
         "Pomoc"
       ],
+      "Help and feedback": [
+        "Pomoc i opinia"
+      ],
+      "Help and resources": [
+        "Pomoc i zasoby"
+      ],
       "Hide": [
         "Ukryj"
       ],
@@ -611,6 +620,9 @@
       ],
       "Hide toolbar": [
         "Ukryj pasek narzędzi"
+      ],
+      "hide-my-email aliases": [
+        "aliasów hide-my-email"
       ],
       "I like this response": [
         "Lubię tę odpowiedź"
@@ -1537,6 +1549,9 @@
       "${ price } per domain": [
         "${ price } za domenę"
       ],
+      "${ price } per seat": [
+        "${ price } za licencję"
+      ],
       "${ price } per user": [
         "${ price } za użytkownika"
       ],
@@ -1845,7 +1860,7 @@
         "Rocznie"
       ],
       "Lifetime": [
-        "Dożywotni"
+        "Dożywotnio"
       ],
       "Monthly": [
         "Miesięcznie"
@@ -4768,7 +4783,7 @@
         "Strefa czasowa"
       ],
       "Time zone component ignored": [
-        "Element strefy czasowej ignorowany"
+        "Komponent strefy czasowej jest ignorowany"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -7124,8 +7139,14 @@
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
+      "Other accounts": [
+        "Inne konta"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Priorytetem naszych alertów jest bezpieczeństwo. Jeśli nie rozpoznajesz żadnej informacji, możesz bezpiecznie zignorować ten raport."
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Nasz system oznaczył wiadomość jako próbę wyłudzenia informacji. Upewnij się, że jest ona wiarygodna."
       ],
       "password": [
         "hasło"
@@ -7249,6 +7270,9 @@
       ],
       "Proofread text": [
         "Sprawdź tekst"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
+        "Chroń swój adres e-mail przed ujawnieniem go w listach mailingowych lub przez spammerów za pomocą ${ hideMyEmailAliasesLink }."
       ],
       "Public sharing of documents is not yet supported.": [
         "Publiczne udostępnianie dokumentów nie jest obsługiwane."
@@ -7449,7 +7473,7 @@
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
-        "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i bezpiecznie je przechowuj. Wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
+        "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i przechowuj je bezpiecznie. To wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -8155,6 +8179,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ]
     },
     "info": {
@@ -9380,6 +9407,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Dodatek z darmową wersją próbną"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -10013,6 +10043,9 @@
       ],
       "Limited support": [
         "Ograniczone wsparcie"
+      ],
+      "Manage user permissions and access": [
+        "Zarządzaj uprawnieniami i dostępem użytkowników"
       ],
       "Multiple admin roles": [
         "Wiele ról administratora"
@@ -10754,7 +10787,7 @@
         "Oferta specjalna"
       ],
       "This offer won't be shown again.": [
-        "Ta oferta nie pojawi się ponownie."
+        "Oferta nie pojawi się ponownie."
       ],
       "When you switch from a monthly to annual subscription.": [
         "Po przejściu z subskrypcji miesięcznej na roczną."
@@ -10837,6 +10870,9 @@
       "Advanced encryption": [
         "Zaawansowane szyfrowanie"
       ],
+      "Anytime, anywhere access": [
+        "Dostęp zawsze i wszędzie"
+      ],
       "Auto-delete spam and trash": [
         "Automatyczne usuwanie Spamu i Kosza"
       ],
@@ -10850,7 +10886,7 @@
         "Kontynuuj"
       ],
       "Desktop": [
-        "Komputer"
+        "komputerach stacjonarnych"
       ],
       "Discover ${ MAIL_APP_NAME }": [
         "Poznaj ${ MAIL_APP_NAME }"
@@ -10894,6 +10930,9 @@
       "Start using the shorter, catchier version of your email address.": [
         "Używaj krótszej i bardziej chwytliwej wersji swojego adresu e-mail."
       ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Aby rozpocząć, wybierz nazwę wyświetlaną. To właśnie tę nazwę będą widzieć użytkownicy, gdy wyślesz do nich wiadomość, zaprosisz na wydarzenie lub udostępnisz plik."
+      ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Witaj w ${ MAIL_APP_NAME }"
       ],
@@ -10902,6 +10941,12 @@
       ],
       "You are all set!": [
         "Wszystko gotowe!"
+      ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Twoja domena ${ domain } i subskrypcja ${ subscriptionName } są gotowe do użycia."
+      ],
+      "Your domain and subscription are ready to use.": [
+        "Twoja domena i subskrypcja są gotowe do użycia."
       ]
     },
     "Onboarding Proton": {
@@ -11132,11 +11177,29 @@
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
+      ],
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon jest ważny na ${ couponRedemptions } odnowienie.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowienia.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień."
+      ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
+      ],
+      "Your payment is still being processed": [
+        "Twoja płatność jest wciąż przetwarzana"
       ]
     },
     "Payments.Error": {
@@ -12462,6 +12525,47 @@
         "Za ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatyczne przekierowanie ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerty wycieków ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
+      ],
+      "No ads or tracking": [
+        "Brak reklam i śledzenia"
+      ],
+      "Short @pm.me email address": [
+        "Krótki adres e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Wesprzyj naszą misję"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade your productivity": [
+        "Zwiększ swoją produktywność"
+      ],
+      "We don't sell your data": [
+        "Nie sprzedajemy Twoich danych"
+      ],
+      "Your privacy is our mission": [
+        "Prywatność to nasza misja"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
@@ -12732,47 +12836,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Krótki alias @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "and 15 more premium features": [
-        "i 15 więcej funkcji premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatyczne przekierowanie ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerty wycieków ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikacja desktopowa"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Pomóż nam zapewnić bezpieczeństwo i prywatność w Internecie. Ulepsz konto do płatnego planu."
-      ],
-      "No ads or tracking": [
-        "Brak reklam i śledzenia"
-      ],
-      "Short @pm.me email address": [
-        "Krótki adres e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Wesprzyj naszą misję"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade your productivity": [
-        "Zwiększ swoją produktywność"
-      ],
-      "We don't sell your data": [
-        "Nie sprzedajemy Twoich danych"
-      ],
-      "Your privacy is our mission": [
-        "Prywatność to nasza misja"
       ]
     },
     "Subscription renewal state": {
@@ -13419,6 +13482,9 @@
       "Amount due": [
         "Do zapłaty"
       ],
+      "Anytime, anywhere access": [
+        "Dostęp zawsze i wszędzie"
+      ],
       "Apply gift code": [
         "Zastosuj kod podarunkowy"
       ],
@@ -13617,6 +13683,9 @@
       "Discover your subscription benefits": [
         "Odkryj zalety subskrypcji"
       ],
+      "Distraction-free emailing": [
+        "Poczta e-mail bez rozpraszania uwagi"
+      ],
       "Don't give spam a chance": [
         "Pokonaj spam"
       ],
@@ -13703,6 +13772,9 @@
       ],
       "Groups": [
         "Grupy"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
       ],
       "Help center": [
         "Centrum pomocy"
@@ -13898,6 +13970,9 @@
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
+      ],
+      "Other features included in your plan": [
+        "Inne funkcje zawarte w planie"
       ],
       "Other information": [
         "Inne informacje"
@@ -14184,11 +14259,6 @@
         "Dzisiaj"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Format automatyczny wyśle do tego użytkownika wiadomość w formacie użytym w edytorze. Format zwykłego tekstu oznacza, że wiadomość przed wysłaniem zostanie przekonwertowana do zwykłego tekstu."
@@ -14272,6 +14342,11 @@
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "wersji stabilnej"
@@ -14314,6 +14389,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } urządzenie",
+        "${ n } urządzenia",
+        "${ n } urządzeń",
+        "${ n } urządzenia"
+      ],
       "${ n } server": [
         "${ n } serwer",
         "Ponad ${ n } serwery",
@@ -14337,6 +14418,12 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatyczny wybór z ${ numberOfCountries } kraju",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Serwery w ponad ${ numberOfCountries } kraju",
