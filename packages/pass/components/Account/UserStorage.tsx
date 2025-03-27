@@ -12,7 +12,7 @@ export const UserStorage = WithPaidUser(() => {
 
     if (!maxStorage || !canUseStorage) return null;
 
-    const used = humanSize({ bytes: usedStorage, unit: 'GB', withoutUnit: true });
+    const used = humanSize({ bytes: usedStorage, unit: 'GB' });
     const available = humanSize({ bytes: maxStorage, unit: 'GB', fraction: 0 });
 
     return (
