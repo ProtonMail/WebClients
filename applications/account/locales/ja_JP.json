@@ -1084,10 +1084,10 @@
       "Select country ${ country }": [
         "国を選択 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "ファイルを選択"
       ],
-      "select file": [
+      "Select file": [
         "ファイルを選択"
       ],
       "Select files": [
@@ -7482,9 +7482,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "このカレンダーの予定の詳細を共有すると、${ BRAND_NAME } がこのカレンダーの暗号化された情報にアクセスできるようになります。"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ MAIL_APP_NAME }と${ CONTACTS_APP_NAME }が統合したカレンダー"
-      ],
       "Cancel anytime": [
         "いつでもキャンセル可能"
       ],
@@ -7796,9 +7793,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "メール ホスティングはあなたがお持ちのドメインでのみ利用できます。ドメインの登録は現在、${ BRAND_NAME } 経由では取り扱っていません。ドメイン レジストラーからドメインを登録することでメールのホストが可能になります。"
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ CALENDAR_APP_NAME }と${ CONTACTS_APP_NAME }が統合したメールサービス"
       ],
       "Emailing preference saved": [
         "メール設定が保存されました"
@@ -14278,9 +14272,6 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "1度だけの支払いで、現在および将来のすべての ${ PASS_APP_NAME } プレミアム機能へのライフタイムアクセスを入手できます。 "
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } へようこそ"
       ]
