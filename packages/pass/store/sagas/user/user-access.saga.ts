@@ -3,11 +3,13 @@ import { put, select, takeLeading } from 'redux-saga/effects';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import {
     aliasSyncPending,
+    fileLinkPending,
     getUserAccessFailure,
     getUserAccessIntent,
     getUserAccessSuccess,
 } from '@proton/pass/store/actions';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
@@ -34,4 +36,10 @@ function* userAccessWorker({ getAuthStore }: RootSagaOptions, { meta }: ReturnTy
 
 export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(getUserAccessIntent.match, userAccessWorker, options);
+
+    /** Revalidates the user storage everytime files are linked */
+    yield takeLeading(fileLinkPending.success.match, function* () {
+        const userID = options.getAuthStore().getUserID();
+        if (userID) yield put(withRevalidate(getUserAccessIntent(userID)));
+    });
 }

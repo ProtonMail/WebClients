@@ -90,7 +90,7 @@ export const FileAttachment: FC<Props> = ({
                 {fileRenameModal.state.open ? (
                     <InputFieldTwo
                         ref={inputRef}
-                        inputClassName="p-0"
+                        inputClassName="p-0 rounded-none"
                         value={renamedFile}
                         onChange={({ target: { value } }) => setRenamedFile(value)}
                         onBlur={() => fileRenameModal.resolver(renamedFile)}
