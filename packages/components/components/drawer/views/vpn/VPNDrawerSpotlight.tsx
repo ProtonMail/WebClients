@@ -2,15 +2,20 @@ import { Suspense, lazy, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Button } from '@proton/atoms/index';
+import Logo from '@proton/components/components/logo/Logo';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
+import { PLANS } from '@proton/payments/index';
 import { SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { SentryMailInitiatives } from '@proton/shared/lib/helpers/sentry';
+import { getPlan } from '@proton/shared/lib/helpers/subscription';
 
 import useVPNDrawerTelemetry from './useVPNDrawerTelemetry';
 
@@ -23,6 +28,12 @@ interface Props {
 }
 
 const VPNDrawerSpotlight = ({ children }: Props) => {
+    const [user] = useUser();
+    const [subscription] = useSubscription();
+    const { Name: planName } = getPlan(subscription) || {};
+    // Has Plus Mail, Drive, or Pass, exclude VPN Plus
+    const hasPlusPlan = planName === PLANS.MAIL || planName === PLANS.DRIVE || planName === PLANS.PASS;
+    const showIncludedFeatures = user.isFree || hasPlusPlan;
     const anchorRef = useRef<HTMLDivElement>(null);
     const { spotlightIsClicked, spotlightIsDisplayed, spotlightIsDismissed } = useVPNDrawerTelemetry();
     const {
@@ -66,6 +77,15 @@ const VPNDrawerSpotlight = ({ children }: Props) => {
                         </div>
                     </ErrorBoundary>
                     <div className="flex flex-column flex-nowrap gap-2 m-4">
+                        {showIncludedFeatures && (
+                            <span className="inline-flex flex-nowrap flex-row bg-weak rounded items-center p-1 mr-auto text-semibold color-weak">
+                                <span className="bg-norm rounded logo-vpn flex mr-2 ml-0.5">
+                                    <Logo appName="proton-vpn-settings" variant="glyph-only" className="m-auto" />
+                                </span>
+                                <span className="text-sm mr-1">{c('Info').t`Included for free with your plan`}</span>
+                            </span>
+                        )}
+
                         <h1 className="text-lg text-bold m-0">{c('Title')
                             .t`Increase security with ${VPN_APP_NAME}`}</h1>
                         <p className="mt-0 mb-2 color-weak">{c('Info')
