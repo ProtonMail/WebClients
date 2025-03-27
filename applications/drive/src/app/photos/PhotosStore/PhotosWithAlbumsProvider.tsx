@@ -6,23 +6,26 @@ import { c, msgid } from 'ttag';
 import { useNotifications } from '@proton/components/index';
 import {
     queryAddAlbumPhotos,
+    queryAddPhotoToFavorite,
     queryAlbumPhotos,
     queryAlbums,
     queryDeleteAlbum,
     queryDeletePhotosShare,
     queryPhotos,
     queryRemoveAlbumPhotos,
+    queryRemoveTagsFromPhoto,
     querySharedWithMeAlbums,
     queryUpdateAlbumCover,
 } from '@proton/shared/lib/api/drive/photos';
 import { getCanAdmin, getCanWrite, getIsOwner } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type { PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
 import { photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
+import useLinksState from '../../store/_links/useLinksState';
 import { useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import { useBatchHelper } from '../../store/_utils/useBatchHelper';
@@ -80,8 +83,11 @@ export const PhotosWithAlbumsContext = createContext<{
     removePhotosFromCache: (linkIds: string[]) => void;
     updateAlbumsFromCache: (linkIds: string[]) => void;
     deletePhotosShare: () => Promise<void>;
+    updatePhotoFavoriteFromCache: (linkId: string, isFavorite: boolean) => void;
     removeAlbumPhotos: (abortSignal: AbortSignal, albumId: string, linkIds: string[]) => Promise<void>;
     deleteAlbum: (abortSignal: AbortSignal, albumLinkId: string, force: boolean) => Promise<void>;
+    favoritePhoto: (abortSignal: AbortSignal, linkId: string) => Promise<void>;
+    removeTagsFromPhoto: (abortSignal: AbortSignal, linkId: string, tags: PhotoTag[]) => Promise<void>;
 } | null>(null);
 
 export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children }) => {
@@ -105,6 +111,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { getShareWithKey, getShare, getShareCreatorKeys } = useShare();
     const { getSharePermissions } = useDirectSharingInfo();
     const { getLink } = useLink();
+    const { updatePhotoLinkTags } = useLinksState();
     const { setVolumeShareIds } = useVolumesState();
 
     const { createNotification } = useNotifications();
@@ -499,6 +506,47 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         ]
     );
 
+    const favoritePhoto = useCallback(
+        async (abortSignal: AbortSignal, linkId: string) => {
+            if (!volumeId) {
+                throw new Error('Photo volume not found');
+            }
+            const addPhotoToFavoriteCall = async () => {
+                const response = await request<{
+                    Code: number;
+                }>(queryAddPhotoToFavorite(volumeId, linkId, {}), abortSignal);
+                if (response.Code !== 1000) {
+                    throw new Error('Failed to set favorite photo');
+                }
+            };
+            return addPhotoToFavoriteCall();
+        },
+        [request, volumeId]
+    );
+
+    const removeTagsFromPhoto = useCallback(
+        async (abortSignal: AbortSignal, linkId: string, tags: PhotoTag[]) => {
+            if (!volumeId) {
+                throw new Error('Photo volume not found');
+            }
+            const removeTagsFromPhoto = async () => {
+                const response = await request<{
+                    Code: number;
+                }>(
+                    queryRemoveTagsFromPhoto(volumeId, linkId, {
+                        Tags: tags,
+                    }),
+                    abortSignal
+                );
+                if (response.Code !== 1000) {
+                    throw new Error('Failed to remove tag from photo');
+                }
+            };
+            return removeTagsFromPhoto();
+        },
+        [request, volumeId]
+    );
+
     const addPhotoAsCover = useCallback(
         async (abortSignal: AbortSignal, albumLinkId: string, coverLinkId: string) => {
             if (!volumeId) {
@@ -629,6 +677,32 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         [request, volumeId]
     );
 
+    const updatePhotoFavoriteFromCache = useCallback(
+        (linkId: string, isFavorite: boolean) => {
+            if (!shareId) {
+                return;
+            }
+            const photo = photos.find((photo) => photo.linkId === linkId);
+            if (photo) {
+                // eslint-disable-next-line
+                const updatedTags = isFavorite
+                    ? photo.tags.includes(PhotoTag.Favorites)
+                        ? photo.tags
+                        : [...photo.tags, PhotoTag.Favorites]
+                    : photo.tags.filter((tag) => tag !== PhotoTag.Favorites);
+
+                updatePhotoLinkTags(shareId, linkId, updatedTags);
+
+                setPhotos(
+                    photos.map((original) =>
+                        original.linkId === linkId ? { ...original, tags: updatedTags } : original
+                    )
+                );
+            }
+        },
+        [shareId, photos, updatePhotoLinkTags]
+    );
+
     return (
         <PhotosWithAlbumsContext.Provider
             value={{
@@ -646,11 +720,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 loadAlbums,
                 loadSharedWithMeAlbums,
                 loadPhotos,
+                updatePhotoFavoriteFromCache,
                 removePhotosFromCache,
                 updateAlbumsFromCache,
                 deletePhotosShare,
                 removeAlbumPhotos,
                 deleteAlbum,
+                favoritePhoto,
+                removeTagsFromPhoto,
                 userAddressEmail,
             }}
         >

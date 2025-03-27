@@ -83,6 +83,7 @@ export interface PhotoProperties {
         addedTime: number;
     }[];
     tags: PhotoTag[];
+    isFavorite: boolean;
 }
 
 export interface AlbumProperties {

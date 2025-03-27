@@ -5,7 +5,7 @@ import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
-import type { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
+import { type DriveFileRevisionPayload, PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type {
     ShareExternalInvitationPayload,
     ShareInvitationDetailsPayload,
@@ -152,6 +152,9 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                       addedTime: album.AddedTime,
                   })),
                   tags: link.PhotoProperties.Tags,
+                  isFavorite: Boolean(
+                      PhotoTag.Favorites === link.PhotoProperties.Tags.find((tag) => tag === PhotoTag.Favorites)
+                  ),
               }
             : undefined,
         albumProperties: link.AlbumProperties

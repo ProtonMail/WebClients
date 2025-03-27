@@ -580,6 +580,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             }
                             isGroupSelected={isGroupSelected}
                             isItemSelected={isItemSelected}
+                            userAddressEmail={userAddressEmail}
                         />
                     </div>
                 )}
