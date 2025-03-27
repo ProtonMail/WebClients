@@ -128,7 +128,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
         );
     };
 
-    const cancelButton = <Button shape="ghost" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>;
+    const cancelButton = <Button shape="outline" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>;
 
     const sendButton = (
         <Button
@@ -184,7 +184,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             )}
 
             {displayNoteOverlay && (
-                <>
+                <div className="absolute bg-norm event-popover-rsvp-section border-top py-4">
                     <RsvpButtons
                         handleResponse={handleResponse}
                         userPartstat={userPartstat}
@@ -196,7 +196,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         assistContainerClassName="m-0"
                         id="rsvp-modal"
                         as={TextAreaWithCounter}
-                        rows={5}
+                        rows={3}
                         placeholder={c('Placeholder').t`Leave a note for all participants`}
                         value={model.Comment}
                         onValue={handleNote}
@@ -208,7 +208,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         {cancelButton}
                         {sendButton}
                     </div>
-                </>
+                </div>
             )}
         </>
     );
