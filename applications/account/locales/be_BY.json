@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "Select file": [
-        "Выбраць файл"
-      ],
       "select file": [
         "выбраць файл"
+      ],
+      "Select file": [
+        "Выбраць файл"
       ],
       "Select files": [
         "Выбраць файлы"
@@ -7170,6 +7170,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } хоча абагуліць даныя з вамі ў ${ PASS_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме аднаго пароля, які замяняе сабой пароль ад уваходу і другі пароль. Для пераключэння ў рэжым аднаго пароля, увядзіце адзіны пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
@@ -7722,9 +7725,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары, вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Каляндар, які інтэграваны з ${ MAIL_APP_NAME } і ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Скасаваць можна ў любы час"
       ],
@@ -8049,11 +8049,11 @@
       "Email address": [
         "Адрас электроннай пошты"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Электронная пошта і каляндар, якія інтэграваныя з ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Служба электроннай пошты даступна толькі для даменаў, якімі вы ўжо валодаеце. Рэгістрацыя даменаў праз ${ BRAND_NAME } зараз недаступна. Вы можаце размясціць электронную пошту для даменаў, якія зарэгістраваны іншымі рэгістратарамі даменаў."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Сэрвіс электроннай пошты, які інтэграваны з ${ CALENDAR_APP_NAME } і ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Параметры адпраўкі пошты захаваны"
@@ -14791,8 +14791,8 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Атрымайце пажыццёвы доступ да ўсіх бягучых і будучых прэміяльных функцый ${ PASS_APP_NAME } з аднаразовай аплатай. "
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Атрымайце пажыццёвы доступ да ўсіх бягучых і будучых прэміяльных функцый ${ PASS_APP_NAME } з аднаразовай аплатай."
       ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Вітаем у ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"

@@ -56,6 +56,9 @@
       "Add address": [
         "Dodaj adres"
       ],
+      "Add another account": [
+        "Dodaj inne konto"
+      ],
       "Add birthday": [
         "Dodaj urodziny"
       ],
@@ -352,6 +355,12 @@
       ],
       "Help": [
         "Pomoc"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
+      ],
+      "Help and resources": [
+        "Pomoc i zasoby"
       ],
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
@@ -837,7 +846,7 @@
         "Udostępnij użytkownikom ${ BRAND_NAME }"
       ],
       "Share with anyone": [
-        "Udostępnij komukolwiek"
+        "Udostępnij"
       ]
     },
     "Actions message": {
@@ -875,6 +884,9 @@
       ],
       "${ price } per domain": [
         "${ price } za domenę"
+      ],
+      "${ price } per seat": [
+        "${ price } za licencję"
       ],
       "${ price } per user": [
         "${ price } za użytkownika"
@@ -1148,7 +1160,7 @@
         "Rocznie"
       ],
       "Lifetime": [
-        "Dożywotni"
+        "Dożywotnio"
       ],
       "Monthly": [
         "Miesięcznie"
@@ -3638,7 +3650,7 @@
         "Strefa czasowa"
       ],
       "Time zone component ignored": [
-        "Element strefy czasowej ignorowany"
+        "Komponent strefy czasowej jest ignorowany"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -5133,6 +5145,9 @@
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
+      "Other accounts": [
+        "Inne konta"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Pokaż użytkownikom organizacji, kiedy jestem zajęty. Szczegóły wydarzeń nie zostaną udostępnione."
       ],
@@ -5651,6 +5666,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Twoja strefa czasowa w systemie zmieniła się na ${ timezone }. Czy chcesz zaktualizować ustawienia strefy czasowej?"
@@ -6509,6 +6527,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Dodatek z darmową wersją próbną"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -7147,6 +7168,9 @@
       ],
       "Limited support": [
         "Ograniczone wsparcie"
+      ],
+      "Manage user permissions and access": [
+        "Zarządzaj uprawnieniami i dostępem użytkowników"
       ],
       "Multiple admin roles": [
         "Wiele ról administratora"
@@ -8051,7 +8075,7 @@
         "Oferta specjalna"
       ],
       "This offer won't be shown again.": [
-        "Ta oferta nie pojawi się ponownie."
+        "Oferta nie pojawi się ponownie."
       ],
       "When you switch from a monthly to annual subscription.": [
         "Po przejściu z subskrypcji miesięcznej na roczną."
@@ -8163,7 +8187,7 @@
         "Co miesiąc ${ description }"
       ],
       "Every week ${ everyWeekDescription }": [
-        "Co weekend ${ everyWeekDescription }"
+        "Co tydzień ${ everyWeekDescription }"
       ],
       "Every weekday ${ everyWeekdayDescription }": [
         "W tygodniu ${ everyWeekdayDescription }"
@@ -8346,11 +8370,29 @@
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
+      ],
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon jest ważny na ${ couponRedemptions } odnowienie.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowienia.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień."
+      ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
+      ],
+      "Your payment is still being processed": [
+        "Twoja płatność jest wciąż przetwarzana"
       ]
     },
     "Payments.Error": {
@@ -10338,7 +10380,7 @@
         "Co miesiąc ${ option.text }"
       ],
       "Every week on ${ weekdaysLong[currentDay] }": [
-        "Co weekend ${ weekdaysLong[currentDay] }"
+        "Co tydzień w: ${ weekdaysLong[currentDay] }"
       ],
       "Every weekday ${ startOfTheWeekDay } - ${ endOfTheWeekDay }": [
         "W tygodniu ${ startOfTheWeekDay } - ${ endOfTheWeekDay }"
@@ -10363,6 +10405,9 @@
       ],
       "Groups": [
         "Grupy"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
       ],
       "Help center": [
         "Centrum pomocy"
@@ -10770,6 +10815,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } urządzenie",
+        "${ n } urządzenia",
+        "${ n } urządzeń",
+        "${ n } urządzenia"
+      ],
       "${ n } server": [
         "${ n } serwer",
         "Ponad ${ n } serwery",
@@ -10793,6 +10844,12 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatyczny wybór z ${ numberOfCountries } kraju",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Serwery w ponad ${ numberOfCountries } kraju",

@@ -328,6 +328,9 @@
       "Enable multi-user support": [
         "Abilita il supporto multi-utente"
       ],
+      "Explore ${ target }": [
+        "Scopri ${ target }"
+      ],
       "Explore group plans": [
         "Esplora i piani di gruppo"
       ],
@@ -3862,6 +3865,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dei tuoi membri non SSO utilizzano l'autenticazione a due fattori per accedere alla tua organizzazione.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dei tuoi membri non SSO utilizzano l'autenticazione a due fattori per accedere alla tua organizzazione."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } può anche essere usato con una singola password che sostituisce sia la password di accesso che la seconda password. Per passare alla modalità a singola password, inserisci la password che desideri e clicca su Salva."
       ],
@@ -4148,9 +4154,6 @@
       "By leaving now, changes may not be saved": [
         "Uscendo ora, le modifiche potrebbero non essere salvate"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendario, integrato con ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
-      ],
       "Can’t access your recovery email?": [
         "Non riesci ad accedere alla tua email di recupero?"
       ],
@@ -4371,11 +4374,11 @@
       "email": [
         "email"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Email e calendario, integrati con ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Servizio di posta elettronica, integrato con ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferenze email salvate"

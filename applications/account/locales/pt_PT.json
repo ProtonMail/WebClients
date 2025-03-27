@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Encriptar e exportar"
       ],
+      "Explore ${ target }": [
+        "Descubra ${ target }"
+      ],
       "Explore group plans": [
         "Explore os planos de grupo"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "Guardar endereço"
       ],
+      "Save and continue": [
+        "Guardar e continuar"
+      ],
       "Save changes": [
         "Guardar as alterações"
       ],
@@ -1084,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "Select file": [
-        "Selecionar um ficheiro"
-      ],
       "select file": [
         "selecionar ficheiro"
+      ],
+      "Select file": [
+        "Selecionar um ficheiro"
       ],
       "Select files": [
         "Selecionar ficheiros"
@@ -7566,9 +7572,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ao partilhar todos os detalhes de evento deste calendário, aceita conceder acesso ao ${ BRAND_NAME } à informação encriptada neste calendário."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendário, integrado com o ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Cancele a qualquer momento"
       ],
@@ -7886,9 +7889,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "O alojamento de e-mail está apenas disponível para domínios que já possui. O registo de domínio não está atualmente disponível através da ${ BRAND_NAME }. No entanto, pode alojar o e-mail para domínios registados em qualquer registador de domínios."
       ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Serviço de e-mail, integrado com o ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
-      ],
       "Emailing preference saved": [
         "Preferências de e-mail guardadas"
       ],
@@ -7948,6 +7948,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Desfrute de uma experiência de e-mail mais rápida e focada com a aplicação para desktop."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Insira uma palavra-passe para finalizar a sua conta ${ BRAND_NAME } e começar a utilizar o ${ VPN_APP_NAME } em todos os seus dispositivos!"
       ],
       "Enter key manually instead": [
         "Inserir a chave manualmente"
@@ -9019,6 +9022,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Defina o ${ MAIL_APP_NAME } como a sua aplicação de e-mail predefinida. O ${ MAIL_APP_NAME } será aberto automaticamente quando clicar numa ligação de e-mail."
       ],
+      "Set password": [
+        "Definir a palavra-passe"
+      ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
       ],
@@ -9177,6 +9183,9 @@
       ],
       "Thank you": [
         "Obrigado"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Obrigado por escolher ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Obrigado por apoiar a nossa missão em construir uma ‘internet’ melhor onde a privacidade e a liberdade vêm em primeiro lugar."
@@ -10122,6 +10131,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Poderá adicionar imediatamente estes servidores a outra porta de entrada."
+      ],
+      "You’re all set": [
+        "Está tudo pronto"
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
@@ -14469,9 +14481,6 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Obtenha acesso vitalício a todas as funcionalidades premium atuais e futuras do ${ PASS_APP_NAME } com um único pagamento. "
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Boas-vindas ao ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
@@ -16940,6 +16949,9 @@
       ],
       "Single sign-on removed": [
         "A autenticação única foi removida."
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "O endereço de e-mail ${ email } já existe na ${ BRAND_NAME }. Inicie sessão com as suas credenciais da ${ BRAND_NAME } para continuar."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "O utilizador ${ user } é agora tem conta com início de sessão único. A palavra-passe anterior tornou-se a palavra-passe de backup."

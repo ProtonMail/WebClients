@@ -57,6 +57,9 @@
       "Add address": [
         "Dodaj adres"
       ],
+      "Add another account": [
+        "Dodaj inne konto"
+      ],
       "Add birthday": [
         "Dodaj urodziny"
       ],
@@ -476,6 +479,12 @@
       ],
       "Help": [
         "Pomoc"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
+      ],
+      "Help and resources": [
+        "Pomoc i zasoby"
       ],
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
@@ -1089,6 +1098,9 @@
       "${ price } per domain": [
         "${ price } za domenę"
       ],
+      "${ price } per seat": [
+        "${ price } za licencję"
+      ],
       "${ price } per user": [
         "${ price } za użytkownika"
       ],
@@ -1312,7 +1324,7 @@
         "Rocznie"
       ],
       "Lifetime": [
-        "Dożywotni"
+        "Dożywotnio"
       ],
       "Monthly": [
         "Miesięcznie"
@@ -3407,7 +3419,7 @@
         "Strefa czasowa"
       ],
       "Time zone component ignored": [
-        "Element strefy czasowej ignorowany"
+        "Komponent strefy czasowej jest ignorowany"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -3827,11 +3839,20 @@
         "Dodaj ${ photos.length } zdjęć do",
         "Dodaj ${ photos.length } zdjęć do"
       ],
+      "Add to shared album": [
+        "Dodaj do udostępnionego albumu"
+      ],
       "All albums": [
         "Wszystkie albumy"
       ],
       "Recent": [
         "Ostatnie"
+      ],
+      "Share ${ photos.length } photo via": [
+        "Udostępnij ${ photos.length } zdjęcie przez",
+        "Udostępnij ${ photos.length } zdjęcia przez",
+        "Udostępnij ${ photos.length } zdjęć przez",
+        "Udostępnij ${ photos.length } zdjęć przez"
       ]
     },
     "Hint": {
@@ -4303,6 +4324,9 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "${ DRIVE_APP_NAME } w Google Play"
       ],
+      "${ email } invited you to join **${ albumName }**": [
+        "Użytkownik ${ email } zaprosił Cię do albumu **${ albumName }**"
+      ],
       "${ errorCount } failed": [
         "Transfer ${ errorCount } pliku zakończył się niepowodzeniem",
         "Transfer ${ errorCount } plików zakończył się niepowodzeniem",
@@ -4356,6 +4380,12 @@
         "${ providerFoldersNumLocalized } znalezione etykiety w poczcie Gmail",
         "${ providerFoldersNumLocalized } znalezionych etykiet w poczcie Gmail",
         "${ providerFoldersNumLocalized } znalezionych etykiet w poczcie Gmail"
+      ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } skanowanie nie powiodło się",
+        "${ scanErrorCount } skanowania nie powiodły się",
+        "${ scanErrorCount } skanowań nie powiodło się",
+        "${ scanErrorCount } skanowań nie powiodło się"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarz",
@@ -5164,6 +5194,9 @@
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
+      "Other accounts": [
+        "Inne konta"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Priorytetem naszych alertów jest bezpieczeństwo. Jeśli nie rozpoznajesz żadnej informacji, możesz bezpiecznie zignorować ten raport."
       ],
@@ -5446,6 +5479,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Niektóre pliki nie są już dostępne. Przywróć dostęp do plików. ${ StartRecoveryButton }"
       ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Niektóre zdjęcia z tego albumu nie są zapisane na osi czasu. Usunięcie tego albumu spowoduje trwałe usunięcie tych zdjęć."
+      ],
       "Something went wrong, please try again later.": [
         "Coś poszło nie tak. Spróbuj ponownie później."
       ],
@@ -5527,6 +5563,12 @@
       "This item already exists in your library": [
         "Ten element już istnieje"
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Element nie jest zapisany w bibliotece zdjęć. Usunięcie go z albumu spowoduje trwałą utratę dostępu do niego.",
+        "Niektóre elementy nie są zapisane w bibliotece zdjęć. Usunięcie ich z albumu spowoduje trwałą utratę dostępu do nich.",
+        "Niektóre elementy nie są zapisane w bibliotece zdjęć. Usunięcie ich z albumu spowoduje trwałą utratę dostępu do nich.",
+        "Niektóre elementy nie są zapisane w bibliotece zdjęć. Usunięcie ich z albumu spowoduje trwałą utratę dostępu do nich."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
@@ -5538,6 +5580,9 @@
       ],
       "This month": [
         "Ten miesiąc"
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Spowoduje to jedynie usunięcie albumu. Zdjęcia pozostaną na osi czasu. Nie możesz cofnąć tej akcji."
       ],
       "This will permanently delete the file you uploaded.": [
         "Spowoduje to trwałe usunięcie przesłanego pliku."
@@ -5896,6 +5941,15 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Zamierzasz odrzucić zaproszenie dołączenia do albumu ${ invitationName }. Spowoduje to utratę dostępu do albumu, chyba że właściciel zaprosi Cię ponownie. Czy na pewno chcesz kontynuować?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Zamierzasz odrzucić zaproszenie dołączenia do folderu ${ invitationName }. Spowoduje to utratę dostępu do folderu, chyba że właściciel zaprosi Cię ponownie. Czy na pewno chcesz kontynuować?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Zamierzasz odrzucić zaproszenie dołączenia do elementu ${ invitationName }. Spowoduje to utratę dostępu do elementu, chyba że właściciel zaprosi Cię ponownie. Czy na pewno chcesz kontynuować?"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Osiągnięto maksymalną liczbę adresów w grupach kontaktów:"
       ],
@@ -5982,6 +6036,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ]
     },
     "info": {
@@ -6896,6 +6953,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Dodatek z darmową wersją próbną"
+      ],
       "for ${ price }": [
         "za ${ price }"
       ]
@@ -7587,6 +7647,9 @@
       "Limited support": [
         "Ograniczone wsparcie"
       ],
+      "Manage user permissions and access": [
+        "Zarządzaj uprawnieniami i dostępem użytkowników"
+      ],
       "Multiple admin roles": [
         "Wiele ról administratora"
       ],
@@ -8265,6 +8328,12 @@
         "Odszyfrowanie ${ count } elementów nie powiodło się",
         "Odszyfrowanie ${ count } elementów nie powiodło się"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "Nie udało się dodać ${ nbFailures } zdjęcia do albumu \"${ albumName }\"",
+        "Nie udało się dodać ${ nbFailures } zdjęć do albumu \"${ albumName }\"",
+        "Nie udało się dodać ${ nbFailures } zdjęć do albumu \"${ albumName }\"",
+        "Nie udało się dodać ${ nbFailures } zdjęcia do albumu \"${ albumName }\""
+      ],
       "${ nbSuccesses } photo added to \"${ albumName }\"": [
         "Dodano ${ nbSuccesses } zdjęcie do albumu \"${ albumName }\"",
         "Dodano ${ nbSuccesses } zdjęcia do albumu \"${ albumName }\"",
@@ -8600,7 +8669,7 @@
         "Oferta specjalna"
       ],
       "This offer won't be shown again.": [
-        "Ta oferta nie pojawi się ponownie."
+        "Oferta nie pojawi się ponownie."
       ],
       "When you switch from a monthly to annual subscription.": [
         "Po przejściu z subskrypcji miesięcznej na roczną."
@@ -8939,11 +9008,29 @@
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
+      ],
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon jest ważny na ${ couponRedemptions } odnowienie.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowienia.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień."
+      ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
+      ],
+      "Your payment is still being processed": [
+        "Twoja płatność jest wciąż przetwarzana"
       ]
     },
     "Payments.Error": {
@@ -10768,6 +10855,9 @@
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
       ],
+      "Delete ${ links.length } items?": [
+        "Usunąć elementy (${ links.length })?"
+      ],
       "Delete ${ name }?": [
         "Usunąć ${ name }?"
       ],
@@ -10884,6 +10974,9 @@
       ],
       "Groups": [
         "Grupy"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
       ],
       "Help center": [
         "Centrum pomocy"
@@ -11254,11 +11347,6 @@
         "Dzisiaj"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Dodaj udostępniony plik do ${ DRIVE_APP_NAME }, aby mieć do niego łatwy dostęp."
@@ -11342,6 +11430,11 @@
         "Wysłaliśmy zaproszenie do elementu."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
@@ -11376,6 +11469,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } urządzenie",
+        "${ n } urządzenia",
+        "${ n } urządzeń",
+        "${ n } urządzenia"
+      ],
       "${ n } server": [
         "${ n } serwer",
         "Ponad ${ n } serwery",
@@ -11399,6 +11498,12 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatyczny wybór z ${ numberOfCountries } kraju",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Serwery w ponad ${ numberOfCountries } kraju",

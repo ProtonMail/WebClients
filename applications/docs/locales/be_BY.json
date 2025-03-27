@@ -156,6 +156,9 @@
       "Close this banner": [
         "Закрыць гэты банер"
       ],
+      "Collapse": [
+        "Згарнуць"
+      ],
       "Compose": [
         "Напісаць"
       ],
@@ -195,6 +198,9 @@
       "Copy invite link": [
         "Скапіяваць запрашальную спасылку"
       ],
+      "Create": [
+        "Стварыць"
+      ],
       "Create a copy": [
         "Стварыць копію"
       ],
@@ -206,6 +212,9 @@
       ],
       "Create folder": [
         "Стварыць папку"
+      ],
+      "Create new folder": [
+        "Стварыць новую папку"
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -296,6 +305,9 @@
       ],
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
+      ],
+      "Expand": [
+        "Разгарнуць"
       ],
       "Export": [
         "Экспартаваць"
@@ -431,6 +443,12 @@
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
+      ],
+      "Move": [
+        "Перамясціць"
+      ],
+      "Move to folder": [
+        "Перамясціць у папку"
       ],
       "Move to trash": [
         "Перамясціць у сметніцу"
@@ -755,6 +773,17 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ]
+    },
+    "Actions": {
+      "Last modified first": [
+        "Спачатку апошнія змененыя"
+      ],
+      "Last viewed first": [
+        "Спачатку апошнія прагледжаныя"
+      ],
+      "Name": [
+        "Імя"
       ]
     },
     "Actions message": {
@@ -2390,6 +2419,17 @@
         "Ваша падпіска ${ PLAN_NAMES[PLANS.PASS] } па спецыяльнай цане ${ price } у год. Перайшоўшы на бясплатны тарыфны план, вы назаўсёды страціце скідку, нават калі ў будучыні зноў палепшыце сваю падпіску."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Спампаваць для Linux"
+      ],
+      "Download for macOS": [
+        "Спампаваць для macOS"
+      ],
+      "Download for Windows": [
+        "Спампаваць для Windows"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Адкрыць у ${ DRIVE_SHORT_APP_NAME }"
@@ -2927,6 +2967,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Немагчыма загрузіць панэль кіравання VPN. Калі ласка, праверце падключэнне і паўтарыце спробу."
       ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
@@ -3950,6 +3993,9 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } ужо існуе ў гэтым размяшчэнні."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } маскіруе ваш IP-адрас і вэб-сайты не могуць вызначыць вас."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } удзельнік)",
         "(${ memberCount } удзельнікі)",
@@ -3958,6 +4004,12 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/месяц)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Аўтаматычнае падключэнне**: падключэнне да сервера VPN адбываецца адразу пасля ўключэння прылады."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill Switch**: спыняе ўцечку даных блакіруючы інтэрнэт, калі падключэнне па VPN нечакана знікла."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -3980,8 +4032,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Бяспечнае падключэнне вельмі важна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або маніторынг прагляду вэб-старонак для любых зацікаўленых структур."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN хавае ваш IP-адрас і шыфруе вашу актыўнасць у браўзеры, што ўскладняе сайтам, рэкламадаўцам і пастаўшчыкам паслуг інтэрнэту адсочваць вас з цягам часу."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN - гэта бяспечны тунэль паміж вашай прыладай і інтэрнэтам. Ён хавае ваша месцазнаходжанне і актыўнасць ад вашага пастаўшчыка паслуг інтэрнэту (ISP) і вэб-сайтаў, якія вы наведваеце."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
@@ -3992,11 +4056,17 @@
       "Actions": [
         "Дзеянні"
       ],
+      "Ad targeting": [
+        "Мэтавая рэклама"
+      ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце, каб паказваць мэтавую рэкламу. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
@@ -4097,6 +4167,9 @@
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
       ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Падключыцеся да ${ VPN_APP_NAME } для прыватнага прагляду"
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Кантакт прызначаны групе ${ contactGroupName }"
       ],
@@ -4144,6 +4217,9 @@
       ],
       "Create your end-to-end encrypted document": [
         "Стварыце дакумент, які зашыфраваны скразным шыфраваннем"
+      ],
+      "Create your first folder and start moving your files.": [
+        "Стварыце сваю першую папку і пачніце перамяшчаць туды вашы файлы."
       ],
       "Creating link to file": [
         "Стварэнне спасылкі на файл"
@@ -4334,6 +4410,9 @@
       "Free 5GB encrypted storage to get started": [
         "Бясплатнае зашыфраванае сховішча аб'ёмам 5 ГБ, каб пачаць працу"
       ],
+      "Geoblocking": [
+        "Геаблакіроўка"
+      ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Атрымлівайце лісты на электронную пошту аб каментарыях і прапановах, якія дадаюцца ў вашы дакументы."
       ],
@@ -4342,6 +4421,9 @@
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Перайсці ў ${ DRIVE_APP_NAME }"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адрас і шыфраванню."
       ],
       "here": [
         "тут"
@@ -4388,6 +4470,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "У краінах, якія абмяжоўваюць інтэрнэт"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
       ],
@@ -4414,6 +4499,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Здаецца, што вы нядаўна спрабавалі запампаваць ${ uploadName }. Калі гэта спроба была няўдалай, ${ replaceFile }. Калі ўсё яшчэ выконваецца запампоўванне, замена файла скасуе бягучае запампоўванне."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Лепш за ўсё выкарыстоўваць VPN заўсёды. Але вось калі пагрозы кібербяспецы могуць быць найбольшымі:"
       ],
       "JCB logo": [
         "Лагатып JCB"
@@ -4508,6 +4596,9 @@
       "Monitor accounts": [
         "Назіранне за ўліковымі запісамі"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Большасць агульнадаступных сетак Wi-Fi бяспечныя, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
@@ -4544,11 +4635,17 @@
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
       ],
+      "Not connected": [
+        "Не падключана"
+      ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
       "Offline": [
         "Па-за сеткай"
+      ],
+      "On public WiFi networks": [
+        "У грамадскіх сетках Wi-Fi"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
@@ -4661,6 +4758,9 @@
       "Primary": [
         "Асноўны"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Прыватны прагляд вэб-старонак (або рэжым \"інкогніта\") карысны толькі для хавання актыўнасці на вашай прыладзе. Браўзер не будзе захоўваць гісторыю і файлы cookie, але гэта не робіць вас нябачным. Ваш пастаўшчык паслуг інтэрнэту, сеткавы адміністратар і вэб-сайты ўсё яшчэ могуць бачыць, што вы робіце ў інтэрнэце."
+      ],
       "Public documents are not yet enabled for your organization.": [
         "Публічныя дакументы пакуль не ўключаны для вашай арганізацыі."
       ],
@@ -4693,6 +4793,12 @@
       ],
       "Saving...": [
         "Захаванне..."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Адсканіруйце QR-код з дапамогай мабільнай прылады"
+      ],
+      "Select a folder to move to.": [
+        "Выберыце папку для перамяшчэння."
       ],
       "Select a service provider to start": [
         "Выберыце пастаўшчыка паслуг, каб пачаць"
@@ -4751,11 +4857,20 @@
       "Some edits are taking longer to sync than expected.": [
         "Сінхранізацыя некаторых рэдагаванняў займае больш часу, чым чакалася."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Некаторыя ўрады блакіруюць або абмяжоўваюць доступ да пэўных вэб-сайтаў. VPN дапамагае абысці цэнзуру, захоўваючы вашу актыўнасць і асобу ў таямніцы."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
+      ],
       "Something went wrong": [
         "Нешта пайшло не так"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
@@ -4771,6 +4886,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Назіранне"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
@@ -4832,8 +4950,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Спасылка створана ў папярэдняй версіі Drive, таму яе немагчыма змяніць. Для змянення налад, выдаліце гэту спасылку і стварыце новую."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць вашы асабістыя звесткі з вашай актыўнасці ў інтэрнэце."
+      ],
       "This message will be presented again later": [
         "Паведамленне будзе паўторна прадэманстравана пазней"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
       ],
       "This will permanently delete the file you uploaded.": [
         "Гэта незваротна выдаліць файл, які вы запампавалі."
@@ -4892,6 +5016,9 @@
       "Total VPN connections": [
         "Колькасць падключэнняў па VPN"
       ],
+      "Tracking": [
+        "Адсочванне"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Перадача скасавана для файла \"${ name }\""
       ],
@@ -4940,6 +5067,9 @@
       "Visa Secure logo": [
         "Лагатып Visa Secure"
       ],
+      "VPN IP": [
+        "IP VPN"
+      ],
       "Warning": [
         "Папярэджанне"
       ],
@@ -4987,6 +5117,12 @@
       ],
       "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
         "У адкрытым дыялогавым акне, выберыце \"PDF\" у левым ніжнім куце, а потым націсніце \"Захаваць\"."
+      ],
+      "When working remotely": [
+        "Пры аддаленай працы"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "VPN выкарыстоўвае тэхналогію шыфравання, каб схаваць ваш IP-адрас пры падключэнні да VPN (унікальны код, які прызначаны вашай прыладзе)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
@@ -5162,6 +5298,15 @@
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Ваш пастаўшчык паслуг інтэрнэту можа назіраць за вашымі дзеяннямі ў інтэрнэце і час ад часу прадаваць вашы даныя або нават абмяжоўваць доступ да некаторых вэб-сайтаў"
+      ],
+      "Your IP": [
+        "Ваш IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Ваш IP-адрас з'яўляецца бачным і можа быць выкарыстаны для адсочвання вашай актыўнасці ў інтэрнэце."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
       ],
@@ -5171,11 +5316,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Наступная дата спагнання адбудзецца ${ renewalTime }. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
       ],
+      "Your online activity is protected": [
+        "Ваша актыўнасць у інтэрнэце абаронена"
+      ],
       "Your password was leaked:": [
         "Адбылася ўцечка вашага пароля:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Ваша фізічнае месцазнаходжанне з'яўляецца бачным і можа выкарыстоўвацца для забароны доступу ў інтэрнэт."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны ${ cycle } месяц.",
@@ -5484,6 +5635,9 @@
       "Folder location": [
         "Размяшчэнне папкі"
       ],
+      "Folder name": [
+        "Назва папкі"
+      ],
       "Forwards to": [
         "Перасылаць на"
       ],
@@ -5726,6 +5880,15 @@
       ],
       "Your alias": [
         "Ваш псеўданім"
+      ],
+      "Your IP": [
+        "Ваш IP"
+      ],
+      "Your ISP": [
+        "Ваш ISP"
+      ],
+      "Your location": [
+        "Ваша месцазнаходжанне"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -7427,6 +7590,24 @@
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
+      "Move ${ n } file": [
+        "Перамясціць ${ n } файл",
+        "Перамясціць ${ n } файлы",
+        "Перамясціць ${ n } файлаў",
+        "Перамясціць ${ n } файлаў"
+      ],
+      "Move ${ n } folder": [
+        "Перамясціць ${ n } папку",
+        "Перамясціць ${ n } папкі",
+        "Перамясціць ${ n } папак",
+        "Перамясціць ${ n } папак"
+      ],
+      "Move ${ n } item": [
+        "Перамясціць ${ n } элемент",
+        "Перамясціць ${ n } элементы",
+        "Перамясціць ${ n } элементаў",
+        "Перамясціць ${ n } элементаў"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недастаткова месца для запампоўвання ${ formattedTotal }"
       ],
@@ -7435,6 +7616,9 @@
       ],
       "Public link update access failed ": [
         "Збой доступу да абнаўлення публічнай спасылкі "
+      ],
+      "Root folder failed to be loaded": [
+        "Не ўдалося загрузіць каранёвую папку"
       ],
       "Share invitation accepted successfully": [
         "Абагуленае запрашэнне паспяхова прынята"
@@ -7450,6 +7634,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Збой спынення абагульвання гэтага элемента"
+      ],
+      "Subfolder failed to be loaded": [
+        "Не ўдалося загрузіць падпапкі"
       ],
       "The document failed to be created": [
         "Збой стварэння дакумента"
@@ -7857,6 +8044,9 @@
       "Email": [
         "Электронная пошта"
       ],
+      "Enter a new folder name": [
+        "Увядзіце новую назву папкі"
+      ],
       "Filter groups": [
         "Фільтр груп"
       ],
@@ -8006,6 +8196,9 @@
       "Created by": [
         "Створана"
       ],
+      "Earlier": [
+        "Раней"
+      ],
       "Location": [
         "Размяшчэнне"
       ],
@@ -8015,8 +8208,20 @@
       "Name": [
         "Назва"
       ],
+      "Previous 30 days": [
+        "Папярэднія 30 дзён"
+      ],
+      "Previous 7 days": [
+        "Папярэднія 7 дзён"
+      ],
+      "Today": [
+        "Сёння"
+      ],
       "Viewed": [
-        "Прагладжана"
+        "Прагледжана"
+      ],
+      "Yesterday": [
+        "Учора"
       ]
     },
     "Safety review": {
@@ -9195,6 +9400,9 @@
       "Coupon": [
         "Купон"
       ],
+      "Create a new folder": [
+        "Стварэнне новай папкі"
+      ],
       "Create contact": [
         "Стварэнне кантакту"
       ],
@@ -9258,6 +9466,9 @@
       "Deleting contacts": [
         "Выдаленне кантактаў"
       ],
+      "Desktop": [
+        "Для камп'ютара"
+      ],
       "Details": [
         "Падрабязнасці"
       ],
@@ -9281,6 +9492,9 @@
       ],
       "Download ${ date }": [
         "Спампаваць ${ date }"
+      ],
+      "Download the app": [
+        "Спампаваць праграму"
       ],
       "Download unverified file?": [
         "Спампаваць неправераны файл?"
@@ -9342,6 +9556,9 @@
       "Get advanced protection": [
         "Атрыманне дадатковай абароны"
       ],
+      "Get more from your VPN": [
+        "Атрымайце больш ад свайго VPN"
+      ],
       "Gift": [
         "Падарунак"
       ],
@@ -9356,6 +9573,9 @@
       ],
       "High security for your account": [
         "Высокая бяспека для вашага ўліковага запісу"
+      ],
+      "How does it all work?": [
+        "Як гэта ўсё працуе?"
       ],
       "Human verification": [
         "Антыспамавая праверка"
@@ -9390,6 +9610,9 @@
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Зрабіць копію ў ${ DRIVE_APP_NAME }"
       ],
+      "Make a secure connection your default": [
+        "Зрабіце бяспечнае падключэнне прадвызначаным"
+      ],
       "Manage secure link": [
         "Кіраванне бяспечнай спасылкай"
       ],
@@ -9401,6 +9624,9 @@
       ],
       "Minicalendar": [
         "Мінікаляндар"
+      ],
+      "Mobile": [
+        "Для смартфона"
       ],
       "My files": [
         "Мае файлы"
@@ -9455,6 +9681,9 @@
       ],
       "Photos": [
         "Фотаграфіі"
+      ],
+      "Private browsing vs VPN": [
+        "Прыватны прагляд у параўнанні з VPN"
       ],
       "Processing...": [
         "Апрацоўка..."
@@ -9567,17 +9796,32 @@
       "Verifying your payment...": [
         "Праверка вашага плацяжу..."
       ],
+      "VPN explained": [
+        "Тлумачэнне VPN"
+      ],
       "Warning": [
         "Папярэджанне"
       ],
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
+      "What can a VPN protect you from?": [
+        "Ад чаго можа абараніць VPN?"
+      ],
+      "What is a VPN?": [
+        "Што такое VPN?"
+      ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
       ],
+      "When is it most important to use a VPN?": [
+        "У якіх выпадках варта выкарыстоўваць VPN?"
+      ],
       "You can now create unlimited folders and labels": [
         "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"
+      ],
+      "You have no folders yet": [
+        "У вас пакуль няма папак"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш бясплатны выпрабавальны перыяд для тарыфнага плана ${ planName } завершыцца ${ textDate }"
