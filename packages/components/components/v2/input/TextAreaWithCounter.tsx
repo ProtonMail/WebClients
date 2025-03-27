@@ -22,7 +22,6 @@ const CharacterCount = ({
     position = 'bottom-right',
 }: CharacterCountProps) => (
     <div
-        id="character-count"
         className={clsx([
             'text-sm',
             position === 'bottom-right' ? 'text-right' : 'text-left',
@@ -97,7 +96,6 @@ const TextAreaWithCounter = forwardRef<HTMLTextAreaElement, TextAreaWithCounterP
                 error={error || isOverLimit}
                 onChange={handleChange}
                 maxLength={maxCharacterCount}
-                aria-describedby={showCharacterCount ? 'character-count' : undefined}
                 {...rest}
             />
             {showCharacterCount && (
