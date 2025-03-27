@@ -3865,6 +3865,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat zowel de login als het tweede wachtwoord vervangt. Om over te schakelen naar één wachtwoord modus vult u een enkel wachtwoord naar keuze in en klikt u op Opslaan."
       ],
@@ -4151,9 +4154,6 @@
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Agenda, geïntegreerd met ${ MAIL_APP_NAME } en ${ CONTACTS_APP_NAME }"
-      ],
       "Can’t access your recovery email?": [
         "Geen toegang tot uw herstel mail?"
       ],
@@ -4374,11 +4374,11 @@
       "email": [
         "e-mail"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-mail en kalender, geïntegreerd met ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "E-mailservice, geïntegreerd met ${ CALENDAR_APP_NAME } en ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"

@@ -328,6 +328,9 @@
       "Enable multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
       ],
+      "Explore ${ target }": [
+        "${ target }-ის დათვალიერება"
+      ],
       "Explore group plans": [
         "ყველა ჯგუფური სატარიფო გეგმის ნახვა"
       ],
@@ -3823,6 +3826,9 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: დაბალი გაფართოების მინიატურა"
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } და ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და მეორე პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
       ],
@@ -4106,9 +4112,6 @@
       "By leaving now, changes may not be saved": [
         "თუ გახვალთ, ცვლილებები არ შეინახება"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "კალენდარი, ინტეგრირებულია ${ MAIL_APP_NAME }-სთან და ${ CONTACTS_APP_NAME }-სთან"
-      ],
       "Can’t access your recovery email?": [
         "არ გაქვთ წვდომა თქვენი აღდგენის ელფოსტასთან?"
       ],
@@ -4329,11 +4332,11 @@
       "email": [
         "ელფოსტა"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "ელფოსტა და კალენდარი, ჩაშენებული ${ CONTACTS_APP_NAME }-ში"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "ელფოსტის ჰოსტინგი ხელმისაწვდომია, მხოლოდ, იმ დომენებისთვის, რომლებსაც უკვე ფლობთ. დომენის რეგისტრაცია, ამჟამად, არ არის ხელმისაწვდომი ${ BRAND_NAME }-ის საშუალებით. დომენის შეძენა ნებისმიერ რეგისტრატორთან შეგიძლიათ."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "ელფოსტის სერვისები, ინტეგრირებულია ${ CALENDAR_APP_NAME }-სთან და ${ CONTACTS_APP_NAME }-სთან"
       ],
       "Emailing preference saved": [
         "დაგზავნის მორგება შენახულია"
