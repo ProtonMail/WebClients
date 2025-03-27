@@ -11,6 +11,10 @@ export const PhotosWithAlbumsContainer: FC = () => {
             <Route path="" element={<PhotosWithAlbumsView />} />
             <Route path="albums" element={<AlbumsView />} />
             <Route path="albums/:albumShareId/album/:albumLinkId" element={<PhotosWithAlbumsInsideAlbumView />} />
+            <Route
+                path="albums/:albumShareId/album/:albumLinkId/add-photos"
+                element={<PhotosWithAlbumsView isAddAlbumPhotosView />}
+            />
             <Route path="*" element={<Navigate to="/photos" replace />} />
         </Routes>
     );

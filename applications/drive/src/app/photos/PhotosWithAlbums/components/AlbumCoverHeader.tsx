@@ -9,6 +9,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 
 import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData } from '../../../store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
 import { PhotosUploadButton } from '../toolbar/PhotosUploadButton';
 
 interface AlbumCoverHeaderProps {
@@ -19,6 +20,7 @@ interface AlbumCoverHeaderProps {
     photoCount: number;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
+    onAddAlbumPhotos: () => void;
 }
 
 export const AlbumCoverHeader = ({
@@ -29,6 +31,7 @@ export const AlbumCoverHeader = ({
     onFileUpload,
     onFileSkipped,
     onShare,
+	onAddAlbumPhotos,
 }: AlbumCoverHeaderProps) => {
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
@@ -93,7 +96,8 @@ export const AlbumCoverHeader = ({
                         </Button>
                     )}
 
-                    {album.permissions.isEditor && (
+                    {album.permissions.isAdmin && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} />}
+                    {!album.permissions.isAdmin && album.permissions.isEditor && (
                         <PhotosUploadButton
                             type="norm"
                             shareId={shareId}
@@ -101,6 +105,7 @@ export const AlbumCoverHeader = ({
                             onFileUpload={onFileUpload}
                             onFileSkipped={onFileSkipped}
                             data-testid="upload-photos"
+                            isAlbumUpload
                         />
                     )}
                 </div>
