@@ -4,6 +4,7 @@ import {
     MAIL_PAGE_SIZE,
     NEXT_MESSAGE_ON_MOVE,
     PACKAGE_TYPE,
+    SHOW_MOVED,
     SWIPE_ACTION,
 } from '@proton/shared/lib/mail/mailSettings';
 
@@ -134,4 +135,19 @@ export const getArrayLengthRange = (arr?: any[]) => {
     }
 
     return '50+';
+};
+
+export const formatShowMoved = (showMoved: number) => {
+    switch (showMoved) {
+        case SHOW_MOVED.NONE:
+            return 'none';
+        case SHOW_MOVED.DRAFTS:
+            return 'drafts';
+        case SHOW_MOVED.SENT:
+            return 'sent';
+        case SHOW_MOVED.DRAFTS_AND_SENT:
+            return 'drafts and sent';
+    }
+
+    return 'unknown';
 };
