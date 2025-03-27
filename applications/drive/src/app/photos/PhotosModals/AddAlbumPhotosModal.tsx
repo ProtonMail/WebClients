@@ -65,13 +65,13 @@ const AlbumSquare = ({
                     />
                 ) : (
                     <div
-                        className="object-cover w-custom h-custom rounded overflow-hidden flex items-center bg-strong p-1"
+                        className="object-cover w-custom h-custom rounded overflow-hidden flex justify-center items-center bg-strong p-1"
                         style={{
                             '--w-custom': '2.5rem',
                             '--h-custom': '2.5rem',
                         }}
                     >
-                        <Icon name="image" size={10} />
+                        <Icon name="album" />
                     </div>
                 )}
                 <span className="grow-2 text-left text-ellipsis">{album.name}</span>
