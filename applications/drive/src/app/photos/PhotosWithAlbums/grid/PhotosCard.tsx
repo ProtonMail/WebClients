@@ -27,7 +27,10 @@ type Props = {
     style: CSSProperties;
     onClick: () => void;
     onSelect: (isSelected: boolean) => void;
+    onFavorite?: () => void;
     hasSelection: boolean;
+    isFavorite: boolean;
+    isOwnedByCurrentUser: boolean;
 };
 
 const getAltText = ({ mimeType, name }: DecryptedLink) =>
@@ -40,8 +43,11 @@ export const PhotosCard: FC<Props> = ({
     photo,
     onClick,
     onSelect,
+    onFavorite,
     selected,
     hasSelection,
+    isFavorite,
+    isOwnedByCurrentUser,
 }) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
@@ -91,12 +97,6 @@ export const PhotosCard: FC<Props> = ({
         [onClick]
     );
 
-    const showCheckbox = hasSelection;
-
-    const [isFavorite, setisFavorite] = useState(false);
-
-    const isNotStorredInLibrary = false; // TO Do - connect to API
-
     return (
         /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <ButtonLike
@@ -107,7 +107,7 @@ export const PhotosCard: FC<Props> = ({
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
                 'relative photo-card p-0 border-none rounded',
                 isThumbnailLoading && 'photo-card--loading',
-                !showCheckbox && 'photo-card--hide-checkbox',
+                !hasSelection && 'photo-card--hide-checkbox',
                 selected && 'photo-card--selected'
             )}
             data-testid="photos-card"
@@ -138,15 +138,15 @@ export const PhotosCard: FC<Props> = ({
                     c('Info').t`Select item`
                 }
             ></Checkbox>
-            {!showCheckbox && (
+            {Boolean(!hasSelection && onFavorite) && (
                 <Tooltip title={isFavorite ? c('Action').t`Remove from favorites` : c('Action').t`Mark as favorite`}>
                     <button
                         type="button"
-                        className="absolute top-0 right-0 mr-2 mt-2 scale-fade-in photos-card-favorite-button"
+                        className="absolute top-0 right-0 mr-2 mt-2 scale-fade-in photos-card-favorite-button color-white-on-hover"
                         aria-pressed={isFavorite}
                         onClick={(e) => {
                             e.stopPropagation();
-                            setisFavorite(!isFavorite); // TO DO, really put it in favorite
+                            onFavorite?.();
                         }}
                     >
                         <Icon
@@ -172,8 +172,17 @@ export const PhotosCard: FC<Props> = ({
                             <FileIcon mimeType={photo.mimeType || ''} size={12} />
                         </div>
                     )}
-                    {(photo.signatureIssues || photo.isShared) && (
-                        <div className="absolute top-0 right-0 mr-2 mt-2 flex items-center gap-1">
+
+                    {(!isOwnedByCurrentUser || photo.signatureIssues || photo.isShared) && (
+                        <div className="absolute bottom-0 flex left-0 ml-2 mb-2 gap-1">
+                            {!isOwnedByCurrentUser && (
+                                <div
+                                    data-testid="photo-cloud-icon"
+                                    className="photos-card-bottom-icon rounded-50 color-white flex items-center justify-center"
+                                >
+                                    <Icon name="cloud" alt={c('Info').t`Photo is not saved to your library`} />
+                                </div>
+                            )}
                             {photo.signatureIssues && (
                                 <SignatureIcon
                                     isFile
@@ -183,40 +192,38 @@ export const PhotosCard: FC<Props> = ({
                                 />
                             )}
                             {photo.isShared && (
-                                <div className="photos-card-share-icon rounded-50 flex items-center justify-center">
+                                <div className="photos-card-bottom-icon rounded-50 flex items-center justify-center">
                                     <Icon name="users" color="white" size={3} />
                                 </div>
                             )}
                         </div>
                     )}
 
-                    {isNotStorredInLibrary && (
-                        <div className="absolute bottom-0 flex right-0 mr-2 mb-2 photo-card-video-cloud color-disabled">
-                            <Icon name="cloud" alt={c('Info').t`Photo is not saved to your library`} />
-                        </div>
-                    )}
-
                     {photo.mimeType && isVideo(photo.mimeType) && (
-                        <div
-                            className={clsx(
-                                'absolute bottom-0 flex right-0 items-center pl-1 mr-2 mb-2',
-                                !!photo.duration && 'rounded-full photo-card-video-info'
-                            )}
-                        >
-                            {photo.duration && (
-                                <time
-                                    className="text-semibold lh100 text-xs text-tabular-nums mr-0.5"
-                                    dateTime={formatDuration(
-                                        { seconds: Math.floor(photo.duration) },
-                                        {
-                                            locale: dateLocale,
-                                        }
+                        <div className="absolute bottom-0 flex right-0 mr-2 mb-2 gap-2">
+                            {photo.mimeType && isVideo(photo.mimeType) && (
+                                <div
+                                    className={clsx(
+                                        'flex items-center pl-1',
+                                        !!photo.duration && 'rounded-full photo-card-video-info'
                                     )}
                                 >
-                                    {formatVideoDuration(photo.duration)}
-                                </time>
+                                    {photo.duration && (
+                                        <time
+                                            className="text-semibold lh100 text-xs text-tabular-nums mr-0.5"
+                                            dateTime={formatDuration(
+                                                { seconds: Math.floor(photo.duration) },
+                                                {
+                                                    locale: dateLocale,
+                                                }
+                                            )}
+                                        >
+                                            {formatVideoDuration(photo.duration)}
+                                        </time>
+                                    )}
+                                    <img src={playCircleFilledIcon} alt="" />
+                                </div>
                             )}
-                            <img src={playCircleFilledIcon} alt="" />
                         </div>
                     )}
                 </div>
