@@ -156,6 +156,9 @@
       "Close this banner": [
         "Zavřít tento banner"
       ],
+      "Collapse": [
+        "Sbalit"
+      ],
       "Compose": [
         "Nová zpráva"
       ],
@@ -195,6 +198,9 @@
       "Copy invite link": [
         "Kopírovat odkaz pozvánky"
       ],
+      "Create": [
+        "Vytvořit"
+      ],
       "Create a copy": [
         "Vytvořit kopii"
       ],
@@ -206,6 +212,9 @@
       ],
       "Create folder": [
         "Vytvořit složku"
+      ],
+      "Create new folder": [
+        "Vytvořit novou složku"
       ],
       "Current plan": [
         "Aktuální tarif"
@@ -296,6 +305,9 @@
       ],
       "enable desktop notifications": [
         "povolit upozornění"
+      ],
+      "Expand": [
+        "Rozbalit"
       ],
       "Export": [
         "Exportovat"
@@ -428,6 +440,12 @@
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
+      ],
+      "Move": [
+        "Přesun"
+      ],
+      "Move to folder": [
+        "Přesunout do složky"
       ],
       "Move to trash": [
         "Přesunout do koše"
@@ -578,6 +596,9 @@
       ],
       "Search countries": [
         "Vyhledat země"
+      ],
+      "Search documents": [
+        "Hledat dokumenty"
       ],
       "See how": [
         "Podívejte se, jak"
@@ -749,6 +770,17 @@
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
         "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů"
+      ]
+    },
+    "Actions": {
+      "Last modified first": [
+        "Poslední upravené jako první"
+      ],
+      "Last viewed first": [
+        "Poslední zobrazené jako první"
+      ],
+      "Name": [
+        "Název"
       ]
     },
     "Actions message": {
@@ -4139,6 +4171,9 @@
       "Create your end-to-end encrypted document": [
         "Vytvořte svůj koncově šifrovaný dokument"
       ],
+      "Create your first folder and start moving your files.": [
+        "Vytvořte první složku a přesuňte soubory."
+      ],
       "Creating link to file": [
         "Vytváření odkazu na soubor"
       ],
@@ -4687,6 +4722,9 @@
       ],
       "Saving...": [
         "Ukládání..."
+      ],
+      "Select a folder to move to.": [
+        "Vyberte složku, do níž chcete přesunout."
       ],
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
@@ -5478,6 +5516,9 @@
       "Folder location": [
         "Umístění složky"
       ],
+      "Folder name": [
+        "Název složky"
+      ],
       "Forwards to": [
         "Přeposílá na"
       ],
@@ -5567,6 +5608,9 @@
       ],
       "Move to Inbox": [
         "Přesunout do Doručené pošty"
+      ],
+      "My files": [
+        "Moje soubory"
       ],
       "Navigation": [
         "Navigace"
@@ -7367,6 +7411,24 @@
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
       ],
+      "Move ${ n } file": [
+        "Přesunout ${ n } soubor",
+        "Přesunout ${ n } soubory",
+        "Přesunout ${ n } souborů",
+        "Přesunout ${ n } souborů"
+      ],
+      "Move ${ n } folder": [
+        "Přesunout ${ n } složku",
+        "Přesunout ${ n } složky",
+        "Přesunout ${ n } složek",
+        "Přesunout ${ n } složek"
+      ],
+      "Move ${ n } item": [
+        "Přesunout ${ n } položku",
+        "Přesunout ${ n } položky",
+        "Přesunout ${ n } položek",
+        "Přesunout ${ n } položek"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Není dostatek místa pro nahrání ${ formattedTotal }"
       ],
@@ -7375,6 +7437,9 @@
       ],
       "Public link update access failed ": [
         "Přístup k aktualizaci veřejného odkazu selhal "
+      ],
+      "Root folder failed to be loaded": [
+        "Kořenovou složku se nepodařilo načíst"
       ],
       "Share invitation accepted successfully": [
         "Pozvánka ke sdílení úspěšně přijata"
@@ -7390,6 +7455,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Ukončení sdílení této položky selhalo"
+      ],
+      "Subfolder failed to be loaded": [
+        "Podsložku se nepodařilo načíst"
       ],
       "The document failed to be created": [
         "Vytvoření dokumentu selhalo"
@@ -7797,6 +7865,9 @@
       "Email": [
         "E-mail"
       ],
+      "Enter a new folder name": [
+        "Zadejte nový název složky"
+      ],
       "Filter groups": [
         "Filtrovat skupiny"
       ],
@@ -7940,6 +8011,38 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficiální e-mail od ${ BRAND_NAME }"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "Vytvořil/a"
+      ],
+      "Earlier": [
+        "Dříve"
+      ],
+      "Location": [
+        "Umístění"
+      ],
+      "Modified": [
+        "Upraveno"
+      ],
+      "Name": [
+        "Název"
+      ],
+      "Previous 30 days": [
+        "Předchozích 30 dní"
+      ],
+      "Previous 7 days": [
+        "Předchozích 7 dní"
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "Viewed": [
+        "Zobrazeno"
+      ],
+      "Yesterday": [
+        "Včera"
       ]
     },
     "Safety review": {
@@ -9118,6 +9221,9 @@
       "Coupon": [
         "Kupón"
       ],
+      "Create a new folder": [
+        "Vytvořit novou složku"
+      ],
       "Create contact": [
         "Vytvořit kontakt"
       ],
@@ -9264,6 +9370,9 @@
       ],
       "Get advanced protection": [
         "Získat pokročilou ochranu"
+      ],
+      "Get more from your VPN": [
+        "Získejte více ze své VPN"
       ],
       "Gift": [
         "Dárek"
@@ -9501,6 +9610,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Nyní můžete vytvořit neomezený počet složek a štítků"
+      ],
+      "You have no folders yet": [
+        "Zatím nemáte žádné složky"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze ${ planName } skončí ${ textDate }"

@@ -154,6 +154,9 @@
       "Close this banner": [
         "Fechar este painel"
       ],
+      "Collapse": [
+        "Recolher"
+      ],
       "Compose": [
         "Escrever"
       ],
@@ -193,6 +196,9 @@
       "Copy invite link": [
         "Copiar link de convite"
       ],
+      "Create": [
+        "Criar"
+      ],
       "Create a copy": [
         "Criar uma cópia"
       ],
@@ -204,6 +210,9 @@
       ],
       "Create folder": [
         "Criar pasta"
+      ],
+      "Create new folder": [
+        "Criar uma pasta"
       ],
       "Current plan": [
         "Plano atual"
@@ -290,6 +299,9 @@
       ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
+      ],
+      "Expand": [
+        "Expandir"
       ],
       "Export": [
         "Exportar"
@@ -425,6 +437,12 @@
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
+      ],
+      "Move": [
+        "Mover"
+      ],
+      "Move to folder": [
+        "Mover para pasta"
       ],
       "Move to trash": [
         "Mover para a lixeira"
@@ -747,6 +765,17 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ]
+    },
+    "Actions": {
+      "Last modified first": [
+        "Última modificação"
+      ],
+      "Last viewed first": [
+        "Última visualização"
+      ],
+      "Name": [
+        "Nome"
       ]
     },
     "Actions message": {
@@ -2366,6 +2395,17 @@
         "Sua assinatura ${ PLAN_NAMES[PLANS.PASS] } está com um preço especial de ${ price } por ano. Ao fazer downgrade para um plano Free, você perderá o desconto de forma definitiva, mesmo que faça upgrade novamente no futuro."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Baixar para Linux"
+      ],
+      "Download for macOS": [
+        "Baixar para macOS"
+      ],
+      "Download for Windows": [
+        "Baixar para Windows"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Abrir no ${ DRIVE_SHORT_APP_NAME }"
@@ -2889,6 +2929,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Não foi possível carregar o painel da VPN. Por favor, verifique sua conexão e tente novamente."
       ],
       "Unexpected error, we can't import the contacts": [
         "Erro inesperado, não podemos importar os contatos"
@@ -3848,12 +3891,21 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } já existe neste local."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } é ocultar seu endereço IP, para que os sites não possam identificá-lo."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mês)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Conexão automática**: Abra o aplicativo e conecte-se à VPN assim que você liga o deu dispositivo."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: impede vazamentos de dados bloqueando sua conexão com a internet caso a VPN caia inesperadamente."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de armazenamento bônus"
@@ -3874,8 +3926,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telefone apenas pode ser usado para verificar uma conta da ${ BRAND_NAME }"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Uma conexão segura é essencial ao trabalhar remotamente. Uma VPN protege os dados da empresa contra ameaças cibernéticas e mantém seu trabalho privado."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Um usuário é uma conta associada com um único nome de usuário, caixa de correio e pessoa"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Uma VPN criptografa sua conexão e oculta seu endereço IP, tornando muito mais difícil para qualquer pessoa rastrear ou monitorar sua navegação."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Uma VPN oculta seu endereço IP e criptografa sua atividade de navegação, dificultando para sites, anunciantes e provedores de serviços de internet (ISPs) rastrearem você ao longo do tempo."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Uma VPN é um túnel seguro entre seu dispositivo e a internet. Ela oculta sua localização e atividade do seu provedor de serviços de internet (ISP) e dos sites que você visita."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
@@ -3886,11 +3950,17 @@
       "Actions": [
         "Ações"
       ],
+      "Ad targeting": [
+        "Segmentação de anúncios"
+      ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Os anunciantes rastreiam sua navegação para exibir anúncios segmentados. O ${ VPN_APP_NAME } bloqueia rastreadores e anúncios, tornando sua conexão mais rápida e melhorando sua experiência online."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
@@ -3985,6 +4055,9 @@
       "Close this screen to exit.": [
         "Feche esta tela para sair."
       ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Conecte-se ao ${ VPN_APP_NAME } para navegar de forma privada."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contato associado ao grupo ${ contactGroupName }"
       ],
@@ -4028,6 +4101,9 @@
       ],
       "Create your end-to-end encrypted document": [
         "Crie seu documento criptografado de ponta a ponta"
+      ],
+      "Create your first folder and start moving your files.": [
+        "Crie sua primeira pasta e comece a mover seus arquivos."
       ],
       "Creating link to file": [
         "Criando link para o arquivo"
@@ -4218,6 +4294,9 @@
       "Free 5GB encrypted storage to get started": [
         "Armazenamento criptografado gratuito de 5 GB para começar"
       ],
+      "Geoblocking": [
+        "Bloqueio geográfico"
+      ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Receba atualizações por e-mail para comentários e sugestões adicionados nos seus documentos."
       ],
@@ -4226,6 +4305,9 @@
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Vá para ${ DRIVE_APP_NAME }"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Governos e provedores de serviços de internet (ISPs) podem monitorar sua atividade online. Ao ocultar seu IP real e criptografar sua atividade, sua navegação se torna privada."
       ],
       "here": [
         "aqui"
@@ -4270,6 +4352,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "Em países restritivos"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Na próxima etapa, poderá enviar um depósito usando um endereço Bitcoin."
       ],
@@ -4296,6 +4381,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece que você tentou enviar ${ uploadName } recentemente. Em caso de erros de envio, ${ replaceFile }. Se o envio ainda estiver em andamento, substituí-lo cancelará o envio em andamento."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "É melhor usar uma VPN o tempo todo. Mas aqui estão os momentos em que as ameaças cibernéticas podem ser mais altas:"
       ],
       "JCB logo": [
         "Logotipo JCB"
@@ -4388,6 +4476,9 @@
       "Monitor accounts": [
         "Monitor de contas"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "A maioria das redes Wi-Fi públicas é segura, mas algumas são vulneráveis, expondo você a ameaças cibernéticas. Uma VPN criptografa seu tráfego, mantendo você protegido."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
@@ -4424,11 +4515,17 @@
       "Not a valid URL": [
         "Não é uma URL válida"
       ],
+      "Not connected": [
+        "Não conectado"
+      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
       "Offline": [
         "Off-line"
+      ],
+      "On public WiFi networks": [
+        "Em redes WiFi públicas"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves de confiança foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
@@ -4537,6 +4634,9 @@
       "Primary": [
         "Principal"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "A navegação privada (ou modo \"incógnito\") é útil apenas para manter sua atividade oculta no seu dispositivo. Ela impede que seu navegador salve o histórico e os cookies, mas não o torna invisível. Seu provedor de serviços de internet (ISP), o administrador da rede e os sites que você visita ainda podem ver o que você faz online."
+      ],
       "Public documents are not yet enabled for your organization.": [
         "Os documentos públicos ainda não estão ativados na sua organização."
       ],
@@ -4569,6 +4669,12 @@
       ],
       "Saving...": [
         "Salvando..."
+      ],
+      "Scan the QR code with your mobile device": [
+        "Escaneie o código QR com seu dispositivo móvel"
+      ],
+      "Select a folder to move to.": [
+        "Selecione uma pasta para onde deseja mover."
       ],
       "Select a service provider to start": [
         "Selecione um provedor de serviços para começar"
@@ -4627,11 +4733,20 @@
       "Some edits are taking longer to sync than expected.": [
         "Algumas edições estão demorando mais do que o esperado para serem sincronizadas."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Alguns governos bloqueiam ou restringem o acesso a certos sites. Uma VPN ajuda a contornar a censura enquanto mantém sua atividade e identidade privadas."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Alguns sites e serviços de streaming bloqueiam conteúdo por região. Uma VPN permite que você contorne essas restrições e acesse a internet livremente."
+      ],
       "Something went wrong": [
         "Algo deu errado"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "\"Mantenha-se conectado de forma simples ativando as seguintes configurações de VPN:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
@@ -4645,6 +4760,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Vigilância"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -4706,8 +4824,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Este link foi criado com a versão antiga do Drive e não é possível modificá-lo. Exclua este link e crie um para alterar as configurações."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Isso significa que o seu provedor de serviços de internet e os sites que você visita não conseguem conectar suas informações pessoais com sua atividade online."
+      ],
       "This message will be presented again later": [
         "Esta mensagem será mostrada novamente mais tarde"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Esse código único pode ser usado por sites e provedores de serviços de internet para vincular sua localização e histórico de navegação ao seu dispositivo."
       ],
       "This will permanently delete the file you uploaded.": [
         "Isso excluirá permanentemente o arquivo que você enviou."
@@ -4766,6 +4890,9 @@
       "Total VPN connections": [
         "Conexões VPN adicionais"
       ],
+      "Tracking": [
+        "Rastreamento"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "A transferência do arquivo \"${ name }\" foi cancelado"
       ],
@@ -4814,6 +4941,9 @@
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
       ],
+      "VPN IP": [
+        "IP do VPN"
+      ],
       "Warning": [
         "Alerta"
       ],
@@ -4861,6 +4991,12 @@
       ],
       "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
         "Quando o diálogo abrir, selecione \"PDF\" no canto inferior esquerdo e, em seguida, clique em Salvar."
+      ],
+      "When working remotely": [
+        "Principalmente trabalhando remotamente "
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Quando você se conecta a uma VPN, ela utiliza tecnologia de criptografia para ocultar seu endereço IP (código único atribuído ao seu dispositivo)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
@@ -5030,6 +5166,15 @@
       "Your information was found on ${ displayedDate }": [
         "Sua informação foi encontrada em ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Seu provedor de serviços de internet pode monitorar e, às vezes, vender seus dados, ou até mesmo restringir quais sites você pode acessar."
+      ],
+      "Your IP": [
+        "Seu IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Seu endereço IP se torna visível e pode ser usado para rastrear sua atividade online."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
       ],
@@ -5039,11 +5184,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
       ],
+      "Your online activity is protected": [
+        "Sua atividade on-line está protegida"
+      ],
       "Your password was leaked:": [
         "Sua senha foi vazada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Sua localização física é visível e pode ser utilizada para limitar seu acesso à internet."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Seu plano começa em ${ renewalTime } e será renovado automaticamente a cada ${ cycle } mês.",
@@ -5347,6 +5498,9 @@
       "Folder location": [
         "Localização da pasta"
       ],
+      "Folder name": [
+        "Nome da pasta"
+      ],
       "Forwards to": [
         "Encaminhar para"
       ],
@@ -5589,6 +5743,15 @@
       ],
       "Your alias": [
         "Seu alias"
+      ],
+      "Your IP": [
+        "Seu IP"
+      ],
+      "Your ISP": [
+        "Seu ISP"
+      ],
+      "Your location": [
+        "Sua localização"
       ],
       "Your password (admin)": [
         "Sua senha (admin)"
@@ -7215,6 +7378,18 @@
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
+      "Move ${ n } file": [
+        "Mover ${ n } arquivo",
+        "Mover ${ n } arquivos"
+      ],
+      "Move ${ n } folder": [
+        "Mover ${ n } pasta",
+        "Mover ${ n } pastas"
+      ],
+      "Move ${ n } item": [
+        "Mover ${ n } item",
+        "Mover ${ n } itens"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Não há espaço suficiente para fazer o envio de ${ formattedTotal }"
       ],
@@ -7223,6 +7398,9 @@
       ],
       "Public link update access failed ": [
         "Falha no acesso à atualização do link público "
+      ],
+      "Root folder failed to be loaded": [
+        "Erro ao carregar a pasta raiz"
       ],
       "Share invitation accepted successfully": [
         "Convite para compartilhamento aceito com sucesso"
@@ -7236,6 +7414,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
+      ],
+      "Subfolder failed to be loaded": [
+        "Não foi possível carregar a subpasta."
       ],
       "The document failed to be created": [
         "O documento não foi criado."
@@ -7639,6 +7820,9 @@
       "Email": [
         "E-mail"
       ],
+      "Enter a new folder name": [
+        "Digite o nome para nova pasta"
+      ],
       "Filter groups": [
         "Filtrar grupos"
       ],
@@ -7782,6 +7966,9 @@
       "Created by": [
         "Criado por"
       ],
+      "Earlier": [
+        "Anterior"
+      ],
       "Location": [
         "Localização"
       ],
@@ -7791,8 +7978,20 @@
       "Name": [
         "Nome"
       ],
+      "Previous 30 days": [
+        "Últimos 30 dias"
+      ],
+      "Previous 7 days": [
+        "Últimos 7 dias"
+      ],
+      "Today": [
+        "Hoje"
+      ],
       "Viewed": [
         "Visualizado"
+      ],
+      "Yesterday": [
+        "Ontem"
       ]
     },
     "Safety review": {
@@ -8897,6 +9096,9 @@
       "Coupon": [
         "Cupom"
       ],
+      "Create a new folder": [
+        "Criar uma pasta"
+      ],
       "Create contact": [
         "Criar contato"
       ],
@@ -8956,6 +9158,9 @@
       "Deleting contacts": [
         "Excluindo contatos"
       ],
+      "Desktop": [
+        "Área de trabalho"
+      ],
       "Details": [
         "Detalhes"
       ],
@@ -8979,6 +9184,9 @@
       ],
       "Download ${ date }": [
         "Baixar ${ date }"
+      ],
+      "Download the app": [
+        "Baixar aplicativo"
       ],
       "Download unverified file?": [
         "Baixar arquivo não verificado?"
@@ -9040,6 +9248,9 @@
       "Get advanced protection": [
         "Obter proteção avançada"
       ],
+      "Get more from your VPN": [
+        "Obter mais da sua VPN"
+      ],
       "Gift": [
         "Presente"
       ],
@@ -9054,6 +9265,9 @@
       ],
       "High security for your account": [
         "Segurança elevada para sua conta"
+      ],
+      "How does it all work?": [
+        "Como tudo isso funciona?"
       ],
       "Human verification": [
         "Verificação humana"
@@ -9086,6 +9300,9 @@
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Faça uma cópia para o seu ${ DRIVE_APP_NAME }"
       ],
+      "Make a secure connection your default": [
+        "Estabeleça uma conexão segura como padrão"
+      ],
       "Manage secure link": [
         "Gerenciar link seguro"
       ],
@@ -9097,6 +9314,9 @@
       ],
       "Minicalendar": [
         "Mini calendário"
+      ],
+      "Mobile": [
+        "Celular"
       ],
       "My files": [
         "Meus arquivos"
@@ -9151,6 +9371,9 @@
       ],
       "Photos": [
         "Fotos"
+      ],
+      "Private browsing vs VPN": [
+        "Navegação privada vs VPN"
       ],
       "Processing...": [
         "Processando..."
@@ -9263,17 +9486,32 @@
       "Verifying your payment...": [
         "Verificando seu pagamento..."
       ],
+      "VPN explained": [
+        "VPN explicada"
+      ],
       "Warning": [
         "Aviso"
       ],
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
       ],
+      "What can a VPN protect you from?": [
+        "Como uma VPN pode te proteger?"
+      ],
+      "What is a VPN?": [
+        "O que é uma VPN?"
+      ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
       ],
+      "When is it most important to use a VPN?": [
+        "Quando é mais importante usar uma VPN?"
+      ],
       "You can now create unlimited folders and labels": [
         "Agora você pode criar pastas e etiquetas ilimitadas."
+      ],
+      "You have no folders yet": [
+        "Você ainda não tem pastas"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do ${ planName } termina em ${ textDate }"
