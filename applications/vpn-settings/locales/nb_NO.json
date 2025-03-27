@@ -328,6 +328,9 @@
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
       ],
+      "Explore ${ target }": [
+        "Utforsk ${ target }"
+      ],
       "Explore group plans": [
         "Utforsk gruppeplaner"
       ],
@@ -3862,6 +3865,9 @@
         "${ hasTwoFAMembersLength }${ canHaveTwoFAMembersLength } av ikke-SSO-medlemmene bruker tofaktorautentisering for å logge på organisasjonen.",
         "${ hasTwoFAMembersLength }${ canHaveTwoFAMembersLength } av ikke-SSO-medlemmene bruker tofaktorautentisering for å logge på organisasjonen."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og det andre passordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
       ],
@@ -4148,9 +4154,6 @@
       "By leaving now, changes may not be saved": [
         "Ved å forlate nå, kan det hende at endringer ikke lagres"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Kalender, integrert med ${ MAIL_APP_NAME } og ${ CONTACTS_APP_NAME }"
-      ],
       "Can’t access your recovery email?": [
         "Får du ikke tilgang til gjenopprettings-e-posten din?"
       ],
@@ -4371,11 +4374,11 @@
       "email": [
         "e-post"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-post og kalender, integrert med ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "E-posttjeneste, integrert med ${ CALENDAR_APP_NAME } og ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferanse for sending av e-post lagret"
