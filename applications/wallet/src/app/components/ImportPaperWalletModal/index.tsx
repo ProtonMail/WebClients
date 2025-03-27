@@ -31,6 +31,7 @@ import {
     convertAmountStr,
     getExchangeRateFromBitcoinUnit,
     getLabelByUnit,
+    isUndefined,
     signAndBroadcastPsbt,
 } from '../../utils';
 import { SecondaryAmount } from '../BitcoinSendModal/SecondaryAmount';
@@ -99,7 +100,7 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
         const accountWithChainData = account && walletsChainData[account.WalletID]?.accounts[account.ID];
         const wasmAccount = accountWithChainData?.account;
 
-        if (wasmAccount && network && bitcoinAddressIndex) {
+        if (wasmAccount && !isUndefined(network) && bitcoinAddressIndex) {
             try {
                 const feeRate = getFeesByBlockTarget(PriorityTargetBlock.MedianPriorityTargetBlock) ?? MIN_FEE_RATE;
                 const draftPsbt = await new WasmAccountSweeper(blockchainClient, wasmAccount).getSweepWifPsbt(
@@ -136,10 +137,10 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
     const onPaperWalletSubmit = async () => {
         const accountWithChainData = account && walletsChainData[account.WalletID]?.accounts[account.ID];
         const wasmAccount = accountWithChainData?.account;
-        if (wasmAccount && network && bitcoinAddressIndex) {
+        if (wasmAccount && !isUndefined(network) && bitcoinAddressIndex) {
             try {
                 // Typeguard
-                if (!psbt || !account || !network || !userKeys) {
+                if (!psbt || !account || !userKeys) {
                     return;
                 }
 
