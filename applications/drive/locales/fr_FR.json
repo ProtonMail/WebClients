@@ -1479,7 +1479,7 @@
         "Essayez ${ upsellPlanName } et conservez l'accès à toutes les fonctionnalités premium de messagerie et de calendrier."
       ],
       "Ultra fast and private VPN": [
-        "Un VPN ultrarapide et privé"
+        "Un VPN ultra-rapide et privé"
       ]
     },
     "Checkout row": {
@@ -2692,6 +2692,17 @@
         "Votre abonnement ${ PLAN_NAMES[PLANS.PASS] } est au prix réduit de ${ price } par an. En passant à un abonnement gratuit, vous perdrez définitivement cette remise, même si vous décidez ensuite de passer à nouveau à un abonnement payant."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Télécharger la version pour Linux"
+      ],
+      "Download for macOS": [
+        "Télécharger la version pour macOS"
+      ],
+      "Download for Windows": [
+        "Télécharger la version pour Windows"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Ouvrir dans ${ DRIVE_SHORT_APP_NAME }"
@@ -3778,11 +3789,18 @@
         "Ajouter ${ photos.length } photo à",
         "Ajouter ${ photos.length } photos à"
       ],
+      "Add to shared album": [
+        "Ajouter à l'album partagé"
+      ],
       "All albums": [
         "Tous les albums"
       ],
       "Recent": [
         "Récents"
+      ],
+      "Share ${ photos.length } photo via": [
+        "Partager ${ photos.length } photo via",
+        "Partager ${ photos.length } photos via"
       ]
     },
     "Hint": {
@@ -4329,6 +4347,9 @@
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
+      "Ad targeting": [
+        "Ciblage publicitaire"
+      ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
       ],
@@ -4443,9 +4464,6 @@
       "Calendar side panel": [
         "Panneau latéral du calendrier"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendrier intégré à ${ MAIL_APP_NAME } et ${ CONTACTS_APP_NAME }"
-      ],
       "Canceled": [
         "Annulé"
       ],
@@ -4488,11 +4506,11 @@
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
       ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Espace de stockage cloud intégré à ${ DOCS_APP_NAME }"
-      ],
       "Conflict": [
         "Conflit"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Connectez-vous à ${ VPN_APP_NAME } pour surfer en privé."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Le contact a été ajouté au groupe ${ contactGroupName }."
@@ -4641,9 +4659,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
       ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Service de messagerie intégré à ${ CALENDAR_APP_NAME } et ${ CONTACTS_APP_NAME }"
-      ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
       ],
@@ -4756,6 +4771,9 @@
       "from the version history?": [
         "de l'historique des versions ?"
       ],
+      "Geoblocking": [
+        "Géoblocage"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Téléchargez l'application pour sauvegarder vos photos depuis votre téléphone ou importez-les ici."
       ],
@@ -4819,6 +4837,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
+      ],
+      "In restrictive countries": [
+        "Dans les pays avec des restrictions"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "À l'étape suivante, vous pourrez effectuer un versement à l'aide d'une adresse Bitcoin."
@@ -5004,6 +5025,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Certains fichiers n'ont pas été transférés. Essayez à nouveau de les charger/télécharger."
       ],
+      "Not connected": [
+        "Non connecté"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Remarque : les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
       ],
@@ -5012,6 +5036,9 @@
       ],
       "of": [
         "sur"
+      ],
+      "On public WiFi networks": [
+        "Sur les réseaux wifi publics"
       ],
       "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
         "Une fois ce processus terminé, vous trouverez une copie de vos données restaurées dans un nouveau dossier appelé « Récupération automatique (date du jour) ». Cette copie de vos données ne sera pas comptabilisée dans votre quota de stockage."
@@ -5051,9 +5078,6 @@
       ],
       "password": [
         "mot de passe"
-      ],
-      "Password manager with extra account security": [
-        "Gestionnaire de mots de passe avec sécurité de compte supplémentaire"
       ],
       "Paused": [
         "En pause"
@@ -5231,6 +5255,9 @@
       "Scan issue": [
         "Problème d'analyse"
       ],
+      "Scan the QR code with your mobile device": [
+        "Scannez le QR code avec votre appareil mobile."
+      ],
       "Search cannot be enabled in this browser": [
         "La recherche ne peut pas être activée dans ce navigateur."
       ],
@@ -5260,9 +5287,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé, en fonction du nombre de calendriers disponibles dans votre abonnement."
-      ],
-      "Self-custodial crypto wallet": [
-        "Portefeuille de cryptomonnaies en autogestion"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Les paiements via SEPA ne sont pas disponibles pour l'instant. Réessayez ultérieurement."
@@ -5333,6 +5357,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Restez connecté facilement en activant les paramètres VPN suivants :"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
       ],
@@ -5345,6 +5372,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Surveillance"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -5428,6 +5458,9 @@
       "This month": [
         "Ce mois-ci"
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Ce code unique peut être utilisé par les sites web et les FAI (Fournisseurs d'accès internet) pour lier votre emplacement et votre historique de navigation à votre appareil."
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Cette action supprimera uniquement l'album. Vos photos resteront dans votre fil d’actualité. Cette action ne peut être annulée."
       ],
@@ -5502,6 +5535,9 @@
       ],
       "Total VPN connections": [
         "Nombre total de connexions VPN"
+      ],
+      "Tracking": [
+        "Traçage"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Le transfert a été annulé pour le fichier « ${ name } »."
@@ -5599,8 +5635,8 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN avec adresses IP et serveurs dédiés"
+      "VPN IP": [
+        "Adresse IP du VPN"
       ],
       "Want to sync files faster?": [
         "Vous voulez synchroniser vos fichiers plus rapidement ?"
@@ -5655,6 +5691,9 @@
       ],
       "What would you like to do?": [
         "Que voulez-vous faire ?"
+      ],
+      "When working remotely": [
+        "Lorsque vous travaillez à distance"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
@@ -5848,6 +5887,9 @@
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
       ],
+      "Your IP": [
+        "Votre IP"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
       ],
@@ -5856,6 +5898,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Votre prochaine date de facturation est le ${ renewalTime }. Veuillez contacter l'assistance si vous avez besoin de changer d'abonnement tout de suite."
+      ],
+      "Your online activity is protected": [
+        "Votre activité en ligne est protégée."
       ],
       "Your password was leaked:": [
         "Votre mot de passe a été exposé :"
@@ -6555,6 +6600,15 @@
       ],
       "Your alias": [
         "Votre alias"
+      ],
+      "Your IP": [
+        "Votre IP"
+      ],
+      "Your ISP": [
+        "Votre FAI"
+      ],
+      "Your location": [
+        "Votre emplacement"
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
@@ -10529,6 +10583,9 @@
       "Deleting contacts": [
         "Suppression des contacts"
       ],
+      "Desktop": [
+        "Bureau"
+      ],
       "Details": [
         "Informations"
       ],
@@ -10546,6 +10603,9 @@
       ],
       "Download ${ date }": [
         "Télécharger ${ date }"
+      ],
+      "Download the app": [
+        "Télécharger l'application"
       ],
       "Download unverified file?": [
         "Télécharger le fichier non vérifié ?"
@@ -10626,6 +10686,9 @@
       "Get advanced protection": [
         "Obtenir une protection avancée"
       ],
+      "Get more from your VPN": [
+        "Tirez le meilleur parti de votre VPN"
+      ],
       "Gift": [
         "Cadeau"
       ],
@@ -10643,6 +10706,9 @@
       ],
       "Hm, we couldn't find that one": [
         "Nous n'avons pas trouvé cet élément."
+      ],
+      "How does it all work?": [
+        "Comment est-ce que tout cela fonctionne ?"
       ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
@@ -10692,6 +10758,9 @@
       ],
       "Minicalendar": [
         "Mini calendrier"
+      ],
+      "Mobile": [
+        "Mobile"
       ],
       "Modified": [
         "Modifié"
@@ -10952,8 +11021,17 @@
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
       ],
+      "What can a VPN protect you from?": [
+        "De quoi un VPN peut-il vous protéger ?"
+      ],
+      "What is a VPN?": [
+        "Qu'est-ce qu'un VPN ?"
+      ],
       "What would you like to import?": [
         "Que voulez-vous importer ?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Quand est-il le plus important d’utiliser un VPN ?"
       ],
       "You can now create unlimited folders and labels": [
         "Vous pouvez maintenant créer un nombre illimité de labels et de dossiers."
@@ -10998,11 +11076,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
     "Tooltip": {
@@ -11086,6 +11159,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
     "Validation": {

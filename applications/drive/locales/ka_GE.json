@@ -3771,11 +3771,18 @@
         "${ photos.length } სურათის დამატება",
         "${ photos.length } სურათის დამატება"
       ],
+      "Add to shared album": [
+        "დამატება გაზიარებულ ალბომში"
+      ],
       "All albums": [
         "ყველა ალბომი"
       ],
       "Recent": [
         "უახლესი"
+      ],
+      "Share ${ photos.length } photo via": [
+        "${ photos.length } სურათის გაზიარება სერვისით",
+        "${ photos.length } სურათის გაზიარება სერვისით"
       ]
     },
     "Hint": {
@@ -4430,9 +4437,6 @@
       "Calendar side panel": [
         "კალენდრის გვერდითი პანელი"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "კალენდარი, ინტეგრირებულია ${ MAIL_APP_NAME }-სთან და ${ CONTACTS_APP_NAME }-სთან"
-      ],
       "Canceled": [
         "გაუქმებულია"
       ],
@@ -4474,9 +4478,6 @@
       ],
       "Close this screen to exit.": [
         "გასასვლელად დახურეთ ეს ეკრანი."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "ღრუბლოვანი საცავი, ინტეგრირებულია ${ DOCS_APP_NAME }-სთან"
       ],
       "Conflict": [
         "კონფლიქტი"
@@ -4627,9 +4628,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "ელფოსტის ჰოსტინგი ხელმისაწვდომია, მხოლოდ, იმ დომენებისთვის, რომლებსაც უკვე ფლობთ. დომენის რეგისტრაცია, ამჟამად, არ არის ხელმისაწვდომი ${ BRAND_NAME }-ის საშუალებით. დომენის შეძენა ნებისმიერ რეგისტრატორთან შეგიძლიათ."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "ელფოსტის სერვისები, ინტეგრირებულია ${ CALENDAR_APP_NAME }-სთან და ${ CONTACTS_APP_NAME }-სთან"
       ],
       "Emails are automatically signed": [
         "ელფოსტების ხელმოწერა ავტომატურია"
@@ -5033,9 +5031,6 @@
       "password": [
         "პაროლი"
       ],
-      "Password manager with extra account security": [
-        "პაროლების მმართველი დამატებითი ანგარიშის უსაფრთხოებით"
-      ],
       "Paused": [
         "შეჩერებულია"
       ],
@@ -5241,9 +5236,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
-      ],
-      "Self-custodial crypto wallet": [
-        "თვითმართვადი კრიპტოსაფულე"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA გადახდები ამჟამად ხელმისაწვდომი არაა. მოგვიანებით სცადეთ."
@@ -5560,9 +5552,6 @@
       ],
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
-      ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN გამოყოფილი სერვერებითა და IP მისამართებით"
       ],
       "Want to sync files faster?": [
         "გნებავთ უფრო სწრაფი სინქრონიზაცია?"
@@ -7990,6 +7979,14 @@
       "${ count } item failed to be decrypted": [
         "${ count } ელემენტის გაშიფვრის შეცდომა",
         "${ count } ელემენტის გაშიფვრის შეცდომა"
+      ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "ჩავარდა ${ nbFailures } სურათის დამატება \"${ albumName }\"-ში",
+        "ჩავარდა ${ nbFailures } სურათის დამატება \"${ albumName }\"-ში"
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } სურათი დაემატა \"${ albumName }\"-ში",
+        "${ nbSuccesses } სურათი დაემატა \"${ albumName }\"-ში"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } ელემენტის წაიშალა",
@@ -10481,6 +10478,9 @@
       "Get advanced protection": [
         "დამატებითი უსაფრთხოების მიღება"
       ],
+      "Get more from your VPN": [
+        "მიიღეთ მეტი თქვენი VPN-სგან"
+      ],
       "Gift": [
         "საჩუქარი"
       ],
@@ -10855,11 +10855,6 @@
         "დღეს"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "დაამატეთ ეს გაზიარებული ფაილი თქვენს ${ DRIVE_APP_NAME }-ზე მოგვიანებით იოლი წვდომისთვის."
@@ -10941,6 +10936,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "ჩვენ მათ მოწვევა გავუგზავნეთ ელემენტთან წვდომისთვის."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ]
     },
     "Validation": {
