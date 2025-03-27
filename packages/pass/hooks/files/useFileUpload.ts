@@ -6,8 +6,9 @@ import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequ
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
-import type { FileChunkUploadDTO, FileID, Maybe, MaybeNull } from '@proton/pass/types';
+import type { FileChunkUploadDTO, FileID, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { abortable } from '@proton/pass/utils/fp/promises';
 
 /** In web/desktop, the uploading happens on the same JS context, we can
  * pass blob references around. In the extension, store each chunk to the
@@ -25,56 +26,56 @@ const getChunkDTO = async (fileID: string, index: number, blob: Blob): Promise<F
 export const useFileUpload = () => {
     const { onTelemetry } = usePassCore();
     const dispatch = useAsyncRequestDispatch();
-    const ctrl = useRef<MaybeNull<AbortController>>(null);
 
-    const uploadFile = useCallback(async (file: File, chunkSize: number = FILE_CHUNK_SIZE): Promise<Maybe<FileID>> => {
+    const ctrls = useRef(new Map<string, AbortController>());
+
+    const cancel = useCallback((uploadID: string) => {
+        if (uploadID === '*') {
+            ctrls.current.forEach((ctrl) => ctrl.abort());
+            ctrls.current = new Map();
+        } else {
+            ctrls.current.get(uploadID)?.abort();
+            ctrls.current.delete(uploadID);
+        }
+    }, []);
+
+    const start = useCallback(async (file: File, uploadID: string): Promise<Maybe<FileID>> => {
+        let fileID: Maybe<string>;
+
         try {
+            const ctrl = new AbortController();
+            ctrls.current.set(uploadID, ctrl);
+
             const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
             const mimeType = PassCoreUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
-
             const fileSize = file.size;
-            const totalChunks = Math.ceil(file.size / chunkSize);
+            const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
 
             const res = await dispatch(fileUploadInitiate, { name: file.name, mimeType, totalChunks });
 
             if (res.type === 'success') {
-                ctrl.current = new AbortController();
-                const { signal } = ctrl.current;
-
-                const fileID = res.data;
+                fileID = res.data;
 
                 for (let index = 0; index < totalChunks; index++) {
                     const start = index * FILE_CHUNK_SIZE;
                     const end = Math.min(start + FILE_CHUNK_SIZE, fileSize);
                     const blob = file.slice(start, end);
                     const dto = await getChunkDTO(fileID, index, blob);
-
-                    await Promise.race([
-                        dispatch(fileUploadChunk, dto),
-                        new Promise((_, reject) =>
-                            signal.addEventListener('abort', () => reject(new Error('Upload cancelled')))
-                        ),
-                    ]);
+                    await abortable(() => dispatch(fileUploadChunk, dto), ctrl.signal);
                 }
 
                 onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
-
-                if (EXTENSION_BUILD) await fileStorage.deleteFile(`${fileID}.chunk`);
                 return fileID;
             }
         } catch (e) {
             throw e;
         } finally {
-            ctrl.current = null;
+            if (EXTENSION_BUILD) await fileStorage.deleteFile(`${fileID}.chunk`);
+            cancel(uploadID);
         }
     }, []);
 
-    const cancelUpload = useCallback(() => {
-        ctrl.current?.abort();
-        ctrl.current = null;
-    }, []);
+    useEffect(() => () => cancel('*'), []);
 
-    useEffect(() => cancelUpload, []);
-
-    return useMemo(() => ({ uploadFile, cancelUpload }), []);
+    return useMemo(() => ({ start, cancel }), []);
 };
