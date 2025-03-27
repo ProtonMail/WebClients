@@ -153,6 +153,9 @@
       "Close this banner": [
         "Закрити цей банер"
       ],
+      "Collapse": [
+        "Згорнути"
+      ],
       "Compose": [
         "Написати"
       ],
@@ -189,6 +192,9 @@
       "Copy invite link": [
         "Копіювати посилання запрошення"
       ],
+      "Create": [
+        "Створити"
+      ],
       "Create a copy": [
         "Створити копію"
       ],
@@ -200,6 +206,9 @@
       ],
       "Create folder": [
         "Створити теку"
+      ],
+      "Create new folder": [
+        "Створити нову теку"
       ],
       "Current plan": [
         "Поточний тарифний план"
@@ -290,6 +299,9 @@
       ],
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
+      ],
+      "Expand": [
+        "Розгорнути"
       ],
       "Export": [
         "Експортувати"
@@ -410,6 +422,12 @@
       ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
+      ],
+      "Move": [
+        "Перемістити"
+      ],
+      "Move to folder": [
+        "Перемістити до теки"
       ],
       "Move to trash": [
         "Перемістити до смітника"
@@ -4039,6 +4057,9 @@
       "Create your end-to-end encrypted document": [
         "Створити документ із наскрізним шифруванням"
       ],
+      "Create your first folder and start moving your files.": [
+        "Створіть свою першу теку та почніть переміщувати свої файли."
+      ],
       "Creating link to file": [
         "Створення посилання на файл"
       ],
@@ -4557,6 +4578,9 @@
       ],
       "Saving...": [
         "Збереження..."
+      ],
+      "Select a folder to move to.": [
+        "Виберіть теку для переміщення."
       ],
       "Select a service provider to start": [
         "Виберіть постачальника послуг, щоб розпочати"
@@ -5270,6 +5294,9 @@
       ],
       "Folder location": [
         "Розташування теки"
+      ],
+      "Folder name": [
+        "Назва теки"
       ],
       "Forwards to": [
         "Пересилається на"
@@ -7101,6 +7128,24 @@
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
       ],
+      "Move ${ n } file": [
+        "Перемістити ${ n } файл",
+        "Перемістити ${ n } файли",
+        "Перемістити ${ n } файлів",
+        "Перемістити ${ n } файлів"
+      ],
+      "Move ${ n } folder": [
+        "Перемістити ${ n } теку",
+        "Перемістити ${ n } теки",
+        "Перемістити ${ n } тек",
+        "Перемістити ${ n } тек"
+      ],
+      "Move ${ n } item": [
+        "Перемістити ${ n } елемент",
+        "Перемістити ${ n } елементи",
+        "Перемістити ${ n } елементів",
+        "Перемістити ${ n } елементів"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостатньо місця для вивантаження ${ formattedTotal }"
       ],
@@ -7110,6 +7155,9 @@
       "Public link update access failed ": [
         "Не вдалося отримати доступ до публічного посилання "
       ],
+      "Root folder failed to be loaded": [
+        "Не вдалося завантажити кореневу теку"
+      ],
       "Share invitation accepted successfully": [
         "Запрошення на спільний доступ прийнято"
       ],
@@ -7118,6 +7166,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Не вдалося зупинити поширення елемента"
+      ],
+      "Subfolder failed to be loaded": [
+        "Не вдалося завантажити підтеку"
       ],
       "The link to your item failed to be deleted": [
         "Не вдалося видалити посилання на ваш елемент"
@@ -7377,6 +7428,9 @@
       ],
       "Email": [
         "Е-пошта"
+      ],
+      "Enter a new folder name": [
+        "Уведіть нову назву теки"
       ],
       "Filter groups": [
         "Фільтр груп"
@@ -8679,6 +8733,9 @@
       "Coupon": [
         "Купон"
       ],
+      "Create a new folder": [
+        "Створити нову теку"
+      ],
       "Create contact": [
         "Створити контакт"
       ],
@@ -9041,6 +9098,9 @@
       ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
+      ],
+      "You have no folders yet": [
+        "У вас поки немає тек"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш безплатний пробний період ${ planName } завершується ${ textDate }"

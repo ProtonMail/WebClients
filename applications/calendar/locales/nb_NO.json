@@ -3425,6 +3425,9 @@
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Kan ikke laste VPN-kontrollpanelet. Kontroller tilkoblingen og prøv på nytt."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Uventet feil, vi kan ikke importere kontaktene"
       ],
@@ -4481,6 +4484,12 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/måned)"
       ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatisk tilkobling**: åpnes og kobles til VPN så snart du slår på enheten."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Nødstopp**: stopper datalekkasjer ved å blokkere internett hvis VPN-en dropper ut uventet."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -4503,14 +4512,26 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "En sikker tilkobling er avgjørende når du jobber eksternt. Et VPN beskytter bedriftsdata mot cybertrusler og holder arbeidet ditt privat."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Et VPN skjuler IP-adressen din og krypterer nettleseraktiviteten din, noe som gjør det vanskeligere for nettsteder, annonsører og Internett-leverandører å spore deg over tid."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Et VPN er en sikker tunnel mellom enheten din og internett. Den skjuler posisjonen og aktiviteten din for internettleverandøren din (ISP) og nettstedene du besøker."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
       ],
       "Account successfully updated": [
         "Konto oppdatert"
+      ],
+      "Ad targeting": [
+        "Målretting mot annonser"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Tilføyde og fjernede deltakere vil bli varslet om alle hendelsene i denne serien."
@@ -4631,6 +4652,9 @@
       ],
       "Close this screen to exit.": [
         "Lukk dette skjermbildet for å avslutte."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Koble til ${ VPN_APP_NAME } for å surfe privat"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
@@ -4801,6 +4825,9 @@
       "Frequency modifications will be lost.": [
         "Frekvensendringer vil gå tapt."
       ],
+      "Geoblocking": [
+        "Geoblokkering"
+      ],
       "here": [
         "her"
       ],
@@ -4847,6 +4874,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "I restriktive land"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
       ],
@@ -4870,6 +4900,9 @@
       ],
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Det er best å bruke et VPN til enhver tid. Men her er når cybersikkerhetstrusler kan være høyest:"
       ],
       "JCB logo": [
         "JCB-logo"
@@ -4949,6 +4982,9 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
       ],
@@ -4987,6 +5023,9 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "Forekomster som tidligere er oppdatert av arrangøren vil bli beholdt."
+      ],
+      "On public WiFi networks": [
+        "På offentlige Wi-Fi-nettverk"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
@@ -5096,6 +5135,9 @@
         "Lagrer hendelse...",
         "Lagrer hendelser..."
       ],
+      "Scan the QR code with your mobile device": [
+        "Skann QR-koden med mobilenheten din"
+      ],
       "Select a service provider to start": [
         "Velg en tjenestetilbyder for å starte"
       ],
@@ -5129,11 +5171,20 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
+      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Noen av svarene dine på forekomster som tidligere er oppdatert av arrangøren vil gå tapt."
       ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
@@ -5244,6 +5295,9 @@
       "Total VPN connections": [
         "Totalt antall VPN-forbindelser"
       ],
+      "Tracking": [
+        "Sporing"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
       ],
@@ -5303,6 +5357,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Uke- og månedsvisninger gjelder bare for skrivebordet."
+      ],
+      "When working remotely": [
+        "Når du jobber eksternt"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
@@ -10052,6 +10109,9 @@
       ],
       "Get advanced protection": [
         "Få avansert beskyttelse"
+      ],
+      "Get more from your VPN": [
+        "Får mer ut av ditt VPN"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Skaff deg ${ appName[APP_NAME] }-appene"

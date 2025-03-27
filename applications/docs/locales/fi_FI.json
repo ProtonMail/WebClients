@@ -154,6 +154,9 @@
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
+      "Collapse": [
+        "Pienennä"
+      ],
       "Compose": [
         "Kirjoita"
       ],
@@ -193,6 +196,9 @@
       "Copy invite link": [
         "Kopioi kutsulinkki"
       ],
+      "Create": [
+        "Luo"
+      ],
       "Create a copy": [
         "Luo kopio"
       ],
@@ -204,6 +210,9 @@
       ],
       "Create folder": [
         "Luo kansio"
+      ],
+      "Create new folder": [
+        "Luo uusi kansio"
       ],
       "Current plan": [
         "Nykyinen tilaus"
@@ -290,6 +299,9 @@
       ],
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
+      ],
+      "Expand": [
+        "Laajenna"
       ],
       "Export": [
         "Vie"
@@ -422,6 +434,12 @@
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
+      ],
+      "Move": [
+        "Siirrä"
+      ],
+      "Move to folder": [
+        "Siirrä kansioon"
       ],
       "Move to trash": [
         "Siirrä roskakoriin"
@@ -4017,6 +4035,9 @@
       "Create your end-to-end encrypted document": [
         "Luo päästä päähän -salattu dokumenttisi"
       ],
+      "Create your first folder and start moving your files.": [
+        "Luo ensimmäinen kansiosi ja aloita tiedostojen siirto."
+      ],
       "Creating link to file": [
         "Luodaan linkkiä tiedostoon"
       ],
@@ -4545,6 +4566,9 @@
       ],
       "Saving...": [
         "Tallennetaan..."
+      ],
+      "Select a folder to move to.": [
+        "Valitse kohdekansio."
       ],
       "Select a service provider to start": [
         "Aloita valitsemalla palveluntarjoaja"
@@ -5292,6 +5316,9 @@
       ],
       "Folder location": [
         "Kansion sijainti"
+      ],
+      "Folder name": [
+        "Kansion nimi"
       ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
@@ -7088,8 +7115,23 @@
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
       ],
+      "Move ${ n } file": [
+        "Siirrä ${ n } tiedosto",
+        "Siirrä ${ n } tiedostoa"
+      ],
+      "Move ${ n } folder": [
+        "Siirrä ${ n } kansio",
+        "Siirrä ${ n } kansiota"
+      ],
+      "Move ${ n } item": [
+        "Siirrä ${ n } kohde",
+        "Siirrä ${ n } kohdetta"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
+      ],
+      "Root folder failed to be loaded": [
+        "Juurikansion lataus epäonnistui"
       ],
       "Share invitation accepted successfully": [
         "Jakokutsu hyväksyttiin"
@@ -7103,6 +7145,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Kohteen jakamisen lopetus epäonnistui"
+      ],
+      "Subfolder failed to be loaded": [
+        "Alikansion lataus epäonnistui"
       ],
       "The document failed to be created": [
         "Dokumentin luominen epäonnistui"
@@ -7459,6 +7504,9 @@
       ],
       "Email": [
         "Sähköposti"
+      ],
+      "Enter a new folder name": [
+        "Syötä kansion uusi nimi"
       ],
       "Filter groups": [
         "Suodata ryhmiä"
@@ -8701,6 +8749,9 @@
       "Coupon": [
         "Etukoodi"
       ],
+      "Create a new folder": [
+        "Luo uusi kansio"
+      ],
       "Create contact": [
         "Luo yhteystieto"
       ],
@@ -8840,6 +8891,9 @@
       ],
       "Get advanced protection": [
         "Hanki edistynyt suojaus"
+      ],
+      "Get more from your VPN": [
+        "Saa enemmän VPN-yhteydestäsi"
       ],
       "Gift": [
         "Lahja"
@@ -9072,6 +9126,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Voit nyt luoda rajattomasti kansioita ja tunnisteita"
+      ],
+      "You have no folders yet": [
+        "Kansioita ei vielä ole"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } -kokeilusi päättyy ${ textDate }"

@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Cifrar y exportar"
       ],
+      "Explore ${ target }": [
+        "Descubre ${ target }"
+      ],
       "Explore group plans": [
         "Descubre los planes de grupo"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "Guardar dirección"
       ],
+      "Save and continue": [
+        "Guardar y continuar"
+      ],
       "Save changes": [
         "Guardar los cambios"
       ],
@@ -1084,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecciona el país ${ country }"
       ],
-      "Select file": [
-        "Seleccionar un archivo"
-      ],
       "select file": [
         "seleccionar un archivo"
+      ],
+      "Select file": [
+        "Seleccionar un archivo"
       ],
       "Select files": [
         "Seleccionar archivos"
@@ -7067,6 +7073,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quiere compartir información contigo en ${ PASS_APP_NAME }."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Se puede también utilizar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la segunda contraseña. Para cambiar al modo de contraseña única, ingresa la contraseña única que quieres utilizar y haz clic en Guardar."
       ],
@@ -7569,9 +7578,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Al compartir todos los detalles de los eventos de este calendario, aceptas conceder a ${ BRAND_NAME } acceso a la información cifrada del calendario."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendario integrado con ${ MAIL_APP_NAME } y ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Cancela en cualquier momento"
       ],
@@ -7886,11 +7892,11 @@
       "Email address": [
         "Dirección de correo electrónico"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Email y calendario, integrado con ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para dominios que posees. El registro de dominios no está disponible a través de ${ BRAND_NAME }. Puedes alojar correos electrónicos para dominios registrados en cualquier registrador de dominios."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Servicio de correo electrónico integrado con ${ CALENDAR_APP_NAME } y ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferencias de correo guardadas"
@@ -7951,6 +7957,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Disfruta de una experiencia de correo electrónico más rápida y centrada con la aplicación de escritorio."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "¡Introduce una contraseña para finalizar tu cuenta ${ BRAND_NAME } y empieza a usar ${ VPN_APP_NAME } en todos tus dispositivos!"
       ],
       "Enter key manually instead": [
         "Introduce la clave manualmente"
@@ -9019,6 +9028,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Configura ${ MAIL_APP_NAME } como tu aplicación de correo electrónico por defecto. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
+      "Set password": [
+        "Definir una contraseña"
+      ],
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
       ],
@@ -9177,6 +9189,9 @@
       ],
       "Thank you": [
         "Gracias"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Gracias por elegir ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gracias por apoyar nuestra misión de construir un mejor internet donde la privacidad y la libertad son primero."
@@ -10122,6 +10137,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Podrás añadir estos servidores a otra puerta de enlace inmediatamente."
+      ],
+      "You’re all set": [
+        "¡Ya está todo listo!"
       ],
       "Zoom meeting": [
         "reunión de Zoom"
@@ -14460,8 +14478,8 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Obtén acceso de por vida a todas las funciones premium ${ PASS_APP_NAME } actuales y futuras con un solo pago único. "
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Obtén acceso de por vida a todas las funciones premium ${ PASS_APP_NAME } actuales y futuras con un solo pago único."
       ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Te damos la bienvenida a ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
@@ -16934,6 +16952,9 @@
       ],
       "Single sign-on removed": [
         "Se ha quitado el inicio de sesión único."
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "La dirección de correo electrónico ${ email } ya existe en ${ BRAND_NAME }. Inicia sesión con tus credenciales ${ BRAND_NAME } para continuar."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "El usuario ${ user } ahora tiene una cuenta con inicio de sesión única. Su contraseña anterior se ha convertido en su contraseña de respaldo."

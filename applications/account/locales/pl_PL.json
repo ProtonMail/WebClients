@@ -100,6 +100,9 @@
       "Add address or domain": [
         "Dodaj adres lub domenę"
       ],
+      "Add another account": [
+        "Dodaj inne konto"
+      ],
       "Add calendar from URL": [
         "Dodaj kalendarz z adresu URL"
       ],
@@ -676,6 +679,12 @@
       "Help": [
         "Pomoc"
       ],
+      "Help and feedback": [
+        "Pomoc i opinia"
+      ],
+      "Help and resources": [
+        "Pomoc i zasoby"
+      ],
       "Hide": [
         "Ukryj"
       ],
@@ -1024,6 +1033,9 @@
       "Save address": [
         "Zapisz adres"
       ],
+      "Save and continue": [
+        "Zapisz i kontynuuj"
+      ],
       "Save changes": [
         "Zapisz zmiany"
       ],
@@ -1072,11 +1084,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "Select file": [
-        "Wybierz plik"
-      ],
       "select file": [
         "wybierz plik"
+      ],
+      "Select file": [
+        "Wybierz plik"
       ],
       "Select files": [
         "Wybierz pliki"
@@ -1442,6 +1454,9 @@
       ],
       "${ price } per domain": [
         "${ price } za domenę"
+      ],
+      "${ price } per seat": [
+        "${ price } za licencję"
       ],
       "${ price } per user": [
         "${ price } za użytkownika"
@@ -1927,7 +1942,7 @@
         "Rocznie"
       ],
       "Lifetime": [
-        "Dożywotni"
+        "Dożywotnio"
       ],
       "Monthly": [
         "Miesięcznie"
@@ -1937,6 +1952,38 @@
       ],
       "Two-year": [
         "Co dwa lata"
+      ]
+    },
+    "Blog": {
+      "**Streaming** is included in your subscription.": [
+        "Subskrypcja zawiera wsparcie usług **streamingu**."
+      ],
+      "Get round-the-clock protection": [
+        "Całodobowa ochrona"
+      ],
+      "How safe is Telegram?": [
+        "Jak bezpieczny jest Telegram?"
+      ],
+      "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
+        "W tym artykule sprawdzimy, kto może zobaczyć historię przeglądania Internetu podczas korzystania z sieci Wi-Fi. Co można zobaczyć i dlaczego."
+      ],
+      "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
+        "Czy korzystanie z komunikatora Telegram jest bezpieczne? Jak omówimy w tym artykule, w dużej mierze zależy to od sposobu korzystania z niego."
+      ],
+      "Learn how to enable ${ VPN_APP_NAME } on your router.": [
+        "Dowiedz się jak włączyć ${ VPN_APP_NAME } na routerze."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Ten artykuł został zaktualizowany w celu uwzględnienia protokołów WireGuard i Stealth VPN."
+      ],
+      "Watch your favorite movies and TV shows": [
+        "Oglądaj ulubione filmy i programy telewizyjne"
+      ],
+      "Which VPN protocol is the best?": [
+        "Jaki protokół VPN jest najlepszy?"
+      ],
+      "Working with sensitive data?": [
+        "Pracujesz z poufnymi danymi?"
       ]
     },
     "breadcrumb": {
@@ -2161,7 +2208,7 @@
         "Udostępnij użytkownikom ${ BRAND_NAME }"
       ],
       "Share with anyone": [
-        "Udostępnij komukolwiek"
+        "Udostępnij"
       ]
     },
     "Calendar settings sidebar": {
@@ -3971,17 +4018,89 @@
       "Android": [
         "Android"
       ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
+      "Browser": [
+        "Przeglądarka"
+      ],
       "Chrome": [
         "Chrome"
+      ],
+      "Desktop": [
+        "Komputer"
+      ],
+      "Download for Linux": [
+        "Pobierz na Linuksa"
+      ],
+      "Download for MacOS": [
+        "Pobierz na macOS"
+      ],
+      "Download for Windows": [
+        "Pobierz na Windowsa"
+      ],
+      "Download on the Apple App Store": [
+        "Pobierz z App Store"
+      ],
+      "Download on the Google Play Store": [
+        "Pobierz z Google Play"
+      ],
+      "Fire TV": [
+        "Fire TV"
       ],
       "Firefox": [
         "Firefox"
       ],
+      "Get the app": [
+        "Pobierz aplikację"
+      ],
       "Get the extension": [
         "Pobierz rozszerzenie"
       ],
+      "iPhone/iPad": [
+        "iPhone / iPad"
+      ],
       "Linux": [
         "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Big Sur": [
+        "macOS Big Sur"
+      ],
+      "macOS Catalina": [
+        "macOS Catalina"
+      ],
+      "macOS Mojave or earlier": [
+        "macOS Mojave lub starszy"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "macOS Ventura or later": [
+        "macOS Ventura lub nowszy"
+      ],
+      "Mobile": [
+        "Telefon"
+      ],
+      "TV": [
+        "Telewizor"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "Windows 10/11 (ARM64)": [
+        "Windows 10 / 11 (ARM64)"
+      ],
+      "Windows 10/11 (x64)": [
+        "Windows 10 / 11 (x64)"
+      ],
+      "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
+        "Windows 8 / 8.1 / 7 lub Windows 32-bit (ARM64)"
       ]
     },
     "Download link": {
@@ -4059,7 +4178,7 @@
     },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.": [
-        "Pola tekstowe są opcjonalne. Informacje podane w tym formularzu zmienią tylko wybraną fakturę, a nie dane przyszłej faktury."
+        "Pola tekstowe są opcjonalne. Podane informacje zmienią tylko wybraną fakturę, a nie dane przyszłej faktury."
       ]
     },
     "Email": {
@@ -4606,7 +4725,7 @@
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
-        "Edytowanie adresu rozliczeniowego jest obecnie niedostępne. Spróbuj ponownie później."
+        "Edytowanie adresu rozliczeniowego nie jest obecnie dostępne. Spróbuj ponownie później."
       ],
       "Email address disabled": [
         "Adres e-mail został wyłączony"
@@ -4634,6 +4753,9 @@
       ],
       "Error in one of the conditions": [
         "Wystąpił błąd w co najmniej jednym warunku"
+      ],
+      "Error publishing changes.": [
+        "Wystąpił błąd podczas publikowania zmian."
       ],
       "Expired": [
         "Wygasł"
@@ -5213,7 +5335,7 @@
         "Strefa czasowa"
       ],
       "Time zone component ignored": [
-        "Element strefy czasowej ignorowany"
+        "Komponent strefy czasowej jest ignorowany"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -5778,6 +5900,9 @@
       "Continue": [
         "Kontynuuj"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Wszystko w planie ${ PLAN_NAMES[PLANS.VPN2024] }"
+      ],
       "Fastest VPN servers": [
         "Najszybsze serwery VPN"
       ],
@@ -5795,6 +5920,23 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Nieograniczona liczba aliasów hide-my-email"
+      ]
+    },
+    "Features": {
+      "and more premium features...": [
+        "i wiele więcej funkcji premium..."
+      ],
+      "Double VPN": [
+        "Podwójny VPN"
+      ],
+      "Lightning-fast speeds": [
+        "Błyskawiczne prędkości"
+      ],
+      "NetShield Ad-blocker": [
+        "Blokada reklam NetShield"
+      ],
+      "Secure streaming": [
+        "Bezpieczny streaming"
       ]
     },
     "fido2: Action": {
@@ -6456,8 +6598,17 @@
       ]
     },
     "Headline": {
+      "Compare plans": [
+        "Porównaj plany"
+      ],
       "Contact us": [
         "Skontaktuj się z nami"
+      ],
+      "Enjoying ${ planName }?": [
+        "Podoba Ci się plan ${ planName }?"
+      ],
+      "Your plan": [
+        "Twój plan"
       ]
     },
     "Hint": {
@@ -6876,6 +7027,12 @@
       ]
     },
     "Info": {
+      "${ amountUsers }/${ totalUsers } users currently have access to shared servers.": [
+        "${ amountUsers } / ${ totalUsers } użytkownika ma dostęp do udostępnionych serwerów.",
+        "${ amountUsers } / ${ totalUsers } użytkowników ma dostęp do udostępnionych serwerów.",
+        "${ amountUsers } / ${ totalUsers } użytkowników ma dostęp do udostępnionych serwerów.",
+        "${ amountUsers } / ${ totalUsers } użytkowników ma dostęp do udostępnionych serwerów."
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
@@ -6990,6 +7147,9 @@
         "Plan ${ planName } wygaśnie za ${ daysLeft } dni.",
         "Plan ${ planName } wygaśnie za ${ daysLeft } dnia."
       ],
+      "${ planName } expires today.": [
+        "Plan ${ planName } wygaśnie dzisiaj."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } to zaawansowany program ochrony konta wspierany przez systemy sztucznej inteligencji i specjalistów pracujących całą dobę, w celu łagodzenia ataków i zagrożeń bezpieczeństwa."
       ],
@@ -7094,6 +7254,9 @@
       ],
       "* No credit card required.": [
         "* Karta płatnicza nie jest wymagana."
+      ],
+      "**${ appName }** is not supported in your organization **${ organizationName }**.": [
+        "Usługa **${ appName }** nie jest obsługiwana w organizacji **${ organizationName }**."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "** Uzyskaj adres ${ BRAND_NAME } **, aby używać usług ${ BRAND_NAME_TWO }, tym ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
@@ -7291,7 +7454,7 @@
         "Zezwalaj na odzyskiwanie przez telefon"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
-        "Umożliwia użytkownikom łączenia się z bezpiecznymi serwerami współdzielonymi z sekcji **Kraje** aplikacji ${ VPN_APP_NAME }."
+        "Zezwala użytkownikom na łączenie się z udostępnionymi serwerami z sekcji **Kraje** w aplikacji ${ VPN_APP_NAME }."
       ],
       "Already allocated": [
         "Już przydzielona"
@@ -7500,6 +7663,9 @@
       "Close this screen to exit.": [
         "Zamknij te okno, aby wyjść."
       ],
+      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
+        "Przestrzeń dyskowa zintegrowana z ${ DOCS_APP_NAME }"
+      ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Nagroda redaktorów CNET z oceną 8,4 na 10"
       ],
@@ -7578,6 +7744,9 @@
       "Create your first Gateway": [
         "Utwórz pierwszą bramę"
       ],
+      "Created (not published)": [
+        "Utworzono (nie opublikowano)"
+      ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "Tworzenie serwerów bramy: ${ serverNumber } / ${ total }",
         "Tworzenie serwerów bramy: ${ serverNumber } / ${ total }",
@@ -7650,11 +7819,17 @@
       "Delete link?": [
         "Usunąć link?"
       ],
+      "Deleted (not published)": [
+        "Usunięto (nie opublikowano)"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Usuwanie ${ deletedServerCount } serwera bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy"
+      ],
+      "Did you know?": [
+        "Czy wiesz?"
       ],
       "Disable recovery by email address": [
         "Wyłącz odzyskiwanie przez e-mail"
@@ -7710,6 +7885,9 @@
         "użytych domen",
         "użytych domen"
       ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "Nie strać dostępu do funkcji premium usługi ${ appName }. Włącz automatyczne odnowienie."
+      ],
       "Done! We sent a code to ${ destination }.": [
         "Gotowe! Kod został wysłany do ${ destination }."
       ],
@@ -7764,6 +7942,9 @@
       "Edit link": [
         "Edytuj link"
       ],
+      "Edited (not published)": [
+        "Edytowano (nie opublikowano)"
+      ],
       "eduGAIN configuration saved": [
         "Konfiguracja eduGAIN została zapisana"
       ],
@@ -7809,6 +7990,9 @@
       "Encryption setting updated": [
         "Ustawienia szyfrowania zostały zaktualizowane"
       ],
+      "End date": [
+        "Data zakończenia"
+      ],
       "End-to-end email encryption is disabled for this group due to external addresses.": [
         "Szyfrowanie wiadomości end-to-end jest wyłączone dla tej grupy ze względu na zewnętrzne adresy."
       ],
@@ -7826,6 +8010,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Ciesz się szybszym wysyłaniem wiadomości za pomocą aplikacji desktopowej."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Wpisz hasło, aby sfinalizować konto ${ BRAND_NAME } i zacząć korzystać z ${ VPN_APP_NAME } na wszystkich swoich urządzeniach!"
       ],
       "Enter key manually instead": [
         "Zamiast tego wpisz klucz ręcznie"
@@ -7999,16 +8186,16 @@
         "Jeśli inny administrator zmienił to hasło, poproś go, aby przekazał Ci nowe hasło organizacji."
       ],
       "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Jeśli opcja ta zostanie wyłączona, nowi członkowie organizacji będą wymagać od administratora ręcznego utworzenia dla nich pierwszego sejfu (za pośrednictwem udostępniania), aby mogli zacząć tworzyć elementy."
+        "Jeśli opcja zostanie wyłączona, nowi użytkownicy organizacji będą wymagać od administratora ręcznego utworzenia dla nich pierwszego sejfu (za pomocą udostępnienia), aby mogli zacząć tworzyć elementy."
       ],
       "If disabled, only administrators will be able to export data.": [
-        "Jeśli opcja ta zostanie wyłączona, tylko administratorzy będą mogli eksportować dane."
+        "Jeśli opcja zostanie wyłączona, tylko administratorzy będą mogli eksportować dane."
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
-        "Jeśli opcja ta zostanie wyłączona, członkowie organizacji będą mogli udostępniać sejfy lub elementy tylko w obrębie organizacji."
+        "Jeśli opcja zostanie wyłączona, użytkownicy organizacji będą mogli udostępniać sejfy lub elementy tylko w obrębie organizacji."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
-        "Jeśli opcja ta zostanie włączona, członkowie organizacji będą mogli udostępniać pojedyncze elementy oprócz sejfów."
+        "Jeśli opcja zostanie włączona, użytkownicy organizacji będą mogli udostępniać pojedyncze elementy oprócz sejfów."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Zwrócimy pieniądze, jeśli nie spodoba Ci się usługa."
@@ -8421,6 +8608,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Dane o nowych połączeniach VPN przestaną być przechowywane i wyświetlane."
       ],
+      "Next billing date": [
+        "Następna data rozliczeniowa"
+      ],
       "No account keys exist": [
         "Kucze konta nie istnieją"
       ],
@@ -8530,13 +8720,16 @@
         "Organizacja --> Grupy"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Członkowie organizacji będą musieli odblokować ${ PASS_APP_NAME } za pomocą hasła lub kodu PIN itp."
+        "Użytkownicy organizacji będą musieli odblokować ${ PASS_APP_NAME } za pomocą hasła lub kodu PIN itp."
       ],
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organizuj dedykowane serwery w bramy i decyduj, którzy użytkownicy mają do nich dostęp."
+      ],
+      "Other accounts": [
+        "Inne konta"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organizacja posiada jeszcze innych administratorów. Jesteś odpowiedzialny za przekazanie im nowego hasła."
@@ -8585,6 +8778,9 @@
       ],
       "Password generator rules successfully saved": [
         "Reguły generowania hasła zostały zapisane"
+      ],
+      "Password manager with extra account security": [
+        "Menadżer haseł z dodatkowymi zabezpieczeniami konta"
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Hasło musi składać się z co najmniej ${ MIN_PASSWORD_LENGTH } znaków."
@@ -8847,6 +9043,9 @@
       "Select a service provider to start": [
         "Aby rozpocząć, wybierz dostawcę usługi"
       ],
+      "Select a service to continue": [
+        "Wybierz usługę, aby kontynuować"
+      ],
       "Select one or multiple user affiliations": [
         "Wybierz jednego lub wielu powiązanych użytkowników"
       ],
@@ -8861,6 +9060,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
+      ],
+      "Self-custodial crypto wallet": [
+        "Portfel kryptowalut samoobsługowy"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Wyślij wiadomości, aby zachęcić użytkowników do ochrony swoich kont za pomocą uwierzytelniania dwustopniowego."
@@ -8888,6 +9090,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową Aplikacja ${ MAIL_APP_NAME } otworzy się automatycznie po kliknięciu linku do adresu e-mail."
+      ],
+      "Set password": [
+        "Ustaw hasło"
       ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
@@ -8920,7 +9125,7 @@
         "Kraj udostępnionego serwera (${ countriesCount })",
         "Kraje udostępnionych serwerów (${ countriesCount })",
         "Kraje udostępnionych serwerów (${ countriesCount })",
-        "Kraje serwerów współdzielonych (${ countriesCount })"
+        "Kraje udostępnionych serwerów (${ countriesCount })"
       ],
       "Shared vault deleted": [
         "Usunięcie udostępnionego sejfu"
@@ -9025,10 +9230,10 @@
         "Symbole (#$&)"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
-        "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i bezpiecznie je przechowuj. Wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
+        "Synchronizuj pliki i zarządzaj nimi za pomocą aplikacji ${ DRIVE_APP_NAME }. Twórz i udostępniaj dokumenty w aplikacji ${ DOCS_APP_NAME } i przechowuj je bezpiecznie. To wszystko na urządzeniach ${ ios }, ${ android } i ${ desktop }."
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
-        "Rekomendowana przez TechRadar Pro z oceną 4,2 na 5 gwiazdek"
+        "Rekomendowany przez TechRadar Pro z oceną 4,2 na 5 gwiazdek"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -9044,6 +9249,9 @@
       ],
       "Thank you": [
         "Dziękujemy"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Dziękujemy za wybranie usług ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Dziękujemy za wsparcie naszej misji budowania lepszego Internetu, w którym prywatność i wolność są na pierwszym miejscu."
@@ -9340,7 +9548,7 @@
         "Połączenia VPN"
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
-        "Wypróbuj ${ productName } całkowicie bez ryzyka -jeśli z jakiegokolwiek powodu zmienisz zdanie, otrzymasz pełny zwrot pieniędzy. Bez zadawania pytań."
+        "Wypróbuj ${ productName } bez ryzyka — jeśli zmienisz zdanie, otrzymasz pełny zwrot pieniędzy. Bez zadawania pytań."
       ],
       "Two-factor authentication disabled": [
         "Uwierzytelnianie dwustopniowe zostało wyłączone"
@@ -9519,11 +9727,17 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN with dedicated servers and IP addresses": [
+        "VPN z dedykowanymi serwerami i adresami IP"
+      ],
       "Want to learn more?": [
         "Chcesz dowiedzieć się więcej?"
       ],
       "Warning:": [
         "Ostrzeżenie:"
+      ],
+      "Warning: deleting your account is permanent.": [
+        "Ostrzeżenie: usunięcie konta jest trwałe."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Zalecamy używanie oficjalnych aplikacji ${ VPN_APP_NAME }."
@@ -9607,7 +9821,7 @@
         "Jeśli funkcja jest wyłączona, osadzone obrazy nie zostaną załadowane bez Twojej wiedzy."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Po włączeniu sprawdzimy, czy ${ MAIL_APP_NAME } jest domyślną aplikacją pocztową i powiadomimy Cię, jeśli tak nie jest."
+        "Sprawdzimy, czy ${ MAIL_APP_NAME } jest domyślną aplikacją pocztową i powiadomimy Cię, jeśli tak nie jest."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Po włączeniu uwierzytelniania SAML dla ${ appName } może być koniecznie użycie adresu URL odpowiedzi usługi ACS i identyfikatora dostawcy. Kopiuj i wklej poniższe dane do pól dostawcy tożsamości."
@@ -9828,6 +10042,9 @@
       "You have no transactions.": [
         "Brak transakcji"
       ],
+      "You have unpublished changes": [
+        "Masz nieopublikowane zmiany"
+      ],
       "You may be redirected to your bank’s website.": [
         "Możesz zostać przekierowany na stronę banku."
       ],
@@ -9884,6 +10101,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Odzyskiwanie zablokowanych danych za pomocą pobranych plików odzyskiwania nie będzie możliwe. Spowoduje to również wyłączenie odzyskiwania za pomocą zaufanego urządzenia."
+      ],
+      "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
+        "Zastosowano ${ boldDiscountPercent } do planu ${ boldPlanTitle }"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }."
@@ -9978,11 +10198,17 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
       ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
+      ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Zgłoszenie zostało zamknięte. Dziękujemy za kontakt ze wsparciem technicznym ${ BRAND_NAME }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Możliwość dodania serwerów do innej bramy będzie możliwa natychmiast."
+      ],
+      "You’re all set": [
+        "Wszystko gotowe"
       ],
       "Zoom meeting": [
         "spotkanie na Zoom"
@@ -10555,6 +10781,9 @@
       "Addresses": [
         "Adresy"
       ],
+      "Advanced": [
+        "Zaawansowane"
+      ],
       "ALL": [
         "WSZYSTKIE"
       ],
@@ -10635,6 +10864,9 @@
       ],
       "Apply policy to": [
         "Zastosuj zasadę do"
+      ],
+      "Ask members to set up 2FA": [
+        "Poproś użytkowników o skonfigurowanie uwierzytelniania dwustopniowego"
       ],
       "Assertion Consumer Service URL": [
         "Adres URL usługi ACS"
@@ -11140,6 +11372,9 @@
       "Maximum number of words": [
         "Maksymalna liczba słów"
       ],
+      "Members without 2FA": [
+        "Użytkownicy bez uwierzytelniania dwustopniowego"
+      ],
       "Message": [
         "Wiadomość"
       ],
@@ -11172,9 +11407,6 @@
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
-      ],
-      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
-        "Musi mieć przynajmniej ${ MIN_PASSWORD_LENGTH } znaków"
       ],
       "Name": [
         "Nazwa"
@@ -11819,7 +12051,7 @@
         "Szyfrowanie i klucze"
       ],
       "Forgot email?": [
-        "Zapomniałeś adresu e-mail?"
+        "Nie pamiętasz adresu e-mail?"
       ],
       "Forgot password?": [
         "Nie pamiętasz hasła?"
@@ -12042,6 +12274,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
+      "Add-on with free trial": [
+        "Dodatek z darmową wersją próbną"
+      ],
       "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
         "Wszystkie aplikacje ${ BRAND_NAME } for Business i funkcje premium do ochrony całego biznesu"
       ],
@@ -12062,6 +12297,9 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta ograniczona czasowo: **Uzyskaj do 35% zniżki** na plany roczne"
+      ],
+      "Set up your account with your Porkbun domain.": [
+        "Skonfiguruj konto z domeną Porkbun."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Otrzymujesz zaproszenie do wypróbowania poczty ${ MAIL_APP_NAME }"
@@ -12884,6 +13122,9 @@
       "Limited support": [
         "Ograniczone wsparcie"
       ],
+      "Manage user permissions and access": [
+        "Zarządzaj uprawnieniami i dostępem użytkowników"
+      ],
       "Multiple admin roles": [
         "Wiele ról administratora"
       ],
@@ -13692,7 +13933,7 @@
         "Wyłączenie tej opcji spowoduje brak powiadomień w aplikacjach ${ BRAND_NAME }."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
-        "Podczas pierwszego miesiąca korzystania z produktu ${ BRAND_NAME }"
+        "Podczas pierwszego miesiąca korzystania z usługi ${ BRAND_NAME }"
       ],
       "Email subscriptions": [
         "Listy mailingowe"
@@ -13934,7 +14175,7 @@
         "Oferta specjalna"
       ],
       "This offer won't be shown again.": [
-        "Ta oferta nie pojawi się ponownie."
+        "Oferta nie pojawi się ponownie."
       ],
       "When you switch from a monthly to annual subscription.": [
         "Po przejściu z subskrypcji miesięcznej na roczną."
@@ -13982,7 +14223,7 @@
         "przeglądarka"
       ],
       "Desktop": [
-        "Komputer"
+        "komputerach stacjonarnych"
       ]
     },
     "Option": {
@@ -14393,14 +14634,14 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Uzyskaj dożywotni dostęp do wszystkich obecnych i przyszłych funkcji premium ${ PASS_APP_NAME } za pomocą jednorazowej płatności."
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Witaj w planie ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Kup teraz"
+      ],
       "Continue": [
         "Kontynuuj"
       ],
@@ -14464,6 +14705,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Kontynuuj z kontem ${ BRAND_NAME }"
+      ],
+      "Including ${ discountPercent }% Porkbun discount": [
+        "Zawiera ${ discountPercent }% zniżki Porkbun"
       ],
       "Let's talk": [
         "Porozmawiajmy"
@@ -14673,6 +14917,9 @@
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Oferta specjalna na start: Uzyskaj ${ title } za ${ price } na zawsze!"
+      ],
+      "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
+        "Oferta specjalna: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Zacznij korzystać z ${ PASS_APP_NAME }"
@@ -14885,7 +15132,7 @@
         "Zostajesz administratorem organizacji **${ organizationName }**. Uprawnienia otrzymujesz od"
       ],
       "You must delete all groups before generating a new organization key": [
-        "Przed wygenerowaniem nowego klucza organizacji należy usunąć wszystkie grupy"
+        "Przed wygenerowaniem nowego klucza organizacji musisz usunąć wszystkie grupy"
       ],
       "You must privatize all users before generating a new organization key": [
         "Musisz zmienić służbowych użytkowników na prywatnych przed wygenerowaniem nowego klucza organizacji"
@@ -14956,8 +15203,23 @@
       "Processing payment": [
         "Przetwarzanie płatności"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
+      ],
       "Select billing country to pay": [
         "Wybierz kraj"
+      ],
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon jest ważny na ${ couponRedemptions } odnowienie.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowienia.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcja została wykryta. Środki zostaną dodane do konta po pełnym potwierdzeniu transakcji."
@@ -14967,6 +15229,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Kwota ${ amountToCharge } zostanie pobrana z wybranej metody płatności."
+      ],
+      "Your payment is still being processed": [
+        "Twoja płatność jest wciąż przetwarzana"
       ]
     },
     "Payments.Error": {
@@ -15189,6 +15454,17 @@
         "Członkowie"
       ]
     },
+    "Plan card": {
+      "Password manager with identity protection": [
+        "Menedżer haseł z ochroną tożsamości"
+      ],
+      "Secure email that protects your privacy": [
+        "Bezpieczna poczta e-mail, która chroni Twoją prywatność"
+      ],
+      "Your gateway to online freedom": [
+        "Twoja brama do wolności w sieci"
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "skontaktuj się"
@@ -15200,6 +15476,15 @@
         "${ cycle } miesiące",
         "${ cycle } miesięcy",
         "${ cycle } miesięca"
+      ],
+      "${ months } month plan": [
+        "Plan ${ months }-miesięczny",
+        "Plan ${ months }-miesięczny",
+        "Plan ${ months }-miesięczny",
+        "Plan ${ months }-miesięczny"
+      ],
+      "Enjoying ${ planName }?": [
+        "Podoba Ci się plan ${ planName }?"
       ]
     },
     "Price": {
@@ -16406,7 +16691,7 @@
         "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
       ],
       "Self-custody — only you have access to your wallet keys": [
-        "Self-custody — tylko Ty masz dostęp do swoich kluczy portfela"
+        "Samoobsługowy — tylko Ty masz dostęp do swoich kluczy portfela"
       ],
       "The only business solution that is:": [
         "Benefity rozwiązania biznesowego:"
@@ -16861,10 +17146,10 @@
         "Logowanie SSO zostało usunięte"
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
-        "Użytkownik ${ user } jest teraz kontem jednokrotnego logowania. Jego poprzednie hasło stało się hasłem zapasowym."
+        "Użytkownik ${ user } jest teraz kontem SSO. Jego poprzednie hasło stało się hasłem zapasowym."
       ],
       "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Będą musieli zalogować się ponownie u swojego dostawcy tożsamości, aby uzyskać dostęp do usług ${ BRAND_NAME }. Aby ten użytkownik mógł się zalogować, upewnij się, że istnieje u swojego dostawcy tożsamości."
+        "Użytkownicy będą musieli ponownie zalogować się u dostawcy tożsamości, aby uzyskać dostęp do usług ${ BRAND_NAME }. Aby ten użytkownik mógł się zalogować, upewnij się, że istnieje u dostawcy tożsamości."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Spowoduje to wylogowanie użytkownika z innych urządzeń i konieczność utworzenia nowego hasła zapasowego."
@@ -17650,6 +17935,9 @@
       "Backup password updated": [
         "Hasło zapasowe zostało zaktualizowane"
       ],
+      "Billing details updated": [
+        "Szczegóły płatności zostały zaktualizowane"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalendarz został dodany. Synchronizacja może potrwać kilka minut."
       ],
@@ -18248,6 +18536,9 @@
       "Allocate storage": [
         "Przydziel przestrzeń dyskową"
       ],
+      "Also in your plan": [
+        "Również w planie"
+      ],
       "Amount": [
         "Kwota"
       ],
@@ -18256,6 +18547,9 @@
       ],
       "An address for each role": [
         "Adres dla każdej roli"
+      ],
+      "Anytime, anywhere access": [
+        "Dostęp zawsze i wszędzie"
       ],
       "App": [
         "Aplikacja"
@@ -18566,6 +18860,9 @@
       "Display name and signature": [
         "Nazwa wyświetlana i podpis"
       ],
+      "Distraction-free emailing": [
+        "Poczta e-mail bez rozpraszania uwagi"
+      ],
       "Domain names": [
         "Nazwy domen"
       ],
@@ -18794,11 +19091,17 @@
       "Groups": [
         "Grupy"
       ],
+      "Help and feedback": [
+        "Pomoc i opinia"
+      ],
       "Help center": [
         "Centrum pomocy"
       ],
       "History": [
         "Historia"
+      ],
+      "Home": [
+        "Strona główna"
       ],
       "How does it work?": [
         "Jak to działa?"
@@ -18977,6 +19280,9 @@
       "Other calendars": [
         "Inne kalendarze"
       ],
+      "Other features included in your plan": [
+        "Inne funkcje zawarte w planie"
+      ],
       "Other preferences": [
         "Inne ustawienia"
       ],
@@ -19008,7 +19314,7 @@
         "Weryfikacja płatności PayPal nie powiodła się"
       ],
       "Personalize your e-mail footer": [
-        "Spersonalizuj stopkę wiadomości e-mail"
+        "Spersonalizuj stopkę"
       ],
       "Personalize your email footer": [
         "Spersonalizuj stopkę wiadomości"
@@ -19655,6 +19961,9 @@
       "IP address (Internet Service Provider)": [
         "Adres IP (ISP)"
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
+        "Użytkownicy, którzy nie korzystają z uwierzytelniania dwustopniowego, otrzymają wiadomość z prośbą o jak włączenie tej funkcji. Użytkownicy logowania SSO nie otrzymają takiej wiadomości."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Wiadomości w folderze Wysłane lub Szkice będą nadal wyświetlane w tym folderze, nawet jeśli przeniesiesz je do innego folderu."
       ],
@@ -19789,6 +20098,9 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ],
+      "Disables end-to-end email encryption for this group": [
+        "Wyłącza szyfrowanie end-to-end wiadomości w grupie"
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Zewnętrzny adres wyłącza szyfrowanie end-to-end wiadomości w grupie. Żadne szyfrowane zasoby nie będą udostępniane takiemu użytkownikowi."
       ],
@@ -19823,6 +20135,11 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Automatycznie podpisuj wszystkie wychodzące wiadomości, aby użytkownicy mogli zweryfikować ich autentyczność. Ta operacja jest połączona z ustawieniami domyślnymi PGP, które możesz ustawić poniżej."
+      ]
+    },
+    "Tooltip: PM signature locked": {
+      "This signature cannot be modified": [
+        "Podpis nie może zostać modyfikowany"
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -20042,9 +20359,29 @@
         "Ulepsz do płatnego planu ${ MAIL_SHORT_APP_NAME }, aby udostępniać kalendarz."
       ]
     },
+    "Upsell": {
+      "All premium ${ BRAND_NAME } services, one easy subscription.": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
+      ],
+      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Od ${ fallBackString } miesięcznie"
+      ],
+      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Tylko **${ priceString }** więcej miesięcznie."
+      ],
+      "Did you know?": [
+        "Czy wiesz?"
+      ]
+    },
     "upsell panel": {
+      "Best deal": [
+        "Najlepsza oferta"
+      ],
       "Recommended": [
         "Zalecany"
+      ],
+      "Save ${ totals.discountPercentage }%": [
+        "Zaoszczędź ${ totals.discountPercentage }%"
       ]
     },
     "User referee invited via email": {
@@ -20201,12 +20538,32 @@
         "Inny"
       ]
     },
+    "VPN Dashboard": {
+      "Get more from your ${ planTitle } subscription.": [
+        "Uzyskaj więcej z subskrypcji ${ planTitle }."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Ustaw bezpieczne hasła bez problemów."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "W planie ${ planTitlePlusMaybeBrand } otrzymasz darmowy dostęp do ${ VPN_APP_NAME } i innych usług zwiększających prywatność."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "W planie ${ planTitlePlusMaybeBrand } otrzymasz darmowy dostęp do wszystkich usług ${ BRAND_NAME } zwiększających prywatność."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i wiele więcej."
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } urządzenie",
+        "${ n } urządzenia",
+        "${ n } urządzeń",
+        "${ n } urządzenia"
+      ],
       "${ n } server": [
         "${ n } serwer",
         "Ponad ${ n } serwery",
@@ -20230,6 +20587,12 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatyczny wybór z ${ numberOfCountries } kraju",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Serwery w ponad ${ numberOfCountries } kraju",
@@ -20375,7 +20738,7 @@
         "Szyfrowana chmura dla zdjęć i dokumentów"
       ],
       "Encrypted email and file storage": [
-        "Szyfrowana poczta e-mail i przechowywanie plików"
+        "Szyfrowana poczta e-mail i przestrzeń dyskowa"
       ],
       "Encrypted password manager": [
         "Szyfrowany menadżer haseł"
@@ -20384,19 +20747,19 @@
         "Ekskluzywny wcześniejszy dostęp do ${ appName }."
       ],
       "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Nasz najbardziej ekskluzywny plan. Uzyskaj wcześniejszy dostęp do nowych funkcji i wszystkich usług premium ${ BRAND_NAME }."
+        "Nasz najbardziej ekskluzywny plan. Uzyskaj wcześniejszy dostęp do nowych funkcji i wszystkich usług ${ BRAND_NAME } w wersji premium."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Wymieniaj bezpiecznie Bitcoin przez e-mail, zamiast skomplikowanych, 26-znakowych adresów Bitcoin, które są podatne na błąd"
       ],
       "Securely hold and transact Bitcoin for free.": [
-        "Przechowuj Bitcoiny i dokonuj transakcji w bezpieczny sposób za darmo."
+        "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób za darmo."
       ],
       "Self-custodial wallet": [
         "Portfel samoobsługowy"
       ],
       "Take control of all your data with premium ${ BRAND_NAME } services.": [
-        "Przejmij kontrolę nad wszystkimi swoimi danymi dzięki usługom premium ${ BRAND_NAME }."
+        "Przejmij kontrolę nad wszystkimi swoimi danymi dzięki usługom ${ BRAND_NAME } w wersji premium."
       ],
       "Ultra fast and private VPN": [
         "Bardzo szybka i prywatna usługa VPN"

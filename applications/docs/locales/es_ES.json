@@ -154,6 +154,9 @@
       "Close this banner": [
         "Cerrar este banner"
       ],
+      "Collapse": [
+        "Minimizar"
+      ],
       "Compose": [
         "Escribir"
       ],
@@ -193,6 +196,9 @@
       "Copy invite link": [
         "Copiar el enlace de invitación"
       ],
+      "Create": [
+        "Crear"
+      ],
       "Create a copy": [
         "Crear una copia"
       ],
@@ -204,6 +210,9 @@
       ],
       "Create folder": [
         "Crear carpeta"
+      ],
+      "Create new folder": [
+        "Crear una nueva carpeta"
       ],
       "Current plan": [
         "Plan actual"
@@ -290,6 +299,9 @@
       ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
+      ],
+      "Expand": [
+        "Expandir"
       ],
       "Export": [
         "Exportar"
@@ -425,6 +437,12 @@
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
+      ],
+      "Move": [
+        "Mover"
+      ],
+      "Move to folder": [
+        "Mover a la carpeta"
       ],
       "Move to trash": [
         "Mover a la papelera"
@@ -747,6 +765,17 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos."
+      ]
+    },
+    "Actions": {
+      "Last modified first": [
+        "Última modificación primero"
+      ],
+      "Last viewed first": [
+        "Última vista primero"
+      ],
+      "Name": [
+        "Nombre"
       ]
     },
     "Actions message": {
@@ -3886,6 +3915,9 @@
       "Actions": [
         "Acciones"
       ],
+      "Ad targeting": [
+        "Orientación de anuncios"
+      ],
       "Address copied to clipboard": [
         "Se ha copiado la dirección al portapapeles."
       ],
@@ -4028,6 +4060,9 @@
       ],
       "Create your end-to-end encrypted document": [
         "Crea tu documento cifrado de extremo a extremo"
+      ],
+      "Create your first folder and start moving your files.": [
+        "Crea tu primera carpeta y comienza a mover tus archivos."
       ],
       "Creating link to file": [
         "Creando enlace al archivo"
@@ -4218,6 +4253,9 @@
       "Free 5GB encrypted storage to get started": [
         "Almacenamiento encriptado gratuito de 5GB para empezar"
       ],
+      "Geoblocking": [
+        "Geoblocalización"
+      ],
       "Get email updates for comments and suggestions added to your documents.": [
         "Recibe actualizaciones por correo electrónico sobre comentarios y sugerencias añadidos a tus documentos."
       ],
@@ -4269,6 +4307,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
+      ],
+      "In restrictive countries": [
+        "En países restrictivos"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
@@ -4424,11 +4465,17 @@
       "Not a valid URL": [
         "No es una URL válida."
       ],
+      "Not connected": [
+        "No conectado"
+      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
       "Offline": [
         "Sin conexión"
+      ],
+      "On public WiFi networks": [
+        "En redes Wi-Fi públicas"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
@@ -4570,6 +4617,9 @@
       "Saving...": [
         "Guardando..."
       ],
+      "Select a folder to move to.": [
+        "Selecciona una carpeta para mover."
+      ],
       "Select a service provider to start": [
         "Selecciona un proveedor de servicios para empezar"
       ],
@@ -4645,6 +4695,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tu suscripción terminará pronto: reactívala antes del ${ byDate } para mantener los beneficios del ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Vigilancia"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
@@ -4766,6 +4819,9 @@
       "Total VPN connections": [
         "Conexiones VPN totales"
       ],
+      "Tracking": [
+        "Seguimiento"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Se ha cancelado la transferencia del archivo \"${ name }\"."
       ],
@@ -4814,6 +4870,9 @@
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Warning": [
         "Advertencia"
       ],
@@ -4861,6 +4920,9 @@
       ],
       "When the dialog opens, select \"PDF\" in the lower-left corner, then press Save.": [
         "Cuando se abra la ventana de diálogo, selecciona «PDF» en la esquina inferior izquierda y luego presiona Guardar."
+      ],
+      "When working remotely": [
+        "Al trabajar de forma remota"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
@@ -5346,6 +5408,9 @@
       ],
       "Folder location": [
         "Ubicación de la carpeta"
+      ],
+      "Folder name": [
+        "Nombre de la carpeta"
       ],
       "Forwards to": [
         "Reenvía a"
@@ -7210,6 +7275,18 @@
       "Link copied to clipboard": [
         "Se ha copiado el enlace al portapapeles."
       ],
+      "Move ${ n } file": [
+        "Mover ${ n } archivo",
+        "Mover ${ n } archivos"
+      ],
+      "Move ${ n } folder": [
+        "Mover ${ n } carpeta",
+        "Mover ${ n } carpetas"
+      ],
+      "Move ${ n } item": [
+        "Mover ${ n } elemento",
+        "Mover ${ n } elementos"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hay espacio suficiente para cargar ${ formattedTotal }."
       ],
@@ -7218,6 +7295,9 @@
       ],
       "Public link update access failed ": [
         "Error al acceder a la actualización del enlace público "
+      ],
+      "Root folder failed to be loaded": [
+        "Error al cargar la carpeta raíz"
       ],
       "Share invitation accepted successfully": [
         "La invitación compartida ha sido aceptada."
@@ -7231,6 +7311,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
+      ],
+      "Subfolder failed to be loaded": [
+        "Error al cargar la carpeta secundaria"
       ],
       "The document failed to be created": [
         "No se ha creado el documento."
@@ -7628,6 +7711,9 @@
       "Email": [
         "Correo electrónico"
       ],
+      "Enter a new folder name": [
+        "Introduce un nombre nuevo para la carpeta."
+      ],
       "Filter groups": [
         "Filtrar grupos"
       ],
@@ -7771,6 +7857,9 @@
       "Created by": [
         "Creado por"
       ],
+      "Earlier": [
+        "Reciente"
+      ],
       "Location": [
         "Ubicación"
       ],
@@ -7780,8 +7869,20 @@
       "Name": [
         "Nombre"
       ],
+      "Previous 30 days": [
+        "Últimos 30 días"
+      ],
+      "Previous 7 days": [
+        "Últimos 7 días"
+      ],
+      "Today": [
+        "Hoy"
+      ],
       "Viewed": [
         "Visto"
+      ],
+      "Yesterday": [
+        "Ayer"
       ]
     },
     "Safety review": {
@@ -8886,6 +8987,9 @@
       "Coupon": [
         "Cupón"
       ],
+      "Create a new folder": [
+        "Crear una carpeta"
+      ],
       "Create contact": [
         "Crear contacto"
       ],
@@ -8945,6 +9049,9 @@
       "Deleting contacts": [
         "Eliminando contactos"
       ],
+      "Desktop": [
+        "Escritorio"
+      ],
       "Details": [
         "Detalles"
       ],
@@ -8968,6 +9075,9 @@
       ],
       "Download ${ date }": [
         "Descargar ${ date }"
+      ],
+      "Download the app": [
+        "Descarga la aplicación"
       ],
       "Download unverified file?": [
         "¿Descargar archivo no verificado?"
@@ -9029,6 +9139,9 @@
       "Get advanced protection": [
         "Obtén una protección avanzada."
       ],
+      "Get more from your VPN": [
+        "Obtén más de tu VPN"
+      ],
       "Gift": [
         "Regalo"
       ],
@@ -9043,6 +9156,9 @@
       ],
       "High security for your account": [
         "Alta seguridad para tu cuenta"
+      ],
+      "How does it all work?": [
+        "¿Cómo funciona todo esto?"
       ],
       "Human verification": [
         "Verificación humana"
@@ -9075,6 +9191,9 @@
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Crea una copia a tu ${ DRIVE_APP_NAME }"
       ],
+      "Make a secure connection your default": [
+        "Conéctate a una conexión segura por defecto"
+      ],
       "Manage secure link": [
         "Administrar enlace seguro"
       ],
@@ -9086,6 +9205,9 @@
       ],
       "Minicalendar": [
         "Minicalendario"
+      ],
+      "Mobile": [
+        "Móvil"
       ],
       "My files": [
         "Mis archivos"
@@ -9140,6 +9262,9 @@
       ],
       "Photos": [
         "Fotos"
+      ],
+      "Private browsing vs VPN": [
+        "Navegación privada vs VPN"
       ],
       "Processing...": [
         "Procesando..."
@@ -9252,17 +9377,29 @@
       "Verifying your payment...": [
         "Verificando tu pago..."
       ],
+      "VPN explained": [
+        "VPN explicada"
+      ],
       "Warning": [
         "Advertencia"
       ],
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
       ],
+      "What is a VPN?": [
+        "¿Qué es una VPN?"
+      ],
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
       ],
+      "When is it most important to use a VPN?": [
+        "¿Cuándo es más importante usar una VPN?"
+      ],
       "You can now create unlimited folders and labels": [
         "Ahora puedes crear carpetas y etiquetas ilimitadas."
+      ],
+      "You have no folders yet": [
+        "Todavía no tienes carpetas."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Tu prueba gratuita de ${ planName } Plus termina el ${ textDate }."

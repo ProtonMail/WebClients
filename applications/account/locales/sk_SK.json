@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Zašifrovať a exportovať"
       ],
+      "Explore ${ target }": [
+        "Preskúmajte ${ target }"
+      ],
       "Explore group plans": [
         "Preskúmajte skupinové plány"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "Uložiť adresu"
       ],
+      "Save and continue": [
+        "Uložiť a pokračovať"
+      ],
       "Save changes": [
         "Uložiť zmeny"
       ],
@@ -1084,11 +1090,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "Select file": [
-        "Vyberte súbor"
-      ],
       "select file": [
         "vybrať súbor"
+      ],
+      "Select file": [
+        "Vyberte súbor"
       ],
       "Select files": [
         "Vybrať súbory"
@@ -7716,9 +7722,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Zdieľaním úplných údajov o udalosti tohto kalendára súhlasíte s udelením prístupu ${ BRAND_NAME } k zašifrovaným informáciám tohto kalendára."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Kalendár integrovaný s ${ MAIL_APP_NAME } a ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Môžete zrušiť kedykoľvek"
       ],
@@ -8046,9 +8049,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
       ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Emailová služba integrovaná s ${ CALENDAR_APP_NAME } a ${ CONTACTS_APP_NAME }"
-      ],
       "Emailing preference saved": [
         "Nastavenie emailu uložené"
       ],
@@ -8108,6 +8108,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Vychutnajte si rýchlejšie a cielené odosielanie emailov pomocou aplikácie pre počítače."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Zadaním hesla dokončíte svoj ${ BRAND_NAME } účet a začnete používať ${ VPN_APP_NAME } na všetkých svojich zariadeniach!"
       ],
       "Enter key manually instead": [
         "Namiesto toho zadať kľúč ručne"
@@ -9192,6 +9195,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu. ${ MAIL_APP_NAME } sa otvorí automaticky po kliknutí na emailový odkaz."
       ],
+      "Set password": [
+        "Nastaviť heslo"
+      ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
       ],
@@ -9356,6 +9362,9 @@
       ],
       "Thank you": [
         "Ďakujeme"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Ďakujeme, že ste si vybrali ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Ďakujeme, že podporujete naše poslanie budovať lepší internet, v ktorom sú súkromie a sloboda na prvom mieste."
@@ -10331,6 +10340,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Tieto servery budete môcť okamžite pridať do inej brány."
+      ],
+      "You’re all set": [
+        "Všetko je nastavené"
       ],
       "Zoom meeting": [
         "Zoom míting"
@@ -14773,9 +14785,6 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Získajte doživotný prístup ku všetkým súčasným a budúcim prémiovým funkciám ${ PASS_APP_NAME } s jednorazovou platbou. "
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Vitajte v ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
@@ -15371,6 +15380,12 @@
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
@@ -17310,6 +17325,9 @@
       ],
       "Single sign-on removed": [
         "Jednotné prihlásenie bolo odstránené"
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "Emailová adresa ${ email } už v ${ BRAND_NAME } existuje. Ak chcete pokračovať, prihláste sa pomocou svojich prihlasovacích údajov pre ${ BRAND_NAME }."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "Používateľ ${ user } je teraz jednotným prihlasovacím účtom. Jeho predchádzajúce heslo sa stalo záložným heslom."

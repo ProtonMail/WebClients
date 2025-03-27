@@ -3859,6 +3859,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } av dina icke SSO-medlemmar använder tvåfaktorsautentisering för att logga in på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } av dina icke SSO-medlemmar använder tvåfaktorsautentisering för att logga in på din organisation."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter både inloggning och andra lösenord. För att växla till läge med ett enda lösenord, ange det enda lösenord du vill använda och klicka på ”Spara”."
       ],
@@ -4141,9 +4144,6 @@
       "By leaving now, changes may not be saved": [
         "Genom att lämna nu kan ändringar inte sparas"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "E-posttjänst, integrerad med ${ MAIL_APP_NAME } och ${ CONTACTS_APP_NAME }"
-      ],
       "Can’t access your recovery email?": [
         "Kan du inte komma åt din e-post för återställning?"
       ],
@@ -4361,11 +4361,11 @@
       "email": [
         "e-post"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-post och kalender, integrerad med ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "E-posttjänst, integrerad med ${ CALENDAR_APP_NAME } och ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "E-postpreferenser sparade"
@@ -5733,6 +5733,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer att autoförnyas varje månad."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du kommer att kunna lägga till dessa servrar till en annan gateway omedelbart."
@@ -8541,11 +8544,18 @@
       "Processing payment": [
         "Bearbetar betalning"
       ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Förnyas med ${ renewPriceStr }, avbryt när som helst."
+      ],
       "Select billing country to pay": [
         "Välj faktureringsland för att betala"
       ],
       "terms & conditions": [
         "användarvillkor"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupongen är giltig för ${ couponRedemptions } förnyelse.",
+        "Kupongen är giltig för ${ couponRedemptions } förnyelser."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transaktionen har upptäckts. Krediterna kommer att läggas till ditt konto när transaktionen är fullständigt bekräftad."
@@ -12010,6 +12020,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Du kommer sedan att faktureras var 12:e månad med ${ renewPriceStr }."
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Din nya prenumeration kommer förnyas automatiskt om ${ cycle } månad.",
         "Din nya prenumeration kommer förnyas automatiskt om ${ cycle } månader."

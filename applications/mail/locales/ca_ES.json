@@ -589,7 +589,7 @@
         "Ajuda i comentaris"
       ],
       "Help and resources": [
-        "Ajuda i recurs"
+        "Ajuda i recursos"
       ],
       "Hide": [
         "Amaga"
@@ -1743,7 +1743,7 @@
         "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
       "Admin panel to manage your family": [
-        "Panell d'administració per gestionar la vostra família"
+        "Panell d'administració per a gestionar la família"
       ],
       "Advanced account protection": [
         "Protecció avançada del compte"
@@ -1798,7 +1798,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming de alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator i més."
+        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming d'alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator i més."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
@@ -1807,15 +1807,15 @@
         "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més.",
-        "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més."
+        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
+        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou 15 adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més."
+        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou 15 adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d’extrem a extrem. Inclou 15 adreces de correu electrònic, suport per a dominis de correu personalitzats, àlies hide-my-email il·limitats i més."
@@ -6239,9 +6239,6 @@
       "Calendar side panel": [
         "Panell lateral del calendari"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendari integrat amb ${ MAIL_APP_NAME } i ${ CONTACTS_APP_NAME }"
-      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "No podeu trobar el que esteu buscant? ${ displayAllMailButton }"
       ],
@@ -6280,9 +6277,6 @@
       ],
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Emmagatzematge al núvol integrat amb ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Confirmeu l'informe de phishing"
@@ -6475,9 +6469,6 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "El correu electrònic es reenvia a la vostra bústia de correu. La vostra adreça de correu electrònic resta amagada."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Servei de correu electrònic integrat amb ${ CALENDAR_APP_NAME } i ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "La protecció de rastrejador de correu electrònic està desactivada"
@@ -6946,9 +6937,6 @@
       "password": [
         "contrasenya"
       ],
-      "Password manager with extra account security": [
-        "Gestor de contrasenyes amb seguretat addicional del compte"
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
       ],
@@ -7158,9 +7146,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
-      ],
-      "Self-custodial crypto wallet": [
-        "Cartera de criptomonedes autogestionada"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Envieu un correu xifrat i protegit amb contrasenya a una adreça de correu de ${ boldText }."
@@ -7452,7 +7437,7 @@
         "La clau pública del aquest remitent no ha tingut confiança encara."
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
-        "Si us ha mostrat perquè la línia d'assumpte del vostre correu electrònic conté paraules clau de restabliment de la contrasenya."
+        "Se us ha mostrat perquè la línia d'assumpte del vostre correu electrònic conté paraules clau de restabliment de la contrasenya."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
@@ -7624,9 +7609,6 @@
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
-      ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN amb adreces IP i servidors dedicats"
       ],
       "Warning": [
         "Advertència"
@@ -7868,8 +7850,8 @@
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "A continuació, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
-        "A continuació, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
+        "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
+        "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
@@ -10900,16 +10882,16 @@
         "els termes i condicions"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "El cupó és vàlid per ${ couponRedemptions } renovació.",
-        "El cupó és vàlid per ${ couponRedemptions } renovacions."
+        "El cupó és vàlid per a ${ couponRedemptions } renovació.",
+        "El cupó és vàlid per a ${ couponRedemptions } renovacions."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per ${ couponRedemptions } renovació. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment.",
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPriceStr } cada mes. Podeu cancel·lar-ho en qualsevol moment."
@@ -12192,6 +12174,47 @@
         "Per ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
+      ],
+      "and 15 more premium features": [
+        "i 15 característiques prèmium més"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Reenviament automàtic de correu electrònic ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de filtracions de dades ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
+      ],
+      "No ads or tracking": [
+        "Sense anuncis ni rastreig"
+      ],
+      "Short @pm.me email address": [
+        "Adreça electrònica curta de @pm.me"
+      ],
+      "Support our mission": [
+        "Doneu suport a la nostra missió"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade your productivity": [
+        "Milloreu la vostra productivitat"
+      ],
+      "We don't sell your data": [
+        "No venem les vostres dades"
+      ],
+      "Your privacy is our mission": [
+        "La vostra privacitat és la nostra missió"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
@@ -12450,47 +12473,6 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB d'emmagatzematge"
-      ],
-      "and 15 more premium features": [
-        "i 15 característiques prèmium més"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Reenviament automàtic de correu electrònic ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de filtracions de dades ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicació d'escriptori"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajudeu-nos a mantenir Internet segura i privada per a tothom. Milloreu a un pla de pagament."
-      ],
-      "No ads or tracking": [
-        "Sense anuncis ni rastreig"
-      ],
-      "Short @pm.me email address": [
-        "Adreça electrònica curta de @pm.me"
-      ],
-      "Support our mission": [
-        "Doneu suport a la nostra missió"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade your productivity": [
-        "Milloreu la vostra productivitat"
-      ],
-      "We don't sell your data": [
-        "No venem les vostres dades"
-      ],
-      "Your privacy is our mission": [
-        "La vostra privacitat és la nostra missió"
       ]
     },
     "Subscription renewal state": {
@@ -13339,6 +13321,9 @@
       "Get advanced protection": [
         "Obteniu protecció avançada"
       ],
+      "Get more from your VPN": [
+        "Obteniu més de la vostra VPN"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obteniu les aplicacions ${ appName[APP_NAME] }"
       ],
@@ -13828,11 +13813,6 @@
         "Avui"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
@@ -13916,6 +13896,11 @@
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "versió estable"
@@ -13979,8 +13964,8 @@
         "${ numberOfServers } a ${ numberOfCountries } països"
       ],
       "Auto-selects from ${ numberOfCountries } country": [
-        "Seleccionat automàticament des d'${ numberOfCountries } país",
-        "Seleccionat automàticament des de ${ numberOfCountries } països"
+        "Selecció automàtica d'entre ${ numberOfCountries } país",
+        "Selecció automàtica d'entre ${ numberOfCountries } països"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servidors en més d'${ numberOfCountries } país",

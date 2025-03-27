@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Chiffrer et exporter"
       ],
+      "Explore ${ target }": [
+        "Découvrez ${ target }"
+      ],
       "Explore group plans": [
         "Découvrez les abonnements groupés"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "Enregistrer l'adresse"
       ],
+      "Save and continue": [
+        "Enregistrer et continuer"
+      ],
       "Save changes": [
         "Enregistrer les modifications"
       ],
@@ -1084,11 +1090,11 @@
       "Select country ${ country }": [
         "Sélectionnez le pays ${ country }"
       ],
-      "Select file": [
-        "Sélectionner un fichier"
-      ],
       "select file": [
         "sélectionnez un fichier."
+      ],
+      "Select file": [
+        "Sélectionner un fichier"
       ],
       "Select files": [
         "Sélectionner les fichiers"
@@ -2385,7 +2391,7 @@
         "Essayez ${ upsellPlanName } et conservez l'accès à toutes les fonctionnalités premium de messagerie et de calendrier."
       ],
       "Ultra fast and private VPN": [
-        "Un VPN ultrarapide et privé"
+        "Un VPN ultra-rapide et privé"
       ]
     },
     "Checkout row": {
@@ -7067,6 +7073,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } veut partager des données avec vous dans ${ PASS_APP_NAME }."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et le second mot de passe. Pour basculer vers le mode à mot de passe unique, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
@@ -7569,9 +7578,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "En partageant toutes les informations des événements de ce calendrier, vous acceptez d'accorder à ${ BRAND_NAME } l'accès aux informations chiffrées de ce calendrier."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendrier intégré à ${ MAIL_APP_NAME } et ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Annulez quand vous le voulez"
       ],
@@ -7886,11 +7892,11 @@
       "Email address": [
         "Adresse e-mail"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-mail et calendrier, intégrés à ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Service de messagerie intégré à ${ CALENDAR_APP_NAME } et ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Votre sélection est enregistrée."
@@ -7951,6 +7957,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Profitez d'une expérience de messagerie plus rapide et focalisée grâce à l'application de bureau."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Saisissez un mot de passe pour finaliser votre compte ${ BRAND_NAME } et commencez à utiliser ${ VPN_APP_NAME } sur tous vos appareils !"
       ],
       "Enter key manually instead": [
         "Saisir plutôt la clé manuellement"
@@ -9019,6 +9028,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Définissez ${ MAIL_APP_NAME } comme votre application de messagerie par défaut. ${ MAIL_APP_NAME } s’ouvrira automatiquement lorsque vous cliquerez sur un lien de messagerie."
       ],
+      "Set password": [
+        "Définir le mot de passe"
+      ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
       ],
@@ -9177,6 +9189,9 @@
       ],
       "Thank you": [
         "Merci"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Merci d'avoir choisi ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Merci de soutenir notre mission de créer un meilleur internet qui donne la priorité à la protection de la vie privée et à la liberté."
@@ -10122,6 +10137,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Vous pourrez ajouter immédiatement ces serveurs à une autre passerelle."
+      ],
+      "You’re all set": [
+        "Tout est prêt !"
       ],
       "Zoom meeting": [
         "réunion Zoom"
@@ -14460,7 +14478,7 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Bénéficiez d'un accès à vie à toutes les fonctionnalités premium actuelles et futures de ${ PASS_APP_NAME } avec un seul paiement."
       ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
@@ -16934,6 +16952,9 @@
       ],
       "Single sign-on removed": [
         "L'authentification unique a été retirée."
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "L'adresse e-mail ${ email } existe déjà dans ${ BRAND_NAME }. Connectez-vous avec vos identifiants ${ BRAND_NAME } pour continuer."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "L'utilisateur ${ user } dispose désormais d'un compte d'authentification unique. Son mot de passe précédent est devenu son mot de passe de secours."
@@ -20509,7 +20530,7 @@
         "Prenez le contrôle de l'ensemble de vos données grâce aux services ${ BRAND_NAME } premium."
       ],
       "Ultra fast and private VPN": [
-        "VPN ultrarapide et privé"
+        "VPN ultra-rapide et privé"
       ],
       "You're Invited.": [
         "Vous êtes invité."

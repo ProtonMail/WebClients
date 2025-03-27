@@ -323,6 +323,9 @@
       "Invite others": [
         "Zaproś użytkowników"
       ],
+      "Join our Reddit": [
+        "Dołącz do Reddita"
+      ],
       "Join shared vault": [
         "Dołącz do udostępnionego sejfu"
       ],
@@ -346,6 +349,9 @@
       ],
       "Make admin": [
         "Administrator"
+      ],
+      "Make default": [
+        "Ustaw jako domyślny"
       ],
       "Make editor": [
         "Edycja"
@@ -650,6 +656,9 @@
       "With other ${ BRAND_NAME } users": [
         "Dla innych użytkowników ${ BRAND_NAME }"
       ],
+      "Write us on X/Twitter": [
+        "Napisz do nas na X / Twitterze"
+      ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
       ]
@@ -673,6 +682,9 @@
       ]
     },
     "Description": {
+      "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
+        "${ DARK_WEB_MONITORING_NAME } jest dostępny w płatnym planie. Ulepsz konto, aby uzyskać do niego dostęp."
+      ],
       "${ total } other login uses the same password": [
         "Tego hasła używa jeszcze ${ total } inne dane logowania",
         "Tego hasła używają jeszcze ${ total } inne dane logowania",
@@ -681,6 +693,12 @@
       ],
       "A checked box means the feature is disabled.": [
         "Zaznaczone pole oznacza włączoną funkcję."
+      ],
+      "Add the following CNAME DNS records to your domain.": [
+        "Dodaj następujący rekord CNAME do domeny."
+      ],
+      "Add the following TXT DNS record to your domain.": [
+        "Dodaj następujący rekord TXT do domeny."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
         "Lista domen, w których niektóre funkcje aplikacji ${ PASS_SHORT_APP_NAME } (autouzupełnianie, automatyczne sugestie, automatyczne zapisywanie) nie powinny zostać uruchamiane.${ infoText }"
@@ -720,10 +738,10 @@
         "Uwierzytelnianie nie powiodło się. Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane"
       ],
       "Authentication failed. Confirm your backup password in order to proceed with the export": [
-        "Uwierzytelnianie się nie powiodło. Potwierdź hasło zapasowe, aby kontynuować eksport."
+        "Uwierzytelnianie się nie powiodło. Potwierdź hasło zapasowe, aby kontynuować eksport"
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
-        "Uwierzytelnianie się nie powiodło. Potwierdź dodatkowe hasło, aby kontynuować eksport."
+        "Uwierzytelnianie się nie powiodło. Potwierdź dodatkowe hasło, aby wyeksportować dane"
       ],
       "Authentication failure: ${ message }": [
         "Błąd uwierzytelniania: ${ message }"
@@ -742,6 +760,9 @@
       ],
       "Could not confirm this invite at the moment": [
         "Zaproszenie nie może zostać potwierdzone"
+      ],
+      "Could not leave item.": [
+        "Nie można opuścić elementu."
       ],
       "Could not leave vault.": [
         "Nie można opuścić sejfu."
@@ -1095,7 +1116,7 @@
         "Mamy problem z usługą ${ PASS_SHORT_APP_NAME }. Jeśli problem będzie się powtarzał, skontaktuj się z naszym wsparciem klienta."
       ],
       "Wrong backup password": [
-        "Nieprawidłowe hasło zapasowe"
+        "Hasło zapasowe jest nieprawidłowe"
       ],
       "Wrong extra password": [
         "Dodatkowe hasło jest nieprawidłowe"
@@ -1111,6 +1132,12 @@
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Twoja przeglądarka ma problemy z aktywacją ${ PASS_APP_NAME }."
+      ],
+      "Your DNS is not correctly set. The MX record we obtain is:": [
+        "Rekordy DNS nie są skonfigurowane prawidłowo. Twój rekord MX to:"
+      ],
+      "Your DNS is not correctly set. The TXT record we obtain is:": [
+        "Rekordy DNS nie są skonfigurowane prawidłowo. Twój rekord TXT to:"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
@@ -1210,6 +1237,9 @@
         "przekierowano ${ forwardedEmailsCount }",
         "przekierowano ${ forwardedEmailsCount }"
       ],
+      "${ inviterEmail } wants to share an item with you.": [
+        "Użytkownik ${ inviterEmail } udostępnia Ci element."
+      ],
       "${ memberCount } member": [
         "${ memberCount } użytkownik",
         "${ memberCount } użytkowników",
@@ -1252,6 +1282,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } będzie sugerował zapisywanie kluczy dostępu."
       ],
+      "${ payload.count } invite successfully sent": [
+        "Wysłano ${ payload.count } zaproszenie",
+        "Wysłano ${ payload.count } zaproszenia",
+        "Wysłano ${ payload.count } zaproszeń",
+        "Wysłano ${ payload.count } zaproszeń"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "Ochrona ${ PROTON_SENTINEL_NAME } została wyłączona"
       ],
@@ -1292,10 +1328,10 @@
         "Dostęp do ${ PASS_APP_NAME } będzie wymagał hasła ${ BRAND_NAME }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your backup password.": [
-        "Dostęp do ${ PASS_APP_NAME } będzie zawsze wymagał podania hasła zapasowego."
+        "Hasło zapasowe będzie wymagane, aby uzyskać dostęp do ${ PASS_APP_NAME }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your extra password.": [
-        "Dostęp do ${ PASS_APP_NAME } będzie zawsze wymagał podania dodatkowego hasła."
+        "Dostęp do ${ PASS_APP_NAME } będzie wymagał dodatkowego hasła."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Dostęp do ${ PASS_APP_NAME } będzie wymagał odcisku palca lub kodu PIN."
@@ -1550,7 +1586,7 @@
         "Wypełnij plik CSV danymi"
       ],
       "Follow those steps to import your data with a generic CSV:": [
-        "Wykonaj te kroki, aby zaimportować dane za pomocą standardowego pliku CSV:"
+        "Wykonaj te kroki, aby zaimportować dane za pomocą pliku CSV:"
       ],
       "For easy access to your passwords and more.": [
         "Dla łatwego dostępu do haseł i nie tylko."
@@ -1559,7 +1595,7 @@
         "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
       ],
       "For security reasons, this action requires identity verification.": [
-        "Ze względów bezpieczeństwa działanie to wymaga weryfikacji tożsamości."
+        "Ze względów bezpieczeństwa akcja wymaga weryfikacji tożsamości."
       ],
       "For security reasons, you need to confirm access to this shared vault": [
         "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfu",
@@ -1651,6 +1687,12 @@
       "Item restored": [
         "Element został przywrócony"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Udostępnianie elementu: ${ itemAccessCount } użytkownik",
+        "Udostępnianie elementu: ${ itemAccessCount } użytkowników",
+        "Udostępnianie elementu: ${ itemAccessCount } użytkowników",
+        "Udostępnianie elementu: ${ itemAccessCount } użytkowników"
+      ],
       "Item successfully excluded from monitoring": [
         "Element został wykluczony z monitoringu"
       ],
@@ -1665,6 +1707,9 @@
       ],
       "Item successfully unpinned": [
         "Element został odpięty"
+      ],
+      "Leaving item...": [
+        "Opuszczenie elementu..."
       ],
       "Leaving vault...": [
         "Opuszczanie sejfu..."
@@ -1793,16 +1838,16 @@
         "Potwierdź hasło zapasowe"
       ],
       "Please confirm your backup password in order to auto-lock with biometrics.": [
-        "Potwierdź hasło zapasowe w celu automatycznego zablokowania za pomocą danych biometrycznych."
+        "Potwierdź hasło zapasowe, aby włączyć blokadę za pomocą biometrii."
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
-        "Potwierdź hasło zapasowe, aby automatycznie zablokować konto hasłem."
+        "Potwierdź hasło zapasowe, aby włączyć blokadę za pomocą hasła."
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Potwierdź hasło zapasowe, aby wyeksportować dane ${ PASS_APP_NAME }."
       ],
       "Please confirm your backup password in order to unregister your current lock.": [
-        "Potwierdź hasło zapasowe, aby wyłączyć bieżącą blokadę."
+        "Potwierdź hasło zapasowe, aby wyłączyć blokadę."
       ],
       "Please confirm your backup password in order to update the auto-lock time.": [
         "Potwierdź hasło zapasowe, aby zaktualizować czas automatycznej blokady."
@@ -1811,7 +1856,7 @@
         "Potwierdź dodatkowe hasło"
       ],
       "Please confirm your extra password in order to auto-lock with biometrics.": [
-        "Potwierdź dodatkowe hasło, aby włączyć blokadę."
+        "Potwierdź dodatkowe hasło, aby włączyć blokadę za pomocą biometrii."
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Potwierdź dodatkowe hasło, aby włączyć blokadę."
@@ -1829,7 +1874,7 @@
         "Potwierdź hasło"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Potwierdź hasło, aby włączyć blokadę."
+        "Potwierdź hasło, aby włączyć blokadę za pomocą biometrii."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Potwierdź hasło, aby włączyć blokadę."
@@ -1848,6 +1893,9 @@
       ],
       "Please consider leaving a review.": [
         "Rozważ napisanie recenzji."
+      ],
+      "Please contact your administrator": [
+        "Skontaktuj się z administratorem"
       ],
       "Please do not close this window": [
         "Nie zamykaj tego okna"
@@ -1978,6 +2026,9 @@
       "Successfully exported all your items": [
         "Wyeksportowano wszystkie elementy"
       ],
+      "Successfully left the item": [
+        "Opuszczono element"
+      ],
       "Successfully left the vault": [
         "Opuszczono sejf"
       ],
@@ -2037,6 +2088,9 @@
       ],
       "This setting is disabled on the organization level": [
         "Ustawienie jest wyłączone na poziomie organizacji"
+      ],
+      "This setting is enforced by your organization": [
+        "Ustawienie jest wymuszone przez organizację"
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Sejf nie jest udostępniony. Zaproś do niego użytkowników."
@@ -2127,6 +2181,12 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Sejf \"${ share.content.name }\" został usunięty"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Udostępnianie sejfu: ${ vaultMembersCount } użytkownik",
+        "Udostępnianie sejfu: ${ vaultMembersCount } użytkowników",
+        "Udostępnianie sejfu: ${ vaultMembersCount } użytkowników",
+        "Udostępnianie sejfu: ${ vaultMembersCount } użytkowników"
       ],
       "Verification code": [
         "Kod weryfikacyjny"
@@ -2300,6 +2360,12 @@
         "Wysłano ${ repliedCount }",
         "Wysłano ${ repliedCount }",
         "Wysłano ${ repliedCount }"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } link",
+        "${ secureLinksCount } linki",
+        "${ secureLinksCount } linków",
+        "${ secureLinksCount } linków"
       ],
       "${ years } year": [
         "${ years } rok",
@@ -3334,11 +3400,17 @@
       "Display name successfully updated": [
         "Nazwa wyświetlana została zaktualizowana"
       ],
+      "Domain ownership verified. You can now set up MX record.": [
+        "Domena została zweryfikowana. Możesz skonfigurować rekord MX."
+      ],
       "Domain successfully deleted": [
         "Domena została usunięta"
       ],
+      "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
+        "Domena została zweryfikowana. Domena może odbierać wiadomości i tworzyć aliasy"
+      ],
       "Mailbox change successfully cancelled": [
-        "Zmiana skrzynki pocztowej została pomyślnie anulowana"
+        "Zmiana skrzynki pocztowej została anulowana"
       ],
       "Mailbox successfully deleted": [
         "Skrzynka pocztowa została usunięta"
@@ -3354,6 +3426,9 @@
       ],
       "Random prefix generation successfully enabled": [
         "Generowanie losowego przedrostka zostało włączone"
+      ],
+      "Verification email sent. Please check your inbox to verify your mailbox": [
+        "Wiadomość weryfikacyjna została wysłana. Sprawdź skrzynkę odbiorczą"
       ]
     },
     "Theme": {
@@ -3388,6 +3463,9 @@
       ],
       "Aliases": [
         "Aliasy"
+      ],
+      "Auto create/on the fly alias": [
+        "Automatyczne tworzenie aliasu \"w locie\""
       ],
       "Auto-lock update": [
         "Aktualizacja automatycznej blokady"
@@ -3439,6 +3517,9 @@
       ],
       "Custom domains": [
         "Niestandardowe domeny"
+      ],
+      "Default": [
+        "Domyślny"
       ],
       "Default Display Name": [
         "Domyślna nazwa wyświetlana"
@@ -3657,7 +3738,7 @@
         "Skonfiguruj uwierzytelnianie dwustopniowe dla większego bezpieczeństwa"
       ],
       "Share with": [
-        "Udostępnij"
+        "Udostępnij użytkownikowi"
       ],
       "Shared item invitation": [
         "Zaproszenie do udostępnionego elementu"
@@ -3727,6 +3808,9 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Jaka jest różnica między notatką ${ PASS_SHORT_APP_NAME } a SimpleLogin?"
+      ],
+      "You don't have any vaults": [
+        "Nie masz żadnych sejfów"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "Subskrypcja ${ planName } wygasa ${ endDate }"
@@ -3915,6 +3999,9 @@
       "No results": [
         "Nie znaleziono żadnych wyników"
       ],
+      "No secure links matching": [
+        "Brak pasujących linków"
+      ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Usunięcie aliasów w ${ PASS_SHORT_APP_NAME } spowoduje również ich usunięcie w SimpleLogin."
       ],
@@ -3994,7 +4081,7 @@
         "Nie masz dostępu do tego sejfu. Jeśli chcesz ponownie dołączyć do sejfu, potrzebujesz nowego zaproszenia."
       ],
       "Your organization does not allow sharing individual items": [
-        "Twoja organizacja nie zezwala na udostępnianie pojedynczych elementów"
+        "Twoja organizacja nie pozwala na udostępnianie pojedynczych elementów"
       ],
       "Your plan does not allow you to create more aliases": [
         "Twój plan nie pozwala na utworzenie większej liczby aliasów"
