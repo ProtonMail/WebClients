@@ -1499,7 +1499,7 @@
         "Essayez ${ upsellPlanName } et conservez l'accès à toutes les fonctionnalités premium de messagerie et de calendrier."
       ],
       "Ultra fast and private VPN": [
-        "Un VPN ultrarapide et privé"
+        "Un VPN ultra-rapide et privé"
       ]
     },
     "Checkout row": {
@@ -2847,6 +2847,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Votre abonnement ${ PLAN_NAMES[PLANS.PASS] } est au prix réduit de ${ price } par an. En passant à un abonnement gratuit, vous perdrez définitivement cette remise, même si vous décidez ensuite de passer à nouveau à un abonnement payant."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Télécharger la version pour Linux"
+      ],
+      "Download for macOS": [
+        "Télécharger la version pour macOS"
+      ],
+      "Download for Windows": [
+        "Télécharger la version pour Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4512,6 +4523,9 @@
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
+      "Ad targeting": [
+        "Ciblage publicitaire"
+      ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Les participants ajoutés et retirés seront informés de tous les événements de cette série."
       ],
@@ -4631,6 +4645,9 @@
       ],
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Connectez-vous à ${ VPN_APP_NAME } pour surfer en privé."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Le contact a été ajouté au groupe ${ contactGroupName }."
@@ -4801,6 +4818,9 @@
       "Frequency modifications will be lost.": [
         "Les modifications de fréquence seront perdues."
       ],
+      "Geoblocking": [
+        "Géoblocage"
+      ],
       "here": [
         "ici"
       ],
@@ -4846,6 +4866,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
+      ],
+      "In restrictive countries": [
+        "Dans les pays avec des restrictions"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "À l'étape suivante, vous pourrez effectuer un versement à l'aide d'une adresse Bitcoin."
@@ -4979,6 +5002,9 @@
       "Not a valid URL": [
         "L'URL n'est pas valide."
       ],
+      "Not connected": [
+        "Non connecté"
+      ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
       ],
@@ -4987,6 +5013,9 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "Les occurrences mises à jour auparavant par l'organisateur seront gardées."
+      ],
+      "On public WiFi networks": [
+        "Sur les réseaux wifi publics"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
@@ -5096,6 +5125,9 @@
         "Enregistrement de l'événement...",
         "Enregistrement des événements..."
       ],
+      "Scan the QR code with your mobile device": [
+        "Scannez le QR code avec votre appareil mobile."
+      ],
       "Select a service provider to start": [
         "Commencez par sélectionner un service"
       ],
@@ -5135,6 +5167,9 @@
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Restez connecté facilement en activant les paramètres VPN suivants :"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
       ],
@@ -5147,6 +5182,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Surveillance"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -5211,6 +5249,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Ce code unique peut être utilisé par les sites web et les FAI (Fournisseurs d'accès internet) pour lier votre emplacement et votre historique de navigation à votre appareil."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ceci vous déconnectera de tous les comptes actuellement connectés."
       ],
@@ -5244,6 +5285,9 @@
       "Total VPN connections": [
         "Nombre total de connexions VPN"
       ],
+      "Tracking": [
+        "Traçage"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
@@ -5270,6 +5314,9 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "VPN IP": [
+        "Adresse IP du VPN"
       ],
       "Warning": [
         "Avertissement"
@@ -5303,6 +5350,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Les vues de type semaine et mois s'appliquent à la version de bureau (grand écran)."
+      ],
+      "When working remotely": [
+        "Lorsque vous travaillez à distance"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
@@ -5502,6 +5552,9 @@
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
       ],
+      "Your IP": [
+        "Votre IP"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
       ],
@@ -5510,6 +5563,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Votre prochaine date de facturation est le ${ renewalTime }. Veuillez contacter l'assistance si vous avez besoin de changer d'abonnement tout de suite."
+      ],
+      "Your online activity is protected": [
+        "Votre activité en ligne est protégée."
       ],
       "Your password was leaked:": [
         "Votre mot de passe a été exposé :"
@@ -6133,6 +6189,15 @@
       ],
       "Your calendar URL": [
         "URL de votre calendrier"
+      ],
+      "Your IP": [
+        "Votre IP"
+      ],
+      "Your ISP": [
+        "Votre FAI"
+      ],
+      "Your location": [
+        "Votre emplacement"
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
@@ -9978,6 +10043,9 @@
       "Deleting contacts": [
         "Suppression des contacts"
       ],
+      "Desktop": [
+        "Bureau"
+      ],
       "Details": [
         "Informations"
       ],
@@ -9989,6 +10057,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Souhaitez-vous passer à ${ downgradedPlanName } ?"
+      ],
+      "Download the app": [
+        "Télécharger l'application"
       ],
       "Drop to upload": [
         "Déposer pour charger"
@@ -10056,6 +10127,9 @@
       "Get advanced protection": [
         "Obtenir une protection avancée"
       ],
+      "Get more from your VPN": [
+        "Tirez le meilleur parti de votre VPN"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Télécharger les applications ${ appName[APP_NAME] }"
       ],
@@ -10079,6 +10153,9 @@
       ],
       "High security for your account": [
         "Une sécurité renforcée pour votre compte"
+      ],
+      "How does it all work?": [
+        "Comment est-ce que tout cela fonctionne ?"
       ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
@@ -10113,6 +10190,9 @@
       ],
       "Minicalendar": [
         "Mini calendrier"
+      ],
+      "Mobile": [
+        "Mobile"
       ],
       "Need more aliases?": [
         "Besoin de plus d'alias ?"
@@ -10312,8 +10392,17 @@
       "We've locked your calendars to protect your data": [
         "Nous avons verrouillé vos calendriers pour protéger vos données."
       ],
+      "What can a VPN protect you from?": [
+        "De quoi un VPN peut-il vous protéger ?"
+      ],
+      "What is a VPN?": [
+        "Qu'est-ce qu'un VPN ?"
+      ],
       "What would you like to import?": [
         "Que voulez-vous importer ?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Quand est-il le plus important d’utiliser un VPN ?"
       ],
       "You can now create unlimited folders and labels": [
         "Vous pouvez maintenant créer un nombre illimité de labels et de dossiers."
