@@ -10,8 +10,9 @@ export const ToggleField = ({ field, form, meta, onChange, ...props }: ToggleGro
         <Toggle
             {...field}
             {...props}
-            onChange={async ({ target: { checked } }) => {
-                await form.setFieldValue(field.name, checked);
+            onChange={async (value) => {
+                await form.setFieldValue(field.name, value.target.checked);
+                onChange?.(value);
             }}
         />
     );

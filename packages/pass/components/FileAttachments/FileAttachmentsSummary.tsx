@@ -1,4 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -6,10 +7,15 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/index';
 import Icon from '@proton/components/components/icon/Icon';
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import { selectUserStorageAllowed } from '@proton/pass/store/selectors';
+
+import { PassPlusPromotionButton } from '../Upsell/PassPlusPromotionButton';
 
 type FileSummaryHeaderProps = PropsWithChildren<{
-    disabled?: boolean;
+    deleteDisabled?: boolean;
     filesCount: number;
     loading?: boolean;
     onDelete?: () => void;
@@ -17,11 +23,14 @@ type FileSummaryHeaderProps = PropsWithChildren<{
 
 export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
     children,
-    disabled,
+    deleteDisabled,
     filesCount,
     loading,
     onDelete,
 }) => {
+    const canUseStorage = useSelector(selectUserStorageAllowed);
+    const upsell = useUpselling();
+
     const deleteFile = useAsyncModalHandles<void, object>({ getInitialModalState: () => ({}) });
     const canDelete = filesCount > 0 && onDelete;
     const handleDeleteAll = () => deleteFile.handler({ onSubmit: () => onDelete?.() });
@@ -43,6 +52,11 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
                         })()}
                     </div>
                 </div>
+                {!canUseStorage && (
+                    <PassPlusPromotionButton
+                        onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })}
+                    />
+                )}
                 {canDelete && (
                     <div className="shrink-0">
                         <Button
@@ -51,7 +65,7 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
                             color="weak"
                             onClick={handleDeleteAll}
                             title={c('Action').t`Remove all files`}
-                            disabled={disabled || loading}
+                            disabled={deleteDisabled || loading}
                         >
                             <Icon name="trash" alt={c('Action').t`Remove all files`} size={5} />
                         </Button>

@@ -12,8 +12,10 @@ import { ToggleField } from '@proton/pass/components/Form/Field/ToggleField';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
-import { selectNonOwnedVaults, selectUserStorageUsed } from '@proton/pass/store/selectors';
+import { selectNonOwnedVaults, selectUserStorageAllowed, selectUserStorageUsed } from '@proton/pass/store/selectors';
 import { BitField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
@@ -23,6 +25,8 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const online = useConnectivity();
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
     const usedStorage = useSelector(selectUserStorageUsed);
+    const canUseStorage = useSelector(selectUserStorageAllowed);
+    const upsell = useUpselling();
     const org = useOrganization({ sync: true });
     const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
     const disabled = orgExportDisabled || !online;
@@ -105,6 +109,14 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                             checked={form.values.fileAttachments}
                             disabled={disabled}
                             className="my-4"
+                            {...(canUseStorage
+                                ? {}
+                                : {
+                                      onChange: () => {
+                                          upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS });
+                                          void form.setFieldValue('fileAttachments', false);
+                                      },
+                                  })}
                         >
                             <span className="pl-2">
                                 {c('Info').t`Include file attachments`}
