@@ -9,6 +9,11 @@ import Counter from './lib/Counter';
 import Histogram from './lib/Histogram';
 import MetricsBase from './lib/MetricsBase';
 import type IMetricsRequestService from './lib/types/IMetricsRequestService';
+import type { MeProtonCoreObservabilityDomainMetricsAuthV4RequestMetric } from './types/core_signin_auth_total_v1.schema';
+import type { MeProtonCoreObservabilityDomainMetricsSigninSubmitFidoTotal } from './types/core_signin_submit_fido_total_v1.schema';
+import type { MeProtonCoreObservabilityDomainMetricsSigninSubmitMailboxPasswordTotal } from './types/core_signin_submit_mbp_total_v1.schema';
+import type { MeProtonCoreObservabilityDomainMetricsSigninSubmitTotpTotal } from './types/core_signin_submit_totp_total_v1.schema';
+import type { HttpsProtonMeCoreUiBlockingErrorPageTotalV1SchemaJson } from './types/core_ui_blocking_error_page_total_v1.schema';
 import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from './types/desktop_inbox_heartbeat_total_v1.schema';
 import type { HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson } from './types/docs_aborted_squashes_total_v1.schema';
 import type { HttpsProtonMeDocsAlertModalTotalV1SchemaJson } from './types/docs_alert_modal_total_v1.schema';
@@ -145,6 +150,16 @@ import type { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_sub
 import type { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
 class Metrics extends MetricsBase {
+    public core_signin_auth_total: Counter<MeProtonCoreObservabilityDomainMetricsAuthV4RequestMetric>;
+
+    public core_signin_submit_fido_total: Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitFidoTotal>;
+
+    public core_signin_submit_mbp_total: Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitMailboxPasswordTotal>;
+
+    public core_signin_submit_totp_total: Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitTotpTotal>;
+
+    public core_ui_blocking_error_page_total: Counter<HttpsProtonMeCoreUiBlockingErrorPageTotalV1SchemaJson>;
+
     public desktop_inbox_heartbeat_total: Counter<HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson>;
 
     public docs_aborted_squashes_total: Counter<HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson>;
@@ -415,6 +430,32 @@ class Metrics extends MetricsBase {
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
+
+        this.core_signin_auth_total = new Counter<MeProtonCoreObservabilityDomainMetricsAuthV4RequestMetric>(
+            { name: 'core_signin_auth_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signin_submit_fido_total = new Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitFidoTotal>(
+            { name: 'core_signin_submit_fido_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_signin_submit_mbp_total =
+            new Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitMailboxPasswordTotal>(
+                { name: 'core_signin_submit_mbp_total', version: 1 },
+                this.requestService
+            );
+
+        this.core_signin_submit_totp_total = new Counter<MeProtonCoreObservabilityDomainMetricsSigninSubmitTotpTotal>(
+            { name: 'core_signin_submit_totp_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_ui_blocking_error_page_total = new Counter<HttpsProtonMeCoreUiBlockingErrorPageTotalV1SchemaJson>(
+            { name: 'core_ui_blocking_error_page_total', version: 1 },
+            this.requestService
+        );
 
         this.desktop_inbox_heartbeat_total = new Counter<HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson>(
             { name: 'desktop_inbox_heartbeat_total', version: 1 },
