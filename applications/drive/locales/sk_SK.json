@@ -4591,9 +4591,6 @@
       "Calendar side panel": [
         "Bočný panel kalendára"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Kalendár integrovaný s ${ MAIL_APP_NAME } a ${ CONTACTS_APP_NAME }"
-      ],
       "Canceled": [
         "Zrušené"
       ],
@@ -4635,9 +4632,6 @@
       ],
       "Close this screen to exit.": [
         "Pre ukončenie zatvorte túto obrazovku."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Cloudové úložisko integrované s ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Konflikt"
@@ -4794,9 +4788,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Emailová služba integrovaná s ${ CALENDAR_APP_NAME } a ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
@@ -5212,9 +5203,6 @@
       "password": [
         "heslo"
       ],
-      "Password manager with extra account security": [
-        "Správca hesiel s dodatočným zabezpečením účtu"
-      ],
       "Paused": [
         "Pozastavené"
       ],
@@ -5424,9 +5412,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte, ktoré kalendáre chcete importovať. Pre každý importovaný kalendár sa vytvorí nový kalendár podľa počtu kalendárov dostupných vo vašom pláne."
-      ],
-      "Self-custodial crypto wallet": [
-        "Vlastná kryptopeňaženka"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA platby sú momentálne nedostupné. Skúste to znova neskôr."
@@ -5766,9 +5751,6 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
-      ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN s vyhradenými servermi a IP adresami"
       ],
       "Want to sync files faster?": [
         "Chcete synchronizovať súbory rýchlejšie?"
@@ -8301,6 +8283,18 @@
         "${ count } položiek sa nepodarilo dešifrovať",
         "${ count } položiek sa nepodarilo dešifrovať"
       ],
+      "${ nbFailures } photo failed to be added to \"${ albumName }\"": [
+        "${ nbFailures } fotografiu sa nepodarilo pridať do „${ albumName }“",
+        "${ nbFailures } fotografie sa nepodarilo pridať do „${ albumName }“",
+        "${ nbFailures } fotografií sa nepodarilo pridať do „${ albumName }“",
+        "${ nbFailures } fotografií sa nepodarilo pridať do „${ albumName }“"
+      ],
+      "${ nbSuccesses } photo added to \"${ albumName }\"": [
+        "${ nbSuccesses } fotografia pridaná do „${ albumName }“",
+        "${ nbSuccesses } fotografie pridané do „${ albumName }“",
+        "${ nbSuccesses } fotografií pridaných do „${ albumName }“",
+        "${ nbSuccesses } fotografií pridaných do „${ albumName }“"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka vymazaná",
         "${ numberOfItems } položky vymazané",
@@ -8995,6 +8989,12 @@
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov.",
         "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
@@ -10957,6 +10957,9 @@
       "Get advanced protection": [
         "Získať pokročilú ochranu"
       ],
+      "Get more from your VPN": [
+        "Získajte zo svojej VPN viac"
+      ],
       "Gift": [
         "Dar"
       ],
@@ -11335,11 +11338,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tento zdieľaný súbor pridajte do svojho ${ DRIVE_APP_NAME } pre neskorší jednoduchý prístup."
@@ -11421,6 +11419,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ]
     },
     "Validation": {

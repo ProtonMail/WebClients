@@ -4360,9 +4360,6 @@
       "Calendar side panel": [
         "カレンダーサイドパネル"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ MAIL_APP_NAME }と${ CONTACTS_APP_NAME }が統合したカレンダー"
-      ],
       "Canceled": [
         "キャンセル"
       ],
@@ -4404,9 +4401,6 @@
       ],
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "${ DOCS_APP_NAME }と統合したクラウドストレージ"
       ],
       "Conflict": [
         "競合"
@@ -4554,9 +4548,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "メール ホスティングはあなたがお持ちのドメインでのみ利用できます。ドメインの登録は現在、${ BRAND_NAME } 経由では取り扱っていません。ドメイン レジストラーからドメインを登録することでメールのホストが可能になります。"
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ CALENDAR_APP_NAME }と${ CONTACTS_APP_NAME }が統合したメールサービス"
       ],
       "Emails are automatically signed": [
         "メールは自動的に署名されます"
@@ -4963,9 +4954,6 @@
       "password": [
         "パスワード"
       ],
-      "Password manager with extra account security": [
-        "追加のアカウントセキュリティを備えたパスワードマネージャー"
-      ],
       "Paused": [
         "一時停止"
       ],
@@ -5169,9 +5157,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
-      ],
-      "Self-custodial crypto wallet": [
-        "自己管理型暗号通貨ウォレット"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPAでのお支払は現在一時的に利用できません。後で再試行してください。"
@@ -5502,9 +5487,6 @@
       ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
-      ],
-      "VPN with dedicated servers and IP addresses": [
-        "専用サーバーとIPアドレス付きのVPN"
       ],
       "Want to sync files faster?": [
         "ファイルをより速く同期したいですか?"
@@ -10285,6 +10267,9 @@
       "Get advanced protection": [
         "高度な保護を入手"
       ],
+      "Get more from your VPN": [
+        "VPNからさらに入手する"
+      ],
       "Gift": [
         "ギフト"
       ],
@@ -10657,11 +10642,6 @@
         "今日"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "この共有ファイルを${ DRIVE_APP_NAME }に追加して、後で簡単にアクセスできるようにしましょう。"
@@ -10743,6 +10723,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "アイテムにアクセスするための招待を送りました。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
       ]
     },
     "Validation": {

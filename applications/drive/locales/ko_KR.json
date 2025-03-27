@@ -4366,9 +4366,6 @@
       "Calendar side panel": [
         "캘린더 사이드 패널"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ MAIL_APP_NAME }과 ${ CONTACTS_APP_NAME }가 통합된 캘린더"
-      ],
       "Canceled": [
         "취소됨"
       ],
@@ -4410,9 +4407,6 @@
       ],
       "Close this screen to exit.": [
         "이 스크린을 닫아 종료합니다."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "${ DOCS_APP_NAME }와 통합된 클라우드 스토리지"
       ],
       "Conflict": [
         "충돌"
@@ -4560,9 +4554,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ CALENDAR_APP_NAME }와 ${ CONTACTS_APP_NAME }가 통합된 이메일 서비스"
       ],
       "Emails are automatically signed": [
         "이메일들이 자동적으로 서명됨"
@@ -4969,9 +4960,6 @@
       "password": [
         "비밀번호"
       ],
-      "Password manager with extra account security": [
-        "추가적인 계정 보안을 제공하는 비밀번호 관리자"
-      ],
       "Paused": [
         "일시 정지됨"
       ],
@@ -5175,9 +5163,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
-      ],
-      "Self-custodial crypto wallet": [
-        "개인 관리형 암호화폐 지갑"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA 결제 수단이 현재 지원되지 않습니다. 나중에 다시 시도해 주세요."
@@ -5511,9 +5496,6 @@
       ],
       "Visa Secure logo": [
         "Visa Secure 로고"
-      ],
-      "VPN with dedicated servers and IP addresses": [
-        "지정 서버 및 IP 주소가 포함된 VPN"
       ],
       "Want to sync files faster?": [
         "더 빠른 동기화를 원하세요?"
@@ -10717,11 +10699,6 @@
         "오늘"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "추후 간편하게 접근할 수 있도록 내 ${ DRIVE_APP_NAME }에 공유된 파일을 추가하세요."
@@ -10803,6 +10780,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ]
     },
     "Validation": {

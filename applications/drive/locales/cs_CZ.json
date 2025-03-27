@@ -3842,11 +3842,20 @@
         "Přidat ${ photos.length } fotek do",
         "Přidat ${ photos.length } fotek do"
       ],
+      "Add to shared album": [
+        "Přidat do sdíleného alba"
+      ],
       "All albums": [
         "Všechna alba"
       ],
       "Recent": [
         "Nedávné"
+      ],
+      "Share ${ photos.length } photo via": [
+        "Sdílet ${ photos.length } fotku přes",
+        "Sdílet ${ photos.length } fotky přes",
+        "Sdílet ${ photos.length } fotek přes",
+        "Sdílet ${ photos.length } fotek přes"
       ]
     },
     "Hint": {
@@ -4591,9 +4600,6 @@
       "Calendar side panel": [
         "Postranní panel kalendáře"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Kalendář integrovaný s ${ MAIL_APP_NAME } a ${ CONTACTS_APP_NAME }"
-      ],
       "Canceled": [
         "Zrušeno"
       ],
@@ -4635,9 +4641,6 @@
       ],
       "Close this screen to exit.": [
         "Pro ukončení zavřete tuto obrazovku."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Cloudové úložiště integrované s ${ DOCS_APP_NAME }"
       ],
       "Conflict": [
         "Konflikt"
@@ -4794,9 +4797,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby ${ BRAND_NAME } k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "E-mailová služba integrovaná s ${ CALENDAR_APP_NAME } a ${ CONTACTS_APP_NAME }"
       ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
@@ -5212,9 +5212,6 @@
       "password": [
         "heslo"
       ],
-      "Password manager with extra account security": [
-        "Správce hesel s dodatečným zabezpečením účtu"
-      ],
       "Paused": [
         "Pozastaveno"
       ],
@@ -5424,9 +5421,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
-      ],
-      "Self-custodial crypto wallet": [
-        "Peněženka kryptoměny s vlastní úschovu"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Platby přes SEPA nejsou v tuto chvíli k dispozici. Zkuste to znovu později."
@@ -5766,9 +5760,6 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
-      ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN s dedikovanými servery a IP adresami"
       ],
       "Want to sync files faster?": [
         "Chcete synchronizovat soubory rychleji?"
@@ -10975,6 +10966,9 @@
       "Get advanced protection": [
         "Získat pokročilou ochranu"
       ],
+      "Get more from your VPN": [
+        "Získejte více ze své VPN"
+      ],
       "Gift": [
         "Dárek"
       ],
@@ -11353,11 +11347,6 @@
         "Dnes"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Přidejte tento sdílený soubor na svůj ${ DRIVE_APP_NAME } pro pozdější snadný přístup."
@@ -11439,6 +11428,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "Validation": {
