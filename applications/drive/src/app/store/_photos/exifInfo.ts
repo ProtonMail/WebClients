@@ -118,11 +118,21 @@ export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({
 });
 
 // TODO: Complete tags assignment
-export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<PhotoTag[]> => {
+export const getPhotoTags = async (file: File, exifInfo?: ExpandedTags): Promise<PhotoTag[]> => {
     // Enable to debug XMP data:
     // console.log('exifInfo', JSON.stringify(exifInfo.exif));
 
     const tags: PhotoTag[] = [];
+
+    const extension = getFileExtension(file.name);
+    if (isRAWPhoto(file.type) || isRAWExtension(extension)) {
+        tags.push(PhotoTag.Raw);
+    }
+
+    if (isVideo(file.type) || isVideo(await mimetypeFromExtension(file.name))) {
+        tags.push(PhotoTag.Videos);
+    }
+
     if (!exifInfo || !exifInfo.xmp) {
         return tags;
     }
@@ -171,15 +181,6 @@ export const getPhotoTags = async (file: File, exifInfo: ExpandedTags): Promise<
     // Untested: Android Selfies
     if (appleMakerNote && detectSelfieFromMakerNote(appleMakerNote)) {
         tags.push(PhotoTag.Selfies);
-    }
-
-    const extension = getFileExtension(file.name);
-    if (isRAWPhoto(file.type) || isRAWExtension(extension)) {
-        tags.push(PhotoTag.Raw);
-    }
-
-    if (isVideo(file.type) || isVideo(await mimetypeFromExtension(file.name))) {
-        tags.push(PhotoTag.Videos);
     }
 
     return tags;
