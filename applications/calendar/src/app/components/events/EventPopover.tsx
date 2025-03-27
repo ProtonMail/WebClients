@@ -433,7 +433,7 @@ const EventPopover = ({
                 </PopoverFooter>
             )}
             {canReplyToEvent && rsvpCommentEnabled && (
-                <PopoverFooter className="shrink-0" key={targetEvent.uniqueId}>
+                <PopoverFooter className="shrink-0 relative" key={targetEvent.uniqueId}>
                     <RsvpSection
                         handleChangePartstat={handleChangePartStat}
                         userPartstat={userPartstat}
