@@ -205,6 +205,9 @@
       "Change": [
         "Módosítás"
       ],
+      "Change configuration": [
+        "Beállítások módosítása"
+      ],
       "Change keys": [
         "Kulcsok megváltoztatása"
       ],
@@ -246,6 +249,12 @@
       ],
       "Color": [
         "Szín"
+      ],
+      "Compare all plans": [
+        "Az összes csomag összehasonlítása"
+      ],
+      "Compare plans": [
+        "Csomagok összehasonlítása"
       ],
       "Configure SAML": [
         "SAML konfigurálása"
@@ -304,6 +313,9 @@
       "Copy link": [
         "Hivatkozás másolása"
       ],
+      "Copy password": [
+        "Jelszó másolása"
+      ],
       "Copy version number to clipboard": [
         "A verziószám másolása a vágólapra"
       ],
@@ -327,6 +339,9 @@
       ],
       "Create link": [
         "Hivatkozás létrehozása"
+      ],
+      "Create new password": [
+        "Új jelszó készítése"
       ],
       "Create users": [
         "Felhasználók létrehozása"
@@ -358,6 +373,9 @@
       "Delete": [
         "Törlés"
       ],
+      "Delete account": [
+        "Fiók törlése"
+      ],
       "Delete and confirm": [
         "Törlés és megerősítés"
       ],
@@ -378,6 +396,9 @@
       ],
       "Delete permanently": [
         "Végleges törlés"
+      ],
+      "Delete policy": [
+        "Házirend törlése"
       ],
       "Delete record": [
         "Elem törlése"
@@ -414,6 +435,9 @@
       ],
       "Discard changes": [
         "Módosítások elvetése"
+      ],
+      "Discover ${ planName }": [
+        "${ planName } felfedezése"
       ],
       "Dismiss": [
         "Elvetés"
@@ -453,6 +477,9 @@
       ],
       "Edit": [
         "Szerkesztés"
+      ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
       ],
       "Edit billing cycle": [
         "Számlázási ciklus szerkesztése"
@@ -508,11 +535,17 @@
       "Encrypt and export": [
         "Titkosítás és exportálás"
       ],
+      "Explore group plans": [
+        "Csoportos csomagok felfedezése"
+      ],
       "Explore other ${ BRAND_NAME } plans": [
         "További ${ BRAND_NAME } csomagok megismerése"
       ],
       "Export": [
         "Exportálás"
+      ],
+      "Export as CSV": [
+        "Exportálás CSV-ként"
       ],
       "Export key": [
         "Kulcs exportálása"
@@ -838,6 +871,9 @@
       "Remove all members": [
         "Minden tag eltávolítása"
       ],
+      "Remove all other devices": [
+        "Távolítsa el az összes többi eszközt"
+      ],
       "Remove bonuses": [
         "Kedvezmények törlése"
       ],
@@ -889,6 +925,9 @@
       "Reset keys": [
         "Kulcsok visszaállítása"
       ],
+      "Reset modifications": [
+        "Módosítások alaphelyzetbe állítása"
+      ],
       "Reset password": [
         "Jelszó visszaállítása"
       ],
@@ -900,6 +939,9 @@
       ],
       "Resume": [
         "Folytatás"
+      ],
+      "Resume membership": [
+        "Tagság folytatása"
       ],
       "Retry": [
         "Újra"
@@ -931,6 +973,9 @@
       "Save address": [
         "Cím mentése"
       ],
+      "Save and continue": [
+        "Mentés és folytatás"
+      ],
       "Save changes": [
         "Módosítások mentése"
       ],
@@ -961,14 +1006,20 @@
       "Select calendar view": [
         "Naptár nézet kiválasztása"
       ],
+      "Select city ${ city }": [
+        "Város kiválasztása: ${ city }"
+      ],
       "Select country": [
         "Válassza ki az országot"
       ],
-      "Select file": [
-        "Fájl kiválasztása"
+      "Select country ${ country }": [
+        "Ország kiválasztása: ${ country }"
       ],
       "select file": [
         "fájl kiválasztása"
+      ],
+      "Select file": [
+        "Fájl kiválasztása"
       ],
       "Select files": [
         "Fájlok kiválasztása"
@@ -1002,6 +1053,9 @@
       ],
       "Set as default": [
         "Beállítás alapértelmezettként"
+      ],
+      "Set as default mail application": [
+        "Beállítás alapértelmezett e-mail alkalmazásnak"
       ],
       "Set catch-all": [
         "Gyűjtő e-mail beállítása"
@@ -6268,6 +6322,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: alacsony felbontású előnézet"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } családtagja kétfaktoros hitelesítést használ.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } családtagja kétfaktoros hitelesítést használ."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } adatokat kíván megosztani önnel a ${ PASS_APP_NAME } rendszeren"
       ],
@@ -6280,6 +6342,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: ne helyezzék karanténba és ne utasítsák el az e-maileket. Ezt a beállítást általában csak tesztelésre vagy hibakeresésre használják."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag"
       ],
       "${ number } city": [
         "${ number } város",
@@ -6298,6 +6364,10 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } lejár ${ daysLeft } nap múlva.",
+        "${ planName } lejár ${ daysLeft } nap múlva."
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "A ${ PROTON_SENTINEL_NAME } egy komplex MI rendszerekkel vezérelt, fejlett fiókvédelmi program, amely szakemberek folyamatos támogatásával védi a támadóktól és biztonsági fenyegetésekről."
@@ -6330,6 +6400,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } kiválasztva",
+        "${ selectedEntities.length } kiválasztva"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mappa kiválasztva",
@@ -6519,6 +6593,9 @@
       "All members have been added.": [
         "Minden tag hozzáadva."
       ],
+      "All users": [
+        "Minden felhasználó"
+      ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
@@ -6618,6 +6695,9 @@
       ],
       "Are you sure you want to remove all members from this group?": [
         "Biztosan eltávolít minden tagot a csoportból?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
       "Attention required": [
         "Figyelem szükséges"
@@ -7269,6 +7349,9 @@
       "It appears some of your data is encrypted and locked.": [
         "Úgy tűnik az adatai egy része titkosítva és zárolva vannak."
       ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "A szerver országának megváltoztatása 10 napot vesz igénybe, ezért győződjön meg róla, hogy helyesen választotta ki."
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Elem automatikusan kitöltve a tárolóból: ${ vaultLink }"
       ],
@@ -7517,6 +7600,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "A dedikált szerverek száma a szervezeténél"
+      ],
+      "Numbers": [
+        "Számok"
       ],
       "of": [
         "/"
@@ -7851,6 +7937,9 @@
       "Select a service provider to start": [
         "Válaszon ki egy szolgáltatót a kezdéshez"
       ],
+      "Select recently used servers": [
+        "Nemrég használt szerverek kiválasztása"
+      ],
       "Select what you want to import.": [
         "Válassza ki, mit szeretne importálni."
       ],
@@ -8089,6 +8178,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Ez néhány másodpercet vagy néhány percet is igénybe vehet"
+      ],
+      "This cannot be undone.": [
+        "Ezt nem lehet visszavonni."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Ez eltarthat egy ideig. Ne zárja be ezt az oldalt és ne kapcsolódjon le az internetről."
@@ -8341,6 +8433,9 @@
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "A feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
+      ],
+      "Uppercase and lowercase letters": [
+        "Kis- és nagybetűk"
       ],
       "URL link": [
         "URL hivatkozás"
@@ -13199,6 +13294,12 @@
     "plan customizer, users": {
       "contact": [
         "lépjen kapcsolatba"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } hónap",
+        "${ cycle } hónap"
       ]
     },
     "Price": {
