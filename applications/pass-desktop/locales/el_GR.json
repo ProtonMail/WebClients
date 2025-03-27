@@ -795,10 +795,10 @@
         "Για να επαληθεύσετε την ιδιοκτησία του τομέα, προσθέστε την ακόλουθη εγγραφή TXT. Ορισμένοι καταχωρητές τομέα (Namecheap, Cloudflare, κλπ.) ενδέχεται να χρησιμοποιούν @ για τον ριζικό τομέα."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Ξεκλειδώστε προηγμένες λειτουργίες ασφαλείας και λεπτομερή αρχεία καταγραφής για να προστατεύσετε την παρουσία σας στο διαδίκτυο."
+        "Ξεκλειδώστε προηγμένες δυνατότητες ασφαλείας και λεπτομερή αρχεία καταγραφής για να προστατεύσετε την παρουσία σας στο διαδίκτυο."
       ],
       "With ${ PASS_SHORT_APP_NAME } Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Με την ${ PASS_SHORT_APP_NAME } Παρακολούθηση, παραμείνετε μπροστά από απειλές λαμβάνοντας άμεσες ειδοποιήσεις εάν παραβιαστούν τα διαπιστευτήριά σας. Ξεκλειδώστε προηγμένες λειτουργίες ασφαλείας και λεπτομερή αρχεία καταγραφής για να προστατεύσετε την παρουσία σας στο διαδίκτυο."
+        "Με το ${ PASS_SHORT_APP_NAME } Monitor, παραμείνετε μπροστά από απειλές λαμβάνοντας άμεσες ειδοποιήσεις εάν παραβιαστούν τα διαπιστευτήριά σας. Ξεκλειδώστε προηγμένες δυνατότητες ασφαλείας και λεπτομερή αρχεία καταγραφής για να προστατεύσετε την παρουσία σας στο διαδίκτυο."
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "Οι διευθύνσεις ηλεκτρονικού ταχυδρομείου σας διέρρευσαν σε τουλάχιστον 1 παραβίαση δεδομένων."
@@ -1382,7 +1382,7 @@
         "(Άδειο)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 ημέρες για να δοκιμάσετε δωρεάν premium χαρακτηριστικά. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
+        "7 ημέρες για να δοκιμάσετε δωρεάν premium δυνατότητες. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Δημιουργείται μια επαφή για κάθε διεύθυνση ηλεκτρονικού ταχυδρομείου που στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου ή λαμβάνει μηνύματα ηλεκτρονικού ταχυδρομείου από ${ aliasEmail }."
@@ -2279,7 +2279,7 @@
         "Μη επαληθευμένος"
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Αναβαθμίστε τώρα για να ξεκλειδώσετε Premium χαρακτηριστικά"
+        "Αναβαθμίστε τώρα για να ξεκλειδώσετε Premium δυνατότητες"
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Κάντε αναβάθμιση σε πλάνο επί πληρωμή για να δημιουργήσετε πολλαπλές κρύπτες."
@@ -2348,8 +2348,8 @@
         "Έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να τα συγχρονίσετε;"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Σας απομένει ${ daysRemaining } ημέρα για να δοκιμάσετε αυτές και άλλες premium λειτουργίες.",
-        "Σας απομένουν ${ daysRemaining } ημέρες για να δοκιμάσετε αυτές και άλλες premium λειτουργίες."
+        "Σας απομένει ${ daysRemaining } ημέρα για να δοκιμάσετε αυτές και άλλες premium δυνατότητες.",
+        "Σας απομένουν ${ daysRemaining } ημέρες για να δοκιμάσετε αυτές και άλλες premium δυνατότητες."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Τα στοιχεία μπορούν να μετακινηθούν μόνο στις πρώτες δύο κρύπτες σας. Για να μετακινήσετε στοιχεία μεταξύ όλων των κρυπτών, αναβαθμίστε τη συνδρομή σας."
@@ -2394,7 +2394,7 @@
         "Δε θα ειδοποιείστε πλέον για παραβιάσεις δεδομένων για αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
-        "Δε θα έχετε πλέον πρόσβαση σε κοινή χρήση, 2FA, πιστωτική κάρτα και άλλες προηγμένες λειτουργίες της ${ PASS_APP_NAME }"
+        "Δε θα έχετε πλέον πρόσβαση σε κοινή χρήση, 2FA, πιστωτική κάρτα και άλλες προηγμένες δυνατότητες της ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Θα χρησιμοποιήσετε αυτό το PIN για να ξεκλειδώσετε το ${ PASS_APP_NAME } όταν κλειδώσει αυτόματα μετά από μια περίοδο αδράνειας."
@@ -2581,7 +2581,7 @@
         "Εφεδρικός κωδικός πρόσβασης"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
-        "Εκτός από την αποθήκευση των συνδέσεών σας, το ${ PASS_APP_NAME } προστατεύει την ταυτότητά σας με μια ενσωματωμένη λειτουργία ψευδωνύμου διεύθυνσης ηλεκτρονικού ταχυδρομείου. Κάθε φορά που εγγράφεστε για έναν νέο ηλεκτρονικό λογαριασμό, το ${ PASS_APP_NAME } μπορεί να δημιουργήσει αυτόματα ένα ψευδώνυμο για να διατηρήσει την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου σας προστατευμένη. "
+        "Εκτός από την αποθήκευση των συνδέσεών σας, το ${ PASS_APP_NAME } προστατεύει την ταυτότητά σας με μια ενσωματωμένη δυνατότητα ψευδωνύμου διεύθυνσης ηλεκτρονικού ταχυδρομείου. Κάθε φορά που εγγράφεστε για έναν νέο ηλεκτρονικό λογαριασμό, το ${ PASS_APP_NAME } μπορεί να δημιουργήσει αυτόματα ένα ψευδώνυμο για να διατηρήσει την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου σας προστατευμένη. "
       ],
       "Biometrics": [
         "Βιομετρικά"
