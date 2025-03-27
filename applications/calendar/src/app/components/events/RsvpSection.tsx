@@ -192,7 +192,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         attendeeStatus={model.Status}
                     />
                     <InputFieldTwo
-                        className="mt-4"
+                        className="mt-4 resize-none"
                         assistContainerClassName="m-0"
                         id="rsvp-modal"
                         as={TextAreaWithCounter}
