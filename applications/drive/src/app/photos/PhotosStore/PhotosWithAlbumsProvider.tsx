@@ -236,7 +236,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             setIsAlbumPhotosLoading(true);
             void albumPhotosCall();
         },
-        [request, currentAlbumLinkId, volumeId, shareId]
+        [request, currentAlbumLinkId, volumeId, shareId, getShare]
     );
 
     const cleanupObsoleteAlbums = (newAlbumsLinkIds: Set<string>) => {
@@ -376,6 +376,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                             }
                         })
                     );
+
                     setAlbums((prevAlbums) => {
                         const newAlbums = new Map(prevAlbums);
                         newDecryptedAlbums.forEach((album) => {

@@ -136,6 +136,9 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
         [onClick]
     );
 
+    // For translation context to be identical
+    const photoCount = album.photoCount;
+
     return (
         /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <ButtonLike
@@ -213,11 +216,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
                                 {album.name ? album.name : c('Info').t`Untitled`}
                             </div>
                             <div className="text-left mb-2 text color-weak text-semibold">
-                                {c('Info').ngettext(
-                                    msgid`${album.photoCount} item`,
-                                    `${album.photoCount} items`,
-                                    album.photoCount
-                                )}
+                                {c('Info').ngettext(msgid`${photoCount} item`, `${photoCount} items`, photoCount)}
                                 {album.isShared && <span className="ml-1">⋅ {c('Info').t`Shared`}</span>}
                             </div>
                         </div>
