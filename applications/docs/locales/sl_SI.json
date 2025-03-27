@@ -156,6 +156,9 @@
       "Close this banner": [
         "Zapri to pasico"
       ],
+      "Collapse": [
+        "Strni"
+      ],
       "Compose": [
         "Napiši sporočilo"
       ],
@@ -195,6 +198,9 @@
       "Copy invite link": [
         "Kopiraj povezavo do povabila"
       ],
+      "Create": [
+        "Ustvari"
+      ],
       "Create a copy": [
         "Ustvari kopijo"
       ],
@@ -206,6 +212,9 @@
       ],
       "Create folder": [
         "Ustvari mapo"
+      ],
+      "Create new folder": [
+        "Ustvari novo mapo"
       ],
       "Current plan": [
         "Trenutni paket"
@@ -296,6 +305,9 @@
       ],
       "enable desktop notifications": [
         "omogoči obvestila na namizju"
+      ],
+      "Expand": [
+        "Razširi"
       ],
       "Export": [
         "Izvozi"
@@ -419,6 +431,12 @@
       ],
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
+      ],
+      "Move": [
+        "Premakni"
+      ],
+      "Move to folder": [
+        "Premakni v mapo"
       ],
       "Move to trash": [
         "Premakni v smetnjak"
@@ -3975,6 +3993,9 @@
       "Create your end-to-end encrypted document": [
         "Ustvarite vaš celovito šifriran dokument"
       ],
+      "Create your first folder and start moving your files.": [
+        "Najprej ustvarite mapo in nato pričnite s prenosom datotek."
+      ],
       "Creating link to file": [
         "Ustvarjanje povezave do datoteke"
       ],
@@ -4466,6 +4487,9 @@
       ],
       "Saving...": [
         "Shranjevanje ..."
+      ],
+      "Select a folder to move to.": [
+        "Izberite mapo, v katero se želite premakniti."
       ],
       "Select a service provider to start": [
         "Za začetek izberite ponudnika storitve"
@@ -5131,6 +5155,9 @@
       ],
       "Folder location": [
         "Mesto mape"
+      ],
+      "Folder name": [
+        "Ime mape"
       ],
       "Forwards to": [
         "Posreduje na"
@@ -6870,8 +6897,29 @@
       "Link copied to clipboard": [
         "Povezava je kopirana v odložišče"
       ],
+      "Move ${ n } file": [
+        "Premakni datoteko ${ n }",
+        "Premakni datoteki ${ n }",
+        "Premakni datoteke ${ n }",
+        "Premakni datoteke ${ n }"
+      ],
+      "Move ${ n } folder": [
+        "Premakni mapo ${ n }",
+        "Premakni mapi ${ n }",
+        "Premakni mape ${ n }",
+        "Premakni mape ${ n }"
+      ],
+      "Move ${ n } item": [
+        "Premakni ${ n } predmet",
+        "Premakni ${ n } predmeta",
+        "Premakni ${ n } predmete",
+        "Premakni ${ n } predmete"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ni dovolj prostora za nalaganje ${ formattedTotal }"
+      ],
+      "Root folder failed to be loaded": [
+        "Korenske mape ni bilo mogoče naložiti"
       ],
       "Share invitation accepted successfully": [
         "Povabilo k skupni rabi je bilo sprejeto."
@@ -6887,6 +6935,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Preklic deljenja za ta predmet ni uspel"
+      ],
+      "Subfolder failed to be loaded": [
+        "Podmape ni bilo mogoče naložiti"
       ],
       "The link to your item failed to be deleted": [
         "Povezave do vašega predmeta ni bilo mogoče izbrisati"
@@ -7161,6 +7212,9 @@
       ],
       "Email": [
         "E-pošta"
+      ],
+      "Enter a new folder name": [
+        "Vpišite ime nove mape"
       ],
       "Filter groups": [
         "Filtriraj skupine"
@@ -8429,6 +8483,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "Create a new folder": [
+        "Ustvarite novo mapo"
+      ],
       "Create contact": [
         "Ustvari stik"
       ],
@@ -8791,6 +8848,9 @@
       ],
       "What would you like to import?": [
         "Kaj želite uvoziti?"
+      ],
+      "You have no folders yet": [
+        "Nimate še map"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaš ${ planName } brezplačen preizkus se konča ${ textDate }"
