@@ -385,8 +385,10 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
             album.permissions.isAdmin
     );
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos);
-    const canShare = Boolean(!hasMultipleSelected || (album && album.permissions.isAdmin));
-    const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal);
+    const canShare = Boolean(
+        (!hasMultipleSelected && !album) || (!hasMultipleSelected && album && album.permissions.isAdmin)
+    );
+    const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal && !album);
 
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container toolbar--no-bg">
