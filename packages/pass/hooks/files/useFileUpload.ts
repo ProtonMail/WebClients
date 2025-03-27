@@ -61,7 +61,8 @@ export const useFileUpload = () => {
                     const end = Math.min(start + FILE_CHUNK_SIZE, fileSize);
                     const blob = file.slice(start, end);
                     const dto = await getChunkDTO(fileID, index, blob);
-                    await abortable(() => dispatch(fileUploadChunk, dto), ctrl.signal);
+                    const res = await abortable(() => dispatch(fileUploadChunk, dto), ctrl.signal);
+                    if (res.type !== 'success') throw new Error(res.error);
                 }
 
                 onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { useFileDownload } from '@proton/pass/hooks/files/useFileDownload';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
 import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
 import { selectShare } from '@proton/pass/store/selectors';
@@ -21,7 +22,9 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
     const deleteFile = useAsyncModalHandles<void, { name: string }>({ getInitialModalState: () => ({ name: '' }) });
     const fileDownload = useFileDownload();
     const share = useSelector(selectShare(shareId));
-    const canRename = share && isShareWritable(share);
+
+    const allowed = useMatchUser({ paid: true });
+    const canRename = allowed && share && isShareWritable(share);
 
     const onRename = (descriptor: BaseFileDescriptor, fileName: string) => {
         if (descriptor.name === fileName) return;
@@ -48,7 +51,7 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
                     onDelete={onDelete ? () => handleDelete(file) : undefined}
                     onCancel={() => fileDownload.cancel(file.fileID)}
                     onRename={canRename ? (fileName) => onRename(file, fileName) : undefined}
-                    onDownload={() => handleDownload(file)}
+                    onDownload={allowed ? () => handleDownload(file) : undefined}
                     loading={fileDownload.pending.has(file.fileID)}
                 />
             ))}
