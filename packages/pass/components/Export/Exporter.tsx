@@ -85,21 +85,18 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
 
                     const result = await asyncDispatch(exportData, values);
 
-                    if (result.type === 'success') {
-                        const filename = result.data;
-                        const file = await fileStorage.readFile(filename);
+                    if (result.type !== 'success') throw new Error(result.error);
 
-                        if (file) {
-                            download(file, filename);
-                            createNotification({
-                                type: 'success',
-                                text: c('Info').t`Successfully exported all your items`,
-                            });
-                        }
-                    }
+                    const filename = result.data;
+                    const file = await fileStorage.readFile(filename);
 
-                    form.resetForm({ values: { ...form.values, passphrase: '' } });
-                    void form.validateForm();
+                    if (!file) throw new Error();
+
+                    download(file, filename);
+                    createNotification({
+                        type: 'success',
+                        text: c('Info').t`Successfully exported all your items`,
+                    });
                 } catch (error) {
                     const notification = (() => {
                         if (error instanceof Error) {
@@ -125,6 +122,8 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                     if (notification) createNotification({ type: 'error', text: notification });
                 } finally {
                     setLoading(false);
+                    form.resetForm({ values: form.values });
+                    void form.validateForm();
                 }
             }
         },

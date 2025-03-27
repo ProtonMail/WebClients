@@ -9,6 +9,7 @@ import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvid
 import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
+import { isAbortError } from '@proton/pass/lib/api/errors';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
 import {
     selectUserStorageMaxFileSize,
@@ -72,13 +73,15 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                             setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
                             return fileID;
                         })
-                        .catch(() => {
+                        .catch((error) => {
                             setFiles(updateMap((next) => next.delete(uploadID)));
 
-                            createNotification({
-                                type: 'error',
-                                text: c('Error').t`"${file.name}" could not be uploaded.`,
-                            });
+                            if (!isAbortError(error)) {
+                                createNotification({
+                                    type: 'error',
+                                    text: c('Error').t`"${file.name}" could not be uploaded.`,
+                                });
+                            }
 
                             return undefined;
                         })
