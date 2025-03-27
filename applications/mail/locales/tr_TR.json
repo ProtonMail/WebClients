@@ -489,6 +489,9 @@
       "Expiration time": [
         "Geçerlilik süresi"
       ],
+      "Explore ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }'i keşfedin"
+      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -1302,6 +1305,9 @@
       ],
       "Toggle settings": [
         "Ayarları aç / kapat"
+      ],
+      "Toggle VPN dashboard": [
+        "VPN panosunu aç / kapat"
       ],
       "Tomorrow": [
         "Yarın"
@@ -3881,6 +3887,17 @@
         "Tümünü indir"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Linux için indirin"
+      ],
+      "Download for macOS": [
+        "macOS için indirin"
+      ],
+      "Download for Windows": [
+        "Windows için indirin"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Ayrıntılı sürüm geçmişi"
@@ -4528,6 +4545,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "VPN kontrol paneli yüklenemiyor. Lütfen bağlantınızı kontrol edin ve tekrar deneyin."
       ],
       "Unexpected error, we can't import the contacts": [
         "Beklenmeyen bir sorun çıktı. Kişileri içe aktaramadık"
@@ -6026,6 +6046,9 @@
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } IP adresinizi maskeliyor, böylece web siteleri sizi tanımlayamıyor."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
@@ -6046,6 +6069,12 @@
         "${ labelName } içinde **${ elementsFoundCount }** sonuç bulundu",
         "${ labelName } içinde **${ elementsFoundCount }** sonuç bulundu"
       ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Auto-connect**: Cihazınızı açar açmaz VPN'i açar ve bağlanır."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: VPN beklenmedik bir şekilde kesilirse internetinizi engelleyerek veri sızıntılarını durdurur."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
       ],
@@ -6062,8 +6091,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Bültenin göndericisine, bu e-posta listesinden ayrılma isteği gönderilecek ve bu işlem otomatik olarak işlenecek."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Uzaktan çalışırken güvenli bir bağlantı şarttır. VPN, şirket verilerini siber tehditlerden korur ve işinizi gizli tutar."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN bağlantınızı şifreler ve IP adresinizi gizleyerek herhangi birinin gezintinizi izlemesini veya takip etmesini çok daha zor hale getirir."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN, IP adresinizi gizler ve tarama etkinliğinizi şifreleyerek web sitelerinin, reklamcıların ve İSS'lerin zaman içinde sizi izlemesini zorlaştırır."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN, cihazınız ile internet arasında güvenli bir tüneldir. Konumunuzu ve faaliyetlerinizi internet servis sağlayıcınızdan (ISP) ve ziyaret ettiğiniz web sitelerinden gizler."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "6.500 üzerinde yüksek hızlı sunucuya, 10 aygıta kadar erişim sağlayarak tarama verilerinizi güvende tutun. ${ ios }, ${ android }, ${ appleTV } ve ${ desktop } üzerinde kullanılabilir."
@@ -6080,6 +6121,9 @@
       "Active": [
         "Etkin"
       ],
+      "Ad targeting": [
+        "Hedefli reklam"
+      ],
       "Add image URL": [
         "Adresten görsel ekle"
       ],
@@ -6088,6 +6132,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Reklamverenler, hedefli reklamlar göstermek için gezintinizi izler. ${ VPN_APP_NAME } izleyicileri ve reklamları engelleyerek bağlantınızı daha hızlı hale getirir ve çevrimiçi deneyiminizi geliştirir."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
@@ -6233,6 +6280,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha kararlı bir çevrim içi deneyim sağlayın."
       ],
+      "Browse privately and access blocked content.": [
+        "Özel olarak gezinin ve engellenen içeriğe erişin."
+      ],
       "Browser not supported": [
         "Tarayıcı desteklenmiyor"
       ],
@@ -6241,9 +6291,6 @@
       ],
       "Calendar side panel": [
         "Takvim yan panosu"
-      ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ MAIL_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan takvim"
       ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Aradığınızı bulamadınız mı? ${ displayAllMailButton }"
@@ -6284,11 +6331,11 @@
       "Close this screen to exit.": [
         "Çıkmak için bu ekranı kapatın."
       ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "${ DOCS_APP_NAME } ile birlikte çalışan bulut depolama alanı"
-      ],
       "Confirm phishing report": [
         "Kimlik avı girişimi bildirimini onayla"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Özel olarak gezinmek için ${ VPN_APP_NAME } adresine bağlanın"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Alıcınızın e-postanızı alması için en iyi zamanın ne olduğunu düşünün ve o zamanda gönderilmek üzere ayarlayın."
@@ -6479,9 +6526,6 @@
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "E-posta, posta kutunuza iletilir. Asıl e-posta adresiniz gizli kalır."
       ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "${ CALENDAR_APP_NAME } ve ${ CONTACTS_APP_NAME } ile birlikte çalışan e-posta hizmeti"
-      ],
       "Email tracker protection is disabled": [
         "E-posta izleme koruması kapalı"
       ],
@@ -6590,6 +6634,9 @@
       "Generate text": [
         "Metin oluştur"
       ],
+      "Geoblocking": [
+        "Coğrafi Engelleme"
+      ],
       "Get it on Google Play": [
         "Google Play üzerinden edinin"
       ],
@@ -6598,6 +6645,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Gelen faturaları ${ suggestedLabelName } gibi bir ad ve renk ile kodlayarak etiketleyin. Ödeme yapıldıktan sonra etiketi ${ suggestedPaidLabelName } ile değiştirin."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Hükümetler ve İSS'ler çevrimiçi etkinliğinizi izleyebilir. Gerçek IP'nizi gizleyerek ve etkinliğinizi şifreleyerek gezintiniz gizli hale gelir."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } ek dosya var (${ numAttachmentsSize })",
@@ -6673,6 +6723,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
       ],
+      "In restrictive countries": [
+        "Sınırlayıcı ülkelerde"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
@@ -6711,6 +6764,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "${ protonDuoPlanName } tarifenizi paylaşmak istediğiniz eşinizi, arkadaşınızı veya istediğiniz herhangi birini davet edin."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Her zaman bir VPN kullanmak en iyisidir. Ancak siber güvenlik tehditlerinin en yüksek olabileceği zamanlar buralardır:"
       ],
       "JCB logo": [
         "JCB logosu"
@@ -6859,6 +6915,9 @@
       "More refine actions": [
         "Diğer düzeltme işlemleri"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Çoğu herkese açık WiFi ağı güvenlidir, ancak bazıları güvenlikten yoksundur ve sizi siber tehditlere maruz bırakır. VPN trafiğinizi şifreleyerek sizi korur."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
@@ -6916,11 +6975,17 @@
       "Not a valid URL": [
         "Adres geçersiz"
       ],
+      "Not connected": [
+        "Bağlı değil"
+      ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
       ],
       "of": [
         "/"
+      ],
+      "On public WiFi networks": [
+        "Herkese açık WiFi ağlarında"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
@@ -6948,9 +7013,6 @@
       ],
       "password": [
         "parola"
-      ],
-      "Password manager with extra account security": [
-        "Ek hesap güvenliği ile parola yöneticisi"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -7062,6 +7124,9 @@
       "Print email": [
         "E-postayı yazdır"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Gizli tarama (veya “gizli” mod) yalnızca etkinliğinizi cihazınızda gizli tutmak için kullanışlıdır. Tarayıcınızın geçmişi ve çerezleri kaydetmesini engeller, ancak sizi görünmez yapmaz. İSS'niz, ağ yöneticiniz ve ziyaret ettiğiniz web siteleri çevrimiçi ortamda ne yaptığınızı görmeye devam edebilir."
+      ],
       "Proofread selection": [
         "Seçimi düzelt"
       ],
@@ -7125,6 +7190,9 @@
       "Saving draft…": [
         "Taslak kaydediliyor…"
       ],
+      "Scan the QR code with your mobile device": [
+        "Karekodu mobil cihazınızla tarayın"
+      ],
       "Scheduled send of this message will be canceled.": [
         "Bu iletinin zamanlanmış gönderimi iptal edilecek."
       ],
@@ -7161,9 +7229,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
-      ],
-      "Self-custodial crypto wallet": [
-        "Kendinden korumalı kripto cüzdanı"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "${ boldText } e-posta adresine şifrelenmiş ve parola ile korunan bir ileti gönderin."
@@ -7237,6 +7302,12 @@
       "Snoozing this conversation will be canceled.": [
         "Bu yazışmanın ertelenmesi iptal edilecek."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Bazı devletler belirli web sitelerine erişimi engeller veya kısıtlar. VPN, etkinliğinizi ve kimliğinizi gizli tutarken sansürü aşmanıza yardımcı olur."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Bazı web siteleri ve yayın hizmetleri içeriği bölgelere göre engeller. VPN, bu kısıtlamaları aşmanızı ve internete özgürce erişmenizi sağlar."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da geçerlilik süresi dolmuş."
       ],
@@ -7245,6 +7316,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "E-posta adresinizin daha kısa ve akılda kalıcı sürümünü kullanmaya başlayın."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Aşağıdaki VPN ayarlarını etkinleştirerek zahmetsizce bağlantıda kalın:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Bu tarayıcıda depolama alanı özelliği desteklenmiyor. İletilerin içeriklerinde arama yapabilmek için bu özellik desteklenmelidir."
@@ -7273,6 +7347,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Gözetleme"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Dosyalarınızı ${ DRIVE_APP_NAME } uygulamasıyla eşitleyin ve yönetin. ${ DOCS_APP_NAME } ile belgeler oluşturun, paylaşın ve güvenle saklayın. Tüm bunları ${ ios }, ${ android } ve ${ desktop } üzerinde yapın."
@@ -7387,6 +7464,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Bu, İSS'nizin ve ziyaret ettiğiniz web sitelerinin kişisel bilgilerinizi çevrimiçi etkinliğinizle ilişkilendiremeyeceği anlamına gelir."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Bu ileti, koyu bir arka plana uyacak şekilde ayarlandı."
       ],
@@ -7454,6 +7534,9 @@
       "This sender's public key has not been trusted yet.": [
         "Henüz bu göndericinin herkese açık anahtarına güvenilmemiş."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Bu benzersiz kod, web siteleri ve İSS'ler (internet servis sağlayıcıları) tarafından konumunuzu ve tarama geçmişinizi cihazınıza bağlamak için kullanılabilir"
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Bu bilgi, e-posta konu satırınızda parola sıfırlama anahtar sözcükleri bulunduğundan görüntülendi."
       ],
@@ -7513,6 +7596,9 @@
       ],
       "Trackers blocked:": [
         "Engellenen izleyiciler:"
+      ],
+      "Tracking": [
+        "İzleme"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
@@ -7628,8 +7714,8 @@
       "Visa Secure logo": [
         "Visa Secure logosu"
       ],
-      "VPN with dedicated servers and IP addresses": [
-        "Size ayrılmış sunucular ve IP adresleri ile VPN"
+      "VPN IP": [
+        "VPN IP adresi"
       ],
       "Warning": [
         "Uyarı"
@@ -7690,6 +7776,12 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "E-posta adresinizi başkalarına verirken, gerçek e-posta adresiniz yerine benzersiz, tek kullanımlık bir hide-my-email takma adı kullanın."
+      ],
+      "When working remotely": [
+        "Uzaktan çalışırken"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "VPN'e bağlandığınızda, IP adresinizi (cihazınıza atanan benzersiz bir kod) gizlemek için şifreleme teknolojisini kullanır."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } için güvenilen anahtarlar özelliğini açtığınızda, kişi bilgilerine herkese açık anahtarlar eklenir."
@@ -7922,6 +8014,15 @@
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "İnternet servis sağlayıcınız verilerinizi izleyebilir ve bazen satabilir, hatta hangi web sitelerine erişebileceğinizi kısıtlayabilir."
+      ],
+      "Your IP": [
+        "IP adresiniz"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "IP adresiniz görülebilir ve çevrimiçi etkinliğinizi izlemek için kullanılabilir."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
       ],
@@ -7941,11 +8042,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
       ],
+      "Your online activity is protected": [
+        "Çevrimiçi faaliyetleriniz korunuyor"
+      ],
       "Your password was leaked:": [
         "Parolanız sızdırılmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Fiziksel konumunuz görülebilir ve internete erişiminizi kısıtlamak için kullanılabilir."
       ],
       "Your private writing assistant": [
         "Kişisel yazma yardımcınız"
@@ -8797,6 +8904,15 @@
       ],
       "Your alias": [
         "Takma adınız"
+      ],
+      "Your IP": [
+        "IP adresiniz"
+      ],
+      "Your ISP": [
+        "İSS'niz"
+      ],
+      "Your location": [
+        "Konumunuz"
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
@@ -12186,6 +12302,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Veri sızıntısı uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
@@ -12444,47 +12601,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Veri sızıntısı uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Bilgisayar uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {
@@ -13246,6 +13362,9 @@
       "Deleting contacts": [
         "Kişileri sil"
       ],
+      "Desktop": [
+        "Bilgisayar"
+      ],
       "Details": [
         "Ayrıntılar"
       ],
@@ -13263,6 +13382,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } tarifesine düşürülsün mü?"
+      ],
+      "Download the app": [
+        "Uygulamayı indirin"
       ],
       "Edit contact": [
         "Kişiyi düzenle"
@@ -13333,6 +13455,9 @@
       "Get advanced protection": [
         "Gelişmiş koruma edinin"
       ],
+      "Get more from your VPN": [
+        "VPN hizmetinizden fazlasını alın"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } uygulamalarını edinin"
       ],
@@ -13353,6 +13478,9 @@
       ],
       "High security for your account": [
         "Hesabınız için yüksek güvenlik"
+      ],
+      "How does it all work?": [
+        "Tüm bunlar nasıl işliyor?"
       ],
       "How to update your email address": [
         "E-posta adresinizi nasıl güncellersiniz"
@@ -13378,6 +13506,9 @@
       ],
       "Import groups": [
         "Grupları içe aktar"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } ile güvenliği artırın"
       ],
       "Increase your privacy with more addresses": [
         "Daha fazla adres kullanarak gizliliğinizi artırın"
@@ -13405,6 +13536,9 @@
       ],
       "Load remote content": [
         "Uzak içeriği yükle"
+      ],
+      "Make a secure connection your default": [
+        "Güvenli bir bağlantıyı varsayılanınız yapın"
       ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
@@ -13444,6 +13578,9 @@
       ],
       "Minicalendar": [
         "Mini takvim"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "More": [
         "Diğer"
@@ -13570,6 +13707,9 @@
       ],
       "Priority support:": [
         "Öncelikli destek:"
+      ],
+      "Private browsing vs VPN": [
+        "Özel gezinme ile VPN karşı karşıya"
       ],
       "Processing...": [
         "İşleniyor..."
@@ -13773,6 +13913,9 @@
       "Verifying your payment...": [
         "Ödemeniz doğrulanıyor..."
       ],
+      "VPN explained": [
+        "VPN açıklanıyor"
+      ],
       "Want to snooze any time?": [
         "İstediğiniz zamana ertelemek ister misiniz?"
       ],
@@ -13792,8 +13935,17 @@
       "Welcome ${ userName }": [
         "Hoş geldin, ${ userName }"
       ],
+      "What can a VPN protect you from?": [
+        "VPN sizi nelerden koruyabilir?"
+      ],
+      "What is a VPN?": [
+        "VPN nedir?"
+      ],
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"
+      ],
+      "When is it most important to use a VPN?": [
+        "VPN kullanmak en çok ne zaman önemlidir?"
       ],
       "You can now create unlimited folders and labels": [
         "Artık sınırsız sayıda klasör ve etiket oluşturabilirsiniz"
@@ -13820,11 +13972,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Bugün"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Tooltip": {
@@ -13908,6 +14055,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Tor out of date": {
