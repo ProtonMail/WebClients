@@ -154,6 +154,9 @@
       "Close this banner": [
         "ამ ბანერის დახურვა"
       ],
+      "Collapse": [
+        "ჩაკეცვა"
+      ],
       "Compose": [
         "შედგენა"
       ],
@@ -193,6 +196,9 @@
       "Copy invite link": [
         "მოსაწვევის ბმულის კოპირება"
       ],
+      "Create": [
+        "შექმნა"
+      ],
       "Create a copy": [
         "ასლის შექმნა"
       ],
@@ -204,6 +210,9 @@
       ],
       "Create folder": [
         "საქაღალდის შექმნა"
+      ],
+      "Create new folder": [
+        "ახალი საქაღალდის შექმნა"
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -290,6 +299,9 @@
       ],
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
+      ],
+      "Expand": [
+        "ამოკეცვა"
       ],
       "Export": [
         "გატანა"
@@ -422,6 +434,12 @@
       ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
+      ],
+      "Move": [
+        "გადატანა"
+      ],
+      "Move to folder": [
+        "საქაღალდეში გადატანა"
       ],
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
@@ -572,6 +590,9 @@
       ],
       "Search countries": [
         "ქვეყნების ძებნა"
+      ],
+      "Search documents": [
+        "დოკუმენტების ძებნა"
       ],
       "See how": [
         "იხილეთ, როგორ"
@@ -741,6 +762,17 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
+      ]
+    },
+    "Actions": {
+      "Last modified first": [
+        "ჯერ ბოლოს შეცვლილები"
+      ],
+      "Last viewed first": [
+        "ჯერ ბოლოს ნანახები"
+      ],
+      "Name": [
+        "სახელი"
       ]
     },
     "Actions message": {
@@ -4007,6 +4039,9 @@
       "Create your end-to-end encrypted document": [
         "შექმენით თქვენი გამჭოლად დაშიფრული დოკუმენტი"
       ],
+      "Create your first folder and start moving your files.": [
+        "შექმენით თქვენი პირველი საქაღალდე და დაიწყეთ ფაილების გადმოტანა."
+      ],
       "Creating link to file": [
         "ფაილამდე ბმულის შექმნა"
       ],
@@ -4547,6 +4582,9 @@
       ],
       "Saving...": [
         "შენახვა..."
+      ],
+      "Select a folder to move to.": [
+        "აირჩიეთ საქაღალდე, სადაც გადაიტანთ."
       ],
       "Select a service provider to start": [
         "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
@@ -5301,6 +5339,9 @@
       "Folder location": [
         "საქაღალდის მდებარეობა"
       ],
+      "Folder name": [
+        "საქაღალდის სახელი"
+      ],
       "Forwards to": [
         "გადაგზავნა"
       ],
@@ -5390,6 +5431,9 @@
       ],
       "Move to Inbox": [
         "შემომავლებში გადატანა"
+      ],
+      "My files": [
+        "ჩემი ფაილები"
       ],
       "Navigation": [
         "ნავიგაცია"
@@ -7104,6 +7148,18 @@
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
       ],
+      "Move ${ n } file": [
+        "${ n } ფაილის გადატანა",
+        "${ n } ფაილის გადატანა"
+      ],
+      "Move ${ n } folder": [
+        "${ n } საქაღალდის გადატანა",
+        "${ n } საქაღალდის გადატანა"
+      ],
+      "Move ${ n } item": [
+        "${ n } ელემენტის გადატანა",
+        "${ n } ელემენტის გადატანა"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
       ],
@@ -7112,6 +7168,9 @@
       ],
       "Public link update access failed ": [
         "საჯარო ბმულის წვდომის განახლება ჩავარდა "
+      ],
+      "Root folder failed to be loaded": [
+        "Root საქაღალდის ჩატვირთვის შეცდომა"
       ],
       "Share invitation accepted successfully": [
         "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
@@ -7125,6 +7184,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
+      ],
+      "Subfolder failed to be loaded": [
+        "ქვესაქაღალდის ჩატვირთვის შეცდომა"
       ],
       "The document failed to be created": [
         "დოკუმენტის შექმნა ჩავარდა"
@@ -7501,6 +7563,9 @@
       "Email": [
         "ელფოსტა"
       ],
+      "Enter a new folder name": [
+        "შეიყვანეთ ახალი საქაღალდის სახელი"
+      ],
       "Filter groups": [
         "ჯგუფების გაფილტრვა"
       ],
@@ -7638,6 +7703,38 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "შექმნილია"
+      ],
+      "Earlier": [
+        "უფრო ადრე"
+      ],
+      "Location": [
+        "მდებარეობა"
+      ],
+      "Modified": [
+        "შეცვლილია"
+      ],
+      "Name": [
+        "სახელი"
+      ],
+      "Previous 30 days": [
+        "წინა 30 დღე"
+      ],
+      "Previous 7 days": [
+        "წინა 7 დღე"
+      ],
+      "Today": [
+        "დღეს"
+      ],
+      "Viewed": [
+        "ნანახია"
+      ],
+      "Yesterday": [
+        "გუშინ"
       ]
     },
     "Safety review": {
@@ -8742,6 +8839,9 @@
       "Coupon": [
         "კუპონი"
       ],
+      "Create a new folder": [
+        "ახალი საქაღალდის შექმნა"
+      ],
       "Create contact": [
         "კონტაქტის შექმნა"
       ],
@@ -8884,6 +8984,9 @@
       ],
       "Get advanced protection": [
         "დამატებითი უსაფრთხოების მიღება"
+      ],
+      "Get more from your VPN": [
+        "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
       "Gift": [
         "საჩუქარი"
@@ -9119,6 +9222,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "ახლა, შეგიძლიათ, განუსაზღვრელი რაოდენობის საქაღალდეები და ჭდეები შექმნათ"
+      ],
+      "You have no folders yet": [
+        "საქაღალდეები ჯერ არ გაქვთ"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "თქვენი ${ planName }-ის უფასო სატესტო პერიოდი ${ textDate }-ზე სრულდება"
