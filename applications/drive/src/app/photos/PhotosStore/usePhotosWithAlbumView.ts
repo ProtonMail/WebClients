@@ -11,7 +11,7 @@ import type { DriveEvent, DriveEvents } from '../../store/_events';
 import { useDriveEventManager } from '../../store/_events';
 import { type DecryptedLink, useLinksListing, useLinksQueue } from '../../store/_links';
 import { isPhotoGroup, sortWithCategories } from '../../store/_photos';
-import type { PhotoLink } from '../../store/_photos';
+import type { PhotoGridItem, PhotoLink } from '../../store/_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from '../../store/_views/utils';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -75,7 +75,10 @@ export const usePhotosWithAlbumsView = () => {
         addPhotoAsCover,
         removeAlbumPhotos,
         deleteAlbum,
+        favoritePhoto,
         userAddressEmail,
+        updatePhotoFavoriteFromCache,
+        removeTagsFromPhoto,
     } = usePhotosWithAlbums();
 
     const [selectedTags, setSelectedTags] = useState([PhotoTag.All]);
@@ -114,7 +117,15 @@ export const usePhotosWithAlbumsView = () => {
     );
 
     // This will be flattened to contain categories and links
-    const { photosViewData, photoLinkIdToIndexMap, photoLinkIds } = useMemo(() => {
+    const {
+        photosViewData,
+        photoLinkIdToIndexMap,
+        photoLinkIds,
+    }: {
+        photosViewData: PhotoGridItem[];
+        photoLinkIdToIndexMap: Record<string, number>;
+        photoLinkIds: string[];
+    } = useMemo(() => {
         if (!shareId || !linkId) {
             return {
                 photosViewData: [],
@@ -142,6 +153,7 @@ export const usePhotosWithAlbumsView = () => {
                     },
                 },
                 photoProperties: {
+                    isFavorite: Boolean(PhotoTag.Favorites === photo.tags.find((tag) => tag === PhotoTag.Favorites)),
                     tags: photo.tags,
                     albums: [],
                 },
@@ -466,5 +478,8 @@ export const usePhotosWithAlbumsView = () => {
         handleSelectTag,
         userAddressEmail,
         isPhotosEmpty: photos.length === 0,
+        favoritePhoto,
+        updatePhotoFavoriteFromCache,
+        removeTagsFromPhoto,
     };
 };
