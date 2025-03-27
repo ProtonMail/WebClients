@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "加密并导出"
       ],
+      "Explore ${ target }": [
+        "探索 ${ target }"
+      ],
       "Explore group plans": [
         "探索团体计划"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "保存地址"
       ],
+      "Save and continue": [
+        "保存并继续"
+      ],
       "Save changes": [
         "保存更改"
       ],
@@ -1084,10 +1090,10 @@
       "Select country ${ country }": [
         "选择国家/地区 ${ country }"
       ],
-      "Select file": [
+      "select file": [
         "选择文件"
       ],
-      "select file": [
+      "Select file": [
         "选择文件"
       ],
       "Select files": [
@@ -7014,6 +7020,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } 想要与您分享 ${ PASS_APP_NAME }中的数据"
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可与单密码一起使用，后者可取代登录密码和第二密码。要切换到单密码模式，请输入要使用的单密码，然后单击保存。"
       ],
@@ -7330,7 +7339,7 @@
         "应付金额"
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "电子邮件别名类似电子邮件地址，但是可以用于减少垃圾邮件并隐藏您的真实电子邮件地址和身份信息。"
+        "邮箱别名类似邮箱地址，但是可以用于减少垃圾邮件并隐藏您的真实邮箱地址和身份信息。"
       ],
       "An error occurred while communicating with the extension": [
         "与扩展程序传输数据失败"
@@ -7491,9 +7500,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "分享此日历的全部事件详情，即表示您同意授权 ${ BRAND_NAME } 访问此日历的加密信息。"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "日历，与 ${ MAIL_APP_NAME } 和 ${ CONTACTS_APP_NAME } 集成"
-      ],
       "Cancel anytime": [
         "随时取消"
       ],
@@ -7570,7 +7576,7 @@
         "复制您的推荐链接"
       ],
       "countries enabled": [
-        "已启用的国家"
+        "已启用的国家/地区"
       ],
       "Country code": [
         "国家/地区代码"
@@ -7803,11 +7809,11 @@
       "Email address": [
         "邮箱地址"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "与 ${ CONTACTS_APP_NAME } 集成的邮箱和日历"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "与 ${ CALENDAR_APP_NAME } 和 ${ CONTACTS_APP_NAME } 集成的电子邮件服务"
       ],
       "Emailing preference saved": [
         "邮件设置已保存"
@@ -7868,6 +7874,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "使用桌面应用程序，享受更快、更集中的电子邮件发送体验。"
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "输入密码完成您的 ${ BRAND_NAME } 账户设置，即可在所有设备上使用 ${ VPN_APP_NAME } 服务！"
       ],
       "Enter key manually instead": [
         "手动输入密钥"
@@ -8928,6 +8937,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "将 ${ MAIL_APP_NAME } 设置为默认电子邮件应用程序，点击电子邮件链接时，${ MAIL_APP_NAME } 将自动打开。"
       ],
+      "Set password": [
+        "设置密码"
+      ],
       "Set recovery phrase": [
         "设置恢复密语"
       ],
@@ -9083,6 +9095,9 @@
       ],
       "Thank you": [
         "谢谢"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "感谢您选择 ${ BRAND_NAME }。"
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "感谢支持我们建立一个更好的互联网的使命，让隐私和自由成为第一位。"
@@ -10013,6 +10028,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "您将能够立即将这些服务器添加到另一个网关。"
+      ],
+      "You’re all set": [
+        "一切就绪"
       ],
       "Zoom meeting": [
         "Zoom 会议"
@@ -14299,8 +14317,8 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "只需一次性付款，即可终身使用当前和未来的所有 ${ PASS_APP_NAME } 高级功能。"
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "您只需支付一次费用，即可永久解锁 ${ PASS_APP_NAME } 当前及未来推出的所有高级功能。"
       ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "欢迎使用 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
@@ -16040,7 +16058,7 @@
     },
     "session_recovery:initiation:title": {
       "Request password reset?": [
-        "请求重置密码?"
+        "请求重置密码？"
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "您可以在 ${ gracePeriodHoursRemaining } 小时内重置密码"
@@ -16290,7 +16308,7 @@
         "设备同步"
       ],
       "Email aliases": [
-        "电子邮件别名"
+        "邮箱别名"
       ],
       "Email, calendar, password manager, and VPN included": [
         "包含电子邮件、日历、密码管理器以及 VPN"
@@ -16734,6 +16752,9 @@
       ],
       "Single sign-on removed": [
         "单点登录已移除"
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "该邮箱地址 ${ email } 已在 ${ BRAND_NAME } 系统中注册。请使用您的 ${ BRAND_NAME } 账号登录以继续。"
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "用户 ${ user } 现在是单点登录账户。他们之前的密码变成了备份密码。"
@@ -17396,7 +17417,7 @@
         "您的 ${ planName } 计划不仅能确保您的业务数据和通信安全。它支持您的合规目标，让您的企业脱颖而出，并让您的团队保持联系。"
       ],
       "Your own short @pm.me email alias": [
-        "您自己的短 @pm.me 电子邮件别名"
+        "您自己的短 @pm.me 邮箱别名"
       ]
     },
     "Subscription renewal state": {
@@ -19231,7 +19252,7 @@
         "弱密码"
       ],
       "What is an alias?": [
-        "什么是电子邮件别名？"
+        "什么是邮箱别名？"
       ],
       "What is the dark web?": [
         "什么是暗网？"

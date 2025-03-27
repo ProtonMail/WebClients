@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Xifra i exporta"
       ],
+      "Explore ${ target }": [
+        "Descobriu ${ target }"
+      ],
       "Explore group plans": [
         "Exploreu els plans de grup"
       ],
@@ -686,7 +689,7 @@
         "Ajuda i comentaris"
       ],
       "Help and resources": [
-        "Ajuda i recurs"
+        "Ajuda i recursos"
       ],
       "Hide": [
         "Amaga"
@@ -1036,6 +1039,9 @@
       "Save address": [
         "Desar adreça"
       ],
+      "Save and continue": [
+        "Desa i continua"
+      ],
       "Save changes": [
         "Desa els canvis"
       ],
@@ -1084,11 +1090,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "Select file": [
-        "Selecciona un fitxer"
-      ],
       "select file": [
         "selecciona un fitxer"
+      ],
+      "Select file": [
+        "Selecciona un fitxer"
       ],
       "Select files": [
         "Selecciona els fitxers"
@@ -1822,7 +1828,7 @@
         "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
       "Admin panel to manage your family": [
-        "Panell d'administració per gestionar la vostra família"
+        "Panell d'administració per a gestionar la família"
       ],
       "Advanced account protection": [
         "Protecció avançada del compte"
@@ -1877,7 +1883,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming de alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator i més."
+        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming d'alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator i més."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
@@ -1886,15 +1892,15 @@
         "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més.",
-        "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més."
+        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
+        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
         "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou 15 adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més."
+        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou 15 adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d’extrem a extrem. Inclou 15 adreces de correu electrònic, suport per a dominis de correu personalitzats, àlies hide-my-email il·limitats i més."
@@ -7566,9 +7572,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Pel fet de compartir tots els detalls dels esdeveniments d'aquest calendari, accepteu donar a ${ BRAND_NAME } accés a la informació xifrada d'aquest calendari."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendari integrat amb ${ MAIL_APP_NAME } i ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Cancel·leu en qualsevol moment"
       ],
@@ -7886,9 +7889,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
       ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Servei de correu electrònic integrat amb ${ CALENDAR_APP_NAME } i ${ CONTACTS_APP_NAME }"
-      ],
       "Emailing preference saved": [
         "Preferència de correu desada"
       ],
@@ -7948,6 +7948,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Gaudiu d'una experiència de correu electrònic més ràpida i centrada amb l'aplicació d'escriptori."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Introduïu una contrasenya per finalitzar el vostre compte ${ BRAND_NAME } i començar a utilitzar ${ VPN_APP_NAME } a tots els vostres dispositius!"
       ],
       "Enter key manually instead": [
         "Introduir clau manualment"
@@ -9016,6 +9019,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Establiu ${ MAIL_APP_NAME } com a aplicació de correu electrònic per defecte. ${ MAIL_APP_NAME } s'obrirà automàticament quan cliqueu un enllaç de correu electrònic."
       ],
+      "Set password": [
+        "Estableix la contrasenya"
+      ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
       ],
@@ -9174,6 +9180,9 @@
       ],
       "Thank you": [
         "Gràcies"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Gràcies per triar ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gràcies per donar suport a la nostra missió de construir una Internet millor amb la privacitat i la llibertat en primer lloc."
@@ -10010,8 +10019,8 @@
         "No podreu recuperar dades bloquejades utilitzant els fitxers de recuperació descarregats. També es desactivarà la recuperació basada en dispositiu."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "A continuació, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
-        "A continuació, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
+        "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
+        "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "S'ha aplicat el vostre ${ boldDiscountPercent } a ${ boldPlanTitle }."
@@ -10119,6 +10128,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Podreu afegir aquests servidors a una altra passarel·la immediatament."
+      ],
+      "You’re all set": [
+        "Ja està tot llest!"
       ],
       "Zoom meeting": [
         "reunió de Zoom"
@@ -14457,9 +14469,6 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Obteniu accés de per vida a totes les funcionalitats prèmium actuals i futures de ${ PASS_APP_NAME } amb un únic pagament únic. "
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Us donem la benvinguda a ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
@@ -15043,16 +15052,16 @@
         "els termes i condicions"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "El cupó és vàlid per ${ couponRedemptions } renovació.",
-        "El cupó és vàlid per ${ couponRedemptions } renovacions."
+        "El cupó és vàlid per a ${ couponRedemptions } renovació.",
+        "El cupó és vàlid per a ${ couponRedemptions } renovacions."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per ${ couponRedemptions } renovació. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment.",
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment."
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPriceStr } cada mes. Podeu cancel·lar-ho en qualsevol moment."
@@ -16931,6 +16940,9 @@
       ],
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "L'adreça electrònica ${ email } ja existeix a ${ BRAND_NAME }. Inicieu la sessió amb les vostres credencials de ${ BRAND_NAME } per continuar."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "L'usuari ${ user } té ara un compte amb inici de sessió únic. La seva contrasenya anterior s'ha convertit en la contrasenya de recuperació."
@@ -20348,8 +20360,8 @@
         "${ numberOfServers } a ${ numberOfCountries } països"
       ],
       "Auto-selects from ${ numberOfCountries } country": [
-        "Seleccionat automàticament des d'${ numberOfCountries } país",
-        "Seleccionat automàticament des de ${ numberOfCountries } països"
+        "Selecció automàtica d'entre ${ numberOfCountries } país",
+        "Selecció automàtica d'entre ${ numberOfCountries } països"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servidors en més d'${ numberOfCountries } país",

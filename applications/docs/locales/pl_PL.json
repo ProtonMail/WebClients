@@ -51,6 +51,9 @@
       "Add address": [
         "Dodaj adres"
       ],
+      "Add another account": [
+        "Dodaj inne konto"
+      ],
       "Add birthday": [
         "Dodaj urodziny"
       ],
@@ -147,6 +150,9 @@
       "Close this banner": [
         "Zamknij powiadomienie"
       ],
+      "Collapse": [
+        "Zwiń"
+      ],
       "Compose": [
         "Napisz"
       ],
@@ -186,6 +192,9 @@
       "Copy invite link": [
         "Kopiuj link zaproszenia"
       ],
+      "Create": [
+        "Utwórz"
+      ],
       "Create a copy": [
         "Utwórz kopię"
       ],
@@ -197,6 +206,9 @@
       ],
       "Create folder": [
         "Utwórz folder"
+      ],
+      "Create new folder": [
+        "Utwórz nowy folder"
       ],
       "Current plan": [
         "Obecny plan"
@@ -288,6 +300,9 @@
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
       ],
+      "Expand": [
+        "Rozwiń"
+      ],
       "Export": [
         "Eksportuj"
       ],
@@ -329,6 +344,12 @@
       ],
       "Help": [
         "Pomoc"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
+      ],
+      "Help and resources": [
+        "Pomoc i zasoby"
       ],
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
@@ -413,6 +434,12 @@
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
+      ],
+      "Move": [
+        "Przenieś"
+      ],
+      "Move to folder": [
+        "Przenieś do folderu"
       ],
       "Move to trash": [
         "Przenieś do Kosza"
@@ -563,6 +590,9 @@
       ],
       "Search countries": [
         "Szukaj krajów"
+      ],
+      "Search documents": [
+        "Szukaj dokumentów"
       ],
       "See how": [
         "Zobacz jak"
@@ -730,6 +760,17 @@
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontaktów"
       ]
     },
+    "Actions": {
+      "Last modified first": [
+        "Ostatnio zmodyfikowane"
+      ],
+      "Last viewed first": [
+        "Ostatnio oglądane"
+      ],
+      "Name": [
+        "Nazwa"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } lub ${ importContact }."
@@ -765,6 +806,9 @@
       ],
       "${ price } per domain": [
         "${ price } za domenę"
+      ],
+      "${ price } per seat": [
+        "${ price } za licencję"
       ],
       "${ price } per user": [
         "${ price } za użytkownika"
@@ -984,7 +1028,7 @@
         "Rocznie"
       ],
       "Lifetime": [
-        "Dożywotni"
+        "Dożywotnio"
       ],
       "Monthly": [
         "Miesięcznie"
@@ -3057,7 +3101,7 @@
         "Strefa czasowa"
       ],
       "Time zone component ignored": [
-        "Element strefy czasowej ignorowany"
+        "Komponent strefy czasowej jest ignorowany"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -4106,6 +4150,9 @@
       "Create your end-to-end encrypted document": [
         "Utwórz dokument szyfrowany end-to-end"
       ],
+      "Create your first folder and start moving your files.": [
+        "Utwórz swój pierwszy folder i zarządzaj plikami."
+      ],
       "Creating link to file": [
         "Tworzenie linku do pliku"
       ],
@@ -4300,6 +4347,9 @@
       ],
       "Get Notified About Comments": [
         "Otrzymaj powiadomienia o komentarzach"
+      ],
+      "Go to ${ DRIVE_APP_NAME }": [
+        "Przejdź do ${ DRIVE_APP_NAME }"
       ],
       "here": [
         "tutaj"
@@ -4526,6 +4576,9 @@
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
+      "Other accounts": [
+        "Inne konta"
+      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Priorytetem naszych alertów jest bezpieczeństwo. Jeśli nie rozpoznajesz żadnej informacji, możesz bezpiecznie zignorować ten raport."
       ],
@@ -4648,6 +4701,9 @@
       ],
       "Saving...": [
         "Zapisywanie..."
+      ],
+      "Select a folder to move to.": [
+        "Wybierz folder do przeniesienia."
       ],
       "Select a service provider to start": [
         "Aby rozpocząć, wybierz dostawcę usługi"
@@ -5033,6 +5089,15 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
+      "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Zamierzasz odrzucić zaproszenie dołączenia do albumu ${ invitationName }. Spowoduje to utratę dostępu do albumu, chyba że właściciel zaprosi Cię ponownie. Czy na pewno chcesz kontynuować?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Zamierzasz odrzucić zaproszenie dołączenia do folderu ${ invitationName }. Spowoduje to utratę dostępu do folderu, chyba że właściciel zaprosi Cię ponownie. Czy na pewno chcesz kontynuować?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Zamierzasz odrzucić zaproszenie dołączenia do elementu ${ invitationName }. Spowoduje to utratę dostępu do elementu, chyba że właściciel zaprosi Cię ponownie. Czy na pewno chcesz kontynuować?"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Osiągnięto maksymalną liczbę adresów w grupach kontaktów:"
       ],
@@ -5110,6 +5175,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ]
     },
     "info": {
@@ -5406,6 +5474,9 @@
       "Folder location": [
         "Lokalizacja folderu"
       ],
+      "Folder name": [
+        "Nazwa folderu"
+      ],
       "Forwards to": [
         "Przekaż do"
       ],
@@ -5495,6 +5566,9 @@
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
+      ],
+      "My files": [
+        "Moje pliki"
       ],
       "Navigation": [
         "Nawigacja"
@@ -5835,6 +5909,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Dodatek z darmową wersją próbną"
       ],
       "for ${ price }": [
         "za ${ price }"
@@ -6526,6 +6603,9 @@
       ],
       "Limited support": [
         "Ograniczone wsparcie"
+      ],
+      "Manage user permissions and access": [
+        "Zarządzaj uprawnieniami i dostępem użytkowników"
       ],
       "Multiple admin roles": [
         "Wiele ról administratora"
@@ -7346,6 +7426,24 @@
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
       ],
+      "Move ${ n } file": [
+        "Przenieś ${ n } plik",
+        "Przenieś ${ n } pliki",
+        "Przenieś ${ n } plików",
+        "Przenieś ${ n } plików"
+      ],
+      "Move ${ n } folder": [
+        "Przenieś ${ n } folder",
+        "Przenieś ${ n } foldery",
+        "Przenieś ${ n } folderów",
+        "Przenieś ${ n } folderów"
+      ],
+      "Move ${ n } item": [
+        "Przenieś ${ n } element",
+        "Przenieś ${ n } elementy",
+        "Przenieś ${ n } elementów",
+        "Przenieś ${ n } elementów"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
       ],
@@ -7354,6 +7452,9 @@
       ],
       "Public link update access failed ": [
         "Dostęp do aktualizacji linku nie powiódł się "
+      ],
+      "Root folder failed to be loaded": [
+        "Załadowanie głównego folderu nie powiodło się"
       ],
       "Share invitation accepted successfully": [
         "Zaproszenie zostało zaakceptowane"
@@ -7369,6 +7470,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Zatrzymanie udostępniania nie powiodło się"
+      ],
+      "Subfolder failed to be loaded": [
+        "Załadowanie podfolderu nie powiodło się"
       ],
       "The document failed to be created": [
         "Utworzenie dokumentu nie powiodło się"
@@ -7462,7 +7566,7 @@
         "Oferta specjalna"
       ],
       "This offer won't be shown again.": [
-        "Ta oferta nie pojawi się ponownie."
+        "Oferta nie pojawi się ponownie."
       ],
       "When you switch from a monthly to annual subscription.": [
         "Po przejściu z subskrypcji miesięcznej na roczną."
@@ -7651,11 +7755,29 @@
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
+      ],
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon jest ważny na ${ couponRedemptions } odnowienie.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowienia.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień."
+      ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
+      ],
+      "Your payment is still being processed": [
+        "Twoja płatność jest wciąż przetwarzana"
       ]
     },
     "Payments.Error": {
@@ -7733,6 +7855,9 @@
       ],
       "Email": [
         "Adres e-mail"
+      ],
+      "Enter a new folder name": [
+        "Wpisz nową nazwę folderu"
       ],
       "Filter groups": [
         "Filtruj grupy"
@@ -7877,6 +8002,38 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficjalna wiadomość od ${ BRAND_NAME }"
+      ]
+    },
+    "Recent documents table header": {
+      "Created by": [
+        "Utworzono przez"
+      ],
+      "Earlier": [
+        "Wcześniej"
+      ],
+      "Location": [
+        "Lokalizacja"
+      ],
+      "Modified": [
+        "Zmodyfikowano"
+      ],
+      "Name": [
+        "Nazwa"
+      ],
+      "Previous 30 days": [
+        "Ostatnie 30 dni"
+      ],
+      "Previous 7 days": [
+        "Ostatnie 7 dni"
+      ],
+      "Today": [
+        "Dzisiaj"
+      ],
+      "Viewed": [
+        "Oglądano"
+      ],
+      "Yesterday": [
+        "Wczoraj"
       ]
     },
     "Safety review": {
@@ -9046,6 +9203,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "Create a new folder": [
+        "Utwórz nowy folder"
+      ],
       "Create contact": [
         "Utwórz kontakt"
       ],
@@ -9093,6 +9253,9 @@
         "Usuń ${ count } grupy kontaktów",
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
+      ],
+      "Delete ${ links.length } items?": [
+        "Usunąć elementy (${ links.length })?"
       ],
       "Delete ${ name }?": [
         "Usunąć ${ name }?"
@@ -9195,6 +9358,9 @@
       ],
       "Groups": [
         "Grupy"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
       ],
       "Help center": [
         "Centrum pomocy"
@@ -9424,6 +9590,9 @@
       "You can now create unlimited folders and labels": [
         "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"
       ],
+      "You have no folders yet": [
+        "Nie masz jeszcze żadnych folderów"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
       ],
@@ -9564,6 +9733,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } urządzenie",
+        "${ n } urządzenia",
+        "${ n } urządzeń",
+        "${ n } urządzenia"
+      ],
       "${ n } server": [
         "${ n } serwer",
         "Ponad ${ n } serwery",
@@ -9587,6 +9762,12 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatyczny wybór z ${ numberOfCountries } kraju",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Serwery w ponad ${ numberOfCountries } kraju",

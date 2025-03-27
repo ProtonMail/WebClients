@@ -1084,11 +1084,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "Select file": [
-        "Pilih berkas"
-      ],
       "select file": [
         "pilih berkas"
+      ],
+      "Select file": [
+        "Pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -7491,9 +7491,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Dengan membagikan rincian acara kalender ini secara menyeluruh, Anda mengizinkan ${ BRAND_NAME } untuk mengakses informasi terenkripsi yang terdapat pada kalender ini."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Kalender, terintegrasi dengan ${ MAIL_APP_NAME } dan ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Batalkan kapan pun"
       ],
@@ -7805,9 +7802,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Hosting email hanya tersedia untuk domain yang telah Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak tersedia. Anda dapat meng-host email untuk domain yang terdaftar pada pendaftar domain mana pun."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Layanan email, terintegrasi dengan ${ CALENDAR_APP_NAME } dan ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferensi pengiriman email disimpan"
@@ -14296,9 +14290,6 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Dapatkan akses seumur hidup ke seluruh fitur premium ${ PASS_APP_NAME } yang ada saat ini dan yang akan datang dengan satu kali pembayaran. "
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Selamat datang di ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]

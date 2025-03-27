@@ -103,6 +103,9 @@
       "Change": [
         "Módosítás"
       ],
+      "Change configuration": [
+        "Beállítások módosítása"
+      ],
       "Change keys": [
         "Kulcsok megváltoztatása"
       ],
@@ -126,6 +129,12 @@
       ],
       "Close this banner": [
         "Panel bezárása"
+      ],
+      "Compare all plans": [
+        "Az összes csomag összehasonlítása"
+      ],
+      "Compare plans": [
+        "Csomagok összehasonlítása"
       ],
       "Configure SAML": [
         "SAML konfigurálása"
@@ -154,6 +163,9 @@
       "Copy key to the clipboard": [
         "Kulcs másolása a vágólapra"
       ],
+      "Copy password": [
+        "Jelszó másolása"
+      ],
       "Copy version number to clipboard": [
         "A verziószám másolása a vágólapra"
       ],
@@ -162,6 +174,9 @@
       ],
       "Create folder": [
         "Mappa létrehozása"
+      ],
+      "Create new password": [
+        "Új jelszó készítése"
       ],
       "Create users": [
         "Felhasználók létrehozása"
@@ -178,6 +193,9 @@
       "Delete": [
         "Törlés"
       ],
+      "Delete account": [
+        "Fiók törlése"
+      ],
       "Delete Gateway": [
         "Átjáró törlése"
       ],
@@ -189,6 +207,9 @@
       ],
       "Delete member": [
         "Tag törlése"
+      ],
+      "Delete policy": [
+        "Házirend törlése"
       ],
       "Delete user": [
         "Felhasználó törlése"
@@ -214,6 +235,9 @@
       "Discard changes": [
         "Módosítások elvetése"
       ],
+      "Discover ${ planName }": [
+        "${ planName } felfedezése"
+      ],
       "Dismiss": [
         "Elvetés"
       ],
@@ -237,6 +261,9 @@
       ],
       "Edit": [
         "Szerkesztés"
+      ],
+      "Edit billing address": [
+        "Számlázási cím szerkesztése"
       ],
       "Edit billing cycle": [
         "Számlázási ciklus szerkesztése"
@@ -276,6 +303,9 @@
       ],
       "Enable multi-user support": [
         "Többfelhasználós mód engedélyezése"
+      ],
+      "Explore group plans": [
+        "Csoportos csomagok felfedezése"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "További ${ BRAND_NAME } csomagok megismerése"
@@ -496,6 +526,9 @@
       "Restore": [
         "Helyreállítás"
       ],
+      "Resume membership": [
+        "Tagság folytatása"
+      ],
       "Retry": [
         "Újra"
       ],
@@ -535,8 +568,14 @@
       "Select ${ planTitle }": [
         "${ planTitle } választása"
       ],
+      "Select city ${ city }": [
+        "Város kiválasztása: ${ city }"
+      ],
       "Select country": [
         "Válassza ki az országot"
+      ],
+      "Select country ${ country }": [
+        "Ország kiválasztása: ${ country }"
       ],
       "select file": [
         "fájl kiválasztása"
@@ -3238,6 +3277,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: alacsony felbontású előnézet"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } családtagja kétfaktoros hitelesítést használ.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } családtagja kétfaktoros hitelesítést használ."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag kétfaktoros hitelesítést használ a szervezetbe való bejelentkezéshez."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "A ${ MAIL_APP_NAME } egy jelszavas módban is használható, amely leváltja a külön bejelentkezési és második jelszavakat. Egy jelszavas módra váltáshoz, adja meg a kívánt jelszót, majd kattintson a Mentés gombra."
       ],
@@ -3247,6 +3294,10 @@
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: ne helyezzék karanténba és ne utasítsák el az e-maileket. Ezt a beállítást általában csak tesztelésre vagy hibakeresésre használják."
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } tag"
       ],
       "${ number } city": [
         "${ number } város",
@@ -3261,6 +3312,10 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } lejár ${ daysLeft } nap múlva.",
+        "${ planName } lejár ${ daysLeft } nap múlva."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "A ${ PROTON_SENTINEL_NAME } megvédi a felhasználói fiókját a gyanús tevékenységek figyelésével."
@@ -3278,6 +3333,10 @@
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } további cím",
         "${ remainingAddresses.length } további cím"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } kiválasztva",
+        "${ selectedEntities.length } kiválasztva"
       ],
       "${ storage } storage": [
         "${ storage } tárhely"
@@ -3385,6 +3444,9 @@
       "All members have been added.": [
         "Minden tag hozzáadva."
       ],
+      "All users": [
+        "Minden felhasználó"
+      ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
@@ -3426,6 +3488,9 @@
       ],
       "Are you sure you want to remove all members from this group?": [
         "Biztosan eltávolít minden tagot a csoportból?"
+      ],
+      "At least ${ BETTER_PASSWORD_LENGTH } characters": [
+        "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
       "Attention required": [
         "Figyelem szükséges"
@@ -3807,6 +3872,9 @@
       "Invite rejected": [
         "Meghívás elutasítva"
       ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "A szerver országának megváltoztatása 10 napot vesz igénybe, ezért győződjön meg róla, hogy helyesen választotta ki."
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Elem automatikusan kitöltve a tárolóból: ${ vaultLink }"
       ],
@@ -3956,6 +4024,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "A dedikált szerverek száma a szervezeténél"
+      ],
+      "Numbers": [
+        "Számok"
       ],
       "of": [
         "/"
@@ -4175,6 +4246,9 @@
       "Securing your account": [
         "Fiók biztosítása"
       ],
+      "Select recently used servers": [
+        "Nemrég használt szerverek kiválasztása"
+      ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Javasolja e-mailben a tagoknak, hogy védjék a fiókjukat kétlépcsős hitelesítéssel."
       ],
@@ -4321,6 +4395,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Ez néhány másodpercet vagy néhány percet is igénybe vehet"
       ],
+      "This cannot be undone.": [
+        "Ezt nem lehet visszavonni."
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Ez eltarthat egy ideig. Ne zárja be ezt az oldalt és ne kapcsolódjon le az internetről."
       ],
@@ -4458,6 +4535,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Töltse fel a szervezet logóját a márkanév erősítéséhez, és igazítsa igényeihez a megjelenést a felhasználói számára."
+      ],
+      "Uppercase and lowercase letters": [
+        "Kis- és nagybetűk"
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Tiltsa le a kétlépcsős hitelesítést az egyik helyreállítási módszerével."
@@ -7080,6 +7160,12 @@
     "plan customizer, users": {
       "contact": [
         "lépjen kapcsolatba"
+      ]
+    },
+    "Plans": {
+      "${ cycle } month": [
+        "${ cycle } hónap",
+        "${ cycle } hónap"
       ]
     },
     "Price": {

@@ -6239,9 +6239,6 @@
       "Calendar side panel": [
         "Painel lateral de calendário"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendário, integrado com o ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
-      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Não encontra o que procura? ${ displayAllMailButton }"
       ],
@@ -6280,9 +6277,6 @@
       ],
       "Close this screen to exit.": [
         "Feche este ecrã para sair."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Armazenamento em nuvem, integrado com o ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Confirmar o relatório de phishing"
@@ -6475,9 +6469,6 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "O e-mail é encaminhado para a sua caixa de correio; o seu endereço de e-mail permanece oculto."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Serviço de e-mail, integrado com o ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "A proteção do rastreador de e-mail está desativada"
@@ -6946,9 +6937,6 @@
       "password": [
         "palavra-passe"
       ],
-      "Password manager with extra account security": [
-        "Gestor de palavras-passe com segurança extra para contas"
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
       ],
@@ -7158,9 +7146,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione os calendários a importar. Um novo calendário será criado por cada calendário importado, de acordo com o número de calendários disponível no seu plano."
-      ],
-      "Self-custodial crypto wallet": [
-        "Carteira de criptomoedas de autocustódia"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Envie uma mensagem encriptada, protegida por palavra-passe, para um endereço de e-mail ${ boldText }."
@@ -7624,9 +7609,6 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
-      ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN com servidores e endereços IP dedicados"
       ],
       "Warning": [
         "Aviso"
@@ -12183,6 +12165,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento automático de e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertas de violação de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com funcionalidades premium"
@@ -12441,47 +12464,6 @@
       ],
       "Your own short @pm.me email alias": [
         "O seu próprio alias de e-mail curto @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento automático de e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertas de violação de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Escolha um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {
@@ -13330,6 +13312,9 @@
       "Get advanced protection": [
         "Obtenha proteção avançada"
       ],
+      "Get more from your VPN": [
+        "Obtenha mais da sua VPN"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obter as aplicações do ${ appName[APP_NAME] }"
       ],
@@ -13819,11 +13804,6 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
-      ]
-    },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que o formato no compositor é utilizado para enviar para este utilizador. Texto simples indica que a mensagem será sempre convertida para texto simples ao enviar."
@@ -13905,6 +13885,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Envie uma chave pública para permitir o envio de e-mails encriptados ponta a ponta para este e-mail."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
     },
     "Tor out of date": {

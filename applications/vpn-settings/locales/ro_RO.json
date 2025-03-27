@@ -328,6 +328,9 @@
       "Enable multi-user support": [
         "Activare suport utilizatori multipli"
       ],
+      "Explore ${ target }": [
+        "Explorare ${ target }"
+      ],
       "Explore group plans": [
         "Explorare planuri de grup"
       ],
@@ -3891,6 +3894,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație."
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
@@ -4193,9 +4199,6 @@
       "By leaving now, changes may not be saved": [
         "Dacă ieșiți acum, este posibil ca schimbările să nu fie salvate."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendar, integrat cu ${ MAIL_APP_NAME } și ${ CONTACTS_APP_NAME }"
-      ],
       "Can’t access your recovery email?": [
         "Nu vă puteți accesa adresa de e-mail de recuperare?"
       ],
@@ -4420,11 +4423,11 @@
       "email": [
         "e-mail"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-mail și calendar, integrate cu ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Serviciu de e-mail, integrat cu ${ CALENDAR_APP_NAME } și ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferințe e-mail salvate"

@@ -4433,9 +4433,6 @@
       "Calendar side panel": [
         "Calendar-sivupaneeli"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Kalenteri, integroitu ${ MAIL_APP_NAME } ja ${ CONTACTS_APP_NAME } kanssa"
-      ],
       "Canceled": [
         "Peruttu"
       ],
@@ -4477,9 +4474,6 @@
       ],
       "Close this screen to exit.": [
         "Poistu sulkemalla tämä ruutu."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Pilvitallennus, integroitu ${ DOCS_APP_NAME } kanssa"
       ],
       "Conflict": [
         "Ristiriita"
@@ -5032,9 +5026,6 @@
       ],
       "password": [
         "salasana"
-      ],
-      "Password manager with extra account security": [
-        "Salasanojen hallinta tilin lisäsuojauksella"
       ],
       "Paused": [
         "Pysäytetty"
@@ -10445,6 +10436,9 @@
       "Get advanced protection": [
         "Hanki edistynyt suojaus"
       ],
+      "Get more from your VPN": [
+        "Saa enemmän VPN-yhteydestäsi"
+      ],
       "Gift": [
         "Lahja"
       ],
@@ -10816,11 +10810,6 @@
         "Tänään"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
-      ]
-    },
     "Tooltip": {
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Lisää tämä jaettu tiedosto ${ DRIVE_APP_NAME }esi myöhempää käyttöä varten."
@@ -10902,6 +10891,11 @@
       ],
       "We have sent them an invite to access the item.": [
         "Heille on lähetetty kutsu kohteeseen."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
       ]
     },
     "Validation": {

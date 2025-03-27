@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "Select file": [
-        "Selecionar arquivo"
-      ],
       "select file": [
         "selecionar arquivo"
+      ],
+      "Select file": [
+        "Selecionar arquivo"
       ],
       "Select files": [
         "Selecionar arquivos"
@@ -7073,6 +7073,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quer compartilhar dados com você em ${ PASS_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de início de sessão e de segunda senha. Para ativar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
       ],
@@ -7575,9 +7578,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder a ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendário, integrado com ${ MAIL_APP_NAME } e ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Cancele a qualquer momento"
       ],
@@ -7892,11 +7892,11 @@
       "Email address": [
         "Endereço de e-mail"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-mail e calendário, integrados com ${ CONTACTS_APP_NAME }."
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através da ${ BRAND_NAME }. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Serviço de e-mail integrado com ${ CALENDAR_APP_NAME } e ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferências de e-mail salvas"
@@ -14511,8 +14511,8 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Obtenha acesso vitalício a todos os recursos premium atuais e futuros do ${ PASS_APP_NAME } com um único pagamento. "
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Obtenha acesso vitalício a todos os recursos premium atuais e futuros do ${ PASS_APP_NAME } com um único pagamento."
       ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Bem-vindo ao ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
@@ -16990,7 +16990,7 @@
         "Autenticação única removida"
       ],
       "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
-        "O endereço de e-mail ${ email } já existe no ${ BRAND_NAME }. Faça login com as suas ${ BRAND_NAME } credenciais para continuar."
+        "O endereço de e-mail ${ email } já existe na ${ BRAND_NAME }. Faça login com as suas credenciais da ${ BRAND_NAME } para continuar."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "O usuário ${ user } é agora tem conta com início de sessão único. A senha anterior tornou-se a senha de backup"

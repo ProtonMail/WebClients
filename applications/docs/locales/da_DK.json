@@ -154,6 +154,9 @@
       "Close this banner": [
         "Luk dette banner"
       ],
+      "Collapse": [
+        "Fold sammen"
+      ],
       "Compose": [
         "Skriv"
       ],
@@ -193,6 +196,9 @@
       "Copy invite link": [
         "Kopiér invitationslink"
       ],
+      "Create": [
+        "Opret"
+      ],
       "Create a copy": [
         "Opret en kopi"
       ],
@@ -204,6 +210,9 @@
       ],
       "Create folder": [
         "Opret mappe"
+      ],
+      "Create new folder": [
+        "Opret ny mappe"
       ],
       "Current plan": [
         "Nuværende abonnement"
@@ -290,6 +299,9 @@
       ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
+      ],
+      "Expand": [
+        "Udvid"
       ],
       "Export": [
         "Eksportér"
@@ -425,6 +437,12 @@
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
+      ],
+      "Move": [
+        "Flyt"
+      ],
+      "Move to folder": [
+        "Flyt til mappe"
       ],
       "Move to trash": [
         "Flyt til papirkurv"
@@ -3992,6 +4010,9 @@
       "Create your end-to-end encrypted document": [
         "Opret dit end-to-end-krypterede dokument"
       ],
+      "Create your first folder and start moving your files.": [
+        "Opret din første mappe og begynd at flytte dine filer."
+      ],
       "Creating link to file": [
         "Opretter link til fil"
       ],
@@ -4520,6 +4541,9 @@
       ],
       "Saving...": [
         "Gemmer..."
+      ],
+      "Select a folder to move to.": [
+        "Vælg en mappe at flytte til."
       ],
       "Select a service provider to start": [
         "Vælg en tjenesteudbyder for at starte"
@@ -5266,6 +5290,9 @@
       ],
       "Folder location": [
         "Mappeplacering"
+      ],
+      "Folder name": [
+        "Mappenavn"
       ],
       "Forwards to": [
         "Videresender til"
@@ -7029,6 +7056,18 @@
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
+      "Move ${ n } file": [
+        "Flyt ${ n } fil",
+        "Flyt ${ n } filer"
+      ],
+      "Move ${ n } folder": [
+        "Flyt ${ n } mappe",
+        "Flyt ${ n } mapper"
+      ],
+      "Move ${ n } item": [
+        "Flyt ${ n } element",
+        "Flyt ${ n } elementer"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok plads til at uploade ${ formattedTotal }"
       ],
@@ -7037,6 +7076,9 @@
       ],
       "Public link update access failed ": [
         "Adgang til opdatering af offentligt link mislykkedes "
+      ],
+      "Root folder failed to be loaded": [
+        "Rodmappe kunne ikke indlæses"
       ],
       "Share invitation accepted successfully": [
         "Del-invitation accepteret"
@@ -7050,6 +7092,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Det lykkedes ikke at stoppe delingen af dette element"
+      ],
+      "Subfolder failed to be loaded": [
+        "Undermappe kunne ikke indlæses"
       ],
       "The document failed to be created": [
         "Dokumentet kunne ikke oprettes"
@@ -7372,6 +7417,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a new folder name": [
+        "Indtast et nyt mappenavn"
       ],
       "Filter groups": [
         "Filtrér grupper"
@@ -8606,6 +8654,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "Create a new folder": [
+        "Opret en ny mappe"
+      ],
       "Create contact": [
         "Opret kontakt"
       ],
@@ -8983,6 +9034,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu oprette ubegrænsede mængder af mapper og etiketter"
+      ],
+      "You have no folders yet": [
+        "Du har ingen mapper endnu"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"

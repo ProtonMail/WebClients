@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Krypter og eksporter"
       ],
+      "Explore ${ target }": [
+        "Utforsk ${ target }"
+      ],
       "Explore group plans": [
         "Utforsk gruppeplaner"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "Lagre adresse"
       ],
+      "Save and continue": [
+        "Lagre og fortsett"
+      ],
       "Save changes": [
         "Lagre endringer"
       ],
@@ -1084,11 +1090,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "Select file": [
-        "Velg fil"
-      ],
       "select file": [
         "velg fil"
+      ],
+      "Select file": [
+        "Velg fil"
       ],
       "Select files": [
         "Velg filer"
@@ -7064,6 +7070,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker å dele data med deg i ${ PASS_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og det andre passordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
       ],
@@ -7566,9 +7575,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved å dele alle hendelsesdetaljene i denne kalenderen, godtar du å gi ${ BRAND_NAME } tilgang til denne kalenderens krypterte informasjon."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Kalender, integrert med ${ MAIL_APP_NAME } og ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Avslutt når som helst"
       ],
@@ -7883,11 +7889,11 @@
       "Email address": [
         "E-postadresse"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-post og kalender, integrert med ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "E-posttjeneste, integrert med ${ CALENDAR_APP_NAME } og ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferanse for sending av e-post lagret"
@@ -7948,6 +7954,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Gled deg over en raskere, fokusert e-postopplevelse med skrivebordsappen."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Skriv inn et passord for å fullføre ${ BRAND_NAME }-kontoen din, og begynn å bruke ${ VPN_APP_NAME } på alle enhetene dine."
       ],
       "Enter key manually instead": [
         "Skriv inn nøkkel manuelt i stedet"
@@ -9019,6 +9028,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Angi ${ MAIL_APP_NAME } som din standard e-postapplikasjon. ${ MAIL_APP_NAME } vil åpne automatisk når du klikker en e-postkobling."
       ],
+      "Set password": [
+        "Angi passord"
+      ],
       "Set recovery phrase": [
         "Sett gjenopprettingsfrase"
       ],
@@ -9177,6 +9189,9 @@
       ],
       "Thank you": [
         "Tusen takk"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Takk for at du valgte ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Takk for at du støtter vår misjon om å bygge et bedre internett der personvern og frihet kommer først."
@@ -10122,6 +10137,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Du vil kunne legge til disse tjenerne i en annen porttjener umiddelbart."
+      ],
+      "You’re all set": [
+        "Du er klar"
       ],
       "Zoom meeting": [
         "Zoom-møte"
@@ -14484,9 +14502,6 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Få livstidstilgang til alle nåværende og fremtidige ${ PASS_APP_NAME } premiumfunksjoner med en enkelt engangsbetaling. "
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Velkommen til ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
@@ -16955,6 +16970,9 @@
       ],
       "Single sign-on removed": [
         "Enkel pålogging fjernet"
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "E-postadressen ${ email } finnes allerede i ${ BRAND_NAME }. Logg deg på med ${ BRAND_NAME }-legitimasjonen din for å fortsette."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "Brukeren ${ user } er nå en konto med enkel pålogging. Deres forrige passord ble deres reservepassord."

@@ -685,7 +685,7 @@
         "其他 ${ total } 个登录使用相同密码"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
-        "2FA 给您的登录添加了另一层安全。 ${ PASS_APP_NAME } 通过存储并自动填充您的 2FA 验证码，让 2FA 变得更简单。"
+        "2FA 给您的登录添加了另一层安全。${ PASS_APP_NAME } 通过储存并自动填充您的 2FA 验证码，让 2FA 变得更简单。"
       ],
       "Add the following CNAME DNS records to your domain.": [
         "将以下 CNAME DNS 记录添加到您的域。"
@@ -697,7 +697,7 @@
         "为您的域名添加以下 TXT DNS 记录。"
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
-        "电子邮件别名的作用与电子邮件地址类似，但可以减少垃圾邮件，并隐藏您的真实电子邮件地址和身份。"
+        "邮箱别名的作用与邮箱地址类似，但可以减少垃圾邮件，并隐藏您的真实邮箱地址和身份。"
       ],
       "Change your passwords": [
         "更改密码"
@@ -932,7 +932,7 @@
         "无法加载此地址的泄露信息"
       ],
       "Failed to load breaches for this email alias": [
-        "加载此电子邮件别名的泄露信息失败"
+        "加载此邮箱别名的泄露信息失败"
       ],
       "Failed to load domain settings.": [
         "加载域设置失败。"
@@ -1767,7 +1767,7 @@
         "监测设置已更新"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
-        "不仅仅是一个密码管理器，${ PASS_APP_NAME } 通过电子邮件别名保护您的密码和个人电子邮件地址。它采用与 ${ MAIL_APP_NAME } 相同的技术，对您的数据进行端到端加密，只有您自己才能访问它。"
+        "不仅仅是一个密码管理器，${ PASS_APP_NAME } 通过邮箱别名保护您的密码和个人邮箱地址。它采用与 ${ MAIL_APP_NAME } 相同的技术，对您的数据进行端到端加密，只有您自己才能访问它。"
       ],
       "Move ${ count } item": [
         "移动 ${ count } 个项目"
@@ -3877,7 +3877,7 @@
         "欢迎来到 ${ brandNameJSX }"
       ],
       "What is an alias?": [
-        "什么是电子邮件别名？"
+        "什么是邮箱别名？"
       ],
       "What is the dark web?": [
         "什么是暗网？"

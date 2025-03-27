@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Criptare și exportare"
       ],
+      "Explore ${ target }": [
+        "Explorare ${ target }"
+      ],
       "Explore group plans": [
         "Explorare planuri de grup"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "Salvare adresă"
       ],
+      "Save and continue": [
+        "Salvare și continuare"
+      ],
       "Save changes": [
         "Salvare modificări"
       ],
@@ -1084,11 +1090,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "Select file": [
-        "Selectare fișier"
-      ],
       "select file": [
         "selectați fișierul"
+      ],
+      "Select file": [
+        "Selectare fișier"
       ],
       "Select files": [
         "Selectare fișiere"
@@ -7114,6 +7120,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
@@ -7641,9 +7650,6 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Partajând toate detaliile evenimentului din acest calendar, sunteți de acord să permiteți accesul ${ BRAND_NAME } la aceste informații criptate din calendar."
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendar, integrat cu ${ MAIL_APP_NAME } și ${ CONTACTS_APP_NAME }"
-      ],
       "Cancel anytime": [
         "Anulați oricând"
       ],
@@ -7963,11 +7969,11 @@
       "Email address": [
         "Adresă e-mail"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-mail și calendar, integrate cu ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Serviciu de e-mail, integrat cu ${ CALENDAR_APP_NAME } și ${ CONTACTS_APP_NAME }"
       ],
       "Emailing preference saved": [
         "Preferințe e-mail salvate"
@@ -8028,6 +8034,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Bucurați-vă de o experiență de e-mail mai rapidă și fără distrageri cu aplicația pentru desktop."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Introduceți o parolă pentru a finaliza contul ${ BRAND_NAME } și să puteți utiliza ${ VPN_APP_NAME } pe toate dispozitivele!"
       ],
       "Enter key manually instead": [
         "Introduceți cheia manual"
@@ -9107,6 +9116,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
+      "Set password": [
+        "Setare parolă"
+      ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
       ],
@@ -9268,6 +9280,9 @@
       ],
       "Thank you": [
         "Vă mulțumim"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Vă mulțumim că ați ales ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
@@ -10228,6 +10243,9 @@
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Veți putea adăuga aceste servere la o altă poartă de acces imediat."
+      ],
+      "You’re all set": [
+        "Totul e în regulă"
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
@@ -14642,9 +14660,6 @@
       ]
     },
     "pass_lifetime_signup: Info": {
-      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment. ": [
-        "Obțineți acces pe viață la toate funcțiile premium actuale și viitoare ale ${ PASS_APP_NAME } cu o singură plată unică."
-      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Bun venit la ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
@@ -17149,6 +17164,9 @@
       ],
       "Single sign-on removed": [
         "Conectarea prin autentificare unică a fost eliminată."
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "Adresa de e-mail ${ email } există deja în ${ BRAND_NAME }. Pentru a continua, conectați-vă cu datele de autentificare ale ${ BRAND_NAME }."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "Utilizatorul ${ user } este acum un cont cu autentificare unică. Parola sa anterioară a devenit parolă de rezervă."
