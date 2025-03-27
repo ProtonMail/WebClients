@@ -94,10 +94,10 @@ export const reportWebVitals = (context: 'public' | 'private' = 'private') => {
 
     // We do NOT need to log attributions for every single users
     // Just a few percentage suffice to help us debug and improve our web vitals
-    // We currently report attribution only if rating is 'poor' in 3% of the users
+    // We currently report attribution only if rating is 'poor' in 1% of the users
     // Logging attribution is more "heavy" so that's why we don't want to do it all the time (it creates a bunch of IntersectionObserver instances)
     // Currently the attribution is logged in Sentry for ease of use and because all teams are already onboarded.
-    if (canLogAttribution(3)) {
+    if (canLogAttribution(1)) {
         onCLSWithAttribution(reportMetricWithAttribution);
         onINPWithAttribution(reportMetricWithAttribution);
         onLCPWithAttribution(reportMetricWithAttribution);
