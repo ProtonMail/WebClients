@@ -20,7 +20,7 @@ type FileAttachmentsViewProps = PropsWithChildren<{
 
 export const FileAttachmentsView: FC<FileAttachmentsViewProps> = ({ children, filesCount, disabled, loading }) => (
     <FieldsetCluster mode="read" as="div" className="pass-value-control">
-        <FileAttachmentsSummary filesCount={filesCount} disabled={disabled} loading={loading}>
+        <FileAttachmentsSummary filesCount={filesCount} deleteDisabled={disabled} loading={loading}>
             {children}
         </FileAttachmentsSummary>
     </FieldsetCluster>

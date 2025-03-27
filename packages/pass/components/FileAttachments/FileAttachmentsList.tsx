@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import { useFileDownload } from '@proton/pass/hooks/files/useFileDownload';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
@@ -22,6 +24,7 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
     const deleteFile = useAsyncModalHandles<void, { name: string }>({ getInitialModalState: () => ({ name: '' }) });
     const fileDownload = useFileDownload();
     const share = useSelector(selectShare(shareId));
+    const upsell = useUpselling();
 
     const allowed = useMatchUser({ paid: true });
     const canRename = allowed && share && isShareWritable(share);
@@ -51,7 +54,11 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
                     onDelete={onDelete ? () => handleDelete(file) : undefined}
                     onCancel={() => fileDownload.cancel(file.fileID)}
                     onRename={canRename ? (fileName) => onRename(file, fileName) : undefined}
-                    onDownload={allowed ? () => handleDownload(file) : undefined}
+                    onDownload={
+                        allowed
+                            ? () => handleDownload(file)
+                            : () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })
+                    }
                     loading={fileDownload.pending.has(file.fileID)}
                 />
             ))}
