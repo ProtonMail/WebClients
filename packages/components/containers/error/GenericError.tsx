@@ -38,7 +38,7 @@ export const GenericErrorDisplay = ({ children, className, big, isNetworkError, 
     const url = customImage || (isNetworkError ? networkErrorImg : errorImg);
 
     return (
-        <div className={clsx('generic-error', 'm-auto', big ? 'p-1' : 'p-2', className)}>
+        <div data-testid="generic-error" className={clsx('generic-error', 'm-auto', big ? 'p-1' : 'p-2', className)}>
             <IllustrationPlaceholder
                 title={title ?? c('Error message').t`Something went wrong`}
                 titleSize={big ? 'big' : 'regular'}
