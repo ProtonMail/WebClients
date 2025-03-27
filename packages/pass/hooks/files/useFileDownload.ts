@@ -54,7 +54,7 @@ export const useFileDownload = () => {
                 if (res.type === 'success') return await abortable(() => fileStorage.readFile(res.data), ctrl.signal);
             } catch {
             } finally {
-                cancel(fileID);
+                ctrls.current.delete(fileID);
                 setPending(updateSet((next) => next.delete(file.fileID)));
             }
         },
