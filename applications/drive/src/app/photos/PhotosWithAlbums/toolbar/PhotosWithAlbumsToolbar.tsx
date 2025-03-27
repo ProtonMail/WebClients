@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, InlineLinkButton } from '@proton/atoms';
+import { Button, InlineLinkButton, Vr } from '@proton/atoms';
 import {
     Dropdown,
     DropdownButton,
@@ -27,6 +27,7 @@ import {
 import { isPhotoGroup } from '../../../store/_photos';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from './PhotosAddAlbumPhotosButton';
+import { PhotosAddToAlbumButton } from './PhotosAddToAlbumButton';
 import { PhotosAlbumShareButton } from './PhotosAlbumShareButton';
 import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
@@ -222,6 +223,7 @@ interface ToolbarRightActionsAlbumGalleryProps extends ToolbarRightActionsGaller
     onDeleteAlbum: () => void;
     onLeaveAlbum: () => void;
     onShowDetails: () => void;
+    onAddAlbumPhotos: () => void;
 }
 
 const ToolbarRightActionsGallery = ({
@@ -247,17 +249,20 @@ const ToolbarRightActionsAlbumGallery = ({
     onDeleteAlbum,
     onLeaveAlbum,
     onShowDetails,
+    onAddAlbumPhotos,
 }: ToolbarRightActionsAlbumGalleryProps) => {
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     return (
         <>
-            {!uploadDisabled && (
+            {album.permissions.isOwner && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} type="toolbar" />}
+            {!album.permissions.isOwner && !uploadDisabled && (
                 <PhotosUploadButton
                     shareId={shareId}
                     linkId={linkId}
                     onFileUpload={onFileUpload}
                     onFileSkipped={onFileSkipped}
+                    isAlbumUpload
                 />
             )}
             {data.length > 0 && (
@@ -290,7 +295,7 @@ const ToolbarRightActionsAlbumGallery = ({
                     }}
                 />
             )}
-
+            <Vr className="h-full" />
             <AlbumGalleryDropdownButton
                 onDelete={onDeleteAlbum}
                 onShowDetails={onShowDetails}
@@ -347,6 +352,7 @@ interface PhotosWithAlbumToolbarProps {
     onDeleteAlbum?: () => void;
     onLeaveAlbum?: () => void;
     onShowDetails?: () => void;
+    onAddAlbumPhotos?: () => void;
 }
 
 export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
@@ -368,6 +374,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     onDeleteAlbum,
     onLeaveAlbum,
     onShowDetails,
+    onAddAlbumPhotos,
 }) => {
     const { viewportWidth } = useActiveBreakpoint();
     const hasSelection = selectedItems.length > 0;
@@ -403,7 +410,8 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                     album &&
                     onDeleteAlbum &&
                     onLeaveAlbum &&
-                    onShowDetails && (
+                    onShowDetails &&
+                    onAddAlbumPhotos && (
                         <ToolbarRightActionsAlbumGallery
                             uploadDisabled={uploadDisabled}
                             shareId={shareId}
@@ -416,6 +424,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             onDeleteAlbum={onDeleteAlbum}
                             onLeaveAlbum={onLeaveAlbum}
                             onShowDetails={onShowDetails}
+                            onAddAlbumPhotos={onAddAlbumPhotos}
                         />
                     )}
 
@@ -441,10 +450,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         )}
                         <PhotosDetailsButton showIconOnly={showIconOnly} selectedLinks={selectedItems} />
                         {openAddPhotosToAlbumModal && (
-                            <PhotosAddAlbumPhotosButton
-                                showIconOnly={showIconOnly}
-                                onClick={openAddPhotosToAlbumModal}
-                            />
+                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal} />
                         )}
                         {canRemoveAlbum && (
                             <PhotosRemoveAlbumPhotosButton showIconOnly={showIconOnly} onClick={removeAlbumPhotos!} />
@@ -461,10 +467,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             selectedLinks={selectedItems}
                         />
                         {openAddPhotosToAlbumModal && (
-                            <PhotosAddAlbumPhotosButton
-                                showIconOnly={showIconOnly}
-                                onClick={openAddPhotosToAlbumModal}
-                            />
+                            <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal} />
                         )}
                         <SelectionDropdownButton>
                             {canSelectCover && (
