@@ -128,22 +128,8 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
         );
     };
 
-    const cancelButton = <Button shape="outline" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>;
-
-    const sendButton = (
-        <Button
-            color="norm"
-            onClick={handleSend}
-            loading={loadingSend}
-            disabled={
-                displayNoteOverlay &&
-                (isUnchanged || !model.Comment || model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
-            }
-        >{c('Action').t`Send`}</Button>
-    );
-
-    const hasUserComment = !!model.Comment;
-    const canReplyWithNote = !hasUserComment && !isSearchView;
+    // Rely on userComment instead of model.Comment to avoid line jump
+    const canReplyWithNote = !userComment && !isSearchView;
 
     return (
         <>
@@ -168,7 +154,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                 </RsvpSpotlight>
             )}
 
-            {hasUserComment && (
+            {!!userComment && (
                 <div className="mt-2 flex flex-auto justify-space-between flex-nowrap items-center gap-2">
                     <div className="text-ellipsis color-weak text-sm">
                         <span className="text-bold color-weak">{c('Note').t`Note: `}</span>
@@ -205,8 +191,16 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         counterPosition="bottom-left"
                     />
                     <div className="gap-4 flex flex-auto justify-end">
-                        {cancelButton}
-                        {sendButton}
+                        <Button shape="outline" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
+                        <Button
+                            color="norm"
+                            onClick={handleSend}
+                            loading={loadingSend}
+                            disabled={
+                                displayNoteOverlay &&
+                                (isUnchanged || !model.Comment || model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
+                            }
+                        >{c('Action').t`Send`}</Button>
                     </div>
                 </div>
             )}
