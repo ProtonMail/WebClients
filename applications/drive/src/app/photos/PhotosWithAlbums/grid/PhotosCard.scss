@@ -45,14 +45,12 @@
 			animation-fill-mode: both;
 		}
 
-		&:hover > .checkbox-container,
-		&:focus-within > .checkbox-container {
+		&:hover > .checkbox-container {
 			display: block;
 		}
 	}
 
 	.photos-card-favorite-button {
-		color: white;
 		animation-delay: 0.1s;
 		animation-fill-mode: both;
 
@@ -62,10 +60,6 @@
 			);
 
 			// so shadow follows the shape instead of being square
-		}
-
-		&[aria-pressed='true'] {
-			color: white;
 		}
 	}
 
@@ -103,7 +97,7 @@
 	color: white;
 }
 
-.photos-card-share-icon {
+.photos-card-bottom-icon {
 	background-color: rgb(112 109 107 / 0.8);
 	inline-size: rem(20);
 	block-size: rem(20);
@@ -111,4 +105,22 @@
 
 .album-card {
 	border: 3px solid var(--background-norm);
+}
+
+// tiny little effect to emphasize it's clickable
+.color-white-on-hover {
+	color: white;
+	opacity: 0.7;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&[aria-pressed='true'] {
+		opacity: 1;
+	}
+}
+
+.color-white {
+	color: white;
 }

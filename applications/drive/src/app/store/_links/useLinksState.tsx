@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { DriveEvent, DriveEvents } from '../_events';
@@ -88,6 +89,36 @@ export function useLinksStateProvider() {
         [state]
     );
 
+    // This is not ideal to be present here but it's the only way to have optimistic updates for photos favorites
+    // which is important to make it feel snappy
+    // this should eventually be removed once we have a linkstate in zustand that can be shared cross tabs
+    const updatePhotoLinkTags = useCallback((shareId: string, linkId: string, tags: PhotoTag[]): void => {
+        setState((previousState) => {
+            const newState = { ...previousState };
+            if (newState[shareId]?.links[linkId]) {
+                if (
+                    newState[shareId]?.links[linkId].decrypted &&
+                    newState[shareId]?.links[linkId].decrypted.photoProperties
+                ) {
+                    newState[shareId].links[linkId].decrypted.photoProperties.tags = tags;
+                    newState[shareId].links[linkId].decrypted.photoProperties.isFavorite = tags.includes(
+                        PhotoTag.Favorites
+                    );
+                }
+                if (
+                    newState[shareId]?.links[linkId].encrypted &&
+                    newState[shareId]?.links[linkId].encrypted.photoProperties
+                ) {
+                    newState[shareId].links[linkId].encrypted.photoProperties.tags = tags;
+                    newState[shareId].links[linkId].encrypted.photoProperties.isFavorite = tags.includes(
+                        PhotoTag.Favorites
+                    );
+                }
+            }
+            return newState;
+        });
+    }, []);
+
     const getChildren = useCallback(
         (shareId: string, parentLinkId: string, foldersOnly: boolean = false): Link[] => {
             const childrenLinkIds = state[shareId]?.tree[parentLinkId] || [];
@@ -172,6 +203,8 @@ export function useLinksStateProvider() {
         removeLinkForMigration,
         removeLinkForSharedWithMe,
         removeLinksForPublicPage,
+        // used only for Photos/Albums optimistic updates
+        updatePhotoLinkTags,
         /** Should never be used outside of `drive-store`. */
         removeLinkForDriveCompat,
     };
