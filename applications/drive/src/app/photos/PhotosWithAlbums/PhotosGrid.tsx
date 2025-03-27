@@ -3,6 +3,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import clsx from '@proton/utils/clsx';
 
 import type { PhotoGridItem } from '../../store';
 import { isPhotoGroup } from '../../store/_photos';
@@ -20,6 +21,7 @@ type Props = {
     isGroupSelected: (groupIndex: number) => boolean | 'some';
     isItemSelected: (linkId: string) => boolean;
     categoryLoading?: string;
+    isAddAlbumPhotosView?: boolean;
     userAddressEmail?: string;
     onFavorite: (linkId: string, isFavorite: boolean) => void;
 };
@@ -34,6 +36,7 @@ export const PhotosGrid: FC<Props> = ({
     hasSelection,
     isGroupSelected,
     isItemSelected,
+    isAddAlbumPhotosView,
     userAddressEmail,
     onFavorite,
 }) => {
@@ -185,9 +188,13 @@ export const PhotosGrid: FC<Props> = ({
                             hasSelection={hasSelection}
                             isFavorite={item.photoProperties?.isFavorite || false}
                             isOwnedByCurrentUser={item.activeRevision?.signatureEmail === userAddressEmail}
-                            onFavorite={() => {
-                                onFavorite(item.linkId, item.photoProperties?.isFavorite || false);
-                            }}
+                            onFavorite={
+                                !isAddAlbumPhotosView
+                                    ? () => {
+                                          onFavorite(item.linkId, item.photoProperties?.isFavorite || false);
+                                      }
+                                    : undefined
+                            }
                         />
                     );
                 }
@@ -208,7 +215,11 @@ export const PhotosGrid: FC<Props> = ({
     }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition, isLoading]);
 
     return (
-        <div className="m-4 mt-10 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
+        <div
+            className={clsx('m-4 overflow-auto outline-none--at-all', !isAddAlbumPhotosView && 'mt-10')}
+            ref={containerRef}
+            onScroll={handleScroll}
+        >
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
