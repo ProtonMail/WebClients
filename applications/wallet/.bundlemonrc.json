@@ -1,0 +1,19 @@
+{
+    "baseDir": "../../applications/wallet",
+    "files": [
+        {
+            "path": "dist/assets/static/*.<hash>.css"
+        },
+        {
+            "path": "dist/assets/static/*.<hash>.ltr.css"
+        },
+        {
+            "path": "dist/assets/static/*.<hash>.chunk.js"
+        },
+        {
+            "path": "dist/assets/static/*.<hash>.js"
+        }
+    ],
+    "reportOutput": ["json"],
+    "subProject": "wallet"
+}
