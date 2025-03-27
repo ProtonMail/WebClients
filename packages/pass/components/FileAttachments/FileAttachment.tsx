@@ -55,8 +55,8 @@ export const FileAttachment: FC<Props> = ({
 
     const [fileName, extension] = splitExtension(file.name);
     const actionsDisabled = disabled || !online;
-    const canDownload = !fileRenameModal.state.open && online;
-    const canRename = onRename && !fileAttachmentsDisabled && !fileRenameModal.state.open && online;
+    const canDownload = !loading && !fileRenameModal.state.open && online;
+    const canRename = onRename && !loading && !fileAttachmentsDisabled && !fileRenameModal.state.open && online;
 
     const enableRenaming = () =>
         fileRenameModal.handler({
