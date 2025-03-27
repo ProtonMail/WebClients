@@ -153,6 +153,9 @@
       "Close this banner": [
         "이 배너 닫기"
       ],
+      "Collapse": [
+        "접기"
+      ],
       "Compose": [
         "메일 쓰기"
       ],
@@ -192,6 +195,9 @@
       "Copy invite link": [
         "초대 링크 복사"
       ],
+      "Create": [
+        "생성"
+      ],
       "Create a copy": [
         "복사본 생성"
       ],
@@ -203,6 +209,9 @@
       ],
       "Create folder": [
         "폴더 생성"
+      ],
+      "Create new folder": [
+        "새 폴더 만들기"
       ],
       "Current plan": [
         "현재 플랜"
@@ -287,6 +296,9 @@
       ],
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
+      ],
+      "Expand": [
+        "펼치기"
       ],
       "Export": [
         "내보내기"
@@ -419,6 +431,12 @@
       ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
+      ],
+      "Move": [
+        "이동"
+      ],
+      "Move to folder": [
+        "폴더로 이동"
       ],
       "Move to trash": [
         "휴지통으로 이동"
@@ -3962,6 +3980,9 @@
       "Create your end-to-end encrypted document": [
         "종단간 암호화 문서 생성"
       ],
+      "Create your first folder and start moving your files.": [
+        "첫 폴더를 생성하고 파일을 이동시켜 보세요."
+      ],
       "Creating link to file": [
         "파일 링크를 만드는 중"
       ],
@@ -4498,6 +4519,9 @@
       ],
       "Saving...": [
         "저장 중..."
+      ],
+      "Select a folder to move to.": [
+        "이동할 폴더 선택"
       ],
       "Select a service provider to start": [
         "서비스 제공자를 선택해 시작하기"
@@ -5264,6 +5288,9 @@
       ],
       "Folder location": [
         "폴더 위치"
+      ],
+      "Folder name": [
+        "폴더 이름"
       ],
       "Forwards to": [
         "다음으로 전달:"
@@ -7022,6 +7049,15 @@
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
       ],
+      "Move ${ n } file": [
+        "파일 ${ n }개 이동"
+      ],
+      "Move ${ n } folder": [
+        "폴더 ${ n }개 이동"
+      ],
+      "Move ${ n } item": [
+        "항목 ${ n }개 이동"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }을(를) 업로드할 공간이 없습니다"
       ],
@@ -7030,6 +7066,9 @@
       ],
       "Public link update access failed ": [
         "공개 링크 업데이트 접근 실패 "
+      ],
+      "Root folder failed to be loaded": [
+        "루트 폴더 불러오는 중 문제 발생"
       ],
       "Share invitation accepted successfully": [
         "초대장 공유가 성공적으로 수락되었습니다."
@@ -7042,6 +7081,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "이 항목에 대한 공유 중단 작업을 수행할 수 없습니다."
+      ],
+      "Subfolder failed to be loaded": [
+        "하위 폴더를 불러오는 중 문제 발생"
       ],
       "The document failed to be created": [
         "문서를 생성하는데 실패했습니다."
@@ -7433,6 +7475,9 @@
       ],
       "Email": [
         "이메일"
+      ],
+      "Enter a new folder name": [
+        "새 폴더 이름을 입력하세요"
       ],
       "Filter groups": [
         "필터 그룹"
@@ -8635,6 +8680,9 @@
       "Coupon": [
         "쿠폰"
       ],
+      "Create a new folder": [
+        "새 폴더 만들기"
+      ],
       "Create contact": [
         "연락처 추가"
       ],
@@ -9009,6 +9057,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "무제한 폴더 및 라벨을 생성할 수 있습니다."
+      ],
+      "You have no folders yet": [
+        "아직 폴더가 없습니다"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
