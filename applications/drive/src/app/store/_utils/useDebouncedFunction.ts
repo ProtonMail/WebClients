@@ -1,4 +1,3 @@
-import { useCache } from '@proton/components';
 import noop from '@proton/utils/noop';
 
 type CacheValue = {
@@ -9,9 +8,9 @@ type CacheValue = {
     error?: any;
 };
 
-export default function useDebouncedFunction() {
-    const cache = useCache<string, CacheValue>();
+const cache = new Map<string, CacheValue>();
 
+export default function useDebouncedFunction() {
     /**
      * Return already existing promise for the same call.
      *

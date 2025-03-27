@@ -43,18 +43,24 @@ import { PhotosWithAlbumsToolbar, ToolbarLeftActionsAlbumsGallery } from './tool
 const useAppTitleUpdate = () => {
     const { APP_NAME } = useConfig();
 
-    const memoedTitle = useCallback((title?: string, maybeAppName?: string) => {
-        const appName = maybeAppName || getAppName(APP_NAME);
-        return [title, appName].filter(Boolean).join(' - ');
-    }, []);
+    const formatTitle = useCallback(
+        (title?: string, maybeAppName?: string) => {
+            const appName = maybeAppName || getAppName(APP_NAME);
+            return [title, appName].filter(Boolean).join(' - ');
+        },
+        [APP_NAME]
+    );
 
-    return (title?: string, maybeAppName?: string) => {
-        const titleUpdate = memoedTitle(title, maybeAppName);
-        if (titleUpdate === undefined) {
-            return;
-        }
-        document.title = titleUpdate;
-    };
+    return useCallback(
+        (title?: string, maybeAppName?: string) => {
+            const titleUpdate = formatTitle(title, maybeAppName);
+            if (titleUpdate === undefined) {
+                return;
+            }
+            document.title = titleUpdate;
+        },
+        [formatTitle]
+    );
 };
 
 export const PhotosWithAlbumsInsideAlbumView: FC = () => {
@@ -96,7 +102,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const [deleteAlbumModal, showDeleteAlbumModal] = useDeleteAlbumModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const containerRef = useRef<HTMLDivElement>(null);
-
+    const [isInitialized, setIsInitialized] = useState<boolean>(false);
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
@@ -121,7 +127,13 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }
     };
 
-    const album = albumLinkId ? albums.find((album) => album.linkId === albumLinkId) : undefined;
+    const album = useMemo(() => {
+        if (!albumLinkId) {
+            return undefined;
+        }
+        return albums.find((album) => album.linkId === albumLinkId);
+    }, [albums, albumLinkId]);
+
     const photoCount = albumPhotos.length;
     const selectedCount = selectedItems.length;
 
@@ -138,6 +150,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         () => albumPhotosLinkIds.findIndex((item) => item === previewLinkId),
         [albumPhotosLinkIds, previewLinkId]
     );
+
     const previewItem = useMemo(
         () =>
             previewLinkId !== undefined
@@ -145,6 +158,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 : undefined,
         [albumPhotos, previewLinkId, albumPhotosLinkIdToIndexMap]
     );
+
     const setPreviewIndex = useCallback(
         (index: number) => setPreviewLinkId(albumPhotosLinkIds[index]),
         [setPreviewLinkId, albumPhotosLinkIds]
@@ -160,7 +174,11 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 // If you're not the owner of the album
                 // you just upload directly in the album
                 // so you don't add afterwards to add the photo to the album
-                if (album.permissions.isOwner) {
+                // Additionally if the file is skipped AND already in the album, no need to call backend to re-add
+                const isAlreadyInAlbum = albumPhotos.some(
+                    (photo) => typeof photo === 'object' && photo.linkId === file.fileId
+                );
+                if (album.permissions.isOwner && !isAlreadyInAlbum) {
                     await addAlbumPhoto(abortSignal, albumShareId, file.fileId);
                 }
             } catch (e) {
@@ -170,7 +188,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 sendErrorReport(e);
             }
         },
-        [createNotification, addAlbumPhoto, albumShareId, album]
+        [createNotification, addAlbumPhoto, albumShareId, album, albumPhotos]
     );
 
     const onSelectCover = useCallback(
@@ -360,6 +378,13 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         });
     }, [albumShareId, albumLinkId, showDetailsModal, previewItem]);
 
+    const onShare = useCallback(() => {
+        if (!albumShareId || !album) {
+            return;
+        }
+        showLinkSharingModal({ shareId: albumShareId, linkId: album.linkId });
+    }, [albumShareId, album, showLinkSharingModal]);
+
     useEffect(() => {
         if (albumName) {
             updateTitle(`Album > ${albumName}`);
@@ -379,23 +404,36 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }
     }, [albumShareId, album, searchParams, setSearchParams, showLinkSharingModal]);
 
-    if (!albumShareId || !linkId || !album || isAlbumsLoading || isAlbumPhotosLoading) {
+    const hasPreview = !!previewItem;
+
+    const uploadLinkId = useMemo(() => {
+        // If you own the root photo share, your uploads always goes to the root (photo stream) and then we add the photos to the album
+        // If you don't own it (shared album), you upload directly in the album as a folder, it won't appear in photo stream
+        return album?.permissions.isOwner ? linkId : albumLinkId || linkId;
+    }, [album?.permissions.isOwner, linkId, albumLinkId]);
+
+    const canRemoveSelectedPhotos = useMemo(() => {
+        return (
+            album?.permissions.isAdmin ||
+            selectedItems.every((item) => item.activeRevision?.signatureEmail === userAddressEmail)
+        );
+    }, [album?.permissions.isAdmin, selectedItems, userAddressEmail]);
+
+    const viewOnly = useMemo(() => {
+        return isUploadDisabled || !album?.permissions.isEditor;
+    }, [isUploadDisabled, album?.permissions.isEditor]);
+
+    useEffect(() => {
+        if (isAlbumsLoading === false && isAlbumPhotosLoading === false) {
+            setIsInitialized(true);
+        }
+    }, [isAlbumsLoading, isAlbumPhotosLoading]);
+
+    if (!albumShareId || !linkId || !album || !uploadLinkId || !isInitialized) {
         return <Loader />;
     }
 
-    // TODO: Album not found view
-
-    const hasPreview = !!previewItem;
-    // If you own the root photo share, your uploads always goes to the root (photo stream) and then we add the photos to the album
-    // If you don't own it (shared album), you upload directly in the album as a folder, it won't appear in photo stream
-    const uploadLinkId = album.permissions.isOwner ? linkId : albumLinkId || linkId;
-
-    const canRemoveSelectedPhotos =
-        album.permissions.isAdmin ||
-        selectedItems.every((item) => item.activeRevision?.signatureEmail === userAddressEmail);
-
-    const viewOnly = isUploadDisabled || !album.permissions.isEditor;
-
+    // TODO: Album not found view [DRVWEB-4615]
     return (
         <>
             {detailsModal}
@@ -510,9 +548,8 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onFileUpload={onPhotoUploadedToAlbum}
                             onFileSkipped={onPhotoUploadedToAlbum}
                             album={album}
-                            onShare={() => {
-                                showLinkSharingModal({ shareId: albumShareId, linkId: album.linkId });
-                            }}
+                            photoCount={photoCount}
+                            onShare={onShare}
                         />
                     </div>
                 ) : (
@@ -522,6 +559,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     >
                         <AlbumCoverHeader
                             album={album}
+                            photoCount={photoCount}
                             shareId={albumShareId}
                             onFileUpload={onPhotoUploadedToAlbum}
                             onFileSkipped={onPhotoUploadedToAlbum}
