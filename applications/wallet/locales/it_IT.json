@@ -248,6 +248,9 @@
       "Show QRCode": [
         "Mostra il codice QR"
       ],
+      "Sign message": [
+        "Firma messaggio"
+      ],
       "Sign out": [
         "Esci dall'account"
       ],
@@ -336,10 +339,6 @@
       "${ price } per user": [
         "${ price } per utente"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } posto ${ LUMO_APP_NAME }",
-        "${ seats } posti ${ LUMO_APP_NAME }"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } posto dell'assistente alla scrittura",
         "${ seats } posti dell'assistente alla scrittura"
@@ -414,14 +413,6 @@
       ],
       "Premium Password Manager": [
         "Gestore di password premium"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Il prezzo scontato di ${ discountedPrice } è valido per i primi ${ cycle } mesi. Successivamente verrà rinnovato automaticamente al prezzo scontato di ${ nextPrice } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ discountedPrice }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ nextPrice } al mese. Puoi annullare in qualsiasi momento."
       ]
     },
     "bf2023: Tooltip": {
@@ -620,6 +611,9 @@
       "Buy Azteco vouchers": [
         "Acquista voucher Azteco"
       ],
+      "Buying BTC through ${ WALLET_APP_NAME } is currently unavailable to UK residents due to FCA regulations.": [
+        "L'acquisto di BTC tramite ${ WALLET_APP_NAME } non è attualmente disponibile per i residenti nel Regno Unito a causa delle normative FCA."
+      ],
       "Choose a country": [
         "Seleziona un paese"
       ],
@@ -777,6 +771,22 @@
       ],
       "To": [
         "A"
+      ]
+    },
+    "Bitcoin Signing Type": {
+      "BIP 137": [
+        "BIP 137"
+      ],
+      "Electrum": [
+        "Electrum"
+      ]
+    },
+    "Bitcoin Signing Type Description": {
+      "Electrum is a compatibility signature format": [
+        "Electrum è un formato di firma di compatibilità"
+      ],
+      "Trezor is the standard signature format according to BIP 137": [
+        "Trezor è il formato di firma standard secondo BIP 137"
       ]
     },
     "Bitcoin Unit": {
@@ -2421,9 +2431,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } include l'assistente di scrittura ${ BRAND_NAME } Scribe."
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -2716,7 +2723,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "L'abbonamento si rinnova automaticamente ogni ${ cycle } mese.",
         "L'abbonamento si rinnova automaticamente ogni ${ cycle } mesi."
       ],
       "Subscription auto-renews every month.": [
@@ -2847,6 +2855,10 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese.",
+        "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mesi."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
@@ -2868,11 +2880,15 @@
       "Your phone number will only be used for this one-time verification.": [
         "Il tuo numero di telefono sarà usato solamente per questa verifica una tantum."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese.",
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni ${ cycle } mese."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
       ]
     },
     "info": {
@@ -3062,6 +3078,9 @@
       ],
       "Show QRCode": [
         "Mostra il codice QR"
+      ],
+      "Sign message": [
+        "Firma messaggio"
       ],
       "Start date": [
         "Data di inizio"
@@ -4128,6 +4147,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
+      ],
       "Got it": [
         "Ho capito"
       ],
@@ -4136,9 +4158,6 @@
       ],
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
-      ],
-      "Payment Processing": [
-        "Elaborazione del pagamento"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
@@ -4155,29 +4174,42 @@
       "Please select your billing state first.": [
         "Seleziona prima lo stato di fatturazione."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Rinnova a ${ renewPrice }, annulla in qualsiasi momento."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "I prezzi di rinnovo sono soggetti a modifiche in base a ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
       ],
       "Select billing country to pay": [
         "Seleziona il paese di fatturazione per il pagamento"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } ogni ${ subscriptionLengthCopy }. Puoi annullare in qualsiasi momento."
+      "terms & conditions": [
+        "termini e condizioni"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ subscriptionLength } mesi. Il piano si rinnoverà poi automaticamente a ${ renewPrice } per ${ subscriptionLengthCopy } mesi. Puoi annullare in qualsiasi momento."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Il coupon è valido per ${ couponRedemptions } rinnovo.",
+        "Il coupon è valido per ${ couponRedemptions } rinnovi."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPrice } per ${ subscriptionLength } mese. Puoi annullare in qualsiasi momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo ${ subscriptionLength } mese.",
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per i primi ${ subscriptionLength } mesi."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per il primo mese. Il piano si rinnoverà poi automaticamente a ${ renewPrice } al mese. Puoi annullare in qualsiasi momento."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovo. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento.",
+        "Il prezzo scontato di ${ priceWithDiscount } è valido per il primo mese. Il coupon è valido per ${ couponRedemptions } rinnovi. Successivamente verrà rinnovato automaticamente a ${ renewPriceStr } per 1 mese. Puoi annullare in qualsiasi momento."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "La tariffa scontata, con prezzo speciale di ${ priceWithDiscount } è valida per il primo mese. Il piano si rinnoverà poi automaticamente al prezzo di ${ renewPriceStr } per mese. Puoi disdire quando vuoi."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
+        "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
+      "Your payment is still being processed": [
+        "Il tuo pagamento è ancora in fase di elaborazione."
       ]
     },
     "Payments.Error": {
@@ -4359,6 +4391,41 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Condiviso da ${ ownerName }"
+      ]
+    },
+    "Sign message": {
+      "Advanced settings": [
+        "Impostazioni avanzate"
+      ],
+      "Copy signature": [
+        "Copia firma"
+      ],
+      "Enter or paste the message you want to sign.": [
+        "Inserisci o incolla il messaggio che vuoi firmare."
+      ],
+      "Generate signature": [
+        "Genera firma"
+      ],
+      "Message": [
+        "Messaggio"
+      ],
+      "Message signed": [
+        "Messaggio firmato"
+      ],
+      "Sign a message": [
+        "Firma un messaggio"
+      ],
+      "Signature": [
+        "Firma"
+      ],
+      "Signing type": [
+        "Tipo di firma"
+      ],
+      "This signature verifies your ownership of this Bitcoin address without revealing your private key.": [
+        "Questa firma verifica la tua proprietà di questo indirizzo Bitcoin senza rivelare la tua chiave privata."
+      ],
+      "We default to Electrum signing method because it's the easiest and most common method requested by banks. BIP 137 is used for signing transactions offline and is more advanced.": [
+        "Di default utilizziamo il metodo di firma Electrum perché è il metodo più semplice e più comune richiesto dalle banche. BIP 137 è utilizzato per firmare transazioni offline ed è più avanzato."
       ]
     },
     "specialoffer: Deal": {
@@ -4742,6 +4809,9 @@
       "Problem reported": [
         "Problema segnalato"
       ],
+      "Signature copied to clipboard": [
+        "Firma copiata negli appunti"
+      ],
       "Verification successful": [
         "Verifica riuscita"
       ],
@@ -5067,8 +5137,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Ti verrà addebitato un importo pari a ${ renewPrice } ogni 12 mesi."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "Ti verrà addebitato un importo pari a ${ renewPriceStr } ogni 12 mesi."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Il tuo nuovo abbonamento si rinnoverà automaticamente tra ${ cycle } mese.",
@@ -5166,6 +5236,9 @@
       "Advanced settings": [
         "Impostazioni avanzate"
       ],
+      "Signing method": [
+        "Metodo di firma"
+      ],
       "This account is already created": [
         "Questo account è già creato"
       ],
@@ -5222,7 +5295,7 @@
     },
     "Wallet discover": {
       "Backup this wallet's seed phrase": [
-        "Esegui il backup della seed phrase di questo portafoglio"
+        "Esegui il backup della frase di recupero di questo portafoglio"
       ],
       "Backup your ${ BRAND_NAME } account data": [
         "Esegui il backup dei dati del tuo account ${ BRAND_NAME }"
@@ -5269,16 +5342,16 @@
     },
     "Wallet information": {
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
-        "Una passphrase del wallet è un'ulteriore password che puoi creare per aggiungere sicurezza al tuo wallet di criptovaluta. Funziona in combinazione con la seed phrase. Memorizzala in un posto sicuro, perché in caso di smarrimento il tuo wallet può bloccarsi."
+        "Una passphrase del wallet è un'ulteriore password che puoi creare per aggiungere sicurezza al tuo wallet di criptovaluta. Funziona in combinazione con la frase di recupero. Memorizzala in un posto sicuro, perché in caso di smarrimento il tuo wallet può bloccarsi."
       ],
       "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Una seed phrase del wallet è composta da una serie di 12 a 24 parole generate dal tuo wallet. Funziona come una chiave principale e consente di recuperare i tuoi fondi. Conservala in un posto sicuro e non condividerla mai con nessuno, poiché garantisce l'accesso ai tuoi fondi."
+        "Una frase di recupero del wallet è composta da una serie di 12 a 24 parole generate dal tuo wallet. Funziona come una chiave principale e consente di recuperare i tuoi fondi. Conservala in un posto sicuro e non condividerla mai con nessuno, poiché garantisce l'accesso ai tuoi fondi."
       ],
       "What’s a wallet passphrase?": [
         "Cos'è una passphrase del wallet?"
       ],
       "What’s a wallet seed phrase?": [
-        "Cos'è una seed phrase del wallet?"
+        "Cos'è una frase di recupero del wallet?"
       ]
     },
     "Wallet invite": {
@@ -5364,7 +5437,7 @@
         "Cancella l'archiviazione del browser"
       ],
       "Copy seed phrase": [
-        "Copia seed phrase"
+        "Copia frase di recupero"
       ],
       "Create email": [
         "Crea email"
@@ -5424,7 +5497,7 @@
         "Mostra di più"
       ],
       "View wallet seed phrase": [
-        "Visualizza la seed phrase del portafoglio"
+        "Visualizza la frase di recupero del portafoglio"
       ],
       "Wallet preferences": [
         "Preferenze del portafoglio"
@@ -5773,7 +5846,7 @@
         "Crea nuovo portafoglio"
       ],
       "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet at a later stage using the seed phrase.": [
-        "L'eliminazione di questo portafoglio rimuoverà tutti i relativi dati dai server di ${ BRAND_NAME }. Potrai recuperarlo in una fase successiva utilizzando la frase seed."
+        "L'eliminazione di questo portafoglio rimuoverà tutti i relativi dati dai server di ${ BRAND_NAME }. Potrai recuperarlo in una fase successiva utilizzando la frase di recupero."
       ],
       "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet by reactivating the keys used during wallet creation in your account.": [
         "L'eliminazione di questo portafoglio rimuoverà tutti i relativi dati dai server di ${ BRAND_NAME }. Potrai recuperarlo riattivando le chiavi utilizzate durante la creazione del portafoglio nel tuo account."
@@ -5821,13 +5894,13 @@
         "Scegli una valuta predefinita, così potremo mostrare il valore delle tue transazioni Bitcoin utilizzando i dati di mercato più recenti al momento della transazione."
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
-        "Prima di eliminarli, trasferisci i tuoi Bitcoin su un altro portafoglio. L'eliminazione di questo portafoglio rimuoverà tutti i relativi dati dai server di ${ BRAND_NAME }. Potrai recuperarlo in una fase successiva utilizzando la frase seed."
+        "Prima di eliminarli, trasferisci i tuoi Bitcoin su un altro portafoglio. L'eliminazione di questo portafoglio rimuoverà tutti i relativi dati dai server di ${ BRAND_NAME }. Potrai recuperarlo in una fase successiva utilizzando la frase di recupero."
       ],
       "Primary account": [
         "Account principale"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
-        "Seed phrase (12 a 24 parole, separate da spazio)"
+        "Frase di recupero (12 a 24 parole, separate da spazio)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Queste 12 parole dovrebbero essere utilizzate per recuperare gli asset di questo portafoglio solo come ultima risorsa, ad esempio se perdi l'accesso al tuo account ${ BRAND_NAME }."
@@ -5842,34 +5915,34 @@
         "Trasferisci i fondi del tuo portafoglio cartaceo sul tuo account. Incolla la tua chiave privata o scansiona il tuo codice QR."
       ],
       "View wallet seed phrase": [
-        "Visualizza la seed phrase del wallet"
+        "Visualizza la frase di recupero del wallet"
       ],
       "Wallet could not be created. Please try again.": [
         "Impossibile creare il Wallet. Riprova."
       ],
       "Wallet seed phrase": [
-        "Seed phrase del wallet"
+        "Frase di recupero del wallet"
       ],
       "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
-        "Il checksum della frase seed del Wallet non è valido. Accettiamo solo frasi seed BIP39 e non supportiamo quelle Electrum."
+        "Il checksum della frase di recupero del Wallet non è valido. Accettiamo solo frasi seed BIP39 e non supportiamo quelle Electrum."
       ],
       "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
-        "La frase seed del Wallet contiene una parola sconosciuta: ${ word }. Supportiamo solo l'elenco di parole inglesi BIP39."
+        "La frase di recupero del Wallet contiene una parola sconosciuta: ${ word }. Supportiamo solo l'elenco di parole inglesi BIP39."
       ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
-        "La seed phrase del portafoglio codifica la chiave privata che controlla i tuoi asset digitali."
+        "La frase di recupero del portafoglio codifica la chiave privata che controlla i tuoi asset digitali."
       ],
       "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
-        "L'entropia della frase seed del Wallet non è valida. Dovrebbe avere una lunghezza compresa tra 128 e 256 bit."
+        "L'entropia della frase di recupero del Wallet non è valida. Dovrebbe avere una lunghezza compresa tra 128 e 256 bit."
       ],
       "Wallet seed phrase is incorrect. Please check it and try again.": [
-        "La frase seed del Wallet non è corretta. Controlla e riprova."
+        "La frase di recupero del Wallet non è corretta. Controlla e riprova."
       ],
       "Wallet seed phrase language is not supported.": [
-        "Il linguaggio della frase seed del Wallet non è supportato."
+        "Il linguaggio della frase di recupero del Wallet non è supportato."
       ],
       "Wallet seed phrase length is invalid. It should be between 12 and 24 words.": [
-        "La lunghezza della seed phrase del portafoglio non è valida. Deve contenere fra 12 e 24 parole."
+        "La lunghezza della frase di recupero del portafoglio non è valida. Deve contenere fra 12 e 24 parole."
       ],
       "Wallet setup": [
         "Configurazione del portafoglio"
@@ -5878,10 +5951,10 @@
         "Cos'è una frase d'accesso del portafoglio?"
       ],
       "What's a wallet seed phrase?": [
-        "Cos'è una seed phrase del portafoglio?"
+        "Cos'è una frase di recupero del portafoglio?"
       ],
       "You can use the seed phrase to import your wallet on any wallet app.": [
-        "Puoi utilizzare la seed phrase per importare il tuo portafoglio su una qualsiasi app portafoglio."
+        "Puoi utilizzare la frase di recupero per importare il tuo portafoglio su una qualsiasi app portafoglio."
       ],
       "Your keys, your coins.": [
         "Le tue chiavi, le tue monete."
@@ -5940,7 +6013,7 @@
         "Questo è un portafoglio Bitcoin a custodia personale, il che significa che qualsiasi BTC che acquisti o ricevi sarà completamente controllato da te. Nemmeno ${ BRAND_NAME } può bloccare i tuoi asset."
       ],
       "To avoid losing assets due to forgetting your password or other access issues, back up your ${ BRAND_NAME } recovery phrase and wallet seed phrase.": [
-        "Per evitare di perdere i tuoi asset se dimentichi la password o a causa di altri problemi di accesso, esegui il backup della frase di recupero di ${ BRAND_NAME } e della seed phrase del portafoglio."
+        "Per evitare di perdere i tuoi asset se dimentichi la password o a causa di altri problemi di accesso, esegui il backup della frase di recupero di ${ BRAND_NAME } e della frase di recupero del portafoglio."
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
         "Abbiamo creato due conti BTC per te. Un account principale e un secondo account per ricevere Bitcoin via email (su ${ emailEl }) dagli altri utenti di ${ WALLET_APP_NAME }."
@@ -6088,20 +6161,6 @@
         "Sincronizzazione in corso. Rimani in attesa."
       ]
     },
-    "Wallet Upgrade": {
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Continuando, accetti i nostri ${ termsAndConditionsLink }"
-      ],
-      "Upgrade to support financial freedom": [
-        "Effettua l'upgrade per supportare la libertà finanziaria"
-      ],
-      "Upgrade your privacy": [
-        "Migliora la tua privacy"
-      ],
-      "You have reached your limit": [
-        "Hai raggiunto il tuo limite"
-      ]
-    },
     "Wallet upgrade": {
       "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
         "Un'email può essere collegata a un solo account del portafoglio. Per collegare un'email a questo account del portafoglio, rimuovi l'email da un altro account o effettua l'upgrade del tuo piano per ottenere più indirizzi email."
@@ -6123,6 +6182,20 @@
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Hai raggiunto il numero massimo di portafogli supportati dal tuo piano attuale. Effettua l'upgrade per crearne di più. Il tuo supporto è fondamentale anche per il nostro impegno nel proteggere la privacy e la libertà finanziaria."
+      ]
+    },
+    "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Continuando, accetti i nostri ${ termsAndConditionsLink }"
+      ],
+      "Upgrade to support financial freedom": [
+        "Effettua l'upgrade per supportare la libertà finanziaria"
+      ],
+      "Upgrade your privacy": [
+        "Migliora la tua privacy"
+      ],
+      "You have reached your limit": [
+        "Hai raggiunto il tuo limite"
       ]
     },
     "Wallet Welcome": {
