@@ -1,3 +1,12 @@
+### Version 1.30.1
+
+- Bug fixes and performance improvements
+
+### Version 1.30.0
+
+- Redesign side menu UI
+- Allow B2B admins to disable vault creation for members
+
 ### Version 1.29.8
 
 - Fix multi-select dropdown blocking unselect action
