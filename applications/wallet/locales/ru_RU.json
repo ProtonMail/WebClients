@@ -405,14 +405,6 @@
         "Платная версия менеджера паролей"
       ]
     },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "Специально сниженная цена ${ discountedPrice } действует в течение первых ${ cycle } месяцев. Затем она будет автоматически продляться ${ renewalLength } месяцев по сниженной цене ${ nextPrice }. Отменить можно в любое время."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
-      ]
-    },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
@@ -2685,9 +2677,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Подписка обновляется каждые ${ cycle } месяцев."
-      ],
       "Subscription auto-renews every month.": [
         "Подписка автоматически обновляется каждый месяц."
       ],
@@ -2840,9 +2829,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использован только для этой разовой проверки."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
@@ -4140,9 +4126,6 @@
       "More plans are available in other currencies": [
         "Другие тарифы доступны в других валютах"
       ],
-      "Payment Processing": [
-        "Обработка платежа"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
@@ -4158,29 +4141,11 @@
       "Please select your billing state first.": [
         "Сначала выберите государство для выставления счета."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Затем стоимость подписки составит ${ renewPrice }. Отменить её можно в любое время."
-      ],
       "Select billing country to pay": [
         "Для оплаты, пожалуйста выберите страну"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ subscriptionLength } месяцев. Затем она будет автоматически продляться ${ subscriptionLengthCopy } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен ${ couponRedemptions } продления. Затем он будет автоматически продляться ${ subscriptionLength } месяцев по цене ${ renewPrice }. Отменить можно в любое время."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Специальная цена в ${ priceWithDiscount } действует первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ renewPrice } каждый месяц. Отменить подписку можно в любой момент."
-      ],
       "Timeout exceeded": [
         "Превышено время ожидания"
-      ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Мы обрабатываем ваш платеж по выставленному счету. Дождитесь завершения оплаты, прежде чем вносить изменения в ваш тариф или обновлять платежные реквизиты. Благодарим вас за терпение."
       ]
     },
     "Payments.Error": {
@@ -5043,9 +5008,6 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Затем вам будут выставляться счета каждые 12 месяцев по ${ renewPrice }."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
@@ -6053,20 +6015,6 @@
         "Выполняется синхронизация. Подождите"
       ]
     },
-    "Wallet Upgrade": {
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Продолжая, вы соглашаетесь с нашими ${ termsAndConditionsLink }"
-      ],
-      "Upgrade to support financial freedom": [
-        "Улучшите тариф, чтобы поддержать финансовую свободу"
-      ],
-      "Upgrade your privacy": [
-        "Улучшите свою конфиденциальность"
-      ],
-      "You have reached your limit": [
-        "Вы достигли предела"
-      ]
-    },
     "Wallet upgrade": {
       "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
         "Адрес электронной почты можно связать только с одной учётной записью кошелька. Чтобы привязать электронную почту к этой учётной записи, удалите адрес электронной почты из другой учётной записи или обновите свой план, чтобы получить больше адресов электронной почты."
@@ -6088,6 +6036,20 @@
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Вы создали максимальное количество кошельков, поддерживаемое вашим тарифом. Чтобы создать больше, улучшите тариф. Ваша поддержка поможет в нашей борьбе за защиту свободы и конфиденциальности финансовых данных."
+      ]
+    },
+    "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Продолжая, вы соглашаетесь с нашими ${ termsAndConditionsLink }"
+      ],
+      "Upgrade to support financial freedom": [
+        "Улучшите тариф, чтобы поддержать финансовую свободу"
+      ],
+      "Upgrade your privacy": [
+        "Улучшите свою конфиденциальность"
+      ],
+      "You have reached your limit": [
+        "Вы достигли предела"
       ]
     },
     "Wallet Welcome": {
