@@ -26,10 +26,13 @@ export const getArchiveName = (format: string) => {
 
 export async function* createExportAttachmentsStream(
     items: ItemRevision[],
+    signal: AbortSignal,
     onFileDownloaded: (file: FileDescriptor, item: ItemRevision, itemFilesCount: number) => void
 ): ExportGenerator {
     for (const item of items) {
         const { shareId, itemId, revision } = item;
+
+        if (signal.aborted) throw new DOMException('Export aborted', 'AbortError');
 
         const result = await resolveItemFiles(item);
         const latestItemKey = await getLatestItemKey(item);
@@ -41,9 +44,8 @@ export async function* createExportAttachmentsStream(
         for (const file of files) {
             const { fileID, chunks } = file;
             const chunkIDs = chunks.map(prop('ChunkID'));
-            const downloadStream = createDownloadStream(fileID, chunkIDs, (chunkID) =>
-                downloadFileChunk({ shareId, itemId, fileID, chunkID })
-            );
+            const getChunkStream = (chunkID: string) => downloadFileChunk({ shareId, itemId, fileID, chunkID });
+            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, signal);
 
             yield {
                 name: archivePath(getExportFileName(file), 'files'),
