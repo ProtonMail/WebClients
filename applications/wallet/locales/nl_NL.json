@@ -248,6 +248,9 @@
       "Show QRCode": [
         "Toon QR-code"
       ],
+      "Sign message": [
+        "Bericht ondertekenen"
+      ],
       "Sign out": [
         "Uitloggen"
       ],
@@ -336,10 +339,6 @@
       "${ price } per user": [
         "${ price } per gebruiker"
       ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } zitplaats",
-        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
-      ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
         "${ seats } plaatsen voor schrijfassistent"
@@ -414,14 +413,6 @@
       ],
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
-      ]
-    },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first ${ cycle } months. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ renewalLength } months. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste ${ cycle } maanden. Daarna wordt uw abonnement automatisch vernieuwd tegen de gereduceerde prijs van ${ nextPrice } voor ${ renewalLength } maanden. U kunt op ieder moment annuleren."
-      ],
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ nextPrice } per maand. U kunt opzeggen wanneer u wilt."
       ]
     },
     "bf2023: Tooltip": {
@@ -620,6 +611,9 @@
       "Buy Azteco vouchers": [
         "Koop Azteco-vouchers"
       ],
+      "Buying BTC through ${ WALLET_APP_NAME } is currently unavailable to UK residents due to FCA regulations.": [
+        "Het kopen van BTC via ${ WALLET_APP_NAME } is momenteel niet beschikbaar voor inwoners van het Verenigd Koninkrijk vanwege FCA regels."
+      ],
       "Choose a country": [
         "Kies een land"
       ],
@@ -777,6 +771,22 @@
       ],
       "To": [
         "Naar"
+      ]
+    },
+    "Bitcoin Signing Type": {
+      "BIP 137": [
+        "BIP 137"
+      ],
+      "Electrum": [
+        "Electrum"
+      ]
+    },
+    "Bitcoin Signing Type Description": {
+      "Electrum is a compatibility signature format": [
+        "Electrum is een compatibel handtekening formaat"
+      ],
+      "Trezor is the standard signature format according to BIP 137": [
+        "Trezor is het standaard handtekening formaat volgens BIP 137"
       ]
     },
     "Bitcoin Unit": {
@@ -2421,9 +2431,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
-      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
@@ -2716,7 +2723,8 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
-      "Subscription auto-renews every ${ cycle } months.": [
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
         "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
       ],
       "Subscription auto-renews every month.": [
@@ -2847,6 +2855,10 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
+        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
       ],
@@ -2868,11 +2880,15 @@
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Uw geplande abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd."
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
       ]
     },
     "info": {
@@ -3062,6 +3078,9 @@
       ],
       "Show QRCode": [
         "Toon QR-code"
+      ],
+      "Sign message": [
+        "Bericht ondertekenen"
       ],
       "Start date": [
         "Begindatum"
@@ -4123,6 +4142,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -4131,9 +4153,6 @@
       ],
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
-      ],
-      "Payment Processing": [
-        "Betaling wordt verwerkt"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
@@ -4150,29 +4169,42 @@
       "Please select your billing state first.": [
         "Selecteer eerst uw factureringsstaat."
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Wordt verlengd voor ${ renewPrice }, altijd opzegbaar."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
       ],
       "Select billing country to pay": [
         "Selecteer factureringsland om te betalen"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLengthCopy } maanden. U kunt op ieder moment annuleren."
+      "terms & conditions": [
+        "algemene voorwaarden"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } months. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLengthCopy } months. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLengthCopy } maanden. U kunt op ieder moment annuleren."
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "De korting is geldig voor ${ couponRedemptions } verlenging.",
+        "De korting is geldig voor ${ couponRedemptions } verlengingen."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ renewPrice } for ${ subscriptionLength } month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } voor ${ subscriptionLength } maand. U kunt op ieder moment annuleren."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPrice } per maand. U kunt opzeggen wanneer u wilt."
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elke moment annuleren"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
+        "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "We verwerken uw betaling voor de factuur. Wacht tot de betaling is voltooid voordat u uw abonnement wijzigt of betalingsgegevens bijwerkt. Dank u voor uw geduld."
+      "Your payment is still being processed": [
+        "Uw betaling wordt nog verwerkt"
       ]
     },
     "Payments.Error": {
@@ -4354,6 +4386,41 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Gedeeld door ${ ownerName }"
+      ]
+    },
+    "Sign message": {
+      "Advanced settings": [
+        "Geavanceerde instellingen"
+      ],
+      "Copy signature": [
+        "Handtekening kopiëren"
+      ],
+      "Enter or paste the message you want to sign.": [
+        "Typ of plak het bericht dat u wilt ondertekenen."
+      ],
+      "Generate signature": [
+        "Handtekening genereren"
+      ],
+      "Message": [
+        "Bericht"
+      ],
+      "Message signed": [
+        "Bericht ondertekend"
+      ],
+      "Sign a message": [
+        "Een bericht ondertekenen"
+      ],
+      "Signature": [
+        "Handtekening"
+      ],
+      "Signing type": [
+        "Type ondertekening"
+      ],
+      "This signature verifies your ownership of this Bitcoin address without revealing your private key.": [
+        "Deze handtekening verifieert uw eigendom van dit Bitcoin adres zonder uw private key te onthullen."
+      ],
+      "We default to Electrum signing method because it's the easiest and most common method requested by banks. BIP 137 is used for signing transactions offline and is more advanced.": [
+        "We gebruiken standaard Electrum signing-methode omdat het de eenvoudigste en meest voorkomende methode is die door banken wordt aangevraagd. BIP 137 wordt gebruikt om transactie offline te ondertekenen en geavanceerder."
       ]
     },
     "specialoffer: Deal": {
@@ -4737,6 +4804,9 @@
       "Problem reported": [
         "Probleem gerapporteerd"
       ],
+      "Signature copied to clipboard": [
+        "Handtekening gekopieerd naar klembord"
+      ],
       "Verification successful": [
         "Verificatie gelukt"
       ],
@@ -5062,8 +5132,8 @@
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "U wordt vervolgens elke 12 maanden ${ renewPrice } aangerekend."
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "U wordt vervolgens elke 12 maanden ${ renewPriceStr } gefactureerd."
       ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
@@ -5160,6 +5230,9 @@
       ],
       "Advanced settings": [
         "Geavanceerde instellingen"
+      ],
+      "Signing method": [
+        "Onderteken-methode"
       ],
       "This account is already created": [
         "Dit account is al aangemaakt"
@@ -5822,7 +5895,7 @@
         "Primair account"
       ],
       "Seed phrase (12 to 24 words, separated by space)": [
-        "Herstelzin (12 tot 24 woorden, gescheiden door spatie)"
+        "Herstelzin (12 tot 24 woorden, gescheiden door spaties)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
         "Deze 12 woorden mogen alleen als laatste redmiddel worden gebruikt om de activa van deze portemonnee te herstellen, bijvoorbeeld als u de toegang tot uw ${ BRAND_NAME } account verliest."
@@ -5846,7 +5919,7 @@
         "Seed-phrase van portemonnee"
       ],
       "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
-        "De checksum van de Wallet seed phrase is ongeldig. We accepteren alleen BIP39 seed phrases en ondersteunen geen Electrum seed phrases."
+        "De checksum van de portemonnee herstelzin is ongeldig. We accepteren alleen BIP39 herstelzinnen en ondersteunen geen Electrum."
       ],
       "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
         "De portefeuille herstelzin bevat een onbekend woord: ${ word }. We ondersteunen alleen de BIP39 Engelse woordenlijst."
@@ -6083,20 +6156,6 @@
         "Synchroniseren is bezig. Een moment geduld alstublieft"
       ]
     },
-    "Wallet Upgrade": {
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Door verder te gaan gaat u akkoord met onze ${ termsAndConditionsLink }"
-      ],
-      "Upgrade to support financial freedom": [
-        "Upgrade om financiële vrijheid te ondersteunen"
-      ],
-      "Upgrade your privacy": [
-        "Upgrade uw privacy"
-      ],
-      "You have reached your limit": [
-        "U heeft uw limiet bereikt"
-      ]
-    },
     "Wallet upgrade": {
       "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
         "Een e-mailadres kan alleen aan één portemonneeaccount worden gekoppeld. Om een e-mailadres aan dit portemonneeaccount te koppelen, verwijdert u een e-mailadres van een ander portemonneeaccount of upgrade uw abonnement om meer e-mailadressen te krijgen."
@@ -6118,6 +6177,20 @@
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "U heeft het maximale aantal portemonnees bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer portemonnees aan te maken. Uw steun is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
+      ]
+    },
+    "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Door verder te gaan gaat u akkoord met onze ${ termsAndConditionsLink }"
+      ],
+      "Upgrade to support financial freedom": [
+        "Upgrade om financiële vrijheid te ondersteunen"
+      ],
+      "Upgrade your privacy": [
+        "Upgrade uw privacy"
+      ],
+      "You have reached your limit": [
+        "U heeft uw limiet bereikt"
       ]
     },
     "Wallet Welcome": {
