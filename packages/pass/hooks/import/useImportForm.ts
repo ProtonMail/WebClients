@@ -9,6 +9,7 @@ import type { Dropzone, FileInput } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { useFileImporter } from '@proton/pass/hooks/import/useFileImporter';
 import { useRequestDispatch } from '@proton/pass/hooks/useRequest';
+import { isAbortError } from '@proton/pass/lib/api/errors';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { importReader } from '@proton/pass/lib/import/reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
@@ -119,73 +120,83 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
         setProgress(null);
     }, []);
 
-    const onSubmit = useCallback(async (values: ImportFormValues, { setValues }: FormikHelpers<ImportFormValues>) => {
-        ctrl.current?.abort();
-        ctrl.current = new AbortController();
+    const onSubmit = useCallback(
+        async (values: ImportFormValues, { setValues, setFieldValue }: FormikHelpers<ImportFormValues>) => {
+            ctrl.current?.abort();
+            ctrl.current = new AbortController();
 
-        if (!values.provider) return setBusy(false);
-        setBusy(true);
+            if (!values.provider) return setBusy(false);
+            setBusy(true);
 
-        try {
-            /** 1. Try to read the imported file. If files are included,
-             * `result` will hold a file reader handle to extract files.
-             * Import file preparation handles optional decryption. */
-            const result = await importReader({
-                file: values.file!,
-                provider: values.provider,
-                userId: user?.ID,
-                options: {
-                    currentAliases:
-                        values.provider === ImportProvider.PROTONPASS
-                            ? aliases.reduce((acc: string[], { aliasEmail }) => {
-                                  if (aliasEmail) acc.push(aliasEmail);
-                                  return acc;
-                              }, [])
-                            : [],
-                },
-                onPassphrase: async () => {
-                    const res = await onPassphrase();
-                    if (res.ok) return res.passphrase;
-                    throw new Error();
-                },
-            });
+            try {
+                /** 1. Try to read the imported file. If files are included,
+                 * `result` will hold a file reader handle to extract files.
+                 * Import file preparation handles optional decryption. */
+                const result = await importReader({
+                    file: values.file!,
+                    provider: values.provider,
+                    userId: user?.ID,
+                    options: {
+                        currentAliases:
+                            values.provider === ImportProvider.PROTONPASS
+                                ? aliases.reduce((acc: string[], { aliasEmail }) => {
+                                      if (aliasEmail) acc.push(aliasEmail);
+                                      return acc;
+                                  }, [])
+                                : [],
+                    },
+                    onPassphrase: async () => {
+                        const res = await onPassphrase();
+                        if (res.ok) return res.passphrase;
+                        throw new Error();
+                    },
+                });
 
-            if (!isNonEmptyImportPayload(result)) {
-                throw new ImportReaderError(c('Error').t`The file you are trying to import is empty`);
-            }
-
-            const { fileReader, ...data } = result;
-            const { provider } = values;
-
-            /** 2. Prompt the user for vault selection. This
-             * can potentially mutate the import payload. */
-            const prepared = await onWillSubmit(data);
-
-            if (prepared.ok) {
-                const data = prepared.payload;
-
-                /** 3. Start the item import sequence */
-                setProgress({ ...getImportCounts(data), step: 'items' });
-                const res = await abortable(() => doImportItems({ data, provider }), ctrl.current.signal);
-
-                /** 4. Start the file import sequence */
-                if (res.type === 'success') {
-                    if (fileReader) {
-                        setProgress((prev) => (prev ? { ...prev, step: 'files' } : null));
-                        await importFiles.start(fileReader, res.data.files, ctrl.current.signal);
-                    }
-
-                    void setValues(getInitialFormValues());
+                if (!isNonEmptyImportPayload(result)) {
+                    throw new ImportReaderError(c('Error').t`The file you are trying to import is empty`);
                 }
+
+                const { fileReader, ...data } = result;
+                const { provider } = values;
+
+                /** 2. Prompt the user for vault selection. This
+                 * can potentially mutate the import payload. */
+                const prepared = await onWillSubmit(data);
+
+                if (prepared.ok) {
+                    const data = prepared.payload;
+
+                    /** 3. Start the item import sequence */
+                    setProgress({ ...getImportCounts(data), step: 'items' });
+                    const res = await abortable(() => doImportItems({ data, provider }), ctrl.current.signal);
+
+                    /** 4. Start the file import sequence */
+                    if (res.type === 'success') {
+                        if (fileReader) {
+                            setProgress((prev) => (prev ? { ...prev, step: 'files' } : null));
+                            await importFiles.start(fileReader, res.data.files, ctrl.current.signal);
+                        }
+
+                        void setValues(getInitialFormValues());
+                    }
+                }
+            } catch (error) {
+                if (!isAbortError(error)) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Warning').t`An error occured while importing your data.`,
+                    });
+
+                    void setFieldValue('file', null);
+                }
+            } finally {
+                setProgress(null);
+                setBusy(false);
+                ctrl.current = null;
             }
-        } catch (err) {
-            if (err instanceof Error) createNotification({ type: 'error', text: err.message });
-        } finally {
-            setProgress(null);
-            setBusy(false);
-            ctrl.current = null;
-        }
-    }, []);
+        },
+        []
+    );
 
     const form = useFormik<ImportFormValues>({
         initialValues: getInitialFormValues(),

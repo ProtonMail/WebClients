@@ -53,26 +53,26 @@ export const useFileUpload = () => {
 
             const res = await dispatch(fileUploadInitiate, { name: file.name, mimeType, totalChunks });
 
-            if (res.type === 'success') {
-                fileID = res.data;
+            if (res.type !== 'success') throw new Error(res.error);
 
-                for (let index = 0; index < totalChunks; index++) {
-                    const start = index * FILE_CHUNK_SIZE;
-                    const end = Math.min(start + FILE_CHUNK_SIZE, fileSize);
-                    const blob = file.slice(start, end);
-                    const dto = await getChunkDTO(fileID, index, blob);
-                    const res = await abortable(() => dispatch(fileUploadChunk, dto), ctrl.signal);
-                    if (res.type !== 'success') throw new Error(res.error);
-                }
+            fileID = res.data;
 
-                onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
-                return fileID;
+            for (let index = 0; index < totalChunks; index++) {
+                const start = index * FILE_CHUNK_SIZE;
+                const end = Math.min(start + FILE_CHUNK_SIZE, fileSize);
+                const blob = file.slice(start, end);
+                const dto = await getChunkDTO(fileID, index, blob);
+                const res = await abortable(() => dispatch(fileUploadChunk, dto), ctrl.signal);
+                if (res.type !== 'success') throw new Error(res.error);
             }
+
+            onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
+            return fileID;
         } catch (e) {
             throw e;
         } finally {
             if (EXTENSION_BUILD) await fileStorage.deleteFile(`${fileID}.chunk`);
-            cancel(uploadID);
+            ctrls.current.delete(uploadID);
         }
     }, []);
 
