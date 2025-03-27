@@ -1,9 +1,11 @@
-import type { FC } from 'react';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom-v5-compat';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms/index';
 import {
+    Icon,
     Loader,
     NavigationControl,
     TopBanner,
@@ -36,9 +38,10 @@ import { PhotosClearSelectionButton } from './components/PhotosClearSelectionBut
 import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { PhotosTags } from './components/Tags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
+import { PhotosAddAlbumPhotosToolbar } from './toolbar/PhotosAddAlbumPhotosToolbar';
 import { PhotosWithAlbumsToolbar, ToolbarLeftActionsGallery } from './toolbar/PhotosWithAlbumsToolbar';
 
-export const PhotosWithAlbumsView: FC = () => {
+export const PhotosWithAlbumsView = ({ isAddAlbumPhotosView = false }: { isAddAlbumPhotosView?: boolean }) => {
     useAppTitle(c('Title').t`Photos`);
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const {
@@ -60,7 +63,7 @@ export const PhotosWithAlbumsView: FC = () => {
         favoritePhoto,
         updatePhotoFavoriteFromCache,
         removeTagsFromPhoto,
-    } = usePhotosWithAlbumsView();
+    } = usePhotosWithAlbumsView(isAddAlbumPhotosView);
 
     const { photoTags } = useUserSettings();
 
@@ -80,6 +83,7 @@ export const PhotosWithAlbumsView: FC = () => {
     const thumbnails = useThumbnailsDownload();
     const { createNotification } = useNotifications();
     const { navigateToAlbum, navigateToAlbums, navigateToPhotos } = useNavigate();
+    const { albumShareId, albumLinkId } = useParams();
 
     const handleItemRender = useCallback(
         (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -132,7 +136,7 @@ export const PhotosWithAlbumsView: FC = () => {
             try {
                 const abortSignal = new AbortController().signal;
                 await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
-                navigateToAlbum(shareId, albumLinkId, isAddModalShared);
+                navigateToAlbum(shareId, albumLinkId, { openShare: isAddModalShared });
             } catch (e) {
                 if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
@@ -178,7 +182,7 @@ export const PhotosWithAlbumsView: FC = () => {
                 const abortSignal = new AbortController().signal;
                 const albumLinkId = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
                 await addAlbumPhotos(abortSignal, shareId, albumLinkId, linkIds);
-                navigateToAlbum(shareId, albumLinkId, isAddModalShared);
+                navigateToAlbum(shareId, albumLinkId, { openShare: isAddModalShared });
             } catch (e) {
                 if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
@@ -281,38 +285,72 @@ export const PhotosWithAlbumsView: FC = () => {
                                 </span>
                             )}
 
-                            {selectedCount === 0 && (
-                                <ToolbarLeftActionsGallery
-                                    onGalleryClick={() => {
-                                        navigateToPhotos();
-                                    }}
-                                    onAlbumsClick={() => {
-                                        navigateToAlbums();
-                                    }}
-                                    isLoading={isPhotosLoading}
-                                    selection={'gallery'}
-                                />
-                            )}
+                            {selectedCount === 0 &&
+                                (isAddAlbumPhotosView ? (
+                                    <Button
+                                        shape="ghost"
+                                        className="inline-flex flex-nowrap flex-row text-semibold items-center"
+                                        onClick={() => {
+                                            if (!albumShareId || !albumLinkId) {
+                                                return;
+                                            }
+                                            navigateToAlbum(albumShareId, albumLinkId);
+                                        }}
+                                    >
+                                        <Icon name="arrow-left" className="mr-2 shrink-0" /> {c('Action').t`Go back`}
+                                    </Button>
+                                ) : (
+                                    <ToolbarLeftActionsGallery
+                                        onGalleryClick={() => {
+                                            navigateToPhotos();
+                                        }}
+                                        onAlbumsClick={() => {
+                                            navigateToAlbums();
+                                        }}
+                                        isLoading={isPhotosLoading}
+                                        selection={'gallery'}
+                                    />
+                                ))}
                         </>
                     }
                     toolbar={
-                        <PhotosWithAlbumsToolbar
-                            shareId={shareId}
-                            linkId={linkId}
-                            data={photos}
-                            selectedItems={selectedItems}
-                            onPreview={handleToolbarPreview}
-                            requestDownload={requestDownload}
-                            uploadDisabled={isUploadDisabled}
-                            tabSelection={'gallery'}
-                            createAlbumModal={createAlbumModal}
-                            openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}
-                            openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
-                        />
+                        isAddAlbumPhotosView ? (
+                            <PhotosAddAlbumPhotosToolbar
+                                shareId={shareId}
+                                linkId={linkId}
+                                selectedCount={selectedCount}
+                                onAddAlbumPhotos={async () => {
+                                    if (!albumShareId || !albumLinkId) {
+                                        return;
+                                    }
+                                    await addAlbumPhotos(
+                                        new AbortController().signal,
+                                        albumShareId,
+                                        albumLinkId,
+                                        selectedItems.map((item) => item.linkId)
+                                    );
+                                    navigateToAlbum(albumShareId, albumLinkId);
+                                }}
+                            />
+                        ) : (
+                            <PhotosWithAlbumsToolbar
+                                shareId={shareId}
+                                linkId={linkId}
+                                data={photos}
+                                selectedItems={selectedItems}
+                                onPreview={handleToolbarPreview}
+                                requestDownload={requestDownload}
+                                uploadDisabled={isUploadDisabled}
+                                tabSelection={'gallery'}
+                                createAlbumModal={createAlbumModal}
+                                openAddPhotosToAlbumModal={openAddPhotosToAlbumModal}
+                                openSharePhotosIntoAnAlbumModal={openSharePhotosIntoAnAlbumModal}
+                            />
+                        )
                     }
                 />
 
-                {!isPhotosEmpty && (
+                {!isPhotosEmpty && !isAddAlbumPhotosView && (
                     <PhotosTags
                         selectedTags={selectedTags}
                         tags={[PhotoTag.All, ...photoTags]}
@@ -337,6 +375,7 @@ export const PhotosWithAlbumsView: FC = () => {
                         isItemSelected={isItemSelected}
                         userAddressEmail={userAddressEmail}
                         onFavorite={addOrRemovePhotoToFavorite}
+                        isAddAlbumPhotosView={isAddAlbumPhotosView}
                     />
                 )}
                 <AddAlbumPhotosModal

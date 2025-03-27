@@ -106,7 +106,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
     const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
-    const { navigateToAlbums } = useNavigate();
+    const { navigateToAlbums, navigateToAlbum } = useNavigate();
     const { moveLinks } = useLinksActions();
     const { getLink } = useLink();
 
@@ -429,7 +429,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }
     }, [isAlbumsLoading, isAlbumPhotosLoading]);
 
-    if (!albumShareId || !linkId || !album || !uploadLinkId || !isInitialized) {
+    if (!albumShareId || !linkId || !album || !uploadLinkId || !isInitialized || !albumLinkId) {
         return <Loader />;
     }
 
@@ -536,6 +536,9 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             onDeleteAlbum={onDeleteAlbum}
                             onLeaveAlbum={onLeaveAlbum}
                             onShowDetails={onShowDetails}
+                            onAddAlbumPhotos={() => {
+                                navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
+                            }}
                         />
                     }
                 />
@@ -550,6 +553,9 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                             album={album}
                             photoCount={photoCount}
                             onShare={onShare}
+                            onAddAlbumPhotos={() => {
+                                navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
+                            }}
                         />
                     </div>
                 ) : (
@@ -558,14 +564,17 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                         className="flex flex-column flex-nowrap mx-2 w-full h-full overflow-auto outline-none--at-all mb-2"
                     >
                         <AlbumCoverHeader
+                            shareId={albumShareId}
+                            linkId={uploadLinkId}
                             album={album}
                             photoCount={photoCount}
-                            shareId={albumShareId}
                             onFileUpload={onPhotoUploadedToAlbum}
                             onFileSkipped={onPhotoUploadedToAlbum}
-                            linkId={uploadLinkId}
                             onShare={() => {
                                 showLinkSharingModal({ shareId: albumShareId, linkId: album.linkId });
+                            }}
+                            onAddAlbumPhotos={() => {
+                                navigateToAlbum(albumShareId, albumLinkId, { addPhotos: true });
                             }}
                         />
                         <PhotosInsideAlbumsGrid

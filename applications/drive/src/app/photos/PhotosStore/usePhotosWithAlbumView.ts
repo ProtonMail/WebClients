@@ -52,7 +52,7 @@ export function updateByEvents(
     updateAlbumsCache(albumsToBeUpdated);
 }
 
-export const usePhotosWithAlbumsView = () => {
+export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) => {
     let { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
     const eventsManager = useDriveEventManager();
     const { getCachedChildren, loadLinksMeta, getCachedLinksWithoutMeta } = useLinksListing();
@@ -284,7 +284,7 @@ export const usePhotosWithAlbumsView = () => {
         }
         const abortController = new AbortController();
 
-        if (albumShareId && albumLinkId) {
+        if (albumShareId && albumLinkId && !isAddAlbumPhotosView) {
             setIsAlbumsLoading(true);
             void Promise.all([
                 loadSharedWithMeAlbums(abortController.signal),
