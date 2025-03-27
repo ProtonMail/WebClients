@@ -20,6 +20,7 @@ import { selectAliasItems, selectLatestImport, selectRequest, selectUser } from 
 import type { MaybeNull, Result } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
+import { abortable } from '@proton/pass/utils/fp/promises';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import identity from '@proton/utils/identity';
 
@@ -111,6 +112,13 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
     const dispatch = useDispatch();
     const doImportItems = useRequestDispatch(importItems);
 
+    const cancel = useCallback(() => {
+        importFiles.cancel();
+        ctrl.current?.abort();
+        dispatch(requestCancel(importItems.requestID()));
+        setProgress(null);
+    }, []);
+
     const onSubmit = useCallback(async (values: ImportFormValues, { setValues }: FormikHelpers<ImportFormValues>) => {
         ctrl.current?.abort();
         ctrl.current = new AbortController();
@@ -158,10 +166,10 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
 
                 /** 3. Start the item import sequence */
                 setProgress({ ...getImportCounts(data), step: 'items' });
-                const res = await doImportItems({ data, provider });
+                const res = await abortable(() => doImportItems({ data, provider }), ctrl.current.signal);
 
                 /** 4. Start the file import sequence */
-                if (res.type === 'success' && !ctrl.current.signal?.aborted) {
+                if (res.type === 'success') {
                     if (fileReader) {
                         setProgress((prev) => (prev ? { ...prev, step: 'files' } : null));
                         await importFiles.start(fileReader, res.data.files, ctrl.current.signal);
@@ -170,11 +178,8 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
                     void setValues(getInitialFormValues());
                 }
             }
-        } catch (e) {
-            if (e instanceof Error) {
-                console.warn(e);
-                createNotification({ type: 'error', text: e.message });
-            }
+        } catch (err) {
+            if (err instanceof Error) createNotification({ type: 'error', text: err.message });
         } finally {
             setProgress(null);
             setBusy(false);
@@ -206,13 +211,6 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
     };
 
     const onAttach: FileInputProps['onChange'] = (event) => onAddFiles((event.target.files as File[] | null) ?? []);
-
-    const cancel = useCallback(() => {
-        importFiles.cancel();
-        ctrl.current?.abort();
-        dispatch(requestCancel(importItems.requestID()));
-        setProgress(null);
-    }, []);
 
     return {
         busy,

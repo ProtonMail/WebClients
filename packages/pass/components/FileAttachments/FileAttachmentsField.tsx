@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren, useEffect, useState } from 'react';
+import { type FC, type PropsWithChildren, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { type FieldProps } from 'formik';
@@ -17,6 +17,9 @@ import {
 } from '@proton/pass/store/selectors';
 import type { BaseFileDescriptor, FileAttachmentValues, FileID } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { eq, not, truthy } from '@proton/pass/utils/fp/predicates';
+import { updateMap } from '@proton/pass/utils/fp/state';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 
 import { FileAttachment } from './FileAttachment';
@@ -28,29 +31,55 @@ type Props = FieldProps<{}, FileAttachmentValues> &
         onDeleteAllFiles?: () => void;
     }>;
 
+type FileUploadDescriptor = Omit<BaseFileDescriptor, 'fileID'> & { uploadID: string; fileID?: FileID };
+
 export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
     WithPaidUser(({ children, form, filesCount = 0, onDeleteAllFiles }) => {
         const dispatch = useDispatch();
-        const { uploadFile, cancelUpload } = useFileUpload();
-        const [loading, setLoading] = useState(false);
-        const [files, setFiles] = useState<Omit<BaseFileDescriptor, 'fileID'>[]>([]);
+        const fileUpload = useFileUpload();
         const usedStorage = useSelector(selectUserStorageUsed);
         const maxStorage = useSelector(selectUserStorageQuota);
         const maxFileSize = useSelector(selectUserStorageMaxFileSize);
         const { createNotification } = useNotifications();
         const online = useConnectivity();
 
+        const [filesMap, setFiles] = useState(new Map<string, FileUploadDescriptor>());
+        const [loading, setLoading] = useState(false);
+        const files = useMemo(() => Array.from(filesMap.values()), [filesMap]);
         const disableUploader = loading || !online;
 
-        const uploadFiles = async (newFiles: File[]) => {
-            const filesIds: FileID[] = [];
+        const uploadFiles = async (toUpload: File[]) => {
+            const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
 
-            for (const file of newFiles) {
-                const fileID = await uploadFile(file);
-                if (fileID) filesIds.push(fileID);
-            }
+            setFiles(
+                updateMap((next) => {
+                    uploads.forEach(({ file, uploadID }) => {
+                        next.set(uploadID, {
+                            name: file.name,
+                            size: file.size,
+                            mimeType: file.type,
+                            uploadID,
+                        });
+                    });
+                })
+            );
 
-            void form.setFieldValue('files.toAdd', form.values.files.toAdd.concat(filesIds));
+            const fileIDs = await Promise.all(
+                uploads.map(async ({ file, uploadID }) =>
+                    fileUpload
+                        .start(file, uploadID)
+                        .then((fileID) => {
+                            setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
+                            return fileID;
+                        })
+                        .catch(() => {
+                            setFiles(updateMap((next) => next.delete(uploadID)));
+                            return undefined;
+                        })
+                )
+            );
+
+            void form.setFieldValue('files.toAdd', form.values.files.toAdd.concat(fileIDs.filter(truthy)));
         };
 
         const onAddFiles = async (newFiles: File[]) => {
@@ -74,43 +103,32 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 });
             }
 
-            setFiles((f) => f.concat(validFiles.map(({ name, type, size }) => ({ name, size, mimeType: type }))));
-
             try {
                 setLoading(true);
                 await uploadFiles(validFiles);
             } catch {
-                setFiles((f) => f.slice(0, f.length - validFiles.length));
             } finally {
                 setLoading(false);
             }
         };
 
-        const onRemoveFile = async (fileIndex: number) => {
-            setFiles((f) => f.filter((_, i) => i !== fileIndex));
-
-            void form.setFieldValue(
-                'files.toAdd',
-                form.values.files.toAdd.filter((_, i) => i !== fileIndex)
-            );
+        const onRemoveFile = async (uploadID: string, fileID?: string) => {
+            setFiles(updateMap((next) => next.delete(uploadID)));
+            if (fileID) return form.setFieldValue('files.toAdd', form.values.files.toAdd.filter(not(eq(fileID))));
         };
 
-        const onRename = (idx: number, fileName: string) => {
-            const fileDescriptor = files[idx];
+        const onRename = (uploadID: string, fileName: string) => {
+            const file = filesMap.get(uploadID);
+            if (!file || file.name === fileName) return;
 
-            if (fileDescriptor.name === fileName) return;
-
-            setFiles((f) => f.map((file, index) => ({ ...file, name: idx === index ? fileName : file.name })));
-
-            dispatch(
-                fileUpdateMetadata.intent({ ...fileDescriptor, fileID: form.values.files.toAdd[idx], name: fileName })
-            );
+            setFiles(updateMap((next) => next.set(uploadID, { ...file, name: fileName })));
+            if (file.fileID) dispatch(fileUpdateMetadata.intent({ ...file, fileID: file.fileID, name: fileName }));
         };
 
         const handleDeleteAll = () => {
             void form.setFieldValue('files.toAdd', []);
+            setFiles(new Map());
             onDeleteAllFiles?.();
-            setFiles([]);
         };
 
         useEffect(() => form.setStatus({ isBusy: loading }), [loading]);
@@ -125,20 +143,20 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                     >
                         {children}
 
-                        {files.map((file, idx) => (
+                        {files.map((file) => (
                             <FileAttachment
-                                key={`file-${idx}`}
+                                key={`file-${file.uploadID}`}
                                 file={file}
-                                onCancel={cancelUpload}
-                                onDelete={() => onRemoveFile(idx)}
-                                onRename={(fileName) => onRename(idx, fileName)}
-                                /* Display loader on files added to the UI but not uploaded yet */
-                                loading={idx >= form.values.files.toAdd.length}
+                                onCancel={() => fileUpload.cancel(file.uploadID)}
+                                onDelete={() => onRemoveFile(file.uploadID, file.fileID)}
+                                onRename={(fileName) => onRename(file.uploadID, fileName)}
+                                loading={!file.fileID}
                             />
                         ))}
 
                         <FileInput
-                            // disable the "accept" attribute on iOS because the "accept" attribute does not support the file extension
+                            /** Disable the "accept" attribute on iOS because the
+                             * "accept" attribute does not support the extension */
                             {...(isIos() ? {} : { accept: '*' })}
                             className="m-4 rounded-full"
                             onChange={({ target }) => onAddFiles([...(target.files ?? [])])}
