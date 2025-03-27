@@ -6152,6 +6152,9 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "O cerere de dezabonare de la această listă de corespondență va fi trimisă expeditorului buletinului de știri și procesată automat."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "O conexiune securizată este esențială atunci când lucrezi remote. Un VPN protejează datele companiei de amenințările cibernetice și îți menține activitatea privată."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilizator este un cont asociat cu un singur nume de utilizator, căsuță poștală și persoană."
       ],
@@ -6338,9 +6341,6 @@
       "Calendar side panel": [
         "Panou lateral calendar"
       ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Calendar, integrat cu ${ MAIL_APP_NAME } și ${ CONTACTS_APP_NAME }"
-      ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "Nu găsiți ceea ce căutați? ${ displayAllMailButton }"
       ],
@@ -6379,9 +6379,6 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
-      ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "Stocare în cloud, integrată cu ${ DOCS_APP_NAME }"
       ],
       "Confirm phishing report": [
         "Confirmare raportare înșelăciune"
@@ -6577,9 +6574,6 @@
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "Mesajele sunt redirecționate în căsuța poștală; adresa de e-mail rămâne ascunsă."
-      ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "Serviciu de e-mail, integrat cu ${ CALENDAR_APP_NAME } și ${ CONTACTS_APP_NAME }"
       ],
       "Email tracker protection is disabled": [
         "Protecția de urmărire a e-mailurilor este dezactivată"
@@ -7023,11 +7017,17 @@
       "Not a valid URL": [
         "URL nevalid"
       ],
+      "Not connected": [
+        "Nu este conectat"
+      ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
       ],
       "of": [
         "din"
+      ],
+      "On public WiFi networks": [
+        "Pe rețelele WiFi publice"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
@@ -7055,9 +7055,6 @@
       ],
       "password": [
         "parola"
-      ],
-      "Password manager with extra account security": [
-        "Manager de parole cu securitate suplimentară a contului"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
@@ -7271,9 +7268,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
-      ],
-      "Self-custodial crypto wallet": [
-        "Portofel cripto în custodie proprie"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Trimitere mesaj criptat, protejat cu parolă, la o adresă de e-mail ${ boldText }."
@@ -7628,6 +7622,9 @@
       "Trackers blocked:": [
         "Urmăritori blocați:"
       ],
+      "Tracking": [
+        "Urmărire"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
@@ -7742,8 +7739,8 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
-      "VPN with dedicated servers and IP addresses": [
-        "VPN cu servere și adrese IP dedicate"
+      "VPN IP": [
+        "IP VPN"
       ],
       "Warning": [
         "Avertizare"
@@ -7804,6 +7801,9 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Când vă furnizați adresa de e-mail, folosiți un alias hide-my-email unic, temporar, în locul adresei de e-mail reale."
+      ],
+      "When working remotely": [
+        "Când lucrezi remote"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Când ați activat cheile de încredere pentru ${ senderName }, cheile publice au fost adăugate la datele de contact."
@@ -8050,6 +8050,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
+      ],
+      "Your IP": [
+        "IP-ul tău"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -8934,6 +8937,9 @@
       ],
       "Your alias": [
         "Aliasuri personale"
+      ],
+      "Your IP": [
+        "IP-ul tău"
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
@@ -12396,6 +12402,47 @@
         "Pentru ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "and 15 more premium features": [
+        "și încă alte 15 funcții premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Redirecționare automată mesaje ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerte divulgări date ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
+      ],
+      "No ads or tracking": [
+        "Fără reclame și fără urmărire"
+      ],
+      "Short @pm.me email address": [
+        "Adresă scurtă de e-mail @pm.me"
+      ],
+      "Support our mission": [
+        "Susțineți-ne misiunea"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade your productivity": [
+        "Îmbunătățiți-vă productivitatea"
+      ],
+      "We don't sell your data": [
+        "Nu vă vindem datele"
+      ],
+      "Your privacy is our mission": [
+        "Confidențialitatea este misiunea noastră principală"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
@@ -12660,47 +12707,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Propriul alias de e-mail scurt @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "and 15 more premium features": [
-        "și încă alte 15 funcții premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerte divulgări date ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicația pentru desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajutați-ne să menținem internetul sigur și privat pentru toată lumea. Treceți la un plan cu plată."
-      ],
-      "No ads or tracking": [
-        "Fără reclame și fără urmărire"
-      ],
-      "Short @pm.me email address": [
-        "Adresă scurtă de e-mail @pm.me"
-      ],
-      "Support our mission": [
-        "Susțineți-ne misiunea"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade your productivity": [
-        "Îmbunătățiți-vă productivitatea"
-      ],
-      "We don't sell your data": [
-        "Nu vă vindem datele"
-      ],
-      "Your privacy is our mission": [
-        "Confidențialitatea este misiunea noastră principală"
       ]
     },
     "Subscription renewal state": {
@@ -13520,6 +13526,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Retrogradare la ${ downgradedPlanName }?"
       ],
+      "Download the app": [
+        "Descarcă aplicația"
+      ],
       "Edit contact": [
         "Editare contact"
       ],
@@ -13588,6 +13597,9 @@
       ],
       "Get advanced protection": [
         "Obțineți protecție avansată"
+      ],
+      "Get more from your VPN": [
+        "Obțineți mai mult de la VPN"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obțineți aplicația ${ appName[APP_NAME] }"
@@ -14051,6 +14063,9 @@
       "Welcome ${ userName }": [
         "Bun venit, ${ userName }"
       ],
+      "What is a VPN?": [
+        "Ce este un VPN?"
+      ],
       "What would you like to import?": [
         "Ce ați dori să importați?"
       ],
@@ -14079,11 +14094,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Astăzi"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Tooltip": {
@@ -14167,6 +14177,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Tor out of date": {

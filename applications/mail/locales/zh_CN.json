@@ -486,6 +486,9 @@
       "Expiration time": [
         "邮件有效期"
       ],
+      "Explore ${ VPN_APP_NAME }": [
+        "探索 ${ VPN_APP_NAME }"
+      ],
       "Export": [
         "导出"
       ],
@@ -1298,6 +1301,9 @@
       ],
       "Toggle settings": [
         "打开/关闭设置"
+      ],
+      "Toggle VPN dashboard": [
+        "切换 VPN 控制面板"
       ],
       "Tomorrow": [
         "明天"
@@ -3859,6 +3865,17 @@
         "全部下载"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "下载 Linux 版"
+      ],
+      "Download for macOS": [
+        "下载 macOS 版"
+      ],
+      "Download for Windows": [
+        "下载 Windows 版"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "更长的版本历史"
@@ -4496,6 +4513,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "无法加载VPN控制面板。请检查你的网络连接，然后重试。"
       ],
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
@@ -5933,6 +5953,9 @@
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } 正在隐藏您的 IP 地址，网站因此无法识别您的身份。"
+      ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
@@ -5951,6 +5974,12 @@
       "**${ elementsFoundCount }** result found in ${ labelName }": [
         "在 ${ labelName } 中找到了 **${ elementsFoundCount }** 个结果"
       ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Auto-connect**：在您开启设备后立即启动并连接至 VPN。"
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**：当 VPN 意外断开时，立即阻断互联网连接，防止数据泄漏。"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
       ],
@@ -5966,8 +5995,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "此操作将向邮件发送方请求退订，并由其自动处理退订请求。"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "远程办公时，安全连接是必不可少的第一道防线。VPN 不仅能帮助企业数据抵御网络威胁，更能为您的日常工作构筑隐私屏障，让敏感信息始终处于加密保护之中。"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "\"一个用户\"指联系着一个用户名、邮箱和个体的账号。"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN 会加密您的网络连接并隐藏真实 IP 地址，使第三方极难追踪或监控您的在线活动。"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Proton 旗下的 VPN 服务会隐藏您的真实 IP 地址，并对浏览行为进行端到端加密，使网站、广告商和网络服务提供商无法通过长期追踪建立您的数字画像。\n"
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN 是您的设备与互联网之间的安全加密通道。它能隐藏您的位置和在线活动，避免被互联网服务提供商（ISP）及您访问的网站追踪。"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "在最多10个设备上访问6,500多个高速服务器以保持您浏览数据的安全。 可在 ${ ios }、 ${ android }、 ${ appleTV }和 ${ desktop } 上获得。"
@@ -5984,6 +6025,9 @@
       "Active": [
         "已启用"
       ],
+      "Ad targeting": [
+        "广告定位"
+      ],
       "Add image URL": [
         "添加图片地址"
       ],
@@ -5992,6 +6036,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "广告商会追踪您的浏览记录来展示定向广告。${ VPN_APP_NAME } 能屏蔽追踪器和广告，从而加快连接速度，提升您的上网体验。"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "由 AI 驱动的助手，帮助您快速、轻松地制作出更好的电子邮件。"
@@ -6131,6 +6178,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升组织品牌形象，为用户创造更加一致的在线体验。"
       ],
+      "Browse privately and access blocked content.": [
+        "私密浏览，畅享无界访问。"
+      ],
       "Browser not supported": [
         "不支持此浏览器"
       ],
@@ -6139,9 +6189,6 @@
       ],
       "Calendar side panel": [
         "日历侧边栏"
-      ],
-      "Calendar, integrated with ${ MAIL_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "日历，与 ${ MAIL_APP_NAME } 和 ${ CONTACTS_APP_NAME } 集成"
       ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
         "找不到您想要的结果？ ${ displayAllMailButton }"
@@ -6182,11 +6229,11 @@
       "Close this screen to exit.": [
         "关闭这个窗口以退出"
       ],
-      "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
-        "云存储，与 ${ DOCS_APP_NAME } 集成"
-      ],
       "Confirm phishing report": [
         "确认钓鱼报告"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "连接到 ${ VPN_APP_NAME } 实现隐私浏览"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "考虑收件人收到邮件的最佳时间，并安排在那个时候发送。"
@@ -6374,9 +6421,6 @@
       "Email is forwarded to your mailbox; your email address stays hidden.": [
         "临时邮箱中的邮件将转发至真实邮箱，您真正的邮箱地址也就不会暴露。"
       ],
-      "Email service, integrated with ${ CALENDAR_APP_NAME } and ${ CONTACTS_APP_NAME }": [
-        "与 ${ CALENDAR_APP_NAME } 和 ${ CONTACTS_APP_NAME } 集成的电子邮件服务"
-      ],
       "Email tracker protection is disabled": [
         "已禁用电子邮件跟踪保护"
       ],
@@ -6479,6 +6523,9 @@
       "Generate text": [
         "生成文本"
       ],
+      "Geoblocking": [
+        "地理限制"
+      ],
       "Get it on Google Play": [
         "前往 Google Play 下载"
       ],
@@ -6487,6 +6534,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "给即将到来的账单贴上颜色编码的标签，比如\"${ suggestedLabelName }\"。一旦支付完成，将标签更改为\"${ suggestedPaidLabelName }\"。"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "共 ${ numAttachments } 项附件（${ numAttachmentsSize }）"
@@ -6560,6 +6610,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
       ],
+      "In restrictive countries": [
+        "在网络受限的国家"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步中，您将能够使用比特币地址提交存款。"
       ],
@@ -6598,6 +6651,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "邀请您的伴侣、朋友或任何与您分享 ${ protonDuoPlanName } 套餐的人。"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "建议您始终使用VPN，但在以下情况下，网络安全威胁可能最为严重："
       ],
       "JCB logo": [
         "JCB 徽标"
@@ -6746,6 +6802,9 @@
       "More refine actions": [
         "更多改进操作"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
@@ -6803,11 +6862,17 @@
       "Not a valid URL": [
         "URL 无效"
       ],
+      "Not connected": [
+        "未连接"
+      ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
       ],
       "of": [
         "，共"
+      ],
+      "On public WiFi networks": [
+        "在公共 WiFi 网络环境下"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
@@ -6835,9 +6900,6 @@
       ],
       "password": [
         "密码"
-      ],
-      "Password manager with extra account security": [
-        "具有额外账户安全功能的密码管理器"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
@@ -6947,6 +7009,9 @@
       "Print email": [
         "打印邮件"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "隐私浏览模式（或称「无痕模式」）仅能隐藏您在设备上的活动痕迹。它能阻止浏览器保存历史记录和 Cookie，但无法让您真正隐身。您的互联网服务提供商、网络管理员以及访问的网站仍可追踪您的在线行为。"
+      ],
       "Proofread selection": [
         "校对选项"
       ],
@@ -7010,6 +7075,9 @@
       "Saving draft…": [
         "正在保存草稿…"
       ],
+      "Scan the QR code with your mobile device": [
+        "请使用移动设备扫描二维码"
+      ],
       "Scheduled send of this message will be canceled.": [
         "此邮件将取消定时发送。"
       ],
@@ -7045,9 +7113,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "请选择要导入的日历。每份日历导入后将在您的账户中对应生成一份新日历，具体日历数量受您账户等级的限制。"
-      ],
-      "Self-custodial crypto wallet": [
-        "自我保管的加密钱包"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "向${ boldText } 的邮箱发送加密邮件，对方需要输入密码才能阅读。"
@@ -7121,6 +7186,12 @@
       "Snoozing this conversation will be canceled.": [
         "此会话将取消延迟通知。"
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "某些国家/地区会屏蔽或限制访问某些网站。Proton VPN 能够帮助您突破网络审查，同时保护您的网络活动和身份隐私。"
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "某些网站和流媒体服务会根据您所在的地区屏蔽内容。Proton VPN 可帮助您绕过这些地域限制，让您随时随地自由访问互联网。"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "对不起，此消息不存在或已过期。"
       ],
@@ -7129,6 +7200,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "开始使用更简短且更朗朗上口的邮箱地址。"
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "请启用以下 VPN 设置，即可轻松保持网络连接："
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "此浏览器不支持储存功能，我们需要此支持才能进行信息内容检索。"
@@ -7156,6 +7230,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "监控"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "使用 ${ DRIVE_APP_NAME } 应用程序同步和管理文件。在 ${ DOCS_APP_NAME } 中创建和共享文档，并安全存储。一切尽在 ${ ios }、${ android } 和 ${ desktop }。"
@@ -7268,6 +7345,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "这意味着您的互联网服务提供商和您访问的网站都无法将您的个人身份信息与在线行为相关联。"
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "此邮件已调整为适配深色背景。"
       ],
@@ -7334,6 +7414,9 @@
       "This sender's public key has not been trusted yet.": [
         "尚未信任此发件人的公钥。"
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "这段独特的识别码可能会被网站和互联网服务提供商（ISP）利用，将您的地理位置和浏览历史记录与您的设备相关联，从而导致您的隐私信息被追踪。"
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "之所以向您显示此信息，是因为您的电子邮件主题行包含密码重置关键词。"
       ],
@@ -7393,6 +7476,9 @@
       ],
       "Trackers blocked:": [
         "已屏蔽的跟踪器："
+      ],
+      "Tracking": [
+        "追踪中"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
@@ -7508,8 +7594,8 @@
       "Visa Secure logo": [
         "Visa Secure 图标"
       ],
-      "VPN with dedicated servers and IP addresses": [
-        "具有专用服务器和 IP 地址的 VPN"
+      "VPN IP": [
+        "VPN IP 地址"
       ],
       "Warning": [
         "警告"
@@ -7570,6 +7656,12 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "在网上填写邮箱时，不必使用真实的邮箱地址，只需填写一个可销毁的 Hide My Email 临时邮箱。"
+      ],
+      "When working remotely": [
+        "当您远程办公时"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "当您连接 VPN 时，它会通过加密技术隐藏您的 IP 地址（即分配给您设备的唯一识别代码）。"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
@@ -7770,7 +7862,7 @@
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
       ],
       "Your email address and password were leaked:": [
-        "您的电子邮件地址和密码已泄露："
+        "您的邮箱地址和密码已泄露："
       ],
       "Your email address was exposed:": [
         "您的电子邮件地址已被泄露："
@@ -7786,6 +7878,15 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "您的信息在 ${ displayedDate } 找到"
+      ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "您的网络服务提供商能够监控您的在线活动，有时甚至会出售您的数据，更可能限制您访问特定网站的能力。"
+      ],
+      "Your IP": [
+        "您的 IP 地址"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "您的真实 IP 地址已暴露，他人可借此追踪您的在线活动。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
@@ -7805,11 +7906,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "您的下一个账单日期是 ${ renewalTime }。如果您需要立即更改套餐，请联系支持部门。"
       ],
+      "Your online activity is protected": [
+        "您的在线活动受到保护"
+      ],
       "Your password was leaked:": [
         "您的密码已泄露："
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "您的实际地理位置可能被他人获取，进而用于限制您访问互联网。"
       ],
       "Your private writing assistant": [
         "您的私人写作助手"
@@ -8654,6 +8761,15 @@
       ],
       "Your alias": [
         "您的别名"
+      ],
+      "Your IP": [
+        "您的 IP 地址"
+      ],
+      "Your ISP": [
+        "您的网络运营商"
+      ],
+      "Your location": [
+        "您的位置"
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
@@ -11970,6 +12086,47 @@
         "总计${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自动转发 ${ strongText } 电子邮件"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Short @pm.me email address": [
+        "短电子邮箱地址 @pm.me"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
@@ -12221,48 +12378,7 @@
         "您的 ${ planName } 计划不仅能确保您的业务数据和通信安全。它支持您的合规目标，让您的企业脱颖而出，并让您的团队保持联系。"
       ],
       "Your own short @pm.me email alias": [
-        "您自己的短 @pm.me 电子邮件别名"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "and 15 more premium features": [
-        "以及 15 项高级功能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动转发 ${ strongText } 电子邮件"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "数据泄露监控${ strongArgument }"
-      ],
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
-      ],
-      "No ads or tracking": [
-        "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "短电子邮箱地址 @pm.me"
-      ],
-      "Support our mission": [
-        "支持我们的使命"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ],
-      "We don't sell your data": [
-        "绝不兜售您的数据"
-      ],
-      "Your privacy is our mission": [
-        "保护您的隐私就是我们的使命"
+        "您自己的短 @pm.me 邮箱别名"
       ]
     },
     "Subscription renewal state": {
@@ -12984,6 +13100,9 @@
       "Deleting contacts": [
         "删除联系人中"
       ],
+      "Desktop": [
+        "桌面版"
+      ],
       "Details": [
         "详细信息"
       ],
@@ -13001,6 +13120,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "降级至 ${ downgradedPlanName }?"
+      ],
+      "Download the app": [
+        "下载 APP"
       ],
       "Edit contact": [
         "编辑联系人"
@@ -13071,6 +13193,9 @@
       "Get advanced protection": [
         "进一步提升防护等级"
       ],
+      "Get more from your VPN": [
+        "从您的 VPN 获取更多信息"
+      ],
       "Get the ${ appName[APP_NAME] } apps": [
         "下载 ${ appName[APP_NAME] } 应用"
       ],
@@ -13091,6 +13216,9 @@
       ],
       "High security for your account": [
         "您的账户非常安全"
+      ],
+      "How does it all work?": [
+        "这一切是如何运作的呢？"
       ],
       "How to update your email address": [
         "如何更新您的邮箱地址"
@@ -13115,6 +13243,9 @@
       ],
       "Import groups": [
         "导入群组"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "用 ${ VPN_APP_NAME } 加强安全防护"
       ],
       "Increase your privacy with more addresses": [
         "通过更多地址增强您的隐私"
@@ -13142,6 +13273,9 @@
       ],
       "Load remote content": [
         "加载外链内容"
+      ],
+      "Make a secure connection your default": [
+        "将安全连接设为默认首选"
       ],
       "Mark as read": [
         "标为已读"
@@ -13181,6 +13315,9 @@
       ],
       "Minicalendar": [
         "迷你日历"
+      ],
+      "Mobile": [
+        "移动版"
       ],
       "More": [
         "更多"
@@ -13307,6 +13444,9 @@
       ],
       "Priority support:": [
         "优先客户支持："
+      ],
+      "Private browsing vs VPN": [
+        "隐私浏览模式与 VPN 对比"
       ],
       "Processing...": [
         "正在处理..."
@@ -13509,6 +13649,9 @@
       "Verifying your payment...": [
         "正在确认支付..."
       ],
+      "VPN explained": [
+        "VPN 原理解析"
+      ],
       "Want to snooze any time?": [
         "想将通知推迟至任意时间？"
       ],
@@ -13527,8 +13670,17 @@
       "Welcome ${ userName }": [
         "欢迎您，${ userName }"
       ],
+      "What can a VPN protect you from?": [
+        "VPN 能为您防护哪些威胁？"
+      ],
+      "What is a VPN?": [
+        "什么是VPN？\n"
+      ],
       "What would you like to import?": [
         "您需要导入哪些信息？"
+      ],
+      "When is it most important to use a VPN?": [
+        "什么时候最需要使用 VPN 呢？"
       ],
       "You can now create unlimited folders and labels": [
         "您现在可以创建无限的文件夹和标签"
@@ -13555,11 +13707,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今天"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
       ]
     },
     "Tooltip": {
@@ -13643,6 +13790,11 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
       ]
     },
     "Tor out of date": {
