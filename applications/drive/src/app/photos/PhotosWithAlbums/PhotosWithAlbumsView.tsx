@@ -56,6 +56,10 @@ export const PhotosWithAlbumsView: FC = () => {
         selectedTags,
         handleSelectTag,
         isPhotosEmpty,
+        userAddressEmail,
+        favoritePhoto,
+        updatePhotoFavoriteFromCache,
+        removeTagsFromPhoto,
     } = usePhotosWithAlbumsView();
 
     const { photoTags } = useUserSettings();
@@ -134,10 +138,35 @@ export const PhotosWithAlbumsView: FC = () => {
                     createNotification({ text: e.message, type: 'error' });
                 }
                 sendErrorReport(e);
-                console.error('photos addition failed', e);
             }
         },
         [volumeId, shareId, linkId, isAddModalShared, navigateToAlbum, addAlbumPhotos, createNotification]
+    );
+
+    const addOrRemovePhotoToFavorite = useCallback(
+        async (linkId: string, isFavorite: boolean) => {
+            if (!photos) {
+                return;
+            }
+
+            const abortController = new AbortController();
+
+            // Optimistic UI change
+            if (!isFavorite) {
+                updatePhotoFavoriteFromCache(linkId, true);
+                void favoritePhoto(abortController.signal, linkId).catch(() => {
+                    // Revert if something goes wrong
+                    updatePhotoFavoriteFromCache(linkId, false);
+                });
+            } else {
+                updatePhotoFavoriteFromCache(linkId, false);
+                void removeTagsFromPhoto(abortController.signal, linkId, [PhotoTag.Favorites]).catch(() => {
+                    // Revert if something goes wrong
+                    updatePhotoFavoriteFromCache(linkId, true);
+                });
+            }
+        },
+        [photos, favoritePhoto, removeTagsFromPhoto, updatePhotoFavoriteFromCache]
     );
 
     const onCreateAlbumWithPhotos = useCallback(
@@ -155,7 +184,6 @@ export const PhotosWithAlbumsView: FC = () => {
                     createNotification({ text: e.message, type: 'error' });
                 }
                 sendErrorReport(e);
-                console.error('album creation failed', e);
             }
         },
         [volumeId, shareId, linkId, isAddModalShared, createAlbum, navigateToAlbum, addAlbumPhotos, createNotification]
@@ -307,6 +335,8 @@ export const PhotosWithAlbumsView: FC = () => {
                         }
                         isGroupSelected={isGroupSelected}
                         isItemSelected={isItemSelected}
+                        userAddressEmail={userAddressEmail}
+                        onFavorite={addOrRemovePhotoToFavorite}
                     />
                 )}
                 <AddAlbumPhotosModal
