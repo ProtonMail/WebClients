@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { CalendarInviteButtons } from '@proton/components';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import TextAreaWithCounter from '@proton/components/components/v2/input/TextAreaWithCounter';
 import {
     DeleteNoteButton,
     EditNoteButton,
@@ -162,11 +162,14 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         className="mt-4"
                         assistContainerClassName="m-0"
                         id="rsvp-modal"
-                        as={TextAreaTwo}
+                        as={TextAreaWithCounter}
                         rows={5}
                         placeholder={c('Placeholder').t`Leave a note for all participants`}
                         value={model.Comment}
                         onValue={handleNote}
+                        maxCharacterCount={128}
+                        showCharacterCount={true}
+                        counterPosition="bottom-left"
                     />
                     <div className="gap-4 flex flex-auto justify-end">
                         {cancelButton}
