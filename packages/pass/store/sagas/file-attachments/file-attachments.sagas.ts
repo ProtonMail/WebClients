@@ -1,4 +1,4 @@
-import { put, select } from 'redux-saga/effects';
+import { cancelled, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { createDownloadStream } from '@proton/pass/lib/file-attachments/download';
@@ -70,38 +70,39 @@ const uploadChunk = createRequestSaga({
 
 const downloadFile = createRequestSaga({
     actions: fileDownload,
-    call: async (file) => {
-        const { chunkIDs, fileID } = file;
+    call: function* (file) {
+        const ctrl = new AbortController();
 
-        const downloadStream = createDownloadStream(fileID, chunkIDs, (chunkID) =>
-            downloadFileChunk({
-                ...file,
-                chunkID,
-            })
-        );
+        try {
+            const { chunkIDs, fileID } = file;
+            const getChunkStream = (chunkID: string) => downloadFileChunk({ ...file, chunkID });
+            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, ctrl.signal);
+            const fileRef = uniqueId(32);
+            yield fileStorage.writeFile(fileRef, downloadStream);
 
-        const fileRef = uniqueId(32);
-        await fileStorage.writeFile(fileRef, downloadStream);
-
-        return fileRef;
+            return fileRef;
+        } finally {
+            if (yield cancelled()) ctrl.abort();
+        }
     },
 });
 
 const downloadPublicChunk = createRequestSaga({
     actions: fileDownloadPublic,
-    call: async (file) => {
-        const { chunkIDs, fileID } = file;
+    call: function* (file) {
+        const ctrl = new AbortController();
 
-        const downloadStream = createDownloadStream(fileID, chunkIDs, (chunkID) =>
-            downloadPublicFileChunk({
-                ...file,
-                chunkID,
-            })
-        );
+        try {
+            const { chunkIDs, fileID } = file;
+            const getChunkStream = (chunkID: string) => downloadPublicFileChunk({ ...file, chunkID });
+            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, ctrl.signal);
+            const fileRef = uniqueId(32);
+            yield fileStorage.writeFile(fileRef, downloadStream);
 
-        const fileRef = uniqueId(32);
-        await fileStorage.writeFile(fileRef, downloadStream);
-        return fileRef;
+            return fileRef;
+        } finally {
+            if (yield cancelled()) ctrl.abort();
+        }
     },
 });
 

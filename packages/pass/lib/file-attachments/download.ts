@@ -21,11 +21,18 @@ export const consumeStream = async (
 export const createDownloadStream = (
     fileID: FileID,
     chunkIDs: string[],
-    getChunkStream: (chunkID: string) => Promise<ReadableStream>
+    getChunkStream: (chunkID: string) => Promise<ReadableStream>,
+    signal?: AbortSignal
 ): ReadableStream<Uint8Array> => {
     let current = 0;
 
     return new ReadableStream<Uint8Array>({
+        async start(controller) {
+            const onAbort = () => controller.error(new DOMException('Download aborted', 'AbortError'));
+            if (signal?.aborted) onAbort();
+            signal?.addEventListener('abort', onAbort, { once: true });
+        },
+
         async pull(controller) {
             if (current >= chunkIDs.length) {
                 controller.close();

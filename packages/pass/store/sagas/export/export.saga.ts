@@ -64,13 +64,13 @@ function* progressWorker(channel: Channel<ExportFileProgress>) {
 type ExportState = {
     stream?: ReadableStream;
     filename?: string;
-    controller?: AbortController;
 };
 
 export const exportUserData = createRequestSaga({
     actions: exportData,
     call: function* ({ fileAttachments, format, passphrase }, { getConfig }) {
         const state: ExportState = {};
+        const ctrl = new AbortController();
 
         try {
             const files: IndexedByShareIdAndItemId<FileDescriptor[]> = {};
@@ -93,12 +93,16 @@ export const exportUserData = createRequestSaga({
                 const totalItems = itemsWithAttachments.length;
 
                 iterators.push(
-                    createExportAttachmentsStream(itemsWithAttachments, (file, { shareId, itemId }, itemFilesCount) => {
-                        files[shareId] = files[shareId] ?? {};
-                        files[shareId][itemId] = files[shareId][itemId] ?? [];
-                        files[shareId][itemId].push(file);
-                        progressChannel.put({ totalItems, itemFilesCount, shareId, itemId });
-                    })
+                    createExportAttachmentsStream(
+                        itemsWithAttachments,
+                        ctrl.signal,
+                        (file, { shareId, itemId }, itemFilesCount) => {
+                            files[shareId] = files[shareId] ?? {};
+                            files[shareId][itemId] = files[shareId][itemId] ?? [];
+                            files[shareId][itemId].push(file);
+                            progressChannel.put({ totalItems, itemFilesCount, shareId, itemId });
+                        }
+                    )
                 );
             }
 
@@ -112,7 +116,6 @@ export const exportUserData = createRequestSaga({
                 case ExportFormat.ZIP:
                 case ExportFormat.PGP: {
                     state.filename = getArchiveName('zip');
-                    state.controller = new AbortController();
 
                     iterators.push(
                         createExportDataStream(exportThunk, {
@@ -123,8 +126,8 @@ export const exportUserData = createRequestSaga({
                     );
 
                     state.stream = createArchive(iterators);
-                    const { filename, stream, controller } = state;
-                    yield fileStorage.writeFile(filename, stream, controller?.signal);
+                    const { filename, stream } = state;
+                    yield fileStorage.writeFile(filename, stream, ctrl.signal);
                     break;
                 }
             }
@@ -135,7 +138,7 @@ export const exportUserData = createRequestSaga({
             return state.filename;
         } finally {
             if (yield cancelled()) {
-                state.controller?.abort();
+                ctrl.abort();
                 if (!state.stream?.locked) void state.stream?.cancel();
                 if (state.filename) void fileStorage.deleteFile(state.filename);
             }
