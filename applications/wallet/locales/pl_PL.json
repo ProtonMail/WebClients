@@ -17,6 +17,9 @@
       "Add account": [
         "Dodaj konto"
       ],
+      "Add another account": [
+        "Dodaj inne konto"
+      ],
       "Add credit / debit card": [
         "Dodaj kartę płatniczą"
       ],
@@ -61,6 +64,9 @@
       ],
       "Copy address": [
         "Kopiuj adres"
+      ],
+      "Copy public key (XPUB)": [
+        "Kopiuj klucz publiczny (XPUB)"
       ],
       "Copy version number to clipboard": [
         "Kopiuj numer wersji do schowka"
@@ -121,6 +127,12 @@
       ],
       "Help": [
         "Pomoc"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
+      ],
+      "Help and resources": [
+        "Pomoc i zasoby"
       ],
       "Increase": [
         "Zwiększ"
@@ -322,6 +334,9 @@
       "${ price } per domain": [
         "${ price } za domenę"
       ],
+      "${ price } per seat": [
+        "${ price } za licencję"
+      ],
       "${ price } per user": [
         "${ price } za użytkownika"
       ],
@@ -405,11 +420,6 @@
         "Menedżer haseł w wersji premium"
       ]
     },
-    "bf2023: renew": {
-      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ discountedPrice } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ nextPrice } miesięcznie. Możesz anulować w dowolnym momencie."
-      ]
-    },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
@@ -488,11 +498,17 @@
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Nieograniczona liczba danych logowania, karty płatniczych, aliasów hide-my-email i nie tylko"
+      ],
       "Use your own email domain": [
         "Użyj własnej domeny e-mail"
       ],
       "Version history": [
         "Historia wersji"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ]
     },
     "BF2024: Offers": {
@@ -526,7 +542,7 @@
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje 15 adresów e-mail, wsparcie dla niestandardowych domen e-mail, asystenta pisania ${ BRAND_NAME } Scribe, nieograniczoną liczbę aliasów hide-my-email i wiele więcej."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zabezpiecz swoje e-maile i kalendarz dzięki szyfrowaniu end-to-end. Obejmuje 15 adresów e-mail, wsparcie dla niestandardowych domen e-mail, nieograniczone aliasy hide-my-email i nie tylko."
+        "Zabezpiecz swoje wiadomości i kalendarz za pomocą szyfrowania end-to-end. Zawiera 15 adresów e-mail, wsparcie dla niestandardowych domen, nieograniczona liczba aliasów hide-my-email i nie tylko."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje edytor dokumentów online, kopię zapasową zdjęć, historię wersji, zaszyfrowane udostępnianie plików i wiele więcej."
@@ -548,8 +564,14 @@
       "Annually": [
         "Rocznie"
       ],
+      "Lifetime": [
+        "Dożywotnio"
+      ],
       "Monthly": [
         "Miesięcznie"
+      ],
+      "New!": [
+        "Nowość!"
       ],
       "Two-year": [
         "Co dwa lata"
@@ -1857,6 +1879,31 @@
         "Popularne"
       ]
     },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "Do wykorzystania we wszystkich usługach ${ BRAND_NAME }"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "Dla ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "Dla ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "Dla ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "Dla ${ VPN_APP_NAME }"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ miesiąc"
@@ -1986,7 +2033,7 @@
     },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } to nazwa użytkownika. Aby utworzyć ${ emailAddress }, przejdź do Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)."
+        "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)"
       ],
       "Amount above the maximum.": [
         "Kwota powyżej maksimum."
@@ -2150,6 +2197,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nie wybrano obrazu"
+      ]
+    },
+    "Extended public key": {
+      "Public key (XPUB) copied to clipboard": [
+        "Klucz publiczny (XPUB) został skopiowany do schowka"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -2521,7 +2573,7 @@
         "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez ${ BRAND_NAME } nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
-        "Wiadomości e-mail przeniesione do Kosza i Spamu ponad 30 dni temu zostaną automatycznie wyczyszczone."
+        "Wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni, zostaną automatycznie usunięte."
       ],
       "Enabling auto-deletion…": [
         "Włączanie automatycznego usuwania…"
@@ -2622,6 +2674,9 @@
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
+      "Other accounts": [
+        "Inne konta"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."
       ],
@@ -2678,9 +2733,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
-      ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Subskrypcja automatycznie odnawiana w okresach ${ cycle }-miesięcznych."
       ],
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
@@ -2791,7 +2843,7 @@
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
-        "Otrzymasz powiadomienie, jeśli Twoje hasło lub inne dane wyciekły z usługi zewnętrznej."
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Masz wersję próbną subskrypcji ${ planTitle }. Jeśli chcesz kontynuować subskrypcję po zakończeniu wersji próbnej, dodaj metodę płatności."
@@ -2835,11 +2887,11 @@
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } months.": [
-        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie w ${ cycle }-miesięcznych cyklach."
-      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ]
     },
     "info": {
@@ -3036,7 +3088,7 @@
         "Data rozpoczęcia"
       ],
       "State": [
-        "Województwo"
+        "Stan"
       ],
       "Subscription options": [
         "Opcje subskrypcji"
@@ -3144,6 +3196,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
+      ],
+      "Add-on with free trial": [
+        "Dodatek z darmową wersją próbną"
       ],
       "for ${ price }": [
         "za ${ price }"
@@ -3326,6 +3381,9 @@
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
       ],
+      "${ size } storage per user": [
+        "${ size } przestrzeni dyskowej na użytkownika"
+      ],
       "1 user": [
         "1 użytkownik"
       ],
@@ -3473,6 +3531,9 @@
       "Limited support": [
         "Ograniczone wsparcie"
       ],
+      "Manage user permissions and access": [
+        "Zarządzaj uprawnieniami i dostępem użytkowników"
+      ],
       "Multiple admin roles": [
         "Wiele ról administratora"
       ],
@@ -3490,6 +3551,9 @@
       ],
       "Password manager": [
         "Menadżer haseł"
+      ],
+      "Password manager to secure credentials": [
+        "Menedżer haseł do zabezpieczenia danych logowania"
       ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
@@ -3618,10 +3682,10 @@
         "Do ${ totalStorageSize } przestrzeni dyskowej"
       ],
       "Use on up to ${ n } device at once": [
-        "Używanie na maksymalnie ${ n } urządzeniu",
-        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
-        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie",
-        "Używanie na maksymalnie ${ n } urządzeniach jednocześnie"
+        "Na ${ n } urządzenie jednocześnie",
+        "Na ${ n } urządzenia jednocześnie",
+        "Na ${ n } urządzeń jednocześnie",
+        "Na ${ n } urządzeń jednocześnie"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -3709,6 +3773,9 @@
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME }, posiadający specjalne funkcje i bonusy."
+      ],
+      "Pay once, secure your passwords and identity forever.": [
+        "Zapłać raz, zabezpiecz swoje hasła i tożsamość na zawsze."
       ],
       "Popular": [
         "Popularny"
@@ -4057,6 +4124,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
+      ],
+      "Secure vault, item and link sharing": [
+        "Bezpieczny sejf, udostępnianie elementów i linków"
+      ],
+      "Unlimited logins, notes, credit cards and more": [
+        "Nieograniczona liczba danych logowania, notatek, kart płatniczych i nie tylko"
       ]
     },
     "pass_signup_2024: Info": {
@@ -4134,9 +4207,6 @@
       "More plans are available in other currencies": [
         "Więcej planów jest dostępnych w innych walutach"
       ],
-      "Payment Processing": [
-        "Przetwarzanie płatności"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
@@ -4152,20 +4222,29 @@
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
       ],
-      "Renews at ${ renewPrice }, cancel anytime.": [
-        "Odnowienie za ${ renewPrice }. Anuluj w dowolnym momencie."
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
       ],
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPrice } every month. You can cancel at any time.": [
-        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPrice } miesięcznie. Możesz anulować w dowolnym momencie."
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon jest ważny na ${ couponRedemptions } odnowienie.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowienia.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień.",
+        "Kupon jest ważny na ${ couponRedemptions } odnowień."
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
       ],
-      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Przetwarzamy płatność za fakturę. Przed zmianą planu lub zaktualizowaniem szczegółów płatności poczekaj na zakończenie płatności. Dziękujemy za cierpliwość."
+      "Your payment is still being processed": [
+        "Twoja płatność jest wciąż przetwarzana"
       ]
     },
     "Payments.Error": {
@@ -4195,7 +4274,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potwierdzając tę płatność, użytkownik upoważnia ${ BRAND_NAME } i Stripe, naszego dostawcę usług płatniczych, do zlecenia bankowi odpowiedniego obciążenia jego konta. Użytkownik może otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z warunkami umowy z bankiem."
+        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
       ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
@@ -4282,6 +4361,9 @@
       ],
       "External recipient": [
         "Zewnętrzny odbiorca"
+      ],
+      "Public key (XPUB)": [
+        "Klucz publiczny (XPUB)"
       ]
     },
     "Safety review": {
@@ -4577,6 +4659,9 @@
       "Billed every 2 years": [
         "Płatne co 2 lata"
       ],
+      "Billed every 6 months": [
+        "Płatne co 6 miesięcy"
+      ],
       "Billed for 15 months": [
         "Płatne za 15 miesięcy"
       ],
@@ -4779,6 +4864,23 @@
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
       ]
     },
+    "Sweep paper wallet": {
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Confirm and import": [
+        "Potwierdź i importuj"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
+      "Import paper wallet": [
+        "Importuj papierowy portfel"
+      ],
+      "Invalid private key": [
+        "Klucz prywatny jest nieprawidłowy"
+      ]
+    },
     "Tab subscription modal": {
       "For businesses": [
         "Dla biznesów"
@@ -4859,6 +4961,9 @@
       ],
       "Go to settings and recovery keys": [
         "Idź do ustawień i kluczy odzyskiwania"
+      ],
+      "Help and feedback": [
+        "Pomoc i opinia"
       ],
       "Help center": [
         "Centrum pomocy"
@@ -4993,6 +5098,12 @@
       ]
     },
     "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } urządzenie",
+        "${ n } urządzenia",
+        "${ n } urządzeń",
+        "${ n } urządzenia"
+      ],
       "${ n } server": [
         "${ n } serwer",
         "Ponad ${ n } serwery",
@@ -5016,12 +5127,21 @@
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach",
         "${ numberOfServers } w ${ numberOfCountries } krajach"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatyczny wybór z ${ numberOfCountries } kraju",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów",
+        "Automatyczny wybór z ${ numberOfCountries } krajów"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Serwery w ponad ${ numberOfCountries } kraju",
+        "Serwery w ponad ${ numberOfCountries } krajach",
+        "Serwery w ponad ${ numberOfCountries } krajach",
+        "Serwery w ponad ${ numberOfCountries } krajach"
       ]
     },
     "vpn_2024: renew": {
-      "You'll then be billed every 12 months at ${ renewPrice }.": [
-        "Następnie zapłacisz co 12 miesięcy ${ renewPrice }."
-      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiąc.",
         "Nowa subskrypcja zostanie automatycznie odnowiona za ${ cycle } miesiące.",
@@ -5370,6 +5490,9 @@
       "Not now": [
         "Nie teraz"
       ],
+      "Show public key (XPUB)": [
+        "Pokaż klucz publiczny (XPUB)"
+      ],
       "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
         "Blockchain Bitcoin jest publiczny, co oznacza, że każda transakcja jest publicznie widoczna. Jednak adresy Bitcoin są pseudonimizowane, co oznacza, że tożsamości nadawcy i odbiorcy są zazwyczaj nieznane."
       ],
@@ -5418,6 +5541,12 @@
       ],
       "Generate new address": [
         "Wygeneruj nowy adres"
+      ],
+      "Import paper wallet": [
+        "Importuj papierowy portfel"
+      ],
+      "More options": [
+        "Więcej opcji"
       ],
       "Receive to": [
         "Odbierz do"
@@ -5829,6 +5958,9 @@
       ],
       "Your keys, your coins.": [
         "Twoje klucze, Twoje monety."
+      ],
+      "Your private key": [
+        "Twój klucz prywatny"
       ]
     },
     "Wallet Sidebar": {
@@ -6029,20 +6161,6 @@
         "Synchronizacja jest w toku. Poczekaj chwilę"
       ]
     },
-    "Wallet Upgrade": {
-      "By continuing, you agree to our ${ termsAndConditionsLink }": [
-        "Kontynuując, akceptujesz ${ termsAndConditionsLink }"
-      ],
-      "Upgrade to support financial freedom": [
-        "Ulepsz, aby wspierać wolność finansową"
-      ],
-      "Upgrade your privacy": [
-        "Zwiększ swoją prywatność"
-      ],
-      "You have reached your limit": [
-        "Osiągnięto limit"
-      ]
-    },
     "Wallet upgrade": {
       "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
         "E-mail może być powiązany tylko z jednym kontem portfela. Aby powiązać e-mail z tym kontem portfela, proszę usunąć e-mail z innego konta portfela lub ulepszyć swój plan, aby uzyskać więcej adresów e-mail."
@@ -6064,6 +6182,20 @@
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
         "Osiągnięto limit portfeli obsługiwanych w Twoim bieżącym planie. Ulepsz plan, aby utworzyć więcej portfeli. Twoje wsparcie odegra kluczową rolę w walce o ochronę finansowej prywatności i swobody."
+      ]
+    },
+    "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Kontynuując, akceptujesz ${ termsAndConditionsLink }"
+      ],
+      "Upgrade to support financial freedom": [
+        "Ulepsz, aby wspierać wolność finansową"
+      ],
+      "Upgrade your privacy": [
+        "Zwiększ swoją prywatność"
+      ],
+      "You have reached your limit": [
+        "Osiągnięto limit"
       ]
     },
     "Wallet Welcome": {
