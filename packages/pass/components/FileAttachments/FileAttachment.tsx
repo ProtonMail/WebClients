@@ -1,4 +1,4 @@
-import { type FC, type KeyboardEvent, useEffect, useRef, useState } from 'react';
+import { type FC, type KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -50,10 +50,10 @@ export const FileAttachment: FC<Props> = ({
     const inputRef = useRef<HTMLInputElement>(null);
     const fileRenameModal = useAsyncModalHandles<string, unknown>({ getInitialModalState: () => ({}) });
     const [renamedFile, setRenamedFile] = useState(file.name);
+    const [fileName, extension] = useMemo(() => splitExtension(renamedFile), [renamedFile]);
     const fileAttachmentsDisabled = useMatchUser({ paid: false, planDisplayName: ['Pass Essentials'] });
     const online = useConnectivity();
 
-    const [fileName, extension] = splitExtension(file.name);
     const actionsDisabled = disabled || !online;
     const canDownload = !loading && !fileRenameModal.state.open && online;
     const canRename = onRename && !loading && !fileAttachmentsDisabled && !fileRenameModal.state.open && online;
@@ -70,7 +70,10 @@ export const FileAttachment: FC<Props> = ({
         });
 
     useEffect(() => {
-        if (fileRenameModal.state.open) inputRef.current?.select();
+        if (fileRenameModal.state.open) {
+            inputRef.current?.focus();
+            inputRef.current?.setSelectionRange(0, fileName.length);
+        }
     }, [fileRenameModal.state.open]);
 
     return (
@@ -87,32 +90,27 @@ export const FileAttachment: FC<Props> = ({
                 onClick={canDownload ? onDownload : noop}
                 onDoubleClick={canRename ? enableRenaming : noop}
             >
-                {fileRenameModal.state.open ? (
-                    <InputFieldTwo
-                        ref={inputRef}
-                        inputClassName="p-0 rounded-none"
-                        value={renamedFile}
-                        onChange={({ target: { value } }) => setRenamedFile(value)}
-                        onBlur={() => fileRenameModal.resolver(renamedFile)}
-                        onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
-                            if (e.key === 'Enter') {
-                                e.preventDefault();
-                                fileRenameModal.resolver(renamedFile);
-                            }
-                            if (e.key === 'Escape') {
-                                e.preventDefault();
-                                fileRenameModal.abort();
-                            }
-                        }}
-                        unstyled
-                        dense
-                        autoFocus
-                    />
-                ) : (
-                    <div className="text-ellipsis" title={fileName}>
-                        {fileName}
-                    </div>
-                )}
+                <InputFieldTwo
+                    ref={inputRef}
+                    inputClassName="p-0 rounded-none"
+                    value={fileRenameModal.state.open ? renamedFile : fileName}
+                    onChange={({ target: { value } }) => setRenamedFile(value)}
+                    onBlur={() => fileRenameModal.resolver(renamedFile)}
+                    onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
+                        if (e.key === 'Enter') {
+                            e.preventDefault();
+                            fileRenameModal.resolver(renamedFile);
+                        }
+                        if (e.key === 'Escape') {
+                            e.preventDefault();
+                            fileRenameModal.abort();
+                        }
+                    }}
+                    unstyled
+                    dense
+                    autoFocus
+                    readOnly={!fileRenameModal.state.open}
+                />
                 <div className="text-sm color-weak">{`${extension.toUpperCase()} - ${humanSize({ bytes: file.size })}`}</div>
             </ClickableDiv>
             <div className="shrink-0">
