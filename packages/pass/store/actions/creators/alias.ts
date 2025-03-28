@@ -125,9 +125,9 @@ export const aliasSyncStatusToggle = requestActionsFactory<AliasToggleStatusDTO,
                     type: 'info',
                     text: isDisabledAlias(item)
                         ? c('Info')
-                              .t`Alias succcessfully disabled. You will no longer receive emails sent to ${item.aliasEmail}`
+                              .t`Alias successfully disabled. You will no longer receive emails sent to ${item.aliasEmail}`
                         : c('Info')
-                              .t`Alias succcessfully enabled. You can now receive emails sent to ${item.aliasEmail}`,
+                              .t`Alias successfully enabled. You can now receive emails sent to ${item.aliasEmail}`,
                 })
             )({ payload: { shareId, itemId, item } }),
     },

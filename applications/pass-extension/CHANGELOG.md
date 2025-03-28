@@ -1,3 +1,12 @@
+### Version 1.30.1
+
+- Improve extension content script performance and stability
+
+### Version 1.30.0
+
+- Redesign vault menu UI
+- Allow B2B admins to disable vault creation for members
+
 ### Version 1.29.9
 
 - Fix injected icon overlay detection edge-case
