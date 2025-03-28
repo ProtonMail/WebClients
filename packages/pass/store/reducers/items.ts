@@ -204,7 +204,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return fullMerge(state, { [shareId]: { [itemId]: item } });
         }
 
-        if (fileLinkPending.success.match(action)) return updateItem(action.payload)(state);
+        if (fileLinkPending.success.match(action)) return updateItem(action.payload.item)(state);
 
         if (itemsEditSync.match(action)) {
             const { items } = action.payload;
