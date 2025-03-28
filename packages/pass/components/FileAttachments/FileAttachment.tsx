@@ -82,15 +82,16 @@ export const FileAttachment: FC<Props> = ({
             <ClickableDiv
                 className={clsx('shrink-0', canDownload && 'cursor-pointer')}
                 onClick={canDownload ? onDownload : noop}
-                onDoubleClick={canRename ? enableRenaming : noop}
             >
-                <FileAttachmentIcon mimeType={file?.mimeType ?? file?.type ?? ''} />
+                {({ hovering }) =>
+                    hovering ? (
+                        <Icon name="arrow-down" alt={c('Action').t`Download file`} className="m-auto" />
+                    ) : (
+                        <FileAttachmentIcon mimeType={file?.mimeType ?? file?.type ?? ''} />
+                    )
+                }
             </ClickableDiv>
-            <ClickableDiv
-                className={clsx('flex-1 flex-column text-left', canDownload && 'cursor-pointer')}
-                onClick={canDownload ? onDownload : noop}
-                onDoubleClick={canRename ? enableRenaming : noop}
-            >
+            <ClickableDiv className="flex-1 flex-column text-left" onDoubleClick={canRename ? enableRenaming : noop}>
                 <InputFieldTwo
                     ref={inputRef}
                     inputClassName="p-0 rounded-none"
