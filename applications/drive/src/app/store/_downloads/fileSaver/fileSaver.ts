@@ -39,7 +39,7 @@ const getMemoryLimit = () => {
 };
 
 const hasEnoughOPFSStorage = async (size?: number): Promise<boolean> => {
-    if (size) {
+    if (size && typeof navigator.storage !== 'undefined' && typeof navigator.storage.estimate !== 'undefined') {
         // https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/estimate
         const estimate = await navigator.storage.estimate();
         const available = (estimate.quota || 0) - (estimate.usage || 0);
