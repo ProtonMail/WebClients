@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -63,7 +63,6 @@ const RsvpButtons = ({
 const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled, view }: Props) => {
     const [displayNoteOverlay, setDisplayNoteOverlay] = useState(false);
     const activeBreakpoint = useActiveBreakpoint();
-    const bottomRef = useRef<HTMLDivElement>(null);
     const isDrawerOrResponsiveView = getIsCalendarAppInDrawer(view) || activeBreakpoint.viewportWidth['<=medium'];
     const isSearchView = view === VIEWS.SEARCH;
 
@@ -157,22 +156,6 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     // Rely on userComment instead of model.Comment to avoid line jump
     const canReplyWithNote = !userComment && !isSearchView;
 
-    const scrollToBottom = () => {
-        if (bottomRef.current) {
-            bottomRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    const handleNoteButtonClick = () => {
-        setDisplayNoteOverlay(true);
-        // On events with long descriptions submit buttons are hidden
-        // when user clicks on reply with a note.
-        // Fixed by trigerring scroll to bottom of the view
-        if (isDrawerOrResponsiveView) {
-            setTimeout(scrollToBottom, 100);
-        }
-    };
-
     return (
         <>
             {
@@ -195,7 +178,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                                     <Button
                                         className={clsx('text-sm color-weak', isDrawerOrResponsiveView && 'mt-2')}
                                         shape="underline"
-                                        onClick={handleNoteButtonClick}
+                                        onClick={() => setDisplayNoteOverlay(true)}
                                     >
                                         {c('Action').t`Reply with a note`}
                                     </Button>
@@ -223,7 +206,6 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
 
             {displayNoteOverlay && (
                 <div
-                    ref={bottomRef}
                     className={clsx(
                         'bg-norm',
                         !isDrawerOrResponsiveView && 'py-4 absolute border-top event-popover-rsvp-section'
