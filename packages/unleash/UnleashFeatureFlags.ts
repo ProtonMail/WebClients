@@ -32,6 +32,10 @@ enum CommonFeatureFlag {
     InboxDesktopDefaultEmailSetupHelper = 'InboxDesktopDefaultEmailSetupHelper',
     InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
     UserDropdownRedesign = 'UserDropdownRedesign',
+    // Monthly subscriber nudge feature flags
+    SubscriberNudgeBundleMonthly = 'SubscriberNudgeBundleMonthly',
+    SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
+    SubscriberNudgeDriveMonthly = 'SubscriberNudgeDriveMonthly',
 }
 
 enum AccountFlag {
@@ -142,7 +146,6 @@ enum MailFeatureFlag {
     QuickReply = 'QuickReply',
     MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
-    MailPlusSubscribersNudgeExperiment = 'MailPlusSubscribersNudgeExperiment',
     MailboxRefactoring = 'MailboxRefactoring',
 }
 

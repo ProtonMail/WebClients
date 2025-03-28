@@ -7,7 +7,7 @@ import { useAutomaticCurrency } from '@proton/components/payments/client-extensi
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 
-import { type PriceData } from './interface';
+import { type PriceData } from '../../helpers/interface';
 
 interface Props {
     imgSrc: string;
