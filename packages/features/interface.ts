@@ -69,6 +69,8 @@ export enum FeatureCode {
 
     // Flags needed by the monthly subscribers nudge
     MailPaidUserNudgeTimestamp = 'MailPaidUserNudgeTimestamp',
+    DrivePaidUserNudgeTimestamp = 'DrivePaidUserNudgeTimestamp',
+    BundlePaidUserNudgeTimestamp = 'BundlePaidUserNudgeTimestamp',
 
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',

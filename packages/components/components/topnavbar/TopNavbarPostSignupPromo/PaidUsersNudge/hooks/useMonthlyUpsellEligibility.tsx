@@ -11,8 +11,8 @@ import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 import useFlag from '@proton/unleash/useFlag';
 
-import { HIDE_OFFER } from '../components/interface';
-import { isInWindow } from '../components/paidUserNudgeHelper';
+import { HIDE_OFFER } from '../helpers/interface';
+import { isInWindow } from '../helpers/paidUserNudgeHelper';
 
 interface Props {
     eligiblePlan: PLANS;

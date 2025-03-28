@@ -35,7 +35,7 @@ interface Props {
     preventInApp?: boolean;
 }
 
-const appsWithInApp = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACCOUNT, APPS.PROTONCALENDAR]);
+export const appsWithInApp = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACCOUNT, APPS.PROTONCALENDAR]);
 
 /**
  * Return config properties to inject in the subscription modal

@@ -7,8 +7,8 @@ import useLoading from '@proton/hooks/useLoading';
 import { COUPON_CODES, CYCLE, type PLANS, getPlansMap } from '@proton/payments';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 
-import { type PriceData } from './interface';
-import { roundToUpper } from './paidUserNudgeHelper';
+import { type PriceData } from '../helpers/interface';
+import { roundToUpper } from '../helpers/paidUserNudgeHelper';
 
 interface Props {
     plan: PLANS;
@@ -25,7 +25,6 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
         yearlyPrice: 0,
         discountedPrice: 0,
         savedAmount: 0,
-        savedPercentage: 0,
     });
 
     useEffect(() => {
@@ -56,7 +55,6 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
                 yearlyPrice,
                 discountedPrice,
                 savedAmount: checkout.discountPerCycle,
-                savedPercentage: checkout.discountPercent,
             });
         };
 
