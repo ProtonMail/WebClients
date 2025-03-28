@@ -143,6 +143,7 @@ const ContactDetailsModal = ({
         loadingVCard;
 
     return (
+        // NB: actual modal size defined by custom CSS targeting `.contacts-modal`
         <ModalTwo size="large" className="contacts-modal" data-testid="contact-details-modal" {...rest}>
             <ModalTwoHeader
                 actions={[
