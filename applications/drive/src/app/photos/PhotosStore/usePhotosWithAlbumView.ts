@@ -117,20 +117,25 @@ export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) =
     );
 
     // This will be flattened to contain categories and links
+    // The isPhotosEmpty needs to be decorelate from the photosViewData as it is connected to tag filtering
+    // isPhotosEmpty is based on the full unfiltered photos list
     const {
         photosViewData,
         photoLinkIdToIndexMap,
         photoLinkIds,
+        isPhotosEmpty,
     }: {
         photosViewData: PhotoGridItem[];
         photoLinkIdToIndexMap: Record<string, number>;
         photoLinkIds: string[];
+        isPhotosEmpty: boolean;
     } = useMemo(() => {
         if (!shareId || !linkId) {
             return {
                 photosViewData: [],
                 photoLinkIdToIndexMap: {},
                 photoLinkIds: [],
+                isPhotosEmpty: true,
             };
         }
 
@@ -175,6 +180,7 @@ export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) =
             result[link.linkId] = link;
         });
 
+        const isPhotosEmpty = Object.values(result).length === 0;
         const photosViewData = getTagFilteredPhotos(sortWithCategories(Object.values(result)), selectedTags);
 
         // To improve performance, let's build some maps ahead of time
@@ -197,6 +203,7 @@ export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) =
             photosViewData,
             photoLinkIdToIndexMap,
             photoLinkIds,
+            isPhotosEmpty,
         };
     }, [photos, cachedLinks, linkId, shareId, selectedTags]);
 
@@ -477,7 +484,7 @@ export const usePhotosWithAlbumsView = (isAddAlbumPhotosView: boolean = false) =
         selectedTags,
         handleSelectTag,
         userAddressEmail,
-        isPhotosEmpty: photos.length === 0,
+        isPhotosEmpty,
         favoritePhoto,
         updatePhotoFavoriteFromCache,
         removeTagsFromPhoto,
