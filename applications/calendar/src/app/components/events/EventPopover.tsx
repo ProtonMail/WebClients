@@ -326,7 +326,7 @@ const EventPopover = ({
     });
 
     return (
-        <PopoverContainer {...commonContainerProps} className="eventpopover flex flex-column flex-nowrap">
+        <PopoverContainer {...commonContainerProps} className="relative eventpopover flex flex-column flex-nowrap">
             <PopoverHeader
                 {...commonHeaderProps}
                 actions={
@@ -433,7 +433,7 @@ const EventPopover = ({
                 </PopoverFooter>
             )}
             {canReplyToEvent && rsvpCommentEnabled && (
-                <div className="relative" key={targetEvent.uniqueId}>
+                <div className="shrink-0" key={targetEvent.uniqueId}>
                     <RsvpSection
                         handleChangePartstat={handleChangePartStat}
                         userPartstat={userPartstat}
