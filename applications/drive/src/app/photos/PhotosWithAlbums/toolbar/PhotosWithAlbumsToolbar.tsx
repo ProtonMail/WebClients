@@ -452,6 +452,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                         {openAddPhotosToAlbumModal && (
                             <PhotosAddToAlbumButton showIconOnly={showIconOnly} onClick={openAddPhotosToAlbumModal} />
                         )}
+                        {(canRemoveAlbum || !album) && <Vr className="h-full" />}
                         {canRemoveAlbum && (
                             <PhotosRemoveAlbumPhotosButton showIconOnly={showIconOnly} onClick={removeAlbumPhotos!} />
                         )}
