@@ -22,6 +22,7 @@ import {
     itemCreate,
     itemCreateDismiss,
     itemDelete,
+    itemDeleteRevisions,
     itemEdit,
     itemEditDismiss,
     itemMove,
@@ -199,7 +200,14 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, data: item, revision: revision + 1 })(state);
         }
 
-        if (or(itemEdit.success.match, setItemFlags.success.match, aliasSyncStatusToggle.success.match)(action)) {
+        if (
+            or(
+                itemEdit.success.match,
+                setItemFlags.success.match,
+                aliasSyncStatusToggle.success.match,
+                itemDeleteRevisions.success.match
+            )(action)
+        ) {
             const { shareId, itemId, item } = action.payload;
             return fullMerge(state, { [shareId]: { [itemId]: item } });
         }
