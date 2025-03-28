@@ -251,14 +251,14 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                 obsoleteFingerprints,
                 compromisedFingerprints,
                 primaryKeyFingerprints,
-                preferV6Keys: true,
+                preferV6Keys: supportV6Keys,
             });
             const pinnedKeys = sortPinnedKeys({
                 keys: publicKeys.pinnedKeys,
                 obsoleteFingerprints,
                 compromisedFingerprints,
                 encryptionCapableFingerprints,
-                preferV6Keys: true,
+                preferV6Keys: supportV6Keys,
             });
             const verifyingPinnedKeys = getVerifyingKeys(pinnedKeys, model.compromisedFingerprints);
 
