@@ -73,15 +73,17 @@ export const getFileParts = (filename: string): MaybeNull<{ name: string; ext: s
 };
 
 export const reconcileFilename = (next: string, original: string): string => {
+    const sanitized = next.startsWith('.') ? `file${next.trim()}` : next.trim();
+
     /* If new file has extension, do nothing */
-    const hasExtension = FILE_RE.test(next);
-    if (hasExtension) return next;
+    const hasExtension = FILE_RE.test(sanitized);
+    if (hasExtension) return sanitized;
 
     /* If new file has no extension, try to use the previous one */
     const parts = getFileParts(original);
-    if (parts) return next + parts.ext;
+    if (parts) return sanitized + parts.ext;
 
-    return next; /* Fallback, set file name with no extension */
+    return sanitized; /* Fallback, set file name with no extension */
 };
 
 export const getExportFileName = (file: FileDescriptor): string => {
