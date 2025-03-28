@@ -2,6 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Action } from 'redux';
 
 import type { WithMeta } from '@proton/pass/store/actions/enhancers/meta';
+import type { RequestFlow } from '@proton/pass/store/request/flow';
 import type { IsNever } from '@proton/pass/types';
 
 export type RequestState = Record<string, RequestEntry>;
@@ -82,3 +83,7 @@ export type RequestAsyncResult<TSuccess extends PayloadAction = any, TFailure ex
           error: 'error' extends keyof TFailure ? TFailure['error'] : undefined;
           data: RequestFailureDTO<TFailure>;
       };
+export type RequestFlowAsyncResult<T extends RequestFlow<any, any, any>> = RequestAsyncResult<
+    ReturnType<T['success']>,
+    ReturnType<T['failure']>
+>;

@@ -1,5 +1,5 @@
-import type { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { type FC, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -8,6 +8,7 @@ import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFileDownload } from '@proton/pass/hooks/files/useFileDownload';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
 import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
@@ -17,28 +18,34 @@ import { download } from '@proton/pass/utils/dom/download';
 
 import { FileAttachment } from './FileAttachment';
 
-type Props = SelectedItem & { files: FileDescriptor[]; onDelete?: (fileID: FileID) => void };
+type Props = SelectedItem & {
+    canRename?: boolean;
+    files: FileDescriptor[];
+    onDelete?: (fileID: FileID) => void;
+};
 
-export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelete }) => {
-    const dispatch = useDispatch();
-    const deleteFile = useAsyncModalHandles<void, { name: string }>({ getInitialModalState: () => ({ name: '' }) });
+const getInitialModalState = () => ({ name: '' });
+
+export const FileAttachmentsList: FC<Props> = (props) => {
+    const { shareId, itemId, files, onDelete } = props;
+
+    const dispatch = useAsyncRequestDispatch();
     const fileDownload = useFileDownload();
+    const deleteFile = useAsyncModalHandles<void, { name: string }>({ getInitialModalState });
+
     const share = useSelector(selectShare(shareId));
     const upsell = useUpselling();
 
     const allowed = useMatchUser({ paid: true });
-    const canRename = allowed && share && isShareWritable(share);
+    const canRename = Boolean(props.canRename && allowed && share && isShareWritable(share));
 
-    const onRename = (descriptor: BaseFileDescriptor, fileName: string) => {
+    const handleRename = useCallback(async (descriptor: BaseFileDescriptor, fileName: string) => {
         if (descriptor.name === fileName) return;
-        dispatch(fileUpdateMetadata.intent({ ...descriptor, name: fileName, shareId, itemId }));
-    };
+        return dispatch(fileUpdateMetadata, { ...descriptor, name: fileName, shareId, itemId });
+    }, []);
 
     const handleDelete = ({ fileID, name }: FileDescriptor) =>
-        deleteFile.handler({
-            name,
-            onSubmit: () => onDelete?.(fileID),
-        });
+        deleteFile.handler({ name, onSubmit: () => onDelete?.(fileID) });
 
     const handleDownload = async (file: FileDescriptor) => {
         const fileBlob = await fileDownload.start(file, { shareId, itemId });
@@ -53,7 +60,7 @@ export const FileAttachmentsList: FC<Props> = ({ shareId, itemId, files, onDelet
                     file={file}
                     onDelete={onDelete ? () => handleDelete(file) : undefined}
                     onCancel={() => fileDownload.cancel(file.fileID)}
-                    onRename={canRename ? (fileName) => onRename(file, fileName) : undefined}
+                    onRename={canRename ? (fileName) => handleRename(file, fileName) : undefined}
                     onDownload={
                         allowed
                             ? () => handleDownload(file)
