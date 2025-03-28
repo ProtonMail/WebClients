@@ -1,4 +1,4 @@
-import { findByText } from '@testing-library/react';
+import { findByText, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -237,7 +237,7 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, findByTestId } = await setup(
+            const { open } = await setup(
                 undefined,
                 {},
                 {
@@ -250,7 +250,7 @@ describe('MessageView encryption', () => {
 
             await open();
 
-            const icon = await findByTestId('encryption-icon');
+            const icon = await screen.findByTestId('encryption-icon');
 
             assertIcon(icon, 'lock-check-filled', 'color-info');
         });
@@ -290,7 +290,7 @@ describe('MessageView encryption', () => {
                 Message: { ...message, Body: encryptedBody },
             }));
 
-            const { open, findByTestId } = await setup(
+            const { open } = await setup(
                 undefined,
                 {},
                 {
@@ -303,7 +303,7 @@ describe('MessageView encryption', () => {
 
             await open();
 
-            const icon = await findByTestId('encryption-icon');
+            const icon = await screen.findByTestId('encryption-icon');
 
             assertIcon(icon, 'lock-check-filled', 'color-success');
         });
@@ -334,7 +334,7 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, findByTestId } = await setup(
+            const { open } = await setup(
                 undefined,
                 {},
                 {
@@ -347,8 +347,7 @@ describe('MessageView encryption', () => {
 
             await open();
 
-            const icon = await findByTestId('encryption-icon');
-
+            const icon = await screen.findByTestId('encryption-icon');
             assertIcon(icon, 'lock-exclamation-filled', 'color-info');
         });
     });
