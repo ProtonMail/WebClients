@@ -31,7 +31,7 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
 export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
     const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
         if (provider) dropzone.setSupportedFileTypes(PROVIDER_INFO_MAP[provider].fileExtension.split(', '));
-        void form.setFieldValue('provider', provider);
+        void form.setValues({ provider, file: null });
     };
 
     return (
