@@ -32,7 +32,7 @@
     "@lexical/selection": "0.24.0",
     "@lexical/table": "0.24.0",
     "@lexical/utils": "0.24.0",
-    "@lexical/yjs": "0.24.0",
+    "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.24.0#~/.yarn/patches/@lexical-yjs-npm-0.24.0-dc3b72551f.patch",
     "@proton/atoms": "workspace:^",
     "@proton/components": "workspace:^",
     "@proton/crypto": "workspace:^",
