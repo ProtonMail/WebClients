@@ -1,12 +1,14 @@
 import { type FC, type PropsWithChildren, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 import { type FieldProps } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import { Dropzone, FileInput, useNotifications } from '@proton/components';
+import { Dropzone, FileInput, Icon, Tooltip, useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
@@ -26,6 +28,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import { eq, not, truthy } from '@proton/pass/utils/fp/predicates';
 import { updateMap } from '@proton/pass/utils/fp/state';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 
 import { FileAttachment } from './FileAttachment';
@@ -41,6 +44,7 @@ type FileUploadDescriptor = Omit<BaseFileDescriptor, 'fileID'> & { uploadID: str
 
 export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
     WithPaidUser(({ children, form, filesCount = 0, onDeleteAllFiles }) => {
+        const { expandExtensionPopup, isExtensionPopupExpanded } = usePassCore();
         const dispatch = useAsyncRequestDispatch();
 
         const fileUpload = useFileUpload();
@@ -51,11 +55,15 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
         const { createNotification } = useNotifications();
         const online = useConnectivity();
         const upsell = useUpselling();
+        const { pathname } = useLocation();
 
         const [filesMap, setFiles] = useState(new Map<string, FileUploadDescriptor>());
         const [loading, setLoading] = useState(false);
         const files = useMemo(() => Array.from(filesMap.values()), [filesMap]);
         const disableUploader = loading || !online;
+
+        const expandPopup = expandExtensionPopup?.(pathname);
+        const isPopupExpanded = isExtensionPopupExpanded?.();
 
         const uploadFiles = async (toUpload: File[]) => {
             const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
@@ -192,21 +200,46 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                             />
                         ))}
 
-                        {canUseStorage ? (
-                            <FileInput
-                                /** Disable the "accept" attribute on iOS because the
-                                 * "accept" attribute does not support the extension */
-                                {...(isIos() ? {} : { accept: '*' })}
-                                className="m-4 rounded-full"
-                                onChange={({ target }) => onAddFiles([...(target.files ?? [])])}
-                                disabled={disableUploader}
-                                shape="solid"
-                                color="weak"
-                                multiple
-                            >
-                                {c('Action').t`Choose a file or drag it here`}
-                            </FileInput>
-                        ) : (
+                        {canUseStorage &&
+                            /* On Firefox extension popup, clicking a file input will open the OS file picker
+                             * but will also close the extension popup. So we require the user to
+                             * re-open the popup in a new window to be able to upload files */
+                            (BUILD_TARGET === 'firefox' && !isPopupExpanded ? (
+                                <Tooltip
+                                    openDelay={2000}
+                                    title={c('Info')
+                                        .t`Due to a limitation on Firefox, ${PASS_APP_NAME} needs to be re-opened in a new window before you can upload files.`}
+                                >
+                                    <div className="m-4">
+                                        <Button
+                                            className="rounded-full inline-block gap-1"
+                                            disabled={disableUploader}
+                                            shape="solid"
+                                            color="weak"
+                                            onClick={expandPopup}
+                                            fullWidth
+                                        >
+                                            {c('Action').t`Open new window to upload files`}
+                                            <Icon name="arrow-within-square" className="shrink-0" />
+                                        </Button>
+                                    </div>
+                                </Tooltip>
+                            ) : (
+                                <FileInput
+                                    /** Disable the "accept" attribute on iOS because the
+                                     * "accept" attribute does not support the extension */
+                                    {...(isIos() ? {} : { accept: '*' })}
+                                    className="m-4 rounded-full"
+                                    onChange={({ target }) => onAddFiles([...(target.files ?? [])])}
+                                    disabled={disableUploader}
+                                    shape="solid"
+                                    color="weak"
+                                    multiple
+                                >
+                                    {c('Action').t`Choose a file or drag it here`}
+                                </FileInput>
+                            ))}
+                        {!canUseStorage && (
                             <div className="m-4">
                                 <Button
                                     className="rounded-full inline-block"

@@ -85,6 +85,10 @@ export type PassCoreContextValue = {
     generateBiometricsKey?: () => Promise<CryptoKey>;
     /** Checks if this is the first time Pass is being launched */
     isFirstLaunch?: () => boolean;
+    /** Only relevant for extension, open popup in new window */
+    expandExtensionPopup?: (subpath?: string) => () => void;
+    /** Only relevant for extension, true if popup is opened in a new window */
+    isExtensionPopupExpanded?: () => boolean;
 };
 
 export type PassCoreProviderProps = PassCoreContextValue & { wasm?: boolean };
