@@ -64,6 +64,7 @@ export const useFileImporter = () => {
                                         shareId,
                                         itemId,
                                         files: { toAdd, toRemove: [] },
+                                        revalidateStorage: false,
                                     }),
                             ],
                             signal

@@ -114,5 +114,6 @@ export type SecureLink = UniqueItem & {
     secureLink: string;
 };
 
-export type ItemLinkFiles = UniqueItem & { files: FileAttachmentsDTO };
-export type ItemRevisionLinkFiles = ItemLinkFiles & { revision: number };
+export type ItemLinkFilesIntent = UniqueItem & { files: FileAttachmentsDTO; revalidateStorage?: boolean };
+export type ItemLinkFilesSuccess = { item: ItemRevision; revalidateStorage?: boolean };
+export type ItemRevisionLinkFiles = ItemLinkFilesIntent & { revision: number };
