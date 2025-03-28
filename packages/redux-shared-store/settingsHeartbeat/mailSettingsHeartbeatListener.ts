@@ -29,6 +29,7 @@ import {
 } from './heartbeatHelper';
 import type { RequiredState } from './interface';
 import {
+    formatShowMoved,
     getAddressRange,
     getArrayLengthRange,
     getDelaySecond,
@@ -91,6 +92,7 @@ export const mailSettingsHeartbeatListener = (startListening: AppStartListening)
                     removeImageMetadata: formatBooleanForHeartbeat(mailSettings.RemoveImageMetadata),
                     pmSignatureReferral: formatBooleanForHeartbeat(mailSettings.PMSignatureReferralLink),
                     inheritParentFolderColor: formatBooleanForHeartbeat(mailSettings.InheritParentFolderColor),
+                    showMoved: formatShowMoved(mailSettings.ShowMoved),
                     labelsCount: getArrayLengthRange(labels),
                     foldersCount: getArrayLengthRange(folders),
                     addressCount: getAddressRange(addresses),
