@@ -160,6 +160,15 @@ export const setup = async ({
         preloadedState: {
             userSettings: getModelState({
                 News: setBit(0, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS),
+                Email: {
+                    Reset: 0,
+                },
+                Phone: {
+                    Reset: 0,
+                },
+                '2FA': {
+                    Enabled: 0,
+                },
             } as UserSettings),
             mailSettings: getModelState(props.mailSettings),
             categories: getModelState([...labels, ...folders]),

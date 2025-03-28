@@ -86,13 +86,15 @@ const useOneDollarConfig = ({ newUpsellModalVariant = false }: Props) => {
     }, [planID, planPricePerCycle, user.hasPaidMail, currency, loadingCurrency]);
 
     const priceLine = user.isFree ? (
-        <PriceLine currency={currency} planPrice={planPricePerCycle} />
+        <PriceLine key="price-line-free" currency={currency} planPrice={planPricePerCycle} />
     ) : (
         // Paid users are upsell to yearly cycle, we want monthly price so we need to divide the price by 12
-        <PriceLine currency={currency} planPrice={planPricePerCycle / CYCLE.YEARLY} />
+        <PriceLine key="price-line-paid" currency={currency} planPrice={planPricePerCycle / CYCLE.YEARLY} />
     );
 
-    const priceCoupon = <PriceCoupon currency={currency} amountDue={amountDue} loading={loading} />;
+    const priceCoupon = (
+        <PriceCoupon key="price-coupon-free" currency={currency} amountDue={amountDue} loading={loading} />
+    );
 
     if (newUpsellModalVariant) {
         return {
