@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
@@ -11,6 +13,7 @@ import TotpInputs from '@proton/components/containers/account/totp/TotpInputs';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -163,7 +166,12 @@ const LoginForm = ({
     needHelp,
     footer,
 }: {
-    onSubmit: (username: string, password: string, payload: ChallengeResult) => Promise<void>;
+    onSubmit: (data: {
+        username: string;
+        password: string;
+        persistent: boolean;
+        payload: ChallengeResult;
+    }) => Promise<void>;
     hasChallenge?: boolean;
     needHelp?: ReactNode;
     footer?: ReactNode;
@@ -171,6 +179,7 @@ const LoginForm = ({
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [persistent, setPersistent] = useLocalState(true, 'default-persistent');
     const challengeRefLogin = useRef<ChallengeRef>();
     const usernameRef = useRef<HTMLInputElement>(null);
     const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
@@ -207,7 +216,7 @@ const LoginForm = ({
                     }
                     const run = async () => {
                         const payload = await challengeRefLogin.current?.getChallenge().catch(noop);
-                        return onSubmit(username, password, payload);
+                        return onSubmit({ username, password, persistent, payload });
                     };
                     withLoading(run()).catch(noop);
                 }}
@@ -250,6 +259,17 @@ const LoginForm = ({
                     onValue={setPassword}
                     rootClassName="mt-2"
                 />
+                <div className="flex flex-row items-start align-center mb-2">
+                    <Checkbox
+                        id="staySignedIn"
+                        className="mr-2"
+                        checked={persistent}
+                        onChange={() => setPersistent(!persistent)}
+                    />
+                    <Label htmlFor="staySignedIn" className="p-0 flex-1">
+                        {c('Label').t`Keep me signed in`}
+                    </Label>
+                </div>
                 <div className="flex justify-space-between mt-4">
                     {needHelp}
                     <Button color="norm" size="large" type="submit" fullWidth loading={loading} data-cy-login="submit">
@@ -343,12 +363,12 @@ const MinimalLoginContainer = ({
                     needHelp={needHelp}
                     footer={footer}
                     hasChallenge={hasChallenge}
-                    onSubmit={async (username, password, payload) => {
+                    onSubmit={async ({ username, password, persistent, payload }) => {
                         try {
                             await onStartAuth();
                             const loginResult = await handleLogin({
                                 username,
-                                persistent: false,
+                                persistent,
                                 payload,
                                 password,
                                 api: silentApi,
