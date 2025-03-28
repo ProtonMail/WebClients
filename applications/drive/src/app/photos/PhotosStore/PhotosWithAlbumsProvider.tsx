@@ -552,6 +552,9 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (!volumeId) {
                 throw new Error('Photo volume not found');
             }
+            if (!shareId) {
+                throw new Error('Photo share not found');
+            }
             const addPhotoAsCoverCall = async () => {
                 const response = await request<{
                     Code: number;
@@ -565,7 +568,20 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                     throw new Error('Failed to set album cover');
                 }
             };
-            return addPhotoAsCoverCall();
+            await addPhotoAsCoverCall();
+            // Optimistic: change the cover manually in memory
+            const newCover = await getLink(abortSignal, shareId, coverLinkId);
+            setAlbums((currentAlbums) => {
+                const newAlbums = new Map(currentAlbums);
+                const album = newAlbums.get(albumLinkId);
+                if (album) {
+                    newAlbums.set(albumLinkId, {
+                        ...album,
+                        cover: newCover,
+                    });
+                }
+                return newAlbums;
+            });
         },
         [request, volumeId]
     );
