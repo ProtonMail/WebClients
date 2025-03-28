@@ -2,13 +2,12 @@ import { useUserSettings } from '@proton/account/index';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { PLANS } from '@proton/payments';
-import type { TelemetryPaidUsersNudge } from '@proton/shared/lib/api/telemetry';
+import { TelemetryPaidUsersNudge } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 
-import { OfferDuration, ReminderDates } from './interface';
-import { isInWindow } from './paidUserNudgeHelper';
+import { OfferDuration, ReminderDates, type SupportedPlans } from '../helpers/interface';
+import { isInWindow } from '../helpers/paidUserNudgeHelper';
 
 const getSubscriptionAgeGroup = (subscriptionAge: number) => {
     if (!isInWindow(subscriptionAge)) {
@@ -25,13 +24,17 @@ const getSubscriptionAgeGroup = (subscriptionAge: number) => {
     return value;
 };
 
-export const usePaidUsersNudgeTelemetry = () => {
+interface Props {
+    plan: SupportedPlans;
+}
+
+export const usePaidUsersNudgeTelemetry = ({ plan }: Props) => {
     const api = useApi();
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [userSettings] = useUserSettings();
 
-    const sendPaidUserNudgeReport = (options: any) => {
+    const sendPaidUserNudgeReport = (options: TelemetryOptions) => {
         void sendTelemetryReportWithBaseDimensions({
             api,
             user,
@@ -39,23 +42,32 @@ export const usePaidUsersNudgeTelemetry = () => {
             userSettings,
             measurementGroup: TelemetryMeasurementGroups.paidUsersNudge,
             event: options.event,
-            dimensions: options.dimensions,
+            dimensions: {
+                subscriptionAge: getSubscriptionAgeGroup(options.dimensions.subscriptionAge),
+                plan,
+            },
             delay: false,
         });
     };
 
-    const sendMailPlusPaidUsersNudgeReport = (options: TelemetryOptions) => {
-        void sendPaidUserNudgeReport({
-            ...options,
+    const sendDrivePurchaseReport = () => {
+        void sendTelemetryReportWithBaseDimensions({
+            api,
+            user,
+            subscription,
+            userSettings,
+            measurementGroup: TelemetryMeasurementGroups.paidUsersNudge,
+            event: TelemetryPaidUsersNudge.userSubscribed,
             dimensions: {
-                subscriptionAge: getSubscriptionAgeGroup(options.dimensions.subscriptionAge),
-                plan: PLANS.MAIL,
+                plan,
             },
+            delay: false,
         });
     };
 
     return {
-        sendMailPlusPaidUsersNudgeReport,
+        sendPaidUserNudgeReport,
+        sendDrivePurchaseReport,
     };
 };
 
