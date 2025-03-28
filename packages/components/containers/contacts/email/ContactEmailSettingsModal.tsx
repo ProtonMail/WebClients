@@ -299,6 +299,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     }, [isMimeTypeFixed, hasPGPInline]);
 
     return (
+        // NB: actual modal size defined by custom CSS targeting `.contacts-modal`
         <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalTwoHeader
                 title={c('Title').t`Edit email settings`}
