@@ -81,7 +81,7 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
                             minRows={5}
                             rows={Number.MAX_SAFE_INTEGER}
                         />
-                        <FieldsetCluster className="sticky bottom-0 bg-weak" mode="read">
+                        <FieldsetCluster className="bg-weak" mode="read">
                             <Field
                                 name="files"
                                 component={FileAttachmentsFieldEdit}
