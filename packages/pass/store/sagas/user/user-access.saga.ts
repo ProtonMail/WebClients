@@ -7,6 +7,7 @@ import {
     getUserAccessFailure,
     getUserAccessIntent,
     getUserAccessSuccess,
+    importReport,
 } from '@proton/pass/store/actions';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
@@ -34,11 +35,17 @@ function* userAccessWorker({ getAuthStore }: RootSagaOptions, { meta }: ReturnTy
     }
 }
 
+const matchRevalidateUserAccess = (action: unknown) => {
+    if (fileLinkPending.success.match(action) && action.payload.revalidateStorage !== false) return true;
+    if (importReport.match(action)) return true;
+    return false;
+};
+
 export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(getUserAccessIntent.match, userAccessWorker, options);
 
     /** Revalidates the user storage everytime files are linked */
-    yield takeLeading(fileLinkPending.success.match, function* () {
+    yield takeLeading(matchRevalidateUserAccess, function* () {
         const userID = options.getAuthStore().getUserID();
         if (userID) yield put(withRevalidate(getUserAccessIntent(userID)));
     });
