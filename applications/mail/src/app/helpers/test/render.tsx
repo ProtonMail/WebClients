@@ -215,6 +215,7 @@ export const getStoreWrapper = ({
         } as ProtonConfig,
         authentication: {
             getPassword: () => '',
+            getPersistent: jest.fn(() => false),
         } as any,
         api: api as any,
         eventManager: jest.fn() as any,

@@ -1,4 +1,4 @@
-import { act, fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
@@ -91,22 +91,26 @@ describe('Unsubscribe banner', () => {
 
         await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
-                addresses: getModelState([getCompleteAddress({ Email: toAddress })]),
+                addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
             },
         });
 
-        const button = screen.getByTestId('unsubscribe-banner');
-
-        expect(button.textContent).toMatch(/Unsubscribe/);
+        let button;
+        await waitFor(() => {
+            button = screen.getByTestId('unsubscribe-banner');
+            expect(button.textContent).toMatch(/Unsubscribe/);
+        });
 
         if (button) {
             fireEvent.click(button);
         }
 
-        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
-        if (submitButton) {
-            fireEvent.click(submitButton);
-        }
+        await waitFor(() => {
+            const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+            if (submitButton) {
+                fireEvent.click(submitButton);
+            }
+        });
 
         await waitForEventManagerCall();
 
@@ -143,18 +147,22 @@ describe('Unsubscribe banner', () => {
             },
         });
 
-        const button = await screen.findByTestId('unsubscribe-banner');
-
-        expect(button.textContent).toMatch(/Unsubscribe/);
+        let button;
+        await waitFor(() => {
+            button = screen.getByTestId('unsubscribe-banner');
+            expect(button.textContent).toMatch(/Unsubscribe/);
+        });
 
         if (button) {
             fireEvent.click(button);
         }
 
-        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
-        if (submitButton) {
-            fireEvent.click(submitButton);
-        }
+        await waitFor(() => {
+            const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+            if (submitButton) {
+                fireEvent.click(submitButton);
+            }
+        });
 
         await waitForNotification('Mail list unsubscribed');
         await waitForEventManagerCall();
@@ -182,22 +190,22 @@ describe('Unsubscribe banner', () => {
             },
         });
 
-        const button = screen.getByTestId('unsubscribe-banner');
-
-        expect(button.textContent).toMatch(/Unsubscribe/);
+        let button;
+        await waitFor(() => {
+            button = screen.getByTestId('unsubscribe-banner');
+            expect(button.textContent).toMatch(/Unsubscribe/);
+        });
 
         if (button) {
-            await act(async () => {
-                fireEvent.click(button);
-            });
+            fireEvent.click(button);
         }
 
-        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
-        if (submitButton) {
-            await act(async () => {
+        await waitFor(() => {
+            const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+            if (submitButton) {
                 fireEvent.click(submitButton);
-            });
-        }
+            }
+        });
 
         await waitForEventManagerCall();
 
@@ -225,19 +233,23 @@ describe('Unsubscribe banner', () => {
             },
         });
 
-        const button = screen.getByTestId('unsubscribe-banner');
-
-        expect(button.textContent).toMatch(/Unsubscribe/);
+        let button;
+        await waitFor(() => {
+            button = screen.getByTestId('unsubscribe-banner');
+            expect(button.textContent).toMatch(/Unsubscribe/);
+        });
 
         if (button) {
             fireEvent.click(button);
         }
 
         // Submit first modal
-        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
-        if (submitButton) {
-            fireEvent.click(submitButton);
-        }
+        await waitFor(() => {
+            const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+            if (submitButton) {
+                fireEvent.click(submitButton);
+            }
+        });
 
         // Second modal should be opened
         expect(screen.queryByText('Hide-my-email aliases')).toBeNull();
@@ -264,19 +276,23 @@ describe('Unsubscribe banner', () => {
             },
         });
 
-        const button = screen.getByTestId('unsubscribe-banner');
-
-        expect(button.textContent).toMatch(/Unsubscribe/);
+        let button;
+        await waitFor(() => {
+            button = screen.getByTestId('unsubscribe-banner');
+            expect(button.textContent).toMatch(/Unsubscribe/);
+        });
 
         if (button) {
             fireEvent.click(button);
         }
 
         // Submit first modal
-        const submitButton = screen.getByTestId('unsubscribe-banner:submit');
-        if (submitButton) {
-            fireEvent.click(submitButton);
-        }
+        await waitFor(() => {
+            const submitButton = screen.getByTestId('unsubscribe-banner:submit');
+            if (submitButton) {
+                fireEvent.click(submitButton);
+            }
+        });
 
         // Second modal should not be opened
         expect(screen.queryByText('with hide-my-email aliases')).toBeNull();
