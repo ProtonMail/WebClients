@@ -12,6 +12,10 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
 import { reconcileFilename } from '@proton/pass/lib/file-attachments/helpers';
+import type { fileUpdateMetadata } from '@proton/pass/store/actions';
+import type { RequestFlowAsyncResult } from '@proton/pass/store/request/types';
+import type { Maybe } from '@proton/pass/types';
+import { not } from '@proton/pass/utils/fp/predicates';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
@@ -29,7 +33,7 @@ export type FileOrDescriptor = {
 type Props = {
     file: FileOrDescriptor;
     onDelete?: () => void;
-    onRename?: (fileName: string) => void;
+    onRename?: (fileName: string) => Promise<Maybe<RequestFlowAsyncResult<typeof fileUpdateMetadata>>>;
     onCancel?: () => void;
     onDownload?: () => void;
     onRestore?: () => void;
@@ -48,73 +52,79 @@ export const FileAttachment: FC<Props> = ({
     onRestore,
 }) => {
     const inputRef = useRef<HTMLInputElement>(null);
-    const fileRenameModal = useAsyncModalHandles<string, unknown>({ getInitialModalState: () => ({}) });
-    const [renamedFile, setRenamedFile] = useState(file.name);
-    const [fileName, extension] = useMemo(() => splitExtension(renamedFile), [renamedFile]);
+    const [filename, setFilename] = useState(file.name);
+    const [base, extension] = useMemo(() => splitExtension(filename), [filename]);
+
     const fileAttachmentsDisabled = useMatchUser({ paid: false, planDisplayName: ['Pass Essentials'] });
     const online = useConnectivity();
 
-    const noActions = [onDelete, onDownload, onRename, onRestore].every((action) => action === undefined);
+    const fileRename = useAsyncModalHandles<string, unknown>({ getInitialModalState: () => ({}) });
+
+    const noActions = [onDelete, onDownload, onRename, onRestore].every(not(Boolean));
     const actionsDisabled = disabled || !online || noActions;
-    const canDownload = !loading && !fileRenameModal.state.open && online;
-    const canRename = onRename && !loading && !fileAttachmentsDisabled && !fileRenameModal.state.open && online;
+    const canDownload = !loading && !fileRename.state.open && online;
+    const canRename = onRename && !loading && !fileAttachmentsDisabled && !fileRename.state.open && online;
 
     const enableRenaming = () =>
-        fileRenameModal.handler({
-            onSubmit: (changedFileName) => {
+        fileRename.handler({
+            onSubmit: async (changedFileName) => {
                 if (!onRename) return;
                 const conciliatedFileName = reconcileFilename(changedFileName, file.name);
-                setRenamedFile(conciliatedFileName);
-                onRename(conciliatedFileName);
+                setFilename(conciliatedFileName);
+                const res = await onRename(conciliatedFileName);
+                if (res?.type !== 'success') setFilename(file.name);
             },
-            onAbort: () => setRenamedFile(file.name),
+            onAbort: () => setFilename(file.name),
         });
 
     useEffect(() => {
-        if (fileRenameModal.state.open) {
+        if (fileRename.state.open) {
             inputRef.current?.focus();
-            inputRef.current?.setSelectionRange(0, fileName.length);
+            inputRef.current?.setSelectionRange(0, base.length);
         }
-    }, [fileRenameModal.state.open]);
+    }, [fileRename.state.open]);
 
     return (
         <div className="flex justify-space-between items-center p-4 pt-0 gap-4">
             <ClickableDiv
-                className={clsx('shrink-0', canDownload && 'cursor-pointer')}
+                className={clsx('shrink-0 hover:control', canDownload ? 'cursor-pointer' : 'pointer-events-none')}
                 onClick={canDownload ? onDownload : noop}
+                onDoubleClick={canDownload ? onDownload : noop}
             >
-                {({ hovering }) =>
-                    hovering ? (
-                        <Icon name="arrow-down" alt={c('Action').t`Download file`} className="m-auto" />
-                    ) : (
-                        <FileAttachmentIcon mimeType={file?.mimeType ?? file?.type ?? ''} />
-                    )
-                }
+                <Icon name="arrow-down" alt={c('Action').t`Download file`} className="hover:show m-auto" />
+                <FileAttachmentIcon mimeType={file?.mimeType ?? file?.type ?? ''} className="hover:hide" />
             </ClickableDiv>
-            <ClickableDiv className="flex-1 flex-column text-left" onDoubleClick={canRename ? enableRenaming : noop}>
-                <InputFieldTwo
-                    ref={inputRef}
-                    inputClassName="p-0 rounded-none"
-                    value={fileRenameModal.state.open ? renamedFile : fileName}
-                    onChange={({ target: { value } }) => setRenamedFile(value)}
-                    onBlur={() => fileRenameModal.resolver(renamedFile)}
-                    onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
-                        if (e.key === 'Enter') {
-                            e.preventDefault();
-                            fileRenameModal.resolver(renamedFile);
-                        }
-                        if (e.key === 'Escape') {
-                            e.preventDefault();
-                            fileRenameModal.abort();
-                        }
-                    }}
-                    unstyled
-                    dense
-                    autoFocus
-                    readOnly={!fileRenameModal.state.open}
-                />
-                <div className="text-sm color-weak">{`${extension.toUpperCase()} - ${humanSize({ bytes: file.size })}`}</div>
-            </ClickableDiv>
+            <div className="flex-1 flex-column text-left">
+                <ClickableDiv
+                    className={clsx(canDownload && 'cursor-pointer')}
+                    onDoubleClick={canRename ? enableRenaming : noop}
+                >
+                    <InputFieldTwo
+                        ref={inputRef}
+                        inputClassName="p-0 rounded-none"
+                        value={fileRename.state.open ? filename : base}
+                        onChange={({ target: { value } }) => setFilename(value)}
+                        onBlur={() => fileRename.resolver(filename)}
+                        onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
+                            if (e.key === 'Enter') {
+                                e.preventDefault();
+                                fileRename.resolver(filename);
+                            }
+                            if (e.key === 'Escape') {
+                                e.preventDefault();
+                                fileRename.abort();
+                            }
+                        }}
+                        unstyled
+                        dense
+                        readOnly={!fileRename.state.open}
+                    />
+                </ClickableDiv>
+                <div className="text-sm color-weak">
+                    {`${extension.toUpperCase()} - ${humanSize({ bytes: file.size })}`}
+                </div>
+            </div>
+
             <div className="shrink-0">
                 {loading ? (
                     <div className="flex items-center gap-1">

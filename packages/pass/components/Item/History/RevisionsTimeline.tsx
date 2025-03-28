@@ -64,7 +64,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                               key="reset-button"
                               className="text-sm"
                               pill
-                              shape="solid"
+                              shape="outline"
                               color="danger"
                               onClick={() => reset.prompt(true)}
                           >
