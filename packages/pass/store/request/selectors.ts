@@ -17,3 +17,9 @@ export const selectRequestInFlightData = <D>(namespaceOrId: string) =>
         if (request?.status === 'start') return request?.data ?? null;
         return null;
     });
+
+export const selectRequestProgress = (namespaceOrId: string) =>
+    createSelector(selectRequest(namespaceOrId), (request) => {
+        if (request?.status === 'start') return request.progress;
+        return 0;
+    });
