@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -63,7 +63,8 @@ const RsvpButtons = ({
 const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled, view }: Props) => {
     const [displayNoteOverlay, setDisplayNoteOverlay] = useState(false);
     const activeBreakpoint = useActiveBreakpoint();
-    const isDrawerOrResponsive = getIsCalendarAppInDrawer(view) || activeBreakpoint.viewportWidth['<=medium'];
+    const bottomRef = useRef<HTMLDivElement>(null);
+    const isDrawerOrResponsiveView = getIsCalendarAppInDrawer(view) || activeBreakpoint.viewportWidth['<=medium'];
     const isSearchView = view === VIEWS.SEARCH;
 
     const [model, setModel] = useState<PartstatData>({
@@ -156,12 +157,28 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     // Rely on userComment instead of model.Comment to avoid line jump
     const canReplyWithNote = !userComment && !isSearchView;
 
+    const scrollToBottom = () => {
+        if (bottomRef.current) {
+            bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const handleNoteButtonClick = () => {
+        setDisplayNoteOverlay(true);
+        // On events with long descriptions submit buttons are hidden
+        // when user clicks on reply with a note.
+        // Fixed by trigerring scroll to bottom of the view
+        if (isDrawerOrResponsiveView) {
+            setTimeout(scrollToBottom, 100);
+        }
+    };
+
     return (
         <>
             {
                 // We display it all the time when we're not in drawer to avoid line jump when open/close note overlay
                 // If in drawer app and notes are opened we hide it to not duplicate content
-                (!isDrawerOrResponsive || (isDrawerOrResponsive && !displayNoteOverlay)) && (
+                (!isDrawerOrResponsiveView || (isDrawerOrResponsiveView && !displayNoteOverlay)) && (
                     <>
                         <RsvpButtons
                             handleResponse={handleResponse}
@@ -174,16 +191,15 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
 
                         {canReplyWithNote && (
                             <RsvpSpotlight>
-                                <Button
-                                    className={clsx(
-                                        'flex flex-auto justify-end text-sm color-weak',
-                                        isDrawerOrResponsive && 'mt-2'
-                                    )}
-                                    shape="underline"
-                                    onClick={() => setDisplayNoteOverlay(true)}
-                                >
-                                    {c('Action').t`Reply with a note`}
-                                </Button>
+                                <div className={clsx(isDrawerOrResponsiveView ? 'text-left' : 'text-right')}>
+                                    <Button
+                                        className={clsx('text-sm color-weak', isDrawerOrResponsiveView && 'mt-2')}
+                                        shape="underline"
+                                        onClick={handleNoteButtonClick}
+                                    >
+                                        {c('Action').t`Reply with a note`}
+                                    </Button>
+                                </div>
                             </RsvpSpotlight>
                         )}
 
@@ -207,9 +223,10 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
 
             {displayNoteOverlay && (
                 <div
+                    ref={bottomRef}
                     className={clsx(
                         'bg-norm',
-                        !isDrawerOrResponsive && 'py-4 absolute border-top event-popover-rsvp-section'
+                        !isDrawerOrResponsiveView && 'py-4 absolute border-top event-popover-rsvp-section'
                     )}
                 >
                     <RsvpButtons
@@ -219,6 +236,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         attendeeStatus={model.Status}
                     />
                     <InputFieldTwo
+                        autoFocus
                         className={clsx('mt-4 resize-none')}
                         assistContainerClassName="m-0"
                         id="rsvp-modal"
