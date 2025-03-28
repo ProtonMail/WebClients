@@ -284,9 +284,8 @@ export async function requestItemsForShareId(
 export const importItemsBatch = async (options: {
     shareId: string;
     importIntents: ItemImportIntent[];
-    onSkippedItem?: (skipped: ItemImportIntent) => void;
-}): Promise<ItemRevisionContentsResponse[]> => {
-    const { shareId, importIntents, onSkippedItem } = options;
+}): Promise<ItemRevision[]> => {
+    const { shareId, importIntents } = options;
     const data: ImportItemBatchRequest = {
         Items: (
             await Promise.all(
@@ -303,7 +302,6 @@ export const importItemsBatch = async (options: {
                         };
                     } catch (e) {
                         logger.info(`[Import] could not import "${item.metadata.name}"`);
-                        onSkippedItem?.(importIntent);
                         return;
                     }
                 })
@@ -323,7 +321,7 @@ export const importItemsBatch = async (options: {
         throw new Error(`Error while batch importing data`);
     }
 
-    return result.Revisions.RevisionsData;
+    return Promise.all(result.Revisions.RevisionsData.map((revision) => parseItemRevision(shareId, revision)));
 };
 
 /** Update the item monitoring flag */
