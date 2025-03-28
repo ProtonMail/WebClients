@@ -23,7 +23,7 @@ import { useCalendarERRTetric } from './metrics/useCalendarERRTMetric';
 
 interface Props {
     actions: PartstatActions;
-    originalPatstat?: ICAL_ATTENDEE_STATUS;
+    originalPartstat?: ICAL_ATTENDEE_STATUS;
     partstat?: ICAL_ATTENDEE_STATUS;
     disabled?: boolean;
     className?: string;
@@ -37,7 +37,7 @@ enum ATTENDEE_RESPONE_TYPE {
 
 const CalendarInviteButtons = ({
     actions,
-    originalPatstat,
+    originalPartstat,
     partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
     disabled,
     className = '',
@@ -132,7 +132,10 @@ const CalendarInviteButtons = ({
     const { text } = list.find((ans) => ans.isSelected) || list[0];
     const restList = list.filter((ans) => !ans.isSelected);
 
-    if (!originalPatstat || originalPatstat == ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
+    if (
+        originalPartstat == ICAL_ATTENDEE_STATUS.NEEDS_ACTION ||
+        (!originalPartstat && partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
+    ) {
         return (
             <ButtonGroup className={className} color="weak">
                 <Button

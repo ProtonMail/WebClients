@@ -433,15 +433,15 @@ const EventPopover = ({
                 </PopoverFooter>
             )}
             {canReplyToEvent && rsvpCommentEnabled && (
-                <PopoverFooter className="shrink-0 relative" key={targetEvent.uniqueId}>
+                <div className="relative" key={targetEvent.uniqueId}>
                     <RsvpSection
                         handleChangePartstat={handleChangePartStat}
                         userPartstat={userPartstat}
                         userComment={userComment}
                         disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
-                        isSearchView={isSearchView}
+                        view={view}
                     />
-                </PopoverFooter>
+                </div>
             )}
         </PopoverContainer>
     );
