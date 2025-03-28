@@ -21,7 +21,7 @@ type RequestFlowSaga<T extends RequestFlow<any, any, any>, P extends any[] = []>
 
 export class RequestCancelledError extends Error {}
 
-function* cancelRequest(requestId: string) {
+export function* cancelRequest(requestId: string) {
     yield take(matchCancel(requestId));
     throw new RequestCancelledError();
 }
