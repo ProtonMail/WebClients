@@ -573,10 +573,12 @@ const getEmailBodyTexts = (
     oldVevent?: VcalVeventComponent,
     dateFormatOptions?: Options
 ) => {
-    const { summary, location, description } = vevent;
+    const { summary, location, description, comment } = vevent;
     const eventTitle = getDisplayTitle(summary?.value);
     const eventLocation = location?.value;
     const eventDescription = description?.value;
+    // Access the first comment's value if it exists
+    const eventComment = comment && comment.length > 0 ? comment[0].value : undefined;
 
     const whenText = getWhenText(vevent, dateFormatOptions);
     const locationText = eventLocation
@@ -587,16 +589,32 @@ ${eventLocation}`
         ? c('Email body for description (description part)').t`DESCRIPTION:
 ${eventDescription}`
         : '';
+    const commentText = eventComment
+        ? c('Email body for comment (comment part)').t`NOTE:
+${eventComment}`
+        : '';
     const locationAndDescriptionText =
         locationText && descriptionText
             ? `${locationText}
 
 ${descriptionText}`
             : `${locationText || descriptionText}`;
-    const eventDetailsText = locationAndDescriptionText
+
+    // Add the comment to the details if it exists
+    const detailsWithComment = commentText
+        ? `${
+              locationAndDescriptionText
+                  ? `${locationAndDescriptionText}
+
+${commentText}`
+                  : commentText
+          }`
+        : locationAndDescriptionText;
+
+    const eventDetailsText = detailsWithComment
         ? `${whenText}
 
-${locationAndDescriptionText}`
+${detailsWithComment}`
         : `${whenText}`;
 
     const titleText = `TITLE:
@@ -641,37 +659,42 @@ export const generateEmailBody = ({
     );
     const hasUpdatedText = updateEventDetailsText && updateEventDetailsText !== '';
 
+    // Get comment directly from vevent to append to the email body
+    const comment = vevent.comment;
+    const commentText =
+        comment && comment.length > 0 ? `\n\n${c('Email body for invitation').t`Note:`}\n${comment[0].value}` : '';
+
     if (method === ICAL_METHOD.REQUEST) {
         if (getHasRecurrenceId(vevent)) {
             return hasUpdatedText
                 ? c('Email body for invitation').t`This event occurrence was updated. Here's what changed:
 
-${updateEventDetailsText}`
-                : c('Email body for invitation').t`This event occurrence was updated.`;
+${updateEventDetailsText}${commentText}`
+                : c('Email body for invitation').t`This event occurrence was updated.${commentText}`;
         }
         if (recurringType === RECURRING_TYPES.ALL) {
             return hasUpdatedText
                 ? c('Email body for invitation').t`All events in this series were updated. Here's what changed:
 
-${updateEventDetailsText}`
-                : c('Email body for invitation').t`All events in this series were updated.`;
+${updateEventDetailsText}${commentText}`
+                : c('Email body for invitation').t`All events in this series were updated.${commentText}`;
         }
         if (isCreateEvent) {
             return c('Email body for invitation').t`You are invited to ${eventTitle}.
 
-${eventDetailsText}`;
+${eventDetailsText}${commentText}`;
         }
         return hasUpdatedText
             ? c('Email body for invitation').t`This event was updated. Here's what changed:
 
-${updateEventDetailsText}`
-            : c('Email body for invitation').t`This event was updated.`;
+${updateEventDetailsText}${commentText}`
+            : c('Email body for invitation').t`This event was updated.${commentText}`;
     }
     if (method === ICAL_METHOD.CANCEL) {
         if (getHasRecurrenceId(vevent)) {
-            return c('Email body for invitation').t`This event occurrence was canceled.`;
+            return c('Email body for invitation').t`This event occurrence was canceled.${commentText}`;
         }
-        return c('Email body for invitation').t`${eventTitle} was canceled.`;
+        return c('Email body for invitation').t`${eventTitle} was canceled.${commentText}`;
     }
     if (method === ICAL_METHOD.REPLY) {
         if (!partstat || !emailAddress) {
@@ -679,15 +702,15 @@ ${updateEventDetailsText}`
         }
         if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} accepted your invitation to ${eventTitle}`;
+                .t`${emailAddress} accepted your invitation to ${eventTitle}${commentText}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} tentatively accepted your invitation to ${eventTitle}`;
+                .t`${emailAddress} tentatively accepted your invitation to ${eventTitle}${commentText}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} declined your invitation to ${eventTitle}`;
+                .t`${emailAddress} declined your invitation to ${eventTitle}${commentText}`;
         }
         throw new Error('Unanswered partstat');
     }
