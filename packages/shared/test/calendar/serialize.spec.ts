@@ -150,6 +150,7 @@ const transformToExternal = (
             Notifications: data.Notifications,
             FullDay: +isAllDay,
             CalendarID: 'calendarID',
+            SharedEventID: 'eventID',
             ID: 'eventID',
             Color: null,
         },
