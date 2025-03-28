@@ -631,6 +631,7 @@ export enum MAIL_UPSELL_PATHS {
     ONE_DOLLAR_LAST_REMINDER = 'one-dollar-last-reminder',
     // Monthly subscriber upsell
     PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY = 'plus_monthly-subscriber-nudge-variant-money',
+    BUNDLE_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY = 'bundle_monthly-subscriber-nudge-variant-money',
 }
 
 export enum MAIL_UPSELL_BANNER_LINK_ID_REF_PATH {
@@ -664,6 +665,8 @@ export enum DRIVE_UPSELL_PATHS {
     ONE_DOLLAR_INITIAL_REMINDER = 'one-dollar-initial-reminder',
     ONE_DOLLAR_SECOND_REMINDER = 'one-dollar-second-reminder',
     ONE_DOLLAR_LAST_REMINDER = 'one-dollar-last-reminder',
+    // Monthly subscriber upsell
+    PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY = 'plus_monthly-subscriber-nudge-variant-money',
 }
 
 export enum SHARED_UPSELL_PATHS {
