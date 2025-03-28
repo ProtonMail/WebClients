@@ -39,7 +39,7 @@ export const useFileUpload = () => {
         }
     }, []);
 
-    const start = useCallback(async (file: File, uploadID: string): Promise<Maybe<FileID>> => {
+    const start = useCallback(async (file: File, uploadID: string): Promise<FileID> => {
         let fileID: Maybe<string>;
 
         try {
