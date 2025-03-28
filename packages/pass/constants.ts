@@ -123,5 +123,9 @@ export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 export const PASS_DEFAULT_THEME = PassThemeOption.PassDark;
 
 export const FILE_UNIQUE_ID_LENGTH = 16;
-export const FILE_CHUNK_SIZE = 5 * 1024 * 1024; // 5MB
+export const FILE_CHUNK_SIZE = 4 * 1024 * 1024; // 5MB
 export const FILE_MIME_TYPE_DETECTION_CHUNK_SIZE = 1.5 * 1024 * 1024; // 1.5MB
+
+/** 1.5 minute - matching drive */
+export const FILE_UPLOAD_TIMEOUT = 90_000;
+export const FILE_DOWNLOAD_TIMEOUT = 90_000;
