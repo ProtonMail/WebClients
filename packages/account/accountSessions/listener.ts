@@ -27,7 +27,7 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                 return;
             }
 
-            if (!listenerApi.extra.unleashClient.isEnabled('AccountSessions')) {
+            if (!listenerApi.extra.unleashClient?.isEnabled('AccountSessions')) {
                 listenerApi.dispatch(accountSessionsSlice.actions.disabled());
                 return;
             }
@@ -86,7 +86,7 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                 return;
             }
 
-            if (!listenerApi.extra.unleashClient.isEnabled('AccountSessions')) {
+            if (!listenerApi.extra.unleashClient?.isEnabled('AccountSessions')) {
                 return;
             }
 

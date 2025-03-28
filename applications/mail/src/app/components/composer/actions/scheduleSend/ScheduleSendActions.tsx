@@ -39,6 +39,7 @@ interface Props {
 }
 
 type Actions = {
+    id: string;
     title: string | JSX.Element;
     testId: string;
     value: string;
@@ -72,6 +73,7 @@ const ScheduleSendActions = ({
 
         const list: Actions = [
             {
+                id: 'tomorrow',
                 title: isNight
                     ? // translator: Full sentence is: 'In the morning | February 14th at 8:00'
                       c('Action').t`In the morning`
@@ -85,6 +87,7 @@ const ScheduleSendActions = ({
             ...(!isEqual(tomorrow8am, monday8am)
                 ? [
                       {
+                          id: 'next-monday',
                           title: c('Action').t`Monday`,
                           testId: 'composer:schedule-send:next-monday',
                           value: formatDate(monday8am, dateLocale),
@@ -93,6 +96,7 @@ const ScheduleSendActions = ({
                   ]
                 : []),
             {
+                id: 'custom',
                 title: (
                     <div className="flex justify-start items-center">
                         <span className="pr-2">{c('Action').t`Custom`}</span>
@@ -114,6 +118,7 @@ const ScheduleSendActions = ({
 
         if (isScheduledAfterLimit) {
             list.unshift({
+                id: 'as-scheduled',
                 title: c('Action').t`As Scheduled`,
                 testId: 'composer:schedule-send-as-scheduled',
                 value: formatDate(scheduledAt, dateLocale),
@@ -135,7 +140,7 @@ const ScheduleSendActions = ({
             <DropdownMenu>
                 {actions.map((action) => (
                     <DropdownMenuButton
-                        key={action.testId}
+                        key={action.id}
                         className="flex items-center justify-space-between flex-nowrap gap-4"
                         data-testid={action.testId}
                         onClick={action.onSubmit}

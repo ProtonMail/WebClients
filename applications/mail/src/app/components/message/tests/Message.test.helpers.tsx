@@ -92,12 +92,10 @@ export const setup = async (
             ref.current?.expand();
         });
 
-        await act(async () => {
-            // Wait for message initialization to be finished before continuing
-            await waitFor(() => {
-                const message = renderResult.store.getState().messages[props.message.ID];
-                expect(message?.messageDocument?.initialized).toBe(true);
-            });
+        // Wait for message initialization to be finished before continuing
+        await waitFor(() => {
+            const message = renderResult.store.getState().messages[props.message.ID];
+            expect(message?.messageDocument?.initialized).toBe(true);
         });
     };
 
