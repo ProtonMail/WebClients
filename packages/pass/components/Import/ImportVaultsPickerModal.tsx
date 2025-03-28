@@ -150,10 +150,10 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
                 </FormikProvider>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button type="reset" onClick={onClose} color="danger">
+                <Button type="reset" shape="outline" onClick={onClose} color="danger" pill>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button type="submit" color="norm" form={FORM_ID}>{c('Action').t`Confirm`}</Button>
+                <Button type="submit" color="norm" form={FORM_ID} pill>{c('Action').t`Confirm`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
