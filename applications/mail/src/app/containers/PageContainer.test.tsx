@@ -46,18 +46,29 @@ describe('PageContainer', () => {
 
         minimalCache();
 
-        const renderResult = await render(<Component {...props} />, {
+        const result = await render(<Component {...props} />, {
             preloadedState: {
                 mailSettings: getModelState({
                     Shortcuts: SHORTCUTS.ENABLED,
                     PageSize: MAIL_PAGE_SIZE.FIFTY,
                 } as MailSettings),
-                userSettings: getModelState({ UsedClientFlags: 0 } as UserSettings),
+                userSettings: getModelState({
+                    UsedClientFlags: 0,
+                    Email: {
+                        Reset: 0,
+                    },
+                    Phone: {
+                        Reset: 0,
+                    },
+                    '2FA': {
+                        Enabled: 0,
+                    },
+                } as UserSettings),
             },
         });
-        const { container } = renderResult;
+        const { container } = result;
         return {
-            ...renderResult,
+            ...result,
             questionMark: () => fireEvent.keyDown(container, { key: '?' }),
             tab: () => fireEvent.keyDown(container, { key: 'Tab' }),
             slash: () => fireEvent.keyDown(container, { key: '/' }),
