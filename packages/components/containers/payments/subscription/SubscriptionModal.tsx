@@ -10,9 +10,10 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { usePaidUsersNudgeTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PaidUsersNudge/hooks/usePaidUsersNudgeTelemetry';
 import { useDrivePostSignupOneDollarTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollarTelemetry';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
-import { COUPON_CODES, fixPlanIDs, fixPlanName } from '@proton/payments';
+import { COUPON_CODES, PLANS, fixPlanIDs, fixPlanName } from '@proton/payments';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -59,6 +60,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
         const depsLoading = loadingSubscription || loadingPlans || loadingOrganization || statusLoading;
 
         const { sendReportDrivePostSignup } = useDrivePostSignupOneDollarTelemetry();
+        const { sendDrivePurchaseReport } = usePaidUsersNudgeTelemetry({ plan: PLANS.DRIVE });
 
         useImperativeHandle(ref, () => {
             return {
@@ -118,6 +120,8 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                     event: TelemetryMailDrivePostSignupOneDollarEvents.userSubscribed,
                     dimensions: {},
                 });
+            } else if (rest?.coupon === COUPON_CODES.ANNUALOFFER25) {
+                sendDrivePurchaseReport();
             }
         };
 

@@ -1,6 +1,6 @@
 import { addDays, startOfDay, subDays, subHours } from 'date-fns';
 
-import { HIDE_OFFER, OfferDuration, ReminderDates } from '../components/interface';
+import { HIDE_OFFER, OfferDuration, ReminderDates } from '../helpers/interface';
 import {
     getWindowEndDate,
     isInWindow,
@@ -32,6 +32,8 @@ const roundingTest = [
     [{ value: 4899, expected: 4900 }],
     [{ value: 4888, expected: 4900 }],
     [{ value: 4323, expected: 4400 }],
+    [{ value: 15588, expected: 15600 }],
+    [{ value: 155890, expected: 155900 }],
 ];
 
 const reminderShowData = [

@@ -1,11 +1,12 @@
 import { type ComponentType } from 'react';
 
+import { PLANS } from '@proton/payments/index';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 
 import { MailSubscriptionReminder } from './MailSubscriptionReminder/MailSubscriptionReminder';
 import { useMailSubscriptionReminder } from './MailSubscriptionReminder/useMailSubscriptionReminder';
-import { MailPaidUsersNudge } from './PaidUsersNudge/MailPaidUsersNudge/MailPaidUsersNudge';
-import { useMailPaidUsersNudge } from './PaidUsersNudge/MailPaidUsersNudge/useMailPaidUsersNudge';
+import { MonthylPaidUsersNudge } from './PaidUsersNudge/MonthylPaidUsersNudge';
+import { usePaidUsersNudge } from './PaidUsersNudge/hooks/usePaidUsersNudge';
 import { DrivePostSignupOneDollar } from './PostSignupOneDollar/DrivePostSignupOneDollar/DrivePostSignupOneDollar';
 import { useDrivePostSignupOneDollar } from './PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollar';
 import { MailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOneDollar/MailPostSignupOneDollar';
@@ -24,8 +25,12 @@ interface Offer extends Pick<OfferHookReturnValue, 'isLoading' | 'isEligible'> {
 export const usePostSignupOffers = ({ app }: Props) => {
     const mailPostSignup = useMailPostSignupOneDollar();
     const drivePostSignup = useDrivePostSignupOneDollar();
+
     const mailSubscription = useMailSubscriptionReminder();
-    const mailPaidUser = useMailPaidUsersNudge();
+
+    const mailPaidUser = usePaidUsersNudge({ plan: PLANS.MAIL });
+    const drivePaidUser = usePaidUsersNudge({ plan: PLANS.DRIVE });
+    const bundlePaidUser = usePaidUsersNudge({ plan: PLANS.BUNDLE });
 
     // Define offers in order of priority
     const offers: Offer[] = [
@@ -48,7 +53,20 @@ export const usePostSignupOffers = ({ app }: Props) => {
         {
             isEligible: mailPaidUser.isEligible,
             isLoading: mailPaidUser.isLoading,
-            Component: MailPaidUsersNudge,
+            Component: MonthylPaidUsersNudge,
+            props: { plan: PLANS.MAIL },
+        },
+        {
+            isEligible: drivePaidUser.isEligible,
+            isLoading: drivePaidUser.isLoading,
+            Component: MonthylPaidUsersNudge,
+            props: { plan: PLANS.DRIVE },
+        },
+        {
+            isEligible: bundlePaidUser.isEligible,
+            isLoading: bundlePaidUser.isLoading,
+            Component: MonthylPaidUsersNudge,
+            props: { plan: PLANS.BUNDLE },
         },
     ];
 
