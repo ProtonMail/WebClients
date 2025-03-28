@@ -58,10 +58,10 @@ export const ConfirmationModal = ({
                 {children}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button type="reset" onClick={onClose}>
+                <Button type="reset" onClick={onClose} pill>
                     {cancelText}
                 </Button>
-                <ErrorButton type="button" disabled={disabled} onClick={handleSubmit}>
+                <ErrorButton type="button" disabled={disabled} onClick={handleSubmit} pill>
                     {submitText}
                 </ErrorButton>
             </ModalTwoFooter>
