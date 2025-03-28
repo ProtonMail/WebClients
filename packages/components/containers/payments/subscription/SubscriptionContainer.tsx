@@ -373,8 +373,6 @@ const SubscriptionContainer = ({
             })
     );
 
-    const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
-
     const application = useMemo(() => {
         if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
             return APPS.PROTONVPN_SETTINGS;
@@ -1226,7 +1224,7 @@ const SubscriptionContainer = ({
             )}
             {model.step === SUBSCRIPTION_STEPS.THANKS && (
                 <SubscriptionThanks
-                    showDownloads={!isVpnB2bPlan}
+                    planIDs={model.planIDs}
                     onClose={() => {
                         onSubscribed?.();
                     }}
