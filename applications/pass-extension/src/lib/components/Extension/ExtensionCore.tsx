@@ -4,6 +4,8 @@ import { type FC, useCallback, useRef } from 'react';
 import * as config from 'proton-pass-extension/app/config';
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
+import { useExpandPopup } from 'proton-pass-extension/lib/hooks/useExpandPopup';
+import { useExpanded } from 'proton-pass-extension/lib/hooks/useExpanded';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
@@ -200,6 +202,8 @@ export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ child
             getCurrentTabUrl={() => currentTabUrl.current}
             setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
             wasm={wasm}
+            expandExtensionPopup={useExpandPopup}
+            isExtensionPopupExpanded={useExpanded}
         >
             <AuthStoreProvider store={authStore}>
                 <UnlockProvider unlock={unlock}>{children}</UnlockProvider>
