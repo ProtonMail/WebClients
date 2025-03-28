@@ -63,6 +63,11 @@ global.MutationObserver = class {
     observe() {} // eslint-disable-line
 };
 
+// Mock window.getComputedStyle to prevent "Not implemented" errors in jsdom, as it's required by useActiveBreakpoint to determine the active breakpoint.
+global.window.getComputedStyle = jest.fn(() => ({
+    getPropertyValue: jest.fn(() => ''),
+}));
+
 // Mock backdrop container because it's always rendered, and it's rendered in a portal which causes issues with the hook renderer
 jest.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
     __esModule: true,
