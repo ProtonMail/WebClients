@@ -54,7 +54,8 @@ export const FileAttachment: FC<Props> = ({
     const fileAttachmentsDisabled = useMatchUser({ paid: false, planDisplayName: ['Pass Essentials'] });
     const online = useConnectivity();
 
-    const actionsDisabled = disabled || !online;
+    const noActions = [onDelete, onDownload, onRename, onRestore].every((action) => action === undefined);
+    const actionsDisabled = disabled || !online || noActions;
     const canDownload = !loading && !fileRenameModal.state.open && online;
     const canRename = onRename && !loading && !fileAttachmentsDisabled && !fileRenameModal.state.open && online;
 
