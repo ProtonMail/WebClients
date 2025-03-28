@@ -62,13 +62,11 @@ const Participant = ({
                     <div className="max-w-full text-ellipsis participant-extra-text text-sm m-0">{email}</div>
                 ) : null}
                 {!!extraText && (
-                    <div className="max-w-full text-ellipsis participant-extra-text color-weak text-sm m-0">
+                    <div className="max-w-full text-ellipsis participant-extra-text color-weak text-sm m-0 mb-1">
                         {extraText}
                     </div>
                 )}
-                <div className="mt-1 max-w-full participant-extra-text color-weak text-break text-sm m-0">
-                    {comment}
-                </div>
+                <div className="max-w-full participant-extra-text color-weak text-break text-sm m-0">{comment}</div>
             </div>
             <Button
                 shape="ghost"
