@@ -89,7 +89,7 @@ const getTagLabelWithIcon = (
         case AlbumTag.MyAlbums:
             return {
                 label: c('Label').t`My Albums`,
-                iconName: 'heart',
+                iconName: 'user',
             };
         case AlbumTag.Shared:
             return {
