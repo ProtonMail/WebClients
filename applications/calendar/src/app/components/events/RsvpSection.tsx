@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CalendarInviteButtons } from '@proton/components';
+import { CalendarInviteButtons, useActiveBreakpoint } from '@proton/components';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaWithCounter from '@proton/components/components/v2/input/TextAreaWithCounter';
 import {
@@ -62,8 +62,10 @@ const RsvpButtons = ({
 
 const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled, view }: Props) => {
     const [displayNoteOverlay, setDisplayNoteOverlay] = useState(false);
-    const isDrawerApp = getIsCalendarAppInDrawer(view);
+    const activeBreakpoint = useActiveBreakpoint();
+    const isDrawerOrResponsive = getIsCalendarAppInDrawer(view) || activeBreakpoint.viewportWidth['<=medium'];
     const isSearchView = view === VIEWS.SEARCH;
+
     const [model, setModel] = useState<PartstatData>({
         Status: userPartstat,
         Comment: userComment ?? undefined,
@@ -159,7 +161,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             {
                 // We display it all the time when we're not in drawer to avoid line jump when open/close note overlay
                 // If in drawer app and notes are opened we hide it to not duplicate content
-                (!isDrawerApp || (isDrawerApp && !displayNoteOverlay)) && (
+                (!isDrawerOrResponsive || (isDrawerOrResponsive && !displayNoteOverlay)) && (
                     <>
                         <RsvpButtons
                             handleResponse={handleResponse}
@@ -175,7 +177,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                                 <Button
                                     className={clsx(
                                         'flex flex-auto justify-end text-sm color-weak',
-                                        isDrawerApp && 'mt-2'
+                                        isDrawerOrResponsive && 'mt-2'
                                     )}
                                     shape="underline"
                                     onClick={() => setDisplayNoteOverlay(true)}
@@ -204,7 +206,12 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             }
 
             {displayNoteOverlay && (
-                <div className={clsx('bg-norm', !isDrawerApp && 'py-4 absolute border-top event-popover-rsvp-section')}>
+                <div
+                    className={clsx(
+                        'bg-norm',
+                        !isDrawerOrResponsive && 'py-4 absolute border-top event-popover-rsvp-section'
+                    )}
+                >
                     <RsvpButtons
                         handleResponse={handleResponse}
                         userPartstat={userPartstat}
