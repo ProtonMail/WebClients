@@ -57,6 +57,7 @@ export type ApiOptions<U extends string = string, M extends string = string> = {
     sideEffects?: boolean;
     signal?: AbortSignal;
     silence?: boolean | (string | number)[];
+    timeout?: number;
     unauthenticated?: boolean;
     url?: U;
 };

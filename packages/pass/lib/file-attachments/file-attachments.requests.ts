@@ -1,3 +1,4 @@
+import { FILE_DOWNLOAD_TIMEOUT, FILE_UPLOAD_TIMEOUT } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
@@ -38,6 +39,7 @@ export const uploadFileChunk = async (fileId: string, chunkIndex: number, chunkD
         data: { ChunkIndex: chunkIndex, ChunkData: chunkData },
         output: 'raw',
         method: 'post',
+        timeout: FILE_UPLOAD_TIMEOUT,
     });
 
 export const downloadFileChunk = async (dto: FileDownloadChunk): Promise<ReadableStream> =>
@@ -46,6 +48,7 @@ export const downloadFileChunk = async (dto: FileDownloadChunk): Promise<Readabl
         method: 'get',
         output: 'stream',
         headers: { 'Content-Type': 'application/octet-stream' },
+        timeout: FILE_DOWNLOAD_TIMEOUT,
     });
 
 export const downloadPublicFileChunk = async (dto: FileDownloadPublicChunk): Promise<ReadableStream> =>
