@@ -37,7 +37,13 @@ export const FileAttachmentsFieldEdit: FC<Props> = (props) => {
             filesCount={Math.max(0, filesCount - form.values.files.toRemove.length)}
             onDeleteAllFiles={handleDeleteAllFiles}
         >
-            <FileAttachmentsList files={files} itemId={itemId} shareId={shareId} onDelete={handleFileDelete} />
+            <FileAttachmentsList
+                canRename
+                files={files}
+                itemId={itemId}
+                onDelete={handleFileDelete}
+                shareId={shareId}
+            />
         </FileAttachmentsField>
     );
 };

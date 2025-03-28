@@ -1,5 +1,5 @@
 import { type FC, type PropsWithChildren, useEffect, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { type FieldProps } from 'formik';
 import { c } from 'ttag';
@@ -12,6 +12,7 @@ import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
+import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
 import {
@@ -40,7 +41,8 @@ type FileUploadDescriptor = Omit<BaseFileDescriptor, 'fileID'> & { uploadID: str
 
 export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
     WithPaidUser(({ children, form, filesCount = 0, onDeleteAllFiles }) => {
-        const dispatch = useDispatch();
+        const dispatch = useAsyncRequestDispatch();
+
         const fileUpload = useFileUpload();
         const usedStorage = useSelector(selectUserStorageUsed);
         const maxStorage = useSelector(selectUserStorageQuota);
@@ -132,12 +134,21 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
             if (fileID) return form.setFieldValue('files.toAdd', form.values.files.toAdd.filter(not(eq(fileID))));
         };
 
-        const onRename = (uploadID: string, fileName: string) => {
+        const onRename = async (uploadID: string, fileName: string) => {
             const file = filesMap.get(uploadID);
-            if (!file || file.name === fileName) return;
+            if (!file || file.name === fileName || !file.fileID) return;
 
-            setFiles(updateMap((next) => next.set(uploadID, { ...file, name: fileName })));
-            if (file.fileID) dispatch(fileUpdateMetadata.intent({ ...file, fileID: file.fileID, name: fileName }));
+            const res = await dispatch(fileUpdateMetadata, {
+                ...file,
+                fileID: file.fileID,
+                name: fileName,
+            });
+
+            if (res.type === 'success') {
+                setFiles(updateMap((next) => next.set(uploadID, { ...file, name: fileName })));
+            }
+
+            return res;
         };
 
         const handleDeleteAll = () => {
