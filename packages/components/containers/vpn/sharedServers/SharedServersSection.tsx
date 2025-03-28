@@ -310,47 +310,60 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {customPolicies.map((customPolicy) => (
-                                <TableRow key={customPolicy.LocationFilterPolicyID}>
-                                    <TableCell>{customPolicy.Name}</TableCell>
-                                    <TableCell>{customPolicy.Groups.map((g) => g.Name).join(', ')}</TableCell>
-                                    <TableCell>
-                                        {customPolicy.Locations.length} {c('Info').t`countries enabled`}
-                                    </TableCell>
-                                    <TableCell>
-                                        {customPolicy.localStatus === 'created' && c('Info').t`Created (not published)`}
-                                        {customPolicy.localStatus === 'edited' && c('Info').t`Edited (not published)`}
-                                        {customPolicy.localStatus === 'deleted' && c('Info').t`Deleted (not published)`}
-                                        {!customPolicy.localStatus || customPolicy.localStatus === 'unchanged'
-                                            ? c('Info').t`Unchanged`
-                                            : null}
-                                    </TableCell>
-                                    <TableCell>
-                                        {customPolicy.localStatus !== 'deleted' && (
-                                            <>
-                                                <Button
-                                                    size="small"
-                                                    color="norm"
-                                                    onClick={() => handleEditPolicy(customPolicy)}
-                                                    className="mr-2"
-                                                >
-                                                    {c('Action').t`Edit`}
-                                                </Button>
-                                                <Button
-                                                    size="small"
-                                                    color="norm"
-                                                    onClick={() => handleDeletePolicy(customPolicy)}
-                                                >
-                                                    {c('Action').t`Delete`}
-                                                </Button>
-                                            </>
-                                        )}
-                                        {customPolicy.localStatus === 'deleted' && (
-                                            <span className="opacity-50">{c('Info').t`Pending removal`}</span>
-                                        )}
-                                    </TableCell>
-                                </TableRow>
-                            ))}
+                            {customPolicies.map((customPolicy) => {
+                                const locationsCount = customPolicy.Locations.length;
+                                const locationText =
+                                    locationsCount === 0
+                                        ? c('Info').t`No countries enabled`
+                                        : c('Info').ngettext(
+                                              msgid`${locationsCount} country enabled`,
+                                              `${locationsCount} countries enabled`,
+                                              locationsCount
+                                          );
+
+                                return (
+                                    <TableRow key={customPolicy.LocationFilterPolicyID}>
+                                        <TableCell>{customPolicy.Name}</TableCell>
+                                        <TableCell>{customPolicy.Groups.map((g) => g.Name).join(', ')}</TableCell>
+                                        <TableCell>{locationText}</TableCell>
+                                        <TableCell>
+                                            {customPolicy.localStatus === 'created' &&
+                                                c('Info').t`Created (not published)`}
+                                            {customPolicy.localStatus === 'edited' &&
+                                                c('Info').t`Edited (not published)`}
+                                            {customPolicy.localStatus === 'deleted' &&
+                                                c('Info').t`Deleted (not published)`}
+                                            {!customPolicy.localStatus || customPolicy.localStatus === 'unchanged'
+                                                ? c('Info').t`Unchanged`
+                                                : null}
+                                        </TableCell>
+                                        <TableCell>
+                                            {customPolicy.localStatus !== 'deleted' && (
+                                                <>
+                                                    <Button
+                                                        size="small"
+                                                        color="norm"
+                                                        onClick={() => handleEditPolicy(customPolicy)}
+                                                        className="mr-2"
+                                                    >
+                                                        {c('Action').t`Edit`}
+                                                    </Button>
+                                                    <Button
+                                                        size="small"
+                                                        color="norm"
+                                                        onClick={() => handleDeletePolicy(customPolicy)}
+                                                    >
+                                                        {c('Action').t`Delete`}
+                                                    </Button>
+                                                </>
+                                            )}
+                                            {customPolicy.localStatus === 'deleted' && (
+                                                <span className="opacity-50">{c('Info').t`Pending removal`}</span>
+                                            )}
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
                         </TableBody>
                     </Table>
                 </>
