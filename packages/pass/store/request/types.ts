@@ -69,13 +69,16 @@ export type ActionRequestEntry<T extends Action> =
 /** Controls the return value when a request succeeds:
  * - If request config has an explicit `data` field, returns that value
  * - Otherwise defaults to returning the action's `payload` */
-export type RequestSuccessDTO<T extends WithRequest<any, any, any>> =
-    T extends WithRequest<PayloadAction<unknown>, 'success', infer U>
-        ? IsNever<U> extends true
-            ? T['payload']
-            : U
-        : never;
+type RequestResultDTO<T extends WithRequest<any, any, any>, Type extends RequestType> =
+    T extends WithRequest<PayloadAction<unknown>, Type, infer U> ? (IsNever<U> extends true ? T['payload'] : U) : never;
+
+export type RequestSuccessDTO<T extends WithRequest<any, any, any>> = RequestResultDTO<T, 'success'>;
+export type RequestFailureDTO<T extends WithRequest<any, any, any>> = RequestResultDTO<T, 'failure'>;
 
 export type RequestAsyncResult<TSuccess extends PayloadAction = any, TFailure extends PayloadAction = any> =
     | { type: 'success'; data: RequestSuccessDTO<TSuccess> }
-    | { type: 'failure'; error: 'error' extends keyof TFailure ? TFailure['error'] : undefined };
+    | {
+          type: 'failure';
+          error: 'error' extends keyof TFailure ? TFailure['error'] : undefined;
+          data: RequestFailureDTO<TFailure>;
+      };
