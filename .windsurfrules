@@ -1,0 +1,20 @@
+# TypeScript & React Coding Standards
+
+- Use **functional components** with hooks instead of class components
+- Name files based on their primary export (e.g., `Button.tsx` for `Button` component)
+- Use TypeScript interfaces for props: `interface ButtonProps { ... }`
+- Follow ESLint and Prettier configurations
+- Prefer explicit return types on functions
+- Use CSS modules or styled-components for styling
+- Write unit tests for components using React Testing Library
+- Group related state with custom hooks
+- Avoid inline anonymous functions in JSX when possible
+
+# Project specific guidelines
+- Whenever asked to fix the tests in Mail app, run the command `yarn workspace proton-mail test:ci`. By default testing means mail app.
+- Prefer using classes instead of adding CSS in this project. There are CSS files like "_responsive-classes.scss" which have defined CSS rules for such classes. e.g. Use the class "absolute" instead of adding a CSS style "position: absolute" and so on.
+- When trying to start a server, first check if the port 8082 is already occupied, if it is then the server is already running in another terminal so we don't need to restart a server.
+- Use MCP to fetch logs and screenshots, use Puppeteer MCP to get hold of the existing browser window when you want to navigate or reload the page. The URL to open is https://mail.proton.local in the browser.
+- Whenever testing the Calendar app, run the command `yarn workspace proton-calendar test:ci`.
+- Whenever you want to run the mail application, use the command `yarn start-all --applications "proton-mail" --api proton.black`, but no need to run after every fix, always check if a server is already running on port 8081, 8082 or 8083, if it is then no need to run another server.
+- When writing CSS, avoid using data attributes to style elements.
