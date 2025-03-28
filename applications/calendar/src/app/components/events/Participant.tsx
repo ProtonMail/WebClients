@@ -66,7 +66,9 @@ const Participant = ({
                         {extraText}
                     </div>
                 )}
-                <div className="max-w-full participant-extra-text color-weak text-break text-sm m-0">{comment}</div>
+                <div className="mt-1 max-w-full participant-extra-text color-weak text-break text-sm m-0">
+                    {comment}
+                </div>
             </div>
             <Button
                 shape="ghost"
