@@ -11,8 +11,8 @@ import type {
     FileRestoreDTO,
     FilesMetadataEditSuccess,
     FilesRequestSuccess,
-    ItemLinkFiles,
-    ItemRevision,
+    ItemLinkFilesIntent,
+    ItemLinkFilesSuccess,
 } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -40,7 +40,7 @@ export const fileUpdateMetadata = requestActionsFactory<FileMetadataDTO, FilesMe
     key: prop('fileID'),
 });
 
-export const fileLinkPending = requestActionsFactory<ItemLinkFiles, ItemRevision>('file::link::pending')({
+export const fileLinkPending = requestActionsFactory<ItemLinkFilesIntent, ItemLinkFilesSuccess>('file::link::pending')({
     key: getItemKey,
 });
 
