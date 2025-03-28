@@ -214,11 +214,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             return;
         }
         await onSelectCover(previewItem.linkId);
-        // Optimistic: change the cover manually in memory
-        if (album) {
-            const cover = await getLink(new AbortController().signal, previewItem.rootShareId, previewItem.linkId);
-            album.cover = cover;
-        }
     }, [createNotification, onSelectCover, getLink, previewItem, album]);
 
     const onSelectCoverToolbar = useCallback(async () => {
