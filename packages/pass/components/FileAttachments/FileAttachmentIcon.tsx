@@ -2,10 +2,11 @@ import { type FC, useMemo } from 'react';
 
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import clsx from '@proton/utils/clsx';
 
-type Props = { mimeType: string };
+type Props = { mimeType: string; className?: string };
 
-export const FileAttachmentIcon: FC<Props> = ({ mimeType }) => {
+export const FileAttachmentIcon: FC<Props> = ({ mimeType, className }) => {
     const icon = useMemo((): IconName => {
         try {
             switch (PassCoreUI.file_group_from_mime_type(mimeType)) {
@@ -33,5 +34,5 @@ export const FileAttachmentIcon: FC<Props> = ({ mimeType }) => {
         }
     }, [mimeType]);
 
-    return <Icon name={icon} className="m-auto" />;
+    return <Icon name={icon} className={clsx('m-auto', className)} />;
 };
