@@ -1,4 +1,4 @@
-import { differenceInDays, format, fromUnixTime } from 'date-fns';
+import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -8,24 +8,26 @@ import { useAutomaticCurrency } from '@proton/components/payments/client-extensi
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { type PriceData } from './interface';
-import { getWindowEndDate } from './paidUserNudgeHelper';
+import { type PriceData } from '../../helpers/interface';
+import { getSubscriptionAge } from '../../helpers/paidUserNudgeHelper';
+import { getWindowEndDate } from '../../helpers/paidUserNudgeHelper';
+import { NudgeOfferPromoChild } from './NudgeOfferPromoChild';
 
 interface Props {
     imgSrc: string;
     onClick: () => void;
     onNeverShow: () => void;
-    prices?: PriceData;
+    prices: PriceData;
+    planCopy: string;
 }
 
-export const NudgeOfferContent = ({ imgSrc, onClick, onNeverShow, prices }: Props) => {
+export const NudgeOfferContent = ({ imgSrc, onClick, onNeverShow, prices, planCopy }: Props) => {
     const [currency] = useAutomaticCurrency();
     const [subscription] = useSubscription();
 
     const isOneDollarUser = subscription?.Amount === 100;
-    const subscriptionAge = differenceInDays(Date.now(), fromUnixTime(subscription?.PeriodStart ?? Date.now() / 1000));
 
-    const offerEndDate = getWindowEndDate(subscriptionAge);
+    const offerEndDate = getWindowEndDate(getSubscriptionAge(subscription));
     const formattedDate = offerEndDate ? format(offerEndDate, 'PPP', { locale: dateLocale }) : undefined;
 
     return (
@@ -43,15 +45,15 @@ export const NudgeOfferContent = ({ imgSrc, onClick, onNeverShow, prices }: Prop
             </div>
             <div className="rounded-lg border p-3 mb-4">
                 {prices?.discountedPrice ? (
-                    <div className={clsx('flex justify-space-between', prices.yearlyPrice ? 'mb-2' : '')}>
-                        <p className="m-0">{c('Offer').t`Mail Plus for 12 months`}</p>
+                    <div className={clsx('flex justify-space-between flex-nowrap', prices.yearlyPrice ? 'mb-2' : '')}>
+                        <p className="m-0">{planCopy}</p>
                         <Price className="text-tabular-nums" currency={currency}>
-                            {prices?.discountedPrice}
+                            {prices.discountedPrice}
                         </Price>
                     </div>
                 ) : null}
                 {prices?.yearlyPrice ? (
-                    <div className="flex justify-space-between color-weak">
+                    <div className="flex justify-space-between color-weak flex-nowrap">
                         <p className="m-0">{c('Offer').t`You currently pay`}</p>
                         <Price className="text-tabular-nums" currency={currency}>
                             {prices.yearlyPrice}
@@ -61,13 +63,7 @@ export const NudgeOfferContent = ({ imgSrc, onClick, onNeverShow, prices }: Prop
             </div>
             <div className="text-center">
                 <Button color="norm" className="mb-4" onClick={onClick} fullWidth>
-                    {prices?.savedAmount ? (
-                        <Price currency={currency} prefix={c('Offer').t`Save`} isDisplayedInSentence>
-                            {prices.savedAmount}
-                        </Price>
-                    ) : (
-                        c('Offer').t`Get the deal`
-                    )}
+                    <NudgeOfferPromoChild prices={prices} />
                 </Button>
                 <div className="flex gap-1 text-sm flex-column">
                     {offerEndDate ? (
