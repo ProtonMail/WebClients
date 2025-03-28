@@ -1,3 +1,7 @@
+import type { PLANS } from '@proton/payments/index';
+
+export type SupportedPlans = PLANS.MAIL | PLANS.DRIVE | PLANS.BUNDLE;
+
 export const OfferDuration = 7 as const;
 export const ReminderMaxHours = 24 as const;
 export const HIDE_OFFER = -1 as const;
@@ -15,5 +19,4 @@ export interface PriceData {
     yearlyPrice: number;
     discountedPrice: number;
     savedAmount: number;
-    savedPercentage: number;
 }

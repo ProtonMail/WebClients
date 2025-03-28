@@ -1,24 +1,27 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { PLANS } from '@proton/payments/index';
 import { domIsBusy } from '@proton/shared/lib/busy';
-import { APPS } from '@proton/shared/lib/constants';
 
 import { type OfferHookReturnValue } from '../../common/interface';
-import { shouldOpenReminder } from '../components/paidUserNudgeHelper';
-import { useMonthlyUpsellEligibility } from '../helpers/useMonthlyUpsellEligibility';
+import type { SupportedPlans } from '../helpers/interface';
+import { shouldOpenReminder } from '../helpers/paidUserNudgeHelper';
+import { paidConfig } from '../montlyPaidUserNudgeConfig';
+import { useMonthlyUpsellEligibility } from './useMonthlyUpsellEligibility';
 
-export const useMailPaidUsersNudge = (): OfferHookReturnValue => {
+interface Props {
+    plan: SupportedPlans;
+}
+
+export const usePaidUsersNudge = ({ plan }: Props): OfferHookReturnValue => {
     const [subscription, subscriptionLoading] = useSubscription();
 
-    const { feature } = useFeature<number>(FeatureCode.MailPaidUserNudgeTimestamp);
+    const { feature } = useFeature<number>(paidConfig[plan].offerTimestampFlag);
 
     const isEligible = useMonthlyUpsellEligibility({
-        eligiblePlan: PLANS.MAIL,
-        allowedApps: new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]),
-        offerFlag: 'SubscriberNudgeMailMonthly',
-        offerTimestampFlag: FeatureCode.MailPaidUserNudgeTimestamp,
+        eligiblePlan: paidConfig[plan].currentPlan,
+        allowedApps: paidConfig[plan].allowedApps,
+        offerFlag: paidConfig[plan].offerFlag,
+        offerTimestampFlag: paidConfig[plan].offerTimestampFlag,
     });
 
     if (!subscription) {
