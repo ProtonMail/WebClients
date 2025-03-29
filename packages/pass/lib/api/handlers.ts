@@ -44,7 +44,7 @@ export const withApiHandlers = ({ state, call, getAuth, refreshHandler }: ApiHan
             try {
                 /** Check if the request was queued and possibly aborted :
                  * throw an error early to prevent triggering the API call */
-                if (options.signal?.aborted) throw new Error('Aborted');
+                if (options.signal?.aborted) throw new DOMException('Aborted', 'AbortError');
 
                 const config = (() => {
                     /** If the request was passed a custom UID - use it

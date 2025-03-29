@@ -32,7 +32,7 @@ export const createPendingFile = async (metadata: string, totalChunks: number): 
         })
     ).File!.FileID;
 
-export const uploadFileChunk = async (fileId: string, chunkIndex: number, chunkData: Blob) =>
+export const uploadFileChunk = async (fileId: string, chunkIndex: number, chunkData: Blob, signal: AbortSignal) =>
     api({
         url: `pass/v1/file/${fileId}/chunk`,
         input: 'form',
@@ -40,23 +40,29 @@ export const uploadFileChunk = async (fileId: string, chunkIndex: number, chunkD
         output: 'raw',
         method: 'post',
         timeout: FILE_UPLOAD_TIMEOUT,
+        signal,
     });
 
-export const downloadFileChunk = async (dto: FileDownloadChunk): Promise<ReadableStream> =>
+export const downloadFileChunk = async (dto: FileDownloadChunk, signal: AbortSignal): Promise<ReadableStream> =>
     api({
         url: `pass/v1/share/${dto.shareId}/item/${dto.itemId}/file/${dto.fileID}/chunk/${dto.chunkID}`,
         method: 'get',
         output: 'stream',
         headers: { 'Content-Type': 'application/octet-stream' },
         timeout: FILE_DOWNLOAD_TIMEOUT,
+        signal,
     });
 
-export const downloadPublicFileChunk = async (dto: FileDownloadPublicChunk): Promise<ReadableStream> =>
+export const downloadPublicFileChunk = async (
+    dto: FileDownloadPublicChunk,
+    signal: AbortSignal
+): Promise<ReadableStream> =>
     api({
         url: `pass/v1/public_link/files/${dto.filesToken}/${dto.fileID}/${dto.chunkID}`,
         method: 'get',
         output: 'stream',
         headers: { 'Content-Type': 'application/octet-stream' },
+        signal,
     });
 
 export const updatePendingFileMetadata = async (metadata: string, fileID: FileID): Promise<string> =>

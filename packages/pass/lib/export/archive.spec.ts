@@ -51,6 +51,7 @@ describe('Archive generation', () => {
 
     describe('`makeArchive`', () => {
         test('should correctly write unencrypted archive', async () => {
+            const { signal } = new AbortController();
             const exportData = getMockExport();
 
             const dataStream = createExportDataStream(() => exportData, {
@@ -59,7 +60,7 @@ describe('Archive generation', () => {
             });
 
             const archive = createArchive([dataStream]);
-            const zipBuffer = await consumeStream(archive.getReader());
+            const zipBuffer = await consumeStream(archive, signal);
             const file = new File([zipBuffer], 'archive.zip');
 
             const zipReader = await readZIP(file);
@@ -75,6 +76,7 @@ describe('Archive generation', () => {
         });
 
         test('should correctly write encrypted archive', async () => {
+            const { signal } = new AbortController();
             const exportData = getMockExport();
 
             const dataStream = createExportDataStream(() => exportData, {
@@ -84,7 +86,7 @@ describe('Archive generation', () => {
             });
 
             const archive = createArchive([dataStream]);
-            const zipBuffer = await consumeStream(archive.getReader());
+            const zipBuffer = await consumeStream(archive, signal);
             const file = new File([zipBuffer], 'archive.zip');
 
             const zipReader = await readZIP(file);
