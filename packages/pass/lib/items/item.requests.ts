@@ -221,9 +221,9 @@ export const restoreItems = async (
         )
     ).flatMap(({ Items }) => Items);
 
-export const deleteItemRevisions = async ({ shareId, itemId }: SelectedItem) => {
+export const deleteItemRevisions = async ({ shareId, itemId }: SelectedItem): Promise<ItemRevision> => {
     const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}/revisions`, method: 'delete' });
-    return { shareId, itemId, item: await parseItemRevision(shareId, Item) };
+    return parseItemRevision(shareId, Item);
 };
 
 export const deleteItems = async (
