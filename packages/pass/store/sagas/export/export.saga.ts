@@ -25,6 +25,7 @@ import type {
     MaybeNull,
     SelectedItem,
 } from '@proton/pass/types';
+import { logger } from '@proton/pass/utils/logger';
 
 type ExportFileProgress = { totalItems: number; itemFilesCount: number } & SelectedItem;
 
@@ -110,7 +111,7 @@ export const exportUserData = createRequestSaga({
                 case ExportFormat.CSV: {
                     state.filename = getArchiveName('csv');
                     const blob: Blob = yield createPassExportCSV(exportThunk({}));
-                    yield fileStorage.writeFile(state.filename, blob);
+                    yield fileStorage.writeFile(state.filename, blob, ctrl.signal);
                     break;
                 }
                 case ExportFormat.ZIP:
@@ -136,10 +137,12 @@ export const exportUserData = createRequestSaga({
             progressTask.cancel();
 
             return state.filename;
+        } catch (err) {
+            logger.debug('[Export] export failure', err);
+            throw err;
         } finally {
             if (yield cancelled()) {
-                ctrl.abort();
-                if (!state.stream?.locked) void state.stream?.cancel();
+                ctrl.abort('Export cancelled');
                 if (state.filename) void fileStorage.deleteFile(state.filename);
             }
         }

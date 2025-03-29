@@ -49,22 +49,29 @@ const initiateUpload = createRequestSaga({
 
 const uploadChunk = createRequestSaga({
     actions: fileUploadChunk,
-    call: async (payload) => {
-        const chunk = await (async () => {
-            switch (payload.type) {
-                case 'blob':
-                    return payload.blob;
-                case 'fs':
-                    return fileStorage.readFile(payload.ref);
-            }
-        })();
+    call: function* (payload) {
+        const ctrl = new AbortController();
+        const { signal } = ctrl;
 
-        if (!chunk) throw new Error('Missing file blob');
+        try {
+            const chunk: Blob = yield (async () => {
+                switch (payload.type) {
+                    case 'blob':
+                        return payload.blob;
+                    case 'fs':
+                        return fileStorage.readFile(payload.ref);
+                }
+            })();
 
-        const encryptedChunk = await PassCrypto.createFileChunk({ chunk, fileID: payload.fileID });
-        await uploadFileChunk(payload.fileID, payload.index, encryptedChunk);
+            if (!chunk) throw new Error('Missing file blob');
 
-        return true;
+            const encryptedChunk: Blob = yield PassCrypto.createFileChunk({ chunk, fileID: payload.fileID });
+            yield uploadFileChunk(payload.fileID, payload.index, encryptedChunk, signal);
+
+            return true;
+        } finally {
+            if (yield cancelled()) ctrl.abort('Operation cancelled');
+        }
     },
 });
 
@@ -72,17 +79,18 @@ const downloadFile = createRequestSaga({
     actions: fileDownload,
     call: function* (file) {
         const ctrl = new AbortController();
+        const { signal } = ctrl;
 
         try {
             const { chunkIDs, fileID } = file;
-            const getChunkStream = (chunkID: string) => downloadFileChunk({ ...file, chunkID });
-            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, ctrl.signal);
+            const getChunkStream = (chunkID: string) => downloadFileChunk({ ...file, chunkID }, signal);
+            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, signal);
             const fileRef = uniqueId(32);
-            yield fileStorage.writeFile(fileRef, downloadStream);
+            yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
             return fileRef;
         } finally {
-            if (yield cancelled()) ctrl.abort();
+            if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
     },
 });
@@ -91,17 +99,18 @@ const downloadPublicChunk = createRequestSaga({
     actions: fileDownloadPublic,
     call: function* (file) {
         const ctrl = new AbortController();
+        const { signal } = ctrl;
 
         try {
             const { chunkIDs, fileID } = file;
-            const getChunkStream = (chunkID: string) => downloadPublicFileChunk({ ...file, chunkID });
-            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, ctrl.signal);
+            const getChunkStream = (chunkID: string) => downloadPublicFileChunk({ ...file, chunkID }, signal);
+            const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, signal);
             const fileRef = uniqueId(32);
-            yield fileStorage.writeFile(fileRef, downloadStream);
+            yield fileStorage.writeFile(fileRef, downloadStream, signal);
 
             return fileRef;
         } finally {
-            if (yield cancelled()) ctrl.abort();
+            if (yield cancelled()) ctrl.abort('Operation cancelled');
         }
     },
 });

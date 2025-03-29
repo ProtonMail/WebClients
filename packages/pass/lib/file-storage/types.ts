@@ -11,7 +11,7 @@ export interface FileStorage {
     gc: Maybe<FileStorageGarbageCollector>;
 
     readFile: (filename: string) => Promise<Maybe<File>>;
-    writeFile: (filename: string, file: FileBuffer | ReadableStream<FileBuffer>, signal?: AbortSignal) => Promise<void>;
+    writeFile: (filename: string, file: FileBuffer | ReadableStream<FileBuffer>, signal: AbortSignal) => Promise<void>;
     deleteFile: (filename: string) => Promise<void>;
     clearAll: () => Promise<void>;
 
