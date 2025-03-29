@@ -20,39 +20,32 @@ export class FileStorageOPFS implements FileStorage {
             const fileHandle = await root.getFileHandle(filename);
             return await fileHandle.getFile();
         } catch (err) {
-            logger.warn('[fs::OPFS] Could not resolve file', err);
+            logger.warn('[fs::OPFS] Could not resolve file.', err);
             return;
         }
     }
 
-    async writeFile(filename: string, data: FileBuffer | ReadableStream<FileBuffer>, signal?: AbortSignal) {
+    async writeFile(filename: string, data: FileBuffer | ReadableStream<FileBuffer>, signal: AbortSignal) {
         const root = await navigator.storage.getDirectory();
+        const fileHandle = await root.getFileHandle(filename, { create: true });
+        const writable = await fileHandle.createWritable();
 
         try {
-            const fileHandle = await root.getFileHandle(filename, { create: true });
-            const writable = await fileHandle.createWritable();
-
-            if (signal) {
-                if (signal.aborted) await writable.abort();
-                signal.addEventListener('abort', () => writable.abort());
-            }
+            const onAbort = () => writable.abort();
+            if (signal.aborted) await onAbort();
 
             if (data instanceof ReadableStream) {
-                const reader = data.getReader();
-                while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) break;
-                    await writable.write(value);
-                    this.gc?.push(filename);
-                }
-            } else await writable.write(data);
-
-            await writable.close();
+                const stream = this.gc ? data.pipeThrough(this.gc.stream(filename)) : data;
+                await stream.pipeTo(writable, { signal });
+            } else {
+                await writable.write(data);
+                this.gc?.push(filename);
+                await writable.close();
+            }
 
             logger.debug(`[fs::OPFS] Saved ${logId(filename)}`);
-            this.gc?.push(filename);
         } catch (err) {
-            logger.warn('[fs::OPFS] Could not write file', err);
+            logger.warn('[fs::OPFS] Could not write file.', err);
             await root.removeEntry(filename).catch(noop);
             this.gc?.pop(filename);
 
