@@ -118,30 +118,32 @@ export const seq = async <T, R>(items: T[], job: (item: T) => Promise<R>): Promi
     return results;
 };
 
-export const abortable = <T>(job: () => Promise<T>, signal: AbortSignal, onAbort?: () => void) => {
-    if (signal.aborted) {
-        onAbort?.();
-        throw new DOMException('Aborted', 'AbortError');
-    }
+export const abortable =
+    (signal: AbortSignal) =>
+    <T>(job: () => Promise<T>, onAbort?: () => void) => {
+        if (signal.aborted) {
+            onAbort?.();
+            throw new DOMException('Aborted', 'AbortError');
+        }
 
-    return Promise.race([
-        job(),
-        new Promise((_, reject) =>
-            signal.addEventListener(
-                'abort',
-                () => {
-                    onAbort?.();
-                    reject(new DOMException('Aborted', 'AbortError'));
-                },
-                { once: true }
-            )
-        ),
-    ]) as Promise<T>;
-};
+        return Promise.race([
+            job(),
+            new Promise((_, reject) =>
+                signal.addEventListener(
+                    'abort',
+                    () => {
+                        reject(new DOMException('Aborted', 'AbortError'));
+                        onAbort?.();
+                    },
+                    { once: true }
+                )
+            ),
+        ]) as Promise<T>;
+    };
 
 export const abortableSequence = async (operations: AsyncCallback[], signal: AbortSignal) => {
     async function* sequence() {
-        for (const operation of operations) yield await abortable(operation, signal);
+        for (const operation of operations) yield await abortable(signal)(operation);
     }
 
     const generator = sequence();

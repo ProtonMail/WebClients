@@ -32,6 +32,8 @@ export const useFileDownload = () => {
 
             try {
                 const ctrl = new AbortController();
+                const { signal } = ctrl;
+
                 ctrls.current.set(file.fileID, ctrl);
                 setPending(updateSet((next) => next.add(fileID)));
 
@@ -40,18 +42,20 @@ export const useFileDownload = () => {
                 const res = await (() => {
                     if ('filesToken' in options) {
                         const dto = { fileID, chunkIDs, ...options };
-                        const job = () => asyncDispatch(fileDownloadPublic, dto);
-                        const onAbort = () => dispatch(requestCancel(fileDownloadPublic.requestID(dto)));
-                        return abortable(job, ctrl.signal, onAbort);
+                        return abortable(signal)(
+                            () => asyncDispatch(fileDownloadPublic, dto),
+                            () => dispatch(requestCancel(fileDownloadPublic.requestID(dto)))
+                        );
                     }
 
                     const dto = { fileID, chunkIDs, ...options };
-                    const job = () => asyncDispatch(fileDownload, dto);
-                    const onAbort = () => dispatch(requestCancel(fileDownload.requestID(dto)));
-                    return abortable(job, ctrl.signal, onAbort);
+                    return abortable(signal)(
+                        () => asyncDispatch(fileDownload, dto),
+                        () => dispatch(requestCancel(fileDownload.requestID(dto)))
+                    );
                 })();
 
-                if (res.type === 'success') return await abortable(() => fileStorage.readFile(res.data), ctrl.signal);
+                if (res.type === 'success') return await fileStorage.readFile(res.data);
             } catch {
             } finally {
                 ctrls.current.delete(fileID);
