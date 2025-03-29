@@ -20,7 +20,6 @@ import { selectRequest } from '@proton/pass/store/selectors';
 import type { MaybePromise } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { throwError } from '@proton/pass/utils/fp/throw';
-import { logger } from '@proton/pass/utils/logger';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {
@@ -118,7 +117,6 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         return c('Warning').t`An error occurred while exporting your data`;
                     })();
 
-                    logger.warn(`[Settings::Exporter] export failed`, error);
                     if (notification) createNotification({ type: 'error', text: notification });
                 } finally {
                     setLoading(false);
