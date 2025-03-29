@@ -1,7 +1,9 @@
 import type { Reducer } from 'redux';
 
-import { fileRestore, fileUpdateMetadata, filesResolve } from '@proton/pass/store/actions';
+import { fileRestore, fileUpdateMetadata, filesResolve, itemDeleteRevisions } from '@proton/pass/store/actions';
 import type { FileDescriptor, ItemId, Maybe, ShareId } from '@proton/pass/types';
+import { objectDelete } from '@proton/pass/utils/object/delete';
+import { objectMap } from '@proton/pass/utils/object/map';
 import { merge } from '@proton/pass/utils/object/merge';
 
 export type FilesState = Record<ShareId, Maybe<Record<ItemId, FileDescriptor[]>>>;
@@ -31,6 +33,13 @@ const reducer: Reducer<FilesState> = (state = {}, action) => {
             const update = existing?.map((file) => (file.fileID === newFile.fileID ? newFile : file));
             return update ? merge(state, { [shareId]: { [itemId]: update } }) : state;
         }
+    }
+
+    if (itemDeleteRevisions.success.match(action)) {
+        return objectMap(state, (shareId, itemFiles) => {
+            if (action.payload.shareId !== shareId) return itemFiles;
+            else if (itemFiles) return objectDelete(itemFiles, action.payload.itemId);
+        });
     }
 
     return state;
