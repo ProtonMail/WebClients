@@ -83,7 +83,6 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                         })
                         .catch((error) => {
                             setFiles(updateMap((next) => next.delete(uploadID)));
-
                             if (!isAbortError(error)) {
                                 createNotification({
                                     type: 'error',
@@ -129,12 +128,17 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
             }
         };
 
-        const onRemoveFile = async (uploadID: string, fileID?: string) => {
+        const handleRemove = async (uploadID: string, fileID?: string) => {
             setFiles(updateMap((next) => next.delete(uploadID)));
             if (fileID) return form.setFieldValue('files.toAdd', form.values.files.toAdd.filter(not(eq(fileID))));
         };
 
-        const onRename = async (uploadID: string, fileName: string) => {
+        const handleCancel = (uploadID: string) => {
+            fileUpload.cancel(uploadID);
+            setFiles(updateMap((next) => next.delete(uploadID)));
+        };
+
+        const handleRename = async (uploadID: string, fileName: string) => {
             const file = filesMap.get(uploadID);
             if (!file || file.name === fileName || !file.fileID) return;
 
@@ -181,9 +185,9 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                             <FileAttachment
                                 key={`file-${file.uploadID}`}
                                 file={file}
-                                onCancel={() => fileUpload.cancel(file.uploadID)}
-                                onDelete={() => onRemoveFile(file.uploadID, file.fileID)}
-                                onRename={(fileName) => onRename(file.uploadID, fileName)}
+                                onCancel={() => handleCancel(file.uploadID)}
+                                onDelete={() => handleRemove(file.uploadID, file.fileID)}
+                                onRename={(fileName) => handleRename(file.uploadID, fileName)}
                                 loading={!file.fileID}
                             />
                         ))}
