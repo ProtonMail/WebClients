@@ -44,7 +44,7 @@ export async function* createExportAttachmentsStream(
         for (const file of files) {
             const { fileID, chunks } = file;
             const chunkIDs = chunks.map(prop('ChunkID'));
-            const getChunkStream = (chunkID: string) => downloadFileChunk({ shareId, itemId, fileID, chunkID });
+            const getChunkStream = (chunkID: string) => downloadFileChunk({ shareId, itemId, fileID, chunkID }, signal);
             const downloadStream = createDownloadStream(fileID, chunkIDs, getChunkStream, signal);
 
             yield {
@@ -87,9 +87,11 @@ export async function* createExportDataStream(
 export const createArchive = (streams: ExportGenerator[]) => {
     return makeZip(
         (async function* () {
-            for (const stream of streams) {
-                yield* stream;
-            }
+            try {
+                for (const stream of streams) {
+                    yield* stream;
+                }
+            } catch {}
         })(),
         { buffersAreUTF8: true }
     );

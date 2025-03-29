@@ -1,7 +1,7 @@
 import type { FileStorage } from '@proton/pass/lib/file-storage/types';
 import type { AnyStorage, StorageData } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { logger } from '@proton/pass/utils/logger';
+import { logId, logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
 export class FileStorageGarbageCollector {
@@ -57,6 +57,19 @@ export class FileStorageGarbageCollector {
         await this.setLocalQueue(Array.from(pending));
     }
 
+    /** Creates a TransformStream that extends the lifetime of a file being written.
+     * Each chunk processed will reset the file's deletion timer by calling `push()`.
+     * This prevents premature deletion of files during streaming operations */
+    stream(filename: string) {
+        const gc = this;
+        return new TransformStream({
+            transform(chunk, controller) {
+                gc.push(filename);
+                controller.enqueue(chunk);
+            },
+        });
+    }
+
     push(filename: string, timeout: number = 4e4 /* 40 seconds */) {
         const pending = this.pendingDeletions.get(filename);
         if (pending) clearTimeout(pending);
@@ -70,7 +83,7 @@ export class FileStorageGarbageCollector {
 
         if (!pending) {
             void this.pushToLocalQueue(filename);
-            logger.debug(`[fs::${this.fs.type}] ${filename} queued for deletion`);
+            logger.debug(`[fs::${this.fs.type}] ${logId(filename)} queued for deletion`);
         }
     }
 
@@ -80,6 +93,7 @@ export class FileStorageGarbageCollector {
         if (pending) {
             clearTimeout(pending);
             this.pendingDeletions.delete(filename);
+
             void this.popFromLocalQueue(filename);
         }
     }
