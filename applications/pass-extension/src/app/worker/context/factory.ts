@@ -21,7 +21,7 @@ import { createStorageService } from 'proton-pass-extension/app/worker/services/
 import { createStoreService } from 'proton-pass-extension/app/worker/services/store';
 import { createTelemetryService } from 'proton-pass-extension/app/worker/services/telemetry';
 import { createVaultsService } from 'proton-pass-extension/app/worker/services/vaults';
-import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup-icon';
+import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup';
 import { EXTENSION_BUILD_VERSION } from 'proton-pass-extension/lib/utils/version';
 
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';

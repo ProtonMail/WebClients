@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
 import { MenuUser } from 'proton-pass-extension/app/popup/Views/Header/MenuUser';
 import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
-import { useExpandPopup } from 'proton-pass-extension/lib/hooks/useExpandPopup';
 import { useOpenSettingsTab } from 'proton-pass-extension/lib/hooks/useOpenSettingsTab';
 import { c } from 'ttag';
 
@@ -27,6 +26,7 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { selectLockEnabled, selectOrganizationVaultCreationDisabled } from '@proton/pass/store/selectors';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import { AppMenuButton, VaultMenuButton } from './MenuButtons';
 
@@ -39,17 +39,16 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 };
 
 export const MenuDropdown: FC = () => {
-    const { onLink } = usePassCore();
+    const { onLink, popup } = usePassCore();
     const { API_URL } = usePassConfig();
     const { lock, logout } = useExtensionClient();
-    const { interactive, expanded } = usePopupContext();
+    const { interactive } = usePopupContext();
     const vaultActions = useVaultActions();
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const canLock = useSelector(selectLockEnabled);
 
     const openSettings = useOpenSettingsTab();
-    const expandPopup = useExpandPopup();
 
     const appMenu = usePopperAnchor<HTMLButtonElement>();
     const vaultMenu = usePopperAnchor<HTMLButtonElement>();
@@ -64,18 +63,18 @@ export const MenuDropdown: FC = () => {
             () => ({
                 onAction: appMenu.close,
                 extra: {
-                    advanced: !expanded
+                    advanced: !popup?.expanded
                         ? [
                               {
                                   icon: 'arrow-within-square',
                                   label: c('Action').t`Open in a window`,
-                                  onClick: withAppMenuClose(expandPopup),
+                                  onClick: withAppMenuClose(popup?.expand ?? noop),
                               },
                           ]
                         : [],
                 },
             }),
-            [expanded, expandPopup, appMenu.close]
+            [appMenu.close]
         )
     );
 

@@ -3,7 +3,6 @@ import { type FC, createContext, useCallback, useEffect, useMemo, useState } fro
 import { useSelector, useStore } from 'react-redux';
 
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
-import { useExpanded } from 'proton-pass-extension/lib/hooks/useExpanded';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
@@ -21,7 +20,6 @@ import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 
 type Props = { ready: boolean };
 export interface PopupContextValue {
-    expanded: boolean /* is popup expanded into a separate window */;
     initialized: boolean /* retrieved popup initial state */;
     interactive: boolean /* enable UI user actions */;
 }
@@ -40,7 +38,6 @@ export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready })
     const { setFilters } = useNavigationFilters();
 
     const [initialized, setInitialized] = useState<boolean>(false);
-    const expanded = useExpanded();
     const sync = useSelector(selectRequestInFlight(syncRequest()));
     const syncing = sync || status === AppStatus.BOOTING;
     const interactive = clientReady(status) && ready && !syncing;
@@ -77,11 +74,10 @@ export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready })
 
     const ctx = useMemo<PopupContextValue>(
         () => ({
-            expanded,
             initialized /* `POPUP_INIT` response resolved */,
             interactive /* worker ready and no ongoing syncs */,
         }),
-        [expanded, interactive, initialized]
+        [interactive, initialized]
     );
 
     return <PopupContext.Provider value={ctx}>{children}</PopupContext.Provider>;
