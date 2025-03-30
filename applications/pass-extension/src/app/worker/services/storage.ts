@@ -57,6 +57,7 @@ export const createStorageService = () => {
         clear: () => sessionStorage.clear().catch(noop),
     };
 
+    /** Clear file storage on service creation */
     fileStorage.attachGarbageCollector(local);
     void fileStorage.clearAll();
 

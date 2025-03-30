@@ -4,6 +4,7 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientReady } from '@proton/pass/lib/client';
 import { createMessageBroker } from '@proton/pass/lib/extension/message/message-broker';
 import { MessageVersionMismatchError } from '@proton/pass/lib/extension/message/send-message';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { cacheRequest } from '@proton/pass/store/actions';
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -41,6 +42,10 @@ const WorkerMessageBroker = createMessageBroker({
     }),
     onDisconnect: withContext((ctx, portName) => {
         const isPopup = portName.startsWith('popup');
+        const isPage = portName.startsWith('page');
+
+        if (isPage || isPopup) void fileStorage.clearAll();
+
         const hasRegisteredLock = ctx.authStore.getLockMode() !== LockMode.NONE;
 
         /** check if the client is ready before triggering this
