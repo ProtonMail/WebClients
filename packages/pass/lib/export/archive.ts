@@ -1,4 +1,4 @@
-import { type InputWithSizeMeta, type InputWithoutMeta, makeZip } from 'client-zip';
+import type { InputWithSizeMeta, InputWithoutMeta } from 'client-zip';
 
 import { encryptPassExport } from '@proton/pass/lib/crypto/utils/export';
 import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
@@ -84,7 +84,9 @@ export async function* createExportDataStream(
 }
 
 /** `makeZip` will create an un-compressed archive */
-export const createArchive = (streams: ExportGenerator[]) => {
+export const createArchive = async (streams: ExportGenerator[]) => {
+    const { makeZip } = await import(/* webpackChunkName: "zip" */ 'client-zip');
+
     return makeZip(
         (async function* () {
             try {

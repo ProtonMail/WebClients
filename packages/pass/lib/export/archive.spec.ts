@@ -59,7 +59,7 @@ describe('Archive generation', () => {
                 files: {},
             });
 
-            const archive = createArchive([dataStream]);
+            const archive = await createArchive([dataStream]);
             const zipBuffer = await consumeStream(archive, signal);
             const file = new File([zipBuffer], 'archive.zip');
 
@@ -85,7 +85,7 @@ describe('Archive generation', () => {
                 files: {},
             });
 
-            const archive = createArchive([dataStream]);
+            const archive = await createArchive([dataStream]);
             const zipBuffer = await consumeStream(archive, signal);
             const file = new File([zipBuffer], 'archive.zip');
 

@@ -16,7 +16,7 @@ export const readCSV = async <T extends Record<string, any>>(options: {
     const throwOnEmpty = options?.throwOnEmpty ?? true;
 
     try {
-        const Papa = (await import('papaparse')).default;
+        const Papa = (await import(/* webpackChunkName: "csv.reader" */ 'papaparse')).default;
         return await new Promise<CSVReaderResult<T>>((resolve, reject) => {
             Papa.parse<T>(options.data, {
                 header: Boolean(options.headers) || options.hasHeader,

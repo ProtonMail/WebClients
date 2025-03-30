@@ -126,7 +126,7 @@ export const exportUserData = createRequestSaga({
                         })
                     );
 
-                    state.stream = createArchive(iterators);
+                    state.stream = (yield createArchive(iterators)) as ReadableStream;
                     const { filename, stream } = state;
                     yield fileStorage.writeFile(filename, stream, ctrl.signal);
                     break;
