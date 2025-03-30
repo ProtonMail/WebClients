@@ -1,6 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup-icon';
+import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 
 import { clientReady } from '@proton/pass/lib/client';

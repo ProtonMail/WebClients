@@ -23,6 +23,13 @@ import noop from '@proton/utils/noop';
 
 import { AppStateProvider } from './AppStateProvider';
 
+export interface PopupController {
+    /** Opens popup in new window */
+    expand: (subpath?: string) => void;
+    /** `true` if popup is opened in a new window */
+    expanded: boolean;
+}
+
 export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
     /** client configuration */
@@ -85,10 +92,8 @@ export type PassCoreContextValue = {
     generateBiometricsKey?: () => Promise<CryptoKey>;
     /** Checks if this is the first time Pass is being launched */
     isFirstLaunch?: () => boolean;
-    /** Only relevant for extension, open popup in new window */
-    expandExtensionPopup?: (subpath?: string) => () => void;
-    /** Only relevant for extension, true if popup is opened in a new window */
-    isExtensionPopupExpanded?: () => boolean;
+    /** Only relevant for extension */
+    popup?: PopupController;
 };
 
 export type PassCoreProviderProps = PassCoreContextValue & { wasm?: boolean };
