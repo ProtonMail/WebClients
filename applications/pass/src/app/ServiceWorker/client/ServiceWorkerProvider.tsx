@@ -33,10 +33,10 @@ export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
             /** Avoids flagging update available during a hard-refresh */
             unloading.current = true;
 
-            /** Ask service worker for pending files deletion.
-             * These operations are async and cannot be guaranteed
-             * to succeed during the `unload` event */
             if (client) {
+                /** Ask service worker for pending files deletion.
+                 * These operations are async and cannot be guaranteed
+                 * to succeed during the `unload` event */
                 const filenames = fileStorage.gc?.queued() ?? [];
                 client.send({ type: 'fs_gc', filenames });
             }
