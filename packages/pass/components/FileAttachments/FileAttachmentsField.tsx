@@ -44,7 +44,7 @@ type FileUploadDescriptor = Omit<BaseFileDescriptor, 'fileID'> & { uploadID: str
 
 export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
     WithPaidUser(({ children, form, filesCount = 0, onDeleteAllFiles }) => {
-        const { expandExtensionPopup, isExtensionPopupExpanded } = usePassCore();
+        const { popup } = usePassCore();
         const dispatch = useAsyncRequestDispatch();
 
         const fileUpload = useFileUpload();
@@ -61,9 +61,6 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
         const [loading, setLoading] = useState(false);
         const files = useMemo(() => Array.from(filesMap.values()), [filesMap]);
         const disableUploader = loading || !online;
-
-        const expandPopup = expandExtensionPopup?.(pathname);
-        const isPopupExpanded = isExtensionPopupExpanded?.();
 
         const uploadFiles = async (toUpload: File[]) => {
             const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
@@ -204,7 +201,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                             /* On Firefox extension popup, clicking a file input will open the OS file picker
                              * but will also close the extension popup. So we require the user to
                              * re-open the popup in a new window to be able to upload files */
-                            (BUILD_TARGET === 'firefox' && !isPopupExpanded ? (
+                            (BUILD_TARGET === 'firefox' && !popup?.expanded ? (
                                 <Tooltip
                                     openDelay={2000}
                                     title={c('Info')
@@ -216,7 +213,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                             disabled={disableUploader}
                                             shape="solid"
                                             color="weak"
-                                            onClick={expandPopup}
+                                            onClick={() => popup?.expand(pathname)}
                                             fullWidth
                                         >
                                             {c('Action').t`Open new window to upload files`}
@@ -239,6 +236,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                     {c('Action').t`Choose a file or drag it here`}
                                 </FileInput>
                             ))}
+
                         {!canUseStorage && (
                             <div className="m-4">
                                 <Button
