@@ -8,7 +8,7 @@ const EXPORT_AS_JSON_TYPES = ['creditCard', 'identity'];
 /** FIXME: ideally we should also support exporting
  * `extraFields` to notes when exporting to CSV */
 export const createPassExportCSV = async (payload: ExportData): Promise<Blob> => {
-    const Papa = (await import('papaparse')).default;
+    const Papa = (await import(/* webpackChunkName: "csv.reader" */ 'papaparse')).default;
 
     const items = Object.values(payload.vaults)
         .flatMap(prop('items'))
@@ -38,5 +38,5 @@ export const createPassExportCSV = async (payload: ExportData): Promise<Blob> =>
         }));
 
     const csv = Papa.unparse(items);
-    return new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    return new Blob([csv]);
 };
