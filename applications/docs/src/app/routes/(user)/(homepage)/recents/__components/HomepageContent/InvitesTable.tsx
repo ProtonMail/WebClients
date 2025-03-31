@@ -1,99 +1,127 @@
-import { Button } from '@proton/atoms/index'
+import { Avatar, Button } from '@proton/atoms'
 import { c } from 'ttag'
 import { DateFormatter } from '@proton/docs-core'
-import clsx from '@proton/utils/clsx'
-import { MimeIcon } from '@proton/components/index'
+import { Icon, Tooltip } from '@proton/components'
 import { ServerTime } from '@proton/docs-shared'
 import { useDocInvites } from '@proton/drive-store'
 import * as Table from './table'
+import type { ComponentPropsWithoutRef } from 'react'
+import { getInitials } from '@proton/shared/lib/helpers/string'
+import { ContentSheet } from './shared'
+import clsx from '@proton/utils/clsx'
+import { useHomepageView } from '../../__utils/homepage-view'
+
+const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
 
 const dateFormatter = new DateFormatter()
 
-export type InvitesTableProps = { className?: string }
+export type InvitesTableProps = ComponentPropsWithoutRef<'div'>
 
-export function InvitesTable({ className }: InvitesTableProps) {
+export function InvitesTable(props: InvitesTableProps) {
+  const { updateRecentDocuments } = useHomepageView()
   const { confirmModal, invitations, acceptInvite, rejectInvite, recentlyAcceptedInvites, openInvitedDocument } =
     useDocInvites()
 
   const allInvites = [...invitations, ...recentlyAcceptedInvites]
-  if (!allInvites.length) {
+  const pendingCount = allInvites.filter((invite) => !recentlyAcceptedInvites.includes(invite)).length
+  if (pendingCount === 0) {
     return null
   }
 
   return (
-    <div
-      data-testid="invites-table-container"
-      className={clsx(
-        'border-weak shadow-raised flex w-full flex-col overflow-auto rounded-xl border bg-gray50',
-        className,
-      )}
-    >
-      <table className="text-rg mb-0 w-full" style={{ borderSpacing: 0 }} data-testid="invites-table">
-        <thead className="sticky left-0 top-0">
-          <tr className="text-left">
-            <Table.Header data-testid="invite-column-name">{c('Info').t`Invite`}</Table.Header>
-            <Table.Header data-testid="invite-column-date">{c('Info').t`Shared on`}</Table.Header>
-            <Table.Header data-testid="invite-column-shared-by">{c('Info').t`Shared by`}</Table.Header>
-            <Table.Header data-testid="invite-column-actions">
-              <span className="px-2">{c('Info').t`Actions`}</span>
-            </Table.Header>
-          </tr>
-        </thead>
-        <tbody>
+    <ContentSheet data-testid="invites-table-container" {...props} className={clsx('overflow-auto', props.className)}>
+      <table className="mb-0 w-full table-fixed text-[14px]" data-testid="invites-table">
+        <Table.Head>
+          <Table.Header data-testid="invite-column-name">
+            <span className="flex flex-nowrap items-center gap-[.375rem]">
+              <span>{c('Info').t`Pending invitations`}</span>
+              <div className="flex h-5 w-5 items-center justify-center rounded-[.375rem] bg-[#0284C7]">
+                <span className="text-[.75rem] leading-none text-[#ffffff]">{pendingCount}</span>
+              </div>
+            </span>
+          </Table.Header>
+          <Table.Header data-testid="invite-column-date">{c('Info').t`Shared on`}</Table.Header>
+          <Table.Header data-testid="invite-column-shared-by">{c('Info').t`Shared by`}</Table.Header>
+          <Table.Header data-testid="invite-column-actions">{c('Info').t`Accept/decline`}</Table.Header>
+        </Table.Head>
+        <tbody className="divide-y divide-[--border-weak] overflow-scroll">
           {allInvites.map((invite) => {
-            const isRecentlyAccepted = recentlyAcceptedInvites.includes(invite)
+            if (recentlyAcceptedInvites.includes(invite)) {
+              return null
+            }
             return (
-              <tr key={invite.invitation.invitationId} data-testid="invite-row">
+              <Table.Row key={invite.invitation.invitationId} data-testid="invite-row">
                 <Table.DataCell>
-                  <span className="flex items-center gap-3">
-                    <MimeIcon name="proton-doc" size={5} />
-                    <span className="text-pre flex-1 text-ellipsis" data-testid="invite-document-name">
+                  <span className="flex flex-nowrap items-center gap-3">
+                    <Icon name="brand-proton-docs" size={5} className="shrink-0 text-[#34B8EE]" />
+                    <span className="text-pre text-ellipsis font-medium" data-testid="invite-document-name">
                       {invite.decryptedLinkName}
                     </span>
                   </span>
                 </Table.DataCell>
                 <Table.DataCell>
-                  <div className="text-capitalize" data-testid="invite-shared-date">
+                  <div className="capitalize" data-testid="invite-shared-date">
                     {dateFormatter.formatDate(new ServerTime(invite.invitation.createTime).date)}
                   </div>
                 </Table.DataCell>
                 <Table.DataCell>
-                  <div className="color-weak" data-testid="invite-shared-by">
-                    {invite.invitation.inviterEmail}
-                  </div>
+                  <span className="flex flex-nowrap items-center gap-2">
+                    <Avatar
+                      color="weak"
+                      className="min-w-custom max-w-custom max-h-custom bg-[#F6F4F2]"
+                      style={{
+                        '--min-w-custom': '28px',
+                        '--max-w-custom': '28px',
+                        '--max-h-custom': '28px',
+                      }}
+                    >
+                      {getInitials(invite.invitation.inviterEmail)}
+                    </Avatar>
+                    <span className="text-pre flex-1 text-ellipsis" data-testid="invite-shared-by">
+                      {invite.invitation.inviterEmail}
+                    </span>
+                  </span>
                 </Table.DataCell>
                 <Table.DataCell>
-                  <div className="flex gap-2">
-                    <Button
-                      size="small"
-                      color="norm"
-                      shape="outline"
-                      disabled={invite.isLocked}
-                      onClick={() => (isRecentlyAccepted ? openInvitedDocument(invite) : acceptInvite(invite))}
-                      data-testid={isRecentlyAccepted ? 'open-invite-button' : 'accept-invite-button'}
-                    >
-                      {isRecentlyAccepted ? c('Action').t`Open` : c('Action').t`Accept`}
-                    </Button>
-                    {!isRecentlyAccepted && (
+                  <div className="flex flex-nowrap gap-[.625rem]">
+                    <Tooltip title={c('Action').t`Accept invitation`}>
                       <Button
-                        size="small"
-                        color="danger"
-                        shape="outline"
+                        size="medium"
+                        icon
+                        color="weak"
+                        disabled={invite.isLocked}
+                        onClick={async () => {
+                          await acceptInvite(invite)
+                          openInvitedDocument(invite)
+                          setTimeout(updateRecentDocuments, WAIT_AFTER_ACCEPT_INVITE)
+                        }}
+                        aria-label={c('Action').t`Accept invitation to document`}
+                        data-testid="accept-invite-button"
+                      >
+                        <Icon name="checkmark" />
+                      </Button>
+                    </Tooltip>
+                    <Tooltip title={c('Action').t`Decline invitation`}>
+                      <Button
+                        size="medium"
+                        icon
+                        color="weak"
                         disabled={invite.isLocked}
                         onClick={() => rejectInvite(invite)}
+                        aria-label={c('Action').t`Decline invitation to document`}
                         data-testid="reject-invite-button"
                       >
-                        {c('Action').t`Decline`}
+                        <Icon name="cross" />
                       </Button>
-                    )}
+                    </Tooltip>
                   </div>
                 </Table.DataCell>
-              </tr>
+              </Table.Row>
             )
           })}
         </tbody>
       </table>
       {confirmModal}
-    </div>
+    </ContentSheet>
   )
 }
