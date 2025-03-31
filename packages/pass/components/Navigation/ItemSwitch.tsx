@@ -19,10 +19,7 @@ type Props = RouteChildrenProps & {
 export const ItemSwitch: FC<Props> = ({ match, fallback }) => {
     const sub = (path: string) => `${match?.path}/${path}`;
     const bulkEnabled = useBulkEnabled();
-    /**
-     * Hydrates the file store by fetching files from the API endpoint
-     * using the corresponding shareId and itemId
-     */
+
     useFiles();
 
     if (bulkEnabled) return <BulkView />;
