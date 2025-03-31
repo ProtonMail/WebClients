@@ -2,21 +2,22 @@ import { fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Avatar, Button } from '@proton/atoms/index';
-import { Icon } from '@proton/components/index';
-import { getInitials } from '@proton/shared/lib/helpers/string';
+import { Button, UserAvatar } from '@proton/atoms';
+import { Icon, Tooltip } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData } from '../../../store';
+import { type OnFileSkippedSuccessCallbackData, type OnFileUploadSuccessCallbackData } from '../../../store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
 import { PhotosUploadButton } from '../toolbar/PhotosUploadButton';
+import { AlbumMembers } from './AlbumMembers';
 
 interface AlbumCoverHeaderProps {
     album: DecryptedAlbum;
     onShare: () => void;
     shareId: string;
     linkId: string;
+    uploadLinkId: string;
     photoCount: number;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
@@ -27,6 +28,7 @@ export const AlbumCoverHeader = ({
     album,
     shareId,
     linkId,
+    uploadLinkId,
     photoCount,
     onFileUpload,
     onFileSkipped,
@@ -36,13 +38,8 @@ export const AlbumCoverHeader = ({
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
     }).format(fromUnixTime(album.createTime));
-
     const [user] = useUser();
-
-    const { Email, DisplayName, Name } = user;
-
-    const nameToDisplay = DisplayName || Name || ''; // nameToDisplay can be falsy for external account
-    const initials = getInitials(nameToDisplay || Email || '');
+    const displayName = user.DisplayName || user.Name;
 
     return (
         <div
@@ -75,16 +72,19 @@ export const AlbumCoverHeader = ({
 
             <div className="flex flex-column flex-nowrap mx-auto shrink-0 flex-1" data-testid="cover-info">
                 <h1 className="text-bold h2">{album.name}</h1>
-                <p className="color-weak mt-1">
+                <p className="color-weak mb-2 mt-1">
                     {formattedDate}
                     <span className="ml-1">
                         ⋅ {c('Info').ngettext(msgid`${photoCount} item`, `${photoCount} items`, photoCount)}
                     </span>
                 </p>
                 <div className="flex flex-wrap flex-row gap-2" data-testid="cover-options">
-                    <Avatar color="weak" data-testid="cover-avatar">
-                        {initials}
-                    </Avatar>
+                    <Tooltip title={displayName}>
+                        <UserAvatar name={displayName} data-testid="user-avatar" />
+                    </Tooltip>
+
+                    {album.permissions.isAdmin && <AlbumMembers shareId={shareId} linkId={linkId} onShare={onShare} />}
+
                     {album.permissions.isAdmin && (
                         <Button
                             color="weak"
@@ -104,7 +104,7 @@ export const AlbumCoverHeader = ({
                         <PhotosUploadButton
                             type="norm"
                             shareId={shareId}
-                            linkId={linkId}
+                            linkId={uploadLinkId}
                             onFileUpload={onFileUpload}
                             onFileSkipped={onFileSkipped}
                             data-testid="upload-photos"
