@@ -1,14 +1,15 @@
-import { select } from 'redux-saga/effects';
+import { put, select } from 'redux-saga/effects';
 
-import { deleteItems } from '@proton/pass/lib/items/item.requests';
+import { deleteItemRevisions, deleteItems } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { itemDelete } from '@proton/pass/store/actions';
+import { filesResolve, itemDelete, itemDeleteRevisions } from '@proton/pass/store/actions';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectItem } from '@proton/pass/store/selectors';
 import type { ItemRevision, Maybe } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 
-export default createRequestSaga({
+const removeItems = createRequestSaga({
     actions: itemDelete,
     call: function* (selectedItem, { onItemsUpdated, getTelemetry }) {
         const { shareId, itemId } = selectedItem;
@@ -33,3 +34,16 @@ export default createRequestSaga({
         return selectedItem;
     },
 });
+
+const removeRevisions = createRequestSaga({
+    actions: itemDeleteRevisions,
+    call: function* (dto) {
+        const { shareId, itemId } = dto;
+        const item: ItemRevision = yield deleteItemRevisions(dto);
+        yield put(withRevalidate(filesResolve.intent({ ...dto, revision: item.revision })));
+
+        return { shareId, itemId, item };
+    },
+});
+
+export default [removeItems, removeRevisions];

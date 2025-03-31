@@ -1,23 +1,13 @@
 import type { Action, Reducer } from 'redux';
 
-import type { ImportProvider } from '@proton/pass/lib/import/types';
-import { importItemsSuccess } from '@proton/pass/store/actions';
+import type { ImportReport } from '@proton/pass/lib/import/helpers/report';
+import { importReport } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 
-export type ImportEntry = {
-    importedAt: number;
-    total: number;
-    ignored: string[];
-    warnings?: string[];
-    provider: ImportProvider;
-};
-export type ImportState = MaybeNull<ImportEntry>;
+export type ImportState = MaybeNull<ImportReport>;
 
 const importReducer: Reducer<ImportState> = (state = null, action: Action) => {
-    if (importItemsSuccess.match(action)) {
-        return action.payload;
-    }
-
+    if (importReport.match(action)) return action.payload.report;
     return state;
 };
 

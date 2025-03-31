@@ -7,13 +7,14 @@ import type { ItemImportIntent } from '@proton/pass/types';
 import { readDashlaneDataCSV } from './dashlane.csv.reader';
 
 const readCSVData = async (filename: string): Promise<ImportPayload> => {
-    const sourceData = await fs.promises.readFile(__dirname + `/mocks/${filename}`, 'utf8');
-    return readDashlaneDataCSV({ data: sourceData });
+    const sourceData = fs.readFileSync(__dirname + `/mocks/${filename}`);
+    const file = new File([sourceData], filename);
+    return readDashlaneDataCSV(file);
 };
 
 describe('Import Dashlane CSV', () => {
     test('should throw on invalid file content', async () => {
-        await expect(readDashlaneDataCSV({ data: 'not-a-csv-file' })).rejects.toThrow();
+        await expect(readDashlaneDataCSV(new File([], 'corrupted'))).rejects.toThrow();
     });
 
     test('should correctly parse login items', async () => {

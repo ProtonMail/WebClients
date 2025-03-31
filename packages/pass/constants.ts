@@ -9,6 +9,7 @@ export const MIN_CACHE_VERSION = '1.10.0';
 
 export const MAX_MAX_BATCH_PER_REQUEST = 100;
 export const MIN_MAX_BATCH_PER_REQUEST = 10;
+export const MAX_BATCH_PER_IMPORT_REQUEST = 50;
 
 export const DEFAULT_LOCK_TTL = 600; /* 10 minutes */
 
@@ -71,6 +72,7 @@ export enum UpsellRef {
     FREE_TRIAL = 'free_trial_banner',
     IDENTITY_CUSTOM_FIELDS = 'identity_custom_fields',
     ITEM_SHARING = 'item_sharing',
+    FILE_ATTACHMENTS = 'file_attachments',
     LIMIT_2FA = '2fa_limit',
     LIMIT_ALIAS = 'alias_limit',
     LIMIT_AUTOFILL = 'autofill_limit',
@@ -110,6 +112,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassInAppMessages]: false,
     [PassFeature.PassItemSharingV1]: false,
     [PassFeature.PassWebPrfUnlock]: false,
+    [PassFeature.PassFileAttachments]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension
@@ -118,3 +121,11 @@ export const RUNTIME_RELOAD_TIMEOUT = 2_000; /* ms */
 export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 
 export const PASS_DEFAULT_THEME = PassThemeOption.PassDark;
+
+export const FILE_UNIQUE_ID_LENGTH = 16;
+export const FILE_CHUNK_SIZE = 4 * 1024 * 1024; // 5MB
+export const FILE_MIME_TYPE_DETECTION_CHUNK_SIZE = 1.5 * 1024 * 1024; // 1.5MB
+
+/** 1.5 minute - matching drive */
+export const FILE_UPLOAD_TIMEOUT = 90_000;
+export const FILE_DOWNLOAD_TIMEOUT = 90_000;

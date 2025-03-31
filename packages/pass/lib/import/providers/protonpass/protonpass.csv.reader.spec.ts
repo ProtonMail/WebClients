@@ -8,27 +8,30 @@ import { readProtonPassCSV } from './protonpass.csv.reader';
 
 describe('Import Proton Pass CSV', () => {
     let payload: ImportPayload;
-    let oldPayloadBeforeVault: ImportPayload;
-    let oldPayloadBeforeEmailUsername: ImportPayload;
+    let payloadBeforeVault: ImportPayload;
+    let payloadBeforeUsernameEmail: ImportPayload;
 
     beforeAll(async () => {
-        const sourceData = await fs.promises.readFile(__dirname + '/mocks/protonpass.csv', 'utf8');
-        payload = await readProtonPassCSV({ data: sourceData });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/protonpass.csv');
+        const file = new File([sourceData], 'protonpass.csv');
+        payload = await readProtonPassCSV(file);
 
-        const oldSourceData = await fs.promises.readFile(__dirname + '/mocks/protonpass-old-before-vault.csv', 'utf8');
-        oldPayloadBeforeVault = await readProtonPassCSV({ data: oldSourceData });
+        const legacyBeforeVaultData = fs.readFileSync(__dirname + '/mocks/protonpass-old-before-vault.csv');
+        const legacyBeforeVaultFile = new File([legacyBeforeVaultData], 'protonpass-old-before-vault.csv');
+        payloadBeforeVault = await readProtonPassCSV(legacyBeforeVaultFile);
 
-        const oldSourceDataBeforeEmailUsername = await fs.promises.readFile(
-            __dirname + '/mocks/protonpass-old-before-email-username.csv',
-            'utf8'
+        const legacyBeforeEmailUsernameData = fs.readFileSync(
+            __dirname + '/mocks/protonpass-old-before-email-username.csv'
         );
-        oldPayloadBeforeEmailUsername = await readProtonPassCSV({
-            data: oldSourceDataBeforeEmailUsername,
-        });
+        const legacyBeforeEmailUsernameFile = new File(
+            [legacyBeforeEmailUsernameData],
+            'protonpass-old-before-email-username.csv'
+        );
+        payloadBeforeUsernameEmail = await readProtonPassCSV(legacyBeforeEmailUsernameFile);
     });
 
     it('should handle corrupted files', async () => {
-        await expect(readProtonPassCSV({ data: 'not-a-csv-file' })).rejects.toThrow();
+        await expect(readProtonPassCSV(new File([], 'corrupted'))).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {
@@ -120,9 +123,9 @@ describe('Import Proton Pass CSV', () => {
     });
 
     it('should be backward compatible with the old Pass CSV export format before vault column', async () => {
-        const [firstVault] = oldPayloadBeforeVault.vaults;
+        const [firstVault] = payloadBeforeVault.vaults;
 
-        expect(oldPayloadBeforeVault.vaults.length).toEqual(1);
+        expect(payloadBeforeVault.vaults.length).toEqual(1);
         expect(firstVault.name).not.toBeUndefined();
 
         const { items } = firstVault;
@@ -167,7 +170,7 @@ describe('Import Proton Pass CSV', () => {
     });
 
     it('should backward compatible with the old Pass CSV export format before email&username columns', async () => {
-        const [firstVault, secondVault] = oldPayloadBeforeEmailUsername.vaults;
+        const [firstVault, secondVault] = payloadBeforeUsernameEmail.vaults;
 
         expect(payload.vaults.length).toEqual(2);
         expect(firstVault.name).toEqual('Personal');

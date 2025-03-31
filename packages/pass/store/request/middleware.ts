@@ -135,6 +135,7 @@ export const requestMiddlewareFactory =
                     if (status === 'failure') {
                         pending?.resolve({
                             type: status,
+                            data: 'payload' in action ? action.payload : undefined,
                             error: 'error' in action ? action.error : undefined,
                         });
                     }

@@ -1,10 +1,11 @@
-import type { FC } from 'react';
-import { type ComponentProps, useCallback, useEffect, useMemo, useState } from 'react';
+import type { ComponentProps, FC } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useStore } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { SettingsFooter } from 'proton-pass-extension/app/pages/settings/SettingsFooter';
 import { SettingsHeader } from 'proton-pass-extension/app/pages/settings/SettingsHeader';
+import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
@@ -99,6 +100,7 @@ export const SettingsTabs: FC<Props> = ({ pathname }) => {
                 <PasswordUnlockProvider onReauth={onReauth}>
                     <PinUnlockProvider>
                         <UpsellingProvider>
+                            <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
                             <SettingsHeader />
                             <Tabs
                                 className="w-full"

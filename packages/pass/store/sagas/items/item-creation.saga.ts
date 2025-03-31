@@ -1,12 +1,14 @@
 import type { Action } from 'redux';
 import { all, put, takeEvery } from 'redux-saga/effects';
 
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
+import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
+import type { ItemRevisionWithAlias } from '@proton/pass/lib/items/item.requests';
 import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { itemCreate } from '@proton/pass/store/actions';
+import { filesResolve, itemCreate } from '@proton/pass/store/actions';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
+import type { ItemRevision } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
@@ -26,12 +28,9 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
     const telemetry = getTelemetry();
 
     try {
-        const encryptedItem: ItemRevisionContentsResponse = yield isAlias
-            ? createAlias(createIntent)
-            : createItem(createIntent);
-
-        const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
+        const item: ItemRevision = yield isAlias ? createAlias(createIntent) : createItem(createIntent);
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item }));
+        if (hasAttachments(item)) yield put(withRevalidate(filesResolve.intent(item)));
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] })
@@ -54,21 +53,19 @@ function* withAliasCreationWorker(
     const { shareId, optimisticId } = createIntent;
     const telemetry = getTelemetry();
     try {
-        const [encryptedLoginItem, encryptedAliasItem]: ItemRevisionContentsResponse[] =
-            yield createItemWithAlias(createIntent);
-
-        const loginItem: ItemRevision = yield parseItemRevision(shareId, encryptedLoginItem);
-        const aliasItem: ItemRevision = yield parseItemRevision(shareId, encryptedAliasItem);
-
+        const [loginItem, aliasItem]: ItemRevisionWithAlias = yield createItemWithAlias(createIntent);
         yield put(itemCreate.success(meta.request.id, { optimisticId, shareId, item: loginItem, alias: aliasItem }));
+        if (hasAttachments(loginItem)) yield put(withRevalidate(filesResolve.intent(loginItem)));
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] })
         );
+
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[aliasItem.data.type] })
         );
-        if (loginItem.data.type === 'login' && deobfuscate(loginItem.data.content.totpUri)) {
+
+        if (deobfuscate(loginItem.data.content.totpUri)) {
             void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
         }
 

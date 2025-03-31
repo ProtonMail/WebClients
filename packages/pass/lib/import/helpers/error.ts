@@ -8,3 +8,6 @@ export class ImportProviderError extends Error {
         super(c('Error').t`${provider} file could not be parsed. ${errorDetail}`);
     }
 }
+
+export const isImportError = (error: unknown) =>
+    error instanceof ImportReaderError || error instanceof ImportProviderError;
