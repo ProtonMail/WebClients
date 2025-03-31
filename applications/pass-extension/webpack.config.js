@@ -103,6 +103,7 @@ module.exports = {
             import: './src/app/content/elements.ts',
             layer: 'injection',
         },
+        internal: './src/app/pages/internal/index.tsx',
         notification: nonAccessibleWebResource('./src/app/content/injections/apps/notification/index.tsx'),
         onboarding: './src/app/pages/onboarding/index.tsx',
         orchestrator: {
