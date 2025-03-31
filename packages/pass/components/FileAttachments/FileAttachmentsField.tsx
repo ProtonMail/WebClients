@@ -31,6 +31,7 @@ import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { FileAttachment } from './FileAttachment';
 import { FileAttachmentsSummary } from './FileAttachmentsSummary';
@@ -114,9 +115,11 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
 
             // Let the user know that some files will not be uploaded
             if (validFiles.length < newFiles.length) {
+                const maxFileSizeInMB = humanSize({ bytes: maxFileSize, unit: 'MB', fraction: 0 });
                 createNotification({
                     type: 'error',
-                    text: c('Error').t`Some files were not uploaded because they exceed the maximum allowed file size.`,
+                    text: c('Error')
+                        .t`Some files are too large to upload. The maximum allowed size is (${maxFileSizeInMB})`,
                 });
             }
 
