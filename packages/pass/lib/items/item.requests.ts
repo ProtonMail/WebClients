@@ -3,6 +3,7 @@ import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
+import { linkPendingFiles } from '@proton/pass/lib/file-attachments/file-attachments.requests';
 import type {
     AliasAndItemCreateRequest,
     BatchItemRevisionIDs,
@@ -43,10 +44,8 @@ export const getItemKeys = async (shareId: string, itemId: string): Promise<Enco
 
 /* Item creation API request for all items
  * except for alias items */
-export const createItem = async (
-    createIntent: ItemCreateIntent<Exclude<ItemType, 'alias'>>
-): Promise<ItemRevisionContentsResponse> => {
-    const { shareId, ...item } = createIntent;
+export const createItem = async (createIntent: ItemCreateIntent<Exclude<ItemType, 'alias'>>): Promise<ItemRevision> => {
+    const { shareId, files, ...item } = createIntent;
 
     const content = serializeItemContent(item);
     const data = await PassCrypto.createItem({ shareId, content });
@@ -57,21 +56,22 @@ export const createItem = async (
         data,
     });
 
-    return Item;
+    if (files.toAdd.length === 0) return parseItemRevision(shareId, Item);
+    return linkPendingFiles({ shareId, itemId: Item.ItemID, files, revision: Item.Revision });
 };
 
 /* Specific alias item API request */
-export const createAlias = async (createIntent: ItemCreateIntent<'alias'>): Promise<ItemRevisionContentsResponse> => {
-    const { shareId, ...item } = createIntent;
+export const createAlias = async (createIntent: ItemCreateIntent<'alias'>): Promise<ItemRevision<'alias'>> => {
+    const { shareId, files, ...create } = createIntent;
 
-    const content = serializeItemContent(item);
+    const content = serializeItemContent(create);
     const encryptedItem = await PassCrypto.createItem({ shareId, content });
 
     const data: CustomAliasCreateRequest = {
         Item: encryptedItem,
-        Prefix: item.extraData.prefix,
-        SignedSuffix: item.extraData.signedSuffix,
-        MailboxIDs: item.extraData.mailboxes.map(({ id }) => id),
+        Prefix: create.extraData.prefix,
+        SignedSuffix: create.extraData.signedSuffix,
+        MailboxIDs: create.extraData.mailboxes.map(({ id }) => id),
     };
 
     const { Item } = await api({
@@ -80,15 +80,27 @@ export const createAlias = async (createIntent: ItemCreateIntent<'alias'>): Prom
         data,
     });
 
-    return Item;
+    const item = await parseItemRevision<'alias'>(shareId, Item);
+
+    if (files.toAdd.length === 0) return item;
+
+    try {
+        const { itemId, revision } = item;
+        return await linkPendingFiles<'alias'>({ shareId, itemId, files, revision });
+    } catch (error) {
+        logger.warn('[Item::Create] Could not link files', error);
+        return item;
+    }
 };
+
+export type ItemRevisionWithAlias = [ItemRevision<'login'>, ItemRevision<'alias'>];
 
 /* Specific item with alias API request: the first item
  * returned will be the login item, followed by the alias */
 export const createItemWithAlias = async (
     createIntent: ItemCreateIntent<'login'> & { extraData: { withAlias: true } }
-): Promise<[ItemRevisionContentsResponse, ItemRevisionContentsResponse]> => {
-    const { shareId, ...item } = createIntent;
+): Promise<ItemRevisionWithAlias> => {
+    const { shareId, files, ...item } = createIntent;
 
     const loginItemContent = serializeItemContent(item);
     const aliasItemContent = serializeItemContent(item.extraData.alias);
@@ -112,7 +124,19 @@ export const createItemWithAlias = async (
         data,
     });
 
-    return [Bundle.Item, Bundle.Alias];
+    const login = await parseItemRevision<'login'>(shareId, Bundle.Item);
+    const alias = await parseItemRevision<'alias'>(shareId, Bundle.Alias);
+
+    if (files.toAdd.length === 0) return [login, alias];
+
+    try {
+        const { itemId, revision } = login;
+        const linkedLogin = await linkPendingFiles<'login'>({ shareId, itemId, files, revision });
+        return [linkedLogin, alias];
+    } catch (error) {
+        logger.warn('[Item::Create] Could not link files', error);
+        return [login, alias];
+    }
 };
 
 /** FIXME: we should start caching the item keys */
@@ -124,16 +148,25 @@ export const getLatestItemKey = async ({ shareId, itemId }: SelectedItem): Promi
         })
     ).Key!;
 
-export const editItem = async (
-    editIntent: ItemEditIntent,
-    lastRevision: number
-): Promise<ItemRevisionContentsResponse> => {
-    const { shareId, itemId, ...item } = editIntent;
-    const content = serializeItemContent(item);
+export const editItem = async (editIntent: ItemEditIntent, lastRevision: number): Promise<ItemRevision> => {
+    const { shareId, itemId, files, ...edit } = editIntent;
+    const content = serializeItemContent(edit);
     const itemKey = await resolveItemKey(shareId, itemId);
     const data = await PassCrypto.updateItem({ content, lastRevision, itemKey });
 
-    return (await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'put', data })).Item;
+    const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'put', data });
+    const item = await parseItemRevision(shareId, Item);
+
+    const shouldLink = files.toAdd.length || files.toRemove.length || files.toRestore?.length;
+    if (!shouldLink) return item;
+
+    try {
+        const { itemId, revision } = item;
+        return await linkPendingFiles({ shareId, itemId, files, revision });
+    } catch (error) {
+        logger.warn('[Item::Create] Could not link files', error);
+        return item;
+    }
 };
 
 /** Limit batch size to `MIN_MAX_BATCH_PER_REQUEST` to reduce and

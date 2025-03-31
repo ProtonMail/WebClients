@@ -7,7 +7,7 @@ import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
 import { filesResolve } from '@proton/pass/store/actions';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import { selectItemFilesForRevision } from '@proton/pass/store/selectors/files';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemOptimisticState, ItemRevision } from '@proton/pass/types';
 
 import { FileAttachmentsList } from './FileAttachmentsList';
 import { FileAttachmentsSummary } from './FileAttachmentsSummary';
@@ -26,11 +26,13 @@ export const FileAttachmentsView: FC<FileAttachmentsViewProps> = ({ children, fi
     </FieldsetCluster>
 );
 
-export const FileAttachmentsContentView: FC<{ revision: ItemRevision }> = ({ revision }) => {
-    const { shareId, itemId } = revision;
+export const FileAttachmentsContentView: FC<{ revision: ItemRevision & Partial<ItemOptimisticState> }> = ({
+    revision,
+}) => {
+    const { shareId, itemId, optimistic, failed } = revision;
     const files = useMemoSelector(selectItemFilesForRevision, [shareId, itemId, revision.revision]);
+    const loading = useSelector(selectRequestInFlight(filesResolve.requestID(revision))) || (optimistic && !failed);
     const filesCount = files.length;
-    const loading = useSelector(selectRequestInFlight(filesResolve.requestID(revision))) && !filesCount;
 
     return (
         (filesCount > 0 || hasAttachments(revision)) && (
