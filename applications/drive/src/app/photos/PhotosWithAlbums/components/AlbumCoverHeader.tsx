@@ -31,7 +31,7 @@ export const AlbumCoverHeader = ({
     onFileUpload,
     onFileSkipped,
     onShare,
-	onAddAlbumPhotos,
+    onAddAlbumPhotos,
 }: AlbumCoverHeaderProps) => {
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
@@ -45,14 +45,17 @@ export const AlbumCoverHeader = ({
     const initials = getInitials(nameToDisplay || Email || '');
 
     return (
-        <div className="flex shrink-0 flex-row flex-nowrap items-center p-4" data-testid="album-gallery-cover-section">
+        <div
+            className="flex shrink-0 flex-row gap-4 md:flex-nowrap items-center p-4"
+            data-testid="album-gallery-cover-section"
+        >
             {album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl ? (
                 <img
                     loading="eager"
                     key={album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl}
                     src={album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl}
                     alt=""
-                    className="bg-weak rounded mr-4 w-1/3 flex h-custom object-cover"
+                    className="bg-weak rounded w-full md:w-1/3 flex h-custom object-cover"
                     style={{
                         '--h-custom': '14rem',
                     }}
@@ -60,7 +63,7 @@ export const AlbumCoverHeader = ({
                 />
             ) : (
                 <span
-                    className="bg-weak rounded mr-4 w-1/3 flex h-custom object-cover"
+                    className="bg-weak rounded w-full md:w-1/3 flex h-custom object-cover"
                     style={{
                         '--h-custom': '14rem',
                     }}
