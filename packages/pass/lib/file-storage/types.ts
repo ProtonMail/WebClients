@@ -10,7 +10,7 @@ export interface FileStorage {
      * Set using `FileStorage::attachGarbageCollector` */
     gc: Maybe<FileStorageGarbageCollector>;
 
-    readFile: (filename: string) => Promise<Maybe<File>>;
+    readFile: (filename: string, mimeType?: string) => Promise<Maybe<File>>;
     writeFile: (filename: string, file: FileBuffer | ReadableStream<FileBuffer>, signal: AbortSignal) => Promise<void>;
     deleteFile: (filename: string) => Promise<void>;
     clearAll: () => Promise<void>;

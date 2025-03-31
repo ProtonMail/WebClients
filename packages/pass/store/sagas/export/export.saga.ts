@@ -13,7 +13,7 @@ import { createPassExportCSV } from '@proton/pass/lib/export/csv';
 import { ExportFormat } from '@proton/pass/lib/export/types';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { hasAttachments, itemEq } from '@proton/pass/lib/items/item.predicates';
-import { exportData } from '@proton/pass/store/actions/creators/transfer';
+import { exportData } from '@proton/pass/store/actions/creators/export';
 import { requestProgress } from '@proton/pass/store/request/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import type { ExportThunk } from '@proton/pass/store/selectors';
@@ -65,6 +65,7 @@ function* progressWorker(channel: Channel<ExportFileProgress>) {
 type ExportState = {
     stream?: ReadableStream;
     filename?: string;
+    mimeType?: string;
 };
 
 export const exportUserData = createRequestSaga({
@@ -110,6 +111,7 @@ export const exportUserData = createRequestSaga({
             switch (format) {
                 case ExportFormat.CSV: {
                     state.filename = getArchiveName('csv');
+                    state.mimeType = 'text/csv;charset=utf-8;';
                     const blob: Blob = yield createPassExportCSV(exportThunk({}));
                     yield fileStorage.writeFile(state.filename, blob, ctrl.signal);
                     break;
@@ -117,6 +119,7 @@ export const exportUserData = createRequestSaga({
                 case ExportFormat.ZIP:
                 case ExportFormat.PGP: {
                     state.filename = getArchiveName('zip');
+                    state.mimeType = 'application/zip';
 
                     iterators.push(
                         createExportDataStream(exportThunk, {
@@ -136,7 +139,10 @@ export const exportUserData = createRequestSaga({
             progressChannel.close();
             progressTask.cancel();
 
-            return state.filename;
+            return {
+                filename: state.filename,
+                mimeType: state.mimeType,
+            };
         } catch (err) {
             logger.debug('[Export] export failure', err);
             throw err;
