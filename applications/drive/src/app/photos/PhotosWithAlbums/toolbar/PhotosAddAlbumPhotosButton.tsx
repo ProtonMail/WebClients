@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import { Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components/index';
+import { DropdownMenuButton, Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components/index';
 import clsx from '@proton/utils/clsx';
 
 export interface PhotosAddAlbumPhotosButtonProps {
     onClick: () => void;
-    type?: 'toolbar' | 'norm';
+    type?: 'toolbar' | 'norm' | 'dropdown';
 }
 
 export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAddAlbumPhotosButtonProps) => {
@@ -16,13 +16,25 @@ export const PhotosAddAlbumPhotosButton = ({ onClick, type = 'norm' }: PhotosAdd
         return (
             <ToolbarButton
                 onClick={onClick}
-                data-testid="toolbar-photos-upload"
+                data-testid="toolbar-album-add-photos"
                 title={c('Action').t`Add photos`}
                 className="inline-flex flex-nowrap flex-row items-center"
             >
                 <Icon name="plus-circle" className={clsx(!viewportWidth.xsmall && 'mr-2')} />
                 <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{c('Action').t`Add photos`}</span>
             </ToolbarButton>
+        );
+    }
+    if (type === 'dropdown') {
+        return (
+            <DropdownMenuButton
+                data-testid="dropdown-album-add-photos"
+                className="text-left flex items-center flex-nowrap"
+                onClick={onClick}
+            >
+                <Icon name="plus-circle" className="mr-2" />
+                <span>{c('Action').t`Add photos`}</span>
+            </DropdownMenuButton>
         );
     }
     return (

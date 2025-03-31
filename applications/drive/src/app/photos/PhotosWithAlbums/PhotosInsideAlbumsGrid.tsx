@@ -203,7 +203,7 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
     }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition, isLoading]);
 
     return (
-        <div className="p-4" ref={containerRef} onScroll={handleScroll}>
+        <div className="p-4 min-h-full" ref={containerRef} onScroll={handleScroll}>
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
