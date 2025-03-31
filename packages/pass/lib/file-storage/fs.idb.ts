@@ -137,7 +137,7 @@ export class FileStorageIDB implements FileStorage {
         this.gc = new FileStorageGarbageCollector(this, storage);
     }
 
-    async readFile(filename: string) {
+    async readFile(filename: string, type?: string) {
         try {
             const db = await openPassFileDB();
             const blobs: FileBuffer[] = [];
@@ -148,7 +148,7 @@ export class FileStorageIDB implements FileStorage {
             });
 
             await IDBReadableStream(db, filename).pipeTo(writableStream);
-            return new File(blobs, filename);
+            return new File(blobs, filename, { type });
         } catch (err) {
             logger.warn('[fs::IDB] Could not resolve file.', err);
             return;

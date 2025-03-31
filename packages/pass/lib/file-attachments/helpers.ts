@@ -91,3 +91,10 @@ export const getExportFileName = (file: FileDescriptor): string => {
     if (parts) return `${parts.name}.${file.fileUID}${parts.ext}`;
     return `${file.name}.${file.fileUID}`;
 };
+
+/** Safari extensions require `application/octet-stream`
+ * to trigger a download from an extension page. */
+export const mimetypeForDownload = (mimeType: string) => {
+    if (BUILD_TARGET === 'safari') return 'application/octet-stream';
+    return mimeType;
+};
