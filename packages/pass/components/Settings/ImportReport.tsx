@@ -77,9 +77,9 @@ export const ImportReport: FC = () => {
                             {totalIgnored > 0 && (
                                 <span className="mb-2 block">
                                     {c('Info').ngettext(
-                                        msgid`The following ${report.ignored.length} item could not be imported:`,
-                                        `The following ${report.ignored.length} items could not be imported:`,
-                                        report.ignored.length
+                                        msgid`The following ${totalIgnored} item could not be imported:`,
+                                        `The following ${totalIgnored} items could not be imported:`,
+                                        totalIgnored
                                     )}
                                 </span>
                             )}
