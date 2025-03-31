@@ -4,6 +4,7 @@ import { useNotifications } from '@proton/components';
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
+import { getImportFilename } from '@proton/pass/lib/import/helpers/files';
 import type { ImportReport } from '@proton/pass/lib/import/helpers/report';
 import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { fileLinkPending } from '@proton/pass/store/actions';
@@ -11,7 +12,6 @@ import { type IndexedByShareIdAndItemId } from '@proton/pass/types';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { abortableSequence } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import lastItem from '@proton/utils/lastItem';
 
 export const useFileImporter = () => {
     const dispatch = useAsyncRequestDispatch();
@@ -40,7 +40,7 @@ export const useFileImporter = () => {
                                 ...files[shareId][itemId].map((path) => async () => {
                                     /** Filename may include full path inside the
                                      * archive when using the zip reader */
-                                    const filename = lastItem(path.split('/'))!;
+                                    const filename = getImportFilename(path, report.provider);
                                     const blob = await fileReader.getFile(path);
                                     if (blob) {
                                         try {
