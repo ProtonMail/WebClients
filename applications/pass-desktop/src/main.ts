@@ -131,6 +131,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             x: 20,
             y: 18,
         },
+        acceptFirstMouse: true,
     });
 
     if (zoomLevel) {
