@@ -662,7 +662,7 @@ export const generateEmailBody = ({
     // Get comment directly from vevent to append to the email body
     const comment = vevent.comment;
     const commentText =
-        comment && comment.length > 0 ? `\n\n${c('Email body for invitation').t`Note:`}\n${comment[0].value}` : '';
+        comment && comment.length > 0 ? `\n\n${c('Email body for invitation').t`NOTE:`}\n${comment[0].value}` : '';
 
     if (method === ICAL_METHOD.REQUEST) {
         if (getHasRecurrenceId(vevent)) {
