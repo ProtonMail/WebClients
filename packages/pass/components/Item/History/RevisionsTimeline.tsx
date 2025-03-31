@@ -30,7 +30,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
     const { shareId, itemId } = item;
     const [current, ...history] = revisions;
     const share = useSelector(selectShare(shareId));
-    const canReset = share && isShareWritable(share);
+    const canReset = history.length > 0 && share && isShareWritable(share);
 
     const reset = useConfirm(() => {
         dispatch(itemDeleteRevisions.intent({ shareId, itemId }));
@@ -58,7 +58,7 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                 </div>
             }
             actions={
-                history.length > 0 && canReset
+                canReset
                     ? [
                           <Button
                               key="reset-button"

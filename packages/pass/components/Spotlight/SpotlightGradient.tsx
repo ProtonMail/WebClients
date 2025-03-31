@@ -3,7 +3,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, type ButtonLikeShape } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
@@ -19,6 +19,10 @@ type Props = {
     title: ReactNode;
     backgroundImage?: string;
     onClose: () => void;
+    closeButtonStyle?: {
+        shape?: ButtonLikeShape;
+        className?: string;
+    };
     withArrow?: boolean;
 };
 
@@ -29,6 +33,7 @@ export const SpotlightGradient: FC<Props> = ({
     message,
     title,
     onClose,
+    closeButtonStyle,
     withArrow,
 }) => {
     return (
@@ -45,20 +50,21 @@ export const SpotlightGradient: FC<Props> = ({
                     : undefined
             }
         >
-            <Button
-                icon
-                pill
-                shape="ghost"
-                color="weak"
-                size="small"
-                className="absolute top-0 right-0"
-                onClick={onClose}
-            >
-                <Icon name="cross" className="pass-spotlight-gradient--close-icon" alt={c('Action').t`Close`} />
-            </Button>
-
             <div className="flex-1">
-                <strong className="pass-spotlight-gradient--text block">{title}</strong>
+                <div className="flex justify-space-between">
+                    <strong className="pass-spotlight-gradient--text block">{title}</strong>
+                    <Button
+                        icon
+                        pill
+                        shape={closeButtonStyle?.shape ?? 'ghost'}
+                        className={closeButtonStyle?.className ?? 'absolute top-0 right-0'}
+                        color="weak"
+                        size="small"
+                        onClick={onClose}
+                    >
+                        <Icon name="cross" className="pass-spotlight-gradient--close-icon" alt={c('Action').t`Close`} />
+                    </Button>
+                </div>
                 <span className="pass-spotlight-gradient--text block text-sm">{message}</span>
                 {action && (
                     <Button
