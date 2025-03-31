@@ -8,8 +8,9 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
+import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import { exportData } from '@proton/pass/store/actions/creators/transfer';
+import { exportData } from '@proton/pass/store/actions/creators/export';
 import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
 import type { State } from '@proton/pass/store/types';
 import { download } from '@proton/pass/utils/dom/download';
@@ -52,8 +53,9 @@ export const useReauthActionHandler = (store: Store<State>) => {
                     });
 
                     if (ok) {
-                        const filename = result.data;
-                        const file = await fileStorage.readFile(filename);
+                        let { filename, mimeType } = result.data;
+                        mimeType = mimetypeForDownload(mimeType);
+                        const file = await fileStorage.readFile(filename, mimeType);
                         if (file) download(file, filename);
                     }
                 }, 1_500);
