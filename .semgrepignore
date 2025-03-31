@@ -1,9 +1,0 @@
-# Exclude CI and testing folders from being scanned
-ci
-tests
-**/test
-**/testing
-**/tests
-
-# False positive caused by a template
-packages/components/containers/keys/reactivateKeys/SelectRecoveryFiles.tsx
