@@ -8,20 +8,19 @@ import * as epochUtils from '@proton/pass/utils/time/epoch';
 import { readRoboformData } from './roboform.reader';
 
 describe('Import Roboform csv', () => {
-    let sourceData: string;
     let payload: ImportPayload;
-
     const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/roboform.csv', 'utf8');
-        payload = await readRoboformData({ data: sourceData });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/roboform.csv');
+        const file = new File([sourceData], 'roboform.csv');
+        payload = await readRoboformData(file);
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
-        await expect(readRoboformData({ data: '' })).rejects.toThrow();
+        await expect(readRoboformData(new File([], 'corrupted'))).rejects.toThrow();
     });
 
     it('converts Roboform folders to vaults correctly', () => {

@@ -7,16 +7,16 @@ import type { ItemImportIntent } from '@proton/pass/types';
 import { readDashlaneDataZIP } from './dashlane.zip.reader';
 
 describe('Import Dashlane ZIP', () => {
-    let sourceData: Buffer;
     let payload: ImportPayload;
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/dashlane.zip');
-        payload = await readDashlaneDataZIP({ data: sourceData.buffer as ArrayBuffer });
+        const sourceData = fs.readFileSync(__dirname + `/mocks/dashlane.zip`);
+        const file = new File([sourceData], 'dashlane.zip');
+        payload = await readDashlaneDataZIP(file);
     });
 
     test('should throw on invalid file content', async () => {
-        await expect(readDashlaneDataZIP({ data: new ArrayBuffer(1) })).rejects.toThrow();
+        await expect(readDashlaneDataZIP(new File([], 'corrupted'))).rejects.toThrow();
     });
 
     test('should correctly parse items', () => {

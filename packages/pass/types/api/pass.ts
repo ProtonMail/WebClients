@@ -141,6 +141,12 @@ export type CustomDomainUpdateMailboxesSettingRequest = {
 export type CreatePendingFileRequest = {
     /* File metadata encrypted with an attachmentKey and encoded in Base64 */
     Metadata: string;
+    /* Number of chunks this file will have */
+    ChunkCount: number;
+};
+export type UpdatePendingFileRequest = {
+    /* File metadata encrypted with an attachmentKey and encoded in Base64 */
+    Metadata: string;
 };
 export type ImportItemBatchRequest = {
     /* Items to be imported. At most 100 */
@@ -1346,6 +1352,8 @@ export type PassPlanResponse = {
     ManageAlias: boolean;
     /* Whether this account can use file attachments */
     StorageAllowed: boolean;
+    /* Max allowed upload size in bytes of files */
+    StorageMaxFileSize: number;
     /* What is the storage usage for this user */
     StorageUsed: number;
     /* What is the storage quota for this user */
@@ -2188,7 +2196,7 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         :   never
     : Path extends `pass/v1/file/${string}/metadata` ?
         Method extends `put` ?
-            CreatePendingFileRequest
+            UpdatePendingFileRequest
         :   never
     : Path extends `pass/v1/share/${string}/invite` ?
         Method extends `post` ?

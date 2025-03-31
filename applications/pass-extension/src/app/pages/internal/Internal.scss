@@ -1,0 +1,10 @@
+@import '~@proton/pass/styles/common';
+
+body {
+	overflow: auto !important;
+	block-size: 100%;
+}
+
+.pass-internal {
+	max-inline-size: 52rem;
+}

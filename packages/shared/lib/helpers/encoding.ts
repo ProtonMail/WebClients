@@ -53,3 +53,14 @@ export const decodeAutomaticResetParams = (base64String: string) => {
     const decodedString = decodeBase64URL(base64String);
     return JSON.parse(decodedString);
 };
+
+/**
+ * Convert a Blob into a Uint8Array
+ */
+export const blobToUint8Array = async (blob: Blob) => new Uint8Array(await blob.arrayBuffer());
+
+/**
+ * Convert a Uint8Array into a Blob
+ */
+export const uint8ArrayToBlob = (uint8Array: Uint8Array, mimeType = 'application/octet-stream') =>
+    new Blob([uint8Array], { type: mimeType });

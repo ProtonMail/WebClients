@@ -1,6 +1,7 @@
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
+import { resolvePublicItemFiles } from '@proton/pass/lib/file-attachments/file-attachments.requests';
 import { decodeItemContent, protobufToItem } from '@proton/pass/lib/items/item-proto.transformer';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type {
@@ -63,9 +64,11 @@ export const openSecureLink = async ({ token, linkKey }: SecureLinkQuery): Promi
         const { PublicLinkContent } = await api({ url: `pass/v1/public_link/content/${token}`, method: 'get' });
         const decryptedContents = await PassCrypto.openSecureLink({ linkKey, publicLinkContent: PublicLinkContent });
         const item = obfuscateItem(protobufToItem(decodeItemContent(decryptedContents)));
+        const filesToken = PublicLinkContent.FilesToken ?? null;
+        const files = filesToken ? await resolvePublicItemFiles(filesToken, PublicLinkContent.ItemKey, linkKey) : null;
         const expirationDate = PublicLinkContent?.ExpirationTime!;
 
-        return { item, expirationDate };
+        return { item, expirationDate, files };
     } catch (err) {
         logger.error(`[SecureLink] there was an error opening secure link [${token}]`, err);
         throw err;

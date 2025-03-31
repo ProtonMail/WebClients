@@ -3,6 +3,7 @@ import { api } from '@proton/pass/lib/api/api';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
+import { linkPendingFiles } from '@proton/pass/lib/file-attachments/file-attachments.requests';
 import type {
     AliasAndItemCreateRequest,
     BatchItemRevisionIDs,
@@ -14,6 +15,7 @@ import type {
     ItemCreateIntent,
     ItemEditIntent,
     ItemImportIntent,
+    ItemLatestKeyResponse,
     ItemMoveIndividualToShareRequest,
     ItemMoveMultipleToShareRequest,
     ItemRevision,
@@ -22,6 +24,7 @@ import type {
     ItemType,
     ItemUpdateFlagsRequest,
     Maybe,
+    SelectedItem,
     SelectedRevision,
 } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -34,12 +37,6 @@ import { serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
 import { batchByShareId, intoRevisionID } from './item.utils';
 
-/** FIXME: we should start caching the item keys */
-export const getLatestItemKey = async (shareId: string, itemId: string): Promise<EncodedItemKeyRotation> => {
-    const result = await api({ url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`, method: 'get' });
-    return result.Key;
-};
-
 export const getItemKeys = async (shareId: string, itemId: string): Promise<EncodedItemKeyRotation[]> => {
     const { Keys: result } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}/key`, method: 'get' });
     return result.Keys;
@@ -47,10 +44,8 @@ export const getItemKeys = async (shareId: string, itemId: string): Promise<Enco
 
 /* Item creation API request for all items
  * except for alias items */
-export const createItem = async (
-    createIntent: ItemCreateIntent<Exclude<ItemType, 'alias'>>
-): Promise<ItemRevisionContentsResponse> => {
-    const { shareId, ...item } = createIntent;
+export const createItem = async (createIntent: ItemCreateIntent<Exclude<ItemType, 'alias'>>): Promise<ItemRevision> => {
+    const { shareId, files, ...item } = createIntent;
 
     const content = serializeItemContent(item);
     const data = await PassCrypto.createItem({ shareId, content });
@@ -61,21 +56,22 @@ export const createItem = async (
         data,
     });
 
-    return Item;
+    if (files.toAdd.length === 0) return parseItemRevision(shareId, Item);
+    return linkPendingFiles({ shareId, itemId: Item.ItemID, files, revision: Item.Revision });
 };
 
 /* Specific alias item API request */
-export const createAlias = async (createIntent: ItemCreateIntent<'alias'>): Promise<ItemRevisionContentsResponse> => {
-    const { shareId, ...item } = createIntent;
+export const createAlias = async (createIntent: ItemCreateIntent<'alias'>): Promise<ItemRevision<'alias'>> => {
+    const { shareId, files, ...create } = createIntent;
 
-    const content = serializeItemContent(item);
+    const content = serializeItemContent(create);
     const encryptedItem = await PassCrypto.createItem({ shareId, content });
 
     const data: CustomAliasCreateRequest = {
         Item: encryptedItem,
-        Prefix: item.extraData.prefix,
-        SignedSuffix: item.extraData.signedSuffix,
-        MailboxIDs: item.extraData.mailboxes.map(({ id }) => id),
+        Prefix: create.extraData.prefix,
+        SignedSuffix: create.extraData.signedSuffix,
+        MailboxIDs: create.extraData.mailboxes.map(({ id }) => id),
     };
 
     const { Item } = await api({
@@ -84,15 +80,27 @@ export const createAlias = async (createIntent: ItemCreateIntent<'alias'>): Prom
         data,
     });
 
-    return Item;
+    const item = await parseItemRevision<'alias'>(shareId, Item);
+
+    if (files.toAdd.length === 0) return item;
+
+    try {
+        const { itemId, revision } = item;
+        return await linkPendingFiles<'alias'>({ shareId, itemId, files, revision });
+    } catch (error) {
+        logger.warn('[Item::Create] Could not link files', error);
+        return item;
+    }
 };
+
+export type ItemRevisionWithAlias = [ItemRevision<'login'>, ItemRevision<'alias'>];
 
 /* Specific item with alias API request: the first item
  * returned will be the login item, followed by the alias */
 export const createItemWithAlias = async (
     createIntent: ItemCreateIntent<'login'> & { extraData: { withAlias: true } }
-): Promise<[ItemRevisionContentsResponse, ItemRevisionContentsResponse]> => {
-    const { shareId, ...item } = createIntent;
+): Promise<ItemRevisionWithAlias> => {
+    const { shareId, files, ...item } = createIntent;
 
     const loginItemContent = serializeItemContent(item);
     const aliasItemContent = serializeItemContent(item.extraData.alias);
@@ -116,19 +124,49 @@ export const createItemWithAlias = async (
         data,
     });
 
-    return [Bundle.Item, Bundle.Alias];
+    const login = await parseItemRevision<'login'>(shareId, Bundle.Item);
+    const alias = await parseItemRevision<'alias'>(shareId, Bundle.Alias);
+
+    if (files.toAdd.length === 0) return [login, alias];
+
+    try {
+        const { itemId, revision } = login;
+        const linkedLogin = await linkPendingFiles<'login'>({ shareId, itemId, files, revision });
+        return [linkedLogin, alias];
+    } catch (error) {
+        logger.warn('[Item::Create] Could not link files', error);
+        return [login, alias];
+    }
 };
 
-export const editItem = async (
-    editIntent: ItemEditIntent,
-    lastRevision: number
-): Promise<ItemRevisionContentsResponse> => {
-    const { shareId, itemId, ...item } = editIntent;
-    const content = serializeItemContent(item);
+/** FIXME: we should start caching the item keys */
+export const getLatestItemKey = async ({ shareId, itemId }: SelectedItem): Promise<ItemLatestKeyResponse> =>
+    (
+        await api({
+            url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`,
+            method: 'get',
+        })
+    ).Key!;
+
+export const editItem = async (editIntent: ItemEditIntent, lastRevision: number): Promise<ItemRevision> => {
+    const { shareId, itemId, files, ...edit } = editIntent;
+    const content = serializeItemContent(edit);
     const itemKey = await resolveItemKey(shareId, itemId);
     const data = await PassCrypto.updateItem({ content, lastRevision, itemKey });
 
-    return (await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'put', data })).Item;
+    const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}`, method: 'put', data });
+    const item = await parseItemRevision(shareId, Item);
+
+    const shouldLink = files.toAdd.length || files.toRemove.length || files.toRestore?.length;
+    if (!shouldLink) return item;
+
+    try {
+        const { itemId, revision } = item;
+        return await linkPendingFiles({ shareId, itemId, files, revision });
+    } catch (error) {
+        logger.warn('[Item::Create] Could not link files', error);
+        return item;
+    }
 };
 
 /** Limit batch size to `MIN_MAX_BATCH_PER_REQUEST` to reduce and
@@ -216,6 +254,11 @@ export const restoreItems = async (
         )
     ).flatMap(({ Items }) => Items);
 
+export const deleteItemRevisions = async ({ shareId, itemId }: SelectedItem): Promise<ItemRevision> => {
+    const { Item } = await api({ url: `pass/v1/share/${shareId}/item/${itemId}/revisions`, method: 'delete' });
+    return parseItemRevision(shareId, Item);
+};
+
 export const deleteItems = async (
     items: SelectedRevision[],
     onBatch?: (data: BatchItemRevisionIDs, progress: number) => void,
@@ -276,9 +319,8 @@ export async function requestItemsForShareId(
 export const importItemsBatch = async (options: {
     shareId: string;
     importIntents: ItemImportIntent[];
-    onSkippedItem?: (skipped: ItemImportIntent) => void;
-}): Promise<ItemRevisionContentsResponse[]> => {
-    const { shareId, importIntents, onSkippedItem } = options;
+}): Promise<ItemRevision[]> => {
+    const { shareId, importIntents } = options;
     const data: ImportItemBatchRequest = {
         Items: (
             await Promise.all(
@@ -295,7 +337,6 @@ export const importItemsBatch = async (options: {
                         };
                     } catch (e) {
                         logger.info(`[Import] could not import "${item.metadata.name}"`);
-                        onSkippedItem?.(importIntent);
                         return;
                     }
                 })
@@ -315,7 +356,7 @@ export const importItemsBatch = async (options: {
         throw new Error(`Error while batch importing data`);
     }
 
-    return result.Revisions.RevisionsData;
+    return Promise.all(result.Revisions.RevisionsData.map((revision) => parseItemRevision(shareId, revision)));
 };
 
 /** Update the item monitoring flag */

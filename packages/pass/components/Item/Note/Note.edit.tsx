@@ -3,7 +3,9 @@ import type { FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { Field } from '@proton/pass/components/Form/Field/Field';
+import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { BaseTextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { BaseTitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
@@ -11,6 +13,7 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import type { NoteFormValues } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -24,12 +27,13 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
     const note = useDeobfuscatedValue(metadata.note);
 
     const form = useFormik<NoteFormValues>({
-        initialValues: { name: metadata.name, note, shareId },
-        onSubmit: ({ name, note }) => {
+        initialValues: { name: metadata.name, note, files: filesFormInitializer(), shareId },
+        onSubmit: ({ name, note, files }) => {
             onSubmit({
                 ...uneditable,
                 itemId,
                 lastRevision,
+                files,
                 metadata: { ...metadata, name, note: obfuscate(note) },
                 shareId,
             });
@@ -50,7 +54,7 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
         <ItemEditPanel
             type="note"
             formId={FORM_ID}
-            valid={form.isValid && form.dirty}
+            valid={form.isValid && form.dirty && !form.status?.isBusy}
             discardable={!form.dirty}
             handleCancelClick={onCancel}
         >
@@ -77,6 +81,15 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
                             minRows={5}
                             rows={Number.MAX_SAFE_INTEGER}
                         />
+                        <FieldsetCluster className="bg-weak" mode="read">
+                            <Field
+                                name="files"
+                                component={FileAttachmentsFieldEdit}
+                                shareId={shareId}
+                                itemId={itemId}
+                                revision={lastRevision}
+                            />
+                        </FieldsetCluster>
                     </Form>
                 </FormikProvider>
             )}

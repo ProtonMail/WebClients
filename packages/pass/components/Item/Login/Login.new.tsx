@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -22,6 +23,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/p
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
@@ -57,6 +59,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
             aliasPrefix: '',
             aliasSuffix: undefined,
             extraFields: [],
+            files: filesFormInitializer(),
             itemEmail: searchParams.get('email') ?? '',
             itemUsername: '',
             mailboxes: [],
@@ -86,6 +89,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
             totpUri,
             url,
             urls,
+            files,
             extraFields,
             ...values
         }) => {
@@ -132,6 +136,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                 type: 'login',
                 optimisticId,
                 shareId,
+                files,
                 metadata: {
                     name,
                     note: obfuscate(note),
@@ -192,7 +197,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
             <ItemCreatePanel
                 type="login"
                 formId={FORM_ID}
-                valid={form.isValid}
+                valid={form.isValid && !form.status?.isBusy}
                 handleCancelClick={onCancel}
                 discardable={!form.dirty}
                 actions={ParentPortal}
@@ -251,6 +256,10 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                                     icon="note"
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
                                 />
+                            </FieldsetCluster>
+
+                            <FieldsetCluster>
+                                <Field name="files" component={FileAttachmentsField} />
                             </FieldsetCluster>
 
                             <ExtraFieldGroup form={form} />

@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectLatestImport } from '@proton/pass/store/selectors/import';
+import { selectImportReport } from '@proton/pass/store/selectors/import';
 import { selectWritableSharedVaults, selectWritableVaults } from '@proton/pass/store/selectors/shares';
 import { selectPassPlan, selectUser } from '@proton/pass/store/selectors/user';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -14,7 +14,7 @@ type B2BOnboardingStatus = {
 };
 
 export const selectB2BOnboardingState = createSelector(
-    [selectWritableVaults, selectWritableSharedVaults, selectLatestImport],
+    [selectWritableVaults, selectWritableSharedVaults, selectImportReport],
     (vaults, sharedVaults, lastImport): B2BOnboardingStatus => ({
         vaultCreated: vaults.length > 1,
         vaultImported: lastImport !== null,

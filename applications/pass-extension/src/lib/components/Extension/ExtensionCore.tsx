@@ -7,6 +7,7 @@ import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-pro
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import useInstance from '@proton/hooks/useInstance';
@@ -27,12 +28,10 @@ import { getExtensionLocalStorage } from '@proton/pass/lib/extension/storage';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
 import { createI18nService } from '@proton/pass/lib/i18n/service';
-import { isProtonPassEncryptedImport } from '@proton/pass/lib/import/reader';
 import { createSettingsService } from '@proton/pass/lib/settings/service';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { LocalStoreData } from '@proton/pass/types';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
-import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
@@ -87,12 +86,6 @@ const getPassCoreProviderProps = (
             getInitialTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
         }),
 
-        exportData: (payload) =>
-            sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {
-                if (res.type === 'error') throw new Error(res.error);
-                return transferableToFile(res.file);
-            }),
-
         generateOTP: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.OTP_CODE_GENERATE, payload }), (response) =>
                 response.type === 'success' ? response : null
@@ -135,18 +128,6 @@ const getPassCoreProviderProps = (
             ),
 
         getRatingURL: getWebStoreUrl,
-
-        /* CryptoProxy is only initalized in the worker execution
-         * context. Send a pageMessage (as of now the importer is
-         * handled in the settings page) to decrypt the payload
-         * before reading the .zip file contents */
-        prepareImport: async (payload) =>
-            isProtonPassEncryptedImport(payload)
-                ? sendMessage.on(messageFactory({ type: WorkerMessageType.IMPORT_DECRYPT, payload }), (res) => {
-                      if (res.type === 'error') throw new Error(res.error);
-                      return res.payload;
-                  })
-                : payload,
 
         promptForPermissions,
 
@@ -196,6 +177,8 @@ const getPassCoreProviderProps = (
                 .catch(() => false),
 
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
+
+        popup: endpoint === 'popup' ? createPopupController() : undefined,
     };
 };
 

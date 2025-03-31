@@ -3,12 +3,11 @@ import type { DeobfuscatedItemRevision, ItemType, VaultShareContent } from '@pro
 export type ExportedItem<T extends ItemType = ItemType> = Omit<
     DeobfuscatedItemRevision<T>,
     'revision' | 'revisionTime' | 'lastUseTime' | 'flags'
->;
+> & { files?: string[] };
 
 export type ExportedVault = VaultShareContent & { items: ExportedItem[] };
 
 export type ExportData = {
-    encrypted: boolean;
     userId?: string;
     vaults: Record<string, ExportedVault>;
     version: string;
@@ -38,4 +37,8 @@ export type ExportOptions =
     | { format: ExportFormat.PGP; passphrase: string }
     | { format: Exclude<ExportFormat, ExportFormat.PGP> };
 
-export type ExportFormValues = { format: ExportFormat; passphrase: string };
+export type ExportRequestOptions = {
+    format: ExportFormat;
+    passphrase: string;
+    fileAttachments: boolean;
+};

@@ -3,6 +3,7 @@ import { type FC, type MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
+import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -63,6 +64,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                 }
             />
 
+            <FileAttachmentsContentView revision={revision} />
             <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={handleHistoryClick} />
 
             <MoreInfoDropdown

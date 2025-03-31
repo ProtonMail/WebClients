@@ -30,7 +30,8 @@ import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
 const SEPERATOR = '::';
 const toKey = (...args: (string | number)[]) => args.join(SEPERATOR);
 
-export const getItemKeyRevision = ({ shareId, itemId, revision }: ItemRevision) => toKey(shareId, itemId, revision);
+export const getItemRevisionKey = <T extends SelectedRevision>({ shareId, itemId, revision }: T) =>
+    toKey(shareId, itemId, revision);
 
 export const getItemKey = <T extends UniqueItem>({ shareId, itemId }: T) => toKey(shareId, itemId);
 

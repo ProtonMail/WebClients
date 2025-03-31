@@ -1,24 +1,29 @@
 import { useCallback } from 'react';
 
+import type { Store } from 'redux';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
+import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { exportData } from '@proton/pass/store/actions/creators/export';
+import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
+import type { State } from '@proton/pass/store/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 const REAUTH_KEY = 'notification:reauth';
 
-export const useReauthActionHandler = () => {
-    const core = usePassCore();
+export const useReauthActionHandler = (store: Store<State>) => {
     const authStore = useAuthStore();
 
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
+    const dispatch = asyncRequestDispatcherFactory(store.dispatch);
 
     return useCallback(async (reauth: ReauthActionPayload) => {
         switch (reauth.type) {
@@ -30,13 +35,15 @@ export const useReauthActionHandler = () => {
                         loading: true,
                         key: REAUTH_KEY,
                         expiration: -1,
+                        showCloseButton: false,
                     })
                 );
 
-                const data = await core.exportData(reauth.data).catch(() => null);
-                const ok = data !== null;
+                const result = await dispatch(exportData, reauth.data);
 
-                return setTimeout(() => {
+                const ok = result.type === 'success';
+
+                return setTimeout(async () => {
                     createNotification({
                         type: ok ? 'success' : 'error',
                         text: ok
@@ -45,7 +52,12 @@ export const useReauthActionHandler = () => {
                         key: REAUTH_KEY,
                     });
 
-                    if (ok) download(data);
+                    if (ok) {
+                        let { filename, mimeType } = result.data;
+                        mimeType = mimetypeForDownload(mimeType);
+                        const file = await fileStorage.readFile(filename, mimeType);
+                        if (file) download(file, filename);
+                    }
                 }, 1_500);
 
             case ReauthAction.SSO_PW_LOCK:

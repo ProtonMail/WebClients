@@ -2,6 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
+import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
@@ -25,6 +26,7 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
 
             <LoginContent revision={revision} />
 
+            <FileAttachmentsContentView revision={revision} />
             <ItemHistoryStats
                 lastUseTime={lastUseTime}
                 createTime={createTime}

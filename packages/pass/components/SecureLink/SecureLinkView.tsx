@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import warningIcon from '@proton/pass/assets/secure-link/secure-link-warning.svg';
 import { ItemContentView } from '@proton/pass/components/Item/Containers/ItemContentView';
 import { DateBadge } from '@proton/pass/components/Layout/Badge/DateBadge';
+import { SecureLinkFilesList } from '@proton/pass/components/SecureLink/SecureLinkFilesList';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { intoSecureLinkItemRevision } from '@proton/pass/lib/secure-links/secure-links.utils';
 import { secureLinkOpen } from '@proton/pass/store/actions';
@@ -39,7 +40,11 @@ const SecureLinkView: FC = () => {
 
                     {response.expirationDate && <DateBadge expirationTime={response?.expirationDate} />}
                     {response.item && (
-                        <ItemContentView revision={intoSecureLinkItemRevision(response)} secureLinkItem />
+                        <ItemContentView revision={intoSecureLinkItemRevision(response)}>
+                            {response.files && (
+                                <SecureLinkFilesList files={response.files.content} filesToken={response.files.token} />
+                            )}
+                        </ItemContentView>
                     )}
                 </>
             )}

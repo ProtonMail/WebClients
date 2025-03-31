@@ -7,6 +7,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Alert, Icon } from '@proton/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
+import { FileAttachment } from '@proton/pass/components/FileAttachments/FileAttachment';
+import { FileAttachmentsView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCard.content';
 import { IdentityContent } from '@proton/pass/components/Item/Identity/Identity.content';
@@ -18,11 +20,15 @@ import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActi
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getItemHistoryRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
+import { useFileRevision } from '@proton/pass/hooks/files/useFileRevision';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
 import { itemEdit } from '@proton/pass/store/actions';
 import { selectShare } from '@proton/pass/store/selectors';
+import { selectItemFilesForRevision } from '@proton/pass/store/selectors/files';
 import type { ItemEditIntent, ItemRevision, ItemType } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 import { useItemHistory } from './ItemHistoryContext';
@@ -41,23 +47,31 @@ export const RevisionDiff: FC = () => {
     const dispatch = useDispatch();
     const params = useParams<{ revision: string }>();
 
-    const { item: currentItem, revisions } = useItemHistory();
-    const { shareId, itemId } = currentItem;
+    const { item: latestItem, revisions } = useItemHistory();
+    const { shareId, itemId } = latestItem;
     const share = useSelector(selectShare(shareId));
     const canRestore = share && isShareWritable(share);
 
-    const current = currentItem.revision;
+    const latest = latestItem.revision;
     const previous = parseInt(params.revision, 10);
-
     const [selected, setSelected] = useState<number>(previous);
+
     const previousItem = useMemo(() => revisions.find((item) => item.revision === previous), [revisions, previous]);
-    const selectedItem = selected === previous ? previousItem : currentItem;
+    const selectedItem = (selected === latest ? latestItem : previousItem) ?? latestItem;
+
+    const latestFiles = useMemoSelector(selectItemFilesForRevision, [shareId, itemId, latest]);
+    const latestFileUUIDs = useMemo(() => new Set(latestFiles.map(prop('fileUID'))), [latestFiles]);
+
+    const { files, getFilesToRestore, restoreFile, restoring } = useFileRevision({
+        shareId,
+        itemId,
+        revision: selectedItem.revision,
+    });
 
     const restore = useConfirm(({ data: item, itemId, shareId }: ItemRevision) => {
+        const baseItem = { itemId, shareId, lastRevision: latest, files: getFilesToRestore() };
         const editIntent: ItemEditIntent =
-            item.type === 'alias'
-                ? { ...item, itemId, shareId, lastRevision: current, extraData: null }
-                : { ...item, itemId, shareId, lastRevision: current };
+            item.type === 'alias' ? { ...item, ...baseItem, extraData: null } : { ...item, ...baseItem };
 
         dispatch(itemEdit.intent(editIntent));
         selectItem(shareId, itemId, { mode: 'replace', scope });
@@ -73,7 +87,7 @@ export const RevisionDiff: FC = () => {
 
     return (
         <ItemHistoryPanel
-            type={currentItem.data.type}
+            type={latestItem.data.type}
             title={
                 <div className="flex flex-nowrap items-center gap-4">
                     <Button
@@ -114,12 +128,26 @@ export const RevisionDiff: FC = () => {
                     <Button onClick={() => setSelected(previous)} selected={selected === previous} fullWidth>
                         {epochToRelativeDaysAgo(previousItem.revisionTime)}
                     </Button>
-                    <Button onClick={() => setSelected(current)} selected={selected === current} fullWidth>{c('Info')
+                    <Button onClick={() => setSelected(latest)} selected={selected === latest} fullWidth>{c('Info')
                         .t`Current version`}</Button>
                 </ButtonBar>
             }
         >
             <Content revision={selectedItem} viewingHistory={true} />
+
+            {files.length > 0 && (
+                <FileAttachmentsView filesCount={files.length}>
+                    {files.map((file, key) => (
+                        <FileAttachment
+                            key={`file-${key}`}
+                            file={file}
+                            loading={restoring.has(file.fileID)}
+                            disabled={selected === latest || !file.revisionRemoved || latestFileUUIDs.has(file.fileUID)}
+                            onRestore={() => restoreFile({ shareId, itemId, fileId: file.fileID })}
+                        />
+                    ))}
+                </FileAttachmentsView>
+            )}
 
             <ConfirmationModal
                 open={restore.pending}

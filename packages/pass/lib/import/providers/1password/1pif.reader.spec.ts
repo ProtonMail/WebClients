@@ -9,19 +9,19 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { read1Password1PifData } from './1pif.reader';
 
 describe('Import 1password 1pif', () => {
-    let sourceData: string;
     let payload: ImportPayload;
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/1password.private.1pif', 'utf8');
-        payload = await read1Password1PifData({ data: sourceData });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/1password.private.1pif');
+        const file = new File([sourceData], '1password.private.1pif');
+        payload = await read1Password1PifData(file);
     });
 
     test('should throw on invalid file content', async () => {
-        await expect(read1Password1PifData({ data: 'not-a-1pif-file' })).rejects.toThrow();
+        await expect(() => read1Password1PifData(new File([], 'corrupted'))).rejects.toThrow();
     });
 
-    it('should correctly parse items', () => {
+    test('should correctly parse items', () => {
         const [vaultData] = payload.vaults;
         expect(vaultData.items.length).toEqual(8);
 

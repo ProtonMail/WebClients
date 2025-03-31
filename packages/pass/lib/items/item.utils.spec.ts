@@ -13,7 +13,7 @@ import {
     flattenItemsByShareId,
     getItemEntityID,
     getItemKey,
-    getItemKeyRevision,
+    getItemRevisionKey,
     getSanitizedUserIdentifiers,
     interpolateRecentItems,
     intoIdentityItemPreview,
@@ -42,7 +42,7 @@ describe('Item utils', () => {
     describe('getItemKeyRevision', () => {
         test('should return the correct key string', () => {
             const input = createTestItem('login', { shareId: 'share123', itemId: 'item456', revision: 1 });
-            const result = getItemKeyRevision(input);
+            const result = getItemRevisionKey(input);
             expect(result).toBe('share123::item456::1');
         });
     });

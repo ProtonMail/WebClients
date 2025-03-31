@@ -13,24 +13,28 @@ describe('Import Proton Pass ZIP', () => {
     const currentAliases = ['infra.structure078@passdevfree.com'];
 
     beforeAll(async () => {
-        const data = await fs.promises.readFile(__dirname + '/mocks/protonpass.zip');
-        payload = await readProtonPassZIP({
-            data: data.buffer as ArrayBuffer,
+        const sourceData = fs.readFileSync(__dirname + '/mocks/protonpass.zip');
+        const file = new File([sourceData], 'protonpass.zip');
+
+        payload = await readProtonPassZIP(file, {
             userId: 'SWgOUidqAHPDfImlbYvpp__YSOK3YXRAtOckIo_0qmVNjzqVAOWNS2d60OOR15Cv4RTLBCTVaSa43-036nseXg==',
             currentAliases: [],
+            onPassphrase: async () => '',
         });
 
-        payloadExcludingCurrentAliases = await readProtonPassZIP({
-            data: data.buffer as ArrayBuffer,
+        payloadExcludingCurrentAliases = await readProtonPassZIP(file, {
             userId: 'SWgOUidqAHPDfImlbYvpp__YSOK3YXRAtOckIo_0qmVNjzqVAOWNS2d60OOR15Cv4RTLBCTVaSa43-036nseXg==',
             currentAliases,
+            onPassphrase: async () => '',
         });
 
-        const oldFormatData = await fs.promises.readFile(__dirname + '/mocks/protonpass_1.17.zip');
-        oldFormatPayload = await readProtonPassZIP({
-            data: oldFormatData.buffer as ArrayBuffer,
+        const legacyFormat = fs.readFileSync(__dirname + '/mocks/protonpass_1.17.zip');
+        const legacyFile = new File([legacyFormat], 'protonpass_1.17.zip');
+
+        oldFormatPayload = await readProtonPassZIP(legacyFile, {
             userId: '5sxjHzI4mlMVq7-ysH-4YxgbEXsNTUlqmVmosbQKL_NgKXe_E0MroEgbKxH2wHTXXtLS3qr1JR_15SWL5kTVOQ==',
             currentAliases: [],
+            onPassphrase: async () => '',
         });
     });
 

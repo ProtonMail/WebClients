@@ -8,25 +8,24 @@ import * as epochUtils from '@proton/pass/utils/time/epoch';
 import { readKeePassData } from './keepass.reader';
 
 describe('Import KeePass xml', () => {
-    let sourceData: string;
     let payload: ImportPayload;
 
     const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/keepass.xml', 'utf8');
-        payload = readKeePassData({ data: sourceData });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/keepass.xml');
+        const file = new File([sourceData], 'keepass.xml');
+        payload = await readKeePassData(file);
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
-        expect(() => readKeePassData({ data: 'not-an-xml-file' })).toThrow();
+        await expect(() => readKeePassData(new File([' '], 'corrupted'))).rejects.toThrow();
     });
 
     it('should extract vaults from groups', () => {
         expect(payload.vaults.length).toEqual(5);
-
         expect(payload.vaults[0].name).toEqual('Group A');
         expect(payload.vaults[1].name).toEqual('Group B');
         expect(payload.vaults[2].name).toEqual('Group C');

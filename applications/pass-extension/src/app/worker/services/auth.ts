@@ -19,6 +19,7 @@ import {
     clientUnauthorized,
 } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
 import {
     cacheCancel,
@@ -121,6 +122,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             void ctx.service.storage.session.clear();
             void ctx.service.storage.local.clear();
+            void fileStorage.clearAll();
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
 

@@ -1,4 +1,5 @@
 import { type FC, useEffect } from 'react';
+import { useStore } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -9,6 +10,7 @@ import { useReauthActionHandler } from '@proton/pass/hooks/auth/useReauthActionH
 import { getStateKey, isReauthForkState } from '@proton/pass/lib/auth/fork';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
+import type { State } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { throwError } from '@proton/pass/utils/fp/throw';
 
@@ -36,7 +38,8 @@ const confirmPassword = async (password: string) => {
 
 export const Export: FC = () => {
     const history = useHistory();
-    const handleReauthAction = useReauthActionHandler();
+    const store = useStore<State>();
+    const handleReauthAction = useReauthActionHandler(store);
 
     useEffect(() => {
         void (async () => {

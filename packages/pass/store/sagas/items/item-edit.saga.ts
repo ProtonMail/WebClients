@@ -1,11 +1,12 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
 import { syncAliasMailboxes, syncAliasName, syncAliasSLNote } from '@proton/pass/lib/alias/alias.requests';
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
+import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
 import { editItem } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { aliasDetailsSync, itemEdit } from '@proton/pass/store/actions';
+import { aliasDetailsSync, filesResolve, itemEdit } from '@proton/pass/store/actions';
 import type { AliasDetailsState, AliasState } from '@proton/pass/store/reducers';
+import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import {
     selectAliasDetails,
     selectAliasOptions,
@@ -13,10 +14,10 @@ import {
     selectMailboxesForAlias,
 } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
+import type { ItemEditIntent, ItemRevision, Maybe } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import { or, truthy } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEqual } from '@proton/pass/utils/set/is-equal';
 
@@ -72,14 +73,11 @@ function* itemEditWorker(
     const telemetry = getTelemetry();
 
     try {
-        if (editIntent.type === 'alias' && editIntent.extraData?.aliasOwner) {
-            yield call(aliasEditWorker, editIntent);
-        }
+        if (editIntent.type === 'alias' && editIntent.extraData?.aliasOwner) yield call(aliasEditWorker, editIntent);
 
-        const encryptedItem: ItemRevisionContentsResponse = yield editItem(editIntent, lastRevision);
-        const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
-
+        const item: ItemRevision = yield editItem(editIntent, lastRevision);
         yield put(itemEdit.success(meta.request.id, { item, itemId, shareId }));
+        if (or(hasAttachments, hasHadAttachments)(item)) yield put(withRevalidate(filesResolve.intent(item)));
 
         void telemetry?.push(
             createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: TelemetryItemType[item.data.type] })
