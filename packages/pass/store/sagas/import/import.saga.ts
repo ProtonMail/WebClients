@@ -1,5 +1,5 @@
 import type { Task } from 'redux-saga';
-import { call, fork, put, take, takeLeading } from 'redux-saga/effects';
+import { call, fork, put, select, take, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { MAX_BATCH_PER_IMPORT_REQUEST } from '@proton/pass/constants';
@@ -18,8 +18,10 @@ import {
 import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import { matchCancel } from '@proton/pass/store/request/actions';
 import { createVaultWorker } from '@proton/pass/store/sagas/vaults/vault-creation.saga';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { IndexedByShareIdAndItemId, ItemImportIntent, ItemRevision, Maybe } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -81,6 +83,9 @@ function* importWorker(
     const pendingFiles: string[] = [];
     const filesForImport: IndexedByShareIdAndItemId<string[]> = {};
 
+    const plan: UserPassPlan = yield select(selectPassPlan);
+    const canImportFiles = plan !== UserPassPlan.FREE;
+
     Object.values(data.vaults).forEach(({ items }) =>
         items.forEach((item) => {
             pendingItems.set(item.metadata.itemUuid, item);
@@ -136,7 +141,7 @@ function* importWorker(
                             const { itemUuid } = data.metadata;
                             const files = pendingItems.get(itemUuid)?.files;
 
-                            if (files && files.length > 0) {
+                            if (canImportFiles && files && files.length > 0) {
                                 filesForImport[shareId] = filesForImport[shareId] ?? {};
                                 filesForImport[shareId][itemId] = files;
                             }
