@@ -1,0 +1,12 @@
+.publishBanner {
+	justify-content: space-between;
+	block-size: 52px;
+
+	&.unpublished {
+		background-color: color-mix(in srgb, var(--signal-warning) 15%, transparent);
+	}
+
+	&:not(.unpublished) {
+		border: 1px solid #e9e7e3;
+	}
+}

@@ -13,7 +13,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import CountriesStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/CountriesStep';
 import MembersStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/MembersStep';
 import NameStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/NameStep';
-import { buildExpandedCountriesFromSelectedCities } from '@proton/components/containers/vpn/sharedServers/buildExpandedCountriesFromSelectedCities';
 import { buildSelectedCitiesFromLocations } from '@proton/components/containers/vpn/sharedServers/buildSelectedCitiesFromLocations';
 import { PolicyState, PolicyType } from '@proton/components/containers/vpn/sharedServers/constants';
 import { useSharedServers } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
@@ -50,7 +49,6 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
     const [selectedUsers, setSelectedUsers] = useState<SharedServerUser[]>([]);
     const [selectedGroups, setSelectedGroups] = useState<SharedServerGroup[]>([]);
     const [applyPolicyTo, setApplyPolicyTo] = useState<'users' | 'groups'>('users');
-    const [expandedCountries, setExpandedCountries] = useState<Record<string, boolean>>({});
     const [selectedCities, setSelectedCities] = useState<Record<string, string[]>>({});
 
     useEffect(() => {
@@ -67,9 +65,6 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
 
         const map = buildSelectedCitiesFromLocations(policy.Locations || []);
         setSelectedCities(map);
-
-        const expanded = buildExpandedCountriesFromSelectedCities(map);
-        setExpandedCountries(expanded);
     }, [isEditing, policy]);
 
     const { groupedLocations } = useMemo(() => {
@@ -118,6 +113,16 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
 
         return { groupedLocations };
     }, [locations, countryOptions]);
+
+    const allCitiesSelected = useMemo(() => {
+        const allCitiesCount = groupedLocations.reduce((prev, cur) => prev + cur.cities.length, 0);
+        const selectedCitiesCount = Object.keys(selectedCities).reduce(
+            (prev, cur) => prev + selectedCities[cur].length,
+            0
+        );
+
+        return allCitiesCount <= selectedCitiesCount;
+    }, [groupedLocations, selectedCities]);
 
     const handleBack = useCallback(() => {
         if (step === STEP.NAME) {
@@ -267,14 +272,7 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
                         isEditing={isEditing as boolean}
                         policyName={policyName}
                         groupedLocations={groupedLocations}
-                        expandedCountries={expandedCountries}
                         selectedCities={selectedCities}
-                        onToggleCountry={(countryCode) =>
-                            setExpandedCountries((prev) => ({
-                                ...prev,
-                                [countryCode]: !prev[countryCode],
-                            }))
-                        }
                         onSelectCountry={(countryCode, cities) => {
                             setSelectedCities((prev) => {
                                 const currentlySelected = prev[countryCode] || [];
@@ -294,6 +292,21 @@ const SharedServersModal = ({ policy, isEditing = false, onSuccess, ...rest }: S
                                     [countryCode]: isSelected ? current.filter((c) => c !== city) : [...current, city],
                                 };
                             });
+                        }}
+                        onSelectAllCities={() => {
+                            if (allCitiesSelected) {
+                                setSelectedCities({});
+                            } else {
+                                setSelectedCities(
+                                    groupedLocations.reduce(
+                                        (prev, cur) => ({
+                                            ...prev,
+                                            [cur.country]: cur.cities,
+                                        }),
+                                        {}
+                                    )
+                                );
+                            }
                         }}
                     />
                 )}
