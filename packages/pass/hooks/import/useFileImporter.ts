@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { useNotifications } from '@proton/components';
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
@@ -42,17 +44,19 @@ export const useFileImporter = () => {
                                      * archive when using the zip reader */
                                     const filename = getImportFilename(path, report.provider);
                                     const blob = await fileReader.getFile(path);
+
                                     if (blob) {
                                         try {
                                             const file = new File([blob], filename);
                                             const fileID = await fileUpload.start(file, uniqueId());
                                             toAdd.push(fileID);
                                             report.ignoredFiles = report.ignoredFiles?.filter(not(eq(path)));
-                                        } catch (err) {
-                                            if (isAbortError(err)) throw err;
+                                        } catch (error) {
+                                            if (isAbortError(error)) throw error;
+                                            const detail = error instanceof Error ? `(${error.message})` : '';
                                             createNotification({
                                                 type: 'error',
-                                                text: `"${filename}" could not be imported.`,
+                                                text: `${c('Error').t`"${filename}" could not be imported.`} ${detail}`,
                                             });
                                         } finally {
                                             setProgress((progress) => progress + 1);
