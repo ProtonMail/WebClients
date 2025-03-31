@@ -10,13 +10,16 @@ import GenericError from '../error/GenericError';
 interface Props {
     children?: ReactNode;
     big?: boolean;
+    enableTelemetry?: boolean;
 }
 
-const StandardErrorPage = ({ children, big }: Props) => {
+const StandardErrorPage = ({ children, big, enableTelemetry = true }: Props) => {
     useDocumentTitle(c('Error message').t`Oops, something went wrong`);
 
     useEffect(() => {
-        metrics.core_ui_blocking_error_page_total.increment({});
+        if (enableTelemetry) {
+            metrics.core_ui_blocking_error_page_total.increment({});
+        }
     }, []);
 
     return (
