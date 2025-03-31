@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -8,7 +9,9 @@ import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import type { ImportFormContext } from '@proton/pass/hooks/import/useImportForm';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -29,6 +32,8 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
     ].includes(provider);
 
 export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
+    const free = useSelector(selectPassPlan) === UserPassPlan.FREE;
+
     const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
         if (provider) dropzone.setSupportedFileTypes(PROVIDER_INFO_MAP[provider].fileExtension.split(', '));
         void form.setValues({ provider, file: null });
@@ -157,6 +162,12 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                     {providerHasUnsupportedItemTypes(form.values.provider) && (
                         <Card className="mb-4 text-sm" type="primary">
                             {c('Info').t`${PASS_APP_NAME} will only import logins, notes, credit cards and identities.`}
+                        </Card>
+                    )}
+
+                    {free && (
+                        <Card className="mb-4 text-sm" type="warning">
+                            {c('Warning').t`Your current plan does not support importing files`}
                         </Card>
                     )}
                 </>
