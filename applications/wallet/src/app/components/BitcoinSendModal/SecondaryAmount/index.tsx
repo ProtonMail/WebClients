@@ -10,6 +10,7 @@ export const SecondaryAmount = ({
     secondaryExchangeRate,
     value,
     settingsBitcoinUnit,
+    unitValue,
 }: {
     key: string;
     primaryExchangeRate: WasmApiExchangeRate;
@@ -19,6 +20,7 @@ export const SecondaryAmount = ({
      */
     value: number;
     settingsBitcoinUnit: WasmBitcoinUnit;
+    unitValue?: WasmBitcoinUnit;
 }) => {
     if ('isBitcoinRate' in primaryExchangeRate) {
         if (!secondaryExchangeRate) {
@@ -36,7 +38,8 @@ export const SecondaryAmount = ({
 
     return (
         <>
-            {convertAmountStr(value, primaryExchangeRate, settingsBitcoinUnit)} {getLabelByUnit(settingsBitcoinUnit)}
+            {convertAmountStr(value, unitValue ?? primaryExchangeRate, settingsBitcoinUnit)}{' '}
+            {getLabelByUnit(settingsBitcoinUnit)}
         </>
     );
 };

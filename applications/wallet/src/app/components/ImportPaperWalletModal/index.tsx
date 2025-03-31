@@ -4,7 +4,7 @@ import type { QRCode as QRCodeType } from 'jsqr';
 import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import { WasmAccountSweeper, type WasmApiWalletAccount, type WasmPsbt } from '@proton/andromeda';
+import { WasmAccountSweeper, type WasmApiWalletAccount, type WasmBitcoinUnit, type WasmPsbt } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/index';
 import { MiddleEllipsis, type ModalStateProps } from '@proton/components';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components';
@@ -27,7 +27,6 @@ import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useFeesInput } from '../../hooks/useFeesInput';
 import { useTxBuilder } from '../../hooks/useTxBuilder';
 import {
-    convertAmount,
     convertAmountStr,
     getExchangeRateFromBitcoinUnit,
     getLabelByUnit,
@@ -428,11 +427,8 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
                                             settingsBitcoinUnit={settings.BitcoinUnit}
                                             secondaryExchangeRate={exchangeRate}
                                             primaryExchangeRate={exchangeRateOrBitcoinUnit}
-                                            value={convertAmount(
-                                                Number(psbt.total_fees),
-                                                COMPUTE_BITCOIN_UNIT,
-                                                exchangeRateOrBitcoinUnit
-                                            )}
+                                            value={Number(psbt.total_fees)}
+                                            unitValue={'SATS' as WasmBitcoinUnit}
                                         />
                                     </span>
                                 </div>
