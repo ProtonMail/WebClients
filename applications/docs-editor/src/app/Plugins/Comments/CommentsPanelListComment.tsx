@@ -1,9 +1,9 @@
-import { Button } from '@proton/atoms'
+import { Button, UserAvatar } from '@proton/atoms'
 import type { MouseEventHandler } from 'react'
 import { useCallback, useState } from 'react'
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, ToolbarButton, Tooltip } from '@proton/components'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
-import { AnonymousUserEmail, CommentThreadState, UserAvatar } from '@proton/docs-shared'
+import { AnonymousUserEmail, CommentThreadState } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
 import { useApplication } from '../../Containers/ApplicationProvider'
@@ -161,9 +161,10 @@ export function CommentsPanelListComment({
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
           {comment.author ? (
             <UserAvatar
+              size="small"
               name={displayNameForEmail(comment.author)}
               color={color ? { hsl: color } : undefined}
-              className="mr-1 flex-shrink-0"
+              className="mr-1 flex-shrink-0 rounded-[--border-radius-md] text-[0.75rem]"
             />
           ) : (
             <div
