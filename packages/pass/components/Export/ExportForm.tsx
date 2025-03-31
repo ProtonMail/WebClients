@@ -40,12 +40,6 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     c('Info')
                         .t`Before exporting your data with this format, please open Safari settings -> "General" tab -> disable the option "Open safe files after downloading". This will prevent Safari from incorrectly extracting the exported file.`,
 
-                /* Safari EPEX warning */
-                BUILD_TARGET === 'safari' &&
-                    form.values.format === ExportFormat.PGP &&
-                    c('Info')
-                        .t`Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing ".zip". Please rename the file to include the .zip extension (e.g file.zip) after exporting.`,
-
                 /* CSV warning */
                 form.values.format === ExportFormat.CSV &&
                     c('Info')

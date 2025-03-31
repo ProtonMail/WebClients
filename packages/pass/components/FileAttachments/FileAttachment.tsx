@@ -62,7 +62,7 @@ export const FileAttachment: FC<Props> = ({
 
     const noActions = [onDelete, onDownload, onRename, onRestore].every(not(Boolean));
     const actionsDisabled = disabled || !online || noActions;
-    const canDownload = !loading && !fileRename.state.open && online;
+    const canDownload = onDownload && !loading && !fileRename.state.open && online;
     const canRename = onRename && !loading && !fileAttachmentsDisabled && !fileRename.state.open && online;
 
     const enableRenaming = () =>
@@ -101,7 +101,10 @@ export const FileAttachment: FC<Props> = ({
                 >
                     <InputFieldTwo
                         ref={inputRef}
-                        inputClassName="p-0 rounded-none"
+                        inputClassName={clsx(
+                            'p-0 rounded-none',
+                            !fileRename.state.open && 'text-ellipsis pointer-events-none'
+                        )}
                         value={fileRename.state.open ? filename : base}
                         onChange={({ target: { value } }) => setFilename(value)}
                         onBlur={() => fileRename.resolver(filename)}
@@ -121,7 +124,8 @@ export const FileAttachment: FC<Props> = ({
                     />
                 </ClickableDiv>
                 <div className="text-sm color-weak">
-                    {`${extension.toUpperCase()} - ${humanSize({ bytes: file.size })}`}
+                    {extension ? `${extension.toUpperCase()} - ` : ''}
+                    {humanSize({ bytes: file.size })}
                 </div>
             </div>
 
