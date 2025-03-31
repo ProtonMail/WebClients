@@ -2,14 +2,16 @@ import '@testing-library/jest-dom'
 import { cleanup, render, screen, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
 import { RecentDocumentsItem } from '@proton/docs-core'
-import { RecentDocumentsContext } from '../../__utils/recent-documents'
+import { DocumentActionsContext } from '../../__utils/document-actions'
 import { ServerTime } from '@proton/docs-shared'
 import { type ReactNode, useEffect, useState } from 'react'
-import type { Application, RecentDocumentsItemLocation, RecentDocumentsServiceState } from '@proton/docs-core'
+import type { Application, RecentDocumentsItemLocation } from '@proton/docs-core'
 import type { LoggerInterface } from '@proton/utils/logs'
 import userEvent from '@testing-library/user-event'
 import { ApplicationProvider } from '~/utils/application-context'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
+import type { HomepageViewState } from '../../__utils/homepage-view'
+import { HomepageViewContext } from '../../__utils/homepage-view'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
@@ -72,12 +74,12 @@ const MOCK_DATA = [
 
 describe('HomepageContent', () => {
   test('Show loading spinner whilst fetching', async () => {
-    renderWithProvider(<HomepageContent />, 'delayed')
+    renderWithProviders(<HomepageContent />, 'delayed')
     await screen.findByText(/Loading/)
   })
 
   test('Show recent document table when results are fetched', async () => {
-    renderWithProvider(<HomepageContent />)
+    renderWithProviders(<HomepageContent />)
     const table = await screen.findByRole('table')
     // first rowgroup is for the thread second is for tbody
     const tbody = within(table).getAllByRole('rowgroup')[1]
@@ -88,97 +90,97 @@ describe('HomepageContent', () => {
   })
 
   test('Show no items found message when results are empty', async () => {
-    renderWithProvider(<HomepageContent />, 'empty_recents')
-    await screen.findByText(/Create your end-to-end encrypted document/)
+    renderWithProviders(<HomepageContent />, 'empty_recents')
+    await screen.findByText(/Create an encrypted document./)
   })
 
   test('Show context menu when button is clicked', async () => {
-    renderWithProvider(<HomepageContent />)
+    renderWithProviders(<HomepageContent />)
     await userEvent.click(screen.getAllByRole('button', { name: /Context menu/ })[0])
     await screen.findByText('Open')
     await screen.findByText('Open folder')
   })
 
   test('Navigate to the parent drive folder when "Open Folder" is clicked', async () => {
-    const { mockHandleOpenFolder } = renderWithProvider(<HomepageContent />)
+    const { mockOpenParent } = renderWithProviders(<HomepageContent />)
     await userEvent.click(screen.getAllByRole('button', { name: /Context menu/ })[0])
     await userEvent.click(await screen.findByText('Open folder'))
-    expect(mockHandleOpenFolder).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
+    expect(mockOpenParent).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
   })
 
   test('Navigate to the document editor when "Open" is clicked', async () => {
-    const { mockHandleOpenDocument } = renderWithProvider(<HomepageContent />)
+    const { mockOpen } = renderWithProviders(<HomepageContent />)
     await userEvent.click(screen.getAllByRole('button', { name: /Context menu/ })[0])
     await userEvent.click(await screen.findByText('Open'))
-    expect(mockHandleOpenDocument).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
+    expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
   })
 
-  function RecentDocumentsMockProvider({
+  function DocumentActionsMockProvider({
+    children,
+    mockOpen: open = jest.fn(),
+    mockOpenParent: openParent = jest.fn(),
+    mockTrash: trash = jest.fn(),
+  }: {
+    children: ReactNode
+    mockOpen?: jest.Mock
+    mockOpenParent?: jest.Mock
+    mockTrash?: jest.Mock
+  }) {
+    return (
+      <DocumentActionsContext.Provider value={{ open, openParent, trash }}>{children}</DocumentActionsContext.Provider>
+    )
+  }
+
+  function HomepageViewMockProvider({
     children,
     flow,
-    handleTrashDocument,
-    handleOpenDocument,
-    handleOpenFolder,
   }: {
     children: ReactNode
     flow: 'one_document' | 'empty_recents' | 'delayed'
-    handleTrashDocument: jest.Mock
-    handleOpenDocument: jest.Mock
-    handleOpenFolder: jest.Mock
   }) {
-    const [state, setState] = useState<RecentDocumentsServiceState>('not_fetched')
-    const [items, setItems] = useState<RecentDocumentsItem[]>([])
-
-    let providerValue = {
-      state,
-      items,
-      handleTrashDocument,
-      handleOpenDocument,
-      handleOpenFolder,
-    }
+    const [state, setState] = useState<HomepageViewState>({ view: 'recents-initial' })
 
     useEffect(() => {
       if (flow === 'one_document') {
-        setState('done')
-        setItems(MOCK_DATA)
+        setState({ view: 'recents', sort: 'viewed', stale: false, itemSections: [{ id: 'today', items: MOCK_DATA }] })
       }
 
       if (flow === 'empty_recents') {
-        setState('done')
-        setItems([])
+        setState({ view: 'recents-empty' })
       }
 
       if (flow === 'delayed') {
-        setState('fetching')
-        setTimeout(() => {
-          setState('done')
-        }, 10)
+        setState({ view: 'recents-loading' })
+        setTimeout(() => setState({ view: 'recents-empty' }), 10)
       }
     }, [flow])
 
-    return <RecentDocumentsContext.Provider value={providerValue}>{children}</RecentDocumentsContext.Provider>
+    return (
+      <HomepageViewContext.Provider
+        value={{ setRecentsSort: jest.fn, setSearch: jest.fn, updateRecentDocuments: jest.fn as any, state }}
+      >
+        {children}
+      </HomepageViewContext.Provider>
+    )
   }
 
-  function renderWithProvider(node: ReactNode, flow: 'one_document' | 'empty_recents' | 'delayed' = 'one_document') {
-    const mockHandleTrashDocument = jest.fn()
-    const mockHandleOpenDocument = jest.fn()
-    const mockHandleOpenFolder = jest.fn()
+  function renderWithProviders(node: ReactNode, flow: 'one_document' | 'empty_recents' | 'delayed' = 'one_document') {
+    const mockOpen = jest.fn()
+    const mockOpenParent = jest.fn()
+    const mockTrash = jest.fn()
 
     render(
       <ApplicationProvider
         application={{ logger: { debug: jest.fn() } as unknown as LoggerInterface } as unknown as Application}
       >
-        <RecentDocumentsMockProvider
-          flow={flow}
-          handleOpenDocument={mockHandleOpenDocument}
-          handleOpenFolder={mockHandleOpenFolder}
-          handleTrashDocument={mockHandleTrashDocument}
-        >
-          {node}
-        </RecentDocumentsMockProvider>
+        <HomepageViewMockProvider flow={flow}>
+          <DocumentActionsMockProvider mockOpen={mockOpen} mockOpenParent={mockOpenParent} mockTrash={mockTrash}>
+            {node}
+          </DocumentActionsMockProvider>
+        </HomepageViewMockProvider>
       </ApplicationProvider>,
     )
-    return { mockHandleOpenDocument, mockHandleOpenFolder, mockHandleTrashDocument }
+    return { mockOpen, mockOpenParent, mockTrash }
   }
 
   function checkRowContents(

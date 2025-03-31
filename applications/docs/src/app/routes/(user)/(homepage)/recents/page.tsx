@@ -1,18 +1,16 @@
-import { useState } from 'react'
 import { HomepageLayout } from './__components/HomepageLayout'
-import { RecentDocumentsProvider } from './__utils/recent-documents'
+import { DocumentActionsProvider } from './__utils/document-actions'
 import { HomepageContent } from './__components/HomepageContent/HomepageContent'
+import { HomepageViewProvider } from './__utils/homepage-view'
 
 export default function HomepagePage() {
-  const [searchText, setSearchText] = useState('')
-
-  let filter = ''
-
   return (
-    <HomepageLayout onSearchTextChange={setSearchText}>
-      <RecentDocumentsProvider searchText={searchText} filter={filter}>
-        <HomepageContent />
-      </RecentDocumentsProvider>
-    </HomepageLayout>
+    <HomepageViewProvider>
+      <DocumentActionsProvider>
+        <HomepageLayout>
+          <HomepageContent />
+        </HomepageLayout>
+      </DocumentActionsProvider>
+    </HomepageViewProvider>
   )
 }
