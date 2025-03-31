@@ -20,6 +20,7 @@ export enum TelemetryEventName {
     PasskeyCreated = 'passkey.create_done',
     PasskeyCreateDisplay = 'passkey.create_prompt_display',
     PasskeysSuggestionsDisplay = 'passkey.display_suggestions',
+    PassFileUploaded = 'pass_file_attachment.file_uploaded',
     PassMonitorAddCustomEmailFromSuggestion = 'pass_monitor.add_custom_email_from_suggestion',
     PassMonitorDisplayDarkWebMonitoring = 'pass_monitor.display_dark_web_monitoring',
     PassMonitorDisplayExcludedItems = 'pass_monitor.display_excluded_items',
@@ -68,6 +69,7 @@ export type BaseTelemetryEvent<
 type ImportValues = { item_count: number; vaults: number };
 type ImportDimensions = { source: ImportProvider };
 type ItemDimensions = { type: TelemetryItemType };
+type FileDimensions = { mimeType: string };
 type NotificationDimensions = { notificationKey: InAppNotification['NotificationKey'] };
 type NotificationChangeDimensions = NotificationDimensions & { notificationStatus: TelemetryInAppNotificationStatus };
 type AutofillDimensions = { location: 'source' | 'app' };
@@ -89,6 +91,7 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.PasskeyCreated>
     | BaseTelemetryEvent<TelemetryEventName.PasskeyCreateDisplay>
     | BaseTelemetryEvent<TelemetryEventName.PasskeysSuggestionsDisplay>
+    | BaseTelemetryEvent<TelemetryEventName.PassFileUploaded, {}, FileDimensions>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorAddCustomEmailFromSuggestion>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayDarkWebMonitoring>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorDisplayExcludedItems>

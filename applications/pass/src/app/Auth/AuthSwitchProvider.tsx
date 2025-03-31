@@ -15,6 +15,7 @@ import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { api } from '@proton/pass/lib/api/api';
 import { decodeUserData, encodeUserData } from '@proton/pass/lib/auth/store';
 import { type AuthSwitchService, type SwitchableSession, createAuthSwitchService } from '@proton/pass/lib/auth/switch';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -78,6 +79,10 @@ export const AuthSwitchProvider: FC<PropsWithChildren> = ({ children }) => {
             onSessionsSynced: (data) => {
                 setSessions(data);
                 sw?.send({ type: 'sessions_synced', data, broadcast: true });
+
+                /** If there is no more than 1 session - it's safe to clear
+                 * the temporary file system storage everytime on sync */
+                if (data.length <= 1) void fileStorage.clearAll();
             },
         })
     );

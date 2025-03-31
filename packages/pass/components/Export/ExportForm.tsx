@@ -7,20 +7,28 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
+import { ToggleField } from '@proton/pass/components/Form/Field/ToggleField';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
-import { selectNonOwnedVaults } from '@proton/pass/store/selectors';
+import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
+import { UpsellRef } from '@proton/pass/constants';
+import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
+import { selectNonOwnedVaults, selectUserStorageAllowed, selectUserStorageUsed } from '@proton/pass/store/selectors';
 import { BitField } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
-type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boolean };
+export type ExporterProps = { form: FormikContextType<ExportRequestOptions>; loading: boolean };
 
 export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const online = useConnectivity();
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
+    const usedStorage = useSelector(selectUserStorageUsed);
+    const canUseStorage = useSelector(selectUserStorageAllowed);
+    const upsell = useUpselling();
     const org = useOrganization({ sync: true });
     const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
     const disabled = orgExportDisabled || !online;
@@ -33,12 +41,6 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     form.values.format === ExportFormat.ZIP &&
                     c('Info')
                         .t`Before exporting your data with this format, please open Safari settings -> "General" tab -> disable the option "Open safe files after downloading". This will prevent Safari from incorrectly extracting the exported file.`,
-
-                /* Safari PGP warning */
-                BUILD_TARGET === 'safari' &&
-                    form.values.format === ExportFormat.PGP &&
-                    c('Info')
-                        .t`Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing ".pgp". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.`,
 
                 /* CSV warning */
                 form.values.format === ExportFormat.CSV &&
@@ -67,11 +69,11 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                         options={[
                             {
                                 value: ExportFormat.PGP,
-                                label: c('Label').t`PGP-encrypted JSON (recommended)`,
+                                label: c('Label').t`PGP-encrypted (recommended)`,
                             },
                             {
                                 value: ExportFormat.ZIP,
-                                label: c('Label').t`JSON`,
+                                label: c('Label').t`ZIP`,
                             },
                             {
                                 value: ExportFormat.CSV,
@@ -93,6 +95,34 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                             </div>
                         ))}
                     </Card>
+                )}
+
+                {usedStorage > 0 && form.values.format !== ExportFormat.CSV && (
+                    <FeatureFlag feature={PassFeature.PassFileAttachments}>
+                        <Field
+                            name="fileAttachments"
+                            component={ToggleField}
+                            checked={form.values.fileAttachments}
+                            disabled={disabled}
+                            className="my-4"
+                            {...(canUseStorage
+                                ? {}
+                                : {
+                                      onChange: () => {
+                                          upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS });
+                                          void form.setFieldValue('fileAttachments', false);
+                                      },
+                                  })}
+                        >
+                            <span className="pl-2">
+                                {c('Info').t`Include file attachments`}
+                                <span className="block color-weak text-sm">
+                                    {c('Info')
+                                        .t`If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.`}
+                                </span>
+                            </span>
+                        </Field>
+                    </FeatureFlag>
                 )}
 
                 {form.values.format === ExportFormat.PGP && (

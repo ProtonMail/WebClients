@@ -12,19 +12,19 @@ describe('Import bitwarden json', () => {
 
     beforeAll(async () => {
         for (let sourceFile of sourceFiles) {
-            const data = await fs.promises.readFile(sourceFile, 'utf-8');
-            payloads[sourceFile] = await readBitwardenData({ data });
+            const sourceData = fs.readFileSync(sourceFile);
+            const file = new File([sourceData], sourceFile);
+            payloads[sourceFile] = await readBitwardenData(file);
         }
     });
 
-    it('should throw on encrypted json payload', () => {
-        expect(() => readBitwardenData({ data: JSON.stringify({ encrypted: true, items: [] }) })).toThrow();
-    });
-
-    it('should throw on corrupted files', () => {
-        expect(() => readBitwardenData({ data: 'not-a-json-body' })).toThrow();
-        expect(() => readBitwardenData({ data: JSON.stringify({ encrypted: false }) })).toThrow();
-        expect(() => readBitwardenData({ data: JSON.stringify({ encrypted: false, items: '[]' }) })).toThrow();
+    it.each([
+        new File([JSON.stringify({ encrypted: true, items: [] })], 'encrypted'),
+        new File(['not-a-json-body'], 'corrupted'),
+        new File([JSON.stringify({ encrypted: false })], 'corrupted'),
+        new File([JSON.stringify({ encrypted: false, items: '[]' })], 'corrupted'),
+    ])('should throw on invalid payloads', async (file) => {
+        await expect(() => readBitwardenData(file)).rejects.toThrow();
     });
 
     it('should correctly parse items', () => {

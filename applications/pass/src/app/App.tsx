@@ -50,13 +50,9 @@ import {
     getSerializedCredential,
     isPRFSupported,
 } from '@proton/pass/lib/crypto/utils/prf';
-import { createPassExport } from '@proton/pass/lib/export/export';
-import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { selectExportData } from '@proton/pass/store/selectors/export';
 import type { Maybe } from '@proton/pass/types';
-import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
@@ -70,7 +66,6 @@ import { AuthSwitchProvider } from './Auth/AuthSwitchProvider';
 import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/client/ServiceWorkerProvider';
 import type { ServiceWorkerClient } from './ServiceWorker/client/client';
 import { StoreProvider } from './Store/StoreProvider';
-import { store } from './Store/store';
 import locales from './locales';
 
 const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
@@ -98,12 +93,6 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                 return forceDarkMode ? PassThemeOption.PassDark : getInitialTheme();
             },
         }),
-
-        exportData: async (options) => {
-            const state = store.getState();
-            const data = selectExportData({ config: PASS_CONFIG, format: options.format })(state);
-            return transferableToFile(await createPassExport(data, options));
-        },
 
         generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
@@ -143,7 +132,6 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                 hash: page,
             }),
 
-        prepareImport,
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
 
         supportsBiometrics: isPRFSupported,

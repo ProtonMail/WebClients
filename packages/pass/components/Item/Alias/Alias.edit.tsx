@@ -5,6 +5,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Icon, Option } from '@proton/components';
+import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -19,6 +20,7 @@ import { useAliasDetails } from '@proton/pass/hooks/useAliasDetails';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { formatDisplayNameWithEmail } from '@proton/pass/lib/items/item.utils';
 import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
@@ -59,17 +61,19 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
         initialValues: {
             name: metadata.name,
             note,
+            files: filesFormInitializer(),
             mailboxes: [],
             shareId,
             displayName: aliasDetails?.name ?? '',
             slNote: aliasDetails?.slNote ?? '',
         },
-        onSubmit: ({ name, note, mailboxes, shareId, displayName, slNote }) => {
+        onSubmit: ({ name, note, mailboxes, shareId, displayName, slNote, files }) => {
             onSubmit({
                 ...uneditable,
                 extraData: { aliasOwner, mailboxes, aliasEmail, displayName, slNote },
                 itemId,
                 lastRevision,
+                files,
                 metadata: { ...metadata, name, note: obfuscate(note) },
                 shareId,
             });
@@ -137,7 +141,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
         <ItemEditPanel
             type="alias"
             formId={FORM_ID}
-            valid={!(aliasOwner && loading) && form.isValid && form.dirty}
+            valid={!(aliasOwner && loading) && form.isValid && form.dirty && !form.status?.isBusy}
             discardable={!form.dirty}
             handleCancelClick={onCancel}
         >
@@ -202,6 +206,16 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                 component={TextAreaField}
                                 icon="note"
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
+                            />
+                        </FieldsetCluster>
+
+                        <FieldsetCluster>
+                            <Field
+                                name="files"
+                                component={FileAttachmentsFieldEdit}
+                                shareId={shareId}
+                                itemId={itemId}
+                                revision={lastRevision}
                             />
                         </FieldsetCluster>
 

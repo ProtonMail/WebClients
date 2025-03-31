@@ -1,20 +1,26 @@
-import { type FC, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
+import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
+import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
+import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
+import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
+import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
+import { exportData } from '@proton/pass/store/actions/creators/export';
+import { requestCancel } from '@proton/pass/store/request/actions';
+import { selectRequest } from '@proton/pass/store/selectors';
 import type { MaybePromise } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { throwError } from '@proton/pass/utils/fp/throw';
-import { logger } from '@proton/pass/utils/logger';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {
@@ -24,17 +30,30 @@ type Props = {
 };
 
 export const Exporter: FC<Props> = ({ onConfirm }) => {
-    const { exportData } = usePassCore();
     const { createNotification } = useNotifications();
     const online = useConnectivity();
+    const dispatch = useDispatch();
+    const asyncDispatch = useAsyncRequestDispatch();
 
-    const initialValues: ExportFormValues = { format: ExportFormat.PGP, passphrase: '' };
+    const initialValues: ExportRequestOptions = {
+        format: ExportFormat.PGP,
+        passphrase: '',
+        fileAttachments: false,
+    };
+
     const [loading, setLoading] = useState(false);
+
+    const request = useSelector(selectRequest(exportData.requestID()));
+    const progress = request?.status === 'start' ? request.progress : null;
+
+    const cancelExport = () => {
+        dispatch(requestCancel(exportData.requestID()));
+    };
 
     const confirmPassword = usePasswordUnlock();
     const passwordTypeSwitch = usePasswordTypeSwitch();
 
-    const form = useFormik<ExportFormValues>({
+    const form = useFormik<ExportRequestOptions>({
         initialValues: initialValues,
         initialErrors: validateExportForm(initialValues),
         validateOnChange: true,
@@ -64,12 +83,21 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         onAbort: () => throwError({ name: 'AuthConfirmAbortError' }),
                     });
 
-                    download(await exportData(values));
+                    const result = await asyncDispatch(exportData, values);
 
-                    form.resetForm({ values: { ...form.values, passphrase: '' } });
-                    void form.validateForm();
+                    if (result.type !== 'success') throw new Error(result.error);
 
-                    createNotification({ type: 'success', text: c('Info').t`Successfully exported all your items` });
+                    let { filename, mimeType } = result.data;
+                    mimeType = mimetypeForDownload(mimeType);
+                    const file = await fileStorage.readFile(filename, mimeType);
+
+                    if (!file) throw new Error();
+
+                    download(file, filename);
+                    createNotification({
+                        type: 'success',
+                        text: c('Info').t`Successfully exported all your items`,
+                    });
                 } catch (error) {
                     const notification = (() => {
                         if (error instanceof Error) {
@@ -91,14 +119,30 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         return c('Warning').t`An error occurred while exporting your data`;
                     })();
 
-                    logger.warn(`[Settings::Exporter] export failed`, error);
                     if (notification) createNotification({ type: 'error', text: notification });
                 } finally {
                     setLoading(false);
+                    form.resetForm({ values: form.values });
+                    void form.validateForm();
                 }
             }
         },
     });
 
-    return <ExportForm form={form} loading={loading} />;
+    useEffect(() => cancelExport, []);
+
+    return (
+        <>
+            <ExportForm form={form} loading={loading} />
+
+            {form.values.fileAttachments && progress !== null && (
+                <ProgressModal
+                    title={c('Info').t`Exporting files`}
+                    progress={progress ?? 0}
+                    message={c('Info').t`Please be patient while your files are being downloaded.`}
+                    onCancel={cancelExport}
+                />
+            )}
+        </>
+    );
 };

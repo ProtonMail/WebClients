@@ -7,7 +7,7 @@ type Props = {
     actions?: ReactNode[];
     className?: string;
     contentClassname?: string;
-    subTitle?: string;
+    subTitle?: ReactNode;
     title: string;
 };
 export const SettingsPanel: FC<PropsWithChildren<Props>> = ({

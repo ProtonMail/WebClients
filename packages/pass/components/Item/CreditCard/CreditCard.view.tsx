@@ -2,6 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
+import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
 import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCard.content';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
@@ -19,6 +20,7 @@ export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) =
         <ItemViewPanel type="creditCard" {...itemViewProps}>
             <SecureLinkCardList shareId={shareId} itemId={itemId} />
             <CreditCardContent revision={revision} />
+            <FileAttachmentsContentView revision={revision} />
             <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={handleHistoryClick} />
             <MoreInfoDropdown
                 info={[

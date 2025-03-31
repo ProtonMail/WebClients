@@ -33,6 +33,10 @@ export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
 export const selectFeatureFlags = ({ user: { features } }: State) => features;
 export const selectAddresses = ({ user }: State) => user.addresses;
 export const selectAuthDevices = (state: State) => state.user.devices;
+export const selectUserStorageUsed = ({ user }: State) => user.plan?.StorageUsed ?? 0;
+export const selectUserStorageQuota = ({ user }: State) => user.plan?.StorageQuota ?? 0;
+export const selectUserStorageMaxFileSize = ({ user }: State) => user.plan?.StorageMaxFileSize ?? 0;
+export const selectUserStorageAllowed = ({ user }: State) => user.plan?.StorageAllowed;
 
 /* Specification for pass specific plans in `/user/access` response :
  * `business` -> Plan: Business | Trial: null | Limits: none
@@ -90,4 +94,9 @@ export const selectPendingAuthDevices = createSelector([selectAuthDevices, selec
 
 export const selectInAppNotificationsEnabled = createSelector(selectUserSettings, (userSettings): boolean =>
     hasBit(userSettings?.News, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS)
+);
+
+export const selectIsPassEssentials = createSelector(
+    selectUserPlan,
+    (plan): boolean => plan?.Type === 'business' && plan.DisplayName === 'Pass Essentials'
 );

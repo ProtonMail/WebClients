@@ -1,5 +1,6 @@
 import { all } from 'redux-saga/effects';
 
+import { exportUserData } from '@proton/pass/store/sagas/export/export.saga';
 import type { PassSaga, RootSagaOptions } from '@proton/pass/store/types';
 
 import accessEditRole from './access/access-edit-role.saga';
@@ -25,6 +26,7 @@ import reportProblem from './client/report-problem.saga';
 import settings from './client/settings.saga';
 import sync from './client/sync.saga';
 import events from './events/events.saga';
+import fileAttachmentsSagas from './file-attachments/file-attachments.sagas';
 import itemsImport from './import/import.saga';
 import inviteAccept from './invites/invite-accept.saga';
 import inviteAddressesValidate from './invites/invite-addresses-validate.saga';
@@ -69,10 +71,12 @@ const COMMON_SAGAS = [
     ...aliasManagementSagas,
     ...aliasSyncSagas,
     ...customDomainsSagas,
+    ...fileAttachmentsSagas,
     ...notificationSagas,
     ...secureLinkSagas,
     ...ssoSagas,
     ...accessSagas,
+    ...itemDelete,
     accessEditRole,
     accessLeave,
     accessRemoveMember,
@@ -82,6 +86,7 @@ const COMMON_SAGAS = [
     cache,
     coupon,
     events,
+    exportUserData,
     featureFlags,
     getOrganizationSettings,
     inviteAccept,
@@ -96,7 +101,6 @@ const COMMON_SAGAS = [
     itemBulkRestore,
     itemBulkTrash,
     itemCreation,
-    itemDelete,
     itemEdit,
     itemHistory,
     itemMove,

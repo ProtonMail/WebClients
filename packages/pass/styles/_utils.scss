@@ -9,3 +9,21 @@
 .blur-lg {
 	filter: blur(8px);
 }
+
+.hover\:control {
+	.hover\:hide {
+		display: block;
+	}
+	.hover\:show {
+		display: none;
+	}
+
+	&:hover {
+		.hover\:hide {
+			display: none !important;
+		}
+		.hover\:show {
+			display: block !important;
+		}
+	}
+}

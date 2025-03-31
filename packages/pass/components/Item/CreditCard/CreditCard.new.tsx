@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
@@ -23,9 +24,10 @@ import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
-import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
+import type { CreditCardItemFormValues } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -47,19 +49,21 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
             verificationNumber: '',
             pin: '',
             note: '',
+            files: filesFormInitializer(),
         };
     }, []);
 
     const form = useFormik<CreditCardItemFormValues>({
         initialValues,
         initialErrors: validateCreditCardForm(initialValues),
-        onSubmit: ({ shareId, name, note, ...creditCardValues }) => {
+        onSubmit: ({ shareId, name, note, files, ...creditCardValues }) => {
             const id = uniqueId();
             onSubmit({
                 type: 'creditCard',
                 optimisticId: id,
                 shareId,
                 metadata: { name, note: obfuscate(note), itemUuid: id },
+                files,
                 content: {
                     ...creditCardValues,
                     cardType: CardType.Unspecified,
@@ -86,7 +90,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
             handleCancelClick={onCancel}
             submitButton={isFreePlan && <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_CC} />}
             type="creditCard"
-            valid={form.isValid}
+            valid={form.isValid && !form.status?.isBusy}
             actions={ParentPortal}
         >
             {({ didEnter }) => (
@@ -171,6 +175,10 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
                                 icon="note"
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                             />
+                        </FieldsetCluster>
+
+                        <FieldsetCluster>
+                            <Field name="files" component={FileAttachmentsField} />
                         </FieldsetCluster>
                     </Form>
                 </FormikProvider>

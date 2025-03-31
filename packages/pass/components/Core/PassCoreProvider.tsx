@@ -10,9 +10,7 @@ import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { type AuthStore } from '@proton/pass/lib/auth/store';
 import { preloadPassCoreUI } from '@proton/pass/lib/core/core.ui';
 import type { PassCoreProxy } from '@proton/pass/lib/core/types';
-import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
-import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
@@ -24,6 +22,13 @@ import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import noop from '@proton/utils/noop';
 
 import { AppStateProvider } from './AppStateProvider';
+
+export interface PopupController {
+    /** Opens popup in new window */
+    expand: (subpath?: string) => void;
+    /** `true` if popup is opened in a new window */
+    expanded: boolean;
+}
 
 export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
@@ -41,8 +46,6 @@ export type PassCoreContextValue = {
     spotlight: SpotlightProxy;
     /** Theme manager */
     theme: PassThemeService;
-    /** Resolves a users */
-    exportData: (options: ExportOptions) => Promise<File>;
     /** In the extension: leverage worker communication to generate
      * a token. In the web-app: use the OTP utils in-place */
     generateOTP: UsePeriodOtpCodeOptions['generate'];
@@ -75,9 +78,6 @@ export type PassCoreContextValue = {
     onForceUpdate?: () => void;
     /** Open the settings view at a particular page */
     openSettings?: (page?: string) => void;
-    /** This allows processing an import reader payload before feeding
-     * it to the import readers. Used to process encrypted import files. */
-    prepareImport: (payload: ImportReaderPayload) => Promise<ImportReaderPayload>;
     /** Prompts for client specific permissions */
     promptForPermissions?: () => void;
     /** Sets the current tab's url - only relevant for extension */
@@ -92,6 +92,8 @@ export type PassCoreContextValue = {
     generateBiometricsKey?: () => Promise<CryptoKey>;
     /** Checks if this is the first time Pass is being launched */
     isFirstLaunch?: () => boolean;
+    /** Only relevant for extension */
+    popup?: PopupController;
 };
 
 export type PassCoreProviderProps = PassCoreContextValue & { wasm?: boolean };

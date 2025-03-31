@@ -11,6 +11,12 @@ export type EnpassFolder = {
     uuid: string;
 };
 
+export type EnpassAttachment = {
+    data: string;
+    kind: string;
+    name: string;
+};
+
 export type EnpassItem<T extends EnpassCategory> = {
     [K in EnpassCategory]: {
         category: K;
@@ -27,6 +33,7 @@ export type EnpassItem<T extends EnpassCategory> = {
         updated_at: number;
         uuid: string;
         folders?: string[];
+        attachments?: EnpassAttachment[];
     } & (K extends EnpassCategory.NOTE ? {} : { fields?: EnpassField[] });
 }[T];
 

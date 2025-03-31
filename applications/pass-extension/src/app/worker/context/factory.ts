@@ -7,10 +7,8 @@ import { createAutoFillService } from 'proton-pass-extension/app/worker/services
 import { createAutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import { createB2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
 import { createPassCoreProxyService } from 'proton-pass-extension/app/worker/services/core';
-import { createExportService } from 'proton-pass-extension/app/worker/services/export';
 import { createFormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
 import { createI18nService } from 'proton-pass-extension/app/worker/services/i18n';
-import { createImportService } from 'proton-pass-extension/app/worker/services/import';
 import { createInjectionService } from 'proton-pass-extension/app/worker/services/injection';
 import { createLoggerService } from 'proton-pass-extension/app/worker/services/logger';
 import { createMonitorService } from 'proton-pass-extension/app/worker/services/monitor';
@@ -23,7 +21,7 @@ import { createStorageService } from 'proton-pass-extension/app/worker/services/
 import { createStoreService } from 'proton-pass-extension/app/worker/services/store';
 import { createTelemetryService } from 'proton-pass-extension/app/worker/services/telemetry';
 import { createVaultsService } from 'proton-pass-extension/app/worker/services/vaults';
-import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup-icon';
+import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup';
 import { EXTENSION_BUILD_VERSION } from 'proton-pass-extension/lib/utils/version';
 
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
@@ -79,10 +77,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
             autosave: createAutoSaveService(),
             b2bEvents: createB2BEventsService(storage.local, store),
             core,
-            export: createExportService(),
             formTracker: createFormTrackerService(),
             i18n: createI18nService(),
-            import: createImportService(),
             injection: createInjectionService(),
             logger: createLoggerService(storage.local),
             monitor: createMonitorService(core, store),

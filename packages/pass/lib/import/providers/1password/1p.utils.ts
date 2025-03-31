@@ -285,3 +285,21 @@ export const extract1PasswordLegacyIdentity = identityBuilderFactory<OnePassLega
         if (fieldName) item.set('content', (content) => content.set(fieldName, format1PasswordLegacyFieldValue(field)));
     }
 );
+
+export const intoFilesFrom1PasswordItem = (sections: Maybe<OnePassSection[]>): string[] => {
+    if (!sections) return [];
+
+    return sections.reduce<string[]>((acc, section) => {
+        section.fields.forEach((field) => {
+            const file = field.value?.file;
+
+            if (file?.documentId) {
+                /** File attachments are stored in `files/{documentId}__{filename}` */
+                const filename = `files/${file.documentId}__${file.fileName}`;
+                acc.push(filename);
+            }
+        });
+
+        return acc;
+    }, []);
+};

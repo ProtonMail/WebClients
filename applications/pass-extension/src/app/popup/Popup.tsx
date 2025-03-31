@@ -4,7 +4,6 @@ import { HashRouter as Router } from 'react-router-dom';
 import { ExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
 import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
-import { usePopupSizeSurgery } from 'proton-pass-extension/lib/hooks/usePopupSizeSurgery';
 
 import { ErrorBoundary, NotificationsContext, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
@@ -18,8 +17,6 @@ import { PopupProvider } from './PopupProvider';
 import './Popup.scss';
 
 export const Popup = () => {
-    usePopupSizeSurgery();
-
     const notificationsManager = useContext(NotificationsContext);
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();

@@ -21,6 +21,7 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
         | { type: 'claim' }
         | { type: 'connect' }
         | { type: 'fork'; userID: string }
+        | { type: 'fs_gc'; filenames: string[] }
         | { type: 'lock_deleted'; mode: LockMode }
         | { type: 'locked'; mode: LockMode }
         | { type: 'session'; data: Partial<AuthSession> }

@@ -11,7 +11,7 @@ export const resolveItemKey = async (shareId: string, itemId: string): Promise<I
 
     switch (manager.getType()) {
         case ShareType.Vault:
-            const encryptedItemKey = await getLatestItemKey(shareId, itemId);
+            const encryptedItemKey = await getLatestItemKey({ shareId, itemId });
             return PassCrypto.openItemKey({ encryptedItemKey, shareId });
         case ShareType.Item:
             const rotation = manager.getLatestRotation();

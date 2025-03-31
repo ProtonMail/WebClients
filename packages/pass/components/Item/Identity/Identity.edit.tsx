@@ -6,6 +6,7 @@ import { IdentityForm } from '@proton/pass/components/Item/Identity/Identity.for
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { validateIdentityForm } from '@proton/pass/lib/validation/identity';
 import type { IdentityItemFormValues } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -16,8 +17,8 @@ export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ share, revisio
     const { metadata, content } = useDeobfuscatedItem(item);
 
     const form = useFormik<IdentityItemFormValues>({
-        initialValues: { ...content, name: metadata.name, note: metadata.note, shareId },
-        onSubmit: ({ shareId, name, note, ...content }) => {
+        initialValues: { ...content, files: filesFormInitializer(), name: metadata.name, note: metadata.note, shareId },
+        onSubmit: ({ shareId, name, note, files, ...content }) => {
             onSubmit({
                 type: 'identity',
                 shareId,
@@ -26,6 +27,7 @@ export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ share, revisio
                 extraFields: [],
                 itemId,
                 lastRevision,
+                files,
             });
         },
         validate: validateIdentityForm,
@@ -40,5 +42,5 @@ export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ share, revisio
         shareId: form.values.shareId,
     });
 
-    return <IdentityForm form={form} onCancel={onCancel} editing />;
+    return <IdentityForm form={form} onCancel={onCancel} revision={revision} />;
 };

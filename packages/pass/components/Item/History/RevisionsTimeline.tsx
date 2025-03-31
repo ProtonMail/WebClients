@@ -1,15 +1,22 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import type { RouteChildrenProps } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { Timeline } from '@proton/pass/components/Layout/Timeline/Timeline';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
+import { useConfirm } from '@proton/pass/hooks/useConfirm';
+import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
+import { itemDeleteRevisions } from '@proton/pass/store/actions';
+import { selectShare } from '@proton/pass/store/selectors';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 import { useItemHistory } from './ItemHistoryContext';
@@ -17,10 +24,18 @@ import { RevisionItem } from './RevisionItem';
 
 export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
     const scope = useItemScope();
+    const dispatch = useDispatch();
     const { selectItem, navigate } = useNavigationActions();
     const { item, loading, more, revisions, loadMore } = useItemHistory();
     const { shareId, itemId } = item;
     const [current, ...history] = revisions;
+    const share = useSelector(selectShare(shareId));
+    const canReset = history.length > 0 && share && isShareWritable(share);
+
+    const reset = useConfirm(() => {
+        dispatch(itemDeleteRevisions.intent({ shareId, itemId }));
+        selectItem(shareId, itemId, { mode: 'replace', scope });
+    });
 
     return (
         <ItemHistoryPanel
@@ -41,6 +56,23 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                     </Button>
                     <h2 className="text-2xl text-bold text-ellipsis mb-0-5">{c('Title').t`History`}</h2>
                 </div>
+            }
+            actions={
+                canReset
+                    ? [
+                          <Button
+                              key="reset-button"
+                              className="text-sm"
+                              pill
+                              shape="outline"
+                              color="danger"
+                              onClick={() => reset.prompt(true)}
+                          >
+                              <Icon name="clock-rotate-left" className="mr-1" />
+                              <span>{c('Action').t`Reset history`}</span>
+                          </Button>,
+                      ]
+                    : undefined
             }
         >
             {(() => {
@@ -109,6 +141,21 @@ export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {
                     </>
                 );
             })()}
+
+            {reset.pending && (
+                <ConfirmationModal
+                    open
+                    onClose={reset.cancel}
+                    onSubmit={reset.confirm}
+                    submitText={c('Action').t`Reset`}
+                    title={c('Title').t`Reset history for this item?`}
+                >
+                    <Card type="danger" className="text-sm">
+                        {c('Info')
+                            .t`Resetting history will permanently delete all past item versions and cannot be undone.`}
+                    </Card>
+                </ConfirmationModal>
+            )}
         </ItemHistoryPanel>
     );
 };
