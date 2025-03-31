@@ -46,6 +46,15 @@ const meta: Meta<DefaultUserAvatarProps> = {
             control: 'text',
             description: 'Custom element type',
         },
+        capitalize: {
+            type: 'boolean',
+            description: 'Whether to capitalize the letter',
+            table: {
+                defaultValue: {
+                    summary: 'true',
+                },
+            },
+        },
     },
 };
 

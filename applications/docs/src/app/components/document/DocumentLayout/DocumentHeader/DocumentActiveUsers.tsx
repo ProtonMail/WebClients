@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react'
-import { Tooltip } from '@proton/components'
+import { useEffect, useMemo, useState } from 'react'
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown, Tooltip } from '@proton/components'
 import clsx from '@proton/utils/clsx'
 import { useApplication } from '~/utils/application-context'
 import type { DocsAwarenessStateChangeData, SafeDocsUserState } from '@proton/docs-shared'
-import { DocAwarenessEvent, UserAvatar } from '@proton/docs-shared'
+import { DocAwarenessEvent } from '@proton/docs-shared'
+import { Button, UserAvatar } from '@proton/atoms/index'
 
 export type DocumentActiveUsersProps = { className?: string }
+
+const NumberOfVisibleUsers = 5
 
 export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
   const application = useApplication()
@@ -26,13 +29,16 @@ export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
     }, DocAwarenessEvent.AwarenessStateChange)
   }, [application.eventBus])
 
+  const visibleStates = useMemo(() => states.slice(0, NumberOfVisibleUsers), [states])
+  const hiddenStates = useMemo(() => states.slice(NumberOfVisibleUsers), [states])
+
   if (states.length <= 1) {
     return null
   }
 
   return (
     <div className={clsx('flex items-center gap-2', className)} data-testid="active-users">
-      {states.map((state, index) => {
+      {visibleStates.map((state, index) => {
         const { name, color, focusing, awarenessData } = state
 
         const letter = awarenessData?.anonymousUserLetter
@@ -40,9 +46,10 @@ export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
         return (
           <Tooltip title={name} key={index}>
             <UserAvatar
+              as="button"
+              size="small"
               name={letter ? letter : name}
-              useFirstLetterOfName={!letter}
-              className={!focusing ? 'opacity-50' : ''}
+              className={clsx('text-[0.75rem]', !focusing && 'opacity-50')}
               color={{ hsl: color }}
               onClick={() => {
                 application.syncedEditorState.emitEvent({
@@ -50,10 +57,56 @@ export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
                   payload: { state },
                 })
               }}
+              capitalize={!letter}
             />
           </Tooltip>
         )
       })}
+      {hiddenStates.length > 0 && (
+        <SimpleDropdown
+          as={Button}
+          className="bg-strong flex h-7 w-7 items-center justify-center rounded p-0 text-xs"
+          content={
+            <>
+              +{Math.min(hiddenStates.length, 99)}
+              <span className="sr-only">users</span>
+            </>
+          }
+          hasCaret={false}
+        >
+          <DropdownMenu>
+            {hiddenStates.map((state, index) => {
+              const { name, color, focusing, awarenessData } = state
+
+              const letter = awarenessData?.anonymousUserLetter
+
+              return (
+                <Tooltip title={name} key={index}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 px-4 py-2 text-left text-sm"
+                    onClick={() => {
+                      application.syncedEditorState.emitEvent({
+                        name: 'ScrollToUserCursorData',
+                        payload: { state },
+                      })
+                    }}
+                  >
+                    <UserAvatar
+                      as="button"
+                      size="small"
+                      name={letter ? letter : name}
+                      className={clsx('text-[0.75rem]', !focusing && 'opacity-50')}
+                      color={{ hsl: color }}
+                      capitalize={!letter}
+                    />
+                    <span>{name}</span>
+                  </DropdownMenuButton>
+                </Tooltip>
+              )
+            })}
+          </DropdownMenu>
+        </SimpleDropdown>
+      )}
     </div>
   )
 }
