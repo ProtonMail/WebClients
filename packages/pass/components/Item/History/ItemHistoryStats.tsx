@@ -11,13 +11,13 @@ import type { MaybeNull } from '@proton/pass/types';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 type Props = {
-    handleHistoryClick: () => void;
     createTime: number;
-    modifyTime: number;
     lastUseTime?: MaybeNull<number>;
+    modifyTime: number;
+    handleHistoryClick: () => void;
 };
 
-export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTime, handleHistoryClick }) => {
+export const ItemHistoryStats: FC<Props> = ({ createTime, lastUseTime, modifyTime, handleHistoryClick }) => {
     const passPlan = useSelector(selectPassPlan);
 
     return (
