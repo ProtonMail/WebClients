@@ -3,7 +3,6 @@ import type { ShareMembershipPayload } from './member';
 export interface CreateDriveShare {
     AddressID: string;
     RootLinkID: string;
-    Name: string;
     ShareKey: string;
     SharePassphrase: string;
     SharePassphraseSignature: string;
@@ -12,7 +11,6 @@ export interface CreateDriveShare {
 }
 export interface CreateDrivePhotosShare {
     Share: {
-        Name: string;
         AddressID: string;
         AddressKeyID: string;
         Key: string;
@@ -40,9 +38,7 @@ export interface ShareMetaShort {
     Locked: boolean;
     VolumeID: string;
     Creator: string;
-    Flags: number;
     PossibleKeyPackets?: { KeyPacket: string }[];
-    VolumeSoftDeleted: boolean;
     State: number;
     CreateTime: number;
 }
@@ -56,8 +52,4 @@ export interface ShareMeta extends ShareMetaShort {
     Memberships: ShareMembershipPayload[];
     // Will tell us if the locked share is for auto-restore process
     ForASV: boolean;
-}
-
-export enum ShareFlags {
-    MainShare = 1,
 }
