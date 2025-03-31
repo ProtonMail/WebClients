@@ -12,9 +12,10 @@ import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/component
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
+import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
-import { exportData } from '@proton/pass/store/actions/creators/transfer';
+import { exportData } from '@proton/pass/store/actions/creators/export';
 import { requestCancel } from '@proton/pass/store/request/actions';
 import { selectRequest } from '@proton/pass/store/selectors';
 import type { MaybePromise } from '@proton/pass/types';
@@ -86,8 +87,9 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
 
                     if (result.type !== 'success') throw new Error(result.error);
 
-                    const filename = result.data;
-                    const file = await fileStorage.readFile(filename);
+                    let { filename, mimeType } = result.data;
+                    mimeType = mimetypeForDownload(mimeType);
+                    const file = await fileStorage.readFile(filename, mimeType);
 
                     if (!file) throw new Error();
 
