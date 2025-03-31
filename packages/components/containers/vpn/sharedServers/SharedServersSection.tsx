@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Prompt } from 'react-router';
 
 import { c, msgid } from 'ttag';
 
@@ -36,9 +37,25 @@ import { getCountryOptions } from '@proton/payments';
 import { MINUTE, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import './SharedServersSection.scss';
+
 interface VpnLocationFilterPolicyLocal extends VpnLocationFilterPolicy {
     localStatus?: LocalStatus;
 }
+
+const OrangeDot: React.FC = () => (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_10876_154544)">
+            <circle cx="8" cy="8" r="4" fill="#FF9900" />
+            <circle opacity="0.4" cx="8" cy="8" r="8" fill="#FF9900" />
+        </g>
+        <defs>
+            <clipPath id="clip0_10876_154544">
+                <rect width="16" height="16" fill="white" />
+            </clipPath>
+        </defs>
+    </svg>
+);
 
 const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
     const api = useApi();
@@ -201,15 +218,34 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
         }
     }, [loading, originalPolicies, localPolicies, policyType, originalPolicyType]);
 
+    useEffect(() => {
+        const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+            if (hasUnsavedChanges) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, [hasUnsavedChanges]);
+
     if (loading) {
         return <Loader />;
     }
 
-    const amountUsers = users.length - countUsersNotInAnyPolicy;
+    const amountUsers = {
+        [PolicyType.None]: 0,
+        [PolicyType.All]: users.length,
+        [PolicyType.Custom]: users.length - countUsersNotInAnyPolicy,
+    }[policyType];
     const totalUsers = users.length;
 
     return (
         <SettingsSectionWide>
+            <Prompt when={hasUnsavedChanges} message={() => 'The unpublished changes you made will be lost.'} />
             <div className="flex items-center gap-1 color-weak">
                 {getBoldFormattedText(
                     c('Info')
@@ -218,6 +254,31 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                 <Href href={getKnowledgeBaseUrl('/shared-servers')} className="ml-1">
                     {c('Link').t`Learn more`}
                 </Href>
+            </div>
+
+            <div
+                className={`publishBanner ${hasUnsavedChanges && 'unpublished'} rounded my-6 flex items-center w-full p-2`}
+            >
+                <p className="ml-4 m-0 color-weak">
+                    {
+                        /*translator: if the sentence cannot be properly pluralized according to totalUsers, it's fine to keep it plural*/
+                        c('Info').ngettext(
+                            msgid`${amountUsers}/${totalUsers} users currently has access to shared servers.`,
+                            `${amountUsers}/${totalUsers} users currently have access to shared servers.`,
+                            totalUsers
+                        )
+                    }
+                </p>
+                {hasUnsavedChanges && (
+                    <div className="flex items-center">
+                        <OrangeDot />
+                        <span className="ml-2" style={{ fontWeight: 'var(--font-weight-bold)' }}>{c('Info')
+                            .t`You have unpublished changes`}</span>
+                        <Button color="norm" type="button" className="ml-8" onClick={handlePublishChanges}>
+                            {c('Action').t`Publish changes`}
+                        </Button>
+                    </div>
+                )}
             </div>
 
             <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full mt-4">
@@ -242,16 +303,6 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                         .t`Create policies to decide who can connect to shared servers in each country.`}
                 />
             </div>
-
-            {hasUnsavedChanges && (
-                <div className="rounded mt-6 flex items-center justify-between w-full h-60px p-4 bg-norm-weak">
-                    <Icon name="hourglass" color="var(--interaction-norm)" className="mx-4" />
-                    <span>{c('Info').t`You have unpublished changes`}</span>
-                    <Button color="norm" type="button" className="ml-auto" onClick={handlePublishChanges}>
-                        {c('Action').t`Publish changes`}
-                    </Button>
-                </div>
-            )}
 
             {policyType === PolicyType.All && (
                 <div className="mt-8 p-4 border rounded">
@@ -284,13 +335,6 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                     <div className="flex mt-8 w-full justify-between items-center">
                         <div className="flex-1 mr-4">
                             <p className="text-semibold text-lg m-0">{c('Info').t`Custom policies`}</p>
-                            <p className="m-0 color-weak">
-                                {c('Info').ngettext(
-                                    msgid`${amountUsers}/${totalUsers} users currently have access to shared servers.`,
-                                    `${amountUsers}/${totalUsers} users currently have access to shared servers.`,
-                                    totalUsers
-                                )}
-                            </p>
                         </div>
 
                         <Button size="medium" color="norm" shape="solid" onClick={addPolicy}>
@@ -299,7 +343,7 @@ const SharedServersSection = ({ maxAge = 10 * MINUTE }) => {
                         </Button>
                     </div>
 
-                    <Table className="mt-4" responsive="cards">
+                    <Table className="mt-2" responsive="cards">
                         <TableHeader>
                             <TableRow>
                                 <TableHeaderCell>{c('Header').t`Policy Name`}</TableHeaderCell>
