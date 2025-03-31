@@ -8,12 +8,14 @@ import clsx from '@proton/utils/clsx';
 interface SettingsParagraphProps extends ComponentPropsWithoutRef<'p'> {
     inlineLearnMore?: boolean;
     learnMoreUrl?: string;
+    learnMoreText?: string;
     large?: boolean;
 }
 
 const SettingsParagraph = ({
     learnMoreUrl,
     inlineLearnMore = false,
+    learnMoreText = c('Link').t`Learn more`,
     className,
     children,
     large,
@@ -22,7 +24,7 @@ const SettingsParagraph = ({
     const learnMoreElement = learnMoreUrl ? (
         <>
             {inlineLearnMore ? ' ' : <br />}
-            <Href href={learnMoreUrl} className={className}>{c('Link').t`Learn more`}</Href>
+            <Href href={learnMoreUrl} className={className}>{learnMoreText}</Href>
         </>
     ) : null;
 

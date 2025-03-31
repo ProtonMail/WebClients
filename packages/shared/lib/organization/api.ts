@@ -17,6 +17,7 @@ export const getDefaultOrganizationSettings = (): OrganizationSettings => {
         ShowScribeWritingAssistant: true,
         VideoConferencingEnabled: false,
         AllowedProducts: ['All'],
+        PasswordPolicies: [],
     };
 };
 

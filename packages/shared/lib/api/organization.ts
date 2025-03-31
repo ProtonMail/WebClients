@@ -48,6 +48,7 @@ export const updateOrganizationSettings = (data: {
     ShowScribeWritingAssistant?: boolean;
     VideoConferencingEnabled?: boolean;
     AllowedProducts?: OrganizationSettings['AllowedProducts'];
+    PasswordPolicies?: OrganizationSettings['PasswordPolicies'];
 }) => ({
     url: 'core/v4/organizations/settings',
     method: 'put',

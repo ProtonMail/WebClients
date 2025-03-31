@@ -10,6 +10,10 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import {
+    OrganizationPasswordPolicies,
+    useOrganizationPasswordPolicyValidation,
+} from '@proton/components/components/organizationPasswordPolicies/OrganizationPasswordPolicies';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
@@ -78,6 +82,8 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         passwordLengthValidator(inputs.confirmPassword) ||
         confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword);
 
+    const organizationPasswordPolicies = useOrganizationPasswordPolicyValidation(inputs.newPassword, normalApi);
+
     if (!memberAuthData) {
         return (
             <AuthModal
@@ -123,7 +129,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         if (!onFormSubmit()) {
             return;
         }
-        if (newPasswordError || confirmPasswordError) {
+        if (newPasswordError || confirmPasswordError || !organizationPasswordPolicies.passwordRequirementsMatched) {
             return;
         }
 
@@ -157,6 +163,8 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         </b>
     );
 
+    const saveButtonDisabled = !organizationPasswordPolicies.passwordRequirementsMatched;
+
     return (
         <Modal as={Form} onClose={handleClose} {...rest} onSubmit={onSubmit}>
             <ModalHeader title={c('Title').t`Change password`} />
@@ -177,6 +185,15 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
                     disabled={loading}
                 />
 
+                {organizationPasswordPolicies.displayed && (
+                    <div className="mb-4">
+                        <OrganizationPasswordPolicies
+                            password={inputs.newPassword}
+                            wrapper={organizationPasswordPolicies}
+                        />
+                    </div>
+                )}
+
                 <InputFieldTwo
                     id="confirmPassword"
                     label={c('Label').t`Confirm new password`}
@@ -196,7 +213,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
                 <Button onClick={handleClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button loading={loading} type="submit" color="norm">
+                <Button loading={loading} type="submit" color="norm" disabled={saveButtonDisabled}>
                     {c('Action').t`Change password`}
                 </Button>
             </ModalFooter>

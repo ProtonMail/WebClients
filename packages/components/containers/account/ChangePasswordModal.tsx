@@ -16,6 +16,10 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import {
+    OrganizationPasswordPolicies,
+    useOrganizationPasswordPolicyValidation,
+} from '@proton/components/components/organizationPasswordPolicies/OrganizationPasswordPolicies';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
@@ -157,6 +161,8 @@ const ChangePasswordModal = ({
             throw new Error('Password error');
         }
     };
+
+    const organizationPasswordPolicies = useOrganizationPasswordPolicyValidation(inputs.newPassword, api);
 
     const checkLoginError = ({ data: { Code, Error } = { Code: 0, Error: '' } }) => {
         if (Code === PASSWORD_WRONG_ERROR) {
@@ -555,6 +561,9 @@ const ChangePasswordModal = ({
 
     const handleClose = loading ? noop : lockAndClose;
 
+    const saveButtonDisabled =
+        organizationPasswordPolicies.displayed && !organizationPasswordPolicies.passwordRequirementsMatched;
+
     return (
         <Modal
             size={passwordStrengthIndicator.supported ? 'xlarge' : undefined}
@@ -602,12 +611,21 @@ const ChangePasswordModal = ({
                             disabled={loading}
                         />
 
-                        {passwordStrengthIndicator.supported && (
+                        {passwordStrengthIndicator.supported && !organizationPasswordPolicies.displayed && (
                             <PasswordStrengthIndicator
                                 service={passwordStrengthIndicator.service}
                                 password={inputs.newPassword}
                                 className="block md:hidden w-full mb-4"
                             />
+                        )}
+
+                        {organizationPasswordPolicies.displayed && (
+                            <div className="block md:hidden w-full mb-4">
+                                <OrganizationPasswordPolicies
+                                    password={inputs.newPassword}
+                                    wrapper={organizationPasswordPolicies}
+                                />
+                            </div>
                         )}
 
                         <InputFieldTwo
@@ -631,12 +649,12 @@ const ChangePasswordModal = ({
                         <Button onClick={handleClose} disabled={loading}>
                             {close || c('Action').t`Cancel`}
                         </Button>
-                        <Button loading={loading} type="submit" color="norm">
+                        <Button loading={loading} type="submit" color="norm" disabled={saveButtonDisabled}>
                             {submit || c('Action').t`Save`}
                         </Button>
                     </ModalFooter>
                 </div>
-                {passwordStrengthIndicator.supported && (
+                {passwordStrengthIndicator.supported && !organizationPasswordPolicies.displayed && (
                     <div className="hidden md:flex w-2/5 border-left">
                         <Scroll>
                             <PasswordStrengthIndicator
@@ -646,6 +664,17 @@ const ChangePasswordModal = ({
                                 variant="large"
                                 showGeneratePasswordButton={true}
                                 className="p-5"
+                            />
+                        </Scroll>
+                    </div>
+                )}
+                {organizationPasswordPolicies.displayed && (
+                    <div className="hidden md:flex w-2/5 border-left">
+                        <Scroll>
+                            <OrganizationPasswordPolicies
+                                password={inputs.newPassword}
+                                wrapper={organizationPasswordPolicies}
+                                variant="large"
                             />
                         </Scroll>
                     </div>
