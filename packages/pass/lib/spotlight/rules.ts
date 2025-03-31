@@ -1,6 +1,7 @@
 import type { Store } from 'redux';
 
 import { ITEM_COUNT_RATING_PROMPT } from '@proton/pass/constants';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectAliasItems,
     selectCanCreateItems,
@@ -11,6 +12,7 @@ import {
     selectUserData,
     selectUserPlan,
 } from '@proton/pass/store/selectors';
+import { selectFiles } from '@proton/pass/store/selectors/files';
 import type { State } from '@proton/pass/store/types';
 import { type Maybe, type MaybeNull, PlanType, SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -178,3 +180,17 @@ export const createAliasDiscoveryRules = (store: Store<State>): SpotlightRule[] 
             },
         })
     );
+
+export const createFileAttachmentsDiscoveryRule = (store: Store<State>): SpotlightRule =>
+    createSpotlightRule({
+        message: SpotlightMessage.FILE_ATTACHMENTS_DISCOVERY,
+        when: (previous) => {
+            const files = selectFiles(store.getState());
+            const plan = selectUserPlan(store.getState());
+            const passPlan = selectPassPlan(store.getState());
+
+            const fileAttachmentsEnabled = isPaidPlan(passPlan) && plan?.DisplayName !== 'Pass Essentials';
+
+            return fileAttachmentsEnabled && !Object.values(files).length && !previous;
+        },
+    });

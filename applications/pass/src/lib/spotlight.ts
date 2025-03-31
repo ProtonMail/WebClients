@@ -6,6 +6,7 @@ import {
     createAliasDiscoveryRules,
     createAliasSyncEnableRule,
     createB2BRule,
+    createFileAttachmentsDiscoveryRule,
     createItemSharingRule,
     createMonitorLearnMoreRule,
     createPendingShareAccessRule,
@@ -55,6 +56,7 @@ export const spotlight = createSpotlightService({
         createSSOChangeLockRule(),
         createItemSharingRule(),
         ...createAliasDiscoveryRules(store),
+        createFileAttachmentsDiscoveryRule(store),
     ],
 });
 
