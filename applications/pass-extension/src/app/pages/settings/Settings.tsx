@@ -2,15 +2,12 @@ import type { FC } from 'react';
 import { useCallback } from 'react';
 
 import { ExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
-import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
-import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsRouter } from './SettingsRouter';
 
@@ -27,15 +24,19 @@ export const Settings: FC = () => {
     }, []);
 
     return (
-        <ExtensionStore>
-            <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
-            <ExtensionClient onWorkerMessage={handleWorkerMessage}>
-                {(ready) => (
-                    <Localized>
-                        <SettingsRouter ready={ready} />
-                    </Localized>
-                )}
-            </ExtensionClient>
-        </ExtensionStore>
+        <div
+            className="pass-settings flex flex-column ui-standard w-full p-4 mx-auto bg-weak min-h-custom anime-fade-in"
+            style={{ '--min-h-custom': '100vh' }}
+        >
+            <ExtensionStore>
+                <ExtensionClient onWorkerMessage={handleWorkerMessage}>
+                    {(ready) => (
+                        <Localized>
+                            <SettingsRouter ready={ready} />
+                        </Localized>
+                    )}
+                </ExtensionClient>
+            </ExtensionStore>
+        </div>
     );
 };
