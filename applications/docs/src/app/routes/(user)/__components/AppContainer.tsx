@@ -94,13 +94,13 @@ function useHomepageFeatureFlag() {
 const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
 
-const DOCUMENT_DEFAULT_PATH = '/doc'
-const DOCUMENT_NEW_PATH = '/new'
-const DOCUMENT_PATHS = [DOCUMENT_DEFAULT_PATH, DOCUMENT_NEW_PATH]
-const HOMEPAGE_DEFAULT_PATH = '/recents'
-const HOMEPAGE_FAVORITES_PATH = '/favorites'
-const HOMEPAGE_RECENTLY_DELETED_PATH = '/recently-deleted'
-const HOMEPAGE_PATHS = [HOMEPAGE_DEFAULT_PATH, HOMEPAGE_FAVORITES_PATH, HOMEPAGE_RECENTLY_DELETED_PATH]
+export const DOCUMENT_EDITOR_PATH = '/doc'
+export const DOCUMENT_NEW_PATH = '/new'
+export const DOCUMENT_PATHS = [DOCUMENT_EDITOR_PATH, DOCUMENT_NEW_PATH]
+export const HOMEPAGE_RECENTS_PATH = '/recents'
+export const HOMEPAGE_FAVORITES_PATH = '/favorites'
+export const HOMEPAGE_TRASHED_PATH = '/trashed'
+export const HOMEPAGE_PATHS = [HOMEPAGE_RECENTS_PATH, HOMEPAGE_FAVORITES_PATH, HOMEPAGE_TRASHED_PATH]
 
 type AppRoutesProps = { driveCompat: DriveCompat }
 
@@ -147,8 +147,8 @@ function WildcardRoute({ isHomepageEnabled }: WildcardRouteProps) {
   const isOpenDocumentLink = searchParams.get('mode')?.includes('open')
 
   if (isHomepageEnabled && !isOpenDocumentLink) {
-    return <Navigate to={HOMEPAGE_DEFAULT_PATH} replace />
+    return <Navigate to={HOMEPAGE_RECENTS_PATH} replace />
   }
 
-  return <Navigate to={{ pathname: DOCUMENT_DEFAULT_PATH, search: searchParams.toString() }} replace />
+  return <Navigate to={{ pathname: DOCUMENT_EDITOR_PATH, search: searchParams.toString() }} replace />
 }

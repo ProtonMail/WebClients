@@ -36,6 +36,7 @@ import { extraThunkArguments } from '~/redux-store/thunk'
 import type { AvailabilityReport } from '@proton/utils/availability'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
+import { UserSettingsProvider } from '@proton/drive-store/store'
 
 /**
  * The entry point for the user (authenticated) application.
@@ -57,7 +58,7 @@ export default function UserApp() {
         }
 
         return (
-          <OuterContainer store={store} showDrawerSidebar={showDrawerSidebar}>
+          <OuterContainer store={store} showDrawerSidebar={showDrawerSidebar} initialUser={initialUser}>
             {/* Normally, this will render AppContainer. Routing is handled by AppRoutes. */}
             <MainContainer />
           </OuterContainer>
@@ -127,9 +128,14 @@ function useAppState() {
 
 const HIDDEN_NOTIFICATIONS = ['Requested data does not exist or you do not have permission to access it']
 
-type OuterContainerProps = { store: DocsStore; showDrawerSidebar?: boolean; children: ReactNode }
+type OuterContainerProps = {
+  store: DocsStore
+  showDrawerSidebar?: boolean
+  initialUser: UserModel
+  children: ReactNode
+}
 
-function OuterContainer({ store, showDrawerSidebar, children }: OuterContainerProps) {
+function OuterContainer({ store, showDrawerSidebar, initialUser, children }: OuterContainerProps) {
   return (
     <ProtonStoreProvider store={store}>
       <CustomNotificationsHijack ignoredNotifications={HIDDEN_NOTIFICATIONS}>
@@ -142,7 +148,26 @@ function OuterContainer({ store, showDrawerSidebar, children }: OuterContainerPr
                     {/* TODO: fix typo globally */}
                     <DrawerProvider defaultShowDrawerSidear={showDrawerSidebar}>
                       <ErrorBoundary big component={<StandardErrorPage big />}>
-                        <StandardPrivateApp>{children}</StandardPrivateApp>
+                        {/* TODO: remove this once the temporary "Trashed" homepage view implementation is cleaned up */}
+                        <UserSettingsProvider
+                          initialUser={initialUser}
+                          initialDriveUserSettings={{
+                            Defaults: {
+                              RevisionRetentionDays: 0,
+                              B2BPhotosEnabled: false,
+                              PhotoTags: [],
+                            },
+                            UserSettings: {
+                              Sort: null,
+                              Layout: null,
+                              RevisionRetentionDays: null,
+                              B2BPhotosEnabled: null,
+                              PhotoTags: null,
+                            },
+                          }}
+                        >
+                          <StandardPrivateApp>{children}</StandardPrivateApp>
+                        </UserSettingsProvider>
                       </ErrorBoundary>
                     </DrawerProvider>
                   </ApiProvider>

@@ -7,6 +7,13 @@ import type { CacheService } from './CacheService'
 import { nodeMetaUniqueId } from '@proton/drive-store/lib'
 import { BasePropertiesState } from '@proton/docs-shared'
 
+// Please remember to bump this number if you make changes to the format of
+// serialized data stored in cache (either directly or indirectly) in a way
+// that could potentially break the app. The cache will be automatically
+// invalidated if the version differs.
+const CACHE_VERSION = 0
+const CACHE_VERSION_KEY = 'recent-documents-cache-version'
+
 // store
 // -----
 
@@ -71,6 +78,21 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
 
   async loadCachedSnapshot(): Promise<void> {
     this.#logger.info('Loading recent document snapshot')
+    const cacheVersion = await this.#cacheService.getCachedValue({ key: CACHE_VERSION_KEY, document: undefined })
+
+    if (cacheVersion.isFailed() || Number(cacheVersion.getValue()) !== CACHE_VERSION) {
+      this.#logger.info('Cache version mismatch, clearing cache')
+      await this.#cacheService.cacheValue({
+        document: undefined,
+        key: RECENTS_LOCAL_STORAGE_KEY,
+        value: '[]',
+      })
+      await this.#cacheService.cacheValue({
+        document: undefined,
+        key: CACHE_VERSION_KEY,
+        value: String(CACHE_VERSION),
+      })
+    }
 
     const result = await this.#cacheService.getCachedValue({
       document: undefined,
@@ -98,7 +120,16 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
 
   setSnapshotItem(item: RecentDocumentsItem): void {
     this.snapshot.set(item.uniqueId(), item)
+    this.#sortRecents()
+  }
 
+  #removeStaleSnapshotItems(): void {
+    this.snapshot.keys().forEach((key) => {
+      if (!this.#lastResolvedIds.has(key)) {
+        this.#logger.info(`Removing stale recent document item with ID ${key}`)
+        this.snapshot.delete(key)
+      }
+    })
     this.#sortRecents()
   }
 
@@ -114,7 +145,16 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
     return this.state.getProperty('recents')
   }
 
+  #lastResolvedIds = new Set<string>()
+  #resetLastResolvedIds() {
+    this.#lastResolvedIds = new Set()
+  }
+
   async fetch() {
+    const state = this.state.getProperty('state')
+    if (state !== 'not_fetched' && state !== 'done') {
+      return
+    }
     this.state.setProperty('state', 'fetching')
 
     const response = await this.#docsApi.fetchRecentDocuments()
@@ -127,8 +167,9 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
 
     const recents = response.getValue().RecentDocuments
 
+    this.#resetLastResolvedIds()
     await Promise.all(recents.map((item) => this.resolveItem(item)))
-
+    this.#removeStaleSnapshotItems()
     void this.cacheSnapshot()
 
     this.state.setProperty('state', 'done')
@@ -140,19 +181,27 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
       shareId: apiItem.ContextShareID,
     }
     const lastViewed = new ServerTime(apiItem.LastOpenTime)
-    // TODO: obtain last modified time
+    // TODO: actually obtain last modified time
     const lastModified = new ServerTime(apiItem.LastOpenTime)
 
     try {
-      const [node, nodePath, isNodeShared] = await Promise.all([
+      const [node, nodePath, isSharedWithMe] = await Promise.all([
         this.#driveCompat.getNodes([nodeIds]).then((nodes) => nodes[0]),
         this.#driveCompat.getNodePaths([nodeIds]).then((paths) => paths[0]),
         this.#driveCompat.getNodesAreShared([nodeIds]).then((shared) => shared[0]),
       ])
+
+      const { linkId, shareId } = nodeIds
+      const { name, parentNodeId: parentLinkId, volumeId, signatureAddress: createdBy } = node
+
+      if (node.trashed) {
+        return
+      }
+
       const dirPath = nodePath.slice(0, -1)
 
       let location: RecentDocumentsItemLocation
-      if (isNodeShared) {
+      if (isSharedWithMe) {
         location = { type: 'shared-with-me' }
       } else if (dirPath.length === 1 && dirPath.at(0)?.isRoot) {
         location = { type: 'root' }
@@ -161,18 +210,19 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
       }
 
       const record = RecentDocumentsItem.create({
-        name: node.name,
-        linkId: nodeIds.linkId,
-        parentLinkId: node.parentNodeId,
-        volumeId: node.volumeId,
+        name,
+        linkId,
+        parentLinkId,
+        volumeId,
         lastViewed,
         lastModified,
-        createdBy: node.signatureAddress,
+        createdBy,
         location,
-        isSharedWithMe: isNodeShared,
-        shareId: nodeIds.shareId,
+        isSharedWithMe,
+        shareId,
       })
 
+      this.#lastResolvedIds?.add(record.uniqueId())
       this.setSnapshotItem(record)
     } catch (error) {
       this.#logger.error('Failed to resolve recent document', { error, item: apiItem })
