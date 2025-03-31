@@ -6,6 +6,7 @@ import browser from '@proton/pass/lib/globals/browser';
 import {
     createAliasDiscoveryRules,
     createAliasSyncEnableRule,
+    createFileAttachmentsDiscoveryRule,
     createItemSharingRule,
     createPendingShareAccessRule,
     createPermissionsRule,
@@ -50,6 +51,7 @@ export const createSpotlightService = (
             createSSOChangeLockRule(),
             createItemSharingRule(),
             ...createAliasDiscoveryRules(store),
+            createFileAttachmentsDiscoveryRule(store),
         ],
     });
 
