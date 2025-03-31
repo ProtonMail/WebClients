@@ -31,7 +31,7 @@ const SubscriptionThanks = ({ onClose, planIDs }: Props) => {
         const hasSubscribedToVpnb2bPlan = !!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS];
         if (hasSubscribedToVpnb2bPlan) {
             return (
-                <p className="text-center mb-0 mt-2 color-weak" data-testid="more-info">{c('Info')
+                <p className="text-center mb-0 mt-2 color-weak text-wrap-balance" data-testid="more-info">{c('Info')
                     .t`Thank you for subscribing. Secure browsing starts now.`}</p>
             );
         }
