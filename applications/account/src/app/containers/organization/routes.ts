@@ -278,6 +278,10 @@ export const getOrganizationAppRoutes = ({
                         id: 'two-factor-authentication-users',
                     },
                     {
+                        text: c('Title').t`${BRAND_NAME} Account password rules`,
+                        id: 'proton-account-password-rules',
+                    },
+                    {
                         text: c('Title').t`Two-factor authentication reminders`,
                         id: 'two-factor-authentication-reminders',
                     },
