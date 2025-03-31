@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,6 +23,10 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
+import {
+    OrganizationPasswordPolicies,
+    useOrganizationPasswordPolicyValidation,
+} from '@proton/components/components/organizationPasswordPolicies/OrganizationPasswordPolicies';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
@@ -164,6 +168,15 @@ const SubUserCreateModal = ({
     const [submitting, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
+
+    const passwordContainerRef = useRef<HTMLDivElement | null>(null);
+
+    const organizationPasswordPolicies = useOrganizationPasswordPolicyValidation(model.password, normalApi);
+
+    const saveButtonDisabled =
+        model.mode === CreateMemberMode.Password &&
+        organizationPasswordPolicies.displayed &&
+        !organizationPasswordPolicies.passwordRequirementsMatched;
 
     const domainOptions = verifiedDomains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
@@ -324,6 +337,13 @@ const SubUserCreateModal = ({
             {...rest}
             onClose={handleClose}
             onSubmit={(event: FormEvent<HTMLFormElement>) => {
+                if (
+                    model.mode === CreateMemberMode.Password &&
+                    organizationPasswordPolicies.displayed &&
+                    !organizationPasswordPolicies.passwordRequirementsMatched
+                ) {
+                    return;
+                }
                 event.preventDefault();
                 event.stopPropagation();
                 if (!onFormSubmit(event.currentTarget)) {
@@ -364,7 +384,17 @@ const SubUserCreateModal = ({
                             ])}
                             onValue={handleChange('password')}
                             label={c('user_modal').t`Create password`}
+                            containerRef={passwordContainerRef}
                         />
+
+                        {organizationPasswordPolicies.displayed && (
+                            <div className="mb-4">
+                                <OrganizationPasswordPolicies
+                                    password={model.password}
+                                    wrapper={organizationPasswordPolicies}
+                                />
+                            </div>
+                        )}
 
                         <InputFieldTwo
                             id="confirm-password"
@@ -565,7 +595,7 @@ const SubUserCreateModal = ({
                         {c('user_modal').t`Cancel`}
                     </Button>
                 )}
-                <Button loading={submitting} type="submit" color="norm">
+                <Button loading={submitting} type="submit" color="norm" disabled={saveButtonDisabled}>
                     {c('user_modal').t`Create user`}
                 </Button>
             </ModalFooter>

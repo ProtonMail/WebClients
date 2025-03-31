@@ -13,6 +13,10 @@ import {
     useFormErrors,
     useNotifications,
 } from '@proton/components';
+import {
+    OrganizationPasswordPoliciesSpotlight,
+    useOrganizationPasswordPolicyValidation,
+} from '@proton/components/components/organizationPasswordPolicies/OrganizationPasswordPolicies';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
 import useLoading from '@proton/hooks/useLoading';
@@ -26,11 +30,7 @@ import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import {
-    confirmPasswordValidator,
-    getMinPasswordLengthMessage,
-    passwordLengthValidator,
-} from '@proton/shared/lib/helpers/formValidators';
+import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Address, Api, KeyTransparencyActivation, Organization, User } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getResetAddressesKeysV2 } from '@proton/shared/lib/keys';
 import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys/unprivatization';
@@ -96,8 +96,14 @@ const JoinMagicLinkContainer = ({
     const [submitting, withSubmitting] = useLoading();
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
+    const passwordContainerRef = useRef<HTMLDivElement | null>(null);
     const { createNotification } = useNotifications();
     const getKtActivation = useGetAccountKTActivation();
+
+    const organizationPasswordPoliciesSpotlight = useOrganizationPasswordPolicyValidation(
+        newPassword,
+        dataRef.current?.authApi
+    );
 
     useEffect(() => {
         const init = async () => {
@@ -304,6 +310,9 @@ const JoinMagicLinkContainer = ({
         };
     })();
 
+    const continueButtonDisabled =
+        !organizationPasswordPoliciesSpotlight.passwordRequirementsMatched || confirmNewPassword !== newPassword;
+
     return (
         <Layout hasDecoration={true} toApp={toApp}>
             <Main>
@@ -343,19 +352,28 @@ const JoinMagicLinkContainer = ({
                         disableChange={true}
                         value={username}
                     />
-                    <InputFieldTwo
-                        as={PasswordInputTwo}
-                        id="password"
-                        bigger
-                        label={c('Label').t`New password`}
-                        assistiveText={getMinPasswordLengthMessage()}
-                        error={validator([passwordLengthValidator(newPassword)])}
-                        disableChange={loading}
-                        autoFocus
-                        autoComplete="new-password"
-                        value={newPassword}
-                        onValue={setNewPassword}
-                    />
+                    <OrganizationPasswordPoliciesSpotlight
+                        anchorRef={passwordContainerRef}
+                        validationResults={organizationPasswordPoliciesSpotlight.validationResults}
+                        wrapper={organizationPasswordPoliciesSpotlight}
+                        password={newPassword}
+                    >
+                        <InputFieldTwo
+                            containerRef={passwordContainerRef}
+                            as={PasswordInputTwo}
+                            id="password"
+                            bigger
+                            label={c('Label').t`New password`}
+                            error={validator([passwordLengthValidator(newPassword)])}
+                            disableChange={loading}
+                            autoFocus
+                            autoComplete="new-password"
+                            value={newPassword}
+                            onValue={setNewPassword}
+                            onFocus={organizationPasswordPoliciesSpotlight.onInputFocus}
+                            onBlur={organizationPasswordPoliciesSpotlight.onInputBlur}
+                        />
+                    </OrganizationPasswordPoliciesSpotlight>
                     <InputFieldTwo
                         as={PasswordInputTwo}
                         id="password-repeat"
@@ -372,7 +390,15 @@ const JoinMagicLinkContainer = ({
                         rootClassName="mt-2"
                     />
 
-                    <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt-4">
+                    <Button
+                        size="large"
+                        color="norm"
+                        type="submit"
+                        fullWidth
+                        loading={submitting}
+                        className="mt-4"
+                        disabled={continueButtonDisabled}
+                    >
                         {c('Action').t`Continue`}
                     </Button>
                     <div className="color-weak text-sm text-center mt-4">{getTerms(toApp || APPS.PROTONACCOUNT)}</div>
