@@ -50,6 +50,8 @@ export enum SpotlightMessage {
     ALIAS_DISCOVERY_DOMAIN = 23,
     /** Alias contact discovery */
     ALIAS_DISCOVERY_CONTACT = 24,
+    /** File Attachments discovery */
+    FILE_ATTACHMENTS_DISCOVERY = 25,
 }
 
 export type SpotlightAcknowledgment = {

@@ -19,6 +19,7 @@
 
 	&--image {
 		background: var(--spotlight-gradient-image, ''), var(--spotlight-gradient-layers);
+		background-size: contain;
 	}
 
 	&--text {
