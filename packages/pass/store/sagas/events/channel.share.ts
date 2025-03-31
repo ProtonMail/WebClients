@@ -6,8 +6,9 @@ import { all, cancel, fork, put, select, take } from 'redux-saga/effects';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
+import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
+import { getShareLatestEventId, requestShare } from '@proton/pass/lib/shares/share.requests';
 import {
     itemsDeleteSync,
     itemsEditSync,
@@ -20,7 +21,7 @@ import {
 import type { ShareItem } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, ItemRevision, Maybe, PassEventListResponse, Share } from '@proton/pass/types';
+import type { Api, ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -47,7 +48,14 @@ const onShareEvent = (shareId: string) =>
         if ('error' in event) throw event.error;
 
         const { Events } = event;
-        const { LatestEventID: eventId, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems } = Events;
+        const {
+            LatestEventID: eventId,
+            DeletedItemIDs,
+            UpdatedItems,
+            UpdatedShare,
+            LastUseItems,
+            FullRefresh,
+        } = Events;
         const currentEventId = ((yield select(selectShare(shareId))) as Maybe<ShareItem>)?.eventId;
 
         /* dispatch only if there was a change */
@@ -88,7 +96,18 @@ const onShareEvent = (shareId: string) =>
             yield put(itemsEditSync(updatedItems));
         }
 
-        const itemsMutated = DeletedItemIDs.length > 0 || UpdatedItems.length > 0;
+        if (FullRefresh) {
+            const encryptedShare: ShareGetResponse = yield requestShare(shareId);
+            const share: Maybe<Share> = yield parseShareResponse(encryptedShare);
+
+            if (share) {
+                yield put(shareEventUpdate(share));
+                const updatedItems: ItemRevision[] = yield requestItemsForShareId(shareId);
+                yield put(itemsEditSync(updatedItems));
+            }
+        }
+
+        const itemsMutated = DeletedItemIDs.length + UpdatedItems.length > 0 || FullRefresh;
         if (itemsMutated) onItemsUpdated?.();
     };
 

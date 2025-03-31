@@ -10,6 +10,7 @@ import {
     monitorToggle,
     sentinelToggle,
     userEvent,
+    userRefresh,
 } from '@proton/pass/store/actions';
 import {
     confirmPendingAuthDevice,
@@ -136,6 +137,8 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
             userSettings,
         };
     }
+
+    if (userRefresh.match(action)) return partialMerge(state, action.payload);
 
     if (getUserAccessSuccess.match(action)) {
         const { plan, waitingNewUserInvites, monitor } = action.payload;
