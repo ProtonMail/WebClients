@@ -556,7 +556,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 ) : (
                     <div
                         ref={containerRef}
-                        className="flex flex-column flex-nowrap mx-2 w-full h-full overflow-auto outline-none--at-all mb-2"
+                        className="flex flex-column flex-nowrap mx-2 h-full overflow-auto outline-none--at-all mb-2"
                     >
                         <AlbumCoverHeader
                             shareId={albumShareId}

@@ -55,16 +55,30 @@ interface AlbumGalleryDropdownButtonProps {
     onDelete: () => void;
     onShowDetails: () => void;
     onLeave: () => void;
-    isAdmin: boolean;
-    isOwner: boolean;
+    onAddAlbumPhotos: () => void;
+    onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
+    onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
+    showAddAlbumPhotosButton: boolean;
+    showUploadButton: boolean;
+    showDeleteAlbumButton: boolean;
+    showLeaveAlbumButton: boolean;
+    shareId: string;
+    linkId: string;
 }
 
 const AlbumGalleryDropdownButton = ({
     onDelete,
     onShowDetails,
     onLeave,
-    isAdmin,
-    isOwner,
+    showAddAlbumPhotosButton,
+    showUploadButton,
+    showDeleteAlbumButton,
+    showLeaveAlbumButton,
+    onAddAlbumPhotos,
+    onFileUpload,
+    onFileSkipped,
+    shareId,
+    linkId,
 }: AlbumGalleryDropdownButtonProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     return (
@@ -91,18 +105,31 @@ const AlbumGalleryDropdownButton = ({
                         {c('Action').t`Edit album`}
                     </DropdownMenuButton>
                     */}
+                    {showAddAlbumPhotosButton && (
+                        <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} type="dropdown" />
+                    )}
+                    {showUploadButton && (
+                        <PhotosUploadButton
+                            shareId={shareId}
+                            linkId={linkId}
+                            onFileUpload={onFileUpload}
+                            onFileSkipped={onFileSkipped}
+                            type="dropdown"
+                            isAlbumUpload
+                        />
+                    )}
                     <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onShowDetails}>
                         <Icon className="mr-2" name="info-circle" />
                         {c('Action').t`Details`}
                     </DropdownMenuButton>
 
-                    {isAdmin && (
+                    {showDeleteAlbumButton && (
                         <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onDelete}>
                             <Icon className="mr-2" name="trash" />
                             {c('Action').t`Delete album`}
                         </DropdownMenuButton>
                     )}
-                    {!isOwner && (
+                    {!showLeaveAlbumButton && (
                         <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onLeave}>
                             <Icon className="mr-2" name="cross-big" />
                             {c('Action').t`Leave album`}
@@ -252,11 +279,15 @@ const ToolbarRightActionsAlbumGallery = ({
     onAddAlbumPhotos,
 }: ToolbarRightActionsAlbumGalleryProps) => {
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-
+    const { viewportWidth } = useActiveBreakpoint();
+    const showIconOnly = !viewportWidth['>=large'];
+    const showUploadButton = !album.permissions.isOwner && !uploadDisabled;
     return (
         <>
-            {album.permissions.isOwner && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} type="toolbar" />}
-            {!album.permissions.isOwner && !uploadDisabled && (
+            {!showIconOnly && album.permissions.isOwner && (
+                <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} type="toolbar" />
+            )}
+            {!showIconOnly && showUploadButton && (
                 <PhotosUploadButton
                     shareId={shareId}
                     linkId={linkId}
@@ -283,12 +314,17 @@ const ToolbarRightActionsAlbumGallery = ({
                     title={c('Action').t`Download`}
                     className="inline-flex flex-nowrap flex-row items-center"
                 >
-                    <Icon name="arrow-down-line" className="mr-2" alt={c('Action').t`Download`} />
-                    {c('Action').t`Download`}
+                    <Icon
+                        name="arrow-down-line"
+                        className={clsx(!showIconOnly && 'mr-2')}
+                        alt={c('Action').t`Download`}
+                    />
+                    <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Download`}</span>
                 </ToolbarButton>
             )}
             {album.permissions.isOwner && (
                 <PhotosAlbumShareButton
+                    showIconOnly={showIconOnly}
                     onClick={() => {
                         // TODO: avoid the data loop and just execute callback
                         showLinkSharingModal({ shareId: album.rootShareId, linkId: album.linkId });
@@ -300,8 +336,15 @@ const ToolbarRightActionsAlbumGallery = ({
                 onDelete={onDeleteAlbum}
                 onShowDetails={onShowDetails}
                 onLeave={onLeaveAlbum}
-                isAdmin={album.permissions.isAdmin}
-                isOwner={album.permissions.isOwner}
+                onFileUpload={onFileUpload}
+                onFileSkipped={onFileSkipped}
+                onAddAlbumPhotos={onAddAlbumPhotos}
+                shareId={shareId}
+                linkId={linkId}
+                showUploadButton={showIconOnly && showUploadButton}
+                showAddAlbumPhotosButton={showIconOnly && album.permissions.isOwner}
+                showDeleteAlbumButton={album.permissions.isAdmin}
+                showLeaveAlbumButton={!album.permissions.isOwner}
             />
             {linkSharingModal}
         </>

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
+import { DropdownMenuButton, Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -18,7 +18,7 @@ interface PhotosUploadButtonProps {
     linkId: string;
     onFileUpload?: (file: OnFileUploadSuccessCallbackData) => void;
     onFileSkipped?: (file: OnFileSkippedSuccessCallbackData) => void;
-    type?: 'toolbar' | 'norm';
+    type?: 'toolbar' | 'norm' | 'dropdown';
     isAddAlbumPhotosView?: boolean;
     isAlbumUpload?: boolean;
 }
@@ -69,6 +69,16 @@ export const PhotosUploadButton: FC<PhotosUploadButtonProps> = ({
                     />
                     <span className={clsx(viewportWidth.xsmall && 'sr-only')}>{uploadLabel}</span>
                 </ToolbarButton>
+            )}
+            {type === 'dropdown' && (
+                <DropdownMenuButton
+                    data-testid="dropdown-photos-upload"
+                    className="text-left flex items-center flex-nowrap"
+                    onClick={handleClick}
+                >
+                    <Icon name={isAlbumUpload ? 'plus-circle' : 'plus'} className="mr-2" />
+                    <span className="sr-only">{uploadLabel}</span>
+                </DropdownMenuButton>
             )}
             {type === 'norm' && (
                 <Button
