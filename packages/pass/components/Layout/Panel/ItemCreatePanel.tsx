@@ -108,7 +108,7 @@ export const ItemCreatePanel = ({
                         />
                     }
                 >
-                    <ItemFeatureDiscovery />
+                    <ItemFeatureDiscovery type={type} />
                     {children(props)}
                 </Panel>
             )}

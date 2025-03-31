@@ -72,7 +72,7 @@ export const ItemEditPanel = ({ type, formId, valid, discardable, handleCancelCl
                         />
                     }
                 >
-                    <ItemFeatureDiscovery />
+                    <ItemFeatureDiscovery type={type} />
                     {children(props)}
                 </Panel>
             )}
