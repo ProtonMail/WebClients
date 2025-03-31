@@ -42,3 +42,6 @@ export type ExportRequestOptions = {
     passphrase: string;
     fileAttachments: boolean;
 };
+
+export type ExportResult = { filename: string; mimeType: string };
+export type ExportFailure = { error: string };
