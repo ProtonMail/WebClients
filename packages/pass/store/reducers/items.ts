@@ -53,6 +53,7 @@ import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
 import {
     ContentFormatVersion,
     type IndexedByShareIdAndItemId,
+    ItemFlag,
     type ItemRevision,
     ItemState,
     type ItemType,
@@ -131,9 +132,10 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         if (sharesEventNew.match(action)) return fullMerge(state, action.payload.items);
 
         if (itemCreate.intent.match(action)) {
-            const { shareId, optimisticId, optimisticTime, ...item } = action.payload;
+            const { shareId, optimisticId, optimisticTime, files, ...item } = action.payload;
             const optimisticItem = state?.[shareId]?.[optimisticId];
             const now = optimisticTime ?? getEpoch();
+            const flags = files.toAdd.length > 0 ? ItemFlag.HasAttachments : 0;
 
             /**
              * FIXME: we could rely on an optimistic revisionTime update
@@ -148,7 +150,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         contentFormatVersion: ContentFormatVersion.Item,
                         createTime: now,
                         data: item,
-                        flags: 0,
+                        flags,
                         itemId: optimisticId,
                         lastUseTime: null,
                         modifyTime: now,
@@ -190,14 +192,17 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         }
 
         if (itemEdit.intent.match(action)) {
-            const { shareId, itemId, lastRevision, ...item } = action.payload;
-            const { revision } = state[shareId][itemId];
+            const { shareId, itemId, lastRevision, files, ...item } = action.payload;
+            const existing = state[shareId][itemId];
 
-            /* FIXME: see `itemCreationIntent.match`
-             * optimistically bump the revision number in the case of retries,
+            /* Optimistically bump the revision number in the case of retries,
              * the correct revision number will be set on item edit success.
-             * This allows this item to be correctly marked as failed */
-            return updateItem({ shareId, itemId, data: item, revision: revision + 1 })(state);
+             * This allows this item to be correctly marked as failed.
+             * Optimistically update the item attachment flags for UI purposes. */
+            const revision = existing.revision + 1;
+            const flags = files.toAdd ? existing.flags | ItemFlag.HasAttachments : existing.flags;
+
+            return updateItem({ shareId, itemId, data: item, revision, flags })(state);
         }
 
         if (

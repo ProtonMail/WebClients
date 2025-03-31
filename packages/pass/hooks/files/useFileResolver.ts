@@ -6,7 +6,7 @@ import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequ
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
 import { filesResolve } from '@proton/pass/store/actions';
-import { selectItem } from '@proton/pass/store/selectors';
+import { selectItem, selectOptimisticItemState } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { UniqueItem } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -20,9 +20,11 @@ export const useFileResolver = () => {
     return useCallback(
         async ({ shareId, itemId }: UniqueItem) => {
             if (!enabled) return;
-            const item = selectItem(shareId, itemId)(store.getState());
+            const state = store.getState();
+            const item = selectItem(shareId, itemId)(state);
+            const { optimistic } = selectOptimisticItemState(shareId, itemId)(state);
 
-            if (item && hasAttachments(item)) {
+            if (item && hasAttachments(item) && !optimistic) {
                 const { revision } = item;
                 return dispatch(filesResolve, { shareId, itemId, revision });
             }
