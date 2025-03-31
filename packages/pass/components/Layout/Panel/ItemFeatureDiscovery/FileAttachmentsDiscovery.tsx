@@ -22,7 +22,7 @@ export const FileAttachmentsDiscovery: FC = WithFeatureFlag(
                     onClose={close}
                     className="mb-2"
                     backgroundImage={notesImg}
-                    closeButtonStyle={{ shape: 'outline', className: '' }}
+                    closeButtonProps={{ icon: 'cross-circle-filled', dark: true }}
                 />
             )}
         </WithSpotlight>

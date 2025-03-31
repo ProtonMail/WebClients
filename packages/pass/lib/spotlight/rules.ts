@@ -1,9 +1,11 @@
 import type { Store } from 'redux';
 
 import { ITEM_COUNT_RATING_PROMPT } from '@proton/pass/constants';
+import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectAliasItems,
+    selectAllItems,
     selectCanCreateItems,
     selectCreatedItemsCount,
     selectHasPendingShareAccess,
@@ -12,10 +14,10 @@ import {
     selectUserData,
     selectUserPlan,
 } from '@proton/pass/store/selectors';
-import { selectFiles } from '@proton/pass/store/selectors/files';
 import type { State } from '@proton/pass/store/types';
 import { type Maybe, type MaybeNull, PlanType, SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -185,12 +187,13 @@ export const createFileAttachmentsDiscoveryRule = (store: Store<State>): Spotlig
     createSpotlightRule({
         message: SpotlightMessage.FILE_ATTACHMENTS_DISCOVERY,
         when: (previous) => {
-            const files = selectFiles(store.getState());
-            const plan = selectUserPlan(store.getState());
-            const passPlan = selectPassPlan(store.getState());
+            const state = store.getState();
+            const hasFiles = selectAllItems(state).some(or(hasAttachments, hasHadAttachments));
+            if (hasFiles) return false;
 
+            const plan = selectUserPlan(state);
+            const passPlan = selectPassPlan(state);
             const fileAttachmentsEnabled = isPaidPlan(passPlan) && plan?.DisplayName !== 'Pass Essentials';
-
-            return fileAttachmentsEnabled && !Object.values(files).length && !previous;
+            return fileAttachmentsEnabled && !previous;
         },
     });
