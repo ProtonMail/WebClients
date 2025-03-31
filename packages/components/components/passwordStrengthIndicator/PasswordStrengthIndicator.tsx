@@ -11,7 +11,7 @@ export const loadWasm = () => {
     return import(/* webpackChunkName: "pass-rust-core/password" */ '@protontech/pass-rust-core/password');
 };
 
-type PasswordWasm = Unwrap<ReturnType<typeof loadWasm>>;
+export type PasswordWasm = Unwrap<ReturnType<typeof loadWasm>>;
 
 const context: {
     promise: Promise<boolean> | undefined;

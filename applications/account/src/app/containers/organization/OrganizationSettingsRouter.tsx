@@ -12,6 +12,7 @@ import {
     MultiUserCreationSection,
     OrganizationGroupsManagementSection,
     OrganizationPasswordSection,
+    OrganizationProtonAccountPasswordRules,
     OrganizationScheduleCallSection,
     OrganizationSection,
     OrganizationSpamFiltersSection,
@@ -145,6 +146,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, security)}>
                     <PrivateMainSettingsArea config={security}>
                         <OrganizationTwoFAHeader organization={organization} />
+                        <OrganizationProtonAccountPasswordRules organization={organization} />
                         <OrganizationTwoFARemindersSection organization={organization} />
                         <OrganizationTwoFAEnforcementSection organization={organization} />
                         <AuthenticationLogs organization={organization} />
