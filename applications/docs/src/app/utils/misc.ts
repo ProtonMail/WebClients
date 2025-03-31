@@ -39,34 +39,10 @@ export function useEvent<T extends AnyFunction>(callback?: T) {
  * Subscribes to a property of a store and returns its up-to-date value.
  */
 export function useSubscribe<T extends BasePropertyValues, K extends keyof T>(
-  /**
-   * The store to subscribe to.
-   */
-  store: BasePropertiesState<T>,
-  /**
-   * The property from the store to subscribe to.
-   */
-  property: K,
-  /**
-   * The initial value to use before the store updates for the first time.
-   */
-  initialValue: T[K],
-): T[K]
-export function useSubscribe<T extends BasePropertyValues, K extends keyof T>(
   store: BasePropertiesState<T>,
   property: K,
-  initialValue?: undefined,
-): T[K] | undefined
-export function useSubscribe<T extends BasePropertyValues, K extends keyof T>(
-  store: BasePropertiesState<T>,
-  property: K,
-  initialValue?: T[K],
-): T[K] | undefined {
-  const [value, setValue] = useState(initialValue)
-  useEffect(() =>
-    store.subscribeToProperty(property, (newValue) => {
-      setValue(newValue)
-    }),
-  )
+): T[K] {
+  const [value, setValue] = useState(store.getProperty(property))
+  useEffect(() => store.subscribeToProperty(property, (newValue) => setValue(() => newValue)), [property, store])
   return value
 }

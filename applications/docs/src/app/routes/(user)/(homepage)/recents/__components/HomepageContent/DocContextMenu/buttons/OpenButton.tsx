@@ -1,7 +1,7 @@
 import { MimeIcon } from '@proton/components'
 
 import { ContextMenuButton } from '../ContextMenuButton'
-import { useRecentDocuments } from '../../../../__utils/recent-documents'
+import { useDocumentActions } from '../../../../__utils/document-actions'
 import type { RecentDocumentsItem } from '@proton/docs-core'
 import { c } from 'ttag'
 
@@ -11,14 +11,12 @@ export type OpenButtonProps = {
 }
 
 export function OpenButton({ currentDocument, close }: OpenButtonProps) {
-  const { handleOpenDocument } = useRecentDocuments()
+  const documentActions = useDocumentActions()
   return (
     <ContextMenuButton
       name={c('Action').t`Open`}
       icon={<MimeIcon name="proton-doc" className="mr-2" />}
-      action={() => {
-        handleOpenDocument(currentDocument)
-      }}
+      action={() => documentActions.open(currentDocument)}
       close={close}
     />
   )
