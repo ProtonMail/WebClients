@@ -106,13 +106,15 @@ export const WalletContainer = () => {
                                 size="medium"
                                 shape="ghost"
                                 color="weak"
-                                className="ml-2 mr-6 bg-weak shrink-0"
+                                className="ml-2 bg-weak shrink-0"
                                 onClick={() => {
                                     setWalletPreferencesModalState(true);
                                 }}
                             >
                                 <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={5} />
                             </CoreButton>
+
+                            {isNarrow && <ThemeButton />}
                         </div>
                         <div className="ui-standard">
                             <Button
@@ -128,7 +130,7 @@ export const WalletContainer = () => {
                                 <Icon alt={c('Action').t`Secure your wallet`} name="chevron-right" className="ml-2" />
                             </Button>
                             <InvitesButton walletAccount={firstWalletAccount} />
-                            <ThemeButton />
+                            {!isNarrow && <ThemeButton />}
                         </div>
                     </div>
 

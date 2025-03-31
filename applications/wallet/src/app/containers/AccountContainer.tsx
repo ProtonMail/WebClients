@@ -114,6 +114,8 @@ export const AccountContainer = () => {
                             >
                                 <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={5} />
                             </CoreButton>
+
+                            {isNarrow && <ThemeButton />}
                         </div>
                         <div className="ui-standard">
                             <Button
@@ -129,7 +131,7 @@ export const AccountContainer = () => {
                                 <Icon alt={c('Action').t`Secure your wallet`} name="chevron-right" className="ml-2" />
                             </Button>
                             <InvitesButton walletAccount={walletAccount} />
-                            <ThemeButton />
+                            {!isNarrow && <ThemeButton />}
                         </div>
                     </div>
 
