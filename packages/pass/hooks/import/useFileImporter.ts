@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -10,16 +11,19 @@ import { getImportFilename } from '@proton/pass/lib/import/helpers/files';
 import type { ImportReport } from '@proton/pass/lib/import/helpers/report';
 import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { fileLinkPending } from '@proton/pass/store/actions';
+import { selectUserStorageMaxFileSize } from '@proton/pass/store/selectors';
 import { type IndexedByShareIdAndItemId } from '@proton/pass/types';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { abortableSequence } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 export const useFileImporter = () => {
     const dispatch = useAsyncRequestDispatch();
     const fileUpload = useFileUpload();
     const [progress, setProgress] = useState(0);
     const { createNotification } = useNotifications();
+    const maxFileSize = useSelector(selectUserStorageMaxFileSize);
 
     const cancel = useCallback(() => {
         fileUpload.cancel('*');
@@ -47,6 +51,18 @@ export const useFileImporter = () => {
 
                                     if (blob) {
                                         try {
+                                            if (blob.size > maxFileSize) {
+                                                const maxFileSizeInMB = humanSize({
+                                                    bytes: maxFileSize,
+                                                    unit: 'MB',
+                                                    fraction: 0,
+                                                });
+                                                return createNotification({
+                                                    type: 'error',
+                                                    text: c('Error')
+                                                        .t`The file "${filename}" is too large to upload. The maximum allowed size is (${maxFileSizeInMB})`,
+                                                });
+                                            }
                                             const file = new File([blob], filename);
                                             const fileID = await fileUpload.start(file, uniqueId());
                                             toAdd.push(fileID);
