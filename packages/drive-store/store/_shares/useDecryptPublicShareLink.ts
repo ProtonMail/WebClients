@@ -121,7 +121,6 @@ export const useDecryptPublicShareLink = () => {
             volumeId: '',
             isLocked: false,
             isDefault: false,
-            isVolumeSoftDeleted: false,
             possibleKeyPackets: [],
             state: ShareState.active,
             memberships: [],

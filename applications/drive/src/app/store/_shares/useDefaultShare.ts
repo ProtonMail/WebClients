@@ -9,7 +9,6 @@ import { useDriveCrypto } from '../_crypto';
 import { useDebouncedFunction } from '../_utils';
 import { useVolumesState } from '../_volumes';
 import type { Share, ShareWithKey } from './interface';
-import { ShareState } from './interface';
 import useShare from './useShare';
 import useVolume from './useVolume';
 
@@ -73,8 +72,7 @@ export function useDefaultShare() {
         try {
             const sharesPromise = (async () => {
                 const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
-                // We have to ignore the deleted shares until BE stop to return them
-                const shares = Shares.map(shareMetaShortToShare).filter((share) => share.state !== ShareState.deleted);
+                const shares = Shares.map(shareMetaShortToShare);
                 shares.forEach(({ volumeId, shareId }) => {
                     volumesState.setVolumeShareIds(volumeId, [shareId]);
                 });
@@ -177,7 +175,7 @@ export function useDefaultShare() {
             return debouncedFunction(
                 async (abortSignal: AbortSignal) => {
                     const share = await getShare(abortSignal, shareId);
-                    return !share.isLocked && !share.isVolumeSoftDeleted;
+                    return !share.isLocked;
                 },
                 ['isShareAvailable', shareId],
                 abortSignal

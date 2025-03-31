@@ -22,8 +22,6 @@ export default function useVolume() {
             queryCreateDriveVolume({
                 AddressID: address.ID,
                 AddressKeyID: addressKeyID,
-                VolumeName: 'MainVolume',
-                ShareName: 'MainShare',
                 FolderHashKey,
                 ...bootstrap,
             })
