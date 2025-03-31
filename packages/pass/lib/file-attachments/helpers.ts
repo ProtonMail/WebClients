@@ -1,3 +1,4 @@
+import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
 import type {
@@ -98,3 +99,9 @@ export const mimetypeForDownload = (mimeType: string) => {
     if (BUILD_TARGET === 'safari') return 'application/octet-stream';
     return mimeType;
 };
+
+export type FileParam = { file: string };
+export type FileRef = { filename: string; mimeType: string; ref: string };
+
+export const intoFileParam = (fileRef: FileRef): string => encodeUtf8Base64(JSON.stringify(fileRef));
+export const intoFileRef = (param: string): FileRef => JSON.parse(decodeUtf8Base64(param));
