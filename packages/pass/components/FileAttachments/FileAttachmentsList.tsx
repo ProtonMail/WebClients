@@ -14,7 +14,6 @@ import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
 import { fileUpdateMetadata } from '@proton/pass/store/actions';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { BaseFileDescriptor, FileDescriptor, FileID, SelectedItem } from '@proton/pass/types';
-import { download } from '@proton/pass/utils/dom/download';
 
 import { FileAttachment } from './FileAttachment';
 
@@ -47,11 +46,6 @@ export const FileAttachmentsList: FC<Props> = (props) => {
     const handleDelete = ({ fileID, name }: FileDescriptor) =>
         deleteFile.handler({ name, onSubmit: () => onDelete?.(fileID) });
 
-    const handleDownload = async (file: FileDescriptor) => {
-        const fileBlob = await fileDownload.start(file, { shareId, itemId });
-        if (fileBlob) download(fileBlob, file.name);
-    };
-
     return (
         <>
             {files.map((file, key) => (
@@ -63,7 +57,7 @@ export const FileAttachmentsList: FC<Props> = (props) => {
                     onRename={canRename ? (fileName) => handleRename(file, fileName) : undefined}
                     onDownload={
                         allowed
-                            ? () => handleDownload(file)
+                            ? () => fileDownload.start(file, { shareId, itemId })
                             : () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })
                     }
                     loading={fileDownload.pending.has(file.fileID)}
