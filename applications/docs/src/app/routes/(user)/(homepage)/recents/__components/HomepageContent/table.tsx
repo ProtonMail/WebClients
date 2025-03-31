@@ -2,7 +2,7 @@ import clsx from '@proton/utils/clsx'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 const POSITIONAL_CELL_CLASSES = [
-  '[&:nth-child(1)]:w-[40%] [&:nth-child(1)]:min-w-[12.5rem] [&:nth-child(1)]:px-6 [&:nth-child(1)]:text-[1rem]',
+  '[&:nth-child(1)]:w-[40%] [&:nth-child(1)]:min-w-[12.5rem] [&:nth-child(1)]:px-6',
   '[&:nth-child(2)]:w-[20%] [&:nth-child(2)]:min-w-[6.25rem] [&:nth-child(2)]:px-2',
   '[&:nth-child(3)]:w-[20%] [&:nth-child(3)]:min-w-[6.25rem] [&:nth-child(3)]:px-2',
   '[&:nth-child(4)]:pe-5 [&:nth-child(4)]:ps-2',
@@ -15,7 +15,7 @@ export function Header({ hideOnSmallDevices, ...props }: HeaderProps) {
     <th
       {...props}
       className={clsx(
-        'font-semibold',
+        'whitespace-nowrap font-semibold [&:nth-child(1)]:text-[1rem]',
         ...POSITIONAL_CELL_CLASSES,
         hideOnSmallDevices && 'TODO: hide?',
         props.className,

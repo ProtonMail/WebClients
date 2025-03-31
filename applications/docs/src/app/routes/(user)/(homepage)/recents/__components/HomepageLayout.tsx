@@ -27,6 +27,10 @@ import { c } from 'ttag'
 import { ButtonLike, Input } from '@proton/atoms'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import './HomepageLayout.css'
+import { useHomepageView } from '../__utils/homepage-view'
+import { useHistory, useRouteMatch } from 'react-router'
+import { HOMEPAGE_RECENTS_PATH } from '../../../__components/AppContainer'
+import { useEvent } from '~/utils/misc'
 
 // layout
 // ------
@@ -44,10 +48,9 @@ function InternalPageNotice() {
 export type HomepageLayoutProps = {
   children: ReactNode
   action?: DocumentAction['mode']
-  onSearchTextChange: (searchText: string) => void
 }
 
-export function HomepageLayout({ children, onSearchTextChange }: HomepageLayoutProps) {
+export function HomepageLayout({ children }: HomepageLayoutProps) {
   const { state: expanded, toggle: toggleExpanded } = useToggle()
   return (
     <PrivateAppContainer
@@ -57,13 +60,7 @@ export function HomepageLayout({ children, onSearchTextChange }: HomepageLayoutP
           <TopBanners app={APPS.PROTONDOCS} />
         </>
       }
-      header={
-        <Header
-          toggleHeaderExpanded={toggleExpanded}
-          isHeaderExpanded={expanded}
-          onSearchTextChange={onSearchTextChange}
-        />
-      }
+      header={<Header toggleHeaderExpanded={toggleExpanded} isHeaderExpanded={expanded} />}
       sidebar={<Sidebar expanded={expanded} onToggle={toggleExpanded} />}
       drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
     >
@@ -78,30 +75,23 @@ export function HomepageLayout({ children, onSearchTextChange }: HomepageLayoutP
 type HeaderProps = {
   isHeaderExpanded: boolean
   toggleHeaderExpanded: () => void
-  searchBox?: ReactNode
-  title?: string
-  settingsButton?: ReactNode
-  onSearchTextChange: (searchText: string) => void
 }
 
-function Header({
-  onSearchTextChange,
-  isHeaderExpanded,
-  toggleHeaderExpanded,
-  title = c('Title').t`Docs`,
-}: HeaderProps) {
+function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
   const { viewportWidth } = useActiveBreakpoint()
+  const { state, setSearch } = useHomepageView()
+  const searchValue = state.view === 'search' || state.view === 'search-empty' ? state.query : undefined
 
   return (
     <div className="homepage-header shrink-0 items-center justify-center">
       <PrivateHeader
         app={APPS.PROTONDRIVE}
         userDropdown={<UserDropdown app={APPS.PROTONDOCS} />}
-        title={title}
+        title={c('Title').t`Docs`}
         expanded={isHeaderExpanded}
         onToggleExpand={toggleHeaderExpanded}
         isSmallViewport={viewportWidth['<=small']}
-        actionArea={<Search onSearchTextChange={onSearchTextChange} />}
+        actionArea={<Search value={searchValue} onChange={setSearch} />}
       />
     </div>
   )
@@ -110,9 +100,18 @@ function Header({
 // search
 // ------
 
-type SearchProps = { onSearchTextChange: (searchText: string) => void }
+type SearchProps = { value: string | undefined; onChange: (value: string | undefined) => void }
 
-function Search({ onSearchTextChange }: SearchProps) {
+function Search({ value, onChange }: SearchProps) {
+  const isRecentsRoute = useRouteMatch(HOMEPAGE_RECENTS_PATH)
+  const history = useHistory()
+  const handleChange = useEvent((value: string | undefined) => {
+    // Ensure that the user is redirected to the recents page when searching.
+    if (value && value.length > 0 && !isRecentsRoute) {
+      history.replace('/recents')
+    }
+    onChange(value)
+  })
   return (
     <div className="mt-1 max-w-[490px] md:mt-0">
       <Input
@@ -122,8 +121,9 @@ function Search({ onSearchTextChange }: SearchProps) {
             <Icon size={5} color="weak" name="magnifier" alt={c('Action').t`Search`} />
           </span>
         }
-        onChange={(e) => onSearchTextChange(e.target.value)}
-        placeholder={c('Action').t`Search documents`}
+        value={value ?? ''}
+        onChange={(e) => handleChange(e.target.value)}
+        placeholder={c('Action').t`Search recent documents`}
       />
     </div>
   )
@@ -133,7 +133,6 @@ function Search({ onSearchTextChange }: SearchProps) {
 // -------
 
 const FAVORITES_ENABLED = false
-const RECENTLY_DELETED_ENABLED = false
 
 type SidebarProps = { expanded: boolean; onToggle: () => void }
 
@@ -167,7 +166,7 @@ function Sidebar({ expanded, onToggle }: SidebarProps) {
             <SidebarListItemLink
               to="/recents"
               exact={true}
-              className="hover flex items-center gap-2"
+              className="flex items-center gap-2"
               activeClassName="!font-semibold"
             >
               <Icon name="house" /> {c('Info').t`Recents`}
@@ -178,29 +177,28 @@ function Sidebar({ expanded, onToggle }: SidebarProps) {
               <SidebarListItemLink
                 to="/favorites"
                 exact={true}
-                className="hover flex items-center gap-2"
+                className="flex items-center gap-2"
                 activeClassName="!font-semibold"
               >
                 <Icon name="star" /> {c('Info').t`Favorites`}
               </SidebarListItemLink>
             </SidebarListItem>
           )}
-          {RECENTLY_DELETED_ENABLED && (
-            <SidebarListItem>
-              <SidebarListItemLink
-                to="/recently-deleted"
-                exact={true}
-                className="hover flex items-center gap-2"
-                activeClassName="!font-semibold"
-              >
-                <Icon name="trash" /> {c('Info').t`Recently deleted`}
-              </SidebarListItemLink>
-            </SidebarListItem>
-          )}
+          <SidebarListItem>
+            <SidebarListItemLink
+              to="/trashed"
+              exact={true}
+              className="flex items-center gap-2"
+              activeClassName="!font-semibold"
+            >
+              <Icon name="trash" /> {c('Info').t`Trashed`}
+            </SidebarListItemLink>
+          </SidebarListItem>
+
           <SidebarListItem>
             <SidebarListItemLink
               to={getAppHref('/', APPS.PROTONDRIVE, getLocalID())}
-              className="hover flex items-center gap-2"
+              className="flex items-center gap-2"
               target="_blank"
             >
               <Icon name="brand-proton-drive" /> {c('Info').t`Go to ${DRIVE_APP_NAME}`}
