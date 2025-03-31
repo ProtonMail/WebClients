@@ -91,7 +91,7 @@ export type ItemMap<T> = { [type in ItemType]: T };
 export type UniqueItem = { shareId: string; itemId: string };
 export type SelectedShare = { shareId: string };
 export type SelectedItem = UniqueItem;
-export type SelectedRevision = UniqueItem & { revision: number };
+export type SelectedRevision = SelectedItem & { revision: number };
 export type OptimisticItem = SelectedShare & { optimisticId: string; optimisticTime?: number };
 
 export type ItemSortFilter = 'recent' | 'titleASC' | 'createTimeDESC' | 'createTimeASC';
@@ -112,6 +112,8 @@ export enum ItemFlag {
     SkipHealthCheck = 1 << 0,
     EmailBreached = 1 << 1,
     AliasDisabled = 1 << 2,
+    HasAttachments = 1 << 3,
+    HasHadAttachments = 1 << 4,
 }
 
 export type DeobfuscatedItemRevision<

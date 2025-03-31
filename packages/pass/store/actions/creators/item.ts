@@ -275,6 +275,30 @@ export const itemDelete = requestActionsFactory<SelectedItem, SelectedItem>('ite
     },
 });
 
+export const itemDeleteRevisions = requestActionsFactory<SelectedItem, { item: ItemRevision } & SelectedItem>(
+    'item::delete::revisions'
+)({
+    key: getItemKey,
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Deleting item history failed`,
+                error,
+            })({ payload, error }),
+    },
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Item history permanently deleted`,
+                })
+            )({ payload }),
+    },
+});
+
 export const itemBulkDeleteIntent = createAction(
     'item::bulk::delete::intent',
     (payload: { selected: BulkSelectionDTO }) =>

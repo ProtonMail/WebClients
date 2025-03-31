@@ -3,8 +3,6 @@ import type { Action } from 'redux';
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/types';
-import type { ExportOptions } from '@proton/pass/lib/export/types';
-import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type {
     PasskeyCreatePayload,
     PasskeyCreateResponse,
@@ -20,7 +18,6 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
-import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
@@ -83,7 +80,6 @@ export enum WorkerMessageType {
     B2B_EVENT = 'B2B_EVENT',
     CLIENT_INIT = 'CLIENT_INIT',
     DEBUG = 'DEBUG',
-    EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
     FETCH_DOMAINIMAGE = 'FETCH_DOMAINIMAGE',
@@ -92,7 +88,6 @@ export enum WorkerMessageType {
     FORM_ENTRY_STAGE = 'FORM_ENTRY_STAGE',
     FORM_ENTRY_STASH = 'FORM_ENTRY_STASH',
     FORM_STATUS = 'FORM_STATUS',
-    IMPORT_DECRYPT = 'IMPORT_DECRYPT',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
     LOG_EVENT = 'LOG_EVENT',
@@ -154,7 +149,6 @@ export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQU
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId }>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
-export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportOptions>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
 export type FetchDomainImageMessage = WithPayload<WorkerMessageType.FETCH_DOMAINIMAGE, { url: string }>;
@@ -163,7 +157,6 @@ export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUE
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, FormSubmitPayload>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
 export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormStatusPayload>;
-export type ImportDecryptMessage = WithPayload<WorkerMessageType.IMPORT_DECRYPT, ImportReaderPayload>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
@@ -223,7 +216,6 @@ export type WorkerMessage =
     | B2BEventMessage
     | ClientInitMessage
     | DebugMessage
-    | ExportRequestMessage
     | FeatureFlagsUpdateMessage
     | FetchAbortMessage
     | FetchDomainImageMessage
@@ -232,7 +224,6 @@ export type WorkerMessage =
     | FormEntryStageMessage
     | FormEntryStashMessage
     | FormStatusMessage
-    | ImportDecryptMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage
@@ -291,12 +282,10 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
-    [WorkerMessageType.EXPORT_REQUEST]: { file: TransferableFile };
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
-    [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
+import { ItemFeatureDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/ItemFeatureDiscovery';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useSaveShortcut } from '@proton/pass/hooks/useSaveShortcut';
 import type { ItemType, MaybeNull } from '@proton/pass/types';
@@ -71,6 +72,7 @@ export const ItemEditPanel = ({ type, formId, valid, discardable, handleCancelCl
                         />
                     }
                 >
+                    <ItemFeatureDiscovery type={type} />
                     {children(props)}
                 </Panel>
             )}

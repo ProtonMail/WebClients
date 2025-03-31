@@ -1,6 +1,5 @@
 import get from 'lodash/get';
 import { c } from 'ttag';
-import X2JS from 'x2js';
 
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import {
@@ -8,7 +7,7 @@ import {
     getImportedVaultName,
     importLoginItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent, Maybe, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -116,10 +115,12 @@ const extractVaults = (group: KeePassGroup, vaults: ImportVault[] = []): ImportV
         : extractVaults(nestedGroup, vaults);
 };
 
-export const readKeePassData = ({ data }: { data: string }): ImportPayload => {
+export const readKeePassData = async (file: File): Promise<ImportReaderResult> => {
     try {
-        const x2js = new X2JS({ stripWhitespaces: false });
-        const importXml: KeePassFile = x2js.xml2js(data);
+        const data = await file.text();
+        const X2JS = (await import('x2js')).default;
+        const parser = new X2JS({ stripWhitespaces: false });
+        const importXml: KeePassFile = parser.xml2js(data);
         const vaults = extractVaults(importXml.KeePassFile.Root as KeePassGroup, []);
 
         return {

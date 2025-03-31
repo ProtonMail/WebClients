@@ -5,7 +5,7 @@ import {
     getImportedVaultName,
     importLoginItem,
 } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload } from '@proton/pass/lib/import/types';
+import type { ImportReaderResult } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -13,11 +13,12 @@ import type { ChromiumItem } from './chromium.types';
 
 const CHROME_EXPECTED_HEADERS: (keyof ChromiumItem)[] = ['name', 'url', 'username', 'password'];
 
-export const readChromiumData = async ({ data }: { data: string }): Promise<ImportPayload> => {
+export const readChromiumData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
     try {
+        const data = await file.text();
         const result = await readCSV<ChromiumItem>({
             data,
             headers: CHROME_EXPECTED_HEADERS,

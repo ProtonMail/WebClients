@@ -1,9 +1,8 @@
-import jszip from 'jszip';
-
 import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import { getImportedVaultName } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
+import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import type { Maybe } from '@proton/pass/types';
 import { unary } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
@@ -46,16 +45,17 @@ const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
         : [];
 };
 
-export const readDashlaneDataZIP = async ({ data }: { data: ArrayBuffer }): Promise<ImportPayload> => {
+export const readDashlaneDataZIP = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
     try {
-        const zipFile = await jszip.loadAsync(data);
+        const fileReader = await readZIP(file);
+
         /* logins */
         const loginItems = (
             await parseDashlaneCSV<DashlaneLoginItem>({
-                data: await zipFile.file('credentials.csv')?.async('string'),
+                data: await fileReader.getFile('credentials.csv').then((blob) => blob?.text()),
                 headers: DASHLANE_LOGINS_EXPECTED_HEADERS,
                 warnings,
             })
@@ -64,7 +64,7 @@ export const readDashlaneDataZIP = async ({ data }: { data: ArrayBuffer }): Prom
         /* notes */
         const noteItems = (
             await parseDashlaneCSV<DashlaneNoteItem>({
-                data: await zipFile.file('securenotes.csv')?.async('string'),
+                data: await fileReader.getFile('securenotes.csv').then((blob) => blob?.text()),
                 headers: DASHLANE_NOTES_EXPECTED_HEADERS,
                 warnings,
             })
@@ -73,7 +73,7 @@ export const readDashlaneDataZIP = async ({ data }: { data: ArrayBuffer }): Prom
         /* credit cards */
         const creditCards = (
             await parseDashlaneCSV<DashlanePaymentItem>({
-                data: await zipFile.file('payments.csv')?.async('string'),
+                data: await fileReader.getFile('payments.csv').then((blob) => blob?.text()),
                 headers: DASHLANE_CREDIT_CARDS_EXPECTED_HEADERS,
                 warnings,
             })
@@ -81,14 +81,14 @@ export const readDashlaneDataZIP = async ({ data }: { data: ArrayBuffer }): Prom
 
         const ids = (
             await parseDashlaneCSV<DashlaneIdItem>({
-                data: await zipFile.file('ids.csv')?.async('string'),
+                data: await fileReader.getFile('ids.csv').then((blob) => blob?.text()),
                 headers: DASHLANE_IDS_EXPECTED_HEADERS,
             })
         ).map(unary(processDashlaneIdentity));
 
         const personalInfos = (
             await parseDashlaneCSV<DashlanePersonalInfoItem>({
-                data: await zipFile.file('personalInfo.csv')?.async('string'),
+                data: await fileReader.getFile('personalInfo.csv').then((blob) => blob?.text()),
                 headers: DASHLANE_PERSONAL_INFO_EXPECTED_HEADERS,
             })
         ).map(unary(processDashlanePersonalInfo));

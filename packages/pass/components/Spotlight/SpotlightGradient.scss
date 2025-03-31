@@ -5,11 +5,8 @@
 		--spotlight-gradient-overlay: transparent;
 	}
 
-	--spotlight-gradient-layers: linear-gradient(
-			0deg,
-			var(--spotlight-gradient-overlay),
-			var(--spotlight-gradient-overlay)
-		),
+	--spotlight-gradient-layers:
+		linear-gradient(0deg, var(--spotlight-gradient-overlay), var(--spotlight-gradient-overlay)),
 		radial-gradient(51.04% 51.04% at 85.42% 18.75%, #9251eb 0%, #5b53ed 100%),
 		linear-gradient(0deg, var(--interaction-weak), var(--interaction-weak));
 
@@ -19,6 +16,7 @@
 
 	&--image {
 		background: var(--spotlight-gradient-image, ''), var(--spotlight-gradient-layers);
+		background-size: contain;
 	}
 
 	&--text {
@@ -35,6 +33,10 @@
 
 	&--close-icon {
 		color: white !important;
+
+		&-dark {
+			color: #22222f !important;
+		}
 	}
 
 	&--with-arrow {

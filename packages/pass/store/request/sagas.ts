@@ -1,7 +1,8 @@
 import { type Action } from 'redux';
-import { call as callEffect, put, takeEvery } from 'redux-saga/effects';
+import { call as callEffect, put, race, take, takeEvery } from 'redux-saga/effects';
 
 import { isActionWithSender, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
+import { matchCancel } from '@proton/pass/store/request/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import identity from '@proton/utils/identity';
 
@@ -18,6 +19,13 @@ type RequestFlowSaga<T extends RequestFlow<any, any, any>, P extends any[] = []>
     enhance?: <A extends Action>(resultAction: A, intent: ReturnType<T['intent']>) => A;
 };
 
+export class RequestCancelledError extends Error {}
+
+export function* cancelRequest(requestId: string) {
+    yield take(matchCancel(requestId));
+    throw new RequestCancelledError();
+}
+
 /** The generated saga does not directly affect the application state. Instead,
  * it embraces the event sourcing pattern of Redux to handle API requests
  * without altering the state. Request metadata holds the response data.*/
@@ -32,8 +40,12 @@ const createParametrizedRequestSaga = <T extends RequestFlow<any, any, any>, P e
             const payload = intent.payload as RequestIntent<T>;
             const enhancer = enhance ?? identity;
             try {
-                const data: RequestSuccess<T> = yield callEffect(call, payload, ...extraParams);
-                yield put(enhancer(actions.success(requestId, data), intent));
+                const result: { data: RequestSuccess<T> } = yield race({
+                    data: callEffect(call, payload, ...extraParams),
+                    cancel: callEffect(cancelRequest, requestId),
+                });
+
+                yield put(enhancer(actions.success(requestId, result.data), intent));
             } catch (error: unknown) {
                 yield put(enhancer(actions.failure(requestId, error, intent), intent));
             }

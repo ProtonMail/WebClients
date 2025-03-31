@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, Scroll } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import { type Maybe } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -17,10 +18,7 @@ const downloadLogs = (logs: string[]) => {
     const file = new File(
         logs.map((line) => `${line}\n`),
         `${PASS_APP_NAME}_logs_${Date.now()}`,
-        {
-            // Safari extensions require 'application/octet-stream' to trigger a download
-            type: BUILD_TARGET === 'safari' ? 'application/octet-stream' : 'text/plain',
-        }
+        { type: mimetypeForDownload('text/plain') }
     );
 
     download(file);

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -22,6 +23,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/p
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
@@ -58,6 +60,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
         aliasPrefix: '',
         aliasSuffix: undefined,
         extraFields,
+        files: filesFormInitializer(),
         itemEmail: email,
         itemUsername: username,
         mailboxes: [],
@@ -77,6 +80,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
         initialValues,
         onSubmit: ({
             name,
+            files,
             itemEmail,
             itemUsername,
             password,
@@ -106,6 +110,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                 dispatch(
                     itemCreate.intent({
                         content: {},
+                        files,
                         extraData: {
                             mailboxes: values.mailboxes,
                             prefix: values.aliasPrefix!,
@@ -135,6 +140,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                     itemEmail: obfuscate(email),
                     itemUsername: obfuscate(username),
                 },
+                files,
                 extraFields: obfuscateExtraFields(
                     extraFields.map((field) =>
                         field.type === 'totp'
@@ -185,7 +191,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
             <ItemEditPanel
                 type="login"
                 formId={FORM_ID}
-                valid={form.isValid && form.dirty}
+                valid={form.isValid && form.dirty && !form.status?.isBusy}
                 discardable={!form.dirty}
                 handleCancelClick={onCancel}
             >
@@ -284,6 +290,16 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                     component={TextAreaField}
                                     icon="note"
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
+                                />
+                            </FieldsetCluster>
+
+                            <FieldsetCluster>
+                                <Field
+                                    name="files"
+                                    component={FileAttachmentsFieldEdit}
+                                    shareId={shareId}
+                                    itemId={itemId}
+                                    revision={lastRevision}
                                 />
                             </FieldsetCluster>
 

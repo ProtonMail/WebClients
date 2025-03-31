@@ -1,10 +1,17 @@
 import '@testing-library/jest-dom';
+import { Blob, File } from 'buffer';
+import { ReadableStream, WritableStream } from 'stream/web';
 import { TextDecoder, TextEncoder } from 'util';
 import 'whatwg-fetch';
 
 // Getting ReferenceError: TextDecoder is not defined without
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
+global.ReadableStream = ReadableStream;
+global.WritableStream = WritableStream;
+global.Blob = Blob;
+global.File = File;
+
 global.ENV = 'test';
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
@@ -27,6 +34,7 @@ jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
 
 jest.mock('loglevel');
 jest.mock('@proton/pass/lib/core/core.ui');
+jest.mock('@proton/pass/lib/crypto/utils/worker');
 
 // JSDom does not include webcrypto
 const crypto = require('crypto').webcrypto;

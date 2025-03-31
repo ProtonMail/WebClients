@@ -4,6 +4,7 @@
  * this way, or better said, protobuf doesn't produce very easy-to-consume
  * types.
  */
+import type { FileMetadata } from './file-v1';
 import type { ExtraField, ExtraIdentitySection, PlatformSpecific } from './item-v1';
 import {
     Content,
@@ -21,6 +22,7 @@ export {
     Content,
     ExtraField,
     ExtraIdentitySection,
+    FileMetadata,
     Metadata,
     ProtobufItem,
     ProtobufItemAlias,

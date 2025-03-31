@@ -28,7 +28,8 @@ if (typeof browser !== 'undefined') {
 
         const localeChunks = Object.keys(config.LOCALES).map((locale: string) => `chunk.locales/${locale}-json.js`);
         const cryptoChunks = ['chunk.crypto-worker-api.js', 'chunk.crypto-argon2.js', 'chunk.pass-core.worker.js'];
-        const chunks = localeChunks.concat(cryptoChunks);
+        const extraChunks = ['chunk.zip.js', 'chunk.csv.reader.js'];
+        const chunks = localeChunks.concat(cryptoChunks).concat(extraChunks);
 
         globalScope.oninstall = () => {
             safeCall(() => importScripts(...chunks.map((path) => browser.runtime.getURL(path))))();

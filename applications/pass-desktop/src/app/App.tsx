@@ -5,7 +5,6 @@ import { AppGuard } from 'proton-pass-web/app/AppGuard';
 import { AuthServiceProvider } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { AuthSwitchProvider } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
-import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { core } from 'proton-pass-web/lib/core';
 import { i18n } from 'proton-pass-web/lib/i18n';
@@ -44,12 +43,8 @@ import { type AuthStore, createAuthStore, exposeAuthStore } from '@proton/pass/l
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { createPassExport } from '@proton/pass/lib/export/export';
-import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { selectExportData } from '@proton/pass/store/selectors/export';
-import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
@@ -81,12 +76,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     settings,
     spotlight,
     theme: createPassThemeManager({ getInitialTheme }),
-
-    exportData: async (options) => {
-        const state = store.getState();
-        const data = selectExportData({ config: PASS_CONFIG, format: options.format })(state);
-        return transferableToFile(await createPassExport(data, options));
-    },
 
     generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
 
@@ -130,8 +119,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
             search: location.search,
             hash: page,
         }),
-
-    prepareImport: prepareImport,
 
     writeToClipboard: async (str) => window.ctxBridge?.writeToClipboard(str),
 

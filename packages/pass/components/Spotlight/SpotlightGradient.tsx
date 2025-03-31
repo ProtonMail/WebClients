@@ -4,7 +4,7 @@ import { type FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Icon, type IconName } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import './SpotlightGradient.scss';
@@ -18,8 +18,12 @@ type Props = {
     message: ReactNode;
     title: ReactNode;
     backgroundImage?: string;
-    onClose: () => void;
+    closeButtonProps?: {
+        icon?: IconName;
+        dark?: boolean;
+    };
     withArrow?: boolean;
+    onClose: () => void;
 };
 
 export const SpotlightGradient: FC<Props> = ({
@@ -28,8 +32,9 @@ export const SpotlightGradient: FC<Props> = ({
     className,
     message,
     title,
-    onClose,
+    closeButtonProps,
     withArrow,
+    onClose,
 }) => {
     return (
         <div
@@ -45,20 +50,28 @@ export const SpotlightGradient: FC<Props> = ({
                     : undefined
             }
         >
-            <Button
-                icon
-                pill
-                shape="ghost"
-                color="weak"
-                size="small"
-                className="absolute top-0 right-0"
-                onClick={onClose}
-            >
-                <Icon name="cross" className="pass-spotlight-gradient--close-icon" alt={c('Action').t`Close`} />
-            </Button>
-
             <div className="flex-1">
-                <strong className="pass-spotlight-gradient--text block">{title}</strong>
+                <div className="flex justify-space-between">
+                    <strong className="pass-spotlight-gradient--text block">{title}</strong>
+                    <Button
+                        icon
+                        pill
+                        shape="ghost"
+                        className="absolute top-0 right-0"
+                        color="weak"
+                        size="small"
+                        onClick={onClose}
+                    >
+                        <Icon
+                            name={closeButtonProps?.icon ?? 'cross'}
+                            className={clsx(
+                                'pass-spotlight-gradient--close-icon',
+                                closeButtonProps?.dark && 'pass-spotlight-gradient--close-icon-dark'
+                            )}
+                            alt={c('Action').t`Close`}
+                        />
+                    </Button>
+                </div>
                 <span className="pass-spotlight-gradient--text block text-sm">{message}</span>
                 {action && (
                     <Button

@@ -8,6 +8,7 @@ import { ItemEdit } from '@proton/pass/components/Item/Containers/ItemEdit';
 import { ItemHistory } from '@proton/pass/components/Item/Containers/ItemHistory';
 import { ItemNew } from '@proton/pass/components/Item/Containers/ItemNew';
 import { ItemView } from '@proton/pass/components/Item/Containers/ItemView';
+import { useFiles } from '@proton/pass/hooks/files/useFileResolver';
 import type { SelectedItem } from '@proton/pass/types';
 
 type Props = RouteChildrenProps & {
@@ -18,6 +19,8 @@ type Props = RouteChildrenProps & {
 export const ItemSwitch: FC<Props> = ({ match, fallback }) => {
     const sub = (path: string) => `${match?.path}/${path}`;
     const bulkEnabled = useBulkEnabled();
+
+    useFiles();
 
     if (bulkEnabled) return <BulkView />;
 

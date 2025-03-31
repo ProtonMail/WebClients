@@ -1,17 +1,17 @@
-import { type FC, useMemo } from 'react';
+import { type FC } from 'react';
+import { useSelector } from 'react-redux';
 
-import { Field } from 'formik';
 import { c } from 'ttag';
 
 import { Href, InlineLinkButton } from '@proton/atoms';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components';
-import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import type { ImportFormContext } from '@proton/pass/hooks/useImportForm';
-import { extractFileExtension } from '@proton/pass/lib/import/reader';
+import type { ImportFormContext } from '@proton/pass/hooks/import/useImportForm';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -20,30 +20,23 @@ import { ImportProviderItem } from './ImportProviderItem';
 
 import './ImportForm.scss';
 
-const providerHasUnsupportedItemTypes = (provider: ImportProvider) => {
-    return (
-        provider !== ImportProvider.BRAVE &&
-        provider !== ImportProvider.FIREFOX &&
-        provider !== ImportProvider.CHROME &&
-        provider !== ImportProvider.CSV &&
-        provider !== ImportProvider.EDGE &&
-        provider !== ImportProvider.SAFARI &&
-        provider !== ImportProvider.PROTONPASS
-    );
-};
+const providerHasUnsupportedItemTypes = (provider: ImportProvider) =>
+    ![
+        ImportProvider.BRAVE,
+        ImportProvider.FIREFOX,
+        ImportProvider.CHROME,
+        ImportProvider.EDGE,
+        ImportProvider.SAFARI,
+        ImportProvider.CSV,
+        ImportProvider.PROTONPASS,
+    ].includes(provider);
 
-export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ form, dropzone, busy }) => {
-    const needsPassphrase = useMemo(
-        () =>
-            form.values.file &&
-            extractFileExtension(form.values.file.name) === 'pgp' &&
-            form.values.provider === ImportProvider.PROTONPASS,
-        [form.values]
-    );
+export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'>> = ({ form, dropzone, busy }) => {
+    const free = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
         if (provider) dropzone.setSupportedFileTypes(PROVIDER_INFO_MAP[provider].fileExtension.split(', '));
-        void form.setFieldValue('provider', provider);
+        void form.setValues({ provider, file: null });
     };
 
     return (
@@ -165,17 +158,16 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                             )}
                         </Bordered>
                     </Dropzone>
-                    {needsPassphrase && (
-                        <Field
-                            name="passphrase"
-                            label={c('Label').t`Passphrase`}
-                            component={PasswordField}
-                            autoComplete="new-password"
-                        />
-                    )}
+
                     {providerHasUnsupportedItemTypes(form.values.provider) && (
                         <Card className="mb-4 text-sm" type="primary">
                             {c('Info').t`${PASS_APP_NAME} will only import logins, notes, credit cards and identities.`}
+                        </Card>
+                    )}
+
+                    {free && (
+                        <Card className="mb-4 text-sm" type="warning">
+                            {c('Warning').t`Your current plan does not support importing files`}
                         </Card>
                     )}
                 </>

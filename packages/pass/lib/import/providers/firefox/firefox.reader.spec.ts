@@ -10,12 +10,13 @@ describe('Import Firefox CSV', () => {
     let payload: ImportPayload;
 
     beforeAll(async () => {
-        const sourceData = await fs.promises.readFile(__dirname + '/mocks/firefox.csv', 'utf8');
-        payload = await readFirefoxData({ data: sourceData });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/firefox.csv');
+        const file = new File([sourceData], 'firefox.csv');
+        payload = await readFirefoxData(file);
     });
 
     it('should handle corrupted files', async () => {
-        await expect(readFirefoxData({ data: 'not-a-csv-file' })).rejects.toThrow();
+        await expect(readFirefoxData(new File([], 'corrupted'))).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {

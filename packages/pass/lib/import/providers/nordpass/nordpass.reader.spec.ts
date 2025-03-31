@@ -8,20 +8,20 @@ import * as epochUtils from '@proton/pass/utils/time/epoch';
 import { readNordPassData } from './nordpass.reader';
 
 describe('Import NordPass csv', () => {
-    let sourceData: string;
     let payload: ImportPayload;
 
     const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/nordpass.csv', 'utf8');
-        payload = await readNordPassData({ data: sourceData });
+        const sourceData = fs.readFileSync(__dirname + '/mocks/nordpass.csv');
+        const file = new File([sourceData], 'nordpass.csv');
+        payload = await readNordPassData(file);
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
-        await expect(readNordPassData({ data: 'not-a-csv-file' })).rejects.toThrow();
+        await expect(readNordPassData(new File([], 'corrupted'))).rejects.toThrow();
     });
 
     it('converts NordPass folders to vaults correctly', () => {

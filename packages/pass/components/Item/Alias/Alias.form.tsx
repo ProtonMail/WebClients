@@ -134,24 +134,22 @@ export const AliasForm = <V extends AliasFormValues>({
                         </Field>
                     </FieldsetCluster>
 
-                    {
-                        <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_DOMAIN}>
-                            {({ close }) => (
-                                <SpotlightGradient
-                                    title={c('Title').t`Did you know?`}
-                                    message={c('Info')
-                                        .t`By adding your domain, you can create aliases like hi@my-domain.com.`}
-                                    onClose={close}
-                                    action={{
-                                        label: c('Action').t`Add domain`,
-                                        onClick: handleSpotlightActionClick,
-                                    }}
-                                    className="mb-2"
-                                    withArrow
-                                />
-                            )}
-                        </WithSpotlight>
-                    }
+                    <WithSpotlight type={SpotlightMessage.ALIAS_DISCOVERY_DOMAIN}>
+                        {({ close }) => (
+                            <SpotlightGradient
+                                title={c('Title').t`Did you know?`}
+                                message={c('Info')
+                                    .t`By adding your domain, you can create aliases like hi@my-domain.com.`}
+                                onClose={close}
+                                action={{
+                                    label: c('Action').t`Add domain`,
+                                    onClick: handleSpotlightActionClick,
+                                }}
+                                className="mb-2"
+                                withArrow
+                            />
+                        )}
+                    </WithSpotlight>
                 </>
             )}
         </AliasFormBase>

@@ -1,33 +1,32 @@
-import JSZip from 'jszip';
 import { c } from 'ttag';
 
-import { decryptPassExport } from '@proton/pass/lib/export/export';
+import { decryptPassExport } from '@proton/pass/lib/crypto/utils/export';
+import { archivePath } from '@proton/pass/lib/export/archive';
 import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
 import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
-import type { ImportPayload, ImportReaderPayload, ImportVault } from '@proton/pass/lib/import/types';
+import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
+import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { type ItemImportIntent, ItemState } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
-import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { semver } from '@proton/pass/utils/string/semver';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type ProtonPassReaderPayload = {
-    /** unencrypted zip file as ArrayBuffer  */
-    data: ArrayBuffer;
-    /** list of current email aliases so we don't import them again if they are present in the data file, otherwise BE will throw an error */
+    /** list of current email aliases so we don't import
+     * them again if they are present in the data file,
+     * otherwise BE will throw an error. */
     currentAliases: string[];
+    passphrase?: string;
     userId?: string;
+    onPassphrase: () => Promise<string>;
 };
 
-export const decryptProtonPassImport = async (payload: ImportReaderPayload): Promise<TransferableFile> => {
+export const decryptProtonPassImport = async (file: File, passphrase?: string): Promise<Uint8Array> => {
     try {
-        const decrypted = await decryptPassExport(payload.file.base64, payload.passphrase ?? '');
-        const base64 = uint8ArrayToBase64String(decrypted);
-        return { ...payload.file, base64 };
+        return await decryptPassExport(await file.text(), passphrase ?? '');
     } catch (err: unknown) {
         if (err instanceof Error) {
             const errorDetail = err.message.includes('Error decrypting message')
@@ -43,14 +42,29 @@ export const decryptProtonPassImport = async (payload: ImportReaderPayload): Pro
     }
 };
 
-export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promise<ImportPayload> => {
+export const readProtonPassZIP = async (file: File, payload: ProtonPassReaderPayload): Promise<ImportReaderResult> => {
     try {
-        const zipFile = await JSZip.loadAsync(payload.data);
-        const zipObject = zipFile.file(`${PASS_APP_NAME}/data.json`);
-        const exportData = await zipObject?.async('string');
+        const fileReader = await readZIP(file);
 
-        if (exportData === undefined) throw new Error();
+        const exportData = await (async () => {
+            if (fileReader.files.has(archivePath('data.pgp'))) {
+                const passphrase = await payload.onPassphrase();
+                const encrypted = (await fileReader.getFile(archivePath('data.pgp')))!;
+                const armored = await encrypted.text();
+                const decrypted = await decryptPassExport(armored, passphrase);
+                const decoder = new TextDecoder();
+                return decoder.decode(decrypted);
+            }
 
+            if (fileReader.files.has(archivePath('data.json'))) {
+                const data = (await fileReader.getFile(archivePath('data.json')))!;
+                return data.text();
+            }
+
+            return '';
+        })();
+
+        if (!exportData) throw new Error('Invalid archive');
         const parsedExport = JSON.parse(exportData) as ExportData;
         const { userId } = parsedExport;
 
@@ -98,6 +112,7 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
                                 trashed: item.state === ItemState.Trashed,
                                 createTime: item.createTime,
                                 modifyTime: item.modifyTime,
+                                files: item.files?.map((filename) => archivePath(filename, 'files')) ?? [],
                             } as ItemImportIntent);
 
                             return acc;
@@ -112,6 +127,7 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
             vaults: vaults.map(prop('vault')),
             ignored: vaults.flatMap(prop('ignored')),
             warnings: [],
+            fileReader,
         };
     } catch (e) {
         logger.warn('[Importer::Proton]', e);
