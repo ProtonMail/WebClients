@@ -56,5 +56,12 @@ describe('StandardErrorPage', () => {
         render(<StandardErrorPage />);
 
         expect(metrics.core_ui_blocking_error_page_total.increment).toHaveBeenCalledWith({});
+        expect(metrics.core_ui_blocking_error_page_total.increment).toHaveBeenCalledTimes(1);
+    });
+
+    it('does not increments metrics counter on mount if disabled', () => {
+        render(<StandardErrorPage enableTelemetry={false} />);
+
+        expect(metrics.core_ui_blocking_error_page_total.increment).toHaveBeenCalledTimes(0);
     });
 });
