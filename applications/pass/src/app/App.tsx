@@ -178,7 +178,7 @@ export const App = () => (
                     <CompatibilityCheck compatibilities={PASS_WEB_COMPAT}>
                         <Icons />
 
-                        <ErrorBoundary component={<StandardErrorPage big />}>
+                        <ErrorBoundary component={<StandardErrorPage big enableTelemetry={false} />}>
                             <NotificationsProvider>
                                 <ModalsProvider>
                                     <PassExtensionLink>
