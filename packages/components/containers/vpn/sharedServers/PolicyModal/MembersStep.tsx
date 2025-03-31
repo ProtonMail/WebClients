@@ -138,7 +138,7 @@ const MembersStep = ({
                 </div>
             </div>
 
-            {(applyPolicyTo === 'users' || (applyPolicyTo === 'groups' && filteredGroups.length > 0)) && (
+            {(applyPolicyTo === 'users' || (applyPolicyTo === 'groups' && groups.length > 0)) && (
                 <div className="my-4 w-full">
                     <Input
                         placeholder={c('Action').t`Search`}
@@ -178,7 +178,7 @@ const MembersStep = ({
                 </Table>
             )}
 
-            {applyPolicyTo === 'groups' && filteredGroups.length === 0 && (
+            {applyPolicyTo === 'groups' && groups.length === 0 && (
                 <div className="flex flex-column md:flex-row flex-nowrap gap-4 w-full">
                     <span className="mt-4 text-sm inline-block relative flex shrink-0 color-weak" aria-hidden="true">
                         {c('Info').t`To create your first user group, go to`}&nbsp;
@@ -187,7 +187,7 @@ const MembersStep = ({
                 </div>
             )}
 
-            {applyPolicyTo === 'groups' && filteredGroups.length > 0 && (
+            {applyPolicyTo === 'groups' && groups.length > 0 && (
                 <Table responsive="stacked" hasActions>
                     <TableBody>
                         <TableHeader
@@ -196,26 +196,25 @@ const MembersStep = ({
                             selectedEntities={selectedGroups}
                             onSelectAllEntities={onSelectAllGroups}
                         />
-                        {filteredGroups.length > 0 &&
-                            filteredGroups.map((group) => {
-                                const checked = selectedGroups.some(
-                                    (selectedGroup) => selectedGroup.GroupID === group.GroupID
-                                );
-                                return (
-                                    <EntityTableRow
-                                        id={group.GroupID}
-                                        onSelectEntity={onSelectGroup}
-                                        checked={checked}
-                                        entity={group}
-                                        avatar={<Icon name="users-filled"></Icon>}
-                                        description={
-                                            <>
-                                                {group.UserCount} {c('Label').t`Users`}
-                                            </>
-                                        }
-                                    />
-                                );
-                            })}
+                        {filteredGroups.map((group) => {
+                            const checked = selectedGroups.some(
+                                (selectedGroup) => selectedGroup.GroupID === group.GroupID
+                            );
+                            return (
+                                <EntityTableRow
+                                    id={group.GroupID}
+                                    onSelectEntity={onSelectGroup}
+                                    checked={checked}
+                                    entity={group}
+                                    avatar={<Icon name="users-filled"></Icon>}
+                                    description={
+                                        <>
+                                            {group.UserCount} {c('Label').t`Users`}
+                                        </>
+                                    }
+                                />
+                            );
+                        })}
                     </TableBody>
                 </Table>
             )}
