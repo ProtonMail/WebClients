@@ -141,7 +141,7 @@ const linkPending = createRequestSaga({
         const linked: ItemRevision = yield linkPendingFiles(revisionDTO);
         yield put(withRevalidate(filesResolve.intent(revisionDTO)));
 
-        return { item: linked, revalidateStorage: dto.revalidateStorage };
+        return { item: linked };
     },
 });
 

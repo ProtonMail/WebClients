@@ -86,7 +86,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                     async create({ shareId, name, note, alias: { aliasEmail, mailbox, prefix, signedSuffix } }) {
                         const itemUuid = uniqueId();
 
-                        const encryptedItem = await createAlias({
+                        const item = await createAlias({
                             content: {},
                             extraData: { aliasEmail, mailboxes: [mailbox], prefix, signedSuffix },
                             extraFields: [],
@@ -97,11 +97,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                             files: { toAdd: [], toRemove: [] },
                         });
 
-                        const item = (await parseItemRevision(shareId, encryptedItem)) as ItemRevision<'alias'>;
-
-                        return {
-                            item: { ...item, aliasEmail },
-                        };
+                        return { item: { ...item, aliasEmail } };
                     },
                     getAliasOptions,
                     getAllByShareId: maxAgeMemoize(async (shareId) => {

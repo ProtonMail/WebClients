@@ -1,5 +1,6 @@
 import { put, select, takeLeading } from 'redux-saga/effects';
 
+import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import {
     aliasSyncPending,
@@ -8,12 +9,15 @@ import {
     getUserAccessIntent,
     getUserAccessSuccess,
     importReport,
+    itemCreate,
+    itemEdit,
 } from '@proton/pass/store/actions';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
+import { or } from '@proton/pass/utils/fp/predicates';
 import type { User } from '@proton/shared/lib/interfaces';
 
 function* userAccessWorker({ getAuthStore }: RootSagaOptions, { meta }: ReturnType<typeof getUserAccessIntent>) {
@@ -36,8 +40,9 @@ function* userAccessWorker({ getAuthStore }: RootSagaOptions, { meta }: ReturnTy
 }
 
 const matchRevalidateUserAccess = (action: unknown) => {
-    if (fileLinkPending.success.match(action) && action.payload.revalidateStorage !== false) return true;
+    if (fileLinkPending.success.match(action)) return true;
     if (importReport.match(action)) return true;
+    if (or(itemEdit.success.match, itemCreate.success.match)(action)) return hasAttachments(action.payload.item);
     return false;
 };
 

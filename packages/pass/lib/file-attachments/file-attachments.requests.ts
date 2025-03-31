@@ -15,6 +15,7 @@ import type {
     ItemRevision,
     ItemRevisionContentsResponse,
     ItemRevisionLinkFiles,
+    ItemType,
     LinkFileToItemInput,
     SecureLinkItem,
     SelectedItem,
@@ -108,7 +109,7 @@ export const restoreRevisionFiles = async (
         })
     ).Result.Item;
 
-export const linkPendingFiles = async (dto: ItemRevisionLinkFiles): Promise<ItemRevision> => {
+export const linkPendingFiles = async <T extends ItemType>(dto: ItemRevisionLinkFiles): Promise<ItemRevision<T>> => {
     const { revision, shareId, itemId, files } = dto;
     const itemKey = await resolveItemKey(shareId, itemId);
 
@@ -168,7 +169,7 @@ export const linkPendingFiles = async (dto: ItemRevisionLinkFiles): Promise<Item
         throw new Error('Invalid file link operation');
     })();
 
-    return parseItemRevision(dto.shareId, encryptedItem);
+    return parseItemRevision<T>(dto.shareId, encryptedItem);
 };
 
 export const resolveItemFiles = async ({ shareId, itemId }: UniqueItem): Promise<ItemFileOutput[]> =>
