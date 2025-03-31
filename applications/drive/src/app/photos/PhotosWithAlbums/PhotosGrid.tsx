@@ -216,7 +216,7 @@ export const PhotosGrid: FC<Props> = ({
 
     return (
         <div
-            className={clsx('m-4 overflow-auto outline-none--at-all', !isAddAlbumPhotosView && 'mt-10')}
+            className={clsx('p-4 overflow-auto outline-none--at-all', !isAddAlbumPhotosView && 'mt-10')}
             ref={containerRef}
             onScroll={handleScroll}
         >
