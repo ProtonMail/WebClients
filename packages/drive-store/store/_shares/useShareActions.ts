@@ -122,7 +122,6 @@ export default function useShareActions() {
                 queryCreateShare(volumeId, {
                     AddressID: address.ID,
                     RootLinkID: linkId,
-                    Name: 'New Share',
                     ShareKey,
                     SharePassphrase,
                     SharePassphraseSignature,
