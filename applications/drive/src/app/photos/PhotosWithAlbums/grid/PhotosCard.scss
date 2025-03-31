@@ -39,15 +39,17 @@
 		}
 	}
 
-	&--hide-checkbox {
-		& > .checkbox-container {
-			display: none;
-			animation-delay: 0.1s;
-			animation-fill-mode: both;
-		}
+	@media (hover: hover) and (pointer: fine) {
+		&--hide-checkbox {
+			& > .checkbox-container {
+				display: none;
+				animation-delay: 0.1s;
+				animation-fill-mode: both;
+			}
 
-		&:hover > .checkbox-container {
-			display: block;
+			&:hover > .checkbox-container {
+				display: block;
+			}
 		}
 	}
 
@@ -64,8 +66,10 @@
 		}
 	}
 
-	& > .photos-card-favorite-button:not([aria-pressed='true']) {
-		display: none;
+	@media (hover: hover) and (pointer: fine) {
+		& > .photos-card-favorite-button:not([aria-pressed='true']) {
+			display: none;
+		}
 	}
 
 	&:hover > .photos-card-favorite-button,
