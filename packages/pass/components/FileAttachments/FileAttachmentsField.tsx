@@ -90,9 +90,10 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                             .catch((error) => {
                                 setFiles(updateMap((next) => next.delete(uploadID)));
                                 if (!isAbortError(error)) {
+                                    const detail = error instanceof Error ? `(${error.message})` : '';
                                     createNotification({
                                         type: 'error',
-                                        text: c('Error').t`"${file.name}" could not be uploaded.`,
+                                        text: `${c('Error').t`"${file.name}" could not be uploaded.`} ${detail}`,
                                     });
                                 }
 

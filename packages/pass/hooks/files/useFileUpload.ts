@@ -81,7 +81,7 @@ export const useFileUpload = () => {
                         () => dispatch(requestCancel(fileUploadChunk.requestID(dto)))
                     );
 
-                    if (res.type !== 'success') throw new Error(res.error);
+                    if (res.type !== 'success') throw new Error(res.data.error);
                 }
 
                 onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
