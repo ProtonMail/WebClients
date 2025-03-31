@@ -27,6 +27,7 @@ import type { BaseFileDescriptor, FileAttachmentValues, FileID } from '@proton/p
 import { PassFeature } from '@proton/pass/types/api/features';
 import { eq, not, truthy } from '@proton/pass/utils/fp/predicates';
 import { updateMap } from '@proton/pass/utils/fp/state';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';
@@ -60,7 +61,6 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
         const [filesMap, setFiles] = useState(new Map<string, FileUploadDescriptor>());
         const [loading, setLoading] = useState(false);
         const files = useMemo(() => Array.from(filesMap.values()), [filesMap]);
-        const disableUploader = loading || !online;
 
         const uploadFiles = async (toUpload: File[]) => {
             const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
@@ -78,29 +78,34 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 })
             );
 
-            const fileIDs = await Promise.all(
-                uploads.map(async ({ file, uploadID }) =>
-                    fileUpload
-                        .start(file, uploadID)
-                        .then((fileID) => {
-                            setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
-                            return fileID;
-                        })
-                        .catch((error) => {
-                            setFiles(updateMap((next) => next.delete(uploadID)));
-                            if (!isAbortError(error)) {
-                                createNotification({
-                                    type: 'error',
-                                    text: c('Error').t`"${file.name}" could not be uploaded.`,
-                                });
-                            }
+            const fileIDs = (
+                await Promise.all(
+                    uploads.map(async ({ file, uploadID }) =>
+                        fileUpload
+                            .start(file, uploadID)
+                            .then((fileID) => {
+                                setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
+                                return fileID;
+                            })
+                            .catch((error) => {
+                                setFiles(updateMap((next) => next.delete(uploadID)));
+                                if (!isAbortError(error)) {
+                                    createNotification({
+                                        type: 'error',
+                                        text: c('Error').t`"${file.name}" could not be uploaded.`,
+                                    });
+                                }
 
-                            return undefined;
-                        })
+                                return undefined;
+                            })
+                    )
                 )
-            );
+            ).filter(truthy);
 
-            void form.setFieldValue('files.toAdd', form.values.files.toAdd.concat(fileIDs.filter(truthy)));
+            await form.setValues((values) => {
+                const toAdd = values.files.toAdd.concat(fileIDs);
+                return partialMerge(values, { files: { toAdd } });
+            });
         };
 
         const onAddFiles = async (newFiles: File[]) => {
@@ -135,7 +140,12 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
 
         const handleRemove = async (uploadID: string, fileID?: string) => {
             setFiles(updateMap((next) => next.delete(uploadID)));
-            if (fileID) return form.setFieldValue('files.toAdd', form.values.files.toAdd.filter(not(eq(fileID))));
+            if (fileID) {
+                await form.setValues((values) => {
+                    const toAdd = values.files.toAdd.filter(not(eq(fileID)));
+                    return partialMerge(values, { files: { toAdd } });
+                });
+            }
         };
 
         const handleCancel = (uploadID: string) => {
@@ -175,14 +185,15 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                         ? onAddFiles(files)
                         : upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })
                 }
-                disabled={disableUploader}
+                disabled={!online}
                 border={false}
+                size="small"
             >
-                <div>
+                <div className="min-h-custom">
                     <FileAttachmentsSummary
                         filesCount={files.length + filesCount}
                         onDelete={handleDeleteAll}
-                        deleteDisabled={disableUploader}
+                        deleteDisabled={loading || !online}
                     >
                         {children}
 
@@ -210,7 +221,6 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                     <div className="m-4">
                                         <Button
                                             className="rounded-full inline-block gap-1"
-                                            disabled={disableUploader}
                                             shape="solid"
                                             color="weak"
                                             onClick={() => popup?.expand(pathname)}
@@ -228,7 +238,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                     {...(isIos() ? {} : { accept: '*' })}
                                     className="m-4 rounded-full"
                                     onChange={({ target }) => onAddFiles([...(target.files ?? [])])}
-                                    disabled={disableUploader}
+                                    disabled={!online}
                                     shape="solid"
                                     color="weak"
                                     multiple
@@ -241,7 +251,6 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                             <div className="m-4">
                                 <Button
                                     className="rounded-full inline-block"
-                                    disabled={disableUploader}
                                     shape="solid"
                                     color="weak"
                                     onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })}
