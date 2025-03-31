@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { UserAvatar } from './UserAvatar';
+import { UserAvatar, type UserAvatarProps } from './UserAvatar';
 import UserAvatarDocs from './UserAvatar.mdx';
 
-const meta: Meta<typeof UserAvatar> = {
+type DefaultUserAvatarProps = UserAvatarProps<'span'>;
+
+const meta: Meta<DefaultUserAvatarProps> = {
     title: 'Components/UserAvatar',
     component: UserAvatar,
     parameters: {
@@ -48,7 +50,8 @@ const meta: Meta<typeof UserAvatar> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof UserAvatar>;
+
+type Story = StoryObj<DefaultUserAvatarProps>;
 
 export const Default: Story = {
     args: {

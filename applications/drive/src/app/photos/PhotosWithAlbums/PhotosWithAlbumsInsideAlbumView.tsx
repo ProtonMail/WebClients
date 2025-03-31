@@ -542,7 +542,8 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     <div className="flex flex-column flex-nowrap mx-2 w-full h-full">
                         <AlbumCoverHeader
                             shareId={albumShareId}
-                            linkId={uploadLinkId}
+                            uploadLinkId={uploadLinkId}
+                            linkId={album.linkId}
                             onFileUpload={onPhotoUploadedToAlbum}
                             onFileSkipped={onPhotoUploadedToAlbum}
                             album={album}
@@ -560,7 +561,8 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     >
                         <AlbumCoverHeader
                             shareId={albumShareId}
-                            linkId={uploadLinkId}
+                            uploadLinkId={uploadLinkId}
+                            linkId={album.linkId}
                             album={album}
                             photoCount={photoCount}
                             onFileUpload={onPhotoUploadedToAlbum}
