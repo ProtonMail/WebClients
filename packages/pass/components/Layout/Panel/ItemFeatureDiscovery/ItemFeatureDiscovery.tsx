@@ -1,13 +1,24 @@
-import type { FC } from 'react';
+import type { ComponentType } from 'react';
+import { type FC, memo } from 'react';
 
 import { FileAttachmentsDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/FileAttachmentsDiscovery';
+import type { ItemType } from '@proton/pass/types';
 
-const discoveries = [FileAttachmentsDiscovery];
+type FeatureDiscovery = { component: ComponentType; types: ItemType[] };
+type Props = { type: ItemType };
 
-export const ItemFeatureDiscovery: FC = () => (
+const discoveries: FeatureDiscovery[] = [
+    { component: FileAttachmentsDiscovery, types: ['login', 'identity', 'creditCard'] },
+];
+
+export const ItemFeatureDiscovery: FC<Props> = memo(({ type }) => (
     <div>
-        {discoveries.map((FeatureDiscovery) => (
-            <FeatureDiscovery key={FeatureDiscovery.name} />
-        ))}
+        {discoveries
+            .filter(({ types }) => types.includes(type))
+            .map(({ component: FeatureDiscovery }) => (
+                <FeatureDiscovery key={FeatureDiscovery.name} />
+            ))}
     </div>
-);
+));
+
+ItemFeatureDiscovery.displayName = 'ItemFeatureDiscoveryMemo';
