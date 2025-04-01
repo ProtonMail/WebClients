@@ -47,7 +47,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
                 payload: { current: options.endpoint === 'popup' },
             }),
             (res) => {
-                if (res.type === 'error') return { tabId: -1, url: null };
+                if (res.type === 'error') return { tabId: 0, url: null };
                 return { tabId: res.tabId, url: res.url };
             }
         );
