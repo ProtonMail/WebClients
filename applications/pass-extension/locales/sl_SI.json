@@ -116,11 +116,11 @@
       "Create": [
         "Ustvari"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Ustvarite račun ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Ustvarite račun ${ BRAND_NAME }."
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Ustvarite račun ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Ustvari vzdevek"
@@ -196,6 +196,9 @@
       ],
       "Done": [
         "Opravljeno"
+      ],
+      "Download": [
+        "Prenesi"
       ],
       "Download this CSV template": [
         "Prenesite to predlogo CSV"
@@ -386,6 +389,9 @@
       "Remove member": [
         "Odstrani člana"
       ],
+      "Rename": [
+        "Preimenuj"
+      ],
       "Request a feature": [
         "Predlagajte novo funkcijo"
       ],
@@ -397,6 +403,9 @@
       ],
       "Resend invitation": [
         "Ponovno pošlji povabilo"
+      ],
+      "Reset": [
+        "Ponastavi"
       ],
       "Restore": [
         "Obnovi"
@@ -749,9 +758,6 @@
       ],
       "File could not be parsed": [
         "Datoteke ni bilo mogoče razčleniti"
-      ],
-      "File could not be read": [
-        "Datoteke ni bilo mogoče prebrati"
       ],
       "File does not match expected format": [
         "Datoteka se ne ujema s pričakovano obliko"
@@ -1130,9 +1136,6 @@
       "Drop to import": [
         "Spusti za uvoz."
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Zaradi omejitev razširitev brskalnika Safari po izvozu podatkov v datotečni priponi manjka ».pgp«. Po izvozu preimenujte datoteko tako, da bo vključevala pripono .pgp (npr. datoteka.pgp)."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Preprosto uvozite obstoječa gesla v ${ PASS_APP_NAME }."
       ],
@@ -1196,17 +1199,8 @@
       "Here you will find all the necessary information to get you started.": [
         "Tukaj boste našli vse potrebne informacije za začetek."
       ],
-      "Import in progress:": [
-        "Uvoz v teku:"
-      ],
       "Import the CSV file below.": [
         "Uvozite spodnjo datoteko CSV."
-      ],
-      "Imported ${ payload.total } item": [
-        "Uvožen ${ payload.total } predmet",
-        "Uvožena ${ payload.total } predmeta",
-        "Uvoženi ${ payload.total } predmeti",
-        "Uvoženih ${ payload.total } predmetov"
       ],
       "Imported on ${ date }": [
         "Uvoženo dne ${ date }"
@@ -1234,12 +1228,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Videti je, da ste že prijavljeni v ${ PASS_APP_NAME }. Če se poskušate prijaviti z drugim računom, se najprej odjavite iz razširitve."
-      ],
-      "item": [
-        "predmet",
-        "predmeta",
-        "predmeti",
-        "predmetov"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Predmet »${ payload.item.data.metadata.name }« je ustvarjen"
@@ -1486,12 +1474,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Za uporabo ${ PASS_APP_NAME } bo potrebno dodatno geslo. Deluje kot dodatno geslo poleg vašega gesla ${ BRAND_NAME }."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Tega predmeta ${ result.ignored.length } ni bilo mogoče uvoziti:",
-        "Teh dveh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
-        "Teh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:",
-        "Teh predmetov ${ result.ignored.length } ni bilo mogoče uvoziti:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Besedilo, ki ga poskušate prilepiti, presega največjo dovoljeno dolžino ${ maxLength } znakov."
@@ -1894,6 +1876,9 @@
       "Field name": [
         "Ime polja"
       ],
+      "File": [
+        "Datoteka"
+      ],
       "File format": [
         "Format datoteke"
       ],
@@ -2118,9 +2103,6 @@
       ],
       "Personal website": [
         "Osebno spletno mesto"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "S PGP šifriran JSON (priporočeno)"
       ],
       "Phone number": [
         "Telefonska številka"
@@ -2479,6 +2461,9 @@
       ],
       "Aliases": [
         "Vzdevki"
+      ],
+      "Attachments": [
+        "Priponke"
       ],
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
@@ -2840,9 +2825,6 @@
       ],
       "Passwords do not match": [
         "Gesli se ne ujemata"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP šifrirana izvozna datoteka zahteva geslo"
       ],
       "Please verify your email address in order to use email aliases": [
         "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati e-poštne vzdevke"

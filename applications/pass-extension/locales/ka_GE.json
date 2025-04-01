@@ -152,10 +152,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create alias": [
@@ -247,6 +247,9 @@
       ],
       "Done": [
         "მზადაა"
+      ],
+      "Download": [
+        "გადმოწერა"
       ],
       "Download this CSV template": [
         "გადმოწერეთ ეს CSV ნიმუში"
@@ -464,6 +467,9 @@
       "Remove member": [
         "წევრის წაშლა"
       ],
+      "Rename": [
+        "სახელის გადარქმევა"
+      ],
       "Request a feature": [
         "თვისების მოთხოვნა"
       ],
@@ -475,6 +481,9 @@
       ],
       "Resend invitation": [
         "მოსაწვევის თავიდან გაგზავნა"
+      ],
+      "Reset": [
+        "თავიდან"
       ],
       "Restore": [
         "აღდგენა"
@@ -967,9 +976,6 @@
       "File could not be parsed": [
         "ფაილის დამუშავება შეუძლებელია"
       ],
-      "File could not be read": [
-        "ფაილის წაკითხვა შეუძლებელია"
-      ],
       "File does not match expected format": [
         "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
@@ -1326,12 +1332,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "ფსევდონიმი წარმატებით გაითიშა. ახლა ელფოსტებს, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან, ვეღარ მიიღებთ"
-      ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "ფსევდონიმი წარმატებით ჩაირთო. ახლა შეგძლიათ, მიიღოთ ელფოსტები, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან"
-      ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "ფსევდონიმების სინქრონიზაცია თქვენს ${ BRAND_NAME }-ისა და SimpleLogin-ის ანგარიშებს შორის აქტიურია."
       ],
@@ -1512,9 +1512,6 @@
       "Drop to import": [
         "შემოსატანად დააგდეთ"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Safari ბრაუზერის გაფართოებების შეზღუდვის გამო, მონაცემების გატანის შემდეგ ფაილის გაფართოებას დააკლდება \".pgp\". გადაარქვით ფაილს სახელი, რომ .pgp მიემატოს ბოლოში (მაგალითად: file.pgp) მას შემდეგ, რაც გაიტანთ."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "ადვილად შემოიტანეთ თქვენი არსებული პაროლები ${ PASS_APP_NAME }-ში."
       ],
@@ -1637,15 +1634,8 @@
       "Identity confirmed": [
         "იდენტიფიკატორი დადასტურებულია"
       ],
-      "Import in progress:": [
-        "მიმდინარეობს შემოტანა:"
-      ],
       "Import the CSV file below.": [
         "ქვემორე CSV ფაილის შემოტანა."
-      ],
-      "Imported ${ payload.total } item": [
-        "შემოტანილია ${ payload.total } ელემენტი",
-        "შემოტანილია ${ payload.total } ელემენტი"
       ],
       "Imported on ${ date }": [
         "შემოტანის დრო ${ date }"
@@ -1673,10 +1663,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "როგორც ჩანს, ${ PASS_APP_NAME }-ში უკვე შესული ბრძანდებით. თუ ცდილობთ, სხვა მომხმარებლით შეხვიდეთ, ჯერ გამოდით."
-      ],
-      "item": [
-        "ელემენტი",
-        "ელემენტი"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "ელემენტი \"${ payload.item.data.metadata.name }\" შეიქმნა"
@@ -2065,10 +2051,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "დამატებითი პაროლი აუცილებელია ${ PASS_APP_NAME }-ის გამოყენებისას. ის ${ BRAND_NAME }-ის პაროლთან ერთად დამატებით პაროლად გამოიყენება."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
-        "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:"
       ],
       "The secure link has been removed": [
         "დაცული ბმული წაიშალა"
@@ -2635,6 +2617,9 @@
       "Field name": [
         "ველის სახელწოდება"
       ],
+      "File": [
+        "ფაილი"
+      ],
       "File format": [
         "ფაილის ფორმატი"
       ],
@@ -2883,9 +2868,6 @@
       ],
       "Personal website": [
         "პირადი ვებგვერდი"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP-ით დაშიფრული JSON (რეკომენდებულია)"
       ],
       "Phone number": [
         "ტელეფონის ნომერი"
@@ -3466,6 +3448,9 @@
       "Aliases": [
         "ფსევდონიმები"
       ],
+      "Attachments": [
+        "მიმაგრებები"
+      ],
       "Auto create/on the fly alias": [
         "ავტოშექმნა/ფსევდონიმები საჭიროებისამებრ"
       ],
@@ -4005,9 +3990,6 @@
       ],
       "Passwords do not match": [
         "პაროლები არ ემთხვევა"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP-ით დაშიფრული გატანის ფაილისთვის საკვანძო ფრაზა აუცილებელია"
       ],
       "Please contact us to investigate the issue": [
         "დაგვიკავშირდით ამ პრობლემის გამოსაკვლევად"
