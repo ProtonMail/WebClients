@@ -23,6 +23,8 @@ import {
     setMessageContentBeforeBlockquote,
 } from 'proton-mail/helpers/composer/contentFromComposerMessage';
 import { insertSignature } from 'proton-mail/helpers/message/messageSignature';
+import { MOVE_BACK_ACTION_TYPES } from 'proton-mail/hooks/actions/moveBackAction/interfaces';
+import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from 'proton-mail/hooks/message/useLoadImages';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
@@ -119,6 +121,8 @@ export const useComposerContent = (args: EditorArgs) => {
     const dispatch = useMailDispatch();
     const store = useMailStore();
     const skipNextInputRef = useRef(false);
+
+    const { handleOnBackMoveAction } = useMoveBackAction();
 
     const { onClose, composerFrameRef, type: editorType, isFocused, editorReady } = args;
 
@@ -672,6 +676,11 @@ export const useComposerContent = (args: EditorArgs) => {
     }, [modelMessage.messageDocument?.initialized]);
 
     const handleDiscard = async (hasChanges = true) => {
+        // Handle message move out if necessary
+        if (modelMessage.data?.ID) {
+            handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.PERMANENT_DELETE, elements: [modelMessage.data] });
+        }
+
         if (isQuickReply) {
             const message = getMessage(modelMessage.localID);
             if (message) {

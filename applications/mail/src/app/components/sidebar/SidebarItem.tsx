@@ -26,7 +26,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { shouldDisplayTotal } from '../../helpers/labels';
-import type { ApplyLabelsParams } from '../../hooks/actions/label/useApplyLabels';
+import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { SOURCE_ACTION, folderLocation } from '../list/useListTelemetry';
