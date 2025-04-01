@@ -19,10 +19,13 @@ import type {
 } from '@proton/payments';
 import {
     type ADDON_NAMES,
+    type BillingPlatform,
     type Currency,
+    type Cycle,
     PAYMENT_METHOD_TYPES,
     type PLANS,
     type PlanIDs,
+    type Subscription,
     canUseChargebee,
     isExistingPaymentMethod,
     isOnSessionMigration,
@@ -31,15 +34,7 @@ import {
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type {
-    Api,
-    BillingPlatform,
-    ChargebeeEnabled,
-    ChargebeeUserExists,
-    Cycle,
-    Subscription,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
 
 import type { PaymentProcessorType } from './interface';
 import useBitcoin from './useBitcoin';

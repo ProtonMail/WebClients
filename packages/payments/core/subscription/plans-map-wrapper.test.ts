@@ -1,6 +1,6 @@
-import type { Cycle, Plan } from '@proton/shared/lib/interfaces';
-
 import { PLANS, PLAN_TYPES } from '../constants';
+import { type Cycle } from '../interface';
+import { type Plan } from '../plan/interface';
 import {
     getAvailableCycles,
     getPlanByName,

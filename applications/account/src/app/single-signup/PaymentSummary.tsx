@@ -7,10 +7,9 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import { ADDON_NAMES } from '@proton/payments';
+import { ADDON_NAMES, type Plan } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import type { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import type { Plan } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { OptimisticOptions } from '../single-signup-v2/interface';

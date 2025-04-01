@@ -1,10 +1,20 @@
-import { type ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, isFreeSubscription, isPlanEnabled } from '@proton/payments';
+import {
+    type ADDON_NAMES,
+    COUPON_CODES,
+    CYCLE,
+    PLANS,
+    type Plan,
+    type PlansMap,
+    type Subscription,
+    isFreeSubscription,
+    isPlanEnabled,
+} from '@proton/payments';
 import {
     getHas2024OfferCoupon,
     getIsB2BAudienceFromSubscription,
     getPlan,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Plan, PlansMap, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../../offers/interface';
 

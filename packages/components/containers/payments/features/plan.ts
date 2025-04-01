@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { type FreePlanDefault, PLANS, PLAN_NAMES, type Plan, type PlansMap } from '@proton/payments';
 import {
     BRAND_NAME,
     DUO_MAX_USERS,
@@ -8,7 +8,7 @@ import {
     PASS_SHORT_APP_NAME,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
 

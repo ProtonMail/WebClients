@@ -6,6 +6,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useConfig from '@proton/components/hooks/useConfig';
+import { type Subscription } from '@proton/payments';
 import type { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -16,7 +17,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import {
     SpaceState,
     getAppStorage,

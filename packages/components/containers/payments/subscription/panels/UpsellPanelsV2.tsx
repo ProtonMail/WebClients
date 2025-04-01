@@ -6,11 +6,10 @@ import Price from '@proton/components/components/price/Price';
 import Time from '@proton/components/components/time/Time';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import type { CYCLE, FullPlansMap } from '@proton/payments';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { hasBundle } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type Upsell } from '../helpers';

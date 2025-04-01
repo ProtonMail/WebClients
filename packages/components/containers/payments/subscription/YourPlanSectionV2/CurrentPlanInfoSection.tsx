@@ -4,7 +4,7 @@ import { Button, ButtonLike } from '@proton/atoms/index';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Price from '@proton/components/components/price/Price';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { CYCLE, getSubscriptionPlanTitleAndName } from '@proton/payments';
+import { CYCLE, type Subscription, getSubscriptionPlanTitleAndName } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     getHasPassB2BPlan,
@@ -14,13 +14,7 @@ import {
     hasVPNPassBundle,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
-import type {
-    Address,
-    Organization,
-    Subscription,
-    UserModel,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import useFlag from '@proton/unleash/useFlag';
 

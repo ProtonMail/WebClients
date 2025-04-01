@@ -1,8 +1,7 @@
 import type { ADDON_NAMES, PlanIDs } from '@proton/payments';
-import { AddonKey, AddonLimit } from '@proton/payments';
+import { AddonKey, AddonLimit, type Cycle, type Plan } from '@proton/payments';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/addons';
 import { getAddonMultiplier, getMaxValue, getPlanMaxIPs } from '@proton/shared/lib/helpers/subscription';
-import type { Cycle, Plan } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 export default function getAddonsPricing({

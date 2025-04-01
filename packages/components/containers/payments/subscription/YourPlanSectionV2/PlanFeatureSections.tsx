@@ -5,10 +5,11 @@ import { c } from 'ttag';
 import Time from '@proton/components/components/time/Time';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { IcCheckmark, IcClockCircleFilled, IcGlobe, IcMobile, IcServers, IcStorage, IcUserFilled } from '@proton/icons';
+import { type Subscription } from '@proton/payments';
 import { DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
 

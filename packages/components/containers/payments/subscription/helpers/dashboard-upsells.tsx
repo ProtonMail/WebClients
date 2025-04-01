@@ -4,7 +4,16 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
 import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import { CYCLE, type Currency, type FullPlansMap, PLANS } from '@proton/payments';
+import {
+    CYCLE,
+    type Currency,
+    type Cycle,
+    type FreePlanDefault,
+    type FullPlansMap,
+    PLANS,
+    type Plan,
+    type Subscription,
+} from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -39,14 +48,7 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type {
-    Cycle,
-    FreePlanDefault,
-    Plan,
-    Subscription,
-    UserModel,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

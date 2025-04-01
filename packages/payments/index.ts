@@ -81,8 +81,8 @@ export {
     captureWrongPlanIDs,
     captureWrongPlanName,
     extendStatus,
-    fixPlanName,
     fixPlanIDs,
+    fixPlanName,
     getAvailableCurrencies,
     getCurrencyRate,
     getFallbackCurrency,
@@ -112,6 +112,8 @@ export type {
     ChargebeeKillSwitchData,
     CheckWithAutomaticOptions,
     Currency,
+    Cycle,
+    CycleMapping,
     ExistingPayment,
     ExistingPaymentMethod,
     ExtendedTokenPayment,
@@ -139,6 +141,7 @@ export type {
     PaypalPayment,
     PlainPaymentMethodType,
     PlanIDs,
+    Pricing,
     RemoveEventListener,
     RequestOptions,
     SavedCardDetails,
@@ -173,12 +176,25 @@ export { PaymentProcessor } from './core/payment-processors/paymentProcessor';
 export { PaypalPaymentProcessor } from './core/payment-processors/paypalPayment';
 export { SavedChargebeePaymentProcessor } from './core/payment-processors/savedChargebeePayment';
 export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
+export { PlanState } from './core/plan/constants';
 export { isPlanEnabled } from './core/plan/helpers';
+export type {
+    Addon,
+    BasePlansMap,
+    FreePlanDefault,
+    Offer,
+    Plan,
+    PlansMap,
+    StrictPlan,
+    SubscriptionPlan,
+} from './core/plan/interface';
 export { extractIBAN, formatPaymentMethod, formatPaymentMethods } from './core/sepa';
+export { BillingPlatform, External, Renew } from './core/subscription/constants';
 export {
     getScribeAddonNameByPlan,
     getSubscriptionPlanTitle as getSubscriptionPlanTitleAndName,
 } from './core/subscription/helpers';
+export { type Subscription } from './core/subscription/interface';
 export type { FullPlansMap } from './core/subscription/interface';
 export {
     getAvailableCycles,

@@ -1,5 +1,4 @@
-import { PLANS } from '@proton/payments';
-import type { Plan } from '@proton/shared/lib/interfaces';
+import { PLANS, type Plan } from '@proton/payments';
 
 import { plans, subscriptionBundlePro } from '../__mocks__/data';
 import { getUpsellAmountAndSavings } from './getUpsellAmountAndSavings';

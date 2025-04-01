@@ -1,12 +1,6 @@
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import {
-    ChargebeeEnabled,
-    type Plan,
-    type Subscription,
-    type User,
-    type UserModel,
-} from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, type User, type UserModel } from '@proton/shared/lib/interfaces';
 import { type FeatureFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -22,6 +16,8 @@ import type {
     PlanIDs,
 } from './interface';
 import { type FreeSubscription } from './interface';
+import { type Plan } from './plan/interface';
+import { type Subscription } from './subscription/interface';
 import { isPaymentMethodStatusExtended, isStringPLAN } from './type-guards';
 
 export function isChargebeePaymentMethod(paymentMethodType: PlainPaymentMethodType | undefined) {

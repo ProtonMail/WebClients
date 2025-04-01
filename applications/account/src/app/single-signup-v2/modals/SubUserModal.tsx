@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import type { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import { type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
 
 import { getFreeTitle } from '../helper';
 import PlanComparison from './PlanComparison';
