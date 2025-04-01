@@ -12,15 +12,9 @@ import { getShortPlan } from '@proton/components/containers/payments/features/pl
 import { getVPNAppFeature } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { PLANS } from '@proton/payments';
+import { type FreePlanDefault, PLANS, type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import type {
-    FreePlanDefault,
-    Plan,
-    PlansMap,
-    SubscriptionPlan,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import type { SubscriptionData } from '../../signup/interfaces';
 import svg from '../welcome-suite.svg';

@@ -1,5 +1,6 @@
+import { type FreePlanDefault, type PlansMap } from '@proton/payments';
 import type { PLANS } from '@proton/payments';
-import type { Audience, FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getSupportFeatures, getTeamManagementFeatures } from './b2b';

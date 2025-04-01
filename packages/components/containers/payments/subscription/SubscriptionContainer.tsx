@@ -31,11 +31,15 @@ import type {
 } from '@proton/payments';
 import {
     type Currency,
+    type Cycle,
     DEFAULT_CURRENCY,
     DisplayablePaymentError,
+    type FreePlanDefault,
     PAYMENT_METHOD_TYPES,
     PLANS,
+    type Plan,
     type PlanIDs,
+    type Subscription,
     captureWrongPlanIDs,
     captureWrongPlanName,
     getBillingAddressStatus,
@@ -70,14 +74,7 @@ import {
     getPlanIDs,
     hasDeprecatedVPN,
 } from '@proton/shared/lib/helpers/subscription';
-import type {
-    Cycle,
-    FreePlanDefault,
-    Organization,
-    Plan,
-    Subscription,
-    SubscriptionCheckResponse,
-} from '@proton/shared/lib/interfaces';
+import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';

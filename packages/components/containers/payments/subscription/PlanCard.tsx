@@ -5,9 +5,8 @@ import { c } from 'ttag';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Icon from '@proton/components/components/icon/Icon';
 import Price from '@proton/components/components/price/Price';
-import { type Currency, PLANS } from '@proton/payments';
+import { type Currency, type Cycle, PLANS } from '@proton/payments';
 import { isLifetimePlan } from '@proton/shared/lib/helpers/subscription';
-import type { Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 interface Base {

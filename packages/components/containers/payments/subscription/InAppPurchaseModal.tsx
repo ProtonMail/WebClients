@@ -8,9 +8,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { type FreeSubscription, isFreeSubscription } from '@proton/payments';
-import type { Subscription } from '@proton/shared/lib/interfaces';
-import { External } from '@proton/shared/lib/interfaces';
+import { External, type FreeSubscription, type Subscription, isFreeSubscription } from '@proton/payments';
 
 interface InAppPurchaseModalProps extends ModalProps {
     subscription: Subscription | FreeSubscription;

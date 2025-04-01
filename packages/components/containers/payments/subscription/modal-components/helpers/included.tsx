@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PLANS, type PlanIDs } from '@proton/payments';
+import { type FreePlanDefault, PLANS, type PlanIDs, type PlansMap } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -15,7 +15,7 @@ import type { Included } from '@proton/shared/lib/helpers/checkout';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
-import type { FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
 import { getNUsersText } from '../../../features/highlights';

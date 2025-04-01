@@ -5,6 +5,8 @@ import {
     type FreeSubscription,
     PLANS,
     type PlanIDs,
+    type PlansMap,
+    type Subscription,
     hasCycle,
     isFreeSubscription,
 } from '@proton/payments';
@@ -21,7 +23,6 @@ import {
     isRegularCycle,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
-import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';

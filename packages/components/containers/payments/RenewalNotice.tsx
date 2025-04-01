@@ -7,7 +7,15 @@ import { Href } from '@proton/atoms/index';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getReadableTime } from '@proton/components/components/time/Time';
 import type { CheckoutModifiers } from '@proton/payments';
-import { CYCLE, type Currency, PLANS, type PlanIDs, getCheckoutModifiers } from '@proton/payments';
+import {
+    CYCLE,
+    type Currency,
+    PLANS,
+    type PlanIDs,
+    type PlansMap,
+    type Subscription,
+    getCheckoutModifiers,
+} from '@proton/payments';
 import { type APP_NAMES, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import {
     type RequiredCheckResponse,
@@ -18,7 +26,7 @@ import { getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/h
 import { getOptimisticRenewCycleAndPrice, isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getPlanName, getPlanTitle, isLifetimePlan } from '@proton/shared/lib/helpers/subscription';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
-import type { Coupon, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import type { Coupon } from '@proton/shared/lib/interfaces';
 
 type RenewalNoticeProps = {
     cycle: CYCLE;

@@ -20,7 +20,7 @@ import {
     getWallets,
 } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS, type Plan, type PlansMap } from '@proton/payments';
 import {
     APPS,
     BRAND_NAME,
@@ -30,7 +30,6 @@ import {
     WALLET_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 

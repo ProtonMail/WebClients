@@ -30,9 +30,9 @@ import {
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import { Icon, SkeletonLoader, VpnLogo } from '@proton/components/index';
 import type { IconSize } from '@proton/icons';
-import { PLANS } from '@proton/payments';
+import { PLANS, type Plan } from '@proton/payments';
 import { APPS, BRAND_NAME, PASS_APP_NAME, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import type { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles/index';
 import isTruthy from '@proton/utils/isTruthy';

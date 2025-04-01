@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS } from '@proton/payments';
+import { type FreePlanDefault, PLANS, type PlansMap } from '@proton/payments';
 import {
     BRAND_NAME,
     DRIVE_APP_NAME,
@@ -12,7 +12,6 @@ import {
     VISIONARY_MAX_USERS,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
-import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { getStorage } from './drive';

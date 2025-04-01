@@ -6,10 +6,10 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import type { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
 import type { SubscriptionData } from '../../signup/interfaces';
 import PlanComparison from './PlanComparison';

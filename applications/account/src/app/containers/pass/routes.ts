@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
+import { type Subscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { hasAnyBundlePro, hasPassBusiness } from '@proton/shared/lib/helpers/subscription';
-import type { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     app: APP_NAMES;

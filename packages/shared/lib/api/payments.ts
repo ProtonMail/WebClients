@@ -5,6 +5,7 @@ import type {
     BillingAddressProperty,
     ChargeablePaymentParameters,
     ExistingPayment,
+    FreePlanDefault,
     PAYMENT_TOKEN_STATUS,
     PlanIDs,
     SavedPaymentMethod,
@@ -17,11 +18,14 @@ import type {
 } from '@proton/payments';
 import {
     type Currency,
+    type Cycle,
     type INVOICE_OWNER,
     type INVOICE_STATE,
     type INVOICE_TYPE,
     PAYMENT_METHOD_TYPES,
     PLANS,
+    type Renew,
+    type Subscription,
     isTokenPaymentMethod,
     isV5PaymentToken,
 } from '@proton/payments';
@@ -30,7 +34,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import type { ProductParam } from '../apps/product';
 import { getProductHeaders } from '../apps/product';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from '../helpers/planIDs';
-import type { Api, Cycle, FreePlanDefault, Renew, Subscription } from '../interfaces';
+import type { Api } from '../interfaces';
 
 export type PaymentsVersion = 'v4' | 'v5';
 let paymentsVersion: PaymentsVersion = 'v5';

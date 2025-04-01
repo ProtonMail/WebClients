@@ -1,15 +1,11 @@
 import { type PaymentsVersion } from '@proton/shared/lib/api/payments';
-import {
-    BillingPlatform,
-    ChargebeeEnabled,
-    type ChargebeeUserExists,
-    type Subscription,
-    type User,
-} from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, type ChargebeeUserExists, type User } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from './constants';
 import { MethodStorage } from './constants';
 import { type SavedPaymentMethod, type TokenPaymentMethod, type V5PaymentToken } from './interface';
+import { BillingPlatform } from './subscription/constants';
+import { type Subscription } from './subscription/interface';
 
 export const toV5PaymentToken = (PaymentToken: string): V5PaymentToken => {
     return {

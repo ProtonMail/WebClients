@@ -1,7 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments';
-import { External, Renew, type Subscription } from '@proton/shared/lib/interfaces';
+import { CYCLE, External, PLANS, PLAN_TYPES, Renew, type Subscription } from '@proton/payments';
 
 export const subscriptionMock: Subscription = {
     ID: 'subscriptionId123',

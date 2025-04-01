@@ -9,19 +9,16 @@ import {
     PLANS,
     PLAN_NAMES,
     PLAN_TYPES,
+    type Plan,
     type PlanIDs,
+    type PlansMap,
+    type Pricing,
+    type Subscription,
     VPN_PASS_PROMOTION_COUPONS,
 } from '@proton/payments';
 
 import { LUMO_APP_NAME } from '../constants';
-import {
-    type Plan,
-    type PlansMap,
-    type Pricing,
-    type Subscription,
-    type SubscriptionCheckResponse,
-    SubscriptionMode,
-} from '../interfaces';
+import { type SubscriptionCheckResponse, SubscriptionMode } from '../interfaces';
 import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './addons';
 import { getPlanFromPlanIDs, getPlanNameFromIDs } from './planIDs';
 import {
