@@ -538,6 +538,7 @@ const getUpdateEmailBodyText = ({
     whenText,
     locationText,
     descriptionText,
+    commentText,
 }: {
     vevent: VcalVeventComponent;
     oldVevent: VcalVeventComponent;
@@ -545,12 +546,15 @@ const getUpdateEmailBodyText = ({
     whenText: string;
     locationText: string;
     descriptionText: string;
+    commentText: string;
 }) => {
     const hasSameTime = !getHasModifiedDateTimes(vevent, oldVevent);
     const hasSameTitle = getSupportedStringValue(vevent.summary) === getSupportedStringValue(oldVevent.summary);
     const hasSameLocation = getSupportedStringValue(vevent.location) === getSupportedStringValue(oldVevent.location);
     const hasSameDescription =
         getSupportedStringValue(vevent.description) === getSupportedStringValue(oldVevent.description);
+    const hasSameComment =
+        getSupportedStringValue(vevent.comment?.[0]) === getSupportedStringValue(oldVevent.comment?.[0]);
 
     let updatedBodyText = '';
     if (!hasSameTitle) {
@@ -564,6 +568,9 @@ const getUpdateEmailBodyText = ({
     }
     if (!hasSameDescription) {
         updatedBodyText = buildUpdatedFieldText(updatedBodyText, descriptionText, 'DESCRIPTION');
+    }
+    if (!hasSameComment) {
+        updatedBodyText = buildUpdatedFieldText(updatedBodyText, commentText, 'NOTE');
     }
     return updatedBodyText;
 };
@@ -627,6 +634,7 @@ ${eventTitle}`;
               whenText,
               locationText,
               descriptionText,
+              commentText,
           })
         : undefined;
 
