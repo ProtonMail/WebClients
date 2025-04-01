@@ -95,7 +95,7 @@
         "Mover un grupo de elementos"
       ],
       "Bulk restore items from trash": [
-        "Restaurar un grupo de elementos en la papelera"
+        "Restaurar un grupo de elementos de la papelera"
       ],
       "Bulk select items": [
         "Seleccionar un grupo de elementos"
@@ -1334,7 +1334,7 @@
         "Hay una nueva versión disponible de ${ PASS_APP_NAME }. Actualízala para disfrutar de las últimas funciones y errores corregidos."
       ],
       "Access successfully confirmed": [
-        "El acceso ha sido confirmado."
+        "Se ha confirmado el acceso."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "El acceso a ${ PASS_APP_NAME } siempre requerirá tu contraseña de ${ BRAND_NAME }."
@@ -1357,10 +1357,10 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar tus datos, puedes eliminar el archivo CSV que contiene tus contraseñas por seguridad."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Se ha desactivado el alias. Ya no recibirás correos enviados a ${ item.aliasEmail }."
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Se ha desactivado el alias. Ya no recibirás correos electrónicos enviados a ${ item.aliasEmail }"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Se ha activado el alias. Ahora recibirás correos enviados a ${ item.aliasEmail }."
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
@@ -1703,7 +1703,7 @@
         "Se ha eliminado la invitación."
       ],
       "Invite successfully resent": [
-        "La invitación ha sido enviada."
+        "Se ha enviado la invitación."
       ],
       "invites you to access items in": [
         "te invita a acceder a elementos de"
@@ -2026,7 +2026,7 @@
         "Borrando el enlace seguro..."
       ],
       "Restoring items from trash": [
-        "Restaurando un grupo de elementos"
+        "Restaurando los elementos de la papelera"
       ],
       "Restoring trashed items...": [
         "Restaurando elementos de la papelera..."
@@ -3870,7 +3870,7 @@
         "Configuración"
       ],
       "Share vaults with your team": [
-        "Comparta cajas fuertes con tu equipo"
+        "Comparte cajas fuertes con tu equipo"
       ],
       "Share with": [
         "Compartir con"
