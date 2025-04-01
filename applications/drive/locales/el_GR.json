@@ -987,6 +987,9 @@
       "Upload folder": [
         "Ανέβασμα φακέλου"
       ],
+      "Upload from computer": [
+        "Μεταφόρτωση από υπολογιστή"
+      ],
       "Upload photos": [
         "Ανεβάστε φωτογραφίες"
       ],
@@ -2528,11 +2531,6 @@
         "Καθυστερημένο τιμολόγιο"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα παρακολούθηση ύποπτης δραστηριότητας — συμπεριλαμβανομένης της κλιμάκωσης σε ειδικούς ασφαλείας."
@@ -2563,9 +2561,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Διατηρήστε τα αρχεία, τις φωτογραφίες και τα έγγραφά σας ασφαλή με διατερματική κρυπτογράφηση."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται συγχώνευση επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
@@ -2614,6 +2609,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3652,18 +3652,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "Πρόσβαση από κινητό και επιτραπέζιο υπολογιστή"
-      ],
-      "Free 5 GB storage": [
-        "Δωρεάν 5 GB αποθηκευτικού χώρου"
-      ],
-      "Save files for later access": [
-        "Αποθήκευση αρχείων για μελλοντική πρόσβαση"
-      ],
-      "Share privately and securely": [
-        "Κοινή χρήση ιδιωτικά και με ασφάλεια"
-      ],
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
@@ -4161,10 +4149,6 @@
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } στοιχείο",
-        "${ album.photoCount } στοιχεία"
-      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } διαγράφηκε με επιτυχία"
       ],
@@ -4259,6 +4243,10 @@
       "${ pausedCount } paused": [
         "${ pausedCount } σε παύση",
         "${ pausedCount } σε παύση"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } στοιχείο",
+        "${ photoCount } στοιχεία"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -8409,6 +8397,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited για 12 μήνες"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } για 12 μήνες"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
@@ -8432,9 +8426,6 @@
       ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus για 12 μήνες"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
@@ -8520,11 +8511,11 @@
       "Invite members": [
         "Προσκαλέστε μέλη"
       ],
-      "Maybe Later": [
-        "Ίσως Αργότερα"
-      ],
       "Maybe later": [
         "Ίσως αργότερα"
+      ],
+      "Maybe Later": [
+        "Ίσως Αργότερα"
       ],
       "Select theme": [
         "Επιλογή θέματος"
@@ -9780,6 +9771,47 @@
         "Για ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
+      ],
+      "and 15 more premium features": [
+        "και 15 περισσότερες premium δυνατότητες"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
+      ],
+      "No ads or tracking": [
+        "Χωρίς διαφημίσεις ή παρακολούθηση"
+      ],
+      "Short @pm.me email address": [
+        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
+      ],
+      "Support our mission": [
+        "Υποστηρίξτε την αποστολή μας"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade your productivity": [
+        "Αναβαθμίστε την παραγωγικότητά σας"
+      ],
+      "We don't sell your data": [
+        "Δεν πουλάμε τα δεδομένα σας"
+      ],
+      "Your privacy is our mission": [
+        "Το απόρρητό σας είναι η αποστολή μας"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
@@ -10038,47 +10070,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "and 15 more premium features": [
-        "και 15 περισσότερες premium δυνατότητες"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Αυτόματη προώθηση ηλεκτρονικού ταχυδρομείου ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Ειδοποιήσεις παραβίασης δεδομένων ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Εφαρμογή σταθερού υπολογιστή"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Βοηθήστε μας να διατηρήσουμε το διαδίκτυο ασφαλές και ιδιωτικό για όλους. Αναβαθμίστε σε πλάνο επί πληρωμή."
-      ],
-      "No ads or tracking": [
-        "Χωρίς διαφημίσεις ή παρακολούθηση"
-      ],
-      "Short @pm.me email address": [
-        "Σύντομη διεύθυνση ηλεκτρονικού ταχυδρομείου @pm.me"
-      ],
-      "Support our mission": [
-        "Υποστηρίξτε την αποστολή μας"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade your productivity": [
-        "Αναβαθμίστε την παραγωγικότητά σας"
-      ],
-      "We don't sell your data": [
-        "Δεν πουλάμε τα δεδομένα σας"
-      ],
-      "Your privacy is our mission": [
-        "Το απόρρητό σας είναι η αποστολή μας"
       ]
     },
     "Subscription renewal state": {
@@ -10882,9 +10873,6 @@
       ],
       "Restore your files": [
         "Ανακτήστε τα αρχεία σας"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "Αποθηκεύστε το για αργότερα στο  ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Αποθηκεύστε το για αργότερα στο ${ DRIVE_APP_NAME }"

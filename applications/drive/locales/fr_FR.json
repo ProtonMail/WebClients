@@ -987,6 +987,9 @@
       "Upload folder": [
         "Importer un dossier"
       ],
+      "Upload from computer": [
+        "Importer depuis l'ordinateur"
+      ],
       "Upload photos": [
         "Charger des photos"
       ],
@@ -2528,11 +2531,6 @@
         "Facture impayée"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2563,9 +2561,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Gardez vos fichiers, photos et documents en sécurité avec le chiffrement de bout en bout."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
@@ -2614,6 +2609,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3227,6 +3227,9 @@
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Le chargement du tableau de bord VPN n'a pas abouti. Veuillez vérifier votre connexion et réessayer."
+      ],
       "Unable to set photo as cover": [
         "La photo n'a pas pu être définie comme couverture."
       ],
@@ -3649,18 +3652,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "Accès sur votre application mobile et de bureau"
-      ],
-      "Free 5 GB storage": [
-        "5 Go d'espace de stockage gratuit"
-      ],
-      "Save files for later access": [
-        "Enregistrer des fichiers pour un accès ultérieur"
-      ],
-      "Share privately and securely": [
-        "Partage privé et sécurisé"
-      ],
       "Unlimited hide-my-email aliases": [
         "Nombre illimité d'alias « hide-my-email »"
       ]
@@ -4158,10 +4149,6 @@
         "${ addressCount } adresse e-mail",
         "${ addressCount } adresses e-mail"
       ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } élément",
-        "${ album.photoCount } éléments"
-      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } a été supprimé."
       ],
@@ -4257,6 +4244,10 @@
         "${ pausedCount } en pause",
         "${ pausedCount } en pause"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } élément",
+        "${ photoCount } éléments"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
@@ -4312,12 +4303,21 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } est déjà présent à cet emplacement."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } masque votre adresse IP, afin que les sites internet ne puissent pas vous identifier."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mois)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Connexion automatique** : cette option ouvre et vous connecte au VPN dès que vous allumez votre appareil."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Arrêt d'urgence (kill switch)** : cette option arrête les fuites de données en bloquant votre connexion internet si le VPN se déconnecte de manière inattendue."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
@@ -4338,8 +4338,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Une connexion sécurisée est essentielle en télétravail. Un VPN protège les données de l'entreprise des cybermenaces et préserve la confidentialité de votre travail."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Un VPN chiffre votre connexion et masque votre adresse IP, ce qui rend beaucoup plus difficile pour quiconque de suivre ou de surveiller votre navigation."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Un VPN masque votre adresse IP et chiffre vos activités de navigation, ce qui rend plus difficile pour les sites internet, les annonceurs et les FAI de vous suivre au fil du temps."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Un VPN est un tunnel sécurisé entre votre appareil et internet. Il masque votre emplacement et vos activités à votre fournisseur d'accès à internet (FAI) et aux sites internet que vous consultez."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
@@ -4355,6 +4367,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Les annonceurs suivent votre navigation pour afficher des publicités ciblées. ${ VPN_APP_NAME } bloque les traqueurs et les publicités, rendant votre connexion plus rapide et améliorant votre expérience en ligne."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
@@ -4789,6 +4804,9 @@
       "Go to \"My files\" and upload some files first.": [
         "Allez dans Mes fichiers et commencez à charger des fichiers."
       ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
+      ],
       "here": [
         "ici"
       ],
@@ -4879,6 +4897,9 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "Les éléments déplacés dans le dossier Corbeille y resteront jusqu'à ce qu'ils soient supprimés."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Il est préférable d'utiliser un VPN en permanence. Mais voici les cas où les menaces à la cybersécurité peuvent être les plus importantes :"
       ],
       "It’s easy and secure": [
         "C'est simple et sécurisé"
@@ -4976,6 +4997,9 @@
       ],
       "More": [
         "Plus"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "La plupart des réseaux wifi publics sont sûrs, mais certains manquent de sécurité, vous exposant ainsi aux cybermenaces. Un VPN chiffre votre trafic pour vous protéger."
       ],
       "Moving files": [
         "Déplacement de fichiers"
@@ -5198,6 +5222,9 @@
       "Primary": [
         "Principale"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "La navigation privée (ou mode « incognito ») sert uniquement à masquer vos activités sur votre appareil. Elle empêche votre navigateur d'enregistrer l'historique et les cookies, mais ne vous rend pas invisible. Votre FAI, votre administrateur réseau et les sites internet que vous consultez peuvent toujours voir ce que vous faites en ligne."
+      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "La recherche privée est activée. Vous pouvez fermer cette fenêtre et rechercher des fichiers et dossiers."
       ],
@@ -5345,11 +5372,17 @@
       "Some files failed to upload. Try uploading the files again.": [
         "Certains fichiers n'ont pas pu être chargés. Essayez à nouveau de les charger."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Certains gouvernements bloquent ou restreignent l'accès à certains sites internet. Un VPN permet de contourner la censure tout en préservant la confidentialité de vos activités et de votre identité."
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Certains de vos fichiers ne sont plus accessibles. Restaurez l'accès à vos fichiers. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Certaines photos de cet album ne sont pas enregistrées dans votre fil d’actualité. La suppression de cet album supprimera définitivement ces photos."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Des sites internet et services de streaming bloquent certains contenus par région. Un VPN vous permet de contourner ces restrictions et d'accéder librement à internet."
       ],
       "Something went wrong, please try again later.": [
         "Un problème est survenu, réessayez plus tard."
@@ -5455,6 +5488,9 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Ce lien a été créé dans une ancienne version de Drive et ne peut pas être modifié. Supprimez ce lien et créez-en un nouveau pour modifier les paramètres."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Cela signifie que votre FAI et les sites internet que vous visitez ne peuvent pas lier vos informations personnelles à vos activités en ligne."
+      ],
       "This month": [
         "Ce mois-ci"
       ],
@@ -5537,7 +5573,7 @@
         "Nombre total de connexions VPN"
       ],
       "Tracking": [
-        "Traçage"
+        "Traqueurs"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Le transfert a été annulé pour le fichier « ${ name } »."
@@ -5695,6 +5731,9 @@
       "When working remotely": [
         "Lorsque vous travaillez à distance"
       ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Lorsque vous vous connectez au VPN, il utilise une technologie de chiffrement pour masquer votre adresse IP (un code unique attribué à votre appareil)."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
@@ -5825,13 +5864,13 @@
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
       ],
       "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Vous êtes sur le point de refuser l'invitation à rejoindre l'album ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite à nouveau. Voulez-vous vraiment continuer ?"
+        "Vous êtes sur le point de refuser l'invitation à rejoindre l'album ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
       ],
       "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Vous êtes sur le point de refuser l'invitation à rejoindre le dossier ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite à nouveau. Voulez-vous vraiment continuer ?"
+        "Vous êtes sur le point de refuser l'invitation à rejoindre le dossier ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
       ],
       "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Vous êtes sur le point de refuser l'invitation à rejoindre l'élément ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite à nouveau. Voulez-vous vraiment continuer ?"
+        "Vous êtes sur le point de refuser l'invitation à rejoindre l'élément ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Vous avez atteint le nombre maximum d'adresses dans le ou les groupes de contacts :"
@@ -5887,8 +5926,14 @@
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Votre fournisseur d’accès internet peut surveiller et parfois vendre vos données, voire restreindre les sites internet auxquels vous pouvez accéder."
+      ],
       "Your IP": [
         "Votre IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Votre adresse IP est visible et peut être utilisée pour suivre vos activités en ligne."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
@@ -5911,6 +5956,9 @@
       "Your photo has been removed from the album": [
         "Votre photo a été retirée de l'album.",
         "Vos photos ont été retirées de l'album."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Votre emplacement physique est visible et peut être utilisé pour restreindre votre accès à internet."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Votre abonnement est limité à 10 versions pour une durée maximum de 7 jours."
@@ -8412,6 +8460,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited pour 12 mois"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } pour 12 mois"
+      ],
       "${ pricingTitle } offer expires today!": [
         "L'offre ${ pricingTitle } expire aujourd'hui !"
       ],
@@ -8435,9 +8489,6 @@
       ],
       "Limited-time offer": [
         "Offre à durée limitée"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus pour 12 mois"
       ],
       "Maybe later": [
         "Peut-être plus tard"
@@ -8523,10 +8574,10 @@
       "Invite members": [
         "Invitez des membres"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Peut-être plus tard"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Peut-être plus tard"
       ],
       "Select theme": [
@@ -9783,6 +9834,47 @@
         "Pour ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
@@ -10041,47 +10133,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {
@@ -10744,6 +10795,9 @@
       "Location": [
         "Emplacement"
       ],
+      "Make a secure connection your default": [
+        "Optez par défaut pour une connexion sécurisée"
+      ],
       "Manage secure link": [
         "Gérer les liens sécurisés"
       ],
@@ -10831,6 +10885,9 @@
       "Preview": [
         "Aperçu"
       ],
+      "Private browsing vs VPN": [
+        "Navigation privée versus VPN"
+      ],
       "Processing...": [
         "Traitement en cours…"
       ],
@@ -10879,9 +10936,6 @@
       ],
       "Restore your files": [
         "Restaurer vos fichiers"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "L'enregistrer pour plus tard dans ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "L'enregistrer pour plus tard dans ${ DRIVE_APP_NAME }"
@@ -11014,6 +11068,9 @@
       ],
       "Version history": [
         "Historique des versions"
+      ],
+      "VPN explained": [
+        "Explications sur le VPN"
       ],
       "Warning": [
         "Attention"

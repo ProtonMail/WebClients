@@ -987,6 +987,9 @@
       "Upload folder": [
         "Enviar pasta"
       ],
+      "Upload from computer": [
+        "Enviar do computador"
+      ],
       "Upload photos": [
         "Enviar fotos"
       ],
@@ -2528,11 +2531,6 @@
         "Fatura vencida"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use o assistente de importação Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado 24/7 de atividades suspeitas - incluindo encaminhamento para especialistas em segurança."
@@ -2563,9 +2561,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Mantenha seus arquivos, fotos e documentos seguros com criptografia de ponta a ponta."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mesclando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
@@ -2614,6 +2609,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3652,18 +3652,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "Acesso no celular e computador"
-      ],
-      "Free 5 GB storage": [
-        "5 GB de armazenamento gratuito"
-      ],
-      "Save files for later access": [
-        "Guarde seus arquivos para acesso posterior"
-      ],
-      "Share privately and securely": [
-        "Compartilhar de forma privada e segura"
-      ],
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
       ]
@@ -4161,10 +4149,6 @@
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
       ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } item",
-        "${ album.photoCount } itens"
-      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } foi excluído com sucesso"
       ],
@@ -4260,6 +4244,10 @@
         "${ pausedCount } pausado",
         "${ pausedCount } pausados"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } item",
+        "${ photoCount } itens"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -4326,7 +4314,7 @@
         "(${ serverPrice }/mês)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Conexão automática**: Abra o aplicativo e conecte-se à VPN assim que você liga o deu dispositivo."
+        "**Conexão automática**: abre e se conecta à VPN assim que você liga seu dispositivo."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: impede vazamentos de dados bloqueando sua conexão com a internet caso a VPN caia inesperadamente."
@@ -7869,6 +7857,11 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -7881,11 +7874,6 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8471,6 +8459,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited por 12 meses"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } por 12 meses"
+      ],
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
@@ -8494,9 +8488,6 @@
       ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -8582,10 +8573,10 @@
       "Invite members": [
         "Convidar membros"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Talvez mais tarde"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Talvez mais tarde"
       ],
       "Select theme": [
@@ -9848,6 +9839,47 @@
         "Por ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Armazenamento de 15 GB"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 recursos premium"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Encaminhamento de e-mail automático ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alerta de violações de dados ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie nossa missão"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade your productivity": [
+        "Faça upgrade da sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos seus dados"
+      ],
+      "Your privacy is our mission": [
+        "Sua privacidade é a nossa missão"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
@@ -10106,47 +10138,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Seu próprio alias de e-mail @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Armazenamento de 15 GB"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 recursos premium"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Encaminhamento de e-mail automático ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alerta de violações de dados ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplicativo para computador"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ajude-nos a manter a internet segura e privada para todos. Faça upgrade para um plano pago."
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie nossa missão"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade your productivity": [
-        "Faça upgrade da sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos seus dados"
-      ],
-      "Your privacy is our mission": [
-        "Sua privacidade é a nossa missão"
       ]
     },
     "Subscription renewal state": {
@@ -10900,7 +10891,7 @@
         "Pré-visualização"
       ],
       "Private browsing vs VPN": [
-        "Navegação privada vs VPN"
+        "Navegação privada e VPN"
       ],
       "Processing...": [
         "Processando..."
@@ -10950,9 +10941,6 @@
       ],
       "Restore your files": [
         "Restaurar seus arquivos"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "Salve para mais tarde no ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Salve para mais tarde em ${ DRIVE_APP_NAME }"
@@ -11087,7 +11075,7 @@
         "Histórico de versões"
       ],
       "VPN explained": [
-        "VPN explicada"
+        "Explicações sobre a VPN"
       ],
       "Warning": [
         "Aviso"
