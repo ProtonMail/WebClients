@@ -13,9 +13,9 @@ export const SecureLinkFilesList: FC<Props> = ({ files, filesToken }) => {
     return (
         files.length > 0 && (
             <FileAttachmentsView filesCount={files.length}>
-                {files.map((file, key) => (
+                {files.map((file) => (
                     <FileAttachment
-                        key={`file-${key}`}
+                        key={file.fileUID}
                         file={file}
                         onCancel={() => fileDownload.cancel(file.fileID)}
                         onDownload={() => fileDownload.start(file, { filesToken })}
