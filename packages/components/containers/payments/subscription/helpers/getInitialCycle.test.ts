@@ -1,6 +1,14 @@
-import { CYCLE, FREE_SUBSCRIPTION, type FullPlansMap, PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
+import {
+    CYCLE,
+    FREE_SUBSCRIPTION,
+    type FullPlansMap,
+    PLANS,
+    type Plan,
+    type PlanIDs,
+    type Subscription,
+    getPlansMap,
+} from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Plan, Subscription } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 import { getLongTestPlans, getTestPlans } from '@proton/testing/data';
 

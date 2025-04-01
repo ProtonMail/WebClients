@@ -2,7 +2,7 @@ import { type ReactNode } from 'react';
 
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
-import { PLANS } from '@proton/payments';
+import { PLANS, type Subscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     getHasConsumerVpnPlan,
@@ -14,7 +14,6 @@ import {
     hasPassFamily,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import CustomLogo from './CustomLogo';

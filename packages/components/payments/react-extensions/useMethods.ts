@@ -17,8 +17,10 @@ import type {
 } from '@proton/payments';
 import {
     type ADDON_NAMES,
+    type BillingPlatform,
     PAYMENT_METHOD_TYPES,
     type PLANS,
+    type Subscription,
     canUseChargebee,
     initializePaymentMethods,
     isExistingPaymentMethod,
@@ -26,14 +28,7 @@ import {
     isSavedPaymentMethodInternal,
 } from '@proton/payments';
 import { type Currency } from '@proton/payments';
-import type {
-    Api,
-    BillingPlatform,
-    ChargebeeEnabled,
-    ChargebeeUserExists,
-    Subscription,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
 

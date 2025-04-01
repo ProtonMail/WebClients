@@ -1,5 +1,7 @@
-import { BillingPlatform, ChargebeeEnabled, type Subscription, type User } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, type User } from '@proton/shared/lib/interfaces';
 
+import { BillingPlatform } from './subscription/constants';
+import { type Subscription } from './subscription/interface';
 import {
     isOnSessionMigration,
     isSplittedUser,

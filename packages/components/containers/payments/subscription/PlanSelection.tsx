@@ -22,10 +22,17 @@ import {
     ADDON_NAMES,
     CYCLE,
     type Currency,
+    type Cycle,
+    type FreePlanDefault,
     type FreeSubscription,
     PLANS,
     type PaymentMethodStatusExtended,
+    type Plan,
     type PlanIDs,
+    type PlansMap,
+    Renew,
+    type Subscription,
+    type SubscriptionPlan,
     isFreeSubscription as getIsFreeSubscription,
     getPlansMap,
     isRegionalCurrency,
@@ -47,19 +54,7 @@ import {
     hasSomeAddonOrPlan,
     isLifetimePlan,
 } from '@proton/shared/lib/helpers/subscription';
-import {
-    Audience,
-    type Cycle,
-    type FreePlanDefault,
-    type Organization,
-    type Plan,
-    type PlansMap,
-    Renew,
-    type Subscription,
-    type SubscriptionPlan,
-    type UserModel,
-    type VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import { Audience, type Organization, type UserModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import useFlag from '@proton/unleash/useFlag';

@@ -8,21 +8,23 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { CYCLE, PLANS, type PlanIDs } from '@proton/payments';
+import {
+    CYCLE,
+    type FreePlanDefault,
+    PLANS,
+    type Plan,
+    type PlanIDs,
+    type PlansMap,
+    type Subscription,
+    type SubscriptionPlan,
+} from '@proton/payments';
 import { type Currency } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs, getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
-import type {
-    FreePlanDefault,
-    Plan,
-    PlansMap,
-    Subscription,
-    SubscriptionPlan,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';

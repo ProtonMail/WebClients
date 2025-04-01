@@ -3,11 +3,12 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import { type Subscription } from '@proton/payments';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     onClose?: () => void;

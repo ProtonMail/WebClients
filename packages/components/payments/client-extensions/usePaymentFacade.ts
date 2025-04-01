@@ -18,19 +18,18 @@ import type {
     PlanIDs,
     SavedPaymentMethod,
 } from '@proton/payments';
-import { type Currency, PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/payments';
+import {
+    type BillingPlatform,
+    type Currency,
+    PAYMENT_METHOD_TYPES,
+    type Subscription,
+    canUseChargebee,
+} from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { isTaxInclusive } from '@proton/shared/lib/helpers/subscription';
-import type {
-    Api,
-    BillingPlatform,
-    ChargebeeEnabled,
-    ChargebeeUserExists,
-    Subscription,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 

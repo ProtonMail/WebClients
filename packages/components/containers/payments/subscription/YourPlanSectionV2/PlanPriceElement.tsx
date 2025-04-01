@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { CYCLE } from '@proton/payments';
+import { CYCLE, type Subscription } from '@proton/payments';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     subscription: Subscription;

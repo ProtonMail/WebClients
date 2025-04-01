@@ -7,10 +7,17 @@ import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputField from '@proton/components/components/v2/field/InputField';
-import { type ADDON_NAMES, type CYCLE, type Currency, type PlanIDs, SelectedPlan } from '@proton/payments';
+import {
+    type ADDON_NAMES,
+    type CYCLE,
+    type Currency,
+    type PlanIDs,
+    type PlansMap,
+    SelectedPlan,
+} from '@proton/payments';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/lib/helpers/planIDs';
-import type { PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useCouponConfig } from '../coupon-config/useCouponConfig';

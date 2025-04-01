@@ -5,6 +5,8 @@ import {
     CURRENCIES,
     type Currency,
     DEFAULT_CURRENCY,
+    type FreePlanDefault,
+    type Plan,
     getAvailableCurrencies,
     isRegionalCurrency,
 } from '@proton/payments';
@@ -19,7 +21,7 @@ import {
 } from '@proton/redux-utilities';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { DAY } from '@proton/shared/lib/constants';
-import type { Api, FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';

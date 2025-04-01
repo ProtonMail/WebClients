@@ -26,6 +26,7 @@ import {
     type BillingAddress,
     CYCLE,
     type Currency,
+    type Cycle,
     DEFAULT_CYCLE,
     PLANS,
     type PlanIDs,
@@ -43,7 +44,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Cycle, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
