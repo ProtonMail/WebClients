@@ -4,6 +4,7 @@ import { render, screen, within } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
+import { type Subscription } from '@proton/payments';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     ADDRESS_RECEIVE,
@@ -12,7 +13,7 @@ import {
     BRAND_NAME,
     MAIL_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import type { RequireOnly, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { RequireOnly, UserModel } from '@proton/shared/lib/interfaces';
 import type { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import {
     addressBuilder,

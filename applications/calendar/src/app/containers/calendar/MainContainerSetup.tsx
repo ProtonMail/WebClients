@@ -4,6 +4,7 @@ import { Redirect, Route, Switch } from 'react-router';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { ContactEmailsProvider, useCalendarsInfoListener } from '@proton/components';
+import { type Subscription } from '@proton/payments';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getPreferredActiveWritableCalendar,
@@ -13,7 +14,7 @@ import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultTzid } from '@proton/shared/lib/calendar/getSettings';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import type { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';

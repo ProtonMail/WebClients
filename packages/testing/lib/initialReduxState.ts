@@ -1,7 +1,7 @@
 import type { OrganizationState, PaymentStatusState } from '@proton/account';
 import { type SubscriptionState } from '@proton/account';
-import { type PaymentMethodStatusExtended } from '@proton/payments';
-import type { OrganizationWithSettings, Subscription } from '@proton/shared/lib/interfaces';
+import { type PaymentMethodStatusExtended, type Subscription } from '@proton/payments';
+import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
 
 export const getSubscriptionState = (value: Subscription = {} as any): SubscriptionState['subscription'] => {
     return {

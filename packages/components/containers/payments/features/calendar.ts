@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS, PLAN_SERVICES } from '@proton/payments';
+import { PLANS, PLAN_SERVICES, type PlansMap } from '@proton/payments';
 import {
     MAX_CALENDARS_DUO,
     MAX_CALENDARS_FAMILY,
@@ -9,7 +9,6 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';

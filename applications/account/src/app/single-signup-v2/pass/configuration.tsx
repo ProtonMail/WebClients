@@ -35,7 +35,7 @@ import {
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type Plan, type PlansMap } from '@proton/payments';
 import {
     APPS,
     BRAND_NAME,
@@ -46,7 +46,7 @@ import {
     VPN_APP_NAME,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import type { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 import clsx from '@proton/utils/clsx';

@@ -21,13 +21,22 @@ import Price from '@proton/components/components/price/Price';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons';
 import type { Currency, FullPlansMap } from '@proton/payments';
-import { CYCLE, PLANS, PLAN_NAMES, getPlanByName, getSubscriptionPlanTitleAndName } from '@proton/payments';
+import {
+    CYCLE,
+    type Cycle,
+    type FreePlanDefault,
+    PLANS,
+    PLAN_NAMES,
+    type PlansMap,
+    getPlanByName,
+    getSubscriptionPlanTitleAndName,
+} from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
-import type { Cycle, FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnDevices } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
 

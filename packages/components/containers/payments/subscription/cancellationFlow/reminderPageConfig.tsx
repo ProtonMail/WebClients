@@ -1,7 +1,7 @@
-import { PLANS } from '@proton/payments';
+import { PLANS, type Subscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { getBundleConfig } from './config/bundle';
 import { getBundleProConfig } from './config/bundlePro';

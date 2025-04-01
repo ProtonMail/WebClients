@@ -13,12 +13,12 @@ import EventManagerContext from '@proton/components/containers/eventManager/cont
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { PaymentSwitcherContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
+import { type Plan } from '@proton/payments';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import type {
     ApiEnvironmentConfig,
     CachedOrganizationKey,
-    Plan,
     ProtonConfig,
     UserModel,
 } from '@proton/shared/lib/interfaces';

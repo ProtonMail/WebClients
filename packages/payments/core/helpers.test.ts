@@ -1,10 +1,4 @@
-import {
-    ChargebeeEnabled,
-    type Plan,
-    type Subscription,
-    type User,
-    type UserModel,
-} from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, type User, type UserModel } from '@proton/shared/lib/interfaces';
 import { getTestPlans } from '@proton/testing/data';
 
 import { ADDON_NAMES, DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS } from './constants';
@@ -18,6 +12,8 @@ import {
     mainCurrencies,
 } from './helpers';
 import { type PaymentMethodStatusExtended } from './interface';
+import { type Plan } from './plan/interface';
+import { type Subscription } from './subscription/interface';
 
 describe('payments core helpers', () => {
     describe('getPreferredCurrency', () => {

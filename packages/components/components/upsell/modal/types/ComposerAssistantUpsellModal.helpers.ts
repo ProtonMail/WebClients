@@ -4,10 +4,11 @@ import {
     type AmountAndCurrency,
     CYCLE,
     type FullPlansMap,
+    type Subscription,
     isFreeSubscription,
 } from '@proton/payments';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
-import type { Member, Organization, Subscription } from '@proton/shared/lib/interfaces';
+import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
 export const getAIAddonMonthlyPrice = (

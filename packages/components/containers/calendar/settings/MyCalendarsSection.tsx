@@ -17,13 +17,14 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { type Subscription } from '@proton/payments';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 

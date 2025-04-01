@@ -1,6 +1,5 @@
-import { PLANS } from '@proton/payments';
+import { PLANS, type Subscription } from '@proton/payments';
 import { getSubscription } from '@proton/shared/lib/api/payments';
-import type { Subscription } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
 import { addApiMock } from '@proton/testing';
 

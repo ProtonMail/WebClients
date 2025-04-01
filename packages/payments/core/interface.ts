@@ -24,6 +24,7 @@ import type {
     ADDON_NAMES,
     Autopay,
     CURRENCIES,
+    CYCLE,
     FREE_SUBSCRIPTION,
     INVOICE_STATE,
     INVOICE_TYPE,
@@ -464,3 +465,27 @@ export type MaxKeys =
     | 'MaxLumo';
 
 export type FreeSubscription = typeof FREE_SUBSCRIPTION;
+
+export type Cycle =
+    | CYCLE.MONTHLY
+    | CYCLE.YEARLY
+    | CYCLE.TWO_YEARS
+    | CYCLE.THIRTY
+    | CYCLE.FIFTEEN
+    | CYCLE.THREE
+    | CYCLE.EIGHTEEN
+    | CYCLE.SIX;
+
+export interface CycleMapping<T> {
+    [CYCLE.MONTHLY]?: T;
+    [CYCLE.YEARLY]?: T;
+    [CYCLE.TWO_YEARS]?: T;
+    // Not always included for all plans
+    [CYCLE.THIRTY]?: T;
+    [CYCLE.FIFTEEN]?: T;
+    [CYCLE.THREE]?: T;
+    [CYCLE.EIGHTEEN]?: T;
+    [CYCLE.SIX]?: T;
+}
+
+export type Pricing = CycleMapping<number>;
