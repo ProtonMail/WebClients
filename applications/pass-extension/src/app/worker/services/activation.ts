@@ -223,7 +223,7 @@ export const createActivationService = () => {
             if (message.sender === 'popup') {
                 WorkerMessageBroker.buffer.flush().forEach((notification) => {
                     WorkerMessageBroker.ports
-                        .query(isPopupPort(tabId))
+                        .query((name) => isPopupPort(name, tabId))
                         .forEach((port) => port.postMessage(notification));
                 });
             }
@@ -292,7 +292,7 @@ export const createActivationService = () => {
             logger.info(`[Activation] update available ${details.version}`);
             state.updateAvailable = details.version;
 
-            const popupPorts = WorkerMessageBroker.ports.query(isPopupPort());
+            const popupPorts = WorkerMessageBroker.ports.query(isPopupPort);
             /* on available update : only reload the runtime to force the
              * the extension update if the popup is not opened to avoid
              * discarding any ongoing user operations*/
