@@ -1,6 +1,6 @@
 import { act, fireEvent, render } from '@testing-library/react';
 
-import { External } from '@proton/shared/lib/interfaces';
+import { External } from '@proton/payments';
 
 import InAppPurchaseModal from './InAppPurchaseModal';
 

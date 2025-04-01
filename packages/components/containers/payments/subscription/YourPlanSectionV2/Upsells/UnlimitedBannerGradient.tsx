@@ -21,12 +21,11 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons';
-import { CYCLE, PLANS, PLAN_NAMES, getPlanByName } from '@proton/payments';
+import { CYCLE, type FreePlanDefault, PLANS, PLAN_NAMES, type PlansMap, getPlanByName } from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getHasConsumerVpnPlan, getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
-import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getStorageFeature, getSyncAndBackupFeature, getVersionHistory } from '../../../features/drive';

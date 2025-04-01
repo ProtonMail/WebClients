@@ -37,9 +37,9 @@ import {
     getVPNAppFeature,
 } from '@proton/components/containers/payments/features/vpn';
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
-import { PLANS } from '@proton/payments';
+import { type FreePlanDefault, PLANS, type Plan } from '@proton/payments';
 import { APPS, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
-import type { FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
 import bundleVpnPass from './bundle-vpn-pass.svg';

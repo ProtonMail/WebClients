@@ -1,11 +1,11 @@
 import type { ThemeColor } from '@proton/colors';
+import { type Subscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type {
     Address,
     Group,
     GroupMembershipReturn,
     OrganizationWithSettings,
-    Subscription,
     UserModel,
 } from '@proton/shared/lib/interfaces';
 

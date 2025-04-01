@@ -1,8 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { type Subscription } from '@proton/payments';
 import { getPlanTitle, isTrial } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 interface Props {
     checkResult: SubscriptionCheckResponse | undefined;

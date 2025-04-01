@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { type PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
+import { type PLANS, PLAN_TYPES, type PlanIDs, type PlansMap } from '@proton/payments';
 import { getPlansWithAddons } from '@proton/shared/lib/helpers/addons';
-import type { PlansMap } from '@proton/shared/lib/interfaces';
 
 export const getHasPlanCustomizer = ({ plansMap, planIDs }: { plansMap: PlansMap; planIDs: PlanIDs }) => {
     const [currentPlanName] =

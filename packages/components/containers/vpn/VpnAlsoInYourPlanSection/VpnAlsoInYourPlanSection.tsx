@@ -25,7 +25,15 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons';
-import { CYCLE, PLANS, PLAN_NAMES, getPlanByName, getPlansMap } from '@proton/payments';
+import {
+    CYCLE,
+    type FreePlanDefault,
+    PLANS,
+    PLAN_NAMES,
+    type Plan,
+    getPlanByName,
+    getPlansMap,
+} from '@proton/payments';
 import { getSubscriptionPlanTitleAndName } from '@proton/payments';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -40,8 +48,6 @@ import {
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPricePerCycle } from '@proton/shared/lib/helpers/subscription';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import type { FreePlanDefault } from '@proton/shared/lib/interfaces';
-import { type Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getSpace } from '@proton/shared/lib/user/storage';
 

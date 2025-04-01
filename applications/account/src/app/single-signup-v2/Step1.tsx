@@ -29,9 +29,11 @@ import {
     COUPON_CODES,
     CYCLE,
     type Currency,
+    type Cycle,
     type FullPlansMap,
     PLANS,
     type PlanIDs,
+    type SubscriptionPlan,
     getFallbackCurrency,
     getPlansMap,
     isRegionalCurrency,
@@ -49,7 +51,7 @@ import {
 } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
-import type { Api, Cycle, SubscriptionPlan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { isFree } from '@proton/shared/lib/user/helpers';

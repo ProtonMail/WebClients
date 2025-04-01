@@ -1,5 +1,11 @@
-import { type CYCLE, type Currency, isRegionalCurrency } from '@proton/payments';
-import type { Plan, PlansMap, Pricing } from '@proton/shared/lib/interfaces';
+import {
+    type CYCLE,
+    type Currency,
+    type Plan,
+    type PlansMap,
+    type Pricing,
+    isRegionalCurrency,
+} from '@proton/payments';
 
 // borrowed from:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze

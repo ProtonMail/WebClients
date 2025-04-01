@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { type Subscription } from '@proton/payments';
 import type { CheckoutModifiers } from '@proton/payments';
-import type { Subscription } from '@proton/shared/lib/interfaces';
 
 import { subscriptionExpires } from './helpers';
 

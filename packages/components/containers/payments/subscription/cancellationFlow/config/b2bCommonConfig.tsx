@@ -2,10 +2,10 @@ import { differenceInDays, format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import { type Subscription } from '@proton/payments';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { Subscription } from '@proton/shared/lib/interfaces';
 import compliance from '@proton/styles/assets/img/cancellation-flow/testimonial_compliance.svg';
 import connected from '@proton/styles/assets/img/cancellation-flow/testimonial_connceted.svg';
 import standOut from '@proton/styles/assets/img/cancellation-flow/testimonial_stand_out.svg';

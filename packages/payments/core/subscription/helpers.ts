@@ -1,10 +1,11 @@
 import { getPrimaryPlan, hasLifetimeCoupon } from '@proton/shared/lib/helpers/subscription';
-import { type Subscription, type UserModel } from '@proton/shared/lib/interfaces';
+import { type UserModel } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { ADDON_NAMES, PLANS, PLAN_NAMES } from '../constants';
 import { type FreeSubscription } from '../interface';
 import { isFreeSubscription } from '../type-guards';
+import { type Subscription } from './interface';
 
 export const getScribeAddonNameByPlan = (planName: PLANS) => {
     switch (planName) {

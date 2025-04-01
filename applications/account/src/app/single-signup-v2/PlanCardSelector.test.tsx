@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { CYCLE, PLANS } from '@proton/payments';
-import type { Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { CYCLE, PLANS, type Plan, type PlansMap } from '@proton/payments';
 
 import type { PlanCard } from './PlanCardSelector';
 import { PlanCardSelector } from './PlanCardSelector';

@@ -1,6 +1,14 @@
-import { CYCLE, PLANS, type PlanIDs, type SelectedPlan } from '@proton/payments';
+import {
+    CYCLE,
+    External,
+    PLANS,
+    type Plan,
+    type PlanIDs,
+    Renew,
+    type SelectedPlan,
+    type Subscription,
+} from '@proton/payments';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
-import { External, type Plan, Renew, type Subscription } from '@proton/shared/lib/interfaces';
 
 import { getTestPlans } from '../data';
 

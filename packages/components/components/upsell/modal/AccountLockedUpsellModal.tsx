@@ -18,11 +18,10 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import useApi from '@proton/components/hooks/useApi';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import type { Currency } from '@proton/payments';
-import { CYCLE, PLANS, getPlansMap } from '@proton/payments';
+import { CYCLE, PLANS, type Plan, getPlansMap } from '@proton/payments';
 import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/shared/lib/helpers/subscription';
 import { UPSELL_MODALS_TYPE, getUpsellRef, sendRequestUpsellModalReport } from '@proton/shared/lib/helpers/upsell';
-import type { Plan } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import AccountLockedUpsellForm from './AccountLockedUpsellForm';

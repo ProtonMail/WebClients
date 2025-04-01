@@ -12,12 +12,13 @@ import {
     type BillingAddressStatus,
     type Currency,
     PAYMENT_METHOD_TYPES,
+    type Subscription,
     isChargebeePaymentMethod,
 } from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type { ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
 import { ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWrapper';

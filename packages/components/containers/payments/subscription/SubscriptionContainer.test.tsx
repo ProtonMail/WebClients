@@ -6,11 +6,11 @@ import {
     organizationDefaultResponse,
     plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
-import { type Currency, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
+import { type Currency, PAYMENT_METHOD_TYPES, PLANS, type Plan, getPlansMap } from '@proton/payments';
 import { type CheckSubscriptionData, createTokenV4, subscribe } from '@proton/shared/lib/api/payments';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Organization, Plan, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { renderWithProviders } from '@proton/testing';
