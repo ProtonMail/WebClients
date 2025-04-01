@@ -987,6 +987,9 @@
       "Upload folder": [
         "საქაღალდის ატვირთვა"
       ],
+      "Upload from computer": [
+        "ატვირთვა კომპიუტერიდან"
+      ],
       "Upload photos": [
         "ატვირთეთ ფოტოსურათი"
       ],
@@ -2524,11 +2527,6 @@
         "ინვოისი გადაცილებულია"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } თქვენს ანგარიშს საეჭვო აქტივობებზე 24/7 მონიტორინგით იცავს - საჭიროების შემთხვევაში უსაფრთხოების სპეციალისტების ჩართვით."
@@ -2559,9 +2557,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "იქონიეთ თქვენი ფაილები, ფოტოები და საქაღალდეები დაცულად გამჭოლი დაშიფვრით."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების შერწყმა... ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
@@ -2610,6 +2605,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2686,6 +2686,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "თქვენი ${ PLAN_NAMES[PLANS.PASS] }-ის გამოწერა წელიწადში სპეციალური ${ price } ღირს. Free სატარიფო გეგმაზე ჩამოწევით ფასადკლებას სამუდამოდ დაკარგავთ იმის მიუხედავად, ასწევთ თუ არა სატარიფო გეგმას მომავალში."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "გადმოწერა Linux-სთვის"
+      ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერეთ Windows-სთვის"
       ]
     },
     "drive:action": {
@@ -3631,18 +3642,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "წვდომა მობილურიდან და კომპიუტერიდან"
-      ],
-      "Free 5 GB storage": [
-        "უფასო 5 გბ საცავი"
-      ],
-      "Save files for later access": [
-        "ფაილების შენახვა მოგვიანებით წვდომისთვის"
-      ],
-      "Share privately and securely": [
-        "გააზიარეთ კონფიდენციალურად და დაცულად"
-      ],
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
       ]
@@ -4140,10 +4139,6 @@
         "${ addressCount } ელ-ფოსტის მისამართი",
         "${ addressCount } ელ-ფოსტის მისამართი"
       ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } ელემენტი",
-        "${ album.photoCount } ელემენტი"
-      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } წარმატებით წაიშალა"
       ],
@@ -4232,6 +4227,10 @@
       "${ pausedCount } paused": [
         "${ pausedCount } შეჩერებულია",
         "${ pausedCount } შეჩერებულია"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } ელემენტი",
+        "${ photoCount } ელემენტი"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
@@ -4322,6 +4321,9 @@
       ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
+      ],
+      "Ad targeting": [
+        "დამიზნებული რეკლამა"
       ],
       "Address copied to clipboard": [
         "მისამართი დაკოპირდა გაცვლის ბაფერში"
@@ -4741,6 +4743,9 @@
       "from the version history?": [
         "ვერსიის ისტორიიდან?"
       ],
+      "Geoblocking": [
+        "გეოდაბლოკვა"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "გადმოწერეთ აპი, რომ დაამარქაფოთ სურათები თქვენი ტელეფონიდან, ან აქ ატვირთოთ."
       ],
@@ -4988,6 +4993,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "ფაილების მიმოცვლის პრობლემა. თავიდან სცადეთ."
+      ],
+      "Not connected": [
+        "მიერთებული არაა"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "გაფრთხილება: მონაცემები ჯერ კიდევ შეიძლება ხელმისაწვდომი იყო იმ მოწყობილობებზე, სადაც ${ DRIVE_APP_NAME } დააყენეთ."
@@ -5316,6 +5324,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
       ],
+      "Surveillance": [
+        "დაზვერვა"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
@@ -5457,6 +5468,9 @@
       "Total VPN connections": [
         "VPN შეერთებები სულ"
       ],
+      "Tracking": [
+        "ტრეკინგი"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\"-ის გადაცემა გაუქმებულია"
       ],
@@ -5552,6 +5566,9 @@
       ],
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ],
       "Want to sync files faster?": [
         "გნებავთ უფრო სწრაფი სინქრონიზაცია?"
@@ -5786,6 +5803,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
+      ],
+      "Your IP": [
+        "თქვენი IP"
       ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
@@ -6488,6 +6508,15 @@
       ],
       "Your alias": [
         "თქვენი ფსევდონიმი"
+      ],
+      "Your IP": [
+        "თქვენი IP"
+      ],
+      "Your ISP": [
+        "თქვენი ISP"
+      ],
+      "Your location": [
+        "თქვენი მდებარეობა"
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
@@ -8258,9 +8287,6 @@
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
       ],
-      "Mail Plus for 12 months": [
-        "Mail Plus 12 თვით"
-      ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
@@ -8345,10 +8371,10 @@
       "Invite members": [
         "წევრების მოწვევა"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "მოგვიანებით"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "მოგვიანებით"
       ],
       "Select theme": [
@@ -9584,6 +9610,47 @@
         "${ totalPrice }-თვის"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "and 15 more premium features": [
+        "და კიდევ 15 ფასიანი ფუნქცია"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
+      "No ads or tracking": [
+        "რეკლამისა და ტრეკინგის გარეშე"
+      ],
+      "Short @pm.me email address": [
+        "მოკლე @pm.me ელფოსტის მისამართი"
+      ],
+      "Support our mission": [
+        "დაუჭირეთ მხარი ჩვენს მისიას"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade your productivity": [
+        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
+      ],
+      "We don't sell your data": [
+        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
+      ],
+      "Your privacy is our mission": [
+        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
@@ -9839,47 +9906,6 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "and 15 more premium features": [
-        "და კიდევ 15 ფასიანი ფუნქცია"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "ავტომატური ელფოსტის გადაგზავნა ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "მონაცემების გაჟონვის განგაშები ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "კომპიუტერის აპი"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
-      ],
-      "No ads or tracking": [
-        "რეკლამისა და ტრეკინგის გარეშე"
-      ],
-      "Short @pm.me email address": [
-        "მოკლე @pm.me ელფოსტის მისამართი"
-      ],
-      "Support our mission": [
-        "დაუჭირეთ მხარი ჩვენს მისიას"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade your productivity": [
-        "გააუმჯობესეთ თქვენი პროდუქტიულობა"
-      ],
-      "We don't sell your data": [
-        "ჩვენ არ ვყიდით თქვენს მონაცემებს"
-      ],
-      "Your privacy is our mission": [
-        "თქვენი კონფიდენციალობა ჩვენი მისიაა"
       ]
     },
     "Subscription renewal state": {
@@ -10381,6 +10407,9 @@
       "Deleting contacts": [
         "კონტაქტების წაშლა"
       ],
+      "Desktop": [
+        "სამუშაო მაგიდა"
+      ],
       "Details": [
         "დეტალები"
       ],
@@ -10398,6 +10427,9 @@
       ],
       "Download ${ date }": [
         "${ date }-ის გადმოწერა"
+      ],
+      "Download the app": [
+        "აპის გადმოწერა"
       ],
       "Download unverified file?": [
         "გადმოვწერო შეუმოწმებელი ფაილი?"
@@ -10548,6 +10580,9 @@
       "Minicalendar": [
         "მინიკალენდარი"
       ],
+      "Mobile": [
+        "მობილური"
+      ],
       "Modified": [
         "შეცვლილია"
       ],
@@ -10665,9 +10700,6 @@
       ],
       "Restore your files": [
         "თქვენი ფაილების აღდგენა"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "შეინახეთ ის მოგვიანებით სამუშაოდ ${ DRIVE_APP_NAME }-ზე"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "შეინახეთ ის მოგვიანებით სამუშაოდ ${ DRIVE_APP_NAME }-ზე"
@@ -10801,11 +10833,17 @@
       "Version history": [
         "ვერსიის ისტორია"
       ],
+      "VPN explained": [
+        "VPN-ის ახსნა"
+      ],
       "Warning": [
         "გაფრთხილება"
       ],
       "Warning: suspected fake website": [
         "გაფრთხილება: დიდი ალბათობით, ვებგვერდი ყალბია"
+      ],
+      "What is a VPN?": [
+        "რა არის VPN?"
       ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
