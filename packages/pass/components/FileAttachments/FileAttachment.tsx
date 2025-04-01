@@ -91,7 +91,11 @@ export const FileAttachment: FC<Props> = ({
                 onClick={canDownload ? onDownload : noop}
                 onDoubleClick={canDownload ? onDownload : noop}
             >
-                <Icon name="arrow-down" alt={c('Action').t`Download file`} className="hover:show m-auto" />
+                <Icon
+                    name="arrow-down"
+                    alt={c('Pass_file_attachments').t`Download file`}
+                    className="hover:show m-auto"
+                />
                 <FileAttachmentIcon mimeType={file?.mimeType ?? file?.type ?? ''} className="hover:hide" />
             </ClickableDiv>
             <div className="flex-1 flex-column text-left">
@@ -161,21 +165,21 @@ export const FileAttachment: FC<Props> = ({
                             {onRename && !fileAttachmentsDisabled && (
                                 <DropdownMenuButton
                                     onClick={enableRenaming}
-                                    label={c('Action').t`Rename`}
+                                    label={c('Pass_file_attachments').t`Rename`}
                                     icon="pencil"
                                 />
                             )}
                             {onDownload && (
                                 <DropdownMenuButton
                                     onClick={onDownload}
-                                    label={c('Action').t`Download`}
+                                    label={c('Pass_file_attachments').t`Download`}
                                     icon="arrow-down"
                                 />
                             )}
                             {onRestore && (
                                 <DropdownMenuButton
                                     onClick={onRestore}
-                                    label={c('Action').t`Restore`}
+                                    label={c('Pass_file_attachments').t`Restore`}
                                     icon="clock-rotate-left"
                                 />
                             )}
