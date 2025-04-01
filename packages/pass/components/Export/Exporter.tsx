@@ -10,6 +10,7 @@ import { ExportForm } from '@proton/pass/components/Export/ExportForm';
 import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
+import { isAbortError } from '@proton/pass/lib/api/errors';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
 import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
@@ -85,7 +86,10 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
 
                     const result = await asyncDispatch(exportData, values);
 
-                    if (result.type !== 'success') throw new Error(result.error);
+                    if (result.type !== 'success') {
+                        if (result.data.aborted) throw new DOMException('User cancelled export', 'AbortError');
+                        throw new Error(result.data.error);
+                    }
 
                     let { filename, mimeType } = result.data;
                     mimeType = mimetypeForDownload(mimeType);
@@ -100,6 +104,10 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                     });
                 } catch (error) {
                     const notification = (() => {
+                        if (isAbortError(error)) return null;
+
+                        let details = '';
+
                         if (error instanceof Error) {
                             switch (error.name) {
                                 case 'AuthConfirmInvalidError':
@@ -113,10 +121,12 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                                     });
                                 case 'AuthConfirmAbortError':
                                     return null;
+                                default:
+                                    details = error.message ? `(${error.message})` : '';
                             }
                         }
 
-                        return c('Warning').t`An error occurred while exporting your data`;
+                        return `${c('Warning').t`An error occurred while exporting your data`} ${details}`;
                     })();
 
                     if (notification) createNotification({ type: 'error', text: notification });
