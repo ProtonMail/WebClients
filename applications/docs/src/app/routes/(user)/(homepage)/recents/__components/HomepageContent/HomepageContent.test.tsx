@@ -157,7 +157,13 @@ describe('HomepageContent', () => {
 
     return (
       <HomepageViewContext.Provider
-        value={{ setRecentsSort: jest.fn, setSearch: jest.fn, updateRecentDocuments: jest.fn as any, state }}
+        value={{
+          setRecentsSort: jest.fn,
+          setSearch: jest.fn,
+          updateRecentDocuments: jest.fn as any,
+          isRecentsUpdating: false,
+          state,
+        }}
       >
         {children}
       </HomepageViewContext.Provider>
