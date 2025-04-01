@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
 import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
@@ -31,6 +32,9 @@ type Props = {
 };
 
 export const Exporter: FC<Props> = ({ onConfirm }) => {
+    const tabId = useCurrentTabID();
+    const requestID = exportData.requestID({ tabId });
+
     const { createNotification } = useNotifications();
     const online = useConnectivity();
     const dispatch = useDispatch();
@@ -44,11 +48,11 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
 
     const [loading, setLoading] = useState(false);
 
-    const request = useSelector(selectRequest(exportData.requestID()));
+    const request = useSelector(selectRequest(requestID));
     const progress = request?.status === 'start' ? request.progress : null;
 
     const cancelExport = () => {
-        dispatch(requestCancel(exportData.requestID()));
+        dispatch(requestCancel(requestID));
     };
 
     const confirmPassword = usePasswordUnlock();
@@ -84,7 +88,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         onAbort: () => throwError({ name: 'AuthConfirmAbortError' }),
                     });
 
-                    const result = await asyncDispatch(exportData, values);
+                    const result = await asyncDispatch(exportData, { ...values, tabId });
 
                     if (result.type !== 'success') {
                         if (result.data.aborted) throw new DOMException('User cancelled export', 'AbortError');

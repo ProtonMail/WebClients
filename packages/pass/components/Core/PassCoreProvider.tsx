@@ -134,3 +134,8 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
 };
 
 export const usePassCore = (): PassCoreContextValue => useContext(PassCoreContext)!;
+
+export const useCurrentTabID = (): Maybe<TabId> => {
+    const { getCurrentTab } = usePassCore();
+    return getCurrentTab?.()?.tabId;
+};
