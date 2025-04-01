@@ -25,7 +25,7 @@ import {
 } from '@proton/pass/store/selectors';
 import type { BaseFileDescriptor, FileAttachmentValues, FileID } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { eq, not, truthy } from '@proton/pass/utils/fp/predicates';
+import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { updateMap } from '@proton/pass/utils/fp/state';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -79,35 +79,29 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 })
             );
 
-            const fileIDs = (
-                await Promise.all(
-                    uploads.map(async ({ file, uploadID }) =>
-                        fileUpload
-                            .start(file, uploadID)
-                            .then((fileID) => {
-                                setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
-                                return fileID;
-                            })
-                            .catch((error) => {
-                                setFiles(updateMap((next) => next.delete(uploadID)));
-                                if (!isAbortError(error)) {
-                                    const detail = error instanceof Error ? `(${error.message})` : '';
-                                    createNotification({
-                                        type: 'error',
-                                        text: `${c('Pass_file_attachments').t`"${file.name}" could not be uploaded.`} ${detail}`,
-                                    });
-                                }
-
-                                return undefined;
-                            })
-                    )
+            await Promise.all(
+                uploads.map(async ({ file, uploadID }) =>
+                    fileUpload
+                        .start(file, uploadID)
+                        .then((fileID) => {
+                            setFiles(updateMap((next) => next.set(uploadID, { ...next.get(uploadID)!, fileID })));
+                            return form.setValues((values) => {
+                                const toAdd = values.files.toAdd.concat([fileID]);
+                                return partialMerge(values, { files: { toAdd } });
+                            });
+                        })
+                        .catch((error) => {
+                            setFiles(updateMap((next) => next.delete(uploadID)));
+                            if (!isAbortError(error)) {
+                                const detail = error instanceof Error ? `(${error.message})` : '';
+                                createNotification({
+                                    type: 'error',
+                                    text: `${c('Pass_file_attachments').t`"${file.name}" could not be uploaded.`} ${detail}`,
+                                });
+                            }
+                        })
                 )
-            ).filter(truthy);
-
-            await form.setValues((values) => {
-                const toAdd = values.files.toAdd.concat(fileIDs);
-                return partialMerge(values, { files: { toAdd } });
-            });
+            );
         };
 
         const onAddFiles = async (newFiles: File[]) => {

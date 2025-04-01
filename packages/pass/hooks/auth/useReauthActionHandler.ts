@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
+import { useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
@@ -20,6 +21,7 @@ const REAUTH_KEY = 'notification:reauth';
 
 export const useReauthActionHandler = (store: Store<State>) => {
     const authStore = useAuthStore();
+    const tabId = useCurrentTabID();
 
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
@@ -39,7 +41,7 @@ export const useReauthActionHandler = (store: Store<State>) => {
                     })
                 );
 
-                const result = await dispatch(exportData, reauth.data);
+                const result = await dispatch(exportData, { ...reauth.data, tabId });
 
                 const ok = result.type === 'success';
 
