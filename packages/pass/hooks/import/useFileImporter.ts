@@ -60,7 +60,7 @@ export const useFileImporter = () => {
                                                 return createNotification({
                                                     type: 'error',
                                                     text: c('Error')
-                                                        .t`The file "${filename}" is too large to upload. The maximum allowed size is (${maxFileSizeInMB})`,
+                                                        .t`"${filename}" is too large to upload. The maximum allowed size is (${maxFileSizeInMB})`,
                                                 });
                                             }
                                             const file = new File([blob], filename);
