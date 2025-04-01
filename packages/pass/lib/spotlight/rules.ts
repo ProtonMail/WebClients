@@ -124,10 +124,10 @@ export const createAliasSyncEnableRule = (store: Store<State>) =>
         message: SpotlightMessage.ALIAS_SYNC_ENABLE,
         when: (previous) => {
             const state = store.getState();
-            const { pendingAliasToSync } = selectUserData(state);
+            const { aliasSyncEnabled, pendingAliasToSync } = selectUserData(state);
             const canCreateItems = selectCanCreateItems(state);
 
-            return !previous && pendingAliasToSync > 0 && canCreateItems;
+            return !previous && !aliasSyncEnabled && pendingAliasToSync > 0 && canCreateItems;
         },
     });
 
