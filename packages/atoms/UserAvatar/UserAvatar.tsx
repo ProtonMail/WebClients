@@ -13,6 +13,7 @@ interface UserAvatarOwnProps {
     className?: string;
     color?: { hue: HueValue } | { hsl: string };
     size?: 'small' | 'medium';
+    capitalize?: boolean;
 }
 export type UserAvatarProps<E extends ElementType> = PolymorphicPropsWithoutRef<UserAvatarOwnProps, E>;
 
@@ -25,7 +26,7 @@ const sizes = {
 
 export const UserAvatar = forwardRef(
     <E extends ElementType = typeof defaultElement>(
-        { name, className, color, as, size = 'medium', style, ...rest }: UserAvatarProps<E>,
+        { name, className, color, as, size = 'medium', style, capitalize = !!name, ...rest }: UserAvatarProps<E>,
         ref: Ref<Element>
     ) => {
         const nameWithColor = useMemo(
@@ -59,7 +60,7 @@ export const UserAvatar = forwardRef(
                     'h-custom w-custom',
                     'relative flex items-center justify-center overflow-hidden rounded user-select-none shrink-0',
                     'text-sm text-semibold',
-                    name && 'text-capitalize',
+                    capitalize && 'text-capitalize',
                     className
                 )}
                 style={
