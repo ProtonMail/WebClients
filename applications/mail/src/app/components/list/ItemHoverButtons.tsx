@@ -70,7 +70,8 @@ const ItemHoverButtons = ({
         if (isMessage(element) && (element as Message).ConversationID === elementID && !isUnread) {
             onBack();
         }
-        markAs({
+
+        void markAs({
             elements: [element],
             labelID,
             status: isUnread ? READ : UNREAD,
@@ -106,7 +107,7 @@ const ItemHoverButtons = ({
     const handlePermanentDelete = (event: MouseEvent) => {
         event.stopPropagation();
         event.preventDefault();
-        permanentDelete([element.ID], SOURCE_ACTION.HOVER_BUTTONS);
+        void permanentDelete([element.ID], SOURCE_ACTION.HOVER_BUTTONS);
         return false;
     };
 

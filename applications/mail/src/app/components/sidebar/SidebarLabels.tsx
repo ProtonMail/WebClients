@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
-import type { ApplyLabelsParams } from '../../hooks/actions/label/useApplyLabels';
+import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import type { UnreadCounts } from './MailSidebarList';
 import SidebarItem from './SidebarItem';

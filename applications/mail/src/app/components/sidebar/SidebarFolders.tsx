@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { getUnreadCount } from '../../helpers/sidebar';
-import type { ApplyLabelsParams } from '../../hooks/actions/label/useApplyLabels';
+import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import type { UnreadCounts } from './MailSidebarList';
 import SidebarFolder from './SidebarFolder';

@@ -27,7 +27,6 @@ import { useConversationFocus } from '../../hooks/conversation/useConversationFo
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
 import { useGetMessage } from '../../hooks/message/useMessage';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
-import useShouldMoveOut from '../../hooks/useShouldMoveOut';
 import { removeAllQuickReplyFlags } from '../../store/messages/draft/messagesDraftActions';
 import { SOURCE_ACTION } from '../list/useListTelemetry';
 import type { MessageViewRef } from '../message/MessageView';
@@ -51,9 +50,6 @@ interface Props {
     columnLayout: boolean;
     isComposerOpened: boolean;
     containerRef: RefObject<HTMLElement>;
-    loadingElements: boolean;
-    elementIDs: string[];
-    conversationMode: boolean;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -70,9 +66,6 @@ const ConversationView = ({
     columnLayout,
     isComposerOpened,
     containerRef,
-    loadingElements,
-    elementIDs,
-    conversationMode,
 }: Props) => {
     const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
@@ -86,12 +79,6 @@ const ConversationView = ({
         handleRetry,
     } = useConversation(inputConversationID, messageID);
     const { state: filter, toggle: toggleFilter, set: setFilter } = useToggle(DEFAULT_FILTER_VALUE);
-    useShouldMoveOut({
-        elementIDs,
-        elementID: conversationMode ? conversationID : messageID,
-        loadingElements,
-        onBack,
-    });
     const messageViewsRefs = useRef({} as { [messageID: string]: MessageViewRef | undefined });
     const composersCount = useMailSelector(selectComposersCount);
 

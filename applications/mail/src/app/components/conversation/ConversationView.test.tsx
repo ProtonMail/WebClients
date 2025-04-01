@@ -51,9 +51,6 @@ describe('ConversationView', () => {
         columnLayout: true,
         isComposerOpened: false,
         containerRef: { current: null },
-        elementIDs: ['conversationID'],
-        loadingElements: false,
-        conversationMode: true,
         currentFolder: 'INBOX',
     };
     const conversation = {
