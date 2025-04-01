@@ -75,10 +75,12 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
             {children}
             {deleteFile.state.open && (
                 <ConfirmationPrompt
+                    danger
                     onCancel={deleteFile.abort}
                     onConfirm={deleteFile.resolver}
                     title={c('Action').t`Delete all files`}
                     message={c('Info').t`Do you want to remove all the files?`}
+                    confirmText={c('Action').t`Delete`}
                 />
             )}
         </div>
