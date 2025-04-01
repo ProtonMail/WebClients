@@ -42,13 +42,17 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
                     <Icon name="paper-clip" className="m-auto color-weak" />
                 </div>
                 <div className="flex-1 flex-column text-left">
-                    <div className="text-ellipsis">{c('Title').t`Attachments`}</div>
+                    <div className="text-ellipsis">{c('Pass_file_attachments').t`Attachments`}</div>
                     <div className="text-sm color-weak">
                         {(() => {
                             if (loading) return <CircleLoader size="small" />;
                             return filesCount === 0
-                                ? c('Title').t`Upload files from your device.`
-                                : c('Title').ngettext(msgid`${filesCount} file`, `${filesCount} files`, filesCount);
+                                ? c('Pass_file_attachments').t`Upload files from your device.`
+                                : c('Pass_file_attachments').ngettext(
+                                      msgid`${filesCount} file`,
+                                      `${filesCount} files`,
+                                      filesCount
+                                  );
                         })()}
                     </div>
                 </div>
@@ -64,10 +68,10 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
                             shape="ghost"
                             color="weak"
                             onClick={handleDeleteAll}
-                            title={c('Action').t`Remove all files`}
+                            title={c('Pass_file_attachments').t`Remove all files`}
                             disabled={deleteDisabled || loading}
                         >
-                            <Icon name="trash" alt={c('Action').t`Remove all files`} size={5} />
+                            <Icon name="trash" alt={c('Pass_file_attachments').t`Remove all files`} size={5} />
                         </Button>
                     </div>
                 )}
@@ -78,8 +82,8 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
                     danger
                     onCancel={deleteFile.abort}
                     onConfirm={deleteFile.resolver}
-                    title={c('Action').t`Delete all files`}
-                    message={c('Info').t`Do you want to remove all the files?`}
+                    title={c('Pass_file_attachments').t`Delete all files`}
+                    message={c('Pass_file_attachments').t`Do you want to remove all the files?`}
                     confirmText={c('Action').t`Delete`}
                 />
             )}

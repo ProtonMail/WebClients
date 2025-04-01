@@ -146,7 +146,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
             });
 
             if (!isNonEmptyImportPayload(result)) {
-                throw new ImportReaderError(c('Error').t`The file you are trying to import is empty`);
+                throw new ImportReaderError(c('Pass_file_attachments').t`The file you are trying to import is empty`);
             }
 
             const { fileReader, ...data } = result;
@@ -184,7 +184,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
             if (!isAbortError(error)) {
                 createNotification({
                     type: 'error',
-                    text: c('Warning').t`An error occured while importing your data.`,
+                    text: c('Warning').t`An error occurred while importing your data.`,
                 });
             }
         } finally {

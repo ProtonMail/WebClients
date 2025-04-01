@@ -61,12 +61,13 @@ export const ImportReport: FC = () => {
                     {totalFiles > 0 && (
                         <>
                             <div>
-                                <span className="color-weak">{c('Label').t`Total files: `}</span>
+                                <span className="color-weak">{c('Pass_file_attachments').t`Total files: `}</span>
                                 <span>{formatItemsCount(totalFiles)}</span>
                             </div>
 
                             <div>
-                                <span className="color-weak">{c('Label').t`Total imported files: `}</span>
+                                <span className="color-weak">{c('Pass_file_attachments')
+                                    .t`Total imported files: `}</span>
                                 <span>{formatItemsCount(totalImportedFiles ?? 0)}</span>
                             </div>
                         </>
@@ -92,7 +93,7 @@ export const ImportReport: FC = () => {
 
                                 {ignoredFiles.map((filename, idx) => (
                                     <span className="block text-ellipsis" key={`ignored-${idx}`}>
-                                        [{c('Label').t`File`}] {filename}
+                                        [{c('Pass_file_attachments').t`File`}] {filename}
                                     </span>
                                 ))}
 

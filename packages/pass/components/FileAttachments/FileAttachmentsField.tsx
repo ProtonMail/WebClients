@@ -94,7 +94,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                     const detail = error instanceof Error ? `(${error.message})` : '';
                                     createNotification({
                                         type: 'error',
-                                        text: `${c('Error').t`"${file.name}" could not be uploaded.`} ${detail}`,
+                                        text: `${c('Pass_file_attachments').t`"${file.name}" could not be uploaded.`} ${detail}`,
                                     });
                                 }
 
@@ -118,7 +118,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                 const maxFileSizeInMB = humanSize({ bytes: maxFileSize, unit: 'MB', fraction: 0 });
                 createNotification({
                     type: 'error',
-                    text: c('Error')
+                    text: c('Pass_file_attachments')
                         .t`Some files are too large to upload. The maximum allowed size is (${maxFileSizeInMB})`,
                 });
             }
@@ -129,7 +129,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
             if (usedStorage + totalNewFilesSize > maxStorage) {
                 return createNotification({
                     type: 'error',
-                    text: c('Error').t`Not enough available storage space for the selected files.`,
+                    text: c('Pass_file_attachments').t`Not enough available storage space for the selected files.`,
                 });
             }
 
@@ -219,7 +219,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                             (BUILD_TARGET === 'firefox' && !popup?.expanded ? (
                                 <Tooltip
                                     openDelay={2000}
-                                    title={c('Info')
+                                    title={c('Pass_file_attachments')
                                         .t`Due to a limitation on Firefox, ${PASS_APP_NAME} needs to be re-opened in a new window before you can upload files.`}
                                 >
                                     <div className="m-4">
@@ -230,7 +230,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                             onClick={() => popup?.expand(pathname)}
                                             fullWidth
                                         >
-                                            {c('Action').t`Open new window to upload files`}
+                                            {c('Pass_file_attachments').t`Open new window to upload files`}
                                             <Icon name="arrow-within-square" className="shrink-0" />
                                         </Button>
                                     </div>
@@ -247,7 +247,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                     color="weak"
                                     multiple
                                 >
-                                    {c('Action').t`Choose a file or drag it here`}
+                                    {c('Pass_file_attachments').t`Choose a file or drag it here`}
                                 </FileInput>
                             ))}
 
@@ -260,7 +260,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                                     onClick={() => upsell({ type: 'pass-plus', upsellRef: UpsellRef.FILE_ATTACHMENTS })}
                                     fullWidth
                                 >
-                                    {c('Action').t`Choose a file or drag it here`}
+                                    {c('Pass_file_attachments').t`Choose a file or drag it here`}
                                 </Button>
                             </div>
                         )}

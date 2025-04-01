@@ -147,9 +147,9 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
 
             {form.values.fileAttachments && progress !== null && (
                 <ProgressModal
-                    title={c('Info').t`Exporting files`}
+                    title={c('Pass_file_attachments').t`Exporting files`}
                     progress={progress ?? 0}
-                    message={c('Info').t`Please be patient while your files are being downloaded.`}
+                    message={c('Pass_file_attachments').t`Please be patient while your files are being downloaded.`}
                     onCancel={cancelExport}
                 />
             )}
