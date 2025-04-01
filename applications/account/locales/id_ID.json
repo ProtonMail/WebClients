@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "Enkripsi dan ekspor"
       ],
+      "Explore ${ target }": [
+        "Telusuri ${ target }"
+      ],
       "Explore group plans": [
         "Telusuri paket grup"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "Simpan alamat"
       ],
+      "Save and continue": [
+        "Simpan dan lanjutkan"
+      ],
       "Save changes": [
         "Simpan perubahan"
       ],
@@ -1046,7 +1052,7 @@
         "Simpan konfigurasi SAML"
       ],
       "Search": [
-        "Pencarian"
+        "Cari"
       ],
       "Search countries": [
         "Cari negara"
@@ -1084,11 +1090,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "select file": [
-        "pilih berkas"
-      ],
       "Select file": [
         "Pilih berkas"
+      ],
+      "select file": [
+        "pilih berkas"
       ],
       "Select files": [
         "Pilih berkas"
@@ -7014,6 +7020,12 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ingin berbagi data dengan Anda pada ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } negara diaktifkan"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } juga dapat digunakan dengan kata sandi tunggal, yang akan menggantikan baik kata sandi masuk maupun kata sandi kedua. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang ingin Anda gunakan dan klik Simpan."
       ],
@@ -7566,9 +7578,6 @@
       "Copy your referral link": [
         "Salin tautan rujukan Anda"
       ],
-      "countries enabled": [
-        "negara yang diaktifkan"
-      ],
       "Country code": [
         "Kode negara"
       ],
@@ -7800,6 +7809,9 @@
       "Email address": [
         "Alamat email"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Email dan kalender, terintegrasi dengan ${ CONTACTS_APP_NAME }"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Hosting email hanya tersedia untuk domain yang telah Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak tersedia. Anda dapat meng-host email untuk domain yang terdaftar pada pendaftar domain mana pun."
       ],
@@ -7862,6 +7874,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Nikmati pengalaman berkirim email yang lebih cepat dan terfokus dengan aplikasi desktop."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Masukkan kata sandi untuk menyelesaikan pengaturan Akun ${ BRAND_NAME } Anda dan mulai menggunakan ${ VPN_APP_NAME } pada seluruh perangkat Anda!"
       ],
       "Enter key manually instead": [
         "Masukkan kunci secara manual"
@@ -8469,6 +8484,9 @@
       "No addresses exist": [
         "Tidak ada alamat"
       ],
+      "No countries enabled": [
+        "Tidak ada negara yang diaktifkan"
+      ],
       "No credit card required": [
         "Tanpa perlu kartu kredit"
       ],
@@ -8922,6 +8940,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Tetapkan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan Anda. Ke depannya, ${ MAIL_APP_NAME } akan terbuka secara otomatis pada saat Anda mengeklik tautan email."
       ],
+      "Set password": [
+        "Atur kata sandi"
+      ],
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
@@ -9077,6 +9098,9 @@
       ],
       "Thank you": [
         "Terima kasih"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Terima kasih telah memilih ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Terima kasih karena telah mendukung misi kami untuk mewujudkan internet yang mengutamakan privasi dan kebebasan."
@@ -10008,6 +10032,9 @@
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Anda akan dapat menambahkan server berikut ke Gateway lain dengan segera."
       ],
+      "You’re all set": [
+        "Anda sudah siap"
+      ],
       "Zoom meeting": [
         "sesi meeting Zoom"
       ]
@@ -10611,11 +10638,11 @@
       "Allow sharing outside the organization": [
         "Izinkan pembagian di luar organisasi"
       ],
-      "Allowed domain": [
-        "Domain yang diizinkan"
-      ],
       "Allowed Domain": [
         "Domain yang Diizinkan"
+      ],
+      "Allowed domain": [
+        "Domain yang diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender dengan mudah."
@@ -10629,11 +10656,11 @@
       "AND": [
         "DAN"
       ],
-      "and": [
-        "dan"
-      ],
       "And": [
         "Dan"
+      ],
+      "and": [
+        "dan"
       ],
       "Anderson": [
         "Anderson"
@@ -11659,7 +11686,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Kepada"
+        "Hingga"
       ]
     },
     "Label for adding a new custom domain": {
@@ -12899,7 +12926,7 @@
         "Jadwalkan pesan sesuai keinginan Anda"
       ],
       "Search message content": [
-        "Cari konten pesan"
+        "Pencarian konten pesan"
       ],
       "Secure Core servers": [
         "Server Secure Core"
@@ -13788,6 +13815,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited untuk 12 bulan"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } untuk 12 bulan"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
@@ -13811,9 +13844,6 @@
       ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus selama 12 bulan"
       ],
       "Maybe later": [
         "Mungkin nanti"
@@ -14290,6 +14320,9 @@
       ]
     },
     "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Dapatkan akses seumur hidup ke seluruh fitur premium ${ PASS_APP_NAME } yang ada saat ini dan yang akan datang dengan satu kali pembayaran."
+      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Selamat datang di ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
@@ -16722,6 +16755,9 @@
       ],
       "Single sign-on removed": [
         "Single sign-on dihapus"
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "Alamat email ${ email } ini sudah ada di ${ BRAND_NAME }. Silakan masuk dengan menggunakan kredensial ${ BRAND_NAME } Anda untuk melanjutkan."
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "Pengguna ${ user } kini merupakan akun single sign-on. Kata sandi mereka terdahulu telah dijadikan sebagai kata sandi cadangan."

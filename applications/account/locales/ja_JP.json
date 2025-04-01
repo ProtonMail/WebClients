@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "暗号化してエクスポートする"
       ],
+      "Explore ${ target }": [
+        "${ target }を探索"
+      ],
       "Explore group plans": [
         "グループプランを探索"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "メールアドレスを保存"
       ],
+      "Save and continue": [
+        "保存して続ける"
+      ],
       "Save changes": [
         "変更を保存"
       ],
@@ -1076,18 +1082,18 @@
         "カレンダー表示を選択"
       ],
       "Select city ${ city }": [
-        "都市を選択 ${ city }"
+        "都市 ${ city }を選択"
       ],
       "Select country": [
         "国を選択"
       ],
       "Select country ${ country }": [
-        "国を選択 ${ country }"
-      ],
-      "select file": [
-        "ファイルを選択"
+        "国 ${ country }を選択"
       ],
       "Select file": [
+        "ファイルを選択"
+      ],
+      "select file": [
         "ファイルを選択"
       ],
       "Select files": [
@@ -1448,6 +1454,9 @@
       ],
       "${ price } per domain": [
         "ドメインあたり ${ price }"
+      ],
+      "${ price } per seat": [
+        "シートあたり ${ price }"
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
@@ -7008,6 +7017,12 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } は ${ PASS_APP_NAME } であなたとデータを共有したいと考えています"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } の国は有効です"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } は、ログインパスワードと2番目のパスワードの両方を置き換える単一のパスワードで使用することもできます。 単一のパスワードモードに切り替えるには、使用する単一のパスワードを入力し、保存をクリックします。"
       ],
@@ -7079,6 +7094,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length }個が選択済み"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } 件のフォルダーを選択済み"
@@ -7557,9 +7575,6 @@
       "Copy your referral link": [
         "招待リンクをコピー"
       ],
-      "countries enabled": [
-        "か国が有効になりました"
-      ],
       "Country code": [
         "国コード"
       ],
@@ -7791,6 +7806,9 @@
       "Email address": [
         "メールアドレス"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "メールとカレンダーは ${ CONTACTS_APP_NAME } と統合されました"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "メール ホスティングはあなたがお持ちのドメインでのみ利用できます。ドメインの登録は現在、${ BRAND_NAME } 経由では取り扱っていません。ドメイン レジストラーからドメインを登録することでメールのホストが可能になります。"
       ],
@@ -7853,6 +7871,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "デスクトップアプリで、より速く、集中できるメール送信をお楽しみください。"
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "${ BRAND_NAME } アカウントを確定し、すべてのデバイスで ${ VPN_APP_NAME } の使用を開始するにはパスワードを入力してください！"
       ],
       "Enter key manually instead": [
         "代わりに手動で鍵を入力"
@@ -8460,6 +8481,9 @@
       "No addresses exist": [
         "アドレスが存在しません"
       ],
+      "No countries enabled": [
+        "有効な国がありません"
+      ],
       "No credit card required": [
         "クレジットカード不要"
       ],
@@ -8913,6 +8937,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定しましょう。メールのリンクをクリックした時に、自動で${ MAIL_APP_NAME }が開きます。"
       ],
+      "Set password": [
+        "パスワードを設定"
+      ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
       ],
@@ -9021,6 +9048,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "サブスクリプションは ${ cycle } ヶ月ごとに自動更新されます。"
+      ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
       ],
@@ -9049,7 +9079,7 @@
         "${ DRIVE_APP_NAME }アプリでファイルを同期して管理します。${ DOCS_APP_NAME }でドキュメントを作成して共有し、安全に保存します。すべて${ ios }、${ android }、${ desktop }で利用可能です。"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
-        "TechRadar Pro は星 5 つのうち 4.2 点もらっています"
+        "Tech radar proのおすすめ 星 5 つ中の星 4.2"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
@@ -9065,6 +9095,9 @@
       ],
       "Thank you": [
         "ありがとうございます"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } を選択していただきありがとうございます。"
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "プライバシーと自由が最優先される、より良いインターネットを構築するという私たちの使命をサポートしていただきありがとうございます。"
@@ -9888,6 +9921,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "ダウンロードした回復ファイルを使って、ロックされたデータを復元することができません。デバイスベースの回復も無効です。"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "その後、 ${ renewCycle } ヶ月ごとに ${ renewAmountStr }に請求されます。"
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "${ boldDiscountPercent } から ${ boldPlanTitle } が適用されました"
       ],
@@ -9978,14 +10014,23 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "あなたの回復フレーズは、特定の順序でランダムに生成された 12 の単語のシリーズです。"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "予定されているプランは ${ renewalTime } から始まり、${ cycle }ヶ月ごとに自動更新されます。"
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます"
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "サポート チケットは終了しました。 ${ BRAND_NAME } サポートにお問い合わせいただきありがとうございます。"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "これらのサーバーはすぐに別のゲートウェイに追加できます。"
+      ],
+      "You’re all set": [
+        "準備完了です"
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
@@ -10590,10 +10635,10 @@
       "Allow sharing outside the organization": [
         "組織外の共有を許可"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10608,10 +10653,10 @@
       "AND": [
         "かつ"
       ],
-      "and": [
+      "And": [
         "と"
       ],
-      "And": [
+      "and": [
         "と"
       ],
       "Anderson": [
@@ -13770,6 +13815,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "12 ヶ月間の${ BRAND_NAME } Unlimited"
+      ],
+      "${ planName } for 12 months": [
+        "12 ヶ月間の${ planName }"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
@@ -13793,9 +13844,6 @@
       ],
       "Limited-time offer": [
         "期間限定オファー"
-      ],
-      "Mail Plus for 12 months": [
-        "12 か月分のMail Plus"
       ],
       "Maybe later": [
         "またあとで"
@@ -14272,6 +14320,9 @@
       ]
     },
     "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "1度だけの支払いで、現在および将来のすべての ${ PASS_APP_NAME } プレミアム機能へのライフタイムアクセスを入手できます。"
+      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } へようこそ"
       ]
@@ -14808,6 +14859,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
+      ],
       "Got it": [
         "わかった"
       ],
@@ -14838,17 +14892,44 @@
       "Processing payment": [
         "支払いの処理中"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
       "Select billing country to pay": [
         "支払い請求先の国を選択してください"
       ],
+      "terms & conditions": [
+        "利用規約"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "クーポンは ${ couponRedemptions } の更新で有効です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "${ priceWithDiscount } の特別割引価格は最初の ${ subscriptionLength } ヶ月間有効です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは 1 ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。そのあとは毎月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "トランザクションが正常に検出されました。トランザクションが完全に確認され次第、クレジットがあなたのアカウントに追加されます。"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "その後、 ${ renewPriceStr } で ${ renewalLength } ヶ月間自動的に更新されます。いつでもキャンセルできます。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "選択した支払い方法により${ amountToCharge }がチャージされます。"
+      ],
+      "Your payment is still being processed": [
+        "お支払いが現在処理中です"
       ]
     },
     "Payments.Error": {
@@ -16674,6 +16755,9 @@
       ],
       "Single sign-on removed": [
         "シングルサインオンは削除されました"
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "メールアドレス ${ email } は既に ${ BRAND_NAME }に存在します。 ${ BRAND_NAME } 認証情報でログインして続行してください。"
       ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "ユーザー ${ user } は現在シングルサインオンアカウントです。以前のパスワードはバックアップパスワードになりました。"
@@ -20054,6 +20138,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "その後、12 か月ごとに ${ renewPriceStr } が請求されます。"
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
       ],

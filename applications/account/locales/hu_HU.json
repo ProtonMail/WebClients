@@ -334,6 +334,9 @@
       "Create folder": [
         "Mappa létrehozása"
       ],
+      "Create Gateway": [
+        "Átjáró létrehozása"
+      ],
       "Create label": [
         "Címke létrehozása"
       ],
@@ -490,6 +493,9 @@
       "Edit email address": [
         "E-mail cím módosítása"
       ],
+      "Edit Gateway": [
+        "Átjáró szerkesztése"
+      ],
       "Edit group": [
         "Csoport szerkesztése"
       ],
@@ -507,6 +513,9 @@
       ],
       "Edit phone number": [
         "Telefonszám módosítása"
+      ],
+      "Edit servers": [
+        "Szerverek szerkesztése"
       ],
       "Edit sieve": [
         "Sieve szűrő szerkesztése"
@@ -663,6 +672,9 @@
       ],
       "Import key": [
         "Kulcs importálása"
+      ],
+      "Import new SAML metadata": [
+        "Új SAML metaadatok importálása"
       ],
       "Increase": [
         "Növel"
@@ -880,6 +892,9 @@
       "Remove calendar": [
         "Naptár eltávolítása"
       ],
+      "Remove domain": [
+        "Domain név eltávolítása"
+      ],
       "Remove gift code": [
         "Ajándék kód törlése"
       ],
@@ -982,6 +997,9 @@
       "Save ICS file": [
         "ICS fájl mentése"
       ],
+      "Save SAML configuration": [
+        "SAML konfiguráció mentése"
+      ],
       "Search": [
         "Keresés"
       ],
@@ -990,6 +1008,9 @@
       ],
       "Search settings": [
         "Keresési beállítások"
+      ],
+      "See DNS TXT record": [
+        "Nézzük meg a DNS TXT rekordot"
       ],
       "See how": [
         "Lásd hogyan"
@@ -1015,11 +1036,11 @@
       "Select country ${ country }": [
         "Ország kiválasztása: ${ country }"
       ],
-      "select file": [
-        "fájl kiválasztása"
-      ],
       "Select file": [
         "Fájl kiválasztása"
+      ],
+      "select file": [
+        "fájl kiválasztása"
       ],
       "Select files": [
         "Fájlok kiválasztása"
@@ -1210,6 +1231,9 @@
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
         "Előfizetés a ${ MAIL_SHORT_APP_NAME } Pluszra"
       ],
+      "Upgrade to Business": [
+        "Verzió frissítés Business-re"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Váltson nagyobb csomagra a ${ PROTON_SENTINEL_NAME } engedélyezéséhez"
       ],
@@ -1308,6 +1332,9 @@
       ],
       "Yes, undo": [
         "Igen, visszavonás"
+      ],
+      "Your server will be provisioned in the next days": [
+        "A szerver a következő napokban lesz feltöltve"
       ],
       "Zoom in": [
         "Közelítés"
@@ -1767,7 +1794,7 @@
         "Védje e-mailjeit és ütemezze végponttól-végpontig tartó titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail tartományok támogatását, korlátlan számú hide-my-email e-mail álnevet és még sok mást."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz 15 e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket."
+        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz 15 e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnevet és további lehetőségeket."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnevet és további lehetőségeket tartalmaz."
@@ -6310,6 +6337,9 @@
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
       ],
+      "${ discountPercent }% discount": [
+        "${ discountPercent }% kedvezmény"
+      ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "A ${ DRIVE_APP_NAME } már nem fogja megőrizni a fájljaid korábbi verzióit."
       ],
@@ -6382,6 +6412,10 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } címke található a Gmailben",
         "${ providerFoldersNumLocalized } címke található a Gmailben"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } kiszolgáló még beállítás alatt áll. Ez általában mintegy ${ provisioningDuration } időtartamot vesz igénybe.",
+        "${ provisioningCounter } kiszolgáló még beállítás alatt áll. Ez általában mintegy ${ provisioningDuration } időtartamot vesz igénybe."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: kéri a címzett rendszereket, hogy a jogosulatlan e-maileket levélszemétként jelöljék meg vagy karanténba helyezzék."
@@ -6557,8 +6591,20 @@
       "Add multiple users to your organization at once.": [
         "Vegyen fel a szervezethez egyszerre több felhasználót."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Kiszolgáló hozzáadása (${ availableAddedCount } elérhető)",
+        "Kiszolgáló hozzáadása (${ availableAddedCount } elérhető)"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Állítsa be a szervezet nevét és logóját, hogy személyesebb élményt nyújtson a szervezet számára."
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } átjárószerver hozzáadása",
+        "${ addedServerCount } átjárószerver hozzáadása"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Átjárókiszolgáló hozzáadása: ${ serverNumber } / ${ total }",
+        "Átjárókiszolgáló hozzáadása: ${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
@@ -6801,6 +6847,9 @@
       "Close this screen to exit.": [
         "A kilépéshez zárja be ezt a képernyőt."
       ],
+      "CNET editors choice award with a rating of 8.4 out of 10": [
+        "A CNET szerkesztők választása, 10-ből 8,4-es értékeléssel"
+      ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Konfigurálja a SAML-hitelesítést a szervezet számára egy olyan személyazonossági szolgáltatón keresztül, mint az Okta, a Microsoft Azure vagy a Google Identity Platform. Ez lehetővé teszi a SAML-t az egész szervezet számára."
       ],
@@ -6821,9 +6870,6 @@
       ],
       "Copy your referral link": [
         "Ajánló hivatkozás másolása"
-      ],
-      "countries enabled": [
-        "ország engedélyezve"
       ],
       "Country code": [
         "Országkód"
@@ -6850,6 +6896,10 @@
       ],
       "Create in": [
         "Létrehozás itt"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Átjárókiszolgáló létrehozása: ${ serverNumber } / ${ total }",
+        "Átjárókiszolgáló létrehozása: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Fiók létrehozása"
@@ -6911,6 +6961,10 @@
       "Delete link?": [
         "Hivatkozás törlése?"
       ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } átjárószerver törlése",
+        "${ deletedServerCount } átjárószerver törlése"
+      ],
       "Did you know?": [
         "Tudta?"
       ],
@@ -6946,6 +7000,15 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Biztos, hogy az aktuálisat leszámítva, minden munkafolyamatot visszavon?"
+      ],
+      "Domain ownership failed verification.": [
+        "A domain név tulajdonjogának ellenőrzése sikertelen."
+      ],
+      "Domain ownership not verified.": [
+        "A domain név tulajdonjoga nincs ellenőrizve."
+      ],
+      "Domain ownership verified.": [
+        "A domain név tulajdonjoga ellenőrizve."
       ],
       "domain used": [
         "domain név használatban",
@@ -7043,6 +7106,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Élvezze a gyorsabb, koncentráltabb e-mailezés élményét az asztali alkalmazással."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "Adjon meg egy jelszót, hogy véglegesítse a ${ BRAND_NAME } fiókját, és elkezdheti használni a ${ VPN_APP_NAME } szolgáltatást minden eszközén!"
       ],
       "Enter key manually instead": [
         "Kulcs megadása manuálisan"
@@ -7544,6 +7610,9 @@
       "Multi-user support not enabled.": [
         "Többfelhasználós mód nem engedélyezett."
       ],
+      "Must start with a letter.": [
+        "Betűvel kell kezdődnie."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Adjon nevet a mappának és válassza ki a szülő mappát amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
@@ -7699,6 +7768,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
+      ],
+      "PC Magazine editors choice award with a rating of 5 out of 5 stars": [
+        "A PC Magazine szerkesztők által odaítélt díj, az 5-ből 5 csillaggal értékelve"
       ],
       "per month": [
         "havonta"
@@ -7904,6 +7976,9 @@
       "Right to Left": [
         "Jobbról balra"
       ],
+      "SAML configuration saved": [
+        "SAML konfiguráció mentve"
+      ],
       "Save ${ percentage }": [
         "${ percentage } megtakarítás"
       ],
@@ -7969,6 +8044,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Állítsa be ${ MAIL_APP_NAME }-t alapértelmezett e-mail alkalmazásnak. ${ MAIL_APP_NAME } automatikusan megnyílik, amikor egy e-mail linkre kattint."
+      ],
+      "Set password": [
+        "Jelszó beállítása"
       ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
@@ -8082,6 +8160,9 @@
       ],
       "Symbols (#$&)": [
         "Szimbólumok (#$&)"
+      ],
+      "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
+        "A TechRadar Pro az 5 csillagból 4,2 csillaggal ajánlotta."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
@@ -8328,6 +8409,9 @@
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "A folytatáshoz válasszon egy fiók helyreállítási módszert, hogy ellenőrizhessük a kérést."
+      ],
+      "To proceed, we must verify the request.": [
+        "A folytatáshoz ellenőriznünk kell a kérést."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Az internetkapcsolatának biztonságosabbá tételéhez, töltse le és telepítse a ${ VPN_APP_NAME } alkalmazást és kapcsolódjon egy szerverhez."
@@ -8598,6 +8682,9 @@
       ],
       "Welcome": [
         "Üdvözli"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Küldünk egy visszaállító kódot erre a címre: ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "A fiók helyreállítási célra megadott e-mail címére fog kapni egy visszaállító kódot."
@@ -8926,6 +9013,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Az ügyfélszolgálati megkeresése lezárásra került. Köszönjük, hogy felvette a kapcsolatot a ${ BRAND_NAME } ügyfélszolgálattal."
+      ],
+      "You’re all set": [
+        "Minden beállítás kész"
       ],
       "Zoom meeting": [
         "Zoom találkozót"
@@ -9485,11 +9575,11 @@
       "AND": [
         "ÉS"
       ],
-      "and": [
-        "és"
-      ],
       "And": [
         "És"
+      ],
+      "and": [
+        "és"
       ],
       "Anderson": [
         "Kovács"
@@ -15199,6 +15289,9 @@
       "Backup password updated": [
         "Biztonsági jelszó frissítve"
       ],
+      "Billing details updated": [
+        "Számlázási adatok frissítve"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Naptár létrehozva. Egy pár percbe telhet a szinkronizálás."
       ],
@@ -15219,6 +15312,9 @@
       ],
       "Catch-all address updated": [
         "Gyűjtő e-mail cím frissítve"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Módosítások közzétéve. A módosítások a következő néhány órában minden felhasználó számára láthatóvá válnak."
       ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
