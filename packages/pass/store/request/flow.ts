@@ -107,6 +107,7 @@ export const requestActionsFactory =
             'key' in options && options.key ? `${namespace}::${options.key(dto)}` : namespace;
 
         return {
+            namespace,
             requestID: requestID as RequestPA,
             intent: createAction(`${namespace}::intent`, (dto: IntentDTO) =>
                 withRequest({
