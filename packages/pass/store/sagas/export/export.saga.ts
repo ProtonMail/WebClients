@@ -13,6 +13,7 @@ import { createPassExportCSV } from '@proton/pass/lib/export/csv';
 import { ExportFormat } from '@proton/pass/lib/export/types';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { hasAttachments, itemEq } from '@proton/pass/lib/items/item.predicates';
+import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { exportData } from '@proton/pass/store/actions/creators/export';
 import { requestProgress } from '@proton/pass/store/request/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
@@ -75,6 +76,8 @@ export const exportUserData = createRequestSaga({
         const ctrl = new AbortController();
 
         try {
+            yield put(stopEventPolling());
+
             const files: IndexedByShareIdAndItemId<FileDescriptor[]> = {};
             const iterators: ExportGenerator[] = [];
             const config = getConfig();
@@ -151,6 +154,8 @@ export const exportUserData = createRequestSaga({
                 ctrl.abort('Export cancelled');
                 if (state.filename) void fileStorage.deleteFile(state.filename);
             }
+
+            yield put(startEventPolling());
         }
     },
 });
