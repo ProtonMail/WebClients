@@ -6893,6 +6893,11 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -6905,11 +6910,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7443,6 +7443,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Obegränsat i 12 månader"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } för 12 månader"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
@@ -7466,9 +7472,6 @@
       ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus för 12 månader"
       ],
       "Maybe later": [
         "Kanske senare"
