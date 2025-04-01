@@ -2388,6 +2388,17 @@
         "თქვენი ${ PLAN_NAMES[PLANS.PASS] }-ის გამოწერა წელიწადში სპეციალური ${ price } ღირს. Free სატარიფო გეგმაზე ჩამოწევით ფასადკლებას სამუდამოდ დაკარგავთ იმის მიუხედავად, ასწევთ თუ არა სატარიფო გეგმას მომავალში."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "გადმოწერა Linux-სთვის"
+      ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერეთ Windows-სთვის"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME }-ში გახსნა"
@@ -3896,6 +3907,9 @@
       "Actions": [
         "ქმედებები"
       ],
+      "Ad targeting": [
+        "დამიზნებული რეკლამა"
+      ],
       "Address copied to clipboard": [
         "მისამართი დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -4231,6 +4245,9 @@
       "Free 5GB encrypted storage to get started": [
         "უფასო 5გბ დაშიფრული საცავი დასაწყისისთვის"
       ],
+      "Geoblocking": [
+        "გეოდაბლოკვა"
+      ],
       "Get email updates for comments and suggestions added to your documents.": [
         "მიიღეთ ელფოსტის განახლებები კომენტარებისა და მინიშნებებისთვის, რომლებიც თქვენ დოკუმენტებს დაემატება."
       ],
@@ -4436,6 +4453,9 @@
       ],
       "Not a valid URL": [
         "არასწორი URL"
+      ],
+      "Not connected": [
+        "მიერთებული არაა"
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
@@ -4662,6 +4682,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
       ],
+      "Surveillance": [
+        "დაზვერვა"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
@@ -4776,6 +4799,9 @@
       "Total VPN connections": [
         "VPN შეერთებები სულ"
       ],
+      "Tracking": [
+        "ტრეკინგი"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\"-ის გადაცემა გაუქმებულია"
       ],
@@ -4823,6 +4849,9 @@
       ],
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ],
       "Warning": [
         "გაფრთხილება"
@@ -5024,6 +5053,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
+      ],
+      "Your IP": [
+        "თქვენი IP"
       ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
@@ -5584,6 +5616,15 @@
       ],
       "Your alias": [
         "თქვენი ფსევდონიმი"
+      ],
+      "Your IP": [
+        "თქვენი IP"
+      ],
+      "Your ISP": [
+        "თქვენი ISP"
+      ],
+      "Your location": [
+        "თქვენი მდებარეობა"
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
@@ -7255,9 +7296,6 @@
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
       ],
-      "Mail Plus for 12 months": [
-        "Mail Plus 12 თვით"
-      ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
       ],
@@ -8901,6 +8939,9 @@
       "Deleting contacts": [
         "კონტაქტების წაშლა"
       ],
+      "Desktop": [
+        "სამუშაო მაგიდა"
+      ],
       "Details": [
         "დეტალები"
       ],
@@ -8924,6 +8965,9 @@
       ],
       "Download ${ date }": [
         "${ date }-ის გადმოწერა"
+      ],
+      "Download the app": [
+        "აპის გადმოწერა"
       ],
       "Download unverified file?": [
         "გადმოვწერო შეუმოწმებელი ფაილი?"
@@ -9045,6 +9089,9 @@
       ],
       "Minicalendar": [
         "მინიკალენდარი"
+      ],
+      "Mobile": [
+        "მობილური"
       ],
       "My files": [
         "ჩემი ფაილები"
@@ -9211,11 +9258,17 @@
       "Verifying your payment...": [
         "თქვენი გადახდის გადამოწმება..."
       ],
+      "VPN explained": [
+        "VPN-ის ახსნა"
+      ],
       "Warning": [
         "გაფრთხილება"
       ],
       "Warning: suspected fake website": [
         "გაფრთხილება: დიდი ალბათობით, ვებგვერდი ყალბია"
+      ],
+      "What is a VPN?": [
+        "რა არის VPN?"
       ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
