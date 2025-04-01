@@ -2,15 +2,16 @@ import type { FullPlansMap } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
+    type Cycle,
     DEFAULT_CYCLE,
     type FreeSubscription,
     type PlanIDs,
+    type Subscription,
     isFreeSubscription,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import type { Cycle, Subscription } from '@proton/shared/lib/interfaces';
 
 import { getAllowedCycles, isSupportedCycle } from './getAllowedCycles';
 import { isSamePlanCheckout } from './isSamePlanCheckout';

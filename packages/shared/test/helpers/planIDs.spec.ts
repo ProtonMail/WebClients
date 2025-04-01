@@ -1,4 +1,4 @@
-import { ADDON_NAMES, CYCLE, PLANS, type PlanIDs, SelectedPlan } from '@proton/payments';
+import { ADDON_NAMES, CYCLE, PLANS, type PlanIDs, type PlansMap, SelectedPlan } from '@proton/payments';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { type AggregatedPricing } from '@proton/shared/lib/helpers/subscription';
 import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data';
@@ -14,13 +14,7 @@ import {
     setQuantity,
     switchPlan,
 } from '../../lib/helpers/planIDs';
-import {
-    ChargebeeEnabled,
-    type Organization,
-    type PlansMap,
-    type SubscriptionCheckResponse,
-    type User,
-} from '../../lib/interfaces';
+import { ChargebeeEnabled, type Organization, type SubscriptionCheckResponse, type User } from '../../lib/interfaces';
 
 const MOCK_ORGANIZATION = {} as Organization;
 

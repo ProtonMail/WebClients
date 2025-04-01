@@ -2,7 +2,18 @@ import { c } from 'ttag';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
-import { COUPON_CODES, CYCLE, formatPaymentMethods } from '@proton/payments';
+import {
+    COUPON_CODES,
+    CYCLE,
+    type Cycle,
+    type CycleMapping,
+    type Plan,
+    type PlansMap,
+    type StrictPlan,
+    type Subscription,
+    type SubscriptionPlan,
+    formatPaymentMethods,
+} from '@proton/payments';
 import type {
     BillingAddress,
     FullPlansMap,
@@ -41,19 +52,7 @@ import {
     getPlan,
     getPlanIDs,
 } from '@proton/shared/lib/helpers/subscription';
-import type {
-    Api,
-    Cycle,
-    CycleMapping,
-    Organization,
-    Plan,
-    PlansMap,
-    StrictPlan,
-    Subscription,
-    SubscriptionCheckResponse,
-    SubscriptionPlan,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Api, Organization, SubscriptionCheckResponse, User } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getOrganization } from '@proton/shared/lib/organization/api';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';

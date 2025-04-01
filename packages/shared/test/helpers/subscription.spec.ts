@@ -1,8 +1,19 @@
 import { addWeeks } from 'date-fns';
 
-import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
-import type { Plan, Subscription, SubscriptionPlan } from '@proton/shared/lib/interfaces';
-import { BillingPlatform, ChargebeeEnabled, External, PlanState, Renew } from '@proton/shared/lib/interfaces';
+import {
+    ADDON_NAMES,
+    BillingPlatform,
+    COUPON_CODES,
+    CYCLE,
+    External,
+    PLANS,
+    type Plan,
+    PlanState,
+    Renew,
+    type Subscription,
+    type SubscriptionPlan,
+} from '@proton/payments';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 // still uses Karma. The payments data specifically don't need jest, so it's safe to impoet it directly
 import { getSubscriptionMock, getUserMock } from '@proton/testing/data';
 

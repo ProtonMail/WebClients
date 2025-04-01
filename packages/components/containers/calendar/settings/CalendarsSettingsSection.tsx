@@ -4,13 +4,14 @@ import PrivateMainAreaLoading from '@proton/components/containers/layout/Private
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import useCalendarShareInvitations from '@proton/components/hooks/useCalendarShareInvitations';
+import { type Subscription } from '@proton/payments';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import {
     filterOutExpiredInvitations,
     getPendingInvitations,
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import type { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type {
     HolidaysDirectoryCalendar,
     SubscribedCalendar,

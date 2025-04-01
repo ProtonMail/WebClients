@@ -5,11 +5,14 @@ import {
     DEFAULT_CURRENCY,
     PLANS,
     PLAN_TYPES,
+    type Plan,
     type PlanIDs,
+    type PlansMap,
     SelectedPlan,
+    type StrictPlan,
 } from '@proton/payments';
 
-import type { Organization, Plan, PlansMap, StrictPlan, SubscriptionCheckResponse, User } from '../interfaces';
+import type { Organization, SubscriptionCheckResponse, User } from '../interfaces';
 import { ChargebeeEnabled } from '../interfaces';
 import {
     getSupportedAddons,

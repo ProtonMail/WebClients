@@ -2,8 +2,8 @@ import { type ReactElement, useState } from 'react';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import { type Plan } from '@proton/payments';
 import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
-import type { Plan } from '@proton/shared/lib/interfaces';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 

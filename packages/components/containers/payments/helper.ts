@@ -1,7 +1,6 @@
-import { type CYCLE, type PlanIDs } from '@proton/payments';
+import { type CYCLE, type PlanIDs, type Subscription } from '@proton/payments';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription } from '@proton/shared/lib/interfaces';
 
 export function isSubscriptionUnchanged(
     subscription: Subscription | null | undefined,

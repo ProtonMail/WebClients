@@ -12,7 +12,14 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import { type PLANS, isFreeSubscription, isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/payments';
+import {
+    type PLANS,
+    Renew,
+    type Subscription,
+    isFreeSubscription,
+    isSplittedUser,
+    onSessionMigrationPaymentsVersion,
+} from '@proton/payments';
 import type { FeedbackDowngradeData, PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -27,8 +34,6 @@ import {
     hasPassLaunchOffer,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription } from '@proton/shared/lib/interfaces';
-import { Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail, hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';

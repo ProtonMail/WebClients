@@ -24,6 +24,7 @@ import {
     CYCLE,
     type Currency,
     PLANS,
+    type Plan,
     getPlansMap,
     isMainCurrency,
 } from '@proton/payments';
@@ -39,7 +40,6 @@ import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shar
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHas2024OfferCoupon, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';

@@ -5,7 +5,7 @@ import Price from '@proton/components/components/price/Price';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import { CYCLE, getSubscriptionPlanTitleAndName } from '@proton/payments';
+import { CYCLE, type Subscription, getSubscriptionPlanTitleAndName } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -27,7 +27,7 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { type Organization, type Subscription, type VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { type Organization, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';

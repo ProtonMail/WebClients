@@ -1,11 +1,8 @@
-import { PLANS, PLAN_TYPES } from '@proton/payments';
+import { type FreePlanDefault, PLANS, PLAN_TYPES, type Plan, type Subscription } from '@proton/payments';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type {
-    FreePlanDefault,
     OrganizationWithSettings,
     PendingInvitation,
-    Plan,
-    Subscription,
     User,
     UserSettings,
     VPNServersCountData,

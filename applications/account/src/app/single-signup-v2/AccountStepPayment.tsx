@@ -16,6 +16,7 @@ import type { WithLoading } from '@proton/hooks/useLoading';
 import type { ExtendedTokenPayment, PaymentMethodFlows, TokenPayment } from '@proton/payments';
 import {
     PAYMENT_METHOD_TYPES,
+    type Plan,
     getBillingAddressStatus,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
@@ -26,7 +27,7 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Api, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';

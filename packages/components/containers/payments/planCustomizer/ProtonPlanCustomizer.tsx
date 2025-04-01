@@ -9,9 +9,13 @@ import {
     AddonKey,
     AddonLimit,
     type Currency,
+    type Cycle,
     type FreeSubscription,
+    type Plan,
     type PlanIDs,
+    Renew,
     SelectedPlan,
+    type Subscription,
     isFreeSubscription,
 } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -35,8 +39,7 @@ import {
     hasBundlePro2024,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Audience, Cycle, Plan, Subscription } from '@proton/shared/lib/interfaces';
-import { Renew } from '@proton/shared/lib/interfaces';
+import type { Audience } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 

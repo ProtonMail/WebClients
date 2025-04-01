@@ -9,6 +9,7 @@ import {
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
     PLANS,
+    type Plan,
     fixPlanName,
     getPlanByName,
     planToPlanIDs,
@@ -20,7 +21,6 @@ import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { getHas2024OfferCoupon, getPlanMaxIPs, getValidCycle } from '@proton/shared/lib/helpers/subscription';
-import type { Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import clamp from '@proton/utils/clamp';

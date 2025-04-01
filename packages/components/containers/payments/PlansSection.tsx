@@ -18,6 +18,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import {
     type Currency,
+    type Cycle,
     DEFAULT_CYCLE,
     FREE_SUBSCRIPTION,
     type PlanIDs,
@@ -35,7 +36,6 @@ import {
     getValidAudience,
     getValidCycle,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Cycle } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 

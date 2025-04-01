@@ -1,8 +1,9 @@
 import useApi from '@proton/components/hooks/useApi';
+import { type Cycle } from '@proton/payments';
 import type { ADDON_NAMES, PLANS, PaymentMethodFlows } from '@proton/payments';
 import { TelemetryMeasurementGroups, TelemetryPaymentsEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api, Cycle } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { type PaymentProcessorType, getSystemByHookType } from '../react-extensions/interface';

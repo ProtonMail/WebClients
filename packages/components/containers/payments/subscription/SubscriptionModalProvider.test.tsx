@@ -2,8 +2,8 @@ import { act, screen, waitFor } from '@testing-library/react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { getModelState } from '@proton/account/test';
-import { PLANS } from '@proton/payments';
-import { Audience, External } from '@proton/shared/lib/interfaces';
+import { External, PLANS } from '@proton/payments';
+import { Audience } from '@proton/shared/lib/interfaces';
 import format from '@proton/shared/lib/subscription/format';
 import { renderWithProviders } from '@proton/testing';
 import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';

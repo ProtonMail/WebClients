@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS } from '@proton/payments';
+import { type FreePlanDefault, PLANS, type PlansMap } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
@@ -16,7 +16,6 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';

@@ -1,8 +1,8 @@
-import { type Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
 import { FREE_SUBSCRIPTION, PLANS, PLAN_NAMES, PLAN_TYPES } from '../constants';
+import { type Plan } from '../plan/interface';
 import { getSubscriptionPlanTitle } from './helpers';
 
 describe('getSubscriptionPlanTitle', () => {

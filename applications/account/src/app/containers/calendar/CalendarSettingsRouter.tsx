@@ -26,6 +26,7 @@ import {
     useSubscribedCalendars,
 } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { type Subscription } from '@proton/payments';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
@@ -36,7 +37,7 @@ import {
     sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type { getCalendarAppRoutes } from './routes';
