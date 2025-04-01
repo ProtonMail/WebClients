@@ -1,4 +1,5 @@
 import { getItemKey, getItemRevisionKey } from '@proton/pass/lib/items/item.utils';
+import { withAbortPayload } from '@proton/pass/store/actions/creators/utils';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
     FileChunkUploadDTO,
@@ -14,18 +15,17 @@ import type {
     ItemLinkFilesIntent,
     ItemLinkFilesSuccess,
 } from '@proton/pass/types';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
 export const fileUploadInitiate = requestActionsFactory<FileInitiateUploadDTO, FileID>('file::upload::initiate')({
-    key: () => uniqueId(),
+    key: prop('uploadID'),
+    failure: { prepare: withAbortPayload },
 });
 
 export const fileUploadChunk = requestActionsFactory<FileChunkUploadDTO, boolean>('file::upload::chunk')({
     key: ({ fileID, index }) => `${fileID}::${index}`,
-    failure: { prepare: (error) => ({ payload: { error: getErrorMessage(error) } }) },
+    failure: { prepare: withAbortPayload },
 });
 
 export const fileDownload = requestActionsFactory<FileDownloadDTO, string>('file::download')({
