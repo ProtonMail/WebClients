@@ -2845,6 +2845,17 @@
         "თქვენი ${ PLAN_NAMES[PLANS.PASS] }-ის გამოწერა წელიწადში სპეციალური ${ price } ღირს. Free სატარიფო გეგმაზე ჩამოწევით ფასადკლებას სამუდამოდ დაკარგავთ იმის მიუხედავად, ასწევთ თუ არა სატარიფო გეგმას მომავალში."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "გადმოწერა Linux-სთვის"
+      ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერეთ Windows-სთვის"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "გაფართოებული ვერსიის ისტორია"
@@ -4502,6 +4513,9 @@
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
       ],
+      "Ad targeting": [
+        "დამიზნებული რეკლამა"
+      ],
       "Added and removed participants will be notified about all the events in this series.": [
         "დამატებულია და ამოღებულ მონაწილეებს ეცნობებათ ამ სერიის ყველა მოვლენის შესახებ."
       ],
@@ -4791,6 +4805,9 @@
       "Frequency modifications will be lost.": [
         "სიხშირის ცვლილებები დაიკარგება."
       ],
+      "Geoblocking": [
+        "გეოდაბლოკვა"
+      ],
       "here": [
         "აქ"
       ],
@@ -4966,6 +4983,9 @@
       "Not a valid URL": [
         "არასწორი URL"
       ],
+      "Not connected": [
+        "მიერთებული არაა"
+      ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
       ],
@@ -5135,6 +5155,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
       ],
+      "Surveillance": [
+        "დაზვერვა"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
@@ -5231,6 +5254,9 @@
       "Total VPN connections": [
         "VPN შეერთებები სულ"
       ],
+      "Tracking": [
+        "ტრეკინგი"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
@@ -5257,6 +5283,9 @@
       ],
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ],
       "Warning": [
         "გაფრთხილება"
@@ -5485,6 +5514,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
+      ],
+      "Your IP": [
+        "თქვენი IP"
       ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
@@ -6114,6 +6146,15 @@
       ],
       "Your calendar URL": [
         "თქვენი კალენდრის ბმული"
+      ],
+      "Your IP": [
+        "თქვენი IP"
+      ],
+      "Your ISP": [
+        "თქვენი ISP"
+      ],
+      "Your location": [
+        "თქვენი მდებარეობა"
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
@@ -7771,9 +7812,6 @@
       ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus 12 თვით"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
@@ -9935,6 +9973,9 @@
       "Deleting contacts": [
         "კონტაქტების წაშლა"
       ],
+      "Desktop": [
+        "სამუშაო მაგიდა"
+      ],
       "Details": [
         "დეტალები"
       ],
@@ -9946,6 +9987,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა?"
+      ],
+      "Download the app": [
+        "აპის გადმოწერა"
       ],
       "Drop to upload": [
         "ასატვირთად გადმოათრიეთ ზედ"
@@ -10073,6 +10117,9 @@
       ],
       "Minicalendar": [
         "მინიკალენდარი"
+      ],
+      "Mobile": [
+        "მობილური"
       ],
       "Need more aliases?": [
         "მეტი ფსევდონიმი გჭირდებათ?"
@@ -10257,6 +10304,9 @@
       "Verifying your payment...": [
         "თქვენი გადახდის გადამოწმება..."
       ],
+      "VPN explained": [
+        "VPN-ის ახსნა"
+      ],
       "Warning": [
         "გაფრთხილება"
       ],
@@ -10271,6 +10321,9 @@
       ],
       "We've locked your calendars to protect your data": [
         "თქვენი მონაცემების დასაცავად თქვენი კალენდრები დავბლოკეთ"
+      ],
+      "What is a VPN?": [
+        "რა არის VPN?"
       ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"
