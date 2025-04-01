@@ -110,10 +110,10 @@
       "Create": [
         "Tạo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Tạo một tài khoản ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Tạo một tài khoản ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -193,6 +193,9 @@
       ],
       "Done": [
         "Xong"
+      ],
+      "Download": [
+        "Tải xuống"
       ],
       "Download this CSV template": [
         "Tải xuống mẫu CSV"
@@ -365,11 +368,17 @@
       "Remove link": [
         "Xóa liên kết"
       ],
+      "Rename": [
+        "Đổi tên"
+      ],
       "Request a feature": [
         "Yêu cầu một tính năng"
       ],
       "Resend invitation": [
         "Gửi lại lời mời"
+      ],
+      "Reset": [
+        "Đặt lại"
       ],
       "Restore": [
         "Khôi phục"
@@ -667,9 +676,6 @@
       "File could not be parsed": [
         "Không thể phân tích cú pháp tệp."
       ],
-      "File could not be read": [
-        "Không thể đọc tập tin"
-      ],
       "File does not match expected format": [
         "Tệp không khớp với định dạng được mong chờ"
       ],
@@ -945,12 +951,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Sau khi nhập thành công dữ liệu của bạn, bạn có thể xóa tệp CSV chứa mật khẩu của mình để bảo đảm an toàn."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Bí danh \"${ item.aliasEmail }\" đã bị vô hiệu hóa. Bạn sẽ không nhận được email nào gửi đến địa chỉ này nữa."
-      ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Bí danh \"${ item.aliasEmail }\" đã được kích hoạt! Bây giờ bạn có thể nhận email gửi đến địa chỉ này."
-      ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Đồng bộ bí danh giữa tài khoản ${ BRAND_NAME } và SimpleLogin của bạn đang hoạt động."
       ],
@@ -1062,9 +1062,6 @@
       "Drop to import": [
         "Thả để nhập"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Do một hạn chế của trình mở rộng trên Safari, tập tin sau khi được xuất ra sẽ thiếu phần mở rộng \".pgp\". Vui lòng thêm mở rộng \".pgp\" vào tập tin sau khi xuất ra (ví dụ file.pgp)."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Dễ dàng nhập khẩu mật khẩu hiện có của bạn vào ${ PASS_APP_NAME }."
       ],
@@ -1134,14 +1131,8 @@
       "Here you will find all the necessary information to get you started.": [
         "Ở đây bạn sẽ tìm được tất cả các thông tin liên quan để giúp bạn bắt đầu."
       ],
-      "Import in progress:": [
-        "Đang nhập:"
-      ],
       "Import the CSV file below.": [
         "Nhập tệp CSV vào bên dưới."
-      ],
-      "Imported ${ payload.total } item": [
-        "Đã nhập ${ payload.total } nội dung"
       ],
       "Imported on ${ date }": [
         "Đã nhập vào ${ date }"
@@ -1169,9 +1160,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Có vẻ như bạn đã đăng nhập vào ${ PASS_APP_NAME }. Nếu bạn đang muốn đăng nhập bằng tài khoản khác, hãy đăng xuất khỏi trình mở rộng này trước nhé."
-      ],
-      "item": [
-        "nội dung"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Nội dung \"${ payload.item.data.metadata.name }\" đã được tạo"
@@ -1430,9 +1418,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Mật khẩu cấp hai sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } nội dung không thể nhập vào:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Đoạn văn bản mà bạn cố gắng dán vào dài hơn mức tối đa là ${ maxLength } ký tự."
@@ -1828,6 +1813,9 @@
       ],
       "Field name": [
         "Tên trường"
+      ],
+      "File": [
+        "Tệp"
       ],
       "File format": [
         "Định dạng tệp tin"
@@ -2324,6 +2312,9 @@
       "${ PASS_APP_NAME } Settings": [
         "Cài đặt ${ PASS_APP_NAME }"
       ],
+      "Attachments": [
+        "Các đính kèm"
+      ],
       "Auto-lock update": [
         "Cập nhật tự động khóa"
       ],
@@ -2615,9 +2606,6 @@
       ],
       "Passwords do not match": [
         "Mất khẩu không hợp lệ"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Xuất file mã hóa bằng PGP yêu cầu mật khẩu"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vui lòng xác nhận địa chỉ email của bạn để sử dụng tính năng bí danh email"

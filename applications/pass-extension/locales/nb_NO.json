@@ -152,10 +152,10 @@
       "Create": [
         "Opprett"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -247,6 +247,9 @@
       ],
       "Done": [
         "Utført"
+      ],
+      "Download": [
+        "Last ned"
       ],
       "Download this CSV template": [
         "Last ned denne CSV-malen"
@@ -464,6 +467,9 @@
       "Remove member": [
         "Fjern medlem"
       ],
+      "Rename": [
+        "Gi nytt navn"
+      ],
       "Request a feature": [
         "Be om en funksjon"
       ],
@@ -475,6 +481,9 @@
       ],
       "Resend invitation": [
         "Send invitasjon på nytt"
+      ],
+      "Reset": [
+        "Tilbakestill"
       ],
       "Restore": [
         "Gjenopprett"
@@ -985,9 +994,6 @@
       "File could not be parsed": [
         "Fil kunne ikke tolkes"
       ],
-      "File could not be read": [
-        "Filen kunne ikke leses"
-      ],
       "File does not match expected format": [
         "Fil samsvarer ikke med forventet format"
       ],
@@ -1344,10 +1350,10 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias er deaktivert. Du vil ikke lenger motta e-poster sendt til ${ item.aliasEmail }"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Alias er aktivert. Du kan nå motta e-poster sendt til ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
@@ -1530,9 +1536,6 @@
       "Drop to import": [
         "Slipp for å importere"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "På grunn av en begrensning av Safari-nettleserutvidelser, etter eksport av dataene, vil filtypen mangle \".pgp\". Gi nytt navn til filen for å inkludere filtypen .pgp (f.eks. fil.pgp) etter eksport."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importer enkelt dine eksisterende passord til ${ PASS_APP_NAME }."
       ],
@@ -1658,15 +1661,8 @@
       "Identity confirmed": [
         "Identitet bekreftet"
       ],
-      "Import in progress:": [
-        "Import pågår:"
-      ],
       "Import the CSV file below.": [
         "Importer CSV-filen nedenfor."
-      ],
-      "Imported ${ payload.total } item": [
-        "Importerte ${ payload.total } element",
-        "Importerte ${ payload.total } elementer"
       ],
       "Imported on ${ date }": [
         "Importert den ${ date }."
@@ -1697,10 +1693,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det ser ut til at du allerede er logget inn på ${ PASS_APP_NAME }. Hvis du prøver å logge på med en annen konto, må du først logge av fra utvidelsen."
-      ],
-      "item": [
-        "element",
-        "elementer"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Element \"${ payload.item.data.metadata.name }\" opprettet"
@@ -2095,10 +2087,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Det ekstra passordet kreves for å bruke ${ PASS_APP_NAME }. Det fungerer som et ekstra passord på toppen av ${ BRAND_NAME }-passordet ditt."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Følgende ${ result.ignored.length } element kan ikke importeres:",
-        "Følgende ${ result.ignored.length } elementer kan ikke importeres:"
       ],
       "The secure link has been removed": [
         "Den sikre koblingen er fjernet"
@@ -2668,6 +2656,9 @@
       "Field name": [
         "Feltnavn"
       ],
+      "File": [
+        "Fil"
+      ],
       "File format": [
         "Filformat"
       ],
@@ -2916,9 +2907,6 @@
       ],
       "Personal website": [
         "Personlig nettside"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP-kryptert JSON (anbefalt)"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -3499,6 +3487,9 @@
       "Aliases": [
         "Aliaser"
       ],
+      "Attachments": [
+        "Vedlegg"
+      ],
       "Auto create/on the fly alias": [
         "Automatisk oppretting/på farten-alias"
       ],
@@ -4038,9 +4029,6 @@
       ],
       "Passwords do not match": [
         "Passordene samsvarer ikke"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP-kryptert eksportfil krever passfrase."
       ],
       "Please contact us to investigate the issue": [
         "Gjerne kontakt oss for å undersøke problemet."

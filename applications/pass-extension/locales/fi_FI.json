@@ -152,10 +152,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create alias": [
@@ -247,6 +247,9 @@
       ],
       "Done": [
         "Valmis"
+      ],
+      "Download": [
+        "Lataa"
       ],
       "Download this CSV template": [
         "Lataa tämä CSV-malli"
@@ -464,6 +467,9 @@
       "Remove member": [
         "Poista jäsen"
       ],
+      "Rename": [
+        "Nimeä uudelleen"
+      ],
       "Request a feature": [
         "Pyydä ominaisuutta"
       ],
@@ -475,6 +481,9 @@
       ],
       "Resend invitation": [
         "Lähetä kutsu uudelleen"
+      ],
+      "Reset": [
+        "Tyhjennä"
       ],
       "Restore": [
         "Palauta"
@@ -964,9 +973,6 @@
       "File could not be parsed": [
         "Tiedostoa ei voitu jäsentää"
       ],
-      "File could not be read": [
-        "Tiedostoa ei voitu lukea"
-      ],
       "File does not match expected format": [
         "Tiedosto ei vastaa odotettua muotoa"
       ],
@@ -1323,12 +1329,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias on poistettu käytöstä. Et enää vastaanota osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
-      ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias on käytössä. Voit nyt vastaanottaa osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
-      ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Aliastesi synkronointi ${ BRAND_NAME }in ja SimpleLoginin välillä on käytössä."
       ],
@@ -1509,9 +1509,6 @@
       "Drop to import": [
         "Tuo pudottamalla"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Safarin laajennusrajoitusten vuoksi tiedostopääte \".pgp\" puuttuu tietojen viennin jälkeen. Uudelleennimeä tiedosto viennin jälkeen siten, että sillä on \".pgp\" -pääte (esim. tiedosto.pgp)."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin helposti."
       ],
@@ -1637,15 +1634,8 @@
       "Identity confirmed": [
         "Identiteetti vahvistettiin"
       ],
-      "Import in progress:": [
-        "Tuonti on käynnissä:"
-      ],
       "Import the CSV file below.": [
         "Tuo CSV-tiedosto alta."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } kohde tuotiin",
-        "${ payload.total } kohdetta tuotiin"
       ],
       "Imported on ${ date }": [
         "Tuotu ${ date }"
@@ -1676,10 +1666,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Näyttää siltä, että olet jo kirjautunut ${ PASS_APP_NAME }iin. Jos yrität kirjautua eri tilillä, kirjaa laajennus ensin ulos."
-      ],
-      "item": [
-        "kohde",
-        "kohdetta"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Kohde \"${ payload.item.data.metadata.name }\" luotiin"
@@ -2071,10 +2057,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Lisäsalasana tarvitaan ${ PASS_APP_NAME }in käyttöön ja se vaaditaan ${ BRAND_NAME }-tilisi salasanan lisäksi."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
-        "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda:"
       ],
       "The secure link has been removed": [
         "Suojattu linkki poistettiin"
@@ -2638,6 +2620,9 @@
       "Field name": [
         "Kentän nimi"
       ],
+      "File": [
+        "Tiedosto"
+      ],
       "File format": [
         "Tiedostomuoto"
       ],
@@ -2886,9 +2871,6 @@
       ],
       "Personal website": [
         "Henkilökohtainen verkkosivusto"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP-salattu JSON-tiedosto (suositus)"
       ],
       "Phone number": [
         "Puhelinnumero"
@@ -3469,6 +3451,9 @@
       "Aliases": [
         "Aliakset"
       ],
+      "Attachments": [
+        "Liitteet"
+      ],
       "Auto create/on the fly alias": [
         "Automaattiluotu/lennossa -alias"
       ],
@@ -4008,9 +3993,6 @@
       ],
       "Passwords do not match": [
         "Salasanat eivät täsmää"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP-salattu vientitiedosto vaatii salalauseen"
       ],
       "Please contact us to investigate the issue": [
         "Ota meihin yhteyttä ongelman selvittämiseksi"

@@ -152,10 +152,10 @@
       "Create": [
         "Opret"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
       "Create alias": [
@@ -247,6 +247,9 @@
       ],
       "Done": [
         "Udført"
+      ],
+      "Download": [
+        "Download"
       ],
       "Download this CSV template": [
         "Download denne CSV-skabelon"
@@ -464,6 +467,9 @@
       "Remove member": [
         "Fjern medlem"
       ],
+      "Rename": [
+        "Omdøb"
+      ],
       "Request a feature": [
         "Anmod om en funktion"
       ],
@@ -475,6 +481,9 @@
       ],
       "Resend invitation": [
         "Gensend invitation"
+      ],
+      "Reset": [
+        "Nulstil"
       ],
       "Restore": [
         "Gendan"
@@ -985,9 +994,6 @@
       "File could not be parsed": [
         "Fil kunne ikke fortolkes"
       ],
-      "File could not be read": [
-        "Filen kunne ikke læses"
-      ],
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
       ],
@@ -1344,12 +1350,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias er blevet deaktiveret. Du vil ikke længere modtage mails sendt til ${ item.aliasEmail }"
-      ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias er blevet aktiveret. Du kan nu modtage mails sendt til ${ item.aliasEmail }"
-      ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Alias-synkronisering mellem dine ${ BRAND_NAME }- og SimpleLogin-konti er aktiv."
       ],
@@ -1530,9 +1530,6 @@
       "Drop to import": [
         "Slip for at importere"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Pga. en begrænsning i Safari-browserudvidelser mangler filtypen \".pgp\" efter eksport af data. Omdøb venligst filen, så den indeholder .pgp-udvidelsen (f.eks. fil.pgp) efter eksport."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importer nemt dine eksisterende adgangskoder til ${ PASS_APP_NAME }."
       ],
@@ -1658,15 +1655,8 @@
       "Identity confirmed": [
         "Identitet bekræftet"
       ],
-      "Import in progress:": [
-        "Import i gang:"
-      ],
       "Import the CSV file below.": [
         "Importér CSV-filen nedenfor."
-      ],
-      "Imported ${ payload.total } item": [
-        "Importerede ${ payload.total } element",
-        "Importerede ${ payload.total } elementer"
       ],
       "Imported on ${ date }": [
         "Importeret ${ date }"
@@ -1697,10 +1687,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det ser ud til, at du allerede er logget ind på ${ PASS_APP_NAME }. Hvis du prøver at logge ind med en anden konto, bedes du logge ud af udvidelsen først."
-      ],
-      "item": [
-        "element",
-        "elementer"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Elementet \"${ payload.item.data.metadata.name }\" blev oprettet"
@@ -2092,10 +2078,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Den ekstra adgangskode er påkrævet for at bruge ${ PASS_APP_NAME }. Den virker som en tillægskode til din ${ BRAND_NAME }-adgangskode."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Følgende ${ result.ignored.length } element kunne ikke importeres:",
-        "Følgende ${ result.ignored.length } elementer kunne ikke importeres:"
       ],
       "The secure link has been removed": [
         "Det sikre link er blevet fjernet"
@@ -2645,6 +2627,9 @@
       "Field name": [
         "Feltnavn"
       ],
+      "File": [
+        "Fil"
+      ],
       "File format": [
         "Filformat"
       ],
@@ -2893,9 +2878,6 @@
       ],
       "Personal website": [
         "Personligt websted"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP-krypteret JSON (anbefales)"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -3461,6 +3443,9 @@
       "Aliases": [
         "Aliasser"
       ],
+      "Attachments": [
+        "Vedhæftninger"
+      ],
       "Auto create/on the fly alias": [
         "Opret automatisk/på farten alias"
       ],
@@ -3985,9 +3970,6 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP-krypteret eksportfil kræver adgangssætning"
       ],
       "Please contact us to investigate the issue": [
         "Kontakt os, så vi kan undersøge problemet"

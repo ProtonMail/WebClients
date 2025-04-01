@@ -149,10 +149,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -244,6 +244,9 @@
       ],
       "Done": [
         "Gotowe"
+      ],
+      "Download": [
+        "Pobierz"
       ],
       "Download this CSV template": [
         "Pobierz szablon pliku CSV"
@@ -461,6 +464,9 @@
       "Remove member": [
         "Usuń użytkownika"
       ],
+      "Rename": [
+        "Zmień nazwę"
+      ],
       "Request a feature": [
         "Poproś o dodatkową funkcję"
       ],
@@ -472,6 +478,9 @@
       ],
       "Resend invitation": [
         "Wyślij ponownie zaproszenie"
+      ],
+      "Reset": [
+        "Resetuj"
       ],
       "Restore": [
         "Przywróć"
@@ -959,9 +968,6 @@
       "File could not be parsed": [
         "Plik nie mógł zostać przetworzony"
       ],
-      "File could not be read": [
-        "Plik nie może zostać odczytany"
-      ],
       "File does not match expected format": [
         "Format pliku jest nieprawidłowy"
       ],
@@ -1345,12 +1351,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias został wyłączony. Nie będziesz otrzymywać wiadomości wysłanych na adres ${ item.aliasEmail }"
-      ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias został włączony. Będziesz otrzymywać wiadomości wysłane na adres ${ item.aliasEmail }"
-      ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Synchronizacja aliasów ${ BRAND_NAME } i SimpleLogin jest aktywna."
       ],
@@ -1501,9 +1501,6 @@
       "Drop to import": [
         "Upuść, aby zaimportować"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Ze względu na ograniczenia rozszerzeń przeglądarki Safari po wyeksportowaniu danych w pliku będzie brakowało rozszerzenia \".pgp\". Po wyeksportowaniu zmień nazwę pliku, aby zawierała rozszerzenie .pgp (np. plik.pgp)."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Łatwe importowanie haseł do ${ PASS_APP_NAME }."
       ],
@@ -1526,7 +1523,7 @@
         "Wiadomość wysłana na ten adres będzie wyglądała na wysłaną z adresu, np. ${ exampleEmail }."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Wiadomości wysłane na Twoje aliasy zostaną przekierowane do Twoich skrzynek pocztowych. Alias może mieć więcej niż jedną taką skrzynkę: przydaje się to kiedy chcesz udostępnić alias swoim znajomym."
+        "Wiadomości wysyłane do aliasów są przekierowywane do skrzynek pocztowych. Alias może mieć więcej niż jedną skrzynkę pocztową."
       ],
       "Emptying trash...": [
         "Opróżnianie Kosza..."
@@ -1627,17 +1624,8 @@
       "Identity confirmed": [
         "Tożsamość została potwierdzona"
       ],
-      "Import in progress:": [
-        "Importowanie jest w toku:"
-      ],
       "Import the CSV file below.": [
         "Importuj poniższy plik CSV"
-      ],
-      "Imported ${ payload.total } item": [
-        "Zaimportowano ${ payload.total } element",
-        "Zaimportowano ${ payload.total } elementy",
-        "Zaimportowano ${ payload.total } elementów",
-        "Zaimportowano ${ payload.total } elementów"
       ],
       "Imported on ${ date }": [
         "Zaimportowano: ${ date }"
@@ -1665,12 +1653,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zalogowano już do ${ PASS_APP_NAME }. Jeśli próbujesz zalogować się do innego konta, najpierw wyloguj się z rozszerzenia."
-      ],
-      "item": [
-        "element",
-        "elementy",
-        "elementów",
-        "elementów"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Element \"${ payload.item.data.metadata.name }\" został utworzony"
@@ -2003,7 +1985,7 @@
         "Ustawienia zostały zaktualizowane"
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
-        "Udostępniaj aliasy innym osobom, dodając ich skrzynkę odbiorczą jako skrzynkę przekierowania."
+        "Udostępniaj aliasy innym użytkownikom, dodając ich skrzynkę odbiorczą jako skrzynkę przekierowania."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Udostępniaj dane logowania i bezpieczne notatki do 10 użytkownikom"
@@ -2056,12 +2038,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Dodatkowe hasło ${ BRAND_NAME } będzie wymagane do korzystania z ${ PASS_APP_NAME }."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
-        "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
-        "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:",
-        "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:"
-      ],
       "The secure link has been removed": [
         "Link został usunięty"
       ],
@@ -2075,13 +2051,13 @@
         "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
       ],
       "This mailbox will use your previous email.": [
-        "Ta skrzynka pocztowa będzie korzystać z twojego poprzedniego adresu e-mail."
+        "Skrzynka pocztowa będzie korzystać z poprzedniego adresu e-mail."
       ],
       "This operation is irreversible.": [
         "Ta operacja jest nieodwracalna."
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
-        "Ta operacja jest nieodwracalna. Wszystkie aliasy używające domeny ${ domainTextBold } zostaną usunięte. Pamiętaj, że po usunięciu, aliasów nie będzie można przywrócić."
+        "Operacja jest nieodwracalna. Wszystkie aliasy domeny ${ domainTextBold } zostaną usunięte. Pamiętaj, że przywrócenie usuniętych aliasów jest niemożliwe."
       ],
       "This option is currently not available on your device.": [
         "Funkcja nie jest dostępna na tym urządzeniu."
@@ -2643,6 +2619,9 @@
       "Field name": [
         "Nazwa pola"
       ],
+      "File": [
+        "Plik"
+      ],
       "File format": [
         "Format pliku"
       ],
@@ -2891,9 +2870,6 @@
       ],
       "Personal website": [
         "Osobista strona internetowa"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON zaszyfrowany PGP (zalecany)"
       ],
       "Phone number": [
         "Numer telefonu"
@@ -3464,6 +3440,9 @@
       "Aliases": [
         "Aliasy"
       ],
+      "Attachments": [
+        "Załączniki"
+      ],
       "Auto create/on the fly alias": [
         "Automatyczne tworzenie aliasu \"w locie\""
       ],
@@ -4013,9 +3992,6 @@
       ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Plik eksportu danych zaszyfrowany PGP wymaga hasła"
       ],
       "Please contact us to investigate the issue": [
         "Skontaktuj się z nami, aby zbadać problem"
