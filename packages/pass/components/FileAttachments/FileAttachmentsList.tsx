@@ -62,8 +62,9 @@ export const FileAttachmentsList: FC<Props> = (props) => {
                     danger
                     onCancel={deleteFile.abort}
                     onConfirm={deleteFile.resolver}
-                    title={c('Action').t`Delete ${deleteFile.state.name}`}
-                    message={c('Info').t`Once deleted, this file can still be recovered from the item's history.`}
+                    title={c('Pass_file_attachments').t`Delete ${deleteFile.state.name}`}
+                    message={c('Pass_file_attachments')
+                        .t`Once deleted, this file can still be recovered from the item's history.`}
                     confirmText={c('Action').t`Delete`}
                 />
             )}

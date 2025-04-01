@@ -14,9 +14,9 @@ export const FileAttachmentsDiscovery: FC = WithFeatureFlag(
         <WithSpotlight type={SpotlightMessage.FILE_ATTACHMENTS_DISCOVERY}>
             {({ close }) => (
                 <SpotlightGradient
-                    title={c('Title').t`Attachments`}
+                    title={c('Pass_file_attachments').t`Attachments`}
                     message={
-                        <div className="max-w-3/4">{c('Info')
+                        <div className="max-w-3/4">{c('Pass_file_attachments')
                             .t`You can attach files to items for a better organization`}</div>
                     }
                     onClose={close}
