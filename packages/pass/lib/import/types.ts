@@ -62,7 +62,7 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
         },
         [ImportProvider.ONEPASSWORD]: {
             title: '1Password',
-            fileExtension: '1pux, 1pif',
+            fileExtension: '1pux, 1pif, zip',
             tutorialUrl: 'https://proton.me/support/pass-import-1password',
         },
         [ImportProvider.DASHLANE]: {
@@ -141,6 +141,7 @@ export type ImportPayload = {
 
 export interface ImportFileReader {
     files: Set<string>;
+    dirs: Set<string>;
     getFile(filename: string): Promise<MaybeNull<Blob>>;
 }
 
