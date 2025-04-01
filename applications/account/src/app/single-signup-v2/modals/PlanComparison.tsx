@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { IconSize } from '@proton/components';
 import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
-import { PLANS, PLAN_SERVICES } from '@proton/payments';
+import { PLANS, PLAN_SERVICES, type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
 import {
     APPS,
     DRIVE_SHORT_APP_NAME,
@@ -13,7 +13,6 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';

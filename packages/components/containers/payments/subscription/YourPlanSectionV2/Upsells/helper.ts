@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
 
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { type FreeSubscription, type PLANS, isFreeSubscription } from '@proton/payments';
+import { type FreeSubscription, type PLANS, type Subscription, isFreeSubscription } from '@proton/payments';
 import { getPlanIDs, getPlanName } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription } from '@proton/shared/lib/interfaces';
 
 import { getAllowedCycles } from '../../helpers';
 

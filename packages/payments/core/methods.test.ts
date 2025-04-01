@@ -1,5 +1,5 @@
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
 import {
@@ -20,6 +20,7 @@ import {
     type SavedPaymentMethod,
 } from './interface';
 import { PaymentMethods, initializePaymentMethods } from './methods';
+import { BillingPlatform } from './subscription/constants';
 
 const TEST_CURRENCY = 'USD' as const;
 

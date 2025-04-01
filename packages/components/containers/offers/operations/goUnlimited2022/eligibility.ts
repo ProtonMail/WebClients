@@ -1,9 +1,9 @@
 import { fromUnixTime, isBefore, subDays } from 'date-fns';
 
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS, type Subscription } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPlan, isManagedExternally, isTrial } from '@proton/shared/lib/helpers/subscription';
-import type { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     user: UserModel;

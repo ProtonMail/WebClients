@@ -30,7 +30,9 @@ import type { ExtendedTokenPayment, PaymentMethodStatusExtended, TokenPayment } 
 import {
     CYCLE,
     type Currency,
+    type Cycle,
     PAYMENT_METHOD_TYPES,
+    type Plan,
     type PlanIDs,
     getBillingAddressStatus,
     getPlansMap,
@@ -43,7 +45,7 @@ import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Api, Cycle, Plan } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 

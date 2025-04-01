@@ -12,13 +12,14 @@ import {
     COUPON_CODES,
     CYCLE,
     type Currency,
+    type Cycle,
     PLANS,
     PLAN_NAMES,
     type PaymentsApi,
     type PlanIDs,
+    type PlansMap,
 } from '@proton/payments';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { type Cycle, type PlansMap } from '@proton/shared/lib/interfaces';
 
 import SaveLabel from '../SaveLabel';
 import { type SignupUpsellTelemetryHook } from './useMailSignupUpsellTelemetry';

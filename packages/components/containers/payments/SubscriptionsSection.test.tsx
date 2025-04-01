@@ -1,9 +1,7 @@
 import { getModelState } from '@proton/account/test';
 import { plansDefaultResponse } from '@proton/components/hooks/helpers/test';
-import { PLANS } from '@proton/payments';
+import { BillingPlatform, PLANS, Renew, type Subscription } from '@proton/payments';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
-import type { Subscription } from '@proton/shared/lib/interfaces';
-import { BillingPlatform, Renew } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { apiMock, getSubscriptionState, renderWithProviders } from '@proton/testing';
 

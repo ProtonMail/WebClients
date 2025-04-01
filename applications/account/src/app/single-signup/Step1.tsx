@@ -41,10 +41,14 @@ import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton
 import {
     CYCLE,
     type Currency,
+    type Cycle,
+    type CycleMapping,
     DEFAULT_CYCLE,
     PAYMENT_METHOD_TYPES,
     PLANS,
+    type Plan,
     type PlanIDs,
+    type StrictPlan,
     getBillingAddressStatus,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
@@ -66,7 +70,6 @@ import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
-import type { Cycle, CycleMapping, Plan, StrictPlan } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';

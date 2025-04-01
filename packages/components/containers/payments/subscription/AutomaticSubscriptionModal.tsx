@@ -26,13 +26,15 @@ import {
     type Currency,
     DEFAULT_CYCLE,
     type PaymentMethodStatusExtended,
+    type Plan,
     SelectedPlan,
+    type Subscription,
     fixPlanName,
     getPlansMap,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPlanName, getValidCycle } from '@proton/shared/lib/helpers/subscription';
-import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { Eligibility, PlanCombination } from './subscriptionEligbility';

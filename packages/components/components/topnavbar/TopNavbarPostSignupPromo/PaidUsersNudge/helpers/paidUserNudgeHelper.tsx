@@ -1,7 +1,7 @@
 import { addDays, differenceInDays, differenceInHours, fromUnixTime } from 'date-fns';
 import startOfDay from 'date-fns/startOfDay';
 
-import type { Subscription } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/payments';
 
 import { HIDE_OFFER, OfferDuration, ReminderDates, ReminderMaxHours } from '../helpers/interface';
 

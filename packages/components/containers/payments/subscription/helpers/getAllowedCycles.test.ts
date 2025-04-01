@@ -6,11 +6,11 @@ import {
     DEFAULT_CURRENCY,
     FREE_SUBSCRIPTION,
     PLANS,
+    type Plan,
     type PlanIDs,
     isRegionalCurrency,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Plan } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP, getSubscriptionMock, getTestPlansMap } from '@proton/testing/data';
 
 import { type PlanCapRule, getAllowedCycles } from './getAllowedCycles';

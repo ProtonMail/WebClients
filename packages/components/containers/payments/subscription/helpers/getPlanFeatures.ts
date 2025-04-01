@@ -1,10 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import type { IconName } from '@proton/components/components/icon/Icon';
-import { PLANS } from '@proton/payments';
+import { PLANS, type Plan } from '@proton/payments';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Plan } from '@proton/shared/lib/interfaces';
 
 export type Feature = {
     icon: IconName;

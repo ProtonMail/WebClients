@@ -1,4 +1,4 @@
-import type { Subscription } from '@proton/shared/lib/interfaces';
+import { type Subscription } from '@proton/payments';
 
 const format = (subscription: Subscription, UpcomingSubscription: Subscription | undefined | null): Subscription => {
     return {

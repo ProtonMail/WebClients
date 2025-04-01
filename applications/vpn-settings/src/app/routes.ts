@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
+import { Renew, type Subscription } from '@proton/payments';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import {
     getHasVpnB2BPlan,
     hasCancellablePlan,
     isCancellableOnlyViaSupport,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { Renew } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
 interface Arguments {
