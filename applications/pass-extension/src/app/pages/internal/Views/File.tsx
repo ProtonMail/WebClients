@@ -41,11 +41,11 @@ export const File: FC<RouteComponentProps<FileParam>> =
               return (
                   ref && (
                       <div className="pass-lobby max-h-full max-w-full flex flex-column justify-center flex-1 p-4">
-                          <ExtensionHead title={c('Title').t`Download "${filename}"`} />
+                          <ExtensionHead title={c('Pass_file_attachments').t`Download "${filename}"`} />
                           <div className="flex flex-column gap-3 items-center text-center">
                               <FileAttachmentIcon mimeType={mimeType} size={8} />
                               <strong>{filename}</strong>
-                              <em className="text-sm">{c('Info')
+                              <em className="text-sm">{c('Pass_file_attachments')
                                   .t`You may close this window after saving the file.`}</em>
                           </div>
                       </div>

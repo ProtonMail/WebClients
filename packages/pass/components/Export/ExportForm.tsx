@@ -115,9 +115,9 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                                   })}
                         >
                             <span className="pl-2">
-                                {c('Info').t`Include file attachments`}
+                                {c('Pass_file_attachments').t`Include file attachments`}
                                 <span className="block color-weak text-sm">
-                                    {c('Info')
+                                    {c('Pass_file_attachments')
                                         .t`If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.`}
                                 </span>
                             </span>
