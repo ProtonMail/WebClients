@@ -52,7 +52,7 @@ const UserDropdownButton = (
                     ) : null}
                 </span>
             ) : (
-                <span className="lh130 user-dropdown-text">
+                <span className="flex-1 lh130 user-dropdown-text">
                     <span className="block text-ellipsis user-dropdown-displayName">{Email}</span>
                 </span>
             )}

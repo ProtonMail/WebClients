@@ -120,7 +120,7 @@ const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgra
             <div className="flex flex-column gap-1 text-center empty:hidden">
                 {info.organizationName ? (
                     <span
-                        className="text-ellipsis text-sm block"
+                        className="text-ellipsis w-full text-sm block"
                         title={info.organizationName}
                         data-testid="userdropdown:label:org-name"
                     >
@@ -128,7 +128,7 @@ const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgra
                     </span>
                 ) : null}
 
-                <div className="flex justify-center gap-2">
+                <div className="flex justify-center gap-2 empty:hidden">
                     {info.planName ? (
                         <span
                             className="inline-block py-px px-1 text-sm rounded-sm userDropdownV2-planname"
