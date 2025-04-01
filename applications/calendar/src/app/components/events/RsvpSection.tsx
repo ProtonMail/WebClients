@@ -17,6 +17,7 @@ import type { PartstatData } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
+import { useUrlifyString } from '../../hooks/useUrlifyString';
 import { INVITE_ACTION_TYPES } from '../../interfaces/Invite';
 import { RsvpSpotlight } from './RsvpSpotlight';
 
@@ -73,6 +74,8 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
 
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingSend, withLoadingSend] = useLoading();
+
+    const formattedUserComment = useUrlifyString({ text: userComment, urlifyOptions: { target: '_blank' } });
 
     const isUnchanged = model.Status === userPartstat && model.Comment === userComment;
 
@@ -186,11 +189,11 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                             </RsvpSpotlight>
                         )}
 
-                        {!!userComment && (
+                        {!!formattedUserComment && (
                             <div className="mt-2 flex flex-auto justify-space-between flex-nowrap items-center gap-2">
                                 <div className="text-ellipsis color-weak text-sm">
                                     <span className="text-bold color-weak">{c('Note').t`Note: `}</span>
-                                    {userComment}
+                                    <span dangerouslySetInnerHTML={{ __html: formattedUserComment }} />
                                 </div>
                                 {!isSearchView && (
                                     <div className="flex flex-none">
