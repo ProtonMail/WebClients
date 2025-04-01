@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecione o país ${ country }"
       ],
-      "select file": [
-        "selecionar arquivo"
-      ],
       "Select file": [
         "Selecionar arquivo"
+      ],
+      "select file": [
+        "selecionar arquivo"
       ],
       "Select files": [
         "Selecionar arquivos"
@@ -7073,6 +7073,10 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quer compartilhar dados com você em ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } país ativado",
+        "${ locationsCount } países ativados"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
@@ -7652,9 +7656,6 @@
       ],
       "Copy your referral link": [
         "Copiar seu link de referência"
-      ],
-      "countries enabled": [
-        "países ativados"
       ],
       "Country code": [
         "Código do país"
@@ -8568,6 +8569,9 @@
       ],
       "No addresses exist": [
         "Não existem endereços"
+      ],
+      "No countries enabled": [
+        "Não há países ativados"
       ],
       "No credit card required": [
         "Não é necessário cartão de crédito"
@@ -10753,10 +10757,10 @@
       "Allow sharing outside the organization": [
         "Ativar compartilhamento fora da organização"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domínio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domínio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10771,11 +10775,11 @@
       "AND": [
         "E"
       ],
-      "and": [
-        "e"
-      ],
       "And": [
         "E"
+      ],
+      "and": [
+        "e"
       ],
       "Anderson": [
         "Braga"
@@ -13985,6 +13989,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited por 12 meses"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } por 12 meses"
+      ],
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
@@ -14008,9 +14018,6 @@
       ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Talvez mais tarde"

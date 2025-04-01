@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Выбраць краіну ${ country }"
       ],
-      "select file": [
-        "выбраць файл"
-      ],
       "Select file": [
         "Выбраць файл"
+      ],
+      "select file": [
+        "выбраць файл"
       ],
       "Select files": [
         "Выбраць файлы"
@@ -7170,6 +7170,12 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } хоча абагуліць даныя з вамі ў ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } краіна ўключана",
+        "${ locationsCount } краіны ўключаны",
+        "${ locationsCount } краін уключаны",
+        "${ locationsCount } краін уключаны"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
@@ -7799,9 +7805,6 @@
       ],
       "Copy your referral link": [
         "Капіяваць сваю рэферальную спасылку"
-      ],
-      "countries enabled": [
-        "уключаныя краіны"
       ],
       "Country code": [
         "Код краіны"
@@ -8729,6 +8732,9 @@
       ],
       "No addresses exist": [
         "Няма адрасоў"
+      ],
+      "No countries enabled": [
+        "Няма ўключаных краін"
       ],
       "No credit card required": [
         "Крэдытная картка не патрабуецца"
@@ -10971,10 +10977,10 @@
       "Allow sharing outside the organization": [
         "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Дазволены дамен"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Дазволены дамен"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10989,11 +10995,11 @@
       "AND": [
         "І"
       ],
-      "and": [
-        "і"
-      ],
       "And": [
         "І"
+      ],
+      "and": [
+        "і"
       ],
       "Anderson": [
         "Маўр"
@@ -14280,6 +14286,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited за 12 месяцаў"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } за 12 месяцаў"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
       ],
@@ -14303,9 +14315,6 @@
       ],
       "Limited-time offer": [
         "Часовая прапанова"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus за 12 месяцаў"
       ],
       "Maybe later": [
         "Магчыма пазней"
@@ -21184,10 +21193,10 @@
         "Кожныя ${ interval } тыдні ў панядзелак"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у панядзелак у ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак у ${ timesString }",
-        "Кожных ${ interval } тыдняў у панядзелак у ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак у ${ timesString }"
+        "Кожны ${ interval } тыдзень у панядзелак; час: ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак; час: ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак; час: ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак; час: ${ timesString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Кожны ${ interval } тыдзень у суботу",
@@ -21220,10 +21229,10 @@
         "Кожныя ${ interval } тыдні ў аўторак"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у аўторак у ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак у ${ timesString }",
-        "Кожных ${ interval } тыдняў у аўторак у ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак у ${ timesString }"
+        "Кожны ${ interval } тыдзень у аўторак; час: ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак; час: ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак; час: ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак; час: ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Кожны ${ interval } тыдзень у сераду",

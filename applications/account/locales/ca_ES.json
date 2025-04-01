@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Seleccioneu el país ${ country }"
       ],
-      "select file": [
-        "selecciona un fitxer"
-      ],
       "Select file": [
         "Selecciona un fitxer"
+      ],
+      "select file": [
+        "selecciona un fitxer"
       ],
       "Select files": [
         "Selecciona els fitxers"
@@ -7070,6 +7070,13 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vol compartir dades amb vós a ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } país activat",
+        "${ locationsCount } països activats"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la segona contrasenya. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
       ],
@@ -7647,9 +7654,6 @@
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
       ],
-      "countries enabled": [
-        "països activats"
-      ],
       "Country code": [
         "Codi de país"
       ],
@@ -7885,6 +7889,9 @@
       ],
       "Email address": [
         "Adreça de correu electrònic"
+      ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Correu electrònic i calendari, integrats amb ${ CONTACTS_APP_NAME }"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
@@ -8559,6 +8566,9 @@
       ],
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
+      ],
+      "No countries enabled": [
+        "Cap país activat"
       ],
       "No credit card required": [
         "No es requereix targeta de crèdit"
@@ -10741,10 +10751,10 @@
       "Allow sharing outside the organization": [
         "Permet la compartició fora de l'organització"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domini permès"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domini permès"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10759,11 +10769,11 @@
       "AND": [
         "I"
       ],
-      "and": [
-        "i"
-      ],
       "And": [
         "I"
+      ],
+      "and": [
+        "i"
       ],
       "Anderson": [
         "Pujol"
@@ -13964,6 +13974,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited durant 12 mesos"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } durant 12 mesos"
+      ],
       "${ pricingTitle } offer expires today!": [
         "L'oferta de ${ pricingTitle } caduca avui!"
       ],
@@ -13987,9 +14003,6 @@
       ],
       "Limited-time offer": [
         "Oferta per temps limitat"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus durant 12 mesos"
       ],
       "Maybe later": [
         "Potser després"
@@ -14469,6 +14482,9 @@
       ]
     },
     "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Obteniu accés de per vida a totes les funcionalitats prèmium actuals i futures de ${ PASS_APP_NAME } amb un únic pagament únic."
+      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Us donem la benvinguda a ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]

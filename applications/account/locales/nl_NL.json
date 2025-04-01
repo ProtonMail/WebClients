@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecteer land ${ country }"
       ],
-      "select file": [
-        "selecteer bestand"
-      ],
       "Select file": [
         "Selecteer bestand"
+      ],
+      "select file": [
+        "selecteer bestand"
       ],
       "Select files": [
         "Selecteer bestanden"
@@ -7070,6 +7070,10 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } wil data met u delen in ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } land ingeschakeld",
+        "${ locationsCount } landen ingeschakeld"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME }"
       ],
@@ -7649,9 +7653,6 @@
       ],
       "Copy your referral link": [
         "Kopieer uw doorverwijslink"
-      ],
-      "countries enabled": [
-        "landen ingeschakeld"
       ],
       "Country code": [
         "Landcode"
@@ -8565,6 +8566,9 @@
       ],
       "No addresses exist": [
         "Adressen bestaan niet"
+      ],
+      "No countries enabled": [
+        "Geen landen ingeschakeld"
       ],
       "No credit card required": [
         "Green kredietkaart vereist"
@@ -10747,11 +10751,11 @@
       "Allow sharing outside the organization": [
         "Delen toestaan buiten de organisatie"
       ],
-      "Allowed domain": [
-        "Domein toegestaan"
-      ],
       "Allowed Domain": [
         "Toegestaan domein"
+      ],
+      "Allowed domain": [
+        "Domein toegestaan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
@@ -10765,11 +10769,11 @@
       "AND": [
         "EN"
       ],
-      "and": [
-        "en"
-      ],
       "And": [
         "En"
+      ],
+      "and": [
+        "en"
       ],
       "Anderson": [
         "Anderson"
@@ -13970,6 +13974,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Onbeperkt voor 12 maanden"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } voor 12 maanden"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
@@ -13993,9 +14003,6 @@
       ],
       "Limited-time offer": [
         "Tijdelijke aanbieding"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus voor 12 maanden"
       ],
       "Maybe later": [
         "Misschien later"

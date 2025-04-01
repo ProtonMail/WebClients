@@ -1081,11 +1081,11 @@
       "Select country ${ country }": [
         "Valitse maa ${ country }"
       ],
-      "select file": [
-        "valitse tiedosto"
-      ],
       "Select file": [
         "Valitse tiedosto"
+      ],
+      "select file": [
+        "valitse tiedosto"
       ],
       "Select files": [
         "Valitse tiedostot"
@@ -7544,9 +7544,6 @@
       "Copy your referral link": [
         "Kopioi suosituslinkkisi"
       ],
-      "countries enabled": [
-        "käytettävää maata"
-      ],
       "Country code": [
         "Maakoodi"
       ],
@@ -7711,6 +7708,12 @@
         "verkkotunnus käytetty",
         "verkkotunnusta käytetty"
       ],
+      "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
+        "Älä menetä pääsyä sinun premium ${ appName } ominaisuuksiin. Ota tilauksen automaattinen uudistus käyttöön jo tänään."
+      ],
+      "Don't lose access to your premium features. Enable auto-renew today.": [
+        "Älä menetä pääsyä sinun premium ominaisuuksiin. Ota tilauksen automaattinen uudistus käyttöön jo tänään."
+      ],
       "Done! We sent a code to ${ destination }.": [
         "Valmis! Koodi lähetettiin kohteeseen ${ destination }."
       ],
@@ -7788,6 +7791,12 @@
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Tunnisteella ${ nameDeleted } merkittyjä sähköposteja ei poisteta, ja ne löytyvät edelleen vastaavasta kansiosta."
+      ],
+      "Enable auto-renew to keep access to Plus servers and features.": [
+        "Ota automaattiuudistus käyttöön, jotta Plus-palvelimet ja -ominaisuudet pysyvät käytössäsi."
+      ],
+      "Enable auto-renew to keep access to your premium features.": [
+        "Ota automaattiuudistus käyttöön, jotta premium ominaisuudet pysyvät käytössäsi."
       ],
       "Enable email notifications": [
         "Ota sähköposti-ilmoitukset käyttöön"
@@ -8874,6 +8883,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Aseta ${ MAIL_APP_NAME } oletussähköpostisovellukseksi. ${ MAIL_APP_NAME } avautuu automaattisesti sähköpostilinkkiä klikatessasi."
       ],
+      "Set password": [
+        "Aseta salasana"
+      ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"
       ],
@@ -9023,6 +9035,9 @@
       ],
       "Thank you": [
         "Kiitos"
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "Kiitos kun valitsit ${ BRAND_NAME }."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Kiitos, että tuet tehtäviämme rakentaa parempaa Internetiä, jossa yksityisyys ja vapaus ovat etusijalla."
@@ -9954,6 +9969,9 @@
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
       ],
+      "You’re all set": [
+        "Kaikki on kunnossa"
+      ],
       "Zoom meeting": [
         "Zoom-kokousta"
       ]
@@ -10558,10 +10576,10 @@
       "Allow sharing outside the organization": [
         "Salli organisaation ulkopuolinen jakaminen"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10576,11 +10594,11 @@
       "AND": [
         "JA"
       ],
-      "and": [
-        "ja"
-      ],
       "And": [
         "Ja"
+      ],
+      "and": [
+        "ja"
       ],
       "Anderson": [
         "Andersson"
@@ -13778,9 +13796,6 @@
       ],
       "Limited-time offer": [
         "Rajoitetun ajan tarjous"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus 12 kuukaudeksi"
       ],
       "Maybe later": [
         "Ehkä myöhemmin"
@@ -17435,6 +17450,9 @@
       ],
       "Catch-all address updated": [
         "Nappaa kaikki -osoite päivitettiin"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Muutokset julkaistiin. Muutoksesi näkyvät kaikille käyttäjille seuraavien muutaman tunnin sisällä."
       ],
       "Code sent to ${ methodTo }": [
         "Koodi lähetettiin kohteeseen ${ methodTo }"
