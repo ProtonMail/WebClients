@@ -7,7 +7,13 @@ import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withRequestProgress } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { ClientEndpoint, IndexedByShareIdAndItemId, ItemRevision, UniqueItem } from '@proton/pass/types';
+import type {
+    ClientEndpoint,
+    IndexedByShareIdAndItemId,
+    ItemRevision,
+    UniqueItem,
+    WithTabId,
+} from '@proton/pass/types';
 
 export type ImportFile = UniqueItem & { filename: string };
 export type ImportFilesReport = { totalFiles: number; ignoredFiles: string[] };
@@ -22,7 +28,10 @@ type ImportSuccessDTO = {
 
 type ImportProgressDTO = { shareId: string; items: ItemRevision[] };
 
-export const importItems = requestActionsFactory<ImportIntentDTO, ImportSuccessDTO, ImportFailureDTO>('import::items')({
+export const importItems = requestActionsFactory<WithTabId<ImportIntentDTO>, ImportSuccessDTO, ImportFailureDTO>(
+    'import::items'
+)({
+    key: ({ tabId }: WithTabId) => `${tabId ?? 0}`,
     failure: {
         prepare: (error, payload) =>
             withNotification({
