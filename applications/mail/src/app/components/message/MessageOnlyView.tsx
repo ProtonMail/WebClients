@@ -15,7 +15,6 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOutsideFocusedMessage';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useMessage } from '../../hooks/message/useMessage';
-import useShouldMoveOut from '../../hooks/useShouldMoveOut';
 import { removeAllQuickReplyFlags } from '../../store/messages/draft/messagesDraftActions';
 import type { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 import ConversationHeader from '../conversation/ConversationHeader';
@@ -26,8 +25,6 @@ interface Props {
     hidden: boolean;
     labelID: string;
     messageID: string;
-    elementIDs: string[];
-    loadingElements: boolean;
     mailSettings: MailSettings;
     onBack: () => void;
     breakpoints: Breakpoints;
@@ -40,8 +37,6 @@ const MessageOnlyView = ({
     hidden,
     labelID,
     messageID,
-    elementIDs,
-    loadingElements,
     mailSettings,
     onBack,
     breakpoints,
@@ -57,8 +52,6 @@ const MessageOnlyView = ({
     const load = useLoadMessage(message.data || ({ ID: messageID } as MessageWithOptionalBody));
 
     const dispatch = useMailDispatch();
-
-    useShouldMoveOut({ elementIDs, elementID: messageID, loadingElements, onBack });
 
     // Manage loading the message
     useEffect(() => {

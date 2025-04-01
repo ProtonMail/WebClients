@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
@@ -19,7 +19,7 @@ export const useRouterNavigation = ({ labelID }: Props) => {
     const location = useLocation();
     const history = useHistory();
 
-    const page = pageFromUrl(location);
+    const page = useMemo(() => pageFromUrl(location), [location.hash]);
 
     const handlePage = useCallback((pageNumber: number) => {
         history.push(setPageInUrl(history.location, pageNumber));
