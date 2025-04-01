@@ -1,0 +1,142 @@
+fail-on-severity: 'critical'
+ignore:
+    # Statuses
+    - fix-state: not-fixed
+    - fix-state: unknown
+    - fix-state: wont-fix
+
+    # Vulnerabilities
+    # How to fix them:
+    #  - remove the entry you aim to fix from the following list
+    #  - check in the CI that is failing
+    #  - patch/update the target dependency accordingly
+    #  - the CI should be green and that's it
+
+    ## Criticals
+    ### Go
+    - vulnerability: GHSA-v778-237x-gjrc
+      package:
+          name: golang.org/x/crypto
+          type: go-module
+          version: v0.0.0-20210322153248-0c34fe9e7dc2
+    - vulnerability: GHSA-v778-237x-gjrc
+      package:
+          name: golang.org/x/crypto
+          type: go-module
+          version: v0.0.0-20220829220503-c86fa9a7ed90
+    - vulnerability: CVE-2024-24790
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2023-29405
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2023-29404
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2023-29402
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2023-24540
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2023-24538
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2023-24531
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2022-23806
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2021-38297
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2020-29511
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2020-29509
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2024-24790
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.18.8
+    - vulnerability: CVE-2023-29405
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.18.8
+    - vulnerability: CVE-2023-29404
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.18.8
+    - vulnerability: CVE-2023-29402
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.18.8
+    - vulnerability: CVE-2023-24540
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.18.8
+    - vulnerability: CVE-2023-24538
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.18.8
+    - vulnerability: CVE-2023-24531
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.18.8
+    ### Npm
+    - vulnerability: GHSA-phwq-j96m-2c2q
+      package:
+          name: ejs
+          type: npm
+          version: 2.7.4
+    - vulnerability: GHSA-vjh7-7g9h-fjfh
+      package:
+          name: elliptic
+          type: npm
+          version: 6.5.7
+    - vulnerability: GHSA-593f-38f6-jp5m
+      package:
+          name: koa
+          type: npm
+          version: 2.15.3
+    - vulnerability: GHSA-76p3-8jx3-jpfq
+      package:
+          name: loader-utils
+          type: npm
+          version: 0.2.17
+    - vulnerability: GHSA-cf4h-3jhx-xvhq
+      package:
+          name: underscore
+          type: npm
+          version: 1.7.0
