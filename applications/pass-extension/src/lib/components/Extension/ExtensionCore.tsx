@@ -12,7 +12,7 @@ import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
-import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
+import type { CurrentTab, PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
@@ -33,7 +33,6 @@ import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { LocalStoreData } from '@proton/pass/types';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
-import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
 
@@ -183,7 +182,7 @@ const getPassCoreProviderProps = (
 };
 
 export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ children, endpoint, theme, wasm }) => {
-    const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
+    const currentTab = useRef<MaybeNull<CurrentTab>>(null);
     const coreProps = useInstance(() => getPassCoreProviderProps(endpoint, config, theme));
     const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
     const message = resolveMessageFactory(endpoint);
@@ -200,8 +199,8 @@ export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ child
     return (
         <PassCoreProvider
             {...coreProps}
-            getCurrentTabUrl={() => currentTabUrl.current}
-            setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
+            getCurrentTab={() => currentTab.current}
+            setCurrentTab={(parsedUrl) => (currentTab.current = parsedUrl)}
             wasm={wasm}
         >
             <AuthStoreProvider store={authStore}>
