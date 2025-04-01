@@ -49,9 +49,9 @@ export const useBatchHelper = () => {
                 request = debouncedRequest,
                 allowedCodes = [],
             }: {
-                shareId: string;
+                shareId?: string;
                 linkIds: string[];
-                query: (batchLinkIds: string[], shareId: string) => Promise<any> | any;
+                query: (batchLinkIds: string[], shareId?: string) => Promise<object> | object;
                 maxParallelRequests?: number;
                 batchRequestSize?: number;
                 request?: <T>(args: object, abortSignal?: AbortSignal) => Promise<T>;
@@ -60,7 +60,7 @@ export const useBatchHelper = () => {
         ) => {
             const responses: { batchLinkIds: string[]; response: T }[] = [];
             const successes: string[] = [];
-            const failures: { [linkId: string]: any } = {};
+            const failures: { [linkId: string]: string | undefined } = {};
 
             const batches = chunk(linkIds, batchRequestSize);
 
