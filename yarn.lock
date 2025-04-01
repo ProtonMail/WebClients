@@ -615,7 +615,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-object-rest-spread@npm:^7.12.1, @babel/plugin-proposal-object-rest-spread@npm:^7.20.7":
+"@babel/plugin-proposal-object-rest-spread@npm:^7.12.1":
   version: 7.20.7
   resolution: "@babel/plugin-proposal-object-rest-spread@npm:7.20.7"
   dependencies:
@@ -7355,7 +7355,6 @@ __metadata:
   resolution: "@proton/components@workspace:packages/components"
   dependencies:
     "@babel/core": "npm:^7.26.10"
-    "@babel/plugin-proposal-object-rest-spread": "npm:^7.20.7"
     "@babel/plugin-transform-runtime": "npm:^7.26.10"
     "@babel/preset-env": "npm:^7.26.9"
     "@babel/preset-react": "npm:^7.26.3"
@@ -7388,10 +7387,8 @@ __metadata:
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.6.1"
     "@types/codemirror": "npm:5.60.15"
-    "@types/credit-card-type": "npm:^7.0.0"
     "@types/jest": "npm:^29.5.14"
     "@types/markdown-it": "npm:^13.0.9"
-    "@types/qrcode.react": "npm:^1.0.5"
     "@types/react": "npm:^18.3.20"
     "@types/react-dom": "npm:^18.3.6"
     "@types/react-router": "npm:^5.1.20"
@@ -7496,6 +7493,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/docs-core@workspace:packages/docs-core"
   dependencies:
+    "@babel/plugin-transform-class-properties": "npm:^7.25.9"
     "@lexical/yjs": "patch:@lexical/yjs@npm%3A0.25.0#~/.yarn/patches/@lexical-yjs-npm-0.25.0-051bd8dfbc.patch"
     "@proton/components": "workspace:^"
     "@proton/crypto": "workspace:^"
@@ -7616,7 +7614,6 @@ __metadata:
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/react-window": "npm:^1.8.8"
     "@xmldom/xmldom": "npm:^0.9.8"
-    babel-plugin-transform-class-properties: "npm:^6.24.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     client-zip: "npm:^2.5.0"
     comlink: "npm:^4.4.2"
@@ -7788,7 +7785,6 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/shared": "workspace:^"
     "@types/jasmine": "npm:^5.1.7"
-    "@types/pkijs": "npm:0.0.14"
     eslint: "npm:^8.57.1"
     eslint-plugin-jasmine: "npm:^4.2.2"
     jasmine: "npm:^5.6.0"
@@ -8073,7 +8069,6 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.5.1"
-    "@types/history": "npm:^4.7.11"
     react: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
   languageName: unknown
@@ -8134,7 +8129,6 @@ __metadata:
     "@protontech/timezone-support": "npm:^2.1.0"
     "@scure/base": "npm:^1.2.4"
     "@sentry/browser": "npm:^7.120.3"
-    "@types/dompurify": "npm:^3.2.0"
     "@types/jasmine": "npm:^5.1.7"
     "@types/karma-junit-reporter": "npm:^2.0.4"
     "@types/node": "npm:^22.14.0"
@@ -11601,13 +11595,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/credit-card-type@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "@types/credit-card-type@npm:7.0.0"
-  checksum: 10c0/9611141adf6e3c6455fea34ab0d491901bb1cd6608f388e5b7ae260fbd5a76845afedcc333ceaad38add64a01d6ccaf84422bc70eed6bc4be35aa24c96aa48d6
-  languageName: node
-  linkType: hard
-
 "@types/css-tree@npm:^2.3.10":
   version: 2.3.10
   resolution: "@types/css-tree@npm:2.3.10"
@@ -11619,15 +11606,6 @@ __metadata:
   version: 0.1.5
   resolution: "@types/deep-freeze@npm:0.1.5"
   checksum: 10c0/cb568f0adbbcb0f3af3533a522e67de357c7ec7a9049d6a7799c4825162c843431302874c1c63668e21f78d8ddad0562f9968011736f27c34d659d161ff64d4c
-  languageName: node
-  linkType: hard
-
-"@types/dompurify@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@types/dompurify@npm:3.2.0"
-  dependencies:
-    dompurify: "npm:*"
-  checksum: 10c0/e83fec586ffbb1b43f7c8479f2a99c223814d240db912d53fb126aaeea52a4091deceeb75632b5d76004d88ef0fbf444984887b121dece6fa69f4172ed4b2b07
   languageName: node
   linkType: hard
 
@@ -12220,22 +12198,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/pkijs@npm:0.0.14":
-  version: 0.0.14
-  resolution: "@types/pkijs@npm:0.0.14"
-  dependencies:
-    "@types/pvutils": "npm:*"
-    asn1js: "npm:^3.0.2"
-  checksum: 10c0/e93d82894fc696298b85ac237c2e7f05fa9f90e970b6381b2d5405a21e916372a21c0e4ed86ad48bbd900386b2c25bed19f68ce71263ef957b498be8c176399a
-  languageName: node
-  linkType: hard
-
-"@types/prettier@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@types/prettier@npm:3.0.0"
-  dependencies:
-    prettier: "npm:*"
-  checksum: 10c0/edab8c0c0e56936e89c919cac17e384a9f231ce12062fb3beeb45bc45e7dcc4035dd3d7df3333b0bdd39f3b4501f22267a9dba45e22b9728c139857142e90282
+"@types/prettier@npm:^2.6.1":
+  version: 2.7.3
+  resolution: "@types/prettier@npm:2.7.3"
+  checksum: 10c0/0960b5c1115bb25e979009d0b44c42cf3d792accf24085e4bfce15aef5794ea042e04e70c2139a2c3387f781f18c89b5706f000ddb089e9a4a2ccb7536a2c5f0
   languageName: node
   linkType: hard
 
@@ -12250,22 +12216,6 @@ __metadata:
   version: 15.7.13
   resolution: "@types/prop-types@npm:15.7.13"
   checksum: 10c0/1b20fc67281902c6743379960247bc161f3f0406ffc0df8e7058745a85ea1538612109db0406290512947f9632fe9e10e7337bf0ce6338a91d6c948df16a7c61
-  languageName: node
-  linkType: hard
-
-"@types/pvutils@npm:*":
-  version: 1.0.4
-  resolution: "@types/pvutils@npm:1.0.4"
-  checksum: 10c0/5583ad839a5fed73fbcdee17a5075fa2a2d61a68c63d2dc7c1187e41644763d5d9e50b5773eba6fae34652c47eff57aafc525dc924bb4a192922089d3ae3709e
-  languageName: node
-  linkType: hard
-
-"@types/qrcode.react@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@types/qrcode.react@npm:1.0.5"
-  dependencies:
-    "@types/react": "npm:*"
-  checksum: 10c0/063ae2b51dfcb9cb3daa4beb569d43f226224b470850ca7484798e399382217d0881e9d3e2cf711e6f3f2ceb3b8bfef274c1d252ff9b708508c491133a009090
   languageName: node
   linkType: hard
 
@@ -14960,7 +14910,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asn1js@npm:^3.0.2, asn1js@npm:^3.0.5":
+"asn1js@npm:^3.0.5":
   version: 3.0.5
   resolution: "asn1js@npm:3.0.5"
   dependencies:
@@ -20894,7 +20844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:*, dompurify@npm:^3.2.5":
+"dompurify@npm:^3.2.5":
   version: 3.2.5
   resolution: "dompurify@npm:3.2.5"
   dependencies:
@@ -35343,7 +35293,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:*, prettier@npm:3.5.3, prettier@npm:^3.5.3":
+"prettier@npm:3.5.3, prettier@npm:^3.5.3":
   version: 3.5.3
   resolution: "prettier@npm:3.5.3"
   bin:
@@ -35885,7 +35835,6 @@ __metadata:
     "@typescript-eslint/parser": "npm:^7.18.0"
     autoprefixer: "npm:^10.4.21"
     babel-jest: "npm:^29.7.0"
-    babel-plugin-transform-class-properties: "npm:^6.24.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^7.0.3"
     docx: "npm:^8.5.0"
@@ -35952,7 +35901,6 @@ __metadata:
     "@typescript-eslint/parser": "npm:^7.18.0"
     autoprefixer: "npm:^10.4.21"
     babel-jest: "npm:^29.7.0"
-    babel-plugin-transform-class-properties: "npm:^6.24.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     buffer: "npm:^6.0.3"
     cross-env: "npm:^7.0.3"
@@ -36198,8 +36146,6 @@ __metadata:
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.6.1"
-    "@types/dompurify": "npm:^3.2.0"
-    "@types/history": "npm:^4.7.11"
     "@types/jest": "npm:^29.5.14"
     "@types/react": "npm:^18.3.20"
     "@types/react-dom": "npm:^18.3.6"
