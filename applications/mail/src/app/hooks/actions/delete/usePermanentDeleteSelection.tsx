@@ -20,6 +20,8 @@ import type { Element } from '../../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../../store/elements/elementsActions';
 import { useGetElementsFromIDs } from '../../mailbox/useElements';
 import useOptimisticDelete from '../../optimistic/useOptimisticDelete';
+import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
+import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
 
 const { DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -152,6 +154,8 @@ export const usePermanentDeleteSelection = (labelID: string) => {
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
     const isES = useIsEncryptedSearch();
 
+    const { handleOnBackMoveAction } = useMoveBackAction();
+
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
     const [deleteModalProps, setDeleteModalOpen] = useModalState();
 
@@ -177,6 +181,8 @@ export const usePermanentDeleteSelection = (labelID: string) => {
 
         try {
             dispatch(backendActionStarted());
+
+            handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.PERMANENT_DELETE, elements });
 
             await runParallelChunkedActions({
                 api,
