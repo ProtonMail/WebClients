@@ -3,7 +3,6 @@ import type { Ref } from 'react';
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import type { Breakpoints } from '@proton/components';
 import { DropdownSizeUnit, Icon } from '@proton/components';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
@@ -17,7 +16,6 @@ import ToolbarDropdown from './ToolbarDropdown';
 interface Props {
     labelID: string;
     selectedIDs: string[];
-    breakpoints: Breakpoints;
     labelDropdownToggleRef: Ref<() => void>;
     moveDropdownToggleRef: Ref<() => void>;
     onCheckAll?: (check: boolean) => void;
@@ -26,7 +24,6 @@ interface Props {
 const LabelsAndFolders = ({
     labelID,
     selectedIDs,
-    breakpoints,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
     onCheckAll,
@@ -81,7 +78,6 @@ const LabelsAndFolders = ({
                             selectedIDs={selectedIDs}
                             onClose={onClose}
                             onLock={onLock}
-                            breakpoints={breakpoints}
                             isMessage={!isConversationMode(labelID, mailSettings)}
                             selectAll={selectAll}
                             onCheckAll={onCheckAll}
@@ -109,7 +105,6 @@ const LabelsAndFolders = ({
                             selectedIDs={selectedIDs}
                             onClose={onClose}
                             onLock={onLock}
-                            breakpoints={breakpoints}
                             selectAll={selectAll}
                             onCheckAll={onCheckAll}
                         />
