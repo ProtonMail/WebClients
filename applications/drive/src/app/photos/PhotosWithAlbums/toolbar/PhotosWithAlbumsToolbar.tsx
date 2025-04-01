@@ -129,7 +129,7 @@ const AlbumGalleryDropdownButton = ({
                             {c('Action').t`Delete album`}
                         </DropdownMenuButton>
                     )}
-                    {!showLeaveAlbumButton && (
+                    {showLeaveAlbumButton && (
                         <DropdownMenuButton className="text-left flex items-center flex-nowrap" onClick={onLeave}>
                             <Icon className="mr-2" name="cross-big" />
                             {c('Action').t`Leave album`}
