@@ -5,7 +5,6 @@ import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Label } from '@proton/shared/lib/interfaces';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
@@ -27,7 +26,6 @@ const props = {
     labelID: MAILBOX_LABEL_IDS.INBOX,
     onClose: jest.fn(),
     onLock: jest.fn(),
-    breakpoints: mockDefaultBreakpoints,
 };
 
 const getMessage = (labelIDs: string[] = []) => {

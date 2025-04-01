@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import type { Breakpoints } from '@proton/components';
 import {
     Checkbox,
     EditLabelModal,
@@ -15,6 +14,7 @@ import {
     PrimaryButton,
     SearchInput,
     Tooltip,
+    useActiveBreakpoint,
     useModalState,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
@@ -126,12 +126,11 @@ interface Props {
     labelID: string;
     onClose: () => void;
     onLock: (lock: boolean) => void;
-    breakpoints: Breakpoints;
     selectAll?: boolean;
     onCheckAll?: (check: boolean) => void;
 }
 
-const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, selectAll, onCheckAll }: Props) => {
+const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onCheckAll }: Props) => {
     const [uid] = useState(generateUID('label-dropdown'));
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
@@ -146,6 +145,8 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, sel
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels(setContainFocus);
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
+
+    const breakpoints = useActiveBreakpoint();
 
     /*
      * translator: Text displayed in a button to suggest the creation of a new label in the label dropdown
