@@ -1,4 +1,5 @@
-import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { BillingPlatform } from '@proton/payments';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { mockUseSubscription } from './mockUseSubscription';
 import { mockUseUser } from './mockUseUser';

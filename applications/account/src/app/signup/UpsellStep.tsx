@@ -17,9 +17,18 @@ import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import type { PaymentMethodStatusExtended, PaymentsApi } from '@proton/payments';
-import { CYCLE, type Currency, PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
+import {
+    CYCLE,
+    type Currency,
+    type Cycle,
+    type FreePlanDefault,
+    PLANS,
+    type Plan,
+    type PlanIDs,
+    getPlansMap,
+} from '@proton/payments';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Cycle, FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

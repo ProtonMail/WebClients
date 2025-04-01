@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import type { PlanIDs } from '@proton/payments';
-import { CYCLE, DEFAULT_CURRENCY } from '@proton/payments';
+import { CYCLE, DEFAULT_CURRENCY, type PlansMap } from '@proton/payments';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import type { PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { getShortBillingText } from '../helpers';

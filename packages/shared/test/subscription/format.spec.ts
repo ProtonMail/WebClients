@@ -1,5 +1,4 @@
-import { PLANS } from '@proton/payments';
-import type { Subscription } from '@proton/shared/lib/interfaces';
+import { PLANS, type Subscription } from '@proton/payments';
 import format from '@proton/shared/lib/subscription/format';
 
 describe('Subscription Format', () => {

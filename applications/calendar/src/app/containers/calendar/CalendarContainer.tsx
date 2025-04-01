@@ -13,6 +13,7 @@ import {
     useNotifications,
     useObserveDrawerIframeAppLocation,
 } from '@proton/components';
+import { type Subscription } from '@proton/payments';
 import { getInvitation } from '@proton/shared/lib/api/calendars';
 import { getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -39,7 +40,7 @@ import {
 } from '@proton/shared/lib/date/timezone';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { Address, Subscription, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import type {
     AttendeeModel,
     CalendarMemberInvitation,

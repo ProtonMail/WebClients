@@ -1,10 +1,10 @@
 import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
-import type { Cycle, Plan, StrictPlan } from '@proton/shared/lib/interfaces';
 
 import { PLANS, PLAN_TYPES } from '../constants';
 import { getFallbackCurrency, isRegionalCurrency } from '../helpers';
-import { type Currency, type PlanIDs } from '../interface';
-import type { FullPlansMap } from './interface';
+import { type Currency, type Cycle, type PlanIDs } from '../interface';
+import { type Plan, type StrictPlan } from '../plan/interface';
+import { type FullPlansMap } from './interface';
 
 export function getPlanByName(
     plans: Plan[],

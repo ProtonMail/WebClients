@@ -14,10 +14,14 @@ import { type MethodsHook } from '@proton/components/payments/react-extensions';
 import type { CheckoutModifiers } from '@proton/payments';
 import {
     type Currency,
+    type Cycle,
+    type FreePlanDefault,
     type FullPlansMap,
     PLANS,
     type PaymentMethodStatusExtended,
+    type Plan,
     type PlanIDs,
+    type Subscription,
 } from '@proton/payments';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
@@ -32,14 +36,7 @@ import {
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type {
-    Cycle,
-    FreePlanDefault,
-    Plan,
-    Subscription,
-    UserModel,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import Checkout from '../../Checkout';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '../../RenewalNotice';

@@ -1,8 +1,8 @@
-import { PLANS, PLAN_SERVICES, PLAN_TYPES, type PlanIDs } from '@proton/payments';
+import { PLANS, PLAN_SERVICES, PLAN_TYPES, type Plan, type PlanIDs } from '@proton/payments';
 import noop from '@proton/utils/noop';
 
 import { hasBit } from '../helpers/bitset';
-import type { Api, Plan, UserModel } from '../interfaces';
+import type { Api, UserModel } from '../interfaces';
 import type { CalendarWithOwnMembers } from '../interfaces/calendar';
 import { MAX_CALENDARS_FREE } from './constants';
 import getHasSharedCalendars from './sharing/getHasSharedCalendars';

@@ -10,6 +10,7 @@ import { getMeterColor } from '@proton/components/components/progress/Meter';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
+import { type Subscription } from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -21,7 +22,7 @@ import {
 } from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getAppSpace, getCanAddStorage, getSpace } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';

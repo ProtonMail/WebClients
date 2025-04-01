@@ -5,6 +5,7 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { Info, Price } from '@proton/components/index';
+import { type Plan } from '@proton/payments';
 import { COUPON_CODES } from '@proton/payments/index';
 import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
@@ -14,7 +15,7 @@ import {
     isTaxInclusive,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

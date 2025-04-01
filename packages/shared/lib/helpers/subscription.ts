@@ -5,16 +5,23 @@ import {
     COUPON_CODES,
     CYCLE,
     type Currency,
+    External,
+    type FreeSubscription,
     type MaxKeys,
     PLANS,
     PLAN_SERVICES,
     PLAN_TYPES,
+    type Plan,
     type PlanIDs,
+    type PlansMap,
+    type Pricing,
+    type Subscription,
+    type SubscriptionPlan,
+    isFreeSubscription,
     isRegionalCurrency,
     isSplittedUser,
     onSessionMigrationChargebeeStatus,
 } from '@proton/payments';
-import { type FreeSubscription, isFreeSubscription } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     getSupportedAddons,
@@ -25,17 +32,8 @@ import {
 } from '@proton/shared/lib/helpers/addons';
 
 import { APPS, type APP_NAMES } from '../constants';
-import type {
-    Organization,
-    Plan,
-    PlansMap,
-    Pricing,
-    Subscription,
-    SubscriptionCheckResponse,
-    SubscriptionPlan,
-    UserModel,
-} from '../interfaces';
-import { Audience, ChargebeeEnabled, External, TaxInclusive } from '../interfaces';
+import type { Organization, SubscriptionCheckResponse, UserModel } from '../interfaces';
+import { Audience, ChargebeeEnabled, TaxInclusive } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
