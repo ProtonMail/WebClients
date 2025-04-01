@@ -26,7 +26,7 @@ const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
 };
 
 export const ItemEdit: FC = () => {
-    const { getCurrentTabUrl } = usePassCore();
+    const { getCurrentTab } = usePassCore();
     const { shareId, itemId } = useParams<SelectedItem>();
 
     const nav = useNavigationActions();
@@ -50,7 +50,7 @@ export const ItemEdit: FC = () => {
             onCancel={() => nav.selectItem(shareId, itemId, { scope })}
             onSubmit={handleSubmit}
             revision={item}
-            url={getCurrentTabUrl?.() ?? null}
+            url={getCurrentTab?.()?.url ?? null}
             share={share}
         />
     );
