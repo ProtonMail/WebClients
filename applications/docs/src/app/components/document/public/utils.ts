@@ -1,7 +1,7 @@
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants'
 import { replaceUrl } from '@proton/shared/lib/helpers/browser'
-import { getPathFromLocation, getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
+import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
 import { PLANS } from '@proton/payments'
 import { Actions, countActionWithTelemetry, traceTelemetry } from '@proton/drive-store/utils/telemetry'
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window'
@@ -15,7 +15,6 @@ import { useOpenDocument, type RedirectAction } from '@proton/drive-store/store/
 import type { PublicContextValue } from '../context'
 import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
 import { useCallback } from 'react'
-import { getParsedPathWithoutLocalIDBasename } from '@proton/shared/lib/authentication/pathnameHelper'
 
 function openUrl(url: string, openInNewTab: boolean) {
   const tab = openInNewTab ? getNewWindow() : getCurrentTab()
@@ -214,17 +213,4 @@ export function usePublicDocumentCopying({ context, editorController, documentSt
   }
 
   return { createCopy }
-}
-
-export function redirectToAccountSwitcherFromUserApp() {
-  const accountSwitchUrl = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT))
-  accountSwitchUrl.searchParams.append('product', 'docs')
-
-  const returnUrl = `/${getParsedPathWithoutLocalIDBasename(getPathFromLocation(window.location))}`
-  const urlWithReturnUrl = getUrlWithReturnUrl(accountSwitchUrl.toString(), {
-    returnUrl: returnUrl,
-    context: 'private',
-  })
-
-  replaceUrl(urlWithReturnUrl)
 }
