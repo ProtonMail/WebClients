@@ -462,7 +462,6 @@ const MessageView = (
                         onToggle={handleToggle(false)}
                         onBack={onBack}
                         onSourceMode={setSourceMode}
-                        breakpoints={breakpoints}
                         labelDropdownToggleRef={labelDropdownToggleRef}
                         moveDropdownToggleRef={moveDropdownToggleRef}
                         filterDropdownToggleRef={filterDropdownToggleRef}

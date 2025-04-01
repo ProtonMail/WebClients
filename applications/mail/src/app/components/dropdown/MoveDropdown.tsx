@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import type { Breakpoints, IconName, LabelModel } from '@proton/components';
+import type { IconName, LabelModel } from '@proton/components';
 import {
     Checkbox,
     EditLabelModal,
@@ -16,6 +16,7 @@ import {
     Radio,
     SearchInput,
     Tooltip,
+    useActiveBreakpoint,
     useModalState,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
@@ -66,7 +67,6 @@ interface Props {
     labelID: string;
     onClose: () => void;
     onLock: (lock: boolean) => void;
-    breakpoints: Breakpoints;
     isMessage?: boolean;
     selectAll?: boolean;
     onCheckAll?: (check: boolean) => void;
@@ -77,7 +77,6 @@ const MoveDropdown = ({
     labelID,
     onClose,
     onLock,
-    breakpoints,
     isMessage: inputIsMessage,
     selectAll,
     onCheckAll,
@@ -97,6 +96,8 @@ const MoveDropdown = ({
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
+
+    const breakpoints = useActiveBreakpoint();
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
