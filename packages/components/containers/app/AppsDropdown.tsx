@@ -65,7 +65,10 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                 ref={ref}
                 as="button"
             >
-                <ul className="unstyled my-0 p-4" style={{ '--apps-dropdown-repeat': isElectronMail ? '2' : '3' }}>
+                <ul
+                    className="unstyled my-0 p-4"
+                    style={{ '--apps-dropdown-repeat': isElectronMail || availableApps.length <= 2 ? '2' : '3' }}
+                >
                     {availableApps.map((appToLinkTo) => {
                         const current = app && appToLinkTo === app;
 
