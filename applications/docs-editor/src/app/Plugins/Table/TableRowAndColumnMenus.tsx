@@ -22,7 +22,6 @@ import { $clearCellsInTableSelection } from './TableUtils/clearCellsInTableSelec
 import { selectColumn } from './TableUtils/selectColumn'
 import { selectRow } from './TableUtils/selectRow'
 import { FontColorMenu } from '../../Components/ColorMenu'
-import { TextColors, BackgroundColors } from '../../Shared/Color'
 import {
   DELETE_TABLE_COLUMN_AT_SELECTION_COMMAND,
   DELETE_TABLE_ROW_AT_SELECTION_COMMAND,
@@ -270,17 +269,20 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
                 </>
               }
               contentProps={{
+                style: {
+                  '--max-width': 'none',
+                },
                 originalPlacement: 'right-start',
                 offset: 0,
               }}
               hasCaret={false}
             >
               <FontColorMenu
-                textColors={TextColors}
+                currentBackgroundColor={null}
+                currentTextColor={null}
                 onTextColorChange={(color) => {
                   setColorForSelection(editor, color)
                 }}
-                backgroundColors={BackgroundColors}
                 onBackgroundColorChange={(color) => {
                   setBackgroundColorForSelection(editor, color)
                 }}
@@ -390,6 +392,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               className={menuButtonClassName}
               disabled={isSuggestionMode}
               contentProps={{
+                style: {
+                  '--max-width': 'none',
+                },
                 originalPlacement: 'right-start',
                 offset: 0,
               }}
@@ -403,11 +408,11 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               hasCaret={false}
             >
               <FontColorMenu
-                textColors={TextColors}
+                currentTextColor={null}
+                currentBackgroundColor={null}
                 onTextColorChange={(color) => {
                   setColorForSelection(editor, color)
                 }}
-                backgroundColors={BackgroundColors}
                 onBackgroundColorChange={(color) => {
                   setBackgroundColorForSelection(editor, color)
                 }}
