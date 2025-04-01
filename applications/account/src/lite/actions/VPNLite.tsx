@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import useApi from '@proton/components/hooks/useApi';
+import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
 import { queryScopes } from '@proton/shared/lib/api/auth';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
@@ -22,6 +23,7 @@ const VPNLite = (props: SubscribeAccountProps) => {
     const [showConvertAccount, setShowConvertAccount] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
     const api = useApi();
+    const [searchParams, setSearchParams] = useState(props.searchParams);
 
     useEffect(() => {
         const fetchScopes = async () => {
@@ -34,11 +36,23 @@ const VPNLite = (props: SubscribeAccountProps) => {
         };
 
         const run = async () => {
-            const scopes = await fetchScopes();
-            setShouldConvertAccount(scopes.includes('full'));
             if (user.Subscribed) {
                 setShowConvertAccount(true);
+            } else {
+                const overriddenSearchParams = new URLSearchParams(props.searchParams);
+
+                // Override the search params with the Vivaldi coupon, and take the user directly to the checkout screen.
+                // Only do this if the user isn't subscribed because the coupon presumably isn't valid once a subscription has been purchased.
+                overriddenSearchParams.append('start', 'checkout');
+                overriddenSearchParams.append('coupon', COUPON_CODES.VPN_VIVALDI);
+                overriddenSearchParams.append('disablePlanSelector', 'true');
+                overriddenSearchParams.append('plan', PLANS.VPN2024);
+
+                setSearchParams(overriddenSearchParams);
             }
+
+            const scopes = await fetchScopes();
+            setShouldConvertAccount(scopes.includes('full'));
         };
 
         void run();
@@ -92,6 +106,7 @@ const VPNLite = (props: SubscribeAccountProps) => {
     return (
         <SubscribeAccount
             {...props}
+            searchParams={searchParams}
             childOverride={childOverride}
             onSubscribed={() => {
                 if (shouldConvertAccount) {
