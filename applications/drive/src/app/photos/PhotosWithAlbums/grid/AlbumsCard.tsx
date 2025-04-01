@@ -27,6 +27,7 @@ type Props = {
     onClick: () => void;
     onRename: () => void;
     onShare: () => void;
+    onDelete: () => void;
 };
 
 const getAltText = ({ mimeType, name }: DecryptedLink) =>
@@ -35,9 +36,10 @@ const getAltText = ({ mimeType, name }: DecryptedLink) =>
 interface AlbumDropdownButtonprops {
     onRename: () => void;
     onShare: () => void;
+    onDelete: () => void;
 }
 
-export const AlbumDropdownButton = ({ onShare, onRename }: AlbumDropdownButtonprops) => {
+export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -80,17 +82,32 @@ export const AlbumDropdownButton = ({ onShare, onRename }: AlbumDropdownButtonpr
                     </DropdownMenuButton>
 
                     {/* TODO: Add delete album logic from album grid view */}
-                    {/* <DropdownMenuButton className="text-left flex items-center flex-nowrap">
+                    <DropdownMenuButton
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onDelete();
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
                         <Icon className="mr-2" name="trash" />
                         {c('Action').t`Delete album`}
-                    </DropdownMenuButton> */}
+                    </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
         </>
     );
 };
 
-export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, album, onClick, onShare, onRename }) => {
+export const AlbumsCard: FC<Props> = ({
+    style,
+    onRender,
+    onRenderLoadedLink,
+    album,
+    onClick,
+    onShare,
+    onRename,
+    onDelete,
+}) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
@@ -222,7 +239,7 @@ export const AlbumsCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, alb
                         </div>
                         {album.permissions.isAdmin && (
                             <div className="shrink-0 mb-2">
-                                <AlbumDropdownButton onShare={onShare} onRename={onRename} />
+                                <AlbumDropdownButton onShare={onShare} onRename={onRename} onDelete={onDelete} />
                             </div>
                         )}
                     </div>
