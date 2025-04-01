@@ -19,11 +19,9 @@ type RequestFlowSaga<T extends RequestFlow<any, any, any>, P extends any[] = []>
     enhance?: <A extends Action>(resultAction: A, intent: ReturnType<T['intent']>) => A;
 };
 
-export class RequestCancelledError extends Error {}
-
 export function* cancelRequest(requestId: string) {
     yield take(matchCancel(requestId));
-    throw new RequestCancelledError();
+    throw new DOMException(`${requestId} aborted`, 'AbortError');
 }
 
 /** The generated saga does not directly affect the application state. Instead,
