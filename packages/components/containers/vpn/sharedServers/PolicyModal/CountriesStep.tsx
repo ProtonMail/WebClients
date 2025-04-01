@@ -91,7 +91,7 @@ const CountriesStep = ({
                                 <span className="text-bold">{c('Label').t`Countries`}</span>
                                 {selectedCitiesCount > 0 && (
                                     <span className="text-sm color-weak">
-                                        {c('Info').ngettext(
+                                        {c('CountriesStep:Info').ngettext(
                                             msgid`${selectedCitiesCount} selected`,
                                             `${selectedCitiesCount} selected`,
                                             selectedCitiesCount
