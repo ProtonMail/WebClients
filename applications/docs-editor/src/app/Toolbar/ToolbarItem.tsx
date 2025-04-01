@@ -32,6 +32,7 @@ export function ToolbarItem({ item }: { item: ToolbarItemInterface }) {
       contentProps={item.dropdownProps}
       active={item.active}
       data-testid={item.id}
+      hasCaret={item.hasCaret}
     >
       {item.menu}
     </SimpleDropdown>
