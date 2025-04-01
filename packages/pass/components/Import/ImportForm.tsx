@@ -167,7 +167,7 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
 
                     {free && (
                         <Card className="mb-4 text-sm" type="warning">
-                            {c('Warning').t`Your current plan does not support importing files`}
+                            {c('Pass_file_attachments').t`Your current plan does not support importing files`}
                         </Card>
                     )}
                 </>
