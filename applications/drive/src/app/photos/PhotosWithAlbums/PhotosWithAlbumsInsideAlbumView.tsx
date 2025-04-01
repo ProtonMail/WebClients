@@ -134,7 +134,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         return albums.find((album) => album.linkId === albumLinkId);
     }, [albums, albumLinkId]);
 
-    const photoCount = albumPhotos.length;
     const selectedCount = selectedItems.length;
 
     const handleToolbarPreview = useCallback(() => {
@@ -249,14 +248,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                         newParentLinkId: linkId,
                     });
                 }
-                await removeAlbumPhotos(abortSignal, albumLinkId, selectedPhotosIds);
-                createNotification({
-                    text: c('Info').ngettext(
-                        msgid`Your photo has been removed from the album`,
-                        `Your photos have been removed from the album`,
-                        selectedPhotosIds.length
-                    ),
-                });
+                await removeAlbumPhotos(abortSignal, albumShareId, albumLinkId, selectedPhotosIds);
             } catch (e) {
                 if (e instanceof Error && e.message) {
                     createNotification({ text: e.message, type: 'error' });
@@ -264,7 +256,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                 sendErrorReport(e);
             }
         },
-        [albumShareId, linkId, moveLinks, removeAlbumPhotos, albumLinkId]
+        [albumShareId, linkId, albumLinkId, removeAlbumPhotos, createNotification, moveLinks]
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {
@@ -427,6 +419,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     if (!albumShareId || !linkId || !album || !uploadLinkId || !isInitialized || !albumLinkId) {
         return <Loader />;
     }
+    const photoCount = album.photoCount;
 
     // TODO: Album not found view [DRVWEB-4615]
     return (
