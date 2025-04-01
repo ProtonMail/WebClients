@@ -3499,7 +3499,7 @@
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Немагчыма загрузіць панэль кіравання VPN. Калі ласка, праверце падключэнне і паўтарыце спробу."
+        "Немагчыма загрузіць панэль кіравання VPN. Праверце падключэнне і паўтарыце спробу."
       ],
       "Unexpected error, we can't import the contacts": [
         "Нечаканая памылка. Немагчыма імпартаваць кантакты."
@@ -4695,7 +4695,7 @@
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце, каб паказваць мэтавую рэкламу. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
+        "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
@@ -5073,7 +5073,7 @@
         "Падключэнне да інтэрнэту адноўлена."
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Лепш за ўсё выкарыстоўваць VPN заўсёды. Але вось калі пагрозы кібербяспецы могуць быць найбольшымі:"
+        "Лепш за ўсё выкарыстоўваць VPN пастаянна. Але ў гэтых выпадках, пагрозы кібербяспекі могуць быць самымі высокімі:"
       ],
       "JCB logo": [
         "Лагатып JCB"
@@ -5451,7 +5451,7 @@
         "Гэта спасылка можа быць гамаграфічнай атакай. Праверце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць вашы асабістыя звесткі з вашай актыўнасці ў інтэрнэце."
+        "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць асабістыя звесткі з вашай актыўнасці ў інтэрнэце."
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Гэты ўнікальны код можа быць выкарыстаны вэб-сайтамі і пастаўшчыком паслуг інтэрнэту (ISP), каб звязаць ваша месцазнаходжанне і гісторыю прагляду старонак на вашай прыладзе."
@@ -8175,6 +8175,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited за 12 месяцаў"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } за 12 месяцаў"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
       ],
@@ -8198,9 +8204,6 @@
       ],
       "Limited-time offer": [
         "Часовая прапанова"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus за 12 месяцаў"
       ],
       "Maybe later": [
         "Магчыма пазней"
@@ -8286,7 +8289,7 @@
         "Пазнаёмцеся з усімі сэрвісамі ${ BRAND_NAME }"
       ],
       "Pick a theme": [
-        "Выберыце тэму"
+        "Выбраць тэму"
       ],
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
@@ -8351,7 +8354,7 @@
         "месяц",
         "месяцы",
         "месяцаў",
-        "месяцы"
+        "месяцаў"
       ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
@@ -8372,7 +8375,7 @@
         "год",
         "гады",
         "гадоў",
-        "гады"
+        "гадоў"
       ]
     },
     "Option group label": {
@@ -10640,7 +10643,7 @@
         "Пацвярджэнне спасылкі"
       ],
       "Make a secure connection your default": [
-        "Зрабіце бяспечнае падключэнне прадвызначаным"
+        "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
       ],
       "Merge contacts": [
         "Аб'яднанне кантактаў"
@@ -11292,10 +11295,10 @@
         "Кожныя ${ interval } тыдні ў панядзелак"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у панядзелак у ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак у ${ timesString }",
-        "Кожных ${ interval } тыдняў у панядзелак у ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак у ${ timesString }"
+        "Кожны ${ interval } тыдзень у панядзелак; час: ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак; час: ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак; час: ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак; час: ${ timesString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Кожны ${ interval } тыдзень у суботу",
@@ -11328,10 +11331,10 @@
         "Кожныя ${ interval } тыдні ў аўторак"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у аўторак у ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак у ${ timesString }",
-        "Кожных ${ interval } тыдняў у аўторак у ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак у ${ timesString }"
+        "Кожны ${ interval } тыдзень у аўторак; час: ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак; час: ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак; час: ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак; час: ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Кожны ${ interval } тыдзень у сераду",
