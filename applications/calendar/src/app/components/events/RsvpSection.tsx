@@ -75,7 +75,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingSend, withLoadingSend] = useLoading();
 
-    const formattedUserComment = useUrlifyString({ text: userComment, urlifyOptions: { target: '_blank' } });
+    const formattedUserComment = useUrlifyString({ text: userComment });
 
     const isUnchanged = model.Status === userPartstat && model.Comment === userComment;
 
