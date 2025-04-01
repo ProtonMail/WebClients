@@ -103,7 +103,7 @@ export const DeleteAlbumModal = ({
             <ModalTwoContent>
                 <p>
                     {c('Info')
-                        .t`Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.`}
+                        .t`Some photos in this album may not be saved to your timeline. Deleting this album will permanently delete those photos.`}
                 </p>
                 <p>{c('Info').t`Would you like to save them before removing?`}</p>
             </ModalTwoContent>
