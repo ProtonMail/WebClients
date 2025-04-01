@@ -39,7 +39,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
 
   return (
     <>
-      <ContentSheet className="grow overflow-auto rounded-b-none pb-4">
+      <ContentSheet isBottom className="grow overflow-auto pb-4">
         <table className="mb-0 w-full table-fixed text-[14px]">
           {itemsSections.map(({ id, items }, sectionIndex) => (
             <Fragment key={id}>
@@ -83,21 +83,24 @@ function Head({ isSecondary = false, sectionId, variant }: HeadProps) {
   return (
     <Table.Head>
       <Table.Header colSpan={!isSecondary ? undefined : 4}>
-        <span className="flex flex-nowrap items-center gap-[.375rem]">
-          <span>{getSectionLabel(sectionId)}</span>
-          {firstHeaderShowArrow ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
-        </span>
+        <div className="flex items-center justify-between">
+          <span className="flex flex-nowrap items-center gap-[.375rem]">
+            <span>{getSectionLabel(sectionId)}</span>
+            {firstHeaderShowArrow ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
+          </span>
+          <span className="-me-3 small:hidden">{isRecents ? <SortSelect /> : null}</span>
+        </div>
       </Table.Header>
       {!isSecondary ? (
         <>
-          <Table.Header>
+          <Table.Header hideOnSmallDevices>
             <span className="flex flex-nowrap items-center gap-[.375rem]">
               <span>{secondHeaderLabel}</span>
               {secondHeaderShowArrow ? <Icon name="arrow-down" size={4} className="text-[--icon-norm]" /> : null}
             </span>
           </Table.Header>
-          <Table.Header>{c('Recent documents table header').t`Created by`}</Table.Header>
-          <Table.Header>
+          <Table.Header hideOnSmallDevices>{c('Recent documents table header').t`Created by`}</Table.Header>
+          <Table.Header hideOnSmallDevices>
             <div className="flex flex-nowrap items-center justify-between">
               <span>{c('Recent documents table header').t`Location`}</span>
               {isRecents ? <SortSelect /> : null}
@@ -157,6 +160,8 @@ function SortSelect() {
 
 function getSectionLabel(id: ItemsSectionId): string {
   switch (id) {
+    case 'search-results':
+      return c('Recent documents table header').t`Search results`
     case 'name':
       return c('Recent documents table header').t`Name`
     case 'today':
@@ -250,6 +255,7 @@ function Row({ document, variant }: RowProps) {
   }
 
   const isRecents = variant.startsWith('recents')
+  const isSearch = variant === 'search'
 
   return (
     <Table.Row
@@ -284,7 +290,7 @@ function Row({ document, variant }: RowProps) {
         </span>
       </Table.DataCell>
 
-      <Table.DataCell>
+      <Table.DataCell hideOnSmallDevices>
         <span className="capitalize">{getRelativeDate(document)}</span>
       </Table.DataCell>
 
@@ -308,7 +314,7 @@ function Row({ document, variant }: RowProps) {
       <Table.DataCell hideOnSmallDevices>
         <div className="-ms-2 flex flex-nowrap">
           {locationContent}
-          {isRecents ? (
+          {isRecents || isSearch ? (
             <Button
               onClick={(event) => {
                 event.stopPropagation()
