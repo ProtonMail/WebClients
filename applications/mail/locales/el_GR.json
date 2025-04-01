@@ -1375,11 +1375,11 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
-      "Upgrade Now": [
-        "Αναβαθμίστε Τώρα"
-      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
+      ],
+      "Upgrade Now": [
+        "Αναβαθμίστε Τώρα"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
@@ -6732,6 +6732,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Συμπεριλάβετε την προτροπή σας και την απάντησή σας για να μας βοηθήσετε να βελτιώσουμε την ακρίβεια."
       ],
+      "Included for free with your plan": [
+        "Συμπεριλαμβάνεται δωρεάν με το πλάνο σας"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Συμπεριλαμβανομένου ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -8389,11 +8392,11 @@
       "AND": [
         "ΚΑΙ"
       ],
-      "and": [
-        "και"
-      ],
       "And": [
         "Και"
+      ],
+      "and": [
+        "και"
       ],
       "Anderson": [
         "Anderson"
@@ -10548,6 +10551,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited για 12 μήνες"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } για 12 μήνες"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
@@ -10571,9 +10580,6 @@
       ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus για 12 μήνες"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
