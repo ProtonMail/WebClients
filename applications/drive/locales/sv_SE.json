@@ -987,6 +987,9 @@
       "Upload folder": [
         "Ladda upp mapp"
       ],
+      "Upload from computer": [
+        "Ladda upp från dator"
+      ],
       "Upload photos": [
         "Ladda upp ett foton"
       ],
@@ -2525,11 +2528,6 @@
         "Försenad faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
@@ -2560,9 +2558,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Håll dina filer, foton och dokument säkra med end-to-end-kryptering."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sammanfogar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
@@ -2611,6 +2606,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3649,18 +3649,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "Åtkomst på mobil och dator"
-      ],
-      "Free 5 GB storage": [
-        "Gratis 5 GB lagringsutrymme"
-      ],
-      "Save files for later access": [
-        "Spara filer för senare åtkomst"
-      ],
-      "Share privately and securely": [
-        "Dela privat och säkert"
-      ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
       ]
@@ -4158,10 +4146,6 @@
         "${ addressCount } e-postadress",
         "${ addressCount } e-postadresser"
       ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } objekt",
-        "${ album.photoCount } objekt"
-      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } har tagits bort"
       ],
@@ -4256,6 +4240,10 @@
       "${ pausedCount } paused": [
         "${ pausedCount } pausad",
         "${ pausedCount } pausade"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } objekt",
+        "${ photoCount } objekt"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
@@ -7857,6 +7845,11 @@
         "Lås upp alla ${ BRAND_NAME } premiumprodukter och funktioner för bara ${ priceLine }. Avbryt när som helst."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7869,11 +7862,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8459,6 +8447,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Obegränsat i 12 månader"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } för 12 månader"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
@@ -8482,9 +8476,6 @@
       ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus för 12 månader"
       ],
       "Maybe later": [
         "Kanske senare"
@@ -8570,10 +8561,10 @@
       "Invite members": [
         "Bjud in medlemmar"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Kanske senare"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Kanske senare"
       ],
       "Select theme": [
@@ -9818,6 +9809,47 @@
         "För ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "and 15 more premium features": [
+        "och 15 fler premiumfunktioner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk vidarebefordran av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varningar om dataintrång ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivbordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
+      ],
+      "No ads or tracking": [
+        "Inga annonser eller spårning"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadress"
+      ],
+      "Support our mission": [
+        "Stöd vårt uppdrag"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade your productivity": [
+        "Uppgradera din produktivitet"
+      ],
+      "We don't sell your data": [
+        "Vi säljer inte din data"
+      ],
+      "Your privacy is our mission": [
+        "Din integritet är vårt uppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
@@ -10076,47 +10108,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "and 15 more premium features": [
-        "och 15 fler premiumfunktioner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk vidarebefordran av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varningar om dataintrång ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivbordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjälp oss att hålla Internet säkert och privat för alla. Uppgradera till ett betalt paket."
-      ],
-      "No ads or tracking": [
-        "Inga annonser eller spårning"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Support our mission": [
-        "Stöd vårt uppdrag"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade your productivity": [
-        "Uppgradera din produktivitet"
-      ],
-      "We don't sell your data": [
-        "Vi säljer inte din data"
-      ],
-      "Your privacy is our mission": [
-        "Din integritet är vårt uppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -10920,9 +10911,6 @@
       ],
       "Restore your files": [
         "Återställ dina filer"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "Spara det till senare i ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Spara det till senare i ${ DRIVE_APP_NAME }"
