@@ -16,7 +16,7 @@ export function HomepageContent() {
   return (
     <ContextMenuProvider>
       <PreloadImages urls={[emptyStateImage]} />
-      <div className="flex h-full w-full flex-col flex-nowrap gap-5 px-2 pt-2">{useRenderHomepageView()}</div>
+      <div className="flex h-full w-full flex-col flex-nowrap gap-5 small:pr-2">{useRenderHomepageView()}</div>
     </ContextMenuProvider>
   )
 }
@@ -110,7 +110,7 @@ function EmptyState({ variant }: EmptyStateProps) {
   const { getLocalID } = useAuthentication()
 
   return (
-    <ContentSheet className="flex grow items-center justify-center">
+    <ContentSheet isBottom className="flex grow items-center justify-center">
       <div className="flex flex-col items-center gap-8 py-8">
         <img
           className="w-custom"

@@ -19,7 +19,15 @@ import { useEvent, useSubscribe } from '~/utils/misc'
 
 const ALLOWED_SORT_VALUES = ['viewed', 'modified', 'name'] as const
 const DEFAULT_RECENTS_SORT = 'viewed' satisfies RecentsSort
-const ORDERED_SECTION_IDS = ['name', 'today', 'yesterday', 'previous7Days', 'previous30Days', 'earlier'] as const
+const ORDERED_SECTION_IDS = [
+  'search-results',
+  'name',
+  'today',
+  'yesterday',
+  'previous7Days',
+  'previous30Days',
+  'earlier',
+] as const
 
 // types
 // -----
@@ -55,8 +63,9 @@ export type HomepageViewState =
 export type HomepageViewValue = {
   state: HomepageViewState
   setRecentsSort: (value: RecentsSort) => void
-  setSearch: (value: string | undefined) => void
+  setSearch: (value: string | undefined, exclusive?: boolean) => void
   updateRecentDocuments: () => Promise<void>
+  isRecentsUpdating: boolean
 }
 
 export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)
@@ -77,6 +86,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
     recentDocuments,
     updateRecentDocuments,
     isLoading: isRecentsLoading,
+    isUpdating: isRecentsUpdating,
     isInitial: isRecentsInitial,
   } = useRecentDocuments({ search })
   const { trashedDocuments, isLoading: isTrashedLoading } = useTrashedDocuments()
@@ -99,8 +109,9 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
       setRecentsSort,
       setSearch,
       updateRecentDocuments,
+      isRecentsUpdating,
     }),
-    [setRecentsSort, setSearch, state, updateRecentDocuments],
+    [isRecentsUpdating, setRecentsSort, setSearch, state, updateRecentDocuments],
   )
 
   return <HomepageViewContext.Provider value={value}>{children}</HomepageViewContext.Provider>
@@ -216,7 +227,7 @@ function useHomepageViewState({
         outputState.itemSections = splitIntoSectionsByName(recentDocuments)
       }
     } else if (outputState.view === 'search') {
-      outputState.itemSections = splitIntoSectionsByName(recentDocuments)
+      outputState.itemSections = splitIntoSectionsByName(recentDocuments, { isSearchResults: true })
     } else if (outputState.view === 'trashed') {
       outputState.itemSections = splitIntoSectionsByName(trashedDocuments)
     }
@@ -245,8 +256,8 @@ function useQueryState<T extends string | undefined>(name: string, defaultValue:
   const resolvedValue = isAllowed(paramValue) ? (paramValue as T) : defaultValue
 
   const setParam = useCallback(
-    (value: T) => {
-      const newParams = new URLSearchParams(location.search)
+    (value: T, exclusive = false) => {
+      const newParams = new URLSearchParams(exclusive ? undefined : location.search)
       if (isDefault(value) || value === undefined || value === '') {
         newParams.delete(name)
       } else {
@@ -303,8 +314,8 @@ function useRecentDocuments({ search }: { search?: string }) {
 
   const isEmpty = items.length === 0
   const isInitial = state === 'not_fetched'
-  const isRefreshing = state === 'fetching' || state === 'resolving'
-  const isLoading = isEmpty && isRefreshing
+  const isUpdating = state === 'fetching' || state === 'resolving'
+  const isLoading = isEmpty && isUpdating
 
   const startTimeRef = useRef<number>()
   useEffect(() => {
@@ -331,6 +342,7 @@ function useRecentDocuments({ search }: { search?: string }) {
     recentDocuments: filteredItems,
     updateRecentDocuments,
     isInitial,
+    isUpdating,
     isLoading,
   }
 }
@@ -432,6 +444,11 @@ export function splitIntoSectionsByTime(
   return sections
 }
 
-function splitIntoSectionsByName(items: RecentDocumentsItem[]): ItemsSection[] {
-  return [{ id: 'name', items: items.sort((a, b) => a.name.localeCompare(b.name)) }]
+function splitIntoSectionsByName(
+  items: RecentDocumentsItem[],
+  { isSearchResults = false }: { isSearchResults?: boolean } = {},
+): ItemsSection[] {
+  return [
+    { id: isSearchResults ? 'search-results' : 'name', items: items.sort((a, b) => a.name.localeCompare(b.name)) },
+  ]
 }
