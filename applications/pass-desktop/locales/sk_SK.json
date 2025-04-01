@@ -247,6 +247,9 @@
       "Dismiss": [
         "Odmietnuť"
       ],
+      "Download": [
+        "Stiahnuť"
+      ],
       "Download this CSV template": [
         "Stiahnuť si túto CSV šablónu"
       ],
@@ -400,10 +403,10 @@
       "Move to another vault": [
         "Presunúť do iného trezoru"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Presunúť do koša"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Presunúť do koša"
       ],
       "Multiple select": [
@@ -481,6 +484,9 @@
       "Remove member": [
         "Odstániť člena"
       ],
+      "Rename": [
+        "Premenovať"
+      ],
       "Request a feature": [
         "Požiadavka na funkciu"
       ],
@@ -492,6 +498,9 @@
       ],
       "Resend invitation": [
         "Znovu poslať pozvánku"
+      ],
+      "Reset": [
+        "Resetovať"
       ],
       "Restore": [
         "Obnoviť"
@@ -1062,9 +1071,6 @@
       "File could not be parsed": [
         "Súbor sa nepodarilo analyzovať"
       ],
-      "File could not be read": [
-        "Súbor sa nedá čítať"
-      ],
       "File does not match expected format": [
         "Súbor nezodpovedá očakávanému formátu"
       ],
@@ -1454,11 +1460,11 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias bol úspešne vypnutý. Už nebudete dostávať emaily odoslané na adresu ${ item.aliasEmail }"
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias bol úspešne deaktivovaný. Už nebudete dostávať emaily odoslané na adresu ${ item.aliasEmail }"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias bol úspešne zapnutý. Teraz môžete prijímať emaily odoslané na adresu ${ item.aliasEmail }"
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias bol úspešne povolený. Teraz môžete prijímať emaily odoslané na adresu ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Synchronizácia aliasov medzi vašimi kontami ${ BRAND_NAME } a SimpleLogin je aktívna."
@@ -1628,9 +1634,6 @@
       "Drop to import": [
         "Presuňte na import"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Z dôvodu obmedzení rozšírení v prehliadači Safari bude po exporte údajov chýbať prípona súboru \".pgp\". Po exporte premenujte súbor tak, aby obsahoval príponu .pgp (napr. file.pgp)."
-      ],
       "Editor": [
         "Editor"
       ],
@@ -1760,17 +1763,8 @@
       "Identity confirmed": [
         "Identita potvrdená"
       ],
-      "Import in progress:": [
-        "Prebieha import:"
-      ],
       "Import the CSV file below.": [
         "Importovať CSV súbor nižšie."
-      ],
-      "Imported ${ payload.total } item": [
-        "Importovaná ${ payload.total } položka",
-        "Importované ${ payload.total } položky",
-        "Importovaných ${ payload.total } položiek",
-        "Importovaných ${ payload.total } položiek"
       ],
       "Imported on ${ date }": [
         "Importované ${ date }"
@@ -1810,12 +1804,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zdá sa, že účet ${ PASS_APP_NAME } už je prihlásený. Ak sa pokúšate prihlásiť pomocou iného účtu, najskôr sa odhláste z rozšírenia, prosím."
-      ],
-      "item": [
-        "položka",
-        "položky",
-        "položiek",
-        "položiek"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Položka \"${ payload.item.data.metadata.name }\" bola vytvorená"
@@ -1903,12 +1891,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2242,12 +2224,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Na použitie ${ PASS_APP_NAME } bude vyžadované dodatočné heslo. Funguje ako dodatočné heslo k vášmu heslu pre ${ BRAND_NAME }."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Nasledujúcu ${ result.ignored.length } položku nebolo možné importovať:",
-        "Nasledujúce ${ result.ignored.length } položky nebolo možné importovať:",
-        "Nasledujúcich ${ result.ignored.length } položiek nebolo možné importovať:",
-        "Nasledujúcich ${ result.ignored.length } položiek nebolo možné importovať:"
       ],
       "The secure link has been removed": [
         "Bezpečný odkaz bol odstránený"
@@ -2854,6 +2830,9 @@
       "Field name": [
         "Názov poľa"
       ],
+      "File": [
+        "Súbor"
+      ],
       "File format": [
         "Formát súboru"
       ],
@@ -3138,9 +3117,6 @@
       ],
       "Personalize": [
         "Prispôsobenie"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP-šifrovaný JSON (odporúča sa)"
       ],
       "Phone number": [
         "Telefónne číslo"
@@ -3806,6 +3782,9 @@
       "Aliases": [
         "Aliasy"
       ],
+      "Attachments": [
+        "Prílohy"
+      ],
       "Auto create/on the fly alias": [
         "Automatické vytváranie aliasov za behu"
       ],
@@ -4433,9 +4412,6 @@
       ],
       "Passwords do not match": [
         "Heslá sa nezhodujú"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Šifrovaný exportný súbor PGP vyžaduje prístupovú frázu"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Skontrolujte prosím, či je rozšírenie správne nainštalované a povolené."
