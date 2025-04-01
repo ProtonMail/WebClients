@@ -64,7 +64,7 @@ const RsvpButtons = ({
 const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled, view }: Props) => {
     const [displayNoteOverlay, setDisplayNoteOverlay] = useState(false);
     const activeBreakpoint = useActiveBreakpoint();
-    const isDrawerOrResponsiveView = getIsCalendarAppInDrawer(view) || activeBreakpoint.viewportWidth['<=medium'];
+    const isDrawerOrResponsiveView = getIsCalendarAppInDrawer(view) || activeBreakpoint.viewportWidth['<=small'];
     const isSearchView = view === VIEWS.SEARCH;
 
     const [model, setModel] = useState<PartstatData>({
