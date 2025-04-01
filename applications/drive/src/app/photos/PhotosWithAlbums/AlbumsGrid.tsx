@@ -15,6 +15,7 @@ type AlbumsGridProps = {
     onItemClick: (shareId: string, linkId: string) => void;
     onItemShare: (linkId: string) => void;
     onItemRename: (linkId: string) => void;
+    onItemDelete: (album: DecryptedAlbum) => void;
 };
 
 export const AlbumsGrid: FC<AlbumsGridProps> = ({
@@ -25,6 +26,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
     onItemClick,
     onItemShare,
     onItemRename,
+    onItemDelete,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
@@ -128,6 +130,9 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
                         onShare={() => {
                             onItemShare(item.linkId);
                         }}
+                        onDelete={() => {
+                            onItemDelete(item);
+                        }}
                         style={{
                             position: 'absolute',
                             width: itemWidth,
@@ -161,6 +166,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
         onItemRenderLoadedLink,
         onItemShare,
         onItemRename,
+        onItemDelete,
     ]);
 
     return (
