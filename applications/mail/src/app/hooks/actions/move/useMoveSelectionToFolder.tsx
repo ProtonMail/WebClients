@@ -35,6 +35,9 @@ import type { Element } from 'proton-mail/models/element';
 import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
+import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
+import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
+
 const { INBOX, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 interface MoveSelectionParams extends MoveParams {
@@ -63,6 +66,8 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const [moveScheduledModal, handleShowScheduledModal] = useModalTwo(MoveScheduledModal);
     const [moveSnoozedModal, handleMoveSnoozedModal] = useModalTwo(MoveSnoozedModal);
     const [moveToSpamModal, handleShowSpamModal] = useModalTwo(MoveToSpamModal);
+
+    const { handleOnBackMoveAction } = useMoveBackAction();
 
     const moveSelectionToFolder = useCallback(
         async ({
@@ -124,6 +129,8 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                 });
                 return;
             }
+
+            handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.MOVE, destinationLabelID, elements });
 
             const { doCreateFilters, undoCreateFilters } = getFilterActions();
 
