@@ -3,7 +3,7 @@ import React, { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Loader, useAppTitle, useModalStateObject } from '@proton/components';
+import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
@@ -11,9 +11,11 @@ import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { AlbumTag, useThumbnailsDownload } from '../../store';
+import { useLinksActions } from '../../store/_links';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useCreateAlbum, useRenameAlbum } from '../PhotosActions/Albums';
 import { CreateAlbumModal } from '../PhotosModals/CreateAlbumModal';
+import { useDeleteAlbumModal } from '../PhotosModals/DeleteAlbumModal';
 import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { usePhotosWithAlbumsView } from '../PhotosStore/usePhotosWithAlbumView';
@@ -49,6 +51,7 @@ export const AlbumsView: FC = () => {
         isAlbumsLoading,
         loadPhotoLink,
         requestDownload,
+        deleteAlbum,
         refreshSharedWithMeAlbums,
     } = usePhotosWithAlbumsView();
 
@@ -56,9 +59,12 @@ export const AlbumsView: FC = () => {
     const createAlbumModal = useModalStateObject();
     const renameAlbumModal = useModalStateObject();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    const [deleteAlbumModal, showDeleteAlbumModal] = useDeleteAlbumModal();
     const createAlbum = useCreateAlbum();
     const renameAlbum = useRenameAlbum();
     const [renameAlbumLinkId, setRenameAlbumLinkId] = useState<string>('');
+    const { moveLinks } = useLinksActions();
+    const { createNotification } = useNotifications();
 
     const thumbnails = useThumbnailsDownload();
     const { navigateToPhotos, navigateToAlbum, navigateToAlbums } = useNavigate();
@@ -124,6 +130,59 @@ export const AlbumsView: FC = () => {
             }
         },
         [shareId, volumeId, renameAlbumLinkId, renameAlbum]
+    );
+
+    const handleDeleteAlbum = useCallback(
+        async (
+            abortSignal: AbortSignal,
+            album: DecryptedAlbum,
+            { missingPhotosIds, force }: { missingPhotosIds: string[]; force: boolean }
+        ) => {
+            if (!linkId) {
+                return;
+            }
+            try {
+                if (!force) {
+                    await moveLinks(abortSignal, {
+                        shareId: album.rootShareId,
+                        linkIds: missingPhotosIds,
+                        newShareId: shareId,
+                        newParentLinkId: linkId,
+                    });
+                }
+                await deleteAlbum(abortSignal, album.linkId, force);
+            } catch (e) {
+                if (e instanceof Error && e.message) {
+                    createNotification({ text: e.message, type: 'error' });
+                }
+                sendErrorReport(e);
+            }
+            const albumName = album.name;
+            createNotification({
+                text: c('Info').t`${albumName} has been successfully deleted`,
+            });
+        },
+        [linkId, createNotification, deleteAlbum, moveLinks, shareId]
+    );
+
+    // For delete album we do the happy path and just compare with photos you have in cache.
+    // In most cases, if user have all the photos in his library will mean there are no direct children inside the album
+    // There is a fallback in the modal in case BE detect that some items are direct children of the album
+    const onDeleteAlbum = useCallback(
+        async (album: DecryptedAlbum) => {
+            const abortSignal = new AbortController().signal;
+            void showDeleteAlbumModal({
+                missingPhotosCount: album.photoCount,
+                name: album.name,
+                deleteAlbum: (force, childLinkIds) =>
+                    // childLinkIds are from BE, so this is a better source of truth compare to missingPhotosIds
+                    handleDeleteAlbum(abortSignal, album, { missingPhotosIds: childLinkIds || [], force }),
+                onDeleted: () => {
+                    navigateToAlbums();
+                },
+            });
+        },
+        [handleDeleteAlbum, showDeleteAlbumModal, navigateToAlbums]
     );
 
     const isAlbumsEmpty = albums.length === 0;
@@ -195,6 +254,7 @@ export const AlbumsView: FC = () => {
                         setRenameAlbumLinkId(linkId);
                         renameAlbumModal.openModal(true);
                     }}
+                    onItemDelete={onDeleteAlbum}
                 />
             )}
 
@@ -206,6 +266,7 @@ export const AlbumsView: FC = () => {
                     renameAlbum={onRenameAlbum}
                 />
             )}
+            {deleteAlbumModal}
         </>
     );
 };
