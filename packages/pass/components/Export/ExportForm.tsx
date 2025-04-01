@@ -122,6 +122,15 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                                 </span>
                             </span>
                         </Field>
+                        {form.values.fileAttachments && form.values.format === ExportFormat.PGP && (
+                            <Card className="my-4 p-1 text-sm" type="warning">
+                                <div className={'flex items-start flex-nowrap w-full gap-2'}>
+                                    <Icon name="info-circle-filled" size={3} className="shrink-0 mt-0.5" />
+                                    <span>{c('Pass_file_attachments')
+                                        .t`The exported file attachments will not be encrypted.`}</span>
+                                </div>
+                            </Card>
+                        )}
                     </FeatureFlag>
                 )}
 
