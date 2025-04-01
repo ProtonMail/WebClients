@@ -44,6 +44,7 @@ const PrivateHeader = ({
     hideMenuButton = false,
     hideUpsellButton = false,
     app,
+    className,
 }: Props) => {
     useIsPaidUserCookie();
 
@@ -54,7 +55,7 @@ const PrivateHeader = ({
     const isCalendarOnElectron = APP_NAME === APPS.PROTONCALENDAR && isElectronMail;
 
     return (
-        <Header className={clsx(isProminent && 'ui-prominent', isCalendarOnElectron && 'pl-16 md:pl-2')}>
+        <Header className={clsx(isProminent && 'ui-prominent', isCalendarOnElectron && 'pl-16 md:pl-2', className)}>
             {!hideMenuButton && <Hamburger expanded={expanded} onToggle={onToggleExpand} />}
             {/* Handle actionArea in components itself rather than here */}
             <div className="flex-1">{actionArea}</div>

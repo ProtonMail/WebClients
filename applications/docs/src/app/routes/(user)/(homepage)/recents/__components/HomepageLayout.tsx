@@ -2,20 +2,28 @@ import { type ReactNode } from 'react'
 
 import {
   AppsDropdown,
+  AppVersion,
   DrawerApp,
+  getAppVersion,
   Icon,
   Logo,
+  NOTIFICATION_DEFAULT_EXPIRATION_TIME,
   PrivateAppContainer,
   PrivateHeader,
   PrivateMainArea,
   Sidebar as ProtonSidebar,
   SidebarList,
   SidebarListItem,
+  SidebarListItemDiv,
   SidebarListItemLink,
   SidebarNav,
+  Tooltip,
   TopBanners,
   useActiveBreakpoint,
+  useAppTitle,
   useAuthentication,
+  useConfig,
+  useNotifications,
   UserDropdown,
   useToggle,
 } from '@proton/components'
@@ -24,13 +32,18 @@ import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
 import { c } from 'ttag'
-import { ButtonLike, Input } from '@proton/atoms'
+import { Button, ButtonLike, Input } from '@proton/atoms'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import './HomepageLayout.css'
+import type { HomepageViewState } from '../__utils/homepage-view'
 import { useHomepageView } from '../__utils/homepage-view'
 import { useHistory, useRouteMatch } from 'react-router'
 import { HOMEPAGE_RECENTS_PATH } from '../../../__components/AppContainer'
 import { useEvent } from '~/utils/misc'
+import clsx from '@proton/utils/clsx'
+
+const USER_DROPDOWN_OVERRIDES =
+  '[&_.user-dropdown-displayName]:font-[0.8571428571em] [&_.user-dropdown-displayName]:leading-[1.2]'
 
 // layout
 // ------
@@ -51,9 +64,11 @@ export type HomepageLayoutProps = {
 }
 
 export function HomepageLayout({ children }: HomepageLayoutProps) {
-  const { state: expanded, toggle: toggleExpanded } = useToggle()
+  const { state: expanded, toggle: toggleExpanded, set: setExpanded } = useToggle()
+  usePageTitle()
   return (
     <PrivateAppContainer
+      containerRef={(el) => el?.classList.add('is-homepage')}
       top={
         <>
           <InternalPageNotice />
@@ -61,10 +76,12 @@ export function HomepageLayout({ children }: HomepageLayoutProps) {
         </>
       }
       header={<Header toggleHeaderExpanded={toggleExpanded} isHeaderExpanded={expanded} />}
-      sidebar={<Sidebar expanded={expanded} onToggle={toggleExpanded} />}
+      sidebar={<Sidebar expanded={expanded} onToggle={toggleExpanded} setExpanded={setExpanded} />}
       drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
     >
-      <PrivateMainArea hasToolbar>{children}</PrivateMainArea>
+      <PrivateMainArea className="!border-t-0 [&>div]:[block-size:100%]" hasToolbar>
+        {children}
+      </PrivateMainArea>
     </PrivateAppContainer>
   )
 }
@@ -83,15 +100,16 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
   const searchValue = state.view === 'search' || state.view === 'search-empty' ? state.query : undefined
 
   return (
-    <div className="homepage-header shrink-0 items-center justify-center">
+    <div className="homepage-header shrink-0 items-center justify-center small:pe-8">
       <PrivateHeader
+        className={clsx('flex !h-[4.25rem] items-center !pe-0 !ps-2 small:!px-0', USER_DROPDOWN_OVERRIDES)}
         app={APPS.PROTONDRIVE}
         userDropdown={<UserDropdown app={APPS.PROTONDOCS} />}
         title={c('Title').t`Docs`}
         expanded={isHeaderExpanded}
         onToggleExpand={toggleHeaderExpanded}
         isSmallViewport={viewportWidth['<=small']}
-        actionArea={<Search value={searchValue} onChange={setSearch} />}
+        actionArea={<Search value={searchValue} onChange={(value) => setSearch(value, true)} />}
       />
     </div>
   )
@@ -108,24 +126,23 @@ function Search({ value, onChange }: SearchProps) {
   const handleChange = useEvent((value: string | undefined) => {
     // Ensure that the user is redirected to the recents page when searching.
     if (value && value.length > 0 && !isRecentsRoute) {
-      history.replace('/recents')
+      history.push('/recents')
     }
     onChange(value)
   })
   return (
-    <div className="mt-1 max-w-[490px] md:mt-0">
-      <Input
-        inputClassName="h-[32px] md:h-auto"
-        prefix={
-          <span>
-            <Icon size={5} color="weak" name="magnifier" alt={c('Action').t`Search`} />
-          </span>
-        }
-        value={value ?? ''}
-        onChange={(e) => handleChange(e.target.value)}
-        placeholder={c('Action').t`Search recent documents`}
-      />
-    </div>
+    <Input
+      className="max-w-[30.625rem]"
+      inputClassName="h-[32px] small:h-auto"
+      prefix={
+        <span>
+          <Icon size={5} color="weak" name="magnifier" alt={c('Action').t`Search`} />
+        </span>
+      }
+      value={value ?? ''}
+      onChange={(e) => handleChange(e.target.value)}
+      placeholder={c('Action').t`Search recent documents`}
+    />
   )
 }
 
@@ -134,78 +151,156 @@ function Search({ value, onChange }: SearchProps) {
 
 const FAVORITES_ENABLED = false
 
-type SidebarProps = { expanded: boolean; onToggle: () => void }
+type SidebarProps = { expanded: boolean; onToggle: () => void; setExpanded: (value: boolean) => void }
 
-function Sidebar({ expanded, onToggle }: SidebarProps) {
+function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
   const { getLocalID } = useAuthentication()
+  const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
+  const history = useHistory()
+  const { updateRecentDocuments, isRecentsUpdating } = useHomepageView()
+  const { createNotification } = useNotifications()
+  const { APP_VERSION } = useConfig()
+  const appVersion = getAppVersion(APP_VERSION)
+
+  const newDocumentButton = (
+    <ButtonLike
+      as="a"
+      href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())}
+      target="_blank"
+      color="norm"
+      size="large"
+      shape="solid"
+      className="flex items-center justify-center gap-2 !bg-[--docs-blue-color] small:mx-[.375rem]"
+    >
+      {c('Action').t`New document`}
+    </ButtonLike>
+  )
+
   return (
     <ProtonSidebar
-      className="ui-standard"
-      expanded={expanded}
-      onToggleExpand={onToggle}
-      app="proton-docs"
+      app={APPS.PROTONDOCS}
       appsDropdown={<AppsDropdown app={APPS.PROTONDOCS} />}
       logo={<Logo appName={APPS.PROTONDOCS} />}
-      primary={
-        <ButtonLike
-          as="a"
-          href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())}
-          target="_blank"
-          color="norm"
-          size="large"
-          shape="solid"
-          className="flex items-center justify-center gap-2 !bg-[--docs-blue-color]"
-        >
-          {c('Action').t`New document`}
-        </ButtonLike>
-      }
+      expanded={expanded}
+      onToggleExpand={onToggle}
+      className={clsx(
+        'ui-standard !pt-3 small:!pt-0 small:[&_.app-infos]:!px-[1.125rem] [&_.logo-container]:!hidden [&_.logo-container]:!h-[4.25rem] [&_.logo-container]:!p-[1.125rem] small:[&_.logo-container]:!flex',
+        USER_DROPDOWN_OVERRIDES,
+      )}
+      primary={newDocumentButton}
+      version={<AppVersion appVersion={appVersion.split('+')[0]} fullVersion={appVersion} />}
     >
-      <SidebarNav>
+      <div className="px-3 pb-3 pt-2 small:hidden">{newDocumentButton}</div>
+      <SidebarNav className="small:px-[.375rem]">
         <SidebarList>
-          <SidebarListItem>
+          <SidebarListItem onClick={() => setExpanded(false)}>
             <SidebarListItemLink
               to="/recents"
               exact={true}
-              className="flex items-center gap-2"
+              data-updating={isRecentsUpdating ? '' : undefined}
+              className="flex items-center justify-between"
               activeClassName="!font-semibold"
             >
-              <Icon name="house" /> {c('Info').t`Recents`}
+              <span className="flex items-center gap-2">
+                <Icon name="house" />
+                <span>{c('Info').t`Recents`}</span>
+              </span>
+              <Tooltip title={c('Info').t`Update recent documents`}>
+                <Button
+                  aria-label={c('Info').t`Update recent documents`}
+                  icon
+                  size="small"
+                  shape="ghost"
+                  className="-mr-1"
+                  disabled={isRecentsUpdating}
+                  onClick={async (e) => {
+                    e.stopPropagation()
+                    e.preventDefault()
+                    if (!isRecents) {
+                      history.push('/recents')
+                    }
+                    await updateRecentDocuments()
+                    createNotification({
+                      text: c('Notification').t`Recent documents updated.`,
+                      expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
+                    })
+                    setExpanded(false)
+                  }}
+                >
+                  <Icon
+                    data-updating={isRecentsUpdating ? '' : undefined}
+                    className="data-[updating]:animate-spin"
+                    name="arrow-rotate-right"
+                  />
+                </Button>
+              </Tooltip>
             </SidebarListItemLink>
           </SidebarListItem>
           {FAVORITES_ENABLED && (
-            <SidebarListItem>
-              <SidebarListItemLink
-                to="/favorites"
-                exact={true}
-                className="flex items-center gap-2"
-                activeClassName="!font-semibold"
-              >
-                <Icon name="star" /> {c('Info').t`Favorites`}
+            <SidebarListItem onClick={() => setExpanded(false)}>
+              <SidebarListItemLink to="/favorites" exact={true} activeClassName="!font-semibold">
+                <span className="flex items-center gap-2">
+                  <Icon name="star" />
+                  <span>{c('Info').t`Favorites`}</span>
+                </span>
               </SidebarListItemLink>
             </SidebarListItem>
           )}
-          <SidebarListItem>
-            <SidebarListItemLink
-              to="/trashed"
-              exact={true}
-              className="flex items-center gap-2"
-              activeClassName="!font-semibold"
-            >
-              <Icon name="trash" /> {c('Info').t`Trashed`}
+          <SidebarListItem onClick={() => setExpanded(false)}>
+            <SidebarListItemLink to="/trashed" exact={true} activeClassName="!font-semibold">
+              <span className="flex items-center gap-2">
+                <Icon name="trash" />
+                <span>{c('Info').t`Trashed`}</span>
+              </span>
             </SidebarListItemLink>
           </SidebarListItem>
 
-          <SidebarListItem>
-            <SidebarListItemLink
-              to={getAppHref('/', APPS.PROTONDRIVE, getLocalID())}
-              className="flex items-center gap-2"
+          <SidebarListItem onClick={() => setExpanded(false)}>
+            <a
+              className="!text-[var(--sidebar-text-color,var(--text-norm))] no-underline"
+              href={getAppHref('/', APPS.PROTONDRIVE, getLocalID())}
               target="_blank"
             >
-              <Icon name="brand-proton-drive" /> {c('Info').t`Go to ${DRIVE_APP_NAME}`}
-            </SidebarListItemLink>
+              <SidebarListItemDiv className="flex items-center gap-2">
+                <Icon name="brand-proton-drive" /> {c('Info').t`Go to ${DRIVE_APP_NAME}`}
+              </SidebarListItemDiv>
+            </a>
           </SidebarListItem>
         </SidebarList>
       </SidebarNav>
     </ProtonSidebar>
   )
+}
+
+// page title
+// ----------
+
+function usePageTitle() {
+  const { state } = useHomepageView()
+  useAppTitle(titleByViewState(state))
+}
+
+function titleByViewState(state: HomepageViewState): string {
+  switch (state.view) {
+    case 'search-initial':
+    case 'search-loading':
+    case 'search-empty':
+    case 'search':
+      return `${c('Page title').t`Searching`} "${state.query}"`
+    case 'recents-initial':
+    case 'recents-empty':
+    case 'recents-loading':
+    case 'recents':
+      return c('Page title').t`Recents`
+    case 'favorites-empty':
+    case 'favorites-loading':
+    case 'favorites':
+      return c('Page title').t`Favorites`
+    case 'trashed-loading':
+    case 'trashed-empty':
+    case 'trashed':
+      return c('Page title').t`Trashed`
+    case 'unknown':
+      return ''
+  }
 }
