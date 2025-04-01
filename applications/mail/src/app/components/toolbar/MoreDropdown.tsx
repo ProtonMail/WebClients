@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import type { Breakpoints } from '@proton/components';
 import { DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
 import { labelIncludes } from '@proton/mail/labels/helpers';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
@@ -72,7 +71,6 @@ interface Props {
     isExtraTiny: boolean;
     onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
     onDelete: (sourceAction: SOURCE_ACTION) => void;
-    breakpoints: Breakpoints;
     onCheckAll?: (check: boolean) => void;
 }
 
@@ -85,7 +83,6 @@ const MoreDropdown = ({
     isExtraTiny,
     onMove,
     onDelete,
-    breakpoints,
     onCheckAll,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
@@ -231,7 +228,6 @@ const MoreDropdown = ({
                           selectedIDs={selectedIDs}
                           onClose={onClose}
                           onLock={onLock}
-                          breakpoints={breakpoints}
                           isMessage={!isConversationMode(labelID, mailSettings)}
                           selectAll={selectAll}
                           onCheckAll={onCheckAll}
@@ -246,7 +242,6 @@ const MoreDropdown = ({
                           selectedIDs={selectedIDs}
                           onClose={onClose}
                           onLock={onLock}
-                          breakpoints={breakpoints}
                           selectAll={selectAll}
                           onCheckAll={onCheckAll}
                       />

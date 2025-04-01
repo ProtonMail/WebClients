@@ -6,7 +6,6 @@ import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Label } from '@proton/shared/lib/interfaces';
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { Element } from 'proton-mail/models/element';
@@ -33,7 +32,6 @@ const getProps = (labelID: string | undefined = undefined, selectAll = false) =>
     labelID: labelID ? labelID : MAILBOX_LABEL_IDS.INBOX,
     onClose: jest.fn(),
     onLock: jest.fn(),
-    breakpoints: mockDefaultBreakpoints,
     selectAll: selectAll,
 });
 

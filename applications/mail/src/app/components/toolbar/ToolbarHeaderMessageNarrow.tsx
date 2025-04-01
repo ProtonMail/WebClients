@@ -16,7 +16,10 @@ import ReadUnreadButtons from './ReadUnreadButtons';
 import type { Props as ToolbarProps } from './Toolbar';
 
 interface Props
-    extends Omit<ToolbarProps, 'onCheck' | 'columnMode' | 'sort' | 'onSort' | 'filter' | 'onFilter' | 'mailSettings'> {
+    extends Omit<
+        ToolbarProps,
+        'onCheck' | 'columnMode' | 'sort' | 'onSort' | 'filter' | 'onFilter' | 'mailSettings' | 'breakpoints'
+    > {
     classname: string;
 }
 
@@ -41,7 +44,6 @@ const ToolbarHeaderMessageNarrow = ({
     labelID,
     onMove,
     onDelete,
-    breakpoints,
     loading = false,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
@@ -86,7 +88,6 @@ const ToolbarHeaderMessageNarrow = ({
                         <LabelsAndFolders
                             labelID={labelID}
                             selectedIDs={selectedIDs}
-                            breakpoints={breakpoints}
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
                             onCheckAll={onCheckAll}
@@ -105,7 +106,6 @@ const ToolbarHeaderMessageNarrow = ({
                         isExtraTiny={localIsExtraTiny}
                         onMove={onMove}
                         onDelete={onDelete}
-                        breakpoints={breakpoints}
                         onCheckAll={onCheckAll}
                     />
 
