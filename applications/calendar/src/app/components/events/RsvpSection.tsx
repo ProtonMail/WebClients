@@ -242,7 +242,9 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                             loading={loadingSend}
                             disabled={
                                 displayNoteOverlay &&
-                                (isUnchanged || !model.Comment || model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
+                                (isUnchanged ||
+                                    !model.Comment?.trim() ||
+                                    model.Status === ICAL_ATTENDEE_STATUS.NEEDS_ACTION)
                             }
                         >{c('Action').t`Send`}</Button>
                     </div>
