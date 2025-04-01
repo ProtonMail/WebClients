@@ -152,10 +152,10 @@
       "Create": [
         "Стварыць"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
       "Create alias": [
@@ -247,6 +247,9 @@
       ],
       "Done": [
         "Гатова"
+      ],
+      "Download": [
+        "Спампаваць"
       ],
       "Download this CSV template": [
         "Спампаваць гэты шаблон CSV"
@@ -464,6 +467,9 @@
       "Remove member": [
         "Выдаліць удзельніка"
       ],
+      "Rename": [
+        "Перайменаваць"
+      ],
       "Request a feature": [
         "Запытаць функцыю"
       ],
@@ -475,6 +481,9 @@
       ],
       "Resend invitation": [
         "Паўторна адправіць запрашэнне"
+      ],
+      "Reset": [
+        "Скінуць"
       ],
       "Restore": [
         "Аднавіць"
@@ -995,9 +1004,6 @@
       "File could not be parsed": [
         "Не атрымалася прааналізаваць файл"
       ],
-      "File could not be read": [
-        "Не атрымалася прачытаць файл"
-      ],
       "File does not match expected format": [
         "Файл не адпавядае фармату, які чакаўся"
       ],
@@ -1384,10 +1390,10 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "У мэтах бяспекі вы можаце выдаліць файл CSV, які змяшчае вашы паролі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Псеўданім паспяхова адключаны. Вы больш не будзеце атрымліваць лісты адпраўленыя на ${ item.aliasEmail }"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Псеўданім паспяхова ўключаны. Цяпер вы зноў можаце атрымліваць лісты адпраўленыя на ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
@@ -1570,9 +1576,6 @@
       "Drop to import": [
         "Перацягніце для імпартавання"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Па прычыне абмежавання пашырэнняў браўзера Safari, пасля экспартавання даных будзе адсутнічаць пашырэнне файла \".pgp\". Змяніце назву файла, каб яно ўключала пашырэнне .pgp пасля экспартавання (напрыклад, file.pgp)"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Без намаганняў імпартуйце вашы існуючыя паролі ў ${ PASS_APP_NAME }."
       ],
@@ -1702,17 +1705,8 @@
       "Identity confirmed": [
         "Ідэнтычнасць пацверджана"
       ],
-      "Import in progress:": [
-        "Выконваецца імпартаванне:"
-      ],
       "Import the CSV file below.": [
         "Імпартуйце файл CSV ніжэй."
-      ],
-      "Imported ${ payload.total } item": [
-        "Імпартаваны ${ payload.total } элемент",
-        "Імпартавана ${ payload.total } элементы",
-        "Імпартавана ${ payload.total } элементаў",
-        "Імпартавана ${ payload.total } элементаў"
       ],
       "Imported on ${ date }": [
         "Імпартавана ${ date }"
@@ -1743,12 +1737,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Спачатку выйдзіце з уліковага запісу ў пашырэнні, калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
-      ],
-      "item": [
-        "элемент",
-        "элементы",
-        "элементаў",
-        "элементаў"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Створаны элемент \"${ payload.item.data.metadata.name }\""
@@ -1982,7 +1970,7 @@
         "Падумайце пра тое, каб пакінуць водгук."
       ],
       "Please contact your administrator": [
-        "Звярніцеся да адміністратара"
+        "Звярніцеся да свайго адміністратара"
       ],
       "Please do not close this window": [
         "Не закрывайце акно"
@@ -2151,12 +2139,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Для выкарыстання ${ PASS_APP_NAME } спатрэбіцца дадатковы пароль. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",
-        "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементы:",
-        "Не атрымалася імпартаваць наступных ${ result.ignored.length } элементаў:",
-        "Не атрымалася імпартаваць наступных ${ result.ignored.length } элементаў:"
       ],
       "The secure link has been removed": [
         "Бяспечная спасылка выдалена"
@@ -2760,6 +2742,9 @@
       "Field name": [
         "Назва поля"
       ],
+      "File": [
+        "Файл"
+      ],
       "File format": [
         "Фармат файла"
       ],
@@ -3008,9 +2993,6 @@
       ],
       "Personal website": [
         "Асабісты вэб-сайт"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON зашыфраваны PGP (рэкамендавана)"
       ],
       "Phone number": [
         "Нумар тэлефона"
@@ -3599,6 +3581,9 @@
       "Aliases": [
         "Псеўданімы"
       ],
+      "Attachments": [
+        "Далучэнні"
+      ],
       "Auto create/on the fly alias": [
         "Аўтаматычнае старэнне або імгненных псеўданімы"
       ],
@@ -4154,9 +4139,6 @@
       ],
       "Passwords do not match": [
         "Паролі не супадаюць"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
       ],
       "Please contact us to investigate the issue": [
         "Звяжыцеся з намі для даследавання праблемы"

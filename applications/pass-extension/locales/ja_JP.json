@@ -152,11 +152,11 @@
       "Create": [
         "作成"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを作成する"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
       ],
       "Create alias": [
         "エイリアスを作成"
@@ -247,6 +247,9 @@
       ],
       "Done": [
         "完了"
+      ],
+      "Download": [
+        "ダウンロード"
       ],
       "Download this CSV template": [
         "この CSV テンプレートをダウンロード"
@@ -464,6 +467,9 @@
       "Remove member": [
         "メンバーを削除する"
       ],
+      "Rename": [
+        "名前を変更"
+      ],
       "Request a feature": [
         "機能を提案"
       ],
@@ -475,6 +481,9 @@
       ],
       "Resend invitation": [
         "招待の再送"
+      ],
+      "Reset": [
+        "リセット"
       ],
       "Restore": [
         "復元"
@@ -980,9 +989,6 @@
       "File could not be parsed": [
         "ファイルを解析できませんでした。"
       ],
-      "File could not be read": [
-        "ファイルを読み込むことができませんでした"
-      ],
       "File does not match expected format": [
         "予期しないファイル形式です"
       ],
@@ -1324,10 +1330,10 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "エイリアスを無効にしました。 ${ item.aliasEmail }に送信されたメールは受信できなくなります"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "エイリアスを有効にしました。 ${ item.aliasEmail }に送信されたメールを受信できるようになりました"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
@@ -1510,9 +1516,6 @@
       "Drop to import": [
         "ドロップしてインポート"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Safariブラウザ拡張機能の制限が原因で、データをエクスポートした後、ファイル拡張子\".pgp\"がなくなってしまいます。エクスポートした後は、ファイルを .pgpを含む名前でリネームしてください。(例えば、file.pgpのように)"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "既存のパスワードを ${ PASS_APP_NAME } に簡単にインポートします。"
       ],
@@ -1636,14 +1639,8 @@
       "Identity confirmed": [
         "本人確認済み"
       ],
-      "Import in progress:": [
-        "インポートが進行中:"
-      ],
       "Import the CSV file below.": [
         "以下のCSVファイルをインポートします。"
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } 件のアイテムをインポートしました"
       ],
       "Imported on ${ date }": [
         "${ date } にインポートされました"
@@ -1674,9 +1671,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "すでに ${ PASS_APP_NAME } にログインしているようです。 別のアカウントでログインしようとしている場合は、まず拡張機能からログアウトしてください。"
-      ],
-      "item": [
-        "アイテム"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "アイテム「${ payload.item.data.metadata.name }」が作成されました"
@@ -2068,9 +2062,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } を使用するには追加パスワードが必要になります。追加パスワードは ${ BRAND_NAME } のパスワードに加えて、さらに追加して必要になるパスワードとして機能します。"
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "次の ${ result.ignored.length } 個のアイテムをインポート出来ませんでした:"
-      ],
       "The secure link has been removed": [
         "セキュアリンクは削除されました"
       ],
@@ -2094,6 +2085,9 @@
       ],
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "この操作は元に戻せません。ドメイン${ domainTextBold }を使用しているすべてのエイリアスが削除されます。削除されたエイリアスは復元できないことにご注意ください。"
+      ],
+      "This option is currently not available on your browser.": [
+        "このオプションは現在お使いのブラウザでは利用できません。"
       ],
       "This option is currently not available on your device.": [
         "このオプションは現在お使いのデバイスでは利用できません。"
@@ -2260,6 +2254,9 @@
       "You may close this tab.": [
         "このタブを閉じても構いません。"
       ],
+      "You need a vault with edit permission before you can import items.": [
+        "アイテムをインポートするには、編集権限のある保管庫が必要です。"
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "ドメイン認証後に、ドメイン設定(キャッチオールメールエイリアス、エイリアスの既定の表示名など)をカスタマイズをすることができます。"
       ],
@@ -2336,6 +2333,9 @@
       ],
       "${ repliedCount } reply": [
         "${ repliedCount }件の返信"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } 個のセキュアリンク"
       ],
       "${ years } year": [
         "${ years }年"
@@ -2613,6 +2613,9 @@
       "Field name": [
         "フィールド名"
       ],
+      "File": [
+        "ファイル"
+      ],
       "File format": [
         "ファイル形式"
       ],
@@ -2861,9 +2864,6 @@
       ],
       "Personal website": [
         "個人ウェブサイト"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP 暗号化 JSON (推奨)"
       ],
       "Phone number": [
         "電話番号"
@@ -3440,6 +3440,9 @@
       "Aliases": [
         "エイリアス"
       ],
+      "Attachments": [
+        "添付ファイル"
+      ],
       "Auto create/on the fly alias": [
         "自動作成/緊急エイリアス"
       ],
@@ -3773,6 +3776,9 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME }メモとSimpleLoginメモの違いはなんですか？"
       ],
+      "You don't have any vaults": [
+        "保管庫がありません"
+      ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName }サブスクリプションは${ endDate }に終了します"
       ],
@@ -3968,9 +3974,6 @@
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP暗号化エクスポートファイルにはパスフレーズが必要です"
       ],
       "Please contact us to investigate the issue": [
         "この問題の調査のため、私たちにご連絡ください"

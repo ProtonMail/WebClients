@@ -149,11 +149,11 @@
       "Create": [
         "Создать"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Создайте свой аккаунт ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Создать аккаунт ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Создайте свой аккаунт ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Создать псевдоним"
@@ -238,6 +238,9 @@
       ],
       "Done": [
         "Готово"
+      ],
+      "Download": [
+        "Скачать"
       ],
       "Download this CSV template": [
         "Скачайте этот шаблон CSV"
@@ -455,6 +458,9 @@
       "Remove member": [
         "Удалить участника"
       ],
+      "Rename": [
+        "Переименовать"
+      ],
       "Request a feature": [
         "Запросить функцию"
       ],
@@ -466,6 +472,9 @@
       ],
       "Resend invitation": [
         "Отправить повторное приглашение"
+      ],
+      "Reset": [
+        "Сбросить"
       ],
       "Restore": [
         "Восстановить"
@@ -962,9 +971,6 @@
       "File could not be parsed": [
         "Файл не может быть обработан"
       ],
-      "File could not be read": [
-        "Файл не может быть прочитан"
-      ],
       "File does not match expected format": [
         "Файл не соответствует ожидаемому формату"
       ],
@@ -1321,12 +1327,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Псевдоним успешно отключен. Вы больше не будете получать письма, отправленные на ${ item.aliasEmail }"
-      ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Псевдоним успешно включен. Теперь вы можете получать электронные письма, отправленные на ${ item.aliasEmail }"
-      ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Синхронизация псевдонимов между вашими аккаунтами ${ BRAND_NAME } и SimpleLogin активна."
       ],
@@ -1507,9 +1507,6 @@
       "Drop to import": [
         "Импортировать"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "В связи с ограничением расширений браузера Safari после экспорта данных в расширении файла будет отсутствовать \".pgp\". После экспорта переименуйте файл, изменив его расширение на .pgp (например, file.pgp)."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Легко импортируйте ваше существующие пароли в ${ PASS_APP_NAME }."
       ],
@@ -1633,17 +1630,8 @@
       "Identity confirmed": [
         "Личные данные подтверждены"
       ],
-      "Import in progress:": [
-        "Выполняется импорт:"
-      ],
       "Import the CSV file below.": [
         "Импортируйте файл CSV ниже."
-      ],
-      "Imported ${ payload.total } item": [
-        "Импортирован ${ payload.total } элемент",
-        "Импортировано ${ payload.total } элемента",
-        "Импортировано ${ payload.total } элементов",
-        "Импортировано ${ payload.total } элемента"
       ],
       "Imported on ${ date }": [
         "Импортировано ${ date }"
@@ -1674,12 +1662,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если ты пытаешься войти с другой учётной записью, пожалуйста, сначала выйдите из расширения."
-      ],
-      "item": [
-        "элемент",
-        "элемента",
-        "элементов",
-        "элементов"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Элемент \"${ payload.item.data.metadata.name }\" создан"
@@ -2064,12 +2046,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Дополнительный пароль потребуется для использования ${ PASS_APP_NAME }. Он действует как дополнительный пароль поверх вашего пароля ${ BRAND_NAME }."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Следующий ${ result.ignored.length } элемент не может быть импортирован:",
-        "Следующие ${ result.ignored.length } элемента не могут быть импортированы:",
-        "Следующие ${ result.ignored.length } элементов не могут быть импортированы:",
-        "Следующие ${ result.ignored.length } элемента не могут быть импортированы:"
       ],
       "The secure link has been removed": [
         "Защищенная ссылка удалена"
@@ -2628,6 +2604,9 @@
       "Field name": [
         "Название поля"
       ],
+      "File": [
+        "Файл"
+      ],
       "File format": [
         "Формат файла"
       ],
@@ -2876,9 +2855,6 @@
       ],
       "Personal website": [
         "Личный сайт"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON с PGP-шифрованием (рекомендуется)"
       ],
       "Phone number": [
         "Номер телефона"
@@ -3458,6 +3434,9 @@
       "Aliases": [
         "Псевдонимы"
       ],
+      "Attachments": [
+        "Вложения"
+      ],
       "Auto create/on the fly alias": [
         "Автоматическое создание/псевдонимы на лету"
       ],
@@ -3938,9 +3917,6 @@
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Для файла экспорта с шифрованием в PGP требуется парольная фраза"
       ],
       "Please contact us to investigate the issue": [
         "Пожалуйста, свяжитесь с нами для изучения проблемы"
