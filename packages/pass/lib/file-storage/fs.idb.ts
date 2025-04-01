@@ -114,7 +114,7 @@ export const IDBWritableStream = (db: IDBPDatabase<PassFileDB>, filename: string
         },
 
         abort: async (reason) => {
-            logger.warn('[fs::IDB] Write stream aborted.', reason);
+            logger.debug('[fs::IDB] Write stream aborted.', reason);
             const tx = db.transaction(['files', 'metadata'], 'readwrite');
             await Promise.all(removeIDBFileChunks(tx)(filename, chunkIndex));
             db.close();
@@ -150,16 +150,16 @@ export class FileStorageIDB implements FileStorage {
             await IDBReadableStream(db, filename).pipeTo(writableStream);
             return new File(blobs, filename, { type });
         } catch (err) {
-            logger.warn('[fs::IDB] Could not resolve file.', err);
+            logger.debug('[fs::IDB] Could not resolve file.', err);
             return;
         }
     }
 
     async writeFile(filename: string, file: FileBuffer | ReadableStream<FileBuffer>, signal: AbortSignal) {
-        try {
-            const db = await openPassFileDB();
-            if (signal.aborted) db.close();
+        if (signal.aborted) throw new DOMException('Write operation aborted', 'AbortError');
+        const db = await openPassFileDB();
 
+        try {
             if (file instanceof ReadableStream) {
                 const writable = IDBWritableStream(db, filename);
                 const stream = this.gc ? file.pipeThrough(this.gc.stream(filename)) : file;
@@ -167,13 +167,14 @@ export class FileStorageIDB implements FileStorage {
             } else {
                 const tx = db.transaction(['files', 'metadata'], 'readwrite');
                 await writeIDBFileChunk(tx)(filename, 0, file);
-                db.close();
                 this.gc?.push(filename);
             }
         } catch (err) {
-            logger.warn('[fs::IDB] Could not write file.', err);
+            logger.debug('[fs::IDB] Could not write file.', err);
             await this.deleteFile(filename).catch(noop);
             throw err;
+        } finally {
+            db.close();
         }
     }
 
