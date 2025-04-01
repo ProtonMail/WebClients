@@ -60,7 +60,6 @@ import TableIcon from '../Icons/TableIcon'
 import UndoIcon from '../Icons/UndoIcon'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/Commands'
-import { BackgroundColors, TextColors } from '../Shared/Color'
 import { DefaultFont, FontOptions, FontSizes } from '../Shared/Fonts'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { getHTMLElementFontSize } from '../Utils/getHTMLElementFontSize'
@@ -941,20 +940,35 @@ export default function DocumentEditorToolbar({
         {
           id: 'font-color-dropdown',
           type: 'dropdown',
-          dropdownProps: DropdownContentProps,
+          dropdownProps: {
+            ...DropdownContentProps,
+            contentProps: {
+              style: {
+                '--max-width': 'none',
+              },
+            },
+          },
+          hasCaret: false,
           label: (target) => (
             <>
-              <Icon name="palette" />
+              <div
+                className="border-weak bg-norm relative h-4 w-4 rounded-[4px] border text-[0.75rem]"
+                aria-hidden="true"
+                style={{
+                  backgroundColor,
+                  color: textColor,
+                }}
+              >
+                <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">A</span>
+              </div>
               <span className={target === 'toolbar' ? 'sr-only' : 'mr-auto'}>{c('Action').t`Colour`}</span>
             </>
           ),
           menu: (
             <FontColorMenu
               currentTextColor={textColor}
-              textColors={TextColors}
               onTextColorChange={(color) => updateTextStyle('color', color)}
               currentBackgroundColor={backgroundColor}
-              backgroundColors={BackgroundColors}
               onBackgroundColorChange={(color) => updateTextStyle('background-color', color)}
             />
           ),
