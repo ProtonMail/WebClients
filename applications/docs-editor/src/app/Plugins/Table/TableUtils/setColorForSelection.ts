@@ -3,7 +3,7 @@ import { $isTableSelection } from '@lexical/table'
 import type { LexicalEditor } from 'lexical'
 import { $getSelection } from 'lexical'
 
-export function setColorForSelection(editor: LexicalEditor, color: string) {
+export function setColorForSelection(editor: LexicalEditor, color: string | null) {
   editor.update(
     () => {
       const selection = $getSelection()
