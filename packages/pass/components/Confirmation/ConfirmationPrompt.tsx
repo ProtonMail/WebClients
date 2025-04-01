@@ -33,7 +33,7 @@ export const ConfirmationPrompt: FC<Props> = ({
         <Prompt
             open
             className="pass-prompt"
-            title={<span className="text-break">{title}</span>}
+            title={<span className="text-break text-ellipsis-four-lines">{title}</span>}
             buttons={[
                 <Button onClick={onConfirm} color={danger ? 'danger' : 'norm'} pill loading={loading}>
                     {confirmText ?? c('Action').t`Confirm`}
