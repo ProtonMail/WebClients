@@ -17,6 +17,8 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
+import { MOVE_BACK_ACTION_TYPES } from './moveBackAction/interfaces';
+import { useMoveBackAction } from './moveBackAction/useMoveBackAction';
 
 export const useStar = () => {
     const api = useApi();
@@ -25,6 +27,8 @@ export const useStar = () => {
     const dispatch = useMailDispatch();
     const { sendSimpleActionReport } = useListTelemetry();
     const isES = useIsEncryptedSearch();
+
+    const { handleOnBackMoveAction } = useMoveBackAction();
 
     const star = useCallback(
         async (elements: Element[], value: boolean, labelID: string, sourceAction: SOURCE_ACTION) => {
@@ -49,6 +53,13 @@ export const useStar = () => {
                 // Stop the event manager to prevent race conditions
                 stop();
                 dispatch(backendActionStarted());
+
+                handleOnBackMoveAction({
+                    type: MOVE_BACK_ACTION_TYPES.STAR,
+                    elements,
+                    isUnstarringElement: !value,
+                });
+
                 rollback = optimisticApplyLabels({
                     elements,
                     inputChanges: { [MAILBOX_LABEL_IDS.STARRED]: value },
