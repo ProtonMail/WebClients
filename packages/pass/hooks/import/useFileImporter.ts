@@ -59,7 +59,7 @@ export const useFileImporter = () => {
                                                 });
                                                 return createNotification({
                                                     type: 'error',
-                                                    text: c('Error')
+                                                    text: c('Pass_file_attachments')
                                                         .t`"${filename}" is too large to upload. The maximum allowed size is (${maxFileSizeInMB})`,
                                                 });
                                             }
@@ -72,7 +72,7 @@ export const useFileImporter = () => {
                                             const detail = error instanceof Error ? `(${error.message})` : '';
                                             createNotification({
                                                 type: 'error',
-                                                text: `${c('Error').t`"${filename}" could not be imported.`} ${detail}`,
+                                                text: `${c('Pass_file_attachments').t`"${filename}" could not be imported.`} ${detail}`,
                                             });
                                         } finally {
                                             setProgress((progress) => progress + 1);
