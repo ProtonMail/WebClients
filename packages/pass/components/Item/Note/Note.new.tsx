@@ -84,10 +84,10 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
                             name="note"
                             placeholder={c('Placeholder').t`Write your note`}
                             maxLength={MAX_ITEM_NOTE_LENGTH}
-                            minRows={5}
+                            minRows={1}
                             rows={Number.MAX_SAFE_INTEGER}
                         />
-                        <FieldsetCluster>
+                        <FieldsetCluster className="mt-4">
                             <Field name="files" component={FileAttachmentsField} />
                         </FieldsetCluster>
                     </Form>
