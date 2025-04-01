@@ -137,9 +137,9 @@ export const RevisionDiff: FC = () => {
 
             {files.length > 0 && (
                 <FileAttachmentsView filesCount={files.length}>
-                    {files.map((file, key) => (
+                    {files.map((file) => (
                         <FileAttachment
-                            key={`file-${key}`}
+                            key={file.fileUID}
                             file={file}
                             loading={restoring.has(file.fileID)}
                             disabled={selected === latest || !file.revisionRemoved || latestFileUUIDs.has(file.fileUID)}
