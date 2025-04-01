@@ -16,6 +16,11 @@ export default {
           max: '749px',
         },
         'head-max-479': { max: '479px' },
+        xlarge: { min: '1500px' },
+        large: { min: '1100px' },
+        medium: { min: '910px' },
+        small: { min: '680px' },
+        xsmall: { min: '450px' },
       },
     },
     colors: {

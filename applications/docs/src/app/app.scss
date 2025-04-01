@@ -31,15 +31,15 @@ input[type='number'] {
 	}
 }
 
-.content-container > .content.flex.flex-column {
+.content-container:not(.is-homepage *) > .content.flex.flex-column {
 	background: var(--background-weak);
 }
 
-.main-area-border {
+.main-area-border:not(.is-homepage *) {
 	border-block-start: 0;
 }
 
-.main-area {
+.main-area:not(.is-homepage *) {
 	background-color: white;
 
 	> div {
@@ -48,7 +48,7 @@ input[type='number'] {
 }
 
 // These values are set to `inherit` originally which causes the entire element to disappear for some reason on hover.
-.no-doc-header .user-dropdown-button.interactive--no-background {
+.no-doc-header:not(.is-homepage *) .user-dropdown-button.interactive--no-background {
 	&:hover,
 	&:focus,
 	&:focus-visible,
@@ -74,7 +74,7 @@ input[type='number'] {
 }
 
 /* Hide the user name and email in the header viewing a document */
-.user-dropdown-text:not(.homepage-header *, .error-header *) {
+.user-dropdown-text:not(.is-homepage *, .homepage-header *, .error-header *) {
 	display: none;
 }
 
@@ -92,7 +92,7 @@ input[type='number'] {
 	animation: spin 1s linear infinite;
 }
 
-.user-dropdown-button {
+.user-dropdown-button:not(.is-homepage *) {
 	.user-initials {
 		font-size: 12px;
 		line-height: 17.5px;
@@ -104,7 +104,7 @@ input[type='number'] {
 }
 
 @media (width <=42.5em) {
-	.user-dropdown-button {
+	.user-dropdown-button:not(.is-homepage *) {
 		padding: 0;
 		inline-size: unset;
 		border: 0;
@@ -172,6 +172,6 @@ input[type='number'] {
 	}
 }
 
-.dropdown-content {
+.dropdown-content:not(.is-homepage *) {
 	background-image: none;
 }
