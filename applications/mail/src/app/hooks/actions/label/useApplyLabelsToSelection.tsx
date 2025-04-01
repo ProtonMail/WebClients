@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
@@ -12,7 +12,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
-import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/useApplyLabels';
 import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
 import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -20,77 +19,11 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
 import { useOptimisticApplyLabels } from '../../optimistic/useOptimisticApplyLabels';
+import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
+import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
 import { useCreateFilters } from '../useCreateFilters';
-
-const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
-    if (isMessage) {
-        if (elementsCount === 1) {
-            return c('Success').t`Message marked as Starred.`;
-        }
-        return c('Success').ngettext(
-            msgid`${elementsCount} message marked as Starred.`,
-            `${elementsCount} messages marked as Starred.`,
-            elementsCount
-        );
-    }
-
-    if (elementsCount === 1) {
-        return c('Success').t`Conversation marked as Starred.`;
-    }
-    return c('Success').ngettext(
-        msgid`${elementsCount} conversation marked as Starred.`,
-        `${elementsCount} conversations marked as Starred.`,
-        elementsCount
-    );
-};
-
-const getNotificationTextRemoved = (isMessage: boolean, elementsCount: number, labelName: string) => {
-    if (isMessage) {
-        if (elementsCount === 1) {
-            return c('Success').t`Message removed from ${labelName}.`;
-        }
-        return c('Success').ngettext(
-            msgid`${elementsCount} message removed from ${labelName}.`,
-            `${elementsCount} messages removed from ${labelName}.`,
-            elementsCount
-        );
-    }
-
-    if (elementsCount === 1) {
-        return c('Success').t`Conversation removed from ${labelName}.`;
-    }
-    return c('Success').ngettext(
-        msgid`${elementsCount} conversation removed from ${labelName}.`,
-        `${elementsCount} conversations removed from ${labelName}.`,
-        elementsCount
-    );
-};
-
-interface ApplyLabelsToSelectionParams extends ApplyLabelsParams {
-    isMessage: boolean;
-}
-
-const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, labelName: string) => {
-    if (isMessage) {
-        if (elementsCount === 1) {
-            return c('Success').t`Message added to ${labelName}.`;
-        }
-        return c('Success').ngettext(
-            msgid`${elementsCount} message added to ${labelName}.`,
-            `${elementsCount} messages added to ${labelName}.`,
-            elementsCount
-        );
-    }
-
-    if (elementsCount === 1) {
-        return c('Success').t`Conversation added to ${labelName}.`;
-    }
-    return c('Success').ngettext(
-        msgid`${elementsCount} conversation added to ${labelName}.`,
-        `${elementsCount} conversations added to ${labelName}.`,
-        elementsCount
-    );
-};
+import { getNotificationTextAdded, getNotificationTextRemoved, getNotificationTextStarred } from './helper';
+import type { ApplyLabelsToSelectionParams } from './interface';
 
 export class ApplyLabelsError extends Error {
     errors: any;
@@ -116,6 +49,8 @@ export const useApplyLabelsToSelection = () => {
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
     const isES = useIsEncryptedSearch();
 
+    const { handleOnBackMoveAction } = useMoveBackAction();
+
     const applyLabels = useCallback(
         async ({
             elements,
@@ -139,6 +74,8 @@ export const useApplyLabelsToSelection = () => {
             const rollbacks = {} as { [labelID: string]: () => void };
 
             const { doCreateFilters, undoCreateFilters } = getFilterActions();
+
+            handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.APPLY_LABEL, changes, elements });
 
             const handleUndo = async (promiseTokens: Promise<PromiseSettledResult<string | undefined>[]>) => {
                 try {
