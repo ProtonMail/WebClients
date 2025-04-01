@@ -25,6 +25,7 @@ import type {
     ItemRevision,
     MaybeNull,
     SelectedItem,
+    TabId,
 } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -35,7 +36,7 @@ type ExportFileProgress = { totalItems: number; itemFilesCount: number } & Selec
  * item being processed, track processed items and files, then calculate
  * total progress as finished items plus partial completion of current item
  * before dispatching percentage updates. */
-function* progressWorker(channel: Channel<ExportFileProgress>) {
+function* progressWorker(channel: Channel<ExportFileProgress>, tabId?: TabId) {
     let currentItem: MaybeNull<SelectedItem> = null;
     let processedItems = 0;
     let processedFiles = 0;
@@ -59,7 +60,7 @@ function* progressWorker(channel: Channel<ExportFileProgress>) {
         const remaining = currentItem ? (processedFiles / itemFilesCount) * (100 / totalItems) : 0;
         const progress = Math.ceil(base + remaining);
 
-        yield put(requestProgress(exportData.requestID(), progress));
+        yield put(requestProgress(exportData.requestID({ tabId }), progress));
     }
 }
 
@@ -71,7 +72,7 @@ type ExportState = {
 
 export const exportUserData = createRequestSaga({
     actions: exportData,
-    call: function* ({ fileAttachments, format, passphrase }, { getConfig }) {
+    call: function* ({ fileAttachments, format, passphrase, tabId }, { getConfig }) {
         const state: ExportState = {};
         const ctrl = new AbortController();
 
@@ -83,7 +84,7 @@ export const exportUserData = createRequestSaga({
             const config = getConfig();
 
             const progressChannel = channel<ExportFileProgress>();
-            const progressTask: Task = yield fork(progressWorker, progressChannel);
+            const progressTask: Task = yield fork(progressWorker, progressChannel, tabId);
 
             /** The files object is populated as a side effect when the files stream
              * is consumed during ZIP creation. We intentionally add the JSON export

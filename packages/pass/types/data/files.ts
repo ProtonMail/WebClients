@@ -10,7 +10,7 @@ export type FileDescriptor = BaseFileDescriptor & {
     fileUID: string;
 };
 
-export type FileInitiateUploadDTO = FileMetadata & { totalChunks: number };
+export type FileInitiateUploadDTO = FileMetadata & { totalChunks: number; uploadID: string };
 export type FileChunkUploadDTO = { fileID: FileID; index: number } & (
     | { type: 'blob'; blob: Blob }
     | { type: 'fs'; ref: string }

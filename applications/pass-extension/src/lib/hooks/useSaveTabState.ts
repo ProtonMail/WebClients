@@ -10,7 +10,7 @@ import { saveTabState } from '@proton/pass/store/actions/creators/filters';
 import { intoDomainWithPort } from '@proton/pass/utils/url/utils';
 
 export const useSaveTabState = () => {
-    const { getCurrentTabUrl } = usePassCore();
+    const { getCurrentTab } = usePassCore();
     const { tabId } = useExtensionContext();
     const { filters } = useNavigationFilters();
     const selectedItem = useSelectedItem();
@@ -23,7 +23,7 @@ export const useSaveTabState = () => {
     const savePopupState = useRef(false);
 
     const popupTabState = useMemo(() => {
-        const url = getCurrentTabUrl?.();
+        const url = getCurrentTab?.()?.url;
         return {
             domain: url ? intoDomainWithPort({ ...url, as: 'host' }) : null,
             filters: { search, sort, type, selectedShareId },

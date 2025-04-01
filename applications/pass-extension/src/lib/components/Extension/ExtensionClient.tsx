@@ -39,11 +39,11 @@ type Props = {
 };
 
 export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
-    const { endpoint, setCurrentTabUrl, onTelemetry } = usePassCore();
+    const { endpoint, setCurrentTab, onTelemetry } = usePassCore();
     const config = usePassConfig();
 
     const dispatch = useDispatch();
-    const { url, port } = useExtensionContext();
+    const { url, port, tabId } = useExtensionContext();
 
     const activityProbe = useExtensionActivityProbe();
 
@@ -78,7 +78,7 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
             denyUrls: [],
         });
 
-        if (url) setCurrentTabUrl?.(url);
+        setCurrentTab?.({ url, tabId });
 
         if (onWorkerMessage) {
             const listener = (message: unknown) => isExtensionMessage(message) && onWorkerMessage(message);
