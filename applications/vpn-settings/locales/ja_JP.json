@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate organization key": [
         "組織の鍵を有効化する"
@@ -327,6 +327,9 @@
       ],
       "Enable multi-user support": [
         "複数ユーザー対応を有効にする"
+      ],
+      "Explore ${ target }": [
+        "${ target }を探索"
       ],
       "Explore group plans": [
         "グループプランを探索"
@@ -626,18 +629,18 @@
         "支払間隔を選択${ billingText }"
       ],
       "Select city ${ city }": [
-        "都市を選択 ${ city }"
+        "都市 ${ city }を選択"
       ],
       "Select country": [
         "国を選択"
       ],
       "Select country ${ country }": [
-        "国を選択 ${ country }"
-      ],
-      "select file": [
-        "ファイルを選択"
+        "国 ${ country }を選択"
       ],
       "Select file": [
+        "ファイルを選択"
+      ],
+      "select file": [
         "ファイルを選択"
       ],
       "Send code": [
@@ -847,6 +850,9 @@
       ],
       "${ price } per domain": [
         "ドメインあたり ${ price }"
+      ],
+      "${ price } per seat": [
+        "シートあたり ${ price }"
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
@@ -3827,6 +3833,12 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "SSO以外のメンバーの${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } は、あなたの組織にサインインするために2要素認証を使用します。"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } の国は有効です"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } は、ログインパスワードと2番目のパスワードの両方を置き換える単一のパスワードで使用することもできます。 単一のパスワードモードに切り替えるには、使用する単一のパスワードを入力し、保存をクリックします。"
       ],
@@ -3877,6 +3889,9 @@
       ],
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } 件のメールアドレス"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length }個が選択済み"
       ],
       "${ storage } storage": [
         "${ storage } ストレージ"
@@ -4148,9 +4163,6 @@
       "Copy the suggested password to clipboard": [
         "提案されたパスワードをクリップボードにコピーする"
       ],
-      "countries enabled": [
-        "か国が有効になりました"
-      ],
       "Country code": [
         "国コード"
       ],
@@ -4196,10 +4208,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }アプリの外観をカスタマイズ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -4309,6 +4321,9 @@
       ],
       "email": [
         "メール"
+      ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "メールとカレンダーは ${ CONTACTS_APP_NAME } と統合されました"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "メール ホスティングはあなたがお持ちのドメインでのみ利用できます。ドメインの登録は現在、${ BRAND_NAME } 経由では取り扱っていません。ドメイン レジストラーからドメインを登録することでメールのホストが可能になります。"
@@ -4724,6 +4739,9 @@
       "No addresses exist": [
         "アドレスが存在しません"
       ],
+      "No countries enabled": [
+        "有効な国がありません"
+      ],
       "No gateways": [
         "ゲートウェイなし"
       ],
@@ -5066,6 +5084,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "サブスクリプションは ${ cycle } ヶ月ごとに自動更新されます。"
+      ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
       ],
@@ -5085,7 +5106,7 @@
         "記号 (#$&)"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
-        "TechRadar Pro は星 5 つのうち 4.2 点もらっています"
+        "Tech radar proのおすすめ 星 5 つ中の星 4.2"
       ],
       "Thank you": [
         "ありがとうございます"
@@ -5609,6 +5630,9 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "これらのサーバーを 10 日間他の国に再割り当てすることはできません。"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "その後、 ${ renewCycle } ヶ月ごとに ${ renewAmountStr }に請求されます。"
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "${ boldDiscountPercent } から ${ boldPlanTitle } が適用されました"
       ],
@@ -5666,8 +5690,14 @@
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "予定されているプランは ${ renewalTime } から始まり、${ cycle }ヶ月ごとに自動更新されます。"
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "これらのサーバーはすぐに別のゲートウェイに追加できます。"
@@ -5854,10 +5884,10 @@
       "Allow recovery by phone": [
         "電話番号での回復を許可"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "許可されたドメイン"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "許可されたドメイン"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7368,17 +7398,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "トライアルは ${ formattedPeriodEndDate } に終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7469,6 +7488,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "トライアルは ${ formattedPeriodEndDate } に終了します"
       ]
     },
     "new_plans: Label": {
@@ -7934,6 +7964,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "12 ヶ月間の${ BRAND_NAME } Unlimited"
+      ],
+      "${ planName } for 12 months": [
+        "12 ヶ月間の${ planName }"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
@@ -7957,9 +7993,6 @@
       ],
       "Limited-time offer": [
         "期間限定オファー"
-      ],
-      "Mail Plus for 12 months": [
-        "12 か月分のMail Plus"
       ],
       "Maybe later": [
         "またあとで"
@@ -8378,6 +8411,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
+      ],
       "Got it": [
         "わかった"
       ],
@@ -8408,17 +8444,44 @@
       "Processing payment": [
         "支払いの処理中"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
       "Select billing country to pay": [
         "支払い請求先の国を選択してください"
       ],
+      "terms & conditions": [
+        "利用規約"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "クーポンは ${ couponRedemptions } の更新で有効です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "${ priceWithDiscount } の特別割引価格は最初の ${ subscriptionLength } ヶ月間有効です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは 1 ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。そのあとは毎月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "トランザクションが正常に検出されました。トランザクションが完全に確認され次第、クレジットがあなたのアカウントに追加されます。"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "その後、 ${ renewPriceStr } で ${ renewalLength } ヶ月間自動的に更新されます。いつでもキャンセルできます。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "選択した支払い方法により${ amountToCharge }がチャージされます。"
+      ],
+      "Your payment is still being processed": [
+        "お支払いが現在処理中です"
       ]
     },
     "Payments.Error": {
@@ -9859,6 +9922,47 @@
         "${ totalPrice } の場合"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "and 15 more premium features": [
+        "そして、15 個のプレミアム機能"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "自動メール転送${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "データ侵害アラート${ strongArgument }"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
+      ],
+      "No ads or tracking": [
+        "広告もトラッキングもなし"
+      ],
+      "Short @pm.me email address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Support our mission": [
+        "私たちの使命をサポート"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade your productivity": [
+        "生産性を向上させる"
+      ],
+      "We don't sell your data": [
+        "私たちはあなたのデータを販売しません"
+      ],
+      "Your privacy is our mission": [
+        "あなたのプライバシーが私たちの使命です"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
@@ -10141,47 +10245,6 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "and 15 more premium features": [
-        "そして、15 個のプレミアム機能"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "自動メール転送${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "データ侵害アラート${ strongArgument }"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "インターネットを誰にとっても安全でプライベートな状態に保つためにご協力ください。有料プランにアップグレードしてください。"
-      ],
-      "No ads or tracking": [
-        "広告もトラッキングもなし"
-      ],
-      "Short @pm.me email address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Support our mission": [
-        "私たちの使命をサポート"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade your productivity": [
-        "生産性を向上させる"
-      ],
-      "We don't sell your data": [
-        "私たちはあなたのデータを販売しません"
-      ],
-      "Your privacy is our mission": [
-        "あなたのプライバシーが私たちの使命です"
       ]
     },
     "Subscription renewal state": {
@@ -11348,29 +11411,6 @@
         "今日"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
-      ],
-      "Disables end-to-end email encryption for this group": [
-        "このグループのエンドツーエンドのメール暗号化を無効"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
-      ],
-      "Group membership paused": [
-        "グループのメンバーシップは一時停止されました"
-      ],
-      "Sending member invitation": [
-        "メンバー招待を送信中"
-      ],
-      "User declined invitation": [
-        "ユーザーが招待を拒否しました"
-      ],
-      "Waiting for user to accept the invitation": [
-        "ユーザーが招待を受けるのを待っています"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
@@ -11461,6 +11501,29 @@
       ],
       "Your DKIM signing is working.": [
         "DKIM 署名が機能しています。"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2要素認証 などが含まれます。"
+      ],
+      "Disables end-to-end email encryption for this group": [
+        "このグループのエンドツーエンドのメール暗号化を無効"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "他のアドレス - このグループでエンドツーエンド暗号化メールを無効、このユーザーと暗号化されていない情報を共有しません。"
+      ],
+      "Group membership paused": [
+        "グループのメンバーシップは一時停止されました"
+      ],
+      "Sending member invitation": [
+        "メンバー招待を送信中"
+      ],
+      "User declined invitation": [
+        "ユーザーが招待を拒否しました"
+      ],
+      "Waiting for user to accept the invitation": [
+        "ユーザーが招待を受けるのを待っています"
       ]
     },
     "Tor out of date": {
@@ -11828,6 +11891,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "その後、12 か月ごとに ${ renewPriceStr } が請求されます。"
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
       ],
