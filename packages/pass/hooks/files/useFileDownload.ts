@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { intoFileParam, mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
@@ -17,6 +17,7 @@ import noop from '@proton/utils/noop';
 
 export const useFileDownload = () => {
     const { popup } = usePassCore();
+    const tabId = useCurrentTabID();
 
     const dispatch = useDispatch();
     const asyncDispatch = useAsyncRequestDispatch();
@@ -72,7 +73,7 @@ export const useFileDownload = () => {
                         );
                     }
 
-                    const dto = { fileID, chunkIDs, ...options };
+                    const dto = { fileID, chunkIDs, tabId, ...options };
                     return abortable(signal)(
                         () => asyncDispatch(fileDownload, dto),
                         () => dispatch(requestCancel(fileDownload.requestID(dto)))

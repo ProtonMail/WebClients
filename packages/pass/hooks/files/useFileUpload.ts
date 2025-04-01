@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
-import type { FileChunkUploadDTO, FileID, Maybe } from '@proton/pass/types';
+import type { FileChunkUploadDTO, FileID, Maybe, TabId, WithTabId } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
 
@@ -19,18 +19,20 @@ const getChunkDTO = async (
     fileID: string,
     index: number,
     blob: Blob,
+    tabId: Maybe<TabId>,
     signal: AbortSignal
-): Promise<FileChunkUploadDTO> => {
+): Promise<WithTabId<FileChunkUploadDTO>> => {
     if (EXTENSION_BUILD) {
         const ref = `${fileID}.chunk`;
         await fileStorage.writeFile(ref, blob, signal);
-        return { fileID, index, type: 'fs', ref };
+        return { fileID, index, type: 'fs', ref, tabId };
     }
 
-    return { fileID, index, type: 'blob', blob };
+    return { fileID, index, type: 'blob', blob, tabId };
 };
 
 export const useFileUpload = () => {
+    const tabId = useCurrentTabID();
     const { onTelemetry } = usePassCore();
     const asyncDispatch = useAsyncRequestDispatch();
     const dispatch = useDispatch();
@@ -77,7 +79,7 @@ export const useFileUpload = () => {
                     const start = index * FILE_CHUNK_SIZE;
                     const end = Math.min(start + FILE_CHUNK_SIZE, size);
                     const blob = file.slice(start, end);
-                    const dto = await getChunkDTO(fileID, index, blob, ctrl.signal);
+                    const dto = await getChunkDTO(fileID, index, blob, tabId, ctrl.signal);
 
                     const result = await abortable(ctrl.signal)(
                         () => asyncDispatch(fileUploadChunk, dto),

@@ -7,8 +7,10 @@ import { c } from 'ttag';
 
 import type { Dropzone, FileInput } from '@proton/components';
 import { useNotifications } from '@proton/components';
+import { useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
 import { useFileImporter } from '@proton/pass/hooks/import/useFileImporter';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
+import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useRequestDispatch } from '@proton/pass/hooks/useRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
@@ -78,17 +80,18 @@ export const validateImportForm = ({ provider, file }: ImportFormValues): Formik
 const isNonEmptyImportPayload = (payload: ImportPayload) =>
     payload.vaults.length > 0 && payload.vaults.some(({ items }) => items.length > 0);
 
-const selectImportProgress = selectRequestProgress(importItems.requestID());
-
 export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptions): ImportFormContext => {
     const { createNotification } = useNotifications();
     const ctrl = useRef<MaybeNull<AbortController>>(null);
     const importFiles = useFileImporter();
 
+    const tabId = useCurrentTabID();
+    const requestID = importItems.requestID({ tabId });
+
     /** NOTE: Debounce import progress updates to prevent UI flickering.
      * When transitioning from items phase to files phase, there can be a brief
      * moment where progress appears to drop to 0% before file import begins */
-    const itemProgress = useDebouncedValue(useSelector(selectImportProgress), 250);
+    const itemProgress = useDebouncedValue(useMemoSelector(selectRequestProgress, [requestID]), 250);
     const [progress, setProgress] = useState<MaybeNull<ImportProgress>>(null);
 
     const [busy, setBusy] = useState(false);
@@ -104,7 +107,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
     const cancel = useCallback(() => {
         importFiles.cancel();
         ctrl.current?.abort();
-        dispatch(requestCancel(importItems.requestID()));
+        dispatch(requestCancel(requestID));
         setProgress(null);
     }, []);
 
@@ -161,7 +164,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
 
                 /** 3.a Start the item import sequence */
                 setProgress({ ...getImportCounts(data), step: 'items' });
-                const res = await doImportItems({ data, provider });
+                const res = await doImportItems({ data, provider, tabId });
                 report = { ...res.data.report };
 
                 /** 4. Start the file import sequence */
