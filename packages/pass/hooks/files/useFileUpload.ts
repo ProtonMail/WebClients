@@ -55,33 +55,39 @@ export const useFileUpload = () => {
                 const ctrl = ctrls.current.get(uploadID);
                 if (!ctrl || ctrl.signal.aborted) throw new DOMException('Aborted', 'AbortError');
 
+                const { name, size } = file;
                 const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
                 const mimeType = PassCoreUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
-                const fileSize = file.size;
                 const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
+                const initDTO = { name, mimeType, totalChunks, uploadID };
 
-                const res = await asyncDispatch(fileUploadInitiate, {
-                    name: file.name,
-                    mimeType,
-                    totalChunks,
-                });
+                const init = await abortable(ctrl.signal)(
+                    () => asyncDispatch(fileUploadInitiate, initDTO),
+                    () => dispatch(requestCancel(fileUploadInitiate.requestID(initDTO)))
+                );
 
-                if (res.type !== 'success') throw new Error(res.error);
+                if (init.type !== 'success') {
+                    if (init.data.aborted) throw new DOMException('User cancelled upload', 'AbortError');
+                    throw new Error(init.data.error);
+                }
 
-                fileID = res.data;
+                fileID = init.data;
 
                 for (let index = 0; index < totalChunks; index++) {
                     const start = index * FILE_CHUNK_SIZE;
-                    const end = Math.min(start + FILE_CHUNK_SIZE, fileSize);
+                    const end = Math.min(start + FILE_CHUNK_SIZE, size);
                     const blob = file.slice(start, end);
                     const dto = await getChunkDTO(fileID, index, blob, ctrl.signal);
 
-                    const res = await abortable(ctrl.signal)(
+                    const result = await abortable(ctrl.signal)(
                         () => asyncDispatch(fileUploadChunk, dto),
                         () => dispatch(requestCancel(fileUploadChunk.requestID(dto)))
                     );
 
-                    if (res.type !== 'success') throw new Error(res.data.error);
+                    if (result.type !== 'success') {
+                        if (result.data.aborted) throw new DOMException('User cancelled upload', 'AbortError');
+                        throw new Error(result.data.error);
+                    }
                 }
 
                 onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
