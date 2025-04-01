@@ -22,7 +22,7 @@ import PagingControls from './PagingControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import type { Props as ToolbarProps } from './Toolbar';
 
-interface Props extends Omit<ToolbarProps, 'columnMode' | 'onBack' | 'onElement' | 'onCheck'> {
+interface Props extends Omit<ToolbarProps, 'columnMode' | 'onBack' | 'onElement' | 'onCheck' | 'breakpoints'> {
     classname: string;
 }
 
@@ -49,7 +49,6 @@ const ToolbarColumnWide = ({
     onMarkAs,
     onMove,
     onDelete,
-    breakpoints,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
     elementIDs,
@@ -98,7 +97,6 @@ const ToolbarColumnWide = ({
                         <LabelsAndFolders
                             labelID={labelID}
                             selectedIDs={selectedIDs}
-                            breakpoints={breakpoints}
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
                             onCheckAll={onCheckAll}
@@ -117,7 +115,6 @@ const ToolbarColumnWide = ({
                         isExtraTiny={localIsExtraTiny}
                         onMove={onMove}
                         onDelete={onDelete}
-                        breakpoints={breakpoints}
                         onCheckAll={onCheckAll}
                     />
 

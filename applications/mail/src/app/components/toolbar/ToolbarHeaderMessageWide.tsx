@@ -17,7 +17,16 @@ import type { Props as ToolbarProps } from './Toolbar';
 interface Props
     extends Omit<
         ToolbarProps,
-        'onCheck' | 'columnMode' | 'total' | 'isSearch' | 'sort' | 'onSort' | 'onFilter' | 'filter' | 'mailSettings'
+        | 'onCheck'
+        | 'columnMode'
+        | 'total'
+        | 'isSearch'
+        | 'sort'
+        | 'onSort'
+        | 'onFilter'
+        | 'filter'
+        | 'mailSettings'
+        | 'breakpoints'
     > {
     classname: string;
 }
@@ -43,7 +52,6 @@ const ToolbarHeaderMessageWide = ({
     labelID,
     onMove,
     onDelete,
-    breakpoints,
     loading = false,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
@@ -81,7 +89,6 @@ const ToolbarHeaderMessageWide = ({
                     <LabelsAndFolders
                         labelID={labelID}
                         selectedIDs={selectedIDs}
-                        breakpoints={breakpoints}
                         labelDropdownToggleRef={labelDropdownToggleRef}
                         moveDropdownToggleRef={moveDropdownToggleRef}
                         onCheckAll={onCheckAll}
