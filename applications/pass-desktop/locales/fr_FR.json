@@ -247,6 +247,9 @@
       "Dismiss": [
         "Annuler"
       ],
+      "Download": [
+        "Télécharger"
+      ],
       "Download this CSV template": [
         "Télécharger ce modèle CSV"
       ],
@@ -400,11 +403,11 @@
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
       ],
-      "Move to trash": [
-        "Déplacer dans le dossier Corbeille"
-      ],
       "Move to Trash": [
         "Déplacer dans la corbeille"
+      ],
+      "Move to trash": [
+        "Déplacer dans le dossier Corbeille"
       ],
       "Multiple select": [
         "Sélection multiple"
@@ -481,6 +484,9 @@
       "Remove member": [
         "Retirer le membre"
       ],
+      "Rename": [
+        "Renommer"
+      ],
       "Request a feature": [
         "Demander une fonctionnalité"
       ],
@@ -492,6 +498,9 @@
       ],
       "Resend invitation": [
         "Renvoyer l'invitation"
+      ],
+      "Reset": [
+        "Réinitialiser"
       ],
       "Restore": [
         "Restaurer"
@@ -1052,9 +1061,6 @@
       "File could not be parsed": [
         "Le fichier n'a pas pu être analysé."
       ],
-      "File could not be read": [
-        "Le fichier n'a pas pu être lu."
-      ],
       "File does not match expected format": [
         "Le fichier ne correspond pas au format attendu."
       ],
@@ -1414,10 +1420,10 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Après avoir importé vos données, vous pouvez supprimer le fichier CSV contenant vos mots de passe pour des raisons de sécurité."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "L'alias a été désactivé. Vous ne recevrez plus les messages envoyés à ${ item.aliasEmail }"
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "L'alias est désactivé. Vous ne recevrez plus les messages envoyés à ${ item.aliasEmail }"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "L'alias est activé. Vous pouvez maintenant recevoir les messages envoyés à ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
@@ -1588,9 +1594,6 @@
       "Drop to import": [
         "Déposez ici pour importer"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "En raison de la limitation des extensions du navigateur Safari, l'extension de fichier « *.pgp » sera manquante après l'exportation des données. Veuillez renommer le fichier pour y ajouter l'extension *.pgp (par ex. fichier.pgp) après l'avoir exporté."
-      ],
       "Editor": [
         "Éditeur"
       ],
@@ -1716,15 +1719,8 @@
       "Identity confirmed": [
         "L'identité a été confirmée."
       ],
-      "Import in progress:": [
-        "L'importation est en cours :"
-      ],
       "Import the CSV file below.": [
         "Importez le fichier CSV ci-dessous."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } élément importé",
-        "${ payload.total } éléments importés"
       ],
       "Imported on ${ date }": [
         "Importé le ${ date }"
@@ -1764,10 +1760,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Vous semblez déjà connecté à ${ PASS_APP_NAME }. Si vous essayez de vous connecter avec un autre compte, déconnectez-vous d'abord de l'extension."
-      ],
-      "item": [
-        "élément",
-        "éléments"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "L'élément « ${ payload.item.data.metadata.name } » a été créé."
@@ -1851,10 +1843,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2187,10 +2175,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Ce mot de passe supplémentaire vous sera demandé pour utiliser ${ PASS_APP_NAME }. Il fonctionne comme un mot de passe supplémentaire en plus de votre mot de passe ${ BRAND_NAME }."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } élément n'a pas pu être importé :",
-        "${ result.ignored.length } éléments n'ont pas pu être importés :"
-      ],
       "The secure link has been removed": [
         "Le lien sécurisé a été supprimé."
       ],
@@ -2373,7 +2357,7 @@
         "Vous pouvez fermer cet onglet."
       ],
       "You need a vault with edit permission before you can import items.": [
-        "Vous devez disposer d'un coffre-fort avec des droits d'édition pour pouvoir importer des éléments."
+        "Vous devez disposer d'un coffre-fort avec des droits de modification pour importer des éléments."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Vous pourrez personnaliser les paramètres de votre domaine (alias d'e-mail catch-all, nom d'affichage par défaut pour les alias, etc.) après avoir vérifié votre domaine."
@@ -2760,6 +2744,9 @@
       "Field name": [
         "Nom du champ"
       ],
+      "File": [
+        "Fichier"
+      ],
       "File format": [
         "Format de fichier"
       ],
@@ -3044,9 +3031,6 @@
       ],
       "Personalize": [
         "Personnaliser"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON chiffré en PGP (recommandé)"
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -3704,6 +3688,9 @@
       "Aliases": [
         "Alias"
       ],
+      "Attachments": [
+        "Pièces jointes"
+      ],
       "Auto create/on the fly alias": [
         "Créer automatiquement un alias à la volée"
       ],
@@ -4313,9 +4300,6 @@
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Les fichiers d'exportation chiffrés en PGP nécessitent une phrase secrète."
       ],
       "Please check that the extension is properly installed and enabled": [
         "Assurez-vous que l'extension est installée et activée correctement."

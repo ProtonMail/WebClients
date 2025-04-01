@@ -214,6 +214,12 @@
       "Delete all": [
         "Διαγραφή όλων"
       ],
+      "Delete all files": [
+        "Διαγραφή όλων των αρχείων"
+      ],
+      "Delete file: ${ deleteFile.state.name }": [
+        "Διαγραφή αρχείου: ${ deleteFile.state.name }"
+      ],
       "Delete it, I will never need it": [
         "Διαγράψτε το, δε θα το χρειαστώ ποτέ"
       ],
@@ -246,6 +252,12 @@
       ],
       "Dismiss": [
         "Παράβλεψη"
+      ],
+      "Download": [
+        "Λήψη"
+      ],
+      "Download file": [
+        "Λήψη αρχείου"
       ],
       "Download this CSV template": [
         "Κατεβάστε αυτό το πρότυπο CSV"
@@ -400,10 +412,10 @@
       "Move to another vault": [
         "Μετακίνηση σε άλλη κρύπτη"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
       "Multiple select": [
@@ -423,6 +435,9 @@
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
+      ],
+      "Open new window to upload files": [
+        "Άνοιγμα νέου παραθύρου για μεταφόρτωση αρχείων"
       ],
       "Pass for Android": [
         "Έγκριση για το Android"
@@ -475,11 +490,17 @@
       "Remove all expired links (${ inactiveLinkCount })": [
         "Κατάργηση όλων των συνδέσμων που έχουν λήξει (${ inactiveLinkCount })"
       ],
+      "Remove all files": [
+        "Κατάργηση όλων των αρχείων"
+      ],
       "Remove link": [
         "Αφαίρεση συνδέσμου"
       ],
       "Remove member": [
         "Αφαίρεση μέλους"
+      ],
+      "Rename": [
+        "Μετονομασία"
       ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
@@ -492,6 +513,12 @@
       ],
       "Resend invitation": [
         "Επανάληψη αποστολής πρόσκλησης"
+      ],
+      "Reset": [
+        "Επαναφορά"
+      ],
+      "Reset history": [
+        "Επαναφορά ιστορικού"
       ],
       "Restore": [
         "Επαναφορά"
@@ -813,6 +840,12 @@
       ]
     },
     "Error": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "Δεν ήταν δυνατή η μεταφόρτωση του \"${ file.name }\"."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "Δεν ήταν δυνατή η εισαγωγή του \"${ filename }\"."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
       ],
@@ -827,6 +860,9 @@
       ],
       "Alias options could not be resolved": [
         "Δεν ήταν δυνατή η επίλυση των επιλογών ψευδωνύμου"
+      ],
+      "An error occured during the import process": [
+        "Παρουσιάστηκε σφάλμα κατά τη διαδικασία εισαγωγής"
       ],
       "An error occurred while resuming your session": [
         "Παρουσιάστηκε σφάλμα κατά τη συνέχιση της συνεδρίας σας"
@@ -891,6 +927,9 @@
       ],
       "Deleting item failed": [
         "Η διαγραφή στοιχείου απέτυχε"
+      ],
+      "Deleting item history failed": [
+        "Η διαγραφή ιστορικού στοιχείου απέτυχε"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Η διαγραφή της κρύπτης \"${ payload.content.name }\" απέτυχε"
@@ -1052,9 +1091,6 @@
       "File could not be parsed": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου"
       ],
-      "File could not be read": [
-        "Δεν ήταν δυνατή η ανάγνωση του αρχείου"
-      ],
       "File does not match expected format": [
         "Το αρχείο δεν ταιριάζει με την αναμενόμενη μορφή"
       ],
@@ -1090,6 +1126,9 @@
       ],
       "Network error": [
         "Σφάλμα δικτύου"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Δεν υπάρχει αρκετός διαθέσιμος χώρος αποθήκευσης για τα επιλεγμένα αρχεία."
       ],
       "Offline mode is currently not available for two password mode.": [
         "Η λειτουργία χωρίς σύνδεση δεν είναι προς το παρόν διαθέσιμη για τη λειτουργία δύο κωδικών πρόσβασης."
@@ -1127,6 +1166,9 @@
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
       ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Ορισμένα αρχεία είναι πολύ μεγάλα για μεταφόρτωση. Το μέγιστο επιτρεπόμενο μέγεθος είναι (${ maxFileSizeInMB })"
+      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Ορισμένα θησαυροφυλάκια δεν είναι πλέον προσβάσιμα λόγω επαναφοράς κωδικού πρόσβασης. Ενεργοποιήστε ξανά τα κλειδιά του λογαριασμού σας για να αποκτήσετε ξανά πρόσβαση. ${ reactivateLink }"
       ],
@@ -1135,6 +1177,9 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Κάτι πήγε στραβά. Παρακαλούμε συνδεθείτε ξανά."
+      ],
+      "The file \"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Το αρχείο \"${ filename }\" είναι πολύ μεγάλο για μεταφόρτωση. Το μέγιστο επιτρεπόμενο μέγεθος είναι (${ maxFileSizeInMB })"
       ],
       "The file you are trying to import is empty": [
         "Το αρχείο που προσπαθείτε να εισαγάγετε είναι κενό"
@@ -1414,10 +1459,10 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Το ψευδώνυμο απενεργοποιήθηκε με επιτυχία. Δε θα λαμβάνετε πλέον μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ item.aliasEmail }"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Το ψευδώνυμο ενεργοποιήθηκε με επιτυχία. Τώρα μπορείτε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
@@ -1579,6 +1624,9 @@
       "DNS changes could take up to 24 hours to update.": [
         "Οι αλλαγές DNS μπορεί να χρειαστούν έως και 24 ώρες για να ενημερωθούν."
       ],
+      "Do you want to remove all the files?": [
+        "Θέλετε να καταργήσετε όλα τα αρχεία;"
+      ],
       "Domain: ${ domainPath } or @": [
         "Τομέας: ${ domainPath } ή @"
       ],
@@ -1588,8 +1636,8 @@
       "Drop to import": [
         "Απόθεση για εισαγωγή"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Λόγω περιορισμού των προεκτάσεων του προγράμματος περιήγησης Safari, μετά την εξαγωγή των δεδομένων θα λείπει η επέκταση αρχείου \".pgp\". Μετονομάστε το αρχείο για να συμπεριλάβετε την επέκταση .pgp (π.χ. file.pgp) μετά την εξαγωγή."
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Λόγω περιορισμού στο Firefox, το ${ PASS_APP_NAME } πρέπει να ανοίξει ξανά σε νέο παράθυρο για να μπορέσετε να ανεβάσετε αρχεία."
       ],
       "Editor": [
         "Πρόγραμμα επεξεργασίας"
@@ -1660,6 +1708,9 @@
       "Expires in ${ remainingTime }": [
         "Λήγει σε ${ remainingTime }"
       ],
+      "Exporting files": [
+        "Εξαγωγή αρχείων"
+      ],
       "Exporting your data...": [
         "Γίνεται εξαγωγή των δεδομένων σας..."
       ],
@@ -1668,6 +1719,9 @@
       ],
       "Extra password successfully removed": [
         "Ο επιπλέον κωδικός πρόσβασης καταργήθηκε με επιτυχία"
+      ],
+      "File attachments": [
+        "Συνημμένα αρχεία"
       ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
@@ -1716,15 +1770,11 @@
       "Identity confirmed": [
         "Η ταυτότητα επιβεβαιώθηκε"
       ],
-      "Import in progress:": [
-        "Εισαγωγή σε εξέλιξη:"
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Εάν ενεργοποιηθεί, όλα τα αρχεία σας θα ληφθούν κατά την εξαγωγή. Αυτό μπορεί να διαρκέσει λίγο, ανάλογα με τη σύνδεσή σας στο διαδίκτυο."
       ],
       "Import the CSV file below.": [
         "Εισαγάγετε το παρακάτω αρχείο CSV."
-      ],
-      "Imported ${ payload.total } item": [
-        "Εισαγόμενο ${ payload.total } στοιχείο",
-        "Εισαγόμενα ${ payload.total } στοιχεία"
       ],
       "Imported on ${ date }": [
         "Εισήχθη στις ${ date }"
@@ -1734,6 +1784,9 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Για να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }, παραχωρήστε τα απαραίτητα δικαιώματα προέκτασης"
+      ],
+      "Include file attachments": [
+        "Συμπερίληψη συνημμένων αρχείων"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Εγκαταστήστε το ${ PASS_APP_NAME } για ${ browser.title } για γρήγορη αυτόματη συμπλήρωση των στοιχείων της σύνδεσής σας."
@@ -1765,15 +1818,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Φαίνεται ότι είστε ήδη συνδεδεμένοι στο ${ PASS_APP_NAME }. Εάν προσπαθείτε να συνδεθείτε με διαφορετικό λογαριασμό, αποσυνδεθείτε πρώτα από την προέκταση."
       ],
-      "item": [
-        "στοιχείο",
-        "στοιχεία"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Το στοιχείο \"${ payload.item.data.metadata.name }\" δημιουργήθηκε"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Το στοιχείο \"${ payload.item.data.metadata.name }\" ενημερώθηκε"
+      ],
+      "Item history permanently deleted": [
+        "Το ιστορικό στοιχείου διαγράφηκε οριστικά"
       ],
       "Item moved to trash": [
         "Το στοιχείο μετακινήθηκε στον κάδο απορριμμάτων"
@@ -1852,10 +1904,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
-      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -1901,6 +1949,9 @@
       "Offline support successfully disabled": [
         "Η υποστήριξη εκτός σύνδεσης απενεργοποιήθηκε με επιτυχία"
       ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Μόλις διαγραφεί, αυτό το αρχείο μπορεί ακόμα να ανακτηθεί από το ιστορικό του στοιχείου."
+      ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
       ],
@@ -1937,6 +1988,9 @@
       ],
       "Pinning item...": [
         "Καρφίτσωμα στοιχείου..."
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Παρακαλούμε να είστε υπομονετικοί κατά τη λήψη των αρχείων σας."
       ],
       "Please check your spam folder or try resending the code.": [
         "Παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας ή δοκιμάστε να στείλετε ξανά τον κωδικό."
@@ -2034,6 +2088,9 @@
       "Please follow the steps below to set up your domain.": [
         "Ακολουθήστε τα παρακάτω βήματα για να ρυθμίσετε τον τομέα σας."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Παρακαλούμε διατηρήστε αυτό το παράθυρο ανοιχτό κατά την εισαγωγή των δεδομένων σας. Αυτή η διαδικασία μπορεί να διαρκέσει μερικά λεπτά."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Ίσως θέλετε να απενεργοποιήσετε το ψευδώνυμο;"
       ],
@@ -2078,6 +2135,9 @@
       ],
       "Removing secure link...": [
         "Αφαίρεση ασφαλούς συνδέσμου..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Η επαναφορά ιστορικού θα διαγράψει οριστικά όλες τις παλαιότερες εκδόσεις του στοιχείου και δεν είναι δυνατό να αναιρεθεί."
       ],
       "Restoring items from trash": [
         "Επαναφορά στοιχείων από τα διαγραμμένα"
@@ -2187,9 +2247,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Ο επιπλέον κωδικός πρόσβασης θα απαιτηθεί για τη χρήση του ${ PASS_APP_NAME }. Λειτουργεί ως πρόσθετος κωδικός πρόσβασης πάνω από τον κωδικό πρόσβασης ${ BRAND_NAME }."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
-        "Δεν ήταν δυνατή η εισαγωγή των ${ result.ignored.length } στοιχείων:"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Δεν ήταν δυνατή η εισαγωγή του ${ totalIgnored } στοιχείου:",
+        "Δεν ήταν δυνατή η εισαγωγή των ${ totalIgnored } στοιχείων:"
       ],
       "The secure link has been removed": [
         "Ο ασφαλής σύνδεσμος καταργήθηκε"
@@ -2336,6 +2396,9 @@
       ],
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
         "Μπορείτε, επίσης, να ορίσετε έναν κωδικό PIN για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
+      ],
+      "You can attach files to items for a better organization": [
+        "Μπορείτε να επισυνάψετε αρχεία στα στοιχεία για καλύτερη οργάνωση"
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Τώρα μπορείτε να χρησιμοποιήσετε τον κωδικό πρόσβασης ${ BRAND_NAME } σας για πρόσβαση στο ${ PASS_SHORT_APP_NAME } εκτός σύνδεσης"
@@ -2760,6 +2823,9 @@
       "Field name": [
         "Όνομα πεδίου"
       ],
+      "File": [
+        "Αρχείο"
+      ],
       "File format": [
         "Μορφή αρχείου"
       ],
@@ -3045,8 +3111,8 @@
       "Personalize": [
         "Προσωποποιήστε"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON με κρυπτογράφηση PGP (συνιστάται)"
+      "PGP-encrypted (recommended)": [
+        "Κρυπτογραφημένο με PGP (συνιστάται)"
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
@@ -3222,6 +3288,12 @@
       "Today": [
         "Σήμερα"
       ],
+      "Total files: ": [
+        "Συνολικοί φάκελοι: "
+      ],
+      "Total imported files: ": [
+        "Σύνολο εισαγόμενων φακέλων: "
+      ],
       "Total imported items: ": [
         "Σύνολο εισαγόμενων αντικείμενων: "
       ],
@@ -3329,6 +3401,9 @@
       ],
       "Your passwords. Everywhere.": [
         "Οι κωδικοί πρόσβασής σας. Παντού."
+      ],
+      "ZIP": [
+        "ZIP"
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
@@ -3680,6 +3755,10 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } διευθύνσεις"
       ],
+      "${ filesCount } file": [
+        "${ filesCount } αρχείο",
+        "${ filesCount } αρχεία"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
@@ -3703,6 +3782,9 @@
       ],
       "Aliases": [
         "Ψευδώνυμα"
+      ],
+      "Attachments": [
+        "Συνημμένα"
       ],
       "Auto create/on the fly alias": [
         "Αυτόματη δημιουργία ψευδώνυμου"
@@ -3816,6 +3898,9 @@
       "Domain ownership verification": [
         "Επαλήθευση ιδιοκτησίας τομέα"
       ],
+      "Encrypted import": [
+        "Κρυπτογραφημένη εισαγωγή"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
       ],
@@ -3857,6 +3942,9 @@
       ],
       "Import your data": [
         "Εισαγωγή των δεδομένων σας"
+      ],
+      "Importing your data": [
+        "Γίνεται εισαγωγή των δεδομένων σας"
       ],
       "Inactive 2FA": [
         "Απενεργοποιημένο 2FA"
@@ -3984,6 +4072,9 @@
       "Remove secure link?": [
         "Αφαίρεση ασφαλούς συνδέσμου;"
       ],
+      "Reset history for this item?": [
+        "Να γίνει επαναφορά ιστορικού για αυτό το στοιχείο;"
+      ],
       "Resolved breaches": [
         "Επιλυμένες παραβιάσεις"
       ],
@@ -4071,6 +4162,9 @@
       ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
+      ],
+      "Upload files from your device.": [
+        "Ανεβάστε αρχεία από τη συσκευή σας."
       ],
       "Vault": [
         "Κρύπτη"
@@ -4166,6 +4260,9 @@
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Όλα τα απορριφθέντα στοιχεία σας θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ],
+      "An error occured while importing your data.": [
+        "Παρουσιάστηκε σφάλμα κατά την εισαγωγή των δεδομένων σας."
       ],
       "An error occurred while exporting your data": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή των δεδομένων σας"
@@ -4314,9 +4411,6 @@
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
-      "PGP encrypted export file requires passphrase": [
-        "Το κρυπτογραφημένο αρχείο εξαγωγής PGP απαιτεί φράση πρόσβασης"
-      ],
       "Please check that the extension is properly installed and enabled": [
         "Παρακαλούμε ελέγξτε ότι η προέκταση έχει εγκατασταθεί και ενεργοποιηθεί σωστά"
       ],
@@ -4412,6 +4506,9 @@
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Ο διαχειριστής σας πρέπει να δημιουργήσει μια κρύπτη για εσάς για να μπορέσετε να δημιουργήσετε στοιχεία"
+      ],
+      "Your current plan does not support importing files": [
+        "Το τρέχον πλάνο σας δεν υποστηρίζει την εισαγωγή αρχείων"
       ],
       "Your organization does not allow creating a vault": [
         "Ο οργανισμός σας δεν επιτρέπει τη δημιουργία κρύπτης"
