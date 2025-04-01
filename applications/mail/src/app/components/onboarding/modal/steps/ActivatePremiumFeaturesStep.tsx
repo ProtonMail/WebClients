@@ -55,18 +55,22 @@ const useGetFeatures = (shortDomain: string) => {
         const aliases: Feature = {
             id: 'aliases',
             title: shortDomain,
+            // translator: Keep this description short. Avoid going over 70 char
             description: c('Onboarding modal').t`Start using the shorter, catchier version of your email address.`,
             icon: aliasesIcon,
         };
         const monitoring: Feature = {
             id: 'monitoring',
             title: DARK_WEB_MONITORING_NAME,
+            // translator: Keep this description short. Avoid going over 70 char
             description: c('Onboarding modal').t`Get notified if your password is compromised.`,
             icon: monitoringIcon,
         };
         const autoDelete: Feature = {
             id: 'autoDelete',
+            // translator: Keep this title short.
             title: c('Onboarding modal').t`Auto-delete spam and trash`,
+            // translator: Keep this description short. Avoid going over 70 char
             description: c('Onboarding modal').t`Clear out deleted and spam emails after 30 days.`,
             icon: autoDeleteIcon,
         };
@@ -210,7 +214,11 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
     return (
         <OnboardingStep>
             <OnboardingContent
-                title={c('Onboarding modal').t`Activate premium features`}
+                title={
+                    // translator: Keep this title short. Avoid making char length bigger than english one.
+                    // If too long translating to "Premium features" only is ok.
+                    c('Onboarding modal').t`Activate premium features`
+                }
                 description={c('Onboarding modal').t`Make the most of your paid plan.`}
                 className="mb-16"
             >
