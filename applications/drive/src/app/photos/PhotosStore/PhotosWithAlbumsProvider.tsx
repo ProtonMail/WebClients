@@ -54,6 +54,7 @@ export interface DecryptedAlbum extends DecryptedLink {
 }
 
 export const MAX_ADD_ALBUM_PHOTOS_BATCH = 10;
+export const MAX_REMOVE_ALBUM_PHOTOS_BATCH = 10;
 
 /**
  *
@@ -84,7 +85,12 @@ export const PhotosWithAlbumsContext = createContext<{
     updateAlbumsFromCache: (linkIds: string[]) => void;
     deletePhotosShare: () => Promise<void>;
     updatePhotoFavoriteFromCache: (linkId: string, isFavorite: boolean) => void;
-    removeAlbumPhotos: (abortSignal: AbortSignal, albumId: string, linkIds: string[]) => Promise<void>;
+    removeAlbumPhotos: (
+        abortSignal: AbortSignal,
+        albumShareId: string,
+        albumLinkId: string,
+        LinkIDs: string[]
+    ) => Promise<void>;
     deleteAlbum: (abortSignal: AbortSignal, albumLinkId: string, force: boolean) => Promise<void>;
     favoritePhoto: (abortSignal: AbortSignal, linkId: string) => Promise<void>;
     removeTagsFromPhoto: (abortSignal: AbortSignal, linkId: string, tags: PhotoTag[]) => Promise<void>;
@@ -683,14 +689,62 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     );
 
     const removeAlbumPhotos = useCallback(
-        async (abortSignal: AbortSignal, albumId: string, linkIds: string[]) => {
-            if (!volumeId) {
-                return;
+        async (
+            abortSignal: AbortSignal,
+            albumShareId: string,
+            albumLinkId: string,
+            LinkIDs: string[]
+        ): Promise<void> => {
+            const albumLink = await getLink(abortSignal, albumShareId, albumLinkId);
+
+            const result = await batchHelper(abortSignal, {
+                linkIds: LinkIDs,
+                batchRequestSize: MAX_REMOVE_ALBUM_PHOTOS_BATCH,
+                allowedCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
+                query: (batchLinkIds) =>
+                    queryRemoveAlbumPhotos(albumLink.volumeId, albumLinkId, {
+                        LinkIDs: batchLinkIds,
+                    }),
+            });
+
+            const nbFailures = Object.keys(result.failures).length;
+            const nbSuccesses = result.successes.length;
+            if (nbFailures) {
+                createNotification({
+                    type: 'error',
+                    text: c('Notification').ngettext(
+                        msgid`${nbFailures} photo failed to be removed from ${albumLink.name}`,
+                        `${nbFailures} photos failed to be removed from the ${albumLink.name}`,
+                        nbFailures
+                    ),
+                });
             }
-            await request(queryRemoveAlbumPhotos(volumeId, albumId, { LinkIDs: linkIds }), abortSignal);
-            setAlbumPhotos((prevPhotos) => prevPhotos.filter((photo) => !linkIds.includes(photo.linkId)));
+            if (nbSuccesses) {
+                createNotification({
+                    type: 'success',
+                    text: c('Notification').ngettext(
+                        msgid`${nbSuccesses} photo removed from ${albumLink.name}`,
+                        `${nbSuccesses} photos removed from ${albumLink.name}`,
+                        nbSuccesses
+                    ),
+                });
+            }
+
+            setAlbumPhotos((prevPhotos) => prevPhotos.filter((photo) => !result.successes.includes(photo.linkId)));
+            setAlbums((currentAlbums) => {
+                const newAlbums = new Map(currentAlbums);
+                const album = newAlbums.get(albumLinkId);
+                if (!album) {
+                    return newAlbums;
+                }
+                album.photoCount = album.photoCount - nbSuccesses;
+                if (album.photoCount === 0) {
+                    album.cover = undefined;
+                }
+                return newAlbums;
+            });
         },
-        [request, volumeId]
+        [getLink, batchHelper, createNotification]
     );
 
     const updatePhotoFavoriteFromCache = useCallback(
