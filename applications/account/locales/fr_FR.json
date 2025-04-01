@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Sélectionnez le pays ${ country }"
       ],
-      "select file": [
-        "sélectionnez un fichier."
-      ],
       "Select file": [
         "Sélectionner un fichier"
+      ],
+      "select file": [
+        "sélectionnez un fichier."
       ],
       "Select files": [
         "Sélectionner les fichiers"
@@ -7073,6 +7073,10 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } veut partager des données avec vous dans ${ PASS_APP_NAME }."
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } pays activé",
+        "${ locationsCount } pays activés"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }"
       ],
@@ -7652,9 +7656,6 @@
       ],
       "Copy your referral link": [
         "Copiez votre lien de parrainage."
-      ],
-      "countries enabled": [
-        "pays activés"
       ],
       "Country code": [
         "Indicatif du pays"
@@ -8568,6 +8569,9 @@
       ],
       "No addresses exist": [
         "Aucune adresse n'existe."
+      ],
+      "No countries enabled": [
+        "Aucun pays activé"
       ],
       "No credit card required": [
         "Aucune carte de paiement n'est nécessaire."
@@ -10750,10 +10754,10 @@
       "Allow sharing outside the organization": [
         "Autoriser le partage en dehors de l'organisation"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domaine autorisé"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domaine autorisé"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10768,11 +10772,11 @@
       "AND": [
         "ET"
       ],
-      "and": [
-        "et"
-      ],
       "And": [
         "Et"
+      ],
+      "and": [
+        "et"
       ],
       "Anderson": [
         "Durant"
@@ -12461,11 +12465,11 @@
     },
     "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Chaque ${ interval } mois, le ${ onDayString }, ${ untilString }",
-        "Tous les ${ interval } mois, le ${ onDayString }, ${ untilString }"
+        "Chaque ${ interval } mois, ${ onDayString }, ${ untilString }",
+        "Tous les ${ interval } mois, ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Chaque mois, le ${ onDayString }, ${ untilString }"
+        "Chaque mois, ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -13973,6 +13977,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited pour 12 mois"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } pour 12 mois"
+      ],
       "${ pricingTitle } offer expires today!": [
         "L'offre ${ pricingTitle } expire aujourd'hui !"
       ],
@@ -13996,9 +14006,6 @@
       ],
       "Limited-time offer": [
         "Offre à durée limitée"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus pour 12 mois"
       ],
       "Maybe later": [
         "Peut-être plus tard"

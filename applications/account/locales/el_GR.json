@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Επιλογή χώρας ${ country }"
       ],
-      "select file": [
-        "επιλέξτε αρχείο"
-      ],
       "Select file": [
         "Επιλέξτε αρχείο"
+      ],
+      "select file": [
+        "επιλέξτε αρχείο"
       ],
       "Select files": [
         "Επιλέξτε αρχεία"
@@ -7070,6 +7070,10 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "Ο ${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } χώρα ενεργοποιημένη",
+        "${ locationsCount } χώρες ενεργοποιημένες"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
       ],
@@ -7649,9 +7653,6 @@
       ],
       "Copy your referral link": [
         "Αντιγράψτε τον σύνδεσμο παραπομπής σας"
-      ],
-      "countries enabled": [
-        "ενεργοποιημένες χώρες"
       ],
       "Country code": [
         "Κωδικός χώρας"
@@ -8565,6 +8566,9 @@
       ],
       "No addresses exist": [
         "Δεν υπάρχουν διευθύνσεις"
+      ],
+      "No countries enabled": [
+        "Δεν υπάρχουν ενεργοποιημένες χώρες"
       ],
       "No credit card required": [
         "Δεν απαιτείται πιστωτική κάρτα"
@@ -10747,11 +10751,11 @@
       "Allow sharing outside the organization": [
         "Να επιτρέπεται η κοινή χρήση εκτός του οργανισμού"
       ],
-      "Allowed domain": [
-        "Επιτρεπόμενος τομέας"
-      ],
       "Allowed Domain": [
         "Επιτρεπόμενος Τομέας"
+      ],
+      "Allowed domain": [
+        "Επιτρεπόμενος τομέας"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
@@ -10765,11 +10769,11 @@
       "AND": [
         "ΚΑΙ"
       ],
-      "and": [
-        "και"
-      ],
       "And": [
         "Και"
+      ],
+      "and": [
+        "και"
       ],
       "Anderson": [
         "Anderson"
@@ -13970,6 +13974,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited για 12 μήνες"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } για 12 μήνες"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
@@ -13993,9 +14003,6 @@
       ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus για 12 μήνες"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
