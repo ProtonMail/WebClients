@@ -41,14 +41,21 @@
 		box-shadow: none;
 	}
 
-	::selection {
-		background: var(--primary-minor-1);
-		color: var(--text-norm);
-	}
-
 	&.suggestion-mode ::selection {
 		background: rgb(52 145 114 / 0.15);
 	}
+}
+
+::selection {
+	// we need the !important to override what is set by _init.scss.
+	// the color is translucent so that you can see any background color
+	// which has been applied to the text
+	background: rgb(109 74 255 / 0.25) !important;
+
+	// makes sure that the color of the text under the selection
+	// is actually supposed what is to be, rather than white
+	// which is set by _init.scss
+	color: unset !important;
 }
 
 .Lexical__paragraph {
