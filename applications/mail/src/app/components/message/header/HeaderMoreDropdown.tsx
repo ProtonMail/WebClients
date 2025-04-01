@@ -145,6 +145,8 @@ const HeaderMoreDropdown = ({
         });
     };
 
+    // TODO it is possible that this action triggers a move back in some cases.
+    // If that's the case we should handle it in the useMoveToParent hook.
     const handleUnread = async () => {
         closeDropdown.current?.();
         onToggle();

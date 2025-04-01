@@ -19,9 +19,9 @@ interface Props {
 }
 
 export const RouterElementContainer = ({ params, navigation, elementsData, actions }: Props) => {
-    const { labelID, elementID, messageID, conversationMode } = params;
+    const { labelID, elementID, messageID } = params;
     const { handleBack } = navigation;
-    const { elementIDs, loading, placeholderCount, elements } = elementsData;
+    const { loading, placeholderCount, elements } = elementsData;
     const { checkedIDs, onMessageReady } = actions;
 
     const { columnLayout, isConversationContentView, messageContainerRef, columnMode } = useMailboxLayoutProvider();
@@ -53,17 +53,11 @@ export const RouterElementContainer = ({ params, navigation, elementsData, actio
                         columnLayout={columnLayout}
                         isComposerOpened={isComposerOpened}
                         containerRef={messageContainerRef}
-                        elementIDs={elementIDs}
-                        loadingElements={loading}
-                        conversationMode={conversationMode}
                     />
                 ) : (
                     <MessageOnlyView
                         hidden={showPlaceholder}
                         labelID={labelID}
-                        elementIDs={elementIDs}
-                        loadingElements={loading}
-                        //  TODO remove the bang if possible
                         mailSettings={mailSettings!}
                         messageID={elementID as string}
                         onBack={handleBack}

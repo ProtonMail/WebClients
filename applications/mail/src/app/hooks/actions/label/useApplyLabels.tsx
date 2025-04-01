@@ -2,20 +2,9 @@ import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
 import { isMessage as testIsMessage } from '../../../helpers/elements';
-import type { Element } from '../../../models/element';
+import type { ApplyLabelsParams } from './interface';
 import { useApplyLabelsToAll } from './useApplyLabelsToAll';
 import { useApplyLabelsToSelection } from './useApplyLabelsToSelection';
-
-export interface ApplyLabelsParams {
-    elements: Element[];
-    changes: { [labelID: string]: boolean };
-    createFilters?: boolean;
-    silent?: boolean;
-    selectedLabelIDs?: string[];
-    labelID: string;
-    selectAll?: boolean;
-    onCheckAll?: (check: boolean) => void;
-}
 
 export const useApplyLabels = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const applyLabelsToSelection = useApplyLabelsToSelection();
