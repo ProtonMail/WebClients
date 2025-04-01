@@ -72,7 +72,7 @@ const getFeatures = (): UpsellFeature[] => [
         key: 'file-attachments',
         className: 'ui-orange',
         icon: 'file',
-        label: c('Info').t`File attachments`,
+        label: c('Pass_file_attachments').t`File attachments`,
     },
 ];
 
