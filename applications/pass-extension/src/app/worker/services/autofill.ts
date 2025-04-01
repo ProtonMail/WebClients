@@ -81,9 +81,8 @@ export const createAutoFillService = () => {
                             const items = getLoginCandidates(parseUrl(url));
                             setPopupIconBadge(tabId, items.length).catch(noop);
 
-                            WorkerMessageBroker.ports.broadcast(
-                                { type: WorkerMessageType.AUTOFILL_SYNC },
-                                isContentScriptPort(tabId)
+                            WorkerMessageBroker.ports.broadcast({ type: WorkerMessageType.AUTOFILL_SYNC }, (name) =>
+                                isContentScriptPort(name, tabId)
                             );
                         }
                     })
