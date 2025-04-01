@@ -14,7 +14,7 @@ import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
-import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
+import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, TabId } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
 import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
@@ -29,6 +29,11 @@ export interface PopupController {
     /** `true` if popup is opened in a new window */
     expanded: boolean;
 }
+
+export type CurrentTab = {
+    url: MaybeNull<ParsedUrl>;
+    tabId?: TabId;
+};
 
 export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
@@ -52,7 +57,7 @@ export type PassCoreContextValue = {
     /** Resolves the api status */
     getApiState?: () => MaybePromise<ApiState>;
     /** Resolves the current tab's parsed url - only relevant for extension */
-    getCurrentTabUrl?: () => MaybeNull<ParsedUrl>;
+    getCurrentTab?: () => MaybeNull<CurrentTab>;
     /** Resolves a domain image as a data URL. Uses an abort signal to
      * cancel the image request if the image component is unmounted,
      * applying back-pressure when users scroll rapidly through items */
@@ -81,7 +86,7 @@ export type PassCoreContextValue = {
     /** Prompts for client specific permissions */
     promptForPermissions?: () => void;
     /** Sets the current tab's url - only relevant for extension */
-    setCurrentTabUrl?: (url: ParsedUrl) => void;
+    setCurrentTab?: (current: CurrentTab) => void;
     /** Writes text to the clipboard */
     writeToClipboard: (text: string) => Promise<void>;
     /** Checks whether biometrics functionalities can be used */
@@ -129,3 +134,8 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
 };
 
 export const usePassCore = (): PassCoreContextValue => useContext(PassCoreContext)!;
+
+export const useCurrentTabID = (): Maybe<TabId> => {
+    const { getCurrentTab } = usePassCore();
+    return getCurrentTab?.()?.tabId;
+};
