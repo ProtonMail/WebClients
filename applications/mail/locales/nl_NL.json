@@ -1378,11 +1378,11 @@
       "Upgrade": [
         "Upgraden"
       ],
-      "Upgrade Now": [
-        "Upgrade Nu"
-      ],
       "Upgrade now": [
         "Nu upgraden"
+      ],
+      "Upgrade Now": [
+        "Upgrade Nu"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Upgrade naar ${ BRAND_NAME } Unlimited"
@@ -6735,6 +6735,9 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Voeg uw prompt en het antwoord toe om ons te helpen de nauwkeurigheid te verbeteren."
       ],
+      "Included for free with your plan": [
+        "Gratis inbegrepen bij uw abonnement"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
@@ -8392,11 +8395,11 @@
       "AND": [
         "EN"
       ],
-      "and": [
-        "en"
-      ],
       "And": [
         "En"
+      ],
+      "and": [
+        "en"
       ],
       "Anderson": [
         "Anderson"
@@ -10551,6 +10554,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Onbeperkt voor 12 maanden"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } voor 12 maanden"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
@@ -10574,9 +10583,6 @@
       ],
       "Limited-time offer": [
         "Tijdelijke aanbieding"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus voor 12 maanden"
       ],
       "Maybe later": [
         "Misschien later"
@@ -13709,7 +13715,7 @@
         "Prioriteitsondersteuning:"
       ],
       "Private browsing vs VPN": [
-        "Privébrowsen vs VPN"
+        "Privé browsen versus VPN"
       ],
       "Processing...": [
         "Wordt verwerkt..."
