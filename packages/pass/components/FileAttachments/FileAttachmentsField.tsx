@@ -203,7 +203,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
 
                         {files.map((file) => (
                             <FileAttachment
-                                key={`file-${file.uploadID}`}
+                                key={file.uploadID}
                                 file={file}
                                 onCancel={() => handleCancel(file.uploadID)}
                                 onDelete={() => handleRemove(file.uploadID, file.fileID)}

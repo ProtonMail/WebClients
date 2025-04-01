@@ -45,9 +45,9 @@ export const FileAttachmentsList: FC<Props> = (props) => {
 
     return (
         <>
-            {files.map((file, key) => (
+            {files.map((file) => (
                 <FileAttachment
-                    key={`file-${key}`}
+                    key={file.fileUID}
                     file={file}
                     onDelete={onDelete ? () => handleDelete(file) : undefined}
                     onCancel={() => fileDownload.cancel(file.fileID)}
