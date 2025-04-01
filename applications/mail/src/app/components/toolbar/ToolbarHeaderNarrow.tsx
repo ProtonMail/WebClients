@@ -30,7 +30,6 @@ const BREAKPOINTS = {
 };
 
 const ToolbarHeaderNarrow = ({
-    breakpoints,
     classname,
     elementIDs,
     labelDropdownToggleRef,
@@ -79,7 +78,6 @@ const ToolbarHeaderNarrow = ({
                         <LabelsAndFolders
                             labelID={labelID}
                             selectedIDs={selectedIDs}
-                            breakpoints={breakpoints}
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
                             onCheckAll={onCheckAll}
@@ -98,7 +96,6 @@ const ToolbarHeaderNarrow = ({
                         isExtraTiny={localIsExtraTiny}
                         onMove={onMove}
                         onDelete={onDelete}
-                        breakpoints={breakpoints}
                         onCheckAll={onCheckAll}
                     />
 

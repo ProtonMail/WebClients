@@ -4,8 +4,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, Kbd } from '@proton/atoms';
-import type { Breakpoints } from '@proton/components';
-import { ButtonGroup, Icon, Tooltip, useContactModals, useToggle } from '@proton/components';
+import { ButtonGroup, Icon, Tooltip, useActiveBreakpoint, useContactModals, useToggle } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -52,7 +51,6 @@ interface Props {
     onToggle: () => void;
     onBack: () => void;
     onSourceMode: (sourceMode: boolean) => void;
-    breakpoints: Breakpoints;
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
     filterDropdownToggleRef: React.MutableRefObject<() => void>;
@@ -76,7 +74,6 @@ const HeaderExpanded = ({
     onToggle,
     onBack,
     onSourceMode,
-    breakpoints,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
     filterDropdownToggleRef,
@@ -143,7 +140,7 @@ const HeaderExpanded = ({
 
     const showPinPublicKey = hasSigningPublicKey || hasAttachedPublicKey;
 
-    const { viewportWidth } = breakpoints;
+    const { viewportWidth } = useActiveBreakpoint();
 
     const from = (
         <RecipientItem
@@ -318,7 +315,6 @@ const HeaderExpanded = ({
                         onBack={onBack}
                         onToggle={onToggle}
                         onSourceMode={onSourceMode}
-                        breakpoints={breakpoints}
                         parentMessageRef={parentMessageRef}
                         mailSettings={mailSettings}
                         messageViewIcons={messageViewIcons}

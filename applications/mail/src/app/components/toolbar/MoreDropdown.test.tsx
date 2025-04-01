@@ -1,7 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
-
 import { render } from 'proton-mail/helpers/test/render';
 
 import useSnooze from '../../hooks/actions/useSnooze';
@@ -17,8 +15,6 @@ jest.mock('../../hooks/actions/move/useMoveAllToFolder', () => ({
     useMoveAllToFolder: () => ({ moveAllToFolder: '', selectAllMoveModal: null, moveAllModal: null }),
 }));
 
-const BREAKPOINTS = mockDefaultBreakpoints;
-
 const props = {
     labelID: '1',
     elementIDs: [''],
@@ -29,7 +25,6 @@ const props = {
     isExtraTiny: false,
     onMove: jest.fn(),
     onDelete: jest.fn(),
-    breakpoints: BREAKPOINTS,
     currentFolder: '0',
 };
 
