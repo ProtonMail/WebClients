@@ -98,6 +98,7 @@ export const enpassFileReader = (): EnpassFileReader => {
     const entries = new Map<string, string>();
 
     return {
+        dirs: new Set(),
         get files() {
             return new Set(entries.keys());
         },
