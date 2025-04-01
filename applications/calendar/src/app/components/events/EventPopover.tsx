@@ -7,8 +7,10 @@ import { useUser } from '@proton/account/user/hooks';
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { Badge, CalendarEventDateHeader, CalendarInviteButtons, Loader, useActiveBreakpoint } from '@proton/components';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { CryptoProxy } from '@proton/crypto/lib';
 import { useLoading } from '@proton/hooks';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     getIsCalendarDisabled,
     getIsCalendarWritable,
@@ -112,8 +114,9 @@ const EventPopover = ({
     const getAddressKeys = useGetAddressKeys();
     const getCalendarKeys = useGetCalendarKeys();
     const isDrawerApp = getIsCalendarAppInDrawer(view);
-    const popoverEventContentRef = useRef<HTMLDivElement>(null);
     const [{ hasPaidMail }] = useUser();
+
+    const popoverContentRef = useRef<HTMLDivElement>(null);
 
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
@@ -130,6 +133,9 @@ const EventPopover = ({
 
     const { viewportWidth } = useActiveBreakpoint();
     const rsvpCommentEnabled = useFlag('RsvpCommentWeb');
+
+    const [mailSettings] = useMailSettings();
+    const { modal: linkModal } = useLinkHandler(popoverContentRef, mailSettings);
 
     const isSearchView = view === VIEWS.SEARCH;
     const model = useReadEvent(targetEventData, tzid, calendarBootstrap?.CalendarSettings);
@@ -326,124 +332,131 @@ const EventPopover = ({
     });
 
     return (
-        <PopoverContainer {...commonContainerProps} className="relative eventpopover flex flex-column flex-nowrap">
-            <PopoverHeader
-                {...commonHeaderProps}
-                actions={
-                    <>
-                        <PopoverEditButton
-                            showButton={showEditButton}
-                            loading={loadingDelete}
-                            onEdit={() => onEdit(!!canDuplicateEvent)}
+        <>
+            <PopoverContainer {...commonContainerProps} className="relative eventpopover flex flex-column flex-nowrap">
+                <PopoverHeader
+                    {...commonHeaderProps}
+                    actions={
+                        <>
+                            <PopoverEditButton
+                                showButton={showEditButton}
+                                loading={loadingDelete}
+                                onEdit={() => onEdit(!!canDuplicateEvent)}
+                            />
+                            <PopoverDuplicateButton
+                                showButton={showDuplicateButton}
+                                loading={loadingDelete}
+                                onDuplicate={onDuplicate}
+                            />
+                            <PopoverDeleteButton
+                                showButton={showDeleteButton}
+                                loading={loadingDelete}
+                                onDelete={handleDelete}
+                            />
+                            <PopoverViewButton
+                                showButton={showViewEventButton}
+                                start={start}
+                                isSearchView={isSearchView}
+                                eventData={eventData}
+                                onViewClick={() => {
+                                    if (!eventData || !veventComponent) {
+                                        return;
+                                    }
+                                    onNavigateToEventFromSearch?.(eventData, veventComponent, eventRecurrence);
+                                }}
+                            />
+                        </>
+                    }
+                >
+                    {isCancelled && (
+                        <Badge
+                            type="light"
+                            tooltip={c('Calendar invite info').t`This event has been canceled`}
+                            className="mb-1"
+                        >
+                            <span className="text-uppercase">{c('Event canceled status badge').t`canceled`}</span>
+                        </Badge>
+                    )}
+                    <div className="flex mb-4 flex-nowrap">
+                        <span
+                            className={clsx(
+                                'event-popover-calendar-border relative shrink-0 my-1',
+                                isUnanswered && !isCancelled && 'isUnanswered'
+                            )}
+                            style={{ '--calendar-color': color }}
                         />
-                        <PopoverDuplicateButton
-                            showButton={showDuplicateButton}
-                            loading={loadingDelete}
-                            onDuplicate={onDuplicate}
-                        />
-                        <PopoverDeleteButton
-                            showButton={showDeleteButton}
-                            loading={loadingDelete}
-                            onDelete={handleDelete}
-                        />
-                        <PopoverViewButton
-                            showButton={showViewEventButton}
-                            start={start}
-                            isSearchView={isSearchView}
-                            eventData={eventData}
-                            onViewClick={() => {
-                                if (!eventData || !veventComponent) {
-                                    return;
-                                }
-                                onNavigateToEventFromSearch?.(eventData, veventComponent, eventRecurrence);
-                            }}
-                        />
-                    </>
-                }
-            >
-                {isCancelled && (
-                    <Badge
-                        type="light"
-                        tooltip={c('Calendar invite info').t`This event has been canceled`}
-                        className="mb-1"
-                    >
-                        <span className="text-uppercase">{c('Event canceled status badge').t`canceled`}</span>
-                    </Badge>
-                )}
-                <div className="flex mb-4 flex-nowrap">
-                    <span
-                        className={clsx(
-                            'event-popover-calendar-border relative shrink-0 my-1',
-                            isUnanswered && !isCancelled && 'isUnanswered'
-                        )}
-                        style={{ '--calendar-color': color }}
-                    />
-                    <div className="pt-2">
-                        <h1 className="eventpopover-title lh-rg text-hyphens overflow-auto mb-0" title={eventTitleSafe}>
-                            {eventTitleSafe}
-                        </h1>
-                        <div className={clsx([!!frequencyString ? 'mb-2' : 'mb-3'])}>
-                            {dateHeader}
-                            {!!frequencyString && <div className="color-weak">{frequencyString}</div>}
+                        <div className="pt-2">
+                            <h1
+                                className="eventpopover-title lh-rg text-hyphens overflow-auto mb-0"
+                                title={eventTitleSafe}
+                            >
+                                {eventTitleSafe}
+                            </h1>
+                            <div className={clsx([!!frequencyString ? 'mb-2' : 'mb-3'])}>
+                                {dateHeader}
+                                {!!frequencyString && <div className="color-weak">{frequencyString}</div>}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </PopoverHeader>
-            <div className="overflow-auto mb-4" ref={popoverEventContentRef}>
-                <PopoverEventContent
-                    key={targetEvent.uniqueId}
-                    calendar={calendarData}
-                    model={model}
-                    isDrawerApp={isDrawerApp}
-                    formatTime={formatTime}
-                    displayNameEmailMap={displayNameEmailMap}
-                    popoverEventContentRef={popoverEventContentRef}
-                />
-            </div>
-            {canReplyToEvent && !rsvpCommentEnabled && (
-                <PopoverFooter
-                    className="shrink-0 items-start md:items-center justify-space-between gap-4 flex-column md:flex-row"
-                    key={targetEvent.uniqueId}
-                >
-                    <div>
-                        <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
-                    </div>
-                    <div className="ml-0 md:ml-auto">
-                        <CalendarInviteButtons
-                            actions={{
-                                accept: () =>
-                                    handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
-                                        Status: ICAL_ATTENDEE_STATUS.ACCEPTED,
-                                    }),
-                                acceptTentatively: () =>
-                                    handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
-                                        Status: ICAL_ATTENDEE_STATUS.TENTATIVE,
-                                    }),
-                                decline: () =>
-                                    handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
-                                        Status: ICAL_ATTENDEE_STATUS.DECLINED,
-                                    }),
-                                retryCreateEvent: () => wait(0),
-                                retryUpdateEvent: () => wait(0),
-                            }}
-                            partstat={userPartstat}
-                            disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
+                </PopoverHeader>
+                <div ref={popoverContentRef}>
+                    <div className="overflow-auto mb-4">
+                        <PopoverEventContent
+                            key={targetEvent.uniqueId}
+                            calendar={calendarData}
+                            model={model}
+                            isDrawerApp={isDrawerApp}
+                            formatTime={formatTime}
+                            displayNameEmailMap={displayNameEmailMap}
                         />
                     </div>
-                </PopoverFooter>
-            )}
-            {canReplyToEvent && rsvpCommentEnabled && (
-                <div className="shrink-0" key={targetEvent.uniqueId}>
-                    <RsvpSection
-                        handleChangePartstat={handleChangePartStat}
-                        userPartstat={userPartstat}
-                        userComment={userComment}
-                        disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
-                        view={view}
-                    />
+                    {canReplyToEvent && !rsvpCommentEnabled && (
+                        <PopoverFooter
+                            className="shrink-0 items-start md:items-center justify-space-between gap-4 flex-column md:flex-row"
+                            key={targetEvent.uniqueId}
+                        >
+                            <div>
+                                <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
+                            </div>
+                            <div className="ml-0 md:ml-auto">
+                                <CalendarInviteButtons
+                                    actions={{
+                                        accept: () =>
+                                            handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
+                                                Status: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                                            }),
+                                        acceptTentatively: () =>
+                                            handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
+                                                Status: ICAL_ATTENDEE_STATUS.TENTATIVE,
+                                            }),
+                                        decline: () =>
+                                            handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
+                                                Status: ICAL_ATTENDEE_STATUS.DECLINED,
+                                            }),
+                                        retryCreateEvent: () => wait(0),
+                                        retryUpdateEvent: () => wait(0),
+                                    }}
+                                    partstat={userPartstat}
+                                    disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
+                                />
+                            </div>
+                        </PopoverFooter>
+                    )}
+                    {canReplyToEvent && rsvpCommentEnabled && (
+                        <div className="shrink-0" key={targetEvent.uniqueId}>
+                            <RsvpSection
+                                handleChangePartstat={handleChangePartStat}
+                                userPartstat={userPartstat}
+                                userComment={userComment}
+                                disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
+                                view={view}
+                            />
+                        </div>
+                    )}
                 </div>
-            )}
-        </PopoverContainer>
+            </PopoverContainer>
+            {linkModal}
+        </>
     );
 };
 
