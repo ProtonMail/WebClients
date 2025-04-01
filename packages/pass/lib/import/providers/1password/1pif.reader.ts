@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
+import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -94,7 +95,10 @@ export const parse1PifData = (data: string): OnePassLegacyItem[] =>
         .filter((line) => !line.startsWith(ENTRY_SEPARATOR_1PIF) && Boolean(line))
         .map((rawItem) => JSON.parse(rawItem));
 
-export const read1Password1PifData = async (file: File): Promise<ImportReaderResult> => {
+export const read1Password1PifData = async (
+    file: File,
+    attachments?: Map<string, string[]>
+): Promise<ImportReaderResult> => {
     try {
         const data = await file.text();
         if (!data) throw new Error('Unprocessable content');
@@ -104,19 +108,20 @@ export const read1Password1PifData = async (file: File): Promise<ImportReaderRes
             .map((item) => {
                 const type = item?.typeName ?? c('Label').t`Unknown`;
                 const title = item?.title ?? '';
+                const files = attachments?.get(item.uuid) ?? [];
 
                 try {
                     switch (item.typeName) {
                         case OnePassLegacyItemType.LOGIN:
-                            return processLoginItem(item);
+                            return attachFilesToItem(processLoginItem(item), files);
                         case OnePassLegacyItemType.NOTE:
-                            return processNoteItem(item);
+                            return attachFilesToItem(processNoteItem(item), files);
                         case OnePassLegacyItemType.PASSWORD:
-                            return processPasswordItem(item);
+                            return attachFilesToItem(processPasswordItem(item), files);
                         case OnePassLegacyItemType.CREDIT_CARD:
-                            return processCreditCardItem(item);
+                            return attachFilesToItem(processCreditCardItem(item), files);
                         case OnePassLegacyItemType.IDENTITY:
-                            return processIdentityItem(item);
+                            return attachFilesToItem(processIdentityItem(item), files);
                         default:
                             ignored.push(`[${type}] ${title}`);
                     }
