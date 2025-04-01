@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Velg land ${ country }"
       ],
-      "select file": [
-        "velg fil"
-      ],
       "Select file": [
         "Velg fil"
+      ],
+      "select file": [
+        "velg fil"
       ],
       "Select files": [
         "Velg filer"
@@ -7070,6 +7070,10 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker å dele data med deg i ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } land aktivert",
+        "${ locationsCount } land aktivert"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
       ],
@@ -7649,9 +7653,6 @@
       ],
       "Copy your referral link": [
         "Kopier vervekoblingen din"
-      ],
-      "countries enabled": [
-        "land aktivert"
       ],
       "Country code": [
         "Landskode"
@@ -8565,6 +8566,9 @@
       ],
       "No addresses exist": [
         "Ingen adresser eksisterer"
+      ],
+      "No countries enabled": [
+        "Ingen land aktivert"
       ],
       "No credit card required": [
         "Ingen kredittkort kreves"
@@ -10750,10 +10754,10 @@
       "Allow sharing outside the organization": [
         "Tillat deling utenfor organisasjonen"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillatt domene"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillatt domene"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10768,11 +10772,11 @@
       "AND": [
         "OG"
       ],
-      "and": [
-        "og"
-      ],
       "And": [
         "Og"
+      ],
+      "and": [
+        "og"
       ],
       "Anderson": [
         "Andersen"
@@ -13976,6 +13980,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Ubegrenset i 12 måneder"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } for 12 måneder"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-tilbud utløper i dag!"
       ],
@@ -13999,9 +14009,6 @@
       ],
       "Limited-time offer": [
         "Tidsbegrenset tilbud"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus for 12 måneder"
       ],
       "Maybe later": [
         "Kanskje senere"
@@ -14502,6 +14509,9 @@
       ]
     },
     "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Få livstidstilgang til alle nåværende og fremtidige ${ PASS_APP_NAME } premiumfunksjoner med en enkelt engangsbetaling."
+      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Velkommen til ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]

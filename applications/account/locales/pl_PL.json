@@ -559,6 +559,9 @@
       "Encrypt and export": [
         "Zaszyfruj i eksportuj"
       ],
+      "Explore ${ target }": [
+        "Poznaj plan ${ target }"
+      ],
       "Explore group plans": [
         "Pokaż plany dla zespołów"
       ],
@@ -1084,11 +1087,11 @@
       "Select country ${ country }": [
         "Wybierz kraj ${ country }"
       ],
-      "select file": [
-        "wybierz plik"
-      ],
       "Select file": [
         "Wybierz plik"
+      ],
+      "select file": [
+        "wybierz plik"
       ],
       "Select files": [
         "Wybierz pliki"
@@ -5939,6 +5942,11 @@
         "Bezpieczny streaming"
       ]
     },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Uzyskaj dostęp do treści w usługach streamingowych, w tym Netflix, Disney+, Prime Video i nie tylko, z dowolnego miejsca."
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "Usuń klucz"
@@ -6606,6 +6614,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Podoba Ci się plan ${ planName }?"
+      ],
+      "You currently pay": [
+        "Obecnie płacisz"
       ],
       "Your plan": [
         "Twój plan"
@@ -8114,7 +8125,7 @@
         "Aby uzyskać 10-letnią historię wersji, skontaktuj się z naszym zespołem sprzedaży."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
-        "Aby uzyskać dostęp do poczty e-mail w dowolnym momencie i korzystać ze zoptymalizowanego rozwiązania mobilnego, pobierz naszą aplikację ${ androidAppLink } lub ${ iosAppLink }."
+        "Uzyskaj dostęp do poczty w dowolnym momencie, gdziekolwiek jesteś. Pobierz naszą aplikację ${ androidAppLink } lub ${ iosAppLink }."
       ],
       "for choosing ${ product }": [
         "za wybranie ${ product }"
@@ -10826,10 +10837,10 @@
       "Allow sharing outside the organization": [
         "Zezwalaj na udostępnianie poza organizacją"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dozwolona domena"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10844,11 +10855,11 @@
       "AND": [
         "ORAZ"
       ],
-      "and": [
-        "i"
-      ],
       "And": [
         "oraz"
+      ],
+      "and": [
+        "i"
       ],
       "Anderson": [
         "Nowak"
@@ -11407,6 +11418,9 @@
       ],
       "Move to Inbox": [
         "Przenieś do Odebranych"
+      ],
+      "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
+        "Minimum ${ MIN_PASSWORD_LENGTH } znaków"
       ],
       "Name": [
         "Nazwa"
@@ -13546,7 +13560,7 @@
     },
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "Promocyjna cena ${ priceCoupon } jest ważna przez pierwszy miesiąc. Następnie zostanie ona automatycznie odnowiona po cenie ${ priceLine }. Możesz anulować w dowolnym momencie."
+        "Niższa cena ${ priceCoupon } jest ważna przez pierwszy miesiąc. Automatycznie odnowienie nastąpi w kwocie ${ priceLine }. Możesz anulować w dowolnym momencie."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
@@ -14149,9 +14163,6 @@
       ],
       "Limited-time offer": [
         "Oferta ograniczona czasowo"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus na 12 miesięcy"
       ],
       "Maybe later": [
         "Może później"
@@ -20732,7 +20743,7 @@
         "Bitcoin na adres e-mail"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Zaszyfrowany i bezpieczny ${ MAIL_APP_NAME } adres e-mail. Możesz z łatwością wysłać Bitcoin każdemu, używając wyłącznie nazwy ${ BRAND_NAME }."
+        "Szyfrowany i bezpieczny adres e-mail ${ MAIL_APP_NAME }. Wysyłaj łatwo Bitcoiny każdemu, używając wyłącznie nazwy ${ BRAND_NAME }."
       ],
       "Encrypted cloud storage for photos and documents": [
         "Szyfrowana chmura dla zdjęć i dokumentów"
@@ -20750,7 +20761,7 @@
         "Nasz najbardziej ekskluzywny plan. Uzyskaj wcześniejszy dostęp do nowych funkcji i wszystkich usług ${ BRAND_NAME } w wersji premium."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Wymieniaj bezpiecznie Bitcoin przez e-mail, zamiast skomplikowanych, 26-znakowych adresów Bitcoin, które są podatne na błąd"
+        "Zamiast skomplikowanych 26-znakowych adresów Bitcoin, wysyłaj transakcje za pomocą funkcji \"Bitcoin na adres e-mail\"."
       ],
       "Securely hold and transact Bitcoin for free.": [
         "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób za darmo."
