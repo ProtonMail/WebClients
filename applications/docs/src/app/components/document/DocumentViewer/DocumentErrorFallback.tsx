@@ -1,14 +1,33 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Button } from '@proton/atoms'
 import { useApplication } from '~/utils/application-context'
 import { c } from 'ttag'
-import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { APPS, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { useAuthentication } from '@proton/components'
-import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { useUser } from '@proton/account/user/hooks'
 import { getInitials } from '@proton/shared/lib/helpers/string'
-import { redirectToAccountSwitcherFromUserApp } from '../public/utils'
+import { getParsedPathWithoutLocalIDBasename } from '@proton/shared/lib/authentication/pathnameHelper'
+import { replaceUrl } from '@proton/shared/lib/helpers/browser'
+import { getPathFromLocation, getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
+
+function redirectToAccountSwitcherFromUserApp() {
+  const accountSwitchUrl = new URL(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT))
+  accountSwitchUrl.searchParams.append('product', 'docs')
+
+  const returnUrl = `/${getParsedPathWithoutLocalIDBasename(getPathFromLocation(window.location))}`
+  const urlWithReturnUrl = getUrlWithReturnUrl(accountSwitchUrl.toString(), {
+    returnUrl: returnUrl,
+    context: 'private',
+  })
+
+  replaceUrl(urlWithReturnUrl)
+}
+
+function reload() {
+  window.location.reload()
+}
 
 export type DocumentError = {
   message: string
@@ -29,26 +48,45 @@ export function DocumentErrorFallback({ error }: DocumentErrorFallbackProps) {
     })
   }, [application.userState, error])
 
+  const isAccessError = error.code === DocsApiErrorCode.InsufficientPermissions
+
+  const message = useMemo(() => {
+    let message = c('Info')
+      .t`This document may not exist, or we are having issues loading it. Please reload the page and try again.`
+
+    if (isAccessError) {
+      message = c('Info')
+        .t`You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.`
+    } else if (error.userUnderstandableMessage) {
+      message = error.message
+    }
+
+    return message
+  }, [error.message, error.userUnderstandableMessage, isAccessError])
+
   return (
     <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center bg-signalInfoMinorCustom">
       <div className="border-weak bg-norm mx-auto max-w-md rounded-lg border p-8">
-        <h1 className="text-[1.8rem] font-bold">{c('Info').t`Something went wrong`}</h1>
-        <div className="mt-1 max-w-lg whitespace-pre-line">
-          {error.userUnderstandableMessage
-            ? error.message
-            : c('Info')
-                .t`This document may not exist, or you may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.`}
-        </div>
+        <h1 className="text-[1.8rem] font-bold" data-testid="document-load-error">
+          {isAccessError ? c('Info').t`You don't have access` : c('Info').t`Something went wrong`}
+        </h1>
+        <div className="mt-1 max-w-lg whitespace-pre-line">{message}</div>
         <div className="mt-4 flex gap-2">
-          <Button color="norm" shape="outline" onClick={redirectToAccountSwitcherFromUserApp}>
-            {c('Action').t`Switch accounts`}
-          </Button>
+          {isAccessError ? (
+            <Button color="norm" shape="outline" onClick={redirectToAccountSwitcherFromUserApp}>
+              {c('Action').t`Switch accounts`}
+            </Button>
+          ) : (
+            <Button color="norm" shape="outline" onClick={reload}>
+              {c('Action').t`Reload`}
+            </Button>
+          )}
           <Button color="norm" onClick={() => window.open(getAppHref('/', APPS.PROTONDRIVE, getLocalID()), '_self')}>
             {c('Action').t`Open ${DRIVE_APP_NAME}`}
           </Button>
         </div>
       </div>
-      {UID && <DocumentErrorSignedInAs />}
+      {UID && isAccessError && <DocumentErrorSignedInAs />}
     </div>
   )
 }
