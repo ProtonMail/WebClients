@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button, Kbd } from '@proton/atoms';
-import type { Breakpoints, ContactEditProps } from '@proton/components';
+import type { ContactEditProps } from '@proton/components';
 import {
     ButtonGroup,
     DropdownMenu,
@@ -14,6 +14,7 @@ import {
     DropdownSizeUnit,
     Icon,
     Tooltip,
+    useActiveBreakpoint,
     useApi,
     useModalState,
     useNotifications,
@@ -46,6 +47,7 @@ import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import type { Element } from '../../../models/element';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import { expireMessages } from '../../../store/messages/expire/messagesExpireActions';
 import type {
     MessageState,
@@ -64,7 +66,6 @@ import MessagePrintModal from '../modals/MessagePrintModal';
 import type { DropdownRender } from './HeaderDropdown';
 import HeaderDropdown from './HeaderDropdown';
 import { MESSAGE_FILTER_DROPDOWN_ID, MESSAGE_FOLDER_DROPDOWN_ID, MESSAGE_LABEL_DROPDOWN_ID } from './constants';
-import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
@@ -76,7 +77,6 @@ interface Props {
     onBack: () => void;
     onToggle: () => void;
     onSourceMode: (sourceMode: boolean) => void;
-    breakpoints: Breakpoints;
     parentMessageRef: React.RefObject<HTMLElement>;
     mailSettings: MailSettings;
     messageViewIcons: MessageViewIcons;
@@ -95,7 +95,6 @@ const HeaderMoreDropdown = ({
     onBack,
     onToggle,
     onSourceMode,
-    breakpoints,
     parentMessageRef,
     mailSettings,
     messageViewIcons,
@@ -216,7 +215,7 @@ const HeaderMoreDropdown = ({
     const isSpam = messageLabelIDs.includes(SPAM);
     const isInTrash = messageLabelIDs.includes(TRASH);
     const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
-    const { viewportWidth } = breakpoints;
+    const { viewportWidth } = useActiveBreakpoint();
     const additionalDropdowns: DropdownRender[] | undefined = viewportWidth['<=small']
         ? [
               {
@@ -227,7 +226,6 @@ const HeaderMoreDropdown = ({
                           selectedIDs={selectedIDs}
                           onClose={onClose}
                           onLock={onLock}
-                          breakpoints={breakpoints}
                           isMessage
                       />
                   ),
@@ -235,13 +233,7 @@ const HeaderMoreDropdown = ({
               {
                   contentProps: labelDropdownContentProps,
                   render: ({ onClose, onLock }) => (
-                      <LabelDropdown
-                          labelID={labelID}
-                          selectedIDs={selectedIDs}
-                          onClose={onClose}
-                          onLock={onLock}
-                          breakpoints={breakpoints}
-                      />
+                      <LabelDropdown labelID={labelID} selectedIDs={selectedIDs} onClose={onClose} onLock={onLock} />
                   ),
               },
               {
@@ -388,7 +380,6 @@ const HeaderMoreDropdown = ({
                                     selectedIDs={selectedIDs}
                                     onClose={onClose}
                                     onLock={onLock}
-                                    breakpoints={breakpoints}
                                     isMessage
                                 />
                             ),
@@ -416,7 +407,6 @@ const HeaderMoreDropdown = ({
                                     selectedIDs={selectedIDs}
                                     onClose={onClose}
                                     onLock={onLock}
-                                    breakpoints={breakpoints}
                                 />
                             ),
                         }}
