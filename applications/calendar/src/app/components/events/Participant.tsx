@@ -5,6 +5,7 @@ import { Icon, Tooltip, usePopperAnchor } from '@proton/components';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
+import { useUrlifyString } from '../../hooks/useUrlifyString';
 import ParticipantDropdown from './ParticipantDropdown';
 
 interface Props {
@@ -41,6 +42,8 @@ const Participant = ({
     const displayDropdown = hasEmail;
     const showEmailAddress = !isCurrentUser && hasEmail && normalize(email) !== normalize(name);
 
+    const parsedComment = useUrlifyString({ text: comment, urlifyOptions: { target: '_blank' } });
+
     return (
         <div
             className={clsx([
@@ -66,7 +69,11 @@ const Participant = ({
                         {extraText}
                     </div>
                 )}
-                <div className="max-w-full participant-extra-text color-weak text-break text-sm m-0">{comment}</div>
+                {parsedComment ? (
+                    <div className="max-w-full participant-extra-text color-weak text-break text-sm m-0">
+                        <span dangerouslySetInnerHTML={{ __html: parsedComment }} />
+                    </div>
+                ) : null}
             </div>
             <Button
                 shape="ghost"

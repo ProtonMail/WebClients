@@ -30,4 +30,19 @@ A <a href="line.com">line </a> with one <a href="https://link1.com">https://link
 <akdfjadf@aefasdf.adf.<a href="mailto:asd@adfasdf.dfadf">mailto:asd@adfasdf.dfadf</a>>`;
         expect(urlify(string)).toEqual(result);
     });
+
+    it('should apply the proper target', () => {
+        expect(urlify('test https://www.google.com')).toEqual(
+            'test <a href="https://www.google.com">https://www.google.com</a>'
+        );
+        expect(urlify('test https://www.google.com', { target: '_blank' })).toEqual(
+            'test <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">https://www.google.com</a>'
+        );
+        expect(urlify('test https://www.google.com', { target: '_top' })).toEqual(
+            'test <a href="https://www.google.com" target="_top">https://www.google.com</a>'
+        );
+        expect(urlify('test https://www.google.com', { target: '_self' })).toEqual(
+            'test <a href="https://www.google.com" target="_self">https://www.google.com</a>'
+        );
+    });
 });

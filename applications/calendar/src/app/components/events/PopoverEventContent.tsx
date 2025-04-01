@@ -19,8 +19,6 @@ import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { escapeInvalidHtmlTags, restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
-import urlify from '@proton/shared/lib/calendar/urlify';
 import { APPS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
@@ -36,6 +34,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { DisplayNameEmail } from '../../containers/calendar/interface';
 import { getOrganizerDisplayData } from '../../helpers/attendees';
+import { useUrlifyString } from '../../hooks/useUrlifyString';
 import AttendeeStatusIcon from './AttendeeStatusIcon';
 import Participant from './Participant';
 import PopoverNotification from './PopoverNotification';
@@ -132,16 +131,8 @@ const PopoverEventContent = ({
         contactEmailsMap,
         displayNameEmailMap
     );
-    const sanitizedLocation = useMemo(() => {
-        const urlified = urlify(model.location.trim());
-        const escaped = escapeInvalidHtmlTags(urlified);
-        return restrictedCalendarSanitize(escaped);
-    }, [model.location]);
-    const htmlString = useMemo(() => {
-        const urlified = urlify(model.description.trim());
-        const escaped = escapeInvalidHtmlTags(urlified);
-        return restrictedCalendarSanitize(escaped);
-    }, [model.description]);
+    const sanitizedLocation = useUrlifyString({ text: model.location });
+    const htmlString = useUrlifyString({ text: model.description });
 
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {
