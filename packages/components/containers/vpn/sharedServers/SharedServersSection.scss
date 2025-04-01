@@ -1,4 +1,6 @@
-.publishBanner {
+@import '~@proton/styles/scss/lib';
+
+.publish-banner {
 	justify-content: space-between;
 	block-size: 52px;
 
@@ -9,4 +11,36 @@
 	&:not(.unpublished) {
 		border: 1px solid #e9e7e3;
 	}
+}
+
+.countries-table {
+	margin-block-end: 0;
+
+	tbody {
+		tr {
+			padding: var(--space-2);
+			margin-block-end: var(--space-1);
+		}
+
+		tr,
+		td {
+			border: none;
+		}
+	}
+}
+
+.policy-member-chip {
+	block-size: rem(28);
+}
+
+.enabled-chip {
+	background-color: var(--interaction-weak);
+}
+
+.disabled-chip {
+	background-color: var(--background-weak);
+}
+
+.policy-row-disabled {
+	pointer-events: none;
 }
