@@ -10,6 +10,7 @@ import {
     getUserAccessSuccess,
     importReport,
     itemCreate,
+    itemDeleteRevisions,
     itemEdit,
 } from '@proton/pass/store/actions';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
@@ -42,6 +43,7 @@ function* userAccessWorker({ getAuthStore }: RootSagaOptions, { meta }: ReturnTy
 const matchRevalidateUserAccess = (action: unknown) => {
     if (fileLinkPending.success.match(action)) return true;
     if (importReport.match(action)) return true;
+    if (itemDeleteRevisions.success.match(action)) return true;
     if (or(itemEdit.success.match, itemCreate.success.match)(action)) return hasAttachments(action.payload.item);
     return false;
 };
