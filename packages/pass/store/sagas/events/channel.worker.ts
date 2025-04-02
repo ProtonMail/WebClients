@@ -77,6 +77,7 @@ export function* channelInitalize<T extends {}>(
             (action: Action) => clientInit.intent.match(action) && action.meta.receiver.endpoint === 'popup',
             function* () {
                 yield cancel(initTask);
+                manager.setInterval(ACTIVE_POLLING_TIMEOUT);
                 yield manager.call().catch(noop);
                 yield wait(ACTIVE_POLLING_TIMEOUT);
             }
