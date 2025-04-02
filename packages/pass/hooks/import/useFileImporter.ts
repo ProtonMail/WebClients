@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import type { OnFileUploadProgress } from '@proton/pass/hooks/files/useFileUpload';
 import { useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { isAbortError } from '@proton/pass/lib/api/errors';
@@ -12,6 +13,7 @@ import type { ImportReport } from '@proton/pass/lib/import/helpers/report';
 import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { fileLinkPending } from '@proton/pass/store/actions';
 import { selectUserStorageMaxFileSize } from '@proton/pass/store/selectors';
+import type { MaybeNull } from '@proton/pass/types';
 import { type IndexedByShareIdAndItemId } from '@proton/pass/types';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { abortableSequence } from '@proton/pass/utils/fp/promises';
@@ -29,6 +31,8 @@ export const useFileImporter = () => {
         fileUpload.cancel('*');
         setProgress(0);
     }, []);
+
+    const addProgress = useCallback((increment: number) => setProgress((val) => val + increment), []);
 
     const start = useCallback(
         async (
@@ -49,6 +53,17 @@ export const useFileImporter = () => {
                                     const filename = getImportFilename(path, report.provider);
                                     const blob = await fileReader.getFile(path);
 
+                                    /** Track remaining progress for error recovery
+                                     * Null means we haven't started uploading yet */
+                                    let remaining: MaybeNull<number> = null;
+
+                                    /** Only increment when we have actual progress (uploaded > 0)
+                                     * Store the remaining portion for error recovery */
+                                    const onFileProgress: OnFileUploadProgress = (uploaded, total) => {
+                                        remaining = (total - uploaded) / total;
+                                        if (uploaded > 0) addProgress(1 / total);
+                                    };
+
                                     if (blob) {
                                         try {
                                             if (blob.size > maxFileSize) {
@@ -64,7 +79,9 @@ export const useFileImporter = () => {
                                                 });
                                             }
                                             const file = new File([blob], filename);
-                                            const fileID = await fileUpload.start(file, uniqueId());
+
+                                            const fileID = await fileUpload.start(file, uniqueId(), onFileProgress);
+
                                             toAdd.push(fileID);
                                             report.ignoredFiles = report.ignoredFiles?.filter(not(eq(path)));
                                         } catch (error) {
@@ -75,7 +92,12 @@ export const useFileImporter = () => {
                                                 text: `${c('Pass_file_attachments').t`"${filename}" could not be imported.`} ${detail}`,
                                             });
                                         } finally {
-                                            setProgress((progress) => progress + 1);
+                                            /** Handle final progress update in all cases to
+                                             * ensure progress reaches 100% even when errors occur :
+                                             * - If remaining is null: file was never processed
+                                             * - If remaining is not 0: add the remaining portion */
+                                            if (remaining === null) addProgress(1);
+                                            else if (remaining !== 0) addProgress(remaining);
                                         }
                                     }
                                 }),
