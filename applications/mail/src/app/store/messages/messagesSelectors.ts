@@ -7,6 +7,7 @@ import type { MailState } from '../store';
 const messages = (state: MailState) => state.messages;
 
 const currentID = (_: MailState, { ID }: { ID: string }) => ID;
+const conversationID = (_: MailState, { ConversationID }: { ConversationID: string }) => ConversationID;
 
 export const localID = createSelector([messages, currentID], (messages, currentID) => {
     const localID = [...Object.keys(messages)]
@@ -17,6 +18,10 @@ export const localID = createSelector([messages, currentID], (messages, currentI
 });
 
 export const messageByID = createSelector([messages, localID], (messages, localID) => messages[localID]);
+
+export const messagesByConversationID = createSelector([messages, conversationID], (messages, conversationID) => {
+    return Object.values(messages).filter((message) => message?.data?.ConversationID === conversationID);
+});
 
 export const allMessages = createSelector([messages], (messages) => {
     return Object.values(messages);
