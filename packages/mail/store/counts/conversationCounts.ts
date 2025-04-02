@@ -6,6 +6,16 @@ import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector 
 import { queryConversationCount } from '@proton/shared/lib/api/conversations';
 import { type LabelCount } from '@proton/shared/lib/interfaces';
 
+import type { Conversation } from 'proton-mail/models/conversation';
+import type { Element } from 'proton-mail/models/element';
+
+import {
+    markConversationsAsRead,
+    markConversationsAsUnread,
+    markMessagesAsRead,
+    markMessagesAsUnread,
+} from './conversationCountsReducers';
+
 const name = 'conversationCounts' as const;
 
 interface State {
@@ -31,6 +41,42 @@ const slice = createSlice({
     reducers: {
         set: (state, action: PayloadAction<LabelCount[]>) => {
             state.value = action.payload;
+        },
+        markConversationsAsReadPending: (state, action: PayloadAction<{ elements: Element[]; labelID: string }>) => {
+            markConversationsAsRead(state, action);
+        },
+        markConversationsAsUnreadPending: (state, action: PayloadAction<{ elements: Element[]; labelID: string }>) => {
+            markConversationsAsUnread(state, action);
+        },
+        markConversationsAsReadRejected: (state, action) => {
+            markConversationsAsUnread(state, action);
+        },
+        markConversationsAsUnreadRejected: (state, action) => {
+            markConversationsAsRead(state, action);
+        },
+        markMessagesAsUnreadPending: (
+            state,
+            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+        ) => {
+            markMessagesAsUnread(state, action);
+        },
+        markMessagesAsUnreadRejected: (
+            state,
+            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+        ) => {
+            markMessagesAsRead(state, action);
+        },
+        markMessagesAsReadPending: (
+            state,
+            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+        ) => {
+            markMessagesAsRead(state, action);
+        },
+        markMessagesAsReadRejected: (
+            state,
+            action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
+        ) => {
+            markMessagesAsUnread(state, action);
         },
     },
     extraReducers: (builder) => {
