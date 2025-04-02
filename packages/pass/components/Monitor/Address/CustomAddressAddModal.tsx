@@ -13,7 +13,7 @@ import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { useRequest } from '@proton/pass/hooks/useRequest';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { addCustomAddress } from '@proton/pass/store/actions';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -39,7 +39,7 @@ export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
         validate: ({ email }) => {
             let errors: FormikErrors<FormValues> = {};
             if (!email) errors.email = c('Warning').t`Email is required`;
-            else if (!PassCoreUI.is_email_valid(email)) errors.email = c('Warning').t`Invalid email`;
+            else if (!PassUI.is_email_valid(email)) errors.email = c('Warning').t`Invalid email`;
             return errors;
         },
         onSubmit: pipe(prop('email'), toLowerCase, dispatch),

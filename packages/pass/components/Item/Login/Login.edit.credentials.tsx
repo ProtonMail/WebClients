@@ -13,7 +13,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type LoginItemFormValues } from '@proton/pass/types';
 import { merge, withMerge } from '@proton/pass/utils/object/merge';
@@ -40,7 +40,7 @@ export const LoginEditCredentials: FC<Props> = ({ form }) => {
         form.setValues(
             withMerge<LoginItemFormValues>({
                 withUsername: true,
-                ...(!PassCoreUI.is_email_valid(itemEmail)
+                ...(!PassUI.is_email_valid(itemEmail)
                     ? {
                           itemEmail: '',
                           itemUsername: itemEmail,
