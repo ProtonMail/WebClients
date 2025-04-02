@@ -5,6 +5,7 @@ import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassC
 import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
+import { PassUIWorkerService } from '@proton/pass/lib/core/ui.worker.service';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
@@ -63,8 +64,30 @@ export const useFileUpload = () => {
                 if (!ctrl || ctrl.signal.aborted) throw new DOMException('Aborted', 'AbortError');
 
                 const { name, size } = file;
-                const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
-                const mimeType = PassUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
+
+                const mimeType = await (async (): Promise<string> => {
+                    try {
+                        const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
+                        const mimeTypeBufferU8 = new Uint8Array(mimeTypeBuffer);
+
+                        if (BUILD_TARGET === 'safari') {
+                            /** Safari's asm.js compilation of `mime_type_from_content` is unstable
+                             * and frequently throws `wasm2js_trap` errors. To prevent this, we
+                             * offload MIME detection to a dedicated WASM worker process instead. */
+                            return await PassUIWorkerService.transfer([mimeTypeBufferU8.buffer])(
+                                'mime_type_from_content',
+                                mimeTypeBufferU8
+                            );
+                        }
+
+                        return PassUI.mime_type_from_content(mimeTypeBufferU8);
+                    } catch {
+                        /** If the Rust-based MIME detection fails,
+                         * use the browser's MIME type detection. */
+                        return file.type;
+                    }
+                })();
+
                 const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
                 const initDTO = { name, mimeType, totalChunks, uploadID };
 
