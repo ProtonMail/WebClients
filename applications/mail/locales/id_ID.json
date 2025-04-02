@@ -486,6 +486,9 @@
       "Expiration time": [
         "Waktu kedaluwarsa"
       ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Telusuri ${ VPN_APP_NAME }"
+      ],
       "Export": [
         "Ekspor"
       ],
@@ -499,7 +502,7 @@
         "Enkripsi eksternal"
       ],
       "Fewer search options": [
-        "Lebih sedikit opsi pencarian"
+        "Tutup opsi tambahan"
       ],
       "Filter on...": [
         "Filter berdasarkan..."
@@ -811,7 +814,7 @@
         "Tindakan perbaikan lainnya"
       ],
       "More search options": [
-        "Opsi pencarian lainnya"
+        "Opsi lainnya"
       ],
       "Move": [
         "Pindahkan"
@@ -1087,7 +1090,7 @@
         "Gulir ke bawah"
       ],
       "Search": [
-        "Pencarian"
+        "Cari"
       ],
       "Search countries": [
         "Cari negara"
@@ -1299,6 +1302,9 @@
       "Toggle settings": [
         "Aktifkan/nonaktifkan pengaturan"
       ],
+      "Toggle VPN dashboard": [
+        "Tampilkan dasbor VPN"
+      ],
       "Tomorrow": [
         "Besok"
       ],
@@ -1365,11 +1371,11 @@
       "Upgrade": [
         "Tingkatkan"
       ],
-      "Upgrade Now": [
-        "Tingkatkan Sekarang"
-      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Upgrade Now": [
+        "Tingkatkan Sekarang"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Tingkatkan ke ${ BRAND_NAME } Unlimited"
@@ -3859,6 +3865,17 @@
         "Unduh semua"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Unduh untuk Linux"
+      ],
+      "Download for macOS": [
+        "Unduh untuk macOS"
+      ],
+      "Download for Windows": [
+        "Unduh untuk Windows"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Riwayat versi yang terperinci"
@@ -4297,7 +4314,7 @@
         "Proses pembayaran tidak didukung"
       ],
       "Please activate your search again": [
-        "Silakan aktifkan kembali pencarian konten Anda"
+        "Silakan aktifkan pencarian Anda kembali"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
@@ -4496,6 +4513,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Dasbor VPN tidak dapat dimuat. Silakan periksa koneksi Anda dan coba lagi."
       ],
       "Unexpected error, we can't import the contacts": [
         "Terdapat kesalahan yang tidak diduga. Kami tidak dapat mengimpor kontak"
@@ -5933,6 +5953,9 @@
       "${ updated } contact updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } sedang menyamarkan alamat IP Anda, sehingga situs web yang Anda kunjungi tidak akan dapat mengenali diri Anda."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
@@ -5951,6 +5974,12 @@
       "**${ elementsFoundCount }** result found in ${ labelName }": [
         "**${ elementsFoundCount }** hasil ditemukan pada ${ labelName }"
       ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Sambungan otomatis**: Membuka aplikasi dan menghubungkan Anda ke VPN segera setelah Anda menyalakan perangkat Anda."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Menghentikan kebocoran data dengan memblokir internet Anda apabila koneski VPN terputus secara tiba-tiba."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
@@ -5966,8 +5995,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Permintaan untuk berhenti berlangganan dari milis ini akan disampaikan kepada pengirim buletin dan akan diproses secara otomatis."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Koneksi yang aman sangat penting pada saat bekerja secara remote. VPN melindungi data perusahaan Anda dari ancaman siber dan menjaga pekerjaan Anda tetap privat."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN mengenkripsi koneksi Anda dan menyembunyikan alamat IP Anda, yang mempersulit siapa pun untuk melacak atau memantau aktivitas penjelajahan Anda."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN menyembunyikan alamat IP Anda dan mengenkripsi aktivitas penjelajahan Anda, yang mempersulit situs web, pengiklan, dan ISP untuk dapat melacak Anda seiring waktu."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN merupakan terowongan yang aman antara perangkat Anda dan jaringan internet. VPN menyembunyikan lokasi dan aktivitas Anda dari penyedia layanan internet (ISP) dan situs web yang Anda kunjungi."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Akses 6500+ server berkecepatan tinggi pada hingga 10 perangkat untuk menjaga agar data penjelajahan internet Anda aman. Tersedia di ${ ios }, ${ android }, ${ appleTV }, dan ${ desktop }."
@@ -5984,6 +6025,9 @@
       "Active": [
         "Aktif"
       ],
+      "Ad targeting": [
+        "Penargetan iklan"
+      ],
       "Add image URL": [
         "Sisipkan gambar melalui URL"
       ],
@@ -5992,6 +6036,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verifikasi Alamat dengan Kunci Terpercaya sudah diaktifkan untuk alamat ini. Agar dapat mengirim ke alamat ini, percayai terlebih dahulu kunci publik yang akan dipakai untuk mengirim pesan."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Para pengiklan dapat melacak penjelajahan Anda untuk menampilkan iklan yang ditargetkan. ${ VPN_APP_NAME } memblokir program pelacak dan iklan, yang mempercepat koneksi Anda dan meningkatkan pengalaman online Anda."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asisten berteknologi AI yang membantu Anda merancang email yang lebih baik secara cepat dan mudah."
@@ -6131,6 +6178,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
       ],
+      "Browse privately and access blocked content.": [
+        "Jelajahi internet secara pribadi dan akses konten yang diblokir."
+      ],
       "Browser not supported": [
         "Browser tidak didukung"
       ],
@@ -6181,6 +6231,9 @@
       ],
       "Confirm phishing report": [
         "Konfirmasi laporan phishing"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Hubungkan ke ${ VPN_APP_NAME } untuk berselancar secara privat"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Tentukan kapan waktu yang paling tepat bagi para penerima untuk menerima email Anda, dan jadwalkan pengiriman Anda sesuai dengan waktu ini."
@@ -6470,6 +6523,9 @@
       "Generate text": [
         "Hasilkan teks"
       ],
+      "Geoblocking": [
+        "Pemblokiran wilayah"
+      ],
       "Get it on Google Play": [
         "Dapatkan di Google Play"
       ],
@@ -6478,6 +6534,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Berikan tagihan yang masuk label dengan keterangan warna yang khusus, semisal \"${ suggestedLabelName }\". Setelah tagihan ini terbayar, ubah label ini menjadi \"${ suggestedPaidLabelName }\"."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Pemerintah dan ISP dapat memantau aktivitas online Anda. Dengan menyembunyikan alamat IP asli dan mengenkripsi aktivitas Anda, penjelajahan internet Anda akan menjadi privat."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Memiliki ${ numAttachments } lampiran (${ numAttachmentsSize })"
@@ -6551,6 +6610,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "Di negara dengan pembatasan yang ketat"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Pada langkah selanjutnya, Anda dapat mengirimkan deposit menggunakan alamat Bitcoin."
       ],
@@ -6559,6 +6621,9 @@
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Sertakan perintah Anda dan respons yang Anda peroleh untuk membantu kami meningkatkan akurasi asisten penulisan."
+      ],
+      "Included for free with your plan": [
+        "Terliput secara gratis dengan paket Anda"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
@@ -6589,6 +6654,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Undang pasangan, sahabat, atau siapa pun itu yang ingin Anda ajak untuk berbagi paket ${ protonDuoPlanName } bersama Anda."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Tidak ada waktu yang tidak tepat untuk menggunakan VPN. Meskipun demikian, terdapat beberapa lokasi dan situasi di mana ancaman kejahatan siber dapat sangat membahayakan:"
       ],
       "JCB logo": [
         "Logo JCB"
@@ -6737,6 +6805,9 @@
       "More refine actions": [
         "Tindakan perbaikan lainnya"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Sebagian besar jaringan WiFi publik dapat diakses secara aman, namun jaringan tertentu yang kurang aman dapat memaparkan diri Anda ke berbagai ancaman siber. VPN melindungi lalu lintas jaringan Anda, yang membuat diri Anda tetap terlindung atas ancaman ini."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
       ],
@@ -6794,11 +6865,17 @@
       "Not a valid URL": [
         "URL tidak valid"
       ],
+      "Not connected": [
+        "Tidak terhubung"
+      ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
       ],
       "of": [
         "dari"
+      ],
+      "On public WiFi networks": [
+        "Di jaringan WiFI publik"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
@@ -6935,6 +7012,9 @@
       "Print email": [
         "Cetak email"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Penjelajahan pribadi (atau mode \"incognito\") hanya berguna untuk menyembunyikan aktivitas Anda pada perangkat yang Anda gunakan. Walaupun mode ini menghentikan browser Anda untuk menyimpan riwayat penjelajahan dan cookie, mode ini tidak serta-merta membuat Anda kasat mata. Pihak ISP, pengelola jaringan, dan situs web yang Anda kunjungi masih akan dapat melihat apa yang Anda lakukan secara online."
+      ],
       "Proofread selection": [
         "Periksa pilihan"
       ],
@@ -6997,6 +7077,9 @@
       ],
       "Saving draft…": [
         "Menyimpan draf…"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Pindai kode QR dengan perangkat seluler Anda"
       ],
       "Scheduled send of this message will be canceled.": [
         "Pengiriman terjadwal pesan ini akan dibatalkan."
@@ -7106,6 +7189,12 @@
       "Snoozing this conversation will be canceled.": [
         "Penundaan percakapan ini akan dibatalkan."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Pemerintahan tertentu dapat memblokir atau membatasi akses ke situs web yang spesifik. VPN dapat membantu Anda untuk menangkal sensor selagi menjaga aktivitas dan identitas Anda tetap privat."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Situs web dan layanan streaming tertentu dapat memblokir konten berdasarkan wilayah. VPN memungkinkan Anda untuk melewati pembatasan ini dan mengakses internet secara bebas."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
       ],
@@ -7114,6 +7203,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Mulai gunakan versi singkat dari alamat email Anda yang lebih ringkas dan menarik."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Buat diri Anda selalu terhubung tanpa harus repot dengan mengaktifkan pengaturan VPN berikut:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Kapabilitas penyimpanan tidak didukung pada browser ini. Kami membutuhkan dukungan ini untuk mengaktifkan pencarian konten pesan."
@@ -7141,6 +7233,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Pemantauan"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sinkronkan dan kelola berkas dengan aplikasi ${ DRIVE_APP_NAME }. Buat dan bagikan dokumen di ${ DOCS_APP_NAME }, dan simpan dokumen ini secara aman. Semuanya tersedia di ${ ios }, ${ android }, dan ${ desktop }."
@@ -7253,6 +7348,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Hal ini berarti bahwa ISP Anda dan situs web yang Anda kunjungi tidak akan dapat mengaitkan informasi pribadi Anda dengan aktivitas online Anda."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Pesan ini telah disesuaikan agar dapat nyaman dibaca dengan tema gelap."
       ],
@@ -7319,6 +7417,9 @@
       "This sender's public key has not been trusted yet.": [
         "Kunci publik pengirim belum dipercaya."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Kode unik ini dapat digunakan oleh situs web dan penyedia layanan internet (ISP) untuk menautkan lokasi dan riwayat penjelajahan Anda ke perangkat Anda"
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Informasi ini ditampilkan kepada Anda karena baris subjek email Anda mengandung kata kunci untuk pengaturan ulang kata sandi."
       ],
@@ -7378,6 +7479,9 @@
       ],
       "Trackers blocked:": [
         "Pelacak yang diblokir:"
+      ],
+      "Tracking": [
+        "Pelacakan"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
@@ -7493,6 +7597,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN IP": [
+        "IP VPN"
+      ],
       "Warning": [
         "Peringatan"
       ],
@@ -7552,6 +7659,12 @@
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
         "Pada saat Anda memberikan alamat email, gunakanlah alamat email samaran sekali pakai yang dihasilkan oleh hide-my-email alih-alih alamat email asli Anda."
+      ],
+      "When working remotely": [
+        "Pada saat bekerja secara remote"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Pada saat Anda terhubung ke VPN, aplikasi VPN akan menggunakan teknologi enkripsi untuk menyembunyikan alamat IP (yang merupakan kode unik perangkat) milik Anda."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Pada saat Anda mengaktifkan kunci yang dipercaya untuk ${ senderName }, kunci publik yang ada akan ditambahkan ke rincian kontak."
@@ -7769,6 +7882,15 @@
       "Your information was found on ${ displayedDate }": [
         "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Penyedia layanan internet Anda dapat memantau dan terkadang menjual data Anda, atau bahkan membatasi situs web mana saja yang dapat Anda akses."
+      ],
+      "Your IP": [
+        "IP Anda"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Alamat IP Anda sedang terlihat dan dapat digunakan untuk melacak aktivitas online Anda."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
       ],
@@ -7787,11 +7909,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Tanggal penagihan Anda selanjutnya adalah ${ renewalTime }. Silakan hubungi layanan dukungan apabila Anda perlu untuk mengubah paket dengan segera."
       ],
+      "Your online activity is protected": [
+        "Aktivitas online Anda terlindung"
+      ],
       "Your password was leaked:": [
         "Kata sandi Anda telah bocor:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Lokasi fisik Anda sedang terlihat dan dapat digunakan untuk membatasi akses internet Anda."
       ],
       "Your private writing assistant": [
         "Asisten penulisan pribadi Anda"
@@ -8124,11 +8252,11 @@
       "AND": [
         "DAN"
       ],
-      "and": [
-        "dan"
-      ],
       "And": [
         "Dan"
+      ],
+      "and": [
+        "dan"
       ],
       "Anderson": [
         "Anderson"
@@ -8637,6 +8765,15 @@
       "Your alias": [
         "Alias Anda"
       ],
+      "Your IP": [
+        "IP Anda"
+      ],
+      "Your ISP": [
+        "ISP Anda"
+      ],
+      "Your location": [
+        "Lokasi Anda"
+      ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
       ]
@@ -8648,7 +8785,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Kepada"
+        "Hingga"
       ]
     },
     "Label attach to date input to select a date": {
@@ -9640,7 +9777,7 @@
         "Jadwalkan pesan sesuai keinginan Anda"
       ],
       "Search message content": [
-        "Cari konten pesan"
+        "Pencarian konten pesan"
       ],
       "Secure Core servers": [
         "Server Secure Core"
@@ -10240,6 +10377,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited untuk 12 bulan"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } untuk 12 bulan"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
@@ -10263,9 +10406,6 @@
       ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus selama 12 bulan"
       ],
       "Maybe later": [
         "Mungkin nanti"
@@ -12966,6 +13106,9 @@
       "Deleting contacts": [
         "Menghapus kontak"
       ],
+      "Desktop": [
+        "Desktop"
+      ],
       "Details": [
         "Rincian"
       ],
@@ -12983,6 +13126,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Turunkan ke ${ downgradedPlanName }?"
+      ],
+      "Download the app": [
+        "Unduh aplikasinya"
       ],
       "Edit contact": [
         "Sunting kontak"
@@ -13077,6 +13223,9 @@
       "High security for your account": [
         "Keamanan yang tinggi bagi akun Anda"
       ],
+      "How does it all work?": [
+        "Bagaimana cara semua ini bekerja?"
+      ],
       "How to update your email address": [
         "Cara memperbarui alamat email Anda"
       ],
@@ -13100,6 +13249,9 @@
       ],
       "Import groups": [
         "Impor grup"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "Tingkatkan keamanan dengan ${ VPN_APP_NAME }"
       ],
       "Increase your privacy with more addresses": [
         "Tingkatkan privasi Anda dengan lebih banyak alamat"
@@ -13127,6 +13279,9 @@
       ],
       "Load remote content": [
         "Muat konten eksternal"
+      ],
+      "Make a secure connection your default": [
+        "Jadikan koneksi yang aman sebagai koneksi bawaan Anda"
       ],
       "Mark as read": [
         "Tandai telah dibaca"
@@ -13166,6 +13321,9 @@
       ],
       "Minicalendar": [
         "Kalender mini"
+      ],
+      "Mobile": [
+        "Seluler"
       ],
       "More": [
         "Lainnya"
@@ -13292,6 +13450,9 @@
       ],
       "Priority support:": [
         "Dukungan prioritas:"
+      ],
+      "Private browsing vs VPN": [
+        "Penjelajahan pribadi vs. VPN"
       ],
       "Processing...": [
         "Memproses..."
@@ -13494,6 +13655,9 @@
       "Verifying your payment...": [
         "Memverifikasi pembayaran Anda..."
       ],
+      "VPN explained": [
+        "Kupas tuntas VPN"
+      ],
       "Want to snooze any time?": [
         "Ingin menunda kapan pun?"
       ],
@@ -13512,8 +13676,17 @@
       "Welcome ${ userName }": [
         "Selamat datang ${ userName }"
       ],
+      "What can a VPN protect you from?": [
+        "Dari hal apa saja VPN dapat melindungi Anda?"
+      ],
+      "What is a VPN?": [
+        "Apa itu VPN?"
+      ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Kapan waktu yang paling tepat untuk menggunakan VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Anda kini dapat membuat folder dan label tanpa batasan jumlah"

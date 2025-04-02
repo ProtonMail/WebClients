@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Seleccione el país ${ country }"
       ],
-      "select file": [
-        "seleccionar archivo"
-      ],
       "Select file": [
         "Seleccionar archivo"
+      ],
+      "select file": [
+        "seleccionar archivo"
       ],
       "Select files": [
         "Seleccionar archivos"
@@ -7073,6 +7073,10 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quiere compartir información con usted en ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } país activado",
+        "${ locationsCount } países activados"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
@@ -7652,9 +7656,6 @@
       ],
       "Copy your referral link": [
         "Copiar el enlace de referencia"
-      ],
-      "countries enabled": [
-        "países activados"
       ],
       "Country code": [
         "Código de país"
@@ -8569,6 +8570,9 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
+      "No countries enabled": [
+        "Sin países activados"
+      ],
       "No credit card required": [
         "No se requiere tarjeta de crédito"
       ],
@@ -8732,7 +8736,7 @@
         "Premio Editors' Choice de PC Magazine con una calificación de 5 de 5 estrellas"
       ],
       "Pending removal": [
-        "Pendiente de eliminación"
+        "La eliminación está pendiente."
       ],
       "per month": [
         "al mes"
@@ -10750,10 +10754,10 @@
       "Allow sharing outside the organization": [
         "Permitir intercambio fuera de la organización"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10768,11 +10772,11 @@
       "AND": [
         "Y"
       ],
-      "and": [
-        "y"
-      ],
       "And": [
         "Y"
+      ],
+      "and": [
+        "y"
       ],
       "Anderson": [
         "García"
@@ -11577,7 +11581,7 @@
         "Firma"
       ],
       "Single sign-on Entity ID": [
-        "ID de entidad de inicio de sesión único"
+        "ID de la entidad del inicio de sesión único"
       ],
       "Single sign-on URL": [
         "URL de inicio de sesión único"
@@ -13973,6 +13977,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited por 12 meses"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } por 12 meses"
+      ],
       "${ pricingTitle } offer expires today!": [
         "¡La oferta de ${ pricingTitle } vence hoy!"
       ],
@@ -13996,9 +14006,6 @@
       ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -14401,7 +14408,7 @@
         "Use un ícono gráfico o imagen en lugar de texto."
       ],
       "Use a solid background color.": [
-        "Use un color de fondo sólido."
+        "Use un color de fondo unido."
       ]
     },
     "Organization logo upload modal": {
@@ -16541,7 +16548,7 @@
     },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
-        "Cumplimiento del RGPD y de la HIPAA"
+        "Cumplimiento con el RGPD y la HIPAA"
       ]
     },
     "specialoffer: Action": {
@@ -20535,7 +20542,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Una manera más segura de guardar Bitcoin"
+        "Una manera más segura de guardar sus bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

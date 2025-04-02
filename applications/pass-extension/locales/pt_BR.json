@@ -152,11 +152,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Criar uma conta na ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta no ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Criar uma conta na ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Criar alias"
@@ -203,6 +203,12 @@
       "Delete all": [
         "Excluir tudo"
       ],
+      "Delete all files": [
+        "Exclua todos os arquivos"
+      ],
+      "Delete file: ${ deleteFile.state.name }": [
+        "Excluir arquivo: ${ deleteFile.state.name }"
+      ],
       "Delete it, I will never need it": [
         "Exclua-o, eu nunca vou precisar dele"
       ],
@@ -247,6 +253,12 @@
       ],
       "Done": [
         "Concluído"
+      ],
+      "Download": [
+        "Baixar"
+      ],
+      "Download file": [
+        "Baixar arquivo"
       ],
       "Download this CSV template": [
         "Baixar esse modelo CSV"
@@ -413,6 +425,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Open new window to upload files": [
+        "Abra uma nova janela para fazer upload de arquivos"
+      ],
       "Open web app": [
         "Abra o aplicativo web"
       ],
@@ -458,11 +473,17 @@
       "Remove all expired links (${ inactiveLinkCount })": [
         "Remover todos os links expirados (${ inactiveLinkCount })"
       ],
+      "Remove all files": [
+        "Remover todos os arquivos"
+      ],
       "Remove link": [
         "Remover link"
       ],
       "Remove member": [
         "Remover membro"
+      ],
+      "Rename": [
+        "Renomear"
       ],
       "Request a feature": [
         "Solicitar um recurso"
@@ -475,6 +496,12 @@
       ],
       "Resend invitation": [
         "Reenviar convite"
+      ],
+      "Reset": [
+        "Redefinir"
+      ],
+      "Reset history": [
+        "Redefinir histórico"
       ],
       "Restore": [
         "Restaurar"
@@ -746,6 +773,12 @@
       ]
     },
     "Error": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "\"${ file.name }\" não pôde ser carregado."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\" não pôde ser importado."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "O arquivo ${ provider } não pôde ser analisado ${ errorDetail }"
       ],
@@ -760,6 +793,9 @@
       ],
       "Alias options could not be resolved": [
         "Não foi possível resolver as opções de alias."
+      ],
+      "An error occured during the import process": [
+        "Ocorreu um erro durante o processo de importação"
       ],
       "Authentication error": [
         "Erro de autenticação"
@@ -824,6 +860,9 @@
       ],
       "Deleting item failed": [
         "Erro ao excluir item"
+      ],
+      "Deleting item history failed": [
+        "Falha ao excluir o histórico do item"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Erro ao excluir o cofre \"${ payload.content.name }\""
@@ -985,9 +1024,6 @@
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
       ],
-      "File could not be read": [
-        "Não foi possível encontrar o arquivo."
-      ],
       "File does not match expected format": [
         "O arquivo não corresponde ao formato esperado"
       ],
@@ -1032,6 +1068,9 @@
       ],
       "Network error": [
         "Erro de rede"
+      ],
+      "Not enough available storage space for the selected files.": [
+        "Não há espaço de armazenamento disponível suficiente para os arquivos selecionados."
       ],
       "Passphrase is incorrect": [
         "A frase secreta está incorreta"
@@ -1344,10 +1383,10 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Após importar seus dados, você pode excluir o arquivo CSV que contém suas senhas por segurança."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "O alias foi desativado. Você não mais receberá e-mails enviados para ${ item.aliasEmail }."
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "O alias foi ativado. Agora você pode receber e-mails enviados para ${ item.aliasEmail }."
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
@@ -1521,6 +1560,9 @@
       "DNS changes could take up to 24 hours to update.": [
         "As alterações de DNS podem levar até 24 horas para serem atualizadas."
       ],
+      "Do you want to remove all the files?": [
+        "Deseja remover todos os arquivos?"
+      ],
       "Domain: ${ domainPath } or @": [
         "Domínio: ${ domainPath } ou @"
       ],
@@ -1530,8 +1572,8 @@
       "Drop to import": [
         "Solte para importar"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Devido a uma limitação das extensões do navegador Safari, após exportar os dados, faltará a extensão \".pgp\" nos arquivos. Renomeie o arquivo para incluir a extensão \".pgp\" (ex: arquivo.pgp) após exportar."
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Devido a uma limitação do Firefox, ${ PASS_APP_NAME } precisa ser reaberto em uma nova janela antes que você possa fazer upload de arquivos."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Transfira suas senhas existentes para o ${ PASS_APP_NAME } de forma simples e rápida."
@@ -1605,6 +1647,9 @@
       "Expires in ${ remainingTime }": [
         "Expira em ${ remainingTime }"
       ],
+      "Exporting files": [
+        "Exportando arquivos"
+      ],
       "Exporting your data...": [
         "Exportando seus dados..."
       ],
@@ -1613,6 +1658,9 @@
       ],
       "Extra password successfully removed": [
         "A senha adicional foi removida."
+      ],
+      "File attachments": [
+        "Anexos de arquivo"
       ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
@@ -1658,15 +1706,11 @@
       "Identity confirmed": [
         "Identidade confirmada"
       ],
-      "Import in progress:": [
-        "Importação em progresso:"
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Se ativado, todos os seus arquivos serão baixados durante a exportação. Isso pode levar algum tempo dependendo da sua conexão com a Internet."
       ],
       "Import the CSV file below.": [
         "Importe o arquivo CSV abaixo."
-      ],
-      "Imported ${ payload.total } item": [
-        "Importado ${ payload.total } item",
-        "Importados ${ payload.total } itens"
       ],
       "Imported on ${ date }": [
         "Importado em ${ date }"
@@ -1676,6 +1720,9 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Para obter a melhor experiência com o ${ PASS_APP_NAME }, conceda as permissões de extensão necessárias"
+      ],
+      "Include file attachments": [
+        "Incluir anexos de arquivo"
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
@@ -1698,15 +1745,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que você já está logado em ${ PASS_APP_NAME }. Se você estiver tentando fazer login com uma conta diferente, primeiro saia da extensão."
       ],
-      "item": [
-        "item",
-        "itens"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "O item \"${ payload.item.data.metadata.name }\" foi criado"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "O item \"${ payload.item.data.metadata.name }\" foi atualizado"
+      ],
+      "Item history permanently deleted": [
+        "Histórico de itens excluído permanentemente"
       ],
       "Item moved to trash": [
         "Item movido para a lixeira"
@@ -1816,6 +1862,9 @@
       "Offline support successfully disabled": [
         "O modo off-line foi desativado."
       ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Depois de excluído, esse arquivo ainda poderá ser recuperado do histórico do item."
+      ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
       ],
@@ -1858,6 +1907,9 @@
       ],
       "Pinning item...": [
         "Fixando item..."
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Por favor, seja paciente enquanto seus arquivos estão sendo baixados."
       ],
       "Please check your spam folder or try resending the code.": [
         "Verifique sua pasta de spam ou tente reenviar o código."
@@ -1940,6 +1992,9 @@
       "Please follow the steps below to set up your domain.": [
         "Siga as etapas abaixo para configurar seu domínio."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Por favor, mantenha esta janela aberta enquanto seus dados estão sendo importados. Este processo pode demorar alguns minutos."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Uma vez excluído, o alias não pode ser restaurado. Talvez você queira desabilitar o alias em vez disso?"
       ],
@@ -1987,6 +2042,9 @@
       ],
       "Removing secure link...": [
         "Removendo link seguro..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "A redefinição do histórico excluirá permanentemente todas as versões anteriores dos itens e não poderá ser desfeita."
       ],
       "Restoring items from trash": [
         "Restaurando itens da lixeira"
@@ -2096,9 +2154,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "A senha extra será necessária para utilizar o ${ PASS_APP_NAME }. Serve como uma senha adicional sobre sua senha da ${ BRAND_NAME }."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Não foi possível importar o seguinte ${ result.ignored.length } item.",
-        "Não foi possível importar os seguintes ${ result.ignored.length } itens."
+      "The following ${ totalIgnored } item could not be imported:": [
+        "O seguinte item ${ totalIgnored } não pôde ser importado:",
+        "Os seguintes itens ${ totalIgnored } não puderam ser importados:"
       ],
       "The secure link has been removed": [
         "O link seguro foi removido"
@@ -2261,6 +2319,9 @@
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
         "Você também pode definir um código PIN para desbloquear ${ PASS_APP_NAME }"
       ],
+      "You can attach files to items for a better organization": [
+        "Você pode anexar arquivos aos itens para uma melhor organização"
+      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Você agora pode usar a senha da ${ BRAND_NAME } para acessar o ${ PASS_SHORT_APP_NAME } no modo off-line"
       ],
@@ -2295,6 +2356,9 @@
       ],
       "You may close this tab.": [
         "Você pode fechar esta guia."
+      ],
+      "You may close this window after saving the file.": [
+        "Você pode fechar esta janela após salvar o arquivo."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Você precisa de um cofre com permissão de edição antes de importar itens."
@@ -2668,6 +2732,9 @@
       "Field name": [
         "Nome do campo"
       ],
+      "File": [
+        "Arquivo"
+      ],
       "File format": [
         "Formato do arquivo"
       ],
@@ -2754,9 +2821,6 @@
       ],
       "Job title": [
         "Cargo"
-      ],
-      "JSON": [
-        "JSON"
       ],
       "Key": [
         "Chave"
@@ -2920,8 +2984,8 @@
       "Personal website": [
         "Site pessoal"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON criptografado com PGP (recomendado)"
+      "PGP-encrypted (recommended)": [
+        "Criptografado por PGP (recomendado)"
       ],
       "Phone number": [
         "Número do telefone"
@@ -3079,6 +3143,12 @@
       "Today": [
         "Hoje"
       ],
+      "Total files: ": [
+        "Total de arquivos:"
+      ],
+      "Total imported files: ": [
+        "Total de arquivos importados :"
+      ],
       "Total imported items: ": [
         "Total de itens importados: "
       ],
@@ -3183,6 +3253,9 @@
       ],
       "Your domain": [
         "Seu domínio"
+      ],
+      "ZIP": [
+        "CEP"
       ],
       "ZIP or Postal code": [
         "CEP ou código postal"
@@ -3481,6 +3554,13 @@
       ]
     },
     "Title": {
+      "${ filesCount } file": [
+        "${ filesCount } arquivo",
+        "${ filesCount } arquivos"
+      ],
+      "${ PASS_APP_NAME } Logs": [
+        "Registros do ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "Configurações do ${ PASS_APP_NAME }"
       ],
@@ -3501,6 +3581,9 @@
       ],
       "Aliases": [
         "Aliases"
+      ],
+      "Attachments": [
+        "Anexos"
       ],
       "Auto create/on the fly alias": [
         "Criação automática/alias em tempo real"
@@ -3596,8 +3679,14 @@
       "Domain ownership verification": [
         "Verificação da propriedade do domínio"
       ],
+      "Download \"${ filename }\"": [
+        "Baixar \"${ filename }\""
+      ],
       "Email": [
         "E-mail"
+      ],
+      "Encrypted import": [
+        "Importação criptografada"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Aproveitando o ${ PASS_APP_NAME }?"
@@ -3646,6 +3735,9 @@
       ],
       "Import to vault(s)": [
         "Importar para cofre(s)"
+      ],
+      "Importing your data": [
+        "Importando seus dados"
       ],
       "Item": [
         "Item"
@@ -3746,6 +3838,9 @@
       "Remove secure link?": [
         "Remover link seguro?"
       ],
+      "Reset history for this item?": [
+        "Redefinir o histórico deste item?"
+      ],
       "Restore this version?": [
         "Restaurar essa versão?"
       ],
@@ -3817,6 +3912,9 @@
       ],
       "Update available": [
         "Atualização disponível"
+      ],
+      "Upload files from your device.": [
+        "Faça upload de arquivos do seu dispositivo."
       ],
       "Use my email": [
         "Usar meu e-mail"
@@ -3903,6 +4001,9 @@
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Todos os itens na lixeira serão excluídos permanentemente. Não é possível desfazer esta ação."
+      ],
+      "An error occured while importing your data.": [
+        "Ocorreu um erro ao importar seus dados."
       ],
       "An error occurred while exporting your data": [
         "Ocorreu um erro ao exportar seus dados"
@@ -4042,9 +4143,6 @@
       "Passwords do not match": [
         "Senhas não correspondem"
       ],
-      "PGP encrypted export file requires passphrase": [
-        "O arquivo de exportação criptografado com PGP requer uma frase secreta"
-      ],
       "Please contact us to investigate the issue": [
         "Entre em contato conosco para investigar o problema"
       ],
@@ -4131,6 +4229,9 @@
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Seu administrador precisa criar um cofre para você ante de criar itens"
+      ],
+      "Your current plan does not support importing files": [
+        "Seu plano atual não oferece suporte à importação de arquivos"
       ],
       "Your organization does not allow creating a vault": [
         "Sua organização não permite a criação de um cofre"

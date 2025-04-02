@@ -2497,11 +2497,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учетную запись с помощью наблюдения за подозрительной активностью 24/7, в том числе за эскалацией специалистов безопасности."
@@ -2532,9 +2527,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Защитите ваши файлы, фотографии и документы с помощью сквозного шифрования."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
@@ -2580,6 +2572,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3621,18 +3618,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "Доступ на мобильном телефоне и настольном компьютере"
-      ],
-      "Free 5 GB storage": [
-        "5 ГБ бесплатного хранилища"
-      ],
-      "Save files for later access": [
-        "Сохранить файлы для последующего доступа"
-      ],
-      "Share privately and securely": [
-        "Делитесь приватно и безопасно"
-      ],
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
       ]
@@ -4160,12 +4145,6 @@
         "${ addressCount } адреса электронной почты",
         "${ addressCount } адресов электронной почты",
         "${ addressCount } адреса электронной почты"
-      ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } элемент",
-        "${ album.photoCount } элемента",
-        "${ album.photoCount } элементов",
-        "${ album.photoCount } элементов"
       ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } был успешно удалён."
@@ -8442,9 +8421,6 @@
       "Limited-time offer": [
         "Ограниченное предложение"
       ],
-      "Mail Plus for 12 months": [
-        "Mail Plus за 12 месяцев"
-      ],
       "Maybe later": [
         "Может быть позже"
       ],
@@ -8529,11 +8505,11 @@
       "Invite members": [
         "Пригласить участников"
       ],
-      "Maybe Later": [
-        "Может, позже"
-      ],
       "Maybe later": [
         "Может быть позже"
+      ],
+      "Maybe Later": [
+        "Может, позже"
       ],
       "Select theme": [
         "Выберите тему"
@@ -9799,6 +9775,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
@@ -10069,47 +10086,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
@@ -10916,9 +10892,6 @@
       ],
       "Restore your files": [
         "Восстановить файлы"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "Сохранить его в  ${ DRIVE_APP_NAME } для последующего использования?"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Сохранить позже в ${ DRIVE_APP_NAME }"

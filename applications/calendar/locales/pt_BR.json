@@ -4499,7 +4499,7 @@
         "(${ serverPrice }/mês)"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
-        "**Conexão automática**: Abra o aplicativo e conecte-se à VPN assim que você liga o deu dispositivo."
+        "**Conexão automática**: abre e se conecta à VPN assim que você liga seu dispositivo."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: impede vazamentos de dados bloqueando sua conexão com a internet caso a VPN caia inesperadamente."
@@ -7413,6 +7413,11 @@
         "Desbloqueie todos os produtos e recursos premium da ${ BRAND_NAME } por apenas ${ priceLine }. Cancele a qualquer momento."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -7425,11 +7430,6 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7897,6 +7897,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited por 12 meses"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } por 12 meses"
+      ],
       "${ pricingTitle } offer expires today!": [
         "A oferta ${ pricingTitle } expira hoje!"
       ],
@@ -7920,9 +7926,6 @@
       ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -10314,7 +10317,7 @@
         "Números de telefone"
       ],
       "Private browsing vs VPN": [
-        "Navegação privada vs VPN"
+        "Navegação privada e VPN"
       ],
       "Processing...": [
         "Processando..."
@@ -10455,7 +10458,7 @@
         "Verificando seu pagamento..."
       ],
       "VPN explained": [
-        "VPN explicada"
+        "Explicações sobre a VPN"
       ],
       "Warning": [
         "Aviso"

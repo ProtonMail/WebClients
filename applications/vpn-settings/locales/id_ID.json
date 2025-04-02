@@ -28,11 +28,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate organization key": [
         "Aktifkan kunci organisasi"
@@ -328,6 +328,9 @@
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
       ],
+      "Explore ${ target }": [
+        "Telusuri ${ target }"
+      ],
       "Explore group plans": [
         "Telusuri paket grup"
       ],
@@ -605,7 +608,7 @@
         "Simpan konfigurasi SAML"
       ],
       "Search": [
-        "Pencarian"
+        "Cari"
       ],
       "Search countries": [
         "Cari negara"
@@ -634,11 +637,11 @@
       "Select country ${ country }": [
         "Pilih negara ${ country }"
       ],
-      "select file": [
-        "pilih berkas"
-      ],
       "Select file": [
         "Pilih berkas"
+      ],
+      "select file": [
+        "pilih berkas"
       ],
       "Send code": [
         "Kirim kode"
@@ -3833,6 +3836,12 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dari anggota non-SSO menggunakan autentikasi dua faktor untuk masuk ke organisasi Anda."
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } negara diaktifkan"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } juga dapat digunakan dengan kata sandi tunggal, yang akan menggantikan baik kata sandi masuk maupun kata sandi kedua. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang ingin Anda gunakan dan klik Simpan."
       ],
@@ -4157,9 +4166,6 @@
       "Copy the suggested password to clipboard": [
         "Salin kata sandi yang disarankan ke papan klip"
       ],
-      "countries enabled": [
-        "negara yang diaktifkan"
-      ],
       "Country code": [
         "Kode negara"
       ],
@@ -4205,11 +4211,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -4318,6 +4324,9 @@
       ],
       "email": [
         "email"
+      ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Email dan kalender, terintegrasi dengan ${ CONTACTS_APP_NAME }"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Hosting email hanya tersedia untuk domain yang telah Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak tersedia. Anda dapat meng-host email untuk domain yang terdaftar pada pendaftar domain mana pun."
@@ -4732,6 +4741,9 @@
       ],
       "No addresses exist": [
         "Tidak ada alamat"
+      ],
+      "No countries enabled": [
+        "Tidak ada negara yang diaktifkan"
       ],
       "No gateways": [
         "Tidak ada gateway"
@@ -5875,11 +5887,11 @@
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
       ],
-      "Allowed domain": [
-        "Domain yang diizinkan"
-      ],
       "Allowed Domain": [
         "Domain yang Diizinkan"
+      ],
+      "Allowed domain": [
+        "Domain yang diizinkan"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
         "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender dengan mudah."
@@ -6437,7 +6449,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Kepada"
+        "Hingga"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7227,7 +7239,7 @@
         "Jadwalkan pesan sesuai keinginan Anda"
       ],
       "Search message content": [
-        "Cari konten pesan"
+        "Pencarian konten pesan"
       ],
       "Secure Core servers": [
         "Server Secure Core"
@@ -7386,17 +7398,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -7487,6 +7488,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -7952,6 +7964,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited untuk 12 bulan"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } untuk 12 bulan"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Penawaran ${ pricingTitle } berakhir hari ini!"
       ],
@@ -7975,9 +7993,6 @@
       ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus selama 12 bulan"
       ],
       "Maybe later": [
         "Mungkin nanti"
@@ -9907,6 +9922,47 @@
         "Untuk ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Penerusan email otomatis ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Peringatan kebocoran data ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
+      ],
+      "No ads or tracking": [
+        "Tanpa iklan atau pelacakan"
+      ],
+      "Short @pm.me email address": [
+        "Alamat email pendek @pm.me"
+      ],
+      "Support our mission": [
+        "Dukung misi kami"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade your productivity": [
+        "Tingkatkan produktivitas Anda"
+      ],
+      "We don't sell your data": [
+        "Kami tidak menjual data Anda"
+      ],
+      "Your privacy is our mission": [
+        "Privasi Anda adalah misi kami"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
@@ -10189,47 +10245,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "and 15 more premium features": [
-        "dan 15 fitur premium lainnya"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Penerusan email otomatis ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Peringatan kebocoran data ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Aplikasi desktop"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Bantu kami menjaga internet agar tetap aman dan privat bagi semua. Tingkatkan akun Anda ke paket berbayar."
-      ],
-      "No ads or tracking": [
-        "Tanpa iklan atau pelacakan"
-      ],
-      "Short @pm.me email address": [
-        "Alamat email pendek @pm.me"
-      ],
-      "Support our mission": [
-        "Dukung misi kami"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade your productivity": [
-        "Tingkatkan produktivitas Anda"
-      ],
-      "We don't sell your data": [
-        "Kami tidak menjual data Anda"
-      ],
-      "Your privacy is our mission": [
-        "Privasi Anda adalah misi kami"
       ]
     },
     "Subscription renewal state": {
@@ -11396,29 +11411,6 @@
         "Hari ini"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
-      ],
-      "Disables end-to-end email encryption for this group": [
-        "Menonaktifkan enkripsi email end-to-end untuk grup ini"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini, dan tidak ada sumber daya terenkripsi yang akan dibagikan dengan pengguna ini."
-      ],
-      "Group membership paused": [
-        "Keanggotaan grup dijeda"
-      ],
-      "Sending member invitation": [
-        "Mengirimkan undangan anggota"
-      ],
-      "User declined invitation": [
-        "Pengguna menolak undangan"
-      ],
-      "Waiting for user to accept the invitation": [
-        "Menunggu pengguna untuk menerima undangan"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
@@ -11509,6 +11501,29 @@
       ],
       "Your DKIM signing is working.": [
         "Penandatanganan DKIM anda berfungsi."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Entri masuk aman pada seluruh perangkat Anda. Meliputi alias tanpa batasan jumlah, pembagian alias, 2FA yang terintegrasi, dan masih banyak lagi."
+      ],
+      "Disables end-to-end email encryption for this group": [
+        "Menonaktifkan enkripsi email end-to-end untuk grup ini"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Alamat eksternal - menonaktifkan enkripsi email end-to-end untuk grup ini, dan tidak ada sumber daya terenkripsi yang akan dibagikan dengan pengguna ini."
+      ],
+      "Group membership paused": [
+        "Keanggotaan grup dijeda"
+      ],
+      "Sending member invitation": [
+        "Mengirimkan undangan anggota"
+      ],
+      "User declined invitation": [
+        "Pengguna menolak undangan"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Menunggu pengguna untuk menerima undangan"
       ]
     },
     "Tor out of date": {

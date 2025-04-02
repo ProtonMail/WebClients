@@ -987,6 +987,9 @@
       "Upload folder": [
         "Map uploaden"
       ],
+      "Upload from computer": [
+        "Uploaden vanaf deze computer"
+      ],
       "Upload photos": [
         "Foto's uploaden"
       ],
@@ -2528,11 +2531,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2563,9 +2561,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Houd uw bestanden, foto's en documenten veilig met end-to-end versleuteling."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
@@ -2614,6 +2609,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3652,18 +3652,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "Toegang op mobiel en desktop"
-      ],
-      "Free 5 GB storage": [
-        "✓ 5 GB gratis opslagruimte"
-      ],
-      "Save files for later access": [
-        "Bestanden opslaan voor latere toegang"
-      ],
-      "Share privately and securely": [
-        "Privé en veilig delen"
-      ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
       ]
@@ -4161,10 +4149,6 @@
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
       ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } item",
-        "${ album.photoCount } items"
-      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } is succesvol verwijderd"
       ],
@@ -4259,6 +4243,10 @@
       "${ pausedCount } paused": [
         "${ pausedCount } onderbroken",
         "${ pausedCount } onderbroken"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } item",
+        "${ photoCount } items"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
@@ -8409,6 +8397,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Onbeperkt voor 12 maanden"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } voor 12 maanden"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
@@ -8432,9 +8426,6 @@
       ],
       "Limited-time offer": [
         "Tijdelijke aanbieding"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus voor 12 maanden"
       ],
       "Maybe later": [
         "Misschien later"
@@ -8520,10 +8511,10 @@
       "Invite members": [
         "Nodig leden uit"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Misschien later"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Misschien later"
       ],
       "Select theme": [
@@ -9780,6 +9771,47 @@
         "Voor ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
@@ -10038,47 +10070,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {
@@ -10832,7 +10823,7 @@
         "Voorbeeld"
       ],
       "Private browsing vs VPN": [
-        "Privébrowsen vs VPN"
+        "Privé browsen versus VPN"
       ],
       "Processing...": [
         "Wordt verwerkt..."
@@ -10882,9 +10873,6 @@
       ],
       "Restore your files": [
         "Herstel uw bestanden"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "Opslaan voor later in ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Opslaan voor later in ${ DRIVE_APP_NAME }"

@@ -232,6 +232,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Download": [
+        "Завантажити"
+      ],
       "Download this CSV template": [
         "Завантажте цей шаблон CSV"
       ],
@@ -299,7 +302,7 @@
         "Як використовувати ${ PASS_APP_NAME }"
       ],
       "Import": [
-        "Імпорт"
+        "Імпортувати"
       ],
       "Importing": [
         "Імпортування"
@@ -376,10 +379,10 @@
       "Move to another vault": [
         "Перемістити в інше сховище"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Перемістити до смітника"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Перемістити до смітника"
       ],
       "Multiple select": [
@@ -457,6 +460,9 @@
       "Remove member": [
         "Вилучити учасника"
       ],
+      "Rename": [
+        "Перейменувати"
+      ],
       "Request a feature": [
         "Запит нової функції"
       ],
@@ -468,6 +474,9 @@
       ],
       "Resend invitation": [
         "Повторно надіслати запрошення"
+      ],
+      "Reset": [
+        "Скинути"
       ],
       "Restore": [
         "Відновити"
@@ -1017,9 +1026,6 @@
       "File could not be parsed": [
         "Не вдалося проаналізувати файл"
       ],
-      "File could not be read": [
-        "Неможливо прочитати файл"
-      ],
       "File does not match expected format": [
         "Файл не відповідає очікуваному формату"
       ],
@@ -1391,12 +1397,6 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Після успішного імпорту даних ви можете видалити файл CSV, що містить ваші паролі, з міркувань безпеки."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Псевдонім успішно вимкнено. Ви більше не будете отримувати електронні листи на адресу ${ item.aliasEmail }"
-      ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Псевдонім успішно ввімкнено. Тепер ви можете отримувати електронні листи, надіслані на адресу ${ item.aliasEmail }"
-      ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Синхронізація псевдонімів між обліковими записами ${ BRAND_NAME } та SimpleLogin активна."
       ],
@@ -1544,9 +1544,6 @@
       "Drop to import": [
         "Перетягніть, щоб імпортувати"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Через обмеження розширень браузера Safari, після експорту даних у розширенні файлу буде відсутнє розширення «.pgp». Перейменуйте файл так, щоб він містив це розширення (наприклад, file.pgp) після експорту."
-      ],
       "Editor": [
         "Редактор"
       ],
@@ -1658,17 +1655,8 @@
       "How does monitoring work?": [
         "Як працює моніторинг?"
       ],
-      "Import in progress:": [
-        "Виконується імпорт:"
-      ],
       "Import the CSV file below.": [
         "Імпортуйте файл CSV нижче."
-      ],
-      "Imported ${ payload.total } item": [
-        "Імпортовано ${ payload.total } елемент",
-        "Імпортовано ${ payload.total } елементи",
-        "Імпортовано ${ payload.total } елементів",
-        "Імпортовано ${ payload.total } елементів"
       ],
       "Imported on ${ date }": [
         "Імпортовано ${ date }"
@@ -1708,12 +1696,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Схоже, ви вже ввійшли в обліковий запис ${ PASS_APP_NAME }. Якщо ви намагаєтеся увійти за допомогою іншого облікового запису, спочатку вийдіть із розширення."
-      ],
-      "item": [
-        "елемент",
-        "елементи",
-        "елементів",
-        "елементів"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Створено елемент \"${ payload.item.data.metadata.name }\""
@@ -2077,12 +2059,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Додатковий пароль буде потрібен для використання ${ PASS_APP_NAME }. Він діє як додатковий пароль до вашого пароля ${ BRAND_NAME }."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "Не вдалося імпортувати цей ${ result.ignored.length } елемент:",
-        "Не вдалося імпортувати ці ${ result.ignored.length } елементи:",
-        "Не вдалося імпортувати ці ${ result.ignored.length } елементів:",
-        "Не вдалося імпортувати ці ${ result.ignored.length } елементів:"
       ],
       "The secure link has been removed": [
         "Безпечне посилання було вилучено"
@@ -2650,6 +2626,9 @@
       "Field name": [
         "Назва поля"
       ],
+      "File": [
+        "Файл"
+      ],
       "File format": [
         "Формат файлу"
       ],
@@ -2928,9 +2907,6 @@
       ],
       "Personalize": [
         "Персоналізувати"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "Зашифрований PGP JSON (рекомендується)"
       ],
       "Phone number": [
         "Номер телефону"
@@ -3548,6 +3524,9 @@
       "Aliases": [
         "Псевдоніми"
       ],
+      "Attachments": [
+        "Вкладення"
+      ],
       "Auto create/on the fly alias": [
         "Автоматичне створення/на льоту псевдоніма"
       ],
@@ -4112,9 +4091,6 @@
       ],
       "Passwords do not match": [
         "Паролі відрізняються"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Зашифрований файл експорту PGP вимагає парольної фрази"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Перевірте, чи правильно встановлено та увімкнено розширення"
