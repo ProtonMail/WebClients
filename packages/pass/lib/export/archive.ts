@@ -84,16 +84,19 @@ export async function* createExportDataStream(
 }
 
 /** `makeZip` will create an un-compressed archive */
-export const createArchive = async (streams: ExportGenerator[]) => {
+export const createArchive = async (streams: ExportGenerator[], signal: AbortSignal) => {
     const { makeZip } = await import(/* webpackChunkName: "zip" */ 'client-zip');
 
     return makeZip(
         (async function* () {
             try {
-                for (const stream of streams) {
-                    yield* stream;
-                }
-            } catch {}
+                for (const stream of streams) yield* stream;
+            } catch (err) {
+                /** If the signal is aborted, this stream will have
+                 * already gracefully closed as such we can no-op
+                 * error reporting to avoid unhandled rejections */
+                if (!signal.aborted) throw err;
+            }
         })(),
         { buffersAreUTF8: true }
     );
