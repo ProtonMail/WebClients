@@ -1,6 +1,6 @@
 import type { WasmWordSeparator } from '@protontech/pass-rust-core/worker';
 
-import type { PassCoreProxy } from '@proton/pass/lib/core/types';
+import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 
 import { type GeneratePasswordConfig, SeperatorOptions } from './types';
 

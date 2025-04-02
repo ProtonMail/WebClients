@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
@@ -59,7 +59,7 @@ export const useFileUpload = () => {
 
                 const { name, size } = file;
                 const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
-                const mimeType = PassCoreUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
+                const mimeType = PassUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
                 const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
                 const initDTO = { name, mimeType, totalChunks, uploadID };
 
