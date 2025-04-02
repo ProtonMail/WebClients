@@ -7393,6 +7393,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited για 12 μήνες"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } για 12 μήνες"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Η ${ pricingTitle } προσφορά λήγει σήμερα!"
       ],
@@ -7416,9 +7422,6 @@
       ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus για 12 μήνες"
       ],
       "Maybe later": [
         "Ίσως αργότερα"

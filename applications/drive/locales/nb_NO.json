@@ -987,6 +987,9 @@
       "Upload folder": [
         "Last opp mappe"
       ],
+      "Upload from computer": [
+        "Last opp fra datamaskin"
+      ],
       "Upload photos": [
         "Last opp bilder"
       ],
@@ -2528,11 +2531,6 @@
         "Forfalt faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "bruk Easy Switch-importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
@@ -2563,9 +2561,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Hold filene, bildene og dokumentene dine sikre med ende-til-ende-kryptering."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slår sammen kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
@@ -2614,6 +2609,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2690,6 +2690,17 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Abonnementet ditt på ${ PLAN_NAMES[PLANS.PASS] } har en spesiell pris på ${ price } i året. Hvis du nedgraderer til Free, mister du rabatten for godt, selv om du oppgraderer på nytt i fremtiden."
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Last ned for Linux"
+      ],
+      "Download for macOS": [
+        "Last ned for macOS"
+      ],
+      "Download for Windows": [
+        "Last ned for Windows"
       ]
     },
     "drive:action": {
@@ -3641,18 +3652,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "Tilgang på mobilen og skrivebordet"
-      ],
-      "Free 5 GB storage": [
-        "Gratis 5 GB lagringsplass"
-      ],
-      "Save files for later access": [
-        "Lagre filer for senere tilgang"
-      ],
-      "Share privately and securely": [
-        "Del privat og sikkert"
-      ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
       ]
@@ -4150,10 +4149,6 @@
         "${ addressCount } e-postadresse",
         "${ addressCount } e-postadresser"
       ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } element",
-        "${ album.photoCount } elementer"
-      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } har blitt slettet"
       ],
@@ -4249,6 +4244,10 @@
         "${ pausedCount } satt på pause",
         "${ pausedCount } satt på pause"
       ],
+      "${ photoCount } item": [
+        "${ photoCount } element",
+        "${ photoCount } elementer"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
       ],
@@ -4304,6 +4303,9 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } finnes allerede på denne plasseringen."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
@@ -4342,6 +4344,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
       ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Et VPN krypterer tilkoblingen din og skjuler IP-adressen, noe som gjør det mye vanskeligere for noen å spore eller overvåke surfingen din."
+      ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
         "Et VPN skjuler IP-adressen din og krypterer nettleseraktiviteten din, noe som gjør det vanskeligere for nettsteder, annonsører og Internett-leverandører å spore deg over tid."
       ],
@@ -4362,6 +4367,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresseverifisering med klarerte nøkler er aktivert for denne adressen. For å kunne sende til denne adressen skal de offentlige nøklene, som kan brukes for å sende, først angis som klarerte."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Annonsører sporer surfingen din for å vise målrettede annonser. ${ VPN_APP_NAME } blokkerer sporere og annonser, noe som gjør tilkoblingen din raskere og forbedrer nettopplevelsen din."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
@@ -4796,6 +4804,9 @@
       "Go to \"My files\" and upload some files first.": [
         "Gå til \"mine filer\" og last opp noen filer først."
       ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
+      ],
       "here": [
         "her"
       ],
@@ -5038,6 +5049,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Ikke alle filer ble overført. Prøv å laste opp eller laste ned filene på nytt."
       ],
+      "Not connected": [
+        "Ikke tilkoblet"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Merk: data kan fortsatt være tilgjengelig lokalt på enheter der du har installert ${ DRIVE_APP_NAME }."
       ],
@@ -5207,6 +5221,9 @@
       ],
       "Primary": [
         "Primær"
+      ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privat søk aktivert. Du kan nå lukke denne dialogen og søke etter filer og mapper."
@@ -5389,6 +5406,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnementet avsluttes: aktiver på nytt innen ${ byDate } for å beholde fordelene med ${ planName }. ${ reactivateLink }"
       ],
+      "Surveillance": [
+        "Overvåking"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Kom tilbake senere."
       ],
@@ -5468,8 +5488,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Denne koblingen ble opprettet med en gammel versjon av Drive og kan ikke endres. Slett denne koblingen og opprett en ny for å endre innstillingene."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Dette betyr at Internett-leverandøren din og nettstedene du besøker, ikke kan koble personopplysningene dine til nettaktiviteten din."
+      ],
       "This month": [
         "Denne måneden"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Denne unike koden kan brukes av nettsteder og Internett-leverandører for å koble posisjonen og nettleserloggen din til enheten din."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Dette vil bare slette albumet. Bildene dine forblir på tidslinjen din. Denne handlingen kan ikke angres."
@@ -5645,6 +5671,9 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
+      "VPN IP": [
+        "VPN-IP"
+      ],
       "Want to sync files faster?": [
         "Ønsker du å synkronisere filer raskere?"
       ],
@@ -5701,6 +5730,9 @@
       ],
       "When working remotely": [
         "Når du jobber eksternt"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Når du kobler til VPN, bruker det krypteringsteknologi for å skjule IP-adressen din (en unik kode som er tildelt enheten din)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
@@ -5894,6 +5926,15 @@
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Internett-leverandøren din kan overvåke og noen ganger selge dataene dine, eller til og med begrense hvilke nettsteder du har tilgang til."
+      ],
+      "Your IP": [
+        "Din IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "IP-adressen din er synlig og kan brukes til å spore nettaktiviteten din."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
@@ -5902,6 +5943,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Neste faktureringsdato er ${ renewalTime }. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
+      ],
+      "Your online activity is protected": [
+        "Nettaktiviteten din er beskyttet"
       ],
       "Your password was leaked:": [
         "Passordet ditt ble lekket:"
@@ -5912,6 +5956,9 @@
       "Your photo has been removed from the album": [
         "Bildet ditt er fjernet fra albumet",
         "Bildene dine er fjernet fra albumet"
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Din fysiske plassering er synlig og kan brukes til å begrense tilgangen din til internett."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Planen din er begrenset til 10 versjoner i opptil 7 dager"
@@ -6595,6 +6642,15 @@
       ],
       "Your alias": [
         "Ditt alias"
+      ],
+      "Your IP": [
+        "Din IP"
+      ],
+      "Your ISP": [
+        "Din internettleverandør"
+      ],
+      "Your location": [
+        "Din plassering"
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
@@ -8398,6 +8454,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Ubegrenset i 12 måneder"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } for 12 måneder"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-tilbud utløper i dag!"
       ],
@@ -8421,9 +8483,6 @@
       ],
       "Limited-time offer": [
         "Tidsbegrenset tilbud"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus for 12 måneder"
       ],
       "Maybe later": [
         "Kanskje senere"
@@ -8509,10 +8568,10 @@
       "Invite members": [
         "Inviter medlemmer"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Kanskje senere"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Kanskje senere"
       ],
       "Select theme": [
@@ -9769,6 +9828,47 @@
         "For ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "and 15 more premium features": [
+        "og 15 flere premiumfunksjoner"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisk videresending av e-post ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Varsler om datainnbrudd ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
+      ],
+      "No ads or tracking": [
+        "Ingen annonser eller sporing"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-postadresse"
+      ],
+      "Support our mission": [
+        "Støtt vårt oppdrag"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade your productivity": [
+        "Oppgrader produktiviteten din"
+      ],
+      "We don't sell your data": [
+        "Vi selger ikke dataene dine"
+      ],
+      "Your privacy is our mission": [
+        "Personvernet ditt er vårt oppdrag"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
@@ -10027,47 +10127,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt eget korte @pm.me e-postalias"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "and 15 more premium features": [
-        "og 15 flere premiumfunksjoner"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisk videresending av e-post ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Varsler om datainnbrudd ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Skrivebordsapp"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Hjelp oss med å holde internett trygt og privat for alle. Oppgrader til en betalt plan."
-      ],
-      "No ads or tracking": [
-        "Ingen annonser eller sporing"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-postadresse"
-      ],
-      "Support our mission": [
-        "Støtt vårt oppdrag"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade your productivity": [
-        "Oppgrader produktiviteten din"
-      ],
-      "We don't sell your data": [
-        "Vi selger ikke dataene dine"
-      ],
-      "Your privacy is our mission": [
-        "Personvernet ditt er vårt oppdrag"
       ]
     },
     "Subscription renewal state": {
@@ -10569,6 +10628,9 @@
       "Deleting contacts": [
         "Sletter kontakter"
       ],
+      "Desktop": [
+        "Skrivebord"
+      ],
       "Details": [
         "Detaljer"
       ],
@@ -10586,6 +10648,9 @@
       ],
       "Download ${ date }": [
         "Nedlasting ${ date }"
+      ],
+      "Download the app": [
+        "Last ned appen"
       ],
       "Download unverified file?": [
         "Laste ned ubekreftet fil?"
@@ -10687,6 +10752,9 @@
       "Hm, we couldn't find that one": [
         "Hm, vi kunne ikke finne den"
       ],
+      "How does it all work?": [
+        "Hvordan fungerer det hele?"
+      ],
       "Human verification": [
         "Menneskelig verifisering"
       ],
@@ -10721,6 +10789,9 @@
       "Location": [
         "Plassering"
       ],
+      "Make a secure connection your default": [
+        "Gjør en sikker tilkobling til standard"
+      ],
       "Manage secure link": [
         "Administrer sikker kobling"
       ],
@@ -10735,6 +10806,9 @@
       ],
       "Minicalendar": [
         "Minikalender"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "Modified": [
         "Endret"
@@ -10805,6 +10879,9 @@
       "Preview": [
         "Forhåndsvis"
       ],
+      "Private browsing vs VPN": [
+        "Privat surfing kontra VPN"
+      ],
       "Processing...": [
         "Behandler..."
       ],
@@ -10853,9 +10930,6 @@
       ],
       "Restore your files": [
         "Gjenopprett filene dine"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "Lagre den til senere i ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Lagre den til senere i ${ DRIVE_APP_NAME }"
@@ -10989,14 +11063,26 @@
       "Version history": [
         "Versjonshistorikk"
       ],
+      "VPN explained": [
+        "VPN forklart"
+      ],
       "Warning": [
         "Advarsel"
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistenkt falskt nettsted"
       ],
+      "What can a VPN protect you from?": [
+        "Hva kan et VPN beskytte deg mot?"
+      ],
+      "What is a VPN?": [
+        "Hva er et VPN?"
+      ],
       "What would you like to import?": [
         "Hva ønsker du å importere?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Når er det viktigst å bruke et VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nå opprette ubegrenset antall mapper og etiketter"

@@ -2475,11 +2475,6 @@
         "अतिदेय चालान"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch आयात सहायक का उपयोग करें"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } आपके खाते की सुरक्षा करता है, संदेहास्पद गतिविधि की 24/7 समर्पित निगरानी के साथ — जिसमें सुरक्षा विशेषज्ञों तक वृद्धि शामिल है।"
@@ -2510,9 +2505,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "अपनी फाइलों, तस्वीरों और दस्तावेज़ों को शुरु-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित रखें।"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को मर्ज किया जा रहा है... इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
@@ -2561,6 +2553,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "आपने पहले ही 10 नकली-नाम बना लिए हैं। ${ BRAND_NAME } अनलिमिटेड के साथ असीमित नकली-नाम और 500 जीबी स्टोरेज प्राप्त करें।"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch आयात सहायक का उपयोग करें"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3585,18 +3582,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "मोबाइल और डेस्कटॉप पर एक्सेस करें"
-      ],
-      "Free 5 GB storage": [
-        "Free 5 जीबी स्टोरेज"
-      ],
-      "Save files for later access": [
-        "फाइलों को बाद में एक्सेस के लिए सहेजें"
-      ],
-      "Share privately and securely": [
-        "निजी और सुरक्षित रूप से शेयर करें"
-      ],
       "Unlimited hide-my-email aliases": [
         "असीमित Hide-my-email नकलीनाम"
       ]
@@ -4086,10 +4071,6 @@
       "${ addressCount } email address": [
         "${ addressCount } ईमेल पता",
         "${ addressCount } ईमेल पते"
-      ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } आइटम",
-        "${ album.photoCount } आइटम"
       ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } सफलतापूर्वक मिटाया गया"
@@ -8198,9 +8179,6 @@
       "Limited-time offer": [
         "सीमित समय ऑफर"
       ],
-      "Mail Plus for 12 months": [
-        "12 महीने के लिए Mail Plus"
-      ],
       "Maybe later": [
         "शायद बाद में"
       ],
@@ -8285,11 +8263,11 @@
       "Invite members": [
         "सदस्यों को आमंत्रित करें"
       ],
-      "Maybe Later": [
-        "शायद बाद में कभी"
-      ],
       "Maybe later": [
         "शायद बाद में"
+      ],
+      "Maybe Later": [
+        "शायद बाद में कभी"
       ],
       "Select theme": [
         "थीम चुनें"
@@ -9501,6 +9479,47 @@
         "के लिए ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "and 15 more premium features": [
+        "और 15 अन्य प्रीमियम सुविधाएँ"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "डाटा लीक अलर्ट ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "डेस्कटॉप ऐप"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
+      ],
+      "No ads or tracking": [
+        "कोई विज्ञापन या ट्रैकिंग नहीं"
+      ],
+      "Short @pm.me email address": [
+        "छोटा @pm.me ईमेल पता"
+      ],
+      "Support our mission": [
+        "हमारे मिशन का समर्थन करें"
+      ],
+      "Upgrade": [
+        "अपग्रेड करें"
+      ],
+      "Upgrade your productivity": [
+        "अपनी उत्पादकता बढ़ाएँ"
+      ],
+      "We don't sell your data": [
+        "हम आपका डाटा नहीं बेचते"
+      ],
+      "Your privacy is our mission": [
+        "आपकी निजता हमारा मिशन है"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, और ${ VPN_SHORT_APP_NAME } प्रीमियम सुविधाओं के साथ"
@@ -9759,47 +9778,6 @@
       ],
       "Your own short @pm.me email alias": [
         "आपका अपना छोटा @pm.me ईमेल नकली-नाम"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 जीबी स्टोरेज"
-      ],
-      "and 15 more premium features": [
-        "और 15 अन्य प्रीमियम सुविधाएँ"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "स्वचालित ईमेल फॉरवर्ड ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "डाटा लीक अलर्ट ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "डेस्कटॉप ऐप"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "हमारी मदद करें ताकि इंटरनेट सभी के लिए सुरक्षित और निजी रहे। पैसे वाला प्लैन में अपग्रेड करें।"
-      ],
-      "No ads or tracking": [
-        "कोई विज्ञापन या ट्रैकिंग नहीं"
-      ],
-      "Short @pm.me email address": [
-        "छोटा @pm.me ईमेल पता"
-      ],
-      "Support our mission": [
-        "हमारे मिशन का समर्थन करें"
-      ],
-      "Upgrade": [
-        "अपग्रेड करें"
-      ],
-      "Upgrade your productivity": [
-        "अपनी उत्पादकता बढ़ाएँ"
-      ],
-      "We don't sell your data": [
-        "हम आपका डाटा नहीं बेचते"
-      ],
-      "Your privacy is our mission": [
-        "आपकी निजता हमारा मिशन है"
       ]
     },
     "Subscription renewal state": {
@@ -10576,9 +10554,6 @@
       ],
       "Restore your files": [
         "अपनी फ़ाइलें पुनर्स्थापित करें"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "बाद में उपयोग के लिए ${ DRIVE_APP_NAME } में इसे सहेजें"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "बाद में उपयोग के लिए ${ DRIVE_APP_NAME } में इसे सहेजें"

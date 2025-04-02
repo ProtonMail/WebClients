@@ -562,6 +562,9 @@
       "Encrypt and export": [
         "암호화 및 내보내기"
       ],
+      "Explore ${ target }": [
+        "${ target } 알아보기"
+      ],
       "Explore group plans": [
         "그룹 플랜 알아보기"
       ],
@@ -1036,6 +1039,9 @@
       "Save address": [
         "주소 저장"
       ],
+      "Save and continue": [
+        "저장 및 계속"
+      ],
       "Save changes": [
         "변경 사항 저장"
       ],
@@ -1084,10 +1090,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
       "Select files": [
@@ -1448,6 +1454,9 @@
       ],
       "${ price } per domain": [
         "도메인당 ${ price }"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
       ],
       "${ price } per user": [
         "사용자당 ${ price }"
@@ -3796,10 +3805,10 @@
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
-        "내 삶의 다른 부분을 분리하고 당신의 받은 편지함을 추가 주소로 정리하세요."
+        "내 삶의 다른 부분을 분리하고 받은 편지함을 추가 주소로 정리하세요."
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
-        "나만의 것으로 이메일 바닥 글을 만드세요 — 기본값이 아닌 내 독특한 브랜드의 것으로 보여주세요."
+        "나만의 것으로 이메일 바닥 글을 만들어 보세요 — 기본값이 아닌 내 독특한 브랜드의 것으로 보여주세요."
       ],
       "No one in your organization can connect to shared servers.": [
         "조직 내에 공유된 서버에 연결할 수 있는 구성원이 없습니다."
@@ -3832,7 +3841,7 @@
         "업그레이드하여 무제한 폴더, 라벨과 더 많은 프리미엄 기능들을 잠금 해제하세요."
       ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
-        "업그레이드하여 현재 이메일 주소 이외에 더 짧고, 기억하기 쉬운 ${ activatePmUser }을 얻으세요."
+        "업그레이드하여 현재 이메일 주소보다 더 짧고, 기억하기 쉬운 주소인 ${ activatePmUser }를 받아보세요"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "계속 친구들을 초대할 수 있으나, 더 이상 크레딧을 얻을 수 없습니다"
@@ -6541,7 +6550,7 @@
         "매달 **${ priceString }**만 더 결제하여 4가지 이상의 프리미엄 개인정보 보호 서비스를 잠금 해제하세요."
       ],
       "Upgrade your privacy": [
-        "프라이버시를 업그레이드하세요"
+        "개인정보 보호를 업그레이드하세요"
       ],
       "You currently pay": [
         "현재 결제 금액:"
@@ -7010,6 +7019,12 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }이(가) ${ PASS_APP_NAME }에서 사용자와 데이터 공유를 요청했습니다."
+      ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount }개 국가 활성화됨"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 은 로그인 및 사서함 암호를 모두 대체하는 단일 암호와 함께 사용할 수도 있습니다. 단일 비밀번호 모드로 전환하려면 사용하려는 단일 비밀번호를 입력하고 저장을 클릭하십시오."
@@ -7563,9 +7578,6 @@
       "Copy your referral link": [
         "당신의 추천인 링크를 공유하세요"
       ],
-      "countries enabled": [
-        "국가 활성화됨"
-      ],
       "Country code": [
         "국가 코드"
       ],
@@ -7797,6 +7809,9 @@
       "Email address": [
         "이메일 주소"
       ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "${ CONTACTS_APP_NAME }와(과) 통합화된 이메일 및 캘린더"
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
       ],
@@ -7859,6 +7874,9 @@
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "데스크탑 앱으로 더 빠르고 집중된 이메일 경험을 즐기세요."
+      ],
+      "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
+        "비밀번호를 입력하여 ${ BRAND_NAME } 계정을 완료하고 모든 기기에서 ${ VPN_APP_NAME } 사용을 시작해 보세요!"
       ],
       "Enter key manually instead": [
         "수동으로 키 입력"
@@ -8002,7 +8020,7 @@
         "제3자 서비스로부터 비밀번호 혹은 다른 데이터가 유출되면 알림받으세요."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
-        "비밀번호나 다른 개인 정보가 유출되는 경우에 알림을 받으십시오. ${ learnMoreLinkNoBreach }"
+        "비밀번호나 다른 개인 정보가 유출되는 경우에 알림을 알림을 받아보세요. ${ learnMoreLinkNoBreach }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "토큰에 사용하려는 서비스와 같은 설명적인 이름을 지정하고 활성 사용자 지정 도메인 주소 중 하나를 선택하십시오. 이 주소만 이 토큰으로 이메일을 보낼 수 있습니다."
@@ -8466,6 +8484,9 @@
       "No addresses exist": [
         "주소 없음"
       ],
+      "No countries enabled": [
+        "활성화된 국가 없음"
+      ],
       "No credit card required": [
         "신용 카드 필요 없음"
       ],
@@ -8922,6 +8943,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요. 이메일 링크를 클릭하면 ${ MAIL_APP_NAME }이 자동으로 열립니다."
       ],
+      "Set password": [
+        "비밀번호 설정"
+      ],
       "Set recovery phrase": [
         "복구 키 설정"
       ],
@@ -9077,6 +9101,9 @@
       ],
       "Thank you": [
         "진심으로 감사드립니다."
+      ],
+      "Thank you for choosing ${ BRAND_NAME }.": [
+        "${ BRAND_NAME }을 선택해 주셔서 감사합니다."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "개인 정보 보호와 자유가 최우선인 더 나은 인터넷을 구축하려는 우리의 사명을 지원해 주셔서 감사합니다."
@@ -9328,7 +9355,7 @@
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "${ BRAND_NAME } 제품의 최신 개발을 알고 싶다면 저희의 다양한 이메일을 구독하거나 가끔씩 ${ blogLink }를 방문해 보세요."
+        "${ BRAND_NAME } 제품의 최신 개발 소식을 알고 싶으시다면 다양한 이메일을 구독해보거나 가끔씩 ${ blogLink }를 방문해 보세요."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "진행하려면, 요청을 확인할 수 있도록 계정 복구 방법을 선택하세요."
@@ -10008,6 +10035,9 @@
       "You’ll be able to add these servers to another Gateway immediately.": [
         "해당 서버들을 다른 게이트웨이로 즉시 추가할 수 있게 됩니다."
       ],
+      "You’re all set": [
+        "모든 준비가 완료되었어요"
+      ],
       "Zoom meeting": [
         "Zoom 미팅"
       ]
@@ -10611,10 +10641,10 @@
       "Allow sharing outside the organization": [
         "조직 외부로 공유 허용"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10629,10 +10659,10 @@
       "AND": [
         "및"
       ],
-      "and": [
+      "And": [
         "그리고"
       ],
-      "And": [
+      "and": [
         "그리고"
       ],
       "Anderson": [
@@ -13788,6 +13818,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited 12개월 플랜"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } 12개월 플랜"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
@@ -13811,9 +13847,6 @@
       ],
       "Limited-time offer": [
         "기간 한정 할인"
-      ],
-      "Mail Plus for 12 months": [
-        "12개월 Mail Plus"
       ],
       "Maybe later": [
         "나중에"
@@ -14311,6 +14344,9 @@
       ]
     },
     "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "한 번의 일회성 결제로 지금부터 모든 ${ PASS_APP_NAME } 프리미엄 기능에 평생 접근하세요."
+      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }에 오신 것을 환영합니다"
       ]
@@ -14503,7 +14539,7 @@
         "나의 가족을 위한 온라인 프라이버시 보호 얻기"
       ],
       "Get the security and features your business needs": [
-        "나의 비즈니스에 필요한 보안과 기능을 얻으세요"
+        "비즈니스에 필요한 보안과 기능을 받으세요"
       ],
       "Get unlimited privacy for two": [
         "두 명을 위한 무제한 프라이버시 보호 받기"
@@ -16741,6 +16777,9 @@
       "Single sign-on removed": [
         "싱글 사인온 (Sso) 제거됨"
       ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "이메일 주소 ${ email }이(가) 이미 ${ BRAND_NAME }에 존재합니다. 계속하려면 회원님의 ${ BRAND_NAME } 자격 증명을 사용하여 로그인하세요."
+      ],
       "The user ${ user } is now a single sign-on account. Their previous password became their backup password.": [
         "사용자 ${ user }님이 싱글 사인 온 계정으로 전환되었습니다. 기존 비밀번호가 백업 비밀번호로 변경되었습니다."
       ],
@@ -18304,7 +18343,7 @@
         "키 해독"
       ],
       "Deep dive into VPN blog posts": [
-        "VPN 블로그 게시물에 대한 심층 분석"
+        "VPN 블로그 게시물 자세히 살펴보기"
       ],
       "Delete ${ policyName }?": [
         "${ policyName }을(를) 삭제할까요?"
@@ -18590,6 +18629,9 @@
       ],
       "Get complete privacy coverage": [
         "완전한 개인정보 보호 커버리지 받기"
+      ],
+      "Get more from your VPN": [
+        "VPN에 대해 더 알아보기"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "가지고 계신 기기에 앱을 설치하여 최대 ${ VPN_CONNECTIONS }대 기기를 한 번에 보호하세요."
@@ -19168,7 +19210,7 @@
         "플랜 업그레이드"
       ],
       "Upgrade your privacy": [
-        "프라이버시를 업그레이드하세요"
+        "개인정보 보호를 업그레이드하세요"
       ],
       "Upload CSV file to create multiple accounts": [
         "다중 사용자를 생성하려면 CSV 파일을 업로드해주세요."
@@ -19872,7 +19914,7 @@
         "${ passPlusPlanName }(으)로 업그레이드하여 제한 없는 hide-my-email 별칭을 사용해보세요."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "한 번에 최대 ${ n } 개 디바이스에서 VPN을 연결하려면 ${ planName } 로 부터 업그레이드하세요"
+        "한 번에 최대 ${ n }개 기기에서 VPN을 연결하기 위해 ${ planName } 플랜으로 업그레이드하세요"
       ]
     },
     "Upgrade notice": {

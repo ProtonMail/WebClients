@@ -867,6 +867,9 @@
       "${ price } per domain": [
         "ドメインあたり ${ price }"
       ],
+      "${ price } per seat": [
+        "シートあたり ${ price }"
+      ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
       ],
@@ -2823,6 +2826,17 @@
         "${ PLAN_NAMES[PLANS.PASS] } のサブスクリプションは、年間 ${ price } の特別価格でご利用いただけます。無料プランにダウングレードすると、将来再度アップグレードした場合でも、割引は永久に失われます。"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Linux版をダウンロード"
+      ],
+      "Download for macOS": [
+        "macOS版ダウンロード"
+      ],
+      "Download for Windows": [
+        "Windows版をダウンロード"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "拡張バージョン履歴"
@@ -3387,6 +3401,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "文字、数字、_.- のみを使用してみてください。"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "VPNダッシュボードを読み込むことができません。接続を確認してもう一度お試しください。"
       ],
       "Unexpected error, we can't import the contacts": [
         "予期しないエラーにより、連絡先をインポートできません"
@@ -4404,11 +4421,20 @@
       "${ updated } contact updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } はあなたのIPアドレスをマスクしているため、ウェブサイトはあなたを特定できません。"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } 人のメンバー)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /月)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**自動接続**: デバイスをオンにするとすぐにVPNに接続します。"
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**キルスイッチ**: VPNが予期しない状態になった場合、インターネットをブロックしてデータ漏洩を停止します。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
@@ -4431,14 +4457,29 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "リモートで作業するには、セキュアな接続が不可欠です。VPN は、企業データをサイバー脅威から保護し、仕事をプライベートに保ちます。"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "ユーザーとは、1つのユーザー名、メールボックス、人物に関連するアカウントのことです"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPNは接続を暗号化し、IPアドレスを隠すため、誰もがあなたのブラウジングを追跡または監視することが困難になります。"
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPNはIPアドレスを隠し、ブラウジング活動を暗号化し、ウェブサイト、広告主、ISPが時間をかけて追跡するのを困難にします。"
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPNは、デバイスとインターネットの間の安全なトンネルです。 インターネットサービスプロバイダ(ISP)およびアクセスしたウェブサイトから現在地やアクティビティを非表示にします。"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
+      ],
+      "Ad targeting": [
+        "広告ターゲティング"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "追加や削除された参加者には、この一連のすべての予定について通知されます。"
@@ -4451,6 +4492,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "広告主はあなたのブラウジングを追跡してターゲット広告を表示します。 ${ VPN_APP_NAME } はトラッカーや広告をブロックし、接続を高速化し、オンラインエクスペリエンスを向上させます。"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
@@ -4556,6 +4600,9 @@
       ],
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "${ VPN_APP_NAME } に接続してプライベートブラウズ"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "グループ ${ contactGroupName } に連絡先を追加しました"
@@ -4722,6 +4769,12 @@
       "Frequency modifications will be lost.": [
         "間隔の設定は失われます"
       ],
+      "Geoblocking": [
+        "ジオブロック"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "政府やISPはあなたのオンライン活動を監視することができます。あなたの本当のIPを隠してあなたの活動を暗号化することによって、あなたのブラウジングはプライベートになります。"
+      ],
       "here": [
         "こちら"
       ],
@@ -4767,6 +4820,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
+      "In restrictive countries": [
+        "制限された国で"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
       ],
@@ -4790,6 +4846,9 @@
       ],
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "VPNを常に使用することをお勧めします。しかし、サイバーセキュリティの脅威が最も高い可能性がある場合は以下の通りです。"
       ],
       "JCB logo": [
         "JCB ロゴ"
@@ -4869,6 +4928,9 @@
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "ほとんどの公共WiFiネットワークは安全ですが、セキュリティが不足している場合、サイバー脅威にさらされます。VPNはトラフィックを暗号化し、保護を維持します。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
@@ -4899,6 +4961,9 @@
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
+      "Not connected": [
+        "接続されていません"
+      ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
@@ -4907,6 +4972,9 @@
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "主催者が過去に更新した行事は削除されません。"
+      ],
+      "On public WiFi networks": [
+        "公共の WiFi ネットワークで"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
@@ -4998,6 +5066,9 @@
       "Primary": [
         "プライマリー"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "プライベートブラウジング(またはシークレットモード)は、あなたのアクティビティをデバイス上で非表示にしておく場合にのみ有効です。 あなたのブラウザが履歴やクッキーを保存するのを防ぎますが、あなたが見えなくなることはありません。 ISP、ネットワーク管理者、あなたが訪問したウェブサイトは、あなたがオンラインで何をしているかを見ることができます。"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
       ],
@@ -5012,6 +5083,9 @@
       ],
       "Saving event...": [
         "イベントを保存中…"
+      ],
+      "Scan the QR code with your mobile device": [
+        "ご使用のモバイルデバイスでQRコードをスキャン"
       ],
       "Select a service provider to start": [
         "サービスプロバイダーを選択して開始"
@@ -5046,20 +5120,35 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "一部の政府は特定のウェブサイトへのアクセスをブロックまたは制限します。VPNは、あなたのアクティビティとアイデンティティをプライベートに保ちながら検閲を回避するのに役立ちます。"
+      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "主催者が一度変更した行事に対する回答は失われます。"
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "一部のウェブサイトやストリーミングサービスは、地域ごとにコンテンツをブロックします。VPNを使用すると、これらの制限を回避し、インターネットに自由にアクセスできます。"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "連絡先との共有を始め、オンラインサービスのために使ってください。"
       ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "次のVPN設定を有効にして、簡単に接続を維持します。"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "サブスクリプションは ${ cycle } ヶ月ごとに自動更新されます。"
       ],
       "Subscription auto-renews every month.": [
         "サブスクリプションは毎月自動更新されます。"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "監視"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
@@ -5124,6 +5213,12 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "これは、あなたのISPとあなたが訪問したウェブサイトがあなたの個人情報をあなたのオンライン活動に接続することができないことを意味します。"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "この唯一のコードは、ウェブサイトやISP(インターネットサービスプロバイダ)によって、位置情報や閲覧履歴をあなたのデバイスと結びつけるのに利用されます。"
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "これにより、現在ログインしているすべてのアカウントからサインアウトされます。"
       ],
@@ -5157,6 +5252,9 @@
       "Total VPN connections": [
         "総VPN接続数"
       ],
+      "Tracking": [
+        "トラッキング"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
@@ -5183,6 +5281,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ],
       "Warning": [
         "警告"
@@ -5216,6 +5317,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "週と月のビューはデスクトップにのみ適用されます。"
+      ],
+      "When working remotely": [
+        "リモートで作業する時"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "VPNに接続すると、暗号化技術を使用してIPアドレス(デバイスに割り当てられた固有のコード)を非表示にします。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
@@ -5358,6 +5465,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "一連の予定はすべて更新されます。削除した参加者にも通知されます。"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "その後、 ${ renewCycle } ヶ月ごとに ${ renewAmountStr }に請求されます。"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "(1個以上の)連絡先グループのアドレス数の上限に達しました。"
       ],
@@ -5409,6 +5519,15 @@
       "Your information was found on ${ displayedDate }": [
         "あなたの情報は ${ displayedDate }で見つかりました。"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "インターネットサービスプロバイダーは、データを監視して販売したり、アクセスできるウェブサイトを制限したりすることもできます。"
+      ],
+      "Your IP": [
+        "あなたのIP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "IPアドレスは表示されており、オンラインアクティビティを追跡するために使用できます。"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
       ],
@@ -5418,14 +5537,26 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "次回の請求日は ${ renewalTime }です。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
       ],
+      "Your online activity is protected": [
+        "オンラインアクティビティは保護されています"
+      ],
       "Your password was leaked:": [
         "パスワードが漏洩しました:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
       ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "物理的な場所が表示され、インターネットへのアクセスを制限するために使用できます。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "予定されているプランは ${ renewalTime } から始まり、${ cycle }ヶ月ごとに自動更新されます。"
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "あなたのサブスクリプションは${ renewalTime }に自動的に更新されます"
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "システムのタイムゾーンが${ timezone }に変更されたようです。タイムゾーンの設定を更新しますか？"
@@ -6024,6 +6155,15 @@
       ],
       "Your calendar URL": [
         "カレンダーのURL"
+      ],
+      "Your IP": [
+        "あなたのIP"
+      ],
+      "Your ISP": [
+        "あなたのISP"
+      ],
+      "Your location": [
+        "あなたの現在地"
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
@@ -7603,6 +7743,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "12 ヶ月間の${ BRAND_NAME } Unlimited"
+      ],
+      "${ planName } for 12 months": [
+        "12 ヶ月間の${ planName }"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } オファーの有効期限は今日までです！"
       ],
@@ -7626,9 +7772,6 @@
       ],
       "Limited-time offer": [
         "期間限定オファー"
-      ],
-      "Mail Plus for 12 months": [
-        "12 か月分のMail Plus"
       ],
       "Maybe later": [
         "またあとで"
@@ -7908,6 +8051,9 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
+      ],
       "Got it": [
         "わかった"
       ],
@@ -7932,11 +8078,38 @@
       "Please select your billing state first.": [
         "最初に請求先の州を選択してください。"
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
       "Select billing country to pay": [
         "支払い請求先の国を選択してください"
       ],
+      "terms & conditions": [
+        "利用規約"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "クーポンは ${ couponRedemptions } の更新で有効です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "${ priceWithDiscount } の特別割引価格は最初の ${ subscriptionLength } ヶ月間有効です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。クーポンは${ couponRedemptions }の更新で有効です。そのあとは 1 ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount }の特別な割引価格は最初の月のみ適用されます。そのあとは毎月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "その後、 ${ renewPriceStr } で ${ renewalLength } ヶ月間自動的に更新されます。いつでもキャンセルできます。"
+      ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "Your payment is still being processed": [
+        "お支払いが現在処理中です"
       ]
     },
     "Payments.Error": {
@@ -9728,6 +9901,9 @@
       "Deleting contacts": [
         "連絡先を削除しています"
       ],
+      "Desktop": [
+        "デスクトップ"
+      ],
       "Details": [
         "詳細"
       ],
@@ -9739,6 +9915,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } にダウングレードしますか？"
+      ],
+      "Download the app": [
+        "アプリをダウンロード"
       ],
       "Drop to upload": [
         "ドロップしてアップロード"
@@ -9833,6 +10012,9 @@
       "High security for your account": [
         "アカウントの高度なセキュリティ"
       ],
+      "How does it all work?": [
+        "どのように機能しますか？"
+      ],
       "Human verification": [
         "人間であることの検証"
       ],
@@ -9857,6 +10039,9 @@
       "Link confirmation": [
         "リンクの確認"
       ],
+      "Make a secure connection your default": [
+        "安全な接続をデフォルトにする"
+      ],
       "Merge contacts": [
         "連絡先の統合"
       ],
@@ -9865,6 +10050,9 @@
       ],
       "Minicalendar": [
         "ミニカレンダー"
+      ],
+      "Mobile": [
+        "モバイル"
       ],
       "Need more aliases?": [
         "もっとエイリアスが必要ですか？"
@@ -9910,6 +10098,9 @@
       ],
       "Phone numbers": [
         "電話番号"
+      ],
+      "Private browsing vs VPN": [
+        "プライベートブラウジング対VPN"
       ],
       "Processing...": [
         "処理中..."
@@ -10049,6 +10240,9 @@
       "Verifying your payment...": [
         "支払いを検証中..."
       ],
+      "VPN explained": [
+        "VPNの説明"
+      ],
       "Warning": [
         "警告"
       ],
@@ -10064,8 +10258,17 @@
       "We've locked your calendars to protect your data": [
         "データを保護するためにカレンダーをロックしました"
       ],
+      "What can a VPN protect you from?": [
+        "VPNは何からあなたを保護できますか?"
+      ],
+      "What is a VPN?": [
+        "VPNとは？"
+      ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
+      ],
+      "When is it most important to use a VPN?": [
+        "VPNを使用することが最も重要なのはいつですか?"
       ],
       "You can now create unlimited folders and labels": [
         "無制限のフォルダとラベルを作成できるようになりました"
@@ -10247,6 +10450,9 @@
       ]
     },
     "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPriceStr }.": [
+        "その後、12 か月ごとに ${ renewPriceStr } が請求されます。"
+      ],
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "新しいサブスクリプションは ${ cycle } ヶ月後に自動更新されます。"
       ],

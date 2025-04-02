@@ -1337,10 +1337,10 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "エイリアスを無効にしました。 ${ item.aliasEmail }に送信されたメールは受信できなくなります"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "エイリアスを有効にしました。 ${ item.aliasEmail }に送信されたメールを受信できるようになりました"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
@@ -2129,6 +2129,9 @@
       "This operation is irreversible. All aliases using the domain ${ domainTextBold } will be deleted. Please note that once deleted, aliases can't be restored.": [
         "この操作は元に戻せません。ドメイン${ domainTextBold }を使用しているすべてのエイリアスが削除されます。削除されたエイリアスは復元できないことにご注意ください。"
       ],
+      "This option is currently not available on your browser.": [
+        "このオプションは現在お使いのブラウザでは利用できません。"
+      ],
       "This option is currently not available on your device.": [
         "このオプションは現在お使いのデバイスでは利用できません。"
       ],
@@ -2282,6 +2285,9 @@
       "You may close this tab.": [
         "このタブを閉じても構いません。"
       ],
+      "You need a vault with edit permission before you can import items.": [
+        "アイテムをインポートするには、編集権限のある保管庫が必要です。"
+      ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "ドメイン認証後に、ドメイン設定(キャッチオールメールエイリアス、エイリアスの既定の表示名など)をカスタマイズをすることができます。"
       ],
@@ -2364,6 +2370,9 @@
       ],
       "${ repliedCount } reply": [
         "${ repliedCount }件の返信"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } 個のセキュアリンク"
       ],
       "${ usageCount } login": [
         "${ usageCount } 件のログイン"
@@ -3878,6 +3887,9 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "${ PASS_SHORT_APP_NAME }メモとSimpleLoginメモの違いはなんですか？"
+      ],
+      "You don't have any vaults": [
+        "保管庫がありません"
       ],
       "Your ${ planName } subscription will end on ${ endDate }": [
         "${ planName }サブスクリプションは${ endDate }に終了します"
