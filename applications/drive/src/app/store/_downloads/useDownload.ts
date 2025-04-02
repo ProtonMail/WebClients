@@ -13,6 +13,7 @@ import { type SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing
 import { TransferState } from '../../components/TransferManager/transfer';
 import { logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
+import { useThumbnailCacheStore } from '../../zustand/download/thumbnail.store';
 import { usePublicShareStore } from '../../zustand/public/public-share.store';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
@@ -24,7 +25,7 @@ import useDownloadDecryptionIssue from './DownloadProvider/useDownloadDecryption
 import { useDownloadMetrics } from './DownloadProvider/useDownloadMetrics';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
-import downloadThumbnailPure from './download/downloadThumbnail';
+import { downloadThumbnailPure } from './download/downloadThumbnailPure';
 import type {
     DecryptFileKeys,
     DownloadControls,
@@ -69,6 +70,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
     const { getLink, getLinkPrivateKey, getLinkSessionKey, setSignatureIssues } = useLink();
     const { report } = useDownloadMetrics('preview');
     const { handleDecryptionIssue } = useDownloadDecryptionIssue();
+    const { getThumbnail, addThumbnail } = useThumbnailCacheStore();
     const { publicShare, viewOnly } = usePublicShareStore((state) => ({
         publicShare: state.publicShare,
         viewOnly: state.viewOnly,
@@ -277,9 +279,21 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
         shareId: string,
         linkId: string,
         url: string,
-        token: string
+        token: string,
+        activeRevisionId?: string
     ) => {
-        return downloadThumbnailPure(url, token, () => getKeysUnsafe(abortSignal, shareId, linkId));
+        const cacheKey = (activeRevisionId || shareId) + linkId;
+        return downloadThumbnailPure(
+            url,
+            token,
+            () => getKeysUnsafe(abortSignal, shareId, linkId),
+            () => {
+                return getThumbnail(cacheKey);
+            },
+            (data: Uint8Array<ArrayBufferLike>) => {
+                void addThumbnail(cacheKey, data);
+            }
+        );
     };
 
     const checkFirstBlockSignature = async (
@@ -384,7 +398,8 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
             shareId,
             linkId,
             res.ThumbnailBareURL,
-            res.ThumbnailToken
+            res.ThumbnailToken,
+            activeRevision.id
         );
         return thumbnail.contents;
     };
