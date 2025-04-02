@@ -20,16 +20,12 @@ function* clientInitWorker(
     const loggedIn = getAuth().hasSession();
     const userId = getAuth().getUserID();
 
-    if (loggedIn && userId && clientBooted(status)) {
-        /** Only hydrate the client who initiated the wakeup sequence
-         * if the app is actually booted. `boot.saga` will take care of
-         * client hydration if the wakeup was triggered in parallel.
-         * Only for popup or pages - contentscripts don't need hydration. */
-        if (endpoint === 'popup' || endpoint === 'page') {
-            const state: State = yield select();
-            yield put(stateHydrate(state, { endpoint, tabId }));
-        }
+    if (endpoint === 'popup' || endpoint === 'page') {
+        const state: State = yield select();
+        yield put(stateHydrate(state, { endpoint, tabId }));
+    }
 
+    if (loggedIn && userId && clientBooted(status)) {
         const maybeRevalidate = endpoint === 'popup' ? withRevalidate : identity;
         yield put(maybeRevalidate(getUserAccessIntent(userId)));
 
