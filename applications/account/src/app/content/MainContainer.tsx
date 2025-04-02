@@ -114,10 +114,10 @@ const getDefaultPassRedirect = (
 
 const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account']) => {
     if (getIsSectionAvailable(accountRoutes.routes.dashboardV2)) {
-        return accountRoutes.routes.dashboardV2.to;
+        return `${accountRoutes.routes.dashboardV2.to}${location.search}${location.hash}`;
     }
     if (getIsSectionAvailable(accountRoutes.routes.dashboard)) {
-        return accountRoutes.routes.dashboard.to;
+        return `${accountRoutes.routes.dashboard.to}${location.search}${location.hash}`;
     }
     if (getIsSectionAvailable(accountRoutes.routes.recovery)) {
         return accountRoutes.routes.recovery.to;
