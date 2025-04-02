@@ -2401,6 +2401,17 @@
         "Twoja subskrypcja ${ PLAN_NAMES[PLANS.PASS] } jest w specjalnej cenie ${ price } za rok. Obniżenie planu do darmowej wersji spowoduje trwałą utratę zniżki, nawet w przypadku ponownej subskrypcji w przyszłości."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Pobierz na Linuksa"
+      ],
+      "Download for macOS": [
+        "Pobierz na macOS"
+      ],
+      "Download for Windows": [
+        "Pobierz na Windowsa"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Otwórz w ${ DRIVE_SHORT_APP_NAME }"
@@ -4945,6 +4956,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN IP": [
+        "Adres IP VPN"
+      ],
       "Warning": [
         "Ostrzeżenie"
       ],
@@ -5157,6 +5171,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Twoje informacje zostały znalezione w dniu: ${ displayedDate }"
+      ],
+      "Your IP": [
+        "Twój adres IP"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
@@ -5719,6 +5736,12 @@
       ],
       "Your alias": [
         "Twój alias"
+      ],
+      "Your IP": [
+        "Twój adres IP"
+      ],
+      "Your location": [
+        "Twoja lokalizacja"
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
@@ -6930,7 +6953,7 @@
     },
     "new_plans: Subtext": {
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "Promocyjna cena ${ priceCoupon } jest ważna przez pierwszy miesiąc. Następnie zostanie ona automatycznie odnowiona po cenie ${ priceLine }. Możesz anulować w dowolnym momencie."
+        "Niższa cena ${ priceCoupon } jest ważna przez pierwszy miesiąc. Automatycznie odnowienie nastąpi w kwocie ${ priceLine }. Możesz anulować w dowolnym momencie."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "Odblokuj wszystkie usługi i funkcje premium ${ BRAND_NAME } za ${ priceLine }. Anuluj w dowolnym momencie."
@@ -7540,9 +7563,6 @@
       ],
       "Limited-time offer": [
         "Oferta ograniczona czasowo"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus na 12 miesięcy"
       ],
       "Maybe later": [
         "Może później"
@@ -9413,6 +9433,9 @@
       "Minicalendar": [
         "Minikalendarz"
       ],
+      "Mobile": [
+        "Aplikacja mobilna"
+      ],
       "My files": [
         "Moje pliki"
       ],
@@ -9583,6 +9606,9 @@
       ],
       "Warning: suspected fake website": [
         "Ostrzeżenie: podejrzana strona internetowa"
+      ],
+      "What is a VPN?": [
+        "Co to jest VPN?"
       ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
@@ -9832,10 +9858,10 @@
         "Bitcoin na adres e-mail"
       ],
       "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Zaszyfrowany i bezpieczny ${ MAIL_APP_NAME } adres e-mail. Możesz z łatwością wysłać Bitcoin każdemu, używając wyłącznie nazwy ${ BRAND_NAME }."
+        "Szyfrowany i bezpieczny adres e-mail ${ MAIL_APP_NAME }. Wysyłaj łatwo Bitcoiny każdemu, używając wyłącznie nazwy ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Wymieniaj bezpiecznie Bitcoin przez e-mail, zamiast skomplikowanych, 26-znakowych adresów Bitcoin, które są podatne na błąd"
+        "Zamiast skomplikowanych 26-znakowych adresów Bitcoin, wysyłaj transakcje za pomocą funkcji \"Bitcoin na adres e-mail\"."
       ]
     },
     "wallet_signup_2024:app-switcher": {

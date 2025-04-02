@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Vybrat zemi ${ country }"
       ],
-      "select file": [
-        "vybrat soubor"
-      ],
       "Select file": [
         "Vybrat soubor"
+      ],
+      "select file": [
+        "vybrat soubor"
       ],
       "Select files": [
         "Vybrat soubory"
@@ -1319,7 +1319,7 @@
         "Použít ${ label } motiv"
       ],
       "Use a different card": [
-        "Použijte jinou kartu"
+        "Použít jinou kartu"
       ],
       "Use a different payment method": [
         "Použít jinou platební metodu"
@@ -7170,6 +7170,15 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } chce s vámi sdílet data v ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } země povolena",
+        "${ locationsCount } země povoleny",
+        "${ locationsCount } zemí povoleno",
+        "${ locationsCount } zemí povoleno"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } lze také použít s jediným heslem, které nahradí přihlašovací i druhé heslo. Chcete-li přepnout do režimu jediného hesla, zadejte jediné heslo, které chcete použít, a klikněte na tlačítko Uložit."
       ],
@@ -7797,9 +7806,6 @@
       "Copy your referral link": [
         "Kopírovat váš doporučující odkaz"
       ],
-      "countries enabled": [
-        "povolené země"
-      ],
       "Country code": [
         "Kód země"
       ],
@@ -8045,6 +8051,9 @@
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "E-mail a kalendář integrovaný s ${ CONTACTS_APP_NAME }"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby ${ BRAND_NAME } k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
@@ -8398,7 +8407,7 @@
         "Zlepšete své zkušenosti s ${ BRAND_NAME } tím, že přizpůsobíte aplikaci svým potřebám."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "V dalším kroku budete moci odeslat vklad pomocí adresy Bitcoin."
+        "V dalším kroku budete moci odeslat vklad pomocí bitcoinové adresy."
       ],
       "inactive": [
         "neaktivní"
@@ -8723,6 +8732,9 @@
       ],
       "No addresses exist": [
         "Neexistují žádné adresy"
+      ],
+      "No countries enabled": [
+        "Žádné povolené země"
       ],
       "No credit card required": [
         "Platební karta není vyžadována"
@@ -10968,10 +10980,10 @@
       "Allow sharing outside the organization": [
         "Povolit sdílení mimo organizaci"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10986,11 +10998,11 @@
       "AND": [
         "A"
       ],
-      "and": [
-        "a"
-      ],
       "And": [
         "A"
+      ],
+      "and": [
+        "a"
       ],
       "Anderson": [
         "Anderson"
@@ -14280,6 +14292,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited na 12 měsíců"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } na 12 měsíců"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } nabídka končí dnes!"
       ],
@@ -14303,9 +14321,6 @@
       ],
       "Limited-time offer": [
         "Časově omezená nabídka"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus na 12 měsíců"
       ],
       "Maybe later": [
         "Možná později"
@@ -14812,6 +14827,9 @@
       ]
     },
     "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Získejte jednorázovou platbou doživotní přístup ke všem současným i budoucím prémiovým funkcím ${ PASS_APP_NAME }."
+      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Vítejte v ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]

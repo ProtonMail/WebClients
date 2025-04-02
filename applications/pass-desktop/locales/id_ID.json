@@ -247,6 +247,9 @@
       "Dismiss": [
         "Abaikan"
       ],
+      "Download": [
+        "Unduh"
+      ],
       "Download this CSV template": [
         "Unduh template CSV ini"
       ],
@@ -400,11 +403,11 @@
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
-      "Move to trash": [
-        "Pindahkan ke sampah"
-      ],
       "Move to Trash": [
         "Pindahkan ke Sampah"
+      ],
+      "Move to trash": [
+        "Pindahkan ke sampah"
       ],
       "Multiple select": [
         "Pilih banyak berkas"
@@ -481,6 +484,9 @@
       "Remove member": [
         "Hapus anggota"
       ],
+      "Rename": [
+        "Ubah nama"
+      ],
       "Request a feature": [
         "Minta fitur"
       ],
@@ -492,6 +498,9 @@
       ],
       "Resend invitation": [
         "Kirim ulang undangan"
+      ],
+      "Reset": [
+        "Atur ulang"
       ],
       "Restore": [
         "Pulihkan"
@@ -1047,9 +1056,6 @@
       "File could not be parsed": [
         "Berkas tidak dapat diurai"
       ],
-      "File could not be read": [
-        "Berkas tidak dapat dibaca"
-      ],
       "File does not match expected format": [
         "Berkas tidak cocok dengan format yang diharapkan"
       ],
@@ -1394,11 +1400,11 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Alias berhasil dinonaktifkan. Anda tidak akan lagi menerima email yang dikirim ke ${ item.aliasEmail }."
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias berhasil dinonaktifkan. Anda tidak akan lagi menerima email yang terkirim ke ${ item.aliasEmail }"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Alias berhasil diaktifkan. Anda kini dapat menerima email yang dikirim ke ${ item.aliasEmail }"
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias berhasil diaktifkan. Anda kini dapat menerima email yang terkirim ke ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "Penyinkronan alias antara akun ${ BRAND_NAME } dan SimpleLogin Anda sedang aktif."
@@ -1568,9 +1574,6 @@
       "Drop to import": [
         "Lepaskan untuk mengimpor"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Karena batasan pada ekstensi browser Safari, data yang diekspor tidak akan mengandung ekstensi \".pgp\". Silakan ubah nama berkas yang bersangkutan untuk menyertakan ekstensi .pgp (mis. file.pgp) setelah mengekspor."
-      ],
       "Editor": [
         "Penyunting"
       ],
@@ -1694,14 +1697,8 @@
       "Identity confirmed": [
         "Identitas terkonfirmasi"
       ],
-      "Import in progress:": [
-        "Impor yang sedang berlangsung:"
-      ],
       "Import the CSV file below.": [
         "Impor CSV pada kolom di bawah ini."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } item diimpor"
       ],
       "Imported on ${ date }": [
         "Diimpor pada tanggal ${ date }"
@@ -1741,9 +1738,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sepertinya Anda telah masuk ke ${ PASS_APP_NAME }. Apabila Anda mencoba masuk dengan akun lain, silakan keluar dari ekstensi terlebih dahulu."
-      ],
-      "item": [
-        "item"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Item \"${ payload.item.data.metadata.name }\" dibuat"
@@ -1825,9 +1819,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -2158,9 +2149,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Kata sandi tambahan ini akan dibutuhkan untuk dapat menggunakan ${ PASS_APP_NAME }. Kata sandi ini berfungsi sebagai kata sandi kedua yang merangkapi kata sandi ${ BRAND_NAME } Anda."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } item berikut tidak dapat diimpor:"
       ],
       "The secure link has been removed": [
         "Tautan aman telah dihapus"
@@ -2713,6 +2701,9 @@
       "Field name": [
         "Nama kolom"
       ],
+      "File": [
+        "Berkas"
+      ],
       "File format": [
         "Format berkas"
       ],
@@ -2997,9 +2988,6 @@
       ],
       "Personalize": [
         "Personalisasi"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON yang terenkripsi PGP (direkomendasikan)"
       ],
       "Phone number": [
         "Nomor telepon"
@@ -3653,6 +3641,9 @@
       "Aliases": [
         "Alias"
       ],
+      "Attachments": [
+        "Lampiran"
+      ],
       "Auto create/on the fly alias": [
         "Pembuatan alias otomatis"
       ],
@@ -4253,9 +4244,6 @@
       ],
       "Passwords do not match": [
         "Kata sandi tidak sesuai"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "Berkas ekspor yang terenkripsi PGP memerlukan frasa sandi"
       ],
       "Please check that the extension is properly installed and enabled": [
         "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah aktif"

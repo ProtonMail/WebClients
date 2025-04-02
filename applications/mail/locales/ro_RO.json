@@ -492,6 +492,9 @@
       "Expiration time": [
         "Dată expirare"
       ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Explorați ${ VPN_APP_NAME }"
+      ],
       "Export": [
         "Exportare"
       ],
@@ -1307,6 +1310,9 @@
       "Toggle settings": [
         "Comutare setări"
       ],
+      "Toggle VPN dashboard": [
+        "Comutare panou general VPN"
+      ],
       "Tomorrow": [
         "Mâine"
       ],
@@ -1373,10 +1379,10 @@
       "Upgrade": [
         "Modificare"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "Modificare"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "Modificare"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -3897,6 +3903,17 @@
         "Descărcare toate"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Descărcare pentru Linux"
+      ],
+      "Download for macOS": [
+        "Descărcare pentru macOS"
+      ],
+      "Download for Windows": [
+        "Descărcare pentru Windows"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Istoric extins versiuni"
@@ -4555,6 +4572,9 @@
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Nu se poate încărca panoul general VPN. Verificați conexiunea și reîncercați."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Eroare neașteptată. Nu se pot importa contactele."
       ],
@@ -5187,7 +5207,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has attachments": [
-        "Are atașamente"
+        "Cu atașamente"
       ]
     },
     "Filter preview": {
@@ -6113,6 +6133,9 @@
         "S-au actualizat ${ updated } contacte.",
         "S-au actualizat ${ updated } de contacte."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } vă maschează adresa IP, așa că site-urile web nu vă pot identifica."
+      ],
       "(${ memberCount } member)": [
         "(Un membru)",
         "(${ memberCount } membri)",
@@ -6135,6 +6158,12 @@
         "S-au găsit **${ elementsFoundCount }** în ${ labelName }",
         "S-au găsit **${ elementsFoundCount }** în ${ labelName }"
       ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Autoconectarea**: deschide și conectează VPN-ul imediat ce dispozitivul pornește."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Întrerupătorul de conexiune**: oprește divulgările de date prin blocarea conexiunii dacă VPN-ul cade în mod neașteptat."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
       ],
@@ -6153,10 +6182,19 @@
         "O cerere de dezabonare de la această listă de corespondență va fi trimisă expeditorului buletinului de știri și procesată automat."
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
-        "O conexiune securizată este esențială atunci când lucrezi remote. Un VPN protejează datele companiei de amenințările cibernetice și îți menține activitatea privată."
+        "O conexiune securizată este esențială atunci când lucrați la distanță. Un VPN protejează datele companiei de amenințările cibernetice și vă menține activitatea privată."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilizator este un cont asociat cu un singur nume de utilizator, căsuță poștală și persoană."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Un VPN vă criptează conexiunea și vă ascunde adresa IP, ceea ce face mult mai dificil pentru oricine să vă urmărească sau să vă monitorizeze navigarea pe web."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Un VPN vă ascunde adresa IP și vă criptează activitatea de navigare, ceea ce îngreunează site-urile web, agenții de publicitate și furnizorii de servicii de internet să vă urmărească în timp."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Un VPN este un tunel securizat între dispozitivul utilizat și internet. Acesta vă ascunde locul și activitatea față de furnizorul de servicii de internet (ISP) și față de site-urile web pe care le vizitați."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Accesați peste 6.500 de servere de mare viteză pe maxim 10 dispozitive simultan pentru a vă păstra datele de navigare în siguranță. Disponibilă pentru ${ ios }, ${ android }, ${ appleTV } și ${ desktop }."
@@ -6173,6 +6211,9 @@
       "Active": [
         "Activ"
       ],
+      "Ad targeting": [
+        "Publicitate țintită"
+      ],
       "Add image URL": [
         "Adăugare URL imagine"
       ],
@@ -6181,6 +6222,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Verificarea adresei cu chei de încredere este activată pentru această adresă. Pentru a putea trimite la această adresă, aprobați cheile publice care pot fi folosite pentru trimitere."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Agenții de publicitate vă urmăresc navigarea pentru a afișa anunțuri țintite. ${ VPN_APP_NAME } blochează instrumentele de urmărire și reclamele, făcându-vă conexiunea mai rapidă și îmbunătățindu-vă experiența online."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
@@ -6332,6 +6376,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
+      "Browse privately and access blocked content.": [
+        "Navigați în privat și accesați conținutul blocat."
+      ],
       "Browser not supported": [
         "Navigator web neacceptat"
       ],
@@ -6382,6 +6429,9 @@
       ],
       "Confirm phishing report": [
         "Confirmare raportare înșelăciune"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Conectați-vă la ${ VPN_APP_NAME } pentru a naviga privat"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Luați în considerare când este cel mai bun moment pentru ca destinatarul să vă primească e-mailul și programați-l să fie trimis atunci."
@@ -6689,6 +6739,9 @@
       "Generate text": [
         "Generare text"
       ],
+      "Geoblocking": [
+        "Blocare geografică"
+      ],
       "Get it on Google Play": [
         "Descărcare din Magazin Play"
       ],
@@ -6697,6 +6750,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Asociați facturilor primite o etichetă cu coduri de culoare, cum ar fi „${ suggestedLabelName }“. După ce sunt plătite, schimbați eticheta în „${ suggestedPaidLabelName }“."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Are un atașament (${ numAttachmentsSize })",
@@ -6774,6 +6830,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "În țările restrictive"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "În pasul următor, veți putea trimite o depunere folosind o adresă de Bitcoin."
       ],
@@ -6782,6 +6841,9 @@
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Includeți solicitarea dvs. și răspunsul pentru a ne ajuta să îmbunătățim acuratețea."
+      ],
+      "Included for free with your plan": [
+        "Inclus gratuit cu planul actual"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6813,6 +6875,9 @@
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Invitați-vă partenerul, un prieten sau cu cine partajați planul ${ protonDuoPlanName }."
       ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Este bine să folosiți un VPN tot timpul. Dar amenințările cibernetice pot fi maxime în aceste situații:"
+      ],
       "JCB logo": [
         "Logo JCB"
       ],
@@ -6826,7 +6891,7 @@
         "Păstrați-vă datele de conectare și cardul de credit în siguranță, dar întotdeauna la îndemână, adăugându-le la ${ PASS_APP_NAME }. Este gratuit și este inclus în contul ${ BRAND_NAME }."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
-        "Păstrați-vă cutia poștală ordonată, ștergând automat mesajele din folderele «Gunoi» și «Nedorite» care se află acolo de mai mult de 30 de zile."
+        "Păstrați-vă mesajele ordonate, ștergându-le pe cele din «Gunoi» și «Nedorite» dacă se află acolo de mai mult de 30 de zile."
       ],
       "Key fingerprint": [
         "Amprentă cheie"
@@ -6960,6 +7025,9 @@
       "More refine actions": [
         "Mai multe acțiuni de cizelare"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Majoritatea rețelelor Wi-Fi publice sunt sigure, dar unele nu au securitate, expunându-vă la amenințări cibernetice. Un VPN vă criptează traficul, păstrându-vă protecția."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
       ],
@@ -7018,7 +7086,7 @@
         "URL nevalid"
       ],
       "Not connected": [
-        "Nu este conectat"
+        "Neconectat"
       ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
@@ -7027,7 +7095,7 @@
         "din"
       ],
       "On public WiFi networks": [
-        "Pe rețelele WiFi publice"
+        "Pe rețele Wi-Fi publice"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
@@ -7168,6 +7236,9 @@
       "Print email": [
         "Tipărire e-mail"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Navigarea privată (sau modul „incognito”) este utilă doar pentru a vă păstra activitatea ascunsă pe dispozitiv. Îți oprește browserul să salveze istoricul și cookie-urile, dar nu te face invizibil. ISP-ul dvs., administratorul de rețea și site-urile web pe care le vizitați pot vedea în continuare ceea ce faceți online."
+      ],
       "Proofread selection": [
         "Corectare selecție"
       ],
@@ -7230,6 +7301,9 @@
       ],
       "Saving draft…": [
         "Se salvează ciorna…"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Scanați codul QR cu dispozitivul mobil"
       ],
       "Scheduled send of this message will be canceled.": [
         "Trimiterea programată a acestui mesaj va fi anulată."
@@ -7341,6 +7415,12 @@
       "Snoozing this conversation will be canceled.": [
         "Amânarea acestei conversații va fi anulată."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Unele guverne blochează sau restricționează accesul la anumite site-uri web. Un VPN vă ajută să ocoliți cenzura, păstrându-vă în același timp activitatea și identitatea privată."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Unele site-uri web și servicii de redare în flux blochează conținutul în funcție de regiune. Un VPN vă permite să ocoliți aceste restricții și să accesați internetul în mod liber."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
@@ -7349,6 +7429,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Începeți să utilizați versiunea mai scurtă și mai atractivă a adresei de e-mail."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Păstrați-vă conexiunea fără efort, activând următoarele setări VPN:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Capacitatea de stocare nu este acceptată în acest navigator web. Este nevoie de această funcție pentru a activa căutarea în conținutul mesajelor."
@@ -7378,6 +7461,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Supraveghere"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronizați și gestionați mesajele cu aplicația ${ DRIVE_APP_NAME }. Creați și partajați documente în ${ DOCS_APP_NAME } și stocați-le în siguranță. Disponibile pe ${ ios }, ${ android } și ${ desktop }."
@@ -7494,6 +7580,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură web ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Aceasta înseamnă că ISP-ul și site-urile web pe care le vizitați nu vă pot corela informațiile personale cu activitatea dvs. online."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Acest mesaj a fost adaptat pentru a se potrivi la fundalul întunecat."
       ],
@@ -7562,6 +7651,9 @@
       "This sender's public key has not been trusted yet.": [
         "Cheia publică a acestui destinatar nu a fost încă aprobată."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Acest cod unic poate fi folosit de către site-uri web și ISP (furnizorii de servicii de internet) pentru a vă corela locul și istoricul de navigare cu dispozitivul utilizat."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Vi s-a afișat aceasta deoarece subiectul mesajului conține cuvinte cheie pentru resetarea parolei."
       ],
@@ -7623,7 +7715,7 @@
         "Urmăritori blocați:"
       ],
       "Tracking": [
-        "Urmărire"
+        "Urmăritori"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
@@ -7803,7 +7895,10 @@
         "Când vă furnizați adresa de e-mail, folosiți un alias hide-my-email unic, temporar, în locul adresei de e-mail reale."
       ],
       "When working remotely": [
-        "Când lucrezi remote"
+        "Când lucrați la distanță"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Când vă conectați la VPN, acesta utilizează tehnologia de criptare pentru a vă ascunde adresa IP (un cod unic atribuit dispozitivului)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Când ați activat cheile de încredere pentru ${ senderName }, cheile publice au fost adăugate la datele de contact."
@@ -7903,7 +7998,7 @@
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
       "You have ${ unread } in your inbox.": [
-        "Aveți ${ unread } mesaje în «Primite»."
+        "Aveți ${ unread } în «Primite»."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Aveți **o conversație** în acest folder",
@@ -8051,8 +8146,14 @@
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Furnizorul de servicii de internet vă poate monitoriza și uneori vinde datele sau chiar vă poate restricționa site-urile web pe care le puteți accesa."
+      ],
       "Your IP": [
-        "IP-ul tău"
+        "IP dispozitiv"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Adresa IP vă este vizibilă și poate fi utilizată pentru a vă urmări activitatea online."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -8074,11 +8175,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Următoarea dată de facturare este ${ renewalTime }. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
       ],
+      "Your online activity is protected": [
+        "Activitatea online vă este protejată"
+      ],
       "Your password was leaked:": [
         "Parola a fost divulgată:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Locul unde vă aflați este vizibil și poate fi folosit pentru a vă restricționa accesul la internet."
       ],
       "Your private writing assistant": [
         "Asistentul personal privat de scriere"
@@ -8425,11 +8532,11 @@
       "AND": [
         "ȘI"
       ],
-      "and": [
-        "și"
-      ],
       "And": [
         "Şi"
+      ],
+      "and": [
+        "și"
       ],
       "Anderson": [
         "Anderson"
@@ -8939,7 +9046,13 @@
         "Aliasuri personale"
       ],
       "Your IP": [
-        "IP-ul tău"
+        "IP dispozitiv"
+      ],
+      "Your ISP": [
+        "ISP"
+      ],
+      "Your location": [
+        "Amplasare"
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
@@ -10612,6 +10725,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited pentru 12 luni"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } pentru 12 luni"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Oferta cu ${ pricingTitle } expiră astăzi!"
       ],
@@ -10635,9 +10754,6 @@
       ],
       "Limited-time offer": [
         "Ofertă limitată"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus pentru 12 luni"
       ],
       "Maybe later": [
         "Poate mai târziu"
@@ -13508,6 +13624,9 @@
       "Deleting contacts": [
         "Ștergere contacte"
       ],
+      "Desktop": [
+        "Desktop"
+      ],
       "Details": [
         "Detalii"
       ],
@@ -13527,7 +13646,7 @@
         "Retrogradare la ${ downgradedPlanName }?"
       ],
       "Download the app": [
-        "Descarcă aplicația"
+        "Descărcați aplicația"
       ],
       "Edit contact": [
         "Editare contact"
@@ -13622,6 +13741,9 @@
       "High security for your account": [
         "Securitate maximă pentru cont"
       ],
+      "How does it all work?": [
+        "Cum funcționează tot?"
+      ],
       "How to update your email address": [
         "Cum să vă actualizați adresa de e-mail"
       ],
@@ -13647,6 +13769,9 @@
       ],
       "Import groups": [
         "Importare grupuri"
+      ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "Măriți securitatea cu ${ VPN_APP_NAME }"
       ],
       "Increase your privacy with more addresses": [
         "Măriți-vă intimitatea cu adrese mai multe"
@@ -13674,6 +13799,9 @@
       ],
       "Load remote content": [
         "Încărcare conținut extern"
+      ],
+      "Make a secure connection your default": [
+        "Faceți o conexiune sigură ca implicită"
       ],
       "Mark as read": [
         "Marcare ca citit"
@@ -13713,6 +13841,9 @@
       ],
       "Minicalendar": [
         "Minicalendar"
+      ],
+      "Mobile": [
+        "Dispozitive mobile"
       ],
       "More": [
         "Mai multe"
@@ -13839,6 +13970,9 @@
       ],
       "Priority support:": [
         "Asistență prioritară:"
+      ],
+      "Private browsing vs VPN": [
+        "Navigare privată versus un VPN"
       ],
       "Processing...": [
         "Se procesează..."
@@ -14043,6 +14177,9 @@
       "Verifying your payment...": [
         "Verificare plată..."
       ],
+      "VPN explained": [
+        "VPN explicat"
+      ],
       "Want to snooze any time?": [
         "Doriți să modificați perioada de amânare?"
       ],
@@ -14063,11 +14200,17 @@
       "Welcome ${ userName }": [
         "Bun venit, ${ userName }"
       ],
+      "What can a VPN protect you from?": [
+        "De ce te poate proteja un VPN?"
+      ],
       "What is a VPN?": [
         "Ce este un VPN?"
       ],
       "What would you like to import?": [
         "Ce ați dori să importați?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Când este cel mai important să folosiți un VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Acum puteți crea foldere și fișiere nelimitate"

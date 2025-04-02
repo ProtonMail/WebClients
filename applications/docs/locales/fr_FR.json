@@ -768,6 +768,12 @@
       ]
     },
     "Actions": {
+      "Last modified first": [
+        "Derniers modifiés en premier"
+      ],
+      "Last viewed first": [
+        "Derniers consultés en premier"
+      ],
       "Name": [
         "Nom"
       ]
@@ -2924,6 +2930,9 @@
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Le chargement du tableau de bord VPN n'a pas abouti. Veuillez vérifier votre connexion et réessayer."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
@@ -3882,12 +3891,21 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } est déjà présent à cet emplacement."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } masque votre adresse IP, afin que les sites internet ne puissent pas vous identifier."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mois)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Connexion automatique** : cette option ouvre et vous connecte au VPN dès que vous allumez votre appareil."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Arrêt d'urgence (kill switch)** : cette option arrête les fuites de données en bloquant votre connexion internet si le VPN se déconnecte de manière inattendue."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
@@ -3908,8 +3926,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Une connexion sécurisée est essentielle en télétravail. Un VPN protège les données de l'entreprise des cybermenaces et préserve la confidentialité de votre travail."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Un VPN chiffre votre connexion et masque votre adresse IP, ce qui rend beaucoup plus difficile pour quiconque de suivre ou de surveiller votre navigation."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Un VPN masque votre adresse IP et chiffre vos activités de navigation, ce qui rend plus difficile pour les sites internet, les annonceurs et les FAI de vous suivre au fil du temps."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Un VPN est un tunnel sécurisé entre votre appareil et internet. Il masque votre emplacement et vos activités à votre fournisseur d'accès à internet (FAI) et aux sites internet que vous consultez."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
@@ -3928,6 +3958,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Les annonceurs suivent votre navigation pour afficher des publicités ciblées. ${ VPN_APP_NAME } bloque les traqueurs et les publicités, rendant votre connexion plus rapide et améliorant votre expérience en ligne."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
@@ -4273,6 +4306,9 @@
       "Go to ${ DRIVE_APP_NAME }": [
         "Accéder à ${ DRIVE_APP_NAME }"
       ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
+      ],
       "here": [
         "ici"
       ],
@@ -4345,6 +4381,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Il semble que vous ayez récemment essayé de charger ${ uploadName }. Si le chargement n'a pas abouti, nous vous invitons à ${ replaceFile }. Si le chargement est toujours en cours, remplacer le fichier annulera le chargement en cours."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Il est préférable d'utiliser un VPN en permanence. Mais voici les cas où les menaces à la cybersécurité peuvent être les plus importantes :"
       ],
       "JCB logo": [
         "Logo JCB"
@@ -4436,6 +4475,9 @@
       ],
       "Monitor accounts": [
         "Surveiller les comptes"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "La plupart des réseaux wifi publics sont sûrs, mais certains manquent de sécurité, vous exposant ainsi aux cybermenaces. Un VPN chiffre votre trafic pour vous protéger."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
@@ -4592,6 +4634,9 @@
       "Primary": [
         "Principale"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "La navigation privée (ou mode « incognito ») sert uniquement à masquer vos activités sur votre appareil. Elle empêche votre navigateur d'enregistrer l'historique et les cookies, mais ne vous rend pas invisible. Votre FAI, votre administrateur réseau et les sites internet que vous consultez peuvent toujours voir ce que vous faites en ligne."
+      ],
       "Public documents are not yet enabled for your organization.": [
         "Les documents publics ne sont pas encore activés pour votre organisation."
       ],
@@ -4688,6 +4733,12 @@
       "Some edits are taking longer to sync than expected.": [
         "La synchronisation de certaines modifications prend plus de temps que prévu."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Certains gouvernements bloquent ou restreignent l'accès à certains sites internet. Un VPN permet de contourner la censure tout en préservant la confidentialité de vos activités et de votre identité."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Des sites internet et services de streaming bloquent certains contenus par région. Un VPN vous permet de contourner ces restrictions et d'accéder librement à internet."
+      ],
       "Something went wrong": [
         "Une erreur s'est produite."
       ],
@@ -4773,6 +4824,9 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Ce lien a été créé dans une ancienne version de Drive et ne peut pas être modifié. Supprimez ce lien et créez-en un nouveau pour modifier les paramètres."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Cela signifie que votre FAI et les sites internet que vous visitez ne peuvent pas lier vos informations personnelles à vos activités en ligne."
+      ],
       "This message will be presented again later": [
         "Ce message sera de nouveau présenté plus tard."
       ],
@@ -4837,7 +4891,7 @@
         "Nombre total de connexions VPN"
       ],
       "Tracking": [
-        "Traçage"
+        "Traqueurs"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Le transfert a été annulé pour le fichier « ${ name } »."
@@ -4941,6 +4995,9 @@
       "When working remotely": [
         "Lorsque vous travaillez à distance"
       ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Lorsque vous vous connectez au VPN, il utilise une technologie de chiffrement pour masquer votre adresse IP (un code unique attribué à votre appareil)."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
@@ -5041,13 +5098,13 @@
         "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
       ],
       "You're about to decline the invitation to join the ${ invitationName }album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Vous êtes sur le point de refuser l'invitation à rejoindre l'album ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite à nouveau. Voulez-vous vraiment continuer ?"
+        "Vous êtes sur le point de refuser l'invitation à rejoindre l'album ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
       ],
       "You're about to decline the invitation to join the ${ invitationName }folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Vous êtes sur le point de refuser l'invitation à rejoindre le dossier ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite à nouveau. Voulez-vous vraiment continuer ?"
+        "Vous êtes sur le point de refuser l'invitation à rejoindre le dossier ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
       ],
       "You're about to decline the invitation to join the ${ invitationName }item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Vous êtes sur le point de refuser l'invitation à rejoindre l'élément ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite à nouveau. Voulez-vous vraiment continuer ?"
+        "Vous êtes sur le point de refuser l'invitation à rejoindre l'élément ${ invitationName }. Si vous continuez, vous ne pourrez plus y accéder, sauf si le propriétaire vous invite de nouveau. Voulez-vous vraiment continuer ?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Vous avez atteint le nombre maximum d'adresses dans le ou les groupes de contacts :"
@@ -5109,8 +5166,14 @@
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Votre fournisseur d’accès internet peut surveiller et parfois vendre vos données, voire restreindre les sites internet auxquels vous pouvez accéder."
+      ],
       "Your IP": [
         "Votre IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Votre adresse IP est visible et peut être utilisée pour suivre vos activités en ligne."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
@@ -5129,6 +5192,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Votre emplacement physique est visible et peut être utilisé pour restreindre votre accès à internet."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois.",
@@ -7390,6 +7456,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited pour 12 mois"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } pour 12 mois"
+      ],
       "${ pricingTitle } offer expires today!": [
         "L'offre ${ pricingTitle } expire aujourd'hui !"
       ],
@@ -7413,9 +7485,6 @@
       ],
       "Limited-time offer": [
         "Offre à durée limitée"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus pour 12 mois"
       ],
       "Maybe later": [
         "Peut-être plus tard"
@@ -7890,7 +7959,7 @@
         "Créé par"
       ],
       "Earlier": [
-        "Plus tôt"
+        "Antérieur"
       ],
       "Location": [
         "Emplacement"
@@ -9223,6 +9292,9 @@
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Faire une copie dans votre ${ DRIVE_APP_NAME }"
       ],
+      "Make a secure connection your default": [
+        "Optez par défaut pour une connexion sécurisée"
+      ],
       "Manage secure link": [
         "Gérer les liens sécurisés"
       ],
@@ -9291,6 +9363,9 @@
       ],
       "Photos": [
         "Photos"
+      ],
+      "Private browsing vs VPN": [
+        "Navigation privée versus VPN"
       ],
       "Processing...": [
         "Traitement en cours…"
@@ -9402,6 +9477,9 @@
       ],
       "Verifying your payment...": [
         "Vérification de votre paiement en cours"
+      ],
+      "VPN explained": [
+        "Explications sur le VPN"
       ],
       "Warning": [
         "Attention"

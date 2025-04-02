@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selectare țara ${ country }"
       ],
-      "select file": [
-        "selectați fișierul"
-      ],
       "Select file": [
         "Selectare fișier"
+      ],
+      "select file": [
+        "selectați fișierul"
       ],
       "Select files": [
         "Selectare fișiere"
@@ -4388,7 +4388,7 @@
         "Adăugare condiție"
       ],
       "Add forwarding rule": [
-        "Adăugare regulă redirecționare"
+        "Adăugare regulă de redirecționare"
       ],
       "Back": [
         "Înapoi"
@@ -7120,6 +7120,11 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "Țări activate: ${ locationsCount }",
+        "Țări activate: ${ locationsCount }",
+        "Țări activate: ${ locationsCount }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
@@ -7724,9 +7729,6 @@
       ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
-      ],
-      "countries enabled": [
-        "țări activate"
       ],
       "Country code": [
         "Cod țară"
@@ -8647,6 +8649,9 @@
       ],
       "No addresses exist": [
         "Nu există adrese"
+      ],
+      "No countries enabled": [
+        "Nu există țări activate"
       ],
       "No credit card required": [
         "Nu trebuie card de credit"
@@ -10017,7 +10022,7 @@
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Puteți folosi ${ MAIL_APP_NAME } cu orice client de e-mail pentru desktop care acceptă IMAP/SMTP, inclusiv Outlook, Apple Mail, și Thunderbird."
+        "Puteți folosi ${ MAIL_APP_NAME } cu orice client de e-mail pentru desktop care acceptă IMAP/SMTP, inclusiv Outlook, Apple Mail și Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puteți utiliza următoarele date pentru a vă conecta la un server ${ VPN_APP_NAME } folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
@@ -10862,10 +10867,10 @@
       "Allow sharing outside the organization": [
         "Permitere partajare în afara organizației"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Domeniu permis"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Domeniu permis"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10880,11 +10885,11 @@
       "AND": [
         "ȘI"
       ],
-      "and": [
-        "și"
-      ],
       "And": [
         "Şi"
+      ],
+      "and": [
+        "și"
       ],
       "Anderson": [
         "Anderson"
@@ -14131,6 +14136,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited pentru 12 luni"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } pentru 12 luni"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Oferta cu ${ pricingTitle } expiră astăzi!"
       ],
@@ -14154,9 +14165,6 @@
       ],
       "Limited-time offer": [
         "Ofertă limitată"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus pentru 12 luni"
       ],
       "Maybe later": [
         "Poate mai târziu"
@@ -14660,6 +14668,9 @@
       ]
     },
     "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Obțineți acces pe viață la toate funcțiile premium actuale și viitoare ale ${ PASS_APP_NAME } cu o singură plată unică."
+      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Bun venit la ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]

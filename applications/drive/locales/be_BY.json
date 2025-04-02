@@ -999,6 +999,9 @@
       "Upload folder": [
         "Запампаваць папку"
       ],
+      "Upload from computer": [
+        "Запампаваць з камп'ютара"
+      ],
       "Upload photos": [
         "Запампаваць фатаграфіі"
       ],
@@ -2558,11 +2561,6 @@
         "Пратэрмінаваны рахунак"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -2593,9 +2591,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
-      ],
-      "Keep your files, photos and documents secure with end-to-end encryption.": [
-        "Захоўвайце свае файлы, фатаграфіі і дакументы ў бяспецы з дапамогай скразнога шыфравання."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
@@ -2644,6 +2639,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3272,7 +3272,7 @@
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
-        "Немагчыма загрузіць панэль кіравання VPN. Калі ласка, праверце падключэнне і паўтарыце спробу."
+        "Немагчыма загрузіць панэль кіравання VPN. Праверце падключэнне і паўтарыце спробу."
       ],
       "Unable to set photo as cover": [
         "Немагчыма задаць фатаграфію ў якасці вокладкі"
@@ -3702,18 +3702,6 @@
       ]
     },
     "Feature": {
-      "Access on mobile and desktop": [
-        "Доступ на тэлефонах і камп'ютарах"
-      ],
-      "Free 5 GB storage": [
-        "Бясплатна 5 ГБ сховішча"
-      ],
-      "Save files for later access": [
-        "Захаваць файлы, каб атрымаць да іх доступ пазней"
-      ],
-      "Share privately and securely": [
-        "Прыватнае і бяспечнае абагульванне"
-      ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
       ]
@@ -4251,12 +4239,6 @@
         "${ addressCount } адрасоў электроннай пошты",
         "${ addressCount } адрасы электроннай пошты"
       ],
-      "${ album.photoCount } item": [
-        "${ album.photoCount } элемент",
-        "${ album.photoCount } элементы",
-        "${ album.photoCount } элементаў",
-        "${ album.photoCount } элементаў"
-      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } быў паспяхова выдалены"
       ],
@@ -4379,6 +4361,12 @@
         "${ pausedCount } прыпынена",
         "${ pausedCount } прыпынена",
         "${ pausedCount } прыпынена"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } элемент",
+        "${ photoCount } элементы",
+        "${ photoCount } элементаў",
+        "${ photoCount } элементаў"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
@@ -4525,7 +4513,7 @@
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце, каб паказваць мэтавую рэкламу. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
+        "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
@@ -5071,7 +5059,7 @@
         "Элементы перамешчаны ў сметніцу будуць заставацца там да выдалення"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
-        "Лепш за ўсё выкарыстоўваць VPN заўсёды. Але вось калі пагрозы кібербяспецы могуць быць найбольшымі:"
+        "Лепш за ўсё выкарыстоўваць VPN пастаянна. Але ў гэтых выпадках, пагрозы кібербяспекі могуць быць самымі высокімі:"
       ],
       "It’s easy and secure": [
         "Гэта лёгка і бяспечна"
@@ -5671,7 +5659,7 @@
         "Спасылка створана ў папярэдняй версіі Drive, таму яе немагчыма змяніць. Для змянення налад, выдаліце гэту спасылку і стварыце новую."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць вашы асабістыя звесткі з вашай актыўнасці ў інтэрнэце."
+        "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць асабістыя звесткі з вашай актыўнасці ў інтэрнэце."
       ],
       "This month": [
         "У гэтым месяцы"
@@ -8760,6 +8748,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited за 12 месяцаў"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } за 12 месяцаў"
+      ],
       "${ pricingTitle } offer expires today!": [
         "Прапанова з коштам ${ pricingTitle } сёння будзе пратэрмінавана!"
       ],
@@ -8783,9 +8777,6 @@
       ],
       "Limited-time offer": [
         "Часовая прапанова"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus за 12 месяцаў"
       ],
       "Maybe later": [
         "Магчыма пазней"
@@ -8871,10 +8862,10 @@
       "Invite members": [
         "Запрасіць удзельнікаў"
       ],
-      "Maybe Later": [
+      "Maybe later": [
         "Магчыма пазней"
       ],
-      "Maybe later": [
+      "Maybe Later": [
         "Магчыма пазней"
       ],
       "Select theme": [
@@ -10195,6 +10186,47 @@
         "За ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
@@ -10465,47 +10497,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {
@@ -11209,7 +11200,7 @@
         "Размяшчэнне"
       ],
       "Make a secure connection your default": [
-        "Зрабіце бяспечнае падключэнне прадвызначаным"
+        "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
       ],
       "Manage secure link": [
         "Кіраванне бяспечнай спасылкай"
@@ -11351,9 +11342,6 @@
       ],
       "Restore your files": [
         "Аднавіць вашы файлы"
-      ],
-      "Save it for later in  ${ DRIVE_APP_NAME }": [
-        "Захаваць для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Захаванне для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"

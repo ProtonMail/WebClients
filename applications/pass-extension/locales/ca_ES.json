@@ -152,11 +152,11 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Crea un compte de ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Crear un compte de ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Crea un compte de ${ BRAND_NAME }"
       ],
       "Create alias": [
         "Crea un àlies"
@@ -247,6 +247,9 @@
       ],
       "Done": [
         "Fet"
+      ],
+      "Download": [
+        "Baixa"
       ],
       "Download this CSV template": [
         "Descarrega aquesta plantilla CSV"
@@ -464,6 +467,9 @@
       "Remove member": [
         "Esborra el membre"
       ],
+      "Rename": [
+        "Canvia el nom"
+      ],
       "Request a feature": [
         "Demaneu una nova característica"
       ],
@@ -475,6 +481,9 @@
       ],
       "Resend invitation": [
         "Reenvia la invitació"
+      ],
+      "Reset": [
+        "Restablir"
       ],
       "Restore": [
         "Restaura"
@@ -985,9 +994,6 @@
       "File could not be parsed": [
         "No s'ha pogut analitzar el fitxer."
       ],
-      "File could not be read": [
-        "No s'ha pogut llegir el fitxer."
-      ],
       "File does not match expected format": [
         "El fitxer no coincideix amb el format esperat"
       ],
@@ -1344,10 +1350,10 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "L'àlies s'ha desactivat. Ja no rebreu correus electrònics enviats a ${ item.aliasEmail }"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "L'àlies s'ha activat. Ara podeu rebre correus electrònics enviats a ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
@@ -1530,9 +1536,6 @@
       "Drop to import": [
         "Arrossegueu aquí per a importar"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "A causa d'una limitació de les extensions del navegador Safari, després d'exportar les dades faltarà l'extensió del fitxer \".pgp\". Reanomeneu el fitxer per a incloure l'extensió .pgp (p. ex. fitxer.pgp) després d'exportar."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importeu fàcilment les vostres contrasenyes existents a ${ PASS_APP_NAME }."
       ],
@@ -1658,15 +1661,8 @@
       "Identity confirmed": [
         "S'ha confirmat la identitat."
       ],
-      "Import in progress:": [
-        "Importació en curs:"
-      ],
       "Import the CSV file below.": [
         "Importa el fitxer CSV de sota."
-      ],
-      "Imported ${ payload.total } item": [
-        "S'ha importat ${ payload.total } element",
-        "S'han importat ${ payload.total } elements"
       ],
       "Imported on ${ date }": [
         "Importat el ${ date }"
@@ -1697,10 +1693,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sembla que ja heu iniciat sessió a ${ PASS_APP_NAME }. Si esteu intentant iniciar sessió amb un altre compte, tanqueu primer la sessió de l'extensió."
-      ],
-      "item": [
-        "element",
-        "elements"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "S'ha creat l'element \"${ payload.item.data.metadata.name }\""
@@ -2095,10 +2087,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Es requerirà la contrasenya addicional per utilitzar ${ PASS_APP_NAME }. Actua com una contrasenya addicional a la contrasenya de ${ BRAND_NAME }."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "No s'ha pogut importar ${ result.ignored.length } element:",
-        "No s'han pogut importar els ${ result.ignored.length } elements següents:"
       ],
       "The secure link has been removed": [
         "S'ha eliminat l'enllaç segur."
@@ -2668,6 +2656,9 @@
       "Field name": [
         "Nom del camp"
       ],
+      "File": [
+        "Fitxer"
+      ],
       "File format": [
         "Format de fitxer"
       ],
@@ -2916,9 +2907,6 @@
       ],
       "Personal website": [
         "Lloc web personal"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON xifrat amb PGP (recomanat)"
       ],
       "Phone number": [
         "Número de telèfon"
@@ -3499,6 +3487,9 @@
       "Aliases": [
         "Àlies"
       ],
+      "Attachments": [
+        "Adjunts"
+      ],
       "Auto create/on the fly alias": [
         "Crear automàticament un àlies sobre la marxa"
       ],
@@ -4038,9 +4029,6 @@
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "El fitxer d'exportació xifrat amb PGP requereix una contrasenya"
       ],
       "Please contact us to investigate the issue": [
         "Poseu-vos en contacte amb nosaltres per investigar el problema"

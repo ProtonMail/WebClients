@@ -7393,6 +7393,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Onbeperkt voor 12 maanden"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } voor 12 maanden"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
@@ -7416,9 +7422,6 @@
       ],
       "Limited-time offer": [
         "Tijdelijke aanbieding"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus voor 12 maanden"
       ],
       "Maybe later": [
         "Misschien later"
@@ -9299,7 +9302,7 @@
         "Foto's"
       ],
       "Private browsing vs VPN": [
-        "Privébrowsen vs VPN"
+        "Privé browsen versus VPN"
       ],
       "Processing...": [
         "Wordt verwerkt..."

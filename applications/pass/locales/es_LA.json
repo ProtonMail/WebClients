@@ -1357,11 +1357,11 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar los datos, puede eliminar el archivo CSV que contiene sus contraseñas por seguridad."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "Se desactivó el alias. Ya no recibirá correos enviados a ${ item.aliasEmail }."
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Se desactivó el alias. Ya no recibirá correos electrónicos enviados a ${ item.aliasEmail }"
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "Se activó el alias. Ahora recibirá correos enviados a ${ item.aliasEmail }."
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Se activó el alias. Ahora podrá recibir correos electrónicos enviados a ${ item.aliasEmail }"
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "La sincronización de alias entre las cuentas de ${ BRAND_NAME } y SimpleLogin está activa."
