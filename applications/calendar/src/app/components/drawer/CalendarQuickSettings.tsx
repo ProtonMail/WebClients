@@ -13,6 +13,7 @@ import {
     Loader,
     PrimaryTimezoneSelector,
     QuickSettingsButtonSection,
+    QuickSettingsRequestNotifications,
     QuickSettingsSectionRow,
     SecondaryTimezoneSelector,
     ShortcutsToggle,
@@ -182,6 +183,9 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
             ) : null}
 
             <DefaultQuickSettings />
+
+            <QuickSettingsRequestNotifications />
+
             <QuickSettingsButtonSection>
                 <NukeSearchIndexButton showConfirmModal={showConfirmModal} onBackFromSearch={onBackFromSearch} />
             </QuickSettingsButtonSection>
