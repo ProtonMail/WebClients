@@ -1,21 +1,16 @@
-import type { PropsWithChildren } from 'react';
-
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
-interface Props extends PropsWithChildren {}
-
 const today = new Date();
 
-const SpotlightContent = () => {
+export const RSVPSpotlightContent = () => {
     return (
         <>
             <div className="flex flex-nowrap items-start mb-1 gap-4">
@@ -32,7 +27,7 @@ const SpotlightContent = () => {
     );
 };
 
-export const RsvpSpotlight = ({ children }: Props) => {
+export const useRSVPSpotlight = () => {
     const [user] = useUser();
     const {
         welcomeFlags: { isWelcomeFlow },
@@ -46,17 +41,9 @@ export const RsvpSpotlight = ({ children }: Props) => {
 
     const shouldShowSpotlight = useSpotlightShow(show);
 
-    return (
-        <Spotlight
-            show={shouldShowSpotlight}
-            content={<SpotlightContent />}
-            onDisplayed={onDisplayed}
-            onClose={onClose}
-            originalPlacement="right"
-            className="ml-3"
-            isAboveModal
-        >
-            {children}
-        </Spotlight>
-    );
+    return {
+        shouldShowSpotlight,
+        onDisplayed,
+        onClose,
+    };
 };
