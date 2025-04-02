@@ -95,10 +95,10 @@
       "Create": [
         "創建"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
       "Create alias": [
@@ -172,6 +172,9 @@
       ],
       "Done": [
         "完成"
+      ],
+      "Download": [
+        "下載"
       ],
       "Download this CSV template": [
         "下載此CSV模板"
@@ -350,6 +353,9 @@
       "Remove member": [
         "移除成員"
       ],
+      "Rename": [
+        "重新命名"
+      ],
       "Request a feature": [
         "提出新功能建議"
       ],
@@ -361,6 +367,9 @@
       ],
       "Resend invitation": [
         "重新發送邀請"
+      ],
+      "Reset": [
+        "重設"
       ],
       "Restore": [
         "還原"
@@ -1046,14 +1055,8 @@
       "Here you will find all the necessary information to get you started.": [
         "這裡是您需要的資訊"
       ],
-      "Import in progress:": [
-        "匯入進行中:"
-      ],
       "Import the CSV file below.": [
         "於底下匯入CSV。"
-      ],
-      "Imported ${ payload.total } item": [
-        "匯入${ payload.total }項目"
       ],
       "Imported on ${ date }": [
         "匯入於${ date }"
@@ -1081,9 +1084,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "您似乎已經登入 ${ PASS_APP_NAME }。若您嘗試使用其他帳號登入，請先從擴充套件登出。"
-      ],
-      "item": [
-        "項目"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "項目${ payload.item.data.metadata.name }以新增"
@@ -1282,9 +1282,6 @@
       ],
       "Thank you, the problem has been reported": [
         "感謝您舉報問題"
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "以下${ result.ignored.length }項目無法匯入:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "您貼上的字已達${ maxLength }字元上限"
@@ -1602,6 +1599,9 @@
       ],
       "Field name": [
         "欄位名稱"
+      ],
+      "File": [
+        "檔案"
       ],
       "File format": [
         "檔案格式"
@@ -2165,6 +2165,9 @@
       "Actions": [
         "操作"
       ],
+      "Attachments": [
+        "附件"
+      ],
       "Auto-lock update": [
         "更新自動鎖定"
       ],
@@ -2468,9 +2471,6 @@
       ],
       "Passwords do not match": [
         "密碼不一致"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP加密匯出需要驗證短語"
       ],
       "Please verify your email address in order to use email aliases": [
         "請驗證您的電子郵件位址以啟用電子郵件別名"

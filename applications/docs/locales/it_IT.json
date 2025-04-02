@@ -6899,6 +6899,11 @@
         "Sblocca tutti i prodotti premium e funzionalità di ${ BRAND_NAME } per soli ${ priceLine }. Cancellazione in qualsiasi momento."
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -6911,11 +6916,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7449,6 +7449,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited per 12 mesi"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } per 12 mesi"
+      ],
       "${ pricingTitle } offer expires today!": [
         "L'offerta ${ pricingTitle } scade oggi!"
       ],
@@ -7472,9 +7478,6 @@
       ],
       "Limited-time offer": [
         "Offerta a tempo limitato"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus per 12 mesi"
       ],
       "Maybe later": [
         "Forse più tardi"

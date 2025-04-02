@@ -152,10 +152,10 @@
       "Create": [
         "생성"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
       "Create alias": [
@@ -247,6 +247,9 @@
       ],
       "Done": [
         "완료"
+      ],
+      "Download": [
+        "다운로드"
       ],
       "Download this CSV template": [
         "CSV 양식 다운로드"
@@ -464,6 +467,9 @@
       "Remove member": [
         "구성원 추방"
       ],
+      "Rename": [
+        "이름 바꾸기"
+      ],
       "Request a feature": [
         "기능 요청"
       ],
@@ -475,6 +481,9 @@
       ],
       "Resend invitation": [
         "초대장 재전송"
+      ],
+      "Reset": [
+        "재설정"
       ],
       "Restore": [
         "복원"
@@ -980,9 +989,6 @@
       "File could not be parsed": [
         "파일을 분석할 수 없음."
       ],
-      "File could not be read": [
-        "파일을 읽을 수 없습니다."
-      ],
       "File does not match expected format": [
         "파일이 형식과 일치되지 않습니다."
       ],
@@ -1324,11 +1330,11 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
       ],
-      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
-        "별칭이 성공적으로 비활성화되었습니다. 더 이상 ${ item.aliasEmail }(으)로 이메일을 전송할 수 없게 됩니다."
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "별칭이 성공적으로 비활성화됨. ${ item.aliasEmail }(으)로 전송된 이메일을 더 이상 수취할 수 없게 됩니다."
       ],
-      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
-        "별칭이 성공적으로 활성화되었습니다. 이제 ${ item.aliasEmail }(으)로 이메일 전송이 가능합니다."
+      "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "별칭이 성공적으로 활성화됨. 이제 ${ item.aliasEmail }(으)로 전송된 이메일을 수취할 수 있습니다."
       ],
       "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
         "${ BRAND_NAME }과 SimpleLogin 계정간의 별칭 동기화가 활성 상태입니다."
@@ -1510,9 +1516,6 @@
       "Drop to import": [
         "드래그해서 불러오기"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Safari 브라우저 확장 제한으로 인해, 데이터를 내보낸 후 파일 확장자 \".pgp\"가 누락됩니다. 내보낸 후 .pgp 확장자(예: file.pgp)를 포함하도록 파일 이름을 변경하세요."
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "기존 비밀번호를 ${ PASS_APP_NAME }로 쉽게 가져오세요."
       ],
@@ -1636,14 +1639,8 @@
       "Identity confirmed": [
         "신원 확인됨"
       ],
-      "Import in progress:": [
-        "처리가 진행 중입니다:"
-      ],
       "Import the CSV file below.": [
         "아래에 CSV 파일을 불어오십시오."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total }개 항목을 불러왔습니다"
       ],
       "Imported on ${ date }": [
         "${ date }에 들여옴"
@@ -1674,9 +1671,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "이미 ${ PASS_APP_NAME }에 로그인 된 것 같습니다. 만약 다른 계정으로 로그인을 시도하는 중이라면, 확장 프로그램에서 로그아웃 하세요."
-      ],
-      "item": [
-        "항목"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "항목 \"${ payload.item.data.metadata.name }\" 이(가) 생성되었습니다."
@@ -1730,7 +1724,7 @@
         "불러오는 중..."
       ],
       "Make it your own": [
-        "내 것으로 만들기"
+        "나만의 것으로 만들기"
       ],
       "me": [
         "나"
@@ -2067,9 +2061,6 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }를 사용할 때 추가 비밀번호가 요구됩니다. 사용자의 ${ BRAND_NAME } 비밀번호의 추가적인 비밀번호가 됩니다."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
       ],
       "The secure link has been removed": [
         "안전한 링크가 삭제되었습니다."
@@ -2619,6 +2610,9 @@
       "Field name": [
         "필드 이름"
       ],
+      "File": [
+        "파일"
+      ],
       "File format": [
         "파일 형식"
       ],
@@ -2867,9 +2861,6 @@
       ],
       "Personal website": [
         "개인 웹사이트"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP 암호화된 JSON (권장)"
       ],
       "Phone number": [
         "전화번호"
@@ -3446,6 +3437,9 @@
       "Aliases": [
         "별칭"
       ],
+      "Attachments": [
+        "첨부 파일"
+      ],
       "Auto create/on the fly alias": [
         "자동 생성/즉석 별칭"
       ],
@@ -3977,9 +3971,6 @@
       ],
       "Passwords do not match": [
         "비밀번호가 일치하지 않습니다"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP 암호화 내보내기 파일은 비밀번호가 필요합니다."
       ],
       "Please contact us to investigate the issue": [
         "문제에 대해 조사하기 위해 저희에게 연락해주세요"

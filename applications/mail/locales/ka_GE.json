@@ -1303,6 +1303,9 @@
       "Toggle settings": [
         "პარამეტრების გადართვა"
       ],
+      "Toggle VPN dashboard": [
+        "VPN-ის მართვის პანელის გადართვა"
+      ],
       "Tomorrow": [
         "ხვალ"
       ],
@@ -1369,11 +1372,11 @@
       "Upgrade": [
         "ტარიფის აწევა"
       ],
-      "Upgrade Now": [
-        "ახლა გაუმჯობესება"
-      ],
       "Upgrade now": [
         "ტარიფის განახლება"
+      ],
+      "Upgrade Now": [
+        "ახლა გაუმჯობესება"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
@@ -3874,6 +3877,17 @@
         "ყველას გადმოწერა"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "გადმოწერა Linux-სთვის"
+      ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერეთ Windows-სთვის"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "გაფართოებული ვერსიის ისტორია"
@@ -6058,6 +6072,9 @@
       "Active": [
         "აქტიური"
       ],
+      "Ad targeting": [
+        "დამიზნებული რეკლამა"
+      ],
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
       ],
@@ -6559,6 +6576,9 @@
       "Generate text": [
         "ტექსტის გენერაცია"
       ],
+      "Geoblocking": [
+        "გეოდაბლოკვა"
+      ],
       "Get it on Google Play": [
         "მიიღეთ ის Google Play-ზე"
       ],
@@ -6884,6 +6904,9 @@
       ],
       "Not a valid URL": [
         "არასწორი URL"
+      ],
+      "Not connected": [
+        "მიერთებული არაა"
       ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
@@ -7231,6 +7254,9 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
       ],
+      "Surveillance": [
+        "დაზვერვა"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
@@ -7468,6 +7494,9 @@
       "Trackers blocked:": [
         "დაბლოკილი ტრეკერები:"
       ],
+      "Tracking": [
+        "ტრეკინგი"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
@@ -7578,6 +7607,9 @@
       ],
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ],
       "Warning": [
         "გაფრთხილება"
@@ -7866,6 +7898,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
+      ],
+      "Your IP": [
+        "თქვენი IP"
       ],
       "Your login information will not be saved after the import is completed.": [
         "შესვლისას გამოყენებული თქვენი ინფორმაცია შემოტანის დასრულების შემდეგ შენახული არ იქნება."
@@ -8230,10 +8265,10 @@
       "AND": [
         "და"
       ],
-      "and": [
+      "And": [
         "და"
       ],
-      "And": [
+      "and": [
         "და"
       ],
       "Anderson": [
@@ -8742,6 +8777,15 @@
       ],
       "Your alias": [
         "თქვენი ფსევდონიმი"
+      ],
+      "Your IP": [
+        "თქვენი IP"
+      ],
+      "Your ISP": [
+        "თქვენი ISP"
+      ],
+      "Your location": [
+        "თქვენი მდებარეობა"
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
@@ -10403,9 +10447,6 @@
       ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus 12 თვით"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
@@ -13164,6 +13205,9 @@
       "Deleting contacts": [
         "კონტაქტების წაშლა"
       ],
+      "Desktop": [
+        "სამუშაო მაგიდა"
+      ],
       "Details": [
         "დეტალები"
       ],
@@ -13181,6 +13225,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა?"
+      ],
+      "Download the app": [
+        "აპის გადმოწერა"
       ],
       "Edit contact": [
         "კონტაქტის ჩასწორება"
@@ -13365,6 +13412,9 @@
       ],
       "Minicalendar": [
         "მინიკალენდარი"
+      ],
+      "Mobile": [
+        "მობილური"
       ],
       "More": [
         "მეტი"
@@ -13694,6 +13744,9 @@
       "Verifying your payment...": [
         "თქვენი გადახდის გადამოწმება..."
       ],
+      "VPN explained": [
+        "VPN-ის ახსნა"
+      ],
       "Want to snooze any time?": [
         "გნებავთ, დროებით დაადუმოთ ნებისმიერ დროს?"
       ],
@@ -13712,6 +13765,9 @@
       ],
       "Welcome ${ userName }": [
         "კეთილი იყოს თქვენი მობრძანება, ${ userName }"
+      ],
+      "What is a VPN?": [
+        "რა არის VPN?"
       ],
       "What would you like to import?": [
         "რისი შემოტანა გნებავთ?"

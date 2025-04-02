@@ -489,6 +489,9 @@
       "Expiration time": [
         "Tiempo de expiración"
       ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Descubre ${ VPN_APP_NAME }"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -1295,13 +1298,16 @@
         "Cambiar a la aplicación Calendar"
       ],
       "Toggle Contacts app": [
-        "Alternar la aplicación de Contactos"
+        "Alternar la aplicación Contactos"
       ],
       "Toggle security center app": [
         "Activar la aplicación del centro de seguridad"
       ],
       "Toggle settings": [
         "Alternar los ajustes"
+      ],
+      "Toggle VPN dashboard": [
+        "Activar o desactivar el panel de control de VPN"
       ],
       "Tomorrow": [
         "Mañana"
@@ -1369,11 +1375,11 @@
       "Upgrade": [
         "Cambiar de plan"
       ],
-      "Upgrade Now": [
-        "Mejorar ahora"
-      ],
       "Upgrade now": [
         "Cambiar de plan"
+      ],
+      "Upgrade Now": [
+        "Mejorar ahora"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Mejora a ${ BRAND_NAME } Unlimited"
@@ -3878,6 +3884,17 @@
         "Descargar todo"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Descargar para Linux"
+      ],
+      "Download for macOS": [
+        "Descargar para macOS"
+      ],
+      "Download for Windows": [
+        "Descargar para Windows"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Historial de versiones extendido"
@@ -3905,7 +3922,7 @@
         "Se ha cancelado esta ocurrencia del evento."
       ],
       "This event occurrence was updated.": [
-        "Esta ocurrencia del evento ha sido actualizada."
+        "Se ha actualizado esta ocurrencia del evento."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
         "Esta ocurrencia del evento ha sido actualizada. Esto es lo que ha cambiado:\n\n${ updateEventDetailsText }"
@@ -4525,6 +4542,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "No se puede cargar el panel de control de la VPN. Revisa tu conexión e intenta de nuevo."
       ],
       "Unexpected error, we can't import the contacts": [
         "Se ha producido un error inesperado. No podemos importar los contactos."
@@ -5161,7 +5181,7 @@
     },
     "filter: Label": {
       "the email was sent ${ label }": [
-        "el correo electrónico ha sido enviado ${ label }"
+        "se ha enviado el correo electrónico ${ label }"
       ],
       "with attachments": [
         "con archivos adjuntos"
@@ -5172,7 +5192,7 @@
     },
     "filter: Label, jt": {
       "the email was sent ${ label }": [
-        "el correo electrónico ha sido enviado ${ label }"
+        "se ha enviado el correo electrónico ${ label }"
       ]
     },
     "Font Face Default": {
@@ -6023,6 +6043,9 @@
         "${ updated } contacto actualizado.",
         "${ updated } contactos actualizados."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } está enmascarando tu dirección IP, por lo que los sitios web no pueden identificarte."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
         "(${ memberCount } miembros)"
@@ -6043,6 +6066,12 @@
         "**${ elementsFoundCount }** resultado encontrado en ${ labelName }",
         "**${ elementsFoundCount }** resultados encontrados en ${ labelName }"
       ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Conexión automática**: Inicia y conéctate a la VPN en cuanto enciendas tu dispositivo."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Interruptor de bloqueo**: Detiene las filtraciones de datos al bloquear tu conexión internet si la VPN se desconecta inesperadamente."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de almacenamiento adicional"
       ],
@@ -6059,8 +6088,20 @@
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Se enviará una solicitud para darte de baja de esta lista de correo y se procesará automáticamente."
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Una conexión segura es esencial al trabajar remotamente. Una VPN protege los datos de la empresa de amenazas cibernéticas y mantiene tu trabajo privado."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada a un único nombre de usuario, bandeja de entrada y persona"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Una VPN cifra tu conexión y oculta tu dirección IP, lo que hace que sea mucho más difícil para cualquiera rastrear o monitorear tu navegación."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Una VPN oculta tu dirección IP y cifra tu actividad de navegación, lo que dificulta que los sitios web, los anunciantes y los ISP te rastreen a lo largo del tiempo."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Una VPN es un túnel seguro entre tu dispositivo e internet. Oculta tu ubicación y tu actividad de tu proveedor de servicio de internet (PSI) y los sitios web que visitas."
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Accede a más de 6.500 servidores de alta velocidad en hasta 10 dispositivos para mantener tus datos de navegación seguros. Disponible en ${ ios }, ${ android }, ${ appleTV } y ${ desktop }."
@@ -6088,6 +6129,9 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Los anunciantes rastrean tu navegación para mostrar anuncios específicos. ${ VPN_APP_NAME } bloquea rastreadores y anuncios, lo que hace que tu conexión sea más rápida y mejora tu experiencia en línea."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistente con tecnología de IA para ayudarte a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
@@ -6233,6 +6277,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulsa la identidad de marca de tu organización y crea una experiencia online más consistente para tus usuarios."
       ],
+      "Browse privately and access blocked content.": [
+        "Navega de forma privada y accede a contenidos bloqueados."
+      ],
       "Browser not supported": [
         "El navegador no es compatible."
       ],
@@ -6283,6 +6330,9 @@
       ],
       "Confirm phishing report": [
         "Confirmar denuncia de suplantación de identidad"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Conéctate a ${ VPN_APP_NAME } para navegar de forma privada."
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
         "Considera cuándo es el mejor momento para enviar un correo y prográmalo para enviarlo después."
@@ -6582,7 +6632,7 @@
         "Generar texto"
       ],
       "Geoblocking": [
-        "Geoblocalización"
+        "Bloqueo geográfico"
       ],
       "Get it on Google Play": [
         "Descárgala en Google Play"
@@ -6592,6 +6642,9 @@
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Etiqueta con color las facturas entrantes como «${ suggestedLabelName }». Una vez pagadas, cambia la etiqueta a «${ suggestedPaidLabelName }»."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Los gobiernos y los proveedores de servicios de internet pueden monitorear tu actividad en línea. Ocultando tu IP real y cifrando tu actividad de navegación se vuelve privada."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Tiene ${ numAttachments } archivo adjunto (${ numAttachmentsSize }).",
@@ -6668,7 +6721,7 @@
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
       ],
       "In restrictive countries": [
-        "En países restrictivos"
+        "En países con restricciones"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
@@ -6678,6 +6731,9 @@
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Incluye tu pregunta y la respuesta para ayudarnos a mejorar la exactitud."
+      ],
+      "Included for free with your plan": [
+        "Incluido gratis con tu plan"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -6708,6 +6764,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Invita a tu pareja, amigos o a quien sea con quien estés compartiendo tu plan de ${ protonDuoPlanName }."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Es mejor usar una VPN en todo momento. Pero estos son los casos en que las amenazas de ciberseguridad pueden ser mayores:"
       ],
       "JCB logo": [
         "Logo de JCB"
@@ -6856,6 +6915,9 @@
       "More refine actions": [
         "Acciones más optimizadas"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "La mayoría de las redes WiFi públicas son seguras, pero algunas carecen de seguridad, exponiéndote a amenazas cibernéticas. Una VPN cifra tu tráfico, manteniéndote protegido."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
       ],
@@ -6923,7 +6985,7 @@
         "de"
       ],
       "On public WiFi networks": [
-        "En redes Wi-Fi públicas"
+        "En redes wifi públicas"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
@@ -7062,6 +7124,9 @@
       "Print email": [
         "Imprimir correo electrónico"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "La navegación privada (o modo «incógnito») solo es útil para mantener oculta tu actividad en tu dispositivo. Evita que tu navegador guarde el historial y las cookies, pero no te hace invisible. Tu ISP, administrador de red y los sitios web que visitas aún pueden ver lo que haces en línea."
+      ],
       "Proofread selection": [
         "Revisar la selección"
       ],
@@ -7124,6 +7189,9 @@
       ],
       "Saving draft…": [
         "Guardando borrador…"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Escanea el código QR con tu dispositivo móvil."
       ],
       "Scheduled send of this message will be canceled.": [
         "Se cancelará el envío programado de este mensaje."
@@ -7199,7 +7267,7 @@
         "Configura ${ MAIL_APP_NAME } como tu aplicación de correo electrónico por defecto. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
       "Setting up ${ feature }…": [
-        "Configurando ${ feature }"
+        "Configurando ${ feature }…"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP te permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
@@ -7234,6 +7302,12 @@
       "Snoozing this conversation will be canceled.": [
         "Se cancelará la pausa de esta conversación."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Algunos gobiernos bloquean o restringen el acceso a ciertos sitios web. Una VPN ayuda a evitar la censura mientras mantiene tu actividad e identidad privadas."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Algunos sitios web y servicios de streaming bloquean los contenidos por región. Una VPN te permite evitar estas restricciones y acceder a internet."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Este mensaje no existe o ya ha expirado."
       ],
@@ -7242,6 +7316,9 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Empieza a usar la versión más corta y atractiva de tu dirección de correo electrónico."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Mantente en línea sin ningún esfuerzo al activar los siguientes ajustes VPN:"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "No se puede acceder a las capacidades de almacenamiento de este navegador. Las necesitamos para activar la búsqueda de contenido en los mensajes."
@@ -7387,6 +7464,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Esto significa que tu proveedor de servicios de internet y los sitios web que visitas no pueden conectar tu información personal con tu actividad en línea."
+      ],
       "This message has been adjusted to comply with a dark background.": [
         "Este mensaje ha sido ajustado para adaptarse a un fondo oscuro."
       ],
@@ -7454,6 +7534,9 @@
       "This sender's public key has not been trusted yet.": [
         "La clave pública de este remitente aún no es de confianza."
       ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Los sitios web y los ISP (proveedores de servicios de internet) pueden usar este código único para vincular tu ubicación e historial de navegación a tu dispositivo."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Se te ha mostrado este mensaje porque tu asunto de correo electrónico contiene palabras clave de restablecimiento de contraseña."
       ],
@@ -7515,7 +7598,7 @@
         "Rastreadores bloqueados:"
       ],
       "Tracking": [
-        "Seguimiento"
+        "Rastreadores"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
@@ -7632,7 +7715,7 @@
         "Logo de Visa Secure"
       ],
       "VPN IP": [
-        "VPN IP"
+        "IP de VPN"
       ],
       "Warning": [
         "Advertencia"
@@ -7696,6 +7779,9 @@
       ],
       "When working remotely": [
         "Al trabajar de forma remota"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Cuando te conectas a una VPN, usas tecnología de cifrado para ocultar tu dirección IP (un código único asignado a tu dispositivo)."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Cuando has activado las claves de confianza para ${ senderName }, las claves públicas se han añadido a los datos del contacto."
@@ -7928,6 +8014,15 @@
       "Your information was found on ${ displayedDate }": [
         "Se han encontrado tus datos el ${ displayedDate }."
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Tu proveedor de servicios de internet puede monitorear y, en ocasiones, vender tus datos, o incluso restringir a qué sitios web puedes acceder."
+      ],
+      "Your IP": [
+        "Tu IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Tu dirección IP es visible y puede usarse para rastrear tu actividad en línea."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
       ],
@@ -7947,11 +8042,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Tu próxima fecha de facturación es el ${ renewalTime }. Ponte en contacto con el servicio de asistencia si necesitas un cambio de plan inmediato."
       ],
+      "Your online activity is protected": [
+        "Tu actividad en línea está protegida."
+      ],
       "Your password was leaked:": [
         "Se ha filtrado tu contraseña:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Tu ubicación física es visible y puede usarse para restringir tu acceso a internet."
       ],
       "Your private writing assistant": [
         "Tu asistente de escritura privado"
@@ -8294,11 +8395,11 @@
       "AND": [
         "Y"
       ],
-      "and": [
-        "y"
-      ],
       "And": [
         "Y"
+      ],
+      "and": [
+        "y"
       ],
       "Anderson": [
         "García"
@@ -8430,7 +8531,7 @@
         "Densidad"
       ],
       "Did not follow instructions": [
-        "Las instrucciones no fueron seguidas."
+        "No se han seguido las instrucciones."
       ],
       "Do you have any suggestions for our team?": [
         "¿Tienes alguna sugerencia para nuestro equipo?"
@@ -8806,6 +8907,15 @@
       ],
       "Your alias": [
         "Tu alias"
+      ],
+      "Your IP": [
+        "Tu IP"
+      ],
+      "Your ISP": [
+        "Tu proveedor de internet"
+      ],
+      "Your location": [
+        "Tu ubicación"
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
@@ -10444,6 +10554,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited por 12 meses"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } por 12 meses"
+      ],
       "${ pricingTitle } offer expires today!": [
         "¡La oferta de ${ pricingTitle } vence hoy!"
       ],
@@ -10467,9 +10583,6 @@
       ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -12251,7 +12364,7 @@
         "${ dayDiff } días restantes"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "App de escritorio ${ MAIL_APP_NAME }"
+        "Aplicación de escritorio ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } mantiene seguro los datos de tu negocio y te permite enviar correos cifrados a cualquiera."
@@ -12376,7 +12489,7 @@
         "Carpetas, etiquetas y filtros personalizados"
       ],
       "Helping activists in Hong Kong": [
-        "Ayude a activistas en Hong Kong"
+        "Ayuda a activistas en Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Cómo nuestro equipo de atención al cliente ha llevado nuestra aplicación VPN directamente a la mano de la gente."
@@ -12730,7 +12843,7 @@
         "Mensaje eliminado"
       ],
       "Message expiration canceled": [
-        "Expiración del mensaje cancelada."
+        "Se ha cancelado la expiración del mensaje."
       ],
       "Message marked as legitimate": [
         "Mensaje marcado como legítimo"
@@ -12822,7 +12935,7 @@
         "Se ha activado el asistente de escritura."
       ],
       "Writing assistant setting updated": [
-        "El ajuste del asistente de escritura ha sido actualizado."
+        "Se ha actualizado el ajuste del asistente de escritura."
       ],
       "You have successfully canceled your subscription.": [
         "La suscripción ha sido cancelada."
@@ -13283,7 +13396,7 @@
         "¿Pasar a ${ downgradedPlanName }?"
       ],
       "Download the app": [
-        "Descarga la aplicación"
+        "Descargar la aplicación"
       ],
       "Edit contact": [
         "Editar contacto"
@@ -13406,6 +13519,9 @@
       "Import groups": [
         "Importar grupos"
       ],
+      "Increase security with ${ VPN_APP_NAME }": [
+        "Aumenta la seguridad con ${ VPN_APP_NAME }"
+      ],
       "Increase your privacy with more addresses": [
         "Protege aún más tu privacidad con más direcciones"
       ],
@@ -13434,7 +13550,7 @@
         "Cargar contenido remoto"
       ],
       "Make a secure connection your default": [
-        "Conéctate a una conexión segura por defecto"
+        "Elige una conexión segura como opción predeterminada"
       ],
       "Mark as read": [
         "Marcar como leído"
@@ -13605,7 +13721,7 @@
         "Soporte prioritario:"
       ],
       "Private browsing vs VPN": [
-        "Navegación privada vs VPN"
+        "Navegación privada y VPN"
       ],
       "Processing...": [
         "Procesando..."
@@ -13810,7 +13926,7 @@
         "Verificando tu pago..."
       ],
       "VPN explained": [
-        "VPN explicada"
+        "Explicaciones sobre la VPN"
       ],
       "Want to snooze any time?": [
         "¿Quieres pausar tus mensajes cuando quieras?"
@@ -13830,6 +13946,9 @@
       ],
       "Welcome ${ userName }": [
         "Te damos la bienvenida ${ userName }"
+      ],
+      "What can a VPN protect you from?": [
+        "¿De qué te puede proteger una VPN?"
       ],
       "What is a VPN?": [
         "¿Qué es una VPN?"
@@ -14088,7 +14207,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Una manera más segura de guardar Bitcoin"
+        "Una manera más segura de guardar tus bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Välj land ${ country }"
       ],
-      "select file": [
-        "välj fil"
-      ],
       "Select file": [
         "Välj fil"
+      ],
+      "select file": [
+        "välj fil"
       ],
       "Select files": [
         "Välj filer"
@@ -7067,6 +7067,10 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vill dela data med dig i ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } land aktiverad",
+        "${ locationsCount } länder aktiverade"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
       ],
@@ -7639,9 +7643,6 @@
       ],
       "Copy your referral link": [
         "Kopiera din hänvisningslänk"
-      ],
-      "countries enabled": [
-        "länder aktiverade"
       ],
       "Country code": [
         "Landskod"
@@ -8537,6 +8538,9 @@
       ],
       "No addresses exist": [
         "Inga adresser finns"
+      ],
+      "No countries enabled": [
+        "Inga länder aktiverade"
       ],
       "No credit card required": [
         "Inget kreditkort krävs"
@@ -10700,10 +10704,10 @@
       "Allow sharing outside the organization": [
         "Tillåt delning utanför organisationen"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Tillåten domän"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Tillåten domän"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10718,11 +10722,11 @@
       "AND": [
         "OCH"
       ],
-      "and": [
-        "och"
-      ],
       "And": [
         "Och"
+      ],
+      "and": [
+        "och"
       ],
       "Anderson": [
         "Anderson"
@@ -13929,6 +13933,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Obegränsat i 12 månader"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } för 12 månader"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }-erbjudandet löper ut idag!"
       ],
@@ -13952,9 +13962,6 @@
       ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus för 12 månader"
       ],
       "Maybe later": [
         "Kanske senare"

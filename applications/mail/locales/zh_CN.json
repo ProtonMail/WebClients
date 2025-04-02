@@ -1371,10 +1371,10 @@
       "Upgrade": [
         "升级账户"
       ],
-      "Upgrade Now": [
+      "Upgrade now": [
         "立即升级账户"
       ],
-      "Upgrade now": [
+      "Upgrade Now": [
         "立即升级账户"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
@@ -3789,7 +3789,7 @@
     },
     "Desktop notification body": {
       "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } 新邮件"
+        "${ notificationsToShow.length } 封新邮件"
       ],
       "From: ${ sender } - ${ Subject }": [
         "来自: ${ sender } - ${ Subject }"
@@ -5022,7 +5022,7 @@
     },
     "file size format, long": {
       "Byte": [
-        "字节"
+        "B"
       ],
       "Gigabyte": [
         "GB"
@@ -5193,7 +5193,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }。默认隐私。"
+        "${ BRAND_NAME }，隐私至上。"
       ]
     },
     "forwardmessage": {
@@ -5292,7 +5292,7 @@
         "极致的加密技术，只有您和目标收件人能够阅读邮件内容。"
       ],
       "Finish setup": [
-        "完成安装"
+        "完成设置"
       ],
       "For your eyes only": [
         "邮件内容密不透风"
@@ -5440,7 +5440,7 @@
     },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "已找到${ itemsCount }建议，请使用键盘导航。"
+        "已找到 ${ itemsCount } 个建议，您可使用键盘进行导航浏览。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上和向下键进入并浏览输入后的建议。按 Enter 键确认您的选择，或按 Escape 键关闭建议框。"
@@ -5509,7 +5509,7 @@
     },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
-        "${ totalAttendees } 个参与者"
+        "${ totalAttendees } 名参与者"
       ],
       "Organizer:": [
         "组织者："
@@ -6621,6 +6621,9 @@
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "请提供您的提示词和回复内容以帮助我们提高准确性。"
+      ],
+      "Included for free with your plan": [
+        "免费包含在您的方案中"
       ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
@@ -8249,11 +8252,11 @@
       "AND": [
         "且"
       ],
-      "and": [
-        "并"
-      ],
       "And": [
         "且"
+      ],
+      "and": [
+        "并"
       ],
       "Anderson": [
         "Anderson"
@@ -10374,6 +10377,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "在 12 个月内无限制使用 ${ BRAND_NAME }"
+      ],
+      "${ planName } for 12 months": [
+        "12 个月的 ${ planName }"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
@@ -10397,9 +10406,6 @@
       ],
       "Limited-time offer": [
         "限时特惠"
-      ],
-      "Mail Plus for 12 months": [
-        "12 个月的 Mail Plus"
       ],
       "Maybe later": [
         "以后再说"
@@ -10711,7 +10717,7 @@
     },
     "pass_signup_2024: Info": {
       "${ n } user account": [
-        "${ n }个用户账户"
+        "${ n } 个用户账户"
       ],
       "Activity log": [
         "活动日志"
@@ -11501,7 +11507,7 @@
     },
     "session_recovery:in_progress:info": {
       "${ gracePeriodHoursRemaining } more hour": [
-        "还有${ gracePeriodHoursRemaining } 小时"
+        "剩余 ${ gracePeriodHoursRemaining } 小时"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "如果您没有要求重置密码，请立刻取消此请求。"
@@ -12093,9 +12099,6 @@
       "and 15 more premium features": [
         "以及 15 项高级功能"
       ],
-      "Automatic email forwarding ${ strongText }": [
-        "自动转发 ${ strongText } 电子邮件"
-      ],
       "Data breach alerts ${ strongArgument }": [
         "数据泄露监控${ strongArgument }"
       ],
@@ -12107,9 +12110,6 @@
       ],
       "No ads or tracking": [
         "无广告，无追踪"
-      ],
-      "Short @pm.me email address": [
-        "短电子邮箱地址 @pm.me"
       ],
       "Support our mission": [
         "支持我们的使命"

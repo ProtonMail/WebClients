@@ -28,10 +28,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate organization key": [
@@ -327,6 +327,9 @@
       ],
       "Enable multi-user support": [
         "다중 사용자 지원 활성화"
+      ],
+      "Explore ${ target }": [
+        "${ target } 알아보기"
       ],
       "Explore group plans": [
         "그룹 플랜 알아보기"
@@ -634,10 +637,10 @@
       "Select country ${ country }": [
         "선택된 국가 ${ country }"
       ],
-      "select file": [
+      "Select file": [
         "파일 선택"
       ],
-      "Select file": [
+      "select file": [
         "파일 선택"
       ],
       "Send code": [
@@ -847,6 +850,9 @@
       ],
       "${ price } per domain": [
         "도메인당 ${ price }"
+      ],
+      "${ price } per seat": [
+        "사용자당 ${ price }"
       ],
       "${ price } per user": [
         "사용자당 ${ price }"
@@ -2436,7 +2442,7 @@
         "비활성화시 관리자만 접근 가능합니다."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
-        "내 삶의 다른 부분을 분리하고 당신의 받은 편지함을 추가 주소로 정리하세요."
+        "내 삶의 다른 부분을 분리하고 받은 편지함을 추가 주소로 정리하세요."
       ],
       "No one in your organization can connect to shared servers.": [
         "조직 내에 공유된 서버에 연결할 수 있는 구성원이 없습니다."
@@ -3759,7 +3765,7 @@
         "매달 **${ priceString }**만 더 결제하여 4가지 이상의 프리미엄 개인정보 보호 서비스를 잠금 해제하세요."
       ],
       "Upgrade your privacy": [
-        "프라이버시를 업그레이드하세요"
+        "개인정보 보호를 업그레이드하세요"
       ],
       "You currently pay": [
         "현재 결제 금액:"
@@ -3829,6 +3835,12 @@
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "SSO를 사용하지 않는 ${ canHaveTwoFAMembersLength }명 중 ${ hasTwoFAMembersLength }명이 조직에 로그인하기 위해 2단계 인증을 사용합니다."
+      ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount }개 국가 활성화됨"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 은 로그인 및 사서함 암호를 모두 대체하는 단일 암호와 함께 사용할 수도 있습니다. 단일 비밀번호 모드로 전환하려면 사용하려는 단일 비밀번호를 입력하고 저장을 클릭하십시오."
@@ -4154,9 +4166,6 @@
       "Copy the suggested password to clipboard": [
         "클립보드로 비밀번호 제안을 복사하십시오"
       ],
-      "countries enabled": [
-        "국가 활성화됨"
-      ],
       "Country code": [
         "국가 코드"
       ],
@@ -4202,10 +4211,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -4315,6 +4324,9 @@
       ],
       "email": [
         "이메일"
+      ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "${ CONTACTS_APP_NAME }와(과) 통합화된 이메일 및 캘린더"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
@@ -4729,6 +4741,9 @@
       ],
       "No addresses exist": [
         "주소 없음"
+      ],
+      "No countries enabled": [
+        "활성화된 국가 없음"
       ],
       "No gateways": [
         "게이트웨이 없음"
@@ -5244,7 +5259,7 @@
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "${ BRAND_NAME } 제품의 최신 개발을 알고 싶다면 저희의 다양한 이메일을 구독하거나 가끔씩 ${ blogLink }를 방문해 보세요."
+        "${ BRAND_NAME } 제품의 최신 개발 소식을 알고 싶으시다면 다양한 이메일을 구독해보거나 가끔씩 ${ blogLink }를 방문해 보세요."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "진행하려면, 요청을 확인할 수 있도록 계정 복구 방법을 선택하세요."
@@ -5875,10 +5890,10 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "허용된 도메인"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "허용된 도메인"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -7386,17 +7401,6 @@
         "팀 관리"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
-      ],
-      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
-        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -7487,6 +7491,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: Label": {
@@ -7952,6 +7967,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited 12개월 플랜"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } 12개월 플랜"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 할인이 오늘 만료됩니다!"
       ],
@@ -7975,9 +7996,6 @@
       ],
       "Limited-time offer": [
         "기간 한정 할인"
-      ],
-      "Mail Plus for 12 months": [
-        "12개월 Mail Plus"
       ],
       "Maybe later": [
         "나중에"
@@ -9928,6 +9946,47 @@
         "${ totalPrice }용"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "저장공간 15GB"
+      ],
+      "and 15 more premium features": [
+        "그리고 15개의 프리미엄 기능"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "자동 이메일 포워딩 ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "데이터 침해 경고 ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
+      ],
+      "No ads or tracking": [
+        "광고나 트래킹이 없습니다"
+      ],
+      "Short @pm.me email address": [
+        "짧은 @pm.me 이메일 주소"
+      ],
+      "Support our mission": [
+        "저희의 사명을 지원해주세요"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade your productivity": [
+        "생산성을 업그레이드하세요"
+      ],
+      "We don't sell your data": [
+        "당사는 사용자의 데이터를 판매하지 않습니다"
+      ],
+      "Your privacy is our mission": [
+        "당신의 프라이버시는 저희의 사명입니다"
+      ]
+    },
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "프리미엄 기능이 포함된 ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } 및 ${ VPN_SHORT_APP_NAME }"
@@ -10210,47 +10269,6 @@
       ],
       "Your own short @pm.me email alias": [
         "사용자의 @pm.me 이메일 별칭"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "저장공간 15GB"
-      ],
-      "and 15 more premium features": [
-        "그리고 15개의 프리미엄 기능"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "자동 이메일 포워딩 ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "데이터 침해 경고 ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "데스크톱 앱"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "저희가 모두에게 안전하고 사적인 인터넷을 가꾸는 것을 도와주세요. 유료 요금제로 업그레이드하시면 됩니다."
-      ],
-      "No ads or tracking": [
-        "광고나 트래킹이 없습니다"
-      ],
-      "Short @pm.me email address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Support our mission": [
-        "저희의 사명을 지원해주세요"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade your productivity": [
-        "생산성을 업그레이드하세요"
-      ],
-      "We don't sell your data": [
-        "당사는 사용자의 데이터를 판매하지 않습니다"
-      ],
-      "Your privacy is our mission": [
-        "당신의 프라이버시는 저희의 사명입니다"
       ]
     },
     "Subscription renewal state": {
@@ -10859,7 +10877,7 @@
         "주간 테마"
       ],
       "Deep dive into VPN blog posts": [
-        "VPN 블로그 게시물에 대한 심층 분석"
+        "VPN 블로그 게시물 자세히 살펴보기"
       ],
       "Delete": [
         "삭제"
@@ -11022,6 +11040,9 @@
       ],
       "Get complete privacy coverage": [
         "완전한 개인정보 보호 커버리지 받기"
+      ],
+      "Get more from your VPN": [
+        "VPN에 대해 더 알아보기"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "가지고 계신 기기에 앱을 설치하여 최대 ${ VPN_CONNECTIONS }대 기기를 한 번에 보호하세요."
@@ -11288,7 +11309,7 @@
         "전용 서버로 네트워크 보호를 업그레이드하세요"
       ],
       "Upgrade your privacy": [
-        "프라이버시를 업그레이드하세요"
+        "개인정보 보호를 업그레이드하세요"
       ],
       "Upload CSV file to create multiple accounts": [
         "다중 사용자를 생성하려면 CSV 파일을 업로드해주세요."
@@ -11411,29 +11432,6 @@
         "오늘"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
-      ],
-      "Disables end-to-end email encryption for this group": [
-        "이 그룹의 종단간 이메일 암호화를 비활성화합니다"
-      ],
-      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
-        "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"
-      ],
-      "Group membership paused": [
-        "그룹 구성 권한 중단됨"
-      ],
-      "Sending member invitation": [
-        "구성원 초대장 발송 중"
-      ],
-      "User declined invitation": [
-        "사용자가 초대를 거절함"
-      ],
-      "Waiting for user to accept the invitation": [
-        "사용자의 초대 수락 대기 중"
-      ]
-    },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."
@@ -11524,6 +11522,29 @@
       ],
       "Your DKIM signing is working.": [
         "DKIM 로그인이 작동합니다."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ],
+      "Disables end-to-end email encryption for this group": [
+        "이 그룹의 종단간 이메일 암호화를 비활성화합니다"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"
+      ],
+      "Group membership paused": [
+        "그룹 구성 권한 중단됨"
+      ],
+      "Sending member invitation": [
+        "구성원 초대장 발송 중"
+      ],
+      "User declined invitation": [
+        "사용자가 초대를 거절함"
+      ],
+      "Waiting for user to accept the invitation": [
+        "사용자의 초대 수락 대기 중"
       ]
     },
     "Tor out of date": {

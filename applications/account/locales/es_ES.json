@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Selecciona el país ${ country }"
       ],
-      "select file": [
-        "seleccionar un archivo"
-      ],
       "Select file": [
         "Seleccionar un archivo"
+      ],
+      "select file": [
+        "seleccionar un archivo"
       ],
       "Select files": [
         "Seleccionar archivos"
@@ -4142,7 +4142,7 @@
         "Certificado **ISO 27001**"
       ],
       "**Secure:** end-to-end encryption": [
-        "**Protegido** con encriptación de extremo a extremo"
+        "**Protegido** con cifrado de extremo a extremo"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
         "**Sencillo y fácil de usar:** importa tus archivos y configúralo en minutos"
@@ -4223,7 +4223,7 @@
         "Se ha cancelado esta ocurrencia del evento."
       ],
       "This event occurrence was updated.": [
-        "Esta ocurrencia del evento ha sido actualizada."
+        "Se ha actualizado esta ocurrencia del evento."
       ],
       "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
         "Esta ocurrencia del evento ha sido actualizada. Esto es lo que ha cambiado:\n\n${ updateEventDetailsText }"
@@ -6134,7 +6134,7 @@
     },
     "filter: Label": {
       "the email was sent ${ label }": [
-        "el correo electrónico ha sido enviado ${ label }"
+        "se ha enviado el correo electrónico ${ label }"
       ],
       "with attachments": [
         "con archivos adjuntos"
@@ -6145,7 +6145,7 @@
     },
     "filter: Label, jt": {
       "the email was sent ${ label }": [
-        "el correo electrónico ha sido enviado ${ label }"
+        "se ha enviado el correo electrónico ${ label }"
       ]
     },
     "FilterSettings": {
@@ -7073,6 +7073,10 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quiere compartir información contigo en ${ PASS_APP_NAME }."
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } país activado",
+        "${ locationsCount } países activados"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
@@ -7653,9 +7657,6 @@
       "Copy your referral link": [
         "Copia tu enlace de referido"
       ],
-      "countries enabled": [
-        "países activados"
-      ],
       "Country code": [
         "Código de país"
       ],
@@ -7811,7 +7812,7 @@
         "Error al verificar la propiedad del dominio."
       ],
       "Domain ownership not verified.": [
-        "La propiedad del dominio no ha sido verificada."
+        "No se ha verificado la propiedad del dominio."
       ],
       "Domain ownership verified.": [
         "La propiedad del dominio ha sido verificada."
@@ -8302,10 +8303,10 @@
         "Se ha eliminado la invitación para el nuevo usuario."
       ],
       "Invite for organization accepted": [
-        "La invitación para la organización ha sido aceptada."
+        "Se ha aceptado la invitación para la organización."
       ],
       "Invite for organization created": [
-        "La invitación ha sido creada para la organización."
+        "Se ha creado la invitación para la organización."
       ],
       "Invite rejected": [
         "Se ha rechazado la invitación."
@@ -8569,6 +8570,9 @@
       "No addresses exist": [
         "No existen direcciones"
       ],
+      "No countries enabled": [
+        "Sin países activados"
+      ],
       "No credit card required": [
         "No se requiere tarjeta de crédito"
       ],
@@ -8732,7 +8736,7 @@
         "Premio Editors' Choice de PC Magazine con una calificación de 5 sobre 5 estrellas"
       ],
       "Pending removal": [
-        "Pendiente de eliminación"
+        "La eliminación está pendiente."
       ],
       "per month": [
         "al mes"
@@ -8942,7 +8946,7 @@
         "Derecha a Izquierda"
       ],
       "SAML configuration saved": [
-        "La configuración SAML ha sido guardada."
+        "Se ha guardado la configuración SAML."
       ],
       "Save ${ percentage }": [
         "Ahorra un ${ percentage }"
@@ -9038,7 +9042,7 @@
         "Se ha actualizado el ajuste."
       ],
       "Setting up ${ feature }…": [
-        "Configurando ${ feature }"
+        "Configurando ${ feature }…"
       ],
       "Setting up your new address…": [
         "Configurando tu nueva dirección…"
@@ -10750,10 +10754,10 @@
       "Allow sharing outside the organization": [
         "Permitir compartir fuera de la organización"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Dominio permitido"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Dominio permitido"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10768,11 +10772,11 @@
       "AND": [
         "Y"
       ],
-      "and": [
-        "y"
-      ],
       "And": [
         "Y"
+      ],
+      "and": [
+        "y"
       ],
       "Anderson": [
         "García"
@@ -11577,7 +11581,7 @@
         "Firma"
       ],
       "Single sign-on Entity ID": [
-        "ID de entidad de inicio de sesión único"
+        "ID de la entidad del inicio de sesión único"
       ],
       "Single sign-on URL": [
         "URL de inicio de sesión único"
@@ -13837,7 +13841,7 @@
         "La entrada no es válida. Busca por correo electrónico dirección IP."
       ],
       "IP Address copied to clipboard": [
-        "La dirección IP ha sido copiada al portapapeles."
+        "Se ha copiado la dirección IP al portapapeles."
       ],
       "Key copied to the clipboard": [
         "Se ha copiado la clave al portapapeles."
@@ -13973,6 +13977,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited por 12 meses"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } por 12 meses"
+      ],
       "${ pricingTitle } offer expires today!": [
         "¡La oferta de ${ pricingTitle } vence hoy!"
       ],
@@ -13996,9 +14006,6 @@
       ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus por 12 meses"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -14401,7 +14408,7 @@
         "Usa un ícono gráfico o imagen en lugar de texto."
       ],
       "Use a solid background color.": [
-        "Usa un color de fondo sólido."
+        "Usa un color de fondo unido."
       ]
     },
     "Organization logo upload modal": {
@@ -15719,7 +15726,7 @@
         "Ya has descargado un kit de recuperación. La descarga de uno nuevo **desactivará el anterior**."
       ],
       "You have recommended actions.": [
-        "No tienes acciones recomendadas."
+        "Tienes acciones recomendadas."
       ],
       "Your account and data can be recovered": [
         "Tu cuenta y tus datos se pueden recuperar"
@@ -16544,7 +16551,7 @@
     },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
-        "Cumplimiento del RGPD y de la HIPAA"
+        "Cumplimiento con el RGPD y la HIPAA"
       ]
     },
     "specialoffer: Action": {
@@ -17361,7 +17368,7 @@
         "${ dayDiff } días restantes"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "App de escritorio ${ MAIL_APP_NAME }"
+        "Aplicación de escritorio ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } mantiene seguro los datos de tu negocio y te permite enviar correos cifrados a cualquiera."
@@ -17498,7 +17505,7 @@
         "¿Tienes dudas?"
       ],
       "Helping activists in Hong Kong": [
-        "Ayude a activistas en Hong Kong"
+        "Ayuda a activistas en Hong Kong"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Cómo nuestro equipo de atención al cliente ha llevado nuestra aplicación VPN directamente a la mano de la gente."
@@ -17697,7 +17704,7 @@
         "Se ha actualizado la dirección."
       ],
       "Administrator privileges restored": [
-        "Los privilegios de administrador han sido restaurados."
+        "Se han restaurado los privilegios de administrador."
       ],
       "Auto-reply disabled": [
         "Se ha desactivado la respuesta automática."
@@ -17892,7 +17899,7 @@
         "Se ha activado el asistente de escritura."
       ],
       "Writing assistant setting updated": [
-        "El ajuste del asistente de escritura ha sido actualizado."
+        "Se ha actualizado el ajuste del asistente de escritura."
       ],
       "You have successfully canceled your subscription.": [
         "La suscripción ha sido cancelada."
@@ -19801,7 +19808,7 @@
         "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
       ],
       "This address has been disabled": [
-        "Esta dirección ha sido desactivada."
+        "Se ha desactivado esta dirección."
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Esto puede deberse a un restablecimiento de contraseña o el usuario aún no ha iniciado sesión."
@@ -20538,7 +20545,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Una manera más segura de guardar Bitcoin"
+        "Una manera más segura de guardar tus bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

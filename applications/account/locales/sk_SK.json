@@ -1090,11 +1090,11 @@
       "Select country ${ country }": [
         "Vyberte krajinu ${ country }"
       ],
-      "select file": [
-        "vybrať súbor"
-      ],
       "Select file": [
         "Vyberte súbor"
+      ],
+      "select file": [
+        "vybrať súbor"
       ],
       "Select files": [
         "Vybrať súbory"
@@ -7170,6 +7170,15 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } s vami chce zdieľať údaje v ${ PASS_APP_NAME }"
       ],
+      "${ locationsCount } country enabled": [
+        "${ locationsCount } krajina povolená",
+        "${ locationsCount } krajiny povolené",
+        "${ locationsCount } krajín povolených",
+        "${ locationsCount } krajín povolených"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete aktivovať režim jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
       ],
@@ -7797,9 +7806,6 @@
       "Copy your referral link": [
         "Kopírujte váš odporúčací odkaz"
       ],
-      "countries enabled": [
-        "povolené krajiny"
-      ],
       "Country code": [
         "Kód krajiny"
       ],
@@ -8045,6 +8051,9 @@
       ],
       "Email address": [
         "Emailová adresa"
+      ],
+      "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
+        "Email a kalendár integrovaný s ${ CONTACTS_APP_NAME }"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
@@ -8723,6 +8732,9 @@
       ],
       "No addresses exist": [
         "Neexistujú žiadne adresy"
+      ],
+      "No countries enabled": [
+        "Nie sú povolené žiadne krajiny"
       ],
       "No credit card required": [
         "Nie je potrebná platobná karta"
@@ -10965,10 +10977,10 @@
       "Allow sharing outside the organization": [
         "Umožniť zdieľanie mimo organizácie"
       ],
-      "Allowed domain": [
+      "Allowed Domain": [
         "Povolená doména"
       ],
-      "Allowed Domain": [
+      "Allowed domain": [
         "Povolená doména"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
@@ -10983,11 +10995,11 @@
       "AND": [
         "A"
       ],
-      "and": [
-        "a"
-      ],
       "And": [
         "A"
+      ],
+      "and": [
+        "a"
       ],
       "Anderson": [
         "Anderson"
@@ -14274,6 +14286,12 @@
       ]
     },
     "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited na 12 mesiacov"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } na 12 mesiacov"
+      ],
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } ponuka končí dnes!"
       ],
@@ -14297,9 +14315,6 @@
       ],
       "Limited-time offer": [
         "Časovo obmedzená ponuka"
-      ],
-      "Mail Plus for 12 months": [
-        "Mail Plus na 12 mesiacov"
       ],
       "Maybe later": [
         "Možno neskôr"
@@ -14785,6 +14800,9 @@
       ]
     },
     "pass_lifetime_signup: Info": {
+      "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
+        "Získajte doživotný prístup ku všetkým súčasným a budúcim prémiovým funkciám ${ PASS_APP_NAME } s jednorazovou platbou."
+      ],
       "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
         "Vitajte v ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
