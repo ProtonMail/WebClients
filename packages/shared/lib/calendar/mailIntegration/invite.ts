@@ -641,6 +641,25 @@ ${eventTitle}`;
     return { eventTitle, eventDetailsText, updateEventDetailsText };
 };
 
+/**
+ * Checks if a comment has been updated, added, or removed between two versions of an event
+ */
+export const isCommentUpdated = (vevent?: VcalVeventComponent, oldVevent?: VcalVeventComponent): boolean => {
+    const newComment = vevent?.comment;
+    const oldComment = oldVevent?.comment;
+
+    return !!(
+        // Case 1: Both have comments but values are different
+        (
+            (newComment?.[0]?.value && oldComment?.[0]?.value && newComment[0].value !== oldComment[0].value) ||
+            // Case 2: Old comment exists but new comment doesn't (comment was removed)
+            (oldComment?.[0]?.value && (!newComment || !newComment[0]?.value)) ||
+            // Case 3: New comment exists but old comment doesn't (comment was added)
+            (newComment?.[0]?.value && (!oldComment || !oldComment[0]?.value))
+        )
+    );
+};
+
 export const generateEmailBody = ({
     method,
     vevent,
@@ -672,20 +691,40 @@ export const generateEmailBody = ({
     const commentText =
         comment && comment.length > 0 ? `\n\n${c('Email body for invitation').t`NOTE:`}\n${comment[0].value}` : '';
 
+    // Check if comment has been updated
+    const hasUpdatedComment = isCommentUpdated(vevent, oldVevent);
+
+    // Comment update notification text
+    const commentUpdateText = hasUpdatedComment ? `\n\n${c('Email body for invitation').t`Here's what changed:`}` : '';
+
+    // Helper function to generate the appropriate comment text based on context
+    const getCommentStatus = (includeUpdateText = true) => {
+        if (!includeUpdateText || !hasUpdatedComment) {
+            return commentText;
+        }
+        return commentUpdateText + commentText;
+    };
+
     if (method === ICAL_METHOD.REQUEST) {
+        // For REQUEST method, don't include the comment in commentStatus if it's already in updateEventDetailsText
+        // This prevents duplication of the note
+        const shouldIncludeComment = !hasUpdatedText || !hasUpdatedComment;
+        const includeUpdateText = !isCreateEvent && shouldIncludeComment;
+        const commentStatus = getCommentStatus(includeUpdateText);
+
         if (getHasRecurrenceId(vevent)) {
             return hasUpdatedText
                 ? c('Email body for invitation').t`This event occurrence was updated. Here's what changed:
 
-${updateEventDetailsText}${commentText}`
-                : c('Email body for invitation').t`This event occurrence was updated.${commentText}`;
+${updateEventDetailsText ?? ''}${commentStatus}`
+                : c('Email body for invitation').t`This event occurrence was updated.${commentStatus}`;
         }
         if (recurringType === RECURRING_TYPES.ALL) {
             return hasUpdatedText
                 ? c('Email body for invitation').t`All events in this series were updated. Here's what changed:
 
-${updateEventDetailsText}${commentText}`
-                : c('Email body for invitation').t`All events in this series were updated.${commentText}`;
+${updateEventDetailsText ?? ''}${commentStatus}`
+                : c('Email body for invitation').t`All events in this series were updated.${commentStatus}`;
         }
         if (isCreateEvent) {
             return c('Email body for invitation').t`You are invited to ${eventTitle}.
@@ -695,30 +734,43 @@ ${eventDetailsText}${commentText}`;
         return hasUpdatedText
             ? c('Email body for invitation').t`This event was updated. Here's what changed:
 
-${updateEventDetailsText}${commentText}`
-            : c('Email body for invitation').t`This event was updated.${commentText}`;
+${updateEventDetailsText ?? ''}${commentStatus}`
+            : c('Email body for invitation').t`This event was updated.${commentStatus}`;
     }
     if (method === ICAL_METHOD.CANCEL) {
+        // For CANCEL method, don't include the comment in commentStatus if it's already in updateEventDetailsText
+        // This prevents duplication of the note
+        const shouldIncludeComment = !hasUpdatedText || !hasUpdatedComment;
+        const commentStatus = shouldIncludeComment ? getCommentStatus() : '';
+
         if (getHasRecurrenceId(vevent)) {
-            return c('Email body for invitation').t`This event occurrence was canceled.${commentText}`;
+            return c('Email body for invitation')
+                .t`This event occurrence was canceled.${commentStatus} \n${updateEventDetailsText ?? ''}`;
         }
-        return c('Email body for invitation').t`${eventTitle} was canceled.${commentText}`;
+        return c('Email body for invitation')
+            .t`${eventTitle} was canceled.${commentStatus} \n${updateEventDetailsText ?? ''}`;
     }
     if (method === ICAL_METHOD.REPLY) {
         if (!partstat || !emailAddress) {
             throw new Error('Missing parameters for reply body');
         }
+
+        // For REPLY method, don't include the comment in commentStatus if it's already in updateEventDetailsText
+        // This prevents duplication of the note
+        const shouldIncludeComment = !hasUpdatedText || !hasUpdatedComment;
+        const commentStatus = shouldIncludeComment ? getCommentStatus() : '';
+
         if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} accepted your invitation to ${eventTitle}${commentText}`;
+                .t`${emailAddress} accepted your invitation to ${eventTitle}${commentStatus} \n${updateEventDetailsText ?? ''}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} tentatively accepted your invitation to ${eventTitle}${commentText}`;
+                .t`${emailAddress} tentatively accepted your invitation to ${eventTitle}${commentStatus} \n${updateEventDetailsText ?? ''}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} declined your invitation to ${eventTitle}${commentText}`;
+                .t`${emailAddress} declined your invitation to ${eventTitle}${commentStatus} \n${updateEventDetailsText ?? ''}`;
         }
         throw new Error('Unanswered partstat');
     }

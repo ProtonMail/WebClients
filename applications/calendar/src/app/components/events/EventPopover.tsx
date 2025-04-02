@@ -194,7 +194,8 @@ const EventPopover = ({
     const handleChangePartStat = async (
         type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
         partstatData: PartstatData,
-        save: boolean = true
+        save: boolean = true,
+        oldPartstatData?: PartstatData
     ) => {
         const selfAddressID = targetEvent.data.eventReadResult?.result?.[0].selfAddressData.selfAddress?.ID;
         // Encrypt comment if provided
@@ -243,6 +244,7 @@ const EventPopover = ({
                 commentClearText,
                 selfAddress: model.selfAddress,
                 selfAttendeeIndex: model.selfAttendeeIndex,
+                oldPartstatData,
             },
             save
         );

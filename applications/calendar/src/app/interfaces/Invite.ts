@@ -6,6 +6,7 @@ import type {
     VcalAttendeeProperty,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
+import type { PartstatData } from '@proton/shared/lib/interfaces/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import type { AugmentedSendPreferences } from '../containers/calendar/interface';
@@ -32,6 +33,8 @@ export interface InviteActions {
     comment?: AttendeeComment;
     /** The clearText comment to insert in the ICS */
     commentClearText?: string;
+    /** The old partstat data for comparison in email bodies */
+    oldPartstatData?: PartstatData;
     sendCancellationNotice?: boolean;
     resetSingleEditsPartstat?: boolean;
     deleteSingleEdits?: boolean;
