@@ -32,8 +32,8 @@ export const FileAttachmentsList: FC<Props> = (props) => {
 
     const share = useSelector(selectShare(shareId));
 
-    const allowed = useMatchUser({ paid: true });
-    const canRename = Boolean(props.canRename && allowed && share && isShareWritable(share));
+    const isPaidUser = useMatchUser({ paid: true });
+    const canRename = Boolean(props.canRename && isPaidUser && share && isShareWritable(share));
 
     const handleRename = useCallback(async (descriptor: BaseFileDescriptor, fileName: string) => {
         if (descriptor.name === fileName) return;
@@ -63,8 +63,13 @@ export const FileAttachmentsList: FC<Props> = (props) => {
                     onCancel={deleteFile.abort}
                     onConfirm={deleteFile.resolver}
                     title={c('Pass_file_attachments').t`Delete ${deleteFile.state.name}`}
-                    message={c('Pass_file_attachments')
-                        .t`Once deleted, this file can still be recovered from the item's history.`}
+                    message={
+                        // Free users don't have access to item's history feature
+                        isPaidUser
+                            ? c('Pass_file_attachments')
+                                  .t`Once deleted, this file can still be recovered from the item's history.`
+                            : ''
+                    }
                     confirmText={c('Action').t`Delete`}
                 />
             )}
