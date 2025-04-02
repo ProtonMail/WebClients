@@ -492,9 +492,21 @@ export const getSendIcsAction =
                     keepDtstamp: true,
                 });
                 const displayName = selfAddress.DisplayName || selfAddress.Email;
+
+                // Create old vevent with the old comment if oldPartstatData exists
+                let oldVeventWithComment;
+                const { oldPartstatData } = inviteActions;
+                if (oldPartstatData?.Comment && vevent) {
+                    oldVeventWithComment = {
+                        ...vevent,
+                        comment: oldPartstatData.Comment ? [{ value: oldPartstatData.Comment }] : undefined,
+                    };
+                }
+
                 const params = {
                     method: ICAL_METHOD.REPLY,
                     vevent,
+                    oldVevent: oldVeventWithComment,
                     partstat: getAttendeePartstat(selfAttendeeWithPartstat),
                     emailAddress: getAttendeeEmail(selfAttendee),
                 };
@@ -658,6 +670,8 @@ export const getSendIcsAction =
                             method: ICAL_METHOD.REQUEST,
                             vevent: pmVevent,
                             isCreateEvent: true,
+                            oldVevent: cancelVevent,
+                            recurringType,
                         };
                         promises.push(
                             sendIcs({
@@ -763,6 +777,8 @@ export const getSendIcsAction =
                         method: ICAL_METHOD.REQUEST,
                         vevent: pmVevent,
                         isCreateEvent: true,
+                        oldVevent: cancelVevent,
+                        recurringType,
                     };
                     promises.push(
                         sendIcs({

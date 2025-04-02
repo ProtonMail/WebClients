@@ -25,7 +25,8 @@ interface Props {
     handleChangePartstat: (
         type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
         partstatData: PartstatData,
-        save: boolean
+        save: boolean,
+        oldPartstatData?: PartstatData
     ) => Promise<void>;
     userPartstat: ICAL_ATTENDEE_STATUS;
     userComment?: string;
@@ -89,12 +90,19 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             });
         }
 
+        // Create oldPartstatData when changing status
+        const oldPartstatData = {
+            Status: userPartstat,
+            Comment: userComment ?? undefined,
+        };
+
         return handleChangePartstat(
             INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
             {
                 Status: status,
             },
-            !displayNoteOverlay
+            !displayNoteOverlay,
+            oldPartstatData
         );
     };
 
@@ -109,12 +117,24 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
         const commentChanged = model.Comment !== userComment;
         const partStatChanged = model.Status !== userPartstat;
 
+        // Create oldPartstatData to track changes
+        const oldPartstatData = {
+            Status: userPartstat,
+            Comment: userComment ?? undefined,
+        };
+
         if (commentChanged && partStatChanged) {
-            return withLoadingSend(handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true));
+            return withLoadingSend(
+                handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true, oldPartstatData)
+            );
         } else if (commentChanged && !partStatChanged) {
-            return withLoadingSend(handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true));
+            return withLoadingSend(
+                handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true, oldPartstatData)
+            );
         } else {
-            return withLoadingSend(handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true));
+            return withLoadingSend(
+                handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true, oldPartstatData)
+            );
         }
     };
 
@@ -127,6 +147,12 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     };
 
     const handleDeleteComment = () => {
+        // Include old data when deleting comment
+        const oldPartstatData = {
+            Status: userPartstat,
+            Comment: userComment ?? undefined,
+        };
+
         return withLoadingDelete(
             handleChangePartstat(
                 INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
@@ -134,7 +160,8 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                     ...model,
                     Comment: undefined,
                 },
-                true
+                true,
+                oldPartstatData
             )
         );
     };
