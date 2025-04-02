@@ -4,7 +4,7 @@ import { type FormikErrors } from 'formik';
 import type { Store } from 'redux';
 
 import { AccessTarget } from '@proton/pass/lib/access/types';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { selectAccessMembers } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { InviteFormValues, Maybe } from '@proton/pass/types';
@@ -42,7 +42,7 @@ export const validateInvite =
                     if (acc.seen.has(value.email)) {
                         acc.errors.push(InviteEmailsError.DUPLICATE);
                         acc.pass = false;
-                    } else if (!PassCoreUI.is_email_valid(value.email)) {
+                    } else if (!PassUI.is_email_valid(value.email)) {
                         acc.pass = false;
                         acc.errors.push(InviteEmailsError.INVALID_EMAIL);
                     } else if (emailValidationResults?.current.get(value.email) === false) {
@@ -70,7 +70,7 @@ export const validateInvite =
             const trailingFocused = emailField.current === document.activeElement;
             const trailingValue = emailField.current?.value?.trim() ?? '';
             const trailingEmpty = trailingValue.length === 0;
-            const trailingValid = !trailingEmpty && PassCoreUI.is_email_valid(trailingValue);
+            const trailingValid = !trailingEmpty && PassUI.is_email_valid(trailingValue);
 
             /* If the trailing input is focused, trigger errors if the trailing
              * value is not a valid email address. If it's not focused, flag errors

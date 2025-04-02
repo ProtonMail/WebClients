@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { filterItemsByUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
@@ -34,7 +34,7 @@ const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): Monit
         if (!item.data.content.itemEmail.v) return acc;
         const email = toLowerCase(deobfuscate(item.data.content.itemEmail));
         if (monitored.has(email)) return acc;
-        if (PassCoreUI.is_email_valid(email)) acc.set(email, (acc.get(email) ?? 0) + 1);
+        if (PassUI.is_email_valid(email)) acc.set(email, (acc.get(email) ?? 0) + 1);
 
         return acc;
     }, new Map());
