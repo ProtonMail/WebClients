@@ -68,8 +68,10 @@ export const options: RootSagaOptions = {
 
     /* adapt event polling interval based on popup activity :
      * 30 seconds if popup is opened / 30 minutes if closed */
-    getPollingInterval: () =>
-        WorkerMessageBroker.ports.query(isPopupPort).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
+    getPollingInterval: () => {
+        const popups = WorkerMessageBroker.ports.query(isPopupPort).length;
+        return popups > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT;
+    },
 
     getPollingDelay: (pollingInterval, lastCalledAt) => {
         if (!lastCalledAt) return 0;
