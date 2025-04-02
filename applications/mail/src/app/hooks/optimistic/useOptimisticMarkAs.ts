@@ -212,9 +212,21 @@ export const useOptimisticMarkAs = () => {
 
                         // Update messages from the conversation (if loaded)
                         const conversationFromState = getConversation(conversation.ID);
-                        conversationFromState?.Messages?.forEach((message) => {
-                            dispatch(optimisticMarkAsAction({ ID: message.ID, changes }));
-                        });
+                        // When marking a conversation as read we should mark all messages as read
+                        if (changes.status === MARK_AS_STATUS.READ) {
+                            conversationFromState?.Messages?.forEach((message) => {
+                                dispatch(optimisticMarkAsAction({ ID: message.ID, changes }));
+                            });
+                        } else {
+                            // When marking a conversation as unread,
+                            // we should mark the last message in the current location as unread.
+                            const lastMessageFromLabelID = conversationFromState?.Messages?.findLast((message) =>
+                                message.LabelIDs.includes(labelID)
+                            );
+                            if (lastMessageFromLabelID) {
+                                dispatch(optimisticMarkAsAction({ ID: lastMessageFromLabelID.ID, changes }));
+                            }
+                        }
 
                         // Update counters
                         conversationCounters = updateCountersForMarkAs(
