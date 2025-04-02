@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CalendarInviteButtons, useActiveBreakpoint } from '@proton/components';
+import { CalendarInviteButtons, Spotlight, useActiveBreakpoint } from '@proton/components';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaWithCounter from '@proton/components/components/v2/input/TextAreaWithCounter';
 import {
@@ -19,7 +19,7 @@ import clsx from '@proton/utils/clsx';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import { useUrlifyString } from '../../hooks/useUrlifyString';
 import { INVITE_ACTION_TYPES } from '../../interfaces/Invite';
-import { RsvpSpotlight } from './RsvpSpotlight';
+import { RSVPSpotlightContent, useRSVPSpotlight } from './RsvpSpotlight';
 
 interface Props {
     handleChangePartstat: (
@@ -71,6 +71,8 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
         Status: userPartstat,
         Comment: userComment ?? undefined,
     });
+
+    const rsvpSpotlight = useRSVPSpotlight();
 
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingSend, withLoadingSend] = useLoading();
@@ -159,6 +161,11 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
     // Rely on userComment instead of model.Comment to avoid line jump
     const canReplyWithNote = !userComment && !isSearchView;
 
+    const handleReplyWithNote = () => {
+        setDisplayNoteOverlay(true);
+        rsvpSpotlight.onClose();
+    };
+
     return (
         <>
             {
@@ -176,17 +183,25 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                         />
 
                         {canReplyWithNote && (
-                            <RsvpSpotlight>
+                            <Spotlight
+                                show={rsvpSpotlight.shouldShowSpotlight}
+                                content={<RSVPSpotlightContent />}
+                                onDisplayed={rsvpSpotlight.onDisplayed}
+                                onClose={rsvpSpotlight.onClose}
+                                originalPlacement="right"
+                                className="ml-3"
+                                isAboveModal
+                            >
                                 <div className={clsx(isDrawerOrResponsiveView ? 'text-left' : 'text-right')}>
                                     <Button
                                         className={clsx('text-sm color-weak', isDrawerOrResponsiveView && 'mt-2')}
                                         shape="underline"
-                                        onClick={() => setDisplayNoteOverlay(true)}
+                                        onClick={handleReplyWithNote}
                                     >
                                         {c('Action').t`Reply with a note`}
                                     </Button>
                                 </div>
-                            </RsvpSpotlight>
+                            </Spotlight>
                         )}
 
                         {!!formattedUserComment && (
