@@ -167,6 +167,7 @@ enum MailFeatureFlag {
     MailboxRefactoring = 'MailboxRefactoring',
     NewsletterSubscriptionView = 'NewsletterSubscriptionView',
     RemoveReplyStyles = 'RemoveReplyStyles',
+    MailboxOptimisticRefactoring = 'MailboxOptimisticRefactoring',
 }
 
 enum AdminFeatureFlag {
