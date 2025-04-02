@@ -17,6 +17,7 @@ import {
     Option,
     QuickSettingsButton,
     QuickSettingsButtonSection,
+    QuickSettingsRequestNotifications,
     QuickSettingsSectionRow,
     SelectTwo,
     ShortcutsToggle,
@@ -408,6 +409,8 @@ const MailQuickSettings = () => {
                         {c('Action').t`Make ${MAIL_APP_NAME} your default email application`}
                     </QuickSettingsButton>
                 )}
+
+                <QuickSettingsRequestNotifications />
 
                 <Tooltip
                     title={
