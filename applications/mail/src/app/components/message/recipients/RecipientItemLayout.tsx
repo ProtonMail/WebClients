@@ -162,7 +162,7 @@ const RecipientItemLayout = ({
                         role={hasHeading ? 'heading' : undefined}
                         aria-level={hasHeading ? 2 : undefined}
                     >
-                        <span
+                        <bdi
                             className={clsx([
                                 'message-recipient-item-label',
                                 isLoading && 'inline-block',
@@ -171,7 +171,7 @@ const RecipientItemLayout = ({
                             data-testid="recipient-label"
                         >
                             {highlightedLabel}
-                        </span>
+                        </bdi>
                         {!isOutside && recipientOrGroup?.recipient && (
                             <ProtonBadgeType recipient={recipientOrGroup.recipient} />
                         )}
