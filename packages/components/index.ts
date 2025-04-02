@@ -88,6 +88,7 @@ export { default as DefaultQuickSettings } from './components/drawer/views/quick
 export { default as DrawerAllSettingsView } from './components/drawer/views/quickSettings/DrawerAllSettingsView';
 export { default as DrawerDownloadApps } from './components/drawer/views/quickSettings/DrawerDownloadApps';
 export { default as QuickSettingsButton } from './components/drawer/views/quickSettings/QuickSettingsButton';
+export { QuickSettingsRequestNotifications } from './components/drawer/views/quickSettings/QuickSettingsRequestNotifications';
 export { default as QuickSettingsButtonSection } from './components/drawer/views/quickSettings/QuickSettingsButtonSection';
 export { default as QuickSettingsSectionRow } from './components/drawer/views/quickSettings/QuickSettingsSectionRow';
 export { startAccountSecurityListener } from './components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecurityListener';
