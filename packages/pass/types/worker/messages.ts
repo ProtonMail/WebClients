@@ -2,7 +2,7 @@ import type { Action } from 'redux';
 
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
-import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/types';
+import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/core.types';
 import type {
     PasskeyCreatePayload,
     PasskeyCreateResponse,
