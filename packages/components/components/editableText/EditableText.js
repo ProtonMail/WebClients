@@ -5,11 +5,20 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import clsx from '@proton/utils/clsx';
 
 import useToggle from '../../hooks/useToggle';
 import Input from '../input/Input';
 
-const EditableText = ({ icon = 'pen', onSubmit, initialText = '', children, readOnly = false, ...rest }) => {
+const EditableText = ({
+    icon = 'pen',
+    onSubmit,
+    initialText = '',
+    children,
+    readOnly = false,
+    formClassName = '',
+    ...rest
+}) => {
     const [inputValue, setInputValue] = useState(initialText);
     const { state: editing, toggle: toggleEditing, set: setEditing } = useToggle();
 
@@ -32,7 +41,7 @@ const EditableText = ({ icon = 'pen', onSubmit, initialText = '', children, read
     const handleChangeInputValue = ({ target }) => setInputValue(target.value);
 
     return editing ? (
-        <form className="flex" onSubmit={handleFormSubmit}>
+        <form className={clsx('flex', formClassName)} onSubmit={handleFormSubmit}>
             {children ? (
                 children({ submit, toggleEditing })
             ) : (
@@ -68,6 +77,7 @@ EditableText.propTypes = {
     children: PropTypes.func,
     icon: PropTypes.string,
     small: PropTypes.bool,
+    formClassName: PropTypes.string,
 };
 
 export default EditableText;
