@@ -10,7 +10,7 @@ import { ListField } from '@proton/pass/components/Form/Field/ListField';
 import { InviteRecommendations } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
 import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
 import type { AccessKeys } from '@proton/pass/lib/access/types';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { InviteEmailsError } from '@proton/pass/lib/validation/invite';
 import type { InviteFormMemberValue, MaybeNull } from '@proton/pass/types';
 import { type InviteFormValues, ShareRole } from '@proton/pass/types';
@@ -54,7 +54,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
 
         const onEmailFieldBlur = (maybeEmail: string) => {
             const value = maybeEmail.trim();
-            if (PassCoreUI.is_email_valid(value) && emailField) {
+            if (PassUI.is_email_valid(value) && emailField) {
                 emailField.value = '';
                 onUpdate(members.concat([createMember(value)]));
             }

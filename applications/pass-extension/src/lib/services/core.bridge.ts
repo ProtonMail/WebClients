@@ -1,4 +1,4 @@
-import type { PassCoreMethod, PassCoreParams, PassCoreResult, PassCoreService } from '@proton/pass/lib/core/types';
+import type { PassCoreMethod, PassCoreParams, PassCoreResult, PassCoreService } from '@proton/pass/lib/core/core.types';
 import { type MessageWithSenderFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 
