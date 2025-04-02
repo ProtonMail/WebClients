@@ -239,10 +239,10 @@ const MainContainer: FunctionComponent = () => {
 
     const getRedirectPath = () => {
         if (getIsSectionAvailable(vpnRoutes.dashboardV2)) {
-            return vpnRoutes.dashboardV2.to;
+            return `${vpnRoutes.dashboardV2.to}${location.search}${location.hash}`;
         }
         if (getIsSectionAvailable(vpnRoutes.dashboard)) {
-            return vpnRoutes.dashboard.to;
+            return `${vpnRoutes.dashboard.to}${location.search}${location.hash}`;
         }
         return vpnRoutes.downloads.to;
     };
