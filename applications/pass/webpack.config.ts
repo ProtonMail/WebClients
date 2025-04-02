@@ -16,14 +16,16 @@ const CRITICAL_OFFLINE_ASSETS = [
     'runtime.js',
     'unsupported.js',
 
-    /* workers */
-    'core.worker.js',
-    'pass-core.ui.js',
+    /* crypto */
     'crypto-worker.js',
 
     /* icons */
     'sprite-icons.svg',
     'file-icons.svg',
+
+    /* rust modules */
+    'pass-core.worker.js',
+    'pass-ui.js',
 
     /* wasm */
     'wasm',

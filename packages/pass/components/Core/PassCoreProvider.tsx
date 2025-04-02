@@ -8,8 +8,8 @@ import type { PassThemeService } from '@proton/pass/components/Layout/Theme/Them
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/useOTPCode';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { type AuthStore } from '@proton/pass/lib/auth/store';
-import { preloadPassCoreUI } from '@proton/pass/lib/core/core.ui';
-import type { PassCoreProxy } from '@proton/pass/lib/core/types';
+import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
+import { preloadPassUI } from '@proton/pass/lib/core/ui.proxy';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
@@ -116,7 +116,7 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
         document.body.classList.add(`pass-${client}`);
 
         if (wasm) {
-            preloadPassCoreUI()
+            preloadPassUI()
                 ?.catch(noop)
                 .finally(() => setInitialized(true));
         }

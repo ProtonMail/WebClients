@@ -56,11 +56,11 @@ export const computeProgress = (progress: MaybeNull<ImportProgress>, itemProgres
         case 'items':
             /** During items phase: show completed item batches as percentage of total work */
             const completedItemBatches = Math.ceil(itemProgress / MAX_BATCH_PER_IMPORT_REQUEST);
-            return Math.round((completedItemBatches / totalImportUnits) * 100);
+            return Math.min(100, Math.round((completedItemBatches / totalImportUnits) * 100));
 
         case 'files':
             /** During files phase: Add completed item batches to current file progress */
-            return Math.round(((totalItemBatches + fileProgress) / totalImportUnits) * 100);
+            return Math.min(100, Math.round(((totalItemBatches + fileProgress) / totalImportUnits) * 100));
 
         default:
             return null;
