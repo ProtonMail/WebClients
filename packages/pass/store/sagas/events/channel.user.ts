@@ -85,6 +85,7 @@ function* onUserEvent(
         const data: HydratedUserState = yield getUserData();
         yield put(userRefresh(data));
         yield call(onUserRefreshed, data.user, keyPassword);
+        return;
     }
 
     if (event.UserSettings && telemetry) {
