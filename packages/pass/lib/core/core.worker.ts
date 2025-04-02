@@ -1,9 +1,11 @@
 import * as PassRustWorker from '@protontech/pass-rust-core/worker';
 
-import type { PassCoreMethod, PassCoreRPC } from './types';
+import { WASM_WORKER_READY_EVENT } from '@proton/pass/lib/core/constants';
 
-/** Handles incoming PassCoreRPC messages to execute functions
- * from the PassRustCore WebAssembly module */
+import type { PassCoreMethod, PassCoreRPC } from './core.types';
+
+self.postMessage({ type: WASM_WORKER_READY_EVENT });
+
 self.onmessage = ({ data: { method, args }, ports }: MessageEvent<PassCoreRPC<PassCoreMethod>>) => {
     const port = ports?.[0];
     if (port) port.postMessage((PassRustWorker[method] as any)(...args));
