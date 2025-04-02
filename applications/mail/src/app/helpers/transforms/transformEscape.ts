@@ -12,16 +12,16 @@ export const IMG_SRC_BASE_64_PREFIX = 'data-proton-replace-base';
  * So instead of escaping everything with it too, we remove them from the HTML
  * and we replace it with an attribute with an uniq hash so we can load them
  * later for the user via injectMessageMedia component.
- * Store it inside inside a cache
+ * Store it inside a cache
  *     - lazy load the image post render message
  *     - open the composer we need to lazy load it here too
  *
  * Source: regexp https://www.regextester.com/95505
  * @param input Raw unescaped HTML
  */
-const removeBase64 = (input: string, cache?: Base64Cache): string => {
+export const removeBase64 = (input: string, cache?: Base64Cache): string => {
     /* eslint no-useless-escape: "off" */
-    return input.replace(/src="data:image\/([a-zA-Z]*);base64,([^\"]*)\"/g, (match) => {
+    return input.replace(/src="data:image\/(?:([a-zA-Z]*)|svg\+xml);base64,([^\"]*)\"/g, (match) => {
         const hash = uniqID();
         if (cache) {
             cache.set(hash, match);
