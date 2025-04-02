@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren, useEffect, useMemo, useState } from 'react';
+import { type FC, type PropsWithChildren, useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -60,10 +60,9 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
         const { pathname } = useLocation();
 
         const [filesMap, setFiles] = useState(new Map<string, FileUploadDescriptor>());
-        const [loading, setLoading] = useState(false);
         const files = useMemo(() => Array.from(filesMap.values()), [filesMap]);
 
-        const uploadFiles = async (toUpload: File[]) => {
+        const uploadFiles = useCallback(async (toUpload: File[]) => {
             const uploads = toUpload.map((file) => ({ file, uploadID: uniqueId() }));
 
             setFiles(
@@ -102,39 +101,36 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                         })
                 )
             );
-        };
+        }, []);
 
-        const onAddFiles = async (newFiles: File[]) => {
-            const validFiles = newFiles.filter((file) => file.size <= maxFileSize);
+        const onAddFiles = useCallback(
+            async (newFiles: File[]) => {
+                const validFiles = newFiles.filter((file) => file.size <= maxFileSize);
+                const totalNewFilesSize = validFiles.reduce((acc, file) => acc + file.size, 0);
+                const predictedStorage = usedStorage + totalNewFilesSize;
 
-            // Let the user know that some files will not be uploaded
-            if (validFiles.length < newFiles.length) {
-                const maxFileSizeInMB = humanSize({ bytes: maxFileSize, unit: 'MB', fraction: 0 });
-                createNotification({
-                    type: 'error',
-                    text: c('Pass_file_attachments')
-                        .t`Some files are too large to upload. The maximum allowed size is (${maxFileSizeInMB})`,
-                });
-            }
+                /** Prevent users from exceeding the maximum storage limit */
+                if (predictedStorage > maxStorage) {
+                    return createNotification({
+                        type: 'error',
+                        text: c('Pass_file_attachments').t`Not enough available storage space for the selected files.`,
+                    });
+                }
 
-            const totalNewFilesSize = validFiles.reduce((acc, file) => acc + file.size, 0);
+                /** Let the user know that some files will not be uploaded */
+                if (validFiles.length < newFiles.length) {
+                    const maxFileSizeInMB = humanSize({ bytes: maxFileSize, unit: 'MB', fraction: 0 });
+                    createNotification({
+                        type: 'error',
+                        text: c('Pass_file_attachments')
+                            .t`Some files are too large to upload. The maximum allowed size is (${maxFileSizeInMB})`,
+                    });
+                }
 
-            // Prevent users from exceeding the maximum storage limit
-            if (usedStorage + totalNewFilesSize > maxStorage) {
-                return createNotification({
-                    type: 'error',
-                    text: c('Pass_file_attachments').t`Not enough available storage space for the selected files.`,
-                });
-            }
-
-            try {
-                setLoading(true);
-                await uploadFiles(validFiles);
-            } catch {
-            } finally {
-                setLoading(false);
-            }
-        };
+                return uploadFiles(validFiles);
+            },
+            [maxFileSize]
+        );
 
         const handleRemove = async (uploadID: string, fileID?: string) => {
             setFiles(updateMap((next) => next.delete(uploadID)));
@@ -174,7 +170,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
             onDeleteAllFiles?.();
         };
 
-        useEffect(() => form.setStatus({ isBusy: loading }), [loading]);
+        useEffect(() => form.setStatus({ isBusy: fileUpload.loading }), [fileUpload.loading]);
 
         return (
             <Dropzone
@@ -191,7 +187,7 @@ export const FileAttachmentsField: FC<Props> = WithFeatureFlag(
                     <FileAttachmentsSummary
                         filesCount={files.length + filesCount}
                         onDelete={handleDeleteAll}
-                        deleteDisabled={loading || !online}
+                        deleteDisabled={fileUpload.loading || !online}
                     >
                         {children}
 
