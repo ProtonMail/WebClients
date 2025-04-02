@@ -1,7 +1,7 @@
 import type { Store } from 'redux';
 
 import { WASM_PROCEDURE_BATCH_SIZE } from '@proton/pass/lib/core/constants';
-import type { PassCoreProxy } from '@proton/pass/lib/core/types';
+import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { hasDomain, hasOTP, hasPasskeys } from '@proton/pass/lib/items/item.predicates';
 import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
 import { selectMonitoredLogins } from '@proton/pass/store/selectors';

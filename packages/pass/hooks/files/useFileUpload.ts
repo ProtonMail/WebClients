@@ -1,16 +1,21 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
+import { c } from 'ttag';
 
 import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
+import { PassUIWorkerService } from '@proton/pass/lib/core/ui.worker.service';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
 import type { FileChunkUploadDTO, FileID, Maybe, TabId, WithTabId } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
+
+export type OnFileUploadProgress = (uploaded: number, total: number) => void;
 
 /** In web/desktop, the uploading happens on the same JS context, we can
  * pass blob references around. In the extension, store each chunk to the
@@ -38,6 +43,9 @@ export const useFileUpload = () => {
     const dispatch = useDispatch();
 
     const ctrls = useRef(new Map<string, AbortController>());
+    const [loading, setLoading] = useState(false);
+
+    const syncLoadingState = useCallback(() => setLoading(ctrls.current.size > 0), []);
 
     const cancel = useCallback((uploadID: string) => {
         if (uploadID === '*') {
@@ -47,10 +55,12 @@ export const useFileUpload = () => {
             ctrls.current.get(uploadID)?.abort();
             ctrls.current.delete(uploadID);
         }
+
+        syncLoadingState();
     }, []);
 
     const queue = useCallback(
-        asyncQueue(async (file: File, uploadID: string): Promise<FileID> => {
+        asyncQueue(async (file: File, uploadID: string, onProgress?: OnFileUploadProgress): Promise<FileID> => {
             let fileID: Maybe<string>;
 
             try {
@@ -58,9 +68,33 @@ export const useFileUpload = () => {
                 if (!ctrl || ctrl.signal.aborted) throw new DOMException('Aborted', 'AbortError');
 
                 const { name, size } = file;
-                const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
-                const mimeType = PassCoreUI.mime_type_from_content(new Uint8Array(mimeTypeBuffer));
                 const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
+
+                onProgress?.(0, totalChunks);
+
+                const mimeType = await (async (): Promise<string> => {
+                    try {
+                        const mimeTypeBuffer = await file.slice(0, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE).arrayBuffer();
+                        const mimeTypeBufferU8 = new Uint8Array(mimeTypeBuffer);
+
+                        if (BUILD_TARGET === 'safari') {
+                            /** Safari's asm.js compilation of `mime_type_from_content` is unstable
+                             * and frequently throws `wasm2js_trap` errors. To prevent this, we
+                             * offload MIME detection to a dedicated WASM worker process instead. */
+                            return await PassUIWorkerService.transfer([mimeTypeBufferU8.buffer])(
+                                'mime_type_from_content',
+                                mimeTypeBufferU8
+                            );
+                        }
+
+                        return PassUI.mime_type_from_content(mimeTypeBufferU8);
+                    } catch {
+                        /** If the Rust-based MIME detection fails,
+                         * use the browser's MIME type detection. */
+                        return file.type;
+                    }
+                })();
+
                 const initDTO = { name, mimeType, totalChunks, uploadID };
 
                 const init = await abortable(ctrl.signal)(
@@ -90,6 +124,8 @@ export const useFileUpload = () => {
                         if (result.data.aborted) throw new DOMException('User cancelled upload', 'AbortError');
                         throw new Error(result.data.error);
                     }
+
+                    onProgress?.(index + 1, totalChunks);
                 }
 
                 onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
@@ -99,17 +135,29 @@ export const useFileUpload = () => {
             } finally {
                 if (EXTENSION_BUILD) await fileStorage.deleteFile(`${fileID}.chunk`);
                 ctrls.current.delete(uploadID);
+                syncLoadingState();
             }
         }),
         []
     );
 
-    const start = useCallback(async (file: File, uploadID: string): Promise<FileID> => {
-        ctrls.current.set(uploadID, new AbortController());
-        return queue(file, uploadID);
-    }, []);
+    const start = useCallback(
+        async (file: File, uploadID: string, onProgress?: OnFileUploadProgress): Promise<FileID> => {
+            if (file.size === 0) {
+                /** On windows electron: when drag'n'dropping a file from an archive
+                 * before extraction, the reported file will have a filesize of 0 bytes */
+                throw new Error(c('Pass_file_attachments').t`The file you are trying to import is empty`);
+            }
+
+            ctrls.current.set(uploadID, new AbortController());
+            syncLoadingState();
+
+            return queue(file, uploadID, onProgress);
+        },
+        []
+    );
 
     useEffect(() => () => cancel('*'), []);
 
-    return useMemo(() => ({ start, cancel }), []);
+    return useMemo(() => ({ start, cancel, loading }), [loading]);
 };

@@ -1,4 +1,4 @@
-import type { PassCoreProxy, PassCoreService } from './types';
+import type { PassCoreProxy, PassCoreService } from './core.types';
 
 /** The PassCoreService class provides an `exec` function that abstracts
  * the execution of PassRustCore methods, regardless of whether the
