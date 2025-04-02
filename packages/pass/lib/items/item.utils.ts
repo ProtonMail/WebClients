@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
     BulkSelectionDTO,
@@ -190,8 +190,8 @@ export const getSanitizedUserIdentifiers = ({
     itemEmail,
     itemUsername,
 }: Pick<DeobfuscatedItem<'login'>['content'], 'itemEmail' | 'itemUsername'>) => {
-    const validEmail = PassCoreUI.is_email_valid(itemEmail);
-    const emailUsername = PassCoreUI.is_email_valid(itemUsername);
+    const validEmail = PassUI.is_email_valid(itemEmail);
+    const emailUsername = PassUI.is_email_valid(itemUsername);
 
     if (itemUsername) {
         /* `itemEmail` is empty and `itemUsername` is a valid email: Move username to email field */

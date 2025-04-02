@@ -20,7 +20,7 @@ import type { VaultsService } from 'proton-pass-extension/app/worker/services/va
 
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { PassCoreProxy } from '@proton/pass/lib/core/types';
+import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { AppState, AppStatus, MaybeNull } from '@proton/pass/types';
 

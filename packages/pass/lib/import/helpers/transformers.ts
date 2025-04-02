@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type {
@@ -31,7 +31,7 @@ export const getImportedVaultName = (vaultName?: string) => {
 
 export const getEmailOrUsername = (userIdentifier?: MaybeNull<string>): { email: string; username: string } => {
     if (!userIdentifier) return { email: '', username: '' };
-    return PassCoreUI.is_email_valid(userIdentifier)
+    return PassUI.is_email_valid(userIdentifier)
         ? { email: userIdentifier, username: '' }
         : { email: '', username: userIdentifier };
 };

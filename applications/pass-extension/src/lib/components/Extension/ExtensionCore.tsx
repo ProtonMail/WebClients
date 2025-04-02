@@ -22,7 +22,7 @@ import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { createPassCoreProxy } from '@proton/pass/lib/core/proxy';
+import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { getExtensionLocalStorage } from '@proton/pass/lib/extension/storage';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';

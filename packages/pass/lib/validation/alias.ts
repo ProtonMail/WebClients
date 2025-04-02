@@ -2,7 +2,7 @@ import { type FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
-import PassCoreUI from '@proton/pass/lib/core/core.ui';
+import PassUI from '@proton/pass/lib/core/ui.proxy';
 import type {
     AliasContactValues,
     AliasFormValues,
@@ -30,7 +30,7 @@ export const deriveAliasPrefix = (name: string) => {
 
 export const validateAliasPrefix = (prefix: string = ''): Maybe<string> => {
     try {
-        PassCoreUI.validate_alias_prefix(prefix);
+        PassUI.validate_alias_prefix(prefix);
         return;
     } catch (err) {
         switch (err instanceof Error && err.message) {
