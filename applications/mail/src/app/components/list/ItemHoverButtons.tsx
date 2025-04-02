@@ -75,6 +75,7 @@ const ItemHoverButtons = ({
             labelID,
             status: isUnread ? READ : UNREAD,
             sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
+            silent: true,
         });
     };
 

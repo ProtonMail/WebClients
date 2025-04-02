@@ -2,11 +2,15 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isDraft } from '@proton/shared/lib/mail/messages';
+
+import type { Conversation } from 'proton-mail/models/conversation';
+import type { Element } from 'proton-mail/models/element';
 
 import { isMessage } from '../../../helpers/elements';
 import type { QueryParams, QueryResults, TaskRunningInfo } from '../../elements/elementsTypes';
 import type { MailState } from '../../store';
-import { localID as localIDSelector, messageByID } from '../messagesSelectors';
+import { localID as localIDSelector, messageByID, messagesByConversationID } from '../messagesSelectors';
 import type { MessagesState } from '../messagesTypes';
 
 /**
@@ -75,4 +79,109 @@ export const updateFromElements = (
             }
         });
     }
+};
+
+export const markMessagesAsReadPending = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const { elements } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedMessage = selectedElement as Message;
+
+        if (selectedMessage.Unread === 0) {
+            return;
+        }
+
+        const messageState = getMessage(state, selectedMessage.ID);
+
+        if (messageState) {
+            if (messageState.data) {
+                messageState.data.Unread = 0;
+            }
+        }
+    });
+};
+
+export const markMessagesAsUnreadPending = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const { elements } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedMessage = selectedElement as Message;
+
+        if (selectedMessage.Unread === 1) {
+            return;
+        }
+
+        const messageState = getMessage(state, selectedMessage.ID);
+
+        if (messageState) {
+            if (messageState.data) {
+                (messageState.data as Message).Unread = 1;
+            }
+        }
+    });
+};
+
+export const markConversationsAsReadPending = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const { elements, labelID } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedConversation = selectedElement as Conversation;
+
+        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+
+        if (conversationLabel?.ContextNumUnread === 0) {
+            return;
+        }
+
+        const messageStates = messagesByConversationID({ messages: state } as MailState, {
+            ConversationID: selectedConversation.ID,
+        });
+
+        // Update all messages attach to the same conversation in message state
+        messageStates.forEach((messageState) => {
+            if (messageState?.data) {
+                messageState.data.Unread = 0;
+            }
+        });
+    });
+};
+
+export const markConversationsAsUnreadPending = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Element[]; labelID: string } }>
+) => {
+    const { elements, labelID } = action.meta.arg;
+
+    elements.forEach((selectedElement) => {
+        const selectedConversation = selectedElement as Conversation;
+        const conversationLabel = selectedConversation?.Labels?.find((label) => label.ID === labelID);
+
+        if (!!conversationLabel?.ContextNumUnread) {
+            // Conversation is already unread, do nothing
+            return;
+        }
+
+        // Get all messages attached to the conversation
+        const messageStates = messagesByConversationID({ messages: state } as MailState, {
+            ConversationID: selectedConversation.ID,
+        });
+
+        // Mark the last message as unread
+        const lastMessageState = messageStates
+            .filter((messageState) => messageState?.data?.LabelIDs.includes(labelID) && !isDraft(messageState.data))
+            .sort((a, b) => (b?.data?.Order || 0) - (a?.data?.Order || 0))[0];
+
+        if (lastMessageState?.data) {
+            lastMessageState.data.Unread = 1;
+        }
+    });
 };
