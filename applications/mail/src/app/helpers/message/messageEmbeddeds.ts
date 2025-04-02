@@ -15,7 +15,7 @@ import { getEmbeddedImages, updateImages } from './messageImages';
 
 const urlCreator = () => window.URL || window.webkitURL;
 
-export const embeddableTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
+export const embeddableTypes = ['image/gif', 'image/svg+xml', 'image/jpeg', 'image/png', 'image/bmp'];
 
 /**
  * Removes enclosing quotes ("", '', &lt;&gt;) from a string
