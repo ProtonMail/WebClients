@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -38,6 +38,9 @@ export const useFileUpload = () => {
     const dispatch = useDispatch();
 
     const ctrls = useRef(new Map<string, AbortController>());
+    const [loading, setLoading] = useState(false);
+
+    const syncLoadingState = useCallback(() => setLoading(ctrls.current.size > 0), []);
 
     const cancel = useCallback((uploadID: string) => {
         if (uploadID === '*') {
@@ -47,6 +50,8 @@ export const useFileUpload = () => {
             ctrls.current.get(uploadID)?.abort();
             ctrls.current.delete(uploadID);
         }
+
+        syncLoadingState();
     }, []);
 
     const queue = useCallback(
@@ -99,17 +104,19 @@ export const useFileUpload = () => {
             } finally {
                 if (EXTENSION_BUILD) await fileStorage.deleteFile(`${fileID}.chunk`);
                 ctrls.current.delete(uploadID);
+                syncLoadingState();
             }
         }),
         []
     );
 
     const start = useCallback(async (file: File, uploadID: string): Promise<FileID> => {
+        setLoading(true);
         ctrls.current.set(uploadID, new AbortController());
         return queue(file, uploadID);
     }, []);
 
     useEffect(() => () => cancel('*'), []);
 
-    return useMemo(() => ({ start, cancel }), []);
+    return useMemo(() => ({ start, cancel, loading }), [loading]);
 };
