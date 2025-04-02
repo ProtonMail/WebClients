@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+import { c } from 'ttag';
+
 import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FILE_CHUNK_SIZE, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
 import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
@@ -12,6 +14,8 @@ import { requestCancel } from '@proton/pass/store/request/actions';
 import type { FileChunkUploadDTO, FileID, Maybe, TabId, WithTabId } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
+
+export type OnFileUploadProgress = (uploaded: number, total: number) => void;
 
 /** In web/desktop, the uploading happens on the same JS context, we can
  * pass blob references around. In the extension, store each chunk to the
@@ -56,7 +60,7 @@ export const useFileUpload = () => {
     }, []);
 
     const queue = useCallback(
-        asyncQueue(async (file: File, uploadID: string): Promise<FileID> => {
+        asyncQueue(async (file: File, uploadID: string, onProgress?: OnFileUploadProgress): Promise<FileID> => {
             let fileID: Maybe<string>;
 
             try {
@@ -64,6 +68,9 @@ export const useFileUpload = () => {
                 if (!ctrl || ctrl.signal.aborted) throw new DOMException('Aborted', 'AbortError');
 
                 const { name, size } = file;
+                const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
+
+                onProgress?.(0, totalChunks);
 
                 const mimeType = await (async (): Promise<string> => {
                     try {
@@ -88,7 +95,6 @@ export const useFileUpload = () => {
                     }
                 })();
 
-                const totalChunks = Math.ceil(file.size / FILE_CHUNK_SIZE);
                 const initDTO = { name, mimeType, totalChunks, uploadID };
 
                 const init = await abortable(ctrl.signal)(
@@ -118,6 +124,8 @@ export const useFileUpload = () => {
                         if (result.data.aborted) throw new DOMException('User cancelled upload', 'AbortError');
                         throw new Error(result.data.error);
                     }
+
+                    onProgress?.(index + 1, totalChunks);
                 }
 
                 onTelemetry(TelemetryEventName.PassFileUploaded, {}, { mimeType });
@@ -133,11 +141,21 @@ export const useFileUpload = () => {
         []
     );
 
-    const start = useCallback(async (file: File, uploadID: string): Promise<FileID> => {
-        setLoading(true);
-        ctrls.current.set(uploadID, new AbortController());
-        return queue(file, uploadID);
-    }, []);
+    const start = useCallback(
+        async (file: File, uploadID: string, onProgress?: OnFileUploadProgress): Promise<FileID> => {
+            if (file.size === 0) {
+                /** On windows electron: when drag'n'dropping a file from an archive
+                 * before extraction, the reported file will have a filesize of 0 bytes */
+                throw new Error(c('Pass_file_attachments').t`The file you are trying to import is empty`);
+            }
+
+            ctrls.current.set(uploadID, new AbortController());
+            syncLoadingState();
+
+            return queue(file, uploadID, onProgress);
+        },
+        []
+    );
 
     useEffect(() => () => cancel('*'), []);
 
