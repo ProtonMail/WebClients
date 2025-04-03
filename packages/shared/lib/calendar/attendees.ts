@@ -87,7 +87,7 @@ export const toInternalAttendee = (
     { attendee: attendees = [] }: Pick<VcalVeventComponent, 'attendee'>,
     clear: Attendee[] = [],
     sharedSessionKey: SessionKey | undefined,
-    sharedEventID: string,
+    eventUID: string,
     getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>
 ): Promise<VcalAttendeeProperty>[] => {
     return attendees.map(async (attendee) => {
@@ -122,7 +122,7 @@ export const toInternalAttendee = (
             const decryptedMessageResult = await getDecryptedRSVPComment({
                 attendeeVerificationPreferences,
                 encryptedMessage: extra.Comment.Message,
-                sharedEventID,
+                eventUID,
                 sharedSessionKey,
             });
 

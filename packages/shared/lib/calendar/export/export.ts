@@ -146,7 +146,7 @@ const decryptEvent = async ({
             CalendarID,
             ID,
             SharedEvents,
-            SharedEventID,
+            UID,
             CalendarEvents,
             AttendeesEvents,
             Notifications,
@@ -164,7 +164,7 @@ const decryptEvent = async ({
                 FullDay,
                 CalendarID,
                 ID,
-                SharedEventID,
+                UID,
                 // do not export color
                 Color: null,
             },
