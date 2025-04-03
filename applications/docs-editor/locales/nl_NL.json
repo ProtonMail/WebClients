@@ -185,9 +185,6 @@
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
-      "Remove background color": [
-        "Achtergrondkleur verwijderen"
-      ],
       "Remove link": [
         "Link verwijderen"
       ],
@@ -558,14 +555,20 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } achtergrondkleur en witte tekstkleur"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } tekstkleur en markeer"
+      ],
+      "${ name } text color with no background": [
+        "${ name } tekstkleur zonder achtergrond"
+      ],
       "Add link": [
         "Link toevoegen"
       ],
       "Align": [
         "Uitlijnen"
-      ],
-      "Background colour": [
-        "Achtergrondkleur"
       ],
       "Change image size": [
         "Wijzig afbeeldingsgrootte"
@@ -648,8 +651,8 @@
       "Replace link": [
         "Link vervangen"
       ],
-      "Text colour": [
-        "Tekstkleur"
+      "Text and highlight color": [
+        "Tekst en markeer kleur"
       ],
       "with \"${ replaceWith }\"": [
         "met \"${ replaceWith }\""

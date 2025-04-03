@@ -185,9 +185,6 @@
       "Refresh the page": [
         "Atualizar a página"
       ],
-      "Remove background color": [
-        "Remover cor de fundo"
-      ],
       "Remove link": [
         "Remover link"
       ],
@@ -558,14 +555,20 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "Cor de fundo de ${ name } e cor do texto branca."
+      ],
+      "${ name } text color and highlight": [
+        "Cor do texto e destaque de ${ name }"
+      ],
+      "${ name } text color with no background": [
+        "Cor do texto de ${ name } sem fundo."
+      ],
       "Add link": [
         "Adicionar link"
       ],
       "Align": [
         "Alinhar"
-      ],
-      "Background colour": [
-        "Cor de fundo"
       ],
       "Change image size": [
         "Alterar tamanho da imagem"
@@ -648,8 +651,8 @@
       "Replace link": [
         "Substituir link"
       ],
-      "Text colour": [
-        "Cor do texto"
+      "Text and highlight color": [
+        "Cor do texto e cor de destaque"
       ],
       "with \"${ replaceWith }\"": [
         "por \"${ replaceWith }\""
