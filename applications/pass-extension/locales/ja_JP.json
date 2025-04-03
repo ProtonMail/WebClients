@@ -152,11 +152,11 @@
       "Create": [
         "作成"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } アカウントを作成"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを作成する"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } アカウントを作成"
       ],
       "Create alias": [
         "エイリアスを作成"
@@ -247,9 +247,6 @@
       ],
       "Done": [
         "完了"
-      ],
-      "Download": [
-        "ダウンロード"
       ],
       "Download this CSV template": [
         "この CSV テンプレートをダウンロード"
@@ -466,9 +463,6 @@
       ],
       "Remove member": [
         "メンバーを削除する"
-      ],
-      "Rename": [
-        "名前を変更"
       ],
       "Request a feature": [
         "機能を提案"
@@ -1081,9 +1075,6 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "何か問題が発生しました。 ${ PASS_APP_NAME } 拡張機能をリロードしてください。 この問題は記録されています"
-      ],
-      "The file you are trying to import is empty": [
-        "インポートしようとしているファイルは空です。"
       ],
       "The URL is in the list": [
         "URLはリストにあります\n"
@@ -1740,9 +1731,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2613,9 +2601,6 @@
       "Field name": [
         "フィールド名"
       ],
-      "File": [
-        "ファイル"
-      ],
       "File format": [
         "ファイル形式"
       ],
@@ -3439,9 +3424,6 @@
       ],
       "Aliases": [
         "エイリアス"
-      ],
-      "Attachments": [
-        "添付ファイル"
       ],
       "Auto create/on the fly alias": [
         "自動作成/緊急エイリアス"
