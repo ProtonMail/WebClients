@@ -195,9 +195,17 @@ const EventPopover = ({
         save: boolean = true,
         oldPartstatData?: PartstatData
     ) => {
+        // Get the addressID of the author of the note
         const selfAddressID = targetEvent.data.eventReadResult?.result?.[0].selfAddressData.selfAddress?.ID;
+
         // Encrypt comment if provided
         let comment, commentClearText;
+
+        // Encryptip comment if
+        // action is "save"
+        // and comment is present in the action payload
+        // and event already exists
+        // and attendee has an address ID
         if (
             save &&
             partstatData.Comment &&
@@ -205,13 +213,17 @@ const EventPopover = ({
             getIsCalendarEvent(targetEvent.data.eventData) &&
             selfAddressID
         ) {
+            // Get events keypackets
             const sessionKey = await getSharedSessionKey({
                 calendarEvent: targetEvent.data.eventData,
                 getAddressKeys,
                 getCalendarKeys,
             });
+
+            // Get authos primary key
             const [commentAuthorPrimaryKey] = await getAddressKeys(selfAddressID);
 
+            // Encrypt comment
             comment = await getEncryptedRSVPComment({
                 authorPrivateKey: commentAuthorPrimaryKey.privateKey,
                 comment: partstatData.Comment,
@@ -222,6 +234,9 @@ const EventPopover = ({
             commentClearText = partstatData.Comment;
         }
 
+        // Then await the parent component callback
+        // Here it eighter update model
+        // or update modal and save the event
         await onChangePartstat(
             {
                 type,
