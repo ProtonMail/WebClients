@@ -123,6 +123,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
             Comment: userComment ?? undefined,
         };
 
+        // TODO factorize in case we don't need specific actions later
         if (commentChanged && partStatChanged) {
             return withLoadingSend(
                 handleChangePartstat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, model, true, oldPartstatData)
@@ -235,7 +236,7 @@ const RsvpSection = ({ handleChangePartstat, userPartstat, userComment, disabled
                             <div className="mt-2 flex flex-auto justify-space-between flex-nowrap items-center gap-2">
                                 <div className="text-ellipsis color-weak text-sm">
                                     <span className="text-bold color-weak">{c('Note').t`Note:`} </span>
-                                    <span dangerouslySetInnerHTML={{ __html: formattedUserComment }} />
+                                    <span>{formattedUserComment}</span>
                                 </div>
                                 {!isSearchView && (
                                     <div className="flex flex-none">
