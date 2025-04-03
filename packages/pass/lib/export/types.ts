@@ -31,6 +31,7 @@ export enum ExportFormat {
     CSV = 'csv',
     PGP = 'pgp',
     ZIP = 'zip',
+    JSON = 'json',
 }
 
 export type ExportOptions =
