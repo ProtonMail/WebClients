@@ -31,11 +31,7 @@ export const updateCounters = (element: Element, counters: LabelCount[], changes
                 }
             } else {
                 acc[labelID].Total = (acc[labelID].Total || 0) - 1;
-                if (
-                    isUnread &&
-                    // Should not exists on paper but some optimistic inconsistency can lead to this point
-                    !isAutoRead(labelID)
-                ) {
+                if (isUnread) {
                     acc[labelID].Unread = (acc[labelID].Unread || 0) - 1;
                 }
             }
