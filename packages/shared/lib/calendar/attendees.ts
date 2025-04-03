@@ -6,7 +6,6 @@ import unary from '@proton/utils/unary';
 
 import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 import { buildMailTo, canonicalizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
-import { base64StringToUint8Array } from '../helpers/encoding';
 import { omit } from '../helpers/object';
 import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
 import type { VerificationPreferences } from '../interfaces/VerificationPreferences';
@@ -27,7 +26,7 @@ import {
     ICAL_ATTENDEE_RSVP,
     ICAL_ATTENDEE_STATUS,
 } from './constants';
-import { getSignatureContext } from './crypto/helpers';
+import { getDecryptedRSVPComment } from './crypto/helpers';
 import { getAttendeeHasToken, getAttendeePartstat, getAttendeesHaveToken } from './vcalHelper';
 
 export const NO_CANONICAL_EMAIL_ERROR = 'No canonical email provided';
@@ -118,20 +117,13 @@ export const toInternalAttendee = (
                 return attendee;
             }
 
-            const binaryMessage = base64StringToUint8Array(extra.Comment?.Message);
-            const publicKey = await getAttendeeVerificationPreferences(attendeeEmail);
-            const decryptedMessageResult = await CryptoProxy.decryptMessage({
-                sessionKeys: [sharedSessionKey],
-                binaryMessage,
-                ...(publicKey.verifyingKeys.length
-                    ? {
-                          verificationKeys: publicKey.verifyingKeys,
-                          signatureContext: {
-                              value: getSignatureContext('calendar.rsvp.comment', sharedEventID),
-                              required: true,
-                          },
-                      }
-                    : {}),
+            const attendeeVerificationPreferences = await getAttendeeVerificationPreferences(attendeeEmail);
+
+            const decryptedMessageResult = await getDecryptedRSVPComment({
+                attendeeVerificationPreferences,
+                encryptedMessage: extra.Comment.Message,
+                sharedEventID,
+                sharedSessionKey,
             });
 
             // TODO: Manage decription signature cases
@@ -152,13 +144,13 @@ export const toInternalAttendee = (
 
             if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
                 console.log(attendeeEmail, 'This note is not SIGNED', decryptedMessageResult.data, {
-                    hasFetchedAttendeeVeficationKey: !!publicKey?.verifyingKeys?.length,
+                    hasFetchedAttendeeVeficationKey: !!attendeeVerificationPreferences?.verifyingKeys?.length,
                 });
             }
 
             if (decryptedMessageResult.verificationStatus === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 console.log(attendeeEmail, 'note SIGNED and INVALID', decryptedMessageResult.data, {
-                    hasFetchedAttendeeVeficationKey: !!publicKey?.verifyingKeys?.length,
+                    hasFetchedAttendeeVeficationKey: !!attendeeVerificationPreferences?.verifyingKeys?.length,
                     error: decryptedMessageResult.verificationErrors,
                 });
             }
