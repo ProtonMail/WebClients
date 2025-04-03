@@ -4,7 +4,6 @@ import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import {
     aliasSyncPending,
-    fileLinkPending,
     getUserAccessFailure,
     getUserAccessIntent,
     getUserAccessSuccess,
@@ -43,7 +42,6 @@ function* userAccessWorker({ getAuthStore }: RootSagaOptions, { meta }: ReturnTy
 }
 
 const matchRevalidateUserAccess = (action: unknown) => {
-    if (fileLinkPending.success.match(action)) return true;
     if (importReport.match(action)) return true;
     if (itemDeleteRevisions.success.match(action)) return true;
     if (vaultDeleteSuccess.match(action)) return true;
