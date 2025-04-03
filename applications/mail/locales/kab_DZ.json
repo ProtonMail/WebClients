@@ -1057,6 +1057,10 @@
       "Trust": [
         "Amen"
       ],
+      "Trust key": [
+        "Tasarut yettwamanen",
+        "Tisura yettwamanen"
+      ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
       ],
@@ -5923,11 +5927,11 @@
       "Always move sender's emails": [
         "Asenkez yal tikkelt imaylen n yimazanen"
       ],
-      "AND": [
-        "AKKED"
-      ],
       "And": [
         "Akked"
+      ],
+      "AND": [
+        "AKKED"
       ],
       "and": [
         "akked"
@@ -6127,11 +6131,11 @@
       "I understand the risk": [
         "Gziɣ imihi"
       ],
-      "IF": [
-        "MA"
-      ],
       "If": [
         "Ma"
+      ],
+      "IF": [
+        "MA"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -6235,14 +6239,14 @@
       "Optional": [
         "Afrayan"
       ],
-      "OR": [
-        "NEƔ"
-      ],
       "or": [
         "neɣ"
       ],
       "Or": [
         "Neɣ"
+      ],
+      "OR": [
+        "NEƔ"
       ],
       "Original link": [
         "Aseɣwen agejdan"
@@ -6911,17 +6915,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -6940,6 +6933,17 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8070,14 +8074,6 @@
         "Imultaɣen"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "Mazal ${ dayDiff } wass",
@@ -8097,6 +8093,14 @@
       ],
       "Version history": [
         "Azray n lqem"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GAṬ n uḥraz"
+      ],
+      "Upgrade": [
+        "Leqqem"
       ]
     },
     "Subscription renewal state": {
