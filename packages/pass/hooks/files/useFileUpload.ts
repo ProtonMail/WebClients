@@ -38,6 +38,7 @@ const getChunkDTO = async (
 
 export const useFileUpload = () => {
     const tabId = useCurrentTabID();
+
     const { onTelemetry } = usePassCore();
     const asyncDispatch = useAsyncRequestDispatch();
     const dispatch = useDispatch();
