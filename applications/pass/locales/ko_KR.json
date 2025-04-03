@@ -397,10 +397,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -483,6 +483,12 @@
       ],
       "Resend invitation": [
         "초대장 재전송"
+      ],
+      "Reset": [
+        "재설정"
+      ],
+      "Reset history": [
+        "기록 재설정"
       ],
       "Restore": [
         "복원"
@@ -793,6 +799,9 @@
       "Alias options could not be resolved": [
         "별칭 옵션을 확인할 수 없습니다."
       ],
+      "An error occured during the import process": [
+        "불러오기 작업 중 오류 발생"
+      ],
       "An error occurred while resuming your session": [
         "세션 재개 중 오류 발생"
       ],
@@ -855,6 +864,9 @@
       ],
       "Deleting item failed": [
         "항목 삭제 실패"
+      ],
+      "Deleting item history failed": [
+        "항목 기록 삭제 실패"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고 삭제를 실패했습니다."
@@ -1015,9 +1027,6 @@
       "File could not be parsed": [
         "파일을 분석할 수 없음."
       ],
-      "File could not be read": [
-        "파일을 읽을 수 없습니다."
-      ],
       "File does not match expected format": [
         "파일이 형식과 일치되지 않습니다."
       ],
@@ -1098,9 +1107,6 @@
       ],
       "Something went wrong. Please sign in again.": [
         "문제가 발생했습니다. 다시 로그인해 주세요."
-      ],
-      "The file you are trying to import is empty": [
-        "불러오기를 시도 중인 파일이 비어 있습니다."
       ],
       "The session has expired. Please sign in again.": [
         "세션이 만료되었습니다. 다시 로그인해 주세요."
@@ -1514,9 +1520,6 @@
       "Drop to import": [
         "드래그해서 불러오기"
       ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Safari 브라우저 확장 제한으로 인해, 데이터를 내보낸 후 파일 확장자 \".pgp\"가 누락됩니다. 내보낸 후 .pgp 확장자(예: file.pgp)를 포함하도록 파일 이름을 변경하세요."
-      ],
       "Editor": [
         "편집자"
       ],
@@ -1640,14 +1643,8 @@
       "Identity confirmed": [
         "신원 확인됨"
       ],
-      "Import in progress:": [
-        "처리가 진행 중입니다:"
-      ],
       "Import the CSV file below.": [
         "아래에 CSV 파일을 불어오십시오."
-      ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total }개 항목을 불러왔습니다"
       ],
       "Imported on ${ date }": [
         "${ date }에 들여옴"
@@ -1688,14 +1685,14 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "이미 ${ PASS_APP_NAME }에 로그인 된 것 같습니다. 만약 다른 계정으로 로그인을 시도하는 중이라면, 확장 프로그램에서 로그아웃 하세요."
       ],
-      "item": [
-        "항목"
-      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "항목 \"${ payload.item.data.metadata.name }\" 이(가) 생성되었습니다."
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "항목 \"${ payload.item.data.metadata.name }\" 이(가) 업데이트 되었습니다."
+      ],
+      "Item history permanently deleted": [
+        "항목 기록이 영구적으로 삭제됨"
       ],
       "Item moved to trash": [
         "항목을 휴지통으로 이동했습니다."
@@ -1952,6 +1949,9 @@
       "Please follow the steps below to set up your domain.": [
         "도메인 설정을 위해 아래 단계를 따라주세요."
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "데이터를 불러오는 동안 이 창을 계속 유지하세요. 이 작업은 몇 분 정도 소요됩니다."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "별칭이 한 번 삭제되면 복구할 수 없습니다. 혹시 비활성화를 원하시나요?"
       ],
@@ -1996,6 +1996,9 @@
       ],
       "Removing secure link...": [
         "안전한 링크 지우는 중..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "기록 재설정은 모든 과거 항목들을 삭제하며 되돌릴 수 없습니다."
       ],
       "Restoring items from trash": [
         "휴지통에서 항목 복구 중"
@@ -2102,8 +2105,8 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }를 사용할 때 추가 비밀번호가 요구됩니다. 사용자의 ${ BRAND_NAME } 비밀번호의 추가적인 비밀번호가 됩니다."
       ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
+      "The following ${ totalIgnored } item could not be imported:": [
+        "다음 ${ totalIgnored }개 항목은 불러올 수 없습니다:"
       ],
       "The secure link has been removed": [
         "안전한 링크가 삭제되었습니다."
@@ -2884,8 +2887,8 @@
       "Personal website": [
         "개인 웹사이트"
       ],
-      "PGP-encrypted JSON (recommended)": [
-        "PGP 암호화된 JSON (권장)"
+      "PGP-encrypted (recommended)": [
+        "PGP-암호화됨 (권장)"
       ],
       "Phone number": [
         "전화번호"
@@ -3139,6 +3142,9 @@
       "Your domain": [
         "나의 도메인"
       ],
+      "ZIP": [
+        "ZIP"
+      ],
       "ZIP or Postal code": [
         "우편번호"
       ]
@@ -3213,6 +3219,101 @@
       ],
       "Underscores": [
         "밑줄"
+      ]
+    },
+    "Pass_file_attachments": {
+      "\"${ file.name }\" could not be uploaded.": [
+        "\"${ file.name }\"을(를) 업로드할 수 없습니다."
+      ],
+      "\"${ filename }\" could not be imported.": [
+        "\"${ filename }\"을(를) 불러올 수 없습니다."
+      ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\"이(가) 업로드하기에 너무 큽니다. 최대 허용 크기는 (${ maxFileSizeInMB })입니다."
+      ],
+      "${ filesCount } file": [
+        "${ filesCount }개 파일"
+      ],
+      "Attachments": [
+        "첨부 파일"
+      ],
+      "Choose a file or drag it here": [
+        "파일을 선택하거나 드래그하세요"
+      ],
+      "Delete ${ deleteFile.state.name }": [
+        "${ deleteFile.state.name } 삭제"
+      ],
+      "Delete all files": [
+        "모든 파일 삭제"
+      ],
+      "Do you want to remove all the files?": [
+        "모든 파일을 정말 삭제하시겠어요?"
+      ],
+      "Download": [
+        "다운로드"
+      ],
+      "Download file": [
+        "파일 다운로드"
+      ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "Firefox의 제한으로 인하여, 파일을 업로드하려면 ${ PASS_APP_NAME }를 새 창에서 다시 열어야 합니다."
+      ],
+      "Exporting files": [
+        "파일 내보내는 중"
+      ],
+      "File": [
+        "파일"
+      ],
+      "File attachments": [
+        "파일 첨부"
+      ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "활성화시 모든 파일이 내보내기 작업 중 다운로드됩니다. 인터넷 연결 상태에 따라 시간이 소요될 수 있습니다."
+      ],
+      "Not enough available storage space for the selected files.": [
+        "선택한 파일에 대한 사용 가능한 스토리지 공간이 충분하지 않습니다."
+      ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "한 번 삭제하면 이 파일은 항목 기록에서 복원되지 않습니다."
+      ],
+      "Open new window to upload files": [
+        "새 창을 열어 파일 업로드하기"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "파일이 다운로드되기 까지 잠시만 기다려주세요."
+      ],
+      "Remove all files": [
+        "모든 파일 삭제"
+      ],
+      "Rename": [
+        "이름 변경"
+      ],
+      "Restore": [
+        "복원"
+      ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "일부 파일이 업로드하기에 너무 큽니다. 최대 허용 크기는 (${ maxFileSizeInMB })입니다."
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "내보낸 파일 첨부 파일이 암호화되지 않습니다."
+      ],
+      "The file you are trying to import is empty": [
+        "불러오기 시도 중인 파일이 비어 있습니다."
+      ],
+      "Total files: ": [
+        "총 파일 수: "
+      ],
+      "Total imported files: ": [
+        "총 불러온 파일 수: "
+      ],
+      "Upload files from your device.": [
+        "기기에서 파일을 업로드하세요."
+      ],
+      "You can attach files to items for a better organization": [
+        "더 나은 조직을 위해 항목에 파일 첨부가 가능합니다."
+      ],
+      "Your current plan does not support importing files": [
+        "현재 플랜에서 파일 불러오기가 지원되지 않습니다."
       ]
     },
     "Placeholder": {
@@ -3606,6 +3707,9 @@
       "Domain ownership verification": [
         "도메인 소유권 인증"
       ],
+      "Encrypted import": [
+        "암호화된 불러오기"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME }를 잘 사용하고 계신가요?"
       ],
@@ -3647,6 +3751,9 @@
       ],
       "Import your data": [
         "나의 데이터 불러오기"
+      ],
+      "Importing your data": [
+        "데이터를 불러오는 중"
       ],
       "Inactive 2FA": [
         "2단계 인증 꺼짐"
@@ -3770,6 +3877,9 @@
       ],
       "Remove secure link?": [
         "안전한 링크를 지울까요?"
+      ],
+      "Reset history for this item?": [
+        "이 항목에 대한 기록을 재설정하시겠어요?"
       ],
       "Resolved breaches": [
         "해결된 유출"
@@ -3955,6 +4065,9 @@
       "An error occurred while exporting your data": [
         "데이터 내보내기 중 오류가 발생했습니다."
       ],
+      "An error occurred while importing your data.": [
+        "데이터를 불러오는데 문제가 발생했습니다."
+      ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount }개의 파일을 휴지통으로 이동시키시겠습니까?"
       ],
@@ -4095,9 +4208,6 @@
       ],
       "Passwords do not match": [
         "비밀번호가 일치하지 않습니다"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "PGP 암호화 내보내기 파일은 비밀번호가 필요합니다."
       ],
       "Please check that the extension is properly installed and enabled": [
         "확장 프로그램이 제대로 설치되었고 활성화 되었는지 확인해주세요."
