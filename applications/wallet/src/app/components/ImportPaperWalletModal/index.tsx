@@ -419,7 +419,10 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
                                 <div className="flex flex-column items-start">
                                     <div className="color-weak mb-2">{c('Wallet transaction').t`Network fee`}</div>
                                     <div className="mb-1">
-                                        {exchangeRate && <Price amount={Number(psbt.total_fees)} unit={exchangeRate} />}
+                                        <Price
+                                            amount={Number(psbt.total_fees)}
+                                            unit={exchangeRate ?? exchangeRateOrBitcoinUnit}
+                                        />
                                     </div>
                                     <span className="block color-hint text-nowrap">
                                         <SecondaryAmount
