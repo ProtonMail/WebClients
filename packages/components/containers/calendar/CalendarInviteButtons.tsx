@@ -65,7 +65,6 @@ const CalendarInviteButtons = ({
     const [selectedAnswer, setSelectedAnswer] = useState(responseTypeMap[partstat]);
 
     useEffect(() => {
-        console.log('temp partstat', partstat);
         setSelectedAnswer(responseTypeMap[partstat]);
     }, [partstat]);
 
