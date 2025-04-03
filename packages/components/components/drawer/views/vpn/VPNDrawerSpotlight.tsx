@@ -10,10 +10,12 @@ import Logo from '@proton/components/components/logo/Logo';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import { PLANS } from '@proton/payments/index';
 import { SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { SentryMailInitiatives } from '@proton/shared/lib/helpers/sentry';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 
@@ -30,6 +32,7 @@ interface Props {
 const VPNDrawerSpotlight = ({ children }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
+    const { toggleDrawerApp } = useDrawer();
     const { Name: planName } = getPlan(subscription) || {};
     // Has Plus Mail, Drive, or Pass, exclude VPN Plus
     const hasPlusPlan = planName === PLANS.MAIL || planName === PLANS.DRIVE || planName === PLANS.PASS;
@@ -44,6 +47,7 @@ const VPNDrawerSpotlight = ({ children }: Props) => {
 
     const handleClick = () => {
         spotlightIsClicked();
+        toggleDrawerApp({ app: DRAWER_NATIVE_APPS.VPN })();
         onClose();
     };
 
